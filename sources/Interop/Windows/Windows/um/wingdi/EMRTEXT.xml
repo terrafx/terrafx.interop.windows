@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRTEXT">
+    <summary>
+      <para>The <b>EMRTEXT</b> structure contains members for text output.</para>
+    </summary>
+    <remarks>
+      <para>The <b>EMRTEXT</b> structure is used as a member in the <see cref="EMREXTTEXTOUT" /> and <see cref="EMRPOLYTEXTOUT" /> structures.</para>
+    </remarks>
+    <seealso cref="EMR" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd162907(v=vs.85)">RECTL</seealso>
+  </member>
+  <member name="EMRTEXT.ptlReference">
+    <summary>
+      <para>The logical coordinates of the reference point used to position the string.</para>
+    </summary>
+  </member>
+  <member name="EMRTEXT.nChars">
+    <summary>
+      <para>The number of characters in the string.</para>
+    </summary>
+  </member>
+  <member name="EMRTEXT.offString">
+    <summary>
+      <para>The offset to the string.</para>
+    </summary>
+  </member>
+  <member name="EMRTEXT.fOptions">
+    <summary>
+      <para>A value that indicates how to use the application-defined rectangle. This member can be a combination of the ETO_CLIPPED and ETO_OPAQUE values.</para>
+    </summary>
+  </member>
+  <member name="EMRTEXT.rcl">
+    <summary>
+      <para>An optional clipping and/or opaquing rectangle, in logical units.</para>
+    </summary>
+  </member>
+  <member name="EMRTEXT.offDx">
+    <summary>
+      <para>The offset to the intercharacter spacing array.</para>
+    </summary>
+  </member>
+</doc>

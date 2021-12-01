@@ -5,23 +5,32 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TAPE_STATISTICS.xml' path='doc/member[@name="TAPE_STATISTICS"]/*' />
 public partial struct TAPE_STATISTICS
 {
+    /// <include file='TAPE_STATISTICS.xml' path='doc/member[@name="TAPE_STATISTICS.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='TAPE_STATISTICS.xml' path='doc/member[@name="TAPE_STATISTICS.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='TAPE_STATISTICS.xml' path='doc/member[@name="TAPE_STATISTICS.RecoveredWrites"]/*' />
     public LARGE_INTEGER RecoveredWrites;
 
+    /// <include file='TAPE_STATISTICS.xml' path='doc/member[@name="TAPE_STATISTICS.UnrecoveredWrites"]/*' />
     public LARGE_INTEGER UnrecoveredWrites;
 
+    /// <include file='TAPE_STATISTICS.xml' path='doc/member[@name="TAPE_STATISTICS.RecoveredReads"]/*' />
     public LARGE_INTEGER RecoveredReads;
 
+    /// <include file='TAPE_STATISTICS.xml' path='doc/member[@name="TAPE_STATISTICS.UnrecoveredReads"]/*' />
     public LARGE_INTEGER UnrecoveredReads;
 
+    /// <include file='TAPE_STATISTICS.xml' path='doc/member[@name="TAPE_STATISTICS.CompressionRatioReads"]/*' />
     public byte CompressionRatioReads;
 
+    /// <include file='TAPE_STATISTICS.xml' path='doc/member[@name="TAPE_STATISTICS.CompressionRatioWrites"]/*' />
     public byte CompressionRatioWrites;
 }

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BIN_RANGE.xml' path='doc/member[@name="BIN_RANGE"]/*' />
 public partial struct BIN_RANGE
 {
+    /// <include file='BIN_RANGE.xml' path='doc/member[@name="BIN_RANGE.StartValue"]/*' />
     public LARGE_INTEGER StartValue;
 
+    /// <include file='BIN_RANGE.xml' path='doc/member[@name="BIN_RANGE.Length"]/*' />
     public LARGE_INTEGER Length;
 }

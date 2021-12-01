@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo"]/*' />
 [Guid("0000002F-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IRecordInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, Guid*, void**, int>)(lpVtbl[0]))((IRecordInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, uint>)(lpVtbl[1]))((IRecordInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, uint>)(lpVtbl[2]))((IRecordInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordInit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RecordInit([NativeTypeName("PVOID")] void* pvNew)
@@ -46,6 +51,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[3]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvNew);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordClear"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RecordClear([NativeTypeName("PVOID")] void* pvExisting)
@@ -53,6 +59,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[4]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvExisting);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordCopy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RecordCopy([NativeTypeName("PVOID")] void* pvExisting, [NativeTypeName("PVOID")] void* pvNew)
@@ -60,6 +67,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, void*, void*, int>)(lpVtbl[5]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvExisting, pvNew);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetGuid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetGuid(Guid* pguid)
@@ -67,6 +75,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, Guid*, int>)(lpVtbl[6]))((IRecordInfo*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetName([NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -74,6 +83,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, ushort**, int>)(lpVtbl[7]))((IRecordInfo*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetSize([NativeTypeName("ULONG *")] uint* pcbSize)
@@ -81,6 +91,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, uint*, int>)(lpVtbl[8]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcbSize);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetTypeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetTypeInfo(ITypeInfo** ppTypeInfo)
@@ -88,6 +99,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, ITypeInfo**, int>)(lpVtbl[9]))((IRecordInfo*)Unsafe.AsPointer(ref this), ppTypeInfo);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetField"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
@@ -95,6 +107,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, int>)(lpVtbl[10]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetFieldNoCopy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID *")] void** ppvDataCArray)
@@ -102,6 +115,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, void**, int>)(lpVtbl[11]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField, ppvDataCArray);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.PutField"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
@@ -109,6 +123,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int>)(lpVtbl[12]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.PutFieldNoCopy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
@@ -116,6 +131,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int>)(lpVtbl[13]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetFieldNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetFieldNames([NativeTypeName("ULONG *")] uint* pcNames, [NativeTypeName("BSTR *")] ushort** rgBstrNames)
@@ -123,6 +139,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, uint*, ushort**, int>)(lpVtbl[14]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcNames, rgBstrNames);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.IsMatchingType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public BOOL IsMatchingType(IRecordInfo* pRecordInfo)
@@ -130,6 +147,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, IRecordInfo*, int>)(lpVtbl[15]))((IRecordInfo*)Unsafe.AsPointer(ref this), pRecordInfo);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordCreate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     [return: NativeTypeName("PVOID")]
@@ -138,6 +156,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, void*>)(lpVtbl[16]))((IRecordInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordCreateCopy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT RecordCreateCopy([NativeTypeName("PVOID")] void* pvSource, [NativeTypeName("PVOID *")] void** ppvDest)
@@ -145,6 +164,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface
         return ((delegate* unmanaged<IRecordInfo*, void*, void**, int>)(lpVtbl[17]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvSource, ppvDest);
     }
 
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordDestroy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT RecordDestroy([NativeTypeName("PVOID")] void* pvRecord)

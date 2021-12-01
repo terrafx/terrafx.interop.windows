@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_MAKE_COMPATIBLE_BUFFER.xml' path='doc/member[@name="FILE_MAKE_COMPATIBLE_BUFFER"]/*' />
 public partial struct FILE_MAKE_COMPATIBLE_BUFFER
 {
+    /// <include file='FILE_MAKE_COMPATIBLE_BUFFER.xml' path='doc/member[@name="FILE_MAKE_COMPATIBLE_BUFFER.CloseDisc"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte CloseDisc;
 }

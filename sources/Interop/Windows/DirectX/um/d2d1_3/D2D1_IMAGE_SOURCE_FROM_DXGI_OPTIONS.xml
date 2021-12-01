@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS">
+    <summary>
+      <para>Option flags controlling primary conversion performed by <see cref="CreateImageSourceFromDxgi" />, if any.</para>
+    </summary>
+  </member>
+  <member name="D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS.D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_NONE">
+    <summary>
+      <para>No primary conversion is performed.</para>
+    </summary>
+  </member>
+  <member name="D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS.D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_LOW_QUALITY_PRIMARY_CONVERSION">
+    <summary>
+      <para>Low quality primary conversion is performed.</para>
+    </summary>
+  </member>
+  <member name="D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS.D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

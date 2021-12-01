@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_BUFFER_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_BUFFER_PROPERTY_ID"]/*' />
 public enum WS_XML_BUFFER_PROPERTY_ID
 {
 }

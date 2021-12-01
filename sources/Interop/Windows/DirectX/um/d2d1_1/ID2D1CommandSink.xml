@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1CommandSink.BeginDraw">
+    <summary>
+      <para>Notifies the implementation of the command sink that drawing is about to commence.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method always returns <b>S_OK</b>.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.BeginDraw" />
+  </member>
+  <member name="ID2D1CommandSink.Clear">
+    <summary>
+      <para>Clears the drawing area to the specified color.</para>
+    </summary>
+    <param name="color">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a>*</b></para>
+      <para>The color to which the command sink should be cleared.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The clear color is restricted by the currently selected clip and layer bounds.</para>
+      <para>If no color is specified, the color should be interpreted by context. Examples include but are not limited to:</para>
+      <list type="bullet">
+        <item>
+          <description>Transparent black for a premultiplied bitmap target.</description>
+        </item>
+        <item>
+          <description>Opaque black for an ignore bitmap target.</description>
+        </item>
+        <item>
+          <description>Containing no content (or white) for a printer page.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1rendertarget-clear">ID2D1RenderTarget.Clear</seealso>
+  </member>
+  <member name="ID2D1CommandSink.DrawBitmap">
+    <summary>
+      <para>Draws a bitmap to the render target.</para>
+    </summary>
+    <param name="bitmap">
+      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
+      <para>The bitmap to draw.</para>
+    </param>
+    <param name="destinationRectangle">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
+      <para>The destination rectangle. The default is the size of the bitmap and the location is the upper left corner of the render target.</para>
+    </param>
+    <param name="opacity">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The opacity of the bitmap.</para>
+    </param>
+    <param name="interpolationMode">
+      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
+      <para>The interpolation mode to use.</para>
+    </param>
+    <param name="sourceRectangle">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
+      <para>An optional source rectangle.</para>
+    </param>
+    <param name="perspectiveTransform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-4x4-f">D2D1_MATRIX_4X4_F</a></b></para>
+      <para>An optional perspective transform.</para>
+    </param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <remarks>
+      <para>The <i>destinationRectangle</i> parameter defines the rectangle in the target where the bitmap will appear (in device-independent pixels (DIPs)).  This is affected by the currently set transform and the perspective transform, if set.  If you specify NULL, then the destination rectangle is (left=0, top=0, right = width(<i>sourceRectangle</i>), bottom = height(<i>sourceRectangle</i>).</para>
+      <para>The <i>sourceRectangle</i> defines the sub-rectangle of the source bitmap (in DIPs).  <b>DrawBitmap</b> clips this rectangle to the size of the source bitmap, so it's impossible to sample outside of the bitmap.  If you specify NULL, then the source rectangle is taken to be the size of the source bitmap.</para>
+      <para>The <i>perspectiveTransform</i> is specified in addition to the transform on device context.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandSink" />
+  </member>
+  <member name="ID2D1CommandSink.DrawGdiMetafile">
+    <summary>
+      <para>Draw a metafile to the device context.</para>
+    </summary>
+    <param name="gdiMetafile">
+      <para>Type: <b><see cref="ID2D1GdiMetafile" />*</b></para>
+      <para>The metafile to draw.</para>
+    </param>
+    <param name="targetOffset">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
+      <para>The offset from the upper left corner of the render target.</para>
+    </param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <remarks>
+      <para>The <i>targetOffset</i> defines the offset in the destination space that the image will be rendered to. The entire logical extent of the image is rendered to the corresponding destination. If you don't specify the offset, the destination origin will be (0, 0). The top, left corner of the image will be mapped to the target offset. This will not necessarily be the origin.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandSink" />
+  </member>
+  <member name="ID2D1CommandSink.DrawGeometry">
+    <summary>
+      <para>Indicates the geometry to be drawn to the command sink.</para>
+    </summary>
+    <param name="geometry">
+      <para>Type: <b><see cref="ID2D1Geometry " />*</b></para>
+      <para>The geometry to be stroked.</para>
+    </param>
+    <param name="brush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush that will be used to fill the stroked geometry.</para>
+    </param>
+    <param name="strokeWidth">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The width of the stroke.</para>
+    </param>
+    <param name="strokeStyle">
+      <para>Type: <b><see cref="ID2D1StrokeStyle" />*</b></para>
+      <para>The style of the stroke.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>An HRESULT.</para>
+    </returns>
+    <remarks>
+      <para>
+        <see cref="Ellipses" /> and <see cref="rounded rectangles" /> are converted to the corresponding ellipse and rounded rectangle geometries before calling into the <b>DrawGeometry</b> method.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.DrawGeometry" />
+  </member>
+  <member name="ID2D1CommandSink.DrawGlyphRun">
+    <summary>
+      <para>Indicates the glyphs to be drawn.</para>
+    </summary>
+    <param name="baselineOrigin">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The upper left corner of the baseline.</para>
+    </param>
+    <param name="glyphRun">
+      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN" />*</b></para>
+      <para>The glyphs to render.</para>
+    </param>
+    <param name="glyphRunDescription">
+      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN_DESCRIPTION" />*</b></para>
+      <para>Additional non-rendering information about the glyphs.</para>
+    </param>
+    <param name="foregroundBrush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush used to fill the glyphs.</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>The measuring mode to apply to the glyphs.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1rendertarget-drawtext">DrawText</a> and <see cref="DrawTextLayout" /> are broken down into glyph runs and rectangles by the time the command sink is processed. So, these methods aren't available on the command sink. Since the application may require additional callback processing when calling <b>DrawTextLayout</b>, this semantic can't be easily preserved in the command list.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1DeviceContext.DrawGlyphRun" />
+  </member>
+  <member name="ID2D1CommandSink.DrawImage">
+    <summary>
+      <para>Draws the provided image to the command sink.</para>
+    </summary>
+    <param name="image">
+      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
+      <para>The image to be drawn to the command sink.</para>
+    </param>
+    <param name="targetOffset">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
+      <para>This defines the offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin.</para>
+    </param>
+    <param name="imageRectangle">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>The corresponding rectangle in the image space will be mapped to the provided origins when processing the image.</para>
+    </param>
+    <param name="interpolationMode">
+      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
+      <para>The interpolation mode to use to  scale the image if necessary.</para>
+    </param>
+    <param name="compositeMode">
+      <para>Type: <b><see cref="D2D1_COMPOSITE_MODE" /></b></para>
+      <para>If specified, the composite mode that will be applied to the limits of the currently selected clip.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Because the image can itself be a command list or contain an effect graph that in turn contains a command list, this method can result in recursive processing.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1DeviceContext.DrawImage" />
+  </member>
+  <member name="ID2D1CommandSink.DrawLine">
+    <summary>
+      <para>Draws a line drawn between two points.</para>
+    </summary>
+    <param name="point0">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The start point of the line.</para>
+    </param>
+    <param name="point1">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The end point of the line.</para>
+    </param>
+    <param name="brush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush used to fill the line.</para>
+    </param>
+    <param name="strokeWidth">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The width of the stroke to fill the line.</para>
+    </param>
+    <param name="strokeStyle">
+      <para>Type: <b><see cref="ID2D1StrokeStyle" />*</b></para>
+      <para>The style of the stroke. If not specified, the stroke is solid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <h3>Additional References</h3>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.DrawLine" />
+  </member>
+  <member name="ID2D1CommandSink.DrawRectangle">
+    <summary>
+      <para>Draws a rectangle.</para>
+    </summary>
+    <param name="rect">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>The rectangle to be drawn to the command sink.</para>
+    </param>
+    <param name="brush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush used to stroke the geometry.</para>
+    </param>
+    <param name="strokeWidth">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The width of the stroke.</para>
+    </param>
+    <param name="strokeStyle">
+      <para>Type: <b><see cref="ID2D1StrokeStyle" />*</b></para>
+      <para>The style of the stroke.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.DrawRectangle" />
+  </member>
+  <member name="ID2D1CommandSink.EndDraw">
+    <summary>
+      <para>Indicates when  <see cref="ID2D1CommandSink" /> processing has completed.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method/function succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <b>HRESULT</b> active at the end of the command list will be returned.</para>
+      <para>It allows the calling function or method to indicate a failure back to the stream implementation.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.EndDraw" />
+  </member>
+  <member name="ID2D1CommandSink.FillGeometry">
+    <summary>
+      <para>Indicates to the command sink a geometry to be filled.</para>
+    </summary>
+    <param name="geometry">
+      <para>Type: <b><see cref="ID2D1Geometry" />*</b></para>
+      <para>The geometry that should be filled.</para>
+    </param>
+    <param name="brush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The primary brush used to fill the geometry.</para>
+    </param>
+    <param name="opacityBrush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>A brush whose alpha channel is used to modify the opacity of the primary fill brush.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the opacity brush is specified, the primary brush will be a bitmap brush fixed on both the x-axis and the y-axis.</para>
+      <para>Ellipses and rounded rectangles are converted to the corresponding geometry before being passed to <b>FillGeometry</b>.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.FillGeometry" />
+  </member>
+  <member name="ID2D1CommandSink.FillMesh">
+    <summary>
+      <para>Indicates a mesh to be filled by the command sink.</para>
+    </summary>
+    <param name="mesh">
+      <para>Type: <b><see cref="ID2D1Mesh" />*</b></para>
+      <para>The mesh object to be filled.</para>
+    </param>
+    <param name="brush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush with which to fill the mesh.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.FillMesh" />
+  </member>
+  <member name="ID2D1CommandSink.FillOpacityMask">
+    <summary>
+      <para>Fills an opacity mask on the command sink.</para>
+    </summary>
+    <param name="opacityMask">
+      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
+      <para>The bitmap whose alpha channel will be sampled to define the opacity mask.</para>
+    </param>
+    <param name="brush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush with which to fill the mask.</para>
+    </param>
+    <param name="destinationRectangle">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>The destination rectangle in which to fill the mask. If not specified, this is the origin.</para>
+    </param>
+    <param name="sourceRectangle">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>The source rectangle within the opacity mask. If not specified, this is the entire mask.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The opacity mask bitmap must be considered to be clamped on each axis.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1rendertarget-fillopacitymask">ID2D1RenderTarget.FillOpacityMask</seealso>
+  </member>
+  <member name="ID2D1CommandSink.FillRectangle">
+    <summary>
+      <para>Indicates to the command sink a rectangle to be filled.</para>
+    </summary>
+    <param name="rect">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>The rectangle to fill.</para>
+    </param>
+    <param name="brush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush with which to fill the rectangle.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.FillRectangle" />
+  </member>
+  <member name="ID2D1CommandSink.PopAxisAlignedClip">
+    <summary>
+      <para>Removes an axis-aligned clip from the layer and clip stack.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.PushAxisAlignedClip" />
+  </member>
+  <member name="ID2D1CommandSink.PopLayer">
+    <summary>
+      <para>Removes  a layer from the layer and clip stack.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.PushAxisAlignedClip" />
+  </member>
+  <member name="ID2D1CommandSink.PushAxisAlignedClip">
+    <summary>
+      <para>Pushes a clipping rectangle onto the clip and layer stack.</para>
+    </summary>
+    <param name="clipRect">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>The rectangle that defines the clip.</para>
+    </param>
+    <param name="antialiasMode">
+      <para>Type: <b><see cref="D2D1_ANTIALIAS_MODE" /></b></para>
+      <para>The antialias mode for the clip.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the current world transform is not preserving the axis, <i>clipRectangle</i> is transformed and the bounds of the transformed rectangle are used instead.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.PushAxisAlignedClip" />
+  </member>
+  <member name="ID2D1CommandSink.PushLayer">
+    <summary>
+      <para>Pushes a layer onto the clip and layer stack.</para>
+    </summary>
+    <param name="layerParameters1">
+      <para>Type: <b>const <see cref="D2D1_LAYER_PARAMETERS1" />*</b></para>
+      <para>The parameters that define the layer.</para>
+    </param>
+    <param name="layer">
+      <para>Type: <b><see cref="ID2D1Layer" />*</b></para>
+      <para>The layer resource that receives subsequent drawing operations.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.PushAxisAlignedClip" />
+  </member>
+  <member name="ID2D1CommandSink.SetAntialiasMode">
+    <summary>
+      <para>Sets the antialiasing mode that will be used to render any subsequent geometry.</para>
+    </summary>
+    <param name="antialiasMode">
+      <para>Type: <b><see cref="D2D1_ANTIALIAS_MODE" /></b></para>
+      <para>The antialiasing mode selected for the command list.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.SetAntialiasMode" />
+  </member>
+  <member name="ID2D1CommandSink.SetPrimitiveBlend">
+    <summary>
+      <para>Sets a new primitive blend mode.</para>
+    </summary>
+    <param name="primitiveBlend">
+      <para>Type: <b><see cref="D2D1_PRIMITIVE_BLEND" /></b></para>
+      <para>The primitive blend that will apply to subsequent primitives.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1rendertarget-settransform">ID2D1RenderTarget.SetTransform</seealso>
+  </member>
+  <member name="ID2D1CommandSink.SetTags">
+    <summary>
+      <para>Sets the tags that correspond to the tags in the command sink.</para>
+    </summary>
+    <param name="tag1">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-tag">D2D1_TAG</a></b></para>
+      <para>The first tag to associate with the primitive.</para>
+    </param>
+    <param name="tag2">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-tag">D2D1_TAG</a></b></para>
+      <para>The second tag to associate with the primitive.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.SetTags" />
+  </member>
+  <member name="ID2D1CommandSink.SetTextAntialiasMode">
+    <summary>
+      <para>Indicates the new default antialiasing mode for text.</para>
+    </summary>
+    <param name="textAntialiasMode">
+      <para>Type: <b><see cref="D2D1_TEXT_ANTIALIAS_MODE" /></b></para>
+      <para>The antialiasing mode for the text.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.SetTextAntialiasMode" />
+  </member>
+  <member name="ID2D1CommandSink.SetTextRenderingParams">
+    <summary>
+      <para>Indicates more detailed text rendering parameters.</para>
+    </summary>
+    <param name="textRenderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams" />*</b></para>
+      <para>The parameters to use for text rendering.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso cref="ID2D1RenderTarget.SetTags" />
+  </member>
+  <member name="ID2D1CommandSink.SetTransform">
+    <summary>
+      <para>Sets a new transform.</para>
+    </summary>
+    <param name="transform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
+      <para>The transform to be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The transform will be applied to the corresponding device context.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1rendertarget-settransform">ID2D1RenderTarget.SetTransform</seealso>
+  </member>
+  <member name="ID2D1CommandSink.SetUnitMode">
+    <summary>
+      <para>The unit mode changes the meaning of subsequent units from device-independent pixels (DIPs) to pixels  or the other way. The command sink does not record a DPI, this is implied by the playback context or other playback interface such as <see cref="ID2D1PrintControl" />.</para>
+    </summary>
+    <param name="unitMode">
+      <para>Type: <b><see cref="D2D1_UNIT_MODE" /></b></para>
+      <para>The enumeration that specifies how units are to be interpreted.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The unit mode changes the interpretation of units from DIPs to pixels  or vice versa.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1CommandSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1rendertarget-settransform">ID2D1RenderTarget.SetTransform</seealso>
+  </member>
+  <member name="ID2D1CommandSink">
+    <summary>
+      <para>The command sink is implemented by you for an application when you want to receive a playback of the commands recorded in a command list. A typical usage will be for transforming the command list into another format such as XPS when some degree of conversion between the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> primitives and the target format is required.</para>
+      <para>The command sink interface doesn't have any resource creation methods on it. The resources are still logically bound to the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> device on which the command list was created and will be passed in to the command sink implementation.</para>
+    </summary>
+    <remarks>
+      <para>The <b>ID2D1CommandSink</b> can be implemented to receive a play-back of the commands recorded in a command list. This interface is typically used for transforming the command list into another format  where some degree of conversion between the Direct2D primitives and the target format is required.</para>
+      <para>The <b>ID2D1CommandSink</b> interface does not have any resource creation methods. The resources are logically bound to the Direct2D device on which the <see cref="ID2D1CommandList" /> was created and will be passed in to the <b>ID2D1CommandSink</b> implementation.</para>
+      <para>Not all methods implemented by <see cref="ID2D1DeviceContext" /> are present.</para>
+    </remarks>
+    <seealso cref="ID2D1CommandList.Stream" />
+    <seealso cref="ID2D1DeviceContext" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

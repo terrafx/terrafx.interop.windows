@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemBackupRestoreEx.xml' path='doc/member[@name="IWbemBackupRestoreEx"]/*' />
 [Guid("A359DEC5-E813-4834-8A2A-BA7F1D777D76")]
 [NativeTypeName("struct IWbemBackupRestoreEx : IWbemBackupRestore")]
 [NativeInheritance("IWbemBackupRestore")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interfa
         return ((delegate* unmanaged<IWbemBackupRestoreEx*, Guid*, void**, int>)(lpVtbl[0]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interfa
         return ((delegate* unmanaged<IWbemBackupRestoreEx*, uint>)(lpVtbl[1]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interfa
         return ((delegate* unmanaged<IWbemBackupRestoreEx*, uint>)(lpVtbl[2]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWbemBackupRestore.Backup" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Backup([NativeTypeName("LPCWSTR")] ushort* strBackupToFile, [NativeTypeName("long")] int lFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interfa
         return ((delegate* unmanaged<IWbemBackupRestoreEx*, ushort*, int, int>)(lpVtbl[3]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this), strBackupToFile, lFlags);
     }
 
+    /// <inheritdoc cref="IWbemBackupRestore.Restore" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Restore([NativeTypeName("LPCWSTR")] ushort* strRestoreFromFile, [NativeTypeName("long")] int lFlags)
@@ -53,6 +59,7 @@ public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interfa
         return ((delegate* unmanaged<IWbemBackupRestoreEx*, ushort*, int, int>)(lpVtbl[4]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this), strRestoreFromFile, lFlags);
     }
 
+    /// <include file='IWbemBackupRestoreEx.xml' path='doc/member[@name="IWbemBackupRestoreEx.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Pause()
@@ -60,6 +67,7 @@ public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interfa
         return ((delegate* unmanaged<IWbemBackupRestoreEx*, int>)(lpVtbl[5]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWbemBackupRestoreEx.xml' path='doc/member[@name="IWbemBackupRestoreEx.Resume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Resume()

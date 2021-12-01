@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OCSP_SIGNED_REQUEST_INFO">
+    <summary>
+      <para>The <b>OCSP_SIGNED_REQUEST_INFO</b> structure contains information for an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) request with optional signature information.</para>
+    </summary>
+    <remarks>
+      <para>In an OCSP client application, this structure receives an encoded <see cref="OCSP_REQUEST_INFO" /> structure as its <b>ToBeSigned</b> member. Optionally, a signature  of the <b>ToBeSigned</b>  member is stored in the <b>pOptionalSignatureInfo</b> member.</para>
+      <para>On the receiving end, an OCSP responder application decodes the incoming request to populate an <b>OCSP_SIGNED_REQUEST_INFO</b> structure and subsequently decodes the <b>ToBeSigned</b> member to obtain an <see cref="OCSP_REQUEST_INFO" /> structure.</para>
+      <para>OCSP applications can encode or decode this structure by using <b>X509_ASN_ENCODING</b> or <b>PKCS_7_ASN_ENCODING</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SecCrypto/constants-for-cryptencodeobject-and-cryptdecodeobject">Constants for CryptEncodeObject and CryptDecodeObject</seealso>
+    <seealso cref="CryptDecodeObject" />
+    <seealso cref="CryptDecodeObjectEx" />
+    <seealso cref="CryptEncodeObject" />
+    <seealso cref="CryptEncodeObjectEx" />
+    <seealso cref="CryptSignAndEncodeCertificate" />
+    <seealso cref="OCSP_SIGNATURE_INFO" />
+  </member>
+  <member name="OCSP_SIGNED_REQUEST_INFO.ToBeSigned">
+    <summary>
+      <para>A BLOB that has been encoded by using <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">Distinguished Encoding Rules</a> (DER) and that contains the OCSP request information.</para>
+    </summary>
+  </member>
+  <member name="OCSP_SIGNED_REQUEST_INFO.pOptionalSignatureInfo">
+    <summary>
+      <para>A pointer to an <see cref="OCSP_SIGNATURE_INFO" /> structure that contains optional signature information.</para>
+    </summary>
+  </member>
+</doc>

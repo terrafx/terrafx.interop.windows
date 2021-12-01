@@ -5,22 +5,29 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_REVOCATION_STATUS.xml' path='doc/member[@name="CERT_REVOCATION_STATUS"]/*' />
 public partial struct CERT_REVOCATION_STATUS
 {
+    /// <include file='CERT_REVOCATION_STATUS.xml' path='doc/member[@name="CERT_REVOCATION_STATUS.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CERT_REVOCATION_STATUS.xml' path='doc/member[@name="CERT_REVOCATION_STATUS.dwIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwIndex;
 
+    /// <include file='CERT_REVOCATION_STATUS.xml' path='doc/member[@name="CERT_REVOCATION_STATUS.dwError"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwError;
 
+    /// <include file='CERT_REVOCATION_STATUS.xml' path='doc/member[@name="CERT_REVOCATION_STATUS.dwReason"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReason;
 
+    /// <include file='CERT_REVOCATION_STATUS.xml' path='doc/member[@name="CERT_REVOCATION_STATUS.fHasFreshnessTime"]/*' />
     public BOOL fHasFreshnessTime;
 
+    /// <include file='CERT_REVOCATION_STATUS.xml' path='doc/member[@name="CERT_REVOCATION_STATUS.dwFreshnessTime"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFreshnessTime;
 }

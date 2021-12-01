@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISpatialAudioObjectRenderStream.ActivateSpatialAudioObject">
+    <summary>
+      <para>Activates an <see cref="ISpatialAudioObject" /> for audio rendering.</para>
+    </summary>
+    <param name="type">
+      <para>The type of audio object to activate. For dynamic audio objects, this value must be <b>AudioObjectType_Dynamic</b>. For static audio objects, specify one of the static audio channel values from the enumeration. Specifying <b>AudioObjectType_None</b> will produce an audio object that is not spatialized.</para>
+    </param>
+    <param name="audioObject">
+      <para>Receives a pointer to the activated interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_NO_MORE_OBJECTS </b>
+            </para>
+          </description>
+          <description>
+            <para>The system has reached the maximum number of simultaneous audio objects.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_DESTROYED</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="ISpatialAudioClient" /> associated with the spatial audio stream has been destroyed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_INTERNAL</b>
+            </para>
+          </description>
+          <description>
+            <para>An internal error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_UNSUPPORTED_FORMAT</b>
+            </para>
+          </description>
+          <description>
+            <para>The media associated with the spatial audio stream uses an unsupported format.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A dynamic <see cref="ISpatialAudioObject" /> is one that was activated by setting the <i>type</i> parameter to the  <b>ActivateSpatialAudioObject</b> method to <b>AudioObjectType_Dynamic</b>. The client has a limit of the maximum number of dynamic spatial audio objects that can be activated at one time. After the limit has been reached, attempting to activate additional audio objects will result in this method returning an SPTLAUDCLNT_E_NO_MORE_OBJECTS error. To avoid this, call <see cref="Release" /> on each dynamic <b>ISpatialAudioObject</b> after it is no longer being used to free up the resource so that it can be reallocated. See <see cref="ISpatialAudioObject.IsActive" /> and <see cref="ISpatialAudioObject.SetEndOfStream" /> for more information on the managing the lifetime of spatial audio objects.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectRenderStream" />
+  </member>
+  <member name="ISpatialAudioObjectRenderStream">
+    <summary>
+      <para>Provides methods for controlling a spatial audio object render stream, including starting, stopping, and resetting the stream. Also provides methods for activating new <see cref="ISpatialAudioObject" /> instances and notifying the system when you are beginning and ending the process of updating activated spatial audio objects and data.</para>
+      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  Many of the methods provided by this interface are implemented in the inherited <see cref="ISpatialAudioObjectRenderStreamBase" /> interface.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectRenderStreamBase" />
+  </member>
+</doc>

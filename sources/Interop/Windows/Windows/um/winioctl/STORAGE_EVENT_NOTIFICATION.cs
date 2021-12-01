@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_EVENT_NOTIFICATION.xml' path='doc/member[@name="STORAGE_EVENT_NOTIFICATION"]/*' />
 public partial struct STORAGE_EVENT_NOTIFICATION
 {
+    /// <include file='STORAGE_EVENT_NOTIFICATION.xml' path='doc/member[@name="STORAGE_EVENT_NOTIFICATION.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_EVENT_NOTIFICATION.xml' path='doc/member[@name="STORAGE_EVENT_NOTIFICATION.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_EVENT_NOTIFICATION.xml' path='doc/member[@name="STORAGE_EVENT_NOTIFICATION.Events"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Events;
 }

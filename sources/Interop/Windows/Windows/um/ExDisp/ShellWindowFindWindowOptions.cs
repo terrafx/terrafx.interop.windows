@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ShellWindowFindWindowOptions.xml' path='doc/member[@name="ShellWindowFindWindowOptions"]/*' />
 public enum ShellWindowFindWindowOptions
 {
+    /// <include file='ShellWindowFindWindowOptions.xml' path='doc/member[@name="ShellWindowFindWindowOptions.SWFO_NEEDDISPATCH"]/*' />
     SWFO_NEEDDISPATCH = 0x1,
+
+    /// <include file='ShellWindowFindWindowOptions.xml' path='doc/member[@name="ShellWindowFindWindowOptions.SWFO_INCLUDEPENDING"]/*' />
     SWFO_INCLUDEPENDING = 0x2,
+
+    /// <include file='ShellWindowFindWindowOptions.xml' path='doc/member[@name="ShellWindowFindWindowOptions.SWFO_COOKIEPASSED"]/*' />
     SWFO_COOKIEPASSED = 0x4,
 }

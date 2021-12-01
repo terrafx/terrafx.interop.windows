@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FileOperation.xml' path='doc/member[@name="FileOperation"]/*' />
 [Guid("3AD05575-8857-4850-9277-11B85BDB8E09")]
 public partial struct FileOperation
 {

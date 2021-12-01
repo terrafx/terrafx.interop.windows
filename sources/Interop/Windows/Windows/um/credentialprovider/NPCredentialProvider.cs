@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NPCredentialProvider.xml' path='doc/member[@name="NPCredentialProvider"]/*' />
 [Guid("3DD6BEC0-8193-4FFE-AE25-E08E39EA4063")]
 public partial struct NPCredentialProvider
 {

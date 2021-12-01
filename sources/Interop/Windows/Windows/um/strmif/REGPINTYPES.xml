@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="REGPINTYPES">
+    <summary>
+      <para>The <code>REGPINTYPES</code> structure contains media type information for registering a filter.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used by the <see cref="IFilterMapper2" /> interface to identify the media types that a pin supports. The equivalent <b>AMOVIESETUP_MEDIATYPE</b> type is used in class factory templates (<a href="https://docs.microsoft.com//windows/desktop/DirectShow/cfactorytemplate">CFactoryTemplate</a>).</para>
+      <para>To register a range of subtypes within the same major type, use the value MEDIASUBTYPE_NULL.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/how-to-register-directshow-filters">How to Register DirectShow Filters</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/media-types">Media Types</seealso>
+  </member>
+  <member name="REGPINTYPES.clsMajorType">
+    <summary>
+      <para>Major type GUID of the media type.</para>
+    </summary>
+  </member>
+  <member name="REGPINTYPES.clsMinorType">
+    <summary>
+      <para>Sub type GUID of the media type. Can be MEDIASUBTYPE_NULL.</para>
+    </summary>
+  </member>
+</doc>

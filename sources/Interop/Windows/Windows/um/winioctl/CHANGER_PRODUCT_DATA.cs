@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CHANGER_PRODUCT_DATA.xml' path='doc/member[@name="CHANGER_PRODUCT_DATA"]/*' />
 public unsafe partial struct CHANGER_PRODUCT_DATA
 {
+    /// <include file='CHANGER_PRODUCT_DATA.xml' path='doc/member[@name="CHANGER_PRODUCT_DATA.VendorId"]/*' />
     [NativeTypeName("BYTE [8]")]
     public fixed byte VendorId[8];
 
+    /// <include file='CHANGER_PRODUCT_DATA.xml' path='doc/member[@name="CHANGER_PRODUCT_DATA.ProductId"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte ProductId[16];
 
+    /// <include file='CHANGER_PRODUCT_DATA.xml' path='doc/member[@name="CHANGER_PRODUCT_DATA.Revision"]/*' />
     [NativeTypeName("BYTE [4]")]
     public fixed byte Revision[4];
 
+    /// <include file='CHANGER_PRODUCT_DATA.xml' path='doc/member[@name="CHANGER_PRODUCT_DATA.SerialNumber"]/*' />
     [NativeTypeName("BYTE [32]")]
     public fixed byte SerialNumber[32];
 
+    /// <include file='CHANGER_PRODUCT_DATA.xml' path='doc/member[@name="CHANGER_PRODUCT_DATA.DeviceType"]/*' />
     public byte DeviceType;
 }

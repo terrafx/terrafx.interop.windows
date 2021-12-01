@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_PROPERTY_DVD_RATE_CHANGE">
+    <summary>
+      <para>The <b>AM_PROPERTY_DVD_RATE_CHANGE</b> enumeration is not used.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is defined in dvdmedia.h but was never used. It is included here for the sake of completeness. For DVD rate-change control, use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/rate-change-property-set">Rate Change Property Set</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="AM_PROPERTY_DVD_RATE_CHANGE.AM_RATE_ChangeRate">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="AM_PROPERTY_DVD_RATE_CHANGE.AM_RATE_FullDataRateMax">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="AM_PROPERTY_DVD_RATE_CHANGE.AM_RATE_ReverseDecode">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="AM_PROPERTY_DVD_RATE_CHANGE.AM_RATE_DecoderPosition">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="AM_PROPERTY_DVD_RATE_CHANGE.AM_RATE_DecoderVersion">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

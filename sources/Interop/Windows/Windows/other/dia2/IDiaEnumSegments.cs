@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaEnumSegments.xml' path='doc/member[@name="IDiaEnumSegments"]/*' />
 [Guid("E8368CA9-01D1-419D-AC0C-E31235DBDA9F")]
 [NativeTypeName("struct IDiaEnumSegments : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaEnumSegments : IDiaEnumSegments.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaEnumSegments : IDiaEnumSegments.Interface
         return ((delegate* unmanaged<IDiaEnumSegments*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumSegments*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaEnumSegments : IDiaEnumSegments.Interface
         return ((delegate* unmanaged<IDiaEnumSegments*, uint>)(lpVtbl[1]))((IDiaEnumSegments*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaEnumSegments : IDiaEnumSegments.Interface
         return ((delegate* unmanaged<IDiaEnumSegments*, uint>)(lpVtbl[2]))((IDiaEnumSegments*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaEnumSegments.xml' path='doc/member[@name="IDiaEnumSegments.get__NewEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get__NewEnum(IUnknown** pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaEnumSegments : IDiaEnumSegments.Interface
         return ((delegate* unmanaged<IDiaEnumSegments*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumSegments*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaEnumSegments.xml' path='doc/member[@name="IDiaEnumSegments.get_Count"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaEnumSegments : IDiaEnumSegments.Interface
         return ((delegate* unmanaged<IDiaEnumSegments*, int*, int>)(lpVtbl[4]))((IDiaEnumSegments*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaEnumSegments.xml' path='doc/member[@name="IDiaEnumSegments.Item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaSegment** segment)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaEnumSegments : IDiaEnumSegments.Interface
         return ((delegate* unmanaged<IDiaEnumSegments*, uint, IDiaSegment**, int>)(lpVtbl[5]))((IDiaEnumSegments*)Unsafe.AsPointer(ref this), index, segment);
     }
 
+    /// <include file='IDiaEnumSegments.xml' path='doc/member[@name="IDiaEnumSegments.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaSegment** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaEnumSegments : IDiaEnumSegments.Interface
         return ((delegate* unmanaged<IDiaEnumSegments*, uint, IDiaSegment**, uint*, int>)(lpVtbl[6]))((IDiaEnumSegments*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
+    /// <include file='IDiaEnumSegments.xml' path='doc/member[@name="IDiaEnumSegments.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaEnumSegments : IDiaEnumSegments.Interface
         return ((delegate* unmanaged<IDiaEnumSegments*, uint, int>)(lpVtbl[7]))((IDiaEnumSegments*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <include file='IDiaEnumSegments.xml' path='doc/member[@name="IDiaEnumSegments.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Reset()
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaEnumSegments : IDiaEnumSegments.Interface
         return ((delegate* unmanaged<IDiaEnumSegments*, int>)(lpVtbl[8]))((IDiaEnumSegments*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaEnumSegments.xml' path='doc/member[@name="IDiaEnumSegments.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Clone(IDiaEnumSegments** ppenum)

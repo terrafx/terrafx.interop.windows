@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCH_CRED_SECRET_PRIVKEY.xml' path='doc/member[@name="SCH_CRED_SECRET_PRIVKEY"]/*' />
 public unsafe partial struct SCH_CRED_SECRET_PRIVKEY
 {
+    /// <include file='SCH_CRED_SECRET_PRIVKEY.xml' path='doc/member[@name="SCH_CRED_SECRET_PRIVKEY.dwType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwType;
 
+    /// <include file='SCH_CRED_SECRET_PRIVKEY.xml' path='doc/member[@name="SCH_CRED_SECRET_PRIVKEY.pPrivateKey"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pPrivateKey;
 
+    /// <include file='SCH_CRED_SECRET_PRIVKEY.xml' path='doc/member[@name="SCH_CRED_SECRET_PRIVKEY.cbPrivateKey"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbPrivateKey;
 
+    /// <include file='SCH_CRED_SECRET_PRIVKEY.xml' path='doc/member[@name="SCH_CRED_SECRET_PRIVKEY.pszPassword"]/*' />
     [NativeTypeName("PSTR")]
     public sbyte* pszPassword;
 }

@@ -5,35 +5,46 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA"]/*' />
 public unsafe partial struct CREDENTIAL_TARGET_INFORMATIONA
 {
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA.TargetName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* TargetName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA.NetbiosServerName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* NetbiosServerName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA.DnsServerName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* DnsServerName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA.NetbiosDomainName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* NetbiosDomainName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA.DnsDomainName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* DnsDomainName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA.DnsTreeName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* DnsTreeName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA.PackageName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* PackageName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA.Flags"]/*' />
     [NativeTypeName("ULONG")]
     public uint Flags;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA.CredTypeCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint CredTypeCount;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONA.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONA.CredTypes"]/*' />
     [NativeTypeName("LPDWORD")]
     public uint* CredTypes;
 }

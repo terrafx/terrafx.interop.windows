@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify"]/*' />
 [Guid("56A868AF-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IDistributorNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
         return ((delegate* unmanaged<IDistributorNotify*, Guid*, void**, int>)(lpVtbl[0]))((IDistributorNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
         return ((delegate* unmanaged<IDistributorNotify*, uint>)(lpVtbl[1]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
         return ((delegate* unmanaged<IDistributorNotify*, uint>)(lpVtbl[2]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify.Stop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Stop()
@@ -46,6 +51,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
         return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[3]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Pause()
@@ -53,6 +59,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
         return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[4]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify.Run"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart)
@@ -60,6 +67,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
         return ((delegate* unmanaged<IDistributorNotify*, long, int>)(lpVtbl[5]))((IDistributorNotify*)Unsafe.AsPointer(ref this), tStart);
     }
 
+    /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify.SetSyncSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetSyncSource(IReferenceClock* pClock)
@@ -67,6 +75,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
         return ((delegate* unmanaged<IDistributorNotify*, IReferenceClock*, int>)(lpVtbl[6]))((IDistributorNotify*)Unsafe.AsPointer(ref this), pClock);
     }
 
+    /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify.NotifyGraphChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT NotifyGraphChange()

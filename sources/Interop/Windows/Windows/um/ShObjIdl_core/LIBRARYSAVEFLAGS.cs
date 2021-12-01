@@ -7,10 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LIBRARYSAVEFLAGS.xml' path='doc/member[@name="LIBRARYSAVEFLAGS"]/*' />
 [Flags]
 public enum LIBRARYSAVEFLAGS
 {
+    /// <include file='LIBRARYSAVEFLAGS.xml' path='doc/member[@name="LIBRARYSAVEFLAGS.LSF_FAILIFTHERE"]/*' />
     LSF_FAILIFTHERE = 0,
+
+    /// <include file='LIBRARYSAVEFLAGS.xml' path='doc/member[@name="LIBRARYSAVEFLAGS.LSF_OVERRIDEEXISTING"]/*' />
     LSF_OVERRIDEEXISTING = 0x1,
+
+    /// <include file='LIBRARYSAVEFLAGS.xml' path='doc/member[@name="LIBRARYSAVEFLAGS.LSF_MAKEUNIQUENAME"]/*' />
     LSF_MAKEUNIQUENAME = 0x2,
 }

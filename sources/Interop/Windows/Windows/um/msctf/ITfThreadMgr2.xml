@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfThreadMgr2.Activate">
+    <summary>
+      <para>Activates TSF for the calling thread.</para>
+    </summary>
+    <param name="ptid">
+      <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfclientid">TfClientId</a> value that receives a client identifier.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ptid</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>This method was called while the thread was deactivated.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method can be called more than once from a thread, but each call must be matched with a corresponding call to <see cref="Deactivate" /> from the same thread.</para>
+    </remarks>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.ActivateEx">
+    <summary>
+      <para>Initializes and activates TSF for the calling thread with a flag that specifies how TSF is activated.</para>
+    </summary>
+    <param name="ptid">
+      <para>[out] Pointer to a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfclientid">TfClientId</a> value that receives a client identifier.</para>
+    </param>
+    <param name="dwFlags">
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_TMAE_NOACTIVATETIP</b>
+          </description>
+          <description>
+            <para>Text services will not be activated while this method is called. They will be activated when the calling thread has focus asynchronously.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_SECUREMODE</b>
+          </description>
+          <description>
+            <para>TSF is activated in secure mode. Only text services that support the secure mode will be activated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_UIELEMENTENABLEDONLY</b>
+          </description>
+          <description>
+            <para>TSF activates only text services that are categorized in GUID_TFCAT_TIPCAP_UIELEMENTENABLED.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_COMLESS</b>
+          </description>
+          <description>
+            <para>TSF does not use COM. TSF activate only text services that are categorized in GUID_TFCAT_TIPCAP_COMLESS.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_NOACTIVATEKEYBOARDLAYOUT</b>
+          </description>
+          <description>
+            <para>TSF does not sync the current keyboard layout while this method is called. The keyboard layout will be adjusted when the calling thread gets focus. This flag must be used with TF_TMAE_NOACTIVATETIP.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.CreateDocumentMgr">
+    <summary>
+      <para>Creates a document manager object.</para>
+    </summary>
+    <param name="ppdim">
+      <para>Pointer to an <see cref="ITfDocumentMgr" /> interface that receives the document manager object.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppdim</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caller must release the document manager when it is no longer required.</para>
+    </remarks>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.Deactivate">
+    <summary>
+      <para>Deactivates TSF for the calling thread.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>This method was called while the thread was activated or this call had no corresponding <see cref="Activate" /> call.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Each call to this method must be matched with a previous call to <b>Activate</b>. This method must be called from the same thread that the corresponding <b>Activate</b> call was made from.</para>
+    </remarks>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.EnumDocumentMgrs">
+    <summary>
+      <para>Returns an enumerator for all the document managers within the calling thread.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Pointer to a <see cref="IEnumTfDocumentMgrs" /> interface that receives the enumerator.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppEnum</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caller must release the enumerator when it is no longer required.</para>
+    </remarks>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.EnumFunctionProviders">
+    <summary>
+      <para>Obtains an enumerator for all of the function providers registered for the calling thread.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Address of a <see cref="IEnumTfFunctionProviders" /> interface that receives the function provider enumerator.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppEnum</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The enumerator only contains the registered function providers. The enumerator will not contain the predefined function providers as described in <see cref="GetFunctionProvider" />.</para>
+      <para>A function provider registers itself by calling the TSF manager <see cref="ITfSourceSingle.AdviseSingleSink" /> method with IID_ITfFunctionProvider.</para>
+    </remarks>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.GetActiveFlags">
+    <summary>
+      <para>Gets the active flags of the calling thread.</para>
+    </summary>
+    <param name="lpdwFlags">
+      <para>The pointer to the DWORD value to receives the active flags of TSF.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_TMF_NOACTIVATETIP</b>
+          </description>
+          <description>
+            <para>TSF was activated with the TF_TMAE_NOACTIVATETIP flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_SECUREMODE</b>
+          </description>
+          <description>
+            <para>TSF is running as secure mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_UIELEMENTENABLEDONLY</b>
+          </description>
+          <description>
+            <para>TSF is running with text services that support only UIElement.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_COMLESS</b>
+          </description>
+          <description>
+            <para>TSF is running without COM.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_WOW16</b>
+          </description>
+          <description>
+            <para>TSF is running in 16bit task.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_CONSOLE</b>
+          </description>
+          <description>
+            <para>TSF is running for console.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_IMMERSIVEMODE</b>
+          </description>
+          <description>
+            <para>TSF is active in a Windows Store app.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_ACTIVATED</b>
+          </description>
+          <description>
+            <para>TSF is active.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.GetFocus">
+    <summary>
+      <para>Returns the document manager that has the input focus.</para>
+    </summary>
+    <param name="ppdimFocus">
+      <para>Pointer to a <see cref="ITfDocumentMgr" /> interface that receives the document manager with the current input focus. Receives <b>NULL</b> if no document manager has the focus.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>No document manager has focus. <i>ppdimFocus</i> be set to <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppdimFocus</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.GetFunctionProvider">
+    <summary>
+      <para>Obtains the specified function provider object.</para>
+    </summary>
+    <param name="clsid">
+      <para>CLSID of the desired function provider. This can be the CLSID of a function provider registered for the calling thread or one of the following predefined values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>GUID_SYSTEM_FUNCTIONPROVIDER</b>
+          </description>
+          <description>
+            <para>Obtains the TSF system function provider.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>GUID_APP_FUNCTIONPROVIDER</b>
+          </description>
+          <description>
+            <para>Obtains the function provider implemented by the current application. This object is not available if the application does not register itself as a function provider.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ppFuncProv">
+      <para>Pointer to a <see cref="ITfFunctionProvider" /> interface that receives the function provider.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOPROVIDER</b>
+            </para>
+          </description>
+          <description>
+            <para>No function provider matching <i>clsid</i> was available.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>GUID_SYSTEM_FUNCTIONPROVIDER was requested, but cannot be obtained.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A function provider registers by calling the TSF manager <see cref="ITfSourceSingle.AdviseSingleSink" /> method with IID_ITfFunctionProvider.</para>
+    </remarks>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.GetGlobalCompartment">
+    <summary>
+      <para>Obtains the global compartment manager object.</para>
+    </summary>
+    <param name="ppCompMgr">
+      <para>Pointer to a <see cref="ITfCompartmentMgr" /> interface that receives the global compartment manager.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppCompMgr</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.IsThreadFocus">
+    <summary>
+      <para>Determines if the calling thread has the TSF input focus.</para>
+    </summary>
+    <param name="pfThreadFocus">
+      <para>Pointer to a BOOL that receives a value that indicates if the calling thread has input focus. This parameter receives a nonzero value if the calling thread has the focus or zero otherwise.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pfThreadFocus</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.ResumeKeystrokeHandling">
+    <summary>
+      <para>Resumes suspended keystroke handling.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.SetFocus">
+    <summary>
+      <para>Sets the input focus to the specified document manager.</para>
+    </summary>
+    <param name="pdimFocus">
+      <para>Pointer to a <see cref="ITfDocumentMgr" /> interface that receives the input focus. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pdimFocus</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The application must call this method when the document window receives the input focus. If the application associates a window with a document manager using <see cref="ITfThreadMgr.AssociateFocus" />, the TSF manager calls this method for the application.</para>
+    </remarks>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2.SuspendKeystrokeHandling">
+    <summary>
+      <para>Suspends handling keystrokes.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfThreadMgr2" />
+  </member>
+  <member name="ITfThreadMgr2">
+    <summary>
+      <para>The <b>ITfThreadMgr2</b> defines the primary object implemented by the TSF manager. <b>ITfThreadMgr2</b> is used by applications and text services to activate and deactivate text services, create document managers, and maintain the document context focus.</para>
+    </summary>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

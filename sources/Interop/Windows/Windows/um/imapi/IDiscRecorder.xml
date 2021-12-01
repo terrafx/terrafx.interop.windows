@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDiscRecorder.Close">
+    <summary>
+      <para>Releases exclusive access to a disc recorder. This restores file system access to the drive.</para>
+    </summary>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.Eject">
+    <summary>
+      <para>Unlocks and ejects the tray of the disc recorder, if possible.</para>
+    </summary>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>Not all recorders support calls to eject their media. However, this method attempts to eject media.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.Erase">
+    <summary>
+      <para>Attempts to erase the CD-RW media if this is a CD-RW disc recorder. Both full and quick erases are supported.</para>
+    </summary>
+    <param name="bFullErase">
+      <para>Indicates the erase type. If this parameter is <b>FALSE</b>, a quick erase is performed. If this parameter is <b>TRUE</b>, a full erase is performed.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>Erasing a disc can be a very lengthy operation (sometimes in excess of an hour). To receive an erase completion notification, use <see cref="IDiscMasterProgressEvents.NotifyEraseComplete" />.</para>
+      <para>The quick option erases only the PMA, first session TOC, and the pre-gap of the first track. This erases a disc quickly (between 1 and 2 minutes depending on recorder speed), but the program area will still contain user data. A full erase, on the other hand, erases the entire disc.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.GetBasePnPID">
+    <summary>
+      <para>Retrieves a base PnP string that can be used to consistently identify a specific class of device by make and model. The string can be used by applications to customize their behavior according to the specific recorder type.</para>
+    </summary>
+    <param name="pbstrBasePnPID">
+      <para>Base PnP ID string. The string is a concatenation of a recorder's manufacturer, product ID, and revision information (if available).</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.GetDisplayNames">
+    <summary>
+      <para>Retrieves a formatted name for the recorder that can be displayed. The name consists of the manufacturer and product identifier of the device.</para>
+    </summary>
+    <param name="pbstrVendorID">
+      <para>Vendor of the disc recorder. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pbstrProductID">
+      <para>Product name of the disc recorder. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pbstrRevision">
+      <para>Revision of the disc recorder. This is typically the revision of the recorder firmware, but it can be a revision for the entire device. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>The display names are typically combined into a string that is displayed in recorder selection list boxes or other GUI components.</para>
+      <para>The combination of these three strings does not produce a unique identifier for this specific recorder. Combine these strings with the string returned from
+<see cref="GetPath" /> to create a unique value.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.GetPath">
+    <summary>
+      <para>Retrieves a path to the device within the operating system. This path should be used in conjunction with the display name to completely identify an available disc recorder.</para>
+    </summary>
+    <param name="pbstrPath">
+      <para>Path to the disc recorder. This path may be of the form \Device\CdRom<i>X</i>, but you should not rely on the path following this convention.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.GetRecorderGUID">
+    <summary>
+      <para>Retrieves the GUID of the physical disc recorder currently associated with the recorder object.</para>
+    </summary>
+    <param name="pbyUniqueID">
+      <para>Pointer to a GUID buffer to be filled in with this recorder's current GUID information. To query the required buffer size, use <b>NULL</b>.</para>
+    </param>
+    <param name="ulBufferSize">
+      <para>Size of the GUID buffer. If <i>pbyUniqueID</i> is <b>NULL</b>, this parameter must be zero.</para>
+    </param>
+    <param name="pulReturnSizeRequired">
+      <para>Size of the GUID information.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.GetRecorderProperties">
+    <summary>
+      <para>Retrieves a pointer to an
+<see cref="IPropertyStorage" /> interface.</para>
+    </summary>
+    <param name="ppPropStg">
+      <para>Pointer to an
+<see cref="IPropertyStorage" /> interface to the property set with all current properties defined.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>Properties are not retained after IMAPI is closed. A property set format is convenient for IMAPI because it stores an ID/TYPE/VALUE combination, as well as ID/NAME associations. Each combination is a single property, and IMAPI uses these properties for various values that are unique to specific recorders. For example, most recorders would support a WriteSpeed property.</para>
+      <para>The caller can then modify properties by calling
+<see cref="SetRecorderProperties" />. Current properties include the following:</para>
+    </remarks>
+    <seealso cref="IDiscRecorder" />
+    <seealso cref="IPropertyStorage" />
+  </member>
+  <member name="IDiscRecorder.GetRecorderState">
+    <summary>
+      <para>Retrieves the disc recorder state.</para>
+    </summary>
+    <param name="pulDevStateFlags">
+      <para>One of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>RECORDER_BURNING</b>
+          </description>
+          <description>
+            <para>0x2</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>RECORDER_DOING_NOTHING</b>
+          </description>
+          <description>
+            <para>0x0</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>RECORDER_OPENED</b>
+          </description>
+          <description>
+            <para>0x1</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.GetRecorderType">
+    <summary>
+      <para>Determines whether the disc recorder is a CD-R or CD-RW type device. This does not indicate the type of media that is currently inserted in the device.</para>
+    </summary>
+    <param name="fTypeCode">
+      <para>One of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>RECORDER_CDR</b>
+          </description>
+          <description>
+            <para>0x1</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>RECORDER_CDRW</b>
+          </description>
+          <description>
+            <para>0x2</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.OpenExclusive">
+    <summary>
+      <para>Opens a disc recorder for exclusive access.</para>
+    </summary>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>This method blocks file system access to a recorder through applications such as Explorer. The recorder must be opened with this method before it is possible to use the following methods:
+<see cref="QueryMediaType" />,
+<see cref="Eject" />,
+<see cref="Erase" />, and
+<see cref="Close" />.</para>
+      <para>It is important to close the recorder before calling
+<see cref="IDiscMaster.RecordDisc" />, or it will fail with IMAPI_E_DEVICE_NOTACCESSIBLE. The device is exclusively committed to access through either
+<see cref="IDiscRecorder" /> or
+<see cref="IDiscMaster" />, but not both at the same time. This is to ensure that there is no confusion regarding allowed operations and ownership of a recorder during application control or a burn.</para>
+      <para>An exclusive lock should be held for as short a time as possible. Requests that come from other operating system components are not queued for later execution. Instead, they are simply failed. This could cause confusion with users who don't think a burn is in progress.</para>
+      <para>Any time that
+<b>OpenExclusive</b> is called, it appears to the file system that the disc has been removed. When the corresponding
+<see cref="Close" /> call is made, it appears to the file system that the media has reappeared. This may cause auto-run issues.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.QueryMediaInfo">
+    <summary>
+      <para>Retrieves information about the currently mounted media, such as the total number of blocks used on the media.</para>
+    </summary>
+    <param name="pbSessions">
+      <para>Number of sessions on the disc.</para>
+    </param>
+    <param name="pbLastTrack">
+      <para>Track number of the last track of the previous session.</para>
+    </param>
+    <param name="ulStartAddress">
+      <para>Start address of the last track of the previous session.</para>
+    </param>
+    <param name="ulNextWritable">
+      <para>Address at which writing is to begin.</para>
+    </param>
+    <param name="ulFreeBlocks">
+      <para>Number of blocks available for writing.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>Using this method allows the calculation of parameters such as the amount of free space left on the disc without using a setting on the active disc recorder, which causes an exclusive open. The total size of the disc can be calculated by summing the next writable address and free blocks.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.QueryMediaType">
+    <summary>
+      <para>Detects the type of media currently inserted in the recorder, if any.</para>
+    </summary>
+    <param name="fMediaType">
+      <para>If there is no media, both <i>fMediaType</i> and <i>fMediaFlags</i> are zero. If there is media, <i>fMediaType</i> contains one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MEDIA_CD_EXTRA</b>
+          </description>
+          <description>
+            <para>4</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MEDIA_CD_I</b>
+          </description>
+          <description>
+            <para>3</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MEDIA_CD_OTHER</b>
+          </description>
+          <description>
+            <para>5</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MEDIA_CD_ROM_XA</b>
+          </description>
+          <description>
+            <para>2</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MEDIA_CDDA_CDROM</b>
+          </description>
+          <description>
+            <para>1</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MEDIA_SPECIAL</b>
+          </description>
+          <description>
+            <para>6</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="fMediaFlags">
+      <para>If there is media, this parameter contains one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MEDIA_BLANK</b>
+          </description>
+          <description>
+            <para>0x1</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MEDIA_RW</b>
+          </description>
+          <description>
+            <para>0x2</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MEDIA_WRITABLE</b>
+          </description>
+          <description>
+            <para>0x4</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder.SetRecorderProperties">
+    <summary>
+      <para>Accepts an
+<see cref="IPropertyStorage" /> pointer for an object with all the properties that the application wishes to change. Sparse settings are supported. It is recommended, however, to query for a property set using
+<see cref="GetRecorderProperties" />, modify only those settings of interest, and then call
+<b>SetRecorderProperties</b> to change all values simultaneously.</para>
+    </summary>
+    <param name="pPropStg">
+      <para>Pointer to the
+<see cref="IPropertyStorage" /> interface that the disc recorder can use to retrieve new settings on various properties.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>Some properties are read-only, such as MaxWriteSpeed. Both read-only properties and unsupported properties are ignored without generating an error (see IMAPI_S_PROPERTIESIGNORED). For example, someone could submit a property set to this interface and attempt to change the MaxWriteSpeed and ClearlyNeverHeardOfBefore properties. Since MaxWriteSpeed is read-only and ClearlyNeverHeardOfBefore is an unknown value, both properties are ignored and the method succeeds.</para>
+      <para>After calling
+<b>SetRecorderProperties</b>, an application should verify property settings by calling
+<see cref="GetRecorderProperties" />.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder" />
+  </member>
+  <member name="IDiscRecorder">
+    <summary>
+      <para>The
+<b>IDiscRecorder</b> interface enables access to a single disc recorder device, labeled the active disc recorder. An IMAPI object such as <b>MSDiscMasterObj</b> maintains an active disc recorder.</para>
+      <para>An
+<b>IDiscRecorder</b> object represents a single hardware device, but there can be multiple instances of
+<b>IDiscRecorder</b> all referencing the same hardware device. In this case, use
+<see cref="OpenExclusive" /> to access that device.</para>
+    </summary>
+    <remarks>
+      <para>All
+<b>IDiscRecorder</b> interfaces may be used on an
+<b>IDiscRecorder</b> object even if the disc recorder is not the active disc recorder. The IMAPI client does not have to call
+<see cref="IDiscMaster.SetActiveDiscRecorder" /> first.</para>
+    </remarks>
+  </member>
+</doc>

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_ROUTESTATE.xml' path='doc/member[@name="MIB_ROUTESTATE"]/*' />
 public partial struct MIB_ROUTESTATE
 {
+    /// <include file='MIB_ROUTESTATE.xml' path='doc/member[@name="MIB_ROUTESTATE.bRoutesSetToStack"]/*' />
     public BOOL bRoutesSetToStack;
 }

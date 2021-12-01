@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleZIndex.xml' path='doc/member[@name="styleZIndex"]/*' />
 public enum styleZIndex
 {
+    /// <include file='styleZIndex.xml' path='doc/member[@name="styleZIndex.styleZIndexAuto"]/*' />
     styleZIndexAuto = -2147483647,
+
+    /// <include file='styleZIndex.xml' path='doc/member[@name="styleZIndex.styleZIndex_Max"]/*' />
     styleZIndex_Max = 2147483647,
 }

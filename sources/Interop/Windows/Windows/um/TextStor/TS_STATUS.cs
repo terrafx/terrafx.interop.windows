@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TS_STATUS.xml' path='doc/member[@name="TS_STATUS"]/*' />
 public partial struct TS_STATUS
 {
+    /// <include file='TS_STATUS.xml' path='doc/member[@name="TS_STATUS.dwDynamicFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDynamicFlags;
 
+    /// <include file='TS_STATUS.xml' path='doc/member[@name="TS_STATUS.dwStaticFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStaticFlags;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PlatformId.xml' path='doc/member[@name="PlatformId"]/*' />
 public enum PlatformId
 {
+    /// <include file='PlatformId.xml' path='doc/member[@name="PlatformId.PlatformX86"]/*' />
     PlatformX86 = 0,
+
+    /// <include file='PlatformId.xml' path='doc/member[@name="PlatformId.PlatformPowerPC"]/*' />
     PlatformPowerPC = 1,
+
+    /// <include file='PlatformId.xml' path='doc/member[@name="PlatformId.PlatformMac"]/*' />
     PlatformMac = 2,
+
+    /// <include file='PlatformId.xml' path='doc/member[@name="PlatformId.PlatformEFI"]/*' />
     PlatformEFI = 0xef,
 }

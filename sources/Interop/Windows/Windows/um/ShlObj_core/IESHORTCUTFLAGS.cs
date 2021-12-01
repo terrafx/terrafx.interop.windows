@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IESHORTCUTFLAGS.xml' path='doc/member[@name="IESHORTCUTFLAGS"]/*' />
 public enum IESHORTCUTFLAGS
 {
+    /// <include file='IESHORTCUTFLAGS.xml' path='doc/member[@name="IESHORTCUTFLAGS.IESHORTCUT_NEWBROWSER"]/*' />
     IESHORTCUT_NEWBROWSER = 0x01,
+
+    /// <include file='IESHORTCUTFLAGS.xml' path='doc/member[@name="IESHORTCUTFLAGS.IESHORTCUT_OPENNEWTAB"]/*' />
     IESHORTCUT_OPENNEWTAB = 0x02,
+
+    /// <include file='IESHORTCUTFLAGS.xml' path='doc/member[@name="IESHORTCUTFLAGS.IESHORTCUT_FORCENAVIGATE"]/*' />
     IESHORTCUT_FORCENAVIGATE = 0x04,
+
+    /// <include file='IESHORTCUTFLAGS.xml' path='doc/member[@name="IESHORTCUTFLAGS.IESHORTCUT_BACKGROUNDTAB"]/*' />
     IESHORTCUT_BACKGROUNDTAB = 0x08,
 }

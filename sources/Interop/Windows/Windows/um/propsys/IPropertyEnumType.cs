@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType"]/*' />
 [Guid("11E1FBF9-2D56-4A6B-8DB3-7CD193A471F2")]
 [NativeTypeName("struct IPropertyEnumType : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface
         return ((delegate* unmanaged<IPropertyEnumType*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface
         return ((delegate* unmanaged<IPropertyEnumType*, uint>)(lpVtbl[1]))((IPropertyEnumType*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface
         return ((delegate* unmanaged<IPropertyEnumType*, uint>)(lpVtbl[2]))((IPropertyEnumType*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetEnumType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetEnumType(PROPENUMTYPE* penumtype)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface
         return ((delegate* unmanaged<IPropertyEnumType*, PROPENUMTYPE*, int>)(lpVtbl[3]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), penumtype);
     }
 
+    /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetValue(PROPVARIANT* ppropvar)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface
         return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[4]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvar);
     }
 
+    /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetRangeMinValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetRangeMinValue(PROPVARIANT* ppropvarMin)
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface
         return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvarMin);
     }
 
+    /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetRangeSetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetRangeSetValue(PROPVARIANT* ppropvarSet)
@@ -67,6 +75,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface
         return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvarSet);
     }
 
+    /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetDisplayText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay)

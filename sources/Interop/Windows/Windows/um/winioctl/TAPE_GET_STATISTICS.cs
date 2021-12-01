@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TAPE_GET_STATISTICS.xml' path='doc/member[@name="TAPE_GET_STATISTICS"]/*' />
 public partial struct TAPE_GET_STATISTICS
 {
+    /// <include file='TAPE_GET_STATISTICS.xml' path='doc/member[@name="TAPE_GET_STATISTICS.Operation"]/*' />
     [NativeTypeName("DWORD")]
     public uint Operation;
 }

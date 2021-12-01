@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_MORPHOLOGY_MODE">
+    <summary>
+      <para>The mode for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/morphology">Morphology effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_MORPHOLOGY_MODE.D2D1_MORPHOLOGY_MODE_ERODE">
+    <summary>
+      <para>The maximum value from each RGB channel in the kernel is used.</para>
+    </summary>
+  </member>
+  <member name="D2D1_MORPHOLOGY_MODE.D2D1_MORPHOLOGY_MODE_DILATE">
+    <summary>
+      <para>The minimum value from each RGB channel in the kernel is used.</para>
+    </summary>
+  </member>
+  <member name="D2D1_MORPHOLOGY_MODE.D2D1_MORPHOLOGY_MODE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

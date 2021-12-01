@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_SESSION_CONNECT.xml' path='doc/member[@name="POWER_SESSION_CONNECT"]/*' />
 public partial struct POWER_SESSION_CONNECT
 {
+    /// <include file='POWER_SESSION_CONNECT.xml' path='doc/member[@name="POWER_SESSION_CONNECT.Connected"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Connected;
 
+    /// <include file='POWER_SESSION_CONNECT.xml' path='doc/member[@name="POWER_SESSION_CONNECT.Console"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Console;
 }

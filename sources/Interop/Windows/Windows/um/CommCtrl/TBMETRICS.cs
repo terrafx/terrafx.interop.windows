@@ -5,22 +5,31 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TBMETRICS.xml' path='doc/member[@name="TBMETRICS"]/*' />
 public partial struct TBMETRICS
 {
+    /// <include file='TBMETRICS.xml' path='doc/member[@name="TBMETRICS.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='TBMETRICS.xml' path='doc/member[@name="TBMETRICS.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='TBMETRICS.xml' path='doc/member[@name="TBMETRICS.cxPad"]/*' />
     public int cxPad;
 
+    /// <include file='TBMETRICS.xml' path='doc/member[@name="TBMETRICS.cyPad"]/*' />
     public int cyPad;
 
+    /// <include file='TBMETRICS.xml' path='doc/member[@name="TBMETRICS.cxBarPad"]/*' />
     public int cxBarPad;
 
+    /// <include file='TBMETRICS.xml' path='doc/member[@name="TBMETRICS.cyBarPad"]/*' />
     public int cyBarPad;
 
+    /// <include file='TBMETRICS.xml' path='doc/member[@name="TBMETRICS.cxButtonSpacing"]/*' />
     public int cxButtonSpacing;
 
+    /// <include file='TBMETRICS.xml' path='doc/member[@name="TBMETRICS.cyButtonSpacing"]/*' />
     public int cyButtonSpacing;
 }

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IConnectionPointContainer.EnumConnectionPoints">
+    <summary>
+      <para>Creates an enumerator object to iterate through all the connection points supported in the connectable object, one connection point per outgoing IID.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>A pointer to an <see cref="IEnumConnectionPoints" /> interface pointer variable that receives the pointer to the newly created enumerator.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The enumerator object was created successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in <i>ppEnum</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Because <see cref="IEnumConnectionPoints" /> enumerates pointers to <see cref="IConnectionPoint" />, the caller must use <see cref="IConnectionPoint.GetConnectionInterface" /> to determine the interface identifier of the outgoing interface that the connection point supports.</para>
+      <h3>Notes to Callers</h3>
+      <para>The caller is responsible for calling <see cref="Release" /> when the enumerator is no longer needed.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Returning E_NOTIMPL is specifically disallowed because, with the exception of type information, there would be no other means through which a caller could find the IIDs of the outgoing interfaces. Since a connectable object typically has a fixed set of known outgoing interfaces, it is straightforward to implement the enumerator on top of a fixed length array of IIDs known at compile time.</para>
+    </remarks>
+    <seealso cref="IConnectionPointContainer" />
+    <seealso cref="IEnumConnectionPoints" />
+  </member>
+  <member name="IConnectionPointContainer.FindConnectionPoint">
+    <summary>
+      <para>Returns a pointer to the <see cref="IConnectionPoint" /> interface of a connection point for a specified IID, if that IID describes a supported outgoing interface.</para>
+    </summary>
+    <param name="riid">
+      <para>Interface identifier of the outgoing interface whose connection point object is being requested.</para>
+    </param>
+    <param name="ppCP">
+      <para>The address of an <see cref="IConnectionPoint" /> interface pointer variable that receives the pointer to the connection point that supports the <i>riid</i> interface. If an error occurs, the implementation sets the value to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in <i>ppCP</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CONNECT_E_NOCONNECTION</b>
+            </para>
+          </description>
+          <description>
+            <para>This connectable object does not support the outgoing interface specified by <i>riid</i>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is the <see cref="QueryInterface" /> equivalent for an object's outgoing interfaces, where the outgoing interface is specified with <i>riid</i> and where the interface pointer returned is always that of a connection point.</para>
+      <h3>Notes to Callers</h3>
+      <para>If the call is successful, the caller is responsible for releasing the connection point by calling <see cref="Release" /> when the connection point is no longer needed.</para>
+      <h3>Notes to Implementers</h3>
+      <para>E_NOTIMPL is not allowed as a return value for this method. Any implementation of <see cref="IConnectionPointContainer" /> must implement this method for the connectable object's outgoing interfaces.</para>
+    </remarks>
+    <seealso cref="IConnectionPoint" />
+    <seealso cref="IConnectionPointContainer" />
+  </member>
+  <member name="IConnectionPointContainer">
+    <summary>
+      <para>Supports connection points for connectable objects.</para>
+    </summary>
+    <remarks>
+      <para>Connectable objects support the following features:</para>
+      <list type="bullet">
+        <item>
+          <description>Outgoing interfaces, such as event sets
+</description>
+        </item>
+        <item>
+          <description>The ability to enumerate the IIDs of the outgoing interfaces
+</description>
+        </item>
+        <item>
+          <description>The ability to connect and disconnect sinks to the object for those outgoing IIDs
+</description>
+        </item>
+        <item>
+          <description>The ability to enumerate the connections that exist to a particular outgoing interface
+</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IConnectionPoint" />
+    <seealso cref="IEnumConnectionPoints" />
+    <seealso cref="IEnumConnections" />
+  </member>
+</doc>

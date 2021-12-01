@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SPC_INDIRECT_DATA_CONTENT">
+    <summary>
+      <para>The <b>SPC_INDIRECT_DATA_CONTENT</b> structure is used in Authenticode signatures to store the digest and other attributes of the signed file.</para>
+    </summary>
+  </member>
+  <member name="SPC_INDIRECT_DATA_CONTENT.Data">
+    <summary>
+      <para>A <see cref="CRYPT_ATTRIBUTE_TYPE_VALUE" /> that contains attributes of the digested file.</para>
+    </summary>
+  </member>
+  <member name="SPC_INDIRECT_DATA_CONTENT.DigestAlgorithm">
+    <summary>
+      <para>Specifies the digest algorithm used to hash the file.</para>
+    </summary>
+  </member>
+  <member name="SPC_INDIRECT_DATA_CONTENT.Digest">
+    <summary>
+      <para>The Authenticode digest value of the file using the algorithm specified in the  <i>DigestAlgorithm</i> parameter.</para>
+    </summary>
+  </member>
+</doc>

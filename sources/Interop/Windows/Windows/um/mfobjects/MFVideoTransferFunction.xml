@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFVideoTransferFunction">
+    <summary>
+      <para>Specifies the conversion function from linear RGB to non-linear RGB (R'G'B').</para>
+    </summary>
+    <remarks>
+      <para>These flags are used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-transfer-function-attribute">MF_MT_TRANSFER_FUNCTION</a> attribute.</para>
+      <para>For more information about these values, see the remarks for the <see cref="DXVA2_VideoTransferFunction" /> enumeration, which is the DirectX Video Acceleration (DXVA) equivalent of this enumeration.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/extended-color-information">Extended Color Information</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/video-media-types">Video Media Types</seealso>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_Unknown">
+    <summary>
+      <para>Unknown. Treat as MFVideoTransFunc_709.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_10">
+    <summary>
+      <para>Linear RGB (gamma = 1.0).</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_18">
+    <summary>
+      <para>True 1.8 gamma, L' = L^1/1.8.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_20">
+    <summary>
+      <para>True 2.0 gamma, L' = L^1/2.0.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_22">
+    <summary>
+      <para>True 2.2 gamma, L' = L^1/2.2. This transfer function is used in ITU-R BT.470-2 System M (NTSC).</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_709">
+    <summary>
+      <para>ITU-R BT.709 transfer function. Gamma 2.2 curve with a linear segment in the lower range. This transfer function is used in BT.709, BT.601, SMPTE 296M, SMPTE 170M, BT.470, and SPMTE 274M. In addition BT-1361 uses this function within the range [0...1].</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_240M">
+    <summary>
+      <para>SPMTE 240M transfer function. Gamma 2.2 curve with a linear segment in the lower range.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_sRGB">
+    <summary>
+      <para>sRGB transfer function. Gamma 2.4 curve with a linear segment in the lower range.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_28">
+    <summary>
+      <para>True 2.8 gamma. L' = L^1/2.8. This transfer function is used in ITU-R BT.470-2 System B, G (PAL).</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_Log_100">
+    <summary>
+      <para>Logarithmic transfer (100:1 range); for example, as used in H.264 video.</para>
+      <para>
+        <b>Note</b>  Requires Windows 7 or later.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_Log_316">
+    <summary>
+      <para>Logarithmic transfer (316.22777:1 range); for example, as used in H.264 video.</para>
+      <para>
+        <b>Note</b>  Requires Windows 7 or later.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_709_sym">
+    <summary>
+      <para>Symmetric ITU-R BT.709.</para>
+      <para>
+        <b>Note</b>  Requires Windows 7 or later.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_2020_const">
+    <summary>
+      <para>Constant luminance ITU-R BT.2020.  See <a href="https://www.itu.int/dms_pubrec/itu-r/rec/bt/r-rec-bt.2020-2-201510-i!!pdf-e.pdf">Recommendation  ITU-R  BT.2020-2</a>.</para>
+      <para>
+        <b>Note</b>  Requires Windows 8 or later.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_2020">
+    <summary>
+      <para>Non-constant luminance ITU-R BT.2020.  See <a href="https://www.itu.int/dms_pubrec/itu-r/rec/bt/r-rec-bt.2020-2-201510-i!!pdf-e.pdf">Recommendation  ITU-R  BT.2020-2</a>.</para>
+      <para>
+        <b>Note</b>  Requires Windows 8 or later.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_26">
+    <summary>
+      <para>True 2.6 gamma, L’=L^1/2.6</para>
+      <para>
+        <b>Note</b>  Requires Windows 8 or later.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_2084">
+    <summary>
+      <para>SMPTE ST.2084 also known as PQ.  Also defined in ITU-R BT.2100</para>
+      <para>
+        <b>Note</b>  Requires Windows 10, version 1703 or later.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_HLG">
+    <summary>
+      <para>Hybrid Log-Gamma, ARIB STD-B67</para>
+      <para>
+        <b>Note</b>  Requires Windows 10, version 1703 or later.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_10_rel">
+    <summary></summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_Last">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="MFVideoTransferFunction.MFVideoTransFunc_ForceDWORD">
+    <summary>
+      <para>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IContextMenu2.HandleMenuMsg">
+    <summary>
+      <para>Enables client objects of the <see cref="IContextMenu" /> interface to handle messages associated with owner-drawn menu items.</para>
+    </summary>
+    <param name="uMsg">
+      <para>Type: <b>UINT</b></para>
+      <para>The message to be processed. In the case of some messages, such as WM_INITMENUPOPUP, WM_DRAWITEM, WM_MENUCHAR, or WM_MEASUREITEM, the client object being called may provide owner-drawn menu items.</para>
+    </param>
+    <param name="wParam">
+      <para>Type: <b>WPARAM</b></para>
+      <para>Additional message information. The value of this parameter depends on the value of the <i>uMsg</i> parameter.</para>
+    </param>
+    <param name="lParam">
+      <para>Type: <b>LPARAM</b></para>
+      <para>Additional message information. The value of this parameter depends on the value of the <i>uMsg</i> parameter.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IContextMenu2.HandleMenuMsg</b> is generally replaced by <see cref="HandleMenuMsg2" />. <b>HandleMenuMsg2</b> is called when <see cref="IContextMenu" /> determines that <see cref="IContextMenu3" /> is supported and receives one of the messages specified in the description of the <i>uMsg</i> parameter. However, in some cases, <b>IContextMenu2.HandleMenuMsg</b> is still called.</para>
+      <para>If <see cref="IContextMenu2" /> or <see cref="IContextMenu3" /> is needed, the best implementation for new context menus is to implement all their logic in <see cref="HandleMenuMsg2" /> and have their <b>IContextMenu2.HandleMenuMsg</b> implementation simply delegate the call to <b>HandleMenuMsg2</b> and pass <b>NULL</b> as the <i>plResult</i> parameter.</para>
+      <para>
+        <b>Note</b>  If <see cref="IContextMenu3" /> is not implemented, there is no guarantee that <see cref="IContextMenu2" /> will be called in its place. In some cases, the absence of <b>IContextMenu3</b> is determined and then the process is halted.</para>
+    </remarks>
+    <seealso cref="HandleMenuMsg2" />
+    <seealso cref="IContextMenu2" />
+  </member>
+  <member name="IContextMenu2">
+    <summary>
+      <para>Exposes methods that either create or merge a shortcut (context) menu associated with a Shell object. Extends <see cref="IContextMenu" /> by adding a method that allows client objects to handle messages associated with owner-drawn menu items.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IContextMenu" /> interface, from which it inherits.</para>
+      <para>
+        <b>Note</b>  <b>Windows Vista and later.</b> Prior to Windows Vista this interface was declared in Shlobj.h.</para>
+      <h3>When to Implement</h3>
+      <para>Implement <b>IContextMenu2</b> if your <a href="https://docs.microsoft.com//windows/desktop/shell/nse-works">namespace extension</a> or <a href="https://docs.microsoft.com//windows/desktop/shell/context-menu-handlers">shortcut menu handler</a> needs to process one or more of the following messages.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-initmenupopup">WM_INITMENUPOPUP</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/wm-drawitem">WM_DRAWITEM</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/wm-measureitem">WM_MEASUREITEM</a>
+          </description>
+        </item>
+      </list>
+      <para>These messages are forwarded to <b>IContextMenu2</b>—through the <see cref="HandleMenuMsg" /> method—only if a <see cref="QueryInterface" /> call for an <b>IContextMenu2</b> interface pointer is successful, indicating that the object supports this interface.</para>
+      <h3>When to Use</h3>
+      <para>Applications do not normally call this interface directly.</para>
+    </remarks>
+  </member>
+</doc>

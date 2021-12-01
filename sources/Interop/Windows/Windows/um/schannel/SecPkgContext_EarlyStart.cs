@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_EarlyStart.xml' path='doc/member[@name="SecPkgContext_EarlyStart"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct SecPkgContext_EarlyStart
 {
+    /// <include file='SecPkgContext_EarlyStart.xml' path='doc/member[@name="SecPkgContext_EarlyStart.dwEarlyStartFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwEarlyStartFlags;
 }

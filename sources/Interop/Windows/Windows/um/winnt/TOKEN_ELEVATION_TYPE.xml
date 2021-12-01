@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TOKEN_ELEVATION_TYPE">
+    <summary>
+      <para>The <b>TOKEN_ELEVATION_TYPE</b> enumeration indicates the elevation type of token being queried by the <see cref="GetTokenInformation" />  function.</para>
+    </summary>
+  </member>
+  <member name="TOKEN_ELEVATION_TYPE.TokenElevationTypeDefault">
+    <summary>
+      <para>The token does not have a linked token.</para>
+    </summary>
+  </member>
+  <member name="TOKEN_ELEVATION_TYPE.TokenElevationTypeFull">
+    <summary>
+      <para>The token is an elevated token.</para>
+    </summary>
+  </member>
+  <member name="TOKEN_ELEVATION_TYPE.TokenElevationTypeLimited">
+    <summary>
+      <para>The token is a limited token.</para>
+    </summary>
+  </member>
+</doc>

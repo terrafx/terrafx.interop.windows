@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STATFLAG">
+    <summary>
+      <para>The
+<b>STATFLAG</b> enumeration values indicate whether the method should try to return a name in the <b>pwcsName</b> member of the
+<see cref="STATSTG" /> structure. The values are used in the
+<see cref="ILockBytes.Stat" />,
+<see cref="IStorage.Stat" />, and
+<see cref="IStream.Stat" /> methods to save memory when the <b>pwcsName</b> member is not required.</para>
+    </summary>
+    <seealso cref="ILockBytes.Stat" />
+    <seealso cref="IStorage.Stat" />
+    <seealso cref="IStream.Stat" />
+  </member>
+  <member name="STATFLAG.STATFLAG_DEFAULT">
+    <summary>
+      <para>Requests that the statistics include the <b>pwcsName</b> member of the
+<see cref="STATSTG" /> structure.</para>
+    </summary>
+  </member>
+  <member name="STATFLAG.STATFLAG_NONAME">
+    <summary>
+      <para>Requests that the statistics not include the <b>pwcsName</b> member of the
+<see cref="STATSTG" /> structure. If the name is omitted, there is no need for the
+<see cref="ILockBytes.Stat" />,
+<see cref="IStorage.Stat" />, and
+<see cref="IStream.Stat" /> methods methods to allocate and free memory for the string value of the name, therefore the method reduces time and resources used in an allocation and free operation.</para>
+    </summary>
+  </member>
+  <member name="STATFLAG.STATFLAG_NOOPEN">
+    <summary>
+      <para>Not implemented.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDiscMaster2.get_Count">
+    <summary>
+      <para>Retrieves the number of the CD and DVD disc devices installed on the computer.</para>
+    </summary>
+    <param name="value">
+      <para>Number of CD and DVD disc devices installed on the computer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDiscMaster2" />
+    <seealso cref="IDiscMaster2.get_Item" />
+    <seealso cref="IDiscMaster.__NewEnum" />
+  </member>
+  <member name="IDiscMaster2.get_IsSupportedEnvironment">
+    <summary>
+      <para>Retrieves a value that determines if the environment contains one or more optical devices and the execution context has permission to access the devices.</para>
+    </summary>
+    <param name="value">
+      <para>Is VARIANT_TRUE if the environment contains one or more optical devices and the execution context has permission to access the devices; otherwise, VARIANT_FALSE.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method loops through all the strings in <see cref="IDiscMaster2" /> and attempts to use each string to initialize a <see cref="DiscRecorder2" /> object.  If any of the recorders on the system succeed the initialization, this method returns <b>TRUE</b>.</para>
+      <para>The environment must contain at least one type-5 optical device.</para>
+    </remarks>
+    <seealso cref="IDiscMaster2" />
+  </member>
+  <member name="IDiscMaster2.get_Item">
+    <summary>
+      <para>Retrieves the unique identifier of the specified disc device.</para>
+    </summary>
+    <param name="index">
+      <para>Zero-based index of the device whose unique identifier you want to retrieve.</para>
+      <para>The index value can change during PNP activity when devices are added or removed from the computer,  or across boot sessions.</para>
+    </param>
+    <param name="value">
+      <para>String that contains the unique identifier of the disc device associated with the specified index.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are not valid.</para>
+            <para>Value: 0x80070057</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To enumerate all identifiers, call the <see cref="IDiscMaster2.get__NewEnum" /> method.</para>
+      <para>The following sample demonstrates how to re-enumerate optical drives in order to accurately account for drives added or removed  after the initial creation of the <see cref="IDiscMaster2" /> object. This is accomplished via the <b>IDiscMaster2.get_Item</b> and <see cref="IDiscMaster2.get_Count" /> methods:</para>
+      <code>#include &lt;windows.h&gt;
+#include &lt;tchar.h&gt;
+#include &lt;imapi2.h&gt;
+#include &lt;objbase.h&gt;
+#include &lt;stdio.h&gt;
+
+#pragma comment(lib, "ole32.lib")
+#pragma comment(lib, "user32.lib")
+
+int __cdecl _tmain(int argc, TCHAR* argv[])
+{
+    BSTR           bstrDeviceName;
+    HRESULT        hr = S_OK;
+    BOOL           bComInitialised;
+    IDiscMaster2*  discMaster;
+    UINT           iCounter = 0;
+    LONG           lValue = 0;
+
+    bComInitialised = SUCCEEDED(CoInitializeEx(0, COINIT_MULTITHREADED));
+
+    // Create an object of IDiscMaster2
+    if (SUCCEEDED(hr)){
+        CoCreateInstance(
+            CLSID_MsftDiscMaster2,
+            NULL, CLSCTX_ALL,
+            IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;discMaster)
+        );
+
+        if(FAILED(hr)){
+            _tprintf(TEXT("\nUnsuccessful in creating an instance of CLSID_MsftDiscMaster2.\n\nError returned: 0x%x\n"), hr);
+            return 0;
+        }
+    }
+    //
+    // Loop twice and get the optical drives attached to the system,
+    // first time just get the current configuration and second time
+    // prompt the user to change the configuration and then get the
+    // altered configuration.
+    //
+    do{
+        // Get the number of drives
+        if (SUCCEEDED(hr)){
+            hr = discMaster-&gt;get_Count(&amp;amp;amp;amp;amp;amp;lValue);
+            if (SUCCEEDED(hr)){
+                _tprintf(TEXT("\nTotal number of drives = %d\n"), lValue);
+            }
+        }
+
+        // Print all the optical drives attached to the system
+        if (SUCCEEDED(hr)){
+            for(LONG iCount = 0; iCount &lt; lValue; iCount++) {
+                hr = discMaster-&gt;get_Item(iCount, &amp;amp;amp;amp;amp;amp;bstrDeviceName);
+                _tprintf(TEXT("\nUnique identifier of the disc device associated with index %d is: %s\n"), iCount, bstrDeviceName);
+            }
+        }
+
+        // Prompt the user to unhook or add drives
+        if (iCounter &lt; 1){
+            MessageBox(NULL,TEXT("Please un-hook or add drives and hit OK"), TEXT("Manual Action"), MB_OK);
+            _tprintf(TEXT("\nGetting the altered configuration ... \n"));
+        }
+        iCounter++;
+    }while(iCounter &lt; 2);
+
+    discMaster-&gt;Release();
+    CoUninitialize();
+    bComInitialised = FALSE;
+
+    return 0;
+
+</code>
+    </remarks>
+    <seealso cref="IDiscMaster2" />
+    <seealso cref="IDiscMaster2.get_Count" />
+    <seealso cref="IDiscRecorder2.InitializeDiscRecorder" />
+  </member>
+  <member name="IDiscMaster2.get__NewEnum">
+    <summary>
+      <para>Retrieves a list of the CD and DVD devices installed on the computer.</para>
+    </summary>
+    <param name="ppunk">
+      <para>An <b>IEnumVariant</b> interface that you use to enumerate the CD and DVD devices installed on the computer. The items of the enumeration are variants whose type is <b>VT_BSTR</b>. Use the <b>bstrVal</b> member to retrieve the unique identifier of the device.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned when the number of requested elements (<i>celt</i>) are returned successfully or the number of returned items (<i>pceltFetched</i>) is less than the number of requested elements. The <i>celt</i> and <i>pceltFetched</i> parameters are defined by <b>IEnumVariant</b>.</para>
+      <para>Other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The enumeration is a snapshot of the devices on the computer at the time of the call and will not reflect devices that are added and removed. To receive notification when a device is added or removed from the computer, implement the <see cref="DDiscMaster2Events" /> interface.</para>
+      <para>To retrieve a single identifier, see the <see cref="IDiscMaster2.get_Item" /> property.</para>
+      <para>The device identifier is guaranteed to be unique and static for a given device as recognized by Windows Plug and Play.  You can use the identifier as a key value for saving the user's default burner, and can also be used to cache other device-specific static information (for example, VendorID and ProductID) by an advanced application.</para>
+    </remarks>
+    <seealso cref="IDiscMaster2" />
+    <seealso cref="IDiscMaster2.get_Count" />
+  </member>
+  <member name="IDiscMaster2">
+    <summary>
+      <para>Use this interface to enumerate the CD and DVD devices installed on the computer.</para>
+      <para>To create an instance of this interface, call the <b>CoCreateInstance</b> function. Use__uuidof(MsftDiscMaster2) for the class identifier and __uuidof(IDiscMaster2) for the interface identifier.</para>
+    </summary>
+    <remarks>
+      <para>To create the <b>MsftDiscMaster2</b> object in a script, use IMAPI2.MsftDiscMaster2 as the program identifier when calling <b>CreateObject</b>.</para>
+      <para>To receive notification when a device is added or removed from the computer, implement the <see cref="DDiscMaster2Events" /> interface.</para>
+    </remarks>
+  </member>
+</doc>

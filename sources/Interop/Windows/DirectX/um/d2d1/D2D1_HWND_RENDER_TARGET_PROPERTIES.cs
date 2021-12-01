@@ -7,12 +7,16 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_HWND_RENDER_TARGET_PROPERTIES.xml' path='doc/member[@name="D2D1_HWND_RENDER_TARGET_PROPERTIES"]/*' />
 public partial struct D2D1_HWND_RENDER_TARGET_PROPERTIES
 {
+    /// <include file='D2D1_HWND_RENDER_TARGET_PROPERTIES.xml' path='doc/member[@name="D2D1_HWND_RENDER_TARGET_PROPERTIES.hwnd"]/*' />
     public HWND hwnd;
 
+    /// <include file='D2D1_HWND_RENDER_TARGET_PROPERTIES.xml' path='doc/member[@name="D2D1_HWND_RENDER_TARGET_PROPERTIES.pixelSize"]/*' />
     [NativeTypeName("D2D1_SIZE_U")]
     public D2D_SIZE_U pixelSize;
 
+    /// <include file='D2D1_HWND_RENDER_TARGET_PROPERTIES.xml' path='doc/member[@name="D2D1_HWND_RENDER_TARGET_PROPERTIES.presentOptions"]/*' />
     public D2D1_PRESENT_OPTIONS presentOptions;
 }

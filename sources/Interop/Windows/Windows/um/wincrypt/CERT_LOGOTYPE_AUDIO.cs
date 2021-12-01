@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_LOGOTYPE_AUDIO.xml' path='doc/member[@name="CERT_LOGOTYPE_AUDIO"]/*' />
 public unsafe partial struct CERT_LOGOTYPE_AUDIO
 {
+    /// <include file='CERT_LOGOTYPE_AUDIO.xml' path='doc/member[@name="CERT_LOGOTYPE_AUDIO.LogotypeDetails"]/*' />
     public CERT_LOGOTYPE_DETAILS LogotypeDetails;
 
+    /// <include file='CERT_LOGOTYPE_AUDIO.xml' path='doc/member[@name="CERT_LOGOTYPE_AUDIO.pLogotypeAudioInfo"]/*' />
     [NativeTypeName("PCERT_LOGOTYPE_AUDIO_INFO")]
     public CERT_LOGOTYPE_AUDIO_INFO* pLogotypeAudioInfo;
 }

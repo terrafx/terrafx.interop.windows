@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfReadOnlyProperty.xml' path='doc/member[@name="ITfReadOnlyProperty"]/*' />
 [Guid("17D49A3D-F8B8-4B2F-B254-52319DD64C53")]
 [NativeTypeName("struct ITfReadOnlyProperty : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfReadOnlyProperty : ITfReadOnlyProperty.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfReadOnlyProperty : ITfReadOnlyProperty.Interface
         return ((delegate* unmanaged<ITfReadOnlyProperty*, Guid*, void**, int>)(lpVtbl[0]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfReadOnlyProperty : ITfReadOnlyProperty.Interface
         return ((delegate* unmanaged<ITfReadOnlyProperty*, uint>)(lpVtbl[1]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfReadOnlyProperty : ITfReadOnlyProperty.Interface
         return ((delegate* unmanaged<ITfReadOnlyProperty*, uint>)(lpVtbl[2]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfReadOnlyProperty.xml' path='doc/member[@name="ITfReadOnlyProperty.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetType(Guid* pguid)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfReadOnlyProperty : ITfReadOnlyProperty.Interface
         return ((delegate* unmanaged<ITfReadOnlyProperty*, Guid*, int>)(lpVtbl[3]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <include file='ITfReadOnlyProperty.xml' path='doc/member[@name="ITfReadOnlyProperty.EnumRanges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnumRanges([NativeTypeName("TfEditCookie")] uint ec, IEnumTfRanges** ppEnum, ITfRange* pTargetRange)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfReadOnlyProperty : ITfReadOnlyProperty.Interface
         return ((delegate* unmanaged<ITfReadOnlyProperty*, uint, IEnumTfRanges**, ITfRange*, int>)(lpVtbl[4]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this), ec, ppEnum, pTargetRange);
     }
 
+    /// <include file='ITfReadOnlyProperty.xml' path='doc/member[@name="ITfReadOnlyProperty.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetValue([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, VARIANT* pvarValue)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfReadOnlyProperty : ITfReadOnlyProperty.Interface
         return ((delegate* unmanaged<ITfReadOnlyProperty*, uint, ITfRange*, VARIANT*, int>)(lpVtbl[5]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this), ec, pRange, pvarValue);
     }
 
+    /// <include file='ITfReadOnlyProperty.xml' path='doc/member[@name="ITfReadOnlyProperty.GetContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetContext(ITfContext** ppContext)

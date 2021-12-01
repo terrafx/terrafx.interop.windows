@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGE_ENCLAVE_CONFIG">
+    <summary>
+      <para>Defines the format of the enclave configuration for systems running 32-bit Windows.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IMAGE_ENCLAVE_CONFIG</b> structure is defined as another name for the <b>IMAGE_ENCLAVE_CONFIG32</b> structure on systems that run 32-bit Windows.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt844244(v=vs.85)">IMAGE_ENCLAVE_CONFIG64</seealso>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.Size">
+    <summary>
+      <para>The size of the <b>IMAGE_ENCLAVE_CONFIG32</b> structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.MinimumRequiredConfigSize">
+    <summary>
+      <para>The minimum size of the <b>IMAGE_ENCLAVE_CONFIG32</b> structure that the image loader must be able to process in order for the enclave to be usable.  This member allows an enclave to inform an earlier version of the image loader that the image loader can safely load the enclave and ignore optional members added to <b>IMAGE_ENCLAVE_CONFIG32</b> for later versions of the enclave. If the size of <b>IMAGE_ENCLAVE_CONFIG32</b> that the image loader can process is less than <b>MinimumRequiredConfigSize</b>, the enclave cannot be run securely.</para>
+      <para>If <b>MinimumRequiredConfigSize</b> is zero, the minimum size of the <b>IMAGE_ENCLAVE_CONFIG32</b> structure that the image loader must be able to process in order for the enclave to be usable is assumed to be the size of the structure through and including the <b>MinimumRequiredConfigSize</b> member.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.PolicyFlags">
+    <summary>
+      <para>A flag that indicates whether the enclave permits debugging.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_ENCLAVE_POLICY_DEBUGGABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The enclave permits debugging.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00000000</para>
+          </description>
+          <description>
+            <para>The enclave does not permit debugging.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.NumberOfImports">
+    <summary>
+      <para>The number of images in the array of images that the <b>ImportList</b> member points to.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.ImportList">
+    <summary>
+      <para>The relative virtual address of the array of images that the enclave image may import, with identity information for each image.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.ImportEntrySize">
+    <summary>
+      <para>The size of each image in the array of images that the <b>ImportList</b> member points to.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.FamilyID">
+    <summary>
+      <para>The family identifier that the author of the enclave assigned to the enclave.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.ImageID">
+    <summary>
+      <para>The image identifier that the author of the enclave assigned to the enclave.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.ImageVersion">
+    <summary>
+      <para>The version number that the author of the enclave assigned to the enclave.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.SecurityVersion">
+    <summary>
+      <para>The security version number that the author of the enclave assigned to the enclave.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.EnclaveSize">
+    <summary>
+      <para>The expected virtual size of the private address range for the enclave, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.NumberOfThreads">
+    <summary>
+      <para>The maximum number of threads that can be created within the enclave.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.EnclaveFlags">
+    <summary>
+      <para>A flag that indicates whether the image is suitable for use as the primary image in the enclave.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_ENCLAVE_FLAG_PRIMARY_IMAGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The image is suitable for use as the primary image in the enclave.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00000000</para>
+          </description>
+          <description>
+            <para>The image is not suitable for use as the primary image in the enclave.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG">
+    <summary>
+      <para>Defines the format of the enclave configuration for systems running 32-bit Windows.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IMAGE_ENCLAVE_CONFIG</b> structure is defined as another name for the <b>IMAGE_ENCLAVE_CONFIG32</b> structure on systems that run 32-bit Windows.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt844244(v=vs.85)">IMAGE_ENCLAVE_CONFIG64</seealso>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.Size">
+    <summary>
+      <para>The size of the <b>IMAGE_ENCLAVE_CONFIG32</b> structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.MinimumRequiredConfigSize">
+    <summary>
+      <para>The minimum size of the <b>IMAGE_ENCLAVE_CONFIG32</b> structure that the image loader must be able to process in order for the enclave to be usable.  This member allows an enclave to inform an earlier version of the image loader that the image loader can safely load the enclave and ignore optional members added to <b>IMAGE_ENCLAVE_CONFIG32</b> for later versions of the enclave. If the size of <b>IMAGE_ENCLAVE_CONFIG32</b> that the image loader can process is less than <b>MinimumRequiredConfigSize</b>, the enclave cannot be run securely.</para>
+      <para>If <b>MinimumRequiredConfigSize</b> is zero, the minimum size of the <b>IMAGE_ENCLAVE_CONFIG32</b> structure that the image loader must be able to process in order for the enclave to be usable is assumed to be the size of the structure through and including the <b>MinimumRequiredConfigSize</b> member.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.PolicyFlags">
+    <summary>
+      <para>A flag that indicates whether the enclave permits debugging.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_ENCLAVE_POLICY_DEBUGGABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The enclave permits debugging.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00000000</para>
+          </description>
+          <description>
+            <para>The enclave does not permit debugging.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.NumberOfImports">
+    <summary>
+      <para>The number of images in the array of images that the <b>ImportList</b> member points to.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.ImportList">
+    <summary>
+      <para>The relative virtual address of the array of images that the enclave image may import, with identity information for each image.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.ImportEntrySize">
+    <summary>
+      <para>The size of each image in the array of images that the <b>ImportList</b> member points to.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.FamilyID">
+    <summary>
+      <para>The family identifier that the author of the enclave assigned to the enclave.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.ImageID">
+    <summary>
+      <para>The image identifier that the author of the enclave assigned to the enclave.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.ImageVersion">
+    <summary>
+      <para>The version number that the author of the enclave assigned to the enclave.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.SecurityVersion">
+    <summary>
+      <para>The security version number that the author of the enclave assigned to the enclave.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.EnclaveSize">
+    <summary>
+      <para>The expected virtual size of the private address range for the enclave, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.NumberOfThreads">
+    <summary>
+      <para>The maximum number of threads that can be created within the enclave.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_ENCLAVE_CONFIG.EnclaveFlags">
+    <summary>
+      <para>A flag that indicates whether the image is suitable for use as the primary image in the enclave.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_ENCLAVE_FLAG_PRIMARY_IMAGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The image is suitable for use as the primary image in the enclave.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00000000</para>
+          </description>
+          <description>
+            <para>The image is not suitable for use as the primary image in the enclave.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

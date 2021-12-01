@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumIDList.Clone">
+    <summary>
+      <para>Creates a new item enumeration object with the same contents and state as the current one.</para>
+    </summary>
+    <param name="ppenum">
+      <para>Type: <b><see cref="IEnumIDList" />**</b></para>
+      <para>The address of a pointer to the new enumeration object. The calling application must eventually free the new object by calling its <see cref="Release" /> member function.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM-defined error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This method makes it possible to record a particular point in the enumeration sequence and then return to that point at a later time.</para>
+    </remarks>
+    <seealso cref="IEnumIDList" />
+  </member>
+  <member name="IEnumIDList.Next">
+    <summary>
+      <para>Retrieves the specified number of item identifiers in the enumeration sequence and advances the current position by the number of items retrieved.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of elements in the array referenced by the <i>rgelt</i> parameter.</para>
+    </param>
+    <param name="rgelt">
+      <para>Type: <b>LPITEMIDLIST*</b></para>
+      <para>The address of a pointer to an array of <see cref="ITEMIDLIST" /> pointers that receive the item identifiers. The implementation must allocate these item identifiers using <see cref="CoTaskMemAlloc" />. The calling application is responsible for freeing the item identifiers using <see cref="CoTaskMemFree" />.</para>
+      <para>The <see cref="ITEMIDLIST" /> structures returned in the array are relative to the <see cref="IShellFolder" /> being enumerated.</para>
+    </param>
+    <param name="pceltFetched">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to a value that receives a count of the item identifiers actually returned in <i>rgelt</i>. The count can be smaller than the value specified in the <i>celt</i> parameter. This parameter can be <b>NULL</b> on entry only if <i>celt</i> = 1, because in that case the method can only retrieve one (S_OK) or zero (S_FALSE) items.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the method successfully retrieved the requested <i>celt</i> elements. This method only returns S_OK if the full count of requested items are successfully retrieved.</para>
+      <para>S_FALSE indicates that more items were requested than remained in the enumeration. The value pointed to by the <i>pceltFetched</i> parameter specifies the actual number of items retrieved. Note that the value will be 0 if there are no more items to retrieve.</para>
+      <para>Returns a COM-defined error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>If this method returns a Component Object Model (COM) error code (as determined by the <see cref="FAILED" /> macro), then no entries in the <i>rgelt</i> array are valid on exit. If this method returns a success code (such as S_OK or S_FALSE), then the <b>ULONG</b> pointed to by the <i>pceltFetched</i> parameter determines how many entries in the <i>rgelt</i> array are valid on exit.</para>
+      <para>The distinction is important in the case where <i>celt</i> &gt; 1. For example, if you pass <i>celt</i>=10 and there are only 3 elements left, *<i>pceltFetched</i> will be 3 and the method will return S_FALSE meaning that you reached the end of the file. The three fetched elements will be stored into <i>rgelt</i> and are valid.</para>
+    </remarks>
+    <seealso cref="IEnumIDList" />
+  </member>
+  <member name="IEnumIDList.Reset">
+    <summary>
+      <para>Returns to the beginning of the enumeration sequence.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM-defined error value otherwise.</para>
+    </returns>
+    <seealso cref="IEnumIDList" />
+  </member>
+  <member name="IEnumIDList.Skip">
+    <summary>
+      <para>Skips the specified number of elements in the enumeration sequence.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of item identifiers to skip.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM-defined error value otherwise.</para>
+    </returns>
+    <seealso cref="IEnumIDList" />
+  </member>
+  <member name="IEnumIDList">
+    <summary>
+      <para>Exposes a standard set of methods used to enumerate the pointers to item identifier lists (PIDLs) of the items in a Shell folder. When a folder's <see cref="IShellFolder.EnumObjects" /> method is called, it creates an enumeration object and passes a pointer to the object's <b>IEnumIDList</b> interface back to the calling application.</para>
+    </summary>
+    <remarks>
+      <para>All Shell folder objects must be able to respond to a call to their <see cref="IShellFolder.EnumObjects" /> method by creating an enumeration object that exports <b>IEnumIDList</b>. The Shell, in particular, uses these objects to enumerate the items in a folder.</para>
+      <para>Use this interface to enumerate the contents of a Shell folder object. Call the folder's <see cref="IShellFolder.EnumObjects" /> method and use the returned <b>IEnumIDList</b> pointer to enumerate the PIDLs of the items in the folder.</para>
+    </remarks>
+  </member>
+</doc>

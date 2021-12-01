@@ -7,11 +7,14 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVPROPKEY.xml' path='doc/member[@name="DEVPROPKEY"]/*' />
 public partial struct DEVPROPKEY
 {
+    /// <include file='DEVPROPKEY.xml' path='doc/member[@name="DEVPROPKEY.fmtid"]/*' />
     [NativeTypeName("DEVPROPGUID")]
     public Guid fmtid;
 
+    /// <include file='DEVPROPKEY.xml' path='doc/member[@name="DEVPROPKEY.pid"]/*' />
     [NativeTypeName("DEVPROPID")]
     public uint pid;
 }

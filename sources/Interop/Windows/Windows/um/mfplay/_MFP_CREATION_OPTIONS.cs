@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_MFP_CREATION_OPTIONS.xml' path='doc/member[@name="_MFP_CREATION_OPTIONS"]/*' />
 public enum _MFP_CREATION_OPTIONS
 {
+    /// <include file='_MFP_CREATION_OPTIONS.xml' path='doc/member[@name="_MFP_CREATION_OPTIONS.MFP_OPTION_NONE"]/*' />
     MFP_OPTION_NONE = 0,
+
+    /// <include file='_MFP_CREATION_OPTIONS.xml' path='doc/member[@name="_MFP_CREATION_OPTIONS.MFP_OPTION_FREE_THREADED_CALLBACK"]/*' />
     MFP_OPTION_FREE_THREADED_CALLBACK = 0x1,
+
+    /// <include file='_MFP_CREATION_OPTIONS.xml' path='doc/member[@name="_MFP_CREATION_OPTIONS.MFP_OPTION_NO_MMCSS"]/*' />
     MFP_OPTION_NO_MMCSS = 0x2,
+
+    /// <include file='_MFP_CREATION_OPTIONS.xml' path='doc/member[@name="_MFP_CREATION_OPTIONS.MFP_OPTION_NO_REMOTE_DESKTOP_OPTIMIZATION"]/*' />
     MFP_OPTION_NO_REMOTE_DESKTOP_OPTIMIZATION = 0x4,
 }

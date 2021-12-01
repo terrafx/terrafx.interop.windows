@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IADesktopP2.UpdateAllDesktopSubscriptions">
+    <summary>
+      <para>Calls the <see cref="UpdateAllDesktopSubscriptions" /> function to update desktop subscriptions.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error code otherwise.</para>
+    </returns>
+  </member>
+  <member name="IADesktopP2">
+    <summary>
+      <para>Provides methods to manage the Windows Desktop.</para>
+    </summary>
+    <remarks>
+      <para>Despite its name, this interface does not inherit from <see cref="IActiveDesktopP" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/lwef/active-desktop-interface">Using the Active Desktop Object</seealso>
+  </member>
+</doc>

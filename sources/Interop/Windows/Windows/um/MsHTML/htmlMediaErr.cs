@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlMediaErr.xml' path='doc/member[@name="htmlMediaErr"]/*' />
 public enum htmlMediaErr
 {
+    /// <include file='htmlMediaErr.xml' path='doc/member[@name="htmlMediaErr.htmlMediaErrAborted"]/*' />
     htmlMediaErrAborted = 0,
+
+    /// <include file='htmlMediaErr.xml' path='doc/member[@name="htmlMediaErr.htmlMediaErrNetwork"]/*' />
     htmlMediaErrNetwork = 1,
+
+    /// <include file='htmlMediaErr.xml' path='doc/member[@name="htmlMediaErr.htmlMediaErrDecode"]/*' />
     htmlMediaErrDecode = 2,
+
+    /// <include file='htmlMediaErr.xml' path='doc/member[@name="htmlMediaErr.htmlMediaErrSrcNotSupported"]/*' />
     htmlMediaErrSrcNotSupported = 3,
+
+    /// <include file='htmlMediaErr.xml' path='doc/member[@name="htmlMediaErr.htmlMediaErr_Max"]/*' />
     htmlMediaErr_Max = 2147483647,
 }

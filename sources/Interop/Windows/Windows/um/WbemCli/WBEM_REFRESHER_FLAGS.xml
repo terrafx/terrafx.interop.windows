@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_REFRESHER_FLAGS">
+    <summary>
+      <para>Contains flags that modify the behavior of refresher methods.</para>
+    </summary>
+    <seealso cref="IWbemConfigureRefresher.Remove" />
+    <seealso cref="IWbemRefresher.Refresh" />
+  </member>
+  <member name="WBEM_REFRESHER_FLAGS.WBEM_FLAG_REFRESH_AUTO_RECONNECT">
+    <summary>
+      <para>If the connection is broken, the refresher attempts to reconnect to the provider automatically.</para>
+    </summary>
+  </member>
+  <member name="WBEM_REFRESHER_FLAGS.WBEM_FLAG_REFRESH_NO_AUTO_RECONNECT">
+    <summary>
+      <para>If the connection is broken, the refresher does not attempt to reconnect to the provider automatically.</para>
+    </summary>
+  </member>
+</doc>

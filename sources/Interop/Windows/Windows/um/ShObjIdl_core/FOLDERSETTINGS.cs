@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FOLDERSETTINGS.xml' path='doc/member[@name="FOLDERSETTINGS"]/*' />
 public partial struct FOLDERSETTINGS
 {
+    /// <include file='FOLDERSETTINGS.xml' path='doc/member[@name="FOLDERSETTINGS.ViewMode"]/*' />
     public uint ViewMode;
 
+    /// <include file='FOLDERSETTINGS.xml' path='doc/member[@name="FOLDERSETTINGS.fFlags"]/*' />
     public uint fFlags;
 }

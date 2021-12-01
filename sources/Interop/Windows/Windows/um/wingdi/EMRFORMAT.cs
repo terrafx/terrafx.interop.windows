@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRFORMAT.xml' path='doc/member[@name="EMRFORMAT"]/*' />
 public partial struct EMRFORMAT
 {
+    /// <include file='EMRFORMAT.xml' path='doc/member[@name="EMRFORMAT.dSignature"]/*' />
     [NativeTypeName("DWORD")]
     public uint dSignature;
 
+    /// <include file='EMRFORMAT.xml' path='doc/member[@name="EMRFORMAT.nVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint nVersion;
 
+    /// <include file='EMRFORMAT.xml' path='doc/member[@name="EMRFORMAT.cbData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbData;
 
+    /// <include file='EMRFORMAT.xml' path='doc/member[@name="EMRFORMAT.offData"]/*' />
     [NativeTypeName("DWORD")]
     public uint offData;
 }

@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_FRU_ID_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_FRU_ID_DESCRIPTOR"]/*' />
 public unsafe partial struct STORAGE_FRU_ID_DESCRIPTOR
 {
+    /// <include file='STORAGE_FRU_ID_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_FRU_ID_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_FRU_ID_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_FRU_ID_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_FRU_ID_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_FRU_ID_DESCRIPTOR.IdentifierSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint IdentifierSize;
 
+    /// <include file='STORAGE_FRU_ID_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_FRU_ID_DESCRIPTOR.Identifier"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Identifier[1];
 }

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_PROXYARP">
+    <summary>
+      <para>The
+<b>MIB_PROXYARP</b> structure stores information for a Proxy Address Resolution Protocol (PARP) entry.</para>
+    </summary>
+    <seealso cref="CreateProxyArpEntry" />
+    <seealso cref="DeleteProxyArpEntry" />
+  </member>
+  <member name="MIB_PROXYARP.dwAddress">
+    <summary>
+      <para>The IPv4 address for which to act as a proxy.</para>
+    </summary>
+  </member>
+  <member name="MIB_PROXYARP.dwMask">
+    <summary>
+      <para>The subnet mask for the IPv4 address specified by the <b>dwAddress</b> member.</para>
+    </summary>
+  </member>
+  <member name="MIB_PROXYARP.dwIfIndex">
+    <summary>
+      <para>The index of the interface on which to act as a proxy for the address specified by the <b>dwAddress</b> member.</para>
+    </summary>
+  </member>
+</doc>

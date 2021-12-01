@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11On12Device2.ReturnUnderlyingResource">
+    <summary>
+      <para>With this method, you can return a Direct3D 11 resource object to Direct3D11On12, and indicate (by way of fences and fence signal values) when the resource will be ready for Direct3D11On12 to consume. You should call <b>ReturnUnderlyingResource</b> once Direct3D 12 work has been scheduled.</para>
+    </summary>
+    <param name="pResource11">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>The Direct3D 11 resource object that you wish to return.</para>
+    </param>
+    <param name="NumSync">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT</a></b></para>
+      <para>The number of elements in the arrays pointed to by <i>pSignalValues</i> and <i>ppFences</i>.</para>
+    </param>
+    <param name="pSignalValues">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT64</a>*</b></para>
+      <para>A pointer to an array of fence signal values.</para>
+    </param>
+    <param name="ppFences">
+      <para>Type: <b><see cref="ID3D12Fence" />**</b></para>
+      <para>A pointer to an array of fence objects.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>When you return a resource, you provide a set of fences and fence signal values whose completion indicates that the resource is back in the <b>D3D12_RESOURCE_STATE_COMMON</b> state, and ready for Direct3D11On12 to consume it.</para>
+      <para>In the parallel arrays <i>pSignalValues</i> and <i>ppFences</i>, include any pending work against the resource. The Direct3D11On12 translation layer defers the waits for these arguments until work is scheduled against the resource.</para>
+    </remarks>
+    <seealso cref="ID3D11On12Device2.UnwrapUnderlyingResource" />
+  </member>
+  <member name="ID3D11On12Device2.UnwrapUnderlyingResource">
+    <summary>
+      <para>Unwraps a Direct3D 11 resource object, and retrieves it as a Direct3D 12 resource object.</para>
+    </summary>
+    <param name="pResource11">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>The Direct3D 11 resource object to unwrap.</para>
+    </param>
+    <param name="pCommandQueue">
+      <para>Type: <b><see cref="ID3D12CommandQueue" />*</b></para>
+      <para>The command queue on which your application plans to use the resource. Any pending work accessing the resource causes fence waits to be scheduled on this queue. You can then queue further work on this queue, including a signal on a caller-owned fence.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <code>ppvResource12</code>.</para>
+    </param>
+    <param name="ppvResource12">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">void</a>**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the Direct3D 12 resource.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>The resource is transitioned to <b>D3D12_RESOURCE_STATE_COMMON</b> (if it wasn't already in that state), and appropriate waits are inserted into the command queue (<i>pCommandQueue</i>).</para>
+      <para>There are some restrictions on what can be unwrapped: no keyed mutex resources, no GDI-compatible resources, and no buffers. However, you can use <b>UnwrapUnderlyingResource</b> to unwrap resources created through the <b><see cref="ID3D11On12Device.CreateWrappedResource" /></b> method, as well as resources created through <see cref="ID3D11Device.CreateTexture2D" />.</para>
+      <para>In general, you must return the object to Direct3D11on12 before using it again in Direct3D 11 (see <see cref="ID3D11On12Device2.ReturnUnderlyingResource" />).</para>
+      <para>You can also use <b>UnwrapUnderlyingResource</b> to unwrap a swapchain buffer. You must also return the resource to Direct3D11on12 before calling <b>Present</b> (or otherwise using the resource).</para>
+      <para>Unwrapping a resource checks out the resource from the Direct3D11On12 translation layer. You may not schedule any translation layer usage (through either version of the API) while the resource is checked out. Check the resource back in (also known as <i>returning</i> the resource) with <see cref="ID3D11On12Device2.ReturnUnderlyingResource" />.</para>
+      <para>
+        <b>UnwrapUnderlyingResource</b> doesn't flush, and it may schedule GPU work. You should flush after calling <b>UnwrapUnderlyingResource</b> if you externally wait for completion.</para>
+    </remarks>
+    <seealso cref="ID3D12Device interface" />
+    <seealso cref="ID3D11On12Device2.ReturnUnderlyingResource" />
+  </member>
+  <member name="ID3D11On12Device2">
+    <summary>
+      <para>Enables you to take resources created through the Direct3D 11 APIs, and use them in Direct3D 12. This interface extends <see cref="ID3D11On12Device1" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-11on12-interfaces">11on12 interfaces</seealso>
+    <seealso cref="ID3D11On12Device1 interface" />
+  </member>
+</doc>

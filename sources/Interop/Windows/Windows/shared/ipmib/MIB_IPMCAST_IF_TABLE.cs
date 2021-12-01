@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPMCAST_IF_TABLE.xml' path='doc/member[@name="MIB_IPMCAST_IF_TABLE"]/*' />
 public partial struct MIB_IPMCAST_IF_TABLE
 {
+    /// <include file='MIB_IPMCAST_IF_TABLE.xml' path='doc/member[@name="MIB_IPMCAST_IF_TABLE.dwNumEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumEntries;
 
+    /// <include file='MIB_IPMCAST_IF_TABLE.xml' path='doc/member[@name="MIB_IPMCAST_IF_TABLE.table"]/*' />
     [NativeTypeName("MIB_IPMCAST_IF_ENTRY [1]")]
     public _table_e__FixedBuffer table;
 
+    /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />
     public partial struct _table_e__FixedBuffer
     {
         public MIB_IPMCAST_IF_ENTRY e0;

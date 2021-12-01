@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_CRL_CONTEXT_PAIR.xml' path='doc/member[@name="CERT_CRL_CONTEXT_PAIR"]/*' />
 public unsafe partial struct CERT_CRL_CONTEXT_PAIR
 {
+    /// <include file='CERT_CRL_CONTEXT_PAIR.xml' path='doc/member[@name="CERT_CRL_CONTEXT_PAIR.pCertContext"]/*' />
     [NativeTypeName("PCCERT_CONTEXT")]
     public CERT_CONTEXT* pCertContext;
 
+    /// <include file='CERT_CRL_CONTEXT_PAIR.xml' path='doc/member[@name="CERT_CRL_CONTEXT_PAIR.pCrlContext"]/*' />
     [NativeTypeName("PCCRL_CONTEXT")]
     public CRL_CONTEXT* pCrlContext;
 }

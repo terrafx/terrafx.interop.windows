@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_END_OF_FILE_INFO">
+    <summary>
+      <para>Contains the specified value to which the end of the file should be set.  Used for file handles. Use only when calling <see cref="SetFileInformationByHandle" />.</para>
+    </summary>
+    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
+    <seealso cref="SetFileInformationByHandle" />
+  </member>
+  <member name="FILE_END_OF_FILE_INFO.EndOfFile">
+    <summary>
+      <para>The specified value for the new end of the file.</para>
+    </summary>
+  </member>
+</doc>

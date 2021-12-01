@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SE_IMPERSONATION_STATE.xml' path='doc/member[@name="SE_IMPERSONATION_STATE"]/*' />
 public unsafe partial struct SE_IMPERSONATION_STATE
 {
+    /// <include file='SE_IMPERSONATION_STATE.xml' path='doc/member[@name="SE_IMPERSONATION_STATE.Token"]/*' />
     [NativeTypeName("PACCESS_TOKEN")]
     public void* Token;
 
+    /// <include file='SE_IMPERSONATION_STATE.xml' path='doc/member[@name="SE_IMPERSONATION_STATE.CopyOnOpen"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte CopyOnOpen;
 
+    /// <include file='SE_IMPERSONATION_STATE.xml' path='doc/member[@name="SE_IMPERSONATION_STATE.EffectiveOnly"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte EffectiveOnly;
 
+    /// <include file='SE_IMPERSONATION_STATE.xml' path='doc/member[@name="SE_IMPERSONATION_STATE.Level"]/*' />
     public SECURITY_IMPERSONATION_LEVEL Level;
 }

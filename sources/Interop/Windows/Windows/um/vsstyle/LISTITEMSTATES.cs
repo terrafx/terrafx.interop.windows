@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LISTITEMSTATES.xml' path='doc/member[@name="LISTITEMSTATES"]/*' />
 public enum LISTITEMSTATES
 {
+    /// <include file='LISTITEMSTATES.xml' path='doc/member[@name="LISTITEMSTATES.LISS_NORMAL"]/*' />
     LISS_NORMAL = 1,
+
+    /// <include file='LISTITEMSTATES.xml' path='doc/member[@name="LISTITEMSTATES.LISS_HOT"]/*' />
     LISS_HOT = 2,
+
+    /// <include file='LISTITEMSTATES.xml' path='doc/member[@name="LISTITEMSTATES.LISS_SELECTED"]/*' />
     LISS_SELECTED = 3,
+
+    /// <include file='LISTITEMSTATES.xml' path='doc/member[@name="LISTITEMSTATES.LISS_DISABLED"]/*' />
     LISS_DISABLED = 4,
+
+    /// <include file='LISTITEMSTATES.xml' path='doc/member[@name="LISTITEMSTATES.LISS_SELECTEDNOTFOCUS"]/*' />
     LISS_SELECTEDNOTFOCUS = 5,
+
+    /// <include file='LISTITEMSTATES.xml' path='doc/member[@name="LISTITEMSTATES.LISS_HOTSELECTED"]/*' />
     LISS_HOTSELECTED = 6,
 }

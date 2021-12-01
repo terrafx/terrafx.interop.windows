@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEngineNeedKeyNotify.NeedKey">
+    <summary>
+      <para>Notifies the application that a key or keys are needed along with any initialization data.</para>
+    </summary>
+    <param name="initData">
+      <para>The initialization data.</para>
+    </param>
+    <param name="cb">
+      <para>The count in bytes of <i>initData</i>.</para>
+    </param>
+    <seealso cref="IMFMediaEngineNeedKeyNotify" />
+  </member>
+  <member name="IMFMediaEngineNeedKeyNotify">
+    <summary>
+      <para>Represents a callback to the media engine to notify key request data.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

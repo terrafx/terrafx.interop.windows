@@ -1,0 +1,1912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirectDrawSurface7.AddAttachedSurface">
+    <summary>
+      <para>Attaches the specified z-buffer surface to this surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Address of the <see cref="IDirectDrawSurface7" /> interface for the surface to be attached.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_CANNOTATTACHSURFACE</description>
+        </item>
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEALREADYATTACHED</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>AddAttachedSurface</b> increments the reference count of the surface being attached. You can explicitly unattach the surface and decrement its reference count by using the <see cref="IDirectDrawSurface7.DeleteAttachedSurface" /> method. Unlike complex surfaces that you create with a single call to <see cref="IDirectDraw7.CreateSurface" />, surfaces attached with this method are not automatically released. The application must release such surfaces.</para>
+      <para>You can attach only z-buffer surfaces with this method.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>AddAttachedSurface</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.AddOverlayDirtyRect">
+    <summary>
+      <para>The <b>IDirectDrawSurface7.AddOverlayDirtyRect</b> method is not currently implemented.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <b>RECT</b> structure for the rectangle to update.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDSURFACETYPE</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>AddOverlayDirtyRect</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.Blt">
+    <summary>
+      <para>Performs a bit block transfer (bitblt). This method does not support z-buffering or alpha blending during bitblt operations.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <b>RECT</b> structure that defines the upper-left and lower-right points of the rectangle to bitblt to on the destination surface. If this parameter is NULL, the entire destination surface is used.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to the <see cref="IDirectDrawSurface7" /> interface for the DirectDrawSurface object that is the source of the bitblt.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>A pointer to a <b>RECT</b> structure that defines the upper-left and lower-right points of the rectangle to bitblt from on the source surface. If this parameter is NULL, the entire source surface is used.</para>
+    </param>
+    <param name="unnamedParam4">
+      <para>A combination of flags that determine the valid members of the associated <see cref="DDBLTFX" /> structure, specify color-key information, or request special behavior from the method. The following flags are defined:</para>
+      <para>
+        <b>Validation flags</b>
+      </para>
+      <list type="bullet">
+        <item>
+          <description>DDBLT_COLORFILL - Uses the <b>dwFillColor</b> member of the <see cref="DDBLTFX" /> structure as the RGB color that fills the destination rectangle on the destination surface.</description>
+        </item>
+        <item>
+          <description>DDBLT_DDFX - Uses the <b>dwDDFX</b> member of the <see cref="DDBLTFX" /> structure to specify the effects to use for this bitblt.</description>
+        </item>
+        <item>
+          <description>DDBLT_DDROPS - Uses the <b>dwDDROP</b> member of the <see cref="DDBLTFX" /> structure to specify the raster operations (ROPS) that are not part of the Win32 API.</description>
+        </item>
+        <item>
+          <description>DDBLT_DEPTHFILL - Uses the <b>dwFillDepth</b> member of the <see cref="DDBLTFX" /> structure as the depth value with which to fill the destination rectangle on the destination z-buffer surface.</description>
+        </item>
+        <item>
+          <description>DDBLT_KEYDESTOVERRIDE - Uses the <b>ddckDestColorkey</b> member of the <see cref="DDBLTFX" /> structure as the color key for the destination surface.</description>
+        </item>
+        <item>
+          <description>DDBLT_KEYSRCOVERRIDE - Uses the <b>ddckSrcColorkey</b> member of the <see cref="DDBLTFX" /> structure as the color key for the source surface.</description>
+        </item>
+        <item>
+          <description>DDBLT_ROP - Uses the <b>dwROP</b> member of the <see cref="DDBLTFX" /> structure for the ROP for this bitblt. These ROPs are the same as those defined in the Win32 API.</description>
+        </item>
+        <item>
+          <description>DDBLT_ROTATIONANGLE - Uses the <b>dwRotationAngle</b> member of the <see cref="DDBLTFX" /> structure as the rotation angle (specified in 1/100s of a degree) for the surface.</description>
+        </item>
+      </list>
+      <para>
+        <b>Color key flags</b>
+      </para>
+      <list type="bullet">
+        <item>
+          <description>DDBLT_KEYDEST - Uses the color key that is associated with the destination surface.</description>
+        </item>
+        <item>
+          <description>DDBLT_KEYSRC - Uses the color key that is associated with the source surface.</description>
+        </item>
+      </list>
+      <para>
+        <b>Behavior flags</b>
+      </para>
+      <list type="bullet">
+        <item>
+          <description>DDBLT_ASYNC - Performs this bitblt asynchronously through the first in, first out (FIFO) hardware in the order received. If no room is available in the FIFO hardware, the call fails.</description>
+        </item>
+        <item>
+          <description>DDBLT_DONOTWAIT - Returns without bitbltting and also returns DDERR_WASSTILLDRAWING if the bitbltter is busy.</description>
+        </item>
+        <item>
+          <description>DDBLT_WAIT - Postpones the DDERR_WASSTILLDRAWING return value if the bitbltter is busy, and returns as soon as the bitblt can be set up or another error occurs.</description>
+        </item>
+      </list>
+      <para>
+        <b>Obsolete and unsupported flags</b>
+      </para>
+      <list type="bullet">
+        <item>
+          <description>All DDBLT_ALPHA flag values - Not currently implemented.</description>
+        </item>
+        <item>
+          <description>All DDBLT_ZBUFFER flag values - This method does not currently support z-aware bitblt operations. None of the flags beginning with "DDBLT_ZBUFFER" are supported.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam5">
+      <para>A pointer to the <see cref="DDBLTFX" /> structure for the bitblt.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDCLIPLIST</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDRECT</description>
+        </item>
+        <item>
+          <description>DDERR_NOALPHAHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOBLTHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOCLIPLIST</description>
+        </item>
+        <item>
+          <description>DDERR_NODDROPSHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOMIRRORHW</description>
+        </item>
+        <item>
+          <description>DDERR_NORASTEROPHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOROTATIONHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOSTRETCHHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOZBUFFERHW</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEBUSY</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>Blt</b> can perform synchronous or asynchronous bitblts (the latter is the default behavior). These bitblts can occur from display memory to display memory, from display memory to system memory, from system memory to display memory, or from system memory to system memory. The bitblts can be performed by using source color keys and destination color keys. Arbitrary stretching or shrinking is performed if the source and destination rectangles are not the same size.</para>
+      <para>Typically, <b>Blt</b> returns immediately with an error if the bitbltter is busy and the bitblt could not be set up. Specify the DDBLT_WAIT flag to request a synchronous bitblt. When you include the DDBLT_WAIT flag, <b>Blt</b> waits until the bitblt can be set up or another error occurs before it returns.</para>
+      <para>RECT structures are defined so that the right and bottom members are exclusive—therefore, right minus left equals the width of the rectangle, not 1 less than the width.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>Blt</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.BltBatch">
+    <summary>
+      <para>The <b>IDirectDrawSurface7.BltBatch</b> method is not currently implemented.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to the first <see cref="DDBLTBATCH" /> structure that defines the parameters for the bitblt operations.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Number of bitblt operations to be performed.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>Currently not used and must be set to 0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDCLIPLIST</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDRECT</description>
+        </item>
+        <item>
+          <description>DDERR_NOALPHAHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOBLTHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOCLIPLIST</description>
+        </item>
+        <item>
+          <description>DDERR_NODDROPSHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOMIRRORHW</description>
+        </item>
+        <item>
+          <description>DDERR_NORASTEROPHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOROTATIONHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOSTRETCHHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOZBUFFERHW</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEBUSY</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>BltBatch</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.BltFast">
+    <summary>
+      <para>Performs a source copy bitblt or transparent bitblt by using a source color key or destination color key.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The x-coordinate to bitblt to on the destination surface.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The y-coordinate to bitblt to on the destination surface.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>A pointer to the <see cref="IDirectDrawSurface7" /> interface for the DirectDrawSurface object that is the source of the bitblt.</para>
+    </param>
+    <param name="unnamedParam4">
+      <para>A pointer to a <b>RECT</b> structure that defines the upper-left and lower-right points of the rectangle to bitblt from on the source surface.</para>
+    </param>
+    <param name="unnamedParam5">
+      <para>Type of transfer. The following transfers are defined:</para>
+      <list type="bullet">
+        <item>
+          <description>DDBLTFAST_DESTCOLORKEY - A transparent bitblt that uses the destination color key.</description>
+        </item>
+        <item>
+          <description>DDBLTFAST_NOCOLORKEY - A normal copy bitblt with no transparency.</description>
+        </item>
+        <item>
+          <description>DDBLTFAST_SRCCOLORKEY - A transparent bitblt that uses the source color key.</description>
+        </item>
+        <item>
+          <description>DDBLTFAST_WAIT - Postpones the DDERR_WASSTILLDRAWING message if the bitbltter is busy, and returns as soon as the bitblt can be set up or another error occurs.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_EXCEPTION</description>
+        </item>
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDRECT</description>
+        </item>
+        <item>
+          <description>DDERR_NOBLTHW</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEBUSY</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>BltFast</b> always attempts an asynchronous blit if it is supported by the hardware.</para>
+      <para>
+        <b>BltFast</b> works only on display memory surfaces and cannot clip when it performs a bitblt operation. If you use this method on a surface with an attached clipper, the call fails, and the method returns DDERR_UNSUPPORTED.</para>
+      <para>The software implementation of <b>IDirectDrawSurface7.BltFast</b> is 10 percent faster than the <see cref="IDirectDrawSurface7.Blt" /> method. However, there is no speed difference between the two if display hardware is used.</para>
+      <para>Typically, <b>IDirectDrawSurface7.BltFast</b> returns immediately with an error if the bitbltter is busy and the bitblt cannot be set up. You can use the DDBLTFAST_WAIT flag, however, if you want this method not to return until either the bitblt can be set up or another error occurs.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>BltFast</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.ChangeUniquenessValue">
+    <summary>
+      <para>Manually updates the uniqueness value for this surface.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_EXCEPTION</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>DirectDraw automatically updates uniqueness values whenever the contents of a surface change.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>ChangeUniquenessValue</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.DeleteAttachedSurface">
+    <summary>
+      <para>Detaches one or more attached surfaces.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Currently not used and must be set to 0.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to the <see cref="IDirectDrawSurface7" /> interface for the DirectDrawSurface object to be detached. If this parameter is NULL, all attached surfaces become detached.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_CANNOTDETACHSURFACE</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACENOTATTACHED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>DeleteAttachedSurface</b> decrements the reference count of the surface to be detached. If the reference count of the surface to be detached reaches 0, the surface is lost and removed from memory.</para>
+      <para>Implicit attachments, those formed by DirectDraw rather than the <see cref="IDirectDrawSurface7.AddAttachedSurface" /> method, cannot be detached. Detaching surfaces from a flipping chain can alter other surfaces in the chain. If a front buffer is detached from a flipping chain, the next surface in the chain becomes the front buffer, and the following surface becomes the back buffer. If a back buffer is detached from a chain, the following surface becomes a back buffer. If a plain surface is detached from a chain, the chain simply becomes shorter. If a flipping chain has only two surfaces and they are detached, the chain is destroyed, and both surfaces return to their previous designations.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>DeleteAttachedSurface</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.EnumAttachedSurfaces">
+    <summary>
+      <para>Enumerates all the surfaces that are attached to this surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Address of the application-defined structure that is passed to the enumeration member every time that it is called.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Address of the <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback7">EnumSurfacesCallback7</a> function to be called for each surface that is attached to this surface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>EnumAttachedSurfaces</b> enumerates only those surfaces that are directly attached to this surface. For example, in a flipping chain of three or more surfaces, only one surface is enumerated because each surface is attached only to the next surface in the flipping chain. In such a configuration, you can call <b>EnumAttachedSurfaces</b> on each successive surface to walk the entire flipping chain.</para>
+      <para>
+        <b>EnumAttachedSurfaces</b> differs from its counterparts in previous interface versions in that it accepts a pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback7">EnumSurfacesCallback7</a> function, rather than an <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback">EnumSurfacesCallback</a> or <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback2">EnumSurfacesCallback2</a> function.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>EnumAttachedSurfaces</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.EnumOverlayZOrders">
+    <summary>
+      <para>Enumerates the overlay surfaces on the specified destination. You can enumerate the overlays in front-to-back or back-to-front order.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A value that can be set to one of the following flags:</para>
+      <list type="bullet">
+        <item>
+          <description>DDENUMOVERLAYZ_BACKTOFRONT - Enumerates overlays back to front.* DDENUMOVERLAYZ_FRONTTOBACK - Enumerates overlays front to back.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam2">
+      <para>Address of the user-defined structure to be passed to the callback function for each overlay surface.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>Address of the <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback7">EnumSurfacesCallback7</a> callback function to be called for each surface to be overlaid on this surface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>EnumOverlayZOrders</b> differs from its counterparts in previous interface versions in that it accepts a pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback7">EnumSurfacesCallback7</a> function, rather than an <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback">EnumSurfacesCallback</a> or <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback2">EnumSurfacesCallback2</a> function.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>EnumOverlayZOrders</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.Flip">
+    <summary>
+      <para>Makes the surface memory that is associated with the DDSCAPS_BACKBUFFER surface become associated with the front-buffer surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to the <see cref="IDirectDrawSurface7" /> interface for an arbitrary surface in the flipping chain. The default for this parameter is NULL, in which case DirectDraw cycles through the buffers in the order that they are attached to each other. If this parameter is not NULL, DirectDraw flips to the specified surface, instead of the next surface in the flipping chain. <b>Flip</b> fails if the specified surface is not a member of the flipping chain.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A combination of flags that specify flip options. The following flags are defined:</para>
+      <list type="bullet">
+        <item>
+          <description>DDFLIP_DONOTWAIT - On <see cref="IDirectDrawSurface7" /> interfaces, the default is DDFLIP_WAIT. If you want to override the default and use time when the accelerator is busy (as denoted by the DDERR_WASSTILLDRAWING return value), use DDFLIP_DONOTWAIT.* DDFLIP_EVEN - For use only when displaying video in an overlay surface. The new surface contains data from the even field of a video signal. This flag cannot be used with the DDFLIP_ODD flag.* DDFLIP_STEREO - DirectDraw flips and displays a main stereo surface. When this flag is set, stereo autoflipping is enabled. The hardware automatically flips between the left and right buffers during each screen refresh</description>
+        </item>
+        <item>
+          <description>DDFLIP_INTERVAL2</description>
+        </item>
+        <item>
+          <description>DDFLIP_INTERVAL3</description>
+        </item>
+        <item>
+          <description>DDFLIP_INTERVAL4 - The DDFLIP_INTERVAL2, DDFLIP_INTERVAL3, and DDFLIP_INTERVAL4 flags indicate how many vertical retraces to wait between each flip. The default is 1. DirectDraw returns DERR_WASSTILLDRAWING for each surface involved in the flip until the specified number of vertical retraces has occurred. If DDFLIP_INTERVAL2 is set, DirectDraw flips on every second vertical sync; if DDFLIP_INTERVAL3, on every third sync; and if DDFLIP_INTERVAL4, on every fourth sync. These flags are effective only if DDCAPS2_FLIPINTERVAL bit is set in the  <b>dwCaps2</b> member of the <see cref="DDCAPS" /> structure that is returned for the display hardware.</description>
+        </item>
+        <item>
+          <description>DDFLIP_NOVSYNC - Causes DirectDraw to perform the physical flip as close as possible to the next scan line. Subsequent operations that involve the two flipped surfaces do not check whether the physical flip has finished—that is, they do not return DDERR_WASSTILLDRAWING for that reason (but might for other reasons). This allows an application to perform flips at a higher frequency than the monitor refresh rate, but might introduce visible artifacts. If DDCAPS2_FLIPNOVSYNC is not set in the <b>dwCaps2</b> member of the <see cref="DDCAPS" /> structure that is returned for the display hardware, DDFLIP_NOVSYNC has no effect.</description>
+        </item>
+        <item>
+          <description>DDFLIP_ODD - For use only when displaying video in an overlay surface. The new surface contains data from the odd field of a video signal. This flag cannot be used with the DDFLIP_EVEN flag.* DDFLIP_WAIT - Typically, if the flip cannot be set up because the state of the display hardware is not appropriate, the DDERR_WASSTILLDRAWING error returns immediately, and no flip occurs. Setting this flag causes <b>Flip</b> to continue trying to flip if it receives the DDERR_WASSTILLDRAWING error from the hardware abstraction layer (HAL). <b>Flip</b> does not return until the flipping operation has been successfully set up or another error, such as DDERR_SURFACEBUSY, is returned.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOFLIPHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOTFLIPPABLE</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEBUSY</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>With <see cref="IDirectDrawSurface7" />, the default behavior of <b>Flip</b> is to wait for the accelerator to finish. Therefore, under default conditions, <b>Flip</b> never returns DDERR_WASSTILLDRAWING. If you want to see the error codes and not wait until the flip operation succeeds, use the DDFLIP_DONOTWAIT flag.</para>
+      <para>
+        <b>Flip</b> can be called only for a surface that has the DDSCAPS_FLIP and DDSCAPS_FRONTBUFFER capabilities. The display memory previously associated with the front buffer is associated with the back buffer.</para>
+      <para>The <i>lpDDSurfaceTargetOverride</i> parameter is used in rare cases in which the back buffer is not the buffer that should become the front buffer. Typically, this parameter is NULL.</para>
+      <para>
+        <b>Flip</b> is always synchronized with the vertical blank. If the surface has been assigned to a video port, this method updates the visible overlay surface and the target surface of the video port.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>Flip</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.FreePrivateData">
+    <summary>
+      <para>Frees the specified private data that is associated with this surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Reference to (C++) or address of (C) the globally unique identifier that identifies the private data to be freed.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOTFOUND</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>DirectDraw calls this method automatically when a surface is released.</para>
+      <para>If the private data was set by using the DDSPD_IUNKNOWNPOINTER flag, <b>FreePrivateData</b> calls the <see cref="IUnknown.Release" /> method on the associated interface.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>FreePrivateData</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetAttachedSurface">
+    <summary>
+      <para>Obtains the attached surface that has the specified capabilities, and increments the reference count of the retrieved interface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550292(v=vs.85)">DDSCAPS2</a> structure that indicates the hardware capabilities of the attached surface.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a variable to receive a pointer to the retrieved surface's <see cref="IDirectDrawSurface7" /> interface. The retrieved surface is the one that matches the description, according to the <i>lpDDSCaps</i> parameter.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOTFOUND</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Attachments are used to connect multiple DirectDrawSurface objects into complex structures, like the complex structures required to support 3-D page flipping with z-buffers. <b>GetAttachedSurface</b> fails if more than one surface is attached that matches the capabilities requested. In this case, the application must use the <see cref="IDirectDrawSurface7.EnumAttachedSurfaces" /> method to obtain the attached surfaces.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetAttachedSurface</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetBltStatus">
+    <summary>
+      <para>Obtains status about a bit block transfer (bitblt) operation.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A value that can be set to one of the following flags.</para>
+      <list type="bullet">
+        <item>
+          <description>DDGBS_CANBLT - Inquires whether a bitblt that involves this surface can occur immediately, and returns DD_OK if the bitblt can be completed.</description>
+        </item>
+        <item>
+          <description>DDGBS_ISBLTDONE - Inquires whether the bitblt is done, and returns DD_OK if the last bitblt on this surface has completed.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, a bitbltter is present, and the return value is DD_OK.</para>
+      <para>If it fails, the method returns DDERR_WASSTILLDRAWING if the bitbltter is busy, DDERR_NOBLTHW if there is no bitbltter, or one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOBLTHW</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEBUSY</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetBltStatus</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetCaps">
+    <summary>
+      <para>Retrieves the capabilities of this surface. These capabilities are not necessarily related to the capabilities of the display device.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550292(v=vs.85)">DDSCAPS2</a> structure that receives the hardware capabilities of this surface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>IDirectDrawSurface7.GetCaps</b> method differs from its counterpart in the <b>IDirectDrawSurface3</b> interface in that it accepts a pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550292(v=vs.85)">DDSCAPS2</a> structure, rather than the legacy <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550286(v=vs.85)">DDSCAPS</a> structure.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetCaps</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetClipper">
+    <summary>
+      <para>Retrieves the DirectDrawClipper object that is associated with this surface, and increments the reference count of the returned clipper.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable to receive a pointer to the clipper's <see cref="IDirectDrawClipper" /> interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOCLIPPERATTACHED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetClipper</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetColorKey">
+    <summary>
+      <para>Retrieves the color key value for this surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A value that can be set to one of the following flags to specify the color key to retrieve:</para>
+      <list type="bullet">
+        <item>
+          <description>DDCKEY_DESTBLT - A color key or color space to be used as a destination color key for bit block transfer (bitblt) operations.* DDCKEY_DESTOVERLAY - A color key or color space to be used as a destination color key for overlay operations.* DDCKEY_SRCBLT - A color key or color space to be used as a source color key for bitblt operations.* DDCKEY_SRCOVERLAY - A color key or color space to be used as a source color key for overlay operations.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a <see cref="DDCOLORKEY" /> structure that receives the current values for the specified color key of the DirectDrawSurface object.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOCOLORKEY</description>
+        </item>
+        <item>
+          <description>DDERR_NOCOLORKEYHW</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetColorKey</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetDC">
+    <summary>
+      <para>Creates a GDI-compatible handle of a device context for this surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives the handle of the device context for this surface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_DCALREADYCREATED</description>
+        </item>
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDSURFACETYPE</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>GetDC</b> uses an internal version of the <see cref="IDirectDrawSurface7.Lock" /> method to lock the surface. The surface remains locked until the <see cref="IDirectDrawSurface7.ReleaseDC" /> method is called.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetDC</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetDDInterface">
+    <summary>
+      <para>Retrieves an interface to the DirectDraw object that was used to create this surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives a valid interface pointer if the call succeeds. Cast this pointer to an <see cref="IUnknown" /> interface pointer; then query for the <see cref="IDirectDraw7" /> interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetDDInterface</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetFlipStatus">
+    <summary>
+      <para>Retrieves status about whether this surface has finished its flipping process.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A value that can be set to one of the following flags:</para>
+      <list type="bullet">
+        <item>
+          <description>DDGFS_CANFLIP - Inquires whether this surface can be flipped immediately, and returns DD_OK if the flip can be completed.</description>
+        </item>
+        <item>
+          <description>DDGFS_ISFLIPDONE - Inquires whether the flip has finished, and returns DD_OK if the last flip on this surface has completed.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return DDERR_WASSTILLDRAWING if the surface has not finished its flipping process, or one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDSURFACETYPE</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEBUSY</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetFlipStatus</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetLOD">
+    <summary>
+      <para>Retrieves the maximum level of detail (LOD) currently set for a managed mipmap surface. This method succeeds only on managed textures.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives the maximum LOD value if the call succeeds.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Applications can call this method only for managed textures (those surfaces that were created with the DDSCAPS2_TEXTUREMANAGE flag). If you call <b>GetLOD</b> on a nonmanaged texture, <b>GetLOD</b> fails and returns DDERR_INVALIDOBJECT.</para>
+      <para>
+        <b>GetLOD</b> communicates to the Direct3D texture manager the most detailed mipmap in this chain that it should load into local video memory. For example, in a five-level mipmap chain, a value of 2 in the variable at <i>lpdwMaxLOD</i> indicates that the texture manager loads only mipmap levels 2 through 4 into local video memory at any given time. Likewise, if the most detailed mipmap in the chain has the dimensions 256×256, a value of 2 in <i>lpdwMaxLOD</i> means that the largest mipmap ever present in video memory has dimensions 64×64.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetLOD</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetOverlayPosition">
+    <summary>
+      <para>Retrieves the display coordinates of this surface. This method is used on a visible, active overlay surface (that is, a surface that has the DDSCAPS_OVERLAY flag set).</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives the x- display coordinate of this surface if the call succeeds.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a variable that receives the y-display coordinate of this surface if the call succeeds.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPOSITION</description>
+        </item>
+        <item>
+          <description>DDERR_NOOVERLAYDEST</description>
+        </item>
+        <item>
+          <description>DDERR_NOTAOVERLAYSURFACE</description>
+        </item>
+        <item>
+          <description>DDERR_OVERLAYNOTVISIBLE</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetOverlayPosition</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetPalette">
+    <summary>
+      <para>Retrieves the DirectDrawPalette object that is associated with this surface, and increments the reference count of the returned palette.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable to receive a pointer to the palette object's <see cref="IDirectDrawPalette" /> interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOEXCLUSIVEMODE</description>
+        </item>
+        <item>
+          <description>DDERR_NOPALETTEATTACHED</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetPalette</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetPixelFormat">
+    <summary>
+      <para>Retrieves the color and pixel format of this surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <see cref="DDPIXELFORMAT" /> structure that receives a detailed description of the current pixel and color space format of this surface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDSURFACETYPE</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetPixelFormat</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetPriority">
+    <summary>
+      <para>Retrieves the texture-management priority for this texture. This method succeeds only on managed textures.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives the texture priority if the call succeeds.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the return value is an error. The method returns DDERR_INVALIDOBJECT if the parameter is invalid or if the texture is not managed by Direct3D.</para>
+    </returns>
+    <remarks>
+      <para>Priorities are used to determine when managed textures are to be removed from memory. A texture assigned a low priority is removed before a texture with a high priority. If two textures have the same priority, the texture that was used more recently is kept in memory; the other texture is removed.</para>
+      <para>Applications can set and retrieve priorities only for managed textures (those surfaces that were created with the DDSCAPS2_TEXTUREMANAGE flag). If you call <b>GetPriority</b> on a nonmanaged texture, <b>GetPriority</b> fails and returns DDERR_INVALIDOBJECT.</para>
+      <para>
+        <b>GetPriority</b> was introduced with the <see cref="IDirectDrawSurface7" /> interface.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetPriority</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetPrivateData">
+    <summary>
+      <para>Copies the private data that is associated with this surface to a provided buffer.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Reference to (C++) or address of (C) the globally unique identifier that identifies the private data to be retrieved.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a previously allocated buffer that receives the requested private data if the call succeeds. The application that calls this method must allocate and release this buffer.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>A pointer to a variable that contains the size value of the buffer at <i>lpBuffer</i>, in bytes. If this value is less than the actual size of the private data (such as 0), <b>GetPrivateData</b> sets the variable to the required buffer size, and then returns DDERR_MOREDATA.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_EXPIRED</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_MOREDATA</description>
+        </item>
+        <item>
+          <description>DDERR_NOTFOUND</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetPrivateData</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetSurfaceDesc">
+    <summary>
+      <para>Retrieves a description of this surface in its current condition.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550340(v=vs.85)">DDSURFACEDESC2</a> structure that receives the current description of this surface. You need only initialize this structure's <b>dwSize</b> member to the size, in bytes, of the structure prior to the call; no other preparation is required.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetSurfaceDesc</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.GetUniquenessValue">
+    <summary>
+      <para>Retrieves the current uniqueness value for this surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives the surface's current uniqueness value if the call succeeds.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The only defined uniqueness value is 0, which indicates that the surface is likely to be changing beyond the control of DirectDraw. Other uniqueness values are significant only if they differ from a previously cached uniqueness value. If the current value is different from a cached value, the contents of the surface have changed.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetUniquenessValue</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.Initialize">
+    <summary>
+      <para>Initializes a DirectDrawSurface object.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to the DirectDraw object to associate with the DirectDrawSurface object.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550340(v=vs.85)">DDSURFACEDESC2</a> structure that describes how to initialize this surface.</para>
+    </param>
+    <returns>
+      <para>This method returns DDERR_ALREADYINITIALIZED.</para>
+      <para>This method is provided for compliance with the Component Object Model (COM). Because the DirectDrawSurface object is initialized when it is created, this method always returns DDERR_ALREADYINITIALIZED.</para>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>Initialize</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.IsLost">
+    <summary>
+      <para>Determines whether the surface memory that is associated with a DirectDrawSurface object has been freed.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK because the memory has not been freed.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+      </list>
+      <para>You can use this method to determine when you need to reallocate surface memory. When a DirectDrawSurface object loses its surface memory, most methods return DDERR_SURFACELOST and perform no other action.</para>
+    </returns>
+    <remarks>
+      <para>Surfaces can lose their memory when the mode of the graphics adapter is changed or when an application receives exclusive access to the graphics adapter and frees all surface memory that is currently allocated on the graphics adapter.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>IsLost</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.Lock">
+    <summary>
+      <para>Obtains a pointer to the surface memory.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <b>RECT</b> structure that identifies the region of the surface that is being locked. If this parameter is NULL, the entire surface is locked.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550340(v=vs.85)">DDSURFACEDESC2</a> structure that describes relevant details about the surface and that receives information about the surface.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>A combination of flags that determine how to lock the surface. The following flags are defined:</para>
+      <list type="bullet">
+        <item>
+          <description>DDLOCK_DONOTWAIT - On <see cref="IDirectDrawSurface7" /> interfaces, the default is DDLOCK_WAIT. If you want to override the default and use time when the accelerator is busy (as denoted by the DDERR_WASSTILLDRAWING return value), use DDLOCK_DONOTWAIT.* DDLOCK_EVENT - Not currently implemented.* DDLOCK_NOOVERWRITE - New for DirectX 7.0. Used only with Direct3D vertex-buffer locks. Indicates that no vertices that were referred to in a draw operation since the start of the frame (or the last lock without this flag) are modified during the lock. This can be useful when you want only to append data to the vertex buffer.* DDLOCK_NOSYSLOCK - Do not take the Win16Mutex (also known as Win16Lock). This flag is ignored when locking the primary surface.* DDLOCK_DISCARDCONTENTS - New for DirectX 7.0. Used only with Direct3D vertex-buffer locks. Indicates that no assumptions are made about the contents of the vertex buffer during this lock. This enables Direct3D or the driver to provide an alternative memory area as the vertex buffer. This is useful when you plan to clear the contents of the vertex buffer and fill in new data.* DDLOCK_OKTOSWAP - This flag is obsolete and was replaced by the DDLOCK_DISCARDCONTENTS flag.* DDLOCK_READONLY - Indicates that the surface being locked can only be read.* DDLOCK_SURFACEMEMORYPTR - Indicates that a valid memory pointer to the top of the specified rectangle should be returned. If no rectangle is specified, a pointer to the top of the surface is returned. This is the default.* DDLOCK_WAIT - If a lock cannot be obtained because a bit block transfer (bitblt) operation is in progress, <b>Lock</b> retries until a lock is obtained or another error occurs, such as DDERR_SURFACEBUSY.* DDLOCK_WRITEONLY - Indicates that the surface being locked is write-enabled.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam4">
+      <para>Handle of the event. This parameter is not currently used and must be set to NULL.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEBUSY</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In <see cref="IDirectDrawSurface7" />, the default behavior of <b>Lock</b> is to wait for the accelerator to finish. Therefore, under default conditions, <b>Lock</b> never returns DDERR_WASSTILLDRAWING. If you want to see the error codes and not wait until the bitblt operation succeeds, use the DDLOCK_DONOTWAIT flag.</para>
+      <para>After retrieving a surface memory pointer, you can access the surface memory until a corresponding <see cref="IDirectDrawSurface7.Unlock" /> method is called. When the surface is unlocked, the pointer to the surface memory is invalid.</para>
+      <para>Do not call DirectDraw bitblt functions to bitblt from a locked region of a surface. If you do, the bitblt returns either DDERR_SURFACEBUSY or DDERR_LOCKEDSURFACES. GDI blit functions also silently fail when used on a locked video memory surface.</para>
+      <para>Unless you include the DDLOCK_NOSYSLOCK flag, <b>Lock</b> causes DirectDraw to hold the Win16Mutex (also known as Win16Lock) until you call the <see cref="IDirectDrawSurface7.Unlock" /> method. GUI debuggers cannot operate while the Win16Mutex is held.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>Lock</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.PageLock">
+    <summary>
+      <para>Prevents a system-memory surface from being paged out while a bit block transfer (bitblt) operation that uses direct memory access (DMA) transfers to or from system memory is in progress.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Currently not used and must be set to 0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_CANTPAGELOCK</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must call <b>PageLock</b> to make use of DMA support. If you do not, the bitblt occurs by using software emulation.</para>
+      <para>The performance of the operating system can be negatively affected if too much memory is locked.</para>
+      <para>A lock count is maintained for each surface and is incremented each time that <b>PageLock</b> is called for that surface. The count is decremented when <see cref="IDirectDrawSurface7.PageUnlock" /> is called. When the count reaches 0, the memory is unlocked, and can then be paged by the operating system.</para>
+      <para>
+        <b>PageLock</b> works only on system-memory surfaces; it does not page-lock a display-memory surface or an emulated primary surface. If an application calls <b>PageLock</b> on a display memory surface, the method does nothing except return DD_OK.</para>
+      <para>
+        <b>IDirectDrawSurface7.PageLock</b> was not implemented in the <b>IDirectDraw</b> interface version.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>PageLock</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.PageUnlock">
+    <summary>
+      <para>Unlocks a system-memory surface, which then allows it to be paged out.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Currently not used and must be set to 0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_CANTPAGEUNLOCK</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOTPAGELOCKED</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A lock count is maintained for each surface and is incremented each time that <see cref="IDirectDrawSurface7.PageLock" /> is called for that surface. The count is decremented when <b>PageUnlock</b> is called. When the count reaches 0, the memory is unlocked, and can then be paged by the operating system.</para>
+      <para>
+        <b>PageUnlock</b> works only on system-memory surfaces; it does not page-unlock a display-memory surface or an emulated primary surface. If an application calls <b>PageUnlock</b> on a display memory surface, the method does nothing except return DD_OK.</para>
+      <para>
+        <b>IDirectDrawSurface7.PageUnlock</b> was not implemented in the <b>IDirectDraw</b> interface version.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>PageUnlock</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.ReleaseDC">
+    <summary>
+      <para>Releases the handle of a device context that was previously obtained by using the <see cref="IDirectDrawSurface7.GetDC" /> method.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The handle of a device context that was previously obtained by <see cref="IDirectDrawSurface7.GetDC" />.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>ReleaseDC</b> also unlocks the surface that was previously locked when the <see cref="IDirectDrawSurface7.GetDC" /> method was called.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>ReleaseDC</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.Restore">
+    <summary>
+      <para>Restores a surface that has been lost. This occurs when the surface memory that is associated with the DirectDrawSurface object has been freed.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_IMPLICITLYCREATED</description>
+        </item>
+        <item>
+          <description>DDERR_INCOMPATIBLEPRIMARY</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOEXCLUSIVEMODE</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_WRONGMODE</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>Restore</b> restores the memory that was allocated for a surface, but does not reload any bitmaps that might have existed in the surface before it was lost.</para>
+      <para>Surfaces can be lost because the mode of the graphics adapter was changed or because an application received exclusive access to the graphics adapter and freed all surface memory currently allocated on the adapter. When a DirectDrawSurface object loses its surface memory, many methods return DDERR_SURFACELOST and perform no other function. The <b>IDirectDrawSurface7.Restore</b> method reallocates surface memory and reattaches it to the DirectDrawSurface object.</para>
+      <para>A single call to <b>Restore</b> restores a DirectDrawSurface object's associated implicit surfaces (back buffers, and so on). An attempt to restore an implicitly created surface results in an error. <b>Restore</b> does not work across explicit attachments that were created by using the <see cref="IDirectDrawSurface7.AddAttachedSurface" /> method—each of these surfaces must be restored individually.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>Restore</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.SetClipper">
+    <summary>
+      <para>Attaches a clipper object to, or deletes one from, this surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to the <see cref="IDirectDrawClipper" /> interface for the DirectDrawClipper object to be attached to the DirectDrawSurface object. If you set this parameter to NULL, the current DirectDrawClipper object is detached.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDSURFACETYPE</description>
+        </item>
+        <item>
+          <description>DDERR_NOCLIPPERATTACHED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When you set a clipper to a surface for the first time, <b>SetClipper</b> increments the clipper's reference count; subsequent calls do not affect the clipper's reference count. If you pass NULL as the <i>lpDDClipper</i> parameter, the clipper is removed from the surface, and the clipper's reference count is decremented. If you do not delete the clipper, the surface automatically releases its reference to the clipper when the surface itself is released. According to COM rules, your application must release any references that it holds to the clipper when the object is no longer needed.</para>
+      <para>
+        <b>SetClipper</b> is primarily used by surfaces that are being overlaid on or bitbltted to the primary surface. However, it can be used on any surface. After a DirectDrawClipper object has been attached and a clip list is associated with it, the DirectDrawClipper object is used for the <see cref="IDirectDrawSurface7.Blt" />, <see cref="IDirectDrawSurface7.BltBatch" />, and <see cref="IDirectDrawSurface7.UpdateOverlay" /> operations that involve the parent DirectDrawSurface object. <b>SetClipper</b> can also detach the current DirectDrawClipper object of a DirectDrawSurface object.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetClipper</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.SetColorKey">
+    <summary>
+      <para>Sets the color key value for the DirectDrawSurface object if the hardware supports color keys on a per-surface basis.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A value that can be set to one of the following flags to specify the requested color key:</para>
+      <list type="bullet">
+        <item>
+          <description>DDCKEY_COLORSPACE - The structure contains a color space. Not set if the structure contains a single color key.* DDCKEY_DESTBLT - A color key or color space to be used as a destination color key for bit block transfer (bitblt) operations.* DDCKEY_DESTOVERLAY - A color key or color space to be used as a destination color key for overlay operations.* DDCKEY_SRCBLT - A color key or color space to be used as a source color key for bitblt operations.* DDCKEY_SRCOVERLAY - A color key or color space to be used as a source color key for overlay operations.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a <see cref="DDCOLORKEY" /> structure that contains the new color key values for the DirectDrawSurface object. This value can be NULL to remove a previously set color key.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDSURFACETYPE</description>
+        </item>
+        <item>
+          <description>DDERR_NOOVERLAYHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOTAOVERLAYSURFACE</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For transparent bitblt operations and overlays, set destination color on the destination surface and source color on the source surface.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetColorKey</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.SetLOD">
+    <summary>
+      <para>Sets the maximum level of detail (LOD) for a managed mipmap surface. This method succeeds only on managed textures.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The maximum LOD value to be set for the mipmap chain if the call succeeds.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Applications can call this method only for managed textures (those surfaces that were created with the DDSCAPS2_TEXTUREMANAGE flag). If you call <b>SetLOD</b> on a nonmanaged texture, <b>SetLOD</b> fails and returns DDERR_INVALIDOBJECT.</para>
+      <para>
+        <b>SetLOD</b> communicates to the Direct3D texture manager the most detailed mipmap in this chain that it should load into local video memory. For example, in a five-level mipmap chain, if you set <i>dwMaxLOD</i> to 2, the texture manager should load only mipmap levels 2 through 4 into local video memory at any given time. Likewise, if the most detailed mipmap in the chain has the dimensions 256×256, setting the maximum level to 2 means that the largest mipmap ever present in video memory has dimensions 64×64.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetLOD</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.SetOverlayPosition">
+    <summary>
+      <para>Changes the display coordinates of an overlay surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The new x- display coordinate of this surface.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The new y-display coordinate of this surface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPOSITION</description>
+        </item>
+        <item>
+          <description>DDERR_NOOVERLAYDEST</description>
+        </item>
+        <item>
+          <description>DDERR_NOTAOVERLAYSURFACE</description>
+        </item>
+        <item>
+          <description>DDERR_OVERLAYNOTVISIBLE</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetOverlayPosition</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.SetPalette">
+    <summary>
+      <para>Attaches a palette object to (or detaches one from) a surface. The surface uses this palette for all subsequent operations. The palette change takes place immediately, without regard to refresh timing.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to the <see cref="IDirectDrawPalette" /> interface for the palette object to be used with this surface. If NULL, the current palette is detached.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPIXELFORMAT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDSURFACETYPE</description>
+        </item>
+        <item>
+          <description>DDERR_NOEXCLUSIVEMODE</description>
+        </item>
+        <item>
+          <description>DDERR_NOPALETTEATTACHED</description>
+        </item>
+        <item>
+          <description>DDERR_NOPALETTEHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOT8BITCOLOR</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When you call <b>SetPalette</b> to  set a palette to a surface for the first time, <b>SetPalette</b> increments the palette's reference count; subsequent calls to <b>SetPalette</b> do not affect the palette's reference count. If you pass NULL as the <i>lpDDPalette</i> parameter, the palette is removed from the surface, and the palette's reference count is decremented. If you do not delete the palette, the surface automatically releases its reference to the palette when the surface itself is released. According to COM rules, your application must release any references that it holds to the palette when the object is no longer needed.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetPalette</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.SetPriority">
+    <summary>
+      <para>Assigns the texture-management priority for this texture. This method succeeds only on managed textures.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A value that specifies the new texture-management priority for the texture.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the return value is an error. The method returns DDERR_INVALIDOBJECT if the parameter is invalid or if the texture is not managed by Direct3D.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>SetPriority</b> was introduced with the <see cref="IDirectDrawSurface7" /> interface.</para>
+      <para>Priorities are used to determine when managed textures are to be removed from memory. A texture assigned a low priority is removed before a texture with a high priority. If two textures have the same priority, the texture that was used more recently is kept in memory; the other texture is removed.</para>
+      <para>Applications can set and retrieve priorities only for managed textures (those surfaces that were created with the DDSCAPS2_TEXTUREMANAGE flag). If you call <b>SetPriority</b> on a nonmanaged texture, <b>SetPriority</b> fails and returns DDERR_INVALIDOBJECT.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetPriority</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.SetPrivateData">
+    <summary>
+      <para>Associates data with the surface that is intended for use by the application, not by DirectDraw. Data is passed by value, and multiple sets of data can be associated with a single surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Reference to (C++) or address of (C) the globally unique identifier that identifies the private data to be set.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a buffer that contains the data to be associated with the surface.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The size value of the buffer at <i>lpData</i>, in bytes.</para>
+    </param>
+    <param name="unnamedParam4">
+      <para>A value that can be set to one of the following flags. These flags describe the type of data being passed or request that the data be invalidated when the surface changes.</para>
+      <list type="bullet">
+        <item>
+          <description>(none) - If no flags are specified, DirectDraw allocates memory to hold the data within the buffer and copies the data into the new buffer. The buffer allocated by DirectDraw is automatically freed, as appropriate.</description>
+        </item>
+        <item>
+          <description>DDSPD_IUNKNOWNPOINTER - The data at <i>lpData</i> is a pointer to an <see cref="IUnknown" /> interface. DirectDraw automatically calls the <see cref="IUnknown.AddRef" /> method of this interface. When this data is no longer needed, DirectDraw automatically calls the <see cref="IUnknown.Release" /> method of this interface.* DDSPD_VOLATILE - The buffer at <i>lpData</i> is only valid while the surface remains unchanged. If the surface's contents change, subsequent calls to the <see cref="IDirectDrawSurface7.GetPrivateData" /> method return DDERR_EXPIRED.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>DirectDraw does not manage the memory at <i>lpData</i>. If this buffer was dynamically allocated, the caller must free the memory.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetPrivateData</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.SetSurfaceDesc">
+    <summary>
+      <para>Sets the characteristics of an existing surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550340(v=vs.85)">DDSURFACEDESC2</a> structure that contains the new surface characteristics.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Currently not used and must be set to 0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEBUSY</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDSURFACETYPE</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPIXELFORMAT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDCAPS</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Currently, you can use <b>SetSurfaceDesc</b> only to set the surface data and pixel format that is used by an explicit system-memory surface. This is useful because it allows a surface to use data from a previously allocated buffer without copying. The new surface memory is allocated by the client application, and therefore the client application must also deallocate it.</para>
+      <para>The DirectDrawSurface object does not deallocate surface memory that it did not allocate. Therefore, when the surface memory is no longer needed, you must deallocate it. However, when you call <b>SetSurfaceDesc</b>, DirectDraw frees the original surface memory that it implicitly allocated when it created the surface.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetSurfaceDesc</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.Unlock">
+    <summary>
+      <para>Notifies DirectDraw that the direct surface manipulations are complete.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <b>RECT</b> structure that was used to lock the surface in the corresponding call to the <see cref="IDirectDrawSurface7.Lock" /> method. This parameter can be NULL only if the entire surface was locked by passing NULL in the <i>lpDestRect</i> parameter of the corresponding call to the <b>IDirectDrawSurface7.Lock</b> method.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDRECT</description>
+        </item>
+        <item>
+          <description>DDERR_NOTLOCKED</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Because you can call <see cref="IDirectDrawSurface7.Lock" /> multiple times for the same surface with different destination rectangles, the pointer in <i>lpRect</i> links the calls to the <b>IDirectDrawSurface7.Lock</b> and <b>IDirectDrawSurface7.Unlock</b> methods.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>Unlock</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.UpdateOverlay">
+    <summary>
+      <para>Repositions or modifies the visual attributes of an overlay surface. These surfaces must have the DDSCAPS_OVERLAY flag set.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <b>RECT</b> structure that defines the x, y, width, and height of the region on the source surface being used as the overlay. This parameter can be NULL to hide an overlay or to indicate that the entire overlay surface is to be used and that the overlay surface conforms to any boundary and size-alignment restrictions imposed by the device driver.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to the <see cref="IDirectDrawSurface7" /> interface for the DirectDrawSurface object that is being overlaid.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>A pointer to a <b>RECT</b> structure that defines the width, x, and height, y, of the region on the destination surface that the overlay should be moved to. This parameter can be NULL to hide the overlay.</para>
+    </param>
+    <param name="unnamedParam4">
+      <para>A combination of the following flags that determine the overlay update:</para>
+      <list type="bullet">
+        <item>
+          <description>DDOVER_ADDDIRTYRECT - Adds a dirty rectangle to an emulated overlay surface.* DDOVER_ALPHADEST - Obsolete.* DDOVER_ALPHADESTCONSTOVERRIDE - Uses the <b>dwAlphaDestConst</b> member of the <see cref="DDOVERLAYFX" /> structure as the destination alpha channel for this overlay.* DDOVER_ALPHADESTNEG - Indicates that the destination surface becomes more transparent as the alpha value increases (0 is opaque).* DDOVER_ALPHADESTSURFACEOVERRIDE - Uses the <b>lpDDSAlphaDest</b> member of the <see cref="DDOVERLAYFX" /> structure as the alpha channel destination for this overlay.* DDOVER_ALPHAEDGEBLEND - Uses the <b>dwAlphaEdgeBlend</b> member of the <see cref="DDOVERLAYFX" /> structure as the alpha channel for the edges of the image that border the color key colors.* DDOVER_ALPHASRC - Uses either the alpha information in pixel format or the alpha channel surface attached to the source surface as the source alpha channel for this overlay.* DDOVER_ALPHASRCCONSTOVERRIDE - Uses the <b>dwAlphaSrcConst</b> member of the <see cref="DDOVERLAYFX" /> structure as the source alpha channel for this overlay.* DDOVER_ALPHASRCNEG - Indicates that the source surface becomes more transparent as the alpha value increases (0 is opaque).</description>
+        </item>
+        <item>
+          <description>DDOVER_ALPHASRCSURFACEOVERRIDE - Uses the <b>lpDDSAlphaSrc</b> member of the <see cref="DDOVERLAYFX" /> structure as the alpha channel source for this overlay.* DDOVER_ARGBSCALEFACTORS - New for DirectX 7.0. Indicates that the <see cref="DDOVERLAYFX" /> structure contains valid ARGB scaling factors.* DDOVER_AUTOFLIP - Automatically flips to the next surface in the flipping chain each time that a video port VSYNC occurs.* DDOVER_BOB - Displays each field of the interlaced video stream individually without causing any artifacts to display.* DDOVER_BOBHARDWARE - Bob operations are performed by using hardware, rather than by using software or being emulated. This flag must be used with the DDOVER_BOB flag.* DDOVER_DDFX - Uses the overlay FX flags in the <i>lpDDOverlayFx</i> parameter to define special overlay effects.* DDOVER_DEGRADEARGBSCALING - New for DirectX 7.0. ARGB scaling factors can be degraded to fit driver capabilities.* DDOVER_HIDE - Turns off this overlay.* DDOVER_INTERLEAVED - The surface memory is composed of interleaved fields.* DDOVER_KEYDEST - Uses the color key associated with the destination surface.* DDOVER_KEYDESTOVERRIDE - Uses the <b>dckDestColorkey</b> member of the <see cref="DDOVERLAYFX" /> structure as the color key for the destination surface.* DDOVER_KEYSRC - Uses the color key associated with the source surface.* DDOVER_KEYSRCOVERRIDE - Uses the <b>dckSrcColorkey</b> member of the <see cref="DDOVERLAYFX" /> structure as the color key for the source surface.* DDOVER_OVERRIDEBOBWEAVE - Bob and weave decisions should not be overridden by other interfaces.* DDOVER_REFRESHALL - Redraws the entire surface on an emulated overlayed surface.* DDOVER_REFRESHDIRTYRECTS - Redraws all dirty rectangles on an emulated overlayed surface.* DDOVER_SHOW - Turns on this overlay.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam5">
+      <para>A pointer to the <see cref="DDOVERLAYFX" /> structure that describes the effects to be used. Can be NULL if the DDOVER_DDFX flag is not specified.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_DEVICEDOESNTOWNSURFACE</description>
+        </item>
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_HEIGHTALIGN</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDRECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDSURFACETYPE</description>
+        </item>
+        <item>
+          <description>DDERR_NOSTRETCHHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOTAOVERLAYSURFACE</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFCAPS</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_XALIGN</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>UpdateOverlay</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.UpdateOverlayDisplay">
+    <summary>
+      <para>The <b>IDirectDrawSurface7.UpdateOverlayDisplay</b> method is not currently implemented.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The method is not currently implemented.</para>
+    </param>
+    <returns>
+      <para>The method is not currently implemented.</para>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>UpdateOverlayDisplay</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+  <member name="IDirectDrawSurface7.UpdateOverlayZOrder">
+    <summary>
+      <para>Sets the z-order of an overlay.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>One of the following flags that determines the z-order of the overlay:</para>
+      <list type="bullet">
+        <item>
+          <description>DDOVERZ_INSERTINBACKOF - Inserts this overlay in the overlay chain behind the reference overlay.* DDOVERZ_INSERTINFRONTOF - Inserts this overlay in the overlay chain in front of the reference overlay.* DDOVERZ_MOVEBACKWARD - Moves this overlay one position backward in the overlay chain.* DDOVERZ_MOVEFORWARD - Moves this overlay one position forward in the overlay chain.* DDOVERZ_SENDTOBACK - Moves this overlay to the back of the overlay chain.* DDOVERZ_SENDTOFRONT - Moves this overlay to the front of the overlay chain.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to the <see cref="IDirectDrawSurface7" /> interface for the DirectDraw surface to be used as a relative position in the overlay chain. This parameter is needed only for the DDOVERZ_INSERTINBACKOF and DDOVERZ_INSERTINFRONTOF flags.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOTAOVERLAYSURFACE</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>UpdateOverlayZOrder</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawSurface7" />
+  </member>
+</doc>

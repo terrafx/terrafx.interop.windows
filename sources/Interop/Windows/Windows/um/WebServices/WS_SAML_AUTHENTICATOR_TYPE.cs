@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SAML_AUTHENTICATOR_TYPE.xml' path='doc/member[@name="WS_SAML_AUTHENTICATOR_TYPE"]/*' />
 public enum WS_SAML_AUTHENTICATOR_TYPE
 {
+    /// <include file='WS_SAML_AUTHENTICATOR_TYPE.xml' path='doc/member[@name="WS_SAML_AUTHENTICATOR_TYPE.WS_CERT_SIGNED_SAML_AUTHENTICATOR_TYPE"]/*' />
     WS_CERT_SIGNED_SAML_AUTHENTICATOR_TYPE = 1,
 }

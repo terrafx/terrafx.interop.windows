@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaEngineTransferSource.xml' path='doc/member[@name="IMFMediaEngineTransferSource"]/*' />
 [Guid("24230452-FE54-40CC-94F3-FCC394C340D6")]
 [NativeTypeName("struct IMFMediaEngineTransferSource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaEngineTransferSource : IMFMediaEngineTransf
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaEngineTransferSource : IMFMediaEngineTransf
         return ((delegate* unmanaged<IMFMediaEngineTransferSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaEngineTransferSource : IMFMediaEngineTransf
         return ((delegate* unmanaged<IMFMediaEngineTransferSource*, uint>)(lpVtbl[1]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaEngineTransferSource : IMFMediaEngineTransf
         return ((delegate* unmanaged<IMFMediaEngineTransferSource*, uint>)(lpVtbl[2]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngineTransferSource.xml' path='doc/member[@name="IMFMediaEngineTransferSource.TransferSourceToMediaEngine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT TransferSourceToMediaEngine(IMFMediaEngine* destination)

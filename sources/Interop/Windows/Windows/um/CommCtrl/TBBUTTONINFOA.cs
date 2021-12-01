@@ -5,29 +5,40 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA"]/*' />
 public unsafe partial struct TBBUTTONINFOA
 {
+    /// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA.idCommand"]/*' />
     public int idCommand;
 
+    /// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA.iImage"]/*' />
     public int iImage;
 
+    /// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA.fsState"]/*' />
     public byte fsState;
 
+    /// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA.fsStyle"]/*' />
     public byte fsStyle;
 
+    /// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA.cx"]/*' />
     [NativeTypeName("WORD")]
     public ushort cx;
 
+    /// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA.lParam"]/*' />
     [NativeTypeName("DWORD_PTR")]
     public nuint lParam;
 
+    /// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA.pszText"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszText;
 
+    /// <include file='TBBUTTONINFOA.xml' path='doc/member[@name="TBBUTTONINFOA.cchText"]/*' />
     public int cchText;
 }

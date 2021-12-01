@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='tagMENUBANDHANDLERCID.xml' path='doc/member[@name="tagMENUBANDHANDLERCID"]/*' />
 public enum tagMENUBANDHANDLERCID
 {
+    /// <include file='tagMENUBANDHANDLERCID.xml' path='doc/member[@name="tagMENUBANDHANDLERCID.MBHANDCID_PIDLSELECT"]/*' />
     MBHANDCID_PIDLSELECT = 0,
 }

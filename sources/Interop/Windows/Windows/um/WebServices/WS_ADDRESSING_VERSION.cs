@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ADDRESSING_VERSION.xml' path='doc/member[@name="WS_ADDRESSING_VERSION"]/*' />
 public enum WS_ADDRESSING_VERSION
 {
+    /// <include file='WS_ADDRESSING_VERSION.xml' path='doc/member[@name="WS_ADDRESSING_VERSION.WS_ADDRESSING_VERSION_0_9"]/*' />
     WS_ADDRESSING_VERSION_0_9 = 1,
+
+    /// <include file='WS_ADDRESSING_VERSION.xml' path='doc/member[@name="WS_ADDRESSING_VERSION.WS_ADDRESSING_VERSION_1_0"]/*' />
     WS_ADDRESSING_VERSION_1_0 = 2,
+
+    /// <include file='WS_ADDRESSING_VERSION.xml' path='doc/member[@name="WS_ADDRESSING_VERSION.WS_ADDRESSING_VERSION_TRANSPORT"]/*' />
     WS_ADDRESSING_VERSION_TRANSPORT = 3,
 }

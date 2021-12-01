@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFNetSchemeHandlerConfig.xml' path='doc/member[@name="IMFNetSchemeHandlerConfig"]/*' />
 [Guid("7BE19E73-C9BF-468A-AC5A-A5E8653BEC87")]
 [NativeTypeName("struct IMFNetSchemeHandlerConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConf
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConf
         return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConf
         return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint>)(lpVtbl[1]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConf
         return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint>)(lpVtbl[2]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFNetSchemeHandlerConfig.xml' path='doc/member[@name="IMFNetSchemeHandlerConfig.GetNumberOfSupportedProtocols"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetNumberOfSupportedProtocols([NativeTypeName("ULONG *")] uint* pcProtocols)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConf
         return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint*, int>)(lpVtbl[3]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this), pcProtocols);
     }
 
+    /// <include file='IMFNetSchemeHandlerConfig.xml' path='doc/member[@name="IMFNetSchemeHandlerConfig.GetSupportedProtocolType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSupportedProtocolType([NativeTypeName("ULONG")] uint nProtocolIndex, MFNETSOURCE_PROTOCOL_TYPE* pnProtocolType)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConf
         return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint, MFNETSOURCE_PROTOCOL_TYPE*, int>)(lpVtbl[4]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this), nProtocolIndex, pnProtocolType);
     }
 
+    /// <include file='IMFNetSchemeHandlerConfig.xml' path='doc/member[@name="IMFNetSchemeHandlerConfig.ResetProtocolRolloverSettings"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ResetProtocolRolloverSettings()

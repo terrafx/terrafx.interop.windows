@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WSL_DISTRIBUTION_FLAGS">
+    <summary>
+      <para>The <b>WSL_DISTRIBUTION_FLAGS</b> enumeration specifies the behavior of a distribution in the Windows Subsystem for Linux (WSL).</para>
+    </summary>
+  </member>
+  <member name="WSL_DISTRIBUTION_FLAGS.WSL_DISTRIBUTION_FLAGS_NONE">
+    <summary>
+      <para>No flags are being supplied.</para>
+    </summary>
+  </member>
+  <member name="WSL_DISTRIBUTION_FLAGS.WSL_DISTRIBUTION_FLAGS_ENABLE_INTEROP">
+    <summary>
+      <para>Allow the distribution to interoperate with Windows processes (for example, the user can invoke "cmd.exe" or "notepad.exe" from within a WSL session).</para>
+    </summary>
+  </member>
+  <member name="WSL_DISTRIBUTION_FLAGS.WSL_DISTRIBUTION_FLAGS_APPEND_NT_PATH">
+    <summary>
+      <para>Add the Windows %PATH% environment variable values to WSL sessions.</para>
+    </summary>
+  </member>
+  <member name="WSL_DISTRIBUTION_FLAGS.WSL_DISTRIBUTION_FLAGS_ENABLE_DRIVE_MOUNTING">
+    <summary>
+      <para>Automatically mount Windows drives inside of WSL sessions (for example, "C:" will be available under "/mnt/c").</para>
+    </summary>
+  </member>
+</doc>

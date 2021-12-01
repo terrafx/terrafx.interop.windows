@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementBehaviorSiteRender.xml' path='doc/member[@name="IElementBehaviorSiteRender"]/*' />
 [Guid("3050F4A7-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementBehaviorSiteRender : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementBehaviorSiteRender : IElementBehaviorSiteRe
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementBehaviorSiteRender : IElementBehaviorSiteRe
         return ((delegate* unmanaged<IElementBehaviorSiteRender*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementBehaviorSiteRender : IElementBehaviorSiteRe
         return ((delegate* unmanaged<IElementBehaviorSiteRender*, uint>)(lpVtbl[1]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementBehaviorSiteRender : IElementBehaviorSiteRe
         return ((delegate* unmanaged<IElementBehaviorSiteRender*, uint>)(lpVtbl[2]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorSiteRender.xml' path='doc/member[@name="IElementBehaviorSiteRender.Invalidate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Invalidate(RECT* pRect)
@@ -46,6 +51,7 @@ public unsafe partial struct IElementBehaviorSiteRender : IElementBehaviorSiteRe
         return ((delegate* unmanaged<IElementBehaviorSiteRender*, RECT*, int>)(lpVtbl[3]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this), pRect);
     }
 
+    /// <include file='IElementBehaviorSiteRender.xml' path='doc/member[@name="IElementBehaviorSiteRender.InvalidateRenderInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InvalidateRenderInfo()
@@ -53,6 +59,7 @@ public unsafe partial struct IElementBehaviorSiteRender : IElementBehaviorSiteRe
         return ((delegate* unmanaged<IElementBehaviorSiteRender*, int>)(lpVtbl[4]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorSiteRender.xml' path='doc/member[@name="IElementBehaviorSiteRender.InvalidateStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT InvalidateStyle()

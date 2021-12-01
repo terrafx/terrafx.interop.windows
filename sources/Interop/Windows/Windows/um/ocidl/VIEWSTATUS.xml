@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VIEWSTATUS">
+    <summary>
+      <para>Specifies the opacity of the object and the drawing aspects supported by the object.</para>
+    </summary>
+    <seealso cref="IViewObjectEx.GetViewStatus" />
+  </member>
+  <member name="VIEWSTATUS.VIEWSTATUS_OPAQUE">
+    <summary>
+      <para>The object is completely opaque. So, for any aspect, it promises to draw the entire rectangle passed to the <see cref="IViewObject.Draw" /> method. If this value is not set, the object contains transparent parts. If it also support DVASPECT_TRANSPARENT, then this aspect may be used to draw the transparent parts only.</para>
+      <para>This bit applies only to CONTENT related aspects and not to DVASPECT_ICON or DVASPECT_DOCPRINT.</para>
+    </summary>
+  </member>
+  <member name="VIEWSTATUS.VIEWSTATUS_SOLIDBKGND">
+    <summary>
+      <para>The object has a solid background (consisting in a solid color, not a brush pattern). This bit is meaningful only if VIEWSTATUS_OPAQUE is set.</para>
+      <para>This bit applies only to CONTENT related aspects and not to DVASPECT_ICON or DVASPECT_DOCPRINT.</para>
+    </summary>
+  </member>
+  <member name="VIEWSTATUS.VIEWSTATUS_DVASPECTOPAQUE">
+    <summary>
+      <para>The object supports DVASPECT_OPAQUE. All <see cref="IViewObjectEx" /> methods taking a drawing aspect as a parameter can be called with this aspect.</para>
+    </summary>
+  </member>
+  <member name="VIEWSTATUS.VIEWSTATUS_DVASPECTTRANSPARENT">
+    <summary>
+      <para>The object supports DVASPECT_TRANSPARENT. All <see cref="IViewObjectEx" /> methods taking a drawing aspect as a parameter can be called with this aspect.</para>
+    </summary>
+  </member>
+  <member name="VIEWSTATUS.VIEWSTATUS_SURFACE">
+    <summary>
+      <para>The object supports a 2-dimensional surface.</para>
+    </summary>
+  </member>
+  <member name="VIEWSTATUS.VIEWSTATUS_3DSURFACE">
+    <summary>
+      <para>The object supports a 3-dimensional surface.</para>
+    </summary>
+  </member>
+</doc>

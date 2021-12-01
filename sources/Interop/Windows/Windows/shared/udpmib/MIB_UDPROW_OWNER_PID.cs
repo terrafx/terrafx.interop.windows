@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_UDPROW_OWNER_PID.xml' path='doc/member[@name="MIB_UDPROW_OWNER_PID"]/*' />
 public partial struct MIB_UDPROW_OWNER_PID
 {
+    /// <include file='MIB_UDPROW_OWNER_PID.xml' path='doc/member[@name="MIB_UDPROW_OWNER_PID.dwLocalAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalAddr;
 
+    /// <include file='MIB_UDPROW_OWNER_PID.xml' path='doc/member[@name="MIB_UDPROW_OWNER_PID.dwLocalPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalPort;
 
+    /// <include file='MIB_UDPROW_OWNER_PID.xml' path='doc/member[@name="MIB_UDPROW_OWNER_PID.dwOwningPid"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOwningPid;
 }

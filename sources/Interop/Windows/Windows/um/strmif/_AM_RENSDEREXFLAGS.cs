@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_AM_RENSDEREXFLAGS.xml' path='doc/member[@name="_AM_RENSDEREXFLAGS"]/*' />
 public enum _AM_RENSDEREXFLAGS
 {
+    /// <include file='_AM_RENSDEREXFLAGS.xml' path='doc/member[@name="_AM_RENSDEREXFLAGS.AM_RENDEREX_RENDERTOEXISTINGRENDERERS"]/*' />
     AM_RENDEREX_RENDERTOEXISTINGRENDERERS = 0x1,
 }

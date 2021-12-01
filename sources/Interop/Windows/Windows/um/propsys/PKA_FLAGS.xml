@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PKA_FLAGS">
+    <summary>
+      <para>Describes property change array behavior.</para>
+    </summary>
+  </member>
+  <member name="PKA_FLAGS.PKA_SET">
+    <summary>
+      <para>Replace current value.</para>
+    </summary>
+  </member>
+  <member name="PKA_FLAGS.PKA_APPEND">
+    <summary>
+      <para>Append to current value - multi-value properties only.</para>
+    </summary>
+  </member>
+  <member name="PKA_FLAGS.PKA_DELETE">
+    <summary>
+      <para>Delete from current value - multi-value properties only.</para>
+    </summary>
+  </member>
+</doc>

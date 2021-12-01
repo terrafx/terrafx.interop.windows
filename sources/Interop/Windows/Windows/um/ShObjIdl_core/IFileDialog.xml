@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileDialog.AddPlace">
+    <summary>
+      <para>Adds a folder to the list of places available for the user to open or save items.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> that represents the folder to be made available to the user. This can only be a folder.</para>
+    </param>
+    <param name="fdap">
+      <para>Type: <b><see cref="FDAP" /></b></para>
+      <para>Specifies where the folder is placed within the list. See <see cref="FDAP" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <see cref="SHSetTemporaryPropertyForItem" /> can be used to set a temporary <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-itemnamedisplay">PKEY_ItemNameDisplay</a> property on the item represented by the <i>psi</i> parameter. The value for this property will be used in place of the item's UI name.</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.Advise">
+    <summary>
+      <para>Assigns an event handler that listens for events coming from the dialog.</para>
+    </summary>
+    <param name="pfde">
+      <para>Type: <b><see cref="IFileDialogEvents" />*</b></para>
+      <para>A pointer to an <see cref="IFileDialogEvents" /> implementation that will receive events from the dialog.</para>
+    </param>
+    <param name="pdwCookie">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to a <b>DWORD</b> that receives a value identifying this event handler. When the client is finished with the dialog, that client must call the <see cref="IFileDialog.Unadvise" /> method with this value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileDialog.ClearClientData">
+    <summary>
+      <para>Instructs the dialog to clear all persisted state information.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Persisted information can be associated with an application or a GUID. If a GUID was set by using <see cref="IFileDialog.SetClientGuid" />, that GUID is used to clear persisted information.</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.Close">
+    <summary>
+      <para>Closes the dialog.</para>
+    </summary>
+    <param name="hr">
+      <para>Type: <b>HRESULT</b></para>
+      <para>The code that will be returned by <see cref="Show" /> to indicate that the dialog was closed before a selection was made.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>An application can call this method from a callback method or function while the dialog is open. The dialog will close and the <see cref="Show" /> method will return with the <b>HRESULT</b> specified in <i>hr</i>.</para>
+      <para>If this method is called, there is no result available for the <see cref="IFileDialog.GetResult" /> or <see cref="GetResults" /> methods, and they will fail if called.</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.GetCurrentSelection">
+    <summary>
+      <para>Gets the user's current selection in the dialog.</para>
+    </summary>
+    <param name="ppsi">
+      <para>Type: <b><see cref="IShellItem" />**</b></para>
+      <para>The address of a pointer to the interface that represents the item currently selected in the dialog. This item can be a file or folder selected in the view window, or something that the user has entered into the dialog's edit box. The latter case may require a parsing operation (cancelable by the user) that blocks the current thread.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The calling application is responsible for releasing the retrieved <see cref="IShellItem" /> when it is no longer needed.</para>
+    </remarks>
+    <seealso cref="IFileDialog" />
+    <seealso cref="IFileDialog.GetResult" />
+  </member>
+  <member name="IFileDialog.GetFileName">
+    <summary>
+      <para>Retrieves the text currently entered in the dialog's <b>File name</b> edit box.</para>
+    </summary>
+    <param name="pszName">
+      <para>Type: <b>WCHAR**</b></para>
+      <para>The address of a pointer to a buffer that, when this method returns successfully, receives the text.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The text in the <b>File name</b> edit box does not necessarily reflect the item the user chose.  To get the item the user chose, use <see cref="IFileDialog.GetResult" />.</para>
+      <para>The calling application is responsible for releasing the retrieved buffer by using the <see cref="CoTaskMemFree" /> function.</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.GetFileTypeIndex">
+    <summary>
+      <para>Gets the currently selected file type.</para>
+    </summary>
+    <param name="piFileType">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to a <b>UINT</b> value that receives the index of the selected file type in the file type array passed to <see cref="IFileDialog.SetFileTypes" /> in its <i>cFileTypes</i> parameter.</para>
+      <para>
+        <b>Note</b>  This is a one-based index rather than zero-based.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IFileDialog.GetFileTypeIndex</b> can be called either while the dialog is open or after it has closed.</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.GetFolder">
+    <summary>
+      <para>Gets either the folder currently selected in the dialog, or, if the dialog is not currently displayed, the folder that is to be selected when the dialog is opened.</para>
+    </summary>
+    <param name="ppsi">
+      <para>Type: <b><see cref="IShellItem" />**</b></para>
+      <para>The address of a pointer to the interface that represents the folder.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The calling application is responsible for releasing the retrieved <see cref="IShellItem" /> when it is no longer needed.</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.GetOptions">
+    <summary>
+      <para>Gets the current flags that are set to control dialog behavior.</para>
+    </summary>
+    <param name="pfos">
+      <para>Type: <b>FILEOPENDIALOGOPTIONS*</b></para>
+      <para>When this method returns successfully, points to a value made up of one or more of the <see cref="FILEOPENDIALOGOPTIONS" /> values.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileDialog.GetResult">
+    <summary>
+      <para>Gets the choice that the user made in the dialog.</para>
+    </summary>
+    <param name="ppsi">
+      <para>Type: <b><see cref="IShellItem" />**</b></para>
+      <para>The address of a pointer to an <see cref="IShellItem" /> that represents the user's choice.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IFileDialog.GetResult</b> can be called after the dialog has closed or during the handling of an <see cref="OnFileOk" /> event. Calling this method at any other time will fail. If multiple items were chosen, this method will fail. In the case of multiple items, call <see cref="GetResults" /></para>
+      <para>
+        <see cref="Show" /> must return a success code for a result to be available to <b>IFileDialog.GetResult</b>.</para>
+    </remarks>
+    <seealso cref="IFileDialog" />
+    <seealso cref="IFileDialog.GetCurrentSelection" />
+  </member>
+  <member name="IFileDialog.SetClientGuid">
+    <summary>
+      <para>Enables a calling application to associate a GUID with a dialog's persisted state.</para>
+    </summary>
+    <param name="guid">
+      <para>Type: <b>REFGUID</b></para>
+      <para>The GUID to associate with this dialog state.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A dialog's state can include factors such as the last visited folder and the position and size of the dialog.</para>
+      <para>Typically, this state is persisted based on the name of the executable file. By specifying a GUID, an application can have different persisted states for different versions of the dialog within the same application (for example, an import dialog and an open dialog).</para>
+      <para>
+        <b>IFileDialog.SetClientGuid</b> should be called immediately after creation of the dialog object.</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.SetDefaultExtension">
+    <summary>
+      <para>Sets the default extension to be added to file names.</para>
+    </summary>
+    <param name="pszDefaultExtension">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer that contains the extension text. This string should not include a leading period. For example, "jpg" is correct, while ".jpg" is not.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If this method is called before showing the dialog, the dialog will update the default extension automatically when the user chooses a new file type (see <see cref="SetFileTypes" />).</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.SetDefaultFolder">
+    <summary>
+      <para>Sets the folder used as a default if there is not a recently used folder value available.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the interface that represents the folder.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileDialog.SetFileName">
+    <summary>
+      <para>Sets the file name that appears in the <b>File name</b> edit box when that dialog box is opened.</para>
+    </summary>
+    <param name="pszName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to the name of the file.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileDialog.SetFileNameLabel">
+    <summary>
+      <para>Sets the text of the label next to the file name edit box.</para>
+    </summary>
+    <param name="pszLabel">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer that contains the label text.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileDialog.SetFileTypeIndex">
+    <summary>
+      <para>Sets the file type that appears as selected in the dialog.</para>
+    </summary>
+    <param name="iFileType">
+      <para>Type: <b>UINT</b></para>
+      <para>The index of the file type in the file type array passed to <see cref="IFileDialog.SetFileTypes" /> in its <i>cFileTypes</i> parameter. Note that this is a one-based index, not zero-based.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method must be called before the dialog is showing.</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.SetFileTypes">
+    <summary>
+      <para>Sets the file types that the dialog can open or save.</para>
+    </summary>
+    <param name="cFileTypes">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of elements in the array specified by <i>rgFilterSpec</i>.</para>
+    </param>
+    <param name="rgFilterSpec">
+      <para>Type: <b>const <see cref="COMDLG_FILTERSPEC" />*</b></para>
+      <para>A pointer to an array of <see cref="COMDLG_FILTERSPEC" /> structures, each representing a file type.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="SetFileTypes" /> has already been called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The <b>FOS_PICKFOLDERS</b> flag was set in the <see cref="IFileDialog.SetOptions" /> method.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>rgFilterSpec</i> parameter is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When using the <b>Open</b> dialog, the file types declared there are used to filter the view. When using the <b>Save</b> dialog, these values determine which file name extension is appended to the file name.</para>
+      <para>This method must be called before the dialog is shown and can only be called once for each dialog instance. File types cannot be modified once the Common Item dialog box is displayed.</para>
+      <h4>Examples</h4>
+      <para>The following code example demonstrates the use of the array of <see cref="COMDLG_FILTERSPEC" /> structures in the context of this method. The example array consists of three <b>COMDLG_FILTERSPEC</b> structures. The first declares two patterns for the dialog filter, the second declares a single pattern, and the last shows files of all types. The variables szJPG, szBMP, and szAll are assumed to be previously declared strings that provide a friendly name for each filter.</para>
+      <code>COMDLG_FILTERSPEC rgSpec[] =
+{
+    { szJPG, L"*.jpg;*.jpeg" },
+    { szBMP, L"*.bmp" },
+    { szAll, L"*.*" },
+};
+</code>
+    </remarks>
+  </member>
+  <member name="IFileDialog.SetFolder">
+    <summary>
+      <para>Sets a folder that is always selected when the dialog is opened, regardless of previous user action.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the interface that represents the folder.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This folder overrides any "most recently used" folder. If this method is called while the dialog is displayed, it causes the dialog to navigate to the specified folder.</para>
+      <para>In general, we do not recommended the use of this method. If you call <b>SetFolder</b> before you display the dialog box, the most recent location that the user saved to or opened from is not shown. Unless there is a very specific reason for this behavior, it is not a good or expected user experience and should therefore be avoided. In almost all instances, <see cref="IFileDialog.SetDefaultFolder" /> is the better method.</para>
+      <para>As of Windows 7, if the path of the folder specified through <i>psi</i> is the default path of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776911(v=vs.85)">known folder</a>, the known folder's current path is used in the dialog. That path might not be the same as the path specified in <i>psi</i>; for instance, if the known folder has been redirected. If the known folder is a library (virtual folders Documents, Music, Pictures, and Videos), the library's path is used in the dialog. If the specified library is hidden (as they are by default as of Windows 8.1), the library's default save location is used in the dialog, such as the Microsoft OneDrive Documents folder for the Documents library. Because of these mappings, the folder location used in the dialog might not be exactly as you specified when you called this method.</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.SetOkButtonLabel">
+    <summary>
+      <para>Sets the text of the <b>Open</b> or <b>Save</b> button.</para>
+    </summary>
+    <param name="pszText">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer that contains the button text.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileDialog.SetOptions">
+    <summary>
+      <para>Sets flags to control the behavior of the dialog.</para>
+    </summary>
+    <param name="fos">
+      <para>Type: <b>FILEOPENDIALOGOPTIONS</b></para>
+      <para>One or more of the <see cref="FILEOPENDIALOGOPTIONS" /> values.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Generally, this method should take the value that was retrieved by <see cref="IFileDialog.GetOptions" /> and modify it to include or exclude options by setting the appropriate flags.</para>
+    </remarks>
+  </member>
+  <member name="IFileDialog.SetTitle">
+    <summary>
+      <para>Sets the title of the dialog.</para>
+    </summary>
+    <param name="pszTitle">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer that contains the title text.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileDialog.Unadvise">
+    <summary>
+      <para>Removes an event handler that was attached through the <see cref="IFileDialog.Advise" /> method.</para>
+    </summary>
+    <param name="dwCookie">
+      <para>Type: <b>DWORD</b></para>
+      <para>The <b>DWORD</b> value that represents the event handler. This value is obtained through the <i>pdwCookie</i> parameter of the <see cref="IFileDialog.Advise" /> method.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileDialog">
+    <summary>
+      <para>Exposes methods that initialize, show, and get results from the common file dialog.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <b>IFileDialog</b> is implemented by the common file open dialog (CLSID_FileOpenDialog) and
+file save dialog (CLSID_FileSaveDialog).
+</remarks>
+    <seealso cref="IFileOpenDialog" />
+    <seealso cref="IFileSaveDialog" />
+    <seealso cref="IModalWindow" />
+  </member>
+</doc>

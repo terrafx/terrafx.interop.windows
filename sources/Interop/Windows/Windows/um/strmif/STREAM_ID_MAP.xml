@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STREAM_ID_MAP">
+    <summary>
+      <para>The <code>STREAM_ID_MAP</code> structure describes an elementary stream within an MPEG-2 program stream. Used with the <see cref="IEnumStreamIdMap" /> interface methods.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="STREAM_ID_MAP.stream_id">
+    <summary>
+      <para>Specifies the ID of the PES stream.</para>
+    </summary>
+  </member>
+  <member name="STREAM_ID_MAP.dwMediaSampleContent">
+    <summary>
+      <para>Specifies the media contents of the stream. May be one of the following values defined in axextend.idl:</para>
+      <h4>MPEG2_PROGRAM_STREAM_MAP (0x00000000)</h4>
+      <h4>MPEG2_PROGRAM_ELEMENTARY_STREAM (0x00000001)</h4>
+      <h4>MPEG2_PROGRAM_DIRECTORY_PES_PACKET (0x00000002)</h4>
+      <h4>MPEG2_PROGRAM_PACK_HEADER (0x00000003)</h4>
+      <h4>MPEG2_PROGRAM_PES_STREAM (0x00000004)</h4>
+      <h4>MPEG2_PROGRAM_SYSTEM_HEADER (0x00000005)</h4>
+    </summary>
+  </member>
+  <member name="STREAM_ID_MAP.ulSubstreamFilterValue">
+    <summary>
+      <para>Specifies the substream within the elementary stream. If no substream filtering is required, use SUBSTREAM_FILTER_VAL_NONE (0x10000000).</para>
+    </summary>
+  </member>
+  <member name="STREAM_ID_MAP.iDataOffset">
+    <summary>
+      <para>Specifies the offset in bytes for the substream. If no filtering is required, specify 0.</para>
+    </summary>
+  </member>
+</doc>

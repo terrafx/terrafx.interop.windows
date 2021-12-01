@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_RETRIEVE_AUX_INFO">
+    <summary>
+      <para>The <b>CRYPT_RETRIEVE_AUX_INFO</b> structure contains optional information to pass to the <see cref="CryptRetrieveObjectByUrl" /> function. All unused members of this structure must contain zero.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of the structure.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.pLastSyncTime">
+    <summary>
+      <para>A <see cref="FILETIME" /> structure that contains the time of the last synchronization of the data retrieved.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.dwMaxUrlRetrievalByteCount">
+    <summary>
+      <para>A value that specifies a limit to the number of bytes retrieved. A value of zero or less specifies no limit.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.pPreFetchInfo">
+    <summary>
+      <para>A pointer to a <see cref="CRYPTNET_URL_CACHE_PRE_FETCH_INFO" /> structure. To get prefetch information, set its <b>cbSize</b> upon input. For no prefetch information, except for <b>cbSize</b>, the data structure contains zero upon return.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.pFlushInfo">
+    <summary>
+      <para>A pointer to a <see cref="CRYPTNET_URL_CACHE_FLUSH_INFO" /> structure. To get flush information, set its <b>cbSize</b> upon input. For no flush information, except for <b>cbSize</b>, the data structure
+contains zero upon return.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.ppResponseInfo">
+    <summary>
+      <para>A pointer to a <see cref="PCRYPTNET_URL_CACHE_RESPONSE_INFO" /> structure. To get response information, set the pointer to the address of a <b>CRYPTNET_URL_CACHE_RESPONSE_INFO</b> pointer updated with the allocated structure. For no response information, <b>ppResponseInfo</b> is set to <b>NULL</b>. If it is not <b>NULL</b>, it must be freed by using the <see cref="CryptMemFree" /> function.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.pwszCacheFileNamePrefix">
+    <summary>
+      <para>A pointer to a string that contains a prefix for a cached file name. If not <b>NULL</b>, the specified prefix string is concatenated to the front of the cached file name.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.pftCacheResync">
+    <summary>
+      <para>A pointer to a <see cref="FILETIME" /> structure that specifies a cache synchronization time. If not <b>NULL</b>, any information cached before this time is considered time invalid. For a <b>CRYPT_CACHE_ONLY_RETRIEVAL</b>, if there is a cached entry before this time, <see cref="CryptRetrieveObjectByUrl" /> returns <b>ERROR_INVALID_TIME</b>. When used with an HTTP retrieval, this specifies the maximum age for a time-valid object.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.fProxyCacheRetrieval">
+    <summary>
+      <para>A value that indicates whether <see cref="CryptRetrieveObjectByUrl" /> was called with <b>CRYPT_PROXY_CACHE_RETRIEVAL</b> set in <i>dwRetrievalFlags</i> and a proxy cache was not explicitly bypassed for the retrieval. This flag is not explicitly cleared and only applies to HTTP URL retrievals.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.dwHttpStatusCode">
+    <summary>
+      <para>A value that specifies a status code from an unsuccessful HTTP response header. If <b>CRYPT_NOT_MODIFIED_RETRIEVAL</b> was set in <i>dwRetrievalFlags</i>, and the HTTP retrieval returns <b>HTTP_STATUS_NOT_MODIFIED</b>, this contains the <b>HTTP_STATUS_NOT_MODIFIED</b> status code. This value is not explicitly cleared and is only updated for HTTP or HTTPS URL retrievals.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.ppwszErrorResponseHeaders">
+    <summary></summary>
+  </member>
+  <member name="CRYPT_RETRIEVE_AUX_INFO.ppErrorContentBlob">
+    <summary></summary>
+  </member>
+</doc>

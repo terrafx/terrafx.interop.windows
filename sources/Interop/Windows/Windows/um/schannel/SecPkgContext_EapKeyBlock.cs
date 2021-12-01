@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_EapKeyBlock.xml' path='doc/member[@name="SecPkgContext_EapKeyBlock"]/*' />
 public unsafe partial struct SecPkgContext_EapKeyBlock
 {
+    /// <include file='SecPkgContext_EapKeyBlock.xml' path='doc/member[@name="SecPkgContext_EapKeyBlock.rgbKeys"]/*' />
     [NativeTypeName("BYTE [128]")]
     public fixed byte rgbKeys[128];
 
+    /// <include file='SecPkgContext_EapKeyBlock.xml' path='doc/member[@name="SecPkgContext_EapKeyBlock.rgbIVs"]/*' />
     [NativeTypeName("BYTE [64]")]
     public fixed byte rgbIVs[64];
 }

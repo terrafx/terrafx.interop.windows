@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGPreserveAspectRatio.xml' path='doc/member[@name="SVGPreserveAspectRatio"]/*' />
 [Guid("305105D0-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGPreserveAspectRatio
 {

@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT"]/*' />
 public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
 {
+    /// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT.Anonymous"]/*' />
     [NativeTypeName("_TXFS_READ_BACKUP_INFORMATION_OUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:13536:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferLength"]/*' />
     public ref uint BufferLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23,6 +26,7 @@ public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />
     public Span<byte> Buffer
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -32,13 +36,16 @@ public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferLength"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint BufferLength;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE [1]")]
         public fixed byte Buffer[1];

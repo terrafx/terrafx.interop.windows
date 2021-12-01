@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPLICATION_VIEW_ORIENTATION.xml' path='doc/member[@name="APPLICATION_VIEW_ORIENTATION"]/*' />
 public enum APPLICATION_VIEW_ORIENTATION
 {
+    /// <include file='APPLICATION_VIEW_ORIENTATION.xml' path='doc/member[@name="APPLICATION_VIEW_ORIENTATION.AVO_LANDSCAPE"]/*' />
     AVO_LANDSCAPE = 0,
+
+    /// <include file='APPLICATION_VIEW_ORIENTATION.xml' path='doc/member[@name="APPLICATION_VIEW_ORIENTATION.AVO_PORTRAIT"]/*' />
     AVO_PORTRAIT = (AVO_LANDSCAPE + 1),
 }

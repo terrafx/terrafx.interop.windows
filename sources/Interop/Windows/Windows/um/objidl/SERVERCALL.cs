@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SERVERCALL.xml' path='doc/member[@name="SERVERCALL"]/*' />
 public enum SERVERCALL
 {
+    /// <include file='SERVERCALL.xml' path='doc/member[@name="SERVERCALL.SERVERCALL_ISHANDLED"]/*' />
     SERVERCALL_ISHANDLED = 0,
+
+    /// <include file='SERVERCALL.xml' path='doc/member[@name="SERVERCALL.SERVERCALL_REJECTED"]/*' />
     SERVERCALL_REJECTED = 1,
+
+    /// <include file='SERVERCALL.xml' path='doc/member[@name="SERVERCALL.SERVERCALL_RETRYLATER"]/*' />
     SERVERCALL_RETRYLATER = 2,
 }

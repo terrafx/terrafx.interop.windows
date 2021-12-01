@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_DVDCOPYSTATE">
+    <summary>
+      <para>Specifies the copy protection state.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="AM_DVDCOPY_SET_COPY_STATE" /> structure uses this data type.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
+  </member>
+  <member name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_INITIALIZE">
+    <summary>
+      <para>Starting a full key-exchange algorithm.</para>
+    </summary>
+  </member>
+  <member name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_INITIALIZE_TITLE">
+    <summary>
+      <para>Starting a title key-exchange algorithm.</para>
+    </summary>
+  </member>
+  <member name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_AUTHENTICATION_NOT_REQUIRED">
+    <summary>
+      <para>Authentication is not required.</para>
+    </summary>
+  </member>
+  <member name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_AUTHENTICATION_REQUIRED">
+    <summary>
+      <para>Authentication required.</para>
+    </summary>
+  </member>
+  <member name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_DONE">
+    <summary>
+      <para>Key exchange negotiation is complete.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TEXTURE2D_DESC1">
+    <summary>
+      <para>Describes a 2D texture.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used in a call to <see cref="ID3D11Device3.CreateTexture2D1" />.</para>
+      <para>In addition to this structure, you can also use the <b>CD3D11_TEXTURE2D_DESC1</b> derived structure, which is defined  in D3D11_3.h and behaves like an inherited class, to help create a texture description.</para>
+      <para>The device places some size restrictions (must be multiples of a minimum size) for a subsampled, block compressed, or bit-format resource.</para>
+      <para>The texture size range is determined by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the device and not the Microsoft Direct3D interface version. For example, if you use Microsoft Direct3D 10 hardware at feature level 10 (<see cref="D3D_FEATURE_LEVEL_10_0" />) and call <see cref="D3D11CreateDevice" /> to create an <see cref="ID3D11Device" />, you must constrain the maximum texture size to D3D10_REQ_TEXTURE2D_U_OR_V_DIMENSION (8192) when you create your 2D texture.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.CD3D11_TEXTURE2D_DESC1">
+    <summary>
+      <para>TBD</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.D3D11_TEXTURE2D_DESC1">
+    <summary>
+      <h4>- ArraySize</h4>
+      <para>Number of textures in the texture array. The  range is from 1 to D3D11_REQ_TEXTURE2D_ARRAY_AXIS_DIMENSION (2048). For a texture cube-map, this value is a multiple of 6 (that is, 6 times the value in the <b>NumCubes</b> member of <see cref="D3D11_TEXCUBE_ARRAY_SRV" />), and the  range is from 6 to 2046. The range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
+      <h4>- BindFlags</h4>
+      <para>Flags (see <see cref="D3D11_BIND_FLAG" />) for binding to pipeline stages. The flags can be combined by a bitwise OR.</para>
+      <h4>- CPUAccessFlags</h4>
+      <para>Flags (see <see cref="D3D11_CPU_ACCESS_FLAG" />) to specify the types of CPU access allowed. Use 0 if CPU access is not required. These flags can be combined with a bitwise OR.</para>
+      <h4>- Format</h4>
+      <para>Texture format (see <see cref="DXGI_FORMAT" />).</para>
+      <h4>- Height</h4>
+      <para>Texture height (in texels). The  range is from 1 to D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION (16384). For a texture cube-map, the  range is from 1 to D3D11_REQ_TEXTURECUBE_DIMENSION (16384). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
+      <h4>- MipLevels</h4>
+      <para>The maximum number of mipmap levels in the texture. See the remarks in <see cref="D3D11_TEX1D_SRV" />. Use 1 for a multisampled texture; or 0 to generate a full set of subtextures.</para>
+      <h4>- MiscFlags</h4>
+      <para>Flags (see <see cref="D3D11_RESOURCE_MISC_FLAG" />) that identify other, less common resource options. Use 0 if none of these flags apply. These flags can be combined by using a bitwise OR. For a texture cube-map, set the <see cref="D3D11_RESOURCE_MISC_TEXTURECUBE" /> flag. Cube-map arrays (that is, <b>ArraySize</b> &gt; 6) require feature level <see cref="D3D_FEATURE_LEVEL_10_1" /> or higher.</para>
+      <h4>- SampleDesc</h4>
+      <para>Structure that specifies multisampling parameters for the texture. See <see cref="DXGI_SAMPLE_DESC" />.</para>
+      <h4>- TextureLayout</h4>
+      <para>A <see cref="D3D11_TEXTURE_LAYOUT" />-typed value that identifies the layout of the texture.</para>
+      <para>The TextureLayout parameter selects both the actual layout of the texture in memory and the layout visible to the application while the texture is mapped.  These flags may not be requested without CPU access also requested.</para>
+      <para>It is illegal to set CPU access flags on default textures without also setting TextureLayout to a value other than D3D11_TEXTURE_LAYOUT_UNDEFINED.</para>
+      <para>D3D11_TEXTURE_LAYOUT_ROW_MAJOR may only be used to create non-multisampled, textures with a single subresource (Planar YUV textures are supported).  These textures may only be used as a source and destination of copy operations, and BindFlags must be zero.</para>
+      <para>D3D11_TEXTURE_LAYOUT_64K_STANDARD_SWIZZLE may only be used to create non-multisampled, non-depth-stencil textures.</para>
+      <h4>- Usage</h4>
+      <para>Value that identifies how the texture is to be read from and written to. The most common value is D3D11_USAGE_DEFAULT; see <see cref="D3D11_USAGE" /> for all possible values.</para>
+      <h4>- Width</h4>
+      <para>Texture width (in texels). The  range is from 1 to D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION (16384). For a texture cube-map, the  range is from 1 to D3D11_REQ_TEXTURECUBE_DIMENSION (16384). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.Size">
+    <summary>
+      <para>Number of textures in the texture array. The  range is from 1 to D3D11_REQ_TEXTURE2D_ARRAY_AXIS_DIMENSION (2048). For a texture cube-map, this value is a multiple of 6 (that is, 6 times the value in the <b>NumCubes</b> member of <see cref="D3D11_TEXCUBE_ARRAY_SRV" />), and the  range is from 6 to 2046. The range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.lags">
+    <summary>
+      <para>Flags (see <see cref="D3D11_BIND_FLAG" />) for binding to pipeline stages. The flags can be combined by a bitwise OR.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.cessFlags">
+    <summary>
+      <para>Flags (see <see cref="D3D11_CPU_ACCESS_FLAG" />) to specify the types of CPU access allowed. Use 0 if CPU access is not required. These flags can be combined with a bitwise OR.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.t">
+    <summary>
+      <para>Texture format (see <see cref="DXGI_FORMAT" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.t">
+    <summary>
+      <para>Texture height (in texels). The  range is from 1 to D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION (16384). For a texture cube-map, the  range is from 1 to D3D11_REQ_TEXTURECUBE_DIMENSION (16384). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.vels">
+    <summary>
+      <para>The maximum number of mipmap levels in the texture. See the remarks in <see cref="D3D11_TEX1D_SRV" />. Use 1 for a multisampled texture; or 0 to generate a full set of subtextures.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.lags">
+    <summary>
+      <para>Flags (see <see cref="D3D11_RESOURCE_MISC_FLAG" />) that identify other, less common resource options. Use 0 if none of these flags apply. These flags can be combined by using a bitwise OR. For a texture cube-map, set the <see cref="D3D11_RESOURCE_MISC_TEXTURECUBE" /> flag. Cube-map arrays (that is, <b>ArraySize</b> &gt; 6) require feature level <see cref="D3D_FEATURE_LEVEL_10_1" /> or higher.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.eDesc">
+    <summary>
+      <para>Structure that specifies multisampling parameters for the texture. See <see cref="DXGI_SAMPLE_DESC" />.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.reLayout">
+    <summary>
+      <para>A <see cref="D3D11_TEXTURE_LAYOUT" />-typed value that identifies the layout of the texture.</para>
+      <para>The TextureLayout parameter selects both the actual layout of the texture in memory and the layout visible to the application while the texture is mapped.  These flags may not be requested without CPU access also requested.</para>
+      <para>It is illegal to set CPU access flags on default textures without also setting TextureLayout to a value other than D3D11_TEXTURE_LAYOUT_UNDEFINED.</para>
+      <para>D3D11_TEXTURE_LAYOUT_ROW_MAJOR may only be used to create non-multisampled, textures with a single subresource (Planar YUV textures are supported).  These textures may only be used as a source and destination of copy operations, and BindFlags must be zero.</para>
+      <para>D3D11_TEXTURE_LAYOUT_64K_STANDARD_SWIZZLE may only be used to create non-multisampled, non-depth-stencil textures.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.">
+    <summary>
+      <para>Value that identifies how the texture is to be read from and written to. The most common value is D3D11_USAGE_DEFAULT; see <see cref="D3D11_USAGE" /> for all possible values.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.">
+    <summary>
+      <para>Texture width (in texels). The  range is from 1 to D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION (16384). For a texture cube-map, the  range is from 1 to D3D11_REQ_TEXTURECUBE_DIMENSION (16384). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1">
+    <summary>
+      <para>Describes a 2D texture.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used in a call to <see cref="ID3D11Device3.CreateTexture2D1" />.</para>
+      <para>In addition to this structure, you can also use the <b>CD3D11_TEXTURE2D_DESC1</b> derived structure, which is defined  in D3D11_3.h and behaves like an inherited class, to help create a texture description.</para>
+      <para>The device places some size restrictions (must be multiples of a minimum size) for a subsampled, block compressed, or bit-format resource.</para>
+      <para>The texture size range is determined by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the device and not the Microsoft Direct3D interface version. For example, if you use Microsoft Direct3D 10 hardware at feature level 10 (<see cref="D3D_FEATURE_LEVEL_10_0" />) and call <see cref="D3D11CreateDevice" /> to create an <see cref="ID3D11Device" />, you must constrain the maximum texture size to D3D10_REQ_TEXTURE2D_U_OR_V_DIMENSION (8192) when you create your 2D texture.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.Width">
+    <summary>
+      <para>Texture width (in texels). The  range is from 1 to D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION (16384). For a texture cube-map, the  range is from 1 to D3D11_REQ_TEXTURECUBE_DIMENSION (16384). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.Height">
+    <summary>
+      <para>Texture height (in texels). The  range is from 1 to D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION (16384). For a texture cube-map, the  range is from 1 to D3D11_REQ_TEXTURECUBE_DIMENSION (16384). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.MipLevels">
+    <summary>
+      <para>The maximum number of mipmap levels in the texture. See the remarks in <see cref="D3D11_TEX1D_SRV" />. Use 1 for a multisampled texture; or 0 to generate a full set of subtextures.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.ArraySize">
+    <summary>
+      <para>Number of textures in the texture array. The  range is from 1 to D3D11_REQ_TEXTURE2D_ARRAY_AXIS_DIMENSION (2048). For a texture cube-map, this value is a multiple of 6 (that is, 6 times the value in the <b>NumCubes</b> member of <see cref="D3D11_TEXCUBE_ARRAY_SRV" />), and the  range is from 6 to 2046. The range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.Format">
+    <summary>
+      <para>Texture format (see <see cref="DXGI_FORMAT" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.SampleDesc">
+    <summary>
+      <para>Structure that specifies multisampling parameters for the texture. See <see cref="DXGI_SAMPLE_DESC" />.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.Usage">
+    <summary>
+      <para>Value that identifies how the texture is to be read from and written to. The most common value is D3D11_USAGE_DEFAULT; see <see cref="D3D11_USAGE" /> for all possible values.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.BindFlags">
+    <summary>
+      <para>Flags (see <see cref="D3D11_BIND_FLAG" />) for binding to pipeline stages. The flags can be combined by a bitwise OR.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.CPUAccessFlags">
+    <summary>
+      <para>Flags (see <see cref="D3D11_CPU_ACCESS_FLAG" />) to specify the types of CPU access allowed. Use 0 if CPU access is not required. These flags can be combined with a bitwise OR.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.MiscFlags">
+    <summary>
+      <para>Flags (see <see cref="D3D11_RESOURCE_MISC_FLAG" />) that identify other, less common resource options. Use 0 if none of these flags apply. These flags can be combined by using a bitwise OR. For a texture cube-map, set the <see cref="D3D11_RESOURCE_MISC_TEXTURECUBE" /> flag. Cube-map arrays (that is, <b>ArraySize</b> &gt; 6) require feature level <see cref="D3D_FEATURE_LEVEL_10_1" /> or higher.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE2D_DESC1.TextureLayout">
+    <summary>
+      <para>A <see cref="D3D11_TEXTURE_LAYOUT" />-typed value that identifies the layout of the texture.</para>
+      <para>The TextureLayout parameter selects both the actual layout of the texture in memory and the layout visible to the application while the texture is mapped.  These flags may not be requested without CPU access also requested.</para>
+      <para>It is illegal to set CPU access flags on default textures without also setting TextureLayout to a value other than D3D11_TEXTURE_LAYOUT_UNDEFINED.</para>
+      <para>D3D11_TEXTURE_LAYOUT_ROW_MAJOR may only be used to create non-multisampled, textures with a single subresource (Planar YUV textures are supported).  These textures may only be used as a source and destination of copy operations, and BindFlags must be zero.</para>
+      <para>D3D11_TEXTURE_LAYOUT_64K_STANDARD_SWIZZLE may only be used to create non-multisampled, non-depth-stencil textures.</para>
+    </summary>
+  </member>
+</doc>

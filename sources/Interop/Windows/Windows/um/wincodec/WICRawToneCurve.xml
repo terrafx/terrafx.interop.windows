@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICRawToneCurve">
+    <summary>
+      <para>Represents a raw image tone curve.</para>
+    </summary>
+  </member>
+  <member name="WICRawToneCurve.cPoints">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The number of tone curve points.</para>
+    </summary>
+  </member>
+  <member name="WICRawToneCurve.aPoints">
+    <summary>
+      <para>Type: <b><see cref="WICRawToneCurvePoint" />[1]</b></para>
+      <para>The array of tone curve points.</para>
+    </summary>
+  </member>
+</doc>

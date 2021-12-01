@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink"]/*' />
 [Guid("04B0F1A7-9490-44BC-96E1-4296A31252E2")]
 [NativeTypeName("struct IFileOperationProgressSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, Guid*, void**, int>)(lpVtbl[0]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint>)(lpVtbl[1]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint>)(lpVtbl[2]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.StartOperations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT StartOperations()
@@ -46,6 +51,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, int>)(lpVtbl[3]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.FinishOperations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT FinishOperations(HRESULT hrResult)
@@ -53,6 +59,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, HRESULT, int>)(lpVtbl[4]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), hrResult);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PreRenameItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT PreRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
@@ -60,6 +67,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, int>)(lpVtbl[5]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, pszNewName);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PostRenameItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT PostRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrRename, IShellItem* psiNewlyCreated)
@@ -67,6 +75,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, HRESULT, IShellItem*, int>)(lpVtbl[6]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, pszNewName, hrRename, psiNewlyCreated);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PreMoveItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT PreMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
@@ -74,6 +83,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, int>)(lpVtbl[7]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PostMoveItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT PostMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrMove, IShellItem* psiNewlyCreated)
@@ -81,6 +91,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, HRESULT, IShellItem*, int>)(lpVtbl[8]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName, hrMove, psiNewlyCreated);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PreCopyItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT PreCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
@@ -88,6 +99,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, int>)(lpVtbl[9]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PostCopyItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT PostCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrCopy, IShellItem* psiNewlyCreated)
@@ -95,6 +107,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, HRESULT, IShellItem*, int>)(lpVtbl[10]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName, hrCopy, psiNewlyCreated);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PreDeleteItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT PreDeleteItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem)
@@ -102,6 +115,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, int>)(lpVtbl[11]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PostDeleteItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT PostDeleteItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, HRESULT hrDelete, IShellItem* psiNewlyCreated)
@@ -109,6 +123,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, HRESULT, IShellItem*, int>)(lpVtbl[12]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, hrDelete, psiNewlyCreated);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PreNewItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT PreNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
@@ -116,6 +131,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, int>)(lpVtbl[13]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiDestinationFolder, pszNewName);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PostNewItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT PostNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("LPCWSTR")] ushort* pszTemplateName, [NativeTypeName("DWORD")] uint dwFileAttributes, HRESULT hrNew, IShellItem* psiNewItem)
@@ -123,6 +139,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, ushort*, uint, HRESULT, IShellItem*, int>)(lpVtbl[14]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiDestinationFolder, pszNewName, pszTemplateName, dwFileAttributes, hrNew, psiNewItem);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.UpdateProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT UpdateProgress(uint iWorkTotal, uint iWorkSoFar)
@@ -130,6 +147,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, uint, uint, int>)(lpVtbl[15]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), iWorkTotal, iWorkSoFar);
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.ResetTimer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT ResetTimer()
@@ -137,6 +155,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, int>)(lpVtbl[16]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PauseTimer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT PauseTimer()
@@ -144,6 +163,7 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         return ((delegate* unmanaged<IFileOperationProgressSink*, int>)(lpVtbl[17]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.ResumeTimer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT ResumeTimer()

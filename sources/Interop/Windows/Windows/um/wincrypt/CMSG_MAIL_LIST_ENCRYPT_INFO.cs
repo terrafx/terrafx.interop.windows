@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_MAIL_LIST_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_MAIL_LIST_ENCRYPT_INFO"]/*' />
 public partial struct CMSG_MAIL_LIST_ENCRYPT_INFO
 {
+    /// <include file='CMSG_MAIL_LIST_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_MAIL_LIST_ENCRYPT_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_MAIL_LIST_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_MAIL_LIST_ENCRYPT_INFO.dwRecipientIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRecipientIndex;
 
+    /// <include file='CMSG_MAIL_LIST_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_MAIL_LIST_ENCRYPT_INFO.KeyEncryptionAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 
+    /// <include file='CMSG_MAIL_LIST_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_MAIL_LIST_ENCRYPT_INFO.EncryptedKey"]/*' />
     public CRYPT_DATA_BLOB EncryptedKey;
 
+    /// <include file='CMSG_MAIL_LIST_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_MAIL_LIST_ENCRYPT_INFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

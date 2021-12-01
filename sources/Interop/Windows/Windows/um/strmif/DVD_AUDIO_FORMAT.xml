@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_AUDIO_FORMAT">
+    <summary>
+      <para>Indicates the audio format of a DVD.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is a member of the <see cref="DVD_AudioAttributes" /> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_AC3">
+    <summary>
+      <para>Audio format is Dolby AC-3.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_MPEG1">
+    <summary>
+      <para>Audio format is MPEG-1.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_MPEG1_DRC">
+    <summary>
+      <para>Audio format is MPEG-1 with dynamic range control.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_MPEG2">
+    <summary>
+      <para>Audio format is MPEG-2.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_MPEG2_DRC">
+    <summary>
+      <para>Audio format is MPEG-2 with dynamic range control.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_LPCM">
+    <summary>
+      <para>Audio format is Linear Pulse Code Modulated (LPCM).</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_DTS">
+    <summary>
+      <para>Audio format is Digital Theater Systems (DTS).</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_SDDS">
+    <summary>
+      <para>Audio format is Sony Dynamic Digital Sound (SDDS).</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_Other">
+    <summary>
+      <para>Audio format is unrecognized.</para>
+    </summary>
+  </member>
+</doc>

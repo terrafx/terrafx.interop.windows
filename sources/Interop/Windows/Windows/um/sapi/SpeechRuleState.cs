@@ -7,10 +7,18 @@ using static TerraFX.Interop.Windows.SPRULESTATE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechRuleState.xml' path='doc/member[@name="SpeechRuleState"]/*' />
 public enum SpeechRuleState
 {
+    /// <include file='SpeechRuleState.xml' path='doc/member[@name="SpeechRuleState.SGDSInactive"]/*' />
     SGDSInactive = SPRS_INACTIVE,
+
+    /// <include file='SpeechRuleState.xml' path='doc/member[@name="SpeechRuleState.SGDSActive"]/*' />
     SGDSActive = SPRS_ACTIVE,
+
+    /// <include file='SpeechRuleState.xml' path='doc/member[@name="SpeechRuleState.SGDSActiveWithAutoPause"]/*' />
     SGDSActiveWithAutoPause = SPRS_ACTIVE_WITH_AUTO_PAUSE,
+
+    /// <include file='SpeechRuleState.xml' path='doc/member[@name="SpeechRuleState.SGDSActiveUserDelimited"]/*' />
     SGDSActiveUserDelimited = SPRS_ACTIVE_USER_DELIMITED,
 }

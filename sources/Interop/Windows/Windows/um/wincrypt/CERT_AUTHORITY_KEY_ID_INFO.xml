@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_AUTHORITY_KEY_ID_INFO">
+    <summary>
+      <para>The <b>CERT_AUTHORITY_KEY_ID_INFO</b> structure identifies the key used to sign a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a> or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL). This structure differentiates among distinct keys used by the same <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a> as, for example, keys changed when an update occurs.</para>
+      <para>The key can be identified by an explicit key identifier, by giving a certificate's issuer and serial number, or by both. If both are used, the certificate issuer must ensure that the explicit key identifier, the certificate issuer and the serial number are consistent.</para>
+      <para>
+        <see cref="CryptDecodeObject" /> creates an instance of this structure when performed on a
+<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with its structure's <b>pszObjId</b> member set to szOID_AUTHORITY_KEY_IDENTIFIER.</para>
+      <para>An instance of this structure can be used as input to <see cref="CryptEncodeObject" /> to create an appropriate <see cref="CERT_EXTENSION" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+  </member>
+  <member name="CERT_AUTHORITY_KEY_ID_INFO.KeyId">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains a unique identifier of a public key.</para>
+    </summary>
+  </member>
+  <member name="CERT_AUTHORITY_KEY_ID_INFO.CertIssuer">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structure that contains the encoded distinguished name of the certification authority that issued the certificate.</para>
+    </summary>
+  </member>
+  <member name="CERT_AUTHORITY_KEY_ID_INFO.CertSerialNumber">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure that contains the serial number of the certificate associated with the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">private key</a> used to sign this certificate. For more information, see
+<see cref="CERT_INFO" />.</para>
+    </summary>
+  </member>
+</doc>

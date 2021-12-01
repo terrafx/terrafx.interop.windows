@@ -5,27 +5,36 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO"]/*' />
 public unsafe partial struct WINHTTP_CERTIFICATE_INFO
 {
+    /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.ftExpiry"]/*' />
     public FILETIME ftExpiry;
 
+    /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.ftStart"]/*' />
     public FILETIME ftStart;
 
+    /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.lpszSubjectInfo"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpszSubjectInfo;
 
+    /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.lpszIssuerInfo"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpszIssuerInfo;
 
+    /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.lpszProtocolName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpszProtocolName;
 
+    /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.lpszSignatureAlgName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpszSignatureAlgName;
 
+    /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.lpszEncryptionAlgName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpszEncryptionAlgName;
 
+    /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.dwKeySize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwKeySize;
 }

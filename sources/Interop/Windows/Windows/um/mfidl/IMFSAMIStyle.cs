@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle"]/*' />
 [Guid("A7E025DD-5303-4A62-89D6-E747E1EFAC73")]
 [NativeTypeName("struct IMFSAMIStyle : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
         return ((delegate* unmanaged<IMFSAMIStyle*, Guid*, void**, int>)(lpVtbl[0]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
         return ((delegate* unmanaged<IMFSAMIStyle*, uint>)(lpVtbl[1]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
         return ((delegate* unmanaged<IMFSAMIStyle*, uint>)(lpVtbl[2]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle.GetStyleCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetStyleCount([NativeTypeName("DWORD *")] uint* pdwCount)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
         return ((delegate* unmanaged<IMFSAMIStyle*, uint*, int>)(lpVtbl[3]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle.GetStyles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
         return ((delegate* unmanaged<IMFSAMIStyle*, PROPVARIANT*, int>)(lpVtbl[4]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pPropVarStyleArray);
     }
 
+    /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle.SetSelectedStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
         return ((delegate* unmanaged<IMFSAMIStyle*, ushort*, int>)(lpVtbl[5]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pwszStyle);
     }
 
+    /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle.GetSelectedStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle)

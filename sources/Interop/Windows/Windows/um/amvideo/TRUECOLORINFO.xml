@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRUECOLORINFO">
+    <summary>
+      <para>The <b>TRUECOLORINFO</b> structure contains color palette and bitmask information for a video image.</para>
+    </summary>
+    <remarks>
+      <para>This structure is not used for some RGB formats. For more information about which fields are valid under different circumstances, see the Platform SDK documentation for <b>BITMAPINFO</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</seealso>
+  </member>
+  <member name="TRUECOLORINFO.dwBitMasks">
+    <summary>
+      <para>Array of color masks (one per color element).</para>
+    </summary>
+  </member>
+  <member name="TRUECOLORINFO.bmiColors">
+    <summary>
+      <para>Array of palette colors.</para>
+    </summary>
+  </member>
+</doc>

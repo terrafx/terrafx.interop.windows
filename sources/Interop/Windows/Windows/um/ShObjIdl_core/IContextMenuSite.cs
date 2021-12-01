@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IContextMenuSite.xml' path='doc/member[@name="IContextMenuSite"]/*' />
 [Guid("0811AEBE-0B87-4C54-9E72-548CF649016B")]
 [NativeTypeName("struct IContextMenuSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface
         return ((delegate* unmanaged<IContextMenuSite*, Guid*, void**, int>)(lpVtbl[0]))((IContextMenuSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface
         return ((delegate* unmanaged<IContextMenuSite*, uint>)(lpVtbl[1]))((IContextMenuSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface
         return ((delegate* unmanaged<IContextMenuSite*, uint>)(lpVtbl[2]))((IContextMenuSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IContextMenuSite.xml' path='doc/member[@name="IContextMenuSite.DoContextMenuPopup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT DoContextMenuPopup(IUnknown* punkContextMenu, uint fFlags, POINT pt)

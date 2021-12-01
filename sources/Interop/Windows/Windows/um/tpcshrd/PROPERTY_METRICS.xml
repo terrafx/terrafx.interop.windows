@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPERTY_METRICS">
+    <summary>
+      <para>Defines the range and resolution of a packet  property.</para>
+    </summary>
+    <seealso cref="PACKET_PROPERTY Structure" />
+    <seealso cref="PROPERTY_UNITS Enumeration" />
+  </member>
+  <member name="PROPERTY_METRICS.nLogicalMin">
+    <summary>
+      <para>The minimum value, in logical units, that the tablet reports for this property. For example, a tablet reporting x-values from 0 to 9000 has a logical minimum of 0.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_METRICS.nLogicalMax">
+    <summary>
+      <para>The maximum value, in logical units, that the tablet reports for this property. For example, a tablet reporting x-values from 0 to 9000 has a logical maximum of 9000.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_METRICS.Units">
+    <summary>
+      <para>The physical units of the property, such as inches or degrees. For a list of property units, see the <see cref="PROPERTY_UNITS" /> enumeration type.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_METRICS.fResolution">
+    <summary>
+      <para>The resolution or increment value for the <code>Units</code> member. For example, a tablet that reports 400 dots per inch (dpi) has an <i>fResoution</i> value of 400.</para>
+    </summary>
+  </member>
+</doc>

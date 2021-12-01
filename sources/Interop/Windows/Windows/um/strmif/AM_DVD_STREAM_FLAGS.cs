@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_DVD_STREAM_FLAGS.xml' path='doc/member[@name="AM_DVD_STREAM_FLAGS"]/*' />
 public enum AM_DVD_STREAM_FLAGS
 {
+    /// <include file='AM_DVD_STREAM_FLAGS.xml' path='doc/member[@name="AM_DVD_STREAM_FLAGS.AM_DVD_STREAM_VIDEO"]/*' />
     AM_DVD_STREAM_VIDEO = 0x1,
+
+    /// <include file='AM_DVD_STREAM_FLAGS.xml' path='doc/member[@name="AM_DVD_STREAM_FLAGS.AM_DVD_STREAM_AUDIO"]/*' />
     AM_DVD_STREAM_AUDIO = 0x2,
+
+    /// <include file='AM_DVD_STREAM_FLAGS.xml' path='doc/member[@name="AM_DVD_STREAM_FLAGS.AM_DVD_STREAM_SUBPIC"]/*' />
     AM_DVD_STREAM_SUBPIC = 0x4,
 }

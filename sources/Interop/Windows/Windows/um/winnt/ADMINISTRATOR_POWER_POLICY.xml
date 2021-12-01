@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ADMINISTRATOR_POWER_POLICY">
+    <summary>
+      <para>Represents the administrator override power policy settings.</para>
+    </summary>
+    <remarks>
+      <para>The <b>ADMINISTRATOR_POWER_POLICY</b></para>
+      <para>structure defines limits to certain power policy values that are applied globally to all users' power schemes. The
+values in the <b>ADMINISTRATOR_POWER_POLICY</b></para>
+      <para>structure override any settings selected by the user in the Power Options control panel program.</para>
+      <para>To set an administrator override policy, call the
+<see cref="CallNtPowerInformation" /> function.</para>
+    </remarks>
+    <seealso cref="CallNtPowerInformation" />
+  </member>
+  <member name="ADMINISTRATOR_POWER_POLICY.MinSleep">
+    <summary>
+      <para>The minimum system power sleep state. This member must be one of the
+<see cref="SYSTEM_POWER_STATE" /> enumeration type values between
+<b>PowerSystemSleeping1</b> (power state S1) and
+<b>PowerSystemHibernate</b> (power state S4).</para>
+    </summary>
+  </member>
+  <member name="ADMINISTRATOR_POWER_POLICY.MaxSleep">
+    <summary>
+      <para>The maximum system power sleep state. This member must be one of the
+<see cref="SYSTEM_POWER_STATE" /> enumeration type values between
+<b>PowerSystemSleeping1</b> (power state S1) and
+<b>PowerSystemHibernate</b> (power state S4).</para>
+    </summary>
+  </member>
+  <member name="ADMINISTRATOR_POWER_POLICY.MinVideoTimeout">
+    <summary>
+      <para>The minimum allowable video idle time-out before turning the display device off, in seconds.</para>
+    </summary>
+  </member>
+  <member name="ADMINISTRATOR_POWER_POLICY.MaxVideoTimeout">
+    <summary>
+      <para>The maximum allowable video idle time-out before turning the display device off, in seconds.</para>
+    </summary>
+  </member>
+  <member name="ADMINISTRATOR_POWER_POLICY.MinSpindownTimeout">
+    <summary>
+      <para>The minimum allowable disk idle time before flushing the cache manager and spinning down a hard disk
+device, in seconds.</para>
+    </summary>
+  </member>
+  <member name="ADMINISTRATOR_POWER_POLICY.MaxSpindownTimeout">
+    <summary>
+      <para>The maximum allowable disk idle time before flushing the cache manager and spinning down a hard disk
+device, in seconds.</para>
+    </summary>
+  </member>
+</doc>

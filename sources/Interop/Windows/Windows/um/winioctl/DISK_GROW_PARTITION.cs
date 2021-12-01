@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISK_GROW_PARTITION.xml' path='doc/member[@name="DISK_GROW_PARTITION"]/*' />
 public partial struct DISK_GROW_PARTITION
 {
+    /// <include file='DISK_GROW_PARTITION.xml' path='doc/member[@name="DISK_GROW_PARTITION.PartitionNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint PartitionNumber;
 
+    /// <include file='DISK_GROW_PARTITION.xml' path='doc/member[@name="DISK_GROW_PARTITION.BytesToGrow"]/*' />
     public LARGE_INTEGER BytesToGrow;
 }

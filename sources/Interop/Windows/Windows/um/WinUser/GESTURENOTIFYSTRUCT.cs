@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GESTURENOTIFYSTRUCT.xml' path='doc/member[@name="GESTURENOTIFYSTRUCT"]/*' />
 public partial struct GESTURENOTIFYSTRUCT
 {
+    /// <include file='GESTURENOTIFYSTRUCT.xml' path='doc/member[@name="GESTURENOTIFYSTRUCT.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='GESTURENOTIFYSTRUCT.xml' path='doc/member[@name="GESTURENOTIFYSTRUCT.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='GESTURENOTIFYSTRUCT.xml' path='doc/member[@name="GESTURENOTIFYSTRUCT.hwndTarget"]/*' />
     public HWND hwndTarget;
 
+    /// <include file='GESTURENOTIFYSTRUCT.xml' path='doc/member[@name="GESTURENOTIFYSTRUCT.ptsLocation"]/*' />
     public POINTS ptsLocation;
 
+    /// <include file='GESTURENOTIFYSTRUCT.xml' path='doc/member[@name="GESTURENOTIFYSTRUCT.dwInstanceID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwInstanceID;
 }

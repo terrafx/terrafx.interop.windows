@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_MF_CROSS_ORIGIN_POLICY">
+    <summary>
+      <para>Maps to the W3C cross origin settings (CORS) attribute used by the HTML5 media element</para>
+    </summary>
+  </member>
+  <member name="_MF_CROSS_ORIGIN_POLICY.MF_CROSS_ORIGIN_POLICY_NONE">
+    <summary>
+      <para>No CORS state.</para>
+    </summary>
+  </member>
+  <member name="_MF_CROSS_ORIGIN_POLICY.MF_CROSS_ORIGIN_POLICY_ANONYMOUS">
+    <summary>
+      <para>Requests for the element will have their mode set to "cors" and their credentials mode set to "same-origin".</para>
+    </summary>
+  </member>
+  <member name="_MF_CROSS_ORIGIN_POLICY.MF_CROSS_ORIGIN_POLICY_USE_CREDENTIALS">
+    <summary>
+      <para>Requests for the element will have their mode set to "cors" and their credentials mode set to "include".</para>
+    </summary>
+  </member>
+</doc>

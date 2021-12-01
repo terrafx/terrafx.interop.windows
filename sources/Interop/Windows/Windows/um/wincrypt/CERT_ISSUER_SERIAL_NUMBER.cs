@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_ISSUER_SERIAL_NUMBER.xml' path='doc/member[@name="CERT_ISSUER_SERIAL_NUMBER"]/*' />
 public partial struct CERT_ISSUER_SERIAL_NUMBER
 {
+    /// <include file='CERT_ISSUER_SERIAL_NUMBER.xml' path='doc/member[@name="CERT_ISSUER_SERIAL_NUMBER.Issuer"]/*' />
     [NativeTypeName("CERT_NAME_BLOB")]
     public CRYPT_DATA_BLOB Issuer;
 
+    /// <include file='CERT_ISSUER_SERIAL_NUMBER.xml' path='doc/member[@name="CERT_ISSUER_SERIAL_NUMBER.SerialNumber"]/*' />
     [NativeTypeName("CRYPT_INTEGER_BLOB")]
     public CRYPT_DATA_BLOB SerialNumber;
 }

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioHrtfDirectivity">
+    <summary>
+      <para>Represents an omnidirectional model for an <see cref="ISpatialAudioObjectForHrtf" />. The omnidirectional emission is interpolated linearly with the directivity model specified in the <b>Type</b> field based on the value of the <b>Scaling</b> field.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivity.Type">
+    <summary>
+      <para>The type of shape in which sound is emitted by an <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivity.Scaling">
+    <summary>
+      <para>The amount of linear interpolation applied between omnidirectional sound and the directivity specified in the <b>Type</b> field. This is a normalized value between 0 and 1.0 where 0 is omnidirectional and 1.0 is full directivity using the specified type.</para>
+    </summary>
+  </member>
+</doc>

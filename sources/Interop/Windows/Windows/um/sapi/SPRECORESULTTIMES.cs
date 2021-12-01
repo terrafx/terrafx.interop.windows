@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPRECORESULTTIMES.xml' path='doc/member[@name="SPRECORESULTTIMES"]/*' />
 public partial struct SPRECORESULTTIMES
 {
+    /// <include file='SPRECORESULTTIMES.xml' path='doc/member[@name="SPRECORESULTTIMES.ftStreamTime"]/*' />
     public FILETIME ftStreamTime;
 
+    /// <include file='SPRECORESULTTIMES.xml' path='doc/member[@name="SPRECORESULTTIMES.ullLength"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullLength;
 
+    /// <include file='SPRECORESULTTIMES.xml' path='doc/member[@name="SPRECORESULTTIMES.dwTickCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTickCount;
 
+    /// <include file='SPRECORESULTTIMES.xml' path='doc/member[@name="SPRECORESULTTIMES.ullStart"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullStart;
 }

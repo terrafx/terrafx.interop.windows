@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC">
+    <summary>
+      <para>Describes a video processor output view.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <seealso cref="ID3D11VideoDevice.CreateVideoProcessorOutputView" />
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC.ViewDimension">
+    <summary>
+      <para>The resource type of the view, specified as a member of the <see cref="D3D11_VPOV_DIMENSION" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC.Texture2D">
+    <summary>
+      <para>A <see cref="D3D11_TEX2D_VPOV" /> structure that identifies the texture resource for the output view.</para>
+      <para>Use this member of the union when <b>ViewDimension</b> equals <b>D3D11_VPOV_DIMENSION_TEXTURE2D</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC.Texture2DArray">
+    <summary>
+      <para>A <see cref="D3D11_TEX2D_ARRAY_VPOV" /> structure that identifies the texture array for the output view.</para>
+      <para>Use this member of the union when <b>ViewDimension</b> equals <b>D3D11_VPOV_DIMENSION_TEXTURE2DARRAY</b>.</para>
+    </summary>
+  </member>
+</doc>

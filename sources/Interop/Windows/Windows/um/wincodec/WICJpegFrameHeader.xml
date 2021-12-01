@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICJpegFrameHeader">
+    <summary>
+      <para>Represents a JPEG frame header.</para>
+    </summary>
+    <remarks>
+      <para>Get the frame header for an image by calling <see cref="IWICJpegFrameDecode.GetFrameHeader" />.</para>
+    </remarks>
+    <seealso cref="IWICJpegFrameDecode.GetFrameHeader" />
+  </member>
+  <member name="WICJpegFrameHeader.Width">
+    <summary>
+      <para>The width of the JPEG frame.</para>
+    </summary>
+  </member>
+  <member name="WICJpegFrameHeader.Height">
+    <summary>
+      <para>The height of the JPEG frame.</para>
+    </summary>
+  </member>
+  <member name="WICJpegFrameHeader.TransferMatrix">
+    <summary>
+      <para>The transfer matrix of the JPEG frame.</para>
+    </summary>
+  </member>
+  <member name="WICJpegFrameHeader.ScanType">
+    <summary>
+      <para>The scan type of the JPEG frame.</para>
+    </summary>
+  </member>
+  <member name="WICJpegFrameHeader.cComponents">
+    <summary>
+      <para>The number of components in the frame.</para>
+    </summary>
+  </member>
+  <member name="WICJpegFrameHeader.ComponentIdentifiers">
+    <summary>
+      <para>The component identifiers.</para>
+    </summary>
+  </member>
+  <member name="WICJpegFrameHeader.SampleFactors">
+    <summary>
+      <para>The sample factors. Use one of the following constants, described in <a href="https://docs.microsoft.com//windows/desktop/wic/iwicjpegframedecode-constants">IWICJpegFrameDecode Constants</a>.</para>
+      <list type="bullet">
+        <item>
+          <description>WIC_JPEG_SAMPLE_FACTORS_ONE</description>
+        </item>
+        <item>
+          <description>WIC_JPEG_SAMPLE_FACTORS_THREE_420</description>
+        </item>
+        <item>
+          <description>WIC_JPEG_SAMPLE_FACTORS_THREE_422</description>
+        </item>
+        <item>
+          <description>WIC_JPEG_SAMPLE_FACTORS_THREE_440</description>
+        </item>
+        <item>
+          <description>WIC_JPEG_SAMPLE_FACTORS_THREE_444</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WICJpegFrameHeader.QuantizationTableIndices">
+    <summary>
+      <para>The format of the quantization table indices. Use one of the following constants, described in <a href="https://docs.microsoft.com//windows/desktop/wic/iwicjpegframedecode-constants">IWICJpegFrameDecode Constants</a>.</para>
+      <list type="bullet">
+        <item>
+          <description>WIC_JPEG_QUANTIZATION_BASELINE_ONE</description>
+        </item>
+        <item>
+          <description>WIC_JPEG_QUANTIZATION_BASELINE_THREE </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

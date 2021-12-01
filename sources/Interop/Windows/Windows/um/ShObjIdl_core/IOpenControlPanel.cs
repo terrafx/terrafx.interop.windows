@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOpenControlPanel.xml' path='doc/member[@name="IOpenControlPanel"]/*' />
 [Guid("D11AD862-66DE-4DF4-BF6C-1F5621996AF1")]
 [NativeTypeName("struct IOpenControlPanel : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface
         return ((delegate* unmanaged<IOpenControlPanel*, Guid*, void**, int>)(lpVtbl[0]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface
         return ((delegate* unmanaged<IOpenControlPanel*, uint>)(lpVtbl[1]))((IOpenControlPanel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface
         return ((delegate* unmanaged<IOpenControlPanel*, uint>)(lpVtbl[2]))((IOpenControlPanel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOpenControlPanel.xml' path='doc/member[@name="IOpenControlPanel.Open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Open([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszPage, IUnknown* punkSite)
@@ -46,6 +51,7 @@ public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface
         return ((delegate* unmanaged<IOpenControlPanel*, ushort*, ushort*, IUnknown*, int>)(lpVtbl[3]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pszName, pszPage, punkSite);
     }
 
+    /// <include file='IOpenControlPanel.xml' path='doc/member[@name="IOpenControlPanel.GetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPath([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPWSTR")] ushort* pszPath, uint cchPath)
@@ -53,6 +59,7 @@ public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface
         return ((delegate* unmanaged<IOpenControlPanel*, ushort*, ushort*, uint, int>)(lpVtbl[4]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pszName, pszPath, cchPath);
     }
 
+    /// <include file='IOpenControlPanel.xml' path='doc/member[@name="IOpenControlPanel.GetCurrentView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCurrentView(CPVIEW* pView)

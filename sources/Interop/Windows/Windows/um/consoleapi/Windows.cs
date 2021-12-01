@@ -9,80 +9,100 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AllocConsole"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL AllocConsole();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeConsole"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL FreeConsole();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AttachConsole"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL AttachConsole([NativeTypeName("DWORD")] uint dwProcessId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleCP"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetConsoleCP();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleOutputCP"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetConsoleOutputCP();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleMode"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetConsoleMode(HANDLE hConsoleHandle, [NativeTypeName("LPDWORD")] uint* lpMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleMode"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleMode(HANDLE hConsoleHandle, [NativeTypeName("DWORD")] uint dwMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetNumberOfConsoleInputEvents"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetNumberOfConsoleInputEvents(HANDLE hConsoleInput, [NativeTypeName("LPDWORD")] uint* lpNumberOfEvents);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleInputA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ReadConsoleInputA(HANDLE hConsoleInput, [NativeTypeName("PINPUT_RECORD")] INPUT_RECORD* lpBuffer, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpNumberOfEventsRead);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleInputW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ReadConsoleInputW(HANDLE hConsoleInput, [NativeTypeName("PINPUT_RECORD")] INPUT_RECORD* lpBuffer, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpNumberOfEventsRead);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PeekConsoleInputA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL PeekConsoleInputA(HANDLE hConsoleInput, [NativeTypeName("PINPUT_RECORD")] INPUT_RECORD* lpBuffer, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpNumberOfEventsRead);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PeekConsoleInputW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL PeekConsoleInputW(HANDLE hConsoleInput, [NativeTypeName("PINPUT_RECORD")] INPUT_RECORD* lpBuffer, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpNumberOfEventsRead);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ReadConsoleA(HANDLE hConsoleInput, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfCharsToRead, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsRead, [NativeTypeName("PCONSOLE_READCONSOLE_CONTROL")] CONSOLE_READCONSOLE_CONTROL* pInputControl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ReadConsoleW(HANDLE hConsoleInput, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfCharsToRead, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsRead, [NativeTypeName("PCONSOLE_READCONSOLE_CONTROL")] CONSOLE_READCONSOLE_CONTROL* pInputControl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WriteConsoleA(HANDLE hConsoleOutput, [NativeTypeName("const void *")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfCharsToWrite, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten, [NativeTypeName("LPVOID")] void* lpReserved);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WriteConsoleW(HANDLE hConsoleOutput, [NativeTypeName("const void *")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfCharsToWrite, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten, [NativeTypeName("LPVOID")] void* lpReserved);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleCtrlHandler"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleCtrlHandler([NativeTypeName("PHANDLER_ROUTINE")] delegate* unmanaged<uint, BOOL> HandlerRoutine, BOOL Add);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePseudoConsole"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern HRESULT CreatePseudoConsole(COORD size, HANDLE hInput, HANDLE hOutput, [NativeTypeName("DWORD")] uint dwFlags, HPCON* phPC);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ResizePseudoConsole"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern HRESULT ResizePseudoConsole(HPCON hPC, COORD size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ClosePseudoConsole"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern void ClosePseudoConsole(HPCON hPC);
 

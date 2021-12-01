@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COLORKEY.xml' path='doc/member[@name="COLORKEY"]/*' />
 public partial struct COLORKEY
 {
+    /// <include file='COLORKEY.xml' path='doc/member[@name="COLORKEY.KeyType"]/*' />
     [NativeTypeName("DWORD")]
     public uint KeyType;
 
+    /// <include file='COLORKEY.xml' path='doc/member[@name="COLORKEY.PaletteIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint PaletteIndex;
 
+    /// <include file='COLORKEY.xml' path='doc/member[@name="COLORKEY.LowColorValue"]/*' />
     public COLORREF LowColorValue;
 
+    /// <include file='COLORKEY.xml' path='doc/member[@name="COLORKEY.HighColorValue"]/*' />
     public COLORREF HighColorValue;
 }

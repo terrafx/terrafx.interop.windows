@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfTextInputProcessorEx.xml' path='doc/member[@name="ITfTextInputProcessorEx"]/*' />
 [Guid("6E4E2102-F9CD-433D-B496-303CE03A6507")]
 [NativeTypeName("struct ITfTextInputProcessorEx : ITfTextInputProcessor")]
 [NativeInheritance("ITfTextInputProcessor")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
         return ((delegate* unmanaged<ITfTextInputProcessorEx*, Guid*, void**, int>)(lpVtbl[0]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
         return ((delegate* unmanaged<ITfTextInputProcessorEx*, uint>)(lpVtbl[1]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
         return ((delegate* unmanaged<ITfTextInputProcessorEx*, uint>)(lpVtbl[2]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfTextInputProcessor.Activate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Activate(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
         return ((delegate* unmanaged<ITfTextInputProcessorEx*, ITfThreadMgr*, uint, int>)(lpVtbl[3]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this), ptim, tid);
     }
 
+    /// <inheritdoc cref="ITfTextInputProcessor.Deactivate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Deactivate()
@@ -53,6 +59,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
         return ((delegate* unmanaged<ITfTextInputProcessorEx*, int>)(lpVtbl[4]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfTextInputProcessorEx.xml' path='doc/member[@name="ITfTextInputProcessorEx.ActivateEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ActivateEx(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid, [NativeTypeName("DWORD")] uint dwFlags)

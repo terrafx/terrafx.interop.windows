@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_QueryRate.xml' path='doc/member[@name="AM_QueryRate"]/*' />
 public partial struct AM_QueryRate
 {
+    /// <include file='AM_QueryRate.xml' path='doc/member[@name="AM_QueryRate.lMaxForwardFullFrame"]/*' />
     [NativeTypeName("LONG")]
     public int lMaxForwardFullFrame;
 
+    /// <include file='AM_QueryRate.xml' path='doc/member[@name="AM_QueryRate.lMaxReverseFullFrame"]/*' />
     [NativeTypeName("LONG")]
     public int lMaxReverseFullFrame;
 }

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWM_PRESENT_PARAMETERS">
+    <summary>
+      <para>Specifies Desktop Window Manager (DWM) video frame parameters for frame composition. Used by the <see cref="DwmSetPresentParameters" /> function.</para>
+    </summary>
+    <remarks>
+      <para>The <b>rateSource</b> member is expressed as a ratio so that content (like that using NTSC standards, which has a rate of 60000/1001) can be accurately expressed. DWM determines how long to display each frame by resampling between the source rate and the composition rate in use each time the desktop is composed.</para>
+    </remarks>
+  </member>
+  <member name="DWM_PRESENT_PARAMETERS.cbSize">
+    <summary>
+      <para>The size of the <b>DWM_PRESENT_PARAMETERS</b> structure.</para>
+    </summary>
+  </member>
+  <member name="DWM_PRESENT_PARAMETERS.fQueue">
+    <summary>
+      <para>
+        <b>TRUE</b> if the caller is requesting queued presents; otherwise, <b>FALSE</b>. If <b>TRUE</b>, the remaining parameters must be specified. If <b>FALSE</b>, queued presentation is disabled for this window and present behavior returns to the default behavior.</para>
+    </summary>
+  </member>
+  <member name="DWM_PRESENT_PARAMETERS.cRefreshStart">
+    <summary>
+      <para>A <b>ULONGLONG</b> value that provides the refresh number that the next presented frame should begin to display.</para>
+    </summary>
+  </member>
+  <member name="DWM_PRESENT_PARAMETERS.cBuffer">
+    <summary>
+      <para>The number of frames the application is instructing DWM to queue. The valid range is 2-8.</para>
+    </summary>
+  </member>
+  <member name="DWM_PRESENT_PARAMETERS.fUseSourceRate">
+    <summary>
+      <para>
+        <b>TRUE</b> if the application wants DWM to schedule presentation based on source rate. <b>FALSE</b> if the application will decide how many refreshes to display for each frame. If <b>TRUE</b>, <b>rateSource</b> must be specified. If <b>FALSE</b>, <b>cRefreshesPerFrame</b> must be specified.</para>
+    </summary>
+  </member>
+  <member name="DWM_PRESENT_PARAMETERS.rateSource">
+    <summary>
+      <para>The rate, in frames per second, of the source material being displayed.</para>
+    </summary>
+  </member>
+  <member name="DWM_PRESENT_PARAMETERS.cRefreshesPerFrame">
+    <summary>
+      <para>The number of monitor refreshes through which each frame should be displayed on the screen.</para>
+    </summary>
+  </member>
+  <member name="DWM_PRESENT_PARAMETERS.eSampling">
+    <summary>
+      <para>The frame sampling type to use for composition.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,28 +9,38 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE"]/*' />
 public partial struct UNWIND_HISTORY_TABLE
 {
+    /// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE.Count"]/*' />
     [NativeTypeName("DWORD")]
     public uint Count;
 
+    /// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE.LocalHint"]/*' />
     public byte LocalHint;
 
+    /// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE.GlobalHint"]/*' />
     public byte GlobalHint;
 
+    /// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE.Search"]/*' />
     public byte Search;
 
+    /// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE.Once"]/*' />
     public byte Once;
 
+    /// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE.LowAddress"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint LowAddress;
 
+    /// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE.HighAddress"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint HighAddress;
 
+    /// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE.Entry"]/*' />
     [NativeTypeName("UNWIND_HISTORY_TABLE_ENTRY [12]")]
     public _Entry_e__FixedBuffer Entry;
 
+    /// <include file='_Entry_e__FixedBuffer.xml' path='doc/member[@name="_Entry_e__FixedBuffer"]/*' />
     public partial struct _Entry_e__FixedBuffer
     {
         public UNWIND_HISTORY_TABLE_ENTRY e0;

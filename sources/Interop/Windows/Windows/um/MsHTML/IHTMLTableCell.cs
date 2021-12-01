@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell"]/*' />
 [Guid("3050F23D-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLTableCell : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, uint>)(lpVtbl[1]))((IHTMLTableCell*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, uint>)(lpVtbl[2]))((IHTMLTableCell*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, uint*, int>)(lpVtbl[3]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_rowSpan"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_rowSpan([NativeTypeName("long")] int v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, int, int>)(lpVtbl[7]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_rowSpan"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_rowSpan([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, int*, int>)(lpVtbl[8]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_colSpan"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_colSpan([NativeTypeName("long")] int v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, int, int>)(lpVtbl[9]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_colSpan"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_colSpan([NativeTypeName("long *")] int* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, int*, int>)(lpVtbl[10]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_align"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_align([NativeTypeName("BSTR")] ushort* v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, ushort*, int>)(lpVtbl[11]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_align"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_align([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, ushort**, int>)(lpVtbl[12]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_vAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_vAlign([NativeTypeName("BSTR")] ushort* v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, ushort*, int>)(lpVtbl[13]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_vAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, ushort**, int>)(lpVtbl[14]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_bgColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_bgColor(VARIANT v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[15]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_bgColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_bgColor(VARIANT* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[16]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_noWrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_noWrap([NativeTypeName("VARIANT_BOOL")] short v)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, short, int>)(lpVtbl[17]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_noWrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_noWrap([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, short*, int>)(lpVtbl[18]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_background"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT put_background([NativeTypeName("BSTR")] ushort* v)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, ushort*, int>)(lpVtbl[19]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_background"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_background([NativeTypeName("BSTR *")] ushort** p)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, ushort**, int>)(lpVtbl[20]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_borderColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_borderColor(VARIANT v)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[21]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_borderColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_borderColor(VARIANT* p)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[22]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_borderColorLight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_borderColorLight(VARIANT v)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[23]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_borderColorLight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_borderColorLight(VARIANT* p)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[24]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_borderColorDark"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_borderColorDark(VARIANT v)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[25]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_borderColorDark"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_borderColorDark(VARIANT* p)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[26]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT put_width(VARIANT v)
@@ -214,6 +243,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[27]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get_width(VARIANT* p)
@@ -221,6 +251,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[28]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.put_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT put_height(VARIANT v)
@@ -228,6 +259,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[29]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT get_height(VARIANT* p)
@@ -235,6 +267,7 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[30]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTableCell.xml' path='doc/member[@name="IHTMLTableCell.get_cellIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT get_cellIndex([NativeTypeName("long *")] int* p)

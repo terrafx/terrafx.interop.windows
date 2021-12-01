@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IThumbnailStreamCache.xml' path='doc/member[@name="IThumbnailStreamCache"]/*' />
 [Guid("90E11430-9569-41D8-AE75-6D4D2AE7CCA0")]
 [NativeTypeName("struct IThumbnailStreamCache : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
         return ((delegate* unmanaged<IThumbnailStreamCache*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
         return ((delegate* unmanaged<IThumbnailStreamCache*, uint>)(lpVtbl[1]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
         return ((delegate* unmanaged<IThumbnailStreamCache*, uint>)(lpVtbl[2]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IThumbnailStreamCache.xml' path='doc/member[@name="IThumbnailStreamCache.GetThumbnailStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetThumbnailStream([NativeTypeName("LPCWSTR")] ushort* path, [NativeTypeName("ULONGLONG")] ulong cacheId, ThumbnailStreamCacheOptions options, uint requestedThumbnailSize, SIZE* thumbnailSize, IStream** thumbnailStream)
@@ -48,6 +53,7 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
         return ((delegate* unmanaged<IThumbnailStreamCache*, ushort*, ulong, ThumbnailStreamCacheOptions, uint, SIZE*, IStream**, int>)(lpVtbl[3]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), path, cacheId, options, requestedThumbnailSize, thumbnailSize, thumbnailStream);
     }
 
+    /// <include file='IThumbnailStreamCache.xml' path='doc/member[@name="IThumbnailStreamCache.SetThumbnailStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetThumbnailStream([NativeTypeName("LPCWSTR")] ushort* path, [NativeTypeName("ULONGLONG")] ulong cacheId, SIZE thumbnailSize, IStream* thumbnailStream)

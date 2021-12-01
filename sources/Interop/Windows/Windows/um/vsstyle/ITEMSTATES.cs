@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITEMSTATES.xml' path='doc/member[@name="ITEMSTATES"]/*' />
 public enum ITEMSTATES
 {
+    /// <include file='ITEMSTATES.xml' path='doc/member[@name="ITEMSTATES.LBPSI_HOT"]/*' />
     LBPSI_HOT = 1,
+
+    /// <include file='ITEMSTATES.xml' path='doc/member[@name="ITEMSTATES.LBPSI_HOTSELECTED"]/*' />
     LBPSI_HOTSELECTED = 2,
+
+    /// <include file='ITEMSTATES.xml' path='doc/member[@name="ITEMSTATES.LBPSI_SELECTED"]/*' />
     LBPSI_SELECTED = 3,
+
+    /// <include file='ITEMSTATES.xml' path='doc/member[@name="ITEMSTATES.LBPSI_SELECTEDNOTFOCUS"]/*' />
     LBPSI_SELECTEDNOTFOCUS = 4,
 }

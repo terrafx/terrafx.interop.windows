@@ -7,12 +7,22 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACTIVATEOPTIONS.xml' path='doc/member[@name="ACTIVATEOPTIONS"]/*' />
 [Flags]
 public enum ACTIVATEOPTIONS
 {
+    /// <include file='ACTIVATEOPTIONS.xml' path='doc/member[@name="ACTIVATEOPTIONS.AO_NONE"]/*' />
     AO_NONE = 0,
+
+    /// <include file='ACTIVATEOPTIONS.xml' path='doc/member[@name="ACTIVATEOPTIONS.AO_DESIGNMODE"]/*' />
     AO_DESIGNMODE = 0x1,
+
+    /// <include file='ACTIVATEOPTIONS.xml' path='doc/member[@name="ACTIVATEOPTIONS.AO_NOERRORUI"]/*' />
     AO_NOERRORUI = 0x2,
+
+    /// <include file='ACTIVATEOPTIONS.xml' path='doc/member[@name="ACTIVATEOPTIONS.AO_NOSPLASHSCREEN"]/*' />
     AO_NOSPLASHSCREEN = 0x4,
+
+    /// <include file='ACTIVATEOPTIONS.xml' path='doc/member[@name="ACTIVATEOPTIONS.AO_PRELAUNCH"]/*' />
     AO_PRELAUNCH = 0x2000000,
 }

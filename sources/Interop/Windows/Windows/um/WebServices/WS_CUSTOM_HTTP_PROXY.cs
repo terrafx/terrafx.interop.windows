@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CUSTOM_HTTP_PROXY.xml' path='doc/member[@name="WS_CUSTOM_HTTP_PROXY"]/*' />
 public partial struct WS_CUSTOM_HTTP_PROXY
 {
+    /// <include file='WS_CUSTOM_HTTP_PROXY.xml' path='doc/member[@name="WS_CUSTOM_HTTP_PROXY.servers"]/*' />
     public WS_STRING servers;
 
+    /// <include file='WS_CUSTOM_HTTP_PROXY.xml' path='doc/member[@name="WS_CUSTOM_HTTP_PROXY.bypass"]/*' />
     public WS_STRING bypass;
 }

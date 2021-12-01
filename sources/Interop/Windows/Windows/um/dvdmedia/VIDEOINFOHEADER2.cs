@@ -8,41 +8,55 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2"]/*' />
 public partial struct VIDEOINFOHEADER2
 {
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.rcSource"]/*' />
     public RECT rcSource;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.rcTarget"]/*' />
     public RECT rcTarget;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.dwBitRate"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBitRate;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.dwBitErrorRate"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBitErrorRate;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.AvgTimePerFrame"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long AvgTimePerFrame;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.dwInterlaceFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwInterlaceFlags;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.dwCopyProtectFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCopyProtectFlags;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.dwPictAspectRatioX"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPictAspectRatioX;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.dwPictAspectRatioY"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPictAspectRatioY;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.Anonymous"]/*' />
     [NativeTypeName("tagVIDEOINFOHEADER2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dvdmedia.h:317:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.dwReserved2"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved2;
 
+    /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.bmiHeader"]/*' />
     public BITMAPINFOHEADER bmiHeader;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwControlFlags"]/*' />
     public ref uint dwControlFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -52,6 +66,7 @@ public partial struct VIDEOINFOHEADER2
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwReserved1"]/*' />
     public ref uint dwReserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,13 +76,16 @@ public partial struct VIDEOINFOHEADER2
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwControlFlags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwControlFlags;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwReserved1"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwReserved1;

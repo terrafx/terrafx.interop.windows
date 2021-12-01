@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNC_TRANSFER_STATUS">
+    <summary>
+      <para>Specifies possible status values used in the System.SyncTransferStatus property.</para>
+    </summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_NONE">
+    <summary>
+      <para>There is no current sync activity.</para>
+    </summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_NEEDSUPLOAD">
+    <summary>
+      <para>The file is pending upload.</para>
+    </summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_NEEDSDOWNLOAD">
+    <summary>
+      <para>The file is pending download.</para>
+    </summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_TRANSFERRING">
+    <summary>
+      <para>The file is currently being uploaded or downloaded.</para>
+    </summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_PAUSED">
+    <summary>
+      <para>The current transfer is paused.</para>
+    </summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_HASERROR">
+    <summary>
+      <para>An error was encountered during the last sync operation.</para>
+    </summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_FETCHING_METADATA">
+    <summary>
+      <para>The sync engine is retrieving metadata from the cloud.</para>
+    </summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_USER_REQUESTED_REFRESH">
+    <summary></summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_HASWARNING">
+    <summary></summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_EXCLUDED">
+    <summary></summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_INCOMPLETE">
+    <summary></summary>
+  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_PLACEHOLDER_IFEMPTY">
+    <summary></summary>
+  </member>
+</doc>

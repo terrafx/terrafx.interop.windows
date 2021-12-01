@@ -8,26 +8,35 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY"]/*' />
 public unsafe partial struct OCSP_BASIC_RESPONSE_ENTRY
 {
+    /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.CertId"]/*' />
     public OCSP_CERT_ID CertId;
 
+    /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.dwCertStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCertStatus;
 
+    /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.Anonymous"]/*' />
     [NativeTypeName("_OCSP_BASIC_RESPONSE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5682:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.ThisUpdate"]/*' />
     public FILETIME ThisUpdate;
 
+    /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.NextUpdate"]/*' />
     public FILETIME NextUpdate;
 
+    /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.cExtension"]/*' />
     [NativeTypeName("DWORD")]
     public uint cExtension;
 
+    /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.rgExtension"]/*' />
     [NativeTypeName("PCERT_EXTENSION")]
     public CERT_EXTENSION* rgExtension;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pRevokedInfo"]/*' />
     public ref OCSP_BASIC_REVOKED_INFO* pRevokedInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,9 +46,11 @@ public unsafe partial struct OCSP_BASIC_RESPONSE_ENTRY
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pRevokedInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("POCSP_BASIC_REVOKED_INFO")]
         public OCSP_BASIC_REVOKED_INFO* pRevokedInfo;

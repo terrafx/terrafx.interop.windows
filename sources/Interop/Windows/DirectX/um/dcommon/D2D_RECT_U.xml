@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D_RECT_U">
+    <summary>
+      <para>Represents a rectangle defined by the upper-left corner  pair of coordinates (left,top) and the lower-right corner pair of coordinates (right, bottom). These coordinates are expressed as a 32-bit integer values.</para>
+    </summary>
+  </member>
+  <member name="D2D_RECT_U.left">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The x-coordinate of the upper-left corner of the rectangle.</para>
+    </summary>
+  </member>
+  <member name="D2D_RECT_U.top">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The y-coordinate of the upper-left corner of the rectangle.</para>
+    </summary>
+  </member>
+  <member name="D2D_RECT_U.right">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The x-coordinate of the lower-right corner of the rectangle.</para>
+    </summary>
+  </member>
+  <member name="D2D_RECT_U.bottom">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The y-coordinate of the lower-right corner of the rectangle.</para>
+    </summary>
+  </member>
+</doc>

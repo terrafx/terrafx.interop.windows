@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WIN_CERTIFICATE.xml' path='doc/member[@name="WIN_CERTIFICATE"]/*' />
 public unsafe partial struct WIN_CERTIFICATE
 {
+    /// <include file='WIN_CERTIFICATE.xml' path='doc/member[@name="WIN_CERTIFICATE.dwLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLength;
 
+    /// <include file='WIN_CERTIFICATE.xml' path='doc/member[@name="WIN_CERTIFICATE.wRevision"]/*' />
     [NativeTypeName("WORD")]
     public ushort wRevision;
 
+    /// <include file='WIN_CERTIFICATE.xml' path='doc/member[@name="WIN_CERTIFICATE.wCertificateType"]/*' />
     [NativeTypeName("WORD")]
     public ushort wCertificateType;
 
+    /// <include file='WIN_CERTIFICATE.xml' path='doc/member[@name="WIN_CERTIFICATE.bCertificate"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte bCertificate[1];
 }

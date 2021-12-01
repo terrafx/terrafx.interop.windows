@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLWindowProxy.xml' path='doc/member[@name="HTMLWindowProxy"]/*' />
 [Guid("3050F391-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLWindowProxy
 {

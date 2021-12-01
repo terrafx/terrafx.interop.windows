@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TXFS_TRANSACTION_ACTIVE_INFO.xml' path='doc/member[@name="TXFS_TRANSACTION_ACTIVE_INFO"]/*' />
 public partial struct TXFS_TRANSACTION_ACTIVE_INFO
 {
+    /// <include file='TXFS_TRANSACTION_ACTIVE_INFO.xml' path='doc/member[@name="TXFS_TRANSACTION_ACTIVE_INFO.TransactionsActiveAtSnapshot"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte TransactionsActiveAtSnapshot;
 }

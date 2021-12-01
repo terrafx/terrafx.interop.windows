@@ -7,10 +7,18 @@ using static TerraFX.Interop.Windows.SPDATAKEYLOCATION;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechDataKeyLocation.xml' path='doc/member[@name="SpeechDataKeyLocation"]/*' />
 public enum SpeechDataKeyLocation
 {
+    /// <include file='SpeechDataKeyLocation.xml' path='doc/member[@name="SpeechDataKeyLocation.SDKLDefaultLocation"]/*' />
     SDKLDefaultLocation = SPDKL_DefaultLocation,
+
+    /// <include file='SpeechDataKeyLocation.xml' path='doc/member[@name="SpeechDataKeyLocation.SDKLCurrentUser"]/*' />
     SDKLCurrentUser = SPDKL_CurrentUser,
+
+    /// <include file='SpeechDataKeyLocation.xml' path='doc/member[@name="SpeechDataKeyLocation.SDKLLocalMachine"]/*' />
     SDKLLocalMachine = SPDKL_LocalMachine,
+
+    /// <include file='SpeechDataKeyLocation.xml' path='doc/member[@name="SpeechDataKeyLocation.SDKLCurrentConfig"]/*' />
     SDKLCurrentConfig = SPDKL_CurrentConfig,
 }

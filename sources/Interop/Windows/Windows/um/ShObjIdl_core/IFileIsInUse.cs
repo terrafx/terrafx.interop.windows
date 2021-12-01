@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse"]/*' />
 [Guid("64A1CBF0-3A1A-4461-9158-376969693950")]
 [NativeTypeName("struct IFileIsInUse : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface
         return ((delegate* unmanaged<IFileIsInUse*, Guid*, void**, int>)(lpVtbl[0]))((IFileIsInUse*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface
         return ((delegate* unmanaged<IFileIsInUse*, uint>)(lpVtbl[1]))((IFileIsInUse*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface
         return ((delegate* unmanaged<IFileIsInUse*, uint>)(lpVtbl[2]))((IFileIsInUse*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.GetAppName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAppName([NativeTypeName("LPWSTR *")] ushort** ppszName)
@@ -46,6 +51,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface
         return ((delegate* unmanaged<IFileIsInUse*, ushort**, int>)(lpVtbl[3]))((IFileIsInUse*)Unsafe.AsPointer(ref this), ppszName);
     }
 
+    /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.GetUsage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetUsage(FILE_USAGE_TYPE* pfut)
@@ -53,6 +59,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface
         return ((delegate* unmanaged<IFileIsInUse*, FILE_USAGE_TYPE*, int>)(lpVtbl[4]))((IFileIsInUse*)Unsafe.AsPointer(ref this), pfut);
     }
 
+    /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.GetCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCapabilities([NativeTypeName("DWORD *")] uint* pdwCapFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface
         return ((delegate* unmanaged<IFileIsInUse*, uint*, int>)(lpVtbl[5]))((IFileIsInUse*)Unsafe.AsPointer(ref this), pdwCapFlags);
     }
 
+    /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.GetSwitchToHWND"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSwitchToHWND(HWND* phwnd)
@@ -67,6 +75,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface
         return ((delegate* unmanaged<IFileIsInUse*, HWND*, int>)(lpVtbl[6]))((IFileIsInUse*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.CloseFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CloseFile()

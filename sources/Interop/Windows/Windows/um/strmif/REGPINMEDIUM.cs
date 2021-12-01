@@ -7,14 +7,18 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REGPINMEDIUM.xml' path='doc/member[@name="REGPINMEDIUM"]/*' />
 public partial struct REGPINMEDIUM
 {
+    /// <include file='REGPINMEDIUM.xml' path='doc/member[@name="REGPINMEDIUM.clsMedium"]/*' />
     [NativeTypeName("CLSID")]
     public Guid clsMedium;
 
+    /// <include file='REGPINMEDIUM.xml' path='doc/member[@name="REGPINMEDIUM.dw1"]/*' />
     [NativeTypeName("DWORD")]
     public uint dw1;
 
+    /// <include file='REGPINMEDIUM.xml' path='doc/member[@name="REGPINMEDIUM.dw2"]/*' />
     [NativeTypeName("DWORD")]
     public uint dw2;
 }

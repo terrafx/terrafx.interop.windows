@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLICELPWAVEFORMAT.xml' path='doc/member[@name="OLICELPWAVEFORMAT"]/*' />
 public partial struct OLICELPWAVEFORMAT
 {
+    /// <include file='OLICELPWAVEFORMAT.xml' path='doc/member[@name="OLICELPWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 }

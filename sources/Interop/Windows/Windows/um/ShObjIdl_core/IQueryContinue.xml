@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IQueryContinue.QueryContinue">
+    <summary>
+      <para>Returns <b>S_OK</b> if the operation associated with the current instance of this interface should continue.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if the calling application should continue, <b>S_FALSE</b> if not.</para>
+    </returns>
+    <remarks>
+      <para>In typical usage, a pointer to an <see cref="IQueryContinue" /> interface is passed to a method of another object.    That object, in turn, runs this method periodically to determine whether to continue its actions. For example, if a user clicks a cancel button, this method will start returning <b>S_FALSE</b>.</para>
+    </remarks>
+    <seealso cref="IQueryContinue" />
+    <seealso cref="IUserNotification" />
+  </member>
+  <member name="IQueryContinue">
+    <summary>
+      <para>Exposes a method that provides a simple, standard mechanism for objects to query a client for permission to continue an operation. Clients of <see cref="IUserNotification" />, for example, must pass an implementation of <b>IQueryContinue</b> to the <see cref="IUserNotification.Show" /> method.</para>
+    </summary>
+    <seealso cref="IUserNotification" />
+  </member>
+</doc>

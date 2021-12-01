@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_VERIFY_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_VERIFY_MESSAGE_PARA"]/*' />
 public unsafe partial struct CRYPT_VERIFY_MESSAGE_PARA
 {
+    /// <include file='CRYPT_VERIFY_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_VERIFY_MESSAGE_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CRYPT_VERIFY_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_VERIFY_MESSAGE_PARA.dwMsgAndCertEncodingType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMsgAndCertEncodingType;
 
+    /// <include file='CRYPT_VERIFY_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_VERIFY_MESSAGE_PARA.hCryptProv"]/*' />
     public HCRYPTPROV_LEGACY hCryptProv;
 
+    /// <include file='CRYPT_VERIFY_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_VERIFY_MESSAGE_PARA.pfnGetSignerCertificate"]/*' />
     [NativeTypeName("PFN_CRYPT_GET_SIGNER_CERTIFICATE")]
     public delegate* unmanaged<void*, uint, CERT_INFO*, HCERTSTORE, CERT_CONTEXT*> pfnGetSignerCertificate;
 
+    /// <include file='CRYPT_VERIFY_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_VERIFY_MESSAGE_PARA.pvGetArg"]/*' />
     public void* pvGetArg;
 }

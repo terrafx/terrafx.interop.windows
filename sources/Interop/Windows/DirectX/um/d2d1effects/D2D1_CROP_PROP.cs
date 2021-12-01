@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_CROP_PROP.xml' path='doc/member[@name="D2D1_CROP_PROP"]/*' />
 public enum D2D1_CROP_PROP : uint
 {
+    /// <include file='D2D1_CROP_PROP.xml' path='doc/member[@name="D2D1_CROP_PROP.D2D1_CROP_PROP_RECT"]/*' />
     D2D1_CROP_PROP_RECT = 0,
+
+    /// <include file='D2D1_CROP_PROP.xml' path='doc/member[@name="D2D1_CROP_PROP.D2D1_CROP_PROP_BORDER_MODE"]/*' />
     D2D1_CROP_PROP_BORDER_MODE = 1,
+
+    /// <include file='D2D1_CROP_PROP.xml' path='doc/member[@name="D2D1_CROP_PROP.D2D1_CROP_PROP_FORCE_DWORD"]/*' />
     D2D1_CROP_PROP_FORCE_DWORD = 0xffffffff,
 }

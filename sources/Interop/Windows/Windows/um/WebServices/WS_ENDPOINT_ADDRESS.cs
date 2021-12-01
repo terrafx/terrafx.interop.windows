@@ -7,13 +7,18 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ENDPOINT_ADDRESS.xml' path='doc/member[@name="WS_ENDPOINT_ADDRESS"]/*' />
 public unsafe partial struct WS_ENDPOINT_ADDRESS
 {
+    /// <include file='WS_ENDPOINT_ADDRESS.xml' path='doc/member[@name="WS_ENDPOINT_ADDRESS.url"]/*' />
     public WS_STRING url;
 
+    /// <include file='WS_ENDPOINT_ADDRESS.xml' path='doc/member[@name="WS_ENDPOINT_ADDRESS.headers"]/*' />
     public IntPtr headers;
 
+    /// <include file='WS_ENDPOINT_ADDRESS.xml' path='doc/member[@name="WS_ENDPOINT_ADDRESS.extensions"]/*' />
     public IntPtr extensions;
 
+    /// <include file='WS_ENDPOINT_ADDRESS.xml' path='doc/member[@name="WS_ENDPOINT_ADDRESS.identity"]/*' />
     public WS_ENDPOINT_IDENTITY* identity;
 }

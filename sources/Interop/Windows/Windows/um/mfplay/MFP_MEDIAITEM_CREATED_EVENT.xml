@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFP_MEDIAITEM_CREATED_EVENT">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Event structure for the <b>MFP_EVENT_TYPE_MEDIAITEM_CREATED</b> event. This event is sent when the <see cref="IMFPMediaPlayer.CreateMediaItemFromURL" /> or  <see cref="IMFPMediaPlayer.CreateMediaItemFromObject" /> method completes.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this structure, cast the <i>pEventHeader</i> parameter of the <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" />  method.  You can use the <see cref="MFP_GET_MEDIAITEM_CREATED_EVENT" /> macro for this purpose.</para>
+      <para>Media items are created asynchronously. If multiple items are created, the operations can complete in any order, not necessarily in the same order as the method calls. You can use  the <b>dwUserData</b> member to identify the items, if you have simultaneous requests pending.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayerCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="MFP_MEDIAITEM_CREATED_EVENT.header">
+    <summary>
+      <para>
+        <see cref="MFP_EVENT_HEADER" /> structure that contains data common to all <see cref="IMFPMediaPlayer" /> events.</para>
+    </summary>
+  </member>
+  <member name="MFP_MEDIAITEM_CREATED_EVENT.pMediaItem">
+    <summary>
+      <para>Pointer to the <see cref="IMFPMediaItem" /> interface of the new media item. If creating the media item failed, this member is <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="MFP_MEDIAITEM_CREATED_EVENT.dwUserData">
+    <summary>
+      <para>Application-defined user data for the media item. This value is specified when the application calls <see cref="CreateMediaItemFromURL" /> or  <see cref="CreateMediaItemFromObject" />.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITaskbarList.ActivateTab">
+    <summary>
+      <para>Activates an item on the taskbar. The window is not actually activated; the window's item on the taskbar is merely displayed as active.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the window on the taskbar to be displayed as active.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITaskbarList.AddTab">
+    <summary>
+      <para>Adds an item to the taskbar.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the window to be added to the taskbar.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Any type of window can be added to the taskbar, but it is recommended that the window at least have the <a href="https://docs.microsoft.com//windows/desktop/winmsg/window-styles">WS_CAPTION</a> style.</para>
+      <para>Any window added with this method must be removed with the <see cref="DeleteTab" /> method when the added window is destroyed.</para>
+    </remarks>
+  </member>
+  <member name="ITaskbarList.DeleteTab">
+    <summary>
+      <para>Deletes an item from the taskbar.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the window to be deleted from the taskbar.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITaskbarList.HrInit">
+    <summary>
+      <para>Initializes the taskbar list object. This method must be called before any other <see cref="ITaskbarList" /> methods can be called.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. If the method fails, no other methods can be called. The calling application should release the interface pointer.</para>
+    </returns>
+  </member>
+  <member name="ITaskbarList.SetActiveAlt">
+    <summary>
+      <para>Marks a taskbar item as active but does not visually activate it.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the window to be marked as active.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>SetActiveAlt</b> marks the item associated with <i>hwnd</i> as the currently active item for the window's process without changing the pressed state of any item. Any user action that would activate a different tab in that process will activate the tab associated with <i>hwnd</i> instead. The active state of the window's item is not guaranteed to be preserved when the process associated with <i>hwnd</i> is not active. To ensure that a given tab is always active, call <b>SetActiveAlt</b> whenever any of your windows are activated. Calling <b>SetActiveAlt</b> with a <b>NULL</b><i>hwnd</i> clears this state.</para>
+    </remarks>
+  </member>
+  <member name="ITaskbarList">
+    <summary>
+      <para>Exposes methods that control the taskbar. It allows you to dynamically add, remove, and activate items on the taskbar.</para>
+    </summary>
+    <remarks>
+      <para>You do not implement <b>ITaskbarList</b>; it is implemented by the Shell.</para>
+      <para>Use <b>ITaskbarList</b> to add items to the taskbar, remove items from the taskbar, and activate items on the taskbar.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/shell/taskbar">Modifying Contents of the Taskbar</a> for more information about using this interface.</para>
+    </remarks>
+  </member>
+</doc>

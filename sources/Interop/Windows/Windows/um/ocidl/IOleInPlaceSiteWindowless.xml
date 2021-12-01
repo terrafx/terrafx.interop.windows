@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOleInPlaceSiteWindowless.OnInPlaceDeactivateEx">
+    <summary>
+      <para>Notifies the container if the object needs to be redrawn upon deactivation.</para>
+    </summary>
+    <param name="fNoRedraw">
+      <para>If <b>TRUE</b>, the container need not redraw the object after completing the deactivation; if <b>FALSE</b> the object must be redrawn after deactivation.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method replaces <see cref="IOleInPlaceSite.OnInPlaceDeactivate" />. If the older method is used, the object must always be redrawn on deactivation.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSite.OnInPlaceDeactivate" />
+    <seealso cref="IOleInPlaceSiteEx" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.AdjustRect">
+    <summary>
+      <para>Adjusts a specified rectangle if it is entirely or partially covered by overlapping, opaque objects.</para>
+    </summary>
+    <param name="prc">
+      <para>The rectangle to be adjusted.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK if rectangle was adjusted successfully; meaning that the rectangle was not completely covered. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The rectangle was adjusted successfully. Note S_FALSE means that the rectangle was completely covered. Its width and height are now <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The main use of this method is to adjust the size of the caret. An object willing to create a caret should submit the caret rectangle to its site object by calling this method and using the adjusted rectangle returned from it for the caret. If the caret is entirely hidden, this method will return S_FALSE and the caret should not be shown at all in this case.</para>
+      <para>In a situation where objects are overlapping this method should return the largest rectangle that is fully visible.</para>
+      <para>This method can also be used to figure whether a point or a rectangular area is visible or hidden by overlapping objects.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSiteWindowless" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.CanWindowlessActivate">
+    <summary>
+      <para>Informs an object if its container can support it as a windowless object that can be in-place activated.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK if the object can activate in-place without a window.</para>
+    </returns>
+    <remarks>
+      <para>If this method returns S_OK, the container can dispatch events to it using <see cref="IOleInPlaceObjectWindowless" />.</para>
+      <para>If this method returns S_FALSE, the object should create a window and behave as a normal compound document object.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceObjectWindowless" />
+    <seealso cref="IOleInPlaceSiteWindowless" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.GetCapture">
+    <summary>
+      <para>Called by an in-place active, windowless object to determine whether it still has the mouse capture.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not currently have the mouse capture.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>As an alternative to calling this method, the object can cache information about whether it has the mouse capture.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSiteWindowless" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.GetDC">
+    <summary>
+      <para>Provides an object with a handle to a device context for a screen or compatible device from its container.</para>
+    </summary>
+    <param name="pRect">
+      <para>A pointer to the rectangle that the object wants to redraw, in client coordinates of the containing window. If this parameter is <b>NULL</b>, the object's full extent is redrawn.</para>
+    </param>
+    <param name="grfFlags">
+      <para>A combination of values from the <see cref="OLEDCFLAGS" /> enumeration.</para>
+    </param>
+    <param name="phDC">
+      <para>A pointer to a returned device context.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NESTEDPAINT</b>
+            </para>
+          </description>
+          <description>
+            <para>The container is already in the middle of a paint session. That is, this method has already been called, and the <see cref="IOleInPlaceSiteWindowless.ReleaseDC" /> method has not yet been called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A device context obtained by this method should be released by calling <see cref="IOleInPlaceSiteWindowless.ReleaseDC" />.</para>
+      <para>Like other methods in this interface, rectangles are specified in client coordinates of the containing window. The container is expected to intersect this rectangle with the object's site rectangle and clip out everything outside the resulting rectangle. This prevents objects from inadvertently drawing where they are not supposed to.</para>
+      <para>Containers are also expected to map the device context origin so the object can draw in client coordinates of the containing window, usually the container's window. If the container is merely passing its window device context, this occurs automatically. If it is returning another device context, for example, an offscreen memory device context, then the viewport origin should be set appropriately.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Depending whether it is returning an on-screen or off-screen device context and depending on how sophisticated it is, container can use one of the following algorithms:</para>
+      <list type="number">
+        <item>
+          <description>
+            <para>On-screen, One Pass Drawing</para>
+            <list type="number">
+              <item>
+                <description>In the <b>IOleInPlaceSiteWindowless.GetDC</b> method, the container should:<list type="bullet"><item><description>Get the window device context.</description></item><item><description>If <see cref="OLEDC" />_PAINTBKGND is set, draw the <see cref="DVASPECT" />_CONTENT aspect of every object behind the object requesting the device context.</description></item><item><description>Return the device context.</description></item></list></description>
+              </item>
+              <item>
+                <description>In the <see cref="ReleaseDC" /> method, the container should:<list type="bullet"><item><description>Draw the DVASPECT_CONTENT of every overlapping object.</description></item><item><description>Release the device context.</description></item></list></description>
+              </item>
+            </list>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>On-screen, Two Pass Drawing</para>
+            <list type="number">
+              <item>
+                <description>In the <b>IOleInPlaceSiteWindowless.GetDC</b> method, the container should:<list type="bullet"><item><description>Get the window device context.</description></item><item><description>Clip out the opaque regions of any overlapping object. These regions do not need to be redrawn since they are already correct on the screen.
+</description></item><item><description>If OLEDC_PAINTBKGND is not set, return the device context.</description></item><item><description>Otherwise, clip out the opaque parts of the object requesting the device context and draw the opaque parts of every object behind it going front to back.</description></item><item><description>Draw the transparent aspects of every object behind going back to front, setting the clipping region appropriately each time.</description></item><item><description>Finally return the device context.</description></item></list></description>
+              </item>
+              <item>
+                <description>In the <see cref="IOleInPlaceSiteWindowless.ReleaseDC" /> method, the container should:<list type="bullet"><item><description>Draw the transparent parts of every overlapping object.</description></item><item><description>Release the device context.</description></item></list></description>
+              </item>
+            </list>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Off-screen Drawing</para>
+            <list type="number">
+              <item>
+                <description>In the <b>IOleInPlaceSiteWindowless.GetDC</b> method, the container should:<list type="bullet"><item><description>Create a screen compatible memory device context, containing a compatible bitmap of appropriate size.</description></item><item><description>Map the viewport origin of the device context to ensure that the calling object can draw using client area coordinates of the containing window.</description></item><item><description>If OLEDC_PAINTBKGND is set, draw the DVASPECT_CONTENT of every object behind the calling object.</description></item><item><description>Return the device context.</description></item></list></description>
+              </item>
+              <item>
+                <description>In the <see cref="IOleInPlaceSiteWindowless.ReleaseDC" /> method, the container should:<list type="bullet"><item><description>Draw the DVASPECT_CONTENT aspect of every overlapping object.</description></item><item><description>Copy the off-screen bitmap to the screen at the location the calling object originally requested in <b>IOleInPlaceSiteWindowless.GetDC</b>.</description></item><item><description>Delete and release the memory device context.</description></item></list></description>
+              </item>
+            </list>
+          </description>
+        </item>
+      </list>
+      <para>When this method returns, the clipping region in the device context should be set so that the object can't paint in any area it is not supposed to. If the object is not opaque, the background should have been painted. If the device context is a screen, any overlapping opaque areas should be clipped out.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSiteWindowless" />
+    <seealso cref="IOleInPlaceSiteWindowless.ReleaseDC" />
+    <seealso cref="OLEDCFLAGS" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.GetFocus">
+    <summary>
+      <para>Called by an in-place active, windowless object to determine whether it still has the keyboard focus.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not currently have the keyboard focus.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A windowless object calls this method to find out if it currently has the focus or not. As an alternative to calling this method, the object can cache information about whether it has the keyboard focus or not.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSiteWindowless" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.InvalidateRect">
+    <summary>
+      <para>Enables an object to invalidate a specified rectangle of its in-place image on the screen.</para>
+    </summary>
+    <param name="pRect">
+      <para>The rectangle to be invalidated, in client coordinates of the containing window. If this parameter is <b>NULL</b>, the object's full extent is invalidated.</para>
+    </param>
+    <param name="fErase">
+      <para>Specifies whether the background within the update region is to be erased when the region is updated. If this parameter is <b>TRUE</b>, the background is erased. If this parameter is <b>FALSE</b>, the background remains unchanged.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>An object is only allowed to invalidate pixels contained in its own site rectangle. Any attempt to invalidate an area outside of that rectangle should result in a no-op.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSiteWindowless" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.InvalidateRgn">
+    <summary>
+      <para>Enables an object to invalidate a specified region of its in-place image on the screen.</para>
+    </summary>
+    <param name="hRGN">
+      <para>The region to invalidate, in client coordinates of the containing window. If this parameter is <b>NULL</b>, the object's full extent is invalidated.</para>
+    </param>
+    <param name="fErase">
+      <para>Specifies whether the background within the update region is to be erased when the region is updated. If this parameter is <b>TRUE</b>, the background is erased. If this parameter is <b>FALSE</b>, the background remains unchanged.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>An object is only allowed to invalidate pixels contained in its own site region. Any attempt to invalidate an area outside of that region should result in a no-op.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSiteWindowless" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.OnDefWindowMessage">
+    <summary>
+      <para>Invokes the default processing for all messages passed to an object.</para>
+    </summary>
+    <param name="msg">
+      <para>The identifier for the window message provided to the container by Windows.</para>
+    </param>
+    <param name="wParam">
+      <para>A parameter for the window message provided to the container by Windows.</para>
+    </param>
+    <param name="lParam">
+      <para>A parameter for the window message provided to the container by Windows.</para>
+    </param>
+    <param name="plResult">
+      <para>A pointer to result code for the window message.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The container's default processing for the window message was not invoked. See Note to Implementers below.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A windowless object can explicitly invoke the default processing for a window message by calling this method. A container dispatches window messages to its windowless objects by calling <see cref="IOleInPlaceObjectWindowless.OnWindowMessage" />. The object usually returns S_FALSE to indicate that it did not process the message. Then, the container can perform the default behavior for the message by calling the <see cref="DefWindowProc" /> function.</para>
+      <para>Instead, the object can call this method on the container's site object to explicitly invoke the default processing. Then, the object can take action on its own if the container does not handle the message.</para>
+      <h3>Notes to Implementers</h3>
+      <para>The container must pass the following window messages to its default window procedure (the <see cref="DefWindowProc" /> function) and return S_OK. Note that *<i>plResult</i> should contain the value returned by <b>DefWindowProc</b>.</para>
+      <list type="bullet">
+        <item>
+          <description>WM_CHAR</description>
+        </item>
+        <item>
+          <description>WM_DEADCHAR</description>
+        </item>
+        <item>
+          <description>WM_IMExxx</description>
+        </item>
+        <item>
+          <description>WM_KEYDOWN</description>
+        </item>
+        <item>
+          <description>WM_KEYUP</description>
+        </item>
+        <item>
+          <description>WM_MOUSEMOVE</description>
+        </item>
+        <item>
+          <description>WM_SYSCHAR</description>
+        </item>
+        <item>
+          <description>WM_SYSDEADCHAR</description>
+        </item>
+        <item>
+          <description>WM_SYSKEYUP</description>
+        </item>
+        <item>
+          <description>WM_XBUTTONDOWN</description>
+        </item>
+        <item>
+          <description>WM_XBUTTONUP</description>
+        </item>
+        <item>
+          <description>WM_XBUTTONDBLCLK</description>
+        </item>
+      </list>
+      <para>The container can either process the window messages as its own and return S_OK or not do anything and return S_FALSE.</para>
+      <list type="bullet">
+        <item>
+          <description>WM_CONTEXTMENU</description>
+        </item>
+        <item>
+          <description>WM_HELP</description>
+        </item>
+        <item>
+          <description>WM_SETCURSOR</description>
+        </item>
+      </list>
+      <para>If the container returns S_FALSE, the object can take action to process the window message on its own.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceObjectWindowless.OnWindowMessage" />
+    <seealso cref="IOleInPlaceSiteWindowless" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.ReleaseDC">
+    <summary>
+      <para>Releases the device context previously obtained by a call to <see cref="IOleInPlaceSiteWindowless.GetDC" />.</para>
+    </summary>
+    <param name="hDC">
+      <para>The device context to be released.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>An object calls this method to notify its container that the object is done with the device context. If the device context was used for drawing, the container should ensure that all overlapping objects are repainted correctly. If the device context was an offscreen device context, its content should also be copied to the screen in the rectangle originally passed to <see cref="IOleInPlaceSiteWindowless.GetDC" />. See <b>IOleInPlaceSiteWindowless.GetDC</b> for implementation notes relevant to <b>IOleInPlaceSiteWindowless.ReleaseDC</b>.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSiteWindowless" />
+    <seealso cref="IOleInPlaceSiteWindowless.GetDC" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.ScrollRect">
+    <summary>
+      <para>Enables an object to scroll an area within its in-place active image on the screen.</para>
+    </summary>
+    <param name="dx">
+      <para>The amount to scroll the x-axis.</para>
+    </param>
+    <param name="dy">
+      <para>The amount to scroll the y-axis.</para>
+    </param>
+    <param name="pRectScroll">
+      <para>The rectangle to scroll, in client coordinates of the containing window. A value of <b>NULL</b> indicates the full object.</para>
+    </param>
+    <param name="pRectClip">
+      <para>The rectangle to clip. Only pixels scrolling into this rectangle are drawn. Pixels scrolling out are not. If this parameter is <b>NULL</b>, the rectangle is not clipped.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>This method should take in account the fact that the caller may be transparent and that there may be opaque or transparent overlapping objects. See Notes to Implementers below for suggestions on algorithms this method can use.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Containers can implement this method in a variety of ways. However, all of them should account for the possibility that the object requesting scrolling may be transparent or may not have a solid background. Containers should also take into account that there may be overlapping objects.</para>
+      <para>The simplest way to implement this method consists in simply redrawing the rectangle to scroll.</para>
+      <para>An added refinement to this simple implementation is to use the <see cref="ScrollDC" /> function when the object requesting the scroll is opaque, the object has a solid background, and there are no overlapping objects.</para>
+      <para>More sophisticated implementations can use the following procedure:</para>
+      <list type="bullet">
+        <item>
+          <description>Check whether the object is opaque and has a solid background, using <see cref="IViewObjectEx.GetViewStatus" />. If not, simply invalidate the rectangle to scroll. An added refinement is to check whether the scrolling rectangle is entirely in the opaque region of a partially transparent object.</description>
+        </item>
+        <item>
+          <description>Get the window device context.</description>
+        </item>
+        <item>
+          <description>Clip out the opaque parts of any overlapping object returned by <see cref="IViewObjectEx.GetRect" />.</description>
+        </item>
+        <item>
+          <description>Finally, call the <see cref="ScrollDC" /> function.</description>
+        </item>
+        <item>
+          <description>Redraw the previously invalidated transparent parts of any overlapping object.</description>
+        </item>
+      </list>
+      <para>Regardless of the scrolling and clipping rectangle, only pixels contained in the object's site rectangle will be painted. The area uncovered by the scrolling operation is invalidated and redrawn immediately, before this method returns.</para>
+      <para>All redraw generated by this method should happen synchronously before this method returns.</para>
+      <para>This method should automatically hide the caret during the scrolling operation and should move the caret by the scrolling amounts if it is inside the clip rectangle.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSiteWindowless" />
+    <seealso cref="IViewObjectEx.GetRect" />
+    <seealso cref="IViewObjectEx.GetViewStatus" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.SetCapture">
+    <summary>
+      <para>Enables an in-place active, windowless object to capture all mouse messages.</para>
+    </summary>
+    <param name="fCapture">
+      <para>If <b>TRUE</b>, the container should capture the mouse for the object. If <b>FALSE</b>, the container should release mouse capture for the object.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK if the mouse capture was successfully granted to the object. If called to release the mouse capture, this method must not fail. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Mouse capture was denied to the object.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A windowless object captures the mouse input, by calling <b>IOleInPlaceSiteWindowless.SetCapture</b> with <b>TRUE</b> on its site object. The container can deny mouse capture, in which case this method returns S_FALSE. If the capture is granted, the container must set the Windows mouse capture to its own window and dispatch any subsequent mouse message to the object, regardless of whether the mouse cursor position is over this object or not.</para>
+      <para>The object can later release mouse capture by calling <b>IOleInPlaceSiteWindowless.SetCapture</b> with <b>FALSE</b> on its site object. The capture can also be released because of an external event, such as the ESC key being pressed. In this case, the object is notified by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-cancelmode">WM_CANCELMODE</a> message that the container dispatches along with the keyboard focus.</para>
+      <para>Containers should dispatch all mouse messages, including <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-setcursor">WM_SETCURSOR</a>, to the windowless OLE object that has captured the mouse. If no object has captured the mouse, the container should dispatch the mouse message to the object under the mouse cursor.</para>
+      <para>The container dispatches these window messages by calling <see cref="IOleInPlaceObjectWindowless.OnWindowMessage" /> on the windowless object. The windowless object can return S_FALSE to this method to indicate that it did not process the mouse message. Then, the container should perform the default behavior for the message by calling the <see cref="DefWindowProc" /> function. For <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-setcursor">WM_SETCURSOR</a>, the container can either set the cursor itself or do nothing.</para>
+      <para>Objects can also use <see cref="IOleInPlaceSiteWindowless.OnDefWindowMessage" /> to invoke the default message processing from the container. In the case of the <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-setcursor">WM_SETCURSOR</a> message, this allows an object to take action if the container does not set the cursor.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSiteWindowless" />
+    <seealso cref="IOleInPlaceSiteWindowless.OnDefWindowMessage" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless.SetFocus">
+    <summary>
+      <para>Sets the keyboard focus for a UI-active, windowless object.</para>
+    </summary>
+    <param name="fFocus">
+      <para>If <b>TRUE</b>, sets the keyboard focus to the calling object. If <b>FALSE</b>, removes the keyboard focus from the calling object, provided that the object has the focus.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK if the keyboard focus was successfully given to the object. If this method is called to release the focus, it should never fail. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Keyboard focus was denied to the object.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A windowless object calls this method whenever a windowed object would call the <see cref="SetFocus" /> function. Through this call, the windowless object obtains the keyboard focus and can respond to window messages. Normally, this call is made during the UI activation process and within the notification methods <see cref="IOleInPlaceActiveObject.OnDocWindowActivate" /> with <b>TRUE</b> and <see cref="IOleInPlaceActiveObject.OnFrameWindowActivate" /> with <b>TRUE</b>.</para>
+      <para>In response to this call, the container sets the Windows focus to the window being used to get keyboard messages (usually the container window) and redirects any subsequent keyboard messages to the windowless object that requested the focus.</para>
+      <para>A windowless object also calls the <b>IOleInPlaceSiteWindowless.SetFocus</b> method with the <i>fFocus</i> parameter set to <b>FALSE</b> to release the keyboard focus without assigning it to any other object. In this case, the container must call the <see cref="SetFocus" /> function with a <b>NULL</b> parameter so that no window has the focus.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceActiveObject" />
+    <seealso cref="IOleInPlaceSiteWindowless" />
+  </member>
+  <member name="IOleInPlaceSiteWindowless">
+    <summary>
+      <para>Extends the <see cref="IOleInPlaceSiteEx" /> interface. <b>IOleInPlaceSiteWindowless</b> works with <see cref="IOleInPlaceObjectWindowless" /> which is implemented on the windowless object. Together, these two interfaces provide services to a windowless object from its container allowing the windowless object to:</para>
+      <list type="bullet">
+        <item>
+          <description>Process window messages</description>
+        </item>
+        <item>
+          <description>Participate in drag and drop operations
+</description>
+        </item>
+        <item>
+          <description>Perform drawing operations</description>
+        </item>
+      </list>Having a window can place unnecessary burdens on small objects, such as controls. It prevents an object from being non-rectangular. It prevents windows from being transparent. It prevents the small instance size needed by many small controls.
+<para>A windowless object can enter the in-place active state without requiring a window or the resources associated with a window. Instead, the object's container provides the object with many of the services associated with having a window.</para></summary>
+    <seealso cref="IAdviseSinkEx" />
+    <seealso cref="IOleControl" />
+    <seealso cref="IOleInPlaceActiveObject.TranslateAccelerator" />
+    <seealso cref="IOleInPlaceObjectWindowless" />
+  </member>
+</doc>

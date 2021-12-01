@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_PROTOCOL_UFS_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_UFS_DATA_TYPE"]/*' />
 public enum STORAGE_PROTOCOL_UFS_DATA_TYPE
 {
+    /// <include file='STORAGE_PROTOCOL_UFS_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_UFS_DATA_TYPE.UfsDataTypeUnknown"]/*' />
     UfsDataTypeUnknown = 0,
+
+    /// <include file='STORAGE_PROTOCOL_UFS_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_UFS_DATA_TYPE.UfsDataTypeQueryDescriptor"]/*' />
     UfsDataTypeQueryDescriptor,
+
+    /// <include file='STORAGE_PROTOCOL_UFS_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_UFS_DATA_TYPE.UfsDataTypeQueryAttribute"]/*' />
     UfsDataTypeQueryAttribute,
+
+    /// <include file='STORAGE_PROTOCOL_UFS_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_UFS_DATA_TYPE.UfsDataTypeQueryFlag"]/*' />
     UfsDataTypeQueryFlag,
+
+    /// <include file='STORAGE_PROTOCOL_UFS_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_UFS_DATA_TYPE.UfsDataTypeQueryDmeAttribute"]/*' />
     UfsDataTypeQueryDmeAttribute,
+
+    /// <include file='STORAGE_PROTOCOL_UFS_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_UFS_DATA_TYPE.UfsDataTypeQueryDmePeerAttribute"]/*' />
     UfsDataTypeQueryDmePeerAttribute,
+
+    /// <include file='STORAGE_PROTOCOL_UFS_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_UFS_DATA_TYPE.UfsDataTypeMax"]/*' />
     UfsDataTypeMax,
 }

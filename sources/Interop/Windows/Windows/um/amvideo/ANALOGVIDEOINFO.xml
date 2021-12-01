@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ANALOGVIDEOINFO">
+    <summary>
+      <para>The <b>ANALOGVIDEOINFO</b> structure maintains information about the format of the analog video signal.</para>
+    </summary>
+    <remarks>
+      <para>Filters using this format usually pass the video signal using a hardware-based connection rather than using memory-based transports.</para>
+      <para>An example of a definition of an analog video media type connection would be a connection of NTSC video using "M" color encoding. This would use a major media type of MEDIATYPE_AnalogVideo, a subtype of MEDIASUBTYPE_AnalogVideo_NTSC_M, and a format type of FORMAT_AnalogVideo.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="ANALOGVIDEOINFO.rcSource">
+    <summary>
+      <para>Source video rectangle.</para>
+    </summary>
+  </member>
+  <member name="ANALOGVIDEOINFO.rcTarget">
+    <summary>
+      <para>Destination target rectangle.</para>
+    </summary>
+  </member>
+  <member name="ANALOGVIDEOINFO.dwActiveWidth">
+    <summary>
+      <para>Source video width.</para>
+    </summary>
+  </member>
+  <member name="ANALOGVIDEOINFO.dwActiveHeight">
+    <summary>
+      <para>Source video height (483 for NTSC, 575 for PAL/SECAM).</para>
+    </summary>
+  </member>
+  <member name="ANALOGVIDEOINFO.AvgTimePerFrame">
+    <summary>
+      <para>Average time per frame in 100-nanosecond units.</para>
+    </summary>
+  </member>
+</doc>

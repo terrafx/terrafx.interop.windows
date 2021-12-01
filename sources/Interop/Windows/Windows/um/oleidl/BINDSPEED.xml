@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BINDSPEED">
+    <summary>
+      <para>Indicates approximately how long the caller will wait to bind to an object.</para>
+    </summary>
+    <remarks>
+      <para>The system-supplied item moniker implementation is the primary caller of <see cref="IOleItemContainer.GetObject" />. The <b>BINDSPEED</b> value that it specifies depends on the deadline specified by the caller of the moniker operation.</para>
+      <para>The deadline is stored in the <b>dwTickCountDeadline</b> field of the <see cref="BIND_OPTS" /> structure in the bind context passed to the moniker operation. This value is based on the return value of the <see cref="GetTickCount" /> function. If <i>dwTickCountDeadline</i> is zero, indicating no deadline, the item moniker implementation specifies BINDSPEED_INDEFINITE. (This is the default <i>dwTickCountDeadline</i> value for a bind context returned by the <see cref="CreateBindCtx" /> function.) If the difference between <i>dwTickCountDeadline</i> and the value returned by <b>GetTickCount</b> is greater than 2500, the item moniker implementation specifies BINDSPEED_MODERATE. If the difference is less than 2500, the item moniker implementation specifies BINDSPEED_IMMEDIATE.</para>
+      <para>Implementations of <see cref="GetObject" /> can use the <b>BINDSPEED</b> value as a shortcut approximation of the binding deadline, or they can use the <see cref="IBindCtx" /> instance parameter to determine the exact deadline.</para>
+    </remarks>
+    <seealso cref="BIND_OPTS" />
+    <seealso cref="IBindCtx" />
+    <seealso cref="IOleItemContainer.GetObject" />
+  </member>
+  <member name="BINDSPEED.BINDSPEED_INDEFINITE">
+    <summary>
+      <para>There is no time limit on the binding operation.</para>
+    </summary>
+  </member>
+  <member name="BINDSPEED.BINDSPEED_MODERATE">
+    <summary>
+      <para>The binding operation must be completed in a moderate amount of time.</para>
+      <para>If this flag is specified, the implementation of <see cref="IOleItemContainer.GetObject" /> should return MK_E_EXCEEEDEDDEADLINE unless tone of the following is true:</para>
+      <list type="bullet">
+        <item>
+          <description>The object is already in the running state.
+</description>
+        </item>
+        <item>
+          <description>The object is a pseudo-object (an object internal to the item container, such as a cell-range in a spreadsheet or a character-range in a word processor).</description>
+        </item>
+        <item>
+          <description>The object is supported by an in-process server (so it is always in the running state when it is loaded). In this case, <see cref="GetObject" /> should load the designated object, and, if the <see cref="OleIsRunning" /> function indicates that the object is running, return successfully.
+</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="BINDSPEED.BINDSPEED_IMMEDIATE">
+    <summary>
+      <para>The caller will wait only a short time. In this case, the binding operation should return MK_E_EXCEEEDEDDEADLINE unless the object is already in the running state or is a pseudo-object.</para>
+    </summary>
+  </member>
+</doc>

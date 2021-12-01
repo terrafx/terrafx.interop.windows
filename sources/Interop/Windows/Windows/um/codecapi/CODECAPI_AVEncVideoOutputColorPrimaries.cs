@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoOutputColorPrimaries.xml' path='doc/member[@name="CODECAPI_AVEncVideoOutputColorPrimaries"]/*' />
 [Guid("BE95907C-9D04-4921-8985-A6D6D87D1A6C")]
 public partial struct CODECAPI_AVEncVideoOutputColorPrimaries
 {

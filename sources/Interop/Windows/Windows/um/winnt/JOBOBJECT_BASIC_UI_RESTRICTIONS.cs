@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_BASIC_UI_RESTRICTIONS.xml' path='doc/member[@name="JOBOBJECT_BASIC_UI_RESTRICTIONS"]/*' />
 public partial struct JOBOBJECT_BASIC_UI_RESTRICTIONS
 {
+    /// <include file='JOBOBJECT_BASIC_UI_RESTRICTIONS.xml' path='doc/member[@name="JOBOBJECT_BASIC_UI_RESTRICTIONS.UIRestrictionsClass"]/*' />
     [NativeTypeName("DWORD")]
     public uint UIRestrictionsClass;
 }

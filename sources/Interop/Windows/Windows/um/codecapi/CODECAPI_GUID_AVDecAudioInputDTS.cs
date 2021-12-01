@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_GUID_AVDecAudioInputDTS.xml' path='doc/member[@name="CODECAPI_GUID_AVDecAudioInputDTS"]/*' />
 [Guid("600BC0CA-6A1F-4E91-B241-1BBEB1CB19E0")]
 public partial struct CODECAPI_GUID_AVDecAudioInputDTS
 {

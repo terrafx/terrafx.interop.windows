@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PHONETICALPHABET.xml' path='doc/member[@name="PHONETICALPHABET"]/*' />
 public enum PHONETICALPHABET
 {
+    /// <include file='PHONETICALPHABET.xml' path='doc/member[@name="PHONETICALPHABET.PA_Ipa"]/*' />
     PA_Ipa = 0,
+
+    /// <include file='PHONETICALPHABET.xml' path='doc/member[@name="PHONETICALPHABET.PA_Ups"]/*' />
     PA_Ups = 1,
+
+    /// <include file='PHONETICALPHABET.xml' path='doc/member[@name="PHONETICALPHABET.PA_Sapi"]/*' />
     PA_Sapi = 2,
 }

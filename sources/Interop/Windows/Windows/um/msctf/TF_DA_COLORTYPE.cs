@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TF_DA_COLORTYPE.xml' path='doc/member[@name="TF_DA_COLORTYPE"]/*' />
 public enum TF_DA_COLORTYPE
 {
+    /// <include file='TF_DA_COLORTYPE.xml' path='doc/member[@name="TF_DA_COLORTYPE.TF_CT_NONE"]/*' />
     TF_CT_NONE = 0,
+
+    /// <include file='TF_DA_COLORTYPE.xml' path='doc/member[@name="TF_DA_COLORTYPE.TF_CT_SYSCOLOR"]/*' />
     TF_CT_SYSCOLOR = 1,
+
+    /// <include file='TF_DA_COLORTYPE.xml' path='doc/member[@name="TF_DA_COLORTYPE.TF_CT_COLORREF"]/*' />
     TF_CT_COLORREF = 2,
 }

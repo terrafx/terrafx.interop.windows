@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_CHAIN.xml' path='doc/member[@name="CERT_CHAIN"]/*' />
 public unsafe partial struct CERT_CHAIN
 {
+    /// <include file='CERT_CHAIN.xml' path='doc/member[@name="CERT_CHAIN.cCerts"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCerts;
 
+    /// <include file='CERT_CHAIN.xml' path='doc/member[@name="CERT_CHAIN.certs"]/*' />
     [NativeTypeName("PCERT_BLOB")]
     public CRYPT_DATA_BLOB* certs;
 
+    /// <include file='CERT_CHAIN.xml' path='doc/member[@name="CERT_CHAIN.keyLocatorInfo"]/*' />
     public CRYPT_KEY_PROV_INFO keyLocatorInfo;
 }

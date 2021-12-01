@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICBitmapPattern.xml' path='doc/member[@name="WICBitmapPattern"]/*' />
 public unsafe partial struct WICBitmapPattern
 {
+    /// <include file='WICBitmapPattern.xml' path='doc/member[@name="WICBitmapPattern.Position"]/*' />
     public ULARGE_INTEGER Position;
 
+    /// <include file='WICBitmapPattern.xml' path='doc/member[@name="WICBitmapPattern.Length"]/*' />
     [NativeTypeName("ULONG")]
     public uint Length;
 
+    /// <include file='WICBitmapPattern.xml' path='doc/member[@name="WICBitmapPattern.Pattern"]/*' />
     public byte* Pattern;
 
+    /// <include file='WICBitmapPattern.xml' path='doc/member[@name="WICBitmapPattern.Mask"]/*' />
     public byte* Mask;
 
+    /// <include file='WICBitmapPattern.xml' path='doc/member[@name="WICBitmapPattern.EndOfStream"]/*' />
     public BOOL EndOfStream;
 }

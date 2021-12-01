@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFStreamSink.Flush">
+    <summary>
+      <para>Causes the stream sink to drop any samples that it has received and has not rendered yet.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The stream sink has not been initialized yet. You might need to set a media type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_STREAMSINK_REMOVED</b>
+            </para>
+          </description>
+          <description>
+            <para>This stream was removed from the media sink and is no longer valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If any samples are still queued from previous calls to the <see cref="IMFStreamSink.ProcessSample" /> method, the media sink immediately discards them, without processing them. This can cause a glitch in the rendered output. The running state of the sink (running, paused, or stopped) does not change.</para>
+      <para>Any pending marker events from the <see cref="IMFStreamSink.PlaceMarker" /> method are dispatched immediately, with the status code E_ABORT.</para>
+      <para>This method is synchronous. It does not return until the sink has discarded all pending samples.</para>
+    </remarks>
+    <seealso cref="IMFStreamSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFStreamSink.GetIdentifier">
+    <summary>
+      <para>Retrieves the stream identifier for this stream sink.</para>
+    </summary>
+    <param name="pdwIdentifier">
+      <para>Receives the stream identifier. If this stream sink was added by calling <see cref="IMFMediaSink.AddStreamSink" />, the stream identifier is in the <i>dwStreamSinkIdentifier</i> parameter of that method. Otherwise, the media sink defines the identifier.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_STREAMSINK_REMOVED</b>
+            </para>
+          </description>
+          <description>
+            <para>This stream was removed from the media sink and is no longer valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFStreamSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFStreamSink.GetMediaSink">
+    <summary>
+      <para>Retrieves the media sink that owns this stream sink.</para>
+    </summary>
+    <param name="ppMediaSink">
+      <para>Receives a pointer to the media sink's <see cref="IMFMediaSink" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_STREAMSINK_REMOVED</b>
+            </para>
+          </description>
+          <description>
+            <para>This stream was removed from the media sink and is no longer valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFStreamSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFStreamSink.GetMediaTypeHandler">
+    <summary>
+      <para>Retrieves the media type handler for the stream sink. You can use the media type handler to find which formats the stream supports, and to set the media type on the stream.</para>
+    </summary>
+    <param name="ppHandler">
+      <para>Receives a pointer to the <see cref="IMFMediaTypeHandler" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_STREAMSINK_REMOVED</b>
+            </para>
+          </description>
+          <description>
+            <para>This stream was removed from the media sink and is no longer valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the stream sink currently does not support any media types, this method returns a media type handler that fails any calls to <see cref="IMFMediaTypeHandler.GetCurrentMediaType" /> and <see cref="IMFMediaTypeHandler.IsMediaTypeSupported" />.</para>
+    </remarks>
+    <seealso cref="IMFStreamSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFStreamSink.PlaceMarker">
+    <summary>
+      <para>Places a marker in the stream.</para>
+    </summary>
+    <param name="eMarkerType">
+      <para>Specifies the marker type, as a member of the <see cref="MFSTREAMSINK_MARKER_TYPE" /> enumeration.</para>
+    </param>
+    <param name="pvarMarkerValue">
+      <para>Optional pointer to a <b>PROPVARIANT</b> that contains additional information related to the marker. The meaning of this value depends on the marker type. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pvarContextValue">
+      <para>Optional pointer to a <b>PROPVARIANT</b> that is attached to the <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamsinkmarker">MEStreamSinkMarker</a> event. Call <see cref="IMFMediaEvent.GetValue" /> to get this value from the event. The caller can use this information for any purpose. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_STREAMSINK_REMOVED</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>This stream was removed from the media sink and is no longer valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method causes the stream sink to send an <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamsinkmarker">MEStreamSinkMarker</a> event after the stream sink consumes all of the samples that were delivered up to this point (before the call to <b>PlaceMarker</b>).</para>
+    </remarks>
+    <seealso cref="IMFStreamSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFStreamSink.ProcessSample">
+    <summary>
+      <para>Delivers a sample to the stream. The media sink processes the sample.</para>
+    </summary>
+    <param name="pSample">
+      <para>Pointer to the <see cref="IMFSample" /> interface of a sample that contains valid data for the stream.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALID_STATE_TRANSITION</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink is in the wrong state to receive a sample. For example, preroll is complete but the presentation clock has not started yet.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALID_TIMESTAMP</b>
+            </para>
+          </description>
+          <description>
+            <para>The sample has an invalid time stamp. See Remarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink is paused or stopped and cannot process the sample.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NO_CLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The presentation clock was not set. Call <see cref="IMFMediaSink.SetPresentationClock" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NO_SAMPLE_TIMESTAMP</b>
+            </para>
+          </description>
+          <description>
+            <para>The sample does not have a time stamp.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The stream sink has not been initialized.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_STREAMSINK_REMOVED</b>
+            </para>
+          </description>
+          <description>
+            <para>This stream was removed from the media sink and is no longer valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method when the stream sink sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamsinkrequestsample">MEStreamSinkRequestSample</a> event.</para>
+      <para>This method can return MF_E_INVALID_TIMESTAMP for various reasons, depending on the implementation of the media sink:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>Negative time stamps.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Time stamps that jump backward (within the same stream).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The time stamps for one stream have drifted too far from the time stamps on another stream within the same media sink (for example, an archive sink that multiplexes the streams).</para>
+          </description>
+        </item>
+      </list>
+      <para>Not every media sink returns an error code in these situations.</para>
+    </remarks>
+    <seealso cref="IMFStreamSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFStreamSink">
+    <summary>
+      <para>Represents a stream on a media sink object.</para>
+    </summary>
+    <seealso cref="IMFMediaEventGenerator" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+</doc>

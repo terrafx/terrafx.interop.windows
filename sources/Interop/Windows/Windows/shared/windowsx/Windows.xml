@@ -1,0 +1,2037 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.Button_Enable">
+    <summary>
+      <para>Enables or disables a button.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the button control.</para>
+    </param>
+    <param name="fEnable">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to enable the button, or <b>FALSE</b> to disable it.</para>
+    </param>
+  </member>
+  <member name="Windows.Button_GetCheck">
+    <summary>
+      <para>Gets the check state of a radio button or check box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/bm-getcheck">BM_GETCHECK</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the button control.</para>
+    </param>
+    <remarks>
+      <para>If the button has a style other than those listed, the return value is zero.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Button_GetState">
+    <summary>
+      <para>Retrieves the state of a button or check box.  You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/bm-getstate">BM_GETSTATE</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the button control.</para>
+    </param>
+    <seealso cref="Button_GetCheck" />
+    <seealso cref="Button_SetState" />
+  </member>
+  <member name="Windows.Button_GetText">
+    <summary>
+      <para>Gets the text of a button.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the button control.</para>
+    </param>
+    <param name="lpch">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>Pointer to the buffer that will receive the text.</para>
+    </param>
+    <param name="cchMax">
+      <para>Type: <b>int</b></para>
+      <para>The maximum number of characters to copy to the buffer, including the NULL terminator.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="GetWindowText" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Button_GetTextLength">
+    <summary>
+      <para>Gets the number of characters in the text of a button.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the button control.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="GetWindowTextLength" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Button_SetCheck">
+    <summary>
+      <para>Sets the check state of a radio button or check box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/bm-setcheck">BM_SETCHECK</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the button control.</para>
+    </param>
+    <param name="check">
+      <para>Type: <b>int</b></para>
+      <para>The check state. This parameter can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>BST_CHECKED</b>
+          </description>
+          <description>
+            <para>Sets the button state to checked.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>BST_INDETERMINATE</b>
+          </description>
+          <description>
+            <para>Sets the button state to grayed, indicating an indeterminate state. Use this value only if the button has the <a href="https://docs.microsoft.com//windows/desktop/Controls/button-styles">BS_3STATE</a> or <a href="https://docs.microsoft.com//windows/desktop/Controls/button-styles">BS_AUTO3STATE</a> style.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>BST_UNCHECKED</b>
+          </description>
+          <description>
+            <para>Sets the button state to cleared.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <remarks>
+      <para>The macro has no effect on push buttons.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Button_SetState">
+    <summary>
+      <para>Sets the highlight state of a button. The highlight state indicates whether the button is highlighted as if the user had pushed it. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/bm-setstate">BM_SETSTATE</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the button control.</para>
+    </param>
+    <param name="state">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to highlight the button; otherwise <b>FALSE</b>.</para>
+    </param>
+    <remarks>
+      <para>Highlighting  affects only the appearance of a button. It has no effect on the check state of a radio button or check box.</para>
+      <para>A button is automatically highlighted when the user positions the cursor over it and presses and holds the left mouse button. The highlighting is removed when the user releases the mouse button.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Button_SetStyle">
+    <summary>
+      <para>Sets the style of a button. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/bm-setstyle">BM_SETSTYLE</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the button control.</para>
+    </param>
+    <param name="style">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>The button style. This parameter can be a combination of button styles. For a table of button styles, see <a href="https://docs.microsoft.com//windows/desktop/Controls/button-styles">Button Styles</a>.</para>
+    </param>
+    <param name="fRedraw">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to redraw the button; otherwise <b>FALSE</b>.</para>
+    </param>
+  </member>
+  <member name="Windows.Button_SetText">
+    <summary>
+      <para>Sets the text of a button.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the button control.</para>
+    </param>
+    <param name="lpsz">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>A pointer to a null-terminated string to be used as the button text.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="SetWindowText" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_AddItemData">
+    <summary>
+      <para>Adds item data to the list in a combo box at the specified location. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-addstring">CB_ADDSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="data">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>A pointer to the item data to add.</para>
+    </param>
+    <remarks>
+      <para>Use this macro for a list in a combo box with an owner-drawn style but without the <a href="https://docs.microsoft.com//windows/desktop/Controls/combo-box-styles">CBS_HASSTRINGS</a> style. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-addstring">CB_ADDSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_AddString">
+    <summary>
+      <para>Adds a string to a list in a combo box. If the combo box does not have the <a href="https://docs.microsoft.com//windows/desktop/Controls/combo-box-styles">CBS_SORT</a> style, the string is added to the end of the list. Otherwise, the string is inserted into the list and the list is sorted. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-addstring">CB_ADDSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lpsz">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>The string to add.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-addstring">CB_ADDSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_DeleteString">
+    <summary>
+      <para>Deletes the item at the specified location in a list in a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-deletestring">CB_DELETESTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item to delete.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-deletestring">CB_DELETESTRING</a></para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_Dir">
+    <summary>
+      <para>Adds names to the list displayed by a combo box. The macro adds the names of directories and files that match a specified string and set of file attributes. It can also add mapped drive letters to the list in a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-dir">CB_DIR</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="attrs">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The attributes of the files or directories to be added to the list in a combo box. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-dir">CB_DIR</a>.</para>
+    </param>
+    <param name="lpszFileSpec">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>A pointer to the null-terminated string that specifies an absolute path, relative path, or filename. An absolute path can begin with a drive letter (for example, d:) or a UNC name (for example, \ machinename\ sharename).</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-dir">CB_DIR</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_Enable">
+    <summary>
+      <para>Enables or disables a combo box control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="fEnable">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to enable the control, or <b>FALSE</b> to disable it.</para>
+    </param>
+  </member>
+  <member name="Windows.ComboBox_FindItemData">
+    <summary>
+      <para>Finds the first item in a combo box list that has the specified item data. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-findstring">CB_FINDSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexStart">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item before the first item to be searched. When the search reaches the bottom of the list, it continues searching from the top of the list back to the item specified by the <i>indexStart</i> parameter. If <i>indexStart</i> is –1, the entire list is searched from the beginning.</para>
+    </param>
+    <param name="data">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>The data to find.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-findstring">CB_FINDSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_FindString">
+    <summary>
+      <para>Finds the first string in a combo box list that begins with the specified string. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-findstring">CB_FINDSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexStart">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item before the first item to be searched. When the search reaches the bottom of the list, it continues searching from the top of the list back to the item specified by the <i>indexStart</i> parameter. If <i>indexStart</i>  is –1, the entire list is searched from the beginning.</para>
+    </param>
+    <param name="lpszFind">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>The string to find.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-findstring">CB_FINDSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_FindStringExact">
+    <summary>
+      <para>Finds the first string in a combo box list that exactly matches the specified string, except that the search is not case sensitive. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-findstringexact">CB_FINDSTRINGEXACT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexStart">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item before the first item to be searched. When the search reaches the bottom of the list, it continues searching from the top of the list back to the item specified by the <i>indexStart</i> parameter. If <i>indexStart</i>  is –1, the entire list is searched from the beginning.</para>
+    </param>
+    <param name="lpszFind">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>The string to find.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-findstringexact">CB_FINDSTRINGEXACT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_GetCount">
+    <summary>
+      <para>Gets the number of items in the list box of a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getcount">CB_GETCOUNT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+  </member>
+  <member name="Windows.ComboBox_GetCurSel">
+    <summary>
+      <para>Gets the index of the currently selected item in a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getcursel">CB_GETCURSEL</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+  </member>
+  <member name="Windows.ComboBox_GetDroppedControlRect">
+    <summary>
+      <para>Retrieves the screen coordinates of a combo box in its dropped-down state. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getdroppedcontrolrect">CB_GETDROPPEDCONTROLRECT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lprc">
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>A pointer to a <see cref="RECT" /> structure that receives the coordinates of the combo box in its dropped-down state.</para>
+    </param>
+  </member>
+  <member name="Windows.ComboBox_GetDroppedState">
+    <summary>
+      <para>Ascertains whether the drop list in a combo box control is visible. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getdroppedstate">CB_GETDROPPEDSTATE</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the combo box control.</para>
+    </param>
+  </member>
+  <member name="Windows.ComboBox_GetExtendedUI">
+    <summary>
+      <para>Ascertains whether a combo box is using the default user interface (UI) or the extended UI. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getextendedui">CB_GETEXTENDEDUI</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getextendedui">CB_GETEXTENDEDUI</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_GetItemData">
+    <summary>
+      <para>Gets the application-defined value associated with the specified list item in a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getitemdata">CB_GETITEMDATA</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item.</para>
+    </param>
+  </member>
+  <member name="Windows.ComboBox_GetItemHeight">
+    <summary>
+      <para>Retrieves the height of list items in a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getitemheight">CB_GETITEMHEIGHT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>This macro passes zero as the <i>wParam</i> member of <see cref="SendMessage" />. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getitemheight">CB_GETITEMHEIGHT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_GetLBText">
+    <summary>
+      <para>Gets a string from a list in a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getlbtext">CB_GETLBTEXT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item.</para>
+    </param>
+    <param name="lpszBuffer">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>A pointer to the buffer that will receive the string. The buffer must have sufficient space for the string and a terminating null character. Before allocating the buffer, you can call <see cref="ComboBox_GetLBTextLen" /> to retrieve the length of the string.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getlbtext">CB_GETLBTEXT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_GetLBTextLen">
+    <summary>
+      <para>Gets the length of a string in the list in a combo box.  You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getlbtextlen">CB_GETLBTEXTLEN</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-getlbtextlen">CB_GETLBTEXTLEN</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_GetText">
+    <summary>
+      <para>Retrieves the text from a combo box control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lpch">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>A pointer to the buffer that will receive the text.</para>
+    </param>
+    <param name="cchMax">
+      <para>Type: <b>int</b></para>
+      <para>The maximum number of characters to copy to the buffer, including the NULL terminator.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="GetWindowText" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_GetTextLength">
+    <summary>
+      <para>Gets the number of characters in the text of a combo box.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="GetWindowTextLength" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_InsertItemData">
+    <summary>
+      <para>Inserts item data in a list in a combo box at the specified location. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-insertstring">CB_INSERTSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index in the list at which to insert the item data, or –1 to add it to the end of the list.</para>
+    </param>
+    <param name="data">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>The item data to insert.</para>
+    </param>
+    <remarks>
+      <para>Use this macro for a list in a combo box with an owner-drawn style but without the <a href="https://docs.microsoft.com//windows/desktop/Controls/combo-box-styles">CBS_HASSTRINGS</a> style. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-insertstring">CB_INSERTSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_InsertString">
+    <summary>
+      <para>Adds a string to a list in a combo box at the specified location. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-insertstring">CB_INSERTSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index at which to insert the string, or –1 to add it to the end of the list.</para>
+    </param>
+    <param name="lpsz">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The string to add.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-insertstring">CB_INSERTSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_LimitText">
+    <summary>
+      <para>Limits the length of the text the user may type into the edit control of a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-limittext">CB_LIMITTEXT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="cchLimit">
+      <para>Type: <b>int</b></para>
+      <para>The maximum number of characters.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-limittext">CB_LIMITTEXT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_ResetContent">
+    <summary>
+      <para>Removes all items from the list box and edit control of a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-resetcontent">CB_RESETCONTENT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+  </member>
+  <member name="Windows.ComboBox_SelectItemData">
+    <summary>
+      <para>Searches a list in a combo box for an item that has the specified item data. If a matching item is found, the item is selected. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-selectstring">CB_SELECTSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexStart">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item before the first item to be searched. When the search reaches the bottom of the list, it continues searching from the top of the list back to the item specified by the <i>indexStart</i> parameter. If <i>indexStart</i>  is –1, the entire list is searched from the beginning.</para>
+    </param>
+    <param name="data">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>The item data to find.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-selectstring">CB_SELECTSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_SelectString">
+    <summary>
+      <para>Searches a list in a combo box for an item that begins with the characters in a specified string. If a matching item is found, the item is selected. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-selectstring">CB_SELECTSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexStart">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item before the first item to be searched. When the search reaches the bottom of the list, it continues searching from the top of the list back to the item specified by the <i>indexStart</i> parameter. If <i>indexStart</i>  is –1, the entire list is searched from the beginning.</para>
+    </param>
+    <param name="lpszSelect">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>The string to find.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-selectstring">CB_SELECTSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_SetCurSel">
+    <summary>
+      <para>Sets the currently selected item in a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-setcursel">CB_SETCURSEL</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item to select, or –1 to clear the selection.</para>
+    </param>
+  </member>
+  <member name="Windows.ComboBox_SetExtendedUI">
+    <summary>
+      <para>Selects either the default user interface (UI) or the extended UI for a combo box that has the <a href="https://docs.microsoft.com//windows/desktop/Controls/combo-box-styles">CBS_DROPDOWN</a> or <a href="https://docs.microsoft.com//windows/desktop/Controls/combo-box-styles">CBS_DROPDOWNLIST</a> style. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-setextendedui">CB_SETEXTENDEDUI</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Zero to use the default UI, or nonzero to use the extended UI.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-setextendedui">CB_SETEXTENDEDUI</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_SetItemData">
+    <summary>
+      <para>Sets the application-defined value associated with the specified list item in a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-setitemdata">CB_SETITEMDATA</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item.</para>
+    </param>
+    <param name="data">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>The item data to set.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-setitemdata">CB_SETITEMDATA</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_SetItemHeight">
+    <summary>
+      <para>Sets the height of list items or the selection field in a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-setitemheight">CB_SETITEMHEIGHT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The component of the combo box for which to set the height. This parameter must be –1 to set the height of the selection field. It must be zero to set the height of list items, unless the combo box has the <a href="https://docs.microsoft.com//windows/desktop/Controls/combo-box-styles">CBS_OWNERDRAWVARIABLE</a> style. In that case, the <i>index</i> parameter is the zero-based index of a specific list item.</para>
+    </param>
+    <param name="cyItem">
+      <para>Type: <b>int</b></para>
+      <para>The height in pixels.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-setitemheight">CB_SETITEMHEIGHT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_SetText">
+    <summary>
+      <para>Sets the text of a combo box.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lpsz">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>A pointer to a null-terminated string to be used as the control text.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="SetWindowText" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ComboBox_ShowDropdown">
+    <summary>
+      <para>Shows or hides the list in a combo box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-showdropdown">CB_SHOWDROPDOWN</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="fShow">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to show the dropdown, or <b>FALSE</b> to hide it.</para>
+    </param>
+    <remarks>
+      <para>This macro has no effect on a combo box created with the <a href="https://docs.microsoft.com//windows/desktop/Controls/combo-box-styles">CBS_SIMPLE</a> style.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DeleteFont">
+    <summary>
+      <para>The <b>DeleteFont</b> macro deletes a font object, freeing all system resources associated with the font object.</para>
+    </summary>
+    <param name="hfont">
+      <para>A handle to the font object.</para>
+    </param>
+    <remarks>
+      <para>After the font object is deleted, the specified handle is no longer valid.</para>
+      <para>The <b>DeleteFont</b> macro is equivalent to calling <see cref="DeleteObject" /> as follows:</para>
+      <code>
+   DeleteObject((HGDIOBJ)(HFONT)(hfont))
+
+</code>
+    </remarks>
+    <seealso cref="DeleteObject" />
+    <seealso cref="SelectFont" />
+  </member>
+  <member name="Windows.Edit_CanUndo">
+    <summary>
+      <para>Determines whether there are any actions in the undo queue of an edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-canundo">EM_CANUNDO</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-canundo">EM_CANUNDO</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_EmptyUndoBuffer">
+    <summary>
+      <para>Resets the undo flag of an edit or rich edit control. The undo flag is set whenever an operation within the edit control can be undone. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-emptyundobuffer">EM_EMPTYUNDOBUFFER</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-emptyundobuffer">EM_EMPTYUNDOBUFFER</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_Enable">
+    <summary>
+      <para>Enables or disables an edit control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the edit control.</para>
+    </param>
+    <param name="fEnable">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to enable the control, or <b>FALSE</b> to disable it.</para>
+    </param>
+  </member>
+  <member name="Windows.Edit_FmtLines">
+    <summary>
+      <para>Sets a flag that determines whether text retrieved from a multiline edit control includes soft line-break characters. A soft line break consists of two carriage returns and a line feed and is inserted at the end of a line that is broken because of word wrapping. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-fmtlines">EM_FMTLINES</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="fAddEOL">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to insert line breaks; otherwise <b>FALSE</b>.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-fmtlines">EM_FMTLINES</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetFirstVisibleLine">
+    <summary>
+      <para>Gets the index of the uppermost visible line in a multiline edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getfirstvisibleline">EM_GETFIRSTVISIBLELINE</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getfirstvisibleline">EM_GETFIRSTVISIBLELINE</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetHandle">
+    <summary>
+      <para>Gets a handle to the memory currently allocated for the text of a multiline edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-gethandle">EM_GETHANDLE</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-gethandle">EM_GETHANDLE</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetLine">
+    <summary>
+      <para>Retrieves a line of text from an edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getline">EM_GETLINE</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="line">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the line. This parameter is ignored by a single-line edit control.</para>
+    </param>
+    <param name="lpch">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>A pointer to a buffer that receives the string.</para>
+    </param>
+    <param name="cchMax">
+      <para>Type: <b>int</b></para>
+      <para>The maximum number of characters to be copied to the buffer.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getline">EM_GETLINE</a></para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetLineCount">
+    <summary>
+      <para>Gets the number of lines in the text of an edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getlinecount">EM_GETLINECOUNT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getlinecount">EM_GETLINECOUNT</a></para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetModify">
+    <summary>
+      <para>Gets the state of an edit or rich edit control's modification flag. The flag indicates whether the contents of the control have been modified. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getmodify">EM_GETMODIFY</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getmodify">EM_GETMODIFY</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetPasswordChar">
+    <summary>
+      <para>Gets the password character for an edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getpasswordchar">EM_GETPASSWORDCHAR</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getpasswordchar">EM_GETPASSWORDCHAR</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetRect">
+    <summary>
+      <para>Gets the formatting rectangle of an edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getrect">EM_GETRECT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lprc">
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>A pointer to a <see cref="RECT" /> structure that receives the formatting rectangle.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getrect">EM_GETRECT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetSel">
+    <summary>
+      <para>Gets the starting and ending character positions of the current selection in an edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getsel">EM_GETSEL</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>This macro does not have the complete functionality of the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getsel">EM_GETSEL</a> message, because it does not receive the 32-bit return values in the parameters of <see cref="SendMessage" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetText">
+    <summary>
+      <para>Gets the text of an edit control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the edit control.</para>
+    </param>
+    <param name="lpch">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>A pointer to the buffer that will receive the text.</para>
+    </param>
+    <param name="cchMax">
+      <para>Type: <b>int</b></para>
+      <para>The maximum number of characters to copy to the buffer, including the NULL terminator.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="GetWindowText" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetTextLength">
+    <summary>
+      <para>Gets the number of characters in the text of an edit control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="GetWindowTextLength" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_GetWordBreakProc">
+    <summary>
+      <para>Retrieves the address of an edit or rich edit control's Wordwrap function. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getwordbreakproc">EM_GETWORDBREAKPROC</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-getwordbreakproc">EM_GETWORDBREAKPROC</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_LimitText">
+    <summary>
+      <para>Limits the length of text that can be entered into an edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-limittext">EM_LIMITTEXT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="cchMax">
+      <para>Type: <b>int</b></para>
+      <para>The maximum number of characters.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-limittext">EM_LIMITTEXT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_LineFromChar">
+    <summary>
+      <para>Gets the index of the line that contains the specified character index in a multiline edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-linefromchar">EM_LINEFROMCHAR</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="ich">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the character from the beginning of the text in the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-linefromchar">EM_LINEFROMCHAR</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_LineIndex">
+    <summary>
+      <para>Gets the character index of the first character of a specified line in a multiline edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/controls/em-lineindex">EM_LINEINDEX</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="line">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based line number. A value of –1 specifies the current line number (the line that contains the caret).</para>
+    </param>
+  </member>
+  <member name="Windows.Edit_LineLength">
+    <summary>
+      <para>Retrieves the length, in characters, of a line in an edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-linelength">EM_LINELENGTH</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="line">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the line.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-linelength">EM_LINELENGTH</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_ReplaceSel">
+    <summary>
+      <para>Replaces the selected text in an edit control or a rich edit control with the specified text. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-replacesel">EM_REPLACESEL</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lpszReplace">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>A pointer to a null-terminated string containing the replacement text.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-replacesel">EM_REPLACESEL</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_Scroll">
+    <summary>
+      <para>Scrolls the text vertically in a multiline edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-scroll">EM_SCROLL</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="dv">
+      <para>Type: <b>int</b></para>
+      <para>The amount to scroll vertically.</para>
+    </param>
+    <param name="dh">
+      <para>Type: <b>int</b></para>
+      <para>The amount to scroll horizontally.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-scroll">EM_SCROLL</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_ScrollCaret">
+    <summary>
+      <para>Scrolls the caret into view in an edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-scrollcaret">EM_SCROLLCARET</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+  </member>
+  <member name="Windows.Edit_SetHandle">
+    <summary>
+      <para>Sets the handle of the memory that will be used by a multiline edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-sethandle">EM_SETHANDLE</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="h">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HLOCAL</a></b></para>
+      <para>A handle to the memory buffer the edit control uses to store the currently displayed text instead of allocating its own memory. If necessary, the control reallocates this memory.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-sethandle">EM_SETHANDLE</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_SetModify">
+    <summary>
+      <para>Sets or clears the modification flag for an edit control. The modification flag indicates whether the text within the edit control has been modified. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setmodify">EM_SETMODIFY</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="fModified">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> if the text has been modified; otherwise <b>FALSE</b>.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setmodify">EM_SETMODIFY</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_SetPasswordChar">
+    <summary>
+      <para>Sets or removes the password character for an edit or rich edit control. When a password character is set, that character is displayed in place of the characters typed by the user. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setpasswordchar">EM_SETPASSWORDCHAR</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="ch">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The character to be displayed in place of the characters typed by the user. If this parameter is zero, the control removes the current password character and displays the characters typed by the user.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setpasswordchar">EM_SETPASSWORDCHAR</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_SetReadOnly">
+    <summary>
+      <para>Sets or removes the read-only style (ES_READONLY) of an edit or rich edit control.  You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setreadonly">EM_SETREADONLY</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="fReadOnly">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to set the control to read-only; <b>FALSE</b> to remove the read-only style.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setreadonly">EM_SETREADONLY</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_SetRect">
+    <summary>
+      <para>Sets the formatting rectangle of an edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setrect">EM_SETRECT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lprc">
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>A pointer to a <see cref="RECT" /> structure that specifies the new dimensions of the rectangle. If this parameter is <b>NULL</b>, the formatting rectangle is set to its default values.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setrect">EM_SETRECT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_SetRectNoPaint">
+    <summary>
+      <para>Sets the formatting rectangle of a multiline edit control. This macro is equivalent to <see cref="Edit_SetRect" />, except that it does not redraw the edit control window. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setrectnp">EM_SETRECTNP</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lprc">
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>A pointer to a <see cref="RECT" /> structure that specifies the dimensions of the rectangle. If this parameter is <b>NULL</b>, the formatting rectangle is set to its default values.</para>
+    </param>
+    <remarks>
+      <para>
+        <b>Rich Edit 3.0 and later.</b> This macro does not have full functionality, because it does not set the WPARAM of the message.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setrectnp">EM_SETRECTNP</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_SetSel">
+    <summary>
+      <para>Selects a range of characters in an edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setsel">EM_SETSEL</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="ichStart">
+      <para>Type: <b>int</b></para>
+      <para>The starting character position of the selection.</para>
+    </param>
+    <param name="ichEnd">
+      <para>Type: <b>int</b></para>
+      <para>The ending character position of the selection.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setsel">EM_SETSEL</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_SetTabStops">
+    <summary>
+      <para>Sets the tab stops in a multiline edit or rich edit control. When text is copied to the control, any tab character in the text causes space to be generated up to the next tab stop. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-settabstops">EM_SETTABSTOPS</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="cTabs">
+      <para>Type: <b>int</b></para>
+      <para>The number of tab stops contained in the array. If this parameter is zero, the <i>lpTabs</i> parameter is ignored and default tab stops are set at every 32 dialog template units. If this parameter is 1, tab stops are set at every <i>n</i> dialog template units, where <i>n</i> is the distance pointed to by the <i>lpTabs</i> parameter. If this parameter is greater than 1, <i>lpTabs</i> is a pointer to an array of tab stops.</para>
+    </param>
+    <param name="lpTabs">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an array of unsigned integers specifying the tab stops, in dialog template units. If <i>cTabs</i> is 1, this parameter is a pointer to an unsigned integer containing the distance between all tab stops, in dialog template units.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-settabstops">EM_SETTABSTOPS</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_SetText">
+    <summary>
+      <para>Sets the text of an edit control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lpsz">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>A pointer to a null-terminated string to be set as the text in the control.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="SetWindowText" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_SetWordBreakProc">
+    <summary>
+      <para>Replaces an edit control's default Wordwrap function with an application-defined Wordwrap function. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setwordbreakproc">EM_SETWORDBREAKPROC</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lpfnWordBreak">
+      <para>Type: <b>EDITWORDBREAKPROC</b></para>
+      <para>The address of the application-defined Wordwrap function. For more information about breaking lines, see the description of the <a href="https://docs.microsoft.com//windows/desktop/api/winuser/nc-winuser-editwordbreakproca">EditWordBreakProc</a> callback function.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-setwordbreakproc">EM_SETWORDBREAKPROC</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Edit_Undo">
+    <summary>
+      <para>Undoes the last operation in the undo queue of an edit or rich edit control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/em-undo">EM_UNDO</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/em-undo">EM_UNDO</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.GET_X_LPARAM">
+    <summary>
+      <para>Retrieves the signed x-coordinate from the specified <b>LPARAM</b> value.</para>
+    </summary>
+    <param name="lp">
+      <para>The data from which the x-coordinate is to be extracted.</para>
+    </param>
+    <returns>
+      <para>Type: <b>int</b></para>
+      <para>X-coordinate.</para>
+    </returns>
+    <remarks>
+      <para>Use <b>GET_X_LPARAM</b> instead of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms632659(v=vs.85)">LOWORD</a> to extract signed coordinate data. Negative screen coordinates may be returned on multiple monitor systems.</para>
+    </remarks>
+    <seealso cref="GET_Y_LPARAM" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms632659(v=vs.85)">LOWORD</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">Windows Data Types</seealso>
+  </member>
+  <member name="Windows.GET_Y_LPARAM">
+    <summary>
+      <para>Retrieves the signed y-coordinate from the given <b>LPARAM</b> value.</para>
+    </summary>
+    <param name="lp">
+      <para>The data from which the y-coordinate is to be extracted.</para>
+    </param>
+    <returns>
+      <para>Type: <b>int</b></para>
+      <para>Y-coordinate.</para>
+    </returns>
+    <remarks>
+      <para>Use <b>GET_Y_LPARAM</b> instead of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms632657(v=vs.85)">HIWORD</a> to extract signed coordinate data. Negative screen coordinates may be returned on multiple monitor systems.</para>
+    </remarks>
+    <seealso cref="GET_X_LPARAM" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms632657(v=vs.85)">HIWORD</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">Windows Data Types</seealso>
+  </member>
+  <member name="Windows.ListBox_AddItemData">
+    <summary>
+      <para>Adds item data to the list box at the specified location. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-addstring">LB_ADDSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="data">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>A pointer to the item data to add.</para>
+    </param>
+    <remarks>
+      <para>Use this macro for a list box with an owner-drawn style but without the <a href="https://docs.microsoft.com//windows/desktop/Controls/list-box-styles">LBS_HASSTRINGS</a> style. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-addstring">LB_ADDSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_AddString">
+    <summary>
+      <para>Adds a string to a list box. If the list box does not have the <a href="https://docs.microsoft.com//windows/desktop/Controls/list-box-styles">LBS_SORT</a> style, the string is added to the end of the list. Otherwise, the string is inserted into the list and the list is sorted. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-addstring">LB_ADDSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lpsz">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The string to add.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-addstring">LB_ADDSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_DeleteString">
+    <summary>
+      <para>Deletes the item at the specified location in a list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-deletestring">LB_DELETESTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item to delete.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-deletestring">LB_DELETESTRING</a></para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_Dir">
+    <summary>
+      <para>Adds names to the list displayed by a list box. The macro adds the names of directories and files that match a specified string and set of file attributes. It can also add mapped drive letters to the list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-dir">LB_DIR</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="attrs">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The attributes of the files or directories to be added to the list box. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-dir">LB_DIR</a>.</para>
+    </param>
+    <param name="lpszFileSpec">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>A pointer to the null-terminated string that specifies an absolute path, relative path, or filename. An absolute path can begin with a drive letter (for example, d:) or a UNC name (for example, \ machinename\ sharename).</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-dir">LB_DIR</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_Enable">
+    <summary>
+      <para>Enables or disables a list box control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="fEnable">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to enable the control, or <b>FALSE</b> to disable it.</para>
+    </param>
+  </member>
+  <member name="Windows.ListBox_FindItemData">
+    <summary>
+      <para>Finds the first item in a list box that has the specified item data. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-findstring">LB_FINDSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexStart">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item before the first item to be searched. When the search reaches the bottom of the list box, it continues searching from the top of the list box back to the item specified by the <i>indexStart</i> parameter. If <i>indexStart</i>  is –1, the entire list box is searched from the beginning.</para>
+    </param>
+    <param name="data">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>The data to find.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-findstring">LB_FINDSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_FindString">
+    <summary>
+      <para>Finds the first string in a list box that begins with the specified string. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-findstring">LB_FINDSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexStart">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item before the first item to be searched. When the search reaches the bottom of the list box, it continues searching from the top of the list box back to the item specified by the <i>indexStart</i> parameter. If <i>indexStart</i>  is –1, the entire list box is searched from the beginning.</para>
+    </param>
+    <param name="lpszFind">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>The string to find.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-findstring">LB_FINDSTRING</a>.</para>
+    </remarks>
+    <seealso cref="ListBox_FindStringExact" />
+  </member>
+  <member name="Windows.ListBox_FindStringExact">
+    <summary>
+      <para>Finds the first list box string that exactly matches the specified string, except that the search is not case sensitive. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-findstringexact">LB_FINDSTRINGEXACT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexStart">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item before the first item to be searched. When the search reaches the bottom of the list box, it continues searching from the top of the list box back to the item specified by the <i>indexStart</i> parameter. If <i>indexStart</i>  is –1, the entire list box is searched from the beginning.</para>
+    </param>
+    <param name="lpszFind">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>The string to find.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-findstringexact">LB_FINDSTRINGEXACT</a>.</para>
+    </remarks>
+    <seealso cref="ListBox_FindString" />
+  </member>
+  <member name="Windows.ListBox_GetCaretIndex">
+    <summary>
+      <para>Retrieves the index of the list box item that has the focus rectangle in a multiple-selection list box. The item may or may not be selected. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/controls/lb-getcaretindex">LB_GETCARETINDEX</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>The contents of the list box are scrolled till the item is fully visible.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/controls/lb-getcaretindex">LB_GETCARETINDEX</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_GetCount">
+    <summary>
+      <para>Gets the number of items in a list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getcount">LB_GETCOUNT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+  </member>
+  <member name="Windows.ListBox_GetCurSel">
+    <summary>
+      <para>Gets the index of the currently selected item in a single-selection list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getcursel">LB_GETCURSEL</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getcursel">LB_GETCURSEL</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_GetHorizontalExtent">
+    <summary>
+      <para>Gets the width that a list box can be scrolled horizontally (the scrollable width) if the list box has a horizontal scroll bar. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-gethorizontalextent">LB_GETHORIZONTALEXTENT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-gethorizontalextent">LB_GETHORIZONTALEXTENT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_GetItemData">
+    <summary>
+      <para>Gets the application-defined value associated with the specified list box item. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getitemdata">LB_GETITEMDATA</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item.</para>
+    </param>
+  </member>
+  <member name="Windows.ListBox_GetItemHeight">
+    <summary>
+      <para>Retrieves the height of items in a list box. If the list box has the <a href="https://docs.microsoft.com//windows/desktop/Controls/list-box-styles">LBS_OWNERDRAWVARIABLE</a> style, this macro gets the height of the specified item; otherwise, it gets the height of all items. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getitemheight">LB_GETITEMHEIGHT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item. If the list box does not have the <a href="https://docs.microsoft.com//windows/desktop/Controls/list-box-styles">LBS_OWNERDRAWVARIABLE</a> style, set this parameter to zero.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getitemheight">LB_GETITEMHEIGHT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_GetItemRect">
+    <summary>
+      <para>Gets the dimensions of the rectangle that bounds a list box item as it is currently displayed in the list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getitemrect">LB_GETITEMRECT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item in the list box.</para>
+    </param>
+    <param name="lprc">
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>A pointer to a <see cref="RECT" /> structure that receives the client coordinates for the item in the list box.</para>
+    </param>
+  </member>
+  <member name="Windows.ListBox_GetSel">
+    <summary>
+      <para>Gets the selection state of an item. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getsel">LB_GETSEL</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getsel">LB_GETSEL</a></para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_GetSelCount">
+    <summary>
+      <para>Gets the count of selected items in a multiple-selection list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getselcount">LB_GETSELCOUNT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getselcount">LB_GETSELCOUNT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_GetSelItems">
+    <summary>
+      <para>Gets the indexes of selected items in a multiple-selection list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-getselitems">LB_GETSELITEMS</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="cItems">
+      <para>Type: <b>int</b></para>
+      <para>The maximum number of selected items whose item numbers are to be placed in the buffer.</para>
+    </param>
+    <param name="lpItems">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to a buffer large enough for the number of integers specified by <i>cItems</i>.</para>
+    </param>
+  </member>
+  <member name="Windows.ListBox_GetText">
+    <summary>
+      <para>Gets a string from a list box.  You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-gettext">LB_GETTEXT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item.</para>
+    </param>
+    <param name="lpszBuffer">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>A pointer to the buffer that will receive the string. The buffer must have sufficient space for the string and a terminating null character. Before allocating the buffer, you can call <see cref="ListBox_GetTextLen" /> to retrieve the length of the string.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-gettext">LB_GETTEXT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_GetTextLen">
+    <summary>
+      <para>Gets the length of a string in a list box.  You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-gettextlen">LB_GETTEXTLEN</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-gettextlen">LB_GETTEXTLEN</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_GetTopIndex">
+    <summary>
+      <para>Gets the index of the first visible item in a list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/controls/lb-gettopindex">LB_GETTOPINDEX</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+  </member>
+  <member name="Windows.ListBox_InsertItemData">
+    <summary>
+      <para>Inserts item data to a list box at the specified location. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-insertstring">LB_INSERTSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index in the list at which to insert the item data, or –1 to add it to the end of the list.</para>
+    </param>
+    <param name="data">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>A pointer to the item data to insert.</para>
+    </param>
+    <remarks>
+      <para>Use this macro for a list box with an owner-drawn style but without the <a href="https://docs.microsoft.com//windows/desktop/Controls/list-box-styles">LBS_HASSTRINGS</a> style. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-insertstring">LB_INSERTSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_InsertString">
+    <summary>
+      <para>Adds a string to a list box at the specified location. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-insertstring">LB_INSERTSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index at which to insert the string, or –1 to add it to the end of the list.</para>
+    </param>
+    <param name="lpsz">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The string to add.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-insertstring">LB_INSERTSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_ResetContent">
+    <summary>
+      <para>Removes all items from a list box.  You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-resetcontent">LB_RESETCONTENT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+  </member>
+  <member name="Windows.ListBox_SelectItemData">
+    <summary>
+      <para>Searches a list box for an item that has the specified item data. If a matching item is found, the item is selected. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-selectstring">LB_SELECTSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexStart">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item before the first item to be searched. When the search reaches the bottom of the list box, it continues searching from the top of the list box back to the item specified by the <i>indexStart</i> parameter. If <i>indexStart</i>  is –1, the entire list box is searched from the beginning.</para>
+    </param>
+    <param name="data">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>The item data to find.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-selectstring">LB_SELECTSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_SelectString">
+    <summary>
+      <para>Searches a list box for an item that begins with the characters in a specified string. If a matching item is found, the item is selected. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-selectstring">LB_SELECTSTRING</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexStart">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item before the first item to be searched. When the search reaches the bottom of the list box, it continues searching from the top of the list box back to the item specified by the <i>indexStart</i> parameter. If <i>indexStart</i>  is –1, the entire list box is searched from the beginning.</para>
+    </param>
+    <param name="lpszFind">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCTSTR</a></b></para>
+      <para>The string to find.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-selectstring">LB_SELECTSTRING</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_SelItemRange">
+    <summary>
+      <para>Selects or deselects one or more consecutive items in a multiple-selection list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-selitemrange">LB_SELITEMRANGE</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="fSelect">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to select the range of items, or <b>FALSE</b> to deselect it.</para>
+    </param>
+    <param name="first">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the first item to select.</para>
+    </param>
+    <param name="last">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the last item to select.</para>
+    </param>
+  </member>
+  <member name="Windows.ListBox_SetCaretIndex">
+    <summary>
+      <para>Sets the focus rectangle to the item at the specified index in a multiple-selection list box. If the item is not visible, it is scrolled into view. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/controls/lb-setcaretindex">LB_SETCARETINDEX</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>the zero-based index of the list box item that is to receive the focus rectangle.</para>
+    </param>
+    <remarks>
+      <para>The contents of the list box are scrolled till the item is fully visible.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/controls/lb-setcaretindex">LB_SETCARETINDEX</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_SetColumnWidth">
+    <summary>
+      <para>Sets the width of all columns in a multiple-column list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-setcolumnwidth">LB_SETCOLUMNWIDTH</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="cxColumn">
+      <para>Type: <b>int</b></para>
+      <para>The width, in pixels, of all columns.</para>
+    </param>
+  </member>
+  <member name="Windows.ListBox_SetCurSel">
+    <summary>
+      <para>Sets the currently selected item in a single-selection list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-setcursel">LB_SETCURSEL</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item to select, or –1 to clear the selection.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-setcursel">LB_SETCURSEL</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_SetHorizontalExtent">
+    <summary>
+      <para>Set the width by which a list box can be scrolled horizontally (the scrollable width). If the width of the list box is smaller than this value, the horizontal scroll bar horizontally scrolls items in the list box. If the width of the list box is equal to or greater than this value, the horizontal scroll bar is hidden. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-sethorizontalextent">LB_SETHORIZONTALEXTENT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="cxExtent">
+      <para>Type: <b>int</b></para>
+      <para>The number of pixels by which the list box can be scrolled.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-sethorizontalextent">LB_SETHORIZONTALEXTENT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_SetItemData">
+    <summary>
+      <para>Sets the application-defined value associated with the specified list box item. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-setitemdata">LB_SETITEMDATA</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item.</para>
+    </param>
+    <param name="data">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>The item data to set.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-setitemdata">LB_SETITEMDATA</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_SetItemHeight">
+    <summary>
+      <para>Sets the height of items in a list box. If the list box has the <a href="https://docs.microsoft.com//windows/desktop/Controls/list-box-styles">LBS_OWNERDRAWVARIABLE</a> style, this macro sets the height of the specified item; otherwise, it sets the height of all items. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-setitemheight">LB_SETITEMHEIGHT</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item. If the list box does not have the <a href="https://docs.microsoft.com//windows/desktop/Controls/list-box-styles">LBS_OWNERDRAWVARIABLE</a> style, set this parameter to zero.</para>
+    </param>
+    <param name="cy">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>The height of the item or items, in pixels.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-setitemheight">LB_SETITEMHEIGHT</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_SetSel">
+    <summary>
+      <para>Selects or deselects an item in a multiple-selection list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-setsel">LB_SETSEL</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="fSelect">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to select the item, or <b>FALSE</b> to deselect it.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item.</para>
+    </param>
+  </member>
+  <member name="Windows.ListBox_SetTabStops">
+    <summary>
+      <para>Sets the tab-stop positions in a list box. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-settabstops">LB_SETTABSTOPS</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="cTabs">
+      <para>Type: <b>int</b></para>
+      <para>The number of elements in the <i>lpTabs</i> array.</para>
+    </param>
+    <param name="lpTabs">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an array of integers containing the tab stops. The integers represent the number of quarters of the average character width for the font that is selected into the list box. For example, a tab stop of 4 is placed at 1.0 character units, and a tab stop of 6 is placed at 1.5 average character units. However, if the list box is part of a dialog box, the integers are in dialog template units. The tab stops must be sorted in ascending order; backward tabs are not allowed.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-settabstops">LB_SETTABSTOPS</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ListBox_SetTopIndex">
+    <summary>
+      <para>Ensures that the specified item in a list box is visible. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/controls/lb-settopindex">LB_SETTOPINDEX</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="indexTop">
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the item to put at the top of the visible part of the list.</para>
+    </param>
+    <remarks>
+      <para>The list box contents are scrolled so that either the specified item appears at the top of the list box or the maximum scroll range has been reached.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ScrollBar_Enable">
+    <summary>
+      <para>Enables or disables a scroll bar control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Flags that specify the arrows affected and whether they are enabled or disabled. See the <i>wArrows</i> parameter of <see cref="EnableScrollBar" /> for more information.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="EnableScrollBar" /> with SB_CTL in the <i>wSBFlags</i> parameter.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ScrollBar_GetPos">
+    <summary>
+      <para>Retrieves the position of the scroll box (thumb) in the specified scroll bar.</para>
+      <para>
+        <b>Note</b>  This macro expands to a call to the <see cref="GetScrollPos" /> function, which is deprecated. New applications should use the <see cref="GetScrollInfo" /> function.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <see cref="GetScrollInfo" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ScrollBar_GetRange">
+    <summary>
+      <para>Gets the range of a scroll bar.</para>
+      <para>
+        <b>Note</b>  This macro expands to a call to the <see cref="GetScrollRange" /> function, which is deprecated. New applications should use the <see cref="GetScrollInfo" /> function.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lpposMin">
+      <para>Type: <b>int*</b></para>
+      <para>Address of a variable that receives the minimum value of the scroll bar.</para>
+    </param>
+    <param name="lpposMax">
+      <para>Type: <b>int*</b></para>
+      <para>Address of a variable that receives the maximum value of the scroll bar.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <see cref="GetScrollRange" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ScrollBar_SetPos">
+    <summary>
+      <para>Sets the position of the scroll box (thumb) in the specified scroll bar and, if requested, redraws the scroll bar to reflect the new position of the scroll box.</para>
+      <para>
+        <b>Note</b>  This macro expands to a call to the <see cref="SetScrollPos" /> function, which is deprecated. New applications should use the <see cref="SetScrollInfo" /> function.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="pos">
+      <para>Type: <b>int</b></para>
+      <para>The new position of the scroll box.</para>
+    </param>
+    <param name="fRedraw">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to redraw the control; otherwise <b>FALSE</b>.</para>
+    </param>
+  </member>
+  <member name="Windows.ScrollBar_SetRange">
+    <summary>
+      <para>Sets the range of a scroll bar.</para>
+      <para>
+        <b>Note</b>  This macro expands to a call to the <see cref="SetScrollRange" /> function, which is deprecated. New applications should use the <see cref="SetScrollInfo" /> function.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="posMin">
+      <para>Type: <b>int</b></para>
+      <para>The minimum value of the scroll bar.</para>
+    </param>
+    <param name="posMax">
+      <para>Type: <b>int</b></para>
+      <para>The maximum value of the scroll bar.</para>
+    </param>
+    <param name="fRedraw">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to redraw the control; otherwise <b>FALSE</b>.</para>
+    </param>
+    <remarks>
+      <para>For more information, see <see cref="SetScrollRange" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ScrollBar_Show">
+    <summary>
+      <para>Shows or hides a scroll bar control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="fShow">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to show the control, or <b>FALSE</b> to hide it.</para>
+    </param>
+  </member>
+  <member name="Windows.SelectFont">
+    <summary>
+      <para>The <b>SelectFont</b> macro selects a font object into the specified device context (DC). The new font object replaces the previous font object.</para>
+    </summary>
+    <param name="hdc">
+      <para>A handle to the DC.</para>
+    </param>
+    <param name="hfont">
+      <para>A handle to the font object to be selected. The font object must have been created using either <see cref="CreateFont" /> or <see cref="CreateFontIndirect" />.</para>
+    </param>
+    <remarks>
+      <para>After an application has finished drawing with the new font object, it should always replace a new font object with the original font object.</para>
+      <para>The <b>SelectFont</b> macro is equivalent to calling <see cref="SelectObject" /> as follows:</para>
+      <code>
+((HFONT) SelectObject((hdc), (HGDIOBJ)(HFONT)(hfont)))
+
+</code>
+    </remarks>
+    <seealso cref="DeleteFont" />
+    <seealso cref="SelectObject" />
+  </member>
+  <member name="Windows.Static_Enable">
+    <summary>
+      <para>Enables or disables a static control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="fEnable">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> to enable the static control, or <b>FALSE</b> to disable it.</para>
+    </param>
+  </member>
+  <member name="Windows.Static_GetIcon">
+    <summary>
+      <para>Retrieves a handle to the icon associated with a static control that has the SS_ICON style.
+You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/stm-geticon">STM_GETICON</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="hIcon">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HICON</a></b></para>
+      <para>A handle to the icon.</para>
+    </param>
+  </member>
+  <member name="Windows.Static_GetText">
+    <summary>
+      <para>Gets the text of a static control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lpch">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>A pointer to the buffer that will receive the text.</para>
+    </param>
+    <param name="cchMax">
+      <para>Type: <b>int</b></para>
+      <para>The maximum number of characters to copy to the buffer, including the NULL terminator.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="GetWindowText" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Static_GetTextLength">
+    <summary>
+      <para>Gets the number of characters in the text of a static control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="GetWindowTextLength" />.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Static_SetIcon">
+    <summary>
+      <para>Sets the icon for a static control. You can use this macro or send the <a href="https://docs.microsoft.com//windows/desktop/Controls/stm-seticon">STM_SETICON</a> message explicitly.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="hIcon">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HICON</a></b></para>
+      <para>a handle to the icon.</para>
+    </param>
+  </member>
+  <member name="Windows.Static_SetText">
+    <summary>
+      <para>Sets the text of a static control.</para>
+    </summary>
+    <param name="hwndCtl">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </param>
+    <param name="lpsz">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>A pointer to a null-terminated string to be used as the static control text.</para>
+    </param>
+    <remarks>
+      <para>The macro expands to a call to <see cref="SetWindowText" />.</para>
+    </remarks>
+  </member>
+</doc>

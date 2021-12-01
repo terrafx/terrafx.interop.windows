@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LIBFLAGS.xml' path='doc/member[@name="LIBFLAGS"]/*' />
 public enum LIBFLAGS
 {
+    /// <include file='LIBFLAGS.xml' path='doc/member[@name="LIBFLAGS.LIBFLAG_FRESTRICTED"]/*' />
     LIBFLAG_FRESTRICTED = 0x1,
+
+    /// <include file='LIBFLAGS.xml' path='doc/member[@name="LIBFLAGS.LIBFLAG_FCONTROL"]/*' />
     LIBFLAG_FCONTROL = 0x2,
+
+    /// <include file='LIBFLAGS.xml' path='doc/member[@name="LIBFLAGS.LIBFLAG_FHIDDEN"]/*' />
     LIBFLAG_FHIDDEN = 0x4,
+
+    /// <include file='LIBFLAGS.xml' path='doc/member[@name="LIBFLAGS.LIBFLAG_FHASDISKIMAGE"]/*' />
     LIBFLAG_FHASDISKIMAGE = 0x8,
 }

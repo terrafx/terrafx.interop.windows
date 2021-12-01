@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1DCRenderTarget.BindDC">
+    <summary>
+      <para>Binds the render target to the device context to which it issues drawing commands.</para>
+    </summary>
+    <param name="hDC">
+      <para>Type: <b>const HDC</b></para>
+      <para>The device context to which the render target issues drawing commands.</para>
+    </param>
+    <param name="pSubRect">
+      <para>Type: <b>const <see cref="RECT" />*</b></para>
+      <para>The dimensions of the handle to a device context (HDC) to which the render target is bound.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
+    </returns>
+    <remarks>
+      <para>Before you can render with the DC render target, you must use its <b>BindDC</b> method to associate it with a GDI DC.  You do this each time you  use a different DC, or the size of the area you want to draw to changes.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-and-gdi-interoperation-overview">Direct2D and GDI Interoperation Overview</seealso>
+    <seealso cref="ID2D1DCRenderTarget" />
+  </member>
+  <member name="ID2D1DCRenderTarget">
+    <summary>
+      <para>Issues drawing commands to a GDI device context.</para>
+    </summary>
+    <remarks>
+      <h3>Creating ID2D1DCRenderTarget Objects</h3>
+      <para>To create an <b>ID2D1DCRenderTarget</b>, use the <see cref="ID2D1Factory.CreateDCRenderTarget" /> method.</para>
+      <para>Before you can render with the DC render target, you must use its <see cref="BindDC" /> method to associate it with a GDI DC.  You do this each time you  use a different DC, or the size of the area you want to draw to changes.</para>
+      <para>To enable the DC render target to work with GDI, set its pixel format to <see cref="DXGI_FORMAT_B8G8R8A8_UNORM" /> and its alpha mode to <see cref="D2D1_ALPHA_MODE_PREMULTIPLIED" /> or <b>D2D1_ALPHA_MODE_IGNORE</b>.</para>
+      <para>Your application should create render targets once and hold onto them for the life of the application or until the render target's  <see cref="EndDraw" /> method returns the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a>  error. When you receive this error, you need to recreate the render target (and any resources it created).</para>
+      <h3>ID2D1DCRenderTargets, GDI Transforms, and Right-to-Left Language Builds of Windows</h3>
+      <para>When you use an <b>ID2D1DCRenderTarget</b>, it renders Direct2D content to an internal bitmap, and then renders the bitmap to the DC with GDI.</para>
+      <para>It's possible for GDI to apply a GDI transform  (through the <see cref="SetWorldTransform" /> method) or other effect to the same DC used by the render target, in which case GDI transforms the bitmap produced by Direct2D. Using a GDI transform to transform the Direct2D content has the potential to degrade the visual quality of the output, because you're transforming a bitmap for which antialiasing and subpixel positioning have already been calculated.</para>
+      <para>For example, suppose you use the render target to draw a scene that contains antialiased geometries and text. If you use a GDI transform to apply a scale transform to the DC and scale the scene so that it's 10 times larger, you'll see pixelization and jagged edges. (If, however, you applied a similar transform using Direct2D, the visual quality of the scene would not be degraded.)</para>
+      <para>In some cases, it might not be obvious that GDI is performing additional processing that might degrade the quality of the Direct2D content. For example, on a right-to-left (RTL) build of Windows, content rendered by an <b>ID2D1DCRenderTarget</b> might be horizontally inverted when GDI copies it to its destination.   Whether the content is actually inverted depends on the current settings of the DC.</para>
+      <para>Depending on the type of content being rendered, you might want to prevent the inversion. If the Direct2D content includes ClearType text, this inversion will degrade the quality of the text.</para>
+      <para>You can control RTL rendering behavior by using the <see cref="SetLayout" /> GDI function.  To  prevent the mirroring, call the <b>SetLayout</b> GDI function and specify <b>LAYOUT_BITMAPORIENTATIONPRESERVED</b> as the only value for the second parameter (do not combine it with <b>LAYOUT_RTL</b>), as shown in the following example:</para>
+      <code>SetLayout(m_hwnd, LAYOUT_BITMAPORIENTATIONPRESERVED);
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-and-gdi-interoperation-overview">Direct2D and GDI Interoperation Overview</seealso>
+    <seealso cref="ID2D1RenderTarget" />
+  </member>
+</doc>

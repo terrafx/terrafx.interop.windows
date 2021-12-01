@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COLORMAP.xml' path='doc/member[@name="COLORMAP"]/*' />
 public partial struct COLORMAP
 {
+    /// <include file='COLORMAP.xml' path='doc/member[@name="COLORMAP.from"]/*' />
     public COLORREF from;
 
+    /// <include file='COLORMAP.xml' path='doc/member[@name="COLORMAP.to"]/*' />
     public COLORREF to;
 }

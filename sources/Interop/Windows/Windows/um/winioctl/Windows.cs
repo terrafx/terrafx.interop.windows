@@ -13,18 +13,21 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmParameterBlock"]/*' />
     [return: NativeTypeName("PVOID")]
     public static void* DeviceDsmParameterBlock([NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input)
     {
         return (void*)((nuint)(Input) + Input->ParameterBlockOffset);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmDataSetRanges"]/*' />
     [return: NativeTypeName("PDEVICE_DSM_RANGE")]
     public static DEVICE_DATA_SET_RANGE* DeviceDsmDataSetRanges([NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input)
     {
         return (DEVICE_DATA_SET_RANGE*)((nuint)(Input) + Input->DataSetRangesOffset);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmInitializeInput"]/*' />
     public static void DeviceDsmInitializeInput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input, [NativeTypeName("DWORD")] uint InputLength, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Parameters, [NativeTypeName("DWORD")] uint ParameterBlockLength)
     {
         uint Bytes = 28;
@@ -51,6 +54,7 @@ public static unsafe partial class Windows
         return;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmValidateInput"]/*' />
     [return: NativeTypeName("BOOLEAN")]
     public static byte DeviceDsmValidateInput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input, [NativeTypeName("DWORD")] uint InputLength)
     {
@@ -124,6 +128,7 @@ public static unsafe partial class Windows
         return Valid;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmOutputBlock"]/*' />
     [return: NativeTypeName("PVOID")]
     [SupportedOSPlatform("windows8.0")]
     public static void* DeviceDsmOutputBlock([NativeTypeName("PDEVICE_DSM_OUTPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT* Output)
@@ -131,6 +136,7 @@ public static unsafe partial class Windows
         return (void*)((nuint)(Output) + Output->OutputBlockOffset);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmGetOutputLength"]/*' />
     [return: NativeTypeName("DWORD")]
     public static uint DeviceDsmGetOutputLength([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint OutputBlockLength)
     {
@@ -158,6 +164,7 @@ public static unsafe partial class Windows
         return Bytes;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmValidateOutputLength"]/*' />
     [return: NativeTypeName("BOOLEAN")]
     public static byte DeviceDsmValidateOutputLength([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint OutputLength)
     {
@@ -166,6 +173,7 @@ public static unsafe partial class Windows
         return (byte)((OutputLength >= Bytes) ? 1 : 0);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmGetOutputBlockLength"]/*' />
     [return: NativeTypeName("DWORD")]
     public static uint DeviceDsmGetOutputBlockLength([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint OutputLength)
     {
@@ -183,6 +191,7 @@ public static unsafe partial class Windows
         return Bytes;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmInitializeOutput"]/*' />
     [SupportedOSPlatform("windows8.0")]
     public static void DeviceDsmInitializeOutput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_OUTPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT* Output, [NativeTypeName("DWORD")] uint OutputLength, [NativeTypeName("DWORD")] uint Flags)
     {
@@ -202,6 +211,7 @@ public static unsafe partial class Windows
         return;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmValidateOutput"]/*' />
     [return: NativeTypeName("BOOLEAN")]
     [SupportedOSPlatform("windows8.0")]
     public static byte DeviceDsmValidateOutput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_OUTPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT* Output, [NativeTypeName("DWORD")] uint OutputLength)

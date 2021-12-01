@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPINFODATAFLAGS">
+    <summary>
+      <para>Specifies application information to return from <see cref="IShellApp.GetAppInfo" />. These flags are bitmasks used in the <see cref="dwMask" /> member of the <b>APPINFODATA</b> structure.</para>
+    </summary>
+    <remarks>
+      <para>Add/Remove Programs in Control Panel uses only <b>AIM_DISPLAYNAME</b> and <b>AIM_SUPPORTURL.</b></para>
+    </remarks>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_DISPLAYNAME">
+    <summary>
+      <para>Returns the display name.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_VERSION">
+    <summary>
+      <para>Returns the version.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_PUBLISHER">
+    <summary>
+      <para>Returns the application publisher.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_PRODUCTID">
+    <summary>
+      <para>Returns the application's product ID.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_REGISTEREDOWNER">
+    <summary>
+      <para>Returns the application's registered owner.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_REGISTEREDCOMPANY">
+    <summary>
+      <para>Returns the application's registered company.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_LANGUAGE">
+    <summary>
+      <para>Returns the language.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_SUPPORTURL">
+    <summary>
+      <para>Returns the support URL.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_SUPPORTTELEPHONE">
+    <summary>
+      <para>Returns the support telephone number.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_HELPLINK">
+    <summary>
+      <para>Returns the Help link.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_INSTALLLOCATION">
+    <summary>
+      <para>Returns the application's install location.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_INSTALLSOURCE">
+    <summary>
+      <para>Returns the install source.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_INSTALLDATE">
+    <summary>
+      <para>Returns the application's install date.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_CONTACT">
+    <summary>
+      <para>Returns the application's contact information.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_COMMENTS">
+    <summary>
+      <para>Returns application comments.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_IMAGE">
+    <summary>
+      <para>Returns the application image.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_READMEURL">
+    <summary>
+      <para>Returns the URL of the application's ReadMe file.</para>
+    </summary>
+  </member>
+  <member name="APPINFODATAFLAGS.AIM_UPDATEINFOURL">
+    <summary>
+      <para>Returns the URL of the application's update information.</para>
+      <h4>- AIM_REQUIREDBYPOLICY</h4>
+      <para>Obsolete.</para>
+    </summary>
+  </member>
+</doc>

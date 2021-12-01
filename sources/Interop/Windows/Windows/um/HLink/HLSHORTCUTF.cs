@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLSHORTCUTF.xml' path='doc/member[@name="HLSHORTCUTF"]/*' />
 public enum HLSHORTCUTF
 {
+    /// <include file='HLSHORTCUTF.xml' path='doc/member[@name="HLSHORTCUTF.HLSHORTCUTF_DEFAULT"]/*' />
     HLSHORTCUTF_DEFAULT = 0,
+
+    /// <include file='HLSHORTCUTF.xml' path='doc/member[@name="HLSHORTCUTF.HLSHORTCUTF_DONTACTUALLYCREATE"]/*' />
     HLSHORTCUTF_DONTACTUALLYCREATE = 0x1,
+
+    /// <include file='HLSHORTCUTF.xml' path='doc/member[@name="HLSHORTCUTF.HLSHORTCUTF_USEFILENAMEFROMFRIENDLYNAME"]/*' />
     HLSHORTCUTF_USEFILENAMEFROMFRIENDLYNAME = 0x2,
+
+    /// <include file='HLSHORTCUTF.xml' path='doc/member[@name="HLSHORTCUTF.HLSHORTCUTF_USEUNIQUEFILENAME"]/*' />
     HLSHORTCUTF_USEUNIQUEFILENAME = 0x4,
+
+    /// <include file='HLSHORTCUTF.xml' path='doc/member[@name="HLSHORTCUTF.HLSHORTCUTF_MAYUSEEXISTINGSHORTCUT"]/*' />
     HLSHORTCUTF_MAYUSEEXISTINGSHORTCUT = 0x8,
 }

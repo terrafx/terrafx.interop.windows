@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMClockSlave.xml' path='doc/member[@name="IAMClockSlave"]/*' />
 [Guid("9FD52741-176D-4B36-8F51-CA8F933223BE")]
 [NativeTypeName("struct IAMClockSlave : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface
         return ((delegate* unmanaged<IAMClockSlave*, Guid*, void**, int>)(lpVtbl[0]))((IAMClockSlave*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface
         return ((delegate* unmanaged<IAMClockSlave*, uint>)(lpVtbl[1]))((IAMClockSlave*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface
         return ((delegate* unmanaged<IAMClockSlave*, uint>)(lpVtbl[2]))((IAMClockSlave*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMClockSlave.xml' path='doc/member[@name="IAMClockSlave.SetErrorTolerance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetErrorTolerance([NativeTypeName("DWORD")] uint dwTolerance)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface
         return ((delegate* unmanaged<IAMClockSlave*, uint, int>)(lpVtbl[3]))((IAMClockSlave*)Unsafe.AsPointer(ref this), dwTolerance);
     }
 
+    /// <include file='IAMClockSlave.xml' path='doc/member[@name="IAMClockSlave.GetErrorTolerance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetErrorTolerance([NativeTypeName("DWORD *")] uint* pdwTolerance)

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGR_SYNC_CONTROL_FLAGS.xml' path='doc/member[@name="SYNCMGR_SYNC_CONTROL_FLAGS"]/*' />
 public enum SYNCMGR_SYNC_CONTROL_FLAGS
 {
+    /// <include file='SYNCMGR_SYNC_CONTROL_FLAGS.xml' path='doc/member[@name="SYNCMGR_SYNC_CONTROL_FLAGS.SYNCMGR_SCF_NONE"]/*' />
     SYNCMGR_SCF_NONE = 0,
+
+    /// <include file='SYNCMGR_SYNC_CONTROL_FLAGS.xml' path='doc/member[@name="SYNCMGR_SYNC_CONTROL_FLAGS.SYNCMGR_SCF_IGNORE_IF_ALREADY_SYNCING"]/*' />
     SYNCMGR_SCF_IGNORE_IF_ALREADY_SYNCING = 0x1,
+
+    /// <include file='SYNCMGR_SYNC_CONTROL_FLAGS.xml' path='doc/member[@name="SYNCMGR_SYNC_CONTROL_FLAGS.SYNCMGR_SCF_VALID"]/*' />
     SYNCMGR_SCF_VALID = 0x1,
 }

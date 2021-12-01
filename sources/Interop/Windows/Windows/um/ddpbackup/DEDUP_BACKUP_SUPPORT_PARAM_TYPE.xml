@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DEDUP_BACKUP_SUPPORT_PARAM_TYPE">
+    <summary>
+      <para>Indicates whether Data Deduplication should perform an unoptimized or optimized restore.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupbackupsupport-restorefiles">IDedupBackupSupport.RestoreFiles</seealso>
+  </member>
+  <member name="DEDUP_BACKUP_SUPPORT_PARAM_TYPE.DEDUP_RECONSTRUCT_UNOPTIMIZED">
+    <summary>
+      <para>Perform an unoptimized restore.</para>
+    </summary>
+  </member>
+  <member name="DEDUP_BACKUP_SUPPORT_PARAM_TYPE.DEDUP_RECONSTRUCT_OPTIMIZED">
+    <summary>
+      <para>Reserved for future use. Do not use.</para>
+    </summary>
+  </member>
+</doc>

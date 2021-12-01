@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10Texture2D.GetDesc">
+    <summary>
+      <para>Get the properties of the texture resource.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b><see cref="D3D10_TEXTURE2D_DESC" />*</b></para>
+      <para>Pointer to a resource description (see <see cref="D3D10_TEXTURE2D_DESC" />).</para>
+    </param>
+    <seealso cref="ID3D10Texture2D Interface" />
+  </member>
+  <member name="ID3D10Texture2D.Map">
+    <summary>
+      <para>Get a pointer to the data contained in a subresource, and deny GPU access to that subresource.</para>
+    </summary>
+    <param name="Subresource">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Index number of the subresource. See <see cref="D3D10CalcSubresource" /> for more details.</para>
+    </param>
+    <param name="MapType">
+      <para>Type: <b><see cref="D3D10_MAP" /></b></para>
+      <para>Integer that specifies the CPU's read and write permissions for a resource. For possible values, see <see cref="D3D10_MAP" />.</para>
+    </param>
+    <param name="MapFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>
+        <see cref="Flag" /> that specifies what the CPU should do when the GPU is busy. This flag is optional.</para>
+    </param>
+    <param name="pMappedTex2D">
+      <para>Type: <b><see cref="D3D10_MAPPED_TEXTURE2D" />*</b></para>
+      <para>Pointer to a structure (<see cref="D3D10_MAPPED_TEXTURE2D" />) that is filled in by the function and contains a pointer to the resource data.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>All of the Map methods have identical return values and operating restrictions. These are listed in the remarks section of <see cref="ID3D10Texture1D.Map" />.</para>
+    </returns>
+    <seealso cref="ID3D10Texture2D Interface" />
+  </member>
+  <member name="ID3D10Texture2D.Unmap">
+    <summary>
+      <para>Invalidate the pointer to the resource that was retrieved by <see cref="ID3D10Texture2D.Map" />, and re-enable GPU access to the resource.</para>
+    </summary>
+    <param name="Subresource">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">Subresource</a> to be unmapped. See <see cref="D3D10CalcSubresource" /> for more details.</para>
+    </param>
+    <remarks>
+      <para>A subresource must be mapped before Unmap is called.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <para>Differences between Direct3D 9 and Direct3D 10:</para>
+            <para>Unmap in Direct3D 10 is analogous to resource Unlock in Direct3D 9.</para>
+          </description>
+        </listheader>
+      </list>
+    </remarks>
+    <seealso cref="ID3D10Texture2D Interface" />
+  </member>
+  <member name="ID3D10Texture2D">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">2D texture</a> interface manages texel data, which is structured memory.</para>
+    </summary>
+    <remarks>
+      <para>To create an empty Texture2D resource, call <see cref="ID3D10Device.CreateTexture2D" />. For more details on creating and loading textures, see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-creating-textures">Creating Texture Resources</a>.</para>
+      <para>Textures cannot be bound directly to the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-pipeline-stages">pipeline</a>; instead, a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-access-views">view</a> must be created and bound. Using a view, texture data can be interpreted at run time within certain restrictions. To use the texture as a render target or depth-stencil resource, call <see cref="ID3D10Device.CreateRenderTargetView" />, and <see cref="ID3D10Device.CreateDepthStencilView" />, respectively. To use the texture as an input to a shader, create a  by calling <see cref="ID3D10Device.CreateShaderResourceView" />.</para>
+    </remarks>
+    <seealso cref="ID3D10Resource" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+  </member>
+</doc>

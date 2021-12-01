@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRCOLORCORRECTPALETTE">
+    <summary>
+      <para>The <b>EMRCOLORCORRECTPALETTE</b> structure contains members for the <see cref="ColorCorrectPalette" /> enhanced metafile record.</para>
+    </summary>
+    <seealso cref="ColorCorrectPalette" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRCOLORCORRECTPALETTE.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRCOLORCORRECTPALETTE.ihPalette">
+    <summary>
+      <para>The index of the palette handle to color correct.</para>
+    </summary>
+  </member>
+  <member name="EMRCOLORCORRECTPALETTE.nFirstEntry">
+    <summary>
+      <para>The index of the first entry in the palette to color correct.</para>
+    </summary>
+  </member>
+  <member name="EMRCOLORCORRECTPALETTE.nPalEntries">
+    <summary>
+      <para>The number of palette entries to color correct.</para>
+    </summary>
+  </member>
+  <member name="EMRCOLORCORRECTPALETTE.nReserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

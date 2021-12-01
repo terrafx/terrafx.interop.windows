@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPBARDATA">
+    <summary>
+      <para>Contains information about a system appbar message.</para>
+    </summary>
+  </member>
+  <member name="APPBARDATA.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="APPBARDATA.hWnd">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>The handle to the appbar window. Not all messages use this member. See the individual message page to see if you need to provide an <b>hWind</b> value.</para>
+    </summary>
+  </member>
+  <member name="APPBARDATA.uCallbackMessage">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>An application-defined message identifier. The application uses the specified identifier for notification messages that it sends to the appbar identified by the <b>hWnd</b> member. This member is used when sending the <a href="https://docs.microsoft.com//windows/desktop/shell/abm-new">ABM_NEW</a> message.</para>
+    </summary>
+  </member>
+  <member name="APPBARDATA.uEdge">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>A value that specifies an edge of the screen. This member is used when sending one of these messages:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/conversion-functions-bumper">ABM_GETAUTOHIDEBAR</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/dialogs-bumper">ABM_SETAUTOHIDEBAR</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-getautohidebarex">ABM_GETAUTOHIDEBAREX</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-setautohidebarex">ABM_SETAUTOHIDEBAREX</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-querypos">ABM_QUERYPOS</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-setpos">ABM_SETPOS</a>
+          </description>
+        </item>
+      </list>
+      <para>This member can be one of the following values.</para>
+      <h4>ABE_BOTTOM</h4>
+      <para>Bottom edge.</para>
+      <h4>ABE_LEFT</h4>
+      <para>Left edge.</para>
+      <h4>ABE_RIGHT</h4>
+      <para>Right edge.</para>
+      <h4>ABE_TOP</h4>
+      <para>Top edge.</para>
+    </summary>
+  </member>
+  <member name="APPBARDATA.rc">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>A <see cref="RECT" /> structure whose use varies depending on the message:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-gettaskbarpos">ABM_GETTASKBARPOS</a>, <a href="https://docs.microsoft.com//windows/desktop/shell/abm-querypos">ABM_QUERYPOS</a>, <a href="https://docs.microsoft.com//windows/desktop/shell/abm-setpos">ABM_SETPOS</a>: The bounding rectangle, in screen coordinates, of an appbar or the Windows taskbar.</description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-getautohidebarex">ABM_GETAUTOHIDEBAREX</a>, <a href="https://docs.microsoft.com//windows/desktop/shell/abm-setautohidebarex">ABM_SETAUTOHIDEBAREX</a>: The monitor on which the operation is being performed. This information can be retrieved through the <see cref="GetMonitorInfo" /> function.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="APPBARDATA.lParam">
+    <summary>
+      <para>Type: <b>LPARAM</b></para>
+      <para>A message-dependent value. This member is used with these messages:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/dialogs-bumper">ABM_SETAUTOHIDEBAR</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-setautohidebarex">ABM_SETAUTOHIDEBAREX</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/drag-and-drop-handlers-and-custom-clipboard-format-bumper">ABM_SETSTATE</a>
+          </description>
+        </item>
+      </list>
+      <para>See the individual message pages for details.</para>
+    </summary>
+  </member>
+</doc>

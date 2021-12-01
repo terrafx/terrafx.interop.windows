@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TEX2D_UAV1">
+    <summary>
+      <para>Describes a unordered-access 2D texture resource.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D11_TEX2D_UAV1.MipSlice">
+    <summary>
+      <para>The mipmap slice index.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEX2D_UAV1.PlaneSlice">
+    <summary>
+      <para>The index (plane slice number) of the plane to use in the texture.</para>
+    </summary>
+  </member>
+</doc>

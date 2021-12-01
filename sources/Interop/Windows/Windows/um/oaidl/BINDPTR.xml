@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BINDPTR">
+    <summary>
+      <para>Describes a pointer.</para>
+    </summary>
+  </member>
+  <member name="BINDPTR.lpfuncdesc">
+    <summary>
+      <para>Pointer to a function.</para>
+    </summary>
+  </member>
+  <member name="BINDPTR.lpvardesc">
+    <summary>
+      <para>Pointer to a variable, constant, or data member.</para>
+    </summary>
+  </member>
+  <member name="BINDPTR.lptcomp">
+    <summary>
+      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypecomp">ITypeComp</a> that binds the pointer.</para>
+    </summary>
+  </member>
+</doc>

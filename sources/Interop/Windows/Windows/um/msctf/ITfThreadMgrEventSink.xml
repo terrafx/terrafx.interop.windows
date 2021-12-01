@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfThreadMgrEventSink.OnInitDocumentMgr">
+    <summary>
+      <para>Called when the first context is added to the context stack</para>
+    </summary>
+    <param name="pdim">
+      <para>Pointer to the document manager object.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITfDocumentMgr.Push " />
+    <seealso cref="ITfThreadMgrEventSink" />
+  </member>
+  <member name="ITfThreadMgrEventSink.OnPopContext">
+    <summary>
+      <para>Called when a context is removed from the context stack</para>
+    </summary>
+    <param name="pic">
+      <para>Pointer to the context removed from the stack.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITfDocumentMgr.Pop " />
+    <seealso cref="ITfThreadMgrEventSink" />
+  </member>
+  <member name="ITfThreadMgrEventSink.OnPushContext">
+    <summary>
+      <para>Called when a context is added to the context stack</para>
+    </summary>
+    <param name="pic">
+      <para>Pointer to the context added to the stack.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITfDocumentMgr.Push " />
+    <seealso cref="ITfThreadMgrEventSink" />
+  </member>
+  <member name="ITfThreadMgrEventSink.OnSetFocus">
+    <summary>
+      <para>Called when a document view receives or loses the focus</para>
+    </summary>
+    <param name="pdimFocus">
+      <para>Pointer to the document manager receiving the input focus. If no document is receiving the focus, this will be <b>NULL</b>.</para>
+    </param>
+    <param name="pdimPrevFocus">
+      <para>Pointer to the document manager that previously had the input focus. If no document had the focus, this will be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITfThreadMgr.SetFocus " />
+    <seealso cref="ITfThreadMgrEventSink" />
+  </member>
+  <member name="ITfThreadMgrEventSink.OnUninitDocumentMgr">
+    <summary>
+      <para>Called when the last context is removed from the context stack</para>
+    </summary>
+    <param name="pdim">
+      <para>Pointer to the document manager object.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITfDocumentMgr.Pop " />
+    <seealso cref="ITfThreadMgrEventSink" />
+  </member>
+  <member name="ITfThreadMgrEventSink">
+    <summary>
+      <para>The <b>ITfThreadMgrEventSink</b> interface is implemented by an application or TSF text service to receive notifications of certain thread manager events. Call the TSF manager <see cref="ITfSource.AdviseSink" /> with IID_ITfThreadMgrEventSink to install this advise sink.</para>
+    </summary>
+    <seealso cref="ITfSource.AdviseSink " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

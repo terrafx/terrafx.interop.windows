@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY.xml' path='doc/member[@name="STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY"]/*' />
 public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY
 {
+    /// <include file='STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY.xml' path='doc/member[@name="STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY.EntryLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint EntryLength;
 
+    /// <include file='STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY.xml' path='doc/member[@name="STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY.DependencyTypeFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint DependencyTypeFlags;
 
+    /// <include file='STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY.xml' path='doc/member[@name="STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY.ProviderSpecificFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint ProviderSpecificFlags;
 
+    /// <include file='STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY.xml' path='doc/member[@name="STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY.VirtualStorageType"]/*' />
     public VIRTUAL_STORAGE_TYPE VirtualStorageType;
 }

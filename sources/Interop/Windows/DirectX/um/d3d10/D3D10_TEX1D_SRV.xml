@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_TEX1D_SRV">
+    <summary>
+      <para>Specifies the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource</a> from a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">1D texture</a> to use in a shader-resource view.</para>
+    </summary>
+    <remarks>
+      <para>This structure is one member of a shader-resource-view description (see <see cref="D3D10_SHADER_RESOURCE_VIEW_DESC" />).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D10_TEX1D_SRV.MostDetailedMip">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Index of the most detailed mipmap level to use; this number is between 0 and <b>MipLevels</b> -1.</para>
+    </summary>
+  </member>
+  <member name="D3D10_TEX1D_SRV.MipLevels">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of mipmap levels to use.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaKeySessionNotify2.xml' path='doc/member[@name="IMFMediaKeySessionNotify2"]/*' />
 [Guid("C3A9E92A-DA88-46B0-A110-6CF953026CB9")]
 [NativeTypeName("struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotify")]
 [NativeInheritance("IMFMediaKeySessionNotify")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
         return ((delegate* unmanaged<IMFMediaKeySessionNotify2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
         return ((delegate* unmanaged<IMFMediaKeySessionNotify2*, uint>)(lpVtbl[1]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
         return ((delegate* unmanaged<IMFMediaKeySessionNotify2*, uint>)(lpVtbl[2]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFMediaKeySessionNotify.KeyMessage" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void KeyMessage([NativeTypeName("BSTR")] ushort* destinationURL, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint cb)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
         ((delegate* unmanaged<IMFMediaKeySessionNotify2*, ushort*, byte*, uint, void>)(lpVtbl[3]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), destinationURL, message, cb);
     }
 
+    /// <inheritdoc cref="IMFMediaKeySessionNotify.KeyAdded" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void KeyAdded()
@@ -53,6 +59,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
         ((delegate* unmanaged<IMFMediaKeySessionNotify2*, void>)(lpVtbl[4]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFMediaKeySessionNotify.KeyError" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void KeyError(ushort code, [NativeTypeName("DWORD")] uint systemCode)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
         ((delegate* unmanaged<IMFMediaKeySessionNotify2*, ushort, uint, void>)(lpVtbl[5]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), code, systemCode);
     }
 
+    /// <include file='IMFMediaKeySessionNotify2.xml' path='doc/member[@name="IMFMediaKeySessionNotify2.KeyMessage2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void KeyMessage2(MF_MEDIAKEYSESSION_MESSAGETYPE eMessageType, [NativeTypeName("BSTR")] ushort* destinationURL, [NativeTypeName("const BYTE *")] byte* pbMessage, [NativeTypeName("DWORD")] uint cbMessage)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
         ((delegate* unmanaged<IMFMediaKeySessionNotify2*, MF_MEDIAKEYSESSION_MESSAGETYPE, ushort*, byte*, uint, void>)(lpVtbl[6]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), eMessageType, destinationURL, pbMessage, cbMessage);
     }
 
+    /// <include file='IMFMediaKeySessionNotify2.xml' path='doc/member[@name="IMFMediaKeySessionNotify2.KeyStatusChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void KeyStatusChange()

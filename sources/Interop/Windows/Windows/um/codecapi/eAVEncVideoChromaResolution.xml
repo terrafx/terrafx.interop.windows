@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncVideoChromaResolution">
+    <summary>
+      <para>Specifies chroma resolution. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoinputchromaresolution-property">AVEncVideoInputChromaResolution</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideooutputchromaresolution-property">AVEncVideoOutputChromaResolution</a> properties.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncVideoChromaResolution.eAVEncVideoChromaResolution_SameAsSource">
+    <summary>
+      <para>Use the same chroma resolution as the input video. This flag applies to the <b>AVEncVideoOutputChromaResolution</b> property only.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoChromaResolution.eAVEncVideoChromaResolution_444">
+    <summary>
+      <para>4:4:4 (no downsampling).</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoChromaResolution.eAVEncVideoChromaResolution_422">
+    <summary>
+      <para>4:2:2 (2:1 horizontal downsampling, with no vertical downsampling).</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoChromaResolution.eAVEncVideoChromaResolution_420">
+    <summary>
+      <para>4:2:0 (2:1 horizontal downsampling, with 2:1 vertical downsampling).</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoChromaResolution.eAVEncVideoChromaResolution_411">
+    <summary>
+      <para>4:1:1 (4:1 horizontal downsampling, with no vertical downsampling).</para>
+    </summary>
+  </member>
+</doc>

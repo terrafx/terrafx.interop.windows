@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICEDUMP_RESTRICTED_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_RESTRICTED_SUBSECTION"]/*' />
 public unsafe partial struct DEVICEDUMP_RESTRICTED_SUBSECTION
 {
+    /// <include file='DEVICEDUMP_RESTRICTED_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_RESTRICTED_SUBSECTION.bData"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte bData[1];
 }

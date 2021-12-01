@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_DECRYPT_MESSAGE_PARA">
+    <summary>
+      <para>The <b>CRYPT_DECRYPT_MESSAGE_PARA</b> structure contains information for decrypting messages.</para>
+    </summary>
+    <seealso cref="CryptDecryptAndVerifyMessageSignature" />
+    <seealso cref="CryptDecryptMessage" />
+  </member>
+  <member name="CRYPT_DECRYPT_MESSAGE_PARA.cbSize">
+    <summary>
+      <para>Size of this structure in bytes.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_DECRYPT_MESSAGE_PARA.dwMsgAndCertEncodingType">
+    <summary>
+      <para>Type of encoding used. It is always acceptable to specify both the certificate and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/m-gly">message encoding types</a> by combining them with a bitwise-<b>OR</b> operation as shown in the following example:</para>
+      <para>X509_ASN_ENCODING | PKCS_7_ASN_ENCODING</para>
+      <para>Currently defined encoding types are:</para>
+      <list type="bullet">
+        <item>
+          <description>X509_ASN_ENCODING</description>
+        </item>
+        <item>
+          <description>PKCS_7_ASN_ENCODING</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_DECRYPT_MESSAGE_PARA.cCertStore">
+    <summary>
+      <para>Number of elements in the <b>rghCertStore</b> array.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_DECRYPT_MESSAGE_PARA.rghCertStore">
+    <summary>
+      <para>Array of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate store</a> handles.</para>
+      <para>These certificate store handles are used to obtain the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate context</a> to use for decrypting a message. For more information, see the decryption functions
+<see cref="CryptDecryptMessage" />, and
+<see cref="CryptDecryptAndVerifyMessageSignature" />. An encrypted message can have one or more recipients. The recipients are identified by a unique certificate identifier, often the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> of the certificate issuer and serial number. The certificate stores are searched to find a certificate context corresponding to the unique identifier.</para>
+      <para>Recipients can also be identified by their KeyId. Both Key Agreement (Diffie-Hellman) and Key Transport (RSA) recipients are supported.</para>
+      <para>Only certificate contexts in the store with one of the following properties, CERT_KEY_PROV_INFO_PROP_ID, or CERT_KEY_CONTEXT_PROP_ID can be used. These properties specify the location of a needed private exchange key.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_DECRYPT_MESSAGE_PARA.dwFlags">
+    <summary>
+      <para>The CRYPT_MESSAGE_SILENT_KEYSET_FLAG can be set to suppress any UI by the CSP. For more information about the CRYPT_SILENT flag, see
+<see cref="CryptAcquireContext" />.</para>
+    </summary>
+  </member>
+</doc>

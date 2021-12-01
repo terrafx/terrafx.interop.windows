@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RASTERIZER_STATUS">
+    <summary>
+      <para>The <b>RASTERIZER_STATUS</b> structure contains information about whether TrueType is installed. This structure is filled when an application calls the <see cref="GetRasterizerCaps" /> function.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
+    <seealso cref="GetRasterizerCaps" />
+  </member>
+  <member name="RASTERIZER_STATUS.nSize">
+    <summary>
+      <para>The size, in bytes, of the <b>RASTERIZER_STATUS</b> structure.</para>
+    </summary>
+  </member>
+  <member name="RASTERIZER_STATUS.wFlags">
+    <summary>
+      <para>Specifies whether at least one TrueType font is installed and whether TrueType is enabled. This value is TT_AVAILABLE, TT_ENABLED, or both if TrueType is on the system.</para>
+    </summary>
+  </member>
+  <member name="RASTERIZER_STATUS.nLanguageID">
+    <summary>
+      <para>The language in the system's Setup.inf file.</para>
+    </summary>
+  </member>
+</doc>

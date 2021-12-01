@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_PROVIDER_DEFUSAGE">
+    <summary>
+      <para>The <b>CRYPT_PROVIDER_DEFUSAGE</b> structure is used by the <see cref="WintrustGetDefaultForUsage" /> function to retrieve callback information for a provider's default usage.</para>
+    </summary>
+    <seealso cref="CRYPT_PROVIDER_REGDEFUSAGE" />
+    <seealso cref="WintrustGetDefaultForUsage" />
+  </member>
+  <member name="CRYPT_PROVIDER_DEFUSAGE.cbStruct">
+    <summary>
+      <para>Size, in bytes, of the structure.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_DEFUSAGE.gActionID">
+    <summary>
+      <para>GUID that specifies the provider's default action.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_DEFUSAGE.pDefPolicyCallbackData">
+    <summary>
+      <para>Pointer to a data buffer used to pass policy-specific data to a policy provider.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_DEFUSAGE.pDefSIPClientData">
+    <summary>
+      <para>Pointer to a data buffer used to pass subject interface package (SIP) specific data to an SIP provider.</para>
+    </summary>
+  </member>
+</doc>

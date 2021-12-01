@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFCapturePhotoConfirmation.xml' path='doc/member[@name="IMFCapturePhotoConfirmation"]/*' />
 [Guid("19F68549-CA8A-4706-A4EF-481DBC95E12C")]
 [NativeTypeName("struct IMFCapturePhotoConfirmation : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
         return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, void**, int>)(lpVtbl[0]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
         return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, uint>)(lpVtbl[1]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
         return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, uint>)(lpVtbl[2]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCapturePhotoConfirmation.xml' path='doc/member[@name="IMFCapturePhotoConfirmation.SetPhotoConfirmationCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPhotoConfirmationCallback(IMFAsyncCallback* pNotificationCallback)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
         return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, IMFAsyncCallback*, int>)(lpVtbl[3]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), pNotificationCallback);
     }
 
+    /// <include file='IMFCapturePhotoConfirmation.xml' path='doc/member[@name="IMFCapturePhotoConfirmation.SetPixelFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPixelFormat(Guid subtype)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
         return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid, int>)(lpVtbl[4]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
     }
 
+    /// <include file='IMFCapturePhotoConfirmation.xml' path='doc/member[@name="IMFCapturePhotoConfirmation.GetPixelFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPixelFormat(Guid* subtype)

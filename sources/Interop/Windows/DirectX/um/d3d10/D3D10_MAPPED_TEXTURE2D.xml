@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_MAPPED_TEXTURE2D">
+    <summary>
+      <para>Provides access to <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource</a> data in a 2D texture.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used in a call to <see cref="Map" />.</para>
+      <para>To illustrate the row pitch, assume an uncompressed 2D texture with mipmap levels, as shown in the following illustration.</para>
+      <para>
+        <img alt="Illustration of an uncompressed 2D texture with mipmap levels" src="https://docs.microsoft.com/windows/win32/api/d3d10mages/d3d10_resource_texture2d.png" />
+      </para>
+      <para>Visualize the top-level texture drawn in a single plane like the following illustration.</para>
+      <para>
+        <img alt="Illustration of a single plane" src="https://docs.microsoft.com/windows/win32/api/d3d10mages/d3d10_2d_texture_conceptual.png" />
+      </para>
+      <para>However, the actual layout of each element in memory looks more like the following illustration.</para>
+      <para>
+        <img alt="Illustration of the row pitch in memory" src="https://docs.microsoft.com/windows/win32/api/d3d10mages/d3d10_2d_texture_memory.png" />
+      </para>
+      <para>For this example, the row pitch encompasses 5 elements (one row), whose size would be five times the number of bytes per element.</para>
+      <para>Use row pitch to advance a pointer between rows within a single 2D texture plane.</para>
+      <h3>Example</h3>
+      <para>To access data in, say, the third mipmap level, you must cast the <b>pData</b> pointer as demonstrated in the following example for a floating-point texture.</para>
+      <code>
+D3D10_MAPPED_TEXTURE2D mappedTexture;
+if( SUCCEEDED( pTexture-&gt;Map( D3D10CalcSubresource(2, 0, 3), D3D10_MAP_WRITE_DISCARD, 0, &amp;amp;amp;amp;amp;amp;mappedTexture )))
+{
+    D3D10_TEXTURE2D_DESC desc;
+    pTexture-&gt;GetDesc( &amp;amp;amp;amp;amp;amp;desc );
+
+    // Compute the width and height of the third mipmap level
+    const UINT WIDTH = desc.Width &gt;&gt; 2;
+    const UINT HEIGHT = desc.Height &gt;&gt; 2;
+
+    FLOAT* pTexels = (FLOAT*)mappedTexture.pData;
+    for( UINT row = 0; row &lt; HEIGHT; row++ )
+    {
+      UINT rowStart = row * mappedTexture.RowPitch/4;
+      for( UINT col = 0; col &lt; WIDTH; col++ )
+      {
+        pTexels[rowStart + col*4 + 0]; // Red
+        pTexels[rowStart + col*4 + 1]; // Green
+        pTexels[rowStart + col*4 + 2]; // Blue
+        pTexels[rowStart + col*4 + 3]; // Alpha
+      }
+    }
+
+    pTexture-&gt;Unmap(D3D10CalcSubresource(2, 0, 3));
+}
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D10_MAPPED_TEXTURE2D.pData">
+    <summary>
+      <para>Type: <b>void*</b></para>
+      <para>Pointer to the data.</para>
+    </summary>
+  </member>
+  <member name="D3D10_MAPPED_TEXTURE2D.RowPitch">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The pitch, or width, or physical size (in bytes), of one row of an uncompressed texture. A block-compressed texture is encoded in 4x4 blocks (see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-block-compression">virtual size vs physical size</a>) ; therefore, <b>RowPitch</b> is the number of bytes in a block of 4x4 texels.</para>
+    </summary>
+  </member>
+</doc>

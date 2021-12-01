@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MsftDiscFormat2Data.xml' path='doc/member[@name="MsftDiscFormat2Data"]/*' />
 [Guid("2735412A-7F64-5B0F-8F00-5D77AFBE261E")]
 public partial struct MsftDiscFormat2Data
 {

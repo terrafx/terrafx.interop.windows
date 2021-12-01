@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO"]/*' />
 public unsafe partial struct PROCESSOR_GROUP_INFO
 {
+    /// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO.MaximumProcessorCount"]/*' />
     public byte MaximumProcessorCount;
 
+    /// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO.ActiveProcessorCount"]/*' />
     public byte ActiveProcessorCount;
 
+    /// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO.Reserved"]/*' />
     [NativeTypeName("BYTE [38]")]
     public fixed byte Reserved[38];
 
+    /// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO.ActiveProcessorMask"]/*' />
     [NativeTypeName("KAFFINITY")]
     public nuint ActiveProcessorMask;
 }

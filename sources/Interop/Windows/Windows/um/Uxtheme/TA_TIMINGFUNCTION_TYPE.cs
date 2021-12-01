@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TA_TIMINGFUNCTION_TYPE.xml' path='doc/member[@name="TA_TIMINGFUNCTION_TYPE"]/*' />
 public enum TA_TIMINGFUNCTION_TYPE
 {
+    /// <include file='TA_TIMINGFUNCTION_TYPE.xml' path='doc/member[@name="TA_TIMINGFUNCTION_TYPE.TTFT_UNDEFINED"]/*' />
     TTFT_UNDEFINED,
+
+    /// <include file='TA_TIMINGFUNCTION_TYPE.xml' path='doc/member[@name="TA_TIMINGFUNCTION_TYPE.TTFT_CUBIC_BEZIER"]/*' />
     TTFT_CUBIC_BEZIER,
 }

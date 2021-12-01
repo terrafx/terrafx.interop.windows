@@ -7,8 +7,12 @@ using static TerraFX.Interop.Windows.SPLEXICONTYPE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechLexiconType.xml' path='doc/member[@name="SpeechLexiconType"]/*' />
 public enum SpeechLexiconType
 {
+    /// <include file='SpeechLexiconType.xml' path='doc/member[@name="SpeechLexiconType.SLTUser"]/*' />
     SLTUser = eLEXTYPE_USER,
+
+    /// <include file='SpeechLexiconType.xml' path='doc/member[@name="SpeechLexiconType.SLTApp"]/*' />
     SLTApp = eLEXTYPE_APP,
 }

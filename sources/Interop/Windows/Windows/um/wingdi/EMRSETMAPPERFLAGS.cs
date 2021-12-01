@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETMAPPERFLAGS.xml' path='doc/member[@name="EMRSETMAPPERFLAGS"]/*' />
 public partial struct EMRSETMAPPERFLAGS
 {
+    /// <include file='EMRSETMAPPERFLAGS.xml' path='doc/member[@name="EMRSETMAPPERFLAGS.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETMAPPERFLAGS.xml' path='doc/member[@name="EMRSETMAPPERFLAGS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

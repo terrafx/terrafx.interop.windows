@@ -7,8 +7,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION.xml' path='doc/member[@name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION
 {
+    /// <include file='APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION.xml' path='doc/member[@name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION.APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA"]/*' />
     APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA = 0,
 }

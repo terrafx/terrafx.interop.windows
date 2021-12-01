@@ -7,8 +7,12 @@ using static TerraFX.Interop.Windows.SPAUDIOOPTIONS;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechRetainedAudioOptions.xml' path='doc/member[@name="SpeechRetainedAudioOptions"]/*' />
 public enum SpeechRetainedAudioOptions
 {
+    /// <include file='SpeechRetainedAudioOptions.xml' path='doc/member[@name="SpeechRetainedAudioOptions.SRAONone"]/*' />
     SRAONone = SPAO_NONE,
+
+    /// <include file='SpeechRetainedAudioOptions.xml' path='doc/member[@name="SpeechRetainedAudioOptions.SRAORetainAudio"]/*' />
     SRAORetainAudio = SPAO_RETAIN_AUDIO,
 }

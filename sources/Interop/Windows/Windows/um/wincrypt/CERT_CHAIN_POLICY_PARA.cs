@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="CERT_CHAIN_POLICY_PARA"]/*' />
 public unsafe partial struct CERT_CHAIN_POLICY_PARA
 {
+    /// <include file='CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="CERT_CHAIN_POLICY_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="CERT_CHAIN_POLICY_PARA.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="CERT_CHAIN_POLICY_PARA.pvExtraPolicyPara"]/*' />
     public void* pvExtraPolicyPara;
 }

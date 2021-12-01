@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PINLogonCredentialProvider.xml' path='doc/member[@name="PINLogonCredentialProvider"]/*' />
 [Guid("CB82EA12-9F71-446D-89E1-8D0924E1256E")]
 public partial struct PINLogonCredentialProvider
 {

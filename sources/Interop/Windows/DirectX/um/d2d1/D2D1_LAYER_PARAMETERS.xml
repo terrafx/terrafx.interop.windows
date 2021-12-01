@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_LAYER_PARAMETERS">
+    <summary>
+      <para>Contains the content bounds, mask information, opacity settings, and other options for a layer resource.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-layers-overview">Layers Overview</seealso>
+  </member>
+  <member name="D2D1_LAYER_PARAMETERS.contentBounds">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
+      <para>The content bounds of the layer. Content won't render outside these bounds.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_PARAMETERS.geometricMask">
+    <summary>
+      <para>Type: <b><see cref="ID2D1Geometry" />*</b></para>
+      <para>The geometric mask specifies the area of the layer that is composited into the render target.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_PARAMETERS.maskAntialiasMode">
+    <summary>
+      <para>Type: <b><see cref="D2D1_ANTIALIAS_MODE" /></b></para>
+      <para>A value that specifies the antialiasing mode for the geometricMask.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_PARAMETERS.maskTransform">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
+      <para>A value that specifies the transform that is applied to the geometric mask when composing the layer.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_PARAMETERS.opacity">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>An opacity value that is applied uniformly to all resources in the layer when compositing to the target.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_PARAMETERS.opacityBrush">
+    <summary>
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>A brush that is used to modify the opacity of the layer. The brush
+is mapped to the layer, and the alpha channel of each mapped brush pixel is multiplied against the corresponding layer pixel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_PARAMETERS.layerOptions">
+    <summary>
+      <para>Type: <b><see cref="D2D1_LAYER_OPTIONS" /></b></para>
+      <para>A value that specifies whether the layer intends to render text with ClearType antialiasing.</para>
+    </summary>
+  </member>
+</doc>

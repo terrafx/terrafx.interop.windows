@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_DURATION_DESCRIPTION">
+    <summary>
+      <para>An optional type description  used with <see cref="WS_DURATION_TYPE" />.
+It is used to specify constraints on the set of values
+which can be deserialized.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION_DESCRIPTION.minValue">
+    <summary>
+      <para>The minimum value.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION_DESCRIPTION.maxValue">
+    <summary>
+      <para>The maximum value.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION_DESCRIPTION.comparer">
+    <summary>
+      <para>Specifies a function which can be used to compare <see cref="WS_DURATION" />. If <b>NULL</b>, a default
+comparer is used.</para>
+      <para>Because <see cref="WS_DURATION" /> has a partial ordering, not all durations can be unambiguously compared
+(for example, 1 month and 30 days).  The default comparer function can compare durations that specify
+years and months (but no other components), or durations that specify no years or months (but any other
+component).</para>
+    </summary>
+  </member>
+</doc>

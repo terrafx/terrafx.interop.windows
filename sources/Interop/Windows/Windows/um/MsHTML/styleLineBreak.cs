@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleLineBreak.xml' path='doc/member[@name="styleLineBreak"]/*' />
 public enum styleLineBreak
 {
+    /// <include file='styleLineBreak.xml' path='doc/member[@name="styleLineBreak.styleLineBreakNotSet"]/*' />
     styleLineBreakNotSet = 0,
+
+    /// <include file='styleLineBreak.xml' path='doc/member[@name="styleLineBreak.styleLineBreakNormal"]/*' />
     styleLineBreakNormal = 1,
+
+    /// <include file='styleLineBreak.xml' path='doc/member[@name="styleLineBreak.styleLineBreakStrict"]/*' />
     styleLineBreakStrict = 2,
+
+    /// <include file='styleLineBreak.xml' path='doc/member[@name="styleLineBreak.styleLineBreak_Max"]/*' />
     styleLineBreak_Max = 2147483647,
 }

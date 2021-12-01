@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SEND_GENERIC_TLS_EXTENSION.xml' path='doc/member[@name="SEND_GENERIC_TLS_EXTENSION"]/*' />
 public unsafe partial struct SEND_GENERIC_TLS_EXTENSION
 {
+    /// <include file='SEND_GENERIC_TLS_EXTENSION.xml' path='doc/member[@name="SEND_GENERIC_TLS_EXTENSION.ExtensionType"]/*' />
     [NativeTypeName("WORD")]
     public ushort ExtensionType;
 
+    /// <include file='SEND_GENERIC_TLS_EXTENSION.xml' path='doc/member[@name="SEND_GENERIC_TLS_EXTENSION.HandshakeType"]/*' />
     [NativeTypeName("WORD")]
     public ushort HandshakeType;
 
+    /// <include file='SEND_GENERIC_TLS_EXTENSION.xml' path='doc/member[@name="SEND_GENERIC_TLS_EXTENSION.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='SEND_GENERIC_TLS_EXTENSION.xml' path='doc/member[@name="SEND_GENERIC_TLS_EXTENSION.BufferSize"]/*' />
     [NativeTypeName("WORD")]
     public ushort BufferSize;
 
+    /// <include file='SEND_GENERIC_TLS_EXTENSION.xml' path='doc/member[@name="SEND_GENERIC_TLS_EXTENSION.Buffer"]/*' />
     [NativeTypeName("UCHAR [1]")]
     public fixed byte Buffer[1];
 }

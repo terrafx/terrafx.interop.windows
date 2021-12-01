@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XmlReadState.xml' path='doc/member[@name="XmlReadState"]/*' />
 public enum XmlReadState
 {
+    /// <include file='XmlReadState.xml' path='doc/member[@name="XmlReadState.XmlReadState_Initial"]/*' />
     XmlReadState_Initial = 0,
+
+    /// <include file='XmlReadState.xml' path='doc/member[@name="XmlReadState.XmlReadState_Interactive"]/*' />
     XmlReadState_Interactive = 1,
+
+    /// <include file='XmlReadState.xml' path='doc/member[@name="XmlReadState.XmlReadState_Error"]/*' />
     XmlReadState_Error = 2,
+
+    /// <include file='XmlReadState.xml' path='doc/member[@name="XmlReadState.XmlReadState_EndOfFile"]/*' />
     XmlReadState_EndOfFile = 3,
+
+    /// <include file='XmlReadState.xml' path='doc/member[@name="XmlReadState.XmlReadState_Closed"]/*' />
     XmlReadState_Closed = 4,
 }

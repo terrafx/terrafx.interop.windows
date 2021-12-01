@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfContextOwner.xml' path='doc/member[@name="ITfContextOwner"]/*' />
 [Guid("AA80E80C-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct ITfContextOwner : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
         return ((delegate* unmanaged<ITfContextOwner*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwner*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
         return ((delegate* unmanaged<ITfContextOwner*, uint>)(lpVtbl[1]))((ITfContextOwner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
         return ((delegate* unmanaged<ITfContextOwner*, uint>)(lpVtbl[2]))((ITfContextOwner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfContextOwner.xml' path='doc/member[@name="ITfContextOwner.GetACPFromPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetACPFromPoint([NativeTypeName("const POINT *")] POINT* ptScreen, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG *")] int* pacp)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
         return ((delegate* unmanaged<ITfContextOwner*, POINT*, uint, int*, int>)(lpVtbl[3]))((ITfContextOwner*)Unsafe.AsPointer(ref this), ptScreen, dwFlags, pacp);
     }
 
+    /// <include file='ITfContextOwner.xml' path='doc/member[@name="ITfContextOwner.GetTextExt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTextExt([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT* prc, BOOL* pfClipped)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
         return ((delegate* unmanaged<ITfContextOwner*, int, int, RECT*, BOOL*, int>)(lpVtbl[4]))((ITfContextOwner*)Unsafe.AsPointer(ref this), acpStart, acpEnd, prc, pfClipped);
     }
 
+    /// <include file='ITfContextOwner.xml' path='doc/member[@name="ITfContextOwner.GetScreenExt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetScreenExt(RECT* prc)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
         return ((delegate* unmanaged<ITfContextOwner*, RECT*, int>)(lpVtbl[5]))((ITfContextOwner*)Unsafe.AsPointer(ref this), prc);
     }
 
+    /// <include file='ITfContextOwner.xml' path='doc/member[@name="ITfContextOwner.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetStatus([NativeTypeName("TF_STATUS *")] TS_STATUS* pdcs)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
         return ((delegate* unmanaged<ITfContextOwner*, TS_STATUS*, int>)(lpVtbl[6]))((ITfContextOwner*)Unsafe.AsPointer(ref this), pdcs);
     }
 
+    /// <include file='ITfContextOwner.xml' path='doc/member[@name="ITfContextOwner.GetWnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetWnd(HWND* phwnd)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
         return ((delegate* unmanaged<ITfContextOwner*, HWND*, int>)(lpVtbl[7]))((ITfContextOwner*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <include file='ITfContextOwner.xml' path='doc/member[@name="ITfContextOwner.GetAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetAttribute([NativeTypeName("const GUID &")] Guid* rguidAttribute, VARIANT* pvarValue)

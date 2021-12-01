@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform"]/*' />
 [Guid("D818FBD8-FC46-42F2-87AC-1EA2D1F9BF32")]
 [NativeTypeName("struct IMFDeviceTransform : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, Guid*, void**, int>)(lpVtbl[0]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint>)(lpVtbl[1]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint>)(lpVtbl[2]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.InitializeTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InitializeTransform(IMFAttributes* pAttributes)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, IMFAttributes*, int>)(lpVtbl[3]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), pAttributes);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetInputAvailableType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetInputAvailableType([NativeTypeName("DWORD")] uint dwInputStreamID, [NativeTypeName("DWORD")] uint dwTypeIndex, IMFMediaType** pMediaType)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, IMFMediaType**, int>)(lpVtbl[4]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, dwTypeIndex, pMediaType);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetInputCurrentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetInputCurrentType([NativeTypeName("DWORD")] uint dwInputStreamID, IMFMediaType** pMediaType)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType**, int>)(lpVtbl[5]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pMediaType);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetInputStreamAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetInputStreamAttributes([NativeTypeName("DWORD")] uint dwInputStreamID, IMFAttributes** ppAttributes)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFAttributes**, int>)(lpVtbl[6]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, ppAttributes);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetOutputAvailableType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetOutputAvailableType([NativeTypeName("DWORD")] uint dwOutputStreamID, [NativeTypeName("DWORD")] uint dwTypeIndex, IMFMediaType** pMediaType)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, IMFMediaType**, int>)(lpVtbl[7]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, dwTypeIndex, pMediaType);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetOutputCurrentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetOutputCurrentType([NativeTypeName("DWORD")] uint dwOutputStreamID, IMFMediaType** pMediaType)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType**, int>)(lpVtbl[8]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, pMediaType);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetOutputStreamAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetOutputStreamAttributes([NativeTypeName("DWORD")] uint dwOutputStreamID, IMFAttributes** ppAttributes)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFAttributes**, int>)(lpVtbl[9]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, ppAttributes);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetStreamCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pcInputStreams, [NativeTypeName("DWORD *")] uint* pcOutputStreams)
@@ -97,6 +109,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint*, uint*, int>)(lpVtbl[10]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), pcInputStreams, pcOutputStreams);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetStreamIDs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetStreamIDs([NativeTypeName("DWORD")] uint dwInputIDArraySize, [NativeTypeName("DWORD *")] uint* pdwInputStreamIds, [NativeTypeName("DWORD")] uint dwOutputIDArraySize, [NativeTypeName("DWORD *")] uint* pdwOutputStreamIds)
@@ -104,6 +117,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint*, uint, uint*, int>)(lpVtbl[11]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputIDArraySize, pdwInputStreamIds, dwOutputIDArraySize, pdwOutputStreamIds);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.ProcessEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT ProcessEvent([NativeTypeName("DWORD")] uint dwInputStreamID, IMFMediaEvent* pEvent)
@@ -111,6 +125,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaEvent*, int>)(lpVtbl[12]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pEvent);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.ProcessInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT ProcessInput([NativeTypeName("DWORD")] uint dwInputStreamID, IMFSample* pSample, [NativeTypeName("DWORD")] uint dwFlags)
@@ -118,6 +133,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFSample*, uint, int>)(lpVtbl[13]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pSample, dwFlags);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.ProcessMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT ProcessMessage(MFT_MESSAGE_TYPE eMessage, [NativeTypeName("ULONG_PTR")] nuint ulParam)
@@ -125,6 +141,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, MFT_MESSAGE_TYPE, nuint, int>)(lpVtbl[14]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), eMessage, ulParam);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.ProcessOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT ProcessOutput([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSample, [NativeTypeName("DWORD *")] uint* pdwStatus)
@@ -132,6 +149,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, MFT_OUTPUT_DATA_BUFFER*, uint*, int>)(lpVtbl[15]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwFlags, cOutputBufferCount, pOutputSample, pdwStatus);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.SetInputStreamState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetInputStreamState([NativeTypeName("DWORD")] uint dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, [NativeTypeName("DWORD")] uint dwFlags)
@@ -139,6 +157,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType*, DeviceStreamState, uint, int>)(lpVtbl[16]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, pMediaType, value, dwFlags);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetInputStreamState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetInputStreamState([NativeTypeName("DWORD")] uint dwStreamID, DeviceStreamState* value)
@@ -146,6 +165,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, DeviceStreamState*, int>)(lpVtbl[17]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, value);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.SetOutputStreamState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetOutputStreamState([NativeTypeName("DWORD")] uint dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, [NativeTypeName("DWORD")] uint dwFlags)
@@ -153,6 +173,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType*, DeviceStreamState, uint, int>)(lpVtbl[18]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, pMediaType, value, dwFlags);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetOutputStreamState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetOutputStreamState([NativeTypeName("DWORD")] uint dwStreamID, DeviceStreamState* value)
@@ -160,6 +181,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, DeviceStreamState*, int>)(lpVtbl[19]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, value);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetInputStreamPreferredState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetInputStreamPreferredState([NativeTypeName("DWORD")] uint dwStreamID, DeviceStreamState* value, IMFMediaType** ppMediaType)
@@ -167,6 +189,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, DeviceStreamState*, IMFMediaType**, int>)(lpVtbl[20]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, value, ppMediaType);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.FlushInputStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT FlushInputStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwFlags)
@@ -174,6 +197,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
         return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, int>)(lpVtbl[21]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamIndex, dwFlags);
     }
 
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.FlushOutputStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT FlushOutputStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwFlags)

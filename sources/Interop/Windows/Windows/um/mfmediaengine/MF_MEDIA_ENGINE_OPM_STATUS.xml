@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_MEDIA_ENGINE_OPM_STATUS">
+    <summary>
+      <para>Defines the status of the <a href="https://docs.microsoft.com//windows/desktop/medfound/output-protection-manager">Output Protection Manager</a>  (OPM).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_NOT_REQUESTED">
+    <summary>
+      <para>Default status. Used to return the correct status when the content is unprotected.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_ESTABLISHED">
+    <summary>
+      <para>OPM successfully established.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_FAILED_VM">
+    <summary>
+      <para>OPM failed because running in a virtual machined (VM).</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_FAILED_BDA">
+    <summary>
+      <para>OPM failed because there is no graphics driver and the system is using Basic Display Adapter (BDA).</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_FAILED_UNSIGNED_DRIVER">
+    <summary>
+      <para>OPM failed because the graphics
+driver is not PE signed, falling back to WARP.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_FAILED">
+    <summary>
+      <para>OPM failed for other reasons.</para>
+    </summary>
+  </member>
+</doc>

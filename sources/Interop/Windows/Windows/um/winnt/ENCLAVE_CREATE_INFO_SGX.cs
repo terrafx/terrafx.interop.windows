@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENCLAVE_CREATE_INFO_SGX.xml' path='doc/member[@name="ENCLAVE_CREATE_INFO_SGX"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct ENCLAVE_CREATE_INFO_SGX
 {
+    /// <include file='ENCLAVE_CREATE_INFO_SGX.xml' path='doc/member[@name="ENCLAVE_CREATE_INFO_SGX.Secs"]/*' />
     [NativeTypeName("BYTE [4096]")]
     public fixed byte Secs[4096];
 }

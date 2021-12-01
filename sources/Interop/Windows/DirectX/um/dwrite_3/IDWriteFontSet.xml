@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontSet.FindFontFace">
+    <summary>
+      <para>Gets the index of the matching font face reference in the font set, with the same file, face index, and simulations.</para>
+    </summary>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
+      <para>Font face object that specifies the physical font.</para>
+    </param>
+    <param name="listIndex">
+      <para>Type: <b>UINT32*</b></para>
+      <para>Receives the zero-based index of the matching font if the font was found, or UINT_MAX otherwise.</para>
+    </param>
+    <param name="exists">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Receives TRUE if the font exists or FALSE otherwise.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+  <member name="IDWriteFontSet.FindFontFaceReference">
+    <summary>
+      <para>Gets the index of the matching font face reference in the font set, with the same file, face index, and simulations.</para>
+    </summary>
+    <param name="fontFaceReference">
+      <para>Type: <b><see cref="IDWriteFontFaceReference" />*</b></para>
+      <para>Font face object that specifies the physical font.</para>
+    </param>
+    <param name="listIndex">
+      <para>Type: <b>UINT32*</b></para>
+      <para>Receives the zero-based index of the matching font if the font was found, or UINT_MAX otherwise.</para>
+    </param>
+    <param name="exists">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Receives TRUE if the font exists or FALSE otherwise.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+  <member name="IDWriteFontSet.GetFontCount">
+    <summary>
+      <para>Get the number of total fonts in the set.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>Returns the number of total fonts in the set.</para>
+    </returns>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+  <member name="IDWriteFontSet.GetFontFaceReference">
+    <summary>
+      <para>Gets a reference to the font at the specified index, which may be local or remote.</para>
+    </summary>
+    <param name="listIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>Zero-based index of the font.</para>
+    </param>
+    <param name="fontFaceReference">
+      <para>Type: <b><see cref="IDWriteFontFaceReference" />**</b></para>
+      <para>Receives a pointer the font face reference object, or nullptr on failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+  <member name="IDWriteFontSet.GetMatchingFonts">
+    <summary>
+      <para>Returns a subset of fonts filtered by the given properties.</para>
+    </summary>
+    <param name="properties">
+      <para>Type: [in] <b>const <see cref="DWRITE_FONT_PROPERTY" />*</b></para>
+      <para>List of properties to filter using.</para>
+    </param>
+    <param name="propertyCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of properties to filter.</para>
+    </param>
+    <param name="filteredSet">
+      <para>Type: [out] <b><see cref="IDWriteFontSet" />**</b></para>
+      <para>The subset of fonts that match the properties, or nullptr on failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If no fonts matched the filter, the subset will be empty (GetFontCount returns 0), but the function does not return an error. The subset will
+always be equal to or less than the original set. If you only want to filter out remote fonts, you may pass null in properties and zero in propertyCount.</para>
+    </remarks>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+  <member name="IDWriteFontSet.GetMatchingFonts">
+    <summary>
+      <para>Returns a subset of fonts filtered by the given properties.</para>
+    </summary>
+    <param name="familyName">
+      <para>The font family name.</para>
+    </param>
+    <param name="fontWeight">
+      <para>The font weight.</para>
+    </param>
+    <param name="fontStretch">
+      <para>The font stretch value.</para>
+    </param>
+    <param name="fontStyle">
+      <para>The font style.</para>
+    </param>
+    <param name="filteredSet">
+      <para>Type: [out] <b><see cref="IDWriteFontSet" />**</b></para>
+      <para>The subset of fonts that match the properties, or nullptr on failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If no fonts matched the filter, the subset will be empty (GetFontCount returns 0), but the function does not return an error. The subset will
+always be equal to or less than the original set. If you only want to filter out remote fonts, you may pass null in properties and zero in propertyCount.</para>
+    </remarks>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+  <member name="IDWriteFontSet.GetPropertyOccurrenceCount">
+    <summary>
+      <para>Returns how many times a given property value occurs in the set.</para>
+    </summary>
+    <param name="property">
+      <para>Type: <b>const <see cref="DWRITE_FONT_PROPERTY" />*</b></para>
+      <para>Font property of interest.</para>
+    </param>
+    <param name="propertyOccurrenceCount">
+      <para>Type: <b>UINT32*</b></para>
+      <para>Receives how many times the property occurs.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+  <member name="IDWriteFontSet.GetPropertyValues">
+    <summary>
+      <para>Returns the property values of a specific font item index.</para>
+    </summary>
+    <param name="propertyID">
+      <para>Type: <b><see cref="DWRITE_FONT_PROPERTY_ID" /></b></para>
+      <para>Font property of interest.</para>
+    </param>
+    <param name="values">
+      <para>Type: <b><see cref="IDWriteLocalizedStrings" />**</b></para>
+      <para>Receives a pointer to the newly created localized strings object, or nullptr on failure or non-existent property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+  <member name="IDWriteFontSet.GetPropertyValues">
+    <summary>
+      <para>Returns all unique property values in the set, which can be used for purposes such as displaying a family list or tag cloud. Values are returned in priority order according to the language list, such that if a font contains more than one localized name, then the preferred one is returned.</para>
+    </summary>
+    <param name="propertyID">
+      <para>Type: <b><see cref="DWRITE_FONT_PROPERTY_ID" /></b></para>
+      <para>Font property of interest.</para>
+    </param>
+    <param name="preferredLocaleNames">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">WCHAR</a> const *</b></para>
+      <para>The preferred locale names to query as a list of semicolon-delimited names in preferred order. When a particular string (such as font family) has more than one localized name, then the first match is returned. If the first match doesn't exist, then the second match is returned, and so on. For example, "ja-jp;en-us".</para>
+    </param>
+    <param name="values">
+      <para>Type: [out] <b><see cref="IDWriteLocalizedStrings" />**</b></para>
+      <para>Receives a pointer to the newly created localized strings object; or <code>nullptr</code> on failure or non-existent property.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, then it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+  <member name="IDWriteFontSet.GetPropertyValues">
+    <summary>
+      <para>Returns the property values of a specific font item index.</para>
+    </summary>
+    <param name="listIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>Zero-based index of the font.</para>
+    </param>
+    <param name="propertyId">
+      <para>Type: <b><see cref="DWRITE_FONT_PROPERTY_ID" /></b></para>
+      <para>Font property of interest.</para>
+    </param>
+    <param name="exists">
+      <para>Type: [out] <b>BOOL*</b></para>
+      <para>Receives the value TRUE if the font contains the specified property identifier or FALSE if not.</para>
+    </param>
+    <param name="values">
+      <para>Type: [out] <b><see cref="IDWriteLocalizedStrings" />**</b></para>
+      <para>Receives a pointer to the newly created localized strings object, or nullptr on failure or non-existent property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+  <member name="IDWriteFontSet">
+    <summary>
+      <para>Represents a font set.</para>
+    </summary>
+  </member>
+</doc>

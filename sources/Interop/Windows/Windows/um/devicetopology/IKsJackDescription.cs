@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IKsJackDescription.xml' path='doc/member[@name="IKsJackDescription"]/*' />
 [Guid("4509F757-2D46-4637-8E62-CE7DB944F57B")]
 [NativeTypeName("struct IKsJackDescription : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IKsJackDescription : IKsJackDescription.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IKsJackDescription : IKsJackDescription.Interface
         return ((delegate* unmanaged<IKsJackDescription*, Guid*, void**, int>)(lpVtbl[0]))((IKsJackDescription*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IKsJackDescription : IKsJackDescription.Interface
         return ((delegate* unmanaged<IKsJackDescription*, uint>)(lpVtbl[1]))((IKsJackDescription*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IKsJackDescription : IKsJackDescription.Interface
         return ((delegate* unmanaged<IKsJackDescription*, uint>)(lpVtbl[2]))((IKsJackDescription*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IKsJackDescription.xml' path='doc/member[@name="IKsJackDescription.GetJackCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetJackCount(uint* pcJacks)
@@ -46,6 +51,7 @@ public unsafe partial struct IKsJackDescription : IKsJackDescription.Interface
         return ((delegate* unmanaged<IKsJackDescription*, uint*, int>)(lpVtbl[3]))((IKsJackDescription*)Unsafe.AsPointer(ref this), pcJacks);
     }
 
+    /// <include file='IKsJackDescription.xml' path='doc/member[@name="IKsJackDescription.GetJackDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetJackDescription(uint nJack, KSJACK_DESCRIPTION* pDescription)

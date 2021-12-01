@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaStream2.xml' path='doc/member[@name="IMFMediaStream2"]/*' />
 [Guid("C5BC37D6-75C7-46A1-A132-81B5F723C20F")]
 [NativeTypeName("struct IMFMediaStream2 : IMFMediaStream")]
 [NativeInheritance("IMFMediaStream")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, uint>)(lpVtbl[1]))((IMFMediaStream2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, uint>)(lpVtbl[2]))((IMFMediaStream2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.GetEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.BeginGetEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), pCallback, punkState);
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.EndGetEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), pResult, ppEvent);
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.QueueEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT QueueEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
     }
 
+    /// <inheritdoc cref="IMFMediaStream.GetMediaSource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetMediaSource(IMFMediaSource** ppMediaSource)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, IMFMediaSource**, int>)(lpVtbl[7]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), ppMediaSource);
     }
 
+    /// <inheritdoc cref="IMFMediaStream.GetStreamDescriptor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetStreamDescriptor(IMFStreamDescriptor** ppStreamDescriptor)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, IMFStreamDescriptor**, int>)(lpVtbl[8]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), ppStreamDescriptor);
     }
 
+    /// <inheritdoc cref="IMFMediaStream.RequestSample" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT RequestSample(IUnknown* pToken)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, IUnknown*, int>)(lpVtbl[9]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), pToken);
     }
 
+    /// <include file='IMFMediaStream2.xml' path='doc/member[@name="IMFMediaStream2.SetStreamState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetStreamState(MF_STREAM_STATE value)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
         return ((delegate* unmanaged<IMFMediaStream2*, MF_STREAM_STATE, int>)(lpVtbl[10]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IMFMediaStream2.xml' path='doc/member[@name="IMFMediaStream2.GetStreamState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetStreamState(MF_STREAM_STATE* value)

@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSourceReaderEx.xml' path='doc/member[@name="IMFSourceReaderEx"]/*' />
 [Guid("7B981CF0-560E-4116-9875-B099895F23D7")]
 [NativeTypeName("struct IMFSourceReaderEx : IMFSourceReader")]
 [NativeInheritance("IMFSourceReader")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint>)(lpVtbl[1]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint>)(lpVtbl[2]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFSourceReader.GetStreamSelection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL* pfSelected)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, BOOL*, int>)(lpVtbl[3]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pfSelected);
     }
 
+    /// <inheritdoc cref="IMFSourceReader.SetStreamSelection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL fSelected)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, BOOL, int>)(lpVtbl[4]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, fSelected);
     }
 
+    /// <inheritdoc cref="IMFSourceReader.GetNativeMediaType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetNativeMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwMediaTypeIndex, IMFMediaType** ppMediaType)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, uint, IMFMediaType**, int>)(lpVtbl[5]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, dwMediaTypeIndex, ppMediaType);
     }
 
+    /// <inheritdoc cref="IMFSourceReader.GetCurrentMediaType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCurrentMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType** ppMediaType)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, IMFMediaType**, int>)(lpVtbl[6]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, ppMediaType);
     }
 
+    /// <inheritdoc cref="IMFSourceReader.SetCurrentMediaType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetCurrentMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, IMFMediaType* pMediaType)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, uint*, IMFMediaType*, int>)(lpVtbl[7]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pdwReserved, pMediaType);
     }
 
+    /// <inheritdoc cref="IMFSourceReader.SetCurrentPosition" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetCurrentPosition([NativeTypeName("const GUID &")] Guid* guidTimeFormat, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* varPosition)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, Guid*, PROPVARIANT*, int>)(lpVtbl[8]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), guidTimeFormat, varPosition);
     }
 
+    /// <inheritdoc cref="IMFSourceReader.ReadSample" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ReadSample([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwControlFlags, [NativeTypeName("DWORD *")] uint* pdwActualStreamIndex, [NativeTypeName("DWORD *")] uint* pdwStreamFlags, [NativeTypeName("LONGLONG *")] long* pllTimestamp, IMFSample** ppSample)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, uint, uint*, uint*, long*, IMFSample**, int>)(lpVtbl[9]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, dwControlFlags, pdwActualStreamIndex, pdwStreamFlags, pllTimestamp, ppSample);
     }
 
+    /// <inheritdoc cref="IMFSourceReader.Flush" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Flush([NativeTypeName("DWORD")] uint dwStreamIndex)
@@ -97,6 +109,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, int>)(lpVtbl[10]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex);
     }
 
+    /// <inheritdoc cref="IMFSourceReader.GetServiceForStream" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetServiceForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
@@ -104,6 +117,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, Guid*, Guid*, void**, int>)(lpVtbl[11]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, guidService, riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IMFSourceReader.GetPresentationAttribute" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetPresentationAttribute([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidAttribute, PROPVARIANT* pvarAttribute)
@@ -111,6 +125,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[12]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, guidAttribute, pvarAttribute);
     }
 
+    /// <include file='IMFSourceReaderEx.xml' path='doc/member[@name="IMFSourceReaderEx.SetNativeMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetNativeMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pMediaType, [NativeTypeName("DWORD *")] uint* pdwStreamFlags)
@@ -118,6 +133,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, IMFMediaType*, uint*, int>)(lpVtbl[13]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pMediaType, pdwStreamFlags);
     }
 
+    /// <include file='IMFSourceReaderEx.xml' path='doc/member[@name="IMFSourceReaderEx.AddTransformForStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT AddTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, IUnknown* pTransformOrActivate)
@@ -125,6 +141,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, IUnknown*, int>)(lpVtbl[14]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pTransformOrActivate);
     }
 
+    /// <include file='IMFSourceReaderEx.xml' path='doc/member[@name="IMFSourceReaderEx.RemoveAllTransformsForStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT RemoveAllTransformsForStream([NativeTypeName("DWORD")] uint dwStreamIndex)
@@ -132,6 +149,7 @@ public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
         return ((delegate* unmanaged<IMFSourceReaderEx*, uint, int>)(lpVtbl[15]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex);
     }
 
+    /// <include file='IMFSourceReaderEx.xml' path='doc/member[@name="IMFSourceReaderEx.GetTransformForStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform)

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncDDAtoDConverterType.xml' path='doc/member[@name="eAVEncDDAtoDConverterType"]/*' />
 public enum eAVEncDDAtoDConverterType
 {
+    /// <include file='eAVEncDDAtoDConverterType.xml' path='doc/member[@name="eAVEncDDAtoDConverterType.eAVEncDDAtoDConverterType_Standard"]/*' />
     eAVEncDDAtoDConverterType_Standard = 0,
+
+    /// <include file='eAVEncDDAtoDConverterType.xml' path='doc/member[@name="eAVEncDDAtoDConverterType.eAVEncDDAtoDConverterType_HDCD"]/*' />
     eAVEncDDAtoDConverterType_HDCD = 1,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle"]/*' />
 [Guid("3050F6C3-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLComputedStyle : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, uint>)(lpVtbl[1]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, uint>)(lpVtbl[2]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_bold"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_bold([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[3]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_italic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_italic([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[4]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_underline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_underline([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[5]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_overline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_overline([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[6]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_strikeOut"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_strikeOut([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[7]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_subScript"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_subScript([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[8]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_superScript"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_superScript([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[9]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_explicitFace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_explicitFace([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[10]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_fontWeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_fontWeight([NativeTypeName("long *")] int* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, int*, int>)(lpVtbl[11]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_fontSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_fontSize([NativeTypeName("long *")] int* p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, int*, int>)(lpVtbl[12]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_fontName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_fontName([NativeTypeName("TCHAR *")] ushort* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, ushort*, int>)(lpVtbl[13]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_hasBgColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_hasBgColor([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[14]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_textColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_textColor([NativeTypeName("DWORD *")] uint* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, uint*, int>)(lpVtbl[15]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_backgroundColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_backgroundColor([NativeTypeName("DWORD *")] uint* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, uint*, int>)(lpVtbl[16]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_preFormatted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_preFormatted([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[17]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_direction([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[18]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_blockDirection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_blockDirection([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[19]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_OL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_OL([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[20]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.IsEqual"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT IsEqual(IHTMLComputedStyle* pComputedStyle, [NativeTypeName("VARIANT_BOOL *")] short* pfEqual)

@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_HOTPLUG_INFO.xml' path='doc/member[@name="STORAGE_HOTPLUG_INFO"]/*' />
 public partial struct STORAGE_HOTPLUG_INFO
 {
+    /// <include file='STORAGE_HOTPLUG_INFO.xml' path='doc/member[@name="STORAGE_HOTPLUG_INFO.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_HOTPLUG_INFO.xml' path='doc/member[@name="STORAGE_HOTPLUG_INFO.MediaRemovable"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte MediaRemovable;
 
+    /// <include file='STORAGE_HOTPLUG_INFO.xml' path='doc/member[@name="STORAGE_HOTPLUG_INFO.MediaHotplug"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte MediaHotplug;
 
+    /// <include file='STORAGE_HOTPLUG_INFO.xml' path='doc/member[@name="STORAGE_HOTPLUG_INFO.DeviceHotplug"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte DeviceHotplug;
 
+    /// <include file='STORAGE_HOTPLUG_INFO.xml' path='doc/member[@name="STORAGE_HOTPLUG_INFO.WriteCacheEnableOverride"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte WriteCacheEnableOverride;
 }

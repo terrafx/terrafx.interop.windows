@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WBEM_GENUS_TYPE.xml' path='doc/member[@name="WBEM_GENUS_TYPE"]/*' />
 public enum WBEM_GENUS_TYPE
 {
+    /// <include file='WBEM_GENUS_TYPE.xml' path='doc/member[@name="WBEM_GENUS_TYPE.WBEM_GENUS_CLASS"]/*' />
     WBEM_GENUS_CLASS = 1,
+
+    /// <include file='WBEM_GENUS_TYPE.xml' path='doc/member[@name="WBEM_GENUS_TYPE.WBEM_GENUS_INSTANCE"]/*' />
     WBEM_GENUS_INSTANCE = 2,
 }

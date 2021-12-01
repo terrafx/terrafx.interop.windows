@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLINKSETF.xml' path='doc/member[@name="HLINKSETF"]/*' />
 public enum HLINKSETF
 {
+    /// <include file='HLINKSETF.xml' path='doc/member[@name="HLINKSETF.HLINKSETF_TARGET"]/*' />
     HLINKSETF_TARGET = 0x1,
+
+    /// <include file='HLINKSETF.xml' path='doc/member[@name="HLINKSETF.HLINKSETF_LOCATION"]/*' />
     HLINKSETF_LOCATION = 0x2,
 }

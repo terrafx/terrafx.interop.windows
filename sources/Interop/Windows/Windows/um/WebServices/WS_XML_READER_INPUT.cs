@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_READER_INPUT.xml' path='doc/member[@name="WS_XML_READER_INPUT"]/*' />
 public partial struct WS_XML_READER_INPUT
 {
+    /// <include file='WS_XML_READER_INPUT.xml' path='doc/member[@name="WS_XML_READER_INPUT.inputType"]/*' />
     public WS_XML_READER_INPUT_TYPE inputType;
 }

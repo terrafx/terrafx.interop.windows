@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleColumnFill.xml' path='doc/member[@name="styleColumnFill"]/*' />
 public enum styleColumnFill
 {
+    /// <include file='styleColumnFill.xml' path='doc/member[@name="styleColumnFill.styleColumnFillAuto"]/*' />
     styleColumnFillAuto = 0,
+
+    /// <include file='styleColumnFill.xml' path='doc/member[@name="styleColumnFill.styleColumnFillBalance"]/*' />
     styleColumnFillBalance = 1,
+
+    /// <include file='styleColumnFill.xml' path='doc/member[@name="styleColumnFill.styleColumnFillNotSet"]/*' />
     styleColumnFillNotSet = 2,
+
+    /// <include file='styleColumnFill.xml' path='doc/member[@name="styleColumnFill.styleColumnFill_Max"]/*' />
     styleColumnFill_Max = 2147483647,
 }

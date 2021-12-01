@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_MAKE_COMPATIBLE_BUFFER">
+    <summary>
+      <para>Specifies the disc to close the current session for. This control code is used for UDF file systems. This structure is used for input when calling <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_make_media_compatible">FSCTL_MAKE_MEDIA_COMPATIBLE</a>.</para>
+    </summary>
+    <seealso cref="DeviceIoControl" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_make_media_compatible">FSCTL_MAKE_MEDIA_COMPATIBLE</seealso>
+  </member>
+  <member name="FILE_MAKE_COMPATIBLE_BUFFER.CloseDisc">
+    <summary>
+      <para>If <b>TRUE</b>, indicates the media should be finalized. No new data can be appended to the media.</para>
+    </summary>
+  </member>
+</doc>

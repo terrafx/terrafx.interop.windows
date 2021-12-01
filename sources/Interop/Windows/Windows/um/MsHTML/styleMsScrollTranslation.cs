@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsScrollTranslation.xml' path='doc/member[@name="styleMsScrollTranslation"]/*' />
 public enum styleMsScrollTranslation
 {
+    /// <include file='styleMsScrollTranslation.xml' path='doc/member[@name="styleMsScrollTranslation.styleMsScrollTranslationNotSet"]/*' />
     styleMsScrollTranslationNotSet = 0,
+
+    /// <include file='styleMsScrollTranslation.xml' path='doc/member[@name="styleMsScrollTranslation.styleMsScrollTranslationNone"]/*' />
     styleMsScrollTranslationNone = 1,
+
+    /// <include file='styleMsScrollTranslation.xml' path='doc/member[@name="styleMsScrollTranslation.styleMsScrollTranslationVtoH"]/*' />
     styleMsScrollTranslationVtoH = 2,
+
+    /// <include file='styleMsScrollTranslation.xml' path='doc/member[@name="styleMsScrollTranslation.styleMsScrollTranslation_Max"]/*' />
     styleMsScrollTranslation_Max = 2147483647,
 }

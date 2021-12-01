@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UMS_CREATE_THREAD_ATTRIBUTES.xml' path='doc/member[@name="UMS_CREATE_THREAD_ATTRIBUTES"]/*' />
 public unsafe partial struct UMS_CREATE_THREAD_ATTRIBUTES
 {
+    /// <include file='UMS_CREATE_THREAD_ATTRIBUTES.xml' path='doc/member[@name="UMS_CREATE_THREAD_ATTRIBUTES.UmsVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint UmsVersion;
 
+    /// <include file='UMS_CREATE_THREAD_ATTRIBUTES.xml' path='doc/member[@name="UMS_CREATE_THREAD_ATTRIBUTES.UmsContext"]/*' />
     [NativeTypeName("PVOID")]
     public void* UmsContext;
 
+    /// <include file='UMS_CREATE_THREAD_ATTRIBUTES.xml' path='doc/member[@name="UMS_CREATE_THREAD_ATTRIBUTES.UmsCompletionList"]/*' />
     [NativeTypeName("PVOID")]
     public void* UmsCompletionList;
 }

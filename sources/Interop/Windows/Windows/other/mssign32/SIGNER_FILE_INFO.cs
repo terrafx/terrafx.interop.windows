@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIGNER_FILE_INFO.xml' path='doc/member[@name="SIGNER_FILE_INFO"]/*' />
 public unsafe partial struct SIGNER_FILE_INFO
 {
+    /// <include file='SIGNER_FILE_INFO.xml' path='doc/member[@name="SIGNER_FILE_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='SIGNER_FILE_INFO.xml' path='doc/member[@name="SIGNER_FILE_INFO.pwszFileName"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pwszFileName;
 
+    /// <include file='SIGNER_FILE_INFO.xml' path='doc/member[@name="SIGNER_FILE_INFO.hFile"]/*' />
     public HANDLE hFile;
 }

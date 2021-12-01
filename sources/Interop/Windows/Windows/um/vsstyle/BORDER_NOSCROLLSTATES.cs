@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BORDER_NOSCROLLSTATES.xml' path='doc/member[@name="BORDER_NOSCROLLSTATES"]/*' />
 public enum BORDER_NOSCROLLSTATES
 {
+    /// <include file='BORDER_NOSCROLLSTATES.xml' path='doc/member[@name="BORDER_NOSCROLLSTATES.LBPSN_NORMAL"]/*' />
     LBPSN_NORMAL = 1,
+
+    /// <include file='BORDER_NOSCROLLSTATES.xml' path='doc/member[@name="BORDER_NOSCROLLSTATES.LBPSN_FOCUSED"]/*' />
     LBPSN_FOCUSED = 2,
+
+    /// <include file='BORDER_NOSCROLLSTATES.xml' path='doc/member[@name="BORDER_NOSCROLLSTATES.LBPSN_HOT"]/*' />
     LBPSN_HOT = 3,
+
+    /// <include file='BORDER_NOSCROLLSTATES.xml' path='doc/member[@name="BORDER_NOSCROLLSTATES.LBPSN_DISABLED"]/*' />
     LBPSN_DISABLED = 4,
 }

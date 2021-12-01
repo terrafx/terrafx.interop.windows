@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICommDlgBrowser2.GetDefaultMenuText">
+    <summary>
+      <para>Called by the Shell view to get the default shortcut menu text.</para>
+    </summary>
+    <param name="ppshv">
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>A pointer to the <see cref="IShellView" /> interface of the hosted view.</para>
+    </param>
+    <param name="pszText">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>A pointer to a buffer that is used by the Shell browser to return the default shortcut menu text.</para>
+    </param>
+    <param name="cchMax">
+      <para>Type: <b>int</b></para>
+      <para>The size of the <i>pszText</i> buffer, in characters. It should be at least the maximum allowable path length (MAX_PATH) in size.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if a new default shortcut menu text was returned in <i>pshv</i>. If S_FALSE is returned, use the normal default text. Otherwise, returns a standard COM error value.</para>
+    </returns>
+  </member>
+  <member name="ICommDlgBrowser2.GetViewFlags">
+    <summary>
+      <para>Called when the view must determine if special customization needs to be made for the common dialog browser.</para>
+    </summary>
+    <param name="pdwFlags">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to a <b>DWORD</b> value that controls the behavior of the view when in common dialog mode.</para>
+      <h4>CDB2GVF_SHOWALLFILES (0x00000001)</h4>
+      <para>0x00000001. All files, including hidden and system files, should be shown. In Windows XP, this is the only recognized flag.</para>
+      <h4>CDB2GVF_ISFILESAVE (0x00000002)</h4>
+      <para>0x00000002. This browser is designated to choose a file to save.</para>
+      <h4>CDB2GVF_ALLOWPREVIEWPANE (0x00000004)</h4>
+      <para>0x00000004. Not used.</para>
+      <h4>CDB2GVF_NOSELECTVERB (0x00000008)</h4>
+      <para>0x00000008. Do not show a "<code>select</code>" verb on an item's context menu.</para>
+      <h4>CDB2GVF_NOINCLUDEITEM (0x00000010)</h4>
+      <para>0x00000010. <see cref="IncludeObject" /> should not be called.</para>
+      <h4>CDB2GVF_ISFOLDERPICKER (0x00000020)</h4>
+      <para>0x00000020. This browser is designated to pick folders.</para>
+      <h4>CDB2GVF_ADDSHIELD (0x00000040)</h4>
+      <para>0x00000040. <b>Windows 7 and later</b>. Displays a UAC shield on the selected item when CDB2GVF_NOSELECTVERB is not specified.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ICommDlgBrowser2" />
+  </member>
+  <member name="ICommDlgBrowser2.Notify">
+    <summary>
+      <para>Called by a Shell view to notify the common dialog box hosting it that an event has occurred.</para>
+    </summary>
+    <param name="ppshv">
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>A pointer to the <see cref="IShellView" /> interface of the hosted view.</para>
+    </param>
+    <param name="dwNotifyType">
+      <para>Type: <b>DWORD</b></para>
+      <para>A flag that can can take one of the following two values.</para>
+      <h4>CDB2N_CONTEXTMENU_START</h4>
+      <para>Indicates that the shortcut menu is about to be displayed.</para>
+      <h4>CDB2N_CONTEXTMENU_DONE</h4>
+      <para>Indicates that the shortcut menu is no longer displayed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ICommDlgBrowser2" />
+  </member>
+  <member name="ICommDlgBrowser2">
+    <summary>
+      <para>Extends the capabilities of <see cref="ICommDlgBrowser" />. This interface is exposed by the common file dialog boxes when they host a Shell browser. A pointer to <b>ICommDlgBrowser2</b> can be obtained by calling <see cref="QueryInterface" /> on the <see cref="IShellBrowser" /> object.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="ICommDlgBrowser" /> interface, from which it inherits.</para>
+      <para>
+        <b>Note</b>  In Windows XP and earlier, this interface was defined in Shlobj.h.</para>
+      <para>This interface is implemented only by common file dialog boxes.</para>
+      <para>Use <b>ICommDlgBrowser2</b> when your Shell view is hosted inside a common dialog box.</para>
+      <para>
+        <b>ICommDlgBrowser2</b> implements all the <see cref="ICommDlgBrowser" /> methods, as well as <see cref="IUnknown" />. The listed methods are specific to <b>ICommDlgBrowser2</b>.</para>
+      <para>
+        <b>Note</b>  <b>Windows Vista and later.</b> Prior to Windows Vista this interface was declared in Shlobj.h.</para>
+    </remarks>
+  </member>
+</doc>

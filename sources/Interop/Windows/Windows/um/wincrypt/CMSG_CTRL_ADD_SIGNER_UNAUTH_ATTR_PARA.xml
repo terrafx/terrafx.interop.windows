@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA">
+    <summary>
+      <para>The <b>CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA</b> structure is used to add an unauthenticated attribute to a signer of a signed message. This structure is passed to
+<see cref="CryptMsgControl" /> if the <i>dwCtrlType</i> parameter is set to <b>CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR</b>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CryptMsgControl" />
+  </member>
+  <member name="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.cbSize">
+    <summary>
+      <para>Size of this structure in bytes.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.dwSignerIndex">
+    <summary>
+      <para>Index of the signer in the <b>rgSigners</b> array of pointers of
+<see cref="CMSG_SIGNER_ENCODE_INFO" /> structures in a signed message's
+<see cref="CMSG_SIGNED_ENCODE_INFO" /> structure. The unauthenticated attribute is to be added to this signer's information.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.blob">
+    <summary></summary>
+  </member>
+  <member name="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.BLOB">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains the encoded unauthenticated attribute as its <b>pbData</b> member.</para>
+    </summary>
+  </member>
+</doc>

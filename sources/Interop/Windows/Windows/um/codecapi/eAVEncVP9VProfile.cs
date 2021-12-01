@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncVP9VProfile.xml' path='doc/member[@name="eAVEncVP9VProfile"]/*' />
 public enum eAVEncVP9VProfile
 {
+    /// <include file='eAVEncVP9VProfile.xml' path='doc/member[@name="eAVEncVP9VProfile.eAVEncVP9VProfile_unknown"]/*' />
     eAVEncVP9VProfile_unknown = 0,
+
+    /// <include file='eAVEncVP9VProfile.xml' path='doc/member[@name="eAVEncVP9VProfile.eAVEncVP9VProfile_420_8"]/*' />
     eAVEncVP9VProfile_420_8 = 1,
+
+    /// <include file='eAVEncVP9VProfile.xml' path='doc/member[@name="eAVEncVP9VProfile.eAVEncVP9VProfile_420_10"]/*' />
     eAVEncVP9VProfile_420_10 = 2,
+
+    /// <include file='eAVEncVP9VProfile.xml' path='doc/member[@name="eAVEncVP9VProfile.eAVEncVP9VProfile_420_12"]/*' />
     eAVEncVP9VProfile_420_12 = 3,
 }

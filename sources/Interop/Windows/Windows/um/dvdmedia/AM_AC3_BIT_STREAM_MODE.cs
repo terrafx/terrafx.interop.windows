@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_AC3_BIT_STREAM_MODE.xml' path='doc/member[@name="AM_AC3_BIT_STREAM_MODE"]/*' />
 public partial struct AM_AC3_BIT_STREAM_MODE
 {
+    /// <include file='AM_AC3_BIT_STREAM_MODE.xml' path='doc/member[@name="AM_AC3_BIT_STREAM_MODE.BitStreamMode"]/*' />
     [NativeTypeName("LONG")]
     public int BitStreamMode;
 }

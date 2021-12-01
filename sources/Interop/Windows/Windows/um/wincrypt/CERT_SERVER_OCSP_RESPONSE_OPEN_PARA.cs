@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA"]/*' />
 public unsafe partial struct CERT_SERVER_OCSP_RESPONSE_OPEN_PARA
 {
+    /// <include file='CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.pcbUsedSize"]/*' />
     [NativeTypeName("DWORD *")]
     public uint* pcbUsedSize;
 
+    /// <include file='CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.pwszOcspDirectory"]/*' />
     [NativeTypeName("PWSTR")]
     public ushort* pwszOcspDirectory;
 
+    /// <include file='CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.pfnUpdateCallback"]/*' />
     [NativeTypeName("PFN_CERT_SERVER_OCSP_RESPONSE_UPDATE_CALLBACK")]
     public delegate* unmanaged<CERT_CHAIN_CONTEXT*, CERT_SERVER_OCSP_RESPONSE_CONTEXT*, CRL_CONTEXT*, CRL_CONTEXT*, void*, uint, void> pfnUpdateCallback;
 
+    /// <include file='CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.pvUpdateCallbackArg"]/*' />
     [NativeTypeName("PVOID")]
     public void* pvUpdateCallbackArg;
 }

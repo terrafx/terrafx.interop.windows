@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlGlyphMode.xml' path='doc/member[@name="htmlGlyphMode"]/*' />
 public enum htmlGlyphMode
 {
+    /// <include file='htmlGlyphMode.xml' path='doc/member[@name="htmlGlyphMode.htmlGlyphModeNone"]/*' />
     htmlGlyphModeNone = 0,
+
+    /// <include file='htmlGlyphMode.xml' path='doc/member[@name="htmlGlyphMode.htmlGlyphModeBegin"]/*' />
     htmlGlyphModeBegin = 1,
+
+    /// <include file='htmlGlyphMode.xml' path='doc/member[@name="htmlGlyphMode.htmlGlyphModeEnd"]/*' />
     htmlGlyphModeEnd = 2,
+
+    /// <include file='htmlGlyphMode.xml' path='doc/member[@name="htmlGlyphMode.htmlGlyphModeBoth"]/*' />
     htmlGlyphModeBoth = 3,
+
+    /// <include file='htmlGlyphMode.xml' path='doc/member[@name="htmlGlyphMode.htmlGlyphMode_Max"]/*' />
     htmlGlyphMode_Max = 2147483647,
 }

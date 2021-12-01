@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_DYNAMIC_RELOCATION32.xml' path='doc/member[@name="IMAGE_DYNAMIC_RELOCATION32"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct IMAGE_DYNAMIC_RELOCATION32
 {
+    /// <include file='IMAGE_DYNAMIC_RELOCATION32.xml' path='doc/member[@name="IMAGE_DYNAMIC_RELOCATION32.Symbol"]/*' />
     [NativeTypeName("DWORD")]
     public uint Symbol;
 
+    /// <include file='IMAGE_DYNAMIC_RELOCATION32.xml' path='doc/member[@name="IMAGE_DYNAMIC_RELOCATION32.BaseRelocSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint BaseRelocSize;
 }

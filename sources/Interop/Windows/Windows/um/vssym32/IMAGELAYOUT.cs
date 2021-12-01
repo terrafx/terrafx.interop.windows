@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGELAYOUT.xml' path='doc/member[@name="IMAGELAYOUT"]/*' />
 public enum IMAGELAYOUT
 {
+    /// <include file='IMAGELAYOUT.xml' path='doc/member[@name="IMAGELAYOUT.IL_VERTICAL"]/*' />
     IL_VERTICAL = 0,
+
+    /// <include file='IMAGELAYOUT.xml' path='doc/member[@name="IMAGELAYOUT.IL_HORIZONTAL"]/*' />
     IL_HORIZONTAL = 1,
 }

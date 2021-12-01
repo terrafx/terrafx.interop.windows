@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage"]/*' />
 [Guid("00000138-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IPropertyStorage : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, uint>)(lpVtbl[1]))((IPropertyStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, uint>)(lpVtbl[2]))((IPropertyStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.ReadMultiple"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgpropvar)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int>)(lpVtbl[3]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgpropvar);
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.WriteMultiple"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT WriteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("const PROPVARIANT []")] PROPVARIANT* rgpropvar, [NativeTypeName("PROPID")] uint propidNameFirst)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, uint, int>)(lpVtbl[4]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgpropvar, propidNameFirst);
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.DeleteMultiple"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT DeleteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec)
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, int>)(lpVtbl[5]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec);
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.ReadPropertyNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid, [NativeTypeName("LPOLESTR []")] ushort** rglpwstrName)
@@ -67,6 +75,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, ushort**, int>)(lpVtbl[6]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.WritePropertyNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid, [NativeTypeName("const LPOLESTR []")] ushort** rglpwstrName)
@@ -74,6 +83,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, ushort**, int>)(lpVtbl[7]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.DeletePropertyNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT DeletePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid)
@@ -81,6 +91,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, int>)(lpVtbl[8]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid);
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.Commit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
@@ -88,6 +99,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, uint, int>)(lpVtbl[9]))((IPropertyStorage*)Unsafe.AsPointer(ref this), grfCommitFlags);
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.Revert"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Revert()
@@ -95,6 +107,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, int>)(lpVtbl[10]))((IPropertyStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.Enum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Enum(IEnumSTATPROPSTG** ppenum)
@@ -102,6 +115,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, IEnumSTATPROPSTG**, int>)(lpVtbl[11]))((IPropertyStorage*)Unsafe.AsPointer(ref this), ppenum);
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.SetTimes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetTimes([NativeTypeName("const FILETIME *")] FILETIME* pctime, [NativeTypeName("const FILETIME *")] FILETIME* patime, [NativeTypeName("const FILETIME *")] FILETIME* pmtime)
@@ -109,6 +123,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[12]))((IPropertyStorage*)Unsafe.AsPointer(ref this), pctime, patime, pmtime);
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.SetClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetClass([NativeTypeName("const IID &")] Guid* clsid)
@@ -116,6 +131,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         return ((delegate* unmanaged<IPropertyStorage*, Guid*, int>)(lpVtbl[13]))((IPropertyStorage*)Unsafe.AsPointer(ref this), clsid);
     }
 
+    /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.Stat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT Stat(STATPROPSETSTG* pstatpsstg)

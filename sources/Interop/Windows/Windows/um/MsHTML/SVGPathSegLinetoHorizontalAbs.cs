@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGPathSegLinetoHorizontalAbs.xml' path='doc/member[@name="SVGPathSegLinetoHorizontalAbs"]/*' />
 [Guid("305105C7-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGPathSegLinetoHorizontalAbs
 {

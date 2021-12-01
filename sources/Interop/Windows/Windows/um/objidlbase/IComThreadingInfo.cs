@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IComThreadingInfo.xml' path='doc/member[@name="IComThreadingInfo"]/*' />
 [Guid("000001CE-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IComThreadingInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface
         return ((delegate* unmanaged<IComThreadingInfo*, Guid*, void**, int>)(lpVtbl[0]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface
         return ((delegate* unmanaged<IComThreadingInfo*, uint>)(lpVtbl[1]))((IComThreadingInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface
         return ((delegate* unmanaged<IComThreadingInfo*, uint>)(lpVtbl[2]))((IComThreadingInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IComThreadingInfo.xml' path='doc/member[@name="IComThreadingInfo.GetCurrentApartmentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrentApartmentType(APTTYPE* pAptType)
@@ -46,6 +51,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface
         return ((delegate* unmanaged<IComThreadingInfo*, APTTYPE*, int>)(lpVtbl[3]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pAptType);
     }
 
+    /// <include file='IComThreadingInfo.xml' path='doc/member[@name="IComThreadingInfo.GetCurrentThreadType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCurrentThreadType(THDTYPE* pThreadType)
@@ -53,6 +59,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface
         return ((delegate* unmanaged<IComThreadingInfo*, THDTYPE*, int>)(lpVtbl[4]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pThreadType);
     }
 
+    /// <include file='IComThreadingInfo.xml' path='doc/member[@name="IComThreadingInfo.GetCurrentLogicalThreadId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCurrentLogicalThreadId(Guid* pguidLogicalThreadId)
@@ -60,6 +67,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface
         return ((delegate* unmanaged<IComThreadingInfo*, Guid*, int>)(lpVtbl[5]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pguidLogicalThreadId);
     }
 
+    /// <include file='IComThreadingInfo.xml' path='doc/member[@name="IComThreadingInfo.SetCurrentLogicalThreadId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetCurrentLogicalThreadId([NativeTypeName("const GUID &")] Guid* rguid)

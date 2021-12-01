@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILEGROUPDESCRIPTORW.xml' path='doc/member[@name="FILEGROUPDESCRIPTORW"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FILEGROUPDESCRIPTORW
 {
+    /// <include file='FILEGROUPDESCRIPTORW.xml' path='doc/member[@name="FILEGROUPDESCRIPTORW.cItems"]/*' />
     public uint cItems;
 
+    /// <include file='FILEGROUPDESCRIPTORW.xml' path='doc/member[@name="FILEGROUPDESCRIPTORW.fgd"]/*' />
     [NativeTypeName("FILEDESCRIPTORW [1]")]
     public _fgd_e__FixedBuffer fgd;
 
+    /// <include file='_fgd_e__FixedBuffer.xml' path='doc/member[@name="_fgd_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct _fgd_e__FixedBuffer
     {

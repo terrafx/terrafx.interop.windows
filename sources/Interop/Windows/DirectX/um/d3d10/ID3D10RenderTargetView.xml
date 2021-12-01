@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10RenderTargetView.GetDesc">
+    <summary>
+      <para>Get the properties of a render target view.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b><see cref="D3D10_RENDER_TARGET_VIEW_DESC" />*</b></para>
+      <para>Pointer to the description of a render target view (see <see cref="D3D10_RENDER_TARGET_VIEW_DESC" />).</para>
+    </param>
+    <seealso cref="ID3D10RenderTargetView Interface" />
+  </member>
+  <member name="ID3D10RenderTargetView">
+    <summary>
+      <para>A render-target-view interface identifies the render-target <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresources</a> that can be accessed during rendering.</para>
+    </summary>
+    <remarks>
+      <para>To create a render-target view, call <see cref="ID3D10Device.CreateRenderTargetView" />. To bind a render-target view to the pipeline, call <see cref="ID3D10Device.OMSetRenderTargets" />.</para>
+      <para>A rendertarget is a resource that can be written by the output-merger stage at the end of a render pass. Each render-target should also have a corresponding depth-stencil view.</para>
+    </remarks>
+    <seealso cref="ID3D10View" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+  </member>
+</doc>

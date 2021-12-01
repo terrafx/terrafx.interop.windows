@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DIRECTMANIPULATION_INPUT_MODE">
+    <summary>
+      <para>Defines the threading behavior for <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setinputmode">SetInputMode</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setupdatemode">SetUpdateMode</a>. The exact meaning of each constant depends on the method called.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+  </member>
+  <member name="DIRECTMANIPULATION_INPUT_MODE.DIRECTMANIPULATION_INPUT_MODE_AUTOMATIC">
+    <summary>
+      <para>Input is automatically passed to the viewport in an independent thread.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_INPUT_MODE.DIRECTMANIPULATION_INPUT_MODE_MANUAL">
+    <summary>
+      <para>Input is manually passed by   the app on its thread via the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationmanager-processinput">ProcessInput</a> method.</para>
+    </summary>
+  </member>
+</doc>

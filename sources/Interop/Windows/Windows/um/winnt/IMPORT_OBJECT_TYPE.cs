@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMPORT_OBJECT_TYPE.xml' path='doc/member[@name="IMPORT_OBJECT_TYPE"]/*' />
 public enum IMPORT_OBJECT_TYPE
 {
+    /// <include file='IMPORT_OBJECT_TYPE.xml' path='doc/member[@name="IMPORT_OBJECT_TYPE.IMPORT_OBJECT_CODE"]/*' />
     IMPORT_OBJECT_CODE = 0,
+
+    /// <include file='IMPORT_OBJECT_TYPE.xml' path='doc/member[@name="IMPORT_OBJECT_TYPE.IMPORT_OBJECT_DATA"]/*' />
     IMPORT_OBJECT_DATA = 1,
+
+    /// <include file='IMPORT_OBJECT_TYPE.xml' path='doc/member[@name="IMPORT_OBJECT_TYPE.IMPORT_OBJECT_CONST"]/*' />
     IMPORT_OBJECT_CONST = 2,
 }

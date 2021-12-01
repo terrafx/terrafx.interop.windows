@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IApplicationAssociationRegistration.ClearUserAssociations">
+    <summary>
+      <para>Removes all per-user associations for the current user. This results in a reversion to machine defaults, if they exist. Not intended for use in Windows 8.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/default-programs">Default Programs</seealso>
+    <seealso cref="IApplicationAssociationRegistration" />
+  </member>
+  <member name="IApplicationAssociationRegistration.QueryAppIsDefault">
+    <summary>
+      <para>Determines whether an application owns the registered default association for a given application level and type. Not intended for use in Windows 8.</para>
+    </summary>
+    <param name="pszQuery">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a <b>null</b>-terminated Unicode string that contains the file name extension or protocol of the application, such as .mp3 or http.</para>
+    </param>
+    <param name="atQueryType">
+      <para>Type: <b><see cref="ASSOCIATIONTYPE" /></b></para>
+      <para>One of the <see cref="ASSOCIATIONTYPE" /> enumeration values that specifies the type of the application named in <i>pszQuery</i>, such as file name extension or MIME type.</para>
+    </param>
+    <param name="alQueryLevel">
+      <para>Type: <b><see cref="ASSOCIATIONLEVEL" /></b></para>
+      <para>One of the <see cref="ASSOCIATIONLEVEL" /> enumeration values that specifies the level of association, such as per-user or machine. This is typically <see cref="AL_EFFECTIVE" />.</para>
+    </param>
+    <param name="pszAppRegistryName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a <b>null</b>-terminated Unicode string that specifies the registered name of the application.</para>
+    </param>
+    <param name="pfDefault">
+      <para>Type: <b>BOOL*</b></para>
+      <para>When this method returns, contains <b>TRUE</b> if the application is the default; or <b>FALSE</b> otherwise.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/default-programs">Default Programs</seealso>
+    <seealso cref="IApplicationAssociationRegistration" />
+  </member>
+  <member name="IApplicationAssociationRegistration.QueryAppIsDefaultAll">
+    <summary>
+      <para>Determines whether an application owns all of the registered default associations for a given application level. Not intended for use in Windows 8.</para>
+    </summary>
+    <param name="alQueryLevel">
+      <para>Type: <b><see cref="ASSOCIATIONLEVEL" /></b></para>
+      <para>One of the <see cref="ASSOCIATIONLEVEL" /> enumeration values that specifies the level of association, such as per-user or machine. This is typically <see cref="AL_EFFECTIVE" />.</para>
+    </param>
+    <param name="pszAppRegistryName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a <b>null</b>-terminated Unicode string that specifies the registered name of the application.</para>
+    </param>
+    <param name="pfDefault">
+      <para>Type: <b>BOOL*</b></para>
+      <para>When this method returns, contains <b>TRUE</b> if the application is the default for all <see cref=" association types" /> at the specified <see cref="ASSOCIATIONLEVEL" />;
+or <b>FALSE</b> otherwise.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/default-programs">Default Programs</seealso>
+    <seealso cref="IApplicationAssociationRegistration" />
+  </member>
+  <member name="IApplicationAssociationRegistration.QueryCurrentDefault">
+    <summary>
+      <para>Determines the default application for a given association type. This is the default application launched by <see cref="ShellExecute" /> for that type.</para>
+    </summary>
+    <param name="pszQuery">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated, Unicode string that contains the file name extension or protocol, such as .mp3 or http.</para>
+    </param>
+    <param name="atQueryType">
+      <para>Type: <b><see cref="ASSOCIATIONTYPE" /></b></para>
+      <para>One of the <see cref="ASSOCIATIONTYPE" /> enumeration values that specifies the type of association, such as extension or MIME type.</para>
+    </param>
+    <param name="alQueryLevel">
+      <para>Type: <b><see cref="ASSOCIATIONLEVEL" /></b></para>
+      <para>One of the <see cref="ASSOCIATIONLEVEL" /> enumeration values that specifies the level of association, such as per-user or machine. This is typically <see cref="AL_EFFECTIVE" />.</para>
+    </param>
+    <param name="ppszAssociation">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When this method returns, contains the address of a pointer to the ProgID that identifies the current default association.</para>
+      <para>
+        <b>Note</b>  It is the responsibility of the calling application to release the string through <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The string produced is typically a ProgID matching one of the ProgIDs associated with a registered application, but there are a few exceptions: If the string returned is a machine default protocol, it is a legacy string indicating a command line to a .exe handler instead of a ProgID. Similarly, if returning a machine default MIME type, it returns a legacy class identifier (CLSID) string instead of a ProgID.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/default-programs">Default Programs</seealso>
+    <seealso cref="IApplicationAssociationRegistration" />
+  </member>
+  <member name="IApplicationAssociationRegistration.SetAppAsDefault">
+    <summary>
+      <para>Sets an application as the default for a given extension or protocol, provided that the application's publisher matches the current default's. For more information, see <a href="https://docs.microsoft.com//windows/desktop/shell/default-programs">Default Programs</a>. Not intended for use in Windows 8.</para>
+    </summary>
+    <param name="progId">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a <b>null</b>-terminated Unicode string that specifies the application's ProgID.</para>
+    </param>
+    <param name="extOrUriScheme">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a <b>null</b>-terminated Unicode string that contains the file name extension or protocol of the application, such as .mp3 or http.</para>
+    </param>
+    <param name="atSetType">
+      <para>Type: <b><see cref="ASSOCIATIONTYPE" /></b></para>
+      <para>One of the <see cref="ASSOCIATIONTYPE" /> enumeration values that specifies the type of the application named in <i>extOrUriScheme</i>, such as file name extension or MIME type.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code. In particular, if the application's publisher doesn't match the default's, this method returns <b>E_ACCESSDENIED</b>.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/default-programs">Default Programs</seealso>
+    <seealso cref="IApplicationAssociationRegistration" />
+  </member>
+  <member name="IApplicationAssociationRegistration.SetAppAsDefaultAll">
+    <summary>
+      <para>Sets an application as the default for all of the registered associations of any <see cref="type" /> for that application. Not intended for use in Windows 8.</para>
+    </summary>
+    <param name="pszAppRegistryName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated Unicode string that specifies the registered name of the application.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/default-programs">Default Programs</seealso>
+    <seealso cref="IApplicationAssociationRegistration" />
+  </member>
+  <member name="IApplicationAssociationRegistration">
+    <summary>
+      <para>Exposes methods that query and set default applications for specific file <see cref="Association Type" />, and protocols at a specific <see cref="Association Level" />.</para>
+      <para>
+        <b>Note</b>  As of Windows 8, the only functionality of this interface that is supported is <see cref="QueryCurrentDefault" />.</para>
+    </summary>
+    <remarks>
+      <para>Because <b>IApplicationAssociationRegistration</b> is only supported for Windows Vista and Windows 7, applications that support earlier operating systems must use their preexisting code in relation to defaults when running under those operating systems. Those applications should include a check for the operating system version to account for this.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/default-programs">Default Programs</seealso>
+  </member>
+</doc>

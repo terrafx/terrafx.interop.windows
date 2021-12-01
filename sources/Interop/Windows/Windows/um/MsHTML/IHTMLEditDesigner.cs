@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLEditDesigner.xml' path='doc/member[@name="IHTMLEditDesigner"]/*' />
 [Guid("3050F662-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLEditDesigner : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface
         return ((delegate* unmanaged<IHTMLEditDesigner*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface
         return ((delegate* unmanaged<IHTMLEditDesigner*, uint>)(lpVtbl[1]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface
         return ((delegate* unmanaged<IHTMLEditDesigner*, uint>)(lpVtbl[2]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLEditDesigner.xml' path='doc/member[@name="IHTMLEditDesigner.PreHandleEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT PreHandleEvent([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface
         return ((delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[3]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
     }
 
+    /// <include file='IHTMLEditDesigner.xml' path='doc/member[@name="IHTMLEditDesigner.PostHandleEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT PostHandleEvent([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface
         return ((delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[4]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
     }
 
+    /// <include file='IHTMLEditDesigner.xml' path='doc/member[@name="IHTMLEditDesigner.TranslateAcceleratorW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT TranslateAcceleratorW([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface
         return ((delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[5]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
     }
 
+    /// <include file='IHTMLEditDesigner.xml' path='doc/member[@name="IHTMLEditDesigner.PostEditorEventNotify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT PostEditorEventNotify([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj)

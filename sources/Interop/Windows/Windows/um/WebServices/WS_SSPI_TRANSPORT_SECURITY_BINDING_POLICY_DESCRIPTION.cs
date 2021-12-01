@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION.xml' path='doc/member[@name="WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION"]/*' />
 public partial struct WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION
 {
+    /// <include file='WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION.xml' path='doc/member[@name="WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION.securityBindingProperties"]/*' />
     public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 }

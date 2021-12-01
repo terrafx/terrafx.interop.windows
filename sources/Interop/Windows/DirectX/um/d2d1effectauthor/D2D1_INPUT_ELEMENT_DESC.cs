@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_INPUT_ELEMENT_DESC.xml' path='doc/member[@name="D2D1_INPUT_ELEMENT_DESC"]/*' />
 public unsafe partial struct D2D1_INPUT_ELEMENT_DESC
 {
+    /// <include file='D2D1_INPUT_ELEMENT_DESC.xml' path='doc/member[@name="D2D1_INPUT_ELEMENT_DESC.semanticName"]/*' />
     [NativeTypeName("PCSTR")]
     public sbyte* semanticName;
 
+    /// <include file='D2D1_INPUT_ELEMENT_DESC.xml' path='doc/member[@name="D2D1_INPUT_ELEMENT_DESC.semanticIndex"]/*' />
     [NativeTypeName("UINT32")]
     public uint semanticIndex;
 
+    /// <include file='D2D1_INPUT_ELEMENT_DESC.xml' path='doc/member[@name="D2D1_INPUT_ELEMENT_DESC.format"]/*' />
     public DXGI_FORMAT format;
 
+    /// <include file='D2D1_INPUT_ELEMENT_DESC.xml' path='doc/member[@name="D2D1_INPUT_ELEMENT_DESC.inputSlot"]/*' />
     [NativeTypeName("UINT32")]
     public uint inputSlot;
 
+    /// <include file='D2D1_INPUT_ELEMENT_DESC.xml' path='doc/member[@name="D2D1_INPUT_ELEMENT_DESC.alignedByteOffset"]/*' />
     [NativeTypeName("UINT32")]
     public uint alignedByteOffset;
 }

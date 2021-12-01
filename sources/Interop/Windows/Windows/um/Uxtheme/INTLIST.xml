@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INTLIST">
+    <summary>
+      <para>Contains an array or list of <b>int</b> data items from a visual style.</para>
+    </summary>
+    <remarks>
+      <para>The lists are returned by <see cref="GetThemeIntList" />.</para>
+    </remarks>
+  </member>
+  <member name="INTLIST.iValueCount">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Number of values in the list.</para>
+    </summary>
+  </member>
+  <member name="INTLIST.iValues">
+    <summary>
+      <para>Type: <b>int[MAX_INTLIST_COUNT]</b></para>
+      <para>List of integers. The constant MAX_INTLIST_COUNT, by definition, is equal to 402 under Windows Vista, but only 10 under earlier versions of Windows.</para>
+    </summary>
+  </member>
+</doc>

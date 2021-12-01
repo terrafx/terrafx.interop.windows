@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_SCATTER_OPERATOR_DESC">
+    <summary>
+      <para>Copies the whole input tensor to the output, then overwrites selected indices with corresponding values from the updates tensor. This operator performs the following pseudocode.</para>
+      <code>output = input
+output[index[i, j, k, ...], j, k, ...] = updates[i, j, k, ...] // if axis == 0
+output[i, index[i, j, k, ...], k, ...] = updates[i, j, k, ...] // if axis == 1
+output[i, j, index[i, j, k, ...], ...] = updates[i, j, k, ...] // if axis == 2
+...
+</code>
+      <para>If two output element indices overlap (which is invalid), then there's no guarantee of which last write wins.</para>
+      <para>
+        <b>DML_SCATTER_OPERATOR_DESC</b> is the inverse of <see cref="DML_GATHER_OPERATOR_DESC" />.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>DML_SCATTER_OPERATOR_DESC</b> has been more properly aliased to the name <b>DML_SCATTER_ELEMENTS_OPERATOR_DESC</b> as the proper counterpart to <see cref="DML_GATHER_ELEMENTS_OPERATOR_DESC" />. This is because <b>DML_SCATTER_OPERATOR_DESC</b> was not really symmetric to <see cref="DML_GATHER_OPERATOR_DESC" />.</para>
+    </remarks>
+  </member>
+  <member name="DML_SCATTER_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to read from.</para>
+    </summary>
+  </member>
+  <member name="DML_SCATTER_OPERATOR_DESC.IndicesTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the indices into the output tensor. The <i>Sizes</i> must match <i>InputTensor.Sizes</i> for every dimension except <i>Axis</i>.</para>
+      <para>Starting with <code>DML_FEATURE_LEVEL_3_0</code>, this operator supports negative index values when using a signed integral type with this tensor. Negative indices are interpreted as being relative to the end of the axis dimension. For example, an index of -1 refers to the last element along that dimension.</para>
+    </summary>
+  </member>
+  <member name="DML_SCATTER_OPERATOR_DESC.UpdatesTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the new values to replace the existing input values at the corresponding indices. The <i>Sizes</i> of this tensor must match <i>IndicesTensor.Sizes</i>. The <i>DataType</i> must match <i>InputTensor.DataType</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_SCATTER_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write the results to. The <i>Sizes</i> and <i>DataType</i> of this tensor must match <i>InputTensor</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_SCATTER_OPERATOR_DESC.Axis">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The axis dimension to use for indexing in <i>OutputTensor</i>, ranging <code>[0, OutputTensor.DimensionCount)</code>.</para>
+    </summary>
+  </member>
+</doc>

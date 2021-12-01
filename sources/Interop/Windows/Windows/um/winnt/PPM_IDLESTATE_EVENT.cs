@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PPM_IDLESTATE_EVENT.xml' path='doc/member[@name="PPM_IDLESTATE_EVENT"]/*' />
 public partial struct PPM_IDLESTATE_EVENT
 {
+    /// <include file='PPM_IDLESTATE_EVENT.xml' path='doc/member[@name="PPM_IDLESTATE_EVENT.NewState"]/*' />
     [NativeTypeName("DWORD")]
     public uint NewState;
 
+    /// <include file='PPM_IDLESTATE_EVENT.xml' path='doc/member[@name="PPM_IDLESTATE_EVENT.OldState"]/*' />
     [NativeTypeName("DWORD")]
     public uint OldState;
 
+    /// <include file='PPM_IDLESTATE_EVENT.xml' path='doc/member[@name="PPM_IDLESTATE_EVENT.Processors"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Processors;
 }

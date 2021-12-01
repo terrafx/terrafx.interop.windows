@@ -9,15 +9,20 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DIRTYRECT_INFO.xml' path='doc/member[@name="DIRTYRECT_INFO"]/*' />
 public partial struct DIRTYRECT_INFO
 {
+    /// <include file='DIRTYRECT_INFO.xml' path='doc/member[@name="DIRTYRECT_INFO.FrameNumber"]/*' />
     public uint FrameNumber;
 
+    /// <include file='DIRTYRECT_INFO.xml' path='doc/member[@name="DIRTYRECT_INFO.NumDirtyRects"]/*' />
     public uint NumDirtyRects;
 
+    /// <include file='DIRTYRECT_INFO.xml' path='doc/member[@name="DIRTYRECT_INFO.DirtyRects"]/*' />
     [NativeTypeName("RECT [1]")]
     public _DirtyRects_e__FixedBuffer DirtyRects;
 
+    /// <include file='_DirtyRects_e__FixedBuffer.xml' path='doc/member[@name="_DirtyRects_e__FixedBuffer"]/*' />
     public partial struct _DirtyRects_e__FixedBuffer
     {
         public RECT e0;

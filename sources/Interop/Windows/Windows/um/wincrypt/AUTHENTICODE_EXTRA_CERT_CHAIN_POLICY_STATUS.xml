@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS">
+    <summary>
+      <para>The <b>AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS</b> structure holds additional Authenticode policy information for chain verification of files.</para>
+    </summary>
+  </member>
+  <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS.fCommercial">
+    <summary>
+      <para>BOOL flag. If <b>TRUE</b>, a signer has been verified by a CA as meeting certain minimum financial standards.</para>
+    </summary>
+  </member>
+</doc>

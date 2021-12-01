@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="QUERYCONTEXT">
+    <summary>
+      <para>Contains a list of attributes used to look up a class implementation.</para>
+    </summary>
+    <seealso cref="CLSCTX" />
+    <seealso cref="CoInstall" />
+  </member>
+  <member name="QUERYCONTEXT.dwContext">
+    <summary>
+      <para>The execution context.</para>
+    </summary>
+  </member>
+  <member name="QUERYCONTEXT.Platform">
+    <summary>
+      <para>The operating system platform and processor architecture. For more information, see <see cref="CSPLATFORM" />.</para>
+    </summary>
+  </member>
+  <member name="QUERYCONTEXT.Locale">
+    <summary>
+      <para>The locale identifier. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Intl/language-identifier-constants-and-strings">Language Identifier Constants and Strings</a>.</para>
+    </summary>
+  </member>
+  <member name="QUERYCONTEXT.dwVersionHi">
+    <summary>
+      <para>The high version number.</para>
+    </summary>
+  </member>
+  <member name="QUERYCONTEXT.dwVersionLo">
+    <summary>
+      <para>The low version number.</para>
+    </summary>
+  </member>
+</doc>

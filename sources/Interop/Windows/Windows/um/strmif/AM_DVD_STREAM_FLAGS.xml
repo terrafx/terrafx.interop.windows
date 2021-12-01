@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_DVD_STREAM_FLAGS">
+    <summary>
+      <para>Describes a DVD stream type (video, audio, or subpicture).</para>
+    </summary>
+    <seealso cref="AM_DVD_RENDERSTATUS Structure" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="AM_DVD_STREAM_FLAGS.AM_DVD_STREAM_VIDEO">
+    <summary>
+      <para>DVD video stream.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_STREAM_FLAGS.AM_DVD_STREAM_AUDIO">
+    <summary>
+      <para>DVD audio stream.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_STREAM_FLAGS.AM_DVD_STREAM_SUBPIC">
+    <summary>
+      <para>DVD subpicture stream.</para>
+    </summary>
+  </member>
+</doc>

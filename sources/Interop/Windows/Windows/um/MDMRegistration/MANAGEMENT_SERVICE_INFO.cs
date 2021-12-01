@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MANAGEMENT_SERVICE_INFO.xml' path='doc/member[@name="MANAGEMENT_SERVICE_INFO"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public unsafe partial struct MANAGEMENT_SERVICE_INFO
 {
+    /// <include file='MANAGEMENT_SERVICE_INFO.xml' path='doc/member[@name="MANAGEMENT_SERVICE_INFO.pszMDMServiceUri"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszMDMServiceUri;
 
+    /// <include file='MANAGEMENT_SERVICE_INFO.xml' path='doc/member[@name="MANAGEMENT_SERVICE_INFO.pszAuthenticationUri"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszAuthenticationUri;
 }

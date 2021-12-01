@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CURSORSHAPE">
+    <summary>
+      <para>Contains information about a cursor.</para>
+    </summary>
+    <remarks>
+      <para>When an application passes a cursor handle to the <see cref="LockResource" /> function, the function returns a pointer to a buffer containing information about the cursor. An application can use the <b>CURSORSHAPE</b> structure to access the information.</para>
+    </remarks>
+    <seealso cref="LockResource" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/resources">Resources</seealso>
+  </member>
+  <member name="CURSORSHAPE.xHotSpot">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The horizontal position of the hot spot, relative to the upper-left corner of the cursor bitmap.</para>
+    </summary>
+  </member>
+  <member name="CURSORSHAPE.yHotSpot">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The vertical position of the hot spot, relative to the upper-left corner of the cursor bitmap.</para>
+    </summary>
+  </member>
+  <member name="CURSORSHAPE.cx">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The width, in pixels, of the cursor.</para>
+    </summary>
+  </member>
+  <member name="CURSORSHAPE.cy">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The height, in pixels, of the cursor.</para>
+    </summary>
+  </member>
+  <member name="CURSORSHAPE.cbWidth">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The width, in bytes, of the cursor bitmap.</para>
+    </summary>
+  </member>
+  <member name="CURSORSHAPE.Planes">
+    <summary>
+      <para>Type: <b>BYTE</b></para>
+      <para>The number of color planes.</para>
+    </summary>
+  </member>
+  <member name="CURSORSHAPE.BitsPixel">
+    <summary>
+      <para>Type: <b>BYTE</b></para>
+      <para>The number of bits used to indicate the color of a single pixel in the cursor.</para>
+    </summary>
+  </member>
+</doc>

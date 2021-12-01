@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_ROTATION">
+    <summary>
+      <para>Specifies the video rotation states.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_ROTATION.D3D11_VIDEO_PROCESSOR_ROTATION_IDENTITY">
+    <summary>
+      <para>The video is not rotated.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_ROTATION.D3D11_VIDEO_PROCESSOR_ROTATION_90">
+    <summary>
+      <para>The video is rotated 90 degrees clockwise.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_ROTATION.D3D11_VIDEO_PROCESSOR_ROTATION_180">
+    <summary>
+      <para>The video is rotated 180 degrees clockwise.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_ROTATION.D3D11_VIDEO_PROCESSOR_ROTATION_270">
+    <summary>
+      <para>The video is rotated 270 degrees clockwise.</para>
+    </summary>
+  </member>
+</doc>

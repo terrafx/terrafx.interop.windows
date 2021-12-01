@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMHEADERA.xml' path='doc/member[@name="NMHEADERA"]/*' />
 public unsafe partial struct NMHEADERA
 {
+    /// <include file='NMHEADERA.xml' path='doc/member[@name="NMHEADERA.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMHEADERA.xml' path='doc/member[@name="NMHEADERA.iItem"]/*' />
     public int iItem;
 
+    /// <include file='NMHEADERA.xml' path='doc/member[@name="NMHEADERA.iButton"]/*' />
     public int iButton;
 
+    /// <include file='NMHEADERA.xml' path='doc/member[@name="NMHEADERA.pitem"]/*' />
     public HDITEMA* pitem;
 }

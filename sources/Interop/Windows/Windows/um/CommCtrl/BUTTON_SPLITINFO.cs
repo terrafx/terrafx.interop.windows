@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BUTTON_SPLITINFO.xml' path='doc/member[@name="BUTTON_SPLITINFO"]/*' />
 public partial struct BUTTON_SPLITINFO
 {
+    /// <include file='BUTTON_SPLITINFO.xml' path='doc/member[@name="BUTTON_SPLITINFO.mask"]/*' />
     public uint mask;
 
+    /// <include file='BUTTON_SPLITINFO.xml' path='doc/member[@name="BUTTON_SPLITINFO.himlGlyph"]/*' />
     public HIMAGELIST himlGlyph;
 
+    /// <include file='BUTTON_SPLITINFO.xml' path='doc/member[@name="BUTTON_SPLITINFO.uSplitStyle"]/*' />
     public uint uSplitStyle;
 
+    /// <include file='BUTTON_SPLITINFO.xml' path='doc/member[@name="BUTTON_SPLITINFO.size"]/*' />
     public SIZE size;
 }

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SRCCODEINFO">
+    <summary>
+      <para>Contains line information.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psym_enumlines_callback">SymEnumLinesProc</seealso>
+  </member>
+  <member name="SRCCODEINFO.SizeOfStruct">
+    <summary>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.Key">
+    <summary>
+      <para>This member is not used.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.ModBase">
+    <summary>
+      <para>The base address of the module that contains the line.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.Obj">
+    <summary>
+      <para>The name of the object file within the module that contains the line.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.FileName">
+    <summary>
+      <para>The fully qualified source file name.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.LineNumber">
+    <summary>
+      <para>The line number within the source file.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.Address">
+    <summary>
+      <para>The virtual address of the first instruction of the line.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO">
+    <summary>
+      <para>Contains line information.</para>
+    </summary>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The dbghelp.h header defines SRCCODEINFO as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psym_enumlines_callback">SymEnumLinesProc</seealso>
+  </member>
+  <member name="SRCCODEINFO.SizeOfStruct">
+    <summary>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.Key">
+    <summary>
+      <para>This member is not used.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.ModBase">
+    <summary>
+      <para>The base address of the module that contains the line.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.Obj">
+    <summary>
+      <para>The name of the object file within the module that contains the line.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.FileName">
+    <summary>
+      <para>The fully qualified source file name.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.LineNumber">
+    <summary>
+      <para>The line number within the source file.</para>
+    </summary>
+  </member>
+  <member name="SRCCODEINFO.Address">
+    <summary>
+      <para>The virtual address of the first instruction of the line.</para>
+    </summary>
+  </member>
+</doc>

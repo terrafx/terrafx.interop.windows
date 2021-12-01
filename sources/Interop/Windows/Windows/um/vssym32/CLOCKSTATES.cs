@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CLOCKSTATES.xml' path='doc/member[@name="CLOCKSTATES"]/*' />
 public enum CLOCKSTATES
 {
+    /// <include file='CLOCKSTATES.xml' path='doc/member[@name="CLOCKSTATES.CLS_NORMAL"]/*' />
     CLS_NORMAL = 1,
+
+    /// <include file='CLOCKSTATES.xml' path='doc/member[@name="CLOCKSTATES.CLS_HOT"]/*' />
     CLS_HOT = 2,
+
+    /// <include file='CLOCKSTATES.xml' path='doc/member[@name="CLOCKSTATES.CLS_PRESSED"]/*' />
     CLS_PRESSED = 3,
 }

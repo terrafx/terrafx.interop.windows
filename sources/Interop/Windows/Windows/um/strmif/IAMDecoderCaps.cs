@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMDecoderCaps.xml' path='doc/member[@name="IAMDecoderCaps"]/*' />
 [Guid("C0DFF467-D499-4986-972B-E1D9090FA941")]
 [NativeTypeName("struct IAMDecoderCaps : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface
         return ((delegate* unmanaged<IAMDecoderCaps*, Guid*, void**, int>)(lpVtbl[0]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface
         return ((delegate* unmanaged<IAMDecoderCaps*, uint>)(lpVtbl[1]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface
         return ((delegate* unmanaged<IAMDecoderCaps*, uint>)(lpVtbl[2]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMDecoderCaps.xml' path='doc/member[@name="IAMDecoderCaps.GetDecoderCaps"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDecoderCaps([NativeTypeName("DWORD")] uint dwCapIndex, [NativeTypeName("DWORD *")] uint* lpdwCap)

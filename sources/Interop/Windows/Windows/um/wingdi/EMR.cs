@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct EMR
 {
+    /// <include file='EMR.xml' path='doc/member[@name="EMR.iType"]/*' />
     [NativeTypeName("DWORD")]
     public uint iType;
 
+    /// <include file='EMR.xml' path='doc/member[@name="EMR.nSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint nSize;
 

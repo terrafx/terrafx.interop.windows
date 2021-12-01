@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMS_VBXADPCMWAVEFORMAT.xml' path='doc/member[@name="NMS_VBXADPCMWAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct NMS_VBXADPCMWAVEFORMAT
 {
+    /// <include file='NMS_VBXADPCMWAVEFORMAT.xml' path='doc/member[@name="NMS_VBXADPCMWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='NMS_VBXADPCMWAVEFORMAT.xml' path='doc/member[@name="NMS_VBXADPCMWAVEFORMAT.wSamplesPerBlock"]/*' />
     [NativeTypeName("WORD")]
     public ushort wSamplesPerBlock;
 }

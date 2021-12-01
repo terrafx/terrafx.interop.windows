@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONSOLE_CURSOR_INFO.xml' path='doc/member[@name="CONSOLE_CURSOR_INFO"]/*' />
 public partial struct CONSOLE_CURSOR_INFO
 {
+    /// <include file='CONSOLE_CURSOR_INFO.xml' path='doc/member[@name="CONSOLE_CURSOR_INFO.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='CONSOLE_CURSOR_INFO.xml' path='doc/member[@name="CONSOLE_CURSOR_INFO.bVisible"]/*' />
     public BOOL bVisible;
 }

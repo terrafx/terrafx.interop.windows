@@ -7,10 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_AUDCLNT_BUFFERFLAGS.xml' path='doc/member[@name="_AUDCLNT_BUFFERFLAGS"]/*' />
 [Flags]
 public enum _AUDCLNT_BUFFERFLAGS
 {
+    /// <include file='_AUDCLNT_BUFFERFLAGS.xml' path='doc/member[@name="_AUDCLNT_BUFFERFLAGS.AUDCLNT_BUFFERFLAGS_DATA_DISCONTINUITY"]/*' />
     AUDCLNT_BUFFERFLAGS_DATA_DISCONTINUITY = 0x1,
+
+    /// <include file='_AUDCLNT_BUFFERFLAGS.xml' path='doc/member[@name="_AUDCLNT_BUFFERFLAGS.AUDCLNT_BUFFERFLAGS_SILENT"]/*' />
     AUDCLNT_BUFFERFLAGS_SILENT = 0x2,
+
+    /// <include file='_AUDCLNT_BUFFERFLAGS.xml' path='doc/member[@name="_AUDCLNT_BUFFERFLAGS.AUDCLNT_BUFFERFLAGS_TIMESTAMP_ERROR"]/*' />
     AUDCLNT_BUFFERFLAGS_TIMESTAMP_ERROR = 0x4,
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WebGeocoordinates.xml' path='doc/member[@name="WebGeocoordinates"]/*' />
 [Guid("305107C8-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct WebGeocoordinates
 {

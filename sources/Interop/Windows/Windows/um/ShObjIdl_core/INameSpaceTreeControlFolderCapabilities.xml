@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INameSpaceTreeControlFolderCapabilities.GetFolderCapabilities">
+    <summary>
+      <para>Gets a folder's capability to be filtered through the <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-ispinnedtonamespacetree">System.IsPinnedToNameSpaceTree</a> property key value and change notification registration status.</para>
+    </summary>
+    <param name="nfcMask">
+      <para>Type: <b><see cref="NSTCFOLDERCAPABILITIES" /></b></para>
+      <para>The capabilities for which this method should retrieve values. Specify one or both of the following:</para>
+      <h4>NSTCFC_PINNEDITEMFILTERING (0x00000001)</h4>
+      <para>0x00000001. The <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-ispinnedtonamespacetree">System.IsPinnedToNameSpaceTree</a> property exists on this folder and filtering based on that property value is supported.</para>
+      <h4>NSTCFC_DELAY_REGISTER_NOTIFY (0x00000002)</h4>
+      <para>0x00000002. Registration for change notifications is delayed until the folder is expanded in the navigation pane.</para>
+    </param>
+    <param name="pnfcValue">
+      <para>Type: <b><see cref="NSTCFOLDERCAPABILITIES" />*</b></para>
+      <para>Pointer to a value that, when this method returns successfully, receives the capabilities requested in <i>nfcMask</i>. Except in the case of NSTCFC_NONE, bit values in positions not specifically requested in <i>nfcMask</i> do not necessarily reflect the capabilities and should not be used.</para>
+      <h4>NSTCFC_NONE (0x00000000)</h4>
+      <para>0x00000000. The <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-ispinnedtonamespacetree">System.IsPinnedToNameSpaceTree</a> property does not exist on this folder. Filtering is not supported.</para>
+      <h4>NSTCFC_PINNEDITEMFILTERING (0x00000001)</h4>
+      <para>0x00000001. The <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-ispinnedtonamespacetree">System.IsPinnedToNameSpaceTree</a> property exists on this folder and filtering based on that property value is supported.</para>
+      <h4>NSTCFC_DELAY_REGISTER_NOTIFY (0x00000002)</h4>
+      <para>0x00000002. Registration for change notifications is delayed until the folder is expanded in the navigation pane.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="INameSpaceTreeControlFolderCapabilities">
+    <summary>
+      <para>Exposes a single method that retrieves the status of a folder's <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-ispinnedtonamespacetree">System.IsPinnedToNameSpaceTree</a> filtering support.</para>
+    </summary>
+    <remarks>
+      <para>The namespace tree control checks all the nodes it enumerates to see if they support filtering. This is done by retrieving the <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-ispinnedtonamespacetree">System.IsPinnedToNameSpaceTree</a> property for the shell folders that support this interface. Nodes that do not support this interface do not have filtering support and are shown by default.</para>
+      <para>Use this interface to retrieve the filtering support status of a shell folder.</para>
+    </remarks>
+  </member>
+</doc>

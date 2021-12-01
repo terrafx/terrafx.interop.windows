@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CHANGER_SET_ACCESS">
+    <summary>
+      <para>Contains information that the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_set_access">IOCTL_CHANGER_SET_ACCESS</a> control code needs to set the state of the device's insert/eject port, door, or keypad.</para>
+    </summary>
+    <seealso cref="CHANGER_ELEMENT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_set_access">IOCTL_CHANGER_SET_ACCESS</seealso>
+  </member>
+  <member name="CHANGER_SET_ACCESS.Element">
+    <summary>
+      <para>A
+<see cref="CHANGER_ELEMENT" /> structure that represents the changer element. The <b>ElementType</b> member can be one of the following values: ChangerDoor, ChangerIEPort, or ChangerKeypad.</para>
+    </summary>
+  </member>
+  <member name="CHANGER_SET_ACCESS.Control">
+    <summary>
+      <para>The operation to be performed.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EXTEND_IEPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The element is to be extended.</para>
+            <para>Requires that <b>Features0</b> is CHANGER_OPEN_IEPORT.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>LOCK_ELEMENT</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The element is to be locked.</para>
+            <para>Requires that <b>Features0</b> is CHANGER_LOCK_UNLOCK.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>RETRACT_IEPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The element is to be retracted.</para>
+            <para>Requires that <b>Features0</b> is CHANGER_CLOSE_IEPORT.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>UNLOCK_ELEMENT</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The element is to be unlocked.</para>
+            <para>Requires that <b>Features0</b> is CHANGER_LOCK_UNLOCK.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

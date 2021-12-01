@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FSCTL_QUERY_REGION_INFO_OUTPUT">
+    <summary>
+      <para>Contains information for one or more regions.</para>
+    </summary>
+  </member>
+  <member name="FSCTL_QUERY_REGION_INFO_OUTPUT.Version">
+    <summary>
+      <para>The size of this structure serves as the version.  Set it to <b>sizeof</b>(<b>FSCTL_QUERY_REGION_INFO_OUTPUT</b>).</para>
+    </summary>
+  </member>
+  <member name="FSCTL_QUERY_REGION_INFO_OUTPUT.Size">
+    <summary>
+      <para>The size of this structure in bytes.</para>
+    </summary>
+  </member>
+  <member name="FSCTL_QUERY_REGION_INFO_OUTPUT.Flags">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="FSCTL_QUERY_REGION_INFO_OUTPUT.Reserved">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="FSCTL_QUERY_REGION_INFO_OUTPUT.Alignment">
+    <summary>
+      <para>Offset from the beginning of the volume to the first slab of the tiered volume. If the logical disk is made up of multiple tiers and each tier maps to a set of regions then the first tier for the volume contained on the logical disk has a certain offset within the tier that represents the offset of the volume on the logical disk.  The <b>Alignment</b> member contains this value.</para>
+    </summary>
+  </member>
+  <member name="FSCTL_QUERY_REGION_INFO_OUTPUT.TotalNumberOfRegions">
+    <summary>
+      <para>Total number of available regions.</para>
+    </summary>
+  </member>
+  <member name="FSCTL_QUERY_REGION_INFO_OUTPUT.NumberOfRegionsReturned">
+    <summary>
+      <para>Number of regions that fit in the output.</para>
+    </summary>
+  </member>
+  <member name="FSCTL_QUERY_REGION_INFO_OUTPUT.Regions">
+    <summary>
+      <para>
+        <see cref="FILE_STORAGE_TIER_REGION" /> struct that contains detailed information for each region.</para>
+    </summary>
+  </member>
+</doc>

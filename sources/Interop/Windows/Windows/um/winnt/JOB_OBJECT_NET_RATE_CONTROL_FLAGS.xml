@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS">
+    <summary>
+      <para>Specifies types of scheduling policies for network rate control.</para>
+    </summary>
+    <seealso cref="JOBOBJECT_NET_RATE_CONTROL_INFORMATION" />
+  </member>
+  <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_ENABLE">
+    <summary>
+      <para>Turns on the control of the network traffic. You must set this value if you also set either <b>JOB_OBJECT_NET_RATE_CONTROL_MAX_BANDWIDTH</b> or <b>JOB_OBJECT_NET_RATE_CONTROL_DSCP_TAG</b>.</para>
+    </summary>
+  </member>
+  <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_MAX_BANDWIDTH">
+    <summary></summary>
+  </member>
+  <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_DSCP_TAG">
+    <summary>
+      <para>Sets the DSCP field in the packet header to the value of the <b>DscpTag</b> member of the <see cref="JOBOBJECT_NET_RATE_CONTROL_INFORMATION" /> structure. For information about DSCP, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/qos/differentiated-services">Differentiated Services</a>.</para>
+    </summary>
+  </member>
+  <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_VALID_FLAGS">
+    <summary>
+      <para>The combination of all of the valid flags for the <see cref="JOB_OBJECT_NET_RATE_CONTROL_FLAGS" /> enumeration.</para>
+      <h4>- JOB_OBJECT_NET_RATE_CONTROL_MAX_BANDWITH</h4>
+      <para>Uses the value of the <b>MaxBandwidth</b> member of the <see cref="JOBOBJECT_NET_RATE_CONTROL_INFORMATION" /> structure to set the maximum bandwidth for outgoing network traffic for the job, in bytes.</para>
+    </summary>
+  </member>
+</doc>

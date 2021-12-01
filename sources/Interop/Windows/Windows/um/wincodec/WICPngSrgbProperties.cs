@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICPngSrgbProperties.xml' path='doc/member[@name="WICPngSrgbProperties"]/*' />
 public enum WICPngSrgbProperties : uint
 {
+    /// <include file='WICPngSrgbProperties.xml' path='doc/member[@name="WICPngSrgbProperties.WICPngSrgbRenderingIntent"]/*' />
     WICPngSrgbRenderingIntent = 0x1,
+
+    /// <include file='WICPngSrgbProperties.xml' path='doc/member[@name="WICPngSrgbProperties.WICPngSrgbProperties_FORCE_DWORD"]/*' />
     WICPngSrgbProperties_FORCE_DWORD = 0x7fffffff,
 }

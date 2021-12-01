@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HTTP_HEADER_AUTH_TARGET.xml' path='doc/member[@name="WS_HTTP_HEADER_AUTH_TARGET"]/*' />
 public enum WS_HTTP_HEADER_AUTH_TARGET
 {
+    /// <include file='WS_HTTP_HEADER_AUTH_TARGET.xml' path='doc/member[@name="WS_HTTP_HEADER_AUTH_TARGET.WS_HTTP_HEADER_AUTH_TARGET_SERVICE"]/*' />
     WS_HTTP_HEADER_AUTH_TARGET_SERVICE = 1,
+
+    /// <include file='WS_HTTP_HEADER_AUTH_TARGET.xml' path='doc/member[@name="WS_HTTP_HEADER_AUTH_TARGET.WS_HTTP_HEADER_AUTH_TARGET_PROXY"]/*' />
     WS_HTTP_HEADER_AUTH_TARGET_PROXY = 2,
 }

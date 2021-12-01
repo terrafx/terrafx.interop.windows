@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEHLP_LINE.xml' path='doc/member[@name="IMAGEHLP_LINE"]/*' />
 public unsafe partial struct IMAGEHLP_LINE
 {
+    /// <include file='IMAGEHLP_LINE.xml' path='doc/member[@name="IMAGEHLP_LINE.SizeOfStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeOfStruct;
 
+    /// <include file='IMAGEHLP_LINE.xml' path='doc/member[@name="IMAGEHLP_LINE.Key"]/*' />
     [NativeTypeName("PVOID")]
     public void* Key;
 
+    /// <include file='IMAGEHLP_LINE.xml' path='doc/member[@name="IMAGEHLP_LINE.LineNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint LineNumber;
 
+    /// <include file='IMAGEHLP_LINE.xml' path='doc/member[@name="IMAGEHLP_LINE.FileName"]/*' />
     [NativeTypeName("PCHAR")]
     public sbyte* FileName;
 
+    /// <include file='IMAGEHLP_LINE.xml' path='doc/member[@name="IMAGEHLP_LINE.Address"]/*' />
     [NativeTypeName("DWORD")]
     public uint Address;
 }

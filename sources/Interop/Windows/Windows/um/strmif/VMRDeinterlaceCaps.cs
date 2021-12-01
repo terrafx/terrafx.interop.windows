@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VMRDeinterlaceCaps.xml' path='doc/member[@name="VMRDeinterlaceCaps"]/*' />
 public partial struct VMRDeinterlaceCaps
 {
+    /// <include file='VMRDeinterlaceCaps.xml' path='doc/member[@name="VMRDeinterlaceCaps.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='VMRDeinterlaceCaps.xml' path='doc/member[@name="VMRDeinterlaceCaps.dwNumPreviousOutputFrames"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumPreviousOutputFrames;
 
+    /// <include file='VMRDeinterlaceCaps.xml' path='doc/member[@name="VMRDeinterlaceCaps.dwNumForwardRefSamples"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumForwardRefSamples;
 
+    /// <include file='VMRDeinterlaceCaps.xml' path='doc/member[@name="VMRDeinterlaceCaps.dwNumBackwardRefSamples"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumBackwardRefSamples;
 
+    /// <include file='VMRDeinterlaceCaps.xml' path='doc/member[@name="VMRDeinterlaceCaps.DeinterlaceTechnology"]/*' />
     public VMRDeinterlaceTech DeinterlaceTechnology;
 }

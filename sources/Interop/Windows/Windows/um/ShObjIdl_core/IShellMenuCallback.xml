@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellMenuCallback.CallbackSM">
+    <summary>
+      <para>Receives messages from a menu band object.</para>
+    </summary>
+    <param name="psmd">
+      <para>Type: <b>LPSMDATA</b></para>
+      <para>A pointer to a <see cref="SMDATA" /> structure that contains information about the menu.</para>
+    </param>
+    <param name="uMsg">
+      <para>Type: <b>UINT</b></para>
+      <para>A message ID. This will be one of the SMC_XXX values. See <a href="https://docs.microsoft.com//windows/desktop/shell/control-panel-applications">Shell Messages and Notifications</a> for a complete list.</para>
+    </param>
+    <param name="wParam">
+      <para>Type: <b>WPARAM</b></para>
+      <para>A WPARAM value that contains additional information. See the specific SMC_XXX message reference for details.</para>
+    </param>
+    <param name="lParam">
+      <para>Type: <b>LPARAM</b></para>
+      <para>An LPARAM value that contains additional information. See the specific SMC_XXX message reference for details.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellMenuCallback">
+    <summary>
+      <para>A callback interface that exposes a method that receives messages from a menu band.</para>
+    </summary>
+    <remarks>
+      <para>Once you have created the menu band object, pass a pointer to this interface to the menu band object by calling <see cref="IShellMenu.Initialize" />. You receive messages from the menu band through the <see cref="IShellMenuCallback.CallbackSM" /> method.</para>
+    </remarks>
+    <seealso cref="IMenuBand" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/profiles-directory">MenuBand</seealso>
+  </member>
+</doc>

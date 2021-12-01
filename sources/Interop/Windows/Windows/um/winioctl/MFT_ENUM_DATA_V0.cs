@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFT_ENUM_DATA_V0.xml' path='doc/member[@name="MFT_ENUM_DATA_V0"]/*' />
 public partial struct MFT_ENUM_DATA_V0
 {
+    /// <include file='MFT_ENUM_DATA_V0.xml' path='doc/member[@name="MFT_ENUM_DATA_V0.StartFileReferenceNumber"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong StartFileReferenceNumber;
 
+    /// <include file='MFT_ENUM_DATA_V0.xml' path='doc/member[@name="MFT_ENUM_DATA_V0.LowUsn"]/*' />
     [NativeTypeName("USN")]
     public long LowUsn;
 
+    /// <include file='MFT_ENUM_DATA_V0.xml' path='doc/member[@name="MFT_ENUM_DATA_V0.HighUsn"]/*' />
     [NativeTypeName("USN")]
     public long HighUsn;
 }

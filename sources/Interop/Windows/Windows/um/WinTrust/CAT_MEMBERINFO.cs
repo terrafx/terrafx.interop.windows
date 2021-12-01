@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAT_MEMBERINFO.xml' path='doc/member[@name="CAT_MEMBERINFO"]/*' />
 public unsafe partial struct CAT_MEMBERINFO
 {
+    /// <include file='CAT_MEMBERINFO.xml' path='doc/member[@name="CAT_MEMBERINFO.pwszSubjGuid"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszSubjGuid;
 
+    /// <include file='CAT_MEMBERINFO.xml' path='doc/member[@name="CAT_MEMBERINFO.dwCertVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCertVersion;
 }

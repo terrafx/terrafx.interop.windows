@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="QualityMessageType">
+    <summary>
+      <para>Describes a quality message type.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="QualityMessageType.Famine">
+    <summary>
+      <para>Downstream filter needs more data.</para>
+    </summary>
+  </member>
+  <member name="QualityMessageType.Flood">
+    <summary>
+      <para>Downstream filter needs less data.</para>
+    </summary>
+  </member>
+</doc>

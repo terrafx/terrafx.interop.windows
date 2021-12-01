@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CREATEFILE2_EXTENDED_PARAMETERS">
+    <summary>
+      <para>Contains optional extended parameters for
+<see cref="CreateFile2" />.</para>
+    </summary>
+    <remarks>
+      <para>To compile an application that uses the
+<b>CREATEFILE2_EXTENDED_PARAMETERS</b> structure,
+define the <b>_WIN32_WINNT</b> macro as 0x0602 or later. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+      <h3>Caching Behavior</h3>
+      <para>Several of the possible values for the <b>dwFileFlags</b> member are used to control or
+affect how the data associated with the handle is cached by the system. They are:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>FILE_FLAG_NO_BUFFERING</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FILE_FLAG_RANDOM_ACCESS</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FILE_FLAG_SEQUENTIAL_SCAN</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FILE_FLAG_WRITE_THROUGH</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FILE_ATTRIBUTE_TEMPORARY</b>
+          </description>
+        </item>
+      </list>
+      <para>If none of these flags is specified, the system uses a default general-purpose caching scheme. Otherwise, the
+system caching behaves as specified for each flag.</para>
+      <para>Some of these flags should not be combined. For instance, combining
+<b>FILE_FLAG_RANDOM_ACCESS</b> with <b>FILE_FLAG_SEQUENTIAL_SCAN</b> is
+self-defeating.</para>
+      <para>Specifying the <b>FILE_FLAG_SEQUENTIAL_SCAN</b> flag can increase performance for
+applications that read large files using sequential access. Performance gains can be even more noticeable for
+applications that read large files mostly sequentially, but occasionally skip forward over small ranges of
+bytes. If an application moves the file pointer for random access, optimum caching performance most likely will
+not occur. However, correct operation is still guaranteed.</para>
+      <para>The flags <b>FILE_FLAG_WRITE_THROUGH</b> and
+<b>FILE_FLAG_NO_BUFFERING</b> are independent and may be combined.</para>
+      <para>If <b>FILE_FLAG_WRITE_THROUGH</b> is used but
+<b>FILE_FLAG_NO_BUFFERING</b> is not also specified, so that system caching is in effect,
+then the data is written to the system cache but is flushed to disk without delay.</para>
+      <para>If <b>FILE_FLAG_WRITE_THROUGH</b> and <b>FILE_FLAG_NO_BUFFERING</b> are
+both specified, so that system caching is not in effect, then the data is immediately flushed to disk without
+going through the Windows system cache. The operating system also requests a write-through of the hard disk's
+local hardware cache to persistent media.</para>
+      <para>
+        <b>Note</b>  Not all hard disk hardware supports this write-through capability.</para>
+      <para>Proper use of the <b>FILE_FLAG_NO_BUFFERING</b> flag requires special application
+considerations. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/file-buffering">File Buffering</a>.</para>
+      <para>A write-through request via <b>FILE_FLAG_WRITE_THROUGH</b> also causes NTFS to flush any
+metadata changes, such as a time stamp update or a rename operation, that result from processing the request.
+For this reason, the <b>FILE_FLAG_WRITE_THROUGH</b> flag is often used with the
+<b>FILE_FLAG_NO_BUFFERING</b> flag as a replacement for calling the
+<see cref="FlushFileBuffers" /> function after each write, which can
+cause unnecessary performance penalties. Using these flags together avoids those penalties. For general
+information about the caching of files and metadata, see
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/file-caching">File Caching</a>.</para>
+      <para>When <b>FILE_FLAG_NO_BUFFERING</b> is combined with
+<b>FILE_FLAG_OVERLAPPED</b>, the flags give maximum asynchronous performance, because the I/O
+does not rely on the synchronous operations of the memory manager. However, some I/O operations take more time,
+because data is not being held in the cache. Also, the file metadata may still be cached (for example, when
+creating an empty file). To ensure that the metadata is flushed to disk, use the
+<see cref="FlushFileBuffers" /> function.</para>
+      <para>Specifying the <b>FILE_ATTRIBUTE_TEMPORARY</b> attribute causes file systems to avoid
+writing data back to mass storage if sufficient cache memory is available, because an application deletes a
+temporary file after a handle is closed. In that case, the system can entirely avoid writing the data. Although
+it does not directly control data caching in the same way as the previously mentioned flags, the
+<b>FILE_ATTRIBUTE_TEMPORARY</b> attribute does tell the system to hold as much as possible in
+the system cache without writing and therefore may be of concern for certain applications.</para>
+      <h3>Synchronous and Asynchronous I/O Handles</h3>
+      <para>
+        <see cref="CreateFile2" /> provides for creating a file or device handle
+that is either synchronous or asynchronous. A synchronous handle behaves such that I/O function calls using that
+handle are blocked until they complete, while an asynchronous file handle makes it possible for the system to
+return immediately from I/O function calls, whether they completed the I/O operation or not. As stated
+previously, this synchronous versus asynchronous behavior is determined by specifying
+<b>FILE_FLAG_OVERLAPPED</b> within the <b>dwFileFlags</b> member of the
+<b>CREATEFILE2_EXTENDED_PARAMETERS</b></para>
+      <para>structure passed in the <i>pCreateExParams</i> parameter. There are several complexities and
+potential pitfalls when using asynchronous I/O; for more information, see
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/synchronous-and-asynchronous-i-o">Synchronous and Asynchronous I/O</a>.</para>
+    </remarks>
+    <seealso cref="CreateFile2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-structures">File Management Structures</seealso>
+  </member>
+  <member name="CREATEFILE2_EXTENDED_PARAMETERS.dwSize">
+    <summary>
+      <para>Contains the size of this structure,
+<code>sizeof(CREATEFILE2_EXTENDED_PARAMETERS)</code>.</para>
+    </summary>
+  </member>
+  <member name="CREATEFILE2_EXTENDED_PARAMETERS.dwFileAttributes">
+    <summary>
+      <para>The file or device attributes and flags, <b>FILE_ATTRIBUTE_NORMAL</b> being the most
+common default value for files.</para>
+      <para>This parameter can include any combination of the available file attributes
+(<b>FILE_ATTRIBUTE_*</b>). All other file attributes override
+<b>FILE_ATTRIBUTE_NORMAL</b>.</para>
+      <para>
+        <b>Note</b>  When <see cref="CreateFile2" /> opens an existing file, it generally
+combines the file flags with the file attributes of the existing file, and ignores any file attributes supplied
+as part of <i>dwFlagsAndAttributes</i>. Special cases are detailed in
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/creating-and-opening-files">Creating and Opening Files</a>.</para>
+      <para>Some of the following file attributes and flags may only apply to files and not necessarily all other types
+of devices that <see cref="CreateFile2" /> can open. For additional
+information, see the Remarks section of the
+<see cref="CreateFile2" /> reference page and
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/creating-and-opening-files">Creating and Opening Files</a>.</para>
+      <para>For more advanced access to file attributes, see
+<see cref="SetFileAttributes" />. For a complete list
+of all file attributes with their values and descriptions, see
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/file-attribute-constants">File Attribute Constants</a>.</para>
+      <list type="table">
+        <listheader>
+          <description>Attribute</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ATTRIBUTE_ARCHIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>32 (0x20)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file should be archived. Applications use this attribute to mark files for backup or removal.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ATTRIBUTE_ENCRYPTED</b>
+                </description>
+              </item>
+              <item>
+                <description>16384 (0x4000)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or directory is encrypted. For a file, this means that all data in the file is encrypted. For a
+directory, this means that encryption is the default for newly created files and subdirectories. For more
+information, see <a href="https://docs.microsoft.com//windows/desktop/FileIO/file-encryption">File Encryption</a>.</para>
+            <para>This flag has no effect if <b>FILE_ATTRIBUTE_SYSTEM</b> is also specified.</para>
+            <para>This flag is not supported on Home, Home Premium, Starter, or ARM editions of Windows.</para>
+            <para>This flag is not supported when called from a Windows Store app.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ATTRIBUTE_HIDDEN</b>
+                </description>
+              </item>
+              <item>
+                <description>2 (0x2)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is hidden. Do not include it in an ordinary directory listing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ATTRIBUTE_INTEGRITY_STREAM</b>
+                </description>
+              </item>
+              <item>
+                <description>32768 (0x8000)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A file or directory that is configured with integrity. For a file, all data streams in the file have
+integrity. For a directory, integrity is the default for newly created files and subdirectories, unless the
+caller specifies otherwise.</para>
+            <para>This flag is only supported on the ReFS file system.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ATTRIBUTE_NORMAL</b>
+                </description>
+              </item>
+              <item>
+                <description>128 (0x80)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file does not have other attributes set. This attribute is valid only if used alone.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ATTRIBUTE_OFFLINE</b>
+                </description>
+              </item>
+              <item>
+                <description>4096 (0x1000)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The data of a file is not immediately available. This attribute indicates that file data is physically
+moved to offline storage. This attribute is used by Remote Storage, the hierarchical storage management
+software. Applications should not arbitrarily change this attribute.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ATTRIBUTE_READONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>1 (0x1)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is read only. Applications can read the file, but cannot write to or delete it.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ATTRIBUTE_SYSTEM</b>
+                </description>
+              </item>
+              <item>
+                <description>4 (0x4)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is part of or used exclusively by an operating system.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ATTRIBUTE_TEMPORARY</b>
+                </description>
+              </item>
+              <item>
+                <description>256 (0x100)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is being used for temporary storage.</para>
+            <para>For more information, see the <b>Caching Behavior</b> section of this
+topic.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CREATEFILE2_EXTENDED_PARAMETERS.dwFileFlags">
+    <summary>
+      <para>This parameter can contain combinations of flags (<b>FILE_FLAG_*</b>) for control of file
+or device caching behavior, access modes, and other special-purpose flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_BACKUP_SEMANTICS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x02000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is being opened or created for a backup or restore operation. The system ensures that the calling
+process overrides file security checks when the process has <b>SE_BACKUP_NAME</b> and
+<b>SE_RESTORE_NAME</b> privileges. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/SecBP/changing-privileges-in-a-token">Changing Privileges in a Token</a>.</para>
+            <para>You must set this flag to obtain a handle to a directory. A directory handle can be passed to some
+functions instead of a file handle. For more information, see the Remarks section.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_DELETE_ON_CLOSE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x04000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is to be deleted immediately after all of its handles are closed, which includes the specified
+handle and any other open or duplicated handles.</para>
+            <para>If there are existing open handles to a file, the call fails unless they were all opened with the
+<b>FILE_SHARE_DELETE</b> share mode.</para>
+            <para>Subsequent open requests for the file fail, unless the <b>FILE_SHARE_DELETE</b> share
+mode is specified.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_NO_BUFFERING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x20000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or device is being opened with no system caching for data reads and writes. This flag does not
+affect hard disk caching or memory mapped files.</para>
+            <para>There are strict requirements for successfully working with files opened with
+<see cref="CreateFile2" /> using the
+<b>FILE_FLAG_NO_BUFFERING</b> flag, for details see
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/file-buffering">File Buffering</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_OPEN_NO_RECALL</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00100000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file data is requested, but it should continue to be located in remote storage. It should not be
+transported back to local storage. This flag is for use by remote storage systems.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_OPEN_REPARSE_POINT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00200000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Normal <a href="https://docs.microsoft.com//windows/desktop/FileIO/reparse-points">reparse point</a> processing will not
+occur; <see cref="CreateFile2" /> will attempt to open the reparse
+point. When a file is opened, a file handle is returned, whether or not the filter that controls the reparse
+point is operational.</para>
+            <para>This flag cannot be used with the <b>CREATE_ALWAYS</b> flag.</para>
+            <para>If the file is not a reparse point, then this flag is ignored.</para>
+            <para>For more information, see the Remarks section.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_OPEN_REQUIRING_OPLOCK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00040000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is being opened and an opportunistic lock (oplock) on the file is being requested as a single
+atomic operation. The file system checks for oplocks before it performs the create operation, and will fail
+the create with a last error code of <b>ERROR_CANNOT_BREAK_OPLOCK</b> if the result would
+be to break an existing oplock.</para>
+            <para>If you use this flag  and your call to the <see cref="CreateFile2" /> function successfully returns, the first operation you should perform on the file handle is to request an oplock by calling the <see cref="DeviceIOControl" /> function and then pass in <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_request_oplock">FSCTL_REQUEST_OPLOCK</a> or one of the other <a href="https://docs.microsoft.com//windows/desktop/FileIO/opportunistic-lock-operations">Opportunistic Lock Operations</a>.  If you perform other file system operations with the file handle before requesting an oplock, a deadlock might occur.<b>Note</b>  You can safely call the <see cref="CloseHandle" /> function on the file handle without first requesting an oplock.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_OVERLAPPED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x40000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or device is being opened or created for asynchronous I/O.</para>
+            <para>When subsequent I/O operations are completed on this handle, the event specified in the
+<see cref="OVERLAPPED" /> structure will be set to the
+signaled state.</para>
+            <para>If this flag is specified, the file can be used for simultaneous read and write operations.</para>
+            <para>If this flag is not specified, then I/O operations are serialized, even if the calls to the read and write
+functions specify an <see cref="OVERLAPPED" /> structure.</para>
+            <para>For information about considerations when using a file handle created with this flag, see the
+<b>Synchronous and Asynchronous I/O Handles</b>
+section of this topic.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_POSIX_SEMANTICS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Access will occur according to POSIX rules. This includes allowing multiple files with names, differing
+only in case, for file systems that support that naming. Use care when using this option, because files
+created with this flag may not be accessible by applications that are written for MS-DOS or 16-bit
+Windows.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_RANDOM_ACCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x10000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Access is intended to be random. The system can use this as a hint to optimize file caching.</para>
+            <para>This flag has no effect if the file system does not support cached I/O and
+<b>FILE_FLAG_NO_BUFFERING</b>.</para>
+            <para>For more information, see the <b>Caching Behavior</b> section of this
+topic.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_SESSION_AWARE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00800000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or device is being opened with session awareness. If this flag is not specified, then per-session
+devices (such as a device using RemoteFX USB Redirection) cannot be opened by processes running in session 0.
+This flag has no effect for callers not in session 0. This flag is supported only on server editions of
+Windows.</para>
+            <para>
+              <b>Windows Server 2008 R2 and Windows Server 2008:  </b>This flag is not supported before Windows Server 2012.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_SEQUENTIAL_SCAN</b>
+                </description>
+              </item>
+              <item>
+                <description>0x08000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Access is intended to be sequential from beginning to end. The system can use this as a hint to optimize
+file caching.</para>
+            <para>This flag should not be used if read-behind (that is, backwards scans) will be used.</para>
+            <para>This flag has no effect if the file system does not support cached I/O and
+<b>FILE_FLAG_NO_BUFFERING</b>.</para>
+            <para>For more information, see the <b>Caching Behavior</b> section of this
+topic.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_FLAG_WRITE_THROUGH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Write operations will not go through any intermediate cache, they will go directly to disk.</para>
+            <para>For additional information, see the <b>Caching Behavior</b> section of this
+topic.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CREATEFILE2_EXTENDED_PARAMETERS.dwSecurityQosFlags">
+    <summary>
+      <para>The <i>dwSecurityQosFlags</i> parameter specifies SQOS information. For more
+information, see
+<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/impersonation-levels">Impersonation Levels</a>.</para>
+      <list type="table">
+        <listheader>
+          <description>Security flag</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>SECURITY_ANONYMOUS</b>
+          </description>
+          <description>
+            <para>Impersonates a client at the Anonymous impersonation level.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SECURITY_CONTEXT_TRACKING</b>
+          </description>
+          <description>
+            <para>The security tracking mode is dynamic. If this flag is not specified, the security tracking mode is
+static.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SECURITY_DELEGATION</b>
+          </description>
+          <description>
+            <para>Impersonates a client at the Delegation impersonation level.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SECURITY_EFFECTIVE_ONLY</b>
+          </description>
+          <description>
+            <para>Only the enabled aspects of the client's security context are available to the server. If you do not
+specify this flag, all aspects of the client's security context are available.</para>
+            <para>This allows the client to limit the groups and privileges that a server can use while impersonating the
+client.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SECURITY_IDENTIFICATION</b>
+          </description>
+          <description>
+            <para>Impersonates a client at the Identification impersonation level.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SECURITY_IMPERSONATION</b>
+          </description>
+          <description>
+            <para>Impersonate a client at the impersonation level. This is the default behavior if no other flags are
+specified.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CREATEFILE2_EXTENDED_PARAMETERS.lpSecurityAttributes">
+    <summary>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a></para>
+      <para>structure that contains two separate but related data members: an optional security descriptor, and a Boolean
+value that determines whether the returned handle can be inherited by child processes.</para>
+      <para>This parameter can be <b>NULL</b>.</para>
+      <para>If this parameter is <b>NULL</b>, the handle returned by
+<see cref="CreateFile2" /> cannot be inherited by any child processes the
+application may create and the file or device associated with the returned handle gets a default security
+descriptor.</para>
+      <para>The <b>lpSecurityDescriptor</b> member of the structure specifies a
+<see cref="SECURITY_DESCRIPTOR" /> for a file or device. If
+this member is <b>NULL</b>, the file or device associated with the returned handle is
+assigned a default security descriptor.</para>
+      <para>
+        <see cref="CreateFile2" /> ignores the
+<b>lpSecurityDescriptor</b> member when opening an existing file or device, but continues
+to use the <b>bInheritHandle</b> member.</para>
+      <para>The <b>bInheritHandle</b> member of the structure specifies whether the returned handle
+can be inherited.</para>
+      <para>For more information, see the Remarks section of the
+<see cref="CreateFile2" /> topic.</para>
+    </summary>
+  </member>
+  <member name="CREATEFILE2_EXTENDED_PARAMETERS.hTemplateFile">
+    <summary>
+      <para>A valid handle to a template file with the <b>GENERIC_READ</b> access right. The template
+file supplies file attributes and extended attributes for the file that is being created.</para>
+      <para>This parameter can be <b>NULL</b>.</para>
+      <para>When opening an existing file, <see cref="CreateFile2" /> ignores this
+parameter.</para>
+      <para>When opening a new encrypted file, the file inherits the discretionary access control list from its parent
+directory. For additional information, see
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/file-encryption">File Encryption</a>.</para>
+    </summary>
+  </member>
+</doc>

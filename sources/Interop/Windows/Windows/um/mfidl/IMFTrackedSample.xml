@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFTrackedSample.SetAllocator">
+    <summary>
+      <para>Sets the owner for the sample.</para>
+    </summary>
+    <param name="pSampleAllocator">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="pUnkState">
+      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOTACCEPTING</b>
+            </para>
+          </description>
+          <description>
+            <para>The owner was already set. This method cannot be called twice on the sample.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When this method is called, the sample holds an additional reference count on itself. When every other object releases its reference counts on the sample, the sample invokes the <i>pSampleAllocator</i> callback method. To get a pointer to the sample, call <see cref="IMFAsyncResult.GetObject" /> on the asynchronous result object given to the callback's <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+      <para>After the callback is invoked, the sample clears the callback. To reinstate the callback, you must call <b>SetAllocator</b> again.</para>
+      <para>It is safe to pass in the sample's <see cref="IMFSample" /> interface pointer as the state object (<i>pUnkState</i>) for the callback. If <i>pUnkState</i> points to the sample, the <b>SetAllocator</b> method accounts for the additional reference count on <i>pUnkState</i>.</para>
+    </remarks>
+    <seealso cref="IMFTrackedSample" />
+  </member>
+  <member name="IMFTrackedSample">
+    <summary>
+      <para>Tracks the reference counts on a video media sample. Video samples created by the <a href="https://docs.microsoft.com//windows/desktop/api/evr/nc-evr-mfcreatevideosamplefromsurface">MFCreateVideoSampleFromSurface</a> function expose this interface.</para>
+    </summary>
+    <remarks>
+      <para>Use this interface to determine whether it is safe to delete or re-use the buffer contained in a sample. One object assigns itself as the owner of the video sample by calling <see cref="SetAllocator" />. When all objects release their reference counts on the sample, the owner's callback method is invoked.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

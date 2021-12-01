@@ -1,0 +1,1147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOleObject.Advise">
+    <summary>
+      <para>Establishes an advisory connection between a compound document object and the calling object's advise sink, through which the calling object receives notification when the compound document object is renamed, saved, or closed.</para>
+    </summary>
+    <param name="pAdvSink">
+      <para>Pointer to the <see cref="IAdviseSink" /> interface on the advise sink of the calling object.</para>
+    </param>
+    <param name="pdwConnection">
+      <para>Pointer to a token that can be passed to <see cref="IOleObject.Unadvise" /> to delete the advisory connection.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory available for this operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>IOleObject.Advise</b> method sets up an advisory connection between an object and its container, through which the object informs the container's advise sink of close, save, rename, and link-source change events in the object. A container calls this method, normally as part of initializing an object, to register its advisory sink with the object. In return, the object sends the container compound-document notifications by calling <see cref="IAdviseSink" /> or <see cref="IAdviseSink2" />.</para>
+      <para>If container and object successfully establish an advisory connection, the object receiving the call returns a nonzero value through <i>pdwConnection</i> to the container. If the attempt to establish an advisory connection fails, the object returns zero. To delete an advisory connection, the container calls <see cref="IOleObject.Unadvise" /> and passes this nonzero token back to the object.</para>
+      <para>An object can delegate the job of managing and tracking advisory events to an OLE advise holder, to which you obtain a pointer by calling <see cref="CreateOleAdviseHolder" />. The returned <see cref="IOleAdviseHolder" /> interface has three methods for sending advisory notifications, as well as <see cref="IOleAdviseHolder.Advise" />, <see cref="IOleAdviseHolder.Unadvise" />, and <see cref="IOleAdviseHolder.EnumAdvise" /> methods that are identical to those for <see cref="IOleObject" />. Calls to <b>IOleObject.Advise</b>, <see cref="IOleObject.Unadvise" />, or <see cref="IOleObject.EnumAdvise" /> are delegated to corresponding methods in the advise holder.</para>
+      <para>To destroy the advise holder, simply call <see cref="IUnknown.Release" /> on the <see cref="IOleAdviseHolder" /> interface.</para>
+    </remarks>
+    <seealso cref="CreateOleAdviseHolder" />
+    <seealso cref="IOleAdviseHolder.Advise" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.EnumAdvise" />
+    <seealso cref="IOleObject.Unadvise" />
+  </member>
+  <member name="IOleObject.Close">
+    <summary>
+      <para>Changes an embedded object from the running to the loaded state. Disconnects a linked object from its link source.</para>
+    </summary>
+    <param name="dwSaveOption">
+      <para>Indicates whether the object is to be saved as part of the transition to the loaded state. Valid values are taken from the enumeration <see cref="OLECLOSE" />.</para>
+      <para>
+        <b>Note</b>  The OLE 2 user model recommends that object applications do not prompt users before saving linked or embedded objects, including those activated in place. This policy represents a change from the OLE 1 user model, in which object applications always prompt the user to decide whether to save changes.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_PROMPTSAVECANCELLED</b>
+            </para>
+          </description>
+          <description>
+            <para>The user was prompted to save but chose the <b>Cancel</b> button from the prompt message box.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>A container application calls <b>IOleObject.Close</b> when it wants to move the object from a running to a loaded state. Following such a call, the object still appears in its container but is not open for editing. Calling <b>IOleObject.Close</b> on an object that is loaded but not running has no effect. Closing a linked object simply means disconnecting it.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Upon receiving a call to <b>IOleObject.Close</b>, a running object should do the following:</para>
+      <list type="bullet">
+        <item>
+          <description>If the object has been changed since it was last opened for editing, it should request to be saved, or not, according to instructions specified in <i>dwSaveOption</i>. If the option is to save the object, then it should call its container's <see cref="IOleClientSite.SaveObject" /> interface.</description>
+        </item>
+        <item>
+          <description>If the object has <see cref="IDataObject.DAdvise" /> connections with <see cref="ADVF" />_DATAONSTOP flags, then it should send an <see cref="IAdviseSink.OnDataChange" /> notification. See <b>IDataObject.DAdvise</b> for details.</description>
+        </item>
+        <item>
+          <description>If the object currently owns the Clipboard, it should empty it by calling <see cref="OleFlushClipboard" />.</description>
+        </item>
+        <item>
+          <description>If the object is currently visible, notify its container by calling <see cref="IOleClientSite.OnShowWindow" /> with the <i>fshow</i> argument set to <b>FALSE</b>.</description>
+        </item>
+        <item>
+          <description>Send <see cref="IAdviseSink.OnClose" /> notifications to appropriate advise sinks.</description>
+        </item>
+        <item>
+          <description>Finally, forcibly cut off all remoting clients by calling <see cref="CoDisconnectObject" />.</description>
+        </item>
+      </list>
+      <para>If the object application is a local server (an EXE rather than a DLL), closing the object should also shut down the object application unless the latter is supporting other running objects or has another reason to remain in the running state. Such reasons might include the presence of <see cref="IClassFactory.LockServer" /> locks, end-user control of the application, or the existence of other open documents requiring access to the application.</para>
+      <para>Calling <b>IOleObject.Close</b> on a linked object disconnects it from, but does not shut down, its source application. A source application that is visible to the user when the object is closed remains visible and running after the disconnection and does not send an <see cref="IAdviseSink.OnClose" /> notification to the link container.</para>
+    </remarks>
+    <seealso cref="CoDisconnectObject" />
+    <seealso cref="IAdviseSink.OnClose" />
+    <seealso cref="IClassFactory.LockServer" />
+    <seealso cref="IDataObject.DAdvise" />
+    <seealso cref="IOleClientSite.OnShowWindow" />
+    <seealso cref="IOleClientSite.SaveObject" />
+    <seealso cref="IOleObject" />
+    <seealso cref="OLECLOSE" />
+    <seealso cref="OleFlushClipboard" />
+  </member>
+  <member name="IOleObject.DoVerb">
+    <summary>
+      <para>Requests that an object perform an action in response to an end-user's action. The possible actions are enumerated for the object in <see cref="IOleObject.EnumVerbs" />.</para>
+    </summary>
+    <param name="iVerb">
+      <para>Number assigned to the verb in the <see cref="OLEVERB" /> structure returned by <see cref="IOleObject.EnumVerbs" />.</para>
+    </param>
+    <param name="lpmsg">
+      <para>Pointer to the <see cref="MSG" /> structure describing the event (such as a double-click) that invoked the verb. The caller should pass the <b>MSG</b> structure unmodified, without attempting to interpret or alter the values of any of the structure members.</para>
+    </param>
+    <param name="pActiveSite">
+      <para>Pointer to the <see cref="IOleClientSite" /> interface on the object's active client site, where the event occurred that invoked the verb.</para>
+    </param>
+    <param name="lindex">
+      <para>This parameter is reserved and must be zero.</para>
+    </param>
+    <param name="hwndParent">
+      <para>Handle of the document window containing the object. This and <i>lprcPosRect</i> together make it possible to open a temporary window for an object, where <i>hwndParent</i> is the parent window in which the object's window is to be displayed, and <i>lprcPosRect</i> defines the area available for displaying the object window within that parent. A temporary window is useful, for example, to a multimedia object that opens itself for playback but not for editing.</para>
+    </param>
+    <param name="lprcPosRect">
+      <para>Pointer to the <see cref="RECT" /> structure containing the coordinates, in pixels, that define an object's bounding rectangle in <i>hwndParent</i>. This and <i>hwndParent</i> together enable opening multimedia objects for playback but not for editing.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NOT_INPLACEACTIVE</b>
+            </para>
+          </description>
+          <description>
+            <para>iVerb set to OLEIVERB_UIACTIVATE or OLEIVERB_INPLACEACTIVATE and object is not already visible.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_CANT_BINDTOSOURCE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object handler or link object cannot connect to the link source.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>DV_E_LINDEX</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid lindex.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLEOBJ_S_CANNOT_DOVERB_NOW</b>
+            </para>
+          </description>
+          <description>
+            <para>The verb is valid, but in the object's current state it cannot carry out the corresponding action.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLEOBJ_S_INVALIDHWND</b>
+            </para>
+          </description>
+          <description>
+            <para>DoVerb was successful but <i>hwndParent</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLEOBJ_E_NOVERBS</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support any verbs.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLEOBJ_S_INVALIDVERB</b>
+            </para>
+          </description>
+          <description>
+            <para>Link source is across a network that is not connected to a drive on this computer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_CONNECT</b>
+            </para>
+          </description>
+          <description>
+            <para>Link source is across a network that is not connected to a drive on this computer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_CLASSDIFF</b>
+            </para>
+          </description>
+          <description>
+            <para>Class for source of link has undergone a conversion.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Object does not support in-place activation or does not recognize a negative verb number.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A "verb" is an action that an OLE object takes in response to a message from its container. An object's container, or a client linked to the object, normally calls <b>IOleObject.DoVerb</b> in response to some end-user action, such as double-clicking on the object. The various actions that are available for a given object are enumerated in an <see cref="OLEVERB" /> structure, which the container obtains by calling <see cref="IOleObject.EnumVerbs" />. <b>IOleObject.DoVerb</b> matches the value of iVerb against the iVerb member of the structure to determine which verb to invoke.</para>
+      <para>Through <see cref="IOleObject.EnumVerbs" />, an object, rather than its container, determines which verbs (i.e., actions) it supports. OLE 2 defines seven verbs that are available, but not necessarily useful, to all objects. In addition, each object can define additional verbs that are unique to it. The following table describes the verbs defined by OLE.</para>
+      <list type="table">
+        <listheader>
+          <description>Verb</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>OLEIVERB_PRIMARY (0L)</para>
+          </description>
+          <description>
+            <para>Specifies the action that occurs when an end user double-clicks the object in its container. The object, not the container, determines this action. If the object supports in-place activation, the primary verb usually activates the object in place.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>OLEIVERB_SHOW (-1)</para>
+          </description>
+          <description>
+            <para>Instructs an object to show itself for editing or viewing. Called to display newly inserted objects for initial editing and to show link sources. Usually an alias for some other object-defined verb.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>OLEIVERB_OPEN (-2)</para>
+          </description>
+          <description>
+            <para>Instructs an object, including one that otherwise supports in-place activation, to open itself for editing in a window separate from that of its container. If the object does not support in-place activation, this verb has the same semantics as OLEIVERB_SHOW.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>OLEIVERB_HIDE (-3)</para>
+          </description>
+          <description>
+            <para>Causes an object to remove its user interface from the view. Applies only to objects that are activated in-place.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>OLEIVERB_UIACTIVATE (-4)</para>
+          </description>
+          <description>
+            <para>Activates an object in place, along with its full set of user-interface tools, including menus, toolbars, and its name in the title bar of the container window. If the object does not support in-place activation, it should return E_NOTIMPL.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>OLEIVERB_INPLACEACTIVATE (-5)</para>
+          </description>
+          <description>
+            <para>Activates an object in place without displaying tools, such as menus and toolbars, that end users need to change the behavior or appearance of the object. Single-clicking such an object causes it to negotiate the display of its user-interface tools with its container. If the container refuses, the object remains active but without its tools displayed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>OLEIVERB_DISCARDUNDOSTATE (-6)</para>
+          </description>
+          <description>
+            <para>Used to tell objects to discard any undo state that they may be maintaining without deactivating the object.</para>
+          </description>
+        </item>
+      </list>
+      <h3>Notes to Callers</h3>
+      <para>Containers call <b>IOleObject.DoVerb</b> as part of initializing a newly created object. Before making the call, containers should first call <see cref="IOleObject.SetClientSite" /> to inform the object of its display location and <see cref="IOleObject.SetHostNames" /> to alert the object that it is an embedded object and to trigger appropriate changes to the user interface of the object application in preparation for opening an editing window.</para>
+      <para>
+        <b>IOleObject.DoVerb</b> automatically runs the OLE server application. If an error occurs during verb execution, the object application is shut down.</para>
+      <para>If an end user invokes a verb by some means other than selecting a command from a menu (say, by double-clicking or, more rarely, single-clicking an object), the object's container should pass a pointer to a Windows <see cref="MSG" /> structure containing the appropriate message. For example, if the end user invokes a verb by double-clicking the object, the container should pass a <b>MSG</b> structure containing WM_LBUTTONDBLCLK, WM_MBUTTONDBLCLK, or WM_RBUTTONDBLCLK. If the container passes no message, lpmsg should be set to <b>NULL</b>. The object should ignore the <b>hwnd</b> member of the passed <b>MSG</b> structure, but can use all the other MSG members.</para>
+      <para>If the object's embedding container calls <b>IOleObject.DoVerb</b>, the client-site pointer (<i>pClientSite</i>) passed to <b>IOleObject.DoVerb</b> is the same as that of the embedding site. If the embedded object is a link source, the pointer passed to <b>IOleObject.DoVerb</b> is that of the linking client's client site.</para>
+      <para>When <b>IOleObject.DoVerb</b> is invoked on an OLE link, it may return OLE_E_CLASSDIFF or MK_CONNECTMANUALLY. The link object returns the former error when the link source has been subjected to some sort of conversion while the link was passive. The link object returns the latter error when the link source is located on a network drive that is not currently connected to the caller's computer. The only way to connect a link under these conditions is to first call <see cref="IUnknown.QueryInterface" />, ask for <see cref="IOleLink" />, allocate a bind context, and run the link source by calling <see cref="IOleLink.BindToSource" />.</para>
+      <para>Container applications that do not support general in-place activation can still use the <i>hwndParent</i> and <i>lprcPosRect</i> parameters to support in-place playback of multimedia files. Containers must pass valid <i>hwndParent</i> and <i>lprcPosRect</i> parameters to <b>IOleObject.DoVerb</b>.</para>
+      <para>Some code samples pass a lindex value of -1 instead of zero. The value -1 works but should be avoided in favor of zero. The <i>lindex</i> parameter is a reserved parameter, and for reasons of consistency Microsoft recommends assigning a zero value to all reserved parameters.</para>
+      <h3>Notes to Implementers</h3>
+      <para>In addition to the above verbs, an object can define in its <see cref="OLEVERB" /> structure additional verbs that are specific to itself. Positive numbers designate these object-specific verbs. An object should treat any unknown positive verb number as if it were the primary verb and return OLEOBJ_S_INVALIDVERB to the calling function. The object should ignore verbs with negative numbers that it does not recognize and return E_NOTIMPL.</para>
+      <para>If the verb being executed places the object in the running state, you should register the object in the running object table (ROT) even if its server application doesn't support linking. Registration is important because the object at some point may serve as the source of a link in a container that supports links to embeddings. Registering the object with the ROT enables the link client to get a pointer to the object directly, instead of having to go through the object's container. To perform the registration, call <see cref="IOleClientSite.GetMoniker" /> to get the full moniker of the object, call the <see cref="GetRunningObjectTable" /> function to get a pointer to the ROT, and then call <see cref="IRunningObjectTable.Register" />.</para>
+      <para>
+        <b>Note</b>  When the object leaves the running state, remember to revoke the object's registration with the ROT by calling <see cref="IOleObject.Close" />. If the object's container document is renamed while the object is running, you should revoke the object's registration and re-register it with the ROT, using its new name. The container should inform the object of its new moniker either by calling <see cref="IOleObject.SetMoniker" /> or by responding to the object's calling <see cref="IOleClientSite.GetMoniker" />.</para>
+      <para>When showing a window as a result of <b>IOleObject.DoVerb</b>, it is very important for the object to explicitly call <see cref="SetForegroundWindow" /> on its editing window. This ensures that the object's window will be visible to the user even if another process originally obscured it. For more information see <b>SetForegroundWindow</b> and <see cref="SetActiveWindow" />.</para>
+    </remarks>
+    <seealso cref="GetRunningObjectTable" />
+    <seealso cref="IOleClientSite.GetMoniker" />
+    <seealso cref="IOleLink.BindToSource" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.Close" />
+    <seealso cref="IOleObject.EnumVerbs" />
+    <seealso cref="IOleObject.GetMoniker" />
+    <seealso cref="IOleObject.SetMoniker" />
+    <seealso cref="IRunningObjectTable.Register" />
+    <seealso cref="OleRun" />
+  </member>
+  <member name="IOleObject.EnumAdvise">
+    <summary>
+      <para>Retrieves a pointer to an enumerator that can be used to enumerate the advisory connections registered for an object, so a container can know what to release prior to closing down.</para>
+    </summary>
+    <param name="ppenumAdvise">
+      <para>Address of <see cref="IEnumSTATDATA" /> pointer variable that receives the interface pointer to the enumerator object. If the object does not have any advisory connections or if an error occurs, the implementation must set <i>ppenumAdvise</i> to <b>NULL</b>. Each time an object receives a successful call to <b>IOleObject.EnumAdvise</b>, it must increase the reference count on <i>ppenumAdvise</i>. It is the caller's responsibility to call Release when it is done with the <i>ppenumAdvise</i>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="IOleObject.EnumAdvise" /> is not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>IOleObject.EnumAdvise</b> method supplies an enumerator that provides a way for containers to keep track of advisory connections registered for their objects. A container normally would call this function so that it can instruct an object to release each of its advisory connections prior to closing down.</para>
+      <para>The enumerator to which you get access through <b>IOleObject.EnumAdvise</b> enumerates items of type <see cref="STATDATA" />. Upon receiving the pointer, the container can then loop through <b>STATDATA</b> and call <see cref="IOleObject.Unadvise" /> for each enumerated connection.</para>
+      <para>The usual way to implement this function is to delegate the call to the <see cref="IOleAdviseHolder" /> interface. Only the <b>pAdvise</b> and <b>dwConnection</b> members of <see cref="STATDATA" /> are relevant for <b>IOleObject.EnumAdvise</b>.</para>
+    </remarks>
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.Advise" />
+    <seealso cref="IOleObject.Unadvise" />
+  </member>
+  <member name="IOleObject.EnumVerbs">
+    <summary>
+      <para>Exposes a pull-down menu listing the verbs available for an object in ascending order by verb number.</para>
+    </summary>
+    <param name="ppEnumOleVerb">
+      <para>Address of <see cref="IEnumOLEVERB" /> pointer variable that receives the interface pointer to the new enumerator object. Each time an object receives a call to <b>IOleObject.EnumVerbs</b>, it must increase the reference count on <i>ppEnumOleVerb</i>. It is the caller's responsibility to call <see cref="IUnknown.Release" /> when it is done with <i>ppEnumOleVerb</i>. If an error occurs, <i>ppEnumOleVerb</i> must be set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_S_USEREG</b>
+            </para>
+          </description>
+          <description>
+            <para>Delegate to the default handler to use the entries in the registry to provide the enumeration.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLEOBJ_E_NOVERBS</b>
+            </para>
+          </description>
+          <description>
+            <para>Object does not support any verbs.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.DoVerb" />
+    <seealso cref="OleRegEnumVerbs" />
+  </member>
+  <member name="IOleObject.GetClientSite">
+    <summary>
+      <para>Retrieves a pointer to an embedded object's client site.</para>
+    </summary>
+    <param name="ppClientSite">
+      <para>Address of <see cref="IOleClientSite" /> pointer variable that receives the interface pointer to the object's client site. If an object does not yet know its client site, or if an error has occurred, <i>ppClientSite</i> must be set to <b>NULL</b>. Each time an object receives a call to <b>IOleObject.GetClientSite</b>, it must increase the reference count on <i>ppClientSite</i>. It is the caller's responsibility to call <see cref="Release" /> when it is done with <i>ppClientSite</i>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>Link clients most commonly call the <b>IOleObject.GetClientSite</b> method in conjunction with the <see cref="IOleClientSite.GetContainer" /> method to traverse a hierarchy of nested objects. A link client calls <b>IOleObject.GetClientSite</b> to get a pointer to the link source's client site. The client then calls <b>IOleClientSite.GetContainer</b> to get a pointer to the link source's container. Finally, the client calls <see cref="QueryInterface" /> to get <see cref="IOleObject" /> and <b>IOleObject.GetClientSite</b> to get the container's client site within its container. By repeating this sequence of calls, the caller can eventually retrieve a pointer to the master container in which all the other objects are nested.</para>
+      <h3>Notes to Callers</h3>
+      <para>The returned client-site pointer will be <b>NULL</b> if an embedded object has not yet been informed of its client site. This will be the case with a newly loaded or created object when a container has passed a <b>NULL</b> client-site pointer to one of the object-creation helper functions but has not yet called <see cref="IOleObject.SetClientSite" /> as part of initializing the object.</para>
+    </remarks>
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.SetClientSite" />
+  </member>
+  <member name="IOleObject.GetClipboardData">
+    <summary>
+      <para>Retrieves a data object containing the current contents of the embedded object on which this method is called. Using the pointer to this data object, it is possible to create a new embedded object with the same data as the original.</para>
+    </summary>
+    <param name="dwReserved">
+      <para>This parameter is reserved and must be zero.</para>
+    </param>
+    <param name="ppDataObject">
+      <para>Address of <see cref="IDataObject" /> pointer variable that receives the interface pointer to the data object. If an error occurs, <i>ppDataObject</i> must be set to <b>NULL</b>. Each time an object receives a call to <b>IOleObject.GetClipboardData</b>, it must increase the reference count on <i>ppDataObject</i>. It is the caller's responsibility to call <see cref="Release" /> when it is done with <i>ppDataObject</i>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="GetClipboardData" /> is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NOTRUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The object is not running.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You can use the <b>IOleObject.GetClipboardData</b> method to convert a linked object to an embedded object, in which case the container application would call <b>IOleObject.GetClipboardData</b> and then pass the data received to <see cref="OleCreateFromData" />. This method returns a pointer to a data object that is identical to what would have been passed to the clipboard by a standard copy operation.</para>
+      <h3>Notes to Callers</h3>
+      <para>If you want a stable snapshot of the current contents of an embedded object, call <b>IOleObject.GetClipboardData</b>. Should the data change, you will need to call the function again for an updated snapshot. If you want the caller to be informed of changes that occur to the data, call <see cref="QueryInterface" />, then call <see cref="IDataObject.DAdvise" />.</para>
+      <h3>Notes to Implementers</h3>
+      <para>If you implement this function, you must return an <see cref="IDataObject" /> pointer for an object whose data will not change.</para>
+    </remarks>
+    <seealso cref="IDataObject" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.InitFromData" />
+    <seealso cref="OleCreateFromData" />
+  </member>
+  <member name="IOleObject.GetExtent">
+    <summary>
+      <para>Retrieves a running object's current display size.</para>
+    </summary>
+    <param name="dwDrawAspect">
+      <para>The aspect of the object whose limit is to be retrieved; the value is obtained from the enumerations <see cref="DVASPECT" /> and from <see cref="DVASPECT2" />. Note that newer objects and containers that support optimized drawing interfaces support the <b>DVASPECT2</b> enumeration values. Older objects and containers that do not support optimized drawing interfaces may not support <b>DVASPECT2</b>. The most common value for this method is DVASPECT_CONTENT, which specifies a full rendering of the object within its container.</para>
+    </param>
+    <param name="psizel">
+      <para>Pointer to where the object's size is to be returned.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The supplied <i>dwDrawAspect</i> value is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A container calls <b>IOleObject.GetExtent</b> on a running object to retrieve its current display size. If the container can accommodate that size, it will normally do so because the object, after all, knows what size it should be better than the container does. A container normally makes this call as part of initializing an object.</para>
+      <para>The display size returned by <b>IOleObject.GetExtent</b> may differ from the size last set by <see cref="IOleObject.SetExtent" /> because the latter method dictates the object's display space at the time the method is called but does not necessarily change the object's native size, as determined by its application.</para>
+      <para>If one of the new aspects is requested in <i>dwAspect</i>, this method can either fail or return the same rectangle as for the DVASPECT_CONTENT aspect.</para>
+      <para>
+        <b>Note</b>  This method must return the same size as DVASPECT_CONTENT for all the new aspects in <see cref="DVASPECT2" />. <see cref="IViewObject2.GetExtent" /> must do the same thing.</para>
+      <h3>Notes to Callers</h3>
+      <para>Because a container can make this call only to a running object, the container must instead call <see cref="IViewObject2.GetExtent" /> if it wants to get the display size of a loaded object from its cache.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Implementation consists of filling the sizel structure with an object's height and width.</para>
+    </remarks>
+    <seealso cref="DVASPECT" />
+    <seealso cref="DVASPECT2" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.GetExtent" />
+    <seealso cref="IOleObject.SetExtent" />
+  </member>
+  <member name="IOleObject.GetMiscStatus">
+    <summary>
+      <para>Retrieves the status of an object at creation and loading.</para>
+    </summary>
+    <param name="dwAspect">
+      <para>The aspect of an object about which status information is being requested. The value is obtained from the enumeration <see cref="DVASPECT" />.</para>
+    </param>
+    <param name="pdwStatus">
+      <para>Pointer to where the status information is returned. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_S_USEREG</b>
+            </para>
+          </description>
+          <description>
+            <para>Delegate the retrieval of miscellaneous status information to the default handler's implementation of this method.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CO_E_CLASSNOTREG</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no CLSID registered for the object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CO_E_READREGDB</b>
+            </para>
+          </description>
+          <description>
+            <para>Error accessing the registry.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A container normally calls <b>IOleObject.GetMiscStatus</b> when it creates or loads an object in order to determine how to display the object and what types of behaviors it supports.</para>
+      <para>Objects store status information in the registry. If the object is not running, the default handler's implementation of <b>IOleObject.GetMiscStatus</b> retrieves this information from the registry. If the object is running, the default handler invokes <b>IOleObject.GetMiscStatus</b> on the object itself.</para>
+      <para>The information that is actually stored in the registry varies with individual objects. The status values to be returned are defined in the enumeration <see cref="OLEMISC" />.</para>
+      <para>The default value of <b>IOleObject.GetMiscStatus</b> is used if a subkey corresponding to the specified <see cref="DVASPECT" /> is not found. To set an OLE control, specify DVASPECT==1. This will cause the following to occur in the registry:</para>
+      <code>
+        <b>HKEY_CLASSES_ROOT\CLSID\ . . .</b>
+        <b>MiscStatus</b> = 1</code>
+      <h3>Notes to Implementers</h3>
+      <para>Implementation normally consists of delegating the call to the default handler.</para>
+    </remarks>
+    <seealso cref="DVASPECT" />
+    <seealso cref="FORMATETC" />
+    <seealso cref="IOleObject" />
+    <seealso cref="OLEMISC" />
+  </member>
+  <member name="IOleObject.GetMoniker">
+    <summary>
+      <para>Retrieves an embedded object's moniker, which the caller can use to link to the object.</para>
+    </summary>
+    <param name="dwAssign">
+      <para>Determines how the moniker is assigned to the object. Depending on the value of <i>dwAssign</i>, <b>IOleObject.GetMoniker</b> does one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Obtains a moniker only if one has already been assigned.</description>
+        </item>
+        <item>
+          <description>Forces assignment of a moniker, if necessary, in order to satisfy the call.</description>
+        </item>
+        <item>
+          <description>Obtains a temporary moniker.</description>
+        </item>
+      </list>
+      <para>Values for <i>dwAssign</i> are specified in the enumeration <see cref="OLEGETMONIKER" />.</para>
+      <para>
+        <b>Note</b>   You cannot pass <see cref="OLEGETMONIKER" />_UNASSIGN when calling <b>IOleObject.GetMoniker</b>. This value is valid only when calling <b>IOleObject.GetMoniker</b>.</para>
+    </param>
+    <param name="dwWhichMoniker">
+      <para>Specifies the form of the moniker being requested. Possible values are taken from the enumeration <see cref="OLEWHICHMK" />.</para>
+    </param>
+    <param name="ppmk">
+      <para>Address of <see cref="IMoniker" /> pointer variable that receives the interface pointer to the object's moniker. If an error occurs, <i>ppmk</i> must be set to <b>NULL</b>. Each time an object receives a call to <b>IOleObject.GetMoniker</b>, it must increase the reference count on <i>ppmk</i>. It is the caller's responsibility to call Release when it is done with <i>ppmk</i>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>The <b>IOleObject.GetMoniker</b> method returns an object's moniker. Like <see cref="IOleObject.SetMoniker" />, this method is important only in the context of managing links to embedded objects and even in that case is optional. A potential link client that requires an object's moniker to bind to the object can call this method to obtain that moniker. The default implementation of <b>IOleObject.GetMoniker</b> calls the <see cref="IOleClientSite.GetMoniker" />, returning E_UNEXPECTED if the object is not running or does not have a valid pointer to a client site.</para>
+    </remarks>
+    <seealso cref="CreateItemMoniker" />
+    <seealso cref="IOleClientSite.GetMoniker" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.SetMoniker" />
+    <seealso cref="OLEGETMONIKER" />
+    <seealso cref="OLEWHICHMK" />
+  </member>
+  <member name="IOleObject.GetUserClassID">
+    <summary>
+      <para>Retrieves an object's class identifier, the CLSID corresponding to the string identifying the object to an end user.</para>
+    </summary>
+    <param name="pClsid">
+      <para>Pointer to the class identifier (CLSID) to be returned. An object's CLSID is the binary equivalent of the user-type name returned by <see cref="IOleObject.GetUserType" />.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>IOleObject.GetUserClassID</b> returns the CLSID associated with the object in the registration database. Normally, this value is identical to the CLSID stored with the object, which is returned by <see cref="IPersist.GetClassID" />. For linked objects, this is the CLSID of the last bound link source. If the object is running in an application different from the one in which it was created and for the purpose of being edited is emulating a class that the container application recognizes, the CLSID returned will be that of the class being emulated rather than that of the object's own class.</para>
+    </remarks>
+    <seealso cref="GetConvertStg" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.GetUserType" />
+    <seealso cref="IPersist.GetClassID" />
+    <seealso cref="OleDoAutoConvert" />
+    <seealso cref="OleSetAutoConvert" />
+    <seealso cref="SetConvertStg" />
+  </member>
+  <member name="IOleObject.GetUserType">
+    <summary>
+      <para>Retrieves the user-type name of an object for display in user-interface elements such as menus, list boxes, and dialog boxes.</para>
+    </summary>
+    <param name="dwFormOfType">
+      <para>The form of the user-type name to be presented to users. Possible values are obtained from the <see cref="USERCLASSTYPE" /> enumeration.</para>
+    </param>
+    <param name="pszUserType">
+      <para>Address of <see cref="LPOLESTR" /> pointer variable that receives a pointer to the user type string. The caller must free <i>pszUserType</i> using the current <see cref="IMalloc" /> instance. If an error occurs, the implementation must set <i>pszUserType</i> to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_S_USEREG</b>
+            </para>
+          </description>
+          <description>
+            <para>Delegate to the default handler's implementation using the registry to provide the requested information.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Containers call <b>IOleObject.GetUserType</b> in order to represent embedded objects in list boxes, menus, and dialog boxes by their normal, user-recognizable names. Examples include "Word Document," "Excel Chart," and "Paintbrush Object." The information returned by <b>IOleObject.GetUserType</b> is the user-readable equivalent of the binary class identifier returned by <see cref="IOleObject.GetUserClassID" />.</para>
+      <h3>Notes to Callers</h3>
+      <para>The default handler's implementation of <b>IOleObject.GetUserType</b> uses the object's class identifier (the <i>pClsid</i> parameter returned by <see cref="IOleObject.GetUserClassID" />) and the <i>dwFormOfType</i> parameter together as a key into the registry. If an entry is found that matches the key exactly, then the user type specified by that entry is returned. If only the CLSID part of the key matches, then the lowest-numbered entry available (usually the full name) is used. If the CLSID is not found, or there are no user types registered for the class, the user type currently found in the object's storage is used.</para>
+      <para>You should not cache the string returned from <b>IOleObject.GetUserType</b>. Instead, call this method each and every time the string is needed. This guarantees correct results when the embedded object is being converted from one type into another without the caller's knowledge. Calling this method is inexpensive because the default handler implements it using the registry.</para>
+      <h3>Notes to Implementers</h3>
+      <para>You can use the implementation provided by the default handler by returning OLE_S_USEREG as your application's implementation of this method. If the user type name is an empty string, the message "Unknown Object" is returned.</para>
+      <para>You can call the OLE helper function <see cref="OleRegGetUserType" /> to return the appropriate user type.</para>
+    </remarks>
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.GetUserClassID" />
+    <seealso cref="IOleObject.SetHostNames" />
+    <seealso cref="OleRegGetUserType" />
+    <seealso cref="ReadFmtUserTypeStg" />
+    <seealso cref="USERCLASSTYPE" />
+  </member>
+  <member name="IOleObject.InitFromData">
+    <summary>
+      <para>Initializes a newly created object with data from a specified data object, which can reside either in the same container or on the Clipboard.</para>
+    </summary>
+    <param name="pDataObject">
+      <para>Pointer to the <see cref="IDataObject" /> interface on the data object from which the initialization data is to be obtained. This parameter can be <b>NULL</b>, which indicates that the caller wants to know if it is worthwhile trying to send data; that is, whether the container is capable of initializing an object from data passed to it. The data object to be passed can be based on either the current selection within the container document or on data transferred to the container from an external source.</para>
+    </param>
+    <param name="fCreation">
+      <para>
+        <b>TRUE</b> indicates the container is inserting a new object inside itself and initializing that object with data from the current selection; <b>FALSE</b> indicates a more general programmatic data transfer, most likely from a source other than the current selection.</para>
+    </param>
+    <param name="dwReserved">
+      <para>This parameter is reserved and must be zero.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK if <i>pDataObject</i> is not <b>NULL</b>, the object successfully attempted to initialize itself from the provided data; if <i>pDataObject</i> is <b>NULL</b>, the object is able to attempt a successful initialization.. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>If pDataObject is not <b>NULL</b>, the object made no attempt to initialize itself; if <i>pDataObject</i> is <b>NULL</b>, the object cannot attempt to initialize itself from the data provided.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support <i>InitFromData</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NOTRUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The object is not running and therefore cannot perform the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method enables a container document to insert within itself a new object whose content is based on a current data selection within the container. For example, a spreadsheet document may want to create a graph object based on data in a selected range of cells.</para>
+      <para>Using this method, a container can also replace the contents of an embedded object with data transferred from another source. This provides a convenient way of updating an embedded object.</para>
+      <h3>Notes to Callers</h3>
+      <para>Following initialization, the container should call <see cref="IOleObject.GetMiscStatus" /> to check the value of the OLEMISC_INSERTNOTREPLACE bit. If the bit is on, the new object inserts itself following the selected data. If the bit is off, the new object replaces the selected data.</para>
+      <h3>Notes to Implementers</h3>
+      <para>A container specifies whether to base a new object on the current selection by passing either <b>TRUE</b> or <b>FALSE</b> to the <i>fCreation</i> parameter.</para>
+      <para>If <i>fCreation</i> is <b>TRUE</b>, the container is attempting to create a new instance of an object, initializing it with the selected data specified by the data object.</para>
+      <para>If <i>fCreation</i> is <b>FALSE</b>, the caller is attempting to replace the object's current contents with that pointed to by <i>pDataObject</i>. The usual constraints that apply to an object during a paste operation should be applied here. For example, if the type of the data provided is unacceptable, the object should fail to initialize and return S_FALSE.</para>
+      <para>If the object returns S_FALSE, it cannot initialize itself from the provided data.</para>
+    </remarks>
+    <seealso cref="IDataObject.SetData" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.GetMiscStatus" />
+  </member>
+  <member name="IOleObject.IsUpToDate">
+    <summary>
+      <para>Checks whether an object is up to date.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK if the object is up to date; otherwise, S_FALSE. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_UNAVAILABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The status of object cannot be determined in a timely manner.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>IOleObject.IsUpToDate</b> method provides a way for containers to check recursively whether all objects are up to date. That is, when the container calls this method on the first object, the object in turn calls it for all its own objects, and they in turn for all of theirs, until all objects have been checked.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Because of the recursive nature of <b>IOleObject.IsUpToDate</b>, determining whether an object is out-of-date, particularly one containing one or more other objects, can be as time-consuming as simply updating the object in the first place. If you would rather avoid lengthy queries of this type, make sure that <b>IOleObject.IsUpToDate</b> returns OLE_E_UNAVAILABLE. In cases where the object to be queried is small and contains no objects itself, thereby making an efficient query possible, this method can return either S_OK or S_FALSE.</para>
+    </remarks>
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.Update" />
+  </member>
+  <member name="IOleObject.SetClientSite">
+    <summary>
+      <para>Informs an embedded object of its display location, called a "client site," within its container.</para>
+    </summary>
+    <param name="pClientSite">
+      <para>Pointer to the <see cref="IOleClientSite" /> interface on the container application's client-site.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Within a compound document, each embedded object has its own client site - the place where it is displayed and through which it receives information about its storage, user interface, and other resources. <b>IOleObject.SetClientSite</b> is the only method enabling an embedded object to obtain a pointer to its client site.</para>
+      <h3>Notes to Callers</h3>
+      <para>A container can notify an object of its client site either at the time the object is created or, subsequently, when the object is initialized.</para>
+      <para>When creating or loading an object, a container may pass a client-site pointer (along with other arguments) to one of the following helper functions: <see cref="OleCreate" />, <see cref="OleCreateFromFile" />, <see cref="OleCreateFromData" /> or <see cref="OleLoad" />. These helper functions load an object handler for the new object and call <b>IOleObject.SetClientSite</b> on the container's behalf before returning a pointer to the new object.</para>
+      <para>Passing a client-site pointer informs the object handler that the client site is ready to process requests. If the client site is unlikely to be ready immediately after the handler is loaded, you may want your container to pass a <b>NULL</b> client-site pointer to the helper function. The <b>NULL</b> pointer says that no client site is available and thereby defers notifying the object handler of the client site until the object is initialized. In response, the helper function returns a pointer to the object, but upon receiving that pointer the container must call <b>IOleObject.SetClientSite</b> as part of initializing the new object.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Implementation consists simply of incrementing the reference count on, and storing, the pointer to the client site.</para>
+    </remarks>
+    <seealso cref="IOleClientSite" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.GetClientSite" />
+    <seealso cref="OleCreate" />
+    <seealso cref="OleCreateFromData" />
+    <seealso cref="OleCreateFromFile" />
+    <seealso cref="OleLoad" />
+  </member>
+  <member name="IOleObject.SetColorScheme">
+    <summary>
+      <para>Specifies the color palette that the object application should use when it edits the specified object.</para>
+    </summary>
+    <param name="pLogpal">
+      <para>Pointer to a <see cref="LOGPALETTE" /> structure that specifies the recommended palette.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Object does not support setting palettes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_PALETTE</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid LOGPALETTE structure pointed to by <i>pLogPal</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NOTRUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>Object must be running to perform this operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>IOleObject.SetColorScheme</b> method sends the container application's recommended color palette to the object application, which is not obliged to use it.</para>
+    </remarks>
+    <seealso cref="IOleObject" />
+  </member>
+  <member name="IOleObject.SetExtent">
+    <summary>
+      <para>Informs an object of how much display space its container has assigned it.</para>
+    </summary>
+    <param name="dwDrawAspect">
+      <para>DWORD that describes which form, or "aspect," of an object is to be displayed. The object's container obtains this value from the enumeration <see cref="DVASPECT" /> (refer to the <see cref="FORMATETC" /> enumeration). The most common aspect is DVASPECT_CONTENT, which specifies a full rendering of the object within its container. An object can also be rendered as an icon, a thumbnail version for display in a browsing tool, or a print version, which displays the object as it would be rendered using the <b>File Print</b> command.</para>
+    </param>
+    <param name="psizel">
+      <para>Pointer to the size limit for the object.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NOTRUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The object is not running.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A container calls <b>IOleObject.SetExtent</b> when it needs to dictate to an embedded object the size at which it will be displayed. Often, this call occurs in response to an end user resizing the object window. Upon receiving the call, the object, if possible, should recompose itself gracefully to fit the new window.</para>
+      <para>Whenever possible, a container seeks to display an object at its finest resolution, sometimes called the object's native size. All objects, however, have a default display size specified by their applications, and in the absence of other constraints, this is the size they will use to display themselves. Since an object knows its optimum display size better than does its container, the latter normally requests that size from a running object by calling <b>IOleObject.SetExtent</b>. Only in cases where the container cannot accommodate the value returned by the object does it override the object's preference by calling <b>IOleObject.SetExtent</b>.</para>
+      <h3>Notes to Callers</h3>
+      <para>You can call <b>IOleObject.SetExtent</b> on an object only when the object is running. If a container resizes an object while an object is not running, the container should keep track of the object's new size but defer calling <b>IOleObject.SetExtent</b> until a user activates the object. If the OLEMISC_RECOMPOSEONRESIZE bit is set on an object, its container should force the object to run before calling <b>IOleObject.SetExtent</b>.</para>
+      <para>As noted above, a container may want to delegate responsibility for setting the size of an object's display site to the object itself, by calling <b>IOleObject.SetExtent</b>.</para>
+      <h3>Notes to Implementers</h3>
+      <para>You may want to implement this method so that your object rescales itself to match as closely as possible the maximum space available to it in its container.</para>
+      <para>If an object's size is fixed, that is, if it cannot be set by its container, <b>IOleObject.SetExtent</b> should return E_FAIL. This is always the case with linked objects, whose sizes are set by their link sources, not by their containers.</para>
+    </remarks>
+    <seealso cref="IAdviseSink.OnViewChange" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.GetExtent" />
+    <seealso cref="IViewObject2.GetExtent" />
+  </member>
+  <member name="IOleObject.SetHostNames">
+    <summary>
+      <para>Provides an object with the names of its container application and the compound document in which it is embedded.</para>
+    </summary>
+    <param name="szContainerApp">
+      <para>Pointer to the name of the container application in which the object is running.</para>
+    </param>
+    <param name="szContainerObj">
+      <para>Pointer to the name of the compound document that contains the object. If you do not wish to display the name of the compound document, you can set this parameter to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <h3>Notes for Callers</h3>
+      <para>Call <b>IOleObject.SetHostNames</b> only for embedded objects, because for linked objects, the link source provides its own separate editing window and title bar information.</para>
+      <h3>Notes to Implementers</h3>
+      <para>An object's application of <b>IOleObject.SetHostNames</b> should include whatever modifications to its user interface may be appropriate to an object's embedded state. Such modifications typically will include adding and removing menu commands and altering the text displayed in the title bar of the editing window.</para>
+      <para>The complete window title for an embedded object in an SDI container application or an MDI application with a maximized child window should appear as follows:</para>
+      <code>&lt;object application name&gt; - &lt;object short type&gt; in &lt;container document&gt;
+</code>
+      <para>Otherwise, the title should be:</para>
+      <code>&lt;object application name&gt; - &lt;container document&gt;
+</code>
+      <para>The "object short type" refers to a form of an object's name short enough to be displayed in full in a list box. Because these identifying strings are not stored as part of the persistent state of the object, <b>IOleObject.SetHostNames</b> must be called each time the object loads or runs.</para>
+    </remarks>
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.GetUserType" />
+  </member>
+  <member name="IOleObject.SetMoniker">
+    <summary>
+      <para>Notifies an object of its container's moniker, the object's own moniker relative to the container, or the object's full moniker.</para>
+    </summary>
+    <param name="dwWhichMoniker">
+      <para>The moniker is passed in <i>pmk</i>. Possible values are from the enumeration <see cref="OLEWHICHMK" />.</para>
+    </param>
+    <param name="pmk">
+      <para>Pointer to where to return the moniker.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A container that supports links to embedded objects must be able to inform an embedded object when its moniker has changed. Otherwise, subsequent attempts by link clients to bind to the object will fail. The <b>IOleObject.SetMoniker</b> method provides one way for a container to communicate this information.</para>
+      <para>The container can pass either its own moniker, an object's moniker relative to the container, or an object's full moniker. In practice, if a container passes anything other than an object's full moniker, each object calls the container back to request assignment of the full moniker, which the object requires to register itself in the running object table.</para>
+      <para>The moniker of an object relative to its container is stored by the object handler as part of the object's persistent state. The moniker of the object's container, however, must not be persistently stored inside the object because the container can be renamed at any time.</para>
+      <h3>Notes to Callers</h3>
+      <para>A container calls <b>IOleObject.SetMoniker</b> when the container has been renamed, and the container's embedded objects currently or can potentially serve as link sources. Containers call SetMoniker mainly in the context of linking because an embedded object is already aware of its moniker. Even in the context of linking, calling this method is optional because objects can call <see cref="IOleClientSite.GetMoniker" /> to force assignment of a new moniker.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Upon receiving a call to <b>IOleObject.SetMoniker</b>, an object should register its full moniker in the running object table and send <see cref="IAdviseSink.OnRename" /> notification to all advise sinks that exist for the object.</para>
+    </remarks>
+    <seealso cref="CreateItemMoniker" />
+    <seealso cref="IAdviseSink.OnRename" />
+    <seealso cref="IOleClientSite.GetMoniker" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.GetMoniker" />
+  </member>
+  <member name="IOleObject.Unadvise">
+    <summary>
+      <para>Deletes a previously established advisory connection.</para>
+    </summary>
+    <param name="dwConnection">
+      <para>Contains a token of nonzero value, which was previously returned from <see cref="IOleObject.Advise" /> through its <i>pdwConnection</i> parameter.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NOCONNECTION</b>
+            </para>
+          </description>
+          <description>
+            <para>dwConnection does not represent a valid advisory connection.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Normally, containers call <b>IOleObject.Unadvise</b> at shutdown or when an object is deleted. In certain cases, containers can call this method on objects that are running but not currently visible as a way of reducing the overhead of maintaining multiple advisory connections. The easiest way to implement this method is to delegate the call to <b>IOleObject.Unadvise</b>.</para>
+    </remarks>
+    <seealso cref="IOleAdviseHolder.Unadvise" />
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.Advise" />
+    <seealso cref="IOleObject.EnumAdvise" />
+  </member>
+  <member name="IOleObject.Update">
+    <summary>
+      <para>Updates an object handler's or link object's data or view caches.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_CANT_BINDTOSOURCE</b>
+            </para>
+          </description>
+          <description>
+            <para>Cannot run object to get updated data. The object is for some reason unavailable to the caller.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CACHE_E_NOCACHE_UPDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>No caches were updated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CACHE_S_SOMECACHES_NOTUPDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>Some caches were not updated.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>Update</b> method provides a way for containers to keep data updated in their linked and embedded objects. A link object can become out-of-date if the link source has been updated. An embedded object that contains links to other objects can also become out of date. An embedded object that does not contain links cannot become out of date because its data is not linked to another source.</para>
+      <h3>Notes to Implementers</h3>
+      <para>When a container calls a link object's <b>IOleObject.Update</b> method, the link object finds the link source and gets a new presentation from it. This process may also involve running one or more object applications, which could be time-consuming.</para>
+      <para>When a container calls an embedded object's <b>IOleObject.Update</b> method, it is requesting the object to update all link objects it may contain. In response, the object handler recursively calls <b>IOleObject.Update</b> for each of its own linked objects, running each one as needed.</para>
+    </remarks>
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleObject.IsUpToDate" />
+  </member>
+  <member name="IOleObject">
+    <summary>
+      <para>Serves as the principal means by which an embedded object provides basic functionality to, and communicates
+with, its container.</para>
+    </summary>
+  </member>
+</doc>

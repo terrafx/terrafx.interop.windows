@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_RENDERING_CONTROLS">
+    <summary>
+      <para>Describes limitations to be applied to an imaging effect renderer.</para>
+    </summary>
+    <remarks>
+      <para>The renderer can allocate tiles larger than the minimum tile allocation. The allocated tiles will be powers of two of the minimum size on each axis, except that the size on each axis will not exceed the guaranteed maximum texture size for the device feature level.</para>
+      <para>The "minimum pixel render extent" is the size of the square tile below which the renderer will expand the tile allocation rather than attempting to subdivide the rendering tile any further. When this threshold is reached, the allocation tile size is expanded. This might occur repeatedly until either rendering can proceed, or it is determined that the graph can't be rendered.</para>
+      <para>The buffer precision is used for intermediate buffers if it is otherwise unspecified by the effects (for example, through calling <see cref="SetValue" /> on the effect with the <see cref="D2D1_PROPERTY_PRECISION" /> property) or the internal effect topology if required. If the buffer type on the context is <see cref="D2D1_BUFFER_PRECISION_UNKNOWN" />, and otherwise not specified by the effect or transform, then the precision of the output will be the maximum precision of the inputs to the transform. The buffer precision does not affect the number of channels used.</para>
+    </remarks>
+    <seealso cref="ID2D1DeviceContext.SetRenderingControls method" />
+  </member>
+  <member name="D2D1_RENDERING_CONTROLS.bufferPrecision">
+    <summary>
+      <para>The buffer precision used by default if the buffer precision is not otherwise specified by the effect or by the transform.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RENDERING_CONTROLS.tileSize">
+    <summary>
+      <para>The tile allocation size to be used by the imaging effect renderer.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPreviousVersionsInfo.xml' path='doc/member[@name="IPreviousVersionsInfo"]/*' />
 [Guid("76E54780-AD74-48E3-A695-3BA9A0AFF10D")]
 [NativeTypeName("struct IPreviousVersionsInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Inter
         return ((delegate* unmanaged<IPreviousVersionsInfo*, Guid*, void**, int>)(lpVtbl[0]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Inter
         return ((delegate* unmanaged<IPreviousVersionsInfo*, uint>)(lpVtbl[1]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Inter
         return ((delegate* unmanaged<IPreviousVersionsInfo*, uint>)(lpVtbl[2]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPreviousVersionsInfo.xml' path='doc/member[@name="IPreviousVersionsInfo.AreSnapshotsAvailable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable)

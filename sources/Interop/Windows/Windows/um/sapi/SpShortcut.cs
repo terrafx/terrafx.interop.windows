@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpShortcut.xml' path='doc/member[@name="SpShortcut"]/*' />
 [Guid("0D722F1A-9FCF-4E62-96D8-6DF8F01A26AA")]
 public partial struct SpShortcut
 {

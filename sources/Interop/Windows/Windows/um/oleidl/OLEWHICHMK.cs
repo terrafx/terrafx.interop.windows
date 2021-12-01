@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLEWHICHMK.xml' path='doc/member[@name="OLEWHICHMK"]/*' />
 public enum OLEWHICHMK
 {
+    /// <include file='OLEWHICHMK.xml' path='doc/member[@name="OLEWHICHMK.OLEWHICHMK_CONTAINER"]/*' />
     OLEWHICHMK_CONTAINER = 1,
+
+    /// <include file='OLEWHICHMK.xml' path='doc/member[@name="OLEWHICHMK.OLEWHICHMK_OBJREL"]/*' />
     OLEWHICHMK_OBJREL = 2,
+
+    /// <include file='OLEWHICHMK.xml' path='doc/member[@name="OLEWHICHMK.OLEWHICHMK_OBJFULL"]/*' />
     OLEWHICHMK_OBJFULL = 3,
 }

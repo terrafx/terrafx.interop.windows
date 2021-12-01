@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1LookupTable3D">
+    <summary>
+      <para>A container for 3D lookup table data that can be passed to the LookupTable3D effect.</para>
+      <para>An ID2DLookupTable3D instance is created using <see cref="ID2D1DeviceContext2.CreateLookupTable3D" /> or ID2D1EffectContext1.CreateLookupTable3D.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMC_TAGGED_CERT_REQUEST.xml' path='doc/member[@name="CMC_TAGGED_CERT_REQUEST"]/*' />
 public partial struct CMC_TAGGED_CERT_REQUEST
 {
+    /// <include file='CMC_TAGGED_CERT_REQUEST.xml' path='doc/member[@name="CMC_TAGGED_CERT_REQUEST.dwBodyPartID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBodyPartID;
 
+    /// <include file='CMC_TAGGED_CERT_REQUEST.xml' path='doc/member[@name="CMC_TAGGED_CERT_REQUEST.SignedCertRequest"]/*' />
     [NativeTypeName("CRYPT_DER_BLOB")]
     public CRYPT_DATA_BLOB SignedCertRequest;
 }

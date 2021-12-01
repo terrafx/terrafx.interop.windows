@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_DATA_BLOB.xml' path='doc/member[@name="CRYPT_DATA_BLOB"]/*' />
 public unsafe partial struct CRYPT_DATA_BLOB
 {
+    /// <include file='CRYPT_DATA_BLOB.xml' path='doc/member[@name="CRYPT_DATA_BLOB.cbData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbData;
 
+    /// <include file='CRYPT_DATA_BLOB.xml' path='doc/member[@name="CRYPT_DATA_BLOB.pbData"]/*' />
     public byte* pbData;
 }

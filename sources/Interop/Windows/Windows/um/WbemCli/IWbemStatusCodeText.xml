@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWbemStatusCodeText.GetErrorCodeText">
+    <summary>
+      <para>The
+<b>IWbemStatusCodeText.GetErrorCodeText</b></para>
+      <para>method returns the text string description associated with the error code.</para>
+    </summary>
+    <param name="hRes">
+      <para>Handle to the error code for which you want a description.</para>
+    </param>
+    <param name="LocaleId">
+      <para>Reserved. This parameter must be 0 (zero).</para>
+    </param>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0 (zero).</para>
+    </param>
+    <param name="MessageText">
+      <para>Pointer to a string containing the descriptive text of the error code.</para>
+    </param>
+    <returns>
+      <para>This method returns <b>WBEM_S_NO_ERROR</b> if successful.</para>
+    </returns>
+    <remarks>
+      <para>To enable <b>GetErrorCodeText</b> to
+return the text string description, the caller must free the pointer in the <i>MessageText</i></para>
+      <para>parameter.</para>
+      <h4>Examples</h4>
+      <para>The following example describes how to implement
+<b>GetErrorCodeText</b>.</para>
+      <code>IWbemStatusCodeText * pStatus = NULL;
+
+    SCODE sc = CoCreateInstance(CLSID_WbemStatusCodeText,
+                                0,
+                                CLSCTX_INPROC_SERVER,
+                                IID_IWbemStatusCodeText,
+                                (LPVOID *) &amp;amp;amp;amp;amp;amp;pStatus);
+
+    if(sc == S_OK)
+    {
+        BSTR bstr = 0;
+
+        // The m_hres isan HRESULT variable that has already
+        // been declared and initialized.
+        sc = pStatus-&gt;GetErrorCodeText(m_hres, 0, 0, &amp;amp;amp;amp;amp;amp;bstr);
+        if(sc == S_OK)
+        {
+            // to do, display this:
+            SysFreeString(bstr);
+            bstr = 0;
+        }
+        sc = pStatus-&gt;GetFacilityCodeText(m_hres, 0, 0, &amp;amp;amp;amp;amp;amp;bstr);
+        if(sc == S_OK)
+        {
+            // to do, display this:
+            SysFreeString(bstr);
+            bstr = 0;
+        }
+        pStatus-&gt;Release();
+    }
+
+    // clean up.
+    pStatus-&gt;Release();
+</code>
+    </remarks>
+  </member>
+  <member name="IWbemStatusCodeText.GetFacilityCodeText">
+    <summary>
+      <para>The
+<b>IWbemStatusCodeText.GetFacilityCodeText</b></para>
+      <para>method returns the name of the subsystem where the error occurred, such as "Windows", "WBEM", "SSPI", or "RPC".</para>
+    </summary>
+    <param name="hRes">
+      <para>Handle to the error code for which you want a description.</para>
+    </param>
+    <param name="LocaleId">
+      <para>Reserved. This parameter must be 0 (zero).</para>
+    </param>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0 (zero).</para>
+    </param>
+    <param name="MessageText">
+      <para>Pointer to a string containing the descriptive text of the error code.</para>
+    </param>
+    <returns>
+      <para>This method returns <b>WMI_S_NO_ERROR</b> if successful.</para>
+    </returns>
+    <remarks>
+      <para>To enable the
+<b>GetFacilityCodeText</b> method to
+return the subsystem name, the caller must free the pointer in the <i>MessageText</i></para>
+      <para>parameter.</para>
+      <h4>Examples</h4>
+      <para>The following example describes how to use
+<b>GetFacilityCodeText</b>.</para>
+      <code>IWbemStatusCodeText * pStatus = NULL;
+
+    SCODE sc = CoCreateInstance(CLSID_WbemStatusCodeText,
+                                    0, CLSCTX_INPROC_SERVER,
+                                    IID_IWbemStatusCodeText,
+                                    (LPVOID *) &amp;amp;amp;amp;amp;amp;pStatus);
+
+    if(sc == S_OK)
+    {
+        BSTR bstr = 0;
+
+        // The m_hres is an HRESULT variable that has already
+        // been declared and initialized.
+        sc = pStatus-&gt;GetErrorCodeText(m_hres, 0, 0, &amp;amp;amp;amp;amp;amp;bstr);
+        if(sc == S_OK)
+        {
+            // ...display string here.
+            SysFreeString(bstr);
+            bstr = 0;
+        }
+        sc = pStatus-&gt;GetFacilityCodeText(m_hres, 0, 0, &amp;amp;amp;amp;amp;amp;bstr);
+        if(sc == S_OK)
+        {
+            // to do, display this.
+            SysFreeString(bstr);
+            bstr = 0;
+        }
+        pStatus-&gt;Release();
+    }
+
+    // clean up.
+    pStatus-&gt;Release();
+</code>
+    </remarks>
+  </member>
+  <member name="IWbemStatusCodeText">
+    <summary>
+      <para>The
+<b>IWbemStatusCodeText</b> interface extracts text string descriptions of error codes or the name of the subsystem where the error occurred.</para>
+    </summary>
+  </member>
+</doc>

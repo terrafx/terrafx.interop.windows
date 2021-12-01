@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_SIMPLE_COLOR_PROFILE">
+    <summary>
+      <para>Simple description of a color space.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SIMPLE_COLOR_PROFILE.redPrimary">
+    <summary>
+      <para>The xy coordinates of the red primary in the CIExyY color space.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SIMPLE_COLOR_PROFILE.greenPrimary">
+    <summary>
+      <para>The xy coordinates of the green primary in the CIExyY color space.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SIMPLE_COLOR_PROFILE.bluePrimary">
+    <summary>
+      <para>The xy coordinates of the blue primary in the CIExyY color space.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SIMPLE_COLOR_PROFILE.whitePointXZ">
+    <summary>
+      <para>The XZ tristimulus values for the whitepoint in the CIEXYZ color space, normalized to luminance (Y) of 1.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SIMPLE_COLOR_PROFILE.gamma">
+    <summary>
+      <para>The gamma encoding to use for this color space.</para>
+    </summary>
+  </member>
+</doc>

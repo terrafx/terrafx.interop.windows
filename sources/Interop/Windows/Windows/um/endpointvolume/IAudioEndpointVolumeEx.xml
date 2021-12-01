@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioEndpointVolumeEx.GetVolumeRangeChannel">
+    <summary>
+      <para>The <b>GetVolumeRangeChannel</b> method gets the volume range for a specified channel.</para>
+    </summary>
+    <param name="iChannel">
+      <para>The channel number for which to get the volume range. If the audio stream has <i>n</i> channels, the channels are numbered from 0 to <i>n</i>– 1. To obtain the number of channels in the stream, call the <see cref="IAudioEndpointVolume.GetChannelCount" /> method.</para>
+    </param>
+    <param name="pflVolumeMindB">
+      <para>Receives  the minimum volume level for the channel, in decibels.</para>
+    </param>
+    <param name="pflVolumeMaxdB">
+      <para>Receives  the maximum volume level for the channel, in decibels.</para>
+    </param>
+    <param name="pflVolumeIncrementdB">
+      <para>Receives the volume increment for the channel, in decibels.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pfLevelMinDB</i>, <i>pfLevelMaxDB</i>, or <i>pfVolumeIncrementDB</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAudioEndpointVolumeEx" />
+  </member>
+  <member name="IAudioEndpointVolumeEx">
+    <summary>
+      <para>The <b>IAudioEndpointVolumeEx</b> interface provides volume controls on the audio stream to or from a device endpoint.</para>
+      <para>A client obtains a reference to the <b>IAudioEndpointVolumeEx</b> interface of an endpoint device by calling the <see cref="IMMDevice.Activate" /> method with parameter <i>iid</i> set to REFIID IID_IAudioEndpointVolumeEx.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpointvolume-api">EndpointVolume API</seealso>
+    <seealso cref="IAudioEndpointVolume" />
+    <seealso cref="IMMDevice.Activate" />
+    <seealso cref="ISimpleAudioVolume Interface" />
+  </member>
+</doc>

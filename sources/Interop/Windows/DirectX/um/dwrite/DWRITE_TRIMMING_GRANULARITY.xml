@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_TRIMMING_GRANULARITY">
+    <summary>
+      <para>Specifies  the text granularity used to trim text overflowing the layout box.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TRIMMING_GRANULARITY.DWRITE_TRIMMING_GRANULARITY_NONE">
+    <summary>
+      <para>No trimming occurs. Text flows beyond the layout width.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TRIMMING_GRANULARITY.DWRITE_TRIMMING_GRANULARITY_CHARACTER">
+    <summary>
+      <para>Trimming occurs at a character cluster boundary.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TRIMMING_GRANULARITY.DWRITE_TRIMMING_GRANULARITY_WORD">
+    <summary>
+      <para>Trimming occurs at a word boundary.</para>
+    </summary>
+  </member>
+</doc>

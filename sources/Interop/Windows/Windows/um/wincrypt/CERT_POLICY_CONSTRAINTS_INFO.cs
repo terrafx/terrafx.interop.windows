@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_POLICY_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_POLICY_CONSTRAINTS_INFO"]/*' />
 public partial struct CERT_POLICY_CONSTRAINTS_INFO
 {
+    /// <include file='CERT_POLICY_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_POLICY_CONSTRAINTS_INFO.fRequireExplicitPolicy"]/*' />
     public BOOL fRequireExplicitPolicy;
 
+    /// <include file='CERT_POLICY_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_POLICY_CONSTRAINTS_INFO.dwRequireExplicitPolicySkipCerts"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRequireExplicitPolicySkipCerts;
 
+    /// <include file='CERT_POLICY_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_POLICY_CONSTRAINTS_INFO.fInhibitPolicyMapping"]/*' />
     public BOOL fInhibitPolicyMapping;
 
+    /// <include file='CERT_POLICY_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_POLICY_CONSTRAINTS_INFO.dwInhibitPolicyMappingSkipCerts"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwInhibitPolicyMappingSkipCerts;
 }

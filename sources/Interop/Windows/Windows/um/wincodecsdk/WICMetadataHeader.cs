@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICMetadataHeader.xml' path='doc/member[@name="WICMetadataHeader"]/*' />
 public unsafe partial struct WICMetadataHeader
 {
+    /// <include file='WICMetadataHeader.xml' path='doc/member[@name="WICMetadataHeader.Position"]/*' />
     public ULARGE_INTEGER Position;
 
+    /// <include file='WICMetadataHeader.xml' path='doc/member[@name="WICMetadataHeader.Length"]/*' />
     [NativeTypeName("ULONG")]
     public uint Length;
 
+    /// <include file='WICMetadataHeader.xml' path='doc/member[@name="WICMetadataHeader.Header"]/*' />
     public byte* Header;
 
+    /// <include file='WICMetadataHeader.xml' path='doc/member[@name="WICMetadataHeader.DataOffset"]/*' />
     public ULARGE_INTEGER DataOffset;
 }

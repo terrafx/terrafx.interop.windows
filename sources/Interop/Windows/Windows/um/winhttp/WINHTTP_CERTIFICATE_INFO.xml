@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_CERTIFICATE_INFO">
+    <summary>
+      <para>The <b>WINHTTP_CERTIFICATE_INFO</b> structure contains certificate information returned from the server. This structure is used by the
+<see cref="WinHttpQueryOption" /> function.</para>
+    </summary>
+    <remarks>
+      <para>The <b>WINHTTP_CERTIFICATE_INFO</b> structure contains information on the certificate returned by the server when the connection uses SSL/TLS. The <see cref="WinHttpQueryOption" /> function returns the <b>WINHTTP_CERTIFICATE_INFO</b> structure when the <i>dwOption</i> parameter passed to the <b>WinHttpQueryOption</b> function is set to <b>WINHTTP_OPTION_SECURITY_CERTIFICATE_STRUCT</b>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WinHttp/option-flags">Option Flags</a>.</para>
+      <para>The <see cref="WinHttpQueryOption" /> function does not set  the <b>lpszProtocolName</b>, <b>lpszSignatureAlgName</b>, and <b>lpszEncryptionAlgName</b> members of the <b>WINHTTP_CERTIFICATE_INFO</b> structure, so these member are always returned as <b>NULL</b>.</para>
+      <para>Once the application no longer needs the returned <b>WINHTTP_CERTIFICATE_INFO</b> structure, the  <see cref="LocalFree" /> function should be called to free any pointers returned in the structure. The structure members containing pointers that are not NULL and need to be freed are <b>lpszSubjectInfo</b> and <b>lpszIssuerInfo</b>.</para>
+      <para>
+        <b>Note</b>  For Windows XP and Windows 2000, see the <a href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-start-page">Run-Time Requirements</a> section of the <a href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-start-page">Windows HTTP Services</a> start page.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinHttp/option-flags">Option Flags</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-versions">WinHTTP
+Versions</seealso>
+    <seealso cref="WinHttpQueryOption" />
+  </member>
+  <member name="WINHTTP_CERTIFICATE_INFO.ftExpiry">
+    <summary>
+      <para>A
+<see cref="FILETIME" /> structure that contains the date the certificate expires.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CERTIFICATE_INFO.ftStart">
+    <summary>
+      <para>A
+<see cref="FILETIME" /> structure that contains the date the certificate becomes valid.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CERTIFICATE_INFO.lpszSubjectInfo">
+    <summary>
+      <para>A pointer to a buffer that contains the name of the organization, site, and server for which the certificate was issued.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CERTIFICATE_INFO.lpszIssuerInfo">
+    <summary>
+      <para>A pointer to a buffer that contains the name of the organization, site, and server that issued the certificate.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CERTIFICATE_INFO.lpszProtocolName">
+    <summary>
+      <para>A pointer to a buffer that contains the name of the protocol used to provide the secure connection. This member is not current used.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CERTIFICATE_INFO.lpszSignatureAlgName">
+    <summary>
+      <para>A pointer to a buffer that contains the name of the algorithm used to sign the certificate. This member is not current used.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CERTIFICATE_INFO.lpszEncryptionAlgName">
+    <summary>
+      <para>A pointer to a buffer that contains the name of the algorithm used to perform encryption over the secure channel (SSL/TLS) connection. This member is not current used.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CERTIFICATE_INFO.dwKeySize">
+    <summary>
+      <para>The size, in bytes, of the key.</para>
+    </summary>
+  </member>
+</doc>

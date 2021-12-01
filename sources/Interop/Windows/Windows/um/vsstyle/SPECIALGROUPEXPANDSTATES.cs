@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPECIALGROUPEXPANDSTATES.xml' path='doc/member[@name="SPECIALGROUPEXPANDSTATES"]/*' />
 public enum SPECIALGROUPEXPANDSTATES
 {
+    /// <include file='SPECIALGROUPEXPANDSTATES.xml' path='doc/member[@name="SPECIALGROUPEXPANDSTATES.EBSGE_NORMAL"]/*' />
     EBSGE_NORMAL = 1,
+
+    /// <include file='SPECIALGROUPEXPANDSTATES.xml' path='doc/member[@name="SPECIALGROUPEXPANDSTATES.EBSGE_HOT"]/*' />
     EBSGE_HOT = 2,
+
+    /// <include file='SPECIALGROUPEXPANDSTATES.xml' path='doc/member[@name="SPECIALGROUPEXPANDSTATES.EBSGE_PRESSED"]/*' />
     EBSGE_PRESSED = 3,
 }

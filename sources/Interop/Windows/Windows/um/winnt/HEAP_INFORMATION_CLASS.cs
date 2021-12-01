@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HEAP_INFORMATION_CLASS.xml' path='doc/member[@name="HEAP_INFORMATION_CLASS"]/*' />
 public enum HEAP_INFORMATION_CLASS
 {
+    /// <include file='HEAP_INFORMATION_CLASS.xml' path='doc/member[@name="HEAP_INFORMATION_CLASS.HeapCompatibilityInformation"]/*' />
     HeapCompatibilityInformation = 0,
+
+    /// <include file='HEAP_INFORMATION_CLASS.xml' path='doc/member[@name="HEAP_INFORMATION_CLASS.HeapEnableTerminationOnCorruption"]/*' />
     HeapEnableTerminationOnCorruption = 1,
+
+    /// <include file='HEAP_INFORMATION_CLASS.xml' path='doc/member[@name="HEAP_INFORMATION_CLASS.HeapOptimizeResources"]/*' />
     HeapOptimizeResources = 3,
 }

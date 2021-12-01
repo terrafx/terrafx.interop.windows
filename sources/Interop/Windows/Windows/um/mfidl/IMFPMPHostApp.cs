@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFPMPHostApp.xml' path='doc/member[@name="IMFPMPHostApp"]/*' />
 [Guid("84D2054A-3AA1-4728-A3B0-440A418CF49C")]
 [NativeTypeName("struct IMFPMPHostApp : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface
         return ((delegate* unmanaged<IMFPMPHostApp*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface
         return ((delegate* unmanaged<IMFPMPHostApp*, uint>)(lpVtbl[1]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface
         return ((delegate* unmanaged<IMFPMPHostApp*, uint>)(lpVtbl[2]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMPHostApp.xml' path='doc/member[@name="IMFPMPHostApp.LockProcess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT LockProcess()
@@ -48,6 +53,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface
         return ((delegate* unmanaged<IMFPMPHostApp*, int>)(lpVtbl[3]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMPHostApp.xml' path='doc/member[@name="IMFPMPHostApp.UnlockProcess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnlockProcess()
@@ -55,6 +61,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface
         return ((delegate* unmanaged<IMFPMPHostApp*, int>)(lpVtbl[4]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMPHostApp.xml' path='doc/member[@name="IMFPMPHostApp.ActivateClassById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ActivateClassById([NativeTypeName("LPCWSTR")] ushort* id, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

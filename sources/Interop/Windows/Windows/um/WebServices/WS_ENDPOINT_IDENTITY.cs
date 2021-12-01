@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_ENDPOINT_IDENTITY"]/*' />
 public partial struct WS_ENDPOINT_IDENTITY
 {
+    /// <include file='WS_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_ENDPOINT_IDENTITY.identityType"]/*' />
     public WS_ENDPOINT_IDENTITY_TYPE identityType;
 }

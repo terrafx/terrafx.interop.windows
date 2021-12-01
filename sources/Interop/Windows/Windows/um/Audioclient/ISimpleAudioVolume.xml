@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISimpleAudioVolume.GetMasterVolume">
+    <summary>
+      <para>The <b>GetMasterVolume</b> method retrieves the client volume level for the audio session.</para>
+    </summary>
+    <param name="pfLevel">
+      <para>Pointer to a <b>float</b> variable into which the method writes the client volume level. The volume level is a value in the range 0.0 to 1.0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pfLevel</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The Windows audio service is not running.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method retrieves the client volume level for the session. This is the volume level that the client set in a previous call to the <see cref="ISimpleAudioVolume.SetMasterVolume" /> method.</para>
+    </remarks>
+    <seealso cref="IAudioClient.Initialize" />
+    <seealso cref="ISimpleAudioVolume Interface" />
+    <seealso cref="ISimpleAudioVolume.SetMasterVolume" />
+  </member>
+  <member name="ISimpleAudioVolume.GetMute">
+    <summary>
+      <para>The <b>GetMute</b> method retrieves the current muting state for the audio session.</para>
+    </summary>
+    <param name="pbMute">
+      <para>Pointer to a <b>BOOL</b> variable into which the method writes the muting state. <b>TRUE</b> indicates that muting is enabled. <b>FALSE</b> indicates that it is disabled.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pbMute</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The Windows audio service is not running.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IChannelAudioVolume Interface" />
+    <seealso cref="ISimpleAudioVolume Interface" />
+    <seealso cref="ISimpleAudioVolume.SetMute" />
+  </member>
+  <member name="ISimpleAudioVolume.SetMasterVolume">
+    <summary>
+      <para>The <b>SetMasterVolume</b> method sets the master volume level for the audio session.</para>
+    </summary>
+    <param name="fLevel">
+      <para>The new master volume level. Valid volume levels are in the range 0.0 to 1.0.</para>
+    </param>
+    <param name="EventContext">
+      <para>Pointer to the event-context GUID. If a call to this method generates a volume-change event, the session manager sends notifications to all clients that have registered <see cref="IAudioSessionEvents" /> interfaces with the session manager. The session manager includes the <i>EventContext</i> pointer value with each notification. Upon receiving a notification, a client can determine whether it or another client is the source of the event by inspecting the <i>EventContext</i> value. This scheme depends on the client selecting a value for this parameter that is unique among all clients in the session. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>fLevel</i> is not in the range 0.0 to 1.0.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The Windows audio service is not running.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method generates a volume-change event only if the method call changes the volume level of the session. For example, if the volume level is 0.4 when the call occurs, and the call sets the volume level to 0.4, no event is generated.</para>
+    </remarks>
+    <seealso cref="IAudioSessionEvents Interface" />
+    <seealso cref="ISimpleAudioVolume Interface" />
+    <seealso cref="ISimpleAudioVolume.GetMasterVolume" />
+  </member>
+  <member name="ISimpleAudioVolume.SetMute">
+    <summary>
+      <para>The <b>SetMute</b> method sets the muting state for the audio session.</para>
+    </summary>
+    <param name="bMute">
+      <para>The new muting state. <b>TRUE</b> enables muting. <b>FALSE</b> disables muting.</para>
+    </param>
+    <param name="EventContext">
+      <para>Pointer to the event-context GUID. If a call to this method generates a volume-change event, the session manager sends notifications to all clients that have registered <see cref="IAudioSessionEvents" /> interfaces with the session manager. The session manager includes the <i>EventContext</i> pointer value with each notification. Upon receiving a notification, a client can determine whether it or another client is the source of the event by inspecting the <i>EventContext</i> value. This scheme depends on the client selecting a value for this parameter that is unique among all clients in the session. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The Windows audio service is not running.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method generates a volume-change event only if the method call changes the muting state of the session from disabled to enabled, or from enabled to disabled. For example, if muting is enabled when the call occurs, and the call enables muting, no event is generated.</para>
+      <para>This method applies the same muting state to all channels in the audio session. The endpoint device always applies muting uniformly across all the channels in the session. There are no <see cref="IChannelAudioVolume" /> methods for setting the muting states of individual channels.</para>
+      <para>The client can get the muting state of the audio session by calling the <see cref="SimpleAudioVolume.GetMute" /> method.</para>
+    </remarks>
+    <seealso cref="IAudioSessionEvents Interface" />
+    <seealso cref="IChannelAudioVolume Interface" />
+    <seealso cref="ISimpleAudioVolume Interface" />
+    <seealso cref="ISimpleAudioVolume.GetMute" />
+  </member>
+  <member name="ISimpleAudioVolume">
+    <summary>
+      <para>The <b>ISimpleAudioVolume</b> interface enables a client to control the master volume level of an <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-sessions">audio session</a>. The <see cref="IAudioClient.Initialize" /> method initializes a stream object and assigns the stream to an audio session. The client obtains a reference to the <b>ISimpleAudioVolume</b> interface on a stream object by calling the <see cref="IAudioClient.GetService" /> method with parameter <i>riid</i> set to <b>REFIID</b> IID_ISimpleAudioVolume.</para>
+      <para>Alternatively, a client can obtain the <b>ISimpleAudioVolume</b> interface of an existing session without having to first create a stream object and add the stream to the session. Instead, the client calls the <see cref="IAudioSessionManager.GetSimpleAudioVolume" /> method with the session GUID.</para>
+      <para>The effective volume level of any channel in the session submix, as heard at the speakers, is the product of the following four volume-level factors:</para>
+      <list type="bullet">
+        <item>
+          <description>The per-channel volume levels of the streams in the session, which clients can control through the methods in the <see cref="IAudioStreamVolume" /> interface.</description>
+        </item>
+        <item>
+          <description>The master volume level of the session, which clients can control through the methods in the <b>ISimpleAudioVolume</b> interface.</description>
+        </item>
+        <item>
+          <description>The per-channel volume level of the session, which clients can control through the methods in the <see cref="IChannelAudioVolume" /> interface.</description>
+        </item>
+        <item>
+          <description>The policy-based volume level of the session, which the system dynamically assigns to the session as the global mix changes.</description>
+        </item>
+      </list>
+      <para>Each of the four volume-level factors in the preceding list is a value in the range 0.0 to 1.0, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation). The effective volume level is also a value in the range 0.0 to 1.0.</para>
+      <para>Typical audio applications do not modify the volume levels of sessions. Instead, they rely on users to set these volume levels through the Sndvol program. Sndvol modifies only the master volume levels of sessions. By default, the session manager sets the master volume level to 1.0 at the initial activation of a session. Subsequent volume changes by Sndvol or other clients are persistent across computer restarts.</para>
+      <para>When releasing an <b>ISimpleAudioVolume</b> interface instance, the client must call the interface's <b>Release</b> method from the same thread as the call to <b>IAudioClient.GetService</b> that created the object.</para>
+      <para>The <b>ISimpleAudioVolume</b> interface controls the volume of an audio session. An audio session is a collection of shared-mode streams. This interface does not work with exclusive-mode streams. For information about volume controls for exclusive-mode streams, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpointvolume-api">EndpointVolume API</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
+    <seealso cref="IAudioClient.GetService" />
+    <seealso cref="IAudioClient.Initialize" />
+    <seealso cref="IAudioStreamVolume Interface" />
+    <seealso cref="IChannelAudioVolume Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/wasapi">WASAPI</seealso>
+  </member>
+</doc>

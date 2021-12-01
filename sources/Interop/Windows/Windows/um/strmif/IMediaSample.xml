@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMediaSample.GetActualDataLength">
+    <summary>
+      <para>The <code>GetActualDataLength</code> method retrieves the length of the valid data in the buffer.</para>
+    </summary>
+    <returns>
+      <para>Returns the length of the valid data, in bytes.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.GetMediaTime">
+    <summary>
+      <para>The <code>GetMediaTime</code> method retrieves the media times for this sample.</para>
+    </summary>
+    <param name="pTimeStart">
+      <para>Pointer to a variable that receives the media start time.</para>
+    </param>
+    <param name="pTimeEnd">
+      <para>Pointer to a variable that receives the media stop time.</para>
+    </param>
+    <returns>
+      <para>Returns an HRESULT value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_MEDIA_TIME_NOT_SET</b>
+            </para>
+          </description>
+          <description>
+            <para>Media times are not set on this sample.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For more information about media times, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-and-clocks-in-directshow">Time and Clocks in DirectShow</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.GetMediaType">
+    <summary>
+      <para>The <code>GetMediaType</code> method retrieves the media type, if the media type differs from the previous sample.</para>
+    </summary>
+    <param name="ppMediaType">
+      <para>Address of a variable that receives a pointer to an <see cref="AM_MEDIA_TYPE" /> structure. If the media type has not changed from the previous sample, <i>*ppMediaType</i> is set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media type has not changed from the previous sample.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method enables a filter to make limited changes to the media type, such as changing the palette. To make a significant change to the media type, the pins might need to reconnect and renegotiate the media type.</para>
+      <para>If the method returns S_OK, the caller must free the memory for the media type, including the format block. You can use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/deletemediatype">DeleteMediaType</a> function in the DirectShow base class library.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.GetPointer">
+    <summary>
+      <para>The <code>GetPointer</code> method retrieves a read/write pointer to the media sample's buffer.</para>
+    </summary>
+    <param name="ppBuffer">
+      <para>Receives a pointer to the buffer.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>The buffer memory is owned by the media sample object, and is automatically released when the media sample is destroyed. The caller should not free or reallocate the buffer.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.GetSize">
+    <summary>
+      <para>The <code>GetSize</code> method retrieves the size of the buffer.</para>
+    </summary>
+    <returns>
+      <para>Returns the size of the buffer, in bytes. The size does not include the prefix bytes, if any.</para>
+    </returns>
+    <seealso cref="ALLOCATOR_PROPERTIES" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.GetTime">
+    <summary>
+      <para>The <code>GetTime</code> method retrieves the stream times at which this sample should begin and finish.</para>
+    </summary>
+    <param name="pTimeStart">
+      <para>Pointer to a variable that receives the start time.</para>
+    </param>
+    <param name="pTimeEnd">
+      <para>Pointer to a variable that receives the stop time. If the sample has no stop time, the value is set to the start time plus one.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success. The sample has valid start and stop times.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_NO_STOP_TIME</b>
+            </para>
+          </description>
+          <description>
+            <para>The sample has a valid start time, but no stop time.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_SAMPLE_TIME_NOT_SET</b>
+            </para>
+          </description>
+          <description>
+            <para>The sample is not time-stamped.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Both time values are relative to the stream time. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-and-clocks-in-directshow">Time and Clocks in DirectShow</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.IsDiscontinuity">
+    <summary>
+      <para>The <code>IsDiscontinuity</code> method determines if this sample represents a break in the data stream.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if the sample is a break in the data stream. Otherwise, returns S_FALSE.</para>
+    </returns>
+    <remarks>
+      <para>A discontinuity occurs when a filter seeks to a different place in the stream, or when a filter drops samples for quality control.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.IsPreroll">
+    <summary>
+      <para>The <code>IsPreroll</code> method determines if this sample is a preroll sample. A preroll sample should not be displayed.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if the sample is a preroll sample. Otherwise, returns S_FALSE.</para>
+    </returns>
+    <remarks>
+      <para>Preroll samples are processed but not displayed. They are located in the media stream before the displayable samples.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.IsSyncPoint">
+    <summary>
+      <para>The <code>IsSyncPoint</code> method determines if the beginning of this sample is a synchronization point.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if the sample is a synchronization point. Otherwise, returns S_FALSE.</para>
+    </returns>
+    <remarks>
+      <para>A filter can begin a stream at any synchronization point. With some compression types, streaming can begin only at certain points in the stream; for example, on key frames. If the <b>bTemporalCompression</b> member of the <see cref="AM_MEDIA_TYPE" /> structure is <b>FALSE</b>, all samples are synchronization points.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.SetActualDataLength">
+    <summary>
+      <para>The <code>SetActualDataLength</code> method sets the length of the valid data in the buffer.</para>
+    </summary>
+    <param name="__MIDL__IMediaSample0000">
+      <para>Length of the data in the media sample, in bytes.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_BUFFER_OVERFLOW.</b>
+            </para>
+          </description>
+          <description>
+            <para>Length specified in <i>lLen</i> is larger than the buffer size.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.SetDiscontinuity">
+    <summary>
+      <para>The <code>SetDiscontinuity</code> method specifies whether this sample represents a break in the data stream.</para>
+    </summary>
+    <param name="bDiscontinuity">
+      <para>Boolean value that specifies whether this sample is a discontinuity. If <b>TRUE</b>, the media sample is discontinuous with the previous sample.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK, or an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+    <seealso cref="IMediaSample.IsDiscontinuity" />
+  </member>
+  <member name="IMediaSample.SetMediaTime">
+    <summary>
+      <para>The <code>SetMediaTime</code> method sets the media times for this sample.</para>
+    </summary>
+    <param name="pTimeStart">
+      <para>Pointer to the beginning media time.</para>
+    </param>
+    <param name="pTimeEnd">
+      <para>Pointer to the ending media time.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK, or an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>To invalidate the media time, set <i>pTimeStart</i> and <i>pTimeEnd</i> to <b>NULL</b>. This will cause the <see cref="IMediaSample.GetMediaTime" /> method to return VFW_E_MEDIA_TIME_NOT_SET.</para>
+      <para>For more information about media times, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-stamps">Time Stamps</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.SetMediaType">
+    <summary>
+      <para>The <code>SetMediaType</code> method sets the media type for the sample.</para>
+    </summary>
+    <param name="pMediaType">
+      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the media type.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>By default, every sample has the same media type as the previous sample. (The pin connection determines the original media type.) Call this method to make limited changes to the media type, such as changing the palette. To make a significant change to the media type, the pins might need to reconnect and renegotiate the media type.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample.SetPreroll">
+    <summary>
+      <para>The <code>SetPreroll</code> method specifies whether this sample is a preroll sample.</para>
+    </summary>
+    <param name="bIsPreroll">
+      <para>Boolean value that specifies whether this is a preroll sample. If <b>TRUE</b>, this is a preroll sample.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK, or an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+    <seealso cref="IMediaSample.IsPreroll" />
+  </member>
+  <member name="IMediaSample.SetSyncPoint">
+    <summary>
+      <para>The <code>SetSyncPoint</code> method specifies whether the beginning of this sample is a synchronization point.</para>
+    </summary>
+    <param name="bIsSyncPoint">
+      <para>Boolean value that specifies whether this is a synchronization point. If <b>TRUE</b>, this is a synchronization point.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK or an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>The filter that first generates the data in the sample should set this flag to <b>TRUE</b> or <b>FALSE</b>, as appropriate. For uncompressed video and PCM audio, set every sample to <b>TRUE</b>. For compressed video, set key frames to <b>TRUE</b> and delta frames to <b>FALSE</b>.</para>
+      <para>This flag is purely informational. Other filters downstream might check this flag; for example, a filter might need to skip to the next key frame.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+    <seealso cref="IMediaSample.IsSyncPoint" />
+  </member>
+  <member name="IMediaSample.SetTime">
+    <summary>
+      <para>The <code>SetTime</code> method sets the stream times when this sample should begin and finish.</para>
+    </summary>
+    <param name="pTimeStart">
+      <para>Pointer to a variable that contains the start time of the sample.</para>
+    </param>
+    <param name="pTimeEnd">
+      <para>Pointer to a variable that contains the stop time of the sample.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK, or <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>Both time values are relative to the stream time. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-and-clocks-in-directshow">Time and Clocks in DirectShow</a>.</para>
+      <para>To invalidate the stream times, set <i>pTimeStart</i> and <i>pTimeEnd</i> to <b>NULL</b>. This will cause the <see cref="IMediaSample.GetTime" /> method to return VFW_E_SAMPLE_TIME_NOT_SET.</para>
+      <para>For more information about stream times, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-and-clocks-in-directshow">Time and Clocks in DirectShow</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample Interface" />
+  </member>
+  <member name="IMediaSample">
+    <summary>
+      <para>The <code>IMediaSample</code> interface sets and retrieves properties on media samples. A media sample is a COM object that contains a block of media data. Media samples support the use of shared memory buffers among filters.</para>
+      <para>Typically, applications do not call methods on this interface. Filters use this interface to set properties on samples, and deliver the samples to a downstream filter. The downstream filter uses the interface to retrieve the properties and read the data. The filter can modify the data in place, or it can copy the sample, modify the copy, and pass the copy downstream.</para>
+      <para>The <see cref="IMediaSample2" /> interface inherits this interface.</para>
+    </summary>
+  </member>
+</doc>

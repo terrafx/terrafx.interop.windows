@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IThumbnailStreamCache.GetThumbnailStream">
+    <summary>
+      <para>Gets the thumbnail stream. This method is for internal use only and can only be called by the photos application.</para>
+    </summary>
+    <param name="path">
+      <para>The path to the thumbnail.</para>
+    </param>
+    <param name="cacheId">
+      <para>The identifier of the thumbnail.</para>
+    </param>
+    <param name="options">
+      <para>The cache options for the thumbnail stream.</para>
+    </param>
+    <param name="requestedThumbnailSize">
+      <para>The requested size of the thumbnail.</para>
+    </param>
+    <param name="thumbnailSize">
+      <para>The actual size of the returned thumbnail.</para>
+    </param>
+    <param name="thumbnailStream">
+      <para>The requested thumbnail.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IThumbnailStreamCache" />
+  </member>
+  <member name="IThumbnailStreamCache.SetThumbnailStream">
+    <summary>
+      <para>Sets the thumbnail stream. This method is for internal use only and can only be called by the photos application.</para>
+    </summary>
+    <param name="path">
+      <para>The path to the thumbnail.</para>
+    </param>
+    <param name="cacheId">
+      <para>The identifier of the thumbnail.</para>
+    </param>
+    <param name="thumbnailSize">
+      <para>The size of the thumbnail.</para>
+    </param>
+    <param name="thumbnailStream">
+      <para>The pointer to the thumbnail stream.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IThumbnailStreamCache" />
+  </member>
+  <member name="IThumbnailStreamCache">
+    <summary>
+      <para>Gets or sets the thumbnail stream. This interface is for internal use only and can only be called by the photos application.</para>
+    </summary>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_END_OF_JOB_TIME_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_END_OF_JOB_TIME_INFORMATION"]/*' />
 public partial struct JOBOBJECT_END_OF_JOB_TIME_INFORMATION
 {
+    /// <include file='JOBOBJECT_END_OF_JOB_TIME_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_END_OF_JOB_TIME_INFORMATION.EndOfJobTimeAction"]/*' />
     [NativeTypeName("DWORD")]
     public uint EndOfJobTimeAction;
 }

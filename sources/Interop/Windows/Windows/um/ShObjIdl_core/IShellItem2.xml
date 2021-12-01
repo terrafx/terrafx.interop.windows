@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellItem2.GetBool">
+    <summary>
+      <para>Gets the boolean value of a specified property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="pf">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a boolean value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItem2.GetCLSID">
+    <summary>
+      <para>Gets the class identifier (CLSID) value of specified property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="pclsid">
+      <para>Type: <b>CLSID*</b></para>
+      <para>A pointer to a CLSID value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItem2.GetFileTime">
+    <summary>
+      <para>Gets the date and time value of a specified property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="pft">
+      <para>Type: <b>FILETIME*</b></para>
+      <para>A pointer to a date and time value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItem2.GetInt32">
+    <summary>
+      <para>Gets the Int32 value of specified property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="pi">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an Int32 value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItem2.GetProperty">
+    <summary>
+      <para>Gets a <see cref="PROPVARIANT" /> structure from a specified property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="ppropvar">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>Contains a pointer to a <see cref="PROPVARIANT" /> structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItem2.GetPropertyDescriptionList">
+    <summary>
+      <para>Gets a property description list object given a reference to a property key.</para>
+    </summary>
+    <param name="keyType">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to a desired IID.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>Contains the address of an <see cref="IPropertyDescriptionList" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItem2.GetPropertyStore">
+    <summary>
+      <para>Gets a property store object for specified property store flags.</para>
+    </summary>
+    <param name="flags">
+      <para>Type: <b><see cref="GETPROPERTYSTOREFLAGS" /></b></para>
+      <para>The <see cref="GETPROPERTYSTOREFLAGS" /> constants that modify the property store object.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the object to be retrieved.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the address of an <see cref="IPropertyStore" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  When this method is called on a property store for a file, that file is held open for the lifetime of the <see cref="IPropertyStore" /> object.</para>
+    </remarks>
+  </member>
+  <member name="IShellItem2.GetPropertyStoreForKeys">
+    <summary>
+      <para>Gets property store object for specified property keys.</para>
+    </summary>
+    <param name="rgKeys">
+      <para>Type: <b>const <see cref="PROPERTYKEY" />*</b></para>
+      <para>A pointer to an array of <see cref="PROPERTYKEY" /> structures. Each structure contains a unique identifier for each property used in creating the property store.</para>
+    </param>
+    <param name="cKeys">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of <see cref="PROPERTYKEY" /> structures in the array pointed to by <i>rgKeys</i>.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b><see cref="GETPROPERTYSTOREFLAGS" /></b></para>
+      <para>The <see cref="GETPROPERTYSTOREFLAGS" /> constants that modify the property store object.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the object to be retrieved.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the address of an <see cref="IPropertyStore" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  When this method is called on a property store for a file, that file is held open for the lifetime of the <see cref="IPropertyStore" /> object.</para>
+    </remarks>
+  </member>
+  <member name="IShellItem2.GetPropertyStoreWithCreateObject">
+    <summary>
+      <para>Uses the specified <see cref="ICreateObject" /> instead of <see cref="CoCreateInstance" /> to create an instance of the property handler associated with the Shell item on which this method is called. Most calling applications do not need to call this method, and can call <see cref="IShellItem2.GetPropertyStore" /> instead.</para>
+    </summary>
+    <param name="flags">
+      <para>Type: <b><see cref="GETPROPERTYSTOREFLAGS" /></b></para>
+      <para>The <see cref="GETPROPERTYSTOREFLAGS" /> constants that modify the property store object.</para>
+    </param>
+    <param name="punkCreateObject">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to a factory for low-rights creation of type <see cref="ICreateObject" />.</para>
+      <para>The method <see cref="CreateObject" /> creates an instance of a COM object. The implementation of <b>IShellItem2.GetPropertyStoreWithCreateObject</b> uses <b>CreateObject</b> instead of <see cref="CoCreateInstance" /> to create the property handler, which is a Shell extension, for a given file type. The property handler provides many of the important properties in the property store that this method returns.</para>
+      <para>This method is useful only if the <see cref="ICreateObject" /> object is created in a separate process (as a LOCALSERVER instead of an INPROCSERVER), and also if this other process has lower rights than the process calling <b>IShellItem2.GetPropertyStoreWithCreateObject</b>.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the object to be retrieved.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the address of the requested <see cref="IPropertyStore" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  When this method is called on a property store for a file, that file is held open for the lifetime of the <see cref="IPropertyStore" /> object.</para>
+    </remarks>
+  </member>
+  <member name="IShellItem2.GetString">
+    <summary>
+      <para>Gets the string value of a specified property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="ppsz">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>A pointer to a Unicode string value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItem2.GetUInt32">
+    <summary>
+      <para>Gets the UInt32 value of a specified property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="pui">
+      <para>Type: <b>ULONG*</b></para>
+      <para>Receives a pointer to a UInt32 value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItem2.GetUInt64">
+    <summary>
+      <para>Gets the UInt64 value of a specified property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="pull">
+      <para>Type: <b>ULONGLONG*</b></para>
+      <para>A pointer to a UInt64 value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItem2.Update">
+    <summary>
+      <para>Ensures that any cached information in this item is updated.</para>
+    </summary>
+    <param name="pbc">
+      <para>Type: <b><see cref="IBindCtx" />*</b></para>
+      <para>A pointer to an <see cref="IBindCtx" /> interface on a bind context object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise, including ERROR_FILE_NOT_FOUND if the item does not exist.</para>
+    </returns>
+  </member>
+  <member name="IShellItem2">
+    <summary>
+      <para>Extends <see cref="IShellItem" /> with methods that retrieve various property values of the item. <b>IShellItem</b> and <b>IShellItem2</b> are the preferred representations of items in any new code.</para>
+    </summary>
+  </member>
+</doc>

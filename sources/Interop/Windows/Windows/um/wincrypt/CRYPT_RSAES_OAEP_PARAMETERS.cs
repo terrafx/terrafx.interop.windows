@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_RSAES_OAEP_PARAMETERS.xml' path='doc/member[@name="CRYPT_RSAES_OAEP_PARAMETERS"]/*' />
 public partial struct CRYPT_RSAES_OAEP_PARAMETERS
 {
+    /// <include file='CRYPT_RSAES_OAEP_PARAMETERS.xml' path='doc/member[@name="CRYPT_RSAES_OAEP_PARAMETERS.HashAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
+    /// <include file='CRYPT_RSAES_OAEP_PARAMETERS.xml' path='doc/member[@name="CRYPT_RSAES_OAEP_PARAMETERS.MaskGenAlgorithm"]/*' />
     public CRYPT_MASK_GEN_ALGORITHM MaskGenAlgorithm;
 
+    /// <include file='CRYPT_RSAES_OAEP_PARAMETERS.xml' path='doc/member[@name="CRYPT_RSAES_OAEP_PARAMETERS.PSourceAlgorithm"]/*' />
     public CRYPT_PSOURCE_ALGORITHM PSourceAlgorithm;
 }

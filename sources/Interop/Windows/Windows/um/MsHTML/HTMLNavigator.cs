@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLNavigator.xml' path='doc/member[@name="HTMLNavigator"]/*' />
 [Guid("FECEAAA6-8405-11CF-8BA1-00AA00476DA6")]
 public partial struct HTMLNavigator
 {

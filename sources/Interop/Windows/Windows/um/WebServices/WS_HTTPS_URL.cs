@@ -5,19 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HTTPS_URL.xml' path='doc/member[@name="WS_HTTPS_URL"]/*' />
 public partial struct WS_HTTPS_URL
 {
+    /// <include file='WS_HTTPS_URL.xml' path='doc/member[@name="WS_HTTPS_URL.url"]/*' />
     public WS_URL url;
 
+    /// <include file='WS_HTTPS_URL.xml' path='doc/member[@name="WS_HTTPS_URL.host"]/*' />
     public WS_STRING host;
 
+    /// <include file='WS_HTTPS_URL.xml' path='doc/member[@name="WS_HTTPS_URL.port"]/*' />
     public ushort port;
 
+    /// <include file='WS_HTTPS_URL.xml' path='doc/member[@name="WS_HTTPS_URL.portAsString"]/*' />
     public WS_STRING portAsString;
 
+    /// <include file='WS_HTTPS_URL.xml' path='doc/member[@name="WS_HTTPS_URL.path"]/*' />
     public WS_STRING path;
 
+    /// <include file='WS_HTTPS_URL.xml' path='doc/member[@name="WS_HTTPS_URL.query"]/*' />
     public WS_STRING query;
 
+    /// <include file='WS_HTTPS_URL.xml' path='doc/member[@name="WS_HTTPS_URL.fragment"]/*' />
     public WS_STRING fragment;
 }

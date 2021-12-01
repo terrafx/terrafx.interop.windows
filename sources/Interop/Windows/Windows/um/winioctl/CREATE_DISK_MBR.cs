@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREATE_DISK_MBR.xml' path='doc/member[@name="CREATE_DISK_MBR"]/*' />
 public partial struct CREATE_DISK_MBR
 {
+    /// <include file='CREATE_DISK_MBR.xml' path='doc/member[@name="CREATE_DISK_MBR.Signature"]/*' />
     [NativeTypeName("DWORD")]
     public uint Signature;
 }

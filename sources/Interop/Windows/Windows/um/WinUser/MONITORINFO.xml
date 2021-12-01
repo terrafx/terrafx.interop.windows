@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MONITORINFO">
+    <summary>
+      <para>The <b>MONITORINFO</b> structure contains information about a display monitor.</para>
+      <para>The
+GetMonitorInfo function stores information in a
+<b>MONITORINFO</b>  structure or a
+<see cref="MONITORINFOEX" /> structure.</para>
+      <para>The
+<b>MONITORINFO</b> structure is a subset of the
+<see cref="MONITORINFOEX" />  structure. The
+<b>MONITORINFOEX</b>  structure adds a string member to contain a name for the display monitor.</para>
+    </summary>
+    <seealso cref="GetMonitorInfo" />
+    <seealso cref="MONITORINFOEX" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/multiple-display-monitors">Multiple Display Monitors Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/multiple-display-monitors-structures">Multiple Display Monitors Structures</seealso>
+  </member>
+  <member name="MONITORINFO.cbSize">
+    <summary>
+      <para>The size of the structure, in bytes.</para>
+      <para>Set this member to <code>sizeof ( MONITORINFO )</code> before calling the <see cref="GetMonitorInfo" /> function. Doing so lets the function determine the type of structure you are passing to it.</para>
+    </summary>
+  </member>
+  <member name="MONITORINFO.rcMonitor">
+    <summary>
+      <para>A <see cref="RECT" /> structure that specifies the display monitor rectangle, expressed in virtual-screen coordinates. Note that if the monitor is not the primary display monitor, some of the rectangle's coordinates may be negative values.</para>
+    </summary>
+  </member>
+  <member name="MONITORINFO.rcWork">
+    <summary>
+      <para>A <see cref="RECT" /> structure that specifies the work area rectangle of the display monitor, expressed in virtual-screen coordinates. Note that if the monitor is not the primary display monitor, some of the rectangle's coordinates may be negative values.</para>
+    </summary>
+  </member>
+  <member name="MONITORINFO.dwFlags">
+    <summary>
+      <para>A set of flags that represent attributes of the display monitor.</para>
+      <para>The following flag is defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>MONITORINFOF_PRIMARY</description>
+          <description>This is the primary display monitor.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

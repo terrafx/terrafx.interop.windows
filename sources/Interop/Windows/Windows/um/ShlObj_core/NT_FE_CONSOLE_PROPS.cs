@@ -7,10 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NT_FE_CONSOLE_PROPS.xml' path='doc/member[@name="NT_FE_CONSOLE_PROPS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct NT_FE_CONSOLE_PROPS
 {
+    /// <include file='NT_FE_CONSOLE_PROPS.xml' path='doc/member[@name="NT_FE_CONSOLE_PROPS.dbh"]/*' />
     public DATABLOCK_HEADER dbh;
 
+    /// <include file='NT_FE_CONSOLE_PROPS.xml' path='doc/member[@name="NT_FE_CONSOLE_PROPS.uCodePage"]/*' />
     public uint uCodePage;
 }

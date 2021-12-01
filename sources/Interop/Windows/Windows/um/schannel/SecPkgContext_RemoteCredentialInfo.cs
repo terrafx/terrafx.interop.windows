@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_RemoteCredentialInfo.xml' path='doc/member[@name="SecPkgContext_RemoteCredentialInfo"]/*' />
 public unsafe partial struct SecPkgContext_RemoteCredentialInfo
 {
+    /// <include file='SecPkgContext_RemoteCredentialInfo.xml' path='doc/member[@name="SecPkgContext_RemoteCredentialInfo.cbCertificateChain"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbCertificateChain;
 
+    /// <include file='SecPkgContext_RemoteCredentialInfo.xml' path='doc/member[@name="SecPkgContext_RemoteCredentialInfo.pbCertificateChain"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pbCertificateChain;
 
+    /// <include file='SecPkgContext_RemoteCredentialInfo.xml' path='doc/member[@name="SecPkgContext_RemoteCredentialInfo.cCertificates"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCertificates;
 
+    /// <include file='SecPkgContext_RemoteCredentialInfo.xml' path='doc/member[@name="SecPkgContext_RemoteCredentialInfo.fFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint fFlags;
 
+    /// <include file='SecPkgContext_RemoteCredentialInfo.xml' path='doc/member[@name="SecPkgContext_RemoteCredentialInfo.dwBits"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBits;
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_DVENCODERFORMAT.xml' path='doc/member[@name="_DVENCODERFORMAT"]/*' />
 public enum _DVENCODERFORMAT
 {
+    /// <include file='_DVENCODERFORMAT.xml' path='doc/member[@name="_DVENCODERFORMAT.DVENCODERFORMAT_DVSD"]/*' />
     DVENCODERFORMAT_DVSD = 2007,
+
+    /// <include file='_DVENCODERFORMAT.xml' path='doc/member[@name="_DVENCODERFORMAT.DVENCODERFORMAT_DVHD"]/*' />
     DVENCODERFORMAT_DVHD = 2008,
+
+    /// <include file='_DVENCODERFORMAT.xml' path='doc/member[@name="_DVENCODERFORMAT.DVENCODERFORMAT_DVSL"]/*' />
     DVENCODERFORMAT_DVSL = 2009,
 }

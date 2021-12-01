@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TsRunType">
+    <summary>
+      <para>Elements of the <b>TsRunType</b> enumeration specify if a text run is visible, hidden, or is a private data type embedded in the text run.</para>
+    </summary>
+    <remarks>
+      <para>A text run is a collection of consecutive characters that is visible, hidden, or contains embedded data. For example, the text, Hello World in HTML might be &lt;b&gt;Hello &lt;/b&gt;&lt;i&gt;World&lt;/i&gt;. This text would be defined using the TsRunType as in the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Text Run</description>
+          <description>Value</description>
+        </listheader>
+        <item>
+          <description>&lt;b&gt;</description>
+          <description>TS_RT_HIDDEN</description>
+        </item>
+        <item>
+          <description>Hello&lt;space&gt;</description>
+          <description>TS_RT_PLAIN</description>
+        </item>
+        <item>
+          <description>&lt;/b&gt;</description>
+          <description>TS_RT_HIDDEN</description>
+        </item>
+        <item>
+          <description>&lt;i&gt;</description>
+          <description>TS_RT_HIDDEN</description>
+        </item>
+        <item>
+          <description>World</description>
+          <description>TS_RT_PLAIN</description>
+        </item>
+        <item>
+          <description>&lt;/i&gt;</description>
+          <description>TS_RT_HIDDEN</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ITextStoreACP.GetText" />
+    <seealso cref="TS_RUNINFO" />
+  </member>
+  <member name="TsRunType.TS_RT_PLAIN">
+    <summary>
+      <para>The text run is visible.</para>
+    </summary>
+  </member>
+  <member name="TsRunType.TS_RT_HIDDEN">
+    <summary>
+      <para>The text run is hidden.</para>
+    </summary>
+  </member>
+  <member name="TsRunType.TS_RT_OPAQUE">
+    <summary>
+      <para>The text run is a private data type embedded in the text run.</para>
+    </summary>
+  </member>
+</doc>

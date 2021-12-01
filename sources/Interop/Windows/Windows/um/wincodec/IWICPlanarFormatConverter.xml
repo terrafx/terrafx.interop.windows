@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICPlanarFormatConverter.CanConvert">
+    <summary>
+      <para>Query if the format converter can convert from one format to another.</para>
+    </summary>
+    <param name="pSrcPixelFormats">
+      <para>An array of WIC pixel formats that represents source image planes.</para>
+    </param>
+    <param name="cSrcPlanes">
+      <para>The number of source pixel formats specified by the <i>pSrcFormats</i> parameter.</para>
+    </param>
+    <param name="dstPixelFormat">
+      <para>The destination interleaved pixel format.</para>
+    </param>
+    <param name="pfCanConvert">
+      <para>True if the conversion is supported.</para>
+    </param>
+    <returns>
+      <para>If the conversion is not supported, this method returns S_OK, but *<i>pfCanConvert</i> is set to FALSE.</para>
+      <para>If this method fails, the out parameter <i>pfCanConvert</i> is invalid.</para>
+    </returns>
+    <remarks>
+      <para>To specify an interleaved input pixel format, provide a length 1 array to <i>pSrcPixelFormats</i>.</para>
+    </remarks>
+    <seealso cref="IWICPlanarFormatConverter" />
+  </member>
+  <member name="IWICPlanarFormatConverter.Initialize">
+    <summary>
+      <para>Initializes a format converter with a planar source, and specifies the interleaved output pixel format.</para>
+    </summary>
+    <param name="ppPlanes">
+      <para>Type: <b><see cref="IWICBitmapSource" />**</b></para>
+      <para>An array of <see cref="IWICBitmapSource" /> that represents image planes.</para>
+    </param>
+    <param name="cPlanes">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of component planes specified by the planes parameter.</para>
+    </param>
+    <param name="dstFormat">
+      <para>Type: <b>REFWICPixelFormatGUID </b></para>
+      <para>The destination interleaved pixel format.</para>
+    </param>
+    <param name="dither">
+      <para>Type: <b><see cref="WICBitmapDitherType" /></b></para>
+      <para>The <see cref="WICBitmapDitherType" /> used for conversion.</para>
+    </param>
+    <param name="pIPalette">
+      <para>Type: <b><see cref="IWICPalette" />*</b></para>
+      <para>The palette to use for conversion.</para>
+    </param>
+    <param name="alphaThresholdPercent">
+      <para>Type: <b>double</b></para>
+      <para>The alpha threshold to use for conversion.</para>
+    </param>
+    <param name="paletteTranslate">
+      <para>Type: <b><see cref="WICBitmapPaletteType" /></b></para>
+      <para>The palette translation type to use for conversion.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IWICFormatConverter.Initialize" />
+    <seealso cref="IWICPlanarFormatConverter" />
+  </member>
+  <member name="IWICPlanarFormatConverter">
+    <summary>
+      <para>Allows a format converter to be initialized with a planar source. You can use QueryInterface to obtain this interface from the Windows provided implementation of <see cref="IWICFormatConverter" />.</para>
+    </summary>
+    <seealso cref="IWICBitmapSource" />
+  </member>
+</doc>

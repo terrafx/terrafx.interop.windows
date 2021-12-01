@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XSAVE_AREA_HEADER.xml' path='doc/member[@name="XSAVE_AREA_HEADER"]/*' />
 public unsafe partial struct XSAVE_AREA_HEADER
 {
+    /// <include file='XSAVE_AREA_HEADER.xml' path='doc/member[@name="XSAVE_AREA_HEADER.Mask"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Mask;
 
+    /// <include file='XSAVE_AREA_HEADER.xml' path='doc/member[@name="XSAVE_AREA_HEADER.CompactionMask"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong CompactionMask;
 
+    /// <include file='XSAVE_AREA_HEADER.xml' path='doc/member[@name="XSAVE_AREA_HEADER.Reserved2"]/*' />
     [NativeTypeName("DWORD64 [6]")]
     public fixed ulong Reserved2[6];
 }

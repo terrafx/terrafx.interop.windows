@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGRLOGERRORINFO">
+    <summary>
+      <para>Provides error information for use in the <see cref="ISyncMgrSynchronizeCallback.LogError" /> method.</para>
+    </summary>
+    <seealso cref="ISyncMgrSynchronizeCallback.LogError" />
+  </member>
+  <member name="SYNCMGRLOGERRORINFO.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRLOGERRORINFO.mask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The mask value. The synchronization manager handler implemented by your application can set any combination of the following bits to indicate which fields of <b>SYNCMGRLOGERRORINFO</b> it has filled in when calling <see cref="ISyncMgrSynchronizeCallback.LogError" />.</para>
+      <h4>SYNCMGRLOGERROR_ERRORFLAGS</h4>
+      <para>The <b>dwSyncMgrErrorFlags</b> field is valid.</para>
+      <h4>SYNCMGRLOGERROR_ERRORID</h4>
+      <para>The <b>ErrorID</b> field is valid.</para>
+      <h4>SYNCMGRLOGERROR_ITEMID</h4>
+      <para>The <b>ItemID</b> field is valid.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRLOGERRORINFO.dwSyncMgrErrorFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Error flags. At this time only the following value is recognized.</para>
+      <h4>SYNCMGRERRORFLAG_ENABLEJUMPTEXT</h4>
+      <para>The <see cref="ISyncMgrSynchronize.ShowError" /> method should be called on this item.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRLOGERRORINFO.ErrorID">
+    <summary>
+      <para>Type: <b>GUID</b></para>
+      <para>An error identifier.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRLOGERRORINFO.ItemID">
+    <summary>
+      <para>Type: <b>GUID</b></para>
+      <para>The item where the error occurred.</para>
+    </summary>
+  </member>
+</doc>

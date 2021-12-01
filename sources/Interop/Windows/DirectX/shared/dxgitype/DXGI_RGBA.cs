@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_RGBA.xml' path='doc/member[@name="DXGI_RGBA"]/*' />
 public partial struct DXGI_RGBA
 {
+    /// <include file='DXGI_RGBA.xml' path='doc/member[@name="DXGI_RGBA.r"]/*' />
     public float r;
 
+    /// <include file='DXGI_RGBA.xml' path='doc/member[@name="DXGI_RGBA.g"]/*' />
     public float g;
 
+    /// <include file='DXGI_RGBA.xml' path='doc/member[@name="DXGI_RGBA.b"]/*' />
     public float b;
 
+    /// <include file='DXGI_RGBA.xml' path='doc/member[@name="DXGI_RGBA.a"]/*' />
     public float a;
 }

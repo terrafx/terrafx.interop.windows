@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTCAttachBehavior.xml' path='doc/member[@name="HTCAttachBehavior"]/*' />
 [Guid("3050F5F5-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTCAttachBehavior
 {

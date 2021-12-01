@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_MFT_OUTPUT_STATUS_FLAGS.xml' path='doc/member[@name="_MFT_OUTPUT_STATUS_FLAGS"]/*' />
 public enum _MFT_OUTPUT_STATUS_FLAGS
 {
+    /// <include file='_MFT_OUTPUT_STATUS_FLAGS.xml' path='doc/member[@name="_MFT_OUTPUT_STATUS_FLAGS.MFT_OUTPUT_STATUS_SAMPLE_READY"]/*' />
     MFT_OUTPUT_STATUS_SAMPLE_READY = 0x1,
 }

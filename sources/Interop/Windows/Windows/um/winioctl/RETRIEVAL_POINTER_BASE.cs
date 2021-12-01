@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RETRIEVAL_POINTER_BASE.xml' path='doc/member[@name="RETRIEVAL_POINTER_BASE"]/*' />
 public partial struct RETRIEVAL_POINTER_BASE
 {
+    /// <include file='RETRIEVAL_POINTER_BASE.xml' path='doc/member[@name="RETRIEVAL_POINTER_BASE.FileAreaOffset"]/*' />
     public LARGE_INTEGER FileAreaOffset;
 }

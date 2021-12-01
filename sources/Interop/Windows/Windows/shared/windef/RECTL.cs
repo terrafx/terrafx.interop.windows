@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RECTL.xml' path='doc/member[@name="RECTL"]/*' />
 public partial struct RECTL
 {
+    /// <include file='RECTL.xml' path='doc/member[@name="RECTL.left"]/*' />
     [NativeTypeName("LONG")]
     public int left;
 
+    /// <include file='RECTL.xml' path='doc/member[@name="RECTL.top"]/*' />
     [NativeTypeName("LONG")]
     public int top;
 
+    /// <include file='RECTL.xml' path='doc/member[@name="RECTL.right"]/*' />
     [NativeTypeName("LONG")]
     public int right;
 
+    /// <include file='RECTL.xml' path='doc/member[@name="RECTL.bottom"]/*' />
     [NativeTypeName("LONG")]
     public int bottom;
 }

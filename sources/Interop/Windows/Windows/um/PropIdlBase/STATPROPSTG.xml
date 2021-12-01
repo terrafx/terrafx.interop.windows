@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STATPROPSTG">
+    <summary>
+      <para>The
+<b>STATPROPSTG</b> structure contains data about a single property in a property set. This data is the property ID and type tag, and the optional string name that may be associated with the property.</para>
+      <para>
+        <see cref="IPropertyStorage.Enum" /> supplies a pointer to the
+<see cref="IEnumSTATPROPSTG" /> interface on an enumerator object that can be used to enumerate the
+<b>STATPROPSTG</b> structures for the properties in the current property set.
+<b>STATPROPSTG</b> is defined as:</para>
+    </summary>
+    <seealso cref="IEnumSTATPROPSTG" />
+    <seealso cref="IPropertyStorage.Enum" />
+  </member>
+  <member name="STATPROPSTG.lpwstrName">
+    <summary>
+      <para>A wide-character null-terminated Unicode string that contains the optional string name associated with the property. May be <b>NULL</b>. This member must be freed using
+<see cref="CoTaskMemFree" />.</para>
+    </summary>
+  </member>
+  <member name="STATPROPSTG.propid">
+    <summary>
+      <para>A 32-bit identifier that uniquely identifies the property within the property set. All properties within property sets must have unique property identifiers.</para>
+    </summary>
+  </member>
+  <member name="STATPROPSTG.vt">
+    <summary>
+      <para>The property type.</para>
+    </summary>
+  </member>
+</doc>

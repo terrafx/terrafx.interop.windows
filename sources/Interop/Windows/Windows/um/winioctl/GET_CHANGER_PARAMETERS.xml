@@ -1,0 +1,977 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GET_CHANGER_PARAMETERS">
+    <summary>
+      <para>Represents the parameters of a changer.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_get_parameters">IOCTL_CHANGER_GET_PARAMETERS</seealso>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.Size">
+    <summary>
+      <para>The size of this structure, in bytes. The caller must set this member to <code>sizeof(GET_CHANGER_PARAMETERS)</code>.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.NumberTransportElements">
+    <summary>
+      <para>The number of transport elements in the changer. For a SCSI changer, this is defined in the element address page. This value is almost always 1, because most changers have a single transport element with one or two picker mechanisms. A changer that has two picker mechanisms on its transport must not be represented as having two transports, because pickers are not individually addressable. High-end media libraries can have dual and multiple transport elements for fault tolerance.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.NumberStorageElements">
+    <summary>
+      <para>The number of storage elements (slots) in the changer. For a SCSI changer, this is defined in the element address page. This value represents the maximum number of slots available for this changer including those in removable magazines, whether or not the magazines are installed. If <b>NumberCleanerSlots</b> is 1, then <b>NumberStorageElements</b> is 1 less than the maximum number of slots in the changer.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.NumberCleanerSlots">
+    <summary>
+      <para>The number of storage elements (slots) for cleaner cartridges in the changer. If <b>NumberCleanerSlots</b> is 1, then <b>FirstCleanerSlotAddress</b> indicates the zero-based address of the slot in which a drive cleaner should be inserted. If the changer does not support drive cleaning by programmatically moving the cleaner cartridge from its slot to a drive, <b>NumberCleanerSlots</b> is 0. <b>NumberCleanerSlots</b> cannot be greater than 1.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.NumberIEElements">
+    <summary>
+      <para>The number of import/export elements (insert/eject ports) the changer has for inserting and ejecting media. For a SCSI changer, this is defined in the element address page. An import/export element must not be part of the storage element (slot) space, and it must be possible to transport media between the import/export element and a slot using a MOVE MEDIUM command. If the changer has a door and not a true import/export element, <b>NumberIEElements</b> is 0.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.NumberDataTransferElements">
+    <summary>
+      <para>The number of data transfer elements (drives) in the changer. For a SCSI changer, this is defined in the element address page. Unlike <b>NumberStorageElements</b>, which indicates the total number of possible slots whether or not the slots are actually present, <b>NumberDataTransferElements</b> indicates the number of drives that are actually present in the changer.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.NumberOfDoors">
+    <summary>
+      <para>The number of doors in the changer. A door provides access to all media in the changer at once, unlike an insert/eject port, which provides access to one or more, but not all, media. A changer's door can be a physical front door or a single magazine that contains all media. If a changer supports only an insert/eject port for inserting and ejecting media, <b>NumberOfDoors</b> is 0.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.FirstSlotNumber">
+    <summary>
+      <para>The number used by the changer vendor to identify the first storage element (slot) in the changer to the end user, either by marking a magazine or by defining a slot numbering scheme in the changer's operators guide. <b>FirstSlotNumber</b> is typically 0 or 1, but it can be the first address in a consecutive range of slot addresses defined by the vendor.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.FirstDriveNumber">
+    <summary>
+      <para>The number used by the changer vendor to identify the first data transfer element (drive) in the changer to the end user. <b>FirstDriveNumber</b> is typically 0 or 1, but it can be the first address in a consecutive range of drive addresses defined by the vendor.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.FirstTransportNumber">
+    <summary>
+      <para>The number used by the changer vendor to identify the first (and usually only) transport element in the changer to the end user. <b>FirstTransportNumber</b> is typically 0 or 1, but it can be the first address in a consecutive range of transport addresses defined by the vendor.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.FirstIEPortNumber">
+    <summary>
+      <para>The number used by the changer vendor to identify the first (and usually only) insert/eject port in the changer to the end user. <b>FirstIEPortNumber</b> is typically 0 or 1, but it can be the first address in a consecutive range of insert/eject port addresses defined by the vendor. If <b>NumberIEElements</b> is 0, <b>FirstIEPortNumber</b> must also be 0.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.FirstCleanerSlotAddress">
+    <summary>
+      <para>The number used by the changer vendor to identify the first (and only) slot address assigned to a drive cleaner cartridge to the end user. This must be the value defined by the vendor in the changer's operators guide. For example, if a changer has 8 slots numbered 1 through 8 and its operator's guide designates slot 8 as the drive cleaner slot, <b>FirstSlotNumber</b> would be 1 and <b>FirstCleanerSlotAddress</b> would be 8. If the same 8 slots were numbered 0 through 7, <b>FirstSlotNumber</b> would be 0 and <b>FirstCleanerSlotAddress</b> would be 7. If <b>NumberCleanerSlots</b> is 0, <b>FirstCleanerSlotAddress</b> must be 0.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.MagazineSize">
+    <summary>
+      <para>The number of slots in the removable magazines in the changer. This member is valid only if CHANGER_CARTRIDGE_MAGAZINE is set in <b>Features0</b>.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.DriveCleanTimeout">
+    <summary>
+      <para>Twice the maximum number of seconds a cleaning is expected to take. The changer's drives should be cleaned by its cleaner cartridge in half the time specified by <b>DriveCleanTimeout</b>. For example, if a drive is typically cleaned in 300 seconds (5 minutes), <b>DriveCleanTimeout</b> should be set to 600.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.Features0">
+    <summary>
+      <para>The features supported by the changer. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_BAR_CODE_SCANNER_INSTALLED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer supports a bar-code reader and the reader is installed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_CARTRIDGE_MAGAZINE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer uses removable cartridge magazines for some or all storage slots.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_CLEANER_ACCESS_NOT_VALID</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00040000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The ELEMENT_STATUS_ACCESS flag in a
+<see cref="CHANGER_ELEMENT_STATUS" /> structure for a data transport element is invalid when the transport element contains a cleaning cartridge.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_CLEANER_SLOT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer has a slot designated for a cleaner cartridge. If this flag is set, <b>NumberCleanerSlots</b> must be 1 and <b>FirstCleanerSlotAddress</b> must specify the address of the cleaner slot.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_CLOSE_IEPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer has an insert/eject port and can retract the insert/eject port programmatically.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_DEVICE_REINITIALIZE_CAPABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x08000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can recalibrate its transport element in response to an explicit command.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_DRIVE_CLEANING_REQUIRED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00010000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer's drives require periodic cleaning, which must be initiated by either the user or an application, and the changer can use its transport element to mount a cleaner cartridge in a drive.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_DRIVE_EMPTY_ON_DOOR_ACCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x20000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer requires all drives to be empty (dismounted) before they can be accessed through its door.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_EXCHANGE_MEDIA</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can exchange media between elements. For a SCSI changer, this flag indicates whether the changer supports the EXCHANGE MEDIUM command.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_INIT_ELEM_STAT_WITH_RANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can initialize elements within a specified range. For a SCSI changer, this flag indicates whether the changer supports the INITIALIZE ELEMENT STATUS WITH RANGE command.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_KEYPAD_ENABLE_DISABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x10000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer keypad can be enabled and disabled programmatically.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_LOCK_UNLOCK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer's door, insert/eject port, or keypad can be locked or unlocked programmatically. If this flag is set, <b>LockUnlockCapabilities</b> indicates which elements can be locked or unlocked.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_MEDIUM_FLIP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer's transport element supports flipping (rotating) media. For a SCSI changer, this flag reflects the rotate bit in the transport geometry parameters page.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_OPEN_IEPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer has an insert/eject port and can extend the insert/eject port programmatically.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_POSITION_TO_ELEMENT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can position the transport to a particular destination. For a SCSI changer, this flag indicates whether the changer supports the POSITION TO ELEMENT command. If this flag is set, <b>PositionCapabilities</b> indicates the elements to which the transport can be positioned.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_PREDISMOUNT_EJECT_REQUIRED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00020000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer requires an explicit command issued through a mass-storage driver (tape, disk, or CDROM, for example) to eject media from a drive before the changer can move the media from a drive to a slot.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_PREMOUNT_EJECT_REQUIRED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00080000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer requires an explicit command issued through a mass storage driver to eject a drive mechanism before the changer can move media from a slot to the drive. For example, a changer with CD-ROM drives might require the tray to be presented to the robotic transport so that a piece of media could be loaded onto the tray during a mount operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_REPORT_IEPORT_STATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000800</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can report whether media is present in the insert/eject port. Such a changer must have a sensor in the insert/eject port to detect the presence or absence of media.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_SERIAL_NUMBER_VALID</b>
+                </description>
+              </item>
+              <item>
+                <description>0x04000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The serial number is valid and unique for all changers of this type. Serial numbers are not guaranteed to be unique across vendor and product lines.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_STATUS_NON_VOLATILE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer uses nonvolatile memory for element status information.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_STORAGE_DRIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00001000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can use a drive as an independent storage element; that is, it can store media in the drive without reading it. For a SCSI changer, this flag reflects the state of the DT bit in the device capabilities page.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_STORAGE_IEPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00002000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can use an insert/eject port as an independent storage element. For a SCSI changer, this flag reflects the state of the I/E bit in the device capabilities page.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_STORAGE_SLOT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00004000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can use a slot as an independent storage element for media. For a SCSI changer, this flag reflects the state of the ST bit in the device capabilities page. Slots are the normal storage location for media, so the changer must support this functionality.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_STORAGE_TRANSPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00008000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can use a transport as an independent storage element. For a SCSI changer, this flag reflects the state of the MT bit in the device capabilities page.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_VOLUME_ASSERT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00400000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can verify volume information. For a SCSI changer, this flag indicates whether the changer supports the SEND VOLUME TAG command with a send action code of ASSERT.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_VOLUME_IDENTIFICATION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00100000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer supports volume identification. For a SCSI changer, this flag indicates whether the changer supports the SEND VOLUME TAG and REQUEST VOLUME ELEMENT ADDRESS commands.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_VOLUME_REPLACE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00800000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can replace volume information. For a SCSI changer, this flag indicates whether the changer supports the SEND VOLUME TAG command with a send action code of REPLACE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_VOLUME_SEARCH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00200000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can search for volume information. For a SCSI changer, this flag indicates whether the changer supports the supports the SEND VOLUME TAG command with a send action code of TRANSLATE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_VOLUME_UNDEFINE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can clear existing volume information. For a SCSI changer, this flag indicates whether the changer supports the SEND VOLUME TAG command with a send action code of UNDEFINE.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.Features1">
+    <summary>
+      <para>Any additional features supported by the changer. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_CLEANER_AUTODISMOUNT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer will move the cleaning cartridge back to its original slot automatically after cleaning is finished.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_CLEANER_OPS_NOT_SUPPORTED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer does not support automatic cleaning of its elements.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_IEPORT_USER_CONTROL_CLOSE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer requires the user to manually close an open insert/eject port.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_IEPORT_USER_CONTROL_OPEN</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer requires the user to manually open a closed insert/eject port.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_MOVE_EXTENDS_IEPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer will extend the tray automatically whenever a command is issued to move media to an insert/eject port.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_MOVE_RETRACTS_IEPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer will retract the tray automatically whenever a command is issued to move media from an insert/eject port.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_PREDISMOUNT_ALIGN_TO_DRIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer requires an explicit command to position the transport element to a drive before it can eject media from the drive.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_PREDISMOUNT_ALIGN_TO_SLOT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer requires an explicit command to position the transport element to a slot before it can eject media from the slot.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_RTN_MEDIA_TO_ORIGINAL_ADDR</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer requires media to be returned to its original slot after it has been moved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_SLOTS_USE_TRAYS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer uses removable trays in its slots, which require the media to be placed in a tray and the tray moved to the desired position.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_TRUE_EXCHANGE_CAPABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can exchange media between a source and a destination in a single operation. This flag is valid only if CHANGER_EXCHANGE_MEDIA is also set in <b>Features0</b>.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.MoveFromTransport">
+    <summary>
+      <para>Indicates whether the changer supports moving a piece of media from a transport element to another transport element, a storage slot, an insert/eject port, or a drive. For a SCSI changer, this is defined in the device capabilities page. The transport is not typically the source or destination for moving or exchanging media.</para>
+      <para>To determine whether the changer can move media to a given element, use the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_TO_DRIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x08</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can carry out the operation from the specified element to a drive.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_TO_IEPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x04</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can carry out the operation from the specified element to an insert/eject port.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_TO_SLOT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x02</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can carry out the operation from the specified element to a storage slot.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHANGER_TO_TRANSPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can carry out the operation from the specified element to a transport.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.MoveFromSlot">
+    <summary>
+      <para>Indicates whether the changer supports moving medium from a storage slot to a transport element, another storage slot, an insert/eject port, or a drive. Use the flags described under <b>MoveFromTransport</b> to determine whether the changer supports the move.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.MoveFromIePort">
+    <summary>
+      <para>Indicates whether the changer supports moving medium from an insert/eject port to a transport element, a storage slot, another insert/eject port, or a drive. For a SCSI changer, this is defined in the device capabilities page. Use the flags described under <b>MoveFromTransport</b> to determine whether the changer supports the move.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.MoveFromDrive">
+    <summary>
+      <para>Indicates whether the changer supports moving medium from a drive to a transport element, a storage slot, an insert/eject port, or another drive. Use the flags described under <b>MoveFromTransport</b> to determine whether the changer supports the move.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.ExchangeFromTransport">
+    <summary>
+      <para>Indicates whether the changer supports exchanging medium between a transport element and another transport element, a storage slot, an insert/eject port, or a drive. Use the flags described under <b>MoveFromTransport</b> to determine whether the changer supports the exchange.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.ExchangeFromSlot">
+    <summary>
+      <para>Indicates whether the changer supports exchanging medium between a storage slot and a transport element, another storage slot, an insert/eject port, or a drive. Use the flags described under <b>MoveFromTransport</b> to determine whether the changer supports the exchange.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.ExchangeFromIePort">
+    <summary>
+      <para>Indicates whether the changer supports exchanging medium between an insert/eject port and a transport element, a storage slot, another insert/eject port, or a drive. Use the flags described under <b>MoveFromTransport</b> to determine whether the changer supports the exchange.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.ExchangeFromDrive">
+    <summary>
+      <para>Indicates whether the changer supports exchanging medium between a drive and a transport element, a storage slot, an insert/eject port, or another drive. Use the flags described under <b>MoveFromTransport</b> to determine whether the changer supports the exchange.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.LockUnlockCapabilities">
+    <summary>
+      <para>The elements of a changer that can be locked or unlocked programmatically. This member is valid only if CHANGER_LOCK_UNLOCK is set in <b>Features0</b>.</para>
+      <para>To determine whether the changer can lock or unlock a particular element, use one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>LOCK_UNLOCK_DOOR</b>
+                </description>
+              </item>
+              <item>
+                <description>0x02</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can lock or unlock its door.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>LOCK_UNLOCK_IEPORT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can lock or unlock its insert/eject port.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>LOCK_UNLOCK_KEYPAD</b>
+                </description>
+              </item>
+              <item>
+                <description>0x04</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The changer can lock or unlock its keypad.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.PositionCapabilities">
+    <summary>
+      <para>The elements to which a changer can position its transport. Use the flags described under <b>MoveFromTransport</b> to determine whether the changer supports positioning the transport to a particular element. This member is valid only if CHANGER_POSITION_TO_ELEMENT is set in <b>Features0</b>.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.Reserved1">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="GET_CHANGER_PARAMETERS.Reserved2">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

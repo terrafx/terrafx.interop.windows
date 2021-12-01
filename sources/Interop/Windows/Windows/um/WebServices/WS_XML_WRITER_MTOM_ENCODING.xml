@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_WRITER_MTOM_ENCODING">
+    <summary>
+      <para>Used to indicate that the reader should emit bytes in MTOM format.
+The MTOM format will represent bytes written to it as binary mime
+parts rather than embedded base64 encoded text.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_WRITER_MTOM_ENCODING.encoding">
+    <summary>
+      <para>The base type for all types that derive from <see cref="WS_XML_WRITER_ENCODING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_WRITER_MTOM_ENCODING.textEncoding">
+    <summary>
+      <para>Specifies the encoding of the xml document carried by MTOM.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_WRITER_MTOM_ENCODING.writeMimeHeader">
+    <summary>
+      <para>Specifies whether or not the writer should emit a MIME header.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_WRITER_MTOM_ENCODING.boundary">
+    <summary>
+      <para>Specifies the character sequence that should be used to delimit the mime parts.  This corresponds to the "boundary" parameter of the MIME Content-Type.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_WRITER_MTOM_ENCODING.startInfo">
+    <summary>
+      <para>Specifies the type used by the mime part that contains the xml.  This corresponds to the "start-info" parameter in the of the MIME Content-Type.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_WRITER_MTOM_ENCODING.startUri">
+    <summary>
+      <para>Specifies the mime part that contains the xml.  This corresponds to the "start" parameter of the MIME Content-Type.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_WRITER_MTOM_ENCODING.maxInlineByteCount">
+    <summary>
+      <para>Specifies the threshold at which the writer will not write base64 encoded text and instead write a binary mime part for binary data.</para>
+    </summary>
+  </member>
+</doc>

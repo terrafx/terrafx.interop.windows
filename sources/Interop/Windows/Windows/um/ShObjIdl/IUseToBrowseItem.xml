@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUseToBrowseItem">
+    <summary>
+      <para>This interface is not supported. Do not use.</para>
+      <para>Finds the item that should be used when browsing to this item.</para>
+    </summary>
+  </member>
+</doc>

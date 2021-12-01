@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SP_DRVINFO_DETAIL_DATA">
+    <summary>
+      <para>An SP_DRVINFO_DETAIL_DATA structure contains detailed information about a particular driver information structure.</para>
+    </summary>
+    <remarks>
+      <para>The <a href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">hardware ID</a> and <a href="https://docs.microsoft.com//windows-hardware/drivers/install/compatible-ids">compatible IDs</a> for a device are specified in the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-models-section">INF Models section</a> in the following order:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>The first ID (if specified) is the hardware ID for the device.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The remaining IDs (if specified) are compatible IDs for the device.</para>
+          </description>
+        </item>
+      </list>
+      <para>When you parse the <b>HardwareID</b> buffer, you must ensure that you correctly determine the end of the data in the buffer. Be aware that the buffer is not necessarily double NULL terminated.</para>
+      <para>For example, depending on how the list of <a href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">hardware ID</a> and <a href="https://docs.microsoft.com//windows-hardware/drivers/install/compatible-ids">compatible IDs</a> are specified in the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-models-section">INF Models section</a>, the <b>HardwareID</b> buffer can resemble any of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>\0</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>&lt;HWID&gt;\0</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>&lt;HWID&gt;\0&lt;COMPATID_1&gt;\0...&lt;COMPATID_N&gt;\0\0</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>\0&lt;COMPATID_1&gt;\0...&lt;COMPATID_N&gt;\0\0</para>
+          </description>
+        </item>
+      </list>
+      <para>An algorithm to correctly parse this buffer must use the <b>CompatIDsOffset</b> and <b>CompatIDsLength</b> fields to extract the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">hardware ID</a> and <a href="https://docs.microsoft.com//windows-hardware/drivers/install/compatible-ids">compatible IDs</a>, as shown in the following code example:</para>
+      <code>// parse the hardware ID, if it exists
+if (CompatIDsOffset &gt; 1)
+{
+    // Parse for hardware ID from index 0.
+    // This is a single NULL-terminated string
+}
+ // Parse the compatible IDs, if they exist
+if (CompatIDsLength &gt; 0)
+{
+    // Parse for list of compatible IDs from CompatIDsOffset.
+    // This is a double NULL-terminated list of strings (i.e. MULTI-SZ)
+}
+</code>
+      <blockquote>
+        <para>[!NOTE]
+The setupapi.h header defines SP_DRVINFO_DETAIL_DATA as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/compatible-ids">Compatible IDs</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">Hardware ID</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-ddinstall-section">INF DDInstall Section</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-models-section">INF Models Section</seealso>
+    <seealso cref="SetupDiGetDriverInfoDetail" />
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.cbSize">
+    <summary>
+      <para>The size, in bytes, of the SP_DRVINFO_DETAIL_DATA structure.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.InfDate">
+    <summary>
+      <para>Date of the INF file for this driver.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.CompatIDsOffset">
+    <summary>
+      <para>The offset, in characters, from the beginning of the <b>HardwareID</b> buffer where the CompatIDs list begins.</para>
+      <para>This value can also be used to determine whether there is a <a href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">hardware ID</a> that precedes the CompatIDs list. If this value is greater than 1, the first string in the <b>HardwareID</b> buffer is the hardware ID. If this value is less than or equal to 1, there is no hardware ID.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.CompatIDsLength">
+    <summary>
+      <para>The length, in characters, of the CompatIDs list starting at offset <b>CompatIDsOffset</b> from the beginning of the <b>HardwareID</b> buffer.</para>
+      <para>If <b>CompatIDsLength</b> is nonzero, the CompatIDs list contains one or more NULL-terminated strings with an additional NULL character at the end of the list.</para>
+      <para>If <b>CompatIDsLength</b> is zero, the CompatIDs list is empty. In that case, there is no additional NULL character at the end of the list.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.Reserved">
+    <summary>
+      <para>Reserved. For internal use only.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.SectionName">
+    <summary>
+      <para>A NULL-terminated string that contains the name of the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-ddinstall-section">INF DDInstall section</a> for this driver. This must be the basic <i>DDInstall</i> section name, such as <b>InstallSec</b>, without any OS/architecture-specific extensions.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.InfFileName">
+    <summary>
+      <para>A NULL-terminated string that contains the full-qualified name of the INF file for this driver.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.DrvDescription">
+    <summary>
+      <para>A NULL-terminated string that describes the driver.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.HardwareID">
+    <summary>
+      <para>A buffer that contains a list of IDs (a single <a href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">hardware ID</a> followed by a list of <a href="https://docs.microsoft.com//windows-hardware/drivers/install/compatible-ids">compatible IDs</a>). These IDs correspond to the hardware ID and compatible IDs in the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-models-section">INF Models section</a>.</para>
+      <para>Each ID in the list is a NULL-terminated string.</para>
+      <para>If the hardware ID exists (that is, if <b>CompatIDsOffset</b> is greater than one), this single NULL-terminated string is found at the beginning of the buffer.</para>
+      <para>If the CompatIDs list is not empty (that is, if <b>CompatIDsLength</b> is not zero), the CompatIDs list starts at offset <b>CompatIDsOffset</b> from the beginning of this buffer, and is terminated with an additional NULL character at the end of the list.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA">
+    <summary>
+      <para>An SP_DRVINFO_DETAIL_DATA structure contains detailed information about a particular driver information structure.</para>
+    </summary>
+    <remarks>
+      <para>The <a href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">hardware ID</a> and <a href="https://docs.microsoft.com//windows-hardware/drivers/install/compatible-ids">compatible IDs</a> for a device are specified in the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-models-section">INF Models section</a> in the following order:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>The first ID (if specified) is the hardware ID for the device.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The remaining IDs (if specified) are compatible IDs for the device.</para>
+          </description>
+        </item>
+      </list>
+      <para>When you parse the <b>HardwareID</b> buffer, you must ensure that you correctly determine the end of the data in the buffer. Be aware that the buffer is not necessarily double NULL terminated.</para>
+      <para>For example, depending on how the list of <a href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">hardware ID</a> and <a href="https://docs.microsoft.com//windows-hardware/drivers/install/compatible-ids">compatible IDs</a> are specified in the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-models-section">INF Models section</a>, the <b>HardwareID</b> buffer can resemble any of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>\0</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>&lt;HWID&gt;\0</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>&lt;HWID&gt;\0&lt;COMPATID_1&gt;\0...&lt;COMPATID_N&gt;\0\0</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>\0&lt;COMPATID_1&gt;\0...&lt;COMPATID_N&gt;\0\0</para>
+          </description>
+        </item>
+      </list>
+      <para>An algorithm to correctly parse this buffer must use the <b>CompatIDsOffset</b> and <b>CompatIDsLength</b> fields to extract the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">hardware ID</a> and <a href="https://docs.microsoft.com//windows-hardware/drivers/install/compatible-ids">compatible IDs</a>, as shown in the following code example:</para>
+      <code>// parse the hardware ID, if it exists
+if (CompatIDsOffset &gt; 1)
+{
+    // Parse for hardware ID from index 0.
+    // This is a single NULL-terminated string
+}
+ // Parse the compatible IDs, if they exist
+if (CompatIDsLength &gt; 0)
+{
+    // Parse for list of compatible IDs from CompatIDsOffset.
+    // This is a double NULL-terminated list of strings (i.e. MULTI-SZ)
+}
+</code>
+      <blockquote>
+        <para>[!NOTE]
+The setupapi.h header defines SP_DRVINFO_DETAIL_DATA as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/compatible-ids">Compatible IDs</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">Hardware ID</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-ddinstall-section">INF DDInstall Section</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-models-section">INF Models Section</seealso>
+    <seealso cref="SetupDiGetDriverInfoDetail" />
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.cbSize">
+    <summary>
+      <para>The size, in bytes, of the SP_DRVINFO_DETAIL_DATA structure.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.InfDate">
+    <summary>
+      <para>Date of the INF file for this driver.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.CompatIDsOffset">
+    <summary>
+      <para>The offset, in characters, from the beginning of the <b>HardwareID</b> buffer where the CompatIDs list begins.</para>
+      <para>This value can also be used to determine whether there is a <a href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">hardware ID</a> that precedes the CompatIDs list. If this value is greater than 1, the first string in the <b>HardwareID</b> buffer is the hardware ID. If this value is less than or equal to 1, there is no hardware ID.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.CompatIDsLength">
+    <summary>
+      <para>The length, in characters, of the CompatIDs list starting at offset <b>CompatIDsOffset</b> from the beginning of the <b>HardwareID</b> buffer.</para>
+      <para>If <b>CompatIDsLength</b> is nonzero, the CompatIDs list contains one or more NULL-terminated strings with an additional NULL character at the end of the list.</para>
+      <para>If <b>CompatIDsLength</b> is zero, the CompatIDs list is empty. In that case, there is no additional NULL character at the end of the list.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.Reserved">
+    <summary>
+      <para>Reserved. For internal use only.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.SectionName">
+    <summary>
+      <para>A NULL-terminated string that contains the name of the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-ddinstall-section">INF DDInstall section</a> for this driver. This must be the basic <i>DDInstall</i> section name, such as <b>InstallSec</b>, without any OS/architecture-specific extensions.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.InfFileName">
+    <summary>
+      <para>A NULL-terminated string that contains the full-qualified name of the INF file for this driver.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.DrvDescription">
+    <summary>
+      <para>A NULL-terminated string that describes the driver.</para>
+    </summary>
+  </member>
+  <member name="SP_DRVINFO_DETAIL_DATA.HardwareID">
+    <summary>
+      <para>A buffer that contains a list of IDs (a single <a href="https://docs.microsoft.com//windows-hardware/drivers/install/hardware-ids">hardware ID</a> followed by a list of <a href="https://docs.microsoft.com//windows-hardware/drivers/install/compatible-ids">compatible IDs</a>). These IDs correspond to the hardware ID and compatible IDs in the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-models-section">INF Models section</a>.</para>
+      <para>Each ID in the list is a NULL-terminated string.</para>
+      <para>If the hardware ID exists (that is, if <b>CompatIDsOffset</b> is greater than one), this single NULL-terminated string is found at the beginning of the buffer.</para>
+      <para>If the CompatIDs list is not empty (that is, if <b>CompatIDsLength</b> is not zero), the CompatIDs list starts at offset <b>CompatIDsOffset</b> from the beginning of this buffer, and is terminated with an additional NULL character at the end of the list.</para>
+    </summary>
+  </member>
+</doc>

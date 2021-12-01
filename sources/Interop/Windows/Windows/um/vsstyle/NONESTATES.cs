@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NONESTATES.xml' path='doc/member[@name="NONESTATES"]/*' />
 public enum NONESTATES
 {
+    /// <include file='NONESTATES.xml' path='doc/member[@name="NONESTATES.DDNONE_HIGHLIGHT"]/*' />
     DDNONE_HIGHLIGHT = 1,
+
+    /// <include file='NONESTATES.xml' path='doc/member[@name="NONESTATES.DDNONE_NOHIGHLIGHT"]/*' />
     DDNONE_NOHIGHLIGHT = 2,
 }

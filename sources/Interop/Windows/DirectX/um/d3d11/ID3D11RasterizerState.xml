@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11RasterizerState.GetDesc">
+    <summary>
+      <para>Gets the description for rasterizer state that you used to create the rasterizer-state object.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b><see cref="D3D11_RASTERIZER_DESC" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_RASTERIZER_DESC" /> structure that receives a description of the rasterizer state.</para>
+    </param>
+    <remarks>
+      <para>You use the description for rasterizer state in a call to the <see cref="ID3D11Device.CreateRasterizerState" /> method to create the rasterizer-state object.</para>
+    </remarks>
+    <seealso cref="ID3D11RasterizerState" />
+  </member>
+  <member name="ID3D11RasterizerState">
+    <summary>
+      <para>The rasterizer-state interface holds a description for rasterizer state that you can bind to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage">rasterizer stage</a>.</para>
+    </summary>
+    <remarks>
+      <para>To create a rasterizer-state object, call <see cref="ID3D11Device.CreateRasterizerState" />. To bind the rasterizer-state object to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage">rasterizer stage</a>, call <see cref="ID3D11DeviceContext.RSSetState" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D11DeviceChild" />
+  </member>
+</doc>

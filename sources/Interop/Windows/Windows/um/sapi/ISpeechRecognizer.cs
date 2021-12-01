@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer"]/*' />
 [Guid("2D5F1C0C-BD75-4B08-9478-3B11FEA2586C")]
 [NativeTypeName("struct ISpeechRecognizer : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, uint>)(lpVtbl[1]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, uint>)(lpVtbl[2]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, uint*, int>)(lpVtbl[3]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.putref_Recognizer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT putref_Recognizer(ISpeechObjectToken* Recognizer)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken*, int>)(lpVtbl[7]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Recognizer);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_Recognizer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_Recognizer(ISpeechObjectToken** Recognizer)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken**, int>)(lpVtbl[8]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Recognizer);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.put_AllowAudioInputFormatChangesOnNextSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_AllowAudioInputFormatChangesOnNextSet([NativeTypeName("VARIANT_BOOL")] short Allow)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, short, int>)(lpVtbl[9]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Allow);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_AllowAudioInputFormatChangesOnNextSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_AllowAudioInputFormatChangesOnNextSet([NativeTypeName("VARIANT_BOOL *")] short* Allow)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, short*, int>)(lpVtbl[10]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Allow);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.putref_AudioInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT putref_AudioInput(ISpeechObjectToken* AudioInput = null)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken*, int>)(lpVtbl[11]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInput);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_AudioInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_AudioInput(ISpeechObjectToken** AudioInput)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken**, int>)(lpVtbl[12]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInput);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.putref_AudioInputStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT putref_AudioInputStream(ISpeechBaseStream* AudioInputStream = null)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechBaseStream*, int>)(lpVtbl[13]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInputStream);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_AudioInputStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_AudioInputStream(ISpeechBaseStream** AudioInputStream)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechBaseStream**, int>)(lpVtbl[14]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInputStream);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_IsShared"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_IsShared([NativeTypeName("VARIANT_BOOL *")] short* Shared)
@@ -130,6 +147,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, short*, int>)(lpVtbl[15]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Shared);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.put_State"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_State(SpeechRecognizerState State)
@@ -137,6 +155,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, SpeechRecognizerState, int>)(lpVtbl[16]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), State);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_State"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_State(SpeechRecognizerState* State)
@@ -144,6 +163,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, SpeechRecognizerState*, int>)(lpVtbl[17]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), State);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_Status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_Status(ISpeechRecognizerStatus** Status)
@@ -151,6 +171,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechRecognizerStatus**, int>)(lpVtbl[18]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Status);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.putref_Profile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT putref_Profile(ISpeechObjectToken* Profile = null)
@@ -158,6 +179,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken*, int>)(lpVtbl[19]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Profile);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_Profile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_Profile(ISpeechObjectToken** Profile)
@@ -165,6 +187,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken**, int>)(lpVtbl[20]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Profile);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.EmulateRecognition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT EmulateRecognition(VARIANT TextElements, VARIANT* ElementDisplayAttributes = null, [NativeTypeName("long")] int LanguageId = 0)
@@ -172,6 +195,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, VARIANT, VARIANT*, int, int>)(lpVtbl[21]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), TextElements, ElementDisplayAttributes, LanguageId);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.CreateRecoContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT CreateRecoContext(ISpeechRecoContext** NewContext)
@@ -179,6 +203,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechRecoContext**, int>)(lpVtbl[22]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), NewContext);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT GetFormat(SpeechFormatType Type, ISpeechAudioFormat** Format)
@@ -186,6 +211,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, SpeechFormatType, ISpeechAudioFormat**, int>)(lpVtbl[23]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Type, Format);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.SetPropertyNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetPropertyNumber([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("long")] int Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
@@ -193,6 +219,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, int, short*, int>)(lpVtbl[24]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetPropertyNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT GetPropertyNumber([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("long *")] int* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
@@ -200,6 +227,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, int*, short*, int>)(lpVtbl[25]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.SetPropertyString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT SetPropertyString([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("const BSTR")] ushort* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
@@ -207,6 +235,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, ushort*, short*, int>)(lpVtbl[26]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetPropertyString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT GetPropertyString([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("BSTR *")] ushort** Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
@@ -214,6 +243,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, ushort**, short*, int>)(lpVtbl[27]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.IsUISupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT IsUISupported([NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
@@ -221,6 +251,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, VARIANT*, short*, int>)(lpVtbl[28]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), TypeOfUI, ExtraData, Supported);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.DisplayUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT DisplayUI([NativeTypeName("long")] int hWndParent, [NativeTypeName("BSTR")] ushort* Title, [NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData = null)
@@ -228,6 +259,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, int, ushort*, ushort*, VARIANT*, int>)(lpVtbl[29]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), hWndParent, Title, TypeOfUI, ExtraData);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetRecognizers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT GetRecognizers([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
@@ -235,6 +267,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, ushort*, ISpeechObjectTokens**, int>)(lpVtbl[30]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetAudioInputs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT GetAudioInputs([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
@@ -242,6 +275,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
         return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, ushort*, ISpeechObjectTokens**, int>)(lpVtbl[31]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
     }
 
+    /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetProfiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT GetProfiles([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)

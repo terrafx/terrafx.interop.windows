@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRPresentationFlags">
+    <summary>
+      <para>The <see cref="VMRPRESENTATIONINFO" /> structure .</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="VMRPresentationFlags.VMRSample_SyncPoint">
+    <summary>
+      <para>Indicates that the sample is a sync point.</para>
+    </summary>
+  </member>
+  <member name="VMRPresentationFlags.VMRSample_Preroll">
+    <summary>
+      <para>Indicates that the sample is part of the preroll.</para>
+    </summary>
+  </member>
+  <member name="VMRPresentationFlags.VMRSample_Discontinuity">
+    <summary>
+      <para>Indicates that the sample is a discontinuity.</para>
+    </summary>
+  </member>
+  <member name="VMRPresentationFlags.VMRSample_TimeValid">
+    <summary>
+      <para>Indicates that the time stamp on the sample is valid.</para>
+    </summary>
+  </member>
+  <member name="VMRPresentationFlags.VMRSample_SrcDstRectsValid">
+    <summary></summary>
+  </member>
+</doc>

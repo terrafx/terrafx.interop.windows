@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_BUFFERS.xml' path='doc/member[@name="WS_BUFFERS"]/*' />
 public unsafe partial struct WS_BUFFERS
 {
+    /// <include file='WS_BUFFERS.xml' path='doc/member[@name="WS_BUFFERS.bufferCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint bufferCount;
 
+    /// <include file='WS_BUFFERS.xml' path='doc/member[@name="WS_BUFFERS.buffers"]/*' />
     public WS_BYTES* buffers;
 }

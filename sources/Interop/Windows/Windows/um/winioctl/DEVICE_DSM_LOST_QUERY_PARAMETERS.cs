@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DSM_LOST_QUERY_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_LOST_QUERY_PARAMETERS"]/*' />
 public partial struct DEVICE_DSM_LOST_QUERY_PARAMETERS
 {
+    /// <include file='DEVICE_DSM_LOST_QUERY_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_LOST_QUERY_PARAMETERS.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='DEVICE_DSM_LOST_QUERY_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_LOST_QUERY_PARAMETERS.Granularity"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Granularity;
 }

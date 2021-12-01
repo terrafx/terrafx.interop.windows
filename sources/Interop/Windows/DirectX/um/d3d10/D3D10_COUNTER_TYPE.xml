@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_COUNTER_TYPE">
+    <summary>
+      <para>Data type of a performance counter.</para>
+    </summary>
+    <remarks>
+      <para>These flags are an output parameter in <see cref="ID3D10Device.CheckCounter" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+  </member>
+  <member name="D3D10_COUNTER_TYPE.D3D10_COUNTER_TYPE_FLOAT32">
+    <summary>
+      <para>32-bit floating point.</para>
+    </summary>
+  </member>
+  <member name="D3D10_COUNTER_TYPE.D3D10_COUNTER_TYPE_UINT16">
+    <summary>
+      <para>16-bit unsigned integer.</para>
+    </summary>
+  </member>
+  <member name="D3D10_COUNTER_TYPE.D3D10_COUNTER_TYPE_UINT32">
+    <summary>
+      <para>32-bit unsigned integer.</para>
+    </summary>
+  </member>
+  <member name="D3D10_COUNTER_TYPE.D3D10_COUNTER_TYPE_UINT64">
+    <summary>
+      <para>64-bit unsigned integer.</para>
+    </summary>
+  </member>
+</doc>

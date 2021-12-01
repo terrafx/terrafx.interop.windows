@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MEDIAPLAYBACK_STATE.xml' path='doc/member[@name="MEDIAPLAYBACK_STATE"]/*' />
 public enum MEDIAPLAYBACK_STATE
 {
+    /// <include file='MEDIAPLAYBACK_STATE.xml' path='doc/member[@name="MEDIAPLAYBACK_STATE.MEDIAPLAYBACK_RESUME"]/*' />
     MEDIAPLAYBACK_RESUME = 0,
+
+    /// <include file='MEDIAPLAYBACK_STATE.xml' path='doc/member[@name="MEDIAPLAYBACK_STATE.MEDIAPLAYBACK_PAUSE"]/*' />
     MEDIAPLAYBACK_PAUSE = 1,
+
+    /// <include file='MEDIAPLAYBACK_STATE.xml' path='doc/member[@name="MEDIAPLAYBACK_STATE.MEDIAPLAYBACK_PAUSE_AND_SUSPEND"]/*' />
     MEDIAPLAYBACK_PAUSE_AND_SUSPEND = 2,
+
+    /// <include file='MEDIAPLAYBACK_STATE.xml' path='doc/member[@name="MEDIAPLAYBACK_STATE.MEDIAPLAYBACK_RESUME_FROM_SUSPEND"]/*' />
     MEDIAPLAYBACK_RESUME_FROM_SUSPEND = 3,
 }

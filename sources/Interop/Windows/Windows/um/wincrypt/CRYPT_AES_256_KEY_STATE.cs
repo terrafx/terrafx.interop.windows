@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_AES_256_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_256_KEY_STATE"]/*' />
 public unsafe partial struct CRYPT_AES_256_KEY_STATE
 {
+    /// <include file='CRYPT_AES_256_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_256_KEY_STATE.Key"]/*' />
     [NativeTypeName("unsigned char [32]")]
     public fixed byte Key[32];
 
+    /// <include file='CRYPT_AES_256_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_256_KEY_STATE.IV"]/*' />
     [NativeTypeName("unsigned char [16]")]
     public fixed byte IV[16];
 
+    /// <include file='CRYPT_AES_256_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_256_KEY_STATE.EncryptionState"]/*' />
     [NativeTypeName("unsigned char [15][16]")]
     public fixed byte EncryptionState[15 * 16];
 
+    /// <include file='CRYPT_AES_256_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_256_KEY_STATE.DecryptionState"]/*' />
     [NativeTypeName("unsigned char [15][16]")]
     public fixed byte DecryptionState[15 * 16];
 
+    /// <include file='CRYPT_AES_256_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_256_KEY_STATE.Feedback"]/*' />
     [NativeTypeName("unsigned char [16]")]
     public fixed byte Feedback[16];
 }

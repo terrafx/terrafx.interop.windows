@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EC_VARIANT_TYPE">
+    <summary>
+      <para>The <b>EC_VARIANT_TYPE</b> enumeration defines the values that specify the data types that are used in the Windows Event Collector functions.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT_TYPE.EcVarTypeNull">
+    <summary>
+      <para>Null content that implies that the element that contains the content does not exist.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT_TYPE.EcVarTypeBoolean">
+    <summary>
+      <para>A Boolean value.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT_TYPE.EcVarTypeUInt32">
+    <summary>
+      <para>An unsigned 32-bit value.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT_TYPE.EcVarTypeDateTime">
+    <summary>
+      <para>A ULONGLONG value.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT_TYPE.EcVarTypeString">
+    <summary>
+      <para>A string value.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT_TYPE.EcVarObjectArrayPropertyHandle">
+    <summary>
+      <para>An EC_OBJECT_ARRAY_PROPERTY_HANDLE value.</para>
+    </summary>
+  </member>
+</doc>

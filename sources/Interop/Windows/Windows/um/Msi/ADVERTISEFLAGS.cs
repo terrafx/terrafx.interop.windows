@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ADVERTISEFLAGS.xml' path='doc/member[@name="ADVERTISEFLAGS"]/*' />
 public enum ADVERTISEFLAGS
 {
+    /// <include file='ADVERTISEFLAGS.xml' path='doc/member[@name="ADVERTISEFLAGS.ADVERTISEFLAGS_MACHINEASSIGN"]/*' />
     ADVERTISEFLAGS_MACHINEASSIGN = 0,
+
+    /// <include file='ADVERTISEFLAGS.xml' path='doc/member[@name="ADVERTISEFLAGS.ADVERTISEFLAGS_USERASSIGN"]/*' />
     ADVERTISEFLAGS_USERASSIGN = 1,
 }

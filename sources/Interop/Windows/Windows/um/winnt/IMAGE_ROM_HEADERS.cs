@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_ROM_HEADERS.xml' path='doc/member[@name="IMAGE_ROM_HEADERS"]/*' />
 public partial struct IMAGE_ROM_HEADERS
 {
+    /// <include file='IMAGE_ROM_HEADERS.xml' path='doc/member[@name="IMAGE_ROM_HEADERS.FileHeader"]/*' />
     public IMAGE_FILE_HEADER FileHeader;
 
+    /// <include file='IMAGE_ROM_HEADERS.xml' path='doc/member[@name="IMAGE_ROM_HEADERS.OptionalHeader"]/*' />
     public IMAGE_ROM_OPTIONAL_HEADER OptionalHeader;
 }

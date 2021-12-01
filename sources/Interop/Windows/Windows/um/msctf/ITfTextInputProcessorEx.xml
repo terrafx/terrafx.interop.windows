@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfTextInputProcessorEx.ActivateEx">
+    <summary>
+      <para>The <b>ITfTextInputProcessorEx.ActivateEx</b> method activates a text service when a user session starts. If the text service implements <b>ITfTextInputProcessorEx</b> and <b>ActivateEx</b> is called, <see cref="ITfTextInputProcessor.Activate" /> will not be called.</para>
+    </summary>
+    <param name="ptim">
+      <para>[in] Pointer to the ITfThreadMgr interface for the thread manager that owns the text service.</para>
+    </param>
+    <param name="tid">
+      <para>[in] Specifies the client identifier for the text service.</para>
+    </param>
+    <param name="dwFlags">
+      <para>[in] The combination of the following bits:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_TMAE_SECUREMODE</b>
+          </description>
+          <description>
+            <para>A text service is activated as secure mode. A text service may not want to show the setting dialog box.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_COMLESS</b>
+          </description>
+          <description>
+            <para>A text service is activated as com less mode. TSF was activated without COM. COM may not be initialized or COM may be initialized as MTA.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_WOW16</b>
+          </description>
+          <description>
+            <para>The current thread is 16 bit task.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_CONSOLE</b>
+          </description>
+          <description>
+            <para>A text service is activated for console usage.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>The TSF manager ignores the return value of this method.</para>
+    </returns>
+  </member>
+  <member name="ITfTextInputProcessorEx">
+    <summary>
+      <para>The <b>ITfTextInputProcessorEx</b> interface is implemented by a text service and used by the TSF manager to activate and deactivate the text service. The manager obtains a pointer to this interface when it creates an instance of the text service for a thread with a call to CoCreateInstance.</para>
+    </summary>
+  </member>
+</doc>

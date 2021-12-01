@@ -7,28 +7,37 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OBJECTDESCRIPTOR.xml' path='doc/member[@name="OBJECTDESCRIPTOR"]/*' />
 public partial struct OBJECTDESCRIPTOR
 {
+    /// <include file='OBJECTDESCRIPTOR.xml' path='doc/member[@name="OBJECTDESCRIPTOR.cbSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbSize;
 
+    /// <include file='OBJECTDESCRIPTOR.xml' path='doc/member[@name="OBJECTDESCRIPTOR.clsid"]/*' />
     [NativeTypeName("CLSID")]
     public Guid clsid;
 
+    /// <include file='OBJECTDESCRIPTOR.xml' path='doc/member[@name="OBJECTDESCRIPTOR.dwDrawAspect"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDrawAspect;
 
+    /// <include file='OBJECTDESCRIPTOR.xml' path='doc/member[@name="OBJECTDESCRIPTOR.sizel"]/*' />
     [NativeTypeName("SIZEL")]
     public SIZE sizel;
 
+    /// <include file='OBJECTDESCRIPTOR.xml' path='doc/member[@name="OBJECTDESCRIPTOR.pointl"]/*' />
     public POINTL pointl;
 
+    /// <include file='OBJECTDESCRIPTOR.xml' path='doc/member[@name="OBJECTDESCRIPTOR.dwStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStatus;
 
+    /// <include file='OBJECTDESCRIPTOR.xml' path='doc/member[@name="OBJECTDESCRIPTOR.dwFullUserTypeName"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFullUserTypeName;
 
+    /// <include file='OBJECTDESCRIPTOR.xml' path='doc/member[@name="OBJECTDESCRIPTOR.dwSrcOfCopy"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSrcOfCopy;
 }

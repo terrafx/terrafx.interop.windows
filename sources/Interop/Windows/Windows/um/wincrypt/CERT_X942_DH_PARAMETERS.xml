@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_X942_DH_PARAMETERS">
+    <summary>
+      <para>The <b>CERT_X942_DH_PARAMETERS</b> structure contains parameters associated with a Diffie-Hellman <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key algorithm</a>.</para>
+    </summary>
+  </member>
+  <member name="CERT_X942_DH_PARAMETERS.p">
+    <summary>
+      <para>Prime modulus P. The most significant bit of the most significant byte must always be set to 1.</para>
+    </summary>
+  </member>
+  <member name="CERT_X942_DH_PARAMETERS.g">
+    <summary>
+      <para>Generator G. Must be the same length as <b>p</b> (must be padded with 0x00 bytes if it is less).</para>
+    </summary>
+  </member>
+  <member name="CERT_X942_DH_PARAMETERS.q">
+    <summary>
+      <para>Prime Q.</para>
+      <para>A factor of p–1. The most significant bit of the most significant byte must be set to 1.</para>
+    </summary>
+  </member>
+  <member name="CERT_X942_DH_PARAMETERS.j">
+    <summary>
+      <para>Optional subgroup factor.</para>
+    </summary>
+  </member>
+  <member name="CERT_X942_DH_PARAMETERS.pValidationParams">
+    <summary>
+      <para>Optional pointer to a <see cref="CERT_X942_DH_VALIDATION_PARAMS" /> structure. If the <b>cbData</b> member of the q BLOB is zero, all of the members of <b>pValidationParams</b> must be zero.</para>
+    </summary>
+  </member>
+</doc>

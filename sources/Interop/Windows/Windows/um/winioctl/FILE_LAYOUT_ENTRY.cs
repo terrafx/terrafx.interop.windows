@@ -5,32 +5,42 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_LAYOUT_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_ENTRY"]/*' />
 public partial struct FILE_LAYOUT_ENTRY
 {
+    /// <include file='FILE_LAYOUT_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_ENTRY.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='FILE_LAYOUT_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_ENTRY.NextFileOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint NextFileOffset;
 
+    /// <include file='FILE_LAYOUT_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_ENTRY.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='FILE_LAYOUT_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_ENTRY.FileAttributes"]/*' />
     [NativeTypeName("DWORD")]
     public uint FileAttributes;
 
+    /// <include file='FILE_LAYOUT_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_ENTRY.FileReferenceNumber"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong FileReferenceNumber;
 
+    /// <include file='FILE_LAYOUT_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_ENTRY.FirstNameOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint FirstNameOffset;
 
+    /// <include file='FILE_LAYOUT_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_ENTRY.FirstStreamOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint FirstStreamOffset;
 
+    /// <include file='FILE_LAYOUT_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_ENTRY.ExtraInfoOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExtraInfoOffset;
 
+    /// <include file='FILE_LAYOUT_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_ENTRY.ExtraInfoLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExtraInfoLength;
 }

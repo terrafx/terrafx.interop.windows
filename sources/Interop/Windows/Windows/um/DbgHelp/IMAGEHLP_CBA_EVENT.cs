@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEHLP_CBA_EVENT.xml' path='doc/member[@name="IMAGEHLP_CBA_EVENT"]/*' />
 public unsafe partial struct IMAGEHLP_CBA_EVENT
 {
+    /// <include file='IMAGEHLP_CBA_EVENT.xml' path='doc/member[@name="IMAGEHLP_CBA_EVENT.severity"]/*' />
     [NativeTypeName("DWORD")]
     public uint severity;
 
+    /// <include file='IMAGEHLP_CBA_EVENT.xml' path='doc/member[@name="IMAGEHLP_CBA_EVENT.code"]/*' />
     [NativeTypeName("DWORD")]
     public uint code;
 
+    /// <include file='IMAGEHLP_CBA_EVENT.xml' path='doc/member[@name="IMAGEHLP_CBA_EVENT.desc"]/*' />
     [NativeTypeName("PCHAR")]
     public sbyte* desc;
 
+    /// <include file='IMAGEHLP_CBA_EVENT.xml' path='doc/member[@name="IMAGEHLP_CBA_EVENT.@object"]/*' />
     [NativeTypeName("PVOID")]
     public void* @object;
 }

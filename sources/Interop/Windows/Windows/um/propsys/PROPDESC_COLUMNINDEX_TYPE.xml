@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPDESC_COLUMNINDEX_TYPE">
+    <summary>
+      <para>Indicates whether or how a property can be indexed.</para>
+    </summary>
+    <remarks>
+      <para>Windows Search builds indexes for the values found in the property store to efficiently support filtering, sorting, and grouping over indexed properties. There are two kinds of indexes: an individual value index that indexes an item by single values, and a vector index that indexes all the vector values of a row as a single index entry.</para>
+    </remarks>
+  </member>
+  <member name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_NONE">
+    <summary>
+      <para>Never generate any index on this property.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_ONDISK">
+    <summary>
+      <para>Always build the individual value index, but build the vector index only on demand.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_INMEMORY">
+    <summary>
+      <para>Obsolete.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_ONDEMAND">
+    <summary>
+      <para>
+        <b>Windows 7 and later</b>. Build the individual value index or vector index the first time the index is used in a query to filter, group, or sort. After being generated the first time, the index is maintained for future queries. Most property indexes should be built on demand, because building and maintaining indexes is expensive and they should be built only if they will be used.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_ONDISKALL">
+    <summary>
+      <para>
+        <b>Windows 7 and later</b>. Always build both the individual value index and the vector index.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_ONDISKVECTOR">
+    <summary>
+      <para>
+        <b>Windows 7 and later</b>. Always build the vector index, but build the value index only on demand.</para>
+    </summary>
+  </member>
+</doc>

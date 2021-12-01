@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFTOPOLOGY_DXVA_MODE.xml' path='doc/member[@name="MFTOPOLOGY_DXVA_MODE"]/*' />
 public enum MFTOPOLOGY_DXVA_MODE
 {
+    /// <include file='MFTOPOLOGY_DXVA_MODE.xml' path='doc/member[@name="MFTOPOLOGY_DXVA_MODE.MFTOPOLOGY_DXVA_DEFAULT"]/*' />
     MFTOPOLOGY_DXVA_DEFAULT = 0,
+
+    /// <include file='MFTOPOLOGY_DXVA_MODE.xml' path='doc/member[@name="MFTOPOLOGY_DXVA_MODE.MFTOPOLOGY_DXVA_NONE"]/*' />
     MFTOPOLOGY_DXVA_NONE = 1,
+
+    /// <include file='MFTOPOLOGY_DXVA_MODE.xml' path='doc/member[@name="MFTOPOLOGY_DXVA_MODE.MFTOPOLOGY_DXVA_FULL"]/*' />
     MFTOPOLOGY_DXVA_FULL = 2,
 }

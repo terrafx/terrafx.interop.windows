@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLTextContainer.xml' path='doc/member[@name="IHTMLTextContainer"]/*' />
 [Guid("3050F230-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLTextContainer : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, uint>)(lpVtbl[1]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, uint>)(lpVtbl[2]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, uint*, int>)(lpVtbl[3]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLTextContainer.xml' path='doc/member[@name="IHTMLTextContainer.createControlRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT createControlRange(IDispatch** range)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, IDispatch**, int>)(lpVtbl[7]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), range);
     }
 
+    /// <include file='IHTMLTextContainer.xml' path='doc/member[@name="IHTMLTextContainer.get_scrollHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_scrollHeight([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, int*, int>)(lpVtbl[8]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextContainer.xml' path='doc/member[@name="IHTMLTextContainer.get_scrollWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_scrollWidth([NativeTypeName("long *")] int* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, int*, int>)(lpVtbl[9]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextContainer.xml' path='doc/member[@name="IHTMLTextContainer.put_scrollTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_scrollTop([NativeTypeName("long")] int v)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, int, int>)(lpVtbl[10]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextContainer.xml' path='doc/member[@name="IHTMLTextContainer.get_scrollTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_scrollTop([NativeTypeName("long *")] int* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, int*, int>)(lpVtbl[11]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextContainer.xml' path='doc/member[@name="IHTMLTextContainer.put_scrollLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_scrollLeft([NativeTypeName("long")] int v)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, int, int>)(lpVtbl[12]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextContainer.xml' path='doc/member[@name="IHTMLTextContainer.get_scrollLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_scrollLeft([NativeTypeName("long *")] int* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, int*, int>)(lpVtbl[13]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextContainer.xml' path='doc/member[@name="IHTMLTextContainer.put_onscroll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_onscroll(VARIANT v)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
         return ((delegate* unmanaged<IHTMLTextContainer*, VARIANT, int>)(lpVtbl[14]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextContainer.xml' path='doc/member[@name="IHTMLTextContainer.get_onscroll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_onscroll(VARIANT* p)

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HTTP_POLICY_DESCRIPTION.xml' path='doc/member[@name="WS_HTTP_POLICY_DESCRIPTION"]/*' />
 public partial struct WS_HTTP_POLICY_DESCRIPTION
 {
+    /// <include file='WS_HTTP_POLICY_DESCRIPTION.xml' path='doc/member[@name="WS_HTTP_POLICY_DESCRIPTION.channelProperties"]/*' />
     public WS_CHANNEL_PROPERTIES channelProperties;
 }

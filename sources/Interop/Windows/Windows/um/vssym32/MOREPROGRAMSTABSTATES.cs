@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOREPROGRAMSTABSTATES.xml' path='doc/member[@name="MOREPROGRAMSTABSTATES"]/*' />
 public enum MOREPROGRAMSTABSTATES
 {
+    /// <include file='MOREPROGRAMSTABSTATES.xml' path='doc/member[@name="MOREPROGRAMSTABSTATES.SPMPT_NORMAL"]/*' />
     SPMPT_NORMAL = 1,
+
+    /// <include file='MOREPROGRAMSTABSTATES.xml' path='doc/member[@name="MOREPROGRAMSTABSTATES.SPMPT_HOT"]/*' />
     SPMPT_HOT = 2,
+
+    /// <include file='MOREPROGRAMSTABSTATES.xml' path='doc/member[@name="MOREPROGRAMSTABSTATES.SPMPT_SELECTED"]/*' />
     SPMPT_SELECTED = 3,
+
+    /// <include file='MOREPROGRAMSTABSTATES.xml' path='doc/member[@name="MOREPROGRAMSTABSTATES.SPMPT_DISABLED"]/*' />
     SPMPT_DISABLED = 4,
+
+    /// <include file='MOREPROGRAMSTABSTATES.xml' path='doc/member[@name="MOREPROGRAMSTABSTATES.SPMPT_FOCUSED"]/*' />
     SPMPT_FOCUSED = 5,
 }

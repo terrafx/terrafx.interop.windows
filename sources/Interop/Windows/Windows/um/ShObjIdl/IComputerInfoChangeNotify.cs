@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IComputerInfoChangeNotify.xml' path='doc/member[@name="IComputerInfoChangeNotify"]/*' />
 [Guid("0DF60D92-6818-46D6-B358-D66170DDE466")]
 [NativeTypeName("struct IComputerInfoChangeNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IComputerInfoChangeNotify : IComputerInfoChangeNoti
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IComputerInfoChangeNotify : IComputerInfoChangeNoti
         return ((delegate* unmanaged<IComputerInfoChangeNotify*, Guid*, void**, int>)(lpVtbl[0]))((IComputerInfoChangeNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IComputerInfoChangeNotify : IComputerInfoChangeNoti
         return ((delegate* unmanaged<IComputerInfoChangeNotify*, uint>)(lpVtbl[1]))((IComputerInfoChangeNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IComputerInfoChangeNotify : IComputerInfoChangeNoti
         return ((delegate* unmanaged<IComputerInfoChangeNotify*, uint>)(lpVtbl[2]))((IComputerInfoChangeNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IComputerInfoChangeNotify.xml' path='doc/member[@name="IComputerInfoChangeNotify.ComputerInfoChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ComputerInfoChanged()

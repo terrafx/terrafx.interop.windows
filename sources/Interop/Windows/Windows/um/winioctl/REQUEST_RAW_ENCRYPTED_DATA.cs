@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REQUEST_RAW_ENCRYPTED_DATA.xml' path='doc/member[@name="REQUEST_RAW_ENCRYPTED_DATA"]/*' />
 public partial struct REQUEST_RAW_ENCRYPTED_DATA
 {
+    /// <include file='REQUEST_RAW_ENCRYPTED_DATA.xml' path='doc/member[@name="REQUEST_RAW_ENCRYPTED_DATA.FileOffset"]/*' />
     [NativeTypeName("LONGLONG")]
     public long FileOffset;
 
+    /// <include file='REQUEST_RAW_ENCRYPTED_DATA.xml' path='doc/member[@name="REQUEST_RAW_ENCRYPTED_DATA.Length"]/*' />
     [NativeTypeName("DWORD")]
     public uint Length;
 }

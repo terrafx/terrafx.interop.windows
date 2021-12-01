@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SERVICE_HOST_STATE.xml' path='doc/member[@name="WS_SERVICE_HOST_STATE"]/*' />
 public enum WS_SERVICE_HOST_STATE
 {
+    /// <include file='WS_SERVICE_HOST_STATE.xml' path='doc/member[@name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_CREATED"]/*' />
     WS_SERVICE_HOST_STATE_CREATED = 0,
+
+    /// <include file='WS_SERVICE_HOST_STATE.xml' path='doc/member[@name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_OPENING"]/*' />
     WS_SERVICE_HOST_STATE_OPENING = 1,
+
+    /// <include file='WS_SERVICE_HOST_STATE.xml' path='doc/member[@name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_OPEN"]/*' />
     WS_SERVICE_HOST_STATE_OPEN = 2,
+
+    /// <include file='WS_SERVICE_HOST_STATE.xml' path='doc/member[@name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_CLOSING"]/*' />
     WS_SERVICE_HOST_STATE_CLOSING = 3,
+
+    /// <include file='WS_SERVICE_HOST_STATE.xml' path='doc/member[@name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_CLOSED"]/*' />
     WS_SERVICE_HOST_STATE_CLOSED = 4,
+
+    /// <include file='WS_SERVICE_HOST_STATE.xml' path='doc/member[@name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_FAULTED"]/*' />
     WS_SERVICE_HOST_STATE_FAULTED = 5,
 }

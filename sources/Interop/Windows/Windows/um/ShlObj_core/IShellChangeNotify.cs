@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellChangeNotify.xml' path='doc/member[@name="IShellChangeNotify"]/*' />
 [Guid("D82BE2B1-5764-11D0-A96E-00C04FD705A2")]
 [NativeTypeName("struct IShellChangeNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface
         return ((delegate* unmanaged<IShellChangeNotify*, Guid*, void**, int>)(lpVtbl[0]))((IShellChangeNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface
         return ((delegate* unmanaged<IShellChangeNotify*, uint>)(lpVtbl[1]))((IShellChangeNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface
         return ((delegate* unmanaged<IShellChangeNotify*, uint>)(lpVtbl[2]))((IShellChangeNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellChangeNotify.xml' path='doc/member[@name="IShellChangeNotify.OnChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnChange([NativeTypeName("LONG")] int lEvent, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2)

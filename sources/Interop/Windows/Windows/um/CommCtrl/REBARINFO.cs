@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REBARINFO.xml' path='doc/member[@name="REBARINFO"]/*' />
 public partial struct REBARINFO
 {
+    /// <include file='REBARINFO.xml' path='doc/member[@name="REBARINFO.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='REBARINFO.xml' path='doc/member[@name="REBARINFO.fMask"]/*' />
     public uint fMask;
 
+    /// <include file='REBARINFO.xml' path='doc/member[@name="REBARINFO.himl"]/*' />
     public HIMAGELIST himl;
 }

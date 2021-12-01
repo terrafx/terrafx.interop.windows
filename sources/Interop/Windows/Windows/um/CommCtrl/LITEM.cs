@@ -5,19 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LITEM.xml' path='doc/member[@name="LITEM"]/*' />
 public unsafe partial struct LITEM
 {
+    /// <include file='LITEM.xml' path='doc/member[@name="LITEM.mask"]/*' />
     public uint mask;
 
+    /// <include file='LITEM.xml' path='doc/member[@name="LITEM.iLink"]/*' />
     public int iLink;
 
+    /// <include file='LITEM.xml' path='doc/member[@name="LITEM.state"]/*' />
     public uint state;
 
+    /// <include file='LITEM.xml' path='doc/member[@name="LITEM.stateMask"]/*' />
     public uint stateMask;
 
+    /// <include file='LITEM.xml' path='doc/member[@name="LITEM.szID"]/*' />
     [NativeTypeName("WCHAR [48]")]
     public fixed ushort szID[48];
 
+    /// <include file='LITEM.xml' path='doc/member[@name="LITEM.szUrl"]/*' />
     [NativeTypeName("WCHAR [2084]")]
     public fixed ushort szUrl[2084];
 }

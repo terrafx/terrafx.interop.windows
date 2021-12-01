@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_INPUT_ELEMENT_DESC">
+    <summary>
+      <para>A description of a single element to the vertex layout.</para>
+    </summary>
+    <remarks>
+      <para>This structure is a subset of <see cref="D3D11_INPUT_ELEMENT_DESC" /> that omits fields required to define a vertex layout.</para>
+      <para>If the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-constants">D2D1_APPEND_ALIGNED_ELEMENT</a> constant is used for  <b>alignedByteOffset</b>, the elements will be packed contiguously for convenience.</para>
+    </remarks>
+    <seealso cref="D2D1_VERTEX_USAGE" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">Getting Started with the Input-Assembler Stage</seealso>
+    <seealso cref="ID2D1EffectContext.CreateVertexBuffer" />
+    <seealso cref="ID2D1EffectContext.LoadVertexShader" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">Semantics</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-signatures">Signatures</seealso>
+  </member>
+  <member name="D2D1_INPUT_ELEMENT_DESC.semanticName">
+    <summary>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">HLSL semantic</a> associated with this element in a <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-signatures">shader input-signature</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_INPUT_ELEMENT_DESC.semanticIndex">
+    <summary>
+      <para>The semantic index for the element. A semantic index modifies a semantic, with an integer index number. A semantic index is only needed in a case where there is more than one element with the same semantic. For example, a 4x4 matrix would have four components each with the semantic name matrix; however, each of the four components would have different semantic indices (0, 1, 2, and 3).</para>
+    </summary>
+  </member>
+  <member name="D2D1_INPUT_ELEMENT_DESC.format">
+    <summary>
+      <para>The data type of the element data.</para>
+    </summary>
+  </member>
+  <member name="D2D1_INPUT_ELEMENT_DESC.inputSlot">
+    <summary>
+      <para>An integer value that identifies the input-assembler. Valid values are between 0 and 15.</para>
+    </summary>
+  </member>
+  <member name="D2D1_INPUT_ELEMENT_DESC.alignedByteOffset">
+    <summary>
+      <para>The offset in bytes between each element.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_OPERATION_FLAGS2.xml' path='doc/member[@name="FILE_OPERATION_FLAGS2"]/*' />
 [Flags]
 public enum FILE_OPERATION_FLAGS2
 {
+    /// <include file='FILE_OPERATION_FLAGS2.xml' path='doc/member[@name="FILE_OPERATION_FLAGS2.FOF2_NONE"]/*' />
     FOF2_NONE = 0,
+
+    /// <include file='FILE_OPERATION_FLAGS2.xml' path='doc/member[@name="FILE_OPERATION_FLAGS2.FOF2_MERGEFOLDERSONCOLLISION"]/*' />
     FOF2_MERGEFOLDERSONCOLLISION = 0x1,
 }

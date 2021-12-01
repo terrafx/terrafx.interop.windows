@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.xml' path='doc/member[@name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE
 {
+    /// <include file='PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.xml' path='doc/member[@name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.BaseAddress"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint BaseAddress;
 
+    /// <include file='PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.xml' path='doc/member[@name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.Size"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint Size;
 
+    /// <include file='PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.xml' path='doc/member[@name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

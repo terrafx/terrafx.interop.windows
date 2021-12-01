@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10Device1.CreateBlendState1">
+    <summary>
+      <para>Create a blend-state object that encapsulates blend state for the output-merger stage.</para>
+    </summary>
+    <param name="pBlendStateDesc">
+      <para>Type: <b>const <see cref="D3D10_BLEND_DESC1" />*</b></para>
+      <para>Pointer to a blend-state description (see <see cref="D3D10_BLEND_DESC1" />).</para>
+    </param>
+    <param name="ppBlendState">
+      <para>Type: <b><see cref="ID3D10BlendState1" />**</b></para>
+      <para>Address of a pointer to the blend-state object created (see <see cref="ID3D10BlendState1 Interface" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>An application can create up to 4096 unique blend-state objects. For each object created, the runtime checks to see if a previous object has the same state. If such a previous object exists, the runtime will return a pointer to previous instance instead of creating a duplicate object.</para>
+      <para>This method requires Windows Vista Service Pack 1.</para>
+    </remarks>
+    <seealso cref="ID3D10Device1 Interface" />
+  </member>
+  <member name="ID3D10Device1.CreateShaderResourceView1">
+    <summary>
+      <para>Create a shader-resource <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-access-views">view</a> for accessing data in a resource.</para>
+    </summary>
+    <param name="pResource">
+      <para>Type: <b><see cref="ID3D10Resource" />*</b></para>
+      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">resource</a> that will serve as input to a shader. This resource must have been created with the <see cref="D3D10_BIND_SHADER_RESOURCE" /> flag.</para>
+    </param>
+    <param name="pDesc">
+      <para>Type: <b>const <see cref="D3D10_SHADER_RESOURCE_VIEW_DESC1" />*</b></para>
+      <para>Pointer to a shader-resource-view description (see <see cref="D3D10_SHADER_RESOURCE_VIEW_DESC1" />). Set this parameter to <b>NULL</b> to create a view that accesses the entire resource (using the format the resource was created with).</para>
+    </param>
+    <param name="ppSRView">
+      <para>Type: <b><see cref="ID3D10ShaderResourceView1" />**</b></para>
+      <para>Address of a pointer to a shader-resource view (see <see cref="ID3D10ShaderResourceView1 Interface" />). Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return S_FALSE if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>A resource is made up of one or more <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresources</a>, a view identifies which subresources to allow the pipeline to access. In addition, each resource is bound to the pipeline using a view. A shader-resource view is designed to bind any buffer or texture resource to the <a href="https://docs.microsoft.com//previous-versions/bb205146(v=vs.85)">shader stages</a> using the following API methods: <see cref="VSSetShaderResources" />, <see cref="GSSetShaderResources" /> and <see cref="PSSetShaderResources" />.</para>
+      <para>Since a view is fully typed, this means that typeless resources become fully typed when bound to the pipeline.</para>
+      <para>This method requires Windows Vista Service Pack 1.</para>
+    </remarks>
+    <seealso cref="ID3D10Device1 Interface" />
+  </member>
+  <member name="ID3D10Device1.GetFeatureLevel">
+    <summary>
+      <para>Gets the feature level of the hardware device.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D3D10_FEATURE_LEVEL1" /></b></para>
+      <para>The feature level (see <see cref="D3D10_FEATURE_LEVEL1" />).</para>
+    </returns>
+    <remarks>
+      <para>This method requires Windows Vista Service Pack 1.</para>
+    </remarks>
+    <seealso cref="ID3D10Device1 Interface" />
+  </member>
+  <member name="ID3D10Device1">
+    <summary>
+      <para>The device interface represents a virtual adapter for Direct3D 10.1; it is used to perform rendering and create Direct3D resources.</para>
+    </summary>
+    <remarks>
+      <para>A device is created using <see cref="D3D10CreateDevice1" />.</para>
+      <para>This method requires Windows Vista Service Pack 1.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D10Device" />
+  </member>
+</doc>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_SOURCE_READER_FLAG">
+    <summary>
+      <para>Contains flags that indicate the status of the <see cref="IMFSourceReader.ReadSample" /> method.</para>
+    </summary>
+    <seealso cref="IMFSourceReader" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_SOURCE_READER_FLAG.MF_SOURCE_READERF_ERROR">
+    <summary>
+      <para>An error occurred. If you receive this flag, do not make any further calls to <see cref="IMFSourceReader" /> methods.</para>
+    </summary>
+  </member>
+  <member name="MF_SOURCE_READER_FLAG.MF_SOURCE_READERF_ENDOFSTREAM">
+    <summary>
+      <para>The source reader reached the end of the stream.</para>
+    </summary>
+  </member>
+  <member name="MF_SOURCE_READER_FLAG.MF_SOURCE_READERF_NEWSTREAM">
+    <summary>
+      <para>One or more new streams were created. Respond to this flag by doing at least one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Set the output types on the new streams.</description>
+        </item>
+        <item>
+          <description>Update the stream selection by selecting or deselecting streams.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MF_SOURCE_READER_FLAG.MF_SOURCE_READERF_NATIVEMEDIATYPECHANGED">
+    <summary>
+      <para>The <i>native format</i> has changed for one or more streams. The native format is the format delivered by the media source before any decoders are inserted.</para>
+    </summary>
+  </member>
+  <member name="MF_SOURCE_READER_FLAG.MF_SOURCE_READERF_CURRENTMEDIATYPECHANGED">
+    <summary>
+      <para>The current media has type changed for one or more streams. To get the current media type, call the <see cref="IMFSourceReader.GetCurrentMediaType" /> method.</para>
+    </summary>
+  </member>
+  <member name="MF_SOURCE_READER_FLAG.MF_SOURCE_READERF_STREAMTICK">
+    <summary>
+      <para>There is a gap in the stream. This flag corresponds to an <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamtick">MEStreamTick</a> event from the media source.</para>
+    </summary>
+  </member>
+  <member name="MF_SOURCE_READER_FLAG.MF_SOURCE_READERF_ALLEFFECTSREMOVED">
+    <summary>
+      <para>All transforms inserted by the application have been removed for a particular stream. This could be due to a dynamic format change from a source or decoder that prevents custom transforms from being used because they cannot handle the new media type.</para>
+    </summary>
+  </member>
+</doc>

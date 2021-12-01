@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap"]/*' />
 [Guid("091162A4-BC96-411F-AAE8-C5122CD03363")]
 [NativeTypeName("struct ISharedBitmap : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
         return ((delegate* unmanaged<ISharedBitmap*, Guid*, void**, int>)(lpVtbl[0]))((ISharedBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
         return ((delegate* unmanaged<ISharedBitmap*, uint>)(lpVtbl[1]))((ISharedBitmap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
         return ((delegate* unmanaged<ISharedBitmap*, uint>)(lpVtbl[2]))((ISharedBitmap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.GetSharedBitmap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSharedBitmap(HBITMAP* phbm)
@@ -46,6 +51,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
         return ((delegate* unmanaged<ISharedBitmap*, HBITMAP*, int>)(lpVtbl[3]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
     }
 
+    /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSize(SIZE* pSize)
@@ -53,6 +59,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
         return ((delegate* unmanaged<ISharedBitmap*, SIZE*, int>)(lpVtbl[4]))((ISharedBitmap*)Unsafe.AsPointer(ref this), pSize);
     }
 
+    /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.GetFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetFormat(WTS_ALPHATYPE* pat)
@@ -60,6 +67,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
         return ((delegate* unmanaged<ISharedBitmap*, WTS_ALPHATYPE*, int>)(lpVtbl[5]))((ISharedBitmap*)Unsafe.AsPointer(ref this), pat);
     }
 
+    /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.InitializeBitmap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT InitializeBitmap(HBITMAP hbm, WTS_ALPHATYPE wtsAT)
@@ -67,6 +75,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
         return ((delegate* unmanaged<ISharedBitmap*, HBITMAP, WTS_ALPHATYPE, int>)(lpVtbl[6]))((ISharedBitmap*)Unsafe.AsPointer(ref this), hbm, wtsAT);
     }
 
+    /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.Detach"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Detach(HBITMAP* phbm)

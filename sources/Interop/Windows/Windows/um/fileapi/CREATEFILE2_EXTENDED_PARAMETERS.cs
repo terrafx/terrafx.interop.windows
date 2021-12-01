@@ -7,23 +7,30 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREATEFILE2_EXTENDED_PARAMETERS.xml' path='doc/member[@name="CREATEFILE2_EXTENDED_PARAMETERS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct CREATEFILE2_EXTENDED_PARAMETERS
 {
+    /// <include file='CREATEFILE2_EXTENDED_PARAMETERS.xml' path='doc/member[@name="CREATEFILE2_EXTENDED_PARAMETERS.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='CREATEFILE2_EXTENDED_PARAMETERS.xml' path='doc/member[@name="CREATEFILE2_EXTENDED_PARAMETERS.dwFileAttributes"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileAttributes;
 
+    /// <include file='CREATEFILE2_EXTENDED_PARAMETERS.xml' path='doc/member[@name="CREATEFILE2_EXTENDED_PARAMETERS.dwFileFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileFlags;
 
+    /// <include file='CREATEFILE2_EXTENDED_PARAMETERS.xml' path='doc/member[@name="CREATEFILE2_EXTENDED_PARAMETERS.dwSecurityQosFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSecurityQosFlags;
 
+    /// <include file='CREATEFILE2_EXTENDED_PARAMETERS.xml' path='doc/member[@name="CREATEFILE2_EXTENDED_PARAMETERS.lpSecurityAttributes"]/*' />
     [NativeTypeName("LPSECURITY_ATTRIBUTES")]
     public SECURITY_ATTRIBUTES* lpSecurityAttributes;
 
+    /// <include file='CREATEFILE2_EXTENDED_PARAMETERS.xml' path='doc/member[@name="CREATEFILE2_EXTENDED_PARAMETERS.hTemplateFile"]/*' />
     public HANDLE hTemplateFile;
 }

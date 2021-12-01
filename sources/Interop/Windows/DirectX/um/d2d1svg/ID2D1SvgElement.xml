@@ -1,0 +1,1105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1SvgElement.AppendChild">
+    <summary>
+      <para>Appends an element to the list of children.
+If the element already has a parent, it is removed from this parent as part of the append operation.</para>
+    </summary>
+    <param name="newChild">
+      <para>Type: <b>ID2D1SvgElement*</b></para>
+      <para>The element to append.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.
+Returns an error if this element cannot accept children of the type of newChild.
+Returns an error if the newChild is an ancestor of this element.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.CreateChild">
+    <summary>
+      <para>Creates an element from a tag name. The element is appended to the list of children.</para>
+    </summary>
+    <param name="tagName">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The tag name of the new child. An empty string is interpreted to be a text content element.</para>
+    </param>
+    <param name="newChild">
+      <para>Type: <b>ID2D1SvgElement**</b></para>
+      <para>The new child element.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.
+Returns an error if this element cannot accept children of the specified type.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a string.</para>
+    </summary>
+    <param name="name">
+      <para>Type: [in] <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: [out] <b>PWSTR</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified string type.  Returns an error if the attribute is not specified.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a extend mode value. This method can be used to get the value of a spreadMethod attribute.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" />*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a fill mode. This method can be used to get the value of the fill-rule or clip-rule properties.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_FILL_MODE" />*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a matrix value. This method can be used to get the value of a transform or gradientTransform attribute.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>D2D1_MATRIX_3X2_F*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a POD type.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="type">
+      <para>Type: <b><see cref="D2D1_SVG_ATTRIBUTE_POD_TYPE" /></b></para>
+      <para>The POD type of the value.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>void*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <param name="valueSizeInBytes">
+      <para>Type: <b>UINT32</b></para>
+      <para>The size of the value in bytes.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code. Returns an error if the
+attribute is not specified. Returns an error if the attribute name is not valid
+on this element. Returns an error if the attribute cannot be expressed as the
+specified POD type.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a string.</para>
+    </summary>
+    <param name="name">
+      <para>Type: [in] <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="type">
+      <para>Type: [in] <b><see cref="D2D1_SVG_ATTRIBUTE_STRING_TYPE" /></b></para>
+      <para>The string type.</para>
+    </param>
+    <param name="value">
+      <para>Type: [out] <b>PWSTR</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <param name="valueCount">
+      <para>Type: [out] <b>UINT32</b></para>
+      <para>The number of elements in the returned value.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified string type.  Returns an error if the attribute is not specified.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a display value. This method can be used to get the value of the display property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_DISPLAY" />*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a length value.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_LENGTH" />*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a line cap value. This method can be used to get the value of the stroke-linecap property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_LINE_CAP" />*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a line join value. This method can be used to get the value of the stroke-linejoin property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_LINE_JOIN" />*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as an overflow value. This method can be used to get the value of the overflow property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_OVERFLOW" />*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a preserve aspect ratio value. This method can be used to get the value of a preserveAspectRatio attribute.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_PRESERVE_ASPECT_RATIO" />*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a unit type value. This method can be used to get the value of a gradientUnits or clipPathUnits attribute.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_UNIT_TYPE" />*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a visibility value. This method can be used to get the value of the visibility property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_VISIBILITY" />*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a float.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>ID2D1SvgAttribute**</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a paint. This method can be used to get the value of the fill or stroke properties.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>ID2D1SvgPaint**</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as path data. This method can be used to get the value of the d attribute on a path element.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>ID2D1SvgPathData**</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as points. This method can be used to get the value of the points attribute on a polygon or polyline element.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>ID2D1SvgPointCollection**</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a stroke dash array. This method can be used to get the value of the stroke-dasharray property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>ID2D1SvgStrokeDashArray**</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as an interface type.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The interface ID of the attribute value.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>void**</b></para>
+      <para>The value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code. Returns an error if the
+attribute is not specified. Returns an error if the attribute name is not valid
+on this element. Returns an error if the attribute cannot be expressed as the
+specified interface type.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetAttributeValueLength">
+    <summary>
+      <para>Gets the string length of an attribute of this element.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="type">
+      <para>Type: <b><see cref="D2D1_SVG_ATTRIBUTE_STRING_TYPE" /></b></para>
+      <para>The string type of the attribute.</para>
+    </param>
+    <param name="valueLength">
+      <para>Type: <b>UINT32*</b></para>
+      <para>The length of the attribute. The returned string length does not include room for the null terminator.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.
+Returns an error if the attribute is not specified.
+Returns an error if the attribute name is not valid on this element.
+Returns an error if the attribute cannot be expressed as the specified string type.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetDocument">
+    <summary>
+      <para>Gets the document that contains this element.</para>
+    </summary>
+    <param name="document">
+      <para>Type: <b>ID2D1SvgDocument**</b></para>
+      <para>Outputs the document that contains this element. This argument will be null if the element has been removed from the tree.</para>
+    </param>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetFirstChild">
+    <summary>
+      <para>Gets the first child of this element.</para>
+    </summary>
+    <param name="child">
+      <para>Type: <b>ID2D1SvgElement**</b></para>
+      <para>Outputs the first child of this element.</para>
+    </param>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetLastChild">
+    <summary>
+      <para>Gets the last child of this element.</para>
+    </summary>
+    <param name="child">
+      <para>Type: <b>ID2D1SvgElement**</b></para>
+      <para>Outputs the last child of this element.</para>
+    </param>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetNextChild">
+    <summary>
+      <para>Gets the next sibling of the referenceChild element.</para>
+    </summary>
+    <param name="referenceChild">
+      <para>Type: <b>ID2D1SvgElement*</b></para>
+      <para>The referenceChild must be an immediate child of this element.</para>
+    </param>
+    <param name="nextChild">
+      <para>Type: <b>ID2D1SvgElement**</b></para>
+      <para>The output nextChild element will be non-null if the referenceChild has a next sibling. If the referenceChild is the last child, the output is null.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetParent">
+    <summary>
+      <para>Gets the parent element.</para>
+    </summary>
+    <param name="parent">
+      <para>Type: <b>ID2D1SvgElement**</b></para>
+      <para>Outputs the parent element.</para>
+    </param>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetPreviousChild">
+    <summary>
+      <para>Gets the previous sibling of the referenceChild element.</para>
+    </summary>
+    <param name="referenceChild">
+      <para>Type: <b>ID2D1SvgElement*</b></para>
+      <para>The referenceChild must be an immediate child of this element.</para>
+    </param>
+    <param name="previousChild">
+      <para>Type: <b>ID2D1SvgElement**</b></para>
+      <para>The output previousChild element will be non-null if the referenceChild has a previous sibling. If the referenceChild is the first child, the output is null.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetSpecifiedAttributeCount">
+    <summary>
+      <para>Returns the number of specified attributes on this element. Attributes are only considered specified if they are explicitly set on the element or present within an inline style.
+Properties that receive their value through CSS inheritance are not considered specified.
+An attribute can become specified if it is set through a method call.
+It can become unspecified if it is removed via <see cref="RemoveAttribute" />.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>Returns the number of specified attributes on this element.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetSpecifiedAttributeName">
+    <summary>
+      <para>Gets the name of the attribute at the given index.</para>
+    </summary>
+    <param name="index">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index of the attribute.</para>
+    </param>
+    <param name="name">
+      <para>Type: <b>PWSTR</b></para>
+      <para>Outputs the name of the attribute.</para>
+    </param>
+    <param name="nameCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>Length of the string returned in the name argument.</para>
+    </param>
+    <param name="inherited">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Outputs whether the attribute is set to the inherit value.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetSpecifiedAttributeNameLength">
+    <summary>
+      <para>Gets the string length of the name of the specified attribute at the given index. The output string length does not include room for the null terminator.</para>
+    </summary>
+    <param name="index">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index of the attribute.</para>
+    </param>
+    <param name="nameLength">
+      <para>Type: <b>UINT32*</b></para>
+      <para>Outputs the string length of the name of the specified attribute.</para>
+    </param>
+    <param name="inherited">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Indicates whether the attribute is set to the inherit value.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetTagName">
+    <summary>
+      <para>Gets the tag name.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PWSTR</b></para>
+      <para>The tag name.</para>
+    </param>
+    <param name="nameCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>Length of the value in the name argument.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetTagNameLength">
+    <summary>
+      <para>Gets the string length of the tag name.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>Returns the string length of the tag name. The returned string length does not include room for the null terminator.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetTextValue">
+    <summary>
+      <para>Gets the value of a text content element.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PWSTR</b></para>
+      <para>The value of the text content element.</para>
+    </param>
+    <param name="nameCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The length of the value in the name argument.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.GetTextValueLength">
+    <summary>
+      <para>Gets the length of the text content value.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>Returns the length of the text content value.  The returned string length does not include room for the null terminator.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.HasChildren">
+    <summary>
+      <para>Returns a boolean indicating whether this element has children.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns TRUE if this element has children.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.InsertChildBefore">
+    <summary>
+      <para>Inserts newChild as a child of this element, before the referenceChild element.
+If the newChild element already has a parent, it is removed from this parent as
+part of the insertion.</para>
+    </summary>
+    <param name="newChild">
+      <para>Type: <b>ID2D1SvgElement*</b></para>
+      <para>The element to be inserted.</para>
+    </param>
+    <param name="referenceChild">
+      <para>Type: <b>ID2D1SvgElement*</b></para>
+      <para>The element that the child should be inserted before.
+If referenceChild is null, the newChild is placed as the last child.
+If referenceChild is non-null, it must be an immediate child of this element.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code. Returns an error if this element cannot accept children
+of the type of newChild. Returns an error if the newChild is an ancestor of this
+element.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.IsAttributeSpecified">
+    <summary>
+      <para>Returns a boolean indicating if the attribute is explicitly set on the element.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute.</para>
+    </param>
+    <param name="inherited">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Outputs whether the attribute is set to the inherit value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>TReturns true if the attribute is explicitly set on the element or if it is present within an inline style. Returns FALSE if the attribute is not a valid
+attribute on this element.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.IsTextContent">
+    <summary>
+      <para>Returns a boolean indicating whether this element represents text content.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns TRUE if this element represents text content, e.g. the content of a 'title' or 'desc' element. Text content does not have a tag name.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.RemoveAttribute">
+    <summary>
+      <para>Removes the attribute from this element.  Also removes this attribute from within
+an inline style if present.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The name of the attribute to remove.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code. Returns an error if the attribute name is not valid
+on this element.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.RemoveChild">
+    <summary>
+      <para>Removes the oldChild from the tree. Children of oldChild remain children of oldChild.</para>
+    </summary>
+    <param name="oldChild">
+      <para>Type: <b>ID2D1SvgElement*</b></para>
+      <para>The child element to be removed. The oldChild element must be an immediate child of this element.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.ReplaceChild">
+    <summary>
+      <para>Replaces the oldChild element with the newChild. This operation removes the oldChild from the tree.
+If the newChild element already has a parent, it is removed from this parent as part of the replace operation.</para>
+    </summary>
+    <param name="newChild">
+      <para>Type: <b>ID2D1SvgElement*</b></para>
+      <para>The element to be inserted.</para>
+    </param>
+    <param name="oldChild">
+      <para>Type: <b>ID2D1SvgElement*</b></para>
+      <para>The child element to be replaced. The oldChild element must be an immediate child of this element.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code. Returns an error if
+this element cannot accept children of the type of newChild. Returns an error if
+the newChild is an ancestor of this element.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as a color.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>const D2D1_COLOR_F</b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as a matrix value. This method can be used to set the value of a transform or gradientTransform attribute.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>const D2D1_MATRIX_3X2_F</b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as a length value.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>const <see cref="D2D1_SVG_LENGTH" /></b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as a preserve aspect ratio value. This method can be used to set the value of a preserveAspectRatio attribute.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>const <see cref="D2D1_SVG_PRESERVE_ASPECT_RATIO" /></b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as an extend mode value. This method can be used to set the value of a spreadMethod attribute.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as a fill mode. This method can be used to set the value of the 'fill-rule' or 'clip-rule' properties.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_FILL_MODE" /></b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element using a POD type.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="type">
+      <para>Type: <b><see cref="D2D1_SVG_ATTRIBUTE_POD_TYPE" /></b></para>
+      <para>The POD type of the attribute.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>const void*</b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <param name="valueSizeInBytes">
+      <para>Type: <b>UINT32</b></para>
+      <para>The size of the new value in bytes.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute
+cannot be expressed as the specified type.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element using a string.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="type">
+      <para>Type: <b><see cref="D2D1_SVG_ATTRIBUTE_STRING_TYPE" /></b></para>
+      <para>The type of the string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code. Returns an error if the
+attribute name is not valid on this element. Returns an error if the attribute
+cannot be expressed as the specified type.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Gets an attribute of this element as a display value. This method can be used to get the value of the display property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_DISPLAY" /></b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as a line cap value. This method can be used to set the value of the stroke-linecap property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_LINE_CAP" /></b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as a line join value. This method can be used to set the value of the stroke-linejoin property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_LINE_JOIN" /></b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as an overflow value. This method can be used to set the value of the overflow property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_OVERFLOW" /></b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as a unit type value. This method can be used to set the value of a gradientUnits or clipPathUnits attribute.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_UNIT_TYPE" /></b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element as a visibility value. This method can be used to set the value of the visibility property.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="D2D1_SVG_VISIBILITY" /></b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element using a float.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetAttributeValue">
+    <summary>
+      <para>Sets an attribute of this element using an interface.</para>
+      <para>A given attribute object may only be set on one element in one attribute location at a time.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Name of the attribute to set.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>ID2D1SvgAttribute*</b></para>
+      <para>The new value of the attribute.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.    Returns an error if the attribute name is not valid on this element.
+Returns an error if the attribute cannot be expressed as the specified interface type.
+Returns an error if the attribute object is already set on an element.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement.SetTextValue">
+    <summary>
+      <para>Sets the value of a text content element.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>The new value of the text content element.</para>
+    </param>
+    <param name="nameCount">
+      <para>Type: <b>UINT32</b></para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgElement" />
+  </member>
+  <member name="ID2D1SvgElement">
+    <summary>
+      <para>Interface for all SVG elements.</para>
+    </summary>
+  </member>
+</doc>

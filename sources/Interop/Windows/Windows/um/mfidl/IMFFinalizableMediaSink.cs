@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFFinalizableMediaSink.xml' path='doc/member[@name="IMFFinalizableMediaSink"]/*' />
 [Guid("EAECB74A-9A50-42CE-9541-6A7F57AA4AD7")]
 [NativeTypeName("struct IMFFinalizableMediaSink : IMFMediaSink")]
 [NativeInheritance("IMFMediaSink")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, Guid*, void**, int>)(lpVtbl[0]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, uint>)(lpVtbl[1]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, uint>)(lpVtbl[2]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFMediaSink.GetCharacteristics" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, uint*, int>)(lpVtbl[3]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), pdwCharacteristics);
     }
 
+    /// <inheritdoc cref="IMFMediaSink.AddStreamSink" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddStreamSink([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier, IMFMediaType* pMediaType, IMFStreamSink** ppStreamSink)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, uint, IMFMediaType*, IMFStreamSink**, int>)(lpVtbl[4]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier, pMediaType, ppStreamSink);
     }
 
+    /// <inheritdoc cref="IMFMediaSink.RemoveStreamSink" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RemoveStreamSink([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, uint, int>)(lpVtbl[5]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier);
     }
 
+    /// <inheritdoc cref="IMFMediaSink.GetStreamSinkCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetStreamSinkCount([NativeTypeName("DWORD *")] uint* pcStreamSinkCount)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, uint*, int>)(lpVtbl[6]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), pcStreamSinkCount);
     }
 
+    /// <inheritdoc cref="IMFMediaSink.GetStreamSinkByIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetStreamSinkByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFStreamSink** ppStreamSink)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, uint, IMFStreamSink**, int>)(lpVtbl[7]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), dwIndex, ppStreamSink);
     }
 
+    /// <inheritdoc cref="IMFMediaSink.GetStreamSinkById" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetStreamSinkById([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier, IMFStreamSink** ppStreamSink)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, uint, IMFStreamSink**, int>)(lpVtbl[8]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier, ppStreamSink);
     }
 
+    /// <inheritdoc cref="IMFMediaSink.SetPresentationClock" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetPresentationClock(IMFPresentationClock* pPresentationClock)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, IMFPresentationClock*, int>)(lpVtbl[9]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), pPresentationClock);
     }
 
+    /// <inheritdoc cref="IMFMediaSink.GetPresentationClock" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetPresentationClock(IMFPresentationClock** ppPresentationClock)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, IMFPresentationClock**, int>)(lpVtbl[10]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), ppPresentationClock);
     }
 
+    /// <inheritdoc cref="IMFMediaSink.Shutdown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Shutdown()
@@ -102,6 +115,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, int>)(lpVtbl[11]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFFinalizableMediaSink.xml' path='doc/member[@name="IMFFinalizableMediaSink.BeginFinalize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT BeginFinalize(IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -109,6 +123,7 @@ public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.I
         return ((delegate* unmanaged<IMFFinalizableMediaSink*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[12]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), pCallback, punkState);
     }
 
+    /// <include file='IMFFinalizableMediaSink.xml' path='doc/member[@name="IMFFinalizableMediaSink.EndFinalize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT EndFinalize(IMFAsyncResult* pResult)

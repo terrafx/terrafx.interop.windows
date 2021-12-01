@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_QUERY_TYPE">
+    <summary>
+      <para>Used by the <see cref="STORAGE_PROPERTY_QUERY" /> structure passed to the <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> control code to indicate what information is returned about a property of a storage device or adapter.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-enumeration-types">Disk Management Enumeration Types</seealso>
+    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <seealso cref="STORAGE_PROPERTY_ID" />
+    <seealso cref="STORAGE_PROPERTY_QUERY" />
+  </member>
+  <member name="STORAGE_QUERY_TYPE.PropertyStandardQuery">
+    <summary>
+      <para>Instructs the driver to return an appropriate descriptor.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_QUERY_TYPE.PropertyExistsQuery">
+    <summary>
+      <para>Instructs the driver to report whether the descriptor is supported.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_QUERY_TYPE.PropertyMaskQuery">
+    <summary>
+      <para>Not currently supported. Do not use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_QUERY_TYPE.PropertyQueryMaxDefined">
+    <summary>
+      <para>Specifies the upper limit of the list of query types. This is used to validate the query type.</para>
+    </summary>
+  </member>
+</doc>

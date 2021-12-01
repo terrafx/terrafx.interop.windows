@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VideoProcAmpProperty">
+    <summary>
+      <para>The <b>VideoProcAmpProperty</b> enumeration specifies video properties on a video capture device.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IAMVideoProcAmp" />
+  </member>
+  <member name="VideoProcAmpProperty.VideoProcAmp_Brightness">
+    <summary>
+      <para>Specifies the brightness, also called the <i>black level</i>. For NTSC, the value is expressed in IRE units * 100. For non-NTSC sources, the units are arbitrary, with zero representing blanking and 10,000 representing pure white. Values range from –10,000 to 10,000.</para>
+    </summary>
+  </member>
+  <member name="VideoProcAmpProperty.VideoProcAmp_Contrast">
+    <summary>
+      <para>Specifies the contrast, expressed as gain factor * 100. Values range from zero to 10,000.</para>
+    </summary>
+  </member>
+  <member name="VideoProcAmpProperty.VideoProcAmp_Hue">
+    <summary>
+      <para>Specifies the hue, in degrees * 100. Values range from -180,000 to 180,000 (-180 to +180 degrees).</para>
+    </summary>
+  </member>
+  <member name="VideoProcAmpProperty.VideoProcAmp_Saturation">
+    <summary>
+      <para>Specifies the saturation. Values range from 0 to 10,000.</para>
+    </summary>
+  </member>
+  <member name="VideoProcAmpProperty.VideoProcAmp_Sharpness">
+    <summary>
+      <para>Specifies the sharpness. Values range from 0 to 100.</para>
+    </summary>
+  </member>
+  <member name="VideoProcAmpProperty.VideoProcAmp_Gamma">
+    <summary>
+      <para>Specifies the gamma, as gamma * 100. Values range from 1 to 500.</para>
+    </summary>
+  </member>
+  <member name="VideoProcAmpProperty.VideoProcAmp_ColorEnable">
+    <summary>
+      <para>Specifies the color enable setting. The possible values are 0 (off) and 1 (on).</para>
+    </summary>
+  </member>
+  <member name="VideoProcAmpProperty.VideoProcAmp_WhiteBalance">
+    <summary>
+      <para>Specifies the white balance, as a color temperature in degrees Kelvin. The range of values depends on the device.</para>
+    </summary>
+  </member>
+  <member name="VideoProcAmpProperty.VideoProcAmp_BacklightCompensation">
+    <summary>
+      <para>Specifies the backlight compensation setting. Possible values are 0 (off) and 1 (on).</para>
+    </summary>
+  </member>
+  <member name="VideoProcAmpProperty.VideoProcAmp_Gain">
+    <summary>
+      <para>Specifies the gain adjustment. Zero is normal. Positive values are brighter and negative values are darker. The range of values depends on the device.</para>
+    </summary>
+  </member>
+</doc>

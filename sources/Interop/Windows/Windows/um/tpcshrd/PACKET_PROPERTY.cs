@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PACKET_PROPERTY.xml' path='doc/member[@name="PACKET_PROPERTY"]/*' />
 public partial struct PACKET_PROPERTY
 {
+    /// <include file='PACKET_PROPERTY.xml' path='doc/member[@name="PACKET_PROPERTY.guid"]/*' />
     public Guid guid;
 
+    /// <include file='PACKET_PROPERTY.xml' path='doc/member[@name="PACKET_PROPERTY.PropertyMetrics"]/*' />
     public PROPERTY_METRICS PropertyMetrics;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsTouchSelect.xml' path='doc/member[@name="styleMsTouchSelect"]/*' />
 public enum styleMsTouchSelect
 {
+    /// <include file='styleMsTouchSelect.xml' path='doc/member[@name="styleMsTouchSelect.styleMsTouchSelectGrippers"]/*' />
     styleMsTouchSelectGrippers = 0,
+
+    /// <include file='styleMsTouchSelect.xml' path='doc/member[@name="styleMsTouchSelect.styleMsTouchSelectNone"]/*' />
     styleMsTouchSelectNone = 1,
+
+    /// <include file='styleMsTouchSelect.xml' path='doc/member[@name="styleMsTouchSelect.styleMsTouchSelectNotSet"]/*' />
     styleMsTouchSelectNotSet = 2,
+
+    /// <include file='styleMsTouchSelect.xml' path='doc/member[@name="styleMsTouchSelect.styleMsTouchSelect_Max"]/*' />
     styleMsTouchSelect_Max = 2147483647,
 }

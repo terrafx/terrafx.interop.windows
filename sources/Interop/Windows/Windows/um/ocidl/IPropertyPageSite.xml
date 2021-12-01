@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyPageSite.GetLocaleID">
+    <summary>
+      <para>Retrieves the locale identifier (an LCID) that a property page can use to adjust its locale-specific settings.</para>
+    </summary>
+    <param name="pLocaleID">
+      <para>A pointer to a variable that receives the locale identifier. See <a href="https://docs.microsoft.com//windows/desktop/Intl/language-identifier-constants-and-strings">Language Identifier Constants and Strings</a>.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in <i>pLocaleID</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IPropertyPageSite" />
+    <seealso cref="OCPFIPARAMS" />
+    <seealso cref="PROPPAGEINFO" />
+  </member>
+  <member name="IPropertyPageSite.GetPageContainer">
+    <summary>
+      <para>Retrieves a pointer to the object representing the entire property frame dialog box that contains all the pages. Calling this method could potentially allow one page to navigate to another.</para>
+      <para>However, there are no container interfaces defined for this role, so this method always fails in the property frame implementation.</para>
+    </summary>
+    <param name="ppUnk">
+      <para>A pointer to an <see cref="IUnknown" /> pointer variable that receives the interface pointer to the container object. If an error occurs, the implementation must set *<i>ppUnk</i> to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns E_NOTIMPL.</para>
+    </returns>
+    <seealso cref="IPropertyPageSite" />
+  </member>
+  <member name="IPropertyPageSite.OnStatusChange">
+    <summary>
+      <para>Informs the frame that the property page managed by this site has changed its state, that is, one or more property values have been changed in the page. Property pages should call this method whenever changes occur in their dialog boxes.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Indicates the changes that have occurred. This parameter can contain one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PROPPAGESTATUS_DIRTY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The values in the pages have changed, so the state of the <b>Apply</b> button should be updated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PROPPAGESTATUS_VALIDATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Now is an appropriate time to apply changes.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG and S_OK.</para>
+    </returns>
+    <seealso cref="IPropertyPageSite" />
+  </member>
+  <member name="IPropertyPageSite.TranslateAccelerator">
+    <summary>
+      <para>Passes a keystroke to the property frame for processing.</para>
+    </summary>
+    <param name="pMsg">
+      <para>A pointer to the <see cref="MSG" /> structure to be processed.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The page site did not process the message.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The page site does not support keyboard processing.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IPropertyPageSite" />
+  </member>
+  <member name="IPropertyPageSite">
+    <summary>
+      <para>Provides the main features for a property page site object.</para>
+    </summary>
+    <remarks>
+      <para>For each property page created within a property frame, the frame creates a property page site to provide information to the property page and to receive notifications from the page when changes occur. This latter notification is used to initiate a call to <see cref="IPropertyPage.IsPageDirty" />, the return value of which is then used to enable or disable the frame's <b>Apply</b> button.</para>
+      <h3>OLE Implementation</h3>
+      <para>The system provides an implementation of the <b>IPropertyPageSite</b> interface through the <see cref="OleCreatePropertyFrame" /> or <see cref="OleCreatePropertyFrameIndirect" /> functions. The frame implementation provided through these functions only implements the <see cref="OnStatusChange" /> and <see cref="GetLocaleID" /> methods. The <see cref="GetPageContainer" /> and <see cref="TranslateAccelerator" /> methods return E_NOTIMPL.</para>
+    </remarks>
+    <seealso cref="IPerPropertyBrowsing" />
+    <seealso cref="IPropertyPage" />
+    <seealso cref="IPropertyPage2" />
+    <seealso cref="ISpecifyPropertyPage" />
+  </member>
+</doc>

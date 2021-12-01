@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NL_ADDRESS_TYPE">
+    <summary>
+      <para>The NL_ADDRESS_TYPE enumeration type specifies the IP address type of the network layer.</para>
+    </summary>
+  </member>
+  <member name="NL_ADDRESS_TYPE.NlatUnspecified">
+    <summary>
+      <para>The unspecified IP address. For example, for IPv4, this address is 0.0.0.0.</para>
+    </summary>
+  </member>
+  <member name="NL_ADDRESS_TYPE.NlatUnicast">
+    <summary>
+      <para>Any IPv4 or IPv6 unicast address.</para>
+    </summary>
+  </member>
+  <member name="NL_ADDRESS_TYPE.NlatAnycast">
+    <summary>
+      <para>An IPv6 anycast address.</para>
+    </summary>
+  </member>
+  <member name="NL_ADDRESS_TYPE.NlatMulticast">
+    <summary>
+      <para>An IPv4 or IPv6 multicast address.</para>
+    </summary>
+  </member>
+  <member name="NL_ADDRESS_TYPE.NlatBroadcast">
+    <summary>
+      <para>An IPv4 broadcast address.</para>
+    </summary>
+  </member>
+  <member name="NL_ADDRESS_TYPE.NlatInvalid">
+    <summary>
+      <para>An invalid IP address.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDOMDocumentType.xml' path='doc/member[@name="IDOMDocumentType"]/*' />
 [Guid("30510738-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDOMDocumentType : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, Guid*, void**, int>)(lpVtbl[0]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, uint>)(lpVtbl[1]))((IDOMDocumentType*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, uint>)(lpVtbl[2]))((IDOMDocumentType*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, uint*, int>)(lpVtbl[3]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IDOMDocumentType.xml' path='doc/member[@name="IDOMDocumentType.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, ushort**, int>)(lpVtbl[7]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMDocumentType.xml' path='doc/member[@name="IDOMDocumentType.get_entities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_entities(IDispatch** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, IDispatch**, int>)(lpVtbl[8]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMDocumentType.xml' path='doc/member[@name="IDOMDocumentType.get_notations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_notations(IDispatch** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, IDispatch**, int>)(lpVtbl[9]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMDocumentType.xml' path='doc/member[@name="IDOMDocumentType.get_publicId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_publicId(VARIANT* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, VARIANT*, int>)(lpVtbl[10]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMDocumentType.xml' path='doc/member[@name="IDOMDocumentType.get_systemId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_systemId(VARIANT* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
         return ((delegate* unmanaged<IDOMDocumentType*, VARIANT*, int>)(lpVtbl[11]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMDocumentType.xml' path='doc/member[@name="IDOMDocumentType.get_internalSubset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_internalSubset(VARIANT* p)

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IQueryContinueWithStatus.xml' path='doc/member[@name="IQueryContinueWithStatus"]/*' />
 [Guid("9090BE5B-502B-41FB-BCCC-0049A6C7254B")]
 [NativeTypeName("struct IQueryContinueWithStatus : IQueryContinue")]
 [NativeInheritance("IQueryContinue")]
@@ -16,6 +17,7 @@ public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus
         return ((delegate* unmanaged<IQueryContinueWithStatus*, Guid*, void**, int>)(lpVtbl[0]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus
         return ((delegate* unmanaged<IQueryContinueWithStatus*, uint>)(lpVtbl[1]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus
         return ((delegate* unmanaged<IQueryContinueWithStatus*, uint>)(lpVtbl[2]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IQueryContinue.QueryContinue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryContinue()
@@ -46,6 +51,7 @@ public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus
         return ((delegate* unmanaged<IQueryContinueWithStatus*, int>)(lpVtbl[3]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IQueryContinueWithStatus.xml' path='doc/member[@name="IQueryContinueWithStatus.SetStatusMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] ushort* psz)

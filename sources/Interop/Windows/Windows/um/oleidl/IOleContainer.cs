@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleContainer.xml' path='doc/member[@name="IOleContainer"]/*' />
 [Guid("0000011B-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleContainer : IParseDisplayName")]
 [NativeInheritance("IParseDisplayName")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleContainer : IOleContainer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleContainer : IOleContainer.Interface
         return ((delegate* unmanaged<IOleContainer*, Guid*, void**, int>)(lpVtbl[0]))((IOleContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleContainer : IOleContainer.Interface
         return ((delegate* unmanaged<IOleContainer*, uint>)(lpVtbl[1]))((IOleContainer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleContainer : IOleContainer.Interface
         return ((delegate* unmanaged<IOleContainer*, uint>)(lpVtbl[2]))((IOleContainer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IParseDisplayName.ParseDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ParseDisplayName(IBindCtx* pbc, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleContainer : IOleContainer.Interface
         return ((delegate* unmanaged<IOleContainer*, IBindCtx*, ushort*, uint*, IMoniker**, int>)(lpVtbl[3]))((IOleContainer*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
     }
 
+    /// <include file='IOleContainer.xml' path='doc/member[@name="IOleContainer.EnumObjects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnumObjects([NativeTypeName("DWORD")] uint grfFlags, IEnumUnknown** ppenum)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleContainer : IOleContainer.Interface
         return ((delegate* unmanaged<IOleContainer*, uint, IEnumUnknown**, int>)(lpVtbl[4]))((IOleContainer*)Unsafe.AsPointer(ref this), grfFlags, ppenum);
     }
 
+    /// <include file='IOleContainer.xml' path='doc/member[@name="IOleContainer.LockContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT LockContainer(BOOL fLock)

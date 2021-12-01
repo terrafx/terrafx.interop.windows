@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10EffectTechnique.ComputeStateBlockMask">
+    <summary>
+      <para>Compute a state-block mask to allow/prevent state changes.</para>
+    </summary>
+    <param name="pStateBlockMask">
+      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
+      <para>A pointer to a state-block mask (see <see cref="D3D10_STATE_BLOCK_MASK" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectTechnique Interface" />
+  </member>
+  <member name="ID3D10EffectTechnique.GetAnnotationByIndex">
+    <summary>
+      <para>Get an annotation by index.</para>
+    </summary>
+    <param name="Index">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The zero-based index of the interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
+      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</para>
+    </returns>
+    <remarks>
+      <para>Use an annotation to attach a piece of metadata to a technique.</para>
+    </remarks>
+    <seealso cref="ID3D10EffectTechnique Interface" />
+  </member>
+  <member name="ID3D10EffectTechnique.GetAnnotationByName">
+    <summary>
+      <para>Get an annotation by name.</para>
+    </summary>
+    <param name="Name">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>Name of the annotation.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
+      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</para>
+    </returns>
+    <remarks>
+      <para>Use an annotation to attach a piece of metadata to a technique.</para>
+    </remarks>
+    <seealso cref="ID3D10EffectTechnique Interface" />
+  </member>
+  <member name="ID3D10EffectTechnique.GetDesc">
+    <summary>
+      <para>Get a technique description.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b><see cref="D3D10_TECHNIQUE_DESC" />*</b></para>
+      <para>A pointer to a technique description (see <see cref="D3D10_TECHNIQUE_DESC" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectTechnique Interface" />
+  </member>
+  <member name="ID3D10EffectTechnique.GetPassByIndex">
+    <summary>
+      <para>Get a pass by index.</para>
+    </summary>
+    <param name="Index">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based index.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectPass" />*</b></para>
+      <para>A pointer to a <see cref="ID3D10EffectPass Interface" />.</para>
+    </returns>
+    <remarks>
+      <para>A technique contains one or more passes; get a pass using a name or an index.</para>
+    </remarks>
+    <seealso cref="ID3D10EffectTechnique Interface" />
+  </member>
+  <member name="ID3D10EffectTechnique.GetPassByName">
+    <summary>
+      <para>Get a pass by name.</para>
+    </summary>
+    <param name="Name">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The name of the pass.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectPass" />*</b></para>
+      <para>A pointer to an <see cref="ID3D10EffectPass Interface" />.</para>
+    </returns>
+    <remarks>
+      <para>A technique contains one or more passes; get a pass using a name or an index.</para>
+    </remarks>
+    <seealso cref="ID3D10EffectTechnique Interface" />
+  </member>
+  <member name="ID3D10EffectTechnique.IsValid">
+    <summary>
+      <para>Test a technique to see if it contains valid syntax.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> if the code syntax is valid; otherwise <b>FALSE</b>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectTechnique Interface" />
+  </member>
+</doc>

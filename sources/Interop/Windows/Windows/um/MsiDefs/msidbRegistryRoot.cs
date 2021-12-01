@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbRegistryRoot.xml' path='doc/member[@name="msidbRegistryRoot"]/*' />
 public enum msidbRegistryRoot
 {
+    /// <include file='msidbRegistryRoot.xml' path='doc/member[@name="msidbRegistryRoot.msidbRegistryRootClassesRoot"]/*' />
     msidbRegistryRootClassesRoot = 0,
+
+    /// <include file='msidbRegistryRoot.xml' path='doc/member[@name="msidbRegistryRoot.msidbRegistryRootCurrentUser"]/*' />
     msidbRegistryRootCurrentUser = 1,
+
+    /// <include file='msidbRegistryRoot.xml' path='doc/member[@name="msidbRegistryRoot.msidbRegistryRootLocalMachine"]/*' />
     msidbRegistryRootLocalMachine = 2,
+
+    /// <include file='msidbRegistryRoot.xml' path='doc/member[@name="msidbRegistryRoot.msidbRegistryRootUsers"]/*' />
     msidbRegistryRootUsers = 3,
 }

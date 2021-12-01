@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_LINING">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_LINING</b> enumeration contains values that specify the handling of the outline for the decorative typeface.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_ANY">
+    <summary>
+      <para>Any lining.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_NO_FIT">
+    <summary>
+      <para>No fit for lining.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_NONE">
+    <summary>
+      <para>No lining.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_INLINE">
+    <summary>
+      <para>The lining is inline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_OUTLINE">
+    <summary>
+      <para>The lining is outline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_ENGRAVED">
+    <summary>
+      <para>The lining is engraved.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_SHADOW">
+    <summary>
+      <para>The lining is shadowed.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_RELIEF">
+    <summary>
+      <para>The lining is relief.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_BACKDROP">
+    <summary>
+      <para>The lining is backdrop.</para>
+    </summary>
+  </member>
+</doc>

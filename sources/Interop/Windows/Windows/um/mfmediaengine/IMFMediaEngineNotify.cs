@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaEngineNotify.xml' path='doc/member[@name="IMFMediaEngineNotify"]/*' />
 [Guid("FEE7C112-E776-42B5-9BBF-0048524E2BD5")]
 [NativeTypeName("struct IMFMediaEngineNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaEngineNotify : IMFMediaEngineNotify.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaEngineNotify : IMFMediaEngineNotify.Interfa
         return ((delegate* unmanaged<IMFMediaEngineNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaEngineNotify : IMFMediaEngineNotify.Interfa
         return ((delegate* unmanaged<IMFMediaEngineNotify*, uint>)(lpVtbl[1]))((IMFMediaEngineNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaEngineNotify : IMFMediaEngineNotify.Interfa
         return ((delegate* unmanaged<IMFMediaEngineNotify*, uint>)(lpVtbl[2]))((IMFMediaEngineNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngineNotify.xml' path='doc/member[@name="IMFMediaEngineNotify.EventNotify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EventNotify([NativeTypeName("DWORD")] uint @event, [NativeTypeName("DWORD_PTR")] nuint param1, [NativeTypeName("DWORD")] uint param2)

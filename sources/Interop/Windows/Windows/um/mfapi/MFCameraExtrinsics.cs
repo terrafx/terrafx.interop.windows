@@ -10,15 +10,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFCameraExtrinsics.xml' path='doc/member[@name="MFCameraExtrinsics"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct MFCameraExtrinsics
 {
+    /// <include file='MFCameraExtrinsics.xml' path='doc/member[@name="MFCameraExtrinsics.TransformCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint TransformCount;
 
+    /// <include file='MFCameraExtrinsics.xml' path='doc/member[@name="MFCameraExtrinsics.CalibratedTransforms"]/*' />
     [NativeTypeName("MFCameraExtrinsic_CalibratedTransform [1]")]
     public _CalibratedTransforms_e__FixedBuffer CalibratedTransforms;
 
+    /// <include file='_CalibratedTransforms_e__FixedBuffer.xml' path='doc/member[@name="_CalibratedTransforms_e__FixedBuffer"]/*' />
     public partial struct _CalibratedTransforms_e__FixedBuffer
     {
         public MFCameraExtrinsic_CalibratedTransform e0;

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XmlStandalone.xml' path='doc/member[@name="XmlStandalone"]/*' />
 public enum XmlStandalone
 {
+    /// <include file='XmlStandalone.xml' path='doc/member[@name="XmlStandalone.XmlStandalone_Omit"]/*' />
     XmlStandalone_Omit = 0,
+
+    /// <include file='XmlStandalone.xml' path='doc/member[@name="XmlStandalone.XmlStandalone_Yes"]/*' />
     XmlStandalone_Yes = 1,
+
+    /// <include file='XmlStandalone.xml' path='doc/member[@name="XmlStandalone.XmlStandalone_No"]/*' />
     XmlStandalone_No = 2,
+
+    /// <include file='XmlStandalone.xml' path='doc/member[@name="XmlStandalone._XmlStandalone_Last"]/*' />
     _XmlStandalone_Last = 2,
 }

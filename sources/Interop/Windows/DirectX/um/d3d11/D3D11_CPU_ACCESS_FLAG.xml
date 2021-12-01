@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_CPU_ACCESS_FLAG">
+    <summary>
+      <para>Specifies the types of CPU access allowed for a resource.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used in <see cref="D3D11_BUFFER_DESC" />, <see cref="D3D11_TEXTURE1D_DESC" />, <see cref="D3D11_TEXTURE2D_DESC" />, <see cref="D3D11_TEXTURE3D_DESC" />.</para>
+      <para>Applications may combine one or more of these flags with a bitwise OR. When possible, create resources with no CPU access flags, as this enables better resource optimization.</para>
+      <para>The <see cref="D3D11_RESOURCE_MISC_FLAG" /> cannot be used when creating resources with <b>D3D11_CPU_ACCESS</b> flags.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-enums">Resource Enumerations</seealso>
+  </member>
+  <member name="D3D11_CPU_ACCESS_FLAG.D3D11_CPU_ACCESS_WRITE">
+    <summary>
+      <para>The resource is to be mappable so that the CPU can change its contents. Resources created with this flag cannot be set as outputs of the pipeline and must be created with either dynamic or staging usage (see <see cref="D3D11_USAGE" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_CPU_ACCESS_FLAG.D3D11_CPU_ACCESS_READ">
+    <summary>
+      <para>The resource is to be mappable so that the CPU can read its contents. Resources created with this flag cannot be set as either inputs or outputs to the pipeline and must be created with staging usage (see <see cref="D3D11_USAGE" />).</para>
+    </summary>
+  </member>
+</doc>

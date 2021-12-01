@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_FONT_SOURCE_TYPE">
+    <summary>
+      <para>Defines constants that specify the mechanism by which a font came to be included in a font set.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_SOURCE_TYPE.DWRITE_FONT_SOURCE_TYPE_UNKNOWN">
+    <summary>
+      <para>Specifies that the font source is unknown, or is not any of the other defined font source types.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_SOURCE_TYPE.DWRITE_FONT_SOURCE_TYPE_PER_MACHINE">
+    <summary>
+      <para>Specifies that the font source is a font file that's installed for all users on the device.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_SOURCE_TYPE.DWRITE_FONT_SOURCE_TYPE_PER_USER">
+    <summary>
+      <para>Specifies that the font source is a font file that's installed for the current user.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_SOURCE_TYPE.DWRITE_FONT_SOURCE_TYPE_APPX_PACKAGE">
+    <summary>
+      <para>Specifies that the font source is an APPX package, which includes one or more font files. The font source name is the full name of the package.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_SOURCE_TYPE.DWRITE_FONT_SOURCE_TYPE_REMOTE_FONT_PROVIDER">
+    <summary>
+      <para>Specifies that the font source is a font provider for downloadable fonts.</para>
+    </summary>
+  </member>
+</doc>

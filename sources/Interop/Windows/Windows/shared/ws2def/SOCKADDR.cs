@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SOCKADDR.xml' path='doc/member[@name="SOCKADDR"]/*' />
 public unsafe partial struct SOCKADDR
 {
+    /// <include file='SOCKADDR.xml' path='doc/member[@name="SOCKADDR.sa_family"]/*' />
     [NativeTypeName("ADDRESS_FAMILY")]
     public ushort sa_family;
 
+    /// <include file='SOCKADDR.xml' path='doc/member[@name="SOCKADDR.sa_data"]/*' />
     [NativeTypeName("CHAR [14]")]
     public fixed sbyte sa_data[14];
 }

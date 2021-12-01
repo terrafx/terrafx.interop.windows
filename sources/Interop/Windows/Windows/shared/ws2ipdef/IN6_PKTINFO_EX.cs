@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IN6_PKTINFO_EX.xml' path='doc/member[@name="IN6_PKTINFO_EX"]/*' />
 public partial struct IN6_PKTINFO_EX
 {
+    /// <include file='IN6_PKTINFO_EX.xml' path='doc/member[@name="IN6_PKTINFO_EX.pkt_info"]/*' />
     public IN6_PKTINFO pkt_info;
 
+    /// <include file='IN6_PKTINFO_EX.xml' path='doc/member[@name="IN6_PKTINFO_EX.scope_id"]/*' />
     public SCOPE_ID scope_id;
 }

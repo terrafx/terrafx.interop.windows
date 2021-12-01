@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FRAMEBOTTOMSTATES.xml' path='doc/member[@name="FRAMEBOTTOMSTATES"]/*' />
 public enum FRAMEBOTTOMSTATES
 {
+    /// <include file='FRAMEBOTTOMSTATES.xml' path='doc/member[@name="FRAMEBOTTOMSTATES.FRB_ACTIVE"]/*' />
     FRB_ACTIVE = 1,
+
+    /// <include file='FRAMEBOTTOMSTATES.xml' path='doc/member[@name="FRAMEBOTTOMSTATES.FRB_INACTIVE"]/*' />
     FRB_INACTIVE = 2,
 }

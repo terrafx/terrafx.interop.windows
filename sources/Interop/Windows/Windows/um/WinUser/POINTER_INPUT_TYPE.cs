@@ -7,12 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTER_INPUT_TYPE.xml' path='doc/member[@name="POINTER_INPUT_TYPE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum POINTER_INPUT_TYPE
 {
+    /// <include file='POINTER_INPUT_TYPE.xml' path='doc/member[@name="POINTER_INPUT_TYPE.PT_POINTER"]/*' />
     PT_POINTER = 1,
+
+    /// <include file='POINTER_INPUT_TYPE.xml' path='doc/member[@name="POINTER_INPUT_TYPE.PT_TOUCH"]/*' />
     PT_TOUCH = 2,
+
+    /// <include file='POINTER_INPUT_TYPE.xml' path='doc/member[@name="POINTER_INPUT_TYPE.PT_PEN"]/*' />
     PT_PEN = 3,
+
+    /// <include file='POINTER_INPUT_TYPE.xml' path='doc/member[@name="POINTER_INPUT_TYPE.PT_MOUSE"]/*' />
     PT_MOUSE = 4,
+
+    /// <include file='POINTER_INPUT_TYPE.xml' path='doc/member[@name="POINTER_INPUT_TYPE.PT_TOUCHPAD"]/*' />
     PT_TOUCHPAD = 5,
 }

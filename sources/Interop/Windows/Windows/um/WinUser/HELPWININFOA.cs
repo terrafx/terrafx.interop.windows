@@ -5,20 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HELPWININFOA.xml' path='doc/member[@name="HELPWININFOA"]/*' />
 public unsafe partial struct HELPWININFOA
 {
+    /// <include file='HELPWININFOA.xml' path='doc/member[@name="HELPWININFOA.wStructSize"]/*' />
     public int wStructSize;
 
+    /// <include file='HELPWININFOA.xml' path='doc/member[@name="HELPWININFOA.x"]/*' />
     public int x;
 
+    /// <include file='HELPWININFOA.xml' path='doc/member[@name="HELPWININFOA.y"]/*' />
     public int y;
 
+    /// <include file='HELPWININFOA.xml' path='doc/member[@name="HELPWININFOA.dx"]/*' />
     public int dx;
 
+    /// <include file='HELPWININFOA.xml' path='doc/member[@name="HELPWININFOA.dy"]/*' />
     public int dy;
 
+    /// <include file='HELPWININFOA.xml' path='doc/member[@name="HELPWININFOA.wMax"]/*' />
     public int wMax;
 
+    /// <include file='HELPWININFOA.xml' path='doc/member[@name="HELPWININFOA.rgchMember"]/*' />
     [NativeTypeName("CHAR [2]")]
     public fixed sbyte rgchMember[2];
 }

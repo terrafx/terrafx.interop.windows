@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteRenderingParams.GetClearTypeLevel">
+    <summary>
+      <para>Gets the ClearType level of the rendering parameters object.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The ClearType level of the rendering parameters object.</para>
+    </returns>
+    <remarks>
+      <para>The ClearType level represents the amount of ClearType – that is, the degree to which the red, green, and blue subpixels of each pixel are treated differently. Valid values range from zero (meaning no ClearType, which is equivalent to grayscale anti-aliasing) to one (meaning full ClearType)</para>
+    </remarks>
+    <seealso cref="IDWriteRenderingParams" />
+  </member>
+  <member name="IDWriteRenderingParams.GetEnhancedContrast">
+    <summary>
+      <para>Gets the enhanced contrast property of the rendering parameters object. Valid values are greater than or equal to zero.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>Returns the amount of contrast enhancement. Valid values are greater than
+or equal to zero.</para>
+    </returns>
+    <remarks>
+      <para>Enhanced contrast is the amount to increase the darkness of text, and typically ranges from 0 to 1. Zero means no contrast enhancement.</para>
+    </remarks>
+    <seealso cref="IDWriteRenderingParams" />
+  </member>
+  <member name="IDWriteRenderingParams.GetGamma">
+    <summary>
+      <para>Gets the gamma value used for gamma correction. Valid values must be
+greater than zero and cannot exceed 256.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>Returns the gamma value used for gamma correction. Valid values must be
+greater than zero and cannot exceed 256.</para>
+    </returns>
+    <remarks>
+      <para>The gamma value is used for gamma correction, which compensates for the non-linear luminosity response of most monitors.</para>
+    </remarks>
+    <seealso cref="IDWriteRenderingParams" />
+  </member>
+  <member name="IDWriteRenderingParams.GetPixelGeometry">
+    <summary>
+      <para>Gets the pixel geometry of the rendering parameters object.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_PIXEL_GEOMETRY" /></b></para>
+      <para>A value that indicates the type of  pixel geometry used in the rendering parameters object.</para>
+    </returns>
+    <seealso cref="IDWriteRenderingParams" />
+  </member>
+  <member name="IDWriteRenderingParams.GetRenderingMode">
+    <summary>
+      <para>Gets the rendering mode of the rendering parameters object.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_RENDERING_MODE" /></b></para>
+      <para>A value that indicates the rendering mode of the rendering parameters object.</para>
+    </returns>
+    <remarks>
+      <para>By default, the rendering mode is initialized to DWRITE_RENDERING_MODE_DEFAULT, which means the rendering mode is determined automatically based on the font and size. To determine the recommended rendering mode to use for a given font and size and rendering parameters object, use the <see cref="IDWriteFontFace.GetRecommendedRenderingMode" /> method.</para>
+    </remarks>
+    <seealso cref="IDWriteRenderingParams" />
+  </member>
+  <member name="IDWriteRenderingParams">
+    <summary>
+      <para>Represents text rendering settings such as ClearType level, enhanced contrast, and gamma correction for glyph rasterization and filtering.</para>
+      <para>An application typically obtains a rendering parameters object by calling the <see cref="IDWriteFactory.CreateMonitorRenderingParams" /> method.</para>
+    </summary>
+    <seealso cref="IDWriteFactory.CreateMonitorRenderingParams" />
+  </member>
+</doc>

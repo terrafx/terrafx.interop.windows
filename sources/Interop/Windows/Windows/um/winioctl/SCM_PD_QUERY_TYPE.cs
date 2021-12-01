@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_QUERY_TYPE.xml' path='doc/member[@name="SCM_PD_QUERY_TYPE"]/*' />
 public enum SCM_PD_QUERY_TYPE
 {
+    /// <include file='SCM_PD_QUERY_TYPE.xml' path='doc/member[@name="SCM_PD_QUERY_TYPE.ScmPhysicalDeviceQuery_Descriptor"]/*' />
     ScmPhysicalDeviceQuery_Descriptor = 0,
+
+    /// <include file='SCM_PD_QUERY_TYPE.xml' path='doc/member[@name="SCM_PD_QUERY_TYPE.ScmPhysicalDeviceQuery_IsSupported"]/*' />
     ScmPhysicalDeviceQuery_IsSupported,
+
+    /// <include file='SCM_PD_QUERY_TYPE.xml' path='doc/member[@name="SCM_PD_QUERY_TYPE.ScmPhysicalDeviceQuery_Max"]/*' />
     ScmPhysicalDeviceQuery_Max,
 }

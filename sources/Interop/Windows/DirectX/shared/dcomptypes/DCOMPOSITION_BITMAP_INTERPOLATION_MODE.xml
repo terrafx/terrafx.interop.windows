@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DCOMPOSITION_BITMAP_INTERPOLATION_MODE">
+    <summary>
+      <para>Specifies the interpolation mode to be used when a bitmap is composed with any transform where the pixels in the bitmap don't line up exactly one-to-one with pixels on screen.</para>
+    </summary>
+    <remarks>
+      <para>The default interpolation mode for a visual is <b>DCOMPOSITION_BITMAP_INTERPOLATION_MODE_INHERIT</b>. If all visuals in a visual tree specify this mode, the default for all visuals is nearest neighbor sampling, which is the fastest mode.</para>
+      <para>A single visual can have any combination of visual properties. However, if a
+visual has the following combination of properties, the borders of the visual will default
+to <see cref="DCOMPOSITION_BORDER_MODE_HARD" />.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <code>SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE_DESTINATION_INVERT)
+</code>
+          </description>
+        </item>
+        <item>
+          <description>
+            <code>SetBorderMode(DCOMPOSITION_BORDER_MODE_SOFT)
+</code>
+          </description>
+        </item>
+        <item>
+          <description>
+            <code>SetBitmapInterpolationMode(DCOMPOSITION_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR)</code>
+          </description>
+        </item>
+      </list>
+      <para>If you want a visual to be drawn with antialiasing, use <b>DCOMPOSITION_BITMAP_INTERPOLATION_MODE_LINEAR</b> for the content of the visual, and <see cref="DCOMPOSITION_BORDER_MODE_SOFT" /> for the edges.</para>
+    </remarks>
+    <seealso cref="IDCompositionVisual.SetBitmapInterpolationMode" />
+  </member>
+  <member name="DCOMPOSITION_BITMAP_INTERPOLATION_MODE.DCOMPOSITION_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR">
+    <summary>
+      <para>Bitmaps are interpolated by using nearest-neighbor sampling.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_BITMAP_INTERPOLATION_MODE.DCOMPOSITION_BITMAP_INTERPOLATION_MODE_LINEAR">
+    <summary>
+      <para>Bitmaps are interpolated by using linear sampling.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_BITMAP_INTERPOLATION_MODE.DCOMPOSITION_BITMAP_INTERPOLATION_MODE_INHERIT">
+    <summary>
+      <para>Bitmaps are interpolated according to the mode established by the parent visual.</para>
+    </summary>
+  </member>
+</doc>

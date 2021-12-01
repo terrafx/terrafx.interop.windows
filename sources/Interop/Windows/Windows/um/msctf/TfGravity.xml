@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TfGravity">
+    <summary>
+      <para>Elements of the <b>TfGravity</b> enumeration specify the type of gravity associated with the anchor of an <see cref="ITfRange" /> object.</para>
+    </summary>
+    <remarks>
+      <para>For more information about anchor gravity, see <a href="https://docs.microsoft.com//windows/desktop/TSF/ranges">Anchor Gravity</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ranges">Anchor Gravity</seealso>
+    <seealso cref="ITfRange" />
+    <seealso cref="ITfRange.GetGravity" />
+    <seealso cref="ITfRange.SetGravity" />
+  </member>
+  <member name="TfGravity.TF_GRAVITY_BACKWARD">
+    <summary>
+      <para>The anchor has backward gravity.</para>
+    </summary>
+  </member>
+  <member name="TfGravity.TF_GRAVITY_FORWARD">
+    <summary>
+      <para>The anchor has forward gravity.</para>
+    </summary>
+  </member>
+</doc>

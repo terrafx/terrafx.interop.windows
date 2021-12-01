@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlCellAlign.xml' path='doc/member[@name="htmlCellAlign"]/*' />
 public enum htmlCellAlign
 {
+    /// <include file='htmlCellAlign.xml' path='doc/member[@name="htmlCellAlign.htmlCellAlignNotSet"]/*' />
     htmlCellAlignNotSet = 0,
+
+    /// <include file='htmlCellAlign.xml' path='doc/member[@name="htmlCellAlign.htmlCellAlignLeft"]/*' />
     htmlCellAlignLeft = 1,
+
+    /// <include file='htmlCellAlign.xml' path='doc/member[@name="htmlCellAlign.htmlCellAlignCenter"]/*' />
     htmlCellAlignCenter = 2,
+
+    /// <include file='htmlCellAlign.xml' path='doc/member[@name="htmlCellAlign.htmlCellAlignRight"]/*' />
     htmlCellAlignRight = 3,
+
+    /// <include file='htmlCellAlign.xml' path='doc/member[@name="htmlCellAlign.htmlCellAlignMiddle"]/*' />
     htmlCellAlignMiddle = htmlCellAlignCenter,
+
+    /// <include file='htmlCellAlign.xml' path='doc/member[@name="htmlCellAlign.htmlCellAlign_Max"]/*' />
     htmlCellAlign_Max = 2147483647,
 }

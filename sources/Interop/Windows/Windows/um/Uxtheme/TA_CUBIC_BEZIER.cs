@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TA_CUBIC_BEZIER.xml' path='doc/member[@name="TA_CUBIC_BEZIER"]/*' />
 public partial struct TA_CUBIC_BEZIER
 {
+    /// <include file='TA_CUBIC_BEZIER.xml' path='doc/member[@name="TA_CUBIC_BEZIER.header"]/*' />
     public TA_TIMINGFUNCTION header;
 
+    /// <include file='TA_CUBIC_BEZIER.xml' path='doc/member[@name="TA_CUBIC_BEZIER.rX0"]/*' />
     public float rX0;
 
+    /// <include file='TA_CUBIC_BEZIER.xml' path='doc/member[@name="TA_CUBIC_BEZIER.rY0"]/*' />
     public float rY0;
 
+    /// <include file='TA_CUBIC_BEZIER.xml' path='doc/member[@name="TA_CUBIC_BEZIER.rX1"]/*' />
     public float rX1;
 
+    /// <include file='TA_CUBIC_BEZIER.xml' path='doc/member[@name="TA_CUBIC_BEZIER.rY1"]/*' />
     public float rY1;
 }

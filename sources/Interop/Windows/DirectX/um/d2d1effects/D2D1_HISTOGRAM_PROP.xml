@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_HISTOGRAM_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/histogram">Histogram effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HISTOGRAM_PROP.D2D1_HISTOGRAM_PROP_NUM_BINS">
+    <summary>
+      <para>Specifies the number of bins used for the histogram. The range of intensity values that fall into a particular bucket depend on the number of specified buckets.</para>
+      <para>The type is UINT32.</para>
+      <para>The default is 256.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HISTOGRAM_PROP.D2D1_HISTOGRAM_PROP_CHANNEL_SELECT">
+    <summary>
+      <para>Specifies the channel used to generate the histogram. This effect has a single data output corresponding to the specified channel.</para>
+      <para>The type is <see cref="D2D1_CHANNEL_SELECTOR" />.</para>
+      <para>The default is D2D1_CHANNEL_SELECTOR_R.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HISTOGRAM_PROP.D2D1_HISTOGRAM_PROP_HISTOGRAM_OUTPUT">
+    <summary>
+      <para>The output array.</para>
+      <para>The type is FLOAT[].</para>
+    </summary>
+  </member>
+  <member name="D2D1_HISTOGRAM_PROP.D2D1_HISTOGRAM_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QualityMessageType.xml' path='doc/member[@name="QualityMessageType"]/*' />
 public enum QualityMessageType
 {
+    /// <include file='QualityMessageType.xml' path='doc/member[@name="QualityMessageType.Famine"]/*' />
     Famine = 0,
+
+    /// <include file='QualityMessageType.xml' path='doc/member[@name="QualityMessageType.Flood"]/*' />
     Flood = (Famine + 1),
 }

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_LAYER_OPTIONS">
+    <summary>
+      <para>Specifies options that can be applied when a layer resource is applied to create a layer.
+<b>Note</b>  Starting in Windows 8, the <b>D2D1_LAYER_OPTIONS_INITIALIZE_FOR_CLEARTYPE</b> option is no longer supported.  See <see cref="D2D1_LAYER_OPTIONS1" /> for Windows 8 layer options.</para>
+    </summary>
+    <remarks>
+      <para>ClearType antialiasing must use the current contents of the render target to blend properly. When a pushed layer requests initializing for ClearType, Direct2D copies the current contents of the render target into the layer so that ClearType antialiasing can be performed. Rendering ClearType text into a transparent layer does not produce the desired results.</para>
+      <para>A small performance hit from re-copying content occurs when <see cref="ID2D1RenderTarget.Clear" /> is called.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-layers-overview">Layers Overview</seealso>
+  </member>
+  <member name="D2D1_LAYER_OPTIONS.D2D1_LAYER_OPTIONS_NONE">
+    <summary>
+      <para>The text in this layer does not use ClearType antialiasing.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_OPTIONS.D2D1_LAYER_OPTIONS_INITIALIZE_FOR_CLEARTYPE">
+    <summary>
+      <para>The layer renders correctly for ClearType text. If the render target is set to ClearType, the  layer continues to render ClearType. If the render target is set to ClearType and this option is not specified, the render target will be set to render gray-scale until the layer is popped. The caller can override this default by calling <see cref="SetTextAntialiasMode" /> while within the layer. This flag is slightly slower than the default.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_OPTIONS.D2D1_LAYER_OPTIONS_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

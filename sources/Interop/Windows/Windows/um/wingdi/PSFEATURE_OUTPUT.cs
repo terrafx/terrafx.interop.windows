@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSFEATURE_OUTPUT.xml' path='doc/member[@name="PSFEATURE_OUTPUT"]/*' />
 public partial struct PSFEATURE_OUTPUT
 {
+    /// <include file='PSFEATURE_OUTPUT.xml' path='doc/member[@name="PSFEATURE_OUTPUT.bPageIndependent"]/*' />
     public BOOL bPageIndependent;
 
+    /// <include file='PSFEATURE_OUTPUT.xml' path='doc/member[@name="PSFEATURE_OUTPUT.bSetPageDevice"]/*' />
     public BOOL bSetPageDevice;
 }

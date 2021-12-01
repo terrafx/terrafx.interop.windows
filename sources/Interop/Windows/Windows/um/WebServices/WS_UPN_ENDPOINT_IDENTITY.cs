@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_UPN_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_UPN_ENDPOINT_IDENTITY"]/*' />
 public partial struct WS_UPN_ENDPOINT_IDENTITY
 {
+    /// <include file='WS_UPN_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_UPN_ENDPOINT_IDENTITY.identity"]/*' />
     public WS_ENDPOINT_IDENTITY identity;
 
+    /// <include file='WS_UPN_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_UPN_ENDPOINT_IDENTITY.upn"]/*' />
     public WS_STRING upn;
 }

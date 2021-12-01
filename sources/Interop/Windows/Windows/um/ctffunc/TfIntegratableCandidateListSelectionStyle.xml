@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TfIntegratableCandidateListSelectionStyle">
+    <summary>
+      <para>Elements of the <b>TfIntegratableCandidateListSelectionStyle</b> enumeration specify the integratable candidate list selection styles.</para>
+    </summary>
+    <seealso cref="GetSelectionStyle" />
+  </member>
+  <member name="TfIntegratableCandidateListSelectionStyle.STYLE_ACTIVE_SELECTION">
+    <summary>
+      <para>The selection can be changed with the arrow keys.</para>
+    </summary>
+  </member>
+  <member name="TfIntegratableCandidateListSelectionStyle.STYLE_IMPLIED_SELECTION">
+    <summary>
+      <para>The default selection key will choose the selection.</para>
+    </summary>
+  </member>
+</doc>

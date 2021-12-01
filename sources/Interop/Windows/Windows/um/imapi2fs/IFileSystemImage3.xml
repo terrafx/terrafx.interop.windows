@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileSystemImage3.get_CreateRedundantUdfMetadataFiles">
+    <summary>
+      <para>Retrieves a property value that specifies if the UDF Metadata will be redundant in the file system image.</para>
+    </summary>
+    <param name="pVal">
+      <para>Pointer to a value that specifies if the UDF metadata is redundant in the resultant file system image. A value of <b>VARIANT_TRUE</b> indicates that UDF metadata will be redundant; otherwise, <b>VARIANT_FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_POINTER</b>
+                </description>
+              </item>
+              <item>
+                <description>(HRESULT) 0x80004003L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Invalid pointer.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFileSystemImage3" />
+  </member>
+  <member name="IFileSystemImage3.ProbeSpecificFileSystem">
+    <summary>
+      <para>Determines if a specific file system on the current media is appendable through the IMAPI.</para>
+    </summary>
+    <param name="fileSystemToProbe">
+      <para>The file system on the current media to probe.</para>
+    </param>
+    <param name="isAppendable">
+      <para>A <b>VARIANT_BOOL</b> value specifying if the specified file system is appendable.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFileSystemImage3" />
+  </member>
+  <member name="IFileSystemImage3.put_CreateRedundantUdfMetadataFiles">
+    <summary>
+      <para>Sets the property that specifies  if the UDF Metadata will be redundant in the  file system image.</para>
+    </summary>
+    <param name="newVal">
+      <para>Specifies if the UDF metadata is redundant in the resultant file system image or not. A value of <b>VARIANT_TRUE</b> indicates that UDF metadata will be redundant; otherwise, <b>VARIANT_FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x00AAB15FL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Option changed, but the feature is not supported for the implemented file system revision, and the image will be created without this feature.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The UDF metadata redundancy option affects only UDF revisions 2.50 and higher. If this method is invoked for a file system object that does not contain the required UDF revision in the list of file systems enabled for creation in the resultant image this method returns <b>IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED</b>.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFileSystemImage3" />
+  </member>
+  <member name="IFileSystemImage3">
+    <summary>
+      <para>Use this interface to set or check the metadata and metadata mirror files in a UDF file system (rev 2.50 and later) to determine  redundancy.</para>
+    </summary>
+    <remarks>
+      <para>If the metadata and metadata mirror files are set for redundancy, IMAPI  creates identical copies of each in the file system image, which results in increased level of fault tolerance. In a scenario where the metadata files are not set for redundancy, IMAPI only creates a single copy in the file system image, which can save several MB of space on the burned disc.</para>
+      <para>The metadata redundancy option is set to <b>TRUE</b> by default.</para>
+      <para>
+        <b>IFileSystemImage3</b> is the default interface of <b>MsftFileSystemImage3</b> objects.</para>
+      <para>This interface is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFileSystemImage2" />
+  </member>
+</doc>

@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPADDRROW_XP.xml' path='doc/member[@name="MIB_IPADDRROW_XP"]/*' />
 public partial struct MIB_IPADDRROW_XP
 {
+    /// <include file='MIB_IPADDRROW_XP.xml' path='doc/member[@name="MIB_IPADDRROW_XP.dwAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAddr;
 
+    /// <include file='MIB_IPADDRROW_XP.xml' path='doc/member[@name="MIB_IPADDRROW_XP.dwIndex"]/*' />
     [NativeTypeName("IF_INDEX")]
     public uint dwIndex;
 
+    /// <include file='MIB_IPADDRROW_XP.xml' path='doc/member[@name="MIB_IPADDRROW_XP.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='MIB_IPADDRROW_XP.xml' path='doc/member[@name="MIB_IPADDRROW_XP.dwBCastAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBCastAddr;
 
+    /// <include file='MIB_IPADDRROW_XP.xml' path='doc/member[@name="MIB_IPADDRROW_XP.dwReasmSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReasmSize;
 
+    /// <include file='MIB_IPADDRROW_XP.xml' path='doc/member[@name="MIB_IPADDRROW_XP.unused1"]/*' />
     [NativeTypeName("unsigned short")]
     public ushort unused1;
 
+    /// <include file='MIB_IPADDRROW_XP.xml' path='doc/member[@name="MIB_IPADDRROW_XP.wType"]/*' />
     [NativeTypeName("unsigned short")]
     public ushort wType;
 }

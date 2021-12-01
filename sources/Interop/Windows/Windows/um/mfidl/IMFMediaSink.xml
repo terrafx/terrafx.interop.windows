@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaSink.AddStreamSink">
+    <summary>
+      <para>Adds a new stream sink to the media sink.</para>
+    </summary>
+    <param name="dwStreamSinkIdentifier">
+      <para>Identifier for the new stream. The value is arbitrary but must be unique.</para>
+    </param>
+    <param name="pMediaType">
+      <para>Pointer to the <see cref="IMFMediaType" /> interface, specifying the media type for the stream. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppStreamSink">
+      <para>Receives a pointer to the new stream sink's <see cref="IMFStreamSink" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDSTREAMNUMBER</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified stream identifier is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_STREAMSINK_EXISTS</b>
+            </para>
+          </description>
+          <description>
+            <para>There is already a stream sink with the same stream identifier.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_STREAMSINKS_FIXED</b>
+            </para>
+          </description>
+          <description>
+            <para>This media sink has a fixed set of stream sinks. New stream sinks cannot be added.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Not all media sinks support this method. If the media sink does not support this method, the <see cref="IMFMediaSink.GetCharacteristics" /> method returns the MEDIASINK_FIXED_STREAMS flag.</para>
+      <para>If <i>pMediaType</i> is <b>NULL</b>, use the <see cref="IMFMediaTypeHandler" /> interface to set the media type. Call <see cref="IMFStreamSink.GetMediaTypeHandler" /> to get a pointer to the interface.</para>
+    </remarks>
+    <seealso cref="IMFMediaSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFMediaSink.GetCharacteristics">
+    <summary>
+      <para>Gets the characteristics of the media sink.</para>
+    </summary>
+    <param name="pdwCharacteristics">
+      <para>Receives a bitwise <b>OR</b> of zero or more flags. The following flags are defined:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MEDIASINK_FIXED_STREAMS</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The media sink has a fixed number of streams. It does not support the <see cref="IMFMediaSink.AddStreamSink" /> and <see cref="IMFMediaSink.RemoveStreamSink" /> methods. This flag is a hint to the application.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MEDIASINK_CANNOT_MATCH_CLOCK</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The media sink cannot match rates with an external clock.</para>
+            <para>For best results, this media sink should be used as the time source for the presentation clock. If any other time source is used, the media sink cannot match rates with the clock, with poor results (for example, glitching).</para>
+            <para>This flag should be used sparingly, because it limits how the pipeline can be configured.</para>
+            <para>For more information about the presentation clock, see <a href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MEDIASINK_RATELESS</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The media sink is rateless. It consumes samples as quickly as possible, and does not synchronize itself to a presentation clock.</para>
+            <para>Most archiving sinks are rateless.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MEDIASINK_CLOCK_REQUIRED</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The media sink requires a presentation clock. The presentation clock is set by calling the media sink's <see cref="IMFMediaSink.SetPresentationClock" /> method.</para>
+            <para>This flag is obsolete, because all media sinks must support the <see cref="SetPresentationClock" /> method, even if the media sink ignores the clock (as in a rateless media sink).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MEDIASINK_CAN_PREROLL</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The media sink can accept preroll samples before the presentation clock starts. The media sink exposes the <see cref="IMFMediaSinkPreroll" /> interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MEDIASINK_REQUIRE_REFERENCE_MEDIATYPE</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first stream sink (index 0) is a reference stream. The reference stream must have a media type before the media types can be set on the other stream sinks.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The characteristics of a media sink are fixed throughout the life time of the sink.</para>
+    </remarks>
+    <seealso cref="IMFMediaSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFMediaSink.GetPresentationClock">
+    <summary>
+      <para>Gets the presentation clock that was set on the media sink.</para>
+    </summary>
+    <param name="ppPresentationClock">
+      <para>Receives a pointer to the presentation clock's <see cref="IMFPresentationClock" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NO_CLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>No clock has been set. To set the presentation clock, call <see cref="IMFMediaSink.SetPresentationClock" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFMediaSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFMediaSink.GetStreamSinkById">
+    <summary>
+      <para>Gets a stream sink, specified by stream identifier.</para>
+    </summary>
+    <param name="dwStreamSinkIdentifier">
+      <para>Stream identifier of the stream sink.</para>
+    </param>
+    <param name="ppStreamSink">
+      <para>Receives a pointer to the stream's <see cref="IMFStreamSink" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDSTREAMNUMBER</b>
+            </para>
+          </description>
+          <description>
+            <para>The stream identifier is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If you add a stream sink by calling the <see cref="IMFMediaSink.AddStreamSink" /> method, the stream identifier is specified in the <i>dwStreamSinkIdentifier</i> parameter of that method. If the media sink has a fixed set of streams, the media sink assigns the stream identifiers.</para>
+      <para>To enumerate the streams by index number instead of stream identifier, call <see cref="IMFMediaSink.GetStreamSinkByIndex" />.</para>
+    </remarks>
+    <seealso cref="IMFMediaSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFMediaSink.GetStreamSinkByIndex">
+    <summary>
+      <para>Gets a stream sink, specified by index.</para>
+    </summary>
+    <param name="dwIndex">
+      <para>Zero-based index of the stream. To get the number of streams, call <see cref="IMFMediaSink.GetStreamSinkCount" />.</para>
+    </param>
+    <param name="ppStreamSink">
+      <para>Receives a pointer to the stream's <see cref="IMFStreamSink" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDINDEX</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid index.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Enumerating stream sinks is not a thread-safe operation, because stream sinks can be added or removed between calls to this method.</para>
+    </remarks>
+    <seealso cref="IMFMediaSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFMediaSink.GetStreamSinkCount">
+    <summary>
+      <para>Gets the number of stream sinks on this media sink.</para>
+    </summary>
+    <param name="pcStreamSinkCount">
+      <para>Receives the number of stream sinks.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFMediaSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFMediaSink.RemoveStreamSink">
+    <summary>
+      <para>Removes a stream sink from the media sink.</para>
+    </summary>
+    <param name="dwStreamSinkIdentifier">
+      <para>Identifier of the stream to remove. The stream identifier is defined when you call <see cref="IMFMediaSink.AddStreamSink" /> to add the stream sink.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>This particular stream sink cannot be removed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDSTREAMNUMBER</b>
+            </para>
+          </description>
+          <description>
+            <para>The stream number is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink has not been initialized.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_STREAMSINKS_FIXED</b>
+            </para>
+          </description>
+          <description>
+            <para>This media sink has a fixed set of stream sinks. Stream sinks cannot be removed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>After this method is called, the corresponding stream sink object is no longer valid. The <see cref="IMFMediaSink.GetStreamSinkByIndex" /> and <see cref="IMFMediaSink.GetStreamSinkById" /> methods will no longer return that stream sink. You can re-use the stream identifier if you add another stream (by calling <see cref="AddStreamSink" />).</para>
+      <para>Not all media sinks support this method. If the media sink does not support this method, the <see cref="IMFMediaSink.GetCharacteristics" /> method returns the MEDIASINK_FIXED_STREAMS flag.</para>
+      <para>In some cases, the media sink supports this method but does not allow every stream sink to be removed. (For example, it might not allow stream 0 to be removed.)</para>
+    </remarks>
+    <seealso cref="IMFMediaSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFMediaSink.SetPresentationClock">
+    <summary>
+      <para>Sets the presentation clock on the media sink.</para>
+    </summary>
+    <param name="pPresentationClock">
+      <para>Pointer to the <see cref="IMFPresentationClock" /> interface of the presentation clock, or <b>NULL</b>. If the value is <b>NULL</b>, the media sink stops listening to the presentation clock that was previously set, if any.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_CLOCK_NO_TIME_SOURCE</b>
+            </para>
+          </description>
+          <description>
+            <para>The presentation clock does not have a time source. Call <see cref="SetTimeSource" /> on the presentation clock.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>During streaming, the media sink attempts to match rates with the presentation clock. Ideally, the media sink presents samples at the correct time according to the presentation clock and does not fall behind. Rateless media sinks are an exception to this rule, as they consume samples as quickly as possible and ignore the clock. If the sink is rateless, the <see cref="IMFMediaSink.GetCharacteristics" /> method returns the MEDIASINK_RATELESS flag.</para>
+      <para>The presentation clock must have a time source. Before calling this method, call <see cref="IMFPresentationClock.SetTimeSource" /> on the presentation clock to set the presentation time source. Some media sinks provide time sources; therefore, the media sink might be the time source for its own presentation clock. Regardless of what object provides the time source, however, the media sink must attempt to match rates with the clock specified in <i>pPresentationClock</i>. If a media sink cannot match rates with an external time source, the media sink's <see cref="IMFMediaSink.GetCharacteristics" /> method retrieves the MEDIASINK_CANNOT_MATCH_CLOCK flag. In this case, <b>SetPresentationClock</b> will still succeed, but the results will not be optimal. The sink might not render samples quickly enough to match rates with the presentation clock.</para>
+      <para>If <i>pPresentationClock</i> is non-<b>NULL</b>, the media sink must register for clock state notifications, by calling <see cref="IMFPresentationClock.AddClockStateSink" /> on the presentation clock. If the method is called again with a new presentation clock, or if <i>pPresentationClock</i> is <b>NULL</b>, the media sink must call <see cref="IMFPresentationClock.RemoveClockStateSink" /> to deregister itself from the previous clock.</para>
+      <para>All media sinks must support this method.</para>
+    </remarks>
+    <seealso cref="IMFMediaSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
+  </member>
+  <member name="IMFMediaSink.Shutdown">
+    <summary>
+      <para>Shuts down the media sink and releases the resources it is using.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media sink was shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the application creates the media sink, it is responsible for calling <b>Shutdown</b> to avoid memory or resource leaks. In most applications, however, the application creates an activation object for the media sink, and the Media Session uses that object to create the media sink. In that case, the Media Session — not the application — shuts down the media sink. (For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/activation-objects">Activation Objects</a>.)</para>
+      <para>After this method returns, all methods on the media sink return MF_E_SHUTDOWN,  except for <b>IUnknown</b> methods and <see cref="IMFMediaEventGenerator" /> methods. The sink will not raise any events after this method is called.</para>
+    </remarks>
+    <seealso cref="IMFMediaSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+  <member name="IMFMediaSink">
+    <summary>
+      <para>Implemented by media sink objects. This interface is the base interface for all Media Foundation media sinks. Stream sinks handle the actual processing of data on each stream.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
+  </member>
+</doc>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRMONITORINFO">
+    <summary>
+      <para>The <code>VMRMONITORINFO</code> structure is used in the <see cref="IVMRMonitorConfig.GetAvailableMonitors" /> method to set and retrieve information about monitors on the system (VMR-7 only).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="VMRMONITORINFO.guid">
+    <summary>
+      <para>A <see cref="VMRGUID" /> structure that specifies the monitor.</para>
+    </summary>
+  </member>
+  <member name="VMRMONITORINFO.rcMonitor">
+    <summary>
+      <para>The monitor rectangle.</para>
+    </summary>
+  </member>
+  <member name="VMRMONITORINFO.hMon">
+    <summary>
+      <para>A handle to the monitor.</para>
+    </summary>
+  </member>
+  <member name="VMRMONITORINFO.dwFlags">
+    <summary>
+      <para>Flags as defined for the <see cref="MONITORINFOEX" /> structure. Currently the only valid flag is <b>MONITORINFOF_PRIMARY</b>, which indicates the primary display monitor.</para>
+    </summary>
+  </member>
+  <member name="VMRMONITORINFO.szDevice">
+    <summary>
+      <para>Null-terminated string containing the device name.</para>
+    </summary>
+  </member>
+  <member name="VMRMONITORINFO.szDescription">
+    <summary>
+      <para>Null-terminated string containing the device description.</para>
+    </summary>
+  </member>
+  <member name="VMRMONITORINFO.liDriverVersion">
+    <summary></summary>
+  </member>
+  <member name="VMRMONITORINFO.dwVendorId">
+    <summary></summary>
+  </member>
+  <member name="VMRMONITORINFO.dwDeviceId">
+    <summary></summary>
+  </member>
+  <member name="VMRMONITORINFO.dwSubSysId">
+    <summary></summary>
+  </member>
+  <member name="VMRMONITORINFO.dwRevision">
+    <summary></summary>
+  </member>
+</doc>

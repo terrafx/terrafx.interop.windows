@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfDisplayAttributeNotifySink.xml' path='doc/member[@name="ITfDisplayAttributeNotifySink"]/*' />
 [Guid("AD56F402-E162-4F25-908F-7D577CF9BDA9")]
 [NativeTypeName("struct ITfDisplayAttributeNotifySink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfDisplayAttributeNotifySink : ITfDisplayAttribute
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfDisplayAttributeNotifySink : ITfDisplayAttribute
         return ((delegate* unmanaged<ITfDisplayAttributeNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfDisplayAttributeNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfDisplayAttributeNotifySink : ITfDisplayAttribute
         return ((delegate* unmanaged<ITfDisplayAttributeNotifySink*, uint>)(lpVtbl[1]))((ITfDisplayAttributeNotifySink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfDisplayAttributeNotifySink : ITfDisplayAttribute
         return ((delegate* unmanaged<ITfDisplayAttributeNotifySink*, uint>)(lpVtbl[2]))((ITfDisplayAttributeNotifySink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfDisplayAttributeNotifySink.xml' path='doc/member[@name="ITfDisplayAttributeNotifySink.OnUpdateInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnUpdateInfo()

@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVMRMixerControl.GetAlpha">
+    <summary>
+      <para>The <code>GetAlpha</code> method retrieves the constant alpha value that is applied to this video stream.</para>
+    </summary>
+    <param name="dwStreamID">
+      <para>Specifies the input stream.</para>
+    </param>
+    <param name="pAlpha">
+      <para>Pointer to a variable of type float that receives the current alpha value.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <i>pAlpha</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMixerControl Interface" />
+    <seealso cref="IVMRMixerControl.SetAlpha" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMixerControl.GetBackgroundClr">
+    <summary>
+      <para>Gets the current background color on the output rectangle.</para>
+    </summary>
+    <param name="lpClrBkg">
+      <para>Address of a variable that receives the background color.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMixerControl Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMixerControl.GetMixingPrefs">
+    <summary>
+      <para>Retrieves the mixing preferences for the stream.</para>
+    </summary>
+    <param name="pdwMixerPrefs">
+      <para>Address of a variable that receives a bitwise OR combination of <see cref="VMRMixerPrefs" /> flags.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMixerControl Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMixerControl.GetOutputRect">
+    <summary>
+      <para>The <code>GetOutputRect</code> method retrieves the position of this stream's video rectangle within the composition rectangle.</para>
+    </summary>
+    <param name="dwStreamID">
+      <para>Specifies the input stream.</para>
+    </param>
+    <param name="pRect">
+      <para>Pointer to a <see cref="NORMALIZEDRECT" /> structure that receives the destination rectangle in composition space.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <i>pRect</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Because this rectangle exists in compositional space, there is no such thing as an "invalid" rectangle. For example, if left is greater than right, it means the video is mirrored in the x direction. An empty rectangle turns off this stream.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMixerControl Interface" />
+    <seealso cref="IVMRMixerControl.SetOutputRect" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMixerControl.GetZOrder">
+    <summary>
+      <para>The <code>GetZOrder</code> method retrieves this video stream's position in the Z order.</para>
+    </summary>
+    <param name="dwStreamID">
+      <para>Specifies the input stream.</para>
+    </param>
+    <param name="pZ">
+      <para>Pointer to a DWORD that receives the current position in the Z-order.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <i>pZOrder</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The default Z-order is the order in which the pins were created.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMixerControl Interface" />
+    <seealso cref="IVMRMixerControl.SetZOrder" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMixerControl.SetAlpha">
+    <summary>
+      <para>The <code>SetAlpha</code> method sets a constant alpha value that is applied to this video stream.</para>
+    </summary>
+    <param name="dwStreamID">
+      <para>Specifies the input stream.</para>
+    </param>
+    <param name="Alpha">
+      <para>Specifies the alpha blending value to be applied to all the pixels in this stream.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The alpha value specified can be between 0.0 (fully transparent) and 1.0 (full opaque).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMixerControl Interface" />
+    <seealso cref="IVMRMixerControl.GetAlpha" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMixerControl.SetBackgroundClr">
+    <summary>
+      <para>Sets the background color on the output rectangle.</para>
+    </summary>
+    <param name="ClrBkg">
+      <para>Specifies the background color.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMixerControl Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMixerControl.SetOutputRect">
+    <summary>
+      <para>The <code>SetOutputRect</code> method sets the position of this stream within the composition rectangle.</para>
+    </summary>
+    <param name="dwStreamID">
+      <para>Specifies the input stream.</para>
+    </param>
+    <param name="pRect">
+      <para>Pointer to a <see cref="NORMALIZEDRECT" /> structure that specifies the position of the rectangle with composition space.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <i>pRect</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Because this rectangle exists in compositional space, there is no such thing as an "invalid" rectangle. For example, set left greater than right to mirror the video in the x direction. Specifying an empty rectangle turns off this stream.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMixerControl Interface" />
+    <seealso cref="IVMRMixerControl.GetOutputRect" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMixerControl.SetZOrder">
+    <summary>
+      <para>The <code>SetZOrder</code> method sets this video stream's position in the Z-order; larger values are further away.</para>
+    </summary>
+    <param name="dwStreamID">
+      <para>Specifies the input stream.</para>
+    </param>
+    <param name="dwZ">
+      <para>Double word containing the stream's position within the Z-order.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The default Z-order is the order in which the pins were created. You only need to use this method if you wish to modify the default Z-order.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMixerControl Interface" />
+    <seealso cref="IVMRMixerControl.GetZOrder" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMixerControl">
+    <summary>
+      <para>The <code>IVMRMixerControl</code> interface is enables an application to manipulate the incoming video streams on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7). Although this interface is implemented on the filter, it is actually the mixer component that is being configured. For this reason, this interface is only available when the mixer has been loaded through a call to <see cref="IVMRFilterConfig.SetNumberOfStreams" />. This interface is intended for use by applications only; it should not be used by upstream filters.</para>
+      <para>For the VMR-9, use the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/vmr9/nn-vmr9-ivmrmixercontrol9">IVMRMixerControl9</a> interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+</doc>

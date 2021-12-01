@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PERSIST_SPROPSTORE_FLAGS.xml' path='doc/member[@name="PERSIST_SPROPSTORE_FLAGS"]/*' />
 public enum PERSIST_SPROPSTORE_FLAGS
 {
+    /// <include file='PERSIST_SPROPSTORE_FLAGS.xml' path='doc/member[@name="PERSIST_SPROPSTORE_FLAGS.FPSPS_DEFAULT"]/*' />
     FPSPS_DEFAULT = 0,
+
+    /// <include file='PERSIST_SPROPSTORE_FLAGS.xml' path='doc/member[@name="PERSIST_SPROPSTORE_FLAGS.FPSPS_READONLY"]/*' />
     FPSPS_READONLY = 0x1,
+
+    /// <include file='PERSIST_SPROPSTORE_FLAGS.xml' path='doc/member[@name="PERSIST_SPROPSTORE_FLAGS.FPSPS_TREAT_NEW_VALUES_AS_DIRTY"]/*' />
     FPSPS_TREAT_NEW_VALUES_AS_DIRTY = 0x2,
 }

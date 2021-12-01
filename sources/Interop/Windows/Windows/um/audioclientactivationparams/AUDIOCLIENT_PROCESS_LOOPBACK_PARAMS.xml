@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS">
+    <summary>
+      <para>Specifies parameters for a call to <see cref="ActivateAudioInterfaceAsync" /> where loopback activation is requested.</para>
+    </summary>
+  </member>
+  <member name="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS.TargetProcessId">
+    <summary>
+      <para>The ID of the process for which the render streams, and the render streams of its child processes, will be included or excluded when activating the process loopback stream.</para>
+    </summary>
+  </member>
+  <member name="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS.ProcessLoopbackMode">
+    <summary>
+      <para>A value from the <see cref="PROCESS_LOOPBACK_MODE" /> enumeration specifying whether the render streams for the process and child processes specified in the <i>TargetProcessId</i> field should be included or excluded when activating the audio interface. For sample code that demonstrates the process loopback capture scenario, see the <a href="https://docs.microsoft.com/en-us/samples/microsoft/windows-classic-samples/applicationloopbackaudio-sample/">Application Loopback API Capture Sample</a>.</para>
+    </summary>
+  </member>
+</doc>

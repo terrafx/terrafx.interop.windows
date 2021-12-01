@@ -7,25 +7,33 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CHANNEL_ENCODER.xml' path='doc/member[@name="WS_CHANNEL_ENCODER"]/*' />
 public unsafe partial struct WS_CHANNEL_ENCODER
 {
+    /// <include file='WS_CHANNEL_ENCODER.xml' path='doc/member[@name="WS_CHANNEL_ENCODER.createContext"]/*' />
     public void* createContext;
 
+    /// <include file='WS_CHANNEL_ENCODER.xml' path='doc/member[@name="WS_CHANNEL_ENCODER.createEncoderCallback"]/*' />
     [NativeTypeName("WS_CREATE_ENCODER_CALLBACK")]
     public delegate* unmanaged<void*, delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, HRESULT>, void*, void**, IntPtr, HRESULT> createEncoderCallback;
 
+    /// <include file='WS_CHANNEL_ENCODER.xml' path='doc/member[@name="WS_CHANNEL_ENCODER.encoderGetContentTypeCallback"]/*' />
     [NativeTypeName("WS_ENCODER_GET_CONTENT_TYPE_CALLBACK")]
     public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, WS_STRING*, IntPtr, HRESULT> encoderGetContentTypeCallback;
 
+    /// <include file='WS_CHANNEL_ENCODER.xml' path='doc/member[@name="WS_CHANNEL_ENCODER.encoderStartCallback"]/*' />
     [NativeTypeName("WS_ENCODER_START_CALLBACK")]
     public delegate* unmanaged<void*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> encoderStartCallback;
 
+    /// <include file='WS_CHANNEL_ENCODER.xml' path='doc/member[@name="WS_CHANNEL_ENCODER.encoderEncodeCallback"]/*' />
     [NativeTypeName("WS_ENCODER_ENCODE_CALLBACK")]
     public delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> encoderEncodeCallback;
 
+    /// <include file='WS_CHANNEL_ENCODER.xml' path='doc/member[@name="WS_CHANNEL_ENCODER.encoderEndCallback"]/*' />
     [NativeTypeName("WS_ENCODER_END_CALLBACK")]
     public delegate* unmanaged<void*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> encoderEndCallback;
 
+    /// <include file='WS_CHANNEL_ENCODER.xml' path='doc/member[@name="WS_CHANNEL_ENCODER.freeEncoderCallback"]/*' />
     [NativeTypeName("WS_FREE_ENCODER_CALLBACK")]
     public delegate* unmanaged<void*, void> freeEncoderCallback;
 }

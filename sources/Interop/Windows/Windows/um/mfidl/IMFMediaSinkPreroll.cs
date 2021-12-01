@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaSinkPreroll.xml' path='doc/member[@name="IMFMediaSinkPreroll"]/*' />
 [Guid("5DFD4B2A-7674-4110-A4E6-8A68FD5F3688")]
 [NativeTypeName("struct IMFMediaSinkPreroll : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
         return ((delegate* unmanaged<IMFMediaSinkPreroll*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
         return ((delegate* unmanaged<IMFMediaSinkPreroll*, uint>)(lpVtbl[1]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
         return ((delegate* unmanaged<IMFMediaSinkPreroll*, uint>)(lpVtbl[2]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSinkPreroll.xml' path='doc/member[@name="IMFMediaSinkPreroll.NotifyPreroll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT NotifyPreroll([NativeTypeName("MFTIME")] long hnsUpcomingStartTime)

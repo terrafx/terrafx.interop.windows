@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_UNION_FIELD_DESCRIPTION">
+    <summary>
+      <para>Represents serialization information about a field within a union.
+See <see cref="WS_UNION_DESCRIPTION" />.</para>
+    </summary>
+  </member>
+  <member name="WS_UNION_FIELD_DESCRIPTION.value">
+    <summary>
+      <para>The enumeration value that field of the union corresponds to.
+See <see cref="WS_FIELD_DESCRIPTION" /> and <see cref="WS_UNION_DESCRIPTION" />.</para>
+    </summary>
+  </member>
+  <member name="WS_UNION_FIELD_DESCRIPTION.field">
+    <summary>
+      <para>Information about the field.  See <see cref="WS_FIELD_DESCRIPTION" /> and <see cref="WS_UNION_DESCRIPTION" />.</para>
+    </summary>
+  </member>
+</doc>

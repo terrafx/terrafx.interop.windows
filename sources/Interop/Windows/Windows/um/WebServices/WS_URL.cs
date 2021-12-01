@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_URL.xml' path='doc/member[@name="WS_URL"]/*' />
 public partial struct WS_URL
 {
+    /// <include file='WS_URL.xml' path='doc/member[@name="WS_URL.scheme"]/*' />
     public WS_URL_SCHEME_TYPE scheme;
 }

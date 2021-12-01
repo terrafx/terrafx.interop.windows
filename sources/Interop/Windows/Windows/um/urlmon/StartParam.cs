@@ -7,12 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='StartParam.xml' path='doc/member[@name="StartParam"]/*' />
 public unsafe partial struct StartParam
 {
+    /// <include file='StartParam.xml' path='doc/member[@name="StartParam.iid"]/*' />
     [NativeTypeName("IID")]
     public Guid iid;
 
+    /// <include file='StartParam.xml' path='doc/member[@name="StartParam.pIBindCtx"]/*' />
     public IBindCtx* pIBindCtx;
 
+    /// <include file='StartParam.xml' path='doc/member[@name="StartParam.pItf"]/*' />
     public IUnknown* pItf;
 }

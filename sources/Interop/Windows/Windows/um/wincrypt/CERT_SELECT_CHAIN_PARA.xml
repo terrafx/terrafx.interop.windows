@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_SELECT_CHAIN_PARA">
+    <summary>
+      <para>The <b>CERT_SELECT_CHAIN_PARA</b> structure contains the parameters used for building and selecting chains. This structure is used by the   <see cref="CertGetCertificateChain" /> and <see cref="CertSelectCertificateChains" /> functions.</para>
+    </summary>
+    <remarks>
+      <para>Trust in a particular certificate being a trusted root is based on the current state of the root store and not the state of the root store at a time passed in by this parameter. For revocation, a certificate revocation list (CRL), itself, must be valid at the current time. The value of this parameter is used to determine whether a certificate listed in a CRL has been revoked.</para>
+      <para>The following remarks apply to strong signature checking:</para>
+      <list type="bullet">
+        <item>
+          <description>You can enable strong signature checking by using the <see cref="CERT_CHAIN_PARA" /> structure referenced by the <b>pChainPara</b> member. The <b>pStrongSignPara</b> member of the <b>CERT_CHAIN_PARA</b> structure points to a <see cref="CERT_STRONG_SIGN_PARA" /> structure that can be used to determine signature strength.</description>
+        </item>
+        <item>
+          <description>When you enable strong checking and a weak signature is encountered, the <b>CERT_TRUST_IS_NOT_SIGNATURE_VALID</b> and <b>CERT_TRUST_HAS_WEAK_SIGNATURE</b> errors are set in the <b>dwErrorStatus</b> field of the <see cref="CERT_TRUST_STATUS" /> structure.</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+  <member name="CERT_SELECT_CHAIN_PARA.hChainEngine">
+    <summary>
+      <para>The handle of the chain engine to use to build the chain. If the value of the <i>hChainEngine</i> parameter is <b>NULL</b>, the default chain engine, <b>HCCE_CURRENT_USER</b>, is used.</para>
+    </summary>
+  </member>
+  <member name="CERT_SELECT_CHAIN_PARA.pTime">
+    <summary>
+      <para>A pointer to a <see cref="FILETIME" /> structure that contains the time for which the chain is to be validated. If the  value of the <i>pTime</i> parameter is <b>NULL</b>, the current system time is passed to this parameter.</para>
+      <para>
+        <b>Note</b>  The time does not affect trust list, revocation, or root store checking.</para>
+    </summary>
+  </member>
+  <member name="CERT_SELECT_CHAIN_PARA.hAdditionalStore">
+    <summary>
+      <para>The handle of any additional store to search for supporting certificates and certificate trust lists (CTLs). This parameter can be <b>NULL</b> if no additional store is to be searched.</para>
+    </summary>
+  </member>
+  <member name="CERT_SELECT_CHAIN_PARA.pChainPara">
+    <summary>
+      <para>A pointer to a <see cref="CERT_CHAIN_PARA" /> structure that includes chain-building parameters.</para>
+    </summary>
+  </member>
+  <member name="CERT_SELECT_CHAIN_PARA.dwFlags">
+    <summary>
+      <para>Flag values that indicate special processing during chain build.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_CHAIN_REVOCATION_CHECK_CACHE_ONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Revocation checking only accesses cached URLs.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_CHAIN_CACHE_ONLY_URL_RETRIEVAL</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Use only cached URLs in building a certificate chain. The Internet and intranet are not searched for URL-based objects.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

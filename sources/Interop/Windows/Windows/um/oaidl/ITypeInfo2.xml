@@ -1,0 +1,1231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITypeInfo2.GetIDsOfNames">
+    <summary>
+      <para>Maps between member names and member IDs, and parameter names and parameter IDs.</para>
+    </summary>
+    <param name="rgszNames">
+      <para>An array of names to be mapped.</para>
+    </param>
+    <param name="cNames">
+      <para>The count of the names to be mapped.</para>
+    </param>
+    <param name="pMemId">
+      <para>Caller-allocated array in which name mappings are placed.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The function <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-getidsofnames">GetIDsOfNames</a> maps the name of a member (<b>rgszNames</b>[0]) and its parameters (<b>rgszNames</b>[1] ...<b>rgszNames</b>[<b>cNames</b>- 1]) to the ID of the member (<b>pMemId</b>[0]), and to the IDs of the specified parameters (<b>pMemId</b>[1] ... <b>pMemId</b>[<b>cNames</b>- 1]). The IDs of parameters are 0 for the first parameter in the member function's argument list, 1 for the second, and so on.</para>
+      <para>If the type description inherits from another type description, this function is recursive to the base type description, if necessary, to find the item with the requested member ID.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</seealso>
+  </member>
+  <member name="ITypeInfo2.Invoke">
+    <summary>
+      <para>Invokes a method, or accesses a property of an object, that implements the interface described by the type description.</para>
+    </summary>
+    <param name="pvInstance">
+      <para>An instance of the interface described by this type description.</para>
+    </param>
+    <param name="memid">
+      <para>The interface member.</para>
+    </param>
+    <param name="wFlags">
+      <para>Flags describing the context of the invoke call.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>DISPATCH_METHOD</b>
+          </description>
+          <description>
+            <para>The member is accessed as a method. If there is ambiguity, both this and the DISPATCH_PROPERTYGET flag can be set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DISPATCH_PROPERTYGET</b>
+          </description>
+          <description>
+            <para>The member is retrieved as a property or data member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DISPATCH_PROPERTYPUT</b>
+          </description>
+          <description>
+            <para>The member is changed as a property or data member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DISPATCH_PROPERTYPUTREF</b>
+          </description>
+          <description>
+            <para>The member is changed by using a reference assignment, rather than a value assignment. This flag is valid only when the property accepts a reference to an object.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pDispParams">
+      <para>An array of arguments, an array of DISPIDs for named arguments, and counts of the number of elements in each array.</para>
+    </param>
+    <param name="pVarResult">
+      <para>The result. Should be null if the caller does not expect any result. If <i>wFlags</i> specifies DISPATCH_PROPERTYPUT or DISPATCH_PROPERTYPUTREF, <i>pVarResultis</i> is ignored.</para>
+    </param>
+    <param name="pExcepInfo">
+      <para>An exception information structure, which is filled in only if DISP_E_EXCEPTION is returned. If <i>pExcepInfo</i> is null on input, only an HRESULT error will be returned.</para>
+    </param>
+    <param name="puArgErr">
+      <para>If Invoke returns DISP_E_TYPEMISMATCH, <i>puArgErr</i> indicates the index (within <i>rgvarg</i>) of the argument with incorrect type. If more than one argument returns an error, <i>puArgErr</i> indicates only the first argument with an error. Arguments in pDispParams-&gt;rgvarg appear in reverse order, so the first argument is the one having the highest index in the array. This parameter cannot be null.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISP_E_EXCEPTION
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The member being invoked has returned an error HRESULT. If the member implements <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</a>, details are available in the error object. Otherwise, the <i>pExcepInfo</i> parameter contains details.</para>
+          </description>
+        </item>
+      </list>
+      <para>Any of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a> errors may also be returned.</para>
+    </returns>
+    <remarks>
+      <para>Use the function <b>ITypeInfo.Invoke</b> to access a member of an object or invoke a method that implements the interface described by this type description. For objects that support the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> interface, you can use <b>Invoke</b> to implement <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a>.</para>
+      <para>
+        <b>ITypeInfo.Invoke</b> takes a pointer to an instance of the class. Otherwise, its parameters are the same as <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a>, except that <b>ITypeInfo.Invoke</b> omits the <i>refiid</i> and <i>lcid</i> parameters. When called, <b>ITypeInfo.Invoke</b> performs the actions described by the <b>IDispatch.Invoke</b> parameters on the specified instance.</para>
+      <para>For VTBL interface members, <b>ITypeInfo.Invoke</b> passes the LCID of the type information into parameters tagged with the lcid attribute, and the returned value into the retval attribute.</para>
+      <para>If the type description inherits from another type description, this function recurses on the base type description to find the item with the requested member ID.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</seealso>
+  </member>
+  <member name="ITypeInfo2.GetAllCustData">
+    <summary>
+      <para>Gets all custom data items for the library.</para>
+    </summary>
+    <param name="pCustData">
+      <para>The custom data items.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>After the call, the caller needs to release memory used to hold the custom data item by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-clearcustdata">ClearCustData</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetAllFuncCustData">
+    <summary>
+      <para>Gets all custom data from the specified function.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the function for which to get the custom data.</para>
+    </param>
+    <param name="pCustData">
+      <para>The custom data items.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>After the call, the caller needs to release memory used to hold the custom data item by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-clearcustdata">ClearCustData</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetAllImplTypeCustData">
+    <summary>
+      <para>Gets all custom data for the specified implementation type.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the implementation type for the custom data.</para>
+    </param>
+    <param name="pCustData">
+      <para>The custom data items.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetAllParamCustData">
+    <summary>
+      <para>Gets all of the custom data for the specified function parameter.</para>
+    </summary>
+    <param name="indexFunc">
+      <para>The index of the function for which to get the custom data.</para>
+    </param>
+    <param name="indexParam">
+      <para>The index of the parameter of this function for which to get the custom data.</para>
+    </param>
+    <param name="pCustData">
+      <para>The custom data items.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetAllVarCustData">
+    <summary>
+      <para>Gets the variable for the custom data.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the variable for which to get the custom data.</para>
+    </param>
+    <param name="pCustData">
+      <para>The custom data items.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetCustData">
+    <summary>
+      <para>Gets the custom data.</para>
+    </summary>
+    <param name="guid">
+      <para>The GUID used to identify the data.</para>
+    </param>
+    <param name="pVarVal">
+      <para>The custom data.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetDocumentation2">
+    <summary>
+      <para>Retrieves the documentation string, the complete Help file name and path, the localization context to use, and the context ID for the library Help topic in the Help file.</para>
+    </summary>
+    <param name="memid">
+      <para>The member identifier for the type description.</para>
+    </param>
+    <param name="lcid">
+      <para>The locale identifier.</para>
+    </param>
+    <param name="pbstrHelpString">
+      <para>The name of the specified item. If the caller does not need the item name, then <i>pbstrHelpString</i> can be null.</para>
+    </param>
+    <param name="pdwHelpStringContext">
+      <para>The Help localization context. If the caller does not need the Help context, it can be null.</para>
+    </param>
+    <param name="pbstrHelpStringDll">
+      <para>The fully qualified name of the file containing the DLL used for Help file. If the caller does not need the file name, it can be null.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Gets information at the type information level (about the type information and its members). The caller should free the BSTR parameters.</para>
+      <para>This function will call <b>_DLLGetDocumentation</b> in the specified DLL to retrieve the desired Help string, if there is a Help string context for this item. If no Help string context exists or an error occurs, then it will defer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypeinfo-getdocumentation">GetDocumentation</a> method and return the associated documentation string.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetFuncCustData">
+    <summary>
+      <para>Gets the custom data from the specified function.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the function for which to get the custom data.</para>
+    </param>
+    <param name="guid">
+      <para>The GUID used to identify the data.</para>
+    </param>
+    <param name="pVarVal">
+      <para>The custom data.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetFuncIndexOfMemId">
+    <summary>
+      <para>Binds to a specific member based on a known DISPID, where the member name is not known (for example, when binding to a default member).</para>
+    </summary>
+    <param name="memid">
+      <para>The member identifier.</para>
+    </param>
+    <param name="invKind">
+      <para>The invoke kind.</para>
+    </param>
+    <param name="pFuncIndex">
+      <para>An index into the function.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetImplTypeCustData">
+    <summary>
+      <para>Gets the custom data of the implementation type.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the implementation type for the custom data.</para>
+    </param>
+    <param name="guid">
+      <para>The GUID used to identify the data.</para>
+    </param>
+    <param name="pVarVal">
+      <para>The retrieved data.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetParamCustData">
+    <summary>
+      <para>Gets the custom data of the specified parameter.</para>
+    </summary>
+    <param name="indexFunc">
+      <para>The index of the function for which to get the custom data.</para>
+    </param>
+    <param name="indexParam">
+      <para>The index of the parameter of this function for which to get the custom data.</para>
+    </param>
+    <param name="guid">
+      <para>The GUID used to identify the data.</para>
+    </param>
+    <param name="pVarVal">
+      <para>The retrieved data.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetTypeFlags">
+    <summary>
+      <para>Returns the type flags without any allocations. This returns a flag that expands the type flags without growing the TYPEATTR (type attribute).</para>
+    </summary>
+    <param name="pTypeFlags">
+      <para>A TYPEFLAG value.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetTypeKind">
+    <summary>
+      <para>Returns the TYPEKIND enumeration quickly, without doing any allocations.</para>
+    </summary>
+    <param name="pTypeKind">
+      <para>A TYPEKIND value.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetVarCustData">
+    <summary>
+      <para>Gets the custom data of the specified variable.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the variable for which to get the custom data.</para>
+    </param>
+    <param name="guid">
+      <para>The GUID used to identify the data.</para>
+    </param>
+    <param name="pVarVal">
+      <para>The retrieved data.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2.GetVarIndexOfMemId">
+    <summary>
+      <para>Binds to a specific member based on a known DISPID, where the member name is not known (for example, when binding to a default member).</para>
+    </summary>
+    <param name="memid">
+      <para>The member identifier.</para>
+    </param>
+    <param name="pVarIndex">
+      <para>The index.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</seealso>
+  </member>
+  <member name="ITypeInfo2">
+    <summary>
+      <para>Used for reading information about objects. Can be cast to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a> instead of using the calls <b>QueryInterface</b> and <b>Release</b> to allow quick opens and allocs. This only works for in-process cases.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/ms221172(v=vs.85)">Type Description Interfaces and Functions </seealso>
+  </member>
+</doc>

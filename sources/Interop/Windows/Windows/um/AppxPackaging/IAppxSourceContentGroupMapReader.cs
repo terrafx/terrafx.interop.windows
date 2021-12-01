@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxSourceContentGroupMapReader.xml' path='doc/member[@name="IAppxSourceContentGroupMapReader"]/*' />
 [Guid("F329791D-540B-4A9F-BC75-3282B7D73193")]
 [NativeTypeName("struct IAppxSourceContentGroupMapReader : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
         return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
         return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, uint>)(lpVtbl[1]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
         return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, uint>)(lpVtbl[2]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxSourceContentGroupMapReader.xml' path='doc/member[@name="IAppxSourceContentGroupMapReader.GetRequiredGroup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRequiredGroup(IAppxContentGroup** requiredGroup)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
         return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, IAppxContentGroup**, int>)(lpVtbl[3]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), requiredGroup);
     }
 
+    /// <include file='IAppxSourceContentGroupMapReader.xml' path='doc/member[@name="IAppxSourceContentGroupMapReader.GetAutomaticGroups"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAutomaticGroups(IAppxContentGroupsEnumerator** automaticGroupsEnumerator)

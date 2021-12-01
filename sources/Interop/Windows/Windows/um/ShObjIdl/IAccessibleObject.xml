@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAccessibleObject.SetAccessibleName">
+    <summary>
+      <para>Sets text that is retrieved by <see cref="IAccessible.get_accName" /> which accessibility tools use to obtain the Name Property of an object.</para>
+    </summary>
+    <param name="pszName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated, Unicode string containing the name.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IAccessibleObject">
+    <summary>
+      <para>Exposes a method that can be used by an accessibility application.</para>
+    </summary>
+  </member>
+</doc>

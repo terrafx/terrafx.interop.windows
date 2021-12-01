@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEHLP_SYMBOLW64.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW64"]/*' />
 public unsafe partial struct IMAGEHLP_SYMBOLW64
 {
+    /// <include file='IMAGEHLP_SYMBOLW64.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW64.SizeOfStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeOfStruct;
 
+    /// <include file='IMAGEHLP_SYMBOLW64.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW64.Address"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Address;
 
+    /// <include file='IMAGEHLP_SYMBOLW64.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW64.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='IMAGEHLP_SYMBOLW64.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW64.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='IMAGEHLP_SYMBOLW64.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW64.MaxNameLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxNameLength;
 
+    /// <include file='IMAGEHLP_SYMBOLW64.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW64.Name"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort Name[1];
 }

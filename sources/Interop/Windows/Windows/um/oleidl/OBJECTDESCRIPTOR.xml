@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OBJECTDESCRIPTOR">
+    <summary>
+      <para>Represents the data structure used for the CF_OBJECTDESRIPTOR and CF_LINKSRCDESCRIPTOR file formats. These formats provide user interface information during data transfer operations, for example, the <b>Paste Special</b> dialog box or target feedback information during drag-and-drop operations.</para>
+    </summary>
+    <seealso cref="FORMATETC" />
+    <seealso cref="IDataObject" />
+  </member>
+  <member name="OBJECTDESCRIPTOR.cbSize">
+    <summary>
+      <para>The size of structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="OBJECTDESCRIPTOR.clsid">
+    <summary>
+      <para>The CLSID of the object being transferred. The clsid is used to obtain the icon for the <b>Display As Icon</b> option in the <b>Paste Special</b> dialog box and is applicable only if the Embed Source or Embedded Object formats are offered. If neither is offered, the value of clsid should be CLSID_NULL. The clsid can be retrieved by the source by loading the object and calling the <see cref="IOleObject.GetUserClassID" /> method. Note that for link objects, this value is not the same as the value returned by the <see cref="IPersist.GetClassID" /> method.</para>
+    </summary>
+  </member>
+  <member name="OBJECTDESCRIPTOR.dwDrawAspect">
+    <summary>
+      <para>The display aspect of the object. Typically, this value is DVASPECT_CONTENT or DVASPECT_ICON. If the source application did not draw the object originally, the <b>dwDrawAspect</b> field contains a zero value (which is not the same as DVASPECT_CONTENT). For more information, see <see cref="DVASPECT" />.</para>
+    </summary>
+  </member>
+  <member name="OBJECTDESCRIPTOR.sizel">
+    <summary>
+      <para>The true extent of the object (without cropping or scaling) in <b>HIMETRIC</b> units. Setting this field is optional. The value can be (0,0) for applications that do not draw the object being transferred. This field is used primarily by targets of drag-and-drop operations, so they can give appropriate feedback to the user.</para>
+    </summary>
+  </member>
+  <member name="OBJECTDESCRIPTOR.pointl">
+    <summary>
+      <para>The offset in <b>HIMETRIC</b> units from the upper-left corner of the object where a drag-and-drop operation was initiated. This field is only meaningful for a drag-and-drop transfer operation since it corresponds to the point where the mouse was clicked to initiate the drag-and-drop operation. The value is (0,0) for other transfer situations, such as a clipboard copy and paste.</para>
+    </summary>
+  </member>
+  <member name="OBJECTDESCRIPTOR.dwStatus">
+    <summary>
+      <para>The copy of the status flags for the object. These flags are defined by the <see cref="OLEMISC" /> enumeration. If an embedded object is being transferred, they are returned by calling the <see cref="IOleObject.GetMiscStatus" /> method.</para>
+    </summary>
+  </member>
+  <member name="OBJECTDESCRIPTOR.dwFullUserTypeName">
+    <summary>
+      <para>The offset for finding the full user type name of the object being transferred. It specifies the offset, in bytes, from the beginning of the <b>OBJECTDESCRIPTOR</b> data structure to the null-terminated string that specifies the full user type name of the object being transferred. The value is zero if the string is not present. This string is used by the destination of a data transfer to create labels in the <b>Paste Special</b> dialog box. The destination application must be able to handle the cases when this string is omitted.</para>
+    </summary>
+  </member>
+  <member name="OBJECTDESCRIPTOR.dwSrcOfCopy">
+    <summary>
+      <para>The offset, in bytes, from the beginning of the data structure to the null-terminated string that specifies the source of the transfer. The <b>dwSrcOfCopy</b> member is typically implemented as the display name of the temporary moniker that identifies the data source. The value for <b>dwSrcOfCopy</b> is displayed in the Source line of the <b>Paste Special</b> dialog box. A zero value indicates that the string is not present. If <b>dwSrcOfCopy</b> is zero, the string "Unknown Source" is displayed in the <b>Paste Special</b> dialog box.</para>
+    </summary>
+  </member>
+</doc>

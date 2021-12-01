@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT">
+    <summary>
+      <para>Defines the horizontal alignment options for content within a viewport.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+  </member>
+  <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_NONE">
+    <summary>
+      <para>No alignment. The object can be positioned anywhere within the viewport.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_LEFT">
+    <summary>
+      <para>Align object along the left side of the viewport.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_CENTER">
+    <summary>
+      <para>Align object to the center of the viewport.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_RIGHT">
+    <summary>
+      <para>Align object along the right side of the viewport.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_UNLOCKCENTER">
+    <summary>
+      <para>Content zooms around the center point of the contacts, instead of being locked with the horizontal alignment.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WBEM_UNSECAPP_FLAG_TYPE.xml' path='doc/member[@name="WBEM_UNSECAPP_FLAG_TYPE"]/*' />
 public enum WBEM_UNSECAPP_FLAG_TYPE
 {
+    /// <include file='WBEM_UNSECAPP_FLAG_TYPE.xml' path='doc/member[@name="WBEM_UNSECAPP_FLAG_TYPE.WBEM_FLAG_UNSECAPP_DEFAULT_CHECK_ACCESS"]/*' />
     WBEM_FLAG_UNSECAPP_DEFAULT_CHECK_ACCESS = 0,
+
+    /// <include file='WBEM_UNSECAPP_FLAG_TYPE.xml' path='doc/member[@name="WBEM_UNSECAPP_FLAG_TYPE.WBEM_FLAG_UNSECAPP_CHECK_ACCESS"]/*' />
     WBEM_FLAG_UNSECAPP_CHECK_ACCESS = 1,
+
+    /// <include file='WBEM_UNSECAPP_FLAG_TYPE.xml' path='doc/member[@name="WBEM_UNSECAPP_FLAG_TYPE.WBEM_FLAG_UNSECAPP_DONT_CHECK_ACCESS"]/*' />
     WBEM_FLAG_UNSECAPP_DONT_CHECK_ACCESS = 2,
 }

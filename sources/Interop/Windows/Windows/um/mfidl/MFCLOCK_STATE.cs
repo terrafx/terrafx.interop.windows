@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFCLOCK_STATE.xml' path='doc/member[@name="MFCLOCK_STATE"]/*' />
 public enum MFCLOCK_STATE
 {
+    /// <include file='MFCLOCK_STATE.xml' path='doc/member[@name="MFCLOCK_STATE.MFCLOCK_STATE_INVALID"]/*' />
     MFCLOCK_STATE_INVALID = 0,
+
+    /// <include file='MFCLOCK_STATE.xml' path='doc/member[@name="MFCLOCK_STATE.MFCLOCK_STATE_RUNNING"]/*' />
     MFCLOCK_STATE_RUNNING = (MFCLOCK_STATE_INVALID + 1),
+
+    /// <include file='MFCLOCK_STATE.xml' path='doc/member[@name="MFCLOCK_STATE.MFCLOCK_STATE_STOPPED"]/*' />
     MFCLOCK_STATE_STOPPED = (MFCLOCK_STATE_RUNNING + 1),
+
+    /// <include file='MFCLOCK_STATE.xml' path='doc/member[@name="MFCLOCK_STATE.MFCLOCK_STATE_PAUSED"]/*' />
     MFCLOCK_STATE_PAUSED = (MFCLOCK_STATE_STOPPED + 1),
 }

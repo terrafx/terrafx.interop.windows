@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES.xml' path='doc/member[@name="POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES"]/*' />
 public partial struct POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES
 {
+    /// <include file='POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES.xml' path='doc/member[@name="POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES.IsAllowed"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte IsAllowed;
 }

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DATADIR">
+    <summary>
+      <para>Specifies the direction of the data flow. This determines the formats that the resulting enumerator can enumerate.</para>
+    </summary>
+    <seealso cref="IDataObject.EnumFormatEtc" />
+    <seealso cref="OleRegEnumFormatEtc" />
+  </member>
+  <member name="DATADIR.DATADIR_GET">
+    <summary>
+      <para>Requests that <see cref="IDataObject.EnumFormatEtc" /> supply an enumerator for the formats that can be specified in<see cref="IDataObject.GetData" />.</para>
+    </summary>
+  </member>
+  <member name="DATADIR.DATADIR_SET">
+    <summary>
+      <para>Requests that <see cref="IDataObject.EnumFormatEtc" /> supply an enumerator for the formats that can be specified in <see cref="IDataObject.SetData" />.</para>
+    </summary>
+  </member>
+</doc>

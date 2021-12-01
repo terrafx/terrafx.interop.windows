@@ -7,10 +7,18 @@ using static TerraFX.Interop.Windows.SPAUDIOSTATE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechAudioState.xml' path='doc/member[@name="SpeechAudioState"]/*' />
 public enum SpeechAudioState
 {
+    /// <include file='SpeechAudioState.xml' path='doc/member[@name="SpeechAudioState.SASClosed"]/*' />
     SASClosed = SPAS_CLOSED,
+
+    /// <include file='SpeechAudioState.xml' path='doc/member[@name="SpeechAudioState.SASStop"]/*' />
     SASStop = SPAS_STOP,
+
+    /// <include file='SpeechAudioState.xml' path='doc/member[@name="SpeechAudioState.SASPause"]/*' />
     SASPause = SPAS_PAUSE,
+
+    /// <include file='SpeechAudioState.xml' path='doc/member[@name="SpeechAudioState.SASRun"]/*' />
     SASRun = SPAS_RUN,
 }

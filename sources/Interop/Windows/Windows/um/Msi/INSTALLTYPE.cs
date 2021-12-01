@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INSTALLTYPE.xml' path='doc/member[@name="INSTALLTYPE"]/*' />
 public enum INSTALLTYPE
 {
+    /// <include file='INSTALLTYPE.xml' path='doc/member[@name="INSTALLTYPE.INSTALLTYPE_DEFAULT"]/*' />
     INSTALLTYPE_DEFAULT = 0,
+
+    /// <include file='INSTALLTYPE.xml' path='doc/member[@name="INSTALLTYPE.INSTALLTYPE_NETWORK_IMAGE"]/*' />
     INSTALLTYPE_NETWORK_IMAGE = 1,
+
+    /// <include file='INSTALLTYPE.xml' path='doc/member[@name="INSTALLTYPE.INSTALLTYPE_SINGLE_INSTANCE"]/*' />
     INSTALLTYPE_SINGLE_INSTANCE = 2,
 }

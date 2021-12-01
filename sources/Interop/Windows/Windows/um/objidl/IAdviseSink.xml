@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAdviseSink.OnClose">
+    <summary>
+      <para>Called by the server to notify all registered advisory sinks that the object has changed from the running to the loaded state.</para>
+    </summary>
+    <remarks>
+      <para>The <b>OnClose</b> notification indicates that an object is making the transition from the running to the loaded state, so its container can take appropriate measures to ensure an orderly shutdown. For example, an object handler must release its pointer to the object.</para>
+      <para>If the object that is closing is the last open object supported by its OLE server application, the application can also shut down.</para>
+      <para>In the case of a link object, the notification that the object is closing should always be interpreted to mean that the connection to the link source has broken.</para>
+    </remarks>
+    <seealso cref="IAdviseSink" />
+  </member>
+  <member name="IAdviseSink.OnDataChange">
+    <summary>
+      <para>Called by the server to notify a data object's currently registered advise sinks that data in the object has changed.</para>
+    </summary>
+    <param name="pFormatetc">
+      <para>A pointer to a <see cref="FORMATETC" /> structure, which describes the format, target device, rendering, and storage information of the calling data object.</para>
+    </param>
+    <param name="pStgmed">
+      <para>A pointer to a <see cref="STGMEDIUM" /> structure, which defines the storage medium (global memory, disk file, storage object, stream object, GDI object, or undefined) and ownership of that medium for the calling data object.</para>
+    </param>
+    <remarks>
+      <para>Object handlers and containers of link objects implement <b>IAdviseSink.OnDataChange</b> to take appropriate steps when notified that data in the object has changed. They also must call <see cref="IDataObject.DAdvise" /> to set up advisory connections with the objects in whose data they are interested.</para>
+      <para>Containers that take advantage of OLE's caching support do not need to register for data-change notifications, because the information necessary to update the container's presentation of the object, including any changes in its data, are maintained in the object's cache.</para>
+      <h3>Notes to Implementers</h3>
+      <para>If you implement <b>IAdviseSink.OnDataChange</b> for a container, remember that this method is asynchronous and that making synchronous calls within asynchronous methods is not valid. Therefore, you cannot call <see cref="IDataObject.GetData" /> to obtain the data you need to update your object. Instead, you either post an internal message, or invalidate the rectangle for the changed data by calling <see cref="InvalidateRect" /> and waiting for a <a href="https://docs.microsoft.com//windows/desktop/gdi/wm-paint">WM_PAINT</a> message, at which point you are free to get the data and update the object.</para>
+      <para>The data itself, which is valid only for the duration of the call, is passed using the storage medium pointed to by <i>pStgmed</i>. Since the caller owns the medium, the advise sink should not free it. Also, if <i>pStgmed</i> points to an <see cref="IStorage" /> or <see cref="IStream" /> interface, the sink must not increment the reference count.</para>
+    </remarks>
+    <seealso cref="IAdviseSink" />
+  </member>
+  <member name="IAdviseSink.OnRename">
+    <summary>
+      <para>Called by the server to notify all registered advisory sinks that the object has been renamed.</para>
+    </summary>
+    <param name="pmk">
+      <para>A pointer to the <see cref="IMoniker" /> interface on the new full moniker of the object.</para>
+    </param>
+    <remarks>
+      <para>OLE link objects normally implement <b>IAdviseSink.OnRename</b> to receive notification of a change in the name of a link source or its container. The object serving as the link source calls <b>OnRename</b> and passes its new full moniker to the object handler, which forwards the notification to the link object. In response, the link object must update its moniker. The link object, in turn, forwards the notification to its own container.</para>
+    </remarks>
+    <seealso cref="IAdviseSink" />
+  </member>
+  <member name="IAdviseSink.OnSave">
+    <summary>
+      <para>Called by the server to notify all registered advisory sinks that the object has been saved.</para>
+    </summary>
+    <remarks>
+      <para>Object handlers and link objects normally implement <b>IAdviseSink.OnSave</b> to receive notifications of when an object is saved to disk, either to its original storage (through a <b>Save</b> operation) or to new storage (through a <b>Save As</b> operation). Object Handlers and link objects register to be notified when an object is saved for the purpose of updating their caches, but then only if the advise flag passed during registration specifies ADVFCACHE_ONSAVE. Object handlers and link objects forward these notifications to their containers.</para>
+    </remarks>
+    <seealso cref="IAdviseSink" />
+  </member>
+  <member name="IAdviseSink.OnViewChange">
+    <summary>
+      <para>Notifies an object's registered advise sinks that its view has changed.</para>
+    </summary>
+    <param name="dwAspect">
+      <para>The aspect, or view, of the object. Contains a value taken from the <see cref="DVASPECT" /> enumeration.</para>
+    </param>
+    <param name="lindex">
+      <para>The portion of the view that has changed. Currently only -1 is valid.</para>
+    </param>
+    <remarks>
+      <para>Containers register to be notified when an object's view changes by calling <see cref="IViewObject.SetAdvise" />. After it is registered, the object will call the sink's <b>IAdviseSink.OnViewChange</b> method when appropriate. <b>OnViewChange</b> can be called when the object is in either the loaded or running state.</para>
+      <para>Even though <see cref="DVASPECT" /> values are individual flag bits, <i>dwAspect</i> may represent only one value. That is, <i>dwAspect</i> cannot contain the result of an OR operation combining two or more <b>DVASPECT</b> values.</para>
+      <para>The <i>lindex</i> parameter represents the part of the aspect that is of interest. The value of <i>lindex</i> depends on the value of <i>dwAspect</i>. If <i>dwAspect</i> is either DVASPECT_THUMBNAIL or DVASPECT_ICON, <i>lindex</i> is ignored. If <i>dwAspect</i> is DVASPECT_CONTENT, <i>lindex</i> must be -1, which indicates that the entire view is of interest and is the only value that is currently valid.</para>
+    </remarks>
+    <seealso cref="IAdviseSink" />
+    <seealso cref="IViewObject.SetAdvise" />
+  </member>
+  <member name="IAdviseSink">
+    <summary>
+      <para>Enables containers and other objects to receive notifications of data changes, view changes, and compound-document changes occurring in objects of interest. Container applications, for example, require such notifications to keep cached presentations of their linked and embedded objects up-to-date. Calls to <b>IAdviseSink</b> methods are asynchronous, so the call is sent and then the next instruction is executed without waiting for the call's return.</para>
+      <para>For an advisory connection to exist, the object that is to receive notifications must implement <b>IAdviseSink</b>, and the objects in which it is interested must implement <see cref="IOleObject.Advise" /> and <see cref="IDataObject.DAdvise" />. In-process objects and handlers may also implement <see cref="IViewObject.SetAdvise" />. Objects implementing <see cref="IOleObject" /> must support all reasonable advisory methods. To simplify advisory notifications, OLE supplies implementations of the <see cref="IDataAdviseHolder" /> and <see cref="IOleAdviseHolder" />, which keep track of advisory connections and send notifications to the proper sinks through pointers to their <b>IAdviseSink</b> interfaces. <see cref="IViewObject" /> (and its advisory methods) is implemented in the default handler.</para>
+      <para>As shown in the following table, an object that has implemented an advise sink registers its interest in receiving certain types of notifications by calling the appropriate method.</para>
+      <list type="table">
+        <listheader>
+          <description>Call This Method</description>
+          <description> To Register for These Notifications</description>
+        </listheader>
+        <item>
+          <description>
+            <see cref="IOleObject.Advise" />
+          </description>
+          <description>When a document is saved, closed, or renamed.
+</description>
+        </item>
+        <item>
+          <description>
+            <see cref="IDataObject.DAdvise" />
+          </description>
+          <description>When a document's data changes.
+</description>
+        </item>
+        <item>
+          <description>
+            <see cref="IViewObject.SetAdvise" />
+          </description>
+          <description>When a document's presentation changes.
+</description>
+        </item>
+      </list>
+      <para>When an event occurs that applies to a registered notification type, the object application calls the appropriate <b>IAdviseSink</b> method. For example, when an embedded object closes, it calls the <see cref="IAdviseSink.OnClose" /> method to notify its container. These notifications are asynchronous, occurring after the events that trigger them.</para>
+    </summary>
+    <seealso cref="IAdviseSink2" />
+    <seealso cref="IAdviseSinkEx" />
+    <seealso cref="IDataAdviseHolder" />
+    <seealso cref="IDataObject.DAdvise" />
+    <seealso cref="IOleAdviseHolder" />
+    <seealso cref="IOleObject.Advise" />
+    <seealso cref="IUnknown" />
+    <seealso cref="IViewObject.SetAdvise" />
+  </member>
+</doc>

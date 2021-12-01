@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EDataFlow.xml' path='doc/member[@name="EDataFlow"]/*' />
 public enum EDataFlow
 {
+    /// <include file='EDataFlow.xml' path='doc/member[@name="EDataFlow.eRender"]/*' />
     eRender = 0,
+
+    /// <include file='EDataFlow.xml' path='doc/member[@name="EDataFlow.eCapture"]/*' />
     eCapture = (eRender + 1),
+
+    /// <include file='EDataFlow.xml' path='doc/member[@name="EDataFlow.eAll"]/*' />
     eAll = (eCapture + 1),
+
+    /// <include file='EDataFlow.xml' path='doc/member[@name="EDataFlow.EDataFlow_enum_count"]/*' />
     EDataFlow_enum_count = (eAll + 1),
 }

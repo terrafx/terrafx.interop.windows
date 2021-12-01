@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2"]/*' />
 [Guid("34151510-EEC0-11D2-8201-00A0C9D74842")]
 [NativeTypeName("struct IDvdInfo2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, Guid*, void**, int>)(lpVtbl[0]))((IDvdInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint>)(lpVtbl[1]))((IDvdInfo2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint>)(lpVtbl[2]))((IDvdInfo2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetCurrentDomain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrentDomain(DVD_DOMAIN* pDomain)
@@ -46,6 +51,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, DVD_DOMAIN*, int>)(lpVtbl[3]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pDomain);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetCurrentLocation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCurrentLocation(DVD_PLAYBACK_LOCATION2* pLocation)
@@ -53,6 +59,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, DVD_PLAYBACK_LOCATION2*, int>)(lpVtbl[4]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pLocation);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetTotalTitleTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTotalTitleTime(DVD_HMSF_TIMECODE* pTotalTime, [NativeTypeName("ULONG *")] uint* ulTimeCodeFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, DVD_HMSF_TIMECODE*, uint*, int>)(lpVtbl[5]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pTotalTime, ulTimeCodeFlags);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetCurrentButton"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCurrentButton([NativeTypeName("ULONG *")] uint* pulButtonsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentButton)
@@ -67,6 +75,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, uint*, int>)(lpVtbl[6]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulButtonsAvailable, pulCurrentButton);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetCurrentAngle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetCurrentAngle([NativeTypeName("ULONG *")] uint* pulAnglesAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentAngle)
@@ -74,6 +83,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, uint*, int>)(lpVtbl[7]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulAnglesAvailable, pulCurrentAngle);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetCurrentAudio"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetCurrentAudio([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream)
@@ -81,6 +91,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, uint*, int>)(lpVtbl[8]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulStreamsAvailable, pulCurrentStream);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetCurrentSubpicture"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, BOOL* pbIsDisabled)
@@ -88,6 +99,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, uint*, BOOL*, int>)(lpVtbl[9]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulStreamsAvailable, pulCurrentStream, pbIsDisabled);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetCurrentUOPS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetCurrentUOPS([NativeTypeName("ULONG *")] uint* pulUOPs)
@@ -95,6 +107,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, int>)(lpVtbl[10]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulUOPs);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetAllSPRMs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetAllSPRMs([NativeTypeName("SPRMARRAY *")] ushort** pRegisterArray)
@@ -102,6 +115,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, ushort**, int>)(lpVtbl[11]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pRegisterArray);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetAllGPRMs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetAllGPRMs([NativeTypeName("GPRMARRAY *")] ushort** pRegisterArray)
@@ -109,6 +123,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, ushort**, int>)(lpVtbl[12]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pRegisterArray);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetAudioLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetAudioLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage)
@@ -116,6 +131,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, uint*, int>)(lpVtbl[13]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStream, pLanguage);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetSubpictureLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetSubpictureLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage)
@@ -123,6 +139,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, uint*, int>)(lpVtbl[14]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStream, pLanguage);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetTitleAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetTitleAttributes([NativeTypeName("ULONG")] uint ulTitle, DVD_MenuAttributes* pMenu, DVD_TitleAttributes* pTitle)
@@ -130,6 +147,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, DVD_MenuAttributes*, DVD_TitleAttributes*, int>)(lpVtbl[15]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulTitle, pMenu, pTitle);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetVMGAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetVMGAttributes(DVD_MenuAttributes* pATR)
@@ -137,6 +155,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, DVD_MenuAttributes*, int>)(lpVtbl[16]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pATR);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetCurrentVideoAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetCurrentVideoAttributes(DVD_VideoAttributes* pATR)
@@ -144,6 +163,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, DVD_VideoAttributes*, int>)(lpVtbl[17]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pATR);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetAudioAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetAudioAttributes([NativeTypeName("ULONG")] uint ulStream, DVD_AudioAttributes* pATR)
@@ -151,6 +171,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, DVD_AudioAttributes*, int>)(lpVtbl[18]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStream, pATR);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetKaraokeAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetKaraokeAttributes([NativeTypeName("ULONG")] uint ulStream, DVD_KaraokeAttributes* pAttributes)
@@ -158,6 +179,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, DVD_KaraokeAttributes*, int>)(lpVtbl[19]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStream, pAttributes);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetSubpictureAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetSubpictureAttributes([NativeTypeName("ULONG")] uint ulStream, DVD_SubpictureAttributes* pATR)
@@ -165,6 +187,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, DVD_SubpictureAttributes*, int>)(lpVtbl[20]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStream, pATR);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDVDVolumeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetDVDVolumeInfo([NativeTypeName("ULONG *")] uint* pulNumOfVolumes, [NativeTypeName("ULONG *")] uint* pulVolume, DVD_DISC_SIDE* pSide, [NativeTypeName("ULONG *")] uint* pulNumOfTitles)
@@ -172,6 +195,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, uint*, DVD_DISC_SIDE*, uint*, int>)(lpVtbl[21]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulNumOfVolumes, pulVolume, pSide, pulNumOfTitles);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDVDTextNumberOfLanguages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetDVDTextNumberOfLanguages([NativeTypeName("ULONG *")] uint* pulNumOfLangs)
@@ -179,6 +203,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, int>)(lpVtbl[22]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulNumOfLangs);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDVDTextLanguageInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT GetDVDTextLanguageInfo([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG *")] uint* pulNumOfStrings, [NativeTypeName("LCID *")] uint* pLangCode, [NativeTypeName("enum DVD_TextCharSet *")] DVD_TextCharSet* pbCharacterSet)
@@ -186,6 +211,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, uint*, uint*, DVD_TextCharSet*, int>)(lpVtbl[23]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulLangIndex, pulNumOfStrings, pLangCode, pbCharacterSet);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDVDTextStringAsNative"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT GetDVDTextStringAsNative([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG")] uint ulStringIndex, byte* pbBuffer, [NativeTypeName("ULONG")] uint ulMaxBufferSize, [NativeTypeName("ULONG *")] uint* pulActualSize, [NativeTypeName("enum DVD_TextStringType *")] DVD_TextStringType* pType)
@@ -193,6 +219,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, uint, byte*, uint, uint*, DVD_TextStringType*, int>)(lpVtbl[24]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulLangIndex, ulStringIndex, pbBuffer, ulMaxBufferSize, pulActualSize, pType);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDVDTextStringAsUnicode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT GetDVDTextStringAsUnicode([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG")] uint ulStringIndex, [NativeTypeName("WCHAR *")] ushort* pchwBuffer, [NativeTypeName("ULONG")] uint ulMaxBufferSize, [NativeTypeName("ULONG *")] uint* pulActualSize, [NativeTypeName("enum DVD_TextStringType *")] DVD_TextStringType* pType)
@@ -200,6 +227,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, uint, ushort*, uint, uint*, DVD_TextStringType*, int>)(lpVtbl[25]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulLangIndex, ulStringIndex, pchwBuffer, ulMaxBufferSize, pulActualSize, pType);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetPlayerParentalLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("BYTE [2]")] byte* pbCountryCode)
@@ -207,6 +235,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, byte*, int>)(lpVtbl[26]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulParentalLevel, pbCountryCode);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetNumberOfChapters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT GetNumberOfChapters([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulNumOfChapters)
@@ -214,6 +243,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, uint*, int>)(lpVtbl[27]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulTitle, pulNumOfChapters);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetTitleParentalLevels"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT GetTitleParentalLevels([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulParentalLevels)
@@ -221,6 +251,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, uint*, int>)(lpVtbl[28]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulTitle, pulParentalLevels);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDVDDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT GetDVDDirectory([NativeTypeName("LPWSTR")] ushort* pszwPath, [NativeTypeName("ULONG")] uint ulMaxSize, [NativeTypeName("ULONG *")] uint* pulActualSize)
@@ -228,6 +259,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, ushort*, uint, uint*, int>)(lpVtbl[29]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pszwPath, ulMaxSize, pulActualSize);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.IsAudioStreamEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT IsAudioStreamEnabled([NativeTypeName("ULONG")] uint ulStreamNum, BOOL* pbEnabled)
@@ -235,6 +267,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, BOOL*, int>)(lpVtbl[30]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStreamNum, pbEnabled);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDiscID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT GetDiscID([NativeTypeName("LPCWSTR")] ushort* pszwPath, [NativeTypeName("ULONGLONG *")] ulong* pullDiscID)
@@ -242,6 +275,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, ushort*, ulong*, int>)(lpVtbl[31]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pszwPath, pullDiscID);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT GetState(IDvdState** pStateData)
@@ -249,6 +283,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, IDvdState**, int>)(lpVtbl[32]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pStateData);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetMenuLanguages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT GetMenuLanguages([NativeTypeName("LCID *")] uint* pLanguages, [NativeTypeName("ULONG")] uint ulMaxLanguages, [NativeTypeName("ULONG *")] uint* pulActualLanguages)
@@ -256,6 +291,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, uint, uint*, int>)(lpVtbl[33]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pLanguages, ulMaxLanguages, pulActualLanguages);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetButtonAtPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT GetButtonAtPosition(POINT point, [NativeTypeName("ULONG *")] uint* pulButtonIndex)
@@ -263,6 +299,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, POINT, uint*, int>)(lpVtbl[34]))((IDvdInfo2*)Unsafe.AsPointer(ref this), point, pulButtonIndex);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetCmdFromEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT GetCmdFromEvent([NativeTypeName("LONG_PTR")] nint lParam1, IDvdCmd** pCmdObj)
@@ -270,6 +307,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, nint, IDvdCmd**, int>)(lpVtbl[35]))((IDvdInfo2*)Unsafe.AsPointer(ref this), lParam1, pCmdObj);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDefaultMenuLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT GetDefaultMenuLanguage([NativeTypeName("LCID *")] uint* pLanguage)
@@ -277,6 +315,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, int>)(lpVtbl[36]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pLanguage);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDefaultAudioLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT GetDefaultAudioLanguage([NativeTypeName("LCID *")] uint* pLanguage, DVD_AUDIO_LANG_EXT* pAudioExtension)
@@ -284,6 +323,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, DVD_AUDIO_LANG_EXT*, int>)(lpVtbl[37]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pLanguage, pAudioExtension);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDefaultSubpictureLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT GetDefaultSubpictureLanguage([NativeTypeName("LCID *")] uint* pLanguage, DVD_SUBPICTURE_LANG_EXT* pSubpictureExtension)
@@ -291,6 +331,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint*, DVD_SUBPICTURE_LANG_EXT*, int>)(lpVtbl[38]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pLanguage, pSubpictureExtension);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDecoderCaps"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT GetDecoderCaps(DVD_DECODER_CAPS* pCaps)
@@ -298,6 +339,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, DVD_DECODER_CAPS*, int>)(lpVtbl[39]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pCaps);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetButtonRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT GetButtonRect([NativeTypeName("ULONG")] uint ulButton, RECT* pRect)
@@ -305,6 +347,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         return ((delegate* unmanaged<IDvdInfo2*, uint, RECT*, int>)(lpVtbl[40]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulButton, pRect);
     }
 
+    /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.IsSubpictureStreamEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT IsSubpictureStreamEnabled([NativeTypeName("ULONG")] uint ulStreamNum, BOOL* pbEnabled)

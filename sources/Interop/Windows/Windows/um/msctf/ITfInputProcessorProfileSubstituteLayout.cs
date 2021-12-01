@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfInputProcessorProfileSubstituteLayout.xml' path='doc/member[@name="ITfInputProcessorProfileSubstituteLayout"]/*' />
 [Guid("4FD67194-1002-4513-BFF2-C0DDF6258552")]
 [NativeTypeName("struct ITfInputProcessorProfileSubstituteLayout : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInput
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInput
         return ((delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInput
         return ((delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, uint>)(lpVtbl[1]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInput
         return ((delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, uint>)(lpVtbl[2]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfInputProcessorProfileSubstituteLayout.xml' path='doc/member[@name="ITfInputProcessorProfileSubstituteLayout.GetSubstituteKeyboardLayout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL* phKL)

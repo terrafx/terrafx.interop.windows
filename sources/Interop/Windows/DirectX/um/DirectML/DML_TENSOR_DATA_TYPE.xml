@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_TENSOR_DATA_TYPE">
+    <summary>
+      <para>Specifies the data type of the values in a tensor. DirectML operators may not support all data types; see the documentation for each specific operator to find which data types it supports.</para>
+    </summary>
+  </member>
+  <member name="DML_TENSOR_DATA_TYPE.DML_TENSOR_DATA_TYPE_UNKNOWN">
+    <summary>
+      <para>Indicates an unknown data type. This value is never valid.</para>
+    </summary>
+  </member>
+  <member name="DML_TENSOR_DATA_TYPE.DML_TENSOR_DATA_TYPE_FLOAT32">
+    <summary>
+      <para>Indicates a 32-bit floating-point data type.</para>
+    </summary>
+  </member>
+  <member name="DML_TENSOR_DATA_TYPE.DML_TENSOR_DATA_TYPE_FLOAT16">
+    <summary>
+      <para>Indicates a 16-bit floating-point data type.</para>
+    </summary>
+  </member>
+  <member name="DML_TENSOR_DATA_TYPE.DML_TENSOR_DATA_TYPE_UINT32">
+    <summary>
+      <para>Indicates a 32-bit unsigned integer data type.</para>
+    </summary>
+  </member>
+  <member name="DML_TENSOR_DATA_TYPE.DML_TENSOR_DATA_TYPE_UINT16">
+    <summary>
+      <para>Indicates a 16-bit unsigned integer data type.</para>
+    </summary>
+  </member>
+  <member name="DML_TENSOR_DATA_TYPE.DML_TENSOR_DATA_TYPE_UINT8">
+    <summary>
+      <para>Indicates a 8-bit unsigned integer data type.</para>
+    </summary>
+  </member>
+  <member name="DML_TENSOR_DATA_TYPE.DML_TENSOR_DATA_TYPE_INT32">
+    <summary>
+      <para>Indicates a 32-bit signed integer data type.</para>
+    </summary>
+  </member>
+  <member name="DML_TENSOR_DATA_TYPE.DML_TENSOR_DATA_TYPE_INT16">
+    <summary>
+      <para>Indicates a 16-bit signed integer data type.</para>
+    </summary>
+  </member>
+  <member name="DML_TENSOR_DATA_TYPE.DML_TENSOR_DATA_TYPE_INT8">
+    <summary>
+      <para>Indicates a 8-bit signed integer data type.</para>
+    </summary>
+  </member>
+</doc>

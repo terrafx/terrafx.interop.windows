@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMPRESS_ALLOCATION_ROUTINES.xml' path='doc/member[@name="COMPRESS_ALLOCATION_ROUTINES"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct COMPRESS_ALLOCATION_ROUTINES
 {
+    /// <include file='COMPRESS_ALLOCATION_ROUTINES.xml' path='doc/member[@name="COMPRESS_ALLOCATION_ROUTINES.Allocate"]/*' />
     [NativeTypeName("PFN_COMPRESS_ALLOCATE")]
     public delegate* unmanaged<void*, nuint, void*> Allocate;
 
+    /// <include file='COMPRESS_ALLOCATION_ROUTINES.xml' path='doc/member[@name="COMPRESS_ALLOCATION_ROUTINES.Free"]/*' />
     [NativeTypeName("PFN_COMPRESS_FREE")]
     public delegate* unmanaged<void*, void*, void> Free;
 
+    /// <include file='COMPRESS_ALLOCATION_ROUTINES.xml' path='doc/member[@name="COMPRESS_ALLOCATION_ROUTINES.UserContext"]/*' />
     [NativeTypeName("PVOID")]
     public void* UserContext;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPVLIMITS.xml' path='doc/member[@name="SPVLIMITS"]/*' />
 public enum SPVLIMITS
 {
+    /// <include file='SPVLIMITS.xml' path='doc/member[@name="SPVLIMITS.SPMIN_VOLUME"]/*' />
     SPMIN_VOLUME = 0,
+
+    /// <include file='SPVLIMITS.xml' path='doc/member[@name="SPVLIMITS.SPMAX_VOLUME"]/*' />
     SPMAX_VOLUME = 100,
+
+    /// <include file='SPVLIMITS.xml' path='doc/member[@name="SPVLIMITS.SPMIN_RATE"]/*' />
     SPMIN_RATE = -10,
+
+    /// <include file='SPVLIMITS.xml' path='doc/member[@name="SPVLIMITS.SPMAX_RATE"]/*' />
     SPMAX_RATE = 10,
 }

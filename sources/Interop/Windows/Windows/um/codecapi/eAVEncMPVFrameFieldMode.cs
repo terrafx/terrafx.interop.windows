@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMPVFrameFieldMode.xml' path='doc/member[@name="eAVEncMPVFrameFieldMode"]/*' />
 public enum eAVEncMPVFrameFieldMode
 {
+    /// <include file='eAVEncMPVFrameFieldMode.xml' path='doc/member[@name="eAVEncMPVFrameFieldMode.eAVEncMPVFrameFieldMode_FieldMode"]/*' />
     eAVEncMPVFrameFieldMode_FieldMode = 0,
+
+    /// <include file='eAVEncMPVFrameFieldMode.xml' path='doc/member[@name="eAVEncMPVFrameFieldMode.eAVEncMPVFrameFieldMode_FrameMode"]/*' />
     eAVEncMPVFrameFieldMode_FrameMode = 1,
 }

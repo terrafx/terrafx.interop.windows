@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfContextOwnerCompositionSink.xml' path='doc/member[@name="ITfContextOwnerCompositionSink"]/*' />
 [Guid("5F20AA40-B57A-4F34-96AB-3576F377CC79")]
 [NativeTypeName("struct ITfContextOwnerCompositionSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
         return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
         return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, uint>)(lpVtbl[1]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
         return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, uint>)(lpVtbl[2]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfContextOwnerCompositionSink.xml' path='doc/member[@name="ITfContextOwnerCompositionSink.OnStartComposition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnStartComposition(ITfCompositionView* pComposition, BOOL* pfOk)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
         return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, BOOL*, int>)(lpVtbl[3]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition, pfOk);
     }
 
+    /// <include file='ITfContextOwnerCompositionSink.xml' path='doc/member[@name="ITfContextOwnerCompositionSink.OnUpdateComposition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnUpdateComposition(ITfCompositionView* pComposition, ITfRange* pRangeNew)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
         return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, ITfRange*, int>)(lpVtbl[4]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition, pRangeNew);
     }
 
+    /// <include file='ITfContextOwnerCompositionSink.xml' path='doc/member[@name="ITfContextOwnerCompositionSink.OnEndComposition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnEndComposition(ITfCompositionView* pComposition)

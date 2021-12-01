@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideoPadFlags.xml' path='doc/member[@name="MFVideoPadFlags"]/*' />
 public enum MFVideoPadFlags
 {
+    /// <include file='MFVideoPadFlags.xml' path='doc/member[@name="MFVideoPadFlags.MFVideoPadFlag_PAD_TO_None"]/*' />
     MFVideoPadFlag_PAD_TO_None = 0,
+
+    /// <include file='MFVideoPadFlags.xml' path='doc/member[@name="MFVideoPadFlags.MFVideoPadFlag_PAD_TO_4x3"]/*' />
     MFVideoPadFlag_PAD_TO_4x3 = 1,
+
+    /// <include file='MFVideoPadFlags.xml' path='doc/member[@name="MFVideoPadFlags.MFVideoPadFlag_PAD_TO_16x9"]/*' />
     MFVideoPadFlag_PAD_TO_16x9 = 2,
 }

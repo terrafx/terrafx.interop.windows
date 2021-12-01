@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LOCALMANAGEDAPPLICATION.xml' path='doc/member[@name="LOCALMANAGEDAPPLICATION"]/*' />
 public unsafe partial struct LOCALMANAGEDAPPLICATION
 {
+    /// <include file='LOCALMANAGEDAPPLICATION.xml' path='doc/member[@name="LOCALMANAGEDAPPLICATION.pszDeploymentName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszDeploymentName;
 
+    /// <include file='LOCALMANAGEDAPPLICATION.xml' path='doc/member[@name="LOCALMANAGEDAPPLICATION.pszPolicyName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszPolicyName;
 
+    /// <include file='LOCALMANAGEDAPPLICATION.xml' path='doc/member[@name="LOCALMANAGEDAPPLICATION.pszProductId"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszProductId;
 
+    /// <include file='LOCALMANAGEDAPPLICATION.xml' path='doc/member[@name="LOCALMANAGEDAPPLICATION.dwState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwState;
 }

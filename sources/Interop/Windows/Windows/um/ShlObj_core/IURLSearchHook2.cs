@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IURLSearchHook2.xml' path='doc/member[@name="IURLSearchHook2"]/*' />
 [Guid("5EE44DA4-6D32-46E3-86BC-07540DEDD0E0")]
 [NativeTypeName("struct IURLSearchHook2 : IURLSearchHook")]
 [NativeInheritance("IURLSearchHook")]
@@ -16,6 +17,7 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface
         return ((delegate* unmanaged<IURLSearchHook2*, Guid*, void**, int>)(lpVtbl[0]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface
         return ((delegate* unmanaged<IURLSearchHook2*, uint>)(lpVtbl[1]))((IURLSearchHook2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface
         return ((delegate* unmanaged<IURLSearchHook2*, uint>)(lpVtbl[2]))((IURLSearchHook2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IURLSearchHook.Translate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Translate([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize)
@@ -46,6 +51,7 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface
         return ((delegate* unmanaged<IURLSearchHook2*, ushort*, uint, int>)(lpVtbl[3]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize);
     }
 
+    /// <include file='IURLSearchHook2.xml' path='doc/member[@name="IURLSearchHook2.TranslateWithSearchContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext)

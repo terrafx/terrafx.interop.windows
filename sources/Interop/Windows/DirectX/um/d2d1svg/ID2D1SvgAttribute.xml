@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1SvgAttribute.Clone">
+    <summary>
+      <para>Creates a clone of this attribute value. On creation, the cloned attribute is not set on any element.</para>
+    </summary>
+    <param name="attribute">
+      <para>Type: <b>ID2D1SvgAttribute**</b></para>
+      <para>Specifies the attribute value to clone.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgAttribute" />
+  </member>
+  <member name="ID2D1SvgAttribute.GetElement">
+    <summary>
+      <para>Returns the element on which this attribute is set. Returns null if the attribute is not set on any element.</para>
+    </summary>
+    <param name="element">
+      <para>Type: <b>ID2D1SvgElement**</b></para>
+      <para>When this method completes, this will contain a pointer to the element on which this attribute is set.</para>
+    </param>
+    <seealso cref="ID2D1SvgAttribute" />
+  </member>
+  <member name="ID2D1SvgAttribute">
+    <summary>
+      <para>Interface describing an SVG attribute.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TS_RUNINFO.xml' path='doc/member[@name="TS_RUNINFO"]/*' />
 public partial struct TS_RUNINFO
 {
+    /// <include file='TS_RUNINFO.xml' path='doc/member[@name="TS_RUNINFO.uCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint uCount;
 
+    /// <include file='TS_RUNINFO.xml' path='doc/member[@name="TS_RUNINFO.type"]/*' />
     public TsRunType type;
 }

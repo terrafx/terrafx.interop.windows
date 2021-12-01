@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WBEM_BACKUP_RESTORE_FLAGS.xml' path='doc/member[@name="WBEM_BACKUP_RESTORE_FLAGS"]/*' />
 public enum WBEM_BACKUP_RESTORE_FLAGS
 {
+    /// <include file='WBEM_BACKUP_RESTORE_FLAGS.xml' path='doc/member[@name="WBEM_BACKUP_RESTORE_FLAGS.WBEM_FLAG_BACKUP_RESTORE_DEFAULT"]/*' />
     WBEM_FLAG_BACKUP_RESTORE_DEFAULT = 0,
+
+    /// <include file='WBEM_BACKUP_RESTORE_FLAGS.xml' path='doc/member[@name="WBEM_BACKUP_RESTORE_FLAGS.WBEM_FLAG_BACKUP_RESTORE_FORCE_SHUTDOWN"]/*' />
     WBEM_FLAG_BACKUP_RESTORE_FORCE_SHUTDOWN = 1,
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FDAP.xml' path='doc/member[@name="FDAP"]/*' />
 public enum FDAP
 {
+    /// <include file='FDAP.xml' path='doc/member[@name="FDAP.FDAP_BOTTOM"]/*' />
     FDAP_BOTTOM = 0,
+
+    /// <include file='FDAP.xml' path='doc/member[@name="FDAP.FDAP_TOP"]/*' />
     FDAP_TOP = 1,
 }

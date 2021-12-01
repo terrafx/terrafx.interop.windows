@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREDENTIAL_ATTRIBUTEA.xml' path='doc/member[@name="CREDENTIAL_ATTRIBUTEA"]/*' />
 public unsafe partial struct CREDENTIAL_ATTRIBUTEA
 {
+    /// <include file='CREDENTIAL_ATTRIBUTEA.xml' path='doc/member[@name="CREDENTIAL_ATTRIBUTEA.Keyword"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* Keyword;
 
+    /// <include file='CREDENTIAL_ATTRIBUTEA.xml' path='doc/member[@name="CREDENTIAL_ATTRIBUTEA.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='CREDENTIAL_ATTRIBUTEA.xml' path='doc/member[@name="CREDENTIAL_ATTRIBUTEA.ValueSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint ValueSize;
 
+    /// <include file='CREDENTIAL_ATTRIBUTEA.xml' path='doc/member[@name="CREDENTIAL_ATTRIBUTEA.Value"]/*' />
     [NativeTypeName("LPBYTE")]
     public byte* Value;
 }

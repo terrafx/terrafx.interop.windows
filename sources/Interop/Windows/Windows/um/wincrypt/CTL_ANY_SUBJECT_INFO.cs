@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CTL_ANY_SUBJECT_INFO.xml' path='doc/member[@name="CTL_ANY_SUBJECT_INFO"]/*' />
 public partial struct CTL_ANY_SUBJECT_INFO
 {
+    /// <include file='CTL_ANY_SUBJECT_INFO.xml' path='doc/member[@name="CTL_ANY_SUBJECT_INFO.SubjectAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER SubjectAlgorithm;
 
+    /// <include file='CTL_ANY_SUBJECT_INFO.xml' path='doc/member[@name="CTL_ANY_SUBJECT_INFO.SubjectIdentifier"]/*' />
     public CRYPT_DATA_BLOB SubjectIdentifier;
 }

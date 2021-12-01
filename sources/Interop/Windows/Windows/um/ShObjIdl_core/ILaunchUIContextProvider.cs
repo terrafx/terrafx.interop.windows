@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ILaunchUIContextProvider.xml' path='doc/member[@name="ILaunchUIContextProvider"]/*' />
 [Guid("0D12C4C8-A3D9-4E24-94C1-0E20C5A956C4")]
 [NativeTypeName("struct ILaunchUIContextProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ILaunchUIContextProvider : ILaunchUIContextProvider
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ILaunchUIContextProvider : ILaunchUIContextProvider
         return ((delegate* unmanaged<ILaunchUIContextProvider*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ILaunchUIContextProvider : ILaunchUIContextProvider
         return ((delegate* unmanaged<ILaunchUIContextProvider*, uint>)(lpVtbl[1]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ILaunchUIContextProvider : ILaunchUIContextProvider
         return ((delegate* unmanaged<ILaunchUIContextProvider*, uint>)(lpVtbl[2]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILaunchUIContextProvider.xml' path='doc/member[@name="ILaunchUIContextProvider.UpdateContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT UpdateContext(ILaunchUIContext* context)

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_MFT_INPUT_DATA_BUFFER_FLAGS.xml' path='doc/member[@name="_MFT_INPUT_DATA_BUFFER_FLAGS"]/*' />
 public enum _MFT_INPUT_DATA_BUFFER_FLAGS
 {
+    /// <include file='_MFT_INPUT_DATA_BUFFER_FLAGS.xml' path='doc/member[@name="_MFT_INPUT_DATA_BUFFER_FLAGS.MFT_INPUT_DATA_BUFFER_PLACEHOLDER"]/*' />
     MFT_INPUT_DATA_BUFFER_PLACEHOLDER = unchecked((int)(0xffffffff)),
 }

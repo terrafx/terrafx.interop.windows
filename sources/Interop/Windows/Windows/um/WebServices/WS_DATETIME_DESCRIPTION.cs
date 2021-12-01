@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_DATETIME_DESCRIPTION.xml' path='doc/member[@name="WS_DATETIME_DESCRIPTION"]/*' />
 public partial struct WS_DATETIME_DESCRIPTION
 {
+    /// <include file='WS_DATETIME_DESCRIPTION.xml' path='doc/member[@name="WS_DATETIME_DESCRIPTION.minValue"]/*' />
     public WS_DATETIME minValue;
 
+    /// <include file='WS_DATETIME_DESCRIPTION.xml' path='doc/member[@name="WS_DATETIME_DESCRIPTION.maxValue"]/*' />
     public WS_DATETIME maxValue;
 }

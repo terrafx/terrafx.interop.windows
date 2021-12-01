@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STGMOVE">
+    <summary>
+      <para>The
+<b>STGMOVE</b> enumeration values indicate whether a storage element is to be moved or copied. They are used in the
+<see cref="IStorage.MoveElementTo" /> method.</para>
+    </summary>
+    <seealso cref="IStorage.MoveElementTo" />
+  </member>
+  <member name="STGMOVE.STGMOVE_MOVE">
+    <summary>
+      <para>Indicates that the method should move the data from the source to the destination.</para>
+    </summary>
+  </member>
+  <member name="STGMOVE.STGMOVE_COPY">
+    <summary>
+      <para>Indicates that the method should copy the data from the source to the destination. A copy is the same as a move except that the source element is not removed after copying the element to the destination. Copying an element on top of itself is undefined.</para>
+    </summary>
+  </member>
+  <member name="STGMOVE.STGMOVE_SHALLOWCOPY">
+    <summary>
+      <para>Not implemented.</para>
+    </summary>
+  </member>
+</doc>

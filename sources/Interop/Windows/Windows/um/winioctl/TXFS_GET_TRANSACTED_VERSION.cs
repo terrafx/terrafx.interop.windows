@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TXFS_GET_TRANSACTED_VERSION.xml' path='doc/member[@name="TXFS_GET_TRANSACTED_VERSION"]/*' />
 public partial struct TXFS_GET_TRANSACTED_VERSION
 {
+    /// <include file='TXFS_GET_TRANSACTED_VERSION.xml' path='doc/member[@name="TXFS_GET_TRANSACTED_VERSION.ThisBaseVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint ThisBaseVersion;
 
+    /// <include file='TXFS_GET_TRANSACTED_VERSION.xml' path='doc/member[@name="TXFS_GET_TRANSACTED_VERSION.LatestVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint LatestVersion;
 
+    /// <include file='TXFS_GET_TRANSACTED_VERSION.xml' path='doc/member[@name="TXFS_GET_TRANSACTED_VERSION.ThisMiniVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort ThisMiniVersion;
 
+    /// <include file='TXFS_GET_TRANSACTED_VERSION.xml' path='doc/member[@name="TXFS_GET_TRANSACTED_VERSION.FirstMiniVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort FirstMiniVersion;
 
+    /// <include file='TXFS_GET_TRANSACTED_VERSION.xml' path='doc/member[@name="TXFS_GET_TRANSACTED_VERSION.LatestMiniVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort LatestMiniVersion;
 }

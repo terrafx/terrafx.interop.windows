@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_BOUND_FORWARDER_REF.xml' path='doc/member[@name="IMAGE_BOUND_FORWARDER_REF"]/*' />
 public partial struct IMAGE_BOUND_FORWARDER_REF
 {
+    /// <include file='IMAGE_BOUND_FORWARDER_REF.xml' path='doc/member[@name="IMAGE_BOUND_FORWARDER_REF.TimeDateStamp"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeDateStamp;
 
+    /// <include file='IMAGE_BOUND_FORWARDER_REF.xml' path='doc/member[@name="IMAGE_BOUND_FORWARDER_REF.OffsetModuleName"]/*' />
     [NativeTypeName("WORD")]
     public ushort OffsetModuleName;
 
+    /// <include file='IMAGE_BOUND_FORWARDER_REF.xml' path='doc/member[@name="IMAGE_BOUND_FORWARDER_REF.Reserved"]/*' />
     [NativeTypeName("WORD")]
     public ushort Reserved;
 }

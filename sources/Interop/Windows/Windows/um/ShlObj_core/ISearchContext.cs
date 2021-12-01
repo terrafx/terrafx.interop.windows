@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISearchContext.xml' path='doc/member[@name="ISearchContext"]/*' />
 [Guid("09F656A2-41AF-480C-88F7-16CC0D164615")]
 [NativeTypeName("struct ISearchContext : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISearchContext : ISearchContext.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISearchContext : ISearchContext.Interface
         return ((delegate* unmanaged<ISearchContext*, Guid*, void**, int>)(lpVtbl[0]))((ISearchContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISearchContext : ISearchContext.Interface
         return ((delegate* unmanaged<ISearchContext*, uint>)(lpVtbl[1]))((ISearchContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISearchContext : ISearchContext.Interface
         return ((delegate* unmanaged<ISearchContext*, uint>)(lpVtbl[2]))((ISearchContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISearchContext.xml' path='doc/member[@name="ISearchContext.GetSearchUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSearchUrl([NativeTypeName("BSTR *")] ushort** pbstrSearchUrl)
@@ -46,6 +51,7 @@ public unsafe partial struct ISearchContext : ISearchContext.Interface
         return ((delegate* unmanaged<ISearchContext*, ushort**, int>)(lpVtbl[3]))((ISearchContext*)Unsafe.AsPointer(ref this), pbstrSearchUrl);
     }
 
+    /// <include file='ISearchContext.xml' path='doc/member[@name="ISearchContext.GetSearchText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSearchText([NativeTypeName("BSTR *")] ushort** pbstrSearchText)
@@ -53,6 +59,7 @@ public unsafe partial struct ISearchContext : ISearchContext.Interface
         return ((delegate* unmanaged<ISearchContext*, ushort**, int>)(lpVtbl[4]))((ISearchContext*)Unsafe.AsPointer(ref this), pbstrSearchText);
     }
 
+    /// <include file='ISearchContext.xml' path='doc/member[@name="ISearchContext.GetSearchStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSearchStyle([NativeTypeName("DWORD *")] uint* pdwSearchStyle)

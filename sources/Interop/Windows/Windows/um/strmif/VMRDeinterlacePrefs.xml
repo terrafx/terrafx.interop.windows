@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRDeinterlacePrefs">
+    <summary>
+      <para>The <b>VMRDeinterlacePrefs</b> enumeration type describes the deinterlacing method that the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7) uses if the method set by the application cannot be used.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IVMRDeinterlaceControl Interface" />
+  </member>
+  <member name="VMRDeinterlacePrefs.DeinterlacePref_NextBest">
+    <summary>
+      <para>Use the next best mode offered by the driver.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlacePrefs.DeinterlacePref_BOB">
+    <summary>
+      <para>Use the bob method.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlacePrefs.DeinterlacePref_Weave">
+    <summary>
+      <para>Use the weave method (that is, no deinterlacing).</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlacePrefs.DeinterlacePref_Mask">
+    <summary>
+      <para>Bitwise <b>OR</b> of the previous flags. This value is not a valid flag.</para>
+    </summary>
+  </member>
+</doc>

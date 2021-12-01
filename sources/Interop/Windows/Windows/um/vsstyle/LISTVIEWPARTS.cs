@@ -5,16 +5,36 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS"]/*' />
 public enum LISTVIEWPARTS
 {
+    /// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS.LVP_LISTITEM"]/*' />
     LVP_LISTITEM = 1,
+
+    /// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS.LVP_LISTGROUP"]/*' />
     LVP_LISTGROUP = 2,
+
+    /// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS.LVP_LISTDETAIL"]/*' />
     LVP_LISTDETAIL = 3,
+
+    /// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS.LVP_LISTSORTEDDETAIL"]/*' />
     LVP_LISTSORTEDDETAIL = 4,
+
+    /// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS.LVP_EMPTYTEXT"]/*' />
     LVP_EMPTYTEXT = 5,
+
+    /// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS.LVP_GROUPHEADER"]/*' />
     LVP_GROUPHEADER = 6,
+
+    /// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS.LVP_GROUPHEADERLINE"]/*' />
     LVP_GROUPHEADERLINE = 7,
+
+    /// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS.LVP_EXPANDBUTTON"]/*' />
     LVP_EXPANDBUTTON = 8,
+
+    /// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS.LVP_COLLAPSEBUTTON"]/*' />
     LVP_COLLAPSEBUTTON = 9,
+
+    /// <include file='LISTVIEWPARTS.xml' path='doc/member[@name="LISTVIEWPARTS.LVP_COLUMNDETAIL"]/*' />
     LVP_COLUMNDETAIL = 10,
 }

@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NTFS_STATISTICS">
+    <summary>
+      <para>Contains statistical information from the NTFS file system.
+<b>Tip</b>  Applications targeting Windows 10 can access additional statistics through <see cref="NTFS_STATISTICS_EX" />.</para>
+    </summary>
+    <remarks>
+      <para>The MFT, MFT mirror, root index, user index, bitmap, and MFT bitmap are counted as metadata files. The log
+file is not counted as a metadata file.</para>
+      <para>The number of read and write operations measured is the number of paging operations.</para>
+      <para>For additional statistics that are only available with Windows 10, use <see cref="NTFS_STATISTICS_EX" />.</para>
+    </remarks>
+    <seealso cref="FILESYSTEM_STATISTICS" />
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kequeryperformancecounter">KeQueryPerformanceCounter</seealso>
+    <seealso cref="NTFS_STATISTICS_EX" />
+    <seealso cref="QueryPerformanceFrequency" />
+  </member>
+  <member name="NTFS_STATISTICS.LogFileFullExceptions">
+    <summary>
+      <para>The number of exceptions generated due to the log file being full.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.OtherExceptions">
+    <summary>
+      <para>The number of other exceptions generated.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftReads">
+    <summary>
+      <para>The number of read operations on the master file table (MFT).</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftReadBytes">
+    <summary>
+      <para>The number of bytes read from the MFT.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftWrites">
+    <summary>
+      <para>The number of write operations on the MFT.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftWriteBytes">
+    <summary>
+      <para>The number of bytes written to the MFT.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftWritesUserLevel">
+    <summary></summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftWritesUserLevel.Write">
+    <summary>
+      <para>The number of MFT writes due to a write operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftWritesUserLevel.Create">
+    <summary>
+      <para>The number of MFT writes due to a create operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftWritesUserLevel.SetInfo">
+    <summary>
+      <para>The number of MFT writes due to setting file information.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftWritesUserLevel.Flush">
+    <summary>
+      <para>The number of MFT writes due to a flush operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftWritesFlushForLogFileFull">
+    <summary>
+      <para>The number of flushes of the MFT performed because the log file was full.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftWritesLazyWriter">
+    <summary>
+      <para>The number of MFT write operations performed by the lazy writer thread.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftWritesUserRequest">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Mft2Writes">
+    <summary>
+      <para>The number of write operations on the MFT mirror.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Mft2WriteBytes">
+    <summary>
+      <para>The number of bytes written to the MFT mirror.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Mft2WritesUserLevel">
+    <summary></summary>
+  </member>
+  <member name="NTFS_STATISTICS.Mft2WritesUserLevel.Write">
+    <summary>
+      <para>The number of MFT mirror writes due to a write operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Mft2WritesUserLevel.Create">
+    <summary>
+      <para>The number of MFT mirror writes due to a create operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Mft2WritesUserLevel.SetInfo">
+    <summary>
+      <para>The number of MFT mirror writes due to setting file information.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Mft2WritesUserLevel.Flush">
+    <summary>
+      <para>The number of MFT mirror writes due to a flush operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Mft2WritesFlushForLogFileFull">
+    <summary>
+      <para>The number of flushes of the MFT mirror performed because the log file was full.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Mft2WritesLazyWriter">
+    <summary>
+      <para>The number of MFT mirror write operations performed by the lazy writer thread.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Mft2WritesUserRequest">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.RootIndexReads">
+    <summary>
+      <para>The number of read operations on the root index.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.RootIndexReadBytes">
+    <summary>
+      <para>The number of bytes read from the root index.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.RootIndexWrites">
+    <summary>
+      <para>The number of write operations on the root index.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.RootIndexWriteBytes">
+    <summary>
+      <para>The number of bytes written to the root index.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapReads">
+    <summary>
+      <para>The number of read operations on the cluster allocation bitmap.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapReadBytes">
+    <summary>
+      <para>The number of bytes read from the cluster allocation bitmap.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapWrites">
+    <summary>
+      <para>The number of write operations on the cluster allocation bitmap.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapWriteBytes">
+    <summary>
+      <para>The number of bytes written to the cluster allocation bitmap.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapWritesFlushForLogFileFull">
+    <summary>
+      <para>The number of flushes of the bitmap performed because the log file was full.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapWritesLazyWriter">
+    <summary>
+      <para>The number of bitmap write operations performed by the lazy writer thread.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapWritesUserRequest">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapWritesUserLevel">
+    <summary></summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapWritesUserLevel.Write">
+    <summary>
+      <para>The number of bitmap writes due to a write operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapWritesUserLevel.Create">
+    <summary>
+      <para>The number of bitmap writes due to a create operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.BitmapWritesUserLevel.SetInfo">
+    <summary>
+      <para>The number of bitmap writes due to setting file information.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapReads">
+    <summary>
+      <para>The number of read operations on the MFT bitmap.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapReadBytes">
+    <summary>
+      <para>The number of bytes read from the MFT bitmap.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapWrites">
+    <summary>
+      <para>The number of write operations on the MFT bitmap.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapWriteBytes">
+    <summary>
+      <para>The number of bytes written to the MFT bitmap.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapWritesFlushForLogFileFull">
+    <summary>
+      <para>The number of flushes of the MFT bitmap performed because the log file was full.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapWritesLazyWriter">
+    <summary>
+      <para>The number of MFT bitmap write operations performed by the lazy writer thread.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapWritesUserRequest">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapWritesUserLevel">
+    <summary></summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapWritesUserLevel.Write">
+    <summary>
+      <para>The number of MFT bitmap writes due to a write operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapWritesUserLevel.Create">
+    <summary>
+      <para>The number of bitmap writes due to a create operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapWritesUserLevel.SetInfo">
+    <summary>
+      <para>The number of bitmap writes due to setting file information.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.MftBitmapWritesUserLevel.Flush">
+    <summary>
+      <para>The number of bitmap writes due to a flush operation.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.UserIndexReads">
+    <summary>
+      <para>The number of read operations on the user index.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.UserIndexReadBytes">
+    <summary>
+      <para>The number of bytes read from the user index.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.UserIndexWrites">
+    <summary>
+      <para>The number of write operations on the user index.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.UserIndexWriteBytes">
+    <summary>
+      <para>The number of bytes written to the user index.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.LogFileReads">
+    <summary>
+      <para>The number of read operations on the log file.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.LogFileReadBytes">
+    <summary>
+      <para>The number of bytes read from the log file.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.LogFileWrites">
+    <summary>
+      <para>The number of write operations on the log file.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.LogFileWriteBytes">
+    <summary>
+      <para>The number of bytes written to the log file.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate">
+    <summary></summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate.Calls">
+    <summary>
+      <para>The number of individual calls to allocate clusters.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate.Clusters">
+    <summary>
+      <para>The number of clusters allocated.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate.Hints">
+    <summary>
+      <para>The number of times a hint was specified.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate.RunsReturned">
+    <summary>
+      <para>The number of runs used to satisfy all the requests.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate.HintsHonored">
+    <summary>
+      <para>The number of times the hint was useful.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate.HintsClusters">
+    <summary>
+      <para>The number of clusters allocated through the hint.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate.Cache">
+    <summary>
+      <para>The number of times the cache was useful other than the hint.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate.CacheClusters">
+    <summary>
+      <para>The number of clusters allocated through the cache other than the hint.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate.CacheMiss">
+    <summary>
+      <para>The number of times the cache was not useful.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.Allocate.CacheMissClusters">
+    <summary>
+      <para>The number of clusters allocated without the cache.</para>
+    </summary>
+  </member>
+  <member name="NTFS_STATISTICS.DiskResourcesExhausted">
+    <summary>
+      <para>The number of failed attempts made to acquire a slab of storage for use on the current thinly provisioned volume.</para>
+      <para>Support for this member started with Windows 8.1.</para>
+    </summary>
+  </member>
+</doc>

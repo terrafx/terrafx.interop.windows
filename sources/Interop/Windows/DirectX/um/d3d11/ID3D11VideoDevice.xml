@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11VideoDevice.CheckCryptoKeyExchange">
+    <summary>
+      <para>Gets a cryptographic key-exchange mechanism that is supported by the driver.</para>
+    </summary>
+    <param name="pCryptoType">
+      <para>A pointer to a GUID that specifies the type of encryption to be used. The following GUIDs are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>D3D11_CRYPTO_TYPE_AES128_CTR</b>
+          </description>
+          <description>
+            <para>128-bit Advanced Encryption Standard CTR mode (AES-CTR) block cipher.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pDecoderProfile">
+      <para>A pointer to a GUID that specifies the decoding profile. To get  profiles that the driver supports, call <see cref="ID3D11VideoDevice.GetVideoDecoderProfile" />. If decoding will not be used, set this parameter to <b>NULL</b>.</para>
+    </param>
+    <param name="Index">
+      <para>The zero-based index of the key-exchange type. The driver reports the number of types in the <b>KeyExchangeTypeCount</b> member of the <see cref="D3D11_VIDEO_CONTENT_PROTECTION_CAPS" /> structure.</para>
+    </param>
+    <param name="pKeyExchangeType">
+      <para>Receives a GUID that identifies the type of key exchange.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.CheckVideoDecoderFormat">
+    <summary>
+      <para>Given aprofile, checks whether the driver supports a specified output format.</para>
+    </summary>
+    <param name="pDecoderProfile">
+      <para>A pointer to a GUID that identifies the profile. To get the list of supported profiles, call <see cref="ID3D11VideoDevice.GetVideoDecoderProfile" />.</para>
+    </param>
+    <param name="Format">
+      <para>A <see cref="DXGI_FORMAT" /> value that specifies the output format. Typical values include <b>DXGI_FORMAT_NV12</b> and <b>DXGI_FORMAT_420_OPAQUE</b>.</para>
+    </param>
+    <param name="pSupported">
+      <para>Receives the value <b>TRUE</b> if the format is supported, or <b>FALSE</b> otherwise.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the driver does not support the profile given in <i>pDecoderProfile</i>, the method returns <b>E_INVALIDARG</b>. If the driver supports the profile, but the DXGI format is not compatible with the profile, the method succeeds but returns the value <b>FALSE</b> in <i>pSupported</i>.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.CreateAuthenticatedChannel">
+    <summary>
+      <para>Creates a channel to communicate with the Microsoft Direct3D device or the graphics driver. The channel can be used to send commands and queries for content protection.</para>
+    </summary>
+    <param name="ChannelType">
+      <para>Specifies the type of channel, as a member of the <see cref="D3D11_AUTHENTICATED_CHANNEL_TYPE" /> enumeration.</para>
+    </param>
+    <param name="ppAuthenticatedChannel">
+      <para>Receives a pointer to the <see cref="ID3D11AuthenticatedChannel" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the <i>ChannelType</i> parameter is <b>D3D11_AUTHENTICATED_CHANNEL_D3D11</b>, the method creates a channel with the Direct3D device. This type of channel does not support authentication.</para>
+      <para>If <i>ChannelType</i> is <b>D3D11_AUTHENTICATED_CHANNEL_DRIVER_SOFTWARE</b> or <b>D3D11_AUTHENTICATED_CHANNEL_DRIVER_HARDWARE</b>, the method creates an authenticated channel with the graphics driver.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.CreateCryptoSession">
+    <summary>
+      <para>Creates a cryptographic session to encrypt video content that is sent to the graphics driver.</para>
+    </summary>
+    <param name="pCryptoType">
+      <para>A pointer to a GUID that specifies the type of encryption to use. The following GUIDs are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>D3D11_CRYPTO_TYPE_AES128_CTR</b>
+          </description>
+          <description>
+            <para>128-bit Advanced Encryption Standard CTR mode (AES-CTR) block cipher.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pDecoderProfile">
+      <para>A pointer to a GUID that specifies the decoding profile. For a list of possible values, see <see cref="ID3D11VideoDevice.GetVideoDecoderProfile" />. If decoding will not be used, set this parameter to <b>NULL</b>.</para>
+    </param>
+    <param name="pKeyExchangeType">
+      <para>A pointer to a GUID that specifies the type of key exchange.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>D3D11_KEY_EXCHANGE_RSAES_OAEP</b>
+          </description>
+          <description>
+            <para>The caller will create the session key, encrypt it with RSA Encryption Scheme - Optimal Asymmetric Encryption Padding (RSAES-OAEP) by using the driver's public key, and pass the session key to the driver.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ppCryptoSession">
+      <para>Receives a pointer to the <see cref="ID3D11CryptoSession" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <see cref="ID3D11DeviceContext.ClearState" /> method does not affect the internal state of the cryptographic session.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.CreateVideoDecoder">
+    <summary>
+      <para>Creates a video decoder device for Microsoft Direct3D 11.</para>
+    </summary>
+    <param name="pVideoDesc">
+      <para>A pointer to a <see cref="D3D11_VIDEO_DECODER_DESC" /> structure that describes the video stream and the decoder profile.</para>
+    </param>
+    <param name="pConfig">
+      <para>A pointer to a <see cref="D3D11_VIDEO_DECODER_CONFIG" /> structure that specifies the decoder configuration.</para>
+    </param>
+    <param name="ppDecoder">
+      <para>Receives a pointer to the <see cref="ID3D11VideoDecoder" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method allocates the necessary decoder buffers.</para>
+      <para>The <see cref="ID3D11DeviceContext.ClearState" /> method does not affect the internal state of the video decoder.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.CreateVideoDecoderOutputView">
+    <summary>
+      <para>Creates a resource view for a video decoder, describing the output sample for the decoding operation.</para>
+    </summary>
+    <param name="pResource">
+      <para>A pointer to the <see cref="ID3D11Resource" /> interface of the decoder surface. The resource must be created with the <b>D3D11_BIND_DECODER</b> flag. See <see cref="D3D11_BIND_FLAG" />.</para>
+    </param>
+    <param name="pDesc">
+      <para>A pointer to a <see cref="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC" /> structure that describes the view.</para>
+    </param>
+    <param name="ppVDOVView">
+      <para>Receives a pointer to the <see cref="ID3D11VideoDecoderOutputView" /> interface. The caller must release the interface. If this parameter is <b>NULL</b>, the method checks whether the view is supported, but does not create the view.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Set the <i>ppVDOVView</i> parameter to <b>NULL</b> to test whether a view is supported.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.CreateVideoProcessor">
+    <summary>
+      <para>Creates a video processor device for Microsoft Direct3D 11.</para>
+    </summary>
+    <param name="pEnum">
+      <para>A pointer to the <see cref="ID3D11VideoProcessorEnumerator" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessorEnumerator" />.</para>
+    </param>
+    <param name="RateConversionIndex">
+      <para>Specifies the frame-rate conversion capabilities for the video processor. The value is a zero-based index that corresponds to the <i>TypeIndex</i> parameter of the <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorRateConversionCaps" /> method.</para>
+    </param>
+    <param name="ppVideoProcessor">
+      <para>Receives a pointer to the <see cref="ID3D11VideoProcessor" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <see cref="ID3D11DeviceContext.ClearState" /> method does not affect the internal state of the video processor.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.CreateVideoProcessorEnumerator">
+    <summary>
+      <para>Enumerates the video processor capabilities of the driver.</para>
+    </summary>
+    <param name="pDesc">
+      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_CONTENT_DESC" /> structure that describes the video content.</para>
+    </param>
+    <param name="ppEnum">
+      <para>Receives a pointer to the <see cref="ID3D11VideoProcessorEnumerator" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To create the video processor device, pass the <see cref="ID3D11VideoProcessorEnumerator" /> pointer to the <see cref="ID3D11VideoDevice.CreateVideoProcessor" /> method.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.CreateVideoProcessorInputView">
+    <summary>
+      <para>Creates a resource view for a video processor, describing the input sample for the video processing operation.</para>
+    </summary>
+    <param name="pResource">
+      <para>A pointer to the <see cref="ID3D11Resource" /> interface of the input surface.</para>
+    </param>
+    <param name="pEnum">
+      <para>A pointer to the <see cref="ID3D11VideoProcessorEnumerator" /> interface that specifies the video processor. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessorEnumerator" />.</para>
+    </param>
+    <param name="pDesc">
+      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC" /> structure that describes the view.</para>
+    </param>
+    <param name="ppVPIView">
+      <para>Receives a pointer to the <see cref="ID3D11VideoProcessorInputView" /> interface. The caller must release the resource. If this parameter is <b>NULL</b>, the method checks whether the view is supported, but does not create the view.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Set the <i>ppVPIView</i> parameter to <b>NULL</b> to test whether a view is supported.</para>
+      <para>The surface format is given in the <b>FourCC</b> member of the <see cref="D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC" /> structure. The method fails if the video processor does not support this format as an input sample. An app must specify 0 when using 9_1, 9_2, or 9_3 feature levels.</para>
+      <para>Resources used for video processor input views must use the following bind flag combinations:</para>
+      <list type="bullet">
+        <item>
+          <description>Any combination of bind flags that includes <see cref="D3D11_BIND_DECODER" />,<b>D3D11_BIND_VIDEO_ENCODER</b>, <b>D3D11_BIND_RENDER_TARGET</b>, and <b>D3D11_BIND_UNORDERED_ACCESS_VIEW</b> can be used as for video processor input views (regardless of what other bind flags may be set).</description>
+        </item>
+        <item>
+          <description>Bind flags = 0 is also allowed for a video processor input view.</description>
+        </item>
+        <item>
+          <description>Other restrictions will apply such as:<list type="bullet"><item><description>No multi-sampling is allowed.</description></item><item><description>The Texture2D must have been created using <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-d3d11-usage">D3D11_USAGE_DEFAULT</a>.</description></item></list></description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.CreateVideoProcessorOutputView">
+    <summary>
+      <para>Creates a resource view for a video processor, describing the output sample for the video processing operation.</para>
+    </summary>
+    <param name="pResource">
+      <para>A pointer to the <see cref="ID3D11Resource" /> interface of the output surface. The resource must be created with the <b>D3D11_BIND_RENDER_TARGET</b> flag. See <see cref="D3D11_BIND_FLAG" />.</para>
+    </param>
+    <param name="pEnum">
+      <para>A pointer to the <see cref="ID3D11VideoProcessorEnumerator" /> interface that specifies the video processor. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessorEnumerator" />.</para>
+    </param>
+    <param name="pDesc">
+      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC" /> structure that describes the view.</para>
+    </param>
+    <param name="ppVPOView">
+      <para>Receives a pointer to the <see cref="ID3D11VideoProcessorOutputView" /> interface. The caller must release the resource. If this parameter is <b>NULL</b>, the method checks whether the view is supported, but does not create the view.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Set the <i>ppVPOView</i> parameter to <b>NULL</b> to test whether a view is supported.</para>
+      <para>Resources used for video processor output views must use the following <see cref="D3D11_BIND_FLAG" /> combinations:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="D3D11_BIND_RENDER_TARGET" /> indicates that it can be used for a video processor output view. The following bind flags are allowed to be set with <b>D3D11_BIND_RENDER_TARGET</b>:<list type="bullet"><item><description><see cref="D3D11_BIND_VIDEO_ENCODER" /></description></item><item><description><see cref="D3D11_BIND_SHADER_RESOURCE" /></description></item></list></description>
+        </item>
+        <item>
+          <description>Other restrictions will apply such as:<list type="bullet"><item><description>No multi-sampling is allowed.</description></item><item><description>The Texture2D must have been created using <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-d3d11-usage">D3D11_USAGE_DEFAULT</a>.</description></item></list></description>
+        </item>
+        <item>
+          <description>Some YUV formats can be supported as a video processor output view, but might not be supported as a 3D render target.  D3D11 will allow the <see cref="D3D11_BIND_RENDER_TARGET" /> flag for these formats, but <see cref="CreateRenderTargetView" /> will not be allowed for these formats.</description>
+        </item>
+      </list>
+      <para>If stereo output is enabled, the output view must have 2 array elements.  Otherwise, it must only have a single array element.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.GetContentProtectionCaps">
+    <summary>
+      <para>Queries the driver for its content protection capabilities.</para>
+    </summary>
+    <param name="pCryptoType">
+      <para>A pointer to a GUID that specifies the type of encryption to be used. The following GUIDs are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>D3D11_CRYPTO_TYPE_AES128_CTR</b>
+          </description>
+          <description>
+            <para>128-bit Advanced Encryption Standard CTR mode (AES-CTR) block cipher.</para>
+          </description>
+        </item>
+      </list>
+      <para>If no encryption will be used, set this parameter to <b>NULL</b>.</para>
+    </param>
+    <param name="pDecoderProfile">
+      <para>A pointer to a GUID that specifies the decoding profile. To get profiles that the driver supports, call <see cref="ID3D11VideoDevice.GetVideoDecoderProfile" />. If decoding will not be used, set this parameter to <b>NULL</b>.</para>
+      <para>The driver might disallow some combinations of encryption type and profile.</para>
+    </param>
+    <param name="pCaps">
+      <para>A pointer to a <see cref="D3D11_VIDEO_CONTENT_PROTECTION_CAPS" /> structure. The method fills in this structure with the driver's content protection capabilities.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.GetVideoDecoderConfig">
+    <summary>
+      <para>Gets a decoder configuration that is supported by the driver.</para>
+    </summary>
+    <param name="pDesc">
+      <para>A pointer to a  <see cref="D3D11_VIDEO_DECODER_DESC" /> structure that describes the video stream.</para>
+    </param>
+    <param name="Index">
+      <para>The zero-based index of the decoder configuration. To get the number of configurations that the driver supports, call <see cref="ID3D11VideoDevice.GetVideoDecoderConfigCount" />.</para>
+    </param>
+    <param name="pConfig">
+      <para>A pointer to a <see cref="D3D11_VIDEO_DECODER_CONFIG" /> structure. The method fills in the structure with the decoder configuration.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.GetVideoDecoderConfigCount">
+    <summary>
+      <para>Gets the number of decoder configurations that the driver supports for a specified video description.</para>
+    </summary>
+    <param name="pDesc">
+      <para>A pointer to a  <see cref="D3D11_VIDEO_DECODER_DESC" /> structure that describes the video stream.</para>
+    </param>
+    <param name="pCount">
+      <para>Receives the number of decoder configurations.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To enumerate the decoder configurations, call <see cref="ID3D11VideoDevice.GetVideoDecoderConfig" />.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.GetVideoDecoderProfile">
+    <summary>
+      <para>Gets a profile that is supported by the driver.</para>
+    </summary>
+    <param name="Index">
+      <para>The zero-based index of the profile. To get the number of profiles that the driver supports, call <see cref="ID3D11VideoDevice.GetVideoDecoderProfileCount" />.</para>
+    </param>
+    <param name="pDecoderProfile">
+      <para>Receives a GUID that identifies the profile.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.GetVideoDecoderProfileCount">
+    <summary>
+      <para>Gets the number of profiles that are supported by the driver.</para>
+    </summary>
+    <returns>
+      <para>Returns the number of profiles.</para>
+    </returns>
+    <remarks>
+      <para>To enumerate the profiles, call <see cref="ID3D11VideoDevice.GetVideoDecoderProfile" />.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.SetPrivateData">
+    <summary>
+      <para>Sets private data on the video device and associates that data with a GUID.</para>
+    </summary>
+    <param name="guid">
+      <para>The GUID associated with the data.</para>
+    </param>
+    <param name="DataSize">
+      <para>The size of the data, in bytes.</para>
+    </param>
+    <param name="pData">
+      <para>A pointer to the data.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice.SetPrivateDataInterface">
+    <summary>
+      <para>Sets a private <see cref="IUnknown" /> pointer on the video device and associates that pointer with a GUID.</para>
+    </summary>
+    <param name="guid">
+      <para>The GUID associated with the pointer.</para>
+    </param>
+    <param name="pData">
+      <para>A pointer to the <see cref="IUnknown" /> interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+  <member name="ID3D11VideoDevice">
+    <summary>
+      <para>Provides the video decoding and video processing capabilities of a Microsoft Direct3D 11 device.</para>
+    </summary>
+    <remarks>
+      <para>The Direct3D 11 device supports this interface. To get a pointer to this interface, call <see cref="QueryInterface" /> with an <see cref="ID3D11Device" /> interface pointer.</para>
+      <para>If you query an <see cref="ID3D11Device" /> for <b>ID3D11VideoDevice</b> and the Direct3D 11 device created is using the reference rasterizer or WARP, or is a hardware device and you are using the Microsoft Basic Display Adapter, <b>E_NOINTERFACE</b> is returned.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
+    <seealso cref="ID3D11VideoDevice1" />
+  </member>
+</doc>

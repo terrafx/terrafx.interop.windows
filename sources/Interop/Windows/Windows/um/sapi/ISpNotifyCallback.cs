@@ -7,10 +7,12 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpNotifyCallback.xml' path='doc/member[@name="ISpNotifyCallback"]/*' />
 public unsafe partial struct ISpNotifyCallback : ISpNotifyCallback.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ISpNotifyCallback.xml' path='doc/member[@name="ISpNotifyCallback.NotifyCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT NotifyCallback(WPARAM wParam, LPARAM lParam)

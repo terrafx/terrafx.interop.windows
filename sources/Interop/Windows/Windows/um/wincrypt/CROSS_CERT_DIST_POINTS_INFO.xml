@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CROSS_CERT_DIST_POINTS_INFO">
+    <summary>
+      <para>The <b>CROSS_CERT_DIST_POINTS_INFO</b> structure provides information used to update dynamic cross certificates.</para>
+    </summary>
+  </member>
+  <member name="CROSS_CERT_DIST_POINTS_INFO.dwSyncDeltaTime">
+    <summary>
+      <para>
+        <b>DWORD</b> indicating seconds between synchronization. If this member is zero, the client default synchronization time is used.</para>
+    </summary>
+  </member>
+  <member name="CROSS_CERT_DIST_POINTS_INFO.cDistPoint">
+    <summary>
+      <para>Count of the number of elements in the <b>rgDistPoint</b> member array.</para>
+    </summary>
+  </member>
+  <member name="CROSS_CERT_DIST_POINTS_INFO.rgDistPoint">
+    <summary>
+      <para>Array of
+<see cref="CERT_ALT_NAME_INFO" /> structures for distribution points for updating cross certificates.</para>
+    </summary>
+  </member>
+</doc>

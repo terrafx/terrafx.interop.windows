@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMHDFILTERBTNCLICK.xml' path='doc/member[@name="NMHDFILTERBTNCLICK"]/*' />
 public partial struct NMHDFILTERBTNCLICK
 {
+    /// <include file='NMHDFILTERBTNCLICK.xml' path='doc/member[@name="NMHDFILTERBTNCLICK.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMHDFILTERBTNCLICK.xml' path='doc/member[@name="NMHDFILTERBTNCLICK.iItem"]/*' />
     public int iItem;
 
+    /// <include file='NMHDFILTERBTNCLICK.xml' path='doc/member[@name="NMHDFILTERBTNCLICK.rc"]/*' />
     public RECT rc;
 }

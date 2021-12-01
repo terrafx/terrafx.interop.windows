@@ -9,32 +9,42 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS"]/*' />
 public partial struct MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS
 {
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.dwVer"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVer;
 
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.cbSignatureOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSignatureOffset;
 
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.cbSignatureSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSignatureSize;
 
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.cbExtensionOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbExtensionOffset;
 
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.cbExtensionSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbExtensionSize;
 
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.cActions"]/*' />
     [NativeTypeName("DWORD")]
     public uint cActions;
 
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.rgOutputActions"]/*' />
     [NativeTypeName("MFINPUTTRUSTAUTHORITY_ACCESS_ACTION [1]")]
     public _rgOutputActions_e__FixedBuffer rgOutputActions;
 
+    /// <include file='_rgOutputActions_e__FixedBuffer.xml' path='doc/member[@name="_rgOutputActions_e__FixedBuffer"]/*' />
     public partial struct _rgOutputActions_e__FixedBuffer
     {
         public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION e0;

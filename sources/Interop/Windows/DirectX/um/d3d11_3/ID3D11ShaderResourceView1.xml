@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11ShaderResourceView1.GetDesc1">
+    <summary>
+      <para>Gets the shader-resource view's description.</para>
+    </summary>
+    <param name="pDesc1">
+      <para>Type: <b><see cref="D3D11_SHADER_RESOURCE_VIEW_DESC1" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC1" /> structure that receives the description of the shader-resource view.</para>
+    </param>
+    <seealso cref="ID3D11ShaderResourceView1" />
+  </member>
+  <member name="ID3D11ShaderResourceView1">
+    <summary>
+      <para>A shader-resource-view interface represents the subresources a shader can access during rendering. Examples of shader resources include a constant buffer, a texture buffer, and a texture.</para>
+    </summary>
+    <remarks>
+      <para>To create a shader-resource view, call <see cref="ID3D11Device3.CreateShaderResourceView1" />.</para>
+      <para>A shader-resource view is required when binding a resource to a shader stage; the binding occurs by calling <see cref="ID3D11DeviceContext.GSSetShaderResources" />, <see cref="ID3D11DeviceContext.VSSetShaderResources" /> or <see cref="ID3D11DeviceContext.PSSetShaderResources" />.</para>
+    </remarks>
+    <seealso cref="ID3D11ShaderResourceView" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+  </member>
+</doc>

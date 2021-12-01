@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_LAST_FW_ACTIVATION_STATUS.xml' path='doc/member[@name="SCM_PD_LAST_FW_ACTIVATION_STATUS"]/*' />
 public enum SCM_PD_LAST_FW_ACTIVATION_STATUS
 {
+    /// <include file='SCM_PD_LAST_FW_ACTIVATION_STATUS.xml' path='doc/member[@name="SCM_PD_LAST_FW_ACTIVATION_STATUS.ScmPdLastFwActivationStatus_None"]/*' />
     ScmPdLastFwActivationStatus_None = 0,
+
+    /// <include file='SCM_PD_LAST_FW_ACTIVATION_STATUS.xml' path='doc/member[@name="SCM_PD_LAST_FW_ACTIVATION_STATUS.ScmPdLastFwActivationStatus_Success"]/*' />
     ScmPdLastFwActivationStatus_Success = 1,
+
+    /// <include file='SCM_PD_LAST_FW_ACTIVATION_STATUS.xml' path='doc/member[@name="SCM_PD_LAST_FW_ACTIVATION_STATUS.ScmPdLastFwActivationStatus_FwNotFound"]/*' />
     ScmPdLastFwActivationStatus_FwNotFound = 2,
+
+    /// <include file='SCM_PD_LAST_FW_ACTIVATION_STATUS.xml' path='doc/member[@name="SCM_PD_LAST_FW_ACTIVATION_STATUS.ScmPdLastFwActivationStatus_ColdRebootRequired"]/*' />
     ScmPdLastFwActivationStatus_ColdRebootRequired = 3,
+
+    /// <include file='SCM_PD_LAST_FW_ACTIVATION_STATUS.xml' path='doc/member[@name="SCM_PD_LAST_FW_ACTIVATION_STATUS.ScmPdLastFwActivaitonStatus_ActivationInProgress"]/*' />
     ScmPdLastFwActivaitonStatus_ActivationInProgress = 4,
+
+    /// <include file='SCM_PD_LAST_FW_ACTIVATION_STATUS.xml' path='doc/member[@name="SCM_PD_LAST_FW_ACTIVATION_STATUS.ScmPdLastFwActivaitonStatus_Retry"]/*' />
     ScmPdLastFwActivaitonStatus_Retry = 5,
+
+    /// <include file='SCM_PD_LAST_FW_ACTIVATION_STATUS.xml' path='doc/member[@name="SCM_PD_LAST_FW_ACTIVATION_STATUS.ScmPdLastFwActivaitonStatus_FwUnsupported"]/*' />
     ScmPdLastFwActivaitonStatus_FwUnsupported = 6,
+
+    /// <include file='SCM_PD_LAST_FW_ACTIVATION_STATUS.xml' path='doc/member[@name="SCM_PD_LAST_FW_ACTIVATION_STATUS.ScmPdLastFwActivaitonStatus_UnknownError"]/*' />
     ScmPdLastFwActivaitonStatus_UnknownError = 7,
 }

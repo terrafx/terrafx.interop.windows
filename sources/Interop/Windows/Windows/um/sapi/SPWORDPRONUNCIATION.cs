@@ -5,21 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPWORDPRONUNCIATION.xml' path='doc/member[@name="SPWORDPRONUNCIATION"]/*' />
 public unsafe partial struct SPWORDPRONUNCIATION
 {
+    /// <include file='SPWORDPRONUNCIATION.xml' path='doc/member[@name="SPWORDPRONUNCIATION.pNextWordPronunciation"]/*' />
     [NativeTypeName("struct SPWORDPRONUNCIATION *")]
     public SPWORDPRONUNCIATION* pNextWordPronunciation;
 
+    /// <include file='SPWORDPRONUNCIATION.xml' path='doc/member[@name="SPWORDPRONUNCIATION.eLexiconType"]/*' />
     public SPLEXICONTYPE eLexiconType;
 
+    /// <include file='SPWORDPRONUNCIATION.xml' path='doc/member[@name="SPWORDPRONUNCIATION.LangID"]/*' />
     [NativeTypeName("WORD")]
     public ushort LangID;
 
+    /// <include file='SPWORDPRONUNCIATION.xml' path='doc/member[@name="SPWORDPRONUNCIATION.wPronunciationFlags"]/*' />
     [NativeTypeName("WORD")]
     public ushort wPronunciationFlags;
 
+    /// <include file='SPWORDPRONUNCIATION.xml' path='doc/member[@name="SPWORDPRONUNCIATION.ePartOfSpeech"]/*' />
     public SPPARTOFSPEECH ePartOfSpeech;
 
+    /// <include file='SPWORDPRONUNCIATION.xml' path='doc/member[@name="SPWORDPRONUNCIATION.szPronunciation"]/*' />
     [NativeTypeName("SPPHONEID [1]")]
     public fixed ushort szPronunciation[1];
 }

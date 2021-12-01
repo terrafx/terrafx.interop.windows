@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PrintDocumentPackageTarget.xml' path='doc/member[@name="PrintDocumentPackageTarget"]/*' />
 [Guid("4842669E-9947-46EA-8BA2-D8CCE432C2CA")]
 public partial struct PrintDocumentPackageTarget
 {

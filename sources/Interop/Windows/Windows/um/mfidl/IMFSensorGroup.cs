@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup"]/*' />
 [Guid("4110243A-9757-461F-89F1-F22345BCAB4E")]
 [NativeTypeName("struct IMFSensorGroup : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
         return ((delegate* unmanaged<IMFSensorGroup*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
         return ((delegate* unmanaged<IMFSensorGroup*, uint>)(lpVtbl[1]))((IMFSensorGroup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
         return ((delegate* unmanaged<IMFSensorGroup*, uint>)(lpVtbl[2]))((IMFSensorGroup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.GetSymbolicLink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
         return ((delegate* unmanaged<IMFSensorGroup*, ushort*, int, int*, int>)(lpVtbl[3]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
     }
 
+    /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.GetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFlags([NativeTypeName("ULONGLONG *")] ulong* pFlags)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
         return ((delegate* unmanaged<IMFSensorGroup*, ulong*, int>)(lpVtbl[4]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), pFlags);
     }
 
+    /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.GetSensorGroupAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSensorGroupAttributes(IMFAttributes** ppAttributes)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
         return ((delegate* unmanaged<IMFSensorGroup*, IMFAttributes**, int>)(lpVtbl[5]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), ppAttributes);
     }
 
+    /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.GetSensorDeviceCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSensorDeviceCount([NativeTypeName("DWORD *")] uint* pdwCount)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
         return ((delegate* unmanaged<IMFSensorGroup*, uint*, int>)(lpVtbl[6]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.GetSensorDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSensorDevice([NativeTypeName("DWORD")] uint dwIndex, IMFSensorDevice** ppDevice)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
         return ((delegate* unmanaged<IMFSensorGroup*, uint, IMFSensorDevice**, int>)(lpVtbl[7]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), dwIndex, ppDevice);
     }
 
+    /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.SetDefaultSensorDeviceIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetDefaultSensorDeviceIndex([NativeTypeName("DWORD")] uint dwIndex)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
         return ((delegate* unmanaged<IMFSensorGroup*, uint, int>)(lpVtbl[8]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), dwIndex);
     }
 
+    /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.GetDefaultSensorDeviceIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDefaultSensorDeviceIndex([NativeTypeName("DWORD *")] uint* pdwIndex)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
         return ((delegate* unmanaged<IMFSensorGroup*, uint*, int>)(lpVtbl[9]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), pdwIndex);
     }
 
+    /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.CreateMediaSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CreateMediaSource(IMFMediaSource** ppSource)

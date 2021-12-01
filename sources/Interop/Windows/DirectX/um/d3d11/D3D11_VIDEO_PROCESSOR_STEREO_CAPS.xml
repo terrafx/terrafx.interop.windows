@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_CAPS">
+    <summary>
+      <para>Defines stereo 3D capabilities for a Microsoft Direct3D 11 video processor.</para>
+    </summary>
+    <seealso cref="D3D11_VIDEO_PROCESSOR_CAPS" />
+    <seealso cref="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_CAPS.D3D11_VIDEO_PROCESSOR_STEREO_CAPS_MONO_OFFSET">
+    <summary>
+      <para>The video processor supports the <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO_OFFSET</b></para>
+      <para>format.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_CAPS.D3D11_VIDEO_PROCESSOR_STEREO_CAPS_ROW_INTERLEAVED">
+    <summary>
+      <para>The video processor supports the <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_ROW_INTERLEAVED</b></para>
+      <para>format.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_CAPS.D3D11_VIDEO_PROCESSOR_STEREO_CAPS_COLUMN_INTERLEAVED">
+    <summary>
+      <para>The video processor supports the <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_COLUMN_INTERLEAVED</b></para>
+      <para>format.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_CAPS.D3D11_VIDEO_PROCESSOR_STEREO_CAPS_CHECKERBOARD">
+    <summary>
+      <para>The video processor supports the <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_CHECKERBOARD</b></para>
+      <para>format.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_CAPS.D3D11_VIDEO_PROCESSOR_STEREO_CAPS_FLIP_MODE">
+    <summary>
+      <para>The video processor can flip one or both views. For more information, see <see cref="D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE" />.</para>
+    </summary>
+  </member>
+</doc>

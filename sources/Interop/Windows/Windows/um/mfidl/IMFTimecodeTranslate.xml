@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFTimecodeTranslate.BeginConvertHNSToTimecode">
+    <summary>
+      <para>Starts an asynchronous call to convert time in 100-nanosecond units to Society of Motion Picture and Television Engineers (SMPTE) time code.</para>
+    </summary>
+    <param name="hnsTime">
+      <para>The time to convert, in 100-nanosecond units.</para>
+    </param>
+    <param name="pCallback">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="punkState">
+      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <b>Shutdown</b> method was called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_BYTESTREAM_NOT_SEEKABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The byte stream is not seekable. The time code cannot be read from the end of the byte stream.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When the asynchronous method completes, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. At that point, the application must call <see cref="IMFTimecodeTranslate.EndConvertHNSToTimecode" /> to complete the asynchronous request.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/calling-asynchronous-methods">Calling Asynchronous Methods</seealso>
+    <seealso cref="IMFTimecodeTranslate" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</seealso>
+  </member>
+  <member name="IMFTimecodeTranslate.BeginConvertTimecodeToHNS">
+    <summary>
+      <para>Starts an asynchronous call to convert Society of Motion Picture and Television Engineers (SMPTE) time code to 100-nanosecond units.</para>
+    </summary>
+    <param name="pPropVarTimecode">
+      <para>Time in SMPTE time code to convert. The <b>vt</b> member of the <b>PROPVARIANT</b> structure is set to <b>VT_I8</b>. The <b>hVal.QuadPart</b> member contains the time in binary coded decimal (BCD) form. See Remarks.</para>
+    </param>
+    <param name="pCallback">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="punkState">
+      <para>PPointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pPropVarTimecode</i> is not <b>VT_I8</b>.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <b>Shutdown</b> method was called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_BYTESTREAM_NOT_SEEKABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The byte stream is not seekable. The time code cannot be read from the end of the byte stream.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When the asynchronous method completes, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. At that point, the application must call <see cref="IMFTimecodeTranslate.EndConvertTimecodeToHNS" /> to complete the asynchronous request.</para>
+      <para>The value of <i>pPropVarTimecode</i> is a 64-bit unsigned value typed as a <b>LONGLONG</b>. The upper <b>DWORD</b> contains the range. (A <i>range</i> is a continuous series of time codes.) The lower <b>DWORD</b> contains the time code in the form of a hexadecimal number <i>0xhhmmssff</i>,  where each 2-byte sequence is read as a decimal value.</para>
+      <code>void CreateTimeCode(
+    DWORD dwFrames,
+    DWORD dwSeconds,
+    DWORD dwMinutes,
+    DWORD dwHours,
+    DWORD dwRange,
+    PROPVARIANT *pvar
+    )
+{
+    ULONGLONG ullTimecode = ((ULONGLONG)dwRange) &lt;&lt; 32;
+
+    ullTimecode +=   dwFrames  % 10;
+    ullTimecode += (( (ULONGLONG)dwFrames )  / 10) &lt;&lt; 4;
+    ullTimecode += (( (ULONGLONG)dwSeconds ) % 10) &lt;&lt; 8;
+    ullTimecode += (( (ULONGLONG)dwSeconds ) / 10) &lt;&lt; 12;
+    ullTimecode += (( (ULONGLONG)dwMinutes ) % 10) &lt;&lt; 16;
+    ullTimecode += (( (ULONGLONG)dwMinutes ) / 10) &lt;&lt; 20;
+    ullTimecode += (( (ULONGLONG)dwHours )   % 10) &lt;&lt; 24;
+    ullTimecode += (( (ULONGLONG)dwHours )   / 10) &lt;&lt; 28;
+
+    pvar-&gt;vt = VT_I8;
+    pvar-&gt;hVal.QuadPart = (LONGLONG)ullTimecode;
+}
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/calling-asynchronous-methods">Calling Asynchronous Methods</seealso>
+    <seealso cref="IMFTimecodeTranslate" />
+  </member>
+  <member name="IMFTimecodeTranslate.EndConvertHNSToTimecode">
+    <summary>
+      <para>Completes an asynchronous request to convert time in 100-nanosecond units to Society of Motion Picture and Television Engineers (SMPTE) time code.</para>
+    </summary>
+    <param name="pResult">
+      <para>A pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </param>
+    <param name="pPropVarTimecode">
+      <para>A pointer to a <b>PROPVARIANT</b> that receives the converted time. The <b>vt</b> member of the <b>PROPVARIANT</b> structure is set to VT_I8. The <b>hVal.QuadPart</b> member contains the converted time in binary coded decimal (BCD) form. See Remarks.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call this method after the <see cref="IMFTimecodeTranslate.BeginConvertHNSToTimecode" /> method completes asynchronously.</para>
+      <para>The value of <i>pPropVarTimecode</i> is a 64-bit unsigned value typed as a <b>LONGLONG</b>. The upper <b>DWORD</b> contains the range. (A <i>range</i> is a continuous series of time codes.) The lower <b>DWORD</b> contains the time code in the form of a hexadecimal number <i>0xhhmmssff</i>,  where each 2-byte sequence is read as a decimal value.</para>
+      <code>HRESULT ParseTimeCode(
+    const PROPVARIANT&amp;amp;amp;amp;amp;amp; var,
+    DWORD *pdwRange,
+    DWORD *pdwFrames,
+    DWORD *pdwSeconds,
+    DWORD *pdwMinutes,
+    DWORD *pdwHours
+    )
+{
+    if (var.vt != VT_I8)
+    {
+        return E_INVALIDARG;
+    }
+
+    ULONGLONG ullTimeCode = (ULONGLONG)var.hVal.QuadPart;
+    DWORD dwTimecode = (DWORD)(ullTimeCode &amp;amp;amp;amp;amp;amp; 0xFFFFFFFF);
+
+    *pdwRange   = (DWORD)(ullTimeCode &gt;&gt; 32);
+    *pdwFrames  =     dwTimecode &amp;amp;amp;amp;amp;amp; 0x0000000F;
+    *pdwFrames  += (( dwTimecode &amp;amp;amp;amp;amp;amp; 0x000000F0) &gt;&gt; 4 )  * 10;
+    *pdwSeconds =   ( dwTimecode &amp;amp;amp;amp;amp;amp; 0x00000F00) &gt;&gt; 8;
+    *pdwSeconds += (( dwTimecode &amp;amp;amp;amp;amp;amp; 0x0000F000) &gt;&gt; 12 ) * 10;
+    *pdwMinutes =   ( dwTimecode &amp;amp;amp;amp;amp;amp; 0x000F0000) &gt;&gt; 16;
+    *pdwMinutes += (( dwTimecode &amp;amp;amp;amp;amp;amp; 0x00F00000) &gt;&gt; 20 ) * 10;
+    *pdwHours   =   ( dwTimecode &amp;amp;amp;amp;amp;amp; 0x0F000000) &gt;&gt; 24;
+    *pdwHours   += (( dwTimecode &amp;amp;amp;amp;amp;amp; 0xF0000000) &gt;&gt; 28 ) * 10;
+
+    return S_OK;
+}
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/calling-asynchronous-methods">Calling Asynchronous Methods</seealso>
+    <seealso cref="IMFTimecodeTranslate" />
+  </member>
+  <member name="IMFTimecodeTranslate.EndConvertTimecodeToHNS">
+    <summary>
+      <para>Completes an asynchronous request to convert time in Society of Motion Picture and Television Engineers (SMPTE) time code to 100-nanosecond units.</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </param>
+    <param name="phnsTime">
+      <para>Receives the converted time.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call this method after the <see cref="IMFTimecodeTranslate.BeginConvertTimecodeToHNS" /> method completes asynchronously.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/calling-asynchronous-methods">Calling Asynchronous Methods</seealso>
+    <seealso cref="IMFTimecodeTranslate" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</seealso>
+  </member>
+  <member name="IMFTimecodeTranslate">
+    <summary>
+      <para>Converts between Society of Motion Picture and Television Engineers (SMPTE) time codes and 100-nanosecond time units.</para>
+    </summary>
+    <remarks>
+      <para>If an object supports this interface, it must expose the interface as a service. To get a pointer to the interface, call <see cref="IMFGetService.GetService" /> with the service identifier <b>MF_TIMECODE_SERVICE</b>.</para>
+      <para>The Advanced Streaming Format (ASF) media source exposes this interface.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</seealso>
+  </member>
+</doc>

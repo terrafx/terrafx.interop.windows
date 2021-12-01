@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioMetadataItemsInfo">
+    <summary>
+      <para>Provides information about an <see cref="ISpatialAudioMetadataItems" /> object. Get a copy of this structure by calling <see cref="GetInfo" />.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioMetadataItemsInfo.FrameCount">
+    <summary>
+      <para>The total frame count, which defines valid item offsets.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioMetadataItemsInfo.ItemCount">
+    <summary>
+      <para>The current number of items stored.</para>
+      <h4>MaxItemCount</h4>
+      <para>The maximum number of items allowed.</para>
+      <h5>MaxValueBufferLength</h5>
+      <para>The size of the largest command value defined by the metadata format.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioMetadataItemsInfo.MaxItemCount">
+    <summary></summary>
+  </member>
+  <member name="SpatialAudioMetadataItemsInfo.MaxValueBufferLength">
+    <summary></summary>
+  </member>
+</doc>

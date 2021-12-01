@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EXP_SPECIAL_FOLDER">
+    <summary>
+      <para>Holds an extra data block used by <see cref="IShellLinkDataList" />. It holds special folder information.</para>
+    </summary>
+  </member>
+  <member name="EXP_SPECIAL_FOLDER.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the <b>EXP_SPECIAL_FOLDER</b> structure.</para>
+    </summary>
+  </member>
+  <member name="EXP_SPECIAL_FOLDER.dwSignature">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The structure's signature. It should be set to EXP_SPECIAL_FOLDER_SIG.</para>
+    </summary>
+  </member>
+  <member name="EXP_SPECIAL_FOLDER.idSpecialFolder">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The ID of the special folder that the link points into.</para>
+    </summary>
+  </member>
+  <member name="EXP_SPECIAL_FOLDER.cbOffset">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The offset into the saved PIDL.</para>
+    </summary>
+  </member>
+</doc>

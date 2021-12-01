@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMBCDROPDOWN.xml' path='doc/member[@name="NMBCDROPDOWN"]/*' />
 public partial struct NMBCDROPDOWN
 {
+    /// <include file='NMBCDROPDOWN.xml' path='doc/member[@name="NMBCDROPDOWN.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMBCDROPDOWN.xml' path='doc/member[@name="NMBCDROPDOWN.rcButton"]/*' />
     public RECT rcButton;
 }

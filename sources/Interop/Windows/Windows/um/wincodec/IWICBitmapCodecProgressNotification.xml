@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICBitmapCodecProgressNotification.RegisterProgressNotification">
+    <summary>
+      <para>Registers a progress notification callback function.</para>
+    </summary>
+    <param name="pfnProgressNotification">
+      <para>Type: <b>PFNProgressNotification</b></para>
+      <para>A function pointer to the application defined progress notification callback function. See <a href="https://docs.microsoft.com//windows/desktop/api/wincodec/nc-wincodec-pfnprogressnotification">ProgressNotificationCallback</a> for the callback signature.</para>
+    </param>
+    <param name="pvData">
+      <para>Type: <b>LPVOID</b></para>
+      <para>A pointer to component data for the callback method.</para>
+    </param>
+    <param name="dwProgressFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The <see cref="WICProgressOperation" /> and <see cref="WICProgressNotification" /> flags to use for progress notification.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Applications can only register a single callback. Subsequent registration calls will replace the previously registered callback. To unregister a callback, pass in <b>NULL</b> or register a new callback function.</para>
+      <para>Progress is reported in an increasing order between 0.0 and 1.0.
+If <i>dwProgressFlags</i> includes <b>WICProgressNotificationBegin</b>, the callback is guaranteed to be called with progress 0.0.
+If <i>dwProgressFlags</i> includes <b>WICProgressNotificationEnd</b>, the callback is guaranteed to be called with progress 1.0.</para>
+      <para>
+        <b>WICProgressNotificationFrequent</b> increases the frequency in which the callback is called.
+If an operation is expected to take more than 30 seconds, <b>WICProgressNotificationFrequent</b> should be added to <i>dwProgressFlags</i>.</para>
+    </remarks>
+    <seealso cref="IWICBitmapCodecProgressNotification" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/wincodec/nc-wincodec-pfnprogressnotification">ProgressNotificationCallback</seealso>
+  </member>
+  <member name="IWICBitmapCodecProgressNotification">
+    <summary>
+      <para>Exposes methods used for progress notification for encoders and decoders.</para>
+    </summary>
+    <remarks>
+      <para>This interface is not supported by the Windows provided codecs.</para>
+    </remarks>
+    <seealso cref="IWICBitmapDecoder" />
+    <seealso cref="IWICBitmapEncoder" />
+    <seealso cref="IWICProgressCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/wincodec/nc-wincodec-pfnprogressnotification">ProgressNotificationCallback</seealso>
+  </member>
+</doc>

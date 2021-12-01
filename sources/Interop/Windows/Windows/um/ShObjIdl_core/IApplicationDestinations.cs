@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IApplicationDestinations.xml' path='doc/member[@name="IApplicationDestinations"]/*' />
 [Guid("12337D35-94C6-48A0-BCE7-6A9C69D4D600")]
 [NativeTypeName("struct IApplicationDestinations : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
         return ((delegate* unmanaged<IApplicationDestinations*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
         return ((delegate* unmanaged<IApplicationDestinations*, uint>)(lpVtbl[1]))((IApplicationDestinations*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
         return ((delegate* unmanaged<IApplicationDestinations*, uint>)(lpVtbl[2]))((IApplicationDestinations*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IApplicationDestinations.xml' path='doc/member[@name="IApplicationDestinations.SetAppID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
@@ -46,6 +51,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
         return ((delegate* unmanaged<IApplicationDestinations*, ushort*, int>)(lpVtbl[3]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
+    /// <include file='IApplicationDestinations.xml' path='doc/member[@name="IApplicationDestinations.RemoveDestination"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RemoveDestination(IUnknown* punk)
@@ -53,6 +59,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
         return ((delegate* unmanaged<IApplicationDestinations*, IUnknown*, int>)(lpVtbl[4]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='IApplicationDestinations.xml' path='doc/member[@name="IApplicationDestinations.RemoveAllDestinations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RemoveAllDestinations()

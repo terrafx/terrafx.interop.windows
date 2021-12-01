@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SID">
+    <summary>
+      <para>The security identifier (SID) structure is a variable-length structure used to uniquely identify users or groups.</para>
+      <para>Applications should not modify a SID directly. To create and manipulate a security identifier, use the functions listed in the See Also section.</para>
+    </summary>
+    <seealso cref="AllocateAndInitializeSid" />
+    <seealso cref="ConvertSidToStringSid" />
+    <seealso cref="ConvertStringSidToSid" />
+    <seealso cref="CopySid" />
+    <seealso cref="EqualSid" />
+    <seealso cref="FreeSid" />
+    <seealso cref="GetLengthSid" />
+    <seealso cref="GetSidIdentifierAuthority" />
+    <seealso cref="GetSidLengthRequired" />
+    <seealso cref="GetSidSubAuthority" />
+    <seealso cref="GetSidSubAuthorityCount" />
+    <seealso cref="InitializeSid" />
+    <seealso cref="IsValidSid" />
+    <seealso cref="LookupAccountName" />
+    <seealso cref="LookupAccountSid" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/sid-components">SID Components</seealso>
+  </member>
+</doc>

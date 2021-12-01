@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppShellVerbHandler.xml' path='doc/member[@name="AppShellVerbHandler"]/*' />
 [Guid("4ED3A719-CEA8-4BD9-910D-E252F997AFC2")]
 public partial struct AppShellVerbHandler
 {

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TEXTSHADOWTYPE.xml' path='doc/member[@name="TEXTSHADOWTYPE"]/*' />
 public enum TEXTSHADOWTYPE
 {
+    /// <include file='TEXTSHADOWTYPE.xml' path='doc/member[@name="TEXTSHADOWTYPE.TST_NONE"]/*' />
     TST_NONE = 0,
+
+    /// <include file='TEXTSHADOWTYPE.xml' path='doc/member[@name="TEXTSHADOWTYPE.TST_SINGLE"]/*' />
     TST_SINGLE = 1,
+
+    /// <include file='TEXTSHADOWTYPE.xml' path='doc/member[@name="TEXTSHADOWTYPE.TST_CONTINUOUS"]/*' />
     TST_CONTINUOUS = 2,
 }

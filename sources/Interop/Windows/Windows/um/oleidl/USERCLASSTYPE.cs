@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USERCLASSTYPE.xml' path='doc/member[@name="USERCLASSTYPE"]/*' />
 public enum USERCLASSTYPE
 {
+    /// <include file='USERCLASSTYPE.xml' path='doc/member[@name="USERCLASSTYPE.USERCLASSTYPE_FULL"]/*' />
     USERCLASSTYPE_FULL = 1,
+
+    /// <include file='USERCLASSTYPE.xml' path='doc/member[@name="USERCLASSTYPE.USERCLASSTYPE_SHORT"]/*' />
     USERCLASSTYPE_SHORT = 2,
+
+    /// <include file='USERCLASSTYPE.xml' path='doc/member[@name="USERCLASSTYPE.USERCLASSTYPE_APPNAME"]/*' />
     USERCLASSTYPE_APPNAME = 3,
 }

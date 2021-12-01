@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1Brush.xml' path='doc/member[@name="ID2D1Brush"]/*' />
 [Guid("2CD906A8-12E2-11DC-9FED-001143A055F9")]
 [NativeTypeName("struct ID2D1Brush : ID2D1Resource")]
 [NativeInheritance("ID2D1Resource")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
         return ((delegate* unmanaged<ID2D1Brush*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Brush*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
         return ((delegate* unmanaged<ID2D1Brush*, uint>)(lpVtbl[1]))((ID2D1Brush*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
         return ((delegate* unmanaged<ID2D1Brush*, uint>)(lpVtbl[2]))((ID2D1Brush*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
         ((delegate* unmanaged<ID2D1Brush*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Brush*)Unsafe.AsPointer(ref this), factory);
     }
 
+    /// <include file='ID2D1Brush.xml' path='doc/member[@name="ID2D1Brush.SetOpacity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void SetOpacity(float opacity)
@@ -54,6 +60,7 @@ public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
         ((delegate* unmanaged<ID2D1Brush*, float, void>)(lpVtbl[4]))((ID2D1Brush*)Unsafe.AsPointer(ref this), opacity);
     }
 
+    /// <include file='ID2D1Brush.xml' path='doc/member[@name="ID2D1Brush.SetTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
@@ -61,6 +68,7 @@ public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
         ((delegate* unmanaged<ID2D1Brush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[5]))((ID2D1Brush*)Unsafe.AsPointer(ref this), transform);
     }
 
+    /// <include file='ID2D1Brush.xml' path='doc/member[@name="ID2D1Brush.GetOpacity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public float GetOpacity()
@@ -68,6 +76,7 @@ public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Brush*, float>)(lpVtbl[6]))((ID2D1Brush*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1Brush.xml' path='doc/member[@name="ID2D1Brush.GetTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)

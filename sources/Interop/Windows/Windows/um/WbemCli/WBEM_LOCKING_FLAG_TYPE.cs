@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WBEM_LOCKING_FLAG_TYPE.xml' path='doc/member[@name="WBEM_LOCKING_FLAG_TYPE"]/*' />
 public enum WBEM_LOCKING_FLAG_TYPE
 {
+    /// <include file='WBEM_LOCKING_FLAG_TYPE.xml' path='doc/member[@name="WBEM_LOCKING_FLAG_TYPE.WBEM_FLAG_ALLOW_READ"]/*' />
     WBEM_FLAG_ALLOW_READ = 0x1,
 }

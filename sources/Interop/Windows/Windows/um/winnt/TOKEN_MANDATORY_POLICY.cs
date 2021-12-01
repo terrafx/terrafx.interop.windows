@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_MANDATORY_POLICY.xml' path='doc/member[@name="TOKEN_MANDATORY_POLICY"]/*' />
 public partial struct TOKEN_MANDATORY_POLICY
 {
+    /// <include file='TOKEN_MANDATORY_POLICY.xml' path='doc/member[@name="TOKEN_MANDATORY_POLICY.Policy"]/*' />
     [NativeTypeName("DWORD")]
     public uint Policy;
 }

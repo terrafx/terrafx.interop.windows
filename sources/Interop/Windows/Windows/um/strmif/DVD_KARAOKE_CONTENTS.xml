@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_KARAOKE_CONTENTS">
+    <summary>
+      <para>Specifies flags that, when used in a bitwise <b>OR</b> operation, describe the contents of each channel of an audio stream in a karaoke title.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used in the <see cref="DVD_KaraokeAttributes" /> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideVocal1">
+    <summary>
+      <para>The channel contains guide vocal 1.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideVocal2">
+    <summary>
+      <para>The channel contains guide vocal 2.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideMelody1">
+    <summary>
+      <para>The channel contains guide melody 1.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideMelody2">
+    <summary>
+      <para>The channel contains guide melody 2.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideMelodyA">
+    <summary>
+      <para>The channel contains guide melody A.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideMelodyB">
+    <summary>
+      <para>The channel contains guide melody B.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_SoundEffectA">
+    <summary>
+      <para>The channel contains sound effect A.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_SoundEffectB">
+    <summary>
+      <para>The channel contains sound effect B.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxManifestPackageId2.GetArchitecture2">
+    <summary>
+      <para>Gets the processor architecture as defined in the manifest.</para>
+    </summary>
+    <param name="architecture">
+      <para>Type: <b><see cref="APPX_PACKAGE_ARCHITECTURE2" />*</b></para>
+      <para>The architecture specified for the package.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Processor architecture information is specified using the <b>ProcessorArchitecture</b> attribute of the <b>Identity</b> element in the app package manifest.</para>
+      <para>If no architecture is defined in the manifest, this method returns the <b>APPX_PACKAGE_ARCHITECTURE_NEUTRAL</b> value of the  <see cref="APPX_PACKAGE_ARCHITECTURE2" /> enumeration.</para>
+    </remarks>
+    <seealso cref="IAppxManifestPackageId2" />
+  </member>
+  <member name="IAppxManifestPackageId2">
+    <summary>
+      <para>Provides access to the app package identity.</para>
+    </summary>
+    <remarks>
+      <para>Package identity information is specified using the <b>Identity</b> element in the package manifest.</para>
+      <para>This object can be retrieved using the <see cref="IAppxManifestReader.GetPackageId" /> method.</para>
+    </remarks>
+  </member>
+</doc>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHREGENUM_FLAGS">
+    <summary>
+      <para>Provides a set of values that indicate the base key that will be used for an enumeration.</para>
+    </summary>
+  </member>
+  <member name="SHREGENUM_FLAGS.SHREGENUM_DEFAULT">
+    <summary>
+      <para>Enumerates under <b>HKEY_CURRENT_USER</b>, or, if the specified item is not found in <b>HKEY_CURRENT_USER</b>, enumerates under <b>HKEY_LOCAL_MACHINE</b>.</para>
+    </summary>
+  </member>
+  <member name="SHREGENUM_FLAGS.SHREGENUM_HKCU">
+    <summary>
+      <para>Enumerates under <b>HKEY_CURRENT_USER</b> only.</para>
+    </summary>
+  </member>
+  <member name="SHREGENUM_FLAGS.SHREGENUM_HKLM">
+    <summary>
+      <para>Enumerates under <b>HKEY_LOCAL_MACHINE</b> only.</para>
+    </summary>
+  </member>
+  <member name="SHREGENUM_FLAGS.SHREGENUM_BOTH">
+    <summary>
+      <para>Not used.</para>
+    </summary>
+  </member>
+</doc>

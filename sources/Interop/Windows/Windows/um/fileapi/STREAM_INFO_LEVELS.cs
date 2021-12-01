@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STREAM_INFO_LEVELS.xml' path='doc/member[@name="STREAM_INFO_LEVELS"]/*' />
 public enum STREAM_INFO_LEVELS
 {
+    /// <include file='STREAM_INFO_LEVELS.xml' path='doc/member[@name="STREAM_INFO_LEVELS.FindStreamInfoStandard"]/*' />
     FindStreamInfoStandard,
+
+    /// <include file='STREAM_INFO_LEVELS.xml' path='doc/member[@name="STREAM_INFO_LEVELS.FindStreamInfoMaxInfoLevel"]/*' />
     FindStreamInfoMaxInfoLevel,
 }

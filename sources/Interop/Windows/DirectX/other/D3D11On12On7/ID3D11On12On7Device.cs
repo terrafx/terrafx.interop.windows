@@ -8,10 +8,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11On12On7Device.xml' path='doc/member[@name="ID3D11On12On7Device"]/*' />
 public unsafe partial struct ID3D11On12On7Device : ID3D11On12On7Device.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3D11On12On7Device.xml' path='doc/member[@name="ID3D11On12On7Device.AcquireResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT AcquireResource(void* pResource, D3D12_RESOURCE_STATES state)
@@ -19,6 +21,7 @@ public unsafe partial struct ID3D11On12On7Device : ID3D11On12On7Device.Interface
         return ((delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int>)(lpVtbl[0]))((ID3D11On12On7Device*)Unsafe.AsPointer(ref this), pResource, state);
     }
 
+    /// <include file='ID3D11On12On7Device.xml' path='doc/member[@name="ID3D11On12On7Device.ReleaseResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public HRESULT ReleaseResource(void* pResource, D3D12_RESOURCE_STATES state)

@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_URL_INFO.xml' path='doc/member[@name="CRYPT_URL_INFO"]/*' />
 public unsafe partial struct CRYPT_URL_INFO
 {
+    /// <include file='CRYPT_URL_INFO.xml' path='doc/member[@name="CRYPT_URL_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CRYPT_URL_INFO.xml' path='doc/member[@name="CRYPT_URL_INFO.dwSyncDeltaTime"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSyncDeltaTime;
 
+    /// <include file='CRYPT_URL_INFO.xml' path='doc/member[@name="CRYPT_URL_INFO.cGroup"]/*' />
     [NativeTypeName("DWORD")]
     public uint cGroup;
 
+    /// <include file='CRYPT_URL_INFO.xml' path='doc/member[@name="CRYPT_URL_INFO.rgcGroupEntry"]/*' />
     [NativeTypeName("DWORD *")]
     public uint* rgcGroupEntry;
 }

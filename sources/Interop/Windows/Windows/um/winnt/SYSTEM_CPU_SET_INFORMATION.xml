@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYSTEM_CPU_SET_INFORMATION">
+    <summary>
+      <para>This structure is returned by <a href="https://docs.microsoft.com//windows/desktop/ProcThread/getsystemcpusetinformation">GetSystemCpuSetInformation</a>. It is used to enumerate the CPU Sets on the system and determine their current state.</para>
+      <para>This is a variable-sized structure designed for future expansion. When iterating over this structure, use the size field to determine the offset to the next structure.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.Size">
+    <summary>
+      <para>This is the size, in bytes, of this information structure.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.Type">
+    <summary>
+      <para>This is the type of information in the structure. Applications should skip any structures with unrecognized types.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.Id">
+    <summary>
+      <para>The ID of the specified CPU Set. This identifier can be used with <a href="https://docs.microsoft.com//windows/desktop/ProcThread/setprocessdefaultcpusets">SetProcessDefaultCpuSets</a> or <a href="https://docs.microsoft.com//windows/desktop/ProcThread/setthreadselectedcpusets">SetThreadSelectedCpuSets</a> when specifying a list of CPU Sets to affinitize to.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.Group">
+    <summary>
+      <para>Specifies the Processor Group of the CPU Set. All other values in the CpuSet structure are relative to the processor group.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.LogicalProcessorIndex">
+    <summary>
+      <para>Specifies the group-relative index of the home processor of the CPU Set. Unless the CPU Set is parked for thermal or power management reasons or assigned for exclusive use to another application, threads will run on the home processor of one of their CPU Sets. The <b>Group</b> and <b>LogicalProcessorIndex</b> fields are the same as the ones found in the PROCESSOR_NUMBER structure and they correspond to the <b>Group</b> field and <b>Mask</b> field of the GROUP_AFFINITY structure.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.CoreIndex">
+    <summary>
+      <para>A group-relative value indicating which "Core" has the home processor of the CPU Set. This number is the same for all CPU Sets in the same group that share significant execution resources with each other, such as different hardware threads on a single core that supports simultaneous multi-threading.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.LastLevelCacheIndex">
+    <summary>
+      <para>A group-relative value indicating which CPU Sets share at least one level of cache with each other. This value is the same for all CPU Sets in a group that are on processors that share cache with each other.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.NumaNodeIndex">
+    <summary>
+      <para>A group-relative value indicating which NUMA node a CPU Set is on. All CPU Sets in a given group that are on the same NUMA node will have the same value for this field.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.EfficiencyClass">
+    <summary>
+      <para>A value indicating the intrinsic energy efficiency of a processor for systems that support heterogeneous processors (such as ARM big.LITTLE systems). CPU Sets with higher numerical values of this field have home processors that are faster but less power-efficient than ones with lower values.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.DUMMYUNIONNAME2">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.DUMMYUNIONNAME2.AllFlags">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.DUMMYUNIONNAME2.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.DUMMYUNIONNAME2.DUMMYSTRUCTNAME.Parked">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.DUMMYUNIONNAME2.DUMMYSTRUCTNAME.Allocated">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.DUMMYUNIONNAME2.DUMMYSTRUCTNAME.AllocatedToTargetProcess">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.DUMMYUNIONNAME2.DUMMYSTRUCTNAME.RealTime">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.DUMMYUNIONNAME2.DUMMYSTRUCTNAME.ReservedFlags">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.SchedulingClass">
+    <summary></summary>
+  </member>
+  <member name="SYSTEM_CPU_SET_INFORMATION.DUMMYUNIONNAME.CpuSet.AllocationTag">
+    <summary>
+      <para>Specifies a tag used by Core Allocation to communicate a given allocated CPU Set between threads in different components.</para>
+      <h5>- CpuSet.Allocated : 1</h5>
+      <para>If set, the specified CPU Set is not available for general system use, but instead is allocated for exclusive use of some processes. If a non-NULL <b>Process</b> argument is specified in a call to <a href="https://docs.microsoft.com//windows/desktop/ProcThread/getsystemcpusetinformation">GetSystemCpuSetInformation</a>, it is possible to determine if the processor is allocated for use with that process.</para>
+      <h5>- CpuSet.AllocatedToTargetProcess : 1</h5>
+      <para>This is set if the CPU Set is allocated for the exclusive use of some subset of the system processes and if it is allocated for the use of the process passed into <a href="https://docs.microsoft.com//windows/desktop/ProcThread/getsystemcpusetinformation">GetSystemCpuSetInformation</a>.</para>
+      <h5>- CpuSet.Parked : 1</h5>
+      <para>If set, the home processor of this CPU Set is parked. If the CPU Set is on a parked processor, threads assigned to that set may be reassigned to other processors that are selected by the<b> Process Default</b> sets or the <b>Thread Selected</b> sets. If all such processors are parked, the threads are reassigned to other available processors on the system.</para>
+      <h5>- CpuSet.RealTime : 1</h5>
+      <para>This is set of the CPU Set is on a processor that is suitable for low-latency realtime processing.  The system takes steps to ensure that RealTime CPU Sets are unlikely to be running non-preemptible code, by moving other work like Interrupts and other application threads off of those processors.</para>
+      <h5>- CpuSet.ReservedFlags : 4</h5>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

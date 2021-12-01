@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_FINIALS">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_FINIALS</b> enumeration contains values that specify how character ends and minuscule ascenders are treated.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_ANY">
+    <summary>
+      <para>Any finials.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_NO_FIT">
+    <summary>
+      <para>No fit for finials.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_NONE_NO_LOOPS">
+    <summary>
+      <para>No loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_NONE_CLOSED_LOOPS">
+    <summary>
+      <para>No closed loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_NONE_OPEN_LOOPS">
+    <summary>
+      <para>No open loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_SHARP_NO_LOOPS">
+    <summary>
+      <para>Sharp with no loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_SHARP_CLOSED_LOOPS">
+    <summary>
+      <para>Sharp with closed loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_SHARP_OPEN_LOOPS">
+    <summary>
+      <para>Sharp with open loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_TAPERED_NO_LOOPS">
+    <summary>
+      <para>Tapered with no loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_TAPERED_CLOSED_LOOPS">
+    <summary>
+      <para>Tapered with closed loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_TAPERED_OPEN_LOOPS">
+    <summary>
+      <para>Tapered with open loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_ROUND_NO_LOOPS">
+    <summary>
+      <para>Round with no loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_ROUND_CLOSED_LOOPS">
+    <summary>
+      <para>Round with closed loops.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FINIALS.DWRITE_PANOSE_FINIALS_ROUND_OPEN_LOOPS">
+    <summary>
+      <para>Round with open loops.</para>
+    </summary>
+  </member>
+</doc>

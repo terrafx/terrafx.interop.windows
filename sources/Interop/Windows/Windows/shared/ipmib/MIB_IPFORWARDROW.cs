@@ -8,50 +8,66 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW"]/*' />
 public partial struct MIB_IPFORWARDROW
 {
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardDest"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardDest;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardMask;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardPolicy"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardPolicy;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardNextHop"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardNextHop;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardIfIndex"]/*' />
     [NativeTypeName("IF_INDEX")]
     public uint dwForwardIfIndex;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.Anonymous1"]/*' />
     [NativeTypeName("_MIB_IPFORWARDROW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ipmib.h:112:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.Anonymous2"]/*' />
     [NativeTypeName("_MIB_IPFORWARDROW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ipmib.h:116:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardAge"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardAge;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardNextHopAS"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardNextHopAS;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardMetric1"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardMetric1;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardMetric2"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardMetric2;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardMetric3"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardMetric3;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardMetric4"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardMetric4;
 
+    /// <include file='MIB_IPFORWARDROW.xml' path='doc/member[@name="MIB_IPFORWARDROW.dwForwardMetric5"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardMetric5;
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwForwardType"]/*' />
     public ref uint dwForwardType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,6 +77,7 @@ public partial struct MIB_IPFORWARDROW
         }
     }
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.ForwardType"]/*' />
     public ref MIB_IPFORWARD_TYPE ForwardType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -70,6 +87,7 @@ public partial struct MIB_IPFORWARDROW
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwForwardProto"]/*' />
     public ref uint dwForwardProto
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,6 +97,7 @@ public partial struct MIB_IPFORWARDROW
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.ForwardProto"]/*' />
     public ref MIB_IPFORWARD_PROTO ForwardProto
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -88,24 +107,30 @@ public partial struct MIB_IPFORWARDROW
         }
     }
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous1_e__Union
     {
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwForwardType"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwForwardType;
 
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.ForwardType"]/*' />
         [FieldOffset(0)]
         public MIB_IPFORWARD_TYPE ForwardType;
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous2_e__Union
     {
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwForwardProto"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwForwardProto;
 
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.ForwardProto"]/*' />
         [FieldOffset(0)]
         public MIB_IPFORWARD_PROTO ForwardProto;
     }

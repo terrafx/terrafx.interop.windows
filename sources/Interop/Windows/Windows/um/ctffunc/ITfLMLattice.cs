@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfLMLattice.xml' path='doc/member[@name="ITfLMLattice"]/*' />
 [Guid("D4236675-A5BF-4570-9D42-5D6D7B02D59B")]
 [NativeTypeName("struct ITfLMLattice : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfLMLattice : ITfLMLattice.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfLMLattice : ITfLMLattice.Interface
         return ((delegate* unmanaged<ITfLMLattice*, Guid*, void**, int>)(lpVtbl[0]))((ITfLMLattice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfLMLattice : ITfLMLattice.Interface
         return ((delegate* unmanaged<ITfLMLattice*, uint>)(lpVtbl[1]))((ITfLMLattice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfLMLattice : ITfLMLattice.Interface
         return ((delegate* unmanaged<ITfLMLattice*, uint>)(lpVtbl[2]))((ITfLMLattice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfLMLattice.xml' path='doc/member[@name="ITfLMLattice.QueryType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryType([NativeTypeName("const GUID &")] Guid* rguidType, BOOL* pfSupported)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfLMLattice : ITfLMLattice.Interface
         return ((delegate* unmanaged<ITfLMLattice*, Guid*, BOOL*, int>)(lpVtbl[3]))((ITfLMLattice*)Unsafe.AsPointer(ref this), rguidType, pfSupported);
     }
 
+    /// <include file='ITfLMLattice.xml' path='doc/member[@name="ITfLMLattice.EnumLatticeElements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnumLatticeElements([NativeTypeName("DWORD")] uint dwFrameStart, [NativeTypeName("const GUID &")] Guid* rguidType, IEnumTfLatticeElements** ppEnum)

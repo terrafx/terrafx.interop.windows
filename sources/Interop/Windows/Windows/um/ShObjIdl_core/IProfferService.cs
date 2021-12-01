@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IProfferService.xml' path='doc/member[@name="IProfferService"]/*' />
 [Guid("CB728B20-F786-11CE-92AD-00AA00A74CD0")]
 [NativeTypeName("struct IProfferService : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IProfferService : IProfferService.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IProfferService : IProfferService.Interface
         return ((delegate* unmanaged<IProfferService*, Guid*, void**, int>)(lpVtbl[0]))((IProfferService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IProfferService : IProfferService.Interface
         return ((delegate* unmanaged<IProfferService*, uint>)(lpVtbl[1]))((IProfferService*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IProfferService : IProfferService.Interface
         return ((delegate* unmanaged<IProfferService*, uint>)(lpVtbl[2]))((IProfferService*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IProfferService.xml' path='doc/member[@name="IProfferService.ProfferService"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ProfferService([NativeTypeName("const GUID &")] Guid* serviceId, IServiceProvider* serviceProvider, [NativeTypeName("DWORD *")] uint* cookie)
@@ -46,6 +51,7 @@ public unsafe partial struct IProfferService : IProfferService.Interface
         return ((delegate* unmanaged<IProfferService*, Guid*, IServiceProvider*, uint*, int>)(lpVtbl[3]))((IProfferService*)Unsafe.AsPointer(ref this), serviceId, serviceProvider, cookie);
     }
 
+    /// <include file='IProfferService.xml' path='doc/member[@name="IProfferService.RevokeService"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RevokeService([NativeTypeName("DWORD")] uint cookie)

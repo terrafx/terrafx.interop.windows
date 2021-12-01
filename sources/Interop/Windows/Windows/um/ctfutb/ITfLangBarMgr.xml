@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfLangBarMgr.AdviseEventSink">
+    <summary>
+      <para>The <b>ITfLangBarMgr.AdviseEventSink</b> method advises a sink about a language bar event.</para>
+    </summary>
+    <param name="pSink">
+      <para>Sink object to advise about the event.</para>
+    </param>
+    <param name="hwnd">
+      <para>Reserved; must be <b>NULL</b>.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Reserved; must be 0.</para>
+    </param>
+    <param name="pdwCookie">
+      <para>Pointer to an identifier for the connection.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pSink</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <i>pdwCookie</i> receives an identifier that should be passed to <see cref="ITfLangBarMgr.UnadviseEventSink" /> when the event sink is no longer required.</para>
+    </remarks>
+    <seealso cref="ITfLangBarMgr" />
+    <seealso cref="ITfLangBarMgr.UnadviseEventSink " />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/thread-manager">Thread Manager</seealso>
+  </member>
+  <member name="ITfLangBarMgr.GetInputProcessorProfiles">
+    <summary>
+      <para>Should not be used.</para>
+    </summary>
+    <param name="dwThreadId"></param>
+    <param name="ppaip"></param>
+    <param name="pdwThreadid"></param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITfLangBarItemMgr " />
+    <seealso cref="ITfLangBarMgr" />
+  </member>
+  <member name="ITfLangBarMgr.GetShowFloatingStatus">
+    <summary>
+      <para>Obtains current language bar display settings.</para>
+    </summary>
+    <param name="pdwFlags">
+      <para>Indicates current language bar display settings. For a list of bitfield values, see <see cref="ITfLangBarMgr.ShowFloating" />.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pdwFlags</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarMgr" />
+    <seealso cref="ITfLangBarMgr.ShowFloating " />
+  </member>
+  <member name="ITfLangBarMgr.GetThreadLangBarItemMgr">
+    <summary>
+      <para>Should not be used.</para>
+    </summary>
+    <param name="dwThreadId"></param>
+    <param name="pplbi"></param>
+    <param name="pdwThreadid"></param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <seealso cref="CoCreateInstance" />
+    <seealso cref="ITfLangBarItemMgr " />
+    <seealso cref="ITfLangBarMgr" />
+  </member>
+  <member name="ITfLangBarMgr.GetThreadMarshalInterface">
+    <summary>
+      <para>Should not be used.</para>
+    </summary>
+    <param name="dwThreadId"></param>
+    <param name="dwType"></param>
+    <param name="riid"></param>
+    <param name="ppunk"></param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <seealso cref="CoCreateFreeThreadedMarshaler" />
+    <seealso cref="CoMarshalInterface" />
+    <seealso cref="ITfLangBarMgr" />
+  </member>
+  <member name="ITfLangBarMgr.RestoreLastFocus">
+    <summary>
+      <para>Should not be used.</para>
+    </summary>
+    <param name="pdwThreadId"></param>
+    <param name="fPrev"></param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <seealso cref="ITfLangBarMgr" />
+    <seealso cref="ITfThreadMgr " />
+  </member>
+  <member name="ITfLangBarMgr.SetModalInput">
+    <summary>
+      <para>Should not be used.</para>
+    </summary>
+    <param name="pSink"></param>
+    <param name="dwThreadId">
+      <para>Should not be used.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Should not be used.</para>
+    </param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <seealso cref="ITfLangBarMgr" />
+    <seealso cref="ITfThreadMgr " />
+  </member>
+  <member name="ITfLangBarMgr.ShowFloating">
+    <summary>
+      <para>Configures display settings for the floating language bar.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Specifies language bar display settings.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_SFT_SHOWNORMAL</b>
+          </description>
+          <description>
+            <para>Display the language bar as a floating window. This constant cannot be combined with the TF_SFT_DOCK, TF_SFT_MINIMIZED, TF_SFT_HIDDEN, or TF_SFT_DESKBAND constants.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_DOCK</b>
+          </description>
+          <description>
+            <para>Deprecated as of Windows Vista. Dock the language bar in its own task pane. This constant cannot be combined with the TF_SFT_SHOWNORMAL, TF_SFT_MINIMIZED, TF_SFT_HIDDEN, or TF_SFT_DESKBAND constants. Available only on Windows XP.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_MINIMIZED</b>
+          </description>
+          <description>
+            <para>Deprecated as of Windows Vista. Display the language bar as a single icon in the system tray. This constant cannot be combined with the TF_SFT_SHOWNORMAL, TF_SFT_DOCK, TF_SFT_HIDDEN, or TF_SFT_DESKBAND constants.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_HIDDEN</b>
+          </description>
+          <description>
+            <para>Hide the language bar. This constant cannot be combined with the TF_SFT_SHOWNORMAL, TF_SFT_DOCK, TF_SFT_MINIMIZED, or TF_SFT_DESKBAND constants.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_NOTRANSPARENCY</b>
+          </description>
+          <description>
+            <para>Make the language bar opaque.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_LOWTRANSPARENCY</b>
+          </description>
+          <description>
+            <para>Make the language bar partially transparent. Available only on Windows 2000 or later.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_HIGHTRANSPARENCY</b>
+          </description>
+          <description>
+            <para>Make the language bar highly transparent. Available only on Windows 2000 or later.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_LABELS</b>
+          </description>
+          <description>
+            <para>Display text labels next to language bar icons.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_NOLABELS</b>
+          </description>
+          <description>
+            <para>Hide language bar icon text labels.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_EXTRAICONSONMINIMIZED</b>
+          </description>
+          <description>
+            <para>Display text service icons on the taskbar when the language bar is minimized.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_NOEXTRAICONSONMINIMIZED</b>
+          </description>
+          <description>
+            <para>Hide text service icons on the taskbar when the language bar is minimized.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_SFT_DESKBAND</b>
+          </description>
+          <description>
+            <para>Dock the language bar in the system task bar. This constant cannot be combined with the TF_SFT_SHOWNORMAL, TF_SFT_DOCK, TF_SFT_MINIMIZED, or TF_SFT_HIDDEN constants. Available only on Windows XP.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>dwFlags</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarMgr" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-sft--constants">TF_SFT_* Constants
+</seealso>
+  </member>
+  <member name="ITfLangBarMgr.UnadviseEventSink">
+    <summary>
+      <para>Uninstalls an advise event sink.</para>
+    </summary>
+    <param name="dwCookie">
+      <para>A DWORD value that identifies the advise event sink to uninstall. This value is provided by a previous call to <see cref="ITfLangBarMgr.AdviseEventSink" />.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarMgr" />
+    <seealso cref="ITfLangBarMgr.AdviseEventSink " />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/thread-manager">Thread Manager</seealso>
+  </member>
+  <member name="ITfLangBarMgr">
+    <summary>
+      <para>The <b>ITfLangBarMgr</b> interface is implemented by the TSF manager and used by text services to manage event sink notification and configure floating language bar display settings. The interface ID is IID_ITfLangBarMgr.</para>
+    </summary>
+    <seealso cref="CoCreateInstance" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

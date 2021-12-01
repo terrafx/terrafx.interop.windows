@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WTS_CONTEXTFLAGS">
+    <summary>
+      <para>Specifies the context of a thumbnail extraction. Used by <see cref="IThumbnailSettings.SetContext" />.</para>
+      <para>Your thumbnail provider will set this flag based on the <see cref="WTS_FLAGS" /> values that it received through the <see cref="IThumbnailProvider.GetThumbnail" /> request.</para>
+    </summary>
+  </member>
+  <member name="WTS_CONTEXTFLAGS.WTSCF_DEFAULT">
+    <summary>
+      <para>None of the following options are set. Set in response to <see cref="WTS_NONE" />.</para>
+    </summary>
+  </member>
+  <member name="WTS_CONTEXTFLAGS.WTSCF_APPSTYLE">
+    <summary>
+      <para>Provide a thumbnail suitable to the Windows Store app UX guidelines. Set in response to <see cref="WTS_APPSTYLE" />.</para>
+    </summary>
+  </member>
+  <member name="WTS_CONTEXTFLAGS.WTSCF_SQUARE">
+    <summary>
+      <para>If necessary, crop the bitmap's dimensions so that is square. The length of the shortest side becomes the length of all sides. Set in response to <see cref="WTS_CROPTOSQUARE" />.</para>
+    </summary>
+  </member>
+  <member name="WTS_CONTEXTFLAGS.WTSCF_WIDE">
+    <summary>
+      <para>Stretch and crop the bitmap so that its height is 0.7 times its width. Set in response to <see cref="WTS_WIDETHUMBNAILS" />.</para>
+    </summary>
+  </member>
+  <member name="WTS_CONTEXTFLAGS.WTSCF_FAST">
+    <summary>
+      <para>If not cached, only extract the thumbnail if it is embedded in EXIF format, typically 96x96. Set in response to <see cref="WTS_FASTEXTRACT" />.</para>
+    </summary>
+  </member>
+</doc>

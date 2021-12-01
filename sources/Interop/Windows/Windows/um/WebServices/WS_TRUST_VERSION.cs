@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_TRUST_VERSION.xml' path='doc/member[@name="WS_TRUST_VERSION"]/*' />
 public enum WS_TRUST_VERSION
 {
+    /// <include file='WS_TRUST_VERSION.xml' path='doc/member[@name="WS_TRUST_VERSION.WS_TRUST_VERSION_FEBRUARY_2005"]/*' />
     WS_TRUST_VERSION_FEBRUARY_2005 = 0x1,
+
+    /// <include file='WS_TRUST_VERSION.xml' path='doc/member[@name="WS_TRUST_VERSION.WS_TRUST_VERSION_1_3"]/*' />
     WS_TRUST_VERSION_1_3 = 0x2,
 }

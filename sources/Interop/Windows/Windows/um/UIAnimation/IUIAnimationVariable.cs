@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable"]/*' />
 [Guid("8CEEB155-2849-4CE5-9448-91FF70E1E4D9")]
 [NativeTypeName("struct IUIAnimationVariable : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, uint>)(lpVtbl[1]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, uint>)(lpVtbl[2]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetValue(double* value)
@@ -46,6 +51,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, double*, int>)(lpVtbl[3]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.GetFinalValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFinalValue(double* finalValue)
@@ -53,6 +59,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, double*, int>)(lpVtbl[4]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), finalValue);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.GetPreviousValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPreviousValue(double* previousValue)
@@ -60,6 +67,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, double*, int>)(lpVtbl[5]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), previousValue);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.GetIntegerValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetIntegerValue([NativeTypeName("INT32 *")] int* value)
@@ -67,6 +75,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, int*, int>)(lpVtbl[6]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.GetFinalIntegerValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetFinalIntegerValue([NativeTypeName("INT32 *")] int* finalValue)
@@ -74,6 +83,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, int*, int>)(lpVtbl[7]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), finalValue);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.GetPreviousIntegerValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetPreviousIntegerValue([NativeTypeName("INT32 *")] int* previousValue)
@@ -81,6 +91,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, int*, int>)(lpVtbl[8]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), previousValue);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.GetCurrentStoryboard"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetCurrentStoryboard(IUIAnimationStoryboard** storyboard)
@@ -88,6 +99,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, IUIAnimationStoryboard**, int>)(lpVtbl[9]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), storyboard);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.SetLowerBound"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetLowerBound(double bound)
@@ -95,6 +107,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, double, int>)(lpVtbl[10]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), bound);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.SetUpperBound"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetUpperBound(double bound)
@@ -102,6 +115,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, double, int>)(lpVtbl[11]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), bound);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.SetRoundingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetRoundingMode(UI_ANIMATION_ROUNDING_MODE mode)
@@ -109,6 +123,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, UI_ANIMATION_ROUNDING_MODE, int>)(lpVtbl[12]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), mode);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.SetTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
@@ -116,6 +131,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, IUnknown*, uint, int>)(lpVtbl[13]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), @object, id);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.GetTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id)
@@ -123,6 +139,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, IUnknown**, uint*, int>)(lpVtbl[14]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), @object, id);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.SetVariableChangeHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetVariableChangeHandler(IUIAnimationVariableChangeHandler* handler)
@@ -130,6 +147,7 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         return ((delegate* unmanaged<IUIAnimationVariable*, IUIAnimationVariableChangeHandler*, int>)(lpVtbl[15]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), handler);
     }
 
+    /// <include file='IUIAnimationVariable.xml' path='doc/member[@name="IUIAnimationVariable.SetVariableIntegerChangeHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler* handler)

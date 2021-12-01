@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_REQUEST_TIMES">
+    <summary>
+      <para>The <b>WINHTTP_REQUEST_TIMES</b> structure contains a variety of timing information for a request.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used with <see cref="WinHttpQueryOption" /> to retrieve timing information for a request by specifying the <b>WINHTTP_OPTION_REQUEST_TIMES</b> flag.</para>
+    </remarks>
+    <seealso cref="WinHttpQueryOption" />
+    <seealso cref="QueryPerformanceCounter" />
+  </member>
+  <member name="WINHTTP_REQUEST_TIMES.cTimes">
+    <summary>
+      <para>Unsigned long integer value that contains the number of timings to retrieve. This should generally be set to <b>WinHttpRequestTimeLast</b>.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_REQUEST_TIMES.rgullTimes">
+    <summary>
+      <para>Array of unsigned long long integer values that will contain the returned timings, indexed by <see cref="WINHTTP_REQUEST_TIME_ENTRY" />.</para>
+      <para>Times are measured as performance counter values; for more information, see <see cref="QueryPerformanceCounter" />.</para>
+    </summary>
+  </member>
+</doc>

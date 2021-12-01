@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoEncodeOffsetOrigin.xml' path='doc/member[@name="CODECAPI_AVEncVideoEncodeOffsetOrigin"]/*' />
 [Guid("6BC098FE-A71A-4454-852E-4D2DDEB2CD24")]
 public partial struct CODECAPI_AVEncVideoEncodeOffsetOrigin
 {

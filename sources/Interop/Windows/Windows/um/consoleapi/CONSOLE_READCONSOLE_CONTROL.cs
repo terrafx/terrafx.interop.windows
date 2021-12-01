@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONSOLE_READCONSOLE_CONTROL.xml' path='doc/member[@name="CONSOLE_READCONSOLE_CONTROL"]/*' />
 public partial struct CONSOLE_READCONSOLE_CONTROL
 {
+    /// <include file='CONSOLE_READCONSOLE_CONTROL.xml' path='doc/member[@name="CONSOLE_READCONSOLE_CONTROL.nLength"]/*' />
     [NativeTypeName("ULONG")]
     public uint nLength;
 
+    /// <include file='CONSOLE_READCONSOLE_CONTROL.xml' path='doc/member[@name="CONSOLE_READCONSOLE_CONTROL.nInitialChars"]/*' />
     [NativeTypeName("ULONG")]
     public uint nInitialChars;
 
+    /// <include file='CONSOLE_READCONSOLE_CONTROL.xml' path='doc/member[@name="CONSOLE_READCONSOLE_CONTROL.dwCtrlWakeupMask"]/*' />
     [NativeTypeName("ULONG")]
     public uint dwCtrlWakeupMask;
 
+    /// <include file='CONSOLE_READCONSOLE_CONTROL.xml' path='doc/member[@name="CONSOLE_READCONSOLE_CONTROL.dwControlKeyState"]/*' />
     [NativeTypeName("ULONG")]
     public uint dwControlKeyState;
 }

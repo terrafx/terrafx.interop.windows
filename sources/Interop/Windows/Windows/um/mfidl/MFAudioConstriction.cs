@@ -7,12 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFAudioConstriction.xml' path='doc/member[@name="MFAudioConstriction"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MFAudioConstriction
 {
+    /// <include file='MFAudioConstriction.xml' path='doc/member[@name="MFAudioConstriction.MFaudioConstrictionOff"]/*' />
     MFaudioConstrictionOff = 0,
+
+    /// <include file='MFAudioConstriction.xml' path='doc/member[@name="MFAudioConstriction.MFaudioConstriction48_16"]/*' />
     MFaudioConstriction48_16 = (MFaudioConstrictionOff + 1),
+
+    /// <include file='MFAudioConstriction.xml' path='doc/member[@name="MFAudioConstriction.MFaudioConstriction44_16"]/*' />
     MFaudioConstriction44_16 = (MFaudioConstriction48_16 + 1),
+
+    /// <include file='MFAudioConstriction.xml' path='doc/member[@name="MFAudioConstriction.MFaudioConstriction14_14"]/*' />
     MFaudioConstriction14_14 = (MFaudioConstriction44_16 + 1),
+
+    /// <include file='MFAudioConstriction.xml' path='doc/member[@name="MFAudioConstriction.MFaudioConstrictionMute"]/*' />
     MFaudioConstrictionMute = (MFaudioConstriction14_14 + 1),
 }

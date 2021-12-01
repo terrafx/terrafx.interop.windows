@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DUPLICATE_EXTENTS_DATA">
+    <summary>
+      <para>Contains parameters for the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_duplicate_extents_to_file">FSCTL_DUPLICATE_EXTENTS</a> control code that performs the <a href="https://docs.microsoft.com//windows/desktop/FileIO/block-cloning">Block Cloning</a> operation.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/block-cloning">Block Cloning</seealso>
+    <seealso cref="DeviceIoControl" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_duplicate_extents_to_file">FSCTL_DUPLICATE_EXTENTS_TO_FILE</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-control-codes">File Management Control Codes</seealso>
+  </member>
+  <member name="DUPLICATE_EXTENTS_DATA.FileHandle">
+    <summary>
+      <para>A handle to the source file from which the byte range is to be copied.
+To retrieve a file handle, use the <see cref="CreateFile" /> function.</para>
+    </summary>
+  </member>
+  <member name="DUPLICATE_EXTENTS_DATA.SourceFileOffset">
+    <summary>
+      <para>The offset, in bytes, to the beginning of the range to copy from the source file.</para>
+    </summary>
+  </member>
+  <member name="DUPLICATE_EXTENTS_DATA.TargetFileOffset">
+    <summary>
+      <para>The offset, in bytes, to place the copied byte range in the destination file.</para>
+    </summary>
+  </member>
+  <member name="DUPLICATE_EXTENTS_DATA.ByteCount">
+    <summary>
+      <para>The length, in bytes, of the range to copy.</para>
+    </summary>
+  </member>
+</doc>

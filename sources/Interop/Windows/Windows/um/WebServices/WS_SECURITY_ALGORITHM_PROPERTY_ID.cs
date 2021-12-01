@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SECURITY_ALGORITHM_PROPERTY_ID.xml' path='doc/member[@name="WS_SECURITY_ALGORITHM_PROPERTY_ID"]/*' />
 public enum WS_SECURITY_ALGORITHM_PROPERTY_ID
 {
 }

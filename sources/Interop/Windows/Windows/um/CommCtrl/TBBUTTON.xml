@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TBBUTTON">
+    <summary>
+      <para>Contains information about a button in a toolbar.</para>
+    </summary>
+    <remarks>
+      <para>The <b>iString</b> member can return either a string pointer or an index. You can use the <see cref="IS_INTRESOURCE" /> macro to determine which is returned.</para>
+    </remarks>
+  </member>
+  <member name="TBBUTTON.iBitmap">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Zero-based index of the button image. Set this member to I_IMAGECALLBACK, and the toolbar will send the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getdispinfo">TBN_GETDISPINFO</a> notification code to retrieve the image index when it is needed.</para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 5.81</a>. Set this member to I_IMAGENONE to indicate that the button does not have an image. The button layout will not include any space for a bitmap, only text.</para>
+      <para>If the button is a separator, that is, if <b>fsStyle</b> is set to <a href="https://docs.microsoft.com//windows/desktop/Controls/toolbar-control-and-button-styles">BTNS_SEP</a>, <b>iBitmap</b> determines the width of the separator, in pixels. For information on selecting button images from image lists, see <a href="https://docs.microsoft.com//windows/desktop/Controls/tb-setimagelist">TB_SETIMAGELIST</a> message.</para>
+    </summary>
+  </member>
+  <member name="TBBUTTON.idCommand">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Command identifier associated with the button. This identifier is used in a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> message when the button is chosen.</para>
+    </summary>
+  </member>
+  <member name="TBBUTTON.fsState">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a></b></para>
+      <para>Button state flags. This member can be a combination of the values listed in <a href="https://docs.microsoft.com//windows/desktop/Controls/toolbar-button-states">Toolbar Button States</a>.</para>
+    </summary>
+  </member>
+  <member name="TBBUTTON.fsStyle">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a></b></para>
+      <para>Button style. This member can be a combination of the button style values listed in <a href="https://docs.microsoft.com//windows/desktop/Controls/toolbar-control-and-button-styles">Toolbar Control and Button Styles</a>.</para>
+    </summary>
+  </member>
+  <member name="TBBUTTON.bReserved">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a></b></para>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="TBBUTTON.dwData">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD_PTR</a></b></para>
+      <para>Application-defined value.</para>
+    </summary>
+  </member>
+  <member name="TBBUTTON.iString">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">INT_PTR</a></b></para>
+      <para>Zero-based index of the button string, or a pointer to a string buffer that contains text for the button.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ENVELOPE_VERSION.xml' path='doc/member[@name="WS_ENVELOPE_VERSION"]/*' />
 public enum WS_ENVELOPE_VERSION
 {
+    /// <include file='WS_ENVELOPE_VERSION.xml' path='doc/member[@name="WS_ENVELOPE_VERSION.WS_ENVELOPE_VERSION_SOAP_1_1"]/*' />
     WS_ENVELOPE_VERSION_SOAP_1_1 = 1,
+
+    /// <include file='WS_ENVELOPE_VERSION.xml' path='doc/member[@name="WS_ENVELOPE_VERSION.WS_ENVELOPE_VERSION_SOAP_1_2"]/*' />
     WS_ENVELOPE_VERSION_SOAP_1_2 = 2,
+
+    /// <include file='WS_ENVELOPE_VERSION.xml' path='doc/member[@name="WS_ENVELOPE_VERSION.WS_ENVELOPE_VERSION_NONE"]/*' />
     WS_ENVELOPE_VERSION_NONE = 3,
 }

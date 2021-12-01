@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXBMINFOHEADER.xml' path='doc/member[@name="EXBMINFOHEADER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct EXBMINFOHEADER
 {
+    /// <include file='EXBMINFOHEADER.xml' path='doc/member[@name="EXBMINFOHEADER.bmi"]/*' />
     public BITMAPINFOHEADER bmi;
 
+    /// <include file='EXBMINFOHEADER.xml' path='doc/member[@name="EXBMINFOHEADER.biExtDataOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint biExtDataOffset;
 }

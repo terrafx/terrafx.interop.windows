@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DHPUBKEY">
+    <summary>
+      <para>The <b>DHPUBKEY</b> structure contains information specific to the particular Diffie-Hellman <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> contained in the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key BLOB</a>.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>DSSPUBKEY</b> is an alias for this structure.</para>
+    </remarks>
+    <seealso cref="PUBLICKEYSTRUC" />
+  </member>
+  <member name="DHPUBKEY.magic">
+    <summary>
+      <para>This must always be set to DH1 (0x31484400) when used for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key BLOBs</a> and to DH2 (0x32484400) when used for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">private key BLOBs</a>.</para>
+      <para>Notice that the hexadecimal values are simply an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">ASCII</a> encoding of DH1 and DH2.</para>
+    </summary>
+  </member>
+  <member name="DHPUBKEY.bitlen">
+    <summary>
+      <para>Number of bits in the prime modulus, P.</para>
+    </summary>
+  </member>
+</doc>

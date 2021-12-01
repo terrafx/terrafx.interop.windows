@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STARTING_LCN_INPUT_BUFFER.xml' path='doc/member[@name="STARTING_LCN_INPUT_BUFFER"]/*' />
 public partial struct STARTING_LCN_INPUT_BUFFER
 {
+    /// <include file='STARTING_LCN_INPUT_BUFFER.xml' path='doc/member[@name="STARTING_LCN_INPUT_BUFFER.StartingLcn"]/*' />
     public LARGE_INTEGER StartingLcn;
 }

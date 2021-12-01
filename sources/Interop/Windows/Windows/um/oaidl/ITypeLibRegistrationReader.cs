@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITypeLibRegistrationReader.xml' path='doc/member[@name="ITypeLibRegistrationReader"]/*' />
 [Guid("ED6A8A2A-B160-4E77-8F73-AA7435CD5C27")]
 [NativeTypeName("struct ITypeLibRegistrationReader : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationRe
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationRe
         return ((delegate* unmanaged<ITypeLibRegistrationReader*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationRe
         return ((delegate* unmanaged<ITypeLibRegistrationReader*, uint>)(lpVtbl[1]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationRe
         return ((delegate* unmanaged<ITypeLibRegistrationReader*, uint>)(lpVtbl[2]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITypeLibRegistrationReader.xml' path='doc/member[@name="ITypeLibRegistrationReader.EnumTypeLibRegistrations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EnumTypeLibRegistrations(IEnumUnknown** ppEnumUnknown)

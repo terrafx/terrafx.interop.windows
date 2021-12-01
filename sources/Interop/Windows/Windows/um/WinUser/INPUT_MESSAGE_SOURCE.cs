@@ -7,10 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INPUT_MESSAGE_SOURCE.xml' path='doc/member[@name="INPUT_MESSAGE_SOURCE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct INPUT_MESSAGE_SOURCE
 {
+    /// <include file='INPUT_MESSAGE_SOURCE.xml' path='doc/member[@name="INPUT_MESSAGE_SOURCE.deviceType"]/*' />
     public INPUT_MESSAGE_DEVICE_TYPE deviceType;
 
+    /// <include file='INPUT_MESSAGE_SOURCE.xml' path='doc/member[@name="INPUT_MESSAGE_SOURCE.originId"]/*' />
     public INPUT_MESSAGE_ORIGIN_ID originId;
 }

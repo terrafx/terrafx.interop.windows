@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_PREDICT_FAILURE.xml' path='doc/member[@name="STORAGE_PREDICT_FAILURE"]/*' />
 public unsafe partial struct STORAGE_PREDICT_FAILURE
 {
+    /// <include file='STORAGE_PREDICT_FAILURE.xml' path='doc/member[@name="STORAGE_PREDICT_FAILURE.PredictFailure"]/*' />
     [NativeTypeName("DWORD")]
     public uint PredictFailure;
 
+    /// <include file='STORAGE_PREDICT_FAILURE.xml' path='doc/member[@name="STORAGE_PREDICT_FAILURE.VendorSpecific"]/*' />
     [NativeTypeName("BYTE [512]")]
     public fixed byte VendorSpecific[512];
 }

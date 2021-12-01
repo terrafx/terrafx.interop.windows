@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCHANNEL_ALERT_TOKEN.xml' path='doc/member[@name="SCHANNEL_ALERT_TOKEN"]/*' />
 public partial struct SCHANNEL_ALERT_TOKEN
 {
+    /// <include file='SCHANNEL_ALERT_TOKEN.xml' path='doc/member[@name="SCHANNEL_ALERT_TOKEN.dwTokenType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTokenType;
 
+    /// <include file='SCHANNEL_ALERT_TOKEN.xml' path='doc/member[@name="SCHANNEL_ALERT_TOKEN.dwAlertType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAlertType;
 
+    /// <include file='SCHANNEL_ALERT_TOKEN.xml' path='doc/member[@name="SCHANNEL_ALERT_TOKEN.dwAlertNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAlertNumber;
 }

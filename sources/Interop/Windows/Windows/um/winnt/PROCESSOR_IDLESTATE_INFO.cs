@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESSOR_IDLESTATE_INFO.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_INFO"]/*' />
 public unsafe partial struct PROCESSOR_IDLESTATE_INFO
 {
+    /// <include file='PROCESSOR_IDLESTATE_INFO.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_INFO.TimeCheck"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeCheck;
 
+    /// <include file='PROCESSOR_IDLESTATE_INFO.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_INFO.DemotePercent"]/*' />
     public byte DemotePercent;
 
+    /// <include file='PROCESSOR_IDLESTATE_INFO.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_INFO.PromotePercent"]/*' />
     public byte PromotePercent;
 
+    /// <include file='PROCESSOR_IDLESTATE_INFO.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_INFO.Spare"]/*' />
     [NativeTypeName("BYTE [2]")]
     public fixed byte Spare[2];
 }

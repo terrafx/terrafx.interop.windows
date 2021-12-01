@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACTCTX_REQUESTED_RUN_LEVEL.xml' path='doc/member[@name="ACTCTX_REQUESTED_RUN_LEVEL"]/*' />
 public enum ACTCTX_REQUESTED_RUN_LEVEL
 {
+    /// <include file='ACTCTX_REQUESTED_RUN_LEVEL.xml' path='doc/member[@name="ACTCTX_REQUESTED_RUN_LEVEL.ACTCTX_RUN_LEVEL_UNSPECIFIED"]/*' />
     ACTCTX_RUN_LEVEL_UNSPECIFIED = 0,
+
+    /// <include file='ACTCTX_REQUESTED_RUN_LEVEL.xml' path='doc/member[@name="ACTCTX_REQUESTED_RUN_LEVEL.ACTCTX_RUN_LEVEL_AS_INVOKER"]/*' />
     ACTCTX_RUN_LEVEL_AS_INVOKER,
+
+    /// <include file='ACTCTX_REQUESTED_RUN_LEVEL.xml' path='doc/member[@name="ACTCTX_REQUESTED_RUN_LEVEL.ACTCTX_RUN_LEVEL_HIGHEST_AVAILABLE"]/*' />
     ACTCTX_RUN_LEVEL_HIGHEST_AVAILABLE,
+
+    /// <include file='ACTCTX_REQUESTED_RUN_LEVEL.xml' path='doc/member[@name="ACTCTX_REQUESTED_RUN_LEVEL.ACTCTX_RUN_LEVEL_REQUIRE_ADMIN"]/*' />
     ACTCTX_RUN_LEVEL_REQUIRE_ADMIN,
+
+    /// <include file='ACTCTX_REQUESTED_RUN_LEVEL.xml' path='doc/member[@name="ACTCTX_REQUESTED_RUN_LEVEL.ACTCTX_RUN_LEVEL_NUMBERS"]/*' />
     ACTCTX_RUN_LEVEL_NUMBERS,
 }

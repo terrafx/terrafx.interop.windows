@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TS_SELECTION_ACP.xml' path='doc/member[@name="TS_SELECTION_ACP"]/*' />
 public partial struct TS_SELECTION_ACP
 {
+    /// <include file='TS_SELECTION_ACP.xml' path='doc/member[@name="TS_SELECTION_ACP.acpStart"]/*' />
     [NativeTypeName("LONG")]
     public int acpStart;
 
+    /// <include file='TS_SELECTION_ACP.xml' path='doc/member[@name="TS_SELECTION_ACP.acpEnd"]/*' />
     [NativeTypeName("LONG")]
     public int acpEnd;
 
+    /// <include file='TS_SELECTION_ACP.xml' path='doc/member[@name="TS_SELECTION_ACP.style"]/*' />
     public TS_SELECTIONSTYLE style;
 }

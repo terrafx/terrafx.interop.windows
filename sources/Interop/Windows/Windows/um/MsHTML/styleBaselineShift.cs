@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBaselineShift.xml' path='doc/member[@name="styleBaselineShift"]/*' />
 public enum styleBaselineShift
 {
+    /// <include file='styleBaselineShift.xml' path='doc/member[@name="styleBaselineShift.styleBaselineShiftBaseline"]/*' />
     styleBaselineShiftBaseline = 0,
+
+    /// <include file='styleBaselineShift.xml' path='doc/member[@name="styleBaselineShift.styleBaselineShiftSub"]/*' />
     styleBaselineShiftSub = 1,
+
+    /// <include file='styleBaselineShift.xml' path='doc/member[@name="styleBaselineShift.styleBaselineShiftSuper"]/*' />
     styleBaselineShiftSuper = 2,
+
+    /// <include file='styleBaselineShift.xml' path='doc/member[@name="styleBaselineShift.styleBaselineShift_Max"]/*' />
     styleBaselineShift_Max = 2147483647,
 }

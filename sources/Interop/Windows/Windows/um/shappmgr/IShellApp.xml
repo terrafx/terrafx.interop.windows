@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellApp.GetAppInfo">
+    <summary>
+      <para>Gets general information about an application.</para>
+    </summary>
+    <param name="pai">
+      <para>Type: <b><see cref="APPINFODATA" />*</b></para>
+      <para>A pointer to an <see cref="APPINFODATA" /> structure that returns the application information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  Add/Remove Programs in the Control Panel sets the cbSize and dwMask members of the <see cref="APPINFODATA" /> structure.</para>
+      <para>Your implementation should validate cbSize by comparing it with the size of <see cref="APPINFODATA" />.  If cbSize does not equal the size of <b>APPINFODATA</b>, this method should return a COM error value like E_FAIL.</para>
+      <para>Add/Remove Programs in the Control Panel will set the dwMask member of the <see cref="APPINFODATA" /> structure to indicate that you should return AIM_DISPLAYNAME and AIM_SUPPORTURL. For each value that you return in APPINFODATA, you must set the corresponding bit in dwMask.  All other bits should be cleared.</para>
+      <h4>Examples</h4>
+      <para>Here is a sample of how to use the dwMask bits.</para>
+      <code>HRESULT CPubApp.GetAppInfo(APPINFODATA *pData)
+{
+    if (sizeof(APPINFODATA) != pData-&gt;cbSize)
+        return E_FAIL;
+
+    // First save off the mask of requested data items.
+
+    const DWORD dwMask = pData-&gt;dwMask;
+
+    // Zero-out the mask.  Bits will be set as items are obtained.
+
+    pData-&gt;dwMask = 0;
+
+    // Call an internal function that obtains data and sets
+    // bits in pData-&gt;dwMask for each item obtained.
+
+    return get_app_info_data(pData, dwMask);
+
+}
+</code>
+    </remarks>
+    <seealso cref="APPINFODATA" />
+    <seealso cref="IAppPublisher" />
+    <seealso cref="IPublishedApp.GetPublishedAppInfo" />
+    <seealso cref="IShellApp" />
+  </member>
+  <member name="IShellApp.GetCachedSlowAppInfo">
+    <summary>
+      <para>Returns information to the application that originates from a slow source. Unlike <see cref="IShellApp.GetSlowAppInfo" />, this method can return information that has been cached. This method is not applicable to published applications.</para>
+    </summary>
+    <param name="psaid">
+      <para>Type: <b>PSLOWAPPINFO</b></para>
+      <para>A pointer to a <see cref="SLOWAPPINFO" /> structure in which to return application information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Implementations of <see cref="IPublishedApp" /> return E_NOTIMPL. This method is used internally by Add/Remove Programs for installed applications.</para>
+    </remarks>
+    <seealso cref="IAppPublisher" />
+    <seealso cref="IPublishedApp" />
+    <seealso cref="IShellApp" />
+  </member>
+  <member name="IShellApp.GetPossibleActions">
+    <summary>
+      <para>Gets a bitmask of management actions allowed for an application.</para>
+    </summary>
+    <param name="pdwActions">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to a variable of type <b>DWORD</b> that returns the bitmask of supported actions. The bit flags are described in <see cref="APPACTIONFLAGS" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Of the set of <see cref="APPACTIONFLAGS" /> bitmasks, Add/Remove Programs only recognizes APPACTION_INSTALL and APPACTION_ADDLATER.</para>
+    </remarks>
+    <seealso cref="IAppPublisher" />
+    <seealso cref="IPublishedApp" />
+    <seealso cref="IShellApp" />
+  </member>
+  <member name="IShellApp.GetSlowAppInfo">
+    <summary>
+      <para>Returns information to the application that originates from a slow source. This method is not applicable to published applications.</para>
+    </summary>
+    <param name="psaid">
+      <para>Type: <b>PSLOWAPPINFO</b></para>
+      <para>A pointer to a <see cref="SLOWAPPINFO" /> structure in which to return application information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Implementations of <see cref="IPublishedApp" /> should return E_NOTIMPL. This method is used internally by Add/Remove Programs for installed applications.</para>
+    </remarks>
+    <seealso cref="IAppPublisher" />
+    <seealso cref="IPublishedApp" />
+    <seealso cref="IShellApp" />
+  </member>
+  <member name="IShellApp.IsInstalled">
+    <summary>
+      <para>Gets a value indicating whether a specified application is currently installed.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The application is installed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The application is not installed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Application publishers should determine if the application is currently installed and return S_OK if so, or S_FALSE if not.</para>
+    </remarks>
+    <seealso cref="IAppPublisher" />
+    <seealso cref="IPublishedApp" />
+    <seealso cref="IShellApp" />
+  </member>
+  <member name="IShellApp">
+    <summary>
+      <para>Exposes methods that provide general information about an application to the Add/Remove Programs Application. You cannot use it outside the Add/Remove Programs application. The information given by this interface includes a list of supported management actions and whether the application is currently installed.</para>
+    </summary>
+    <seealso cref="IPublishedApp" />
+  </member>
+</doc>

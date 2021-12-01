@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_INLINE_OBJECT_METRICS">
+    <summary>
+      <para>Contains properties describing the geometric measurement of an
+application-defined inline object.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_INLINE_OBJECT_METRICS.width">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The width of the inline object.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_INLINE_OBJECT_METRICS.height">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The height of the inline object.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_INLINE_OBJECT_METRICS.baseline">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The distance from the top of the object to the point where it is lined up with the adjacent text.
+If the baseline is at the bottom, then <b>baseline</b> simply equals <b>height</b>.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_INLINE_OBJECT_METRICS.supportsSideways">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>A Boolean flag that indicates whether the object is to be placed upright or alongside the text baseline for vertical text.</para>
+    </summary>
+  </member>
+</doc>

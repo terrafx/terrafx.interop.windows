@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY">
+    <summary>
+      <para>Used to impose restrictions on what system calls can be invoked by a process.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.Flags">
+    <summary>
+      <para>This member is reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisallowWin32kSystemCalls">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditDisallowWin32kSystemCalls">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
+    <summary>
+      <h4>- DisallowWin32kSystemCalls : 1</h4>
+      <para>When set to 1, the process is not permitted to perform GUI system calls.</para>
+      <h4>- ReservedFlags : 31</h4>
+      <para>This member is reserved for system use.</para>
+    </summary>
+  </member>
+</doc>

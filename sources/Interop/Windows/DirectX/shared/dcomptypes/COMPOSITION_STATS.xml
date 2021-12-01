@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPOSITION_STATS">
+    <summary>
+      <para>Describes timing and composition information.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_STATS.presentCount">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The running total count of times that a frame was presented to the target.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_STATS.refreshCount">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The running total count of v-blanks at which the last frame was presented to the target.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_STATS.virtualRefreshCount">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_STATS.time">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT64</a></b></para>
+    </summary>
+  </member>
+</doc>

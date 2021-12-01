@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFContentDecryptorContext.InitializeHardwareKey">
+    <summary>
+      <para>Allows the display driver to return IHV-specific information used when initializing a new hardware key.</para>
+    </summary>
+    <param name="InputPrivateDataByteCount">
+      <para>The number of bytes in the buffer that <i>InputPrivateData</i> specifies.</para>
+    </param>
+    <param name="InputPrivateData">
+      <para>The contents of this parameter are defined by the implementation of
+the protection system that runs in the security processor. The contents may contain data about license or stream properties.</para>
+    </param>
+    <param name="OutputPrivateData">
+      <para>The return data is also defined by the implementation of the protection system implementation
+that runs in the security processor.  The contents may contain data associated with the underlying hardware key.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFContentDecryptorContext" />
+  </member>
+  <member name="IMFContentDecryptorContext">
+    <summary>
+      <para>Allows a decryptor to manage hardware keys and decrypt hardware samples.</para>
+    </summary>
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

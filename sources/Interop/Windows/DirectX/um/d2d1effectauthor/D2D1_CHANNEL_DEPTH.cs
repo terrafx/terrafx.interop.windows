@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_CHANNEL_DEPTH.xml' path='doc/member[@name="D2D1_CHANNEL_DEPTH"]/*' />
 public enum D2D1_CHANNEL_DEPTH : uint
 {
+    /// <include file='D2D1_CHANNEL_DEPTH.xml' path='doc/member[@name="D2D1_CHANNEL_DEPTH.D2D1_CHANNEL_DEPTH_DEFAULT"]/*' />
     D2D1_CHANNEL_DEPTH_DEFAULT = 0,
+
+    /// <include file='D2D1_CHANNEL_DEPTH.xml' path='doc/member[@name="D2D1_CHANNEL_DEPTH.D2D1_CHANNEL_DEPTH_1"]/*' />
     D2D1_CHANNEL_DEPTH_1 = 1,
+
+    /// <include file='D2D1_CHANNEL_DEPTH.xml' path='doc/member[@name="D2D1_CHANNEL_DEPTH.D2D1_CHANNEL_DEPTH_4"]/*' />
     D2D1_CHANNEL_DEPTH_4 = 4,
+
+    /// <include file='D2D1_CHANNEL_DEPTH.xml' path='doc/member[@name="D2D1_CHANNEL_DEPTH.D2D1_CHANNEL_DEPTH_FORCE_DWORD"]/*' />
     D2D1_CHANNEL_DEPTH_FORCE_DWORD = 0xffffffff,
 }

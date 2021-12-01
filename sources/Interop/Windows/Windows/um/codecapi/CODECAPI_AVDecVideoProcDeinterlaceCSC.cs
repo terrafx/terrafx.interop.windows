@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecVideoProcDeinterlaceCSC.xml' path='doc/member[@name="CODECAPI_AVDecVideoProcDeinterlaceCSC"]/*' />
 [Guid("F7DB8A31-4F48-4EE8-AE31-8B6EBE558AE2")]
 public partial struct CODECAPI_AVDecVideoProcDeinterlaceCSC
 {

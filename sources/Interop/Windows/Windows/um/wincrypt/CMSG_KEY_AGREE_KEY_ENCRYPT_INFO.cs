@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_KEY_AGREE_KEY_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_KEY_ENCRYPT_INFO"]/*' />
 public partial struct CMSG_KEY_AGREE_KEY_ENCRYPT_INFO
 {
+    /// <include file='CMSG_KEY_AGREE_KEY_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_KEY_ENCRYPT_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_KEY_AGREE_KEY_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_KEY_ENCRYPT_INFO.EncryptedKey"]/*' />
     public CRYPT_DATA_BLOB EncryptedKey;
 }

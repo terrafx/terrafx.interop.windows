@@ -7,17 +7,24 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpatialAudioClientActivationParams.xml' path='doc/member[@name="SpatialAudioClientActivationParams"]/*' />
 public partial struct SpatialAudioClientActivationParams
 {
+    /// <include file='SpatialAudioClientActivationParams.xml' path='doc/member[@name="SpatialAudioClientActivationParams.tracingContextId"]/*' />
     public Guid tracingContextId;
 
+    /// <include file='SpatialAudioClientActivationParams.xml' path='doc/member[@name="SpatialAudioClientActivationParams.appId"]/*' />
     public Guid appId;
 
+    /// <include file='SpatialAudioClientActivationParams.xml' path='doc/member[@name="SpatialAudioClientActivationParams.majorVersion"]/*' />
     public int majorVersion;
 
+    /// <include file='SpatialAudioClientActivationParams.xml' path='doc/member[@name="SpatialAudioClientActivationParams.minorVersion1"]/*' />
     public int minorVersion1;
 
+    /// <include file='SpatialAudioClientActivationParams.xml' path='doc/member[@name="SpatialAudioClientActivationParams.minorVersion2"]/*' />
     public int minorVersion2;
 
+    /// <include file='SpatialAudioClientActivationParams.xml' path='doc/member[@name="SpatialAudioClientActivationParams.minorVersion3"]/*' />
     public int minorVersion3;
 }

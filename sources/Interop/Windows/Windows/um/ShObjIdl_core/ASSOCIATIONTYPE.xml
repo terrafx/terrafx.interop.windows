@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ASSOCIATIONTYPE">
+    <summary>
+      <para>Specifies the type of association for an application. Used by methods of the <see cref="IApplicationAssociationRegistration" /> interface.</para>
+    </summary>
+  </member>
+  <member name="ASSOCIATIONTYPE.AT_FILEEXTENSION">
+    <summary>
+      <para>Indicates a file name extension, such as <code>.htm</code> or <code>.mp3</code>.</para>
+    </summary>
+  </member>
+  <member name="ASSOCIATIONTYPE.AT_URLPROTOCOL">
+    <summary>
+      <para>Indicates a protocol, such as <code>http</code> or <code>mailto</code>.</para>
+    </summary>
+  </member>
+  <member name="ASSOCIATIONTYPE.AT_STARTMENUCLIENT">
+    <summary>
+      <para>Indicates the owner of the startmenu client for a mail or Internet hyperlink. As of Windows 7, this value is used only for the MAPI sendmail client.</para>
+    </summary>
+  </member>
+  <member name="ASSOCIATIONTYPE.AT_MIMETYPE">
+    <summary>
+      <para>Indicates the MIME type, such as <code>audio/mp3</code>.</para>
+    </summary>
+  </member>
+</doc>

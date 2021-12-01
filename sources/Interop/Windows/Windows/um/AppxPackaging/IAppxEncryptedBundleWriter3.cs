@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxEncryptedBundleWriter3.xml' path='doc/member[@name="IAppxEncryptedBundleWriter3"]/*' />
 [Guid("0D34DEB3-5CAE-4DD3-977C-504932A51D31")]
 [NativeTypeName("struct IAppxEncryptedBundleWriter3 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter3 : IAppxEncryptedBundleW
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter3 : IAppxEncryptedBundleW
         return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter3 : IAppxEncryptedBundleW
         return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, uint>)(lpVtbl[1]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter3 : IAppxEncryptedBundleW
         return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, uint>)(lpVtbl[2]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxEncryptedBundleWriter3.xml' path='doc/member[@name="IAppxEncryptedBundleWriter3.AddPayloadPackageEncrypted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter3 : IAppxEncryptedBundleW
         return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, ushort*, IStream*, BOOL, int>)(lpVtbl[3]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this), fileName, packageStream, isDefaultApplicablePackage);
     }
 
+    /// <include file='IAppxEncryptedBundleWriter3.xml' path='doc/member[@name="IAppxEncryptedBundleWriter3.AddExternalPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)

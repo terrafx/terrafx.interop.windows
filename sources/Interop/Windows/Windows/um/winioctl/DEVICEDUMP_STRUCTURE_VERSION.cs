@@ -7,15 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICEDUMP_STRUCTURE_VERSION.xml' path='doc/member[@name="DEVICEDUMP_STRUCTURE_VERSION"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct DEVICEDUMP_STRUCTURE_VERSION
 {
+    /// <include file='DEVICEDUMP_STRUCTURE_VERSION.xml' path='doc/member[@name="DEVICEDUMP_STRUCTURE_VERSION.dwSignature"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSignature;
 
+    /// <include file='DEVICEDUMP_STRUCTURE_VERSION.xml' path='doc/member[@name="DEVICEDUMP_STRUCTURE_VERSION.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='DEVICEDUMP_STRUCTURE_VERSION.xml' path='doc/member[@name="DEVICEDUMP_STRUCTURE_VERSION.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 }

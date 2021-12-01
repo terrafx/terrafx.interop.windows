@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFTrustedOutput.GetOutputTrustAuthorityByIndex">
+    <summary>
+      <para>Gets an output trust authority (OTA), specified by index.</para>
+    </summary>
+    <param name="dwIndex">
+      <para>Zero-based index of the OTA to retrieve. To get the number of OTAs provided by this object, call <see cref="IMFTrustedOutput.GetOutputTrustAuthorityCount" />.</para>
+    </param>
+    <param name="ppauthority">
+      <para>Receives a pointer to the <see cref="IMFOutputTrustAuthority" /> interface of the OTA. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTrustedOutput" />
+  </member>
+  <member name="IMFTrustedOutput.GetOutputTrustAuthorityCount">
+    <summary>
+      <para>Gets the number of output trust authorities (OTAs) provided by this trusted output. Each OTA reports a single action.</para>
+    </summary>
+    <param name="pcOutputTrustAuthorities">
+      <para>Receives the number of OTAs.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTrustedOutput" />
+  </member>
+  <member name="IMFTrustedOutput.IsFinal">
+    <summary>
+      <para>Queries whether this output is a policy sink, meaning it handles the rights and restrictions required by the input trust authority (ITA).</para>
+    </summary>
+    <param name="pfIsFinal">
+      <para>Receives a Boolean value. If <b>TRUE</b>, this object is a policy sink. If <b>FALSE</b>, the policy must be enforced further downstream.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A trusted output is generally considered to be a policy sink if it does not pass the media content that it receives anywhere else; or, if it does pass the media content elsewhere, either it protects the content using some proprietary method such as encryption, or it sufficiently devalues the content so as not to require protection.</para>
+    </remarks>
+    <seealso cref="IMFTrustedOutput" />
+  </member>
+  <member name="IMFTrustedOutput">
+    <summary>
+      <para>Implemented by components that provide output trust authorities (OTAs). Any Media Foundation transform (MFT) or media sink that is designed to work within the protected media path (PMP) and also sends protected content outside the Media Foundation pipeline must implement this interface.</para>
+      <para>The policy engine uses this interface to negotiate what type of content protection should be applied to the content. Applications do not use this interface directly.</para>
+    </summary>
+    <remarks>
+      <para>If an MFT supports <b>IMFTrustedOutput</b>, it must expose the interface through <b>QueryInterface</b>. The interface applies to all of the input streams on the MFT. (There is no mechanism to return a separate <b>IMFTrustedOutput</b> pointer for each stream.) The MFT must apply the  output policies to all of its input streams. If the MFT sends different streams to separate connectors, it must report all of the connector attributes.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

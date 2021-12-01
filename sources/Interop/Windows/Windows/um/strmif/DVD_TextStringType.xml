@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_TextStringType">
+    <summary>
+      <para>Defines a subset of the DVD text-string types.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="IDvdInfo2.GetDVDTextStringAsUnicode" /> and <see cref="IDvdInfo2.GetDVDTextStringAsNative" /> methods return this enumeration type. The value specifies how the text string is categorized. These methods can also return identifiers that are not defined in this enumeration. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-dvd-text-strings">Working with DVD Text Strings</a>.</para>
+      <para>Not every DVD text string identifier is included in this enumeration, so an authored DVD might include other values.</para>
+      <para>One important identifier that is not included in this enumeration is 0xF0, the code for sorting. You can use this string to sort the string data. It can be a unique number or a repetition of a previous string with the word order changed. For example, a DVD might have a string of 0x30 (DVD_General_Name) with the value "The Greatest Hits", which might be followed by another string of type 0xF0 with the value "Greatest Hits, The". As with content strings, however, the use of the sorting string is not strictly defined.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-dvd-text-strings">Working with DVD Text Strings</seealso>
+  </member>
+  <member name="DVD_TextStringType.DVD_Struct_Volume">
+    <summary>
+      <para>Indicates the top-level of the logical hierarchy. Refers to the entire contents of a one-sided disc or one side of a two-sided disc.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Struct_Title">
+    <summary>
+      <para>Indicates that all content strings, until the next <b>DVD_Struct_Title</b>, belong to one title.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Struct_ParentalID">
+    <summary>
+      <para>Indicates the parental ID of the following strings.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Struct_PartOfTitle">
+    <summary>
+      <para>Indicates that all content strings, until the next <b>DVD_Struct_PartOfTitle</b>, belong to one chapter.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Struct_Cell">
+    <summary>
+      <para>Indicates that all content strings, until the next <b>DVD_Struct_Cell</b>, belong to one cell, which can be a scene from a chapter.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Stream_Audio">
+    <summary>
+      <para>Indicates that the following content strings refer to the audio stream.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Stream_Subpicture">
+    <summary>
+      <para>Indicates that the following content strings refer to the subpicture stream.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Stream_Angle">
+    <summary>
+      <para>Indicates that the following content strings refer to the angle.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Channel_Audio">
+    <summary>
+      <para>Indicates that the following content strings refer to the audio channel.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_General_Name">
+    <summary>
+      <para>Indicates the most important content string. Strings of this type contain the name of the volume, title, chapter, and so on, and can follow any structure identifiers.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_General_Comments">
+    <summary>
+      <para>Identifies a content string with additional information about the title, chapter, and so on, described by the <b>DVD_General_Name</b> string. The exact nature or structure of these comments is not defined.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Series">
+    <summary>
+      <para>Identifies a content string containing the name of a series to which the title belongs.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Movie">
+    <summary>
+      <para>Identifies a content string with the main movie title.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Video">
+    <summary>
+      <para>Identifies a content string containing the name of the video title.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Album">
+    <summary>
+      <para>Identifies a content string containing the name of the album title.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Song">
+    <summary>
+      <para>Identifies a content string containing the name of the song title.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Other">
+    <summary>
+      <para>Identifies a content string containing the name of the title of some other genre.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Sub_Series">
+    <summary>
+      <para>Identifies a content string with the name of the series localized to a particular country/region.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Sub_Movie">
+    <summary>
+      <para>Identifies a content string with the movie title localized to a particular country/region.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Sub_Video">
+    <summary>
+      <para>Identifies a content string with the video title localized to a particular country/region.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Sub_Album">
+    <summary>
+      <para>Identifies a content string with the album title localized to a particular country/region.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Sub_Song">
+    <summary>
+      <para>Identifies a content string with the song title localized to a particular country/region.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Sub_Other">
+    <summary>
+      <para>Identifies a content string with the title of some other genre localized to a particular country/region.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Orig_Series">
+    <summary>
+      <para>Identifies a content string with the original name of the series.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Orig_Movie">
+    <summary>
+      <para>Identifies a content string with the original name of the movie.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Orig_Video">
+    <summary>
+      <para>Identifies a content string with the original name of the video.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Orig_Album">
+    <summary>
+      <para>Identifies a content string with the original name of the album.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Orig_Song">
+    <summary>
+      <para>Identifies a content string with the original name of the song.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Title_Orig_Other">
+    <summary>
+      <para>Identifies a content string with the original name of the content.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Other_Scene">
+    <summary>
+      <para>Identifies a content string pertaining to a particular scene in a movie or video.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Other_Cut">
+    <summary>
+      <para>Identifies a content string pertaining to a particular cut in a movie or video.</para>
+    </summary>
+  </member>
+  <member name="DVD_TextStringType.DVD_Other_Take">
+    <summary>
+      <para>Identifies a content string pertaining to a particular take in a movie or video.</para>
+    </summary>
+  </member>
+</doc>

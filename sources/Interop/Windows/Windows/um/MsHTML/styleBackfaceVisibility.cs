@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBackfaceVisibility.xml' path='doc/member[@name="styleBackfaceVisibility"]/*' />
 public enum styleBackfaceVisibility
 {
+    /// <include file='styleBackfaceVisibility.xml' path='doc/member[@name="styleBackfaceVisibility.styleBackfaceVisibilityVisible"]/*' />
     styleBackfaceVisibilityVisible = 0,
+
+    /// <include file='styleBackfaceVisibility.xml' path='doc/member[@name="styleBackfaceVisibility.styleBackfaceVisibilityHidden"]/*' />
     styleBackfaceVisibilityHidden = 1,
+
+    /// <include file='styleBackfaceVisibility.xml' path='doc/member[@name="styleBackfaceVisibility.styleBackfaceVisibilityNotSet"]/*' />
     styleBackfaceVisibilityNotSet = 2,
+
+    /// <include file='styleBackfaceVisibility.xml' path='doc/member[@name="styleBackfaceVisibility.styleBackfaceVisibility_Max"]/*' />
     styleBackfaceVisibility_Max = 2147483647,
 }

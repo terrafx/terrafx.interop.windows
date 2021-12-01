@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMP12MuxSysAudioLock.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxSysAudioLock"]/*' />
 [Guid("0FBB5752-1D43-47BF-BD79-F2293D8CE337")]
 public partial struct CODECAPI_AVEncMP12MuxSysAudioLock
 {

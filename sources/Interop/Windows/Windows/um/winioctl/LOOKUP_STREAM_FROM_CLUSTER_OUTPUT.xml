@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT">
+    <summary>
+      <para>Received as output from the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_lookup_stream_from_cluster">FSCTL_LOOKUP_STREAM_FROM_CLUSTER</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_lookup_stream_from_cluster">FSCTL_LOOKUP_STREAM_FROM_CLUSTER</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+  </member>
+  <member name="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT.Offset">
+    <summary>
+      <para>Offset from the beginning of this structure to the first entry returned.  If no entries are returned, this value is zero.</para>
+    </summary>
+  </member>
+  <member name="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT.NumberOfMatches">
+    <summary>
+      <para>Number of matches to the input criteria.  Note that more matches may be found than entries returned if the buffer provided is not large enough.</para>
+    </summary>
+  </member>
+  <member name="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT.BufferSizeRequired">
+    <summary>
+      <para>Minimum size of the buffer, in bytes, which would be needed to contain all matching entries to the input criteria.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DCB">
+    <summary>
+      <para>Defines the control setting for a serial communications device.</para>
+    </summary>
+    <remarks>
+      <para>When a <b>DCB</b> structure is used to configure the 8250, the
+following restrictions apply to the values specified for the <b>ByteSize</b> and
+<b>StopBits</b> members:</para>
+      <list type="bullet">
+        <item>
+          <description>The number of data bits must be 5 to 8 bits.</description>
+        </item>
+        <item>
+          <description>The use of 5 data bits with 2 stop bits is an invalid combination, as is 6, 7, or 8 data bits with 1.5 stop
+bits.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="BuildCommDCB" />
+    <seealso cref="ClearCommError" />
+    <seealso cref="EscapeCommFunction" />
+    <seealso cref="GetCommState" />
+    <seealso cref="SetCommState" />
+  </member>
+  <member name="DCB.DCBlength">
+    <summary>
+      <para>The length of the structure, in bytes. The caller must set this member to
+<code>sizeof(DCB)</code>.</para>
+    </summary>
+  </member>
+  <member name="DCB.BaudRate">
+    <summary>
+      <para>The baud rate at which the communications device operates. This member can be an actual baud rate value, or
+one of the following indexes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_110</b>
+                </description>
+              </item>
+              <item>
+                <description>110</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>110 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_300</b>
+                </description>
+              </item>
+              <item>
+                <description>300</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>300 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_600</b>
+                </description>
+              </item>
+              <item>
+                <description>600</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>600 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_1200</b>
+                </description>
+              </item>
+              <item>
+                <description>1200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>1200 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_2400</b>
+                </description>
+              </item>
+              <item>
+                <description>2400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>2400 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_4800</b>
+                </description>
+              </item>
+              <item>
+                <description>4800</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>4800 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_9600</b>
+                </description>
+              </item>
+              <item>
+                <description>9600</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>9600 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_14400</b>
+                </description>
+              </item>
+              <item>
+                <description>14400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>14400 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_19200</b>
+                </description>
+              </item>
+              <item>
+                <description>19200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>19200 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_38400</b>
+                </description>
+              </item>
+              <item>
+                <description>38400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>38400 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_57600</b>
+                </description>
+              </item>
+              <item>
+                <description>57600</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>57600 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_115200</b>
+                </description>
+              </item>
+              <item>
+                <description>115200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>115200 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_128000</b>
+                </description>
+              </item>
+              <item>
+                <description>128000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>128000 bps</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CBR_256000</b>
+                </description>
+              </item>
+              <item>
+                <description>256000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>256000 bps</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DCB.fBinary">
+    <summary>
+      <para>If this member is <b>TRUE</b>, binary mode is enabled. Windows does not support
+nonbinary mode transfers, so this member must be <b>TRUE</b>.</para>
+    </summary>
+  </member>
+  <member name="DCB.fParity">
+    <summary>
+      <para>If this member is <b>TRUE</b>, parity checking is performed and errors are
+reported.</para>
+    </summary>
+  </member>
+  <member name="DCB.fOutxCtsFlow">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the CTS (clear-to-send) signal is monitored for output
+flow control. If this member is <b>TRUE</b> and CTS is turned off, output is suspended until
+CTS is sent again.</para>
+    </summary>
+  </member>
+  <member name="DCB.fOutxDsrFlow">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the DSR (data-set-ready) signal is monitored for output
+flow control. If this member is <b>TRUE</b> and DSR is turned off, output is suspended until
+DSR is sent again.</para>
+    </summary>
+  </member>
+  <member name="DCB.fDtrControl">
+    <summary>
+      <para>The DTR (data-terminal-ready) flow control. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DTR_CONTROL_DISABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Disables the DTR line when the device is opened and leaves it disabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DTR_CONTROL_ENABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Enables the DTR line when the device is opened and leaves it on.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DTR_CONTROL_HANDSHAKE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x02</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Enables DTR handshaking. If handshaking is enabled, it is an error for the application to adjust the line
+by using the <see cref="EscapeCommFunction" /> function.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DCB.fDsrSensitivity">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the communications driver is sensitive to the state of
+the DSR signal. The driver ignores any bytes received, unless the DSR modem input line is high.</para>
+    </summary>
+  </member>
+  <member name="DCB.fTXContinueOnXoff">
+    <summary>
+      <para>If this member is <b>TRUE</b>, transmission continues after the input buffer has come
+within <b>XoffLim</b> bytes of being full and the driver has transmitted the
+<b>XoffChar</b> character to stop receiving bytes. If this member is
+<b>FALSE</b>, transmission does not continue until the input buffer is within
+<b>XonLim</b> bytes of being empty and the driver has transmitted
+the <b>XonChar</b> character to resume reception.</para>
+    </summary>
+  </member>
+  <member name="DCB.fOutX">
+    <summary>
+      <para>Indicates whether XON/XOFF flow control is used during transmission. If this member is
+<b>TRUE</b>, transmission stops when the <b>XoffChar</b> character is
+received and starts again when the <b>XonChar</b> character is received.</para>
+    </summary>
+  </member>
+  <member name="DCB.fInX">
+    <summary>
+      <para>Indicates whether XON/XOFF flow control is used during reception. If this member is
+<b>TRUE</b>, the <b>XoffChar</b> character is sent when the input buffer
+comes within <b>XoffLim</b> bytes of being full, and the <b>XonChar</b></para>
+      <para>character is sent when the input buffer comes within <b>XonLim</b> bytes of being
+empty.</para>
+    </summary>
+  </member>
+  <member name="DCB.fErrorChar">
+    <summary>
+      <para>Indicates whether bytes received with parity errors are replaced with the character specified by the
+<b>ErrorChar</b> member. If this member is <b>TRUE</b> and the
+<b>fParity</b> member is <b>TRUE</b>, replacement occurs.</para>
+    </summary>
+  </member>
+  <member name="DCB.fNull">
+    <summary>
+      <para>If this member is <b>TRUE</b>, null bytes are discarded when received.</para>
+    </summary>
+  </member>
+  <member name="DCB.fRtsControl">
+    <summary>
+      <para>The RTS (request-to-send) flow control. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>RTS_CONTROL_DISABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Disables the RTS line when the device is opened and leaves it disabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>RTS_CONTROL_ENABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Enables the RTS line when the device is opened and leaves it on.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>RTS_CONTROL_HANDSHAKE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x02</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Enables RTS handshaking. The driver raises the RTS line when the "type-ahead" (input) buffer is less than
+one-half full and lowers the RTS line when the buffer is more than three-quarters full. If handshaking is
+enabled, it is an error for the application to adjust the line by using the
+<see cref="EscapeCommFunction" /> function.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>RTS_CONTROL_TOGGLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x03</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Specifies that the RTS line will be high if bytes are available for transmission. After all buffered
+bytes have been sent, the RTS line will be low.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DCB.fAbortOnError">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the driver terminates all read and write operations with
+an error status if an error occurs. The driver will not accept any further communications operations until the
+application has acknowledged the error by calling the
+<see cref="ClearCommError" /> function.</para>
+    </summary>
+  </member>
+  <member name="DCB.fDummy2">
+    <summary>
+      <para>Reserved; do not use.</para>
+    </summary>
+  </member>
+  <member name="DCB.wReserved">
+    <summary>
+      <para>Reserved; must be zero.</para>
+    </summary>
+  </member>
+  <member name="DCB.XonLim">
+    <summary>
+      <para>The minimum number of bytes in use allowed in the input buffer before flow control is activated to allow
+transmission by the sender. This assumes that either XON/XOFF, RTS, or DTR input flow control is specified in
+the <b>fInX</b>, <b>fRtsControl</b>, or
+<b>fDtrControl</b> members.</para>
+    </summary>
+  </member>
+  <member name="DCB.XoffLim">
+    <summary>
+      <para>The minimum number of free bytes allowed in the input buffer before flow control is activated to inhibit
+the sender. Note that the sender may transmit characters after the flow control signal has been activated, so
+this value should never be zero. This assumes that either XON/XOFF, RTS, or DTR input flow control is specified
+in the <b>fInX</b>, <b>fRtsControl</b>, or
+<b>fDtrControl</b> members. The maximum number of bytes in use allowed is calculated by
+subtracting this value from the size, in bytes, of the input buffer.</para>
+    </summary>
+  </member>
+  <member name="DCB.ByteSize">
+    <summary>
+      <para>The number of bits in the bytes transmitted and received.</para>
+    </summary>
+  </member>
+  <member name="DCB.Parity">
+    <summary>
+      <para>The parity scheme to be used. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EVENPARITY</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Even parity.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MARKPARITY</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Mark parity.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>NOPARITY</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>No parity.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>ODDPARITY</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Odd parity.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SPACEPARITY</b>
+                </description>
+              </item>
+              <item>
+                <description>4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Space parity.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DCB.StopBits">
+    <summary>
+      <para>The number of stop bits to be used. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>ONESTOPBIT</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>1 stop bit.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>ONE5STOPBITS</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>1.5 stop bits.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TWOSTOPBITS</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>2 stop bits.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DCB.XonChar">
+    <summary>
+      <para>The value of the XON character for both transmission and reception.</para>
+    </summary>
+  </member>
+  <member name="DCB.XoffChar">
+    <summary>
+      <para>The value of the XOFF character for both transmission and reception.</para>
+    </summary>
+  </member>
+  <member name="DCB.ErrorChar">
+    <summary>
+      <para>The value of the character used to replace bytes received with a parity error.</para>
+    </summary>
+  </member>
+  <member name="DCB.EofChar">
+    <summary>
+      <para>The value of the character used to signal the end of data.</para>
+    </summary>
+  </member>
+  <member name="DCB.EvtChar">
+    <summary>
+      <para>The value of the character used to signal an event.</para>
+    </summary>
+  </member>
+  <member name="DCB.wReserved1">
+    <summary>
+      <para>Reserved; do not use.</para>
+    </summary>
+  </member>
+</doc>

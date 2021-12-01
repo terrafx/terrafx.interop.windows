@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrConflictItems.GetCount">
+    <summary>
+      <para>Gets the conflict item count.</para>
+    </summary>
+    <param name="pCount">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the item count.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrConflictItems.GetItem">
+    <summary>
+      <para>Gets a specified conflict data item.</para>
+    </summary>
+    <param name="iIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The index of the conflict item to retrieve.</para>
+    </param>
+    <param name="pItemInfo">
+      <para>Type: <b><see cref="CONFIRM_CONFLICT_ITEM" />*</b></para>
+      <para>When this method returns successfully, contains a pointer to a <see cref="CONFIRM_CONFLICT_ITEM" /> structure that contains information about the conflict.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrConflictItems">
+    <summary>
+      <para>Exposes methods that get conflict item data and item count.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFRateSupport.GetFastestRate">
+    <summary>
+      <para>Gets the fastest playback rate supported by the object.</para>
+    </summary>
+    <param name="eDirection">
+      <para>Specifies whether to query to the fastest forward playback rate or reverse playback rate. The value is a member of the <see cref="MFRATE_DIRECTION" /> enumeration.</para>
+    </param>
+    <param name="fThin">
+      <para>If <b>TRUE</b>, the method retrieves the fastest thinned playback rate. Otherwise, the method retrieves the fastest non-thinned playback rate. For information about thinning, see <a href="https://docs.microsoft.com//windows/desktop/medfound/about-rate-control">About Rate Control</a>.</para>
+    </param>
+    <param name="pflRate">
+      <para>Receives the fastest playback rate that the object supports.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_REVERSE_UNSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support reverse playback.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_THINNING_UNSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support thinning.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For some formats (such as ASF), thinning means dropping all frames that are not I-frames. If a component produces stream data, such as a media source or a demultiplexer, it should pay attention to the <i>fThin</i> parameter and return MF_E_THINNING_UNSUPPORTED if it cannot thin the stream.</para>
+      <para>If the component processes or receives a stream (most transforms or media sinks), it may ignore this parameter if it does not care whether the stream is thinned. In the Media Session's implementation of rate support, if the transforms do not explicitly support reverse playback, the Media Session will attempt to playback in reverse with thinning but not without thinning. Therefore, most applications will set <i>fThin</i> to <b>TRUE</b> when using the Media Session for reverse playback.</para>
+      <para>If <i>eDirection</i> is MFRATE_REVERSE, the method retrieves the fastest reverse playback rate. This is a negative value, assuming the object supports reverse playback.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-determine-supported-rates">How to Determine Supported Rates</seealso>
+    <seealso cref="IMFRateSupport" />
+  </member>
+  <member name="IMFRateSupport.GetSlowestRate">
+    <summary>
+      <para>Retrieves the slowest playback rate supported by the object.</para>
+    </summary>
+    <param name="eDirection">
+      <para>Specifies whether to query to the slowest forward playback rate or reverse playback rate. The value is a member of the <see cref="MFRATE_DIRECTION" /> enumeration.</para>
+    </param>
+    <param name="fThin">
+      <para>If <b>TRUE</b>, the method retrieves the slowest thinned playback rate. Otherwise, the method retrieves the slowest non-thinned playback rate. For information about thinning, see <a href="https://docs.microsoft.com//windows/desktop/medfound/about-rate-control">About Rate Control</a>.</para>
+    </param>
+    <param name="pflRate">
+      <para>Receives the slowest playback rate that the object supports.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_REVERSE_UNSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support reverse playback.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_THINNING_UNSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support thinning.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The value returned in <i>plfRate</i> represents a lower bound. Playback at this rate is not guaranteed. Call <see cref="IMFRateSupport.IsRateSupported" /> to check whether the boundary rate is supported. For example, a component that supports arbitrarily slow rates will return zero in <i>pflRate</i>, and applications should call <b>IsRateSupported</b> separately to determine whether the component supports rate 0.</para>
+      <para>If <i>eDirection</i> is MFRATE_REVERSE, the method retrieves the slowest reverse playback rate. This is a negative value, assuming the object supports reverse playback.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-determine-supported-rates">How to Determine Supported Rates</seealso>
+    <seealso cref="IMFRateSupport" />
+  </member>
+  <member name="IMFRateSupport.IsRateSupported">
+    <summary>
+      <para>Queries whether the object supports a specified playback rate.</para>
+    </summary>
+    <param name="fThin">
+      <para>If <b>TRUE</b>, the method queries whether the object supports the playback rate with thinning. Otherwise, the method queries whether the object supports the playback rate without thinning. For information about thinning, see <a href="https://docs.microsoft.com//windows/desktop/medfound/about-rate-control">About Rate Control</a>.</para>
+    </param>
+    <param name="flRate">
+      <para>The playback rate to query.</para>
+    </param>
+    <param name="pflNearestSupportedRate">
+      <para>If the object does not support the playback rate given in <i>flRate</i>, this parameter receives the closest supported playback rate. If the method returns S_OK, this parameter receives the value given in <i>flRate</i>. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The object supports the specified rate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_REVERSE_UNSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support reverse playback.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_THINNING_UNSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support thinning.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_UNSUPPORTED_RATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support the specified rate.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-determine-supported-rates">How to Determine Supported Rates</seealso>
+    <seealso cref="IMFRateSupport" />
+  </member>
+  <member name="IMFRateSupport">
+    <summary>
+      <para>Queries the range of playback rates that are supported, including reverse playback.</para>
+      <para>To get a pointer to this interface, call <see cref="IMFGetService.GetService" /> with the service identifier MF_RATE_CONTROL_SERVICE.</para>
+    </summary>
+    <remarks>
+      <para>Applications can use this interface to discover the fastest and slowest playback rates that are possible, and to query whether a given playback rate is supported. Applications obtain this interface from the Media Session. Internally, the Media Session queries the objects in the pipeline. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/how-to-determine-supported-rates">How to Determine Supported Rates</a>.</para>
+      <para>To get the current playback rate and to change the playback rate, use the <see cref="IMFRateControl" /> interface.</para>
+      <para>Playback rates are expressed as a ratio the normal playback rate. Reverse playback is expressed as a negative rate. Playback is either <i>thinned</i> or <i>non-thinned</i>. In thinned playback, some of the source data is skipped (typically delta frames). In non-thinned playback, all of the source data is rendered.</para>
+      <para>You might need to implement this interface if you are writing a pipeline object (media source, transform, or media sink). For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/implementing-rate-control">Implementing Rate Control</a>.</para>
+    </remarks>
+    <seealso cref="IMFRateControl" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

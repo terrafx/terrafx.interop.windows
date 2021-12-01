@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLPerformanceNavigation.xml' path='doc/member[@name="HTMLPerformanceNavigation"]/*' />
 [Guid("30510751-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLPerformanceNavigation
 {

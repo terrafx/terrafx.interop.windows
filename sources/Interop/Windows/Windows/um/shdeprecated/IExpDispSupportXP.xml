@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IExpDispSupportXP.FindCIE4ConnectionPoint">
+    <summary>
+      <para>Deprecated. Gets a connection point for browser events.</para>
+    </summary>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Specifies an interface ID.</para>
+    </param>
+    <param name="ppccp">
+      <para>Type: <b>CIE4ConnectionPoint**</b></para>
+      <para>Receives the address of pointer to connection point.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExpDispSupportXP.OnInvoke">
+    <summary>
+      <para>Not implemented.</para>
+    </summary>
+    <param name="dispidMember">
+      <para>Type: <b>DISPID</b></para>
+      <para>Specifies a dispatch ID that identifies the member being invoked.</para>
+    </param>
+    <param name="iid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reserved. Must be IID_NULL.</para>
+    </param>
+    <param name="lcid">
+      <para>Type: <b>LCID</b></para>
+      <para>Specifies a locale ID providing a locale context in which to interpret arguments. Applications that do not support multiple national languages can ignore this parameter.</para>
+    </param>
+    <param name="wFlags">
+      <para>Type: <b>WORD</b></para>
+      <para>Specifies flags describing the context of the call.</para>
+    </param>
+    <param name="pdispparams">
+      <para>Type: <b><see cref="DISPPARAMS" />*</b></para>
+      <para>Specifies a pointer to a <see cref="DISPPARAMS" /> structure containing an array of arguments, an array of argument DISPIDs for named arguments, and counts for the number of elements in the arrays.</para>
+    </param>
+    <param name="pVarResult">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>Receives a pointer to the location where the result is to be stored, or <b>NULL</b> if the calling application expects no result. This argument is ignored if DISPATCH_PROPERTYPUT or DISPATCH_PROPERTYPUTREF is specified.</para>
+    </param>
+    <param name="pexcepinfo">
+      <para>Type: <b>EXCEPINFO*</b></para>
+      <para>Receives a pointer to a structure that contains exception information. This structure should be filled in if DISP_E_EXCEPTION is returned. Can be <b>NULL</b>.</para>
+    </param>
+    <param name="puArgErr">
+      <para>Type: <b>UINT*</b></para>
+      <para>Receives the index within the <b>rgvarg</b> member of the <see cref="DISPPARAMS" /> structure of the first argument that has an error.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns E_NOTIMPL.</para>
+    </returns>
+  </member>
+  <member name="IExpDispSupportXP.OnTranslateAccelerator">
+    <summary>
+      <para>Not implemented.</para>
+    </summary>
+    <param name="pMsg">
+      <para>Type: <b><see cref="MSG" />*</b></para>
+      <para>Specifies a pointer to the MSG structure describing the keystroke to be processed.</para>
+    </param>
+    <param name="grfModifiers">
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies the flags describing the state of the Control, Alt, and Shift keys. The value of the flag can be any valid <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms683763(v=vs.85)">KEYMODIFIERS</a> enumeration values.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>E_NOTIMPL</b>.</para>
+    </returns>
+  </member>
+  <member name="IExpDispSupportXP">
+    <summary>
+      <para>Deprecated. Exposes methods that allow the retrieval of properties, translation of keyboard accelerators, and determination of a connection point for certain events.</para>
+    </summary>
+  </member>
+</doc>

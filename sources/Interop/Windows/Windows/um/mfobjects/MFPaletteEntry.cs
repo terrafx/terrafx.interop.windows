@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFPaletteEntry.xml' path='doc/member[@name="MFPaletteEntry"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct MFPaletteEntry
 {
+    /// <include file='MFPaletteEntry.xml' path='doc/member[@name="MFPaletteEntry.ARGB"]/*' />
     [FieldOffset(0)]
     public MFARGB ARGB;
 
+    /// <include file='MFPaletteEntry.xml' path='doc/member[@name="MFPaletteEntry.AYCbCr"]/*' />
     [FieldOffset(0)]
     public MFAYUVSample AYCbCr;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInternetProtocolRoot.xml' path='doc/member[@name="IInternetProtocolRoot"]/*' />
 [Guid("79EAC9E3-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetProtocolRoot : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Inter
         return ((delegate* unmanaged<IInternetProtocolRoot*, Guid*, void**, int>)(lpVtbl[0]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Inter
         return ((delegate* unmanaged<IInternetProtocolRoot*, uint>)(lpVtbl[1]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Inter
         return ((delegate* unmanaged<IInternetProtocolRoot*, uint>)(lpVtbl[2]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetProtocolRoot.xml' path='doc/member[@name="IInternetProtocolRoot.Start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Start([NativeTypeName("LPCWSTR")] ushort* szUrl, IInternetProtocolSink* pOIProtSink, IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, HANDLE_PTR dwReserved)
@@ -46,6 +51,7 @@ public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Inter
         return ((delegate* unmanaged<IInternetProtocolRoot*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int>)(lpVtbl[3]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), szUrl, pOIProtSink, pOIBindInfo, grfPI, dwReserved);
     }
 
+    /// <include file='IInternetProtocolRoot.xml' path='doc/member[@name="IInternetProtocolRoot.Continue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Continue(PROTOCOLDATA* pProtocolData)
@@ -53,6 +59,7 @@ public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Inter
         return ((delegate* unmanaged<IInternetProtocolRoot*, PROTOCOLDATA*, int>)(lpVtbl[4]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), pProtocolData);
     }
 
+    /// <include file='IInternetProtocolRoot.xml' path='doc/member[@name="IInternetProtocolRoot.Abort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Abort(HRESULT hrReason, [NativeTypeName("DWORD")] uint dwOptions)
@@ -60,6 +67,7 @@ public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Inter
         return ((delegate* unmanaged<IInternetProtocolRoot*, HRESULT, uint, int>)(lpVtbl[5]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), hrReason, dwOptions);
     }
 
+    /// <include file='IInternetProtocolRoot.xml' path='doc/member[@name="IInternetProtocolRoot.Terminate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Terminate([NativeTypeName("DWORD")] uint dwOptions)
@@ -67,6 +75,7 @@ public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Inter
         return ((delegate* unmanaged<IInternetProtocolRoot*, uint, int>)(lpVtbl[6]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), dwOptions);
     }
 
+    /// <include file='IInternetProtocolRoot.xml' path='doc/member[@name="IInternetProtocolRoot.Suspend"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Suspend()
@@ -74,6 +83,7 @@ public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Inter
         return ((delegate* unmanaged<IInternetProtocolRoot*, int>)(lpVtbl[7]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetProtocolRoot.xml' path='doc/member[@name="IInternetProtocolRoot.Resume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Resume()

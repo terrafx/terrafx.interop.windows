@@ -7,14 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ECHOWAVEFILTER.xml' path='doc/member[@name="ECHOWAVEFILTER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct ECHOWAVEFILTER
 {
+    /// <include file='ECHOWAVEFILTER.xml' path='doc/member[@name="ECHOWAVEFILTER.wfltr"]/*' />
     public WAVEFILTER wfltr;
 
+    /// <include file='ECHOWAVEFILTER.xml' path='doc/member[@name="ECHOWAVEFILTER.dwVolume"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVolume;
 
+    /// <include file='ECHOWAVEFILTER.xml' path='doc/member[@name="ECHOWAVEFILTER.dwDelay"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDelay;
 }

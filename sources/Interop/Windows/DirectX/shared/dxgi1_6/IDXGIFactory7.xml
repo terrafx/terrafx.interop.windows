@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXGIFactory7.RegisterAdaptersChangedEvent">
+    <summary>
+      <para>Registers to receive notification of changes whenever the adapter enumeration state changes.</para>
+    </summary>
+    <param name="hEvent">
+      <para>A handle to the event object.</para>
+    </param>
+    <param name="pdwCookie">
+      <para>A key value for the registered event.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; an error code otherwise.</para>
+    </returns>
+    <seealso cref="IDXGIFactory7" />
+    <seealso cref="UnregisterAdaptersChangedEvent" />
+  </member>
+  <member name="IDXGIFactory7.UnregisterAdaptersChangedEvent">
+    <summary>
+      <para>Unregisters  an event to stop receiving notifications when the adapter enumeration state changes.</para>
+    </summary>
+    <param name="dwCookie">
+      <para>A key value for the event to unregister.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; an error code otherwise.</para>
+    </returns>
+    <seealso cref="IDXGIFactory7" />
+    <seealso cref="RegisterAdaptersChangedEvent" />
+  </member>
+  <member name="IDXGIFactory7">
+    <summary>
+      <para>This interface enables registration for notifications to detect adapter enumeration state changes.</para>
+    </summary>
+  </member>
+</doc>

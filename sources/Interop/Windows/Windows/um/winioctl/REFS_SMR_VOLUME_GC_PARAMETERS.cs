@@ -5,24 +5,32 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS"]/*' />
 public unsafe partial struct REFS_SMR_VOLUME_GC_PARAMETERS
 {
+    /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS.Action"]/*' />
     public REFS_SMR_VOLUME_GC_ACTION Action;
 
+    /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS.Method"]/*' />
     public REFS_SMR_VOLUME_GC_METHOD Method;
 
+    /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS.IoGranularity"]/*' />
     [NativeTypeName("DWORD")]
     public uint IoGranularity;
 
+    /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS.CompressionFormat"]/*' />
     [NativeTypeName("DWORD")]
     public uint CompressionFormat;
 
+    /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS.Unused"]/*' />
     [NativeTypeName("DWORDLONG [8]")]
     public fixed ulong Unused[8];
 }

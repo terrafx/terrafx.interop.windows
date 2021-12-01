@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_ASSOCIATION_TYPE.xml' path='doc/member[@name="STORAGE_ASSOCIATION_TYPE"]/*' />
 public enum STORAGE_ASSOCIATION_TYPE
 {
+    /// <include file='STORAGE_ASSOCIATION_TYPE.xml' path='doc/member[@name="STORAGE_ASSOCIATION_TYPE.StorageIdAssocDevice"]/*' />
     StorageIdAssocDevice = 0,
+
+    /// <include file='STORAGE_ASSOCIATION_TYPE.xml' path='doc/member[@name="STORAGE_ASSOCIATION_TYPE.StorageIdAssocPort"]/*' />
     StorageIdAssocPort = 1,
+
+    /// <include file='STORAGE_ASSOCIATION_TYPE.xml' path='doc/member[@name="STORAGE_ASSOCIATION_TYPE.StorageIdAssocTarget"]/*' />
     StorageIdAssocTarget = 2,
 }

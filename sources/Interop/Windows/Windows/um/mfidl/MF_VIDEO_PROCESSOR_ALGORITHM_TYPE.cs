@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_VIDEO_PROCESSOR_ALGORITHM_TYPE.xml' path='doc/member[@name="MF_VIDEO_PROCESSOR_ALGORITHM_TYPE"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public enum MF_VIDEO_PROCESSOR_ALGORITHM_TYPE
 {
+    /// <include file='MF_VIDEO_PROCESSOR_ALGORITHM_TYPE.xml' path='doc/member[@name="MF_VIDEO_PROCESSOR_ALGORITHM_TYPE.MF_VIDEO_PROCESSOR_ALGORITHM_DEFAULT"]/*' />
     MF_VIDEO_PROCESSOR_ALGORITHM_DEFAULT = 0,
+
+    /// <include file='MF_VIDEO_PROCESSOR_ALGORITHM_TYPE.xml' path='doc/member[@name="MF_VIDEO_PROCESSOR_ALGORITHM_TYPE.MF_VIDEO_PROCESSOR_ALGORITHM_MRF_CRF_444"]/*' />
     MF_VIDEO_PROCESSOR_ALGORITHM_MRF_CRF_444 = 1,
 }

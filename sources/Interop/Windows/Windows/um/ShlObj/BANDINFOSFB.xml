@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BANDINFOSFB">
+    <summary>
+      <para>Contains information about a folder band. This structure is used with the <see cref="IShellFolderBand.GetBandInfoSFB" /> and <see cref="IShellFolderBand.SetBandInfoSFB" /> methods.</para>
+    </summary>
+  </member>
+  <member name="BANDINFOSFB.dwMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>A mask that indicates which members of this <b>BANDINFOSFB</b> structure are valid.  One or more of the following values.</para>
+      <h4>ISFB_MASK_STATE (0x00000001)</h4>
+      <para>The <b>dwStateMask</b> member is valid.</para>
+      <h4>ISFB_MASK_BKCOLOR (0x00000002)</h4>
+      <para>The <b>crBkgnd</b> member is valid.</para>
+      <h4>ISFB_MASK_VIEWMODE (0x00000004)</h4>
+      <para>The <b>wViewMode</b> member is valid.</para>
+      <h4>ISFB_MASK_SHELLFOLDER (0x00000008)</h4>
+      <para>The <b>psf</b> member is valid.</para>
+      <h4>ISFB_MASK_IDLIST (0x00000010)</h4>
+      <para>The <b>pidl</b> member is valid.</para>
+      <h4>ISFB_MASK_COLORS (0x00000020)</h4>
+      <para>The <b>crBtnLt</b> and <b>crBtnDk</b> members are valid.</para>
+    </summary>
+  </member>
+  <member name="BANDINFOSFB.dwStateMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>A mask that indicates which of the <b>dwState</b> bits are valid to be set or queried. One or more of the following values.</para>
+      <h4>ISFB_STATE_DEFAULT (0x00000000)</h4>
+      <para>None of the <b>dwState</b> bits.</para>
+      <h4>ISFB_STATE_DEBOSSED (0x00000001)</h4>
+      <para>Displays the object with a debossed state, which is with a sunken appearance.</para>
+      <h4>ISFB_STATE_ALLOWRENAME (0x00000002)</h4>
+      <para>Allow renaming and a context menu.</para>
+      <h4>ISFB_STATE_NOSHOWTEXT (0x00000004)</h4>
+      <para>Do not show text.</para>
+      <h4>ISFB_STATE_CHANNELBAR (0x00000010)</h4>
+      <para>Deprecated.</para>
+      <h4>ISFB_STATE_QLINKSMODE (0x00000020)</h4>
+      <para>Deprecated.</para>
+      <h4>ISFB_STATE_FULLOPEN (0x00000040)</h4>
+      <para>Maximize when opened.</para>
+      <h4>ISFB_STATE_NONAMESORT (0x00000080)</h4>
+      <para>The band does not sort by name.</para>
+      <h4>ISFB_STATE_BTNMINSIZE (0x00000100)</h4>
+      <para>The band reports the minimum size of its button when queried.</para>
+    </summary>
+  </member>
+  <member name="BANDINFOSFB.dwState">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>State bits. One of the values listed for <b>dwStateMask</b>.</para>
+    </summary>
+  </member>
+  <member name="BANDINFOSFB.crBkgnd">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> that contains the background color of the band.</para>
+    </summary>
+  </member>
+  <member name="BANDINFOSFB.crBtnLt">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> that contains the light button color.</para>
+    </summary>
+  </member>
+  <member name="BANDINFOSFB.crBtnDk">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> that contains the dark button color.</para>
+    </summary>
+  </member>
+  <member name="BANDINFOSFB.wViewMode">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>View mode of the band. One of the following values.</para>
+      <h4>ISFBVIEWMODE_SMALLICONS (0x00000001)</h4>
+      <para>Use small icons on the folder band.</para>
+      <h4>ISFBVIEWMODE_LARGEICONS (0x00000002)</h4>
+      <para>Use large icons on the folder band.</para>
+      <h4>ISFBVIEWMODE_LOGOS (0x00000003a)</h4>
+      <para>
+        <b>Not supported under Windows Vista or later. Not supported under Internet Explorer version 7 or later.</b>
+      </para>
+    </summary>
+  </member>
+  <member name="BANDINFOSFB.wAlign">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+    </summary>
+  </member>
+  <member name="BANDINFOSFB.psf">
+    <summary>
+      <para>Type: <b><see cref="IShellFolder" />*</b></para>
+      <para>A pointer to an <see cref="IShellFolder" /> object.</para>
+    </summary>
+  </member>
+  <member name="BANDINFOSFB.pidl">
+    <summary>
+      <para>Type: <b>PIDLIST_ABSOLUTE</b></para>
+      <para>A PIDL.</para>
+    </summary>
+  </member>
+</doc>

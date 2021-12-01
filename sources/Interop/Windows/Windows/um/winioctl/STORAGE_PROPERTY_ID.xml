@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_PROPERTY_ID">
+    <summary>
+      <para>Enumerates the possible values of the <b>PropertyId</b> member of the <see cref="STORAGE_PROPERTY_QUERY" /> structure passed as input to the <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> request to retrieve the properties of a storage device or adapter.</para>
+    </summary>
+    <remarks>
+      <para>The optional output buffer returned through the <i>lpOutBuffer</i> parameter of the <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> control code request can be one of several structures depending on the value of the <b>PropertyId</b> member of the <see cref="STORAGE_PROPERTY_QUERY" /> structure pointed to by the <i>lpInBuffer</i> parameter. If the <b>QueryType</b> member of the <b>STORAGE_PROPERTY_QUERY</b> is set to <b>PropertyExistsQuery</b>, then no structure is returned.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-enumeration-types">Disk Management Enumeration Types</seealso>
+    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <seealso cref="STORAGE_PROPERTY_QUERY" />
+    <seealso cref="STORAGE_QUERY_TYPE" />
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the device descriptor, <see cref="STORAGE_DEVICE_DESCRIPTOR" />.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageAdapterProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the adapter descriptor, <see cref="STORAGE_ADAPTER_DESCRIPTOR" />.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceIdProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the device identifiers provided with the SCSI vital product data pages. Data is returned using the  <see cref="STORAGE_DEVICE_ID_DESCRIPTOR" /> structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceUniqueIdProperty">
+    <summary>
+      <para>
+        <b>Intended for driver usage.</b> Indicates that the caller is querying for the unique device identifiers. Data is returned using the <b>STORAGE_DEVICE_UNIQUE_IDENTIFIER</b> structure (see the storduid.h header in the DDK).</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:</b>  This value is not supported before Windows Vista and Windows Server 2008.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceWriteCacheProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the write cache property. Data is returned using the <see cref="STORAGE_WRITE_CACHE_PROPERTY" /> structure.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:</b>  This value is not supported before Windows Vista and Windows Server 2008.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageMiniportProperty">
+    <summary>
+      <para>Reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageAccessAlignmentProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the access alignment descriptor, <see cref="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR" />.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:</b>  This value is not supported before Windows Vista and Windows Server 2008.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceSeekPenaltyProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the seek penalty descriptor, <see cref="DEVICE_SEEK_PENALTY_DESCRIPTOR" />.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:</b>  This value is not supported before Windows 7 and Windows Server 2008 R2.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceTrimProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the trim descriptor, <see cref="DEVICE_TRIM_DESCRIPTOR" />.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:</b>  This value is not supported before Windows 7 and Windows Server 2008 R2.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceWriteAggregationProperty">
+    <summary>
+      <para>Reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceDeviceTelemetryProperty">
+    <summary>
+      <para>Reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceLBProvisioningProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the logical block provisioning property. Data is returned using the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> structure.</para>
+      <para>
+        <b>Windows 7, Windows Server 2008 R2, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:</b>  This value is not supported before Windows 8 and Windows Server 2012.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDevicePowerProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the device power descriptor. Data is returned using the <see cref="DEVICE_POWER_DESCRIPTOR" /> structure.</para>
+      <para>
+        <b>Windows 7, Windows Server 2008 R2, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:</b>  This value is not supported before Windows 8 and Windows Server 2012.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceCopyOffloadProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the copy offload  parameters property. Data is returned using the <see cref="DEVICE_COPY_OFFLOAD_DESCRIPTOR" /> structure.</para>
+      <para>
+        <b>Windows 7, Windows Server 2008 R2, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:</b>  This value is not supported before Windows 8 and Windows Server 2012.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceResiliencyProperty">
+    <summary>
+      <para>Reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceMediumProductType">
+    <summary>
+      <para>Indicates that the caller is querying for the medium product type. Data is returned using the <see cref="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR" /> structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageAdapterRpmbProperty">
+    <summary>
+      <para>Indicates that the caller is querying for RPMB support and properties. Data is returned using the <see cref="STORAGE_RPMB_DESCRIPTOR" /> structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageAdapterCryptoProperty">
+    <summary>
+      <para>Provides info on the storage adapter encryption capabilities. This is currently supported on UFS (Universal Flash Storage) adapters.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceIoCapabilityProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the device I/O capability property. Data is returned using the <see cref="DEVICE_IO_CAPABILITY_DESCRIPTOR" /> structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageAdapterProtocolSpecificProperty">
+    <summary>
+      <para>Indicates that the caller is querying for protocol-specific data from the  adapter. Data is returned using the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR" /> structure. See the remarks for more info.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceProtocolSpecificProperty">
+    <summary>
+      <para>Indicates that the caller is querying for protocol-specific data from the device. Data is returned using the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR" /> structure. See the remarks for more info.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageAdapterTemperatureProperty">
+    <summary>
+      <para>Indicates that the caller is querying temperature data from the adapter. Data is returned using the <see cref="STORAGE_TEMPERATURE_DATA_DESCRIPTOR" /> structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceTemperatureProperty">
+    <summary>
+      <para>Indicates that the caller is querying for temperature data from the device.  Data is returned using the <see cref="STORAGE_TEMPERATURE_DATA_DESCRIPTOR" /> structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageAdapterPhysicalTopologyProperty">
+    <summary>
+      <para>Indicates that the caller is querying for topology information from the adapter. Data is returned using the <see cref="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR" /> structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDevicePhysicalTopologyProperty">
+    <summary>
+      <para>Indicates that the caller is querying for topology information from the device. Data is returned using the <see cref="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR" /> structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceAttributesProperty">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceManagementStatus">
+    <summary>
+      <para>Provides health information about the storage device (specifically for the persistent memory stack).</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageAdapterSerialNumberProperty">
+    <summary>
+      <para>Indicates that the caller is querying for the adapter serial number. Data is returned using the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceLocationProperty">
+    <summary>
+      <para>Reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceNumaProperty">
+    <summary>
+      <para>Provides the non-uniform memory access (NUMA) node of the storage device.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceZonedDeviceProperty">
+    <summary>
+      <para>Reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceUnsafeShutdownCount">
+    <summary>
+      <para>Provides the unsafe shutdown count value used to determine if the device data might have been lost during a power loss event (specifically for the persistent memory stack).</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceEnduranceProperty">
+    <summary>
+      <para>Provides info on how many bytes have been read/write from a solid-state drive (SSD). This property is supported only for Non-Volatile Memory Express (NVMe) devices that implement a certain NVMe feature.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceLedStateProperty">
+    <summary>
+      <para>Provides info on the state of the LED associated with a storage device. This is a server-oriented feature.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageDeviceSelfEncryptionProperty">
+    <summary>
+      <para>Reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_ID.StorageFruIdProperty">
+    <summary>
+      <para>Provides identification info for a storage device that can be physically replaced with a Field Replacement Unit (FRU).</para>
+    </summary>
+  </member>
+</doc>

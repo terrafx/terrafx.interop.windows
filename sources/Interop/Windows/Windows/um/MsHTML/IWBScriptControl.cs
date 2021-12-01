@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl"]/*' />
 [Guid("A5170870-0CF8-11D1-8B91-0080C744F389")]
 [NativeTypeName("struct IWBScriptControl : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, Guid*, void**, int>)(lpVtbl[0]))((IWBScriptControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, uint>)(lpVtbl[1]))((IWBScriptControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, uint>)(lpVtbl[2]))((IWBScriptControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, uint*, int>)(lpVtbl[3]))((IWBScriptControl*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IWBScriptControl*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IWBScriptControl*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IWBScriptControl*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.raiseEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT raiseEvent([NativeTypeName("BSTR")] ushort* name, VARIANT eventData)
@@ -74,6 +83,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, ushort*, VARIANT, int>)(lpVtbl[7]))((IWBScriptControl*)Unsafe.AsPointer(ref this), name, eventData);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.bubbleEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT bubbleEvent()
@@ -81,6 +91,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, int>)(lpVtbl[8]))((IWBScriptControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.setContextMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT setContextMenu(VARIANT menuItemPairs)
@@ -88,6 +99,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, VARIANT, int>)(lpVtbl[9]))((IWBScriptControl*)Unsafe.AsPointer(ref this), menuItemPairs);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.put_selectableContent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_selectableContent([NativeTypeName("VARIANT_BOOL")] short v)
@@ -95,6 +107,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, short, int>)(lpVtbl[10]))((IWBScriptControl*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.get_selectableContent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_selectableContent([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, short*, int>)(lpVtbl[11]))((IWBScriptControl*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.get_frozen"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_frozen([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -109,6 +123,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, short*, int>)(lpVtbl[12]))((IWBScriptControl*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.put_scrollbar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_scrollbar([NativeTypeName("VARIANT_BOOL")] short v)
@@ -116,6 +131,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, short, int>)(lpVtbl[13]))((IWBScriptControl*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.get_scrollbar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_scrollbar([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, short*, int>)(lpVtbl[14]))((IWBScriptControl*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.get_version"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_version([NativeTypeName("BSTR *")] ushort** p)
@@ -130,6 +147,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, ushort**, int>)(lpVtbl[15]))((IWBScriptControl*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.get_visibility"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_visibility([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, short*, int>)(lpVtbl[16]))((IWBScriptControl*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.put_onvisibilitychange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_onvisibilitychange(VARIANT v)
@@ -144,6 +163,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
         return ((delegate* unmanaged<IWBScriptControl*, VARIANT, int>)(lpVtbl[17]))((IWBScriptControl*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.get_onvisibilitychange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_onvisibilitychange(VARIANT* p)

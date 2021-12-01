@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_CHARACTER_RANGES">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_CHARACTER_RANGES</b> enumeration contains values that specify the type of characters available in the font.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_CHARACTER_RANGES.DWRITE_PANOSE_CHARACTER_RANGES_ANY">
+    <summary>
+      <para>Any range.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CHARACTER_RANGES.DWRITE_PANOSE_CHARACTER_RANGES_NO_FIT">
+    <summary>
+      <para>No fit for range.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CHARACTER_RANGES.DWRITE_PANOSE_CHARACTER_RANGES_EXTENDED_COLLECTION">
+    <summary>
+      <para>The range includes extended collection.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CHARACTER_RANGES.DWRITE_PANOSE_CHARACTER_RANGES_LITERALS">
+    <summary>
+      <para>The range includes literals.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CHARACTER_RANGES.DWRITE_PANOSE_CHARACTER_RANGES_NO_LOWER_CASE">
+    <summary>
+      <para>The range doesn't include lower case.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CHARACTER_RANGES.DWRITE_PANOSE_CHARACTER_RANGES_SMALL_CAPS">
+    <summary>
+      <para>The range includes small capitals.</para>
+    </summary>
+  </member>
+</doc>

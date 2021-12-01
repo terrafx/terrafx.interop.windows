@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CV_AssociationKind_e.xml' path='doc/member[@name="CV_AssociationKind_e"]/*' />
 public enum CV_AssociationKind_e
 {
+    /// <include file='CV_AssociationKind_e.xml' path='doc/member[@name="CV_AssociationKind_e.CV_ASSOCIATIONKIND_NONE"]/*' />
     CV_ASSOCIATIONKIND_NONE,
+
+    /// <include file='CV_AssociationKind_e.xml' path='doc/member[@name="CV_AssociationKind_e.CV_ASSOCIATIONKIND_COROUTINE"]/*' />
     CV_ASSOCIATIONKIND_COROUTINE,
 }

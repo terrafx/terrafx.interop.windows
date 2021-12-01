@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msirbRebootReason.xml' path='doc/member[@name="msirbRebootReason"]/*' />
 public enum msirbRebootReason
 {
+    /// <include file='msirbRebootReason.xml' path='doc/member[@name="msirbRebootReason.msirbRebootUndeterminedReason"]/*' />
     msirbRebootUndeterminedReason = 0,
+
+    /// <include file='msirbRebootReason.xml' path='doc/member[@name="msirbRebootReason.msirbRebootInUseFilesReason"]/*' />
     msirbRebootInUseFilesReason = 1,
+
+    /// <include file='msirbRebootReason.xml' path='doc/member[@name="msirbRebootReason.msirbRebootScheduleRebootReason"]/*' />
     msirbRebootScheduleRebootReason = 2,
+
+    /// <include file='msirbRebootReason.xml' path='doc/member[@name="msirbRebootReason.msirbRebootForceRebootReason"]/*' />
     msirbRebootForceRebootReason = 3,
+
+    /// <include file='msirbRebootReason.xml' path='doc/member[@name="msirbRebootReason.msirbRebootCustomActionReason"]/*' />
     msirbRebootCustomActionReason = 4,
 }

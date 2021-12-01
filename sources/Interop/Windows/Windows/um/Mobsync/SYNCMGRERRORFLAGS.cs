@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGRERRORFLAGS.xml' path='doc/member[@name="SYNCMGRERRORFLAGS"]/*' />
 public enum SYNCMGRERRORFLAGS
 {
+    /// <include file='SYNCMGRERRORFLAGS.xml' path='doc/member[@name="SYNCMGRERRORFLAGS.SYNCMGRERRORFLAG_ENABLEJUMPTEXT"]/*' />
     SYNCMGRERRORFLAG_ENABLEJUMPTEXT = 0x1,
 }

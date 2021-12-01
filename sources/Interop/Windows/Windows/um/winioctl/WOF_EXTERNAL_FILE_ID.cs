@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WOF_EXTERNAL_FILE_ID.xml' path='doc/member[@name="WOF_EXTERNAL_FILE_ID"]/*' />
 public partial struct WOF_EXTERNAL_FILE_ID
 {
+    /// <include file='WOF_EXTERNAL_FILE_ID.xml' path='doc/member[@name="WOF_EXTERNAL_FILE_ID.FileId"]/*' />
     public FILE_ID_128 FileId;
 }

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUDIOCLIENT_ACTIVATION_PARAMS">
+    <summary>
+      <para>Specifies the activation parameters for a call to <see cref="ActivateAudioInterfaceAsync" />.</para>
+    </summary>
+    <seealso cref="AUDIOCLIENT_ACTIVATION_TYPE" />
+    <seealso cref="ActivateAudioInterfaceAsync" />
+  </member>
+  <member name="AUDIOCLIENT_ACTIVATION_PARAMS.ActivationType">
+    <summary>
+      <para>A member of the <see cref="AUDIOCLIENT_ACTIVATION_TYPE" /> specifying the type of audio interface activation. Currently default activation and loopback activation are supported.</para>
+    </summary>
+  </member>
+  <member name="AUDIOCLIENT_ACTIVATION_PARAMS.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="AUDIOCLIENT_ACTIVATION_PARAMS.DUMMYUNIONNAME.ProcessLoopbackParams">
+    <summary>
+      <para>A <see cref="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS" /> specifying the loopback parameters for the audio interface activation.</para>
+    </summary>
+  </member>
+</doc>

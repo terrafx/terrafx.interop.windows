@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XFORMCOORDS.xml' path='doc/member[@name="XFORMCOORDS"]/*' />
 public enum XFORMCOORDS
 {
+    /// <include file='XFORMCOORDS.xml' path='doc/member[@name="XFORMCOORDS.XFORMCOORDS_POSITION"]/*' />
     XFORMCOORDS_POSITION = 0x1,
+
+    /// <include file='XFORMCOORDS.xml' path='doc/member[@name="XFORMCOORDS.XFORMCOORDS_SIZE"]/*' />
     XFORMCOORDS_SIZE = 0x2,
+
+    /// <include file='XFORMCOORDS.xml' path='doc/member[@name="XFORMCOORDS.XFORMCOORDS_HIMETRICTOCONTAINER"]/*' />
     XFORMCOORDS_HIMETRICTOCONTAINER = 0x4,
+
+    /// <include file='XFORMCOORDS.xml' path='doc/member[@name="XFORMCOORDS.XFORMCOORDS_CONTAINERTOHIMETRIC"]/*' />
     XFORMCOORDS_CONTAINERTOHIMETRIC = 0x8,
+
+    /// <include file='XFORMCOORDS.xml' path='doc/member[@name="XFORMCOORDS.XFORMCOORDS_EVENTCOMPAT"]/*' />
     XFORMCOORDS_EVENTCOMPAT = 0x10,
 }

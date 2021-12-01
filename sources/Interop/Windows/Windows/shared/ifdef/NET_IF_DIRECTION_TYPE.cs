@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NET_IF_DIRECTION_TYPE.xml' path='doc/member[@name="NET_IF_DIRECTION_TYPE"]/*' />
 public enum NET_IF_DIRECTION_TYPE
 {
+    /// <include file='NET_IF_DIRECTION_TYPE.xml' path='doc/member[@name="NET_IF_DIRECTION_TYPE.NET_IF_DIRECTION_SENDRECEIVE"]/*' />
     NET_IF_DIRECTION_SENDRECEIVE,
+
+    /// <include file='NET_IF_DIRECTION_TYPE.xml' path='doc/member[@name="NET_IF_DIRECTION_TYPE.NET_IF_DIRECTION_SENDONLY"]/*' />
     NET_IF_DIRECTION_SENDONLY,
+
+    /// <include file='NET_IF_DIRECTION_TYPE.xml' path='doc/member[@name="NET_IF_DIRECTION_TYPE.NET_IF_DIRECTION_RECEIVEONLY"]/*' />
     NET_IF_DIRECTION_RECEIVEONLY,
+
+    /// <include file='NET_IF_DIRECTION_TYPE.xml' path='doc/member[@name="NET_IF_DIRECTION_TYPE.NET_IF_DIRECTION_MAXIMUM"]/*' />
     NET_IF_DIRECTION_MAXIMUM,
 }

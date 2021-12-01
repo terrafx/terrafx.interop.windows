@@ -7,11 +7,15 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENLISTMENT_BASIC_INFORMATION.xml' path='doc/member[@name="ENLISTMENT_BASIC_INFORMATION"]/*' />
 public partial struct ENLISTMENT_BASIC_INFORMATION
 {
+    /// <include file='ENLISTMENT_BASIC_INFORMATION.xml' path='doc/member[@name="ENLISTMENT_BASIC_INFORMATION.EnlistmentId"]/*' />
     public Guid EnlistmentId;
 
+    /// <include file='ENLISTMENT_BASIC_INFORMATION.xml' path='doc/member[@name="ENLISTMENT_BASIC_INFORMATION.TransactionId"]/*' />
     public Guid TransactionId;
 
+    /// <include file='ENLISTMENT_BASIC_INFORMATION.xml' path='doc/member[@name="ENLISTMENT_BASIC_INFORMATION.ResourceManagerId"]/*' />
     public Guid ResourceManagerId;
 }

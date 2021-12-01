@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyUI.xml' path='doc/member[@name="IPropertyUI"]/*' />
 [Guid("757A7D9F-919A-4118-99D7-DBB208C8CC66")]
 [NativeTypeName("struct IPropertyUI : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
         return ((delegate* unmanaged<IPropertyUI*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyUI*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
         return ((delegate* unmanaged<IPropertyUI*, uint>)(lpVtbl[1]))((IPropertyUI*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
         return ((delegate* unmanaged<IPropertyUI*, uint>)(lpVtbl[2]))((IPropertyUI*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyUI.xml' path='doc/member[@name="IPropertyUI.ParsePropertyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ParsePropertyName([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("FMTID *")] Guid* pfmtid, [NativeTypeName("PROPID *")] uint* ppid, [NativeTypeName("ULONG *")] uint* pchEaten)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
         return ((delegate* unmanaged<IPropertyUI*, ushort*, Guid*, uint*, uint*, int>)(lpVtbl[3]))((IPropertyUI*)Unsafe.AsPointer(ref this), pszName, pfmtid, ppid, pchEaten);
     }
 
+    /// <include file='IPropertyUI.xml' path='doc/member[@name="IPropertyUI.GetCannonicalName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCannonicalName([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
         return ((delegate* unmanaged<IPropertyUI*, Guid*, uint, ushort*, uint, int>)(lpVtbl[4]))((IPropertyUI*)Unsafe.AsPointer(ref this), fmtid, pid, pwszText, cchText);
     }
 
+    /// <include file='IPropertyUI.xml' path='doc/member[@name="IPropertyUI.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDisplayName([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("PROPERTYUI_NAME_FLAGS")] uint flags, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText)
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
         return ((delegate* unmanaged<IPropertyUI*, Guid*, uint, uint, ushort*, uint, int>)(lpVtbl[5]))((IPropertyUI*)Unsafe.AsPointer(ref this), fmtid, pid, flags, pwszText, cchText);
     }
 
+    /// <include file='IPropertyUI.xml' path='doc/member[@name="IPropertyUI.GetPropertyDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPropertyDescription([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText)
@@ -67,6 +75,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
         return ((delegate* unmanaged<IPropertyUI*, Guid*, uint, ushort*, uint, int>)(lpVtbl[6]))((IPropertyUI*)Unsafe.AsPointer(ref this), fmtid, pid, pwszText, cchText);
     }
 
+    /// <include file='IPropertyUI.xml' path='doc/member[@name="IPropertyUI.GetDefaultWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDefaultWidth([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("ULONG *")] uint* pcxChars)
@@ -74,6 +83,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
         return ((delegate* unmanaged<IPropertyUI*, Guid*, uint, uint*, int>)(lpVtbl[7]))((IPropertyUI*)Unsafe.AsPointer(ref this), fmtid, pid, pcxChars);
     }
 
+    /// <include file='IPropertyUI.xml' path='doc/member[@name="IPropertyUI.GetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetFlags([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("PROPERTYUI_FLAGS *")] uint* pflags)
@@ -81,6 +91,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
         return ((delegate* unmanaged<IPropertyUI*, Guid*, uint, uint*, int>)(lpVtbl[8]))((IPropertyUI*)Unsafe.AsPointer(ref this), fmtid, pid, pflags);
     }
 
+    /// <include file='IPropertyUI.xml' path='doc/member[@name="IPropertyUI.FormatForDisplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT FormatForDisplay([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppropvar, [NativeTypeName("PROPERTYUI_FORMAT_FLAGS")] uint puiff, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText)
@@ -88,6 +99,7 @@ public unsafe partial struct IPropertyUI : IPropertyUI.Interface
         return ((delegate* unmanaged<IPropertyUI*, Guid*, uint, PROPVARIANT*, uint, ushort*, uint, int>)(lpVtbl[9]))((IPropertyUI*)Unsafe.AsPointer(ref this), fmtid, pid, ppropvar, puiff, pwszText, cchText);
     }
 
+    /// <include file='IPropertyUI.xml' path='doc/member[@name="IPropertyUI.GetHelpInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetHelpInfo([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("LPWSTR")] ushort* pwszHelpFile, [NativeTypeName("DWORD")] uint cch, uint* puHelpID)

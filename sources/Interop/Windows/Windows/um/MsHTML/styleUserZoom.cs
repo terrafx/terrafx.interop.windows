@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleUserZoom.xml' path='doc/member[@name="styleUserZoom"]/*' />
 public enum styleUserZoom
 {
+    /// <include file='styleUserZoom.xml' path='doc/member[@name="styleUserZoom.styleUserZoomNotSet"]/*' />
     styleUserZoomNotSet = 0,
+
+    /// <include file='styleUserZoom.xml' path='doc/member[@name="styleUserZoom.styleUserZoomZoom"]/*' />
     styleUserZoomZoom = 1,
+
+    /// <include file='styleUserZoom.xml' path='doc/member[@name="styleUserZoom.styleUserZoomFixed"]/*' />
     styleUserZoomFixed = 2,
+
+    /// <include file='styleUserZoom.xml' path='doc/member[@name="styleUserZoom.styleUserZoom_Max"]/*' />
     styleUserZoom_Max = 2147483647,
 }

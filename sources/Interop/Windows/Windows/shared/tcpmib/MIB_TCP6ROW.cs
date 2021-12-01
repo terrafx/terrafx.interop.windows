@@ -5,23 +5,31 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_TCP6ROW.xml' path='doc/member[@name="MIB_TCP6ROW"]/*' />
 public partial struct MIB_TCP6ROW
 {
+    /// <include file='MIB_TCP6ROW.xml' path='doc/member[@name="MIB_TCP6ROW.State"]/*' />
     public MIB_TCP_STATE State;
 
+    /// <include file='MIB_TCP6ROW.xml' path='doc/member[@name="MIB_TCP6ROW.LocalAddr"]/*' />
     public IN6_ADDR LocalAddr;
 
+    /// <include file='MIB_TCP6ROW.xml' path='doc/member[@name="MIB_TCP6ROW.dwLocalScopeId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalScopeId;
 
+    /// <include file='MIB_TCP6ROW.xml' path='doc/member[@name="MIB_TCP6ROW.dwLocalPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalPort;
 
+    /// <include file='MIB_TCP6ROW.xml' path='doc/member[@name="MIB_TCP6ROW.RemoteAddr"]/*' />
     public IN6_ADDR RemoteAddr;
 
+    /// <include file='MIB_TCP6ROW.xml' path='doc/member[@name="MIB_TCP6ROW.dwRemoteScopeId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemoteScopeId;
 
+    /// <include file='MIB_TCP6ROW.xml' path='doc/member[@name="MIB_TCP6ROW.dwRemotePort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemotePort;
 }

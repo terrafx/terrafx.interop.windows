@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCandidateString.xml' path='doc/member[@name="ITfCandidateString"]/*' />
 [Guid("581F317E-FD9D-443F-B972-ED00467C5D40")]
 [NativeTypeName("struct ITfCandidateString : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface
         return ((delegate* unmanaged<ITfCandidateString*, Guid*, void**, int>)(lpVtbl[0]))((ITfCandidateString*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface
         return ((delegate* unmanaged<ITfCandidateString*, uint>)(lpVtbl[1]))((ITfCandidateString*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface
         return ((delegate* unmanaged<ITfCandidateString*, uint>)(lpVtbl[2]))((ITfCandidateString*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCandidateString.xml' path='doc/member[@name="ITfCandidateString.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetString([NativeTypeName("BSTR *")] ushort** pbstr)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface
         return ((delegate* unmanaged<ITfCandidateString*, ushort**, int>)(lpVtbl[3]))((ITfCandidateString*)Unsafe.AsPointer(ref this), pbstr);
     }
 
+    /// <include file='ITfCandidateString.xml' path='doc/member[@name="ITfCandidateString.GetIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetIndex([NativeTypeName("ULONG *")] uint* pnIndex)

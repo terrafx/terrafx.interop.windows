@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PLAYTO_SOURCE_CREATEFLAGS">
+    <summary>
+      <para>Contains flags for the <see cref="IPlayToSourceClassFactory.CreateInstance" /> method.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_NONE">
+    <summary></summary>
+  </member>
+  <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_IMAGE">
+    <summary>
+      <para>Share images.</para>
+    </summary>
+  </member>
+  <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_AUDIO">
+    <summary>
+      <para>Share audio.</para>
+    </summary>
+  </member>
+  <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_VIDEO">
+    <summary>
+      <para>Share video.</para>
+    </summary>
+  </member>
+  <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_PROTECTED">
+    <summary>
+      <para>Share DRM protected media.</para>
+      <para>Supported in Windows 8.1 and later.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DHPUBKEY_VER3.xml' path='doc/member[@name="DHPUBKEY_VER3"]/*' />
 public partial struct DHPUBKEY_VER3
 {
+    /// <include file='DHPUBKEY_VER3.xml' path='doc/member[@name="DHPUBKEY_VER3.magic"]/*' />
     [NativeTypeName("DWORD")]
     public uint magic;
 
+    /// <include file='DHPUBKEY_VER3.xml' path='doc/member[@name="DHPUBKEY_VER3.bitlenP"]/*' />
     [NativeTypeName("DWORD")]
     public uint bitlenP;
 
+    /// <include file='DHPUBKEY_VER3.xml' path='doc/member[@name="DHPUBKEY_VER3.bitlenQ"]/*' />
     [NativeTypeName("DWORD")]
     public uint bitlenQ;
 
+    /// <include file='DHPUBKEY_VER3.xml' path='doc/member[@name="DHPUBKEY_VER3.bitlenJ"]/*' />
     [NativeTypeName("DWORD")]
     public uint bitlenJ;
 
+    /// <include file='DHPUBKEY_VER3.xml' path='doc/member[@name="DHPUBKEY_VER3.DSSSeed"]/*' />
     public DSSSEED DSSSeed;
 }

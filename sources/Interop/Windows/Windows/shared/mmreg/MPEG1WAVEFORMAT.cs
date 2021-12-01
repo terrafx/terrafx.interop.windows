@@ -7,32 +7,42 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MPEG1WAVEFORMAT.xml' path='doc/member[@name="MPEG1WAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct MPEG1WAVEFORMAT
 {
+    /// <include file='MPEG1WAVEFORMAT.xml' path='doc/member[@name="MPEG1WAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='MPEG1WAVEFORMAT.xml' path='doc/member[@name="MPEG1WAVEFORMAT.fwHeadLayer"]/*' />
     [NativeTypeName("WORD")]
     public ushort fwHeadLayer;
 
+    /// <include file='MPEG1WAVEFORMAT.xml' path='doc/member[@name="MPEG1WAVEFORMAT.dwHeadBitrate"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwHeadBitrate;
 
+    /// <include file='MPEG1WAVEFORMAT.xml' path='doc/member[@name="MPEG1WAVEFORMAT.fwHeadMode"]/*' />
     [NativeTypeName("WORD")]
     public ushort fwHeadMode;
 
+    /// <include file='MPEG1WAVEFORMAT.xml' path='doc/member[@name="MPEG1WAVEFORMAT.fwHeadModeExt"]/*' />
     [NativeTypeName("WORD")]
     public ushort fwHeadModeExt;
 
+    /// <include file='MPEG1WAVEFORMAT.xml' path='doc/member[@name="MPEG1WAVEFORMAT.wHeadEmphasis"]/*' />
     [NativeTypeName("WORD")]
     public ushort wHeadEmphasis;
 
+    /// <include file='MPEG1WAVEFORMAT.xml' path='doc/member[@name="MPEG1WAVEFORMAT.fwHeadFlags"]/*' />
     [NativeTypeName("WORD")]
     public ushort fwHeadFlags;
 
+    /// <include file='MPEG1WAVEFORMAT.xml' path='doc/member[@name="MPEG1WAVEFORMAT.dwPTSLow"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPTSLow;
 
+    /// <include file='MPEG1WAVEFORMAT.xml' path='doc/member[@name="MPEG1WAVEFORMAT.dwPTSHigh"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPTSHigh;
 }

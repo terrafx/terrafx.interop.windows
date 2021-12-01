@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVGenerateHeaderPicDispExt.xml' path='doc/member[@name="CODECAPI_AVEncMPVGenerateHeaderPicDispExt"]/*' />
 [Guid("C6412F84-C03F-4F40-A00C-4293DF8395BB")]
 public partial struct CODECAPI_AVEncMPVGenerateHeaderPicDispExt
 {

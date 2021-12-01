@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVGOPSizeMin.xml' path='doc/member[@name="CODECAPI_AVEncMPVGOPSizeMin"]/*' />
 [Guid("7155CF20-D440-4852-AD0F-9C4ABFE37A6A")]
 public partial struct CODECAPI_AVEncMPVGOPSizeMin
 {

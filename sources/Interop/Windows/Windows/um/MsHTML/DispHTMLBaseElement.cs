@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DispHTMLBaseElement.xml' path='doc/member[@name="DispHTMLBaseElement"]/*' />
 [Guid("3050F518-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispHTMLBaseElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct DispHTMLBaseElement : DispHTMLBaseElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct DispHTMLBaseElement : DispHTMLBaseElement.Interface
         return ((delegate* unmanaged<DispHTMLBaseElement*, Guid*, void**, int>)(lpVtbl[0]))((DispHTMLBaseElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct DispHTMLBaseElement : DispHTMLBaseElement.Interface
         return ((delegate* unmanaged<DispHTMLBaseElement*, uint>)(lpVtbl[1]))((DispHTMLBaseElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct DispHTMLBaseElement : DispHTMLBaseElement.Interface
         return ((delegate* unmanaged<DispHTMLBaseElement*, uint>)(lpVtbl[2]))((DispHTMLBaseElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct DispHTMLBaseElement : DispHTMLBaseElement.Interface
         return ((delegate* unmanaged<DispHTMLBaseElement*, uint*, int>)(lpVtbl[3]))((DispHTMLBaseElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct DispHTMLBaseElement : DispHTMLBaseElement.Interface
         return ((delegate* unmanaged<DispHTMLBaseElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((DispHTMLBaseElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct DispHTMLBaseElement : DispHTMLBaseElement.Interface
         return ((delegate* unmanaged<DispHTMLBaseElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((DispHTMLBaseElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)

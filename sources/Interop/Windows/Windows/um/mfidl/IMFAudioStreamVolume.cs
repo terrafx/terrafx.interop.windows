@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFAudioStreamVolume.xml' path='doc/member[@name="IMFAudioStreamVolume"]/*' />
 [Guid("76B1BBDB-4EC8-4F36-B106-70A9316DF593")]
 [NativeTypeName("struct IMFAudioStreamVolume : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFAudioStreamVolume : IMFAudioStreamVolume.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFAudioStreamVolume : IMFAudioStreamVolume.Interfa
         return ((delegate* unmanaged<IMFAudioStreamVolume*, Guid*, void**, int>)(lpVtbl[0]))((IMFAudioStreamVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFAudioStreamVolume : IMFAudioStreamVolume.Interfa
         return ((delegate* unmanaged<IMFAudioStreamVolume*, uint>)(lpVtbl[1]))((IMFAudioStreamVolume*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFAudioStreamVolume : IMFAudioStreamVolume.Interfa
         return ((delegate* unmanaged<IMFAudioStreamVolume*, uint>)(lpVtbl[2]))((IMFAudioStreamVolume*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFAudioStreamVolume.xml' path='doc/member[@name="IMFAudioStreamVolume.GetChannelCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetChannelCount([NativeTypeName("UINT32 *")] uint* pdwCount)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFAudioStreamVolume : IMFAudioStreamVolume.Interfa
         return ((delegate* unmanaged<IMFAudioStreamVolume*, uint*, int>)(lpVtbl[3]))((IMFAudioStreamVolume*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='IMFAudioStreamVolume.xml' path='doc/member[@name="IMFAudioStreamVolume.SetChannelVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, [NativeTypeName("const float")] float fLevel)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFAudioStreamVolume : IMFAudioStreamVolume.Interfa
         return ((delegate* unmanaged<IMFAudioStreamVolume*, uint, float, int>)(lpVtbl[4]))((IMFAudioStreamVolume*)Unsafe.AsPointer(ref this), dwIndex, fLevel);
     }
 
+    /// <include file='IMFAudioStreamVolume.xml' path='doc/member[@name="IMFAudioStreamVolume.GetChannelVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, float* pfLevel)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFAudioStreamVolume : IMFAudioStreamVolume.Interfa
         return ((delegate* unmanaged<IMFAudioStreamVolume*, uint, float*, int>)(lpVtbl[5]))((IMFAudioStreamVolume*)Unsafe.AsPointer(ref this), dwIndex, pfLevel);
     }
 
+    /// <include file='IMFAudioStreamVolume.xml' path='doc/member[@name="IMFAudioStreamVolume.SetAllVolumes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetAllVolumes([NativeTypeName("UINT32")] uint dwCount, [NativeTypeName("const float *")] float* pfVolumes)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFAudioStreamVolume : IMFAudioStreamVolume.Interfa
         return ((delegate* unmanaged<IMFAudioStreamVolume*, uint, float*, int>)(lpVtbl[6]))((IMFAudioStreamVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
     }
 
+    /// <include file='IMFAudioStreamVolume.xml' path='doc/member[@name="IMFAudioStreamVolume.GetAllVolumes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetAllVolumes([NativeTypeName("UINT32")] uint dwCount, float* pfVolumes)

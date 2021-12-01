@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncInputVideoSystem.xml' path='doc/member[@name="eAVEncInputVideoSystem"]/*' />
 public enum eAVEncInputVideoSystem
 {
+    /// <include file='eAVEncInputVideoSystem.xml' path='doc/member[@name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_Unspecified"]/*' />
     eAVEncInputVideoSystem_Unspecified = 0,
+
+    /// <include file='eAVEncInputVideoSystem.xml' path='doc/member[@name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_PAL"]/*' />
     eAVEncInputVideoSystem_PAL = 1,
+
+    /// <include file='eAVEncInputVideoSystem.xml' path='doc/member[@name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_NTSC"]/*' />
     eAVEncInputVideoSystem_NTSC = 2,
+
+    /// <include file='eAVEncInputVideoSystem.xml' path='doc/member[@name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_SECAM"]/*' />
     eAVEncInputVideoSystem_SECAM = 3,
+
+    /// <include file='eAVEncInputVideoSystem.xml' path='doc/member[@name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_MAC"]/*' />
     eAVEncInputVideoSystem_MAC = 4,
+
+    /// <include file='eAVEncInputVideoSystem.xml' path='doc/member[@name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_HDV"]/*' />
     eAVEncInputVideoSystem_HDV = 5,
+
+    /// <include file='eAVEncInputVideoSystem.xml' path='doc/member[@name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_Component"]/*' />
     eAVEncInputVideoSystem_Component = 6,
 }

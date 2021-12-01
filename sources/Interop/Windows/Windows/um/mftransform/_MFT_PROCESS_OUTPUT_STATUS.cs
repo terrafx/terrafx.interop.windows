@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_MFT_PROCESS_OUTPUT_STATUS.xml' path='doc/member[@name="_MFT_PROCESS_OUTPUT_STATUS"]/*' />
 public enum _MFT_PROCESS_OUTPUT_STATUS
 {
+    /// <include file='_MFT_PROCESS_OUTPUT_STATUS.xml' path='doc/member[@name="_MFT_PROCESS_OUTPUT_STATUS.MFT_PROCESS_OUTPUT_STATUS_NEW_STREAMS"]/*' />
     MFT_PROCESS_OUTPUT_STATUS_NEW_STREAMS = 0x100,
 }

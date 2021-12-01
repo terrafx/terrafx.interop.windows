@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleTextUnderlinePosition.xml' path='doc/member[@name="styleTextUnderlinePosition"]/*' />
 public enum styleTextUnderlinePosition
 {
+    /// <include file='styleTextUnderlinePosition.xml' path='doc/member[@name="styleTextUnderlinePosition.styleTextUnderlinePositionBelow"]/*' />
     styleTextUnderlinePositionBelow = 0,
+
+    /// <include file='styleTextUnderlinePosition.xml' path='doc/member[@name="styleTextUnderlinePosition.styleTextUnderlinePositionAbove"]/*' />
     styleTextUnderlinePositionAbove = 1,
+
+    /// <include file='styleTextUnderlinePosition.xml' path='doc/member[@name="styleTextUnderlinePosition.styleTextUnderlinePositionAuto"]/*' />
     styleTextUnderlinePositionAuto = 2,
+
+    /// <include file='styleTextUnderlinePosition.xml' path='doc/member[@name="styleTextUnderlinePosition.styleTextUnderlinePositionNotSet"]/*' />
     styleTextUnderlinePositionNotSet = 3,
+
+    /// <include file='styleTextUnderlinePosition.xml' path='doc/member[@name="styleTextUnderlinePosition.styleTextUnderlinePosition_Max"]/*' />
     styleTextUnderlinePosition_Max = 2147483647,
 }

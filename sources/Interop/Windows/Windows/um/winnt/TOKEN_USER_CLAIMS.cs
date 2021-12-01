@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_USER_CLAIMS.xml' path='doc/member[@name="TOKEN_USER_CLAIMS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct TOKEN_USER_CLAIMS
 {
+    /// <include file='TOKEN_USER_CLAIMS.xml' path='doc/member[@name="TOKEN_USER_CLAIMS.UserClaims"]/*' />
     [NativeTypeName("PCLAIMS_BLOB")]
     public void* UserClaims;
 }

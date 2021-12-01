@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICommDlgBrowser3.xml' path='doc/member[@name="ICommDlgBrowser3"]/*' />
 [Guid("C8AD25A1-3294-41EE-8165-71174BD01C57")]
 [NativeTypeName("struct ICommDlgBrowser3 : ICommDlgBrowser2")]
 [NativeInheritance("ICommDlgBrowser2")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, Guid*, void**, int>)(lpVtbl[0]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, uint>)(lpVtbl[1]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, uint>)(lpVtbl[2]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ICommDlgBrowser.OnDefaultCommand" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnDefaultCommand(IShellView* ppshv)
@@ -46,6 +51,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, IShellView*, int>)(lpVtbl[3]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), ppshv);
     }
 
+    /// <inheritdoc cref="ICommDlgBrowser.OnStateChange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnStateChange(IShellView* ppshv, [NativeTypeName("ULONG")] uint uChange)
@@ -53,6 +59,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, IShellView*, uint, int>)(lpVtbl[4]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), ppshv, uChange);
     }
 
+    /// <inheritdoc cref="ICommDlgBrowser.IncludeObject" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IncludeObject(IShellView* ppshv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
@@ -60,6 +67,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, IShellView*, ITEMIDLIST*, int>)(lpVtbl[5]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), ppshv, pidl);
     }
 
+    /// <inheritdoc cref="ICommDlgBrowser2.Notify" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Notify(IShellView* ppshv, [NativeTypeName("DWORD")] uint dwNotifyType)
@@ -67,6 +75,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, IShellView*, uint, int>)(lpVtbl[6]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), ppshv, dwNotifyType);
     }
 
+    /// <inheritdoc cref="ICommDlgBrowser2.GetDefaultMenuText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] ushort* pszText, int cchMax)
@@ -74,6 +83,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, IShellView*, ushort*, int, int>)(lpVtbl[7]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), ppshv, pszText, cchMax);
     }
 
+    /// <inheritdoc cref="ICommDlgBrowser2.GetViewFlags" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetViewFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
@@ -81,6 +91,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, uint*, int>)(lpVtbl[8]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
+    /// <include file='ICommDlgBrowser3.xml' path='doc/member[@name="ICommDlgBrowser3.OnColumnClicked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OnColumnClicked(IShellView* ppshv, int iColumn)
@@ -88,6 +99,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, IShellView*, int, int>)(lpVtbl[9]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), ppshv, iColumn);
     }
 
+    /// <include file='ICommDlgBrowser3.xml' path='doc/member[@name="ICommDlgBrowser3.GetCurrentFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetCurrentFilter([NativeTypeName("LPWSTR")] ushort* pszFileSpec, int cchFileSpec)
@@ -95,6 +107,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
         return ((delegate* unmanaged<ICommDlgBrowser3*, ushort*, int, int>)(lpVtbl[10]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), pszFileSpec, cchFileSpec);
     }
 
+    /// <include file='ICommDlgBrowser3.xml' path='doc/member[@name="ICommDlgBrowser3.OnPreViewCreated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT OnPreViewCreated(IShellView* ppshv)

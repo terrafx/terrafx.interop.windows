@@ -7,10 +7,18 @@ using static TerraFX.Interop.Windows.SPRECOSTATE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechRecognizerState.xml' path='doc/member[@name="SpeechRecognizerState"]/*' />
 public enum SpeechRecognizerState
 {
+    /// <include file='SpeechRecognizerState.xml' path='doc/member[@name="SpeechRecognizerState.SRSInactive"]/*' />
     SRSInactive = SPRST_INACTIVE,
+
+    /// <include file='SpeechRecognizerState.xml' path='doc/member[@name="SpeechRecognizerState.SRSActive"]/*' />
     SRSActive = SPRST_ACTIVE,
+
+    /// <include file='SpeechRecognizerState.xml' path='doc/member[@name="SpeechRecognizerState.SRSActiveAlways"]/*' />
     SRSActiveAlways = SPRST_ACTIVE_ALWAYS,
+
+    /// <include file='SpeechRecognizerState.xml' path='doc/member[@name="SpeechRecognizerState.SRSInactiveWithPurge"]/*' />
     SRSInactiveWithPurge = SPRST_INACTIVE_WITH_PURGE,
 }

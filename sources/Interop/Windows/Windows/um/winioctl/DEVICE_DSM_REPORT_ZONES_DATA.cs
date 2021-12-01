@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DSM_REPORT_ZONES_DATA.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_DATA"]/*' />
 public partial struct DEVICE_DSM_REPORT_ZONES_DATA
 {
+    /// <include file='DEVICE_DSM_REPORT_ZONES_DATA.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_DATA.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='DEVICE_DSM_REPORT_ZONES_DATA.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_DATA.ZoneCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint ZoneCount;
 
+    /// <include file='DEVICE_DSM_REPORT_ZONES_DATA.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_DATA.Attributes"]/*' />
     public STORAGE_ZONES_ATTRIBUTES Attributes;
 
+    /// <include file='DEVICE_DSM_REPORT_ZONES_DATA.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_DATA.Reserved0"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved0;
 
+    /// <include file='DEVICE_DSM_REPORT_ZONES_DATA.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_DATA.ZoneDescriptors"]/*' />
     [NativeTypeName("STORAGE_ZONE_DESCRIPTOR [1]")]
     public _ZoneDescriptors_e__FixedBuffer ZoneDescriptors;
 
+    /// <include file='_ZoneDescriptors_e__FixedBuffer.xml' path='doc/member[@name="_ZoneDescriptors_e__FixedBuffer"]/*' />
     public partial struct _ZoneDescriptors_e__FixedBuffer
     {
         public STORAGE_ZONE_DESCRIPTOR e0;

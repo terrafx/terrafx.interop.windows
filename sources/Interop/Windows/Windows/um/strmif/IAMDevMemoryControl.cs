@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMDevMemoryControl.xml' path='doc/member[@name="IAMDevMemoryControl"]/*' />
 [Guid("C6545BF1-E76B-11D0-BD52-00A0C911CE86")]
 [NativeTypeName("struct IAMDevMemoryControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
         return ((delegate* unmanaged<IAMDevMemoryControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
         return ((delegate* unmanaged<IAMDevMemoryControl*, uint>)(lpVtbl[1]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
         return ((delegate* unmanaged<IAMDevMemoryControl*, uint>)(lpVtbl[2]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMDevMemoryControl.xml' path='doc/member[@name="IAMDevMemoryControl.QueryWriteSync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryWriteSync()
@@ -46,6 +51,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
         return ((delegate* unmanaged<IAMDevMemoryControl*, int>)(lpVtbl[3]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMDevMemoryControl.xml' path='doc/member[@name="IAMDevMemoryControl.WriteSync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT WriteSync()
@@ -53,6 +59,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
         return ((delegate* unmanaged<IAMDevMemoryControl*, int>)(lpVtbl[4]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMDevMemoryControl.xml' path='doc/member[@name="IAMDevMemoryControl.GetDevId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId)

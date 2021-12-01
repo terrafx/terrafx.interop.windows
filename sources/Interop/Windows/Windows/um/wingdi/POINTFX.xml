@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POINTFX">
+    <summary>
+      <para>The <b>POINTFX</b> structure contains the coordinates of points that describe the outline of a character in a TrueType font.</para>
+    </summary>
+    <remarks>
+      <para>The <b>POINTFX</b> structure is a member of the <see cref="TTPOLYCURVE" /> and <see cref="TTPOLYGONHEADER" /> structures. Values in the <b>POINTFX</b> structure are specified in device units.</para>
+    </remarks>
+    <seealso cref="FIXED" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
+    <seealso cref="TTPOLYCURVE" />
+    <seealso cref="TTPOLYGONHEADER" />
+  </member>
+  <member name="POINTFX.x">
+    <summary>
+      <para>The x-component of a point on the outline of a TrueType character.</para>
+    </summary>
+  </member>
+  <member name="POINTFX.y">
+    <summary>
+      <para>The y-component of a point on the outline of a TrueType character.</para>
+    </summary>
+  </member>
+</doc>

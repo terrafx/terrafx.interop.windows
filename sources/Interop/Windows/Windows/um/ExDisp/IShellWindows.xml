@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellWindows.FindWindowSW">
+    <summary>
+      <para>Finds a window in the Shell windows collection and returns the window's handle and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> interface.</para>
+    </summary>
+    <param name="pvarLoc">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>A <see cref="VARIANT" /> of type VT_VARIANT | VT_BYREF. Set the value of <i>pvarLoc</i> to an absolute <see cref="PIDL" /> (PIDLIST_ABSOLUTE) that specifies the window to find. (See remarks.)</para>
+    </param>
+    <param name="pvarLocRoot">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>Must be <b>NULL</b> or of type VT_EMPTY.</para>
+    </param>
+    <param name="swClass">
+      <para>Type: <b>int</b></para>
+      <para>One or more <see cref="ShellWindowTypeConstants" /> flags that specify window types to include in the search.</para>
+    </param>
+    <param name="phwnd">
+      <para>Type: <b>long*</b></para>
+      <para>A handle for the window matching the specified search criteria, or <b>NULL</b> if no such window was found.</para>
+    </param>
+    <param name="swfwOptions">
+      <para>Type: <b>int</b></para>
+      <para>One or more <see cref="ShellWindowFindWindowOptions" /> flags that specify search options.</para>
+    </param>
+    <param name="ppdispOut">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>**</b></para>
+      <para>A reference to the window's <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> interface, or <b>NULL</b> if no such window was found.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>One of the following values, or a standard result code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>A window matching the specified search criteria was found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>A window matching the specified search criteria was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOINTERFACE</b>
+            </para>
+          </description>
+          <description>
+            <para>A window was found, but a reference to the window's <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> interface could not be obtained. Only occurs if the <see cref="SWFO_NEEDDISPATCH" /> flag is set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_PENDING</b>
+            </para>
+          </description>
+          <description>
+            <para>A window was found, but the window is pending open. Only occurs if the <see cref="SWFO_INCLUDEPENDING" /> flag is set.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the <see cref="SWFO_COOKIEPASSED" /> flag is set, <i>pvarLoc</i> is interpreted as a cookie instead of a PIDL.</para>
+    </remarks>
+  </member>
+  <member name="IShellWindows.get_Count">
+    <summary>
+      <para>Gets the number of windows in the Shell windows collection.</para>
+    </summary>
+    <param name="Count">
+      <para>Type: <b>long*</b></para>
+      <para>The number of windows in the Shell windows collection.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IShellWindows" />
+    <seealso cref="IShellWindows.Item" />
+    <seealso cref="IShellWindows._NewEnum" />
+  </member>
+  <member name="IShellWindows.Item">
+    <summary>
+      <para>Returns the registered Shell window for a specified index.</para>
+    </summary>
+    <param name="index">
+      <para>Type: <b>VARIANT</b></para>
+      <para>A <see cref="VARIANT" /> of type VT_UI4, VT_I2, or VT_I4. If the type is VT_UI4, the value of <i>index</i> is interpreted as a member of <see cref="ShellWindowTypeConstants" />; in this case, <b>Item</b> returns the window that is closest to the foreground window and has a matching type. If the type is VT_I, or VT_I4, <i>index</i> is treated as an index into the Shell windows collection.</para>
+    </param>
+    <param name="Folder">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>**</b></para>
+      <para>A reference to the window's <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> interface, or <b>NULL</b> if the specified window was not found.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>One of the following values, or a standard result code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified window was found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified window was not found.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IShellWindows" />
+    <seealso cref="IShellWindows._NewEnum" />
+    <seealso cref="IShellWindows.get_Count" />
+  </member>
+  <member name="IShellWindows.OnActivated">
+    <summary>
+      <para>Occurs when a Shell window's activation state changes.</para>
+    </summary>
+    <param name="lCookie">
+      <para>Type: <b>long</b></para>
+      <para>The cookie that identifies the window.</para>
+    </param>
+    <param name="fActive">
+      <para>Type: <b>VARIANT_BOOL</b></para>
+      <para>
+        <b>TRUE</b> if the window is being activated; <b>FALSE</b> if the window is being deactivated.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A window is granted a cookie when it is registered as a Shell window. For more information, see <see cref="IShellWindows.Register" />.</para>
+    </remarks>
+    <seealso cref="IShellWindows" />
+    <seealso cref="IShellWindows.OnCreated" />
+    <seealso cref="IShellWindows.OnNavigate" />
+  </member>
+  <member name="IShellWindows.OnCreated">
+    <summary>
+      <para>Occurs when a new Shell window is created for a frame.</para>
+    </summary>
+    <param name="lCookie">
+      <para>Type: <b>long</b></para>
+      <para>The cookie that identifies the window.</para>
+    </param>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>The address of the new window's <see cref="IUnknown" /> interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A window is granted a cookie when it is registered as a Shell window. For more information, see <see cref="IShellWindows.Register" />.</para>
+    </remarks>
+    <seealso cref="IShellWindows" />
+    <seealso cref="IShellWindows.OnActivated" />
+    <seealso cref="IShellWindows.OnNavigate" />
+  </member>
+  <member name="IShellWindows.OnNavigate">
+    <summary>
+      <para>Occurs when a Shell window is navigated to a new location.</para>
+    </summary>
+    <param name="lCookie">
+      <para>Type: <b>long</b></para>
+      <para>The cookie that identifies the window.</para>
+    </param>
+    <param name="pvarLoc">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>A <see cref="VARIANT" /> of type VT_VARIANT | VT_BYREF. Set the value of <i>pvarLoc</i> to an absolute <see cref="PIDL" /> (PIDLIST_ABSOLUTE) that specifies the new location.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A window is granted a cookie when it is registered as a Shell window. For more information, see <see cref="IShellWindows.Register" />.</para>
+    </remarks>
+    <seealso cref="IShellWindows" />
+    <seealso cref="IShellWindows.OnActivated" />
+    <seealso cref="IShellWindows.OnCreated" />
+  </member>
+  <member name="IShellWindows.ProcessAttachDetach">
+    <summary>
+      <para>Deprecated. Always returns S_OK.</para>
+    </summary>
+    <param name="fAttach">
+      <para>Type: <b>VARIANT_BOOL</b></para>
+      <para>Not used.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns S_OK.</para>
+    </returns>
+  </member>
+  <member name="IShellWindows.Register">
+    <summary>
+      <para>Registers an open window as a Shell window; the window is specified by handle.</para>
+    </summary>
+    <param name="pid">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>*</b></para>
+      <para>The window's <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> interface.</para>
+    </param>
+    <param name="hwnd">
+      <para>Type: <b>long</b></para>
+      <para>A handle that specifies the window to register.</para>
+    </param>
+    <param name="swClass">
+      <para>Type: <b>int</b></para>
+      <para>A member of <see cref="ShellWindowTypeConstants" /> that specifies the type of window.</para>
+    </param>
+    <param name="plCookie">
+      <para>Type: <b>long*</b></para>
+      <para>The window's cookie.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>In the context of the Shell windows collection, a <i>cookie</i> is a token that uniquely identifies a registered Shell window.</para>
+      <para>Use this method to register an open window; if the window is pending open, use <see cref="IShellWindows.RegisterPending" /> instead.</para>
+    </remarks>
+    <seealso cref="IShellWindows" />
+    <seealso cref="IShellWindows.RegisterPending" />
+    <seealso cref="IShellWindows.Revoke" />
+  </member>
+  <member name="IShellWindows.RegisterPending">
+    <summary>
+      <para>Registers a pending window as a Shell window; the window is specified by an absolute PIDL.</para>
+    </summary>
+    <param name="lThreadId">
+      <para>A thread ID.</para>
+    </param>
+    <param name="pvarloc">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>A <see cref="VARIANT" /> of type VT_VARIANT | VT_BYREF. Set the value of <i>pvarloc</i> to an absolute <see cref="PIDL" /> (PIDLIST_ABSOLUTE) that specifies the window to register.</para>
+    </param>
+    <param name="pvarlocRoot">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>Must be <b>NULL</b> or of type VT_EMPTY.</para>
+    </param>
+    <param name="swClass">
+      <para>Type: <b>int</b></para>
+      <para>A member of <see cref="ShellWindowTypeConstants" /> that specifies the type of window.</para>
+    </param>
+    <param name="plCookie">
+      <para>Type: <b>long*</b></para>
+      <para>The window's cookie.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>In the context of the Shell windows collection, a <i>cookie</i> is a token that uniquely identifies a registered Shell window.</para>
+      <para>Use this method to register a window that is pending open; if the window is already open, use <see cref="IShellWindows.Register" /> instead. Use <see cref="IShellWindows.Revoke" /> to un-register a window.</para>
+    </remarks>
+    <seealso cref="IShellWindows" />
+    <seealso cref="IShellWindows.Register" />
+    <seealso cref="IShellWindows.Revoke" />
+  </member>
+  <member name="IShellWindows.Revoke">
+    <summary>
+      <para>Revokes a Shell window's registration and removes the window from the Shell windows collection.</para>
+    </summary>
+    <param name="lCookie">
+      <para>Type: <b>long*</b></para>
+      <para>The cookie that identifies the window to un-register.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>In the context of the Shell windows collection, a <i>cookie</i> is a token that uniquely identifies a registered Shell window.</para>
+      <para>Use the <see cref="IShellWindows.Register" /> method to register an open window by handle. Use the <see cref="IShellWindows.RegisterPending" /> method to register a pending-open window by absolute PIDL.</para>
+    </remarks>
+    <seealso cref="IShellWindows" />
+    <seealso cref="IShellWindows.Register" />
+    <seealso cref="IShellWindows.RegisterPending" />
+  </member>
+  <member name="IShellWindows._NewEnum">
+    <summary>
+      <para>Retrieves an enumerator for the collection of Shell windows.</para>
+    </summary>
+    <param name="ppunk">
+      <para>Type: <b><see cref="IUnknown" />**</b></para>
+      <para>When this method returns, contains an interface pointer to an object that implements the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ienumvariant">IEnumVARIANT</a> interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IShellWindows" />
+    <seealso cref="IShellWindows.Item" />
+    <seealso cref="IShellWindows.get_Count" />
+  </member>
+  <member name="IShellWindows">
+    <summary>
+      <para>Provides access to the collection of open Shell windows.</para>
+    </summary>
+    <remarks>
+      <para>A <i>Shell window</i> is a window that has been registered by calling <see cref="IShellWindows.Register" /> or <see cref="IShellWindows.RegisterPending" />. Upon registration, the specified window is added to the collection of Shell windows, and granted a cookie that uniquely identifies the window within the collection. A window can be un-registered by calling <see cref="IShellWindows.Revoke" />.</para>
+      <para>The Shell windows collection includes file explorer windows and web browser windows Internet Explorer and 3rd-party web browsers). Normally each Shell window implements <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>; <see cref="IShellWindows.Item" /> and <see cref="IShellWindows.FindWindowSW" /> provide ways to access a Shell window's <b>IDispatch</b> interface. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/dispatch-interfaces">Dispatch Interface and Automation Functions</a>.</para>
+      <list type="table">
+        <listheader>
+          <description>IID</description>
+          <description>IID_IShellWindows (85CB6900-4D95-11CF-960C-0080C7F4EE85)</description>
+        </listheader>
+        <item>
+          <description>CLSID</description>
+          <description>CLSID_ShellWindows (9BA05972-F6A8-11CF-A442-00A0C90A8F39)</description>
+        </item>
+      </list>
+      <para>The following example shows how to retrieve an <b>IShellWindows</b> instance.</para>
+      <code>#include "exdisp.h"
+
+...
+
+IShellWindows *psw;
+HRESULT hr;
+
+hr = CoInitialize(NULL);
+if (SUCCEEDED(hr))
+{
+    hr = CoCreateInstance(
+        CLSID_ShellWindows,
+        NULL,
+        CLSCTX_ALL,
+        IID_IShellWindows,
+        (void**)&amp;amp;amp;amp;amp;amp;psw
+    );
+
+    if (SUCCEEDED(hr))
+    {
+        // Use the IShellWindows instance...
+
+        psw-&gt;Release();
+    }
+}
+</code>
+    </remarks>
+    <seealso cref="CoCreateInstance" />
+    <seealso cref="CoInitialize" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/dshellwindowsevents">DShellWindowsEvents</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/shellwindows">ShellWindows</seealso>
+  </member>
+</doc>

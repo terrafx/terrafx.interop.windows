@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TOPOSTATUS.xml' path='doc/member[@name="MF_TOPOSTATUS"]/*' />
 public enum MF_TOPOSTATUS
 {
+    /// <include file='MF_TOPOSTATUS.xml' path='doc/member[@name="MF_TOPOSTATUS.MF_TOPOSTATUS_INVALID"]/*' />
     MF_TOPOSTATUS_INVALID = 0,
+
+    /// <include file='MF_TOPOSTATUS.xml' path='doc/member[@name="MF_TOPOSTATUS.MF_TOPOSTATUS_READY"]/*' />
     MF_TOPOSTATUS_READY = 100,
+
+    /// <include file='MF_TOPOSTATUS.xml' path='doc/member[@name="MF_TOPOSTATUS.MF_TOPOSTATUS_STARTED_SOURCE"]/*' />
     MF_TOPOSTATUS_STARTED_SOURCE = 200,
+
+    /// <include file='MF_TOPOSTATUS.xml' path='doc/member[@name="MF_TOPOSTATUS.MF_TOPOSTATUS_DYNAMIC_CHANGED"]/*' />
     MF_TOPOSTATUS_DYNAMIC_CHANGED = 210,
+
+    /// <include file='MF_TOPOSTATUS.xml' path='doc/member[@name="MF_TOPOSTATUS.MF_TOPOSTATUS_SINK_SWITCHED"]/*' />
     MF_TOPOSTATUS_SINK_SWITCHED = 300,
+
+    /// <include file='MF_TOPOSTATUS.xml' path='doc/member[@name="MF_TOPOSTATUS.MF_TOPOSTATUS_ENDED"]/*' />
     MF_TOPOSTATUS_ENDED = 400,
 }

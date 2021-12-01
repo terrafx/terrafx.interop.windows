@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SFBS_FLAGS">
+    <summary>
+      <para>Specifies how the <see cref="StrFormatByteSizeEx" /> function should handle rounding of undisplayed digits.</para>
+    </summary>
+  </member>
+  <member name="SFBS_FLAGS.SFBS_FLAGS_ROUND_TO_NEAREST_DISPLAYED_DIGIT">
+    <summary>
+      <para>Round to the nearest displayed digit.</para>
+    </summary>
+  </member>
+  <member name="SFBS_FLAGS.SFBS_FLAGS_TRUNCATE_UNDISPLAYED_DECIMAL_DIGITS">
+    <summary>
+      <para>Discard undisplayed digits.</para>
+    </summary>
+  </member>
+</doc>

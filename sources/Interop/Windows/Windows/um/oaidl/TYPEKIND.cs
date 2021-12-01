@@ -5,15 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TYPEKIND.xml' path='doc/member[@name="TYPEKIND"]/*' />
 public enum TYPEKIND
 {
+    /// <include file='TYPEKIND.xml' path='doc/member[@name="TYPEKIND.TKIND_ENUM"]/*' />
     TKIND_ENUM = 0,
+
+    /// <include file='TYPEKIND.xml' path='doc/member[@name="TYPEKIND.TKIND_RECORD"]/*' />
     TKIND_RECORD = (TKIND_ENUM + 1),
+
+    /// <include file='TYPEKIND.xml' path='doc/member[@name="TYPEKIND.TKIND_MODULE"]/*' />
     TKIND_MODULE = (TKIND_RECORD + 1),
+
+    /// <include file='TYPEKIND.xml' path='doc/member[@name="TYPEKIND.TKIND_INTERFACE"]/*' />
     TKIND_INTERFACE = (TKIND_MODULE + 1),
+
+    /// <include file='TYPEKIND.xml' path='doc/member[@name="TYPEKIND.TKIND_DISPATCH"]/*' />
     TKIND_DISPATCH = (TKIND_INTERFACE + 1),
+
+    /// <include file='TYPEKIND.xml' path='doc/member[@name="TYPEKIND.TKIND_COCLASS"]/*' />
     TKIND_COCLASS = (TKIND_DISPATCH + 1),
+
+    /// <include file='TYPEKIND.xml' path='doc/member[@name="TYPEKIND.TKIND_ALIAS"]/*' />
     TKIND_ALIAS = (TKIND_COCLASS + 1),
+
+    /// <include file='TYPEKIND.xml' path='doc/member[@name="TYPEKIND.TKIND_UNION"]/*' />
     TKIND_UNION = (TKIND_ALIAS + 1),
+
+    /// <include file='TYPEKIND.xml' path='doc/member[@name="TYPEKIND.TKIND_MAX"]/*' />
     TKIND_MAX = (TKIND_UNION + 1),
 }

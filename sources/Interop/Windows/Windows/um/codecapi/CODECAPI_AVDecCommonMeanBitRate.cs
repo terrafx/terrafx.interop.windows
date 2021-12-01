@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecCommonMeanBitRate.xml' path='doc/member[@name="CODECAPI_AVDecCommonMeanBitRate"]/*' />
 [Guid("59488217-007A-4F7A-8E41-5C48B1EAC5C6")]
 public partial struct CODECAPI_AVDecCommonMeanBitRate
 {

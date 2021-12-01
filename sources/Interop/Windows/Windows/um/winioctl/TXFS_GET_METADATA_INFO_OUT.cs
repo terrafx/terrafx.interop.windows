@@ -7,24 +7,32 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TXFS_GET_METADATA_INFO_OUT.xml' path='doc/member[@name="TXFS_GET_METADATA_INFO_OUT"]/*' />
 public partial struct TXFS_GET_METADATA_INFO_OUT
 {
+    /// <include file='TXFS_GET_METADATA_INFO_OUT.xml' path='doc/member[@name="TXFS_GET_METADATA_INFO_OUT.TxfFileId"]/*' />
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:13368:5)")]
     public _TxfFileId_e__Struct TxfFileId;
 
+    /// <include file='TXFS_GET_METADATA_INFO_OUT.xml' path='doc/member[@name="TXFS_GET_METADATA_INFO_OUT.LockingTransaction"]/*' />
     public Guid LockingTransaction;
 
+    /// <include file='TXFS_GET_METADATA_INFO_OUT.xml' path='doc/member[@name="TXFS_GET_METADATA_INFO_OUT.LastLsn"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong LastLsn;
 
+    /// <include file='TXFS_GET_METADATA_INFO_OUT.xml' path='doc/member[@name="TXFS_GET_METADATA_INFO_OUT.TransactionState"]/*' />
     [NativeTypeName("DWORD")]
     public uint TransactionState;
 
+    /// <include file='_TxfFileId_e__Struct.xml' path='doc/member[@name="_TxfFileId_e__Struct"]/*' />
     public partial struct _TxfFileId_e__Struct
     {
+        /// <include file='_TxfFileId_e__Struct.xml' path='doc/member[@name="_TxfFileId_e__Struct.LowPart"]/*' />
         [NativeTypeName("LONGLONG")]
         public long LowPart;
 
+        /// <include file='_TxfFileId_e__Struct.xml' path='doc/member[@name="_TxfFileId_e__Struct.HighPart"]/*' />
         [NativeTypeName("LONGLONG")]
         public long HighPart;
     }

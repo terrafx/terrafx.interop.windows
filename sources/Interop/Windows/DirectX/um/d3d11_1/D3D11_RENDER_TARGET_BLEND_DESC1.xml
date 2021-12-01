@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1">
+    <summary>
+      <para>Describes the blend state for a render target.</para>
+      <blockquote>
+        <para>[!NOTE]
+This structure is supported by the Direct3D 11.1 runtime, which is available on Windows 8 and later operating systems.</para>
+      </blockquote>
+    </summary>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+It's not valid for <i>LogicOpEnable</i> and <i>BlendEnable</i> to both be <b>TRUE</b>.</para>
+      </blockquote>
+      <para>You specify an array of <b>D3D11_RENDER_TARGET_BLEND_DESC1</b> structures in the <b>RenderTarget</b> member of the <see cref="D3D11_BLEND_DESC1" /> structure to describe the blend states for render targets; you can bind up to eight render targets to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a> at one time.</para>
+      <para>For info about how blending is done, see the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>.</para>
+      <para>Here are the default values for blend state.</para>
+      <list type="table">
+        <listheader>
+          <description>State</description>
+          <description>Default Value</description>
+        </listheader>
+        <item>
+          <description>BlendEnable</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>LogicOpEnable</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>SrcBlend</description>
+          <description>D3D11_BLEND_ONE</description>
+        </item>
+        <item>
+          <description>DestBlend</description>
+          <description>D3D11_BLEND_ZERO</description>
+        </item>
+        <item>
+          <description>BlendOp</description>
+          <description>D3D11_BLEND_OP_ADD</description>
+        </item>
+        <item>
+          <description>SrcBlendAlpha</description>
+          <description>D3D11_BLEND_ONE</description>
+        </item>
+        <item>
+          <description>DestBlendAlpha</description>
+          <description>D3D11_BLEND_ZERO</description>
+        </item>
+        <item>
+          <description>BlendOpAlpha</description>
+          <description>D3D11_BLEND_OP_ADD</description>
+        </item>
+        <item>
+          <description>LogicOp</description>
+          <description>D3D11_LOGIC_OP_NOOP</description>
+        </item>
+        <item>
+          <description>RenderTargetWriteMask</description>
+          <description>D3D11_COLOR_WRITE_ENABLE_ALL</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core Structures</seealso>
+  </member>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1.BlendEnable">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>Enable (or disable) blending.</para>
+      <blockquote>
+        <para>[!NOTE]
+It's not valid for <i>LogicOpEnable</i> and <i>BlendEnable</i> to both be <b>TRUE</b>.</para>
+      </blockquote>
+    </summary>
+  </member>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1.LogicOpEnable">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>Enable (or disable) a logical operation.</para>
+      <blockquote>
+        <para>[!NOTE]
+If you set <i>LogicOpEnable</i> to <b>TRUE</b>, then <i>BlendEnable</i> must be <b>FALSE</b>, and the system's <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS.OutputMergerLogicOp" /> option must be <b>TRUE</b>.</para>
+      </blockquote>
+    </summary>
+  </member>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1.SrcBlend">
+    <summary>
+      <para>Type: <b><see cref="D3D11_BLEND" /></b></para>
+      <para>This <see cref="blend option" /> specifies the operation to perform on the RGB value that the pixel shader outputs. The <b>BlendOp</b> member defines how to combine the <b>SrcBlend</b> and <b>DestBlend</b> operations.</para>
+    </summary>
+  </member>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1.DestBlend">
+    <summary>
+      <para>Type: <b><see cref="D3D11_BLEND" /></b></para>
+      <para>This <see cref="blend option" /> specifies the operation to perform on the current RGB value in the render target. The <b>BlendOp</b> member defines how to combine the <b>SrcBlend</b> and <b>DestBlend</b> operations.</para>
+    </summary>
+  </member>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1.BlendOp">
+    <summary>
+      <para>Type: <b><see cref="D3D11_BLEND_OP" /></b></para>
+      <para>This <see cref="blend operation" /> defines how to combine the <b>SrcBlend</b> and <b>DestBlend</b> operations.</para>
+    </summary>
+  </member>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1.SrcBlendAlpha">
+    <summary>
+      <para>Type: <b><see cref="D3D11_BLEND" /></b></para>
+      <para>This <see cref="blend option" /> specifies the operation to perform on the alpha value that the pixel shader outputs. Blend options that end in _COLOR are not allowed. The <b>BlendOpAlpha</b> member defines how to combine the <b>SrcBlendAlpha</b> and <b>DestBlendAlpha</b> operations.</para>
+    </summary>
+  </member>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1.DestBlendAlpha">
+    <summary>
+      <para>Type: <b><see cref="D3D11_BLEND" /></b></para>
+      <para>This <see cref="blend option" /> specifies the operation to perform on the current alpha value in the render target. Blend options that end in _COLOR are not allowed. The <b>BlendOpAlpha</b> member defines how to combine the <b>SrcBlendAlpha</b> and <b>DestBlendAlpha</b> operations.</para>
+    </summary>
+  </member>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1.BlendOpAlpha">
+    <summary>
+      <para>Type: <b><see cref="D3D11_BLEND_OP" /></b></para>
+      <para>This <see cref="blend operation" /> defines how to combine the <b>SrcBlendAlpha</b> and <b>DestBlendAlpha</b> operations.</para>
+    </summary>
+  </member>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1.LogicOp">
+    <summary>
+      <para>Type: <b><see cref="D3D11_LOGIC_OP" /></b></para>
+      <para>A <see cref="D3D11_LOGIC_OP" />-typed value that specifies the logical operation to configure for the render target.</para>
+    </summary>
+  </member>
+  <member name="D3D11_RENDER_TARGET_BLEND_DESC1.RenderTargetWriteMask">
+    <summary>
+      <para>Type: <b>UINT8</b></para>
+      <para>A write mask.</para>
+    </summary>
+  </member>
+</doc>

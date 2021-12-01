@@ -7,9 +7,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_OUTDUPL_POINTER_POSITION.xml' path='doc/member[@name="DXGI_OUTDUPL_POINTER_POSITION"]/*' />
 public partial struct DXGI_OUTDUPL_POINTER_POSITION
 {
+    /// <include file='DXGI_OUTDUPL_POINTER_POSITION.xml' path='doc/member[@name="DXGI_OUTDUPL_POINTER_POSITION.Position"]/*' />
     public POINT Position;
 
+    /// <include file='DXGI_OUTDUPL_POINTER_POSITION.xml' path='doc/member[@name="DXGI_OUTDUPL_POINTER_POSITION.Visible"]/*' />
     public BOOL Visible;
 }

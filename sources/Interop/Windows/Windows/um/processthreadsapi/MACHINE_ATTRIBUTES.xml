@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MACHINE_ATTRIBUTES">
+    <summary>
+      <para>Specifies the ways in which an architecture of code can run on a host operating system.  More than one bit may be set.</para>
+    </summary>
+  </member>
+  <member name="MACHINE_ATTRIBUTES.UserEnabled">
+    <summary>
+      <para>The specified architecture of code can run in user mode.</para>
+    </summary>
+  </member>
+  <member name="MACHINE_ATTRIBUTES.KernelEnabled">
+    <summary>
+      <para>The specified architecture of code can run in kernel mode.</para>
+    </summary>
+  </member>
+  <member name="MACHINE_ATTRIBUTES.Wow64Container">
+    <summary>
+      <para>The specified architecture of code runs by relying on WOW64's namespace <a href="https://docs.microsoft.com//windows/win32/winprog64/file-system-redirector">File System Redirector</a> and  <a href="https://docs.microsoft.com//windows/win32/winprog64/registry-redirector">Registry Redirector</a>. This bit will be set, for example, on x86 code running on a host operating system that is x64 or ARM64. When the compatibility layer does not use WOW64 style filesystem and registry namespaces, like x64 on ARM64 which runs on the root namespace of the OS, this bit will be reset.</para>
+    </summary>
+  </member>
+</doc>

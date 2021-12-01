@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HEADER_TYPE.xml' path='doc/member[@name="WS_HEADER_TYPE"]/*' />
 public enum WS_HEADER_TYPE
 {
+    /// <include file='WS_HEADER_TYPE.xml' path='doc/member[@name="WS_HEADER_TYPE.WS_ACTION_HEADER"]/*' />
     WS_ACTION_HEADER = 1,
+
+    /// <include file='WS_HEADER_TYPE.xml' path='doc/member[@name="WS_HEADER_TYPE.WS_TO_HEADER"]/*' />
     WS_TO_HEADER = 2,
+
+    /// <include file='WS_HEADER_TYPE.xml' path='doc/member[@name="WS_HEADER_TYPE.WS_MESSAGE_ID_HEADER"]/*' />
     WS_MESSAGE_ID_HEADER = 3,
+
+    /// <include file='WS_HEADER_TYPE.xml' path='doc/member[@name="WS_HEADER_TYPE.WS_RELATES_TO_HEADER"]/*' />
     WS_RELATES_TO_HEADER = 4,
+
+    /// <include file='WS_HEADER_TYPE.xml' path='doc/member[@name="WS_HEADER_TYPE.WS_FROM_HEADER"]/*' />
     WS_FROM_HEADER = 5,
+
+    /// <include file='WS_HEADER_TYPE.xml' path='doc/member[@name="WS_HEADER_TYPE.WS_REPLY_TO_HEADER"]/*' />
     WS_REPLY_TO_HEADER = 6,
+
+    /// <include file='WS_HEADER_TYPE.xml' path='doc/member[@name="WS_HEADER_TYPE.WS_FAULT_TO_HEADER"]/*' />
     WS_FAULT_TO_HEADER = 7,
 }

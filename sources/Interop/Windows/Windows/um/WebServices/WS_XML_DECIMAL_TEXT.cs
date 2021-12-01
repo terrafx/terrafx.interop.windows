@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_DECIMAL_TEXT.xml' path='doc/member[@name="WS_XML_DECIMAL_TEXT"]/*' />
 public partial struct WS_XML_DECIMAL_TEXT
 {
+    /// <include file='WS_XML_DECIMAL_TEXT.xml' path='doc/member[@name="WS_XML_DECIMAL_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_DECIMAL_TEXT.xml' path='doc/member[@name="WS_XML_DECIMAL_TEXT.value"]/*' />
     public DECIMAL value;
 }

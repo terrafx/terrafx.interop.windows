@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDeviceSpecificProperty.xml' path='doc/member[@name="IDeviceSpecificProperty"]/*' />
 [Guid("3B22BCBF-2586-4AF0-8583-205D391B807C")]
 [NativeTypeName("struct IDeviceSpecificProperty : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
         return ((delegate* unmanaged<IDeviceSpecificProperty*, Guid*, void**, int>)(lpVtbl[0]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
         return ((delegate* unmanaged<IDeviceSpecificProperty*, uint>)(lpVtbl[1]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
         return ((delegate* unmanaged<IDeviceSpecificProperty*, uint>)(lpVtbl[2]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDeviceSpecificProperty.xml' path='doc/member[@name="IDeviceSpecificProperty.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetType([NativeTypeName("VARTYPE *")] ushort* pVType)
@@ -46,6 +51,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
         return ((delegate* unmanaged<IDeviceSpecificProperty*, ushort*, int>)(lpVtbl[3]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), pVType);
     }
 
+    /// <include file='IDeviceSpecificProperty.xml' path='doc/member[@name="IDeviceSpecificProperty.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetValue(void* pvValue, [NativeTypeName("DWORD *")] uint* pcbValue)
@@ -53,6 +59,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
         return ((delegate* unmanaged<IDeviceSpecificProperty*, void*, uint*, int>)(lpVtbl[4]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), pvValue, pcbValue);
     }
 
+    /// <include file='IDeviceSpecificProperty.xml' path='doc/member[@name="IDeviceSpecificProperty.SetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetValue(void* pvValue, [NativeTypeName("DWORD")] uint cbValue, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
@@ -60,6 +67,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
         return ((delegate* unmanaged<IDeviceSpecificProperty*, void*, uint, Guid*, int>)(lpVtbl[5]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), pvValue, cbValue, pguidEventContext);
     }
 
+    /// <include file='IDeviceSpecificProperty.xml' path='doc/member[@name="IDeviceSpecificProperty.Get4BRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Get4BRange([NativeTypeName("LONG *")] int* plMin, [NativeTypeName("LONG *")] int* plMax, [NativeTypeName("LONG *")] int* plStepping)

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfFnAdviseText.OnLatticeUpdate">
+    <summary>
+      <para>Called when a lattice element within a context changes.</para>
+    </summary>
+    <param name="pRange">
+      <para>Pointer to an <see cref="ITfRange" /> object that represents the range of text that changed.</para>
+    </param>
+    <param name="pLattice">
+      <para>Pointer to an <see cref="ITfLMLattice" /> object that represents the new lattice element.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfFnAdviseText" />
+    <seealso cref="ITfLMLattice" />
+    <seealso cref="ITfRange " />
+  </member>
+  <member name="ITfFnAdviseText.OnTextUpdate">
+    <summary>
+      <para>Called when the text within a context changes.</para>
+    </summary>
+    <param name="pRange">
+      <para>Pointer to an <see cref="ITfRange" /> object that represents the range of text that has changed.</para>
+    </param>
+    <param name="pchText">
+      <para>Pointer to a <b>WCHAR</b> buffer that contains the new text for the range.</para>
+    </param>
+    <param name="cch">
+      <para>Specifies the number of characters contained in <i>pchText</i>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfFnAdviseText" />
+    <seealso cref="ITfRange " />
+  </member>
+  <member name="ITfFnAdviseText">
+    <summary>
+      <para>The <b>ITfFnAdviseText</b> interface is implemented by a text service and used by the TSF manager to supply notifications when the text or lattice element in a context changes.</para>
+      <para>The manager obtains this interface from the text service by calling the text service <see cref="ITfFunctionProvider.GetFunction" /> interface with IID_ITfFnAdviseText.</para>
+    </summary>
+    <seealso cref="ITfFunctionProvider.GetFunction " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

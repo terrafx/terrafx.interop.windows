@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISynchronizeEvent.SetEventHandle">
+    <summary>
+      <para>Assigns an event handle to a synchronization object.</para>
+    </summary>
+    <param name="ph">
+      <para>A pointer to the event handle.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_FAIL, and S_OK.</para>
+    </returns>
+    <seealso cref="ISynchronizeEvent" />
+  </member>
+  <member name="ISynchronizeEvent">
+    <summary>
+      <para>Assigns an event handle to a synchronization object.</para>
+      <para>The synchronization object can use a handle to manage its activities. For example, the <a href="https://docs.microsoft.com//windows/desktop/Sync/wait-functions">wait functions</a> use handles to identify the event they control. Thus, the logic of the <see cref="ISynchronize.Signal" /> method on an event synchronization object can pass its handle to the <see cref="SetEvent" /> function.</para>
+    </summary>
+    <seealso cref="ISynchronizeHandle" />
+  </member>
+</doc>

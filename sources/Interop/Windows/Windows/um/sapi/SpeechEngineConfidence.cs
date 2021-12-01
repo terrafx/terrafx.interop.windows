@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechEngineConfidence.xml' path='doc/member[@name="SpeechEngineConfidence"]/*' />
 public enum SpeechEngineConfidence
 {
+    /// <include file='SpeechEngineConfidence.xml' path='doc/member[@name="SpeechEngineConfidence.SECLowConfidence"]/*' />
     SECLowConfidence = -1,
+
+    /// <include file='SpeechEngineConfidence.xml' path='doc/member[@name="SpeechEngineConfidence.SECNormalConfidence"]/*' />
     SECNormalConfidence = 0,
+
+    /// <include file='SpeechEngineConfidence.xml' path='doc/member[@name="SpeechEngineConfidence.SECHighConfidence"]/*' />
     SECHighConfidence = 1,
 }

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ALTTABINFO">
+    <summary>
+      <para>Contains status information for the application-switching (ALT+TAB) window.</para>
+    </summary>
+    <seealso cref="GetAltTabInfo" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/windows">Windows</seealso>
+  </member>
+  <member name="ALTTABINFO.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size, in bytes, of the structure. The caller must set this to <code>sizeof(ALTTABINFO)</code>.</para>
+    </summary>
+  </member>
+  <member name="ALTTABINFO.cItems">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The number of items in the window.</para>
+    </summary>
+  </member>
+  <member name="ALTTABINFO.cColumns">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The number of columns in the window.</para>
+    </summary>
+  </member>
+  <member name="ALTTABINFO.cRows">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The number of rows in the window.</para>
+    </summary>
+  </member>
+  <member name="ALTTABINFO.iColFocus">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The column of the item that has the focus.</para>
+    </summary>
+  </member>
+  <member name="ALTTABINFO.iRowFocus">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The row of the item that has the focus.</para>
+    </summary>
+  </member>
+  <member name="ALTTABINFO.cxItem">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The width of each icon in the application-switching window.</para>
+    </summary>
+  </member>
+  <member name="ALTTABINFO.cyItem">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The height of each icon in the application-switching window.</para>
+    </summary>
+  </member>
+  <member name="ALTTABINFO.ptStart">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
+      <para>The top-left corner of the first icon.</para>
+    </summary>
+  </member>
+</doc>

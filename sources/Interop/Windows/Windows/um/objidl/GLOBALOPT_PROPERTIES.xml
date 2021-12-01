@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GLOBALOPT_PROPERTIES">
+    <summary>
+      <para>Identifies process-global options that you can set or query by using the <see cref="IGlobalOptions" /> interface.</para>
+    </summary>
+    <remarks>
+      <para>The unmarshaling policy option <b>COMGLB_UNMARSHALING_POLICY</b> takes values from the <see cref="GLOBALOPT_UNMARSHALING_POLICY_VALUES" /> enumeration.</para>
+    </remarks>
+    <seealso cref="CoUnmarshalInterface" />
+    <seealso cref="GLOBALOPT_UNMARSHALING_POLICY_VALUES" />
+    <seealso cref="IGlobalOptions" />
+  </member>
+  <member name="GLOBALOPT_PROPERTIES.COMGLB_EXCEPTION_HANDLING">
+    <summary>
+      <para>Defines COM exception-handling behavior.</para>
+    </summary>
+  </member>
+  <member name="GLOBALOPT_PROPERTIES.COMGLB_APPID">
+    <summary>
+      <para>Sets the AppID for the process.</para>
+    </summary>
+  </member>
+  <member name="GLOBALOPT_PROPERTIES.COMGLB_RPC_THREADPOOL_SETTING">
+    <summary>
+      <para>Sets the thread-pool behavior of the RPC runtime in the process.</para>
+    </summary>
+  </member>
+  <member name="GLOBALOPT_PROPERTIES.COMGLB_RO_SETTINGS">
+    <summary>
+      <para>Used for miscellaneous settings.</para>
+    </summary>
+  </member>
+  <member name="GLOBALOPT_PROPERTIES.COMGLB_UNMARSHALING_POLICY">
+    <summary>
+      <para>Defines the policy that's applied in the <see cref="CoUnmarshalInterface" /> function.</para>
+    </summary>
+  </member>
+  <member name="GLOBALOPT_PROPERTIES.COMGLB_PROPERTIES_RESERVED1">
+    <summary></summary>
+  </member>
+  <member name="GLOBALOPT_PROPERTIES.COMGLB_PROPERTIES_RESERVED2">
+    <summary></summary>
+  </member>
+  <member name="GLOBALOPT_PROPERTIES.COMGLB_PROPERTIES_RESERVED3">
+    <summary></summary>
+  </member>
+</doc>

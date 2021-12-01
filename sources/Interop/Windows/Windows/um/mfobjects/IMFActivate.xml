@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFActivate.ActivateObject">
+    <summary>
+      <para>Creates the object associated with this activation object.</para>
+    </summary>
+    <param name="riid">
+      <para>Interface identifier (IID) of the requested interface.</para>
+    </param>
+    <param name="ppv">
+      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Some Microsoft Media Foundation objects must be shut down before being released. If so, the caller is responsible for shutting down the object that is returned in <i>ppv</i>. To shut down the object, do one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Call <see cref="IMFActivate.ShutdownObject" /> on the activation object, or</description>
+        </item>
+        <item>
+          <description>Call the object-specific shutdown method. This method will depend on the type of object. Possibilities include:<list type="bullet"><item><description>Media sources: Call <see cref="IMFMediaSource.Shutdown" />.</description></item><item><description>Media sinks: Call <see cref="IMFMediaSink.Shutdown" />.</description></item><item><description>Any object that supports the <see cref="IMFShutdown" /> interface: Call <see cref="IMFShutdown.Shutdown" />.</description></item></list></description>
+        </item>
+      </list>
+      <para>The <see cref="IMFActivate.ShutdownObject" /> method is generic to all object types. If the object does not require a shutdown method, <b>ShutdownObject</b> succeeds and has no effect. If you do not know the specific shutdown method for the object (or do not know the object type), call <b>IMFActivate.ShutdownObject</b>.</para>
+      <para>After the first call to <b>ActivateObject</b>, subsequent calls return a pointer to the same instance, until the client calls either <see cref="ShutdownObject" /> or <see cref="IMFActivate.DetachObject" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/activation-objects">Activation Objects</seealso>
+    <seealso cref="IMFActivate" />
+  </member>
+  <member name="IMFActivate.DetachObject">
+    <summary>
+      <para>Detaches the created object from the activation object.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The activation object releases all of its internal references to the created object. If you call <see cref="ActivateObject" /> again, the activation object will create a new instance of the other object.</para>
+      <para>The <b>DetachObject</b> method does not shut down the created object. If the <b>DetachObject</b> method succeeds, the client must shut down the created object. This rule applies only to objects that have a shutdown method or that support the <see cref="IMFShutdown" /> interface. See the remarks for <see cref="IMFActivate.ActivateObject" />.</para>
+      <para>Implementation of this method is optional. If the activation object does not support this method, the method returns E_NOTIMPL.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/activation-objects">Activation Objects</seealso>
+    <seealso cref="IMFActivate" />
+  </member>
+  <member name="IMFActivate.ShutdownObject">
+    <summary>
+      <para>Shuts down the created object.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If you create an object by calling <see cref="IMFActivate.ActivateObject" />, call <b>ShutdownObject</b> when you are done using the object.</para>
+      <para>The component that calls <see cref="ActivateObject" />—not the component that creates the activation object—is responsible for calling <b>ShutdownObject</b>. For example, in a typical playback application, the application creates activation objects for the media sinks, but the Media Session calls <b>ActivateObject</b>. Therefore the Media Session, not the application, calls <b>ShutdownObject</b>.</para>
+      <para>After <b>ShutdownObject</b> is called, the activation object releases all of its internal references to the created object. If you call <see cref="ActivateObject" /> again, the activation object will create a new instance of the other object.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/activation-objects">Activation Objects</seealso>
+    <seealso cref="IMFActivate" />
+  </member>
+  <member name="IMFActivate.GetDouble">
+    <summary>
+      <para>Retrieves a <b>double</b> value associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_DOUBLE</b>.</para>
+    </param>
+    <param name="pfValue">
+      <para>Receives a <b>double</b> value. If the key is found and the data type is <b>double</b>, the method copies the value into this parameter. Otherwise, the original value of this parameter is not changed.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a <b>double</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MFGetAttributeDouble" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFActivate">
+    <summary>
+      <para>Enables the application to defer the creation of an object. This interface is exposed by activation objects.</para>
+    </summary>
+    <remarks>
+      <para>Typically, the application calls some function that returns an <b>IMFActivate</b> pointer and then passes that pointer to another component. The other component calls <see cref="ActivateObject" /> at a later time to create the object. In the protected media path (PMP), the <b>IMFActivate</b> pointer might be marshaled to the protected process, so that the object can be created in that process.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/activation-objects">Activation Objects</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

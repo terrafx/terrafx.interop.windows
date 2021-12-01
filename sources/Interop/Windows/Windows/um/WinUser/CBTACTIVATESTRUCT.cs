@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CBTACTIVATESTRUCT.xml' path='doc/member[@name="CBTACTIVATESTRUCT"]/*' />
 public partial struct CBTACTIVATESTRUCT
 {
+    /// <include file='CBTACTIVATESTRUCT.xml' path='doc/member[@name="CBTACTIVATESTRUCT.fMouse"]/*' />
     public BOOL fMouse;
 
+    /// <include file='CBTACTIVATESTRUCT.xml' path='doc/member[@name="CBTACTIVATESTRUCT.hWndActive"]/*' />
     public HWND hWndActive;
 }

@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='KERNINGPAIR.xml' path='doc/member[@name="KERNINGPAIR"]/*' />
 public partial struct KERNINGPAIR
 {
+    /// <include file='KERNINGPAIR.xml' path='doc/member[@name="KERNINGPAIR.wFirst"]/*' />
     [NativeTypeName("WORD")]
     public ushort wFirst;
 
+    /// <include file='KERNINGPAIR.xml' path='doc/member[@name="KERNINGPAIR.wSecond"]/*' />
     [NativeTypeName("WORD")]
     public ushort wSecond;
 
+    /// <include file='KERNINGPAIR.xml' path='doc/member[@name="KERNINGPAIR.iKernAmount"]/*' />
     public int iKernAmount;
 }

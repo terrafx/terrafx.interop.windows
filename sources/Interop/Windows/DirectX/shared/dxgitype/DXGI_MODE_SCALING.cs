@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_MODE_SCALING.xml' path='doc/member[@name="DXGI_MODE_SCALING"]/*' />
 public enum DXGI_MODE_SCALING
 {
+    /// <include file='DXGI_MODE_SCALING.xml' path='doc/member[@name="DXGI_MODE_SCALING.DXGI_MODE_SCALING_UNSPECIFIED"]/*' />
     DXGI_MODE_SCALING_UNSPECIFIED = 0,
+
+    /// <include file='DXGI_MODE_SCALING.xml' path='doc/member[@name="DXGI_MODE_SCALING.DXGI_MODE_SCALING_CENTERED"]/*' />
     DXGI_MODE_SCALING_CENTERED = 1,
+
+    /// <include file='DXGI_MODE_SCALING.xml' path='doc/member[@name="DXGI_MODE_SCALING.DXGI_MODE_SCALING_STRETCHED"]/*' />
     DXGI_MODE_SCALING_STRETCHED = 2,
 }

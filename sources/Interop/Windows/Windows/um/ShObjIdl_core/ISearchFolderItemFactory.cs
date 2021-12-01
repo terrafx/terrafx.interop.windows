@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory"]/*' />
 [Guid("A0FFBC28-5482-4366-BE27-3E81E78E06C2")]
 [NativeTypeName("struct ISearchFolderItemFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, Guid*, void**, int>)(lpVtbl[0]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, uint>)(lpVtbl[1]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, uint>)(lpVtbl[2]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszDisplayName)
@@ -46,6 +51,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, ushort*, int>)(lpVtbl[3]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), pszDisplayName);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetFolderTypeID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetFolderTypeID([NativeTypeName("FOLDERTYPEID")] Guid ftid)
@@ -53,6 +59,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, Guid, int>)(lpVtbl[4]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), ftid);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetFolderLogicalViewMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetFolderLogicalViewMode(FOLDERLOGICALVIEWMODE flvm)
@@ -60,6 +67,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, FOLDERLOGICALVIEWMODE, int>)(lpVtbl[5]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), flvm);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetIconSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetIconSize(int iIconSize)
@@ -67,6 +75,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, int, int>)(lpVtbl[6]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), iIconSize);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetVisibleColumns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetVisibleColumns(uint cVisibleColumns, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgKey)
@@ -74,6 +83,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int>)(lpVtbl[7]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cVisibleColumns, rgKey);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetSortColumns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetSortColumns(uint cSortColumns, SORTCOLUMN* rgSortColumns)
@@ -81,6 +91,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, uint, SORTCOLUMN*, int>)(lpVtbl[8]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cSortColumns, rgSortColumns);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetGroupColumn"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetGroupColumn([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* keyGroup)
@@ -88,6 +99,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, PROPERTYKEY*, int>)(lpVtbl[9]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), keyGroup);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetStacks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetStacks(uint cStackKeys, PROPERTYKEY* rgStackKeys)
@@ -95,6 +107,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int>)(lpVtbl[10]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cStackKeys, rgStackKeys);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetScope"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetScope(IShellItemArray* psiaScope)
@@ -102,6 +115,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, IShellItemArray*, int>)(lpVtbl[11]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), psiaScope);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetCondition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetCondition(ICondition* pCondition)
@@ -109,6 +123,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, ICondition*, int>)(lpVtbl[12]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), pCondition);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.GetShellItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetShellItem([NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -116,6 +131,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         return ((delegate* unmanaged<ISearchFolderItemFactory*, Guid*, void**, int>)(lpVtbl[13]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.GetIDList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)

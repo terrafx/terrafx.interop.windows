@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STYLESTRUCT.xml' path='doc/member[@name="STYLESTRUCT"]/*' />
 public partial struct STYLESTRUCT
 {
+    /// <include file='STYLESTRUCT.xml' path='doc/member[@name="STYLESTRUCT.styleOld"]/*' />
     [NativeTypeName("DWORD")]
     public uint styleOld;
 
+    /// <include file='STYLESTRUCT.xml' path='doc/member[@name="STYLESTRUCT.styleNew"]/*' />
     [NativeTypeName("DWORD")]
     public uint styleNew;
 }

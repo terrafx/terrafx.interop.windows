@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMTimecodeDisplay.GetTCDisplay">
+    <summary>
+      <para>The <code>GetTCDisplay</code> method retrieves current settings of the timecode character generator output.</para>
+    </summary>
+    <param name="Param">
+      <para>Timecode display characteristic. Specify one of the following items you want to get settings for.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCD_BORDER</description>
+          <description>White border for black characters, black border for white characters.</description>
+        </item>
+        <item>
+          <description>ED_TCD_INTENSITY</description>
+          <description>Intensity (brightness) of characters.</description>
+        </item>
+        <item>
+          <description>ED_TCD_INVERT</description>
+          <description>Black characters on white background or white characters on black background.</description>
+        </item>
+        <item>
+          <description>ED_TCD_POSITION</description>
+          <description>Position of characters.</description>
+        </item>
+        <item>
+          <description>ED_TCD_SIZE</description>
+          <description>Size of characters.</description>
+        </item>
+        <item>
+          <description>ED_TCD_SOURCE</description>
+          <description>Source of display's data.</description>
+        </item>
+        <item>
+          <description>ED_TCD_TRANSPARENCY</description>
+          <description>Transparency of characters.</description>
+        </item>
+      </list>
+    </param>
+    <param name="pValue">
+      <para>Pointer to the current setting of the parameter specified in <i>Param</i>. This parameter retrieves one of the following values.</para>
+      <para>If ED_TCD_SOURCE specified in <i>Param</i>, will return one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCG</description>
+          <description>Timecode generator</description>
+        </item>
+        <item>
+          <description>ED_TCR</description>
+          <description>Timecode reader</description>
+        </item>
+      </list>
+      <para>If ED_TCD_SIZE specified in <i>Param</i>, will return one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_LARGE</description>
+          <description>Large</description>
+        </item>
+        <item>
+          <description>ED_MED</description>
+          <description>Medium</description>
+        </item>
+        <item>
+          <description>ED_SMALL</description>
+          <description>Small</description>
+        </item>
+      </list>
+      <para>If ED_TCD_POSITION specified in <i>Param</i>, will return one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_BOTTOM</description>
+          <description>Bottom</description>
+        </item>
+        <item>
+          <description>ED_MIDDLE</description>
+          <description>Middle</description>
+        </item>
+        <item>
+          <description>ED_TOP</description>
+          <description>Top</description>
+        </item>
+      </list>
+      <para>in combination with one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_CENTER</description>
+          <description>Center</description>
+        </item>
+        <item>
+          <description>ED_LEFT</description>
+          <description>Left</description>
+        </item>
+        <item>
+          <description>ED_RIGHT</description>
+          <description>Right</description>
+        </item>
+      </list>
+      <para>If ED_TCD_INTENSITY specified in <i>Param</i>, will return one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_HIGH</description>
+          <description>High</description>
+        </item>
+        <item>
+          <description>ED_LOW</description>
+          <description>Low</description>
+        </item>
+      </list>
+      <para>If ED_TCD_TRANSPARENCY is specified in <i>Param</i>, will return a value from 0 to 4, 0 being completely opaque.</para>
+      <para>If ED_TCD_INVERT is specified in <i>Param</i>, will return one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OAFALSE</description>
+          <description>Black characters on white background</description>
+        </item>
+        <item>
+          <description>OATRUE</description>
+          <description>White characters on black background</description>
+        </item>
+      </list>
+      <para>If ED_TCD_BORDER specified in <i>Param</i>, will return one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OAFALSE</description>
+          <description>Black characters for white border</description>
+        </item>
+        <item>
+          <description>OATRUE</description>
+          <description>White border for black characters</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTimecodeDisplay Interface" />
+    <seealso cref="IAMTimecodeDisplay.SetTCDisplay" />
+  </member>
+  <member name="IAMTimecodeDisplay.GetTCDisplayEnable">
+    <summary>
+      <para>The <code>GetTCDisplayEnable</code> method determines whether an external device's timecode character generator output is enabled or disabled.</para>
+    </summary>
+    <param name="pState">
+      <para>Pointer to a value indicating whether timecode character generator output is enabled. OATRUE indicates enabled; OAFALSE indicates disabled.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>This method is not intended for character rendering inside a filter graph, it is purely intended for hardware displays. Ensure that your external timecode reader or generator has display capability before trying to use this method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTimecodeDisplay Interface" />
+    <seealso cref="IAMTimecodeDisplay.SetTCDisplayEnable" />
+  </member>
+  <member name="IAMTimecodeDisplay.SetTCDisplay">
+    <summary>
+      <para>The <code>SetTCDisplay</code> method sets the timecode character generator output characteristics.</para>
+    </summary>
+    <param name="Param">
+      <para>Timecode display characteristic. Specify one of the following properties you want to set properties for.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCD_BORDER</description>
+          <description>White border for black characters, black border for white characters</description>
+        </item>
+        <item>
+          <description>ED_TCD_INTENSITY</description>
+          <description>Intensity (brightness) of characters</description>
+        </item>
+        <item>
+          <description>ED_TCD_INVERT</description>
+          <description>Black characters on white background or white characters on black background</description>
+        </item>
+        <item>
+          <description>ED_TCD_POSITION</description>
+          <description>Position of characters</description>
+        </item>
+        <item>
+          <description>ED_TCD_SIZE</description>
+          <description>Size of characters</description>
+        </item>
+        <item>
+          <description>ED_TCD_SOURCE</description>
+          <description>Source of the display's data</description>
+        </item>
+        <item>
+          <description>ED_TCD_TRANSPARENCY</description>
+          <description>Transparency of characters</description>
+        </item>
+      </list>
+    </param>
+    <param name="Value">
+      <para>Setting of the parameter specified in <i>Param</i>. Must be one of the following:</para>
+      <para>If ED_TCD_SOURCE specified in <i>Param</i>, set one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCG</description>
+          <description>Timecode generator</description>
+        </item>
+        <item>
+          <description>ED_TCR</description>
+          <description>Timecode reader</description>
+        </item>
+      </list>
+      <para>If ED_TCD_SIZE is specified in <i>Param</i>, set one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_LARGE</description>
+          <description>Large</description>
+        </item>
+        <item>
+          <description>ED_MED</description>
+          <description>Medium</description>
+        </item>
+        <item>
+          <description>ED_SMALL</description>
+          <description>Small</description>
+        </item>
+      </list>
+      <para>If ED_TCD_POSITION specified in <i>Param</i>, set one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_BOTTOM</description>
+          <description>Bottom</description>
+        </item>
+        <item>
+          <description>ED_MIDDLE</description>
+          <description>Middle</description>
+        </item>
+        <item>
+          <description>ED_TOP</description>
+          <description>Top</description>
+        </item>
+      </list>
+      <para>in combination with one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_CENTER</description>
+          <description>Center</description>
+        </item>
+        <item>
+          <description>ED_LEFT</description>
+          <description>Left</description>
+        </item>
+        <item>
+          <description>ED_RIGHT</description>
+          <description>Right</description>
+        </item>
+      </list>
+      <para>If ED_TCD_INTENSITY is specified in <i>Param</i>, set one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_HIGH</description>
+          <description>High</description>
+        </item>
+        <item>
+          <description>ED_LOW</description>
+          <description>Low</description>
+        </item>
+      </list>
+      <para>If ED_TCD_TRANSPARENCY is specified in <i>Param</i>, set a value from 0 to 4, 0 being completely opaque, 4 being as dark as possible.</para>
+      <para>If ED_TCD_INVERT is specified in <i>Param</i>, set one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OAFALSE</description>
+          <description>Black on white</description>
+        </item>
+        <item>
+          <description>OATRUE</description>
+          <description>White on black</description>
+        </item>
+      </list>
+      <para>If ED_TCD_BORDER is specified in <i>Param</i>, set one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OAFALSE</description>
+          <description>Black characters for white border</description>
+        </item>
+        <item>
+          <description>OATRUE</description>
+          <description>White border for black characters</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTimecodeDisplay Interface" />
+    <seealso cref="IAMTimecodeDisplay.GetTCDisplay" />
+  </member>
+  <member name="IAMTimecodeDisplay.SetTCDisplayEnable">
+    <summary>
+      <para>The <code>SetTCDisplayEnable</code> method enables or disables an external device's timecode character output generator.</para>
+    </summary>
+    <param name="State">
+      <para>Value specifying whether to enable or disable the timecode character output generator. Specify OATRUE to enable or OAFALSE to disable.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>This method is not intended for rendering characters inside a filter graph, it is purely intended for hardware displays. Ensure that your external timecode reader or generator has display capability before trying to use this method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTimecodeDisplay Interface" />
+    <seealso cref="IAMTimecodeDisplay.GetTCDisplayEnable" />
+  </member>
+  <member name="IAMTimecodeDisplay">
+    <summary>
+      <para>The <code>IAMTimecodeDisplay</code> interface controls an external SMPTE/MIDI timecode display device.</para>
+      <para>DirectShow currently does not provide any filters that implement this interface. Third parties should implement this interface on any filter that controls the timecode display of an external timecode reader or generator. Timecode readers or generators can be built into a VCR or can be separate external devices.</para>
+      <para>This interface is not intended for rendering in a DirectShow filter graph; it is purely for use on external device displays.</para>
+      <para>
+        <b>Hardware Requirements</b>
+      </para>
+      <para>See the <see cref="IAMExtTransport" /> interface for hardware requirements.</para>
+    </summary>
+  </member>
+</doc>

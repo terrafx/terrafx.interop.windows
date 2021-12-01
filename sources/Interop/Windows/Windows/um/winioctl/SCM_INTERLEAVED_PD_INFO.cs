@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_INTERLEAVED_PD_INFO.xml' path='doc/member[@name="SCM_INTERLEAVED_PD_INFO"]/*' />
 public partial struct SCM_INTERLEAVED_PD_INFO
 {
+    /// <include file='SCM_INTERLEAVED_PD_INFO.xml' path='doc/member[@name="SCM_INTERLEAVED_PD_INFO.DeviceHandle"]/*' />
     [NativeTypeName("DWORD")]
     public uint DeviceHandle;
 
+    /// <include file='SCM_INTERLEAVED_PD_INFO.xml' path='doc/member[@name="SCM_INTERLEAVED_PD_INFO.DeviceGuid"]/*' />
     public Guid DeviceGuid;
 }

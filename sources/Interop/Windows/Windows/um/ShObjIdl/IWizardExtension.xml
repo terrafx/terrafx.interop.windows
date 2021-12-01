@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWizardExtension.AddPages">
+    <summary>
+      <para>Adds extension pages to the wizard by filling an array with handles to <see cref="PROPSHEETPAGE" /> structures representing those pages.</para>
+    </summary>
+    <param name="aPages">
+      <para>Type: <b>HPROPSHEETPAGE*</b></para>
+      <para>A pointer to an array of <see cref="PROPSHEETPAGE" /> handles that represent the wizard dialog pages. Handles to <b>PROPSHEETPAGE</b> structures for the extension pages are added to this array.</para>
+    </param>
+    <param name="cPages">
+      <para>Type: <b>UINT</b></para>
+      <para>The count of elements in <i>aPages</i>.</para>
+    </param>
+    <param name="pnPagesAdded">
+      <para>Type: <b>UINT*</b></para>
+      <para>The count of handles successfully added.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The array of handles pointed to by <i>aPages</i> can contain handles to wizard dialog pages preceding and following the extension pages. The array's pointer should be passed to this method so that its value is the first empty array element, ready to accept the handle of the first extension page, rather than simply the first element. Collaterally, the value passed in <i>cPages</i> should state the number of unused array elements instead of the total number.</para>
+      <para>For example, if two introductory host pages were added to an array called <b>hpages</b>, then the call to <b>IWizardExtension.AddPages</b> would appear as follows.</para>
+      <code>#define ARRAYSIZE(a)    (sizeof(a)/sizeof(a[0]))
+g_iwe-&gt;AddPages(&amp;amp;amp;amp;amp;amp;hpages[2], ARRAYSIZE(hpages)-2, &amp;amp;amp;amp;amp;amp;nPages);
+</code>
+      <para>Do not confuse wizard pages, which are <see cref="PROPSHEETPAGE" /> structures, with hosted HTML pages. One wizard dialog page can host many sequential HTML pages. This method supplies the number of wizard dialog pages added by the wizard extension, not the number of server-side HTML pages which are displayed in it.</para>
+    </remarks>
+  </member>
+  <member name="IWizardExtension.GetFirstPage">
+    <summary>
+      <para>Gets a handle to the first page of the wizard extension.</para>
+    </summary>
+    <param name="phpage">
+      <para>Type: <b>HPROPSHEETPAGE*</b></para>
+      <para>A pointer to a <see cref="PROPSHEETPAGE" /> handle representing the first page of any wizard extension pages.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Although the wizard extension may host several sequential HTML pages, if it consists of only one page, the handles returned by <b>IWizardExtension.GetFirstPage</b> and <see cref="IWizardExtension.GetLastPage" /> are the same.</para>
+    </remarks>
+    <seealso cref="IWizardExtension" />
+    <seealso cref="IWizardExtension.GetLastPage" />
+  </member>
+  <member name="IWizardExtension.GetLastPage">
+    <summary>
+      <para>Gets a handle to the final page of the wizard extension pages.</para>
+    </summary>
+    <param name="phpage">
+      <para>Type: <b>HPROPSHEETPAGE*</b></para>
+      <para>A pointer to a <see cref="PROPSHEETPAGE" /> handle representing the wizard extension's final page.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This value is used to navigate backward into the wizard extension pages when the user clicks the <b>Back</b> button.</para>
+      <para>Although the wizard extension may host several sequential HTML pages, if it consists of only one page the handles returned by <see cref="IWizardExtension.GetFirstPage" /> and <b>IWizardExtension.GetLastPage</b> are the same.</para>
+    </remarks>
+    <seealso cref="IWizardExtension" />
+    <seealso cref="IWizardExtension.GetFirstPage" />
+  </member>
+  <member name="IWizardExtension">
+    <summary>
+      <para>Used by wizards such as the Web Publishing Wizard and Online Print Ordering Wizard which host server-side content pages. This interface exposes methods to specify supported extension pages and to navigate into and out of those pages.</para>
+    </summary>
+    <seealso cref="IWebWizardExtension" />
+  </member>
+</doc>

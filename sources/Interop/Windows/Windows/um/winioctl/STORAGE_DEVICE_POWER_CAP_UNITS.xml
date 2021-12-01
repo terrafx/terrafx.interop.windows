@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_DEVICE_POWER_CAP_UNITS">
+    <summary>
+      <para>The units of the maximum power threshold.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_device_power_cap.md">IOCTL_STORAGE_DEVICE_POWER_CAP</seealso>
+    <seealso cref="STORAGE_DEVICE_POWER_CAP" />
+  </member>
+  <member name="STORAGE_DEVICE_POWER_CAP_UNITS.StorageDevicePowerCapUnitsPercent">
+    <summary>
+      <para>Units in percent.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_POWER_CAP_UNITS.StorageDevicePowerCapUnitsMilliwatts">
+    <summary>
+      <para>Units in milliwatts.</para>
+    </summary>
+  </member>
+</doc>

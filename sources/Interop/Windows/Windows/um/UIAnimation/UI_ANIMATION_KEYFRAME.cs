@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UI_ANIMATION_KEYFRAME.xml' path='doc/member[@name="UI_ANIMATION_KEYFRAME"]/*' />
 public partial struct UI_ANIMATION_KEYFRAME
 {
+    /// <include file='UI_ANIMATION_KEYFRAME.xml' path='doc/member[@name="UI_ANIMATION_KEYFRAME._"]/*' />
     public int _;
 }

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleStyleFloat.xml' path='doc/member[@name="styleStyleFloat"]/*' />
 public enum styleStyleFloat
 {
+    /// <include file='styleStyleFloat.xml' path='doc/member[@name="styleStyleFloat.styleStyleFloatNotSet"]/*' />
     styleStyleFloatNotSet = 0,
+
+    /// <include file='styleStyleFloat.xml' path='doc/member[@name="styleStyleFloat.styleStyleFloatLeft"]/*' />
     styleStyleFloatLeft = 1,
+
+    /// <include file='styleStyleFloat.xml' path='doc/member[@name="styleStyleFloat.styleStyleFloatRight"]/*' />
     styleStyleFloatRight = 2,
+
+    /// <include file='styleStyleFloat.xml' path='doc/member[@name="styleStyleFloat.styleStyleFloatNone"]/*' />
     styleStyleFloatNone = 3,
+
+    /// <include file='styleStyleFloat.xml' path='doc/member[@name="styleStyleFloat.styleStyleFloat_Max"]/*' />
     styleStyleFloat_Max = 2147483647,
 }

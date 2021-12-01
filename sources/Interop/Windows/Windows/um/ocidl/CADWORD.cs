@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CADWORD.xml' path='doc/member[@name="CADWORD"]/*' />
 public unsafe partial struct CADWORD
 {
+    /// <include file='CADWORD.xml' path='doc/member[@name="CADWORD.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CADWORD.xml' path='doc/member[@name="CADWORD.pElems"]/*' />
     [NativeTypeName("DWORD *")]
     public uint* pElems;
 }

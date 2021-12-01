@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COPYSTATES.xml' path='doc/member[@name="COPYSTATES"]/*' />
 public enum COPYSTATES
 {
+    /// <include file='COPYSTATES.xml' path='doc/member[@name="COPYSTATES.DDCOPY_HIGHLIGHT"]/*' />
     DDCOPY_HIGHLIGHT = 1,
+
+    /// <include file='COPYSTATES.xml' path='doc/member[@name="COPYSTATES.DDCOPY_NOHIGHLIGHT"]/*' />
     DDCOPY_NOHIGHLIGHT = 2,
 }

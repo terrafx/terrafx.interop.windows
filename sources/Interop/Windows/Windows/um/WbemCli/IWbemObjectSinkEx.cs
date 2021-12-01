@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx"]/*' />
 [Guid("E7D35CFA-348B-485E-B524-252725D697CA")]
 [NativeTypeName("struct IWbemObjectSinkEx : IWbemObjectSink")]
 [NativeInheritance("IWbemObjectSink")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface
         return ((delegate* unmanaged<IWbemObjectSinkEx*, Guid*, void**, int>)(lpVtbl[0]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface
         return ((delegate* unmanaged<IWbemObjectSinkEx*, uint>)(lpVtbl[1]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface
         return ((delegate* unmanaged<IWbemObjectSinkEx*, uint>)(lpVtbl[2]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWbemObjectSink.Indicate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Indicate([NativeTypeName("long")] int lObjectCount, IWbemClassObject** apObjArray)
@@ -46,6 +51,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface
         return ((delegate* unmanaged<IWbemObjectSinkEx*, int, IWbemClassObject**, int>)(lpVtbl[3]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), lObjectCount, apObjArray);
     }
 
+    /// <inheritdoc cref="IWbemObjectSink.SetStatus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetStatus([NativeTypeName("long")] int lFlags, HRESULT hResult, [NativeTypeName("BSTR")] ushort* strParam, IWbemClassObject* pObjParam)
@@ -53,6 +59,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface
         return ((delegate* unmanaged<IWbemObjectSinkEx*, int, HRESULT, ushort*, IWbemClassObject*, int>)(lpVtbl[4]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), lFlags, hResult, strParam, pObjParam);
     }
 
+    /// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx.WriteMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT WriteMessage([NativeTypeName("ULONG")] uint uChannel, [NativeTypeName("const BSTR")] ushort* strMessage)
@@ -60,6 +67,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface
         return ((delegate* unmanaged<IWbemObjectSinkEx*, uint, ushort*, int>)(lpVtbl[5]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), uChannel, strMessage);
     }
 
+    /// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx.WriteError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT WriteError(IWbemClassObject* pObjError, [NativeTypeName("unsigned char *")] byte* puReturned)
@@ -67,6 +75,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface
         return ((delegate* unmanaged<IWbemObjectSinkEx*, IWbemClassObject*, byte*, int>)(lpVtbl[6]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), pObjError, puReturned);
     }
 
+    /// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx.PromptUser"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT PromptUser([NativeTypeName("const BSTR")] ushort* strMessage, [NativeTypeName("unsigned char")] byte uPromptType, [NativeTypeName("unsigned char *")] byte* puReturned)
@@ -74,6 +83,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface
         return ((delegate* unmanaged<IWbemObjectSinkEx*, ushort*, byte, byte*, int>)(lpVtbl[7]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), strMessage, uPromptType, puReturned);
     }
 
+    /// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx.WriteProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT WriteProgress([NativeTypeName("const BSTR")] ushort* strActivity, [NativeTypeName("const BSTR")] ushort* strCurrentOperation, [NativeTypeName("const BSTR")] ushort* strStatusDescription, [NativeTypeName("ULONG")] uint uPercentComplete, [NativeTypeName("ULONG")] uint uSecondsRemaining)
@@ -81,6 +91,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface
         return ((delegate* unmanaged<IWbemObjectSinkEx*, ushort*, ushort*, ushort*, uint, uint, int>)(lpVtbl[8]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), strActivity, strCurrentOperation, strStatusDescription, uPercentComplete, uSecondsRemaining);
     }
 
+    /// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx.WriteStreamParameter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT WriteStreamParameter([NativeTypeName("const BSTR")] ushort* strName, VARIANT* vtValue, [NativeTypeName("ULONG")] uint ulType, [NativeTypeName("ULONG")] uint ulFlags)

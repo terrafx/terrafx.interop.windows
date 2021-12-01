@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POPUPSUBMENUSTATES.xml' path='doc/member[@name="POPUPSUBMENUSTATES"]/*' />
 public enum POPUPSUBMENUSTATES
 {
+    /// <include file='POPUPSUBMENUSTATES.xml' path='doc/member[@name="POPUPSUBMENUSTATES.MSM_NORMAL"]/*' />
     MSM_NORMAL = 1,
+
+    /// <include file='POPUPSUBMENUSTATES.xml' path='doc/member[@name="POPUPSUBMENUSTATES.MSM_DISABLED"]/*' />
     MSM_DISABLED = 2,
 }

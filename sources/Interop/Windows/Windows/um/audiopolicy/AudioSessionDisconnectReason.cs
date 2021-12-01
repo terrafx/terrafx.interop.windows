@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AudioSessionDisconnectReason.xml' path='doc/member[@name="AudioSessionDisconnectReason"]/*' />
 public enum AudioSessionDisconnectReason
 {
+    /// <include file='AudioSessionDisconnectReason.xml' path='doc/member[@name="AudioSessionDisconnectReason.DisconnectReasonDeviceRemoval"]/*' />
     DisconnectReasonDeviceRemoval = 0,
+
+    /// <include file='AudioSessionDisconnectReason.xml' path='doc/member[@name="AudioSessionDisconnectReason.DisconnectReasonServerShutdown"]/*' />
     DisconnectReasonServerShutdown = (DisconnectReasonDeviceRemoval + 1),
+
+    /// <include file='AudioSessionDisconnectReason.xml' path='doc/member[@name="AudioSessionDisconnectReason.DisconnectReasonFormatChanged"]/*' />
     DisconnectReasonFormatChanged = (DisconnectReasonServerShutdown + 1),
+
+    /// <include file='AudioSessionDisconnectReason.xml' path='doc/member[@name="AudioSessionDisconnectReason.DisconnectReasonSessionLogoff"]/*' />
     DisconnectReasonSessionLogoff = (DisconnectReasonFormatChanged + 1),
+
+    /// <include file='AudioSessionDisconnectReason.xml' path='doc/member[@name="AudioSessionDisconnectReason.DisconnectReasonSessionDisconnected"]/*' />
     DisconnectReasonSessionDisconnected = (DisconnectReasonSessionLogoff + 1),
+
+    /// <include file='AudioSessionDisconnectReason.xml' path='doc/member[@name="AudioSessionDisconnectReason.DisconnectReasonExclusiveModeOverride"]/*' />
     DisconnectReasonExclusiveModeOverride = (DisconnectReasonSessionDisconnected + 1),
 }

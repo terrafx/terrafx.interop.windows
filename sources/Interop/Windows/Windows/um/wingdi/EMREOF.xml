@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMREOF">
+    <summary>
+      <para>The <b>EMREOF</b> structure contains data for the enhanced metafile record that indicates the end of the metafile.</para>
+    </summary>
+    <seealso cref="EMR" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</seealso>
+  </member>
+  <member name="EMREOF.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMREOF.nPalEntries">
+    <summary>
+      <para>The number of palette entries.</para>
+    </summary>
+  </member>
+  <member name="EMREOF.offPalEntries">
+    <summary>
+      <para>The offset, in bytes, to an array of <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structures.</para>
+    </summary>
+  </member>
+  <member name="EMREOF.nSizeLast">
+    <summary>
+      <para>The same size as the <b>nSize</b> member of the <see cref="EMR" /> structure. This member must be the last double word of the record. If palette entries exist, they precede this member.</para>
+    </summary>
+  </member>
+</doc>

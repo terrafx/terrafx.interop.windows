@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVPROPERTY.xml' path='doc/member[@name="DEVPROPERTY"]/*' />
 public unsafe partial struct DEVPROPERTY
 {
+    /// <include file='DEVPROPERTY.xml' path='doc/member[@name="DEVPROPERTY.CompKey"]/*' />
     public DEVPROPCOMPKEY CompKey;
 
+    /// <include file='DEVPROPERTY.xml' path='doc/member[@name="DEVPROPERTY.Type"]/*' />
     [NativeTypeName("DEVPROPTYPE")]
     public uint Type;
 
+    /// <include file='DEVPROPERTY.xml' path='doc/member[@name="DEVPROPERTY.BufferSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint BufferSize;
 
+    /// <include file='DEVPROPERTY.xml' path='doc/member[@name="DEVPROPERTY.Buffer"]/*' />
     [NativeTypeName("PVOID")]
     public void* Buffer;
 }

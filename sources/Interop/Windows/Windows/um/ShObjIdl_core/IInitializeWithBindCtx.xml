@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IInitializeWithBindCtx.Initialize">
+    <summary>
+      <para>Initializes a handler with a bind context.</para>
+    </summary>
+    <param name="pbc">
+      <para>Type: <b><see cref="IBindCtx" />*</b></para>
+      <para>Pointer to the <see cref="IBindCtx" /> object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IInitializeWithBindCtx">
+    <summary>
+      <para>Exposes a method that initializes a handler, such as a property handler, thumbnail handler, or preview handler, with a bind context.</para>
+    </summary>
+  </member>
+</doc>

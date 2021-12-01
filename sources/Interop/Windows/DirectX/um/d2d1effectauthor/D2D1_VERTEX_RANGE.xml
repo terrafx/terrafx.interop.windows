@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_VERTEX_RANGE">
+    <summary>
+      <para>Defines a range of vertices that are used when rendering less than the full contents of a vertex buffer.</para>
+    </summary>
+    <seealso cref="ID2D1DrawInfo.SetVertexProcessing" />
+  </member>
+  <member name="D2D1_VERTEX_RANGE.startVertex">
+    <summary>
+      <para>The first vertex in the range to process.</para>
+    </summary>
+  </member>
+  <member name="D2D1_VERTEX_RANGE.vertexCount">
+    <summary>
+      <para>The number of vertices to use.</para>
+    </summary>
+  </member>
+</doc>

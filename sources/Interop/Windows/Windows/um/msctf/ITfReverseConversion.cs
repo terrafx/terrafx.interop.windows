@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfReverseConversion.xml' path='doc/member[@name="ITfReverseConversion"]/*' />
 [Guid("A415E162-157D-417D-8A8C-0AB26C7D2781")]
 [NativeTypeName("struct ITfReverseConversion : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfReverseConversion : ITfReverseConversion.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfReverseConversion : ITfReverseConversion.Interfa
         return ((delegate* unmanaged<ITfReverseConversion*, Guid*, void**, int>)(lpVtbl[0]))((ITfReverseConversion*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfReverseConversion : ITfReverseConversion.Interfa
         return ((delegate* unmanaged<ITfReverseConversion*, uint>)(lpVtbl[1]))((ITfReverseConversion*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfReverseConversion : ITfReverseConversion.Interfa
         return ((delegate* unmanaged<ITfReverseConversion*, uint>)(lpVtbl[2]))((ITfReverseConversion*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfReverseConversion.xml' path='doc/member[@name="ITfReverseConversion.DoReverseConversion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT DoReverseConversion([NativeTypeName("LPCWSTR")] ushort* lpstr, ITfReverseConversionList** ppList)

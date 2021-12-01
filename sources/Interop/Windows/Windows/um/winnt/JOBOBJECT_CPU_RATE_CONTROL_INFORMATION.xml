@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION">
+    <summary>
+      <para>Contains CPU rate control information for a job object. This structure is used by the <see cref="SetInformationJobObject" /> and <see cref="QueryInformationJobObject" /> functions with the <b>JobObjectCpuRateControlInformation</b> information class.</para>
+    </summary>
+    <remarks>
+      <para>You can set CPU rate control for multiple jobs in a  hierarchy of nested jobs. When you set CPU rate control for a job object, the settings apply to the job and its child jobs in the hierarchy. When you set CPU rate control for a job in a nested hierarchy, the system calculates the corresponding quotas with respect to the CPU rate control of the immediate parent job for the job. In other words, the rates set for the job represent its portion of the CPU rate that is allocated to its parent job.  If a job object does not have a parent with CPU rate control turned on in the chain of its parent jobs, the rate control for the job represents the portion of the CPU for the entire system.</para>
+      <para>CPU rate control cannot be used by job objects in applications running under <a href="https://docs.microsoft.com//windows/desktop/TermServ/terminal-services-portal">Remote Desktop Services</a> (formerly Terminal Services)  if Dynamic Fair Share Scheduling (DFSS) is in effect.</para>
+    </remarks>
+    <seealso cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION" />
+    <seealso cref="QueryInformationJobObject" />
+    <seealso cref="SetInformationJobObject" />
+  </member>
+  <member name="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION.ControlFlags">
+    <summary>
+      <para>The scheduling policy for CPU rate control. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>JOB_OBJECT_CPU_RATE_CONTROL_ENABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>This flag enables the job's CPU rate to be controlled based on weight or hard cap. You must set this value if you also set <b>JOB_OBJECT_CPU_RATE_CONTROL_WEIGHT_BASED</b>,   <b>JOB_OBJECT_CPU_RATE_CONTROL_HARD_CAP</b>, or <b>JOB_OBJECT_CPU_RATE_CONTROL_MIN_MAX_RATE</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>JOB_OBJECT_CPU_RATE_CONTROL_WEIGHT_BASED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The job's CPU rate is calculated based on its relative weight to the weight of other jobs. If this flag is set, the <b>Weight</b> member contains more information. If this flag is clear, the <b>CpuRate</b> member contains more information.</para>
+            <para>If you set <b>JOB_OBJECT_CPU_RATE_CONTROL_WEIGHT_BASED</b>, you cannot also set <b>JOB_OBJECT_CPU_RATE_CONTROL_MIN_MAX_RATE</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>JOB_OBJECT_CPU_RATE_CONTROL_HARD_CAP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The job's CPU rate is a hard limit. After the job reaches its CPU cycle limit for the current scheduling interval, no threads associated with the job will run until the next interval.</para>
+            <para>If you set <b>JOB_OBJECT_CPU_RATE_CONTROL_HARD_CAP</b>, you cannot also set <b>JOB_OBJECT_CPU_RATE_CONTROL_MIN_MAX_RATE</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>JOB_OBJECT_CPU_RATE_CONTROL_NOTIFY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x8</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Sends messages when the CPU rate for the job exceeds the rate limits for the job during the tolerance interval.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>JOB_OBJECT_ CPU_RATE_CONTROL_MIN_MAX_RATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x10</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The CPU rate for the job is limited by minimum and maximum rates that you specify in the <b>MinRate</b> and <b>MaxRate</b> members.</para>
+            <para>If you set <b>JOB_OBJECT_CPU_RATE_CONTROL_MIN_MAX_RATE</b>, you can set neither  <b>JOB_OBJECT_CPU_RATE_CONTROL_WEIGHT_BASED</b> nor <b>JOB_OBJECT_CPU_RATE_CONTROL_HARD_CAP</b>.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION.DUMMYUNIONNAME.CpuRate">
+    <summary>
+      <para>Specifies the portion of processor cycles that the threads in a job object can use during each scheduling interval, as the number of cycles per 10,000 cycles. If the <b>ControlFlags</b> member specifies <b>JOB_OBJECT_CPU_RATE_WEIGHT_BASED</b> or <b>JOB_OBJECT_CPU_RATE_CONTROL_MIN_MAX_RATE</b>, this member is not used.</para>
+      <para>Set <b>CpuRate</b> to a percentage times 100. For example, to let the job use 20% of the CPU, set <b>CpuRate</b> to 20 times 100, or 2,000.</para>
+      <para>Do not set <b>CpuRate</b> to 0. If <b>CpuRate</b> is 0,  <see cref="SetInformationJobObject" /> returns <b>INVALID_ARGS</b>.</para>
+    </summary>
+  </member>
+  <member name="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION.DUMMYUNIONNAME.Weight">
+    <summary>
+      <para>If the <b>ControlFlags</b> member specifies <b>JOB_OBJECT_CPU_RATE_WEIGHT_BASED</b>, this member specifies the scheduling weight of the job object, which determines the share of processor time given to the job relative to other workloads on the processor.</para>
+      <para>This member can be a value from 1 through 9, where 1 is the smallest share and 9 is the largest share. The default is 5, which should be used for most workloads.</para>
+      <para>If the <b>ControlFlags</b> member specifies <b>JOB_OBJECT_CPU_RATE_CONTROL_MIN_MAX_RATE</b>, this member is not used.</para>
+    </summary>
+  </member>
+  <member name="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.MinRate">
+    <summary>
+      <para>Specifies the minimum portion of the processor cycles that the threads in a job object can reserve during each scheduling interval. Specify this rate as a percentage times 100.  For example, to set a minimum rate of 50%, specify 50 times 100, or  5,000.</para>
+      <para>For the minimum rates to work correctly, the sum of the minimum rates for all of the job objects in the system cannot exceed 10,000, which is the equivalent of 100%.</para>
+    </summary>
+  </member>
+  <member name="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.MaxRate">
+    <summary>
+      <para>Specifies the maximum portion of processor cycles that the threads in a job object can use during each scheduling interval. Specify this rate as a percentage times 100.  For example, to set  a maximum rate of 50%, specify 50 times 100, or  5,000.</para>
+      <para>After the job reaches this limit for a scheduling interval, no threads associated with the job can run until the next scheduling interval.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_LOGOTYPE_IMAGE">
+    <summary>
+      <para>The <b>CERT_LOGOTYPE_IMAGE</b> structure contains information about an image logotype.</para>
+    </summary>
+    <seealso cref="CERT_LOGOTYPE_DATA" />
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE.LogotypeDetails">
+    <summary>
+      <para>A <see cref="CERT_LOGOTYPE_DETAILS" /> structure that contains additional information about the image.</para>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE.pLogotypeImageInfo">
+    <summary>
+      <para>The address of a <see cref="CERT_LOGOTYPE_IMAGE_INFO" /> structure that contains the image information.</para>
+    </summary>
+  </member>
+</doc>

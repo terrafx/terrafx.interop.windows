@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IClassActivator.GetClassObject">
+    <summary>
+      <para>Retrieves a class object.</para>
+    </summary>
+    <param name="rclsid">
+      <para>The CLSID that identifies the class whose class object is to be retrieved.</para>
+    </param>
+    <param name="dwClassContext">
+      <para>The context in which the class is expected to run. For a list of values, see the <see cref="CLSCTX" /> enumeration.</para>
+    </param>
+    <param name="locale">
+      <para>An LCID constant as defined in WinNls.h.</para>
+    </param>
+    <param name="riid">
+      <para>The IID of the interface on the object to which a pointer is desired.</para>
+    </param>
+    <param name="ppv">
+      <para>The address of pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, *<i>ppv</i> contains the requested interface pointer.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</para>
+    </returns>
+    <seealso cref="CoGetClassObject" />
+    <seealso cref="IClassActivator" />
+  </member>
+  <member name="IClassActivator">
+    <summary>
+      <para>Specifies a method that retrieves a class object.</para>
+    </summary>
+  </member>
+</doc>

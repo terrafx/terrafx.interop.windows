@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_STROKE_TRANSFORM_TYPE">
+    <summary>
+      <para>Defines how the world transform, dots per inch (dpi), and stroke width affect the shape of the pen used to stroke a primitive.</para>
+    </summary>
+    <remarks>
+      <para>If you specify <b>D2D1_STROKE_TRANSFORM_TYPE_FIXED</b> the stroke isn't affected by the world transform.</para>
+      <para>If you specify <b>D2D1_STROKE_TRANSFORM_TYPE_FIXED</b> the application has the same behavior in Windows 7 and later.</para>
+      <para>If you specify <b>D2D1_STROKE_TRANSFORM_TYPE_HAIRLINE</b> the stroke is always 1 pixel wide.</para>
+      <para>Apart from the stroke, any value derived from the stroke width is not affected when the transformType is either fixed or hairline. This includes miters, line caps and so on.</para>
+      <para>It is important to distinguish between the geometry being stroked and the shape of the stroke pen. When D2D1_STROKE_TRANSFORM_TYPE_FIXED or D2D1_STROKE_TRANSFORM_TYPE_HAIRLINE is specified, the geometry still respects the transform and dpi, but the pen that traces the geometry will not.</para>
+      <para>Here is an illustration of a stroke with dashing and a skew and stretch transform.</para>
+      <para>
+        <img alt="An illustration of a stroke with dashing and a skew and stretch transform." src="https://docs.microsoft.com/windows/win32/api/d2d1_1mages/skewedstroke.png" />
+      </para>
+      <para>And here is an illustration of a fixed width stroke which does not get transformed.</para>
+      <para>
+        <img alt="An illustration of a fixed width stroke which does not get transformed." src="https://docs.microsoft.com/windows/win32/api/d2d1_1mages/fixedwidthstroke.png" />
+      </para>
+    </remarks>
+    <seealso cref="ID2D1StrokeStyle1" />
+  </member>
+  <member name="D2D1_STROKE_TRANSFORM_TYPE.D2D1_STROKE_TRANSFORM_TYPE_NORMAL">
+    <summary>
+      <para>The stroke respects the currently set world transform, the dpi, and the stroke width.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_TRANSFORM_TYPE.D2D1_STROKE_TRANSFORM_TYPE_FIXED">
+    <summary>
+      <para>The stroke does not respect the world transform but it does respect the dpi and stroke width.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_TRANSFORM_TYPE.D2D1_STROKE_TRANSFORM_TYPE_HAIRLINE">
+    <summary>
+      <para>The stroke is forced to 1 pixel wide (in device space) and does not respect the world transform, the dpi, or the stroke width.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_TRANSFORM_TYPE.D2D1_STROKE_TRANSFORM_TYPE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

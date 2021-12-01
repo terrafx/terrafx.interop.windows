@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ApplicationActivationManager.xml' path='doc/member[@name="ApplicationActivationManager"]/*' />
 [Guid("45BA127D-10A8-46EA-8AB7-56EA9078943C")]
 public partial struct ApplicationActivationManager
 {

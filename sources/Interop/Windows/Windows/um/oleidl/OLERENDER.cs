@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLERENDER.xml' path='doc/member[@name="OLERENDER"]/*' />
 public enum OLERENDER
 {
+    /// <include file='OLERENDER.xml' path='doc/member[@name="OLERENDER.OLERENDER_NONE"]/*' />
     OLERENDER_NONE = 0,
+
+    /// <include file='OLERENDER.xml' path='doc/member[@name="OLERENDER.OLERENDER_DRAW"]/*' />
     OLERENDER_DRAW = 1,
+
+    /// <include file='OLERENDER.xml' path='doc/member[@name="OLERENDER.OLERENDER_FORMAT"]/*' />
     OLERENDER_FORMAT = 2,
+
+    /// <include file='OLERENDER.xml' path='doc/member[@name="OLERENDER.OLERENDER_ASIS"]/*' />
     OLERENDER_ASIS = 3,
 }

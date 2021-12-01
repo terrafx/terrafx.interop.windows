@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer"]/*' />
 [Guid("3050F49F-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IMarkupPointer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, Guid*, void**, int>)(lpVtbl[0]))((IMarkupPointer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, uint>)(lpVtbl[1]))((IMarkupPointer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, uint>)(lpVtbl[2]))((IMarkupPointer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.OwningDoc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OwningDoc(IHTMLDocument2** ppDoc)
@@ -46,6 +51,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IHTMLDocument2**, int>)(lpVtbl[3]))((IMarkupPointer*)Unsafe.AsPointer(ref this), ppDoc);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.Gravity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Gravity(POINTER_GRAVITY* pGravity)
@@ -53,6 +59,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, POINTER_GRAVITY*, int>)(lpVtbl[4]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pGravity);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.SetGravity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetGravity(POINTER_GRAVITY Gravity)
@@ -60,6 +67,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, POINTER_GRAVITY, int>)(lpVtbl[5]))((IMarkupPointer*)Unsafe.AsPointer(ref this), Gravity);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.Cling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Cling(BOOL* pfCling)
@@ -67,6 +75,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, BOOL*, int>)(lpVtbl[6]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pfCling);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.SetCling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetCling(BOOL fCLing)
@@ -74,6 +83,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, BOOL, int>)(lpVtbl[7]))((IMarkupPointer*)Unsafe.AsPointer(ref this), fCLing);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.Unposition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Unposition()
@@ -81,6 +91,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, int>)(lpVtbl[8]))((IMarkupPointer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.IsPositioned"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT IsPositioned(BOOL* pfPositioned)
@@ -88,6 +99,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, BOOL*, int>)(lpVtbl[9]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pfPositioned);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.GetContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetContainer(IMarkupContainer** ppContainer)
@@ -95,6 +107,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IMarkupContainer**, int>)(lpVtbl[10]))((IMarkupPointer*)Unsafe.AsPointer(ref this), ppContainer);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.MoveAdjacentToElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT MoveAdjacentToElement(IHTMLElement* pElement, ELEMENT_ADJACENCY eAdj)
@@ -102,6 +115,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IHTMLElement*, ELEMENT_ADJACENCY, int>)(lpVtbl[11]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pElement, eAdj);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.MoveToPointer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT MoveToPointer(IMarkupPointer* pPointer)
@@ -109,6 +123,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[12]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pPointer);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.MoveToContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT MoveToContainer(IMarkupContainer* pContainer, BOOL fAtStart)
@@ -116,6 +131,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IMarkupContainer*, BOOL, int>)(lpVtbl[13]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pContainer, fAtStart);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.Left"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT Left(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText)
@@ -123,6 +139,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int>)(lpVtbl[14]))((IMarkupPointer*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.Right"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT Right(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText)
@@ -130,6 +147,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int>)(lpVtbl[15]))((IMarkupPointer*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.CurrentScope"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT CurrentScope(IHTMLElement** ppElemCurrent)
@@ -137,6 +155,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IHTMLElement**, int>)(lpVtbl[16]))((IMarkupPointer*)Unsafe.AsPointer(ref this), ppElemCurrent);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.IsLeftOf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT IsLeftOf(IMarkupPointer* pPointerThat, BOOL* pfResult)
@@ -144,6 +163,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, BOOL*, int>)(lpVtbl[17]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.IsLeftOfOrEqualTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT IsLeftOfOrEqualTo(IMarkupPointer* pPointerThat, BOOL* pfResult)
@@ -151,6 +171,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, BOOL*, int>)(lpVtbl[18]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.IsRightOf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT IsRightOf(IMarkupPointer* pPointerThat, BOOL* pfResult)
@@ -158,6 +179,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, BOOL*, int>)(lpVtbl[19]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.IsRightOfOrEqualTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT IsRightOfOrEqualTo(IMarkupPointer* pPointerThat, BOOL* pfResult)
@@ -165,6 +187,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, BOOL*, int>)(lpVtbl[20]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.IsEqualTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT IsEqualTo(IMarkupPointer* pPointerThat, BOOL* pfAreEqual)
@@ -172,6 +195,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, BOOL*, int>)(lpVtbl[21]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pPointerThat, pfAreEqual);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.MoveUnit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT MoveUnit(MOVEUNIT_ACTION muAction)
@@ -179,6 +203,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         return ((delegate* unmanaged<IMarkupPointer*, MOVEUNIT_ACTION, int>)(lpVtbl[22]))((IMarkupPointer*)Unsafe.AsPointer(ref this), muAction);
     }
 
+    /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.FindTextW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT FindTextW([NativeTypeName("OLECHAR *")] ushort* pchFindText, [NativeTypeName("DWORD")] uint dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch)

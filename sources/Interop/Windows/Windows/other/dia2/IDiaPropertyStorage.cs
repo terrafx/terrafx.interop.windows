@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage"]/*' />
 [Guid("9D416F9C-E184-45B2-A4F0-CE517F719E9B")]
 [NativeTypeName("struct IDiaPropertyStorage : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         return ((delegate* unmanaged<IDiaPropertyStorage*, Guid*, void**, int>)(lpVtbl[0]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         return ((delegate* unmanaged<IDiaPropertyStorage*, uint>)(lpVtbl[1]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         return ((delegate* unmanaged<IDiaPropertyStorage*, uint>)(lpVtbl[2]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadMultiple"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC *")] PROPSPEC* rgpspec, PROPVARIANT* rgvar)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         return ((delegate* unmanaged<IDiaPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int>)(lpVtbl[3]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgvar);
     }
 
+    /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadPropertyNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID *")] uint* rgpropid, [NativeTypeName("BSTR *")] ushort** rglpwstrName)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         return ((delegate* unmanaged<IDiaPropertyStorage*, uint, uint*, ushort**, int>)(lpVtbl[4]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
 
+    /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.Enum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Enum(IEnumSTATPROPSTG** ppenum)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         return ((delegate* unmanaged<IDiaPropertyStorage*, IEnumSTATPROPSTG**, int>)(lpVtbl[5]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), ppenum);
     }
 
+    /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadDWORD"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ReadDWORD([NativeTypeName("PROPID")] uint id, [NativeTypeName("DWORD *")] uint* pValue)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         return ((delegate* unmanaged<IDiaPropertyStorage*, uint, uint*, int>)(lpVtbl[6]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
     }
 
+    /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadLONG"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ReadLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("LONG *")] int* pValue)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         return ((delegate* unmanaged<IDiaPropertyStorage*, uint, int*, int>)(lpVtbl[7]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
     }
 
+    /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadBOOL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ReadBOOL([NativeTypeName("PROPID")] uint id, BOOL* pValue)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         return ((delegate* unmanaged<IDiaPropertyStorage*, uint, BOOL*, int>)(lpVtbl[8]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
     }
 
+    /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadULONGLONG"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ReadULONGLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("ULONGLONG *")] ulong* pValue)
@@ -88,6 +99,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         return ((delegate* unmanaged<IDiaPropertyStorage*, uint, ulong*, int>)(lpVtbl[9]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
     }
 
+    /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadBSTR"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] ushort** pValue)

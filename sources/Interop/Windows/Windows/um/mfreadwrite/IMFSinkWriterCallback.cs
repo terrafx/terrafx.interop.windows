@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSinkWriterCallback.xml' path='doc/member[@name="IMFSinkWriterCallback"]/*' />
 [Guid("666F76DE-33D2-41B9-A458-29ED0A972C58")]
 [NativeTypeName("struct IMFSinkWriterCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSinkWriterCallback : IMFSinkWriterCallback.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSinkWriterCallback : IMFSinkWriterCallback.Inter
         return ((delegate* unmanaged<IMFSinkWriterCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSinkWriterCallback : IMFSinkWriterCallback.Inter
         return ((delegate* unmanaged<IMFSinkWriterCallback*, uint>)(lpVtbl[1]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSinkWriterCallback : IMFSinkWriterCallback.Inter
         return ((delegate* unmanaged<IMFSinkWriterCallback*, uint>)(lpVtbl[2]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSinkWriterCallback.xml' path='doc/member[@name="IMFSinkWriterCallback.OnFinalize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnFinalize(HRESULT hrStatus)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSinkWriterCallback : IMFSinkWriterCallback.Inter
         return ((delegate* unmanaged<IMFSinkWriterCallback*, HRESULT, int>)(lpVtbl[3]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this), hrStatus);
     }
 
+    /// <include file='IMFSinkWriterCallback.xml' path='doc/member[@name="IMFSinkWriterCallback.OnMarker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnMarker([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LPVOID")] void* pvContext)

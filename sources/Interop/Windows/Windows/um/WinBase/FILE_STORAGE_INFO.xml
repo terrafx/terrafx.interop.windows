@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_STORAGE_INFO">
+    <summary>
+      <para>Contains directory information for a file. This structure is returned from the
+<see cref="GetFileInformationByHandleEx" /> function when
+<b>FileStorageInfo</b> is passed in the <i>FileInformationClass</i></para>
+      <para>parameter.</para>
+    </summary>
+    <remarks>
+      <para>If a volume is built on top of storage devices with different properties (for example a mirrored, spanned,
+striped, or RAID configuration) the sizes returned are those of the largest size of any of the underlying storage
+devices.</para>
+    </remarks>
+    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-structures">File Management Structures</seealso>
+    <seealso cref="GetFileInformationByHandleEx" />
+  </member>
+  <member name="FILE_STORAGE_INFO.LogicalBytesPerSector">
+    <summary>
+      <para>Logical bytes per sector  reported by physical storage. This is the smallest size for which uncached I/O is
+supported.</para>
+    </summary>
+  </member>
+  <member name="FILE_STORAGE_INFO.PhysicalBytesPerSectorForAtomicity">
+    <summary>
+      <para>Bytes per sector for atomic writes. Writes smaller than this may require a read before the entire block can
+be written atomically.</para>
+    </summary>
+  </member>
+  <member name="FILE_STORAGE_INFO.PhysicalBytesPerSectorForPerformance">
+    <summary>
+      <para>Bytes per sector for optimal performance for writes.</para>
+    </summary>
+  </member>
+  <member name="FILE_STORAGE_INFO.FileSystemEffectivePhysicalBytesPerSectorForAtomicity">
+    <summary>
+      <para>This is the size of the block used for atomicity by the file system. This may be a trade-off between the
+optimal size of the physical media and one that is easier to adapt existing code and structures.</para>
+    </summary>
+  </member>
+  <member name="FILE_STORAGE_INFO.Flags">
+    <summary>
+      <para>This member can contain combinations of flags specifying information about the alignment of the
+storage.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STORAGE_INFO_FLAGS_ALIGNED_DEVICE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>When set, this flag indicates that the logical sectors of the storage device are aligned to physical
+sector boundaries.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STORAGE_INFO_FLAGS_PARTITION_ALIGNED_ON_DEVICE    </b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>When set, this flag indicates that the partition is aligned to physical sector boundaries on the
+storage device.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="FILE_STORAGE_INFO.ByteOffsetForSectorAlignment">
+    <summary>
+      <para>Logical sector offset within the first physical sector where the first logical sector is placed, in bytes.
+If this value is set to <b>STORAGE_INFO_OFFSET_UNKNOWN</b> (0xffffffff), there was
+insufficient information to compute this field.</para>
+    </summary>
+  </member>
+  <member name="FILE_STORAGE_INFO.ByteOffsetForPartitionAlignment">
+    <summary>
+      <para>Offset used to align the partition to a physical sector boundary on the storage device, in bytes. If this
+value is set to <b>STORAGE_INFO_OFFSET_UNKNOWN</b> (0xffffffff), there was insufficient
+information to compute this field.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_MAPPED_RECT.xml' path='doc/member[@name="DXGI_MAPPED_RECT"]/*' />
 public unsafe partial struct DXGI_MAPPED_RECT
 {
+    /// <include file='DXGI_MAPPED_RECT.xml' path='doc/member[@name="DXGI_MAPPED_RECT.Pitch"]/*' />
     public int Pitch;
 
+    /// <include file='DXGI_MAPPED_RECT.xml' path='doc/member[@name="DXGI_MAPPED_RECT.pBits"]/*' />
     public byte* pBits;
 }

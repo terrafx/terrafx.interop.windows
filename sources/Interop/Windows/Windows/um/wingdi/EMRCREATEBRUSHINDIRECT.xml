@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRCREATEBRUSHINDIRECT">
+    <summary>
+      <para>The <b>EMRCREATEBRUSHINDIRECT</b> structure contains members for the <see cref="CreateBrushIndirect" /> enhanced metafile record.</para>
+    </summary>
+    <seealso cref="CreateBrushIndirect" />
+    <seealso cref="LOGBRUSH" />
+    <seealso cref="LOGBRUSH32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRCREATEBRUSHINDIRECT.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATEBRUSHINDIRECT.ihBrush">
+    <summary>
+      <para>Index of brush in handle table.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATEBRUSHINDIRECT.lb">
+    <summary>
+      <para>A <see cref="LOGBRUSH32" /> structure containing information about the brush. The <b>lbStyle</b> member must be either the BS_SOLID, BS_HOLLOW, BS_NULL, or BS_HATCHED value.</para>
+      <para>Note, that if your code is used on both 32-bit and 64-bit platforms, you must use the <see cref="LOGBRUSH32" /> structure. This maintains compatibility between the platforms when you record the metafile on one platform and use it on the other platform. If your code remains on one platform, it is sufficient to use <see cref="LOGBRUSH" />.</para>
+    </summary>
+  </member>
+</doc>

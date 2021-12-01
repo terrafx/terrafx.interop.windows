@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLMediaElement.xml' path='doc/member[@name="HTMLMediaElement"]/*' />
 [Guid("3051070C-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLMediaElement
 {

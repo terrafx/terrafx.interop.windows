@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_DVDCOPY_SET_COPY_STATE">
+    <summary>
+      <para>Specifies the copy protection state of the filter.</para>
+    </summary>
+    <remarks>
+      <para>Both the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ikspropertyset-get">IKsPropertySet.Get</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ikspropertyset-set">IKsPropertySet.Set</a> methods are supported on this property. The Get method is called first to determine if authentication is required. If a filter provides multiple pins that use the same authenticator, such as a hardware DVD decoder, the decoder might respond with <b>AM_DVDCOPYSTATE_AUTHENTICATION_NOT_REQUIRED</b> on some pins to indicate that the key exchange algorithm only needs to be applied once. The filter should respond with <b>AM_DVDCOPYSTATE_AUTHENTICATION_REQUIRED</b> to get the copy protection state property on the first pin where this property is issued.</para>
+      <para>The Set method is used to indicate which phase of copy protection negotiation the filter is entering. Specify these by setting the required flag in the <see cref="AM_DVDCOPYSTATE" /> enumerated type.</para>
+      <para>The AM_PROPERTY_DVDCOPY_SET_COPY_STATE property uses this structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
+  </member>
+  <member name="AM_DVDCOPY_SET_COPY_STATE.DVDCopyState">
+    <summary>
+      <para>Copy protection state of the filter. Member of the <see cref="AM_DVDCOPYSTATE" /> enumerated data type.</para>
+    </summary>
+  </member>
+</doc>

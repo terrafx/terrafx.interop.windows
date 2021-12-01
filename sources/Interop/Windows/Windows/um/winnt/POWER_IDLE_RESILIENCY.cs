@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_IDLE_RESILIENCY.xml' path='doc/member[@name="POWER_IDLE_RESILIENCY"]/*' />
 public partial struct POWER_IDLE_RESILIENCY
 {
+    /// <include file='POWER_IDLE_RESILIENCY.xml' path='doc/member[@name="POWER_IDLE_RESILIENCY.CoalescingTimeout"]/*' />
     [NativeTypeName("DWORD")]
     public uint CoalescingTimeout;
 
+    /// <include file='POWER_IDLE_RESILIENCY.xml' path='doc/member[@name="POWER_IDLE_RESILIENCY.IdleResiliencyPeriod"]/*' />
     [NativeTypeName("DWORD")]
     public uint IdleResiliencyPeriod;
 }

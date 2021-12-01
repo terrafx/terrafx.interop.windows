@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RETRIEVAL_POINTER_COUNT.xml' path='doc/member[@name="RETRIEVAL_POINTER_COUNT"]/*' />
 public partial struct RETRIEVAL_POINTER_COUNT
 {
+    /// <include file='RETRIEVAL_POINTER_COUNT.xml' path='doc/member[@name="RETRIEVAL_POINTER_COUNT.ExtentCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExtentCount;
 }

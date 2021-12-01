@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DVENCODERVIDEOFORMAT">
+    <summary>
+      <para>Indicates the video standard (NTSC or PAL) for digital video (DV) encoding.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IDVEnc Interface" />
+  </member>
+  <member name="_DVENCODERVIDEOFORMAT.DVENCODERVIDEOFORMAT_NTSC">
+    <summary>
+      <para>National Television Standards Committee (NTSC)</para>
+    </summary>
+  </member>
+  <member name="_DVENCODERVIDEOFORMAT.DVENCODERVIDEOFORMAT_PAL">
+    <summary>
+      <para>Phase Alternating Line (PAL)</para>
+    </summary>
+  </member>
+</doc>

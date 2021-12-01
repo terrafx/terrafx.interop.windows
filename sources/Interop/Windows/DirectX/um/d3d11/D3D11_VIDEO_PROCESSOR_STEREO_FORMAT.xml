@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT">
+    <summary>
+      <para>Specifies the layout in memory of a stereo 3D video frame.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration designates the two stereo views as "frame 0" and "frame 1". The <i>LeftViewFrame0</i> parameter of the <see cref="VideoProcessorSetStreamStereoFormat" /> method specifies which view is the left view, and which is the right view.</para>
+      <para>For packed formats, if the source rectangle clips part of the surface, the driver interprets the rectangle in logical coordinates relative to the stereo view,  rather than absolute pixel coordinates. The result is that frame 0 and frame 1 are clipped proportionately.</para>
+      <para>To query whether the device supports stereo 3D video, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check for the <b>D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_STEREO</b> flag in the <b>FeatureCaps</b> member of the <see cref="D3D11_VIDEO_PROCESSOR_CAPS" /> structure. If this capability flag is present, it means that the driver supports all of the stereo formats that are not  listed as optional. To find out which optional formats are supported, call <b>GetVideoProcessorCaps</b> and check the <b>StereoCaps</b> member of the structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+    <seealso cref="ID3D11VideoContext.VideoProcessorSetStreamStereoFormat" />
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT.D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO">
+    <summary>
+      <para>The sample does not contain stereo data.  If the stereo format is not specified, this value is the default.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT.D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_HORIZONTAL">
+    <summary>
+      <para>Frame 0 and frame 1 are packed side-by-side, as shown in the following diagram.</para>
+      <para>
+        <img alt="Side-by-side packing" src="https://docs.microsoft.com/windows/win32/api/d3d11mages/dxgistereo3d02.png" />
+      </para>
+      <para>All drivers that support stereo video must support this format.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT.D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_VERTICAL">
+    <summary>
+      <para>Frame 0 and frame 1 are packed top-to-bottom, as shown in the following diagram.</para>
+      <para>
+        <img alt="Top-to-bottom packing" src="https://docs.microsoft.com/windows/win32/api/d3d11mages/dxgistereo3d01.png" />
+      </para>
+      <para>All drivers that support stereo video must support this format.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT.D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_SEPARATE">
+    <summary>
+      <para>Frame 0 and frame 1 are placed in separate resources or in separate texture array elements within the same resource.</para>
+      <para>All drivers that support stereo video must support this format.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT.D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO_OFFSET">
+    <summary>
+      <para>The sample contains non-stereo data. However, the driver should create a left/right output of this sample using a specified offset.  The offset is specified in the <i>MonoOffset</i> parameter of the <see cref="ID3D11VideoContext.VideoProcessorSetStreamStereoFormat" /> method.</para>
+      <para>This format is primarily intended for subtitles and other subpicture data, where the entire sample is presented on the same plane.</para>
+      <para>Support for this stereo format is optional.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT.D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_ROW_INTERLEAVED">
+    <summary>
+      <para>Frame 0 and frame 1 are packed into interleaved rows, as shown in the following diagram.</para>
+      <para>
+        <img alt="Interleaved rows" src="https://docs.microsoft.com/windows/win32/api/d3d11mages/dxgistereo3d03.png" />
+      </para>
+      <para>Support for this stereo format is optional.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT.D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_COLUMN_INTERLEAVED">
+    <summary>
+      <para>Frame 0 and frame 1 are packed into interleaved columns, as shown in the following diagram.</para>
+      <para>
+        <img alt="Interleaved columns" src="https://docs.microsoft.com/windows/win32/api/d3d11mages/dxgistereo3d04.png" />
+      </para>
+      <para>Support for this stereo format is optional.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT.D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_CHECKERBOARD">
+    <summary>
+      <para>Frame 0 and frame 1 are packed in a checkerboard format, as shown in the following diagram.</para>
+      <para>
+        <img alt="Checkerboard packing" src="https://docs.microsoft.com/windows/win32/api/d3d11mages/dxgistereo3d05.png" />
+      </para>
+      <para>Support for this stereo format is optional.</para>
+    </summary>
+  </member>
+</doc>

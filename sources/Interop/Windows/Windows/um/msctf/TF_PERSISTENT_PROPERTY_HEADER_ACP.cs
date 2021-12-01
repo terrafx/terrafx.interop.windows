@@ -7,22 +7,29 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TF_PERSISTENT_PROPERTY_HEADER_ACP.xml' path='doc/member[@name="TF_PERSISTENT_PROPERTY_HEADER_ACP"]/*' />
 public partial struct TF_PERSISTENT_PROPERTY_HEADER_ACP
 {
+    /// <include file='TF_PERSISTENT_PROPERTY_HEADER_ACP.xml' path='doc/member[@name="TF_PERSISTENT_PROPERTY_HEADER_ACP.guidType"]/*' />
     public Guid guidType;
 
+    /// <include file='TF_PERSISTENT_PROPERTY_HEADER_ACP.xml' path='doc/member[@name="TF_PERSISTENT_PROPERTY_HEADER_ACP.ichStart"]/*' />
     [NativeTypeName("LONG")]
     public int ichStart;
 
+    /// <include file='TF_PERSISTENT_PROPERTY_HEADER_ACP.xml' path='doc/member[@name="TF_PERSISTENT_PROPERTY_HEADER_ACP.cch"]/*' />
     [NativeTypeName("LONG")]
     public int cch;
 
+    /// <include file='TF_PERSISTENT_PROPERTY_HEADER_ACP.xml' path='doc/member[@name="TF_PERSISTENT_PROPERTY_HEADER_ACP.cb"]/*' />
     [NativeTypeName("ULONG")]
     public uint cb;
 
+    /// <include file='TF_PERSISTENT_PROPERTY_HEADER_ACP.xml' path='doc/member[@name="TF_PERSISTENT_PROPERTY_HEADER_ACP.dwPrivate"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPrivate;
 
+    /// <include file='TF_PERSISTENT_PROPERTY_HEADER_ACP.xml' path='doc/member[@name="TF_PERSISTENT_PROPERTY_HEADER_ACP.clsidTIP"]/*' />
     [NativeTypeName("CLSID")]
     public Guid clsidTIP;
 }

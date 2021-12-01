@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IHandlerInfo.GetApplicationDisplayName">
+    <summary>
+      <para>Retrieves the display name of the application that implemented the handler.</para>
+    </summary>
+    <param name="value">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>A pointer to a string that, when this method returns successfully, receives the display name. If no display name could be found, the name of the application's .exe file is used.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IHandlerInfo" />
+  </member>
+  <member name="IHandlerInfo.GetApplicationIconReference">
+    <summary>
+      <para>Retrieves the icon of the application that implemented the handler.</para>
+    </summary>
+    <param name="value">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>A pointer to a string that, when this method returns successfully, receives the path of the icon.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IHandlerInfo" />
+  </member>
+  <member name="IHandlerInfo.GetApplicationPublisher">
+    <summary>
+      <para>Retrieves the name of the publisher of the application that implemented the handler.</para>
+    </summary>
+    <param name="value">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>A pointer to a string that, when this method returns successfully, receives the publisher's name.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IHandlerInfo" />
+  </member>
+  <member name="IHandlerInfo">
+    <summary>
+      <para>Supplies methods that provide information about the handler to methods of the <see cref="IHandlerActivationHost" /> interface.</para>
+    </summary>
+  </member>
+</doc>

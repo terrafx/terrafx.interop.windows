@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1SvgPathData.CreatePathGeometry">
+    <summary>
+      <para>Creates a path geometry object representing the path data.</para>
+    </summary>
+    <param name="fillMode">
+      <para>Type: <b><see cref="D2D1_FILL_MODE" /></b></para>
+      <para>Fill mode for the path geometry object.</para>
+    </param>
+    <param name="pathGeometry">
+      <para>Type: <b>ID2D1PathGeometry1**</b></para>
+      <para>On completion, pathGeometry will contain a point to the created <see cref="ID2D1PathGeometry1" /> object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPathData" />
+  </member>
+  <member name="ID2D1SvgPathData.GetCommands">
+    <summary>
+      <para>Gets commands from the commands array.</para>
+    </summary>
+    <param name="commands">
+      <para>Type: <b><see cref="D2D1_SVG_PATH_COMMAND" />*</b></para>
+      <para>Buffer to contain the commands.</para>
+    </param>
+    <param name="commandsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The element count of the buffer.</para>
+    </param>
+    <param name="startIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index of the first commands to retrieve.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPathData" />
+  </member>
+  <member name="ID2D1SvgPathData.GetCommandsCount">
+    <summary>
+      <para>Gets the size of the commands array.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>Returns the size of the commands array.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPathData" />
+  </member>
+  <member name="ID2D1SvgPathData.GetSegmentData">
+    <summary>
+      <para>Gets data from the segment data array.</para>
+    </summary>
+    <param name="data">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>Buffer to contain the segment data array.</para>
+    </param>
+    <param name="dataCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The element count of the buffer.</para>
+    </param>
+    <param name="startIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index of the first segment data to retrieve.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPathData" />
+  </member>
+  <member name="ID2D1SvgPathData.GetSegmentDataCount">
+    <summary>
+      <para>Gets the size of the segment data array.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>Returns the size of the segment data array.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPathData" />
+  </member>
+  <member name="ID2D1SvgPathData.RemoveCommandsAtEnd">
+    <summary>
+      <para>Removes commands from the end of the commands array.</para>
+    </summary>
+    <param name="commandsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>Specifies how many commands to remove.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPathData" />
+  </member>
+  <member name="ID2D1SvgPathData.RemoveSegmentDataAtEnd">
+    <summary>
+      <para>Removes data from the end of the segment data array.</para>
+    </summary>
+    <param name="dataCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>Specifies how much data to remove.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPathData" />
+  </member>
+  <member name="ID2D1SvgPathData.UpdateCommands">
+    <summary>
+      <para>Updates the commands array. Existing commands not updated by this method are preserved.
+The array is resized larger if necessary to accommodate the new commands.</para>
+    </summary>
+    <param name="commands">
+      <para>Type: <b>const <see cref="D2D1_SVG_PATH_COMMAND" />*</b></para>
+      <para>The commands array.</para>
+    </param>
+    <param name="commandsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of commands to update.</para>
+    </param>
+    <param name="startIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index at which to begin updating commands. Must be less than or equal to the size of the commands array.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPathData" />
+  </member>
+  <member name="ID2D1SvgPathData.UpdateSegmentData">
+    <summary>
+      <para>Updates the segment data array. Existing segment data not updated by this method are preserved.
+The array is resized larger if necessary to accommodate the new segment data.</para>
+    </summary>
+    <param name="data">
+      <para>Type: <b>const FLOAT*</b></para>
+      <para>The data array.</para>
+    </param>
+    <param name="dataCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of data to update.</para>
+    </param>
+    <param name="startIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index at which to begin updating segment data. Must be less than or equal to the size of the segment data array.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPathData" />
+  </member>
+  <member name="ID2D1SvgPathData">
+    <summary>
+      <para>Interface describing SVG path data. Path data can be set as the 'd' attribute on a 'path' element.</para>
+      <para>The path data set is factored into two arrays. The segment data array stores all
+numbers and the commands array stores the set of commands. Unlike the string
+data set in the d attribute, each command in this representation uses a fixed
+number of elements in the segment data array. Therefore, the path 'M 0,0 100,0
+0,100 Z' is represented as: 'M0,0 L100,0 L0,100 Z'. This is split into two
+arrays, with the segment data containing '0,0 100,0 0,100', and the commands
+containing 'M L L Z'.</para>
+    </summary>
+  </member>
+</doc>

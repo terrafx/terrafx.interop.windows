@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MINIMIZEDMETRICS.xml' path='doc/member[@name="MINIMIZEDMETRICS"]/*' />
 public partial struct MINIMIZEDMETRICS
 {
+    /// <include file='MINIMIZEDMETRICS.xml' path='doc/member[@name="MINIMIZEDMETRICS.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='MINIMIZEDMETRICS.xml' path='doc/member[@name="MINIMIZEDMETRICS.iWidth"]/*' />
     public int iWidth;
 
+    /// <include file='MINIMIZEDMETRICS.xml' path='doc/member[@name="MINIMIZEDMETRICS.iHorzGap"]/*' />
     public int iHorzGap;
 
+    /// <include file='MINIMIZEDMETRICS.xml' path='doc/member[@name="MINIMIZEDMETRICS.iVertGap"]/*' />
     public int iVertGap;
 
+    /// <include file='MINIMIZEDMETRICS.xml' path='doc/member[@name="MINIMIZEDMETRICS.iArrange"]/*' />
     public int iArrange;
 }

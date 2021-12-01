@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1ConcreteTransform.SetCached">
+    <summary>
+      <para>Sets whether the output of the specified transform is cached.</para>
+    </summary>
+    <param name="isCached">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> if the output should be cached; otherwise,  <b>FALSE</b>.</para>
+    </param>
+    <seealso cref="D2D1_BUFFER_PRECISION" />
+    <seealso cref="D2D1_CHANNEL_DEPTH" />
+    <seealso cref="ID2D1ConcreteTransform" />
+  </member>
+  <member name="ID2D1ConcreteTransform.SetOutputBuffer">
+    <summary>
+      <para>Sets the properties of the output buffer of the specified transform node.</para>
+    </summary>
+    <param name="bufferPrecision">
+      <para>Type: <b><see cref="D2D1_BUFFER_PRECISION" /></b></para>
+      <para>The number of bits and the type of the output buffer.</para>
+    </param>
+    <param name="channelDepth">
+      <para>Type: <b><see cref="D2D1_CHANNEL_DEPTH" /></b></para>
+      <para>The number of channels in the output buffer (1 or 4).</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>HRESULT</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>S_OK</description>
+          <description>No error occurred.</description>
+        </item>
+        <item>
+          <description>E_INVALIDARG</description>
+          <description>One or more arguments are not valid</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You can use the <see cref="ID2D1EffectContext.IsBufferPrecisionSupported" /> method to see if buffer precision is supported.</para>
+      <para>The available channel depth and precision depend on the capabilities of the underlying Microsoft Direct3D device.</para>
+    </remarks>
+    <seealso cref="D2D1_BUFFER_PRECISION" />
+    <seealso cref="D2D1_CHANNEL_DEPTH" />
+    <seealso cref="ID2D1ConcreteTransform" />
+  </member>
+  <member name="ID2D1ConcreteTransform">
+    <summary>
+      <para>Represents the set of transforms implemented by the effect-rendering system, which provides fixed-functionality.</para>
+    </summary>
+    <seealso cref="ID2D1TransformGraph" />
+    <seealso cref="ID2D1TransformNode" />
+  </member>
+</doc>

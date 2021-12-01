@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EXTLOGPEN">
+    <summary>
+      <para>The <b>EXTLOGPEN</b> structure defines the pen style, width, and brush attributes for an extended pen. This structure is used by the <see cref="GetObject" /> function when it retrieves a description of a pen that was created when an application called the <see cref="ExtCreatePen" /> function.</para>
+    </summary>
+    <seealso cref="BITMAPINFO" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
+    <seealso cref="ExtCreatePen" />
+    <seealso cref="GetObject" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/pen-structures">Pen Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/pens">Pens Overview</seealso>
+    <seealso cref="RGB" />
+    <seealso cref="SetBkColor" />
+    <seealso cref="SetBkMode" />
+  </member>
+  <member name="EXTLOGPEN.elpPenStyle">
+    <summary>
+      <para>A combination of pen type, style, end cap style, and join style. The values from each category can be retrieved by using a bitwise AND operator with the appropriate mask.</para>
+      <para>The <b>elpPenStyle</b> member masked with PS_TYPE_MASK has one of the following pen type values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PS_GEOMETRIC</description>
+          <description>The pen is geometric.</description>
+        </item>
+        <item>
+          <description>PS_COSMETIC</description>
+          <description>The pen is cosmetic.</description>
+        </item>
+      </list>
+      <para>The <b>elpPenStyle</b> member masked with PS_STYLE_MASK has one of the following pen styles values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PS_DASH</description>
+          <description>The pen is dashed.</description>
+        </item>
+        <item>
+          <description>PS_DASHDOT</description>
+          <description>The pen has alternating dashes and dots.</description>
+        </item>
+        <item>
+          <description>PS_DASHDOTDOT</description>
+          <description>The pen has alternating dashes and double dots.</description>
+        </item>
+        <item>
+          <description>PS_DOT</description>
+          <description>The pen is dotted.</description>
+        </item>
+        <item>
+          <description>PS_INSIDEFRAME</description>
+          <description>The pen is solid. When this pen is used in any GDI drawing function that takes a bounding rectangle, the dimensions of the figure are shrunk so that it fits entirely in the bounding rectangle, taking into account the width of the pen. This applies only to PS_GEOMETRIC pens.</description>
+        </item>
+        <item>
+          <description>PS_NULL</description>
+          <description>The pen is invisible.</description>
+        </item>
+        <item>
+          <description>PS_SOLID</description>
+          <description>The pen is solid.</description>
+        </item>
+        <item>
+          <description>PS_USERSTYLE</description>
+          <description>The pen uses a styling array supplied by the user.</description>
+        </item>
+      </list>
+      <para>The following category applies only to PS_GEOMETRIC pens. The <b>elpPenStyle</b> member masked with PS_ENDCAP_MASK has one of the following end cap values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PS_ENDCAP_FLAT</description>
+          <description>Line end caps are flat.</description>
+        </item>
+        <item>
+          <description>PS_ENDCAP_ROUND</description>
+          <description>Line end caps are round.</description>
+        </item>
+        <item>
+          <description>PS_ENDCAP_SQUARE</description>
+          <description>Line end caps are square.</description>
+        </item>
+      </list>
+      <para>The following category applies only to PS_GEOMETRIC pens. The <b>elpPenStyle</b> member masked with PS_JOIN_MASK has one of the following join values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PS_JOIN_BEVEL</description>
+          <description>Line joins are beveled.</description>
+        </item>
+        <item>
+          <description>PS_JOIN_MITER</description>
+          <description>Line joins are mitered when they are within the current limit set by the <see cref="SetMiterLimit" /> function. A join is beveled when it would exceed the limit.</description>
+        </item>
+        <item>
+          <description>PS_JOIN_ROUND</description>
+          <description>Line joins are round.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="EXTLOGPEN.elpWidth">
+    <summary>
+      <para>The width of the pen. If the <b>elpPenStyle</b> member is PS_GEOMETRIC, this value is the width of the line in logical units. Otherwise, the lines are cosmetic and this value is 1, which indicates a line with a width of one pixel.</para>
+    </summary>
+  </member>
+  <member name="EXTLOGPEN.elpBrushStyle">
+    <summary>
+      <para>The brush style of the pen. The <b>elpBrushStyle</b> member value can be one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>BS_DIBPATTERN</description>
+          <description>Specifies a pattern brush defined by a DIB specification. If <b>elpBrushStyle</b> is BS_DIBPATTERN, the <b>elpHatch</b> member contains a handle to a packed DIB. For more information, see discussion in <b>elpHatch</b></description>
+        </item>
+        <item>
+          <description>BS_DIBPATTERNPT</description>
+          <description>Specifies a pattern brush defined by a DIB specification. If <b>elpBrushStyle</b> is BS_DIBPATTERNPT, the <b>elpHatch</b> member contains a pointer to a packed DIB. For more information, see discussion in <b>elpHatch</b>.</description>
+        </item>
+        <item>
+          <description>BS_HATCHED</description>
+          <description>Specifies a hatched brush.</description>
+        </item>
+        <item>
+          <description>BS_HOLLOW</description>
+          <description>Specifies a hollow or <b>NULL</b> brush.</description>
+        </item>
+        <item>
+          <description>BS_PATTERN</description>
+          <description>Specifies a pattern brush defined by a memory bitmap.</description>
+        </item>
+        <item>
+          <description>BS_SOLID</description>
+          <description>Specifies a solid brush.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="EXTLOGPEN.elpColor">
+    <summary>
+      <para>If <b>elpBrushStyle</b> is BS_SOLID or BS_HATCHED, <b>elpColor</b> specifies the color in which the pen is to be drawn. For BS_HATCHED, the <see cref="SetBkMode" /> and <see cref="SetBkColor" /> functions determine the background color.</para>
+      <para>If <b>elpBrushStyle</b> is BS_HOLLOW or BS_PATTERN, <b>elpColor</b> is ignored.</para>
+      <para>If <b>elpBrushStyle</b> is BS_DIBPATTERN or BS_DIBPATTERNPT, the low-order word of <b>elpColor</b> specifies whether the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure contain explicit RGB values or indices into the currently realized logical palette. The <b>elpColor</b> value must be one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>DIB_PAL_COLORS</description>
+          <description>The color table consists of an array of 16-bit indices into the currently realized logical palette.</description>
+        </item>
+        <item>
+          <description>DIB_RGB_COLORS</description>
+          <description>The color table contains literal RGB values.</description>
+        </item>
+      </list>
+      <para>The <see cref="RGB" /> macro is used to generate a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure.</para>
+    </summary>
+  </member>
+  <member name="EXTLOGPEN.elpHatch">
+    <summary>
+      <para>If <b>elpBrushStyle</b> is BS_PATTERN, <b>elpHatch</b> is a handle to the bitmap that defines the pattern.</para>
+      <para>If <b>elpBrushStyle</b> is BS_SOLID or BS_HOLLOW, <b>elpHatch</b> is ignored.</para>
+      <para>If <b>elpBrushStyle</b> is BS_DIBPATTERN, the <b>elpHatch</b> member is a handle to a packed DIB. To obtain this handle, an application calls the <see cref="GlobalAlloc" /> function with GMEM_MOVEABLE (or <see cref="LocalAlloc" /> with LMEM_MOVEABLE) to allocate a block of memory and then fills the memory with the packed DIB. A packed DIB consists of a <see cref="BITMAPINFO" /> structure immediately followed by the array of bytes that define the pixels of the bitmap.</para>
+      <para>If <b>elpBrushStyle</b> is BS_DIBPATTERNPT, the <b>elpHatch</b> member is a pointer to a packed DIB. The pointer derives from the memory block created by <see cref="LocalAlloc" /> with LMEM_FIXED set or by <see cref="GlobalAlloc" /> with GMEM_FIXED set, or it is the pointer returned by a call like <see cref="LocalLock" /> (handle_to_the_dib). A packed DIB consists of a <see cref="BITMAPINFO" /> structure immediately followed by the array of bytes that define the pixels of the bitmap.</para>
+      <para>If <b>elpBrushStyle</b> is BS_HATCHED, the <b>elpHatch</b> member specifies the orientation of the lines used to create the hatch. It can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>HS_BDIAGONAL</description>
+          <description>45-degree upward hatch (left to right)</description>
+        </item>
+        <item>
+          <description>HS_CROSS</description>
+          <description>Horizontal and vertical crosshatch</description>
+        </item>
+        <item>
+          <description>HS_DIAGCROSS</description>
+          <description>45-degree crosshatch</description>
+        </item>
+        <item>
+          <description>HS_FDIAGONAL</description>
+          <description>45-degree downward hatch (left to right)</description>
+        </item>
+        <item>
+          <description>HS_HORIZONTAL</description>
+          <description>Horizontal hatch</description>
+        </item>
+        <item>
+          <description>HS_VERTICAL</description>
+          <description>Vertical hatch</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="EXTLOGPEN.elpNumEntries">
+    <summary>
+      <para>The number of entries in the style array in the <b>elpStyleEntry</b> member. This value is zero if <b>elpPenStyle</b> does not specify PS_USERSTYLE.</para>
+    </summary>
+  </member>
+  <member name="EXTLOGPEN.elpStyleEntry">
+    <summary>
+      <para>A user-supplied style array. The array is specified with a finite length, but it is used as if it repeated indefinitely. The first entry in the array specifies the length of the first dash. The second entry specifies the length of the first gap. Thereafter, lengths of dashes and gaps alternate.</para>
+      <para>If <b>elpWidth</b> specifies geometric lines, the lengths are in logical units. Otherwise, the lines are cosmetic and lengths are in device units.</para>
+    </summary>
+  </member>
+</doc>

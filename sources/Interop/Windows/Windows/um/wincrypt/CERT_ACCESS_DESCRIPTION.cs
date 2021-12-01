@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_ACCESS_DESCRIPTION.xml' path='doc/member[@name="CERT_ACCESS_DESCRIPTION"]/*' />
 public unsafe partial struct CERT_ACCESS_DESCRIPTION
 {
+    /// <include file='CERT_ACCESS_DESCRIPTION.xml' path='doc/member[@name="CERT_ACCESS_DESCRIPTION.pszAccessMethod"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszAccessMethod;
 
+    /// <include file='CERT_ACCESS_DESCRIPTION.xml' path='doc/member[@name="CERT_ACCESS_DESCRIPTION.AccessLocation"]/*' />
     public CERT_ALT_NAME_ENTRY AccessLocation;
 }

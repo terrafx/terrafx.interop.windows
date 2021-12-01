@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_TIMED_TEXT_ERROR_CODE">
+    <summary>
+      <para>Specifies the kind error that occurred with a timed text track.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used to return error information  from the <see cref="IMFTimedTextTrack.GetErrorCode" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_NOERROR">
+    <summary>
+      <para>No error occurred.</para>
+    </summary>
+  </member>
+  <member name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_FATAL">
+    <summary>
+      <para>A fatal error occurred.</para>
+    </summary>
+  </member>
+  <member name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_DATA_FORMAT">
+    <summary>
+      <para>An error occurred with the data format of the timed text track.</para>
+    </summary>
+  </member>
+  <member name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_NETWORK">
+    <summary>
+      <para>A network error occurred when trying to load the timed text track.</para>
+    </summary>
+  </member>
+  <member name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_INTERNAL">
+    <summary>
+      <para>An internal error occurred.</para>
+    </summary>
+  </member>
+</doc>

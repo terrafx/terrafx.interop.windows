@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_SEQUENCE_OF_ANY.xml' path='doc/member[@name="CRYPT_SEQUENCE_OF_ANY"]/*' />
 public unsafe partial struct CRYPT_SEQUENCE_OF_ANY
 {
+    /// <include file='CRYPT_SEQUENCE_OF_ANY.xml' path='doc/member[@name="CRYPT_SEQUENCE_OF_ANY.cValue"]/*' />
     [NativeTypeName("DWORD")]
     public uint cValue;
 
+    /// <include file='CRYPT_SEQUENCE_OF_ANY.xml' path='doc/member[@name="CRYPT_SEQUENCE_OF_ANY.rgValue"]/*' />
     [NativeTypeName("PCRYPT_DER_BLOB")]
     public CRYPT_DATA_BLOB* rgValue;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDynamicHWHandler.xml' path='doc/member[@name="IDynamicHWHandler"]/*' />
 [Guid("DC2601D7-059E-42FC-A09D-2AFD21B6D5F7")]
 [NativeTypeName("struct IDynamicHWHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface
         return ((delegate* unmanaged<IDynamicHWHandler*, Guid*, void**, int>)(lpVtbl[0]))((IDynamicHWHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface
         return ((delegate* unmanaged<IDynamicHWHandler*, uint>)(lpVtbl[1]))((IDynamicHWHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface
         return ((delegate* unmanaged<IDynamicHWHandler*, uint>)(lpVtbl[2]))((IDynamicHWHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDynamicHWHandler.xml' path='doc/member[@name="IDynamicHWHandler.GetDynamicInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDynamicInfo([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPWSTR *")] ushort** ppszAction)

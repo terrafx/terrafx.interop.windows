@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementNamespaceFactoryCallback.xml' path='doc/member[@name="IElementNamespaceFactoryCallback"]/*' />
 [Guid("3050F7FD-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementNamespaceFactoryCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementNamespaceFactoryCallback : IElementNamespac
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementNamespaceFactoryCallback : IElementNamespac
         return ((delegate* unmanaged<IElementNamespaceFactoryCallback*, Guid*, void**, int>)(lpVtbl[0]))((IElementNamespaceFactoryCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementNamespaceFactoryCallback : IElementNamespac
         return ((delegate* unmanaged<IElementNamespaceFactoryCallback*, uint>)(lpVtbl[1]))((IElementNamespaceFactoryCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementNamespaceFactoryCallback : IElementNamespac
         return ((delegate* unmanaged<IElementNamespaceFactoryCallback*, uint>)(lpVtbl[2]))((IElementNamespaceFactoryCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementNamespaceFactoryCallback.xml' path='doc/member[@name="IElementNamespaceFactoryCallback.Resolve"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Resolve([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrTagName, [NativeTypeName("BSTR")] ushort* bstrAttrs, IElementNamespace* pNamespace)

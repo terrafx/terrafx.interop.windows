@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IProvideClassInfo2.GetGUID">
+    <summary>
+      <para>Retrieves the specified GUID for the object.</para>
+    </summary>
+    <param name="dwGuidKind">
+      <para>The GUID type. Possible values are from the <see cref="GUIDKIND" /> enumeration.</para>
+    </param>
+    <param name="pGUID">
+      <para>A pointer to a variable that receives the GUID.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_UNEXPECTED, E_POINTER, and S_OK.</para>
+    </returns>
+    <seealso cref="IProvideClassInfo2" />
+  </member>
+  <member name="IProvideClassInfo2">
+    <summary>
+      <para>An extension to <see cref="IProvideClassInfo" /> that makes is faster and easier to retrieve an object's outgoing interface IID for its default event set.</para>
+    </summary>
+  </member>
+</doc>

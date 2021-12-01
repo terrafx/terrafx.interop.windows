@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement"]/*' />
 [Guid("305104E7-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGSVGElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, uint>)(lpVtbl[1]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, uint>)(lpVtbl[2]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, uint*, int>)(lpVtbl[3]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.putref_x"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT putref_x(ISVGAnimatedLength* v)
@@ -74,6 +83,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[7]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_x"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_x(ISVGAnimatedLength** p)
@@ -81,6 +91,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[8]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.putref_y"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT putref_y(ISVGAnimatedLength* v)
@@ -88,6 +99,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[9]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_y"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_y(ISVGAnimatedLength** p)
@@ -95,6 +107,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[10]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.putref_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT putref_width(ISVGAnimatedLength* v)
@@ -102,6 +115,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[11]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_width(ISVGAnimatedLength** p)
@@ -109,6 +123,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[12]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.putref_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT putref_height(ISVGAnimatedLength* v)
@@ -116,6 +131,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_height(ISVGAnimatedLength** p)
@@ -123,6 +139,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.put_contentScriptType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_contentScriptType([NativeTypeName("BSTR")] ushort* v)
@@ -130,6 +147,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ushort*, int>)(lpVtbl[15]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_contentScriptType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_contentScriptType([NativeTypeName("BSTR *")] ushort** p)
@@ -137,6 +155,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ushort**, int>)(lpVtbl[16]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.put_contentStyleType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_contentStyleType([NativeTypeName("BSTR")] ushort* v)
@@ -144,6 +163,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ushort*, int>)(lpVtbl[17]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_contentStyleType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_contentStyleType([NativeTypeName("BSTR *")] ushort** p)
@@ -151,6 +171,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ushort**, int>)(lpVtbl[18]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.putref_viewport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT putref_viewport(ISVGRect* v)
@@ -158,6 +179,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect*, int>)(lpVtbl[19]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_viewport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_viewport(ISVGRect** p)
@@ -165,6 +187,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int>)(lpVtbl[20]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.put_pixelUnitToMillimeterX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_pixelUnitToMillimeterX(float v)
@@ -172,6 +195,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[21]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_pixelUnitToMillimeterX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_pixelUnitToMillimeterX(float* p)
@@ -179,6 +203,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[22]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.put_pixelUnitToMillimeterY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_pixelUnitToMillimeterY(float v)
@@ -186,6 +211,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[23]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_pixelUnitToMillimeterY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_pixelUnitToMillimeterY(float* p)
@@ -193,6 +219,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[24]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.put_screenPixelToMillimeterX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_screenPixelToMillimeterX(float v)
@@ -200,6 +227,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[25]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_screenPixelToMillimeterX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_screenPixelToMillimeterX(float* p)
@@ -207,6 +235,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[26]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.put_screenPixelToMillimeterY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT put_screenPixelToMillimeterY(float v)
@@ -214,6 +243,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[27]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_screenPixelToMillimeterY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get_screenPixelToMillimeterY(float* p)
@@ -221,6 +251,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[28]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.put_useCurrentView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT put_useCurrentView([NativeTypeName("VARIANT_BOOL")] short v)
@@ -228,6 +259,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, short, int>)(lpVtbl[29]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_useCurrentView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT get_useCurrentView([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -235,6 +267,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, short*, int>)(lpVtbl[30]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.putref_currentView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT putref_currentView(ISVGViewSpec* v)
@@ -242,6 +275,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec*, int>)(lpVtbl[31]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_currentView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT get_currentView(ISVGViewSpec** p)
@@ -249,6 +283,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec**, int>)(lpVtbl[32]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.put_currentScale"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT put_currentScale(float v)
@@ -256,6 +291,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[33]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_currentScale"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT get_currentScale(float* p)
@@ -263,6 +299,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[34]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.putref_currentTranslate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT putref_currentTranslate(ISVGPoint* v)
@@ -270,6 +307,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGPoint*, int>)(lpVtbl[35]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_currentTranslate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT get_currentTranslate(ISVGPoint** p)
@@ -277,6 +315,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int>)(lpVtbl[36]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.suspendRedraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT suspendRedraw([NativeTypeName("ULONG")] uint maxWaitMilliseconds, [NativeTypeName("ULONG *")] uint* pResult)
@@ -284,6 +323,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, uint, uint*, int>)(lpVtbl[37]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), maxWaitMilliseconds, pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.unsuspendRedraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT unsuspendRedraw([NativeTypeName("ULONG")] uint suspendHandeID)
@@ -291,6 +331,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, uint, int>)(lpVtbl[38]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), suspendHandeID);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.unsuspendRedrawAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT unsuspendRedrawAll()
@@ -298,6 +339,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[39]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.forceRedraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT forceRedraw()
@@ -305,6 +347,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[40]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.pauseAnimations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT pauseAnimations()
@@ -312,6 +355,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[41]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.unpauseAnimations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT unpauseAnimations()
@@ -319,6 +363,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[42]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.animationsPaused"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     public HRESULT animationsPaused([NativeTypeName("VARIANT_BOOL *")] short* pResult)
@@ -326,6 +371,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, short*, int>)(lpVtbl[43]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.getCurrentTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
     public HRESULT getCurrentTime(float* pResult)
@@ -333,6 +379,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[44]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.setCurrentTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
     public HRESULT setCurrentTime(float seconds)
@@ -340,6 +387,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[45]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), seconds);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.getIntersectionList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
     public HRESULT getIntersectionList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult)
@@ -347,6 +395,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int>)(lpVtbl[46]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), rect, referenceElement, pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.getEnclosureList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
     public HRESULT getEnclosureList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult)
@@ -354,6 +403,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int>)(lpVtbl[47]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), rect, referenceElement, pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.checkIntersection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
     public HRESULT checkIntersection(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
@@ -361,6 +411,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int>)(lpVtbl[48]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), element, rect, pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.checkEnclosure"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
     public HRESULT checkEnclosure(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
@@ -368,6 +419,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int>)(lpVtbl[49]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), element, rect, pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.deselectAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
     public HRESULT deselectAll()
@@ -375,6 +427,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[50]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.createSVGNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
     public HRESULT createSVGNumber(ISVGNumber** pResult)
@@ -382,6 +435,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGNumber**, int>)(lpVtbl[51]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.createSVGLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
     public HRESULT createSVGLength(ISVGLength** pResult)
@@ -389,6 +443,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGLength**, int>)(lpVtbl[52]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.createSVGAngle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
     public HRESULT createSVGAngle(ISVGAngle** pResult)
@@ -396,6 +451,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGAngle**, int>)(lpVtbl[53]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.createSVGPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
     public HRESULT createSVGPoint(ISVGPoint** pResult)
@@ -403,6 +459,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int>)(lpVtbl[54]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.createSVGMatrix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(55)]
     public HRESULT createSVGMatrix(ISVGMatrix** pResult)
@@ -410,6 +467,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGMatrix**, int>)(lpVtbl[55]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.createSVGRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(56)]
     public HRESULT createSVGRect(ISVGRect** pResult)
@@ -417,6 +475,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int>)(lpVtbl[56]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.createSVGTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
     public HRESULT createSVGTransform(ISVGTransform** pResult)
@@ -424,6 +483,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGTransform**, int>)(lpVtbl[57]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.createSVGTransformFromMatrix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(58)]
     public HRESULT createSVGTransformFromMatrix(ISVGMatrix* matrix, ISVGTransform** pResult)
@@ -431,6 +491,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
         return ((delegate* unmanaged<ISVGSVGElement*, ISVGMatrix*, ISVGTransform**, int>)(lpVtbl[58]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), matrix, pResult);
     }
 
+    /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.getElementById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(59)]
     public HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult)

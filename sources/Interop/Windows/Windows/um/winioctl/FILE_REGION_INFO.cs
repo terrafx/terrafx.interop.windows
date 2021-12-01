@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_REGION_INFO.xml' path='doc/member[@name="FILE_REGION_INFO"]/*' />
 public partial struct FILE_REGION_INFO
 {
+    /// <include file='FILE_REGION_INFO.xml' path='doc/member[@name="FILE_REGION_INFO.FileOffset"]/*' />
     [NativeTypeName("LONGLONG")]
     public long FileOffset;
 
+    /// <include file='FILE_REGION_INFO.xml' path='doc/member[@name="FILE_REGION_INFO.Length"]/*' />
     [NativeTypeName("LONGLONG")]
     public long Length;
 
+    /// <include file='FILE_REGION_INFO.xml' path='doc/member[@name="FILE_REGION_INFO.Usage"]/*' />
     [NativeTypeName("DWORD")]
     public uint Usage;
 
+    /// <include file='FILE_REGION_INFO.xml' path='doc/member[@name="FILE_REGION_INFO.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 }

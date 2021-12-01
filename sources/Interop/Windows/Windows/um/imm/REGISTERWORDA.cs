@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REGISTERWORDA.xml' path='doc/member[@name="REGISTERWORDA"]/*' />
 public unsafe partial struct REGISTERWORDA
 {
+    /// <include file='REGISTERWORDA.xml' path='doc/member[@name="REGISTERWORDA.lpReading"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpReading;
 
+    /// <include file='REGISTERWORDA.xml' path='doc/member[@name="REGISTERWORDA.lpWord"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpWord;
 }

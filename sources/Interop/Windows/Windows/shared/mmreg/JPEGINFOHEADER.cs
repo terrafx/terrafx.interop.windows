@@ -7,24 +7,31 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JPEGINFOHEADER.xml' path='doc/member[@name="JPEGINFOHEADER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct JPEGINFOHEADER
 {
+    /// <include file='JPEGINFOHEADER.xml' path='doc/member[@name="JPEGINFOHEADER.JPEGSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint JPEGSize;
 
+    /// <include file='JPEGINFOHEADER.xml' path='doc/member[@name="JPEGINFOHEADER.JPEGProcess"]/*' />
     [NativeTypeName("DWORD")]
     public uint JPEGProcess;
 
+    /// <include file='JPEGINFOHEADER.xml' path='doc/member[@name="JPEGINFOHEADER.JPEGColorSpaceID"]/*' />
     [NativeTypeName("DWORD")]
     public uint JPEGColorSpaceID;
 
+    /// <include file='JPEGINFOHEADER.xml' path='doc/member[@name="JPEGINFOHEADER.JPEGBitsPerSample"]/*' />
     [NativeTypeName("DWORD")]
     public uint JPEGBitsPerSample;
 
+    /// <include file='JPEGINFOHEADER.xml' path='doc/member[@name="JPEGINFOHEADER.JPEGHSubSampling"]/*' />
     [NativeTypeName("DWORD")]
     public uint JPEGHSubSampling;
 
+    /// <include file='JPEGINFOHEADER.xml' path='doc/member[@name="JPEGINFOHEADER.JPEGVSubSampling"]/*' />
     [NativeTypeName("DWORD")]
     public uint JPEGVSubSampling;
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VideoProcAmpFlags.xml' path='doc/member[@name="VideoProcAmpFlags"]/*' />
 public enum VideoProcAmpFlags
 {
+    /// <include file='VideoProcAmpFlags.xml' path='doc/member[@name="VideoProcAmpFlags.VideoProcAmp_Flags_Auto"]/*' />
     VideoProcAmp_Flags_Auto = 0x1,
+
+    /// <include file='VideoProcAmpFlags.xml' path='doc/member[@name="VideoProcAmpFlags.VideoProcAmp_Flags_Manual"]/*' />
     VideoProcAmp_Flags_Manual = 0x2,
 }

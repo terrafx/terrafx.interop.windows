@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_DISPLACEMENTMAP_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/displacement-map">Displacement map effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DISPLACEMENTMAP_PROP.D2D1_DISPLACEMENTMAP_PROP_SCALE">
+    <summary>
+      <para>Multiplies the intensity of the selected channel from the displacement image. The higher you set this property, the more the effect displaces the pixels.</para>
+      <para>The type is FLOAT.</para>
+      <para>The default value is 0.0f.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DISPLACEMENTMAP_PROP.D2D1_DISPLACEMENTMAP_PROP_X_CHANNEL_SELECT">
+    <summary>
+      <para>The effect extracts the intensity from this color channel and uses it to spatially displace the image in the X direction.</para>
+      <para>The type is <see cref="D2D1_CHANNEL_SELECTOR" />.</para>
+      <para>The default value is D2D1_CHANNEL_SELECTOR_A</para>
+    </summary>
+  </member>
+  <member name="D2D1_DISPLACEMENTMAP_PROP.D2D1_DISPLACEMENTMAP_PROP_Y_CHANNEL_SELECT">
+    <summary>
+      <para>The effect extracts the intensity from this color channel and uses it to spatially displace the image in the Y direction.</para>
+      <para>The type is <see cref="D2D1_CHANNEL_SELECTOR" />.</para>
+      <para>The default value is D2D1_CHANNEL_SELECTOR_A</para>
+    </summary>
+  </member>
+  <member name="D2D1_DISPLACEMENTMAP_PROP.D2D1_DISPLACEMENTMAP_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

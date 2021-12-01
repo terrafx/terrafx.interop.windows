@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfToolTipUIElement.GetString">
+    <summary>
+      <para>Returns the string of the tooltip.</para>
+    </summary>
+    <param name="pstr">
+      <para>[out] A pointer to receive BSTR. This is the string for the tooltip.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfToolTipUIElement">
+    <summary>
+      <para>The <b>ITfToolTipUIElement</b> interface is implemented by a text service that wants to show a tooltip on its UI. A fullscreen application which wants to draw all UI by itself may want to draw the tooltip also or it can just hide the tooltip or of course it can let the text service show it. However, it does not guarantee that a text service can show the tooltip correctly when other UI are asked to be hidden.</para>
+    </summary>
+  </member>
+</doc>

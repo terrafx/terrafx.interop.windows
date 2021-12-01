@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUDCLNT_SHAREMODE.xml' path='doc/member[@name="AUDCLNT_SHAREMODE"]/*' />
 public enum AUDCLNT_SHAREMODE
 {
+    /// <include file='AUDCLNT_SHAREMODE.xml' path='doc/member[@name="AUDCLNT_SHAREMODE.AUDCLNT_SHAREMODE_SHARED"]/*' />
     AUDCLNT_SHAREMODE_SHARED,
+
+    /// <include file='AUDCLNT_SHAREMODE.xml' path='doc/member[@name="AUDCLNT_SHAREMODE.AUDCLNT_SHAREMODE_EXCLUSIVE"]/*' />
     AUDCLNT_SHAREMODE_EXCLUSIVE,
 }

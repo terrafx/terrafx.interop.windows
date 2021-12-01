@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_PRINT_CONTROL_PROPERTIES">
+    <summary>
+      <para>The creation properties for a <see cref="ID2D1PrintControl" /> object.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PRINT_CONTROL_PROPERTIES.fontSubset">
+    <summary>
+      <para>Type: <b><see cref="D2D1_PRINT_FONT_SUBSET_MODE" /></b></para>
+      <para>The mode to use for subsetting fonts for printing, defaults to <see cref="D2D1_PRINT_FONT_SUBSET_MODE_DEFAULT" />.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PRINT_CONTROL_PROPERTIES.rasterDPI">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>DPI for rasterization of all unsupported Direct2D commands or options, defaults to 150.0.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PRINT_CONTROL_PROPERTIES.colorSpace">
+    <summary>
+      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
+      <para>Color space for vector graphics, defaults to <see cref="D2D1_COLOR_SPACE_SRGB" />.</para>
+    </summary>
+  </member>
+</doc>

@@ -8,26 +8,34 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO"]/*' />
 public unsafe partial struct CMC_STATUS_INFO
 {
+    /// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO.dwStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStatus;
 
+    /// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO.cBodyList"]/*' />
     [NativeTypeName("DWORD")]
     public uint cBodyList;
 
+    /// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO.rgdwBodyList"]/*' />
     [NativeTypeName("DWORD *")]
     public uint* rgdwBodyList;
 
+    /// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO.pwszStatusString"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszStatusString;
 
+    /// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO.dwOtherInfoChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOtherInfoChoice;
 
+    /// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO.Anonymous"]/*' />
     [NativeTypeName("_CMC_STATUS_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5293:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFailInfo"]/*' />
     public ref uint dwFailInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,6 +45,7 @@ public unsafe partial struct CMC_STATUS_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pPendInfo"]/*' />
     public ref CMC_PEND_INFO* pPendInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -46,13 +55,16 @@ public unsafe partial struct CMC_STATUS_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFailInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwFailInfo;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pPendInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCMC_PEND_INFO")]
         public CMC_PEND_INFO* pPendInfo;

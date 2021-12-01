@@ -7,18 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpatialAudioMetadataItemsInfo.xml' path='doc/member[@name="SpatialAudioMetadataItemsInfo"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SpatialAudioMetadataItemsInfo
 {
+    /// <include file='SpatialAudioMetadataItemsInfo.xml' path='doc/member[@name="SpatialAudioMetadataItemsInfo.FrameCount"]/*' />
     [NativeTypeName("UINT16")]
     public ushort FrameCount;
 
+    /// <include file='SpatialAudioMetadataItemsInfo.xml' path='doc/member[@name="SpatialAudioMetadataItemsInfo.ItemCount"]/*' />
     [NativeTypeName("UINT16")]
     public ushort ItemCount;
 
+    /// <include file='SpatialAudioMetadataItemsInfo.xml' path='doc/member[@name="SpatialAudioMetadataItemsInfo.MaxItemCount"]/*' />
     [NativeTypeName("UINT16")]
     public ushort MaxItemCount;
 
+    /// <include file='SpatialAudioMetadataItemsInfo.xml' path='doc/member[@name="SpatialAudioMetadataItemsInfo.MaxValueBufferLength"]/*' />
     [NativeTypeName("UINT32")]
     public uint MaxValueBufferLength;
 }

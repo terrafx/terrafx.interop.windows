@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice"]/*' />
 [Guid("B5730A90-1A2C-11CF-8C23-00AA006B6814")]
 [NativeTypeName("struct IAMExtDevice : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
         return ((delegate* unmanaged<IAMExtDevice*, Guid*, void**, int>)(lpVtbl[0]))((IAMExtDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
         return ((delegate* unmanaged<IAMExtDevice*, uint>)(lpVtbl[1]))((IAMExtDevice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
         return ((delegate* unmanaged<IAMExtDevice*, uint>)(lpVtbl[2]))((IAMExtDevice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.GetCapability"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
         return ((delegate* unmanaged<IAMExtDevice*, int, int*, double*, int>)(lpVtbl[3]))((IAMExtDevice*)Unsafe.AsPointer(ref this), Capability, pValue, pdblValue);
     }
 
+    /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.get_ExternalDeviceID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_ExternalDeviceID([NativeTypeName("LPOLESTR *")] ushort** ppszData)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
         return ((delegate* unmanaged<IAMExtDevice*, ushort**, int>)(lpVtbl[4]))((IAMExtDevice*)Unsafe.AsPointer(ref this), ppszData);
     }
 
+    /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.get_ExternalDeviceVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_ExternalDeviceVersion([NativeTypeName("LPOLESTR *")] ushort** ppszData)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
         return ((delegate* unmanaged<IAMExtDevice*, ushort**, int>)(lpVtbl[5]))((IAMExtDevice*)Unsafe.AsPointer(ref this), ppszData);
     }
 
+    /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.put_DevicePower"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT put_DevicePower([NativeTypeName("long")] int PowerMode)
@@ -67,6 +75,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
         return ((delegate* unmanaged<IAMExtDevice*, int, int>)(lpVtbl[6]))((IAMExtDevice*)Unsafe.AsPointer(ref this), PowerMode);
     }
 
+    /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.get_DevicePower"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_DevicePower([NativeTypeName("long *")] int* pPowerMode)
@@ -74,6 +83,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
         return ((delegate* unmanaged<IAMExtDevice*, int*, int>)(lpVtbl[7]))((IAMExtDevice*)Unsafe.AsPointer(ref this), pPowerMode);
     }
 
+    /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.Calibrate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Calibrate(HEVENT hEvent, [NativeTypeName("long")] int Mode, [NativeTypeName("long *")] int* pStatus)
@@ -81,6 +91,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
         return ((delegate* unmanaged<IAMExtDevice*, HEVENT, int, int*, int>)(lpVtbl[8]))((IAMExtDevice*)Unsafe.AsPointer(ref this), hEvent, Mode, pStatus);
     }
 
+    /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.put_DevicePort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_DevicePort([NativeTypeName("long")] int DevicePort)
@@ -88,6 +99,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
         return ((delegate* unmanaged<IAMExtDevice*, int, int>)(lpVtbl[9]))((IAMExtDevice*)Unsafe.AsPointer(ref this), DevicePort);
     }
 
+    /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.get_DevicePort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_DevicePort([NativeTypeName("long *")] int* pDevicePort)

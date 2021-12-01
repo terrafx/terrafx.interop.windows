@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESSOR_GROUP_INFO">
+    <summary>
+      <para>Represents the number and affinity of processors in a processor group.</para>
+    </summary>
+    <seealso cref="GROUP_RELATIONSHIP" />
+  </member>
+  <member name="PROCESSOR_GROUP_INFO.MaximumProcessorCount">
+    <summary>
+      <para>The maximum number of processors in the group.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_GROUP_INFO.ActiveProcessorCount">
+    <summary>
+      <para>The number of active processors in the group.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_GROUP_INFO.Reserved">
+    <summary>
+      <para>This member is reserved.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_GROUP_INFO.ActiveProcessorMask">
+    <summary>
+      <para>A bitmap that specifies the affinity for zero or more active processors within the group.</para>
+    </summary>
+  </member>
+</doc>

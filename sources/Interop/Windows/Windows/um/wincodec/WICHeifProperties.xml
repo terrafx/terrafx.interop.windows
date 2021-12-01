@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICHeifProperties">
+    <summary>
+      <para>Specifies the properties of a High Efficiency Image Format (HEIF) image.</para>
+    </summary>
+  </member>
+  <member name="WICHeifProperties.WICHeifOrientation">
+    <summary>
+      <para>[VT_UI2] Indicates the orientation of the image.</para>
+      <para>The value of this property uses the same numbering scheme as the <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-orientation">System.Photo.Orientation</a> property. For example, a value of 1 (PHOTO_ORIENTATION_NORMAL) indicates a 0 degree rotation.</para>
+    </summary>
+  </member>
+  <member name="WICHeifProperties.WICHeifProperties_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

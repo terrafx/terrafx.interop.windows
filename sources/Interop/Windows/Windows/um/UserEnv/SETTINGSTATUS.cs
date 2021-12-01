@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SETTINGSTATUS.xml' path='doc/member[@name="SETTINGSTATUS"]/*' />
 public enum SETTINGSTATUS
 {
+    /// <include file='SETTINGSTATUS.xml' path='doc/member[@name="SETTINGSTATUS.RSOPUnspecified"]/*' />
     RSOPUnspecified = 0,
+
+    /// <include file='SETTINGSTATUS.xml' path='doc/member[@name="SETTINGSTATUS.RSOPApplied"]/*' />
     RSOPApplied,
+
+    /// <include file='SETTINGSTATUS.xml' path='doc/member[@name="SETTINGSTATUS.RSOPIgnored"]/*' />
     RSOPIgnored,
+
+    /// <include file='SETTINGSTATUS.xml' path='doc/member[@name="SETTINGSTATUS.RSOPFailed"]/*' />
     RSOPFailed,
+
+    /// <include file='SETTINGSTATUS.xml' path='doc/member[@name="SETTINGSTATUS.RSOPSubsettingFailed"]/*' />
     RSOPSubsettingFailed,
 }

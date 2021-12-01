@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_TRUST_LIST_INFO">
+    <summary>
+      <para>The <b>CERT_TRUST_LIST_INFO</b> structure that indicates valid usage of a CTL.</para>
+    </summary>
+    <seealso cref="CERT_CHAIN_ELEMENT" />
+    <seealso cref="CTL_ENTRY" />
+  </member>
+  <member name="CERT_TRUST_LIST_INFO.cbSize">
+    <summary>
+      <para>Size of this structure in bytes.</para>
+    </summary>
+  </member>
+  <member name="CERT_TRUST_LIST_INFO.pCtlEntry">
+    <summary>
+      <para>A pointer to a structure that includes a subject identifier, the count of attributes associated with a CTL, and an array of those attributes.</para>
+    </summary>
+  </member>
+  <member name="CERT_TRUST_LIST_INFO.pCtlContext">
+    <summary>
+      <para>A pointer to a CTL context.</para>
+    </summary>
+  </member>
+</doc>

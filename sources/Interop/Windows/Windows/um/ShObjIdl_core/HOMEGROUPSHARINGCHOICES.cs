@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HOMEGROUPSHARINGCHOICES.xml' path='doc/member[@name="HOMEGROUPSHARINGCHOICES"]/*' />
 public enum HOMEGROUPSHARINGCHOICES
 {
+    /// <include file='HOMEGROUPSHARINGCHOICES.xml' path='doc/member[@name="HOMEGROUPSHARINGCHOICES.HGSC_NONE"]/*' />
     HGSC_NONE = 0,
+
+    /// <include file='HOMEGROUPSHARINGCHOICES.xml' path='doc/member[@name="HOMEGROUPSHARINGCHOICES.HGSC_MUSICLIBRARY"]/*' />
     HGSC_MUSICLIBRARY = 0x1,
+
+    /// <include file='HOMEGROUPSHARINGCHOICES.xml' path='doc/member[@name="HOMEGROUPSHARINGCHOICES.HGSC_PICTURESLIBRARY"]/*' />
     HGSC_PICTURESLIBRARY = 0x2,
+
+    /// <include file='HOMEGROUPSHARINGCHOICES.xml' path='doc/member[@name="HOMEGROUPSHARINGCHOICES.HGSC_VIDEOSLIBRARY"]/*' />
     HGSC_VIDEOSLIBRARY = 0x4,
+
+    /// <include file='HOMEGROUPSHARINGCHOICES.xml' path='doc/member[@name="HOMEGROUPSHARINGCHOICES.HGSC_DOCUMENTSLIBRARY"]/*' />
     HGSC_DOCUMENTSLIBRARY = 0x8,
+
+    /// <include file='HOMEGROUPSHARINGCHOICES.xml' path='doc/member[@name="HOMEGROUPSHARINGCHOICES.HGSC_PRINTERS"]/*' />
     HGSC_PRINTERS = 0x10,
 }

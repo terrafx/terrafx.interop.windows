@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CD3D11_RECT.CD3D11_RECT">
+    <summary>
+      <para>Instantiates a new instance of a <see cref="CD3D11_RECT" /> structure that is initialized with a <b>D3D11_RECT</b> structure.</para>
+    </summary>
+    <param name="o">
+      <para>Address of the <b>D3D11_RECT</b> structure that initializes the <b>CD3D11_RECT</b> structure.</para>
+    </param>
+    <seealso cref="CD3D11_RECT" />
+  </member>
+  <member name="CD3D11_RECT.CD3D11_RECT">
+    <summary>
+      <para>Instantiates a new instance of a <see cref="CD3D11_RECT" /> structure that is initialized with the dimensions of a rectangle.</para>
+    </summary>
+    <param name="Left">
+      <para>Type: <b>LONG</b></para>
+      <para>The x-coordinate of the upper-left corner of the rectangle.</para>
+    </param>
+    <param name="Top">
+      <para>Type: <b>LONG</b></para>
+      <para>The y-coordinate of the upper-left corner of the rectangle.</para>
+    </param>
+    <param name="Right">
+      <para>Type: <b>LONG</b></para>
+      <para>The x-coordinate of the lower-right corner of the rectangle.</para>
+    </param>
+    <param name="Bottom">
+      <para>Type: <b>LONG</b></para>
+      <para>The y-coordinate of the lower-right corner of the rectangle.</para>
+    </param>
+    <seealso cref="CD3D11_RECT" />
+  </member>
+  <member name="CD3D11_RECT.CD3D11_RECT">
+    <summary>
+      <para>Instantiates a new instance of an uninitialized <see cref="CD3D11_RECT" /> structure.</para>
+    </summary>
+    <seealso cref="CD3D11_RECT" />
+  </member>
+</doc>

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_MESSAGE_INITIALIZATION.xml' path='doc/member[@name="WS_MESSAGE_INITIALIZATION"]/*' />
 public enum WS_MESSAGE_INITIALIZATION
 {
+    /// <include file='WS_MESSAGE_INITIALIZATION.xml' path='doc/member[@name="WS_MESSAGE_INITIALIZATION.WS_BLANK_MESSAGE"]/*' />
     WS_BLANK_MESSAGE = 0,
+
+    /// <include file='WS_MESSAGE_INITIALIZATION.xml' path='doc/member[@name="WS_MESSAGE_INITIALIZATION.WS_DUPLICATE_MESSAGE"]/*' />
     WS_DUPLICATE_MESSAGE = 1,
+
+    /// <include file='WS_MESSAGE_INITIALIZATION.xml' path='doc/member[@name="WS_MESSAGE_INITIALIZATION.WS_REQUEST_MESSAGE"]/*' />
     WS_REQUEST_MESSAGE = 2,
+
+    /// <include file='WS_MESSAGE_INITIALIZATION.xml' path='doc/member[@name="WS_MESSAGE_INITIALIZATION.WS_REPLY_MESSAGE"]/*' />
     WS_REPLY_MESSAGE = 3,
+
+    /// <include file='WS_MESSAGE_INITIALIZATION.xml' path='doc/member[@name="WS_MESSAGE_INITIALIZATION.WS_FAULT_MESSAGE"]/*' />
     WS_FAULT_MESSAGE = 4,
 }

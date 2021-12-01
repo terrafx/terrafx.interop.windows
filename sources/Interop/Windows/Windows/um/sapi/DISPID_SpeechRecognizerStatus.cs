@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechRecognizerStatus.xml' path='doc/member[@name="DISPID_SpeechRecognizerStatus"]/*' />
 public enum DISPID_SpeechRecognizerStatus
 {
+    /// <include file='DISPID_SpeechRecognizerStatus.xml' path='doc/member[@name="DISPID_SpeechRecognizerStatus.DISPID_SRSAudioStatus"]/*' />
     DISPID_SRSAudioStatus = 1,
+
+    /// <include file='DISPID_SpeechRecognizerStatus.xml' path='doc/member[@name="DISPID_SpeechRecognizerStatus.DISPID_SRSCurrentStreamPosition"]/*' />
     DISPID_SRSCurrentStreamPosition = (DISPID_SRSAudioStatus + 1),
+
+    /// <include file='DISPID_SpeechRecognizerStatus.xml' path='doc/member[@name="DISPID_SpeechRecognizerStatus.DISPID_SRSCurrentStreamNumber"]/*' />
     DISPID_SRSCurrentStreamNumber = (DISPID_SRSCurrentStreamPosition + 1),
+
+    /// <include file='DISPID_SpeechRecognizerStatus.xml' path='doc/member[@name="DISPID_SpeechRecognizerStatus.DISPID_SRSNumberOfActiveRules"]/*' />
     DISPID_SRSNumberOfActiveRules = (DISPID_SRSCurrentStreamNumber + 1),
+
+    /// <include file='DISPID_SpeechRecognizerStatus.xml' path='doc/member[@name="DISPID_SpeechRecognizerStatus.DISPID_SRSClsidEngine"]/*' />
     DISPID_SRSClsidEngine = (DISPID_SRSNumberOfActiveRules + 1),
+
+    /// <include file='DISPID_SpeechRecognizerStatus.xml' path='doc/member[@name="DISPID_SpeechRecognizerStatus.DISPID_SRSSupportedLanguages"]/*' />
     DISPID_SRSSupportedLanguages = (DISPID_SRSClsidEngine + 1),
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_MFT_DRAIN_TYPE.xml' path='doc/member[@name="_MFT_DRAIN_TYPE"]/*' />
 public enum _MFT_DRAIN_TYPE
 {
+    /// <include file='_MFT_DRAIN_TYPE.xml' path='doc/member[@name="_MFT_DRAIN_TYPE.MFT_DRAIN_PRODUCE_TAILS"]/*' />
     MFT_DRAIN_PRODUCE_TAILS = 0,
+
+    /// <include file='_MFT_DRAIN_TYPE.xml' path='doc/member[@name="_MFT_DRAIN_TYPE.MFT_DRAIN_NO_TAILS"]/*' />
     MFT_DRAIN_NO_TAILS = 0x1,
 }

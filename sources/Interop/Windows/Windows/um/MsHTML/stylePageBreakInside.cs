@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='stylePageBreakInside.xml' path='doc/member[@name="stylePageBreakInside"]/*' />
 public enum stylePageBreakInside
 {
+    /// <include file='stylePageBreakInside.xml' path='doc/member[@name="stylePageBreakInside.stylePageBreakInsideNotSet"]/*' />
     stylePageBreakInsideNotSet = 0,
+
+    /// <include file='stylePageBreakInside.xml' path='doc/member[@name="stylePageBreakInside.stylePageBreakInsideAuto"]/*' />
     stylePageBreakInsideAuto = 1,
+
+    /// <include file='stylePageBreakInside.xml' path='doc/member[@name="stylePageBreakInside.stylePageBreakInsideAvoid"]/*' />
     stylePageBreakInsideAvoid = 2,
+
+    /// <include file='stylePageBreakInside.xml' path='doc/member[@name="stylePageBreakInside.stylePageBreakInside_Max"]/*' />
     stylePageBreakInside_Max = 2147483647,
 }

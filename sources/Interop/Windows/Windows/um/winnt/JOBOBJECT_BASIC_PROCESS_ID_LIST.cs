@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_BASIC_PROCESS_ID_LIST.xml' path='doc/member[@name="JOBOBJECT_BASIC_PROCESS_ID_LIST"]/*' />
 public partial struct JOBOBJECT_BASIC_PROCESS_ID_LIST
 {
+    /// <include file='JOBOBJECT_BASIC_PROCESS_ID_LIST.xml' path='doc/member[@name="JOBOBJECT_BASIC_PROCESS_ID_LIST.NumberOfAssignedProcesses"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfAssignedProcesses;
 
+    /// <include file='JOBOBJECT_BASIC_PROCESS_ID_LIST.xml' path='doc/member[@name="JOBOBJECT_BASIC_PROCESS_ID_LIST.NumberOfProcessIdsInList"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfProcessIdsInList;
 
+    /// <include file='JOBOBJECT_BASIC_PROCESS_ID_LIST.xml' path='doc/member[@name="JOBOBJECT_BASIC_PROCESS_ID_LIST.ProcessIdList"]/*' />
     [NativeTypeName("ULONG_PTR [1]")]
     public _ProcessIdList_e__FixedBuffer ProcessIdList;
 
+    /// <include file='_ProcessIdList_e__FixedBuffer.xml' path='doc/member[@name="_ProcessIdList_e__FixedBuffer"]/*' />
     public partial struct _ProcessIdList_e__FixedBuffer
     {
         public nuint e0;

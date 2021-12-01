@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IThumbnailCapture.xml' path='doc/member[@name="IThumbnailCapture"]/*' />
 [Guid("4EA39266-7211-409F-B622-F63DBD16C533")]
 [NativeTypeName("struct IThumbnailCapture : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IThumbnailCapture : IThumbnailCapture.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IThumbnailCapture : IThumbnailCapture.Interface
         return ((delegate* unmanaged<IThumbnailCapture*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailCapture*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IThumbnailCapture : IThumbnailCapture.Interface
         return ((delegate* unmanaged<IThumbnailCapture*, uint>)(lpVtbl[1]))((IThumbnailCapture*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IThumbnailCapture : IThumbnailCapture.Interface
         return ((delegate* unmanaged<IThumbnailCapture*, uint>)(lpVtbl[2]))((IThumbnailCapture*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IThumbnailCapture.xml' path='doc/member[@name="IThumbnailCapture.CaptureThumbnail"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CaptureThumbnail([NativeTypeName("const SIZE *")] SIZE* pMaxSize, IUnknown* pHTMLDoc2, HBITMAP* phbmThumbnail)

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSecureChannel.xml' path='doc/member[@name="IMFSecureChannel"]/*' />
 [Guid("D0AE555D-3B12-4D97-B060-0990BC5AEB67")]
 [NativeTypeName("struct IMFSecureChannel : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSecureChannel : IMFSecureChannel.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSecureChannel : IMFSecureChannel.Interface
         return ((delegate* unmanaged<IMFSecureChannel*, Guid*, void**, int>)(lpVtbl[0]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSecureChannel : IMFSecureChannel.Interface
         return ((delegate* unmanaged<IMFSecureChannel*, uint>)(lpVtbl[1]))((IMFSecureChannel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSecureChannel : IMFSecureChannel.Interface
         return ((delegate* unmanaged<IMFSecureChannel*, uint>)(lpVtbl[2]))((IMFSecureChannel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSecureChannel.xml' path='doc/member[@name="IMFSecureChannel.GetCertificate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCertificate(byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSecureChannel : IMFSecureChannel.Interface
         return ((delegate* unmanaged<IMFSecureChannel*, byte**, uint*, int>)(lpVtbl[3]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), ppCert, pcbCert);
     }
 
+    /// <include file='IMFSecureChannel.xml' path='doc/member[@name="IMFSecureChannel.SetupSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetupSession(byte* pbEncryptedSessionKey, [NativeTypeName("DWORD")] uint cbSessionKey)

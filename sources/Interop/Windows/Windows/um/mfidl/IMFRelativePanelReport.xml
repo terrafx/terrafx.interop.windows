@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFRelativePanelReport.GetRelativePanel">
+    <summary>
+      <para>Gets a value from the <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/acpitabl/ne-acpitabl-_acpi_pld_panel">ACPI_PLD_PANEL</a> enumeration indicating the location of the capture device, relative to the display provided to <see cref="MFCreateRelativePanelWatcher" />.</para>
+    </summary>
+    <param name="panel">
+      <para>Receives a pointer to a <b>ULONG</b> value from the <b>ACPI_PLD_PANEL</b> enumeration.</para>
+    </param>
+    <returns>
+      <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <para>| Return code | Description |
+|--------------|------------------------|
+|S_OK | The function succeeded.|</para>
+    </returns>
+  </member>
+  <member name="IMFRelativePanelReport">
+    <summary>
+      <para>This interface is used to retrieve the current relative panel location for a display region.</para>
+    </summary>
+    <remarks>
+      <para>Use the methods of the <see cref="IMFRelativePanelWatcher" /> interface to get an instance of this interface.</para>
+    </remarks>
+  </member>
+</doc>

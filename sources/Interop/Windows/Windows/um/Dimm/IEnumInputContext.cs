@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumInputContext.xml' path='doc/member[@name="IEnumInputContext"]/*' />
 [Guid("09B5EAB0-F997-11D1-93D4-0060B067B86E")]
 [NativeTypeName("struct IEnumInputContext : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumInputContext : IEnumInputContext.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumInputContext : IEnumInputContext.Interface
         return ((delegate* unmanaged<IEnumInputContext*, Guid*, void**, int>)(lpVtbl[0]))((IEnumInputContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumInputContext : IEnumInputContext.Interface
         return ((delegate* unmanaged<IEnumInputContext*, uint>)(lpVtbl[1]))((IEnumInputContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumInputContext : IEnumInputContext.Interface
         return ((delegate* unmanaged<IEnumInputContext*, uint>)(lpVtbl[2]))((IEnumInputContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumInputContext.xml' path='doc/member[@name="IEnumInputContext.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumInputContext** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumInputContext : IEnumInputContext.Interface
         return ((delegate* unmanaged<IEnumInputContext*, IEnumInputContext**, int>)(lpVtbl[3]))((IEnumInputContext*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumInputContext.xml' path='doc/member[@name="IEnumInputContext.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, HIMC* rgInputContext, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumInputContext : IEnumInputContext.Interface
         return ((delegate* unmanaged<IEnumInputContext*, uint, HIMC*, uint*, int>)(lpVtbl[4]))((IEnumInputContext*)Unsafe.AsPointer(ref this), ulCount, rgInputContext, pcFetched);
     }
 
+    /// <include file='IEnumInputContext.xml' path='doc/member[@name="IEnumInputContext.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumInputContext : IEnumInputContext.Interface
         return ((delegate* unmanaged<IEnumInputContext*, int>)(lpVtbl[5]))((IEnumInputContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumInputContext.xml' path='doc/member[@name="IEnumInputContext.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

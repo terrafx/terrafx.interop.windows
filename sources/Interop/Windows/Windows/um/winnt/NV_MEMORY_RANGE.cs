@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NV_MEMORY_RANGE.xml' path='doc/member[@name="NV_MEMORY_RANGE"]/*' />
 public unsafe partial struct NV_MEMORY_RANGE
 {
+    /// <include file='NV_MEMORY_RANGE.xml' path='doc/member[@name="NV_MEMORY_RANGE.BaseAddress"]/*' />
     public void* BaseAddress;
 
+    /// <include file='NV_MEMORY_RANGE.xml' path='doc/member[@name="NV_MEMORY_RANGE.Length"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint Length;
 }

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_AXIS_DIRECTION">
+    <summary>
+      <para>Defines constants that specify the direction of an operation along the given axis for the operator (for example, summation, selecting the top-k elements, selecting the minimum element).</para>
+    </summary>
+  </member>
+  <member name="DML_AXIS_DIRECTION.DML_AXIS_DIRECTION_INCREASING">
+    <summary>
+      <para>Specifies increasing order (from the low index to the high index).</para>
+    </summary>
+  </member>
+  <member name="DML_AXIS_DIRECTION.DML_AXIS_DIRECTION_DECREASING">
+    <summary>
+      <para>Specifies decreasing order (from the high index to the low index).</para>
+    </summary>
+  </member>
+</doc>

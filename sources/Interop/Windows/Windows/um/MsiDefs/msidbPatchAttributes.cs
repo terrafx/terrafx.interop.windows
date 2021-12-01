@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbPatchAttributes.xml' path='doc/member[@name="msidbPatchAttributes"]/*' />
 public enum msidbPatchAttributes
 {
+    /// <include file='msidbPatchAttributes.xml' path='doc/member[@name="msidbPatchAttributes.msidbPatchAttributesNonVital"]/*' />
     msidbPatchAttributesNonVital = 0x00000001,
 }

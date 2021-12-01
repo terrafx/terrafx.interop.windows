@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView"]/*' />
 [Guid("37A378C0-F82D-11CE-AE65-08002B2E1262")]
 [NativeTypeName("struct IShellFolderView : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolderView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, uint>)(lpVtbl[1]))((IShellFolderView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, uint>)(lpVtbl[2]))((IShellFolderView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.Rearrange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Rearrange(LPARAM lParamSort)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, LPARAM, int>)(lpVtbl[3]))((IShellFolderView*)Unsafe.AsPointer(ref this), lParamSort);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.GetArrangeParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetArrangeParam(LPARAM* plParamSort)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, LPARAM*, int>)(lpVtbl[4]))((IShellFolderView*)Unsafe.AsPointer(ref this), plParamSort);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.ArrangeGrid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ArrangeGrid()
@@ -60,6 +67,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, int>)(lpVtbl[5]))((IShellFolderView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.AutoArrange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AutoArrange()
@@ -67,6 +75,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, int>)(lpVtbl[6]))((IShellFolderView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.GetAutoArrange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetAutoArrange()
@@ -74,6 +83,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, int>)(lpVtbl[7]))((IShellFolderView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.AddObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT AddObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, uint* puItem)
@@ -81,6 +91,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, ITEMIDLIST*, uint*, int>)(lpVtbl[8]))((IShellFolderView*)Unsafe.AsPointer(ref this), pidl, puItem);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.GetObjectW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetObjectW([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, uint uItem)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, ITEMIDLIST**, uint, int>)(lpVtbl[9]))((IShellFolderView*)Unsafe.AsPointer(ref this), ppidl, uItem);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.RemoveObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT RemoveObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, uint* puItem)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, ITEMIDLIST*, uint*, int>)(lpVtbl[10]))((IShellFolderView*)Unsafe.AsPointer(ref this), pidl, puItem);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.GetObjectCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetObjectCount(uint* puCount)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, uint*, int>)(lpVtbl[11]))((IShellFolderView*)Unsafe.AsPointer(ref this), puCount);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.SetObjectCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetObjectCount(uint uCount, uint dwFlags)
@@ -109,6 +123,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, uint, uint, int>)(lpVtbl[12]))((IShellFolderView*)Unsafe.AsPointer(ref this), uCount, dwFlags);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.UpdateObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT UpdateObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidlOld, [NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidlNew, uint* puItem)
@@ -116,6 +131,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, ITEMIDLIST*, ITEMIDLIST*, uint*, int>)(lpVtbl[13]))((IShellFolderView*)Unsafe.AsPointer(ref this), pidlOld, pidlNew, puItem);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.RefreshObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT RefreshObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, uint* puItem)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, ITEMIDLIST*, uint*, int>)(lpVtbl[14]))((IShellFolderView*)Unsafe.AsPointer(ref this), pidl, puItem);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.SetRedraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetRedraw(BOOL bRedraw)
@@ -130,6 +147,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, BOOL, int>)(lpVtbl[15]))((IShellFolderView*)Unsafe.AsPointer(ref this), bRedraw);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.GetSelectedCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetSelectedCount(uint* puSelected)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, uint*, int>)(lpVtbl[16]))((IShellFolderView*)Unsafe.AsPointer(ref this), puSelected);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.GetSelectedObjects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetSelectedObjects([NativeTypeName("LPCITEMIDLIST **")] ITEMIDLIST*** pppidl, uint* puItems)
@@ -144,6 +163,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, ITEMIDLIST***, uint*, int>)(lpVtbl[17]))((IShellFolderView*)Unsafe.AsPointer(ref this), pppidl, puItems);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.IsDropOnSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT IsDropOnSource(IDropTarget* pDropTarget)
@@ -151,6 +171,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, IDropTarget*, int>)(lpVtbl[18]))((IShellFolderView*)Unsafe.AsPointer(ref this), pDropTarget);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.GetDragPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetDragPoint(POINT* ppt)
@@ -158,6 +179,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, POINT*, int>)(lpVtbl[19]))((IShellFolderView*)Unsafe.AsPointer(ref this), ppt);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.GetDropPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetDropPoint(POINT* ppt)
@@ -165,6 +187,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, POINT*, int>)(lpVtbl[20]))((IShellFolderView*)Unsafe.AsPointer(ref this), ppt);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.MoveIcons"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT MoveIcons(IDataObject* pDataObject)
@@ -172,6 +195,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, IDataObject*, int>)(lpVtbl[21]))((IShellFolderView*)Unsafe.AsPointer(ref this), pDataObject);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.SetItemPos"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT SetItemPos([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, POINT* ppt)
@@ -179,6 +203,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, ITEMIDLIST*, POINT*, int>)(lpVtbl[22]))((IShellFolderView*)Unsafe.AsPointer(ref this), pidl, ppt);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.IsBkDropTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT IsBkDropTarget(IDropTarget* pDropTarget)
@@ -186,6 +211,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, IDropTarget*, int>)(lpVtbl[23]))((IShellFolderView*)Unsafe.AsPointer(ref this), pDropTarget);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.SetClipboard"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetClipboard(BOOL bMove)
@@ -193,6 +219,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, BOOL, int>)(lpVtbl[24]))((IShellFolderView*)Unsafe.AsPointer(ref this), bMove);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.SetPoints"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT SetPoints(IDataObject* pDataObject)
@@ -200,6 +227,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, IDataObject*, int>)(lpVtbl[25]))((IShellFolderView*)Unsafe.AsPointer(ref this), pDataObject);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.GetItemSpacing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT GetItemSpacing(ITEMSPACING* pSpacing)
@@ -207,6 +235,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, ITEMSPACING*, int>)(lpVtbl[26]))((IShellFolderView*)Unsafe.AsPointer(ref this), pSpacing);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.SetCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT SetCallback(IShellFolderViewCB* pNewCB, IShellFolderViewCB** ppOldCB)
@@ -214,6 +243,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, IShellFolderViewCB*, IShellFolderViewCB**, int>)(lpVtbl[27]))((IShellFolderView*)Unsafe.AsPointer(ref this), pNewCB, ppOldCB);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.Select"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT Select(uint dwFlags)
@@ -221,6 +251,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, uint, int>)(lpVtbl[28]))((IShellFolderView*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.QuerySupport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT QuerySupport(uint* pdwSupport)
@@ -228,6 +259,7 @@ public unsafe partial struct IShellFolderView : IShellFolderView.Interface
         return ((delegate* unmanaged<IShellFolderView*, uint*, int>)(lpVtbl[29]))((IShellFolderView*)Unsafe.AsPointer(ref this), pdwSupport);
     }
 
+    /// <include file='IShellFolderView.xml' path='doc/member[@name="IShellFolderView.SetAutomationObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT SetAutomationObject(IDispatch* pdisp)

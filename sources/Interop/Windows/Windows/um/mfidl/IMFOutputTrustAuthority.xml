@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFOutputTrustAuthority.GetAction">
+    <summary>
+      <para>Retrieves the action that is performed by this output trust authority (OTA).</para>
+    </summary>
+    <param name="pAction">
+      <para>Receives a member of the <see cref="MFPOLICYMANAGER_ACTION" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFOutputTrustAuthority" />
+  </member>
+  <member name="IMFOutputTrustAuthority.SetPolicy">
+    <summary>
+      <para>Sets one or more policy objects on the output trust authority (OTA).</para>
+    </summary>
+    <param name="ppPolicy">
+      <para>The address of  an array of <see cref="IMFOutputPolicy" /> pointers.</para>
+    </param>
+    <param name="nPolicy">
+      <para>The number of elements in the <i>ppPolicy</i> array.</para>
+    </param>
+    <param name="ppbTicket">
+      <para>Receives either a pointer to a buffer allocated by the OTA, or the value <b>NULL</b>. If this parameter receives a non-<b>NULL</b> value, the caller must release the buffer by calling <see cref="CoTaskMemFree" />.</para>
+      <para>
+        <b>Note</b>  Currently this parameter is reserved. An OTA should set the pointer to <b>NULL</b>.</para>
+    </param>
+    <param name="pcbTicket">
+      <para>Receives the size of the <i>ppbTicket</i> buffer, in bytes. If <i>ppbTicket</i> receives the value <b>NULL</b>, <i>pcbTicket</i> receives the value zero.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_S_WAIT_FOR_POLICY_SET</b>
+            </para>
+          </description>
+          <description>
+            <para>The policy was negotiated successfully, but the OTA will enforce it asynchronously.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_POLICY_UNSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The OTA does not support the requirements of this policy.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the method returns <b>MF_S_WAIT_FOR_POLICY_SET</b>, the OTA sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mepolicyset">MEPolicySet</a> event when it enforces the policy.</para>
+    </remarks>
+    <seealso cref="IMFOutputTrustAuthority" />
+  </member>
+  <member name="IMFOutputTrustAuthority">
+    <summary>
+      <para>Encapsulates the functionality of one or more output protection systems that a trusted output supports. This interface is exposed by output trust authority (OTA) objects. Each OTA represents a single action that the trusted output can perform, such as play, copy, or transcode. An OTA can represent more than one physical output if each output performs the same action.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

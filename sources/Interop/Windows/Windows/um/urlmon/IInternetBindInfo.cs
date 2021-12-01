@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInternetBindInfo.xml' path='doc/member[@name="IInternetBindInfo"]/*' />
 [Guid("79EAC9E1-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetBindInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface
         return ((delegate* unmanaged<IInternetBindInfo*, Guid*, void**, int>)(lpVtbl[0]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface
         return ((delegate* unmanaged<IInternetBindInfo*, uint>)(lpVtbl[1]))((IInternetBindInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface
         return ((delegate* unmanaged<IInternetBindInfo*, uint>)(lpVtbl[2]))((IInternetBindInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetBindInfo.xml' path='doc/member[@name="IInternetBindInfo.GetBindInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetBindInfo([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface
         return ((delegate* unmanaged<IInternetBindInfo*, uint*, BINDINFO*, int>)(lpVtbl[3]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), grfBINDF, pbindinfo);
     }
 
+    /// <include file='IInternetBindInfo.xml' path='doc/member[@name="IInternetBindInfo.GetBindString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] ushort** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched)

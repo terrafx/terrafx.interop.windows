@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHRINK_VOLUME_REQUEST_TYPES.xml' path='doc/member[@name="SHRINK_VOLUME_REQUEST_TYPES"]/*' />
 public enum SHRINK_VOLUME_REQUEST_TYPES
 {
+    /// <include file='SHRINK_VOLUME_REQUEST_TYPES.xml' path='doc/member[@name="SHRINK_VOLUME_REQUEST_TYPES.ShrinkPrepare"]/*' />
     ShrinkPrepare = 1,
+
+    /// <include file='SHRINK_VOLUME_REQUEST_TYPES.xml' path='doc/member[@name="SHRINK_VOLUME_REQUEST_TYPES.ShrinkCommit"]/*' />
     ShrinkCommit,
+
+    /// <include file='SHRINK_VOLUME_REQUEST_TYPES.xml' path='doc/member[@name="SHRINK_VOLUME_REQUEST_TYPES.ShrinkAbort"]/*' />
     ShrinkAbort,
 }

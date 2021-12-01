@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOperationsProgressDialog.GetMilliseconds">
+    <summary>
+      <para>Gets elapsed and remaining time for progress dialog.</para>
+    </summary>
+    <param name="pullElapsed">
+      <para>Type: <b>ULONGLONG*</b></para>
+      <para>A pointer to the elapsed time in milliseconds.</para>
+    </param>
+    <param name="pullRemaining">
+      <para>Type: <b>ULONGLONG*</b></para>
+      <para>A pointer to the remaining time in milliseconds.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IOperationsProgressDialog.GetOperationStatus">
+    <summary>
+      <para>Gets operation status for progress dialog.</para>
+    </summary>
+    <param name="popstatus">
+      <para>Type: <b><see cref="PDOPSTATUS" />*</b></para>
+      <para>Contains pointer to the operation status. See <see cref="PDOPSTATUS" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IOperationsProgressDialog.PauseTimer">
+    <summary>
+      <para>Pauses progress dialog timer.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IOperationsProgressDialog.ResetTimer">
+    <summary>
+      <para>Resets progress dialog timer to 0.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IOperationsProgressDialog.ResumeTimer">
+    <summary>
+      <para>Resumes progress dialog timer.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IOperationsProgressDialog.SetMode">
+    <summary>
+      <para>Sets progress dialog operations mode.</para>
+    </summary>
+    <param name="mode">
+      <para>Type: <b>PDMODE</b></para>
+      <para>Specifies the operation mode. The following are valid values.</para>
+      <h4>PDM_DEFAULT</h4>
+      <para>0x00000000. Use the default progress dialog operations mode.</para>
+      <h4>PDM_RUN</h4>
+      <para>0x00000001. The operation is running.</para>
+      <h4>PDM_PREFLIGHT</h4>
+      <para>0x00000002. The operation is gathering data before it begins, such as calculating the predicted operation time.</para>
+      <h4>PDM_UNDOING</h4>
+      <para>0x00000004. The operation is rolling back due to an Undo command from the user.</para>
+      <h4>PDM_ERRORSBLOCKING</h4>
+      <para>0x00000008. Error dialogs are blocking progress from continuing.</para>
+      <h4>PDM_INDETERMINATE</h4>
+      <para>0x00000010. The length of the operation is indeterminate. Do not show a timer and display the progress bar in marquee mode.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IOperationsProgressDialog.SetOperation">
+    <summary>
+      <para>Sets which progress dialog operation is occurring, and whether we are in pre-flight or undo mode.</para>
+    </summary>
+    <param name="action">
+      <para>Type: <b><see cref="SPACTION" /></b></para>
+      <para>Specifies operation. See <see cref="SPACTION" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IOperationsProgressDialog.StartProgressDialog">
+    <summary>
+      <para>Starts the specified progress dialog.</para>
+    </summary>
+    <param name="hwndOwner">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that customize the operation. Note that these flags are declared in Shlobj.h. A combination of the following values:</para>
+      <h4>PROGDLG_NORMAL (0x00000000)</h4>
+      <para>Default, normal progress dialog behavior.</para>
+      <h4>PROGDLG_MODAL (0x00000001)</h4>
+      <para>The dialog is modal to its <i>hwndOwner</i>. The default setting is modeless.</para>
+      <h4>PROGDLG_AUTOTIME (0x00000002)</h4>
+      <para>Update "Line3" text with the time remaining. This flag does not need to be implicitly set because progress dialogs started by <b>IOperationsProgressDialog.StartProgressDialog</b> automatically display the time remaining.</para>
+      <h4>PROGDLG_NOTIME (0x00000004)</h4>
+      <para>Do not show the time remaining. We do not recommend setting this flag through <see cref="IOperationsProgressDialog" /> because it goes against the purpose of the dialog.</para>
+      <h4>PROGDLG_NOMINIMIZE (0x00000008)</h4>
+      <para>Do not display the minimize button.</para>
+      <h4>PROGDLG_NOPROGRESSBAR (0x00000010)</h4>
+      <para>Do not display the progress bar.</para>
+      <h4>PROGDLG_MARQUEEPROGRESS (0x00000020)</h4>
+      <para>This flag is invalid in this method. To set the progress bar to marquee mode, use the flags in <see cref="IOperationsProgressDialog.SetMode" />.</para>
+      <h4>PROGDLG_NOCANCEL (0x00000040)</h4>
+      <para>Do not display a cancel button because the operation cannot be canceled. Use this value only when absolutely necessary.</para>
+      <h4>OPPROGDLG_DEFAULT (0x00000000)</h4>
+      <para>
+        <b>Windows 7 and later</b>. Indicates default, normal operation progress dialog behavior.</para>
+      <h4>OPPROGDLG_ENABLEPAUSE (0x00000080)</h4>
+      <para>Display a pause button. Use this only in situations where the operation can be paused.</para>
+      <h4>OPPROGDLG_ALLOWUNDO (0x00000100)</h4>
+      <para>The operation can be undone through the dialog. The <b>Stop</b> button becomes <b>Undo</b>. If pressed, the <b>Undo</b> button then reverts to <b>Stop</b>.</para>
+      <h4>OPPROGDLG_DONTDISPLAYSOURCEPATH (0x00000200)</h4>
+      <para>Do not display the path of source file in the progress dialog.</para>
+      <h4>OPPROGDLG_DONTDISPLAYDESTPATH (0x00000400)</h4>
+      <para>Do not display the path of the destination file in the progress dialog.</para>
+      <h4>OPPROGDLG_NOMULTIDAYESTIMATES (0x00000800)</h4>
+      <para>
+        <b>Windows 7 and later</b>. If the estimated time to completion is greater than one day, do not display the time.</para>
+      <h4>OPPROGDLG_DONTDISPLAYLOCATIONS (0x00001000)</h4>
+      <para>
+        <b>Windows 7 and later</b>. Do not display the location line in the progress dialog.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The progress dialog should be created on a separate thread than the file operation on which the dialog is reporting. If the dialog is running in the same thread as the file operation, progress messages are, at best, only sent as resources allow. Progress messages on the same thread as the file operation might not be sent at all.</para>
+      <para>Once <b>IOperationsProgressDialog.StartProgressDialog</b> is called, that instance of the <b>CLSID_ProgressDialog</b> object cannot be accessed by <see cref="IProgressDialog" />, <see cref="IActionProgressDialog" />, or <see cref="IActionProgress" />. Although <see cref="QueryInterface" /> can be used to access these interfaces, most of their methods cannot be invoked. <see cref="IOperationsProgressDialog" /> is the interface used to display the new progress dialog for the Windows Vista and later operations engine.</para>
+    </remarks>
+  </member>
+  <member name="IOperationsProgressDialog.StopProgressDialog">
+    <summary>
+      <para>Stops current progress dialog.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IOperationsProgressDialog.UpdateLocations">
+    <summary>
+      <para>Called to specify the text elements stating the source and target in the current progress dialog.</para>
+    </summary>
+    <param name="psiSource">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> that represents the source Shell item.</para>
+    </param>
+    <param name="psiTarget">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> that represents the target Shell item.</para>
+    </param>
+    <param name="psiItem">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> that represents the item currently being operated on by the operation engine. This parameter is only used in Windows 7 and later. In earlier versions, this parameter should be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IOperationsProgressDialog.UpdateProgress">
+    <summary>
+      <para>Updates the current progress dialog, as specified.</para>
+    </summary>
+    <param name="ullPointsCurrent">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>Current points, used for showing progress in points.</para>
+    </param>
+    <param name="ullPointsTotal">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>Total points, used for showing progress in points.</para>
+    </param>
+    <param name="ullSizeCurrent">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>Current size in bytes, used for showing progress in bytes.</para>
+    </param>
+    <param name="ullSizeTotal">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>Total size in bytes, used for showing progress in bytes.</para>
+    </param>
+    <param name="ullItemsCurrent">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>Current items, used for showing progress in items.</para>
+    </param>
+    <param name="ullItemsTotal">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>Specifies total items, used for showing progress in items.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IOperationsProgressDialog">
+    <summary>
+      <para>Exposes methods to get, set, and query a progress dialog.</para>
+    </summary>
+  </member>
+</doc>

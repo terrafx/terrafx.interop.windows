@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FIND_BY_SID_OUTPUT">
+    <summary>
+      <para>Represents a file name.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_find_files_by_sid">FSCTL_FIND_FILES_BY_SID</seealso>
+  </member>
+  <member name="FIND_BY_SID_OUTPUT.NextEntryOffset">
+    <summary></summary>
+  </member>
+  <member name="FIND_BY_SID_OUTPUT.FileIndex">
+    <summary></summary>
+  </member>
+  <member name="FIND_BY_SID_OUTPUT.FileNameLength">
+    <summary>
+      <para>The size of the file name, in bytes. This size does not include the NULL character.</para>
+    </summary>
+  </member>
+  <member name="FIND_BY_SID_OUTPUT.FileName">
+    <summary>
+      <para>A pointer to a null-terminated string that specifies the file name.</para>
+    </summary>
+  </member>
+</doc>

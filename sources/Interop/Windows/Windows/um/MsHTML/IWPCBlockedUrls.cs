@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWPCBlockedUrls.xml' path='doc/member[@name="IWPCBlockedUrls"]/*' />
 [Guid("30510413-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IWPCBlockedUrls : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface
         return ((delegate* unmanaged<IWPCBlockedUrls*, Guid*, void**, int>)(lpVtbl[0]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface
         return ((delegate* unmanaged<IWPCBlockedUrls*, uint>)(lpVtbl[1]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface
         return ((delegate* unmanaged<IWPCBlockedUrls*, uint>)(lpVtbl[2]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWPCBlockedUrls.xml' path='doc/member[@name="IWPCBlockedUrls.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCount([NativeTypeName("DWORD *")] uint* pdwCount)
@@ -46,6 +51,7 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface
         return ((delegate* unmanaged<IWPCBlockedUrls*, uint*, int>)(lpVtbl[3]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='IWPCBlockedUrls.xml' path='doc/member[@name="IWPCBlockedUrls.GetUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] ushort** pbstrUrl)

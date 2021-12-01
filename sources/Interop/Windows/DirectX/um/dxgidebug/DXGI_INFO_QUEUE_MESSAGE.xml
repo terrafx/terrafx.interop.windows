@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_INFO_QUEUE_MESSAGE">
+    <summary>
+      <para>Describes a debug message in the information queue.</para>
+    </summary>
+    <remarks>
+      <para>
+        <see cref="IDXGIInfoQueue.GetMessage" /> returns a pointer to this structure.</para>
+      <para>
+        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE.Producer">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-debug-id">DXGI_DEBUG_ID</a> value that identifies the entity that produced the message.</para>
+    </summary>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE.Category">
+    <summary>
+      <para>A <see cref="DXGI_INFO_QUEUE_MESSAGE_CATEGORY" />-typed value that specifies the category of the message.</para>
+    </summary>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE.Severity">
+    <summary>
+      <para>A <see cref="DXGI_INFO_QUEUE_MESSAGE_SEVERITY" />-typed value that specifies the severity of the message.</para>
+    </summary>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE.ID">
+    <summary>
+      <para>An integer that uniquely identifies the message.</para>
+    </summary>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE.pDescription">
+    <summary>
+      <para>The message string.</para>
+    </summary>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE.DescriptionByteLength">
+    <summary>
+      <para>The length of the message string at <b>pDescription</b>, in bytes.</para>
+    </summary>
+  </member>
+</doc>

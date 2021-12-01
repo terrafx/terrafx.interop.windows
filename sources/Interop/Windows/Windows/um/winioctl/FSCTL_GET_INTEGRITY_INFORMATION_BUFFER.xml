@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER">
+    <summary>
+      <para>Contains the integrity information for a file or directory. Returned from the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_integrity_information">FSCTL_GET_INTEGRITY_INFORMATION</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_integrity_information">FSCTL_GET_INTEGRITY_INFORMATION</seealso>
+    <seealso cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+  </member>
+  <member name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.ChecksumAlgorithm">
+    <summary>
+      <para>The checksum algorithm used.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHECKSUM_TYPE_NONE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or directory is not configured to use integrity.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CHECKSUM_TYPE_CRC64</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or directory uses a CRC64 checksum to provide integrity.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>3–0xffff</para>
+          </description>
+          <description>
+            <para>Reserved for future use.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.Reserved">
+    <summary>
+      <para>Reserved for future use.  Set to 0.</para>
+    </summary>
+  </member>
+  <member name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.Flags">
+    <summary>
+      <para>Contains one or more flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If set, the checksum enforcement is disabled.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.ChecksumChunkSizeInBytes">
+    <summary>
+      <para>Size in bytes of the chunks used to calculate checksums.</para>
+    </summary>
+  </member>
+  <member name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.ClusterSizeInBytes">
+    <summary>
+      <para>Size in bytes of a cluster for this volume. This value must be a power of 2, must be greater than or equal
+to the sector size of the underlying hardware and must be a power of 2 multiple of the sector size.</para>
+    </summary>
+  </member>
+</doc>

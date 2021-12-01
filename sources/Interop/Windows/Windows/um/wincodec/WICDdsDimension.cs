@@ -7,12 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICDdsDimension.xml' path='doc/member[@name="WICDdsDimension"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public enum WICDdsDimension
 {
+    /// <include file='WICDdsDimension.xml' path='doc/member[@name="WICDdsDimension.WICDdsTexture1D"]/*' />
     WICDdsTexture1D = 0,
+
+    /// <include file='WICDdsDimension.xml' path='doc/member[@name="WICDdsDimension.WICDdsTexture2D"]/*' />
     WICDdsTexture2D = 0x1,
+
+    /// <include file='WICDdsDimension.xml' path='doc/member[@name="WICDdsDimension.WICDdsTexture3D"]/*' />
     WICDdsTexture3D = 0x2,
+
+    /// <include file='WICDdsDimension.xml' path='doc/member[@name="WICDdsDimension.WICDdsTextureCube"]/*' />
     WICDdsTextureCube = 0x3,
+
+    /// <include file='WICDdsDimension.xml' path='doc/member[@name="WICDdsDimension.WICDDSTEXTURE_FORCE_DWORD"]/*' />
     WICDDSTEXTURE_FORCE_DWORD = 0x7fffffff,
 }

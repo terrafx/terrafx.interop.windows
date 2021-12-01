@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnterpriseDropTarget.IsEvaluatingEdpPolicy">
+    <summary>
+      <para>Indicates whether the drop target is intends to handle the evaluation of the enterprise protection policy.</para>
+    </summary>
+    <param name="value">
+      <para>A boolean value that indicates whether the drop target intends to handle the evaluation of enterprise protection policy.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnterpriseDropTarget.SetDropSourceEnterpriseId">
+    <summary>
+      <para>Provides the drop target with the enterprise ID of the drop source.</para>
+    </summary>
+    <param name="identity">
+      <para>The enterprise identity of the drop source.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnterpriseDropTarget">
+    <summary>
+      <para>When implemented by the drop target application, this interface gives the OLE drag and drop engine the ability to determine whether the drop target application intends to evaluate enterprise protection policy and gives the OLE drag and drop engine a way to provide the enterprise ID of the drop source application to the drop target application.</para>
+    </summary>
+  </member>
+</doc>

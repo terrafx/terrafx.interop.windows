@@ -8,11 +8,17 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCALE_CHANGE_FLAGS.xml' path='doc/member[@name="SCALE_CHANGE_FLAGS"]/*' />
 [Flags]
 [SupportedOSPlatform("windows8.0")]
 public enum SCALE_CHANGE_FLAGS
 {
+    /// <include file='SCALE_CHANGE_FLAGS.xml' path='doc/member[@name="SCALE_CHANGE_FLAGS.SCF_VALUE_NONE"]/*' />
     SCF_VALUE_NONE = 0x00,
+
+    /// <include file='SCALE_CHANGE_FLAGS.xml' path='doc/member[@name="SCALE_CHANGE_FLAGS.SCF_SCALE"]/*' />
     SCF_SCALE = 0x01,
+
+    /// <include file='SCALE_CHANGE_FLAGS.xml' path='doc/member[@name="SCALE_CHANGE_FLAGS.SCF_PHYSICAL"]/*' />
     SCF_PHYSICAL = 0x02,
 }

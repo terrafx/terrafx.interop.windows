@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_RSA_SSA_PSS_PARAMETERS.xml' path='doc/member[@name="CRYPT_RSA_SSA_PSS_PARAMETERS"]/*' />
 public partial struct CRYPT_RSA_SSA_PSS_PARAMETERS
 {
+    /// <include file='CRYPT_RSA_SSA_PSS_PARAMETERS.xml' path='doc/member[@name="CRYPT_RSA_SSA_PSS_PARAMETERS.HashAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
+    /// <include file='CRYPT_RSA_SSA_PSS_PARAMETERS.xml' path='doc/member[@name="CRYPT_RSA_SSA_PSS_PARAMETERS.MaskGenAlgorithm"]/*' />
     public CRYPT_MASK_GEN_ALGORITHM MaskGenAlgorithm;
 
+    /// <include file='CRYPT_RSA_SSA_PSS_PARAMETERS.xml' path='doc/member[@name="CRYPT_RSA_SSA_PSS_PARAMETERS.dwSaltLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSaltLength;
 
+    /// <include file='CRYPT_RSA_SSA_PSS_PARAMETERS.xml' path='doc/member[@name="CRYPT_RSA_SSA_PSS_PARAMETERS.dwTrailerField"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTrailerField;
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_CONTRAST_PROP.xml' path='doc/member[@name="D2D1_CONTRAST_PROP"]/*' />
 public enum D2D1_CONTRAST_PROP : uint
 {
+    /// <include file='D2D1_CONTRAST_PROP.xml' path='doc/member[@name="D2D1_CONTRAST_PROP.D2D1_CONTRAST_PROP_CONTRAST"]/*' />
     D2D1_CONTRAST_PROP_CONTRAST = 0,
+
+    /// <include file='D2D1_CONTRAST_PROP.xml' path='doc/member[@name="D2D1_CONTRAST_PROP.D2D1_CONTRAST_PROP_CLAMP_INPUT"]/*' />
     D2D1_CONTRAST_PROP_CLAMP_INPUT = 1,
+
+    /// <include file='D2D1_CONTRAST_PROP.xml' path='doc/member[@name="D2D1_CONTRAST_PROP.D2D1_CONTRAST_PROP_FORCE_DWORD"]/*' />
     D2D1_CONTRAST_PROP_FORCE_DWORD = 0xffffffff,
 }

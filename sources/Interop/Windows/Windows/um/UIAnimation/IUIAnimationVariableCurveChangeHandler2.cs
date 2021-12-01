@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationVariableCurveChangeHandler2.xml' path='doc/member[@name="IUIAnimationVariableCurveChangeHandler2"]/*' />
 [Guid("72895E91-0145-4C21-9192-5AAB40EDDF80")]
 [NativeTypeName("struct IUIAnimationVariableCurveChangeHandler2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationVariableCurveChangeHandler2 : IUIAnimat
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationVariableCurveChangeHandler2 : IUIAnimat
         return ((delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationVariableCurveChangeHandler2 : IUIAnimat
         return ((delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, uint>)(lpVtbl[1]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationVariableCurveChangeHandler2 : IUIAnimat
         return ((delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, uint>)(lpVtbl[2]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationVariableCurveChangeHandler2.xml' path='doc/member[@name="IUIAnimationVariableCurveChangeHandler2.OnCurveChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnCurveChanged(IUIAnimationVariable2* variable)

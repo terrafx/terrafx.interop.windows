@@ -5,22 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTBDISPINFOW.xml' path='doc/member[@name="NMTBDISPINFOW"]/*' />
 public unsafe partial struct NMTBDISPINFOW
 {
+    /// <include file='NMTBDISPINFOW.xml' path='doc/member[@name="NMTBDISPINFOW.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMTBDISPINFOW.xml' path='doc/member[@name="NMTBDISPINFOW.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='NMTBDISPINFOW.xml' path='doc/member[@name="NMTBDISPINFOW.idCommand"]/*' />
     public int idCommand;
 
+    /// <include file='NMTBDISPINFOW.xml' path='doc/member[@name="NMTBDISPINFOW.lParam"]/*' />
     [NativeTypeName("DWORD_PTR")]
     public nuint lParam;
 
+    /// <include file='NMTBDISPINFOW.xml' path='doc/member[@name="NMTBDISPINFOW.iImage"]/*' />
     public int iImage;
 
+    /// <include file='NMTBDISPINFOW.xml' path='doc/member[@name="NMTBDISPINFOW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszText;
 
+    /// <include file='NMTBDISPINFOW.xml' path='doc/member[@name="NMTBDISPINFOW.cchText"]/*' />
     public int cchText;
 }

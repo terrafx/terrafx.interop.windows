@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLECMD.xml' path='doc/member[@name="OLECMD"]/*' />
 public partial struct OLECMD
 {
+    /// <include file='OLECMD.xml' path='doc/member[@name="OLECMD.cmdID"]/*' />
     [NativeTypeName("ULONG")]
     public uint cmdID;
 
+    /// <include file='OLECMD.xml' path='doc/member[@name="OLECMD.cmdf"]/*' />
     [NativeTypeName("DWORD")]
     public uint cmdf;
 }

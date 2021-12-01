@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_GUID_AVEncCommonFormatMP3.xml' path='doc/member[@name="CODECAPI_GUID_AVEncCommonFormatMP3"]/*' />
 [Guid("349733CD-EB08-4DC2-8197-E49835EF828B")]
 public partial struct CODECAPI_GUID_AVEncCommonFormatMP3
 {

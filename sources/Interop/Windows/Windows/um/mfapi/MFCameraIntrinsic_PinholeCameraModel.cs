@@ -7,10 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFCameraIntrinsic_PinholeCameraModel.xml' path='doc/member[@name="MFCameraIntrinsic_PinholeCameraModel"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct MFCameraIntrinsic_PinholeCameraModel
 {
+    /// <include file='MFCameraIntrinsic_PinholeCameraModel.xml' path='doc/member[@name="MFCameraIntrinsic_PinholeCameraModel.FocalLength"]/*' />
     public MF_FLOAT2 FocalLength;
 
+    /// <include file='MFCameraIntrinsic_PinholeCameraModel.xml' path='doc/member[@name="MFCameraIntrinsic_PinholeCameraModel.PrincipalPoint"]/*' />
     public MF_FLOAT2 PrincipalPoint;
 }

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_CMS_SIGNER_INFO">
+    <summary>
+      <para>The <b>CMSG_CMS_SIGNER_INFO</b> structure contains the content of the defined SignerInfo in signed or signed and enveloped messages. In decoding a received message,
+<see cref="CryptMsgGetParam" /> is called for each signer to get a <b>CMSG_CMS_SIGNER_INFO</b> structure.</para>
+    </summary>
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <seealso cref="CRYPT_ATTRIBUTES" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+  </member>
+  <member name="CMSG_CMS_SIGNER_INFO.dwVersion">
+    <summary>
+      <para>The version of this structure.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CMS_SIGNER_INFO.SignerId">
+    <summary>
+      <para>A <see cref="CERT_ID" /> structure that identifies the signer's certificate.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CMS_SIGNER_INFO.HashAlgorithm">
+    <summary>
+      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the algorithm used in generating the hash of a message.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CMS_SIGNER_INFO.HashEncryptionAlgorithm">
+    <summary>
+      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the algorithm used to encrypt the hash.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CMS_SIGNER_INFO.EncryptedHash">
+    <summary>
+      <para>A
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains the encrypted hash of the message, the signature.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CMS_SIGNER_INFO.AuthAttrs">
+    <summary>
+      <para>A <see cref="CRYPT_ATTRIBUTES" /> structure that contains authenticated attributes of the signer.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CMS_SIGNER_INFO.UnauthAttrs">
+    <summary>
+      <para>A <see cref="CRYPT_ATTRIBUTES" /> structure that contains unauthenticated attributes of the signer.</para>
+    </summary>
+  </member>
+</doc>

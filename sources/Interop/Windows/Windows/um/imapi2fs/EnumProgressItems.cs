@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EnumProgressItems.xml' path='doc/member[@name="EnumProgressItems"]/*' />
 [Guid("2C941FCA-975B-59BE-A960-9A2A262853A5")]
 public partial struct EnumProgressItems
 {

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_DECODER_CAPS">
+    <summary>
+      <para>Specifies capabilities of the video decoder.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CAPS.D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE">
+    <summary>
+      <para>Indicates that the graphics driver supports at least a subset of downsampling operations.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CAPS.D3D11_VIDEO_DECODER_CAPS_NON_REAL_TIME">
+    <summary>
+      <para>Indicates that the decoding hardware cannot support the decode operation in real-time. Decoding is still supported for transcoding scenarios.</para>
+      <para>With this capability, it is possible that decoding can occur in real-time if downsampling is enabled.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CAPS.D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE_DYNAMIC">
+    <summary>
+      <para>Indicates that the driver supports changing down sample parameters after the initial down sample parameters have been applied. For more information, see <see cref="ID3D11VideoContext1.DecoderUpdateDownsampling" />.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CAPS.D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE_REQUIRED">
+    <summary></summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CAPS.D3D11_VIDEO_DECODER_CAPS_UNSUPPORTED">
+    <summary></summary>
+  </member>
+</doc>

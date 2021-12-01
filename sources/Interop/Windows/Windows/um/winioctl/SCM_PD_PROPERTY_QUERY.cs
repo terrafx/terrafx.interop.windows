@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_PROPERTY_QUERY.xml' path='doc/member[@name="SCM_PD_PROPERTY_QUERY"]/*' />
 public unsafe partial struct SCM_PD_PROPERTY_QUERY
 {
+    /// <include file='SCM_PD_PROPERTY_QUERY.xml' path='doc/member[@name="SCM_PD_PROPERTY_QUERY.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_PD_PROPERTY_QUERY.xml' path='doc/member[@name="SCM_PD_PROPERTY_QUERY.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_PD_PROPERTY_QUERY.xml' path='doc/member[@name="SCM_PD_PROPERTY_QUERY.PropertyId"]/*' />
     public SCM_PD_PROPERTY_ID PropertyId;
 
+    /// <include file='SCM_PD_PROPERTY_QUERY.xml' path='doc/member[@name="SCM_PD_PROPERTY_QUERY.QueryType"]/*' />
     public SCM_PD_QUERY_TYPE QueryType;
 
+    /// <include file='SCM_PD_PROPERTY_QUERY.xml' path='doc/member[@name="SCM_PD_PROPERTY_QUERY.AdditionalParameters"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte AdditionalParameters[1];
 }

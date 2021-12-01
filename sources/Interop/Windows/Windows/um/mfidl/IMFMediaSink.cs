@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink"]/*' />
 [Guid("6EF2A660-47C0-4666-B13D-CBB717F2FA2C")]
 [NativeTypeName("struct IMFMediaSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, uint>)(lpVtbl[1]))((IMFMediaSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, uint>)(lpVtbl[2]))((IMFMediaSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.GetCharacteristics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, uint*, int>)(lpVtbl[3]))((IMFMediaSink*)Unsafe.AsPointer(ref this), pdwCharacteristics);
     }
 
+    /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.AddStreamSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddStreamSink([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier, IMFMediaType* pMediaType, IMFStreamSink** ppStreamSink)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, uint, IMFMediaType*, IMFStreamSink**, int>)(lpVtbl[4]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier, pMediaType, ppStreamSink);
     }
 
+    /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.RemoveStreamSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RemoveStreamSink([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, uint, int>)(lpVtbl[5]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier);
     }
 
+    /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.GetStreamSinkCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetStreamSinkCount([NativeTypeName("DWORD *")] uint* pcStreamSinkCount)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, uint*, int>)(lpVtbl[6]))((IMFMediaSink*)Unsafe.AsPointer(ref this), pcStreamSinkCount);
     }
 
+    /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.GetStreamSinkByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetStreamSinkByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFStreamSink** ppStreamSink)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, uint, IMFStreamSink**, int>)(lpVtbl[7]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwIndex, ppStreamSink);
     }
 
+    /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.GetStreamSinkById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetStreamSinkById([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier, IMFStreamSink** ppStreamSink)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, uint, IMFStreamSink**, int>)(lpVtbl[8]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier, ppStreamSink);
     }
 
+    /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.SetPresentationClock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetPresentationClock(IMFPresentationClock* pPresentationClock)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, IMFPresentationClock*, int>)(lpVtbl[9]))((IMFMediaSink*)Unsafe.AsPointer(ref this), pPresentationClock);
     }
 
+    /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.GetPresentationClock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetPresentationClock(IMFPresentationClock** ppPresentationClock)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         return ((delegate* unmanaged<IMFMediaSink*, IMFPresentationClock**, int>)(lpVtbl[10]))((IMFMediaSink*)Unsafe.AsPointer(ref this), ppPresentationClock);
     }
 
+    /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.Shutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Shutdown()

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VIDEOENCODER_BITRATE_MODE">
+    <summary>
+      <para>The <b>VIDEOENCODER_BITRATE_MODE</b> enumeration type defines the three types of bitrates supported by the <see cref="IEncoderAPI" /> interface.</para>
+    </summary>
+    <seealso cref="IEncoderAPI" />
+  </member>
+  <member name="VIDEOENCODER_BITRATE_MODE.ConstantBitRate">
+    <summary>
+      <para>The bit rate used for encoding is constant.</para>
+    </summary>
+  </member>
+  <member name="VIDEOENCODER_BITRATE_MODE.VariableBitRateAverage">
+    <summary>
+      <para>The bit rate used for encoding is variable with the specified bitrate used as a guaranteed average over a specified window. The default window size is considered to be five minutes.</para>
+    </summary>
+  </member>
+  <member name="VIDEOENCODER_BITRATE_MODE.VariableBitRatePeak">
+    <summary>
+      <para>The <b>ENCAPIPARAM_BITRATE</b> value is the expected (not guaranteed) average bit rate over a given time period and that the <b>ENCAPIPARAM_PEAK_BITRATE</b> value is the peak which the bit rate must not exceed. The default window size is considered to be 500ms (which is traditionally equal to one GOP).</para>
+    </summary>
+  </member>
+</doc>

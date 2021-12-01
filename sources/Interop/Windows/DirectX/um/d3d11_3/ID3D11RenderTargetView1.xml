@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11RenderTargetView1.GetDesc1">
+    <summary>
+      <para>Gets the properties of a render-target view.</para>
+    </summary>
+    <param name="pDesc1">
+      <para>Type: <b><see cref="D3D11_RENDER_TARGET_VIEW_DESC1" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_RENDER_TARGET_VIEW_DESC1" /> structure that receives the description of the render-target view.</para>
+    </param>
+    <seealso cref="ID3D11RenderTargetView1" />
+  </member>
+  <member name="ID3D11RenderTargetView1">
+    <summary>
+      <para>A render-target-view interface represents the render-target subresources that can be accessed during rendering.</para>
+    </summary>
+    <remarks>
+      <para>To create a render-target view, call <see cref="ID3D11Device3.CreateRenderTargetView1" />. To bind a render-target view to the pipeline, call <see cref="ID3D11DeviceContext.OMSetRenderTargets" />.</para>
+      <para>A render target is a resource that can be written by the output-merger stage at the end of a render pass. Each render target can also have a corresponding depth-stencil view.</para>
+    </remarks>
+    <seealso cref="ID3D11RenderTargetView" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+  </member>
+</doc>

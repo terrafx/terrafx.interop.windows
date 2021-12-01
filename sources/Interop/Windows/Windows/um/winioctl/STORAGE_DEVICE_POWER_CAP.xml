@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_DEVICE_POWER_CAP">
+    <summary>
+      <para>This structure is used as an input and output buffer for the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_device_power_cap">IOCTL_STORAGE_DEVICE_POWER_CAP</a>.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_POWER_CAP.Version">
+    <summary>
+      <para>The version of this structure. This should be set to STORAGE_DEVICE_POWER_CAP_VERSION_V1.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_POWER_CAP.Size">
+    <summary>
+      <para>The size of this structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_POWER_CAP.Units">
+    <summary>
+      <para>The units of the <i>MaxPower</i> value, of type <see cref="STORAGE_DEVICE_POWER_CAP_UNITS" />.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_POWER_CAP.MaxPower">
+    <summary>
+      <para>Contains the value of the actual maximum power consumption level of the device. This may be equal to, less than, or greater than the desired threshold, depending on what the device supports.</para>
+    </summary>
+  </member>
+</doc>

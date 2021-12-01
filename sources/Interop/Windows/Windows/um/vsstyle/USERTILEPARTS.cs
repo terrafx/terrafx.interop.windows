@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USERTILEPARTS.xml' path='doc/member[@name="USERTILEPARTS"]/*' />
 public enum USERTILEPARTS
 {
+    /// <include file='USERTILEPARTS.xml' path='doc/member[@name="USERTILEPARTS.UTP_STROKEBACKGROUND"]/*' />
     UTP_STROKEBACKGROUND = 1,
+
+    /// <include file='USERTILEPARTS.xml' path='doc/member[@name="USERTILEPARTS.UTP_HOVERBACKGROUND"]/*' />
     UTP_HOVERBACKGROUND = 2,
 }

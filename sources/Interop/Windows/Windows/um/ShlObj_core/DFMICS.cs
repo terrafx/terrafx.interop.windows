@@ -5,22 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DFMICS.xml' path='doc/member[@name="DFMICS"]/*' />
 public unsafe partial struct DFMICS
 {
+    /// <include file='DFMICS.xml' path='doc/member[@name="DFMICS.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='DFMICS.xml' path='doc/member[@name="DFMICS.fMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint fMask;
 
+    /// <include file='DFMICS.xml' path='doc/member[@name="DFMICS.lParam"]/*' />
     public LPARAM lParam;
 
+    /// <include file='DFMICS.xml' path='doc/member[@name="DFMICS.idCmdFirst"]/*' />
     public uint idCmdFirst;
 
+    /// <include file='DFMICS.xml' path='doc/member[@name="DFMICS.idDefMax"]/*' />
     public uint idDefMax;
 
+    /// <include file='DFMICS.xml' path='doc/member[@name="DFMICS.pici"]/*' />
     [NativeTypeName("LPCMINVOKECOMMANDINFO")]
     public CMINVOKECOMMANDINFO* pici;
 
+    /// <include file='DFMICS.xml' path='doc/member[@name="DFMICS.punkSite"]/*' />
     public IUnknown* punkSite;
 }

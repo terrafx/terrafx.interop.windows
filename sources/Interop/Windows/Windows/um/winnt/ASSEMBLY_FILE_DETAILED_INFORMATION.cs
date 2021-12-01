@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ASSEMBLY_FILE_DETAILED_INFORMATION.xml' path='doc/member[@name="ASSEMBLY_FILE_DETAILED_INFORMATION"]/*' />
 public unsafe partial struct ASSEMBLY_FILE_DETAILED_INFORMATION
 {
+    /// <include file='ASSEMBLY_FILE_DETAILED_INFORMATION.xml' path='doc/member[@name="ASSEMBLY_FILE_DETAILED_INFORMATION.ulFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulFlags;
 
+    /// <include file='ASSEMBLY_FILE_DETAILED_INFORMATION.xml' path='doc/member[@name="ASSEMBLY_FILE_DETAILED_INFORMATION.ulFilenameLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulFilenameLength;
 
+    /// <include file='ASSEMBLY_FILE_DETAILED_INFORMATION.xml' path='doc/member[@name="ASSEMBLY_FILE_DETAILED_INFORMATION.ulPathLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulPathLength;
 
+    /// <include file='ASSEMBLY_FILE_DETAILED_INFORMATION.xml' path='doc/member[@name="ASSEMBLY_FILE_DETAILED_INFORMATION.lpFileName"]/*' />
     [NativeTypeName("PCWSTR")]
     public ushort* lpFileName;
 
+    /// <include file='ASSEMBLY_FILE_DETAILED_INFORMATION.xml' path='doc/member[@name="ASSEMBLY_FILE_DETAILED_INFORMATION.lpFilePath"]/*' />
     [NativeTypeName("PCWSTR")]
     public ushort* lpFilePath;
 }

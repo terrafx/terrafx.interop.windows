@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRCOLORCORRECTPALETTE.xml' path='doc/member[@name="EMRCOLORCORRECTPALETTE"]/*' />
 public partial struct EMRCOLORCORRECTPALETTE
 {
+    /// <include file='EMRCOLORCORRECTPALETTE.xml' path='doc/member[@name="EMRCOLORCORRECTPALETTE.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRCOLORCORRECTPALETTE.xml' path='doc/member[@name="EMRCOLORCORRECTPALETTE.ihPalette"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihPalette;
 
+    /// <include file='EMRCOLORCORRECTPALETTE.xml' path='doc/member[@name="EMRCOLORCORRECTPALETTE.nFirstEntry"]/*' />
     [NativeTypeName("DWORD")]
     public uint nFirstEntry;
 
+    /// <include file='EMRCOLORCORRECTPALETTE.xml' path='doc/member[@name="EMRCOLORCORRECTPALETTE.nPalEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint nPalEntries;
 
+    /// <include file='EMRCOLORCORRECTPALETTE.xml' path='doc/member[@name="EMRCOLORCORRECTPALETTE.nReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint nReserved;
 }

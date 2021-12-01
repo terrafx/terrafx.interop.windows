@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PENDINGTYPE.xml' path='doc/member[@name="PENDINGTYPE"]/*' />
 public enum PENDINGTYPE
 {
+    /// <include file='PENDINGTYPE.xml' path='doc/member[@name="PENDINGTYPE.PENDINGTYPE_TOPLEVEL"]/*' />
     PENDINGTYPE_TOPLEVEL = 1,
+
+    /// <include file='PENDINGTYPE.xml' path='doc/member[@name="PENDINGTYPE.PENDINGTYPE_NESTED"]/*' />
     PENDINGTYPE_NESTED = 2,
 }

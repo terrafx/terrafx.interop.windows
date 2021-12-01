@@ -5,22 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCITEMA.xml' path='doc/member[@name="TCITEMA"]/*' />
 public unsafe partial struct TCITEMA
 {
+    /// <include file='TCITEMA.xml' path='doc/member[@name="TCITEMA.mask"]/*' />
     public uint mask;
 
+    /// <include file='TCITEMA.xml' path='doc/member[@name="TCITEMA.dwState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwState;
 
+    /// <include file='TCITEMA.xml' path='doc/member[@name="TCITEMA.dwStateMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStateMask;
 
+    /// <include file='TCITEMA.xml' path='doc/member[@name="TCITEMA.pszText"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszText;
 
+    /// <include file='TCITEMA.xml' path='doc/member[@name="TCITEMA.cchTextMax"]/*' />
     public int cchTextMax;
 
+    /// <include file='TCITEMA.xml' path='doc/member[@name="TCITEMA.iImage"]/*' />
     public int iImage;
 
+    /// <include file='TCITEMA.xml' path='doc/member[@name="TCITEMA.lParam"]/*' />
     public LPARAM lParam;
 }

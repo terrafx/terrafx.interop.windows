@@ -7,17 +7,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPV6_ADDRESS_EX.xml' path='doc/member[@name="IPV6_ADDRESS_EX"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct IPV6_ADDRESS_EX
 {
+    /// <include file='IPV6_ADDRESS_EX.xml' path='doc/member[@name="IPV6_ADDRESS_EX.sin6_port"]/*' />
     public ushort sin6_port;
 
+    /// <include file='IPV6_ADDRESS_EX.xml' path='doc/member[@name="IPV6_ADDRESS_EX.sin6_flowinfo"]/*' />
     [NativeTypeName("ULONG")]
     public uint sin6_flowinfo;
 
+    /// <include file='IPV6_ADDRESS_EX.xml' path='doc/member[@name="IPV6_ADDRESS_EX.sin6_addr"]/*' />
     [NativeTypeName("USHORT [8]")]
     public fixed ushort sin6_addr[8];
 
+    /// <include file='IPV6_ADDRESS_EX.xml' path='doc/member[@name="IPV6_ADDRESS_EX.sin6_scope_id"]/*' />
     [NativeTypeName("ULONG")]
     public uint sin6_scope_id;
 }

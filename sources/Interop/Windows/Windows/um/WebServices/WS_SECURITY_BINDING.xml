@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_BINDING">
+    <summary>
+      <para>The abstract base type for all security bindings.  One or more
+concrete subtypes of this are specified in the
+<see cref="security description" /> that is
+supplied during channel and listener creation.  Each concrete subtype
+of this corresponds to a security protocol and a way of using it to
+provide authentication and/or protection to a channel.</para>
+      <para>Each security binding subtype instance in the security description
+contributes one security token at runtime.  Thus, the fields of this
+type can be viewed as specifying a security token, how to obtain it,
+how to use it for channel security, and how to modify its behavior
+using the optional settings.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING.bindingType">
+    <summary>
+      <para>The<see cref=" WS_SECURITY_BINDING_TYPE" /> of the security binding being described.  The type value
+indicates how to obtain the security token corresponding to this
+security binding.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING.properties">
+    <summary>
+      <para>The array of properties specifying the optional security binding
+settings.  Each <see cref="WS_SECURITY_BINDING_PROPERTY" /> in the array is a key-value
+pair and must use a key defined in <see cref="WS_SECURITY_BINDING_PROPERTY_ID" />.  This field can be <b>NULL</b>, and if
+it is <b>NULL</b>, the default value will be used for each security token
+setting.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING.propertyCount">
+    <summary>
+      <para>The count of elements in the properties array.</para>
+    </summary>
+  </member>
+</doc>

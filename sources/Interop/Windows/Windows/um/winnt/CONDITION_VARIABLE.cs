@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONDITION_VARIABLE.xml' path='doc/member[@name="CONDITION_VARIABLE"]/*' />
 public unsafe partial struct CONDITION_VARIABLE
 {
+    /// <include file='CONDITION_VARIABLE.xml' path='doc/member[@name="CONDITION_VARIABLE.Ptr"]/*' />
     [NativeTypeName("PVOID")]
     public void* Ptr;
 }

@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPTNET_URL_CACHE_FLUSH_INFO.xml' path='doc/member[@name="CRYPTNET_URL_CACHE_FLUSH_INFO"]/*' />
 public partial struct CRYPTNET_URL_CACHE_FLUSH_INFO
 {
+    /// <include file='CRYPTNET_URL_CACHE_FLUSH_INFO.xml' path='doc/member[@name="CRYPTNET_URL_CACHE_FLUSH_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CRYPTNET_URL_CACHE_FLUSH_INFO.xml' path='doc/member[@name="CRYPTNET_URL_CACHE_FLUSH_INFO.dwExemptSeconds"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwExemptSeconds;
 
+    /// <include file='CRYPTNET_URL_CACHE_FLUSH_INFO.xml' path='doc/member[@name="CRYPTNET_URL_CACHE_FLUSH_INFO.ExpireTime"]/*' />
     public FILETIME ExpireTime;
 }

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFolderBandPriv.SetAccelerators">
+    <summary>
+      <para>Sets accelerators.</para>
+    </summary>
+    <param name="fAccelerators">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to enable accelerators; <b>FALSE</b> to disable them.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns S_OK.</para>
+    </returns>
+  </member>
+  <member name="IFolderBandPriv.SetCascade">
+    <summary>
+      <para>Sets a cascade folder.</para>
+    </summary>
+    <param name="fCascade">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to enable cascade folders; <b>FALSE</b> to disable them.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns S_OK.</para>
+    </returns>
+  </member>
+  <member name="IFolderBandPriv.SetNoIcons">
+    <summary>
+      <para>Sets whether icons are displayed in a folder band.</para>
+    </summary>
+    <param name="fNoIcons">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to display icons; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns S_OK.</para>
+    </returns>
+  </member>
+  <member name="IFolderBandPriv.SetNoText">
+    <summary>
+      <para>Sets whether text is displayed in a folder band.</para>
+    </summary>
+    <param name="fNoText">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to display text; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns S_OK.</para>
+    </returns>
+  </member>
+</doc>

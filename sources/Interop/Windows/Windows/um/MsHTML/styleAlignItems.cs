@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleAlignItems.xml' path='doc/member[@name="styleAlignItems"]/*' />
 public enum styleAlignItems
 {
+    /// <include file='styleAlignItems.xml' path='doc/member[@name="styleAlignItems.styleAlignItemsFlexStart"]/*' />
     styleAlignItemsFlexStart = 0,
+
+    /// <include file='styleAlignItems.xml' path='doc/member[@name="styleAlignItems.styleAlignItemsFlexEnd"]/*' />
     styleAlignItemsFlexEnd = 1,
+
+    /// <include file='styleAlignItems.xml' path='doc/member[@name="styleAlignItems.styleAlignItemsCenter"]/*' />
     styleAlignItemsCenter = 2,
+
+    /// <include file='styleAlignItems.xml' path='doc/member[@name="styleAlignItems.styleAlignItemsBaseline"]/*' />
     styleAlignItemsBaseline = 3,
+
+    /// <include file='styleAlignItems.xml' path='doc/member[@name="styleAlignItems.styleAlignItemsStretch"]/*' />
     styleAlignItemsStretch = 4,
+
+    /// <include file='styleAlignItems.xml' path='doc/member[@name="styleAlignItems.styleAlignItemsNotSet"]/*' />
     styleAlignItemsNotSet = 5,
+
+    /// <include file='styleAlignItems.xml' path='doc/member[@name="styleAlignItems.styleAlignItems_Max"]/*' />
     styleAlignItems_Max = 2147483647,
 }

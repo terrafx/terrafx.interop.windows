@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFPresentationTimeSource.xml' path='doc/member[@name="IMFPresentationTimeSource"]/*' />
 [Guid("7FF12CCE-F76F-41C2-863B-1666C8E5E139")]
 [NativeTypeName("struct IMFPresentationTimeSource : IMFClock")]
 [NativeInheritance("IMFClock")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
         return ((delegate* unmanaged<IMFPresentationTimeSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
         return ((delegate* unmanaged<IMFPresentationTimeSource*, uint>)(lpVtbl[1]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
         return ((delegate* unmanaged<IMFPresentationTimeSource*, uint>)(lpVtbl[2]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFClock.GetClockCharacteristics" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClockCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
         return ((delegate* unmanaged<IMFPresentationTimeSource*, uint*, int>)(lpVtbl[3]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), pdwCharacteristics);
     }
 
+    /// <inheritdoc cref="IMFClock.GetCorrelatedTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCorrelatedTime([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LONGLONG *")] long* pllClockTime, [NativeTypeName("MFTIME *")] long* phnsSystemTime)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
         return ((delegate* unmanaged<IMFPresentationTimeSource*, uint, long*, long*, int>)(lpVtbl[4]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), dwReserved, pllClockTime, phnsSystemTime);
     }
 
+    /// <inheritdoc cref="IMFClock.GetContinuityKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetContinuityKey([NativeTypeName("DWORD *")] uint* pdwContinuityKey)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
         return ((delegate* unmanaged<IMFPresentationTimeSource*, uint*, int>)(lpVtbl[5]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), pdwContinuityKey);
     }
 
+    /// <inheritdoc cref="IMFClock.GetState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetState([NativeTypeName("DWORD")] uint dwReserved, MFCLOCK_STATE* peClockState)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
         return ((delegate* unmanaged<IMFPresentationTimeSource*, uint, MFCLOCK_STATE*, int>)(lpVtbl[6]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), dwReserved, peClockState);
     }
 
+    /// <inheritdoc cref="IMFClock.GetProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetProperties(MFCLOCK_PROPERTIES* pClockProperties)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
         return ((delegate* unmanaged<IMFPresentationTimeSource*, MFCLOCK_PROPERTIES*, int>)(lpVtbl[7]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), pClockProperties);
     }
 
+    /// <include file='IMFPresentationTimeSource.xml' path='doc/member[@name="IMFPresentationTimeSource.GetUnderlyingClock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetUnderlyingClock(IMFClock** ppClock)

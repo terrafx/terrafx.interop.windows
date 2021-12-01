@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfLangBarItemBitmap.xml' path='doc/member[@name="ITfLangBarItemBitmap"]/*' />
 [Guid("73830352-D722-4179-ADA5-F045C98DF355")]
 [NativeTypeName("struct ITfLangBarItemBitmap : ITfLangBarItem")]
 [NativeInheritance("ITfLangBarItem")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         return ((delegate* unmanaged<ITfLangBarItemBitmap*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         return ((delegate* unmanaged<ITfLangBarItemBitmap*, uint>)(lpVtbl[1]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         return ((delegate* unmanaged<ITfLangBarItemBitmap*, uint>)(lpVtbl[2]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfLangBarItem.GetInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         return ((delegate* unmanaged<ITfLangBarItemBitmap*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pInfo);
     }
 
+    /// <inheritdoc cref="ITfLangBarItem.GetStatus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         return ((delegate* unmanaged<ITfLangBarItemBitmap*, uint*, int>)(lpVtbl[4]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pdwStatus);
     }
 
+    /// <inheritdoc cref="ITfLangBarItem.Show" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Show(BOOL fShow)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         return ((delegate* unmanaged<ITfLangBarItemBitmap*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), fShow);
     }
 
+    /// <inheritdoc cref="ITfLangBarItem.GetTooltipString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         return ((delegate* unmanaged<ITfLangBarItemBitmap*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pbstrToolTip);
     }
 
+    /// <include file='ITfLangBarItemBitmap.xml' path='doc/member[@name="ITfLangBarItemBitmap.OnClick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         return ((delegate* unmanaged<ITfLangBarItemBitmap*, TfLBIClick, POINT, RECT*, int>)(lpVtbl[7]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), click, pt, prcArea);
     }
 
+    /// <include file='ITfLangBarItemBitmap.xml' path='doc/member[@name="ITfLangBarItemBitmap.GetPreferredSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetPreferredSize([NativeTypeName("const SIZE *")] SIZE* pszDefault, SIZE* psz)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         return ((delegate* unmanaged<ITfLangBarItemBitmap*, SIZE*, SIZE*, int>)(lpVtbl[8]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pszDefault, psz);
     }
 
+    /// <include file='ITfLangBarItemBitmap.xml' path='doc/member[@name="ITfLangBarItemBitmap.DrawBitmap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT DrawBitmap([NativeTypeName("LONG")] int bmWidth, [NativeTypeName("LONG")] int bmHeight, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP* phbmp, HBITMAP* phbmpMask)

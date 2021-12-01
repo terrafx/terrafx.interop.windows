@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpNotifySource.xml' path='doc/member[@name="ISpNotifySource"]/*' />
 [Guid("5EFF4AEF-8487-11D2-961C-00C04F8EE628")]
 [NativeTypeName("struct ISpNotifySource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpNotifySource : ISpNotifySource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpNotifySource : ISpNotifySource.Interface
         return ((delegate* unmanaged<ISpNotifySource*, Guid*, void**, int>)(lpVtbl[0]))((ISpNotifySource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpNotifySource : ISpNotifySource.Interface
         return ((delegate* unmanaged<ISpNotifySource*, uint>)(lpVtbl[1]))((ISpNotifySource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpNotifySource : ISpNotifySource.Interface
         return ((delegate* unmanaged<ISpNotifySource*, uint>)(lpVtbl[2]))((ISpNotifySource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpNotifySource.xml' path='doc/member[@name="ISpNotifySource.SetNotifySink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetNotifySink(ISpNotifySink* pNotifySink)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpNotifySource : ISpNotifySource.Interface
         return ((delegate* unmanaged<ISpNotifySource*, ISpNotifySink*, int>)(lpVtbl[3]))((ISpNotifySource*)Unsafe.AsPointer(ref this), pNotifySink);
     }
 
+    /// <include file='ISpNotifySource.xml' path='doc/member[@name="ISpNotifySource.SetNotifyWindowMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetNotifyWindowMessage(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpNotifySource : ISpNotifySource.Interface
         return ((delegate* unmanaged<ISpNotifySource*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[4]))((ISpNotifySource*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
     }
 
+    /// <include file='ISpNotifySource.xml' path='doc/member[@name="ISpNotifySource.SetNotifyCallbackFunction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<WPARAM, LPARAM, void> pfnCallback, WPARAM wParam, LPARAM lParam)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpNotifySource : ISpNotifySource.Interface
         return ((delegate* unmanaged<ISpNotifySource*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int>)(lpVtbl[5]))((ISpNotifySource*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
     }
 
+    /// <include file='ISpNotifySource.xml' path='doc/member[@name="ISpNotifySource.SetNotifyCallbackInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetNotifyCallbackInterface(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpNotifySource : ISpNotifySource.Interface
         return ((delegate* unmanaged<ISpNotifySource*, ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[6]))((ISpNotifySource*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
     }
 
+    /// <include file='ISpNotifySource.xml' path='doc/member[@name="ISpNotifySource.SetNotifyWin32Event"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetNotifyWin32Event()
@@ -74,6 +83,7 @@ public unsafe partial struct ISpNotifySource : ISpNotifySource.Interface
         return ((delegate* unmanaged<ISpNotifySource*, int>)(lpVtbl[7]))((ISpNotifySource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpNotifySource.xml' path='doc/member[@name="ISpNotifySource.WaitForNotifyEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT WaitForNotifyEvent([NativeTypeName("DWORD")] uint dwMilliseconds)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpNotifySource : ISpNotifySource.Interface
         return ((delegate* unmanaged<ISpNotifySource*, uint, int>)(lpVtbl[8]))((ISpNotifySource*)Unsafe.AsPointer(ref this), dwMilliseconds);
     }
 
+    /// <include file='ISpNotifySource.xml' path='doc/member[@name="ISpNotifySource.GetNotifyEventHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HANDLE GetNotifyEventHandle()

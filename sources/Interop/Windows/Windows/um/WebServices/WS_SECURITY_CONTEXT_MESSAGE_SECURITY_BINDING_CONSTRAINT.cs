@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT"]/*' />
 public unsafe partial struct WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT
 {
+    /// <include file='WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingConstraint"]/*' />
     public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 
+    /// <include file='WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingUsage"]/*' />
     public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 
+    /// <include file='WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT.bootstrapSecurityConstraint"]/*' />
     public WS_SECURITY_CONSTRAINTS* bootstrapSecurityConstraint;
 }

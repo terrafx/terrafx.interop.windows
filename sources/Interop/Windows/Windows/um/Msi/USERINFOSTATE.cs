@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USERINFOSTATE.xml' path='doc/member[@name="USERINFOSTATE"]/*' />
 public enum USERINFOSTATE
 {
+    /// <include file='USERINFOSTATE.xml' path='doc/member[@name="USERINFOSTATE.USERINFOSTATE_MOREDATA"]/*' />
     USERINFOSTATE_MOREDATA = -3,
+
+    /// <include file='USERINFOSTATE.xml' path='doc/member[@name="USERINFOSTATE.USERINFOSTATE_INVALIDARG"]/*' />
     USERINFOSTATE_INVALIDARG = -2,
+
+    /// <include file='USERINFOSTATE.xml' path='doc/member[@name="USERINFOSTATE.USERINFOSTATE_UNKNOWN"]/*' />
     USERINFOSTATE_UNKNOWN = -1,
+
+    /// <include file='USERINFOSTATE.xml' path='doc/member[@name="USERINFOSTATE.USERINFOSTATE_ABSENT"]/*' />
     USERINFOSTATE_ABSENT = 0,
+
+    /// <include file='USERINFOSTATE.xml' path='doc/member[@name="USERINFOSTATE.USERINFOSTATE_PRESENT"]/*' />
     USERINFOSTATE_PRESENT = 1,
 }

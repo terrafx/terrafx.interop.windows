@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DigitalWindowSetting">
+    <summary>
+      <para>Represents the bounds settings of the digital window for video capture.</para>
+    </summary>
+    <remarks>
+      <para>This struct is used with the <a href="https://docs.microsoft.com//windows/win32/medfound/mf-capture-metadata-digitalwindow">MF_CAPTURE_METADATA_DIGITALWINDOW</a> attribute.</para>
+    </remarks>
+  </member>
+  <member name="DigitalWindowSetting.OriginX">
+    <summary>
+      <para>The x-axis value of the left side of the digital window bounds.</para>
+    </summary>
+  </member>
+  <member name="DigitalWindowSetting.OriginY">
+    <summary>
+      <para>The y-axis value of the top side of the digital window bounds.</para>
+    </summary>
+  </member>
+  <member name="DigitalWindowSetting.WindowSize">
+    <summary>
+      <para>A value specifying the scale of the digital window bounds.</para>
+    </summary>
+  </member>
+</doc>

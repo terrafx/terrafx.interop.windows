@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_TEXT_METRICS">
+    <summary>
+      <para>Contains the metrics associated with text after layout.
+All coordinates are in device independent pixels (DIPs).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS.left">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that indicates the left-most point of formatted text relative to the layout box,
+while excluding any glyph overhang.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS.top">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that indicates the top-most point of formatted text relative to the layout box, while excluding any glyph overhang.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS.width">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that indicates the width of the formatted text, while ignoring trailing whitespace
+at the end of each line.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS.widthIncludingTrailingWhitespace">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The width of the formatted text, taking into account the
+trailing whitespace at the end of each line.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS.height">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The height of the formatted text. The height of an empty string
+is set to the same value as that of the default font.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS.layoutWidth">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The initial width given to the layout. It can be either larger or smaller than the
+text content width, depending on whether the text
+was wrapped.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS.layoutHeight">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>Initial height given to the layout. Depending on the length of the text, it may be larger or smaller than the text content height.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS.maxBidiReorderingDepth">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The maximum reordering count of any line of text, used
+to calculate the most number of hit-testing boxes needed.
+If the layout has no bidirectional text, or no text at all,
+the minimum level is 1.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS.lineCount">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>Total number of lines.</para>
+    </summary>
+  </member>
+</doc>

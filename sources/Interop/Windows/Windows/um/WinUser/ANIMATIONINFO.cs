@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ANIMATIONINFO.xml' path='doc/member[@name="ANIMATIONINFO"]/*' />
 public partial struct ANIMATIONINFO
 {
+    /// <include file='ANIMATIONINFO.xml' path='doc/member[@name="ANIMATIONINFO.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='ANIMATIONINFO.xml' path='doc/member[@name="ANIMATIONINFO.iMinAnimate"]/*' />
     public int iMinAnimate;
 }

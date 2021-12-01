@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPicture.get_Attributes">
+    <summary>
+      <para>Retrieves the current set of the picture's bit attributes.</para>
+    </summary>
+    <param name="pDwAttr">
+      <para>A pointer to a variable that receives the value of the Attributes property.</para>
+      <para>The Attributes property can contain any combination of the values from the <see cref="PICTUREATTRIBUTES" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return value E_FAIL, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute bits were returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>pdwAttr</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IPicture" />
+    <seealso cref="PICTUREATTRIBUTES" />
+  </member>
+  <member name="IPicture.get_CurDC">
+    <summary>
+      <para>Retrieves the handle of the current device context. This property is valid only for bitmap pictures.</para>
+    </summary>
+    <param name="phDC">
+      <para>A pointer a variable that receives the device context.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return value E_FAIL, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute bits were returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>phDC</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The CurDC property and the <see cref="IPicture.SelectPicture" /> method exist to circumvent restrictions in Windows; specifically, that an object can only be selected into exactly one device context at a time. In some cases, a picture object may be permanently selected into a particular device context (for example, a control may use a certain picture for a background). To use this picture property elsewhere, it must be temporarily deselected from its old device context, selected into the new device context for the operation, then reselected back into the old device context. The <b>IPicture.get_CurDC</b> method returns the device context handle into which the picture is currently selected. The <b>IPicture.SelectPicture</b> method selects the picture into a new device context, returning the old device context and the picture's GDI handle. The caller should select the picture back into the old device context when the caller is done with it, as is normal for Windows code.</para>
+      <h3>Notes to Callers
+</h3>
+      <para>The caller always owns any device contexts passed between it and the picture object. Because the picture object maintains a copy of the HDC, the caller should use a memory device context (created with the <see cref="CreateCompatibleDC" /> function) and not a screen device context (from <see cref="GetDC" />, <see cref="CreateDC" />, or <see cref="BeginPaint" />), because the screen device contexts are a limited system resource.</para>
+    </remarks>
+    <seealso cref="IPicture" />
+    <seealso cref="IPicture.SelectPicture" />
+  </member>
+  <member name="IPicture.get_Handle">
+    <summary>
+      <para>Retrieves the handle to the picture managed within this picture object to a specified location.</para>
+    </summary>
+    <param name="pHandle">
+      <para>A pointer to a variable that receives the handle. The caller is responsible for this handle upon successful return. The variable is set to <b>NULL</b> on failure.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return values E_FAIL and E_OUTOFMEMORY, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The handle was returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>phandle</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers
+</h3>
+      <para>The picture object may retain ownership of the picture. However, the caller can be assured that the picture will remain valid until either the caller specifically destroys the picture or the picture object is itself destroyed. The <i>fOwn</i> parameter to <see cref="OleCreatePictureIndirect" /> determines ownership when the picture object is created. <see cref="OleLoadPicture" /> forces <i>fOwn</i> to <b>TRUE</b>.</para>
+    </remarks>
+    <seealso cref="IPicture" />
+  </member>
+  <member name="IPicture.get_Height">
+    <summary>
+      <para>Retrieves the current height of the picture in the picture object.</para>
+    </summary>
+    <param name="pHeight">
+      <para>A pointer to a variable that receives the height.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return value E_FAIL, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The height was returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>pHeight</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IPicture" />
+  </member>
+  <member name="IPicture.get_hPal">
+    <summary>
+      <para>Retrieves a copy of the palette currently used by the picture object.</para>
+    </summary>
+    <param name="phPal">
+      <para>A pointer to a variable that receives the palette handle. The variable is set to <b>NULL</b> on failure.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return values E_FAIL and E_OUTOFMEMORY, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The height was returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>This picture has no palette. The variable that <i>phpal</i> points to was set to <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>phPal</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>If the picture object has ownership of the picture, it also has ownership of the palette and will destroy it when the object is itself destroyed. Otherwise the caller owns the palette. The <i>fOwn</i> parameter to <see cref="OleCreatePictureIndirect" /> determines ownership. <see cref="OleLoadPicture" /> sets <i>fOwn</i> to <b>TRUE</b> to indicate that the picture object owns the palette.</para>
+    </remarks>
+    <seealso cref="IPicture" />
+  </member>
+  <member name="IPicture.get_KeepOriginalFormat">
+    <summary>
+      <para>Retrieves the current value of the picture's KeepOriginalFormat property.</para>
+    </summary>
+    <param name="pKeep">
+      <para>A pointer to a variable that receives the value of the property.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return value E_FAIL, as well as the following value.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of the KeepOriginalFormat property was returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>pKeep</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IPicture" />
+    <seealso cref="IPicture.put_KeepOriginalFormat" />
+  </member>
+  <member name="IPicture.get_Type">
+    <summary>
+      <para>Retrieves the current type of the picture contained in the picture object.</para>
+    </summary>
+    <param name="pType">
+      <para>Pointer to a variable that receives the picture type. The Type property can have any one of the values contained in the <a href="https://docs.microsoft.com//windows/desktop/com/pictype-constants">PICTYPE</a> enumeration.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return value E_FAIL, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The type was returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>pType</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IPicture" />
+    <seealso cref="OleCreatePictureIndirect" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/pictype-constants">PICTYPE</seealso>
+  </member>
+  <member name="IPicture.get_Width">
+    <summary>
+      <para>Retrieves the current width of the picture in the picture object.</para>
+    </summary>
+    <param name="pWidth">
+      <para>A pointer to a variable that receives the width.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return value E_FAIL, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The width was returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>pWidth</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IPicture" />
+  </member>
+  <member name="IPicture.PictureChanged">
+    <summary>
+      <para>Notifies the picture object that its picture resource has changed. This method only calls <see cref="IPropertyNotifySink.OnChanged" /> with DISPID_PICT_HANDLE for any connected sinks.</para>
+    </summary>
+    <returns>
+      <para>This method S_OK if it succeeds and E_FAIL if the picture object is uninitialized.</para>
+    </returns>
+    <seealso cref="IPicture" />
+  </member>
+  <member name="IPicture.put_KeepOriginalFormat">
+    <summary>
+      <para>Sets the value of the picture's KeepOriginalFormat property.</para>
+    </summary>
+    <param name="keep">
+      <para>Specifies the new value to assign to the property.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success and E_FAIL otherwise.</para>
+    </returns>
+    <seealso cref="IPicture" />
+    <seealso cref="IPicture.get_KeepOriginalFormat" />
+  </member>
+  <member name="IPicture.Render">
+    <summary>
+      <para>Renders (draws) a specified portion of the picture defined by the offset (<i>xSrc</i>,<i>ySrc</i>) of the source picture and the dimensions to copy (<i>cxSrc</i>,<i>xySrc</i>). This picture is rendered onto the specified device context, positioned at the point (<i>x</i>,<i>y</i>), and scaled to the dimensions (<i>cx</i>,<i>cy</i>). The <i>prcWBounds</i> parameter specifies the position of this rendering if the destination device context is itself a metafile. Such information is necessary to place one metafile in another. For more information, see the <i>prcWBounds</i> parameter of <see cref="IViewObject2.Draw" />.</para>
+    </summary>
+    <param name="hDC">
+      <para>A handle of the device context on which to render the image.</para>
+    </param>
+    <param name="x">
+      <para>The horizontal coordinate in <i>hdc</i> at which to place the rendered image.</para>
+    </param>
+    <param name="y">
+      <para>The vertical coordinate in <i>hdc</i> at which to place the rendered image.</para>
+    </param>
+    <param name="cx">
+      <para>The horizontal dimension (width) of the destination rectangle.</para>
+    </param>
+    <param name="cy">
+      <para>The vertical dimension (height) of the destination rectangle</para>
+    </param>
+    <param name="xSrc">
+      <para>The horizontal offset in the source picture from which to start copying.</para>
+    </param>
+    <param name="ySrc">
+      <para>The vertical offset in the source picture from which to start copying.</para>
+    </param>
+    <param name="cxSrc">
+      <para>The horizontal extent to copy from the source picture.</para>
+    </param>
+    <param name="cySrc">
+      <para>The vertical extent to copy from the source picture.</para>
+    </param>
+    <param name="pRcWBounds">
+      <para>A pointer to a rectangle containing the position of the destination within a metafile device context if <i>hdc</i> is a metafile DC. Cannot be <b>NULL</b> in such cases.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return values E_FAIL, E_INVALIDARG, and E_OUTOFMEMORY, as well as the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The picture was rendered successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in <i>prcWBounds</i> is not valid when <i>hdc</i> contains a metafile device context.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CTL_E_INVALIDPROPERTYVALUE</b>
+            </para>
+          </description>
+          <description>
+            <para>The parameter <i>cx</i>, <i>cy</i>, <i>cxSrc</i>, or <i>cySrc</i> has a value of zero.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IPicture" />
+  </member>
+  <member name="IPicture.SaveAsFile">
+    <summary>
+      <para>Saves the picture's data into a stream in the same format that it would save itself into a file. Bitmaps use the BMP file format, metafiles the WMF format, and icons the ICO format.</para>
+    </summary>
+    <param name="pStream">
+      <para>A pointer to the stream into which the picture writes its data.</para>
+    </param>
+    <param name="fSaveMemCopy">
+      <para>A flag indicating whether to save a copy of the picture in memory.</para>
+    </param>
+    <param name="pCbSize">
+      <para>Pointer to a variable that receives the number of bytes written into the stream. This value can be <b>NULL</b>, indicating that the caller does not require this information.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return values E_FAIL, E_INVALIDARG, and S_OK.</para>
+    </returns>
+    <seealso cref="IPicture" />
+  </member>
+  <member name="IPicture.SelectPicture">
+    <summary>
+      <para>Selects a bitmap picture into a given device context, and returns the device context in which the picture was previously selected as well as the picture's GDI handle. This method works in conjunction with <see cref="IPicture.get_CurDC" />.</para>
+    </summary>
+    <param name="hDCIn">
+      <para>A handle for the device context in which to select the picture.</para>
+    </param>
+    <param name="phDCOut">
+      <para>A pointer to a variable that receives the previous device context. This parameter can be <b>NULL</b> if the caller does not need this information. Ownership of the device context is always the responsibility of the caller.</para>
+    </param>
+    <param name="phBmpOut">
+      <para>A pointer to a variable that receives the GDI handle of the picture. This parameter can be <b>NULL</b> if the caller does not need the handle. Ownership of this handle is determined by the <i>fOwn</i> parameter passed to <see cref="OleCreatePictureIndirect" />. Pictures loaded from a stream always own their resources.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return values E_FAIL, E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</para>
+    </returns>
+    <seealso cref="IPicture" />
+    <seealso cref="IPicture.get_CurDC" />
+  </member>
+  <member name="IPicture.set_hPal">
+    <summary>
+      <para>Assigns a GDI palette to the picture contained in the picture object.</para>
+    </summary>
+    <param name="hPal">
+      <para>A handle to the GDI palette assigned to the picture.</para>
+    </param>
+    <returns>
+      <para>This method supports the standard return values E_FAIL, E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</para>
+    </returns>
+    <remarks>
+      <h3>Notes to Implementers</h3>
+      <para>Ownership of the palette passed to this method depends on how the picture object was created, as specified by the <i>fOwn</i> parameter to <see cref="OleCreatePictureIndirect" />. <see cref="OleLoadPicture" /> forces <i>fOwn</i> to <b>TRUE</b>; if the object owns the picture, then it takes over ownership of this palette.</para>
+    </remarks>
+    <seealso cref="IPicture" />
+  </member>
+  <member name="IPicture">
+    <summary>
+      <para>Manages a picture object and its properties. Picture objects provide a language-neutral abstraction for bitmaps, icons, and metafiles. As with the standard font object, the system provides a standard implementation of the picture object. Its primary interfaces are <b>IPicture</b> and <see cref="IPictureDisp" />, the latter being derived from <b>IDispatch</b> to provide access to the picture's properties through Automation. A picture object is created with <see cref="OleCreatePictureIndirect" />.</para>
+      <para>The picture object also supports the outgoing interface <see cref="IPropertyNotifySink" />, so a client can determine when picture properties change. Because the picture object supports at least one outgoing interface, it also implements <see cref="IConnectionPointContainer" /> and its associated interfaces for this purpose.</para>
+      <para>The picture object also supports <see cref="IPersistStream" /> so that it can save and load itself from an instance of <see cref="IStream" />. An object that uses a picture object internally would normally save and load the picture as part of the object's own persistence handling. The function <see cref="OleLoadPicture" /> simplifies the creation of a picture object based on stream contents.</para>
+    </summary>
+    <remarks>
+      <para>Each property in the <b>IPicture</b> interface includes a <b>get_PropertyName</b> method if the property supports read access and a <b>put_PropertyName</b> method if the property supports write access.</para>
+      <list type="table">
+        <listheader>
+          <description>Property</description>
+          <description>Type</description>
+          <description>Access</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>Handle</description>
+          <description>
+            <b>OLE_HANDLE</b> (<b>int</b>)
+</description>
+          <description>R</description>
+          <description>The Windows GDI handle of the picture
+</description>
+        </item>
+        <item>
+          <description>hPal</description>
+          <description>
+            <b>OLE_HANDLE</b> (<b>int</b>)
+</description>
+          <description>RW</description>
+          <description>The Windows handle of the palette used by the picture.
+</description>
+        </item>
+        <item>
+          <description>Type</description>
+          <description>
+            <b>short</b>
+          </description>
+          <description>R</description>
+          <description>The type of picture (see <a href="https://docs.microsoft.com//windows/desktop/com/pictype-constants">PICTYPE</a>).
+</description>
+        </item>
+        <item>
+          <description>Width</description>
+          <description>
+            <b>OLE_XSIZE_HIMETRIC</b> (<b>long</b>)
+</description>
+          <description>R</description>
+          <description>The width of the picture.
+</description>
+        </item>
+        <item>
+          <description>Height</description>
+          <description>
+            <b>OLE_YSIZE_HIMETRIC</b> (<b>long</b>)
+</description>
+          <description>R</description>
+          <description>The height of the picture.
+</description>
+        </item>
+        <item>
+          <description>CurDC</description>
+          <description>
+            <b>HDC</b>
+          </description>
+          <description>R</description>
+          <description>The current device context.</description>
+        </item>
+        <item>
+          <description>KeepOriginalFormat</description>
+          <description>
+            <b>BOOL</b>
+          </description>
+          <description>RW</description>
+          <description>If <b>TRUE</b>, the picture object maintains the entire original state of the picture in memory. If <b>FALSE</b>, any state not applicable to the user's computer is discarded.</description>
+        </item>
+        <item>
+          <description>Attributes</description>
+          <description>
+            <b>DWORD</b>
+          </description>
+          <description>R</description>
+          <description>Miscellaneous bit attributes of the picture.</description>
+        </item>
+      </list>
+      <h3>OLE Implementation</h3>
+      <para>Picture objects provide a language-neutral abstraction for bitmaps, icons, and metafiles. As with the standard font object, the system provides a standard implementation of the picture object. Its primary interfaces are <b>IPicture</b> and <see cref="IPictureDisp" />. A picture object is created with <see cref="OleCreatePictureIndirect" /> and supports both the <b>IPicture</b> and the <b>IPictureDisp</b> interfaces.</para>
+      <para>The OLE-provided picture object implements the complete semantics of the <b>IPicture</b> and <see cref="IPictureDisp" /> interfaces.</para>
+    </remarks>
+    <seealso cref="IPictureDisp" />
+  </member>
+</doc>

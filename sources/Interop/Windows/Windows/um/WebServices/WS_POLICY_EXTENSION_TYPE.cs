@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_POLICY_EXTENSION_TYPE.xml' path='doc/member[@name="WS_POLICY_EXTENSION_TYPE"]/*' />
 public enum WS_POLICY_EXTENSION_TYPE
 {
+    /// <include file='WS_POLICY_EXTENSION_TYPE.xml' path='doc/member[@name="WS_POLICY_EXTENSION_TYPE.WS_ENDPOINT_POLICY_EXTENSION_TYPE"]/*' />
     WS_ENDPOINT_POLICY_EXTENSION_TYPE = 1,
 }

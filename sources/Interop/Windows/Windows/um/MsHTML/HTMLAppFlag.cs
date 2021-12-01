@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLAppFlag.xml' path='doc/member[@name="HTMLAppFlag"]/*' />
 public enum HTMLAppFlag
 {
+    /// <include file='HTMLAppFlag.xml' path='doc/member[@name="HTMLAppFlag.HTMLAppFlagNo"]/*' />
     HTMLAppFlagNo = 0,
+
+    /// <include file='HTMLAppFlag.xml' path='doc/member[@name="HTMLAppFlag.HTMLAppFlagOff"]/*' />
     HTMLAppFlagOff = 0,
+
+    /// <include file='HTMLAppFlag.xml' path='doc/member[@name="HTMLAppFlag.HTMLAppFlag0"]/*' />
     HTMLAppFlag0 = 0,
+
+    /// <include file='HTMLAppFlag.xml' path='doc/member[@name="HTMLAppFlag.HTMLAppFlagYes"]/*' />
     HTMLAppFlagYes = 1,
+
+    /// <include file='HTMLAppFlag.xml' path='doc/member[@name="HTMLAppFlag.HTMLAppFlagOn"]/*' />
     HTMLAppFlagOn = 1,
+
+    /// <include file='HTMLAppFlag.xml' path='doc/member[@name="HTMLAppFlag.HTMLAppFlag1"]/*' />
     HTMLAppFlag1 = 1,
+
+    /// <include file='HTMLAppFlag.xml' path='doc/member[@name="HTMLAppFlag.HTMLAppFlag_Max"]/*' />
     HTMLAppFlag_Max = 2147483647,
 }

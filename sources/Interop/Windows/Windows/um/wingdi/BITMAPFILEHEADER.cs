@@ -7,21 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BITMAPFILEHEADER.xml' path='doc/member[@name="BITMAPFILEHEADER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
 public partial struct BITMAPFILEHEADER
 {
+    /// <include file='BITMAPFILEHEADER.xml' path='doc/member[@name="BITMAPFILEHEADER.bfType"]/*' />
     [NativeTypeName("WORD")]
     public ushort bfType;
 
+    /// <include file='BITMAPFILEHEADER.xml' path='doc/member[@name="BITMAPFILEHEADER.bfSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint bfSize;
 
+    /// <include file='BITMAPFILEHEADER.xml' path='doc/member[@name="BITMAPFILEHEADER.bfReserved1"]/*' />
     [NativeTypeName("WORD")]
     public ushort bfReserved1;
 
+    /// <include file='BITMAPFILEHEADER.xml' path='doc/member[@name="BITMAPFILEHEADER.bfReserved2"]/*' />
     [NativeTypeName("WORD")]
     public ushort bfReserved2;
 
+    /// <include file='BITMAPFILEHEADER.xml' path='doc/member[@name="BITMAPFILEHEADER.bfOffBits"]/*' />
     [NativeTypeName("DWORD")]
     public uint bfOffBits;
 }

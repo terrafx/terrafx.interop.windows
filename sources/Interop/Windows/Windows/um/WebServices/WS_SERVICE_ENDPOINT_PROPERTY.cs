@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SERVICE_ENDPOINT_PROPERTY.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT_PROPERTY"]/*' />
 public unsafe partial struct WS_SERVICE_ENDPOINT_PROPERTY
 {
+    /// <include file='WS_SERVICE_ENDPOINT_PROPERTY.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT_PROPERTY.id"]/*' />
     public WS_SERVICE_ENDPOINT_PROPERTY_ID id;
 
+    /// <include file='WS_SERVICE_ENDPOINT_PROPERTY.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT_PROPERTY.value"]/*' />
     public void* value;
 
+    /// <include file='WS_SERVICE_ENDPOINT_PROPERTY.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT_PROPERTY.valueSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint valueSize;
 }

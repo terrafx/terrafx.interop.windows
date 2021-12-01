@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_MEDIA_ENGINE_READY">
+    <summary>
+      <para>Defines ready-state values for the Media Engine.</para>
+    </summary>
+    <remarks>
+      <para>These values correspond to constants defined for the  <b>HTMLMediaElement.readyState</b> attribute  in HTML5.</para>
+    </remarks>
+    <seealso cref="IMFMediaEngine.GetReadyState" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_MEDIA_ENGINE_READY.MF_MEDIA_ENGINE_READY_HAVE_NOTHING">
+    <summary>
+      <para>No data is available.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_READY.MF_MEDIA_ENGINE_READY_HAVE_METADATA">
+    <summary>
+      <para>Some metadata is available, including the duration and, for video files, the video dimensions. No media data is available.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_READY.MF_MEDIA_ENGINE_READY_HAVE_CURRENT_DATA">
+    <summary>
+      <para>There is media data  for the current playback position, but not enough data for playback or seeking.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_READY.MF_MEDIA_ENGINE_READY_HAVE_FUTURE_DATA">
+    <summary>
+      <para>There is enough media data to enable some playback or seeking. The amount of data might be a little as the next video frame.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_READY.MF_MEDIA_ENGINE_READY_HAVE_ENOUGH_DATA">
+    <summary>
+      <para>There is enough data to play the resource, based on the current rate at which the resource is being fetched.</para>
+    </summary>
+  </member>
+</doc>

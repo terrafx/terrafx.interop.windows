@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAdvancedMediaCaptureInitializationSettings.xml' path='doc/member[@name="IAdvancedMediaCaptureInitializationSettings"]/*' />
 [Guid("3DE21209-8BA6-4F2A-A577-2819B56FF14D")]
 [NativeTypeName("struct IAdvancedMediaCaptureInitializationSettings : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdva
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdva
         return ((delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, Guid*, void**, int>)(lpVtbl[0]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdva
         return ((delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, uint>)(lpVtbl[1]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdva
         return ((delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, uint>)(lpVtbl[2]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAdvancedMediaCaptureInitializationSettings.xml' path='doc/member[@name="IAdvancedMediaCaptureInitializationSettings.SetDirectxDeviceManager"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDirectxDeviceManager(IMFDXGIDeviceManager* value)

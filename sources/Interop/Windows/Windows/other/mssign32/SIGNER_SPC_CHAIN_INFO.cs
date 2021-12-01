@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIGNER_SPC_CHAIN_INFO.xml' path='doc/member[@name="SIGNER_SPC_CHAIN_INFO"]/*' />
 public unsafe partial struct SIGNER_SPC_CHAIN_INFO
 {
+    /// <include file='SIGNER_SPC_CHAIN_INFO.xml' path='doc/member[@name="SIGNER_SPC_CHAIN_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='SIGNER_SPC_CHAIN_INFO.xml' path='doc/member[@name="SIGNER_SPC_CHAIN_INFO.pwszSpcFile"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pwszSpcFile;
 
+    /// <include file='SIGNER_SPC_CHAIN_INFO.xml' path='doc/member[@name="SIGNER_SPC_CHAIN_INFO.dwCertPolicy"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCertPolicy;
 
+    /// <include file='SIGNER_SPC_CHAIN_INFO.xml' path='doc/member[@name="SIGNER_SPC_CHAIN_INFO.hCertStore"]/*' />
     public HCERTSTORE hCertStore;
 }

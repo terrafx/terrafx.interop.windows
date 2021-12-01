@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IContinueCallback.xml' path='doc/member[@name="IContinueCallback"]/*' />
 [Guid("B722BCCA-4E68-101B-A2BC-00AA00404770")]
 [NativeTypeName("struct IContinueCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IContinueCallback : IContinueCallback.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IContinueCallback : IContinueCallback.Interface
         return ((delegate* unmanaged<IContinueCallback*, Guid*, void**, int>)(lpVtbl[0]))((IContinueCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IContinueCallback : IContinueCallback.Interface
         return ((delegate* unmanaged<IContinueCallback*, uint>)(lpVtbl[1]))((IContinueCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IContinueCallback : IContinueCallback.Interface
         return ((delegate* unmanaged<IContinueCallback*, uint>)(lpVtbl[2]))((IContinueCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IContinueCallback.xml' path='doc/member[@name="IContinueCallback.FContinue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT FContinue()
@@ -46,6 +51,7 @@ public unsafe partial struct IContinueCallback : IContinueCallback.Interface
         return ((delegate* unmanaged<IContinueCallback*, int>)(lpVtbl[3]))((IContinueCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IContinueCallback.xml' path='doc/member[@name="IContinueCallback.FContinuePrinting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT FContinuePrinting([NativeTypeName("LONG")] int nCntPrinted, [NativeTypeName("LONG")] int nCurPage, [NativeTypeName("wchar_t *")] ushort* pwszPrintStatus)

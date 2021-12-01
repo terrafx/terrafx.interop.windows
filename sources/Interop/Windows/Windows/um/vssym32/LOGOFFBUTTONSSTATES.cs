@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LOGOFFBUTTONSSTATES.xml' path='doc/member[@name="LOGOFFBUTTONSSTATES"]/*' />
 public enum LOGOFFBUTTONSSTATES
 {
+    /// <include file='LOGOFFBUTTONSSTATES.xml' path='doc/member[@name="LOGOFFBUTTONSSTATES.SPLS_NORMAL"]/*' />
     SPLS_NORMAL = 1,
+
+    /// <include file='LOGOFFBUTTONSSTATES.xml' path='doc/member[@name="LOGOFFBUTTONSSTATES.SPLS_HOT"]/*' />
     SPLS_HOT = 2,
+
+    /// <include file='LOGOFFBUTTONSSTATES.xml' path='doc/member[@name="LOGOFFBUTTONSSTATES.SPLS_PRESSED"]/*' />
     SPLS_PRESSED = 3,
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoInstantTemporalUpSwitching.xml' path='doc/member[@name="CODECAPI_AVEncVideoInstantTemporalUpSwitching"]/*' />
 [Guid("A3308307-0D96-4BA4-B1F0-B91A5E49DF10")]
 public partial struct CODECAPI_AVEncVideoInstantTemporalUpSwitching
 {

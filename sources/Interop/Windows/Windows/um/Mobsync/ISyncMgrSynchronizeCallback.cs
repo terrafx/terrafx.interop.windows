@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback"]/*' />
 [Guid("6295DF41-35EE-11D1-8707-00C04FD93327")]
 [NativeTypeName("struct ISyncMgrSynchronizeCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint>)(lpVtbl[1]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint>)(lpVtbl[2]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.ShowPropertiesCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ShowPropertiesCompleted(HRESULT hr)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int>)(lpVtbl[3]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr);
     }
 
+    /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.PrepareForSyncCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT PrepareForSyncCompleted(HRESULT hr)
@@ -53,6 +59,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int>)(lpVtbl[4]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr);
     }
 
+    /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.SynchronizeCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SynchronizeCompleted(HRESULT hr)
@@ -60,6 +67,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int>)(lpVtbl[5]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr);
     }
 
+    /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.ShowErrorCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ShowErrorCompleted(HRESULT hr, [NativeTypeName("ULONG")] uint cItems, [NativeTypeName("const GUID *")] Guid* pItemIDs)
@@ -67,6 +75,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, uint, Guid*, int>)(lpVtbl[6]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr, cItems, pItemIDs);
     }
 
+    /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.EnableModeless"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EnableModeless(BOOL fEnable)
@@ -74,6 +83,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, BOOL, int>)(lpVtbl[7]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), fEnable);
     }
 
+    /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.Progress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Progress([NativeTypeName("const GUID &")] Guid* ItemID, [NativeTypeName("const SYNCMGRPROGRESSITEM *")] SYNCMGRPROGRESSITEM* pSyncProgressItem)
@@ -81,6 +91,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, SYNCMGRPROGRESSITEM*, int>)(lpVtbl[8]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), ItemID, pSyncProgressItem);
     }
 
+    /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.LogError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT LogError([NativeTypeName("DWORD")] uint dwErrorLevel, [NativeTypeName("LPCWSTR")] ushort* pszErrorText, [NativeTypeName("const SYNCMGRLOGERRORINFO *")] SYNCMGRLOGERRORINFO* pSyncLogError)
@@ -88,6 +99,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint, ushort*, SYNCMGRLOGERRORINFO*, int>)(lpVtbl[9]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), dwErrorLevel, pszErrorText, pSyncLogError);
     }
 
+    /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.DeleteLogError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT DeleteLogError([NativeTypeName("const GUID &")] Guid* ErrorID, [NativeTypeName("DWORD")] uint dwReserved)
@@ -95,6 +107,7 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, uint, int>)(lpVtbl[10]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), ErrorID, dwReserved);
     }
 
+    /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.EstablishConnection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT EstablishConnection([NativeTypeName("LPCWSTR")] ushort* pwszConnection, [NativeTypeName("DWORD")] uint dwReserved)

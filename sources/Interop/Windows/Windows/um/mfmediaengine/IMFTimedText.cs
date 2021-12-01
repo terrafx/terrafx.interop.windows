@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText"]/*' />
 [Guid("1F2A94C9-A3DF-430D-9D0F-ACD85DDC29AF")]
 [NativeTypeName("struct IMFTimedText : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedText*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, uint>)(lpVtbl[1]))((IMFTimedText*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, uint>)(lpVtbl[2]))((IMFTimedText*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.RegisterNotifications"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterNotifications(IMFTimedTextNotify* notify)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, IMFTimedTextNotify*, int>)(lpVtbl[3]))((IMFTimedText*)Unsafe.AsPointer(ref this), notify);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.SelectTrack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SelectTrack([NativeTypeName("DWORD")] uint trackId, BOOL selected)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, uint, BOOL, int>)(lpVtbl[4]))((IMFTimedText*)Unsafe.AsPointer(ref this), trackId, selected);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.AddDataSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddDataSource(IMFByteStream* byteStream, [NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, IMFByteStream*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int>)(lpVtbl[5]))((IMFTimedText*)Unsafe.AsPointer(ref this), byteStream, label, language, kind, isDefault, trackId);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.AddDataSourceFromUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AddDataSourceFromUrl([NativeTypeName("LPCWSTR")] ushort* url, [NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, ushort*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int>)(lpVtbl[6]))((IMFTimedText*)Unsafe.AsPointer(ref this), url, label, language, kind, isDefault, trackId);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.AddTrack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddTrack([NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, IMFTimedTextTrack** track)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, IMFTimedTextTrack**, int>)(lpVtbl[7]))((IMFTimedText*)Unsafe.AsPointer(ref this), label, language, kind, track);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.RemoveTrack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RemoveTrack(IMFTimedTextTrack* track)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, IMFTimedTextTrack*, int>)(lpVtbl[8]))((IMFTimedText*)Unsafe.AsPointer(ref this), track);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.GetCueTimeOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetCueTimeOffset(double* offset)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, double*, int>)(lpVtbl[9]))((IMFTimedText*)Unsafe.AsPointer(ref this), offset);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.SetCueTimeOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetCueTimeOffset(double offset)
@@ -97,6 +109,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, double, int>)(lpVtbl[10]))((IMFTimedText*)Unsafe.AsPointer(ref this), offset);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.GetTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetTracks(IMFTimedTextTrackList** tracks)
@@ -104,6 +117,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, IMFTimedTextTrackList**, int>)(lpVtbl[11]))((IMFTimedText*)Unsafe.AsPointer(ref this), tracks);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.GetActiveTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetActiveTracks(IMFTimedTextTrackList** activeTracks)
@@ -111,6 +125,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, IMFTimedTextTrackList**, int>)(lpVtbl[12]))((IMFTimedText*)Unsafe.AsPointer(ref this), activeTracks);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.GetTextTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetTextTracks(IMFTimedTextTrackList** textTracks)
@@ -118,6 +133,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, IMFTimedTextTrackList**, int>)(lpVtbl[13]))((IMFTimedText*)Unsafe.AsPointer(ref this), textTracks);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.GetMetadataTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetMetadataTracks(IMFTimedTextTrackList** metadataTracks)
@@ -125,6 +141,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, IMFTimedTextTrackList**, int>)(lpVtbl[14]))((IMFTimedText*)Unsafe.AsPointer(ref this), metadataTracks);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.SetInBandEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetInBandEnabled(BOOL enabled)
@@ -132,6 +149,7 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface
         return ((delegate* unmanaged<IMFTimedText*, BOOL, int>)(lpVtbl[15]))((IMFTimedText*)Unsafe.AsPointer(ref this), enabled);
     }
 
+    /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.IsInBandEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public BOOL IsInBandEnabled()

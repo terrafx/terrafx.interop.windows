@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DEVICE_MANAGEMENT_STATUS.xml' path='doc/member[@name="STORAGE_DEVICE_MANAGEMENT_STATUS"]/*' />
 public partial struct STORAGE_DEVICE_MANAGEMENT_STATUS
 {
+    /// <include file='STORAGE_DEVICE_MANAGEMENT_STATUS.xml' path='doc/member[@name="STORAGE_DEVICE_MANAGEMENT_STATUS.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DEVICE_MANAGEMENT_STATUS.xml' path='doc/member[@name="STORAGE_DEVICE_MANAGEMENT_STATUS.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_DEVICE_MANAGEMENT_STATUS.xml' path='doc/member[@name="STORAGE_DEVICE_MANAGEMENT_STATUS.Health"]/*' />
     public STORAGE_DISK_HEALTH_STATUS Health;
 
+    /// <include file='STORAGE_DEVICE_MANAGEMENT_STATUS.xml' path='doc/member[@name="STORAGE_DEVICE_MANAGEMENT_STATUS.NumberOfOperationalStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfOperationalStatus;
 
+    /// <include file='STORAGE_DEVICE_MANAGEMENT_STATUS.xml' path='doc/member[@name="STORAGE_DEVICE_MANAGEMENT_STATUS.NumberOfAdditionalReasons"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfAdditionalReasons;
 
+    /// <include file='STORAGE_DEVICE_MANAGEMENT_STATUS.xml' path='doc/member[@name="STORAGE_DEVICE_MANAGEMENT_STATUS.OperationalStatus"]/*' />
     [NativeTypeName("STORAGE_DISK_OPERATIONAL_STATUS [16]")]
     public _OperationalStatus_e__FixedBuffer OperationalStatus;
 
+    /// <include file='STORAGE_DEVICE_MANAGEMENT_STATUS.xml' path='doc/member[@name="STORAGE_DEVICE_MANAGEMENT_STATUS.AdditionalReasons"]/*' />
     [NativeTypeName("STORAGE_OPERATIONAL_REASON [1]")]
     public _AdditionalReasons_e__FixedBuffer AdditionalReasons;
 
+    /// <include file='_OperationalStatus_e__FixedBuffer.xml' path='doc/member[@name="_OperationalStatus_e__FixedBuffer"]/*' />
     public partial struct _OperationalStatus_e__FixedBuffer
     {
         public STORAGE_DISK_OPERATIONAL_STATUS e0;
@@ -63,6 +72,7 @@ public partial struct STORAGE_DEVICE_MANAGEMENT_STATUS
         public Span<STORAGE_DISK_OPERATIONAL_STATUS> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 
+    /// <include file='_AdditionalReasons_e__FixedBuffer.xml' path='doc/member[@name="_AdditionalReasons_e__FixedBuffer"]/*' />
     public partial struct _AdditionalReasons_e__FixedBuffer
     {
         public STORAGE_OPERATIONAL_REASON e0;

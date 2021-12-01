@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PRIORITY_HINT.xml' path='doc/member[@name="PRIORITY_HINT"]/*' />
 public enum PRIORITY_HINT
 {
+    /// <include file='PRIORITY_HINT.xml' path='doc/member[@name="PRIORITY_HINT.IoPriorityHintVeryLow"]/*' />
     IoPriorityHintVeryLow = 0,
+
+    /// <include file='PRIORITY_HINT.xml' path='doc/member[@name="PRIORITY_HINT.IoPriorityHintLow"]/*' />
     IoPriorityHintLow,
+
+    /// <include file='PRIORITY_HINT.xml' path='doc/member[@name="PRIORITY_HINT.IoPriorityHintNormal"]/*' />
     IoPriorityHintNormal,
+
+    /// <include file='PRIORITY_HINT.xml' path='doc/member[@name="PRIORITY_HINT.MaximumIoPriorityHintType"]/*' />
     MaximumIoPriorityHintType,
 }

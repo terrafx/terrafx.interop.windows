@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TEXTSELECTIONGRIPPERPARTS.xml' path='doc/member[@name="TEXTSELECTIONGRIPPERPARTS"]/*' />
 public enum TEXTSELECTIONGRIPPERPARTS
 {
+    /// <include file='TEXTSELECTIONGRIPPERPARTS.xml' path='doc/member[@name="TEXTSELECTIONGRIPPERPARTS.TSGP_GRIPPER"]/*' />
     TSGP_GRIPPER = 1,
 }

@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMAudioInputMixer.get_Bass">
+    <summary>
+      <para>The <code>get_Bass</code> method retrieves the bass equalization.</para>
+    </summary>
+    <param name="pBass">
+      <para>Receives the bass gain, in decibels. A negative value indicates attenuation.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.put_Bass" />
+  </member>
+  <member name="IAMAudioInputMixer.get_BassRange">
+    <summary>
+      <para>The <code>get_BassRange</code> method retrieves the bass range.</para>
+    </summary>
+    <param name="pRange">
+      <para>Receives the largest valid value for the <see cref="IAMAudioInputMixer.put_Bass" /> method. For example, 6.0 means that any value between –6.0 and 6.0 is valid.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.put_Bass" />
+  </member>
+  <member name="IAMAudioInputMixer.get_Enable">
+    <summary>
+      <para>The <code>get_Enable</code> method retrieves whether the input is enabled.</para>
+    </summary>
+    <param name="pfEnable">
+      <para>Receives one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TRUE</b>
+          </description>
+          <description>Input is enabled.</description>
+        </item>
+        <item>
+          <description>
+            <b>FALSE</b>
+          </description>
+          <description>Input is disabled.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method applies to specific input pins on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/audio-capture-filter">Audio Capture Filter</a>, so the filter itself returns E_NOTIMPL.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.put_Enable" />
+  </member>
+  <member name="IAMAudioInputMixer.get_Loudness">
+    <summary>
+      <para>The <code>get_Loudness</code> method retrieves the loudness control setting.</para>
+    </summary>
+    <param name="pfLoudness">
+      <para>Receives one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TRUE</b>
+          </description>
+          <description>Loudness is on.</description>
+        </item>
+        <item>
+          <description>
+            <b>FALSE</b>
+          </description>
+          <description>Loudness is off.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.put_Loudness" />
+  </member>
+  <member name="IAMAudioInputMixer.get_MixLevel">
+    <summary>
+      <para>The <code>get_MixLevel</code> method retrieves the recording level.</para>
+    </summary>
+    <param name="pLevel">
+      <para>Receives the recording level. The following values are possible.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>0.0 to 1.0</description>
+          <description>Zero indicates that the recording level is off; the value 1.0 indicates that the recording level is at full volume. Intermediate values are also allowed.</description>
+        </item>
+        <item>
+          <description>AMF_AUTOMATICGAIN</description>
+          <description>Automatic adjustment of the recording level is enabled.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.put_MixLevel" />
+  </member>
+  <member name="IAMAudioInputMixer.get_Mono">
+    <summary>
+      <para>The <code>get_Mono</code> method queries whether all channels are combined into a mono signal.</para>
+    </summary>
+    <param name="pfMono">
+      <para>Receives one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TRUE</b>
+          </description>
+          <description>Mono</description>
+        </item>
+        <item>
+          <description>
+            <b>FALSE</b>
+          </description>
+          <description>Multichannel</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.put_Mono" />
+  </member>
+  <member name="IAMAudioInputMixer.get_Pan">
+    <summary>
+      <para>The <code>get_Pan</code> method retrieves the pan level.</para>
+    </summary>
+    <param name="pPan">
+      <para>Receives the pan level. Possible values range from from –1.0 to 1.0, as follows:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>-1</description>
+          <description>Full left</description>
+        </item>
+        <item>
+          <description>0</description>
+          <description>Center</description>
+        </item>
+        <item>
+          <description>1</description>
+          <description>Full right</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.put_Pan" />
+  </member>
+  <member name="IAMAudioInputMixer.get_Treble">
+    <summary>
+      <para>The <code>get_Treble</code> method retrieves the treble equalization.</para>
+    </summary>
+    <param name="pTreble">
+      <para>Receives the treble gain, in decibels. A negative value indicates attenuation.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.put_Treble" />
+  </member>
+  <member name="IAMAudioInputMixer.get_TrebleRange">
+    <summary>
+      <para>The <code>get_TrebleRange</code> method retrieves the treble range for this input.</para>
+    </summary>
+    <param name="pRange">
+      <para>Receives the largest valid value for the <see cref="IAMAudioInputMixer.put_Treble" />. For example, 6.0 means that any value between –6.0 and 6.0 is valid.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.put_Treble" />
+  </member>
+  <member name="IAMAudioInputMixer.put_Bass">
+    <summary>
+      <para>The <code>put_Bass</code> method sets the bass equalization.</para>
+    </summary>
+    <param name="Bass">
+      <para>Specifies the gain, in decibels. A negative value specifies attenuation.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument. Must be in range given by <see cref="IAMAudioInputMixer.get_BassRange" />.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method boosts or cuts the signal's bass before it is recorded, by the number of decibels specified in the <i>Bass</i> parameter.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.get_Bass" />
+  </member>
+  <member name="IAMAudioInputMixer.put_Enable">
+    <summary>
+      <para>The <code>put_Enable</code> method enables or disables an input.</para>
+    </summary>
+    <param name="fEnable">
+      <para>Specifies whether to enable or disable the input. Use one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TRUE</b>
+          </description>
+          <description>Enable the input.</description>
+        </item>
+        <item>
+          <description>
+            <b>FALSE</b>
+          </description>
+          <description>Disable the input.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If an input is enabled, it is mixed into the recorded signal.</para>
+      <para>This method applies to specific input pins on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/audio-capture-filter">Audio Capture Filter</a>, so the filter itself returns E_NOTIMPL.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.get_Enable" />
+  </member>
+  <member name="IAMAudioInputMixer.put_Loudness">
+    <summary>
+      <para>The <code>put_Loudness</code> method enables or disables the loudness control.</para>
+    </summary>
+    <param name="fLoudness">
+      <para>Specifies whether loudness is on or off. Use one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TRUE</b>
+          </description>
+          <description>Sets loudness on.</description>
+        </item>
+        <item>
+          <description>
+            <b>FALSE</b>
+          </description>
+          <description>Sets loudness off.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Loudness boosts the bass of low volume signals before they are recorded, to compensate for the fact that the ear does not hear quiet bass sounds as well as other sounds.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.get_Loudness" />
+  </member>
+  <member name="IAMAudioInputMixer.put_MixLevel">
+    <summary>
+      <para>The <code>put_MixLevel</code> method sets the recording level for this input.</para>
+    </summary>
+    <param name="Level">
+      <para>Specifies the recording level. The following values are possible.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>0.0 to 1.0</description>
+          <description>Zero indicates that the recording level is off; the value 1.0 indicates that the recording level is at full volume. Intermediate values are also allowed.</description>
+        </item>
+        <item>
+          <description>AMF_AUTOMATICGAIN</description>
+          <description>Enable automatic adjustment of the recording level.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>This filter does not support the AMF_AUTOMATICGAIN flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.get_MixLevel" />
+  </member>
+  <member name="IAMAudioInputMixer.put_Mono">
+    <summary>
+      <para>The <code>put_Mono</code> method combines all channels into a mono signal.</para>
+    </summary>
+    <param name="fMono">
+      <para>Specifies mono or multichannel. Use one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TRUE</b>
+          </description>
+          <description>Mono</description>
+        </item>
+        <item>
+          <description>
+            <b>FALSE</b>
+          </description>
+          <description>Multichannel</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Error setting mono control.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In mono mode, a stereo recording of this input will have the same data in both channels. The result will be a mixture of the left and right signals.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.get_Mono" />
+  </member>
+  <member name="IAMAudioInputMixer.put_Pan">
+    <summary>
+      <para>The <code>put_Pan</code> method sets the pan level.</para>
+    </summary>
+    <param name="Pan">
+      <para>Specifies the pan level. Possible values range from –1.0 to 1.0, as follows.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>-1</description>
+          <description>Full left</description>
+        </item>
+        <item>
+          <description>0</description>
+          <description>Center</description>
+        </item>
+        <item>
+          <description>1</description>
+          <description>Full right</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>In a stereo recording, setting the pan level to -1.0 or 1.0 sends the entire signal to one channel. The other channel records silence. Panning has no effect for a mono recording.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.get_Pan" />
+  </member>
+  <member name="IAMAudioInputMixer.put_Treble">
+    <summary>
+      <para>The <code>put_Treble</code> method sets the treble equalization for this input.</para>
+    </summary>
+    <param name="Treble">
+      <para>Specifies the gain, in decibels. A negative value specifies attenuation.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. The following are possible values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Argument is invalid. Must be in range given by <see cref="IAMAudioInputMixer.get_TrebleRange" />.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method boosts or cuts the signal's treble by a specified number of decibels before it is recorded.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMAudioInputMixer Interface" />
+    <seealso cref="IAMAudioInputMixer.get_Treble" />
+  </member>
+  <member name="IAMAudioInputMixer">
+    <summary>
+      <para>The <code>IAMAudioInputMixer</code> interface controls audio capture properties, such as panning and loudness; and enables or disables specific audio inputs, such as the line in or the microphone.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/audio-capture-filter">Audio Capture</a> filter exposes this interface on each input pin, as well as on the filter itself. The input pins on the Audio Capture Filter represent physical hardware connections; they are not connected to other DirectShow filters. The pin name indicates the input type; for example, "Line In" or "Microphone." Use the <code>IAMAudioInputMixer</code> interface as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>To control the settings on a particular input, use the interface on the pin.</description>
+        </item>
+        <item>
+          <description>To set the overall properties when multiple inputs are enabled, use the interface on the filter.</description>
+        </item>
+        <item>
+          <description>To enable or disable an input, call that pin's <see cref="IAMAudioInputMixer.put_Enable" /> method.</description>
+        </item>
+      </list>
+      <para>Some methods on this interface might fail, depending on the capabilities of the underlying hardware.</para>
+      <para>
+        <b>Filter Developers</b>: Implement this interface on each input pin of an audio capture filter. You can also implement this interface on the audio capture filter itself to control the overall audio settings after mixing.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
+  </member>
+</doc>

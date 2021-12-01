@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.DXGIGetDebugInterface1">
+    <summary>
+      <para>Retrieves an interface that Windows Store apps use for debugging the Microsoft DirectX Graphics Infrastructure (DXGI).</para>
+    </summary>
+    <param name="Flags">
+      <para>Not used.</para>
+    </param>
+    <param name="riid">
+      <para>The globally unique identifier (GUID) of the requested interface type, which can be the identifier for the <see cref="IDXGIDebug" />, <see cref="IDXGIDebug1" />, or <see cref="IDXGIInfoQueue" /> interfaces.</para>
+    </param>
+    <param name="pDebug">
+      <para>A pointer to a buffer that receives a pointer to the debugging interface.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <b>DXGIGetDebugInterface1</b> function returns  <b>E_NOINTERFACE</b> on systems without the Windows Software Development Kit (SDK) installed, because it's a development-time aid.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-functions">DXGI Functions</seealso>
+    <seealso cref="IDXGIDebug1" />
+  </member>
+</doc>

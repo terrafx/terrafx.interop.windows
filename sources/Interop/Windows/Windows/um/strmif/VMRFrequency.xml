@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRFrequency">
+    <summary>
+      <para>The <code>VMRFrequency</code> structure describes the frequency of a video stream. Frequencies are described as ratios. For example, the NTSC frame rate of 29.97 fps is expressed as 30,000:1001.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="VMRFrequency.dwNumerator">
+    <summary>
+      <para>Numerator of the frequency ratio.</para>
+    </summary>
+  </member>
+  <member name="VMRFrequency.dwDenominator">
+    <summary>
+      <para>Denominator of the frequency ratio.</para>
+    </summary>
+  </member>
+</doc>

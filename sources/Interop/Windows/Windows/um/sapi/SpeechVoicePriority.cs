@@ -7,9 +7,15 @@ using static TerraFX.Interop.Windows.SPVPRIORITY;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechVoicePriority.xml' path='doc/member[@name="SpeechVoicePriority"]/*' />
 public enum SpeechVoicePriority
 {
+    /// <include file='SpeechVoicePriority.xml' path='doc/member[@name="SpeechVoicePriority.SVPNormal"]/*' />
     SVPNormal = SPVPRI_NORMAL,
+
+    /// <include file='SpeechVoicePriority.xml' path='doc/member[@name="SpeechVoicePriority.SVPAlert"]/*' />
     SVPAlert = SPVPRI_ALERT,
+
+    /// <include file='SpeechVoicePriority.xml' path='doc/member[@name="SpeechVoicePriority.SVPOver"]/*' />
     SVPOver = SPVPRI_OVER,
 }

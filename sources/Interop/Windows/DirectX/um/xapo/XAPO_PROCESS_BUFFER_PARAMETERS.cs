@@ -7,13 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAPO_PROCESS_BUFFER_PARAMETERS.xml' path='doc/member[@name="XAPO_PROCESS_BUFFER_PARAMETERS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct XAPO_PROCESS_BUFFER_PARAMETERS
 {
+    /// <include file='XAPO_PROCESS_BUFFER_PARAMETERS.xml' path='doc/member[@name="XAPO_PROCESS_BUFFER_PARAMETERS.pBuffer"]/*' />
     public void* pBuffer;
 
+    /// <include file='XAPO_PROCESS_BUFFER_PARAMETERS.xml' path='doc/member[@name="XAPO_PROCESS_BUFFER_PARAMETERS.BufferFlags"]/*' />
     public XAPO_BUFFER_FLAGS BufferFlags;
 
+    /// <include file='XAPO_PROCESS_BUFFER_PARAMETERS.xml' path='doc/member[@name="XAPO_PROCESS_BUFFER_PARAMETERS.ValidFrameCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint ValidFrameCount;
 }

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TTPOLYCURVE">
+    <summary>
+      <para>The <b>TTPOLYCURVE</b> structure contains information about a curve in the outline of a TrueType character.</para>
+    </summary>
+    <remarks>
+      <para>When an application calls the <see cref="GetGlyphOutline" /> function, a glyph outline for a TrueType character is returned in a <see cref="TTPOLYGONHEADER" /> structure, followed by as many <b>TTPOLYCURVE</b> structures as are required to describe the glyph. All points are returned as <see cref="POINTFX" /> structures and represent absolute positions, not relative moves. The starting point specified by the <b>pfxStart</b> member of the <b>TTPOLYGONHEADER</b> structure is the point at which the outline for a contour begins. The <b>TTPOLYCURVE</b> structures that follow can be either polyline records or spline records.</para>
+      <para>Polyline records are a series of points; lines drawn between the points describe the outline of the character. Spline records represent the quadratic curves (that is, quadratic b-splines) used by TrueType.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
+    <seealso cref="GetGlyphOutline" />
+    <seealso cref="POINTFX" />
+    <seealso cref="TTPOLYGONHEADER" />
+  </member>
+  <member name="TTPOLYCURVE.wType">
+    <summary>
+      <para>The type of curve described by the structure. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>TT_PRIM_LINE</description>
+          <description>Curve is a polyline.</description>
+        </item>
+        <item>
+          <description>TT_PRIM_QSPLINE</description>
+          <description>Curve is a quadratic Bézier spline.</description>
+        </item>
+        <item>
+          <description>TT_PRIM_CSPLINE</description>
+          <description>Curve is a cubic Bézier spline.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="TTPOLYCURVE.cpfx">
+    <summary>
+      <para>The number of <see cref="POINTFX" /> structures in the array.</para>
+    </summary>
+  </member>
+  <member name="TTPOLYCURVE.apfx">
+    <summary>
+      <para>Specifies an array of <see cref="POINTFX" /> structures that define the polyline or Bézier spline.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_UTF8_TEXT.xml' path='doc/member[@name="WS_XML_UTF8_TEXT"]/*' />
 public partial struct WS_XML_UTF8_TEXT
 {
+    /// <include file='WS_XML_UTF8_TEXT.xml' path='doc/member[@name="WS_XML_UTF8_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_UTF8_TEXT.xml' path='doc/member[@name="WS_XML_UTF8_TEXT.value"]/*' />
     public WS_XML_STRING value;
 }

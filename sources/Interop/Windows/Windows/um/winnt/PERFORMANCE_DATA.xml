@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PERFORMANCE_DATA">
+    <summary>
+      <para>Contains the thread profiling and hardware counter data that you requested.</para>
+    </summary>
+    <remarks>
+      <para>You must initialize the <b>Size</b> and <b>Version</b> members before calling the <see cref="ReadThreadProfilingData" /> function to read the profiling data.</para>
+      <para>The profile data contained in this structure depends on the data that you requested when you called the <see cref="ReadThreadProfilingData" /> function. The following members are set when you specify the READ_THREAD_PROFILING_FLAG_DISPATCHING flag:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>ContextSwitchCount</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CycleTime</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>RetryCount</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WaitReasonBitMap</b>
+          </description>
+        </item>
+      </list>
+      <para>The following members are set when you specify the READ_THREAD_PROFILING_FLAG_HARDWARE_COUNTERS flag:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>HwCounters</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>HwCountersCount</b>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ReadThreadProfilingData" />
+  </member>
+  <member name="PERFORMANCE_DATA.Size">
+    <summary>
+      <para>The size of this structure.</para>
+    </summary>
+  </member>
+  <member name="PERFORMANCE_DATA.Version">
+    <summary>
+      <para>The version of this structure. Must be set to PERFORMANCE_DATA_VERSION.</para>
+    </summary>
+  </member>
+  <member name="PERFORMANCE_DATA.HwCountersCount">
+    <summary>
+      <para>The number of array elements in the <b>HwCounters</b> array that contain hardware counter data. A value of 3 means that the array contains data for three hardware counters, not that elements 0 through 2 contain counter data.</para>
+    </summary>
+  </member>
+  <member name="PERFORMANCE_DATA.ContextSwitchCount">
+    <summary>
+      <para>The number of context switches that occurred from the time profiling was enabled.</para>
+    </summary>
+  </member>
+  <member name="PERFORMANCE_DATA.WaitReasonBitMap">
+    <summary>
+      <para>A bitmask that identifies the reasons for the context switches that occurred since the last time the data was read. For possible values, see the <b>KWAIT_REASON</b> enumeration (the enumeration is included in the Wdm.h file in the WDK).</para>
+    </summary>
+  </member>
+  <member name="PERFORMANCE_DATA.CycleTime">
+    <summary>
+      <para>The cycle time of the thread (excludes the time spent interrupted) from the time profiling was enabled.</para>
+    </summary>
+  </member>
+  <member name="PERFORMANCE_DATA.RetryCount">
+    <summary>
+      <para>The number of times that the read operation read the data to ensure a consistent snapshot of the data.</para>
+    </summary>
+  </member>
+  <member name="PERFORMANCE_DATA.Reserved">
+    <summary>
+      <para>Reserved. Set to zero.</para>
+    </summary>
+  </member>
+  <member name="PERFORMANCE_DATA.HwCounters">
+    <summary>
+      <para>An array of <see cref="HARDWARE_COUNTER_DATA" /> structures that contain the counter values. The elements of the array that contain counter data relate directly to the bits set in the <i>HardwareCounters</i> bitmask that you specified when you called the <see cref="EnableThreadProfiling" /> function. For example, if you set bit 3 in the <i>HardwareCounters</i> bitmask, HwCounters[3] will contain the counter data for that counter.</para>
+    </summary>
+  </member>
+</doc>

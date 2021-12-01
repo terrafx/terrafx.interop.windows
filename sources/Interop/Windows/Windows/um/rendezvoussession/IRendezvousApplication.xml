@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRendezvousApplication.SetRendezvousSession">
+    <summary>
+      <para>Passes <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a> to the Windows Remote Assistance application. This method is used by the instant messaging application.</para>
+    </summary>
+    <param name="pRendezvousSession">
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a>
+      </para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a> was passed to the Windows Remote Assistance application successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The session object passed to the method is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>A catastrophic error occurred while trying to pass the session to the Windows Remote Assistance application.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IRendezvousApplication">
+    <summary>
+      <para>Exposes a method used by an instant messaging (IM) application to create a remote assistance session.</para>
+    </summary>
+    <remarks>
+      <para>After an IM contact has accepted the remote assistance invitation, the IM application must instantiate the Windows Remote Assistance application on both sides of the connection by calling <see cref="CoCreateInstance" /> on the Windows Remote Assistance application's <b>IRendezvousApplication</b> interface.</para>
+      <para>The IM application calls the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nf-rendezvoussession-irendezvousapplication-setrendezvoussession">SetRendezvousSession</a> method to pass its implementation of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a> interface to the Windows Remote Assistance application.</para>
+    </remarks>
+  </member>
+</doc>

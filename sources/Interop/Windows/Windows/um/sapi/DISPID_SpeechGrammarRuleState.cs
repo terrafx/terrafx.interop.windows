@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechGrammarRuleState.xml' path='doc/member[@name="DISPID_SpeechGrammarRuleState"]/*' />
 public enum DISPID_SpeechGrammarRuleState
 {
+    /// <include file='DISPID_SpeechGrammarRuleState.xml' path='doc/member[@name="DISPID_SpeechGrammarRuleState.DISPID_SGRSRule"]/*' />
     DISPID_SGRSRule = 1,
+
+    /// <include file='DISPID_SpeechGrammarRuleState.xml' path='doc/member[@name="DISPID_SpeechGrammarRuleState.DISPID_SGRSTransitions"]/*' />
     DISPID_SGRSTransitions = (DISPID_SGRSRule + 1),
+
+    /// <include file='DISPID_SpeechGrammarRuleState.xml' path='doc/member[@name="DISPID_SpeechGrammarRuleState.DISPID_SGRSAddWordTransition"]/*' />
     DISPID_SGRSAddWordTransition = (DISPID_SGRSTransitions + 1),
+
+    /// <include file='DISPID_SpeechGrammarRuleState.xml' path='doc/member[@name="DISPID_SpeechGrammarRuleState.DISPID_SGRSAddRuleTransition"]/*' />
     DISPID_SGRSAddRuleTransition = (DISPID_SGRSAddWordTransition + 1),
+
+    /// <include file='DISPID_SpeechGrammarRuleState.xml' path='doc/member[@name="DISPID_SpeechGrammarRuleState.DISPID_SGRSAddSpecialTransition"]/*' />
     DISPID_SGRSAddSpecialTransition = (DISPID_SGRSAddRuleTransition + 1),
 }

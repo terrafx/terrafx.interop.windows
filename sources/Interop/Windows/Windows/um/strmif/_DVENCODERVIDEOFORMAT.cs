@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_DVENCODERVIDEOFORMAT.xml' path='doc/member[@name="_DVENCODERVIDEOFORMAT"]/*' />
 public enum _DVENCODERVIDEOFORMAT
 {
+    /// <include file='_DVENCODERVIDEOFORMAT.xml' path='doc/member[@name="_DVENCODERVIDEOFORMAT.DVENCODERVIDEOFORMAT_NTSC"]/*' />
     DVENCODERVIDEOFORMAT_NTSC = 2000,
+
+    /// <include file='_DVENCODERVIDEOFORMAT.xml' path='doc/member[@name="_DVENCODERVIDEOFORMAT.DVENCODERVIDEOFORMAT_PAL"]/*' />
     DVENCODERVIDEOFORMAT_PAL = 2001,
 }

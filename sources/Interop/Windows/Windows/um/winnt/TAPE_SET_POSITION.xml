@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TAPE_SET_POSITION">
+    <summary>
+      <para>The
+<b>TAPE_SET_POSITION</b> structure describes how and where to position the tape.</para>
+    </summary>
+    <remarks>
+      <para>If the positioning is relative, a positive offset moves the tape forward (toward the end of the tape) and a negative offset moves the tape backward (toward the beginning of the tape).</para>
+    </remarks>
+  </member>
+  <member name="TAPE_SET_POSITION.Method">
+    <summary>
+      <para>Type of positioning. This member must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_ABSOLUTE_BLOCK</b>
+                </description>
+              </item>
+              <item>
+                <description>1L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Moves the tape to the device-specific block address specified by the <b>Offset</b> member. The <b>Partition</b> member is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_LOGICAL_BLOCK</b>
+                </description>
+              </item>
+              <item>
+                <description>2L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Moves the tape to the block address specified by <b>Offset</b> in the partition specified by <b>Partition</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_REWIND</b>
+                </description>
+              </item>
+              <item>
+                <description>0L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Moves the tape to the beginning of the current partition. The <b>Partition</b> and <b>Offset</b> members are ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_SPACE_END_OF_DATA</b>
+                </description>
+              </item>
+              <item>
+                <description>4L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Moves the tape to the end of the data on the partition specified by <b>Partition</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_SPACE_FILEMARKS</b>
+                </description>
+              </item>
+              <item>
+                <description>6L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Moves the tape forward (or backward) the number of filemarks specified by <b>Offset</b> in the current partition. The <b>Partition</b> member is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_SPACE_RELATIVE_BLOCKS</b>
+                </description>
+              </item>
+              <item>
+                <description>5L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Moves the tape forward (or backward) the number of blocks specified by <b>Offset</b> in the current partition. The <b>Partition</b> member is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_SPACE_SEQUENTIAL_FMKS</b>
+                </description>
+              </item>
+              <item>
+                <description>7L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Moves the tape forward (or backward) to the first occurrence of n filemarks in the current partition, where n is the number specified by <b>Offset</b>. The <b>Partition</b> parameter is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_SPACE_SEQUENTIAL_SMKS</b>
+                </description>
+              </item>
+              <item>
+                <description>9L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Moves the tape forward (or backward) to the first occurrence of n setmarks in the current partition, where n is the number specified by <b>Offset</b>. The <b>Partition</b> member is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_SPACE_SETMARKS</b>
+                </description>
+              </item>
+              <item>
+                <description>8L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Moves the tape forward (or backward) the number of setmarks specified by <b>Offset</b> in the current partition. The <b>Partition</b> member is ignored.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="TAPE_SET_POSITION.Partition">
+    <summary>
+      <para>Partition to position within. If this member is zero, the current partition is assumed.</para>
+    </summary>
+  </member>
+  <member name="TAPE_SET_POSITION.Offset">
+    <summary>
+      <para>Block address or count for the position operation specified by the <b>Method</b> member.</para>
+    </summary>
+  </member>
+  <member name="TAPE_SET_POSITION.Immediate">
+    <summary>
+      <para>If this member is <b>TRUE</b>, return as soon as the operation begins. Otherwise, return after the operation has completed.</para>
+    </summary>
+  </member>
+</doc>

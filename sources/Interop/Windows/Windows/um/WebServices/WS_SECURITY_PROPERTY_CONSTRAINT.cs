@@ -5,20 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SECURITY_PROPERTY_CONSTRAINT.xml' path='doc/member[@name="WS_SECURITY_PROPERTY_CONSTRAINT"]/*' />
 public unsafe partial struct WS_SECURITY_PROPERTY_CONSTRAINT
 {
+    /// <include file='WS_SECURITY_PROPERTY_CONSTRAINT.xml' path='doc/member[@name="WS_SECURITY_PROPERTY_CONSTRAINT.id"]/*' />
     public WS_SECURITY_PROPERTY_ID id;
 
+    /// <include file='WS_SECURITY_PROPERTY_CONSTRAINT.xml' path='doc/member[@name="WS_SECURITY_PROPERTY_CONSTRAINT.allowedValues"]/*' />
     public void* allowedValues;
 
+    /// <include file='WS_SECURITY_PROPERTY_CONSTRAINT.xml' path='doc/member[@name="WS_SECURITY_PROPERTY_CONSTRAINT.allowedValuesSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint allowedValuesSize;
 
+    /// <include file='WS_SECURITY_PROPERTY_CONSTRAINT.xml' path='doc/member[@name="WS_SECURITY_PROPERTY_CONSTRAINT.@out"]/*' />
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WebServices.h:6281:5)")]
     public _out_e__Struct @out;
 
+    /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct"]/*' />
     public partial struct _out_e__Struct
     {
+        /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct.securityProperty"]/*' />
         public WS_SECURITY_PROPERTY securityProperty;
     }
 }

@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONFIRMSAFETY.xml' path='doc/member[@name="CONFIRMSAFETY"]/*' />
 public unsafe partial struct CONFIRMSAFETY
 {
+    /// <include file='CONFIRMSAFETY.xml' path='doc/member[@name="CONFIRMSAFETY.clsid"]/*' />
     [NativeTypeName("CLSID")]
     public Guid clsid;
 
+    /// <include file='CONFIRMSAFETY.xml' path='doc/member[@name="CONFIRMSAFETY.pUnk"]/*' />
     public IUnknown* pUnk;
 
+    /// <include file='CONFIRMSAFETY.xml' path='doc/member[@name="CONFIRMSAFETY.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

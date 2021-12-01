@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USEROBJECTFLAGS.xml' path='doc/member[@name="USEROBJECTFLAGS"]/*' />
 public partial struct USEROBJECTFLAGS
 {
+    /// <include file='USEROBJECTFLAGS.xml' path='doc/member[@name="USEROBJECTFLAGS.fInherit"]/*' />
     public BOOL fInherit;
 
+    /// <include file='USEROBJECTFLAGS.xml' path='doc/member[@name="USEROBJECTFLAGS.fReserved"]/*' />
     public BOOL fReserved;
 
+    /// <include file='USEROBJECTFLAGS.xml' path='doc/member[@name="USEROBJECTFLAGS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

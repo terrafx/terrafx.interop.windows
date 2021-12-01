@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_BORDER_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/border">Border effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BORDER_PROP.D2D1_BORDER_PROP_EDGE_MODE_X">
+    <summary>
+      <para>The edge mode in the X direction for the effect. You can set this to clamp, wrap, or mirror.</para>
+      <para>The type is <see cref="D2D1_BORDER_EDGE_MODE" />.</para>
+      <para>The default value is D2D1_BORDER_EDGE_MODE_CLAMP.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BORDER_PROP.D2D1_BORDER_PROP_EDGE_MODE_Y">
+    <summary>
+      <para>The edge mode in the Y direction for the effect. You can set this to clamp, wrap, or mirror.</para>
+      <para>The type is <see cref="D2D1_BORDER_EDGE_MODE" />.</para>
+      <para>The default value is D2D1_BORDER_EDGE_MODE_CLAMP.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BORDER_PROP.D2D1_BORDER_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

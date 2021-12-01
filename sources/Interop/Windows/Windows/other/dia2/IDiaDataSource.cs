@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaDataSource.xml' path='doc/member[@name="IDiaDataSource"]/*' />
 [Guid("79F1BB5F-B66E-48E5-B6A9-1545C323CA3D")]
 [NativeTypeName("struct IDiaDataSource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         return ((delegate* unmanaged<IDiaDataSource*, Guid*, void**, int>)(lpVtbl[0]))((IDiaDataSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         return ((delegate* unmanaged<IDiaDataSource*, uint>)(lpVtbl[1]))((IDiaDataSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         return ((delegate* unmanaged<IDiaDataSource*, uint>)(lpVtbl[2]))((IDiaDataSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaDataSource.xml' path='doc/member[@name="IDiaDataSource.get_lastError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_lastError([NativeTypeName("BSTR *")] ushort** pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         return ((delegate* unmanaged<IDiaDataSource*, ushort**, int>)(lpVtbl[3]))((IDiaDataSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaDataSource.xml' path='doc/member[@name="IDiaDataSource.loadDataFromPdb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT loadDataFromPdb([NativeTypeName("LPCOLESTR")] ushort* pdbPath)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         return ((delegate* unmanaged<IDiaDataSource*, ushort*, int>)(lpVtbl[4]))((IDiaDataSource*)Unsafe.AsPointer(ref this), pdbPath);
     }
 
+    /// <include file='IDiaDataSource.xml' path='doc/member[@name="IDiaDataSource.loadAndValidateDataFromPdb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT loadAndValidateDataFromPdb([NativeTypeName("LPCOLESTR")] ushort* pdbPath, Guid* pcsig70, [NativeTypeName("DWORD")] uint sig, [NativeTypeName("DWORD")] uint age)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         return ((delegate* unmanaged<IDiaDataSource*, ushort*, Guid*, uint, uint, int>)(lpVtbl[5]))((IDiaDataSource*)Unsafe.AsPointer(ref this), pdbPath, pcsig70, sig, age);
     }
 
+    /// <include file='IDiaDataSource.xml' path='doc/member[@name="IDiaDataSource.loadDataForExe"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT loadDataForExe([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, IUnknown* pCallback)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         return ((delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, IUnknown*, int>)(lpVtbl[6]))((IDiaDataSource*)Unsafe.AsPointer(ref this), executable, searchPath, pCallback);
     }
 
+    /// <include file='IDiaDataSource.xml' path='doc/member[@name="IDiaDataSource.loadDataFromIStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT loadDataFromIStream(IStream* pIStream)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         return ((delegate* unmanaged<IDiaDataSource*, IStream*, int>)(lpVtbl[7]))((IDiaDataSource*)Unsafe.AsPointer(ref this), pIStream);
     }
 
+    /// <include file='IDiaDataSource.xml' path='doc/member[@name="IDiaDataSource.openSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT openSession(IDiaSession** ppSession)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         return ((delegate* unmanaged<IDiaDataSource*, IDiaSession**, int>)(lpVtbl[8]))((IDiaDataSource*)Unsafe.AsPointer(ref this), ppSession);
     }
 
+    /// <include file='IDiaDataSource.xml' path='doc/member[@name="IDiaDataSource.loadDataFromCodeViewInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT loadDataFromCodeViewInfo([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, [NativeTypeName("DWORD")] uint cbCvInfo, byte* pbCvInfo, IUnknown* pCallback)
@@ -88,6 +99,7 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         return ((delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, uint, byte*, IUnknown*, int>)(lpVtbl[9]))((IDiaDataSource*)Unsafe.AsPointer(ref this), executable, searchPath, cbCvInfo, pbCvInfo, pCallback);
     }
 
+    /// <include file='IDiaDataSource.xml' path='doc/member[@name="IDiaDataSource.loadDataFromMiscInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT loadDataFromMiscInfo([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, [NativeTypeName("DWORD")] uint timeStampExe, [NativeTypeName("DWORD")] uint timeStampDbg, [NativeTypeName("DWORD")] uint sizeOfExe, [NativeTypeName("DWORD")] uint cbMiscInfo, byte* pbMiscInfo, IUnknown* pCallback)

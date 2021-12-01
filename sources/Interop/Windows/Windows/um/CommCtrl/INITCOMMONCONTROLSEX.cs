@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INITCOMMONCONTROLSEX.xml' path='doc/member[@name="INITCOMMONCONTROLSEX"]/*' />
 public partial struct INITCOMMONCONTROLSEX
 {
+    /// <include file='INITCOMMONCONTROLSEX.xml' path='doc/member[@name="INITCOMMONCONTROLSEX.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='INITCOMMONCONTROLSEX.xml' path='doc/member[@name="INITCOMMONCONTROLSEX.dwICC"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwICC;
 }

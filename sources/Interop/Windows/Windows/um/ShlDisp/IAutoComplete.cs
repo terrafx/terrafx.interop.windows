@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAutoComplete.xml' path='doc/member[@name="IAutoComplete"]/*' />
 [Guid("00BB2762-6A77-11D0-A535-00C04FD7D062")]
 [NativeTypeName("struct IAutoComplete : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAutoComplete : IAutoComplete.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAutoComplete : IAutoComplete.Interface
         return ((delegate* unmanaged<IAutoComplete*, Guid*, void**, int>)(lpVtbl[0]))((IAutoComplete*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAutoComplete : IAutoComplete.Interface
         return ((delegate* unmanaged<IAutoComplete*, uint>)(lpVtbl[1]))((IAutoComplete*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAutoComplete : IAutoComplete.Interface
         return ((delegate* unmanaged<IAutoComplete*, uint>)(lpVtbl[2]))((IAutoComplete*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAutoComplete.xml' path='doc/member[@name="IAutoComplete.Init"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Init(HWND hwndEdit, IUnknown* punkACL, [NativeTypeName("LPCWSTR")] ushort* pwszRegKeyPath, [NativeTypeName("LPCWSTR")] ushort* pwszQuickComplete)
@@ -46,6 +51,7 @@ public unsafe partial struct IAutoComplete : IAutoComplete.Interface
         return ((delegate* unmanaged<IAutoComplete*, HWND, IUnknown*, ushort*, ushort*, int>)(lpVtbl[3]))((IAutoComplete*)Unsafe.AsPointer(ref this), hwndEdit, punkACL, pwszRegKeyPath, pwszQuickComplete);
     }
 
+    /// <include file='IAutoComplete.xml' path='doc/member[@name="IAutoComplete.Enable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Enable(BOOL fEnable)

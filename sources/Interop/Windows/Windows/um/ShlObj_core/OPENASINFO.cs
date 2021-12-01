@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OPENASINFO.xml' path='doc/member[@name="OPENASINFO"]/*' />
 public unsafe partial struct OPENASINFO
 {
+    /// <include file='OPENASINFO.xml' path='doc/member[@name="OPENASINFO.pcszFile"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pcszFile;
 
+    /// <include file='OPENASINFO.xml' path='doc/member[@name="OPENASINFO.pcszClass"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pcszClass;
 
+    /// <include file='OPENASINFO.xml' path='doc/member[@name="OPENASINFO.oaifInFlags"]/*' />
     [NativeTypeName("OPEN_AS_INFO_FLAGS")]
     public int oaifInFlags;
 }

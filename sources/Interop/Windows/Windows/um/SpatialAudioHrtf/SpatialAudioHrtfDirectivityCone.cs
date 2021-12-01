@@ -7,12 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpatialAudioHrtfDirectivityCone.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityCone"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SpatialAudioHrtfDirectivityCone
 {
+    /// <include file='SpatialAudioHrtfDirectivityCone.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityCone.directivity"]/*' />
     public SpatialAudioHrtfDirectivity directivity;
 
+    /// <include file='SpatialAudioHrtfDirectivityCone.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityCone.InnerAngle"]/*' />
     public float InnerAngle;
 
+    /// <include file='SpatialAudioHrtfDirectivityCone.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityCone.OuterAngle"]/*' />
     public float OuterAngle;
 }

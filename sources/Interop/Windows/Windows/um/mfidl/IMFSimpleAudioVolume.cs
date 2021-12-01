@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSimpleAudioVolume.xml' path='doc/member[@name="IMFSimpleAudioVolume"]/*' />
 [Guid("089EDF13-CF71-4338-8D13-9E569DBDC319")]
 [NativeTypeName("struct IMFSimpleAudioVolume : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interfa
         return ((delegate* unmanaged<IMFSimpleAudioVolume*, Guid*, void**, int>)(lpVtbl[0]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interfa
         return ((delegate* unmanaged<IMFSimpleAudioVolume*, uint>)(lpVtbl[1]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interfa
         return ((delegate* unmanaged<IMFSimpleAudioVolume*, uint>)(lpVtbl[2]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSimpleAudioVolume.xml' path='doc/member[@name="IMFSimpleAudioVolume.SetMasterVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetMasterVolume(float fLevel)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interfa
         return ((delegate* unmanaged<IMFSimpleAudioVolume*, float, int>)(lpVtbl[3]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), fLevel);
     }
 
+    /// <include file='IMFSimpleAudioVolume.xml' path='doc/member[@name="IMFSimpleAudioVolume.GetMasterVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMasterVolume(float* pfLevel)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interfa
         return ((delegate* unmanaged<IMFSimpleAudioVolume*, float*, int>)(lpVtbl[4]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pfLevel);
     }
 
+    /// <include file='IMFSimpleAudioVolume.xml' path='doc/member[@name="IMFSimpleAudioVolume.SetMute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetMute([NativeTypeName("const BOOL")] BOOL bMute)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interfa
         return ((delegate* unmanaged<IMFSimpleAudioVolume*, BOOL, int>)(lpVtbl[5]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute);
     }
 
+    /// <include file='IMFSimpleAudioVolume.xml' path='doc/member[@name="IMFSimpleAudioVolume.GetMute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetMute(BOOL* pbMute)

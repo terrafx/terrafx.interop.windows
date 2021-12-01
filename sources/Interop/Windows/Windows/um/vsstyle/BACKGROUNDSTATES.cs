@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BACKGROUNDSTATES.xml' path='doc/member[@name="BACKGROUNDSTATES"]/*' />
 public enum BACKGROUNDSTATES
 {
+    /// <include file='BACKGROUNDSTATES.xml' path='doc/member[@name="BACKGROUNDSTATES.EBS_NORMAL"]/*' />
     EBS_NORMAL = 1,
+
+    /// <include file='BACKGROUNDSTATES.xml' path='doc/member[@name="BACKGROUNDSTATES.EBS_HOT"]/*' />
     EBS_HOT = 2,
+
+    /// <include file='BACKGROUNDSTATES.xml' path='doc/member[@name="BACKGROUNDSTATES.EBS_DISABLED"]/*' />
     EBS_DISABLED = 3,
+
+    /// <include file='BACKGROUNDSTATES.xml' path='doc/member[@name="BACKGROUNDSTATES.EBS_FOCUSED"]/*' />
     EBS_FOCUSED = 4,
+
+    /// <include file='BACKGROUNDSTATES.xml' path='doc/member[@name="BACKGROUNDSTATES.EBS_READONLY"]/*' />
     EBS_READONLY = 5,
+
+    /// <include file='BACKGROUNDSTATES.xml' path='doc/member[@name="BACKGROUNDSTATES.EBS_ASSIST"]/*' />
     EBS_ASSIST = 6,
 }

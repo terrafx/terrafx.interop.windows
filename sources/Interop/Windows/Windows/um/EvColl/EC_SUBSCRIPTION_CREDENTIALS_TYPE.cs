@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EC_SUBSCRIPTION_CREDENTIALS_TYPE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CREDENTIALS_TYPE"]/*' />
 public enum EC_SUBSCRIPTION_CREDENTIALS_TYPE
 {
+    /// <include file='EC_SUBSCRIPTION_CREDENTIALS_TYPE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CREDENTIALS_TYPE.EcSubscriptionCredDefault"]/*' />
     EcSubscriptionCredDefault = 0,
+
+    /// <include file='EC_SUBSCRIPTION_CREDENTIALS_TYPE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CREDENTIALS_TYPE.EcSubscriptionCredNegotiate"]/*' />
     EcSubscriptionCredNegotiate,
+
+    /// <include file='EC_SUBSCRIPTION_CREDENTIALS_TYPE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CREDENTIALS_TYPE.EcSubscriptionCredDigest"]/*' />
     EcSubscriptionCredDigest,
+
+    /// <include file='EC_SUBSCRIPTION_CREDENTIALS_TYPE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CREDENTIALS_TYPE.EcSubscriptionCredBasic"]/*' />
     EcSubscriptionCredBasic,
+
+    /// <include file='EC_SUBSCRIPTION_CREDENTIALS_TYPE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CREDENTIALS_TYPE.EcSubscriptionCredLocalMachine"]/*' />
     EcSubscriptionCredLocalMachine,
 }

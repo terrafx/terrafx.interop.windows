@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_DMO_PROCESS_OUTPUT_FLAGS.xml' path='doc/member[@name="_DMO_PROCESS_OUTPUT_FLAGS"]/*' />
 public enum _DMO_PROCESS_OUTPUT_FLAGS
 {
+    /// <include file='_DMO_PROCESS_OUTPUT_FLAGS.xml' path='doc/member[@name="_DMO_PROCESS_OUTPUT_FLAGS.DMO_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER"]/*' />
     DMO_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER = 0x1,
 }

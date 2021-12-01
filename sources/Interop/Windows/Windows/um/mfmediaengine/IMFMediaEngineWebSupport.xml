@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEngineWebSupport.ConnectWebAudio">
+    <summary>
+      <para>Connects web audio to Media Engine using the specified sample rate.</para>
+    </summary>
+    <param name="dwSampleRate">
+      <para>The sample rate of the web audio.</para>
+    </param>
+    <param name="ppSourceProvider">
+      <para>The sample rate of the web audio.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK on successful completion.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineWebSupport" />
+  </member>
+  <member name="IMFMediaEngineWebSupport.DisconnectWebAudio">
+    <summary>
+      <para>Disconnects web audio from the Media Engine</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK on successful completion.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineWebSupport" />
+  </member>
+  <member name="IMFMediaEngineWebSupport.ShouldDelayTheLoadEvent">
+    <summary>
+      <para>Gets a value indicating if the connecting to Web audio should delay the page's load event.</para>
+    </summary>
+    <returns>
+      <para>True if connection to Web audio should delay the page's load event; otherwise, false.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineWebSupport" />
+  </member>
+  <member name="IMFMediaEngineWebSupport">
+    <summary>
+      <para>Enables playback of web audio.</para>
+    </summary>
+  </member>
+</doc>

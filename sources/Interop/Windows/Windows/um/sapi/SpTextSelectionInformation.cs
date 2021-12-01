@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpTextSelectionInformation.xml' path='doc/member[@name="SpTextSelectionInformation"]/*' />
 [Guid("0F92030A-CBFD-4AB8-A164-FF5985547FF6")]
 public partial struct SpTextSelectionInformation
 {

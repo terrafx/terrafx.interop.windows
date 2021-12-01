@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_KEY_VERIFY_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_VERIFY_MESSAGE_PARA"]/*' />
 public partial struct CRYPT_KEY_VERIFY_MESSAGE_PARA
 {
+    /// <include file='CRYPT_KEY_VERIFY_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_VERIFY_MESSAGE_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CRYPT_KEY_VERIFY_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_VERIFY_MESSAGE_PARA.dwMsgEncodingType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMsgEncodingType;
 
+    /// <include file='CRYPT_KEY_VERIFY_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_VERIFY_MESSAGE_PARA.hCryptProv"]/*' />
     public HCRYPTPROV_LEGACY hCryptProv;
 }

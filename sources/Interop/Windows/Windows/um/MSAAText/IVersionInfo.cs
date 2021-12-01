@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo"]/*' />
 [Guid("401518EC-DB00-4611-9B29-2A0E4B9AFA85")]
 [NativeTypeName("struct IVersionInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface
         return ((delegate* unmanaged<IVersionInfo*, Guid*, void**, int>)(lpVtbl[0]))((IVersionInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface
         return ((delegate* unmanaged<IVersionInfo*, uint>)(lpVtbl[1]))((IVersionInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface
         return ((delegate* unmanaged<IVersionInfo*, uint>)(lpVtbl[2]))((IVersionInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetSubcomponentCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSubcomponentCount([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("ULONG *")] uint* ulCount)
@@ -46,6 +51,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface
         return ((delegate* unmanaged<IVersionInfo*, uint, uint*, int>)(lpVtbl[3]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, ulCount);
     }
 
+    /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetImplementationID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetImplementationID([NativeTypeName("ULONG")] uint ulSub, Guid* implid)
@@ -53,6 +59,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface
         return ((delegate* unmanaged<IVersionInfo*, uint, Guid*, int>)(lpVtbl[4]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, implid);
     }
 
+    /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetBuildVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetBuildVersion([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("DWORD *")] uint* pdwMajor, [NativeTypeName("DWORD *")] uint* pdwMinor)
@@ -60,6 +67,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface
         return ((delegate* unmanaged<IVersionInfo*, uint, uint*, uint*, int>)(lpVtbl[5]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pdwMajor, pdwMinor);
     }
 
+    /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetComponentDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetComponentDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] ushort** pImplStr)
@@ -67,6 +75,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface
         return ((delegate* unmanaged<IVersionInfo*, uint, ushort**, int>)(lpVtbl[6]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
     }
 
+    /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetInstanceDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetInstanceDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] ushort** pImplStr)

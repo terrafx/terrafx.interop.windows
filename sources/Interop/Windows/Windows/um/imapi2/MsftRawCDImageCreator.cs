@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MsftRawCDImageCreator.xml' path='doc/member[@name="MsftRawCDImageCreator"]/*' />
 [Guid("25983561-9D65-49CE-B335-40630D901227")]
 public partial struct MsftRawCDImageCreator
 {

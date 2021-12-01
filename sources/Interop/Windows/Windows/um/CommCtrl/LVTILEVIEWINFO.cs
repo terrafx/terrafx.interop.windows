@@ -5,19 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LVTILEVIEWINFO.xml' path='doc/member[@name="LVTILEVIEWINFO"]/*' />
 public partial struct LVTILEVIEWINFO
 {
+    /// <include file='LVTILEVIEWINFO.xml' path='doc/member[@name="LVTILEVIEWINFO.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='LVTILEVIEWINFO.xml' path='doc/member[@name="LVTILEVIEWINFO.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='LVTILEVIEWINFO.xml' path='doc/member[@name="LVTILEVIEWINFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='LVTILEVIEWINFO.xml' path='doc/member[@name="LVTILEVIEWINFO.sizeTile"]/*' />
     public SIZE sizeTile;
 
+    /// <include file='LVTILEVIEWINFO.xml' path='doc/member[@name="LVTILEVIEWINFO.cLines"]/*' />
     public int cLines;
 
+    /// <include file='LVTILEVIEWINFO.xml' path='doc/member[@name="LVTILEVIEWINFO.rcLabelMargin"]/*' />
     public RECT rcLabelMargin;
 }

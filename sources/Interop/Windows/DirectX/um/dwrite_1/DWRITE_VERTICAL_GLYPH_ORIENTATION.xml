@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_VERTICAL_GLYPH_ORIENTATION">
+    <summary>
+      <para>The <b>DWRITE_VERTICAL_GLYPH_ORIENTATION</b> enumeration contains values that specify the desired kind of glyph orientation for the text.</para>
+    </summary>
+    <remarks>
+      <para>The client specifies a <b>DWRITE_VERTICAL_GLYPH_ORIENTATION</b>-typed value to the analyzer as the desired orientation.</para>
+      <para>
+        <b>Note</b>  This is the client preference, and the constraints of the script determine the final presentation.</para>
+    </remarks>
+    <seealso cref="IDWriteTextAnalysisSource1.GetVerticalGlyphOrientation" />
+  </member>
+  <member name="DWRITE_VERTICAL_GLYPH_ORIENTATION.DWRITE_VERTICAL_GLYPH_ORIENTATION_DEFAULT">
+    <summary>
+      <para>The default glyph orientation. In vertical layout, naturally horizontal scripts (Latin, Thai, Arabic, Devanagari) rotate 90 degrees clockwise, while ideographic scripts (Chinese, Japanese, Korean) remain upright, 0 degrees.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_VERTICAL_GLYPH_ORIENTATION.DWRITE_VERTICAL_GLYPH_ORIENTATION_STACKED">
+    <summary>
+      <para>Stacked glyph orientation. Ideographic scripts and scripts that permit stacking (Latin, Hebrew) are stacked in vertical reading layout. Connected scripts (Arabic, Syriac, 'Phags-pa, Ogham), which would otherwise look broken if glyphs were kept at 0 degrees, remain connected and rotate.</para>
+    </summary>
+  </member>
+</doc>

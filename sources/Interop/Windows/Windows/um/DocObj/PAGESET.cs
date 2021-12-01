@@ -9,21 +9,28 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PAGESET.xml' path='doc/member[@name="PAGESET"]/*' />
 public partial struct PAGESET
 {
+    /// <include file='PAGESET.xml' path='doc/member[@name="PAGESET.cbStruct"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbStruct;
 
+    /// <include file='PAGESET.xml' path='doc/member[@name="PAGESET.fOddPages"]/*' />
     public BOOL fOddPages;
 
+    /// <include file='PAGESET.xml' path='doc/member[@name="PAGESET.fEvenPages"]/*' />
     public BOOL fEvenPages;
 
+    /// <include file='PAGESET.xml' path='doc/member[@name="PAGESET.cPageRange"]/*' />
     [NativeTypeName("ULONG")]
     public uint cPageRange;
 
+    /// <include file='PAGESET.xml' path='doc/member[@name="PAGESET.rgPages"]/*' />
     [NativeTypeName("PAGERANGE [1]")]
     public _rgPages_e__FixedBuffer rgPages;
 
+    /// <include file='_rgPages_e__FixedBuffer.xml' path='doc/member[@name="_rgPages_e__FixedBuffer"]/*' />
     public partial struct _rgPages_e__FixedBuffer
     {
         public PAGERANGE e0;

@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMPGCALCSIZE.xml' path='doc/member[@name="NMPGCALCSIZE"]/*' />
 public partial struct NMPGCALCSIZE
 {
+    /// <include file='NMPGCALCSIZE.xml' path='doc/member[@name="NMPGCALCSIZE.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMPGCALCSIZE.xml' path='doc/member[@name="NMPGCALCSIZE.dwFlag"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlag;
 
+    /// <include file='NMPGCALCSIZE.xml' path='doc/member[@name="NMPGCALCSIZE.iWidth"]/*' />
     public int iWidth;
 
+    /// <include file='NMPGCALCSIZE.xml' path='doc/member[@name="NMPGCALCSIZE.iHeight"]/*' />
     public int iHeight;
 }

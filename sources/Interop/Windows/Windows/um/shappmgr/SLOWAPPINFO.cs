@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SLOWAPPINFO.xml' path='doc/member[@name="SLOWAPPINFO"]/*' />
 public unsafe partial struct SLOWAPPINFO
 {
+    /// <include file='SLOWAPPINFO.xml' path='doc/member[@name="SLOWAPPINFO.ullSize"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullSize;
 
+    /// <include file='SLOWAPPINFO.xml' path='doc/member[@name="SLOWAPPINFO.ftLastUsed"]/*' />
     public FILETIME ftLastUsed;
 
+    /// <include file='SLOWAPPINFO.xml' path='doc/member[@name="SLOWAPPINFO.iTimesUsed"]/*' />
     public int iTimesUsed;
 
+    /// <include file='SLOWAPPINFO.xml' path='doc/member[@name="SLOWAPPINFO.pszImage"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszImage;
 }

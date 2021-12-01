@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing"]/*' />
 [Guid("376BD3AA-3845-101B-84ED-08002B2EC713")]
 [NativeTypeName("struct IPerPropertyBrowsing : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
         return ((delegate* unmanaged<IPerPropertyBrowsing*, Guid*, void**, int>)(lpVtbl[0]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
         return ((delegate* unmanaged<IPerPropertyBrowsing*, uint>)(lpVtbl[1]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
         return ((delegate* unmanaged<IPerPropertyBrowsing*, uint>)(lpVtbl[2]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.GetDisplayString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayString([NativeTypeName("DISPID")] int dispID, [NativeTypeName("BSTR *")] ushort** pBstr)
@@ -46,6 +51,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
         return ((delegate* unmanaged<IPerPropertyBrowsing*, int, ushort**, int>)(lpVtbl[3]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pBstr);
     }
 
+    /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.MapPropertyToPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT MapPropertyToPage([NativeTypeName("DISPID")] int dispID, [NativeTypeName("CLSID *")] Guid* pClsid)
@@ -53,6 +59,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
         return ((delegate* unmanaged<IPerPropertyBrowsing*, int, Guid*, int>)(lpVtbl[4]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pClsid);
     }
 
+    /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.GetPredefinedStrings"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPredefinedStrings([NativeTypeName("DISPID")] int dispID, CALPOLESTR* pCaStringsOut, CADWORD* pCaCookiesOut)
@@ -60,6 +67,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
         return ((delegate* unmanaged<IPerPropertyBrowsing*, int, CALPOLESTR*, CADWORD*, int>)(lpVtbl[5]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pCaStringsOut, pCaCookiesOut);
     }
 
+    /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.GetPredefinedValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPredefinedValue([NativeTypeName("DISPID")] int dispID, [NativeTypeName("DWORD")] uint dwCookie, VARIANT* pVarOut)

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICComponentEnumerateOptions">
+    <summary>
+      <para>Specifies component enumeration options.</para>
+    </summary>
+  </member>
+  <member name="WICComponentEnumerateOptions.WICComponentEnumerateDefault">
+    <summary>
+      <para>Enumerate any components that are not disabled. Because this value is 0x0, it is always included with the other options.</para>
+    </summary>
+  </member>
+  <member name="WICComponentEnumerateOptions.WICComponentEnumerateRefresh">
+    <summary>
+      <para>Force a read of the registry before enumerating components.</para>
+    </summary>
+  </member>
+  <member name="WICComponentEnumerateOptions.WICComponentEnumerateDisabled">
+    <summary>
+      <para>Include disabled components in the enumeration. The set of disabled components is disjoint with the set of default enumerated components</para>
+    </summary>
+  </member>
+  <member name="WICComponentEnumerateOptions.WICComponentEnumerateUnsigned">
+    <summary>
+      <para>Include unsigned components in the enumeration. This option has no effect.</para>
+    </summary>
+  </member>
+  <member name="WICComponentEnumerateOptions.WICComponentEnumerateBuiltInOnly">
+    <summary>
+      <para>At the end of component enumeration, filter out any components that are not Windows provided.</para>
+    </summary>
+  </member>
+  <member name="WICComponentEnumerateOptions.WICCOMPONENTENUMERATEOPTIONS_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

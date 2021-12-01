@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_IPMCAST_MFE_STATS">
+    <summary>
+      <para>The
+<b>MIB_IPMCAST_MFE_STATS</b> structure stores the statistics associated with a Multicast Forwarding Entry (MFE).</para>
+    </summary>
+    <remarks>
+      <para>The
+<b>MIB_IPMCAST_MFE_STATS</b> structure does not have a fixed size. Use the <b>SIZEOF_MIB_MFE_STATS(X)</b> macro to determine the size of this structure. This macro is defined in the Iprtrmib.h header file.</para>
+      <para>The <b>dwRouteProtocol</b>, <b>dwRouteNetwork</b>, and <b>dwRouteMask</b> members uniquely identify the route to which this MFE is related.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="MIB_IPMCAST_OIF_STATS" />
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.dwGroup">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The multicast group for this MFE. A value of zero indicates a wildcard group.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.dwSource">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The range of source addresses for this MFE. A value of zero indicates a wildcard source.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.dwSrcMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The IPv4 subnet mask that corresponds to <b>dwSourceAddr</b>. The <b>dwSourceAddr</b> and <b>dwSourceMask</b> members are used together to define a range of sources.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.dwUpStrmNgbr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The upstream neighbor that is related to this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.dwInIfIndex">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The index of the incoming interface to which this MFE is related.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.dwInIfProtocol">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The routing protocol that owns the incoming interface to which this MFE is related.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.dwRouteProtocol">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The client that created the route.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.dwRouteNetwork">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The address associated with the route referred to by <b>dwRouteProtocol</b>.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.dwRouteMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The mask associated with the route referred to by <b>dwRouteProtocol</b>.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.ulUpTime">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The time, in 100ths of a seconds, since the MFE was created.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.ulExpiryTime">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The time, in 100ths of a seconds, until the MFE will be deleted. A value of zero is specified if the MFE is not subject to aging requirements.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.ulNumOutIf">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of interfaces in the outgoing interface list for this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.ulInPkts">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of packets that have been forwarded that matched this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.ulInOctets">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of octets of data forwarded that match this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.ulPktsDifferentIf">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of packets matching this MFE that were dropped due to an incoming interface check.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.ulQueueOverflow">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of packets matching this MFE that were dropped due to a queue overflow. There is one queue per MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS.rgmiosOutStats">
+    <summary>
+      <para>Type: <b>MIB_IPMCAST_OIF_STATS[ANY_SIZE]</b></para>
+      <para>A pointer to a table of outgoing interface statistics that are implemented as an array of
+<see cref="MIB_IPMCAST_OIF_STATS" /> structures. The number of entries in the table is specified by the value of the <b>ulNumOutIf</b> member.</para>
+    </summary>
+  </member>
+</doc>

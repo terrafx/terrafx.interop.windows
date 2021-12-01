@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFCaptureEngineOnSampleCallback2.xml' path='doc/member[@name="IMFCaptureEngineOnSampleCallback2"]/*' />
 [Guid("E37CEED7-340F-4514-9F4D-9C2AE026100B")]
 [NativeTypeName("struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngineOnSampleCallback")]
 [NativeInheritance("IMFCaptureEngineOnSampleCallback")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngin
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngin
         return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngin
         return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, uint>)(lpVtbl[1]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngin
         return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, uint>)(lpVtbl[2]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFCaptureEngineOnSampleCallback.OnSample" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnSample(IMFSample* pSample)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngin
         return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, IMFSample*, int>)(lpVtbl[3]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), pSample);
     }
 
+    /// <include file='IMFCaptureEngineOnSampleCallback2.xml' path='doc/member[@name="IMFCaptureEngineOnSampleCallback2.OnSynchronizedEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnSynchronizedEvent(IMFMediaEvent* pEvent)

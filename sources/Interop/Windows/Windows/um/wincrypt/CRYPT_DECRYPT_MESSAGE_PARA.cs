@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_DECRYPT_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_DECRYPT_MESSAGE_PARA"]/*' />
 public unsafe partial struct CRYPT_DECRYPT_MESSAGE_PARA
 {
+    /// <include file='CRYPT_DECRYPT_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_DECRYPT_MESSAGE_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CRYPT_DECRYPT_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_DECRYPT_MESSAGE_PARA.dwMsgAndCertEncodingType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMsgAndCertEncodingType;
 
+    /// <include file='CRYPT_DECRYPT_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_DECRYPT_MESSAGE_PARA.cCertStore"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCertStore;
 
+    /// <include file='CRYPT_DECRYPT_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_DECRYPT_MESSAGE_PARA.rghCertStore"]/*' />
     public HCERTSTORE* rghCertStore;
 }

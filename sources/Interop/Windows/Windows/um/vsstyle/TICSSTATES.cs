@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TICSSTATES.xml' path='doc/member[@name="TICSSTATES"]/*' />
 public enum TICSSTATES
 {
+    /// <include file='TICSSTATES.xml' path='doc/member[@name="TICSSTATES.TSS_NORMAL"]/*' />
     TSS_NORMAL = 1,
 }

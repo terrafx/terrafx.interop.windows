@@ -9,17 +9,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEM_CPU_SET_INFORMATION.xml' path='doc/member[@name="SYSTEM_CPU_SET_INFORMATION"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct SYSTEM_CPU_SET_INFORMATION
 {
+    /// <include file='SYSTEM_CPU_SET_INFORMATION.xml' path='doc/member[@name="SYSTEM_CPU_SET_INFORMATION.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SYSTEM_CPU_SET_INFORMATION.xml' path='doc/member[@name="SYSTEM_CPU_SET_INFORMATION.Type"]/*' />
     public CPU_SET_INFORMATION_TYPE Type;
 
+    /// <include file='SYSTEM_CPU_SET_INFORMATION.xml' path='doc/member[@name="SYSTEM_CPU_SET_INFORMATION.Anonymous"]/*' />
     [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13662:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CpuSet"]/*' />
     public ref _Anonymous_e__Union._CpuSet_e__Struct CpuSet
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -29,40 +34,54 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CpuSet"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13663:9)")]
         public _CpuSet_e__Struct CpuSet;
 
+        /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct"]/*' />
         public partial struct _CpuSet_e__Struct
         {
+            /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.Id"]/*' />
             [NativeTypeName("DWORD")]
             public uint Id;
 
+            /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.Group"]/*' />
             [NativeTypeName("WORD")]
             public ushort Group;
 
+            /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.LogicalProcessorIndex"]/*' />
             public byte LogicalProcessorIndex;
 
+            /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.CoreIndex"]/*' />
             public byte CoreIndex;
 
+            /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.LastLevelCacheIndex"]/*' />
             public byte LastLevelCacheIndex;
 
+            /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.NumaNodeIndex"]/*' />
             public byte NumaNodeIndex;
 
+            /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.EfficiencyClass"]/*' />
             public byte EfficiencyClass;
 
+            /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.Anonymous1"]/*' />
             [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13671:13)")]
             public _Anonymous1_e__Union Anonymous1;
 
+            /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.Anonymous2"]/*' />
             [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13688:13)")]
             public _Anonymous2_e__Union Anonymous2;
 
+            /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.AllocationTag"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong AllocationTag;
 
+            /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.AllFlags"]/*' />
             public ref byte AllFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -72,6 +91,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Parked"]/*' />
             public byte Parked
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,6 +107,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Allocated"]/*' />
             public byte Allocated
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -102,6 +123,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllocatedToTargetProcess"]/*' />
             public byte AllocatedToTargetProcess
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -117,6 +139,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RealTime"]/*' />
             public byte RealTime
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -132,6 +155,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
             public byte ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -147,6 +171,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                 }
             }
 
+            /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Reserved"]/*' />
             public ref uint Reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -156,6 +181,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                 }
             }
 
+            /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.SchedulingClass"]/*' />
             public ref byte SchedulingClass
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -165,20 +191,25 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                 }
             }
 
+            /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union"]/*' />
             [StructLayout(LayoutKind.Explicit)]
             public partial struct _Anonymous1_e__Union
             {
+                /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.AllFlags"]/*' />
                 [FieldOffset(0)]
                 public byte AllFlags;
 
+                /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13679:17)")]
                 public _Anonymous_e__Struct Anonymous;
 
+                /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
                 public partial struct _Anonymous_e__Struct
                 {
                     public byte _bitfield;
 
+                    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Parked"]/*' />
                     [NativeTypeName("byte : 1")]
                     public byte Parked
                     {
@@ -195,6 +226,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                         }
                     }
 
+                    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Allocated"]/*' />
                     [NativeTypeName("byte : 1")]
                     public byte Allocated
                     {
@@ -211,6 +243,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                         }
                     }
 
+                    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllocatedToTargetProcess"]/*' />
                     [NativeTypeName("byte : 1")]
                     public byte AllocatedToTargetProcess
                     {
@@ -227,6 +260,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                         }
                     }
 
+                    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RealTime"]/*' />
                     [NativeTypeName("byte : 1")]
                     public byte RealTime
                     {
@@ -243,6 +277,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                         }
                     }
 
+                    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
                     [NativeTypeName("byte : 4")]
                     public byte ReservedFlags
                     {
@@ -261,13 +296,16 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                 }
             }
 
+            /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
             [StructLayout(LayoutKind.Explicit)]
             public partial struct _Anonymous2_e__Union
             {
+                /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Reserved"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("DWORD")]
                 public uint Reserved;
 
+                /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.SchedulingClass"]/*' />
                 [FieldOffset(0)]
                 public byte SchedulingClass;
             }

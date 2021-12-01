@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFWaveFormatExConvertFlags.xml' path='doc/member[@name="MFWaveFormatExConvertFlags"]/*' />
 public enum MFWaveFormatExConvertFlags
 {
+    /// <include file='MFWaveFormatExConvertFlags.xml' path='doc/member[@name="MFWaveFormatExConvertFlags.MFWaveFormatExConvertFlag_Normal"]/*' />
     MFWaveFormatExConvertFlag_Normal = 0,
+
+    /// <include file='MFWaveFormatExConvertFlags.xml' path='doc/member[@name="MFWaveFormatExConvertFlags.MFWaveFormatExConvertFlag_ForceExtensible"]/*' />
     MFWaveFormatExConvertFlag_ForceExtensible = 1,
 }

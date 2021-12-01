@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IIPDVDec.get_IPDisplay">
+    <summary>
+      <para>The <code>get_IPDisplay</code> method gets the decoding resolution.</para>
+    </summary>
+    <param name="displayPix">
+      <para>Receives a member of the <see cref="DVDECODERRESOLUTION" /> enumerated type, specifying the decoding resolution.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IIPDVDec Interface" />
+  </member>
+  <member name="IIPDVDec.put_IPDisplay">
+    <summary>
+      <para>The <code>put_IPDisplay</code> method sets the decoding resolution.</para>
+    </summary>
+    <param name="displayPix">
+      <para>Member of the <see cref="DVDECODERRESOLUTION" /> enumerated type, specifying the decoding resolution. The meaning of this value depends on whether the current format is NTSC or PAL. The filter determines at run time which format applies, based on the media type.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise, returns E_FAIL or another error code.</para>
+    </returns>
+    <remarks>
+      <para>This method will fail if the filter is already streaming media data.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IIPDVDec Interface" />
+  </member>
+  <member name="IIPDVDec">
+    <summary>
+      <para>The <code>IIPDVDec</code> interface provides methods for setting and retrieving properties on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dv-video-decoder-filter">DV Video Decoder</a> filter.</para>
+    </summary>
+  </member>
+</doc>

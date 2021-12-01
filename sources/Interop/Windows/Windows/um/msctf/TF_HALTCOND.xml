@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TF_HALTCOND">
+    <summary>
+      <para>The <b>TF_HALTCOND</b> structure is used to contain conditions of a range shift.</para>
+    </summary>
+    <seealso cref="ITfRange " />
+    <seealso cref="ITfRange.ShiftEnd " />
+    <seealso cref="ITfRange.ShiftStart " />
+    <seealso cref="TfAnchor " />
+  </member>
+  <member name="TF_HALTCOND.pHaltRange">
+    <summary>
+      <para>Pointer to an <see cref="ITfRange" /> object that halts the shift. If the range shift encounters this range during the shift, the shift halts. This member can be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="TF_HALTCOND.aHaltPos">
+    <summary>
+      <para>Contains one of the <see cref="TfAnchor" /> values that specifies which anchor of <b>pHaltRange</b> the anchor will get shifted to if <b>pHaltRange</b> is encountered during the range shift. This member is ignored if <b>pHaltRange</b> is <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="TF_HALTCOND.dwFlags">
+    <summary>
+      <para>Contains a set of flags that modify the behavior of the range shift. This can be zero or the following value.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>TF_HF_OBJECT</description>
+          <description>The range shift halts if an embedded object is encountered.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

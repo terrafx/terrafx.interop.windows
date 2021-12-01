@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IThumbnailExtractor.xml' path='doc/member[@name="IThumbnailExtractor"]/*' />
 [Guid("969DC708-5C76-11D1-8D86-0000F804B057")]
 [NativeTypeName("struct IThumbnailExtractor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
         return ((delegate* unmanaged<IThumbnailExtractor*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
         return ((delegate* unmanaged<IThumbnailExtractor*, uint>)(lpVtbl[1]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
         return ((delegate* unmanaged<IThumbnailExtractor*, uint>)(lpVtbl[2]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IThumbnailExtractor.xml' path='doc/member[@name="IThumbnailExtractor.ExtractThumbnail"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ExtractThumbnail(IStorage* pStg, [NativeTypeName("ULONG")] uint ulLength, [NativeTypeName("ULONG")] uint ulHeight, [NativeTypeName("ULONG *")] uint* pulOutputLength, [NativeTypeName("ULONG *")] uint* pulOutputHeight, HBITMAP* phOutputBitmap)
@@ -46,6 +51,7 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
         return ((delegate* unmanaged<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, HBITMAP*, int>)(lpVtbl[3]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
     }
 
+    /// <include file='IThumbnailExtractor.xml' path='doc/member[@name="IThumbnailExtractor.OnFileUpdated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnFileUpdated(IStorage* pStg)

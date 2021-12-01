@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCandidateList.xml' path='doc/member[@name="ITfCandidateList"]/*' />
 [Guid("A3AD50FB-9BDB-49E3-A843-6C76520FBF5D")]
 [NativeTypeName("struct ITfCandidateList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCandidateList : ITfCandidateList.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCandidateList : ITfCandidateList.Interface
         return ((delegate* unmanaged<ITfCandidateList*, Guid*, void**, int>)(lpVtbl[0]))((ITfCandidateList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCandidateList : ITfCandidateList.Interface
         return ((delegate* unmanaged<ITfCandidateList*, uint>)(lpVtbl[1]))((ITfCandidateList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCandidateList : ITfCandidateList.Interface
         return ((delegate* unmanaged<ITfCandidateList*, uint>)(lpVtbl[2]))((ITfCandidateList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCandidateList.xml' path='doc/member[@name="ITfCandidateList.EnumCandidates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EnumCandidates(IEnumTfCandidates** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfCandidateList : ITfCandidateList.Interface
         return ((delegate* unmanaged<ITfCandidateList*, IEnumTfCandidates**, int>)(lpVtbl[3]))((ITfCandidateList*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='ITfCandidateList.xml' path='doc/member[@name="ITfCandidateList.GetCandidate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCandidate([NativeTypeName("ULONG")] uint nIndex, ITfCandidateString** ppCand)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfCandidateList : ITfCandidateList.Interface
         return ((delegate* unmanaged<ITfCandidateList*, uint, ITfCandidateString**, int>)(lpVtbl[4]))((ITfCandidateList*)Unsafe.AsPointer(ref this), nIndex, ppCand);
     }
 
+    /// <include file='ITfCandidateList.xml' path='doc/member[@name="ITfCandidateList.GetCandidateNum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCandidateNum([NativeTypeName("ULONG *")] uint* pnCnt)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfCandidateList : ITfCandidateList.Interface
         return ((delegate* unmanaged<ITfCandidateList*, uint*, int>)(lpVtbl[5]))((ITfCandidateList*)Unsafe.AsPointer(ref this), pnCnt);
     }
 
+    /// <include file='ITfCandidateList.xml' path='doc/member[@name="ITfCandidateList.SetResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetResult([NativeTypeName("ULONG")] uint nIndex, TfCandidateResult imcr)

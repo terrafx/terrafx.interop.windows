@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="REGCLS">
+    <summary>
+      <para>Controls the type of connections to a class object.</para>
+    </summary>
+    <remarks>
+      <para>In <see cref="CoRegisterClassObject" />, members of both the <b>REGCLS</b> and the <see cref="CLSCTX" /> enumerations, taken together, determine how the class object is registered.</para>
+      <para>An EXE surrogate (in which DLL servers are run) calls <see cref="CoRegisterClassObject" /> to register a class factory using a new <b>REGCLS</b> value, REGCLS_SURROGATE.</para>
+      <para>All class factories for DLL surrogates should be registered with REGCLS_SURROGATE set. Do not set REGCLS_SINGLUSE or REGCLS_MULTIPLEUSE when you register a surrogate for DLL servers.</para>
+      <para>The following table summarizes the allowable <b>REGCLS</b> value combinations and the object registrations affected by the combinations.</para>
+      <list type="table">
+        <listheader>
+          <description></description>
+          <description>REGCLS_SINGLEUSE</description>
+          <description>REGCLS_MULTIPLEUSE</description>
+          <description>REGCLS_MULTI_SEPARATE</description>
+          <description>Other</description>
+        </listheader>
+        <item>
+          <description>CLSCTX_INPROC_SERVER</description>
+          <description>Error</description>
+          <description>In-process</description>
+          <description>In-process</description>
+          <description>Error</description>
+        </item>
+        <item>
+          <description>CLSCTX_LOCAL_SERVER</description>
+          <description>Local</description>
+          <description>In-process/local</description>
+          <description>Local</description>
+          <description>Error</description>
+        </item>
+        <item>
+          <description>Both of the above</description>
+          <description>Error</description>
+          <description>In-process/local</description>
+          <description>In-process/local</description>
+          <description>Error</description>
+        </item>
+        <item>
+          <description>Other</description>
+          <description>Error</description>
+          <description>Error</description>
+          <description>Error</description>
+          <description>Error</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="CoGetClassObject" />
+    <seealso cref="CoRegisterClassObject" />
+    <seealso cref="DllGetClassObject" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/dllsurrogate">DllSurrogate</seealso>
+  </member>
+  <member name="REGCLS.REGCLS_SINGLEUSE">
+    <summary>
+      <para>After an application is connected to a class object with <see cref="CoGetClassObject" />, the class object is removed from public view so that no other applications can connect to it. This value is commonly used for single document interface (SDI) applications. Specifying this value does not affect the responsibility of the object application to call <see cref="CoRevokeClassObject" />; it must always call <b>CoRevokeClassObject</b> when it is finished with an object class.</para>
+    </summary>
+  </member>
+  <member name="REGCLS.REGCLS_MULTIPLEUSE">
+    <summary>
+      <para>Multiple applications can connect to the class object through calls to <see cref="CoGetClassObject" />. If both the REGCLS_MULTIPLEUSE and CLSCTX_LOCAL_SERVER are set in a call to <see cref="CoRegisterClassObject" />, the class object is also automatically registered as an in-process server, whether CLSCTX_INPROC_SERVER is explicitly set.</para>
+    </summary>
+  </member>
+  <member name="REGCLS.REGCLS_MULTI_SEPARATE">
+    <summary>
+      <para>Useful for registering separate CLSCTX_LOCAL_SERVER and CLSCTX_INPROC_SERVER class factories through calls to <see cref="CoGetClassObject" />. If REGCLS_MULTI_SEPARATE is set, each execution context must be set separately; <see cref="CoRegisterClassObject" /> does not automatically register an out-of-process server (for which CLSCTX_LOCAL_SERVER is set) as an in-process server. This allows the EXE to create multiple instances of the object for in-process needs, such as self embeddings, without disturbing its CLSCTX_LOCAL_SERVER registration. If an EXE registers a REGCLS_MULTI_SEPARATE class factory and a CLSCTX_INPROC_SERVER class factory, instance creation calls that specify CLSCTX_INPROC_SERVER in the <see cref="CLSCTX" /> parameter executed by the EXE would be satisfied locally without approaching the SCM. This mechanism is useful when the EXE uses functions such as <see cref="OleCreate" /> and <see cref="OleLoad" /> to create embeddings, but at the same does not wish to launch a new instance of itself for the self-embedding case. The distinction is important for embeddings because the default handler aggregates the proxy manager by default and the application should override this default behavior by calling <see cref="OleCreateEmbeddingHelper" /> for the self-embedding case.</para>
+      <para>If your application need not distinguish between the local and inproc case, you need not register your class factory using REGCLS_MULTI_SEPARATE. In fact, the application incurs an extra network round trip to the SCM when it registers its MULTIPLEUSE class factory as MULTI_SEPARATE and does not register another class factory as INPROC_SERVER.</para>
+    </summary>
+  </member>
+  <member name="REGCLS.REGCLS_SUSPENDED">
+    <summary>
+      <para>Suspends registration and activation requests for the specified CLSID until there is a call to <see cref="CoResumeClassObjects" />. This is used typically to register the CLSIDs for servers that can register multiple class objects to reduce the overall registration time, and thus the server application startup time, by making a single call to the SCM, no matter how many CLSIDs are registered for the server.</para>
+      <para>
+        <b>Note</b>  This flag prevents COM activation errors from a possible race condition between an application shutting down and that application attempting to register a COM class.</para>
+    </summary>
+  </member>
+  <member name="REGCLS.REGCLS_SURROGATE">
+    <summary>
+      <para>The class object is a surrogate process used to run DLL servers. The class factory registered by the surrogate process is not the actual class factory implemented by the DLL server, but a generic class factory implemented by the surrogate. This generic class factory delegates instance creation and marshaling to the class factory of the DLL server running in the surrogate. For further information on DLL surrogates, see the <a href="https://docs.microsoft.com//windows/desktop/com/dllsurrogate">DllSurrogate</a> registry value.</para>
+    </summary>
+  </member>
+  <member name="REGCLS.REGCLS_AGILE">
+    <summary>
+      <para>The class object aggregates the free-threaded marshaler
+and will be made visible to all inproc apartments. Can be used together with other flags. For example, REGCLS_AGILE | REGCLS_MULTIPLEUSE to register a
+class object that can be used multiple times from
+different apartments. Without other flags, behavior
+will retain REGCLS_SINGLEUSE semantics in that only
+one instance can be generated.</para>
+    </summary>
+  </member>
+</doc>

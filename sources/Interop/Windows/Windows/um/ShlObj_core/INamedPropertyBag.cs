@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INamedPropertyBag.xml' path='doc/member[@name="INamedPropertyBag"]/*' />
 [Guid("FB700430-952C-11D1-946F-000000000000")]
 [NativeTypeName("struct INamedPropertyBag : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INamedPropertyBag : INamedPropertyBag.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INamedPropertyBag : INamedPropertyBag.Interface
         return ((delegate* unmanaged<INamedPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((INamedPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INamedPropertyBag : INamedPropertyBag.Interface
         return ((delegate* unmanaged<INamedPropertyBag*, uint>)(lpVtbl[1]))((INamedPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INamedPropertyBag : INamedPropertyBag.Interface
         return ((delegate* unmanaged<INamedPropertyBag*, uint>)(lpVtbl[2]))((INamedPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INamedPropertyBag.xml' path='doc/member[@name="INamedPropertyBag.ReadPropertyNPB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ReadPropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName, PROPVARIANT* pVar)
@@ -46,6 +51,7 @@ public unsafe partial struct INamedPropertyBag : INamedPropertyBag.Interface
         return ((delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, PROPVARIANT*, int>)(lpVtbl[3]))((INamedPropertyBag*)Unsafe.AsPointer(ref this), pszBagname, pszPropName, pVar);
     }
 
+    /// <include file='INamedPropertyBag.xml' path='doc/member[@name="INamedPropertyBag.WritePropertyNPB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT WritePropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName, PROPVARIANT* pVar)
@@ -53,6 +59,7 @@ public unsafe partial struct INamedPropertyBag : INamedPropertyBag.Interface
         return ((delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, PROPVARIANT*, int>)(lpVtbl[4]))((INamedPropertyBag*)Unsafe.AsPointer(ref this), pszBagname, pszPropName, pVar);
     }
 
+    /// <include file='INamedPropertyBag.xml' path='doc/member[@name="INamedPropertyBag.RemovePropertyNPB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RemovePropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName)

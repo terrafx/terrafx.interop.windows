@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3"]/*' />
 [Guid("EA1AFB91-9E28-4B86-90E9-9E9F8A5EEFAF")]
 [NativeTypeName("struct ITaskbarList3 : ITaskbarList2")]
 [NativeInheritance("ITaskbarList2")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, Guid*, void**, int>)(lpVtbl[0]))((ITaskbarList3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, uint>)(lpVtbl[1]))((ITaskbarList3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, uint>)(lpVtbl[2]))((ITaskbarList3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITaskbarList.HrInit" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT HrInit()
@@ -46,6 +51,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, int>)(lpVtbl[3]))((ITaskbarList3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITaskbarList.AddTab" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddTab(HWND hwnd)
@@ -53,6 +59,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[4]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <inheritdoc cref="ITaskbarList.DeleteTab" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT DeleteTab(HWND hwnd)
@@ -60,6 +67,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[5]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <inheritdoc cref="ITaskbarList.ActivateTab" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ActivateTab(HWND hwnd)
@@ -67,6 +75,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[6]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <inheritdoc cref="ITaskbarList.SetActiveAlt" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetActiveAlt(HWND hwnd)
@@ -74,6 +83,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[7]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <inheritdoc cref="ITaskbarList2.MarkFullscreenWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT MarkFullscreenWindow(HWND hwnd, BOOL fFullscreen)
@@ -81,6 +91,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, BOOL, int>)(lpVtbl[8]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, fFullscreen);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.SetProgressValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetProgressValue(HWND hwnd, [NativeTypeName("ULONGLONG")] ulong ullCompleted, [NativeTypeName("ULONGLONG")] ulong ullTotal)
@@ -88,6 +99,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, ulong, ulong, int>)(lpVtbl[9]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, ullCompleted, ullTotal);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.SetProgressState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetProgressState(HWND hwnd, TBPFLAG tbpFlags)
@@ -95,6 +107,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, TBPFLAG, int>)(lpVtbl[10]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, tbpFlags);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.RegisterTab"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT RegisterTab(HWND hwndTab, HWND hwndMDI)
@@ -102,6 +115,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, HWND, int>)(lpVtbl[11]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab, hwndMDI);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.UnregisterTab"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT UnregisterTab(HWND hwndTab)
@@ -109,6 +123,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[12]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.SetTabOrder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetTabOrder(HWND hwndTab, HWND hwndInsertBefore)
@@ -116,6 +131,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, HWND, int>)(lpVtbl[13]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab, hwndInsertBefore);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.SetTabActive"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetTabActive(HWND hwndTab, HWND hwndMDI, [NativeTypeName("DWORD")] uint dwReserved)
@@ -123,6 +139,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, HWND, uint, int>)(lpVtbl[14]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab, hwndMDI, dwReserved);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.ThumbBarAddButtons"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT ThumbBarAddButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton)
@@ -130,6 +147,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, uint, THUMBBUTTON*, int>)(lpVtbl[15]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, cButtons, pButton);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.ThumbBarUpdateButtons"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT ThumbBarUpdateButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton)
@@ -137,6 +155,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, uint, THUMBBUTTON*, int>)(lpVtbl[16]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, cButtons, pButton);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.ThumbBarSetImageList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT ThumbBarSetImageList(HWND hwnd, HIMAGELIST himl)
@@ -144,6 +163,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, HIMAGELIST, int>)(lpVtbl[17]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, himl);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.SetOverlayIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetOverlayIcon(HWND hwnd, HICON hIcon, [NativeTypeName("LPCWSTR")] ushort* pszDescription)
@@ -151,6 +171,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, HICON, ushort*, int>)(lpVtbl[18]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, hIcon, pszDescription);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.SetThumbnailTooltip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SetThumbnailTooltip(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszTip)
@@ -158,6 +179,7 @@ public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
         return ((delegate* unmanaged<ITaskbarList3*, HWND, ushort*, int>)(lpVtbl[19]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, pszTip);
     }
 
+    /// <include file='ITaskbarList3.xml' path='doc/member[@name="ITaskbarList3.SetThumbnailClip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SetThumbnailClip(HWND hwnd, RECT* prcClip)

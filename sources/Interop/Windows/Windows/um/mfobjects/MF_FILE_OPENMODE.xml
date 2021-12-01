@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_FILE_OPENMODE">
+    <summary>
+      <para>Specifies how to open or create a file.</para>
+    </summary>
+    <seealso cref="MFBeginCreateFile" />
+    <seealso cref="MFCreateFile" />
+    <seealso cref="MFCreateTempFile" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_FILE_OPENMODE.MF_OPENMODE_FAIL_IF_NOT_EXIST">
+    <summary>
+      <para>Open an existing file. Fail if the file does not exist.</para>
+    </summary>
+  </member>
+  <member name="MF_FILE_OPENMODE.MF_OPENMODE_FAIL_IF_EXIST">
+    <summary>
+      <para>Create a new file. Fail if the file already exists.</para>
+    </summary>
+  </member>
+  <member name="MF_FILE_OPENMODE.MF_OPENMODE_RESET_IF_EXIST">
+    <summary>
+      <para>Open an existing file and truncate it, so that the size is zero bytes. Fail if the file does not already exist.</para>
+    </summary>
+  </member>
+  <member name="MF_FILE_OPENMODE.MF_OPENMODE_APPEND_IF_EXIST">
+    <summary>
+      <para>If the file does not exist, create a new file. If the file exists, open it.</para>
+    </summary>
+  </member>
+  <member name="MF_FILE_OPENMODE.MF_OPENMODE_DELETE_IF_EXIST">
+    <summary>
+      <para>Create a new file. If the file exists, overwrite the file.</para>
+    </summary>
+  </member>
+</doc>

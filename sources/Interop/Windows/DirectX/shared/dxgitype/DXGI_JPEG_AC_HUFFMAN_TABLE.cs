@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_JPEG_AC_HUFFMAN_TABLE.xml' path='doc/member[@name="DXGI_JPEG_AC_HUFFMAN_TABLE"]/*' />
 public unsafe partial struct DXGI_JPEG_AC_HUFFMAN_TABLE
 {
+    /// <include file='DXGI_JPEG_AC_HUFFMAN_TABLE.xml' path='doc/member[@name="DXGI_JPEG_AC_HUFFMAN_TABLE.CodeCounts"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte CodeCounts[16];
 
+    /// <include file='DXGI_JPEG_AC_HUFFMAN_TABLE.xml' path='doc/member[@name="DXGI_JPEG_AC_HUFFMAN_TABLE.CodeValues"]/*' />
     [NativeTypeName("BYTE [162]")]
     public fixed byte CodeValues[162];
 }

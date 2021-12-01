@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDragSourceHelper2.xml' path='doc/member[@name="IDragSourceHelper2"]/*' />
 [Guid("83E07D0D-0C5F-4163-BF1A-60B274051E40")]
 [NativeTypeName("struct IDragSourceHelper2 : IDragSourceHelper")]
 [NativeInheritance("IDragSourceHelper")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface
         return ((delegate* unmanaged<IDragSourceHelper2*, Guid*, void**, int>)(lpVtbl[0]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface
         return ((delegate* unmanaged<IDragSourceHelper2*, uint>)(lpVtbl[1]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface
         return ((delegate* unmanaged<IDragSourceHelper2*, uint>)(lpVtbl[2]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDragSourceHelper.InitializeFromBitmap" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InitializeFromBitmap([NativeTypeName("LPSHDRAGIMAGE")] SHDRAGIMAGE* pshdi, IDataObject* pDataObject)
@@ -46,6 +51,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface
         return ((delegate* unmanaged<IDragSourceHelper2*, SHDRAGIMAGE*, IDataObject*, int>)(lpVtbl[3]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), pshdi, pDataObject);
     }
 
+    /// <inheritdoc cref="IDragSourceHelper.InitializeFromWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, IDataObject* pDataObject)
@@ -53,6 +59,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface
         return ((delegate* unmanaged<IDragSourceHelper2*, HWND, POINT*, IDataObject*, int>)(lpVtbl[4]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), hwnd, ppt, pDataObject);
     }
 
+    /// <include file='IDragSourceHelper2.xml' path='doc/member[@name="IDragSourceHelper2.SetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags)

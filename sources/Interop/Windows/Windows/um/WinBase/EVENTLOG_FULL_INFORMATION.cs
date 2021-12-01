@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EVENTLOG_FULL_INFORMATION.xml' path='doc/member[@name="EVENTLOG_FULL_INFORMATION"]/*' />
 public partial struct EVENTLOG_FULL_INFORMATION
 {
+    /// <include file='EVENTLOG_FULL_INFORMATION.xml' path='doc/member[@name="EVENTLOG_FULL_INFORMATION.dwFull"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFull;
 }

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_FILTER">
+    <summary>
+      <para>Represents filtering modes that a transform may select to use on input textures.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration has the same numeric values as <see cref="D3D11_FILTER" />.</para>
+    </remarks>
+    <seealso cref="D3D11_FILTER" />
+  </member>
+  <member name="D2D1_FILTER.D2D1_FILTER_MIN_MAG_MIP_POINT">
+    <summary>
+      <para>Use point sampling for minification, magnification, and mip-level sampling.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FILTER.D2D1_FILTER_MIN_MAG_POINT_MIP_LINEAR">
+    <summary>
+      <para>Use point sampling for minification and magnification; use linear interpolation for mip-level sampling.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FILTER.D2D1_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT">
+    <summary>
+      <para>Use point sampling for minification; use linear interpolation for magnification; use point sampling for mip-level sampling.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FILTER.D2D1_FILTER_MIN_POINT_MAG_MIP_LINEAR">
+    <summary>
+      <para>Use point sampling for minification; use linear interpolation for magnification and mip-level sampling.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FILTER.D2D1_FILTER_MIN_LINEAR_MAG_MIP_POINT">
+    <summary>
+      <para>Use linear interpolation for minification; use point sampling for magnification and mip-level sampling.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FILTER.D2D1_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR">
+    <summary>
+      <para>Use linear interpolation for minification; use point sampling for magnification; use linear interpolation for mip-level sampling.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FILTER.D2D1_FILTER_MIN_MAG_LINEAR_MIP_POINT">
+    <summary>
+      <para>Use linear interpolation for minification and magnification; use point sampling for mip-level sampling.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FILTER.D2D1_FILTER_MIN_MAG_MIP_LINEAR">
+    <summary>
+      <para>Use linear interpolation for minification, magnification, and mip-level sampling.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FILTER.D2D1_FILTER_ANISOTROPIC">
+    <summary>
+      <para>Use anisotropic interpolation for minification, magnification, and mip-level sampling.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FILTER.D2D1_FILTER_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

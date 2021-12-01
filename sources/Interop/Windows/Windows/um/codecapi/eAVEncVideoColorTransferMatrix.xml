@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncVideoColorTransferMatrix">
+    <summary>
+      <para>Specifies the conversion matrix from the Y'Cb'Cr' color space to the R'G'B' color space. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoinputcolortransfermatrix-property">AVEncVideoInputColorTransferMatrix</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideooutputcolortransfermatrix-property">AVEncVideoOutputColorTransferMatrix</a> properties.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncVideoColorTransferMatrix.eAVEncVideoColorTransferMatrix_SameAsSource">
+    <summary>
+      <para>Use the same transfer matrix as the input video. This flag applies to the <b>AVEncVideoOutputColorTransferMatrix</b> property only.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorTransferMatrix.eAVEncVideoColorTransferMatrix_BT709">
+    <summary>
+      <para>ITU-R BT.709 transfer matrix.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorTransferMatrix.eAVEncVideoColorTransferMatrix_BT601">
+    <summary>
+      <para>ITU-R BT.601 transfer matrix.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorTransferMatrix.eAVEncVideoColorTransferMatrix_SMPTE240M">
+    <summary>
+      <para>SMPTE 240M transfer matrix.</para>
+    </summary>
+  </member>
+</doc>

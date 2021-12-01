@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IResourceManager.CancelRequest">
+    <summary>
+      <para>The <code>CancelRequest</code> method cancels the request for a resource.</para>
+    </summary>
+    <param name="idResource">
+      <para>Resource identifier of a pending request.</para>
+    </param>
+    <param name="pConsumer">
+      <para>Pointer to the <see cref="IResourceConsumer" /> interface that made the request.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation. <b>HRESULT</b> can be one of the following standard constants, or other values not listed.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method isn't supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK or NOERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method should be called when the <see cref="IResourceConsumer" /> object that requested the resource has not received it and no longer requires it. If it has already received the resource, it should use the <see cref="IResourceManager.NotifyRelease" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IResourceManager Interface" />
+  </member>
+  <member name="IResourceManager.NotifyAcquire">
+    <summary>
+      <para>The <code>NotifyAcquire</code> method notifies the resource manager that an attempt to acquire a resource has completed.</para>
+    </summary>
+    <param name="idResource">
+      <para>Token for the registered resource.</para>
+    </param>
+    <param name="pConsumer">
+      <para>Pointer to the <see cref="IResourceConsumer" /> interface of the object requesting the resource.</para>
+    </param>
+    <param name="hr">
+      <para>Value indicating the success of the acquisition; S_OK if the resource was acquired, or an error value if not.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation. <b>HRESULT</b> can be one of the following standard constants, or other values not listed.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method isn't supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK or NOERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method after an <see cref="IResourceConsumer.AcquireResource" /> method returns an S_FALSE value, indicating that the acquisition will be asynchronous (that is, handled by a callback mechanism). If the <i>hr</i> parameter is S_OK, the resource manager will assume that the resource is now held by the caller. If the <i>hr</i> parameter is anything other than S_OK, the resource manager will assume that the attempt to acquire the resource failed and will reassign the resource elsewhere.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IResourceManager Interface" />
+  </member>
+  <member name="IResourceManager.NotifyRelease">
+    <summary>
+      <para>The <code>NotifyRelease</code> method notifies the resource manager that <see cref="IResourceConsumer" /> has released a resource.</para>
+    </summary>
+    <param name="idResource">
+      <para>Resource token.</para>
+    </param>
+    <param name="pConsumer">
+      <para>Pointer to the object releasing the resource.</para>
+    </param>
+    <param name="bStillWant">
+      <para>Flag that specifies whether the resource is still required. Set to <b>TRUE</b> to indicate that you still want the resource when it is next available, or <b>FALSE</b> if you no longer want the resource.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation. <b>HRESULT</b> can be one of the following standard constants, or other values not listed.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method isn't supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK or NOERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method in response to an <see cref="IResourceConsumer.ReleaseResource" /> method, or when you have finished using the resource.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IResourceManager Interface" />
+  </member>
+  <member name="IResourceManager.Register">
+    <summary>
+      <para>The <code>Register</code> method registers a single named resource with the resource manager.</para>
+    </summary>
+    <param name="pName">
+      <para>Named resource.</para>
+    </param>
+    <param name="cResource">
+      <para>Number of resources.</para>
+    </param>
+    <param name="plToken">
+      <para>Pointer to the returned token identifying the resource to be used in additional calls.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation. <b>HRESULT</b> can be one of the following standard constants, or other values not listed.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method isn't supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK or NOERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method registers a named resource, which can contain a number of resources, and returns a token to be used when requesting this resource. It is not an error if the resource is already registered; if the number in the <i>cResource</i> parameter is less than what is already registered, resources will be deallocated to the new count. To unregister the resource, pass a count of zero in <i>cResource</i>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IResourceManager Interface" />
+  </member>
+  <member name="IResourceManager.RegisterGroup">
+    <summary>
+      <para>The <code>RegisterGroup</code> method registers a named resource group with the resource manager.</para>
+    </summary>
+    <param name="pName">
+      <para>Named resource group.</para>
+    </param>
+    <param name="cResource">
+      <para>Number of resources in the group.</para>
+    </param>
+    <param name="palTokens">
+      <para>Pointer to an array of resources in the group.</para>
+    </param>
+    <param name="plToken">
+      <para>Pointer to the returned group resource identifier.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation. <b>HRESULT</b> can be one of the following standard constants, or other values not listed.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method isn't supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK or NOERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IResourceManager Interface" />
+  </member>
+  <member name="IResourceManager.ReleaseFocus">
+    <summary>
+      <para>The <code>ReleaseFocus</code> method sets the focus object to <b>NULL</b> in the resource manager if the current focus object is the one specified in this method.</para>
+    </summary>
+    <param name="pFocusObject">
+      <para>Pointer to the focus object.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation. <b>HRESULT</b> can be one of the following standard constants, or other values not listed.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method isn't supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK or NOERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method when the object of focus is about to be destroyed to ensure that the focus is not still being referenced.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IResourceManager Interface" />
+  </member>
+  <member name="IResourceManager.RequestResource">
+    <summary>
+      <para>The <code>RequestResource</code> method requests the use of a given registered resource.</para>
+    </summary>
+    <param name="idResource">
+      <para>Resource token retrieved when the resource was registered.</para>
+    </param>
+    <param name="pFocusObject">
+      <para>Pointer to the <b>IUnknown</b> interface of a focus object associated with a request (typically the <b>IUnknown</b> interface of the filter).</para>
+    </param>
+    <param name="pConsumer">
+      <para>Pointer to the <see cref="IResourceConsumer" /> interface on the object requesting the resource.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Returns S_OK if the requested resource is returned, or S_FALSE if the resource is not available, in which case the resource manager will call the requesting object back when the resource becomes available. Any other return is an error.</para>
+    </returns>
+    <remarks>
+      <para>When there is more than one request for the resource, the resource manager will decide the priority by using the object of focus passed with each request and comparing it to the object of focus passed in the most recent <see cref="IResourceManager.SetFocus" /> method.</para>
+      <para>Requests will be filled in the following order of priority:</para>
+      <list type="number">
+        <item>
+          <description>Requests made with exactly the same object of focus as the last <see cref="SetFocus" /> method.</description>
+        </item>
+        <item>
+          <description>Requests whose object of focus shares a common source filter whose object of focus shares a common filter graph.</description>
+        </item>
+        <item>
+          <description>Requests in the same process as the focus.</description>
+        </item>
+      </list>
+      <para>While checking this priority, the resource manager will use <b>QueryInterface</b> on the focus object for IID_IFilter. If found, the resource manager will use <see cref="IBaseFilter" /> methods to check the filter graph and look for common source filters with the current focus object.</para>
+      <para>A filter should pass the <b>IUnknown</b> interface of the filter in the <i>pFocusObject</i> parameter. The filter graph manager matches filters to the filter graph and will attempt to trace filters to common source filters when checking objects of focus.</para>
+      <para>The focus object must be valid for the entire lifetime of the request—until either the <see cref="IResourceManager.CancelRequest" /> method is called, or the <see cref="IResourceManager.NotifyRelease" /> method is called with the <i>bStillWant</i> parameter set to <b>FALSE</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IResourceManager Interface" />
+  </member>
+  <member name="IResourceManager.SetFocus">
+    <summary>
+      <para>The <code>SetFocus</code> method notifies the resource manager that a specified object has been given the focus of the user.</para>
+    </summary>
+    <param name="pFocusObject">
+      <para>Pointer to the object that has been given the user's focus.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation. <b>HRESULT</b> can be one of the following standard constants, or other values not listed.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method isn't supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK or NOERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In DirectShow, the object given the user's focus is typically a video renderer whose window has received the focus. The resource manager gives priority to requests for resources in the following order:</para>
+      <list type="number">
+        <item>
+          <description>Requests made with the focus object specified in the <i>pFocusObject</i> parameter.</description>
+        </item>
+        <item>
+          <description>Requests whose focus object shares a common source filter.</description>
+        </item>
+        <item>
+          <description>Requests whose focus object shares a common filter graph.</description>
+        </item>
+        <item>
+          <description>Requests in the same process as the focus.</description>
+        </item>
+      </list>
+      <para>After a focus has been set, the resource manager must maintain a focus object until <see cref="ReleaseFocus" /> is called. That is, after calling this method, you must use <b>ReleaseFocus</b> before the <b>IUnknown</b> interface of the focus object becomes invalid, unless you can guarantee that <code>SetFocus</code> is called by a different object in the meantime. No reference count is held on the focus object.</para>
+      <para>The resource manager will hold this pointer until replaced or canceled, and will use it to resolve resource contention. It will use <b>QueryInterface</b> for the <see cref="IBaseFilter" /> interface at least and, if found, will use methods on that interface. It calls methods on <b>IBaseFilter</b> to decide which audio renderer to use if there are two (it will choose the one with a source filter common to the focus object), and also to determine if the two objects are within the same filter graph.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IResourceManager Interface" />
+  </member>
+  <member name="IResourceManager">
+    <summary>
+      <para>The <code>IResourceManager</code> interface resolves contentions for system resources.</para>
+      <para>The filter graph manager exposes this interface. Filters can use this interface to request resources that other objects are likely to use. For example, audio renderers use this interface to resolve contentions for the wave-output device, to enable sound to follow focus.</para>
+      <para>Applications will typically not use this interface.</para>
+      <para>An object can use this interface to resolve possible contentions between existing resources. The object registers the resource with the interface and then requests it whenever needed. The object should notify the filter graph manager whenever the user focus changes. The filter graph manager can then switch contended resources to the objects that have the focus of the user.</para>
+      <para>An object that uses this interface must implement the <see cref="IResourceConsumer" /> interface. <b>IResourceConsumer</b> provides a callback mechanism for the filter graph manager to notify the object when a resource becomes available, or when the object should release a resource that it acquired.</para>
+    </summary>
+  </member>
+</doc>

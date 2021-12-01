@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DFileSystemImageEvents.Update">
+    <summary>
+      <para>Implement this method to receive progress notification of the current write operation. The notifications are sent when copying the content of a file or while adding directories or files to the file system image.</para>
+    </summary>
+    <param name="object">
+      <para>An <see cref="IFileSystemImage" /> interface of the file system image that is being written.</para>
+      <para>This parameter is a <b>CFileSystemImage</b> object in a script.</para>
+    </param>
+    <param name="currentFile">
+      <para>String that contains the full path of the file being written.</para>
+    </param>
+    <param name="copiedSectors">
+      <para>Number of sectors copied.</para>
+    </param>
+    <param name="totalSectors">
+      <para>Total number of sectors in the file.</para>
+    </param>
+    <returns>
+      <para>Return values are ignored.</para>
+    </returns>
+    <remarks>
+      <para>Notifications are sent in response to calling one of the following methods:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IFsiDirectoryItem.Add" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IFsiDirectoryItem.AddFile" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IFsiDirectoryItem.AddTree" />
+          </description>
+        </item>
+      </list>
+      <para>Notifications can also be sent when calling one of the following methods to import a UDF file system that was created using immediate allocation (immediate allocation means that the file data is contained within the file descriptor instead of having allocation descriptors in the file descriptor that point to sectors of data):</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IFileSystemImage.ImportFileSystem" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IFileSystemImage.ImportSpecificFileSystem" />
+          </description>
+        </item>
+      </list>
+      <para>Notification is sent:</para>
+      <list type="bullet">
+        <item>
+          <description>Once before adding the first sector of a file (<i>copiedSectors</i> is 0)</description>
+        </item>
+        <item>
+          <description>For every megabyte that is written</description>
+        </item>
+        <item>
+          <description>Once after the final write if the file did not end on a megabyte boundary</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="DFileSystemImageEvents" />
+  </member>
+  <member name="DFileSystemImageEvents">
+    <summary>
+      <para>Implement this interface to receive notifications of the current write operation.</para>
+    </summary>
+    <seealso cref="IFileSystemImage" />
+  </member>
+</doc>

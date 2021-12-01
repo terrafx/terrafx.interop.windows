@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SP_NEWDEVICEWIZARD_DATA">
+    <summary>
+      <para>An SP_NEWDEVICEWIZARD_DATA structure is used by installers to extend the operation of the hardware installation wizard by adding custom pages. It is used with DIF_NEWDEVICEWIZARD_<i>XXX</i> installation requests.</para>
+    </summary>
+    <remarks>
+      <para>
+        <see cref="SP_ADDPROPERTYPAGE_DATA" /> is an alias for this structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-newdevicewizard-finishinstall">DIF_NEWDEVICEWIZARD_FINISHINSTALL</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-newdevicewizard-postanalyze">DIF_NEWDEVICEWIZARD_POSTANALYZE</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-newdevicewizard-preanalyze">DIF_NEWDEVICEWIZARD_PREANALYZE</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-newdevicewizard-preselect">DIF_NEWDEVICEWIZARD_PRESELECT</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-newdevicewizard-select">DIF_NEWDEVICEWIZARD_SELECT</seealso>
+  </member>
+  <member name="SP_NEWDEVICEWIZARD_DATA.ClassInstallHeader">
+    <summary>
+      <para>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</para>
+    </summary>
+  </member>
+  <member name="SP_NEWDEVICEWIZARD_DATA.Flags">
+    <summary>
+      <para>Reserved. Must be zero.</para>
+    </summary>
+  </member>
+  <member name="SP_NEWDEVICEWIZARD_DATA.DynamicPages">
+    <summary>
+      <para>An array of property sheet page handles. An installer can add the handles of custom wizard pages to this array.</para>
+    </summary>
+  </member>
+  <member name="SP_NEWDEVICEWIZARD_DATA.NumDynamicPages">
+    <summary>
+      <para>The number of pages that are added to the<b> DynamicPages</b> array.</para>
+      <para>Because the array index is zero-based, this value is also the index to the next free entry in the array. For example, if there are 3 pages in the array, <b>DynamicPages[</b>3<b>]</b> is the next entry for an installer to use.</para>
+    </summary>
+  </member>
+  <member name="SP_NEWDEVICEWIZARD_DATA.hwndWizardDlg">
+    <summary>
+      <para>The handle to the top-level window of the hardware installation wizard .</para>
+    </summary>
+  </member>
+</doc>

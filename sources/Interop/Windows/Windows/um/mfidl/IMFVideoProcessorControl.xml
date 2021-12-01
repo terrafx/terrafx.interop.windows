@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFVideoProcessorControl.SetBorderColor">
+    <summary>
+      <para>Sets the border color.</para>
+    </summary>
+    <param name="pBorderColor">
+      <para>A pointer to an <see cref="MFARGB" /> structure that specifies the border color as an ARGB (alpha, red, green, blue) value.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFVideoProcessorControl" />
+  </member>
+  <member name="IMFVideoProcessorControl.SetConstrictionSize">
+    <summary>
+      <para>Specifies the amount of downsampling to perform on the output.</para>
+    </summary>
+    <param name="pConstrictionSize">
+      <para>The sampling size.</para>
+      <para>To disable constriction, set this parameter to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFVideoProcessorControl" />
+  </member>
+  <member name="IMFVideoProcessorControl.SetDestinationRectangle">
+    <summary>
+      <para>Sets the destination rectangle. The destination rectangle is the portion of the output surface where the source rectangle is blitted.</para>
+    </summary>
+    <param name="pDstRect">
+      <para>A pointer to a <see cref="RECT" /> structure that specifies the destination rectangle.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/medfound/video-processor-mft">Video Processor MFT</a> for info regarding source and destination rectangles in the <b>Video Processor MFT</b>.</para>
+    </remarks>
+    <seealso cref="IMFVideoProcessorControl" />
+  </member>
+  <member name="IMFVideoProcessorControl.SetMirror">
+    <summary>
+      <para>Specifies whether to flip the video image.</para>
+    </summary>
+    <param name="eMirror">
+      <para>An <see cref="MF_VIDEO_PROCESSOR_MIRROR" /> value that specifies whether to flip the video image, either horizontally or vertically.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFVideoProcessorControl" />
+  </member>
+  <member name="IMFVideoProcessorControl.SetRotation">
+    <summary>
+      <para>Specifies whether to rotate the video to the correct orientation.</para>
+    </summary>
+    <param name="eRotation">
+      <para>A <see cref="MF_VIDEO_PROCESSOR_ROTATION" /> value that specifies whether to rotate the image.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The original orientation of the video is specified by the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-rotation">MF_MT_VIDEO_ROTATION</a> attribute of the input media type.</para>
+      <para>If <i>eRotation</i> is <b>ROTATION_NONE</b>, the video processor does not correct the orientation of the output video. If the original video is rotated, and <i>eRotation</i> is <b>ROTATION_NORMAL</b>, the video processor corrects the orientation, so that the output video is not rotated. The video processor letterboxes the output as needed.</para>
+    </remarks>
+    <seealso cref="IMFVideoProcessorControl" />
+  </member>
+  <member name="IMFVideoProcessorControl.SetSourceRectangle">
+    <summary>
+      <para>Sets the source rectangle. The source rectangle is the portion of the input frame that is blitted to the destination surface.</para>
+    </summary>
+    <param name="pSrcRect">
+      <para>A pointer to a <see cref="RECT" /> structure that specifies the source rectangle.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/medfound/video-processor-mft">Video Processor MFT</a> for info regarding source and destination rectangles in the <b>Video Processor MFT</b>.</para>
+    </remarks>
+    <seealso cref="IMFVideoProcessorControl" />
+  </member>
+  <member name="IMFVideoProcessorControl">
+    <summary>
+      <para>Configures the <a href="https://docs.microsoft.com//windows/desktop/medfound/video-processor-mft">Video Processor MFT</a>.</para>
+    </summary>
+    <remarks>
+      <para>This interface controls how the <a href="https://docs.microsoft.com//windows/desktop/medfound/video-processor-mft">Video Processor MFT</a> generates output frames.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

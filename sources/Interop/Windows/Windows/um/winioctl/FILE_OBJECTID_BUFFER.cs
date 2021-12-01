@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_OBJECTID_BUFFER.xml' path='doc/member[@name="FILE_OBJECTID_BUFFER"]/*' />
 public unsafe partial struct FILE_OBJECTID_BUFFER
 {
+    /// <include file='FILE_OBJECTID_BUFFER.xml' path='doc/member[@name="FILE_OBJECTID_BUFFER.ObjectId"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte ObjectId[16];
 
+    /// <include file='FILE_OBJECTID_BUFFER.xml' path='doc/member[@name="FILE_OBJECTID_BUFFER.Anonymous"]/*' />
     [NativeTypeName("_FILE_OBJECTID_BUFFER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12303:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthVolumeId"]/*' />
     public Span<byte> BirthVolumeId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -26,6 +30,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthObjectId"]/*' />
     public Span<byte> BirthObjectId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +40,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DomainId"]/*' />
     public Span<byte> DomainId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,6 +50,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ExtendedInfo"]/*' />
     public Span<byte> ExtendedInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -53,25 +60,32 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_FILE_OBJECTID_BUFFER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12304:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ExtendedInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE [48]")]
         public fixed byte ExtendedInfo[48];
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public unsafe partial struct _Anonymous_e__Struct
         {
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthVolumeId"]/*' />
             [NativeTypeName("BYTE [16]")]
             public fixed byte BirthVolumeId[16];
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthObjectId"]/*' />
             [NativeTypeName("BYTE [16]")]
             public fixed byte BirthObjectId[16];
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DomainId"]/*' />
             [NativeTypeName("BYTE [16]")]
             public fixed byte DomainId[16];
         }

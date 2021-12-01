@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DELETEITEMSTRUCT.xml' path='doc/member[@name="DELETEITEMSTRUCT"]/*' />
 public partial struct DELETEITEMSTRUCT
 {
+    /// <include file='DELETEITEMSTRUCT.xml' path='doc/member[@name="DELETEITEMSTRUCT.CtlType"]/*' />
     public uint CtlType;
 
+    /// <include file='DELETEITEMSTRUCT.xml' path='doc/member[@name="DELETEITEMSTRUCT.CtlID"]/*' />
     public uint CtlID;
 
+    /// <include file='DELETEITEMSTRUCT.xml' path='doc/member[@name="DELETEITEMSTRUCT.itemID"]/*' />
     public uint itemID;
 
+    /// <include file='DELETEITEMSTRUCT.xml' path='doc/member[@name="DELETEITEMSTRUCT.hwndItem"]/*' />
     public HWND hwndItem;
 
+    /// <include file='DELETEITEMSTRUCT.xml' path='doc/member[@name="DELETEITEMSTRUCT.itemData"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint itemData;
 }

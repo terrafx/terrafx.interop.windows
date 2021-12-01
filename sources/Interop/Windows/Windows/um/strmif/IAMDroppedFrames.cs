@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMDroppedFrames.xml' path='doc/member[@name="IAMDroppedFrames"]/*' />
 [Guid("C6E13344-30AC-11D0-A18C-00A0C9118956")]
 [NativeTypeName("struct IAMDroppedFrames : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface
         return ((delegate* unmanaged<IAMDroppedFrames*, Guid*, void**, int>)(lpVtbl[0]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface
         return ((delegate* unmanaged<IAMDroppedFrames*, uint>)(lpVtbl[1]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface
         return ((delegate* unmanaged<IAMDroppedFrames*, uint>)(lpVtbl[2]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMDroppedFrames.xml' path='doc/member[@name="IAMDroppedFrames.GetNumDropped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetNumDropped([NativeTypeName("long *")] int* plDropped)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface
         return ((delegate* unmanaged<IAMDroppedFrames*, int*, int>)(lpVtbl[3]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), plDropped);
     }
 
+    /// <include file='IAMDroppedFrames.xml' path='doc/member[@name="IAMDroppedFrames.GetNumNotDropped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetNumNotDropped([NativeTypeName("long *")] int* plNotDropped)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface
         return ((delegate* unmanaged<IAMDroppedFrames*, int*, int>)(lpVtbl[4]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), plNotDropped);
     }
 
+    /// <include file='IAMDroppedFrames.xml' path='doc/member[@name="IAMDroppedFrames.GetDroppedInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDroppedInfo([NativeTypeName("long")] int lSize, [NativeTypeName("long *")] int* plArray, [NativeTypeName("long *")] int* plNumCopied)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface
         return ((delegate* unmanaged<IAMDroppedFrames*, int, int*, int*, int>)(lpVtbl[5]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), lSize, plArray, plNumCopied);
     }
 
+    /// <include file='IAMDroppedFrames.xml' path='doc/member[@name="IAMDroppedFrames.GetAverageFrameSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetAverageFrameSize([NativeTypeName("long *")] int* plAverageSize)

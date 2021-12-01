@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POINTER_PEN_INFO">
+    <summary>
+      <para>Defines basic pen information common to all pointer types.</para>
+    </summary>
+    <remarks>
+      <para>Applications can retrieve this information using the <see cref="GetPointerPenInfo" />, <see cref="GetPointerFramePenInfo" />, <see cref="GetPointerPenInfoHistory" /> and <see cref="GetPointerFramePenInfoHistory" /> API functions.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/structures">Structures</seealso>
+  </member>
+  <member name="POINTER_PEN_INFO.pointerInfo">
+    <summary>
+      <para>Type: <b>POINTER_INFO</b></para>
+      <para>An embedded <see cref="POINTER_INFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="POINTER_PEN_INFO.penFlags">
+    <summary>
+      <para>Type: <b>PEN_FLAGS</b></para>
+      <para>The pen flag. This member can be zero or any reasonable combination of the values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pen-flags-constants">Pen Flags</a> constants.</para>
+    </summary>
+  </member>
+  <member name="POINTER_PEN_INFO.penMask">
+    <summary>
+      <para>Type: <b>PEN_MASK</b></para>
+      <para>The pen mask. This member can be zero or any reasonable combination of the values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pen-mask-constants">Pen Mask</a> constants.</para>
+    </summary>
+  </member>
+  <member name="POINTER_PEN_INFO.pressure">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>A pen pressure normalized to a range between 0 and 1024. The default is 0 if the device does not report pressure.</para>
+    </summary>
+  </member>
+  <member name="POINTER_PEN_INFO.rotation">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The clockwise rotation, or twist, of the pointer normalized in a range of 0 to 359.
+The default is 0.</para>
+    </summary>
+  </member>
+  <member name="POINTER_PEN_INFO.tiltX">
+    <summary>
+      <para>Type: <b>INT32</b></para>
+      <para>The angle of tilt of the pointer along the x-axis in a range of -90 to +90, with a positive value indicating a tilt to the right.
+The default is 0.</para>
+    </summary>
+  </member>
+  <member name="POINTER_PEN_INFO.tiltY">
+    <summary>
+      <para>Type: <b>INT32</b></para>
+      <para>The angle of tilt of the pointer along the y-axis in a range of -90 to +90, with a positive value indicating a tilt toward the user. The default is 0.</para>
+    </summary>
+  </member>
+</doc>

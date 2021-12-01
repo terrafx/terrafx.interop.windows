@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_VIDEO_PROCESSOR_MIRROR">
+    <summary>
+      <para>Specifies how to flip a video image.</para>
+    </summary>
+    <seealso cref="IMFVideoProcessorControl.SetMirror" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_VIDEO_PROCESSOR_MIRROR.MIRROR_NONE">
+    <summary>
+      <para>Do not flip the image.</para>
+    </summary>
+  </member>
+  <member name="MF_VIDEO_PROCESSOR_MIRROR.MIRROR_HORIZONTAL">
+    <summary>
+      <para>Flip the image horizontally.</para>
+    </summary>
+  </member>
+  <member name="MF_VIDEO_PROCESSOR_MIRROR.MIRROR_VERTICAL">
+    <summary>
+      <para>Flip the image vertically.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDCompositionSurfaceFactory.CreateSurface">
+    <summary>
+      <para>Creates a surface object that can be associated with one or more visuals for composition.</para>
+    </summary>
+    <param name="width">
+      <para>The width of the surface, in pixels.</para>
+    </param>
+    <param name="height">
+      <para>The height of the surface, in pixels.</para>
+    </param>
+    <param name="pixelFormat">
+      <para>The pixel format of the surface.</para>
+    </param>
+    <param name="alphaMode">
+      <para>The format of the alpha channel, if an alpha channel is included in the pixel format. This can be one of DXGI_ALPHA_MODE_PREMULTIPLIED or DXGI_ALPHA_MODE_IGNORE. It can also be DXGI_ALPHA_MODE_UNSPECIFIED, which is interpreted as DXGI_ALPHA_MODE_IGNORE.</para>
+    </param>
+    <param name="surface">
+      <para>The newly created surface object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A Microsoft DirectComposition surface is a rectangular array of pixels that can be associated with a visual for composition.</para>
+      <para>A newly created surface object is in an uninitialized state. While it is uninitialized, the surface has no effect on the composition of the visual tree. It behaves exactly like a surface that has 100% transparent pixels.</para>
+      <para>To initialize the surface with pixel data, use the <see cref="IDCompositionSurface.BeginDraw" /> method. The first call to this method must cover the entire surface area to provide an initial value for every pixel. Subsequent calls may specify smaller sub-rectangles of the surface to update.</para>
+      <para>This method will fail if either the width or height exceed the max texture size. If your scenario requires dimensions beyond the max texture size, use <see cref="CreateVirtualSurface" /> method.</para>
+      <para>DirectComposition surfaces support the following pixel formats:</para>
+      <list type="bullet">
+        <item>
+          <description>DXGI_FORMAT_B8G8R8A8_UNORM
+</description>
+        </item>
+        <item>
+          <description>DXGI_FORMAT_R8G8B8A8_UNORM
+</description>
+        </item>
+        <item>
+          <description>DXGI_FORMAT_R16G16B16A16_FLOAT</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IDCompositionDevice2.CreateSurface" />
+    <seealso cref="IDCompositionDevice2.CreateVirtualSurface" />
+    <seealso cref="IDCompositionSurfaceFactory" />
+    <seealso cref="IDCompositionSurfaceFactory.CreateVirtualSurface" />
+  </member>
+  <member name="IDCompositionSurfaceFactory.CreateVirtualSurface">
+    <summary>
+      <para>Creates a sparsely populated surface that can be associated with one or more visuals for composition.</para>
+    </summary>
+    <param name="initialWidth">
+      <para>The width of the surface, in pixels. The maximum width is 16,777,216 pixels.</para>
+    </param>
+    <param name="initialHeight">
+      <para>The height of the surface, in pixels.
+The maximum height is 16,777,216 pixels.</para>
+    </param>
+    <param name="pixelFormat">
+      <para>The pixel format of the surface.</para>
+    </param>
+    <param name="alphaMode">
+      <para>The format of the alpha channel, if an alpha channel is included in the pixel format. This can be one of DXGI_ALPHA_MODE_PREMULTIPLIED or DXGI_ALPHA_MODE_IGNORE. It can also be DXGI_ALPHA_MODE_UNSPECIFIED, which is interpreted as DXGI_ALPHA_MODE_IGNORE.</para>
+    </param>
+    <param name="virtualSurface">
+      <para>The newly created virtual surface object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A newly created virtual surface object is in an uninitialized state. While it is uninitialized, the surface has no effect on the composition of the visual tree. It behaves exactly like a surface that is initialized with 100% transparent pixels.</para>
+      <para>To initialize the surface with pixel data, use the <see cref="IDCompositionSurface.BeginDraw" /> method. This method not only provides pixels for the surface, but it also allocates actual storage space for those pixels. The memory allocation persists until the application returns some of the memory to the system. The application can free part or all of the allocated memory by calling the <see cref="IDCompositionVirtualSurface.Trim" /> or <see cref="IDCompositionVirtualSurface.Resize" /> method.</para>
+      <para>Microsoft DirectComposition surfaces support the following pixel formats:</para>
+      <list type="bullet">
+        <item>
+          <description>DXGI_FORMAT_B8G8R8A8_UNORM
+</description>
+        </item>
+        <item>
+          <description>DXGI_FORMAT_R8G8B8A8_UNORM
+</description>
+        </item>
+        <item>
+          <description>DXGI_FORMAT_R16G16B16A16_FLOAT</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IDCompositionDevice2.CreateSurface" />
+    <seealso cref="IDCompositionDevice2.CreateVirtualSurface" />
+    <seealso cref="IDCompositionSurfaceFactory" />
+    <seealso cref="IDCompositionSurfaceFactory.CreateVirtualSurface" />
+  </member>
+  <member name="IDCompositionSurfaceFactory">
+    <summary>
+      <para>Creates surface and virtual surface objects associated with an application-provided rendering device.</para>
+    </summary>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionSurface" />
+    <seealso cref="IDCompositionVirtualSurface" />
+  </member>
+</doc>

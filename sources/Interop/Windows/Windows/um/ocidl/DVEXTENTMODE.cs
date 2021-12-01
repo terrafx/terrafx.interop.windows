@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVEXTENTMODE.xml' path='doc/member[@name="DVEXTENTMODE"]/*' />
 public enum DVEXTENTMODE
 {
+    /// <include file='DVEXTENTMODE.xml' path='doc/member[@name="DVEXTENTMODE.DVEXTENT_CONTENT"]/*' />
     DVEXTENT_CONTENT = 0,
+
+    /// <include file='DVEXTENTMODE.xml' path='doc/member[@name="DVEXTENTMODE.DVEXTENT_INTEGRAL"]/*' />
     DVEXTENT_INTEGRAL = (DVEXTENT_CONTENT + 1),
 }

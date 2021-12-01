@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_RENAME_INFO">
+    <summary>
+      <para>Contains the name to which the file should be renamed. Use only when calling
+<see cref="SetFileInformationByHandle" />.</para>
+    </summary>
+    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
+    <seealso cref="SetFileInformationByHandle" />
+  </member>
+  <member name="FILE_RENAME_INFO.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="FILE_RENAME_INFO.DUMMYUNIONNAME.ReplaceIfExists">
+    <summary>
+      <para>
+        <b>TRUE</b> to replace the file; otherwise, <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="FILE_RENAME_INFO.DUMMYUNIONNAME.Flags">
+    <summary></summary>
+  </member>
+  <member name="FILE_RENAME_INFO.ReplaceIfExists">
+    <summary>
+      <para>
+        <b>TRUE</b> to replace the file; otherwise, <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="FILE_RENAME_INFO.RootDirectory">
+    <summary>
+      <para>A handle to the root directory in which the file to be renamed is located.</para>
+    </summary>
+  </member>
+  <member name="FILE_RENAME_INFO.FileNameLength">
+    <summary>
+      <para>The size of <b>FileName</b> in bytes.</para>
+    </summary>
+  </member>
+  <member name="FILE_RENAME_INFO.FileName">
+    <summary>
+      <para>The new file name.</para>
+    </summary>
+  </member>
+</doc>

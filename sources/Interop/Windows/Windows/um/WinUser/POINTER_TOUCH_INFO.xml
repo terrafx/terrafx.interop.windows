@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POINTER_TOUCH_INFO">
+    <summary>
+      <para>Defines basic touch information common to all pointer types.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/structures">Structures</seealso>
+  </member>
+  <member name="POINTER_TOUCH_INFO.pointerInfo">
+    <summary>
+      <para>Type: <b><see cref="POINTER_INFO" /></b></para>
+      <para>An embedded <see cref="POINTER_INFO" /> header structure.</para>
+    </summary>
+  </member>
+  <member name="POINTER_TOUCH_INFO.touchFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/touch-flags-constants">Touch Flags</a></b></para>
+      <para>Currently none.</para>
+    </summary>
+  </member>
+  <member name="POINTER_TOUCH_INFO.touchMask">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/touch-mask-constants">Touch Mask</a></b></para>
+      <para>Indicates which of the optional fields contain valid values. The member can be zero or any combination of the values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/touch-mask-constants">Touch Mask</a> constants.</para>
+    </summary>
+  </member>
+  <member name="POINTER_TOUCH_INFO.rcContact">
+    <summary>
+      <para>Type: <b>RECT</b></para>
+      <para>The predicted screen coordinates of the contact area, in pixels.
+By default, if the device does not report a contact area, this field defaults to a 0-by-0 rectangle centered around the pointer location.</para>
+      <para>The predicted value is based on the pointer position reported by the digitizer and the motion of the pointer. This correction can compensate for visual lag due to inherent delays in sensing and processing the pointer location on the digitizer. This is applicable to  pointers of type <see cref="PT_TOUCH" />.</para>
+    </summary>
+  </member>
+  <member name="POINTER_TOUCH_INFO.rcContactRaw">
+    <summary>
+      <para>Type: <b>RECT</b></para>
+      <para>The raw screen coordinates of the contact area, in pixels. For adjusted screen coordinates, see <b>rcContact</b>.</para>
+    </summary>
+  </member>
+  <member name="POINTER_TOUCH_INFO.orientation">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>A pointer orientation, with a value between 0 and 359, where 0 indicates a touch pointer aligned with the x-axis and pointing from left to right; increasing values indicate degrees of rotation in the clockwise direction.</para>
+      <para>This field defaults to 0 if the device does not report orientation.</para>
+      <blockquote>
+        <para>[!NOTE]
+Some touchscreen devices that support orientation might report a half-range value (0-180) instead of a full range value (0-359).</para>
+      </blockquote>
+    </summary>
+  </member>
+  <member name="POINTER_TOUCH_INFO.pressure">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>A pen pressure normalized to a range between 0 and 1024. The default is 0 if the device does not report pressure.</para>
+    </summary>
+  </member>
+</doc>

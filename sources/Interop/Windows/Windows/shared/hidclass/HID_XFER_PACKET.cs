@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HID_XFER_PACKET.xml' path='doc/member[@name="HID_XFER_PACKET"]/*' />
 public unsafe partial struct HID_XFER_PACKET
 {
+    /// <include file='HID_XFER_PACKET.xml' path='doc/member[@name="HID_XFER_PACKET.reportBuffer"]/*' />
     [NativeTypeName("PUCHAR")]
     public byte* reportBuffer;
 
+    /// <include file='HID_XFER_PACKET.xml' path='doc/member[@name="HID_XFER_PACKET.reportBufferLen"]/*' />
     [NativeTypeName("ULONG")]
     public uint reportBufferLen;
 
+    /// <include file='HID_XFER_PACKET.xml' path='doc/member[@name="HID_XFER_PACKET.reportId"]/*' />
     [NativeTypeName("UCHAR")]
     public byte reportId;
 }

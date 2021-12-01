@@ -7,16 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFCameraIntrinsic_DistortionModel.xml' path='doc/member[@name="MFCameraIntrinsic_DistortionModel"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct MFCameraIntrinsic_DistortionModel
 {
+    /// <include file='MFCameraIntrinsic_DistortionModel.xml' path='doc/member[@name="MFCameraIntrinsic_DistortionModel.Radial_k1"]/*' />
     public float Radial_k1;
 
+    /// <include file='MFCameraIntrinsic_DistortionModel.xml' path='doc/member[@name="MFCameraIntrinsic_DistortionModel.Radial_k2"]/*' />
     public float Radial_k2;
 
+    /// <include file='MFCameraIntrinsic_DistortionModel.xml' path='doc/member[@name="MFCameraIntrinsic_DistortionModel.Radial_k3"]/*' />
     public float Radial_k3;
 
+    /// <include file='MFCameraIntrinsic_DistortionModel.xml' path='doc/member[@name="MFCameraIntrinsic_DistortionModel.Tangential_p1"]/*' />
     public float Tangential_p1;
 
+    /// <include file='MFCameraIntrinsic_DistortionModel.xml' path='doc/member[@name="MFCameraIntrinsic_DistortionModel.Tangential_p2"]/*' />
     public float Tangential_p2;
 }

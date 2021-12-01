@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEngineSupportsSourceTransfer.AttachMediaSource">
+    <summary>
+      <para>Attaches the media source.</para>
+    </summary>
+    <param name="pByteStream">
+      <para>Specifies the byte stream.</para>
+    </param>
+    <param name="pMediaSource">
+      <para>Specifies the media source.</para>
+    </param>
+    <param name="pMSE">
+      <para>Specifies the media source extension.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineSupportsSourceTransfer" />
+  </member>
+  <member name="IMFMediaEngineSupportsSourceTransfer.DetachMediaSource">
+    <summary>
+      <para>Detaches the media source.</para>
+    </summary>
+    <param name="ppByteStream">
+      <para>Receives the byte stream.</para>
+    </param>
+    <param name="ppMediaSource">
+      <para>Receives the media source.</para>
+    </param>
+    <param name="ppMSE">
+      <para>Receives the media source extension.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineSupportsSourceTransfer" />
+  </member>
+  <member name="IMFMediaEngineSupportsSourceTransfer.ShouldTransferSource">
+    <summary>
+      <para>Specifies whether or not the source should be transferred.</para>
+    </summary>
+    <param name="pfShouldTransfer">
+      <para>
+        <b>true</b> if the source should be transferred; otherwise, <b>false</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineSupportsSourceTransfer" />
+  </member>
+  <member name="IMFMediaEngineSupportsSourceTransfer">
+    <summary>
+      <para>Enables the media source to be transferred between  the media engine and the sharing engine for Play To.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

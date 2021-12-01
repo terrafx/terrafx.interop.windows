@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_CONSTRAINTS">
+    <summary>
+      <para>This structure specifies the security related constraints
+as part of <see cref="WS_POLICY_CONSTRAINTS" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_CONSTRAINTS.securityPropertyConstraints">
+    <summary>
+      <para>An array of security property constraints which override the default
+set of constraints.  The constraints specified here, combined
+with the default set of constraints limits the set of policies
+that will be matched.</para>
+      <para>If a security property constraint is not specified for a given property,
+then a default constraint value will be used.
+See <see cref="WS_SECURITY_PROPERTY_CONSTRAINT" /> for the
+supported set of properties and their default values.</para>
+      <para>Note that the defaults constraints for <see cref="WS_SECURITY_PROPERTY_CONSTRAINT" /></para>
+      <para>are the same as the defaults for <see cref="WS_SECURITY_PROPERTY" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_CONSTRAINTS.securityPropertyConstraintCount">
+    <summary>
+      <para>The number of elements specified in the securityPropertyConstraints
+array.</para>
+      <para>If this value is 0, then the securityPropertyConstraints array may be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_CONSTRAINTS.securityBindingConstraints">
+    <summary>
+      <para>Any array of security binding constraints which taken as a unit specify
+the type of security to match in the policy.</para>
+      <para>The type of each <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> corresponds
+to the types of security that is specified using a <see cref="WS_SECURITY_BINDING" /> structure.  Each security binding specifies one security token, and similarly,
+each security binding constraint specifies constraints on one security token.</para>
+      <para>Specifying zero constraints indicates no security.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_CONSTRAINTS.securityBindingConstraintCount">
+    <summary>
+      <para>The number of elements specified in the securityBindingConstraints
+array.</para>
+      <para>If this value is 0, then the securityBindingConstraints array may be <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

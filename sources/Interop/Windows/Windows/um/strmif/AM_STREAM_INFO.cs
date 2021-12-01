@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_STREAM_INFO.xml' path='doc/member[@name="AM_STREAM_INFO"]/*' />
 public partial struct AM_STREAM_INFO
 {
+    /// <include file='AM_STREAM_INFO.xml' path='doc/member[@name="AM_STREAM_INFO.tStart"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long tStart;
 
+    /// <include file='AM_STREAM_INFO.xml' path='doc/member[@name="AM_STREAM_INFO.tStop"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long tStop;
 
+    /// <include file='AM_STREAM_INFO.xml' path='doc/member[@name="AM_STREAM_INFO.dwStartCookie"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStartCookie;
 
+    /// <include file='AM_STREAM_INFO.xml' path='doc/member[@name="AM_STREAM_INFO.dwStopCookie"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStopCookie;
 
+    /// <include file='AM_STREAM_INFO.xml' path='doc/member[@name="AM_STREAM_INFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

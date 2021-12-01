@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType"]/*' />
 public enum eAVEncMPVQScaleType
 {
+    /// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_Auto"]/*' />
     eAVEncMPVQScaleType_Auto = 0,
+
+    /// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_Linear"]/*' />
     eAVEncMPVQScaleType_Linear = 1,
+
+    /// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_NonLinear"]/*' />
     eAVEncMPVQScaleType_NonLinear = 2,
 }

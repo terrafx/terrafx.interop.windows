@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfLangBarItemMgr.AddItem">
+    <summary>
+      <para>Adds an item to the language bar.</para>
+    </summary>
+    <param name="punk">
+      <para>Pointer to the <see cref="ITfLangBarItem" /> object to add to the language bar.</para>
+      <para>Starting with Windows 8, only the first item that returns GUID_LBI_INPUTMODE (from <see cref="GetInfo" />) is shown. For more information, see <a href="https://docs.microsoft.com/en-us/windows/win32/w8cookbook/third-party-input-method-editors#manifestation">Third-party input method editors</a> in the Compatibility cookbook for Windows.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful (silently ignored calls also return this status).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>punk</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItem" />
+    <seealso cref="ITfLangBarItemMgr" />
+  </member>
+  <member name="ITfLangBarItemMgr.AdviseItemSink">
+    <summary>
+      <para>Installs a language bar item event sink for a language bar item.</para>
+    </summary>
+    <param name="punk">
+      <para>Pointer to the <see cref="ITfLangBarItemSink" /> object to install.</para>
+    </param>
+    <param name="pdwCookie">
+      <para>Pointer to a <b>DWORD</b> that receives an advise sink identification cookie. This cookie identifies the advise sink when it is removed with the <see cref="ITfLangBarItemMgr.UnadviseItemSink" /> or <see cref="ITfLangBarItemMgr.UnadviseItemsSink" /> method.</para>
+    </param>
+    <param name="rguidItem">
+      <para>Contains the <b>GUID</b> that identifies the item to install the advise sink for. This is the item <b>GUID</b> that the item supplies in <see cref="ITfLangBarItem.GetInfo" />. This can be a custom value or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-lang-bar-items">predefined language bar items</a>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>rguidItem</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <i>punk</i> and/or <i>pdwCookie</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItem.GetInfo" />
+    <seealso cref="ITfLangBarItemMgr" />
+    <seealso cref="ITfLangBarItemMgr.UnadviseItemSink " />
+    <seealso cref="ITfLangBarItemMgr.UnadviseItemsSink " />
+    <seealso cref="ITfLangBarItemSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-lang-bar-items">Predefined language bar items
+</seealso>
+  </member>
+  <member name="ITfLangBarItemMgr.AdviseItemsSink">
+    <summary>
+      <para>Installs one or more language bar item event sinks for one or more language bar items.</para>
+    </summary>
+    <param name="ulCount">
+      <para>Contains the number of advise sinks to install.</para>
+    </param>
+    <param name="ppunk">
+      <para>Pointer to an array of <see cref="ITfLangBarItemSink" /> objects to install. This array must be at least <i>ulCount</i> elements in length.</para>
+    </param>
+    <param name="pguidItem">
+      <para>Pointer to an array of <b>GUID</b>s that identify the items to install the advise sinks for. These are the item <b>GUID</b>s that the item supplies in <see cref="ITfLangBarItem.GetInfo" />. This array must be at least <i>ulCount</i> elements in length.</para>
+    </param>
+    <param name="pdwCookie">
+      <para>Pointer to an array of <b>DWORD</b>s that receive the corresponding advise sink identification cookies. These cookies identify the advise sinks when they are removed with the <see cref="ITfLangBarItemMgr.UnadviseItemSink" /> or <see cref="ITfLangBarItemMgr.UnadviseItemsSink" /> method. This array must be at least <i>ulCount</i> elements in length.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItem.GetInfo" />
+    <seealso cref="ITfLangBarItemMgr" />
+    <seealso cref="ITfLangBarItemMgr.UnadviseItemSink " />
+    <seealso cref="ITfLangBarItemSink" />
+  </member>
+  <member name="ITfLangBarItemMgr.EnumItems">
+    <summary>
+      <para>Obtains an enumerator that contains the items in the language bar.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Pointer to an <see cref="IEnumTfLangBarItems" /> interface pointer that receives the enumerator object.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppEnum</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IEnumTfLangBarItems" />
+    <seealso cref="ITfLangBarItemMgr" />
+  </member>
+  <member name="ITfLangBarItemMgr.GetItem">
+    <summary>
+      <para>Obtains the ITfLangBarItem interface for an item in the language bar.</para>
+    </summary>
+    <param name="rguid">
+      <para>GUID that identifies the item to obtain. This is the item GUID that the item supplies in <see cref="ITfLangBarItem.GetInfo" />. This identifier can be a custom value or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-lang-bar-items">predefined language bar items</a>.</para>
+    </param>
+    <param name="ppItem">
+      <para>Pointer to an <see cref="ITfLangBarItem" /> interface pointer that receives the item interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The item cannot be found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ppItem</i> parameter is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItem" />
+    <seealso cref="ITfLangBarItem.GetInfo" />
+    <seealso cref="ITfLangBarItemMgr" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-lang-bar-items">Predefined language bar items
+</seealso>
+  </member>
+  <member name="ITfLangBarItemMgr.GetItemFloatingRect">
+    <summary>
+      <para>Obtains the bounding rectangle of an item on the language bar.</para>
+    </summary>
+    <param name="dwThreadId">
+      <para>Not currently used. Must be zero.</para>
+    </param>
+    <param name="rguid">
+      <para>Contains the <b>GUID</b> that identifies the item to obtain the bounding rectangle for. This is the item <b>GUID</b> that the item supplies in <see cref="ITfLangBarItem.GetInfo" />. This can be a custom value or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-lang-bar-items">predefined language bar items</a>.</para>
+    </param>
+    <param name="prc">
+      <para>Pointer to a <b>RECT</b> structure that receives the bounding rectangle in screen coordinates.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>prc</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItem.GetInfo" />
+    <seealso cref="ITfLangBarItemMgr" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-lang-bar-items">Predefined language bar items
+</seealso>
+  </member>
+  <member name="ITfLangBarItemMgr.GetItemNum">
+    <summary>
+      <para>Obtains the number of items in the language bar.</para>
+    </summary>
+    <param name="pulCount">
+      <para>Pointer to a <b>ULONG</b> that receives the number of items in the language bar.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pulCount</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfLangBarItemMgr.GetItems">
+    <summary>
+      <para>Obtains the interface, information and status for one or more items in the language bar.</para>
+    </summary>
+    <param name="ulCount">
+      <para>Specifies the number of items to obtain the status for.</para>
+    </param>
+    <param name="ppItem">
+      <para>Pointer to an array of <see cref="ITfLangBarItem" /> interface pointers that receive the item interfaces. This array must be at least <i>ulCount</i> elements in length.</para>
+    </param>
+    <param name="pInfo">
+      <para>[in, out] Pointer to an array of <see cref="TF_LANGBARITEMINFO" /> structures that receive the information for each item. This array must be at least <i>ulCount</i> elements in length.</para>
+    </param>
+    <param name="pdwStatus">
+      <para>[in, out] Pointer to an array of <b>DWORD</b> values that receive the status of each item. Each element in this array receives zero or a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-status--constants">TF_LBI_STATUS_*</a> values. This array must be at least <i>ulCount</i> elements in length.</para>
+    </param>
+    <param name="pcFetched">
+      <para>[in, out] Pointer to a ULONG that receives the number of items obtained by this method. This parameter can be <b>NULL</b> if this information is not required.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The number of items obtained is less than the number of items requested. If <i>pcFetched</i> is not <b>NULL</b>, <i>pcFetched</i> receives the number of items obtained.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItem" />
+    <seealso cref="ITfLangBarItemMgr" />
+    <seealso cref="TF_LANGBARITEMINFO" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-status--constants">TF_LBI_STATUS_* Constants
+</seealso>
+  </member>
+  <member name="ITfLangBarItemMgr.GetItemsStatus">
+    <summary>
+      <para>Obtains the status of one or more items on the language bar.</para>
+    </summary>
+    <param name="ulCount">
+      <para>Specifies the number of items to obtain the status for.</para>
+    </param>
+    <param name="prgguid">
+      <para>Pointer to an array of <b>GUID</b>s that identify the items obtain the status for. These are the item <b>GUID</b>s that the item supplies in <see cref="ITfLangBarItem.GetInfo" />. This array must be at least <i>ulCount</i> elements in length.</para>
+    </param>
+    <param name="pdwStatus">
+      <para>Pointer to an array of <b>DWORD</b> values that receive the status of each item. Each element in this array receives zero or a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-status--constants">TF_LBI_STATUS_*</a> values. This array must be at least <i>ulCount</i> elements in length.</para>
+      <para>The index of each status value corresponds to the index of the item identifier in <i>prgguid</i>. For example, the element 0 in <i>pdwStatus</i> receives the for the item identified by element 0 of <i>prgguid</i>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method causes the <see cref="ITfLangBarItem.GetStatus" /> method of each language bar item identified by <i>prgguid</i> to be called.</para>
+    </remarks>
+    <seealso cref="ITfLangBarItem.GetStatus " />
+    <seealso cref="ITfLangBarItemMgr" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-status--constants">TF_LBI_STATUS_* Constants
+</seealso>
+  </member>
+  <member name="ITfLangBarItemMgr.RemoveItem">
+    <summary>
+      <para>Removes an item from the language bar.</para>
+    </summary>
+    <param name="punk">
+      <para>Pointer to the <see cref="ITfLangBarItem" /> object to remove from the language bar. The language bar will call <see cref="ITfLangBarItem.GetInfo" /> and use the item <b>GUID</b> to identify the item to remove.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>punk</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItem" />
+    <seealso cref="ITfLangBarItem.GetInfo" />
+    <seealso cref="ITfLangBarItemMgr" />
+  </member>
+  <member name="ITfLangBarItemMgr.UnadviseItemSink">
+    <summary>
+      <para>Removes a language bar item event sink.</para>
+    </summary>
+    <param name="dwCookie">
+      <para>Contains a <i>DWORD</i> that identifies the advise sink to remove. This cookie is obtained when the advise sink is installed with <see cref="ITfLangBarItemMgr.AdviseItemSink" /> or <see cref="ITfLangBarItemMgr.AdviseItemsSink" />.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItemMgr" />
+    <seealso cref="ITfLangBarItemMgr.AdviseItemSink " />
+    <seealso cref="ITfLangBarItemMgr.AdviseItemsSink " />
+  </member>
+  <member name="ITfLangBarItemMgr.UnadviseItemsSink">
+    <summary>
+      <para>Removes one or more language bar item event sinks.</para>
+    </summary>
+    <param name="ulCount">
+      <para>Contains the number of advise sinks to install.</para>
+    </param>
+    <param name="pdwCookie">
+      <para>Pointer to an array of <b>DWORD</b>s that identify the advise sinks to remove. These cookies are obtained when the advise sinks are installed with <see cref="ITfLangBarItemMgr.AdviseItemSink" /> or <see cref="ITfLangBarItemMgr.AdviseItemsSink" />. This array must be at least <i>ulCount</i> elements in length.</para>
+    </param>
+    <returns>
+      <para>This method has no return values.</para>
+    </returns>
+    <seealso cref="ITfLangBarItemMgr" />
+    <seealso cref="ITfLangBarItemMgr.AdviseItemSink " />
+    <seealso cref="ITfLangBarItemMgr.AdviseItemsSink " />
+  </member>
+  <member name="ITfLangBarItemMgr">
+    <summary>
+      <para>The <b>ITfLangBarItemMgr</b> interface is implemented by the language bar and used by a text service to manage items in the language bar.</para>
+      <para>A text service obtains an instance of this interface by calling ITfThreadMgr.QueryInterface with IID_ITfLangBarItemMgr. An instance of this interface can also be created by calling <see cref="CoCreateInstance" /> with CLSID_TF_LangBarItemMgr.</para>
+    </summary>
+    <seealso cref="CoCreateInstance" />
+    <seealso cref="ITfLangBarItem" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

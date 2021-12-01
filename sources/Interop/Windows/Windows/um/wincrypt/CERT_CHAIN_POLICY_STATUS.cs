@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="CERT_CHAIN_POLICY_STATUS"]/*' />
 public unsafe partial struct CERT_CHAIN_POLICY_STATUS
 {
+    /// <include file='CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="CERT_CHAIN_POLICY_STATUS.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="CERT_CHAIN_POLICY_STATUS.dwError"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwError;
 
+    /// <include file='CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="CERT_CHAIN_POLICY_STATUS.lChainIndex"]/*' />
     [NativeTypeName("LONG")]
     public int lChainIndex;
 
+    /// <include file='CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="CERT_CHAIN_POLICY_STATUS.lElementIndex"]/*' />
     [NativeTypeName("LONG")]
     public int lElementIndex;
 
+    /// <include file='CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="CERT_CHAIN_POLICY_STATUS.pvExtraPolicyStatus"]/*' />
     public void* pvExtraPolicyStatus;
 }

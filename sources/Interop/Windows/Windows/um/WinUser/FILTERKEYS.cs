@@ -5,22 +5,29 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILTERKEYS.xml' path='doc/member[@name="FILTERKEYS"]/*' />
 public partial struct FILTERKEYS
 {
+    /// <include file='FILTERKEYS.xml' path='doc/member[@name="FILTERKEYS.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='FILTERKEYS.xml' path='doc/member[@name="FILTERKEYS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='FILTERKEYS.xml' path='doc/member[@name="FILTERKEYS.iWaitMSec"]/*' />
     [NativeTypeName("DWORD")]
     public uint iWaitMSec;
 
+    /// <include file='FILTERKEYS.xml' path='doc/member[@name="FILTERKEYS.iDelayMSec"]/*' />
     [NativeTypeName("DWORD")]
     public uint iDelayMSec;
 
+    /// <include file='FILTERKEYS.xml' path='doc/member[@name="FILTERKEYS.iRepeatMSec"]/*' />
     [NativeTypeName("DWORD")]
     public uint iRepeatMSec;
 
+    /// <include file='FILTERKEYS.xml' path='doc/member[@name="FILTERKEYS.iBounceMSec"]/*' />
     [NativeTypeName("DWORD")]
     public uint iBounceMSec;
 }

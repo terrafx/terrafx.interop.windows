@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPDESC_VIEW_FLAGS">
+    <summary>
+      <para>These flags describe properties in property description list strings.</para>
+    </summary>
+    <remarks>
+      <para>These values are defined in propsys.h and propsys.idl.</para>
+    </remarks>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_DEFAULT">
+    <summary>
+      <para>Show this property by default.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_CENTERALIGN">
+    <summary>
+      <para>This property should be centered.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_RIGHTALIGN">
+    <summary>
+      <para>This property should be right aligned.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_BEGINNEWGROUP">
+    <summary>
+      <para>Show this property as the beginning of the next collection of properties in the view.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_FILLAREA">
+    <summary>
+      <para>Fill the remainder of the view area with the content of this property.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_SORTDESCENDING">
+    <summary>
+      <para>Sort this property in reverse (descending) order. Applies to a property in a list of sorted properties.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_SHOWONLYIFPRESENT">
+    <summary>
+      <para>Show this property only if it is present.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_SHOWBYDEFAULT">
+    <summary>
+      <para>This property should be shown by default in a view (where applicable).</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_SHOWINPRIMARYLIST">
+    <summary>
+      <para>This property should be shown by default in the primary column selection UI.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_SHOWINSECONDARYLIST">
+    <summary>
+      <para>This property should be shown by default in the secondary column selection UI.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_HIDELABEL">
+    <summary>
+      <para>Hide the label of this property if the view normally shows the label.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_HIDDEN">
+    <summary>
+      <para>This property should not be displayed as a column in the UI.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_CANWRAP">
+    <summary>
+      <para>This property can be wrapped to the next row.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_VIEW_FLAGS.PDVF_MASK_ALL">
+    <summary>
+      <para>A mask used to retrieve all flags.</para>
+    </summary>
+  </member>
+</doc>

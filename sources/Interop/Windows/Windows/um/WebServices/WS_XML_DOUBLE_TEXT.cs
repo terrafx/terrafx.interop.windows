@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_DOUBLE_TEXT.xml' path='doc/member[@name="WS_XML_DOUBLE_TEXT"]/*' />
 public partial struct WS_XML_DOUBLE_TEXT
 {
+    /// <include file='WS_XML_DOUBLE_TEXT.xml' path='doc/member[@name="WS_XML_DOUBLE_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_DOUBLE_TEXT.xml' path='doc/member[@name="WS_XML_DOUBLE_TEXT.value"]/*' />
     public double value;
 }

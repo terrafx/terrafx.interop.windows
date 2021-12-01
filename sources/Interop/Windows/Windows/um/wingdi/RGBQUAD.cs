@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RGBQUAD.xml' path='doc/member[@name="RGBQUAD"]/*' />
 public partial struct RGBQUAD
 {
+    /// <include file='RGBQUAD.xml' path='doc/member[@name="RGBQUAD.rgbBlue"]/*' />
     public byte rgbBlue;
 
+    /// <include file='RGBQUAD.xml' path='doc/member[@name="RGBQUAD.rgbGreen"]/*' />
     public byte rgbGreen;
 
+    /// <include file='RGBQUAD.xml' path='doc/member[@name="RGBQUAD.rgbRed"]/*' />
     public byte rgbRed;
 
+    /// <include file='RGBQUAD.xml' path='doc/member[@name="RGBQUAD.rgbReserved"]/*' />
     public byte rgbReserved;
 }

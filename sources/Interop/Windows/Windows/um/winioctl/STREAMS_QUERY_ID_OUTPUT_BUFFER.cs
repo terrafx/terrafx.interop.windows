@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STREAMS_QUERY_ID_OUTPUT_BUFFER.xml' path='doc/member[@name="STREAMS_QUERY_ID_OUTPUT_BUFFER"]/*' />
 public partial struct STREAMS_QUERY_ID_OUTPUT_BUFFER
 {
+    /// <include file='STREAMS_QUERY_ID_OUTPUT_BUFFER.xml' path='doc/member[@name="STREAMS_QUERY_ID_OUTPUT_BUFFER.StreamId"]/*' />
     [NativeTypeName("DWORD")]
     public uint StreamId;
 }

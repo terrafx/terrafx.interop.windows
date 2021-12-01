@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RM_UNIQUE_PROCESS">
+    <summary>
+      <para>Uniquely identifies a process by its PID and the time the process began.  An array of <b>RM_UNIQUE_PROCESS</b> structures can be passed to  the <see cref="RmRegisterResources" /> function.</para>
+    </summary>
+    <remarks>
+      <para>The <b>RM_UNIQUE_PROCESS</b> structure can be used to uniquely identify an application in an <see cref="RM_PROCESS_INFO" /> structure or  registered with the Restart Manager session by the <see cref="RmRegisterResources" /> function.</para>
+    </remarks>
+  </member>
+  <member name="RM_UNIQUE_PROCESS.dwProcessId">
+    <summary>
+      <para>The product identifier (PID).</para>
+    </summary>
+  </member>
+  <member name="RM_UNIQUE_PROCESS.ProcessStartTime">
+    <summary>
+      <para>The creation time of the process. The time is provided as a <b>FILETIME</b> structure that is returned by the <i>lpCreationTime</i> parameter of the <see cref="GetProcessTimes" /> function.</para>
+    </summary>
+  </member>
+</doc>

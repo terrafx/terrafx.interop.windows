@@ -5,34 +5,47 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW"]/*' />
 public unsafe partial struct CREATESTRUCTW
 {
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.lpCreateParams"]/*' />
     [NativeTypeName("LPVOID")]
     public void* lpCreateParams;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.hInstance"]/*' />
     public HINSTANCE hInstance;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.hMenu"]/*' />
     public HMENU hMenu;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.hwndParent"]/*' />
     public HWND hwndParent;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.cy"]/*' />
     public int cy;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.cx"]/*' />
     public int cx;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.y"]/*' />
     public int y;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.x"]/*' />
     public int x;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.style"]/*' />
     [NativeTypeName("LONG")]
     public int style;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.lpszName"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* lpszName;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.lpszClass"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* lpszClass;
 
+    /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.dwExStyle"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwExStyle;
 }

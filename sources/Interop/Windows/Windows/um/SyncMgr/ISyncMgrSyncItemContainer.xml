@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrSyncItemContainer.GetSyncItem">
+    <summary>
+      <para>Gets a specified sync item.</para>
+    </summary>
+    <param name="pszItemID">
+      <para>Type: <b>LPCWSTR*</b></para>
+      <para>A pointer to a buffer containing the item ID representing the desired item. The ID is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
+    </param>
+    <param name="ppItem">
+      <para>Type: <b><see cref="ISyncMgrSyncItem" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to an <see cref="ISyncMgrSyncItem" /> instance representing the sync item.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. Returns E_INVALIDARG if the handler does not recognize the ID specified at <i>ppszItemID</i>.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrSyncItemContainer.GetSyncItemCount">
+    <summary>
+      <para>Gets a count of the sync items in the container.</para>
+    </summary>
+    <param name="pcItems">
+      <para>Type: <b>ULONG*</b></para>
+      <para>When this method returns, contains a pointer to the number of items in the container. This is the number of items enumerated by <see cref="IEnumSyncMgrSyncItems" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrSyncItemContainer.GetSyncItemEnumerator">
+    <summary>
+      <para>Gets an interface that enumerates the handler's sync items.</para>
+    </summary>
+    <param name="ppenum">
+      <para>Type: <b><see cref="IEnumSyncMgrSyncItems" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to an <see cref="IEnumSyncMgrSyncItems" /> instance. <b>IEnumSyncMgrSyncItems</b> can be used to retrieve an interface for each sync item in the set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method replaces the older <see cref="EnumSyncMgrItems" /> method. The older method returned an enumerator interface which returned a <see cref="SYNCMGRITEM" /> structure for each sync item. To get the data previously provided by that structure, Sync Center calls <see cref="QueryInterface" /> on each item's <see cref="ISyncMgrSyncItem" /> interface to request a corresponding <see cref="ISyncMgrSyncItemInfo" /> interface.</para>
+      <para>The number of enumerated items can be obtained through the <see cref="ISyncMgrSyncItemContainer.GetSyncItemCount" /> method.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.GetSyncItemEnumerator(
+    __out IEnumSyncMgrSyncItems **ppenum)
+{
+    *ppenum = NULL;
+
+    // Load the items using a private class method.
+    HRESULT hr = _LoadItems();
+
+    if (SUCCEEDED(hr))
+    {
+        hr = CEnumSyncMgrSyncItems_CreateInstance(this,
+                                                  IID_PPV_ARGS(ppenum));
+    }
+
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItemContainer">
+    <summary>
+      <para>Exposes methods that provide information to handlers about the items they contain.</para>
+    </summary>
+    <remarks>
+      <para>Sync Center calls <see cref="QueryInterface" /> on the <see cref="ISyncMgrHandler" /> interface to obtain a pointer to the <b>ISyncMgrSyncItemContainer</b> interface.</para>
+    </remarks>
+  </member>
+</doc>

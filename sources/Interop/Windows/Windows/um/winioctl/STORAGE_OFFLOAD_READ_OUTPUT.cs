@@ -7,20 +7,26 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="STORAGE_OFFLOAD_READ_OUTPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct STORAGE_OFFLOAD_READ_OUTPUT
 {
+    /// <include file='STORAGE_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="STORAGE_OFFLOAD_READ_OUTPUT.OffloadReadFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint OffloadReadFlags;
 
+    /// <include file='STORAGE_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="STORAGE_OFFLOAD_READ_OUTPUT.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 
+    /// <include file='STORAGE_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="STORAGE_OFFLOAD_READ_OUTPUT.LengthProtected"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong LengthProtected;
 
+    /// <include file='STORAGE_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="STORAGE_OFFLOAD_READ_OUTPUT.TokenLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint TokenLength;
 
+    /// <include file='STORAGE_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="STORAGE_OFFLOAD_READ_OUTPUT.Token"]/*' />
     public STORAGE_OFFLOAD_TOKEN Token;
 }

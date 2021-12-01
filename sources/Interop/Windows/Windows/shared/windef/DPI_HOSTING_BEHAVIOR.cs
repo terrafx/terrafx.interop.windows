@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DPI_HOSTING_BEHAVIOR.xml' path='doc/member[@name="DPI_HOSTING_BEHAVIOR"]/*' />
 public enum DPI_HOSTING_BEHAVIOR
 {
+    /// <include file='DPI_HOSTING_BEHAVIOR.xml' path='doc/member[@name="DPI_HOSTING_BEHAVIOR.DPI_HOSTING_BEHAVIOR_INVALID"]/*' />
     DPI_HOSTING_BEHAVIOR_INVALID = -1,
+
+    /// <include file='DPI_HOSTING_BEHAVIOR.xml' path='doc/member[@name="DPI_HOSTING_BEHAVIOR.DPI_HOSTING_BEHAVIOR_DEFAULT"]/*' />
     DPI_HOSTING_BEHAVIOR_DEFAULT = 0,
+
+    /// <include file='DPI_HOSTING_BEHAVIOR.xml' path='doc/member[@name="DPI_HOSTING_BEHAVIOR.DPI_HOSTING_BEHAVIOR_MIXED"]/*' />
     DPI_HOSTING_BEHAVIOR_MIXED = 1,
 }

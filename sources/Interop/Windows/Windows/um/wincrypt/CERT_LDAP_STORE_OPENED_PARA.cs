@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_LDAP_STORE_OPENED_PARA.xml' path='doc/member[@name="CERT_LDAP_STORE_OPENED_PARA"]/*' />
 public unsafe partial struct CERT_LDAP_STORE_OPENED_PARA
 {
+    /// <include file='CERT_LDAP_STORE_OPENED_PARA.xml' path='doc/member[@name="CERT_LDAP_STORE_OPENED_PARA.pvLdapSessionHandle"]/*' />
     public void* pvLdapSessionHandle;
 
+    /// <include file='CERT_LDAP_STORE_OPENED_PARA.xml' path='doc/member[@name="CERT_LDAP_STORE_OPENED_PARA.pwszLdapUrl"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pwszLdapUrl;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter"]/*' />
 [Guid("133ADCD4-19B4-4020-9FDC-842E78253B17")]
 [NativeTypeName("struct ISpPhoneticAlphabetConverter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint>)(lpVtbl[1]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint>)(lpVtbl[2]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.GetLangId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetLangId([NativeTypeName("WORD *")] ushort* pLangID)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, int>)(lpVtbl[3]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pLangID);
     }
 
+    /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.SetLangId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetLangId([NativeTypeName("WORD")] ushort LangID)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort, int>)(lpVtbl[4]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), LangID);
     }
 
+    /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.SAPI2UPS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SAPI2UPS([NativeTypeName("const SPPHONEID *")] ushort* pszSAPIId, [NativeTypeName("SPPHONEID *")] ushort* pszUPSId, [NativeTypeName("DWORD")] uint cMaxLength)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, ushort*, uint, int>)(lpVtbl[5]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pszSAPIId, pszUPSId, cMaxLength);
     }
 
+    /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.UPS2SAPI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UPS2SAPI([NativeTypeName("const SPPHONEID *")] ushort* pszUPSId, [NativeTypeName("SPPHONEID *")] ushort* pszSAPIId, [NativeTypeName("DWORD")] uint cMaxLength)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, ushort*, uint, int>)(lpVtbl[6]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pszUPSId, pszSAPIId, cMaxLength);
     }
 
+    /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.GetMaxConvertLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetMaxConvertLength([NativeTypeName("DWORD")] uint cSrcLength, BOOL bSAPI2UPS, [NativeTypeName("DWORD *")] uint* pcMaxDestLength)

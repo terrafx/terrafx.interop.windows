@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGRHANDLERFLAGS">
+    <summary>
+      <para>Used in the <see cref="SYNCMGRHANDLERINFO" /> structure as flags that apply to the current handler.</para>
+    </summary>
+    <remarks>
+      <para>Only the <b><b>SYNCMGRHANDLER_HASPROPERTIES</b></b> and <b><b>SYNCMGRHANDLER_HIDDEN</b></b> flags are recognized by Windows Vista. Although Windows Vista recognizes the <b><b>SYNCMGRHANDLER_HIDDEN</b></b> flag, it does not currently use it.</para>
+      <para>All flags are still valid for previous versions of Windows.</para>
+    </remarks>
+    <seealso cref="SYNCMGRHANDLERINFO" />
+  </member>
+  <member name="SYNCMGRHANDLERFLAGS.SYNCMGRHANDLER_HASPROPERTIES">
+    <summary>
+      <para>The current handler provides a property sheet dialog.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRHANDLERFLAGS.SYNCMGRHANDLER_MAYESTABLISHCONNECTION">
+    <summary>
+      <para>May call back the <see cref="ISyncMgrSynchronizeCallback.EstablishConnection" /> method. This value is ignored in <b>Windows Vista and later</b>.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRHANDLERFLAGS.SYNCMGRHANDLER_ALWAYSLISTHANDLER">
+    <summary>
+      <para>Indicates Show Handler in Choice even if items are not shown. This value is ignored in <b>Windows Vista and later</b>.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRHANDLERFLAGS.SYNCMGRHANDLER_HIDDEN">
+    <summary>
+      <para>
+        <b>Windows Vista and later</b>. Do not display handler or item.  This value is ignored by <b>Windows Vista</b>.</para>
+    </summary>
+  </member>
+</doc>

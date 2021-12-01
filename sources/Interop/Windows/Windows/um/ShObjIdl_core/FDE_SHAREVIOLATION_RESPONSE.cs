@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FDE_SHAREVIOLATION_RESPONSE.xml' path='doc/member[@name="FDE_SHAREVIOLATION_RESPONSE"]/*' />
 public enum FDE_SHAREVIOLATION_RESPONSE
 {
+    /// <include file='FDE_SHAREVIOLATION_RESPONSE.xml' path='doc/member[@name="FDE_SHAREVIOLATION_RESPONSE.FDESVR_DEFAULT"]/*' />
     FDESVR_DEFAULT = 0,
+
+    /// <include file='FDE_SHAREVIOLATION_RESPONSE.xml' path='doc/member[@name="FDE_SHAREVIOLATION_RESPONSE.FDESVR_ACCEPT"]/*' />
     FDESVR_ACCEPT = 1,
+
+    /// <include file='FDE_SHAREVIOLATION_RESPONSE.xml' path='doc/member[@name="FDE_SHAREVIOLATION_RESPONSE.FDESVR_REFUSE"]/*' />
     FDESVR_REFUSE = 2,
 }

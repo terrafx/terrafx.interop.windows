@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrConflictFolder.xml' path='doc/member[@name="ISyncMgrConflictFolder"]/*' />
 [Guid("59287F5E-BC81-4FCA-A7F1-E5A8ECDB1D69")]
 [NativeTypeName("struct ISyncMgrConflictFolder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrConflictFolder : ISyncMgrConflictFolder.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrConflictFolder : ISyncMgrConflictFolder.Int
         return ((delegate* unmanaged<ISyncMgrConflictFolder*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrConflictFolder : ISyncMgrConflictFolder.Int
         return ((delegate* unmanaged<ISyncMgrConflictFolder*, uint>)(lpVtbl[1]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrConflictFolder : ISyncMgrConflictFolder.Int
         return ((delegate* unmanaged<ISyncMgrConflictFolder*, uint>)(lpVtbl[2]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrConflictFolder.xml' path='doc/member[@name="ISyncMgrConflictFolder.GetConflictIDList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetConflictIDList(ISyncMgrConflict* pConflict, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlConflict)

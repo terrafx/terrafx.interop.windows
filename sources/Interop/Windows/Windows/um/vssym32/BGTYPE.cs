@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BGTYPE.xml' path='doc/member[@name="BGTYPE"]/*' />
 public enum BGTYPE
 {
+    /// <include file='BGTYPE.xml' path='doc/member[@name="BGTYPE.BT_IMAGEFILE"]/*' />
     BT_IMAGEFILE = 0,
+
+    /// <include file='BGTYPE.xml' path='doc/member[@name="BGTYPE.BT_BORDERFILL"]/*' />
     BT_BORDERFILL = 1,
+
+    /// <include file='BGTYPE.xml' path='doc/member[@name="BGTYPE.BT_NONE"]/*' />
     BT_NONE = 2,
 }

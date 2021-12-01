@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter"]/*' />
 [Guid("7279FC88-709D-4095-B63D-69FE4B0D9030")]
 [NativeTypeName("struct IXmlWriter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, Guid*, void**, int>)(lpVtbl[0]))((IXmlWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, uint>)(lpVtbl[1]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, uint>)(lpVtbl[2]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.SetOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetOutput(IUnknown* pOutput)
@@ -46,6 +51,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, IUnknown*, int>)(lpVtbl[3]))((IXmlWriter*)Unsafe.AsPointer(ref this), pOutput);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.GetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetProperty(uint nProperty, [NativeTypeName("LONG_PTR *")] nint* ppValue)
@@ -53,6 +59,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, uint, nint*, int>)(lpVtbl[4]))((IXmlWriter*)Unsafe.AsPointer(ref this), nProperty, ppValue);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.SetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetProperty(uint nProperty, [NativeTypeName("LONG_PTR")] nint pValue)
@@ -60,6 +67,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, uint, nint, int>)(lpVtbl[5]))((IXmlWriter*)Unsafe.AsPointer(ref this), nProperty, pValue);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT WriteAttributes(IXmlReader* pReader, BOOL fWriteDefaultAttributes)
@@ -67,6 +75,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[6]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteAttributeString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT WriteAttributeString([NativeTypeName("LPCWSTR")] ushort* pwszPrefix, [NativeTypeName("LPCWSTR")] ushort* pwszLocalName, [NativeTypeName("LPCWSTR")] ushort* pwszNamespaceUri, [NativeTypeName("LPCWSTR")] ushort* pwszValue)
@@ -74,6 +83,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, ushort*, ushort*, ushort*, int>)(lpVtbl[7]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteCData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT WriteCData([NativeTypeName("LPCWSTR")] ushort* pwszText)
@@ -81,6 +91,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, int>)(lpVtbl[8]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszText);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteCharEntity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT WriteCharEntity([NativeTypeName("WCHAR")] ushort wch)
@@ -88,6 +99,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort, int>)(lpVtbl[9]))((IXmlWriter*)Unsafe.AsPointer(ref this), wch);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteChars"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT WriteChars([NativeTypeName("const WCHAR *")] ushort* pwch, uint cwch)
@@ -95,6 +107,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, uint, int>)(lpVtbl[10]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwch, cwch);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteComment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT WriteComment([NativeTypeName("LPCWSTR")] ushort* pwszComment)
@@ -102,6 +115,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, int>)(lpVtbl[11]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszComment);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteDocType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT WriteDocType([NativeTypeName("LPCWSTR")] ushort* pwszName, [NativeTypeName("LPCWSTR")] ushort* pwszPublicId, [NativeTypeName("LPCWSTR")] ushort* pwszSystemId, [NativeTypeName("LPCWSTR")] ushort* pwszSubset)
@@ -109,6 +123,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, ushort*, ushort*, ushort*, int>)(lpVtbl[12]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName, pwszPublicId, pwszSystemId, pwszSubset);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteElementString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT WriteElementString([NativeTypeName("LPCWSTR")] ushort* pwszPrefix, [NativeTypeName("LPCWSTR")] ushort* pwszLocalName, [NativeTypeName("LPCWSTR")] ushort* pwszNamespaceUri, [NativeTypeName("LPCWSTR")] ushort* pwszValue)
@@ -116,6 +131,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, ushort*, ushort*, ushort*, int>)(lpVtbl[13]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteEndDocument"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT WriteEndDocument()
@@ -123,6 +139,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, int>)(lpVtbl[14]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteEndElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT WriteEndElement()
@@ -130,6 +147,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, int>)(lpVtbl[15]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteEntityRef"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT WriteEntityRef([NativeTypeName("LPCWSTR")] ushort* pwszName)
@@ -137,6 +155,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, int>)(lpVtbl[16]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteFullEndElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT WriteFullEndElement()
@@ -144,6 +163,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, int>)(lpVtbl[17]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT WriteName([NativeTypeName("LPCWSTR")] ushort* pwszName)
@@ -151,6 +171,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, int>)(lpVtbl[18]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteNmToken"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT WriteNmToken([NativeTypeName("LPCWSTR")] ushort* pwszNmToken)
@@ -158,6 +179,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, int>)(lpVtbl[19]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszNmToken);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT WriteNode(IXmlReader* pReader, BOOL fWriteDefaultAttributes)
@@ -165,6 +187,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[20]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteNodeShallow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT WriteNodeShallow(IXmlReader* pReader, BOOL fWriteDefaultAttributes)
@@ -172,6 +195,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[21]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteProcessingInstruction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT WriteProcessingInstruction([NativeTypeName("LPCWSTR")] ushort* pwszName, [NativeTypeName("LPCWSTR")] ushort* pwszText)
@@ -179,6 +203,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, ushort*, int>)(lpVtbl[22]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName, pwszText);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteQualifiedName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT WriteQualifiedName([NativeTypeName("LPCWSTR")] ushort* pwszLocalName, [NativeTypeName("LPCWSTR")] ushort* pwszNamespaceUri)
@@ -186,6 +211,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, ushort*, int>)(lpVtbl[23]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszLocalName, pwszNamespaceUri);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteRaw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT WriteRaw([NativeTypeName("LPCWSTR")] ushort* pwszData)
@@ -193,6 +219,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, int>)(lpVtbl[24]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszData);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteRawChars"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT WriteRawChars([NativeTypeName("const WCHAR *")] ushort* pwch, uint cwch)
@@ -200,6 +227,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, uint, int>)(lpVtbl[25]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwch, cwch);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteStartDocument"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT WriteStartDocument(XmlStandalone standalone)
@@ -207,6 +235,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, XmlStandalone, int>)(lpVtbl[26]))((IXmlWriter*)Unsafe.AsPointer(ref this), standalone);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteStartElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT WriteStartElement([NativeTypeName("LPCWSTR")] ushort* pwszPrefix, [NativeTypeName("LPCWSTR")] ushort* pwszLocalName, [NativeTypeName("LPCWSTR")] ushort* pwszNamespaceUri)
@@ -214,6 +243,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, ushort*, ushort*, int>)(lpVtbl[27]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszPrefix, pwszLocalName, pwszNamespaceUri);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT WriteString([NativeTypeName("LPCWSTR")] ushort* pwszText)
@@ -221,6 +251,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, int>)(lpVtbl[28]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszText);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteSurrogateCharEntity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT WriteSurrogateCharEntity([NativeTypeName("WCHAR")] ushort wchLow, [NativeTypeName("WCHAR")] ushort wchHigh)
@@ -228,6 +259,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort, ushort, int>)(lpVtbl[29]))((IXmlWriter*)Unsafe.AsPointer(ref this), wchLow, wchHigh);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteWhitespace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT WriteWhitespace([NativeTypeName("LPCWSTR")] ushort* pwszWhitespace)
@@ -235,6 +267,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface
         return ((delegate* unmanaged<IXmlWriter*, ushort*, int>)(lpVtbl[30]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszWhitespace);
     }
 
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.Flush"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT Flush()

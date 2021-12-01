@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange"]/*' />
 [Guid("305104AE-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLDOMRange : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, uint>)(lpVtbl[1]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, uint>)(lpVtbl[2]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, uint*, int>)(lpVtbl[3]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.get_startContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_startContainer(IHTMLDOMNode** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IHTMLDOMNode**, int>)(lpVtbl[7]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.get_startOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_startOffset([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, int*, int>)(lpVtbl[8]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.get_endContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_endContainer(IHTMLDOMNode** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IHTMLDOMNode**, int>)(lpVtbl[9]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.get_endOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_endOffset([NativeTypeName("long *")] int* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, int*, int>)(lpVtbl[10]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.get_collapsed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_collapsed([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, short*, int>)(lpVtbl[11]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.get_commonAncestorContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_commonAncestorContainer(IHTMLDOMNode** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IHTMLDOMNode**, int>)(lpVtbl[12]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.setStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT setStart(IDispatch* refNode, [NativeTypeName("long")] int offset)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int, int>)(lpVtbl[13]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), refNode, offset);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.setEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT setEnd(IDispatch* refNode, [NativeTypeName("long")] int offset)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int, int>)(lpVtbl[14]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), refNode, offset);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.setStartBefore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT setStartBefore(IDispatch* refNode)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int>)(lpVtbl[15]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), refNode);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.setStartAfter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT setStartAfter(IDispatch* refNode)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int>)(lpVtbl[16]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), refNode);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.setEndBefore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT setEndBefore(IDispatch* refNode)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int>)(lpVtbl[17]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), refNode);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.setEndAfter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT setEndAfter(IDispatch* refNode)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int>)(lpVtbl[18]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), refNode);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.collapse"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT collapse([NativeTypeName("VARIANT_BOOL")] short toStart)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, short, int>)(lpVtbl[19]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), toStart);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.selectNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT selectNode(IDispatch* refNode)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int>)(lpVtbl[20]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), refNode);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.selectNodeContents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT selectNodeContents(IDispatch* refNode)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int>)(lpVtbl[21]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), refNode);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.compareBoundaryPoints"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT compareBoundaryPoints(short how, IDispatch* sourceRange, [NativeTypeName("long *")] int* compareResult)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, short, IDispatch*, int*, int>)(lpVtbl[22]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), how, sourceRange, compareResult);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.deleteContents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT deleteContents()
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, int>)(lpVtbl[23]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.extractContents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT extractContents(IDispatch** ppDocumentFragment)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch**, int>)(lpVtbl[24]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), ppDocumentFragment);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.cloneContents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT cloneContents(IDispatch** ppDocumentFragment)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch**, int>)(lpVtbl[25]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), ppDocumentFragment);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.insertNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT insertNode(IDispatch* newNode)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int>)(lpVtbl[26]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), newNode);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.surroundContents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT surroundContents(IDispatch* newParent)
@@ -214,6 +243,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int>)(lpVtbl[27]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), newParent);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.cloneRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT cloneRange(IHTMLDOMRange** ppClonedRange)
@@ -221,6 +251,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IHTMLDOMRange**, int>)(lpVtbl[28]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), ppClonedRange);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.toString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT toString([NativeTypeName("BSTR *")] ushort** pRangeString)
@@ -228,6 +259,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, ushort**, int>)(lpVtbl[29]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), pRangeString);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.detach"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT detach()
@@ -235,6 +267,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, int>)(lpVtbl[30]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.getClientRects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT getClientRects(IHTMLRectCollection** ppRectCol)
@@ -242,6 +275,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         return ((delegate* unmanaged<IHTMLDOMRange*, IHTMLRectCollection**, int>)(lpVtbl[31]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), ppRectCol);
     }
 
+    /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.getBoundingClientRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT getBoundingClientRect(IHTMLRect** ppRect)

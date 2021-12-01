@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEMMAXIMIZESTATES.xml' path='doc/member[@name="SYSTEMMAXIMIZESTATES"]/*' />
 public enum SYSTEMMAXIMIZESTATES
 {
+    /// <include file='SYSTEMMAXIMIZESTATES.xml' path='doc/member[@name="SYSTEMMAXIMIZESTATES.MSYSMX_NORMAL"]/*' />
     MSYSMX_NORMAL = 1,
+
+    /// <include file='SYSTEMMAXIMIZESTATES.xml' path='doc/member[@name="SYSTEMMAXIMIZESTATES.MSYSMX_DISABLED"]/*' />
     MSYSMX_DISABLED = 2,
 }

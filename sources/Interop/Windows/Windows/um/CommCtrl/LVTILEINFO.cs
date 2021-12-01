@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LVTILEINFO.xml' path='doc/member[@name="LVTILEINFO"]/*' />
 public unsafe partial struct LVTILEINFO
 {
+    /// <include file='LVTILEINFO.xml' path='doc/member[@name="LVTILEINFO.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='LVTILEINFO.xml' path='doc/member[@name="LVTILEINFO.iItem"]/*' />
     public int iItem;
 
+    /// <include file='LVTILEINFO.xml' path='doc/member[@name="LVTILEINFO.cColumns"]/*' />
     public uint cColumns;
 
+    /// <include file='LVTILEINFO.xml' path='doc/member[@name="LVTILEINFO.puColumns"]/*' />
     [NativeTypeName("PUINT")]
     public uint* puColumns;
 
+    /// <include file='LVTILEINFO.xml' path='doc/member[@name="LVTILEINFO.piColFmt"]/*' />
     public int* piColFmt;
 }

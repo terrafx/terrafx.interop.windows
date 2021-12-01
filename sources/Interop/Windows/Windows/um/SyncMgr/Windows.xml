@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.FreeConfirmConflictItem">
+    <summary>
+      <para>Frees the resources that have been allocated for a <see cref="CONFIRM_CONFLICT_ITEM" /> structure.</para>
+    </summary>
+    <param name="pcci">
+      <para>Type: <b><see cref="CONFIRM_CONFLICT_ITEM" />*</b></para>
+      <para>A pointer to a <see cref="CONFIRM_CONFLICT_ITEM" /> structure that stores pointers to the items for which memory is to be freed.</para>
+    </param>
+  </member>
+</doc>

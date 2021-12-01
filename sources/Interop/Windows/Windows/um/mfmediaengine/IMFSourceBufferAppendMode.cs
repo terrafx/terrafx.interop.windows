@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSourceBufferAppendMode.xml' path='doc/member[@name="IMFSourceBufferAppendMode"]/*' />
 [Guid("19666FB4-BABE-4C55-BC03-0A074DA37E2A")]
 [NativeTypeName("struct IMFSourceBufferAppendMode : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
         return ((delegate* unmanaged<IMFSourceBufferAppendMode*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
         return ((delegate* unmanaged<IMFSourceBufferAppendMode*, uint>)(lpVtbl[1]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
         return ((delegate* unmanaged<IMFSourceBufferAppendMode*, uint>)(lpVtbl[2]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSourceBufferAppendMode.xml' path='doc/member[@name="IMFSourceBufferAppendMode.GetAppendMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public MF_MSE_APPEND_MODE GetAppendMode()
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
         return ((delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE>)(lpVtbl[3]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSourceBufferAppendMode.xml' path='doc/member[@name="IMFSourceBufferAppendMode.SetAppendMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetAppendMode(MF_MSE_APPEND_MODE mode)

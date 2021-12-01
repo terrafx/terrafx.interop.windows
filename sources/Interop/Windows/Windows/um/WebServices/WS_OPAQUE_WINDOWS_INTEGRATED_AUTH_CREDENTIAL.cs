@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL.xml' path='doc/member[@name="WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL"]/*' />
 public unsafe partial struct WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL
 {
+    /// <include file='WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL.xml' path='doc/member[@name="WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL.credential"]/*' />
     public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL credential;
 
+    /// <include file='WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL.xml' path='doc/member[@name="WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL.opaqueAuthIdentity"]/*' />
     public void* opaqueAuthIdentity;
 }

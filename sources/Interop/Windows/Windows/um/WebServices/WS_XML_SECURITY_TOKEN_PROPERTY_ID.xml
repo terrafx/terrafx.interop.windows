@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_SECURITY_TOKEN_PROPERTY_ID">
+    <summary>
+      <para>The keys for the bag of properties for the creation of XML security tokens. This enumeration is used within the <see cref="WS_XML_SECURITY_TOKEN_PROPERTY" /> structure, which is used as parameter for <see cref="WsCreateXmlSecurityToken" />.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_ATTACHED_REFERENCE">
+    <summary>
+      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> that contains
+the XML form of the reference to be used for this token (from a
+signature, for example) when the token is attached to (for example, serialized
+in) a message.  This is required if and only if the token is a
+proof-of-possession token.  If specified, the XML buffer must have
+exactly one top level XML element.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_UNATTACHED_REFERENCE">
+    <summary>
+      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> that contains the XML form of the reference to be used for this token (from a
+signature, for example) when the token is not attached to a message.  This
+should be specified only if the token is a proof-of-possession token,
+and is used without being serialized in the message.  If specified,
+the XML buffer must have exactly one top level XML element.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_VALID_FROM_TIME">
+    <summary>
+      <para>A <see cref="WS_DATETIME" /> structure that contains the time from when the security token is valid.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_VALID_TILL_TIME">
+    <summary>
+      <para>A <see cref="WS_DATETIME" /> structure that contains the time until when the security token is valid.</para>
+    </summary>
+  </member>
+</doc>

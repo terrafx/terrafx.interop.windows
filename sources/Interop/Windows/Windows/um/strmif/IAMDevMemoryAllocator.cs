@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator"]/*' />
 [Guid("C6545BF0-E76B-11D0-BD52-00A0C911CE86")]
 [NativeTypeName("struct IAMDevMemoryAllocator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
         return ((delegate* unmanaged<IAMDevMemoryAllocator*, Guid*, void**, int>)(lpVtbl[0]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
         return ((delegate* unmanaged<IAMDevMemoryAllocator*, uint>)(lpVtbl[1]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
         return ((delegate* unmanaged<IAMDevMemoryAllocator*, uint>)(lpVtbl[2]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator.GetInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetInfo([NativeTypeName("DWORD *")] uint* pdwcbTotalFree, [NativeTypeName("DWORD *")] uint* pdwcbLargestFree, [NativeTypeName("DWORD *")] uint* pdwcbTotalMemory, [NativeTypeName("DWORD *")] uint* pdwcbMinimumChunk)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
         return ((delegate* unmanaged<IAMDevMemoryAllocator*, uint*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), pdwcbTotalFree, pdwcbLargestFree, pdwcbTotalMemory, pdwcbMinimumChunk);
     }
 
+    /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator.CheckMemory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CheckMemory([NativeTypeName("const BYTE *")] byte* pBuffer)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
         return ((delegate* unmanaged<IAMDevMemoryAllocator*, byte*, int>)(lpVtbl[4]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), pBuffer);
     }
 
+    /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator.Alloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Alloc(byte** ppBuffer, [NativeTypeName("DWORD *")] uint* pdwcbBuffer)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
         return ((delegate* unmanaged<IAMDevMemoryAllocator*, byte**, uint*, int>)(lpVtbl[5]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), ppBuffer, pdwcbBuffer);
     }
 
+    /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator.Free"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Free(byte* pBuffer)
@@ -67,6 +75,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
         return ((delegate* unmanaged<IAMDevMemoryAllocator*, byte*, int>)(lpVtbl[6]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), pBuffer);
     }
 
+    /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator.GetDevMemoryObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevMemoryObject(IUnknown** ppUnkInnner, IUnknown* pUnkOuter)

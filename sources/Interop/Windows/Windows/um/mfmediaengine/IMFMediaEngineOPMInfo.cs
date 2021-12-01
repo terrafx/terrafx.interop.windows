@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaEngineOPMInfo.xml' path='doc/member[@name="IMFMediaEngineOPMInfo"]/*' />
 [Guid("765763E6-6C01-4B01-BB0F-B829F60ED28C")]
 [NativeTypeName("struct IMFMediaEngineOPMInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaEngineOPMInfo : IMFMediaEngineOPMInfo.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaEngineOPMInfo : IMFMediaEngineOPMInfo.Inter
         return ((delegate* unmanaged<IMFMediaEngineOPMInfo*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineOPMInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaEngineOPMInfo : IMFMediaEngineOPMInfo.Inter
         return ((delegate* unmanaged<IMFMediaEngineOPMInfo*, uint>)(lpVtbl[1]))((IMFMediaEngineOPMInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaEngineOPMInfo : IMFMediaEngineOPMInfo.Inter
         return ((delegate* unmanaged<IMFMediaEngineOPMInfo*, uint>)(lpVtbl[2]))((IMFMediaEngineOPMInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngineOPMInfo.xml' path='doc/member[@name="IMFMediaEngineOPMInfo.GetOPMInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetOPMInfo(MF_MEDIA_ENGINE_OPM_STATUS* pStatus, BOOL* pConstricted)

@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IsolatedAppLauncherTelemetryParameters.xml' path='doc/member[@name="IsolatedAppLauncherTelemetryParameters"]/*' />
 public partial struct IsolatedAppLauncherTelemetryParameters
 {
+    /// <include file='IsolatedAppLauncherTelemetryParameters.xml' path='doc/member[@name="IsolatedAppLauncherTelemetryParameters.EnableForLaunch"]/*' />
     public BOOL EnableForLaunch;
 
+    /// <include file='IsolatedAppLauncherTelemetryParameters.xml' path='doc/member[@name="IsolatedAppLauncherTelemetryParameters.CorrelationGUID"]/*' />
     public Guid CorrelationGUID;
 }

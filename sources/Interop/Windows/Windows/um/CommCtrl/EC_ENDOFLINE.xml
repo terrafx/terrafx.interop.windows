@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EC_ENDOFLINE">
+    <summary>
+      <para>Indicates the end of line character used by an edit control.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/controls/em-getendofline">EM_GETENDOFLINE</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/controls/em-setendofline">EM_SETENDOFLINE</seealso>
+    <seealso cref="Edit_GetEndOfLine" />
+    <seealso cref="Edit_SetEndOfLine" />
+  </member>
+  <member name="EC_ENDOFLINE.EC_ENDOFLINE_DETECTFROMCONTENT">
+    <summary>
+      <para>End of line character specified in content.</para>
+    </summary>
+  </member>
+  <member name="EC_ENDOFLINE.EC_ENDOFLINE_CRLF">
+    <summary>
+      <para>End of line character is CRLF.</para>
+    </summary>
+  </member>
+  <member name="EC_ENDOFLINE.EC_ENDOFLINE_CR">
+    <summary>
+      <para>End of line character is CR.</para>
+    </summary>
+  </member>
+  <member name="EC_ENDOFLINE.EC_ENDOFLINE_LF">
+    <summary>
+      <para>End of line character is LF.</para>
+    </summary>
+  </member>
+</doc>

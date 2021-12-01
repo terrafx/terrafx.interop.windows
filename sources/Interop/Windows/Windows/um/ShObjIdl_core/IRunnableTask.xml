@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRunnableTask.IsRunning">
+    <summary>
+      <para>Requests information on the state of a task, such as thumbnail extraction.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>LONG</b></para>
+      <para>Returns one of the following values to indicate the current execution state.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>IRTIR_TASK_NOT_RUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>Extraction has not yet started.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IRTIR_TASK_RUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The task is running.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IRTIR_TASK_SUSPENDED</b>
+            </para>
+          </description>
+          <description>
+            <para>The task is suspended.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IRTIR_TASK_PENDING</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="IRunnableTask.Kill" /> has been called on the thread, but the thread has not yet completely shut down.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IRTIR_TASK_FINISHED</b>
+            </para>
+          </description>
+          <description>
+            <para>The task is finished.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method must be implemented.</para>
+    </remarks>
+  </member>
+  <member name="IRunnableTask.Kill">
+    <summary>
+      <para>Requests that a task be stopped.</para>
+    </summary>
+    <param name="bWait">
+      <para>Type: <b>BOOL</b></para>
+      <para>Not currently used.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Implementation of this method is optional. If you do not wish to support this functionality, create a token implementation that simply returns E_NOTIMPL.</para>
+    </remarks>
+  </member>
+  <member name="IRunnableTask.Resume">
+    <summary>
+      <para>Requests that a task resume.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or standard COM-defined error codes otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Implementation of this method is optional. If you do not wish to support this functionality, create a token implementation that simply returns E_NOTIMPL.</para>
+    </remarks>
+  </member>
+  <member name="IRunnableTask.Run">
+    <summary>
+      <para>Requests that a task begin.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following two codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Execution is complete.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_PENDING</b>
+            </para>
+          </description>
+          <description>
+            <para>Execution is suspended.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The return value of this method only tells you whether the execution of the task completed or is suspended. Any other errors that the implementer needs to communicate to the caller must be provided through other channels, such as a callback function.</para>
+    </remarks>
+  </member>
+  <member name="IRunnableTask.Suspend">
+    <summary>
+      <para>Requests that a task be suspended.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if successful, or standard COM-defined error codes otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Implementation of this method is optional. If you do not wish to support this functionality, create a token implementation that simply returns E_NOTIMPL.</para>
+    </remarks>
+  </member>
+  <member name="IRunnableTask">
+    <summary>
+      <para>A free-threaded interface that can be exposed by an object to allow operations to be performed on a background thread. For example, if the <see cref="IExtractImage.GetLocation" /> method returns E_PENDING, the calling application is permitted to extract the image on a background thread.</para>
+    </summary>
+    <remarks>
+      <para>Implement <b>IRunnableTask</b> if your namespace extension is free-threaded, and you want to allow a task such as icon extraction to be managed by a scheduler. Only the <see cref="Run" /> and <see cref="IsRunning" /> methods must be implemented. If you do not want to implement <see cref="Kill" />, <see cref="Resume" />, and <see cref="Suspend" />, simply have them return E_NOTIMPL.</para>
+      <para>If you are using <b>IRunnableTask</b> to extract an image on a background thread, that is, if the object exposes <see cref="IExtractImage" />, then <see cref="Run" /> is not necessary, as the system will use <see cref="IExtractImage.Extract" /> to manage the task. The other methods (<see cref="Kill" />, <see cref="Resume" />, and <see cref="Suspend" />) are optional in this case, but will be used by the system if they are implemented.</para>
+      <para>You do not call this interface directly. <b>IRunnableTask</b> is used by the operating system only when it has confirmed that your application is aware of this interface.</para>
+      <para>
+        <b>IRunnableTask</b> implements <see cref="IUnknown" /> as well as the five listed methods.</para>
+      <para>
+        <b>Note</b>  <b>Windows Vista and later.</b> Prior to Windows Vista this interface was declared in Shlobj.h.</para>
+    </remarks>
+  </member>
+</doc>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISpatialAudioMetadataItems.GetFrameCount">
+    <summary>
+      <para>Gets the total frame count of the <see cref="ISpatialAudioMetadataItems" />, which defines valid item offsets.</para>
+    </summary>
+    <param name="frameCount">
+      <para>The total frame count.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataItems" />
+  </member>
+  <member name="ISpatialAudioMetadataItems.GetInfo">
+    <summary>
+      <para>Gets the total frame count for the <see cref="ISpatialAudioMetadataItems" />, which defines valid item offsets.</para>
+    </summary>
+    <param name="info">
+      <para>The total frame count, which defines valid item offsets.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataItems" />
+  </member>
+  <member name="ISpatialAudioMetadataItems.GetItemCount">
+    <summary>
+      <para>The current number of items stored by the <see cref="ISpatialAudioMetadataItems" />.</para>
+    </summary>
+    <param name="itemCount">
+      <para>The current number of stored items.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataItems" />
+  </member>
+  <member name="ISpatialAudioMetadataItems.GetMaxItemCount">
+    <summary>
+      <para>The maximum number of items allowed by the <see cref="ISpatialAudioMetadataItems" />, defined when the object is created.</para>
+    </summary>
+    <param name="maxItemCount">
+      <para>The maximum number of items allowed.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataItems" />
+  </member>
+  <member name="ISpatialAudioMetadataItems.GetMaxValueBufferLength">
+    <summary>
+      <para>The size of the largest command value defined by the metadata format for the <see cref="ISpatialAudioMetadataItems" />.</para>
+    </summary>
+    <param name="maxValueBufferLength">
+      <para>The size of the largest command value defined by the metadata format.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataItems" />
+  </member>
+  <member name="ISpatialAudioMetadataItems">
+    <summary>
+      <para>Represents a buffer of spatial audio metadata items. Metadata commands and values can be written to, read from, and copied between ISpatialAudioMetadataItems using the <see cref="ISpatialAudioMetadataWriter" />, <see cref="ISpatialAudioMetadataReader" />, and <see cref="ISpatialAudioMetadataCopier" /> interfaces. Use caller-allocated memory to store metadata items by creating an <see cref="ISpatialAudioMetadataItemsBuffer" />.</para>
+      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+    </summary>
+    <remarks>
+      <para>Get an instance of this interface by calling <see cref="ISpatialAudioMetadataClient.ActivateSpatialAudioMetadataItems" />.</para>
+    </remarks>
+  </member>
+</doc>

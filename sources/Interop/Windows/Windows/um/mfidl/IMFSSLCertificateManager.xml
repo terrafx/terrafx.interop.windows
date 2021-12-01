@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSSLCertificateManager.BeginGetClientCertificate">
+    <summary>
+      <para>Starts an asynchronous call to get the client SSL certificate.</para>
+    </summary>
+    <param name="pszURL">
+      <para>A null-terminated string that contains the URL for which a client-side SSL certificate is required. Media Foundation can  resolve the scheme and send the request to the server.</para>
+    </param>
+    <param name="pCallback">
+      <para>A pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="pState">
+      <para>A pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>When the operation completes, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. At that point, the application should call <see cref="IMFSSLCertificateManager.EndGetClientCertificate" /> to complete the asynchronous request.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/calling-asynchronous-methods">Calling Asynchronous Methods</seealso>
+    <seealso cref="IMFSSLCertificateManager" />
+  </member>
+  <member name="IMFSSLCertificateManager.EndGetClientCertificate">
+    <summary>
+      <para>Completes an asynchronous request to get the client SSL certificate.</para>
+    </summary>
+    <param name="pResult">
+      <para>A pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </param>
+    <param name="ppbData">
+      <para>Receives a pointer to the buffer that stores the certificate.
+The caller must free the buffer by calling <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <param name="pcbData">
+      <para>Receives the size of the <i>ppbData</i> buffer, in bytes.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call this method after the <see cref="IMFSSLCertificateManager.BeginGetClientCertificate" /> method completes asynchronously.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/calling-asynchronous-methods">Calling Asynchronous Methods</seealso>
+    <seealso cref="IMFSSLCertificateManager" />
+  </member>
+  <member name="IMFSSLCertificateManager.GetCertificatePolicy">
+    <summary>
+      <para>Indicates whether the server SSL certificate must be verified by the caller, Media Foundation,  or the <b>IMFSSLCertificateManager</b> implementation class.</para>
+    </summary>
+    <param name="pszURL">
+      <para>Pointer to a string that contains the URL that  is sent to the server.</para>
+    </param>
+    <param name="pfOverrideAutomaticCheck">
+      <para>Pointer to a <b>BOOL</b> value. Set to <b>TRUE</b> if <see cref="IMFSSLCertificateManager.OnServerCertificate" /> is used to verify the server certificate.
+Set to <b>FALSE</b> if Media Foundation verifies the server certificate  by using the certificates in the Windows certificate store.</para>
+    </param>
+    <param name="pfClientCertificateAvailable">
+      <para>Pointer to a <b>BOOL</b> value. Set to <b>TRUE</b> if the SSL certificate for the client is available for immediate retrieval. Media Foundation  calls <see cref="IMFSSLCertificateManager.GetClientCertificate" /> to obtain the client certificate synchronously. If the value is set to <b>FALSE</b>, Media Foundation obtains the client SSL certificate with an asynchronous call to <see cref="IMFSSLCertificateManager.BeginGetClientCertificate" />.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSSLCertificateManager" />
+  </member>
+  <member name="IMFSSLCertificateManager.GetClientCertificate">
+    <summary>
+      <para>Gets the client SSL certificate synchronously.</para>
+    </summary>
+    <param name="pszURL">
+      <para>Pointer to a string that contains the URL for which a client-side SSL certificate is required. Media Foundation can resolve the scheme and send the request to the server.</para>
+    </param>
+    <param name="ppbData">
+      <para>Pointer to the buffer that stores the certificate.
+This caller must free the buffer by calling <b>CoTaskMemFree</b>.</para>
+    </param>
+    <param name="pcbData">
+      <para>Pointer to a <b>DWORD</b> variable that receives the number of bytes required to hold the certificate data in the buffer pointed by <i>*ppbData</i>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSSLCertificateManager" />
+  </member>
+  <member name="IMFSSLCertificateManager.OnServerCertificate">
+    <summary>
+      <para>Called by Media Foundation when the server SSL certificate has been received; indicates whether the server certificate is accepted.</para>
+    </summary>
+    <param name="pszURL">
+      <para>Pointer to a string that contains the URL used to send the request to the server, and for which a server-side SSL certificate has been received.</para>
+    </param>
+    <param name="pbData">
+      <para>Pointer to a buffer that contains the server SSL certificate.</para>
+    </param>
+    <param name="cbData">
+      <para>Pointer to a <b>DWORD</b> variable that indicates the size of <i>pbData</i> in bytes.</para>
+    </param>
+    <param name="pfIsGood">
+      <para>Pointer to a <b>BOOL</b> variable that indicates whether the certificate is accepted.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSSLCertificateManager" />
+  </member>
+  <member name="IMFSSLCertificateManager">
+    <summary>
+      <para>Implemented by a client and called by Microsoft Media Foundation to get the client Secure Sockets Layer (SSL) certificate requested by the server.</para>
+      <para>In most HTTPS connections the server provides a certificate so that the client can ensure the identity of the server. However, in certain cases the server might wants to verify the identity of the client by requesting the client to send a certificate. For this scenario,  a client application must provide a mechanism for Media Foundation to retrieve the client side certificate while opening an HTTPS URL with the source resolver or the scheme handler. The application must implement <b>IMFSSLCertificateManager</b>, set the <b>IUnknown</b> pointer of the implemented object in the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfnetsource-sslcertificate-manager">MFNETSOURCE_SSLCERTIFICATE_MANAGER</a> property, and pass the property store to the source resolver. While opening the URL, Media Foundation calls the <b>IMFSSLCertificateManager</b> methods to get the certificate information. If the application needs to connect to HTTPS URL that requires a client-side certificate, or the application  wants customized control over the type of server certificates to accept, then they can implement this interface. This interface can also be used by the application to validate the server SSL certificate.</para>
+      <para>If the <b>IUnknown</b> pointer is not provided by the application and the HTTPS URL does not require the client to provide a certificate,
+Media Foundation uses the default implementation to open the URL.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

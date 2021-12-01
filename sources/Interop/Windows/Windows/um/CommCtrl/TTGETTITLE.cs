@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TTGETTITLE.xml' path='doc/member[@name="TTGETTITLE"]/*' />
 public unsafe partial struct TTGETTITLE
 {
+    /// <include file='TTGETTITLE.xml' path='doc/member[@name="TTGETTITLE.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='TTGETTITLE.xml' path='doc/member[@name="TTGETTITLE.uTitleBitmap"]/*' />
     public uint uTitleBitmap;
 
+    /// <include file='TTGETTITLE.xml' path='doc/member[@name="TTGETTITLE.cch"]/*' />
     public uint cch;
 
+    /// <include file='TTGETTITLE.xml' path='doc/member[@name="TTGETTITLE.pszTitle"]/*' />
     [NativeTypeName("WCHAR *")]
     public ushort* pszTitle;
 }

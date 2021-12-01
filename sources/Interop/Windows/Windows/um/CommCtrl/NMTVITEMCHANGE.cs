@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTVITEMCHANGE.xml' path='doc/member[@name="NMTVITEMCHANGE"]/*' />
 public partial struct NMTVITEMCHANGE
 {
+    /// <include file='NMTVITEMCHANGE.xml' path='doc/member[@name="NMTVITEMCHANGE.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMTVITEMCHANGE.xml' path='doc/member[@name="NMTVITEMCHANGE.uChanged"]/*' />
     public uint uChanged;
 
+    /// <include file='NMTVITEMCHANGE.xml' path='doc/member[@name="NMTVITEMCHANGE.hItem"]/*' />
     public HTREEITEM hItem;
 
+    /// <include file='NMTVITEMCHANGE.xml' path='doc/member[@name="NMTVITEMCHANGE.uStateNew"]/*' />
     public uint uStateNew;
 
+    /// <include file='NMTVITEMCHANGE.xml' path='doc/member[@name="NMTVITEMCHANGE.uStateOld"]/*' />
     public uint uStateOld;
 
+    /// <include file='NMTVITEMCHANGE.xml' path='doc/member[@name="NMTVITEMCHANGE.lParam"]/*' />
     public LPARAM lParam;
 }

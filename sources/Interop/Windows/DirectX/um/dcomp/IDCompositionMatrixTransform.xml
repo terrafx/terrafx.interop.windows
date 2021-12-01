@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDCompositionMatrixTransform.SetMatrix">
+    <summary>
+      <para>Changes all values of the matrix of this 2D transform.</para>
+    </summary>
+    <param name="matrix">
+      <para>Type: <b>const <see cref="D2D_MATRIX_3X2_F" /></b></para>
+      <para>The new matrix for this 2D transform.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method fails if any of the matrix values are NaN, positive infinity, or negative infinity.</para>
+      <para>If any of the matrix elements were previously animated, this method removes the animations and sets the elements to the specified static value.</para>
+    </remarks>
+    <seealso cref="IDCompositionMatrixTransform" />
+  </member>
+  <member name="IDCompositionMatrixTransform.SetMatrixElement">
+    <summary>
+      <para>Changes the value of one element of the matrix of this transform.</para>
+    </summary>
+    <param name="row">
+      <para>Type: <b>int</b></para>
+      <para>The row index of the element to change. This value must be between 0 and 2, inclusive.</para>
+    </param>
+    <param name="column">
+      <para>Type: <b>int</b></para>
+      <para>The column index of the element to change. This value must be between 0 and 1, inclusive.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>float</b></para>
+      <para>The new value of the specified element.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method fails if the <i>value</i> parameter is NaN, positive infinity, or negative infinity.</para>
+      <para>If the specified element was previously animated, this method removes the animation and sets the element to the specified static value.</para>
+    </remarks>
+    <seealso cref="IDCompositionMatrixTransform" />
+  </member>
+  <member name="IDCompositionMatrixTransform.SetMatrixElement">
+    <summary>
+      <para>Animates the value of one element of the matrix of this 2D transform.</para>
+    </summary>
+    <param name="row">
+      <para>The row index of the element to change. This value must be between 0 and 2, inclusive.</para>
+    </param>
+    <param name="column">
+      <para>The column index of the element to change. This value must be between 0 and 1, inclusive.</para>
+    </param>
+    <param name="animation">
+      <para>An animation that represents how the value of the specified element changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the element unless this method is called again. If the element was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected transform. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionMatrixTransform" />
+  </member>
+  <member name="IDCompositionMatrixTransform">
+    <summary>
+      <para>Represents an arbitrary affine 2D transformation defined by a 3-by-2 matrix.</para>
+    </summary>
+    <seealso cref="IDCompositionTransform" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449178(v=vs.85)">IDCompositionVisual.SetTransform</seealso>
+  </member>
+</doc>

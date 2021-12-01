@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LIBRARYOPTIONFLAGS">
+    <summary>
+      <para>Specifies the library options.</para>
+    </summary>
+    <remarks>
+      <h3>Used By</h3>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IShellLibrary.GetOptions" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IShellLibrary.SetOptions" />
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+  </member>
+  <member name="LIBRARYOPTIONFLAGS.LOF_DEFAULT">
+    <summary>
+      <para>No library options are set.</para>
+    </summary>
+  </member>
+  <member name="LIBRARYOPTIONFLAGS.LOF_PINNEDTONAVPANE">
+    <summary>
+      <para>Pin the library to the navigation pane.</para>
+    </summary>
+  </member>
+  <member name="LIBRARYOPTIONFLAGS.LOF_MASK_ALL">
+    <summary>
+      <para>All valid library options flags.</para>
+    </summary>
+  </member>
+</doc>

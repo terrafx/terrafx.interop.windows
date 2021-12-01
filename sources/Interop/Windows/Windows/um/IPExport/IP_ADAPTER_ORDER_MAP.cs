@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IP_ADAPTER_ORDER_MAP.xml' path='doc/member[@name="IP_ADAPTER_ORDER_MAP"]/*' />
 public unsafe partial struct IP_ADAPTER_ORDER_MAP
 {
+    /// <include file='IP_ADAPTER_ORDER_MAP.xml' path='doc/member[@name="IP_ADAPTER_ORDER_MAP.NumAdapters"]/*' />
     [NativeTypeName("ULONG")]
     public uint NumAdapters;
 
+    /// <include file='IP_ADAPTER_ORDER_MAP.xml' path='doc/member[@name="IP_ADAPTER_ORDER_MAP.AdapterOrder"]/*' />
     [NativeTypeName("ULONG [1]")]
     public fixed uint AdapterOrder[1];
 }

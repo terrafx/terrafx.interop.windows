@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FUNCKIND">
+    <summary>
+      <para>Specifies the function type.</para>
+    </summary>
+  </member>
+  <member name="FUNCKIND.FUNC_VIRTUAL">
+    <summary>
+      <para>The function is accessed the same as PUREVIRTUAL, except the function has an implementation.</para>
+    </summary>
+  </member>
+  <member name="FUNCKIND.FUNC_PUREVIRTUAL">
+    <summary>
+      <para>The function is accessed through the virtual function table (VTBL), and takes an implicit this pointer.</para>
+    </summary>
+  </member>
+  <member name="FUNCKIND.FUNC_NONVIRTUAL">
+    <summary>
+      <para>The function is accessed by static address and takes an implicit this pointer.</para>
+    </summary>
+  </member>
+  <member name="FUNCKIND.FUNC_STATIC">
+    <summary>
+      <para>The function is accessed by static address and does not take an implicit this pointer.</para>
+    </summary>
+  </member>
+  <member name="FUNCKIND.FUNC_DISPATCH">
+    <summary>
+      <para>The function can be accessed only through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>.</para>
+    </summary>
+  </member>
+</doc>

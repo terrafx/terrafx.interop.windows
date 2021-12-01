@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleEnableBackground.xml' path='doc/member[@name="styleEnableBackground"]/*' />
 public enum styleEnableBackground
 {
+    /// <include file='styleEnableBackground.xml' path='doc/member[@name="styleEnableBackground.styleEnableBackgroundNotSet"]/*' />
     styleEnableBackgroundNotSet = 0,
+
+    /// <include file='styleEnableBackground.xml' path='doc/member[@name="styleEnableBackground.styleEnableBackgroundAccumulate"]/*' />
     styleEnableBackgroundAccumulate = 1,
+
+    /// <include file='styleEnableBackground.xml' path='doc/member[@name="styleEnableBackground.styleEnableBackgroundNew"]/*' />
     styleEnableBackgroundNew = 2,
+
+    /// <include file='styleEnableBackground.xml' path='doc/member[@name="styleEnableBackground.styleEnableBackgroundInherit"]/*' />
     styleEnableBackgroundInherit = 3,
+
+    /// <include file='styleEnableBackground.xml' path='doc/member[@name="styleEnableBackground.styleEnableBackground_Max"]/*' />
     styleEnableBackground_Max = 2147483647,
 }

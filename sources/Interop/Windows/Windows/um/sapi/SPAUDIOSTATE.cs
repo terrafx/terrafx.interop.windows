@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPAUDIOSTATE.xml' path='doc/member[@name="SPAUDIOSTATE"]/*' />
 public enum SPAUDIOSTATE
 {
+    /// <include file='SPAUDIOSTATE.xml' path='doc/member[@name="SPAUDIOSTATE.SPAS_CLOSED"]/*' />
     SPAS_CLOSED = 0,
+
+    /// <include file='SPAUDIOSTATE.xml' path='doc/member[@name="SPAUDIOSTATE.SPAS_STOP"]/*' />
     SPAS_STOP = (SPAS_CLOSED + 1),
+
+    /// <include file='SPAUDIOSTATE.xml' path='doc/member[@name="SPAUDIOSTATE.SPAS_PAUSE"]/*' />
     SPAS_PAUSE = (SPAS_STOP + 1),
+
+    /// <include file='SPAUDIOSTATE.xml' path='doc/member[@name="SPAUDIOSTATE.SPAS_RUN"]/*' />
     SPAS_RUN = (SPAS_PAUSE + 1),
 }

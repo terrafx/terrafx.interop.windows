@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRACKMOUSEEVENT.xml' path='doc/member[@name="TRACKMOUSEEVENT"]/*' />
 public partial struct TRACKMOUSEEVENT
 {
+    /// <include file='TRACKMOUSEEVENT.xml' path='doc/member[@name="TRACKMOUSEEVENT.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='TRACKMOUSEEVENT.xml' path='doc/member[@name="TRACKMOUSEEVENT.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='TRACKMOUSEEVENT.xml' path='doc/member[@name="TRACKMOUSEEVENT.hwndTrack"]/*' />
     public HWND hwndTrack;
 
+    /// <include file='TRACKMOUSEEVENT.xml' path='doc/member[@name="TRACKMOUSEEVENT.dwHoverTime"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwHoverTime;
 }

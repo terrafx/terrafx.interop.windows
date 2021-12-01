@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_RESOURCE_DIRECTORY_STRING.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_STRING"]/*' />
 public unsafe partial struct IMAGE_RESOURCE_DIRECTORY_STRING
 {
+    /// <include file='IMAGE_RESOURCE_DIRECTORY_STRING.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_STRING.Length"]/*' />
     [NativeTypeName("WORD")]
     public ushort Length;
 
+    /// <include file='IMAGE_RESOURCE_DIRECTORY_STRING.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_STRING.NameString"]/*' />
     [NativeTypeName("CHAR [1]")]
     public fixed sbyte NameString[1];
 }

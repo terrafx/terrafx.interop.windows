@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OCSP_REQUEST_INFO.xml' path='doc/member[@name="OCSP_REQUEST_INFO"]/*' />
 public unsafe partial struct OCSP_REQUEST_INFO
 {
+    /// <include file='OCSP_REQUEST_INFO.xml' path='doc/member[@name="OCSP_REQUEST_INFO.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='OCSP_REQUEST_INFO.xml' path='doc/member[@name="OCSP_REQUEST_INFO.pRequestorName"]/*' />
     [NativeTypeName("PCERT_ALT_NAME_ENTRY")]
     public CERT_ALT_NAME_ENTRY* pRequestorName;
 
+    /// <include file='OCSP_REQUEST_INFO.xml' path='doc/member[@name="OCSP_REQUEST_INFO.cRequestEntry"]/*' />
     [NativeTypeName("DWORD")]
     public uint cRequestEntry;
 
+    /// <include file='OCSP_REQUEST_INFO.xml' path='doc/member[@name="OCSP_REQUEST_INFO.rgRequestEntry"]/*' />
     [NativeTypeName("POCSP_REQUEST_ENTRY")]
     public OCSP_REQUEST_ENTRY* rgRequestEntry;
 
+    /// <include file='OCSP_REQUEST_INFO.xml' path='doc/member[@name="OCSP_REQUEST_INFO.cExtension"]/*' />
     [NativeTypeName("DWORD")]
     public uint cExtension;
 
+    /// <include file='OCSP_REQUEST_INFO.xml' path='doc/member[@name="OCSP_REQUEST_INFO.rgExtension"]/*' />
     [NativeTypeName("PCERT_EXTENSION")]
     public CERT_EXTENSION* rgExtension;
 }

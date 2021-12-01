@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace"]/*' />
 [Guid("E572D3C9-37BE-4AE2-825D-D521763E3108")]
 [NativeTypeName("struct IShellNameSpace : IShellFavoritesNameSpace")]
 [NativeInheritance("IShellFavoritesNameSpace")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, Guid*, void**, int>)(lpVtbl[0]))((IShellNameSpace*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, uint>)(lpVtbl[1]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, uint>)(lpVtbl[2]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, uint*, int>)(lpVtbl[3]))((IShellNameSpace*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellNameSpace*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellNameSpace*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellNameSpace*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.MoveSelectionUp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT MoveSelectionUp()
@@ -74,6 +83,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int>)(lpVtbl[7]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.MoveSelectionDown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT MoveSelectionDown()
@@ -81,6 +91,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int>)(lpVtbl[8]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.ResetSort" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ResetSort()
@@ -88,6 +99,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int>)(lpVtbl[9]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.NewFolder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT NewFolder()
@@ -95,6 +107,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int>)(lpVtbl[10]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.Synchronize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Synchronize()
@@ -102,6 +115,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int>)(lpVtbl[11]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.Import" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Import()
@@ -109,6 +123,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int>)(lpVtbl[12]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.Export" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Export()
@@ -116,6 +131,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int>)(lpVtbl[13]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.InvokeContextMenuCommand" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] ushort* strCommand)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, ushort*, int>)(lpVtbl[14]))((IShellNameSpace*)Unsafe.AsPointer(ref this), strCommand);
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.MoveSelectionTo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT MoveSelectionTo()
@@ -130,6 +147,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int>)(lpVtbl[15]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.get_SubscriptionsEnabled" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_SubscriptionsEnabled([NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, short*, int>)(lpVtbl[16]))((IShellNameSpace*)Unsafe.AsPointer(ref this), pBool);
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.CreateSubscriptionForSelection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT CreateSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -144,6 +163,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, short*, int>)(lpVtbl[17]))((IShellNameSpace*)Unsafe.AsPointer(ref this), pBool);
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.DeleteSubscriptionForSelection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT DeleteSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -151,6 +171,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, short*, int>)(lpVtbl[18]))((IShellNameSpace*)Unsafe.AsPointer(ref this), pBool);
     }
 
+    /// <inheritdoc cref="IShellFavoritesNameSpace.SetRoot" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SetRoot([NativeTypeName("BSTR")] ushort* bstrFullPath)
@@ -158,6 +179,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, ushort*, int>)(lpVtbl[19]))((IShellNameSpace*)Unsafe.AsPointer(ref this), bstrFullPath);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_EnumOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_EnumOptions([NativeTypeName("LONG *")] int* pgrfEnumFlags)
@@ -165,6 +187,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int*, int>)(lpVtbl[20]))((IShellNameSpace*)Unsafe.AsPointer(ref this), pgrfEnumFlags);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.put_EnumOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_EnumOptions([NativeTypeName("LONG")] int lVal)
@@ -172,6 +195,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int, int>)(lpVtbl[21]))((IShellNameSpace*)Unsafe.AsPointer(ref this), lVal);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_SelectedItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_SelectedItem(IDispatch** pItem)
@@ -179,6 +203,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, IDispatch**, int>)(lpVtbl[22]))((IShellNameSpace*)Unsafe.AsPointer(ref this), pItem);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.put_SelectedItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_SelectedItem(IDispatch* pItem)
@@ -186,6 +211,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, IDispatch*, int>)(lpVtbl[23]))((IShellNameSpace*)Unsafe.AsPointer(ref this), pItem);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_Root"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_Root(VARIANT* pvar)
@@ -193,6 +219,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, VARIANT*, int>)(lpVtbl[24]))((IShellNameSpace*)Unsafe.AsPointer(ref this), pvar);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.put_Root"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_Root(VARIANT var)
@@ -200,6 +227,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, VARIANT, int>)(lpVtbl[25]))((IShellNameSpace*)Unsafe.AsPointer(ref this), var);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_Depth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_Depth(int* piDepth)
@@ -207,6 +235,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int*, int>)(lpVtbl[26]))((IShellNameSpace*)Unsafe.AsPointer(ref this), piDepth);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.put_Depth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT put_Depth(int iDepth)
@@ -214,6 +243,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int, int>)(lpVtbl[27]))((IShellNameSpace*)Unsafe.AsPointer(ref this), iDepth);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_Mode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get_Mode(uint* puMode)
@@ -221,6 +251,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, uint*, int>)(lpVtbl[28]))((IShellNameSpace*)Unsafe.AsPointer(ref this), puMode);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.put_Mode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT put_Mode(uint uMode)
@@ -228,6 +259,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, uint, int>)(lpVtbl[29]))((IShellNameSpace*)Unsafe.AsPointer(ref this), uMode);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_Flags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT get_Flags([NativeTypeName("DWORD *")] uint* pdwFlags)
@@ -235,6 +267,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, uint*, int>)(lpVtbl[30]))((IShellNameSpace*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.put_Flags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT put_Flags([NativeTypeName("DWORD")] uint dwFlags)
@@ -242,6 +275,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, uint, int>)(lpVtbl[31]))((IShellNameSpace*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.put_TVFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT put_TVFlags([NativeTypeName("DWORD")] uint dwFlags)
@@ -249,6 +283,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, uint, int>)(lpVtbl[32]))((IShellNameSpace*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_TVFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT get_TVFlags([NativeTypeName("DWORD *")] uint* dwFlags)
@@ -256,6 +291,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, uint*, int>)(lpVtbl[33]))((IShellNameSpace*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_Columns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT get_Columns([NativeTypeName("BSTR *")] ushort** bstrColumns)
@@ -263,6 +299,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, ushort**, int>)(lpVtbl[34]))((IShellNameSpace*)Unsafe.AsPointer(ref this), bstrColumns);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.put_Columns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT put_Columns([NativeTypeName("BSTR")] ushort* bstrColumns)
@@ -270,6 +307,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, ushort*, int>)(lpVtbl[35]))((IShellNameSpace*)Unsafe.AsPointer(ref this), bstrColumns);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_CountViewTypes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT get_CountViewTypes(int* piTypes)
@@ -277,6 +315,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int*, int>)(lpVtbl[36]))((IShellNameSpace*)Unsafe.AsPointer(ref this), piTypes);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.SetViewType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT SetViewType(int iType)
@@ -284,6 +323,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, int, int>)(lpVtbl[37]))((IShellNameSpace*)Unsafe.AsPointer(ref this), iType);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.SelectedItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT SelectedItems(IDispatch** ppid)
@@ -291,6 +331,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, IDispatch**, int>)(lpVtbl[38]))((IShellNameSpace*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.Expand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT Expand(VARIANT var, int iDepth)
@@ -298,6 +339,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         return ((delegate* unmanaged<IShellNameSpace*, VARIANT, int, int>)(lpVtbl[39]))((IShellNameSpace*)Unsafe.AsPointer(ref this), var, iDepth);
     }
 
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.UnselectAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT UnselectAll()

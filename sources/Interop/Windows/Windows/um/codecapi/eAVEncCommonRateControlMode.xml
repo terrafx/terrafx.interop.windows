@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncCommonRateControlMode">
+    <summary>
+      <para>Specifies the rate control mode for an encoder. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avenccommonratecontrolmode-property">AVEncCommonRateControlMode</a> codec property.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is also used with <a href="https://docs.microsoft.com//windows/desktop/medfound/camera-encoder-h264-uvc-1-5">H.264 UVC 1.5 camera encoders</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_CBR">
+    <summary>
+      <para>Constant bit rate (CBR) encoding.</para>
+    </summary>
+  </member>
+  <member name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_PeakConstrainedVBR">
+    <summary>
+      <para>Constrained variable bit rate (VBR) encoding.</para>
+    </summary>
+  </member>
+  <member name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_UnconstrainedVBR">
+    <summary>
+      <para>Unconstrained VBR encoding.</para>
+    </summary>
+  </member>
+  <member name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_Quality">
+    <summary>
+      <para>Quality-based VBR encoding. The encoder selects the bit rate to match a specified quality level. To specify the quality level, set the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avenccommonquality-property">AVEncCommonQuality</a> property.</para>
+    </summary>
+  </member>
+  <member name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_LowDelayVBR">
+    <summary>
+      <para>Low delay VBR encoding. H.264 extension.</para>
+      <para>Requires Windows 8.</para>
+    </summary>
+  </member>
+  <member name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_GlobalVBR">
+    <summary>
+      <para>Global VBR encoding. H.264 extension.</para>
+      <para>Requires Windows 8.</para>
+    </summary>
+  </member>
+  <member name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_GlobalLowDelayVBR">
+    <summary>
+      <para>Global low delay VBR encoding. H.264 extension.</para>
+      <para>Requires Windows 8.</para>
+    </summary>
+  </member>
+</doc>

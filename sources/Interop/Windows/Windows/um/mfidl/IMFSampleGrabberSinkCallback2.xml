@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSampleGrabberSinkCallback2.OnProcessSampleEx">
+    <summary>
+      <para>Called when the sample-grabber sink receives a new media sample.</para>
+    </summary>
+    <param name="guidMajorMediaType">
+      <para>The major type GUID that specifies the format of the data. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-guids">Major Media Types</a>.</para>
+    </param>
+    <param name="dwSampleFlags">
+      <para>Sample flags. The sample-grabber sink gets the value of this parameter by calling the <see cref="IMFSample.GetSampleFlags" /> method of the media sample.</para>
+    </param>
+    <param name="llSampleTime">
+      <para>The presentation time for this sample, in 100-nanosecond units. If the sample does not have a presentation time, the value of this parameter is <b>_I64_MAX</b></para>
+    </param>
+    <param name="llSampleDuration">
+      <para>The duration of the sample, in 100-nanosecond units.</para>
+      <para>If the sample does not have a duration, the value of this parameter is <b>_I64_MAX</b>.</para>
+    </param>
+    <param name="pSampleBuffer">
+      <para>A pointer to a buffer that contains the sample data.</para>
+    </param>
+    <param name="dwSampleSize">
+      <para>The size, in bytes, of the <i>pSampleBuffer</i> buffer.</para>
+    </param>
+    <param name="pAttributes">
+      <para>A pointer to the <see cref="IMFAttributes" /> interface. Use this interface to get the attributes for this sample (if any). For a list of sample attributes, see <a href="https://docs.microsoft.com//windows/desktop/medfound/sample-attributes">Sample Attributes</a>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If you use the sample-grabber sink in a playback topology, this method should return quickly, or it might interfere with playback. Do not block the thread, wait on events, or perform other lengthy operations inside this method.</para>
+    </remarks>
+    <seealso cref="IMFSampleGrabberSinkCallback2" />
+  </member>
+  <member name="IMFSampleGrabberSinkCallback2">
+    <summary>
+      <para>Extends the <see cref="IMFSampleGrabberSinkCallback" /> interface.</para>
+    </summary>
+    <remarks>
+      <para>This callback interface is used with the sample-grabber sink. It extends the <see cref="IMFSampleGrabberSinkCallback" /> interface by adding the <see cref="OnProcessSampleEx" /> method, which supersedes the <see cref="IMFSampleGrabberSinkCallback.OnProcessSample" /> method.</para>
+      <para>The <see cref="OnProcessSampleEx" /> method adds a parameter that contains the attributes for the media sample. You can use the attributes to get information about the sample, such as  field dominance and telecine flags.</para>
+      <para>To use this interface, do the following:</para>
+      <list type="number">
+        <item>
+          <description>Implement  a callback object that exposes the interface.</description>
+        </item>
+        <item>
+          <description>Create the sample-grabber sink by calling the <see cref="MFCreateSampleGrabberSinkActivate" /> function. Pass the callback pointer in the <i>pIMFSampleGrabberSinkCallback</i> parameter.</description>
+        </item>
+        <item>
+          <description>The sample-grabber sink will call <b>QueryInterface</b> on the callback object.</description>
+        </item>
+        <item>
+          <description>If the callback object exposes the <b>IMFSampleGrabberSinkCallback2</b> interface, the sample-grabber sink will use the <see cref="OnProcessSampleEx" /> callback method.  Otherwise, the sample-grabber sink will use the older <see cref="OnProcessSample" /> callback method.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSampleGrabberSinkCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_PROPERTY_QUERY">
+    <summary>
+      <para>Indicates the properties of a storage device or adapter to retrieve as the input buffer passed to the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code.</para>
+    </summary>
+    <remarks>
+      <para>The optional output buffer returned through the <i>lpOutBuffer</i> parameter of the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code can
+be one of several structures depending on the value of the <b>PropertyId</b> member.  If the
+<b>QueryType</b> member is set to <b>PropertyExistsQuery</b>, then no
+structure is returned.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <seealso cref="STORAGE_ADAPTER_DESCRIPTOR" />
+    <seealso cref="STORAGE_DESCRIPTOR_HEADER" />
+    <seealso cref="STORAGE_DEVICE_DESCRIPTOR" />
+    <seealso cref="STORAGE_PROPERTY_ID" />
+    <seealso cref="STORAGE_QUERY_TYPE" />
+  </member>
+  <member name="STORAGE_PROPERTY_QUERY.PropertyId">
+    <summary>
+      <para>Indicates whether the caller is requesting a device descriptor, an adapter descriptor, a write cache
+property, a device unique ID (DUID), or the device identifiers provided in the device's SCSI vital product data
+(VPD) page. For a list of the property IDs that can be assigned to this member, see
+<see cref="STORAGE_PROPERTY_ID" />.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_QUERY.QueryType">
+    <summary>
+      <para>Contains flags indicating the type of query to be performed as enumerated by the
+<see cref="STORAGE_QUERY_TYPE" /> enumeration.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PropertyStandardQuery</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Instructs the port driver to report a device descriptor, an adapter descriptor or a unique hardware
+device ID (DUID).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PropertyExistsQuery</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Instructs the port driver to report whether the descriptor is supported.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="STORAGE_PROPERTY_QUERY.AdditionalParameters">
+    <summary>
+      <para>Contains an array of bytes that can be used to retrieve additional parameters for specific queries.</para>
+    </summary>
+  </member>
+</doc>

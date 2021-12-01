@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICDdsFormatInfo">
+    <summary>
+      <para>Specifies the <see cref="DXGI_FORMAT" /> and block information of a DDS format.</para>
+    </summary>
+    <seealso cref="DXGI_FORMAT" />
+  </member>
+  <member name="WICDdsFormatInfo.DxgiFormat">
+    <summary>
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>The <see cref="DXGI_FORMAT" /></para>
+    </summary>
+  </member>
+  <member name="WICDdsFormatInfo.BytesPerBlock">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The size of a single block in bytes. For <see cref="DXGI_FORMAT" /> values that are not block-based, the value is equal to the size of a single pixel in bytes.</para>
+    </summary>
+  </member>
+  <member name="WICDdsFormatInfo.BlockWidth">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The width of a single block in pixels. For <see cref="DXGI_FORMAT" /> values that are not block-based, the value is 1.</para>
+    </summary>
+  </member>
+  <member name="WICDdsFormatInfo.BlockHeight">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The height of a single block in pixels. For <see cref="DXGI_FORMAT" /> values that are not block-based, the value is 1.</para>
+    </summary>
+  </member>
+</doc>

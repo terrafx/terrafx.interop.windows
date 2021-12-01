@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TfLayoutCode">
+    <summary>
+      <para>Elements of the <b>TfLayoutCode</b> enumeration specify the type of layout change in an <see cref="ITfTextLayoutSink.OnLayoutChange" /> notification.</para>
+    </summary>
+    <remarks>
+      <para>In TSF, a view is on-screen rendering of document content. These constants are assigned to parameters of methods of the <b>ITf*</b> interfaces, but not those of the <b>IText*</b> interfaces.</para>
+    </remarks>
+    <seealso cref="ITfTextLayoutSink.OnLayoutChange " />
+  </member>
+  <member name="TfLayoutCode.TF_LC_CREATE">
+    <summary>
+      <para>The view has just been created.</para>
+    </summary>
+  </member>
+  <member name="TfLayoutCode.TF_LC_CHANGE">
+    <summary>
+      <para>The view layout has changed.</para>
+    </summary>
+  </member>
+  <member name="TfLayoutCode.TF_LC_DESTROY">
+    <summary>
+      <para>The view is about to be destroyed.</para>
+    </summary>
+  </member>
+</doc>

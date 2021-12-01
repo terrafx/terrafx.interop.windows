@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MsftDiscFormat2Erase.xml' path='doc/member[@name="MsftDiscFormat2Erase"]/*' />
 [Guid("2735412B-7F64-5B0F-8F00-5D77AFBE261E")]
 public partial struct MsftDiscFormat2Erase
 {

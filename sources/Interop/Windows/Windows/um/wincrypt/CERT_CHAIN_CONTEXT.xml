@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_CHAIN_CONTEXT">
+    <summary>
+      <para>The <b>CERT_CHAIN_CONTEXT</b> structure contains an array of simple certificate chains and a trust status structure that indicates summary validity data on all of the connected simple chains.</para>
+    </summary>
+    <remarks>
+      <para>When a <b>CERT_CHAIN_CONTEXT</b> is built, the first simple chain begins with an end certificate and ends with a self-signed certificate. If that self-signed certificate is not a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/r-gly">root</a> or otherwise trusted certificate, an attempt is made to build a new chain. <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">CTLs</a> are used to create the new chain beginning with the self-signed certificate from the original chain as the end certificate of the new chain. This process continues building additional simple chains until the first self-signed certificate is a trusted certificate or until an additional simple chain cannot be built.</para>
+    </remarks>
+    <seealso cref="CERT_SIMPLE_CHAIN" />
+    <seealso cref="CERT_TRUST_STATUS" />
+    <seealso cref="CertGetCertificateChain" />
+  </member>
+  <member name="CERT_CHAIN_CONTEXT.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_CONTEXT.TrustStatus">
+    <summary>
+      <para>A structure that indicates the combined trust status of the simple chains array. The structure includes an error status code and an information status code. For information about status code values, see
+<see cref="CERT_TRUST_STATUS" />.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_CONTEXT.cChain">
+    <summary>
+      <para>The number of simple chains in the array.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_CONTEXT.rgpChain">
+    <summary>
+      <para>An array of pointers to simple chain structures. <b>rgpChain</b>[0] is the end certificate simple chain, and <b>rgpChain</b>[<b>cChain</b>–1] is the final chain. If the end certificate is to be considered valid, the final chain must begin with a certificate contained in the root store or an otherwise trusted, self-signed certificate. If the original chain begins with a trusted certificate, there will be only a single simple chain in the array.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_CONTEXT.cLowerQualityChainContext">
+    <summary>
+      <para>The number of chains in the  <b>rgpLowerQualityChainContext</b> array.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_CONTEXT.rgpLowerQualityChainContext">
+    <summary>
+      <para>An array of pointers to CERT_CHAIN_CONTEXT structures. Returned when CERT_CHAIN_RETURN_LOWER_QUALITY_CONTEXTS is set in dwFlags.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_CONTEXT.fHasRevocationFreshnessTime">
+    <summary>
+      <para>A Boolean value set to <b>TRUE</b> if <b>dwRevocationFreshnessTime</b> is available.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_CONTEXT.dwRevocationFreshnessTime">
+    <summary>
+      <para>The largest CurrentTime, in seconds, minus the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list's</a> (CRL's) ThisUpdate of all elements checked.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_CONTEXT.dwCreateFlags">
+    <summary></summary>
+  </member>
+  <member name="CERT_CHAIN_CONTEXT.ChainId">
+    <summary></summary>
+  </member>
+</doc>

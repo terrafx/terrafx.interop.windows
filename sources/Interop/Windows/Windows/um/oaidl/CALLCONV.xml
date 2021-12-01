@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CALLCONV">
+    <summary>
+      <para>Identifies the calling convention used by a member function described in the METHODDATA structure.</para>
+    </summary>
+  </member>
+  <member name="CALLCONV.CC_FASTCALL">
+    <summary></summary>
+  </member>
+  <member name="CALLCONV.CC_CDECL">
+    <summary></summary>
+  </member>
+  <member name="CALLCONV.CC_MSCPASCAL">
+    <summary></summary>
+  </member>
+  <member name="CALLCONV.CC_PASCAL">
+    <summary></summary>
+  </member>
+  <member name="CALLCONV.CC_MACPASCAL">
+    <summary></summary>
+  </member>
+  <member name="CALLCONV.CC_STDCALL">
+    <summary></summary>
+  </member>
+  <member name="CALLCONV.CC_FPFASTCALL">
+    <summary></summary>
+  </member>
+  <member name="CALLCONV.CC_SYSCALL">
+    <summary></summary>
+  </member>
+  <member name="CALLCONV.CC_MPWCDECL">
+    <summary></summary>
+  </member>
+  <member name="CALLCONV.CC_MPWPASCAL">
+    <summary></summary>
+  </member>
+  <member name="CALLCONV.CC_MAX">
+    <summary></summary>
+  </member>
+</doc>

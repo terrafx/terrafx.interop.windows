@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS
 {
+    /// <include file='CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS.CPAO_NONE"]/*' />
     CPAO_NONE = 0,
+
+    /// <include file='CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS.CPAO_EMPTY_LOCAL"]/*' />
     CPAO_EMPTY_LOCAL = 0x1,
+
+    /// <include file='CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS.CPAO_EMPTY_CONNECTED"]/*' />
     CPAO_EMPTY_CONNECTED = 0x2,
 }

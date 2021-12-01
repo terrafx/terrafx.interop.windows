@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSensorTransformFactory.CreateTransform">
+    <summary>
+      <para>Called by the media pipeline to create the transform.</para>
+    </summary>
+    <param name="guidSensorTransformID">
+      <para>The identifier of the transform to be created.</para>
+    </param>
+    <param name="pAttributes">
+      <para>The identifier of the transform to be created.</para>
+    </param>
+    <param name="ppDeviceMFT">
+      <para>The identifier of the transform to be created.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSensorTransformFactory" />
+  </member>
+  <member name="IMFSensorTransformFactory.GetTransformCount">
+    <summary>
+      <para>Called by the media pipeline to get the number of transforms provided by the sensor transform.</para>
+    </summary>
+    <param name="pdwCount">
+      <para>The number of transforms provided by the sensor transform.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>In the current release, chaining of transforms is not supported, so this value should always be 1.</para>
+    </remarks>
+    <seealso cref="IMFSensorTransformFactory" />
+  </member>
+  <member name="IMFSensorTransformFactory.GetTransformInformation">
+    <summary>
+      <para>Called by the media pipeline to get information about a transform provided by the  sensor transform.</para>
+    </summary>
+    <param name="TransformIndex">
+      <para>The index of the transform for which information is being requested. In the current release, this value will always be 0.</para>
+    </param>
+    <param name="pguidTransformId">
+      <para>Gets the identifier for the transform.</para>
+    </param>
+    <param name="ppAttributes">
+      <para>The attribute store to be populated.</para>
+    </param>
+    <param name="ppStreamInformation">
+      <para>A collection of <see cref="IMFSensorStream" /> objects.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSensorTransformFactory" />
+  </member>
+  <member name="IMFSensorTransformFactory.InitializeFactory">
+    <summary>
+      <para>Called by the media pipeline to initialize the sensor transform.</para>
+    </summary>
+    <param name="dwMaxTransformCount">
+      <para>The maximum number of transforms allowed in a single transform. In the current release, this is always 1.</para>
+    </param>
+    <param name="pSensorDevices">
+      <para>A collection of <see cref="IMFSensorDevice" /> objects representing the available sensors.</para>
+    </param>
+    <param name="pAttributes">
+      <para>The attribute store to be populated by the sensor transform. The only required attribute for sensor transforms is <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-stf-version-info">MF_STF_VERSION_INFO</a>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSensorTransformFactory" />
+  </member>
+  <member name="IMFSensorTransformFactory">
+    <summary>
+      <para>The interface implemented by sensor transforms to allow  the media pipeline to query requirements of the sensor transform and to create a runtime instance of the sensor transform.</para>
+    </summary>
+  </member>
+</doc>

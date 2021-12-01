@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSecureBuffer.xml' path='doc/member[@name="IMFSecureBuffer"]/*' />
 [Guid("C1209904-E584-4752-A2D6-7F21693F8B21")]
 [NativeTypeName("struct IMFSecureBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSecureBuffer : IMFSecureBuffer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSecureBuffer : IMFSecureBuffer.Interface
         return ((delegate* unmanaged<IMFSecureBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSecureBuffer : IMFSecureBuffer.Interface
         return ((delegate* unmanaged<IMFSecureBuffer*, uint>)(lpVtbl[1]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSecureBuffer : IMFSecureBuffer.Interface
         return ((delegate* unmanaged<IMFSecureBuffer*, uint>)(lpVtbl[2]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSecureBuffer.xml' path='doc/member[@name="IMFSecureBuffer.GetIdentifier"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIdentifier(Guid* pGuidIdentifier)

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_BACKUP_RESTORE_FLAGS">
+    <summary>
+      <para>Contains flags used for the <see cref="IWbemBackupRestore.Restore" /> method and the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa391421(v=vs.85)">IWbemBackupRestoreEx.Restore</a> method.</para>
+    </summary>
+  </member>
+  <member name="WBEM_BACKUP_RESTORE_FLAGS.WBEM_FLAG_BACKUP_RESTORE_DEFAULT">
+    <summary>
+      <para>Does not shut down active clients; returns an error if there are any.</para>
+    </summary>
+  </member>
+  <member name="WBEM_BACKUP_RESTORE_FLAGS.WBEM_FLAG_BACKUP_RESTORE_FORCE_SHUTDOWN">
+    <summary>
+      <para>Shuts down any active clients.</para>
+    </summary>
+  </member>
+</doc>

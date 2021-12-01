@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP">
+    <summary>
+      <para>Identifiers for the properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/3d-perspective-transform">3D perspective transform effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_INTERPOLATION_MODE">
+    <summary>
+      <para>The interpolation mode the effect uses on the image. There are 5 scale modes that range in quality and speed.</para>
+      <para>Type is D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE.</para>
+      <para>Default value is D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE_LINEAR.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_BORDER_MODE">
+    <summary>
+      <para>The mode used to calculate the border of the image, soft or hard. See Border modes for more info.</para>
+      <para>Type is D2D1_BORDER_MODE.</para>
+      <para>Default value is D2D1_BORDER_MODE_SOFT.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_DEPTH">
+    <summary>
+      <para>The distance from the PerspectiveOrigin to the projection plane. The value specified in DIPs and must be greater than 0.</para>
+      <para>Type is FLOAT.</para>
+      <para>Default value is 1000.0f.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_PERSPECTIVE_ORIGIN">
+    <summary>
+      <para>The X and Y location of the viewer in the 3D scene. This property is a D2D1_VECTOR_2F defined as: (point X, point Y). The units are in DIPs.
+You set the Z value with the Depth property.</para>
+      <para>Type is D2D1_VECTOR_2F.</para>
+      <para>Default value is {0.0f, 0.0f}.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_LOCAL_OFFSET">
+    <summary>
+      <para>A translation the effect performs before it rotates the projection plane. This property is a D2D1_VECTOR_3F defined as: (X, Y, Z). The units are in DIPs.</para>
+      <para>Type is D2D1_VECTOR_3F.</para>
+      <para>Default value is {0.0f, 0.0f, 0.0f}.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_GLOBAL_OFFSET">
+    <summary>
+      <para>A translation the effect performs after it rotates the projection plane. This property is a D2D1_VECTOR_3F defined as: (X, Y, Z). The units are in DIPs.</para>
+      <para>Type is D2D1_VECTOR_3F.</para>
+      <para>Default value is {0.0f, 0.0f, 0.0f}.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_ROTATION_ORIGIN">
+    <summary>
+      <para>The center point of the rotation the effect performs. This property is a D2D1_VECTOR_3F defined as: (X, Y, Z). The units are in DIPs.</para>
+      <para>Type is D2D1_VECTOR_3F.</para>
+      <para>Default value is {0.0f, 0.0f, 0.0f}.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_ROTATION">
+    <summary>
+      <para>The angles of rotation for each axis. This property is a D2D1_VECTOR_3F defined as: (X, Y, Z). The units are in degrees.</para>
+      <para>Type is D2D1_VECTOR_3F.</para>
+      <para>Default value is {0.0f, 0.0f, 0.0f}.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

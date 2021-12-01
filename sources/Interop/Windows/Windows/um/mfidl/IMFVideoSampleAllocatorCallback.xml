@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFVideoSampleAllocatorCallback.GetFreeSampleCount">
+    <summary>
+      <para>Gets the number of video samples that are currently available for use.</para>
+    </summary>
+    <param name="plSamples">
+      <para>Receives the number of available samples.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To get a video sample from the allocator, call the <see cref="IMFVideoSampleAllocator.AllocateSample" /> method. The <b>AllocateSample</b> method removes a sample from the sample pool and returns it to the caller. When a sample is released, it returns to the pool. The <b>GetFreeSampleCount</b> method returns the count of samples that remain in the sample pool.</para>
+    </remarks>
+    <seealso cref="IMFVideoSampleAllocatorCallback" />
+  </member>
+  <member name="IMFVideoSampleAllocatorCallback.SetCallback">
+    <summary>
+      <para>Sets the callback object that receives notification whenever a video sample is returned to the allocator.</para>
+    </summary>
+    <param name="pNotify">
+      <para>A pointer to the <see cref="IMFVideoSampleAllocatorNotify" /> interface that receives notification, or <b>NULL</b> to remove the callback.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To get a video sample from the allocator, call the <see cref="IMFVideoSampleAllocator.AllocateSample" /> method. When the sample is released, it returns to the pool of available samples. When this happens, the allocator invokes the <see cref="IMFVideoSampleAllocatorNotify.NotifyRelease" /> callback.</para>
+      <para>The allocator holds at most one callback pointer. Calling this method again replaces the previous callback pointer.</para>
+    </remarks>
+    <seealso cref="IMFVideoSampleAllocatorCallback" />
+  </member>
+  <member name="IMFVideoSampleAllocatorCallback">
+    <summary>
+      <para>Enables an application to track video samples allocated by the enhanced video renderer (EVR).</para>
+      <para>The stream sinks on the EVR expose this interface as a service. To get a pointer to the interface, call the <see cref="IMFGetService.GetService" /> method, using the <b>MR_VIDEO_ACCELERATION_SERVICE</b> service identifier.</para>
+    </summary>
+    <seealso cref="IMFVideoSampleAllocator" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

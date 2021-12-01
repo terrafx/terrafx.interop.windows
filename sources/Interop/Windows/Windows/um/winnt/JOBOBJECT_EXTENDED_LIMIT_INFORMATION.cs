@@ -5,21 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_EXTENDED_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION"]/*' />
 public partial struct JOBOBJECT_EXTENDED_LIMIT_INFORMATION
 {
+    /// <include file='JOBOBJECT_EXTENDED_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.BasicLimitInformation"]/*' />
     public JOBOBJECT_BASIC_LIMIT_INFORMATION BasicLimitInformation;
 
+    /// <include file='JOBOBJECT_EXTENDED_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.IoInfo"]/*' />
     public IO_COUNTERS IoInfo;
 
+    /// <include file='JOBOBJECT_EXTENDED_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.ProcessMemoryLimit"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint ProcessMemoryLimit;
 
+    /// <include file='JOBOBJECT_EXTENDED_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.JobMemoryLimit"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint JobMemoryLimit;
 
+    /// <include file='JOBOBJECT_EXTENDED_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.PeakProcessMemoryUsed"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint PeakProcessMemoryUsed;
 
+    /// <include file='JOBOBJECT_EXTENDED_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.PeakJobMemoryUsed"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint PeakJobMemoryUsed;
 }

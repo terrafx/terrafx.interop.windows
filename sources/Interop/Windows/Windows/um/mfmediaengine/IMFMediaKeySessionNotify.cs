@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaKeySessionNotify.xml' path='doc/member[@name="IMFMediaKeySessionNotify"]/*' />
 [Guid("6A0083F9-8947-4C1D-9CE0-CDEE22B23135")]
 [NativeTypeName("struct IMFMediaKeySessionNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify
         return ((delegate* unmanaged<IMFMediaKeySessionNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify
         return ((delegate* unmanaged<IMFMediaKeySessionNotify*, uint>)(lpVtbl[1]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify
         return ((delegate* unmanaged<IMFMediaKeySessionNotify*, uint>)(lpVtbl[2]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaKeySessionNotify.xml' path='doc/member[@name="IMFMediaKeySessionNotify.KeyMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void KeyMessage([NativeTypeName("BSTR")] ushort* destinationURL, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint cb)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify
         ((delegate* unmanaged<IMFMediaKeySessionNotify*, ushort*, byte*, uint, void>)(lpVtbl[3]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this), destinationURL, message, cb);
     }
 
+    /// <include file='IMFMediaKeySessionNotify.xml' path='doc/member[@name="IMFMediaKeySessionNotify.KeyAdded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void KeyAdded()
@@ -55,6 +61,7 @@ public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify
         ((delegate* unmanaged<IMFMediaKeySessionNotify*, void>)(lpVtbl[4]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaKeySessionNotify.xml' path='doc/member[@name="IMFMediaKeySessionNotify.KeyError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void KeyError(ushort code, [NativeTypeName("DWORD")] uint systemCode)

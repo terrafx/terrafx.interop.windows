@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POWERBROADCAST_SETTING">
+    <summary>
+      <para>Sent with a power setting event and contains data about the specific change. For more
+information, see <a href="https://docs.microsoft.com//windows/desktop/Power/registering-for-power-events">Registering for Power
+Events</a> and <a href="https://docs.microsoft.com//windows/desktop/Power/power-setting-guids">Power Setting GUIDs</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Power/power-setting-guids">Power Setting GUIDs</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Power/registering-for-power-events">Registering for Power Events</seealso>
+  </member>
+  <member name="POWERBROADCAST_SETTING.PowerSetting">
+    <summary>
+      <para>Indicates the power setting for which this notification is being delivered. For more
+info, see <a href="https://docs.microsoft.com//windows/desktop/Power/power-setting-guids">Power Setting GUIDs</a>.</para>
+    </summary>
+  </member>
+  <member name="POWERBROADCAST_SETTING.DataLength">
+    <summary>
+      <para>The size in bytes of the data in the  <i>Data</i> member.</para>
+    </summary>
+  </member>
+  <member name="POWERBROADCAST_SETTING.Data">
+    <summary>
+      <para>The new value of the power setting. The type and possible values for this member depend on <i>PowerSettng.</i></para>
+    </summary>
+  </member>
+</doc>

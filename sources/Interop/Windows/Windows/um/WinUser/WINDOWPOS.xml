@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINDOWPOS">
+    <summary>
+      <para>Contains information about the size and position of a window.</para>
+    </summary>
+    <seealso cref="EndDeferWindowPos" />
+    <seealso cref="SetWindowPos" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/wm-nccalcsize">WM_NCCALCSIZE</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/windows">Windows</seealso>
+  </member>
+  <member name="WINDOWPOS.hwndInsertAfter">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>The position of the window in Z order (front-to-back position). This member can be a handle to the window behind which this window is placed, or can be one of the special values listed with the <see cref="SetWindowPos" /> function.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPOS.hwnd">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the window.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPOS.x">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The position of the left edge of the window.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPOS.y">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The position of the top edge of the window.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPOS.cx">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The window width, in pixels.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPOS.cy">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The window height, in pixels.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPOS.flags">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The window position. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_DRAWFRAME</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Draws a frame (defined in the window's class description) around the window. Same as the <b>SWP_FRAMECHANGED</b> flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_FRAMECHANGED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Sends a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-nccalcsize">WM_NCCALCSIZE</a> message to the window, even if the window's size is not being changed. If this flag is not specified, <b>WM_NCCALCSIZE</b> is sent only when the window's size is being changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_HIDEWINDOW</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Hides the window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_NOACTIVATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Does not activate the window. If this flag is not set, the window is activated and moved to the top of either the topmost or non-topmost group (depending on the setting of the
+<b>hwndInsertAfter</b> member).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_NOCOPYBITS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Discards the entire contents of the client area. If this flag is not specified, the valid contents of the client area are saved and copied back into the client area after the window is sized or repositioned.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_NOMOVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Retains the current position (ignores the
+<b>x</b> and
+<b>y</b> members).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_
+NOOWNERZORDER</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Does not change the owner window's position in the Z order.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_NOREDRAW</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Does not redraw changes. If this flag is set, no repainting of any kind occurs. This applies to the client area, the nonclient area (including the title bar and scroll bars), and any part of the parent window uncovered as a result of the window being moved. When this flag is set, the application must explicitly invalidate or redraw any parts of the window and parent window that need redrawing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_NOREPOSITION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Does not change the owner window's position in the Z order. Same as the <b>SWP_NOOWNERZORDER</b> flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_NOSENDCHANGING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Prevents the window from receiving the
+<a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-windowposchanging">WM_WINDOWPOSCHANGING</a> message.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_NOSIZE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Retains the current size (ignores the
+<b>cx</b> and
+<b>cy</b> members).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_NOZORDER</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Retains the current Z order (ignores the
+<b>hwndInsertAfter</b> member).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SWP_SHOWWINDOW</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Displays the window.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

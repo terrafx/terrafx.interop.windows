@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfMenu.AddMenuItem">
+    <summary>
+      <para>Adds an item to the menu that the language bar will display for the button.</para>
+    </summary>
+    <param name="uId">
+      <para>Contains the menu item identifier.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Contains zero or a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbmenuf--constants">TF_LBMENUF_*</a> values that specify the type and state of the menu item.</para>
+    </param>
+    <param name="hbmp">
+      <para>Contains the handle of the bitmap drawn for the menu item. If this is <b>NULL</b>, no bitmap is displayed for the menu item.</para>
+    </param>
+    <param name="hbmpMask">
+      <para>Contains the handle of the mask bitmap. This is a monochrome bitmap that functions as a mask for <i>hbmp</i>. Each black pixel in this bitmap will cause the corresponding pixel in <i>hbmp</i> to be displayed in its normal color. Each white pixel in this bitmap will cause the corresponding pixel in <i>hbmp</i> to be displayed in the inverse of its normal color.</para>
+      <para>To have the bitmap displayed without any color conversion, create a monochrome bitmap the same size as <i>hbmp</i> and set each pixel to black (RGB(0, 0, 0)).</para>
+      <para>If <i>hbmp</i> is <b>NULL</b>, this parameter is ignored.</para>
+    </param>
+    <param name="pch">
+      <para>Pointer to a <b>WCHAR</b> buffer that contains the text to be displayed for the menu item. The length of the text is specified by <i>cch</i>.</para>
+    </param>
+    <param name="cch">
+      <para>Specifies the length, in <b>WCHAR</b>, of the menu item text in <i>pch</i>.</para>
+    </param>
+    <param name="ppMenu">
+      <para>[in, out] Pointer to an <see cref="ITfMenu" /> interface pointer that receives the submenu object. This parameter is not used and must be <b>NULL</b> if <i>dwFlags</i> does not contain <b>TF_LBMENUF_SUBMENU</b>.</para>
+      <para>If the submenu item is successfully created, this parameter receives an <see cref="ITfMenu" /> object that the caller uses to add items to the submenu.</para>
+      <para>If <i>dwFlags</i> contains <b>TF_LBMENUF_SUBMENU</b>, this value must be initialized to <b>NULL</b> prior to calling this method because, in most cases, this is a marshalled call. Not initializing this variable results in the marshaller attempting to access random memory.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfMenu" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbmenuf--constants">TF_LBMENUF_* Constants
+</seealso>
+  </member>
+  <member name="ITfMenu">
+    <summary>
+      <para>The <b>ITfMenu</b> interface is implemented by the language bar and used by a language bar button provider to add items to the menu that the language bar will display for the button.</para>
+    </summary>
+    <seealso cref="ITfLangBarItemBitmapButton.InitMenu " />
+    <seealso cref="ITfLangBarItemButton.InitMenu " />
+    <seealso cref="ITfSystemLangBarItemSink.InitMenu " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

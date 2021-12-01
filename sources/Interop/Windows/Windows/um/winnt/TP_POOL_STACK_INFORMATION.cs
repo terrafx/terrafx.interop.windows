@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TP_POOL_STACK_INFORMATION.xml' path='doc/member[@name="TP_POOL_STACK_INFORMATION"]/*' />
 public partial struct TP_POOL_STACK_INFORMATION
 {
+    /// <include file='TP_POOL_STACK_INFORMATION.xml' path='doc/member[@name="TP_POOL_STACK_INFORMATION.StackReserve"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint StackReserve;
 
+    /// <include file='TP_POOL_STACK_INFORMATION.xml' path='doc/member[@name="TP_POOL_STACK_INFORMATION.StackCommit"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint StackCommit;
 }

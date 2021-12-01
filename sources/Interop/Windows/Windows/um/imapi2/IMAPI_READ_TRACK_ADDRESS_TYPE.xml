@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAPI_READ_TRACK_ADDRESS_TYPE">
+    <summary>
+      <para>Defines values that indicate how to interpret track addresses for the current disc profile of a randomly-writable, hardware-defect-managed media type.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_READ_TRACK_ADDRESS_TYPE.IMAPI_READ_TRACK_ADDRESS_TYPE_LBA">
+    <summary>
+      <para>Interpret the address field as an LBA (sector address).  The returned data should reflect the information for the track which contains the specified LBA.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_READ_TRACK_ADDRESS_TYPE.IMAPI_READ_TRACK_ADDRESS_TYPE_TRACK">
+    <summary>
+      <para>Interpret the address field as a track number.  The returned data should reflect the information for the specified track.  This version of the command has the greatest compatibility with legacy devices.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_READ_TRACK_ADDRESS_TYPE.IMAPI_READ_TRACK_ADDRESS_TYPE_SESSION">
+    <summary>
+      <para>Interpret the address field as a session number.  The returned data should reflect the information for the first track which exists in the specified session.  Note that not all drives support this method.</para>
+    </summary>
+  </member>
+</doc>

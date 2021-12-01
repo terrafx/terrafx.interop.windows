@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechCustomStream.xml' path='doc/member[@name="DISPID_SpeechCustomStream"]/*' />
 public enum DISPID_SpeechCustomStream
 {
+    /// <include file='DISPID_SpeechCustomStream.xml' path='doc/member[@name="DISPID_SpeechCustomStream.DISPID_SCSBaseStream"]/*' />
     DISPID_SCSBaseStream = 100,
 }

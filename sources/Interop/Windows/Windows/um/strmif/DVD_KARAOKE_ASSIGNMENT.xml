@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_KARAOKE_ASSIGNMENT">
+    <summary>
+      <para>Defines the speaker configuration for an audio stream.</para>
+    </summary>
+    <remarks>
+      <para>All channels within a stream will use the same speaker configuration, although the channels can be sent to different speakers within this configuration.</para>
+    </remarks>
+    <seealso cref="DVD_KaraokeAttributes Structure" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="DVD_KARAOKE_ASSIGNMENT.DVD_Assignment_reserved0">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_ASSIGNMENT.DVD_Assignment_reserved1">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_ASSIGNMENT.DVD_Assignment_LR">
+    <summary>
+      <para>The stream is assigned to the left and right speakers.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_ASSIGNMENT.DVD_Assignment_LRM">
+    <summary>
+      <para>The stream is assigned to the left, right, and middle speakers.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_ASSIGNMENT.DVD_Assignment_LR1">
+    <summary>
+      <para>The stream is assigned to the left, right, and audio1 speakers.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_ASSIGNMENT.DVD_Assignment_LRM1">
+    <summary>
+      <para>The stream is assigned to the left, right, middle, and audio1 speakers.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_ASSIGNMENT.DVD_Assignment_LR12">
+    <summary>
+      <para>The stream is assigned to the left, right, and audio2 speakers.</para>
+    </summary>
+  </member>
+  <member name="DVD_KARAOKE_ASSIGNMENT.DVD_Assignment_LRM12">
+    <summary>
+      <para>The stream is assigned to the left, right, middle, and audio2 speakers.</para>
+    </summary>
+  </member>
+</doc>

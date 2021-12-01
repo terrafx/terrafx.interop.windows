@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BATTERY_REPORTING_SCALE">
+    <summary>
+      <para>Contains the granularity of the battery capacity that is reported by <a href="https://docs.microsoft.com//windows/desktop/Power/ioctl-battery-query-status">IOCTL_BATTERY_QUERY_STATUS</a>. A variable-length array of <b>BATTERY_REPORTING_SCALE</b> structures is returned from <a href="https://docs.microsoft.com//windows/desktop/Power/ioctl-battery-query-information">IOCTL_BATTERY_QUERY_INFORMATION</a> when the <b>InformationLevel</b> is set to <b>BatteryGranularityInformation</b>.   Multiple entries are returned when the granularity depends on the present capacity of the battery.</para>
+    </summary>
+    <remarks>
+      <para>The total number of <b>BATTERY_REPORTING_SCALE</b> entries returned from <a href="https://docs.microsoft.com//windows/desktop/Power/ioctl-battery-query-information">IOCTL_BATTERY_QUERY_INFORMATION</a> is indicated by the value of the <i>lpBytesReturned</i> parameter of <see cref="DeviceIoControl" />. To determine the number of elements in the array, divide the value of <i>lpBytesReturned</i> by the size of the
+<b>BATTERY_REPORTING_SCALE</b> structure. The maximum number of array entries that can be returned is four.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Power/ioctl-battery-query-information">IOCTL_BATTERY_QUERY_INFORMATION</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Power/ioctl-battery-query-status">IOCTL_BATTERY_QUERY_STATUS</seealso>
+  </member>
+  <member name="BATTERY_REPORTING_SCALE.Granularity">
+    <summary>
+      <para>The granularity of the capacity reading returned by <a href="https://docs.microsoft.com//windows/desktop/Power/ioctl-battery-query-status">IOCTL_BATTERY_QUERY_STATUS</a> in milliwatt-hours (mWh).  Granularity may change over time as battery discharge and recharge lowers the range of readings.</para>
+    </summary>
+  </member>
+  <member name="BATTERY_REPORTING_SCALE.Capacity">
+    <summary>
+      <para>The upper capacity limit for <i>Granularity</i>.   The value of <i>Granularity</i> is valid for capacities reported by <a href="https://docs.microsoft.com//windows/desktop/Power/ioctl-battery-query-status">IOCTL_BATTERY_QUERY_STATUS</a> that are less than or equal to this capacity (mWh), but greater than or equal to the capacity given in the previous array element, or zero if this is the first array element.</para>
+    </summary>
+  </member>
+</doc>

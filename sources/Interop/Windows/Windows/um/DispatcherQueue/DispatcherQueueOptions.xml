@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DispatcherQueueOptions">
+    <summary>
+      <para>Specifies the threading and apartment type for a new <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>.</para>
+    </summary>
+    <remarks>
+      <para>Introduced in Windows 10, version 1709.</para>
+    </remarks>
+    <seealso cref="CreateDispatcherQueueController" />
+  </member>
+  <member name="DispatcherQueueOptions.dwSize">
+    <summary>
+      <para>Size of this <b>DispatcherQueueOptions</b> structure.</para>
+    </summary>
+  </member>
+  <member name="DispatcherQueueOptions.threadType">
+    <summary>
+      <para>Thread affinity for the created <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>.</para>
+    </summary>
+  </member>
+  <member name="DispatcherQueueOptions.apartmentType">
+    <summary>
+      <para>Specifies whether to initialize COM apartment on the new thread as an application single-threaded apartment (ASTA)  or single-threaded apartment (STA). This field is only relevant if <b>threadType</b> is <b>DQTYPE_THREAD_DEDICATED</b>. Use <b>DQTAT_COM_NONE</b> when <b>DispatcherQueueOptions.threadType</b> is <b>DQTYPE_THREAD_CURRENT</b>.</para>
+    </summary>
+  </member>
+</doc>

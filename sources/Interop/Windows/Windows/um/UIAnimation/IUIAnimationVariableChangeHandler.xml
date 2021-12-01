@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIAnimationVariableChangeHandler.OnValueChanged">
+    <summary>
+      <para>Handles events that occur when the value of an animation variable changes.</para>
+      <para>This method receives updates as <b>DOUBLE</b> values.
+To receive updates as <b>INT32</b> values, use the <see cref="IUIAnimationVariableIntegerChangeHandler.OnIntegerValueChanged" /> method.</para>
+    </summary>
+    <param name="storyboard">
+      <para>The storyboard that is animating the animation variable specified by the <i>variable</i> parameter.</para>
+    </param>
+    <param name="variable">
+      <para>The animation variable that has been updated.</para>
+    </param>
+    <param name="newValue">
+      <para>The new value of the animation variable.</para>
+    </param>
+    <param name="previousValue">
+      <para>The previous value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>By default, a call made in a callback method to any other animation method results in the call failing and returning <b>UI_E_ILLEGAL_REENTRANCY</b>. However, there are exceptions to this default. The following methods can be successfully called from <b>OnValueChanged</b>:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable.GetValue " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable.GetFinalValue " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable.GetPreviousValue " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable.GetIntegerValue " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable.GetFinalIntegerValue " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable.GetPreviousIntegerValue " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable.GetCurrentStoryboard " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationManager.GetVariableFromTag " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationManager.GetStoryboardFromTag " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard.GetTag " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable.GetTag " />
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IUIAnimationVariable.GetPreviousValue" />
+    <seealso cref="IUIAnimationVariable.GetValue" />
+    <seealso cref="IUIAnimationVariable.SetVariableChangeHandler" />
+    <seealso cref="IUIAnimationVariableChangeHandler" />
+    <seealso cref="IUIAnimationVariableIntegerChangeHandler.OnIntegerValueChanged" />
+  </member>
+  <member name="IUIAnimationVariableChangeHandler">
+    <summary>
+      <para>Defines a method for handling events related to animation variable updates.</para>
+    </summary>
+    <remarks>
+      <para>
+        <see cref="OnValueChanged" /> receives animation variable value updates as <b>DOUBLE</b> values.</para>
+      <para>To receive value updates as <b>INT32</b> values, use <see cref="IUIAnimationVariableIntegerChangeHandler.OnIntegerValueChanged" />.</para>
+    </remarks>
+    <seealso cref="IUIAnimationVariable.GetValue" />
+    <seealso cref="IUIAnimationVariable.SetVariableChangeHandler" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

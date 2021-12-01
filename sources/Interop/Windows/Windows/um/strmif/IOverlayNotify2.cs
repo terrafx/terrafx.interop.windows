@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOverlayNotify2.xml' path='doc/member[@name="IOverlayNotify2"]/*' />
 [Guid("680EFA10-D535-11D1-87C8-00A0C9223196")]
 [NativeTypeName("struct IOverlayNotify2 : IOverlayNotify")]
 [NativeInheritance("IOverlayNotify")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
         return ((delegate* unmanaged<IOverlayNotify2*, Guid*, void**, int>)(lpVtbl[0]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
         return ((delegate* unmanaged<IOverlayNotify2*, uint>)(lpVtbl[1]))((IOverlayNotify2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
         return ((delegate* unmanaged<IOverlayNotify2*, uint>)(lpVtbl[2]))((IOverlayNotify2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOverlayNotify.OnPaletteChange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnPaletteChange([NativeTypeName("DWORD")] uint dwColors, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* pPalette)
@@ -46,6 +51,7 @@ public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
         return ((delegate* unmanaged<IOverlayNotify2*, uint, PALETTEENTRY*, int>)(lpVtbl[3]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), dwColors, pPalette);
     }
 
+    /// <inheritdoc cref="IOverlayNotify.OnClipChange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnClipChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect, [NativeTypeName("const RGNDATA *")] RGNDATA* pRgnData)
@@ -53,6 +59,7 @@ public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
         return ((delegate* unmanaged<IOverlayNotify2*, RECT*, RECT*, RGNDATA*, int>)(lpVtbl[4]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect, pRgnData);
     }
 
+    /// <inheritdoc cref="IOverlayNotify.OnColorKeyChange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnColorKeyChange([NativeTypeName("const COLORKEY *")] COLORKEY* pColorKey)
@@ -60,6 +67,7 @@ public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
         return ((delegate* unmanaged<IOverlayNotify2*, COLORKEY*, int>)(lpVtbl[5]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), pColorKey);
     }
 
+    /// <inheritdoc cref="IOverlayNotify.OnPositionChange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnPositionChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect)
@@ -67,6 +75,7 @@ public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
         return ((delegate* unmanaged<IOverlayNotify2*, RECT*, RECT*, int>)(lpVtbl[6]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect);
     }
 
+    /// <include file='IOverlayNotify2.xml' path='doc/member[@name="IOverlayNotify2.OnDisplayChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnDisplayChange(HMONITOR hMonitor)

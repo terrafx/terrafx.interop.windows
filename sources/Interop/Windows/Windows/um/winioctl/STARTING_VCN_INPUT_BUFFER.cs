@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STARTING_VCN_INPUT_BUFFER.xml' path='doc/member[@name="STARTING_VCN_INPUT_BUFFER"]/*' />
 public partial struct STARTING_VCN_INPUT_BUFFER
 {
+    /// <include file='STARTING_VCN_INPUT_BUFFER.xml' path='doc/member[@name="STARTING_VCN_INPUT_BUFFER.StartingVcn"]/*' />
     public LARGE_INTEGER StartingVcn;
 }

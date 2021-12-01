@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumSpObjectTokens.xml' path='doc/member[@name="IEnumSpObjectTokens"]/*' />
 [Guid("06B64F9E-7FDA-11D2-B4F2-00C04F797396")]
 [NativeTypeName("struct IEnumSpObjectTokens : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
         return ((delegate* unmanaged<IEnumSpObjectTokens*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
         return ((delegate* unmanaged<IEnumSpObjectTokens*, uint>)(lpVtbl[1]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
         return ((delegate* unmanaged<IEnumSpObjectTokens*, uint>)(lpVtbl[2]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumSpObjectTokens.xml' path='doc/member[@name="IEnumSpObjectTokens.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, ISpObjectToken** pelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
         return ((delegate* unmanaged<IEnumSpObjectTokens*, uint, ISpObjectToken**, uint*, int>)(lpVtbl[3]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), celt, pelt, pceltFetched);
     }
 
+    /// <include file='IEnumSpObjectTokens.xml' path='doc/member[@name="IEnumSpObjectTokens.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
         return ((delegate* unmanaged<IEnumSpObjectTokens*, uint, int>)(lpVtbl[4]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <include file='IEnumSpObjectTokens.xml' path='doc/member[@name="IEnumSpObjectTokens.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
         return ((delegate* unmanaged<IEnumSpObjectTokens*, int>)(lpVtbl[5]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumSpObjectTokens.xml' path='doc/member[@name="IEnumSpObjectTokens.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumSpObjectTokens** ppEnum)
@@ -67,6 +75,7 @@ public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
         return ((delegate* unmanaged<IEnumSpObjectTokens*, IEnumSpObjectTokens**, int>)(lpVtbl[6]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumSpObjectTokens.xml' path='doc/member[@name="IEnumSpObjectTokens.Item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Item([NativeTypeName("ULONG")] uint Index, ISpObjectToken** ppToken)
@@ -74,6 +83,7 @@ public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
         return ((delegate* unmanaged<IEnumSpObjectTokens*, uint, ISpObjectToken**, int>)(lpVtbl[7]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), Index, ppToken);
     }
 
+    /// <include file='IEnumSpObjectTokens.xml' path='doc/member[@name="IEnumSpObjectTokens.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetCount([NativeTypeName("ULONG *")] uint* pCount)

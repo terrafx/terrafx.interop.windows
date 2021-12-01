@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_HASHED_ENCODE_INFO">
+    <summary>
+      <para>The <b>CMSG_HASHED_ENCODE_INFO</b> structure is used with <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hashed</a> messages. It is passed to
+the <see cref="CryptMsgOpenToEncode" /> function if the <b>CryptMsgOpenToEncode</b> function's <i>dwMsgType</i> parameter is <b>CMSG_ENVELOPED</b>.</para>
+    </summary>
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+  </member>
+  <member name="CMSG_HASHED_ENCODE_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CMSG_HASHED_ENCODE_INFO.hCryptProv">
+    <summary>
+      <para>This member is not used and should be set to <b>NULL</b>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>Specifies a handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP) used to do the hash. The <i>hCryptProv</i> private keys are not used.</para>
+      <para>This member's data type is <b>HCRYPTPROV</b>.</para>
+      <para>Unless there is a strong reason for passing in a specific cryptographic provider in <i>hCryptProv</i>, pass zero to use the default RSA or DSS provider to be acquired before doing hash, signature verification, or recipient encryption operations.</para>
+    </summary>
+  </member>
+  <member name="CMSG_HASHED_ENCODE_INFO.HashAlgorithm">
+    <summary>
+      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the hash algorithm type and any associated additional parameters.</para>
+    </summary>
+  </member>
+  <member name="CMSG_HASHED_ENCODE_INFO.pvHashAuxInfo">
+    <summary>
+      <para>This member is currently not used and must be set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

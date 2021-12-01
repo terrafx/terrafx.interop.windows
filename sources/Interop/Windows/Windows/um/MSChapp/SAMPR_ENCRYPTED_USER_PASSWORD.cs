@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SAMPR_ENCRYPTED_USER_PASSWORD.xml' path='doc/member[@name="SAMPR_ENCRYPTED_USER_PASSWORD"]/*' />
 public unsafe partial struct SAMPR_ENCRYPTED_USER_PASSWORD
 {
+    /// <include file='SAMPR_ENCRYPTED_USER_PASSWORD.xml' path='doc/member[@name="SAMPR_ENCRYPTED_USER_PASSWORD.Buffer"]/*' />
     [NativeTypeName("UCHAR [516]")]
     public fixed byte Buffer[516];
 }

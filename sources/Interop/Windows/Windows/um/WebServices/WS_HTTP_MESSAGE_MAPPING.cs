@@ -5,21 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HTTP_MESSAGE_MAPPING.xml' path='doc/member[@name="WS_HTTP_MESSAGE_MAPPING"]/*' />
 public unsafe partial struct WS_HTTP_MESSAGE_MAPPING
 {
+    /// <include file='WS_HTTP_MESSAGE_MAPPING.xml' path='doc/member[@name="WS_HTTP_MESSAGE_MAPPING.requestMappingOptions"]/*' />
     [NativeTypeName("ULONG")]
     public uint requestMappingOptions;
 
+    /// <include file='WS_HTTP_MESSAGE_MAPPING.xml' path='doc/member[@name="WS_HTTP_MESSAGE_MAPPING.responseMappingOptions"]/*' />
     [NativeTypeName("ULONG")]
     public uint responseMappingOptions;
 
+    /// <include file='WS_HTTP_MESSAGE_MAPPING.xml' path='doc/member[@name="WS_HTTP_MESSAGE_MAPPING.requestHeaderMappings"]/*' />
     public WS_HTTP_HEADER_MAPPING** requestHeaderMappings;
 
+    /// <include file='WS_HTTP_MESSAGE_MAPPING.xml' path='doc/member[@name="WS_HTTP_MESSAGE_MAPPING.requestHeaderMappingCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint requestHeaderMappingCount;
 
+    /// <include file='WS_HTTP_MESSAGE_MAPPING.xml' path='doc/member[@name="WS_HTTP_MESSAGE_MAPPING.responseHeaderMappings"]/*' />
     public WS_HTTP_HEADER_MAPPING** responseHeaderMappings;
 
+    /// <include file='WS_HTTP_MESSAGE_MAPPING.xml' path='doc/member[@name="WS_HTTP_MESSAGE_MAPPING.responseHeaderMappingCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint responseHeaderMappingCount;
 }

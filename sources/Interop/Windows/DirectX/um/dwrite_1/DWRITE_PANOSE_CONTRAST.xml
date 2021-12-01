@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_CONTRAST">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_CONTRAST</b> enumeration contains values that specify the ratio between thickest and thinnest point of the stroke for a letter such as uppercase 'O'.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_ANY">
+    <summary>
+      <para>Any contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_NO_FIT">
+    <summary>
+      <para>No fit contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_NONE">
+    <summary>
+      <para>No contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_VERY_LOW">
+    <summary>
+      <para>Very low contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_LOW">
+    <summary>
+      <para>Low contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_MEDIUM_LOW">
+    <summary>
+      <para>Medium low contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_MEDIUM">
+    <summary>
+      <para>Medium contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_MEDIUM_HIGH">
+    <summary>
+      <para>Medium high contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_HIGH">
+    <summary>
+      <para>High contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_VERY_HIGH">
+    <summary>
+      <para>Very high contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_HORIZONTAL_LOW">
+    <summary>
+      <para>Horizontal low contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_HORIZONTAL_MEDIUM">
+    <summary>
+      <para>Horizontal medium contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_HORIZONTAL_HIGH">
+    <summary>
+      <para>Horizontal high contrast.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_CONTRAST.DWRITE_PANOSE_CONTRAST_BROKEN">
+    <summary>
+      <para>Broken contrast.</para>
+    </summary>
+  </member>
+</doc>

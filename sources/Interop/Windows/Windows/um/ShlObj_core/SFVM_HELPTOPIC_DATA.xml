@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SFVM_HELPTOPIC_DATA">
+    <summary>
+      <para>Contains the name of an HTML Help file and a topic in that file. Used with the <a href="https://docs.microsoft.com//windows/desktop/shell/sfvm-gethelptopic">SFVM_GETHELPTOPIC</a> notification. This structure requires Unicode strings.</para>
+    </summary>
+  </member>
+  <member name="SFVM_HELPTOPIC_DATA.wszHelpFile">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
+      <para>A null-terminated Unicode string containing the fully qualified path to the help file.</para>
+    </summary>
+  </member>
+  <member name="SFVM_HELPTOPIC_DATA.wszHelpTopic">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
+      <para>A null-terminated Unicode string containing the name of the topic.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncVideoSourceScanType">
+    <summary>
+      <para>Specifies whether the input frames for an encoder are progressive or interlaced. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoforcesourcescantype-property">AVEncVideoForceSourceScanType</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncVideoSourceScanType.eAVEncVideoSourceScan_Automatic">
+    <summary>
+      <para>Use the media type on the encoder's input pin to determine whether the frames are progressive or interlaced.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoSourceScanType.eAVEncVideoSourceScan_Interlaced">
+    <summary>
+      <para>Input frames are interlaced.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoSourceScanType.eAVEncVideoSourceScan_Progressive">
+    <summary>
+      <para>Input frames are progressive.</para>
+    </summary>
+  </member>
+</doc>

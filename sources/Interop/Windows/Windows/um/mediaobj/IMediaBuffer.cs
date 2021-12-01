@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaBuffer.xml' path='doc/member[@name="IMediaBuffer"]/*' />
 [Guid("59EFF8B9-938C-4A26-82F2-95CB84CDC837")]
 [NativeTypeName("struct IMediaBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaBuffer : IMediaBuffer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaBuffer : IMediaBuffer.Interface
         return ((delegate* unmanaged<IMediaBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMediaBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaBuffer : IMediaBuffer.Interface
         return ((delegate* unmanaged<IMediaBuffer*, uint>)(lpVtbl[1]))((IMediaBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaBuffer : IMediaBuffer.Interface
         return ((delegate* unmanaged<IMediaBuffer*, uint>)(lpVtbl[2]))((IMediaBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaBuffer.xml' path='doc/member[@name="IMediaBuffer.SetLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetLength([NativeTypeName("DWORD")] uint cbLength)
@@ -46,6 +51,7 @@ public unsafe partial struct IMediaBuffer : IMediaBuffer.Interface
         return ((delegate* unmanaged<IMediaBuffer*, uint, int>)(lpVtbl[3]))((IMediaBuffer*)Unsafe.AsPointer(ref this), cbLength);
     }
 
+    /// <include file='IMediaBuffer.xml' path='doc/member[@name="IMediaBuffer.GetMaxLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMaxLength([NativeTypeName("DWORD *")] uint* pcbMaxLength)
@@ -53,6 +59,7 @@ public unsafe partial struct IMediaBuffer : IMediaBuffer.Interface
         return ((delegate* unmanaged<IMediaBuffer*, uint*, int>)(lpVtbl[4]))((IMediaBuffer*)Unsafe.AsPointer(ref this), pcbMaxLength);
     }
 
+    /// <include file='IMediaBuffer.xml' path='doc/member[@name="IMediaBuffer.GetBufferAndLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetBufferAndLength(byte** ppBuffer, [NativeTypeName("DWORD *")] uint* pcbLength)

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_CLUSTER_METRICS">
+    <summary>
+      <para>Contains information about a glyph cluster.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_CLUSTER_METRICS.width">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The total advance width of all glyphs in the cluster.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_CLUSTER_METRICS.length">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>The number of text positions in the cluster.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_CLUSTER_METRICS.canWrapLineAfter">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Indicates whether a line can be broken right after the cluster.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_CLUSTER_METRICS.isWhitespace">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Indicates whether the cluster corresponds to a whitespace character.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_CLUSTER_METRICS.isNewline">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Indicates whether the cluster corresponds to a newline character.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_CLUSTER_METRICS.isSoftHyphen">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Indicates whether the cluster corresponds to a soft hyphen character.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_CLUSTER_METRICS.isRightToLeft">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Indicates whether the cluster is read from right to left.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_CLUSTER_METRICS.padding">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

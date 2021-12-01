@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CHANGEFILTERSTRUCT.xml' path='doc/member[@name="CHANGEFILTERSTRUCT"]/*' />
 public partial struct CHANGEFILTERSTRUCT
 {
+    /// <include file='CHANGEFILTERSTRUCT.xml' path='doc/member[@name="CHANGEFILTERSTRUCT.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CHANGEFILTERSTRUCT.xml' path='doc/member[@name="CHANGEFILTERSTRUCT.ExtStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExtStatus;
 }

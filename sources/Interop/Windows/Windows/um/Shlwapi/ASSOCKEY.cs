@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ASSOCKEY.xml' path='doc/member[@name="ASSOCKEY"]/*' />
 public enum ASSOCKEY
 {
+    /// <include file='ASSOCKEY.xml' path='doc/member[@name="ASSOCKEY.ASSOCKEY_SHELLEXECCLASS"]/*' />
     ASSOCKEY_SHELLEXECCLASS = 1,
+
+    /// <include file='ASSOCKEY.xml' path='doc/member[@name="ASSOCKEY.ASSOCKEY_APP"]/*' />
     ASSOCKEY_APP,
+
+    /// <include file='ASSOCKEY.xml' path='doc/member[@name="ASSOCKEY.ASSOCKEY_CLASS"]/*' />
     ASSOCKEY_CLASS,
+
+    /// <include file='ASSOCKEY.xml' path='doc/member[@name="ASSOCKEY.ASSOCKEY_BASECLASS"]/*' />
     ASSOCKEY_BASECLASS,
+
+    /// <include file='ASSOCKEY.xml' path='doc/member[@name="ASSOCKEY.ASSOCKEY_MAX"]/*' />
     ASSOCKEY_MAX,
 }

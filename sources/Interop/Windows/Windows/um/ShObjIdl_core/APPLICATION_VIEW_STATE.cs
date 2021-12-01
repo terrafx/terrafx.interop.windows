@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPLICATION_VIEW_STATE.xml' path='doc/member[@name="APPLICATION_VIEW_STATE"]/*' />
 public enum APPLICATION_VIEW_STATE
 {
+    /// <include file='APPLICATION_VIEW_STATE.xml' path='doc/member[@name="APPLICATION_VIEW_STATE.AVS_FULLSCREEN_LANDSCAPE"]/*' />
     AVS_FULLSCREEN_LANDSCAPE = 0,
+
+    /// <include file='APPLICATION_VIEW_STATE.xml' path='doc/member[@name="APPLICATION_VIEW_STATE.AVS_FILLED"]/*' />
     AVS_FILLED = (AVS_FULLSCREEN_LANDSCAPE + 1),
+
+    /// <include file='APPLICATION_VIEW_STATE.xml' path='doc/member[@name="APPLICATION_VIEW_STATE.AVS_SNAPPED"]/*' />
     AVS_SNAPPED = (AVS_FILLED + 1),
+
+    /// <include file='APPLICATION_VIEW_STATE.xml' path='doc/member[@name="APPLICATION_VIEW_STATE.AVS_FULLSCREEN_PORTRAIT"]/*' />
     AVS_FULLSCREEN_PORTRAIT = (AVS_SNAPPED + 1),
 }

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAutoCompleteDropDown.GetDropDownStatus">
+    <summary>
+      <para>Gets the current display status of the autocomplete drop-down list.</para>
+    </summary>
+    <param name="pdwFlags">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to a value indicating whether the autocomplete drop-down list is currently displayed. This parameter can be <b>NULL</b> on entry if this information is not needed. The following values are recognized as the target of this pointer.</para>
+      <h4>(0x0000)</h4>
+      <para>The list is not visible.</para>
+      <h4>ACDD_VISIBLE (0x0001)</h4>
+      <para>The list is visible.</para>
+    </param>
+    <param name="ppwszString">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>A pointer to a buffer containing the first select item in the drop-down list, if the value pointed to by <i>pdwFlags</i> is <b>ACDD_VISIBLE</b>. This value can be <b>NULL</b> on entry if this information is not needed.</para>
+      <para>If <i>pdwFlags</i> is zero on exit, then this value will be <b>NULL</b>.</para>
+      <para>If this value is not <b>NULL</b> on exit, the buffer it points to must be freed using <see cref="CoTaskMemFree" /> when it is no longer needed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAutoCompleteDropDown" />
+  </member>
+  <member name="IAutoCompleteDropDown.ResetEnumerator">
+    <summary>
+      <para>Forces the autocomplete object to refresh its list of suggestions when the list is visible.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The drop-down list is always rebuilt before it is displayed, so there is no reason to use this method unless the drop-down list is currently visible.</para>
+    </remarks>
+    <seealso cref="IAutoCompleteDropDown" />
+  </member>
+  <member name="IAutoCompleteDropDown">
+    <summary>
+      <para>Exposes methods that allow clients to reset or query the display state of the autocomplete drop-down list, which contains possible completions to a string entered by the user in an edit control.</para>
+    </summary>
+  </member>
+</doc>

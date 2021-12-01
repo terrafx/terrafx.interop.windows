@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TfLBIClick.xml' path='doc/member[@name="TfLBIClick"]/*' />
 public enum TfLBIClick
 {
+    /// <include file='TfLBIClick.xml' path='doc/member[@name="TfLBIClick.TF_LBI_CLK_RIGHT"]/*' />
     TF_LBI_CLK_RIGHT = 1,
+
+    /// <include file='TfLBIClick.xml' path='doc/member[@name="TfLBIClick.TF_LBI_CLK_LEFT"]/*' />
     TF_LBI_CLK_LEFT = 2,
 }

@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SFVM_PROPPAGE_DATA.xml' path='doc/member[@name="SFVM_PROPPAGE_DATA"]/*' />
 public unsafe partial struct SFVM_PROPPAGE_DATA
 {
+    /// <include file='SFVM_PROPPAGE_DATA.xml' path='doc/member[@name="SFVM_PROPPAGE_DATA.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 
+    /// <include file='SFVM_PROPPAGE_DATA.xml' path='doc/member[@name="SFVM_PROPPAGE_DATA.pfn"]/*' />
     [NativeTypeName("LPFNADDPROPSHEETPAGE")]
     public delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfn;
 
+    /// <include file='SFVM_PROPPAGE_DATA.xml' path='doc/member[@name="SFVM_PROPPAGE_DATA.lParam"]/*' />
     public LPARAM lParam;
 }

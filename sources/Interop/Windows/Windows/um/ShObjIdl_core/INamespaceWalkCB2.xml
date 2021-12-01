@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INamespaceWalkCB2.WalkComplete">
+    <summary>
+      <para>Removes data collected during a namespace walk.</para>
+    </summary>
+    <param name="hr">
+      <para>Type: <b>HRESULT</b></para>
+      <para>The results of <see cref="Walk" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns S_OK.</para>
+    </returns>
+  </member>
+  <member name="INamespaceWalkCB2">
+    <summary>
+      <para>Extends <see cref="INamespaceWalkCB" /> with a method that is required in order to complete a namespace walk. This method removes data collected during the walk.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="INamespaceWalkCB" /> interface, from which it inherits.</para>
+    </remarks>
+    <seealso cref="INamespaceWalk" />
+    <seealso cref="INamespaceWalkCB" />
+  </member>
+</doc>

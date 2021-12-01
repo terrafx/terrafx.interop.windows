@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IParseAndCreateItem.GetItem">
+    <summary>
+      <para>Gets a stored Shell item that <see cref="SHCreateItemFromParsingName" /> created from a parsing name.</para>
+    </summary>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to retrieve through <i>ppv</i>, typically IID_IShellItem.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns successfully, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IShellItem" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>We recommend that you use the <b>IID_PPV_ARGS</b> macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error in <i>riid</i> that could lead to unexpected results.</para>
+    </remarks>
+    <seealso cref="IParseAndCreateItem" />
+  </member>
+  <member name="IParseAndCreateItem.SetItem">
+    <summary>
+      <para>Sets a Shell item that <see cref="SHCreateItemFromParsingName" /> created from a parsing name.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>Pointer to an <see cref="IShellItem" /> object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IParseAndCreateItem" />
+  </member>
+  <member name="IParseAndCreateItem">
+    <summary>
+      <para>When the <b>STR_PARSE_AND_CREATE_ITEM</b><a href="https://docs.microsoft.com//windows/win32/shell/str-constants">binding context</a> is specified, this interface gets or sets the stored Shell items that <see cref="SHCreateItemFromParsingName" /> creates from a parsing name.</para>
+    </summary>
+  </member>
+</doc>

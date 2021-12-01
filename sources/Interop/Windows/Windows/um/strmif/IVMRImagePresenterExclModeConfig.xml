@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVMRImagePresenterExclModeConfig.GetXlcModeDDObjAndPrimarySurface">
+    <summary>
+      <para>The <code>GetXlcModeDDObjAndPrimarySurface</code> method retrieves the DirectDraw object and primary surface currently being used by a VMR that has been configured for DirectDraw Exclusive Mode using the <b>SetXlcModeDDObjAndPrimarySurface</b> method.</para>
+    </summary>
+    <param name="lpDDObj">
+      <para>Retrieves the Exclusive Mode DirectDraw object created by the application.</para>
+    </param>
+    <param name="lpPrimarySurf">
+      <para>Retrieves the primary surface associated with the DirectDraw object.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The procedure for configuring and using an application-defined DirectDraw Exclusive Mode object is described in <a href="https://docs.microsoft.com//windows/desktop/DirectShow/directdraw-exclusive-mode">DirectDraw Exclusive Mode</a>.</para>
+    </remarks>
+    <seealso cref="IVMRImagePresenterExclModeConfig Interface" />
+    <seealso cref="IVMRImagePresenterExclModeConfig.SetXlcModeDDObjAndPrimarySurface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRImagePresenterExclModeConfig.SetXlcModeDDObjAndPrimarySurface">
+    <summary>
+      <para>The <code>SetXlcModeDDObjAndPrimarySurface</code> method informs the VMR of the DirectDraw object and primary surface that were created by the application.</para>
+    </summary>
+    <param name="lpDDObj">
+      <para>Specifies the Exclusive Mode DirectDraw object created by the application.</para>
+    </param>
+    <param name="lpPrimarySurf">
+      <para>Specifies the primary surface associated with the DirectDraw object.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The procedure for configuring and using an application-defined DirectDraw Exclusive Mode object is described in <a href="https://docs.microsoft.com//windows/desktop/DirectShow/directdraw-exclusive-mode">DirectDraw Exclusive Mode</a>.</para>
+    </remarks>
+    <seealso cref="IVMRImagePresenterExclModeConfig Interface" />
+    <seealso cref="IVMRImagePresenterExclModeConfig.GetXlcModeDDObjAndPrimarySurface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRImagePresenterExclModeConfig">
+    <summary>
+      <para>The <code>IVMRImagePresenterExclModeConfig</code> interface inherits from <see cref="IVMRImagePresenterConfig" /> and provides methods for setting and retrieving the rendering preferences on the Exclusive Mode Allocator-Presenter. This interface is exposed on the DirectDraw Exclusive Mode Allocator-Presenter object. When applications run in DirectDraw Exclusive Mode, they must create their own DirectDraw object, configure the VMR to use the Exclusive Mode Allocator-Presenter, and use this interface to inform the VMR about the DirectDraw object and the primary surface associated with it. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/directdraw-exclusive-mode">DirectDraw Exclusive Mode</a>.</para>
+    </summary>
+    <seealso cref="IVMRImagePresenterConfig" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+</doc>

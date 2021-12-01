@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_APPCONTAINER_INFORMATION.xml' path='doc/member[@name="TOKEN_APPCONTAINER_INFORMATION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct TOKEN_APPCONTAINER_INFORMATION
 {
+    /// <include file='TOKEN_APPCONTAINER_INFORMATION.xml' path='doc/member[@name="TOKEN_APPCONTAINER_INFORMATION.TokenAppContainer"]/*' />
     [NativeTypeName("PSID")]
     public void* TokenAppContainer;
 }

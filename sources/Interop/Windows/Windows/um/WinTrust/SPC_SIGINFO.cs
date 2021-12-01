@@ -7,25 +7,33 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPC_SIGINFO.xml' path='doc/member[@name="SPC_SIGINFO"]/*' />
 public partial struct SPC_SIGINFO
 {
+    /// <include file='SPC_SIGINFO.xml' path='doc/member[@name="SPC_SIGINFO.dwSipVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSipVersion;
 
+    /// <include file='SPC_SIGINFO.xml' path='doc/member[@name="SPC_SIGINFO.gSIPGuid"]/*' />
     public Guid gSIPGuid;
 
+    /// <include file='SPC_SIGINFO.xml' path='doc/member[@name="SPC_SIGINFO.dwReserved1"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved1;
 
+    /// <include file='SPC_SIGINFO.xml' path='doc/member[@name="SPC_SIGINFO.dwReserved2"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved2;
 
+    /// <include file='SPC_SIGINFO.xml' path='doc/member[@name="SPC_SIGINFO.dwReserved3"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved3;
 
+    /// <include file='SPC_SIGINFO.xml' path='doc/member[@name="SPC_SIGINFO.dwReserved4"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved4;
 
+    /// <include file='SPC_SIGINFO.xml' path='doc/member[@name="SPC_SIGINFO.dwReserved5"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved5;
 }

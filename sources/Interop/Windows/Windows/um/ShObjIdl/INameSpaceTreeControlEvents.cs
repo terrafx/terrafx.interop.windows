@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents"]/*' />
 [Guid("93D77985-B3D8-4484-8318-672CDDA002CE")]
 [NativeTypeName("struct INameSpaceTreeControlEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, uint>)(lpVtbl[1]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, uint>)(lpVtbl[2]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnItemClick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnItemClick(IShellItem* psi, [NativeTypeName("NSTCEHITTEST")] uint nstceHitTest, [NativeTypeName("NSTCECLICKTYPE")] uint nstceClickType)
@@ -46,6 +51,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, uint, uint, int>)(lpVtbl[3]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, nstceHitTest, nstceClickType);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnPropertyItemCommit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnPropertyItemCommit(IShellItem* psi)
@@ -53,6 +59,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int>)(lpVtbl[4]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnItemStateChanging"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnItemStateChanging(IShellItem* psi, [NativeTypeName("NSTCITEMSTATE")] uint nstcisMask, [NativeTypeName("NSTCITEMSTATE")] uint nstcisState)
@@ -60,6 +67,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, uint, uint, int>)(lpVtbl[5]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, nstcisMask, nstcisState);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnItemStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnItemStateChanged(IShellItem* psi, [NativeTypeName("NSTCITEMSTATE")] uint nstcisMask, [NativeTypeName("NSTCITEMSTATE")] uint nstcisState)
@@ -67,6 +75,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, uint, uint, int>)(lpVtbl[6]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, nstcisMask, nstcisState);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnSelectionChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnSelectionChanged(IShellItemArray* psiaSelection)
@@ -74,6 +83,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItemArray*, int>)(lpVtbl[7]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psiaSelection);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnKeyboardInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT OnKeyboardInput(uint uMsg, WPARAM wParam, LPARAM lParam)
@@ -81,6 +91,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, uint, WPARAM, LPARAM, int>)(lpVtbl[8]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnBeforeExpand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OnBeforeExpand(IShellItem* psi)
@@ -88,6 +99,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int>)(lpVtbl[9]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnAfterExpand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT OnAfterExpand(IShellItem* psi)
@@ -95,6 +107,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int>)(lpVtbl[10]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnBeginLabelEdit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT OnBeginLabelEdit(IShellItem* psi)
@@ -102,6 +115,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int>)(lpVtbl[11]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnEndLabelEdit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT OnEndLabelEdit(IShellItem* psi)
@@ -109,6 +123,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int>)(lpVtbl[12]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnGetToolTip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT OnGetToolTip(IShellItem* psi, [NativeTypeName("LPWSTR")] ushort* pszTip, int cchTip)
@@ -116,6 +131,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, ushort*, int, int>)(lpVtbl[13]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, pszTip, cchTip);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnBeforeItemDelete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT OnBeforeItemDelete(IShellItem* psi)
@@ -123,6 +139,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int>)(lpVtbl[14]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnItemAdded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT OnItemAdded(IShellItem* psi, BOOL fIsRoot)
@@ -130,6 +147,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, BOOL, int>)(lpVtbl[15]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, fIsRoot);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnItemDeleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT OnItemDeleted(IShellItem* psi, BOOL fIsRoot)
@@ -137,6 +155,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, BOOL, int>)(lpVtbl[16]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, fIsRoot);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnBeforeContextMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT OnBeforeContextMenu(IShellItem* psi, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -144,6 +163,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, Guid*, void**, int>)(lpVtbl[17]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, riid, ppv);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnAfterContextMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT OnAfterContextMenu(IShellItem* psi, IContextMenu* pcmIn, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -151,6 +171,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, IContextMenu*, Guid*, void**, int>)(lpVtbl[18]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, pcmIn, riid, ppv);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnBeforeStateImageChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT OnBeforeStateImageChange(IShellItem* psi)
@@ -158,6 +179,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int>)(lpVtbl[19]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnGetDefaultIconIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT OnGetDefaultIconIndex(IShellItem* psi, int* piDefaultIcon, int* piOpenIcon)

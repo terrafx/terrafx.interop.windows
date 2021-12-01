@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STACKFRAME">
+    <summary>
+      <para>Represents a stack frame.</para>
+    </summary>
+    <remarks>
+      <para>This structure supersedes the <b>STACKFRAME</b> structure. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>STACKFRAME</b> is defined as follows in Dbghelp.h.</para>
+      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
+#define STACKFRAME STACKFRAME64
+#define LPSTACKFRAME LPSTACKFRAME64
+#else
+typedef struct _tagSTACKFRAME {
+    ADDRESS     AddrPC;
+    ADDRESS     AddrReturn;
+    ADDRESS     AddrFrame;
+    ADDRESS     AddrStack;
+    PVOID       FuncTableEntry;
+    DWORD       Params[4];
+    BOOL        Far;
+    BOOL        Virtual;
+    DWORD       Reserved[3];
+    KDHELP      KdHelp;
+    ADDRESS     AddrBStore;
+} STACKFRAME, *LPSTACKFRAME;
+#endif
+</code>
+    </remarks>
+    <seealso cref="ADDRESS64" />
+    <seealso cref="FPO_DATA" />
+    <seealso cref="IMAGE_FUNCTION_ENTRY" />
+    <seealso cref="KDHELP64" />
+    <seealso cref="StackWalk64" />
+  </member>
+  <member name="STACKFRAME.AddrPC">
+    <summary>
+      <para>An
+<see cref="ADDRESS64" /> structure that specifies the program counter.</para>
+      <para>
+        <b>x86:  </b>The program counter is EIP.</para>
+      <para>
+        <b>Intel Itanium:  </b>The program counter is StIIP.</para>
+      <para>
+        <b>x64:  </b>The program counter is RIP.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.AddrReturn">
+    <summary>
+      <para>An
+<see cref="ADDRESS64" /> structure that specifies the return address.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.AddrFrame">
+    <summary>
+      <para>An
+<see cref="ADDRESS64" /> structure that specifies the frame pointer.</para>
+      <para>
+        <b>x86:  </b>The frame pointer is EBP.</para>
+      <para>
+        <b>Intel Itanium:  </b>There is no frame pointer, but <b>AddrBStore</b> is used.</para>
+      <para>
+        <b>x64:  </b>The frame pointer is RBP or RDI. This value is not always used.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.AddrStack">
+    <summary>
+      <para>An
+<see cref="ADDRESS64" /> structure that specifies the stack pointer.</para>
+      <para>
+        <b>x86:  </b>The stack pointer is ESP.</para>
+      <para>
+        <b>Intel Itanium:  </b>The stack pointer is SP.</para>
+      <para>
+        <b>x64:  </b>The stack pointer is RSP.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.FuncTableEntry">
+    <summary>
+      <para>On x86 computers, this member is an
+<see cref="FPO_DATA" /> structure. If there is no function table entry, this member is <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.Params">
+    <summary>
+      <para>The possible arguments to the function.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.Far">
+    <summary>
+      <para>This member is <b>TRUE</b> if this is a WOW far call.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.Virtual">
+    <summary>
+      <para>This member is <b>TRUE</b> if this is a virtual frame.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.Reserved">
+    <summary>
+      <para>This member is used internally by the
+<see cref="StackWalk64" /> function.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.KdHelp">
+    <summary>
+      <para>A
+<see cref="KDHELP64" /> structure that specifies helper data for walking kernel callback frames.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.AddrBStore">
+    <summary>
+      <para>
+        <b>Intel Itanium:  </b>An
+<see cref="ADDRESS64" /> structure that specifies the backing store (RsBSP).</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME">
+    <summary>
+      <para>Represents a stack frame.</para>
+    </summary>
+    <remarks>
+      <para>This structure supersedes the <b>STACKFRAME</b> structure. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>STACKFRAME</b> is defined as follows in Dbghelp.h.</para>
+      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
+#define STACKFRAME STACKFRAME64
+#define LPSTACKFRAME LPSTACKFRAME64
+#else
+typedef struct _tagSTACKFRAME {
+    ADDRESS     AddrPC;
+    ADDRESS     AddrReturn;
+    ADDRESS     AddrFrame;
+    ADDRESS     AddrStack;
+    PVOID       FuncTableEntry;
+    DWORD       Params[4];
+    BOOL        Far;
+    BOOL        Virtual;
+    DWORD       Reserved[3];
+    KDHELP      KdHelp;
+    ADDRESS     AddrBStore;
+} STACKFRAME, *LPSTACKFRAME;
+#endif
+</code>
+    </remarks>
+    <seealso cref="ADDRESS64" />
+    <seealso cref="FPO_DATA" />
+    <seealso cref="IMAGE_FUNCTION_ENTRY" />
+    <seealso cref="KDHELP64" />
+    <seealso cref="StackWalk64" />
+  </member>
+  <member name="STACKFRAME.AddrPC">
+    <summary>
+      <para>An
+<see cref="ADDRESS64" /> structure that specifies the program counter.</para>
+      <para>
+        <b>x86:  </b>The program counter is EIP.</para>
+      <para>
+        <b>Intel Itanium:  </b>The program counter is StIIP.</para>
+      <para>
+        <b>x64:  </b>The program counter is RIP.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.AddrReturn">
+    <summary>
+      <para>An
+<see cref="ADDRESS64" /> structure that specifies the return address.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.AddrFrame">
+    <summary>
+      <para>An
+<see cref="ADDRESS64" /> structure that specifies the frame pointer.</para>
+      <para>
+        <b>x86:  </b>The frame pointer is EBP.</para>
+      <para>
+        <b>Intel Itanium:  </b>There is no frame pointer, but <b>AddrBStore</b> is used.</para>
+      <para>
+        <b>x64:  </b>The frame pointer is RBP or RDI. This value is not always used.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.AddrStack">
+    <summary>
+      <para>An
+<see cref="ADDRESS64" /> structure that specifies the stack pointer.</para>
+      <para>
+        <b>x86:  </b>The stack pointer is ESP.</para>
+      <para>
+        <b>Intel Itanium:  </b>The stack pointer is SP.</para>
+      <para>
+        <b>x64:  </b>The stack pointer is RSP.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.AddrBStore">
+    <summary>
+      <para>
+        <b>Intel Itanium:  </b>An
+<see cref="ADDRESS64" /> structure that specifies the backing store (RsBSP).</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.FuncTableEntry">
+    <summary>
+      <para>On x86 computers, this member is an
+<see cref="FPO_DATA" /> structure. If there is no function table entry, this member is <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.Params">
+    <summary>
+      <para>The possible arguments to the function.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.Far">
+    <summary>
+      <para>This member is <b>TRUE</b> if this is a WOW far call.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.Virtual">
+    <summary>
+      <para>This member is <b>TRUE</b> if this is a virtual frame.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.Reserved">
+    <summary>
+      <para>This member is used internally by the
+<see cref="StackWalk64" /> function.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME.KdHelp">
+    <summary>
+      <para>A
+<see cref="KDHELP64" /> structure that specifies helper data for walking kernel callback frames.</para>
+    </summary>
+  </member>
+</doc>

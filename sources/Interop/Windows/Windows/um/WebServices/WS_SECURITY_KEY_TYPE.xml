@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_KEY_TYPE">
+    <summary>
+      <para>The key type of a security token.  It is used as the return type when
+a security token is queried about its key.  It is also used to specify
+the required key type when requesting a security token from a security
+token service.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_KEY_TYPE.WS_SECURITY_KEY_TYPE_NONE">
+    <summary>
+      <para>Has no key -- it may be a bearer token such as a username/password
+pair.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_KEY_TYPE.WS_SECURITY_KEY_TYPE_SYMMETRIC">
+    <summary>
+      <para>Has a symmetric key.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_KEY_TYPE.WS_SECURITY_KEY_TYPE_ASYMMETRIC">
+    <summary>
+      <para>Has an asymmetric key.</para>
+    </summary>
+  </member>
+</doc>

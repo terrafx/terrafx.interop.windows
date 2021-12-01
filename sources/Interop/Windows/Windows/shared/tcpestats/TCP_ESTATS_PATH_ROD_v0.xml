@@ -1,0 +1,686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TCP_ESTATS_PATH_ROD_v0">
+    <summary>
+      <para>The <b>TCP_ESTATS_PATH_ROD_v0</b> structure contains read-only dynamic information for extended TCP statistics on network path measurement for a TCP connection.</para>
+    </summary>
+    <remarks>
+      <para>The <b>TCP_ESTATS_PATH_ROD_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
+      <para>The <b>TCP_ESTATS_PATH_ROD_v0</b> is defined as version 0 of the structure for  read-only dynamic information on network path measurement for a TCP connection.  This information is available after the connection has been established.</para>
+      <para>The <b>TCP_ESTATS_PATH_ROD_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsPath</b> is passed in the <i>EstatsType</i> parameter. Extended TCP statistics need to be enabled to retrieve this structure.</para>
+      <para>The path MTU discovery and maximum segment size are discussed in detail in the IETF RFC 1191 on Path MTU discovery. For more information, see <a href="http://tools.ietf.org/html/rfc1191">http://www.ietf.org/rfc/rfc1191.txt</a>.</para>
+      <para>TCP congestion control and congestion control algorithms are discussed in detail in the IETF RFC 2581 on TCP Congestion Control. For more information, see <a href="http://tools.ietf.org/html/rfc2581">http://www.ietf.org/rfc/rfc2581.txt</a>.</para>
+      <para>SACK and an extension to the SACK option are discussed in detail in the IETF RFC 2883 on An Extension to the Selective Acknowledgment
+(SACK) Option for TCP. For more information, see <a href="http://tools.ietf.org/html/rfc2883">http://www.ietf.org/rfc/rfc2883.txt</a>.</para>
+      <para>The TCP retransmission timer (RTO) and the smoothed round-trip-time (RTT) are discussed in detail in the IETF RFC 2988 on Computing TCP's Retransmission Timer. For more information, see <a href="http://tools.ietf.org/html/rfc2988">http://www.ietf.org/rfc/rfc2988.txt</a>.</para>
+      <para>Explicit Congestion Notification in IP is discussed in detail in the IETF RFC 2581 on The Addition of Explicit Congestion Notification
+(ECN) to IP. For more information, see <a href="http://tools.ietf.org/html/rfc3168">http://www.ietf.org/rfc/rfc3168.txt</a>.</para>
+      <para>The members of this structure are defined in the IETF RFC on the TCP Extended Statistics MIB. For more information, see <a href="http://tools.ietf.org/html/rfc4898">http://www.ietf.org/rfc/rfc4898.txt</a>.</para>
+      <para>The following is the mapping of the members in the <b>TCP_ESTATS_PATH_ROD_v0</b> structure to the entries defined in RFC 4898 for extended TCP statistics:</para>
+      <list type="table">
+        <listheader>
+          <description>Term</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>FastRetran</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackFastRetran</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>Timeouts</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfTimeouts</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SubsequentTimeouts</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackSubsequentTimeouts</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CurTimeoutCount</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackCurTimeoutCount</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AbruptTimeouts</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackAbruptTimeouts</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>PktsRetrans</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfSegsRetrans</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>BytesRetrans</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfOctetsRetrans</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DupAcksIn</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackDupAcksIn</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SacksRcvd</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackSACKsRcvd</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SackBlocksRcvd</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackSACKBlocksRcvd</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CongSignals</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfCongSignals</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>PreCongSumCwnd</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathPreCongSumCwnd</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>PreCongSumRtt</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathPreCongSumRTT</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>PostCongSumRtt</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathPostCongSumRTT</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>PostCongCountRtt</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathPostCongCountRTT</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>EcnSignals</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathECNsignals</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>EceRcvd</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathCERcvd</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SendStall</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackSendStall</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>QuenchRcvd</b>
+          </description>
+          <description>
+            <para>No mapping to this member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>RetranThresh</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathRetranThresh</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SndDupAckEpisodes</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathDupAckEpisodes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SumBytesReordered</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathSumOctetsReordered</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>NonRecovDa</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathNonRecovDA</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>NonRecovDaEpisodes</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathNonRecovDAEpisodes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AckAfterFr</b>
+          </description>
+          <description>
+            <para>No mapping to this member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DsackDups</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackDSACKDups</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SampleRtt</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathSampleRTT</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SmoothedRtt</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfSmoothedRTT</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>RttVar</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathRTTVar</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MaxRtt</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathMaxRTT</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MinRtt</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathMinRTT</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SumRtt</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathSumRTT</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CountRtt</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathCountRTT</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CurRto</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfCurRTO</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MaxRto</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathMaxRTO</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MinRto</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathMinRTO</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CurMss</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfCurMSS</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MaxMss</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackMaxMSS</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MinMss</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackMinMSS</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SpuriousRtoDetections</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackSpuriousRtoDetected</para>
+          </description>
+        </item>
+      </list>
+      <para>The <see cref="TCP_ESTATS_FINE_RTT_ROD_v0" /> structure has members that provide similar data to the <b>RttVar</b>, <b>MaxRtt</b>, <b>MinRtt</b>, and <b>SumRtt</b> members of the <b>TCP_ESTATS_PATH_ROD_v0</b> structure. However, the time is reported in microseconds for the similar members of the <b>TCP_ESTATS_FINE_RTT_ROD_v0</b> structure.</para>
+    </remarks>
+    <seealso cref="GetPerTcp6ConnectionEStats" />
+    <seealso cref="GetPerTcpConnectionEStats" />
+    <seealso cref="TCP_ESTATS_FINE_RTT_ROD_v0" />
+    <seealso cref="TCP_ESTATS_TYPE" />
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.FastRetran">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of invocations of the Fast Retransmit algorithm.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.Timeouts">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of times the retransmit timeout has expired when
+the retransmission timer backoff multiplier is equal to one.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.SubsequentTimeouts">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of times the retransmit timeout has expired after
+the retransmission timer has been doubled.</para>
+      <para>For more information, see section 5.5 of RFC 2988 discussed in the Remarks below.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.CurTimeoutCount">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The current number of times the retransmit timeout has
+expired without receiving an acknowledgment for new data.</para>
+      <para>The <b>CurTimeoutCount</b> member is reset to zero when new
+data is acknowledged and incremented for each invocation of
+Section 5.5 of RFC 2988.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.AbruptTimeouts">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of timeouts that occurred without any
+immediately preceding duplicate acknowledgments or other
+indications of congestion.  Abrupt timeouts indicate that
+the path lost an entire window of data or acknowledgments.</para>
+      <para>Timeouts that are preceded by duplicate acknowledgments or
+other congestion signals (Explicit Congestion Notification, for example) are not counted as
+abrupt, and might have been avoided by a more sophisticated
+Fast Retransmit algorithm.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.PktsRetrans">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of segments transmitted containing at least some
+retransmitted data.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.BytesRetrans">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of bytes retransmitted.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.DupAcksIn">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of duplicate ACKs received.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.SacksRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of Selective Acknowledgment (SACK)  options received.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.SackBlocksRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of SACK blocks received (within SACK options).</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.CongSignals">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of multiplicative downward congestion window
+adjustments due to all forms of congestion signals,
+including Fast Retransmit, Explicit Congestion Notification
+(ECN), and timeouts.  This member summarizes all events that
+invoke the Multiplicative Decrease (MD)  portion of Additive Increase Multiplicative
+Decrease (AIMD) congestion control, and as such is the best
+indicator of how a congestion windows is being affected by congestion.</para>
+      <para>Note that retransmission timeouts multiplicatively reduce
+the window implicitly by setting the slow start threshold size, and are
+included in the value stored in the  <b>CongSignals</b> member.  In order to minimize
+spurious congestion indications due to out-of-order
+segments, the <b>CongSignals</b> member is incremented in
+association with the Fast Retransmit algorithm.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.PreCongSumCwnd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The sum of the values of the congestion window, in bytes,
+captured each time a congestion signal is received.</para>
+      <para>This
+member is updated each time the <b>CongSignals</b> member is
+incremented, such that the change in
+the <b>PreCongSumCwnd</b> member divided by the change in
+the <b>CongSignals</b> member is the average window (over some
+interval) just prior to a congestion signal.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.PreCongSumRtt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The sum, in milliseconds, of the last sample of the network round-trip-time (RTT) prior to the received congestion signals.  The last sample of the RTT is stored in the <b>SampleRtt</b> member.</para>
+      <para>The <b>PreCongSumRtt</b> member
+is updated each time the <b>CongSignals</b> member is incremented,
+such that the change in the <b>PreCongSumRtt</b>  divided by
+the change in the <b>CongSignals</b> member is the average RTT
+(over some interval) just prior to a congestion signal.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.PostCongSumRtt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The sum, in milliseconds, of the first sample of the network RTT (stored in the <b>SampleRtt</b> member)
+following each congestion signal.</para>
+      <para>The change in
+the <b>PostCongSumRtt</b> member divided by the change in
+the <b>PostCongCountRtt</b> member is the average RTT (over some
+interval) just after a congestion signal.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.PostCongCountRtt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of RTT samples, in bytes, included in
+the <b>PostCongSumRtt</b> member.</para>
+      <para>The change in
+the <b>PostCongSumRtt</b> member divided by the change in
+the <b>PostCongCountRtt</b> member is the average RTT (over some
+interval) just after a congestion signal.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.EcnSignals">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of congestion signals delivered to the TCP
+sender via ECN.</para>
+      <para>This is
+typically the number of segments bearing Echo Congestion</para>
+      <para>Experienced (ECE) bits, but
+also includes segments failing the ECN nonce check or
+other explicit congestion signals.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.EceRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of segments received with IP headers bearing
+Congestion Experienced (CE) markings.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.SendStall">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of interface stalls or other sender local
+resource limitations that are treated as congestion
+signals.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.QuenchRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>Reserved for future use. This member is always set to zero.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.RetranThresh">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of duplicate acknowledgments required to trigger
+Fast Retransmit.</para>
+      <para>Note that although this is constant in
+traditional Reno TCP implementations, it is adaptive in
+many newer TCP implementations.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.SndDupAckEpisodes">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of Duplicate Acks Sent when prior Ack was not
+duplicate.  This is the number of times that a contiguous
+series of duplicate acknowledgments have been sent.</para>
+      <para>This is an indication of the number of data segments lost
+or reordered on the path from the remote TCP endpoint to
+the near TCP endpoint.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.SumBytesReordered">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The sum of the amounts SND.UNA advances on the
+acknowledgment which ends a dup-ack episode without a
+retransmission.</para>
+      <para>Note the change in the <b>SumBytesReordered</b> member divided
+by the change in the <b>NonRecovDaEpisodes</b> member is an
+estimate of the average reordering distance, over some
+interval.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.NonRecovDa">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of duplicate acks (or SACKS) that did not trigger a Fast
+Retransmit because ACK advanced prior to the number of
+duplicate acknowledgments reaching the <b>RetranThresh</b>.</para>
+      <para>Note that the change in the <b>NonRecovDa</b> member divided by
+the change in the <b>NonRecovDaEpisodes</b> member is an
+estimate of the average reordering distance in segments
+over some interval.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.NonRecovDaEpisodes">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of duplicate acknowledgment episodes that did
+not trigger a Fast Retransmit because ACK advanced prior to
+the number of duplicate acknowledgments reaching
+the <b>RetranThresh</b>.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.AckAfterFr">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>Reserved for future use. This member is always set to zero.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.DsackDups">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of duplicate segments reported to the local host
+by D-SACK blocks.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.SampleRtt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The most recent raw network round trip time measurement, in milliseconds, used in
+calculation of the retransmission timer (RTO).</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.SmoothedRtt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The smoothed round trip time, in milliseconds, used in calculation of the
+RTO.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.RttVar">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The round trip time variation, in milliseconds, used in calculation of the
+RTO.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.MaxRtt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The maximum sampled round trip time in milliseconds.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.MinRtt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The minimum sampled round trip time in milliseconds.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.SumRtt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The sum of all sampled round trip times in milliseconds.</para>
+      <para>Note that the change in the <b>SumRtt</b> member divided by the
+change in the <b>CountRtt</b> member is the mean RTT, uniformly
+averaged over an enter interval.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.CountRtt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of round trip time samples included in
+the <b>SumRtt</b> member.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.CurRto">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The current value, in milliseconds, of the retransmit timer.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.MaxRto">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The maximum value, in milliseconds, of the retransmit timer.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.MinRto">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The minimum value, in milliseconds, of the retransmit timer.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.CurMss">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The current maximum segment size (MSS), in bytes.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.MaxMss">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The maximum MSS, in bytes.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.MinMss">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The minimum MSS, in bytes.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_PATH_ROD_v0.SpuriousRtoDetections">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of acknowledgments reporting segments that have
+already been retransmitted due to a Retransmission Timeout.</para>
+    </summary>
+  </member>
+</doc>

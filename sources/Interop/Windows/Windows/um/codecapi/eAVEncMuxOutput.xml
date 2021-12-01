@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMuxOutput">
+    <summary>
+      <para>Specifies the type of output stream produced by a multiplexer. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmuxoutputstreamtype">AVEncMuxOutputStreamType</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMuxOutput.eAVEncMuxOutputAuto">
+    <summary>
+      <para>The multiplexer automatically selects whether to output an elementary stream, a program stream, or  a transport stream.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMuxOutput.eAVEncMuxOutputPS">
+    <summary>
+      <para>The multiplexer outputs a program stream.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMuxOutput.eAVEncMuxOutputTS">
+    <summary>
+      <para>The multiplexer outputs a transport stream.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,11 +7,19 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SV3CVW3_FLAGS.xml' path='doc/member[@name="SV3CVW3_FLAGS"]/*' />
 [Flags]
 public enum SV3CVW3_FLAGS
 {
+    /// <include file='SV3CVW3_FLAGS.xml' path='doc/member[@name="SV3CVW3_FLAGS.SV3CVW3_DEFAULT"]/*' />
     SV3CVW3_DEFAULT = 0,
+
+    /// <include file='SV3CVW3_FLAGS.xml' path='doc/member[@name="SV3CVW3_FLAGS.SV3CVW3_NONINTERACTIVE"]/*' />
     SV3CVW3_NONINTERACTIVE = 0x1,
+
+    /// <include file='SV3CVW3_FLAGS.xml' path='doc/member[@name="SV3CVW3_FLAGS.SV3CVW3_FORCEVIEWMODE"]/*' />
     SV3CVW3_FORCEVIEWMODE = 0x2,
+
+    /// <include file='SV3CVW3_FLAGS.xml' path='doc/member[@name="SV3CVW3_FLAGS.SV3CVW3_FORCEFOLDERFLAGS"]/*' />
     SV3CVW3_FORCEFOLDERFLAGS = 0x4,
 }

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlSelection.xml' path='doc/member[@name="htmlSelection"]/*' />
 public enum htmlSelection
 {
+    /// <include file='htmlSelection.xml' path='doc/member[@name="htmlSelection.htmlSelectionNone"]/*' />
     htmlSelectionNone = 0,
+
+    /// <include file='htmlSelection.xml' path='doc/member[@name="htmlSelection.htmlSelectionText"]/*' />
     htmlSelectionText = 1,
+
+    /// <include file='htmlSelection.xml' path='doc/member[@name="htmlSelection.htmlSelectionControl"]/*' />
     htmlSelectionControl = 2,
+
+    /// <include file='htmlSelection.xml' path='doc/member[@name="htmlSelection.htmlSelectionTable"]/*' />
     htmlSelectionTable = 3,
+
+    /// <include file='htmlSelection.xml' path='doc/member[@name="htmlSelection.htmlSelection_Max"]/*' />
     htmlSelection_Max = 2147483647,
 }

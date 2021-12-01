@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BlockFormats.xml' path='doc/member[@name="BlockFormats"]/*' />
 [Guid("3050F831-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct BlockFormats
 {

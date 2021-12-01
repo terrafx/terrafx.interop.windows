@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION">
+    <summary>
+      <para>Defines behaviors for the drag-drop interaction.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+  </member>
+  <member name="DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION.DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION_VERTICAL">
+    <summary>
+      <para>Specifies that vertical movement is applicable to the chosen gesture.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION.DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION_HORIZONTAL">
+    <summary>
+      <para>Specifies that horizontal movement is applicable to the chosen gesture.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION.DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION_SELECT_ONLY">
+    <summary>
+      <para>Specifies that the gesture is to be cross-slide only.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION.DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION_SELECT_DRAG">
+    <summary>
+      <para>Specifies that the gesture is a drag initiated by cross-slide.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION.DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION_HOLD_DRAG">
+    <summary>
+      <para>Specifies that the gesture a drag initiated by press-and-hold.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,38 +7,50 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO"]/*' />
 public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
 {
+    /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.RuntimeFwActivationSupported"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte RuntimeFwActivationSupported;
 
+    /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.FirmwareActivationState"]/*' />
     public SCM_BUS_FIRMWARE_ACTIVATION_STATE FirmwareActivationState;
 
+    /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.FirmwareActivationCapability"]/*' />
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:7300:5)")]
     public _FirmwareActivationCapability_e__Struct FirmwareActivationCapability;
 
+    /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.EstimatedFirmwareActivationTimeInUSecs"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong EstimatedFirmwareActivationTimeInUSecs;
 
+    /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.EstimatedProcessorAccessQuiesceTimeInUSecs"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong EstimatedProcessorAccessQuiesceTimeInUSecs;
 
+    /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.EstimatedIOAccessQuiesceTimeInUSecs"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong EstimatedIOAccessQuiesceTimeInUSecs;
 
+    /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.PlatformSupportedMaxIOAccessQuiesceTimeInUSecs"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong PlatformSupportedMaxIOAccessQuiesceTimeInUSecs;
 
+    /// <include file='_FirmwareActivationCapability_e__Struct.xml' path='doc/member[@name="_FirmwareActivationCapability_e__Struct"]/*' />
     public partial struct _FirmwareActivationCapability_e__Struct
     {
         public uint _bitfield;
 
+        /// <include file='_FirmwareActivationCapability_e__Struct.xml' path='doc/member[@name="_FirmwareActivationCapability_e__Struct.FwManagedIoQuiesceFwActivationSupported"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint FwManagedIoQuiesceFwActivationSupported
         {
@@ -55,6 +67,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
             }
         }
 
+        /// <include file='_FirmwareActivationCapability_e__Struct.xml' path='doc/member[@name="_FirmwareActivationCapability_e__Struct.OsManagedIoQuiesceFwActivationSupported"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint OsManagedIoQuiesceFwActivationSupported
         {
@@ -71,6 +84,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
             }
         }
 
+        /// <include file='_FirmwareActivationCapability_e__Struct.xml' path='doc/member[@name="_FirmwareActivationCapability_e__Struct.WarmResetBasedFwActivationSupported"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint WarmResetBasedFwActivationSupported
         {
@@ -87,6 +101,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
             }
         }
 
+        /// <include file='_FirmwareActivationCapability_e__Struct.xml' path='doc/member[@name="_FirmwareActivationCapability_e__Struct.Reserved"]/*' />
         [NativeTypeName("DWORD : 29")]
         public uint Reserved
         {

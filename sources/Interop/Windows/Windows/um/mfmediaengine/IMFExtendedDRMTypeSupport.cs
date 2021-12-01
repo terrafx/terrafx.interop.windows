@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFExtendedDRMTypeSupport.xml' path='doc/member[@name="IMFExtendedDRMTypeSupport"]/*' />
 [Guid("332EC562-3758-468D-A784-E38F23552128")]
 [NativeTypeName("struct IMFExtendedDRMTypeSupport : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFExtendedDRMTypeSupport : IMFExtendedDRMTypeSuppo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFExtendedDRMTypeSupport : IMFExtendedDRMTypeSuppo
         return ((delegate* unmanaged<IMFExtendedDRMTypeSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedDRMTypeSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFExtendedDRMTypeSupport : IMFExtendedDRMTypeSuppo
         return ((delegate* unmanaged<IMFExtendedDRMTypeSupport*, uint>)(lpVtbl[1]))((IMFExtendedDRMTypeSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFExtendedDRMTypeSupport : IMFExtendedDRMTypeSuppo
         return ((delegate* unmanaged<IMFExtendedDRMTypeSupport*, uint>)(lpVtbl[2]))((IMFExtendedDRMTypeSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFExtendedDRMTypeSupport.xml' path='doc/member[@name="IMFExtendedDRMTypeSupport.IsTypeSupportedEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsTypeSupportedEx([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR")] ushort* keySystem, MF_MEDIA_ENGINE_CANPLAY* pAnswer)

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRawCDImageTrackInfo.get_AudioHasPreemphasis">
+    <summary>
+      <para>Retrieves  the value that specifies if an audio track has an additional pre-emphasis added to the audio data.</para>
+    </summary>
+    <param name="value">
+      <para>Value that specifies if an audio track has an additional pre-emphasis added to the audio data.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo.get_DigitalAudioCopySetting">
+    <summary>
+      <para>Retrieves the value for the bit that represents the current digital audio copy setting on the resulting media.  Please see the <see cref="IMAPI_CD_TRACK_DIGITAL_COPY_SETTING" /> enumeration for possible values.</para>
+    </summary>
+    <param name="value">
+      <para>The current digital audio copy setting.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This property may only be set for tracks containing audio data.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IMAPI_CD_TRACK_DIGITAL_COPY_SETTING" />
+    <seealso cref="IRawCDImageTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo.get_ISRC">
+    <summary>
+      <para>Retrieves the International Standard Recording Code (ISRC) currently associated with the track.  This property value defaults to <b>NULL</b> (or a zero-length string) and may only be set for tracks containing audio data.</para>
+    </summary>
+    <param name="value">
+      <para>The ISRC currently associated with the track.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>The format of the ISRC is provided to the caller formatted per ISRC standards (DIN-31-621) recommendations, such as "US-K7Y-98-12345".  When set, the provided string may optionally exclude all the '-' characters.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo.get_SectorCount">
+    <summary>
+      <para>Retrieves the number of user sectors in this track.</para>
+    </summary>
+    <param name="value">
+      <para>The number of user sectors in this track.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>The end of the track is typically the <b>StartingLBA</b> plus the <b>SectorCount</b>.  The start of the next track includes both of these properties plus any required pregap or postgap.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo.get_SectorType">
+    <summary>
+      <para>Retrieves the type of data provided for the sectors in this track. For more detail on the possible sector types, see <see cref="IMAPI_CD_SECTOR_TYPE" />.</para>
+    </summary>
+    <param name="value">
+      <para>A pointer to a <see cref="IMAPI_CD_SECTOR_TYPE" /> enumeration that specifies the type of data provided for the sectors on the track.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IMAPI_CD_SECTOR_TYPE" />
+    <seealso cref="IRawCDImageTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo.get_StartingLba">
+    <summary>
+      <para>Retrieves the LBA of the first user sectors in this track.</para>
+    </summary>
+    <param name="value">
+      <para>The LBA of the first user sectors in this track.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>Most tracks also include a pregap and postgap, which are not included in this value.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo.get_TrackIndexes">
+    <summary>
+      <para>Retrieves the one-based index of the tracks on the disc.</para>
+    </summary>
+    <param name="value">
+      <para>The one-based index associated with this track.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo.get_TrackNumber">
+    <summary>
+      <para>Retrieves the track number for this track.</para>
+    </summary>
+    <param name="value">
+      <para>The track number for this track.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>While this value is often identical to the <b>TrackIndex</b> property, it is possible for pure audio discs to start with a track other than track number 1.  This means that the more general formula is that this value is ( TrackIndex + FirstTrackNumber - 1).</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo.put_AudioHasPreemphasis">
+    <summary>
+      <para>Sets the value that specifies if an audio track has an additional pre-emphasis added to the audio data prior to being written to CD.</para>
+    </summary>
+    <param name="value">
+      <para>Value that specifies if an audio track has an additional pre-emphasis added to the audio data.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo.put_DigitalAudioCopySetting">
+    <summary>
+      <para>Sets the digital audio copy  "Allowed" bit to one of three values on the resulting media.  Please see the <see cref="IMAPI_CD_TRACK_DIGITAL_COPY_SETTING" /> enumeration for additional information on each possible value.</para>
+    </summary>
+    <param name="value">
+      <para>The digital audio copy setting value to assign.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This property may only be set for tracks containing audio data.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IMAPI_CD_TRACK_DIGITAL_COPY_SETTING" />
+    <seealso cref="IRawCDImageTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo.put_ISRC">
+    <summary>
+      <para>Sets the International Standard Recording Code (ISRC) currently associated with the track.  This property value defaults to <b>NULL</b> (or a zero-length string) and may only be set for tracks containing audio data.</para>
+    </summary>
+    <param name="value">
+      <para>The ISRC to associate with the track.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>The format of the ISRC is provided to the caller formatted per ISRC standards (DIN-31-621) recommendations, such as "US-K7Y-98-12345".  When set, the provided string may optionally exclude all the '-' characters.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageTrackInfo" />
+  </member>
+  <member name="IRawCDImageTrackInfo">
+    <summary>
+      <para>Use this interface to track per-track properties that are applied to CD media.</para>
+    </summary>
+    <remarks>
+      <para>This interface is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IMAPI_CD_SECTOR_TYPE" />
+    <seealso cref="IMAPI_CD_TRACK_DIGITAL_COPY_SETTING" />
+  </member>
+</doc>

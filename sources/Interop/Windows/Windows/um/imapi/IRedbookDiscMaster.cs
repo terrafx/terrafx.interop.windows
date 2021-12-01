@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IRedbookDiscMaster.xml' path='doc/member[@name="IRedbookDiscMaster"]/*' />
 [Guid("E3BC42CD-4E5C-11D3-9144-00104BA11C5E")]
 [NativeTypeName("struct IRedbookDiscMaster : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         return ((delegate* unmanaged<IRedbookDiscMaster*, Guid*, void**, int>)(lpVtbl[0]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         return ((delegate* unmanaged<IRedbookDiscMaster*, uint>)(lpVtbl[1]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         return ((delegate* unmanaged<IRedbookDiscMaster*, uint>)(lpVtbl[2]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRedbookDiscMaster.xml' path='doc/member[@name="IRedbookDiscMaster.GetTotalAudioTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTotalAudioTracks([NativeTypeName("long *")] int* pnTracks)
@@ -46,6 +51,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         return ((delegate* unmanaged<IRedbookDiscMaster*, int*, int>)(lpVtbl[3]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pnTracks);
     }
 
+    /// <include file='IRedbookDiscMaster.xml' path='doc/member[@name="IRedbookDiscMaster.GetTotalAudioBlocks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTotalAudioBlocks([NativeTypeName("long *")] int* pnBlocks)
@@ -53,6 +59,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         return ((delegate* unmanaged<IRedbookDiscMaster*, int*, int>)(lpVtbl[4]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
     }
 
+    /// <include file='IRedbookDiscMaster.xml' path='doc/member[@name="IRedbookDiscMaster.GetUsedAudioBlocks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetUsedAudioBlocks([NativeTypeName("long *")] int* pnBlocks)
@@ -60,6 +67,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         return ((delegate* unmanaged<IRedbookDiscMaster*, int*, int>)(lpVtbl[5]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
     }
 
+    /// <include file='IRedbookDiscMaster.xml' path='doc/member[@name="IRedbookDiscMaster.GetAvailableAudioTrackBlocks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetAvailableAudioTrackBlocks([NativeTypeName("long *")] int* pnBlocks)
@@ -67,6 +75,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         return ((delegate* unmanaged<IRedbookDiscMaster*, int*, int>)(lpVtbl[6]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
     }
 
+    /// <include file='IRedbookDiscMaster.xml' path='doc/member[@name="IRedbookDiscMaster.GetAudioBlockSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetAudioBlockSize([NativeTypeName("long *")] int* pnBlockBytes)
@@ -74,6 +83,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         return ((delegate* unmanaged<IRedbookDiscMaster*, int*, int>)(lpVtbl[7]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pnBlockBytes);
     }
 
+    /// <include file='IRedbookDiscMaster.xml' path='doc/member[@name="IRedbookDiscMaster.CreateAudioTrack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CreateAudioTrack([NativeTypeName("long")] int nBlocks)
@@ -81,6 +91,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         return ((delegate* unmanaged<IRedbookDiscMaster*, int, int>)(lpVtbl[8]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), nBlocks);
     }
 
+    /// <include file='IRedbookDiscMaster.xml' path='doc/member[@name="IRedbookDiscMaster.AddAudioTrackBlocks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT AddAudioTrackBlocks(byte* pby, [NativeTypeName("long")] int cb)
@@ -88,6 +99,7 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         return ((delegate* unmanaged<IRedbookDiscMaster*, byte*, int, int>)(lpVtbl[9]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pby, cb);
     }
 
+    /// <include file='IRedbookDiscMaster.xml' path='doc/member[@name="IRedbookDiscMaster.CloseAudioTrack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CloseAudioTrack()

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxPackageWriter.AddPayloadFile">
+    <summary>
+      <para>Adds a new payload file to the app package.</para>
+    </summary>
+    <param name="fileName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
+      <para>The name of the payload file. The file name path must be relative to the root of the package.</para>
+    </param>
+    <param name="contentType">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
+      <para>The string specifying the <a href="https://www.w3.org/protocols/rfc2616/rfc2616.html">content type</a> of  <i>fileName</i>.</para>
+    </param>
+    <param name="compressionOption">
+      <para>Type: <b><see cref="APPX_COMPRESSION_OPTION" /></b></para>
+      <para>The type of compression to use  to store <i>fileName</i> in the package.</para>
+    </param>
+    <param name="inputStream">
+      <para>Type: <b>IStream*</b></para>
+      <para>An <see cref="IStream" /> providing the contents of <i>fileName</i>.
+The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table. Error OPC codes, in addition to  OPC_E_DUPLICATE_PART may result. If the method fails, the package writer will close in a failed state and can't be used any more.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG </b>
+            </para>
+          </description>
+          <description>
+            <para>The compression option specified by <i>compressionOption</i> is not one of the values of the <see cref="APPX_COMPRESSION_OPTION" /> enumeration.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOT_VALID_STATE </b>
+            </para>
+          </description>
+          <description>
+            <para>The writer is closed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_NAME)</b>
+            </para>
+          </description>
+          <description>
+            <para>The file name specified is not a valid file name or is a reserved name for a footprint file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OPC_E_DUPLICATE_PART</b>
+            </para>
+          </description>
+          <description>
+            <para>The file name specified is already in use in the package.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When the <b>AddPayloadFile</b> method succeeds the contents of the specified <i>fileName</i> are written to the package and a corresponding entry is made in the package block map.</para>
+      <para>
+        <b>Note</b>  Files with the following reserved filenames cannot be added to the package using the <b>AddPayloadFile</b> method:</para>
+      <para>
+        <code>AppxManifest.xml</code>, <code>AppxBlockMap.xml</code>, <code>AppxStreamMap.xml</code>, and <code>AppxSignature.p7x</code>.</para>
+      <para>Also, files with the following reserved folder prefixes cannot be added to the package using the <b>AddPayloadFile</b> method: <code>\AppxMetadata\</code> and <code>\Microsoft.System.Package.Metadata\</code>.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-create-a-package">How to create an app  package</a>.</para>
+    </remarks>
+    <seealso cref="APPX_COMPRESSION_OPTION" />
+    <seealso cref="IAppxPackageWriter" />
+  </member>
+  <member name="IAppxPackageWriter.Close">
+    <summary>
+      <para>Writes footprint files at the end of the app package, and closes the package writer object's output stream.</para>
+    </summary>
+    <param name="manifest">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>The stream that provides the contents of the manifest for the package. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOT_VALID_STATE </b>
+            </para>
+          </description>
+          <description>
+            <para>The writer is closed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INVALID_MANIFEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The input stream contains a manifest that is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>Close</b> method should be called only after all payload files have been added to the package.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-create-a-package">How to create an app  package</a>.</para>
+    </remarks>
+    <seealso cref="IAppxPackageWriter" />
+  </member>
+  <member name="IAppxPackageWriter">
+    <summary>
+      <para>Provides a write-only object model for app packages.</para>
+    </summary>
+    <remarks>
+      <para>This object can be retrieved using the <see cref="CreatePackageWriter" /> method of the <see cref="IAppxFactory" /> interface.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-create-a-package">How to create an app package</a>.</para>
+    </remarks>
+    <seealso cref="IAppxPackageReader" />
+  </member>
+</doc>

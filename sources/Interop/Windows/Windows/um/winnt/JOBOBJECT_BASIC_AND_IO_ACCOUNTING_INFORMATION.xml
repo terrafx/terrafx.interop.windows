@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION">
+    <summary>
+      <para>Contains basic accounting and I/O accounting information for a job object.</para>
+    </summary>
+    <seealso cref="IO_COUNTERS" />
+    <seealso cref="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION" />
+    <seealso cref="QueryInformationJobObject" />
+  </member>
+  <member name="JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION.BasicInfo">
+    <summary>
+      <para>A
+<see cref="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION" /> structure that specifies the basic accounting information for the job.</para>
+    </summary>
+  </member>
+  <member name="JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION.IoInfo">
+    <summary>
+      <para>An
+<see cref="IO_COUNTERS" /> structure that specifies the I/O accounting information for the job. The structure includes information for all processes that have ever been associated with the job, in addition to the information for all processes currently associated with the job.</para>
+    </summary>
+  </member>
+</doc>

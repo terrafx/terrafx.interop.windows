@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestResourcesEnumerator"]/*' />
 [Guid("DE4DFBBD-881A-48BB-858C-D6F2BAEAE6ED")]
 [NativeTypeName("struct IAppxManifestResourcesEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxManifestResourcesEnumerator : IAppxManifestRes
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxManifestResourcesEnumerator : IAppxManifestRes
         return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxManifestResourcesEnumerator : IAppxManifestRes
         return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxManifestResourcesEnumerator : IAppxManifestRes
         return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestResourcesEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** resource)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxManifestResourcesEnumerator : IAppxManifestRes
         return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, ushort**, int>)(lpVtbl[3]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), resource);
     }
 
+    /// <include file='IAppxManifestResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestResourcesEnumerator.GetHasCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxManifestResourcesEnumerator : IAppxManifestRes
         return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
+    /// <include file='IAppxManifestResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestResourcesEnumerator.MoveNext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)

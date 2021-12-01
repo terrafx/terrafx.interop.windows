@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_CHAIN_POLICY_STATUS">
+    <summary>
+      <para>The <b>CERT_CHAIN_POLICY_STATUS</b> structure holds certificate chain status information returned by
+the <see cref="CertVerifyCertificateChainPolicy" /> function when the certificate chains are validated.</para>
+    </summary>
+    <remarks>
+      <para>If both <b>lChainIndex</b> and <b>lElementIndex</b> are set to –1, the error or condition that is not valid applies to the whole chain context. If only <b>lElementIndex</b> is set to –1, the error or condition that is not valid applies to the chain indexed by <b>lChainIndex</b>. Otherwise, the error or condition that is not valid applies to the certificate element at pChainContext-&gt;rgpChain[<b>lChainIndex</b>]-&gt;rgpElement[<b>lElementIndex</b>].</para>
+    </remarks>
+  </member>
+  <member name="CERT_CHAIN_POLICY_STATUS.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_POLICY_STATUS.dwError">
+    <summary>
+      <para>A value that indicates that an error or invalid condition was encountered during the  validation process. The values of this member are specific to the policy type as specified by the value of the   <i>pszPolicyOID</i> parameter of the <see cref="CertVerifyCertificateChainPolicy" /> function.</para>
+      <para>Base Policy errors (<b>CERT_CHAIN_POLICY_BASE</b>)</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TRUST_E_CERT_SIGNATURE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80096004L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The signature of the certificate cannot be verified.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_E_REVOKED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80092010L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate or signature has been revoked.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_UNTRUSTEDROOT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0109L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A certification chain processed correctly but terminated in a root certificate that is not trusted by the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">trust provider</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_UNTRUSTEDTESTROOT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B010DL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The root certificate is a testing certificate, and policy settings disallow test certificates.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_CHAINING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B010AL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A chain of certificates was not correctly created.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_WRONG_USAGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0110L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate is not valid for the requested usage.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_EXPIRED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0101L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A required certificate is not within its validity period.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_INVALID_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0114L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate has an invalid name. Either the name is not included in the permitted list, or it is explicitly excluded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_INVALID_POLICY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0113L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate has an invalid policy.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TRUST_E_BASIC_CONSTRAINTS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80096019L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The basic constraints of the certificate are not valid, or they are missing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_CRITICAL</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0105L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate is being used for a purpose other than the purpose specified by its CA.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_VALIDITYPERIODNESTING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0102L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The validity periods of the certification chain do not nest correctly.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_E_NO_REVOCATION_CHECK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80092012L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The revocation function was unable to check revocation for the certificate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_E_REVOCATION_OFFLINE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80092013L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The revocation function was unable to check revocation because the revocation server was offline.</para>
+          </description>
+        </item>
+      </list>
+      <para>Basic Constraints Policy errors (<b>CERT_CHAIN_POLICY_BASIC_CONSTRAINTS</b>).</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TRUST_E_BASIC_CONSTRAINTS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80096019L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The basic constraints of the certificate are not valid, or they are missing.</para>
+          </description>
+        </item>
+      </list>
+      <para>Authenticode Policy errors (<b>CERT_CHAIN_POLICY_AUTHENTICODE</b> and <b>CERT_CHAIN_POLICY_AUTHENTICODE_TS</b>).</para>
+      <para>These errors are in addition to the Base Policy errors.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_PURPOSE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0106L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate is being used for a purpose other than one specified by the issuing CA.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_REVOKED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B010CL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate has been explicitly revoked by the issuer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_REVOCATION_FAILURE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B010EL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The revocation process could not continue, and the certificate could not be checked.</para>
+          </description>
+        </item>
+      </list>
+      <para>SSL Policy errors (<b>CERT_CHAIN_POLICY_SSL</b>).</para>
+      <para>These errors are in addition to the Base Policy errors.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_UNTRUSTEDROOT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0109L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A certification chain processed correctly but terminated in a root certificate that is not trusted by the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">trust provider</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_CN_NO_MATCH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B010FL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate's CN name does not match the passed value.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_PURPOSE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0106L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate is being used for a purpose other than the purposes specified by its CA.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_ROLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0103L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A certificate that can only be used as an end-entity is being used as a CA or vice versa.</para>
+          </description>
+        </item>
+      </list>
+      <para>Microsoft Root Policy errors (<b>CERT_CHAIN_POLICY_MICROSOFT_ROOT</b>).</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_UNTRUSTEDROOT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0109L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A certification chain processed correctly but terminated in a root certificate that is not trusted by the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">trust provider</a>.</para>
+          </description>
+        </item>
+      </list>
+      <para>EV Policy errors.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_CHAINING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B010AL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate chain to a trusted root authority could not be built.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_E_WRONG_USAGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x800B0110L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate is not valid for the requested usage.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_POLICY_STATUS.lChainIndex">
+    <summary>
+      <para>Index that indicates the chain in which an error or condition that is not valid was found. For more information, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_POLICY_STATUS.lElementIndex">
+    <summary>
+      <para>Index that indicates the element in a chain where an error or condition that is not valid was found. For more information, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="CERT_CHAIN_POLICY_STATUS.pvExtraPolicyStatus">
+    <summary>
+      <para>A pointer to a structure. The structure type is determined by the value of the <b>pszPolicyOID</b> parameter of the <see cref="CertVerifyCertificateChainPolicy" /> function. In addition to <b>dwError</b> errors, policy OID–specific extra status can also be returned here to provide additional chain status information. This pointer can be optionally set to point to an
+<see cref="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS" /> structure.</para>
+    </summary>
+  </member>
+</doc>

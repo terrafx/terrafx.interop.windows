@@ -9,23 +9,31 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_wireSAFEARRAY.xml' path='doc/member[@name="_wireSAFEARRAY"]/*' />
 public partial struct _wireSAFEARRAY
 {
+    /// <include file='_wireSAFEARRAY.xml' path='doc/member[@name="_wireSAFEARRAY.cDims"]/*' />
     public ushort cDims;
 
+    /// <include file='_wireSAFEARRAY.xml' path='doc/member[@name="_wireSAFEARRAY.fFeatures"]/*' />
     public ushort fFeatures;
 
+    /// <include file='_wireSAFEARRAY.xml' path='doc/member[@name="_wireSAFEARRAY.cbElements"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbElements;
 
+    /// <include file='_wireSAFEARRAY.xml' path='doc/member[@name="_wireSAFEARRAY.cLocks"]/*' />
     [NativeTypeName("ULONG")]
     public uint cLocks;
 
+    /// <include file='_wireSAFEARRAY.xml' path='doc/member[@name="_wireSAFEARRAY.uArrayStructs"]/*' />
     public SAFEARRAYUNION uArrayStructs;
 
+    /// <include file='_wireSAFEARRAY.xml' path='doc/member[@name="_wireSAFEARRAY.rgsabound"]/*' />
     [NativeTypeName("SAFEARRAYBOUND [1]")]
     public _rgsabound_e__FixedBuffer rgsabound;
 
+    /// <include file='_rgsabound_e__FixedBuffer.xml' path='doc/member[@name="_rgsabound_e__FixedBuffer"]/*' />
     public partial struct _rgsabound_e__FixedBuffer
     {
         public SAFEARRAYBOUND e0;

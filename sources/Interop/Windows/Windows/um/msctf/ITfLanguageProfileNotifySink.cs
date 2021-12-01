@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfLanguageProfileNotifySink.xml' path='doc/member[@name="ITfLanguageProfileNotifySink"]/*' />
 [Guid("43C9FE15-F494-4C17-9DE2-B8A4AC350AA8")]
 [NativeTypeName("struct ITfLanguageProfileNotifySink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
         return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
         return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, uint>)(lpVtbl[1]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
         return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, uint>)(lpVtbl[2]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfLanguageProfileNotifySink.xml' path='doc/member[@name="ITfLanguageProfileNotifySink.OnLanguageChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnLanguageChange([NativeTypeName("LANGID")] ushort langid, BOOL* pfAccept)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
         return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, ushort, BOOL*, int>)(lpVtbl[3]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), langid, pfAccept);
     }
 
+    /// <include file='ITfLanguageProfileNotifySink.xml' path='doc/member[@name="ITfLanguageProfileNotifySink.OnLanguageChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnLanguageChanged()

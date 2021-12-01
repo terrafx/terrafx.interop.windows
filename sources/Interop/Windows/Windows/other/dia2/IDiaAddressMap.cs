@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaAddressMap.xml' path='doc/member[@name="IDiaAddressMap"]/*' />
 [Guid("B62A2E7A-067A-4EA3-B598-04C09717502C")]
 [NativeTypeName("struct IDiaAddressMap : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         return ((delegate* unmanaged<IDiaAddressMap*, Guid*, void**, int>)(lpVtbl[0]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         return ((delegate* unmanaged<IDiaAddressMap*, uint>)(lpVtbl[1]))((IDiaAddressMap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         return ((delegate* unmanaged<IDiaAddressMap*, uint>)(lpVtbl[2]))((IDiaAddressMap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaAddressMap.xml' path='doc/member[@name="IDiaAddressMap.get_addressMapEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_addressMapEnabled(BOOL* pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         return ((delegate* unmanaged<IDiaAddressMap*, BOOL*, int>)(lpVtbl[3]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaAddressMap.xml' path='doc/member[@name="IDiaAddressMap.put_addressMapEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT put_addressMapEnabled(BOOL NewVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         return ((delegate* unmanaged<IDiaAddressMap*, BOOL, int>)(lpVtbl[4]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), NewVal);
     }
 
+    /// <include file='IDiaAddressMap.xml' path='doc/member[@name="IDiaAddressMap.get_relativeVirtualAddressEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_relativeVirtualAddressEnabled(BOOL* pRetVal)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         return ((delegate* unmanaged<IDiaAddressMap*, BOOL*, int>)(lpVtbl[5]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaAddressMap.xml' path='doc/member[@name="IDiaAddressMap.put_relativeVirtualAddressEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT put_relativeVirtualAddressEnabled(BOOL NewVal)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         return ((delegate* unmanaged<IDiaAddressMap*, BOOL, int>)(lpVtbl[6]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), NewVal);
     }
 
+    /// <include file='IDiaAddressMap.xml' path='doc/member[@name="IDiaAddressMap.get_imageAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_imageAlign([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         return ((delegate* unmanaged<IDiaAddressMap*, uint*, int>)(lpVtbl[7]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaAddressMap.xml' path='doc/member[@name="IDiaAddressMap.put_imageAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_imageAlign([NativeTypeName("DWORD")] uint NewVal)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         return ((delegate* unmanaged<IDiaAddressMap*, uint, int>)(lpVtbl[8]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), NewVal);
     }
 
+    /// <include file='IDiaAddressMap.xml' path='doc/member[@name="IDiaAddressMap.set_imageHeaders"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT set_imageHeaders([NativeTypeName("DWORD")] uint cbData, byte* pbData, BOOL originalHeaders)
@@ -88,6 +99,7 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         return ((delegate* unmanaged<IDiaAddressMap*, uint, byte*, BOOL, int>)(lpVtbl[9]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), cbData, pbData, originalHeaders);
     }
 
+    /// <include file='IDiaAddressMap.xml' path='doc/member[@name="IDiaAddressMap.set_addressMap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT set_addressMap([NativeTypeName("DWORD")] uint cData, [NativeTypeName("struct DiaAddressMapEntry *")] DiaAddressMapEntry* pData, BOOL imageToSymbols)

@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_PRIMARY_GROUP.xml' path='doc/member[@name="TOKEN_PRIMARY_GROUP"]/*' />
 public unsafe partial struct TOKEN_PRIMARY_GROUP
 {
+    /// <include file='TOKEN_PRIMARY_GROUP.xml' path='doc/member[@name="TOKEN_PRIMARY_GROUP.PrimaryGroup"]/*' />
     [NativeTypeName("PSID")]
     public void* PrimaryGroup;
 }

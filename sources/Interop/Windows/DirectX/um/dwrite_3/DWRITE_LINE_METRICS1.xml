@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_LINE_METRICS1">
+    <summary>
+      <para>Contains information about a formatted line of text.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_LINE_METRICS1.leadingBefore">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>White space before the content of the line. This is included in the line height and baseline distances.
+If the line is formatted horizontally either with a uniform line spacing or with proportional
+line spacing, this value represents the extra space above the content.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_LINE_METRICS1.leadingAfter">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>White space after the content of the line. This is included in the height of the line.
+If the line is formatted horizontally either with a uniform line spacing or with proportional
+line spacing, this value represents the extra space below the content.</para>
+    </summary>
+  </member>
+</doc>

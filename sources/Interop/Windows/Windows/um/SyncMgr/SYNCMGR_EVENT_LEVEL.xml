@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_EVENT_LEVEL">
+    <summary>
+      <para>Specifies the type of event being reported to Sync Center.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_EVENT_LEVEL.SYNCMGR_EL_INFORMATION">
+    <summary>
+      <para>The event is informational in nature and will be displayed with the appropriate icon.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_EVENT_LEVEL.SYNCMGR_EL_WARNING">
+    <summary>
+      <para>The event is a warning and will be displayed with the appropriate icon.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_EVENT_LEVEL.SYNCMGR_EL_ERROR">
+    <summary>
+      <para>The event is an error and will be displayed with the appropriate icon. Additionally, this event will be included in the count of errors reported to the handler or item when it is displayed in the folder as well as to the sync tray icon.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_EVENT_LEVEL.SYNCMGR_EL_MAX">
+    <summary>
+      <para>Used only to declare the largest valid value in this enumeration. Do not use with <see cref="ISyncMgrSyncCallback.ReportEvent" />.</para>
+    </summary>
+  </member>
+</doc>

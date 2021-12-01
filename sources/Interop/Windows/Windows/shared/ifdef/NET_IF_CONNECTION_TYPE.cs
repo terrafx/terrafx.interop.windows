@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NET_IF_CONNECTION_TYPE.xml' path='doc/member[@name="NET_IF_CONNECTION_TYPE"]/*' />
 public enum NET_IF_CONNECTION_TYPE
 {
+    /// <include file='NET_IF_CONNECTION_TYPE.xml' path='doc/member[@name="NET_IF_CONNECTION_TYPE.NET_IF_CONNECTION_DEDICATED"]/*' />
     NET_IF_CONNECTION_DEDICATED = 1,
+
+    /// <include file='NET_IF_CONNECTION_TYPE.xml' path='doc/member[@name="NET_IF_CONNECTION_TYPE.NET_IF_CONNECTION_PASSIVE"]/*' />
     NET_IF_CONNECTION_PASSIVE = 2,
+
+    /// <include file='NET_IF_CONNECTION_TYPE.xml' path='doc/member[@name="NET_IF_CONNECTION_TYPE.NET_IF_CONNECTION_DEMAND"]/*' />
     NET_IF_CONNECTION_DEMAND = 3,
+
+    /// <include file='NET_IF_CONNECTION_TYPE.xml' path='doc/member[@name="NET_IF_CONNECTION_TYPE.NET_IF_CONNECTION_MAXIMUM"]/*' />
     NET_IF_CONNECTION_MAXIMUM = 4,
 }

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STATSTG">
+    <summary>
+      <para>The
+<b>STATSTG</b> structure contains statistical data about an open storage, stream, or byte-array object. This structure is used in the
+<see cref="IEnumSTATSTG" />,
+<see cref="ILockBytes" />,
+<see cref="IStorage" />, and
+<see cref="IStream" /> interfaces.</para>
+    </summary>
+    <seealso cref="IStorage.SetElementTimes" />
+  </member>
+  <member name="STATSTG.pwcsName">
+    <summary>
+      <para>A pointer to a <b>NULL</b>-terminated Unicode string that contains the name. Space for this string is allocated by the method called and freed by the caller (for more information, see
+<see cref="CoTaskMemFree" />). To  not return this member, specify the STATFLAG_NONAME value when you call a method that returns a
+<b>STATSTG</b> structure, except for calls to <see cref="IEnumSTATSTG.Next" />, which provides no way to specify this value.</para>
+    </summary>
+  </member>
+  <member name="STATSTG.type">
+    <summary>
+      <para>Indicates the type of storage object. This is one of the values from the
+<see cref="STGTY" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="STATSTG.cbSize">
+    <summary>
+      <para>Specifies the size, in bytes, of the stream or byte array.</para>
+    </summary>
+  </member>
+  <member name="STATSTG.mtime">
+    <summary>
+      <para>Indicates the last modification time for this storage, stream, or byte array.</para>
+    </summary>
+  </member>
+  <member name="STATSTG.ctime">
+    <summary>
+      <para>Indicates the creation time for this storage, stream, or byte array.</para>
+    </summary>
+  </member>
+  <member name="STATSTG.atime">
+    <summary>
+      <para>Indicates the last access time for this storage, stream, or byte array.</para>
+    </summary>
+  </member>
+  <member name="STATSTG.grfMode">
+    <summary>
+      <para>Indicates the access mode specified when the object was opened. This member is only valid in calls to
+<b>Stat</b> methods.</para>
+    </summary>
+  </member>
+  <member name="STATSTG.grfLocksSupported">
+    <summary>
+      <para>Indicates the types of region locking supported by the stream or byte array. For more information about the values available, see the
+<see cref="LOCKTYPE" /> enumeration. This member is not used for storage objects.</para>
+    </summary>
+  </member>
+  <member name="STATSTG.clsid">
+    <summary>
+      <para>Indicates the class identifier for the storage object; set to CLSID_NULL for new storage objects. This member is not used for streams or byte arrays.</para>
+    </summary>
+  </member>
+  <member name="STATSTG.grfStateBits">
+    <summary>
+      <para>Indicates the current state bits of the storage object; that is, the value most recently set by the
+<see cref="IStorage.SetStateBits" /> method. This member is not valid for streams or byte arrays.</para>
+    </summary>
+  </member>
+  <member name="STATSTG.reserved">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

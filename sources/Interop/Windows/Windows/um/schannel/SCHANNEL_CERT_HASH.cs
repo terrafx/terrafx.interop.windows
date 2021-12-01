@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCHANNEL_CERT_HASH.xml' path='doc/member[@name="SCHANNEL_CERT_HASH"]/*' />
 public unsafe partial struct SCHANNEL_CERT_HASH
 {
+    /// <include file='SCHANNEL_CERT_HASH.xml' path='doc/member[@name="SCHANNEL_CERT_HASH.dwLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLength;
 
+    /// <include file='SCHANNEL_CERT_HASH.xml' path='doc/member[@name="SCHANNEL_CERT_HASH.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='SCHANNEL_CERT_HASH.xml' path='doc/member[@name="SCHANNEL_CERT_HASH.hProv"]/*' />
     public HCRYPTPROV hProv;
 
+    /// <include file='SCHANNEL_CERT_HASH.xml' path='doc/member[@name="SCHANNEL_CERT_HASH.ShaHash"]/*' />
     [NativeTypeName("BYTE [20]")]
     public fixed byte ShaHash[20];
 }

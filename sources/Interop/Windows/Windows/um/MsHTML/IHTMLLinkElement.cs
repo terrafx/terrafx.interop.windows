@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement"]/*' />
 [Guid("3050F205-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLLinkElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, uint>)(lpVtbl[1]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, uint>)(lpVtbl[2]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, uint*, int>)(lpVtbl[3]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.put_href"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_href([NativeTypeName("BSTR")] ushort* v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, ushort*, int>)(lpVtbl[7]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_href"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_href([NativeTypeName("BSTR *")] ushort** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, ushort**, int>)(lpVtbl[8]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.put_rel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_rel([NativeTypeName("BSTR")] ushort* v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, ushort*, int>)(lpVtbl[9]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_rel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_rel([NativeTypeName("BSTR *")] ushort** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, ushort**, int>)(lpVtbl[10]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.put_rev"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_rev([NativeTypeName("BSTR")] ushort* v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, ushort*, int>)(lpVtbl[11]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_rev"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_rev([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, ushort**, int>)(lpVtbl[12]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.put_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_type([NativeTypeName("BSTR")] ushort* v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, ushort*, int>)(lpVtbl[13]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, ushort**, int>)(lpVtbl[14]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_readyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, ushort**, int>)(lpVtbl[15]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.put_onreadystatechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_onreadystatechange(VARIANT v)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, VARIANT, int>)(lpVtbl[16]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_onreadystatechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_onreadystatechange(VARIANT* p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, VARIANT*, int>)(lpVtbl[17]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.put_onload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT put_onload(VARIANT v)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, VARIANT, int>)(lpVtbl[18]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_onload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_onload(VARIANT* p)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, VARIANT*, int>)(lpVtbl[19]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.put_onerror"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT put_onerror(VARIANT v)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, VARIANT, int>)(lpVtbl[20]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_onerror"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_onerror(VARIANT* p)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, VARIANT*, int>)(lpVtbl[21]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_styleSheet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_styleSheet(IHTMLStyleSheet** p)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, IHTMLStyleSheet**, int>)(lpVtbl[22]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.put_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, short, int>)(lpVtbl[23]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, short*, int>)(lpVtbl[24]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.put_media"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_media([NativeTypeName("BSTR")] ushort* v)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
         return ((delegate* unmanaged<IHTMLLinkElement*, ushort*, int>)(lpVtbl[25]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLinkElement.xml' path='doc/member[@name="IHTMLLinkElement.get_media"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_media([NativeTypeName("BSTR *")] ushort** p)

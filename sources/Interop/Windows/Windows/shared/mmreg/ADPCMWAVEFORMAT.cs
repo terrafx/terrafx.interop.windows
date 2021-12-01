@@ -7,17 +7,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ADPCMWAVEFORMAT.xml' path='doc/member[@name="ADPCMWAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct ADPCMWAVEFORMAT
 {
+    /// <include file='ADPCMWAVEFORMAT.xml' path='doc/member[@name="ADPCMWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='ADPCMWAVEFORMAT.xml' path='doc/member[@name="ADPCMWAVEFORMAT.wSamplesPerBlock"]/*' />
     [NativeTypeName("WORD")]
     public ushort wSamplesPerBlock;
 
+    /// <include file='ADPCMWAVEFORMAT.xml' path='doc/member[@name="ADPCMWAVEFORMAT.wNumCoef"]/*' />
     [NativeTypeName("WORD")]
     public ushort wNumCoef;
 
+    /// <include file='ADPCMWAVEFORMAT.xml' path='doc/member[@name="ADPCMWAVEFORMAT.aCoef"]/*' />
     [NativeTypeName("ADPCMCOEFSET []")]
     public ADPCMCOEFSET aCoef;
 }

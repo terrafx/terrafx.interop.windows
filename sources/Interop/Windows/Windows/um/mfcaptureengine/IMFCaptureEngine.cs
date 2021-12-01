@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine"]/*' />
 [Guid("A6BBA433-176B-48B2-B375-53AA03473207")]
 [NativeTypeName("struct IMFCaptureEngine : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         return ((delegate* unmanaged<IMFCaptureEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         return ((delegate* unmanaged<IMFCaptureEngine*, uint>)(lpVtbl[1]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         return ((delegate* unmanaged<IMFCaptureEngine*, uint>)(lpVtbl[2]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize(IMFCaptureEngineOnEventCallback* pEventCallback, IMFAttributes* pAttributes, IUnknown* pAudioSource, IUnknown* pVideoSource)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         return ((delegate* unmanaged<IMFCaptureEngine*, IMFCaptureEngineOnEventCallback*, IMFAttributes*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), pEventCallback, pAttributes, pAudioSource, pVideoSource);
     }
 
+    /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.StartPreview"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT StartPreview()
@@ -55,6 +61,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         return ((delegate* unmanaged<IMFCaptureEngine*, int>)(lpVtbl[4]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.StopPreview"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT StopPreview()
@@ -62,6 +69,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         return ((delegate* unmanaged<IMFCaptureEngine*, int>)(lpVtbl[5]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.StartRecord"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT StartRecord()
@@ -69,6 +77,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         return ((delegate* unmanaged<IMFCaptureEngine*, int>)(lpVtbl[6]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.StopRecord"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT StopRecord(BOOL bFinalize, BOOL bFlushUnprocessedSamples)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         return ((delegate* unmanaged<IMFCaptureEngine*, BOOL, BOOL, int>)(lpVtbl[7]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), bFinalize, bFlushUnprocessedSamples);
     }
 
+    /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.TakePhoto"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT TakePhoto()
@@ -83,6 +93,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         return ((delegate* unmanaged<IMFCaptureEngine*, int>)(lpVtbl[8]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.GetSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetSink(MF_CAPTURE_ENGINE_SINK_TYPE mfCaptureEngineSinkType, IMFCaptureSink** ppSink)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         return ((delegate* unmanaged<IMFCaptureEngine*, MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink**, int>)(lpVtbl[9]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), mfCaptureEngineSinkType, ppSink);
     }
 
+    /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.GetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetSource(IMFCaptureSource** ppSource)

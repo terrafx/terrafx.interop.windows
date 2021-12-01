@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLDivPosition.xml' path='doc/member[@name="HTMLDivPosition"]/*' />
 [Guid("3050F249-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLDivPosition
 {

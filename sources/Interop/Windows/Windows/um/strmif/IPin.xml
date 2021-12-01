@@ -1,0 +1,834 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPin.BeginFlush">
+    <summary>
+      <para>The <code>BeginFlush</code> method begins a flush operation.</para>
+      <para>Applications should not call this method. This method is called by other filters, to flush data from the graph.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is an output pin.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method only on input pins. Output pins return E_UNEXPECTED.</para>
+      <para>In a flush operation, a filter discards whatever data it was processing. It rejects new data until the flush is completed. The flush is completed when the upstream pin calls the <see cref="IPin.EndFlush" /> method. Flushing enables the filter graph to be more responsive when events alter the normal data flow. For example, flushing occurs during a seek.</para>
+      <para>When <code>BeginFlush</code> is called, the filter performs the following steps:</para>
+      <list type="number">
+        <item>
+          <description>Passes the <code>IPin.BeginFlush</code> call downstream.</description>
+        </item>
+        <item>
+          <description>Sets an internal flag that causes all data-streaming methods to fail, such as <see cref="IMemInputPin.Receive" />.</description>
+        </item>
+        <item>
+          <description>Returns from any blocked calls to the <see cref="Receive" /> method.</description>
+        </item>
+      </list>
+      <para>When the <code>BeginFlush</code> notification reaches a renderer filter, the renderer frees any samples that it holds.</para>
+      <para>After <code>BeginFlush</code> is called, the pin rejects all samples from upstream, with a return value of S_FALSE, until the <see cref="IPin.EndFlush" /> method is called.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.Connect">
+    <summary>
+      <para>The <code>Connect</code> method connects the pin to another pin.</para>
+      <para>Applications should not call this method. Use <see cref="IGraphBuilder" /> methods instead. This method is called by the Filter Graph Manager to connect pins.</para>
+    </summary>
+    <param name="pReceivePin">
+      <para>Pointer to the receiving pin's <see cref="IPin" /> interface.</para>
+    </param>
+    <param name="pmt">
+      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the media type for the connection. Can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_ALREADY_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is already connected.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NO_ACCEPTABLE_TYPES</b>
+            </para>
+          </description>
+          <description>
+            <para>Cannot find an acceptable media type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NO_TRANSPORT</b>
+            </para>
+          </description>
+          <description>
+            <para>Pins cannot agree on a transport, or there is no allocator for the connection.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_STOPPED</b>
+            </para>
+          </description>
+          <description>
+            <para>The filter is active and the pin does not support dynamic reconnection.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_TYPE_NOT_ACCEPTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified media type is not acceptable.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <i>pmt</i> parameter can be <b>NULL</b>. It can also specify a partial media type, with a value of GUID_NULL for the major type, subtype, or format.</para>
+      <para>This method verifies that the connection is possible. If the pin rejects the connection, the method fails. The connecting pin proposes media types by calling <see cref="IPin.ReceiveConnection" /> on the receiving pin.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.ConnectedTo">
+    <summary>
+      <para>The <b>ConnectedTo</b> method retrieves a pointer to the connected pin, if any.</para>
+    </summary>
+    <param name="pPin">
+      <para>Receives a pointer to the <see cref="IPin" /> interface of the other pin. The caller must release the interface. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Pin is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the method succeeds, the <see cref="IPin" /> interface that it returns has an outstanding reference count. Be sure to release it when you are done.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/find-an-unconnected-pin-on-a-filter">Find an Unconnected Pin on a Filter</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.ConnectionMediaType">
+    <summary>
+      <para>The <code>ConnectionMediaType</code> method retrieves the media type for the current pin connection, if any.</para>
+    </summary>
+    <param name="pmt">
+      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that receives the media type.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Pin is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the pin is connected, this method copies the media type into the <see cref="AM_MEDIA_TYPE" /> structure specified by <i>pmt</i>. The caller must free the media type's format block. You can use the Microsoft® Win32®<b>CoTaskMemFree</b> function, or the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/freemediatype">FreeMediaType</a> helper function.</para>
+      <para>If the pin is not connected, this method clears the media type specified by <i>pmt</i> and returns an error code.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.Disconnect">
+    <summary>
+      <para>The <code>Disconnect</code> method breaks the current pin connection.</para>
+      <para>The Filter Graph Manager calls this method when it disconnects two filters. Applications and filters should not call this method. Instead, call the <see cref="IFilterGraph.Disconnect" /> method on the Filter Graph Manager.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin was not connected.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_STOPPED</b>
+            </para>
+          </description>
+          <description>
+            <para>The filter is active.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method fails if the filter is paused or running. If the pin supports the <see cref="IPinConnection" /> interface, call <see cref="IPinConnection.DynamicDisconnect" /> to disconnect the pin when the filter is paused or running.</para>
+      <para>This method does not disconnect the other pin in the pin connection.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.EndFlush">
+    <summary>
+      <para>The <code>EndFlush</code> method ends a flush operation.</para>
+      <para>Applications should not call this method. This method is called by other filters, to flush data from the graph.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is an output pin.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method only on input pins. Output pins return E_UNEXPECTED.</para>
+      <para>When this method is called, the filter performs the following actions:</para>
+      <list type="number">
+        <item>
+          <description>Waits for all queued samples to be discarded.</description>
+        </item>
+        <item>
+          <description>Frees any buffered data, including any pending end-of-stream notifications.</description>
+        </item>
+        <item>
+          <description>Clears any pending <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-complete">EC_COMPLETE</a> notifications.</description>
+        </item>
+        <item>
+          <description>Calls <code>EndFlush</code> downstream.</description>
+        </item>
+      </list>
+      <para>When the method returns, the pin can accept new samples.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.EndOfStream">
+    <summary>
+      <para>The <code>EndOfStream</code> method notifies the pin that no additional data is expected, until a new run command is issued to the filter.</para>
+      <para>Applications should not call this method. This method is called by other filters to signal the end of the stream.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is an output pin.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method only on input pins. Output pins return E_UNEXPECTED.</para>
+      <para>This method sends an end-of-stream notification to the pin. The pin delivers the notification downstream. It must serialize end-of-stream notifications with <see cref="IMemInputPin.Receive" /> calls. If the pin queues media samples for delivery, it should queue end-of-stream notifications as well. The <see cref="IPin.BeginFlush" /> method flushes any queued end-of-stream notifications.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.EnumMediaTypes">
+    <summary>
+      <para>The <b>EnumMediaTypes</b> method enumerates the pin's preferred media types.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Receives a pointer to the <see cref="IEnumMediaTypes" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is not connected. Some pins do not enumerate media types unless the pin is connected to another filter.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <see cref="IEnumMediaTypes" /> interface works like a standard COM enumerator. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/enumerating-objects-in-a-filter-graph">Enumerating Objects in a Filter Graph</a>. If the method succeeds, the <b>IEnumMediaTypes</b> interface has an outstanding reference count. Be sure to release it when you are done.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.NewSegment">
+    <summary>
+      <para>The <code>NewSegment</code> method notifies the pin that media samples received after this call are grouped as a segment, with a common start time, stop time, and rate.</para>
+      <para>Applications should not call this method. This method is called by other filters.</para>
+    </summary>
+    <param name="tStart">
+      <para>Start time of the segment, relative to the original source, in 100-nanosecond units.</para>
+    </param>
+    <param name="tStop">
+      <para>End time of the segment, relative to the original source, in 100-nanosecond units.</para>
+    </param>
+    <param name="dRate">
+      <para>Rate at which this segment should be processed, as a percentage of the original rate.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>A source filter (or parser filter) calls this method at the start of each new stream and after each seek operation. It calls the method on the input pin of the downstream filter, after delivering the previous batch of data and before calling <see cref="IMemInputPin.Receive" /> with any new data. The downstream filter propagates the <code>NewSegment</code> call downstream.</para>
+      <para>Filters can use segment information to process samples. For example, with some formats it is impossible to reconstruct a delta frame without the next key frame. Therefore, if the stop time occurs on a delta frame, the source filter must send some additional frames. The decoder filter determines the final frame based on the segment information. The segment rate is used to render continuous data sources, such as audio data. For example, the audio renderer uses the sampling rate and the segment rate to render the audio data correctly.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.QueryAccept">
+    <summary>
+      <para>The <code>QueryAccept</code> method determines whether the pin accepts a specified media type.</para>
+    </summary>
+    <param name="pmt">
+      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the media type.</para>
+    </param>
+    <returns>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin rejects the media type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin accepts the media type.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A return value of S_OK indicates that the pin will accept the media type, either on the next sample, or after a pin reconnection. The implementation should take into account the current state of the filter, including connections on other pins, and any properties that can be set on the filter.</para>
+      <para>Any other return value, including S_FALSE, means that the pin rejects the media type. Therefore, test for S_OK explicitly; do not use the <b>SUCCEEDED</b> macro.</para>
+      <para>If the filter is running, a return value of S_OK is ambiguous. The pin might accept a format change on the next media sample, without reconnecting; or it might need to reconnect. If the pin supports the <see cref="IPinConnection" /> interface, call the <see cref="IPinConnection.DynamicQueryAccept" /> method, which specifically tests whether the pin can accept the new type without reconnecting.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-format-changes">Dynamic Format Changes</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.QueryDirection">
+    <summary>
+      <para>The <b>QueryDirection</b> method gets the direction of the pin (input or output).</para>
+    </summary>
+    <param name="pPinDir">
+      <para>Receives a member of the <see cref="PIN_DIRECTION" /> enumerated type.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.QueryId">
+    <summary>
+      <para>The <code>QueryId</code> method retrieves an identifier for the pin.</para>
+    </summary>
+    <param name="Id">
+      <para>Receives a string containing the pin identifier.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method supports graph persistence. Use this method to save a pin's state, and the <see cref="IBaseFilter.FindPin" /> method to restore the state. The pin's identifier string is defined by the filter implementation. The identifier must be unique within the filter.</para>
+      <para>
+        <b>Note</b>  The <i>pin identifier</i> is not necessarily the same as the <i>pin name</i> that the <see cref="QueryPinInfo" /> method returns.</para>
+      <para>The filter allocates the returned string using the <see cref="CoTaskMemAlloc" /> function. The caller must free it using <see cref="CoTaskMemFree" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.QueryInternalConnections">
+    <summary>
+      <para>The <b>QueryInternalConnections</b> method retrieves the pins that are connected internally to this pin (within the filter).</para>
+    </summary>
+    <param name="apPin">
+      <para>Address of an array of <see cref="IPin" /> pointers. The caller allocates the array. The method fills the array with <b>IPin</b> pointers. If <i>nPin</i> is zero, this parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="nPin">
+      <para>On input, specifies the size of the array. On output, specifies the number of internally connected pins.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient array size.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method returns information about the filter's internal mapping of input pins to output pins. In other words, it describes how the input pins deliver data to the output pins.</para>
+      <para>In most filters, every input pin connects to every output pin. For example, in a transform filter, one input connects to one output; in a splitter filter, one input connects to multiple outputs. In these cases, the method should simply return E_NOTIMPL.</para>
+      <para>Otherwise, the method returns an array of <b>IPin</b> pointers, one for each pin that is mapped internally to the pin you have queried. If you call the method on an input pin, the array contains pointers to output pins, and vice versa.</para>
+      <para>The caller allocates the array of <b>IPin</b> pointers. To get the required array size, call the method once with <i>apPin</i> equal to <b>NULL</b>. The size is returned in the <i>nPin</i> parameter. Then allocate the array and call the method again, setting <i>apPin</i> equal to the address of the array and <i>nPin</i> equal to the array size. The method then fills the array with <b>IPin</b> pointers. Each returned pointer has an outstanding reference count and must be released by the caller.</para>
+      <para>This method has another use that is now deprecated: The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-graph-manager">Filter Graph Manager</a> treats a filter as being a renderer filter if at least one input pin implements this method but returns zero in <i>nPin</i>. If you are writing a new renderer filter, however, you should implement the <see cref="IAMFilterMiscFlags" /> interface instead of using this method to indicate that the filter is a renderer.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.QueryPinInfo">
+    <summary>
+      <para>The <code>QueryPinInfo</code> method retrieves information about the pin.</para>
+    </summary>
+    <param name="pInfo">
+      <para>Pointer to a <see cref="PIN_INFO" /> structure that receives the pin information.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When the method returns, if the <b>pFilter</b> member of the PIN_INFO structure is non-<b>NULL</b>, it has an outstanding reference count. Be sure to release the interface when you are done.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin.ReceiveConnection">
+    <summary>
+      <para>The <code>ReceiveConnection</code> method accepts a connection from another pin.</para>
+      <para>Applications should not call this method. This method is called by other filters during the pin connection process.</para>
+    </summary>
+    <param name="pConnector">
+      <para>Pointer to the connecting pin's <see cref="IPin" /> interface.</para>
+    </param>
+    <param name="pmt">
+      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the media type for the connection.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_ALREADY_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is already connected.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_STOPPED</b>
+            </para>
+          </description>
+          <description>
+            <para>Cannot connect while filter is active.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_TYPE_NOT_ACCEPTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified media type is not acceptable.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When an output pin connects, it calls this method on the input pin. The input pin should verify that the specified media type is acceptable. It may also need to check for other connection requirements specific to the owning filter. If the connection is suitable, the input pin should return S_OK, and also do the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Store the media type, and return the same type in the <see cref="IPin.ConnectionMediaType" /> method.</description>
+        </item>
+        <item>
+          <description>Store the output pin's <b>IPin</b> interface (<i>pConnector</i>), and return this pointer in the <see cref="IPin.ConnectedTo" /> method.</description>
+        </item>
+      </list>
+      <para>If the connection is unsuitable, the pin should return an error code.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepin">CBasePin</a> class implements the basic framework for this method, including storing the media type and <b>IPin</b> pointers.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/how-filters-connect">How Filters Connect</seealso>
+    <seealso cref="IPin Interface" />
+  </member>
+  <member name="IPin">
+    <summary>
+      <para>This interface is exposed by all input and output pins.</para>
+      <para>The filter graph manager uses this interface to connect pins and perform flushing operations. Applications can use this interface to query the pin for information. Applications should never call <code>IPin</code> methods that change a pin's state, such as <see cref="Connect" />, <see cref="Disconnect" />, <see cref="BeginFlush" />, or <see cref="EndFlush" />. To connect pins, an application must use the methods in <see cref="IGraphBuilder" />.</para>
+      <para>
+        <b>Filter developers: </b>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepin">CBasePin</a>, <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbaseinputpin">CBaseInputPin</a>, and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbaseoutputpin">CBaseOutputPin</a> classes implement this interface. Other base classes derive from these three classes.</para>
+    </summary>
+  </member>
+</doc>

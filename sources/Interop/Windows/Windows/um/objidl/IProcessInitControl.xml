@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IProcessInitControl.ResetInitializerTimeout">
+    <summary>
+      <para>Sets the process initialization time-out.</para>
+    </summary>
+    <param name="dwSecondsRemaining">
+      <para>The number of seconds after this method is called before process initialization times out.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
+    </returns>
+    <seealso cref="IProcessInitControl" />
+  </member>
+  <member name="IProcessInitControl">
+    <summary>
+      <para>Specifies the process initialization time-out interval.</para>
+    </summary>
+  </member>
+</doc>

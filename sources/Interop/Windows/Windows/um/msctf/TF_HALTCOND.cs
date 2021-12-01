@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TF_HALTCOND.xml' path='doc/member[@name="TF_HALTCOND"]/*' />
 public unsafe partial struct TF_HALTCOND
 {
+    /// <include file='TF_HALTCOND.xml' path='doc/member[@name="TF_HALTCOND.pHaltRange"]/*' />
     public ITfRange* pHaltRange;
 
+    /// <include file='TF_HALTCOND.xml' path='doc/member[@name="TF_HALTCOND.aHaltPos"]/*' />
     public TfAnchor aHaltPos;
 
+    /// <include file='TF_HALTCOND.xml' path='doc/member[@name="TF_HALTCOND.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

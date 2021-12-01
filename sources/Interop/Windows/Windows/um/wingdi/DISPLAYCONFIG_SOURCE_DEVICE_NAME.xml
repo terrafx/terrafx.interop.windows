@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_SOURCE_DEVICE_NAME">
+    <summary>
+      <para>The <b>DISPLAYCONFIG_SOURCE_DEVICE_NAME</b> structure contains the GDI device name for the source or view.</para>
+    </summary>
+    <seealso cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" />
+  </member>
+  <member name="DISPLAYCONFIG_SOURCE_DEVICE_NAME.header">
+    <summary>
+      <para>A <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> structure that contains information about the request for the source device name. The caller should set the <b>type</b> member of DISPLAYCONFIG_DEVICE_INFO_HEADER to DISPLAYCONFIG_DEVICE_INFO_GET_SOURCE_NAME and the <b>adapterId</b> and <b>id</b> members of DISPLAYCONFIG_DEVICE_INFO_HEADER to the source for which the caller wants the source device name. The caller should set the <b>size</b> member of DISPLAYCONFIG_DEVICE_INFO_HEADER to at least the size of the DISPLAYCONFIG_SOURCE_DEVICE_NAME structure.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SOURCE_DEVICE_NAME.viewGdiDeviceName">
+    <summary>
+      <para>A NULL-terminated WCHAR string that is the GDI device name for the source, or view. This name can be used in a call to <b>EnumDisplaySettings</b> to obtain a list of available modes for the specified source.</para>
+    </summary>
+  </member>
+</doc>

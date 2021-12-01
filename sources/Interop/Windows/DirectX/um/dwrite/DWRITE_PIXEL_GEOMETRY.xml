@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PIXEL_GEOMETRY">
+    <summary>
+      <para>Represents the internal structure of a device pixel (that is, the physical arrangement of red,
+green, and blue color components) that is assumed for purposes of rendering text.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PIXEL_GEOMETRY.DWRITE_PIXEL_GEOMETRY_FLAT">
+    <summary>
+      <para>The red, green, and blue color components of each pixel are assumed to occupy the same point.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PIXEL_GEOMETRY.DWRITE_PIXEL_GEOMETRY_RGB">
+    <summary>
+      <para>Each pixel is composed of three vertical stripes, with red on the left, green in the center, and
+blue on the right. This is the most common pixel geometry for LCD monitors.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PIXEL_GEOMETRY.DWRITE_PIXEL_GEOMETRY_BGR">
+    <summary>
+      <para>Each pixel is composed of three vertical stripes, with blue on the left, green in the center, and
+red on the right.</para>
+    </summary>
+  </member>
+</doc>

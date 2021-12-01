@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CD3D11_BUFFER_DESC.CD3D11_BUFFER_DESC">
+    <summary>
+      <para>Instantiates a new instance of a <see cref="CD3D11_BUFFER_DESC" /> structure that is initialized with a <see cref="D3D11_BUFFER_DESC" /> structure.</para>
+    </summary>
+    <param name="o">
+      <para>Type: <b>const <see cref="D3D11_BUFFER_DESC" /></b></para>
+      <para>Address of the <see cref="D3D11_BUFFER_DESC" /> structure that initializes the <see cref="CD3D11_BUFFER_DESC" /> structure.</para>
+    </param>
+    <seealso cref="CD3D11_BUFFER_DESC" />
+  </member>
+  <member name="CD3D11_BUFFER_DESC.CD3D11_BUFFER_DESC">
+    <summary>
+      <para>Instantiates a new instance of a <see cref="CD3D11_BUFFER_DESC" /> structure that is initialized with <see cref="D3D11_BUFFER_DESC" /> values.</para>
+    </summary>
+    <param name="byteWidth">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size of the buffer in bytes.</para>
+    </param>
+    <param name="bindFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="D3D11_BIND_FLAG" /> values that are combined by using a bitwise OR operation. The resulting value identifies how the buffer will be bound to the pipeline.</para>
+    </param>
+    <param name="usage">
+      <para>Type: <b><see cref="D3D11_USAGE" /></b></para>
+      <para>A <see cref="D3D11_USAGE" />-typed value that identifies how the buffer is expected to be read from and written to. Frequency of update is a key factor.</para>
+    </param>
+    <param name="cpuaccessFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="D3D11_CPU_ACCESS_FLAG" /> values that are combined by using a bitwise OR operation or 0 if no CPU access is necessary. The resulting value identifies CPU access.</para>
+    </param>
+    <param name="miscFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="D3D11_RESOURCE_MISC_FLAG" /> values that are combined by using a bitwise OR operation or 0 if unused. The resulting value identifies miscellaneous buffer info.</para>
+    </param>
+    <param name="structureByteStride">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The size of each element in the buffer structure (in bytes) when the buffer represents a structured buffer. For more info about structured buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-advanced-stages-cs-resources">Structured Buffer</a>.</para>
+      <para>The size value in <i>structureByteStride</i> must match the size of the format that you use for views of the buffer. For example, if you use a shader resource view (SRV) to read a buffer in a pixel shader, the SRV format size must match the size value in <i>structureByteStride</i>.</para>
+    </param>
+    <seealso cref="CD3D11_BUFFER_DESC" />
+  </member>
+  <member name="CD3D11_BUFFER_DESC.CD3D11_BUFFER_DESC">
+    <summary>
+      <para>Instantiates a new instance of an uninitialized <see cref="CD3D11_BUFFER_DESC" /> structure.</para>
+    </summary>
+    <seealso cref="CD3D11_BUFFER_DESC" />
+  </member>
+  <member name="CD3D11_BUFFER_DESC">
+    <summary>
+      <para>Represents a buffer and provides convenience methods for creating buffers.</para>
+    </summary>
+    <remarks>
+      <para>Here is how D3D11.h defines <b>CD3D11_BUFFER_DESC</b>:</para>
+      <code>
+struct CD3D11_BUFFER_DESC : public D3D11_BUFFER_DESC
+{
+    CD3D11_BUFFER_DESC()
+    {}
+    explicit CD3D11_BUFFER_DESC( const D3D11_BUFFER_DESC&amp;amp;amp;amp;amp;amp; o ) :
+        D3D11_BUFFER_DESC( o )
+    {}
+    explicit CD3D11_BUFFER_DESC(
+        UINT byteWidth,
+        UINT bindFlags,
+        D3D11_USAGE usage = D3D11_USAGE_DEFAULT,
+        UINT cpuaccessFlags = 0,
+        UINT miscFlags = 0,
+        UINT structureByteStride = 0 )
+    {
+        ByteWidth = byteWidth;
+        Usage = usage;
+        BindFlags = bindFlags;
+        CPUAccessFlags = cpuaccessFlags ;
+        MiscFlags = miscFlags;
+        StructureByteStride = structureByteStride;
+    }
+    ~CD3D11_BUFFER_DESC() {}
+    operator const D3D11_BUFFER_DESC&amp;amp;amp;amp;amp;amp;() const { return *this; }
+};
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/cd3d11-helper-classes">CD3D11 Helper Structures</seealso>
+  </member>
+  <member name="CD3D11_BUFFER_DESC.CD3D11_BUFFER_DESC">
+    <summary>
+      <para>TBD</para>
+    </summary>
+  </member>
+  <member name="CD3D11_BUFFER_DESC.D3D11_BUFFER_DESC">
+    <summary>
+      <h5>- See Below.</h5>
+    </summary>
+  </member>
+  <member name="CD3D11_BUFFER_DESC.elow.">
+    <summary></summary>
+  </member>
+</doc>

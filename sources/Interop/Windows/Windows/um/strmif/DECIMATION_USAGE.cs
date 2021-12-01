@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DECIMATION_USAGE.xml' path='doc/member[@name="DECIMATION_USAGE"]/*' />
 public enum DECIMATION_USAGE
 {
+    /// <include file='DECIMATION_USAGE.xml' path='doc/member[@name="DECIMATION_USAGE.DECIMATION_LEGACY"]/*' />
     DECIMATION_LEGACY = 0,
+
+    /// <include file='DECIMATION_USAGE.xml' path='doc/member[@name="DECIMATION_USAGE.DECIMATION_USE_DECODER_ONLY"]/*' />
     DECIMATION_USE_DECODER_ONLY = (DECIMATION_LEGACY + 1),
+
+    /// <include file='DECIMATION_USAGE.xml' path='doc/member[@name="DECIMATION_USAGE.DECIMATION_USE_VIDEOPORT_ONLY"]/*' />
     DECIMATION_USE_VIDEOPORT_ONLY = (DECIMATION_USE_DECODER_ONLY + 1),
+
+    /// <include file='DECIMATION_USAGE.xml' path='doc/member[@name="DECIMATION_USAGE.DECIMATION_USE_OVERLAY_ONLY"]/*' />
     DECIMATION_USE_OVERLAY_ONLY = (DECIMATION_USE_VIDEOPORT_ONLY + 1),
+
+    /// <include file='DECIMATION_USAGE.xml' path='doc/member[@name="DECIMATION_USAGE.DECIMATION_DEFAULT"]/*' />
     DECIMATION_DEFAULT = (DECIMATION_USE_OVERLAY_ONLY + 1),
 }

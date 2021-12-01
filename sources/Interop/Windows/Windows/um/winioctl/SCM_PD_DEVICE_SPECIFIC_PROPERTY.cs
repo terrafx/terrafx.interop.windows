@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_DEVICE_SPECIFIC_PROPERTY.xml' path='doc/member[@name="SCM_PD_DEVICE_SPECIFIC_PROPERTY"]/*' />
 public unsafe partial struct SCM_PD_DEVICE_SPECIFIC_PROPERTY
 {
+    /// <include file='SCM_PD_DEVICE_SPECIFIC_PROPERTY.xml' path='doc/member[@name="SCM_PD_DEVICE_SPECIFIC_PROPERTY.Name"]/*' />
     [NativeTypeName("WCHAR [128]")]
     public fixed ushort Name[128];
 
+    /// <include file='SCM_PD_DEVICE_SPECIFIC_PROPERTY.xml' path='doc/member[@name="SCM_PD_DEVICE_SPECIFIC_PROPERTY.Value"]/*' />
     [NativeTypeName("LONGLONG")]
     public long Value;
 }

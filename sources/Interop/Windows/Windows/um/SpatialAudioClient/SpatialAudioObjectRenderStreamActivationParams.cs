@@ -7,23 +7,31 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpatialAudioObjectRenderStreamActivationParams.xml' path='doc/member[@name="SpatialAudioObjectRenderStreamActivationParams"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct SpatialAudioObjectRenderStreamActivationParams
 {
+    /// <include file='SpatialAudioObjectRenderStreamActivationParams.xml' path='doc/member[@name="SpatialAudioObjectRenderStreamActivationParams.ObjectFormat"]/*' />
     [NativeTypeName("const WAVEFORMATEX *")]
     public WAVEFORMATEX* ObjectFormat;
 
+    /// <include file='SpatialAudioObjectRenderStreamActivationParams.xml' path='doc/member[@name="SpatialAudioObjectRenderStreamActivationParams.StaticObjectTypeMask"]/*' />
     public AudioObjectType StaticObjectTypeMask;
 
+    /// <include file='SpatialAudioObjectRenderStreamActivationParams.xml' path='doc/member[@name="SpatialAudioObjectRenderStreamActivationParams.MinDynamicObjectCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint MinDynamicObjectCount;
 
+    /// <include file='SpatialAudioObjectRenderStreamActivationParams.xml' path='doc/member[@name="SpatialAudioObjectRenderStreamActivationParams.MaxDynamicObjectCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint MaxDynamicObjectCount;
 
+    /// <include file='SpatialAudioObjectRenderStreamActivationParams.xml' path='doc/member[@name="SpatialAudioObjectRenderStreamActivationParams.Category"]/*' />
     public AUDIO_STREAM_CATEGORY Category;
 
+    /// <include file='SpatialAudioObjectRenderStreamActivationParams.xml' path='doc/member[@name="SpatialAudioObjectRenderStreamActivationParams.EventHandle"]/*' />
     public HANDLE EventHandle;
 
+    /// <include file='SpatialAudioObjectRenderStreamActivationParams.xml' path='doc/member[@name="SpatialAudioObjectRenderStreamActivationParams.NotifyObject"]/*' />
     public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 }

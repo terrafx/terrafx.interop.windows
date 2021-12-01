@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_EXCEPTION_CODE.xml' path='doc/member[@name="WS_EXCEPTION_CODE"]/*' />
 public enum WS_EXCEPTION_CODE
 {
+    /// <include file='WS_EXCEPTION_CODE.xml' path='doc/member[@name="WS_EXCEPTION_CODE.WS_EXCEPTION_CODE_USAGE_FAILURE"]/*' />
     WS_EXCEPTION_CODE_USAGE_FAILURE = unchecked((int)(0xC03D0000)),
+
+    /// <include file='WS_EXCEPTION_CODE.xml' path='doc/member[@name="WS_EXCEPTION_CODE.WS_EXCEPTION_CODE_INTERNAL_FAILURE"]/*' />
     WS_EXCEPTION_CODE_INTERNAL_FAILURE = unchecked((int)(0xc03d0001)),
 }

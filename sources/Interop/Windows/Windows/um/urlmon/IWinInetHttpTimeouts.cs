@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWinInetHttpTimeouts.xml' path='doc/member[@name="IWinInetHttpTimeouts"]/*' />
 [Guid("F286FA56-C1FD-4270-8E67-B3EB790A81E8")]
 [NativeTypeName("struct IWinInetHttpTimeouts : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWinInetHttpTimeouts : IWinInetHttpTimeouts.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWinInetHttpTimeouts : IWinInetHttpTimeouts.Interfa
         return ((delegate* unmanaged<IWinInetHttpTimeouts*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWinInetHttpTimeouts : IWinInetHttpTimeouts.Interfa
         return ((delegate* unmanaged<IWinInetHttpTimeouts*, uint>)(lpVtbl[1]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWinInetHttpTimeouts : IWinInetHttpTimeouts.Interfa
         return ((delegate* unmanaged<IWinInetHttpTimeouts*, uint>)(lpVtbl[2]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWinInetHttpTimeouts.xml' path='doc/member[@name="IWinInetHttpTimeouts.GetRequestTimeouts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRequestTimeouts([NativeTypeName("DWORD *")] uint* pdwConnectTimeout, [NativeTypeName("DWORD *")] uint* pdwSendTimeout, [NativeTypeName("DWORD *")] uint* pdwReceiveTimeout)

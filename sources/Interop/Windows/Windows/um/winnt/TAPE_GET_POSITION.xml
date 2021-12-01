@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TAPE_GET_POSITION">
+    <summary>
+      <para>The
+<b>TAPE_GET_POSITION</b> structure describes the position of the tape.</para>
+    </summary>
+  </member>
+  <member name="TAPE_GET_POSITION.Type">
+    <summary>
+      <para>Type of position. This member must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_ABSOLUTE_POSITION</b>
+                </description>
+              </item>
+              <item>
+                <description>0L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The position specified by the <b>Offset</b> member is an absolute number of blocks from the beginning of the partition specified by the <b>Partition</b> member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_LOGICAL_POSITION</b>
+                </description>
+              </item>
+              <item>
+                <description>1L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The position specified by the <b>Offset</b> member is relative to the current position in the partition specified by <b>Partition</b>.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="TAPE_GET_POSITION.Partition">
+    <summary>
+      <para>Partition to position within. If this member is zero, the current partition is assumed.</para>
+    </summary>
+  </member>
+  <member name="TAPE_GET_POSITION.Offset">
+    <summary>
+      <para>Block address.</para>
+    </summary>
+  </member>
+</doc>

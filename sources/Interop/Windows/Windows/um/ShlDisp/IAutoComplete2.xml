@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAutoComplete2.GetOptions">
+    <summary>
+      <para>Gets the current autocomplete options.</para>
+    </summary>
+    <param name="pdwFlag">
+      <para>Type: <b>DWORD*</b></para>
+      <para>One or more flags from the <see cref="AUTOCOMPLETEOPTIONS" /> enumeration that indicate the options that are currently set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAutoComplete2" />
+    <seealso cref="IAutoComplete2.SetOptions" />
+  </member>
+  <member name="IAutoComplete2.SetOptions">
+    <summary>
+      <para>Sets the current autocomplete options.</para>
+    </summary>
+    <param name="dwFlag">
+      <para>Type: <b>DWORD</b></para>
+      <para>One or more flags from the <see cref="AUTOCOMPLETEOPTIONS" /> enumeration that specify autocomplete options.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The TAB key is disabled by default because it is typically used to navigate from control to control, not within a control. If you set the <see cref="ACO_USETAB" /> flag in <i>dwFlag</i>, users can navigate to a string in the drop-down list by pressing the TAB key. If the drop-down list is closed, the TAB key allows the user to navigate from control to control, as usual. The user can close the drop-down list by pressing the ESC key.</para>
+    </remarks>
+    <seealso cref="IAutoComplete2" />
+    <seealso cref="IAutoComplete2.GetOptions" />
+  </member>
+  <member name="IAutoComplete2">
+    <summary>
+      <para>Extends <see cref="IAutoComplete" />. This interface enables clients of the autocomplete object to retrieve and set a number of options that control how autocompletion operates.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IAutoComplete" /> interface from which it inherits.</para>
+      <h3>When to Implement</h3>
+      <para>This interface is not usually implemented by applications. It is exposed by the Shell's autocomplete object.</para>
+      <h3>When to Use</h3>
+      <para>Use this interface when you need to retrieve or set autocomplete options. The list of available options is given in the method references.</para>
+    </remarks>
+  </member>
+</doc>

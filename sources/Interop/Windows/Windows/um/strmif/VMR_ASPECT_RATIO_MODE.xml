@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMR_ASPECT_RATIO_MODE">
+    <summary>
+      <para>The <b>VMR_ASPECT_RATIO_MODE</b> enumeration type describes whether the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> preserves the aspect ratio of the source video.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IVMRAspectRatioControl Interface" />
+    <seealso cref="IVMRWindowlessControl Interface" />
+  </member>
+  <member name="VMR_ASPECT_RATIO_MODE.VMR_ARMODE_NONE">
+    <summary>
+      <para>Indicates that the VMR will not try to maintain the aspect ratio of the source video.</para>
+    </summary>
+  </member>
+  <member name="VMR_ASPECT_RATIO_MODE.VMR_ARMODE_LETTER_BOX">
+    <summary>
+      <para>Indicates that the VMR will maintain the aspect ratio of the source video by letterboxing within the output rectangle.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SAFEARR_HAVEIID.xml' path='doc/member[@name="SAFEARR_HAVEIID"]/*' />
 public unsafe partial struct SAFEARR_HAVEIID
 {
+    /// <include file='SAFEARR_HAVEIID.xml' path='doc/member[@name="SAFEARR_HAVEIID.Size"]/*' />
     [NativeTypeName("ULONG")]
     public uint Size;
 
+    /// <include file='SAFEARR_HAVEIID.xml' path='doc/member[@name="SAFEARR_HAVEIID.apUnknown"]/*' />
     public IUnknown** apUnknown;
 
+    /// <include file='SAFEARR_HAVEIID.xml' path='doc/member[@name="SAFEARR_HAVEIID.iid"]/*' />
     [NativeTypeName("IID")]
     public Guid iid;
 }

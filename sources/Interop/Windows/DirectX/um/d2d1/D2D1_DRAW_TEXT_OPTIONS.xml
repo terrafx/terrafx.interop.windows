@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_DRAW_TEXT_OPTIONS">
+    <summary>
+      <para>Specifies whether text snapping is suppressed or clipping to the layout rectangle is enabled. This enumeration allows a bitwise combination of its member values.</para>
+    </summary>
+    <seealso cref="DrawText" />
+  </member>
+  <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_NO_SNAP">
+    <summary>
+      <para>Text is not vertically snapped to pixel boundaries. This setting is recommended for text that is being animated.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_CLIP">
+    <summary>
+      <para>Text is clipped to the layout rectangle.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT">
+    <summary>
+      <para>In Windows 8.1 and later, text is rendered using color versions of glyphs, if defined by the font.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_DISABLE_COLOR_BITMAP_SNAPPING">
+    <summary>
+      <para>Bitmap origins of color glyph bitmaps are not snapped.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_NONE">
+    <summary>
+      <para>Text is vertically snapped to pixel boundaries and is not clipped to the layout rectangle.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

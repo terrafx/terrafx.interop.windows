@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVScenarioInfo.xml' path='doc/member[@name="CODECAPI_AVScenarioInfo"]/*' />
 [Guid("B28A6E64-3FF9-446A-8A4B-0D7A53413236")]
 public partial struct CODECAPI_AVScenarioInfo
 {

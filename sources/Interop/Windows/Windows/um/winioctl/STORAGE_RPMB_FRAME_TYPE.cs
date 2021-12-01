@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_RPMB_FRAME_TYPE.xml' path='doc/member[@name="STORAGE_RPMB_FRAME_TYPE"]/*' />
 public enum STORAGE_RPMB_FRAME_TYPE
 {
+    /// <include file='STORAGE_RPMB_FRAME_TYPE.xml' path='doc/member[@name="STORAGE_RPMB_FRAME_TYPE.StorageRpmbFrameTypeUnknown"]/*' />
     StorageRpmbFrameTypeUnknown = 0,
+
+    /// <include file='STORAGE_RPMB_FRAME_TYPE.xml' path='doc/member[@name="STORAGE_RPMB_FRAME_TYPE.StorageRpmbFrameTypeStandard"]/*' />
     StorageRpmbFrameTypeStandard,
+
+    /// <include file='STORAGE_RPMB_FRAME_TYPE.xml' path='doc/member[@name="STORAGE_RPMB_FRAME_TYPE.StorageRpmbFrameTypeMax"]/*' />
     StorageRpmbFrameTypeMax,
 }

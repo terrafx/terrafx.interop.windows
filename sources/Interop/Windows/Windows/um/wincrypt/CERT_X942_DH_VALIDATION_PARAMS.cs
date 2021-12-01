@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_X942_DH_VALIDATION_PARAMS.xml' path='doc/member[@name="CERT_X942_DH_VALIDATION_PARAMS"]/*' />
 public partial struct CERT_X942_DH_VALIDATION_PARAMS
 {
+    /// <include file='CERT_X942_DH_VALIDATION_PARAMS.xml' path='doc/member[@name="CERT_X942_DH_VALIDATION_PARAMS.seed"]/*' />
     public CRYPT_BIT_BLOB seed;
 
+    /// <include file='CERT_X942_DH_VALIDATION_PARAMS.xml' path='doc/member[@name="CERT_X942_DH_VALIDATION_PARAMS.pgenCounter"]/*' />
     [NativeTypeName("DWORD")]
     public uint pgenCounter;
 }

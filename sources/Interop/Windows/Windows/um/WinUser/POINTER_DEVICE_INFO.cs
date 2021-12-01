@@ -7,23 +7,31 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct POINTER_DEVICE_INFO
 {
+    /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.displayOrientation"]/*' />
     [NativeTypeName("DWORD")]
     public uint displayOrientation;
 
+    /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.device"]/*' />
     public HANDLE device;
 
+    /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.pointerDeviceType"]/*' />
     public POINTER_DEVICE_TYPE pointerDeviceType;
 
+    /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.monitor"]/*' />
     public HMONITOR monitor;
 
+    /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.startingCursorId"]/*' />
     [NativeTypeName("ULONG")]
     public uint startingCursorId;
 
+    /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.maxActiveContacts"]/*' />
     public ushort maxActiveContacts;
 
+    /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.productString"]/*' />
     [NativeTypeName("WCHAR [520]")]
     public fixed ushort productString[520];
 }

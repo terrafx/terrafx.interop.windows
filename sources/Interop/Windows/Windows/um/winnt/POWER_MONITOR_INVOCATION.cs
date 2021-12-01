@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_MONITOR_INVOCATION.xml' path='doc/member[@name="POWER_MONITOR_INVOCATION"]/*' />
 public partial struct POWER_MONITOR_INVOCATION
 {
+    /// <include file='POWER_MONITOR_INVOCATION.xml' path='doc/member[@name="POWER_MONITOR_INVOCATION.Console"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Console;
 
+    /// <include file='POWER_MONITOR_INVOCATION.xml' path='doc/member[@name="POWER_MONITOR_INVOCATION.RequestReason"]/*' />
     public POWER_MONITOR_REQUEST_REASON RequestReason;
 }

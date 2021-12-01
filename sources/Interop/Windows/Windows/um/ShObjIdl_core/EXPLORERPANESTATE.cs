@@ -7,13 +7,25 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXPLORERPANESTATE.xml' path='doc/member[@name="EXPLORERPANESTATE"]/*' />
 [Flags]
 public enum EXPLORERPANESTATE
 {
+    /// <include file='EXPLORERPANESTATE.xml' path='doc/member[@name="EXPLORERPANESTATE.EPS_DONTCARE"]/*' />
     EPS_DONTCARE = 0,
+
+    /// <include file='EXPLORERPANESTATE.xml' path='doc/member[@name="EXPLORERPANESTATE.EPS_DEFAULT_ON"]/*' />
     EPS_DEFAULT_ON = 0x1,
+
+    /// <include file='EXPLORERPANESTATE.xml' path='doc/member[@name="EXPLORERPANESTATE.EPS_DEFAULT_OFF"]/*' />
     EPS_DEFAULT_OFF = 0x2,
+
+    /// <include file='EXPLORERPANESTATE.xml' path='doc/member[@name="EXPLORERPANESTATE.EPS_STATEMASK"]/*' />
     EPS_STATEMASK = 0xffff,
+
+    /// <include file='EXPLORERPANESTATE.xml' path='doc/member[@name="EXPLORERPANESTATE.EPS_INITIALSTATE"]/*' />
     EPS_INITIALSTATE = 0x10000,
+
+    /// <include file='EXPLORERPANESTATE.xml' path='doc/member[@name="EXPLORERPANESTATE.EPS_FORCE"]/*' />
     EPS_FORCE = 0x20000,
 }

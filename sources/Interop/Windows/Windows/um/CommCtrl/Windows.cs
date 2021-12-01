@@ -10,241 +10,318 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InitCommonControls"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern void InitCommonControls();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InitCommonControlsEx"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL InitCommonControlsEx([NativeTypeName("const INITCOMMONCONTROLSEX *")] INITCOMMONCONTROLSEX* picce);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Create"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HIMAGELIST ImageList_Create(int cx, int cy, uint flags, int cInitial, int cGrow);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Destroy"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_Destroy(HIMAGELIST himl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_GetImageCount"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern int ImageList_GetImageCount(HIMAGELIST himl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_SetImageCount"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_SetImageCount(HIMAGELIST himl, uint uNewCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Add"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern int ImageList_Add(HIMAGELIST himl, HBITMAP hbmImage, HBITMAP hbmMask);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_ReplaceIcon"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern int ImageList_ReplaceIcon(HIMAGELIST himl, int i, HICON hicon);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_SetBkColor"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern COLORREF ImageList_SetBkColor(HIMAGELIST himl, COLORREF clrBk);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_GetBkColor"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern COLORREF ImageList_GetBkColor(HIMAGELIST himl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_SetOverlayImage"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_SetOverlayImage(HIMAGELIST himl, int iImage, int iOverlay);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Draw"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_Draw(HIMAGELIST himl, int i, HDC hdcDst, int x, int y, uint fStyle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Replace"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_Replace(HIMAGELIST himl, int i, HBITMAP hbmImage, HBITMAP hbmMask);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_AddMasked"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern int ImageList_AddMasked(HIMAGELIST himl, HBITMAP hbmImage, COLORREF crMask);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_DrawEx"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_DrawEx(HIMAGELIST himl, int i, HDC hdcDst, int x, int y, int dx, int dy, COLORREF rgbBk, COLORREF rgbFg, uint fStyle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_DrawIndirect"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_DrawIndirect(IMAGELISTDRAWPARAMS* pimldp);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Remove"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_Remove(HIMAGELIST himl, int i);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_GetIcon"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HICON ImageList_GetIcon(HIMAGELIST himl, int i, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_LoadImageA"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HIMAGELIST ImageList_LoadImageA(HINSTANCE hi, [NativeTypeName("LPCSTR")] sbyte* lpbmp, int cx, int cGrow, COLORREF crMask, uint uType, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_LoadImageW"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HIMAGELIST ImageList_LoadImageW(HINSTANCE hi, [NativeTypeName("LPCWSTR")] ushort* lpbmp, int cx, int cGrow, COLORREF crMask, uint uType, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Copy"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_Copy(HIMAGELIST himlDst, int iDst, HIMAGELIST himlSrc, int iSrc, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_BeginDrag"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_BeginDrag(HIMAGELIST himlTrack, int iTrack, int dxHotspot, int dyHotspot);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_EndDrag"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern void ImageList_EndDrag();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_DragEnter"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_DragEnter(HWND hwndLock, int x, int y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_DragLeave"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_DragLeave(HWND hwndLock);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_DragMove"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_DragMove(int x, int y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_SetDragCursorImage"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_SetDragCursorImage(HIMAGELIST himlDrag, int iDrag, int dxHotspot, int dyHotspot);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_DragShowNolock"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_DragShowNolock(BOOL fShow);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_GetDragImage"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HIMAGELIST ImageList_GetDragImage(POINT* ppt, POINT* pptHotspot);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Read"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HIMAGELIST ImageList_Read([NativeTypeName("struct IStream *")] IStream* pstm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Write"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_Write(HIMAGELIST himl, [NativeTypeName("struct IStream *")] IStream* pstm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_ReadEx"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HRESULT ImageList_ReadEx([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("struct IStream *")] IStream* pstm, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("PVOID *")] void** ppv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_WriteEx"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HRESULT ImageList_WriteEx(HIMAGELIST himl, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("struct IStream *")] IStream* pstm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_GetIconSize"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_GetIconSize(HIMAGELIST himl, int* cx, int* cy);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_SetIconSize"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_SetIconSize(HIMAGELIST himl, int cx, int cy);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_GetImageInfo"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ImageList_GetImageInfo(HIMAGELIST himl, int i, IMAGEINFO* pImageInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Merge"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HIMAGELIST ImageList_Merge(HIMAGELIST himl1, int i1, HIMAGELIST himl2, int i2, int dx, int dy);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Duplicate"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HIMAGELIST ImageList_Duplicate(HIMAGELIST himl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HIMAGELIST_QueryInterface"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HRESULT HIMAGELIST_QueryInterface(HIMAGELIST himl, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IImageListToHIMAGELIST"]/*' />
     public static HIMAGELIST IImageListToHIMAGELIST([NativeTypeName("struct IImageList *")] IImageList* himl)
     {
         return (HIMAGELIST)(himl);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateToolbarEx"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateToolbarEx(HWND hwnd, [NativeTypeName("DWORD")] uint ws, uint wID, int nBitmaps, HINSTANCE hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] void* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, uint uStructSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMappedBitmap"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HBITMAP CreateMappedBitmap(HINSTANCE hInstance, [NativeTypeName("INT_PTR")] nint idBitmap, uint wFlags, [NativeTypeName("LPCOLORMAP")] COLORMAP* lpColorMap, int iNumMaps);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawStatusTextA"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern void DrawStatusTextA(HDC hDC, [NativeTypeName("LPCRECT")] RECT* lprc, [NativeTypeName("LPCSTR")] sbyte* pszText, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawStatusTextW"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern void DrawStatusTextW(HDC hDC, [NativeTypeName("LPCRECT")] RECT* lprc, [NativeTypeName("LPCWSTR")] ushort* pszText, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateStatusWindowA"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateStatusWindowA([NativeTypeName("LONG")] int style, [NativeTypeName("LPCSTR")] sbyte* lpszText, HWND hwndParent, uint wID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateStatusWindowW"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateStatusWindowW([NativeTypeName("LONG")] int style, [NativeTypeName("LPCWSTR")] ushort* lpszText, HWND hwndParent, uint wID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MenuHelp"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern void MenuHelp(uint uMsg, WPARAM wParam, LPARAM lParam, HMENU hMainMenu, HINSTANCE hInst, HWND hwndStatus, uint* lpwIDs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShowHideMenuCtl"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL ShowHideMenuCtl(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint uFlags, [NativeTypeName("LPINT")] int* lpInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEffectiveClientRect"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern void GetEffectiveClientRect(HWND hWnd, [NativeTypeName("LPRECT")] RECT* lprc, [NativeTypeName("const INT *")] int* lpInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MakeDragList"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL MakeDragList(HWND hLB);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawInsert"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern void DrawInsert(HWND handParent, HWND hLB, int nItem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LBItemFromPt"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern int LBItemFromPt(HWND hLB, POINT pt, BOOL bAutoScroll);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateUpDownControl"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HWND CreateUpDownControl([NativeTypeName("DWORD")] uint dwStyle, int x, int y, int cx, int cy, HWND hParent, int nID, HINSTANCE hInst, HWND hBuddy, int nUpper, int nLower, int nPos);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TaskDialogIndirect"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HRESULT TaskDialogIndirect([NativeTypeName("const TASKDIALOGCONFIG *")] TASKDIALOGCONFIG* pTaskConfig, int* pnButton, int* pnRadioButton, BOOL* pfVerificationFlagChecked);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TaskDialog"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HRESULT TaskDialog(HWND hwndOwner, HINSTANCE hInstance, [NativeTypeName("PCWSTR")] ushort* pszWindowTitle, [NativeTypeName("PCWSTR")] ushort* pszMainInstruction, [NativeTypeName("PCWSTR")] ushort* pszContent, [NativeTypeName("TASKDIALOG_COMMON_BUTTON_FLAGS")] int dwCommonButtons, [NativeTypeName("PCWSTR")] ushort* pszIcon, int* pnButton);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InitMUILanguage"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern void InitMUILanguage([NativeTypeName("LANGID")] ushort uiLang);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMUILanguage"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [return: NativeTypeName("LANGID")]
     public static extern ushort GetMUILanguage();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows._TrackMouseEvent"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL _TrackMouseEvent([NativeTypeName("LPTRACKMOUSEEVENT")] TRACKMOUSEEVENT* lpEventTrack);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlatSB_EnableScrollBar"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL FlatSB_EnableScrollBar(HWND param0, int param1, uint param2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlatSB_ShowScrollBar"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL FlatSB_ShowScrollBar(HWND param0, int code, BOOL param2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlatSB_GetScrollRange"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL FlatSB_GetScrollRange(HWND param0, int code, [NativeTypeName("LPINT")] int* param2, [NativeTypeName("LPINT")] int* param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlatSB_GetScrollInfo"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL FlatSB_GetScrollInfo(HWND param0, int code, [NativeTypeName("LPSCROLLINFO")] SCROLLINFO* param2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlatSB_GetScrollPos"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern int FlatSB_GetScrollPos(HWND param0, int code);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlatSB_GetScrollProp"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL FlatSB_GetScrollProp(HWND param0, int propIndex, [NativeTypeName("LPINT")] int* param2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlatSB_SetScrollPos"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern int FlatSB_SetScrollPos(HWND param0, int code, int pos, BOOL fRedraw);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlatSB_SetScrollInfo"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern int FlatSB_SetScrollInfo(HWND param0, int code, [NativeTypeName("LPSCROLLINFO")] SCROLLINFO* psi, BOOL fRedraw);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlatSB_SetScrollRange"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern int FlatSB_SetScrollRange(HWND param0, int code, int min, int max, BOOL fRedraw);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlatSB_SetScrollProp"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL FlatSB_SetScrollProp(HWND param0, uint index, [NativeTypeName("INT_PTR")] nint newValue, BOOL param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InitializeFlatSB"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL InitializeFlatSB(HWND param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UninitializeFlatSB"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HRESULT UninitializeFlatSB(HWND param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowSubclass"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL SetWindowSubclass(HWND hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nuint, nuint, LRESULT> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR")] nuint dwRefData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowSubclass"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL GetWindowSubclass(HWND hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nuint, nuint, LRESULT> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR *")] nuint* pdwRefData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveWindowSubclass"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL RemoveWindowSubclass(HWND hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nuint, nuint, LRESULT> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefSubclassProc"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern LRESULT DefSubclassProc(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadIconMetric"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HRESULT LoadIconMetric(HINSTANCE hinst, [NativeTypeName("PCWSTR")] ushort* pszName, int lims, HICON* phico);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadIconWithScaleDown"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HRESULT LoadIconWithScaleDown(HINSTANCE hinst, [NativeTypeName("PCWSTR")] ushort* pszName, int cx, int cy, HICON* phico);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawShadowText"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern int DrawShadowText(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* pszText, uint cch, RECT* prc, [NativeTypeName("DWORD")] uint dwFlags, COLORREF crText, COLORREF crShadow, int ixOffset, int iyOffset);
 

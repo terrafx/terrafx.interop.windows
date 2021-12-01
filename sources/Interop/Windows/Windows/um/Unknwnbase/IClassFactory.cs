@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IClassFactory.xml' path='doc/member[@name="IClassFactory"]/*' />
 [Guid("00000001-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface
         return ((delegate* unmanaged<IClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface
         return ((delegate* unmanaged<IClassFactory*, uint>)(lpVtbl[1]))((IClassFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface
         return ((delegate* unmanaged<IClassFactory*, uint>)(lpVtbl[2]))((IClassFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IClassFactory.xml' path='doc/member[@name="IClassFactory.CreateInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateInstance(IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -46,6 +51,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface
         return ((delegate* unmanaged<IClassFactory*, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IClassFactory*)Unsafe.AsPointer(ref this), pUnkOuter, riid, ppvObject);
     }
 
+    /// <include file='IClassFactory.xml' path='doc/member[@name="IClassFactory.LockServer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT LockServer(BOOL fLock)

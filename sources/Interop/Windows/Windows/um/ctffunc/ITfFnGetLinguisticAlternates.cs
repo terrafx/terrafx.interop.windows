@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFnGetLinguisticAlternates.xml' path='doc/member[@name="ITfFnGetLinguisticAlternates"]/*' />
 [Guid("EA163CE2-7A65-4506-82A3-C528215DA64E")]
 [NativeTypeName("struct ITfFnGetLinguisticAlternates : ITfFunction")]
 [NativeInheritance("ITfFunction")]
@@ -18,6 +19,7 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
         return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
         return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, uint>)(lpVtbl[1]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
         return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, uint>)(lpVtbl[2]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -48,6 +53,7 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
         return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, ushort**, int>)(lpVtbl[3]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
+    /// <include file='ITfFnGetLinguisticAlternates.xml' path='doc/member[@name="ITfFnGetLinguisticAlternates.GetAlternates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAlternates(ITfRange* pRange, ITfCandidateList** ppCandidateList)

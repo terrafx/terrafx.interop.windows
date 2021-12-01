@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DIAGNOSTIC_LEVEL.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_LEVEL"]/*' />
 public enum STORAGE_DIAGNOSTIC_LEVEL
 {
+    /// <include file='STORAGE_DIAGNOSTIC_LEVEL.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_LEVEL.StorageDiagnosticLevelDefault"]/*' />
     StorageDiagnosticLevelDefault = 0,
+
+    /// <include file='STORAGE_DIAGNOSTIC_LEVEL.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_LEVEL.StorageDiagnosticLevelMax"]/*' />
     StorageDiagnosticLevelMax,
 }

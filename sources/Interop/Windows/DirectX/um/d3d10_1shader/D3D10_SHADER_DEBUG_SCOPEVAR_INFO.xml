@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO">
+    <summary>
+      <para>Describes a shader scope variable.</para>
+    </summary>
+    <remarks>
+      <para>The <b>D3D10_SHADER_DEBUG_SCOPEVAR_INFO</b> structure is used with the <see cref="D3D10_SHADER_DEBUG_INFO" /> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.TokenId">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Index into variable token.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.VarType">
+    <summary>
+      <para>Type: <b><see cref="D3D10_SHADER_DEBUG_VARTYPE" /></b></para>
+      <para>Indicates whether this is a variable or function.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.Class">
+    <summary>
+      <para>Type: <b><see cref="D3D10_SHADER_VARIABLE_CLASS" /></b></para>
+      <para>Indicates the variable class.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.Rows">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of row for matrices.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.Columns">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of columns for vectors or matrices.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.StructMemberScope">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Gives a scope to look up struct members.  This member will be -1 if <b>D3D10_SHADER_DEBUG_SCOPEVAR_INFO</b> does not refer to a struct.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.uArrayIndices">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of array indices. For example a three dimensional array would have a value of 3 for <b>uArrayIndices</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.ArrayElements">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to an array of UINT values <b>uArrayIndices</b> long.  The array contains the maximum value for each index. For example an array a[3][2][1] would have the values {3,2,1} at the offset pointed to by <b>ArrayElements</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.ArrayStrides">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to an array of UINT values <b>uArrayIndices</b> long.  The array contains the stride for each array index.  For example an array a[3][2][1] would have the values {2,1,1} at the offset pointed to by <b>ArrayStrides</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.uVariables">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of variables.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_SCOPEVAR_INFO.uFirstVariable">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Index of the first variable, later variables are offsets from this one.</para>
+    </summary>
+  </member>
+</doc>

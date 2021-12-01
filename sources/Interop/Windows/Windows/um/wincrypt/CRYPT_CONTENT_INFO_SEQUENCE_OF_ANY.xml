@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY">
+    <summary>
+      <para>The <b>CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY</b> structure contains information representing the Netscape certificate sequence of certificates.</para>
+      <para>A Netscape certificate sequence of certificates can be created by setting the <b>pszObjId</b> member to szOID_NETSCAPE_CERT_SEQUENCE and supplying <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">DER</a>-encoded certificates in <b>rgValue</b>.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY.pszObjId">
+    <summary>
+      <para>Object identifier (OID) specifying the type of data contained in the <b>rgValue</b> array.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY.cValue">
+    <summary>
+      <para>Number of elements in the <b>rgValue</b> array.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY.rgValue">
+    <summary>
+      <para>Array of pointers to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DER_BLOB</a> structures. For more information, see
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a>.</para>
+    </summary>
+  </member>
+</doc>

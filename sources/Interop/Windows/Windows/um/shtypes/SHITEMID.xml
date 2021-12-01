@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHITEMID">
+    <summary>
+      <para>Defines an item identifier.</para>
+    </summary>
+  </member>
+  <member name="SHITEMID.cb">
+    <summary>
+      <para>Type: <b>USHORT</b></para>
+      <para>The size of identifier, in bytes, including <b>cb</b> itself.</para>
+    </summary>
+  </member>
+  <member name="SHITEMID.abID">
+    <summary>
+      <para>Type: <b>BYTE[1]</b></para>
+      <para>A variable-length item identifier.</para>
+    </summary>
+  </member>
+</doc>

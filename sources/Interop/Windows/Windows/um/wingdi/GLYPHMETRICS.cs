@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GLYPHMETRICS.xml' path='doc/member[@name="GLYPHMETRICS"]/*' />
 public partial struct GLYPHMETRICS
 {
+    /// <include file='GLYPHMETRICS.xml' path='doc/member[@name="GLYPHMETRICS.gmBlackBoxX"]/*' />
     public uint gmBlackBoxX;
 
+    /// <include file='GLYPHMETRICS.xml' path='doc/member[@name="GLYPHMETRICS.gmBlackBoxY"]/*' />
     public uint gmBlackBoxY;
 
+    /// <include file='GLYPHMETRICS.xml' path='doc/member[@name="GLYPHMETRICS.gmptGlyphOrigin"]/*' />
     public POINT gmptGlyphOrigin;
 
+    /// <include file='GLYPHMETRICS.xml' path='doc/member[@name="GLYPHMETRICS.gmCellIncX"]/*' />
     public short gmCellIncX;
 
+    /// <include file='GLYPHMETRICS.xml' path='doc/member[@name="GLYPHMETRICS.gmCellIncY"]/*' />
     public short gmCellIncY;
 }

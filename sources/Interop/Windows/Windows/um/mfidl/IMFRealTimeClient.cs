@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFRealTimeClient.xml' path='doc/member[@name="IMFRealTimeClient"]/*' />
 [Guid("2347D60B-3FB5-480C-8803-8DF3ADCD3EF0")]
 [NativeTypeName("struct IMFRealTimeClient : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface
         return ((delegate* unmanaged<IMFRealTimeClient*, Guid*, void**, int>)(lpVtbl[0]))((IMFRealTimeClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface
         return ((delegate* unmanaged<IMFRealTimeClient*, uint>)(lpVtbl[1]))((IMFRealTimeClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface
         return ((delegate* unmanaged<IMFRealTimeClient*, uint>)(lpVtbl[2]))((IMFRealTimeClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFRealTimeClient.xml' path='doc/member[@name="IMFRealTimeClient.RegisterThreads"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterThreads([NativeTypeName("DWORD")] uint dwTaskIndex, [NativeTypeName("LPCWSTR")] ushort* wszClass)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface
         return ((delegate* unmanaged<IMFRealTimeClient*, uint, ushort*, int>)(lpVtbl[3]))((IMFRealTimeClient*)Unsafe.AsPointer(ref this), dwTaskIndex, wszClass);
     }
 
+    /// <include file='IMFRealTimeClient.xml' path='doc/member[@name="IMFRealTimeClient.UnregisterThreads"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnregisterThreads()
@@ -53,6 +59,7 @@ public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface
         return ((delegate* unmanaged<IMFRealTimeClient*, int>)(lpVtbl[4]))((IMFRealTimeClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFRealTimeClient.xml' path='doc/member[@name="IMFRealTimeClient.SetWorkQueue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueueId)

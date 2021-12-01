@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRLINETO">
+    <summary>
+      <para>The <b>EMRLINETO</b> and <b>EMRMOVETOEX</b> structures contains members for the <see cref="LineTo" /> and <see cref="MoveToEx" /> enhanced metafile records.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRLINETO.emr">
+    <summary>
+      <para>Base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRLINETO.ptl">
+    <summary>
+      <para>Coordinates of the line's ending point for the <see cref="LineTo" /> function or coordinates of the new current position for the <see cref="MoveToEx" /> function in logical units.</para>
+    </summary>
+  </member>
+</doc>

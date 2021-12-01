@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_STORAGE_ADDRESS_RANGE.xml' path='doc/member[@name="DEVICE_STORAGE_ADDRESS_RANGE"]/*' />
 public partial struct DEVICE_STORAGE_ADDRESS_RANGE
 {
+    /// <include file='DEVICE_STORAGE_ADDRESS_RANGE.xml' path='doc/member[@name="DEVICE_STORAGE_ADDRESS_RANGE.StartAddress"]/*' />
     [NativeTypeName("LONGLONG")]
     public long StartAddress;
 
+    /// <include file='DEVICE_STORAGE_ADDRESS_RANGE.xml' path='doc/member[@name="DEVICE_STORAGE_ADDRESS_RANGE.LengthInBytes"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong LengthInBytes;
 }

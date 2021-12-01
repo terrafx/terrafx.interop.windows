@@ -5,29 +5,39 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRL_INFO.xml' path='doc/member[@name="CRL_INFO"]/*' />
 public unsafe partial struct CRL_INFO
 {
+    /// <include file='CRL_INFO.xml' path='doc/member[@name="CRL_INFO.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='CRL_INFO.xml' path='doc/member[@name="CRL_INFO.SignatureAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER SignatureAlgorithm;
 
+    /// <include file='CRL_INFO.xml' path='doc/member[@name="CRL_INFO.Issuer"]/*' />
     [NativeTypeName("CERT_NAME_BLOB")]
     public CRYPT_DATA_BLOB Issuer;
 
+    /// <include file='CRL_INFO.xml' path='doc/member[@name="CRL_INFO.ThisUpdate"]/*' />
     public FILETIME ThisUpdate;
 
+    /// <include file='CRL_INFO.xml' path='doc/member[@name="CRL_INFO.NextUpdate"]/*' />
     public FILETIME NextUpdate;
 
+    /// <include file='CRL_INFO.xml' path='doc/member[@name="CRL_INFO.cCRLEntry"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCRLEntry;
 
+    /// <include file='CRL_INFO.xml' path='doc/member[@name="CRL_INFO.rgCRLEntry"]/*' />
     [NativeTypeName("PCRL_ENTRY")]
     public CRL_ENTRY* rgCRLEntry;
 
+    /// <include file='CRL_INFO.xml' path='doc/member[@name="CRL_INFO.cExtension"]/*' />
     [NativeTypeName("DWORD")]
     public uint cExtension;
 
+    /// <include file='CRL_INFO.xml' path='doc/member[@name="CRL_INFO.rgExtension"]/*' />
     [NativeTypeName("PCERT_EXTENSION")]
     public CERT_EXTENSION* rgExtension;
 }

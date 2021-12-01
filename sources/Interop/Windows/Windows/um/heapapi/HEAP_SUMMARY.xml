@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HEAP_SUMMARY">
+    <summary>
+      <para>Represents a heap summary retrieved with a call to <see cref="HeapSummary" /></para>
+    </summary>
+  </member>
+  <member name="HEAP_SUMMARY.cb">
+    <summary>
+      <para>The size of this data structure, in bytes. Set this member to sizeof(HEAP_SUMMARY).</para>
+    </summary>
+  </member>
+  <member name="HEAP_SUMMARY.cbAllocated">
+    <summary>
+      <para>The size of the allocated memory.</para>
+    </summary>
+  </member>
+  <member name="HEAP_SUMMARY.cbCommitted">
+    <summary>
+      <para>The size of the committed memory.</para>
+    </summary>
+  </member>
+  <member name="HEAP_SUMMARY.cbReserved">
+    <summary>
+      <para>The size of the reserved memory.</para>
+    </summary>
+  </member>
+  <member name="HEAP_SUMMARY.cbMaxReserve">
+    <summary>
+      <para>The size of the maximum reserved memory.</para>
+    </summary>
+  </member>
+</doc>

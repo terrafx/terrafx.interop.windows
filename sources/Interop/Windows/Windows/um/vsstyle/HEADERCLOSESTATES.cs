@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HEADERCLOSESTATES.xml' path='doc/member[@name="HEADERCLOSESTATES"]/*' />
 public enum HEADERCLOSESTATES
 {
+    /// <include file='HEADERCLOSESTATES.xml' path='doc/member[@name="HEADERCLOSESTATES.EBHC_NORMAL"]/*' />
     EBHC_NORMAL = 1,
+
+    /// <include file='HEADERCLOSESTATES.xml' path='doc/member[@name="HEADERCLOSESTATES.EBHC_HOT"]/*' />
     EBHC_HOT = 2,
+
+    /// <include file='HEADERCLOSESTATES.xml' path='doc/member[@name="HEADERCLOSESTATES.EBHC_PRESSED"]/*' />
     EBHC_PRESSED = 3,
 }

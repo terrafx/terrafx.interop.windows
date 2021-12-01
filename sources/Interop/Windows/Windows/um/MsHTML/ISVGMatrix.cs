@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix"]/*' />
 [Guid("305104F6-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGMatrix : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, Guid*, void**, int>)(lpVtbl[0]))((ISVGMatrix*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, uint>)(lpVtbl[1]))((ISVGMatrix*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, uint>)(lpVtbl[2]))((ISVGMatrix*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, uint*, int>)(lpVtbl[3]))((ISVGMatrix*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGMatrix*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGMatrix*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGMatrix*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.put_a"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_a(float v)
@@ -74,6 +83,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, int>)(lpVtbl[7]))((ISVGMatrix*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.get_a"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_a(float* p)
@@ -81,6 +91,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float*, int>)(lpVtbl[8]))((ISVGMatrix*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.put_b"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_b(float v)
@@ -88,6 +99,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, int>)(lpVtbl[9]))((ISVGMatrix*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.get_b"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_b(float* p)
@@ -95,6 +107,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float*, int>)(lpVtbl[10]))((ISVGMatrix*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.put_c"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_c(float v)
@@ -102,6 +115,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, int>)(lpVtbl[11]))((ISVGMatrix*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.get_c"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_c(float* p)
@@ -109,6 +123,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float*, int>)(lpVtbl[12]))((ISVGMatrix*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.put_d"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_d(float v)
@@ -116,6 +131,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, int>)(lpVtbl[13]))((ISVGMatrix*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.get_d"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_d(float* p)
@@ -123,6 +139,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float*, int>)(lpVtbl[14]))((ISVGMatrix*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.put_e"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_e(float v)
@@ -130,6 +147,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, int>)(lpVtbl[15]))((ISVGMatrix*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.get_e"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_e(float* p)
@@ -137,6 +155,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float*, int>)(lpVtbl[16]))((ISVGMatrix*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.put_f"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_f(float v)
@@ -144,6 +163,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, int>)(lpVtbl[17]))((ISVGMatrix*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.get_f"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_f(float* p)
@@ -151,6 +171,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float*, int>)(lpVtbl[18]))((ISVGMatrix*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.multiply"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT multiply(ISVGMatrix* secondMatrix, ISVGMatrix** ppResult)
@@ -158,6 +179,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, ISVGMatrix*, ISVGMatrix**, int>)(lpVtbl[19]))((ISVGMatrix*)Unsafe.AsPointer(ref this), secondMatrix, ppResult);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.inverse"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT inverse(ISVGMatrix** ppResult)
@@ -165,6 +187,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, ISVGMatrix**, int>)(lpVtbl[20]))((ISVGMatrix*)Unsafe.AsPointer(ref this), ppResult);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.translate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT translate(float x, float y, ISVGMatrix** ppResult)
@@ -172,6 +195,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, float, ISVGMatrix**, int>)(lpVtbl[21]))((ISVGMatrix*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.scale"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT scale(float scaleFactor, ISVGMatrix** ppResult)
@@ -179,6 +203,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, ISVGMatrix**, int>)(lpVtbl[22]))((ISVGMatrix*)Unsafe.AsPointer(ref this), scaleFactor, ppResult);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.scaleNonUniform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT scaleNonUniform(float scaleFactorX, float scaleFactorY, ISVGMatrix** ppResult)
@@ -186,6 +211,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, float, ISVGMatrix**, int>)(lpVtbl[23]))((ISVGMatrix*)Unsafe.AsPointer(ref this), scaleFactorX, scaleFactorY, ppResult);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.rotate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT rotate(float angle, ISVGMatrix** ppResult)
@@ -193,6 +219,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, ISVGMatrix**, int>)(lpVtbl[24]))((ISVGMatrix*)Unsafe.AsPointer(ref this), angle, ppResult);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.rotateFromVector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT rotateFromVector(float x, float y, ISVGMatrix** ppResult)
@@ -200,6 +227,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, float, ISVGMatrix**, int>)(lpVtbl[25]))((ISVGMatrix*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.flipX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT flipX(ISVGMatrix** ppResult)
@@ -207,6 +235,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, ISVGMatrix**, int>)(lpVtbl[26]))((ISVGMatrix*)Unsafe.AsPointer(ref this), ppResult);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.flipY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT flipY(ISVGMatrix** ppResult)
@@ -214,6 +243,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, ISVGMatrix**, int>)(lpVtbl[27]))((ISVGMatrix*)Unsafe.AsPointer(ref this), ppResult);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.skewX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT skewX(float angle, ISVGMatrix** ppResult)
@@ -221,6 +251,7 @@ public unsafe partial struct ISVGMatrix : ISVGMatrix.Interface
         return ((delegate* unmanaged<ISVGMatrix*, float, ISVGMatrix**, int>)(lpVtbl[28]))((ISVGMatrix*)Unsafe.AsPointer(ref this), angle, ppResult);
     }
 
+    /// <include file='ISVGMatrix.xml' path='doc/member[@name="ISVGMatrix.skewY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT skewY(float angle, ISVGMatrix** ppResult)

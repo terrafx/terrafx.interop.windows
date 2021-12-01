@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_FLOAT_DESCRIPTION.xml' path='doc/member[@name="WS_FLOAT_DESCRIPTION"]/*' />
 public partial struct WS_FLOAT_DESCRIPTION
 {
+    /// <include file='WS_FLOAT_DESCRIPTION.xml' path='doc/member[@name="WS_FLOAT_DESCRIPTION.minValue"]/*' />
     public float minValue;
 
+    /// <include file='WS_FLOAT_DESCRIPTION.xml' path='doc/member[@name="WS_FLOAT_DESCRIPTION.maxValue"]/*' />
     public float maxValue;
 }

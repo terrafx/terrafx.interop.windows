@@ -5,29 +5,40 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS"]/*' />
 public partial struct TOKEN_STATISTICS
 {
+    /// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS.TokenId"]/*' />
     public LUID TokenId;
 
+    /// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS.AuthenticationId"]/*' />
     public LUID AuthenticationId;
 
+    /// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS.ExpirationTime"]/*' />
     public LARGE_INTEGER ExpirationTime;
 
+    /// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS.TokenType"]/*' />
     public TOKEN_TYPE TokenType;
 
+    /// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS.ImpersonationLevel"]/*' />
     public SECURITY_IMPERSONATION_LEVEL ImpersonationLevel;
 
+    /// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS.DynamicCharged"]/*' />
     [NativeTypeName("DWORD")]
     public uint DynamicCharged;
 
+    /// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS.DynamicAvailable"]/*' />
     [NativeTypeName("DWORD")]
     public uint DynamicAvailable;
 
+    /// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS.GroupCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint GroupCount;
 
+    /// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS.PrivilegeCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint PrivilegeCount;
 
+    /// <include file='TOKEN_STATISTICS.xml' path='doc/member[@name="TOKEN_STATISTICS.ModifiedId"]/*' />
     public LUID ModifiedId;
 }

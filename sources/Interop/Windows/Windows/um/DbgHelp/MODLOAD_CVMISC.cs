@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MODLOAD_CVMISC.xml' path='doc/member[@name="MODLOAD_CVMISC"]/*' />
 public partial struct MODLOAD_CVMISC
 {
+    /// <include file='MODLOAD_CVMISC.xml' path='doc/member[@name="MODLOAD_CVMISC.oCV"]/*' />
     [NativeTypeName("DWORD")]
     public uint oCV;
 
+    /// <include file='MODLOAD_CVMISC.xml' path='doc/member[@name="MODLOAD_CVMISC.cCV"]/*' />
     [NativeTypeName("size_t")]
     public nuint cCV;
 
+    /// <include file='MODLOAD_CVMISC.xml' path='doc/member[@name="MODLOAD_CVMISC.oMisc"]/*' />
     [NativeTypeName("DWORD")]
     public uint oMisc;
 
+    /// <include file='MODLOAD_CVMISC.xml' path='doc/member[@name="MODLOAD_CVMISC.cMisc"]/*' />
     [NativeTypeName("size_t")]
     public nuint cMisc;
 
+    /// <include file='MODLOAD_CVMISC.xml' path='doc/member[@name="MODLOAD_CVMISC.dtImage"]/*' />
     [NativeTypeName("DWORD")]
     public uint dtImage;
 
+    /// <include file='MODLOAD_CVMISC.xml' path='doc/member[@name="MODLOAD_CVMISC.cImage"]/*' />
     [NativeTypeName("DWORD")]
     public uint cImage;
 }

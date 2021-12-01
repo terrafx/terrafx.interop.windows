@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TIMED_TEXT_FONT_STYLE.xml' path='doc/member[@name="MF_TIMED_TEXT_FONT_STYLE"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum MF_TIMED_TEXT_FONT_STYLE
 {
+    /// <include file='MF_TIMED_TEXT_FONT_STYLE.xml' path='doc/member[@name="MF_TIMED_TEXT_FONT_STYLE.MF_TIMED_TEXT_FONT_STYLE_NORMAL"]/*' />
     MF_TIMED_TEXT_FONT_STYLE_NORMAL = 0,
+
+    /// <include file='MF_TIMED_TEXT_FONT_STYLE.xml' path='doc/member[@name="MF_TIMED_TEXT_FONT_STYLE.MF_TIMED_TEXT_FONT_STYLE_OBLIQUE"]/*' />
     MF_TIMED_TEXT_FONT_STYLE_OBLIQUE = 1,
+
+    /// <include file='MF_TIMED_TEXT_FONT_STYLE.xml' path='doc/member[@name="MF_TIMED_TEXT_FONT_STYLE.MF_TIMED_TEXT_FONT_STYLE_ITALIC"]/*' />
     MF_TIMED_TEXT_FONT_STYLE_ITALIC = 2,
 }

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IIOCancelInformation.GetCancelInformation">
+    <summary>
+      <para>Returns information that is posted when a user selects <b>Cancel</b> from the progress UI. The process thread uses this method to find out which message the progress dialog will send to the process thread when the user hits cancel.  The process thread then listens for this message and does its own cleanup upon receipt.</para>
+    </summary>
+    <param name="pdwThreadID">
+      <para>Type: <b>DWORD*</b></para>
+      <para>When this method returns, contains a pointer to the ID of the process thread.</para>
+    </param>
+    <param name="puMsgCancel">
+      <para>Type: <b>UINT*</b></para>
+      <para>When this method returns, contains a pointer to <i>uMsgCancel</i> that the process thread should post if the operation is canceled.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IIOCancelInformation.SetCancelInformation">
+    <summary>
+      <para>Sets information that is posted when a user selects <b>Cancel</b> from the progress UI. Allows the main object to tell the progress dialog thread about the process thread so that the progress dialog can send the process thread the message id when the user clicks <b>Cancel</b>.</para>
+    </summary>
+    <param name="dwThreadID">
+      <para>Type: <b>DWORD</b></para>
+      <para>The ID of the process thread to be canceled.</para>
+    </param>
+    <param name="uMsgCancel">
+      <para>Type: <b>UINT</b></para>
+      <para>The cancel message to be posted to the thread.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>When the user selects <b>Cancel</b> from the progress UI, the <i>dwThreadID</i> will cancel any pending or future input/output (I/O) requests.  Also the <i>uMsgCancel</i> message, received from the progress dialog, will be posted to the thread to tell it to exit a wait state, if asynchronous I/O is pending.</para>
+    </remarks>
+  </member>
+  <member name="IIOCancelInformation">
+    <summary>
+      <para>Exposes methods for posting a cancel window message to the process thread from the Progress Dialog.</para>
+      <para>This interface enables the progress dialog to post a thread message through <see cref="PostThreadMessage" /> to the worker thread to cancel its operations. The worker thread must periodically check the message queue through <see cref="GetMessage" />, <see cref="PeekMessage" /> or <see cref="MsgWaitForMultipleObjectsEx" />.</para>
+      <para>The <see cref="IIOCancelInformation.SetCancelInformation" /> method tells the progress dialog which thread ID and what message to <see cref="PostThreadMessage" /> when the user clicks <b>Cancel</b>. A thread ID of "zero" disables the sending operation for the cancel message.</para>
+    </summary>
+  </member>
+</doc>

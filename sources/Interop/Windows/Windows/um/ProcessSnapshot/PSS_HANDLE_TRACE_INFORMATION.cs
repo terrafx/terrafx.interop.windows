@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSS_HANDLE_TRACE_INFORMATION.xml' path='doc/member[@name="PSS_HANDLE_TRACE_INFORMATION"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct PSS_HANDLE_TRACE_INFORMATION
 {
+    /// <include file='PSS_HANDLE_TRACE_INFORMATION.xml' path='doc/member[@name="PSS_HANDLE_TRACE_INFORMATION.SectionHandle"]/*' />
     public HANDLE SectionHandle;
 
+    /// <include file='PSS_HANDLE_TRACE_INFORMATION.xml' path='doc/member[@name="PSS_HANDLE_TRACE_INFORMATION.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 }

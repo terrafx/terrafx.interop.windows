@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.GetSystemWow64Directory2">
+    <summary>
+      <para>Retrieves the path of the system directory used by <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a>, using the specified image file machine type. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <param name="ImageFileMachineType">
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/SysInfo/image-file-machine-constants">IMAGE_FILE_MACHINE_*</a> value that specifies the machine to test.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>On systems that support multiple <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a> architectures, you can use <b>GetSystemWow64Directory2</b> to retrieve appropriate system directory associated with the WOW64 architecture specified by <i>ImageFileMachineType</i>.</para>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory2 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="GetSystemWow64Directory" />
+  </member>
+  <member name="Windows.GetSystemWow64Directory2A">
+    <summary>
+      <para>Retrieves the path of the system directory used by <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a>, using the specified image file machine type. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <param name="ImageFileMachineType">
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/SysInfo/image-file-machine-constants">IMAGE_FILE_MACHINE_*</a> value that specifies the machine to test.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>On systems that support multiple <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a> architectures, you can use <b>GetSystemWow64Directory2</b> to retrieve appropriate system directory associated with the WOW64 architecture specified by <i>ImageFileMachineType</i>.</para>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory2 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="GetSystemWow64Directory" />
+  </member>
+  <member name="Windows.GetSystemWow64Directory2W">
+    <summary>
+      <para>Retrieves the path of the system directory used by <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a>, using the specified image file machine type. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <param name="ImageFileMachineType">
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/SysInfo/image-file-machine-constants">IMAGE_FILE_MACHINE_*</a> value that specifies the machine to test.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>On systems that support multiple <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a> architectures, you can use <b>GetSystemWow64Directory2</b> to retrieve appropriate system directory associated with the WOW64 architecture specified by <i>ImageFileMachineType</i>.</para>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory2 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="GetSystemWow64Directory" />
+  </member>
+  <member name="Windows.GetSystemWow64Directory2">
+    <summary>
+      <para>Retrieves the path of the system directory used by <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a>, using the specified image file machine type. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <param name="ImageFileMachineType">
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/SysInfo/image-file-machine-constants">IMAGE_FILE_MACHINE_*</a> value that specifies the machine to test.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>On systems that support multiple <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a> architectures, you can use <b>GetSystemWow64Directory2</b> to retrieve appropriate system directory associated with the WOW64 architecture specified by <i>ImageFileMachineType</i>.</para>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory2 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="GetSystemWow64Directory" />
+  </member>
+  <member name="Windows.GetSystemWow64Directory2A">
+    <summary>
+      <para>Retrieves the path of the system directory used by <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a>, using the specified image file machine type. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <param name="ImageFileMachineType">
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/SysInfo/image-file-machine-constants">IMAGE_FILE_MACHINE_*</a> value that specifies the machine to test.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>On systems that support multiple <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a> architectures, you can use <b>GetSystemWow64Directory2</b> to retrieve appropriate system directory associated with the WOW64 architecture specified by <i>ImageFileMachineType</i>.</para>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory2 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="GetSystemWow64Directory" />
+  </member>
+  <member name="Windows.GetSystemWow64Directory2W">
+    <summary>
+      <para>Retrieves the path of the system directory used by <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a>, using the specified image file machine type. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <param name="ImageFileMachineType">
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/SysInfo/image-file-machine-constants">IMAGE_FILE_MACHINE_*</a> value that specifies the machine to test.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>On systems that support multiple <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a> architectures, you can use <b>GetSystemWow64Directory2</b> to retrieve appropriate system directory associated with the WOW64 architecture specified by <i>ImageFileMachineType</i>.</para>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory2 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="GetSystemWow64Directory" />
+  </member>
+  <member name="Windows.GetSystemWow64Directory">
+    <summary>
+      <para>Retrieves the path of the system directory used by WOW64. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+      <para>On 32-bit Windows, the function always fails, and the extended error is set to ERROR_CALL_NOT_IMPLEMENTED.</para>
+    </returns>
+    <remarks>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <para>To compile an application that uses this function, define _WIN32_WINNT as 0x0501 or later. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.GetSystemWow64DirectoryA">
+    <summary>
+      <para>Retrieves the path of the system directory used by WOW64. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+      <para>On 32-bit Windows, the function always fails, and the extended error is set to ERROR_CALL_NOT_IMPLEMENTED.</para>
+    </returns>
+    <remarks>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <para>To compile an application that uses this function, define _WIN32_WINNT as 0x0501 or later. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.GetSystemWow64DirectoryW">
+    <summary>
+      <para>Retrieves the path of the system directory used by WOW64. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+      <para>On 32-bit Windows, the function always fails, and the extended error is set to ERROR_CALL_NOT_IMPLEMENTED.</para>
+    </returns>
+    <remarks>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <para>To compile an application that uses this function, define _WIN32_WINNT as 0x0501 or later. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.GetSystemWow64Directory">
+    <summary>
+      <para>Retrieves the path of the system directory used by WOW64. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+      <para>On 32-bit Windows, the function always fails, and the extended error is set to ERROR_CALL_NOT_IMPLEMENTED.</para>
+    </returns>
+    <remarks>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <para>To compile an application that uses this function, define _WIN32_WINNT as 0x0501 or later. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.GetSystemWow64DirectoryA">
+    <summary>
+      <para>Retrieves the path of the system directory used by WOW64. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+      <para>On 32-bit Windows, the function always fails, and the extended error is set to ERROR_CALL_NOT_IMPLEMENTED.</para>
+    </returns>
+    <remarks>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <para>To compile an application that uses this function, define _WIN32_WINNT as 0x0501 or later. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.GetSystemWow64DirectoryW">
+    <summary>
+      <para>Retrieves the path of the system directory used by WOW64. This directory is not present on 32-bit Windows.</para>
+    </summary>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path. This path does not end with a backslash.</para>
+    </param>
+    <param name="uSize">
+      <para>The maximum size of the buffer, in <b>TCHARs</b>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the length, in <b>TCHARs</b>, of the string copied to the buffer, not including the terminating null character. If the length is greater than the size of the buffer, the return value is the size of the buffer required to hold the path.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+      <para>On 32-bit Windows, the function always fails, and the extended error is set to ERROR_CALL_NOT_IMPLEMENTED.</para>
+    </returns>
+    <remarks>
+      <para>WOW64 uses the system directory to store shared 32-bit code on 64-bit Windows. Most applications have no need to access this directory explicitly.</para>
+      <para>For more information on WOW64, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">Running 32-bit Applications</a>.</para>
+      <para>To compile an application that uses this function, define _WIN32_WINNT as 0x0501 or later. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The wow64apiset.h header defines GetSystemWow64Directory as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.IsWow64GuestMachineSupported">
+    <summary>
+      <para>Determines which architectures are supported (under <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a>) on the given machine architecture.</para>
+    </summary>
+    <param name="WowGuestMachine">
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/SysInfo/image-file-machine-constants">IMAGE_FILE_MACHINE_*</a> value that specifies the machine to test.</para>
+    </param>
+    <param name="MachineIsSupported">
+      <para>On success, returns a pointer to a boolean: <b>true</b> if the machine supports WOW64, or <b>false</b> if it does not.</para>
+    </param>
+    <returns>
+      <para>On success, returns <b>S_OK</b>; otherwise, returns an error. To get extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IsWow64GuestMachineSupported</b> is designed for the following scenarios:</para>
+      <list type="bullet">
+        <item>
+          <description>Debuggers (such as Visual Studio) that want to determine which debugger extensions it needs to install on the system.</description>
+        </item>
+        <item>
+          <description>Apps that need to determine if <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a> is turned off or not. For example, many apps assume x86-64 systems can always execute x86-32 code at all times, everywhere. Note that this ability does not exist on WinPE or Xbox, and it is an optional component in Server.</description>
+        </item>
+        <item>
+          <description>Test suites that need to achieve full feature coverage by running tests on all supported architectures in the system.
+</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+  <member name="Windows.IsWow64Process">
+    <summary>
+      <para>Determines whether the specified process is running under
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a> or an Intel64 of x64 processor.</para>
+    </summary>
+    <param name="hProcess">
+      <para>A handle to the process. The handle must have the PROCESS_QUERY_INFORMATION or PROCESS_QUERY_LIMITED_INFORMATION access right. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>The handle must have the PROCESS_QUERY_INFORMATION access right.</para>
+    </param>
+    <param name="Wow64Process">
+      <para>A pointer to a value that is set to TRUE if the process is running under WOW64 on an Intel64 or x64 processor. If the process is running under 32-bit Windows, the value is set to FALSE. If the process is a 32-bit application running under 64-bit Windows 10 on ARM, the value is set to FALSE. If the process is a 64-bit application running under 64-bit Windows, the value is also set to FALSE.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is a nonzero value.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>Applications should use <see cref="IsWow64Process2" /> instead of <b>IsWow64Process</b> to determine if a process is running under WOW.  <b>IsWow64Process2</b> removes the ambiguity inherent to multiple WOW environments by explicitly returning both the architecture of the host and guest for a given process.  Applications can use this information to reliably identify situations such as running under emulation on ARM64. To compile an application that uses this function, define _WIN32_WINNT as 0x0501 or later. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+      <h4>Examples</h4>
+      <para>For compatibility with operating systems that do not support this function, call
+<see cref="GetProcAddress" /> to detect whether
+<b>IsWow64Process</b> is implemented in Kernel32.dll. If <b>GetProcAddress</b> succeeds, it is safe to call this function. Otherwise, WOW64 is not present. Note that this technique is not a reliable way to detect whether the operating system is a 64-bit version of Windows because the Kernel32.dll in current versions of 32-bit Windows also contains this function.</para>
+      <code>#include &lt;windows.h&gt;
+#include &lt;tchar.h&gt;
+
+typedef BOOL (WINAPI *LPFN_ISWOW64PROCESS) (HANDLE, PBOOL);
+
+LPFN_ISWOW64PROCESS fnIsWow64Process;
+
+BOOL IsWow64()
+{
+    BOOL bIsWow64 = FALSE;
+
+    //IsWow64Process is not available on all supported versions of Windows.
+    //Use GetModuleHandle to get a handle to the DLL that contains the function
+    //and GetProcAddress to get a pointer to the function if available.
+
+    fnIsWow64Process = (LPFN_ISWOW64PROCESS) GetProcAddress(
+        GetModuleHandle(TEXT("kernel32")),"IsWow64Process");
+
+    if(NULL != fnIsWow64Process)
+    {
+        if (!fnIsWow64Process(GetCurrentProcess(),&amp;amp;amp;amp;amp;amp;bIsWow64))
+        {
+            //handle error
+        }
+    }
+    return bIsWow64;
+}
+
+int main( void )
+{
+    if(IsWow64())
+        _tprintf(TEXT("The process is running under WOW64.\n"));
+    else
+        _tprintf(TEXT("The process is not running under WOW64.\n"));
+
+    return 0;
+}
+
+</code>
+    </remarks>
+    <seealso cref="GetNativeSystemInfo" />
+    <seealso cref="IsWow64Message" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</seealso>
+  </member>
+  <member name="Windows.IsWow64Process2">
+    <summary>
+      <para>Determines whether the specified process is running under
+<a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a>; also returns additional machine process and architecture information.</para>
+    </summary>
+    <param name="hProcess">
+      <para>A handle to the process. The handle must have the <b>PROCESS_QUERY_INFORMATION</b> or <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</para>
+    </param>
+    <param name="pProcessMachine">
+      <para>On success, returns a pointer to an <a href="https://docs.microsoft.com//windows/desktop/SysInfo/image-file-machine-constants">IMAGE_FILE_MACHINE_*</a> value. The value will be  <b>IMAGE_FILE_MACHINE_UNKNOWN</b> if the target process is not a <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a> process; otherwise, it will identify the type of WoW process.</para>
+    </param>
+    <param name="pNativeMachine">
+      <para>On success, returns a pointer to a possible <a href="https://docs.microsoft.com//windows/desktop/SysInfo/image-file-machine-constants">IMAGE_FILE_MACHINE_*</a> value identifying the native architecture of host system.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is a nonzero value.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IsWow64Process2</b> provides an improved direct replacement for IsWow64Process. In addition to determining if the specified process is running under <a href="https://docs.microsoft.com//windows/desktop/WinProg64/running-32-bit-applications">WOW64</a>, <b>IsWow64Process2</b> returns the following information:</para>
+      <list type="bullet">
+        <item>
+          <description>Whether the target process, specified by <i>hProcess</i>, is running under Wow or not.</description>
+        </item>
+        <item>
+          <description>The architecture of the target process.</description>
+        </item>
+        <item>
+          <description> Optionally, the architecture of the host system.</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+  <member name="Windows.Wow64DisableWow64FsRedirection">
+    <summary>
+      <para>Disables file system redirection for the calling thread. File system redirection is enabled by
+default.</para>
+    </summary>
+    <param name="OldValue">
+      <para>The WOW64 file system redirection value. The system uses this parameter to store information necessary to
+revert (re-enable) file system redirection.</para>
+      <para>
+        <b>Note</b>  This value is for system use only. To avoid unpredictable behavior, do not modify this value in any
+way.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is a nonzero value.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>This function is useful for 32-bit applications that want to gain access to the native system32 directory. By
+default, WOW64 file system redirection is enabled.</para>
+      <para>The
+<b>Wow64DisableWow64FsRedirection</b>/<see cref="Wow64RevertWow64FsRedirection" /></para>
+      <para>function pairing is a replacement for the functionality of the
+<see cref="Wow64EnableWow64FsRedirection" /></para>
+      <para>function.</para>
+      <para>To restore file system redirection, call the
+<see cref="Wow64RevertWow64FsRedirection" /></para>
+      <para>function. Every successful call to the
+<b>Wow64DisableWow64FsRedirection</b> function
+must have a matching call to the
+<b>Wow64RevertWow64FsRedirection</b></para>
+      <para>function. This will ensure redirection is re-enabled and frees associated system resources.</para>
+      <para>
+        <b>Note</b>  The <b>Wow64DisableWow64FsRedirection</b></para>
+      <para>function affects all file operations performed by the current thread, which can have unintended consequences if
+file system redirection is disabled for any length of time. For example, DLL loading depends on file system
+redirection, so disabling file system redirection will cause DLL loading to fail. Also, many feature
+implementations use delayed loading and will fail while redirection is disabled. The failure state of the initial
+delay-load operation is persisted, so any subsequent use of the delay-load function will fail even after file
+system redirection is re-enabled. To avoid these problems, disable file system redirection immediately before
+calls to specific file I/O functions (such as <see cref="CreateFile" />)
+that must not be redirected, and re-enable file system redirection immediately afterward using
+<see cref="Wow64RevertWow64FsRedirection" />.</para>
+      <para>Disabling file system redirection affects only operations made by the current thread. Some functions, such as
+<see cref="CreateProcessAsUser" />, do their work on another
+thread, which is not affected by the state of file system redirection in the calling thread.</para>
+      <para>In Windows 8 and Windows Server 2012, this function is supported by the following technologies.</para>
+      <list type="table">
+        <listheader>
+          <description>Technology</description>
+          <description>Supported</description>
+        </listheader>
+        <item>
+          <description>
+            <para>Server Message Block (SMB) 3.0 protocol</para>
+          </description>
+          <description>
+            <para>No</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 Transparent Failover (TFO)</para>
+          </description>
+          <description>
+            <para>No</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 with Scale-out File Shares (SO)</para>
+          </description>
+          <description>
+            <para>No</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Cluster Shared Volume File System (CsvFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Resilient File System (ReFS)</para>
+          </description>
+          <description>
+            <para>No</para>
+          </description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following example uses
+<b>Wow64DisableWow64FsRedirection</b> to
+disable file system redirection so that a 32-bit application that is running under WOW64 can open the 64-bit
+version of Notepad.exe in %SystemRoot%\System32 instead of being redirected
+to the 32-bit version in %SystemRoot%\SysWOW64.</para>
+      <code>#ifdef _WIN32_WINNT
+#undef _WIN32_WINNT
+#endif
+#define _WIN32_WINNT 0x0501
+
+#ifdef NTDDI_VERSION
+#undef NTDDI_VERSION
+#endif
+#define NTDDI_VERSION 0x05010000
+
+#include &lt;Windows.h&gt;
+
+void main()
+{
+    HANDLE hFile = INVALID_HANDLE_VALUE;
+    PVOID OldValue = NULL;
+
+    //  Disable redirection immediately prior to the native API
+    //  function call.
+    if( Wow64DisableWow64FsRedirection(&amp;amp;amp;amp;amp;amp;OldValue) )
+    {
+        //  Any function calls in this block of code should be as concise
+        //  and as simple as possible to avoid unintended results.
+        hFile = CreateFile(TEXT("C:\\Windows\\System32\\Notepad.exe"),
+            GENERIC_READ,
+            FILE_SHARE_READ,
+            NULL,
+            OPEN_EXISTING,
+            FILE_ATTRIBUTE_NORMAL,
+            NULL);
+
+        //  Immediately re-enable redirection. Note that any resources
+        //  associated with OldValue are cleaned up by this call.
+        if ( FALSE == Wow64RevertWow64FsRedirection(OldValue) )
+        {
+            //  Failure to re-enable redirection should be considered
+            //  a critical failure and execution aborted.
+            return;
+        }
+    }
+
+    //  The handle, if valid, now can be used as usual, and without
+    //  leaving redirection disabled.
+    if( INVALID_HANDLE_VALUE != hFile )
+    {
+        // Use the file handle
+    }
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-functions">File Management Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinProg64/file-system-redirector">File System Redirector</seealso>
+    <seealso cref="Wow64EnableWow64FsRedirection" />
+    <seealso cref="Wow64RevertWow64FsRedirection" />
+  </member>
+  <member name="Windows.Wow64RevertWow64FsRedirection">
+    <summary>
+      <para>Restores file system redirection for the calling thread.</para>
+      <para>This function should not be called without a previous call to the <see cref="Wow64DisableWow64FsRedirection" /> function.</para>
+      <para>Any data allocation on behalf of the
+<see cref="Wow64DisableWow64FsRedirection" /></para>
+      <para>function is cleaned up by this function.</para>
+    </summary>
+    <param name="OlValue">
+      <para>TBD</para>
+      <h4>- OldValue [in]</h4>
+      <para>The WOW64 file system redirection value. This value is obtained from the
+<see cref="Wow64DisableWow64FsRedirection" /></para>
+      <para>function.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is a nonzero value.</para>
+      <para>If the function fails, the return value is <b>FALSE</b> (zero). To get extended error
+information, call <see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The <see cref="Wow64DisableWow64FsRedirection" />/<b>Wow64RevertWow64FsRedirection</b> function pair is a replacement for the functionality of the <see cref="Wow64EnableWow64FsRedirection" /> function.</para>
+      <para>To disable file system redirection, call the <see cref="Wow64DisableWow64FsRedirection" /> function. Every call to the <b>Wow64DisableWow64FsRedirection</b> function must have a matching call to the  <b>Wow64RevertWow64FsRedirection</b> function. This will ensure redirection is re-enabled and frees associated system resources.</para>
+      <para>In Windows 8 and Windows Server 2012, this function is supported by the following technologies.</para>
+      <list type="table">
+        <listheader>
+          <description>Technology</description>
+          <description>Supported</description>
+        </listheader>
+        <item>
+          <description>
+            <para>Server Message Block (SMB) 3.0 protocol</para>
+          </description>
+          <description>
+            <para>No</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 Transparent Failover (TFO)</para>
+          </description>
+          <description>
+            <para>No</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 with Scale-out File Shares (SO)</para>
+          </description>
+          <description>
+            <para>No</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Cluster Shared Volume File System (CsvFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Resilient File System (ReFS)</para>
+          </description>
+          <description>
+            <para>No</para>
+          </description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>For an example, see the
+<see cref="Wow64DisableWow64FsRedirection" /></para>
+      <para>function.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-functions">File Management Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinProg64/file-system-redirector">File System Redirector</seealso>
+    <seealso cref="Wow64DisableWow64FsRedirection" />
+    <seealso cref="Wow64EnableWow64FsRedirection" />
+  </member>
+  <member name="Windows.Wow64SuspendThread">
+    <summary>
+      <para>Suspends the specified WOW64 thread.</para>
+    </summary>
+    <param name="hThread">
+      <para>A handle to the thread that is to be suspended. The handle must have the THREAD_SUSPEND_RESUME access right. For more information, see <a href="https://docs.microsoft.com//windows/win32/procthread/thread-security-and-access-rights">Thread Security and Access Rights</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the thread's previous suspend count; otherwise, it is (DWORD) -1. To get extended error information, use the <see cref="GetLastError" /> function.</para>
+    </returns>
+    <remarks>
+      <para>If the function succeeds, execution of the specified thread is suspended and the thread's suspend count is incremented. Suspending a thread causes the thread to stop executing user-mode (application) code.</para>
+      <para>This function is primarily designed for use by debuggers. It is not intended to be used for thread synchronization. Calling <b>Wow64SuspendThread</b> on a thread that owns a synchronization object, such as a mutex or critical section, can lead to a deadlock if the calling thread tries to obtain a synchronization object owned by a suspended thread. To avoid this situation, a thread within an application that is not a debugger should signal the other thread to suspend itself. The target thread must be designed to watch for this signal and respond appropriately.</para>
+      <para>Each thread has a suspend count (with a maximum value of MAXIMUM_SUSPEND_COUNT). If the suspend count is greater than zero, the thread is suspended; otherwise, the thread is not suspended and is eligible for execution. Calling
+<b>Wow64SuspendThread</b> causes the target thread's suspend count to be incremented. Attempting to increment past the maximum suspend count causes an error without incrementing the count.</para>
+      <para>The <see cref="ResumeThread" /> function decrements the suspend count of a suspended thread.</para>
+      <para>This function is intended for 64-bit applications. It is not supported on 32-bit Windows; such calls fail and set the last error code to ERROR_INVALID_FUNCTION. A 32-bit application can call this function on a WOW64 thread; the result is the same as calling the <see cref="SuspendThread" /> function.</para>
+    </remarks>
+    <seealso cref="ResumeThread" />
+  </member>
+</doc>

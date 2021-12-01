@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLCaptionFlag.xml' path='doc/member[@name="HTMLCaptionFlag"]/*' />
 public enum HTMLCaptionFlag
 {
+    /// <include file='HTMLCaptionFlag.xml' path='doc/member[@name="HTMLCaptionFlag.HTMLCaptionFlagNo"]/*' />
     HTMLCaptionFlagNo = 0,
+
+    /// <include file='HTMLCaptionFlag.xml' path='doc/member[@name="HTMLCaptionFlag.HTMLCaptionFlagYes"]/*' />
     HTMLCaptionFlagYes = 0xc00000,
+
+    /// <include file='HTMLCaptionFlag.xml' path='doc/member[@name="HTMLCaptionFlag.HTMLCaptionFlag_Max"]/*' />
     HTMLCaptionFlag_Max = 2147483647,
 }

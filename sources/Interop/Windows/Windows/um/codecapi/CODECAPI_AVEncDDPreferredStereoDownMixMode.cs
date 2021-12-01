@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncDDPreferredStereoDownMixMode.xml' path='doc/member[@name="CODECAPI_AVEncDDPreferredStereoDownMixMode"]/*' />
 [Guid("7F4E6B31-9185-403D-B0A2-763743E6F063")]
 public partial struct CODECAPI_AVEncDDPreferredStereoDownMixMode
 {

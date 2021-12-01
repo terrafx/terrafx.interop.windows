@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_TURBULENCE_NOISE.xml' path='doc/member[@name="D2D1_TURBULENCE_NOISE"]/*' />
 public enum D2D1_TURBULENCE_NOISE : uint
 {
+    /// <include file='D2D1_TURBULENCE_NOISE.xml' path='doc/member[@name="D2D1_TURBULENCE_NOISE.D2D1_TURBULENCE_NOISE_FRACTAL_SUM"]/*' />
     D2D1_TURBULENCE_NOISE_FRACTAL_SUM = 0,
+
+    /// <include file='D2D1_TURBULENCE_NOISE.xml' path='doc/member[@name="D2D1_TURBULENCE_NOISE.D2D1_TURBULENCE_NOISE_TURBULENCE"]/*' />
     D2D1_TURBULENCE_NOISE_TURBULENCE = 1,
+
+    /// <include file='D2D1_TURBULENCE_NOISE.xml' path='doc/member[@name="D2D1_TURBULENCE_NOISE.D2D1_TURBULENCE_NOISE_FORCE_DWORD"]/*' />
     D2D1_TURBULENCE_NOISE_FORCE_DWORD = 0xffffffff,
 }

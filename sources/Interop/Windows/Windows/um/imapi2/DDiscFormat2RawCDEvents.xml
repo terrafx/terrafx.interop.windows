@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DDiscFormat2RawCDEvents.Update">
+    <summary>
+      <para>Implement this method to receive progress notification of the current raw-image write operation.</para>
+    </summary>
+    <param name="object">
+      <para>The <see cref="IDiscFormat2RawCD" /> interface that initiated the write operation.</para>
+      <para>This parameter is a <b>MsftDiscFormat2RawCD</b> object in script.</para>
+    </param>
+    <param name="progress">
+      <para>An <see cref="IDiscFormat2RawCDEventArgs" /> interface that you use to determine the progress of the write operation.</para>
+      <para>This parameter is a <b>MsftDiscFormat2RawCD</b> object in script.</para>
+    </param>
+    <returns>
+      <para>Return values are ignored.</para>
+    </returns>
+    <remarks>
+      <para>Notifications are sent in response to calling the <see cref="IDiscFormat2RawCD.WriteMedia" /> or <see cref="IDiscFormat2RawCD.WriteMedia2" /> method.</para>
+      <para>To stop the write process, call the <see cref="IDiscFormat2RawCD.CancelWrite" /> method.</para>
+    </remarks>
+    <seealso cref="DDiscFormat2RawCDEvents" />
+    <seealso cref="IDiscFormat2RawCD" />
+    <seealso cref="IDiscFormat2RawCD.CancelWrite" />
+  </member>
+  <member name="DDiscFormat2RawCDEvents">
+    <summary>
+      <para>Implement this interface to receive notifications of the current raw-image write operation.</para>
+    </summary>
+    <seealso cref="IDiscFormat2RawCD" />
+  </member>
+</doc>

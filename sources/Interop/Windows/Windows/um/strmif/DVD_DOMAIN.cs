@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_DOMAIN.xml' path='doc/member[@name="DVD_DOMAIN"]/*' />
 public enum DVD_DOMAIN
 {
+    /// <include file='DVD_DOMAIN.xml' path='doc/member[@name="DVD_DOMAIN.DVD_DOMAIN_FirstPlay"]/*' />
     DVD_DOMAIN_FirstPlay = 1,
+
+    /// <include file='DVD_DOMAIN.xml' path='doc/member[@name="DVD_DOMAIN.DVD_DOMAIN_VideoManagerMenu"]/*' />
     DVD_DOMAIN_VideoManagerMenu = (DVD_DOMAIN_FirstPlay + 1),
+
+    /// <include file='DVD_DOMAIN.xml' path='doc/member[@name="DVD_DOMAIN.DVD_DOMAIN_VideoTitleSetMenu"]/*' />
     DVD_DOMAIN_VideoTitleSetMenu = (DVD_DOMAIN_VideoManagerMenu + 1),
+
+    /// <include file='DVD_DOMAIN.xml' path='doc/member[@name="DVD_DOMAIN.DVD_DOMAIN_Title"]/*' />
     DVD_DOMAIN_Title = (DVD_DOMAIN_VideoTitleSetMenu + 1),
+
+    /// <include file='DVD_DOMAIN.xml' path='doc/member[@name="DVD_DOMAIN.DVD_DOMAIN_Stop"]/*' />
     DVD_DOMAIN_Stop = (DVD_DOMAIN_Title + 1),
 }

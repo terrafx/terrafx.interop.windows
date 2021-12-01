@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMTVAudioNotification.OnEvent">
+    <summary>
+      <para>
+        <b>Note</b>  The <b>IAMTVAudioNotification</b> interface is deprecated.</para>
+      <para>The <code>OnEvent</code> method handles events from a TV tuner card controlled by the <see cref="IAMTVAudio" /> interface.</para>
+    </summary>
+    <param name="Event">
+      <para>Flag identifying the type of event. The only value currently defined is AMTVAUDIO_EVENT_CHANGED.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVAudioNotification Interface" />
+  </member>
+  <member name="IAMTVAudioNotification">
+    <summary>
+      <para>
+        <b>Note</b>  This callback interface has been deprecated, because the TV Audio filter does not implement the callback mechanism.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+  </member>
+</doc>

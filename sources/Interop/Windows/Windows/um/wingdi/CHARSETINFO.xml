@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CHARSETINFO">
+    <summary>
+      <para>Contains information about a character set.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/code-pages">Code Pages</seealso>
+    <seealso cref="FONTSIGNATURE" />
+    <seealso cref="TranslateCharsetInfo" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/unicode-and-character-set-structures">Unicode and Character Set Structures</seealso>
+  </member>
+  <member name="CHARSETINFO.ciCharset">
+    <summary>
+      <para>Character set value.</para>
+    </summary>
+  </member>
+  <member name="CHARSETINFO.ciACP">
+    <summary>
+      <para>Windows ANSI code page identifier. For a list of identifiers, see <a href="https://docs.microsoft.com//windows/desktop/Intl/code-page-identifiers">Code Page Identifiers</a>.</para>
+    </summary>
+  </member>
+  <member name="CHARSETINFO.fs">
+    <summary>
+      <para>A <see cref="FONTSIGNATURE" /> structure that identifies the Unicode subrange and the specific Windows ANSI character set/code page. Only one code page will be set when this structure is set by the function.</para>
+    </summary>
+  </member>
+</doc>

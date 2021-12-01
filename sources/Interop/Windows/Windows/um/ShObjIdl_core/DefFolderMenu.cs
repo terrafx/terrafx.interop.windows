@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DefFolderMenu.xml' path='doc/member[@name="DefFolderMenu"]/*' />
 [Guid("C63382BE-7933-48D0-9AC8-85FB46BE2FDD")]
 public partial struct DefFolderMenu
 {

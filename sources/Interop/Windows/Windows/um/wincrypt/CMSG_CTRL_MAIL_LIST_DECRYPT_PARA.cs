@@ -8,25 +8,33 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA"]/*' />
 public unsafe partial struct CMSG_CTRL_MAIL_LIST_DECRYPT_PARA
 {
+    /// <include file='CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.hCryptProv"]/*' />
     public HCRYPTPROV hCryptProv;
 
+    /// <include file='CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.pMailList"]/*' />
     [NativeTypeName("PCMSG_MAIL_LIST_RECIPIENT_INFO")]
     public CMSG_MAIL_LIST_RECIPIENT_INFO* pMailList;
 
+    /// <include file='CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.dwRecipientIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRecipientIndex;
 
+    /// <include file='CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.dwKeyChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwKeyChoice;
 
+    /// <include file='CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.Anonymous"]/*' />
     [NativeTypeName("_CMSG_CTRL_MAIL_LIST_DECRYPT_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:8135:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hKeyEncryptionKey"]/*' />
     public ref HCRYPTKEY hKeyEncryptionKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,6 +44,7 @@ public unsafe partial struct CMSG_CTRL_MAIL_LIST_DECRYPT_PARA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pvKeyEncryptionKey"]/*' />
     public ref void* pvKeyEncryptionKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -45,12 +54,15 @@ public unsafe partial struct CMSG_CTRL_MAIL_LIST_DECRYPT_PARA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hKeyEncryptionKey"]/*' />
         [FieldOffset(0)]
         public HCRYPTKEY hKeyEncryptionKey;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pvKeyEncryptionKey"]/*' />
         [FieldOffset(0)]
         public void* pvKeyEncryptionKey;
     }

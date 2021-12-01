@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AMCOPPSignature">
+    <summary>
+      <para>The <b>AMCOPPSignature</b> structure contains the signature needed for the <see cref="IAMCertifiedOutputProtection.SessionSequenceStart" /> method.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-certified-output-protection-protocol--copp">Using Certified Output Protection Protocol (COPP)</seealso>
+  </member>
+  <member name="AMCOPPSignature.Signature">
+    <summary>
+      <para>Buffer that contains the signature. For more information, see the Remarks section for the <b>SessionSequenceStart</b> method.</para>
+    </summary>
+  </member>
+</doc>

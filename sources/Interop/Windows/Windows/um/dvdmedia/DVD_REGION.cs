@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_REGION.xml' path='doc/member[@name="DVD_REGION"]/*' />
 public partial struct DVD_REGION
 {
+    /// <include file='DVD_REGION.xml' path='doc/member[@name="DVD_REGION.CopySystem"]/*' />
     [NativeTypeName("UCHAR")]
     public byte CopySystem;
 
+    /// <include file='DVD_REGION.xml' path='doc/member[@name="DVD_REGION.RegionData"]/*' />
     [NativeTypeName("UCHAR")]
     public byte RegionData;
 
+    /// <include file='DVD_REGION.xml' path='doc/member[@name="DVD_REGION.SystemRegion"]/*' />
     [NativeTypeName("UCHAR")]
     public byte SystemRegion;
 
+    /// <include file='DVD_REGION.xml' path='doc/member[@name="DVD_REGION.ResetCount"]/*' />
     [NativeTypeName("UCHAR")]
     public byte ResetCount;
 }

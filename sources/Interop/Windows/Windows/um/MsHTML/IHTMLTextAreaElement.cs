@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement"]/*' />
 [Guid("3050F2AA-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLTextAreaElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, uint>)(lpVtbl[1]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, uint>)(lpVtbl[2]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, uint*, int>)(lpVtbl[3]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int>)(lpVtbl[7]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_value([NativeTypeName("BSTR")] ushort* v)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int>)(lpVtbl[8]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int>)(lpVtbl[9]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int>)(lpVtbl[10]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int>)(lpVtbl[11]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_status(VARIANT v)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, VARIANT, int>)(lpVtbl[12]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_status(VARIANT* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, VARIANT*, int>)(lpVtbl[13]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, short, int>)(lpVtbl[14]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, short*, int>)(lpVtbl[15]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_form"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_form(IHTMLFormElement** p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, IHTMLFormElement**, int>)(lpVtbl[16]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_defaultValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_defaultValue([NativeTypeName("BSTR")] ushort* v)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int>)(lpVtbl[17]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_defaultValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_defaultValue([NativeTypeName("BSTR *")] ushort** p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int>)(lpVtbl[18]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.select"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT select()
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, int>)(lpVtbl[19]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_onchange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT put_onchange(VARIANT v)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, VARIANT, int>)(lpVtbl[20]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_onchange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_onchange(VARIANT* p)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, VARIANT*, int>)(lpVtbl[21]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_onselect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT put_onselect(VARIANT v)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, VARIANT, int>)(lpVtbl[22]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_onselect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_onselect(VARIANT* p)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, VARIANT*, int>)(lpVtbl[23]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_readOnly"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT put_readOnly([NativeTypeName("VARIANT_BOOL")] short v)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, short, int>)(lpVtbl[24]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_readOnly"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT get_readOnly([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, short*, int>)(lpVtbl[25]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_rows"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT put_rows([NativeTypeName("long")] int v)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, int, int>)(lpVtbl[26]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_rows"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT get_rows([NativeTypeName("long *")] int* p)
@@ -214,6 +243,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, int*, int>)(lpVtbl[27]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_cols"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT put_cols([NativeTypeName("long")] int v)
@@ -221,6 +251,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, int, int>)(lpVtbl[28]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_cols"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT get_cols([NativeTypeName("long *")] int* p)
@@ -228,6 +259,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, int*, int>)(lpVtbl[29]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_wrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT put_wrap([NativeTypeName("BSTR")] ushort* v)
@@ -235,6 +267,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int>)(lpVtbl[30]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_wrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT get_wrap([NativeTypeName("BSTR *")] ushort** p)
@@ -242,6 +275,7 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int>)(lpVtbl[31]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.createTextRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT createTextRange(IHTMLTxtRange** range)

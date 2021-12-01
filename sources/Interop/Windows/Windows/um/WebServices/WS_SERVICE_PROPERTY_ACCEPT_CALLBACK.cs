@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SERVICE_PROPERTY_ACCEPT_CALLBACK.xml' path='doc/member[@name="WS_SERVICE_PROPERTY_ACCEPT_CALLBACK"]/*' />
 public unsafe partial struct WS_SERVICE_PROPERTY_ACCEPT_CALLBACK
 {
+    /// <include file='WS_SERVICE_PROPERTY_ACCEPT_CALLBACK.xml' path='doc/member[@name="WS_SERVICE_PROPERTY_ACCEPT_CALLBACK.callback"]/*' />
     [NativeTypeName("WS_SERVICE_ACCEPT_CHANNEL_CALLBACK")]
     public delegate* unmanaged<IntPtr, void**, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> callback;
 }

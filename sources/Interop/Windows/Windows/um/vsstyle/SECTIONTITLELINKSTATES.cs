@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SECTIONTITLELINKSTATES.xml' path='doc/member[@name="SECTIONTITLELINKSTATES"]/*' />
 public enum SECTIONTITLELINKSTATES
 {
+    /// <include file='SECTIONTITLELINKSTATES.xml' path='doc/member[@name="SECTIONTITLELINKSTATES.CPSTL_NORMAL"]/*' />
     CPSTL_NORMAL = 1,
+
+    /// <include file='SECTIONTITLELINKSTATES.xml' path='doc/member[@name="SECTIONTITLELINKSTATES.CPSTL_HOT"]/*' />
     CPSTL_HOT = 2,
 }

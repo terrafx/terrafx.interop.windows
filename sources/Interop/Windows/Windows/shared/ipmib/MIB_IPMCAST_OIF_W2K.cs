@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPMCAST_OIF_W2K.xml' path='doc/member[@name="MIB_IPMCAST_OIF_W2K"]/*' />
 public unsafe partial struct MIB_IPMCAST_OIF_W2K
 {
+    /// <include file='MIB_IPMCAST_OIF_W2K.xml' path='doc/member[@name="MIB_IPMCAST_OIF_W2K.dwOutIfIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOutIfIndex;
 
+    /// <include file='MIB_IPMCAST_OIF_W2K.xml' path='doc/member[@name="MIB_IPMCAST_OIF_W2K.dwNextHopAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNextHopAddr;
 
+    /// <include file='MIB_IPMCAST_OIF_W2K.xml' path='doc/member[@name="MIB_IPMCAST_OIF_W2K.pvReserved"]/*' />
     [NativeTypeName("PVOID")]
     public void* pvReserved;
 
+    /// <include file='MIB_IPMCAST_OIF_W2K.xml' path='doc/member[@name="MIB_IPMCAST_OIF_W2K.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 }

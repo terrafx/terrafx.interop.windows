@@ -5,20 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMHDDISPINFOW.xml' path='doc/member[@name="NMHDDISPINFOW"]/*' />
 public unsafe partial struct NMHDDISPINFOW
 {
+    /// <include file='NMHDDISPINFOW.xml' path='doc/member[@name="NMHDDISPINFOW.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMHDDISPINFOW.xml' path='doc/member[@name="NMHDDISPINFOW.iItem"]/*' />
     public int iItem;
 
+    /// <include file='NMHDDISPINFOW.xml' path='doc/member[@name="NMHDDISPINFOW.mask"]/*' />
     public uint mask;
 
+    /// <include file='NMHDDISPINFOW.xml' path='doc/member[@name="NMHDDISPINFOW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszText;
 
+    /// <include file='NMHDDISPINFOW.xml' path='doc/member[@name="NMHDDISPINFOW.cchTextMax"]/*' />
     public int cchTextMax;
 
+    /// <include file='NMHDDISPINFOW.xml' path='doc/member[@name="NMHDDISPINFOW.iImage"]/*' />
     public int iImage;
 
+    /// <include file='NMHDDISPINFOW.xml' path='doc/member[@name="NMHDDISPINFOW.lParam"]/*' />
     public LPARAM lParam;
 }

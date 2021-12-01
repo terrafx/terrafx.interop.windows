@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12CommandQueueDownlevel.xml' path='doc/member[@name="ID3D12CommandQueueDownlevel"]/*' />
 [Guid("38A8C5EF-7CCB-4E81-914F-A6E9D072C494")]
 [NativeTypeName("struct ID3D12CommandQueueDownlevel : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12CommandQueueDownlevel : ID3D12CommandQueueDow
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12CommandQueueDownlevel : ID3D12CommandQueueDow
         return ((delegate* unmanaged<ID3D12CommandQueueDownlevel*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12CommandQueueDownlevel : ID3D12CommandQueueDow
         return ((delegate* unmanaged<ID3D12CommandQueueDownlevel*, uint>)(lpVtbl[1]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12CommandQueueDownlevel : ID3D12CommandQueueDow
         return ((delegate* unmanaged<ID3D12CommandQueueDownlevel*, uint>)(lpVtbl[2]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12CommandQueueDownlevel.xml' path='doc/member[@name="ID3D12CommandQueueDownlevel.Present"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Present(ID3D12GraphicsCommandList* pOpenCommandList, ID3D12Resource* pSourceTex2D, HWND hWindow, D3D12_DOWNLEVEL_PRESENT_FLAGS Flags)

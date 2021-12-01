@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileSinkFilter.GetCurFile">
+    <summary>
+      <para>The <code>GetCurFile</code> method retrieves the name and media type of the current file.</para>
+    </summary>
+    <param name="ppszFileName">
+      <para>Address of a pointer that receives the name of the file, as an <b>OLESTR</b> type.</para>
+    </param>
+    <param name="pmt">
+      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that receives the media type. This parameter can by <b>NULL</b>, in which case the method does not return the media type.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>No file is opened.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument in <i>ppszFileName</i>.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the filter has not opened a file, the method might succeed but return <b>NULL</b> in the <i>ppszFileName</i> parameter. Check the value when the method returns.</para>
+      <para>The method allocates the memory for the string returned in <i>ppszFileName</i>, and the memory for the format block in the media type (if any). The caller must free them by calling <b>CoTaskMemFree</b>. For the media type, you can use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/freemediatype">FreeMediaType</a> function in the base class library.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFileSinkFilter Interface" />
+  </member>
+  <member name="IFileSinkFilter.SetFileName">
+    <summary>
+      <para>The <code>SetFileName</code> method sets the name of the file into which media samples will be written.</para>
+    </summary>
+    <param name="pszFileName">
+      <para>Pointer to the name of the file to receive the media samples.</para>
+    </param>
+    <param name="pmt">
+      <para>Pointer to the type of media samples to be written to the file, and the media type of the sink filter's input pin.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>If the <i>pszFileName</i> parameter names a nonexistent file, the file will be created. If it names an existing file, the sink filter will overwrite the file without first deleting it.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFileSinkFilter Interface" />
+    <seealso cref="IFileSinkFilter2" />
+  </member>
+  <member name="IFileSinkFilter">
+    <summary>
+      <para>The <code>IFileSinkFilter</code> interface is implemented on filters that write media streams to a file. A file sink filter in a video capture filter graph, for instance, writes the output of the video compression filter to a file. Typically, the application running this filter graph should enable the user to enter the name of the file to be written to. This interface enables the communication of this information.</para>
+      <para>If a filter needs the name of an output file, it should expose this interface to allow an application to set the file name. Note that there is currently no base class implementation of this interface.</para>
+      <para>Any application that must set the name of the file into which the file sink filter will write should use this interface to get and set the file name.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="IFileSinkFilter2" /> interface extends <b>IFileSinkFilter</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
+  </member>
+</doc>

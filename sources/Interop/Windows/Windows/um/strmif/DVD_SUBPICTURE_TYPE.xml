@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_SUBPICTURE_TYPE">
+    <summary>
+      <para>Defines flags used to determine what kind of content the subpicture stream contains.</para>
+    </summary>
+    <seealso cref="DVD_SubpictureAttributes" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="DVD_SUBPICTURE_TYPE.DVD_SPType_NotSpecified">
+    <summary>
+      <para>The DVD does not specify the subpicture type.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_TYPE.DVD_SPType_Language">
+    <summary>
+      <para>The subpicture contains language-related content such as movie subtitles or other text.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_TYPE.DVD_SPType_Other">
+    <summary>
+      <para>The subpicture contains nonlanguage-related content such as a bouncing ball in karaoke titles.</para>
+    </summary>
+  </member>
+</doc>

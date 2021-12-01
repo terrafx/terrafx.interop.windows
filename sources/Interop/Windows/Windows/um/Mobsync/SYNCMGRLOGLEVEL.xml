@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGRLOGLEVEL">
+    <summary>
+      <para>The
+<b>SYNCMGRLOGLEVEL</b> enumeration values specify an error level for use in the
+<see cref="ISyncMgrSynchronizeCallback.LogError" /> method.</para>
+    </summary>
+    <seealso cref="ISyncMgrSynchronizeCallback.LogError" />
+  </member>
+  <member name="SYNCMGRLOGLEVEL.SYNCMGRLOGLEVEL_INFORMATION">
+    <summary>
+      <para>An information message was logged.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRLOGLEVEL.SYNCMGRLOGLEVEL_WARNING">
+    <summary>
+      <para>A warning message was logged.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRLOGLEVEL.SYNCMGRLOGLEVEL_ERROR">
+    <summary>
+      <para>An error message was logged.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRLOGLEVEL.SYNCMGRLOGLEVEL_LOGLEVELMAX">
+    <summary>
+      <para>The largest valid <see cref="SYNCMGRLOGLEVEL" /> value.</para>
+    </summary>
+  </member>
+</doc>

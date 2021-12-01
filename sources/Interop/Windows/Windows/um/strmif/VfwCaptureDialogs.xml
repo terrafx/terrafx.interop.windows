@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VfwCaptureDialogs">
+    <summary>
+      <para>Specifies a dialog box that might exist in a Video for Windows capture driver.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IAMVfwCaptureDialogs Interface" />
+  </member>
+  <member name="VfwCaptureDialogs.VfwCaptureDialog_Source">
+    <summary>
+      <para>Video source dialog box.</para>
+    </summary>
+  </member>
+  <member name="VfwCaptureDialogs.VfwCaptureDialog_Format">
+    <summary>
+      <para>Video format dialog box.</para>
+    </summary>
+  </member>
+  <member name="VfwCaptureDialogs.VfwCaptureDialog_Display">
+    <summary>
+      <para>Video display dialog box.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDecimateVideoImage.ResetDecimationImageSize">
+    <summary>
+      <para>The <code>ResetDecimationImageSize</code> method specifies that the decoder should no longer decimate its output image.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value indicating the success or failure of the call.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDecimateVideoImage Interface" />
+  </member>
+  <member name="IDecimateVideoImage.SetDecimationImageSize">
+    <summary>
+      <para>The <code>SetDecimationImageSize</code> method specifies the dimensions to which the decoder should decimate its output image.</para>
+    </summary>
+    <param name="lWidth">
+      <para>Specifies the width of the video image, in pixels.</para>
+    </param>
+    <param name="lHeight">
+      <para>Specifies the height of the video image, in pixels.</para>
+    </param>
+    <returns>
+      <para>Returns one of the following <b>HRESULT</b> values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The decoder cannot perform any decimation, or needs to halt decimation it is currently performing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The decoder can decimate the video to the requested size.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDecimateVideoImage Interface" />
+  </member>
+  <member name="IDecimateVideoImage">
+    <summary>
+      <para>The <code>IDecimateVideoImage</code> interface specifies decimation on a decoder filter. The term <i>decimation</i> refers to scaling the video output down to a size smaller than the native size of the video.</para>
+      <para>Applications must not call methods on this interface. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/overlay-mixer-filter">Overlay Mixer</a> filter uses this interface to decimate video at the video decoder.</para>
+      <para>Decoder filters that can decimate their video output should support this interface.</para>
+    </summary>
+  </member>
+</doc>

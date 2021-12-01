@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbRemoveFileInstallMode.xml' path='doc/member[@name="msidbRemoveFileInstallMode"]/*' />
 public enum msidbRemoveFileInstallMode
 {
+    /// <include file='msidbRemoveFileInstallMode.xml' path='doc/member[@name="msidbRemoveFileInstallMode.msidbRemoveFileInstallModeOnInstall"]/*' />
     msidbRemoveFileInstallModeOnInstall = 0x00000001,
+
+    /// <include file='msidbRemoveFileInstallMode.xml' path='doc/member[@name="msidbRemoveFileInstallMode.msidbRemoveFileInstallModeOnRemove"]/*' />
     msidbRemoveFileInstallModeOnRemove = 0x00000002,
+
+    /// <include file='msidbRemoveFileInstallMode.xml' path='doc/member[@name="msidbRemoveFileInstallMode.msidbRemoveFileInstallModeOnBoth"]/*' />
     msidbRemoveFileInstallModeOnBoth = 0x00000003,
 }

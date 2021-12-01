@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleLayoutGridMode.xml' path='doc/member[@name="styleLayoutGridMode"]/*' />
 public enum styleLayoutGridMode
 {
+    /// <include file='styleLayoutGridMode.xml' path='doc/member[@name="styleLayoutGridMode.styleLayoutGridModeNotSet"]/*' />
     styleLayoutGridModeNotSet = 0,
+
+    /// <include file='styleLayoutGridMode.xml' path='doc/member[@name="styleLayoutGridMode.styleLayoutGridModeChar"]/*' />
     styleLayoutGridModeChar = 1,
+
+    /// <include file='styleLayoutGridMode.xml' path='doc/member[@name="styleLayoutGridMode.styleLayoutGridModeLine"]/*' />
     styleLayoutGridModeLine = 2,
+
+    /// <include file='styleLayoutGridMode.xml' path='doc/member[@name="styleLayoutGridMode.styleLayoutGridModeBoth"]/*' />
     styleLayoutGridModeBoth = 3,
+
+    /// <include file='styleLayoutGridMode.xml' path='doc/member[@name="styleLayoutGridMode.styleLayoutGridModeNone"]/*' />
     styleLayoutGridModeNone = 4,
+
+    /// <include file='styleLayoutGridMode.xml' path='doc/member[@name="styleLayoutGridMode.styleLayoutGridMode_Max"]/*' />
     styleLayoutGridMode_Max = 2147483647,
 }

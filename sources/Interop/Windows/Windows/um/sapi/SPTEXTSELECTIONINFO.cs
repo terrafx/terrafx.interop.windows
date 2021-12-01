@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPTEXTSELECTIONINFO.xml' path='doc/member[@name="SPTEXTSELECTIONINFO"]/*' />
 public partial struct SPTEXTSELECTIONINFO
 {
+    /// <include file='SPTEXTSELECTIONINFO.xml' path='doc/member[@name="SPTEXTSELECTIONINFO.ulStartActiveOffset"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulStartActiveOffset;
 
+    /// <include file='SPTEXTSELECTIONINFO.xml' path='doc/member[@name="SPTEXTSELECTIONINFO.cchActiveChars"]/*' />
     [NativeTypeName("ULONG")]
     public uint cchActiveChars;
 
+    /// <include file='SPTEXTSELECTIONINFO.xml' path='doc/member[@name="SPTEXTSELECTIONINFO.ulStartSelection"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulStartSelection;
 
+    /// <include file='SPTEXTSELECTIONINFO.xml' path='doc/member[@name="SPTEXTSELECTIONINFO.cchSelection"]/*' />
     [NativeTypeName("ULONG")]
     public uint cchSelection;
 }

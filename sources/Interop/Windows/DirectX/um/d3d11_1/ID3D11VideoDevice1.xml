@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11VideoDevice1.CheckVideoDecoderDownsampling">
+    <summary>
+      <para>Indicates whether the video decoder supports downsampling with the specified input format, and whether real-time downsampling is supported.</para>
+    </summary>
+    <param name="pInputDesc">
+      <para>Type: <b>const <see cref="D3D11_VIDEO_DECODER_DESC" />*</b></para>
+      <para>An object describing the decoding profile, the resolution, and format of the input stream.  This is the resolution and format to be downsampled.</para>
+    </param>
+    <param name="InputColorSpace">
+      <para>Type: <b><see cref="DXGI_COLOR_SPACE_TYPE" /></b></para>
+      <para>A  <see cref="DXGI_COLOR_SPACE_TYPE" /> value that specifies the colorspace of the reference frame data.</para>
+    </param>
+    <param name="pInputConfig">
+      <para>Type: <b>const <see cref="D3D11_VIDEO_DECODER_CONFIG" />*</b></para>
+      <para>The configuration data associated with the decode profile.</para>
+    </param>
+    <param name="pFrameRate">
+      <para>Type: <b>const <see cref="DXGI_RATIONAL" />*</b></para>
+      <para>The frame rate of the video content. This is used by the driver to determine whether the video can be decoded in real-time.</para>
+    </param>
+    <param name="pOutputDesc">
+      <para>Type: <b>const <see cref="D3D11_VIDEO_SAMPLE_DESC" />*</b></para>
+      <para>An object describing the resolution, format, and colorspace of the output frames.  This is the destination resolution and format of the downsample operation.</para>
+    </param>
+    <param name="pSupported">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Pointer to a boolean value set by the driver that indicates if downsampling is supported with the specified input data. True if the driver supports the requested downsampling;  otherwise, false.</para>
+    </param>
+    <param name="pRealTimeHint">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Pointer to a boolean value set by the driver that indicates if real-time decoding is supported with the specified input data. True if the driver supports the requested real-time decoding;  otherwise, false. Note that the returned value is based on the current configuration of the video decoder and does not guarantee that real-time decoding will be supported for future downsampling operations.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>S_OK</description>
+          <description>The operation completed successfully.</description>
+        </listheader>
+        <item>
+          <description>E_INVALIDARG</description>
+          <description>An invalid parameter was passed or this function was called using an invalid calling pattern.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You  should call <see cref="GetVideoDecoderCaps" /> to determine whether decoder downsampling is supported before checking support for a  specific configuration.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice1" />
+  </member>
+  <member name="ID3D11VideoDevice1.GetCryptoSessionPrivateDataSize">
+    <summary>
+      <para>Retrieves optional sizes for private driver data.</para>
+    </summary>
+    <param name="pCryptoType">
+      <para>Type: <b>const GUID*</b></para>
+      <para>Indicates the crypto type for which the private input and output size is queried.</para>
+    </param>
+    <param name="pDecoderProfile">
+      <para>Type: <b>const GUID*</b></para>
+      <para>Indicates the decoder profile for which the private input and output size is queried.</para>
+    </param>
+    <param name="pKeyExchangeType">
+      <para>Type: <b>const GUID*</b></para>
+      <para>Indicates the key exchange type for which the private input and output size is queried.</para>
+    </param>
+    <param name="pPrivateInputSize">
+      <para>Type: <b>UINT*</b></para>
+      <para>Returns the size of private data that the driver needs for input commands.</para>
+    </param>
+    <param name="pPrivateOutputSize">
+      <para>Type: <b>UINT*</b></para>
+      <para>Returns the size of private data that the driver needs for output commands.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>When <i>pKeyExchangeType</i> is <b>D3D11_KEY_EXCHANGE_HW_PROTECTION</b>, the following behavior is expected in the <see cref="ID3D11VideoContext.NegotiateCryptoSessionKeyExchange" /> method:</para>
+      <list type="bullet">
+        <item>
+          <description>The <i>DataSize</i> parameter is set to the size of the <see cref="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA" /> structure.</description>
+        </item>
+        <item>
+          <description>
+            <i>pData</i> points to a <see cref="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA" /> structure. <list type="bullet"><item><description>The <b>pInputData</b> of this structure points to a <see cref="D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA" /> structure where:<list type="bullet"><item><description><b>pbInput</b>[0] – <b>pbInput</b>[N-1] contains memory reserved for use by the driver. The number of bytes (N) reserved for the driver is determined by the <b>pPrivateInputSize</b> value returned by the <b>ID3D11VideoDevice1.GetCryptoSessionPrivateDataSize</b> function.</description></item><item><description><b>pbInput</b>[N] contains the first byte of the DRM command packet.</description></item></list></description></item><item><description>The <b>pOutputData</b> of this structure points to a <see cref="D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA" /> structure where:<list type="bullet"><item><description><b>pbOutput</b>[0] – <b>pbOutput</b>[N-1] contains memory reserved for use by the driver. The number of bytes (N) reserved for the driver is determined by the <b>pPrivateOutputSize</b> value returned by the <b>ID3D11VideoDevice1.GetCryptoSessionPrivateDataSize</b> function.</description></item><item><description><b>pbOutput</b>[N] contains the first byte of the DRM command packet.</description></item></list></description></item></list></description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice1" />
+  </member>
+  <member name="ID3D11VideoDevice1.GetVideoDecoderCaps">
+    <summary>
+      <para>Retrieves capabilities and limitations of the video decoder.</para>
+    </summary>
+    <param name="pDecoderProfile">
+      <para>Type: <b>const GUID*</b></para>
+      <para>The decode profile for which the capabilities are queried.</para>
+    </param>
+    <param name="SampleWidth">
+      <para>Type: <b>UINT</b></para>
+      <para>The video width for which the capabilities are queried.</para>
+    </param>
+    <param name="SampleHeight">
+      <para>Type: <b>UINT</b></para>
+      <para>The video height for which the capabilities are queried.</para>
+    </param>
+    <param name="pFrameRate">
+      <para>Type: <b>const <see cref="DXGI_RATIONAL" />*</b></para>
+      <para>The frame rate of the video content. This information is used by the driver to determine whether the video can be decoded in real-time.</para>
+    </param>
+    <param name="BitRate">
+      <para>Type: <b>UINT</b></para>
+      <para>The bit rate of the video stream. A value of zero indicates that the bit rate can be ignored.</para>
+    </param>
+    <param name="pCryptoType">
+      <para>Type: <b>const GUID*</b></para>
+      <para>The type of cryptography used to encrypt the video stream. A value of NULL indicates that the video stream is not encrypted.</para>
+    </param>
+    <param name="pDecoderCaps">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to a bitwise OR combination of <see cref="D3D11_VIDEO_DECODER_CAPS" /> values specifying the decoder capabilities.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>S_OK</description>
+          <description>The operation completed successfully.</description>
+        </listheader>
+        <item>
+          <description>E_INVALIDARG</description>
+          <description>An invalid parameter was passed or this function was called using an invalid calling pattern.</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11VideoDevice1" />
+  </member>
+  <member name="ID3D11VideoDevice1.RecommendVideoDecoderDownsampleParameters">
+    <summary>
+      <para>Allows the driver to recommend optimal output downsample parameters from the input parameters.</para>
+    </summary>
+    <param name="pInputDesc">
+      <para>Type: <b>const <see cref="D3D11_VIDEO_DECODER_DESC" />*</b></para>
+      <para>A <see cref="D3D11_VIDEO_DECODER_DESC" /> object describing the decoding profile, the resolution, and format of the input stream.  This is the resolution and format to be downsampled.</para>
+    </param>
+    <param name="InputColorSpace">
+      <para>Type: <b><see cref="DXGI_COLOR_SPACE_TYPE" /></b></para>
+      <para>A  <see cref="DXGI_COLOR_SPACE_TYPE" /> value that specifies the colorspace of the reference frame data.</para>
+    </param>
+    <param name="pInputConfig">
+      <para>Type: <b>const <see cref="D3D11_VIDEO_DECODER_CONFIG" />*</b></para>
+      <para>The configuration data associated with the decode profile.</para>
+    </param>
+    <param name="pFrameRate">
+      <para>Type: <b>const <see cref="DXGI_RATIONAL" />*</b></para>
+      <para>The frame rate of the video content. This is used by the driver to determine whether the video can be decoded in real-time.</para>
+    </param>
+    <param name="pRecommendedOutputDesc">
+      <para>Type: <b><see cref="D3D11_VIDEO_SAMPLE_DESC" />*</b></para>
+      <para>Pointer to a <see cref="D3D11_VIDEO_SAMPLE_DESC" /> structure that the driver populates with the recommended output buffer parameters for a downsample operation. The driver will attempt to recommend parameters that can support real-time decoding. If it is unable to do so, the driver will recommend values that are as close to the real-time solution as possible.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>S_OK</description>
+          <description>The operation completed successfully.</description>
+        </listheader>
+        <item>
+          <description>E_INVALIDARG</description>
+          <description>An invalid parameter was passed or this function was called using an invalid calling pattern.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You  should call <see cref="GetVideoDecoderCaps" /> to determine whether decoder downsampling is supported before checking support for a  specific configuration.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDevice1" />
+  </member>
+  <member name="ID3D11VideoDevice1">
+    <summary>
+      <para>Provides the video decoding and video processing capabilities of a Microsoft Direct3D 11 device.</para>
+    </summary>
+    <remarks>
+      <para>The Direct3D 11 device supports this interface. To get a pointer to this interface, call <see cref="QueryInterface" /> with an <see cref="ID3D11Device1" /> interface pointer.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
+    <seealso cref="ID3D11Device" />
+    <seealso cref="ID3D11VideoDevice" />
+  </member>
+</doc>

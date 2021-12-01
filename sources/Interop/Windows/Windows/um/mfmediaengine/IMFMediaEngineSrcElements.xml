@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEngineSrcElements.AddElement">
+    <summary>
+      <para>Adds a source element to the end of the list.</para>
+    </summary>
+    <param name="pURL">
+      <para>The URL of the source element, or <b>NULL</b>.</para>
+    </param>
+    <param name="pType">
+      <para>The MIME type of the source element, or <b>NULL</b>.</para>
+    </param>
+    <param name="pMedia">
+      <para>A media-query string that specifies the intended media type, or <b>NULL</b>. If specified, the string should conform to the W3C <i>Media Queries</i> specification.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Any of the parameters to this method can be <b>NULL</b>.</para>
+      <para>This method allocates copies of the <b>BSTR</b>s that are passed in.</para>
+    </remarks>
+    <seealso cref="IMFMediaEngineSrcElements" />
+  </member>
+  <member name="IMFMediaEngineSrcElements.GetLength">
+    <summary>
+      <para>Gets the number of source elements in the list.</para>
+    </summary>
+    <returns>
+      <para>Returns the number of source elements.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineSrcElements" />
+  </member>
+  <member name="IMFMediaEngineSrcElements.GetMedia">
+    <summary>
+      <para>Gets the intended media type of an element in the list.</para>
+    </summary>
+    <param name="index">
+      <para>The zero-based index of the source element. To get the number of source elements, call <see cref="IMFMediaEngineSrcElements.GetLength" />.</para>
+    </param>
+    <param name="pMedia">
+      <para>Receives a <b>BSTR</b> that contains a media-query string. The caller must free the  <b>BSTR</b> by calling <b>SysFreeString</b>. If no media type is set, this parameter receives the value <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The string returned in <i>pMedia</i> should be a media-query string that conforms to the W3C <i>Media Queries</i> specification.</para>
+    </remarks>
+    <seealso cref="IMFMediaEngineSrcElements" />
+  </member>
+  <member name="IMFMediaEngineSrcElements.GetType">
+    <summary>
+      <para>Gets the MIME type of an element in the list.</para>
+    </summary>
+    <param name="index">
+      <para>The zero-based index of the source element. To get the number of source elements, call <see cref="IMFMediaEngineSrcElements.GetLength" />.</para>
+    </param>
+    <param name="pType">
+      <para>Receives a <b>BSTR</b> that contains the MIME type. The caller must free the  <b>BSTR</b> by calling <b>SysFreeString</b>. If no MIME type is set, this parameter receives the value <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineSrcElements" />
+  </member>
+  <member name="IMFMediaEngineSrcElements.GetURL">
+    <summary>
+      <para>Gets the URL of an element in the list.</para>
+    </summary>
+    <param name="index">
+      <para>The zero-based index of the source element. To get the number of source elements, call <see cref="IMFMediaEngineSrcElements.GetLength" />.</para>
+    </param>
+    <param name="pURL">
+      <para>Receives a <b>BSTR</b> that contains the URL of the source element. The caller must free the  <b>BSTR</b> by calling <b>SysFreeString</b>. If no URL is set, this parameter receives the value <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineSrcElements" />
+  </member>
+  <member name="IMFMediaEngineSrcElements.RemoveAllElements">
+    <summary>
+      <para>Removes all of the source elements from the list.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineSrcElements" />
+  </member>
+  <member name="IMFMediaEngineSrcElements">
+    <summary>
+      <para>Provides the Media Engine with a list of media resources.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IMFMediaEngineSrcElements</b> interface represents an ordered list of media resources.</para>
+      <para>This interface enables the application to provide the same audio/video content in several different encoding formats, such as H.264 and Windows Media Video. If a particular codec is not present on the user's computer, the Media Engine will try the next URL in the list. To use this interface, do the following:</para>
+      <list type="number">
+        <item>
+          <description>Create an implementation of this interface.</description>
+        </item>
+        <item>
+          <description>Initialize your implementation with a list of URLs. Optionally, provide MIME types and media query strings for each URL.</description>
+        </item>
+        <item>
+          <description>Call the <see cref="IMFMediaEngine.SetSourceElements" /> method.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

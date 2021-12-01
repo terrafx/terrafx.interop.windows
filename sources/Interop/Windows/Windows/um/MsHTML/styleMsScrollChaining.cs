@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsScrollChaining.xml' path='doc/member[@name="styleMsScrollChaining"]/*' />
 public enum styleMsScrollChaining
 {
+    /// <include file='styleMsScrollChaining.xml' path='doc/member[@name="styleMsScrollChaining.styleMsScrollChainingNotSet"]/*' />
     styleMsScrollChainingNotSet = 0,
+
+    /// <include file='styleMsScrollChaining.xml' path='doc/member[@name="styleMsScrollChaining.styleMsScrollChainingNone"]/*' />
     styleMsScrollChainingNone = 1,
+
+    /// <include file='styleMsScrollChaining.xml' path='doc/member[@name="styleMsScrollChaining.styleMsScrollChainingChained"]/*' />
     styleMsScrollChainingChained = 2,
+
+    /// <include file='styleMsScrollChaining.xml' path='doc/member[@name="styleMsScrollChaining.styleMsScrollChaining_Max"]/*' />
     styleMsScrollChaining_Max = 2147483647,
 }

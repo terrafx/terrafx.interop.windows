@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STATFLAG.xml' path='doc/member[@name="STATFLAG"]/*' />
 public enum STATFLAG
 {
+    /// <include file='STATFLAG.xml' path='doc/member[@name="STATFLAG.STATFLAG_DEFAULT"]/*' />
     STATFLAG_DEFAULT = 0,
+
+    /// <include file='STATFLAG.xml' path='doc/member[@name="STATFLAG.STATFLAG_NONAME"]/*' />
     STATFLAG_NONAME = 1,
+
+    /// <include file='STATFLAG.xml' path='doc/member[@name="STATFLAG.STATFLAG_NOOPEN"]/*' />
     STATFLAG_NOOPEN = 2,
 }

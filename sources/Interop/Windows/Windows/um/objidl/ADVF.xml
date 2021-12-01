@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ADVF">
+    <summary>
+      <para>Flags that control caching and notification of changes in data.</para>
+    </summary>
+    <remarks>
+      <para>For a data or view advisory connection, the container uses the <b>ADVF</b> constants when setting up a connection between an <see cref="IAdviseSink" /> instance and either an <see cref="IDataObject" /> or <see cref="IViewObject" /> instance. These connections are set up using the <see cref="IDataObject.DAdvise" />, <see cref="IDataAdviseHolder.Advise" />, or <see cref="IViewObject.SetAdvise" /> methods.</para>
+      <para>For a caching connection, the constants are specified in the <see cref="IOleCache.Cache" /> method to indicate the container's requests on how the object should update its cache.</para>
+      <para>These constants are also used in the <b>advf</b> member of the <see cref="STATDATA" /> structure. This structure is used by <see cref="IEnumSTATDATA" /> to describe the enumerated connections, and the <b>advf</b> member indicates the flags that were specified when the advisory or cache connection was established. When <b>STATDATA</b> is used for an<see cref=" IOleObject.EnumAdvise" /> enumerator, the <b>advf</b> member is indeterminate.</para>
+    </remarks>
+    <seealso cref="IDataAdviseHolder" />
+    <seealso cref="IDataObject" />
+    <seealso cref="IEnumSTATDATA" />
+    <seealso cref="IOleCache" />
+    <seealso cref="IViewObject" />
+  </member>
+  <member name="ADVF.ADVF_NODATA">
+    <summary>
+      <para>For data advisory connections (<see cref="IDataObject.DAdvise" /> or <see cref="IDataAdviseHolder.Advise" />), this flag requests the data object not to send data when it calls <see cref="IAdviseSink.OnDataChange" />. The recipient of the change notification can later request the data by calling <see cref="IDataObject.GetData" />. The data object can honor the request by passing TYMED_NULL in the STGMEDIUM parameter, or it can provide the data anyway. For example, the data object might have multiple advisory connections, not all of which specified ADVF_NODATA, in which case the object might send the same notification to all connections. Regardless of the container's request, its <see cref="IAdviseSink" /> implementation must check the STGMEDIUM parameter because it is responsible for releasing the medium if it is not TYMED_NULL.</para>
+      <para>For cache connections (<see cref="IOleCache.Cache" />), this flag requests that the cache not be updated by changes made to the running object. Instead, the container will update the cache by explicitly calling <see cref="IOleCache.SetData" />. This situation typically occurs when the iconic aspect of an object is being cached.</para>
+      <para>ADVF_NODATA is not a valid flag for view advisory connections (<see cref="IViewObject.SetAdvise" />) and it returns E_INVALIDARG.</para>
+    </summary>
+  </member>
+  <member name="ADVF.ADVF_PRIMEFIRST">
+    <summary>
+      <para>Requests that the object not wait for the data or view to change before making an initial call to <see cref="IAdviseSink.OnDataChange" /> (for data or view advisory connections) or updating the cache (for cache connections). Used with ADVF_ONLYONCE, this parameter provides an asynchronous <see cref="IDataObject.GetData" /> call.</para>
+    </summary>
+  </member>
+  <member name="ADVF.ADVF_ONLYONCE">
+    <summary>
+      <para>Requests that the object make only one change notification or cache update before deleting the connection.</para>
+      <para>ADVF_ONLYONCE automatically deletes the advisory connection after sending one data or view notification. The advisory sink receives only one <see cref="IAdviseSink" /> call. A nonzero connection identifier is returned if the connection is established, so the caller can use it to delete the connection prior to the first change notification.</para>
+      <para>For data change notifications, the combination of ADVF_ONLYONCE and ADVF_PRIMEFIRST provides, in effect, an asynchronous <see cref="IDataObject.GetData" /> call.</para>
+      <para>When used with caching, ADVF_ONLYONCE updates the cache one time only, on receipt of the first <see cref="IAdviseSink.OnDataChange" /> notification. After the update is complete, the advisory connection between the object and the cache is disconnected. The source object for the advisory connection calls the <see cref="Release" /> method.</para>
+    </summary>
+  </member>
+  <member name="ADVF.ADVF_DATAONSTOP">
+    <summary>
+      <para>For data advisory connections, assures accessibility to data. This flag indicates that when the data object is closing, it should call , providing data with the call. Typically, this value is used in combination with ADVF_NODATA. Without th<see cref="IAdviseSink.OnDataChange" /> is value, by the time an <b>OnDataChange</b> call without data reaches the sink, the source might have completed its shutdown and the data might not be accessible. Sinks that specify this value should accept data provided in <b>OnDataChange</b> if it is being passed, because they may not get another chance to retrieve it.</para>
+      <para>For cache connections, this flag indicates that the object should update the cache as part of object closure.</para>
+      <para>ADVF_DATAONSTOP is not a valid flag for view advisory connections.</para>
+    </summary>
+  </member>
+  <member name="ADVF.ADVFCACHE_NOHANDLER">
+    <summary>
+      <para>Synonym for ADVFCACHE_FORCEBUILTIN, which is used more often.</para>
+    </summary>
+  </member>
+  <member name="ADVF.ADVFCACHE_FORCEBUILTIN">
+    <summary>
+      <para>This value is used by DLL object applications and object handlers that perform the drawing of their objects. ADVFCACHE_FORCEBUILTIN instructs OLE to cache presentation data to ensure that there is a presentation in the cache. This value is not a valid flag for data or view advisory connections. For cache connections, this flag caches data that requires only code shipped with OLE (or the underlying operating system) to be present in order to produce it with <see cref="IDataObject.GetData" /> or <see cref="IViewObject.Draw" />. By specifying this value, the container can ensure that the data can be retrieved even when the object or handler code is not available.</para>
+    </summary>
+  </member>
+  <member name="ADVF.ADVFCACHE_ONSAVE">
+    <summary>
+      <para>For cache connections, this flag updates the cached representation only when the object containing the cache is saved. The cache is also updated when the OLE object transitions from the running state back to the loaded state (because a subsequent save operation would require rerunning the object). This value is not a valid flag for data or view advisory connections.</para>
+    </summary>
+  </member>
+</doc>

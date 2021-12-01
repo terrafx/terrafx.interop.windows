@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFAYUVSample.xml' path='doc/member[@name="MFAYUVSample"]/*' />
 public partial struct MFAYUVSample
 {
+    /// <include file='MFAYUVSample.xml' path='doc/member[@name="MFAYUVSample.bCrValue"]/*' />
     public byte bCrValue;
 
+    /// <include file='MFAYUVSample.xml' path='doc/member[@name="MFAYUVSample.bCbValue"]/*' />
     public byte bCbValue;
 
+    /// <include file='MFAYUVSample.xml' path='doc/member[@name="MFAYUVSample.bYValue"]/*' />
     public byte bYValue;
 
+    /// <include file='MFAYUVSample.xml' path='doc/member[@name="MFAYUVSample.bSampleAlpha8"]/*' />
     public byte bSampleAlpha8;
 }

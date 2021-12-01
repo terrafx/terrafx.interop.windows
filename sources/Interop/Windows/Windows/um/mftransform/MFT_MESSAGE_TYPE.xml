@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFT_MESSAGE_TYPE">
+    <summary>
+      <para>Defines messages for a Media Foundation transform (MFT). To send a message to an MFT, call <see cref="IMFTransform.ProcessMessage" />.</para>
+    </summary>
+    <remarks>
+      <para>Some messages require specific actions from the MFT. These events have "MESSAGE" in the message name. Other messages are informational; they notify the MFT of some action by the client, and do not require any particular response from the MFT. These messages have "NOTIFY" in the messages name. Except where noted, an MFT should not rely on the client sending notification messages.</para>
+    </remarks>
+    <seealso cref="IMFTransform.ProcessMessage" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_COMMAND_FLUSH">
+    <summary>
+      <para>Requests the MFT to flush all stored data.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-message-command-flush">MFT_MESSAGE_COMMAND_FLUSH</a>.</para>
+    </summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_COMMAND_DRAIN">
+    <summary>
+      <para>Requests the MFT to drain any stored data.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-message-command-drain">MFT_MESSAGE_COMMAND_DRAIN</a>.</para>
+    </summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_SET_D3D_MANAGER">
+    <summary>
+      <para>Sets or clears the <a href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-device-manager">Direct3D Device Manager</a> for DirectX Video Acceleration (DXVA).</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-message-set-d3d-manager">MFT_MESSAGE_SET_D3D_MANAGER</a>.</para>
+    </summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_DROP_SAMPLES">
+    <summary>
+      <para>
+        <b>Note</b> Requires Windows 7.</para>
+    </summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_COMMAND_TICK">
+    <summary>
+      <para>
+        <b>Note</b> Requires Windows 8.</para>
+    </summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_NOTIFY_BEGIN_STREAMING">
+    <summary>
+      <para>Notifies the MFT that streaming is about to begin.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-message-notify-begin-streaming">MFT_MESSAGE_NOTIFY_BEGIN_STREAMING</a>.</para>
+    </summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_NOTIFY_END_STREAMING">
+    <summary>
+      <para>Notifies the MFT that streaming is about to end.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-message-notify-end-streaming">MFT_MESSAGE_NOTIFY_END_STREAMING</a>.</para>
+    </summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_NOTIFY_END_OF_STREAM">
+    <summary>
+      <para>Notifies the MFT that an input stream has ended.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-message-notify-end-of-stream">MFT_MESSAGE_NOTIFY_END_OF_STREAM</a>.</para>
+    </summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_NOTIFY_START_OF_STREAM">
+    <summary>
+      <para>Notifies the MFT that the first sample is about to be processed.</para>
+      <para>See</para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-message-notify-start-of-stream">MFT_MESSAGE_NOTIFY_START_OF_STREAM</a>.</para>
+    </summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_NOTIFY_RELEASE_RESOURCES">
+    <summary></summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_NOTIFY_REACQUIRE_RESOURCES">
+    <summary></summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_NOTIFY_EVENT">
+    <summary></summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_COMMAND_SET_OUTPUT_STREAM_STATE">
+    <summary></summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_COMMAND_FLUSH_OUTPUT_STREAM">
+    <summary></summary>
+  </member>
+  <member name="MFT_MESSAGE_TYPE.MFT_MESSAGE_COMMAND_MARKER">
+    <summary>
+      <para>Marks a point in the stream. This message applies only to asynchronous MFTs.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-message-command-marker">MFT_MESSAGE_COMMAND_MARKER</a>.</para>
+      <para>
+        <b>Note</b>  Requires Windows 7</para>
+    </summary>
+  </member>
+</doc>

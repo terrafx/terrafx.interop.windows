@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RemHMETAFILEPICT.xml' path='doc/member[@name="RemHMETAFILEPICT"]/*' />
 public unsafe partial struct RemHMETAFILEPICT
 {
+    /// <include file='RemHMETAFILEPICT.xml' path='doc/member[@name="RemHMETAFILEPICT.mm"]/*' />
     [NativeTypeName("LONG")]
     public int mm;
 
+    /// <include file='RemHMETAFILEPICT.xml' path='doc/member[@name="RemHMETAFILEPICT.xExt"]/*' />
     [NativeTypeName("LONG")]
     public int xExt;
 
+    /// <include file='RemHMETAFILEPICT.xml' path='doc/member[@name="RemHMETAFILEPICT.yExt"]/*' />
     [NativeTypeName("LONG")]
     public int yExt;
 
+    /// <include file='RemHMETAFILEPICT.xml' path='doc/member[@name="RemHMETAFILEPICT.cbData"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbData;
 
+    /// <include file='RemHMETAFILEPICT.xml' path='doc/member[@name="RemHMETAFILEPICT.data"]/*' />
     [NativeTypeName("byte [1]")]
     public fixed byte data[1];
 }

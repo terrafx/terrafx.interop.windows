@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESS_POWER_THROTTLING_STATE">
+    <summary>
+      <para>Specifies the throttling policies and how to apply them to a target process when that process is subject to power management. This structure is used by the <see cref="SetProcessInformation" /> function.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_POWER_THROTTLING_STATE.Version">
+    <summary>
+      <para>The version of the <b>PROCESS_POWER_THROTTLING_STATE</b> structure.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PROCESS_POWER_THROTTLING_CURRENT_VERSION</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The current version.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PROCESS_POWER_THROTTLING_STATE.ControlMask">
+    <summary>
+      <para>This field enables the caller to take control of the power throttling mechanism.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PROCESS_POWER_THROTTLING_EXECUTION_SPEED</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Manages the execution speed of the process.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PROCESS_POWER_THROTTLING_STATE.StateMask">
+    <summary>
+      <para>Manages the power throttling mechanism on/off state.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PROCESS_POWER_THROTTLING_EXECUTION_SPEED</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Manages the execution speed of the process.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

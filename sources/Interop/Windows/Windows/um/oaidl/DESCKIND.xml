@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DESCKIND">
+    <summary>
+      <para>Identifies the type description being bound to.</para>
+    </summary>
+  </member>
+  <member name="DESCKIND.DESCKIND_NONE">
+    <summary>
+      <para>No match was found.</para>
+    </summary>
+  </member>
+  <member name="DESCKIND.DESCKIND_FUNCDESC">
+    <summary>
+      <para>A <see cref="FUNCDESC" /> was returned.</para>
+    </summary>
+  </member>
+  <member name="DESCKIND.DESCKIND_VARDESC">
+    <summary>
+      <para>A <see cref="VARDESC" /> was returned.</para>
+    </summary>
+  </member>
+  <member name="DESCKIND.DESCKIND_TYPECOMP">
+    <summary>
+      <para>A TYPECOMP was returned.</para>
+    </summary>
+  </member>
+  <member name="DESCKIND.DESCKIND_IMPLICITAPPOBJ">
+    <summary>
+      <para>An IMPLICITAPPOBJ was returned.</para>
+    </summary>
+  </member>
+  <member name="DESCKIND.DESCKIND_MAX">
+    <summary>
+      <para>The end of the enum.</para>
+    </summary>
+  </member>
+</doc>

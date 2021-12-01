@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider"]/*' />
 [Guid("9AF64809-5864-4C26-A720-C1F78C086EE3")]
 [NativeTypeName("struct ICategoryProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface
         return ((delegate* unmanaged<ICategoryProvider*, Guid*, void**, int>)(lpVtbl[0]))((ICategoryProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface
         return ((delegate* unmanaged<ICategoryProvider*, uint>)(lpVtbl[1]))((ICategoryProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface
         return ((delegate* unmanaged<ICategoryProvider*, uint>)(lpVtbl[2]))((ICategoryProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.CanCategorizeOnSCID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CanCategorizeOnSCID([NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid)
@@ -46,6 +51,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface
         return ((delegate* unmanaged<ICategoryProvider*, PROPERTYKEY*, int>)(lpVtbl[3]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pscid);
     }
 
+    /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.GetDefaultCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDefaultCategory(Guid* pguid, [NativeTypeName("SHCOLUMNID *")] PROPERTYKEY* pscid)
@@ -53,6 +59,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface
         return ((delegate* unmanaged<ICategoryProvider*, Guid*, PROPERTYKEY*, int>)(lpVtbl[4]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, pscid);
     }
 
+    /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.GetCategoryForSCID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCategoryForSCID([NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid, Guid* pguid)
@@ -60,6 +67,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface
         return ((delegate* unmanaged<ICategoryProvider*, PROPERTYKEY*, Guid*, int>)(lpVtbl[5]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pscid, pguid);
     }
 
+    /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.EnumCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EnumCategories(IEnumGUID** penum)
@@ -67,6 +75,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface
         return ((delegate* unmanaged<ICategoryProvider*, IEnumGUID**, int>)(lpVtbl[6]))((ICategoryProvider*)Unsafe.AsPointer(ref this), penum);
     }
 
+    /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.GetCategoryName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] ushort* pszName, uint cch)
@@ -74,6 +83,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface
         return ((delegate* unmanaged<ICategoryProvider*, Guid*, ushort*, uint, int>)(lpVtbl[7]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, pszName, cch);
     }
 
+    /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.CreateCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CreateCategory([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

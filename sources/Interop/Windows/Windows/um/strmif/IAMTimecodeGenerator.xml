@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMTimecodeGenerator.GetTCGMode">
+    <summary>
+      <para>The <code>GetTCGMode</code> method retrieves the SMPTE timecode generator properties.</para>
+    </summary>
+    <param name="Param">
+      <para>Timecode generator mode. Specify one of the following modes you want to get settings for.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCG_FRAMERATE</description>
+          <description>Frame rate</description>
+        </item>
+        <item>
+          <description>ED_TCG_REFERENCE_SOURCE</description>
+          <description>Source of the count value</description>
+        </item>
+        <item>
+          <description>ED_TCG_SYNC_SOURCE</description>
+          <description>Source of the hardware clock reference</description>
+        </item>
+        <item>
+          <description>ED_TCG_TIMECODE_TYPE</description>
+          <description>SMPTE timecode format of the generator</description>
+        </item>
+      </list>
+    </param>
+    <param name="pValue">
+      <para>Pointer to the current setting of the mode specified in <i>Param</i>.</para>
+      <para>If you specify ED_TCG_FRAMERATE in <i>Param</i>, this parameter retrieves one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_FORMAT_SMPTE_24</description>
+          <description>24 frames per second.</description>
+        </item>
+        <item>
+          <description>ED_FORMAT_SMPTE_25</description>
+          <description>25 frames per second.</description>
+        </item>
+        <item>
+          <description>ED_FORMAT_SMPTE_30</description>
+          <description>30 frames per second. Nondrop frame.</description>
+        </item>
+        <item>
+          <description>ED_FORMAT_SMPTE_30DROP</description>
+          <description>30 frames per second. Drop frame (actually 29.97 fps).</description>
+        </item>
+      </list>
+      <para>If you specify ED_TCG_REFERENCE_SOURCE in <i>Param</i>, this parameter retrieves one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCG_FREE</description>
+          <description>No count reference source.</description>
+        </item>
+        <item>
+          <description>ED_TCG_READER</description>
+          <description>Synchronize to reader value (jamsync).</description>
+        </item>
+      </list>
+      <para>If you specify ED_TCG_SYNC_SOURCE in <i>Param</i>, this parameter retrieves one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCG_FREE</description>
+          <description>Lock to nothing (freerun).</description>
+        </item>
+        <item>
+          <description>ED_TCG_READER</description>
+          <description>Lock to timecode reader.</description>
+        </item>
+        <item>
+          <description>ED_TCG_VIDEO</description>
+          <description>Lock to incoming video.</description>
+        </item>
+      </list>
+      <para>If you specify ED_TCG_TIMECODE_TYPE in <i>Param</i>, this parameter retrieves one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCG_MIDI_FULL</description>
+          <description>MIDI full frame timecode</description>
+        </item>
+        <item>
+          <description>ED_TCG_MIDI_QF</description>
+          <description>MIDI quarter frame timecode</description>
+        </item>
+        <item>
+          <description>ED_TCG_SMPTE_LTC</description>
+          <description>Linear timecode</description>
+        </item>
+        <item>
+          <description>ED_TCG_SMPTE_VITC</description>
+          <description>Vertical interval timecode</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>This method returns various settings of the timecode generator. For more information on ED_TCG_TIMECODE_TYPE, see <see cref="IAMTimecodeReader.SetTCRMode" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTimecodeGenerator Interface" />
+  </member>
+  <member name="IAMTimecodeGenerator.GetTimecode">
+    <summary>
+      <para>The <code>GetTimecode</code> method retrieves the most recent timecode and/or userbit value available in the stream.</para>
+    </summary>
+    <param name="pTimecodeSample">
+      <para>Pointer to a <see cref="TIMECODE_SAMPLE" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>Use this method to obtain the most recent timecode value available in the stream. The application can use this to monitor the timecode and verify the generator is working properly.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTimecodeGenerator Interface" />
+    <seealso cref="IAMTimecodeGenerator.SetTimecode" />
+  </member>
+  <member name="IAMTimecodeGenerator.get_VITCLine">
+    <summary>
+      <para>The <code>get_VITCLine</code> method retrieves which line(s) the vertical interval timecode information has been inserted into.</para>
+    </summary>
+    <param name="pLine">
+      <para>Pointer to the vertical line(s) containing the timecode information (valid lines are 11-20).</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>To get VITC information from multiple lines, make successive calls to this method, once for each line desired, with the hi bit set for each line.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTimecodeGenerator Interface" />
+    <seealso cref="IAMTimecodeGenerator.put_VITCLine" />
+  </member>
+  <member name="IAMTimecodeGenerator.put_VITCLine">
+    <summary>
+      <para>The <code>put_VITCLine</code> method specifies which line to insert the vertical interval timecode information into.</para>
+    </summary>
+    <param name="Line">
+      <para>Vertical line to contain the timecode information (valid lines are 11-20; 0 means autoselect).</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>To generate VITC on specific multiple lines, make successive calls to this method, once for each line desired.</para>
+      <para>Set the high bit to add to this line to any previously set lines.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTimecodeGenerator Interface" />
+    <seealso cref="IAMTimecodeGenerator.get_VITCLine" />
+  </member>
+  <member name="IAMTimecodeGenerator.SetTCGMode">
+    <summary>
+      <para>The <code>SetTCGMode</code> method sets the SMPTE timecode generator properties.</para>
+    </summary>
+    <param name="Param">
+      <para>Timecode generator mode. Specify one of the following modes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCG_FRAMERATE</description>
+          <description>Frame rate</description>
+        </item>
+        <item>
+          <description>ED_TCG_REFERENCE_SOURCE</description>
+          <description>Source of the count value</description>
+        </item>
+        <item>
+          <description>ED_TCG_SYNC_SOURCE</description>
+          <description>Source of the hardware clock reference</description>
+        </item>
+        <item>
+          <description>ED_TCG_TIMECODE_TYPE</description>
+          <description>SMPTE timecode format of the generator</description>
+        </item>
+      </list>
+    </param>
+    <param name="Value">
+      <para>Setting of the mode specified in <i>Param</i>.</para>
+      <para>If ED_TCG_FRAMERATE is specified in <i>Param</i>, this parameter is set to one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_FORMAT_SMPTE_24</description>
+          <description>24 frames per second.</description>
+        </item>
+        <item>
+          <description>ED_FORMAT_SMPTE_25</description>
+          <description>25 frames per second.</description>
+        </item>
+        <item>
+          <description>ED_FORMAT_SMPTE_30</description>
+          <description>30 frames per second. Nondrop frame.</description>
+        </item>
+        <item>
+          <description>ED_FORMAT_SMPTE_30DROP</description>
+          <description>30 frames per second. Drop frame (actually 29.97 frames per second).</description>
+        </item>
+      </list>
+      <para>If ED_TCG_REFERENCE_SOURCE is specified in <i>Param</i>, set one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCG_FREE</description>
+          <description>No count reference source.</description>
+        </item>
+        <item>
+          <description>ED_TCG_READER</description>
+          <description>Sync to reader value (jamsync).</description>
+        </item>
+      </list>
+      <para>If ED_TCG_SYNC_SOURCE is specified in <i>Param</i>, set one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCG_FREE</description>
+          <description>Lock to nothing (freerun).</description>
+        </item>
+        <item>
+          <description>ED_TCG_READER</description>
+          <description>Lock to timecode reader.</description>
+        </item>
+        <item>
+          <description>ED_TCG_VIDEO</description>
+          <description>Lock to incoming video.</description>
+        </item>
+      </list>
+      <para>If ED_TCG_TIMECODE_TYPE is specified in <i>Param</i>, set one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>ED_TCG_MIDI_FULL</description>
+          <description>MIDI Full Frame timecode</description>
+        </item>
+        <item>
+          <description>ED_TCG_MIDI_QF</description>
+          <description>MIDI quarter frame timecode</description>
+        </item>
+        <item>
+          <description>ED_TCG_SMPTE_LTC</description>
+          <description>Linear timecode</description>
+        </item>
+        <item>
+          <description>ED_TCG_SMPTE_VITC</description>
+          <description>Vertical interval timecode</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>For more information on ED_TCG_TIMECODE_TYPE, see the <see cref="IAMTimecodeReader.SetTCRMode" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTimecodeGenerator Interface" />
+    <seealso cref="IAMTimecodeGenerator.GetTCGMode" />
+  </member>
+  <member name="IAMTimecodeGenerator.SetTimecode">
+    <summary>
+      <para>The <code>SetTimecode</code> method sets the timecode, userbit value, or both.</para>
+    </summary>
+    <param name="pTimecodeSample">
+      <para>Pointer to a <see cref="TIMECODE_SAMPLE" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>To set only timecode, set userbit value to <b>NULL</b>, and vice versa. If generator is running, these values will take effect immediately.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTimecodeGenerator Interface" />
+    <seealso cref="IAMTimecodeGenerator.GetTimecode" />
+  </member>
+  <member name="IAMTimecodeGenerator">
+    <summary>
+      <para>The <code>IAMTimecodeGenerator</code> interface controls how an external SMPTE/MIDI timecode generator supplies data to the filter graph.</para>
+      <para>DirectShow currently does not provide any filters that implement this interface. Third parties should implement this interface on any filter that controls an external timecode generator. Timecode generators can be built into a VCR or can be separate external devices. The device must be able to read timecode and send it to the computer over its control interface. If not, the user must have a timecode reader card in the computer, or you can write a software decoder that converts VITC embedded in captured video frames or LTC captured as an audio signal into DirectShow timecode samples.</para>
+      <para>SMPTE timecode is a frame addressing system that identifies video and audio sources, makes automatic track synchronization possible, and provides a container for additional data related to the production. SMPTE timecode's main purpose is to provide a machine-readable address for video and audio. It is displayed in hh:mm:ss:ff format and is thoroughly defined in ANSI/SMPTE 12-1986.</para>
+      <para>Optionally, you can enable applications to convert timecode to reference time by supporting the <see cref="IMediaSeeking.ConvertTimeFormat" /> method on the filter.</para>
+      <para>
+        <b>Hardware Requirements</b>
+      </para>
+      <para>For hardware requirements, see the <see cref="IAMExtTransport" /> interface.</para>
+    </summary>
+    <seealso cref="IAMTimecodeReader Interface" />
+  </member>
+</doc>

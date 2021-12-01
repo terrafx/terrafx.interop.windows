@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION">
+    <summary>
+      <para>The <b>ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION</b> structure is used by the <see cref="QueryActCtxW" /> function.</para>
+    </summary>
+    <remarks>
+      <para>The following example requires Windows Server 2008 R2 or Windows 7 and shows the method to retrieve information about the compatibility context.</para>
+      <code>HANDLE   ActCtxHandle=INVALID_HANDLE_VALUE;
+SIZE_T   BytesWritten=0;
+PACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION CtxCompatInfo=NULL;
+
+// Query the compatibility information size
+bReturn = QueryActCtxW(0,
+                       ActCtxHandle,
+                       NULL,
+                       CompatibilityInformationInActivationContext,
+                       NULL,
+                       0,
+                       &amp;amp;amp;amp;amp;amp;amp;BytesWritten);
+
+if (bReturn == FALSE &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; GetLastError() !=ERROR_INSUFFICIENT_BUFFER)
+       {
+     goto EXIT;
+     }
+
+CtxCompatInfo =
+(PACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION)HeapAlloc(GetProcessHeap(),
+    HEAP_ZERO_MEMORY, BytesWritten);
+
+if (CtxCompatInfo==NULL)
+       {
+     // Out of memory
+     goto EXIT;
+     }
+
+// Query the compatibility information
+bReturn = QueryActCtxW(0,
+                       ActCtxHandle,
+                       NULL,
+                       CompatibilityInformationInActivationContext,
+                       CtxCompatInfo,
+                       BytesWritten,
+                       &amp;amp;amp;amp;amp;amp;amp;BytesWritten);
+
+if (bReturn==FALSE)
+       {
+        // Unexpected error: use GetLastError() to check
+        goto EXIT;
+     }
+
+for (DWORD ElementIndex=0; ElementIndex &lt; CtxCompatInfo-&gt;ElementCount; ElementIndex ++)
+{
+PCOMPATIBILITY_CONTEXT_ELEMENT ContextElement = &amp;amp;amp;amp;amp;amp;amp;CtxCompatInfo-&gt;Elements[ElementIndex];
+if (ContextElement-&gt;Type == ACTCTX_COMPATIBILITY_ELEMENT_TYPE_OS)
+       {
+       if (memcmp(&amp;amp;amp;amp;amp;amp;amp;ContextElement-&gt;Id, &amp;amp;amp;amp;amp;amp;amp;WIN7_CONTEXT_GUID, sizeof (GUID))==0)
+             {printf_s("Windows 7 is supported");}
+     }
+}
+
+EXIT:
+if (ActCtxHandle != INVALID_HANDLE_VALUE)
+       {
+        ReleaseActCtx (ActCtxHandle)
+     }
+if (CtxCompatInfo != NULL)
+       {
+        RtlFreeHeap (RtlProcessHeap (), 0, CtxCompatInfo);
+        CtxCompatInfo = NULL;
+     }
+
+</code>
+    </remarks>
+  </member>
+  <member name="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION.ElementCount">
+    <summary>
+      <para>The number of compatibility elements defined in the application manifest.</para>
+    </summary>
+  </member>
+  <member name="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION.Elements">
+    <summary>
+      <para>This is an array of <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> structures. Each structure describes one compatibility element in the application manifest.</para>
+    </summary>
+  </member>
+</doc>

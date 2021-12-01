@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecVideoThumbnailGenerationMode.xml' path='doc/member[@name="CODECAPI_AVDecVideoThumbnailGenerationMode"]/*' />
 [Guid("2EFD8EEE-1150-4328-9CF5-66DCE933FCF4")]
 public partial struct CODECAPI_AVDecVideoThumbnailGenerationMode
 {

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLEditServices2.xml' path='doc/member[@name="IHTMLEditServices2"]/*' />
 [Guid("3050F812-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLEditServices2 : IHTMLEditServices")]
 [NativeInheritance("IHTMLEditServices")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, uint>)(lpVtbl[1]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, uint>)(lpVtbl[2]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IHTMLEditServices.AddDesigner" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddDesigner(IHTMLEditDesigner* pIDesigner)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, IHTMLEditDesigner*, int>)(lpVtbl[3]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), pIDesigner);
     }
 
+    /// <inheritdoc cref="IHTMLEditServices.RemoveDesigner" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RemoveDesigner(IHTMLEditDesigner* pIDesigner)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, IHTMLEditDesigner*, int>)(lpVtbl[4]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), pIDesigner);
     }
 
+    /// <inheritdoc cref="IHTMLEditServices.GetSelectionServices" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSelectionServices(IMarkupContainer* pIContainer, ISelectionServices** ppSelSvc)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, IMarkupContainer*, ISelectionServices**, int>)(lpVtbl[5]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), pIContainer, ppSelSvc);
     }
 
+    /// <inheritdoc cref="IHTMLEditServices.MoveToSelectionAnchor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT MoveToSelectionAnchor(IMarkupPointer* pIStartAnchor)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, IMarkupPointer*, int>)(lpVtbl[6]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), pIStartAnchor);
     }
 
+    /// <inheritdoc cref="IHTMLEditServices.MoveToSelectionEnd" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT MoveToSelectionEnd(IMarkupPointer* pIEndAnchor)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, IMarkupPointer*, int>)(lpVtbl[7]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), pIEndAnchor);
     }
 
+    /// <inheritdoc cref="IHTMLEditServices.SelectRange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int>)(lpVtbl[8]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), pStart, pEnd, eType);
     }
 
+    /// <include file='IHTMLEditServices2.xml' path='doc/member[@name="IHTMLEditServices2.MoveToSelectionAnchorEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT MoveToSelectionAnchorEx(IDisplayPointer* pIStartAnchor)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, IDisplayPointer*, int>)(lpVtbl[9]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), pIStartAnchor);
     }
 
+    /// <include file='IHTMLEditServices2.xml' path='doc/member[@name="IHTMLEditServices2.MoveToSelectionEndEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT MoveToSelectionEndEx(IDisplayPointer* pIEndAnchor)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, IDisplayPointer*, int>)(lpVtbl[10]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), pIEndAnchor);
     }
 
+    /// <include file='IHTMLEditServices2.xml' path='doc/member[@name="IHTMLEditServices2.FreezeVirtualCaretPos"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT FreezeVirtualCaretPos(BOOL fReCompute)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
         return ((delegate* unmanaged<IHTMLEditServices2*, BOOL, int>)(lpVtbl[11]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), fReCompute);
     }
 
+    /// <include file='IHTMLEditServices2.xml' path='doc/member[@name="IHTMLEditServices2.UnFreezeVirtualCaretPos"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT UnFreezeVirtualCaretPos(BOOL fReset)

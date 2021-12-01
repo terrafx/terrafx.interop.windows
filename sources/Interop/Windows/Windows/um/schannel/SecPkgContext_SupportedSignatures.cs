@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_SupportedSignatures.xml' path='doc/member[@name="SecPkgContext_SupportedSignatures"]/*' />
 public unsafe partial struct SecPkgContext_SupportedSignatures
 {
+    /// <include file='SecPkgContext_SupportedSignatures.xml' path='doc/member[@name="SecPkgContext_SupportedSignatures.cSignatureAndHashAlgorithms"]/*' />
     [NativeTypeName("WORD")]
     public ushort cSignatureAndHashAlgorithms;
 
+    /// <include file='SecPkgContext_SupportedSignatures.xml' path='doc/member[@name="SecPkgContext_SupportedSignatures.pSignatureAndHashAlgorithms"]/*' />
     [NativeTypeName("WORD *")]
     public ushort* pSignatureAndHashAlgorithms;
 }

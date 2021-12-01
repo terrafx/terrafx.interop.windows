@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WRITE_CACHE_ENABLE.xml' path='doc/member[@name="WRITE_CACHE_ENABLE"]/*' />
 public enum WRITE_CACHE_ENABLE
 {
+    /// <include file='WRITE_CACHE_ENABLE.xml' path='doc/member[@name="WRITE_CACHE_ENABLE.WriteCacheEnableUnknown"]/*' />
     WriteCacheEnableUnknown,
+
+    /// <include file='WRITE_CACHE_ENABLE.xml' path='doc/member[@name="WRITE_CACHE_ENABLE.WriteCacheDisabled"]/*' />
     WriteCacheDisabled,
+
+    /// <include file='WRITE_CACHE_ENABLE.xml' path='doc/member[@name="WRITE_CACHE_ENABLE.WriteCacheEnabled"]/*' />
     WriteCacheEnabled,
 }

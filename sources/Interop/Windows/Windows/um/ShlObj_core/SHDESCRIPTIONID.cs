@@ -7,11 +7,14 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHDESCRIPTIONID.xml' path='doc/member[@name="SHDESCRIPTIONID"]/*' />
 public partial struct SHDESCRIPTIONID
 {
+    /// <include file='SHDESCRIPTIONID.xml' path='doc/member[@name="SHDESCRIPTIONID.dwDescriptionId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDescriptionId;
 
+    /// <include file='SHDESCRIPTIONID.xml' path='doc/member[@name="SHDESCRIPTIONID.clsid"]/*' />
     [NativeTypeName("CLSID")]
     public Guid clsid;
 }

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRCREATECOLORSPACE">
+    <summary>
+      <para>The <b>EMRCREATECOLORSPACE</b> structure contains members for the <b>CreateColorSpace</b> enhanced metafile record.</para>
+    </summary>
+    <seealso cref="CreateColorSpace" />
+    <seealso cref="EMR" />
+    <seealso cref="EMRCREATECOLORSPACEW" />
+    <seealso cref="LOGCOLORSPACE" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRCREATECOLORSPACE.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATECOLORSPACE.ihCS">
+    <summary>
+      <para>The index of the color space in handle table.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATECOLORSPACE.lcs">
+    <summary>
+      <para>The logical color space.</para>
+    </summary>
+  </member>
+</doc>

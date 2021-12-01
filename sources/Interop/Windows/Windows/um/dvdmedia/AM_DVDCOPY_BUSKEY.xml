@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_DVDCOPY_BUSKEY">
+    <summary>
+      <para>Identifies the DVD bus key.</para>
+    </summary>
+    <remarks>
+      <para>The AM_PROPERTY_DVDCOPY_DVD_KEY1 and AM_PROPERTY_DVDCOPY_DEC_KEY2 properties use this structure.</para>
+      <para>A bus key is used for the DVD CSS key exchange for decryption. Implementors should get a CSS license and further instructions from CSS.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
+  </member>
+  <member name="AM_DVDCOPY_BUSKEY.BusKey">
+    <summary>
+      <para>DVD drive bus key.</para>
+    </summary>
+  </member>
+  <member name="AM_DVDCOPY_BUSKEY.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

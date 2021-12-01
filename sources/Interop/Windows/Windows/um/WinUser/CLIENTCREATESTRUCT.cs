@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CLIENTCREATESTRUCT.xml' path='doc/member[@name="CLIENTCREATESTRUCT"]/*' />
 public partial struct CLIENTCREATESTRUCT
 {
+    /// <include file='CLIENTCREATESTRUCT.xml' path='doc/member[@name="CLIENTCREATESTRUCT.hWindowMenu"]/*' />
     public HANDLE hWindowMenu;
 
+    /// <include file='CLIENTCREATESTRUCT.xml' path='doc/member[@name="CLIENTCREATESTRUCT.idFirstChild"]/*' />
     public uint idFirstChild;
 }

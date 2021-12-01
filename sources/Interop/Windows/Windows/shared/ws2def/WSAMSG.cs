@@ -5,21 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WSAMSG.xml' path='doc/member[@name="WSAMSG"]/*' />
 public unsafe partial struct WSAMSG
 {
+    /// <include file='WSAMSG.xml' path='doc/member[@name="WSAMSG.name"]/*' />
     [NativeTypeName("LPSOCKADDR")]
     public SOCKADDR* name;
 
+    /// <include file='WSAMSG.xml' path='doc/member[@name="WSAMSG.namelen"]/*' />
     public int namelen;
 
+    /// <include file='WSAMSG.xml' path='doc/member[@name="WSAMSG.lpBuffers"]/*' />
     [NativeTypeName("LPWSABUF")]
     public WSABUF* lpBuffers;
 
+    /// <include file='WSAMSG.xml' path='doc/member[@name="WSAMSG.dwBufferCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint dwBufferCount;
 
+    /// <include file='WSAMSG.xml' path='doc/member[@name="WSAMSG.Control"]/*' />
     public WSABUF Control;
 
+    /// <include file='WSAMSG.xml' path='doc/member[@name="WSAMSG.dwFlags"]/*' />
     [NativeTypeName("ULONG")]
     public uint dwFlags;
 }

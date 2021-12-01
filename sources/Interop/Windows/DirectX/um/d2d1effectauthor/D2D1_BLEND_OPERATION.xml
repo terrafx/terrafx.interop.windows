@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_BLEND_OPERATION">
+    <summary>
+      <para>Specifies the blend operation on two color sources.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration has the same numeric values as <see cref="D3D10_BLEND_OP" />.</para>
+    </remarks>
+    <seealso cref="D2D1_BLEND_DESCRIPTION" />
+    <seealso cref="ID2D1BlendTransform" />
+  </member>
+  <member name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_ADD">
+    <summary>
+      <para>Add source 1 and source 2.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_SUBTRACT">
+    <summary>
+      <para>Subtract source 1 from source 2.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_REV_SUBTRACT">
+    <summary>
+      <para>Subtract source 2 from source 1.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_MIN">
+    <summary>
+      <para>Find the minimum of source 1 and source 2.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_MAX">
+    <summary>
+      <para>Find the maximum of source 1 and source 2.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_FORCE_DWORD">
+    <summary>
+      <para>A value guaranteed to be a DWORD.</para>
+    </summary>
+  </member>
+</doc>

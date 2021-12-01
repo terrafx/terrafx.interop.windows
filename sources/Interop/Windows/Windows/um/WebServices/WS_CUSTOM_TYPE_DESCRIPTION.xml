@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_CUSTOM_TYPE_DESCRIPTION">
+    <summary>
+      <para>Represents a custom mapping between a C data type and an XML element.User-defined callbacks are invoked to do the actual reading and
+writing.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_TYPE_DESCRIPTION.size">
+    <summary>
+      <para>The size of the custom type, in bytes.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_TYPE_DESCRIPTION.alignment">
+    <summary>
+      <para>The alignment requirement of the custom type.  This must be a
+power of two between 1 and 8.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_TYPE_DESCRIPTION.readCallback">
+    <summary>
+      <para>A pointer to a callback which is invoked to read the type.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_TYPE_DESCRIPTION.writeCallback">
+    <summary>
+      <para>A pointer to a callback which is invoked to write the type.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_TYPE_DESCRIPTION.descriptionData">
+    <summary>
+      <para>This can be used to point to additional user-defined data
+specific to the type.  It is optional and may be <b>NULL</b>.</para>
+      <para>The pointer to this data is passed
+to the <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_read_type_callback">WS_READ_TYPE_CALLBACK</a> and the
+<a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_write_type_callback">WS_WRITE_TYPE_CALLBACK</a>.  This allows the
+callback to access information that is specific to this
+particular usage of the callback.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_TYPE_DESCRIPTION.isDefaultValueCallback">
+    <summary></summary>
+  </member>
+</doc>

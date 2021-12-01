@@ -5,36 +5,48 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA"]/*' />
 public unsafe partial struct OSVERSIONINFOEXA
 {
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.dwOSVersionInfoSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOSVersionInfoSize;
 
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.dwMajorVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMajorVersion;
 
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.dwMinorVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMinorVersion;
 
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.dwBuildNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBuildNumber;
 
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.dwPlatformId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPlatformId;
 
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.szCSDVersion"]/*' />
     [NativeTypeName("CHAR [128]")]
     public fixed sbyte szCSDVersion[128];
 
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.wServicePackMajor"]/*' />
     [NativeTypeName("WORD")]
     public ushort wServicePackMajor;
 
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.wServicePackMinor"]/*' />
     [NativeTypeName("WORD")]
     public ushort wServicePackMinor;
 
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.wSuiteMask"]/*' />
     [NativeTypeName("WORD")]
     public ushort wSuiteMask;
 
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.wProductType"]/*' />
     public byte wProductType;
 
+    /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.wReserved"]/*' />
     public byte wReserved;
 }

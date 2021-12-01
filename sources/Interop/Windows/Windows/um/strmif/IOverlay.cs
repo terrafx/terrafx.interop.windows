@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOverlay.xml' path='doc/member[@name="IOverlay"]/*' />
 [Guid("56A868A1-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IOverlay : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, Guid*, void**, int>)(lpVtbl[0]))((IOverlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, uint>)(lpVtbl[1]))((IOverlay*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, uint>)(lpVtbl[2]))((IOverlay*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetPalette"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPalette([NativeTypeName("DWORD *")] uint* pdwColors, PALETTEENTRY** ppPalette)
@@ -46,6 +51,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, uint*, PALETTEENTRY**, int>)(lpVtbl[3]))((IOverlay*)Unsafe.AsPointer(ref this), pdwColors, ppPalette);
     }
 
+    /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.SetPalette"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPalette([NativeTypeName("DWORD")] uint dwColors, PALETTEENTRY* pPalette)
@@ -53,6 +59,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, uint, PALETTEENTRY*, int>)(lpVtbl[4]))((IOverlay*)Unsafe.AsPointer(ref this), dwColors, pPalette);
     }
 
+    /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetDefaultColorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDefaultColorKey(COLORKEY* pColorKey)
@@ -60,6 +67,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, COLORKEY*, int>)(lpVtbl[5]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
     }
 
+    /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetColorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetColorKey(COLORKEY* pColorKey)
@@ -67,6 +75,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, COLORKEY*, int>)(lpVtbl[6]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
     }
 
+    /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.SetColorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetColorKey(COLORKEY* pColorKey)
@@ -74,6 +83,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, COLORKEY*, int>)(lpVtbl[7]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
     }
 
+    /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetWindowHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetWindowHandle(HWND* pHwnd)
@@ -81,6 +91,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, HWND*, int>)(lpVtbl[8]))((IOverlay*)Unsafe.AsPointer(ref this), pHwnd);
     }
 
+    /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetClipList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetClipList(RECT* pSourceRect, RECT* pDestinationRect, RGNDATA** ppRgnData)
@@ -88,6 +99,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, RECT*, RECT*, RGNDATA**, int>)(lpVtbl[9]))((IOverlay*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect, ppRgnData);
     }
 
+    /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetVideoPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetVideoPosition(RECT* pSourceRect, RECT* pDestinationRect)
@@ -95,6 +107,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, RECT*, RECT*, int>)(lpVtbl[10]))((IOverlay*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect);
     }
 
+    /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Advise(IOverlayNotify* pOverlayNotify, [NativeTypeName("DWORD")] uint dwInterests)
@@ -102,6 +115,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         return ((delegate* unmanaged<IOverlay*, IOverlayNotify*, uint, int>)(lpVtbl[11]))((IOverlay*)Unsafe.AsPointer(ref this), pOverlayNotify, dwInterests);
     }
 
+    /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.Unadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Unadvise()

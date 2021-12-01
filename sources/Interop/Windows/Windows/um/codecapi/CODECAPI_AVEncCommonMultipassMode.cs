@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncCommonMultipassMode.xml' path='doc/member[@name="CODECAPI_AVEncCommonMultipassMode"]/*' />
 [Guid("22533D4C-47E1-41B5-9352-A2B7780E7AC4")]
 public partial struct CODECAPI_AVEncCommonMultipassMode
 {

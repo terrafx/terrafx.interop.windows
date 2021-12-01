@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DESKBANDINFO">
+    <summary>
+      <para>Receives information about a band object. This structure is used with the deprecated <see cref="IDeskBand.GetBandInfo" /> method.</para>
+    </summary>
+  </member>
+  <member name="DESKBANDINFO.dwMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The set of flags that determine which members of this structure are being requested by the caller. One or more of the following values:</para>
+      <h4>DBIM_MINSIZE</h4>
+      <para>
+        <b>ptMinSize</b> is requested.</para>
+      <h4>DBIM_MAXSIZE</h4>
+      <para>
+        <b>ptMaxSize</b> is requested.</para>
+      <h4>DBIM_INTEGRAL</h4>
+      <para>
+        <b>ptIntegral</b> is requested.</para>
+      <h4>DBIM_ACTUAL</h4>
+      <para>
+        <b>ptActual</b> is requested.</para>
+      <h4>DBIM_TITLE</h4>
+      <para>
+        <b>wszTitle</b> is requested.</para>
+      <h4>DBIM_MODEFLAGS</h4>
+      <para>
+        <b>dwModeFlags</b> is requested.</para>
+      <h4>DBIM_BKCOLOR</h4>
+      <para>
+        <b>crBkgnd</b> is requested.</para>
+    </summary>
+  </member>
+  <member name="DESKBANDINFO.ptMinSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a></b></para>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that receives the minimum size of the band object. The minimum width is given in the <b>POINTL</b> structure's <b>x</b> member and the minimum height is given in the <b>y</b> member.</para>
+    </summary>
+  </member>
+  <member name="DESKBANDINFO.ptMaxSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a></b></para>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that receives the maximum size of the band object. The maximum height is given in the <b>POINTL</b> structure's <b>y</b> member and the <b>x</b> member is ignored. If the band object has no limit for its maximum height, (LONG)-1 should be used.</para>
+    </summary>
+  </member>
+  <member name="DESKBANDINFO.ptIntegral">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a></b></para>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that receives the sizing step value (increment) in which the band object is resized. The vertical step value is given in the <b>POINTL</b> structure's <b>y</b> member and the <b>x</b> member is ignored.</para>
+      <para>The <b>dwModeFlags</b> member must contain the DBIMF_VARIABLEHEIGHT flag; otherwise, <b>ptIntegral</b> is ignored.</para>
+    </summary>
+  </member>
+  <member name="DESKBANDINFO.ptActual">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a></b></para>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that receives the ideal size of the band object. The ideal width is given in the <b>POINTL</b> structure's <b>x</b> member and the ideal height is given in the <b>y</b> member. The band container attempts to use these values, but the band is not guaranteed to be this size.</para>
+    </summary>
+  </member>
+  <member name="DESKBANDINFO.wszTitle">
+    <summary>
+      <para>Type: <b>WCHAR[256]</b></para>
+      <para>A <b>WCHAR</b> buffer that receives the title of the band.</para>
+    </summary>
+  </member>
+  <member name="DESKBANDINFO.dwModeFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>A value that receives a set of flags that specify the mode of operation for the band object. One or more of the following values:</para>
+      <h4>DBIMF_NORMAL</h4>
+      <para>The band uses default properties. The other mode flags modify this flag.</para>
+      <h4>DBIMF_FIXED</h4>
+      <para>
+        <b>Windows XP and later:</b> The band object is of a fixed sized and position. With this flag, a sizing grip is not displayed on the band object.</para>
+      <h4>DBIMF_FIXEDBMP</h4>
+      <para>
+        <b>Windows XP and later:</b> The band object uses a fixed bitmap (.bmp) file as its background. Note that backgrounds are not supported in all cases, so the bitmap may not be seen even when this flag is set.</para>
+      <h4>DBIMF_VARIABLEHEIGHT</h4>
+      <para>The height of the band object can be changed. The <b>ptIntegral</b> member defines the step value by which the band object can be resized.</para>
+      <h4>DBIMF_UNDELETEABLE</h4>
+      <para>
+        <b>Windows XP and later:</b> The band object cannot be removed from the band container.</para>
+      <h4>DBIMF_DEBOSSED</h4>
+      <para>The band object is displayed with a sunken appearance.</para>
+      <h4>DBIMF_BKCOLOR</h4>
+      <para>The band is displayed with the background color specified in <b>crBkgnd</b>.</para>
+      <h4>DBIMF_USECHEVRON</h4>
+      <para>
+        <b>Windows XP and later:</b> If the full band object cannot be displayed (that is, the band object is smaller than <b>ptActual</b>, a chevron is shown to indicate that there are more options available. These options are displayed when the chevron is clicked.</para>
+      <h4>DBIMF_BREAK</h4>
+      <para>
+        <b>Windows XP and later:</b> The band object is displayed in a new row in the band container.</para>
+      <h4>DBIMF_ADDTOFRONT</h4>
+      <para>
+        <b>Windows XP and later:</b> The band object is the first object in the band container.</para>
+      <h4>DBIMF_TOPALIGN</h4>
+      <para>
+        <b>Windows XP and later:</b> The band object is displayed in the top row of the band container.</para>
+      <h4>DBIMF_NOGRIPPER</h4>
+      <para>
+        <b>Windows Vista and later:</b> No sizing grip is ever displayed to allow the user to move or resize the band object.</para>
+      <h4>DBIMF_ALWAYSGRIPPER</h4>
+      <para>
+        <b>Windows Vista and later:</b> A sizing grip that allows the user to move or resize the band object is always shown, even if that band object is the only one in the container.</para>
+      <h4>DBIMF_NOMARGINS</h4>
+      <para>
+        <b>Windows Vista and later:</b> The band object should not display margins.</para>
+    </summary>
+  </member>
+  <member name="DESKBANDINFO.crBkgnd">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure that receives the background color of the band. The <b>dwModeFlags</b> member must contain the <b>DBIMF_BKCOLOR</b> flag; otherwise, <b>crBkgnd</b> is ignored.</para>
+    </summary>
+  </member>
+</doc>

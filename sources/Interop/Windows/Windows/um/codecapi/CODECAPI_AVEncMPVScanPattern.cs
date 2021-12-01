@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVScanPattern.xml' path='doc/member[@name="CODECAPI_AVEncMPVScanPattern"]/*' />
 [Guid("7F8A478E-7BBB-4AE2-B2FC-96D17FC4A2D6")]
 public partial struct CODECAPI_AVEncMPVScanPattern
 {

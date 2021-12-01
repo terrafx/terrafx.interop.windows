@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMLINK">
+    <summary>
+      <para>The <b>NMLINK</b> Contains notification information. Send this structure with the <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-click-syslink">NM_CLICK</a> or <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-return">NM_RETURN</a> messages.</para>
+    </summary>
+    <seealso cref="LITEM" />
+    <seealso cref="NMHDR" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/nm-click-syslink">NM_CLICK (syslink)</seealso>
+  </member>
+  <member name="NMLINK.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>
+        <see cref="NMHDR" /> structure that contains information about the notification.</para>
+    </summary>
+  </member>
+  <member name="NMLINK.item">
+    <summary>
+      <para>Type: <b><see cref="LITEM" /></b></para>
+      <para>
+        <see cref="LITEM" /> structure that contains information about the link item.</para>
+    </summary>
+  </member>
+</doc>

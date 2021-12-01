@@ -7,10 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TIMECAPS.xml' path='doc/member[@name="TIMECAPS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct TIMECAPS
 {
+    /// <include file='TIMECAPS.xml' path='doc/member[@name="TIMECAPS.wPeriodMin"]/*' />
     public uint wPeriodMin;
 
+    /// <include file='TIMECAPS.xml' path='doc/member[@name="TIMECAPS.wPeriodMax"]/*' />
     public uint wPeriodMax;
 }

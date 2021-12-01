@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NL_ROUTE_ORIGIN.xml' path='doc/member[@name="NL_ROUTE_ORIGIN"]/*' />
 public enum NL_ROUTE_ORIGIN
 {
+    /// <include file='NL_ROUTE_ORIGIN.xml' path='doc/member[@name="NL_ROUTE_ORIGIN.NlroManual"]/*' />
     NlroManual,
+
+    /// <include file='NL_ROUTE_ORIGIN.xml' path='doc/member[@name="NL_ROUTE_ORIGIN.NlroWellKnown"]/*' />
     NlroWellKnown,
+
+    /// <include file='NL_ROUTE_ORIGIN.xml' path='doc/member[@name="NL_ROUTE_ORIGIN.NlroDHCP"]/*' />
     NlroDHCP,
+
+    /// <include file='NL_ROUTE_ORIGIN.xml' path='doc/member[@name="NL_ROUTE_ORIGIN.NlroRouterAdvertisement"]/*' />
     NlroRouterAdvertisement,
+
+    /// <include file='NL_ROUTE_ORIGIN.xml' path='doc/member[@name="NL_ROUTE_ORIGIN.Nlro6to4"]/*' />
     Nlro6to4,
 }

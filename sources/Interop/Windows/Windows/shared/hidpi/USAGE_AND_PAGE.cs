@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USAGE_AND_PAGE.xml' path='doc/member[@name="USAGE_AND_PAGE"]/*' />
 public partial struct USAGE_AND_PAGE
 {
+    /// <include file='USAGE_AND_PAGE.xml' path='doc/member[@name="USAGE_AND_PAGE.Usage"]/*' />
     [NativeTypeName("USAGE")]
     public ushort Usage;
 
+    /// <include file='USAGE_AND_PAGE.xml' path='doc/member[@name="USAGE_AND_PAGE.UsagePage"]/*' />
     [NativeTypeName("USAGE")]
     public ushort UsagePage;
 }

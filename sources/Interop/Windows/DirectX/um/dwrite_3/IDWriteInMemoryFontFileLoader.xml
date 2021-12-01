@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteInMemoryFontFileLoader.CreateInMemoryFontFileReference">
+    <summary>
+      <para>Creates a font file reference (<see cref="IDWriteFontFile" /> object) from an array of bytes. The font file reference is bound to the <see cref="IDWriteInMemoryFontFileLoader" /> instance with which it was
+created and remains valid for as long as that loader is registered with the factory.</para>
+    </summary>
+    <param name="factory">
+      <para>Type: <b><see cref="IDWriteFactory" />*</b></para>
+      <para>Factory object used to create the font file reference.</para>
+    </param>
+    <param name="fontData">
+      <para>Type: <b>void const*</b></para>
+      <para>Pointer to a memory block containing the font data.</para>
+    </param>
+    <param name="fontDataSize">
+      <para>Type: <b>UINT32</b></para>
+      <para>Size of the font data.</para>
+    </param>
+    <param name="ownerObject">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>Optional object that owns the memory specified by the fontData parameter. If this parameter is not NULL, the method stores a
+pointer to the font data and adds a reference to the owner object. The fontData pointer must remain valid until the owner object is released. If
+this parameter is NULL, the method makes a copy of the font data.</para>
+    </param>
+    <param name="fontFile">
+      <para>Type: <b><see cref="IDWriteFontFile" />**</b></para>
+      <para>Receives a pointer to the newly-created font file reference.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/directwrite/custom-font-sets-win10#creating-a-custom-font-set-using-font-data-loaded-into-memory">Creating a custom font set using font data loaded into memory</seealso>
+    <seealso cref="IDWriteInMemoryFontFileLoader" />
+  </member>
+  <member name="IDWriteInMemoryFontFileLoader.GetFileCount">
+    <summary>
+      <para>Returns the number of font file references that have been created using this loader instance.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>Returns the number of font file references that have been created using this loader instance.</para>
+    </returns>
+    <seealso cref="IDWriteInMemoryFontFileLoader" />
+  </member>
+  <member name="IDWriteInMemoryFontFileLoader">
+    <summary>
+      <para>Represents a font file loader that can access in-memory fonts.
+The <see cref="IDWriteFactory5.CreateInMemoryFontFileLoader" /> method returns an instance of this interface,
+which the client can use to load in-memory fonts without having to implement a custom loader.
+A client can also create its own custom implementation, however. In either case, the client is responsible for registering and unregistering the loader
+using <see cref="IDWriteFactory.RegisterFontFileLoader" /></para>
+      <para>and <see cref="IDWriteFactory.UnregisterFontFileLoader" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/win32/directwrite/custom-font-sets-win10#creating-a-custom-font-set-using-font-data-loaded-into-memory">Creating a custom font set using font data loaded into memory</seealso>
+    <seealso cref="IDWriteFontFileLoader" />
+  </member>
+</doc>

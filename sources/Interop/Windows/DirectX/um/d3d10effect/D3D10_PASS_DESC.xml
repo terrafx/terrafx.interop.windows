@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_PASS_DESC">
+    <summary>
+      <para>Describes an effect pass, which contains pipeline state.</para>
+    </summary>
+    <remarks>
+      <para>Get a pass description by calling <see cref="ID3D10EffectPass.GetDesc" />; an effect technique contains one or more passes.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-structures">Effect Structures (Direct3D 10)</seealso>
+  </member>
+  <member name="D3D10_PASS_DESC.Name">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>A string that contains the name of the pass; otherwise <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D10_PASS_DESC.Annotations">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of annotations.</para>
+    </summary>
+  </member>
+  <member name="D3D10_PASS_DESC.pIAInputSignature">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a>*</b></para>
+      <para>A pointer to the input signature or the vertex shader; otherwise <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D10_PASS_DESC.IAInputSignatureSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
+      <para>The size of the input signature (in bytes).</para>
+    </summary>
+  </member>
+  <member name="D3D10_PASS_DESC.StencilRef">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The stencil-reference value used in the depth-stencil state (see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-depth-stencil">Configuring Depth-Stencil Functionality (Direct3D 10)</a>).</para>
+    </summary>
+  </member>
+  <member name="D3D10_PASS_DESC.SampleMask">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The sample mask for the blend state (see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-blend-state">Configuring Blending Functionality (Direct3D 10)</a>).</para>
+    </summary>
+  </member>
+  <member name="D3D10_PASS_DESC.BlendFactor">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The per-component blend factors (RGBA) for the blend state (see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-blend-state">Configuring Blending Functionality (Direct3D 10)</a>).</para>
+    </summary>
+  </member>
+</doc>

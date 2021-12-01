@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_PARAMETER_DESCRIPTION.xml' path='doc/member[@name="WS_PARAMETER_DESCRIPTION"]/*' />
 public partial struct WS_PARAMETER_DESCRIPTION
 {
+    /// <include file='WS_PARAMETER_DESCRIPTION.xml' path='doc/member[@name="WS_PARAMETER_DESCRIPTION.parameterType"]/*' />
     public WS_PARAMETER_TYPE parameterType;
 
+    /// <include file='WS_PARAMETER_DESCRIPTION.xml' path='doc/member[@name="WS_PARAMETER_DESCRIPTION.inputMessageIndex"]/*' />
     public ushort inputMessageIndex;
 
+    /// <include file='WS_PARAMETER_DESCRIPTION.xml' path='doc/member[@name="WS_PARAMETER_DESCRIPTION.outputMessageIndex"]/*' />
     public ushort outputMessageIndex;
 }

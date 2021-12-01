@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideoArea.xml' path='doc/member[@name="MFVideoArea"]/*' />
 public partial struct MFVideoArea
 {
+    /// <include file='MFVideoArea.xml' path='doc/member[@name="MFVideoArea.OffsetX"]/*' />
     public MFOffset OffsetX;
 
+    /// <include file='MFVideoArea.xml' path='doc/member[@name="MFVideoArea.OffsetY"]/*' />
     public MFOffset OffsetY;
 
+    /// <include file='MFVideoArea.xml' path='doc/member[@name="MFVideoArea.Area"]/*' />
     public SIZE Area;
 }

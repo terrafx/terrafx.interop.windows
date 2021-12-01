@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleGridRowSpan.xml' path='doc/member[@name="styleGridRowSpan"]/*' />
 public enum styleGridRowSpan
 {
+    /// <include file='styleGridRowSpan.xml' path='doc/member[@name="styleGridRowSpan.styleGridRowSpanNotSet"]/*' />
     styleGridRowSpanNotSet = 0,
+
+    /// <include file='styleGridRowSpan.xml' path='doc/member[@name="styleGridRowSpan.styleGridRowSpan_Max"]/*' />
     styleGridRowSpan_Max = 2147483647,
 }

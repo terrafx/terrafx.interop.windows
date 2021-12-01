@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETARCDIRECTION.xml' path='doc/member[@name="EMRSETARCDIRECTION"]/*' />
 public partial struct EMRSETARCDIRECTION
 {
+    /// <include file='EMRSETARCDIRECTION.xml' path='doc/member[@name="EMRSETARCDIRECTION.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETARCDIRECTION.xml' path='doc/member[@name="EMRSETARCDIRECTION.iArcDirection"]/*' />
     [NativeTypeName("DWORD")]
     public uint iArcDirection;
 }

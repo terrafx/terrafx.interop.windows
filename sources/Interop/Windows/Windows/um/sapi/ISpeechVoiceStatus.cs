@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus"]/*' />
 [Guid("8BE47B07-57F6-11D2-9EEE-00C04F797396")]
 [NativeTypeName("struct ISpeechVoiceStatus : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, uint>)(lpVtbl[1]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, uint>)(lpVtbl[2]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, uint*, int>)(lpVtbl[3]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_CurrentStreamNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_CurrentStreamNumber([NativeTypeName("long *")] int* StreamNumber)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[7]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), StreamNumber);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_LastStreamNumberQueued"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_LastStreamNumberQueued([NativeTypeName("long *")] int* StreamNumber)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[8]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), StreamNumber);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_LastHResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_LastHResult([NativeTypeName("long *")] int* HResult)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[9]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), HResult);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_RunningState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_RunningState(SpeechRunState* State)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, SpeechRunState*, int>)(lpVtbl[10]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), State);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_InputWordPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_InputWordPosition([NativeTypeName("long *")] int* Position)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[11]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Position);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_InputWordLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_InputWordLength([NativeTypeName("long *")] int* Length)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[12]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Length);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_InputSentencePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_InputSentencePosition([NativeTypeName("long *")] int* Position)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[13]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Position);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_InputSentenceLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_InputSentenceLength([NativeTypeName("long *")] int* Length)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[14]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Length);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_LastBookmark"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_LastBookmark([NativeTypeName("BSTR *")] ushort** Bookmark)
@@ -130,6 +147,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, ushort**, int>)(lpVtbl[15]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Bookmark);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_LastBookmarkId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_LastBookmarkId([NativeTypeName("long *")] int* BookmarkId)
@@ -137,6 +155,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[16]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), BookmarkId);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_PhonemeId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_PhonemeId(short* PhoneId)
@@ -144,6 +163,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
         return ((delegate* unmanaged<ISpeechVoiceStatus*, short*, int>)(lpVtbl[17]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), PhoneId);
     }
 
+    /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_VisemeId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_VisemeId(short* VisemeId)

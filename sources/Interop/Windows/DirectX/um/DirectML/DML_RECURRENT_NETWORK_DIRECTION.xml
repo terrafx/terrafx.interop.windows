@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_RECURRENT_NETWORK_DIRECTION">
+    <summary>
+      <para>Defines constants that specify a direction for a recurrent DirectML operator.</para>
+    </summary>
+  </member>
+  <member name="DML_RECURRENT_NETWORK_DIRECTION.DML_RECURRENT_NETWORK_DIRECTION_FORWARD">
+    <summary>
+      <para>Indicates the forward pass.</para>
+    </summary>
+  </member>
+  <member name="DML_RECURRENT_NETWORK_DIRECTION.DML_RECURRENT_NETWORK_DIRECTION_BACKWARD">
+    <summary>
+      <para>Indicates the backward pass.</para>
+    </summary>
+  </member>
+  <member name="DML_RECURRENT_NETWORK_DIRECTION.DML_RECURRENT_NETWORK_DIRECTION_BIDIRECTIONAL">
+    <summary>
+      <para>Indicates both passes.</para>
+    </summary>
+  </member>
+</doc>

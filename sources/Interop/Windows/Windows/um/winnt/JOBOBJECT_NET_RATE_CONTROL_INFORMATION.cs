@@ -7,13 +7,17 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_NET_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NET_RATE_CONTROL_INFORMATION"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct JOBOBJECT_NET_RATE_CONTROL_INFORMATION
 {
+    /// <include file='JOBOBJECT_NET_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NET_RATE_CONTROL_INFORMATION.MaxBandwidth"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong MaxBandwidth;
 
+    /// <include file='JOBOBJECT_NET_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NET_RATE_CONTROL_INFORMATION.ControlFlags"]/*' />
     public JOB_OBJECT_NET_RATE_CONTROL_FLAGS ControlFlags;
 
+    /// <include file='JOBOBJECT_NET_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NET_RATE_CONTROL_INFORMATION.DscpTag"]/*' />
     public byte DscpTag;
 }

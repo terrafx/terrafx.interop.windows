@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMTTCUSTOMDRAW">
+    <summary>
+      <para>Contains information specific to an <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-customdraw-tooltip">NM_CUSTOMDRAW</a> notification code sent by a tooltip control.</para>
+    </summary>
+  </member>
+  <member name="NMTTCUSTOMDRAW.nmcd">
+    <summary>
+      <para>Type: <b><see cref="NMCUSTOMDRAW" /></b></para>
+      <para>Contains general custom draw information.</para>
+    </summary>
+  </member>
+  <member name="NMTTCUSTOMDRAW.uDrawFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Specifies how tooltip text will be formatted when it is displayed. An application may change this field to alter the way text is drawn. This value is passed to the <see cref="DrawText" /> function internally. All values for the
+<i>uFormat</i> parameter of <b>DrawText</b> are valid.</para>
+    </summary>
+  </member>
+</doc>

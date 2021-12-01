@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1Resource.xml' path='doc/member[@name="ID2D1Resource"]/*' />
 [Guid("2CD90691-12E2-11DC-9FED-001143A055F9")]
 [NativeTypeName("struct ID2D1Resource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1Resource : ID2D1Resource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1Resource : ID2D1Resource.Interface
         return ((delegate* unmanaged<ID2D1Resource*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Resource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1Resource : ID2D1Resource.Interface
         return ((delegate* unmanaged<ID2D1Resource*, uint>)(lpVtbl[1]))((ID2D1Resource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1Resource : ID2D1Resource.Interface
         return ((delegate* unmanaged<ID2D1Resource*, uint>)(lpVtbl[2]))((ID2D1Resource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1Resource.xml' path='doc/member[@name="ID2D1Resource.GetFactory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SERVICE_HOST_STATE">
+    <summary>
+      <para>The states that a service host can be in.</para>
+    </summary>
+    <remarks>
+      <para>The following are the state transitions for a service host.</para>
+      <para>.:image type="content" source="./images/ServiceHostStates.png" border="false" alt-text="Diagram showing the possible states of a service host object and the transitions between them.".:</para>
+    </remarks>
+  </member>
+  <member name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_CREATED">
+    <summary></summary>
+  </member>
+  <member name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_OPENING">
+    <summary></summary>
+  </member>
+  <member name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_OPEN">
+    <summary></summary>
+  </member>
+  <member name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_CLOSING">
+    <summary></summary>
+  </member>
+  <member name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_CLOSED">
+    <summary></summary>
+  </member>
+  <member name="WS_SERVICE_HOST_STATE.WS_SERVICE_HOST_STATE_FAULTED">
+    <summary></summary>
+  </member>
+</doc>

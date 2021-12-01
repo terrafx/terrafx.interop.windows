@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DOWNSTATES.xml' path='doc/member[@name="DOWNSTATES"]/*' />
 public enum DOWNSTATES
 {
+    /// <include file='DOWNSTATES.xml' path='doc/member[@name="DOWNSTATES.DNS_NORMAL"]/*' />
     DNS_NORMAL = 1,
+
+    /// <include file='DOWNSTATES.xml' path='doc/member[@name="DOWNSTATES.DNS_HOT"]/*' />
     DNS_HOT = 2,
+
+    /// <include file='DOWNSTATES.xml' path='doc/member[@name="DOWNSTATES.DNS_PRESSED"]/*' />
     DNS_PRESSED = 3,
+
+    /// <include file='DOWNSTATES.xml' path='doc/member[@name="DOWNSTATES.DNS_DISABLED"]/*' />
     DNS_DISABLED = 4,
 }

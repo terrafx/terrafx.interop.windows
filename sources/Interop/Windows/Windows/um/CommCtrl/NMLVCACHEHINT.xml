@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMLVCACHEHINT">
+    <summary>
+      <para>Contains information used to update the cached item information for use with a <a href="https://docs.microsoft.com//windows/desktop/Controls/list-view-controls-overview">virtual list view</a>.</para>
+    </summary>
+  </member>
+  <member name="NMLVCACHEHINT.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>
+        <see cref="NMHDR" /> structure that contains information about this notification message.</para>
+    </summary>
+  </member>
+  <member name="NMLVCACHEHINT.iFrom">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Starting index of the requested range of items. This value is inclusive.</para>
+    </summary>
+  </member>
+  <member name="NMLVCACHEHINT.iTo">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Ending index of the requested range of items. This value is inclusive.</para>
+    </summary>
+  </member>
+</doc>

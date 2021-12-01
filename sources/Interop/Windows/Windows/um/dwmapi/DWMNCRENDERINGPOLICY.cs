@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DWMNCRENDERINGPOLICY.xml' path='doc/member[@name="DWMNCRENDERINGPOLICY"]/*' />
 public enum DWMNCRENDERINGPOLICY
 {
+    /// <include file='DWMNCRENDERINGPOLICY.xml' path='doc/member[@name="DWMNCRENDERINGPOLICY.DWMNCRP_USEWINDOWSTYLE"]/*' />
     DWMNCRP_USEWINDOWSTYLE,
+
+    /// <include file='DWMNCRENDERINGPOLICY.xml' path='doc/member[@name="DWMNCRENDERINGPOLICY.DWMNCRP_DISABLED"]/*' />
     DWMNCRP_DISABLED,
+
+    /// <include file='DWMNCRENDERINGPOLICY.xml' path='doc/member[@name="DWMNCRENDERINGPOLICY.DWMNCRP_ENABLED"]/*' />
     DWMNCRP_ENABLED,
+
+    /// <include file='DWMNCRENDERINGPOLICY.xml' path='doc/member[@name="DWMNCRENDERINGPOLICY.DWMNCRP_LAST"]/*' />
     DWMNCRP_LAST,
 }

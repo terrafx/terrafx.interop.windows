@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteLocalFontFileLoader.GetFilePathFromKey">
+    <summary>
+      <para>Obtains the absolute font file path from the font file reference key.</para>
+    </summary>
+    <param name="fontFileReferenceKey">
+      <para>Type: <b>const void*</b></para>
+      <para>The font file reference key that uniquely identifies the local font file
+within the scope of the font loader being used.</para>
+    </param>
+    <param name="fontFileReferenceKeySize">
+      <para>Type: <b>UINT32</b></para>
+      <para>The size of font file reference key in bytes.</para>
+    </param>
+    <param name="filePath">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>The character array that receives the local file path.</para>
+    </param>
+    <param name="filePathSize">
+      <para>Type: <b>UINT32</b></para>
+      <para>The length of the file path character array.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritelocalfontfileloader">IDWriteLocalFontFileLoader</seealso>
+  </member>
+  <member name="IDWriteLocalFontFileLoader.GetFilePathLengthFromKey">
+    <summary>
+      <para>Obtains the length of the absolute file path from the font file reference key.</para>
+    </summary>
+    <param name="fontFileReferenceKey">
+      <para>Type: <b>const void*</b></para>
+      <para>Font file reference key that uniquely identifies the local font file
+within the scope of the font loader being used.</para>
+    </param>
+    <param name="fontFileReferenceKeySize">
+      <para>Type: <b>UINT32</b></para>
+      <para>Size of font file reference key in bytes.</para>
+    </param>
+    <param name="filePathLength">
+      <para>Type: <b>UINT32*</b></para>
+      <para>Length of the file path string, not including the terminated <b>NULL</b> character.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritelocalfontfileloader">IDWriteLocalFontFileLoader</seealso>
+  </member>
+  <member name="IDWriteLocalFontFileLoader.GetLastWriteTimeFromKey">
+    <summary>
+      <para>Obtains the last write time of the file from the font file reference key.</para>
+    </summary>
+    <param name="fontFileReferenceKey">
+      <para>Type: <b>const void*</b></para>
+      <para>The font file reference key that uniquely identifies the local font file
+within the scope of the font loader being used.</para>
+    </param>
+    <param name="fontFileReferenceKeySize">
+      <para>Type: <b>UINT32</b></para>
+      <para>The size of font file reference key in bytes.</para>
+    </param>
+    <param name="lastWriteTime">
+      <para>Type: <b>FILETIME*</b></para>
+      <para>The time of the last font file modification.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritelocalfontfileloader">IDWriteLocalFontFileLoader</seealso>
+  </member>
+  <member name="IDWriteLocalFontFileLoader">
+    <summary>
+      <para>A built-in implementation of the <see cref="IDWriteFontFileLoader" /> interface, that operates on local font files
+and exposes local font file information from the font file reference key. Font file references created using <see cref="CreateFontFileReference" /> use this font file loader.</para>
+    </summary>
+  </member>
+</doc>

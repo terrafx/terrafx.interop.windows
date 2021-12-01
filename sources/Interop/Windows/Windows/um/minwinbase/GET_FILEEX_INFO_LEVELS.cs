@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GET_FILEEX_INFO_LEVELS.xml' path='doc/member[@name="GET_FILEEX_INFO_LEVELS"]/*' />
 public enum GET_FILEEX_INFO_LEVELS
 {
+    /// <include file='GET_FILEEX_INFO_LEVELS.xml' path='doc/member[@name="GET_FILEEX_INFO_LEVELS.GetFileExInfoStandard"]/*' />
     GetFileExInfoStandard,
+
+    /// <include file='GET_FILEEX_INFO_LEVELS.xml' path='doc/member[@name="GET_FILEEX_INFO_LEVELS.GetFileExMaxInfoLevel"]/*' />
     GetFileExMaxInfoLevel,
 }

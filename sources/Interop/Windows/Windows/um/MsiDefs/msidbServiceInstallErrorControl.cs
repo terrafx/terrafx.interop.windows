@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbServiceInstallErrorControl.xml' path='doc/member[@name="msidbServiceInstallErrorControl"]/*' />
 public enum msidbServiceInstallErrorControl
 {
+    /// <include file='msidbServiceInstallErrorControl.xml' path='doc/member[@name="msidbServiceInstallErrorControl.msidbServiceInstallErrorControlVital"]/*' />
     msidbServiceInstallErrorControlVital = 0x00008000,
 }

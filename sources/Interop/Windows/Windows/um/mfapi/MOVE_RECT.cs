@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOVE_RECT.xml' path='doc/member[@name="MOVE_RECT"]/*' />
 public partial struct MOVE_RECT
 {
+    /// <include file='MOVE_RECT.xml' path='doc/member[@name="MOVE_RECT.SourcePoint"]/*' />
     public POINT SourcePoint;
 
+    /// <include file='MOVE_RECT.xml' path='doc/member[@name="MOVE_RECT.DestRect"]/*' />
     public RECT DestRect;
 }

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WCM_CONNECTION_COST">
+    <summary>
+      <para>The <b>WCM_CONNECTION_COST</b> enumerated type determines the connection cost type and flags.</para>
+    </summary>
+  </member>
+  <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_UNKNOWN">
+    <summary>
+      <para>Connection cost information is not available.</para>
+    </summary>
+  </member>
+  <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_UNRESTRICTED">
+    <summary>
+      <para>The connection is unlimited and has unrestricted usage constraints.</para>
+    </summary>
+  </member>
+  <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_FIXED">
+    <summary>
+      <para>Usage counts toward a fixed allotment of data which the user has already paid for (or agreed to pay for).</para>
+    </summary>
+  </member>
+  <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_VARIABLE">
+    <summary>
+      <para>The connection cost is on a per-byte basis.</para>
+    </summary>
+  </member>
+  <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_OVERDATALIMIT">
+    <summary>
+      <para>The connection has exceeded its data limit.</para>
+    </summary>
+  </member>
+  <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_CONGESTED">
+    <summary>
+      <para>The connection is throttled due to high traffic.</para>
+    </summary>
+  </member>
+  <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_ROAMING">
+    <summary>
+      <para>The connection is outside of the home network.</para>
+      <para>
+        <b>Note</b>  The <b>WCM_CONNECTION_COST_ROAMING</b> value comes directly from  the connection source. Attempts to set it directly will fail.</para>
+    </summary>
+  </member>
+  <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_APPROACHINGDATALIMIT">
+    <summary>
+      <para>The connection is approaching its data limit.</para>
+    </summary>
+  </member>
+</doc>

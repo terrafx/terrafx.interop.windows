@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NOTIFICATION_USER_INPUT_DATA.xml' path='doc/member[@name="NOTIFICATION_USER_INPUT_DATA"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct NOTIFICATION_USER_INPUT_DATA
 {
+    /// <include file='NOTIFICATION_USER_INPUT_DATA.xml' path='doc/member[@name="NOTIFICATION_USER_INPUT_DATA.Key"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* Key;
 
+    /// <include file='NOTIFICATION_USER_INPUT_DATA.xml' path='doc/member[@name="NOTIFICATION_USER_INPUT_DATA.Value"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* Value;
 }

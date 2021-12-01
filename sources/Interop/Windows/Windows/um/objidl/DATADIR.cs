@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DATADIR.xml' path='doc/member[@name="DATADIR"]/*' />
 public enum DATADIR
 {
+    /// <include file='DATADIR.xml' path='doc/member[@name="DATADIR.DATADIR_GET"]/*' />
     DATADIR_GET = 1,
+
+    /// <include file='DATADIR.xml' path='doc/member[@name="DATADIR.DATADIR_SET"]/*' />
     DATADIR_SET = 2,
 }

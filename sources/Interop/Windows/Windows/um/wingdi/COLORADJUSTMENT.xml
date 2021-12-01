@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COLORADJUSTMENT">
+    <summary>
+      <para>The <b>COLORADJUSTMENT</b> structure defines the color adjustment values used by the <see cref="StretchBlt" /> and <see cref="StretchDIBits" /> functions when the stretch mode is HALFTONE. You can set the color adjustment values by calling the <see cref="SetColorAdjustment" /> function.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmap-structures">Bitmap Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmaps">Bitmaps Overview</seealso>
+    <seealso cref="GetColorAdjustment " />
+    <seealso cref="SetColorAdjustment " />
+    <seealso cref="SetStretchBltMode " />
+    <seealso cref="StretchBlt " />
+    <seealso cref="StretchDIBits " />
+  </member>
+  <member name="COLORADJUSTMENT.caSize">
+    <summary>
+      <para>The size, in bytes, of the structure.</para>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caFlags">
+    <summary>
+      <para>Specifies how the output image should be prepared. This member may be set to <b>NULL</b> or any combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>CA_NEGATIVE</description>
+          <description>Specifies that the negative of the original image should be displayed.</description>
+        </item>
+        <item>
+          <description>CA_LOG_FILTER</description>
+          <description>Specifies that a logarithmic function should be applied to the final density of the output colors. This will increase the color contrast when the luminance is low.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caIlluminantIndex">
+    <summary>
+      <para>The type of standard light source under which the image is viewed. This member may be set to one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>ILLUMINANT_DEVICE_DEFAULT</description>
+          <description>Device's default. Standard used by output devices.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_A</description>
+          <description>Tungsten lamp.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_B</description>
+          <description>Noon sunlight.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_C</description>
+          <description>NTSC daylight.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_D50</description>
+          <description>Normal print.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_D55</description>
+          <description>Bond paper print.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_D65</description>
+          <description>Standard daylight. Standard for CRTs and pictures.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_D75</description>
+          <description>Northern daylight.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_F2</description>
+          <description>Cool white lamp.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_TUNGSTEN</description>
+          <description>Same as ILLUMINANT_A.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_DAYLIGHT</description>
+          <description>Same as ILLUMINANT_C.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_FLUORESCENT</description>
+          <description>Same as ILLUMINANT_F2.</description>
+        </item>
+        <item>
+          <description>ILLUMINANT_NTSC</description>
+          <description>Same as ILLUMINANT_C.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caRedGamma">
+    <summary>
+      <para>Specifies the <i>n</i><sup>th</sup> power gamma-correction value for the red primary of the source colors. The value must be in the range from 2500 to 65,000. A value of 10,000 means no gamma correction.</para>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caGreenGamma">
+    <summary>
+      <para>Specifies the <i>n</i><sup>th</sup> power gamma-correction value for the green primary of the source colors. The value must be in the range from 2500 to 65,000. A value of 10,000 means no gamma correction.</para>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caBlueGamma">
+    <summary>
+      <para>Specifies the <i>n</i><sup>th</sup> power gamma-correction value for the blue primary of the source colors. The value must be in the range from 2500 to 65,000. A value of 10,000 means no gamma correction.</para>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caReferenceBlack">
+    <summary>
+      <para>The black reference for the source colors. Any colors that are darker than this are treated as black. The value must be in the range from 0 to 4000.</para>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caReferenceWhite">
+    <summary>
+      <para>The white reference for the source colors. Any colors that are lighter than this are treated as white. The value must be in the range from 6000 to 10,000.</para>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caContrast">
+    <summary>
+      <para>The amount of contrast to be applied to the source object. The value must be in the range from -100 to 100. A value of 0 means no contrast adjustment.</para>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caBrightness">
+    <summary>
+      <para>The amount of brightness to be applied to the source object. The value must be in the range from -100 to 100. A value of 0 means no brightness adjustment.</para>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caColorfulness">
+    <summary>
+      <para>The amount of colorfulness to be applied to the source object. The value must be in the range from -100 to 100. A value of 0 means no colorfulness adjustment.</para>
+    </summary>
+  </member>
+  <member name="COLORADJUSTMENT.caRedGreenTint">
+    <summary>
+      <para>The amount of red or green tint adjustment to be applied to the source object. The value must be in the range from -100 to 100. Positive numbers adjust toward red and negative numbers adjust toward green. Zero means no tint adjustment.</para>
+    </summary>
+  </member>
+</doc>

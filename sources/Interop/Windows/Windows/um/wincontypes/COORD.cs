@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COORD.xml' path='doc/member[@name="COORD"]/*' />
 public partial struct COORD
 {
+    /// <include file='COORD.xml' path='doc/member[@name="COORD.X"]/*' />
     public short X;
 
+    /// <include file='COORD.xml' path='doc/member[@name="COORD.Y"]/*' />
     public short Y;
 }

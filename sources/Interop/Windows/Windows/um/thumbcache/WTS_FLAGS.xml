@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WTS_FLAGS">
+    <summary>
+      <para>Values used by <see cref="IThumbnailCache.GetThumbnail" /> to specify options for the extraction and display of the thumbnail image.</para>
+    </summary>
+    <remarks>
+      <para>The following combinations are valid.</para>
+      <list type="table">
+        <listheader>
+          <description>WTS_INCACHEONLY</description>
+        </listheader>
+        <item>
+          <description>WTS_FASTEXTRACT</description>
+        </item>
+        <item>
+          <description>WTS_EXTRACT</description>
+        </item>
+        <item>
+          <description>WTS_EXTRACT | WTS_SLOWRECLAIM</description>
+        </item>
+        <item>
+          <description>WTS_FORCEEXTRACTION</description>
+        </item>
+        <item>
+          <description>WTS_FORCEEXTRACTION | WTS_SLOWRECLAIM</description>
+        </item>
+        <item>
+          <description>WTS_EXTRACTDONOTCACHE</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IThumbnailCache.GetThumbnail" />
+    <seealso cref="IThumbnailSettings.SetContext" />
+  </member>
+  <member name="WTS_FLAGS.WTS_NONE">
+    <summary>
+      <para>0x00000000. <b>Introduced in Windows 8</b>. None of the following options are set.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_EXTRACT">
+    <summary>
+      <para>Default. 0x00000000. Extract the thumbnail if it is not cached.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_INCACHEONLY">
+    <summary>
+      <para>0x00000001. Only return the thumbnail if it is cached.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_FASTEXTRACT">
+    <summary>
+      <para>0x00000002. If not cached, only extract the thumbnail if it is embedded in EXIF format, typically 96x96.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_FORCEEXTRACTION">
+    <summary>
+      <para>0x00000004. Ignore cache and extract thumbnail from source file.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_SLOWRECLAIM">
+    <summary>
+      <para>0x00000008. The thumbnail has an extended lifetime. Use for volumes that might go offline, like non-fixed disks.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_EXTRACTDONOTCACHE">
+    <summary>
+      <para>0x00000020. Extract but do not add the thumbnail to the cache.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_SCALETOREQUESTEDSIZE">
+    <summary>
+      <para>0x00000040. <b>Introduced in Windows 7</b>. If the specific thumbnail size requested in the <i>cxyRequestedThumbSize</i> parameter is not available, resize the thumbnail to the requested size. If possible, a larger bitmap is reduced in scale, preserving its aspect ratio, to the width and height required. If the only available cached thumbnail is smaller than the requested size, then it is scaled up using the nearest-neighbor algorithm.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_SKIPFASTEXTRACT">
+    <summary>
+      <para>0x00000080. <b>Introduced in Windows 7</b>. Do not extract a thumbnail embedded in the metadata of an EXIF image.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_EXTRACTINPROC">
+    <summary>
+      <para>0x00000100. <b>Introduced in Windows 7</b>. Ensures that the thumbnail handler is loaded in the same process as the caller. When this flag is not specified, the handler is loaded into a surrogate process to protect the caller from unexpected crashes caused by the processing of the target file. Use this value when debugging thumbnail extractors.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_CROPTOSQUARE">
+    <summary>
+      <para>0x00000200. <b>Introduced in Windows 8</b>. If necessary, crop the bitmap's dimensions so that is square. The length of the shortest side becomes the length of all sides.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_INSTANCESURROGATE">
+    <summary>
+      <para>0x00000400. <b>Introduced in Windows 8</b>. Create a surrogate for this instance of the cache rather than using the shared DLLHost surrogate.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_REQUIRESURROGATE">
+    <summary>
+      <para>0x00000800. <b>Introduced in Windows 8</b>. Require extractions to take place in the surrogate.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_APPSTYLE">
+    <summary>
+      <para>0x00002000. <b>Windows 8 and later</b>. Pass the <see cref="WTSCF_APPSTYLE" /> flag to <see cref="IThumbnailSettings.SetContext" />, if the provider supports it.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_WIDETHUMBNAILS">
+    <summary>
+      <para>0x00004000. <b>Windows 8 and later</b>. Stretch and crop the bitmap so that its height is 0.7 times its width.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_IDEALCACHESIZEONLY">
+    <summary>
+      <para>0x00008000. <b>Windows 8 and later</b>. Return from the ideal cache snap size only. The returned image might be larger, but it will be pulled from the correct cache entry.</para>
+    </summary>
+  </member>
+  <member name="WTS_FLAGS.WTS_SCALEUP">
+    <summary>
+      <para>0x00010000. <b>Windows 8 and later</b>. If necessary, stretch the image so that the height and width fit the given size.</para>
+    </summary>
+  </member>
+</doc>

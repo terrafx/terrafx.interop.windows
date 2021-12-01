@@ -1,0 +1,1135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirectDraw7.Compact">
+    <summary>
+      <para>This method is not currently implemented.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOEXCLUSIVEMODE</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEBUSY</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.CreateClipper">
+    <summary>
+      <para>Creates a DirectDrawClipper object.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Currently not used and must be set to 0.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Address of a variable to be set to a valid <see cref="IDirectDrawClipper" /> interface pointer if the call succeeds.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>Allows for future compatibility with COM aggregation features. Currently this method returns an error if this parameter is not NULL.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOCOOPERATIVELEVELSET</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The DirectDrawClipper object can be attached to a DirectDrawSurface and used during <see cref="IDirectDrawSurface7.Blt" />, <see cref="IDirectDrawSurface7.BltBatch" />, and <see cref="IDirectDrawSurface7.UpdateOverlay" /> operations.</para>
+      <para>To create a DirectDrawClipper object that is not owned by a specific DirectDraw object, use the <see cref="DirectDrawCreateClipper" /> function.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>CreateClipper</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.CreatePalette">
+    <summary>
+      <para>Creates a DirectDrawPalette object for this DirectDraw object.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>This value consists of one or more of the following flags:</para>
+      <list type="bullet">
+        <item>
+          <description>DDPCAPS_1BIT - The index is 1 bit. There are two entries in the color table.</description>
+        </item>
+        <item>
+          <description>DDPCAPS_2BIT - The index is 2 bits. There are four entries in the color table.</description>
+        </item>
+        <item>
+          <description>DDPCAPS_4BIT - The index is 4 bits. There are 16 entries in the color table.</description>
+        </item>
+        <item>
+          <description>DDPCAPS_8BIT - The index is 8 bits. There are 256 entries in the color table.</description>
+        </item>
+        <item>
+          <description>DDPCAPS_8BITENTRIES - The index refers to an 8-bit color index. This flag is valid only when used with the DDPCAPS_1BIT, DDPCAPS_2BIT, or DDPCAPS_4BIT flag, and when the target surface is 8 bpp. Each color entry is 1 byte long and is an index to a destination surface's 8-bpp palette.</description>
+        </item>
+        <item>
+          <description>DDPCAPS_ALPHA - The <b>peFlags</b> member of the associated <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structure is to be interpreted as a single 8-bit alpha value (in addition to the <b>peRed</b>, <b>peGreen</b>, and <b>peBlue</b> members). A palette created by using this flag can be attached only to a texture: a surface created with the DDSCAPS_TEXTURE capability flag.</description>
+        </item>
+        <item>
+          <description>DDPCAPS_ALLOW256 - This palette can have all 256 entries defined.</description>
+        </item>
+        <item>
+          <description>DDPCAPS_INITIALIZE - Obsolete. DirectDraw always initializes this palette with the colors in the color array passed at <i>lpDDColorArray</i>.</description>
+        </item>
+        <item>
+          <description>DDPCAPS_PRIMARYSURFACE - This palette is attached to the primary surface. Changing this palette's color table immediately affects the display unless DDPSETPAL_VSYNC is specified and supported.</description>
+        </item>
+        <item>
+          <description>DDPCAPS_PRIMARYSURFACELEFT - This palette is the one attached to the left-eye primary surface. Changing this palette's color table immediately affects the left-eye display unless DDPSETPAL_VSYNC is specified and supported.</description>
+        </item>
+        <item>
+          <description>DDPCAPS_VSYNC - This palette can have modifications to it synchronized with the monitor's refresh rate.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam2">
+      <para>Address of an array of 2, 4, 16, or 256 <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structures to initialize the DirectDrawPalette object.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>Address of a variable to be set to a valid <see cref="IDirectDrawPalette" /> interface pointer if the call succeeds.</para>
+    </param>
+    <param name="unnamedParam4">
+      <para>Allows for future compatibility with COM aggregation features. Currently, this method returns an error if this parameter is not NULL.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOCOOPERATIVELEVELSET</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>CreatePalette</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.CreateSurface">
+    <summary>
+      <para>Creates a DirectDrawSurface object for this DirectDraw object.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Address of a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550340(v=vs.85)">DDSURFACEDESC2</a> structure that describes the requested surface. Set any unused members of the <b>DDSURFACEDESC2</b> structure to 0 before calling this method. A <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550292(v=vs.85)">DDSCAPS2</a> structure is a member of <b>DDSURFACEDESC2</b>.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Address of a variable to be set to a valid <see cref="IDirectDrawSurface7" /> interface pointer if the call succeeds.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>Allows for future compatibility with COM aggregation features. Currently, this method returns an error if this parameter is not NULL.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INCOMPATIBLEPRIMARY</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDCAPS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPIXELFORMAT</description>
+        </item>
+        <item>
+          <description>DDERR_NOALPHAHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOCOOPERATIVELEVELSET</description>
+        </item>
+        <item>
+          <description>DDERR_NODIRECTDRAWHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOEMULATION</description>
+        </item>
+        <item>
+          <description>DDERR_NOEXCLUSIVEMODE</description>
+        </item>
+        <item>
+          <description>DDERR_NOFLIPHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOMIPMAPHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOOVERLAYHW</description>
+        </item>
+        <item>
+          <description>DDERR_NOZBUFFERHW</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFVIDEOMEMORY</description>
+        </item>
+        <item>
+          <description>DDERR_PRIMARYSURFACEALREADYEXISTS</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTEDMODE</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>CreateSurface</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.DuplicateSurface">
+    <summary>
+      <para>Duplicates a DirectDrawSurface object.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Address of the <see cref="IDirectDrawSurface7" /> interface for the surface to be duplicated.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Address of a variable to contain an <see cref="IDirectDrawSurface7" /> interface pointer for the newly duplicated DirectDrawSurface object.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_CANTDUPLICATE</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACELOST</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>DuplicateSurface</b> creates a new DirectDrawSurface object that points to the same surface memory as an existing DirectDrawSurface object. This duplicate can be used just like the original object. The surface memory is released after the last object referring to it is released. A primary surface, 3-D surface, or implicitly created surface cannot be duplicated.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>DuplicateSurface</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.EnumDisplayModes">
+    <summary>
+      <para>Enumerates all the display modes that the hardware exposes through the DirectDraw object and that are compatible with a provided surface description.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>This value consists of one or more of the following flags:</para>
+      <list type="bullet">
+        <item>
+          <description>DDEDM_REFRESHRATES - Enumerates modes with different refresh rates. <b>IDirectDraw7.EnumDisplayModes</b> guarantees that a particular mode is enumerated only once. This flag specifies whether the refresh rate is taken into account when determining whether a mode is unique.</description>
+        </item>
+        <item>
+          <description>DDEDM_STANDARDVGAMODES - Enumerates Mode 13 in addition to the 320x200x8 Mode X mode.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam2">
+      <para>Address of a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550340(v=vs.85)">DDSURFACEDESC2</a> structure to be checked against available modes. If the value of this parameter is NULL, all modes are enumerated.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>Address of an application-defined structure to be passed to each enumeration member.</para>
+    </param>
+    <param name="unnamedParam4">
+      <para>Address of the <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenummodescallback2">EnumModesCallback2</a> function that the enumeration procedure calls every time a match is found.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>IDirectDraw7.EnumDisplayModes</b> enumerates the <b>dwRefreshRate</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550340(v=vs.85)">DDSURFACEDESC2</a> structure; the IDirectDraw.EnumDisplayModes method does not have this ability. If you use the <see cref="IDirectDraw7.SetDisplayMode" /> method to set the refresh rate of a new mode, use <b>IDirectDraw7.EnumDisplayModes</b> to enumerate the <b>dwRefreshRate</b> member.</para>
+      <para>
+        <b>IDirectDraw7.EnumDisplayModes</b> differs from its counterparts in former interfaces in that it accepts the address of an <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenummodescallback2">EnumModesCallback2</a> function as a parameter, rather than an <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenummodescallback">EnumModesCallback</a> function.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>IDirectDraw7.EnumDisplayModes</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.EnumSurfaces">
+    <summary>
+      <para>Enumerates all the existing or possible surfaces that meet the specified surface description.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A combination of one search type flag and one matching flag. The search type flag determines how the method searches for matching surfaces; you can search for surfaces that can be created using the description in the <i>lpDDSD2</i> parameter or for existing surfaces that already match that description. The matching flag determines whether the method enumerates all surfaces, only those that match, or only those that do not match the description in the <i>lpDDSD2</i> parameter.</para>
+      <para>
+        <b>Search type flags</b>
+      </para>
+      <list type="bullet">
+        <item>
+          <description>DDENUMSURFACES_CANBECREATED - Enumerates the first surface that can be created and meets the search criterion. This flag can be used only with the DDENUMSURFACES_MATCH flag.</description>
+        </item>
+        <item>
+          <description>DDENUMSURFACES_DOESEXIST - Enumerates the already existing surfaces that meet the search criterion.</description>
+        </item>
+      </list>
+      <para>
+        <b>Matching flags</b>
+      </para>
+      <list type="bullet">
+        <item>
+          <description>DDENUMSURFACES_ALL - Enumerates all surfaces that meet the search criterion. This flag can be used only with the DDENUMSURFACES_DOESEXIST search type flag.</description>
+        </item>
+        <item>
+          <description>DDENUMSURFACES_MATCH - Searches for any surface that matches the surface description.</description>
+        </item>
+        <item>
+          <description>DDENUMSURFACES_NOMATCH - Searches for any surface that does not match the surface description.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam2">
+      <para>Address of a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550340(v=vs.85)">DDSURFACEDESC2</a> structure that defines the surface of interest. This parameter can be NULL if <i>dwFlags</i> includes the DDENUMSURFACES_ALL flag.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>Address of an application-defined structure to be passed to each enumeration member.</para>
+    </param>
+    <param name="unnamedParam4">
+      <para>Address of the <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback7">EnumSurfacesCallback7</a> function that the enumeration procedure calls every time a match is found.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the DDENUMSURFACES_CANBECREATED flag is set, this method attempts to temporarily create a surface that meets the search criterion.</para>
+      <para>When you use the DDENUMSURFACES_DOESEXIST flag, an enumerated surface's reference count is incremented—if you are not going to use the surface, be sure to use <see cref="IDirectDrawSurface7.Release" /> to release it after each enumeration. If you will be using the surface, release it when it is no longer needed.</para>
+      <para>This method differs from its counterparts in previous interface versions in that it accepts a pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback7">EnumSurfacesCallback7</a> function, rather than an <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback">EnumSurfacesCallback</a> or <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumsurfacescallback2">EnumSurfacesCallback2</a> function.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>IDirectDraw7.EnumSurfaces</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.EvaluateMode">
+    <summary>
+      <para>Used after a call to <see cref="IDirectDraw7.StartModeTest" /> to pass or fail each mode that the test presents and to step through the modes until the test is complete.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>One of the following flags that indicate the status of the mode being tested:</para>
+      <list type="bullet">
+        <item>
+          <description>DDEM_MODEPASSED - The mode being tested has passed.</description>
+        </item>
+        <item>
+          <description>DDEM_MODEFAILED - The mode being tested has failed.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a variable that receives a value that denotes the seconds that remain before the current mode is failed automatically unless it is explicitly passed or failed.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails or on completion, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_TESTFINISHED</description>
+        </item>
+        <item>
+          <description>DDERR_NEWMODE</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOTFOUND </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You can use <b>EvaluateMode</b> in conjunction with the <see cref="IDirectDraw7.StartModeTest" /> method to determine the maximum refresh rate that an EDID monitor and display adapter combination can support for each screen resolution.</para>
+      <para>Specifically, a call to <see cref="IDirectDraw7.StartModeTest" /> directs DirectDraw to establish a set of testable resolutions and to display a mode based on the first resolution in the set. Subsequent calls to <b>EvaluateMode</b> can be used to pass or fail each mode and to advance the test to the next display mode. The method steps through the testable resolutions starting with the highest refresh rate supported for a given resolution. After a refresh rate for a given resolution passes, testing of lower refresh rates for that resolution is skipped.</para>
+      <para>When the test is initiated, or whenever a mode is passed or failed, DirectDraw begins a 15 second timeout. An application can monitor the time remaining without passing or failing the current mode by calling <b>EvaluateMode</b> with a value of 0 for the dwFlags argument. Note that DirectDraw only changes modes or terminates the test when <b>EvaluateMode</b> is called. However, if an application calls <b>EvaluateMode</b> after the timeout period has elapsed, the current mode fails, regardless of the value passed to the <i>dwFlags</i> parameter.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>EvaluateMode</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.FlipToGDISurface">
+    <summary>
+      <para>Makes the surface that the GDI writes to the primary surface.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOTFOUND</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You can call  <b>FlipToGDISurface</b> at the end of a page-flipping application to ensure that the display memory that the GDI writes to is visible.</para>
+      <para>You can also use  <b>FlipToGDISurface</b> to make the GDI surface the primary surface so that normal windows, such as dialog boxes, can be displayed in full-screen mode. The hardware must have the <see cref="DDCAPS2_CANRENDERWINDOWED" /> capability.</para>
+      <para>
+        <b>FlipToGDISurface</b> disables stereo autoflipping.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>FlipToGDISurface</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.GetAvailableVidMem">
+    <summary>
+      <para>Retrieves the total amount of display memory available and the amount of display memory currently free for a given type of surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550292(v=vs.85)">DDSCAPS2</a> structure that indicates the hardware capabilities of the proposed surface.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a variable that receives the total amount of display memory available, in bytes. The value received reflects the total video memory, minus the video memory required for the primary surface and any private caches that the display driver reserves.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>A pointer to a variable that receives the amount of display memory currently free that can be allocated for a surface that matches the capabilities specified by the structure at <i>lpDDSCaps2</i>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDCAPS</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NODIRECTDRAWHW</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The following C++ example demonstrates how to use <b>GetAvailableVidMem</b> to determine both the total and free display memory available for texture-map surfaces:</para>
+      <code>// For this example, the lpDD variable is a valid
+// pointer to an IDirectDraw7 interface.
+LPDIRECTDRAW7 lpDD;
+DDSCAPS2      ddsCaps2;
+DWORD         dwTotal;
+DWORD         dwFree;
+HRESULT       hr;
+
+hr = lpDD-&gt;QueryInterface(IID_IDirectDraw7, &amp;amp;amp;amp;amp;amp;lpDD);
+if (FAILED(hr))
+    return hr;
+
+// Initialize the structure.
+ZeroMemory(&amp;amp;amp;amp;amp;amp;ddsCaps2, sizeof(ddsCaps2));
+
+ddsCaps2.dwCaps = DDSCAPS_TEXTURE;
+hr = lpDD-&gt;GetAvailableVidMem(&amp;amp;amp;amp;amp;amp;ddsCaps2, &amp;amp;amp;amp;amp;amp;dwTotal, &amp;amp;amp;amp;amp;amp;dwFree);
+if (FAILED(hr))
+    return hr;
+
+
+</code>
+      <para>If the surface has the <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550286(v=vs.85)">DDSCAPS_VIDEOMEMORY</a> flag set, <b>GetAvailableVidMem</b> returns different amounts of video memory depending on whether the surface can be used as a 3-D texture. If the surface can be used for 3-D textures, <b>GetAvailableVidMem</b> returns the sum of the local video memory and the non-local video memory on AGP systems.</para>
+      <para>
+        <b>GetAvailableVidMem</b> provides only a snapshot of the current display-memory state. The amount of free display memory is subject to change as surfaces are created and released. Therefore, you should use the free memory value only as an approximation. In addition, a particular display adapter card might make no distinction between two different memory types. For example, the adapter might use the same portion of display memory to store z-buffers and textures. So, allocating one type of surface (for example, a z-buffer) can affect the amount of display memory available for another type of surface (textures). Therefore, it is best to first allocate an application's fixed resources (such as front and back buffers and z-buffers) before determining how much memory is available for dynamic use (such as texture mapping).</para>
+      <para>
+        <b>GetAvailableVidMem</b> was not implemented in the previous DirectX IDirectDraw interface version.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetAvailableVidMem</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.GetCaps">
+    <summary>
+      <para>Retrieves the capabilities of the device driver for the hardware and the hardware emulation layer (HEL).</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <see cref="DDCAPS" /> structure that receives the capabilities of the hardware, as reported by the device driver. Set this parameter to NULL if you do not want to retrieve device driver capabilities.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a <see cref="DDCAPS" /> structure that receives the capabilities of the HEL. Set this parameter to NULL if you do not want to retrieve HEL capabilities.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+      <para>You can set only one of the two parameters to NULL to exclude it. If you set both to NULL, the method fails and returns DDERR_INVALIDPARAMS.</para>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetCaps</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.GetDeviceIdentifier">
+    <summary>
+      <para>Obtains information about the device driver. This method can be used, with caution, to recognize specific hardware installations to implement workarounds for poor driver or chipset behavior.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <see cref="DDDEVICEIDENTIFIER2" /> structure that receives information about the driver.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>This value consists of flags that specify options. The following flag is the only defined flag:</para>
+      <list type="bullet">
+        <item>
+          <description>DDGDI_GETHOSTIDENTIFIER - Causes <b>GetDeviceIdentifier</b> to return information about the host (typically 2-D) adapter in a system equipped with a stacked secondary 3-D adapter. Such an adapter appears to the application as if it were part of the host adapter, but is typically located on a separate card. When the <i>dwFlags</i> parameter is 0, information on the stacked secondary is returned because this most accurately reflects the qualities of the DirectDraw object involved.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return DDERR_INVALIDPARAMS.</para>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetDeviceIdentifier</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.GetDisplayMode">
+    <summary>
+      <para>Retrieves the current display mode.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff550340(v=vs.85)">DDSURFACEDESC2</a> structure that receives a description of the current surface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTEDMODE</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>An application should not save the information that <b>GetDisplayMode</b> returns to restore the display mode on clean-up. The application should instead use the <see cref="IDirectDraw7.RestoreDisplayMode" /> method to restore the mode on clean-up, thus avoiding mode-setting conflicts that could arise in a multiprocess environment.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetDisplayMode</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.GetFourCCCodes">
+    <summary>
+      <para>Retrieves the four-character codes (FOURCC) that are supported by the DirectDraw object. This method can also retrieve the number of codes that are supported.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that contains the number of entries that the array specified by <i>lpCodes</i> can hold. If the number of entries is too small to accommodate all the codes, <i>lpNumCodes</i> is set to the required number, and the array specified by <i>lpCodes</i> is filled with all that fits.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>An array of variables to be filled with FOURCCs that are supported by this DirectDraw object. If you specify NULL, <i>lpNumCodes</i> is set to the number of supported FOURCCs, and the method returns.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetFourCCCodes</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.GetGDISurface">
+    <summary>
+      <para>Retrieves the DirectDrawSurface object that currently represents the surface memory that GDI is treating as the primary surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Address of a variable to be filled with a pointer to the <see cref="IDirectDrawSurface7" /> interface for the surface that currently controls the GDI's primary surface memory.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOTFOUND</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>GetGDISurface</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.GetMonitorFrequency">
+    <summary>
+      <para>Retrieves the frequency of the monitor that the DirectDraw object controls.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives the monitor frequency, in Hertz (Hz).</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>GetMonitorFrequency</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.GetScanLine">
+    <summary>
+      <para>Retrieves the scan line that is currently being drawn on the monitor.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives the scan line that the display is currently drawing.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_VERTICALBLANKINPROGRESS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Scan lines are reported as zero-based integers. The returned scan line value is in the range from 0 through n, where 0 is the first visible scan line on the screen and n is the last visible scan line, plus any scan lines that occur during the vertical blank period. So, in a case where an application is running at a resolution of 640×480 and there are 12 scan lines during vblank, the values returned by this method range from 0 through 491.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <see cref="GetMonitorFrequency" /> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.GetSurfaceFromDC">
+    <summary>
+      <para>Retrieves the <see cref="IDirectDrawSurface7" /> interface for a surface, based on its GDI device context handle.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Handle of a display device context.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Address of a variable to be filled with a pointer to the <see cref="IDirectDrawSurface7" /> interface for the surface if the call succeeds.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+        <item>
+          <description>DDERR_NOTFOUND</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method succeeds only for device context handles that identify surfaces already associated with the DirectDraw object.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>GetSurfaceFromDC</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.GetVerticalBlankStatus">
+    <summary>
+      <para>Retrieves the status of the vertical blank.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives the status of the vertical blank. This parameter is TRUE if a vertical blank is occurring, and FALSE otherwise.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To synchronize with the vertical blank, use the <see cref="IDirectDraw7.WaitForVerticalBlank" /> method.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>GetVerticalBlankStatus</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.Initialize">
+    <summary>
+      <para>Initializes a DirectDraw object that was created by using the <see cref="CoCreateInstance" /> COM function.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to the globally unique identifier (GUID) that this method uses as the DirectDraw interface identifier.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_ALREADYINITIALIZED</description>
+        </item>
+        <item>
+          <description>DDERR_DIRECTDRAWALREADYCREATED</description>
+        </item>
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NODIRECTDRAWHW</description>
+        </item>
+        <item>
+          <description>DDERR_NODIRECTDRAWSUPPORT</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+      </list>
+      <para>This method is provided for compliance with the Component Object Model (COM). If you already used the <see cref="DirectDrawCreate" /> function to create a DirectDraw object, this method returns DDERR_ALREADYINITIALIZED. If you do not call <b>IDirectDraw7.Initialize</b> when you use <see cref="CoCreateInstance" /> to create a DirectDraw object, any method that you call afterward returns DDERR_NOTINITIALIZED.</para>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>IDirectDraw7.Initialize</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.RestoreAllSurfaces">
+    <summary>
+      <para>Restores all the surfaces that were created for the DirectDraw object, in the order that they were created.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is provided for convenience. Effectively, this method calls the <see cref="IDirectDrawSurface7.Restore" /> method for each surface that is created by this DirectDraw object.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>RestoreAllSurfaces</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.RestoreDisplayMode">
+    <summary>
+      <para>Resets the mode of the display device hardware for the primary surface to what it was before the <see cref="IDirectDraw7.SetDisplayMode" /> method was called. Exclusive-level access is required to use this method.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_LOCKEDSURFACES</description>
+        </item>
+        <item>
+          <description>DDERR_NOEXCLUSIVEMODE</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>RestoreDisplayMode</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.SetCooperativeLevel">
+    <summary>
+      <para>Determines the top-level behavior of the application.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Window handle used for the application. Set to the calling application's top-level window handle (not a handle for any child windows created by the top-level window). This parameter can be NULL when the DDSCL_NORMAL flag is specified in the <i>dwFlags</i> parameter.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>This value consists of one or more of the following flags:</para>
+      <list type="bullet">
+        <item>
+          <description>DDSCL_ALLOWMODEX - Allows the use of Mode X display modes. This flag can be used only if the DDSCL_EXCLUSIVE and DDSCL_FULLSCREEN flags are present.</description>
+        </item>
+        <item>
+          <description>DDSCL_ALLOWREBOOT - Allows CTRL+ALT+DEL to function while in exclusive (full-screen) mode.</description>
+        </item>
+        <item>
+          <description>DDSCL_CREATEDEVICEWINDOW - This flag is supported in Windows 98 and Windows 2000 only. Indicates that DirectDraw will create and manage a default device window for this DirectDraw object.</description>
+        </item>
+        <item>
+          <description>DDSCL_EXCLUSIVE - Requests the exclusive level. This flag must be used with the DDSCL_FULLSCREEN flag.</description>
+        </item>
+        <item>
+          <description>DDSCL_FPUPRESERVE - The calling application cares about the FPU state and does not want Direct3D to modify it in ways visible to the application. In this mode, Direct3D saves and restores the FPU state every time that it needs to modify the FPU state.</description>
+        </item>
+        <item>
+          <description>DDSCL_FPUSETUP - The calling application is likely to keep the FPU set up for optimal Direct3D performance (single precision and exceptions disabled), so Direct3D does not need to explicitly set the FPU each time. This is the default state.</description>
+        </item>
+        <item>
+          <description>DDSCL_FULLSCREEN - The exclusive-mode owner is responsible for the entire primary surface. The GDI can be ignored. This flag must be used with the DDSCL_EXCLUSIVE flag.</description>
+        </item>
+        <item>
+          <description>DDSCL_MULTITHREADED - Requests multithread-safe DirectDraw behavior. This causes Direct3D to take the global critical section more frequently.</description>
+        </item>
+        <item>
+          <description>DDSCL_NORMAL - The application functions as a typical Windows application. This flag cannot be used with the DDSCL_ALLOWMODEX, DDSCL_EXCLUSIVE, or DDSCL_FULLSCREEN flags.</description>
+        </item>
+        <item>
+          <description>DDSCL_NOWINDOWCHANGES - DirectDraw is not allowed to minimize or restore the application window on activation.</description>
+        </item>
+        <item>
+          <description>DDSCL_SETDEVICEWINDOW - This flag is supported in Windows 98 and Windows 2000 only. Indicates that the <i>hWnd</i> parameter is the window handle of the device window for this DirectDraw object. This flag cannot be used with the DDSCL_SETFOCUSWINDOW flag.</description>
+        </item>
+        <item>
+          <description>DDSCL_SETFOCUSWINDOW - This flag is supported in Windows 98 and Windows 2000 only. Indicates that the <i>hWnd</i> parameter is the window handle of the focus window for this DirectDraw object. This flag cannot be used with the DDSCL_SETDEVICEWINDOW flag.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_EXCLUSIVEMODEALREADYSET</description>
+        </item>
+        <item>
+          <description>DDERR_HWNDALREADYSET</description>
+        </item>
+        <item>
+          <description>DDERR_HWNDSUBCLASSED</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method must be called by the same thread that created the application window.</para>
+      <para>An application must set either the DDSCL_EXCLUSIVE or the DDSCL_NORMAL flag.</para>
+      <para>The DDSCL_EXCLUSIVE flag must be set to call functions that can adversely affect performance of other applications.</para>
+      <para>Interaction between this method and the <see cref="IDirectDraw7.SetDisplayMode" /> method differs from their IDirectDraw counterparts.</para>
+      <para>If you use Microsoft Foundation Classes (MFC), the window handle passed to this method must identify the application's top-level window, not a derived child window. To retrieve your MFC application's top-level window handle, you could use the following code:</para>
+      <code>
+HWND hwndTop = AfxGetMainWnd()-&gt;GetSafeHwnd();
+
+</code>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>SetCooperativeLevel</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.SetDisplayMode">
+    <summary>
+      <para>Sets the mode of the display-device hardware.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Width of the new display mode.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Height of the new display mode.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>Bits per pixel (bpp) of the new display mode.</para>
+    </param>
+    <param name="unnamedParam4">
+      <para>Refresh rate of the new display mode. Set this value to 0 to request the default refresh rate for the driver.</para>
+    </param>
+    <param name="unnamedParam5">
+      <para>This value consists of flags that describe additional options. Currently, the only valid flag is DDSDM_STANDARDVGAMODE, which causes the method to set Mode 13, instead of Mode X 320x200x8 mode. If you are setting another resolution, bit depth, or a Mode X mode, do not use this flag; instead, set the parameter to 0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDMODE</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_LOCKEDSURFACES</description>
+        </item>
+        <item>
+          <description>DDERR_NOEXCLUSIVEMODE</description>
+        </item>
+        <item>
+          <description>DDERR_SURFACEBUSY</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTEDMODE</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method must be called by the same thread that created the application window.</para>
+      <para>If another application changes the display mode, the primary surface is lost, and the method returns DDERR_SURFACELOST until the primary surface is recreated to match the new display mode.</para>
+      <para>As part of the prior-version <b>IDirectDraw</b> interface, this method did not include the <i>dwRefreshRate</i> and <i>dwFlags</i> parameters.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>SetDisplayMode</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.StartModeTest">
+    <summary>
+      <para>Initiates a test to update the system registry with refresh rate information for the current display adapter and monitor combination. A call to this method is typically followed by calls to <see cref="IDirectDraw7.EvaluateMode" /> to pass or fail modes displayed by the test.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>An array of SIZE elements that describe, in terms of screen resolutions, the modes that should be tested.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The number of elements in the array that the  <i>lpModesToTest</i> parameter specifies.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>Flags that specify options for starting a test. The only flag value that is currently valid is DDSMT_ISTESTREQUIRED. When this flag is specified, <b>StartModeTest</b> does not initiate a test, but instead returns a value that indicates whether it is possible or necessary to test the resolutions that the <i>lpModesToTest</i> and <i>dwNumEntries</i> parameters identify.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_CURRENTLYNOTAVAIL</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOEXCLUSIVEMODE</description>
+        </item>
+        <item>
+          <description>DDERR_NOTFOUND</description>
+        </item>
+        <item>
+          <description>DDERR_TESTFINISHED</description>
+        </item>
+      </list>
+      <para>When the method is called with the DDSMT_ISTESTREQUIRED flag, it can return one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_NEWMODE</description>
+        </item>
+        <item>
+          <description>DDERR_NODRIVERSUPPORT</description>
+        </item>
+        <item>
+          <description>DDERR_NOMONITORINFORMATION</description>
+        </item>
+        <item>
+          <description>DDERR_TESTFINISHED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You can use the <b>StartModeTest</b> method together with the <see cref="IDirectDraw7.EvaluateMode" /> method to determine the maximum refresh rate that an EDID monitor and display adapter combination can support for each screen resolution. The results of the testing are stored in the system registry and affect the operation of <see cref="IDirectDraw7.EnumDisplayModes" /> when that method is called with the DDEDM_REFRESHRATES flag set.</para>
+      <para>Specifically, a call to <b>StartModeTest</b> directs DirectDraw to establish a set of testable resolutions and to display a mode based on the first resolution in the set. Subsequent calls to <see cref="IDirectDraw7.EvaluateMode" /> can be used to pass or fail each mode and to advance the test to the next display mode.</para>
+      <para>
+        <b>StartModeTest</b> succeeds only with monitors that contain EDID data. If the monitor is not EDID-compliant, <b>StartModeTest</b> returns DDERR_TESTFINISHED without testing any modes. If the EDID table does not contain values higher than 60 Hz, no modes are tested. Refresh rates higher than 100 Hz are tested only if the EDID table contains values higher than 85 Hz.</para>
+      <para>If you call <b>StartModeTest</b> with an argument list of (NULL, 0, 0), <b>StartModeTest</b> clears existing refresh rate information from the registry.</para>
+      <para>The test does not guarantee to display only the resolutions in the array described by the <i>lpModesToTest</i> and <i>dwNumEntries</i> parameters. For example, the 640×480 resolution is used to obtain a maximum viewable refresh rate for the 320×200 resolution.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>StartModeTest</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.TestCooperativeLevel">
+    <summary>
+      <para>Reports the current cooperative-level status of the DirectDraw device for a windowed or full-screen application.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK, which indicates that the calling application can continue.</para>
+      <para>If it fails, the method can return one of the following error values (see Remarks):</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_EXCLUSIVEMODEALREADYSET</description>
+        </item>
+        <item>
+          <description>DDERR_NOEXCLUSIVEMODE</description>
+        </item>
+        <item>
+          <description>DDERR_WRONGMODE</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is particularly useful to applications that use the WM_ACTIVATEAPP and WM_DISPLAYCHANGE system messages as a notification to restore surfaces or recreate DirectDraw objects. The DD_OK return value always indicates that the application can continue, but the error codes are interpreted differently, depending on the cooperative level that the application uses.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>TestCooperativeLevel</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+  <member name="IDirectDraw7.WaitForVerticalBlank">
+    <summary>
+      <para>Helps the application synchronize itself with the vertical-blank interval.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>One of the following flags that indicates how long to wait for the vertical blank:</para>
+      <list type="bullet">
+        <item>
+          <description>DDWAITVB_BLOCKBEGIN - <b>WaitForVerticalBlank</b> returns when the vertical-blank interval begins.</description>
+        </item>
+        <item>
+          <description>DDWAITVB_BLOCKBEGINEVENT - Triggers an event when the vertical blank begins. This value is not currently supported.</description>
+        </item>
+        <item>
+          <description>DDWAITVB_BLOCKEND - <b>WaitForVerticalBlank</b> returns when the vertical-blank interval ends and the display begins.</description>
+        </item>
+      </list>
+    </param>
+    <param name="unnamedParam2">
+      <para>Handle of the event to be triggered when the vertical blank begins. This parameter is not currently used.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+        <item>
+          <description>DDERR_WASSTILLDRAWING</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>WaitForVerticalBlank</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDraw7" />
+  </member>
+</doc>

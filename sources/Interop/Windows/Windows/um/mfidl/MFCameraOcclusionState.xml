@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFCameraOcclusionState">
+    <summary>
+      <para>Specifies the occlusion state of a camera.</para>
+    </summary>
+    <remarks>
+      <para>A value from this enumeration is returned by <see cref="IMFCameraOcclusionStateReport.GetOcclusionState" />. To get the occlusion states that are supported on the current device, and therefore may be returned by <b>GetOcclusionState</b>, call <see cref="IMFCameraOcclusionStateMonitor.GetSupportedStates" />.</para>
+    </remarks>
+    <seealso cref="IMFCameraOcclusionStateReport.GetOcclusionState" />
+    <seealso cref="IMFCameraOcclusionStateMonitor.GetSupportedStates" />
+  </member>
+  <member name="MFCameraOcclusionState.MFCameraOcclusionState_Open">
+    <summary>
+      <para>The camera is not occluded.</para>
+    </summary>
+  </member>
+  <member name="MFCameraOcclusionState.MFCameraOcclusionState_OccludedByLid">
+    <summary>
+      <para>The camera is occluded by the lid of the device.</para>
+    </summary>
+  </member>
+  <member name="MFCameraOcclusionState.MFCameraOcclusionState_OccludedByCameraHardware">
+    <summary>
+      <para>The camera is occluded by camera hardware.</para>
+    </summary>
+  </member>
+</doc>

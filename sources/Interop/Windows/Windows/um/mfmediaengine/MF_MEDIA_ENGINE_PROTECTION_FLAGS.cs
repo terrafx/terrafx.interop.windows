@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MEDIA_ENGINE_PROTECTION_FLAGS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_PROTECTION_FLAGS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MF_MEDIA_ENGINE_PROTECTION_FLAGS
 {
+    /// <include file='MF_MEDIA_ENGINE_PROTECTION_FLAGS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_PROTECTION_FLAGS.MF_MEDIA_ENGINE_ENABLE_PROTECTED_CONTENT"]/*' />
     MF_MEDIA_ENGINE_ENABLE_PROTECTED_CONTENT = 1,
+
+    /// <include file='MF_MEDIA_ENGINE_PROTECTION_FLAGS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_PROTECTION_FLAGS.MF_MEDIA_ENGINE_USE_PMP_FOR_ALL_CONTENT"]/*' />
     MF_MEDIA_ENGINE_USE_PMP_FOR_ALL_CONTENT = 2,
+
+    /// <include file='MF_MEDIA_ENGINE_PROTECTION_FLAGS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_PROTECTION_FLAGS.MF_MEDIA_ENGINE_USE_UNPROTECTED_PMP"]/*' />
     MF_MEDIA_ENGINE_USE_UNPROTECTED_PMP = 4,
 }

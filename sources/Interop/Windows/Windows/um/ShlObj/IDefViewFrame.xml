@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDefViewFrame">
+    <summary>
+      <para>Used only for its <see cref="IUnknown" /> functionality. It has no methods of its own.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  This interface is supported through Windows XP Service Pack 3 (SP3) and Windows Server 2003. It is not supported in Windows Vista and later versions of Windows.</para>
+      <para>The IID for this interface is IID_IDefViewFrame. Use the service ID SID_DefView (defined in shlguid.h) in a call to <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678966(v=vs.85)">QueryService</a> as shown in this example.</para>
+      <code>HRESULT hr = isp-&gt;QueryService(punkSite, SID_DefView, IID_IDefViewFrame, (void**)&amp;amp;amp;amp;amp;amp;amp;pdvf);
+</code>
+    </remarks>
+  </member>
+</doc>

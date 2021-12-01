@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService"]/*' />
 [Guid("000001D4-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ISurrogateService : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface
         return ((delegate* unmanaged<ISurrogateService*, Guid*, void**, int>)(lpVtbl[0]))((ISurrogateService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface
         return ((delegate* unmanaged<ISurrogateService*, uint>)(lpVtbl[1]))((ISurrogateService*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface
         return ((delegate* unmanaged<ISurrogateService*, uint>)(lpVtbl[2]))((ISurrogateService*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService.Init"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Init([NativeTypeName("const GUID &")] Guid* rguidProcessID, IProcessLock* pProcessLock, BOOL* pfApplicationAware)
@@ -46,6 +51,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface
         return ((delegate* unmanaged<ISurrogateService*, Guid*, IProcessLock*, BOOL*, int>)(lpVtbl[3]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidProcessID, pProcessLock, pfApplicationAware);
     }
 
+    /// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService.ApplicationLaunch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ApplicationLaunch([NativeTypeName("const GUID &")] Guid* rguidApplID, ApplicationType appType)
@@ -53,6 +59,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface
         return ((delegate* unmanaged<ISurrogateService*, Guid*, ApplicationType, int>)(lpVtbl[4]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID, appType);
     }
 
+    /// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService.ApplicationFree"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ApplicationFree([NativeTypeName("const GUID &")] Guid* rguidApplID)
@@ -60,6 +67,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface
         return ((delegate* unmanaged<ISurrogateService*, Guid*, int>)(lpVtbl[5]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID);
     }
 
+    /// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService.CatalogRefresh"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CatalogRefresh([NativeTypeName("ULONG")] uint ulReserved)
@@ -67,6 +75,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface
         return ((delegate* unmanaged<ISurrogateService*, uint, int>)(lpVtbl[6]))((ISurrogateService*)Unsafe.AsPointer(ref this), ulReserved);
     }
 
+    /// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService.ProcessShutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ProcessShutdown(ShutdownType shutdownType)

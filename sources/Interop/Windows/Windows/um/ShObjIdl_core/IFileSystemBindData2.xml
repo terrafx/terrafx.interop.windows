@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileSystemBindData2.GetFileID">
+    <summary>
+      <para>Gets the unique file identifier for the current file.</para>
+    </summary>
+    <param name="pliFileID">
+      <para>Type: <b>LARGE_INTEGER*</b></para>
+      <para>When this method returns successfully, receives a pointer to the unique file identifier for the current file. <i>pliFileID</i> is a pointer to a value that is a concatenation of the values <i>nFileIndexHigh</i> and <i>nFileIndexlow</i>, noted in structure <see cref="_by_handle_file_information" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileSystemBindData2.GetJunctionCLSID">
+    <summary>
+      <para>Gets the class identifier (CLSID) of the object that implements <see cref="IShellFolder" /> for the item, if the item is a junction point.</para>
+    </summary>
+    <param name="pclsid">
+      <para>Type: <b>CLSID*</b></para>
+      <para>When this method returns successfully, receives a pointer to the CLSID of the object that implements <see cref="IShellFolder" /> for the current item, if the item is a junction point.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileSystemBindData2.SetFileID">
+    <summary>
+      <para>Sets the unique file identifier for the current file.</para>
+    </summary>
+    <param name="liFileID">
+      <para>Type: <b>LARGE_INTEGER</b></para>
+      <para>A unique file identifier for the current file.  <i>liFileID</i> is a value that is a concatenation of the values <i>nFileIndexHigh</i> and <i>nFileIndexlow</i>, noted in structure <see cref="_by_handle_file_information" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileSystemBindData2.SetJunctionCLSID">
+    <summary>
+      <para>Sets the class identifier (CLSID) of the object that implements <see cref="IShellFolder" />, if the current item is a junction point.</para>
+    </summary>
+    <param name="clsid">
+      <para>Type: <b>REFCLSID</b></para>
+      <para>The CLSID for the object that implements <see cref="IShellFolder" /> with a junction point as its current item.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileSystemBindData2">
+    <summary>
+      <para>Extends <see cref="IFileSystemBindData" />, which stores file system information for optimizing calls to <see cref="IShellFolder.ParseDisplayName" />. This interface adds the ability set or get file ID or junction class identifier (CLSID).</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IFileSystemBindData" /> interface, from which it inherits.</para>
+      <para>To pass the information expressed in this interface to a data source <see cref="IShellFolder.ParseDisplayName" />, an <see cref="IBindCtx" /> object is created (use <see cref="CreateBindCtx" />) and populated with an object that implements <see cref="IFileSystemBindData" /> by calling the following:</para>
+      <code>IBindCtx.RegisterObjectParam(STR_FILE_SYS_BIND_DATA, pfsbd)
+
+</code>
+      <para>Where <i>pfsbd</i> is the object that implements <b>IFileSystemBindData</b>.</para>
+      <para>Implementers of <see cref="IShellFolder.ParseDisplayName" /> first make the following call.</para>
+      <code>IUnknown *punk;
+pbc-&gt;GetObjectParam(STR_FILE_SYS_BIND_DATA, &amp;amp;amp;amp;amp;amp;punk);
+
+</code>
+      <para>Next the implementer calls one of the <b>Get</b> methods listed above to retrieve the parameters.</para>
+    </remarks>
+  </member>
+</doc>

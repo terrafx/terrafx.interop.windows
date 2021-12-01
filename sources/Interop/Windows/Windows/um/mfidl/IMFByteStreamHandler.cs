@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFByteStreamHandler.xml' path='doc/member[@name="IMFByteStreamHandler"]/*' />
 [Guid("BB420AA4-765B-4A1F-91FE-D6A8A143924C")]
 [NativeTypeName("struct IMFByteStreamHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
         return ((delegate* unmanaged<IMFByteStreamHandler*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
         return ((delegate* unmanaged<IMFByteStreamHandler*, uint>)(lpVtbl[1]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
         return ((delegate* unmanaged<IMFByteStreamHandler*, uint>)(lpVtbl[2]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFByteStreamHandler.xml' path='doc/member[@name="IMFByteStreamHandler.BeginCreateObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginCreateObject(IMFByteStream* pByteStream, [NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
         return ((delegate* unmanaged<IMFByteStreamHandler*, IMFByteStream*, ushort*, uint, IPropertyStore*, IUnknown**, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pByteStream, pwszURL, dwFlags, pProps, ppIUnknownCancelCookie, pCallback, punkState);
     }
 
+    /// <include file='IMFByteStreamHandler.xml' path='doc/member[@name="IMFByteStreamHandler.EndCreateObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EndCreateObject(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
         return ((delegate* unmanaged<IMFByteStreamHandler*, IMFAsyncResult*, MF_OBJECT_TYPE*, IUnknown**, int>)(lpVtbl[4]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pResult, pObjectType, ppObject);
     }
 
+    /// <include file='IMFByteStreamHandler.xml' path='doc/member[@name="IMFByteStreamHandler.CancelObjectCreation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
         return ((delegate* unmanaged<IMFByteStreamHandler*, IUnknown*, int>)(lpVtbl[5]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pIUnknownCancelCookie);
     }
 
+    /// <include file='IMFByteStreamHandler.xml' path='doc/member[@name="IMFByteStreamHandler.GetMaxNumberOfBytesRequiredForResolution"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetMaxNumberOfBytesRequiredForResolution([NativeTypeName("QWORD *")] ulong* pqwBytes)

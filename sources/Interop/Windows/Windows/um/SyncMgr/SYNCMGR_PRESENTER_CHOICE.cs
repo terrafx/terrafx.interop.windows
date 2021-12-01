@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGR_PRESENTER_CHOICE.xml' path='doc/member[@name="SYNCMGR_PRESENTER_CHOICE"]/*' />
 public enum SYNCMGR_PRESENTER_CHOICE
 {
+    /// <include file='SYNCMGR_PRESENTER_CHOICE.xml' path='doc/member[@name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_NO_CHOICE"]/*' />
     SYNCMGR_PC_NO_CHOICE = 0,
+
+    /// <include file='SYNCMGR_PRESENTER_CHOICE.xml' path='doc/member[@name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_KEEP_ONE"]/*' />
     SYNCMGR_PC_KEEP_ONE = (SYNCMGR_PC_NO_CHOICE + 1),
+
+    /// <include file='SYNCMGR_PRESENTER_CHOICE.xml' path='doc/member[@name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_KEEP_MULTIPLE"]/*' />
     SYNCMGR_PC_KEEP_MULTIPLE = (SYNCMGR_PC_KEEP_ONE + 1),
+
+    /// <include file='SYNCMGR_PRESENTER_CHOICE.xml' path='doc/member[@name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_KEEP_RECENT"]/*' />
     SYNCMGR_PC_KEEP_RECENT = (SYNCMGR_PC_KEEP_MULTIPLE + 1),
+
+    /// <include file='SYNCMGR_PRESENTER_CHOICE.xml' path='doc/member[@name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_REMOVE_FROM_SYNC_SET"]/*' />
     SYNCMGR_PC_REMOVE_FROM_SYNC_SET = (SYNCMGR_PC_KEEP_RECENT + 1),
+
+    /// <include file='SYNCMGR_PRESENTER_CHOICE.xml' path='doc/member[@name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_SKIP"]/*' />
     SYNCMGR_PC_SKIP = (SYNCMGR_PC_REMOVE_FROM_SYNC_SET + 1),
 }

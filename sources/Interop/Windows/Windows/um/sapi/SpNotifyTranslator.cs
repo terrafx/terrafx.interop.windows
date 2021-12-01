@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpNotifyTranslator.xml' path='doc/member[@name="SpNotifyTranslator"]/*' />
 [Guid("E2AE5372-5D40-11D2-960E-00C04F8EE628")]
 public partial struct SpNotifyTranslator
 {

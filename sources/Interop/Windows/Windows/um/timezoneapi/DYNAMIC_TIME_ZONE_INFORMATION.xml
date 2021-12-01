@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DYNAMIC_TIME_ZONE_INFORMATION">
+    <summary>
+      <para>Specifies settings for  a time zone and dynamic daylight saving time.</para>
+    </summary>
+    <remarks>
+      <para>Dynamic daylight saving time provides support for time zones whose boundaries for daylight saving time change
+from year to year. This feature enables easier updating of systems, especially for locales where the yearly DST
+boundaries are known in advance. After the time zone has been updated, the current time zone setting is applied to
+all time operations, even when the time in question occurred before the time zone changed. Therefore, it is best
+to store UTC times and convert them to the current local time zone.</para>
+      <para>You can set the transition dates for the current year using the
+<see cref="SetDynamicTimeZoneInformation" /> function.
+To set future transition dates, you must add entries to the registry data. The settings for dynamic daylight time
+are stored in the following registry key:</para>
+      <code>
+        <b>HKEY_LOCAL_MACHINE</b>
+        <b>SOFTWARE</b>
+        <b>Microsoft</b>
+        <b>Windows NT</b>
+        <b>CurrentVersion</b>
+        <b>Time Zones</b>
+        <i>time_zone_name</i>
+        <b>Dynamic DST</b>
+      </code>
+      <para>Each <b>Dynamic DST</b> key includes the following registry values.</para>
+      <list type="table">
+        <listheader>
+          <description>Registry value</description>
+          <description>Type</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>FirstEntry</b>
+          </description>
+          <description>
+            <b>REG_DWORD</b>
+          </description>
+          <description>The first year in the table.</description>
+        </item>
+        <item>
+          <description>
+            <b>LastEntry</b>
+          </description>
+          <description>
+            <b>REG_DWORD</b>
+          </description>
+          <description>The last year in the table.</description>
+        </item>
+        <item>
+          <description>
+            <i>year1</i>
+          </description>
+          <description>
+            <b>REG_BINARY</b>
+          </description>
+          <description>
+            <para>The following time zone information.</para>
+            <code>typedef struct _REG_TZI_FORMAT
+{
+    LONG Bias;
+    LONG StandardBias;
+    LONG DaylightBias;
+    SYSTEMTIME StandardDate;
+    SYSTEMTIME DaylightDate;
+} REG_TZI_FORMAT;
+</code>
+          </description>
+        </item>
+        <item>
+          <description>
+            <i>year2</i>
+          </description>
+          <description>
+            <b>REG_BINARY</b>
+          </description>
+          <description>A <b>REG_TZI_FORMAT</b> structure.</description>
+        </item>
+        <item>
+          <description>
+            <i>yearN</i>
+          </description>
+          <description>
+            <b>REG_BINARY</b>
+          </description>
+          <description>A <b>REG_TZI_FORMAT</b> structure.</description>
+        </item>
+      </list>
+      <para>For more information on other values in the <b>Time Zones</b> key, see
+<see cref="TIME_ZONE_INFORMATION" />.</para>
+      <para>Both <b>StandardName</b> and <b>DaylightName</b> are localized according to the current user default UI language.</para>
+    </remarks>
+    <seealso cref="GetDynamicTimeZoneInformation" />
+    <seealso cref="SYSTEMTIME" />
+    <seealso cref="SetDynamicTimeZoneInformation" />
+  </member>
+  <member name="DYNAMIC_TIME_ZONE_INFORMATION.Bias">
+    <summary>
+      <para>The current bias for local time translation on this computer, in minutes. The bias is the difference, in
+minutes, between Coordinated Universal Time (UTC) and local time. All translations between UTC and local time
+are based on the following formula:</para>
+      <para>UTC = local time + bias</para>
+      <para>This member is required.</para>
+    </summary>
+  </member>
+  <member name="DYNAMIC_TIME_ZONE_INFORMATION.StandardName">
+    <summary>
+      <para>A description for standard time. For example, "EST" could indicate Eastern Standard Time. The string will
+be returned unchanged by the
+<see cref="GetDynamicTimeZoneInformation" /></para>
+      <para>function. This string can be empty.</para>
+    </summary>
+  </member>
+  <member name="DYNAMIC_TIME_ZONE_INFORMATION.StandardDate">
+    <summary>
+      <para>A <see cref="SYSTEMTIME" /> structure that contains a date and
+local time when the transition from daylight saving time to standard time occurs on this operating system. If
+the time zone does not support daylight saving time or if the caller needs to disable daylight saving time, the
+<b>wMonth</b> member in the
+<b>SYSTEMTIME</b> structure must be zero. If this date is
+specified, the <b>DaylightDate</b> member of this structure must also be specified.
+Otherwise, the system assumes the time zone data is invalid and no changes will be applied.</para>
+      <para>To select the correct day in the month, set the <b>wYear</b> member to zero, the
+<b>wHour</b> and <b>wMinute</b> members to the transition time, the
+<b>wDayOfWeek</b> member to the appropriate weekday, and the
+<b>wDay</b> member to indicate the occurrence of the day of the week within the month (1 to
+5, where 5 indicates the final occurrence during the month if that day of the week does not occur 5 times).</para>
+      <para>Using this notation, specify 02:00 on the first Sunday in April as follows:
+<b>wHour</b> = 2, <b>wMonth</b> = 4,
+<b>wDayOfWeek</b> = 0, <b>wDay</b> = 1. Specify 02:00 on the last
+Thursday in October as follows: <b>wHour</b> = 2, <b>wMonth</b> = 10,
+<b>wDayOfWeek</b> = 4, <b>wDay</b> = 5.</para>
+      <para>If the
+<b>wYear</b> member is not zero, the transition date is absolute; it will only occur one
+time. Otherwise, it is a relative date that occurs yearly.</para>
+    </summary>
+  </member>
+  <member name="DYNAMIC_TIME_ZONE_INFORMATION.StandardBias">
+    <summary>
+      <para>The bias value to be used during local time translations that occur during standard time. This member is
+ignored if a value for the <b>StandardDate</b> member is not supplied.</para>
+      <para>This value is added to the value of the <b>Bias</b> member to form the bias used during
+standard time. In most time zones, the value of this member is zero.</para>
+    </summary>
+  </member>
+  <member name="DYNAMIC_TIME_ZONE_INFORMATION.DaylightName">
+    <summary>
+      <para>A description for daylight saving time (DST). For example, "PDT" could indicate Pacific Daylight Time. The
+string will be  returned unchanged by the
+<see cref="GetDynamicTimeZoneInformation" /></para>
+      <para>function. This string can be empty.</para>
+    </summary>
+  </member>
+  <member name="DYNAMIC_TIME_ZONE_INFORMATION.DaylightDate">
+    <summary>
+      <para>A <see cref="SYSTEMTIME" /> structure that contains a
+date and local time when the transition from standard time to daylight saving time occurs on this operating
+system. If the time zone does not support daylight saving time or if the caller needs to disable daylight
+saving time, the <b>wMonth</b> member in the
+<b>SYSTEMTIME</b> structure must be zero. If this date is
+specified, the <b>StandardDate</b> member in this structure must also be specified.
+Otherwise, the system assumes the time zone data is invalid and no changes will be applied.</para>
+      <para>To select the correct day in the month, set the <b>wYear</b> member to zero, the
+<b>wHour</b> and <b>wMinute</b> members to the transition time, the
+<b>wDayOfWeek</b> member to the appropriate weekday, and the
+<b>wDay</b> member to indicate the occurrence of the day of the week within the month (1 to
+5, where 5 indicates the final occurrence during the month if that day of the week does not occur 5 times).</para>
+      <para>If the <b>wYear</b> member is not zero, the transition date is absolute; it will only
+occur one time. Otherwise, it is a relative date that occurs yearly.</para>
+    </summary>
+  </member>
+  <member name="DYNAMIC_TIME_ZONE_INFORMATION.DaylightBias">
+    <summary>
+      <para>The bias value to be used during local time translations that occur during daylight saving time. This member
+is ignored if a value for the <b>DaylightDate</b> member is not supplied.</para>
+      <para>This value is added to the value of the <b>Bias</b> member to form the bias used during
+daylight saving time. In most time zones, the value of this member is –60.</para>
+    </summary>
+  </member>
+  <member name="DYNAMIC_TIME_ZONE_INFORMATION.TimeZoneKeyName">
+    <summary>
+      <para>The name of the time zone registry key on the local computer. For more information, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="DYNAMIC_TIME_ZONE_INFORMATION.DynamicDaylightTimeDisabled">
+    <summary>
+      <para>Indicates whether dynamic daylight saving time is disabled. Setting this member to <b>TRUE</b> disables dynamic
+daylight saving time, causing the system to use a fixed set of transition dates.</para>
+      <para>To restore dynamic daylight saving time, call the
+<see cref="SetDynamicTimeZoneInformation" /></para>
+      <para>function with <b>DynamicDaylightTimeDisabled</b> set to <b>FALSE</b>.
+The system will read the transition dates for the current year at the next time update, the next system reboot,
+or the end of the calendar year (whichever comes first.)</para>
+      <para>When calling the
+<see cref="GetDynamicTimeZoneInformation" /></para>
+      <para>function, this member is <b>TRUE</b> if the time zone was set using the
+<see cref="SetTimeZoneInformation" /> function instead of
+<see cref="SetDynamicTimeZoneInformation" /> or if
+the user has disabled this feature using the Date and Time application in Control
+Panel.</para>
+      <para>To disable daylight saving time, set this member to <b>TRUE</b>, clear the
+<b>StandardDate</b> and <b>DaylightDate</b> members, and call
+<see cref="SetDynamicTimeZoneInformation" />. To
+restore daylight saving time, call
+<b>SetDynamicTimeZoneInformation</b> with
+<b>DynamicDaylightTimeDisabled</b> set to <b>FALSE</b>.</para>
+    </summary>
+  </member>
+</doc>

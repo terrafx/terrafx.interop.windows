@@ -9,46 +9,57 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmStartSession"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmStartSession([NativeTypeName("DWORD *")] uint* pSessionHandle, [NativeTypeName("DWORD")] uint dwSessionFlags, [NativeTypeName("WCHAR []")] ushort* strSessionKey);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmJoinSession"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmJoinSession([NativeTypeName("DWORD *")] uint* pSessionHandle, [NativeTypeName("const WCHAR []")] ushort* strSessionKey);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmEndSession"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmEndSession([NativeTypeName("DWORD")] uint dwSessionHandle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmRegisterResources"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmRegisterResources([NativeTypeName("DWORD")] uint dwSessionHandle, uint nFiles, [NativeTypeName("LPCWSTR []")] ushort** rgsFileNames, uint nApplications, [NativeTypeName("RM_UNIQUE_PROCESS []")] RM_UNIQUE_PROCESS* rgApplications, uint nServices, [NativeTypeName("LPCWSTR []")] ushort** rgsServiceNames);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmGetList"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmGetList([NativeTypeName("DWORD")] uint dwSessionHandle, uint* pnProcInfoNeeded, uint* pnProcInfo, [NativeTypeName("RM_PROCESS_INFO []")] RM_PROCESS_INFO* rgAffectedApps, [NativeTypeName("LPDWORD")] uint* lpdwRebootReasons);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmShutdown"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmShutdown([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("ULONG")] uint lActionFlags, [NativeTypeName("RM_WRITE_STATUS_CALLBACK")] delegate* unmanaged<uint, void> fnStatus);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmRestart"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmRestart([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("DWORD")] uint dwRestartFlags, [NativeTypeName("RM_WRITE_STATUS_CALLBACK")] delegate* unmanaged<uint, void> fnStatus);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmCancelCurrentTask"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmCancelCurrentTask([NativeTypeName("DWORD")] uint dwSessionHandle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmAddFilter"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmAddFilter([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("LPCWSTR")] ushort* strModuleName, RM_UNIQUE_PROCESS* pProcess, [NativeTypeName("LPCWSTR")] ushort* strServiceShortName, RM_FILTER_ACTION FilterAction);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmRemoveFilter"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmRemoveFilter([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("LPCWSTR")] ushort* strModuleName, RM_UNIQUE_PROCESS* pProcess, [NativeTypeName("LPCWSTR")] ushort* strServiceShortName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RmGetFilterList"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RmGetFilterList([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("PBYTE")] byte* pbFilterBuf, [NativeTypeName("DWORD")] uint cbFilterBuf, [NativeTypeName("LPDWORD")] uint* cbFilterBufNeeded);

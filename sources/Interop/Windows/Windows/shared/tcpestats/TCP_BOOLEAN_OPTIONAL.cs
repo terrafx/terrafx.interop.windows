@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_BOOLEAN_OPTIONAL.xml' path='doc/member[@name="TCP_BOOLEAN_OPTIONAL"]/*' />
 public enum TCP_BOOLEAN_OPTIONAL
 {
+    /// <include file='TCP_BOOLEAN_OPTIONAL.xml' path='doc/member[@name="TCP_BOOLEAN_OPTIONAL.TcpBoolOptDisabled"]/*' />
     TcpBoolOptDisabled = 0,
+
+    /// <include file='TCP_BOOLEAN_OPTIONAL.xml' path='doc/member[@name="TCP_BOOLEAN_OPTIONAL.TcpBoolOptEnabled"]/*' />
     TcpBoolOptEnabled,
+
+    /// <include file='TCP_BOOLEAN_OPTIONAL.xml' path='doc/member[@name="TCP_BOOLEAN_OPTIONAL.TcpBoolOptUnchanged"]/*' />
     TcpBoolOptUnchanged = -1,
 }

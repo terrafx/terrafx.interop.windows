@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2"]/*' />
 [Guid("3050F648-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IMarkupContainer2 : IMarkupContainer")]
 [NativeInheritance("IMarkupContainer")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
         return ((delegate* unmanaged<IMarkupContainer2*, Guid*, void**, int>)(lpVtbl[0]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
         return ((delegate* unmanaged<IMarkupContainer2*, uint>)(lpVtbl[1]))((IMarkupContainer2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
         return ((delegate* unmanaged<IMarkupContainer2*, uint>)(lpVtbl[2]))((IMarkupContainer2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMarkupContainer.OwningDoc" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OwningDoc(IHTMLDocument2** ppDoc)
@@ -46,6 +51,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
         return ((delegate* unmanaged<IMarkupContainer2*, IHTMLDocument2**, int>)(lpVtbl[3]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), ppDoc);
     }
 
+    /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.CreateChangeLog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateChangeLog(IHTMLChangeSink* pChangeSink, IHTMLChangeLog** ppChangeLog, BOOL fForward, BOOL fBackward)
@@ -53,6 +59,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
         return ((delegate* unmanaged<IMarkupContainer2*, IHTMLChangeSink*, IHTMLChangeLog**, BOOL, BOOL, int>)(lpVtbl[4]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), pChangeSink, ppChangeLog, fForward, fBackward);
     }
 
+    /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.RegisterForDirtyRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RegisterForDirtyRange(IHTMLChangeSink* pChangeSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -60,6 +67,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
         return ((delegate* unmanaged<IMarkupContainer2*, IHTMLChangeSink*, uint*, int>)(lpVtbl[5]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), pChangeSink, pdwCookie);
     }
 
+    /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.UnRegisterForDirtyRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UnRegisterForDirtyRange([NativeTypeName("DWORD")] uint dwCookie)
@@ -67,6 +75,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
         return ((delegate* unmanaged<IMarkupContainer2*, uint, int>)(lpVtbl[6]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.GetAndClearDirtyRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetAndClearDirtyRange([NativeTypeName("DWORD")] uint dwCookie, IMarkupPointer* pIPointerBegin, IMarkupPointer* pIPointerEnd)
@@ -74,6 +83,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
         return ((delegate* unmanaged<IMarkupContainer2*, uint, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[7]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), dwCookie, pIPointerBegin, pIPointerEnd);
     }
 
+    /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.GetVersionNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [return: NativeTypeName("long")]
@@ -82,6 +92,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
         return ((delegate* unmanaged<IMarkupContainer2*, int>)(lpVtbl[8]))((IMarkupContainer2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.GetMasterElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetMasterElement(IHTMLElement** ppElementMaster)

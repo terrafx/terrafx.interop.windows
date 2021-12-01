@@ -5,20 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HID_COLLECTION_INFORMATION.xml' path='doc/member[@name="HID_COLLECTION_INFORMATION"]/*' />
 public unsafe partial struct HID_COLLECTION_INFORMATION
 {
+    /// <include file='HID_COLLECTION_INFORMATION.xml' path='doc/member[@name="HID_COLLECTION_INFORMATION.DescriptorSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint DescriptorSize;
 
+    /// <include file='HID_COLLECTION_INFORMATION.xml' path='doc/member[@name="HID_COLLECTION_INFORMATION.Polled"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Polled;
 
+    /// <include file='HID_COLLECTION_INFORMATION.xml' path='doc/member[@name="HID_COLLECTION_INFORMATION.Reserved1"]/*' />
     [NativeTypeName("UCHAR [1]")]
     public fixed byte Reserved1[1];
 
+    /// <include file='HID_COLLECTION_INFORMATION.xml' path='doc/member[@name="HID_COLLECTION_INFORMATION.VendorID"]/*' />
     public ushort VendorID;
 
+    /// <include file='HID_COLLECTION_INFORMATION.xml' path='doc/member[@name="HID_COLLECTION_INFORMATION.ProductID"]/*' />
     public ushort ProductID;
 
+    /// <include file='HID_COLLECTION_INFORMATION.xml' path='doc/member[@name="HID_COLLECTION_INFORMATION.VersionNumber"]/*' />
     public ushort VersionNumber;
 }

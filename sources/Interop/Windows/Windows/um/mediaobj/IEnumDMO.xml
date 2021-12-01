@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumDMO.Clone">
+    <summary>
+      <para>This method is not implemented.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Reserved.</para>
+    </param>
+    <returns>
+      <para>Returns E_NOTIMPL.</para>
+    </returns>
+    <seealso cref="IEnumDMO Interface" />
+  </member>
+  <member name="IEnumDMO.Next">
+    <summary>
+      <para>The <code>Next</code> method retrieves a specified number of items in the enumeration sequence.</para>
+    </summary>
+    <param name="cItemsToFetch">
+      <para>Number of items to retrieve.</para>
+    </param>
+    <param name="pCLSID">
+      <para>Array of size <i>cItemsToFetch</i> that is filled with the CLSIDs of the enumerated DMOs.</para>
+    </param>
+    <param name="Names">
+      <para>Array of size <i>cItemsToFetch</i> that is filled with the friendly names of the enumerated DMOs.</para>
+    </param>
+    <param name="pcItemsFetched">
+      <para>Pointer to a variable that receives the actual number of items retrieved. Can be <b>NULL</b> if <i>cItemsToFetch</i> equals 1.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Retrieved fewer items than requested.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Retrieved the requested number of items.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the method succeeds, the arrays given by the <i>pCLSID</i> and <i>Names</i> parameters are filled with CLSIDs and wide-character strings. The value of *<i>pcItemsFetched</i> specifies the number of items returned in these arrays.</para>
+      <para>The method returns S_OK if it retrieves the requested number of items (in other words, if *<i>pcItemsFetched</i> equals <i>cItemsToFetch</i>). Otherwise, it returns S_FALSE or an error code.</para>
+      <para>The caller must free the memory allocated for each string returned in the <i>Names</i> parameter, using the <b>CoTaskMemFree</b> function.</para>
+    </remarks>
+    <seealso cref="IEnumDMO Interface" />
+  </member>
+  <member name="IEnumDMO.Reset">
+    <summary>
+      <para>The <code>Reset</code> method resets the enumeration sequence to the beginning.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK.</para>
+    </returns>
+    <seealso cref="IEnumDMO Interface" />
+  </member>
+  <member name="IEnumDMO.Skip">
+    <summary>
+      <para>The <code>Skip</code> method skips over a specified number of items in the enumeration sequence.</para>
+    </summary>
+    <param name="cItemsToSkip">
+      <para>Number of items to skip.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if the number items skipped equals <i>cItemsToSkip</i>. Otherwise, returns S_FALSE.</para>
+    </returns>
+    <seealso cref="IEnumDMO Interface" />
+  </member>
+  <member name="IEnumDMO">
+    <summary>
+      <para>The <code>IEnumDMO</code> interface provides methods for enumerating Microsoft DirectX Media Objects (DMOs). It is based on the OLE enumeration interfaces. For more information, see the <i>IEnumXXXX</i> topic in the Platform SDK.</para>
+      <para>To enumerate registered DMOs, call the <see cref="DMOEnum" /> function.</para>
+    </summary>
+  </member>
+</doc>

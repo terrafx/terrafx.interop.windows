@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CM_SET_WIDTH_VALUE">
+    <summary>
+      <para>Specifies width values in pixels and includes special support for default and autosize. Used by members of the <see cref="IColumnManager" /> interface through the <see cref="CM_COLUMNINFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="CM_SET_WIDTH_VALUE.CM_WIDTH_USEDEFAULT">
+    <summary>
+      <para>Use the default width.</para>
+    </summary>
+  </member>
+  <member name="CM_SET_WIDTH_VALUE.CM_WIDTH_AUTOSIZE">
+    <summary>
+      <para>Use the auto-size width.</para>
+    </summary>
+  </member>
+</doc>

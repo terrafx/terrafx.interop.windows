@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS">
+    <summary>
+      <para>Options for swap-chain color space.</para>
+    </summary>
+    <remarks>
+      <para>This enum is used by <see cref="SetColorSpace" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+  </member>
+  <member name="DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS.DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_NOMINAL_RANGE">
+    <summary>
+      <para>Specifies nominal range YCbCr, which isn't an absolute color space, but a way of encoding RGB info.</para>
+    </summary>
+  </member>
+  <member name="DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS.DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_BT709">
+    <summary>
+      <para>Specifies BT.709, which standardizes the format of high-definition television and has 16:9 (widescreen) aspect ratio.</para>
+    </summary>
+  </member>
+  <member name="DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS.DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_xvYCC">
+    <summary>
+      <para>Specifies xvYCC or extended-gamut YCC (also x.v.Color) color space that can be used in the video electronics of television sets to support a gamut 1.8 times as large as that of the sRGB color space.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.X3DAudioCalculate">
+    <summary>
+      <para>Calculates DSP settings with respect to 3D parameters.</para>
+    </summary>
+    <param name="Instance">
+      <para>3D audio instance handle. Call <see cref="X3DAudioInitialize" /> to get this handle.</para>
+    </param>
+    <param name="pListener">
+      <para>Pointer to an <see cref="X3DAUDIO_LISTENER" /> representing the point of reception.</para>
+    </param>
+    <param name="pEmitter">
+      <para>Pointer to an <see cref="X3DAUDIO_EMITTER" /> representing the sound source.</para>
+    </param>
+    <param name="Flags">
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>X3DAUDIO_CALCULATE_MATRIX</description>
+          <description>Enables matrix coefficient table calculation. </description>
+        </item>
+        <item>
+          <description>X3DAUDIO_CALCULATE_DELAY</description>
+          <description>Enables delay time array calculation (stereo only). </description>
+        </item>
+        <item>
+          <description>X3DAUDIO_CALCULATE_LPF_DIRECT</description>
+          <description>Enables low pass filter (LPF) direct-path coefficient calculation. </description>
+        </item>
+        <item>
+          <description>X3DAUDIO_CALCULATE_LPF_REVERB</description>
+          <description>Enables LPF reverb-path coefficient calculation. </description>
+        </item>
+        <item>
+          <description>X3DAUDIO_CALCULATE_REVERB</description>
+          <description>Enables reverb send level calculation. </description>
+        </item>
+        <item>
+          <description>X3DAUDIO_CALCULATE_DOPPLER</description>
+          <description>Enables Doppler shift factor calculation. </description>
+        </item>
+        <item>
+          <description>X3DAUDIO_CALCULATE_EMITTER_ANGLE</description>
+          <description>Enables emitter-to-listener interior angle calculation. </description>
+        </item>
+        <item>
+          <description>X3DAUDIO_CALCULATE_ZEROCENTER</description>
+          <description>Fills the center channel with silence.
+This flag allows you to keep a 6-channel matrix so you do not have to remap the channels,
+but the center channel will be silent.  This flag is only valid if you also set
+X3DAUDIO_CALCULATE_MATRIX. </description>
+        </item>
+        <item>
+          <description>X3DAUDIO_CALCULATE_REDIRECT_TO_LFE</description>
+          <description>Applies an equal mix of all source channels
+to a low frequency effect (LFE) destination channel. It only applies to matrix calculations
+with a source that does not have an LFE channel and a destination that does have an LFE
+channel.  This flag is only valid  if you also set X3DAUDIO_CALCULATE_MATRIX. </description>
+        </item>
+      </list>
+    </param>
+    <param name="pDSPSettings">
+      <para>Pointer to an <see cref="X3DAUDIO_DSP_SETTINGS" /> structure that receives the calculation results.</para>
+    </param>
+    <returns>
+      <para>This function does not return a value.</para>
+    </returns>
+    <remarks>
+      <para>You typically call <b>X3DAudioCalculate</b> once for each pair of emitting objects and listeners in the scene. After each call, to apply the 3D effects, the app manually applies the calculation results at <i>pDSPSettings</i> to the XAUDIO2 graph. For more info, see <a href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--integrate-x3daudio-with-xaudio2">How to: Integrate X3DAudio with XAudio2</a>.</para>
+      <para>
+        <b>Important</b>   The listener and emitter values must be valid. Floating-point specials (NaN, QNaN, +INF, -INF) can cause the entire audio output to go silent if introduced into a running audio graph.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+      <para>
+        <b>Windows Phone 8.1:</b> This API is supported.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">Functions</seealso>
+  </member>
+  <member name="DirectX.X3DAudioInitialize">
+    <summary>
+      <para>Sets all global 3D audio constants.</para>
+    </summary>
+    <param name="SpeakerChannelMask">
+      <para>Assignment of channels to speaker positions. This value must not be zero. The only permissible value on Xbox 360 is SPEAKER_XBOX.</para>
+    </param>
+    <param name="SpeedOfSound">
+      <para>Speed of sound, in user-defined world units per second. Use this value only for doppler calculations. It must be greater than or equal to FLT_MIN.</para>
+    </param>
+    <param name="Instance">
+      <para>3D audio instance handle. Use this handle when you call <see cref="X3DAudioCalculate" />.</para>
+    </param>
+    <returns>
+      <para>This function does not return a value.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>X3DAUDIO_HANDLE</b> is an opaque data structure. Because the operating system doesn't allocate any additional storage for the 3D audio instance handle, you don't need to free or close it.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+      <para>
+        <b>Windows Phone 8.1:</b> This API is supported.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">Functions</seealso>
+  </member>
+</doc>

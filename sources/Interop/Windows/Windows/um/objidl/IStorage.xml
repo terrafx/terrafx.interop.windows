@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IStorage.Commit">
+    <summary>
+      <para>The <b>Commit</b> method ensures that any changes made to a storage object open in transacted mode are reflected in the parent storage. For nonroot storage objects in direct mode, this method has no effect. For a root storage, it reflects the changes in the actual device; for example, a file on disk. For a root storage object opened in direct mode, always call the <b>IStorage.Commit</b> method prior to <see cref="Release" />. <b>IStorage.Commit</b> flushes all memory buffers to the disk for a root storage in direct mode and will return an error code upon failure. Although <b>Release</b> also flushes memory buffers to disk, it has no capacity to return any error codes upon failure. Therefore, calling <b>Release</b> without first calling
+<b>Commit</b> causes indeterminate results.</para>
+    </summary>
+    <param name="grfCommitFlags">
+      <para>Controls how the changes are committed to the storage object. See the
+<see cref="STGC" /> enumeration for a definition of these values.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | Changes to the storage object were successfully committed to the parent level. If STGC_CONSOLIDATE was specified, the storage was successfully consolidated, or the storage was already too compact to consolidate further.|
+|STG_S_MULTIPLEOPENS | The commit operation succeeded, but the storage could not be consolidated because it had been opened multiple times using the STGM_NOSNAPSHOT flag.|
+|STG_S_CANNOTCONSOLIDATE | The commit operation succeeded, but the storage could not be consolidated due to an incorrect storage mode. For compound files, the storage may have been opened using the STGM_NOSCRATCH flag, or the storage may not be the outermost transacted level.|
+|STG_S_CONSOLIDATIONFAILED | The commit operation succeeded, but the storage could not be consolidated due to an internal error (for example, a memory allocation failure).|
+|E_PENDING | Asynchronous storage only: Part or all of the data to be committed is currently unavailable.|
+|STG_E_INVALIDFLAG | The value for the <i>grfCommitFlags</i> parameter is not valid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|
+|STG_E_NOTCURRENT | Another open instance of the storage object has committed changes. As a result, the current commit operation may overwrite previous changes.|
+|STG_E_MEDIUMFULL | No space left on device to commit.|
+|STG_E_TOOMANYOPENFILES | The commit operation could not be completed because there are too many open files.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IStorage.Commit</b> makes permanent changes to a storage object that is in transacted mode, in which changes are accumulated in a buffer, and not reflected in the storage object until there is a call to this method. The alternative is to open an object in direct mode, in which changes are immediately reflected in the storage object. An object opened in the direct mode does not require calling <b>IStorage.Commit</b> to make permanent changes in the storage object. Calling the <b>IStorage.Commit</b> method on a nonroot storage opened in direct mode has no effect. Opening a root storage object in direct mode ensures that changes in memory buffers are written to the underlying storage device.</para>
+      <para>The commit operation publishes the current changes in this storage object and its children to the next level up in the storage hierarchy. To undo current changes before committing them, call <see cref="IStorage.Revert" /> to roll back to the last-committed version.</para>
+      <para>Calling <b>IStorage.Commit</b> has no effect on currently opened nested elements of this storage object. They remain valid and can be used. However, the <b>IStorage.Commit</b> method does not automatically commit changes to these nested elements. The commit operation publishes only known changes to the next higher level in the storage hierarchy. Thus, transactions to nested levels must be committed to this storage object before they can be committed to higher levels.</para>
+      <para>In commit operations, you need to take steps to ensure that data is protected during the commit process:</para>
+      <list type="bullet">
+        <item>
+          <description>When committing changes to root storage objects, the caller must check the return value to determine whether the operation has been completed successfully, and if not, that the old committed contents of the
+<see cref="IStorage" /> are still intact and can be restored.</description>
+        </item>
+        <item>
+          <description>If this storage object was opened with some of its items excluded, the caller is responsible for rewriting them before calling commit. Write mode is required on the storage opening for the commit to succeed.</description>
+        </item>
+        <item>
+          <description>Unless prohibiting multiple simultaneous writers on the same storage object, an application calling this method should specify at least STGC_ONLYIFCURRENT in the <i>grfCommitFlags</i> parameter to prevent the changes made by one writer from inadvertently overwriting the changes made by another.</description>
+        </item>
+      </list>
+      <para>If the STGC_CONSOLIDATE flag is not supported by a storage implementation, calling <b>IStorage.Commit</b> with STGC_CONSOLIDATE specified in the <i>grfCommitFlags</i> parameter returns the value STG_E_INVALIDFLAG.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.Revert" />
+    <seealso cref="STGC" />
+  </member>
+  <member name="IStorage.CopyTo">
+    <summary>
+      <para>The <b>CopyTo</b> method copies the entire contents of an open storage object to another storage object.</para>
+    </summary>
+    <param name="ciidExclude">
+      <para>The number of elements in the array pointed to by <i>rgiidExclude</i>. If <i>rgiidExclude</i> is <b>NULL</b>, then <i>ciidExclude</i> is ignored.</para>
+    </param>
+    <param name="rgiidExclude">
+      <para>An array of interface identifiers (IIDs) that either the caller knows about and does not want copied or that the storage object does not support, but whose state the caller will later explicitly copy. The array can include
+<see cref="IStorage" />, indicating that only stream objects are to be copied, and
+<see cref="IStream" />, indicating that only storage objects are to be copied. An array length of zero indicates that only the state exposed by the
+<b>IStorage</b> object is to be copied; all other interfaces on the object are to be ignored. Passing <b>NULL</b> indicates that all interfaces on the object are to be copied.</para>
+    </param>
+    <param name="snbExclude">
+      <para>A string name block (refer to
+<a href="https://docs.microsoft.com//windows/desktop/Stg/snb">SNB</a>) that specifies a block of storage or stream objects that are not to be copied to the destination. These elements are not created at the destination. If <b>IID_IStorage</b> is in the <i>rgiidExclude</i> array, this parameter is ignored. This parameter may be <b>NULL</b>.</para>
+    </param>
+    <param name="pstgDest">
+      <para>A pointer to the open storage object into which this storage object is to be copied. The destination storage object can be a different implementation of the
+<see cref="IStorage" /> interface from the source storage object. Thus, <b>IStorage.CopyTo</b> can use only publicly available methods of the destination storage object. If <i>pstgDest</i> is open in transacted mode, it can be reverted by calling its
+<see cref="IStorage.Revert" /> method.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The storage object was successfully copied.|
+|E_PENDING | Asynchronous Storage only: Part or all of the data to be copied is currently unavailable. |
+|STG_E_ACCESSDENIED | The destination storage object is a child of the source storage object.|
+|STG_E_INSUFFICIENTMEMORY | The copy was not completed due to a lack of memory.|
+|STG_E_INVALIDPOINTER | The pointer specified for the storage object was not valid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|
+|STG_E_TOOMANYOPENFILES | The copy was not completed because there are too many open files.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|
+|STG_E_MEDIUMFULL | The copy was not completed because the storage medium is full.|</para>
+    </returns>
+    <remarks>
+      <para>This method merges elements contained in the source storage object with those already present in the destination. The layout of the destination storage object may differ from the source storage object.</para>
+      <para>The copy process is recursive, invoking <b>IStorage.CopyTo</b> and
+<see cref="IStream.CopyTo" /> on the elements nested inside the source.</para>
+      <para>When copying a stream on top of an existing stream with the same name, the existing stream is first removed and then replaced with the source stream. When copying a storage on top of an existing storage with the same name, the existing storage is not removed. As a result, after the copy operation, the destination
+<see cref="IStorage" /> contains older elements, unless they were replaced by newer ones with the same names.</para>
+      <para>A storage object may expose interfaces other than
+<see cref="IStorage" />, including
+<see cref="IRootStorage" />,
+<see cref="IPropertyStorage" />, or
+<see cref="IPropertySetStorage" />. The <i>rgiidExclude</i> parameter permits the exclusion of any or all of these additional interfaces from the copy operation.</para>
+      <para>A caller with a newer or more efficient copy of an existing substorage or stream object may want to exclude the current versions of these objects from the copy operation. The <i>snbExclude</i> and <i>rgiidExclude</i> parameters provide two ways of excluding a storage objects existing storages or streams.</para>
+      <h3>Note to Callers</h3>
+      <para>The most common way to use the <b>IStorage.CopyTo</b> method is to copy everything from the source to the destination, as in most full-save and save-as operations.</para>
+      <para>The following  example code shows how to copy everything  from the source storage object to the destination storage object.</para>
+      <code>pstg-&gt;CopyTo(0, Null, Null, pstgDest)
+</code>
+      <para>
+        <b>Note</b>  To compact a document file, call <b>CopyTo</b> on the root storage object and copy to a new storage object.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.MoveElementTo" />
+    <seealso cref="IStorage.Revert" />
+  </member>
+  <member name="IStorage.CreateStorage">
+    <summary>
+      <para>The <b>CreateStorage</b> method
+creates and opens a new storage object nested within this storage object with the specified name in the specified access mode.</para>
+    </summary>
+    <param name="pwcsName">
+      <para>A pointer to a wide character null-terminated Unicode string that contains the name of the newly created storage object. The name can be used later to reopen the storage object. The name must not exceed 31 characters in length, not including the string terminator. The 000 through 01f characters, serving as the first character of the stream/storage name, are reserved for use by OLE. This is a compound file restriction, not a structured storage restriction.</para>
+    </param>
+    <param name="grfMode">
+      <para>A value that specifies the access mode to use when opening the newly created storage object. For more information and a description of possible values, see <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>.</para>
+    </param>
+    <param name="reserved1">
+      <para>Reserved for future use; must be zero.</para>
+    </param>
+    <param name="reserved2">
+      <para>Reserved for future use; must be zero.</para>
+    </param>
+    <param name="ppstg">
+      <para>A pointer, when successful, to the location of the
+<see cref="IStorage" /> pointer to the newly created storage object. This parameter is set to <b>NULL</b> if an error occurs.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The storage object was created successfully.|
+|E_PENDING | Asynchronous Storage only: Part or all of the necessary data is currently unavailable. |
+|STG_E_ACCESSDENIED | Not enough permissions to create storage object.|
+|STG_E_FILEALREADYEXISTS | The name specified for the storage object already exists in the storage object and the <i>grfMode</i> parameter includes the flag STGM_FAILIFTHERE.|
+|STG_E_INSUFFICIENTMEMORY | The storage object was not created due to a lack of memory.|
+|STG_E_INVALIDFLAG | The value specified for the <i>grfMode&lt;</i> parameter is not a valid <i>STGM</i> constant value.|he value specified for the grfMode parameter is not a valid
+|STG_E_INVALIDFUNCTION | The specified combination of flags in the <i>grfMode</i> parameter is not supported.|
+|STG_E_INVALIDNAME | Not a valid value for <i>pwcsName</i>.|
+|STG_E_INVALIDPOINTER | The pointer specified for the storage object was not valid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|
+|STG_E_TOOMANYOPENFILES | The storage object was not created because there are too many open files.|
+|STG_S_CONVERTED | The existing stream with the specified name was replaced with a new storage object containing a single stream called CONTENTS. The new storage object will be added.|</para>
+    </returns>
+    <remarks>
+      <para>If a storage with the name specified in the <i>pwcsName</i> parameter already exists within the parent storage object, and the <i>grfMode</i> parameter includes the STGM_CREATE flag, the existing storage is replaced by the new one. If the <i>grfMode</i> parameter includes the STGM_CONVERT flag, the existing element is converted to a stream object named CONTENTS and the new storage object is created containing the CONTENTS stream object. The destruction of the old element and the creation of the new storage object are both subject to the transaction mode on the parent storage object. Be aware that you cannot use STGM_CONVERT if you are also using STGM_CREATE.</para>
+      <para>The COM-provided compound file implementation of the <b>IStorage.CreateStorage</b> method does not support the following behavior:</para>
+      <list type="bullet">
+        <item>
+          <description>The STGM_PRIORITY flag for nonroot storages.</description>
+        </item>
+        <item>
+          <description>Opening the same storage object more than once from the same parent storage. The STGM_SHARE_EXCLUSIVE flag must be specified.</description>
+        </item>
+        <item>
+          <description>The STGM_DELETEONRELEASE flag. If this flag is specified, the function returns STG_E_INVALIDFLAG.</description>
+        </item>
+      </list>
+      <para>If a storage object with the same name already exists and <i>grfMode</i> is set to STGM_FAILIFTHERE, this method fails with the return value STG_E_FILEALREADYEXISTS.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.OpenStorage" />
+  </member>
+  <member name="IStorage.CreateStream">
+    <summary>
+      <para>The <b>CreateStream</b> method
+creates and opens a stream object with the specified name contained in this storage object. All elements within a storage objects, both streams and other storage objects, are kept in the same name space.</para>
+    </summary>
+    <param name="pwcsName">
+      <para>A pointer to a wide character null-terminated Unicode string that contains the name of the newly created stream. The name can be used later to open or reopen the stream. The name must not exceed 31 characters in length, not including the string terminator. The 000 through 01f characters, serving as the first character of the stream/storage name, are reserved for use by OLE. This is a compound file restriction, not a structured storage restriction.</para>
+    </param>
+    <param name="grfMode">
+      <para>Specifies the access mode to use when opening the newly created stream. For more information and descriptions of the possible values, see <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>.</para>
+    </param>
+    <param name="reserved1">
+      <para>Reserved for future use; must be zero.</para>
+    </param>
+    <param name="reserved2">
+      <para>Reserved for future use; must be zero.</para>
+    </param>
+    <param name="ppstm">
+      <para>On return, pointer to the location of the new
+<see cref="IStream" /> interface pointer. This is only valid if the operation is successful. When an error occurs, this parameter is set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The new stream was successfully created.|
+|E_PENDING | Asynchronous Storage only: Part or all of the necessary data is currently unavailable. |
+|STG_E_ACCESSDENIED | Not enough permissions to create stream.|
+|STG_E_FILEALREADYEXISTS | The name specified for the stream already exists in the storage object and the <i>grfMode</i> parameter includes the value STGM_FAILIFTHERE.|
+|STG_E_INSUFFICIENTMEMORY | The stream was not created due to a lack of memory.|
+|STG_E_INVALIDFLAG | The value specified for the <i>grfMode</i> parameter is not a valid <b>STGM</b> constants value.|
+|STG_E_INVALIDFUNCTION | The specified combination of flags in the <i>grfMode</i> parameter is not supported; for example, when this method is called without the STGM_SHARE_EXCLUSIVE flag.|
+|STG_E_INVALIDNAME | Invalid value for <i>pwcsName</i>.|
+|STG_E_INVALIDPOINTER | The pointer specified for the stream object was invalid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was invalid.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|
+|STG_E_TOOMANYOPENFILES | The stream was not created because there are too many open files.|</para>
+    </returns>
+    <remarks>
+      <para>If a stream with the name specified in the <i>pwcsName</i> parameter already exists and the <i>grfMode</i> parameter includes the STGM_CREATE flag, the existing stream is replaced by a newly created one. Both the destruction of the old stream and the creation of the new stream object are subject to the transaction mode on the parent storage object.</para>
+      <para>The COM-provided compound file implementation of the <b>IStorage.CreateStream</b> method does not support the following behaviors:</para>
+      <list type="bullet">
+        <item>
+          <description>The STGM_DELETEONRELEASE flag is not supported.</description>
+        </item>
+        <item>
+          <description>Transacted mode (STGM_TRANSACTED) is not supported for stream objects.</description>
+        </item>
+        <item>
+          <description>Opening the same stream more than once from the same storage is not supported. The STGM_SHARE_EXCLUSIVE sharing-mode flag must be specified in the <i>grfMode</i> parameter.</description>
+        </item>
+      </list>
+      <para>If the stream already exists and <i>grfMode</i> is set to STGM_FAILIFTHERE, this method fails with the return value STG_E_FILEALREADYEXISTS.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.OpenStream" />
+    <seealso cref="IStream" />
+  </member>
+  <member name="IStorage.EnumElements">
+    <summary>
+      <para>The <b>EnumElements</b> method retrieves a pointer to an enumerator object that can be used to enumerate the storage and stream objects contained within this storage object.</para>
+    </summary>
+    <param name="reserved1">
+      <para>Reserved for future use; must be zero.</para>
+    </param>
+    <param name="reserved2">
+      <para>Reserved for future use; must be <b>NULL</b>.</para>
+    </param>
+    <param name="reserved3">
+      <para>Reserved for future use; must be zero.</para>
+    </param>
+    <param name="ppenum">
+      <para>Pointer to
+<see cref="IEnumSTATSTG" />* pointer variable that receives the interface pointer to the new enumerator object.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The enumerator object was successfully returned.|
+|E_PENDING | Asynchronous Storage only: Part or all of the element's data is currently unavailable.|
+|STG_E_INSUFFICIENTMEMORY | The enumerator object could not be created due to lack of memory.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>The enumerator object returned by this method implements the
+<see cref="IEnumSTATSTG" /> interface, one of the standard enumerator interfaces that contain the <b>Next</b>, <b>Reset</b>,
+<b>Clone</b>, and <b>Skip</b> methods.
+<b>IEnumSTATSTG</b> enumerates the data stored in an array of
+<see cref="STATSTG" /> structures.</para>
+      <para>The storage object must be open in read mode to allow the enumeration of its elements.</para>
+      <para>The enumerator object is permitted to enumerate the elements in any order.
+The enumerator object is also permitted to treat the enumeration as a snapshot
+or to have the enumeration reflect the current state of the storage object.</para>
+    </remarks>
+    <seealso cref="IEnumSTATSTG" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="STATSTG" />
+  </member>
+  <member name="IStorage.MoveElementTo">
+    <summary>
+      <para>The <b>MoveElementTo</b> method copies or moves a substorage or stream from this storage object to another storage object.</para>
+    </summary>
+    <param name="pwcsName">
+      <para>Pointer to a wide character null-terminated Unicode string that contains the name of the element in this storage object to be moved or copied.</para>
+    </param>
+    <param name="pstgDest">
+      <para>
+        <see cref="IStorage" /> pointer to the destination storage object.</para>
+    </param>
+    <param name="pwcsNewName">
+      <para>Pointer to a wide character null-terminated unicode string that contains the new name for the element in its new storage object.</para>
+    </param>
+    <param name="grfFlags">
+      <para>Specifies whether the operation should be a move (STGMOVE_MOVE) or a copy (STGMOVE_COPY). See the
+<see cref="STGMOVE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The storage object was successfully copied or moved.|
+|E_PENDING | Asynchronous Storage only: Part or all of the element's data is currently unavailable. |
+|STG_E_ACCESSDENIED | The destination storage object is a child of the source storage object. Or, the destination object and element name are the same as the source object and element name. In other words, you cannot move an element to itself.|
+|STG_E_FILENOTFOUND | The element with the specified name does not exist.|
+|STG_E_FILEALREADYEXISTS | The specified file already exists.|
+|STG_E_INSUFFICIENTMEMORY | The copy or move was not completed due to a lack of memory.|
+|STG_E_INVALIDFLAG | The value for the <i>grfFlags</i> parameter is not valid.|
+|STG_E_INVALIDNAME | Not a valid value for <i>pwcsName</i>.|
+|STG_E_INVALIDPOINTER | The pointer specified for the storage object was not valid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|
+|STG_E_TOOMANYOPENFILES | The copy or move was not completed because there are too many open files.|</para>
+    </returns>
+    <remarks>
+      <para>The <b>IStorage.MoveElementTo</b> method is typically the same as invoking the
+<see cref="IStorage.CopyTo" /> method on the indicated element and then removing the source element. In this case, the
+<b>MoveElementTo</b> method uses only the publicly available functions of the destination storage object to carry out the move.</para>
+      <para>If the source and destination storage objects have special knowledge about each other's implementation (they could, for example, be different instances of the same implementation), this method can be implemented more efficiently.</para>
+      <para>Before calling this method, the element to be moved must be closed, and the destination storage must be open. Also, the destination object and element cannot be the same storage object/element name as the source of the move. That is, you cannot move an element to itself.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.CopyTo" />
+    <seealso cref="STGMOVE" />
+  </member>
+  <member name="IStorage.OpenStorage">
+    <summary>
+      <para>The <b>OpenStorage</b> method
+opens an existing storage object with the specified name in the specified access mode.</para>
+    </summary>
+    <param name="pwcsName">
+      <para>A pointer to a wide character null-terminated Unicode string that contains the name of the storage object to open. The 000 through 01f characters, serving as the first character of the stream/storage name, are reserved for use by OLE. This is a compound file restriction, not a structured storage restriction. It is ignored if <i>pstgPriority</i> is non-<b>NULL</b>.</para>
+    </param>
+    <param name="pstgPriority">
+      <para>Must be <b>NULL</b>. A non-<b>NULL</b> value will return STG_E_INVALIDPARAMETER.</para>
+    </param>
+    <param name="grfMode">
+      <para>Specifies the access mode to use when opening the storage object. For descriptions of the possible values, see <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>. Other modes you choose must at least specify STGM_SHARE_EXCLUSIVE when calling this method.</para>
+    </param>
+    <param name="snbExclude">
+      <para>Must be <b>NULL</b>. A non-<b>NULL</b> value will return STG_E_INVALIDPARAMETER.</para>
+    </param>
+    <param name="reserved">
+      <para>Reserved for future use; must be zero.</para>
+    </param>
+    <param name="ppstg">
+      <para>When successful, pointer to the location of an
+<see cref="IStorage" /> pointer to the opened storage object. This parameter is set to <b>NULL</b> if an error occurs.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The storage object was opened successfully.|
+|E_PENDING | Asynchronous Storage only: Part or all of the storage's data is currently unavailable. |
+|STG_E_ACCESSDENIED | Not enough permissions to open storage object.|
+|STG_E_FILENOTFOUND | The storage object with the specified name does not exist.|
+|STG_E_INSUFFICIENTMEMORY | The storage object was not opened due to a lack of memory.|
+|STG_E_INVALIDFLAG | The value specified for the <i>grfMode</i> parameter is not a valid <b>STGM</b> constants value.|
+|STG_E_INVALIDFUNCTION | The specified combination of flags in the <i>grfMode</i> parameter is not supported.|
+|STG_E_INVALIDNAME | Not a valid value for <i>pwcsName</i>.|
+|STG_E_INVALIDPOINTER | The pointer specified for the storage object was not valid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|
+|STG_E_TOOMANYOPENFILES | The storage object was not created because there are too many open files.|
+|STG_S_CONVERTED | The existing stream with the specified name was replaced with a new storage object containing a single stream called CONTENTS. In direct mode, the new storage is immediately written to disk. In transacted mode, the new storage is written to a temporary storage in memory and later written to disk when it is committed.|</para>
+    </returns>
+    <remarks>
+      <para>If the <i>pstgPriority</i> parameter is <b>NULL</b>, it is ignored. If the <i>pstgPriority</i> parameter is not <b>NULL</b>, it is an
+<see cref="IStorage" /> pointer to a previous opening of an element of the storage object, usually one that was opened in priority mode. The storage object should be closed and reopened according to <i>grfMode</i>. When the <b>IStorage.OpenStorage</b> method returns, <i>pstgPriority</i> is no longer valid. Use the value supplied in the <i>ppstg</i> parameter.</para>
+      <para>Storage objects can be opened with STGM_DELETEONRELEASE, in which case the object is destroyed when it receives its final release. This is useful for creating temporary storage objects.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.CreateStorage" />
+  </member>
+  <member name="IStorage.OpenStream">
+    <summary>
+      <para>The <b>OpenStream</b> method
+opens an existing stream object within this storage object in the specified access mode.</para>
+    </summary>
+    <param name="pwcsName">
+      <para>A pointer to a wide character null-terminated Unicode string that contains the name of the stream to open. The 000 through 01f characters, serving as the first character of the stream/storage name, are reserved for use by OLE. This is a compound file restriction, not a structured storage restriction.</para>
+    </param>
+    <param name="reserved1">
+      <para>Reserved for future use; must be <b>NULL</b>.</para>
+    </param>
+    <param name="grfMode">
+      <para>Specifies the access mode to be assigned to the open stream. For more information and descriptions of possible values, see <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>.  Other modes you choose must at least specify STGM_SHARE_EXCLUSIVE when calling this method in the compound file implementation.</para>
+    </param>
+    <param name="reserved2">
+      <para>Reserved for future use; must be zero.</para>
+    </param>
+    <param name="ppstm">
+      <para>A pointer to
+<see cref="IStream" /> pointer variable that receives the interface pointer to the newly opened stream object. If an error occurs, *<i>ppstm</i> must be set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The stream was successfully opened.|
+|E_PENDING | Asynchronous Storage only: Part or all of the stream data is currently unavailable. |
+|STG_E_ACCESSDENIED | Not enough permissions to open stream.|
+|STG_E_FILENOTFOUND | The stream with specified name does not exist.|
+|STG_E_INSUFFICIENTMEMORY | The stream was not opened due to a lack of memory.|
+|STG_E_INVALIDFLAG | The value specified for the <i>grfMode</i> parameter is not a valid <b>STGM</b> constants value.|
+|STG_E_INVALIDFUNCTION | The specified combination of flags in the <i>grfMode</i> parameter is not supported; for example, when this method is called without the STGM_SHARE_EXCLUSIVE flag.|
+|STG_E_INVALIDNAME | Invalid value for <i>pwcsName</i>.|
+|STG_E_INVALIDPOINTER | The pointer specified for the stream object was not valid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|
+|STG_E_TOOMANYOPENFILES | The stream was not opened because there are too many open files.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IStorage.OpenStream</b> opens an existing stream object within this storage object in the access mode specified in <i>grfMode</i>. There are restrictions on the permissions that can be given in <i>grfMode</i>. For example, the permissions on this storage object restrict the permissions on its streams. In general, access restrictions on streams need to be stricter than those on their parent storages. Compound-file streams must be opened with STGM_SHARE_EXCLUSIVE.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.CreateStream" />
+    <seealso cref="IStream" />
+  </member>
+  <member name="IStorage.RenameElement">
+    <summary>
+      <para>The <b>RenameElement</b> method renames the specified substorage or stream in this storage object.</para>
+    </summary>
+    <param name="pwcsOldName">
+      <para>Pointer to a wide character null-terminated Unicode string that contains the name of the substorage or stream to be changed.</para>
+      <para>
+        <b>Note</b>  The <i>pwcsName</i>, created in <see cref="CreateStorage" /> or <see cref="CreateStream" /> must not exceed 31 characters in length, not including the string terminator.</para>
+    </param>
+    <param name="pwcsNewName">
+      <para>Pointer to a wide character null-terminated unicode string that contains the new name for the specified substorage or stream.</para>
+      <para>
+        <b>Note</b>  The <i>pwcsName</i>, created in <see cref="CreateStorage" /> or <see cref="CreateStream" /> must not exceed 31 characters in length, not including the string terminator.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The element was successfully renamed.|
+|E_PENDING | Asynchronous Storage only: Part or all of the element's data is currently unavailable.|
+|STG_E_ACCESSDENIED | The caller does not have enough permissions for renaming the element.|
+|STG_E_FILENOTFOUND | The element with the specified old name does not exist.|
+|STG_E_FILEALREADYEXISTS | The element specified by the new name already exists.|
+|STG_E_INSUFFICIENTMEMORY | The element was not renamed due to a lack of memory.|
+|STG_E_INVALIDNAME | Invalid value for one of the names.|
+|STG_E_INVALIDPOINTER | The pointer specified for the element was not valid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|
+|STG_E_TOOMANYOPENFILES | The element was not renamed because there are too many open files.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IStorage.RenameElement</b> renames the specified substorage or stream in this storage object. An element in a storage object cannot be renamed while it is open. The rename operation is subject to committing the changes if the storage is open in transacted mode.</para>
+      <para>The <b>IStorage.RenameElement</b> method is not guaranteed to work in low memory with storage objects open in transacted mode. It may work in direct mode.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+  </member>
+  <member name="IStorage.Revert">
+    <summary>
+      <para>The <b>Revert</b> method discards all changes that have been made to the storage object since the last commit operation.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The revert operation was successful.|
+|E_PENDING | Asynchronous Storage only: Part or all of the storage's data is currently unavailable. |
+|STG_E_INSUFFICIENTMEMORY | The revert operation could not be completed due to a lack of memory.|
+|STG_E_TOOMANYOPENFILES | The revert operation could not be completed because there are too many open files.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>For storage objects opened in transacted mode, the <b>IStorage.Revert</b> method discards any uncommitted changes to this storage object or changes that have been committed to this storage object from nested elements.</para>
+      <para>After this method returns, any existing elements (substorages or streams) that were opened from the reverted storage object are invalid and can no longer be used. Specifying these reverted elements in any call except <see cref="IUnknown.Release" /> returns the error STG_E_REVERTED</para>
+      <para>This method has no effect on storage objects opened in direct mode.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.Commit" />
+  </member>
+  <member name="IStorage.SetClass">
+    <summary>
+      <para>The <b>SetClass</b> method assigns the specified class identifier (CLSID) to this storage object.</para>
+    </summary>
+    <param name="clsid">
+      <para>The CLSID that is to be associated with the storage object.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The CLSID was successfully assigned.|
+|E_PENDING | Asynchronous Storage only: Part or all of the storage's data is currently unavailable.|
+|STG_E_ACCESSDENIED | The caller does not have enough permissions for assigning a CLSID to the storage object.|
+|STG_E_MEDIUMFULL | Not enough space was left on device to complete the operation.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>When first created, a storage object has an associated CLSID of CLSID_NULL. Call <b>SetClass</b> to assign a CLSID to the storage object.</para>
+      <para>Call the
+<see cref="IStorage.Stat" /> method to retrieve the current CLSID of a storage object.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.Stat" />
+  </member>
+  <member name="IStorage.SetElementTimes">
+    <summary>
+      <para>The <b>SetElementTimes</b>  method sets the modification, access, and creation times of the specified storage element, if the underlying file system supports this method.</para>
+    </summary>
+    <param name="pwcsName">
+      <para>The name of the storage object element whose times are to be modified. If <b>NULL</b>, the time is set on the root storage rather than one of its elements.</para>
+    </param>
+    <param name="pctime">
+      <para>Either the new creation time for the element or <b>NULL</b> if the creation time is not to be modified.</para>
+    </param>
+    <param name="patime">
+      <para>Either the new access time for the element or <b>NULL</b> if the access time is not to be modified.</para>
+    </param>
+    <param name="pmtime">
+      <para>Either the new modification time for the element or <b>NULL</b> if the modification time is not to be modified.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The time values were successfully set.|
+|E_PENDING | Asynchronous Storage only: Part or all of the element's data is currently unavailable.|
+|STG_E_ACCESSDENIED | The caller does not have enough permissions for changing the element.|
+|STG_E_FILENOTFOUND | The element with the specified name does not exist.|
+|STG_E_INSUFFICIENTMEMORY | The element was not changed due to a lack of memory.|
+|STG_E_INVALIDNAME | Not a valid value for the element name.|
+|STG_E_INVALIDPOINTER | The pointer specified for the element was not valid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|
+|STG_E_TOOMANYOPENFILES | The element was not changed because there are too many open files.|
+|STG_E_REVERTED | The storage object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>SetElementTimes</b>  sets time statistics for the specified storage element within this storage object.</para>
+      <para>Not all file systems support all the time values. This method sets those times that are supported and ignores the rest. Each time-value parameter can be <b>NULL</b>; indicating that no modification should occur.</para>
+      <para>Call the
+<see cref="IStorage.Stat" /> method to retrieve these time values.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.Stat" />
+  </member>
+  <member name="IStorage.SetStateBits">
+    <summary>
+      <para>The <b>SetStateBits</b> method stores up to 32 bits of state information in this storage object. This method is reserved for future use.</para>
+    </summary>
+    <param name="grfStateBits">
+      <para>Specifies the new values of the bits to set. No legal values are defined for these bits; they are all reserved for future use and must not be used by applications.</para>
+    </param>
+    <param name="grfMask">
+      <para>A binary mask indicating which bits in <i>grfStateBits</i> are significant in this call.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The state information was successfully set.|
+|E_PENDING | Asynchronous Storage only: Part or all of the storage's data is currently unavailable. |
+|STG_E_ACCESSDENIED | The caller does not have enough permissions for changing this storage object.|
+|STG_E_INVALIDFLAG | The value for the grfStateBits or <i>grfMask</i> parameter is not valid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|</para>
+    </returns>
+    <remarks>
+      <para>The values for the state bits are not currently defined.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.Stat" />
+  </member>
+  <member name="IStorage.Stat">
+    <summary>
+      <para>The <b>Stat</b> method retrieves the
+<see cref="STATSTG" /> structure for this open storage object.</para>
+    </summary>
+    <param name="pstatstg">
+      <para>On return, pointer to a
+<see cref="STATSTG" /> structure where this method places information about the open storage object. This parameter is <b>NULL</b> if an error occurs.</para>
+    </param>
+    <param name="grfStatFlag">
+      <para>Specifies that some of the members in the
+<see cref="STATSTG" /> structure are not returned, thus saving a memory allocation operation. Values are taken from the
+<see cref="STATFLAG" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The STATSTG structure was successfully returned at the specified location.|
+|E_PENDING | Asynchronous Storage only: Part or all of the storage's data is currently unavailable.|
+|STG_E_ACCESSDENIED | The caller does not have enough permissions for accessing statistics for this storage object.|
+|STG_E_INSUFFICIENTMEMORY | The STATSTG structure was not returned due to a lack of memory.|
+|STG_E_INVALIDFLAG | The value for the <i>grfStateFlag</i> parameter is not valid.|
+|STG_E_INVALIDPARAMETER | One of the parameters was not valid.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IStorage.Stat</b> retrieves the
+<see cref="STATSTG" /> structure for the current storage object. The
+<b>STATSTG</b> structure contains statistical information about the storage object. <see cref="IStorage.EnumElements" /> returns a pointer to an enumerator object. The enumerator object returned by this method implements the
+<see cref="IEnumSTATSTG" /> interface, through which the data stored in the array of the
+<b>STATSTG</b> structures is enumerated.</para>
+    </remarks>
+    <seealso cref="IEnumSTATSTG" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">IStorage - Compound File Implementation</seealso>
+    <seealso cref="IStorage.SetClass" />
+    <seealso cref="IStorage.SetElementTimes" />
+    <seealso cref="IStorage.SetStateBits" />
+    <seealso cref="STATFLAG" />
+    <seealso cref="STATSTG" />
+  </member>
+  <member name="IStorage">
+    <summary>
+      <para>The
+<b>IStorage</b> interface supports the creation and management of structured storage objects. Structured storage allows hierarchical storage of information within a single file, and is often referred to as "a file system within a file". Elements of a structured storage object are storages and streams. Storages are analogous to directories, and streams are analogous to files. Within a structured storage there will be a primary storage object that may contain substorages, possibly nested, and streams. Storages provide the structure of the object, and streams contain the data, which is manipulated through the
+<see cref="IStream" /> interface.</para>
+      <para>The
+<b>IStorage</b> interface provides methods for creating and managing the root storage object, child storage objects, and stream objects. These methods can create, open, enumerate, move, copy, rename, or delete the elements in the storage object.</para>
+      <para>An application must release its
+<b>IStorage</b> pointers when it is done with the storage object to deallocate memory used. There are also methods for changing the date and time of an element.</para>
+      <para>There are a number of different modes in which a storage object and its elements can be opened, determined by setting values from <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>. One aspect of this is how changes are committed. You can set direct mode, in which changes to an object are immediately written to it, or transacted mode, in which changes are written to a buffer until explicitly committed. The
+<b>IStorage</b> interface provides methods for committing changes and reverting to the last-committed version. For example, a stream can be opened in read-only mode or read/write mode. For more information, see <b>STGM Constants</b>.</para>
+      <para>Other methods provide access to information about a storage object and its elements through the
+<see cref="STATSTG" /> structure.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/enumall-sample">EnumAll Sample</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/samples">Samples</seealso>
+  </member>
+</doc>

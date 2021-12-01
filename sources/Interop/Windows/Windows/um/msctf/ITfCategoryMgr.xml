@@ -1,0 +1,782 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfCategoryMgr.EnumCategoriesInItem">
+    <summary>
+      <para>Obtains an IEnumGUID interface that enumerates all categories to which the specified GUID belongs.</para>
+    </summary>
+    <param name="rguid">
+      <para>Contains a GUID value that identifies the item to enumerate the categories for.</para>
+    </param>
+    <param name="ppEnum">
+      <para>Pointer to an IEnumGUID interface pointer that receives the enumerator.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppEnum</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There is insufficient memory to perform the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.EnumItemsInCategory" />
+    <seealso cref="ITfCategoryMgr.RegisterCategory" />
+  </member>
+  <member name="ITfCategoryMgr.EnumItemsInCategory">
+    <summary>
+      <para>Obtains an IEnumGUID interface that enumerates all GUIDs included in the specified category.</para>
+    </summary>
+    <param name="rcatid">
+      <para>Contains a GUID value that identifies the category to enumerate the items for.</para>
+    </param>
+    <param name="ppEnum">
+      <para>Pointer to an IEnumGUID interface pointer that receives the enumerator.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppEnum</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There is insufficient memory to perform the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.EnumCategoriesInItem" />
+    <seealso cref="ITfCategoryMgr.RegisterCategory" />
+  </member>
+  <member name="ITfCategoryMgr.FindClosestCategory">
+    <summary>
+      <para>Finds the category closest to the specified GUID from a list of categories.</para>
+    </summary>
+    <param name="rguid">
+      <para>Specifies the address of the GUID for which to find the closest category.</para>
+    </param>
+    <param name="pcatid">
+      <para>Pointer to the <b>GUID</b> that receives the CATID for the closest category.</para>
+    </param>
+    <param name="ppcatidList">
+      <para>Pointer to a pointer that specifies an array of CATIDs to search for the closest category.</para>
+    </param>
+    <param name="ulCount">
+      <para>Specifies the number of elements in the array of the <i>ppcatidList</i> parameter.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method obtained the closest category from the list of categories, or the method was unable to obtain a category from the list and indicates this with a <i>pcatid</i> parameter pointer to GUID_NULL.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was unable to find a category for the specified GUID and signals this with a <i>pcatid</i> parameter pointer to GUID_NULL.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The method cannot access the internal table.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified <i>pcatid</i> parameter was <b>NULL</b> on input, or the list of categories contained a <b>NULL</b> element when the <i>ulCount</i> parameter was nonzero.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There is insufficient memory to perform the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The closest category to a <b>GUID</b> is chosen in one of two modes. In the first mode, the method receives a non-empty category list. It chooses the first matching <b>CATID</b> from that list or GUID_NULL if the list does not contain a category that contains the <b>GUID</b> . In the second mode, it receives an empty category list. It chooses the first category that contains the <b>GUID</b> or GUID_NULL if no category contains the <b>GUID</b> .</para>
+    </remarks>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.EnumCategoriesInItem" />
+    <seealso cref="ITfCategoryMgr.EnumItemsInCategory" />
+    <seealso cref="ITfCategoryMgr.RegisterCategory" />
+  </member>
+  <member name="ITfCategoryMgr.GetGUID">
+    <summary>
+      <para>Obtains a GUID from the internal table using its atom.</para>
+    </summary>
+    <param name="guidatom">
+      <para>Contains a <b>TfGuidAtom</b> value that specifies the GUID to obtain.</para>
+    </param>
+    <param name="pguid">
+      <para>Pointer to a <b>GUID</b> value that receives the <b>GUID</b> for the specified atom. Receives GUID_NULL if the <b>GUID</b> for the atom cannot be found.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pguid</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="nn-msctf-itfcategorymgr" />
+    <seealso cref="ITfCategoryMgr.RegisterGUID" />
+    <seealso cref="ITfCategoryMgr.IsEqualTfGuidAtom" />
+  </member>
+  <member name="ITfCategoryMgr.GetGUIDDescription">
+    <summary>
+      <para>Obtains the description of the specified GUID from the Windows registry.</para>
+    </summary>
+    <param name="rguid">
+      <para>Specifies the GUID to obtain the description for.</para>
+    </param>
+    <param name="pbstrDesc">
+      <para>Pointer to a <b>BSTR</b> value that receives the description string. Allocate using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</a>. The caller must free this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</para>
+      <para>Pointer to a <b>BSTR</b> value that receives the description string. This must be allocated using <b>SysAllocString</b>. The caller must free this memory using <b>SysFreeString</b> when it is no longer required.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The method cannot obtain the description.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pbstrDesc</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.RegisterGUIDDescription" />
+    <seealso cref="ITfCategoryMgr.UnregisterGUIDDescription" />
+  </member>
+  <member name="ITfCategoryMgr.GetGUIDDWORD">
+    <summary>
+      <para>Obtains the DWORD value of the specified GUID from the Windows registry.</para>
+    </summary>
+    <param name="rguid">
+      <para>Specifies the address of the GUID for which to get the value.</para>
+    </param>
+    <param name="pdw">
+      <para>Pointer to the <b>DWORD</b> variable that receives the value of the GUID.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was unable to get the <b>DWORD</b> value.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified <i>pdw</i> parameter was <b>NULL</b> on input.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.RegisterGUIDDWORD" />
+    <seealso cref="ITfCategoryMgr.UnregisterGUIDDWORD" />
+  </member>
+  <member name="ITfCategoryMgr.IsEqualTfGuidAtom">
+    <summary>
+      <para>Determines whether the specified atom represents the specified GUID in the internal table.</para>
+    </summary>
+    <param name="guidatom">
+      <para>Specifies an atom that represents a GUID in the internal table.</para>
+    </param>
+    <param name="rguid">
+      <para>Specifies the address of the GUID to compare with the atom in the internal table.</para>
+    </param>
+    <param name="pfEqual">
+      <para>Pointer to a Boolean variable that receives an indication of whether the atom represents the GUID.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The method cannot access the internal table.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified <i>pfEqual</i> parameter was <b>NULL</b> on input.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the atom specified by the <i>guidatom</i> parameter represents the <b>GUID</b> specified by the <i>rguid</i> parameter, the <i>pfEqual</i> parameter receives a nonzero value. Otherwise, the <i>pfEqual</i> parameter receives zero.</para>
+    </remarks>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.GetGUID" />
+    <seealso cref="ITfCategoryMgr.RegisterGUID" />
+  </member>
+  <member name="ITfCategoryMgr.RegisterCategory">
+    <summary>
+      <para>Adds a specified GUID to the specified category in the Windows registry.</para>
+    </summary>
+    <param name="rclsid">
+      <para>Contains the CLSID of the text service that owns the item.</para>
+    </param>
+    <param name="rcatid">
+      <para>Contains a GUID value that identifies the category to register the item under. This can be a user-defined category or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-category-values">predefined category values</a>.</para>
+    </param>
+    <param name="rguid">
+      <para>Contains a GUID value that identifies the item to register.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.UnregisterCategory" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-category-values">Predefined Category Values</seealso>
+  </member>
+  <member name="ITfCategoryMgr.RegisterGUID">
+    <summary>
+      <para>Adds a GUID to the internal table and obtains an atom for the GUID.</para>
+    </summary>
+    <param name="rguid">
+      <para>Contains the GUID to obtain the identifier for.</para>
+    </param>
+    <param name="pguidatom">
+      <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfguidatom">TfGuidAtom</a> value that receives the identifier of the GUID.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pguidatom</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Identical <b>GUID</b> values receive identical <b>TfGuidAtom</b> values.</para>
+      <para>A <b>TfGuidAtom</b> value is only valid within the process that <b>ITfCategoryMgr.RegisterGUID</b> is called from.</para>
+    </remarks>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.GetGUID" />
+    <seealso cref="ITfCategoryMgr.IsEqualTfGuidAtom" />
+    <seealso href="https://docs.microsoft.com//windows/win32/tsf/tfguidatom">TfGuidAtom</seealso>
+  </member>
+  <member name="ITfCategoryMgr.RegisterGUIDDescription">
+    <summary>
+      <para>Enters a description for a GUID previously registered in the Windows registry.</para>
+    </summary>
+    <param name="rclsid">
+      <para>Contains the CLSID of the text service that owns the GUID.</para>
+    </param>
+    <param name="rguid">
+      <para>Contains the GUID that the description is registered for.</para>
+    </param>
+    <param name="pchDesc">
+      <para>Pointer to a <b>WCHAR</b> buffer that contains the description for the GUID.</para>
+    </param>
+    <param name="cch">
+      <para>Contains the length, in characters, of the description string.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was unable to register the description string.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pchDest</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.GetGUIDDescription" />
+    <seealso cref="ITfCategoryMgr.UnregisterGUIDDescription" />
+  </member>
+  <member name="ITfCategoryMgr.RegisterGUIDDWORD">
+    <summary>
+      <para>Enters a DWORD value for a GUID previously registered in the Windows registry.</para>
+    </summary>
+    <param name="rclsid">
+      <para>Contains the CLSID of the text service that owns the GUID.</para>
+    </param>
+    <param name="rguid">
+      <para>Contains the GUID that the <b>DWORD</b> is registered for.</para>
+    </param>
+    <param name="dw">
+      <para>Contains the <b>DWORD</b> value registered for the GUID.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was unable to register the <b>DWORD</b> value.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.GetGUIDDWORD" />
+    <seealso cref="ITfCategoryMgr.UnregisterGUIDDWORD" />
+  </member>
+  <member name="ITfCategoryMgr.UnregisterCategory">
+    <summary>
+      <para>Removes a specified GUID from the specified category in the Windows registry.</para>
+    </summary>
+    <param name="rclsid">
+      <para>Contains the CLSID of the text service that owns the item.</para>
+    </param>
+    <param name="rcatid">
+      <para>Contains a GUID that identifies the category that the item is registered under.</para>
+    </param>
+    <param name="rguid">
+      <para>Contains a GUID that identifies the item to remove.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.RegisterCategory" />
+  </member>
+  <member name="ITfCategoryMgr.UnregisterGUIDDescription">
+    <summary>
+      <para>Removes the description for a GUID from the Windows registry.</para>
+    </summary>
+    <param name="rclsid">
+      <para>Contains the CLSID of the text service that owns the GUID.</para>
+    </param>
+    <param name="rguid">
+      <para>Contains the GUID that the description is removed for.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The GUID cannot be found.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.GetGUIDDescription" />
+    <seealso cref="ITfCategoryMgr.RegisterGUIDDescription" />
+  </member>
+  <member name="ITfCategoryMgr.UnregisterGUIDDWORD">
+    <summary>
+      <para>Removes the DWORD value for a GUID from the Windows registry.</para>
+    </summary>
+    <param name="rclsid">
+      <para>Contains the CLSID of the text service that owns the GUID.</para>
+    </param>
+    <param name="rguid">
+      <para>Contains the GUID that the <b>DWORD</b> is removed for.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The GUID cannot be found.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr interface" />
+    <seealso cref="ITfCategoryMgr.GetGUIDDWORD" />
+    <seealso cref="ITfCategoryMgr.RegisterGUIDDWORD" />
+  </member>
+  <member name="ITfCategoryMgr">
+    <summary>
+      <para>The <b>ITfCategoryMgr</b> interface manages categories of objects for text services. The TSF manager implements this interface.</para>
+      <para>TSF categories help organize objects identified by a globally unique identifier ( GUID ). For example, a class identifier ( CLSID ) identifies a text service, and a GUID identifies the TSF compartment, TSF properties, and TSF display attributes. To group and organize multiple GUIDs, TSF uses category identifiers ( CATIDs).</para>
+      <para>The category manager uses an internal table, accessed with keys called GUID atoms to cache the GUIDs. Access to GUIDs is efficient using these atoms. When a GUID is obtained using its atom, the GUID description and value can be obtained from the Windows registry.</para>
+    </summary>
+    <seealso cref="CoCreateInstance" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_TYPE">
+    <summary>
+      <para>Specifies a type of compressed buffer for decoding.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+    <seealso cref="ID3D11VideoContext.GetDecoderBuffer" />
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_TYPE.D3D11_VIDEO_DECODER_BUFFER_PICTURE_PARAMETERS">
+    <summary>
+      <para>Picture decoding parameter buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_TYPE.D3D11_VIDEO_DECODER_BUFFER_MACROBLOCK_CONTROL">
+    <summary>
+      <para>Macroblock control command buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_TYPE.D3D11_VIDEO_DECODER_BUFFER_RESIDUAL_DIFFERENCE">
+    <summary>
+      <para>Residual difference block data buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_TYPE.D3D11_VIDEO_DECODER_BUFFER_DEBLOCKING_CONTROL">
+    <summary>
+      <para>Deblocking filter control command buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_TYPE.D3D11_VIDEO_DECODER_BUFFER_INVERSE_QUANTIZATION_MATRIX">
+    <summary>
+      <para>Inverse quantization matrix buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_TYPE.D3D11_VIDEO_DECODER_BUFFER_SLICE_CONTROL">
+    <summary>
+      <para>Slice-control buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_TYPE.D3D11_VIDEO_DECODER_BUFFER_BITSTREAM">
+    <summary>
+      <para>Bitstream data buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_TYPE.D3D11_VIDEO_DECODER_BUFFER_MOTION_VECTOR">
+    <summary>
+      <para>Motion vector buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_TYPE.D3D11_VIDEO_DECODER_BUFFER_FILM_GRAIN">
+    <summary>
+      <para>Film grain synthesis data buffer.</para>
+    </summary>
+  </member>
+</doc>

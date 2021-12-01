@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDedupBackupSupport.RestoreFiles">
+    <summary>
+      <para>Reconstructs a set of files from a backup store that contains the fully optimized version of the files
+(reparse points) and the Data Deduplication store.</para>
+      <para>Applications that call the
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupbackupsupport-restorefiles">RestoreFiles</a> method must also implement
+the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nn-ddpbackup-idedupreadfilecallback">IDedupReadFileCallback</a> interface. Before
+calling the <b>RestoreFiles</b> method, the
+application must have previously restored the Data Deduplication reparse points for the files to the location
+specified by the <i>FileFullPaths</i> parameter. Metadata located in the reparse points will be
+utilized by Data Deduplication to further drive the restore process.</para>
+      <para>After calling this method, applications can expect to receive two calls to
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-ordercontainersrestore">IDedupReadFileCallback.OrderContainersRestore</a></para>
+      <para>(one for stream map containers and one for data containers) and two or more calls to
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-readbackupfile">IDedupReadFileCallback.ReadBackupFile</a>.
+The application will also receive one call to
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-previewcontainerread">IDedupReadFileCallback.PreviewContainerRead</a></para>
+      <para>before each call to
+<b>ReadBackupFile</b> that is directed
+to a container file.</para>
+    </summary>
+    <param name="NumberOfFiles">
+      <para>The number of files to restore. If this exceeds 10,000 then the method will fail with
+<b>E_INVALIDARG</b> (0x80070057).</para>
+    </param>
+    <param name="FileFullPaths">
+      <para>For each file, this parameter contains the full path from the root directory of the volume to the reparse
+point previously restored by the application.</para>
+    </param>
+    <param name="Store">
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nn-ddpbackup-idedupreadfilecallback">IDedupReadFileCallback</a> interface pointer
+for the backup store. This parameter is required and cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="Flags">
+      <para>This parameter must be <b>DEDUP_RECONSTRUCT_UNOPTIMIZED</b> on input. For more
+information, see the
+<see cref="DEDUP_BACKUP_SUPPORT_PARAM_TYPE" /></para>
+      <para>enumeration.</para>
+    </param>
+    <param name="FileResults">
+      <para>For each file, this parameter contains the results of the restore operation for that file. This parameter
+is optional and can be <b>NULL</b> if the application doesn't need to know the results for each individual file.</para>
+      <h4>S_OK (0x00000000L)</h4>
+      <para>The file was restored successfully.</para>
+      <h4>S_FALSE (0x00000001L)</h4>
+      <para>The specified file is not a deduplicated file.</para>
+      <h4>DDP_E_FILE_CORRUPT (0x80565355L)</h4>
+      <para>Data deduplication encountered a file corruption error.</para>
+      <h4>DDP_E_FILE_SYSTEM_CORRUPT (0x8056530EL)</h4>
+      <para>Data deduplication encountered a file system corruption error.</para>
+      <h4>DDP_E_INVALID_DATA (0x8056531DL)</h4>
+      <para>The data is not valid.</para>
+      <h4>DDP_E_JOB_COMPLETED_PARTIAL_SUCCESS (0x80565356L)</h4>
+      <para>The operation completed with some errors. Check the event logs for more details.</para>
+      <para>
+        <b>Windows Server 2012:  </b>This value is not supported before Windows Server 2012 R2.</para>
+      <h4>DDP_E_NOT_FOUND (0x80565301L)</h4>
+      <para>The requested object was not found.</para>
+      <h4>DDP_E_PATH_NOT_FOUND (0x80565304L)</h4>
+      <para>A specified container path was not found in the backup store.</para>
+      <h4>DDP_E_UNEXPECTED (0x8056530CL)</h4>
+      <para>Data deduplication encountered an unexpected error. Check the Data Deduplication Operational event log
+for more information.</para>
+      <h4>DDP_E_VOLUME_DEDUP_DISABLED (0x80565323L)</h4>
+      <para>The specified volume is not enabled for deduplication.</para>
+      <h4>DDP_E_VOLUME_UNSUPPORTED (0x8056530bL)</h4>
+      <para>The specified volume type is not supported. Deduplication is supported on fixed, write-enabled NTFS data
+volumes.</para>
+      <para>
+        <b>Windows Server 2012:  </b>This value is not supported before Windows Server 2012 R2.</para>
+    </param>
+    <returns>
+      <para>This method can return standard <b>HRESULT</b> values, such as
+<b>S_OK</b>. It can also return converted
+<a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> using the
+<see cref="HRESULT_FROM_WIN32" /> macro. You can test for success
+or failure <b>HRESULT</b> values by using the
+<see cref="SUCCEEDED" /> and
+<see cref="FAILED" /> macros defined in Winerror.h. Possible
+return values include the following.</para>
+      <para>If no file was restored successfully, the result is the first file error encountered. This will be one of the
+"DDP_E_<i>XXX</i>" error codes above.</para>
+    </returns>
+    <remarks>
+      <para>The <i>Store</i> parameter is required because the restore engine (implemented by Data
+Deduplication) can read data from the backup media only by calling the
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-readbackupfile">IDedupReadFileCallback.ReadBackupFile</a></para>
+      <para>method.</para>
+    </remarks>
+    <seealso cref="DEDUP_BACKUP_SUPPORT_PARAM_TYPE" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nn-ddpbackup-idedupbackupsupport">IDedupBackupSupport</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nn-ddpbackup-idedupreadfilecallback">IDedupReadFileCallback</seealso>
+  </member>
+  <member name="IDedupBackupSupport">
+    <summary>
+      <para>Provides a method for restoring a file from a backup store containing copies of Data Deduplication
+reparse points, metadata, and container files.</para>
+    </summary>
+    <remarks>
+      <para>A backup application uses the
+<b>IDedupBackupSupport</b> interface to drive the restore
+process for a select file from a backup store that contains the fully optimized version of the file (reparse
+point) and the Data Deduplication store.</para>
+      <para>This interface is not useful when the backup store contains a copy of the original, non-optimized file.</para>
+      <para>Applications that use the <b>IDedupBackupSupport</b></para>
+      <para>interface must also implement the
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nn-ddpbackup-idedupreadfilecallback">IDedupReadFileCallback</a> interface.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nn-ddpbackup-idedupreadfilecallback">IDedupReadFileCallback</seealso>
+  </member>
+</doc>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMP12PktzSTDBuffer.xml' path='doc/member[@name="CODECAPI_AVEncMP12PktzSTDBuffer"]/*' />
 [Guid("0B751BD0-819E-478C-9435-75208926B377")]
 public partial struct CODECAPI_AVEncMP12PktzSTDBuffer
 {

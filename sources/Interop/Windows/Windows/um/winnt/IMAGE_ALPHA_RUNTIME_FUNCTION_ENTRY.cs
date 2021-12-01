@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY"]/*' />
 public partial struct IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY
 {
+    /// <include file='IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.BeginAddress"]/*' />
     [NativeTypeName("DWORD")]
     public uint BeginAddress;
 
+    /// <include file='IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.EndAddress"]/*' />
     [NativeTypeName("DWORD")]
     public uint EndAddress;
 
+    /// <include file='IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.ExceptionHandler"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExceptionHandler;
 
+    /// <include file='IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.HandlerData"]/*' />
     [NativeTypeName("DWORD")]
     public uint HandlerData;
 
+    /// <include file='IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY.PrologEndAddress"]/*' />
     [NativeTypeName("DWORD")]
     public uint PrologEndAddress;
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideoDRMFlags.xml' path='doc/member[@name="MFVideoDRMFlags"]/*' />
 public enum MFVideoDRMFlags
 {
+    /// <include file='MFVideoDRMFlags.xml' path='doc/member[@name="MFVideoDRMFlags.MFVideoDRMFlag_None"]/*' />
     MFVideoDRMFlag_None = 0,
+
+    /// <include file='MFVideoDRMFlags.xml' path='doc/member[@name="MFVideoDRMFlags.MFVideoDRMFlag_AnalogProtected"]/*' />
     MFVideoDRMFlag_AnalogProtected = 1,
+
+    /// <include file='MFVideoDRMFlags.xml' path='doc/member[@name="MFVideoDRMFlags.MFVideoDRMFlag_DigitallyProtected"]/*' />
     MFVideoDRMFlag_DigitallyProtected = 2,
 }

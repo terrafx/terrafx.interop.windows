@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumTfLatticeElements.xml' path='doc/member[@name="IEnumTfLatticeElements"]/*' />
 [Guid("56988052-47DA-4A05-911A-E3D941F17145")]
 [NativeTypeName("struct IEnumTfLatticeElements : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumTfLatticeElements : IEnumTfLatticeElements.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumTfLatticeElements : IEnumTfLatticeElements.Int
         return ((delegate* unmanaged<IEnumTfLatticeElements*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfLatticeElements*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumTfLatticeElements : IEnumTfLatticeElements.Int
         return ((delegate* unmanaged<IEnumTfLatticeElements*, uint>)(lpVtbl[1]))((IEnumTfLatticeElements*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumTfLatticeElements : IEnumTfLatticeElements.Int
         return ((delegate* unmanaged<IEnumTfLatticeElements*, uint>)(lpVtbl[2]))((IEnumTfLatticeElements*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfLatticeElements.xml' path='doc/member[@name="IEnumTfLatticeElements.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfLatticeElements** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumTfLatticeElements : IEnumTfLatticeElements.Int
         return ((delegate* unmanaged<IEnumTfLatticeElements*, IEnumTfLatticeElements**, int>)(lpVtbl[3]))((IEnumTfLatticeElements*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumTfLatticeElements.xml' path='doc/member[@name="IEnumTfLatticeElements.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_LMLATTELEMENT* rgsElements, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumTfLatticeElements : IEnumTfLatticeElements.Int
         return ((delegate* unmanaged<IEnumTfLatticeElements*, uint, TF_LMLATTELEMENT*, uint*, int>)(lpVtbl[4]))((IEnumTfLatticeElements*)Unsafe.AsPointer(ref this), ulCount, rgsElements, pcFetched);
     }
 
+    /// <include file='IEnumTfLatticeElements.xml' path='doc/member[@name="IEnumTfLatticeElements.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumTfLatticeElements : IEnumTfLatticeElements.Int
         return ((delegate* unmanaged<IEnumTfLatticeElements*, int>)(lpVtbl[5]))((IEnumTfLatticeElements*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfLatticeElements.xml' path='doc/member[@name="IEnumTfLatticeElements.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

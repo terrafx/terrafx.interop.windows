@@ -5,17 +5,39 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS"]/*' />
 public enum SCROLLBARPARTS
 {
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_ARROWBTN"]/*' />
     SBP_ARROWBTN = 1,
+
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_THUMBBTNHORZ"]/*' />
     SBP_THUMBBTNHORZ = 2,
+
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_THUMBBTNVERT"]/*' />
     SBP_THUMBBTNVERT = 3,
+
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_LOWERTRACKHORZ"]/*' />
     SBP_LOWERTRACKHORZ = 4,
+
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_UPPERTRACKHORZ"]/*' />
     SBP_UPPERTRACKHORZ = 5,
+
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_LOWERTRACKVERT"]/*' />
     SBP_LOWERTRACKVERT = 6,
+
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_UPPERTRACKVERT"]/*' />
     SBP_UPPERTRACKVERT = 7,
+
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_GRIPPERHORZ"]/*' />
     SBP_GRIPPERHORZ = 8,
+
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_GRIPPERVERT"]/*' />
     SBP_GRIPPERVERT = 9,
+
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_SIZEBOX"]/*' />
     SBP_SIZEBOX = 10,
+
+    /// <include file='SCROLLBARPARTS.xml' path='doc/member[@name="SCROLLBARPARTS.SBP_SIZEBOXBKGND"]/*' />
     SBP_SIZEBOXBKGND = 11,
 }

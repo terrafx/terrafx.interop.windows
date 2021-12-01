@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GESTURECONFIG.xml' path='doc/member[@name="GESTURECONFIG"]/*' />
 public partial struct GESTURECONFIG
 {
+    /// <include file='GESTURECONFIG.xml' path='doc/member[@name="GESTURECONFIG.dwID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwID;
 
+    /// <include file='GESTURECONFIG.xml' path='doc/member[@name="GESTURECONFIG.dwWant"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwWant;
 
+    /// <include file='GESTURECONFIG.xml' path='doc/member[@name="GESTURECONFIG.dwBlock"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBlock;
 }

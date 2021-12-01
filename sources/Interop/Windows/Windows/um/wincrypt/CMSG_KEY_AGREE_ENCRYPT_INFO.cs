@@ -8,33 +8,44 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO"]/*' />
 public unsafe partial struct CMSG_KEY_AGREE_ENCRYPT_INFO
 {
+    /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.dwRecipientIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRecipientIndex;
 
+    /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.KeyEncryptionAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 
+    /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.UserKeyingMaterial"]/*' />
     public CRYPT_DATA_BLOB UserKeyingMaterial;
 
+    /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.dwOriginatorChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOriginatorChoice;
 
+    /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.Anonymous"]/*' />
     [NativeTypeName("_CMSG_KEY_AGREE_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:8615:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.cKeyAgreeKeyEncryptInfo"]/*' />
     [NativeTypeName("DWORD")]
     public uint cKeyAgreeKeyEncryptInfo;
 
+    /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.rgpKeyAgreeKeyEncryptInfo"]/*' />
     [NativeTypeName("PCMSG_KEY_AGREE_KEY_ENCRYPT_INFO *")]
     public CMSG_KEY_AGREE_KEY_ENCRYPT_INFO** rgpKeyAgreeKeyEncryptInfo;
 
+    /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.OriginatorCertId"]/*' />
     public ref CERT_ID OriginatorCertId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,6 +55,7 @@ public unsafe partial struct CMSG_KEY_AGREE_ENCRYPT_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.OriginatorPublicKeyInfo"]/*' />
     public ref CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -53,12 +65,15 @@ public unsafe partial struct CMSG_KEY_AGREE_ENCRYPT_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.OriginatorCertId"]/*' />
         [FieldOffset(0)]
         public CERT_ID OriginatorCertId;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.OriginatorPublicKeyInfo"]/*' />
         [FieldOffset(0)]
         public CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo;
     }

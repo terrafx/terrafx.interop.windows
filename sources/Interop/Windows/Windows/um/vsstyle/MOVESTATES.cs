@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOVESTATES.xml' path='doc/member[@name="MOVESTATES"]/*' />
 public enum MOVESTATES
 {
+    /// <include file='MOVESTATES.xml' path='doc/member[@name="MOVESTATES.DDMOVE_HIGHLIGHT"]/*' />
     DDMOVE_HIGHLIGHT = 1,
+
+    /// <include file='MOVESTATES.xml' path='doc/member[@name="MOVESTATES.DDMOVE_NOHIGHLIGHT"]/*' />
     DDMOVE_NOHIGHLIGHT = 2,
 }

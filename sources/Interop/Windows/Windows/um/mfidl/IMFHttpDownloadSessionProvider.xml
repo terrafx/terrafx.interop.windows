@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFHttpDownloadSessionProvider.CreateHttpDownloadSession">
+    <summary>
+      <para>Called by the Microsoft Media Foundation to open HTTP or HTTPS URLs instead of using the default implementation.</para>
+    </summary>
+    <param name="wszScheme">
+      <para>The name of the protocol to for which an <see cref="IMFHttpDownloadSession" /> is being requested.  Microsoft Media Foundation specifies the protocol scheme of the URL that the application provided the Media Foundation Source Resolver. Valid values include “http” for HTTP, and “https” for HTTPS. URL scheme names are generally not case-sensitive.</para>
+    </param>
+    <param name="ppDownloadSession">
+      <para>On successful execution, the parameter is set to a pointer to an <see cref="IMFHttpDownloadSession" /> interface. The returned interface is used by Microsoft Media Foundation to open a single HTTP or HTTPS URL.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Successfully created the <see cref="IMFHttpDownloadSession" /> object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The value specified for the <i>wszScheme</i> parameter is incorrect.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ppDownloadSession</i> parameter is an invalid pointer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There is insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Specifying “https” as the value of <i>wszScheme</i> does not imply that HTTPS will be used for a particular request, as that is specified on a per-request basis in <see cref="IMFhttpDownloadSession.CreateRequest" />.</para>
+    </remarks>
+    <seealso cref="IMFHttpDownloadSessionProvider" />
+  </member>
+  <member name="IMFHttpDownloadSessionProvider">
+    <summary>
+      <para>Applications implement this interface in order to provide custom a custom HTTP or HTTPS download implementation. Use the <see cref="IMFSourceResolver" /> interface to register the provider. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/using-the-source-resolver">Using the Source Resolver</a>. Once registered, the Microsoft Media Foundation will invoke the <see cref="CreateHttpDownloadSession" /> method of the provider  implementation to open HTTP or HTTPS URLs instead of using the default implementation.</para>
+    </summary>
+  </member>
+</doc>

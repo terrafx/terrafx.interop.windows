@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbUpgradeAttributes.xml' path='doc/member[@name="msidbUpgradeAttributes"]/*' />
 public enum msidbUpgradeAttributes
 {
+    /// <include file='msidbUpgradeAttributes.xml' path='doc/member[@name="msidbUpgradeAttributes.msidbUpgradeAttributesMigrateFeatures"]/*' />
     msidbUpgradeAttributesMigrateFeatures = 0x00000001,
+
+    /// <include file='msidbUpgradeAttributes.xml' path='doc/member[@name="msidbUpgradeAttributes.msidbUpgradeAttributesOnlyDetect"]/*' />
     msidbUpgradeAttributesOnlyDetect = 0x00000002,
+
+    /// <include file='msidbUpgradeAttributes.xml' path='doc/member[@name="msidbUpgradeAttributes.msidbUpgradeAttributesIgnoreRemoveFailure"]/*' />
     msidbUpgradeAttributesIgnoreRemoveFailure = 0x00000004,
+
+    /// <include file='msidbUpgradeAttributes.xml' path='doc/member[@name="msidbUpgradeAttributes.msidbUpgradeAttributesVersionMinInclusive"]/*' />
     msidbUpgradeAttributesVersionMinInclusive = 0x00000100,
+
+    /// <include file='msidbUpgradeAttributes.xml' path='doc/member[@name="msidbUpgradeAttributes.msidbUpgradeAttributesVersionMaxInclusive"]/*' />
     msidbUpgradeAttributesVersionMaxInclusive = 0x00000200,
+
+    /// <include file='msidbUpgradeAttributes.xml' path='doc/member[@name="msidbUpgradeAttributes.msidbUpgradeAttributesLanguagesExclusive"]/*' />
     msidbUpgradeAttributesLanguagesExclusive = 0x00000400,
 }

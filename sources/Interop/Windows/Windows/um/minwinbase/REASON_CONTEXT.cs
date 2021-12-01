@@ -7,38 +7,50 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REASON_CONTEXT.xml' path='doc/member[@name="REASON_CONTEXT"]/*' />
 public partial struct REASON_CONTEXT
 {
+    /// <include file='REASON_CONTEXT.xml' path='doc/member[@name="REASON_CONTEXT.Version"]/*' />
     [NativeTypeName("ULONG")]
     public uint Version;
 
+    /// <include file='REASON_CONTEXT.xml' path='doc/member[@name="REASON_CONTEXT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='REASON_CONTEXT.xml' path='doc/member[@name="REASON_CONTEXT.Reason"]/*' />
     [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:268:5)")]
     public _Reason_e__Union Reason;
 
+    /// <include file='_Reason_e__Union.xml' path='doc/member[@name="_Reason_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Reason_e__Union
     {
+        /// <include file='_Reason_e__Union.xml' path='doc/member[@name="_Reason_e__Union.Detailed"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:269:9)")]
         public _Detailed_e__Struct Detailed;
 
+        /// <include file='_Reason_e__Union.xml' path='doc/member[@name="_Reason_e__Union.SimpleReasonString"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
         public ushort* SimpleReasonString;
 
+        /// <include file='_Detailed_e__Struct.xml' path='doc/member[@name="_Detailed_e__Struct"]/*' />
         public unsafe partial struct _Detailed_e__Struct
         {
+            /// <include file='_Detailed_e__Struct.xml' path='doc/member[@name="_Detailed_e__Struct.LocalizedReasonModule"]/*' />
             public HMODULE LocalizedReasonModule;
 
+            /// <include file='_Detailed_e__Struct.xml' path='doc/member[@name="_Detailed_e__Struct.LocalizedReasonId"]/*' />
             [NativeTypeName("ULONG")]
             public uint LocalizedReasonId;
 
+            /// <include file='_Detailed_e__Struct.xml' path='doc/member[@name="_Detailed_e__Struct.ReasonStringCount"]/*' />
             [NativeTypeName("ULONG")]
             public uint ReasonStringCount;
 
+            /// <include file='_Detailed_e__Struct.xml' path='doc/member[@name="_Detailed_e__Struct.ReasonStrings"]/*' />
             [NativeTypeName("LPWSTR *")]
             public ushort** ReasonStrings;
         }

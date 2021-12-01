@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_ClientCertPolicyResult.xml' path='doc/member[@name="SecPkgContext_ClientCertPolicyResult"]/*' />
 public partial struct SecPkgContext_ClientCertPolicyResult
 {
+    /// <include file='SecPkgContext_ClientCertPolicyResult.xml' path='doc/member[@name="SecPkgContext_ClientCertPolicyResult.dwPolicyResult"]/*' />
     public HRESULT dwPolicyResult;
 
+    /// <include file='SecPkgContext_ClientCertPolicyResult.xml' path='doc/member[@name="SecPkgContext_ClientCertPolicyResult.guidPolicyId"]/*' />
     public Guid guidPolicyId;
 }

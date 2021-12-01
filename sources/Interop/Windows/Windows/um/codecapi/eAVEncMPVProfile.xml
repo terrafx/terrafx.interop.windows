@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMPVProfile">
+    <summary>
+      <para>Specifies the MPEG-2 profile. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpvprofile-property">AVEncMPVProfile</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMPVProfile.eAVEncMPVProfile_unknown">
+    <summary>
+      <para>The profile is not known.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVProfile.eAVEncMPVProfile_Simple">
+    <summary>
+      <para>Simple Profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVProfile.eAVEncMPVProfile_Main">
+    <summary>
+      <para>Main Profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVProfile.eAVEncMPVProfile_High">
+    <summary>
+      <para>High Profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVProfile.eAVEncMPVProfile_422">
+    <summary>
+      <para>4:2:2 Profile.</para>
+    </summary>
+  </member>
+</doc>

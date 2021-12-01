@@ -12,11 +12,13 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CalcSubresource"]/*' />
     public static uint D3D12CalcSubresource(uint MipSlice, uint ArraySlice, uint PlaneSlice, uint MipLevels, uint ArraySize)
     {
         return MipSlice + ArraySlice * MipLevels + PlaneSlice * MipLevels * ArraySize;
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12GetFormatPlaneCount"]/*' />
     [return: NativeTypeName("UINT8")]
     public static byte D3D12GetFormatPlaneCount(ID3D12Device* pDevice, DXGI_FORMAT Format)
     {
@@ -34,6 +36,7 @@ public static unsafe partial class DirectX
         return formatInfo.PlaneCount;
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.UpdateSubresources"]/*' />
     [return: NativeTypeName("UINT64")]
     public static ulong UpdateSubresources(ID3D12GraphicsCommandList* pCmdList, ID3D12Resource* pDestinationResource, ID3D12Resource* pIntermediate, uint FirstSubresource, uint NumSubresources, [NativeTypeName("UINT64")] ulong RequiredSize, [NativeTypeName("const D3D12_PLACED_SUBRESOURCE_FOOTPRINT *")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, [NativeTypeName("const UINT *")] uint* pNumRows, [NativeTypeName("const UINT64 *")] ulong* pRowSizesInBytes, [NativeTypeName("const D3D12_SUBRESOURCE_DATA *")] D3D12_SUBRESOURCE_DATA* pSrcData)
     {
@@ -89,6 +92,7 @@ public static unsafe partial class DirectX
         return RequiredSize;
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12IsLayoutOpaque"]/*' />
     public static bool D3D12IsLayoutOpaque(D3D12_TEXTURE_LAYOUT Layout)
     {
         return Layout == D3D12_TEXTURE_LAYOUT_UNKNOWN || Layout == D3D12_TEXTURE_LAYOUT_64KB_UNDEFINED_SWIZZLE;

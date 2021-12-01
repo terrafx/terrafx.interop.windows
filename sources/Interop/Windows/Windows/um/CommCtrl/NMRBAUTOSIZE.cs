@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMRBAUTOSIZE.xml' path='doc/member[@name="NMRBAUTOSIZE"]/*' />
 public partial struct NMRBAUTOSIZE
 {
+    /// <include file='NMRBAUTOSIZE.xml' path='doc/member[@name="NMRBAUTOSIZE.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMRBAUTOSIZE.xml' path='doc/member[@name="NMRBAUTOSIZE.fChanged"]/*' />
     public BOOL fChanged;
 
+    /// <include file='NMRBAUTOSIZE.xml' path='doc/member[@name="NMRBAUTOSIZE.rcTarget"]/*' />
     public RECT rcTarget;
 
+    /// <include file='NMRBAUTOSIZE.xml' path='doc/member[@name="NMRBAUTOSIZE.rcActual"]/*' />
     public RECT rcActual;
 }

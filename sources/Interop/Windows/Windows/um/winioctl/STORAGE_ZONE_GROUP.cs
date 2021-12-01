@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_ZONE_GROUP.xml' path='doc/member[@name="STORAGE_ZONE_GROUP"]/*' />
 public partial struct STORAGE_ZONE_GROUP
 {
+    /// <include file='STORAGE_ZONE_GROUP.xml' path='doc/member[@name="STORAGE_ZONE_GROUP.ZoneCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint ZoneCount;
 
+    /// <include file='STORAGE_ZONE_GROUP.xml' path='doc/member[@name="STORAGE_ZONE_GROUP.ZoneType"]/*' />
     public STORAGE_ZONE_TYPES ZoneType;
 
+    /// <include file='STORAGE_ZONE_GROUP.xml' path='doc/member[@name="STORAGE_ZONE_GROUP.ZoneSize"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong ZoneSize;
 }

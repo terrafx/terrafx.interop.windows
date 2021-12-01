@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC">
+    <summary>
+      <para>Performs a local response normalization (LRN) function on the input. This operator performs the following computation.</para>
+      <code>Output = Input / (Bias + (Alpha / LocalSize) * sum(Input^2 for every Input in the local region))^Beta
+</code>
+      <para>The data type and size of the input and output tensors must be the same.</para>
+    </summary>
+  </member>
+  <member name="DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor containing the input data. This tensor's <i>Sizes</i> should be <code>{ BatchCount, ChannelCount, Height, Width }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write the results to. This tensor's <i>Sizes</i> should match the <i>InputTensor</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC.CrossChannel">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> if the LRN layer sums across channels; otherwise, <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC.LocalSize">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of elements to sum over per dimension: Width, Height, and optionally Channel (if <i>CrossChannel</i> is set). This value must be at least 1.</para>
+    </summary>
+  </member>
+  <member name="DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC.Alpha">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The value of the scaling parameter. A value of 0.0001 is recommended as default.</para>
+    </summary>
+  </member>
+  <member name="DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC.Beta">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The value of the exponent. A value of 0.75 is recommended as default.</para>
+    </summary>
+  </member>
+  <member name="DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC.Bias">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The value of bias. A value of 1 is recommended as default.</para>
+    </summary>
+  </member>
+</doc>

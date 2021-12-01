@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2"]/*' />
 [Guid("4B37BC9E-9ED6-44A3-93D3-18F022B79EC3")]
 [NativeTypeName("struct ISpRecoGrammar2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         return ((delegate* unmanaged<ISpRecoGrammar2*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         return ((delegate* unmanaged<ISpRecoGrammar2*, uint>)(lpVtbl[1]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         return ((delegate* unmanaged<ISpRecoGrammar2*, uint>)(lpVtbl[2]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.GetRules"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRules(SPRULE** ppCoMemRules, uint* puNumRules)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         return ((delegate* unmanaged<ISpRecoGrammar2*, SPRULE**, uint*, int>)(lpVtbl[3]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), ppCoMemRules, puNumRules);
     }
 
+    /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.LoadCmdFromFile2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT LoadCmdFromFile2([NativeTypeName("LPCWSTR")] ushort* pszFileName, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] ushort* pszSharingUri, [NativeTypeName("LPCWSTR")] ushort* pszBaseUri)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         return ((delegate* unmanaged<ISpRecoGrammar2*, ushort*, SPLOADOPTIONS, ushort*, ushort*, int>)(lpVtbl[4]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pszFileName, Options, pszSharingUri, pszBaseUri);
     }
 
+    /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.LoadCmdFromMemory2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT LoadCmdFromMemory2([NativeTypeName("const SPBINARYGRAMMAR *")] SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] ushort* pszSharingUri, [NativeTypeName("LPCWSTR")] ushort* pszBaseUri)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         return ((delegate* unmanaged<ISpRecoGrammar2*, SPBINARYGRAMMAR*, SPLOADOPTIONS, ushort*, ushort*, int>)(lpVtbl[5]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pGrammar, Options, pszSharingUri, pszBaseUri);
     }
 
+    /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.SetRulePriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetRulePriority([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, int nRulePriority)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         return ((delegate* unmanaged<ISpRecoGrammar2*, ushort*, uint, int, int>)(lpVtbl[6]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pszRuleName, ulRuleId, nRulePriority);
     }
 
+    /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.SetRuleWeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetRuleWeight([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, float flWeight)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         return ((delegate* unmanaged<ISpRecoGrammar2*, ushort*, uint, float, int>)(lpVtbl[7]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pszRuleName, ulRuleId, flWeight);
     }
 
+    /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.SetDictationWeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetDictationWeight(float flWeight)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         return ((delegate* unmanaged<ISpRecoGrammar2*, float, int>)(lpVtbl[8]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), flWeight);
     }
 
+    /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.SetGrammarLoader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetGrammarLoader(ISpeechResourceLoader* pLoader)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         return ((delegate* unmanaged<ISpRecoGrammar2*, ISpeechResourceLoader*, int>)(lpVtbl[9]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pLoader);
     }
 
+    /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.SetSMLSecurityManager"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetSMLSecurityManager(IInternetSecurityManager* pSMLSecurityManager)

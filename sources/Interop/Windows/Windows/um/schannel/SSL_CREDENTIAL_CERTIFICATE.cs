@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SSL_CREDENTIAL_CERTIFICATE.xml' path='doc/member[@name="SSL_CREDENTIAL_CERTIFICATE"]/*' />
 public unsafe partial struct SSL_CREDENTIAL_CERTIFICATE
 {
+    /// <include file='SSL_CREDENTIAL_CERTIFICATE.xml' path='doc/member[@name="SSL_CREDENTIAL_CERTIFICATE.cbPrivateKey"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbPrivateKey;
 
+    /// <include file='SSL_CREDENTIAL_CERTIFICATE.xml' path='doc/member[@name="SSL_CREDENTIAL_CERTIFICATE.pPrivateKey"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pPrivateKey;
 
+    /// <include file='SSL_CREDENTIAL_CERTIFICATE.xml' path='doc/member[@name="SSL_CREDENTIAL_CERTIFICATE.cbCertificate"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbCertificate;
 
+    /// <include file='SSL_CREDENTIAL_CERTIFICATE.xml' path='doc/member[@name="SSL_CREDENTIAL_CERTIFICATE.pCertificate"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pCertificate;
 
+    /// <include file='SSL_CREDENTIAL_CERTIFICATE.xml' path='doc/member[@name="SSL_CREDENTIAL_CERTIFICATE.pszPassword"]/*' />
     [NativeTypeName("PSTR")]
     public sbyte* pszPassword;
 }

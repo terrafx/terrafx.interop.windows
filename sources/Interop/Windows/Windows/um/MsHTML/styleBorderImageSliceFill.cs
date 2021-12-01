@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBorderImageSliceFill.xml' path='doc/member[@name="styleBorderImageSliceFill"]/*' />
 public enum styleBorderImageSliceFill
 {
+    /// <include file='styleBorderImageSliceFill.xml' path='doc/member[@name="styleBorderImageSliceFill.styleBorderImageSliceFillNotSet"]/*' />
     styleBorderImageSliceFillNotSet = 0,
+
+    /// <include file='styleBorderImageSliceFill.xml' path='doc/member[@name="styleBorderImageSliceFill.styleBorderImageSliceFillFill"]/*' />
     styleBorderImageSliceFillFill = 1,
+
+    /// <include file='styleBorderImageSliceFill.xml' path='doc/member[@name="styleBorderImageSliceFill.styleBorderImageSliceFill_Max"]/*' />
     styleBorderImageSliceFill_Max = 2147483647,
 }

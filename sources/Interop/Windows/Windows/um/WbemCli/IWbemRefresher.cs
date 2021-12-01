@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemRefresher.xml' path='doc/member[@name="IWbemRefresher"]/*' />
 [Guid("49353C99-516B-11D1-AEA6-00C04FB68820")]
 [NativeTypeName("struct IWbemRefresher : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemRefresher : IWbemRefresher.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemRefresher : IWbemRefresher.Interface
         return ((delegate* unmanaged<IWbemRefresher*, Guid*, void**, int>)(lpVtbl[0]))((IWbemRefresher*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemRefresher : IWbemRefresher.Interface
         return ((delegate* unmanaged<IWbemRefresher*, uint>)(lpVtbl[1]))((IWbemRefresher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemRefresher : IWbemRefresher.Interface
         return ((delegate* unmanaged<IWbemRefresher*, uint>)(lpVtbl[2]))((IWbemRefresher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWbemRefresher.xml' path='doc/member[@name="IWbemRefresher.Refresh"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Refresh([NativeTypeName("long")] int lFlags)

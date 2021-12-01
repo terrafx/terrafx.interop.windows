@@ -7,22 +7,29 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFCLOCK_PROPERTIES.xml' path='doc/member[@name="MFCLOCK_PROPERTIES"]/*' />
 public partial struct MFCLOCK_PROPERTIES
 {
+    /// <include file='MFCLOCK_PROPERTIES.xml' path='doc/member[@name="MFCLOCK_PROPERTIES.qwCorrelationRate"]/*' />
     [NativeTypeName("unsigned long long")]
     public ulong qwCorrelationRate;
 
+    /// <include file='MFCLOCK_PROPERTIES.xml' path='doc/member[@name="MFCLOCK_PROPERTIES.guidClockId"]/*' />
     public Guid guidClockId;
 
+    /// <include file='MFCLOCK_PROPERTIES.xml' path='doc/member[@name="MFCLOCK_PROPERTIES.dwClockFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwClockFlags;
 
+    /// <include file='MFCLOCK_PROPERTIES.xml' path='doc/member[@name="MFCLOCK_PROPERTIES.qwClockFrequency"]/*' />
     [NativeTypeName("unsigned long long")]
     public ulong qwClockFrequency;
 
+    /// <include file='MFCLOCK_PROPERTIES.xml' path='doc/member[@name="MFCLOCK_PROPERTIES.dwClockTolerance"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwClockTolerance;
 
+    /// <include file='MFCLOCK_PROPERTIES.xml' path='doc/member[@name="MFCLOCK_PROPERTIES.dwClockJitter"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwClockJitter;
 }

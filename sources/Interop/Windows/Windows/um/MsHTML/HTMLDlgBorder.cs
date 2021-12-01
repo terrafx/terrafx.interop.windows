@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLDlgBorder.xml' path='doc/member[@name="HTMLDlgBorder"]/*' />
 public enum HTMLDlgBorder
 {
+    /// <include file='HTMLDlgBorder.xml' path='doc/member[@name="HTMLDlgBorder.HTMLDlgBorderThin"]/*' />
     HTMLDlgBorderThin = 0,
+
+    /// <include file='HTMLDlgBorder.xml' path='doc/member[@name="HTMLDlgBorder.HTMLDlgBorderThick"]/*' />
     HTMLDlgBorderThick = 0x40000,
+
+    /// <include file='HTMLDlgBorder.xml' path='doc/member[@name="HTMLDlgBorder.HTMLDlgBorder_Max"]/*' />
     HTMLDlgBorder_Max = 2147483647,
 }

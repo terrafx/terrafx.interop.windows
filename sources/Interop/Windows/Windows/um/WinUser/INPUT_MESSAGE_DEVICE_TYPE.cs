@@ -7,13 +7,25 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INPUT_MESSAGE_DEVICE_TYPE.xml' path='doc/member[@name="INPUT_MESSAGE_DEVICE_TYPE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum INPUT_MESSAGE_DEVICE_TYPE
 {
+    /// <include file='INPUT_MESSAGE_DEVICE_TYPE.xml' path='doc/member[@name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_UNAVAILABLE"]/*' />
     IMDT_UNAVAILABLE = 0x00000000,
+
+    /// <include file='INPUT_MESSAGE_DEVICE_TYPE.xml' path='doc/member[@name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_KEYBOARD"]/*' />
     IMDT_KEYBOARD = 0x00000001,
+
+    /// <include file='INPUT_MESSAGE_DEVICE_TYPE.xml' path='doc/member[@name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_MOUSE"]/*' />
     IMDT_MOUSE = 0x00000002,
+
+    /// <include file='INPUT_MESSAGE_DEVICE_TYPE.xml' path='doc/member[@name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_TOUCH"]/*' />
     IMDT_TOUCH = 0x00000004,
+
+    /// <include file='INPUT_MESSAGE_DEVICE_TYPE.xml' path='doc/member[@name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_PEN"]/*' />
     IMDT_PEN = 0x00000008,
+
+    /// <include file='INPUT_MESSAGE_DEVICE_TYPE.xml' path='doc/member[@name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_TOUCHPAD"]/*' />
     IMDT_TOUCHPAD = 0x00000010,
 }

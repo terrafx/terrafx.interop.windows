@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFilterMapper3.xml' path='doc/member[@name="IFilterMapper3"]/*' />
 [Guid("B79BB0B1-33C1-11D1-ABE1-00A0C905F375")]
 [NativeTypeName("struct IFilterMapper3 : IFilterMapper2")]
 [NativeInheritance("IFilterMapper2")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface
         return ((delegate* unmanaged<IFilterMapper3*, Guid*, void**, int>)(lpVtbl[0]))((IFilterMapper3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface
         return ((delegate* unmanaged<IFilterMapper3*, uint>)(lpVtbl[1]))((IFilterMapper3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface
         return ((delegate* unmanaged<IFilterMapper3*, uint>)(lpVtbl[2]))((IFilterMapper3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IFilterMapper2.CreateCategory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateCategory([NativeTypeName("const IID &")] Guid* clsidCategory, [NativeTypeName("DWORD")] uint dwCategoryMerit, [NativeTypeName("LPCWSTR")] ushort* Description)
@@ -46,6 +51,7 @@ public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface
         return ((delegate* unmanaged<IFilterMapper3*, Guid*, uint, ushort*, int>)(lpVtbl[3]))((IFilterMapper3*)Unsafe.AsPointer(ref this), clsidCategory, dwCategoryMerit, Description);
     }
 
+    /// <inheritdoc cref="IFilterMapper2.UnregisterFilter" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnregisterFilter([NativeTypeName("const CLSID *")] Guid* pclsidCategory, [NativeTypeName("LPCOLESTR")] ushort* szInstance, [NativeTypeName("const IID &")] Guid* Filter)
@@ -53,6 +59,7 @@ public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface
         return ((delegate* unmanaged<IFilterMapper3*, Guid*, ushort*, Guid*, int>)(lpVtbl[4]))((IFilterMapper3*)Unsafe.AsPointer(ref this), pclsidCategory, szInstance, Filter);
     }
 
+    /// <inheritdoc cref="IFilterMapper2.RegisterFilter" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RegisterFilter([NativeTypeName("const IID &")] Guid* clsidFilter, [NativeTypeName("LPCWSTR")] ushort* Name, IMoniker** ppMoniker, [NativeTypeName("const CLSID *")] Guid* pclsidCategory, [NativeTypeName("LPCOLESTR")] ushort* szInstance, [NativeTypeName("const REGFILTER2 *")] REGFILTER2* prf2)
@@ -60,6 +67,7 @@ public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface
         return ((delegate* unmanaged<IFilterMapper3*, Guid*, ushort*, IMoniker**, Guid*, ushort*, REGFILTER2*, int>)(lpVtbl[5]))((IFilterMapper3*)Unsafe.AsPointer(ref this), clsidFilter, Name, ppMoniker, pclsidCategory, szInstance, prf2);
     }
 
+    /// <inheritdoc cref="IFilterMapper2.EnumMatchingFilters" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EnumMatchingFilters(IEnumMoniker** ppEnum, [NativeTypeName("DWORD")] uint dwFlags, BOOL bExactMatch, [NativeTypeName("DWORD")] uint dwMerit, BOOL bInputNeeded, [NativeTypeName("DWORD")] uint cInputTypes, [NativeTypeName("const GUID *")] Guid* pInputTypes, [NativeTypeName("const REGPINMEDIUM *")] REGPINMEDIUM* pMedIn, [NativeTypeName("const CLSID *")] Guid* pPinCategoryIn, BOOL bRender, BOOL bOutputNeeded, [NativeTypeName("DWORD")] uint cOutputTypes, [NativeTypeName("const GUID *")] Guid* pOutputTypes, [NativeTypeName("const REGPINMEDIUM *")] REGPINMEDIUM* pMedOut, [NativeTypeName("const CLSID *")] Guid* pPinCategoryOut)
@@ -67,6 +75,7 @@ public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface
         return ((delegate* unmanaged<IFilterMapper3*, IEnumMoniker**, uint, BOOL, uint, BOOL, uint, Guid*, REGPINMEDIUM*, Guid*, BOOL, BOOL, uint, Guid*, REGPINMEDIUM*, Guid*, int>)(lpVtbl[6]))((IFilterMapper3*)Unsafe.AsPointer(ref this), ppEnum, dwFlags, bExactMatch, dwMerit, bInputNeeded, cInputTypes, pInputTypes, pMedIn, pPinCategoryIn, bRender, bOutputNeeded, cOutputTypes, pOutputTypes, pMedOut, pPinCategoryOut);
     }
 
+    /// <include file='IFilterMapper3.xml' path='doc/member[@name="IFilterMapper3.GetICreateDevEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetICreateDevEnum(ICreateDevEnum** ppEnum)

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PCMWAVEFORMAT">
+    <summary>
+      <para>The <b>PCMWAVEFORMAT</b> structure describes the data format for PCM waveform-audio data. This structure has been superseded by the <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a> structure.</para>
+    </summary>
+    <seealso cref="WAVEFORMAT" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-audio">Waveform Audio</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-structures">Waveform Structures</seealso>
+  </member>
+  <member name="PCMWAVEFORMAT.wf">
+    <summary>
+      <para>A <see cref="WAVEFORMAT" /> structure containing general information about the format of the data.</para>
+    </summary>
+  </member>
+  <member name="PCMWAVEFORMAT.wBitsPerSample">
+    <summary>
+      <para>Number of bits per sample.</para>
+    </summary>
+  </member>
+</doc>

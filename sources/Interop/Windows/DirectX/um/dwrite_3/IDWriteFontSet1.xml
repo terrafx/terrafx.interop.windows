@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontSet1.CreateFontFace">
+    <summary>
+      <para>Creates a font face for a single item (rather than going through the font face reference).</para>
+    </summary>
+    <param name="listIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Zero-based index of the font item in the set.</para>
+    </param>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace5" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontFace5" /> interface. On successful completion, the function sets the pointer to a newly created font face object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description|
+|-|-|
+|DWRITE_E_REMOTEFONT|The font is not local.|</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontSet1.CreateFontResource">
+    <summary>
+      <para>Creates the font resource of a single item.</para>
+    </summary>
+    <param name="listIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Zero-based index of the font item in the set.</para>
+    </param>
+    <param name="fontResource">
+      <para>Type: <b><see cref="IDWriteFontResource" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontResource" /> interface. On successful completion, the function sets the pointer to a newly created font resource object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description|
+|-|-|
+|DWRITE_E_REMOTEFONT|The file is not local.|</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontSet1.GetFilteredFontIndices">
+    <summary>
+      <para>Retrieves all the item indices, filtered by the given ranges.</para>
+    </summary>
+    <param name="fontAxisRanges">
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_RANGE" /> const *</b></para>
+      <para>List of axis value ranges to filter by.</para>
+    </param>
+    <param name="fontAxisRangeCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of axis value ranges to filter.</para>
+    </param>
+    <param name="selectAnyRange">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
+      <para>
+        <code>true</code> if <b>GetFilteredFontIndices</b> should select any range; <code>false</code> if it should select the intersection of them all.</para>
+    </param>
+    <param name="indices">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a>*</b></para>
+      <para>An ascending array of indices, in the range 0 to <see cref="IDwriteFontSet.GetFontCount" /> minus 1.</para>
+    </param>
+    <param name="maxIndexCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of indices.</para>
+    </param>
+    <param name="actualIndexCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a>*</b></para>
+      <para>The actual number of indices written or needed, in the range 0 to <see cref="IDwriteFontSet.GetFontCount" /> minus 1.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description|
+|-|-|
+|E_NOT_SUFFICIENT_BUFFER|The buffer is too small, with <i>actualIndexCount</i> set to the needed size. The <i>actualIndexCount</i> will always be &lt;= <see cref="IDwriteFontSet.GetFontCount" />.|</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontSet1.GetFilteredFontIndices">
+    <summary>
+      <para>Retrieves all the item indices, filtered by the given properties.</para>
+    </summary>
+    <param name="properties">
+      <para>Type: <b><see cref="DWRITE_FONT_PROPERTY" /> const *</b></para>
+      <para>List of properties to filter by.</para>
+    </param>
+    <param name="propertyCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of properties to filter.</para>
+    </param>
+    <param name="selectAnyProperty">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
+      <para>
+        <code>true</code> if <b>GetFilteredFontIndices</b> should select any property; <code>false</code> if it should select the intersection of them all.</para>
+    </param>
+    <param name="indices">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a>*</b></para>
+      <para>An ascending array of indices, in the range 0 to <see cref="IDwriteFontSet.GetFontCount" /> minus 1.</para>
+    </param>
+    <param name="maxIndexCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of indices.</para>
+    </param>
+    <param name="actualIndexCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a>*</b></para>
+      <para>The actual number of indices written or needed, in the range 0 to <see cref="IDwriteFontSet.GetFontCount" /> minus 1.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description|
+|-|-|
+|E_NOT_SUFFICIENT_BUFFER|The buffer is too small, with <i>actualIndexCount</i> set to the needed size. The <i>actualIndexCount</i> will always be &lt;= <see cref="IDwriteFontSet.GetFontCount" />.|</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontSet1.GetFilteredFonts">
+    <summary>
+      <para>Retrieves a subset of fonts filtered by the given ranges, endpoint-inclusive.</para>
+    </summary>
+    <param name="fontAxisRanges">
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_RANGE" /> const *</b></para>
+      <para>List of axis value ranges to filter by.</para>
+    </param>
+    <param name="fontAxisRangeCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of axis value ranges to filter.</para>
+    </param>
+    <param name="selectAnyRange">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
+      <para>
+        <code>true</code> if <b>GetFilteredFonts</b> should select any range; <code>false</code> if it should select the intersection of them all.</para>
+    </param>
+    <param name="filteredFontSet">
+      <para>Type: <b><see cref="IDWriteFontSet1" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to an object representing the subset of fonts that fall within the ranges, otherwise it sets the pointer to <code>nullptr</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>If no fonts match the filter, then the returned subset object will be empty (calling <see cref="IDWriteFontSet.GetFontCount" /> on it returns 0), but the function does not return an error. The subset is always equal to or less than the original set.</para>
+    </remarks>
+  </member>
+  <member name="IDWriteFontSet1.GetFilteredFonts">
+    <summary>
+      <para>Retrieves a subset of fonts filtered by the given properties.</para>
+    </summary>
+    <param name="properties">
+      <para>Type: <b><see cref="DWRITE_FONT_PROPERTY" /> const *</b></para>
+      <para>List of properties to filter by.</para>
+    </param>
+    <param name="propertyCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of properties to filter.</para>
+    </param>
+    <param name="selectAnyProperty">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
+      <para>
+        <code>true</code> if <b>GetFilteredFontIndices</b> should select any property; <code>false</code> if it should select the intersection of them all.</para>
+    </param>
+    <param name="filteredFontSet">
+      <para>Type: <b><see cref="IDWriteFontSet1" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to an object representing the subset of fonts that match the properties, otherwise it sets the pointer to <code>nullptr</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>If no fonts match the filter, then the returned subset object will be empty (calling <see cref="IDWriteFontSet.GetFontCount" /> on it returns 0), but the function does not return an error. The subset is always equal to or less than the original set.</para>
+    </remarks>
+  </member>
+  <member name="IDWriteFontSet1.GetFilteredFonts">
+    <summary>
+      <para>Retrieves a subset of fonts, filtered by the given indices.</para>
+    </summary>
+    <param name="indices">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a> const *</b></para>
+      <para>An array of indices to filter by, in the range 0 to <see cref="IDwriteFontSet.GetFontCount" /> minus 1.</para>
+    </param>
+    <param name="indexCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of indices.</para>
+    </param>
+    <param name="filteredFontSet">
+      <para>Type: <b><see cref="IDWriteFontSet1" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to an object representing the subset of fonts indicated by the given indices, otherwise it sets the pointer to <code>nullptr</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>The indices can come in any order, meaning that <b>GetFilteredFonts</b> can produce a new set with items removed, duplicated, or reordered from the original. If you pass zero indices, then an empty font set is returned.</para>
+    </remarks>
+  </member>
+  <member name="IDWriteFontSet1.GetFirstFontResources">
+    <summary>
+      <para>Retrieves a new font set that contains only the first occurrence of each font resource from the set.</para>
+    </summary>
+    <param name="filteredFontSet">
+      <para>Type: <b><see cref="IDWriteFontSet1" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to a new font set object consisting of single default instances from font resources, otherwise it sets the pointer to <code>nullptr</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontSet1.GetFontAxisRanges">
+    <summary>
+      <para>Retrieves the axis ranges of a single item.</para>
+    </summary>
+    <param name="listIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Zero-based index of the font in the set.</para>
+    </param>
+    <param name="fontAxisRanges">
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_RANGE" />*</b></para>
+      <para>List of axis value ranges to retrieve.</para>
+    </param>
+    <param name="maxFontAxisRangeCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of axis value ranges to retrieve.</para>
+    </param>
+    <param name="actualFontAxisRangeCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a>*</b></para>
+      <para>The actual number of axis ranges written or needed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description|
+|-|-|
+|E_NOT_SUFFICIENT_BUFFER|The buffer is too small, with <i>actualFontAxisRangeCount</i> set to the needed size.|</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontSet1.GetFontAxisRanges">
+    <summary>
+      <para>Retrieves all axis ranges in the font set; the union of all contained items.</para>
+    </summary>
+    <param name="fontAxisRanges">
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_RANGE" />*</b></para>
+      <para>List of axis value ranges to retrieve.</para>
+    </param>
+    <param name="maxFontAxisRangeCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of axis value ranges to retrieve.</para>
+    </param>
+    <param name="actualFontAxisRangeCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a>*</b></para>
+      <para>The actual number of axis ranges written or needed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description|
+|-|-|
+|E_NOT_SUFFICIENT_BUFFER|The buffer is too small, with <i>actualFontAxisRangeCount</i> set to the needed size.|</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontSet1.GetFontFaceReference">
+    <summary>
+      <para>Retrieves the font face reference of a single item.</para>
+    </summary>
+    <param name="listIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Zero-based index of the font item in the set.</para>
+    </param>
+    <param name="fontFaceReference">
+      <para>Type: <b><see cref="IDWriteFontFaceReference1" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontFaceReference1" /> interface. On successful completion, the function sets the pointer to the font face reference.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontSet1.GetFontLocality">
+    <summary>
+      <para>Retrieves the locality of a single item.</para>
+    </summary>
+    <param name="listIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Zero-based index of the font item in the set.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_LOCALITY" /></b></para>
+      <para>A value indicating the locality.</para>
+    </returns>
+    <remarks>
+      <para>The locality enumeration. For fully local files, the result will always be <b>DWRITE_LOCALITY_LOCAL</b>. For downloadable files, the result depends on how much of the file has been downloaded.</para>
+    </remarks>
+  </member>
+  <member name="IDWriteFontSet1.GetMatchingFonts">
+    <summary>
+      <para>Retrieves a matching font set based on the requested inputs, ordered so that nearer matches are earlier.</para>
+    </summary>
+    <param name="fontProperty">
+      <para>Type: <b><see cref="DWRITE_FONT_PROPERTY" /> const *</b></para>
+      <para>Font property of interest, such as typographic family or weight/stretch/style family.</para>
+    </param>
+    <param name="fontAxisValues">
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_VALUE" /> const *</b></para>
+      <para>A pointer to an array containing a list of font axis values. The array should be the size (the number of elements) indicated by the <i>fontAxisValueCount</i> argument.</para>
+    </param>
+    <param name="fontAxisValueCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of font axis values contained in the <i>fontAxisValues</i> array.</para>
+    </param>
+    <param name="matchingFonts">
+      <para>Type: <b><see cref="IDWriteFontSet1" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to a prioritized list of fonts that match the properties, otherwise it sets the pointer to <code>nullptr</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>This method can yield distinct items that were not in the original font set, including items with simulation flags (if they would be a closer match to the request), and instances that were not named by the font author. Items from the same font resources are collapsed into one: the closest possible match.</para>
+    </remarks>
+  </member>
+  <member name="IDWriteFontSet1">
+    <summary>
+      <para>Represents a font set.</para>
+      <para>This interface extends <see cref="IDWriteFontSet" />.</para>
+    </summary>
+    <seealso cref="IDWriteFontSet" />
+  </member>
+</doc>

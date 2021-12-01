@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NAVIGATIONPARTS.xml' path='doc/member[@name="NAVIGATIONPARTS"]/*' />
 public enum NAVIGATIONPARTS
 {
+    /// <include file='NAVIGATIONPARTS.xml' path='doc/member[@name="NAVIGATIONPARTS.NAV_BACKBUTTON"]/*' />
     NAV_BACKBUTTON = 1,
+
+    /// <include file='NAVIGATIONPARTS.xml' path='doc/member[@name="NAVIGATIONPARTS.NAV_FORWARDBUTTON"]/*' />
     NAV_FORWARDBUTTON = 2,
+
+    /// <include file='NAVIGATIONPARTS.xml' path='doc/member[@name="NAVIGATIONPARTS.NAV_MENUBUTTON"]/*' />
     NAV_MENUBUTTON = 3,
 }

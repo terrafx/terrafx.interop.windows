@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_HOST_NAMES">
+    <summary>
+      <para>A structure containing a list of host names.</para>
+    </summary>
+  </member>
+  <member name="WS_HOST_NAMES.hostNames">
+    <summary>
+      <para>A list of host names.  Each host name can be a DNS name or
+an IPv4 or IPv6 address.  IPv6 addresses are enclosed
+in brackets ('[' address ']').</para>
+    </summary>
+  </member>
+  <member name="WS_HOST_NAMES.hostNameCount">
+    <summary>
+      <para>The number of elements in the hostNames array.</para>
+    </summary>
+  </member>
+</doc>

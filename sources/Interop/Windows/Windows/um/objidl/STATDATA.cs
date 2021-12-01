@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STATDATA.xml' path='doc/member[@name="STATDATA"]/*' />
 public unsafe partial struct STATDATA
 {
+    /// <include file='STATDATA.xml' path='doc/member[@name="STATDATA.formatetc"]/*' />
     public FORMATETC formatetc;
 
+    /// <include file='STATDATA.xml' path='doc/member[@name="STATDATA.advf"]/*' />
     [NativeTypeName("DWORD")]
     public uint advf;
 
+    /// <include file='STATDATA.xml' path='doc/member[@name="STATDATA.pAdvSink"]/*' />
     public IAdviseSink* pAdvSink;
 
+    /// <include file='STATDATA.xml' path='doc/member[@name="STATDATA.dwConnection"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwConnection;
 }

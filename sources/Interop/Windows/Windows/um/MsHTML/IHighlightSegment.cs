@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHighlightSegment.xml' path='doc/member[@name="IHighlightSegment"]/*' />
 [Guid("3050F690-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHighlightSegment : ISegment")]
 [NativeInheritance("ISegment")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHighlightSegment : IHighlightSegment.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHighlightSegment : IHighlightSegment.Interface
         return ((delegate* unmanaged<IHighlightSegment*, Guid*, void**, int>)(lpVtbl[0]))((IHighlightSegment*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHighlightSegment : IHighlightSegment.Interface
         return ((delegate* unmanaged<IHighlightSegment*, uint>)(lpVtbl[1]))((IHighlightSegment*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHighlightSegment : IHighlightSegment.Interface
         return ((delegate* unmanaged<IHighlightSegment*, uint>)(lpVtbl[2]))((IHighlightSegment*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISegment.GetPointers" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPointers(IMarkupPointer* pIStart, IMarkupPointer* pIEnd)

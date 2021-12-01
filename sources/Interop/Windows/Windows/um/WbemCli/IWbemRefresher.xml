@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWbemRefresher.Refresh">
+    <summary>
+      <para>The
+<b>IWbemRefresher.Refresh</b> method updates all refreshable objects, enumerators, and nested refreshers. The WMI Refresher calls this function in response to a client request to
+<b>Refresh</b>.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Bitmask of flags that modify the behavior of this method.</para>
+      <para>If <b>WBEM_FLAG_REFRESH_AUTO_RECONNECT</b> is specified and if the connection is broken, the refresher attempts to reconnect to the provider automatically. This is the default behavior for this method.</para>
+      <para>If you do not want the refresher to attempt to reconnect to the provider, specify <b>WBEM_FLAG_REFRESH_NO_AUTO_RECONNECT</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <remarks>
+      <para>When refreshing enumerators and objects, providers should take as little time as possible. Using the
+<see cref="IWbemObjectAccess" /> methods and caching property handles for reuse can dramatically improve performance. When updating enumerators, a provider can either remove and re-instantiate all objects, or simply remove and add the changed instances. It is up to you to choose the best approach. In either case, caching instances can improve performance.</para>
+      <para>The provider should only access the objects and enumerators in a refresher in response to a call to
+<b>IWbemRefresher.Refresh</b>. It would, however, be perfectly valid to have a background thread polling for data with which to fill these objects, to prepare for when
+<b>Refresh</b> is called.</para>
+      <h4>Examples</h4>
+      <para>The following code example describes how to implement
+<b>Refresh</b>.</para>
+      <code>HRESULT CMyHiPerfProviderRefresher.Refresh(
+/* [in] */long lFlags
+)
+{
+  // Run through all the objects and update their
+  // data.
+
+  // Now run through the enumerators.
+  // Empty the enumerator and refill it.
+
+
+  return WBEM_S_NO_ERROR;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/developing-a-wmi-provider">Developing a WMI Provider</seealso>
+    <seealso cref="IWbemHiPerfProvider" />
+    <seealso cref="IWbemRefresher" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/performance-counter-provider">Performance Counter Provider</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-an-instance-provider-into-a-high-performance-provider">Writing an Instance Provider</seealso>
+  </member>
+  <member name="IWbemRefresher">
+    <summary>
+      <para>The
+<b>IWbemRefresher</b> interface provides an entry point through which refreshable objects such as enumerators or refresher objects, can be refreshed. Implementers of
+<see cref="IWbemHiPerfProvider" /> must provide an implementation of this interface.</para>
+      <para>WMI supplies a client implementation of this interface. Clients can access this interface by calling <see cref="CoCreateInstance" /> on <b>CLSID_WbemRefresher</b>. This is the only supported implementation on the client.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/accessing-performance-data-in-c--">Accessing Performance Data in C++</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/com-api-for-wmi">COM API for WMI</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/developing-a-wmi-provider">Developing a WMI Provider</seealso>
+    <seealso cref="IWbemConfigureRefresher" />
+    <seealso cref="IWbemHiPerfProvider" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-an-instance-provider-into-a-high-performance-provider">Making an Instance Provider into a High-Performance Provider</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/performance-counter-provider">Performance Counter Provider</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/writing-an-instance-provider">Writing an Instance Provider</seealso>
+  </member>
+</doc>

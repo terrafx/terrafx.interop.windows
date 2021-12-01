@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAUI.xml' path='doc/member[@name="CAUI"]/*' />
 public unsafe partial struct CAUI
 {
+    /// <include file='CAUI.xml' path='doc/member[@name="CAUI.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CAUI.xml' path='doc/member[@name="CAUI.pElems"]/*' />
     public ushort* pElems;
 }

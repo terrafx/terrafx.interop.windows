@@ -7,17 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DEVICE_POWER_CAP.xml' path='doc/member[@name="STORAGE_DEVICE_POWER_CAP"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct STORAGE_DEVICE_POWER_CAP
 {
+    /// <include file='STORAGE_DEVICE_POWER_CAP.xml' path='doc/member[@name="STORAGE_DEVICE_POWER_CAP.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DEVICE_POWER_CAP.xml' path='doc/member[@name="STORAGE_DEVICE_POWER_CAP.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_DEVICE_POWER_CAP.xml' path='doc/member[@name="STORAGE_DEVICE_POWER_CAP.Units"]/*' />
     public STORAGE_DEVICE_POWER_CAP_UNITS Units;
 
+    /// <include file='STORAGE_DEVICE_POWER_CAP.xml' path='doc/member[@name="STORAGE_DEVICE_POWER_CAP.MaxPower"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong MaxPower;
 }

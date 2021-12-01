@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxFactory.CreateBlockMapReader">
+    <summary>
+      <para>Creates a read-only block map object model from contents provided by an <see cref="IStream" />.</para>
+    </summary>
+    <param name="inputStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>The stream that delivers the block map XML for reading. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />. If these methods fail, their error codes might be passed to and returned by this method.</para>
+    </param>
+    <param name="blockMapReader">
+      <para>Type: <b><see cref="IAppxBlockMapReader" />**</b></para>
+      <para>The block map reader.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INVALID_BLOCKMAP</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>inputStream</i> does not contain syntactically valid XML for the block map.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use the  <b>CreateBlockMapReader</b> method to read a block map outside of an app package.  The <i>blockMapReader</i> provides access to all data elements and attributes in the block map XML.</para>
+    </remarks>
+    <seealso cref="IAppxFactory" />
+    <seealso cref="IAppxFactory.CreateValidatedBlockMapReader" />
+  </member>
+  <member name="IAppxFactory.CreateManifestReader">
+    <summary>
+      <para>Creates a read-only manifest object model from contents provided by an <see cref="IStream" />.</para>
+    </summary>
+    <param name="inputStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>The input stream  that delivers the manifest XML for reading. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />. If these methods fail, their error codes might be passed to and returned by this method.</para>
+    </param>
+    <param name="manifestReader">
+      <para>Type: <b><see cref="IAppxManifestReader" />**</b></para>
+      <para>The manifest reader.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INVALID_MANIFEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>inputStream</i> does not contain syntactically valid XML for the manifest.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use <b>CreateManifestReader</b> to read a manifest outside of an app package.  This method validates the manifest XML. The <i>manifestReader</i> provides access to all data elements and attributes in the manifest XML. The manifest logs the location of manifest validation errors in the ETW event log for AppxPackaging.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
+    </remarks>
+    <seealso cref="IAppxFactory" />
+  </member>
+  <member name="IAppxFactory.CreatePackageReader">
+    <summary>
+      <para>Creates a read-only package reader from the contents provided by an <see cref="IStream" />. This method does not validate the <a href="https://docs.microsoft.com//previous-versions/windows/hh464986(v=win.10)">digital signature</a>.</para>
+    </summary>
+    <param name="inputStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>The input stream that delivers the content of the package for reading. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />. If these methods fail, their error codes might be passed to and returned by this method.</para>
+    </param>
+    <param name="packageReader">
+      <para>Type: <b><see cref="IAppxPackageReader" />**</b></para>
+      <para>A  package  reader.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INTERLEAVING_NOT_ALLOWED</b>
+            </para>
+          </description>
+          <description>
+            <para>The ZIP file delivered by <i>inputStream</i> is an interleaved OPC package.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_RELATIONSHIPS_NOT_ALLOWED</b>
+            </para>
+          </description>
+          <description>
+            <para>The OPC package delivered by <i>inputStream</i> contains OPC package/part relationships.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_MISSING_REQUIRED_FILE</b>
+            </para>
+          </description>
+          <description>
+            <para>The OPC package delivered by <i>inputStream</i> does not have a manifest, or a block map, or a signature file when a CI catalog is present.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INVALID_MANIFEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The package manifest is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INVALID_BLOCKMAP</b>
+            </para>
+          </description>
+          <description>
+            <para>The package block map is not valid, the list of files in the ZIP central directory does not match the list of files in the block map, or the size of files listed in the ZIP central directory does not match the file and block sizes listed in the block map.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The  <b>CreatePackageReader</b> method immediately retrieves footprint elements of the app package through the stream and validates their content.  This method succeeds only if the OPC package and all footprint elements (including ZIP central directory, manifest, [Content_Types].xml, and block map) are valid.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-extract-content-from-a-package">Quickstart: Extract app package contents</a> and <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
+    </remarks>
+    <seealso cref="IAppxFactory" />
+  </member>
+  <member name="IAppxFactory.CreatePackageWriter">
+    <summary>
+      <para>Creates a write-only package object to which  files can be added.</para>
+    </summary>
+    <param name="outputStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>The output stream that receives the serialized package data. The stream must support at least the  <see cref="Write" /> method.</para>
+    </param>
+    <param name="settings">
+      <para>Type: <b><see cref="APPX_PACKAGE_SETTINGS" />*</b></para>
+      <para>The settings for the production of this package.</para>
+    </param>
+    <param name="packageWriter">
+      <para>Type: <b><see cref="IAppxPackageWriter" />**</b></para>
+      <para>The package writer created by this method.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified <b>hashMethod</b> member of the <see cref="APPX_PACKAGE_SETTINGS" /> structure is not a valid hash algorithm URI.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b> ERROR_INVALID_PARAMETER</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified <b>hashMethod</b> member of the <see cref="APPX_PACKAGE_SETTINGS" /> structure is not a valid hash algorithm URI.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>NTE_BAD_ALGID</b>
+            </para>
+          </description>
+          <description>
+            <para>The hash value is <a href="http://www.w3.org/2000/09/xmldsig">SHA1</a>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The implementation of an <see cref="IAppxPackageWriter" /> is not guaranteed to write data to the output stream before the <see cref="Close" /> method is called on the writer object. No other thread should access <i>outputStream</i> until the writer returns from its <b>Close</b> method.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-create-a-package">How to create an app  package</a>.</para>
+    </remarks>
+    <seealso cref="IAppxFactory" />
+  </member>
+  <member name="IAppxFactory.CreateValidatedBlockMapReader">
+    <summary>
+      <para>Creates a read-only block map object model from contents provided by an <see cref="IStream" /> and a digital signature.</para>
+    </summary>
+    <param name="blockMapStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>The stream that delivers block map XML for reading. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</para>
+    </param>
+    <param name="signatureFileName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
+      <para>The file that contains a digital signature used to validate the contents of the input stream.</para>
+    </param>
+    <param name="blockMapReader">
+      <para>Type: <b><see cref="IAppxBlockMapReader" />**</b></para>
+      <para>The block map reader.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those below. This method might return errors that are passed from the underlying validation APIs that are used.
+For example, this method might return "Crypto and WinTrust error codes (0x8009xxxx, 0x800bxxxx) if the signature can't be read, is invalid, or doesn't match the content of <i>blockMapStream</i>.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INVALID_BLOCKMAP</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>blockMapStream</i> does not contain syntactically valid XML for the block map.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is used when the block map exists alone, outside of an app package.  The block map object provides access to all data elements and attributes in the block map XML.</para>
+      <para>The <i>fileName</i> parameter should include the path of a package digital signature (.p7x) file on disk.  If this parameter is not <b>NULL</b>, this method will validate the format of the signature file and validate the contents of <i>blockMapStream</i> against the signature.</para>
+    </remarks>
+    <seealso cref="IAppxFactory" />
+    <seealso cref="IAppxFactory.CreateBlockMapReader" />
+  </member>
+  <member name="IAppxFactory">
+    <summary>
+      <para>Creates objects for reading and writing app packages.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IAppxFactory</b> interface provides factory methods to create readers and writers of app packages as well as methods to create readers for block maps and manifests outside of a package.</para>
+      <h4>Examples</h4>
+      <para>For examples, see:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-create-a-package">How to create an app  package</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-extract-content-from-a-package">Quickstart: Extract app package contents</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IAppxBlockMapReader" />
+    <seealso cref="IAppxManifestReader" />
+    <seealso cref="IAppxPackageReader" />
+    <seealso cref="IAppxPackageWriter" />
+  </member>
+</doc>

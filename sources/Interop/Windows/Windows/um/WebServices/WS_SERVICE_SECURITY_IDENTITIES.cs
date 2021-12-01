@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SERVICE_SECURITY_IDENTITIES.xml' path='doc/member[@name="WS_SERVICE_SECURITY_IDENTITIES"]/*' />
 public unsafe partial struct WS_SERVICE_SECURITY_IDENTITIES
 {
+    /// <include file='WS_SERVICE_SECURITY_IDENTITIES.xml' path='doc/member[@name="WS_SERVICE_SECURITY_IDENTITIES.serviceIdentities"]/*' />
     public WS_STRING* serviceIdentities;
 
+    /// <include file='WS_SERVICE_SECURITY_IDENTITIES.xml' path='doc/member[@name="WS_SERVICE_SECURITY_IDENTITIES.serviceIdentityCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint serviceIdentityCount;
 }

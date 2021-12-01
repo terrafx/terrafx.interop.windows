@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_DVDCOPY_BUSKEY.xml' path='doc/member[@name="AM_DVDCOPY_BUSKEY"]/*' />
 public unsafe partial struct AM_DVDCOPY_BUSKEY
 {
+    /// <include file='AM_DVDCOPY_BUSKEY.xml' path='doc/member[@name="AM_DVDCOPY_BUSKEY.BusKey"]/*' />
     [NativeTypeName("BYTE [5]")]
     public fixed byte BusKey[5];
 
+    /// <include file='AM_DVDCOPY_BUSKEY.xml' path='doc/member[@name="AM_DVDCOPY_BUSKEY.Reserved"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Reserved[1];
 }

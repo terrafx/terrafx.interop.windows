@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDropTarget.xml' path='doc/member[@name="IDropTarget"]/*' />
 [Guid("00000122-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IDropTarget : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDropTarget : IDropTarget.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDropTarget : IDropTarget.Interface
         return ((delegate* unmanaged<IDropTarget*, Guid*, void**, int>)(lpVtbl[0]))((IDropTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDropTarget : IDropTarget.Interface
         return ((delegate* unmanaged<IDropTarget*, uint>)(lpVtbl[1]))((IDropTarget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDropTarget : IDropTarget.Interface
         return ((delegate* unmanaged<IDropTarget*, uint>)(lpVtbl[2]))((IDropTarget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDropTarget.xml' path='doc/member[@name="IDropTarget.DragEnter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT DragEnter(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect)
@@ -46,6 +51,7 @@ public unsafe partial struct IDropTarget : IDropTarget.Interface
         return ((delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int>)(lpVtbl[3]))((IDropTarget*)Unsafe.AsPointer(ref this), pDataObj, grfKeyState, pt, pdwEffect);
     }
 
+    /// <include file='IDropTarget.xml' path='doc/member[@name="IDropTarget.DragOver"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT DragOver([NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect)
@@ -53,6 +59,7 @@ public unsafe partial struct IDropTarget : IDropTarget.Interface
         return ((delegate* unmanaged<IDropTarget*, uint, POINTL, uint*, int>)(lpVtbl[4]))((IDropTarget*)Unsafe.AsPointer(ref this), grfKeyState, pt, pdwEffect);
     }
 
+    /// <include file='IDropTarget.xml' path='doc/member[@name="IDropTarget.DragLeave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT DragLeave()
@@ -60,6 +67,7 @@ public unsafe partial struct IDropTarget : IDropTarget.Interface
         return ((delegate* unmanaged<IDropTarget*, int>)(lpVtbl[5]))((IDropTarget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDropTarget.xml' path='doc/member[@name="IDropTarget.Drop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Drop(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect)

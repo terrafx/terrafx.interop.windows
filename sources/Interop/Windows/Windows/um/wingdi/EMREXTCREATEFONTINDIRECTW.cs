@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMREXTCREATEFONTINDIRECTW.xml' path='doc/member[@name="EMREXTCREATEFONTINDIRECTW"]/*' />
 public partial struct EMREXTCREATEFONTINDIRECTW
 {
+    /// <include file='EMREXTCREATEFONTINDIRECTW.xml' path='doc/member[@name="EMREXTCREATEFONTINDIRECTW.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMREXTCREATEFONTINDIRECTW.xml' path='doc/member[@name="EMREXTCREATEFONTINDIRECTW.ihFont"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihFont;
 
+    /// <include file='EMREXTCREATEFONTINDIRECTW.xml' path='doc/member[@name="EMREXTCREATEFONTINDIRECTW.elfw"]/*' />
     public EXTLOGFONTW elfw;
 }

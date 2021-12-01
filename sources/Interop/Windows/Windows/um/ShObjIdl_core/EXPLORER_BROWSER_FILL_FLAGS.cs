@@ -7,10 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXPLORER_BROWSER_FILL_FLAGS.xml' path='doc/member[@name="EXPLORER_BROWSER_FILL_FLAGS"]/*' />
 [Flags]
 public enum EXPLORER_BROWSER_FILL_FLAGS
 {
+    /// <include file='EXPLORER_BROWSER_FILL_FLAGS.xml' path='doc/member[@name="EXPLORER_BROWSER_FILL_FLAGS.EBF_NONE"]/*' />
     EBF_NONE = 0,
+
+    /// <include file='EXPLORER_BROWSER_FILL_FLAGS.xml' path='doc/member[@name="EXPLORER_BROWSER_FILL_FLAGS.EBF_SELECTFROMDATAOBJECT"]/*' />
     EBF_SELECTFROMDATAOBJECT = 0x100,
+
+    /// <include file='EXPLORER_BROWSER_FILL_FLAGS.xml' path='doc/member[@name="EXPLORER_BROWSER_FILL_FLAGS.EBF_NODROPTARGET"]/*' />
     EBF_NODROPTARGET = 0x200,
 }

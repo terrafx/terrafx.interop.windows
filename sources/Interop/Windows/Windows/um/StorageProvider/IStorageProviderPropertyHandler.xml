@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IStorageProviderPropertyHandler.RetrieveProperties">
+    <summary>
+      <para>Gets the properties managed by the sync engine.</para>
+    </summary>
+    <param name="propertiesToRetrieve">
+      <para>The identifier for the properties to retrieve.</para>
+    </param>
+    <param name="propertiesToRetrieveCount">
+      <para>The number of properties to retrieve.</para>
+    </param>
+    <param name="retrievedProperties">
+      <para>A collection of properties.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the file or folder cannot be found, this method should return <b>S_OK</b>, but <i>retrievedProperties</i> should be empty.</para>
+      <para>Any properties that are not managed by the sync engine should return <b>VT_EMPTY</b> for those properties.</para>
+    </remarks>
+    <seealso cref="IStorageProviderPropertyHandler" />
+  </member>
+  <member name="IStorageProviderPropertyHandler.SaveProperties">
+    <summary>
+      <para>Saves properties associated with a file or folder.</para>
+    </summary>
+    <param name="propertiesToSave">
+      <para>The properties to save.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Attempting to save properties that are not managed by the sync engine should result in the error code <b>E_INVALIDARG</b>.</para>
+    </remarks>
+    <seealso cref="IStorageProviderPropertyHandler" />
+  </member>
+</doc>

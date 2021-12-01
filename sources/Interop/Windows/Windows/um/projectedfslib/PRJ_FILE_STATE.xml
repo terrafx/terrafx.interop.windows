@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRJ_FILE_STATE">
+    <summary>
+      <para>The state of an item.</para>
+    </summary>
+    <remarks>
+      <para>The PRJ_FILE_STATE_FULL and PRJ_FILE_STATE_TOMBSTONE bits will not appear in combination with each other or any other bit.</para>
+    </remarks>
+  </member>
+  <member name="PRJ_FILE_STATE.PRJ_FILE_STATE_PLACEHOLDER">
+    <summary>
+      <para>The item is a placeholder.</para>
+    </summary>
+  </member>
+  <member name="PRJ_FILE_STATE.PRJ_FILE_STATE_HYDRATED_PLACEHOLDER">
+    <summary>
+      <para>The item is a hydrated placeholder, i.e., the item's content has been written to disk.</para>
+    </summary>
+  </member>
+  <member name="PRJ_FILE_STATE.PRJ_FILE_STATE_DIRTY_PLACEHOLDER">
+    <summary>
+      <para>The placeholder item's metadata has been modified.</para>
+    </summary>
+  </member>
+  <member name="PRJ_FILE_STATE.PRJ_FILE_STATE_FULL">
+    <summary>
+      <para>The item is full.</para>
+    </summary>
+  </member>
+  <member name="PRJ_FILE_STATE.PRJ_FILE_STATE_TOMBSTONE">
+    <summary>
+      <para>The item is a tombstone.</para>
+    </summary>
+  </member>
+</doc>

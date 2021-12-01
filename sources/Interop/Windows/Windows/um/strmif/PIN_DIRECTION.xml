@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PIN_DIRECTION">
+    <summary>
+      <para>Indicates a pin's direction.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IPin.QueryDirection" />
+  </member>
+  <member name="PIN_DIRECTION.PINDIR_INPUT">
+    <summary>
+      <para>Input pin.</para>
+    </summary>
+  </member>
+  <member name="PIN_DIRECTION.PINDIR_OUTPUT">
+    <summary>
+      <para>Output pin.</para>
+    </summary>
+  </member>
+</doc>

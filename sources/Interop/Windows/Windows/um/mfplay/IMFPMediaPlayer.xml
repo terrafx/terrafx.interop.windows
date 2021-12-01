@@ -1,0 +1,2100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFPMediaPlayer.ClearMediaItem">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Clears the current media item.
+<b>Note</b>  This method is currently not implemented.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method stops playback and releases the player object's references to the current media item.</para>
+      <para>This method completes asynchronously.  When the operation completes, the application's <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback method is invoked. The event type is <b>MFP_EVENT_TYPE_MEDIAITEM_CLEARED</b>.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.CreateMediaItemFromObject">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Creates a media item from an object.</para>
+    </summary>
+    <param name="pIUnknownObj">
+      <para>A pointer to the object's <b>IUnknown</b> interface. See Remarks.</para>
+    </param>
+    <param name="fSync">
+      <para>If <b>TRUE</b>, the method blocks until it completes. If <b>FALSE</b>, the method does not block and completes asynchronously.</para>
+    </param>
+    <param name="dwUserData">
+      <para>Application-defined value to store in the media item. To retrieve this value from the media item, call <see cref="IMFPMediaItem.GetUserData" />.</para>
+    </param>
+    <param name="ppMediaItem">
+      <para>Receives a pointer to the <see cref="IMFPMediaItem" /> interface. The caller must release the interface. If <i>fSync</i> is <b>TRUE</b>, this parameter must be a valid pointer. If <i>bSync</i> is <b>FALSE</b>, this parameter must be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_INVALIDARG</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDREQUEST</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid request. This error can occur when <i>fSync</i> is <b>FALSE</b> and the application did not provide a callback interface. See Remarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <i>pIUnknownObj</i> parameter must specify one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>A pointer to a media source. Media sources expose the <see cref="IMFMediaSource" /> interface. It is the caller's responsibility to call <see cref="IMFMediaSource.Shutdown" /> on the media source.</description>
+        </item>
+        <item>
+          <description>A pointer to a byte stream. Byte streams expose the <see cref="IMFByteStream" /> interface. Internally, the method calls the <see cref="IMFSourceResolver.CreateObjectFromByteStream" /> method to create a media source from the byte stream. Therefore, a byte-stream handler must be registered for the byte stream. For more information about byte-stream handlers, see <a href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</a>.
+</description>
+        </item>
+      </list>
+      <para>This method does not queue the media item for playback. To queue the item for playback, call <see cref="IMFPMediaPlayer.SetMediaItem" />.</para>
+      <para>The <b>CreateMediaItemFromObject</b> method can be called either synchronously or asynchronously:</para>
+      <list type="bullet">
+        <item>
+          <description>If <i>fSync</i> is <b>TRUE</b>, the method completes synchronously. The <see cref="IMFPMediaItem" /> pointer is returned in the <i>ppMediaItem</i> parameter. </description>
+        </item>
+        <item>
+          <description>If <i>fSync</i> is <b>FALSE</b>, the method completes asynchronously. When the operation completes, the application's <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback method is invoked. The event type is <b>MFP_EVENT_TYPE_MEDIAITEM_CREATED</b>. The event data contains the <see cref="IMFPMediaItem" /> pointer for the new media item.</description>
+        </item>
+      </list>
+      <para>The callback interface is set when you first call <see cref="MFPCreateMediaPlayer" /> to create the MFPlay player object. If you do not provide a callback interface, the <i>fSync</i> parameter must be <b>TRUE</b>. Otherwise, <b>CreateMediaItemFromObject</b> returns <b>MF_E_INVALIDREQUEST</b>.</para>
+      <para>If you make multiple asynchronous calls to <b>CreateMediaItemFromObject</b>, they are not guaranteed to complete in the same order. Use the <i>dwUserData</i> parameter to match created media items with pending requests.</para>
+      <h3>Configuring the Source</h3>
+      <para>If <i>pIUnknownObj</i> points to a byte stream, you can configure the media source by performing the following steps:</para>
+      <list type="number">
+        <item>
+          <description>Call <b>QueryInterface</b> on the <see cref="IMFPMediaPlayer" /> pointer to get the <b>IPropertyStore</b> interface.</description>
+        </item>
+        <item>
+          <description>Call <b>IPropertyStore.SetValue</b> to set properties for the media source. For a list of configuration properties, see <a href="https://docs.microsoft.com//windows/desktop/medfound/configuring-a-media-source">Configuring a Media Source</a>. Third-party media sources may define custom properties.</description>
+        </item>
+        <item>
+          <description>Call the <b>CreateMediaItemFromObject</b> method to create the media item.</description>
+        </item>
+      </list>
+      <para>If <i>pIUnknownObj</i> points to a media source, you can configure the source at the time that you create it.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.CreateMediaItemFromURL">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Creates a media item from a URL.</para>
+    </summary>
+    <param name="pwszURL">
+      <para>Null-terminated string that contains the URL of a media file.</para>
+    </param>
+    <param name="fSync">
+      <para>If <b>TRUE</b>, the method blocks until it completes. If <b>FALSE</b>, the method does not block and completes asynchronously.</para>
+    </param>
+    <param name="dwUserData">
+      <para>Application-defined value to store in the media item. To retrieve this value from the media item, call <see cref="IMFPMediaItem.GetUserData" />.</para>
+    </param>
+    <param name="ppMediaItem">
+      <para>Receives a pointer to the <see cref="IMFPMediaItem" /> interface. The caller must release the interface. If <i>fSync</i> is <b>TRUE</b>, this parameter must be a valid pointer. If <i>bSync</i> is <b>FALSE</b>, this parameter must be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_INVALIDARG</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDREQUEST</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid request. This error can occur when <i>fSync</i> is <b>FALSE</b> and the application did not provide a callback interface. See Remarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_UNSUPPORTED_SCHEME</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Unsupported protocol.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method does not queue the media item for playback. To queue the item for playback, call <see cref="IMFPMediaPlayer.SetMediaItem" />.</para>
+      <para>The <b>CreateMediaItemFromURL</b> method can be called either synchronously or asynchronously:</para>
+      <list type="bullet">
+        <item>
+          <description>If <i>fSync</i> is <b>TRUE</b>, the method completes synchronously. The <see cref="IMFPMediaItem" /> pointer is returned in the <i>ppMediaItem</i> parameter. </description>
+        </item>
+        <item>
+          <description>If <i>fSync</i> is <b>FALSE</b>, the method completes asynchronously. When the operation completes, the application's <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback method is invoked. The event type is <b>MFP_EVENT_TYPE_MEDIAITEM_CREATED</b>. The event data contains the <see cref="IMFPMediaItem" /> pointer for the new media item.</description>
+        </item>
+      </list>
+      <para>The callback interface is set when you first call <see cref="MFPCreateMediaPlayer" /> to create the MFPlay player object. If you do not provide a callback interface, the <i>fSync</i> parameter must be <b>TRUE</b>. Otherwise, <b>CreateMediaItemFromURL</b> returns <b>MF_E_INVALIDREQUEST</b>.</para>
+      <para>If you make multiple asynchronous calls to <b>CreateMediaItemFromURL</b>, they are not guaranteed to complete in the same order. Use the <i>dwUserData</i> parameter to match created media items with pending requests.</para>
+      <para>Currently, this method returns <b>MF_E_UNSUPPORTED_SCHEME</b> if the URL specifies any of the following protocols: rtsp*, mms*, or mcast. If you want to use the Media Foundation network source with MFPlay, first use the <a href="https://docs.microsoft.com//windows/desktop/medfound/source-resolver">Source Resolver</a> to create the source, and then call <see cref="IMFPMediaPlayer.CreateMediaItemFromObject" />.</para>
+      <h3>Configuring the Source</h3>
+      <para>Internally, this method creates a media source. To configure the media source, do the following:</para>
+      <list type="number">
+        <item>
+          <description>Call <b>QueryInterface</b> on the <see cref="IMFPMediaPlayer" /> pointer to get the <b>IPropertyStore</b> interface.</description>
+        </item>
+        <item>
+          <description>Call <b>IPropertyStore.SetValue</b> to set properties for the media source. For a list of configuration properties, see <a href="https://docs.microsoft.com//windows/desktop/medfound/configuring-a-media-source">Configuring a Media Source</a>. Third-party media sources may define custom properties.</description>
+        </item>
+        <item>
+          <description>Call the <b>CreateMediaItemFromURL</b> method to create the media item.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.FrameStep">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Steps forward one video frame.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>Cannot frame step. Reasons for this error code include:</para>
+            <list type="bullet">
+              <item>
+                <description>There is no media item queued for playback.</description>
+              </item>
+              <item>
+                <description>The current media item does not contain video.</description>
+              </item>
+            </list>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_UNSUPPORTED_RATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media source does not support frame stepping, or the current playback rate is negative.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method completes asynchronously.  When the operation completes, the application's <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback method is invoked. The event type is <b>MFP_EVENT_TYPE_FRAME_STEP</b>.</para>
+      <para>The player object does not support frame stepping during reverse playback (that is, while the playback rate is negative).</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetAspectRatioMode">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the current aspect-ratio correction mode. This mode controls whether the aspect ratio of the video is preserved during playback.</para>
+    </summary>
+    <param name="pdwAspectRatioMode">
+      <para>Receives a bitwise <b>OR</b> of one or more flags from the <see cref="MFVideoAspectRatioMode" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The current media item does not contain video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetBalance">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the current audio balance.</para>
+    </summary>
+    <param name="pflBalance">
+      <para>Receives the balance. The value can be any number in the following range (inclusive).</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>-1.0</para>
+          </description>
+          <description>
+            <para>The left channel is at full volume; the right channel is silent.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>+1.0</para>
+          </description>
+          <description>
+            <para>The right channel is at full volume; the left channel is silent.</para>
+          </description>
+        </item>
+      </list>
+      <para>If the value is zero, the left and right channels are at equal volumes. The default value is zero.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetBorderColor">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the current color of the video border. The border color is used to letterbox the video.</para>
+    </summary>
+    <param name="pClr">
+      <para>Receives the border color as a <b>COLORREF</b> value.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The current media item does not contain video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetDuration">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the playback duration of the current media item.</para>
+    </summary>
+    <param name="guidPositionType">
+      <para>Specifies the unit of time for the duration. The following value is defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>
+              <b>MFP_POSITIONTYPE_100NS</b>
+            </b>
+          </description>
+          <description>
+            <para>100-nanosecond units.</para>
+            <para>The value returned in <i>pvDurationValue</i> is a <b>ULARGE_INTEGER</b>.</para>
+            <list type="bullet">
+              <item>
+                <description>Variant type (<b>vt</b>): <b>VT_UI8</b></description>
+              </item>
+              <item>
+                <description>Variant member: <b>uhVal</b></description>
+              </item>
+            </list>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pvDurationValue">
+      <para>Pointer to a <b>PROPVARIANT</b> that receives the duration.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The media source does not have a duration. This error can occur with a live source, such as a video camera.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no current media item.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method calculates the playback duration, taking into account the start and stop times for the media item. To set the start and stop times, call <see cref="IMFPMediaItem.SetStartStopPosition" /> on the media item. To get the actual duration of the underlying media file, regardless of start and stop times, call <see cref="IMFPMediaItem.GetDuration" />.</para>
+      <para>For example, suppose that you load a 30-second audio file and set the start time equal to 2 seconds and stop time equal to 10 seconds. The <see cref="IMFPMediaItem.GetDuration" /> method will return 30 seconds, but the <b>IMFPMediaPlayer.GetDuration</b> method will return 8 seconds.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetIdealVideoSize">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the range of video sizes that can be displayed without significantly degrading performance or image quality.</para>
+    </summary>
+    <param name="pszMin">
+      <para>Receives the minimum size that is preferable. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pszMax">
+      <para>Receives the maximum size that is preferable. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDREQUEST</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The current media item does not contain video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>At least one parameter must be non-<b>NULL</b>. Sizes are given in pixels.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetMediaItem">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets a pointer to the current media item.</para>
+    </summary>
+    <param name="ppIMFPMediaItem">
+      <para>Receives a pointer to the media item's <see cref="IMFPMediaItem" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_FAIL</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>There is no current media item.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_NOT_FOUND</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>There is no current media item.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <see cref="IMFPMediaPlayer.SetMediaItem" /> method is asynchronous. Therefore, while <b>SetMediaItem</b> is pending, <b>GetMediaItem</b> will not return the media item that was just set. Instead, the application should implement <see cref="IMFPMediaPlayerCallback" /> interface and handle the <b>MFP_EVENT_TYPE_MEDIAITEM_SET</b> event. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/getting-started-with-mfplay">Receiving Events From the Player</a>.</para>
+      <para>The previous remark also applies to setting the media item in the <see cref="MFPCreateMediaPlayer" /> function.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetMute">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Queries whether the audio is muted.</para>
+    </summary>
+    <param name="pfMute">
+      <para>Receives the value <b>TRUE</b> if the audio is muted, or <b>FALSE</b> otherwise.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetNativeVideoSize">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the size and aspect ratio of the video. These values are computed before any scaling is done to fit the video into the destination window.</para>
+    </summary>
+    <param name="pszVideo">
+      <para>Receives the size of the video, in pixels. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pszARVideo">
+      <para>Receives the picture aspect ratio of the video. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDREQUEST</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The current media item does not contain video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>At least one parameter must be non-<b>NULL</b>.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetPosition">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the current playback position.</para>
+    </summary>
+    <param name="guidPositionType">
+      <para>Specifies the unit of time for the playback position. The following value is defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>
+              <b>MFP_POSITIONTYPE_100NS</b>
+            </b>
+          </description>
+          <description>
+            <para>100-nanosecond units.</para>
+            <para>The value returned in <i>pvPositionValue</i> is a <b>LARGE_INTEGER</b>.</para>
+            <list type="bullet">
+              <item>
+                <description>Variant type (<b>vt</b>): <b>VT_I8</b></description>
+              </item>
+              <item>
+                <description>Variant member: <b>hVal</b></description>
+              </item>
+            </list>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pvPositionValue">
+      <para>Pointer to a <b>PROPVARIANT</b> that receives the playback position.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_INVALIDARG</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDREQUEST</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>No media item has been queued.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The playback position is calculated relative to the start time of the media item, which can be specified by calling <see cref="IMFPMediaItem.SetStartStopPosition" />. For example, if you set the start time to 20 seconds and the source duration is 60 seconds, the range of values returned by <b>GetPosition</b> is 0–40 seconds.</para>
+      <h4>Examples</h4>
+      <para>The following code gets the current position, in 100-nanosecond units, as a <b>LONGLONG</b> value.</para>
+      <code>HRESULT GetPositionHNS(
+    IMFPMediaPlayer *pPlayer,
+    LONGLONG *phnsPosition    // Receives the position in hns.
+)
+{
+    HRESULT hr = S_OK;
+
+    PROPVARIANT var;
+    PropVariantInit(&amp;amp;amp;amp;amp;amp;var);
+
+    *phnsPosition = 0;
+
+    hr = pPlayer-&gt;GetPosition(MFP_POSITIONTYPE_100NS, &amp;amp;amp;amp;amp;amp;var);
+
+    if (SUCCEEDED(hr))
+    {
+        *phnsPosition = var.hVal.QuadPart;
+    }
+
+    PropVariantClear(&amp;amp;amp;amp;amp;amp;var);
+    return hr;
+}
+
+</code>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetRate">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the current playback rate.</para>
+    </summary>
+    <param name="pflRate">
+      <para>Receives the playback rate. The playback rate is expressed as a ratio of the current rate to the normal rate. For example, 1.0 indicates normal playback, 0.5 indicates half speed, and 2.0 indicates twice speed. Positive values indicate forward playback, and negative values indicate reverse playback.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetState">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the current playback state of the MFPlay player object.</para>
+    </summary>
+    <param name="peState">
+      <para>Receives the playback state, as a member of the <see cref="MFP_MEDIAPLAYER_STATE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method can be called after the player object has been shut down.</para>
+      <para>Many of the <see cref="IMFPMediaPlayer" /> methods complete asynchronously. While an asynchronous operation is pending, the current state is not updated until the operation completes. When the operation completes, the application receives an event callback, and the new state is given in the <see cref="MFP_EVENT_HEADER" /> structure that is passed to the callback.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetSupportedRates">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the range of supported playback rates.</para>
+    </summary>
+    <param name="fForwardDirection">
+      <para>Specify  <b>TRUE</b> to get the playback rates for forward playback. Specify <b>FALSE</b> to get the rates for reverse playback.</para>
+    </param>
+    <param name="pflSlowestRate">
+      <para>Receives the slowest supported rate.</para>
+    </param>
+    <param name="pflFastestRate">
+      <para>Receives the fastest supported rate.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_UNSUPPORTED_RATE</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The current media item does not support playback in the requested direction (either forward or reverse).</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Playback rates are expressed as a ratio of the current rate to the normal rate. For example, 1.0 indicates normal playback speed, 0.5 indicates half speed, and 2.0 indicates twice speed. Positive values indicate forward playback, and negative values indicate reverse playback.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetVideoSourceRect">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the video source rectangle.</para>
+    </summary>
+    <param name="pnrcSource">
+      <para>Pointer to an <see cref="MFVideoNormalizedRect" /> structure that specifies the source rectangle. This rectangle defines which portion of the video is displayed. It is specified in normalized coordinates, which are defined as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>The upper-left corner of the video image is (0, 0).</description>
+        </item>
+        <item>
+          <description>The lower-right corner of  the video image is (1, 1).</description>
+        </item>
+      </list>
+      <para>If the source rectangle is {0, 0, 1, 1}, the entire image is displayed. This is the default value.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDREQUEST</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The current media item does not contain video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetVideoWindow">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the window where the video is displayed.</para>
+    </summary>
+    <param name="phwndVideo">
+      <para>Receives a handle to the application window where the video is displayed.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The video window is specified when you first call <see cref="MFPCreateMediaPlayer" /> to create the MFPlay player object.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.GetVolume">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Gets the current audio volume.</para>
+    </summary>
+    <param name="pflVolume">
+      <para>Receives the audio volume. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation).</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.InsertEffect">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Applies an audio or video effect to playback.</para>
+    </summary>
+    <param name="pEffect">
+      <para>Pointer to the <b>IUnknown</b> interface for one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>A Media Foundation transform (MFT) that implements the effect. MFTs expose the <see cref="IMFTransform" /> interface.</description>
+        </item>
+        <item>
+          <description>An activation object that creates an MFT. Activation objects expose the <see cref="IMFActivate" /> interface.</description>
+        </item>
+      </list>
+    </param>
+    <param name="fOptional">
+      <para>Specifies whether the effect is optional.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>
+              <b>TRUE</b>
+            </b>
+          </description>
+          <description>
+            <para>The effect is optional. If the MFPlay player object cannot add the effect, it ignores the effect and  continues playback.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>
+              <b>FALSE</b>
+            </b>
+          </description>
+          <description>
+            <para>If the MFPlay player object cannot add the effect, a playback error occurs.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDINDEX</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>This effect was already added.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The object specified in the <i>pEffect</i> parameter can implement either a video effect or an audio effect. The effect is applied to any media items set after the method is called. It is not applied to the current media item.</para>
+      <para>For each media item, the effect is applied to the first selected stream of the matching type (audio or video). If a media item has two selected streams of the same type, the second stream does not receive the effect. The effect is ignored if the media item does not contain a stream that matches the effect type. For example, if you set a video effect and play a file that contains just audio, the video effect is ignored, although no error is raised.</para>
+      <para>The effect is applied to all subsequent media items, until the application removes the effect. To remove an effect, call <see cref="IMFPMediaPlayer.RemoveEffect" /> or <see cref="IMFPMediaPlayer.RemoveAllEffects" />.</para>
+      <para>If you set multiple effects of the same type (audio or video), they are applied in the same order in which you call <b>InsertEffect</b>.</para>
+      <h3>Remote Playback Optimizations</h3>
+      <para>Audio and video effects might be incompatible with optimizations that are used for remote playback. The following remarks apply only to audio or video effects that are actually used during playback:</para>
+      <list type="bullet">
+        <item>
+          <description>If you mark an audio or video effect as required, by setting <i>fOptional</i> to <b>FALSE</b>, MFPlay disables remote playback optimizations.</description>
+        </item>
+        <item>
+          <description>Otherwise, if all audio/video effects are marked as optional, MFPlay  might drop the effects, in order to enable remote playback optimizations.</description>
+        </item>
+      </list>
+      <para>In other words, required effects have priority over remote optimizations, but optional effects do not.</para>
+      <para>Remote optimizations might be disabled for other reasons. For example, they are disabled if you set the <b>MFP_OPTION_NO_REMOTE_DESKTOP_OPTIMIZATION</b> option when you create the player object. In that case, MFPlay will attempt to insert any optional effects.</para>
+      <para>Non-audio, non-video effects do not affect remote optimizations. Also, if you insert a required effect but the source does not contain any streams of that type, remote optimizations are not disabled.</para>
+      <h4>Examples</h4>
+      <code>HRESULT AddPlaybackEffect(REFGUID clsid, IMFPMediaPlayer *pPlayer)
+{
+    IMFTransform *pMFT = NULL;
+
+    HRESULT hr = CoCreateInstance(clsid, NULL, CLSCTX_INPROC_SERVER,
+        IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pMFT));
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pPlayer-&gt;InsertEffect(pMFT, TRUE); // Set as optional.
+    }
+
+    SafeRelease(&amp;amp;amp;amp;amp;amp;pMFT);
+    return hr;
+}
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-add-audio-or-video-effects">How to Add Audio or Video Effects</seealso>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.Pause">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Pauses playback. While playback is paused, the most recent video frame is displayed, and audio is silent.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method completes asynchronously.  When the operation completes, the application's <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback method is invoked. The event type is <b>MFP_EVENT_TYPE_PAUSE</b>.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.Play">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Starts playback.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method completes asynchronously.  When the operation completes, the application's <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback method is invoked. The event type is <b>MFP_EVENT_TYPE_PLAY</b>.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.RemoveAllEffects">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Removes all effects that were added with the <see cref="IMFPMediaPlayer.InsertEffect" /> method.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The change applies to the next media item that is set on the player. The effects are not removed from the current media item.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-add-audio-or-video-effects">How to Add Audio or Video Effects</seealso>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.RemoveEffect">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Removes an effect that was added with the <see cref="IMFPMediaPlayer.InsertEffect" /> method.</para>
+    </summary>
+    <param name="pEffect">
+      <para>Pointer to the <b>IUnknown</b> interface of the effect object. Use the same pointer that you passed to the <see cref="InsertEffect" /> method.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The effect was not found.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The change applies to the next media item that is set on the player. The effect is not removed from the current media item.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-add-audio-or-video-effects">How to Add Audio or Video Effects</seealso>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.SetAspectRatioMode">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Specifies whether the aspect ratio of the video is preserved during playback.</para>
+    </summary>
+    <param name="dwAspectRatioMode">
+      <para>Bitwise <b>OR</b> of one or more flags from the <see cref="MFVideoAspectRatioMode" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDREQUEST</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The current media item does not contain video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method fails if no media item is currently set, or if the current media item does not contain video.</para>
+      <para>To set the aspect-ratio mode before playback starts, call this method inside your event handler for the <b>MFP_EVENT_TYPE_MEDIAITEM_SET</b> event. For more information, see <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" />.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.SetBalance">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Sets the audio balance.</para>
+    </summary>
+    <param name="flBalance">
+      <para>The audio balance. The value can be any number in the following range (inclusive).</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>-1.0</b>
+            </para>
+          </description>
+          <description>
+            <para>The left channel is at full volume; the right channel is silent.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>+1.0</b>
+            </para>
+          </description>
+          <description>
+            <para>The right channel is at full volume; the left channel is silent.</para>
+          </description>
+        </item>
+      </list>
+      <para>If the value is zero, the left and right channels are at equal volumes. The default value is zero.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_OUT_OF_RANGE</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>flBalance</i> parameter is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If you call this method before playback starts, the setting is applied when playback starts.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.SetBorderColor">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Sets the color for the video border. The border color is used to letterbox the video.</para>
+    </summary>
+    <param name="Clr">
+      <para>Specifies the border color as a <b>COLORREF</b> value. Use the <b>RGB</b> macro to create this value. The default value is black.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The current media item does not contain video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method fails if no media item is currently set, or if the current media item does not contain video.</para>
+      <para>To set the border color before playback starts, call this method inside your event handler for the <b>MFP_EVENT_TYPE_MEDIAITEM_SET</b> event. For more information, see <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" />.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.SetMediaItem">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Queues a media item for playback.</para>
+    </summary>
+    <param name="pIMFPMediaItem">
+      <para>Pointer to the <see cref="IMFPMediaItem" /> interface of the media item.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_INVALIDARG</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_DRM_UNSUPPORTED</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The media item contains protected content. MFPlay currently does not support protected content.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_NO_AUDIO_PLAYBACK_DEVICE</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>No audio playback device was found. This error can occur if the media source contains audio, but no audio playback devices are available on the system.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method completes asynchronously.  When the operation completes, the application's <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback method is invoked. The event type is <b>MFP_EVENT_TYPE_MEDIAITEM_SET</b>.</para>
+      <para>To create a media item, call <see cref="IMFPMediaPlayer.CreateMediaItemFromObject" /> or <see cref="IMFPMediaPlayer.CreateMediaItemFromURL" />. A media item must be used with the same MFPlay player object that created that item. If the media item was created by a different instance of the player object, <b>SetMediaItem</b> returns <b>E_INVALIDARG</b>.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.SetMute">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Mutes or unmutes the audio.</para>
+    </summary>
+    <param name="fMute">
+      <para>Specify <b>TRUE</b> to mute the audio, or <b>FALSE</b> to unmute the audio.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If you call this method before playback starts, the setting is applied after playback starts.</para>
+      <para>This method does not mute the entire audio session to which the player belongs. It mutes only the streams from the current media item. Other streams in the audio session are not affected. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/managing-the-audio-session">Managing the Audio Session</a>.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.SetPosition">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Sets the playback position.</para>
+    </summary>
+    <param name="guidPositionType">
+      <para>Unit of time for the playback position. The following value is defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MFP_POSITIONTYPE_100NS</b>
+          </description>
+          <description>
+            <para>100-nanosecond units.</para>
+            <para>The value of <i>pvPositionValue</i> must be a <b>LARGE_INTEGER</b>.</para>
+            <list type="bullet">
+              <item>
+                <description>Variant type (<b>vt</b>): <b>VT_I8</b></description>
+              </item>
+              <item>
+                <description>Variant member: <b>hVal</b></description>
+              </item>
+            </list>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pvPositionValue">
+      <para>New playback position. The meaning and data type of this parameter are indicated by the <i>guidPositionType</i> parameter.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_INVALIDARG</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>HRESULT_FROM_WIN32( ERROR_SEEK )</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>pvPositionValue</i> is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDREQUEST</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>No media item has been queued.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If you call this method while playback is stopped, the new position takes effect after playback resumes.</para>
+      <para>This method completes asynchronously. When the operation completes, the application's <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback method is invoked. The event type is <b>MFP_EVENT_TYPE_POSITION_SET</b>.</para>
+      <para>If playback was started before <b>SetPosition</b> is called, playback resumes at the new position. If playback was paused, the video is refreshed to display the current frame at the new position.</para>
+      <para>If you make two consecutive calls to <b>SetPosition</b> with <i>guidPositionType</i> equal to <b>MFP_POSITIONTYPE_100NS</b>, and the second call is made before the first call has completed, the second call supersedes the first. The status code for the superseded call is set to <b>S_FALSE</b> in the event data for that call. This behavior prevents excessive latency from repeated calls to <b>SetPosition</b>, as each call may force the media source to perform a relatively lengthy seek operation.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.SetRate">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Sets the playback rate.</para>
+    </summary>
+    <param name="flRate">
+      <para>Playback rate. The playback rate is expressed as a ratio of the current rate to the normal rate. For example, <b>1.0</b> indicates normal playback speed, <b>0.5</b> indicates half speed, and <b>2.0</b> indicates twice speed. Positive values indicate forward playback, and negative values indicate reverse playback.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_OUT_OF_RANGE</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>flRate</i> parameter is zero.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method completes asynchronously.  When the operation completes, the application's <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback method is invoked. The event type is <b>MFP_EVENT_TYPE_RATE_SET</b>.</para>
+      <para>The method sets the nearest supported rate, which will depend on the underlying media source. For example, if <i>flRate</i> is 50 and the source's maximum rate is 8× normal rate, the method will set the rate to 8.0.  The actual rate is indicated in the event data for the <b>MFP_EVENT_TYPE_RATE_SET</b> event.</para>
+      <para>To find the range of supported rates, call <see cref="IMFPMediaPlayer.GetSupportedRates" />.</para>
+      <para>This method does not support playback rates of zero, although Media Foundation defines a meaning for zero rates in some other contexts.</para>
+      <para>The new rate applies only to the current media item. Setting a new media item resets the playback rate to 1.0.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.SetVideoSourceRect">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Sets the video source rectangle.</para>
+      <para>MFPlay clips the video to this rectangle and stretches the rectangle to fill the video window.</para>
+    </summary>
+    <param name="pnrcSource">
+      <para>Pointer to an <see cref="MFVideoNormalizedRect" /> structure that specifies the source rectangle. This rectangle defines which portion of the video is displayed. It is specified in normalized coordinates, which are defined as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>The upper-left corner of the video image is (0, 0).</description>
+        </item>
+        <item>
+          <description>The lower-right corner of  the video image is (1, 1).</description>
+        </item>
+      </list>
+      <para>To display the entire image, set the source rectangle to {0, 0, 1, 1}. This is the default value.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The current media item does not contain video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>MFPlay stretches the source rectangle to fill the entire video window. By default, MFPlay maintains the source's correct aspect ratio, letterboxing if needed. The letterbox color is controlled by the <see cref="IMFPMediaPlayer.SetBorderColor" /> method.</para>
+      <para>This method fails if no media item is currently set, or if the current media item does not contain video.</para>
+      <para>To set the video position before playback starts, call this method inside your event handler for the <b>MFP_EVENT_TYPE_MEDIAITEM_SET</b> event. For more information, see <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" />.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.SetVolume">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Sets the audio volume.</para>
+    </summary>
+    <param name="flVolume">
+      <para>The volume level. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation).</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_OUT_OF_RANGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>flVolume</i> parameter is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If you call this method before playback starts, the setting is applied after playback starts.</para>
+      <para>This method does not change the master volume level for the player's audio session. Instead, it adjusts the per-channel volume levels for audio stream(s) that belong to the current media item. Other streams in the audio session are not affected. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/managing-the-audio-session">Managing the Audio Session</a>.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.Shutdown">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Shuts down the MFPlay player object and releases any resources the object is using.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>After this method is called, most <see cref="IMFPMediaPlayer" /> methods return <b>MF_E_SHUTDOWN</b>. Also, any media items created from this instance of the player object are invalidated and most <see cref="IMFPMediaItem" /> methods also return <b>MF_E_SHUTDOWN</b>.</para>
+      <para>The player object automatically shuts itself down when its reference count reaches zero. You can use the <b>Shutdown</b> method to shut down the player before all of the references have been released.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.Stop">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Stops playback.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method completes asynchronously.  When the operation completes, the application's <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback method is invoked. The event type is <b>MFP_EVENT_TYPE_STOP</b>.</para>
+      <para>The current media item is still valid. After playback stops, the playback position resets to the beginning of the current media item.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer.UpdateVideo">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Updates the video frame.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDREQUEST</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The current media item does not contain video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_SHUTDOWN</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The object's <see cref="Shutdown" /> method was called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method when your application's video playback window receives either a <a href="https://docs.microsoft.com//windows/desktop/gdi/wm-paint">WM_PAINT</a> or <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-size">WM_SIZE</a> message. This method performs two functions:</para>
+      <list type="bullet">
+        <item>
+          <description>Ensures that the video frame is repainted while playback is paused or stopped.  </description>
+        </item>
+        <item>
+          <description>Adjusts the displayed video to match the current size of the video window.</description>
+        </item>
+      </list>
+      <b>Important</b>  Call the GDI <see cref="BeginPaint" /> function before calling  <b>UpdateVideo</b>.
+<h4>Examples</h4><code>IMFPMediaPlayer *g_pPlayer;
+
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    HDC hdc;
+    PAINTSTRUCT ps;
+
+    switch (uMsg)
+    {
+    case WM_PAINT:
+        hdc = BeginPaint(hwnd, &amp;amp;amp;amp;amp;amp;ps);
+        if (g_pPlayer)
+        {
+            g_pPlayer-&gt;UpdateVideo();
+        }
+           EndPaint(hwnd, &amp;amp;amp;amp;amp;amp;ps);
+        break;
+
+    case WM_SIZE:
+        hdc = BeginPaint(hwnd, &amp;amp;amp;amp;amp;amp;ps);
+        if (g_pPlayer)
+        {
+            g_pPlayer-&gt;UpdateVideo();
+        }
+           EndPaint(hwnd, &amp;amp;amp;amp;amp;amp;ps);
+        break;
+
+    // other messages
+
+    default:
+        return DefWindowProc(hwnd, uMsg, wParam, lParam);
+    }
+    return 0;
+}
+</code></remarks>
+    <seealso cref="IMFPMediaPlayer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="IMFPMediaPlayer">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Contains methods to play media files.</para>
+      <para>The MFPlay player object exposes this interface. To get a pointer to this interface, call <see cref="MFPCreateMediaPlayer" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+</doc>

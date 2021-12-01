@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_ITEM_CAPABILITIES">
+    <summary>
+      <para>Specifies the actions that can be performed against an item.</para>
+    </summary>
+    <remarks>
+      <para>Sync Center queries the item for its capabilities through <see cref="ISyncMgrSyncItem.GetCapabilities" /> whenever the <see cref="ISyncMgrControl.UpdateItem" /> method is called.</para>
+    </remarks>
+  </member>
+  <member name="SYNCMGR_ITEM_CAPABILITIES.SYNCMGR_ICM_NONE">
+    <summary>
+      <para>No capability flags are set.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_ITEM_CAPABILITIES.SYNCMGR_ICM_PROVIDES_ICON">
+    <summary>
+      <para>The item returns a valid object from <see cref="ISyncMgrSyncItem.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_Icon flag.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_ITEM_CAPABILITIES.SYNCMGR_ICM_EVENT_STORE">
+    <summary>
+      <para>The item returns a valid object from <see cref="ISyncMgrSyncItem.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_EventStore flag.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_ITEM_CAPABILITIES.SYNCMGR_ICM_CONFLICT_STORE">
+    <summary>
+      <para>The item returns a valid object from <see cref="ISyncMgrSyncItem.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_ConflictStore flag.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_ITEM_CAPABILITIES.SYNCMGR_ICM_CAN_DELETE">
+    <summary>
+      <para>The user is allowed to delete the item from the handler's folder. This can be used by an item to remove itself from the handler's sync set (for instance, remove a folder from the set of Offline Files). If this value is set, the <b>Delete</b> task is shown in the handler's folder when this item is selected.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_ITEM_CAPABILITIES.SYNCMGR_ICM_CAN_BROWSE_CONTENT">
+    <summary>
+      <para>The item returns a valid object from <see cref="ISyncMgrSyncItem.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_BrowseContent flag. If this value is set, the <b>Browse Content</b> task is added to the item's shortcut menu.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_ITEM_CAPABILITIES.SYNCMGR_ICM_QUERY_BEFORE_ENABLE">
+    <summary>
+      <para>The item returns a valid object from <see cref="ISyncMgrSyncItem.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_QueryBeforeEnable flag.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_ITEM_CAPABILITIES.SYNCMGR_ICM_QUERY_BEFORE_DISABLE">
+    <summary>
+      <para>The item returns a valid object from <see cref="ISyncMgrSyncItem.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_QueryBeforeDisable flag.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_ITEM_CAPABILITIES.SYNCMGR_ICM_QUERY_BEFORE_DELETE">
+    <summary>
+      <para>The item returns a valid object from <see cref="ISyncMgrSyncItem.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_QueryBeforeDelete flag.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_ITEM_CAPABILITIES.SYNCMGR_ICM_VALID_MASK">
+    <summary>
+      <para>A mask used to retrieve valid <see cref="SYNCMGR_ITEM_CAPABILITIES" /> flags.</para>
+    </summary>
+  </member>
+</doc>

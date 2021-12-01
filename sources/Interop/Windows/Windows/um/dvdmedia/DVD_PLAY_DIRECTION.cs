@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_PLAY_DIRECTION.xml' path='doc/member[@name="DVD_PLAY_DIRECTION"]/*' />
 public enum DVD_PLAY_DIRECTION
 {
+    /// <include file='DVD_PLAY_DIRECTION.xml' path='doc/member[@name="DVD_PLAY_DIRECTION.DVD_DIR_FORWARD"]/*' />
     DVD_DIR_FORWARD = 0,
+
+    /// <include file='DVD_PLAY_DIRECTION.xml' path='doc/member[@name="DVD_PLAY_DIRECTION.DVD_DIR_BACKWARD"]/*' />
     DVD_DIR_BACKWARD = 1,
 }

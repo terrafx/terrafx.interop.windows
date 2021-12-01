@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VOLUMEWAVEFILTER.xml' path='doc/member[@name="VOLUMEWAVEFILTER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct VOLUMEWAVEFILTER
 {
+    /// <include file='VOLUMEWAVEFILTER.xml' path='doc/member[@name="VOLUMEWAVEFILTER.wfltr"]/*' />
     public WAVEFILTER wfltr;
 
+    /// <include file='VOLUMEWAVEFILTER.xml' path='doc/member[@name="VOLUMEWAVEFILTER.dwVolume"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVolume;
 }

@@ -8,11 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SHELLSTATEW
 {
     public BOOL _bitfield1;
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fShowAllObjects"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowAllObjects
     {
@@ -29,6 +31,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fShowExtensions"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowExtensions
     {
@@ -45,6 +48,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fNoConfirmRecycle"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fNoConfirmRecycle
     {
@@ -61,6 +65,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fShowSysFiles"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowSysFiles
     {
@@ -77,6 +82,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fShowCompColor"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowCompColor
     {
@@ -93,6 +99,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fDoubleClickInWebView"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDoubleClickInWebView
     {
@@ -109,6 +116,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fDesktopHTML"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDesktopHTML
     {
@@ -125,6 +133,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fWin95Classic"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fWin95Classic
     {
@@ -141,6 +150,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fDontPrettyPath"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDontPrettyPath
     {
@@ -157,6 +167,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fShowAttribCol"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowAttribCol
     {
@@ -173,6 +184,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fMapNetDrvBtn"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fMapNetDrvBtn
     {
@@ -189,6 +201,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fShowInfoTip"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowInfoTip
     {
@@ -205,6 +218,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fHideIcons"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fHideIcons
     {
@@ -221,6 +235,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fWebView"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fWebView
     {
@@ -237,6 +252,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fFilter"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fFilter
     {
@@ -253,6 +269,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fShowSuperHidden"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowSuperHidden
     {
@@ -269,6 +286,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fNoNetCrawling"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fNoNetCrawling
     {
@@ -285,22 +303,29 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.dwWin95Unused"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwWin95Unused;
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.uWin95Unused"]/*' />
     public uint uWin95Unused;
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.lParamSort"]/*' />
     [NativeTypeName("LONG")]
     public int lParamSort;
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.iSortDirection"]/*' />
     public int iSortDirection;
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.version"]/*' />
     public uint version;
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.uNotUsed"]/*' />
     public uint uNotUsed;
 
     public BOOL _bitfield2;
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fSepProcess"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fSepProcess
     {
@@ -317,6 +342,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fStartPanelOn"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fStartPanelOn
     {
@@ -333,6 +359,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fShowStartPage"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowStartPage
     {
@@ -349,6 +376,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fAutoCheckSelect"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fAutoCheckSelect
     {
@@ -365,6 +393,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fIconsOnly"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fIconsOnly
     {
@@ -381,6 +410,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fShowTypeOverlay"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowTypeOverlay
     {
@@ -397,6 +427,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fShowStatusBar"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowStatusBar
     {
@@ -413,6 +444,7 @@ public partial struct SHELLSTATEW
         }
     }
 
+    /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW.fSpareFlags"]/*' />
     [NativeTypeName("uint : 9")]
     public uint fSpareFlags
     {

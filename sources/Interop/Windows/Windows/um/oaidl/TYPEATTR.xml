@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TYPEATTR">
+    <summary>
+      <para>Contains attributes of a type.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.guid">
+    <summary>
+      <para>The GUID of the type information.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.lcid">
+    <summary>
+      <para>The locale of member names and documentation strings.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.dwReserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.memidConstructor">
+    <summary>
+      <para>The constructor ID, or MEMBERID_NIL if none.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.memidDestructor">
+    <summary>
+      <para>The destructor ID, or MEMBERID_NIL if none.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.lpstrSchema">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.cbSizeInstance">
+    <summary>
+      <para>The size of an instance of this type.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.typekind">
+    <summary>
+      <para>The kind of type.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.cFuncs">
+    <summary>
+      <para>The number of functions.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.cVars">
+    <summary>
+      <para>The number of variables or data members.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.cImplTypes">
+    <summary>
+      <para>The number of implemented interfaces.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.cbSizeVft">
+    <summary>
+      <para>The size of this type's VTBL.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.cbAlignment">
+    <summary>
+      <para>The byte alignment for an instance of this type. A value of 0 indicates alignment on the 64K boundary; 1 indicates no special alignment. For other values, <i>n</i> indicates aligned on byte <i>n</i>.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.wTypeFlags">
+    <summary>
+      <para>The type flags. See <see cref="TYPEFLAGS" />.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.wMajorVerNum">
+    <summary>
+      <para>The major version number.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.wMinorVerNum">
+    <summary>
+      <para>The minor version number.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.tdescAlias">
+    <summary>
+      <para>If <b>typekind</b> is TKIND_ALIAS, specifies the type for which this type is an alias.</para>
+    </summary>
+  </member>
+  <member name="TYPEATTR.idldescType">
+    <summary>
+      <para>The IDL attributes of the described type.</para>
+    </summary>
+  </member>
+</doc>

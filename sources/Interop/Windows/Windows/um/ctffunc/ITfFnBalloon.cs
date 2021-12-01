@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFnBalloon.xml' path='doc/member[@name="ITfFnBalloon"]/*' />
 [Guid("3BAB89E4-5FBE-45F4-A5BC-DCA36AD225A8")]
 [NativeTypeName("struct ITfFnBalloon : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface
         return ((delegate* unmanaged<ITfFnBalloon*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnBalloon*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface
         return ((delegate* unmanaged<ITfFnBalloon*, uint>)(lpVtbl[1]))((ITfFnBalloon*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface
         return ((delegate* unmanaged<ITfFnBalloon*, uint>)(lpVtbl[2]))((ITfFnBalloon*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfFnBalloon.xml' path='doc/member[@name="ITfFnBalloon.UpdateBalloon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch)

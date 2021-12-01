@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_PROTECTION_LEVEL.xml' path='doc/member[@name="WS_PROTECTION_LEVEL"]/*' />
 public enum WS_PROTECTION_LEVEL
 {
+    /// <include file='WS_PROTECTION_LEVEL.xml' path='doc/member[@name="WS_PROTECTION_LEVEL.WS_PROTECTION_LEVEL_NONE"]/*' />
     WS_PROTECTION_LEVEL_NONE = 1,
+
+    /// <include file='WS_PROTECTION_LEVEL.xml' path='doc/member[@name="WS_PROTECTION_LEVEL.WS_PROTECTION_LEVEL_SIGN"]/*' />
     WS_PROTECTION_LEVEL_SIGN = 2,
+
+    /// <include file='WS_PROTECTION_LEVEL.xml' path='doc/member[@name="WS_PROTECTION_LEVEL.WS_PROTECTION_LEVEL_SIGN_AND_ENCRYPT"]/*' />
     WS_PROTECTION_LEVEL_SIGN_AND_ENCRYPT = 3,
 }

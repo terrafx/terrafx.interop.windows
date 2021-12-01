@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CTL_VERIFY_USAGE_STATUS.xml' path='doc/member[@name="CTL_VERIFY_USAGE_STATUS"]/*' />
 public unsafe partial struct CTL_VERIFY_USAGE_STATUS
 {
+    /// <include file='CTL_VERIFY_USAGE_STATUS.xml' path='doc/member[@name="CTL_VERIFY_USAGE_STATUS.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CTL_VERIFY_USAGE_STATUS.xml' path='doc/member[@name="CTL_VERIFY_USAGE_STATUS.dwError"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwError;
 
+    /// <include file='CTL_VERIFY_USAGE_STATUS.xml' path='doc/member[@name="CTL_VERIFY_USAGE_STATUS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='CTL_VERIFY_USAGE_STATUS.xml' path='doc/member[@name="CTL_VERIFY_USAGE_STATUS.ppCtl"]/*' />
     [NativeTypeName("PCCTL_CONTEXT *")]
     public CTL_CONTEXT** ppCtl;
 
+    /// <include file='CTL_VERIFY_USAGE_STATUS.xml' path='doc/member[@name="CTL_VERIFY_USAGE_STATUS.dwCtlEntryIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCtlEntryIndex;
 
+    /// <include file='CTL_VERIFY_USAGE_STATUS.xml' path='doc/member[@name="CTL_VERIFY_USAGE_STATUS.ppSigner"]/*' />
     [NativeTypeName("PCCERT_CONTEXT *")]
     public CERT_CONTEXT** ppSigner;
 
+    /// <include file='CTL_VERIFY_USAGE_STATUS.xml' path='doc/member[@name="CTL_VERIFY_USAGE_STATUS.dwSignerIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSignerIndex;
 }

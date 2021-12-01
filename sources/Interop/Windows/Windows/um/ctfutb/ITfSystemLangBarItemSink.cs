@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfSystemLangBarItemSink.xml' path='doc/member[@name="ITfSystemLangBarItemSink"]/*' />
 [Guid("1449D9AB-13CF-4687-AA3E-8D8B18574396")]
 [NativeTypeName("struct ITfSystemLangBarItemSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
         return ((delegate* unmanaged<ITfSystemLangBarItemSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
         return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint>)(lpVtbl[1]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
         return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint>)(lpVtbl[2]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfSystemLangBarItemSink.xml' path='doc/member[@name="ITfSystemLangBarItemSink.InitMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InitMenu(ITfMenu* pMenu)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
         return ((delegate* unmanaged<ITfSystemLangBarItemSink*, ITfMenu*, int>)(lpVtbl[3]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), pMenu);
     }
 
+    /// <include file='ITfSystemLangBarItemSink.xml' path='doc/member[@name="ITfSystemLangBarItemSink.OnMenuSelect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnMenuSelect(uint wID)

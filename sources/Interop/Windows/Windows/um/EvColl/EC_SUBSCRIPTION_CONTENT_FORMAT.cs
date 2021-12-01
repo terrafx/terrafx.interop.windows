@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EC_SUBSCRIPTION_CONTENT_FORMAT.xml' path='doc/member[@name="EC_SUBSCRIPTION_CONTENT_FORMAT"]/*' />
 public enum EC_SUBSCRIPTION_CONTENT_FORMAT
 {
+    /// <include file='EC_SUBSCRIPTION_CONTENT_FORMAT.xml' path='doc/member[@name="EC_SUBSCRIPTION_CONTENT_FORMAT.EcContentFormatEvents"]/*' />
     EcContentFormatEvents = 1,
+
+    /// <include file='EC_SUBSCRIPTION_CONTENT_FORMAT.xml' path='doc/member[@name="EC_SUBSCRIPTION_CONTENT_FORMAT.EcContentFormatRenderedText"]/*' />
     EcContentFormatRenderedText,
 }

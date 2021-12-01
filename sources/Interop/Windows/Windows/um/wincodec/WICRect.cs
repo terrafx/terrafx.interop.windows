@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICRect.xml' path='doc/member[@name="WICRect"]/*' />
 public partial struct WICRect
 {
+    /// <include file='WICRect.xml' path='doc/member[@name="WICRect.X"]/*' />
     public int X;
 
+    /// <include file='WICRect.xml' path='doc/member[@name="WICRect.Y"]/*' />
     public int Y;
 
+    /// <include file='WICRect.xml' path='doc/member[@name="WICRect.Width"]/*' />
     public int Width;
 
+    /// <include file='WICRect.xml' path='doc/member[@name="WICRect.Height"]/*' />
     public int Height;
 }

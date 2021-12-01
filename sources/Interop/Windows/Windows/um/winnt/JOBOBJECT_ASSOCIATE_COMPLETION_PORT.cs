@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_ASSOCIATE_COMPLETION_PORT.xml' path='doc/member[@name="JOBOBJECT_ASSOCIATE_COMPLETION_PORT"]/*' />
 public unsafe partial struct JOBOBJECT_ASSOCIATE_COMPLETION_PORT
 {
+    /// <include file='JOBOBJECT_ASSOCIATE_COMPLETION_PORT.xml' path='doc/member[@name="JOBOBJECT_ASSOCIATE_COMPLETION_PORT.CompletionKey"]/*' />
     [NativeTypeName("PVOID")]
     public void* CompletionKey;
 
+    /// <include file='JOBOBJECT_ASSOCIATE_COMPLETION_PORT.xml' path='doc/member[@name="JOBOBJECT_ASSOCIATE_COMPLETION_PORT.CompletionPort"]/*' />
     public HANDLE CompletionPort;
 }

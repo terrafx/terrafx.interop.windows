@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPDESC_COLUMNINDEX_TYPE.xml' path='doc/member[@name="PROPDESC_COLUMNINDEX_TYPE"]/*' />
 public enum PROPDESC_COLUMNINDEX_TYPE
 {
+    /// <include file='PROPDESC_COLUMNINDEX_TYPE.xml' path='doc/member[@name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_NONE"]/*' />
     PDCIT_NONE = 0,
+
+    /// <include file='PROPDESC_COLUMNINDEX_TYPE.xml' path='doc/member[@name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_ONDISK"]/*' />
     PDCIT_ONDISK = 1,
+
+    /// <include file='PROPDESC_COLUMNINDEX_TYPE.xml' path='doc/member[@name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_INMEMORY"]/*' />
     PDCIT_INMEMORY = 2,
+
+    /// <include file='PROPDESC_COLUMNINDEX_TYPE.xml' path='doc/member[@name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_ONDEMAND"]/*' />
     PDCIT_ONDEMAND = 3,
+
+    /// <include file='PROPDESC_COLUMNINDEX_TYPE.xml' path='doc/member[@name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_ONDISKALL"]/*' />
     PDCIT_ONDISKALL = 4,
+
+    /// <include file='PROPDESC_COLUMNINDEX_TYPE.xml' path='doc/member[@name="PROPDESC_COLUMNINDEX_TYPE.PDCIT_ONDISKVECTOR"]/*' />
     PDCIT_ONDISKVECTOR = 5,
 }

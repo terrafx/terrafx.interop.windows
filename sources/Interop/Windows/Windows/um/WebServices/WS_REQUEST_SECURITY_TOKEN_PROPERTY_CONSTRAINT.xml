@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT">
+    <summary>
+      <para>This structure is used to specify a set of constraints
+for a particular request security token property.
+Any property constraints that are not specified will use
+the default constraints.</para>
+    </summary>
+  </member>
+  <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT.id">
+    <summary>
+      <para>The id of the request security token property.  The following security
+property constraint may be specified:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_TRUST_VERSION" />
+            <para>This property indicates which WS-Trust versions are acceptable.</para>
+            <para>If this property is not specified, then the default constraint value
+of <see cref="WS_TRUST_VERSION_FEBRUARY_2005" /> will be used.</para>
+            <para>Currently only <see cref="WS_TRUST_VERSION_FEBRUARY_2005" /> is supported in policy, so a property constraint containing the
+value <b>WS_TRUST_VERSION_FEBRUARY_2005</b> must be specified in
+order for the policy to match.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT.allowedValues">
+    <summary>
+      <para>An array of values which are acceptable.  The type of
+the values in the array correspond to the type of the values
+of the request security token property.  See the documentation for
+a particular request security token property to determine the type of the
+property.</para>
+    </summary>
+  </member>
+  <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT.allowedValuesSize">
+    <summary>
+      <para>The total size of the allowedValues array, in bytes.  This
+size must be a multiple of the size of the type of the value
+of the property.</para>
+    </summary>
+  </member>
+  <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT.out">
+    <summary>
+      <para>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR, the
+entire contents of this structure will be filled out.</para>
+    </summary>
+  </member>
+  <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT.out.requestSecurityTokenProperty">
+    <summary></summary>
+  </member>
+</doc>

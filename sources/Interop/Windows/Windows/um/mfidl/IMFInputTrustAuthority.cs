@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority"]/*' />
 [Guid("D19F8E98-B126-4446-890C-5DCB7AD71453")]
 [NativeTypeName("struct IMFInputTrustAuthority : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
         return ((delegate* unmanaged<IMFInputTrustAuthority*, Guid*, void**, int>)(lpVtbl[0]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
         return ((delegate* unmanaged<IMFInputTrustAuthority*, uint>)(lpVtbl[1]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
         return ((delegate* unmanaged<IMFInputTrustAuthority*, uint>)(lpVtbl[2]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.GetDecrypter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDecrypter([NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
         return ((delegate* unmanaged<IMFInputTrustAuthority*, Guid*, void**, int>)(lpVtbl[3]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.RequestAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RequestAccess(MFPOLICYMANAGER_ACTION Action, IMFActivate** ppContentEnablerActivate)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
         return ((delegate* unmanaged<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFActivate**, int>)(lpVtbl[4]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), Action, ppContentEnablerActivate);
     }
 
+    /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.GetPolicy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPolicy(MFPOLICYMANAGER_ACTION Action, IMFOutputPolicy** ppPolicy)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
         return ((delegate* unmanaged<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFOutputPolicy**, int>)(lpVtbl[5]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), Action, ppPolicy);
     }
 
+    /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.BindAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT BindAccess(MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
         return ((delegate* unmanaged<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int>)(lpVtbl[6]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), pParam);
     }
 
+    /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.UpdateAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT UpdateAccess(MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
         return ((delegate* unmanaged<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int>)(lpVtbl[7]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), pParam);
     }
 
+    /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Reset()

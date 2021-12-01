@@ -11,26 +11,31 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WcmQueryProperty"]/*' />
     [DllImport("wcmapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     [SupportedOSPlatform("windows8.0")]
     public static extern uint WcmQueryProperty([NativeTypeName("const GUID *")] Guid* pInterface, [NativeTypeName("LPCWSTR")] ushort* strProfileName, WCM_PROPERTY Property, void* pReserved, [NativeTypeName("PDWORD")] uint* pdwDataSize, [NativeTypeName("PBYTE *")] byte** ppData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WcmSetProperty"]/*' />
     [DllImport("wcmapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     [SupportedOSPlatform("windows8.0")]
     public static extern uint WcmSetProperty([NativeTypeName("const GUID *")] Guid* pInterface, [NativeTypeName("LPCWSTR")] ushort* strProfileName, WCM_PROPERTY Property, void* pReserved, [NativeTypeName("DWORD")] uint dwDataSize, [NativeTypeName("const BYTE *")] byte* pbData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WcmGetProfileList"]/*' />
     [DllImport("wcmapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     [SupportedOSPlatform("windows8.0")]
     public static extern uint WcmGetProfileList(void* pReserved, WCM_PROFILE_INFO_LIST** ppProfileList);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WcmSetProfileList"]/*' />
     [DllImport("wcmapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     [SupportedOSPlatform("windows8.0")]
     public static extern uint WcmSetProfileList(WCM_PROFILE_INFO_LIST* pProfileList, [NativeTypeName("DWORD")] uint dwPosition, BOOL fIgnoreUnknownProfiles, void* pReserved);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WcmFreeMemory"]/*' />
     [DllImport("wcmapi", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern void WcmFreeMemory(void* pMemory);

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11CryptoSession.GetCertificate">
+    <summary>
+      <para>Gets the driver's certificate chain.</para>
+    </summary>
+    <param name="CertificateSize">
+      <para>The size of the <i>pCertificate</i> array, in bytes. To get the size of the certificate chain, call <see cref="ID3D11CryptoSession.GetCertificateSize" />.</para>
+    </param>
+    <param name="pCertificate">
+      <para>A pointer to a byte array that receives the driver's certificate chain. The caller must allocate the array.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID3D11CryptoSession" />
+  </member>
+  <member name="ID3D11CryptoSession.GetCertificateSize">
+    <summary>
+      <para>Gets the size of the driver's certificate chain.</para>
+    </summary>
+    <param name="pCertificateSize">
+      <para>Receives the size of the certificate chain, in bytes.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To get the certificate, call <see cref="ID3D11CryptoSession.GetCertificate" />.</para>
+    </remarks>
+    <seealso cref="ID3D11CryptoSession" />
+  </member>
+  <member name="ID3D11CryptoSession.GetCryptoSessionHandle">
+    <summary>
+      <para>Gets a handle to the cryptographic session.</para>
+    </summary>
+    <param name="pCryptoSessionHandle">
+      <para>Receives a handle to the session.</para>
+    </param>
+    <remarks>
+      <para>You can use this handle to associate the session with a decoder. This enables the decoder to decrypt data that is encrypted using this session.</para>
+    </remarks>
+    <seealso cref="ID3D11CryptoSession" />
+  </member>
+  <member name="ID3D11CryptoSession.GetCryptoType">
+    <summary>
+      <para>Gets the type of encryption that is supported by this session.</para>
+    </summary>
+    <param name="pCryptoType">
+      <para>Receives a GUID that specifies the encryption type. The following GUIDs are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>D3D11_CRYPTO_TYPE_AES128_CTR</b>
+          </description>
+          <description>
+            <para>128-bit Advanced Encryption Standard CTR mode (AES-CTR) block cipher.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <remarks>
+      <para>The application specifies the encryption type when it creates the session.</para>
+    </remarks>
+    <seealso cref="ID3D11CryptoSession" />
+  </member>
+  <member name="ID3D11CryptoSession.GetDecoderProfile">
+    <summary>
+      <para>Gets the decoding profile of the session.</para>
+    </summary>
+    <param name="pDecoderProfile">
+      <para>Receives the decoding profile. For a list of possible values, see <see cref="ID3D11VideoDevice.GetVideoDecoderProfile" />.</para>
+    </param>
+    <remarks>
+      <para>The application specifies the profile when it creates the session.</para>
+    </remarks>
+    <seealso cref="ID3D11CryptoSession" />
+  </member>
+  <member name="ID3D11CryptoSession">
+    <summary>
+      <para>Represents a cryptographic session.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this interface, call <see cref="ID3D11VideoDevice.CreateCryptoSession" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
+    <seealso cref="ID3D11DeviceChild" />
+  </member>
+</doc>

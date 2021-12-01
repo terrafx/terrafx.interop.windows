@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirectDrawVideo.CanUseOverlayStretch">
+    <summary>
+      <para>The <code>CanUseOverlayStretch</code> method determines whether the renderer will check overlay restrictions.</para>
+    </summary>
+    <param name="UseOverlayStretch">
+      <para>Pointer to a value indicating whether the renderer can use overlay restrictions. OATRUE indicates the renderer will check overlay restrictions; OAFALSE indicates it will not.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>For a description of overlay stretching, see <see cref="IDirectDrawVideo.UseOverlayStretch" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.CanUseScanLine">
+    <summary>
+      <para>The <code>CanUseScanLine</code> method determines whether the renderer will check the current scan line when drawing.</para>
+    </summary>
+    <param name="UseScanLine">
+      <para>Pointer to a value indicating whether the renderer will use scan line information. OATRUE indicates the renderer will check the current scan line when drawing; OAFALSE indicates it will not.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>For a description of the use of scan line detection in the DirectShow video renderer, see <see cref="IDirectDrawVideo.UseScanLine" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.GetCaps">
+    <summary>
+      <para>The <code>GetCaps</code> method retrieves a DirectDraw-defined DDCAPS structure containing the hardware capabilities.</para>
+    </summary>
+    <param name="pCaps">
+      <para>Pointer to a DDCAPS structure containing the hardware capabilities.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>If the renderer has not loaded DirectDraw, this method returns E_FAIL.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.GetDirectDraw">
+    <summary>
+      <para>The <code>GetDirectDraw</code> method retrieves the <b>IDirectDraw</b> interface.</para>
+    </summary>
+    <param name="ppDirectDraw">
+      <para>Address of a pointer to the <b>IDirectDraw</b> interface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>If an application wants to load DirectDraw but allow the renderer to also allocate surfaces, it can let the renderer load DirectDraw and then obtain a reference-incremented interface to it through this method. The interface returned should be released by the application when it is finished with it.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.GetEmulatedCaps">
+    <summary>
+      <para>The <code>GetEmulatedCaps</code> method retrieves a DirectDraw-defined DDCAPS structure containing the emulated capabilities.</para>
+    </summary>
+    <param name="pCaps">
+      <para>Pointer to a <b>DDCAPS</b> structure containing the emulated capabilities.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. If the renderer has not loaded DirectDraw, this method returns E_FAIL.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.GetFourCCCodes">
+    <summary>
+      <para>The <code>GetFourCCCodes</code> method retrieves the multimedia format type.</para>
+    </summary>
+    <param name="pCount">
+      <para>Pointer to the number of FOURCC codes in the <i>pCodes</i> array.</para>
+    </param>
+    <param name="pCodes">
+      <para>Pointer to an array of <b>DWORD</b> media tags formerly used for Microsoft multimedia types.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>In the original Windows multimedia APIs, media types were tagged with 32-bit values created from four 8-bit characters and were known as <i>FOURCC</i> codes. Because FOURCC codes are unique, a one-to-one mapping has been made possible by allocating a range of 4 billion GUIDs representing FOURCCs.</para>
+      <para>This method retrieves the FOURCC codes that the current display driver can support. The number available is obtained by calling the method with a valid <i>pCount</i> pointer, but with <i>pCodes</i> set to <b>NULL</b>. In this case, the <i>pCount</i> variable will be filled in with the number of FOURCC codes available. An application can then allocate enough <b>DWORD</b> values for this many FOURCC codes and call the method again with the array pointer in <i>pCodes</i>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.GetSurfaceDesc">
+    <summary>
+      <para>The <code>GetSurfaceDesc</code> method retrieves a <b>DDSURFACEDESC</b> structure describing the current DirectDraw surface.</para>
+    </summary>
+    <param name="pSurfaceDesc">
+      <para>Pointer to a <b>DDSURFACEDESC</b> structure describing the current DirectDraw surface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. If no surface has been allocated, this method will return E_FAIL. If a DCI primary surface is in use, the <b>DDSURFACEDESC</b> structure will not be filled in and the call will return S_FALSE.</para>
+    </returns>
+    <remarks>
+      <para>Surfaces are allocated only when the renderer is paused. After the renderer has been paused, it cannot release the surfaces when stopped.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.GetSurfaceType">
+    <summary>
+      <para>The <code>GetSurfaceType</code> method retrieves the actual surface type as a DirectShow DirectDraw Surface (AMDDS) definition.</para>
+    </summary>
+    <param name="pSurfaceType">
+      <para>Pointer to variable that receives a bitwise-<b>OR</b> of one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>AMDDS_NONE</description>
+          <description>No use for DCI/DirectDraw.</description>
+        </item>
+        <item>
+          <description>AMDDS_DCIPS</description>
+          <description>Use DCI primary surface.</description>
+        </item>
+        <item>
+          <description>AMDDS_PS</description>
+          <description>Use DirectDraw primary surface.</description>
+        </item>
+        <item>
+          <description>AMDDS_RGBOVR</description>
+          <description>RGB overlay surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUVOVR</description>
+          <description>YUV overlay surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_RGBOFF</description>
+          <description>RGB off-screen surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUVOFF</description>
+          <description>YUV off-screen surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_RGBFLP</description>
+          <description>RGB flipping surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUVFLP</description>
+          <description>YUV flipping surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_ALL</description>
+          <description>All the previous flags.</description>
+        </item>
+        <item>
+          <description>AMDDS_DEFAULT</description>
+          <description>Use all available surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUV</description>
+          <description>(AMDDS_YUVOFF | AMDDS_YUVOVR | AMDDS_YUVFLP).</description>
+        </item>
+        <item>
+          <description>AMDDS_RGB</description>
+          <description>(AMDDS_RGBOFF | AMDDS_RGBOVR | AMDDS_RGBFLP).</description>
+        </item>
+        <item>
+          <description>AMDDS_PRIMARY</description>
+          <description>(AMDDS_DCIPS | AMDDS_PS).</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>It is not always easy to discover which kind of surface is being used by looking at a <b>DDSURFACEDESC</b> structure. Therefore, an application can call <code>GetSurfaceType</code> to retrieve the surface type. The field will be filled in with one bit setting selected from the preceding list of AMDDS definitions.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.GetSwitches">
+    <summary>
+      <para>The <code>GetSwitches</code> method retrieves the surface types that the renderer is allowed to use.</para>
+    </summary>
+    <param name="pSwitches">
+      <para>Pointer to a bit mask containing one or more of the following DirectShow DirectDraw Surface (AMDDS) surface types.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>AMDDS_NONE</description>
+          <description>No use for DCI/DirectDraw.</description>
+        </item>
+        <item>
+          <description>AMDDS_DCIPS</description>
+          <description>Use DCI primary surface.</description>
+        </item>
+        <item>
+          <description>AMDDS_PS</description>
+          <description>Use DirectDraw primary surface.</description>
+        </item>
+        <item>
+          <description>AMDDS_RGBOVR</description>
+          <description>RGB overlay surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUVOVR</description>
+          <description>YUV overlay surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_RGBOFF</description>
+          <description>RGB off-screen surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUVOFF</description>
+          <description>YUV off-screen surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_RGBFLP</description>
+          <description>RGB flipping surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUVFLP</description>
+          <description>YUV flipping surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_ALL</description>
+          <description>All the previous flags.</description>
+        </item>
+        <item>
+          <description>AMDDS_DEFAULT</description>
+          <description>Use all available surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUV</description>
+          <description>(AMDDS_YUVOFF | AMDDS_YUVOVR | AMDDS_YUVFLP).</description>
+        </item>
+        <item>
+          <description>AMDDS_RGB</description>
+          <description>(AMDDS_RGBOFF | AMDDS_RGBOVR | AMDDS_RGBFLP).</description>
+        </item>
+        <item>
+          <description>AMDDS_PRIMARY</description>
+          <description>(AMDDS_DCIPS | AMDDS_PS).</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.SetDefault">
+    <summary>
+      <para>The <code>SetDefault</code> method makes the current property settings the global default.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>All properties set through <b>IDirectDrawVideo</b> are specific to that particular instance. Call this method to make properties set on this instance of <b>IDirectDrawVideo</b> the global default of all DirectShow instances of this interface. After it is called, the current property settings will persist between the subsequent starting of other DirectShow filter graphs and between any computer restarts.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.SetDirectDraw">
+    <summary>
+      <para>The <code>SetDirectDraw</code> method passes the <b>IDirectDraw</b> interface to a loaded driver.</para>
+    </summary>
+    <param name="pDirectDraw">
+      <para>Pointer to the <b>IDirectDraw</b> interface to be passed.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>To have the renderer release a DirectDraw interface previously passed in through <code>SetDirectDraw</code>, an application can call <code>SetDirectDraw</code> and pass in <b>NULL</b>. However, the renderer will continue using that DirectDraw interface until it is disconnected. Therefore, calling <code>SetDirectDraw</code> with a <b>NULL</b> parameter does not make the renderer stop using it immediately.</para>
+      <para>This method was created because only one instance of <b>IDirectDraw</b> could be loaded per process in versions of DirectDraw prior to DirectX 7.0. If you are using DirectX 7.0 or later, you never need to call this method. If an application wanted to load <b>IDirectDraw</b> but allow the Video Renderer to also allocate surfaces, the application could open <b>IDirectDraw</b> itself and then pass the interface to the loaded driver through <code>IDirectDrawVideo.SetDirectDraw</code>. Alternatively, the application could let the renderer load DirectDraw and then obtain a reference-incremented interface to it through <see cref="IDirectDrawVideo.GetDirectDraw" />. Because DirectShow ships with the most recently shipped version of DirectDraw, however, this method is not required unless the application wants to change display modes itself and pass in a DirectDraw object, which the renderer can then use to allocate surfaces.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.SetSwitches">
+    <summary>
+      <para>The <code>SetSwitches</code> method sets the surface types that the renderer is allowed to use.</para>
+    </summary>
+    <param name="Switches">
+      <para>Bit mask containing one or more of the following DirectShow DirectDraw Surface (AMDDS) surface types.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>AMDDS_NONE</description>
+          <description>No use for DCI/DirectDraw.</description>
+        </item>
+        <item>
+          <description>AMDDS_DCIPS</description>
+          <description>Use DCI primary surface.</description>
+        </item>
+        <item>
+          <description>AMDDS_PS</description>
+          <description>Use DirectDraw primary surface.</description>
+        </item>
+        <item>
+          <description>AMDDS_RGBOVR</description>
+          <description>RGB overlay surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUVOVR</description>
+          <description>YUV overlay surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_RGBOFF</description>
+          <description>RGB off-screen surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUVOFF</description>
+          <description>YUV off-screen surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_RGBFLP</description>
+          <description>RGB flipping surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUVFLP</description>
+          <description>YUV flipping surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_ALL</description>
+          <description>All the previous flags.</description>
+        </item>
+        <item>
+          <description>AMDDS_DEFAULT</description>
+          <description>Use all available surfaces.</description>
+        </item>
+        <item>
+          <description>AMDDS_YUV</description>
+          <description>(AMDDS_YUVOFF | AMDDS_YUVOVR | AMDDS_YUVFLP).</description>
+        </item>
+        <item>
+          <description>AMDDS_RGB</description>
+          <description>(AMDDS_RGBOFF | AMDDS_RGBOVR | AMDDS_RGBFLP).</description>
+        </item>
+        <item>
+          <description>AMDDS_PRIMARY</description>
+          <description>(AMDDS_DCIPS | AMDDS_PS).</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>This method must be called before the Video Renderer is connected.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.UseOverlayStretch">
+    <summary>
+      <para>The <code>UseOverlayStretch</code> method determines whether the renderer should check overlay stretch limitations.</para>
+    </summary>
+    <param name="UseOverlayStretch">
+      <para>Value specifying whether the renderer checks overlay stretching. Set to OATRUE for the renderer to check overlay stretching; otherwise, set to OAFALSE.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>Some display cards provide the use of overlay surfaces through DirectDraw. An overlay surface is a block of video memory whose contents are overlaid onto the display during the monitor's vertical refresh. DirectShow uses all available overlay surfaces where possible because they typically offer higher-quality video and very fast performance. On some display cards set to relatively high bit depths, the overlay must be displayed on the screen larger than its real size (to accommodate certain display hardware bandwidth limitations). If the overlay is not displayed large enough, certain undesirable effects can be seen on the display (sometimes described as a "fleeting shimmering" effect).</para>
+      <para>If <i>UseOverlayStretch</i> is set to OATRUE (on, the default), DirectShow will ensure the overlay is adequately stretched before displaying it. If it is set to OAFALSE (off), DirectShow will not check that the overlay is adequately stretched, and the user is likely to experience artifacts on the screen (although it will also guarantee that the overlay will be used if possible).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.UseScanLine">
+    <summary>
+      <para>The <code>UseScanLine</code> method determines whether the renderer should check the current scan line when drawing a video.</para>
+    </summary>
+    <param name="UseScanLine">
+      <para>Long integer value that specifies whether or not to use the scan line information. Set to <b>OATRUE</b> to use scan line information or <b>OAFALSE</b> to ignore it.</para>
+    </param>
+    <returns>
+      <para>Returns E_INVALIDARG if the argument is invalid or S_OK otherwise.</para>
+    </returns>
+    <remarks>
+      <para>If you blit an image to the video memory while the monitor's scan line is scanning over a visible portion of the screen, the complete image will be a composite of the old and new images. This composite is known as a torn video image. You can avoid torn images by waiting until the previous image is complete before blitting the new image. Some video cards can retrieve the scan line's current position; if this information is available, you can have DirectShow try to reduce tearing by waiting until the scan line is off-screen before blitting the new image. Note that checking the scan line location increases load on the processor and can reduce the amount of video frames delivered to the screen. If scan line information is available, DirectShow uses it by default. Set <i>UseScanLine</i> to OAFALSE if you want to save processing time at the expense of minor image degradation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.UseWhenFullScreen">
+    <summary>
+      <para>The <code>UseWhenFullScreen</code> method determines whether DirectShow should change display mode when going to full-screen mode.</para>
+    </summary>
+    <param name="UseWhenFullScreen">
+      <para>Value specifying whether to change the display mode. Set to OATRUE to cause the renderer to use DirectShow in full-screen mode; otherwise, set to OAFALSE.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>When asked to go to full-screen mode, DirectShow has a number of choices. The first choice is to determine if any filters in the graph can support full-screen playback directly; if one can, it will be asked to do so.</para>
+      <para>The second choice is to automatically add a special full-screen renderer to the filter graph that uses DirectDraw mode-changing services to play back the video. By changing display modes, the video effectively fills more (but not necessarily all) of the display. So, for example, if the current mode is 1024 x 768 pixels, a video might look relatively small, but when displayed in a 320 x 240 display mode it might look very presentable.</para>
+      <para>The third and final choice is to simply take any renderer supporting the <see cref="IVideoWindow" /> interface and have its window stretched full-screen. This will typically offer lower performance than the second option (swapping in a full-screen DirectDraw-enabled renderer). If the <i>UseWhenFullScreen</i> parameter is set to On (OATRUE), the window will always be stretched full-screen for full-screen playback; if set to Off (the default), the filter graph manager is free to swap in the DirectDraw-enabled full-screen renderer.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo.WillUseFullScreen">
+    <summary>
+      <para>The <code>WillUseFullScreen</code> method determines whether DirectShow will change display mode when going to full-screen mode.</para>
+    </summary>
+    <param name="UseWhenFullScreen">
+      <para>Pointer to a value indicating whether DirectShow will use DirectX in full-screen mode. OATRUE indicates it will use full-screen mode; OAFALSE indicates it will not.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>For a description of this feature, see <a href="https://docs.microsoft.com//previous-versions/ms785118(v=vs.85)">IDirectDrawVideo.UseWhenFullScreen</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDirectDrawVideo Interface" />
+  </member>
+  <member name="IDirectDrawVideo">
+    <summary>
+      <para>The <code>IDirectDrawVideo</code> interface queries the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-renderer-filter">Video Renderer</a> filter about DirectDraw surfaces and hardware capabilities.</para>
+      <para>Applications can use this interface to control what DirectDraw features the Video Renderer will take advantage of. For example, if you are positive that you don't want the Video Renderer to use a hardware overlay you can disable its use via the <see cref="SetSwitches" /> method.</para>
+      <para>
+        <b>Note</b>  You can't use this interface to force the Video Renderer to use a particular DirectDraw feature; you can only stop it from using that feature.</para>
+      <para>There is some duplication in this interface with the <b>IDirectDraw</b> interface; however, this interface enables simple access to that information without calling the DirectDraw provider directly.</para>
+      <para>The Video Renderer does not load DirectDraw until it is connected, and likewise DirectDraw is unloaded only when the renderer is disconnected. When the renderer has allocated the DirectDraw surfaces it will use for video playback, an application can obtain a <b>DDSURFACEDESC</b> structure describing it. By passing in a pointer to a <b>DDSURFACEDESC</b> structure, the renderer will fill in the structure with the details of the current surface. If DirectDraw has not been loaded, the renderer will return E_FAIL. If the renderer is using DCI (the predecessor to DirectDraw), the <b>DDSURFACEDESC</b> structure is not filled in but the call will return S_FALSE. The only type of DCI surfaces the renderer uses are primary surfaces.</para>
+    </summary>
+  </member>
+</doc>

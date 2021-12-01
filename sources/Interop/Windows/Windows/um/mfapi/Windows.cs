@@ -15,183 +15,237 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFStartup"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFStartup([NativeTypeName("ULONG")] uint Version, [NativeTypeName("DWORD")] uint dwFlags = 0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFShutdown"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFShutdown();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFLockPlatform"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFLockPlatform();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFUnlockPlatform"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFUnlockPlatform();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFPutWorkItem"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFPutWorkItem([NativeTypeName("DWORD")] uint dwQueue, IMFAsyncCallback* pCallback, IUnknown* pState);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFPutWorkItem2"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFPutWorkItem2([NativeTypeName("DWORD")] uint dwQueue, [NativeTypeName("LONG")] int Priority, IMFAsyncCallback* pCallback, IUnknown* pState);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFPutWorkItemEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFPutWorkItemEx([NativeTypeName("DWORD")] uint dwQueue, IMFAsyncResult* pResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFPutWorkItemEx2"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFPutWorkItemEx2([NativeTypeName("DWORD")] uint dwQueue, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFPutWaitingWorkItem"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFPutWaitingWorkItem(HANDLE hEvent, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFAllocateSerialWorkQueue"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFAllocateSerialWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue, [NativeTypeName("DWORD *")] uint* pdwWorkQueue);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFScheduleWorkItemEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFScheduleWorkItemEx(IMFAsyncResult* pResult, [NativeTypeName("INT64")] long Timeout, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFScheduleWorkItem"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFScheduleWorkItem(IMFAsyncCallback* pCallback, IUnknown* pState, [NativeTypeName("INT64")] long Timeout, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCancelWorkItem"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCancelWorkItem([NativeTypeName("MFWORKITEM_KEY")] ulong Key);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetTimerPeriodicity"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFGetTimerPeriodicity([NativeTypeName("DWORD *")] uint* Periodicity);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFAddPeriodicCallback"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFAddPeriodicCallback([NativeTypeName("MFPERIODICCALLBACK")] delegate* unmanaged<IUnknown*, void> Callback, IUnknown* pContext, [NativeTypeName("DWORD *")] uint* pdwKey);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFRemovePeriodicCallback"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFRemovePeriodicCallback([NativeTypeName("DWORD")] uint dwKey);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFAllocateWorkQueueEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFAllocateWorkQueueEx(MFASYNC_WORKQUEUE_TYPE WorkQueueType, [NativeTypeName("DWORD *")] uint* pdwWorkQueue);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFAllocateWorkQueue"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFAllocateWorkQueue([NativeTypeName("DWORD *")] uint* pdwWorkQueue);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFLockWorkQueue"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFLockWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFUnlockWorkQueue"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFUnlockWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFBeginRegisterWorkQueueWithMMCSS"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFBeginRegisterWorkQueueWithMMCSSEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSSEx([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, [NativeTypeName("LONG")] int lPriority, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFEndRegisterWorkQueueWithMMCSS"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFEndRegisterWorkQueueWithMMCSS(IMFAsyncResult* pResult, [NativeTypeName("DWORD *")] uint* pdwTaskId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFBeginUnregisterWorkQueueWithMMCSS"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFBeginUnregisterWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwWorkQueueId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFEndUnregisterWorkQueueWithMMCSS"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFEndUnregisterWorkQueueWithMMCSS(IMFAsyncResult* pResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetWorkQueueMMCSSClass"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFGetWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPWSTR")] ushort* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetWorkQueueMMCSSTaskId"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFGetWorkQueueMMCSSTaskId([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPDWORD")] uint* pdwTaskId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFRegisterPlatformWithMMCSS"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFRegisterPlatformWithMMCSS([NativeTypeName("PCWSTR")] ushort* wszClass, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("LONG")] int lPriority);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFUnregisterPlatformFromMMCSS"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFUnregisterPlatformFromMMCSS();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFLockSharedWorkQueue"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFLockSharedWorkQueue([NativeTypeName("PCWSTR")] ushort* wszClass, [NativeTypeName("LONG")] int BasePriority, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("DWORD *")] uint* pID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetWorkQueueMMCSSPriority"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFGetWorkQueueMMCSSPriority([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LONG *")] int* lPriority);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAsyncResult"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateAsyncResult(IUnknown* punkObject, IMFAsyncCallback* pCallback, IUnknown* punkState, IMFAsyncResult** ppAsyncResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInvokeCallback"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInvokeCallback(IMFAsyncResult* pAsyncResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateFile"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, [NativeTypeName("LPCWSTR")] ushort* pwszFileURL, IMFByteStream** ppIByteStream);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTempFile"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateTempFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, IMFByteStream** ppIByteStream);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFBeginCreateFile"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFBeginCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, [NativeTypeName("LPCWSTR")] ushort* pwszFilePath, IMFAsyncCallback* pCallback, IUnknown* pState, IUnknown** ppCancelCookie);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFEndCreateFile"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFEndCreateFile(IMFAsyncResult* pResult, IMFByteStream** ppFile);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCancelCreateFile"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCancelCreateFile(IUnknown* pCancelCookie);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMemoryBuffer"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateMemoryBuffer([NativeTypeName("DWORD")] uint cbMaxLength, IMFMediaBuffer** ppBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMediaBufferWrapper"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateMediaBufferWrapper(IMFMediaBuffer* pBuffer, [NativeTypeName("DWORD")] uint cbOffset, [NativeTypeName("DWORD")] uint dwLength, IMFMediaBuffer** ppBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateLegacyMediaBufferOnMFMediaBuffer"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(IMFSample* pSample, IMFMediaBuffer* pMFMediaBuffer, [NativeTypeName("DWORD")] uint cbOffset, IMediaBuffer** ppMediaBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMapDX9FormatToDXGIFormat"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern DXGI_FORMAT MFMapDX9FormatToDXGIFormat([NativeTypeName("DWORD")] uint dx9);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMapDXGIFormatToDX9Format"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     [SupportedOSPlatform("windows8.0")]
     public static extern uint MFMapDXGIFormatToDX9Format(DXGI_FORMAT dx11);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFLockDXGIDeviceManager"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFLockDXGIDeviceManager(uint* pResetToken, IMFDXGIDeviceManager** ppManager);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFUnlockDXGIDeviceManager"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFUnlockDXGIDeviceManager();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateDXSurfaceBuffer"]/*' />
     [DllImport("evr", ExactSpelling = true)]
     public static extern HRESULT MFCreateDXSurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateWICBitmapBuffer"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateWICBitmapBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, IMFMediaBuffer** ppBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateDXGISurfaceBuffer"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateDXGISurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, uint uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateVideoSampleAllocatorEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateVideoSampleAllocatorEx([NativeTypeName("const IID &")] Guid* riid, void** ppSampleAllocator);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateDXGIDeviceManager"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateDXGIDeviceManager(uint* resetToken, IMFDXGIDeviceManager** ppDeviceManager);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAlignedMemoryBuffer"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateAlignedMemoryBuffer([NativeTypeName("DWORD")] uint cbMaxLength, [NativeTypeName("DWORD")] uint cbAligment, IMFMediaBuffer** ppBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMediaEvent"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateMediaEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue, IMFMediaEvent** ppEvent);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateEventQueue"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateEventQueue(IMFMediaEventQueue** ppMediaEventQueue);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSample"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateSample(IMFSample** ppIMFSample);
 
@@ -1645,67 +1699,87 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAttributes"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateAttributes(IMFAttributes** ppMFAttributes, [NativeTypeName("UINT32")] uint cInitialSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitAttributesFromBlob"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitAttributesFromBlob(IMFAttributes* pAttributes, [NativeTypeName("const UINT8 *")] byte* pBuf, uint cbBufSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetAttributesAsBlobSize"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFGetAttributesAsBlobSize(IMFAttributes* pAttributes, [NativeTypeName("UINT32 *")] uint* pcbBufSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetAttributesAsBlob"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFGetAttributesAsBlob(IMFAttributes* pAttributes, [NativeTypeName("UINT8 *")] byte* pBuf, uint cbBufSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTRegister"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFTRegister([NativeTypeName("CLSID")] Guid clsidMFT, Guid guidCategory, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes, IMFAttributes* pAttributes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTUnregister"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFTUnregister([NativeTypeName("CLSID")] Guid clsidMFT);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTRegisterLocal"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFTRegisterLocal(IClassFactory* pClassFactory, [NativeTypeName("const GUID &")] Guid* guidCategory, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputTypes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTUnregisterLocal"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFTUnregisterLocal(IClassFactory* pClassFactory);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTRegisterLocalByCLSID"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFTRegisterLocalByCLSID([NativeTypeName("const IID &")] Guid* clisdMFT, [NativeTypeName("const GUID &")] Guid* guidCategory, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputTypes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTUnregisterLocalByCLSID"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFTUnregisterLocalByCLSID([NativeTypeName("CLSID")] Guid clsidMFT);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTEnum"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFTEnum(Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, [NativeTypeName("CLSID **")] Guid** ppclsidMFT, [NativeTypeName("UINT32 *")] uint* pcMFTs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTEnumEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFTEnumEx(Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTEnum2"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0")]
     public static extern HRESULT MFTEnum2(Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTGetInfo"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFTGetInfo([NativeTypeName("CLSID")] Guid clsidMFT, [NativeTypeName("LPWSTR *")] ushort** pszName, MFT_REGISTER_TYPE_INFO** ppInputTypes, [NativeTypeName("UINT32 *")] uint* pcInputTypes, MFT_REGISTER_TYPE_INFO** ppOutputTypes, [NativeTypeName("UINT32 *")] uint* pcOutputTypes, IMFAttributes** ppAttributes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetPluginControl"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFGetPluginControl(IMFPluginControl** ppPluginControl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetMFTMerit"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFGetMFTMerit(IUnknown* pMFT, [NativeTypeName("UINT32")] uint cbVerifier, [NativeTypeName("const BYTE *")] byte* verifier, [NativeTypeName("DWORD *")] uint* merit);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFRegisterLocalSchemeHandler"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFRegisterLocalSchemeHandler([NativeTypeName("PCWSTR")] ushort* szScheme, IMFActivate* pActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFRegisterLocalByteStreamHandler"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFRegisterLocalByteStreamHandler([NativeTypeName("PCWSTR")] ushort* szFileExtension, [NativeTypeName("PCWSTR")] ushort* szMimeType, IMFActivate* pActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMFByteStreamWrapper"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateMFByteStreamWrapper(IMFByteStream* pStream, IMFByteStream** ppStreamWrapper);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMediaExtensionActivate"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateMediaExtensionActivate([NativeTypeName("PCWSTR")] ushort* szActivatableClassId, IUnknown* pConfiguration, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
@@ -2085,14 +2159,17 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMuxStreamAttributes"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern HRESULT MFCreateMuxStreamAttributes(IMFCollection* pAttributesToMux, IMFAttributes** ppMuxAttribs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMuxStreamMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern HRESULT MFCreateMuxStreamMediaType(IMFCollection* pMediaTypesToMux, IMFMediaType** ppMuxMediaType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMuxStreamSample"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern HRESULT MFCreateMuxStreamSample(IMFCollection* pSamplesToMux, IMFSample** ppMuxSample);
@@ -2747,150 +2824,194 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFValidateMediaTypeSize"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFValidateMediaTypeSize(Guid FormatType, [NativeTypeName("UINT8 *")] byte* pBlock, [NativeTypeName("UINT32")] uint cbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateMediaType(IMFMediaType** ppMFType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMFVideoFormatFromMFMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateMFVideoFormatFromMFMediaType(IMFMediaType* pMFType, MFVIDEOFORMAT** ppMFVF, [NativeTypeName("UINT32 *")] uint* pcbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateWaveFormatExFromMFMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateWaveFormatExFromMFMediaType(IMFMediaType* pMFType, WAVEFORMATEX** ppWF, [NativeTypeName("UINT32 *")] uint* pcbSize, [NativeTypeName("UINT32")] uint Flags = (uint)(MFWaveFormatExConvertFlag_Normal));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromVideoInfoHeader"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader(IMFMediaType* pMFType, [NativeTypeName("const VIDEOINFOHEADER *")] VIDEOINFOHEADER* pVIH, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromVideoInfoHeader2"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader2(IMFMediaType* pMFType, [NativeTypeName("const VIDEOINFOHEADER2 *")] VIDEOINFOHEADER2* pVIH2, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromMPEG1VideoInfo"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitMediaTypeFromMPEG1VideoInfo(IMFMediaType* pMFType, [NativeTypeName("const MPEG1VIDEOINFO *")] MPEG1VIDEOINFO* pMP1VI, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromMPEG2VideoInfo"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitMediaTypeFromMPEG2VideoInfo(IMFMediaType* pMFType, [NativeTypeName("const MPEG2VIDEOINFO *")] MPEG2VIDEOINFO* pMP2VI, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCalculateBitmapImageSize"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCalculateBitmapImageSize([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pBMIH, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbImageSize, BOOL* pbKnown = null);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCalculateImageSize"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCalculateImageSize([NativeTypeName("const GUID &")] Guid* guidSubtype, [NativeTypeName("UINT32")] uint unWidth, [NativeTypeName("UINT32")] uint unHeight, [NativeTypeName("UINT32 *")] uint* pcbImageSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFFrameRateToAverageTimePerFrame"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFFrameRateToAverageTimePerFrame([NativeTypeName("UINT32")] uint unNumerator, [NativeTypeName("UINT32")] uint unDenominator, [NativeTypeName("UINT64 *")] ulong* punAverageTimePerFrame);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFAverageTimePerFrameToFrameRate"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFAverageTimePerFrameToFrameRate([NativeTypeName("UINT64")] ulong unAverageTimePerFrame, [NativeTypeName("UINT32 *")] uint* punNumerator, [NativeTypeName("UINT32 *")] uint* punDenominator);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromMFVideoFormat"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitMediaTypeFromMFVideoFormat(IMFMediaType* pMFType, [NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pMFVF, [NativeTypeName("UINT32")] uint cbBufSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromWaveFormatEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitMediaTypeFromWaveFormatEx(IMFMediaType* pMFType, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormat, [NativeTypeName("UINT32")] uint cbBufSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromAMMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitMediaTypeFromAMMediaType(IMFMediaType* pMFType, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pAMType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitAMMediaTypeFromMFMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, Guid guidFormatBlockType, AM_MEDIA_TYPE* pAMType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAMMediaTypeFromMFMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, Guid guidFormatBlockType, AM_MEDIA_TYPE** ppAMType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCompareFullToPartialMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern BOOL MFCompareFullToPartialMediaType(IMFMediaType* pMFTypeFull, IMFMediaType* pMFTypePartial);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFWrapMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFWrapMediaType(IMFMediaType* pOrig, [NativeTypeName("const GUID &")] Guid* MajorType, [NativeTypeName("const GUID &")] Guid* SubType, IMFMediaType** ppWrap);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFUnwrapMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFUnwrapMediaType(IMFMediaType* pWrap, IMFMediaType** ppOrig);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateVideoMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateVideoMediaType([NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pVideoFormat, IMFVideoMediaType** ppIVideoMediaType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateVideoMediaTypeFromSubtype"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateVideoMediaTypeFromSubtype([NativeTypeName("const GUID *")] Guid* pAMSubtype, IMFVideoMediaType** ppIVideoMediaType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFIsFormatYUV"]/*' />
     [DllImport("evr", ExactSpelling = true)]
     public static extern BOOL MFIsFormatYUV([NativeTypeName("DWORD")] uint Format);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateVideoMediaTypeFromBitMapInfoHeader"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeader([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmihBitMapInfoHeader, [NativeTypeName("DWORD")] uint dwPixelAspectRatioX, [NativeTypeName("DWORD")] uint dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, [NativeTypeName("QWORD")] ulong VideoFlags, [NativeTypeName("QWORD")] ulong qwFramesPerSecondNumerator, [NativeTypeName("QWORD")] ulong qwFramesPerSecondDenominator, [NativeTypeName("DWORD")] uint dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetStrideForBitmapInfoHeader"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFGetStrideForBitmapInfoHeader([NativeTypeName("DWORD")] uint format, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("LONG *")] int* pStride);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetPlaneSize"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFGetPlaneSize([NativeTypeName("DWORD")] uint format, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD *")] uint* pdwPlaneSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateVideoMediaTypeFromBitMapInfoHeaderEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeaderEx([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmihBitMapInfoHeader, [NativeTypeName("UINT32")] uint cbBitMapInfoHeader, [NativeTypeName("DWORD")] uint dwPixelAspectRatioX, [NativeTypeName("DWORD")] uint dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, [NativeTypeName("QWORD")] ulong VideoFlags, [NativeTypeName("DWORD")] uint dwFramesPerSecondNumerator, [NativeTypeName("DWORD")] uint dwFramesPerSecondDenominator, [NativeTypeName("DWORD")] uint dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMediaTypeFromRepresentation"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateMediaTypeFromRepresentation(Guid guidRepresentation, [NativeTypeName("LPVOID")] void* pvRepresentation, IMFMediaType** ppIMediaType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAudioMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateAudioMediaType([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pAudioFormat, IMFAudioMediaType** ppIAudioMediaType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetUncompressedVideoFormat"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint MFGetUncompressedVideoFormat([NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pVideoFormat);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitVideoFormat"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitVideoFormat(MFVIDEOFORMAT* pVideoFormat, MFStandardVideoFormat type);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitVideoFormat_RGB"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitVideoFormat_RGB(MFVIDEOFORMAT* pVideoFormat, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint D3Dfmt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFConvertColorInfoToDXVA"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFConvertColorInfoToDXVA([NativeTypeName("DWORD *")] uint* pdwToDXVA, [NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pFromFormat);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFConvertColorInfoFromDXVA"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFConvertColorInfoFromDXVA(MFVIDEOFORMAT* pToFormat, [NativeTypeName("DWORD")] uint dwFromDXVA);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCopyImage"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCopyImage(byte* pDest, [NativeTypeName("LONG")] int lDestStride, [NativeTypeName("const BYTE *")] byte* pSrc, [NativeTypeName("LONG")] int lSrcStride, [NativeTypeName("DWORD")] uint dwWidthInBytes, [NativeTypeName("DWORD")] uint dwLines);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFConvertFromFP16Array"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFConvertFromFP16Array(float* pDest, [NativeTypeName("const WORD *")] ushort* pSrc, [NativeTypeName("DWORD")] uint dwCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFConvertToFP16Array"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFConvertToFP16Array([NativeTypeName("WORD *")] ushort* pDest, [NativeTypeName("const float *")] float* pSrc, [NativeTypeName("DWORD")] uint dwCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreate2DMediaBuffer"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreate2DMediaBuffer([NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwFourCC, BOOL fBottomUp, IMFMediaBuffer** ppBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMediaBufferFromMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateMediaBufferFromMediaType(IMFMediaType* pMediaType, [NativeTypeName("LONGLONG")] long llDuration, [NativeTypeName("DWORD")] uint dwMinLength, [NativeTypeName("DWORD")] uint dwMinAlignment, IMFMediaBuffer** ppBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HI32"]/*' />
     [return: NativeTypeName("UINT32")]
     public static uint HI32([NativeTypeName("UINT64")] ulong unPacked)
     {
         return (uint)(unPacked >> 32);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LO32"]/*' />
     [return: NativeTypeName("UINT32")]
     public static uint LO32([NativeTypeName("UINT64")] ulong unPacked)
     {
         return (uint)(unPacked);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Pack2UINT32AsUINT64"]/*' />
     [return: NativeTypeName("UINT64")]
     public static ulong Pack2UINT32AsUINT64([NativeTypeName("UINT32")] uint unHigh, [NativeTypeName("UINT32")] uint unLow)
     {
         return ((ulong)(unHigh) << 32) | unLow;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Unpack2UINT32AsUINT64"]/*' />
     public static void Unpack2UINT32AsUINT64([NativeTypeName("UINT64")] ulong unPacked, [NativeTypeName("UINT32 *")] uint* punHigh, [NativeTypeName("UINT32 *")] uint* punLow)
     {
         *punHigh = HI32(unPacked);
         *punLow = LO32(unPacked);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PackSize"]/*' />
     [return: NativeTypeName("UINT64")]
     [SupportedOSPlatform("windows8.0")]
     public static ulong PackSize([NativeTypeName("UINT32")] uint unWidth, [NativeTypeName("UINT32")] uint unHeight)
@@ -2898,12 +3019,14 @@ public static unsafe partial class Windows
         return Pack2UINT32AsUINT64(unWidth, unHeight);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnpackSize"]/*' />
     [SupportedOSPlatform("windows8.0")]
     public static void UnpackSize([NativeTypeName("UINT64")] ulong unPacked, [NativeTypeName("UINT32 *")] uint* punWidth, [NativeTypeName("UINT32 *")] uint* punHeight)
     {
         Unpack2UINT32AsUINT64(unPacked, punWidth, punHeight);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PackRatio"]/*' />
     [return: NativeTypeName("UINT64")]
     [SupportedOSPlatform("windows8.0")]
     public static ulong PackRatio([NativeTypeName("INT32")] int nNumerator, [NativeTypeName("UINT32")] uint unDenominator)
@@ -2911,11 +3034,13 @@ public static unsafe partial class Windows
         return Pack2UINT32AsUINT64((uint)(nNumerator), unDenominator);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnpackRatio"]/*' />
     public static void UnpackRatio([NativeTypeName("UINT64")] ulong unPacked, [NativeTypeName("INT32 *")] int* pnNumerator, [NativeTypeName("UINT32 *")] uint* punDenominator)
     {
         Unpack2UINT32AsUINT64(unPacked, unchecked((uint*)(pnNumerator)), punDenominator);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetAttributeUINT32"]/*' />
     [return: NativeTypeName("UINT32")]
     public static uint MFGetAttributeUINT32(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unDefault)
     {
@@ -2929,6 +3054,7 @@ public static unsafe partial class Windows
         return unRet;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetAttributeUINT64"]/*' />
     [return: NativeTypeName("UINT64")]
     public static ulong MFGetAttributeUINT64(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64")] ulong unDefault)
     {
@@ -2942,6 +3068,7 @@ public static unsafe partial class Windows
         return unRet;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetAttributeDouble"]/*' />
     public static double MFGetAttributeDouble(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, double fDefault)
     {
         double fRet;
@@ -2954,6 +3081,7 @@ public static unsafe partial class Windows
         return fRet;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetAttribute2UINT32asUINT64"]/*' />
     public static HRESULT MFGetAttribute2UINT32asUINT64(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punHigh32, [NativeTypeName("UINT32 *")] uint* punLow32)
     {
         ulong unPacked;
@@ -2969,52 +3097,64 @@ public static unsafe partial class Windows
         return hr;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSetAttribute2UINT32asUINT64"]/*' />
     public static HRESULT MFSetAttribute2UINT32asUINT64(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unHigh32, [NativeTypeName("UINT32")] uint unLow32)
     {
         return pAttributes->SetUINT64(guidKey, Pack2UINT32AsUINT64(unHigh32, unLow32));
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetAttributeRatio"]/*' />
     public static HRESULT MFGetAttributeRatio(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punNumerator, [NativeTypeName("UINT32 *")] uint* punDenominator)
     {
         return MFGetAttribute2UINT32asUINT64(pAttributes, guidKey, punNumerator, punDenominator);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetAttributeSize"]/*' />
     public static HRESULT MFGetAttributeSize(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punWidth, [NativeTypeName("UINT32 *")] uint* punHeight)
     {
         return MFGetAttribute2UINT32asUINT64(pAttributes, guidKey, punWidth, punHeight);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSetAttributeRatio"]/*' />
     public static HRESULT MFSetAttributeRatio(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unNumerator, [NativeTypeName("UINT32")] uint unDenominator)
     {
         return MFSetAttribute2UINT32asUINT64(pAttributes, guidKey, unNumerator, unDenominator);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSetAttributeSize"]/*' />
     public static HRESULT MFSetAttributeSize(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unWidth, [NativeTypeName("UINT32")] uint unHeight)
     {
         return MFSetAttribute2UINT32asUINT64(pAttributes, guidKey, unWidth, unHeight);
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateCollection"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateCollection(IMFCollection** ppIMFCollection);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFHeapAlloc"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern void* MFHeapAlloc([NativeTypeName("size_t")] nuint nSize, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("char *")] sbyte* pszFile, int line, EAllocationType eat);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFHeapFree"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern void MFHeapFree(void* pv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFllMulDiv"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [return: NativeTypeName("LONGLONG")]
     public static extern long MFllMulDiv([NativeTypeName("LONGLONG")] long a, [NativeTypeName("LONGLONG")] long b, [NativeTypeName("LONGLONG")] long c, [NativeTypeName("LONGLONG")] long d);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetContentProtectionSystemCLSID"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFGetContentProtectionSystemCLSID([NativeTypeName("const GUID &")] Guid* guidProtectionSystemID, [NativeTypeName("CLSID *")] Guid* pclsid);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCombineSamples"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT MFCombineSamples(IMFSample* pSample, IMFSample* pSampleToAdd, [NativeTypeName("DWORD")] uint dwMaxMergedDurationInMS, BOOL* pMerged);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSplitSample"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT MFSplitSample(IMFSample* pSample, IMFSample** pOutputSamples, [NativeTypeName("DWORD")] uint dwOutputSampleMaxCount, [NativeTypeName("DWORD *")] uint* pdwOutputSampleCount);

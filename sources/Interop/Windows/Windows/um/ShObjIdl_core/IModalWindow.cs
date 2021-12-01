@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IModalWindow.xml' path='doc/member[@name="IModalWindow"]/*' />
 [Guid("B4DB1657-70D7-485E-8E3E-6FCB5A5C1802")]
 [NativeTypeName("struct IModalWindow : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IModalWindow : IModalWindow.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IModalWindow : IModalWindow.Interface
         return ((delegate* unmanaged<IModalWindow*, Guid*, void**, int>)(lpVtbl[0]))((IModalWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IModalWindow : IModalWindow.Interface
         return ((delegate* unmanaged<IModalWindow*, uint>)(lpVtbl[1]))((IModalWindow*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IModalWindow : IModalWindow.Interface
         return ((delegate* unmanaged<IModalWindow*, uint>)(lpVtbl[2]))((IModalWindow*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IModalWindow.xml' path='doc/member[@name="IModalWindow.Show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Show(HWND hwndOwner)

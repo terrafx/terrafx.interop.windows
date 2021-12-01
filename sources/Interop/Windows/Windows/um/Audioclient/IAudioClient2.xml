@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioClient2.GetBufferSizeLimits">
+    <summary>
+      <para>The <b>GetBufferSizeLimits</b> method returns the buffer size limits of the hardware audio engine in 100-nanosecond units.</para>
+    </summary>
+    <param name="pFormat">
+      <para>A pointer to the target format that is being queried for the buffer size limit.</para>
+    </param>
+    <param name="bEventDriven">
+      <para>Boolean value to indicate whether or not the stream can be event-driven.</para>
+    </param>
+    <param name="phnsMinBufferDuration">
+      <para>Returns a pointer to the minimum buffer size (in 100-nanosecond units) that is
+required for the underlying hardware audio engine to operate at the format specified  in the <i>pFormat</i> parameter,  without frequent audio glitching.</para>
+    </param>
+    <param name="phnsMaxBufferDuration">
+      <para>Returns a pointer to the maximum buffer size (in 100-nanosecond units) that the underlying hardware
+audio engine can support for the format specified  in the <i>pFormat</i> parameter.</para>
+    </param>
+    <returns>
+      <para>The <b>GetBufferSizeLimits</b> method returns <b>S_OK</b> to indicate that it has completed successfully. Otherwise it returns an appropriate error code. For example, it can return <b>AUDCLNT_E_DEVICE_INVALIDATED</b>, if the device was removed and the method is called.</para>
+    </returns>
+    <remarks>
+      <para>The <b>GetBufferSizeLimits</b> method is a device-facing method
+and does not require prior audio stream initialization.</para>
+    </remarks>
+    <seealso cref="IAudioClient2" />
+  </member>
+  <member name="IAudioClient2.IsOffloadCapable">
+    <summary>
+      <para>The <b>IsOffloadCapable</b> method retrieves information about whether or not the endpoint on which a stream is created is capable of supporting an offloaded audio stream.</para>
+    </summary>
+    <param name="Category">
+      <para>An enumeration that specifies the category of an audio stream.</para>
+    </param>
+    <param name="pbOffloadCapable">
+      <para>A pointer to a Boolean value. <b>TRUE</b> indicates that the endpoint is offload-capable. <b>FALSE</b> indicates that the endpoint is not offload-capable.</para>
+    </param>
+    <returns>
+      <para>The <b>IsOffloadCapable</b> method returns <b>S_OK</b> to indicate that it has completed successfully. Otherwise it returns an appropriate error code.</para>
+    </returns>
+    <seealso cref="AUDIO_STREAM_CATEGORY" />
+    <seealso cref="IAudioClient2" />
+  </member>
+  <member name="IAudioClient2.SetClientProperties">
+    <summary>
+      <para>Sets the properties of the audio stream by populating an <a href="https://docs.microsoft.com//win32/api/audioclient/ns-audioclient-audioclientproperties-r1">AudioClientProperties</a> structure.</para>
+    </summary>
+    <param name="pProperties">
+      <para>Pointer to an <see cref="AudioClientProperties" /> structure.</para>
+    </param>
+    <returns>
+      <para>The <b>SetClientProperties</b> method returns <b>S_OK</b> to indicate that it has completed successfully. Otherwise it returns an appropriate error code.</para>
+    </returns>
+    <remarks>
+      <para>Starting with Windows 10, hardware-offloaded audio streams must be event driven. This means that if you call <b>IAudioClient2.SetClientProperties</b> and set the <i>bIsOffload</i> parameter of the <see cref="AudioClientProperties" /> to TRUE, you must specify the <b>AUDCLNT_STREAMFLAGS_EVENTCALLBACK</b> flag in the <i>StreamFlags</i> parameter to <see cref="IAudioClient.Initialize" />.</para>
+    </remarks>
+    <seealso cref="AudioClientProperties" />
+    <seealso cref="IAudioClient2" />
+    <seealso cref="IAudioClient.Initialize" />
+  </member>
+</doc>

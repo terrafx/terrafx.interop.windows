@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource"]/*' />
 [Guid("00000120-A8F2-4877-BA0A-FD2B6645FB94")]
 [NativeTypeName("struct IWICBitmapSource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface
         return ((delegate* unmanaged<IWICBitmapSource*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface
         return ((delegate* unmanaged<IWICBitmapSource*, uint>)(lpVtbl[1]))((IWICBitmapSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface
         return ((delegate* unmanaged<IWICBitmapSource*, uint>)(lpVtbl[2]))((IWICBitmapSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSize(uint* puiWidth, uint* puiHeight)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface
         return ((delegate* unmanaged<IWICBitmapSource*, uint*, uint*, int>)(lpVtbl[3]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
     }
 
+    /// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource.GetPixelFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface
         return ((delegate* unmanaged<IWICBitmapSource*, Guid*, int>)(lpVtbl[4]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), pPixelFormat);
     }
 
+    /// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource.GetResolution"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetResolution(double* pDpiX, double* pDpiY)
@@ -60,6 +67,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface
         return ((delegate* unmanaged<IWICBitmapSource*, double*, double*, int>)(lpVtbl[5]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), pDpiX, pDpiY);
     }
 
+    /// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource.CopyPalette"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CopyPalette(IWICPalette* pIPalette)
@@ -67,6 +75,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface
         return ((delegate* unmanaged<IWICBitmapSource*, IWICPalette*, int>)(lpVtbl[6]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), pIPalette);
     }
 
+    /// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource.CopyPixels"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CopyPixels([NativeTypeName("const WICRect *")] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)

@@ -5,16 +5,36 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS"]/*' />
 public enum ACTIVATION_CONTEXT_INFO_CLASS
 {
+    /// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS.ActivationContextBasicInformation"]/*' />
     ActivationContextBasicInformation = 1,
+
+    /// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS.ActivationContextDetailedInformation"]/*' />
     ActivationContextDetailedInformation = 2,
+
+    /// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS.AssemblyDetailedInformationInActivationContext"]/*' />
     AssemblyDetailedInformationInActivationContext = 3,
+
+    /// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS.FileInformationInAssemblyOfAssemblyInActivationContext"]/*' />
     FileInformationInAssemblyOfAssemblyInActivationContext = 4,
+
+    /// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS.RunlevelInformationInActivationContext"]/*' />
     RunlevelInformationInActivationContext = 5,
+
+    /// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS.CompatibilityInformationInActivationContext"]/*' />
     CompatibilityInformationInActivationContext = 6,
+
+    /// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS.ActivationContextManifestResourceName"]/*' />
     ActivationContextManifestResourceName = 7,
+
+    /// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS.MaxActivationContextInfoClass"]/*' />
     MaxActivationContextInfoClass,
+
+    /// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS.AssemblyDetailedInformationInActivationContxt"]/*' />
     AssemblyDetailedInformationInActivationContxt = 3,
+
+    /// <include file='ACTIVATION_CONTEXT_INFO_CLASS.xml' path='doc/member[@name="ACTIVATION_CONTEXT_INFO_CLASS.FileInformationInAssemblyOfAssemblyInActivationContxt"]/*' />
     FileInformationInAssemblyOfAssemblyInActivationContxt = 4,
 }

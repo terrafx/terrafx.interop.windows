@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BIND_FLAGS.xml' path='doc/member[@name="BIND_FLAGS"]/*' />
 public enum BIND_FLAGS
 {
+    /// <include file='BIND_FLAGS.xml' path='doc/member[@name="BIND_FLAGS.BIND_MAYBOTHERUSER"]/*' />
     BIND_MAYBOTHERUSER = 1,
+
+    /// <include file='BIND_FLAGS.xml' path='doc/member[@name="BIND_FLAGS.BIND_JUSTTESTEXISTENCE"]/*' />
     BIND_JUSTTESTEXISTENCE = 2,
 }

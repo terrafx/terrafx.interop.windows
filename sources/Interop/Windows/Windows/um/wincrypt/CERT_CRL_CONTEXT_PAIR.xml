@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_CRL_CONTEXT_PAIR">
+    <summary>
+      <para>The <b>CERT_CRL_CONTEXT_PAIR</b> structure contains a certificate context and an associated CRL context.</para>
+    </summary>
+  </member>
+  <member name="CERT_CRL_CONTEXT_PAIR.pCertContext">
+    <summary>
+      <para>A pointer to a certificate context.</para>
+    </summary>
+  </member>
+  <member name="CERT_CRL_CONTEXT_PAIR.pCrlContext">
+    <summary>
+      <para>A pointer to the certificate revocation list context.</para>
+    </summary>
+  </member>
+</doc>

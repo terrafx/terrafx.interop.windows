@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICStreamProvider.xml' path='doc/member[@name="IWICStreamProvider"]/*' />
 [Guid("449494BC-B468-4927-96D7-BA90D31AB505")]
 [NativeTypeName("struct IWICStreamProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface
         return ((delegate* unmanaged<IWICStreamProvider*, Guid*, void**, int>)(lpVtbl[0]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface
         return ((delegate* unmanaged<IWICStreamProvider*, uint>)(lpVtbl[1]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface
         return ((delegate* unmanaged<IWICStreamProvider*, uint>)(lpVtbl[2]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWICStreamProvider.xml' path='doc/member[@name="IWICStreamProvider.GetStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetStream(IStream** ppIStream)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface
         return ((delegate* unmanaged<IWICStreamProvider*, IStream**, int>)(lpVtbl[3]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), ppIStream);
     }
 
+    /// <include file='IWICStreamProvider.xml' path='doc/member[@name="IWICStreamProvider.GetPersistOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPersistOptions([NativeTypeName("DWORD *")] uint* pdwPersistOptions)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface
         return ((delegate* unmanaged<IWICStreamProvider*, uint*, int>)(lpVtbl[4]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pdwPersistOptions);
     }
 
+    /// <include file='IWICStreamProvider.xml' path='doc/member[@name="IWICStreamProvider.GetPreferredVendorGUID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPreferredVendorGUID(Guid* pguidPreferredVendor)
@@ -60,6 +67,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface
         return ((delegate* unmanaged<IWICStreamProvider*, Guid*, int>)(lpVtbl[5]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pguidPreferredVendor);
     }
 
+    /// <include file='IWICStreamProvider.xml' path='doc/member[@name="IWICStreamProvider.RefreshStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RefreshStream()

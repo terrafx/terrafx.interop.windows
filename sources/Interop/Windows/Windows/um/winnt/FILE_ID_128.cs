@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_ID_128.xml' path='doc/member[@name="FILE_ID_128"]/*' />
 public unsafe partial struct FILE_ID_128
 {
+    /// <include file='FILE_ID_128.xml' path='doc/member[@name="FILE_ID_128.Identifier"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte Identifier[16];
 }

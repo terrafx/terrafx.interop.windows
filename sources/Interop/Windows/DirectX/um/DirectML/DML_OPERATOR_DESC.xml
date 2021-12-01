@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_OPERATOR_DESC">
+    <summary>
+      <para>A generic container for an operator description. You construct DirectML operators using the parameters specified
+in this struct. See <see cref="IDMLDevice.CreateOperator" /> for additional details.</para>
+    </summary>
+  </member>
+  <member name="DML_OPERATOR_DESC.Type">
+    <summary>
+      <para>Type: <see cref="DML_OPERATOR_TYPE" /></para>
+      <para>The type of the operator description. See <a href="https://msdn.microsoft.com/2d66a3db-fe61-4ec2-b626-dd008ff14802">DML_OPERATOR_TYPE</a> for the available types.</para>
+    </summary>
+  </member>
+  <member name="DML_OPERATOR_DESC.Desc">
+    <summary>
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to the operator description. The type of the pointed-to struct must match the value specified in <i>Type.</i></para>
+    </summary>
+  </member>
+</doc>

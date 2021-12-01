@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODEBASEHOLD.xml' path='doc/member[@name="CODEBASEHOLD"]/*' />
 public unsafe partial struct CODEBASEHOLD
 {
+    /// <include file='CODEBASEHOLD.xml' path='doc/member[@name="CODEBASEHOLD.cbSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbSize;
 
+    /// <include file='CODEBASEHOLD.xml' path='doc/member[@name="CODEBASEHOLD.szDistUnit"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* szDistUnit;
 
+    /// <include file='CODEBASEHOLD.xml' path='doc/member[@name="CODEBASEHOLD.szCodeBase"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* szCodeBase;
 
+    /// <include file='CODEBASEHOLD.xml' path='doc/member[@name="CODEBASEHOLD.dwVersionMS"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersionMS;
 
+    /// <include file='CODEBASEHOLD.xml' path='doc/member[@name="CODEBASEHOLD.dwVersionLS"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersionLS;
 
+    /// <include file='CODEBASEHOLD.xml' path='doc/member[@name="CODEBASEHOLD.dwStyle"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStyle;
 }

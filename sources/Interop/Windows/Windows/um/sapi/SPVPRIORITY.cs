@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPVPRIORITY.xml' path='doc/member[@name="SPVPRIORITY"]/*' />
 public enum SPVPRIORITY
 {
+    /// <include file='SPVPRIORITY.xml' path='doc/member[@name="SPVPRIORITY.SPVPRI_NORMAL"]/*' />
     SPVPRI_NORMAL = 0,
+
+    /// <include file='SPVPRIORITY.xml' path='doc/member[@name="SPVPRIORITY.SPVPRI_ALERT"]/*' />
     SPVPRI_ALERT = (1 << 0),
+
+    /// <include file='SPVPRIORITY.xml' path='doc/member[@name="SPVPRIORITY.SPVPRI_OVER"]/*' />
     SPVPRI_OVER = (1 << 1),
 }

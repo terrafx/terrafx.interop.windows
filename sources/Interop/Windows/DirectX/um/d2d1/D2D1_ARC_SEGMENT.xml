@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_ARC_SEGMENT">
+    <summary>
+      <para>Describes an elliptical arc between two points.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ARC_SEGMENT.point">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The end point of the arc.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ARC_SEGMENT.size">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-size-f">D2D1_SIZE_F</a></b></para>
+      <para>The x-radius and y-radius of the arc.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ARC_SEGMENT.rotationAngle">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that specifies how many degrees in the clockwise direction the ellipse is rotated relative to the current coordinate system.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ARC_SEGMENT.sweepDirection">
+    <summary>
+      <para>Type: <b><see cref="D2D1_SWEEP_DIRECTION" /></b></para>
+      <para>A value that specifies whether the arc sweep is clockwise or counterclockwise.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ARC_SEGMENT.arcSize">
+    <summary>
+      <para>Type: <b><see cref="D2D1_ARC_SIZE" /></b></para>
+      <para>A value that specifies whether the given arc is larger than 180 degrees.</para>
+    </summary>
+  </member>
+</doc>

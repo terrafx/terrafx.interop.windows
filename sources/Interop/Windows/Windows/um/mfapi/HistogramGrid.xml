@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HistogramGrid">
+    <summary>
+      <para>The  <b>HistogramGrid</b> structure describes the blob format for <b>MF_CAPTURE_METADATA_HISTOGRAM</b>.</para>
+    </summary>
+    <seealso cref="HistogramBlobHeader" />
+    <seealso cref="HistogramDataHeader" />
+    <seealso cref="HistogramHeader" />
+  </member>
+  <member name="HistogramGrid.Width">
+    <summary>
+      <para>Width of the sensor output that histogram is collected from.</para>
+    </summary>
+  </member>
+  <member name="HistogramGrid.Height">
+    <summary>
+      <para>Height of the sensor output that histogram is collected from.</para>
+    </summary>
+  </member>
+  <member name="HistogramGrid.Region">
+    <summary>
+      <para>Absolute coordinates of the region on the sensor output that the histogram is collected for.</para>
+    </summary>
+  </member>
+</doc>

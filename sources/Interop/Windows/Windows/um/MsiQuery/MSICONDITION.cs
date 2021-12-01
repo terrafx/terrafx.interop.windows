@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION"]/*' />
 public enum MSICONDITION
 {
+    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_FALSE"]/*' />
     MSICONDITION_FALSE = 0,
+
+    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_TRUE"]/*' />
     MSICONDITION_TRUE = 1,
+
+    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_NONE"]/*' />
     MSICONDITION_NONE = 2,
+
+    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_ERROR"]/*' />
     MSICONDITION_ERROR = 3,
 }

@@ -7,15 +7,20 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_PROVIDER_PRIVDATA.xml' path='doc/member[@name="CRYPT_PROVIDER_PRIVDATA"]/*' />
 public unsafe partial struct CRYPT_PROVIDER_PRIVDATA
 {
+    /// <include file='CRYPT_PROVIDER_PRIVDATA.xml' path='doc/member[@name="CRYPT_PROVIDER_PRIVDATA.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='CRYPT_PROVIDER_PRIVDATA.xml' path='doc/member[@name="CRYPT_PROVIDER_PRIVDATA.gProviderID"]/*' />
     public Guid gProviderID;
 
+    /// <include file='CRYPT_PROVIDER_PRIVDATA.xml' path='doc/member[@name="CRYPT_PROVIDER_PRIVDATA.cbProvData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbProvData;
 
+    /// <include file='CRYPT_PROVIDER_PRIVDATA.xml' path='doc/member[@name="CRYPT_PROVIDER_PRIVDATA.pvProvData"]/*' />
     public void* pvProvData;
 }

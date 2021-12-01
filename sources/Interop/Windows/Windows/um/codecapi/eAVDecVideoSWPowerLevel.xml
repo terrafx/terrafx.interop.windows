@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVDecVideoSWPowerLevel">
+    <summary>
+      <para>Specifies the power-saving level of a video decoder. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecvideoswpowerlevel-property">AVDecVideoSWPowerLevel</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVDecVideoSWPowerLevel.eAVDecVideoSWPowerLevel_BatteryLife">
+    <summary>
+      <para>Optimize for battery life.</para>
+    </summary>
+  </member>
+  <member name="eAVDecVideoSWPowerLevel.eAVDecVideoSWPowerLevel_Balanced">
+    <summary>
+      <para>Balanced power-saving profile.</para>
+    </summary>
+  </member>
+  <member name="eAVDecVideoSWPowerLevel.eAVDecVideoSWPowerLevel_VideoQuality">
+    <summary>
+      <para>Optimize for video quality.</para>
+    </summary>
+  </member>
+</doc>

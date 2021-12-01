@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESSOR_CACHE_TYPE.xml' path='doc/member[@name="PROCESSOR_CACHE_TYPE"]/*' />
 public enum PROCESSOR_CACHE_TYPE
 {
+    /// <include file='PROCESSOR_CACHE_TYPE.xml' path='doc/member[@name="PROCESSOR_CACHE_TYPE.CacheUnified"]/*' />
     CacheUnified,
+
+    /// <include file='PROCESSOR_CACHE_TYPE.xml' path='doc/member[@name="PROCESSOR_CACHE_TYPE.CacheInstruction"]/*' />
     CacheInstruction,
+
+    /// <include file='PROCESSOR_CACHE_TYPE.xml' path='doc/member[@name="PROCESSOR_CACHE_TYPE.CacheData"]/*' />
     CacheData,
+
+    /// <include file='PROCESSOR_CACHE_TYPE.xml' path='doc/member[@name="PROCESSOR_CACHE_TYPE.CacheTrace"]/*' />
     CacheTrace,
 }

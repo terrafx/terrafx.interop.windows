@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IObjectWithSelection.xml' path='doc/member[@name="IObjectWithSelection"]/*' />
 [Guid("1C9CD5BB-98E9-4491-A60F-31AACC72B83C")]
 [NativeTypeName("struct IObjectWithSelection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
         return ((delegate* unmanaged<IObjectWithSelection*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
         return ((delegate* unmanaged<IObjectWithSelection*, uint>)(lpVtbl[1]))((IObjectWithSelection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
         return ((delegate* unmanaged<IObjectWithSelection*, uint>)(lpVtbl[2]))((IObjectWithSelection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IObjectWithSelection.xml' path='doc/member[@name="IObjectWithSelection.SetSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSelection(IShellItemArray* psia)
@@ -46,6 +51,7 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
         return ((delegate* unmanaged<IObjectWithSelection*, IShellItemArray*, int>)(lpVtbl[3]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), psia);
     }
 
+    /// <include file='IObjectWithSelection.xml' path='doc/member[@name="IObjectWithSelection.GetSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSelection([NativeTypeName("const IID &")] Guid* riid, void** ppv)

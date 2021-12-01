@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITextStoreACPEx.xml' path='doc/member[@name="ITextStoreACPEx"]/*' />
 [Guid("A2DE3BC2-3D8E-11D3-81A9-F753FBE61A00")]
 [NativeTypeName("struct ITextStoreACPEx : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITextStoreACPEx : ITextStoreACPEx.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITextStoreACPEx : ITextStoreACPEx.Interface
         return ((delegate* unmanaged<ITextStoreACPEx*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreACPEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITextStoreACPEx : ITextStoreACPEx.Interface
         return ((delegate* unmanaged<ITextStoreACPEx*, uint>)(lpVtbl[1]))((ITextStoreACPEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITextStoreACPEx : ITextStoreACPEx.Interface
         return ((delegate* unmanaged<ITextStoreACPEx*, uint>)(lpVtbl[2]))((ITextStoreACPEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITextStoreACPEx.xml' path='doc/member[@name="ITextStoreACPEx.ScrollToRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ScrollToRect([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT rc, [NativeTypeName("DWORD")] uint dwPosition)

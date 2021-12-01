@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SOCKADDR_DL.xml' path='doc/member[@name="SOCKADDR_DL"]/*' />
 public unsafe partial struct SOCKADDR_DL
 {
+    /// <include file='SOCKADDR_DL.xml' path='doc/member[@name="SOCKADDR_DL.sdl_family"]/*' />
     [NativeTypeName("ADDRESS_FAMILY")]
     public ushort sdl_family;
 
+    /// <include file='SOCKADDR_DL.xml' path='doc/member[@name="SOCKADDR_DL.sdl_data"]/*' />
     [NativeTypeName("UCHAR [8]")]
     public fixed byte sdl_data[8];
 
+    /// <include file='SOCKADDR_DL.xml' path='doc/member[@name="SOCKADDR_DL.sdl_zero"]/*' />
     [NativeTypeName("UCHAR [4]")]
     public fixed byte sdl_zero[4];
 }

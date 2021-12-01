@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXGIOutput.GetDesc">
+    <summary>
+      <para>Get a description of the output.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b><see cref="DXGI_OUTPUT_DESC" />*</b></para>
+      <para>A pointer to the output description (see <see cref="DXGI_OUTPUT_DESC" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns a code that indicates success or failure. S_OK if successful, <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_INVALID_CALL</a> if <i>pDesc</i> is passed in as <b>NULL</b>.</para>
+    </returns>
+    <remarks>
+      <para>On a high DPI desktop, <b>GetDesc</b> returns the visualized screen size unless the app is marked high DPI aware. For info about writing DPI-aware Win32 apps, see <a href="https://docs.microsoft.com//windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows">High DPI</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGIOutput" />
+  </member>
+  <member name="IDXGIOutput.GetFrameStatistics">
+    <summary>
+      <para>Gets statistics about recently rendered frames.</para>
+    </summary>
+    <param name="pStats">
+      <para>Type: <b><see cref="DXGI_FRAME_STATISTICS" />*</b></para>
+      <para>A pointer to frame statistics (see <see cref="DXGI_FRAME_STATISTICS" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this function succeeds, it returns S_OK. Otherwise, it might return <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_INVALID_CALL</a>.</para>
+    </returns>
+    <remarks>
+      <para>This API is similar to <see cref="IDXGISwapChain.GetFrameStatistics" />.</para>
+      <para>
+        <b>Note</b>  Calling this method is only supported while in full-screen mode.</para>
+    </remarks>
+    <seealso cref="IDXGIOutput" />
+  </member>
+  <member name="IDXGIOutput.GetGammaControl">
+    <summary>
+      <para>Gets the gamma control settings.</para>
+    </summary>
+    <param name="pArray">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173061(v=vs.85)">DXGI_GAMMA_CONTROL</a>*</b></para>
+      <para>An array of gamma control settings (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173061(v=vs.85)">DXGI_GAMMA_CONTROL</a>).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  Calling this method is only supported while in full-screen mode.</para>
+      <para>For info about using gamma correction, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/using-gamma-correction">Using gamma correction</a>.</para>
+    </remarks>
+    <seealso cref="IDXGIOutput" />
+  </member>
+  <member name="IDXGIOutput.GetGammaControlCapabilities">
+    <summary>
+      <para>Gets a description of the gamma-control capabilities.</para>
+    </summary>
+    <param name="pGammaCaps">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173062(v=vs.85)">DXGI_GAMMA_CONTROL_CAPABILITIES</a>*</b></para>
+      <para>A pointer to a  description of the gamma-control capabilities (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173062(v=vs.85)">DXGI_GAMMA_CONTROL_CAPABILITIES</a>).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  Calling this method is only supported while in full-screen mode.</para>
+      <para>For info about using gamma correction, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/using-gamma-correction">Using gamma correction</a>.</para>
+    </remarks>
+    <seealso cref="IDXGIOutput" />
+  </member>
+  <member name="IDXGIOutput.ReleaseOwnership">
+    <summary>
+      <para>Releases ownership of the output.</para>
+    </summary>
+    <remarks>
+      <para>If you are not using a swap chain, get access to an output by calling <see cref="IDXGIOutput.TakeOwnership" /> and release it when you are finished by calling <b>IDXGIOutput.ReleaseOwnership</b>. An application that uses a swap chain will typically not call either of these methods.</para>
+    </remarks>
+    <seealso cref="IDXGIOutput" />
+  </member>
+  <member name="IDXGIOutput.SetDisplaySurface">
+    <summary>
+      <para>Changes the display mode.</para>
+    </summary>
+    <param name="pScanoutSurface">
+      <para>Type: <b><see cref="IDXGISurface" />*</b></para>
+      <para>A pointer to a surface (see <see cref="IDXGISurface" />) used for rendering an image to the screen. The surface must have been created as a back buffer (DXGI_USAGE_BACKBUFFER).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IDXGIOutput.SetDisplaySurface</b> should not be called directly by applications, since results will be unpredictable. It is called implicitly by the DXGI swap chain object during full-screen transitions, and should not be used as a substitute for swap-chain methods.</para>
+      <para>This method should only be called between <see cref="IDXGIOutput.TakeOwnership" /> and <see cref="IDXGIOutput.ReleaseOwnership" /> calls.</para>
+      <h3>Notes for Windows Store apps</h3>
+      <para>If a Windows Store app uses <b>SetDisplaySurface</b>, it fails with <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_NOT_CURRENTLY_AVAILABLE</a>.</para>
+    </remarks>
+    <seealso cref="IDXGIOutput" />
+  </member>
+  <member name="IDXGIOutput.SetGammaControl">
+    <summary>
+      <para>Sets the gamma controls.</para>
+    </summary>
+    <param name="pArray">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173061(v=vs.85)">DXGI_GAMMA_CONTROL</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173061(v=vs.85)">DXGI_GAMMA_CONTROL</a> structure that describes the gamma curve to set.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  Calling this method is only supported while in full-screen mode.</para>
+      <para>For info about using gamma correction, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/using-gamma-correction">Using gamma correction</a>.</para>
+    </remarks>
+    <seealso cref="IDXGIOutput" />
+  </member>
+  <member name="IDXGIOutput.TakeOwnership">
+    <summary>
+      <para>Takes ownership of an output.</para>
+    </summary>
+    <param name="pDevice">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to the <see cref="IUnknown" /> interface of a device (such as an <see cref="ID3D10Device" />).</para>
+    </param>
+    <param name="Exclusive">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>Set to <b>TRUE</b> to enable other threads or applications to take ownership of the device; otherwise, set to <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</para>
+    </returns>
+    <remarks>
+      <para>When you are finished with the output, call <see cref="IDXGIOutput.ReleaseOwnership" />.</para>
+      <para>
+        <b>TakeOwnership</b> should not be called directly by applications, since results will be unpredictable. It is called implicitly by the DXGI swap chain object during full-screen transitions, and should not be used as a substitute for swap-chain methods.</para>
+      <h3>Notes for Windows Store apps</h3>
+      <para>If a Windows Store app uses <b>TakeOwnership</b>, it fails with <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_NOT_CURRENTLY_AVAILABLE</a>.</para>
+    </remarks>
+    <seealso cref="IDXGIOutput" />
+  </member>
+  <member name="IDXGIOutput.WaitForVBlank">
+    <summary>
+      <para>Halt a thread until the next vertical blank occurs.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
+    </returns>
+    <remarks>
+      <para>A vertical blank occurs when the raster moves from the lower right corner to the upper left corner to begin drawing the next frame.</para>
+    </remarks>
+    <seealso cref="IDXGIOutput" />
+  </member>
+  <member name="IDXGIOutput">
+    <summary>
+      <para>An <b>IDXGIOutput</b> interface represents an adapter output (such as a monitor).</para>
+    </summary>
+    <remarks>
+      <para>To see the outputs available, use <see cref="IDXGIAdapter.EnumOutputs" />. To see the specific output that the swap chain will update, use <see cref="IDXGISwapChain.GetContainingOutput" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGIObject" />
+  </member>
+</doc>

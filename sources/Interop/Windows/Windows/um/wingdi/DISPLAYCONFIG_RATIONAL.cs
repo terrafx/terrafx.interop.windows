@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_RATIONAL.xml' path='doc/member[@name="DISPLAYCONFIG_RATIONAL"]/*' />
 public partial struct DISPLAYCONFIG_RATIONAL
 {
+    /// <include file='DISPLAYCONFIG_RATIONAL.xml' path='doc/member[@name="DISPLAYCONFIG_RATIONAL.Numerator"]/*' />
     [NativeTypeName("UINT32")]
     public uint Numerator;
 
+    /// <include file='DISPLAYCONFIG_RATIONAL.xml' path='doc/member[@name="DISPLAYCONFIG_RATIONAL.Denominator"]/*' />
     [NativeTypeName("UINT32")]
     public uint Denominator;
 }

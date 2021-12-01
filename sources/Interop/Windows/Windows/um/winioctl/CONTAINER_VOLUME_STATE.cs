@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONTAINER_VOLUME_STATE.xml' path='doc/member[@name="CONTAINER_VOLUME_STATE"]/*' />
 public partial struct CONTAINER_VOLUME_STATE
 {
+    /// <include file='CONTAINER_VOLUME_STATE.xml' path='doc/member[@name="CONTAINER_VOLUME_STATE.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

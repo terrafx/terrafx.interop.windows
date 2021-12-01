@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA.xml' path='doc/member[@name="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA"]/*' />
 public partial struct CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA
 {
+    /// <include file='CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA.xml' path='doc/member[@name="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA.xml' path='doc/member[@name="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA.dwSignerIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSignerIndex;
 
+    /// <include file='CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA.xml' path='doc/member[@name="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA.dwUnauthAttrIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwUnauthAttrIndex;
 }

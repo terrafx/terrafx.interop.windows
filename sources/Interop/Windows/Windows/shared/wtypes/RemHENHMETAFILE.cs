@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RemHENHMETAFILE.xml' path='doc/member[@name="RemHENHMETAFILE"]/*' />
 public unsafe partial struct RemHENHMETAFILE
 {
+    /// <include file='RemHENHMETAFILE.xml' path='doc/member[@name="RemHENHMETAFILE.cbData"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbData;
 
+    /// <include file='RemHENHMETAFILE.xml' path='doc/member[@name="RemHENHMETAFILE.data"]/*' />
     [NativeTypeName("byte [1]")]
     public fixed byte data[1];
 }

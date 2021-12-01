@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_ESTATS_BANDWIDTH_RW_v0.xml' path='doc/member[@name="TCP_ESTATS_BANDWIDTH_RW_v0"]/*' />
 public partial struct TCP_ESTATS_BANDWIDTH_RW_v0
 {
+    /// <include file='TCP_ESTATS_BANDWIDTH_RW_v0.xml' path='doc/member[@name="TCP_ESTATS_BANDWIDTH_RW_v0.EnableCollectionOutbound"]/*' />
     public TCP_BOOLEAN_OPTIONAL EnableCollectionOutbound;
 
+    /// <include file='TCP_ESTATS_BANDWIDTH_RW_v0.xml' path='doc/member[@name="TCP_ESTATS_BANDWIDTH_RW_v0.EnableCollectionInbound"]/*' />
     public TCP_BOOLEAN_OPTIONAL EnableCollectionInbound;
 }

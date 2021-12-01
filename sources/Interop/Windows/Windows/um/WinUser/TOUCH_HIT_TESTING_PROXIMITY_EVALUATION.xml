@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION">
+    <summary>
+      <para>Contains the hit test score that indicates whether  the object is the  likely target of the touch contact area, relative to other objects that intersect the touch contact area.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="EvaluateProximityToRect" /> or <see cref="EvaluateProximityToPolygon" /> function returns the values.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_touchhittest/structures">Structures</seealso>
+  </member>
+  <member name="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION.score">
+    <summary>
+      <para>The score, compared to the other objects that intersect the touch contact area.</para>
+    </summary>
+  </member>
+  <member name="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION.adjustedPoint">
+    <summary>
+      <para>The adjusted touch point that hits the closest object that's identified by the value of <i>Score</i>.</para>
+    </summary>
+  </member>
+</doc>

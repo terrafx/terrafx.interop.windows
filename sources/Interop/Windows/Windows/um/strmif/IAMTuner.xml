@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMTuner.ChannelMinMax">
+    <summary>
+      <para>The <code>ChannelMinMax</code> method retrieves the highest and lowest channels available.</para>
+    </summary>
+    <param name="lChannelMin">
+      <para>Pointer to a variable that receives the lowest channel.</para>
+    </param>
+    <param name="lChannelMax">
+      <para>Pointer to a variable that receives the highest channel.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/international-analog-tv-tuning">International Analog TV Tuning</seealso>
+  </member>
+  <member name="IAMTuner.GetAvailableModes">
+    <summary>
+      <para>The <code>GetAvailableModes</code> method retrieves the tuner's supported modes.</para>
+    </summary>
+    <param name="plModes">
+      <para>Pointer to a variable that receives any combination of the values as specified in the <see cref="AMTunerModeType" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.get_Channel">
+    <summary>
+      <para>The <code>get_Channel</code> method retrieves the channel to which the tuner is set.</para>
+    </summary>
+    <param name="plChannel">
+      <para>Pointer to a variable that receives the channel. For frequencies, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/international-analog-tv-tuning">International Analog TV Tuning</a></para>
+    </param>
+    <param name="plVideoSubChannel">
+      <para>Pointer to a variable that receives either the video subchannel, or one of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>AMTUNER_SUBCHAN_DEFAULT</description>
+          <description>Default subchannel</description>
+        </item>
+        <item>
+          <description>AMTUNER_SUBCHAN_NO_TUNE</description>
+          <description>No subchannel tuning</description>
+        </item>
+      </list>
+    </param>
+    <param name="plAudioSubChannel">
+      <para>Pointer to a variable that receives either the audio subchannel, or one of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>AMTUNER_SUBCHAN_DEFAULT</description>
+          <description>Default subchannel</description>
+        </item>
+        <item>
+          <description>AMTUNER_SUBCHAN_NO_TUNE</description>
+          <description>No subchannel tuning</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.get_CountryCode">
+    <summary>
+      <para>The <code>get_CountryCode</code> method retrieves the country/region code that establishes the current channel-to-frequency mapping.</para>
+    </summary>
+    <param name="plCountryCode">
+      <para>Pointer to a variable that receives the country/region code currently in use by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/tv-tuner-filter">TV Tuner</a> filter.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>The <see cref="IAMTuner.put_CountryCode" /> method determines which channel-to-frequency mapping table to use. This establishes the base frequencies for the given country/region. Use the <see cref="IAMTVTuner.AutoTune" /> method to determine the exact frequencies for specific regions.</para>
+      <para>Override the country/region code when a country/region wants to receive broadcast video from a different national source. For a list of country/region codes, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/international-analog-tv-tuning">International Analog TV Tuning</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.get_Mode">
+    <summary>
+      <para>The <code>get_Mode</code> method retrieves the current mode on a multifunction tuner.</para>
+    </summary>
+    <param name="plMode">
+      <para>Pointer to a variable that receives a flag indicating the current mode setting. The possible values are defined in the <see cref="AMTunerModeType" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.get_TuningSpace">
+    <summary>
+      <para>The <code>get_TuningSpace</code> method retrieves the tuning space.</para>
+    </summary>
+    <param name="plTuningSpace">
+      <para>Pointer to a variable that receives the current tuning space.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>The application defines the value retrieved by this method; it is set through a call to <see cref="IAMTuner.put_TuningSpace" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.Logon">
+    <summary>
+      <para>The <code>Logon</code> method logs a user onto the system.</para>
+    </summary>
+    <param name="hCurrentUser">
+      <para>Handle to an application-defined data structure that identifies the current user.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>The <code>Logon</code> and <b>Logout</b> methods enable you to implement selective user access.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.Logout">
+    <summary>
+      <para>The <code>Logout</code> method logs out the current user.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.put_Channel">
+    <summary>
+      <para>The <code>put_Channel</code> method sets the TV channel.</para>
+    </summary>
+    <param name="lChannel">
+      <para>TV channel number.</para>
+    </param>
+    <param name="lVideoSubChannel">
+      <para>Predefined video subchannel value. Specify AMTUNER_SUBCHAN_NO_TUNE for no tuning or AMTUNER_SUBCHAN_DEFAULT for default subchannel. Meaningful only for satellite broadcasts.</para>
+    </param>
+    <param name="lAudioSubChannel">
+      <para>Predefined audio subchannel value. Specify AMTUNER_SUBCHAN_NO_TUNE for no tuning or AMTUNER_SUBCHAN_DEFAULT for default subchannel. Meaningful only for satellite broadcasts.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>This method handles the channel-to-frequency function call that converts the TV channel to a TV frequency. For a list of frequencies for channels, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/international-analog-tv-tuning">International Analog TV Tuning</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.put_CountryCode">
+    <summary>
+      <para>The <code>put_CountryCode</code> method sets the country/region code to establish the frequency to use.</para>
+    </summary>
+    <param name="lCountryCode">
+      <para>Value indicating the country/region code.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>This method establishes the base frequencies for the given country/region. Use the <see cref="IAMTVTuner.AutoTune" /> method to determine the exact frequencies for specific regions, unless there are previously cached settings for the new country/region.</para>
+      <para>Because channels in different countries/regions map to different frequencies, worldwide mapping tables are provided in the appendix <a href="https://docs.microsoft.com//windows/desktop/DirectShow/international-analog-tv-tuning">International Analog TV Tuning</a>. Override the existing country/region code by selecting the new value from the appendix and passing it in as the parameter for the <code>put_CountryCode</code> method. This is useful when a country/region wants to receive broadcast video from a different national source.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.put_Mode">
+    <summary>
+      <para>The <code>put_Mode</code> method sets a multifunction tuner to the specified mode.</para>
+    </summary>
+    <param name="lMode">
+      <para>Flag indicating which mode to switch to. Possible values are defined in the <see cref="AMTunerModeType" /> enumeration.</para>
+      <para>You can also set the mode to digital TV if the card supports it. To do this, define AMTUNER_MODE_DTV with a value of 0x0010.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+    <seealso cref="IAMTuner.GetAvailableModes" />
+  </member>
+  <member name="IAMTuner.put_TuningSpace">
+    <summary>
+      <para>The <code>put_TuningSpace</code> method sets a storage index for regional channel-to-frequency mappings.</para>
+    </summary>
+    <param name="lTuningSpace">
+      <para>Value indicating the current locale.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>As TV tuners move into portable systems, you must retain locale-specific mappings of available channels and their actual frequencies. Formulating different <i>lTuningSpace</i> values for each locale provides a way of switching the channel-to-frequency mappings when moving from region to region.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.RegisterNotificationCallBack">
+    <summary>
+      <para>The <code>RegisterNotificationCallBack</code> method enables an object to receive event notifications when the tuner changes state.</para>
+      <para>This method is not implemented.</para>
+    </summary>
+    <param name="pNotify">
+      <para>Pointer to the <see cref="IAMTunerNotification" /> interface that will receive the event notifications.</para>
+    </param>
+    <param name="lEvents">
+      <para>Flag indicating that an event has occurred.</para>
+    </param>
+    <returns>
+      <para>Returns E_NOTIMPL.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.SignalPresent">
+    <summary>
+      <para>The <code>SignalPresent</code> method retrieves the strength of the signal on a given channel.</para>
+    </summary>
+    <param name="plSignalStrength">
+      <para>Pointer to a variable that receives a value indicating whether a signal is present on the current channel. Can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>AMTUNER_HASNOSIGNALSTRENGTH</description>
+          <description>-1</description>
+        </item>
+        <item>
+          <description>AMTUNER_NOSIGNAL</description>
+          <description>0</description>
+        </item>
+        <item>
+          <description>AMTUNER_SIGNALPRESENT</description>
+          <description>1</description>
+        </item>
+      </list>
+      <para>A value of AMTUNER_HASNOSIGNALSTRENGTH means the signal strength cannot be determined at this time.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner.UnRegisterNotificationCallBack">
+    <summary>
+      <para>The <code>UnRegisterNotificationCallBack</code> method unregisters an object for event notifications.</para>
+      <para>This method is not implemented.</para>
+    </summary>
+    <param name="pNotify">
+      <para>Pointer to the <see cref="IAMTunerNotification" /> interface that was specified in a previous call to <b>RegisterNotificationCallBack</b>.</para>
+    </param>
+    <returns>
+      <para>Returns E_NOTIMPL.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTuner">
+    <summary>
+      <para>The <code>IAMTuner</code> interface controls a TV tuner. This interface is the base class for the <see cref="IAMTVTuner" /> interface, which inherits all of the <code>IAMTuner</code> methods. For more information on controlling a TV tuner using Microsoft DirectShow, see the <b>IAMTVTuner</b> documentation.</para>
+    </summary>
+  </member>
+</doc>

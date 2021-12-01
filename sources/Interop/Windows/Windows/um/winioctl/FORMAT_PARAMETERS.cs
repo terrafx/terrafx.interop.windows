@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FORMAT_PARAMETERS.xml' path='doc/member[@name="FORMAT_PARAMETERS"]/*' />
 public partial struct FORMAT_PARAMETERS
 {
+    /// <include file='FORMAT_PARAMETERS.xml' path='doc/member[@name="FORMAT_PARAMETERS.MediaType"]/*' />
     public MEDIA_TYPE MediaType;
 
+    /// <include file='FORMAT_PARAMETERS.xml' path='doc/member[@name="FORMAT_PARAMETERS.StartCylinderNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint StartCylinderNumber;
 
+    /// <include file='FORMAT_PARAMETERS.xml' path='doc/member[@name="FORMAT_PARAMETERS.EndCylinderNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint EndCylinderNumber;
 
+    /// <include file='FORMAT_PARAMETERS.xml' path='doc/member[@name="FORMAT_PARAMETERS.StartHeadNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint StartHeadNumber;
 
+    /// <include file='FORMAT_PARAMETERS.xml' path='doc/member[@name="FORMAT_PARAMETERS.EndHeadNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint EndHeadNumber;
 }

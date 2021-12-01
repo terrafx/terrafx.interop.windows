@@ -10,21 +10,27 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct STORAGE_OFFLOAD_TOKEN
 {
+    /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.TokenType"]/*' />
     [NativeTypeName("BYTE [4]")]
     public fixed byte TokenType[4];
 
+    /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.Reserved"]/*' />
     [NativeTypeName("BYTE [2]")]
     public fixed byte Reserved[2];
 
+    /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.TokenIdLength"]/*' />
     [NativeTypeName("BYTE [2]")]
     public fixed byte TokenIdLength[2];
 
+    /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.Anonymous"]/*' />
     [NativeTypeName("_STORAGE_OFFLOAD_TOKEN::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:3426:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StorageOffloadZeroDataToken"]/*' />
     public ref _Anonymous_e__Union._StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +40,7 @@ public unsafe partial struct STORAGE_OFFLOAD_TOKEN
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Token"]/*' />
     public Span<byte> Token
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,19 +50,24 @@ public unsafe partial struct STORAGE_OFFLOAD_TOKEN
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StorageOffloadZeroDataToken"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:3427:9)")]
         public _StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Token"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE [504]")]
         public fixed byte Token[504];
 
+        /// <include file='_StorageOffloadZeroDataToken_e__Struct.xml' path='doc/member[@name="_StorageOffloadZeroDataToken_e__Struct"]/*' />
         public unsafe partial struct _StorageOffloadZeroDataToken_e__Struct
         {
+            /// <include file='_StorageOffloadZeroDataToken_e__Struct.xml' path='doc/member[@name="_StorageOffloadZeroDataToken_e__Struct.Reserved2"]/*' />
             [NativeTypeName("BYTE [504]")]
             public fixed byte Reserved2[504];
         }

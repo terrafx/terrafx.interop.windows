@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRMODIFYWORLDTRANSFORM.xml' path='doc/member[@name="EMRMODIFYWORLDTRANSFORM"]/*' />
 public partial struct EMRMODIFYWORLDTRANSFORM
 {
+    /// <include file='EMRMODIFYWORLDTRANSFORM.xml' path='doc/member[@name="EMRMODIFYWORLDTRANSFORM.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRMODIFYWORLDTRANSFORM.xml' path='doc/member[@name="EMRMODIFYWORLDTRANSFORM.xform"]/*' />
     public XFORM xform;
 
+    /// <include file='EMRMODIFYWORLDTRANSFORM.xml' path='doc/member[@name="EMRMODIFYWORLDTRANSFORM.iMode"]/*' />
     [NativeTypeName("DWORD")]
     public uint iMode;
 }

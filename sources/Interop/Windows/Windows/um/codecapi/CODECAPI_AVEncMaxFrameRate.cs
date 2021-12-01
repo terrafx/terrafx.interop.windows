@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMaxFrameRate.xml' path='doc/member[@name="CODECAPI_AVEncMaxFrameRate"]/*' />
 [Guid("B98E1B31-19FA-4D4F-9931-D6A5B8AAB93C")]
 public partial struct CODECAPI_AVEncMaxFrameRate
 {

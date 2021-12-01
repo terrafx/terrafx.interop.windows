@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMVideoDecimationProperties.xml' path='doc/member[@name="IAMVideoDecimationProperties"]/*' />
 [Guid("60D32930-13DA-11D3-9EC6-C4FCAEF5C7BE")]
 [NativeTypeName("struct IAMVideoDecimationProperties : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationPr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationPr
         return ((delegate* unmanaged<IAMVideoDecimationProperties*, Guid*, void**, int>)(lpVtbl[0]))((IAMVideoDecimationProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationPr
         return ((delegate* unmanaged<IAMVideoDecimationProperties*, uint>)(lpVtbl[1]))((IAMVideoDecimationProperties*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationPr
         return ((delegate* unmanaged<IAMVideoDecimationProperties*, uint>)(lpVtbl[2]))((IAMVideoDecimationProperties*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMVideoDecimationProperties.xml' path='doc/member[@name="IAMVideoDecimationProperties.QueryDecimationUsage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryDecimationUsage(DECIMATION_USAGE* lpUsage)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationPr
         return ((delegate* unmanaged<IAMVideoDecimationProperties*, DECIMATION_USAGE*, int>)(lpVtbl[3]))((IAMVideoDecimationProperties*)Unsafe.AsPointer(ref this), lpUsage);
     }
 
+    /// <include file='IAMVideoDecimationProperties.xml' path='doc/member[@name="IAMVideoDecimationProperties.SetDecimationUsage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetDecimationUsage(DECIMATION_USAGE Usage)

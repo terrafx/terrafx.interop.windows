@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_PROVUI_FUNCS.xml' path='doc/member[@name="CRYPT_PROVUI_FUNCS"]/*' />
 public unsafe partial struct CRYPT_PROVUI_FUNCS
 {
+    /// <include file='CRYPT_PROVUI_FUNCS.xml' path='doc/member[@name="CRYPT_PROVUI_FUNCS.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='CRYPT_PROVUI_FUNCS.xml' path='doc/member[@name="CRYPT_PROVUI_FUNCS.psUIData"]/*' />
     [NativeTypeName("struct _CRYPT_PROVUI_DATA *")]
     public CRYPT_PROVUI_DATA* psUIData;
 
+    /// <include file='CRYPT_PROVUI_FUNCS.xml' path='doc/member[@name="CRYPT_PROVUI_FUNCS.pfnOnMoreInfoClick"]/*' />
     [NativeTypeName("PFN_PROVUI_CALL")]
     public delegate* unmanaged<HWND, CRYPT_PROVIDER_DATA*, BOOL> pfnOnMoreInfoClick;
 
+    /// <include file='CRYPT_PROVUI_FUNCS.xml' path='doc/member[@name="CRYPT_PROVUI_FUNCS.pfnOnMoreInfoClickDefault"]/*' />
     [NativeTypeName("PFN_PROVUI_CALL")]
     public delegate* unmanaged<HWND, CRYPT_PROVIDER_DATA*, BOOL> pfnOnMoreInfoClickDefault;
 
+    /// <include file='CRYPT_PROVUI_FUNCS.xml' path='doc/member[@name="CRYPT_PROVUI_FUNCS.pfnOnAdvancedClick"]/*' />
     [NativeTypeName("PFN_PROVUI_CALL")]
     public delegate* unmanaged<HWND, CRYPT_PROVIDER_DATA*, BOOL> pfnOnAdvancedClick;
 
+    /// <include file='CRYPT_PROVUI_FUNCS.xml' path='doc/member[@name="CRYPT_PROVUI_FUNCS.pfnOnAdvancedClickDefault"]/*' />
     [NativeTypeName("PFN_PROVUI_CALL")]
     public delegate* unmanaged<HWND, CRYPT_PROVIDER_DATA*, BOOL> pfnOnAdvancedClickDefault;
 }

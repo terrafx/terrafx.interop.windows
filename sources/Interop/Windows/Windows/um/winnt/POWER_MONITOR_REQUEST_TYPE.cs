@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_MONITOR_REQUEST_TYPE.xml' path='doc/member[@name="POWER_MONITOR_REQUEST_TYPE"]/*' />
 public enum POWER_MONITOR_REQUEST_TYPE
 {
+    /// <include file='POWER_MONITOR_REQUEST_TYPE.xml' path='doc/member[@name="POWER_MONITOR_REQUEST_TYPE.MonitorRequestTypeOff"]/*' />
     MonitorRequestTypeOff,
+
+    /// <include file='POWER_MONITOR_REQUEST_TYPE.xml' path='doc/member[@name="POWER_MONITOR_REQUEST_TYPE.MonitorRequestTypeOnAndPresent"]/*' />
     MonitorRequestTypeOnAndPresent,
+
+    /// <include file='POWER_MONITOR_REQUEST_TYPE.xml' path='doc/member[@name="POWER_MONITOR_REQUEST_TYPE.MonitorRequestTypeToggleOn"]/*' />
     MonitorRequestTypeToggleOn,
 }

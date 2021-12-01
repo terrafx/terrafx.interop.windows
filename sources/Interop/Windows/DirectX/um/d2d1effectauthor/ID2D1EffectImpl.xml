@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1EffectImpl.Initialize">
+    <summary>
+      <para>The effect can use this method to do one time initialization tasks.  If this method is not needed, the method can just return <b>S_OK</b>.</para>
+    </summary>
+    <param name="effectContext">
+      <para>Type: <b><see cref="ID2D1EffectContext" />*</b></para>
+      <para>An internal context interface that creates and returns effect author–centric types.</para>
+    </param>
+    <param name="transformGraph">
+      <para>Type: <b><see cref="ID2D1TransformGraph" />*</b></para>
+      <para>The effect can
+populate the transform graph with a topology and can update it later.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This moves resource creation cost to the <see cref="CreateEffect" /> call, rather than during rendering.</para>
+      <para>If the implementation fails this call, the corresponding <see cref="ID2D1DeviceContext.CreateEffect" /> call also fails.</para>
+      <para>The following example shows an effect implementing an initialize method.</para>
+      <h4>Examples</h4>
+      <para>The example here shows an effect implementing an initialize method.</para>
+      <code>class CEffectImplementation : public ID2D1EffectImpl
+{
+public:
+
+    virtual ~CEffectImplementation()
+    {
+        if (_pContextInternal != NULL)
+        {
+            _pContextInternal-&gt;Release();
+        }
+    }
+
+    IFACEMETHODIMP Initialize(__in ID2D1DeviceContextInternal *pContextInternal, __in ID2D1TransformGraph *pTransformGraph)
+    {
+        HRESULT hr = S_OK;
+
+        _pContextInternal = pContextInternal;
+        _pContextInternal-&gt;AddRef();
+
+                                _pTransformGraph = pTransformGraph;
+        _pTransformGraph&gt;AddRef();
+
+                                // Populate the transform graph.
+
+        return S_OK;
+    }
+
+private:
+
+    ID2D1EffectContext *_pContextInternal;
+    ID2D1TransformGraph *_pTransformGraph;
+};
+
+</code>
+    </remarks>
+    <seealso cref="ID2D1DeviceContext" />
+    <seealso cref="ID2D1EffectImpl" />
+  </member>
+  <member name="ID2D1EffectImpl.PrepareForRender">
+    <summary>
+      <para>Prepares an effect for the rendering process.</para>
+    </summary>
+    <param name="changeType">
+      <para>Type: <b><see cref="D2D1_CHANGE_TYPE" /></b></para>
+      <para>Indicates the type of change the effect should expect.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is called by the renderer when the effect is within an effect graph that is drawn.</para>
+      <para>The method will be called:</para>
+      <list type="bullet">
+        <item>
+          <description>If the effect has been initialized but has not previously been drawn.</description>
+        </item>
+        <item>
+          <description>If an effect property has been set since the last draw call.</description>
+        </item>
+        <item>
+          <description>If the context state has changed since the effect was last drawn.</description>
+        </item>
+      </list>
+      <para>The method will not otherwise be called. The transforms created by the effect will be called to handle their input and output rectangles for every draw call.</para>
+      <para>Most effects defer creating any resources or specifying a topology until this call is made. They store their properties and map them to a concrete set of rendering techniques when first drawn.</para>
+      <h4>Examples</h4>
+      <para>An effect normally waits until it is rendered before snapping its current state and applying it to any transforms it has encapsulated.</para>
+      <code>class CMyTransform : public ID2D1DrawTransform
+{
+public:
+
+    // Transform methods omitted.
+
+    HRESULT PrepareForRender(FLOAT radius);
+};
+
+class CEffectImplementation : public ID2D1EffectImpl
+{
+public:
+
+    void SetRadius(FLOAT radius) { _radius = radius; }
+
+    IFACEMETHODIMP PrepareForRender(D2D1_CHANGE_TYPE /*type*/)
+    {
+        // Send the radius to the transform and ask it to render.
+        return _pMyTransform-&gt;PrepareForRender(_radius);
+    }
+
+private:
+
+    CMyTransform *_pMyTransform;
+    FLOAT _radius;
+};
+
+</code>
+    </remarks>
+    <seealso cref="ID2D1DeviceContext" />
+    <seealso cref="ID2D1EffectImpl" />
+  </member>
+  <member name="ID2D1EffectImpl.SetGraph">
+    <summary>
+      <para>The renderer calls this method to provide the effect implementation with a way to specify  its transform graph and transform graph changes.</para>
+      <para>The renderer calls this method when:</para>
+      <list type="bullet">
+        <item>
+          <description>When the effect is first initialized.</description>
+        </item>
+        <item>
+          <description>If the number of inputs to the effect changes.</description>
+        </item>
+      </list>
+    </summary>
+    <param name="transformGraph">
+      <para>Type: <b><see cref="ID2D1TransformGraph" />*</b></para>
+      <para>The graph to which the effect describes its transform topology through the SetDescription call.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>An error that prevents the effect from being initialized if called as part of the CreateEffect call. If the effect fails a subsequent SetGraph call:</para>
+      <list type="bullet">
+        <item>
+          <description>The error will be returned from the property method that caused the number of inputs to the effect to change.
+</description>
+        </item>
+        <item>
+          <description>The effect object will be placed into an error state, if subsequently used to render, the context will be placed into a temporary error state, that particular effect will fail to render and the failure will be returned on the next EndDraw or Flush call.</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID2D1EffectImpl" />
+  </member>
+  <member name="ID2D1EffectImpl">
+    <summary>
+      <para>Allows a custom effect's interface and behavior to be specified by the effect author.</para>
+    </summary>
+    <remarks>
+      <para>This interface is created by the effect author from a static factory registered through
+the <see cref="ID2D1Factory.RegisterEffect" />  method.</para>
+    </remarks>
+    <seealso cref="ID2D1Factory.RegisterEffect" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

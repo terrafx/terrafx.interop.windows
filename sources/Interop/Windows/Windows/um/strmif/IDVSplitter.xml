@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDVSplitter.DiscardAlternateVideoFrames">
+    <summary>
+      <para>The <b>DiscardAlternateVideoFrames</b> method discards half of the frames in the video stream. For NTSC, the frame rate is reduced from 30 frames per second (fps) to 15 fps. For PAL, the frame rate is reduced from 25 fps to 12.5 fps.</para>
+    </summary>
+    <param name="nDiscard">
+      <para>Flag that specifies whether to discard frames. If the value is non-zero, the filter discards alternate frames. If the value is zero, the filter delivers every frame.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Filter is paused or running.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDVSplitter Interface" />
+  </member>
+  <member name="IDVSplitter">
+    <summary>
+      <para>Downgrades the frame rate on a digital video (DV) stream. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dv-splitter-filter">DV Splitter</a> filter exposes this interface.</para>
+      <para>Applications can use this interface to reduce the frame rate on a DV stream, before the stream reaches the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dv-video-decoder-filter">DV Video Decoder</a> filter. This can be helpful for processor-intensive tasks, such as real-time transcoding.</para>
+    </summary>
+  </member>
+</doc>

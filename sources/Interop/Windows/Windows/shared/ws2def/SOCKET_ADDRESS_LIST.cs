@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SOCKET_ADDRESS_LIST.xml' path='doc/member[@name="SOCKET_ADDRESS_LIST"]/*' />
 public partial struct SOCKET_ADDRESS_LIST
 {
+    /// <include file='SOCKET_ADDRESS_LIST.xml' path='doc/member[@name="SOCKET_ADDRESS_LIST.iAddressCount"]/*' />
     public int iAddressCount;
 
+    /// <include file='SOCKET_ADDRESS_LIST.xml' path='doc/member[@name="SOCKET_ADDRESS_LIST.Address"]/*' />
     [NativeTypeName("SOCKET_ADDRESS [1]")]
     public _Address_e__FixedBuffer Address;
 
+    /// <include file='_Address_e__FixedBuffer.xml' path='doc/member[@name="_Address_e__FixedBuffer"]/*' />
     public partial struct _Address_e__FixedBuffer
     {
         public SOCKET_ADDRESS e0;

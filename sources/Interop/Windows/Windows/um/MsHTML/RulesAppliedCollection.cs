@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RulesAppliedCollection.xml' path='doc/member[@name="RulesAppliedCollection"]/*' />
 [Guid("671926EE-C3CF-40AF-BE8F-1CBAEE6486E8")]
 public partial struct RulesAppliedCollection
 {

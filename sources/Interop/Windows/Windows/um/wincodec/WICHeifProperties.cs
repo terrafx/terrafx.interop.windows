@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICHeifProperties.xml' path='doc/member[@name="WICHeifProperties"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
 public enum WICHeifProperties : uint
 {
+    /// <include file='WICHeifProperties.xml' path='doc/member[@name="WICHeifProperties.WICHeifOrientation"]/*' />
     WICHeifOrientation = 0x1,
+
+    /// <include file='WICHeifProperties.xml' path='doc/member[@name="WICHeifProperties.WICHeifProperties_FORCE_DWORD"]/*' />
     WICHeifProperties_FORCE_DWORD = 0x7fffffff,
 }

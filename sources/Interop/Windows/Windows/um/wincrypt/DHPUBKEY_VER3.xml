@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DHPUBKEY_VER3">
+    <summary>
+      <para>The <b>DHPUBKEY_VER3</b> structure contains information specific to the particular <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> contained in the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key BLOB</a>.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>DSSPUBKEY_VER3</b> is an alias for this structure.</para>
+    </remarks>
+    <seealso cref="BLOBHEADER" />
+    <seealso cref="DSSSEED" />
+  </member>
+  <member name="DHPUBKEY_VER3.magic">
+    <summary>
+      <para>This must always be set to 0x33484400, the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">ASCII</a> encoding of "DH3".</para>
+    </summary>
+  </member>
+  <member name="DHPUBKEY_VER3.bitlenP">
+    <summary>
+      <para>Number of bits in the DH key BLOB's prime, P.</para>
+    </summary>
+  </member>
+  <member name="DHPUBKEY_VER3.bitlenQ">
+    <summary>
+      <para>Number of bits in the DH key BLOB's prime, Q. If Q is not available, then this value should be 0.</para>
+    </summary>
+  </member>
+  <member name="DHPUBKEY_VER3.bitlenJ">
+    <summary>
+      <para>Number of bits in the DH key BLOB's prime, J. If J is not in the BLOB, then this value should be 0.</para>
+    </summary>
+  </member>
+  <member name="DHPUBKEY_VER3.DSSSeed">
+    <summary>
+      <para>Seed structure holding the seed and counter values used to generate the primes Q and P. If values in the <see cref="DSSSEED" /> structure are not available, then the counter element of the structure should be 0xFFFFFFFF.</para>
+    </summary>
+  </member>
+</doc>

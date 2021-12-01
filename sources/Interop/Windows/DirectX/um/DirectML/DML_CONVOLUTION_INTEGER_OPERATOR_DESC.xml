@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC">
+    <summary>
+      <para>Performs a convolution of the <i>FilterTensor</i> with the <i>InputTensor</i>. This operator performs forward convolution on integer data. Optional zero point tensors can also be used to subtract zero point values from the input and filter tensor.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the input data. The expected dimensions of the <i>InputTensor</i> are <code>{ BatchCount, InputChannelCount, InputHeight, InputWidth }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.InputZeroPointTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the input zero point data. The expected dimensions of the <i>InputZeroPointTensor</i> are <code>{ 1, 1, 1, 1 }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.FilterTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the filter data. The expected dimensions of the <i>FilterTensor</i> are <code>{ FilterBatchCount, FilterChannelCount, FilterHeight, FilterWidth }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.FilterZeroPointTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the filter zero point data. The expected dimensions of the <i>FilterZeroPointTensor</i> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, OutputChannelCount, 1, 1 }</code> if per-channel quantization is required.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write the results to. The expected dimensions of the <i>OutputTensor</i> are <code>{ BatchCount, OutputChannelCount, OutputHeight, OutputWidth }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.DimensionCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of spatial dimensions for the convolution operation. Spatial dimensions are the lower dimensions of the convolution <i>FilterTensor</i>. This value also determines the size of the <i>Strides</i>, <i>Dilations</i>, <i>StartPadding</i>, and <i>EndPadding</i> arrays. Only a value of 2 is supported.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.Strides">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the strides of the convolution operation. These strides are applied to the convolution filter. They are separate from the tensor strides included in <see cref="DML_TENSOR_DESC" />.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.Dilations">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the dilations of the convolution operation. Dilations are strides applied to the elements of the filter kernel. This has the effect of simulating a larger filter kernel by padding the internal filter kernel elements with zeros.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.StartPadding">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the padding values to be applied to the beginning of each spatial dimension of the filter and input tensor of the convolution operation.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.EndPadding">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the padding values to be applied to the end of each spatial dimension of the filter and input tensor of the convolution operation.</para>
+    </summary>
+  </member>
+  <member name="DML_CONVOLUTION_INTEGER_OPERATOR_DESC.GroupCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of groups which to divide the convolution operation up into. <i>GroupCount</i> can be used to achieve depth-wise convolution by setting the <i>GroupCount</i> equal to the input channel count. This divides the convolution up into a separate convolution per input channel.</para>
+    </summary>
+  </member>
+</doc>

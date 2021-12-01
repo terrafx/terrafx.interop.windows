@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFP_MEDIAITEM_CLEARED_EVENT.xml' path='doc/member[@name="MFP_MEDIAITEM_CLEARED_EVENT"]/*' />
 public unsafe partial struct MFP_MEDIAITEM_CLEARED_EVENT
 {
+    /// <include file='MFP_MEDIAITEM_CLEARED_EVENT.xml' path='doc/member[@name="MFP_MEDIAITEM_CLEARED_EVENT.header"]/*' />
     public MFP_EVENT_HEADER header;
 
+    /// <include file='MFP_MEDIAITEM_CLEARED_EVENT.xml' path='doc/member[@name="MFP_MEDIAITEM_CLEARED_EVENT.pMediaItem"]/*' />
     public IMFPMediaItem* pMediaItem;
 }

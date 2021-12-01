@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFFrameSourceTypes">
+    <summary>
+      <para>Describes the type of data provided by a frame source.</para>
+    </summary>
+    <remarks>
+      <para>The values of this enumeration are used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-devicestream-attribute-framesource-types">MF_DEVICESTREAM_ATTRIBUTE_FRAMESOURCE_TYPES</a> attribute.</para>
+    </remarks>
+  </member>
+  <member name="MFFrameSourceTypes.MFFrameSourceTypes_Color">
+    <summary>
+      <para>The frame source provides color data.</para>
+    </summary>
+  </member>
+  <member name="MFFrameSourceTypes.MFFrameSourceTypes_Infrared">
+    <summary>
+      <para>The frame source provides infrared data.</para>
+    </summary>
+  </member>
+  <member name="MFFrameSourceTypes.MFFrameSourceTypes_Depth">
+    <summary>
+      <para>The frame source provides depth data.</para>
+    </summary>
+  </member>
+  <member name="MFFrameSourceTypes.MFFrameSourceTypes_Image">
+    <summary>
+      <para>The frame source provides image data.</para>
+      <para>
+        <b>Note</b>  This value was added in Windows 10, version 1803.</para>
+    </summary>
+  </member>
+  <member name="MFFrameSourceTypes.MFFrameSourceTypes_Custom">
+    <summary>
+      <para>The frame source provides custom data.</para>
+    </summary>
+  </member>
+</doc>

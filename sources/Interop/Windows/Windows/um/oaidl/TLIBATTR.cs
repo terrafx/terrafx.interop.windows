@@ -7,21 +7,28 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TLIBATTR.xml' path='doc/member[@name="TLIBATTR"]/*' />
 public partial struct TLIBATTR
 {
+    /// <include file='TLIBATTR.xml' path='doc/member[@name="TLIBATTR.guid"]/*' />
     public Guid guid;
 
+    /// <include file='TLIBATTR.xml' path='doc/member[@name="TLIBATTR.lcid"]/*' />
     [NativeTypeName("LCID")]
     public uint lcid;
 
+    /// <include file='TLIBATTR.xml' path='doc/member[@name="TLIBATTR.syskind"]/*' />
     public SYSKIND syskind;
 
+    /// <include file='TLIBATTR.xml' path='doc/member[@name="TLIBATTR.wMajorVerNum"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMajorVerNum;
 
+    /// <include file='TLIBATTR.xml' path='doc/member[@name="TLIBATTR.wMinorVerNum"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMinorVerNum;
 
+    /// <include file='TLIBATTR.xml' path='doc/member[@name="TLIBATTR.wLibFlags"]/*' />
     [NativeTypeName("WORD")]
     public ushort wLibFlags;
 }

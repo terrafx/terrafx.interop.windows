@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaStream.GetMediaSource">
+    <summary>
+      <para>Retrieves a pointer to the media source that created this media stream.</para>
+    </summary>
+    <param name="ppMediaSource">
+      <para>Receives a pointer to the <see cref="IMFMediaSource" /> interface of the media source. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media source's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFMediaStream" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sources">Media Sources</seealso>
+  </member>
+  <member name="IMFMediaStream.GetStreamDescriptor">
+    <summary>
+      <para>Retrieves a stream descriptor for this media stream.</para>
+    </summary>
+    <param name="ppStreamDescriptor">
+      <para>Receives a pointer to the <see cref="IMFStreamDescriptor" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media source's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Do not modify the stream descriptor. To change the presentation, call <see cref="IMFMediaSource.CreatePresentationDescriptor" /> and modify the presentation descriptor.</para>
+    </remarks>
+    <seealso cref="IMFMediaStream" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sources">Media Sources</seealso>
+  </member>
+  <member name="IMFMediaStream.RequestSample">
+    <summary>
+      <para>Requests a sample from the media source.</para>
+    </summary>
+    <param name="pToken">
+      <para>Pointer to the <b>IUnknown</b> interface to an object that is used as a token for the request. The caller must implement this object. This parameter can be <b>NULL</b>. See Remarks.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_END_OF_STREAM</b>
+            </para>
+          </description>
+          <description>
+            <para>The end of the stream was reached.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_MEDIA_SOURCE_WRONGSTATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media source is stopped.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The source's <see cref="Shutdown" /> method has been called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>pToken</i> is not <b>NULL</b>, the media stream calls <b>AddRef</b> on <i>pToken</i> and places the token in a first-in, first-out queue.</para>
+      <para>When the next sample is available, the media stream stream does the following:</para>
+      <list type="number">
+        <item>
+          <description>Pulls the first token from the queue.
+</description>
+        </item>
+        <item>
+          <description>Sets the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfsampleextension-token-attribute">MFSampleExtension_Token</a> attribute on the media sample. The attribute data is a pointer to the token object.
+</description>
+        </item>
+        <item>
+          <description>Sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/memediasample">MEMediaSample</a> event. The event data is a pointer to the media sample's <see cref="IMFSample" /> interface.
+</description>
+        </item>
+        <item>
+          <description>Calls <b>Release</b> on the token.
+</description>
+        </item>
+      </list>
+      <para>If the media stream cannot fulfill the caller's request for a sample, it simply releases the token object and skips steps 2 and 3.</para>
+      <para>The caller should monitor the reference count on the request token. If the media stream sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/memediasample">MEMediaSample</a> event, get the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfsampleextension-token-attribute">MFSampleExtension_Token</a> attribute from the sample and match the attribute value against the token. If the token's reference count falls to zero and you did not receive an MEMediaSample event, it means that the request was dropped.</para>
+      <para>Because the Media Foundation pipeline is multithreaded, the source's <b>RequestSample</b> method might get called after the source has stopped. If the media source is stopped, the method should return <b>MF_E_MEDIA_SOURCE_WRONGSTATE</b>. The pipeline does not treat this return code as an error condition. If the source returns any other error code, the pipeline treats it as fatal error and halts the session.<b>Note</b>  Earlier versions of the documentation listed the wrong error code for this case.</para>
+      <para>If the media source is paused, the method succeeds, but the stream does not deliver the sample until the source is started again.</para>
+      <para>If a media source encounters an error asynchronously while processing data, it should signal the error in one of the following ways (but not both):</para>
+      <list type="bullet">
+        <item>
+          <description>Return an error code from the next <b>RequestSample</b> call.</description>
+        </item>
+        <item>
+          <description>Send an <a href="https://docs.microsoft.com//windows/desktop/medfound/meerror">MEError</a> event.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFMediaStream" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sources">Media Sources</seealso>
+  </member>
+  <member name="IMFMediaStream">
+    <summary>
+      <para>Represents one stream in a media source.</para>
+    </summary>
+    <remarks>
+      <para>Streams are created when a media source is started. For each stream, the media source sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/menewstream">MENewStream</a> event with a pointer to the stream's <b>IMFMediaStream</b> interface.</para>
+    </remarks>
+    <seealso cref="IMFMediaEventGenerator" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sources">Media Sources</seealso>
+  </member>
+</doc>

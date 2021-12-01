@@ -1,0 +1,1795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWbemServices.CancelAsyncCall">
+    <summary>
+      <para>The
+<b>IWbemServices.CancelAsyncCall</b> method cancels any currently pending asynchronous calls based on the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a> pointer, which was  originally passed to the asynchronous method. The outstanding
+<b>IWbemObjectSink</b> pointer can be released prior to the call or after the call returns. The
+<b>CancelAsyncCall</b> method is not operational from within a sink and is not supported by method providers. This means only the client end of the call is canceled. The implementing provider is not notified that the call was canceled and runs to completion. You should consider this before canceling methods that take a long time to complete, such as the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/vdswmi/defrag-method-in-class-win32-volume">Defrag</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/vdswmi/format-method-in-class-win32-volume">Format</a> methods in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa394515(v=vs.85)">Win32_Volume</a> class.</para>
+    </summary>
+    <param name="pSink">
+      <para>Pointer to the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a> implementation provided by the client to any of the asynchronous methods of
+<see cref="IWbemServices" />.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes can also be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+      <para>
+        <b>Note</b>  If
+<see cref="SetStatus" /> has not been called on the application's sink by the time WMI processes
+<b>CancelAsyncCall</b>, WMI calls
+<b>SetStatus</b> on that sink with <b>WBEM_E_CALL_CANCELLED</b> as the value for the <i>hResult</i> parameter.</para>
+      <para>Timing, and the nature of an asynchronous operation, can affect whether WMI is able to cancel the operation. Only lengthy queries are likely to be successfully canceled before they have completed. Faster operations, such as asynchronous deletions or modifications, typically complete before WMI can process a
+<b>CancelAsyncCall</b> call. So while
+<b>CancelAsyncCall</b> attempts to cancel the current operation, sometimes all that can be done is to release the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a> pointer.</para>
+      <para>
+        <b>Note</b>  It is possible to make numerous asynchronous calls using the same object sink. In this case, the
+<b>CancelAsyncCall</b> method cancels all asynchronous calls sharing this object sink. It is strongly recommended that you create one instance of an object sink for each  outstanding asynchronous call.</para>
+    </returns>
+    <remarks>
+      <para>Because the call-back to the sink might not be returned at the same authentication level as the client requires, it is recommended that you use semisynchronous instead of asynchronous communication.  For more information, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>. Calling <b>CancelAsyncCall</b> from within an implementation of <see cref="IWbemObjectSink.Indicate" /> or <see cref="IWbemObjectSink.SetStatus" /> can interfere with the WMI state and is not recommended.</para>
+      <para>In the case of a method call such as <see cref="ExecMethodAsync" />, only the client end of the call is canceled. The implementing provider is not  notified that the call was canceled and  runs to completion.</para>
+      <para>For more information on how to use asynchronous calls, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-an-asynchronous-call-with-c--">Making an Asynchronous Call with C++</a> and <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/receiving-asynchronous-event-notifications">Receiving Asynchronous Event Notifications</a></para>
+      <h4>Examples</h4>
+      <para>For a full example that uses <b>CancelAsyncCall</b>, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/example--receiving-event-notifications-through-wmi-">Example: Receiving Event Notifications Through WMI</a></para>
+      <para>The following C++ sample, taken from the \Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\wmi\vc\decoupled\instance_provider sample, demonstrates an implementation of <b>CancelAsyncCall</b>.</para>
+      <code>HRESULT CProvider_IWbemServices . CancelAsyncCall (
+
+ IWbemObjectSink *a_Sink
+)
+{
+ HRESULT t_Result = WBEM_E_NOT_AVAILABLE ;
+ return t_Result ;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</seealso>
+    <seealso cref="IWbemServices" />
+  </member>
+  <member name="IWbemServices.CreateClassEnum">
+    <summary>
+      <para>The
+<b>IWbemServices.CreateClassEnum</b> method returns an enumerator for all classes that satisfy selection criteria. The caller must use the returned enumerator to retrieve the class definitions, calling
+<see cref="IEnumWbemClassObject.Next" /> to obtain each class or blocks of classes. It finishes by calling <see cref="IEnumWbemClassObject.Release" />.
+<b>Note</b>  It is not an error for the returned enumerator to have 0 (zero) elements.</para>
+    </summary>
+    <param name="strSuperclass">
+      <para>If not <b>NULL</b> or blank, specifies a parent class name. Only classes that are subclasses of this class are returned in the enumerator. If it is <b>NULL</b> or blank, and <i>lFlags</i> is WBEM_FLAG_SHALLOW, only the top-level classes are returned (that is, classes that have no parent class). If it is <b>NULL</b> or blank and <i>lFlags</i> is <b>WBEM_FLAG_DEEP</b>, all classes within the namespace are returned.</para>
+    </param>
+    <param name="lFlags">
+      <para>The following flags affect the behavior of this method. The suggested value for this parameter is WBEM_FLAG_RETURN_IMMEDIATELY and WBEM_FLAG_FORWARD_ONLY for best performance.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, WMI retrieves the amended qualifiers stored in the localized namespace of the current connection's locale. If not set, only the qualifiers stored in the immediate namespace are retrieved.</para>
+      <h4>WBEM_FLAG_DEEP</h4>
+      <para>This flag forces the enumeration to include all subclasses in the hierarchy, but not this class.</para>
+      <h4>WBEM_FLAG_SHALLOW</h4>
+      <para>This flag forces the enumeration to include only pure instances of this class, excluding all instances of subclasses that supply properties not found in this class.</para>
+      <h4>WBEM_FLAG_RETURN_IMMEDIATELY</h4>
+      <para>This flag causes  a semisynchronous call. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>WBEM_FLAG_FORWARD_ONLY</h4>
+      <para>This flag causes a forward-only enumerator to be returned. Typically, forward-only enumerators are  faster and use less memory than conventional enumerators, but they do not allow calls to
+<see cref="Clone" /> or
+<see cref="Reset" />.</para>
+      <h4>WBEM_FLAG_BIDIRECTIONAL</h4>
+      <para>This flag causes WMI to retain pointers to objects of the enumeration until the client releases the enumerator. Because object pointers are not released immediately, this method may fail with an <b>HRESULT</b> of <b>WBEM_E_OUT_OF_MEMORY</b> if the client attempts to enumerate a large number of objects. This flag is implied by default if you set the <i>lFlags</i> parameter to 0 (zero).</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that can be used by the provider that is providing the requested classes. The values in the context object must be specified in the documentation for the provider. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="ppEnum">
+      <para>Receives the pointer to the enumerator. The returned object has a positive reference count. The caller must call <see cref="Release" /> on the pointer when it is no longer required.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of a method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes also can be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <seealso cref="IEnumWbemClassObject" />
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.CreateClassEnumAsync" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.CreateClassEnumAsync">
+    <summary>
+      <para>The
+<b>IWbemServices.CreateClassEnumAsync</b> method  returns an enumeration of all classes that the class provider supports. The class provider  creates each class definition from scratch and  only returns subclasses of the requested class. As an asynchronous method,
+<b>CreateClassEnumAsync</b> returns a status message immediately and then updates the sink passed through the <i>pResponseHandler</i> parameter—if necessary.</para>
+      <para>When a call succeeds, WMI calls <see cref="AddRef" /> on the pointer <i>pResponseHandler</i>, returns immediately, and  then asynchronously calls <i>pResponseHandler</i>– &gt;
+<see cref="Indicate" /> from another thread with class definitions until the query is satisfied.</para>
+    </summary>
+    <param name="strSuperclass">
+      <para>If not <b>NULL</b> or blank, this parameter specifies a parent class name. Only classes that are subclasses of this class are returned in the enumerator. If <b>NULL</b> or blank, and <i>lFlags</i> is <b>WBEM_FLAG_SHALLOW</b>, only top-level classes—those that have no parent class—are returned. If it is <b>NULL</b> or blank and <i>lFlags</i> is <b>WBEM_FLAG_DEEP</b>, all classes within the namespace are returned.</para>
+    </param>
+    <param name="lFlags">
+      <para>One or more of the following values are valid.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, Windows Management Instrumentation (WMI) retrieves the amended qualifiers stored in the localized namespace of the current connection locale. If not set, only the qualifiers stored in the immediate namespace are retrieved.</para>
+      <h4>WBEM_FLAG_BIDIRECTIONAL</h4>
+      <para>This flag causes WMI to retain pointers to objects of the enumeration until the client releases the enumerator.</para>
+      <h4>WBEM_FLAG_DEEP</h4>
+      <para>This flag forces the enumeration to include this and all subclasses in the hierarchy.</para>
+      <h4>WBEM_FLAG_SHALLOW</h4>
+      <para>This flag forces the enumeration to include only pure instances of this class, excluding all instances of subclasses that supply properties not found in this class.</para>
+      <h4>WBEM_FLAG_SEND_STATUS</h4>
+      <para>This flag registers  a request in WMI to receive intermediate status reports through the client implementation of
+<see cref="IWbemObjectSink.SetStatus" />. Provider implementation must support intermediate status reporting for this flag to change behavior.</para>
+      <para>
+        <b>Note</b>  If <i>strSuperclass</i> is <b>NULL</b> or blank and <b>WBEM_FLAG_DEEP</b> is specified, all classes are returned.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that can be used by the provider that returns the requested classes. The values in the context object must be specified in the documentation for the provider. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="pResponseHandler">
+      <para>Pointer to the caller implementation of
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a>. This handler receives the objects as they become available by using the
+<see cref="IWbemObjectSink.Indicate" /> method. When no  objects are available, the
+<see cref="IWbemObjectSink.SetStatus" /> method is called by WMI. If any error code is returned, then the supplied
+<b>IWbemObjectSink</b> pointer is not used. If WBEM_S_NO_ERROR is returned, then the user
+<b>IWbemObjectSink</b> implementation is called to indicate the result of the operation. WMI only calls <b>AddRef</b> on the pointer when <b>WBEM_S_NO_ERROR</b> returns. When an error code returns, the reference count is the same as no entry. For a detailed explanation of this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. On failure, you can obtain available information from the COM function <see cref="GetErrorInfo" />. COM-specific error codes  can be returned if network problems cause you to lose the remote connection to WMI. Note that if
+<b>CreateClassEnumAsync</b> returns WBEM_S_NO_ERROR, WMI waits for a result from the
+<b>SetStatus</b> method of the response handler. WMI waits indefinitely on a local connection or until a remote connection time-out occurs. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <remarks>
+      <para>Because the callback might not be returned at the same authentication level as the client requires, it is recommended that you use semisynchronous instead of asynchronous communication. If you require asynchronous communication, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <para>For more information about using methods semisynchronously, see <see cref="IWbemServices.CreateClassEnum" /> and <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows how to implement
+<b>CreateClassEnumAsync</b>.</para>
+      <code>HRESULT CStdProvider.CreateClassEnumAsync(
+            /* [in] */ BSTR strSuperclass,
+            /* [in] */ long lFlags,
+            /* [in] */ IWbemContext __RPC_FAR *pCtx,
+            /* [in] */ IWbemObjectSink __RPC_FAR *pResponseHandler
+            )
+{
+    IWbemClassObject *pClass = 0;
+
+    // Assume there is an IWbemServices pointer available (m_pSvc).
+    // Retrieve an 'empty' object that will be built up
+    // into the class definition.
+
+    HRESULT hRes = m_pSvc-&gt;GetObject(NULL, 0, NULL, &amp;amp;amp;amp;amp;amp;pClass, 0);
+    if (hRes)
+    {
+        return hRes;
+    }
+
+    // Prepare an empty object to receive the class definition.
+        IWbemClassObject *pNextClass = 0;
+        hRes = pClass-&gt;Clone(&amp;amp;amp;amp;amp;amp;pNextClass);
+
+    // Now loop through the private source of class definitions
+    // and create each class.
+    while(hRes)
+    {
+        // Create the class definition elsewhere.
+        // For example, call a function that creates a definition:
+        // FillClassDef(pNextClass);
+
+        // Deliver the class to WMI.
+        pResponseHandler-&gt;Indicate(1, &amp;amp;amp;amp;amp;amp;pNextClass);
+        pNextClass-&gt;Release( );
+
+        // Prepare an empty object to receive the class definition.
+        IWbemClassObject *pNextClass = 0;
+        hRes = pClass-&gt;Clone(&amp;amp;amp;amp;amp;amp;pNextClass);
+    }
+
+    pClass-&gt;Release();
+
+    // Send a finish message to WMI.
+
+    pResponseHandler-&gt;SetStatus(0, hRes, 0, 0);
+
+    return hRes;
+}
+</code>
+      <para>In the previous example, the class provider acquires a thread from WMI to perform the necessary operations. You may want to call the sink <see cref="AddRef" /> method and create another thread to deliver the objects in the result set. Creating another thread allows the current thread to return to WMI without depleting the thread pool. Whether the provider chooses the single thread design or the dual thread design depends on the amount of time the provider plans to use the WMI thread. There are no fixed rules. Experimentation can help you determine how your design affects WMI performance.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</seealso>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.CreateClassEnum" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.CreateInstanceEnum">
+    <summary>
+      <para>The
+<b>IWbemServices.CreateInstanceEnum</b> method creates an enumerator that returns the instances of a specified class according to user-specified selection criteria. This method supports simple WQL queries; more complex queries can be processed using the
+<see cref="IWbemServices.ExecQuery" /> method.</para>
+    </summary>
+    <param name="strFilter">
+      <para>Valid <b>BSTR</b> containing the name of the class for which instances are desired. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="lFlags">
+      <para>The following flags affect the behavior of this method. The suggested value for this parameter is <b>WBEM_FLAG_RETURN_IMMEDIATELY</b> and <b>WBEM_FLAG_FORWARD_ONLY</b> for best performance.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, WMI retrieves the amended qualifiers stored in the localized namespace of the current connection's locale. If not set, only the qualifiers stored in the immediate namespace are retrieved.</para>
+      <h4>WBEM_FLAG_DEEP</h4>
+      <para>This flag forces the enumeration to include this and all subclasses in the hierarchy.</para>
+      <h4>WBEM_FLAG_SHALLOW</h4>
+      <para>This flag forces the enumeration to include only pure instances of this class, excluding all instances of subclasses which supply properties not found in this class.</para>
+      <h4>WBEM_FLAG_RETURN_IMMEDIATELY</h4>
+      <para>This flag causes this to be a semisynchronous call. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>WBEM_FLAG_FORWARD_ONLY</h4>
+      <para>This flag causes a forward-only enumerator to be returned. Forward-only enumerators are generally much faster and use less memory than conventional enumerators but do not allow calls to
+<see cref="Clone" /> or
+<see cref="Reset" />.</para>
+      <h4>WBEM_FLAG_BIDIRECTIONAL</h4>
+      <para>This flag causes Windows Management to retain pointers to objects of the enumeration until the client releases the enumerator. Because object pointers are not released immediately, this method may fail with a <i>hResult</i> of <b>WBEM_E_OUT_OF_MEMORY</b> if the client attempts to enumerate a large number of objects. This flag is implied by default if you set the <i>lFlags</i> parameter to 0 (zero).</para>
+      <h4>WBEM_FLAG_DIRECT_READ</h4>
+      <para>This flag causes direct access to the provider for the class specified without any regard to its parent class or subclasses.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider that is providing the requested instances. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="ppEnum">
+      <para>Receives the pointer to the enumerator, which has a positive reference count. The caller must call <b>IUnknown.Release</b> on the pointer after it is no longer required.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>It is not an error for the returned enumerator to have zero elements.</para>
+    </remarks>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.CreateInstanceEnumAsync" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.CreateInstanceEnumAsync">
+    <summary>
+      <para>The
+<b>IWbemServices.CreateInstanceEnumAsync</b> method creates an enumerator that asynchronously returns the instances of a specified class according to user-specified selection criteria. This method supports simple WMI Query Language (WQL) queries. More complex queries can be processed using the
+<see cref="IWbemServices.ExecQueryAsync" /> method.</para>
+    </summary>
+    <param name="strFilter">
+      <para>Valid <b>BSTR</b> containing the name of the class for which instances are desired. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="lFlags">
+      <para>This parameter can be one of the following values.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, Windows Management Instrumentation (WMI) retrieves the amended qualifiers stored in the localized namespace of the current connection's locale. If not set, only the qualifiers stored in the immediate namespace are retrieved.</para>
+      <h4>WBEM_FLAG_DEEP</h4>
+      <para>This flag forces the enumeration to include instances of this and all subclasses in the hierarchy.</para>
+      <h4>WBEM_FLAG_SHALLOW</h4>
+      <para>This flag forces the enumeration to include only pure instances of this class, excluding all instances of subclasses, which supply properties not found in this class.</para>
+      <h4>WBEM_FLAG_SEND_STATUS</h4>
+      <para>This flag registers with Windows Management a request to receive intermediate status reports through the clients implementation of
+<see cref="IWbemObjectSink.SetStatus" />. Provider implementation must support intermediate status reporting for this flag to change behavior.</para>
+      <h4>WBEM_FLAG_BIDIRECTIONAL</h4>
+      <para>This flag causes Windows Management to retain pointers to objects of the enumeration until the client releases the enumerator.</para>
+      <h4>WBEM_FLAG_DIRECT_READ</h4>
+      <para>This flag causes direct access to the provider for the class specified without any regard to its parent class or subclasses.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically NULL. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider that is returning the requested instances. The values in the context object must be specified in the documentation for the provider in question. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="pResponseHandler">
+      <para>Pointer to the caller's implementation of
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a>. This handler receives the objects as they become available. If any error code is returned, then the supplied
+<b>IWbemObjectSink</b> pointer is not used. If <b>WBEM_S_NO_ERROR</b> is returned, then the user's
+<b>IWbemObjectSink</b> implementation will be called to indicate the result of the operation. Windows Management only calls <see cref="AddRef" /> on the pointer in cases where <b>WBEM_S_NO_ERROR</b> returns. In cases where an error code returns, the reference count is the same as on entry. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain more information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+      <para>An instance provider can report success or failure with either the return code from
+<b>CreateInstanceEnumAsync</b>, or through a call to
+<see cref="SetStatus" /> made through <i>pResponseHandler</i>. If you choose to call
+<b>SetStatus</b>, the return code sent through <i>pResponseHandler</i> takes precedence.</para>
+      <para>If
+<b>CreateInstanceEnumAsync</b> returns <b>WBEM_S_NO_ERROR</b>, WMI waits for a result from the
+<see cref="SetStatus" /> method of the response handler. WMI waits indefinitely on a local connection, or until a remote connection time-out occurs.</para>
+    </returns>
+    <remarks>
+      <para>The
+<see cref="IWbemObjectSink.SetStatus" /> method is called to indicate the end of the result set. It may also be called with no intervening calls to
+<see cref="IWbemObjectSink.Indicate" /> if error conditions occur.</para>
+      <para>Because the callback might not be returned at the same authentication level as the client requires, it is recommended that you use semisynchronous instead of asynchronous communication.</para>
+      <para>For more information, see <see cref="IWbemServices.CreateInstanceEnum" /> and <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>Examples</h4>
+      <para>The following example shows you how to implement
+<b>CreateInstanceEnumAsync</b>.</para>
+      <code>#define NUM_OF_INSTANCES 3
+
+HRESULT CStdProvider.CreateInstanceEnumAsync(
+            /* [in] */ BSTR strClass,
+            /* [in] */ long lFlags,
+            /* [in] */ IWbemContext __RPC_FAR *pCtx,
+            /* [in] */ IWbemObjectSink __RPC_FAR *pResponseHandler
+            )
+{
+    IWbemClassObject *pClass = 0;
+    IWbemClassObject *pNextInst = 0;
+
+    // Assume there is an IWbemServices pointer available to
+    // retrieve the class definition.
+    HRESULT hRes = m_pSvc-&gt;GetObject(strClass, 0, NULL, &amp;amp;amp;amp;amp;amp;pClass, 0);
+    if (hRes)
+        return hRes;
+
+    // Now loop through the private source and create each instance.
+    for (int i = 0; i &lt; NUM_OF_INSTANCES; i++)
+    {
+         // Prepare an empty object to receive the class definition.
+         pClass-&gt;SpawnInstance(0, &amp;amp;amp;amp;amp;amp;pNextInst);
+
+         // Create the instance.
+         // For example, create the instance in a
+         // FillInst method you implement:
+         /*FillInst(pNextInst);*/
+
+         // Deliver the class to WMI.
+         pResponseHandler-&gt;Indicate(1, &amp;amp;amp;amp;amp;amp;pNextInst);
+         pNextInst-&gt;Release();
+    }
+
+    // Send a finish message to WMI.
+    pResponseHandler-&gt;SetStatus(0, WBEM_S_NO_ERROR, 0, 0);
+
+    // Free memory resources.
+    SysFreeString(strClass);
+    pClass-&gt;Release();
+    m_pSvc-&gt;Release();
+
+    return WBEM_S_NO_ERROR;
+}
+</code>
+      <para>In the previous example, the instance provider acquires a thread from WMI to perform any necessary operations. You may want to call the sink <see cref="AddRef" /> method and create another thread for delivering the objects in the result set. Creating another thread allows the current thread to return to WMI without depleting the thread pool. Whether or not  the provider chooses the single thread design over the dual thread design depends on how long the provider plans to use the WMI thread. There are no fixed rules. Experimentation can help you determine how your design affects WMI performance.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</seealso>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.CreateInstanceEnum" />
+  </member>
+  <member name="IWbemServices.DeleteClass">
+    <summary>
+      <para>The
+<b>IWbemServices.DeleteClass</b> method deletes the specified class from the current namespace. If a dynamic instance provider is associated with the class, the provider is unregistered, and it is no longer called for by that class. Any classes that derive from the deleted class are also deleted, and their associated providers are unregistered. All outstanding static instances of the specified class and its subclasses are also deleted when the class is deleted.</para>
+      <para>If a dynamic class provider provides the class, the success of the deletion depends on whether the provider supports class deletion.
+<b>Note</b>  System classes cannot be deleted.</para>
+    </summary>
+    <param name="strClass">
+      <para>Name of the class targeted for deletion.</para>
+    </param>
+    <param name="lFlags">
+      <para>One of the following values can be set.</para>
+      <h4>WBEM_FLAG_RETURN_IMMEDIATELY</h4>
+      <para>This flag causes this to be a semisynchronous call. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>WBEM_FLAG_OWNER_UPDATE</h4>
+      <para>Indicates that the caller is a push provider.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider deleting the class. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="ppCallResult">
+      <para>If <b>NULL</b>, this parameter is not used. If <i>ppCallResult</i> is specified, it must be set to point to <b>NULL</b> on entry. If the <i>lFlags</i> parameter contains <b>WBEM_FLAG_RETURN_IMMEDIATELY</b>, this call returns immediately with <b>WBEM_S_NO_ERROR</b>. The <i>ppCallResult</i> parameter receives a pointer to a new
+<see cref="IWbemCallResult" /> object, which can then be polled to obtain the result using the
+<see cref="GetCallStatus" /> method.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes may also be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.DeleteClassAsync" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.DeleteClassAsync">
+    <summary>
+      <para>The
+<b>IWbemServices.DeleteClassAsync</b> method deletes the specified class from the current namespace. This method is identical to
+<see cref="IWbemServices.DeleteClass" /> except that the call returns immediately. Confirmation or failure is asynchronously reported to the specified object sink using the
+<see cref="IWbemObjectSink.SetStatus" /> method after the operation is complete.</para>
+    </summary>
+    <param name="strClass">
+      <para>Name of the class targeted for deletion.</para>
+    </param>
+    <param name="lFlags">
+      <para>One or more of the following values are valid.</para>
+      <h4>WBEM_FLAG_SEND_STATUS</h4>
+      <para>This flag registers with Windows Management a request to receive intermediate status reports through the client's implementation of
+<see cref="IWbemObjectSink.SetStatus" />. Provider implementation must support intermediate status reporting, for this flag to change behavior.</para>
+      <h4>WBEM_FLAG_OWNER_UPDATE</h4>
+      <para>Push providers must specify this flag when calling
+<b>DeleteClassAsync</b> to indicate that this class has changed.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider deleting the class. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="pResponseHandler">
+      <para>Pointer to an implementation of
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a> implemented by the caller. This handler receives the status of the deletion request when it becomes available through the
+<see cref="IWbemObjectSink.SetStatus" /> method. If any error code is returned, then the supplied
+<b>IWbemObjectSink</b> pointer is not used. If <b>WBEM_S_NO_ERROR</b> is returned, then the user's
+<b>IWbemObjectSink</b> implementation is called to indicate the result of the operation. Windows Management only calls <b>AddRef</b> on the pointer in cases where <b>WBEM_S_NO_ERROR</b> returns. In cases where an error code returns, the reference count is the same as on entry. For a detailed explanation of this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>All other return codes are provided to the object sink specified by the <i>pReponseHandler</i> parameter through the
+<b>SetStatus</b> method. Error conditions, such as when the class does not exist or the user does not have permission to delete classes, are reported to the handler. They are not reported in the return code of this method.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>If a dynamic instance provider is associated with the class, the provider is unregistered, and is no longer called for that class. Any classes that derive from the deleted class are also deleted, and their associated providers become unregistered. All outstanding static instances of the specified class and its subclasses are also deleted when the class is deleted.</para>
+      <para>If the class is provided by a dynamic class provider, the success of the deletion depends on whether class deletion is supported by that provider.</para>
+      <para>
+        <b>Note</b>  Standard system classes cannot be deleted.</para>
+      <para>Because the call-back might not be returned at the same authentication level as the client requires, it is recommended that you use semisynchronous instead of asynchronous communication. If you require asynchronous communication, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <para>For more information about using methods semisynchronously, see <see cref="IWbemServices.DeleteClass" /> and <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </remarks>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.DeleteClass" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.DeleteInstance">
+    <summary>
+      <para>The
+<b>IWbemServices.DeleteInstance</b> method deletes an instance of an existing class in the current namespace.</para>
+    </summary>
+    <param name="strObjectPath">
+      <para>Valid <b>BSTR</b> containing the object path to the instance to be deleted.</para>
+    </param>
+    <param name="lFlags">
+      <para>One of the following values are valid.</para>
+      <h4>WBEM_FLAG_RETURN_IMMEDIATELY</h4>
+      <para>This flag causes this to be a semisynchronous call. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically NULL. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider that is deleting the instance. The values in the context object must be specified in the documentation for the provider in question.</para>
+    </param>
+    <param name="ppCallResult">
+      <para>If NULL, this parameter is not used. If <i>ppCallResult</i> is specified, it must be set to point to <b>NULL</b> on entry. If the <i>lFlags</i> parameter contains <b>WBEM_FLAG_RETURN_IMMEDIATELY</b>, this call returns immediately with <b>WBEM_S_NO_ERROR</b>. The <i>ppCallResult</i> parameter receives a pointer to a new
+<see cref="IWbemCallResult" /> object, which can then be polled to obtain the result using the
+<see cref="GetCallStatus" /> method.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>The
+<b>IWbemServices.DeleteInstance</b> method is called to delete an existing instance in the current namespace. Instances in other namespaces cannot be deleted. When
+<b>DeleteInstance</b> is called to delete an instance that belongs to a class in a hierarchy, Windows Management calls the
+<see cref="DeleteInstanceAsync" /> method for all of the providers responsible for non-abstract classes in the hierarchy. That is, if the <i>strObjectPath</i> parameter identifies an instance of ClassB, and ClassB derives from ClassA, a non-abstract class, and is the parent class of ClassC and ClassD, also non-abstract classes, the providers for all four classes are called.</para>
+      <para>Windows Management calls each provider with an object path that is modified to point to their class. For example, if <i>strObjectPath</i> for the original call is set to "ClassB.k=1", the call to the provider of ClassA would set <i>strObjectPath</i> to "ClassA.k=1".</para>
+      <para>The success of a
+<b>DeleteInstance</b> call depends only on the success of a
+<see cref="DeleteInstanceAsync" /> call to the provider of the topmost non-abstract class. A non-abstract class has an abstract class as its parent. If the provider for any one of such classes succeeds, the operation succeeds; if all such classes fail, the operation fails.</para>
+      <para>For example, assume that ClassX is the base class for the following hierarchy:</para>
+      <list type="number">
+        <item>
+          <description>ClassA derives from ClassX.</description>
+        </item>
+        <item>
+          <description>ClassB derives from ClassA.</description>
+        </item>
+        <item>
+          <description>ClassC and ClassD derive from ClassB.</description>
+        </item>
+      </list>
+      <para>If ClassX is the only abstract class in the hierarchy and the <i>strObjectPath</i> parameter in
+<b>DeleteInstance</b> points to an instance of ClassB, only the provider for ClassA needs to succeed in its
+<see cref="DeleteInstanceAsync" /> call.</para>
+      <para>If ClassX, ClassA, and ClassB are all abstract and the <i>strObjectPath</i> parameter in
+<b>DeleteInstance</b> again points to an instance of ClassB, either the provider for ClassC or the provider for ClassD must succeed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-an-instance-object-path">Describing an Instance Object Path</seealso>
+    <seealso cref="IWbemCallResult" />
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.DeleteInstanceAsync" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.DeleteInstanceAsync">
+    <summary>
+      <para>The
+<b>IWbemServices.DeleteInstanceAsync</b> method asynchronously deletes an instance of an existing class in the current namespace. The confirmation or failure of the operation is reported through the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a> interface implemented by the caller.</para>
+    </summary>
+    <param name="strObjectPath">
+      <para>Valid <b>BSTR</b> that contains the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-an-instance-object-path">object path</a> of the object to be deleted.</para>
+    </param>
+    <param name="lFlags">
+      <para>
+        <b>WBEM_FLAG_SEND_STATUS</b> registers with Windows Management a request to receive intermediate status reports through the client's implementation of
+<see cref="IWbemObjectSink.SetStatus" />. Provider implementation must support intermediate status reporting, for this flag to change behavior. Note that the <b>WBEM_FLAG_USE_AMENDED_QUALIFIERS</b> flag cannot be used here.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider that is deleting the instance. The values in the context object must be specified in the documentation for the provider in question.</para>
+    </param>
+    <param name="pResponseHandler">
+      <para>Pointer to the caller's implementation of
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a>. This handler receives the status of the delete operation as it becomes available through the
+<see cref="SetStatus" /> method. If any error code is returned, then the supplied
+<b>IWbemObjectSink</b> pointer is not used. If <b>WBEM_S_NO_ERROR</b> is returned, then the user's
+<b>IWbemObjectSink</b> implementation is called to indicate the result of the operation. Windows Management only calls <see cref="AddRef" /> on the pointer in cases where <b>WBEM_S_NO_ERROR</b> returns. In cases where an error code returns, the reference count is the same as on entry. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>If
+<b>DeleteInstanceAsync</b> returns <b>WBEM_S_NO_ERROR</b>, WMI waits for a result from the
+<b>SetStatus</b> method of the response handler. WMI waits indefinitely on a local connection, or until a remote connection time-out occurs.</para>
+      <para>Other error conditions are reported asynchronously to the object sink supplied by the <i>pResponseHandler</i> parameter.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+      <para>
+        <b>Note</b>  Clients that call
+<b>DeleteInstanceAsync</b> must always expect the results of the call to be reported using their
+<see cref="IWbemObjectSink.Indicate" /> method.</para>
+      <para>
+        <b>Note</b>  When the instance pointed to by <i>strObjectPath</i> belongs to a class that is a member of a class hierarchy, the success of
+<b>DeleteInstanceAsync</b> depends on the topmost non-abstract provider. For a detailed explanation of the dependencies involved that determine the success of this operation, see Remarks in
+<see cref="IWbemServices.DeleteInstance" />.</para>
+    </returns>
+    <remarks>
+      <para>An instance provider can report success or failure with either the return code from
+<b>DeleteInstanceAsync</b> or through a call to
+<b>SetStatus</b> made through <i>pResponseHandler</i>. If sent to
+<b>SetStatus</b>, the return code sent to the sink through <i>pResponseHandler</i> takes precedence. Because the callback might not be returned at the same authentication level as the client requires, it is recommended that you use semisynchronous instead of asynchronous communication. If you require asynchronous communication, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <para>For more information about using methods semisynchronously, see <see cref="IWbemServices.DeleteInstance" /> and <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-an-instance-object-path">Describing an Instance Object Path</seealso>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.DeleteInstance" />
+  </member>
+  <member name="IWbemServices.ExecMethod">
+    <summary>
+      <para>The
+<b>IWbemServices.ExecMethod</b> method executes a method exported by a CIM object. The method call is forwarded to the appropriate provider where it executes. Information and status are returned to the caller, which blocks until the call is complete.</para>
+      <para>Methods are not directly implemented by Windows Management, but are exported by method providers. For any given CIM class, the available methods and their parameters must be specified in the documentation for the provider in question.</para>
+      <para>For more information about executing methods, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </summary>
+    <param name="strObjectPath">
+      <para>Valid <b>BSTR</b> containing the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-a-class-object-path">object path</a> of the object for which the method is executed.</para>
+    </param>
+    <param name="strMethodName">
+      <para>Name of the method for the object.</para>
+    </param>
+    <param name="lFlags">
+      <para>This parameter can be set to 0 to make this a synchronous call. To make this a semisynchronous call, set <i>lFlags</i> to <b>WBEM_FLAG_RETURN_IMMEDIATELY</b>, provide a valid pointer for the <i>ppCallResult</i> parameter, and this call returns immediately. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>;  otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider executing the method. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="pInParams">
+      <para>May be <b>NULL</b> if no in-parameters are required to execute the method. Otherwise, this points to an
+<see cref="IWbemClassObject" /> that contains the properties acting as inbound parameters for the method execution. The contents of the object are method-specific, and are part of the specification for the provider in question. For more information about constructing input parameters, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-parameters-objects-in-c--">Creating Parameters Objects in C++</a>.</para>
+    </param>
+    <param name="ppOutParams">
+      <para>If not <b>NULL</b>, receives a pointer to the outbound parameters and return values for the method execution. The contents of this object are method-specific, and are part of the specification for the provider in question. The caller must call <see cref="Release" /> on the returned object when it is no longer required.</para>
+    </param>
+    <param name="ppCallResult">
+      <para>If <b>NULL</b>, this is not used. If <i>ppCallResult</i> is specified, it must be set to point to <b>NULL</b> on entry. In this case, the call returns immediately with <b>WBEM_S_NO_ERROR</b>. The <i>ppCallResult</i> parameter receives a pointer to a new
+<see cref="IWbemCallResult" /> object, which must be polled to obtain the result of the method execution using the
+<see cref="GetCallStatus" /> method. The out parameters for the call are available by calling
+<see cref="IWbemCallResult.GetResultObject" />.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>If <i>ppOutParams</i> is not <b>NULL</b>, the client can determine the method's return value type by examining the <b>ReturnValue</b> property of the object pointed to by <i>ppOutParams</i>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</seealso>
+    <seealso cref="IWbemCallResult.GetResultObject" />
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.ExecMethodAsync" />
+  </member>
+  <member name="IWbemServices.ExecMethodAsync">
+    <summary>
+      <para>The
+<b>IWbemServices.ExecMethodAsync</b> method asynchronously executes a method exported by a CIM object. The call immediately returns to the client while the inbound parameters are forwarded to the appropriate provider where it executes. Information and status are returned to the caller through the supplied object sink.</para>
+      <para>Methods are not directly implemented by Windows Management, but are exported by method providers. For any given CIM class, the available methods and their parameters are part of the documentation for the provider in question.</para>
+    </summary>
+    <param name="strObjectPath">
+      <para>Valid <b>BSTR</b> containing the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-a-class-object-path">object path</a> of the object for which the method is to be executed. You can invoke a static method using either a class name or an object path to an instance. The method provider can parse the object path parameter to determine the class and instance that contain the method definition.</para>
+    </param>
+    <param name="strMethodName">
+      <para>Name of the method for the object.</para>
+    </param>
+    <param name="lFlags">
+      <para>
+        <b>WBEM_FLAG_SEND_STATUS</b> registers with Windows Management a request to receive intermediate status reports through the clients implementation of
+<see cref="IWbemObjectSink.SetStatus" />. Provider implementation must support intermediate status reporting for this flag to change behavior. Note that the <b>WBEM_FLAG_USE_AMENDED_QUALIFIERS</b> flag cannot be used here.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>;  otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider executing the method. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="pInParams">
+      <para>Can be <b>NULL</b> if no inbound parameters are required to execute the method. Otherwise, this points to an
+<see cref="IWbemClassObject" /> object that contains the properties acting as inbound parameters for the method execution. The contents of the object are method-specific, and are part of the specification for the provider in question. However, the most common object is an instance of the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--parameters">__Parameters</a> system class. For each input parameter to the method to be called, there is one non-system property. Method providers ignore the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/standard-wmi-qualifiers">ID</a> qualifiers attached to each parameter in the method, which are typically used only by browsers and similar applications.</para>
+    </param>
+    <param name="pResponseHandler">
+      <para>Cannot be <b>NULL</b>. The object sink receives the result of the method call. The outbound parameters are sent to
+<see cref="IWbemObjectSink.Indicate" />. The most common returned object is an instance of the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--parameters">__Parameters</a> system class. For more information about return codes, see the Remarks section. When implementing a method provider, you should call
+<b>Indicate</b> to return output parameter information before calling
+<see cref="IWbemObjectSink.SetStatus" /> to report the final status.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>Other errors are reported asynchronously to the object sink supplied in the <i>pReponseHandler</i> parameter.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to WMI.</para>
+    </returns>
+    <remarks>
+      <para>A single method provider can supply methods for many classes and instances. Method providers have to deal with a maximum of three return values.</para>
+      <para>The
+<see cref="IWbemObjectSink.SetStatus" /> method is called to indicate the end of the result set. It may also be called with no intervening calls to
+<see cref="IWbemObjectSink.Indicate" /> if error conditions occur.</para>
+      <para>Because the call-back might not be returned at the same authentication level as the client requires, it is recommended that you use semisynchronous instead of asynchronous communication. If you require asynchronous communication, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <list type="table">
+        <listheader>
+          <description>Return values</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ExecMethodAsync</b> (required)
+</description>
+          <description>
+            <para>Indicates whether or not the input parameters for the method that are pointed to by the <b>pInParams</b> parameter are valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Invoked method (optional)</para>
+          </description>
+          <description>
+            <para>Dependent on the method. The return value is placed in the <b>ReturnValue</b> property of the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--parameters">__PARAMETERS</a> instance representing the out parameters and returned through a call to
+<see cref="Indicate" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Invoked method out parameters (optional)</para>
+          </description>
+          <description>
+            <para>Dependent on the method. Out parameters are placed in non-system properties of a
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--parameters">__PARAMETERS</a> instance and returned through
+<see cref="Indicate" />.</para>
+          </description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following C++ example shows how to implement the
+<b>IWbemServices.ExecMethodAsync</b> method for the <b>Echo</b> method of the <b>TestMeth</b> class. The <b>TestMeth</b> class supports a method that has one input parameter and one output parameter and that returns an unsigned 32-bit integer. The implementation assumes that there is only one method called <b>Echo</b> and one class that contains it.  For the sake of brevity, there is no error checking or object path parsing.</para>
+      <code>STDMETHODIMP CMyMethodProvider.ExecMethodAsync(BSTR ObjectPath,
+    BSTR MethodName, long lFlags, IWbemContext* pCtx,
+    IWbemClassObject* pInParams, IWbemObjectSink* pResultSink)
+{
+    HRESULT hr;
+    IWbemClassObject * pClass = NULL;
+    IWbemClassObject * pOutClass = NULL;
+    IWbemClassObject* pOutParams;
+
+    // Allocate some BSTRs.
+
+    BSTR ClassName = SysAllocString(L"TestMeth");
+    BSTR InputArgName = SysAllocString(L"sInArg");
+    BSTR OutputArgName = SysAllocString(L"sOutArg");
+    BSTR retValName = SysAllocString(L"ReturnValue");
+
+    // Get the class object; this is hard-coded and matches the class
+    // in the MOF.  A more sophisticated example would parse
+    // ObjectPath to determine the class and possibly the instance.
+    // The m_pWbemSvcs pointer is of type IWbemServices*
+    hr = m_pWbemSvcs-&gt;GetObject(ClassName, 0, pCtx, &amp;amp;amp;amp;amp;amp;pClass, NULL);
+
+    // This method returns values, and so creates an instance of the
+    // output argument class.
+
+    hr = pClass-&gt;GetMethod(MethodName, 0, NULL, &amp;amp;amp;amp;amp;amp;pOutClass);
+    pOutClass-&gt;SpawnInstance(0, &amp;amp;amp;amp;amp;amp;pOutParams);
+
+    // Copy the input argument into the output object.
+
+    VARIANT var;
+    VariantInit(&amp;amp;amp;amp;amp;amp;var);
+
+    // Get the input argument.
+    pInParams-&gt;Get(InputArgName, 0, &amp;amp;amp;amp;amp;amp;var, NULL, NULL);
+
+    // Put it into the output object.
+    pOutParams-&gt;Put(OutputArgName , 0, &amp;amp;amp;amp;amp;amp;var, 0);
+
+    long lLen = wcslen(var.bstrVal);
+    VariantClear(&amp;amp;amp;amp;amp;amp;var);
+    var.vt = VT_I4;
+    var.lVal = lLen;
+    // Special name for the return value.
+    pOutParams-&gt;Put(retValName , 0, &amp;amp;amp;amp;amp;amp;var, 0);
+
+    // Send the output object back to the client by the sink. Then
+    // release the pointers and free the strings.
+
+    hr = pResultSink-&gt;Indicate(1, &amp;amp;amp;amp;amp;amp;pOutParams);
+    pOutParams-&gt;Release();
+    pOutClass-&gt;Release();
+    pClass-&gt;Release();
+    SysFreeString(ClassName);
+    SysFreeString(InputArgName);
+    SysFreeString(OutputArgName);
+    SysFreeString(retValName);
+
+    // All done; now set the status.
+
+    hr = pResultSink-&gt;SetStatus(0,WBEM_S_NO_ERROR,NULL,NULL);
+    return WBEM_S_NO_ERROR;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</seealso>
+    <seealso cref="IWbemCallResult.GetResultObject" />
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.ExecMethodAsync" />
+  </member>
+  <member name="IWbemServices.ExecNotificationQuery">
+    <summary>
+      <para>The
+<b>IWbemServices.ExecNotificationQuery</b> method executes a query to receive events. The call returns immediately, and the user can poll the returned enumerator for events as they arrive. Releasing the returned enumerator cancels the query.</para>
+    </summary>
+    <param name="strQueryLanguage">
+      <para>Valid <b>BSTR</b> that contains one of the query languages supported by Windows Management. This cannot be <b>NULL</b>. Currently, only the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/querying-with-wql">WMI Query Language</a> (WQL) is supported.</para>
+    </param>
+    <param name="strQuery">
+      <para>Valid <b>BSTR</b> that contains the text of the event-related query. This cannot be <b>NULL</b>. For more information on building WMI query strings, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/querying-with-wql">Querying with WQL</a> and the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wql-sql-for-wmi">WQL</a> reference.</para>
+    </param>
+    <param name="lFlags">
+      <para>This parameter must be set to both <b>WBEM_FLAG_RETURN_IMMEDIATELY</b> and <b>WBEM_FLAG_FORWARD_ONLY</b> or the call fails.</para>
+      <h4>WBEM_FLAG_FORWARD_ONLY</h4>
+      <para>This flag causes a forward-only enumerator to be returned. Forward-only enumerators are generally much faster and use less memory than conventional enumerators but do not allow calls to
+<see cref="Clone" /> or
+<see cref="Reset" />.</para>
+      <h4>WBEM_FLAG_RETURN_IMMEDIATELY</h4>
+      <para>The user must specify this flag or the call fails. This is because events are received continuously, which means the user must poll the returned enumerator. Blocking this call indefinitely while waiting for a possible event  blocks the thread for an indefinite amount of time. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that can be used by the provider that provides the requested events. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="ppEnum">
+      <para>If no error occurs, this parameter receives the enumerator that allows the caller to retrieve the instances in the result set of the query. The caller periodically calls
+<see cref="IEnumWbemClassObject.Next" /> to see if any events are available. Notice that, in this usage,
+<see cref="Reset" /> does not move the enumerator back to the beginning of the event sequence; it has no effect. The parameter can continue to receive events until <see cref="Release" /> is called on the returned enumerator.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes also can be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>There are limits to the number of <b>AND</b> and <b>OR</b> keywords that can be used in WQL queries.  Large numbers of WQL keywords used in a complex query can cause WMI to return the WBEM_E_QUOTA_VIOLATION error code as an <b>HRESULT</b> value.  The limit of WQL keywords depends on how complex the query is.</para>
+    </remarks>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.ExecNotificationQueryAsync" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/querying-with-wql">Querying with WQL</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/receiving-events-for-the-duration-of-your-application">Receiving Events for the Duration of your Application</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.ExecNotificationQueryAsync">
+    <summary>
+      <para>The
+<b>IWbemServices.ExecNotificationQueryAsync</b> method performs the same task as
+<see cref="IWbemServices.ExecNotificationQuery" /> except that events are supplied to the specified response handler until
+<see cref="CancelAsyncCall" /> is called to stop the event notification.</para>
+    </summary>
+    <param name="strQueryLanguage">
+      <para>Valid <b>BSTR</b> that contains one of the query languages supported by Windows Management. This must be "WQL".</para>
+    </param>
+    <param name="strQuery">
+      <para>Valid <b>BSTR</b> that contains the text of the event-related query. This cannot be <b>NULL</b>. For more information on building WMI query strings, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/querying-with-wql">Querying with WQL</a> and the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wql-sql-for-wmi">WQL</a> reference.</para>
+    </param>
+    <param name="lFlags">
+      <para>This parameter can be the following value.</para>
+      <h4>WBEM_FLAG_SEND_STATUS</h4>
+      <para>This flag registers with Windows Management a request to receive intermediate status reports through the client's implementation of
+<see cref="IWbemObjectSink.SetStatus" />. Provider implementation must support intermediate status reporting for this flag to change behavior.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider that is returning the requested events. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="pResponseHandler">
+      <para>Pointer to the caller's implementation of
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a>. This handler receives the objects in the query result set as they become available. To cease receiving events, the caller must call
+<see cref="IWbemServices.CancelAsyncCall" /> using the same pointer value for <i>pResponseHandler</i>. As events become available, the supplied
+<see cref="IWbemObjectSink.Indicate" /> implementation is called to deliver the event objects. The
+<see cref="IWbemObjectSink.SetStatus" /> method is not called at any time, because there is no final or terminating condition. The call executes indefinitely until canceled. If any error code is returned, then the supplied
+<b>IWbemObjectSink</b> pointer is not used. If <b>WBEM_S_NO_ERROR</b> is returned, then the user's
+<b>IWbemObjectSink</b> implementation is called to indicate the result of the operation. Windows Management only calls <see cref="AddRef" /> on the pointer in cases where <b>WBEM_S_NO_ERROR</b> returns. In cases where an error code returns, the reference count is the same as on entry. For a detailed explanation of this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>Other error codes are returned to the object sink specified by the <i>pResponseHandler</i> parameter.</para>
+      <para>COM-specific error codes also can be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>The
+<see cref="IWbemObjectSink.SetStatus" /> method is called to indicate the end of the result set. It may also be called with no intervening calls to
+<see cref="IWbemObjectSink.Indicate" /> if error conditions occur.</para>
+      <para>Because the call-back might not be returned at the same authentication level as the client requires, it is recommended that you use semisynchronous instead of asynchronous communication. If you require asynchronous communication, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <para>For more information about using methods semisynchronously, see <see cref="IWbemServices.ExecNotificationQuery" /> and <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <para>There are limits to the number of <b>AND</b> and <b>OR</b> keywords that can be used in WQL queries.  Large numbers of WQL keywords used in a complex query can cause WMI to return the <b>WBEM_E_QUOTA_VIOLATION</b> error code as an <b>HRESULT</b> value.  The limit of WQL keywords depends on how complex the query is.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</seealso>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.ExecQuery" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/receiving-event-notifications">Receiving Event Notifications</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/receiving-events-for-the-duration-of-your-application">Receiving Events for the Duration of your Application</seealso>
+  </member>
+  <member name="IWbemServices.ExecQuery">
+    <summary>
+      <para>The
+<b>IWbemServices.ExecQuery</b> method executes a query to retrieve objects.</para>
+      <para>For the valid types of queries that can be performed, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/querying-with-wql">Querying with WQL</a>.</para>
+    </summary>
+    <param name="strQueryLanguage">
+      <para>Valid <b>BSTR</b> that contains one of the query languages supported by Windows Management. This must be "WQL", the acronym for WMI Query Language.</para>
+    </param>
+    <param name="strQuery">
+      <para>Valid <b>BSTR</b> that contains the text of the query. This parameter cannot be <b>NULL</b>. For more information on building WMI query strings, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/querying-with-wql">Querying with WQL</a> and the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wql-sql-for-wmi">WQL</a> reference.</para>
+    </param>
+    <param name="lFlags">
+      <para>The following flags affect the behavior of this method. The suggested value for this parameter is <b>WBEM_FLAG_RETURN_IMMEDIATELY</b> and <b>WBEM_FLAG_FORWARD_ONLY</b> for best performance.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, WMI retrieves the amended qualifiers stored in the localized namespace of the current connection's locale. If not set, only the qualifiers stored in the immediate namespace are retrieved.</para>
+      <h4>WBEM_FLAG_FORWARD_ONLY</h4>
+      <para>This flag causes a forward-only enumerator to be returned. Forward-only enumerators are generally much faster and use less memory than conventional enumerators but do not allow calls to
+<see cref="Clone" /> or
+<see cref="Reset" />.</para>
+      <h4>WBEM_FLAG_BIDIRECTIONAL</h4>
+      <para>This flag causes Windows Management to retain pointers to objects of the enumeration until the client releases the enumerator.</para>
+      <h4>WBEM_FLAG_RETURN_IMMEDIATELY</h4>
+      <para>This flag causes this to be a semisynchronous call. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>WBEM_FLAG_ENSURE_LOCATABLE</h4>
+      <para>This flag ensures that any returned objects have enough information in them so that the system properties, such as <b>__PATH</b>, <b>__RELPATH</b>, and <b>__SERVER</b>, are non-NULL.</para>
+      <h4>WBEM_FLAG_PROTOTYPE</h4>
+      <para>This flag is used for prototyping. It does not execute the query and instead returns an object that looks like a typical result object.</para>
+      <h4>WBEM_FLAG_DIRECT_READ</h4>
+      <para>This flag causes direct access to the provider for the class specified without any regard to its parent class or subclasses.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that can be used by the provider that is providing the requested classes or instances. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="ppEnum">
+      <para>If no error occurs, this receives the enumerator that allows the caller to retrieve the instances in the result set of the query. It is not an error for the query to have a result set with 0 instances. This is determined only by attempting to iterate through the instances. This object returns with a positive reference count. The caller must call <see cref="Release" /> when the object is no longer required.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes also can be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>The
+<b>IWbemServices.ExecQuery</b> method processes the query specified in the <i>strQuery</i> parameter and creates an enumerator through which the caller can access the query results. The enumerator is a pointer to an
+<see cref="IEnumWbemClassObject" /> interface; the query results are instances of class objects made available through the
+<see cref="IWbemClassObject" /> interface.</para>
+      <para>There are limits to the number of "AND" and "OR" keywords that can be used in WQL queries.  Large numbers of WQL keywords used in a complex query can cause WMI to return the <b>WBEM_E_QUOTA_VIOLATION</b> error code as an <b>HRESULT</b> value.  The limit of WQL keywords depends on how complex the query is.</para>
+    </remarks>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.ExecQueryAsync" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/querying-with-wql">Querying with WQL</seealso>
+  </member>
+  <member name="IWbemServices.ExecQueryAsync">
+    <summary>
+      <para>The <b>IWbemServices.ExecQueryAsync</b> method executes a query to retrieve objects asynchronously.</para>
+    </summary>
+    <param name="strQueryLanguage">
+      <para>Valid <b>BSTR</b> that contains one of the query languages that Windows Management Instrumentation (WMI) supports. This must be "WQL".</para>
+    </param>
+    <param name="strQuery">
+      <para>Valid <b>BSTR</b> that contains the text of the query. This cannot be
+<b>NULL</b>. When you implement an instance provider, your provider can  refuse the query
+because it is too complex. When a provider determines that a query is too complex, WMI can retry the provider with
+a simple  query, or  choose to retrieve and enumerate the superset of the query instances.</para>
+      <para>For more information on building WMI query strings, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/querying-with-wql">Querying with WQL</a> and the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wql-sql-for-wmi">WQL</a> reference.</para>
+    </param>
+    <param name="lFlags">
+      <para>This parameter can be one of the following values.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, WMI retrieves the amended qualifiers stored in the localized namespace of the current connection's locale. If not set, only the qualifiers stored in the immediate namespace are retrieved.</para>
+      <h4>WBEM_FLAG_BIDIRECTIONAL</h4>
+      <para>This flag causes WMI to retain pointers to objects of the enumeration until the client releases the enumerator.</para>
+      <h4>WBEM_FLAG_SEND_STATUS</h4>
+      <para>This flag registers a request with WMI to receive intermediate status reports through the client's implementation of
+<see cref="IWbemObjectSink.SetStatus" />. Provider implementation must support intermediate status reporting for this flag to change.</para>
+      <h4>WBEM_FLAG_ENSURE_LOCATABLE</h4>
+      <para>This flag ensures that returned objects have enough information in them so that the system properties, such as <b>__PATH</b>, <b>__RELPATH</b>, and <b>__SERVER</b>, are non-<b>NULL</b>.</para>
+      <h4>WBEM_FLAG_PROTOTYPE</h4>
+      <para>This flag is used for prototyping. It does not execute the query, but returns an object that looks like a typical result object.</para>
+      <h4>WBEM_FLAG_DIRECT_READ</h4>
+      <para>This flag causes direct access to the provider for the class specified without regard to its parent class or subclasses.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that the provider can use to  return the requested classes or instances. The values in the context object must be specified in the documentation for the provider. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="pResponseHandler">
+      <para>Pointer to the caller's implementation of
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a>. This handler receives the objects in the query result set as they become available. If any error code is returned, then the supplied
+<b>IWbemObjectSink</b> pointer is not used. If <b>WBEM_S_NO_ERROR</b> is returned, then the user's
+<b>IWbemObjectSink</b> implementation is called to indicate the result of the operation. Windows Management Instrumentation (WMI) calls
+<see cref="IWbemObjectSink.Indicate" /> with the objects any number of times, followed by a single call to <see cref="IWbemObjectSink.SetStatus" /> to indicate the final status.</para>
+      <para>WMI only calls <see cref="AddRef" /> to the pointer when <b>WBEM_S_NO_ERROR</b> returns. When an error code returns, the reference count is the same as on entry. For a detailed explanation of asynchronous calling methods, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>When there is a  failure, you can obtain   information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>Other error codes are returned to the object sink specified by the <i>pResponseHandler</i> parameter.</para>
+      <para>COM-specific error codes might be returned if network problems cause you to lose the remote connection to WMI.</para>
+      <para>When finished, an instance provider can report success or failure with either the return code from
+<b>ExecQueryAsync</b> or through a call to
+<see cref="SetStatus" /> made through <i>pResponseHandler</i>. If you choose to call
+<b>SetStatus</b>, the return code sent through <i>pResponseHandler</i> takes precedence.</para>
+    </returns>
+    <remarks>
+      <para>There are limits to the number of AND and OR keywords that can be used in WQL queries.  Large numbers of WQL keywords used in a complex query can cause WMI to return the <b>WBEM_E_QUOTA_VIOLATION</b> error code as an <b>HRESULT</b> value.  The limit of WQL keywords depends on how complex the query is.</para>
+      <para>The caller's <see cref="IWbemObjectSink.Indicate" /> method can be called to report intermittent status. The <see cref="IWbemObjectSink.SetStatus" /> method is called to indicate the end of the result set.</para>
+      <para>When   a provider does not support query processing, WMI can support it. However, a provider implementation of query processing is probably more efficient than the WMI version. To support queries, your instance provider must implement the
+<b>ExecQueryAsync</b> method. If a provider supports
+<b>ExecQueryAsync</b>, WMI sends a simple unary SELECT query directly to the provider through the <i>strQuery</i> parameter and the provider must parse the query and return the relevant instances. The provider must parse the query because WMI does not modify the query—even when the query is written in WQL.</para>
+      <para>To use WMI for query processing, do not set the <b>QuerySupportLevels</b> property in your <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--instanceproviderregistration">__InstanceProviderRegistration</a>. When you do this, WMI calls your implementation of <see cref="CreateInstanceEnumAsync" /> and post filters the results so that the caller only gets those instances that meet the query criteria.</para>
+      <para>The following example shows a typical instance provider implementation of
+<b>ExecQueryAsync</b>. The
+<see cref="IWbemObjectSink.SetStatus" /> method is called to indicate the end of the result set. It may also be called with no intervening calls to
+<see cref="IWbemObjectSink.Indicate" /> if error conditions occur.</para>
+      <para>Because the call-back might not be returned at the same authentication level as the client requires, it is recommended that you use semisynchronous instead of asynchronous communication. If you require asynchronous communication, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <para>For more information, see <see cref="IWbemServices.ExecQuery" /> and <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <code>HRESULT CStdProvider.ExecQueryAsync(
+            /* [in] */ BSTR strQueryLanguage,
+            /* [in] */ BSTR strQuery,
+            /* [in] */ long lFlags,
+            /* [in] */ IWbemContext __RPC_FAR *pCtx,
+            /* [in] */ IWbemObjectSink __RPC_FAR *pResponseHandler
+            )
+{
+   IWbemClassObject *pClass = 0;
+
+// Parse the query.
+//   You must implement ParseQuery().
+    if (!ParseQuery(strQuery))  return WBEM_E_PROVIDER_NOT_CAPABLE;
+
+// Assume there is an IWbemServices pointer (m_pSvc) available to
+// retrieve the class definition.
+
+    HRESULT hRes = m_pSvc-&gt;GetObject(L"ClassName", 0, NULL, &amp;amp;amp;amp;amp;amp;pClass, 0);
+    if (FAILED(hRes))
+        return hRes;
+
+// Call a method to determine number of instances returned.
+// You need to implement the GetNumberInst function.
+    int iNumInst = GetNumberInst();
+
+// Now loop through the private source and create each
+// instance which is part of the result set of the query.
+    for (int iCnt = 0 ; iCnt &lt; iNumInst ; iCnt++)
+    {
+// Prepare an empty object to receive the class definition.
+         IWbemClassObject *pNextInst = 0;
+         hRes = pClass-&gt;SpawnInstance(0, &amp;amp;amp;amp;amp;amp;pNextInst);
+
+// Create the instance.
+//   You must implement FillInst().
+         /*FillInst(pNextInst, iCnt);*/
+
+// Deliver the class to WMI.
+         pResponseHandler-&gt;Indicate(1, &amp;amp;amp;amp;amp;amp;pNextInst);
+         pNextInst-&gt;Release( );
+    }
+
+// Clean up memory
+    pClass-&gt;Release();
+
+// Send finish message to WMI.
+
+    pResponseHandler-&gt;SetStatus(0, hRes, 0, 0);
+
+    return hRes;
+}
+</code>
+      <para>In the previous example, the instance provider acquires a thread from WMI to perform the necessary synching operations. You can call the sink <see cref="AddRef" /> method and create another thread to deliver the objects in the result set. Creating another thread allows the current thread to return to WMI without depleting the thread pool. Whether the provider chooses the single thread design or the dual thread design depends on how long the provider plans to use the WMI thread. There are no fixed rules. Experimentation can help you determine how your design affects WMI performance.</para>
+      <para>
+        <b>Note</b>  When providers implement
+<b>ExecQueryAsync</b>, they are expected by default to return the correct result set based on the query. If a provider cannot return the correct result set easily, it may return a superset of the results and request that WMI do post-filtering before delivering the objects to the client to ensure that the result set is correct. To do this, the provider calls
+<see cref="SetStatus" /> on the sink provided to its
+<b>ExecQueryAsync</b> implementation, with the following flags.</para>
+      <code>// The pSink variable is of type IWbemObjectSink*
+pSink-&gt;SetStatus(WBEM_STATUS_REQUIREMENTS,
+    WBEM_REQUIREMENTS_START_POSTFILTER, 0, 0);
+</code>
+      <para>
+        <b>Note</b>  Any objects subsequently sent to the WMI service are filtered. The provider can turn off post-filtering in mid-stream by using the following call.</para>
+      <code>// The pSink variable is of type IWbemObjectSink*
+pSink-&gt;SetStatus(WBEM_STATUS_REQUIREMENTS,
+    WBEM_REQUIREMENTS_STOP_POSTFILTER, 0, 0);
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</seealso>
+    <seealso cref="IWbemObjectSink.SetStatus" />
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.ExecQuery" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/querying-with-wql">Querying with WQL</seealso>
+  </member>
+  <member name="IWbemServices.GetObject">
+    <summary>
+      <para>The
+<b>IWbemServices.GetObject</b> method retrieves a class or instance. This method only retrieves objects from the namespace associated with the current
+<see cref="IWbemServices" /> object.</para>
+    </summary>
+    <param name="strObjectPath">
+      <para>Path of the object to retrieve. If this is <b>NULL</b>, an empty object is returned that can become a new class. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-a-class">Creating a Class</a>.</para>
+    </param>
+    <param name="lFlags">
+      <para>The following flags affect the behavior of this method.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, WMI retrieves the amended qualifiers stored in the localized namespace of the current connection's locale. If not set, only the qualifiers stored in the immediate namespace are retrieved.</para>
+      <h4>WBEM_FLAG_RETURN_WBEM_COMPLETE</h4>
+      <para>This flag makes this a synchronous call.</para>
+      <h4>WBEM_FLAG_RETURN_IMMEDIATELY</h4>
+      <para>This flag makes this a semisynchronous call. You must provide a valid pointer for the <i>ppCallResult</i> parameter. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>WBEM_FLAG_DIRECT_READ</h4>
+      <para>This flag causes direct access to the provider for the class specified without any regard to its parent class or subclasses.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider that is producing the requested class or instance. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="ppObject">
+      <para>If not <b>NULL</b>, this receives the object, if it is found. The returned object has a positive reference count. The caller must use <b>Release</b> when the object is no longer needed. In all cases of error, this parameter is set to point to <b>NULL</b>.</para>
+    </param>
+    <param name="ppCallResult">
+      <para>If <b>NULL</b>, this parameter is not used. If the <i>lFlags</i> parameter contains <b>WBEM_FLAG_RETURN_IMMEDIATELY</b>, this call returns immediately with <b>WBEM_S_NO_ERROR</b>. The <i>ppCallResult</i> parameter receives a pointer to a new
+<see cref="IWbemCallResult" /> object, which can then be polled to obtain the result using the
+<see cref="GetCallStatus" /> method. The caller can call
+<see cref="IWbemCallResult.GetResultObject" /> to retrieve the object when it becomes available.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-a-class">Creating a Class</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-the-location-of-a-wmi-object">Describing the Location of a WMI Object</seealso>
+    <seealso cref="IWbemCallResult" />
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.GetObjectAsync" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.GetObjectAsync">
+    <summary>
+      <para>The
+<b>IWbemServices.GetObjectAsync</b> method retrieves an object, either a class definition or instance, based on its path. This is similar to
+<see cref="IWbemServices.GetObject" /> except that the call returns immediately, and the object is provided to the supplied object sink.</para>
+      <para>Currently, this method retrieves objects only from the namespace associated with the
+<see cref="IWbemServices" /> pointer.</para>
+    </summary>
+    <param name="strObjectPath">
+      <para>Path of the object to retrieve. For an instance provider, <i>StrObjectPath</i> can be in the following format:</para>
+      <list type="bullet">
+        <item>
+          <description>Namespace:Class.Key = "Value"</description>
+        </item>
+        <item>
+          <description>Namespace:Class = "Value"</description>
+        </item>
+        <item>
+          <description>Namespace:Class.Key = "Value", Key2 = "Value2"</description>
+        </item>
+      </list>
+      <para>Specifying the namespace before the class is optional. Object paths without namespaces refer to instances in the current namespace. If necessary, you can substitute the single-quotation mark character (') for the double-quotation mark character (") to delimit the start and end of string property types.</para>
+      <para>If this is <b>NULL</b>, an empty object, which can become a new class, is returned. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-a-class">Creating a Class</a>.</para>
+    </param>
+    <param name="lFlags">
+      <para>The following flags affect the behavior of this method.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, WMI retrieves the amended qualifiers stored in the localized namespace of the current connection's locale. If not set, only the qualifiers stored in the immediate namespace are retrieved.</para>
+      <h4>WBEM_FLAG_DIRECT_READ</h4>
+      <para>This flag causes direct access to the provider for the class specified without any regard to its parent class or subclasses.</para>
+      <h4>WBEM_FLAG_SEND_STATUS</h4>
+      <para>Registers a request to receive intermediate status reports through the client's implementation of
+<see cref="IWbemObjectSink.SetStatus" />. Provider implementation must support intermediate status reporting for this flag to change behavior.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that can be used by the provider that produces the requested class or instance. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="pResponseHandler">
+      <para>Pointer to the caller's implementation of
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a>. This handler receives the requested object when it becomes available through the
+<see cref="IWbemObjectSink.Indicate" /> method. The <i>pObjParam</i> parameter contains the object. If any error code is returned, then the supplied
+<b>IWbemObjectSink</b> pointer is not used. If <b>WBEM_S_NO_ERROR</b> is returned, then the user's
+<b>IWbemObjectSink</b> implementation is called to indicate the result of the operation. Windows Management only calls AddRef to the pointer in cases where <b>WBEM_S_NO_ERROR</b> returns. In cases where an error code returns, the reference count is the same as on entry. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" /><b>GetErrorInfo</b>.</para>
+      <para>COM-specific error codes can also be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>When implementing an instance provider, you should use the object path parser sample code in the WMI section of the PSDK to parse the object path for recognizing which object the client requests. Further, a provider that supports a derived class need only supply the values for the local properties of the class, rather than the inherited properties. WMI requests that the provider of the base class handle inherited properties.</para>
+      <para>When implementing a class provider,
+<b>GetObjectAsync</b> must determine which class is being requested by parsing the class name object path stored in the <i>strObjectPath</i> parameter. The
+<b>GetObjectAsync</b> method then either builds the class dynamically or takes the class from a private cache. Then,
+<b>GetObjectAsync</b> sends the class to WMI using the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a> pointer pointed to by the <i>pResponseHandler</i> parameter. The
+<see cref="IWbemObjectSink.SetStatus" /> method is called to indicate the end of the result set. It can also be called with no intervening calls to
+<see cref="IWbemObjectSink.Indicate" /> if error conditions occur.</para>
+      <para>Because the call-back might not be returned at the same authentication level as the client requires, it is recommended that you use semisynchronous instead of asynchronous communication. If you require asynchronous communication, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <para>For more information about using methods semisynchronously, see <see cref="IWbemServices.GetObject" /> and <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>Examples</h4>
+      <para>The following example describes how to implement
+<b>GetObjectAsync</b> for an instance provider.</para>
+      <code>SCODE CInstPro.GetObjectAsync (BSTR ObjectPath,
+                                long lFlags, IWbemContext *pCtx,
+                                IWbemObjectSink FAR* pHandler)
+{
+    ULONG cRef;         // Reference count
+    SCODE sc;
+    BOOL bOK = FALSE;
+
+    IWbemServices *  m_pNamespace;
+    IWbemClassObject FAR* pObj;
+
+    // Check arguments.
+
+    if(ObjectPath == NULL || pHandler == NULL ||
+        m_pNamespace == NULL)
+        return WBEM_E_INVALID_PARAMETER;
+
+
+    // Based on the object path, produce an empty instance
+    // of the class and gather required data,
+    // setting the instance's property values accordingly.
+    // This example assumes that GetByPath is implemented
+    // by the provider to do this.
+    // The IWbemPath interface can be used to parse
+    // the object path, separating the namespace and class name.
+
+    sc = GetByPath (ObjectPath, &amp;amp;amp;amp;amp;amp;pObj, pCtx);
+    if(sc == S_OK)
+    {
+        pHandler-&gt;Indicate (1, &amp;amp;amp;amp;amp;amp;pObj);
+        pObj-&gt;Release();
+        bOK = TRUE;
+    }
+
+    sc = (bOK) ? S_OK : WBEM_E_NOT_FOUND;
+
+    // Set status.
+
+    pHandler-&gt;SetStatus(0,sc, NULL, NULL);
+
+    // Free memory resources.
+
+    SysFreeString(ObjectPath);
+    m_pNamespace-&gt;Release();
+    pObj-&gt;Release();
+
+    return sc;
+
+}
+</code>
+      <para>The following example shows how a typical class provider  implements
+<b>GetObjectAsync</b>.</para>
+      <code>HRESULT CStdProvider.GetObjectAsync(
+            /* [in] */ BSTR strObjectPath,
+            /* [in] */ long lFlags,
+            /* [in] */ IWbemContext __RPC_FAR *pCtx,
+            /* [in] */ IWbemObjectSink __RPC_FAR *pResponseHandler
+            )
+{
+
+    IWbemClassObject *pClass = 0;
+
+// Assume there is an IWbemServices pointer available.
+// Retrieve an 'empty' object which is built up
+// into the class definition.
+
+    HRESULT hRes = m_pSvc-&gt;GetObject(NULL, 0, NULL, &amp;amp;amp;amp;amp;amp;pClass, 0);
+    if (hRes)
+        return hRes;
+
+// Parse the object path and determine which class is
+// required. The path string is the required class name.
+// Fill in the properties required for the class definition
+// using pClass-&gt;Put(...), and so on.
+
+
+    // ...
+
+    // Send the class definition back to WMI.
+    pResponseHandler-&gt;Indicate(1, &amp;amp;amp;amp;amp;amp;pClass);
+
+// Indicate that it is now finished.
+
+    pResponseHandler-&gt;SetStatus(0, WBEM_S_NO_ERROR, 0, 0);
+    SysFreeString(strObjectPath);
+    m_pSvc-&gt;Release();
+    pClass-&gt;Release();  // This is no longer needed.
+    return WBEM_S_NO_ERROR;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-a-class">Creating a Class</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-the-location-of-a-wmi-object">Describing the Location of a WMI Object</seealso>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.GetObject" />
+  </member>
+  <member name="IWbemServices.OpenNamespace">
+    <summary>
+      <para>The
+<b>IWbemServices.OpenNamespace</b> method provides the caller with a new
+<see cref="IWbemServices" /> pointer that has the specified child namespace as its operating context. All operations through the new pointer, such as class or instance creation, only affect that namespace. The namespace must be a child namespace of the current object through which this method is called.</para>
+    </summary>
+    <param name="strNamespace">
+      <para>Path to the target namespace. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-hierarchies-within-wmi">Creating Hierarchies within WMI</a>. This namespace can only be relative to the current namespace associated with the
+<see cref="IWbemServices" /> interface pointer. This parameter cannot be an absolute path or <b>NULL</b>.</para>
+    </param>
+    <param name="lFlags">
+      <para>This parameter can be set to 0 to make this a synchronous call. To make this a semisynchronous call, set <i>lFlags</i> to <b>WBEM_FLAG_RETURN_IMMEDIATELY</b>, provide a valid pointer for the <i>ppResult</i> parameter, and this call will return immediately. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <param name="pCtx">
+      <para>Reserved. This parameter must be <b>NULL</b>.</para>
+    </param>
+    <param name="ppWorkingNamespace">
+      <para>Receives the object that represents the new namespace context. The returned pointer has a positive reference count. The caller must call <b>Release</b> on this pointer when it is no longer needed. This pointer is set to <b>NULL</b> when there are errors. If this parameter is specified, then <i>ppResult</i> must be <b>NULL</b>.</para>
+    </param>
+    <param name="ppResult">
+      <para>Typically <b>NULL</b>. If not <b>NULL</b>, then <i>ppWorkingNamespace</i> must be <b>NULL</b>. In this case, the parameter receives a pointer to a new
+<see cref="IWbemCallResult" /> object. If the <i>lFlags</i> parameter is set to <b>WBEM_FLAG_RETURN_IMMEDIATELY</b> this call returns immediately. Then the caller can periodically poll the
+<see cref="IWbemCallResult.GetResultServices" /> method until the pointer for the requested namespace becomes available. This parameter is set to point to <b>NULL</b> when there is an error and a new object is not returned.</para>
+      <para>
+        <b>Note</b>  It is important to note that when you use this parameter, you must set <i>ppResult</i> to point to <b>NULL</b> before calling the method. This is a COM rule.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes may also be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>The
+<see cref="IWbemLocator.ConnectServer" /> method can also be used to open the same namespace. The only difference is that the
+<b>OpenNamespace</b> method allows you to place relative object paths in the <i>Namespace</i> parameter to open child namespaces recursively;
+<b>IWbemLocator.ConnectServer</b> requires a full object path. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-a-wmi-namespace-object-path">Describing a WMI Namespace Object Path</a>.</para>
+      <para>For example, if the current namespace associated with the
+<see cref="IWbemServices" /> interface pointer is root, then using Default in the <i>Namespace</i> parameter yields a new pointer bound to the root\default namespace.</para>
+      <para>The namespace is closed when <b>Release</b> is called and the reference count reaches 0 (zero).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-hierarchies-within-wmi">Creating Hierarchies within WMI</seealso>
+    <seealso cref="IWbemLocator.ConnectServer" />
+    <seealso cref="IWbemServices" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.PutClass">
+    <summary>
+      <para>The
+<b>IWbemServices.PutClass</b> method creates a new class or updates an existing one. The class specified by the <i>pObject</i> parameter must have been correctly initialized with all of the required property values.</para>
+      <para>The user may not create classes with names that begin or end with an underscore (_). This is reserved for system classes.</para>
+    </summary>
+    <param name="pObject">
+      <para>Must point to a valid class definition. The reference count is not changed.</para>
+    </param>
+    <param name="lFlags">
+      <para>The following flags affect the behavior of this method.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, WMI does not store any qualifiers with the amended flavor. If this flag is not set, it is assumed that this object is not localized, and all qualifiers are stored with this instance.</para>
+      <h4>WBEM_FLAG_CREATE_OR_UPDATE</h4>
+      <para>This flag causes the class to be created if it does not exist, or overwritten if it exists already.</para>
+      <h4>WBEM_FLAG_UPDATE_ONLY</h4>
+      <para>This flag causes this call to update. The class must exist for the call to be successful.</para>
+      <h4>WBEM_FLAG_CREATE_ONLY</h4>
+      <para>This flag is used for creation only. The call fails if the class already exists.</para>
+      <h4>WBEM_FLAG_RETURN_IMMEDIATELY</h4>
+      <para>This flag causes this to be a semisynchronous call. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>WBEM_FLAG_OWNER_UPDATE</h4>
+      <para>Push providers must specify this flag when calling
+<b>PutClass</b>, to indicate that this class has changed.</para>
+      <h4>WBEM_FLAG_UPDATE_COMPATIBLE</h4>
+      <para>This flag allows a class to be updated if there are no derived classes and there are no instances for that class. It also allows updates in all cases if the change is just to nonimportant qualifiers (for example, the <b>Description</b> qualifier). This is the default behavior for this call and is used for compatibility with previous versions of Windows Management. If the class has instances or changes are to important qualifiers, the update fails.</para>
+      <h4>WBEM_FLAG_UPDATE_SAFE_MODE</h4>
+      <para>This flag allows updates of classes even if there are child classes as long as the change does not cause any conflicts with child classes. An example of an update this flag would allow would be to add a new property to the base class that was not previously mentioned in any of the child classes. If the class has instances, the update fails.</para>
+      <h4>WBEM_FLAG_UPDATE_FORCE_MODE</h4>
+      <para>This flag forces updates of classes when conflicting child classes exist. An example of an update this flag would force would be if a class qualifier were defined in a child class, and the base class tried to add the same qualifier which conflicted with the existing one. In force mode, this conflict would be resolved by deleting the conflicting qualifier in the child class.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object required by the dynamic class provider that is producing the class instances. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="ppCallResult">
+      <para>If <b>NULL</b>, this parameter is not used. If the <i>lFlags</i> parameter contains <b>WBEM_FLAG_RETURN_IMMEDIATELY</b>, this call returns immediately with <b>WBEM_S_NO_ERROR</b>. The <i>ppCallResult</i> parameter receives a pointer to a new
+<see cref="IWbemCallResult" /> object, which can then be polled to obtain the result using the
+<see cref="IWbemCallResult.GetCallStatus" /> method.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>On failure, you can obtain any available information from the COM function <see cref="GetErrorInfo" />.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+      <para>
+        <b>Note</b>  Unpredictable behavior will result if you change class definitions while they are in use by clients or providers. The
+<b>IWbemServices.PutClass</b> method should only be used to create or update a class when there are no clients or providers currently using the class.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-a-class">Creating a Class</seealso>
+    <seealso cref="IWbemCallResult" />
+    <seealso cref="IWbemServices" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.PutClassAsync">
+    <summary>
+      <para>The <b>IWbemServices.PutClassAsync</b> method
+creates a new class, or updates an existing one. The class specified by the <i>pObject</i></para>
+      <para>parameter must be correctly initialized with all of the required property values. The call immediately returns.
+Success or failure is supplied to the object sink specified by the <i>pResponseHandler</i></para>
+      <para>parameter.</para>
+    </summary>
+    <param name="pObject">
+      <para>Pointer to the object containing the class definition.</para>
+    </param>
+    <param name="lFlags">
+      <para>One or more of the following values are valid.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, WMI does not store any qualifiers with the <b>amended</b> flavor. If this flag is not set, it is assumed that this object is not localized, and all qualifiers are stored with this instance.</para>
+      <h4>WBEM_FLAG_CREATE_OR_UPDATE</h4>
+      <para>This flag causes this class to be created if it does not exist or be overwritten if it exists already.</para>
+      <h4>WBEM_FLAG_UPDATE_ONLY</h4>
+      <para>Updates an existing class.</para>
+      <h4>WBEM_FLAG_CREATE_ONLY</h4>
+      <para>This flag is for class creation only. The call fails if the class already exists.</para>
+      <h4>WBEM_FLAG_SEND_STATUS</h4>
+      <para>This flag registers with Windows Management a request to receive intermediate status reports through the client's implementation of
+<see cref="IWbemObjectSink.SetStatus" />. Provider implementation must support intermediate status reporting for this flag to change behavior.</para>
+      <h4>WBEM_FLAG_OWNER_UPDATE</h4>
+      <para>Push providers must specify this flag when calling
+<b>PutClassAsync</b> to indicate that this class has changed.</para>
+      <h4>WBEM_FLAG_UPDATE_COMPATIBLE</h4>
+      <para>This flag allows a class to be updated if there are no derived classes and there are no instances for that class. It also allows updates in all cases if the change is just to non-important qualifiers (for example, the <b>Description</b> qualifier). This is the default behavior for this call and is used for compatibility with previous versions of Windows Management. If the class has instances or changes are to important qualifiers, the update fails.</para>
+      <h4>WBEM_FLAG_UPDATE_SAFE_MODE</h4>
+      <para>This flag allows updates of classes even if there are child classes, as long as the change does not cause any conflicts with child classes. An example of an update this flag would allow would be to add a new property to the base class that was not previously mentioned in any of the child classes. If the class has instances, the update fails.</para>
+      <h4>WBEM_FLAG_UPDATE_FORCE_MODE</h4>
+      <para>This flag forces updates of classes when conflicting child classes exist. An example of an update this flag would force would be if a class qualifier were defined in a child class, and the base class tried to add the same qualifier which conflicted with the existing one. In force mode, this conflict would be resolved by deleting the conflicting qualifier in the child class.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object that may be used by the provider that is receiving the requested class. The values in the context object must be specified in the documentation for the provider in question. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="pResponseHandler">
+      <para>Pointer to the caller's implementation of
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a>. This handler receives the status of the
+<b>Put</b> request when the status becomes available using the
+<see cref="SetStatus" /> method. If any error code is returned, then the supplied
+<b>IWbemObjectSink</b> pointer is not used. If <b>WBEM_S_NO_ERROR</b> is returned, then the user's
+<b>IWbemObjectSink</b> implementation is called to indicate the result of the operation. Windows Management only calls <b>AddRef</b> to the pointer in cases where <b>WBEM_S_NO_ERROR</b> returns. In cases where an error code returns, the reference count is the same as on entry. For a detailed explanation of this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>Other status or error codes are reported to the object sink specified by the <i>pReponseHandler</i> parameter.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+      <para>Note that if
+<see cref="PutInstanceAsync" /> returns <b>WBEM_S_NO_ERROR</b>, WMI waits for a result from the
+<b>SetStatus</b> method of the response handler. WMI waits indefinitely on a local connection or until a remote connection time-out occurs.</para>
+      <para>Because returning <b>WBEM_E_FAILED</b> causes other providers to not have a chance to create the class, it should only be returned when the class provider has failed in a way that might later succeed.</para>
+      <para>
+        <b>Note</b>  Unpredictable behavior will result if you change class definitions while they are in use by clients or providers. The
+<see cref="IWbemServices.PutClass" /> method should only be used to create or update a class when there are no clients or providers currently using the class.</para>
+    </returns>
+    <remarks>
+      <para>If multiple class providers are installed for one particular class, WMI will not recognize which class
+provider is capable of creating that class.</para>
+      <para>The <see cref="IWbemObjectSink.SetStatus" /> method is
+called to indicate the end of the result set. It may also be called with no intervening calls to
+<see cref="IWbemObjectSink.Indicate" /> if error conditions
+occur.</para>
+      <para>Because the call-back might not be returned at the same authentication level as the client requires, it is
+recommended that you use semisynchronous instead of asynchronous communication. If you require asynchronous
+communication, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <para>For more information about using methods semisynchronously, see
+<see cref="IWbemServices.PutClass" /> and
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>Examples</h4>
+      <para>The following code example describes a simple implementation of
+<b>PutClassAsync</b>.</para>
+      <code>HRESULT CStdProvider.PutClassAsync(
+            /* [in] */ IWbemClassObject __RPC_FAR *pObject,
+            /* [in] */ long lFlags,
+            /* [in] */ IWbemContext __RPC_FAR *pCtx,
+            /* [in] */ IWbemObjectSink __RPC_FAR *pResponseHandler
+            )
+{
+    // You must implement the ClassIsValid function yourself to
+    // determine if the class contains a valid instance
+   if (ClassIsValid(lFlags, pObject))
+   {
+       return WBEM_S_NO_ERROR;
+   }
+
+   return WBEM_E_PROVIDER_NOT_CAPABLE;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-a-class">Creating a Class</seealso>
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.PutClass" />
+  </member>
+  <member name="IWbemServices.PutInstance">
+    <summary>
+      <para>The
+<b>IWbemServices.PutInstance</b> method creates or updates an instance of an existing class. The instance is written to the WMI repository.</para>
+    </summary>
+    <param name="pInst">
+      <para>Pointer to the instance to be written. The caller cannot make assumptions about the reference count at the completion of this call.</para>
+    </param>
+    <param name="lFlags">
+      <para>One or more of the following values can be set.</para>
+      <h4>WBEM_FLAG_CREATE_OR_UPDATE</h4>
+      <para>This flag causes the instance to be created if it does not exist or overwritten if it exists already.</para>
+      <h4>WBEM_FLAG_UPDATE_ONLY</h4>
+      <para>This flag causes this call to update. The instance must exist for the call to be successful.</para>
+      <h4>WBEM_FLAG_CREATE_ONLY</h4>
+      <para>This flag is used for creation only. The call fails if the instance already exists.</para>
+      <h4>WBEM_FLAG_RETURN_IMMEDIATELY</h4>
+      <para>This flag causes this to be a semisynchronous call. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, WMI does not store any qualifiers with the <b>Amended</b> flavor. If this flag is not set, it is assumed that this object is not localized, and all qualifiers are stored with this instance.</para>
+    </param>
+    <param name="pCtx">
+      <para>Typically <b>NULL</b>, indicating that every property in the instance is to be updated. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object containing more information about the instance. The data in the context object must be documented by the provider responsible for the instance. A non-<b>NULL</b><b>IWbemContext</b> object can indicate whether support exists for partial-instance updates.</para>
+      <para>For more information about how to support full and partial-instance updates, see
+<see cref="IWbemServices.PutInstanceAsync" />. For more information about requesting a full or partial-instance update operation, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/modifying-an-instance-property">Modifying an Instance Property</a>.</para>
+    </param>
+    <param name="ppCallResult">
+      <para>If <b>NULL</b>, this parameter is not used. If the <i>lFlags</i> parameter contains <b>WBEM_FLAG_RETURN_IMMEDIATELY</b>, this call returns immediately with <b>WBEM_S_NO_ERROR</b>. The <i>ppCallResult</i> parameter then receives a pointer to a new
+<see cref="IWbemCallResult" /> object, which can be polled with
+<see cref="IWbemCallResult.GetCallStatus" /> to obtain the result.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>Applications and providers call
+<b>PutInstance</b> to create or update an instance of an existing class. Depending on how the <i>pCtx</i> parameter is set, either some or all of the properties of the instance are updated. For more information about how to support partial instance updating, see
+<see cref="IWbemServices.PutInstanceAsync" />. For more information about requesting a partial instance update, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/modifying-an-instance-property">Modifying an Instance Property</a>.</para>
+      <para>The
+<b>PutInstance</b> method supports creating instances and updating instances only. It does not support moving instances. That is, a caller cannot set the <i>pInst</i> parameter to an instance that has a key that is the same as another instance in a sibling class. For example, suppose <b>ClassA</b> is the base class to <b>ClassB</b> and <b>ClassC</b>. The <b>ClassA</b> class defines the <b>KeyProp</b> property as its key and <b>ClassB</b> has an instance that has <b>KeyProp</b> set to 1. To create an instance of <b>ClassC</b> with <b>KeyProp</b> set to 1, an application must first delete the <b>ClassB</b> instance by calling
+<see cref="DeleteInstance" /> and then save the <b>ClassC</b> instance with
+<b>PutInstance</b>.</para>
+      <para>When the instance pointed to by <i>pInst</i> belongs to a subclass, Windows Management calls all of the providers responsible for the classes from which the subclass derives. All of these providers must succeed for the original
+<b>PutInstance</b> request to succeed. The provider supporting the topmost class in the hierarchy is called first. The calling order continues with the subclass of the topmost class and proceeds from top to bottom until Windows Management reaches the provider for the class owning the instance pointed to by <i>pInst</i>.</para>
+      <para>Windows Management does not call the providers for any of the child classes of an instance. Therefore, if an application wants to change the values of inherited properties, the application must call
+<b>PutInstance</b> on the full instance of the child class rather than a corresponding instance of the parent class.</para>
+      <para>When an application must update an instance that belongs to a class hierarchy, the <i>pInst</i> parameter must point to the instance containing the properties to be modified. That is, consider a target instance that belongs to <b>ClassB</b>. The <b>ClassB</b> instance derives from <b>ClassA</b>, and <b>ClassA</b> defines the property <b>PropA</b>. If an application wants to make a change to the value of <b>PropA</b> in the <b>ClassB</b> instance, it must set <i>pInst</i> to that instance rather than an instance of <b>ClassA</b>.</para>
+      <para>Calling
+<b>PutInstance</b> on an instance of an abstract class is not allowed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-an-instance">Creating an Instance</seealso>
+    <seealso cref="IWbemCallResult" />
+    <seealso cref="IWbemServices" />
+    <seealso cref="IWbemServices.PutInstanceAsync" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-an-error-code">Retrieving an Error Code</seealso>
+  </member>
+  <member name="IWbemServices.PutInstanceAsync">
+    <summary>
+      <para>The <b>IWbemServices.PutInstanceAsync</b></para>
+      <para>method asynchronously creates or updates an instance of an existing class. Update confirmation or error reporting
+is provided through the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a> interface
+implemented by the caller.</para>
+    </summary>
+    <param name="pInst">
+      <para>Pointer to the instance to be written to the WMI repository. The caller cannot make assumptions about the
+reference count at the completion of this call.</para>
+    </param>
+    <param name="lFlags">
+      <para>Specifies whether the caller wants the instance created if the instance does not currently exist.</para>
+      <para>When implementing an instance provider, you can choose to support a limited number of the flags in
+<i>lFlags</i> by returning <b>WBEM_E_PROVIDER_NOT_CAPABLE</b>.</para>
+      <para>This property can have one or more of the following values.</para>
+      <h4>WBEM_FLAG_CREATE_OR_UPDATE</h4>
+      <para>This flag causes this instance to be created if it does not exist or be overwritten if it exists already.</para>
+      <h4>WBEM_FLAG_UPDATE_ONLY</h4>
+      <para>Updates an existing instance.</para>
+      <h4>WBEM_FLAG_CREATE_ONLY</h4>
+      <para>This flag is for instance creation only. The call fails if the class already exists.</para>
+      <h4>WBEM_FLAG_SEND_STATUS</h4>
+      <para>This flag registers with Windows Management a request to receive intermediate status reports through the
+clients implementation of
+<see cref="IWbemObjectSink.SetStatus" />. Provider
+implementation must support intermediate status reporting for this flag to change behavior.</para>
+      <h4>WBEM_FLAG_USE_AMENDED_QUALIFIERS</h4>
+      <para>If this flag is set, WMI does not store any qualifiers with the
+<b>Amended</b> flavor. If this flag is not set, it is assumed that this object is
+not localized, and all qualifiers are stored with this instance.</para>
+    </param>
+    <param name="pCtx">
+      <para>Pointer describing if the client is requesting a partial-instance update or full-instance update. A partial-instance update modifies a subset of the properties of the instance. In contrast, a full-instance update modifies all of the properties. If <b>NULL</b>, this parameter indicates that the caller application is requesting a full-instance update. Otherwise, this is a pointer to an
+<see cref="IWbemContext" /> object required by the dynamic class provider that is producing the class instances. For more information about this parameter, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
+    </param>
+    <param name="pResponseHandler">
+      <para>Pointer to the caller's implementation of
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a>. This handler receives the status of this call when it becomes available using the
+<see cref="IWbemObjectSink.SetStatus" /> method. If any error code is returned, then the supplied
+<b>IWbemObjectSink</b> pointer is not used. If <b>WBEM_S_NO_ERROR</b> is returned, then the user's
+<b>IWbemObjectSink</b> implementation is called to indicate the result of the operation. Windows Management only calls <b>AddRef</b> on the pointer in cases where <b>WBEM_S_NO_ERROR</b> returns. In cases where an error code returns, the reference count is the same as on entry. For more information about how to make asynchronous calls, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>Note that if
+<b>PutInstanceAsync</b> returns <b>WBEM_S_NO_ERROR</b>, WMI waits for a result from the
+<b>SetStatus</b> method of the response handler. WMI waits indefinitely on a local connection or until a remote connection time-out occurs.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>Clients that call
+<b>PutInstanceAsync</b> must always expect the results of the call to be reported using their
+<see cref="IWbemObjectSink.Indicate" /> method.</para>
+      <para>When the instance pointed to by <i>pInst</i> belongs to a class that is derived from other classes, the success of
+<b>PutInstanceAsync</b> depends on the success of the providers responsible for the parent classes. For example, if <i>pInst</i> belongs to <b>ClassB</b> and <b>ClassB</b> derives from <b>ClassA</b>, a call to the
+<b>PutInstanceAsync</b> method implemented by the provider for <b>ClassA</b> must succeed for the update operation on <b>ClassB</b> to succeed. For more information, see Remarks in
+<see cref="IWbemServices.PutInstance" />.</para>
+      <para>When implementing an instance provider, if the instance has a key property set to <b>NULL</b>,
+<b>PutInstanceAsync</b> should choose a value guaranteed to be unique within the class. When WMI services a request to update an instance with a <b>NULL</b> key property, it internally generates a <b>GUID</b> and assigns it to the key property. Further, when the instance being updated belongs to a child class, the success of the operation is dependent on the success of a
+<b>PutInstanceAsync</b> call to each of the providers responsible for the classes higher in the hierarchy. Do not return <b>WBEM_S_NO_ERROR</b> until you are sure that all of the other providers have succeeded. For more information, see
+<see cref="IWbemServices.PutInstance" />.</para>
+      <para>Instance providers supporting a partial update must check for the existence of the <b>__PUT_EXTENSIONS</b> context value. A system context value is a value defined by WMI to have specific meanings, is set by the client application, and is supported by an instance provider. The
+<see cref="IWbemContext" /> interface provides access to the system context values and other provider-specific context values. The following list lists the context values that support partial-instance update operations.</para>
+      <para>The
+<see cref="IWbemObjectSink.SetStatus" /> method is called to indicate the end of the result set. It may also be called with no intervening calls to
+<see cref="IWbemObjectSink.Indicate" /> if error conditions occur.</para>
+      <para>Because the call-back might not be returned at the same authentication level as the client requires, it is recommended that you use semisynchronous instead of asynchronous communication. If you require asynchronous communication, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <para>For more information about using methods semisynchronously, see <see cref="IWbemServices.PutInstance" /> and <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</a>.</para>
+      <list type="table">
+        <listheader>
+          <description>System context value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>__PUT_EXTENSIONS</b>
+            <para>(<b>VT_BOOL</b>)</para>
+          </description>
+          <description>
+            <para>The client application has set one or more of the other system context values to provide more information about the update operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>__PUT_EXT_STRICT_NULLS</b>
+            <para>(<b>VT_BOOL</b>)</para>
+          </description>
+          <description>
+            <para>The instance provider must force the setting of properties to <b>VT_NULL</b> when appropriate and raise an error on failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>__PUT_EXT_PROPERTIES</b>
+            <para>(<b>VT_ARRAY</b> | <b>VT_BSTR</b>)</para>
+          </description>
+          <description>
+            <para>Contains a list of the properties to update. The instance provider should ignore all other properties.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>__PUT_EXT_ATOMIC</b>
+            <para>(<b>VT_BOOL</b>)</para>
+          </description>
+          <description>
+            <para>All updates must succeed or the instance provider must revert back. There can be no partial success.</para>
+          </description>
+        </item>
+      </list>
+      <para>When implementing an instance provider, you should respond to a <b>NULL</b> property in <i>pCtx</i> in the following manner:</para>
+      <list type="bullet">
+        <item>
+          <description>If the property type is <b>VT_NULL</b>, the provider can either ignore the property without making a change or fail the operation.</description>
+        </item>
+        <item>
+          <description>If the property type is not <b>VT_NULL</b> and the property cannot be updated, the provider should return an error, because the provider is obligated to update the property with the new value.</description>
+        </item>
+      </list>
+      <para>If <i>pCtx</i> is not <b>NULL</b> and points to valid context information, the caller application is requesting a partial-instance update. As before, an instance providers that does not support partial-instance updating should fail the operation by returning <b>WBEM_E_PROVIDER_NOT_CAPABLE</b>.</para>
+      <para>When implementing an async operation, the async operation not complete until you release any <see cref="AddRef" />'s you have performed on <i>pResponseHandler</i>.  This is the case even if you call <see cref="SetStatus" /> on <i>pResponseHander</i>. If <i>pResponseHandler</i> is leaked, any sync or semi-sync clients will also not complete and possibly stop responding, depending on your implementation.</para>
+      <para>Even in catastrophic cases, you must release the references for decoupled providers. This is because in sync and semi-sync cases, the WMI service owns the implementation of <i>pResponseHandler</i>: even if your decoupled provider's process exits, the clients will still not be responding.</para>
+      <h4>Examples</h4>
+      <para>The following example describes how to structure
+<b>PutInstanceAsync</b>.</para>
+      <code>HRESULT CStdProvider.PutInstanceAsync(
+            /* [in] */ IWbemClassObject __RPC_FAR *pInst,
+            /* [in] */ long lFlags,
+            /* [in] */ IWbemContext __RPC_FAR *pCtx,
+            /* [in] */ IWbemObjectSink __RPC_FAR *pResponseHandler
+            )
+{
+   // You must implement the InstanceIsValid method
+   // to check to see if the instance in the pInst variable
+   // is valid.
+   if (InstanceIsValid(lFlags, pInst))
+   {
+       return WBEM_S_NO_ERROR;
+   }
+
+   return WBEM_E_PROVIDER_NOT_CAPABLE;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/calling-a-method">Calling a Method</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-an-instance">Creating an Instance</seealso>
+    <seealso cref="IWbemContext" />
+    <seealso cref="IWbemServices" />
+  </member>
+  <member name="IWbemServices.QueryObjectSink">
+    <summary>
+      <para>The <b>IWbemServices.QueryObjectSink</b> method
+allows the caller to obtain a notification handler that is exported by Windows Management. This allows the caller
+to write notifications and events directly to Windows Management. The caller should only write extrinsic events to
+Windows Management. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/determining-the-type-of-event-to-receive">Determining the Type of Event to Receive</a>.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0.</para>
+    </param>
+    <param name="ppResponseHandler">
+      <para>Receives the interface pointer to the notification handler. This is set to point to <b>NULL</b> when there is an error. The returned pointer has a positive reference count, and the caller must call <b>IWbemServices.Release</b> on the pointer when it is no longer needed. A <b>NULL</b> value can be returned if no notification handler is available. This is not an error.</para>
+      <para>
+        <b>Note</b>  The value of the <i>ppResponseHandler</i> parameter cannot be <b>NULL</b> when it is passed to this method.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to Windows Management.</para>
+      <para>
+        <b>Note</b>  Firing events using <b>QueryObjectSink</b></para>
+      <para>is permitted by default for Administrators only. Extending the permission to other users requires giving them
+<b>WBEM_FULL_WRITE</b> permission.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</seealso>
+    <seealso cref="IWbemServices" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/querying-wmi">Querying WMI</seealso>
+  </member>
+  <member name="IWbemServices">
+    <summary>
+      <para>The <b>IWbemServices</b> interface is used by clients and providers to access WMI services. The interface is implemented by WMI and WMI providers, and is the primary WMI interface.</para>
+      <code>    IWbemClassObject *pObj = NULL;
+
+    //The pWbemSvc pointer is of type IWbemServices*
+    pWbemSvc-&gt;GetObject(L"path", 0, 0, &amp;amp;amp;amp;amp;amp;pObj, 0);
+</code>
+    </summary>
+    <remarks>
+      <para>Providers that implement the
+<b>IWbemServices</b> interface must follow the documented semantics of each method that they implement; and providers must support the specified error return codes. WMI implements all of the methods, and typically, each provider implements a small subset of the available functionality on the interface. Providers must return WBEM_E_PROVIDER_NOT_CAPABLE for any method that  they do not implement.</para>
+      <para>All outbound interface pointers from any
+<b>IWbemServices</b> method should be initialized to <b>NULL</b> before calling the interface method. For example,
+calls to the <see cref="IWbemServices.GetObject" /> method return an
+<see cref="IWbemClassObject" /> interface pointer that should be pre-initialized to <b>NULL</b> before the <b>IWbemServices.GetObject</b> method  call.</para>
+      <h4>Examples</h4>
+      <para>For multiple C++ examples that use IWbemServices, see the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-c---application-examples">WMI C++ Application Examples</a> section.</para>
+      <para>The following code example shows how a provider can get an
+<b>IWbemServices</b> pointer. The code requires the following #include statements and references to compile.</para>
+      <code>#include &lt;iostream&gt;
+using namespace std;
+#include &lt;wbemidl.h&gt;
+#pragma comment(lib, "wbemuuid.lib")
+</code>
+      <code>IWbemLocator *pIWbemLocator = NULL;
+
+HRESULT hRes = CoCreateInstance (
+            CLSID_WbemAdministrativeLocator,
+            NULL ,
+            CLSCTX_INPROC_SERVER | CLSCTX_LOCAL_SERVER ,
+            IID_IUnknown ,
+            ( void ** ) &amp;amp;amp;amp;amp;amp;pIWbemLocator
+            ) ;
+
+IWbemServices *pWbemServices = NULL;
+
+if (SUCCEEDED(hRes))
+{
+    hRes = pIWbemLocator-&gt;ConnectServer(
+                L"root\\CIMV2",  // Namespace
+                NULL,          // Userid
+                NULL,           // PW
+                NULL,           // Locale
+                0,              // flags
+                NULL,           // Authority
+                NULL,           // Context
+                &amp;amp;amp;amp;amp;amp;pWbemServices
+                );
+
+pIWbemLocator-&gt;Release(); // Free memory resources.
+
+// Use pWbemServices
+
+}
+
+// Clean up
+pWbemServices-&gt;Release();
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/com-api-for-wmi">COM API for WMI</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-wmi-providers">Creating WMI Providers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/manipulating-class-and-instance-information">Manipulating Class and Instance Information</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/supplying-data-to-wmi-by-writing-a-provider">Supplying Data to WMI by Writing a Provider</seealso>
+  </member>
+</doc>

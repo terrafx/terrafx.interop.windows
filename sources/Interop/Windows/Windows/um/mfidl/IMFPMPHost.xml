@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFPMPHost.CreateObjectByCLSID">
+    <summary>
+      <para>Creates an object in the protect media path (PMP) process, from a CLSID.</para>
+    </summary>
+    <param name="clsid">
+      <para>The CLSID of the object to create.</para>
+    </param>
+    <param name="pStream">
+      <para>A pointer to the <b>IStream</b> interface. This parameter can be <b>NULL</b>. If this parameter is not <b>NULL</b>, the PMP host queries the created object for the <see cref="IPersistStream" /> interface and calls <b>IPersistStream.Load</b>, passing in the <i>pStream</i> pointer.</para>
+    </param>
+    <param name="riid">
+      <para>The interface identifier (IID) of the interface to retrieve.</para>
+    </param>
+    <param name="ppv">
+      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>You can use the <i>pStream</i> parameter to initialize the object after it is created.</para>
+    </remarks>
+    <seealso cref="IMFPMPHost" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/pmp-media-session">PMP Media Session</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</seealso>
+  </member>
+  <member name="IMFPMPHost.LockProcess">
+    <summary>
+      <para>Blocks the protected media path (PMP) process from ending.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>When this method is called, it increments the lock count on the PMP process. For every call to this method, the application should make a corresponding call to <see cref="IMFPMPHost.UnlockProcess" />, which decrements the lock count. When the PMP process is ready to exit, it waits for about 3 seconds, or until the lock count reaches zero, before exiting.</para>
+    </remarks>
+    <seealso cref="IMFPMPHost" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/pmp-media-session">PMP Media Session</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</seealso>
+  </member>
+  <member name="IMFPMPHost.UnlockProcess">
+    <summary>
+      <para>Decrements the lock count on the protected media path (PMP) process. Call this method once for each call to <see cref="IMFPMPHost.LockProcess" />.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFPMPHost" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/pmp-media-session">PMP Media Session</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</seealso>
+  </member>
+  <member name="IMFPMPHost">
+    <summary>
+      <para>Enables a media source in the application process to create objects in the protected media path (PMP) process.</para>
+    </summary>
+    <remarks>
+      <para>This interface is used when a media source resides in the application process but the Media Session resides in a PMP process. The media source can use this interface to create objects in the PMP process. For example, to play DRM-protected content, the media source typically must create an input trust authority (ITA) in the PMP process.</para>
+      <para>To use this interface, the media source implements the <see cref="IMFPMPClient" /> interface. The PMP Media Session calls <see cref="IMFPMPClient.SetPMPHost" /> on the media source, passing in a pointer to the <b>IMFPMPHost</b> interface.</para>
+      <para>You can also get a pointer to this interface by calling <see cref="IMFGetService.GetService" /> on the PMP Media Session, using the service identifier <b>MF_PMP_SERVICE</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/pmp-media-session">PMP Media Session</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</seealso>
+  </member>
+</doc>

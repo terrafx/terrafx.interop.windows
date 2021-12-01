@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='svgMarkerOrient.xml' path='doc/member[@name="svgMarkerOrient"]/*' />
 public enum svgMarkerOrient
 {
+    /// <include file='svgMarkerOrient.xml' path='doc/member[@name="svgMarkerOrient.SVG_MARKER_ORIENT_UNKNOWN"]/*' />
     SVG_MARKER_ORIENT_UNKNOWN = 0,
+
+    /// <include file='svgMarkerOrient.xml' path='doc/member[@name="svgMarkerOrient.SVG_MARKER_ORIENT_AUTO"]/*' />
     SVG_MARKER_ORIENT_AUTO = 1,
+
+    /// <include file='svgMarkerOrient.xml' path='doc/member[@name="svgMarkerOrient.SVG_MARKER_ORIENT_ANGLE"]/*' />
     SVG_MARKER_ORIENT_ANGLE = 2,
+
+    /// <include file='svgMarkerOrient.xml' path='doc/member[@name="svgMarkerOrient.svgMarkerOrient_Max"]/*' />
     svgMarkerOrient_Max = 2147483647,
 }

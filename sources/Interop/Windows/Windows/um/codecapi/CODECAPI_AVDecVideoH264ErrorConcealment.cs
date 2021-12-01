@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecVideoH264ErrorConcealment.xml' path='doc/member[@name="CODECAPI_AVDecVideoH264ErrorConcealment"]/*' />
 [Guid("ECECACE8-3436-462C-9294-CD7BACD758A9")]
 public partial struct CODECAPI_AVDecVideoH264ErrorConcealment
 {

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMPVScanPattern.xml' path='doc/member[@name="eAVEncMPVScanPattern"]/*' />
 public enum eAVEncMPVScanPattern
 {
+    /// <include file='eAVEncMPVScanPattern.xml' path='doc/member[@name="eAVEncMPVScanPattern.eAVEncMPVScanPattern_Auto"]/*' />
     eAVEncMPVScanPattern_Auto = 0,
+
+    /// <include file='eAVEncMPVScanPattern.xml' path='doc/member[@name="eAVEncMPVScanPattern.eAVEncMPVScanPattern_ZigZagScan"]/*' />
     eAVEncMPVScanPattern_ZigZagScan = 1,
+
+    /// <include file='eAVEncMPVScanPattern.xml' path='doc/member[@name="eAVEncMPVScanPattern.eAVEncMPVScanPattern_AlternateScan"]/*' />
     eAVEncMPVScanPattern_AlternateScan = 2,
 }

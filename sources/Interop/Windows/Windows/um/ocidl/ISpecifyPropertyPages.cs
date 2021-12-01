@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpecifyPropertyPages.xml' path='doc/member[@name="ISpecifyPropertyPages"]/*' />
 [Guid("B196B28B-BAB4-101A-B69C-00AA00341D07")]
 [NativeTypeName("struct ISpecifyPropertyPages : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpecifyPropertyPages : ISpecifyPropertyPages.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpecifyPropertyPages : ISpecifyPropertyPages.Inter
         return ((delegate* unmanaged<ISpecifyPropertyPages*, Guid*, void**, int>)(lpVtbl[0]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpecifyPropertyPages : ISpecifyPropertyPages.Inter
         return ((delegate* unmanaged<ISpecifyPropertyPages*, uint>)(lpVtbl[1]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpecifyPropertyPages : ISpecifyPropertyPages.Inter
         return ((delegate* unmanaged<ISpecifyPropertyPages*, uint>)(lpVtbl[2]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpecifyPropertyPages.xml' path='doc/member[@name="ISpecifyPropertyPages.GetPages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPages(CAUUID* pPages)

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENCRYPTION_BUFFER.xml' path='doc/member[@name="ENCRYPTION_BUFFER"]/*' />
 public unsafe partial struct ENCRYPTION_BUFFER
 {
+    /// <include file='ENCRYPTION_BUFFER.xml' path='doc/member[@name="ENCRYPTION_BUFFER.EncryptionOperation"]/*' />
     [NativeTypeName("DWORD")]
     public uint EncryptionOperation;
 
+    /// <include file='ENCRYPTION_BUFFER.xml' path='doc/member[@name="ENCRYPTION_BUFFER.Private"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Private[1];
 }

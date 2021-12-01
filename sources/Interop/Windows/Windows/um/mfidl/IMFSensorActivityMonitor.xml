@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSensorActivityMonitor.Start">
+    <summary>
+      <para>Starts the sensor activity monitor.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The sensor activity monitor has already been started.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSensorActivityMonitor" />
+  </member>
+  <member name="IMFSensorActivityMonitor.Stop">
+    <summary>
+      <para>Stops the sensor activity monitor.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSensorActivityMonitor" />
+  </member>
+  <member name="IMFSensorActivityMonitor">
+    <summary>
+      <para>Provides methods for controlling a sensor activity monitor.</para>
+    </summary>
+    <remarks>
+      <para>Get an instance of this class by calling <see cref="MFCreateSensorActivityMonitor" />. Sensor activity reports are delivered through the <see cref="IMFSensorActivitiesReportCallback" /> interface passed into this method.</para>
+      <h4>Examples</h4>
+      <para>The following example shows a class declaration that implements  <see cref="IMFSensorActivitiesReportCallback" />.</para>
+      <code>class MyCameraNotificationCallback : public RuntimeClass&lt;RuntimeClassFlags&lt;ClassicCom&gt;,
+    IMFSensorActivitiesReportCallback,
+    FtmBase&gt;
+{
+public:
+    MyCameraNotificationCallback() {};
+    //MyCameraNotificationCallback();
+    virtual ~MyCameraNotificationCallback();
+
+    HRESULT RuntimeClassInitialize(_In_z_ LPCWSTR SymbolicName)
+    {
+        return wcscpy_s(_symbolicName, SymbolicName);
+    }
+
+    // IMFSensorActivitiesReportCallback
+    IFACEMETHOD(OnActivitiesReport)(_In_ IMFSensorActivitiesReport* sensorActivitiesReport) override;
+
+    HRESULT IsInUse(_Out_ BOOL* pinUse);
+
+private:
+
+    WCHAR _symbolicName[MAX_PATH];
+    BOOL _inUse;
+    HANDLE _hEvent;
+    HRESULT _hrStatus;
+};
+
+</code>
+      <para>The next example shows the implementation of the <see cref="OnActivitiesReport" /> callback that updates a boolean class member to indicate whether the queried sensor device is currently in use and then sets an event to signal that the status has been obtained.</para>
+      <code>IFACEMETHODIMP MyCameraNotificationCallback.OnActivitiesReport(
+    _In_ IMFSensorActivitiesReport* sensorActivitiesReport
+)
+{
+    HRESULT hr = S_OK;
+    ULONG cCount = 0;
+    BOOL inUse = FALSE;
+    ComPtr&lt;IMFSensorActivityReport&gt; sensorActivity;
+
+    if (SUCCEEDED(sensorActivitiesReport-&gt;GetActivityReportByDeviceName(_symbolicName, &amp;amp;amp;amp;amp;amp;sensorActivity)))
+    {
+        ULONG cProcCount = 0;
+
+        hr = sensorActivity-&gt;GetProcessCount(&amp;amp;amp;amp;amp;amp;cProcCount);
+        for (ULONG i = 0; i &lt; cProcCount &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; SUCCEEDED(hr); i++)
+        {
+            BOOL fStreaming = FALSE;
+            ComPtr&lt;IMFSensorProcessActivity&gt; processActivity;
+
+            hr = sensorActivity-&gt;GetProcessActivity(i, &amp;amp;amp;amp;amp;amp;processActivity);
+            if (SUCCEEDED(hr))
+            {
+                hr = processActivity-&gt;GetStreamingState(&amp;amp;amp;amp;amp;amp;fStreaming);
+            }
+
+            if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; fStreaming)
+            {
+                inUse = TRUE;
+                break;
+            }
+        }
+    }
+
+    // Set flag that the device is in use and then signal event
+    _inUse = inUse;
+    _hrStatus = hr;
+    SetEvent(_hEvent);
+
+    return hr;
+}
+
+</code>
+      <para>This example shows a class method that waits for the event to be signaled by the <b>OnActivitiesReport</b> callback.</para>
+      <code>HRESULT MyCameraNotificationCallback.IsInUse(
+    _Out_ BOOL* pfInUse
+)
+{
+    HRESULT hr = S_OK;
+    DWORD   dwWait = 0;
+
+    *pfInUse = FALSE;
+
+    dwWait = WaitForSingleObject(_hEvent, INFINITE);
+    switch (dwWait)
+    {
+    case WAIT_OBJECT_0:
+        *pfInUse = _inUse;
+        hr = _hrStatus;
+        break;
+    case WAIT_TIMEOUT:
+    case WAIT_ABANDONED:
+        hr = MF_E_UNEXPECTED;
+        break;
+    case WAIT_FAILED:
+    default:
+        hr = HRESULT_FROM_WIN32(GetLastError());
+        break;
+    }
+
+    return hr;
+}
+
+</code>
+      <para>The following example shows an implementation that calls <see cref="MFCreateSensorActivityMonitor" /> to create the activity monitor and then calls the <b>IsInUse</b> class method shown above to determine if the specified sensor is currently in use.</para>
+      <code>HRESULT IsCameraInUse(
+    _In_z_ LPCWSTR symbolicName,
+    _Out_ BOOL* pfInUse
+)
+{
+    HRESULT hr = S_OK;
+    ComPtr&lt;MyCameraNotificationCallback&gt; cameraNotificationCallback;
+    ComPtr&lt;IMFSensorActivityMonitor&gt; activityMonitor;
+    ComPtr&lt;IMFShutdown&gt; spShutdown;
+
+
+    MakeAndInitialize&lt;MyCameraNotificationCallback&gt;(&amp;amp;amp;amp;amp;amp;cameraNotificationCallback, symbolicName);
+
+    // Create the IMFSensorActivityMonitor, passing in the IMFSensorActivitiesReportCallback.
+    hr = MFCreateSensorActivityMonitor(cameraNotificationCallback.Get(), &amp;amp;amp;amp;amp;amp;activityMonitor);
+    if (FAILED(hr))
+    {
+        return hr;
+    }
+
+    // Start the monitor
+    hr = activityMonitor-&gt;Start();
+    if (FAILED(hr))
+    {
+        return hr;
+    }
+
+    // Call the method that checks to if the monitored device is in use.
+    cameraNotificationCallback-&gt;IsInUse(pfInUse);
+
+    // Stop the activity monitor.
+    hr = activityMonitor-&gt;Stop();
+    if (FAILED(hr))
+    {
+        return hr;
+    }
+
+    // Shutdown the monitor.
+    hr = activityMonitor.As(&amp;amp;amp;amp;amp;amp;spShutdown);
+    if (FAILED(hr))
+    {
+        return hr;
+    }
+
+    hr = spShutdown-&gt;Shutdown();
+    if (FAILED(hr))
+    {
+        return hr;
+    }
+
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+</doc>

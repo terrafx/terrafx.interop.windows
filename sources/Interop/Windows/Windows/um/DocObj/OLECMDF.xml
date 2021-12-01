@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OLECMDF">
+    <summary>
+      <para>Specifies the type of support provided by an object for the command specified in an <see cref="OLECMD" /> structure.</para>
+    </summary>
+    <remarks>
+      <para>Values from the <b>OLECMDF</b> enumeration are used to fill the value of the <b>cmdf</b> member of <see cref="OLECMD" /> structures passed to <see cref="IOleCommandTarget.QueryStatus" />.</para>
+    </remarks>
+    <seealso cref="IOleCommandTarget.QueryStatus" />
+    <seealso cref="OLECMD" />
+  </member>
+  <member name="OLECMDF.OLECMDF_SUPPORTED">
+    <summary>
+      <para>The command is supported by this object.</para>
+    </summary>
+  </member>
+  <member name="OLECMDF.OLECMDF_ENABLED">
+    <summary>
+      <para>The command is available and enabled.</para>
+    </summary>
+  </member>
+  <member name="OLECMDF.OLECMDF_LATCHED">
+    <summary>
+      <para>The command is an on-off toggle and is currently on.</para>
+    </summary>
+  </member>
+  <member name="OLECMDF.OLECMDF_NINCHED">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="OLECMDF.OLECMDF_INVISIBLE">
+    <summary>
+      <para>The command is hidden.</para>
+    </summary>
+  </member>
+  <member name="OLECMDF.OLECMDF_DEFHIDEONCTXTMENU">
+    <summary>
+      <para>The command is hidden on the context menu.</para>
+    </summary>
+  </member>
+</doc>

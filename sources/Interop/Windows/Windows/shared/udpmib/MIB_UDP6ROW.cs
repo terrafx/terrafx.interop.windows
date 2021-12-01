@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_UDP6ROW.xml' path='doc/member[@name="MIB_UDP6ROW"]/*' />
 public partial struct MIB_UDP6ROW
 {
+    /// <include file='MIB_UDP6ROW.xml' path='doc/member[@name="MIB_UDP6ROW.dwLocalAddr"]/*' />
     public IN6_ADDR dwLocalAddr;
 
+    /// <include file='MIB_UDP6ROW.xml' path='doc/member[@name="MIB_UDP6ROW.dwLocalScopeId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalScopeId;
 
+    /// <include file='MIB_UDP6ROW.xml' path='doc/member[@name="MIB_UDP6ROW.dwLocalPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalPort;
 }

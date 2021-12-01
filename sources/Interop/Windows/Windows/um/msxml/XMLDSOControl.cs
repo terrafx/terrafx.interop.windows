@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XMLDSOControl.xml' path='doc/member[@name="XMLDSOControl"]/*' />
 [Guid("550DDA30-0541-11D2-9CA9-0060B0EC3D39")]
 public partial struct XMLDSOControl
 {

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TAPE_ERASE.xml' path='doc/member[@name="TAPE_ERASE"]/*' />
 public partial struct TAPE_ERASE
 {
+    /// <include file='TAPE_ERASE.xml' path='doc/member[@name="TAPE_ERASE.Type"]/*' />
     [NativeTypeName("DWORD")]
     public uint Type;
 
+    /// <include file='TAPE_ERASE.xml' path='doc/member[@name="TAPE_ERASE.Immediate"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Immediate;
 }

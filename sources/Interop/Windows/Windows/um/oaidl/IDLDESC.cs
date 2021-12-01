@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDLDESC.xml' path='doc/member[@name="IDLDESC"]/*' />
 public partial struct IDLDESC
 {
+    /// <include file='IDLDESC.xml' path='doc/member[@name="IDLDESC.dwReserved"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint dwReserved;
 
+    /// <include file='IDLDESC.xml' path='doc/member[@name="IDLDESC.wIDLFlags"]/*' />
     public ushort wIDLFlags;
 }

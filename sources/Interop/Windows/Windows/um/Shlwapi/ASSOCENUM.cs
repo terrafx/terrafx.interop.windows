@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ASSOCENUM.xml' path='doc/member[@name="ASSOCENUM"]/*' />
 public enum ASSOCENUM
 {
+    /// <include file='ASSOCENUM.xml' path='doc/member[@name="ASSOCENUM.ASSOCENUM_NONE"]/*' />
     ASSOCENUM_NONE,
 }

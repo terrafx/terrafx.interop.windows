@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CanvasTextMetrics.xml' path='doc/member[@name="CanvasTextMetrics"]/*' />
 [Guid("30510719-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct CanvasTextMetrics
 {

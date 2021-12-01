@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRL_ISSUING_DIST_POINT.xml' path='doc/member[@name="CRL_ISSUING_DIST_POINT"]/*' />
 public partial struct CRL_ISSUING_DIST_POINT
 {
+    /// <include file='CRL_ISSUING_DIST_POINT.xml' path='doc/member[@name="CRL_ISSUING_DIST_POINT.DistPointName"]/*' />
     public CRL_DIST_POINT_NAME DistPointName;
 
+    /// <include file='CRL_ISSUING_DIST_POINT.xml' path='doc/member[@name="CRL_ISSUING_DIST_POINT.fOnlyContainsUserCerts"]/*' />
     public BOOL fOnlyContainsUserCerts;
 
+    /// <include file='CRL_ISSUING_DIST_POINT.xml' path='doc/member[@name="CRL_ISSUING_DIST_POINT.fOnlyContainsCACerts"]/*' />
     public BOOL fOnlyContainsCACerts;
 
+    /// <include file='CRL_ISSUING_DIST_POINT.xml' path='doc/member[@name="CRL_ISSUING_DIST_POINT.OnlySomeReasonFlags"]/*' />
     public CRYPT_BIT_BLOB OnlySomeReasonFlags;
 
+    /// <include file='CRL_ISSUING_DIST_POINT.xml' path='doc/member[@name="CRL_ISSUING_DIST_POINT.fIndirectCRL"]/*' />
     public BOOL fIndirectCRL;
 }

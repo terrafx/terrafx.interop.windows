@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLFrameBase.xml' path='doc/member[@name="HTMLFrameBase"]/*' />
 [Guid("3050F312-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLFrameBase
 {

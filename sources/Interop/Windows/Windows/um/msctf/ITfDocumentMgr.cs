@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr"]/*' />
 [Guid("AA80E7F4-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct ITfDocumentMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
         return ((delegate* unmanaged<ITfDocumentMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
         return ((delegate* unmanaged<ITfDocumentMgr*, uint>)(lpVtbl[1]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
         return ((delegate* unmanaged<ITfDocumentMgr*, uint>)(lpVtbl[2]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.CreateContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateContext([NativeTypeName("TfClientId")] uint tidOwner, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* punk, ITfContext** ppic, [NativeTypeName("TfEditCookie *")] uint* pecTextStore)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
         return ((delegate* unmanaged<ITfDocumentMgr*, uint, uint, IUnknown*, ITfContext**, uint*, int>)(lpVtbl[3]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), tidOwner, dwFlags, punk, ppic, pecTextStore);
     }
 
+    /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.Push"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Push(ITfContext* pic)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
         return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext*, int>)(lpVtbl[4]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), pic);
     }
 
+    /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.Pop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Pop([NativeTypeName("DWORD")] uint dwFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
         return ((delegate* unmanaged<ITfDocumentMgr*, uint, int>)(lpVtbl[5]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.GetTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetTop(ITfContext** ppic)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
         return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[6]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
     }
 
+    /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.GetBase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetBase(ITfContext** ppic)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
         return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[7]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
     }
 
+    /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.EnumContexts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT EnumContexts(IEnumTfContexts** ppEnum)

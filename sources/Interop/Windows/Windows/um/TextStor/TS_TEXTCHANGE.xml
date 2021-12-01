@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TS_TEXTCHANGE">
+    <summary>
+      <para>The <b>TS_TEXTCHANGE</b> structure contains text change data.</para>
+    </summary>
+    <remarks>
+      <para>The possible text changes include insert, delete, and replace. For example, if you replace the first "t" of "text" with "T", <b>acpStart</b> =0, <b>acpOldEnd</b> =1, and <b>acpNewEnd</b> =1. If you delete the last "t", <b>acpStart</b> =3, <b>acpOldEnd</b> =4, and <b>acpNewEnd</b> =3. If an "a" is inserted between "e" and "x", <b>acpStart</b> =2, <b>acpOldEnd</b> =2, and <b>acpNewEnd</b> =3.</para>
+    </remarks>
+  </member>
+  <member name="TS_TEXTCHANGE.acpStart">
+    <summary>
+      <para>Contains the starting character position of the change.</para>
+    </summary>
+  </member>
+  <member name="TS_TEXTCHANGE.acpOldEnd">
+    <summary>
+      <para>Contains the ending character position before the text is changed.</para>
+    </summary>
+  </member>
+  <member name="TS_TEXTCHANGE.acpNewEnd">
+    <summary>
+      <para>Contains the ending character position after the text is changed.</para>
+    </summary>
+  </member>
+</doc>

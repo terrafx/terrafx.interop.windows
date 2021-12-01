@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TOKEN_OWNER">
+    <summary>
+      <para>The <b>TOKEN_OWNER</b> structure contains the default owner <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) that will be applied to newly created objects.</para>
+    </summary>
+    <seealso cref="GetTokenInformation" />
+    <seealso cref="SID" />
+    <seealso cref="SetTokenInformation" />
+    <seealso cref="TOKEN_CONTROL" />
+    <seealso cref="TOKEN_DEFAULT_DACL" />
+    <seealso cref="TOKEN_GROUPS" />
+    <seealso cref="TOKEN_INFORMATION_CLASS" />
+    <seealso cref="TOKEN_PRIMARY_GROUP" />
+    <seealso cref="TOKEN_PRIVILEGES" />
+    <seealso cref="TOKEN_SOURCE" />
+    <seealso cref="TOKEN_STATISTICS" />
+    <seealso cref="TOKEN_TYPE" />
+    <seealso cref="TOKEN_USER" />
+  </member>
+  <member name="TOKEN_OWNER.Owner">
+    <summary>
+      <para>A pointer to a <see cref="SID" /> structure representing a user who will become the owner of any objects created by a process using this <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access token</a>. The SID must be one of the user or group SIDs already in the token.</para>
+    </summary>
+  </member>
+</doc>

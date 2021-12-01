@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_STRING_USERNAME_CREDENTIAL.xml' path='doc/member[@name="WS_STRING_USERNAME_CREDENTIAL"]/*' />
 public partial struct WS_STRING_USERNAME_CREDENTIAL
 {
+    /// <include file='WS_STRING_USERNAME_CREDENTIAL.xml' path='doc/member[@name="WS_STRING_USERNAME_CREDENTIAL.credential"]/*' />
     public WS_USERNAME_CREDENTIAL credential;
 
+    /// <include file='WS_STRING_USERNAME_CREDENTIAL.xml' path='doc/member[@name="WS_STRING_USERNAME_CREDENTIAL.username"]/*' />
     public WS_STRING username;
 
+    /// <include file='WS_STRING_USERNAME_CREDENTIAL.xml' path='doc/member[@name="WS_STRING_USERNAME_CREDENTIAL.password"]/*' />
     public WS_STRING password;
 }

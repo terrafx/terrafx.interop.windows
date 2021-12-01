@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICRawToneCurvePoint.xml' path='doc/member[@name="WICRawToneCurvePoint"]/*' />
 public partial struct WICRawToneCurvePoint
 {
+    /// <include file='WICRawToneCurvePoint.xml' path='doc/member[@name="WICRawToneCurvePoint.Input"]/*' />
     public double Input;
 
+    /// <include file='WICRawToneCurvePoint.xml' path='doc/member[@name="WICRawToneCurvePoint.Output"]/*' />
     public double Output;
 }

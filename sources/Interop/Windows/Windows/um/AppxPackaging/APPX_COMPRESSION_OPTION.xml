@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPX_COMPRESSION_OPTION">
+    <summary>
+      <para>Specifies the degree of compression used to store the file in the package.</para>
+    </summary>
+    <seealso cref="IAppxFile.GetCompressionOption" />
+    <seealso cref="IAppxPackageWriter.AddPayloadFile" />
+  </member>
+  <member name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_NONE">
+    <summary>
+      <para>No compression.</para>
+    </summary>
+  </member>
+  <member name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_NORMAL">
+    <summary>
+      <para>Normal  compression.</para>
+    </summary>
+  </member>
+  <member name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_MAXIMUM">
+    <summary>
+      <para>Maximum compression.</para>
+    </summary>
+  </member>
+  <member name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_FAST">
+    <summary>
+      <para>Fast compression.</para>
+    </summary>
+  </member>
+  <member name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_SUPERFAST">
+    <summary>
+      <para>Super-fast compression.</para>
+    </summary>
+  </member>
+</doc>

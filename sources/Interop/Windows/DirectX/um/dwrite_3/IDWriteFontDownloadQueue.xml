@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontDownloadQueue.AddListener">
+    <summary>
+      <para>Registers a client-defined listener object that receives download notifications.
+All registered listener's DownloadCompleted will be called after <see cref="BeginDownload" /> completes.</para>
+    </summary>
+    <param name="listener">
+      <para>Type: <b><see cref="IDWriteFontDownloadListener" />*</b></para>
+      <para>Listener object to add.</para>
+    </param>
+    <param name="token">
+      <para>Type: <b>UINT32*</b></para>
+      <para>Receives a token value, which the caller must subsequently pass to <see cref="RemoveListener" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>An <see cref="IDWriteFontDownloadListener" /> can also be passed to <see cref="BeginDownload" /></para>
+      <para>using the context parameter, rather than globally registered to the queue.</para>
+    </remarks>
+    <seealso cref="IDWriteFontDownloadQueue" />
+  </member>
+  <member name="IDWriteFontDownloadQueue.BeginDownload">
+    <summary>
+      <para>Begins an asynchronous download operation. The download operation executes
+in the background until it completes or is cancelled by a <see cref="CancelDownload" /> call.</para>
+    </summary>
+    <param name="context">
+      <para>Type: <b>IUnknown*</b></para>
+      <para>Optional context object that is passed back to the
+download notification handler's DownloadCompleted method. If the context object
+implements IDWriteFontDownloadListener, its DownloadCompleted will be called
+when done.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if a download was successfully begun, S_FALSE if the queue was
+empty, or a standard HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>BeginDownload removes all download requests from the queue, transferring them
+to a background download operation. If any previous downloads are still ongoing
+when BeginDownload is called again, the new download does not complete until
+the previous downloads have finished.</para>
+    </remarks>
+    <seealso cref="IDWriteFontDownloadQueue" />
+  </member>
+  <member name="IDWriteFontDownloadQueue.CancelDownload">
+    <summary>
+      <para>Removes all download requests from the queue and cancels any active download
+operations.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontDownloadQueue" />
+  </member>
+  <member name="IDWriteFontDownloadQueue.GetGenerationCount">
+    <summary>
+      <para>Gets the current generation number of the download queue, which is incremented
+every time after a download completes, whether failed or successful. This cookie
+value can be compared against cached data to determine if it is stale.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT64</b></para>
+      <para>The current generation number of the download queue.</para>
+    </returns>
+    <seealso cref="IDWriteFontDownloadQueue" />
+  </member>
+  <member name="IDWriteFontDownloadQueue.IsEmpty">
+    <summary>
+      <para>Determines whether the download queue is empty. Note that the queue does not
+include requests that are already being downloaded. Calling <see cref="BeginDownload" /> clears the queue.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>TRUE if the queue is empty, FALSE if there are requests pending for <see cref="BeginDownload" />.</para>
+    </returns>
+    <seealso cref="IDWriteFontDownloadQueue" />
+  </member>
+  <member name="IDWriteFontDownloadQueue.RemoveListener">
+    <summary>
+      <para>Unregisters a notification handler that was previously registered using <see cref="AddListener" />.</para>
+    </summary>
+    <param name="token">
+      <para>Type: <b>UINT32</b></para>
+      <para>Token value previously returned by <see cref="AddListener" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontDownloadQueue" />
+  </member>
+  <member name="IDWriteFontDownloadQueue">
+    <summary>
+      <para>Interface that enqueues download requests for remote fonts, characters, glyphs, and font fragments.
+Provides methods to asynchronously execute a download, cancel pending downloads, and be notified of
+download completion. Callbacks to listeners will occur on the downloading thread, and objects must
+be must be able to handle calls on their methods from other threads at any time.</para>
+    </summary>
+  </member>
+</doc>

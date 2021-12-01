@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="URL_SCHEME">
+    <summary>
+      <para>Used to specify URL schemes.</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_INVALID">
+    <summary>
+      <para>An invalid scheme.</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_UNKNOWN">
+    <summary>
+      <para>An unknown scheme.</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_FTP">
+    <summary>
+      <para>FTP (ftp:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_HTTP">
+    <summary>
+      <para>HTTP (http:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_GOPHER">
+    <summary>
+      <para>Gopher (gopher:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_MAILTO">
+    <summary>
+      <para>Mail-to (mailto:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_NEWS">
+    <summary>
+      <para>Usenet news (news:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_NNTP">
+    <summary>
+      <para>Usenet news with NNTP (nntp:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_TELNET">
+    <summary>
+      <para>Telnet (telnet:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_WAIS">
+    <summary>
+      <para>Wide Area Information Server (wais:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_FILE">
+    <summary>
+      <para>File (file:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_MK">
+    <summary>
+      <para>URL moniker (mk:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_HTTPS">
+    <summary>
+      <para>URL HTTPS (https:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_SHELL">
+    <summary>
+      <para>Shell (shell:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_SNEWS">
+    <summary>
+      <para>NNTP news postings with SSL (snews:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_LOCAL">
+    <summary>
+      <para>Local (local:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_JAVASCRIPT">
+    <summary>
+      <para>JavaScript (javascript:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_VBSCRIPT">
+    <summary>
+      <para>VBScript (vbscript:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_ABOUT">
+    <summary>
+      <para>About (about:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_RES">
+    <summary>
+      <para>Res (res:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_MSSHELLROOTED">
+    <summary>
+      <para>Internet Explorer 6 and later only. Shell-rooted (ms-shell-rooted:)</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_MSSHELLIDLIST">
+    <summary>
+      <para>Internet Explorer 6 and later only. Shell ID-list (ms-shell-idlist:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_MSHELP">
+    <summary>
+      <para>Internet Explorer 6 and later only. MSHelp (hcp:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_MSSHELLDEVICE">
+    <summary>
+      <para>Not supported.</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_WILDCARD">
+    <summary>
+      <para>Internet Explorer 7 and later only. Wildcard (*:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_SEARCH_MS">
+    <summary>
+      <para>Windows Vista and later only. Search-MS (search-ms:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_SEARCH">
+    <summary>
+      <para>Windows Vista with SP1 and later only. Search (search:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_KNOWNFOLDER">
+    <summary>
+      <para>
+        <b>Windows 7 and later</b>. Known folder (knownfolder:).</para>
+    </summary>
+  </member>
+  <member name="URL_SCHEME.URL_SCHEME_MAXVALUE">
+    <summary>
+      <para>The highest legitimate value in the enumeration, used for validation purposes.</para>
+    </summary>
+  </member>
+</doc>

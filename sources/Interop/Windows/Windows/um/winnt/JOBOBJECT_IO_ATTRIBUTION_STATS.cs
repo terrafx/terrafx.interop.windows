@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_IO_ATTRIBUTION_STATS.xml' path='doc/member[@name="JOBOBJECT_IO_ATTRIBUTION_STATS"]/*' />
 public partial struct JOBOBJECT_IO_ATTRIBUTION_STATS
 {
+    /// <include file='JOBOBJECT_IO_ATTRIBUTION_STATS.xml' path='doc/member[@name="JOBOBJECT_IO_ATTRIBUTION_STATS.IoCount"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint IoCount;
 
+    /// <include file='JOBOBJECT_IO_ATTRIBUTION_STATS.xml' path='doc/member[@name="JOBOBJECT_IO_ATTRIBUTION_STATS.TotalNonOverlappedQueueTime"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong TotalNonOverlappedQueueTime;
 
+    /// <include file='JOBOBJECT_IO_ATTRIBUTION_STATS.xml' path='doc/member[@name="JOBOBJECT_IO_ATTRIBUTION_STATS.TotalNonOverlappedServiceTime"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong TotalNonOverlappedServiceTime;
 
+    /// <include file='JOBOBJECT_IO_ATTRIBUTION_STATS.xml' path='doc/member[@name="JOBOBJECT_IO_ATTRIBUTION_STATS.TotalSize"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong TotalSize;
 }

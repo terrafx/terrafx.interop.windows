@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='KnownFolderManager.xml' path='doc/member[@name="KnownFolderManager"]/*' />
 [Guid("4DF0C730-DF9D-4AE3-9153-AA6B82E9795A")]
 public partial struct KnownFolderManager
 {

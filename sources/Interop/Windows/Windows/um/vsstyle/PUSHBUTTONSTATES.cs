@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PUSHBUTTONSTATES.xml' path='doc/member[@name="PUSHBUTTONSTATES"]/*' />
 public enum PUSHBUTTONSTATES
 {
+    /// <include file='PUSHBUTTONSTATES.xml' path='doc/member[@name="PUSHBUTTONSTATES.PBS_NORMAL"]/*' />
     PBS_NORMAL = 1,
+
+    /// <include file='PUSHBUTTONSTATES.xml' path='doc/member[@name="PUSHBUTTONSTATES.PBS_HOT"]/*' />
     PBS_HOT = 2,
+
+    /// <include file='PUSHBUTTONSTATES.xml' path='doc/member[@name="PUSHBUTTONSTATES.PBS_PRESSED"]/*' />
     PBS_PRESSED = 3,
+
+    /// <include file='PUSHBUTTONSTATES.xml' path='doc/member[@name="PUSHBUTTONSTATES.PBS_DISABLED"]/*' />
     PBS_DISABLED = 4,
+
+    /// <include file='PUSHBUTTONSTATES.xml' path='doc/member[@name="PUSHBUTTONSTATES.PBS_DEFAULTED"]/*' />
     PBS_DEFAULTED = 5,
+
+    /// <include file='PUSHBUTTONSTATES.xml' path='doc/member[@name="PUSHBUTTONSTATES.PBS_DEFAULTED_ANIMATING"]/*' />
     PBS_DEFAULTED_ANIMATING = 6,
 }

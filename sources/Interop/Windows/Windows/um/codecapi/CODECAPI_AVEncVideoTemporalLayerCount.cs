@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoTemporalLayerCount.xml' path='doc/member[@name="CODECAPI_AVEncVideoTemporalLayerCount"]/*' />
 [Guid("19CAEBFF-B74D-4CFD-8C27-C2F9D97D5F52")]
 public partial struct CODECAPI_AVEncVideoTemporalLayerCount
 {

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_TOPOLOGY_ID">
+    <summary>
+      <para>The DISPLAYCONFIG_TOPOLOGY_ID enumeration specifies the type of display topology.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TOPOLOGY_ID.DISPLAYCONFIG_TOPOLOGY_INTERNAL">
+    <summary>
+      <para>Indicates that the display topology is an internal configuration.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TOPOLOGY_ID.DISPLAYCONFIG_TOPOLOGY_CLONE">
+    <summary>
+      <para>Indicates that the display topology is clone-view configuration.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TOPOLOGY_ID.DISPLAYCONFIG_TOPOLOGY_EXTEND">
+    <summary>
+      <para>Indicates that the display topology is an extended configuration.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TOPOLOGY_ID.DISPLAYCONFIG_TOPOLOGY_EXTERNAL">
+    <summary>
+      <para>Indicates that the display topology is an external configuration.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TOPOLOGY_ID.DISPLAYCONFIG_TOPOLOGY_FORCE_UINT32">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</para>
+    </summary>
+  </member>
+</doc>

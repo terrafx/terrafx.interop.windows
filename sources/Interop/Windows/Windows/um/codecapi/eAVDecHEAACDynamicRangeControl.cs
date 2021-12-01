@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecHEAACDynamicRangeControl.xml' path='doc/member[@name="eAVDecHEAACDynamicRangeControl"]/*' />
 public enum eAVDecHEAACDynamicRangeControl
 {
+    /// <include file='eAVDecHEAACDynamicRangeControl.xml' path='doc/member[@name="eAVDecHEAACDynamicRangeControl.eAVDecHEAACDynamicRangeControl_OFF"]/*' />
     eAVDecHEAACDynamicRangeControl_OFF = 0,
+
+    /// <include file='eAVDecHEAACDynamicRangeControl.xml' path='doc/member[@name="eAVDecHEAACDynamicRangeControl.eAVDecHEAACDynamicRangeControl_ON"]/*' />
     eAVDecHEAACDynamicRangeControl_ON = 1,
 }

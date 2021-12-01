@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient"]/*' />
 [Guid("EB0FE175-1A3A-11D0-89B3-00A0C90A90AC")]
 [NativeTypeName("struct IDeskBarClient : IOleWindow")]
 [NativeInheritance("IOleWindow")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
         return ((delegate* unmanaged<IDeskBarClient*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBarClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
         return ((delegate* unmanaged<IDeskBarClient*, uint>)(lpVtbl[1]))((IDeskBarClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
         return ((delegate* unmanaged<IDeskBarClient*, uint>)(lpVtbl[2]))((IDeskBarClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleWindow.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
         return ((delegate* unmanaged<IDeskBarClient*, HWND*, int>)(lpVtbl[3]))((IDeskBarClient*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
         return ((delegate* unmanaged<IDeskBarClient*, BOOL, int>)(lpVtbl[4]))((IDeskBarClient*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
+    /// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient.SetDeskBarSite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetDeskBarSite(IUnknown* punkSite)
@@ -60,6 +67,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
         return ((delegate* unmanaged<IDeskBarClient*, IUnknown*, int>)(lpVtbl[5]))((IDeskBarClient*)Unsafe.AsPointer(ref this), punkSite);
     }
 
+    /// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient.SetModeDBC"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetModeDBC([NativeTypeName("DWORD")] uint dwMode)
@@ -67,6 +75,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
         return ((delegate* unmanaged<IDeskBarClient*, uint, int>)(lpVtbl[6]))((IDeskBarClient*)Unsafe.AsPointer(ref this), dwMode);
     }
 
+    /// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient.UIActivateDBC"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT UIActivateDBC([NativeTypeName("DWORD")] uint dwState)
@@ -74,6 +83,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
         return ((delegate* unmanaged<IDeskBarClient*, uint, int>)(lpVtbl[7]))((IDeskBarClient*)Unsafe.AsPointer(ref this), dwState);
     }
 
+    /// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetSize([NativeTypeName("DWORD")] uint dwWhich, [NativeTypeName("LPRECT")] RECT* prc)

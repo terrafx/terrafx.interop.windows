@@ -8,13 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TF_DA_COLOR.xml' path='doc/member[@name="TF_DA_COLOR"]/*' />
 public partial struct TF_DA_COLOR
 {
+    /// <include file='TF_DA_COLOR.xml' path='doc/member[@name="TF_DA_COLOR.type"]/*' />
     public TF_DA_COLORTYPE type;
 
+    /// <include file='TF_DA_COLOR.xml' path='doc/member[@name="TF_DA_COLOR.Anonymous"]/*' />
     [NativeTypeName("TF_DA_COLOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/msctf.h:10802:36)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.nIndex"]/*' />
     public ref int nIndex
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +28,7 @@ public partial struct TF_DA_COLOR
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cr"]/*' />
     public ref COLORREF cr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,12 +38,15 @@ public partial struct TF_DA_COLOR
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.nIndex"]/*' />
         [FieldOffset(0)]
         public int nIndex;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cr"]/*' />
         [FieldOffset(0)]
         public COLORREF cr;
     }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData"]/*' />
 [Guid("486943E8-D187-4A6B-A3C4-291259FFF60D")]
 [NativeTypeName("struct IDiaEnumDebugStreamData : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         return ((delegate* unmanaged<IDiaEnumDebugStreamData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint>)(lpVtbl[1]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint>)(lpVtbl[2]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData.get__NewEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get__NewEnum(IUnknown** pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         return ((delegate* unmanaged<IDiaEnumDebugStreamData*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData.get_Count"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         return ((delegate* unmanaged<IDiaEnumDebugStreamData*, int*, int>)(lpVtbl[4]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         return ((delegate* unmanaged<IDiaEnumDebugStreamData*, ushort**, int>)(lpVtbl[5]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData.Item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Item([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, int>)(lpVtbl[6]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), index, cbData, pcbData, pbData);
     }
 
+    /// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, uint*, int>)(lpVtbl[7]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), celt, cbData, pcbData, pbData, pceltFetched);
     }
 
+    /// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, int>)(lpVtbl[8]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Reset()
@@ -88,6 +99,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         return ((delegate* unmanaged<IDiaEnumDebugStreamData*, int>)(lpVtbl[9]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Clone(IDiaEnumDebugStreamData** ppenum)

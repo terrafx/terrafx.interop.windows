@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SERVICE_CONTRACT">
+    <summary>
+      <para>Specifies a service contract on an <see cref="endpoint" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_CONTRACT.contractDescription">
+    <summary>
+      <para>The typed contract metadata. See <see cref="WS_CONTRACT_DESCRIPTION" />. Optional, if <b>defaultMessageHandlerCallback</b> is given.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_CONTRACT.defaultMessageHandlerCallback">
+    <summary>
+      <para>Callback for processing unhandled messages. Optional if contractDescription is given.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_CONTRACT.methodTable">
+    <summary>
+      <para>The function table. Mandatory, if <b>contractDescription</b> is given.</para>
+    </summary>
+  </member>
+</doc>

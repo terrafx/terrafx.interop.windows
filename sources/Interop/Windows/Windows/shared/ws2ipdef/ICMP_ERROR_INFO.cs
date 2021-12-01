@@ -7,16 +7,21 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICMP_ERROR_INFO.xml' path='doc/member[@name="ICMP_ERROR_INFO"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct ICMP_ERROR_INFO
 {
+    /// <include file='ICMP_ERROR_INFO.xml' path='doc/member[@name="ICMP_ERROR_INFO.srcaddress"]/*' />
     public SOCKADDR_INET srcaddress;
 
+    /// <include file='ICMP_ERROR_INFO.xml' path='doc/member[@name="ICMP_ERROR_INFO.protocol"]/*' />
     public IPPROTO protocol;
 
+    /// <include file='ICMP_ERROR_INFO.xml' path='doc/member[@name="ICMP_ERROR_INFO.type"]/*' />
     [NativeTypeName("UINT8")]
     public byte type;
 
+    /// <include file='ICMP_ERROR_INFO.xml' path='doc/member[@name="ICMP_ERROR_INFO.code"]/*' />
     [NativeTypeName("UINT8")]
     public byte code;
 }

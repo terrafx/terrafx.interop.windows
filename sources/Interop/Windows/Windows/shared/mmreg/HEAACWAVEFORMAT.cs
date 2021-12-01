@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HEAACWAVEFORMAT.xml' path='doc/member[@name="HEAACWAVEFORMAT"]/*' />
 public unsafe partial struct HEAACWAVEFORMAT
 {
+    /// <include file='HEAACWAVEFORMAT.xml' path='doc/member[@name="HEAACWAVEFORMAT.wfInfo"]/*' />
     public HEAACWAVEINFO wfInfo;
 
+    /// <include file='HEAACWAVEFORMAT.xml' path='doc/member[@name="HEAACWAVEFORMAT.pbAudioSpecificConfig"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte pbAudioSpecificConfig[1];
 }

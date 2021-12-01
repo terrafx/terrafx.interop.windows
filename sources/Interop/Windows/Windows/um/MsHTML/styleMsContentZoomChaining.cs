@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining"]/*' />
 public enum styleMsContentZoomChaining
 {
+    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChainingNotSet"]/*' />
     styleMsContentZoomChainingNotSet = 0,
+
+    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChainingNone"]/*' />
     styleMsContentZoomChainingNone = 1,
+
+    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChainingChained"]/*' />
     styleMsContentZoomChainingChained = 2,
+
+    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChaining_Max"]/*' />
     styleMsContentZoomChaining_Max = 2147483647,
 }

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGRHANDLERINFO">
+    <summary>
+      <para>Provides information about the handler for use in the <see cref="ISyncMgrSynchronize.GetHandlerInfo" /> method.</para>
+    </summary>
+    <seealso cref="ISyncMgrSynchronize.GetHandlerInfo" />
+    <seealso cref="SYNCMGRHANDLERFLAGS" />
+  </member>
+  <member name="SYNCMGRHANDLERINFO.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure in bytes.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRHANDLERINFO.hIcon">
+    <summary>
+      <para>Type: <b>HICON</b></para>
+      <para>The icon for the handler.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRHANDLERINFO.SyncMgrHandlerFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The value of the <see cref="SYNCMGRHANDLERFLAGS" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRHANDLERINFO.wszHandlerName">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_SYNCMGRHANDLERNAME]</b></para>
+      <para>The name to use for the handler.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData"]/*' />
 [Guid("BFDEEC12-8040-4403-A5EA-9E07DAFCF530")]
 [NativeTypeName("struct IShellImageData : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, Guid*, void**, int>)(lpVtbl[0]))((IShellImageData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint>)(lpVtbl[1]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint>)(lpVtbl[2]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.Decode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Decode([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG")] uint cxDesired, [NativeTypeName("ULONG")] uint cyDesired)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint, uint, uint, int>)(lpVtbl[3]))((IShellImageData*)Unsafe.AsPointer(ref this), dwFlags, cxDesired, cyDesired);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.Draw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Draw(HDC hdc, [NativeTypeName("LPRECT")] RECT* prcDest, [NativeTypeName("LPRECT")] RECT* prcSrc)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, HDC, RECT*, RECT*, int>)(lpVtbl[4]))((IShellImageData*)Unsafe.AsPointer(ref this), hdc, prcDest, prcSrc);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.NextFrame"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT NextFrame()
@@ -60,6 +67,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[5]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.NextPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT NextPage()
@@ -67,6 +75,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[6]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.PrevPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT PrevPage()
@@ -74,6 +83,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[7]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsTransparent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT IsTransparent()
@@ -81,6 +91,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[8]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsAnimated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT IsAnimated()
@@ -88,6 +99,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[9]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsVector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT IsVector()
@@ -95,6 +107,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[10]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsMultipage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT IsMultipage()
@@ -102,6 +115,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[11]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsEditable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT IsEditable()
@@ -109,6 +123,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[12]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsPrintable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT IsPrintable()
@@ -116,6 +131,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[13]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsDecoded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT IsDecoded()
@@ -123,6 +139,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[14]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetCurrentPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetCurrentPage([NativeTypeName("ULONG *")] uint* pnPage)
@@ -130,6 +147,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[15]))((IShellImageData*)Unsafe.AsPointer(ref this), pnPage);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetPageCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetPageCount([NativeTypeName("ULONG *")] uint* pcPages)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[16]))((IShellImageData*)Unsafe.AsPointer(ref this), pcPages);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.SelectPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SelectPage([NativeTypeName("ULONG")] uint iPage)
@@ -144,6 +163,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint, int>)(lpVtbl[17]))((IShellImageData*)Unsafe.AsPointer(ref this), iPage);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetSize(SIZE* pSize)
@@ -151,6 +171,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, SIZE*, int>)(lpVtbl[18]))((IShellImageData*)Unsafe.AsPointer(ref this), pSize);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetRawDataFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetRawDataFormat(Guid* pDataFormat)
@@ -158,6 +179,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, Guid*, int>)(lpVtbl[19]))((IShellImageData*)Unsafe.AsPointer(ref this), pDataFormat);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetPixelFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetPixelFormat([NativeTypeName("PixelFormat *")] uint* pFormat)
@@ -165,6 +187,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[20]))((IShellImageData*)Unsafe.AsPointer(ref this), pFormat);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetDelay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetDelay([NativeTypeName("DWORD *")] uint* pdwDelay)
@@ -172,6 +195,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[21]))((IShellImageData*)Unsafe.AsPointer(ref this), pdwDelay);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetProperties([NativeTypeName("DWORD")] uint dwMode, IPropertySetStorage** ppPropSet)
@@ -179,6 +203,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint, IPropertySetStorage**, int>)(lpVtbl[22]))((IShellImageData*)Unsafe.AsPointer(ref this), dwMode, ppPropSet);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.Rotate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT Rotate([NativeTypeName("DWORD")] uint dwAngle)
@@ -186,6 +211,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint, int>)(lpVtbl[23]))((IShellImageData*)Unsafe.AsPointer(ref this), dwAngle);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.Scale"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT Scale([NativeTypeName("ULONG")] uint cx, [NativeTypeName("ULONG")] uint cy, [NativeTypeName("InterpolationMode")] uint hints)
@@ -193,6 +219,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint, uint, uint, int>)(lpVtbl[24]))((IShellImageData*)Unsafe.AsPointer(ref this), cx, cy, hints);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.DiscardEdit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT DiscardEdit()
@@ -200,6 +227,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[25]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.SetEncoderParams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT SetEncoderParams(IPropertyBag* pbagEnc)
@@ -207,6 +235,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, IPropertyBag*, int>)(lpVtbl[26]))((IShellImageData*)Unsafe.AsPointer(ref this), pbagEnc);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.DisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT DisplayName([NativeTypeName("LPWSTR")] ushort* wszName, uint cch)
@@ -214,6 +243,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, ushort*, uint, int>)(lpVtbl[27]))((IShellImageData*)Unsafe.AsPointer(ref this), wszName, cch);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetResolution"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT GetResolution([NativeTypeName("ULONG *")] uint* puResolutionX, [NativeTypeName("ULONG *")] uint* puResolutionY)
@@ -221,6 +251,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, uint*, uint*, int>)(lpVtbl[28]))((IShellImageData*)Unsafe.AsPointer(ref this), puResolutionX, puResolutionY);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetEncoderParams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT GetEncoderParams(Guid* pguidFmt, [NativeTypeName("EncoderParameters **")] byte** ppEncParams)
@@ -228,6 +259,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, Guid*, byte**, int>)(lpVtbl[29]))((IShellImageData*)Unsafe.AsPointer(ref this), pguidFmt, ppEncParams);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.RegisterAbort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT RegisterAbort(IShellImageDataAbort* pAbort, IShellImageDataAbort** ppAbortPrev)
@@ -235,6 +267,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, IShellImageDataAbort*, IShellImageDataAbort**, int>)(lpVtbl[30]))((IShellImageData*)Unsafe.AsPointer(ref this), pAbort, ppAbortPrev);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.CloneFrame"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT CloneFrame([NativeTypeName("Image **")] byte** ppImg)
@@ -242,6 +275,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         return ((delegate* unmanaged<IShellImageData*, byte**, int>)(lpVtbl[31]))((IShellImageData*)Unsafe.AsPointer(ref this), ppImg);
     }
 
+    /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.ReplaceFrame"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT ReplaceFrame([NativeTypeName("Image *")] byte* pImg)

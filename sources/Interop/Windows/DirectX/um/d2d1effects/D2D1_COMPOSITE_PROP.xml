@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_COMPOSITE_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/composite">Composite effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_COMPOSITE_PROP.D2D1_COMPOSITE_PROP_MODE">
+    <summary>
+      <para>The mode used for the effect.</para>
+      <para>Type is D2D1_COMPOSITE_MODE.</para>
+      <para>Default value is D2D1_COMPOSITE_MODE_SOURCE_OVER</para>
+    </summary>
+  </member>
+  <member name="D2D1_COMPOSITE_PROP.D2D1_COMPOSITE_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

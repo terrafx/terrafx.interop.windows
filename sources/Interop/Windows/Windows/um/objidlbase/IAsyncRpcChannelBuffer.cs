@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAsyncRpcChannelBuffer.xml' path='doc/member[@name="IAsyncRpcChannelBuffer"]/*' />
 [Guid("A5029FB6-3C34-11D1-9C99-00C04FB998AA")]
 [NativeTypeName("struct IAsyncRpcChannelBuffer : IRpcChannelBuffer2")]
 [NativeInheritance("IRpcChannelBuffer2")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, uint>)(lpVtbl[1]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, uint>)(lpVtbl[2]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer.GetBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetBuffer(RPCOLEMESSAGE* pMessage, [NativeTypeName("const IID &")] Guid* riid)
@@ -46,6 +51,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, Guid*, int>)(lpVtbl[3]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, riid);
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer.SendReceive" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SendReceive(RPCOLEMESSAGE* pMessage, [NativeTypeName("ULONG *")] uint* pStatus)
@@ -53,6 +59,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, uint*, int>)(lpVtbl[4]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, pStatus);
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer.FreeBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT FreeBuffer(RPCOLEMESSAGE* pMessage)
@@ -60,6 +67,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, int>)(lpVtbl[5]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage);
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer.GetDestCtx" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDestCtx([NativeTypeName("DWORD *")] uint* pdwDestContext, void** ppvDestContext)
@@ -67,6 +75,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, uint*, void**, int>)(lpVtbl[6]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pdwDestContext, ppvDestContext);
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer.IsConnected" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsConnected()
@@ -74,6 +83,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, int>)(lpVtbl[7]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer2.GetProtocolVersion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetProtocolVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
@@ -81,6 +91,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, uint*, int>)(lpVtbl[8]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pdwVersion);
     }
 
+    /// <include file='IAsyncRpcChannelBuffer.xml' path='doc/member[@name="IAsyncRpcChannelBuffer.Send"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Send(RPCOLEMESSAGE* pMsg, ISynchronize* pSync, [NativeTypeName("ULONG *")] uint* pulStatus)
@@ -88,6 +99,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, ISynchronize*, uint*, int>)(lpVtbl[9]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMsg, pSync, pulStatus);
     }
 
+    /// <include file='IAsyncRpcChannelBuffer.xml' path='doc/member[@name="IAsyncRpcChannelBuffer.Receive"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Receive(RPCOLEMESSAGE* pMsg, [NativeTypeName("ULONG *")] uint* pulStatus)
@@ -95,6 +107,7 @@ public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Int
         return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, uint*, int>)(lpVtbl[10]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMsg, pulStatus);
     }
 
+    /// <include file='IAsyncRpcChannelBuffer.xml' path='doc/member[@name="IAsyncRpcChannelBuffer.GetDestCtxEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetDestCtxEx(RPCOLEMESSAGE* pMsg, [NativeTypeName("DWORD *")] uint* pdwDestContext, void** ppvDestContext)

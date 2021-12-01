@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICBitmapClipper.Initialize">
+    <summary>
+      <para>Initializes the bitmap clipper with the provided parameters.</para>
+    </summary>
+    <param name="pISource">
+      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
+      <para>he input bitmap source.</para>
+    </param>
+    <param name="prc">
+      <para>Type: <b>const <see cref="WICRect" />*</b></para>
+      <para>The rectangle of the bitmap source to clip.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICBitmapClipper">
+    <summary>
+      <para>Exposes methods that produce a clipped version of the input bitmap for a specified rectangular region of interest.</para>
+    </summary>
+  </member>
+</doc>

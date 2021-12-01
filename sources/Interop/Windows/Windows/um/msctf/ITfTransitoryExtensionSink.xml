@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfTransitoryExtensionSink.OnTransitoryExtensionUpdated">
+    <summary>
+      <para>Transitory Document has been updated.</para>
+    </summary>
+    <param name="pic">
+      <para>[in] A pointer of <see cref="ITfContext" /> interface. This is a context object in which the update happened.</para>
+    </param>
+    <param name="ecReadOnly">
+      <para>[in] A read only edit cookie to access the <i>pic</i>. Using this edit cookie, the application can get the text that is contained in the context object.</para>
+    </param>
+    <param name="pResultRange">
+      <para>[in] A pointer of the <see cref="ITfRange" /> interface. This is the range of the result string (determined string).</para>
+    </param>
+    <param name="pCompositionRange">
+      <para>[in] A pointer of the <see cref="ITfRange" /> interface. This is the range of the current composition string.</para>
+    </param>
+    <param name="pfDeleteResultRange">
+      <para>[out] A pointer to return the bool value. If it is true, TSF manager deletes the result range so only the current composition range remains in the transitory extension.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfTransitoryExtensionSink">
+    <summary>
+      <para>The <b>ITfTransitoryExtensionSink</b> interface is implemented by the application that uses Transitory Extension dim. The application can track the changes that happened in the transitory extension by using this sink interface.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBindStatusCallbackEx.xml' path='doc/member[@name="IBindStatusCallbackEx"]/*' />
 [Guid("AAA74EF9-8EE7-4659-88D9-F8C504DA73CC")]
 [NativeTypeName("struct IBindStatusCallbackEx : IBindStatusCallback")]
 [NativeInheritance("IBindStatusCallback")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, Guid*, void**, int>)(lpVtbl[0]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, uint>)(lpVtbl[1]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, uint>)(lpVtbl[2]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IBindStatusCallback.OnStartBinding" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnStartBinding([NativeTypeName("DWORD")] uint dwReserved, IBinding* pib)
@@ -46,6 +51,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, uint, IBinding*, int>)(lpVtbl[3]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), dwReserved, pib);
     }
 
+    /// <inheritdoc cref="IBindStatusCallback.GetPriority" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority)
@@ -53,6 +59,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, int*, int>)(lpVtbl[4]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), pnPriority);
     }
 
+    /// <inheritdoc cref="IBindStatusCallback.OnLowResource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnLowResource([NativeTypeName("DWORD")] uint reserved)
@@ -60,6 +67,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, uint, int>)(lpVtbl[5]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), reserved);
     }
 
+    /// <inheritdoc cref="IBindStatusCallback.OnProgress" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnProgress([NativeTypeName("ULONG")] uint ulProgress, [NativeTypeName("ULONG")] uint ulProgressMax, [NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szStatusText)
@@ -67,6 +75,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, uint, uint, uint, ushort*, int>)(lpVtbl[6]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), ulProgress, ulProgressMax, ulStatusCode, szStatusText);
     }
 
+    /// <inheritdoc cref="IBindStatusCallback.OnStopBinding" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnStopBinding(HRESULT hresult, [NativeTypeName("LPCWSTR")] ushort* szError)
@@ -74,6 +83,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, HRESULT, ushort*, int>)(lpVtbl[7]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), hresult, szError);
     }
 
+    /// <inheritdoc cref="IBindStatusCallback.GetBindInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetBindInfo([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo)
@@ -81,6 +91,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, uint*, BINDINFO*, int>)(lpVtbl[8]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), grfBINDF, pbindinfo);
     }
 
+    /// <inheritdoc cref="IBindStatusCallback.OnDataAvailable" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OnDataAvailable([NativeTypeName("DWORD")] uint grfBSCF, [NativeTypeName("DWORD")] uint dwSize, FORMATETC* pformatetc, STGMEDIUM* pstgmed)
@@ -88,6 +99,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, uint, uint, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[9]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), grfBSCF, dwSize, pformatetc, pstgmed);
     }
 
+    /// <inheritdoc cref="IBindStatusCallback.OnObjectAvailable" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT OnObjectAvailable([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
@@ -95,6 +107,7 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         return ((delegate* unmanaged<IBindStatusCallbackEx*, Guid*, IUnknown*, int>)(lpVtbl[10]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), riid, punk);
     }
 
+    /// <include file='IBindStatusCallbackEx.xml' path='doc/member[@name="IBindStatusCallbackEx.GetBindInfoEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetBindInfoEx([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo, [NativeTypeName("DWORD *")] uint* grfBINDF2, [NativeTypeName("DWORD *")] uint* pdwReserved)

@@ -1,0 +1,4114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDiscRecorder2Ex.GetAdapterDescriptor">
+    <summary>
+      <para>Retrieves the adapter descriptor for the device.</para>
+    </summary>
+    <param name="data">
+      <para>Data buffer that contains the descriptor of the storage adapter. For details of the contents of the data buffer, see the <b>STORAGE_ADAPTER_DESCRIPTOR</b> structure in the DDK</para>
+      <para>When done, call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </param>
+    <param name="byteSize">
+      <para>Size, in bytes, of the data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDiscRecorder2Ex" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetByteAlignmentMask">
+    <summary>
+      <para>Retrieves the byte alignment mask for the device.</para>
+    </summary>
+    <param name="value">
+      <para>Byte alignment mask that you use to determine if the buffer is aligned to the correct byte boundary for the device. The byte alignment value is always a number that is a power of 2.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The data buffer for <see cref="IDiscRecorder2Ex.SendCommandSendDataToDevice" /> and <see cref="IDiscRecorder2Ex.SendCommandGetDataFromDevice" /> must aligned to the correct byte boundary. To determine if the buffer is on the correct byte boundary, perform a bitwise logical AND of the bitmask with  the address of the data buffer. For example, if the address of the buffer is 0x3840958, you can test for correct alignment using the following statement:</para>
+      <code>if (0x3840958 &amp;amp;amp;amp;amp;amp;amp; (value - 1) == 0)
+{
+    // The alignment is correct
+}
+</code>
+    </remarks>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.SendCommandGetDataFromDevice" />
+    <seealso cref="IDiscRecorder2Ex.SendCommandNoData" />
+    <seealso cref="IDiscRecorder2Ex.SendCommandSendDataToDevice" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetDeviceDescriptor">
+    <summary>
+      <para>Retrieves the device descriptor for the device.</para>
+    </summary>
+    <param name="data">
+      <para>Data buffer that contains the descriptor of the storage device. For details of the contents of the data buffer, see the <b>STORAGE_DEVICE_DESCRIPTOR</b> structure in the DDK</para>
+      <para>When done, call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </param>
+    <param name="byteSize">
+      <para>Size, in bytes, of the data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDiscRecorder2Ex" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetDiscInformation">
+    <summary>
+      <para>Retrieves the disc information from the media.</para>
+    </summary>
+    <param name="discInformation">
+      <para>Data buffer that contains disc information from the media. For details of the contents of the data buffer, see the READ DISC INFORMATION command in the latest revision of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+      <para>When done, call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </param>
+    <param name="byteSize">
+      <para>Size, in bytes, of the data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>See the MMC specification for details regarding how to interpret the returned data.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder2Ex" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetFeaturePage">
+    <summary>
+      <para>Retrieves the specified feature page from the device.</para>
+    </summary>
+    <param name="requestedFeature">
+      <para>Feature page to retrieve. For possible values, see the <see cref="IMAPI_FEATURE_PAGE_TYPE" /> enumeration type.</para>
+    </param>
+    <param name="currentFeatureOnly">
+      <para>Set to True to retrieve the feature page only when it is the current feature page. Otherwise, False to retrieve the feature page regardless of it being the current feature page.</para>
+    </param>
+    <param name="featureData">
+      <para>Data buffer that contains the feature page. For details of the contents of the data buffer, see the GET CONFIGURATION command in the latest revision of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+      <para>This method removes header information and other non-feature data before filling and sending this buffer.</para>
+      <para>When done, call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </param>
+    <param name="byteSize">
+      <para>Size, in bytes, of the <i>featureData</i> data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_GET_CONFIGURATION_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive does not support the GET CONFIGURATION command.</para>
+            <para>Value: 0xC0AA020C</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_FEATURE</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is not supported by the device.</para>
+            <para>Value: 0xC0AA020A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_FEATURE_IS_NOT_CURRENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is supported, but is not marked as current.</para>
+            <para>Value: 0xC0AA020B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.GetSupportedFeaturePages" />
+    <seealso cref="IMAPI_FEATURE_PAGE_TYPE" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetMaximumNonPageAlignedTransferSize">
+    <summary>
+      <para>Retrieves the maximum non-page-aligned transfer size for the device.</para>
+    </summary>
+    <param name="value">
+      <para>Maximum size, in bytes,  of a non-page-aligned buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This is the maximum buffer size that a device can accept for a single command. Buffers of this size provide the maximum exchange of data. The buffer does not need to begin on a  physical memory page boundary.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.GetMaximumPageAlignedTransferSize" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetMaximumPageAlignedTransferSize">
+    <summary>
+      <para>Retrieves the maximum page-aligned transfer size for the device.</para>
+    </summary>
+    <param name="value">
+      <para>Maximum size, in bytes,  of a page-aligned buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Maximum page-aligned buffer size that a device can accept for a single command. The buffer for this transfer size must begin on a physical memory page boundary.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.GetMaximumNonPageAlignedTransferSize" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetModePage">
+    <summary>
+      <para>Retrieves the specified mode page from the device.</para>
+    </summary>
+    <param name="requestedModePage">
+      <para>Mode page to retrieve. For possible values, see the <see cref="IMAPI_MODE_PAGE_TYPE" /> enumeration type.</para>
+    </param>
+    <param name="requestType">
+      <para>Type of mode page data to retrieve, for example, the current settings or the settings that are write enabled. For possible values, see the <see cref="IMAPI_MODE_PAGE_REQUEST_TYPE" /> enumeration type.</para>
+    </param>
+    <param name="modePageData">
+      <para>Data buffer that contains the mode page. For details of the contents of the data buffer, see the MODE SENSE (10) command in the latest revision of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+      <para>This method removes header information and other non-page data before returning the buffer.</para>
+      <para>When done, call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </param>
+    <param name="byteSize">
+      <para>Size, in bytes, of the <i>modePageData</i> data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are not valid.</para>
+            <para>Value: 0x80070057</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.GetSupportedModePages" />
+    <seealso cref="IDiscRecorder2Ex.SetModePage" />
+    <seealso cref="IMAPI_MODE_PAGE_REQUEST_TYPE" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetSupportedFeaturePages">
+    <summary>
+      <para>Retrieves the list of supported feature pages or the current feature pages of the device.</para>
+    </summary>
+    <param name="currentFeatureOnly">
+      <para>Set to True to retrieve only current feature pages. Otherwise, False to retrieve all feature pages that the device supports.</para>
+    </param>
+    <param name="featureData">
+      <para>Data buffer that contains one or more feature page types. For possible values, see the <see cref="IMAPI_FEATURE_PAGE_TYPE" /> enumeration type.</para>
+      <para>To get the feature page data associated with the feature page type, call the <see cref="IDiscRecorder2Ex.GetFeaturePage" /> method.</para>
+      <para>When done, call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </param>
+    <param name="byteSize">
+      <para>Number of supported feature pages in the <i>featureData</i> data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_GET_CONFIGURATION_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive does not support the GET CONFIGURATION command.</para>
+            <para>Value: 0xC0AA020C</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_FEATURE</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is not supported by the device.</para>
+            <para>Value: 0xC0AA020A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_FEATURE_IS_NOT_CURRENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is supported, but is not marked as current.</para>
+            <para>Value: 0xC0AA020B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDiscRecorder2.get_CurrentFeaturePages" />
+    <seealso cref="IDiscRecorder2.get_SupportedProfiles" />
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.GetFeaturePage" />
+    <seealso cref="IMAPI_FEATURE_PAGE_TYPE" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetSupportedModePages">
+    <summary>
+      <para>Retrieves the supported mode pages for the device.</para>
+    </summary>
+    <param name="requestType">
+      <para>Type of mode page data to retrieve, for example, the current settings or the settings that are write enabled. For possible values, see the <see cref="IMAPI_MODE_PAGE_REQUEST_TYPE" /> enumeration type.</para>
+    </param>
+    <param name="modePageTypes">
+      <para>Data buffer that contains one or more mode page types. For possible values, see the <see cref="IMAPI_MODE_PAGE_TYPE" /> enumeration type.</para>
+      <para>To get the mode page data associated with the mode page type, call the <see cref="IDiscRecorder2Ex.GetModePage" /> method.</para>
+      <para>When done, call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </param>
+    <param name="validPages">
+      <para>Number of mode pages in the data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are not valid.</para>
+            <para>Value: 0x80070057</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDiscRecorder2.get_SupportedModePages" />
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.GetModePage" />
+    <seealso cref="IDiscRecorder2Ex.SetModePage" />
+    <seealso cref="IMAPI_MODE_PAGE_TYPE" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetSupportedProfiles">
+    <summary>
+      <para>Retrieves the supported profiles or the current profiles of the device.</para>
+    </summary>
+    <param name="currentOnly">
+      <para>Set to True to retrieve the current profiles. Otherwise, False to return all supported profiles of the device.</para>
+    </param>
+    <param name="profileTypes">
+      <para>Data buffer that contains one or more profile types. For possible values, see the <see cref="IMAPI_PROFILE_TYPE" /> enumeration type.</para>
+      <para>When done, call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </param>
+    <param name="validProfiles">
+      <para>Number of supported profiles in the <i>profileTypes</i> data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_GET_CONFIGURATION_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive does not support the GET CONFIGURATION command.</para>
+            <para>Value: 0xC0AA020C</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_FEATURE</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is not supported by the device.</para>
+            <para>Value: 0xC0AA020A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_FEATURE_IS_NOT_CURRENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is supported, but is not marked as current.</para>
+            <para>Value: 0xC0AA020B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDiscRecorder2.get_CurrentProfiles" />
+    <seealso cref="IDiscRecorder2.get_SupportedProfiles" />
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IMAPI_PROFILE_TYPE" />
+  </member>
+  <member name="IDiscRecorder2Ex.GetTrackInformation">
+    <summary>
+      <para>Retrieves the track  information from the media.</para>
+    </summary>
+    <param name="address">
+      <para>Address field. The <i>addressType</i> parameter provides additional context for this parameter.</para>
+    </param>
+    <param name="addressType">
+      <para>Type of address specified in the <i>address</i> parameter, for example, if this is an LBA address or a track number. For possible values, see the <see cref="IMAPI_READ_TRACK_ADDRESS_TYPE" /> enumeration type.</para>
+    </param>
+    <param name="trackInformation">
+      <para>Data buffer that contains the track information. For details of the contents of the data buffer, see the READ TRACK INFORMATION command in the latest revision of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+      <para>When done, call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </param>
+    <param name="byteSize">
+      <para>Size, in bytes, of the <i>trackInformation</i> data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_GET_CONFIGURATION_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive does not support the GET CONFIGURATION command.</para>
+            <para>Value: 0xC0AA020C</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_FEATURE</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is not supported by the device.</para>
+            <para>Value: 0xC0AA020A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_FEATURE_IS_NOT_CURRENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is supported, but is not marked as current.</para>
+            <para>Value: 0xC0AA020B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDiscRecorder2Ex" />
+  </member>
+  <member name="IDiscRecorder2Ex.ReadDvdStructure">
+    <summary>
+      <para>Reads a DVD structure from the media.</para>
+    </summary>
+    <param name="format">
+      <para>Format field of the command packet. Acceptable values range from zero to 0xFF.</para>
+      <para>
+        <b>Note</b>  This value is truncated to <b>UCHAR</b>.</para>
+    </param>
+    <param name="address">
+      <para>Address field of the command packet.</para>
+    </param>
+    <param name="layer">
+      <para>Layer field of the command packet.</para>
+    </param>
+    <param name="agid">
+      <para>Authentication grant ID (AGID) field of the command packet.</para>
+    </param>
+    <param name="data">
+      <para>Data buffer that contains the DVD structure. For details of the contents of the data buffer, see the READ DISC STRUCTURE command in the latest revision of the MMC specification at <a href="https://www.microsoft.com/?ref=go">ftp://ftp.t10.org/t10/drafts/mmc5</a>.</para>
+      <para>This method removes headers from the buffer.</para>
+      <para>When done, call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </param>
+    <param name="count">
+      <para>Size, in bytes, of the data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_GET_CONFIGURATION_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive does not support the GET CONFIGURATION command.</para>
+            <para>Value: 0xC0AA020C</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_FEATURE</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is not supported by the device.</para>
+            <para>Value: 0xC0AA020A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_FEATURE_IS_NOT_CURRENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is supported, but is not marked as current.</para>
+            <para>Value: 0xC0AA020B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method removes the complexity of working with the READ DISC STRUCTURE command. For details on the values to specify for the <i>format</i>, <i>address</i>, <i>layer</i>, and <i>agid</i> parameters, see their field descriptions for the READ DISC STRUCTURE command in the latest revision of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.SendDvdStructure" />
+  </member>
+  <member name="IDiscRecorder2Ex.SendCommandGetDataFromDevice">
+    <summary>
+      <para>Sends a MMC command to the recording device requesting data from the device.</para>
+    </summary>
+    <param name="Cdb">
+      <para>Command packet to send to the device.</para>
+    </param>
+    <param name="CdbSize">
+      <para>Size, in bytes, of the command packet to send. Must be between 6 and 16 bytes.</para>
+    </param>
+    <param name="SenseBuffer">
+      <para>Sense data returned by the recording device.</para>
+    </param>
+    <param name="Timeout">
+      <para>Time limit, in seconds, allowed for the send command to receive a result.</para>
+    </param>
+    <param name="Buffer">
+      <para>Application-allocated data buffer that will receive data associated with the send command. Must not be <b>NULL</b>.</para>
+    </param>
+    <param name="BufferSize">
+      <para>Size, in bytes, of the <i>Buffer</i> data buffer. Must not be zero.</para>
+    </param>
+    <param name="BufferFetched">
+      <para>Size, in bytes, of the data returned in the <i>Buffer</i> data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK or one of the following values can be returned on success, but other success codes may be returned as a result of implementation:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_IMAPI_COMMAND_HAS_SENSE_DATA</b>
+            </para>
+          </description>
+          <description>
+            <para>The device fails the command, but returns sense data.</para>
+          </description>
+        </item>
+      </list>
+      <para>The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_GET_CONFIGURATION_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive does not support the GET CONFIGURATION command.</para>
+            <para>Value: 0xC0AA020C</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_FEATURE</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is not supported by the device.</para>
+            <para>Value: 0xC0AA020A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_FEATURE_IS_NOT_CURRENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is supported, but is not marked as current.</para>
+            <para>Value: 0xC0AA020B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For details of the contents of the command packet, sense data, and output data buffer, see the latest revision of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+      <para>Client-defined commands (CDBs) used with this method must be between 6 and 16 bytes in length. In addition, the size of each command must match the size defined by the operation code as defined in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>CDB operation code range</description>
+          <description>CDB group</description>
+          <description>Required CDB size</description>
+        </listheader>
+        <item>
+          <description>0x00 — 0x1F</description>
+          <description>0</description>
+          <description>6 bytes</description>
+        </item>
+        <item>
+          <description>0x20 — 0x3F</description>
+          <description>1</description>
+          <description>10 bytes</description>
+        </item>
+        <item>
+          <description>0x40 — 0x5F</description>
+          <description>2</description>
+          <description>10 bytes</description>
+        </item>
+        <item>
+          <description>0x60 — 0x7F</description>
+          <description>3</description>
+          <description>Will enforce standard-specified size requirements for this opcode range in the future.</description>
+        </item>
+        <item>
+          <description>0x80 — 0x9F</description>
+          <description>4</description>
+          <description>16 bytes</description>
+        </item>
+        <item>
+          <description>0xA0 — 0xBF</description>
+          <description>5</description>
+          <description>12 bytes</description>
+        </item>
+        <item>
+          <description>0xC0 — 0xDF</description>
+          <description>6</description>
+          <description>Vendor Unique - Any size allowed</description>
+        </item>
+        <item>
+          <description>0xE0 — 0xFF</description>
+          <description>7</description>
+          <description>Vendor Unique - Any size allowed</description>
+        </item>
+      </list>
+      <para>Some very early devices used vendor-unique opcodes and therefore some opcodes cannot be validated in this manner. The following opcodes are still valid and only verify that the size is between 6 and 16 bytes:</para>
+      <para>0x02, 0x05, 0x06, 0x09, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x13, 0x14, 0x19, 0x20, 0x21, 0x22, 0x23, 0x24, 0x26, 0x27, 0x29, 0x2C, 0x2D</para>
+    </remarks>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.SendCommandNoData" />
+    <seealso cref="IDiscRecorder2Ex.SendCommandSendDataToDevice" />
+  </member>
+  <member name="IDiscRecorder2Ex.SendCommandNoData">
+    <summary>
+      <para>Sends a MMC command to the recording device. Use this function when no data buffer is sent to nor received from the device.</para>
+    </summary>
+    <param name="Cdb">
+      <para>Command packet to send to the device.</para>
+    </param>
+    <param name="CdbSize">
+      <para>Size, in bytes, of the command packet to send. Must be between 6 and 16 bytes.</para>
+    </param>
+    <param name="SenseBuffer">
+      <para>Sense data returned by the recording device.</para>
+    </param>
+    <param name="Timeout">
+      <para>Time limit, in seconds, allowed for the send command to receive a result.</para>
+    </param>
+    <returns>
+      <para>S_OK or one of the following values can be returned on success, but other success codes may be returned as a result of implementation:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_IMAPI_COMMAND_HAS_SENSE_DATA</b>
+            </para>
+          </description>
+          <description>
+            <para>The device fails the command, but returns sense data.</para>
+            <para>Value: 0x00AA0200</para>
+          </description>
+        </item>
+      </list>
+      <para>The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_GET_CONFIGURATION_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive does not support the GET CONFIGURATION command.</para>
+            <para>Value: 0xC0AA020C</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_FEATURE</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is not supported by the device.</para>
+            <para>Value: 0xC0AA020A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_FEATURE_IS_NOT_CURRENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is supported, but is not marked as current.</para>
+            <para>Value: 0xC0AA020B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For details of the contents of the command packet and sense data, see the latest revision of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+      <para>Client-defined commands (CDBs) used with this method must be between 6 and 16 bytes in length. In addition, the size of each command must match the size defined by the operation code as defined in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>CDB operation code range</description>
+          <description>CDB group</description>
+          <description>Required CDB size</description>
+        </listheader>
+        <item>
+          <description>0x00 — 0x1F</description>
+          <description>0</description>
+          <description>6 bytes</description>
+        </item>
+        <item>
+          <description>0x20 — 0x3F</description>
+          <description>1</description>
+          <description>10 bytes</description>
+        </item>
+        <item>
+          <description>0x40 — 0x5F</description>
+          <description>2</description>
+          <description>10 bytes</description>
+        </item>
+        <item>
+          <description>0x60 — 0x7F</description>
+          <description>3</description>
+          <description>Will enforce standard-specified size requirements for this opcode range in the future.</description>
+        </item>
+        <item>
+          <description>0x80 — 0x9F</description>
+          <description>4</description>
+          <description>16 bytes</description>
+        </item>
+        <item>
+          <description>0xA0 — 0xBF</description>
+          <description>5</description>
+          <description>12 bytes</description>
+        </item>
+        <item>
+          <description>0xC0 — 0xDF</description>
+          <description>6</description>
+          <description>Vendor Unique - Any size allowed</description>
+        </item>
+        <item>
+          <description>0xE0 — 0xFF</description>
+          <description>7</description>
+          <description>Vendor Unique - Any size allowed</description>
+        </item>
+      </list>
+      <para>Some very early devices used vendor-unique opcodes and therefore some opcodes cannot be validated in this manner. The following opcodes are still valid and only verify that the size is between 6 and 16 bytes:</para>
+      <para>0x02, 0x05, 0x06, 0x09, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x13, 0x14, 0x19, 0x20, 0x21, 0x22, 0x23, 0x24, 0x26, 0x27, 0x29, 0x2C, 0x2D</para>
+    </remarks>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.SendCommandGetDataFromDevice" />
+    <seealso cref="IDiscRecorder2Ex.SendCommandSendDataToDevice" />
+  </member>
+  <member name="IDiscRecorder2Ex.SendCommandSendDataToDevice">
+    <summary>
+      <para>Sends a MMC command and its associated data buffer to the recording device.</para>
+    </summary>
+    <param name="Cdb">
+      <para>Command packet to send to the device.</para>
+    </param>
+    <param name="CdbSize">
+      <para>Size, in bytes, of the command packet to send. Must be between 6 and 16 bytes.</para>
+    </param>
+    <param name="SenseBuffer">
+      <para>Sense data returned by the recording device.</para>
+    </param>
+    <param name="Timeout">
+      <para>Time limit, in seconds, allowed for the send command to receive a result.</para>
+    </param>
+    <param name="Buffer">
+      <para>Buffer containing data associated with the send command. Must not be <b>NULL</b>.</para>
+    </param>
+    <param name="BufferSize">
+      <para>Size, in bytes, of the data buffer to send. Must not be zero.</para>
+    </param>
+    <returns>
+      <para>S_OK or one of the following values can be returned on success, but other success codes may be returned as a result of implementation:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_IMAPI_COMMAND_HAS_SENSE_DATA</b>
+            </para>
+          </description>
+          <description>
+            <para>The device fails the command, but returns sense data.</para>
+            <para>Value: 0x00AA0200</para>
+          </description>
+        </item>
+      </list>
+      <para>The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_GET_CONFIGURATION_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive does not support the GET CONFIGURATION command.</para>
+            <para>Value: 0xC0AA020C</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_FEATURE</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is not supported by the device.</para>
+            <para>Value: 0xC0AA020A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_FEATURE_IS_NOT_CURRENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is supported, but is not marked as current.</para>
+            <para>Value: 0xC0AA020B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For details of the contents of the command packet, sense data, and input data buffer, see the latest revision of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+      <para>Client-defined commands (CDBs) used with this method must be between 6 and 16 bytes in length. In addition, the size of each command must match the size defined by the operation code as defined in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>CDB operation code range</description>
+          <description>CDB group</description>
+          <description>Required CDB size</description>
+        </listheader>
+        <item>
+          <description>0x00 — 0x1F</description>
+          <description>0</description>
+          <description>6 bytes</description>
+        </item>
+        <item>
+          <description>0x20 — 0x3F</description>
+          <description>1</description>
+          <description>10 bytes</description>
+        </item>
+        <item>
+          <description>0x40 — 0x5F</description>
+          <description>2</description>
+          <description>10 bytes</description>
+        </item>
+        <item>
+          <description>0x60 — 0x7F</description>
+          <description>3</description>
+          <description>Will enforce standard-specified size requirements for this opcode range in the future.</description>
+        </item>
+        <item>
+          <description>0x80 — 0x9F</description>
+          <description>4</description>
+          <description>16 bytes</description>
+        </item>
+        <item>
+          <description>0xA0 — 0xBF</description>
+          <description>5</description>
+          <description>12 bytes</description>
+        </item>
+        <item>
+          <description>0xC0 — 0xDF</description>
+          <description>6</description>
+          <description>Vendor Unique - Any size allowed</description>
+        </item>
+        <item>
+          <description>0xE0 — 0xFF</description>
+          <description>7</description>
+          <description>Vendor Unique - Any size allowed</description>
+        </item>
+      </list>
+      <para>Some very early devices used vendor-unique opcodes and therefore some opcodes cannot be validated in this manner. The following opcodes are still valid and only verify that the size is between 6 and 16 bytes:</para>
+      <para>0x02, 0x05, 0x06, 0x09, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x13, 0x14, 0x19, 0x20, 0x21, 0x22, 0x23, 0x24, 0x26, 0x27, 0x29, 0x2C, 0x2D</para>
+    </remarks>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.SendCommandGetDataFromDevice" />
+    <seealso cref="IDiscRecorder2Ex.SendCommandNoData" />
+  </member>
+  <member name="IDiscRecorder2Ex.SendDvdStructure">
+    <summary>
+      <para>Sends a DVD structure to the media.</para>
+    </summary>
+    <param name="format">
+      <para>Format field of the command packet. Acceptable values range from zero to 0xFF.</para>
+    </param>
+    <param name="data">
+      <para>Data buffer that contains the DVD structure to send to the media. Do not include a header; this method generates and prepends a header to the DVD structure.</para>
+    </param>
+    <param name="count">
+      <para>Size, in bytes, of the data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_GET_CONFIGURATION_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive does not support the GET CONFIGURATION command.</para>
+            <para>Value: 0xC0AA020C</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_FEATURE</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is not supported by the device.</para>
+            <para>Value: 0xC0AA020A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_FEATURE_IS_NOT_CURRENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is supported, but is not marked as current.</para>
+            <para>Value: 0xC0AA020B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For details on specifying the fields of  the structure, see the SEND DISC STRUCTURE command in the latest revision of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.ReadDvdStructure" />
+  </member>
+  <member name="IDiscRecorder2Ex.SetModePage">
+    <summary>
+      <para>Sets the mode page data for the device.</para>
+    </summary>
+    <param name="requestType">
+      <para>Type of mode page data to send. For possible values, see the <see cref="IMAPI_MODE_PAGE_REQUEST_TYPE" /> enumeration type.</para>
+    </param>
+    <param name="data">
+      <para>Data buffer that contains the mode page data to send to the media. Do not include a header; this method generates and prepends a header to the mode page data.</para>
+      <para>For details on specifying the fields of  the mode page data, see the MODE SELECT (10) command in the latest revision of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+    </param>
+    <param name="byteSize">
+      <para>Size, in bytes, of the data buffer.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Unspecified failure.</para>
+            <para>Value: 0x80004005</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_GET_CONFIGURATION_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive does not support the GET CONFIGURATION command.</para>
+            <para>Value: 0xC0AA020C</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_FEATURE</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is not supported by the device.</para>
+            <para>Value: 0xC0AA020A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_FEATURE_IS_NOT_CURRENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The feature page requested is supported, but is not marked as current.</para>
+            <para>Value: 0xC0AA020B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
+            <para>Value: 0xC0AA020D</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported unexpected or invalid data for a command.</para>
+            <para>Value: 0xC0AA02FF</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is inserted upside down.</para>
+            <para>Value: 0xC0AA0204</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
+            <para>Value: 0xC0AA0205</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no media in the device.</para>
+            <para>Value: 0xC0AA0202</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
+            <para>Value: 0xC0AA0206</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
+            <para>Value: 0xC0AA0207</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_LOSS_OF_STREAMING</b>
+            </para>
+          </description>
+          <description>
+            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
+            <para>Value: 0xC0AA0300</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media is not compatible or of unknown physical format.</para>
+            <para>Value: 0xC0AA0203</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
+            <para>Value: 0xC0AA020E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The device reported that the requested mode page (and type) is not present.</para>
+            <para>Value: 0xC0AA0201</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
+            <para>Value: 0xC0AA0208</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The drive reported that the media is write protected.</para>
+            <para>Value: 0xC0AA0209</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
+            <para>Value: 0xC0AA020F</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+            <para>Value: 6</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified network resource or device is no longer available.</para>
+            <para>Value: 55</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_IMAPI_RECORDER_LOCKED</b>
+            </para>
+          </description>
+          <description>
+            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
+            <para>Value: 0xC0AA0210</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDiscRecorder2Ex" />
+    <seealso cref="IDiscRecorder2Ex.GetModePage" />
+    <seealso cref="IDiscRecorder2Ex.GetSupportedModePages" />
+    <seealso cref="IMAPI_MODE_PAGE_REQUEST_TYPE" />
+  </member>
+  <member name="IDiscRecorder2Ex">
+    <summary>
+      <para>This interface represents a physical device. You use this interface to retrieve information about a CD and DVD device installed on the computer and to perform operations such as closing the tray or ejecting the media. This interface retrieves information not available through <see cref="IDiscRecorder2" /> interface, and provides easier access to some of the same property values in <b>IDiscRecorder2</b>.</para>
+      <para>To get an instance of this interface, create an instance of the <see cref="IDiscRecorder2" /> interface and then call the <b>IDiscRecorder2.QueryInterface</b> method to retrieve the <b>IDiscRecorder2Ex</b> interface.</para>
+      <para>Note that you cannot access this functionality from script.</para>
+    </summary>
+    <remarks>
+      <para>To write data to media, you need to attach this recorder to the <see cref="IWriteEngine2" /> data writer, using the <see cref="IWriteEngine2.put_Recorder" /> method.</para>
+    </remarks>
+    <seealso cref="IDiscRecorder2" />
+  </member>
+</doc>

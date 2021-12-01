@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVQScaleType.xml' path='doc/member[@name="CODECAPI_AVEncMPVQScaleType"]/*' />
 [Guid("2B79EBB7-F484-4AF7-BB58-A2A188C5CBBE")]
 public partial struct CODECAPI_AVEncMPVQScaleType
 {

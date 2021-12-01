@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFDXGIBuffer.xml' path='doc/member[@name="IMFDXGIBuffer"]/*' />
 [Guid("E7174CFA-1C9E-48B1-8866-626226BFC258")]
 [NativeTypeName("struct IMFDXGIBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface
         return ((delegate* unmanaged<IMFDXGIBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface
         return ((delegate* unmanaged<IMFDXGIBuffer*, uint>)(lpVtbl[1]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface
         return ((delegate* unmanaged<IMFDXGIBuffer*, uint>)(lpVtbl[2]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFDXGIBuffer.xml' path='doc/member[@name="IMFDXGIBuffer.GetResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetResource([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface
         return ((delegate* unmanaged<IMFDXGIBuffer*, Guid*, void**, int>)(lpVtbl[3]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <include file='IMFDXGIBuffer.xml' path='doc/member[@name="IMFDXGIBuffer.GetSubresourceIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSubresourceIndex(uint* puSubresource)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface
         return ((delegate* unmanaged<IMFDXGIBuffer*, uint*, int>)(lpVtbl[4]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), puSubresource);
     }
 
+    /// <include file='IMFDXGIBuffer.xml' path='doc/member[@name="IMFDXGIBuffer.GetUnknown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetUnknown([NativeTypeName("const IID &")] Guid* guid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface
         return ((delegate* unmanaged<IMFDXGIBuffer*, Guid*, Guid*, void**, int>)(lpVtbl[5]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), guid, riid, ppvObject);
     }
 
+    /// <include file='IMFDXGIBuffer.xml' path='doc/member[@name="IMFDXGIBuffer.SetUnknown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetUnknown([NativeTypeName("const IID &")] Guid* guid, IUnknown* pUnkData)

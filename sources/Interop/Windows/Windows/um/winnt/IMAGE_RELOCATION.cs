@@ -8,18 +8,23 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_RELOCATION.xml' path='doc/member[@name="IMAGE_RELOCATION"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
 public partial struct IMAGE_RELOCATION
 {
+    /// <include file='IMAGE_RELOCATION.xml' path='doc/member[@name="IMAGE_RELOCATION.Anonymous"]/*' />
     [NativeTypeName("_IMAGE_RELOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18936:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='IMAGE_RELOCATION.xml' path='doc/member[@name="IMAGE_RELOCATION.SymbolTableIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint SymbolTableIndex;
 
+    /// <include file='IMAGE_RELOCATION.xml' path='doc/member[@name="IMAGE_RELOCATION.Type"]/*' />
     [NativeTypeName("WORD")]
     public ushort Type;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VirtualAddress"]/*' />
     public ref uint VirtualAddress
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -29,6 +34,7 @@ public partial struct IMAGE_RELOCATION
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.RelocCount"]/*' />
     public ref uint RelocCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,13 +44,16 @@ public partial struct IMAGE_RELOCATION
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit, Pack = 2)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VirtualAddress"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint VirtualAddress;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.RelocCount"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint RelocCount;

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWM_SOURCE_FRAME_SAMPLING">
+    <summary>
+      <para>Flags used by the <see cref="DwmSetPresentParameters" /> function to specify the frame sampling type.</para>
+    </summary>
+  </member>
+  <member name="DWM_SOURCE_FRAME_SAMPLING.DWM_SOURCE_FRAME_SAMPLING_POINT">
+    <summary>
+      <para>Use the first source frame that includes the first refresh of the output frame.</para>
+    </summary>
+  </member>
+  <member name="DWM_SOURCE_FRAME_SAMPLING.DWM_SOURCE_FRAME_SAMPLING_COVERAGE">
+    <summary>
+      <para>Use the source frame that includes the most refreshes of the output frame. In the case of multiple source frames with the same coverage, the last frame is used.</para>
+    </summary>
+  </member>
+  <member name="DWM_SOURCE_FRAME_SAMPLING.DWM_SOURCE_FRAME_SAMPLING_LAST">
+    <summary>
+      <para>The maximum recognized <see cref="DWM_SOURCE_FRAME_SAMPLING" /> value, used for validation purposes.</para>
+    </summary>
+  </member>
+</doc>

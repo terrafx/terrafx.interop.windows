@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_ISSUER_SERIAL_NUMBER">
+    <summary>
+      <para>The <b>CERT_ISSUER_SERIAL_NUMBER</b> structure acts as a unique identifier of a certificate containing the issuer and issuer's serial number for a certificate.</para>
+    </summary>
+  </member>
+  <member name="CERT_ISSUER_SERIAL_NUMBER.Issuer">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> structure that contains the name of the issuer.</para>
+    </summary>
+  </member>
+  <member name="CERT_ISSUER_SERIAL_NUMBER.SerialNumber">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure that contains the serial number of the certificate. The combination of the issuer name and the serial number is a unique identifier of a certificate.</para>
+    </summary>
+  </member>
+</doc>

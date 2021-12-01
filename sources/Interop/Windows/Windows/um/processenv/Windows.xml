@@ -1,0 +1,2077 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.ExpandEnvironmentStrings">
+    <summary>
+      <para>Expands environment-variable strings and replaces them with the values defined for the current user.</para>
+      <para>To specify the environment block for a particular user or the system, use the <see cref="ExpandEnvironmentStringsForUser" /> function.</para>
+    </summary>
+    <param name="lpSrc">
+      <para>A buffer that contains one or more environment-variable strings in the form: %<i>variableName</i>%. For each such reference, the %<i>variableName</i>% portion is replaced with the current value of that environment variable.</para>
+      <para>Case is ignored when looking up the environment-variable name. If the name is not found, the %<i>variableName</i>% portion is left unexpanded.</para>
+      <para>Note that this function does not support all the features that Cmd.exe supports. For example, it does not support %<i>variableName</i>:<i>str1</i>=<i>str2</i>% or %<i>variableName</i>:~<i>offset</i>,<i>length</i>%.</para>
+    </param>
+    <param name="lpDst">
+      <para>A pointer to a buffer that receives the result of expanding the environment variable strings in the <i>lpSrc</i> buffer. Note that this buffer cannot be the same as the <i>lpSrc</i> buffer.</para>
+    </param>
+    <param name="nSize">
+      <para>The maximum number of characters that can be stored in the buffer pointed to by the <i>lpDst</i> parameter. When using ANSI strings, the buffer size should be the string length, plus terminating null character, plus one. When using Unicode strings, the buffer size should be the string length plus the terminating null character.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of <b>TCHARs</b> stored in the destination buffer, including the terminating null character. If the destination buffer is too small to hold the expanded string, the return value is the required buffer size, in characters.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The size of the <i>lpSrc</i> and <i>lpDst</i> buffers is limited to 32K.</para>
+      <para>To replace folder names in a fully qualified path with their associated environment-variable strings, use the <see cref="PathUnExpandEnvStrings" /> function.</para>
+      <para>To retrieve the list of environment variables for a process, use the <see cref="GetEnvironmentStrings" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/SysInfo/getting-system-information">Getting System Information</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines ExpandEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.ExpandEnvironmentStringsA">
+    <summary>
+      <para>Expands environment-variable strings and replaces them with the values defined for the current user.</para>
+      <para>To specify the environment block for a particular user or the system, use the <see cref="ExpandEnvironmentStringsForUser" /> function.</para>
+    </summary>
+    <param name="lpSrc">
+      <para>A buffer that contains one or more environment-variable strings in the form: %<i>variableName</i>%. For each such reference, the %<i>variableName</i>% portion is replaced with the current value of that environment variable.</para>
+      <para>Case is ignored when looking up the environment-variable name. If the name is not found, the %<i>variableName</i>% portion is left unexpanded.</para>
+      <para>Note that this function does not support all the features that Cmd.exe supports. For example, it does not support %<i>variableName</i>:<i>str1</i>=<i>str2</i>% or %<i>variableName</i>:~<i>offset</i>,<i>length</i>%.</para>
+    </param>
+    <param name="lpDst">
+      <para>A pointer to a buffer that receives the result of expanding the environment variable strings in the <i>lpSrc</i> buffer. Note that this buffer cannot be the same as the <i>lpSrc</i> buffer.</para>
+    </param>
+    <param name="nSize">
+      <para>The maximum number of characters that can be stored in the buffer pointed to by the <i>lpDst</i> parameter. When using ANSI strings, the buffer size should be the string length, plus terminating null character, plus one. When using Unicode strings, the buffer size should be the string length plus the terminating null character.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of <b>TCHARs</b> stored in the destination buffer, including the terminating null character. If the destination buffer is too small to hold the expanded string, the return value is the required buffer size, in characters.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The size of the <i>lpSrc</i> and <i>lpDst</i> buffers is limited to 32K.</para>
+      <para>To replace folder names in a fully qualified path with their associated environment-variable strings, use the <see cref="PathUnExpandEnvStrings" /> function.</para>
+      <para>To retrieve the list of environment variables for a process, use the <see cref="GetEnvironmentStrings" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/SysInfo/getting-system-information">Getting System Information</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines ExpandEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.ExpandEnvironmentStringsW">
+    <summary>
+      <para>Expands environment-variable strings and replaces them with the values defined for the current user.</para>
+      <para>To specify the environment block for a particular user or the system, use the <see cref="ExpandEnvironmentStringsForUser" /> function.</para>
+    </summary>
+    <param name="lpSrc">
+      <para>A buffer that contains one or more environment-variable strings in the form: %<i>variableName</i>%. For each such reference, the %<i>variableName</i>% portion is replaced with the current value of that environment variable.</para>
+      <para>Case is ignored when looking up the environment-variable name. If the name is not found, the %<i>variableName</i>% portion is left unexpanded.</para>
+      <para>Note that this function does not support all the features that Cmd.exe supports. For example, it does not support %<i>variableName</i>:<i>str1</i>=<i>str2</i>% or %<i>variableName</i>:~<i>offset</i>,<i>length</i>%.</para>
+    </param>
+    <param name="lpDst">
+      <para>A pointer to a buffer that receives the result of expanding the environment variable strings in the <i>lpSrc</i> buffer. Note that this buffer cannot be the same as the <i>lpSrc</i> buffer.</para>
+    </param>
+    <param name="nSize">
+      <para>The maximum number of characters that can be stored in the buffer pointed to by the <i>lpDst</i> parameter. When using ANSI strings, the buffer size should be the string length, plus terminating null character, plus one. When using Unicode strings, the buffer size should be the string length plus the terminating null character.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of <b>TCHARs</b> stored in the destination buffer, including the terminating null character. If the destination buffer is too small to hold the expanded string, the return value is the required buffer size, in characters.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The size of the <i>lpSrc</i> and <i>lpDst</i> buffers is limited to 32K.</para>
+      <para>To replace folder names in a fully qualified path with their associated environment-variable strings, use the <see cref="PathUnExpandEnvStrings" /> function.</para>
+      <para>To retrieve the list of environment variables for a process, use the <see cref="GetEnvironmentStrings" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/SysInfo/getting-system-information">Getting System Information</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines ExpandEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.ExpandEnvironmentStrings">
+    <summary>
+      <para>Expands environment-variable strings and replaces them with the values defined for the current user.</para>
+      <para>To specify the environment block for a particular user or the system, use the <see cref="ExpandEnvironmentStringsForUser" /> function.</para>
+    </summary>
+    <param name="lpSrc">
+      <para>A buffer that contains one or more environment-variable strings in the form: %<i>variableName</i>%. For each such reference, the %<i>variableName</i>% portion is replaced with the current value of that environment variable.</para>
+      <para>Case is ignored when looking up the environment-variable name. If the name is not found, the %<i>variableName</i>% portion is left unexpanded.</para>
+      <para>Note that this function does not support all the features that Cmd.exe supports. For example, it does not support %<i>variableName</i>:<i>str1</i>=<i>str2</i>% or %<i>variableName</i>:~<i>offset</i>,<i>length</i>%.</para>
+    </param>
+    <param name="lpDst">
+      <para>A pointer to a buffer that receives the result of expanding the environment variable strings in the <i>lpSrc</i> buffer. Note that this buffer cannot be the same as the <i>lpSrc</i> buffer.</para>
+    </param>
+    <param name="nSize">
+      <para>The maximum number of characters that can be stored in the buffer pointed to by the <i>lpDst</i> parameter. When using ANSI strings, the buffer size should be the string length, plus terminating null character, plus one. When using Unicode strings, the buffer size should be the string length plus the terminating null character.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of <b>TCHARs</b> stored in the destination buffer, including the terminating null character. If the destination buffer is too small to hold the expanded string, the return value is the required buffer size, in characters.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The size of the <i>lpSrc</i> and <i>lpDst</i> buffers is limited to 32K.</para>
+      <para>To replace folder names in a fully qualified path with their associated environment-variable strings, use the <see cref="PathUnExpandEnvStrings" /> function.</para>
+      <para>To retrieve the list of environment variables for a process, use the <see cref="GetEnvironmentStrings" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/SysInfo/getting-system-information">Getting System Information</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines ExpandEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.ExpandEnvironmentStringsA">
+    <summary>
+      <para>Expands environment-variable strings and replaces them with the values defined for the current user.</para>
+      <para>To specify the environment block for a particular user or the system, use the <see cref="ExpandEnvironmentStringsForUser" /> function.</para>
+    </summary>
+    <param name="lpSrc">
+      <para>A buffer that contains one or more environment-variable strings in the form: %<i>variableName</i>%. For each such reference, the %<i>variableName</i>% portion is replaced with the current value of that environment variable.</para>
+      <para>Case is ignored when looking up the environment-variable name. If the name is not found, the %<i>variableName</i>% portion is left unexpanded.</para>
+      <para>Note that this function does not support all the features that Cmd.exe supports. For example, it does not support %<i>variableName</i>:<i>str1</i>=<i>str2</i>% or %<i>variableName</i>:~<i>offset</i>,<i>length</i>%.</para>
+    </param>
+    <param name="lpDst">
+      <para>A pointer to a buffer that receives the result of expanding the environment variable strings in the <i>lpSrc</i> buffer. Note that this buffer cannot be the same as the <i>lpSrc</i> buffer.</para>
+    </param>
+    <param name="nSize">
+      <para>The maximum number of characters that can be stored in the buffer pointed to by the <i>lpDst</i> parameter. When using ANSI strings, the buffer size should be the string length, plus terminating null character, plus one. When using Unicode strings, the buffer size should be the string length plus the terminating null character.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of <b>TCHARs</b> stored in the destination buffer, including the terminating null character. If the destination buffer is too small to hold the expanded string, the return value is the required buffer size, in characters.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The size of the <i>lpSrc</i> and <i>lpDst</i> buffers is limited to 32K.</para>
+      <para>To replace folder names in a fully qualified path with their associated environment-variable strings, use the <see cref="PathUnExpandEnvStrings" /> function.</para>
+      <para>To retrieve the list of environment variables for a process, use the <see cref="GetEnvironmentStrings" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/SysInfo/getting-system-information">Getting System Information</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines ExpandEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.ExpandEnvironmentStringsW">
+    <summary>
+      <para>Expands environment-variable strings and replaces them with the values defined for the current user.</para>
+      <para>To specify the environment block for a particular user or the system, use the <see cref="ExpandEnvironmentStringsForUser" /> function.</para>
+    </summary>
+    <param name="lpSrc">
+      <para>A buffer that contains one or more environment-variable strings in the form: %<i>variableName</i>%. For each such reference, the %<i>variableName</i>% portion is replaced with the current value of that environment variable.</para>
+      <para>Case is ignored when looking up the environment-variable name. If the name is not found, the %<i>variableName</i>% portion is left unexpanded.</para>
+      <para>Note that this function does not support all the features that Cmd.exe supports. For example, it does not support %<i>variableName</i>:<i>str1</i>=<i>str2</i>% or %<i>variableName</i>:~<i>offset</i>,<i>length</i>%.</para>
+    </param>
+    <param name="lpDst">
+      <para>A pointer to a buffer that receives the result of expanding the environment variable strings in the <i>lpSrc</i> buffer. Note that this buffer cannot be the same as the <i>lpSrc</i> buffer.</para>
+    </param>
+    <param name="nSize">
+      <para>The maximum number of characters that can be stored in the buffer pointed to by the <i>lpDst</i> parameter. When using ANSI strings, the buffer size should be the string length, plus terminating null character, plus one. When using Unicode strings, the buffer size should be the string length plus the terminating null character.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of <b>TCHARs</b> stored in the destination buffer, including the terminating null character. If the destination buffer is too small to hold the expanded string, the return value is the required buffer size, in characters.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The size of the <i>lpSrc</i> and <i>lpDst</i> buffers is limited to 32K.</para>
+      <para>To replace folder names in a fully qualified path with their associated environment-variable strings, use the <see cref="PathUnExpandEnvStrings" /> function.</para>
+      <para>To retrieve the list of environment variables for a process, use the <see cref="GetEnvironmentStrings" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/SysInfo/getting-system-information">Getting System Information</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines ExpandEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-information-functions">System
+Information Functions</seealso>
+  </member>
+  <member name="Windows.FreeEnvironmentStrings">
+    <summary>
+      <para>Frees a block of environment strings.</para>
+    </summary>
+    <param name="penv">
+      <para>A pointer to a block of environment strings. The pointer to the block must be obtained by calling the
+<see cref="GetEnvironmentStrings" /> function.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If you used the ANSI version of <see cref="GetEnvironmentStrings" />, be sure to use the ANSI version of <b>FreeEnvironmentStrings</b>. Similarly, if you used the Unicode version of <b>GetEnvironmentStrings</b>, be sure to use the Unicode version of <b>FreeEnvironmentStrings</b>.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines FreeEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+  </member>
+  <member name="Windows.FreeEnvironmentStringsA">
+    <summary>
+      <para>Frees a block of environment strings.</para>
+    </summary>
+    <param name="penv">
+      <para>A pointer to a block of environment strings. The pointer to the block must be obtained by calling the
+<see cref="GetEnvironmentStrings" /> function.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If you used the ANSI version of <see cref="GetEnvironmentStrings" />, be sure to use the ANSI version of <b>FreeEnvironmentStrings</b>. Similarly, if you used the Unicode version of <b>GetEnvironmentStrings</b>, be sure to use the Unicode version of <b>FreeEnvironmentStrings</b>.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines FreeEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+  </member>
+  <member name="Windows.FreeEnvironmentStringsW">
+    <summary>
+      <para>Frees a block of environment strings.</para>
+    </summary>
+    <param name="penv">
+      <para>A pointer to a block of environment strings. The pointer to the block must be obtained by calling the
+<see cref="GetEnvironmentStrings" /> function.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If you used the ANSI version of <see cref="GetEnvironmentStrings" />, be sure to use the ANSI version of <b>FreeEnvironmentStrings</b>. Similarly, if you used the Unicode version of <b>GetEnvironmentStrings</b>, be sure to use the Unicode version of <b>FreeEnvironmentStrings</b>.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines FreeEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+  </member>
+  <member name="Windows.FreeEnvironmentStrings">
+    <summary>
+      <para>Frees a block of environment strings.</para>
+    </summary>
+    <param name="penv">
+      <para>A pointer to a block of environment strings. The pointer to the block must be obtained by calling the
+<see cref="GetEnvironmentStrings" /> function.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If you used the ANSI version of <see cref="GetEnvironmentStrings" />, be sure to use the ANSI version of <b>FreeEnvironmentStrings</b>. Similarly, if you used the Unicode version of <b>GetEnvironmentStrings</b>, be sure to use the Unicode version of <b>FreeEnvironmentStrings</b>.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines FreeEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+  </member>
+  <member name="Windows.FreeEnvironmentStringsA">
+    <summary>
+      <para>Frees a block of environment strings.</para>
+    </summary>
+    <param name="penv">
+      <para>A pointer to a block of environment strings. The pointer to the block must be obtained by calling the
+<see cref="GetEnvironmentStrings" /> function.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If you used the ANSI version of <see cref="GetEnvironmentStrings" />, be sure to use the ANSI version of <b>FreeEnvironmentStrings</b>. Similarly, if you used the Unicode version of <b>GetEnvironmentStrings</b>, be sure to use the Unicode version of <b>FreeEnvironmentStrings</b>.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines FreeEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+  </member>
+  <member name="Windows.FreeEnvironmentStringsW">
+    <summary>
+      <para>Frees a block of environment strings.</para>
+    </summary>
+    <param name="penv">
+      <para>A pointer to a block of environment strings. The pointer to the block must be obtained by calling the
+<see cref="GetEnvironmentStrings" /> function.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If you used the ANSI version of <see cref="GetEnvironmentStrings" />, be sure to use the ANSI version of <b>FreeEnvironmentStrings</b>. Similarly, if you used the Unicode version of <b>GetEnvironmentStrings</b>, be sure to use the Unicode version of <b>FreeEnvironmentStrings</b>.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines FreeEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+  </member>
+  <member name="Windows.GetCommandLine">
+    <summary>
+      <para>Retrieves the command-line string for the current process.</para>
+    </summary>
+    <returns>
+      <para>The return value is a pointer to the command-line string for the current process.</para>
+    </returns>
+    <remarks>
+      <para>The lifetime of the returned value is managed by the system, applications should not free or modify this value.</para>
+      <para>Console processes can use the <i>argc</i> and <i>argv</i> arguments of the <b>main</b> or <b>wmain</b> functions by implementing those as the program entry point.
+GUI processes can use the <i>lpCmdLine</i> argument of the <see cref="WinMain" /> or wWinMain functions by implementing those as the program entry point.</para>
+      <para>To convert the command line to an <i>argv</i> style array of strings, pass the result from GetCommandLineA to
+<see cref="CommandLineToArgW" />.</para>
+      <para>
+        <b>Note</b>  The name of the executable in the command line that the operating system provides to a process is not necessarily identical to that in the command line that the calling process gives to the
+<see cref="CreateProcess" /> function. The operating system may prepend a fully qualified path to an executable name that is provided without a fully qualified path.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetCommandLine as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.GetCommandLineA">
+    <summary>
+      <para>Retrieves the command-line string for the current process.</para>
+    </summary>
+    <returns>
+      <para>The return value is a pointer to the command-line string for the current process.</para>
+    </returns>
+    <remarks>
+      <para>The lifetime of the returned value is managed by the system, applications should not free or modify this value.</para>
+      <para>Console processes can use the <i>argc</i> and <i>argv</i> arguments of the <b>main</b> or <b>wmain</b> functions by implementing those as the program entry point.
+GUI processes can use the <i>lpCmdLine</i> argument of the <see cref="WinMain" /> or wWinMain functions by implementing those as the program entry point.</para>
+      <para>To convert the command line to an <i>argv</i> style array of strings, pass the result from GetCommandLineA to
+<see cref="CommandLineToArgW" />.</para>
+      <para>
+        <b>Note</b>  The name of the executable in the command line that the operating system provides to a process is not necessarily identical to that in the command line that the calling process gives to the
+<see cref="CreateProcess" /> function. The operating system may prepend a fully qualified path to an executable name that is provided without a fully qualified path.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetCommandLine as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.GetCommandLineW">
+    <summary>
+      <para>Retrieves the command-line string for the current process.</para>
+    </summary>
+    <returns>
+      <para>The return value is a pointer to the command-line string for the current process.</para>
+    </returns>
+    <remarks>
+      <para>The lifetime of the returned value is managed by the system, applications should not free or modify this value.</para>
+      <para>Console processes can use the <i>argc</i> and <i>argv</i> arguments of the <b>main</b> or <b>wmain</b> functions by implementing those as the program entry point.
+GUI processes can use the <i>lpCmdLine</i> argument of the <see cref="WinMain" /> or wWinMain functions by implementing those as the program entry point.</para>
+      <para>To convert the command line to an <i>argv</i> style array of strings, pass the result from GetCommandLineA to
+<see cref="CommandLineToArgW" />.</para>
+      <para>
+        <b>Note</b>  The name of the executable in the command line that the operating system provides to a process is not necessarily identical to that in the command line that the calling process gives to the
+<see cref="CreateProcess" /> function. The operating system may prepend a fully qualified path to an executable name that is provided without a fully qualified path.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetCommandLine as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.GetCommandLine">
+    <summary>
+      <para>Retrieves the command-line string for the current process.</para>
+    </summary>
+    <returns>
+      <para>The return value is a pointer to the command-line string for the current process.</para>
+    </returns>
+    <remarks>
+      <para>The lifetime of the returned value is managed by the system, applications should not free or modify this value.</para>
+      <para>Console processes can use the <i>argc</i> and <i>argv</i> arguments of the <b>main</b> or <b>wmain</b> functions by implementing those as the program entry point.
+GUI processes can use the <i>lpCmdLine</i> argument of the <see cref="WinMain" /> or wWinMain functions by implementing those as the program entry point.</para>
+      <para>To convert the command line to an <i>argv</i> style array of strings, pass the result from GetCommandLineW to
+<see cref="CommandLineToArgvW" />.</para>
+      <para>
+        <b>Note</b>  The name of the executable in the command line that the operating system provides to a process is not necessarily identical to that in the command line that the calling process gives to the
+<see cref="CreateProcess" /> function. The operating system may prepend a fully qualified path to an executable name that is provided without a fully qualified path.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetCommandLine as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.GetCommandLineA">
+    <summary>
+      <para>Retrieves the command-line string for the current process.</para>
+    </summary>
+    <returns>
+      <para>The return value is a pointer to the command-line string for the current process.</para>
+    </returns>
+    <remarks>
+      <para>The lifetime of the returned value is managed by the system, applications should not free or modify this value.</para>
+      <para>Console processes can use the <i>argc</i> and <i>argv</i> arguments of the <b>main</b> or <b>wmain</b> functions by implementing those as the program entry point.
+GUI processes can use the <i>lpCmdLine</i> argument of the <see cref="WinMain" /> or wWinMain functions by implementing those as the program entry point.</para>
+      <para>To convert the command line to an <i>argv</i> style array of strings, pass the result from GetCommandLineW to
+<see cref="CommandLineToArgvW" />.</para>
+      <para>
+        <b>Note</b>  The name of the executable in the command line that the operating system provides to a process is not necessarily identical to that in the command line that the calling process gives to the
+<see cref="CreateProcess" /> function. The operating system may prepend a fully qualified path to an executable name that is provided without a fully qualified path.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetCommandLine as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.GetCommandLineW">
+    <summary>
+      <para>Retrieves the command-line string for the current process.</para>
+    </summary>
+    <returns>
+      <para>The return value is a pointer to the command-line string for the current process.</para>
+    </returns>
+    <remarks>
+      <para>The lifetime of the returned value is managed by the system, applications should not free or modify this value.</para>
+      <para>Console processes can use the <i>argc</i> and <i>argv</i> arguments of the <b>main</b> or <b>wmain</b> functions by implementing those as the program entry point.
+GUI processes can use the <i>lpCmdLine</i> argument of the <see cref="WinMain" /> or wWinMain functions by implementing those as the program entry point.</para>
+      <para>To convert the command line to an <i>argv</i> style array of strings, pass the result from GetCommandLineW to
+<see cref="CommandLineToArgvW" />.</para>
+      <para>
+        <b>Note</b>  The name of the executable in the command line that the operating system provides to a process is not necessarily identical to that in the command line that the calling process gives to the
+<see cref="CreateProcess" /> function. The operating system may prepend a fully qualified path to an executable name that is provided without a fully qualified path.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetCommandLine as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.GetEnvironmentStrings">
+    <summary>
+      <para>Retrieves the environment variables for the current process.</para>
+    </summary>
+    <returns>
+      <para>If the function succeeds, the return value is a pointer to the environment block of the current process.</para>
+      <para>If the function fails, the return value is NULL.</para>
+    </returns>
+    <remarks>
+      <para>The
+<b>GetEnvironmentStrings</b> function returns a pointer to a block of memory that contains the environment variables of the calling process (both the system and the user environment variables). Each environment block contains the environment variables in the following format:</para>
+      <para>Each environment block contains the environment variables in the following format:</para>
+      <para>
+        <i>Var1</i>=<i>Value1</i>\0<br /></para>
+      <para>
+        <i>Var2</i>=<i>Value2</i>\0<br /></para>
+      <para>
+        <i>Var3</i>=<i>Value3</i>\0<br /></para>
+      <para>...<br /></para>
+      <para>
+        <i>VarN</i>=<i>ValueN</i>\0\0</para>
+      <para>The name of an environment variable cannot include an equal sign (=).</para>
+      <para>Treat this memory as read-only; do not modify it directly. To add or change an environment variable, use the
+<see cref="GetEnvironmentVariable" /> and
+<see cref="SetEnvironmentVariable" /> functions.</para>
+      <para>When the block returned by
+<b>GetEnvironmentStrings</b> is no longer needed, it should be freed by calling the
+<see cref="FreeEnvironmentStrings" /> function.</para>
+      <para>Note that the ANSI version of this function, <b>GetEnvironmentStringsA</b>, returns OEM characters.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="FreeEnvironmentStrings" />
+    <seealso cref="GetEnvironmentVariable" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentStringsA">
+    <summary>
+      <para>Retrieves the environment variables for the current process.</para>
+    </summary>
+    <returns>
+      <para>If the function succeeds, the return value is a pointer to the environment block of the current process.</para>
+      <para>If the function fails, the return value is NULL.</para>
+    </returns>
+    <remarks>
+      <para>The
+<b>GetEnvironmentStrings</b> function returns a pointer to a block of memory that contains the environment variables of the calling process (both the system and the user environment variables). Each environment block contains the environment variables in the following format:</para>
+      <para>Each environment block contains the environment variables in the following format:</para>
+      <para>
+        <i>Var1</i>=<i>Value1</i>\0<br /></para>
+      <para>
+        <i>Var2</i>=<i>Value2</i>\0<br /></para>
+      <para>
+        <i>Var3</i>=<i>Value3</i>\0<br /></para>
+      <para>...<br /></para>
+      <para>
+        <i>VarN</i>=<i>ValueN</i>\0\0</para>
+      <para>The name of an environment variable cannot include an equal sign (=).</para>
+      <para>Treat this memory as read-only; do not modify it directly. To add or change an environment variable, use the
+<see cref="GetEnvironmentVariable" /> and
+<see cref="SetEnvironmentVariable" /> functions.</para>
+      <para>When the block returned by
+<b>GetEnvironmentStrings</b> is no longer needed, it should be freed by calling the
+<see cref="FreeEnvironmentStrings" /> function.</para>
+      <para>Note that the ANSI version of this function, <b>GetEnvironmentStringsA</b>, returns OEM characters.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="FreeEnvironmentStrings" />
+    <seealso cref="GetEnvironmentVariable" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentStringsW">
+    <summary>
+      <para>Retrieves the environment variables for the current process.</para>
+    </summary>
+    <returns>
+      <para>If the function succeeds, the return value is a pointer to the environment block of the current process.</para>
+      <para>If the function fails, the return value is NULL.</para>
+    </returns>
+    <remarks>
+      <para>The
+<b>GetEnvironmentStrings</b> function returns a pointer to a block of memory that contains the environment variables of the calling process (both the system and the user environment variables). Each environment block contains the environment variables in the following format:</para>
+      <para>Each environment block contains the environment variables in the following format:</para>
+      <para>
+        <i>Var1</i>=<i>Value1</i>\0<br /></para>
+      <para>
+        <i>Var2</i>=<i>Value2</i>\0<br /></para>
+      <para>
+        <i>Var3</i>=<i>Value3</i>\0<br /></para>
+      <para>...<br /></para>
+      <para>
+        <i>VarN</i>=<i>ValueN</i>\0\0</para>
+      <para>The name of an environment variable cannot include an equal sign (=).</para>
+      <para>Treat this memory as read-only; do not modify it directly. To add or change an environment variable, use the
+<see cref="GetEnvironmentVariable" /> and
+<see cref="SetEnvironmentVariable" /> functions.</para>
+      <para>When the block returned by
+<b>GetEnvironmentStrings</b> is no longer needed, it should be freed by calling the
+<see cref="FreeEnvironmentStrings" /> function.</para>
+      <para>Note that the ANSI version of this function, <b>GetEnvironmentStringsA</b>, returns OEM characters.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="FreeEnvironmentStrings" />
+    <seealso cref="GetEnvironmentVariable" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentStrings">
+    <summary>
+      <para>Retrieves the environment variables for the current process.</para>
+    </summary>
+    <returns>
+      <para>If the function succeeds, the return value is a pointer to the environment block of the current process.</para>
+      <para>If the function fails, the return value is NULL.</para>
+    </returns>
+    <remarks>
+      <para>The
+<b>GetEnvironmentStrings</b> function returns a pointer to a block of memory that contains the environment variables of the calling process (both the system and the user environment variables). Each environment block contains the environment variables in the following format:</para>
+      <para>
+        <i>Var1</i>=<i>Value1</i>\0<br /></para>
+      <para>
+        <i>Var2</i>=<i>Value2</i>\0<br /></para>
+      <para>
+        <i>Var3</i>=<i>Value3</i>\0<br /></para>
+      <para>...<br /></para>
+      <para>
+        <i>VarN</i>=<i>ValueN</i>\0\0</para>
+      <para>The name of an environment variable cannot include an equal sign (=).</para>
+      <para>Treat this memory as read-only; do not modify it directly. To add or change an environment variable, use the
+<see cref="GetEnvironmentVariable" /> and
+<see cref="SetEnvironmentVariable" /> functions.</para>
+      <para>When the block returned by
+<b>GetEnvironmentStrings</b> is no longer needed, it should be freed by calling the
+<see cref="FreeEnvironmentStrings" /> function.</para>
+      <para>Note that the ANSI version of this function, <b>GetEnvironmentStringsA</b>, returns OEM characters.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="FreeEnvironmentStrings" />
+    <seealso cref="GetEnvironmentVariable" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentStringsA">
+    <summary>
+      <para>Retrieves the environment variables for the current process.</para>
+    </summary>
+    <returns>
+      <para>If the function succeeds, the return value is a pointer to the environment block of the current process.</para>
+      <para>If the function fails, the return value is NULL.</para>
+    </returns>
+    <remarks>
+      <para>The
+<b>GetEnvironmentStrings</b> function returns a pointer to a block of memory that contains the environment variables of the calling process (both the system and the user environment variables). Each environment block contains the environment variables in the following format:</para>
+      <para>
+        <i>Var1</i>=<i>Value1</i>\0<br /></para>
+      <para>
+        <i>Var2</i>=<i>Value2</i>\0<br /></para>
+      <para>
+        <i>Var3</i>=<i>Value3</i>\0<br /></para>
+      <para>...<br /></para>
+      <para>
+        <i>VarN</i>=<i>ValueN</i>\0\0</para>
+      <para>The name of an environment variable cannot include an equal sign (=).</para>
+      <para>Treat this memory as read-only; do not modify it directly. To add or change an environment variable, use the
+<see cref="GetEnvironmentVariable" /> and
+<see cref="SetEnvironmentVariable" /> functions.</para>
+      <para>When the block returned by
+<b>GetEnvironmentStrings</b> is no longer needed, it should be freed by calling the
+<see cref="FreeEnvironmentStrings" /> function.</para>
+      <para>Note that the ANSI version of this function, <b>GetEnvironmentStringsA</b>, returns OEM characters.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="FreeEnvironmentStrings" />
+    <seealso cref="GetEnvironmentVariable" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentStringsW">
+    <summary>
+      <para>Retrieves the environment variables for the current process.</para>
+    </summary>
+    <returns>
+      <para>If the function succeeds, the return value is a pointer to the environment block of the current process.</para>
+      <para>If the function fails, the return value is NULL.</para>
+    </returns>
+    <remarks>
+      <para>The
+<b>GetEnvironmentStrings</b> function returns a pointer to a block of memory that contains the environment variables of the calling process (both the system and the user environment variables). Each environment block contains the environment variables in the following format:</para>
+      <para>
+        <i>Var1</i>=<i>Value1</i>\0<br /></para>
+      <para>
+        <i>Var2</i>=<i>Value2</i>\0<br /></para>
+      <para>
+        <i>Var3</i>=<i>Value3</i>\0<br /></para>
+      <para>...<br /></para>
+      <para>
+        <i>VarN</i>=<i>ValueN</i>\0\0</para>
+      <para>The name of an environment variable cannot include an equal sign (=).</para>
+      <para>Treat this memory as read-only; do not modify it directly. To add or change an environment variable, use the
+<see cref="GetEnvironmentVariable" /> and
+<see cref="SetEnvironmentVariable" /> functions.</para>
+      <para>When the block returned by
+<b>GetEnvironmentStrings</b> is no longer needed, it should be freed by calling the
+<see cref="FreeEnvironmentStrings" /> function.</para>
+      <para>Note that the ANSI version of this function, <b>GetEnvironmentStringsA</b>, returns OEM characters.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetEnvironmentStrings as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="FreeEnvironmentStrings" />
+    <seealso cref="GetEnvironmentVariable" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentVariable">
+    <summary>
+      <para>Retrieves the contents of the specified variable from the environment block of the calling process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to a buffer that receives the contents of the specified environment variable as a null-terminated string. An environment variable has a maximum size limit of 32,767 characters, including the null-terminating character.</para>
+    </param>
+    <param name="nSize">
+      <para>The size of the buffer pointed to by the <i>lpBuffer</i> parameter, including the null-terminating character, in characters.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of characters stored in the buffer pointed to by <i>lpBuffer</i>, not including the terminating null character.</para>
+      <para>If <i>lpBuffer</i> is not large enough to hold the data, the return value is the buffer size, in characters, required to hold the string and its terminating null character and the contents of <i>lpBuffer</i> are undefined.</para>
+      <para>If the function fails, the return value is zero. If the specified environment variable was not found in the environment block,
+<see cref="GetLastError" /> returns ERROR_ENVVAR_NOT_FOUND.</para>
+    </returns>
+    <remarks>
+      <para>This function can retrieve either a system environment variable or a user environment variable.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentVariableA">
+    <summary>
+      <para>Retrieves the contents of the specified variable from the environment block of the calling process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to a buffer that receives the contents of the specified environment variable as a null-terminated string. An environment variable has a maximum size limit of 32,767 characters, including the null-terminating character.</para>
+    </param>
+    <param name="nSize">
+      <para>The size of the buffer pointed to by the <i>lpBuffer</i> parameter, including the null-terminating character, in characters.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of characters stored in the buffer pointed to by <i>lpBuffer</i>, not including the terminating null character.</para>
+      <para>If <i>lpBuffer</i> is not large enough to hold the data, the return value is the buffer size, in characters, required to hold the string and its terminating null character and the contents of <i>lpBuffer</i> are undefined.</para>
+      <para>If the function fails, the return value is zero. If the specified environment variable was not found in the environment block,
+<see cref="GetLastError" /> returns ERROR_ENVVAR_NOT_FOUND.</para>
+    </returns>
+    <remarks>
+      <para>This function can retrieve either a system environment variable or a user environment variable.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentVariableW">
+    <summary>
+      <para>Retrieves the contents of the specified variable from the environment block of the calling process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to a buffer that receives the contents of the specified environment variable as a null-terminated string. An environment variable has a maximum size limit of 32,767 characters, including the null-terminating character.</para>
+    </param>
+    <param name="nSize">
+      <para>The size of the buffer pointed to by the <i>lpBuffer</i> parameter, including the null-terminating character, in characters.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of characters stored in the buffer pointed to by <i>lpBuffer</i>, not including the terminating null character.</para>
+      <para>If <i>lpBuffer</i> is not large enough to hold the data, the return value is the buffer size, in characters, required to hold the string and its terminating null character and the contents of <i>lpBuffer</i> are undefined.</para>
+      <para>If the function fails, the return value is zero. If the specified environment variable was not found in the environment block,
+<see cref="GetLastError" /> returns ERROR_ENVVAR_NOT_FOUND.</para>
+    </returns>
+    <remarks>
+      <para>This function can retrieve either a system environment variable or a user environment variable.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentVariable">
+    <summary>
+      <para>Retrieves the contents of the specified variable from the environment block of the calling process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to a buffer that receives the contents of the specified environment variable as a null-terminated string.</para>
+      <para>The maximum size of a user-defined environment variable is 32,767 characters. There is no technical limitation on the size of the environment block. However, there are practical limits depending on the mechanism used to access the block. For example, a batch file cannot set a variable that is longer than the maximum command line length. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</a>.</para>
+    </param>
+    <param name="nSize">
+      <para>The size of the buffer pointed to by the <i>lpBuffer</i> parameter, including the null-terminating character, in characters.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of characters stored in the buffer pointed to by <i>lpBuffer</i>, not including the terminating null character.</para>
+      <para>If <i>lpBuffer</i> is not large enough to hold the data, the return value is the buffer size, in characters, required to hold the string and its terminating null character and the contents of <i>lpBuffer</i> are undefined.</para>
+      <para>If the function fails, the return value is zero. If the specified environment variable was not found in the environment block,
+<see cref="GetLastError" /> returns ERROR_ENVVAR_NOT_FOUND.</para>
+    </returns>
+    <remarks>
+      <para>This function can retrieve either a system environment variable or a user environment variable.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentVariableA">
+    <summary>
+      <para>Retrieves the contents of the specified variable from the environment block of the calling process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to a buffer that receives the contents of the specified environment variable as a null-terminated string.</para>
+      <para>The maximum size of a user-defined environment variable is 32,767 characters. There is no technical limitation on the size of the environment block. However, there are practical limits depending on the mechanism used to access the block. For example, a batch file cannot set a variable that is longer than the maximum command line length. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</a>.</para>
+    </param>
+    <param name="nSize">
+      <para>The size of the buffer pointed to by the <i>lpBuffer</i> parameter, including the null-terminating character, in characters.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of characters stored in the buffer pointed to by <i>lpBuffer</i>, not including the terminating null character.</para>
+      <para>If <i>lpBuffer</i> is not large enough to hold the data, the return value is the buffer size, in characters, required to hold the string and its terminating null character and the contents of <i>lpBuffer</i> are undefined.</para>
+      <para>If the function fails, the return value is zero. If the specified environment variable was not found in the environment block,
+<see cref="GetLastError" /> returns ERROR_ENVVAR_NOT_FOUND.</para>
+    </returns>
+    <remarks>
+      <para>This function can retrieve either a system environment variable or a user environment variable.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.GetEnvironmentVariableW">
+    <summary>
+      <para>Retrieves the contents of the specified variable from the environment block of the calling process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to a buffer that receives the contents of the specified environment variable as a null-terminated string.</para>
+      <para>The maximum size of a user-defined environment variable is 32,767 characters. There is no technical limitation on the size of the environment block. However, there are practical limits depending on the mechanism used to access the block. For example, a batch file cannot set a variable that is longer than the maximum command line length. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</a>.</para>
+    </param>
+    <param name="nSize">
+      <para>The size of the buffer pointed to by the <i>lpBuffer</i> parameter, including the null-terminating character, in characters.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is the number of characters stored in the buffer pointed to by <i>lpBuffer</i>, not including the terminating null character.</para>
+      <para>If <i>lpBuffer</i> is not large enough to hold the data, the return value is the buffer size, in characters, required to hold the string and its terminating null character and the contents of <i>lpBuffer</i> are undefined.</para>
+      <para>If the function fails, the return value is zero. If the specified environment variable was not found in the environment block,
+<see cref="GetLastError" /> returns ERROR_ENVVAR_NOT_FOUND.</para>
+    </returns>
+    <remarks>
+      <para>This function can retrieve either a system environment variable or a user environment variable.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines GetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentStrings" />
+    <seealso cref="SetEnvironmentVariable" />
+  </member>
+  <member name="Windows.NeedCurrentDirectoryForExePath">
+    <summary>
+      <para>Determines whether the current directory should be included in the search path for the specified executable.</para>
+    </summary>
+    <param name="ExeName">
+      <para>The name of the executable file.</para>
+    </param>
+    <returns>
+      <para>If the current directory should be part of the search path, the return value is TRUE. Otherwise, the return value is FALSE.</para>
+    </returns>
+    <remarks>
+      <para>This function should only be called in instances where the caller must explicitly resolve a relative executable name to an absolute name.  If <see cref="CreateProcess" /> is called with a relative executable name, it will automatically search for the executable, calling  this function to determine the search path.</para>
+      <para>Most system functions perform their own path resolution, therefore, this function should only be called if you are attempting to resolve a search path for the specified executable based on the current directory.</para>
+      <para>The value of the NoDefaultCurrentDirectoryInExePath environment variable determines the value this function returns. However, you should call this function rather than checking the environment variable directly, as the registry location of this environment variable can change.</para>
+      <para>If the value of the <i>ExeName</i> parameter contains a backslash (\), this function will always return TRUE. If it does not contain a backslash, the existence of the NoDefaultCurrentDirectoryInExePath environment variable is checked, and not its value.</para>
+      <para>An example of an instance when this function should be called instead of relying on the default search path resolution algorithm in <see cref="CreateProcess" /> is the "cmd.exe" executable. It calls this function to determine the command search path because it does its own path resolution before calling <b>CreateProcess</b>.  If this function returns TRUE, cmd.exe uses the path ".;%PATH%" for the executable search. If it returns FALSE, cmd.exe uses the path "%PATH%" for the search.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines NeedCurrentDirectoryForExePath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.NeedCurrentDirectoryForExePathA">
+    <summary>
+      <para>Determines whether the current directory should be included in the search path for the specified executable.</para>
+    </summary>
+    <param name="ExeName">
+      <para>The name of the executable file.</para>
+    </param>
+    <returns>
+      <para>If the current directory should be part of the search path, the return value is TRUE. Otherwise, the return value is FALSE.</para>
+    </returns>
+    <remarks>
+      <para>This function should only be called in instances where the caller must explicitly resolve a relative executable name to an absolute name.  If <see cref="CreateProcess" /> is called with a relative executable name, it will automatically search for the executable, calling  this function to determine the search path.</para>
+      <para>Most system functions perform their own path resolution, therefore, this function should only be called if you are attempting to resolve a search path for the specified executable based on the current directory.</para>
+      <para>The value of the NoDefaultCurrentDirectoryInExePath environment variable determines the value this function returns. However, you should call this function rather than checking the environment variable directly, as the registry location of this environment variable can change.</para>
+      <para>If the value of the <i>ExeName</i> parameter contains a backslash (\), this function will always return TRUE. If it does not contain a backslash, the existence of the NoDefaultCurrentDirectoryInExePath environment variable is checked, and not its value.</para>
+      <para>An example of an instance when this function should be called instead of relying on the default search path resolution algorithm in <see cref="CreateProcess" /> is the "cmd.exe" executable. It calls this function to determine the command search path because it does its own path resolution before calling <b>CreateProcess</b>.  If this function returns TRUE, cmd.exe uses the path ".;%PATH%" for the executable search. If it returns FALSE, cmd.exe uses the path "%PATH%" for the search.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines NeedCurrentDirectoryForExePath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.NeedCurrentDirectoryForExePathW">
+    <summary>
+      <para>Determines whether the current directory should be included in the search path for the specified executable.</para>
+    </summary>
+    <param name="ExeName">
+      <para>The name of the executable file.</para>
+    </param>
+    <returns>
+      <para>If the current directory should be part of the search path, the return value is TRUE. Otherwise, the return value is FALSE.</para>
+    </returns>
+    <remarks>
+      <para>This function should only be called in instances where the caller must explicitly resolve a relative executable name to an absolute name.  If <see cref="CreateProcess" /> is called with a relative executable name, it will automatically search for the executable, calling  this function to determine the search path.</para>
+      <para>Most system functions perform their own path resolution, therefore, this function should only be called if you are attempting to resolve a search path for the specified executable based on the current directory.</para>
+      <para>The value of the NoDefaultCurrentDirectoryInExePath environment variable determines the value this function returns. However, you should call this function rather than checking the environment variable directly, as the registry location of this environment variable can change.</para>
+      <para>If the value of the <i>ExeName</i> parameter contains a backslash (\), this function will always return TRUE. If it does not contain a backslash, the existence of the NoDefaultCurrentDirectoryInExePath environment variable is checked, and not its value.</para>
+      <para>An example of an instance when this function should be called instead of relying on the default search path resolution algorithm in <see cref="CreateProcess" /> is the "cmd.exe" executable. It calls this function to determine the command search path because it does its own path resolution before calling <b>CreateProcess</b>.  If this function returns TRUE, cmd.exe uses the path ".;%PATH%" for the executable search. If it returns FALSE, cmd.exe uses the path "%PATH%" for the search.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines NeedCurrentDirectoryForExePath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.NeedCurrentDirectoryForExePath">
+    <summary>
+      <para>Determines whether the current directory should be included in the search path for the specified executable.</para>
+    </summary>
+    <param name="ExeName">
+      <para>The name of the executable file.</para>
+    </param>
+    <returns>
+      <para>If the current directory should be part of the search path, the return value is TRUE. Otherwise, the return value is FALSE.</para>
+    </returns>
+    <remarks>
+      <para>This function should only be called in instances where the caller must explicitly resolve a relative executable name to an absolute name.  If <see cref="CreateProcess" /> is called with a relative executable name, it will automatically search for the executable, calling  this function to determine the search path.</para>
+      <para>Most system functions perform their own path resolution, therefore, this function should only be called if you are attempting to resolve a search path for the specified executable based on the current directory.</para>
+      <para>The value of the NoDefaultCurrentDirectoryInExePath environment variable determines the value this function returns. However, you should call this function rather than checking the environment variable directly, as the registry location of this environment variable can change.</para>
+      <para>If the value of the <i>ExeName</i> parameter contains a backslash (\), this function will always return TRUE. If it does not contain a backslash, the existence of the NoDefaultCurrentDirectoryInExePath environment variable is checked, and not its value.</para>
+      <para>An example of an instance when this function should be called instead of relying on the default search path resolution algorithm in <see cref="CreateProcess" /> is the "cmd.exe" executable. It calls this function to determine the command search path because it does its own path resolution before calling <b>CreateProcess</b>.  If this function returns TRUE, cmd.exe uses the path ".;%PATH%" for the executable search. If it returns FALSE, cmd.exe uses the path "%PATH%" for the search.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines NeedCurrentDirectoryForExePath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.NeedCurrentDirectoryForExePathA">
+    <summary>
+      <para>Determines whether the current directory should be included in the search path for the specified executable.</para>
+    </summary>
+    <param name="ExeName">
+      <para>The name of the executable file.</para>
+    </param>
+    <returns>
+      <para>If the current directory should be part of the search path, the return value is TRUE. Otherwise, the return value is FALSE.</para>
+    </returns>
+    <remarks>
+      <para>This function should only be called in instances where the caller must explicitly resolve a relative executable name to an absolute name.  If <see cref="CreateProcess" /> is called with a relative executable name, it will automatically search for the executable, calling  this function to determine the search path.</para>
+      <para>Most system functions perform their own path resolution, therefore, this function should only be called if you are attempting to resolve a search path for the specified executable based on the current directory.</para>
+      <para>The value of the NoDefaultCurrentDirectoryInExePath environment variable determines the value this function returns. However, you should call this function rather than checking the environment variable directly, as the registry location of this environment variable can change.</para>
+      <para>If the value of the <i>ExeName</i> parameter contains a backslash (\), this function will always return TRUE. If it does not contain a backslash, the existence of the NoDefaultCurrentDirectoryInExePath environment variable is checked, and not its value.</para>
+      <para>An example of an instance when this function should be called instead of relying on the default search path resolution algorithm in <see cref="CreateProcess" /> is the "cmd.exe" executable. It calls this function to determine the command search path because it does its own path resolution before calling <b>CreateProcess</b>.  If this function returns TRUE, cmd.exe uses the path ".;%PATH%" for the executable search. If it returns FALSE, cmd.exe uses the path "%PATH%" for the search.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines NeedCurrentDirectoryForExePath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.NeedCurrentDirectoryForExePathW">
+    <summary>
+      <para>Determines whether the current directory should be included in the search path for the specified executable.</para>
+    </summary>
+    <param name="ExeName">
+      <para>The name of the executable file.</para>
+    </param>
+    <returns>
+      <para>If the current directory should be part of the search path, the return value is TRUE. Otherwise, the return value is FALSE.</para>
+    </returns>
+    <remarks>
+      <para>This function should only be called in instances where the caller must explicitly resolve a relative executable name to an absolute name.  If <see cref="CreateProcess" /> is called with a relative executable name, it will automatically search for the executable, calling  this function to determine the search path.</para>
+      <para>Most system functions perform their own path resolution, therefore, this function should only be called if you are attempting to resolve a search path for the specified executable based on the current directory.</para>
+      <para>The value of the NoDefaultCurrentDirectoryInExePath environment variable determines the value this function returns. However, you should call this function rather than checking the environment variable directly, as the registry location of this environment variable can change.</para>
+      <para>If the value of the <i>ExeName</i> parameter contains a backslash (\), this function will always return TRUE. If it does not contain a backslash, the existence of the NoDefaultCurrentDirectoryInExePath environment variable is checked, and not its value.</para>
+      <para>An example of an instance when this function should be called instead of relying on the default search path resolution algorithm in <see cref="CreateProcess" /> is the "cmd.exe" executable. It calls this function to determine the command search path because it does its own path resolution before calling <b>CreateProcess</b>.  If this function returns TRUE, cmd.exe uses the path ".;%PATH%" for the executable search. If it returns FALSE, cmd.exe uses the path "%PATH%" for the search.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines NeedCurrentDirectoryForExePath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/process-and-thread-functions">Process and Thread Functions</seealso>
+  </member>
+  <member name="Windows.SearchPath">
+    <summary>
+      <para>Searches for a specified file in a specified path.</para>
+    </summary>
+    <param name="lpPath">
+      <para>The path to be searched for the file.</para>
+      <para>If this parameter is <b>NULL</b>, the
+function searches for a matching file using a registry-dependent system  search path. For more information, see
+the Remarks section.</para>
+    </param>
+    <param name="lpFileName">
+      <para>The name of the file for which to search.</para>
+    </param>
+    <param name="lpExtension">
+      <para>The extension to be added to the file name when searching for the file. The first character of the file name
+extension must be a period (.). The extension is added only if the specified file name does not end with an
+extension.</para>
+      <para>If a file name extension is not required or if the file name contains an extension, this parameter can be
+<b>NULL</b>.</para>
+    </param>
+    <param name="nBufferLength">
+      <para>The size of the buffer that receives the valid path and file name (including the terminating null
+character), in <b>TCHARs</b>.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path and file name of the file found. The  string is a
+null-terminated string.</para>
+    </param>
+    <param name="lpFilePart">
+      <para>A pointer to the variable to receive the address (within <i>lpBuffer</i>) of the last
+component of the valid path and file name, which is the address of the character immediately following the final
+backslash (\) in the path.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the value returned is the length, in <b>TCHARs</b>, of the
+string that is copied to the buffer, not including the terminating null character. If the return value is
+greater than <i>nBufferLength</i>, the value returned is the size of the buffer that is
+required to hold the path, including the terminating null character.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If the <i>lpPath</i> parameter is <b>NULL</b>,
+<b>SearchPath</b> searches for a matching file based on the current
+value of the following registry value:</para>
+      <para>
+        <b>HKEY_LOCAL_MACHINE</b>\<b>SYSTEM</b>\<b>CurrentControlSet</b>\<b>Control</b>\<b>Session Manager</b>\<b>SafeProcessSearchMode</b></para>
+      <para>When the value of this <b>REG_DWORD</b> registry value is set to 1,
+<b>SearchPath</b> first searches the folders that are specified in
+the system path, and then searches the current working folder. When the value of this registry value is set to 0,
+the computer first searches the current working folder, and then searches the folders that are specified in the
+system path. The system default value for this registry key is 0.</para>
+      <para>The search mode used by the <b>SearchPath</b> function can also
+be set per-process by calling the <see cref="SetSearchPathMode" /></para>
+      <para>function.</para>
+      <para>The <b>SearchPath</b> function is not recommended as a method of
+locating a .dll file if the intended use of the output is in a call to the
+<see cref="LoadLibrary" /> function. This can result in locating the
+wrong .dll file because the search order of the <b>SearchPath</b></para>
+      <para>function differs from the search order used by the
+<b>LoadLibrary</b> function. If you need to locate and load a
+.dll file, use the <b>LoadLibrary</b> function.</para>
+      <para>
+        <b>Tip</b>  Starting with Windows 10, version 1607, for the unicode version of this function (<b>SearchPathW</b>), you can opt-in to remove the <b>MAX_PATH</b> limitation. See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/desktop/FileIO/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</para>
+      <para>In Windows 8 and Windows Server 2012, this function is supported by the following technologies.</para>
+      <list type="table">
+        <listheader>
+          <description>Technology</description>
+          <description>Supported</description>
+        </listheader>
+        <item>
+          <description>
+            <para>Server Message Block (SMB) 3.0 protocol</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 Transparent Failover (TFO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 with Scale-out File Shares (SO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Cluster Shared Volume File System (CsvFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Resilient File System (ReFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+      </list>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SearchPath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-functions">File Management Functions</seealso>
+    <seealso cref="FindFirstFile" />
+    <seealso cref="FindNextFile" />
+    <seealso cref="GetSystemDirectory" />
+    <seealso cref="GetWindowsDirectory" />
+    <seealso cref="SetSearchPathMode" />
+  </member>
+  <member name="Windows.SearchPathA">
+    <summary>
+      <para>Searches for a specified file in a specified path.</para>
+    </summary>
+    <param name="lpPath">
+      <para>The path to be searched for the file.</para>
+      <para>If this parameter is <b>NULL</b>, the
+function searches for a matching file using a registry-dependent system  search path. For more information, see
+the Remarks section.</para>
+    </param>
+    <param name="lpFileName">
+      <para>The name of the file for which to search.</para>
+    </param>
+    <param name="lpExtension">
+      <para>The extension to be added to the file name when searching for the file. The first character of the file name
+extension must be a period (.). The extension is added only if the specified file name does not end with an
+extension.</para>
+      <para>If a file name extension is not required or if the file name contains an extension, this parameter can be
+<b>NULL</b>.</para>
+    </param>
+    <param name="nBufferLength">
+      <para>The size of the buffer that receives the valid path and file name (including the terminating null
+character), in <b>TCHARs</b>.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path and file name of the file found. The  string is a
+null-terminated string.</para>
+    </param>
+    <param name="lpFilePart">
+      <para>A pointer to the variable to receive the address (within <i>lpBuffer</i>) of the last
+component of the valid path and file name, which is the address of the character immediately following the final
+backslash (\) in the path.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the value returned is the length, in <b>TCHARs</b>, of the
+string that is copied to the buffer, not including the terminating null character. If the return value is
+greater than <i>nBufferLength</i>, the value returned is the size of the buffer that is
+required to hold the path, including the terminating null character.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If the <i>lpPath</i> parameter is <b>NULL</b>,
+<b>SearchPath</b> searches for a matching file based on the current
+value of the following registry value:</para>
+      <para>
+        <b>HKEY_LOCAL_MACHINE</b>\<b>SYSTEM</b>\<b>CurrentControlSet</b>\<b>Control</b>\<b>Session Manager</b>\<b>SafeProcessSearchMode</b></para>
+      <para>When the value of this <b>REG_DWORD</b> registry value is set to 1,
+<b>SearchPath</b> first searches the folders that are specified in
+the system path, and then searches the current working folder. When the value of this registry value is set to 0,
+the computer first searches the current working folder, and then searches the folders that are specified in the
+system path. The system default value for this registry key is 0.</para>
+      <para>The search mode used by the <b>SearchPath</b> function can also
+be set per-process by calling the <see cref="SetSearchPathMode" /></para>
+      <para>function.</para>
+      <para>The <b>SearchPath</b> function is not recommended as a method of
+locating a .dll file if the intended use of the output is in a call to the
+<see cref="LoadLibrary" /> function. This can result in locating the
+wrong .dll file because the search order of the <b>SearchPath</b></para>
+      <para>function differs from the search order used by the
+<b>LoadLibrary</b> function. If you need to locate and load a
+.dll file, use the <b>LoadLibrary</b> function.</para>
+      <para>
+        <b>Tip</b>  Starting with Windows 10, version 1607, for the unicode version of this function (<b>SearchPathW</b>), you can opt-in to remove the <b>MAX_PATH</b> limitation. See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/desktop/FileIO/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</para>
+      <para>In Windows 8 and Windows Server 2012, this function is supported by the following technologies.</para>
+      <list type="table">
+        <listheader>
+          <description>Technology</description>
+          <description>Supported</description>
+        </listheader>
+        <item>
+          <description>
+            <para>Server Message Block (SMB) 3.0 protocol</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 Transparent Failover (TFO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 with Scale-out File Shares (SO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Cluster Shared Volume File System (CsvFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Resilient File System (ReFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+      </list>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SearchPath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-functions">File Management Functions</seealso>
+    <seealso cref="FindFirstFile" />
+    <seealso cref="FindNextFile" />
+    <seealso cref="GetSystemDirectory" />
+    <seealso cref="GetWindowsDirectory" />
+    <seealso cref="SetSearchPathMode" />
+  </member>
+  <member name="Windows.SearchPathW">
+    <summary>
+      <para>Searches for a specified file in a specified path.</para>
+    </summary>
+    <param name="lpPath">
+      <para>The path to be searched for the file.</para>
+      <para>If this parameter is <b>NULL</b>, the
+function searches for a matching file using a registry-dependent system  search path. For more information, see
+the Remarks section.</para>
+    </param>
+    <param name="lpFileName">
+      <para>The name of the file for which to search.</para>
+    </param>
+    <param name="lpExtension">
+      <para>The extension to be added to the file name when searching for the file. The first character of the file name
+extension must be a period (.). The extension is added only if the specified file name does not end with an
+extension.</para>
+      <para>If a file name extension is not required or if the file name contains an extension, this parameter can be
+<b>NULL</b>.</para>
+    </param>
+    <param name="nBufferLength">
+      <para>The size of the buffer that receives the valid path and file name (including the terminating null
+character), in <b>TCHARs</b>.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path and file name of the file found. The  string is a
+null-terminated string.</para>
+    </param>
+    <param name="lpFilePart">
+      <para>A pointer to the variable to receive the address (within <i>lpBuffer</i>) of the last
+component of the valid path and file name, which is the address of the character immediately following the final
+backslash (\) in the path.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the value returned is the length, in <b>TCHARs</b>, of the
+string that is copied to the buffer, not including the terminating null character. If the return value is
+greater than <i>nBufferLength</i>, the value returned is the size of the buffer that is
+required to hold the path, including the terminating null character.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If the <i>lpPath</i> parameter is <b>NULL</b>,
+<b>SearchPath</b> searches for a matching file based on the current
+value of the following registry value:</para>
+      <para>
+        <b>HKEY_LOCAL_MACHINE</b>\<b>SYSTEM</b>\<b>CurrentControlSet</b>\<b>Control</b>\<b>Session Manager</b>\<b>SafeProcessSearchMode</b></para>
+      <para>When the value of this <b>REG_DWORD</b> registry value is set to 1,
+<b>SearchPath</b> first searches the folders that are specified in
+the system path, and then searches the current working folder. When the value of this registry value is set to 0,
+the computer first searches the current working folder, and then searches the folders that are specified in the
+system path. The system default value for this registry key is 0.</para>
+      <para>The search mode used by the <b>SearchPath</b> function can also
+be set per-process by calling the <see cref="SetSearchPathMode" /></para>
+      <para>function.</para>
+      <para>The <b>SearchPath</b> function is not recommended as a method of
+locating a .dll file if the intended use of the output is in a call to the
+<see cref="LoadLibrary" /> function. This can result in locating the
+wrong .dll file because the search order of the <b>SearchPath</b></para>
+      <para>function differs from the search order used by the
+<b>LoadLibrary</b> function. If you need to locate and load a
+.dll file, use the <b>LoadLibrary</b> function.</para>
+      <para>
+        <b>Tip</b>  Starting with Windows 10, version 1607, for the unicode version of this function (<b>SearchPathW</b>), you can opt-in to remove the <b>MAX_PATH</b> limitation. See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/desktop/FileIO/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</para>
+      <para>In Windows 8 and Windows Server 2012, this function is supported by the following technologies.</para>
+      <list type="table">
+        <listheader>
+          <description>Technology</description>
+          <description>Supported</description>
+        </listheader>
+        <item>
+          <description>
+            <para>Server Message Block (SMB) 3.0 protocol</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 Transparent Failover (TFO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 with Scale-out File Shares (SO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Cluster Shared Volume File System (CsvFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Resilient File System (ReFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+      </list>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SearchPath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-functions">File Management Functions</seealso>
+    <seealso cref="FindFirstFile" />
+    <seealso cref="FindNextFile" />
+    <seealso cref="GetSystemDirectory" />
+    <seealso cref="GetWindowsDirectory" />
+    <seealso cref="SetSearchPathMode" />
+  </member>
+  <member name="Windows.SearchPath">
+    <summary>
+      <para>Searches for a specified file in a specified path.</para>
+    </summary>
+    <param name="lpPath">
+      <para>The path to be searched for the file.</para>
+      <para>If this parameter is <b>NULL</b>, the
+function searches for a matching file using a registry-dependent system  search path. For more information, see
+the Remarks section.</para>
+    </param>
+    <param name="lpFileName">
+      <para>The name of the file for which to search.</para>
+    </param>
+    <param name="lpExtension">
+      <para>The extension to be added to the file name when searching for the file. The first character of the file name
+extension must be a period (.). The extension is added only if the specified file name does not end with an
+extension.</para>
+      <para>If a file name extension is not required or if the file name contains an extension, this parameter can be
+<b>NULL</b>.</para>
+    </param>
+    <param name="nBufferLength">
+      <para>The size of the buffer that receives the valid path and file name (including the terminating null
+character), in <b>TCHARs</b>.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path and file name of the file found. The  string is a
+null-terminated string.</para>
+    </param>
+    <param name="lpFilePart">
+      <para>A pointer to the variable to receive the address (within <i>lpBuffer</i>) of the last
+component of the valid path and file name, which is the address of the character immediately following the final
+backslash (\) in the path.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the value returned is the length, in <b>TCHARs</b>, of the
+string that is copied to the buffer, not including the terminating null character. If the return value is
+greater than <i>nBufferLength</i>, the value returned is the size of the buffer that is
+required to hold the path, including the terminating null character.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If the <i>lpPath</i> parameter is <b>NULL</b>,
+<b>SearchPath</b> searches for a matching file based on the current
+value of the following registry value:</para>
+      <para>
+        <b>HKEY_LOCAL_MACHINE</b>\<b>SYSTEM</b>\<b>CurrentControlSet</b>\<b>Control</b>\<b>Session Manager</b>\<b>SafeProcessSearchMode</b></para>
+      <para>When the value of this <b>REG_DWORD</b> registry value is set to 1,
+<b>SearchPath</b> first searches the folders that are specified in
+the system path, and then searches the current working folder. When the value of this registry value is set to 0,
+the computer first searches the current working folder, and then searches the folders that are specified in the
+system path. The system default value for this registry key is 0.</para>
+      <para>The search mode used by the <b>SearchPath</b> function can also
+be set per-process by calling the <see cref="SetSearchPathMode" /></para>
+      <para>function.</para>
+      <para>The <b>SearchPath</b> function is not recommended as a method of
+locating a .dll file if the intended use of the output is in a call to the
+<see cref="LoadLibrary" /> function. This can result in locating the
+wrong .dll file because the search order of the <b>SearchPath</b></para>
+      <para>function differs from the search order used by the
+<b>LoadLibrary</b> function. If you need to locate and load a
+.dll file, use the <b>LoadLibrary</b> function.</para>
+      <para>
+        <b>Tip</b>  Starting with Windows 10, version 1607, for the unicode version of this function (<b>SearchPathW</b>), you can opt-in to remove the <b>MAX_PATH</b> limitation. See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/desktop/FileIO/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</para>
+      <para>In Windows 8 and Windows Server 2012, this function is supported by the following technologies.</para>
+      <list type="table">
+        <listheader>
+          <description>Technology</description>
+          <description>Supported</description>
+        </listheader>
+        <item>
+          <description>
+            <para>Server Message Block (SMB) 3.0 protocol</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 Transparent Failover (TFO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 with Scale-out File Shares (SO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Cluster Shared Volume File System (CsvFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Resilient File System (ReFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+      </list>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SearchPath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-functions">File Management Functions</seealso>
+    <seealso cref="FindFirstFile" />
+    <seealso cref="FindNextFile" />
+    <seealso cref="GetSystemDirectory" />
+    <seealso cref="GetWindowsDirectory" />
+    <seealso cref="SetSearchPathMode" />
+  </member>
+  <member name="Windows.SearchPathA">
+    <summary>
+      <para>Searches for a specified file in a specified path.</para>
+    </summary>
+    <param name="lpPath">
+      <para>The path to be searched for the file.</para>
+      <para>If this parameter is <b>NULL</b>, the
+function searches for a matching file using a registry-dependent system  search path. For more information, see
+the Remarks section.</para>
+    </param>
+    <param name="lpFileName">
+      <para>The name of the file for which to search.</para>
+    </param>
+    <param name="lpExtension">
+      <para>The extension to be added to the file name when searching for the file. The first character of the file name
+extension must be a period (.). The extension is added only if the specified file name does not end with an
+extension.</para>
+      <para>If a file name extension is not required or if the file name contains an extension, this parameter can be
+<b>NULL</b>.</para>
+    </param>
+    <param name="nBufferLength">
+      <para>The size of the buffer that receives the valid path and file name (including the terminating null
+character), in <b>TCHARs</b>.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path and file name of the file found. The  string is a
+null-terminated string.</para>
+    </param>
+    <param name="lpFilePart">
+      <para>A pointer to the variable to receive the address (within <i>lpBuffer</i>) of the last
+component of the valid path and file name, which is the address of the character immediately following the final
+backslash (\) in the path.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the value returned is the length, in <b>TCHARs</b>, of the
+string that is copied to the buffer, not including the terminating null character. If the return value is
+greater than <i>nBufferLength</i>, the value returned is the size of the buffer that is
+required to hold the path, including the terminating null character.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If the <i>lpPath</i> parameter is <b>NULL</b>,
+<b>SearchPath</b> searches for a matching file based on the current
+value of the following registry value:</para>
+      <para>
+        <b>HKEY_LOCAL_MACHINE</b>\<b>SYSTEM</b>\<b>CurrentControlSet</b>\<b>Control</b>\<b>Session Manager</b>\<b>SafeProcessSearchMode</b></para>
+      <para>When the value of this <b>REG_DWORD</b> registry value is set to 1,
+<b>SearchPath</b> first searches the folders that are specified in
+the system path, and then searches the current working folder. When the value of this registry value is set to 0,
+the computer first searches the current working folder, and then searches the folders that are specified in the
+system path. The system default value for this registry key is 0.</para>
+      <para>The search mode used by the <b>SearchPath</b> function can also
+be set per-process by calling the <see cref="SetSearchPathMode" /></para>
+      <para>function.</para>
+      <para>The <b>SearchPath</b> function is not recommended as a method of
+locating a .dll file if the intended use of the output is in a call to the
+<see cref="LoadLibrary" /> function. This can result in locating the
+wrong .dll file because the search order of the <b>SearchPath</b></para>
+      <para>function differs from the search order used by the
+<b>LoadLibrary</b> function. If you need to locate and load a
+.dll file, use the <b>LoadLibrary</b> function.</para>
+      <para>
+        <b>Tip</b>  Starting with Windows 10, version 1607, for the unicode version of this function (<b>SearchPathW</b>), you can opt-in to remove the <b>MAX_PATH</b> limitation. See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/desktop/FileIO/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</para>
+      <para>In Windows 8 and Windows Server 2012, this function is supported by the following technologies.</para>
+      <list type="table">
+        <listheader>
+          <description>Technology</description>
+          <description>Supported</description>
+        </listheader>
+        <item>
+          <description>
+            <para>Server Message Block (SMB) 3.0 protocol</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 Transparent Failover (TFO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 with Scale-out File Shares (SO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Cluster Shared Volume File System (CsvFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Resilient File System (ReFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+      </list>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SearchPath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-functions">File Management Functions</seealso>
+    <seealso cref="FindFirstFile" />
+    <seealso cref="FindNextFile" />
+    <seealso cref="GetSystemDirectory" />
+    <seealso cref="GetWindowsDirectory" />
+    <seealso cref="SetSearchPathMode" />
+  </member>
+  <member name="Windows.SearchPathW">
+    <summary>
+      <para>Searches for a specified file in a specified path.</para>
+    </summary>
+    <param name="lpPath">
+      <para>The path to be searched for the file.</para>
+      <para>If this parameter is <b>NULL</b>, the
+function searches for a matching file using a registry-dependent system  search path. For more information, see
+the Remarks section.</para>
+    </param>
+    <param name="lpFileName">
+      <para>The name of the file for which to search.</para>
+    </param>
+    <param name="lpExtension">
+      <para>The extension to be added to the file name when searching for the file. The first character of the file name
+extension must be a period (.). The extension is added only if the specified file name does not end with an
+extension.</para>
+      <para>If a file name extension is not required or if the file name contains an extension, this parameter can be
+<b>NULL</b>.</para>
+    </param>
+    <param name="nBufferLength">
+      <para>The size of the buffer that receives the valid path and file name (including the terminating null
+character), in <b>TCHARs</b>.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to the buffer to receive the path and file name of the file found. The  string is a
+null-terminated string.</para>
+    </param>
+    <param name="lpFilePart">
+      <para>A pointer to the variable to receive the address (within <i>lpBuffer</i>) of the last
+component of the valid path and file name, which is the address of the character immediately following the final
+backslash (\) in the path.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the value returned is the length, in <b>TCHARs</b>, of the
+string that is copied to the buffer, not including the terminating null character. If the return value is
+greater than <i>nBufferLength</i>, the value returned is the size of the buffer that is
+required to hold the path, including the terminating null character.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>If the <i>lpPath</i> parameter is <b>NULL</b>,
+<b>SearchPath</b> searches for a matching file based on the current
+value of the following registry value:</para>
+      <para>
+        <b>HKEY_LOCAL_MACHINE</b>\<b>SYSTEM</b>\<b>CurrentControlSet</b>\<b>Control</b>\<b>Session Manager</b>\<b>SafeProcessSearchMode</b></para>
+      <para>When the value of this <b>REG_DWORD</b> registry value is set to 1,
+<b>SearchPath</b> first searches the folders that are specified in
+the system path, and then searches the current working folder. When the value of this registry value is set to 0,
+the computer first searches the current working folder, and then searches the folders that are specified in the
+system path. The system default value for this registry key is 0.</para>
+      <para>The search mode used by the <b>SearchPath</b> function can also
+be set per-process by calling the <see cref="SetSearchPathMode" /></para>
+      <para>function.</para>
+      <para>The <b>SearchPath</b> function is not recommended as a method of
+locating a .dll file if the intended use of the output is in a call to the
+<see cref="LoadLibrary" /> function. This can result in locating the
+wrong .dll file because the search order of the <b>SearchPath</b></para>
+      <para>function differs from the search order used by the
+<b>LoadLibrary</b> function. If you need to locate and load a
+.dll file, use the <b>LoadLibrary</b> function.</para>
+      <para>
+        <b>Tip</b>  Starting with Windows 10, version 1607, for the unicode version of this function (<b>SearchPathW</b>), you can opt-in to remove the <b>MAX_PATH</b> limitation. See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/desktop/FileIO/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</para>
+      <para>In Windows 8 and Windows Server 2012, this function is supported by the following technologies.</para>
+      <list type="table">
+        <listheader>
+          <description>Technology</description>
+          <description>Supported</description>
+        </listheader>
+        <item>
+          <description>
+            <para>Server Message Block (SMB) 3.0 protocol</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 Transparent Failover (TFO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>SMB 3.0 with Scale-out File Shares (SO)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Cluster Shared Volume File System (CsvFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Resilient File System (ReFS)</para>
+          </description>
+          <description>
+            <para>Yes</para>
+          </description>
+        </item>
+      </list>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SearchPath as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-functions">File Management Functions</seealso>
+    <seealso cref="FindFirstFile" />
+    <seealso cref="FindNextFile" />
+    <seealso cref="GetSystemDirectory" />
+    <seealso cref="GetWindowsDirectory" />
+    <seealso cref="SetSearchPathMode" />
+  </member>
+  <member name="Windows.SetEnvironmentStringsW">
+    <summary>
+      <para>Sets the environment strings of the calling process (both the system and the user environment variables) for the current process.</para>
+    </summary>
+    <param name="NewEnvironment">
+      <para>The environment variable string using the following format:</para>
+      <para>
+        <i>Var1</i>
+        <i>Value1</i>
+        <i>Var2</i>
+        <i>Value2</i>
+        <i>Var3</i>
+        <i>Value3</i>
+        <i>VarN</i>
+        <i>ValueN</i>
+      </para>
+    </param>
+    <returns>
+      <para>Returns S_OK on success.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetEnvironmentVariable">
+    <summary>
+      <para>Sets the contents of the specified environment variable for the current process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable. The operating system creates the environment variable if it does not exist and <i>lpValue</i> is not NULL.</para>
+    </param>
+    <param name="lpValue">
+      <para>The contents of the environment variable. The maximum size of a user-defined environment variable is 32,767 characters. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</a>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>The total size of the environment block for a process may not exceed 32,767 characters.</para>
+      <para>If this parameter is NULL, the variable is deleted from the current process's environment.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>This function has no effect on the system environment variables or the environment variables of other processes.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentVariable" />
+  </member>
+  <member name="Windows.SetEnvironmentVariableA">
+    <summary>
+      <para>Sets the contents of the specified environment variable for the current process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable. The operating system creates the environment variable if it does not exist and <i>lpValue</i> is not NULL.</para>
+    </param>
+    <param name="lpValue">
+      <para>The contents of the environment variable. The maximum size of a user-defined environment variable is 32,767 characters. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</a>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>The total size of the environment block for a process may not exceed 32,767 characters.</para>
+      <para>If this parameter is NULL, the variable is deleted from the current process's environment.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>This function has no effect on the system environment variables or the environment variables of other processes.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentVariable" />
+  </member>
+  <member name="Windows.SetEnvironmentVariableW">
+    <summary>
+      <para>Sets the contents of the specified environment variable for the current process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable. The operating system creates the environment variable if it does not exist and <i>lpValue</i> is not NULL.</para>
+    </param>
+    <param name="lpValue">
+      <para>The contents of the environment variable. The maximum size of a user-defined environment variable is 32,767 characters. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</a>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>The total size of the environment block for a process may not exceed 32,767 characters.</para>
+      <para>If this parameter is NULL, the variable is deleted from the current process's environment.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>This function has no effect on the system environment variables or the environment variables of other processes.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentVariable" />
+  </member>
+  <member name="Windows.SetEnvironmentVariable">
+    <summary>
+      <para>Sets the contents of the specified environment variable for the current process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable. The operating system creates the environment variable if it does not exist and <i>lpValue</i> is not NULL.</para>
+    </param>
+    <param name="lpValue">
+      <para>The contents of the environment variable.</para>
+      <para>The maximum size of a user-defined environment variable is 32,767 characters. There is no technical limitation on the size of the environment block. However, there are practical limits depending on the mechanism used to access the block. For example, a batch file cannot set a variable that is longer than the maximum command line length. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</a>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>The total size of the environment block for a process may not exceed 32,767 characters.</para>
+      <para>If this parameter is NULL, the variable is deleted from the current process's environment.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>This function has no effect on the system environment variables or the environment variables of other processes.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentVariable" />
+  </member>
+  <member name="Windows.SetEnvironmentVariableA">
+    <summary>
+      <para>Sets the contents of the specified environment variable for the current process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable. The operating system creates the environment variable if it does not exist and <i>lpValue</i> is not NULL.</para>
+    </param>
+    <param name="lpValue">
+      <para>The contents of the environment variable.</para>
+      <para>The maximum size of a user-defined environment variable is 32,767 characters. There is no technical limitation on the size of the environment block. However, there are practical limits depending on the mechanism used to access the block. For example, a batch file cannot set a variable that is longer than the maximum command line length. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</a>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>The total size of the environment block for a process may not exceed 32,767 characters.</para>
+      <para>If this parameter is NULL, the variable is deleted from the current process's environment.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>This function has no effect on the system environment variables or the environment variables of other processes.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentVariable" />
+  </member>
+  <member name="Windows.SetEnvironmentVariableW">
+    <summary>
+      <para>Sets the contents of the specified environment variable for the current process.</para>
+    </summary>
+    <param name="lpName">
+      <para>The name of the environment variable. The operating system creates the environment variable if it does not exist and <i>lpValue</i> is not NULL.</para>
+    </param>
+    <param name="lpValue">
+      <para>The contents of the environment variable.</para>
+      <para>The maximum size of a user-defined environment variable is 32,767 characters. There is no technical limitation on the size of the environment block. However, there are practical limits depending on the mechanism used to access the block. For example, a batch file cannot set a variable that is longer than the maximum command line length. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</a>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>The total size of the environment block for a process may not exceed 32,767 characters.</para>
+      <para>If this parameter is NULL, the variable is deleted from the current process's environment.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>This function has no effect on the system environment variables or the environment variables of other processes.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ProcThread/changing-environment-variables">Changing Environment Variables</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The processenv.h header defines SetEnvironmentVariable as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/ProcThread/environment-variables">Environment Variables</seealso>
+    <seealso cref="GetEnvironmentVariable" />
+  </member>
+  <member name="Windows.SetStdHandleEx">
+    <summary>
+      <para>Sets the handle for the input, output, or error streams.</para>
+    </summary>
+    <param name="nStdHandle">
+      <para>A DWORD indicating the stream for which the handle is being set.</para>
+    </param>
+    <param name="hHandle">
+      <para>The handle.</para>
+    </param>
+    <param name="phPrevValue">
+      <para>Optional. Receives the previous handle.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK on success.</para>
+    </returns>
+  </member>
+</doc>

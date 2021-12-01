@@ -8,12 +8,20 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOB_OBJECT_NET_RATE_CONTROL_FLAGS.xml' path='doc/member[@name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS"]/*' />
 [Flags]
 [SupportedOSPlatform("windows10.0")]
 public enum JOB_OBJECT_NET_RATE_CONTROL_FLAGS
 {
+    /// <include file='JOB_OBJECT_NET_RATE_CONTROL_FLAGS.xml' path='doc/member[@name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_ENABLE"]/*' />
     JOB_OBJECT_NET_RATE_CONTROL_ENABLE = 0x1,
+
+    /// <include file='JOB_OBJECT_NET_RATE_CONTROL_FLAGS.xml' path='doc/member[@name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_MAX_BANDWIDTH"]/*' />
     JOB_OBJECT_NET_RATE_CONTROL_MAX_BANDWIDTH = 0x2,
+
+    /// <include file='JOB_OBJECT_NET_RATE_CONTROL_FLAGS.xml' path='doc/member[@name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_DSCP_TAG"]/*' />
     JOB_OBJECT_NET_RATE_CONTROL_DSCP_TAG = 0x4,
+
+    /// <include file='JOB_OBJECT_NET_RATE_CONTROL_FLAGS.xml' path='doc/member[@name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_VALID_FLAGS"]/*' />
     JOB_OBJECT_NET_RATE_CONTROL_VALID_FLAGS = 0x7,
 }

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRSurfaceAllocationFlags">
+    <summary>
+      <para>The <b>VMRSurfaceAllocationFlags</b> enumeration is used with the <see cref="IVMRSurfaceAllocator.AllocateSurface" /> method to specify surface creation parameters.</para>
+    </summary>
+    <remarks>
+      <para>AMAP_3D_TARGET cannot be combined with AMAP_FORCE_SYSMEM or AMAP_ALLOW_SYSMEM because 3D surfaces cannot be created in system memory.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IVMRSurfaceAllocator.AllocateSurface" />
+  </member>
+  <member name="VMRSurfaceAllocationFlags.AMAP_PIXELFORMAT_VALID">
+    <summary>
+      <para>Indicates that the <b>lpPxFmt</b> field contains valid data that should be used to create the DirectDraw surface.</para>
+    </summary>
+  </member>
+  <member name="VMRSurfaceAllocationFlags.AMAP_3D_TARGET">
+    <summary>
+      <para>Indicates that the DirectDraw surface created should also be a Direct3D render target that is created with the <b>DDSCAPS_3DDEVICE</b> flag set.</para>
+    </summary>
+  </member>
+  <member name="VMRSurfaceAllocationFlags.AMAP_ALLOW_SYSMEM">
+    <summary>
+      <para>Indicates that if you can't allocate the DirectDraw surface in video memory you will try to allocate a system memory DirectDraw surface. (Note you should never allocate an AGP memory surface.)</para>
+    </summary>
+  </member>
+  <member name="VMRSurfaceAllocationFlags.AMAP_FORCE_SYSMEM">
+    <summary>
+      <para>Force the surface to be created in system memory. Specify this if you will use GDI to process the image before it is rendered. The surface must match the current monitor display format (pixel depth).</para>
+    </summary>
+  </member>
+  <member name="VMRSurfaceAllocationFlags.AMAP_DIRECTED_FLIP">
+    <summary>
+      <para>Means that when Flip is called you should Flip to the specified DirectDraw Surface passed as a parameter to the <see cref="PresentImage" /> method in the <see cref="IVMRImagePresenter" /> interface. Correct support for this flag is crucial in order to keep DXVA buffers seen by a video decoder in sync with the DXVA buffers seen by the graphics driver.</para>
+    </summary>
+  </member>
+  <member name="VMRSurfaceAllocationFlags.AMAP_DXVA_TARGET">
+    <summary>
+      <para>Indicates that this surface will be used as a DXVA target.</para>
+    </summary>
+  </member>
+</doc>

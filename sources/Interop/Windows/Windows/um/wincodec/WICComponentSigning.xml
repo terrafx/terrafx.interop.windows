@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICComponentSigning">
+    <summary>
+      <para>Specifies the component signing status.</para>
+    </summary>
+  </member>
+  <member name="WICComponentSigning.WICComponentSigned">
+    <summary>
+      <para>A signed component.</para>
+    </summary>
+  </member>
+  <member name="WICComponentSigning.WICComponentUnsigned">
+    <summary>
+      <para>An unsigned component</para>
+    </summary>
+  </member>
+  <member name="WICComponentSigning.WICComponentSafe">
+    <summary>
+      <para>A component is safe.</para>
+      <para>Components that do not have a binary component to sign, such as a pixel format, should return this value.</para>
+    </summary>
+  </member>
+  <member name="WICComponentSigning.WICComponentDisabled">
+    <summary>
+      <para>A component has been disabled.</para>
+    </summary>
+  </member>
+  <member name="WICComponentSigning.WICCOMPONENTSIGNING_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

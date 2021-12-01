@@ -5,29 +5,38 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID"]/*' />
 public unsafe partial struct MIB_TCP6ROW_OWNER_PID
 {
+    /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.ucLocalAddr"]/*' />
     [NativeTypeName("UCHAR [16]")]
     public fixed byte ucLocalAddr[16];
 
+    /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwLocalScopeId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalScopeId;
 
+    /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwLocalPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalPort;
 
+    /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.ucRemoteAddr"]/*' />
     [NativeTypeName("UCHAR [16]")]
     public fixed byte ucRemoteAddr[16];
 
+    /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwRemoteScopeId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemoteScopeId;
 
+    /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwRemotePort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemotePort;
 
+    /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwState;
 
+    /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwOwningPid"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOwningPid;
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_UDPROW.xml' path='doc/member[@name="MIB_UDPROW"]/*' />
 public partial struct MIB_UDPROW
 {
+    /// <include file='MIB_UDPROW.xml' path='doc/member[@name="MIB_UDPROW.dwLocalAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalAddr;
 
+    /// <include file='MIB_UDPROW.xml' path='doc/member[@name="MIB_UDPROW.dwLocalPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalPort;
 }

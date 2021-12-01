@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioHrtfDirectivityCone">
+    <summary>
+      <para>Represents a cone-shaped directivity model for an <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityCone.directivity">
+    <summary>
+      <para>A structure that expresses the direction in which sound is emitted by an <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityCone.InnerAngle">
+    <summary>
+      <para>The inner angle of the cone.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityCone.OuterAngle">
+    <summary>
+      <para>The outer angle of the cone.</para>
+    </summary>
+  </member>
+</doc>

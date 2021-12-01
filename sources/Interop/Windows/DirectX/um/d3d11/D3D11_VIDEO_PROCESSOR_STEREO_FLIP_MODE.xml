@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE">
+    <summary>
+      <para>For stereo 3D video, specifies whether the data in frame 0 or frame 1 is flipped, either horizontally or vertically.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+    <seealso cref="ID3D11VideoContext.VideoProcessorSetStreamStereoFormat" />
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE.D3D11_VIDEO_PROCESSOR_STEREO_FLIP_NONE">
+    <summary>
+      <para>Neither frame is flipped.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE.D3D11_VIDEO_PROCESSOR_STEREO_FLIP_FRAME0">
+    <summary>
+      <para>The data in frame 0 is flipped.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE.D3D11_VIDEO_PROCESSOR_STEREO_FLIP_FRAME1">
+    <summary>
+      <para>The data in frame 1 is flipped.</para>
+    </summary>
+  </member>
+</doc>

@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInputPanelInvocationConfiguration.xml' path='doc/member[@name="IInputPanelInvocationConfiguration"]/*' />
 [Guid("A213F136-3B45-4362-A332-EFB6547CD432")]
 [NativeTypeName("struct IInputPanelInvocationConfiguration : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IInputPanelInvocationConfiguration : IInputPanelInv
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IInputPanelInvocationConfiguration : IInputPanelInv
         return ((delegate* unmanaged<IInputPanelInvocationConfiguration*, Guid*, void**, int>)(lpVtbl[0]))((IInputPanelInvocationConfiguration*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IInputPanelInvocationConfiguration : IInputPanelInv
         return ((delegate* unmanaged<IInputPanelInvocationConfiguration*, uint>)(lpVtbl[1]))((IInputPanelInvocationConfiguration*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IInputPanelInvocationConfiguration : IInputPanelInv
         return ((delegate* unmanaged<IInputPanelInvocationConfiguration*, uint>)(lpVtbl[2]))((IInputPanelInvocationConfiguration*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInputPanelInvocationConfiguration.xml' path='doc/member[@name="IInputPanelInvocationConfiguration.RequireTouchInEditControl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RequireTouchInEditControl()

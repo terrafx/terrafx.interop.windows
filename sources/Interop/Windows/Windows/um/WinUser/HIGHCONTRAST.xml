@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HIGHCONTRAST">
+    <summary>
+      <para>Contains information about the high contrast accessibility feature.This feature sets the appearance scheme of the user interface for maximum visibility for a visually-impaired user, and advises applications to comply with this appearance scheme.</para>
+    </summary>
+    <remarks>
+      <para>An application uses this structure when calling the<see cref="SystemParametersInfoA function" /> with the <b>SPI_GETHIGHCONTRAST</b> or <b>SPI_SETHIGHCONTRAST</b> value. When using <b>SPI_GETHIGHCONTRAST</b>, an application must specify the <b>cbSize</b> member of the <b>HIGHCONTRAST</b> structure; the <b>SystemParametersInfo</b> function fills the remaining members. An application must specify all structure members when using the <b>SPI_SETHIGHCONTRAST</b> value.</para>
+      <blockquote>
+        <para>[!NOTE]
+The winuser.h header defines HIGHCONTRAST as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="SystemParametersInfoA function" />
+    <seealso cref="HIGHCONTRASTW structure" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinAuto/accessibility-structures">Accessibility Structures</seealso>
+    <seealso cref="SystemParametersInfo" />
+  </member>
+  <member name="HIGHCONTRAST.cbSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Specifies the size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="HIGHCONTRAST.dwFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>Specifies a combination of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_HIGHCONTRASTON</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The high contrast feature is on.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_AVAILABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The high contrast feature is available.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_HOTKEYACTIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The user can turn the high contrast feature on and off by simultaneously pressing the left ALT, left SHIFT, and PRINT SCREEN keys.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_CONFIRMHOTKEY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A confirmation dialog appears when the high contrast feature is activated by using the hot key.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_HOTKEYSOUND</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A siren is played when the user turns the high contrast feature on or off by using the hot key.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_INDICATOR</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A visual indicator is displayed when the high contrast feature is on. This value is not currently used and is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_HOTKEYAVAILABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The hot key associated with the high contrast feature can be enabled. An application can retrieve this value, but cannot set it.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_OPTION_NOTHEMECHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00001000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Passing HIGHCONTRASTSTRUCTURE in calls to SystemParametersInfoA can cause theme change effects even if the theme isn't being changed. For example, the WM_THEMECHANGED message is sent to Windows even if the only change is to HCF_HOTKEYSOUND.</para>
+            <para>To prevent this, include the HCF_OPTION_NOTHEMECHANGE flag in the call to SystemParametersInfo.</para>
+            <blockquote>
+              <para>[!NOTE]
+The HCF_OPTION_NOTHEMECHANGE flag should not be used when toggling the high contrast mode (HCF_HIGHCONTRASTON).</para>
+            </blockquote>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="HIGHCONTRAST.lpszDefaultScheme">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>Points to a string that contains the name of the color scheme that will be set to the default scheme.</para>
+    </summary>
+  </member>
+  <member name="HIGHCONTRAST">
+    <summary>
+      <para>Contains information about the high contrast accessibility feature.This feature sets the appearance scheme of the user interface for maximum visibility for a visually-impaired user, and advises applications to comply with this appearance scheme.</para>
+    </summary>
+    <remarks>
+      <para>An application uses this structure when calling the<see cref="SystemParametersInfoW function" /> with the <b>SPI_GETHIGHCONTRAST</b> or <b>SPI_SETHIGHCONTRAST</b> value. When using <b>SPI_GETHIGHCONTRAST</b>, an application must specify the <b>cbSize</b> member of the <b>HIGHCONTRAST</b> structure; the <b>SystemParametersInfo</b> function fills the remaining members. An application must specify all structure members when using the <b>SPI_SETHIGHCONTRAST</b> value.</para>
+      <blockquote>
+        <para>[!NOTE]
+The winuser.h header defines HIGHCONTRAST as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="SystemParametersInfoW function" />
+    <seealso cref="HIGHCONTRASTA structure" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinAuto/accessibility-structures">Accessibility Structures</seealso>
+    <seealso cref="SystemParametersInfo" />
+  </member>
+  <member name="HIGHCONTRAST.cbSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Specifies the size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="HIGHCONTRAST.dwFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>Specifies a combination of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_HIGHCONTRASTON</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The high contrast feature is on.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_AVAILABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The high contrast feature is available.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_HOTKEYACTIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The user can turn the high contrast feature on and off by simultaneously pressing the left ALT, left SHIFT, and PRINT SCREEN keys.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_CONFIRMHOTKEY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A confirmation dialog appears when the high contrast feature is activated by using the hot key.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_HOTKEYSOUND</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A siren is played when the user turns the high contrast feature on or off by using the hot key.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_INDICATOR</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A visual indicator is displayed when the high contrast feature is on. This value is not currently used and is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_HOTKEYAVAILABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The hot key associated with the high contrast feature can be enabled. An application can retrieve this value, but cannot set it.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_OPTION_NOTHEMECHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00001000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Passing HIGHCONTRASTSTRUCTURE in calls to SystemParametersInfoW can cause theme change effects even if the theme isn't being changed. For example, the WM_THEMECHANGED message is sent to Windows even if the only change is to HCF_HOTKEYSOUND.</para>
+            <para>To prevent this, include the HCF_OPTION_NOTHEMECHANGE flag in the call to SystemParametersInfo.</para>
+            <blockquote>
+              <para>[!NOTE]
+The HCF_OPTION_NOTHEMECHANGE flag should not be used when toggling the high contrast mode (HCF_HIGHCONTRASTON).</para>
+            </blockquote>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>HCF_OPTION_NOTHEMECHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00001000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Passing HIGHCONTRASTSTRUCTURE in calls to SystemParametersInfoW can cause theme change effects even if the theme isn't being changed. For example, the WM_THEMECHANGED message is sent to Windows even if the only change is to HCF_HOTKEYSOUND.</para>
+            <para>To prevent this, include the HCF_OPTION_NOTHEMECHANGE flag in the call to SystemParametersInfo.</para>
+            <blockquote>
+              <para>[!NOTE]
+The HCF_OPTION_NOTHEMECHANGE flag should not be used when toggling the high contrast mode (HCF_HIGHCONTRASTON).</para>
+            </blockquote>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="HIGHCONTRAST.lpszDefaultScheme">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
+      <para>Points to a string that contains the name of the color scheme that will be set to the default scheme.</para>
+    </summary>
+  </member>
+</doc>

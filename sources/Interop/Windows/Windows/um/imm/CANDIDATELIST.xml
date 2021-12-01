@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CANDIDATELIST">
+    <summary>
+      <para>Contains information about a candidate list.</para>
+    </summary>
+    <remarks>
+      <para>The candidate strings immediately follow the last offset in the <b>dwOffset</b> array.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/input-method-manager">Input Method Manager</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/input-method-manager-structures">Input Method Manager Structures</seealso>
+  </member>
+  <member name="CANDIDATELIST.dwSize">
+    <summary>
+      <para>Size, in bytes, of the structure, the offset array, and all candidate strings.</para>
+    </summary>
+  </member>
+  <member name="CANDIDATELIST.dwStyle">
+    <summary>
+      <para>Candidate style values. This member can have one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>IME_CAND_UNKNOWN</description>
+          <description>Candidates are in a style other than listed here.</description>
+        </item>
+        <item>
+          <description>IME_CAND_READ</description>
+          <description>Candidates are in same reading.</description>
+        </item>
+        <item>
+          <description>IME_CAND_CODE</description>
+          <description>Candidates are in a code range.</description>
+        </item>
+        <item>
+          <description>IME_CAND_MEANING</description>
+          <description>Candidates are in same meaning.</description>
+        </item>
+        <item>
+          <description>IME_CAND_RADICAL</description>
+          <description>Candidates use same radical character.</description>
+        </item>
+        <item>
+          <description>IME_CAND_STROKES</description>
+          <description>Candidates are in same number of strokes.</description>
+        </item>
+      </list>
+      <para>For the IME_CAND_CODE style, the candidate list has a special structure depending on the value of the <b>dwCount</b> member. If <b>dwCount</b> is 1, the <b>dwOffset</b> member contains a single DBCS character rather than an offset, and no candidate string is provided. If the <b>dwCount</b> member is greater than 1, the <b>dwOffset</b> member contains valid offsets, and the candidate strings are text representations of individual DBCS character values in hexadecimal notation.</para>
+    </summary>
+  </member>
+  <member name="CANDIDATELIST.dwCount">
+    <summary>
+      <para>Number of candidate strings.</para>
+    </summary>
+  </member>
+  <member name="CANDIDATELIST.dwSelection">
+    <summary>
+      <para>Index of the selected candidate string.</para>
+    </summary>
+  </member>
+  <member name="CANDIDATELIST.dwPageStart">
+    <summary>
+      <para>Index of the first candidate string in the candidate window. This varies as the user presses the PAGE UP and PAGE DOWN keys.</para>
+    </summary>
+  </member>
+  <member name="CANDIDATELIST.dwPageSize">
+    <summary>
+      <para>Number of candidate strings to be shown in one page in the candidate window. The user can move to the next page by pressing IME-defined keys, such as the PAGE UP or PAGE DOWN key. If this number is 0, an application can define a proper value by itself.</para>
+    </summary>
+  </member>
+  <member name="CANDIDATELIST.dwOffset">
+    <summary>
+      <para>Offset to the start of the first candidate string, relative to the start of this structure. The offsets for subsequent strings immediately follow this member, forming an array of 32-bit offsets.</para>
+    </summary>
+  </member>
+</doc>

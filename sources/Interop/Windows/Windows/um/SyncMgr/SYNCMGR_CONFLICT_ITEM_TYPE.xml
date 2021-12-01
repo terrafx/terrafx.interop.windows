@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_CONFLICT_ITEM_TYPE">
+    <summary>
+      <para>Describes conflict item type.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CONFLICT_ITEM_TYPE.SYNCMGR_CIT_UPDATED">
+    <summary>
+      <para>The conflict item was updated.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CONFLICT_ITEM_TYPE.SYNCMGR_CIT_DELETED">
+    <summary>
+      <para>The conflict item was deleted.</para>
+    </summary>
+  </member>
+</doc>

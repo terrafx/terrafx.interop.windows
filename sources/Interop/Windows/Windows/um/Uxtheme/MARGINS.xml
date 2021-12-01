@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MARGINS">
+    <summary>
+      <para>Returned by the <see cref="GetThemeMargins" /> function to define the margins of windows that have visual styles applied.</para>
+    </summary>
+    <seealso cref="GetThemeMargins" />
+  </member>
+  <member name="MARGINS.cxLeftWidth">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Width of the left border that retains its size.</para>
+    </summary>
+  </member>
+  <member name="MARGINS.cxRightWidth">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Width of the right border that retains its size.</para>
+    </summary>
+  </member>
+  <member name="MARGINS.cyTopHeight">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Height of the top border that retains its size.</para>
+    </summary>
+  </member>
+  <member name="MARGINS.cyBottomHeight">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Height of the bottom border that retains its size.</para>
+    </summary>
+  </member>
+</doc>

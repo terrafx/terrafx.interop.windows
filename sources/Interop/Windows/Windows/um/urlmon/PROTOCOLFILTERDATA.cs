@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROTOCOLFILTERDATA.xml' path='doc/member[@name="PROTOCOLFILTERDATA"]/*' />
 public unsafe partial struct PROTOCOLFILTERDATA
 {
+    /// <include file='PROTOCOLFILTERDATA.xml' path='doc/member[@name="PROTOCOLFILTERDATA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='PROTOCOLFILTERDATA.xml' path='doc/member[@name="PROTOCOLFILTERDATA.pProtocolSink"]/*' />
     public IInternetProtocolSink* pProtocolSink;
 
+    /// <include file='PROTOCOLFILTERDATA.xml' path='doc/member[@name="PROTOCOLFILTERDATA.pProtocol"]/*' />
     public IInternetProtocol* pProtocol;
 
+    /// <include file='PROTOCOLFILTERDATA.xml' path='doc/member[@name="PROTOCOLFILTERDATA.pUnk"]/*' />
     public IUnknown* pUnk;
 
+    /// <include file='PROTOCOLFILTERDATA.xml' path='doc/member[@name="PROTOCOLFILTERDATA.dwFilterFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFilterFlags;
 }

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMHDR">
+    <summary>
+      <para>Contains information about a notification message.</para>
+    </summary>
+  </member>
+  <member name="NMHDR.hwndFrom">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A window handle to the control sending the message.</para>
+    </summary>
+  </member>
+  <member name="NMHDR.idFrom">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT_PTR</a></b></para>
+      <para>An identifier of the control sending the message.</para>
+    </summary>
+  </member>
+  <member name="NMHDR.code">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A notification code. This member can be one of the common notification codes (see Notifications under <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-reference">General Control Reference</a>), or it can be a control-specific notification code.</para>
+    </summary>
+  </member>
+</doc>

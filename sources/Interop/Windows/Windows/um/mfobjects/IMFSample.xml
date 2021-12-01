@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSample.AddBuffer">
+    <summary>
+      <para>Adds a buffer to the end of the list of buffers in the sample.</para>
+    </summary>
+    <param name="pBuffer">
+      <para>Pointer to the buffer's <see cref="IMFMediaBuffer" /> interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>NULL pointer argument.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For uncompressed video data, each buffer should contain a single video frame, and samples should not contain multiple frames. In general, storing multiple buffers in a sample is discouraged.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.ConvertToContiguousBuffer">
+    <summary>
+      <para>Converts a sample with multiple buffers into a sample with a single buffer.</para>
+    </summary>
+    <param name="ppBuffer">
+      <para>Receives a pointer to the <see cref="IMFMediaBuffer" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The sample does not contain any buffers.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the sample contains more than one buffer, this method copies the data from the original buffers into a new buffer, and replaces the original buffer list with the new buffer. The new buffer is returned in the <i>ppBuffer</i> parameter.</para>
+      <para>If the sample contains a single buffer, this method returns a pointer to the original buffer. In typical use, most samples do not contain multiple buffers.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.CopyToBuffer">
+    <summary>
+      <para>Copies the sample data to a buffer. This method concatenates the valid data from all of the buffers of the sample, in order.</para>
+    </summary>
+    <param name="pBuffer">
+      <para>Pointer to the <see cref="IMFMediaBuffer" /> interface of the destination buffer. The buffer must be large enough to hold the valid data in the sample. To get the size of the data in the sample, call <see cref="IMFSample.GetTotalLength" />.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>NULL pointer argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_BUFFERTOOSMALL</b>
+            </para>
+          </description>
+          <description>
+            <para>The buffer is not large enough to contain the data.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.GetBufferByIndex">
+    <summary>
+      <para>Gets a buffer from the sample, by index.</para>
+      <para>
+        <b>Note</b>  In most cases, it is safer to use the <see cref="IMFSample.ConvertToContiguousBuffer" /> method.  If the sample contains more than one buffer, the <b>ConvertToContiguousBuffer</b> method replaces them with a single buffer, copies the original data into that buffer, and returns the new buffer to the caller. The copy operation occurs at most once. On subsequent calls, no data is copied.</para>
+    </summary>
+    <param name="dwIndex">
+      <para>Index of the buffer. To find the number of buffers in the sample, call <see cref="IMFSample.GetBufferCount" />. Buffers are indexed from zero.</para>
+    </param>
+    <param name="ppBuffer">
+      <para>Receives a pointer to the <see cref="IMFMediaBuffer" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument, or the index is out of range.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A sample might contain more than one buffer. Use the <b>GetBufferByIndex</b> method to enumerate the individual buffers.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso cref="IMFSample.ConvertToContiguousBuffer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.GetBufferCount">
+    <summary>
+      <para>Retrieves the number of buffers in the sample.</para>
+    </summary>
+    <param name="pdwBufferCount">
+      <para>Receives the number of buffers in the sample. A sample might contain zero buffers.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.GetSampleDuration">
+    <summary>
+      <para>Retrieves the duration of the sample.</para>
+    </summary>
+    <param name="phnsSampleDuration">
+      <para>Receives the duration, in 100-nanosecond units.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NO_SAMPLE_DURATION</b>
+            </para>
+          </description>
+          <description>
+            <para>The sample does not have a specified duration.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the sample contains more than one buffer, the duration includes the data from all of the buffers.</para>
+      <para>If the retrieved duration is zero, or if the method returns <b>MF_E_NO_SAMPLE_DURATION</b>, the duration is unknown. In that case, it might be possible to calculate the duration from the media type—for example, by using the video frame rate or the audio sampling rate.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.GetSampleFlags">
+    <summary>
+      <para>Retrieves flags associated with the sample.</para>
+      <para>Currently no flags are defined. Instead, metadata for samples is defined using attributes. To get attributes from a sample, use the <see cref="IMFAttributes" /> interface, which <see cref="IMFSample" /> inherits. For a list of sample attributes, see <a href="https://docs.microsoft.com//windows/desktop/medfound/sample-attributes">Sample Attributes</a>.</para>
+    </summary>
+    <param name="pdwSampleFlags">
+      <para>Receives the value zero.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.GetSampleTime">
+    <summary>
+      <para>Retrieves the presentation time of the sample.</para>
+    </summary>
+    <param name="phnsSampleTime">
+      <para>Receives the presentation time, in 100-nanosecond units.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NO_SAMPLE_TIMESTAMP</b>
+            </para>
+          </description>
+          <description>
+            <para>The sample does not have a presentation time.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.GetTotalLength">
+    <summary>
+      <para>Retrieves the total length of the valid data in all of the buffers in the sample. The length is calculated as the sum of the values retrieved by the <see cref="IMFMediaBuffer.GetCurrentLength" /> method.</para>
+    </summary>
+    <param name="pcbTotalLength">
+      <para>Receives the total length of the valid data, in bytes.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.RemoveAllBuffers">
+    <summary>
+      <para>Removes all of the buffers from the sample.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.RemoveBufferByIndex">
+    <summary>
+      <para>Removes a buffer at a specified index from the sample.</para>
+    </summary>
+    <param name="dwIndex">
+      <para>Index of the buffer. To find the number of buffers in the sample, call <see cref="IMFSample.GetBufferCount" />. Buffers are indexed from zero.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.SetSampleDuration">
+    <summary>
+      <para>Sets the duration of the sample.</para>
+    </summary>
+    <param name="hnsSampleDuration">
+      <para>Duration of the sample, in 100-nanosecond units.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method succeeds if the duration is negative, although negative durations are probably not valid for most types of data. It is the responsibility of the object that consumes the sample to validate the duration.</para>
+      <para>The duration can also be zero. This might be valid for some types of data. For example, the sample might contain stream metadata with no buffers.</para>
+      <para>Until this method is called, the <see cref="IMFSample.GetSampleDuration" /> method returns <b>MF_E_NO_SAMPLE_DURATION</b>.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/time-stamps-and-durations">Time Stamps and Durations</seealso>
+  </member>
+  <member name="IMFSample.SetSampleFlags">
+    <summary>
+      <para>Sets flags associated with the sample.</para>
+      <para>Currently no flags are defined. Instead, metadata for samples is defined using attributes. To set attributes on a sample, use the <see cref="IMFAttributes" /> interface, which <see cref="IMFSample" /> inherits. For a list of sample attributes, see <a href="https://docs.microsoft.com//windows/desktop/medfound/sample-attributes">Sample Attributes</a>.</para>
+    </summary>
+    <param name="dwSampleFlags">
+      <para>Reserved; must be zero.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+  </member>
+  <member name="IMFSample.SetSampleTime">
+    <summary>
+      <para>Sets the presentation time of the sample.</para>
+    </summary>
+    <param name="hnsSampleTime">
+      <para>The presentation time, in 100-nanosecond units.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Some pipeline components require samples that have time stamps. Generally the component that generates the data for the sample also sets the time stamp. The Media Session might modify the time stamps.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFSample" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/time-stamps-and-durations">Time Stamps and Durations</seealso>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5"]/*' />
 [Guid("3050F80C-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLDocument5 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, uint>)(lpVtbl[1]))((IHTMLDocument5*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, uint>)(lpVtbl[2]))((IHTMLDocument5*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, uint*, int>)(lpVtbl[3]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.put_onmousewheel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_onmousewheel(VARIANT v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[7]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_onmousewheel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_onmousewheel(VARIANT* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[8]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_doctype"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_doctype(IHTMLDOMNode** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, IHTMLDOMNode**, int>)(lpVtbl[9]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_implementation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_implementation(IHTMLDOMImplementation** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, IHTMLDOMImplementation**, int>)(lpVtbl[10]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.createAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT createAttribute([NativeTypeName("BSTR")] ushort* bstrattrName, IHTMLDOMAttribute** ppattribute)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMAttribute**, int>)(lpVtbl[11]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), bstrattrName, ppattribute);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.createComment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT createComment([NativeTypeName("BSTR")] ushort* bstrdata, IHTMLDOMNode** ppRetNode)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMNode**, int>)(lpVtbl[12]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), bstrdata, ppRetNode);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.put_onfocusin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_onfocusin(VARIANT v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[13]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_onfocusin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_onfocusin(VARIANT* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[14]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.put_onfocusout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_onfocusout(VARIANT v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[15]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_onfocusout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_onfocusout(VARIANT* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[16]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.put_onactivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_onactivate(VARIANT v)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[17]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_onactivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_onactivate(VARIANT* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[18]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.put_ondeactivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT put_ondeactivate(VARIANT v)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[19]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_ondeactivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_ondeactivate(VARIANT* p)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[20]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.put_onbeforeactivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_onbeforeactivate(VARIANT v)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[21]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_onbeforeactivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_onbeforeactivate(VARIANT* p)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[22]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.put_onbeforedeactivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_onbeforedeactivate(VARIANT v)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[23]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_onbeforedeactivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_onbeforedeactivate(VARIANT* p)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[24]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_compatMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT get_compatMode([NativeTypeName("BSTR *")] ushort** p)

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="UI_ANIMATION_PRIORITY_EFFECT">
+    <summary>
+      <para>Defines potential effects on a storyboard if a priority comparison returns false.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used as the <i>priorityEffect</i> parameter of  <see cref="IUIAnimationPriorityComparison.HasPriority" />, informing the client of the potential effect on the storyboard to be scheduled when the return value is false (S_FALSE).  UI_ANIMATION_PRIORITY_EFFECT_FAILURE means that the  attempt to schedule the storyboard might fail if the return value is false.   UI_ANIMATION_PRIORITY_EFFECT_DELAY means that the attempt to schedule the storyboard will succeed, but if the return value is false, the storyboard could play later than it would otherwise.</para>
+      <para>This enumeration can help an application decide how aggressive to be about reducing latency in the UI. For example, if the application returns true when the effect is UI_ANIMATION_PRIORITY_EFFECT_DELAY, then other animations might get canceled or compressed even though doing so was not strictly necessary to play a new animation within the application-specified longest acceptable delay.</para>
+    </remarks>
+    <seealso cref="IUIAnimationPriorityComparison.HasPriority" />
+  </member>
+  <member name="UI_ANIMATION_PRIORITY_EFFECT.UI_ANIMATION_PRIORITY_EFFECT_FAILURE">
+    <summary>
+      <para>This storyboard might not be successfully scheduled.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_PRIORITY_EFFECT.UI_ANIMATION_PRIORITY_EFFECT_DELAY">
+    <summary>
+      <para>The storyboard will be scheduled, but might start playing later.</para>
+    </summary>
+  </member>
+</doc>

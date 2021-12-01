@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DSSSEED">
+    <summary>
+      <para>The <b>DSSSEED</b> structure holds the seed and counter values that can be used to verify the primes of the DSS public key.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381982(v=vs.85)">DSSPUBKEY</seealso>
+    <seealso cref="PUBLICKEYSTRUC" />
+    <seealso cref="RSAPUBKEY" />
+  </member>
+  <member name="DSSSEED.counter">
+    <summary>
+      <para>A <b>DWORD</b> containing the counter value. If the counter value is 0xFFFFFFFF, the seed and counter values are not available.</para>
+    </summary>
+  </member>
+  <member name="DSSSEED.seed">
+    <summary>
+      <para>A <b>BYTE</b> string containing the seed value.</para>
+    </summary>
+  </member>
+</doc>

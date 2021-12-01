@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumSTATDATA.Clone">
+    <summary>
+      <para>Creates a new enumerator that contains the same enumeration state as the current one.</para>
+      <para>This method makes it possible to record a particular point in the enumeration sequence and then return to that point at a later time. The caller must release this new enumerator separately from the first enumerator.</para>
+    </summary>
+    <param name="ppenum">
+      <para>A pointer to an <see cref="IEnumSTATDATA" /> pointer variable that receives the interface pointer to the enumeration object. If the method is unsuccessful, the value of this output variable is undefined.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified enumerator is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory available for this operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IEnumSTATDATA" />
+  </member>
+  <member name="IEnumSTATDATA.Next">
+    <summary>
+      <para>Retrieves the specified number of items in the enumeration sequence.</para>
+    </summary>
+    <param name="celt">
+      <para>The number of items to be retrieved. If there are fewer than the requested number of items left in the sequence, this method retrieves the remaining elements.</para>
+    </param>
+    <param name="rgelt">
+      <para>An array of enumerated items.</para>
+      <para>The enumerator is responsible for allocating any memory, and the caller is responsible for freeing it. If <i>celt</i> is greater than 1, the caller must also pass a non-<b>NULL</b> pointer passed to <i>pceltFetched</i> to know how many pointers to release.</para>
+    </param>
+    <param name="pceltFetched">
+      <para>The number of items that were retrieved. This parameter is always less than or equal to the number of items requested. This parameter can be <b>NULL</b> if <i>celt</i> is 1.</para>
+    </param>
+    <returns>
+      <para>If the method retrieves the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
+    </returns>
+    <seealso cref="IEnumSTATDATA" />
+    <seealso cref="STATDATA" />
+  </member>
+  <member name="IEnumSTATDATA.Reset">
+    <summary>
+      <para>Resets the enumeration sequence to the beginning.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>There is no guarantee that the same set of objects will be enumerated after the reset operation has completed. A static collection is reset to the beginning, but it can be too expensive for some collections, such as files in a directory, to guarantee this condition.</para>
+    </remarks>
+    <seealso cref="IEnumSTATDATA" />
+  </member>
+  <member name="IEnumSTATDATA.Skip">
+    <summary>
+      <para>Skips over the specified number of items in the enumeration sequence.</para>
+    </summary>
+    <param name="celt">
+      <para>The number of items to be skipped.</para>
+    </param>
+    <returns>
+      <para>If the method skips the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
+    </returns>
+    <seealso cref="IEnumSTATDATA" />
+  </member>
+  <member name="IEnumSTATDATA">
+    <summary>
+      <para>Enumerates the advisory connection information for a data object.</para>
+    </summary>
+    <seealso cref="IDataAdviseHolder.EnumAdvise" />
+    <seealso cref="IDataObject.EnumDAdvise" />
+    <seealso cref="IOleAdviseHolder.EnumAdvise" />
+    <seealso cref="IOleCache.EnumCache" />
+  </member>
+</doc>

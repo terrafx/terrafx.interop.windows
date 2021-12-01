@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TITLEBARINFO.xml' path='doc/member[@name="TITLEBARINFO"]/*' />
 public unsafe partial struct TITLEBARINFO
 {
+    /// <include file='TITLEBARINFO.xml' path='doc/member[@name="TITLEBARINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='TITLEBARINFO.xml' path='doc/member[@name="TITLEBARINFO.rcTitleBar"]/*' />
     public RECT rcTitleBar;
 
+    /// <include file='TITLEBARINFO.xml' path='doc/member[@name="TITLEBARINFO.rgstate"]/*' />
     [NativeTypeName("DWORD [6]")]
     public fixed uint rgstate[6];
 }

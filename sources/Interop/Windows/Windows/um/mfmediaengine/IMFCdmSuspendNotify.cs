@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFCdmSuspendNotify.xml' path='doc/member[@name="IMFCdmSuspendNotify"]/*' />
 [Guid("7A5645D2-43BD-47FD-87B7-DCD24CC7D692")]
 [NativeTypeName("struct IMFCdmSuspendNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
         return ((delegate* unmanaged<IMFCdmSuspendNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
         return ((delegate* unmanaged<IMFCdmSuspendNotify*, uint>)(lpVtbl[1]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
         return ((delegate* unmanaged<IMFCdmSuspendNotify*, uint>)(lpVtbl[2]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCdmSuspendNotify.xml' path='doc/member[@name="IMFCdmSuspendNotify.Begin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Begin()
@@ -48,6 +53,7 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
         return ((delegate* unmanaged<IMFCdmSuspendNotify*, int>)(lpVtbl[3]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCdmSuspendNotify.xml' path='doc/member[@name="IMFCdmSuspendNotify.End"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT End()

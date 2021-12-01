@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioAmbisonicsControl.xml' path='doc/member[@name="IAudioAmbisonicsControl"]/*' />
 [Guid("28724C91-DF35-4856-9F76-D6A26413F3DF")]
 [NativeTypeName("struct IAudioAmbisonicsControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
         return ((delegate* unmanaged<IAudioAmbisonicsControl*, Guid*, void**, int>)(lpVtbl[0]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
         return ((delegate* unmanaged<IAudioAmbisonicsControl*, uint>)(lpVtbl[1]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
         return ((delegate* unmanaged<IAudioAmbisonicsControl*, uint>)(lpVtbl[2]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAudioAmbisonicsControl.xml' path='doc/member[@name="IAudioAmbisonicsControl.SetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetData([NativeTypeName("const AMBISONICS_PARAMS *")] AMBISONICS_PARAMS* pAmbisonicsParams, [NativeTypeName("UINT32")] uint cbAmbisonicsParams)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
         return ((delegate* unmanaged<IAudioAmbisonicsControl*, AMBISONICS_PARAMS*, uint, int>)(lpVtbl[3]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), pAmbisonicsParams, cbAmbisonicsParams);
     }
 
+    /// <include file='IAudioAmbisonicsControl.xml' path='doc/member[@name="IAudioAmbisonicsControl.SetHeadTracking"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetHeadTracking(BOOL bEnableHeadTracking)
@@ -53,6 +59,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
         return ((delegate* unmanaged<IAudioAmbisonicsControl*, BOOL, int>)(lpVtbl[4]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), bEnableHeadTracking);
     }
 
+    /// <include file='IAudioAmbisonicsControl.xml' path='doc/member[@name="IAudioAmbisonicsControl.GetHeadTracking"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetHeadTracking(BOOL* pbEnableHeadTracking)
@@ -60,6 +67,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
         return ((delegate* unmanaged<IAudioAmbisonicsControl*, BOOL*, int>)(lpVtbl[5]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), pbEnableHeadTracking);
     }
 
+    /// <include file='IAudioAmbisonicsControl.xml' path='doc/member[@name="IAudioAmbisonicsControl.SetRotation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetRotation(float X, float Y, float Z, float W)

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DETAILSINFO">
+    <summary>
+      <para>Contains detail information for a Shell folder item. Used with the <a href="https://docs.microsoft.com//windows/desktop/shell/sfvm-getdetailsof">SFVM_GETDETAILSOF</a> notification.</para>
+    </summary>
+  </member>
+  <member name="DETAILSINFO.pidl">
+    <summary>
+      <para>Type: <b>PCUITEMID_CHILD</b></para>
+      <para>PIDL of the item whose details are being retrieved.</para>
+    </summary>
+  </member>
+  <member name="DETAILSINFO.fmt">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The alignment of the column heading and the subitem text in the column. This member can be one of the following values. Note that the alignment of the leftmost column is always left-justified and cannot be changed.</para>
+      <h4>LVCFMT_CENTER</h4>
+      <para>Text is centered.</para>
+      <h4>LVCFMT_COL_HAS_IMAGES</h4>
+      <para>Header item contains an image in the image list.</para>
+      <h4>LVCFMT_LEFT</h4>
+      <para>Text is left-aligned.</para>
+      <h4>LVCFMT_RIGHT</h4>
+      <para>Text is right-aligned.</para>
+    </summary>
+  </member>
+  <member name="DETAILSINFO.cxChar">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The number of average-sized characters in the heading.</para>
+    </summary>
+  </member>
+  <member name="DETAILSINFO.str">
+    <summary>
+      <para>Type: <b><see cref="STRRET" /></b></para>
+      <para>An <see cref="STRRET" /> structure that includes a string containing the requested detail. To convert this structure to a string, use <see cref="StrRetToBuf" /> or <see cref="StrRetToStr" />.</para>
+    </summary>
+  </member>
+  <member name="DETAILSINFO.iImage">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The index of an icon in the Shell image list that is displayed in the view.</para>
+    </summary>
+  </member>
+</doc>

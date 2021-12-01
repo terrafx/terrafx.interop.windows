@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumTfUIElements.xml' path='doc/member[@name="IEnumTfUIElements"]/*' />
 [Guid("887AA91E-ACBA-4931-84DA-3C5208CF543F")]
 [NativeTypeName("struct IEnumTfUIElements : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumTfUIElements : IEnumTfUIElements.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumTfUIElements : IEnumTfUIElements.Interface
         return ((delegate* unmanaged<IEnumTfUIElements*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfUIElements*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumTfUIElements : IEnumTfUIElements.Interface
         return ((delegate* unmanaged<IEnumTfUIElements*, uint>)(lpVtbl[1]))((IEnumTfUIElements*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumTfUIElements : IEnumTfUIElements.Interface
         return ((delegate* unmanaged<IEnumTfUIElements*, uint>)(lpVtbl[2]))((IEnumTfUIElements*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfUIElements.xml' path='doc/member[@name="IEnumTfUIElements.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfUIElements** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumTfUIElements : IEnumTfUIElements.Interface
         return ((delegate* unmanaged<IEnumTfUIElements*, IEnumTfUIElements**, int>)(lpVtbl[3]))((IEnumTfUIElements*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumTfUIElements.xml' path='doc/member[@name="IEnumTfUIElements.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfUIElement** ppElement, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumTfUIElements : IEnumTfUIElements.Interface
         return ((delegate* unmanaged<IEnumTfUIElements*, uint, ITfUIElement**, uint*, int>)(lpVtbl[4]))((IEnumTfUIElements*)Unsafe.AsPointer(ref this), ulCount, ppElement, pcFetched);
     }
 
+    /// <include file='IEnumTfUIElements.xml' path='doc/member[@name="IEnumTfUIElements.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumTfUIElements : IEnumTfUIElements.Interface
         return ((delegate* unmanaged<IEnumTfUIElements*, int>)(lpVtbl[5]))((IEnumTfUIElements*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfUIElements.xml' path='doc/member[@name="IEnumTfUIElements.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

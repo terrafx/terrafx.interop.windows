@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESS_LOOPBACK_MODE">
+    <summary>
+      <para>Specifies the loopback mode for an <see cref="AUDIOCLIENT_ACTIVATION_PARAMS" /> structure passed into a call to <see cref="ActivateAudioInterfaceAsync" />.</para>
+    </summary>
+    <seealso cref="AUDIOCLIENT_ACTIVATION_PARAMS" />
+    <seealso cref="ActivateAudioInterfaceAsync" />
+  </member>
+  <member name="PROCESS_LOOPBACK_MODE.PROCESS_LOOPBACK_MODE_INCLUDE_TARGET_PROCESS_TREE">
+    <summary>
+      <para>Render streams from the specified process and its child processes are included in the activated process loopback stream.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_LOOPBACK_MODE.PROCESS_LOOPBACK_MODE_EXCLUDE_TARGET_PROCESS_TREE">
+    <summary>
+      <para>Render streams from the specified process and its child processes are excluded from the activated process loopback stream.</para>
+    </summary>
+  </member>
+</doc>

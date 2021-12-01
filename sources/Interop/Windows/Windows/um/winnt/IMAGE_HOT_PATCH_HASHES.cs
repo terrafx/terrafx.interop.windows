@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_HOT_PATCH_HASHES.xml' path='doc/member[@name="IMAGE_HOT_PATCH_HASHES"]/*' />
 public unsafe partial struct IMAGE_HOT_PATCH_HASHES
 {
+    /// <include file='IMAGE_HOT_PATCH_HASHES.xml' path='doc/member[@name="IMAGE_HOT_PATCH_HASHES.SHA256"]/*' />
     [NativeTypeName("BYTE [32]")]
     public fixed byte SHA256[32];
 
+    /// <include file='IMAGE_HOT_PATCH_HASHES.xml' path='doc/member[@name="IMAGE_HOT_PATCH_HASHES.SHA1"]/*' />
     [NativeTypeName("BYTE [20]")]
     public fixed byte SHA1[20];
 }

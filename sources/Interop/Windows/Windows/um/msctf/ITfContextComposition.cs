@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfContextComposition.xml' path='doc/member[@name="ITfContextComposition"]/*' />
 [Guid("D40C8AAE-AC92-4FC7-9A11-0EE0E23AA39B")]
 [NativeTypeName("struct ITfContextComposition : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfContextComposition : ITfContextComposition.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfContextComposition : ITfContextComposition.Inter
         return ((delegate* unmanaged<ITfContextComposition*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextComposition*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfContextComposition : ITfContextComposition.Inter
         return ((delegate* unmanaged<ITfContextComposition*, uint>)(lpVtbl[1]))((ITfContextComposition*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfContextComposition : ITfContextComposition.Inter
         return ((delegate* unmanaged<ITfContextComposition*, uint>)(lpVtbl[2]))((ITfContextComposition*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfContextComposition.xml' path='doc/member[@name="ITfContextComposition.StartComposition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT StartComposition([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pCompositionRange, ITfCompositionSink* pSink, ITfComposition** ppComposition)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfContextComposition : ITfContextComposition.Inter
         return ((delegate* unmanaged<ITfContextComposition*, uint, ITfRange*, ITfCompositionSink*, ITfComposition**, int>)(lpVtbl[3]))((ITfContextComposition*)Unsafe.AsPointer(ref this), ecWrite, pCompositionRange, pSink, ppComposition);
     }
 
+    /// <include file='ITfContextComposition.xml' path='doc/member[@name="ITfContextComposition.EnumCompositions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnumCompositions(IEnumITfCompositionView** ppEnum)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfContextComposition : ITfContextComposition.Inter
         return ((delegate* unmanaged<ITfContextComposition*, IEnumITfCompositionView**, int>)(lpVtbl[4]))((ITfContextComposition*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='ITfContextComposition.xml' path='doc/member[@name="ITfContextComposition.FindComposition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT FindComposition([NativeTypeName("TfEditCookie")] uint ecRead, ITfRange* pTestRange, IEnumITfCompositionView** ppEnum)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfContextComposition : ITfContextComposition.Inter
         return ((delegate* unmanaged<ITfContextComposition*, uint, ITfRange*, IEnumITfCompositionView**, int>)(lpVtbl[5]))((ITfContextComposition*)Unsafe.AsPointer(ref this), ecRead, pTestRange, ppEnum);
     }
 
+    /// <include file='ITfContextComposition.xml' path='doc/member[@name="ITfContextComposition.TakeOwnership"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT TakeOwnership([NativeTypeName("TfEditCookie")] uint ecWrite, ITfCompositionView* pComposition, ITfCompositionSink* pSink, ITfComposition** ppComposition)

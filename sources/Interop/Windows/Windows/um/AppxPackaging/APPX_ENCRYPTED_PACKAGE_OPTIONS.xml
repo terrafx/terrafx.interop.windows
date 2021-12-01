@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPX_ENCRYPTED_PACKAGE_OPTIONS">
+    <summary>
+      <para>Encrypted app package options.</para>
+    </summary>
+  </member>
+  <member name="APPX_ENCRYPTED_PACKAGE_OPTIONS.APPX_ENCRYPTED_PACKAGE_OPTION_NONE">
+    <summary>
+      <para>No options.</para>
+    </summary>
+  </member>
+  <member name="APPX_ENCRYPTED_PACKAGE_OPTIONS.APPX_ENCRYPTED_PACKAGE_OPTION_DIFFUSION">
+    <summary>
+      <para>Option to use diffusion.</para>
+    </summary>
+  </member>
+  <member name="APPX_ENCRYPTED_PACKAGE_OPTIONS.APPX_ENCRYPTED_PACKAGE_OPTION_PAGE_HASHING">
+    <summary>
+      <para>Option to add page hashes.</para>
+    </summary>
+  </member>
+</doc>

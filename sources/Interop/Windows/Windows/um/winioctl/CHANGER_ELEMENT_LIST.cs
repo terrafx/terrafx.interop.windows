@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CHANGER_ELEMENT_LIST.xml' path='doc/member[@name="CHANGER_ELEMENT_LIST"]/*' />
 public partial struct CHANGER_ELEMENT_LIST
 {
+    /// <include file='CHANGER_ELEMENT_LIST.xml' path='doc/member[@name="CHANGER_ELEMENT_LIST.Element"]/*' />
     public CHANGER_ELEMENT Element;
 
+    /// <include file='CHANGER_ELEMENT_LIST.xml' path='doc/member[@name="CHANGER_ELEMENT_LIST.NumberOfElements"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfElements;
 }

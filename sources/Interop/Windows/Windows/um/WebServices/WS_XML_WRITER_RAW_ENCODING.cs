@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_WRITER_RAW_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_RAW_ENCODING"]/*' />
 public partial struct WS_XML_WRITER_RAW_ENCODING
 {
+    /// <include file='WS_XML_WRITER_RAW_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_RAW_ENCODING.encoding"]/*' />
     public WS_XML_WRITER_ENCODING encoding;
 }

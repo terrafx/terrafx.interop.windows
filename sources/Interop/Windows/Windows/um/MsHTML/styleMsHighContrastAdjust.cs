@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsHighContrastAdjust.xml' path='doc/member[@name="styleMsHighContrastAdjust"]/*' />
 public enum styleMsHighContrastAdjust
 {
+    /// <include file='styleMsHighContrastAdjust.xml' path='doc/member[@name="styleMsHighContrastAdjust.styleMsHighContrastAdjustNotSet"]/*' />
     styleMsHighContrastAdjustNotSet = 0,
+
+    /// <include file='styleMsHighContrastAdjust.xml' path='doc/member[@name="styleMsHighContrastAdjust.styleMsHighContrastAdjustAuto"]/*' />
     styleMsHighContrastAdjustAuto = 1,
+
+    /// <include file='styleMsHighContrastAdjust.xml' path='doc/member[@name="styleMsHighContrastAdjust.styleMsHighContrastAdjustNone"]/*' />
     styleMsHighContrastAdjustNone = 2,
+
+    /// <include file='styleMsHighContrastAdjust.xml' path='doc/member[@name="styleMsHighContrastAdjust.styleMsHighContrastAdjust_Max"]/*' />
     styleMsHighContrastAdjust_Max = 2147483647,
 }

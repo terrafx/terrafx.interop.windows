@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ConflictFolder.xml' path='doc/member[@name="ConflictFolder"]/*' />
 [Guid("289978AC-A101-4341-A817-21EBA7FD046D")]
 public partial struct ConflictFolder
 {

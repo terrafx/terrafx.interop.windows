@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_CERT_CREDENTIAL"]/*' />
 public partial struct WS_CERT_CREDENTIAL
 {
+    /// <include file='WS_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_CERT_CREDENTIAL.credentialType"]/*' />
     public WS_CERT_CREDENTIAL_TYPE credentialType;
 }

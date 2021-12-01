@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_SHADER_DEBUG_OUTPUTVAR">
+    <summary>
+      <para>Describes a shader output variable.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_OUTPUTVAR.Var">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The index variable being written to or if -1 it's not going to a variable.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_OUTPUTVAR.uValueMin">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Minimum UINT value.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_OUTPUTVAR.uValueMax">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Maximum UINT value.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_OUTPUTVAR.iValueMin">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">INT</a></b></para>
+      <para>Minimum INT value.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_OUTPUTVAR.iValueMax">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">INT</a></b></para>
+      <para>Maximum UINT value.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_OUTPUTVAR.fValueMin">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>Minimum FLOAT value.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_OUTPUTVAR.fValueMax">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>Maximum FLOAT value.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_OUTPUTVAR.bNaNPossible">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>Indicates whether the output variable can evaluate to not a number.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_OUTPUTVAR.bInfPossible">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>Indicates whether the output variable can evaluate to infinity.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRichChunk.GetData">
+    <summary>
+      <para>Retrieves the <see cref="PROPVARIANT" /> and input string that represents a chunk of data.</para>
+    </summary>
+    <param name="pFirstPos">
+      <para>Type: <b>ULONG*</b></para>
+      <para>Receives the zero-based starting position of the range. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pLength">
+      <para>Type: <b>ULONG*</b></para>
+      <para>Receives the length of the range. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppsz">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>Receives the associated Unicode string value, or <b>NULL</b> if not available.</para>
+    </param>
+    <param name="pValue">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>Receives the associated <see cref="PROPVARIANT" /> value, or <b>VT_EMPTY</b> if not available. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Prior to Windows 7, this was declared in structuredquery.idl and structuredquery.h.</para>
+    </remarks>
+    <seealso cref="IRichChunk" />
+  </member>
+  <member name="IRichChunk">
+    <summary>
+      <para>Represents a chunk of data as a string and a <see cref="PROPVARIANT" /> value.</para>
+    </summary>
+    <remarks>
+      <para>In Windows 7, this interface is defined in structuredquerycondition.idl and structuredquerycondition.h. Prior to Windows 7 this interface was declared in structuredquery.h and structuredquery.idl.</para>
+    </remarks>
+    <seealso cref="GetErrors" />
+    <seealso cref="STRUCTURED_QUERY_PARSE_ERROR" />
+  </member>
+</doc>

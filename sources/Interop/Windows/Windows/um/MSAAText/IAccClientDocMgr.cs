@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAccClientDocMgr.xml' path='doc/member[@name="IAccClientDocMgr"]/*' />
 [Guid("4C896039-7B6D-49E6-A8C1-45116A98292B")]
 [NativeTypeName("struct IAccClientDocMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
         return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, void**, int>)(lpVtbl[0]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
         return ((delegate* unmanaged<IAccClientDocMgr*, uint>)(lpVtbl[1]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
         return ((delegate* unmanaged<IAccClientDocMgr*, uint>)(lpVtbl[2]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAccClientDocMgr.xml' path='doc/member[@name="IAccClientDocMgr.GetDocuments"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDocuments(IEnumUnknown** enumUnknown)
@@ -46,6 +51,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
         return ((delegate* unmanaged<IAccClientDocMgr*, IEnumUnknown**, int>)(lpVtbl[3]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), enumUnknown);
     }
 
+    /// <include file='IAccClientDocMgr.xml' path='doc/member[@name="IAccClientDocMgr.LookupByHWND"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT LookupByHWND(HWND hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
@@ -53,6 +59,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
         return ((delegate* unmanaged<IAccClientDocMgr*, HWND, Guid*, IUnknown**, int>)(lpVtbl[4]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), hWnd, riid, ppunk);
     }
 
+    /// <include file='IAccClientDocMgr.xml' path='doc/member[@name="IAccClientDocMgr.LookupByPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
@@ -60,6 +67,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
         return ((delegate* unmanaged<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int>)(lpVtbl[5]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), pt, riid, ppunk);
     }
 
+    /// <include file='IAccClientDocMgr.xml' path='doc/member[@name="IAccClientDocMgr.GetFocused"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)

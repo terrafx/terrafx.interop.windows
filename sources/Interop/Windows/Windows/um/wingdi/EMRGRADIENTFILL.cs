@@ -9,24 +9,32 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRGRADIENTFILL.xml' path='doc/member[@name="EMRGRADIENTFILL"]/*' />
 public partial struct EMRGRADIENTFILL
 {
+    /// <include file='EMRGRADIENTFILL.xml' path='doc/member[@name="EMRGRADIENTFILL.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRGRADIENTFILL.xml' path='doc/member[@name="EMRGRADIENTFILL.rclBounds"]/*' />
     public RECTL rclBounds;
 
+    /// <include file='EMRGRADIENTFILL.xml' path='doc/member[@name="EMRGRADIENTFILL.nVer"]/*' />
     [NativeTypeName("DWORD")]
     public uint nVer;
 
+    /// <include file='EMRGRADIENTFILL.xml' path='doc/member[@name="EMRGRADIENTFILL.nTri"]/*' />
     [NativeTypeName("DWORD")]
     public uint nTri;
 
+    /// <include file='EMRGRADIENTFILL.xml' path='doc/member[@name="EMRGRADIENTFILL.ulMode"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulMode;
 
+    /// <include file='EMRGRADIENTFILL.xml' path='doc/member[@name="EMRGRADIENTFILL.Ver"]/*' />
     [NativeTypeName("TRIVERTEX [1]")]
     public _Ver_e__FixedBuffer Ver;
 
+    /// <include file='_Ver_e__FixedBuffer.xml' path='doc/member[@name="_Ver_e__FixedBuffer"]/*' />
     public partial struct _Ver_e__FixedBuffer
     {
         public TRIVERTEX e0;

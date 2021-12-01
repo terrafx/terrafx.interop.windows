@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CWPSTRUCT.xml' path='doc/member[@name="CWPSTRUCT"]/*' />
 public partial struct CWPSTRUCT
 {
+    /// <include file='CWPSTRUCT.xml' path='doc/member[@name="CWPSTRUCT.lParam"]/*' />
     public LPARAM lParam;
 
+    /// <include file='CWPSTRUCT.xml' path='doc/member[@name="CWPSTRUCT.wParam"]/*' />
     public WPARAM wParam;
 
+    /// <include file='CWPSTRUCT.xml' path='doc/member[@name="CWPSTRUCT.message"]/*' />
     public uint message;
 
+    /// <include file='CWPSTRUCT.xml' path='doc/member[@name="CWPSTRUCT.hwnd"]/*' />
     public HWND hwnd;
 }

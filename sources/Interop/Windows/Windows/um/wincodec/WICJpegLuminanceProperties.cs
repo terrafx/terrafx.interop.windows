@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICJpegLuminanceProperties.xml' path='doc/member[@name="WICJpegLuminanceProperties"]/*' />
 public enum WICJpegLuminanceProperties : uint
 {
+    /// <include file='WICJpegLuminanceProperties.xml' path='doc/member[@name="WICJpegLuminanceProperties.WICJpegLuminanceTable"]/*' />
     WICJpegLuminanceTable = 0x1,
+
+    /// <include file='WICJpegLuminanceProperties.xml' path='doc/member[@name="WICJpegLuminanceProperties.WICJpegLuminanceProperties_FORCE_DWORD"]/*' />
     WICJpegLuminanceProperties_FORCE_DWORD = 0x7fffffff,
 }

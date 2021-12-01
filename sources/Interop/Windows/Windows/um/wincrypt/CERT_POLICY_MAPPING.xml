@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_POLICY_MAPPING">
+    <summary>
+      <para>The <b>CERT_POLICY_MAPPING</b> structure contains a mapping between issuer domain and subject domain policy OIDs.</para>
+    </summary>
+  </member>
+  <member name="CERT_POLICY_MAPPING.pszIssuerDomainPolicy">
+    <summary>
+      <para>
+        <b>pszObjId</b> of an issuer domain policy.</para>
+    </summary>
+  </member>
+  <member name="CERT_POLICY_MAPPING.pszSubjectDomainPolicy">
+    <summary>
+      <para>
+        <b>pszObjId</b> of the equivalent subject domain policy.</para>
+    </summary>
+  </member>
+</doc>

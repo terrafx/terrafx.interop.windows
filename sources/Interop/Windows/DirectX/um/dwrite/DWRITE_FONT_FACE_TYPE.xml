@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_FONT_FACE_TYPE">
+    <summary>
+      <para>Indicates the file format of a complete font face.</para>
+    </summary>
+    <remarks>
+      <para>Font formats that consist of multiple files, such as Type 1 .PFM and .PFB, have a single enum entry.</para>
+    </remarks>
+  </member>
+  <member name="DWRITE_FONT_FACE_TYPE.DWRITE_FONT_FACE_TYPE_CFF">
+    <summary>
+      <para>OpenType font face with CFF outlines.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_FACE_TYPE.DWRITE_FONT_FACE_TYPE_TRUETYPE">
+    <summary>
+      <para>OpenType font face with TrueType outlines.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_FACE_TYPE.DWRITE_FONT_FACE_TYPE_OPENTYPE_COLLECTION">
+    <summary></summary>
+  </member>
+  <member name="DWRITE_FONT_FACE_TYPE.DWRITE_FONT_FACE_TYPE_TYPE1">
+    <summary>
+      <para>A Type 1 font face.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_FACE_TYPE.DWRITE_FONT_FACE_TYPE_VECTOR">
+    <summary>
+      <para>A vector .FON format font face.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_FACE_TYPE.DWRITE_FONT_FACE_TYPE_BITMAP">
+    <summary>
+      <para>A bitmap .FON format font face.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_FACE_TYPE.DWRITE_FONT_FACE_TYPE_UNKNOWN">
+    <summary>
+      <para>Font face type is not recognized by the DirectWrite font system.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_FACE_TYPE.DWRITE_FONT_FACE_TYPE_RAW_CFF">
+    <summary>
+      <para>The font data includes only the CFF table from an OpenType CFF font. This font face type can be used only for embedded fonts (i.e., custom font file loaders) and the resulting font face object supports only the minimum functionality necessary to render glyphs.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_FACE_TYPE.DWRITE_FONT_FACE_TYPE_TRUETYPE_COLLECTION">
+    <summary>
+      <para>OpenType font face that is a part of a TrueType collection.</para>
+    </summary>
+  </member>
+</doc>

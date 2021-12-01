@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrConflictResolveInfo.xml' path='doc/member[@name="ISyncMgrConflictResolveInfo"]/*' />
 [Guid("C405A219-25A2-442E-8743-B845A2CEE93F")]
 [NativeTypeName("struct ISyncMgrConflictResolveInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
         return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
         return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint>)(lpVtbl[1]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
         return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint>)(lpVtbl[2]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrConflictResolveInfo.xml' path='doc/member[@name="ISyncMgrConflictResolveInfo.GetIterationInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIterationInfo(uint* pnCurrentConflict, uint* pcConflicts, uint* pcRemainingForApplyToAll)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
         return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint*, uint*, uint*, int>)(lpVtbl[3]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), pnCurrentConflict, pcConflicts, pcRemainingForApplyToAll);
     }
 
+    /// <include file='ISyncMgrConflictResolveInfo.xml' path='doc/member[@name="ISyncMgrConflictResolveInfo.GetPresenterNextStep"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPresenterNextStep(SYNCMGR_PRESENTER_NEXT_STEP* pnPresenterNextStep)
@@ -53,6 +59,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
         return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_NEXT_STEP*, int>)(lpVtbl[4]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), pnPresenterNextStep);
     }
 
+    /// <include file='ISyncMgrConflictResolveInfo.xml' path='doc/member[@name="ISyncMgrConflictResolveInfo.GetPresenterChoice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPresenterChoice(SYNCMGR_PRESENTER_CHOICE* pnPresenterChoice, BOOL* pfApplyToAll)
@@ -60,6 +67,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
         return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_CHOICE*, BOOL*, int>)(lpVtbl[5]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), pnPresenterChoice, pfApplyToAll);
     }
 
+    /// <include file='ISyncMgrConflictResolveInfo.xml' path='doc/member[@name="ISyncMgrConflictResolveInfo.GetItemChoiceCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetItemChoiceCount(uint* pcChoices)
@@ -67,6 +75,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
         return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint*, int>)(lpVtbl[6]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), pcChoices);
     }
 
+    /// <include file='ISyncMgrConflictResolveInfo.xml' path='doc/member[@name="ISyncMgrConflictResolveInfo.GetItemChoice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetItemChoice(uint iChoice, uint* piChoiceIndex)
@@ -74,6 +83,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
         return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint, uint*, int>)(lpVtbl[7]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), iChoice, piChoiceIndex);
     }
 
+    /// <include file='ISyncMgrConflictResolveInfo.xml' path='doc/member[@name="ISyncMgrConflictResolveInfo.SetPresenterNextStep"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetPresenterNextStep(SYNCMGR_PRESENTER_NEXT_STEP nPresenterNextStep)
@@ -81,6 +91,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
         return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_NEXT_STEP, int>)(lpVtbl[8]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), nPresenterNextStep);
     }
 
+    /// <include file='ISyncMgrConflictResolveInfo.xml' path='doc/member[@name="ISyncMgrConflictResolveInfo.SetPresenterChoice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetPresenterChoice(SYNCMGR_PRESENTER_CHOICE nPresenterChoice, BOOL fApplyToAll)
@@ -88,6 +99,7 @@ public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResol
         return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_CHOICE, BOOL, int>)(lpVtbl[9]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), nPresenterChoice, fApplyToAll);
     }
 
+    /// <include file='ISyncMgrConflictResolveInfo.xml' path='doc/member[@name="ISyncMgrConflictResolveInfo.SetItemChoices"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetItemChoices(uint* prgiConflictItemIndexes, uint cChoices)

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFont.xml' path='doc/member[@name="IFont"]/*' />
 [Guid("BEF6E002-A874-101A-8BBA-00AA00300CAB")]
 [NativeTypeName("struct IFont : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFont : IFont.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, Guid*, void**, int>)(lpVtbl[0]))((IFont*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, uint>)(lpVtbl[1]))((IFont*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, uint>)(lpVtbl[2]))((IFont*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.get_Name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pName)
@@ -46,6 +51,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, ushort**, int>)(lpVtbl[3]))((IFont*)Unsafe.AsPointer(ref this), pName);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.put_Name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT put_Name([NativeTypeName("BSTR")] ushort* name)
@@ -53,6 +59,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, ushort*, int>)(lpVtbl[4]))((IFont*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.get_Size"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_Size(CY* pSize)
@@ -60,6 +67,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, CY*, int>)(lpVtbl[5]))((IFont*)Unsafe.AsPointer(ref this), pSize);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.put_Size"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT put_Size(CY size)
@@ -67,6 +75,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, CY, int>)(lpVtbl[6]))((IFont*)Unsafe.AsPointer(ref this), size);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.get_Bold"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Bold(BOOL* pBold)
@@ -74,6 +83,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[7]))((IFont*)Unsafe.AsPointer(ref this), pBold);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.put_Bold"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_Bold(BOOL bold)
@@ -81,6 +91,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[8]))((IFont*)Unsafe.AsPointer(ref this), bold);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.get_Italic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_Italic(BOOL* pItalic)
@@ -88,6 +99,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[9]))((IFont*)Unsafe.AsPointer(ref this), pItalic);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.put_Italic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_Italic(BOOL italic)
@@ -95,6 +107,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[10]))((IFont*)Unsafe.AsPointer(ref this), italic);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.get_Underline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_Underline(BOOL* pUnderline)
@@ -102,6 +115,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[11]))((IFont*)Unsafe.AsPointer(ref this), pUnderline);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.put_Underline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_Underline(BOOL underline)
@@ -109,6 +123,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[12]))((IFont*)Unsafe.AsPointer(ref this), underline);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.get_Strikethrough"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_Strikethrough(BOOL* pStrikethrough)
@@ -116,6 +131,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[13]))((IFont*)Unsafe.AsPointer(ref this), pStrikethrough);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.put_Strikethrough"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_Strikethrough(BOOL strikethrough)
@@ -123,6 +139,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[14]))((IFont*)Unsafe.AsPointer(ref this), strikethrough);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.get_Weight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_Weight(short* pWeight)
@@ -130,6 +147,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, short*, int>)(lpVtbl[15]))((IFont*)Unsafe.AsPointer(ref this), pWeight);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.put_Weight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_Weight(short weight)
@@ -137,6 +155,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, short, int>)(lpVtbl[16]))((IFont*)Unsafe.AsPointer(ref this), weight);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.get_Charset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_Charset(short* pCharset)
@@ -144,6 +163,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, short*, int>)(lpVtbl[17]))((IFont*)Unsafe.AsPointer(ref this), pCharset);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.put_Charset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT put_Charset(short charset)
@@ -151,6 +171,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, short, int>)(lpVtbl[18]))((IFont*)Unsafe.AsPointer(ref this), charset);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.get_hFont"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_hFont(HFONT* phFont)
@@ -158,6 +179,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, HFONT*, int>)(lpVtbl[19]))((IFont*)Unsafe.AsPointer(ref this), phFont);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT Clone(IFont** ppFont)
@@ -165,6 +187,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, IFont**, int>)(lpVtbl[20]))((IFont*)Unsafe.AsPointer(ref this), ppFont);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.IsEqual"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT IsEqual(IFont* pFontOther)
@@ -172,6 +195,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, IFont*, int>)(lpVtbl[21]))((IFont*)Unsafe.AsPointer(ref this), pFontOther);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.SetRatio"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT SetRatio([NativeTypeName("LONG")] int cyLogical, [NativeTypeName("LONG")] int cyHimetric)
@@ -179,6 +203,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, int, int, int>)(lpVtbl[22]))((IFont*)Unsafe.AsPointer(ref this), cyLogical, cyHimetric);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.QueryTextMetrics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT QueryTextMetrics([NativeTypeName("TEXTMETRICOLE *")] TEXTMETRICW* pTM)
@@ -186,6 +211,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, TEXTMETRICW*, int>)(lpVtbl[23]))((IFont*)Unsafe.AsPointer(ref this), pTM);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.AddRefHfont"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT AddRefHfont(HFONT hFont)
@@ -193,6 +219,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, HFONT, int>)(lpVtbl[24]))((IFont*)Unsafe.AsPointer(ref this), hFont);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.ReleaseHfont"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT ReleaseHfont(HFONT hFont)
@@ -200,6 +227,7 @@ public unsafe partial struct IFont : IFont.Interface
         return ((delegate* unmanaged<IFont*, HFONT, int>)(lpVtbl[25]))((IFont*)Unsafe.AsPointer(ref this), hFont);
     }
 
+    /// <include file='IFont.xml' path='doc/member[@name="IFont.SetHdc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT SetHdc(HDC hDC)

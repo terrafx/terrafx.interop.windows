@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DCOMPOSITION_BORDER_MODE">
+    <summary>
+      <para>Specifies the border mode to use when composing a bitmap or applying a clip with any transform such that the edges of the bitmap or clip are not axis-aligned with integer coordinates.</para>
+    </summary>
+    <remarks>
+      <para>The default border mode for any given visual is <b>DCOMPOSITION_BORDER_MODE_INHERIT</b>, which delegates the determination of the border mode to the parent visual. If all visuals in a visual tree specify this mode, the default for all visuals is aliased rendering, which is the fastest mode.</para>
+      <para>A single visual can have any combination of visual properties. However, if a
+visual has the following combination of properties, the borders of the visual will default
+to <b>DCOMPOSITION_BORDER_MODE_HARD</b>.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <code>SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE_DESTINATION_INVERT)
+</code>
+          </description>
+        </item>
+        <item>
+          <description>
+            <code>SetBorderMode(DCOMPOSITION_BORDER_MODE_SOFT)
+</code>
+          </description>
+        </item>
+        <item>
+          <description>
+            <code>SetBitmapInterpolationMode(DCOMPOSITION_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR)</code>
+          </description>
+        </item>
+      </list>
+      <para>If you want a visual to be drawn with antialiasing, use <see cref="DCOMPOSITION_BITMAP_INTERPOLATION_MODE_LINEAR" /> for the content of the visual, and <b>DCOMPOSITION_BORDER_MODE_SOFT</b> for the edges.</para>
+    </remarks>
+    <seealso cref="IDCompositionVisual.SetBorderMode" />
+  </member>
+  <member name="DCOMPOSITION_BORDER_MODE.DCOMPOSITION_BORDER_MODE_SOFT">
+    <summary>
+      <para>Bitmap and clip edges are antialiased.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_BORDER_MODE.DCOMPOSITION_BORDER_MODE_HARD">
+    <summary>
+      <para>Bitmap and clip edges are aliased. See Remarks.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_BORDER_MODE.DCOMPOSITION_BORDER_MODE_INHERIT">
+    <summary>
+      <para>Bitmap and clip edges are drawn according to the mode established by the parent visual.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_INT32_DESCRIPTION.xml' path='doc/member[@name="WS_INT32_DESCRIPTION"]/*' />
 public partial struct WS_INT32_DESCRIPTION
 {
+    /// <include file='WS_INT32_DESCRIPTION.xml' path='doc/member[@name="WS_INT32_DESCRIPTION.minValue"]/*' />
     public int minValue;
 
+    /// <include file='WS_INT32_DESCRIPTION.xml' path='doc/member[@name="WS_INT32_DESCRIPTION.maxValue"]/*' />
     public int maxValue;
 }

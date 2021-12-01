@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHDESCRIPTIONID">
+    <summary>
+      <para>Receives item data in response to a call to <see cref="SHGetDataFromIDList" />.</para>
+    </summary>
+  </member>
+  <member name="SHDESCRIPTIONID.dwDescriptionId">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Receives a value that determines what type the item is. One of the following values.</para>
+      <h4>SHDID_ROOT_REGITEM</h4>
+      <para>The item is a registered item on the desktop.</para>
+      <h4>SHDID_FS_FILE</h4>
+      <para>The item is a file.</para>
+      <h4>SHDID_FS_DIRECTORY</h4>
+      <para>The item is a folder.</para>
+      <h4>SHDID_FS_OTHER</h4>
+      <para>The item is an unidentified item in the file system.</para>
+      <h4>SHDID_COMPUTER_DRIVE35</h4>
+      <para>The item is a 3.5-inch floppy drive.</para>
+      <h4>SHDID_COMPUTER_DRIVE525</h4>
+      <para>The item is a 5.25-inch floppy drive.</para>
+      <h4>SHDID_COMPUTER_REMOVABLE</h4>
+      <para>The item is a removable disk.</para>
+      <h4>SHDID_COMPUTER_FIXED</h4>
+      <para>The item is a fixed hard disk.</para>
+      <h4>SHDID_COMPUTER_NETDRIVE</h4>
+      <para>The item is a drive that is mapped to a network share.</para>
+      <h4>SHDID_COMPUTER_CDROM</h4>
+      <para>The item is a CD-ROM drive.</para>
+      <h4>SHDID_COMPUTER_RAMDISK</h4>
+      <para>The item is a RAM disk.</para>
+      <h4>SHDID_COMPUTER_OTHER</h4>
+      <para>The item is an unidentified system device.</para>
+      <h4>SHDID_NET_DOMAIN</h4>
+      <para>The item is a network domain.</para>
+      <h4>SHDID_NET_SERVER</h4>
+      <para>The item is a network server.</para>
+      <h4>SHDID_NET_SHARE</h4>
+      <para>The item is a network share.</para>
+      <h4>SHDID_NET_RESTOFNET</h4>
+      <para>Not currently used.</para>
+      <h4>SHDID_NET_OTHER</h4>
+      <para>The item is an unidentified network resource.</para>
+      <h4>SHDID_COMPUTER_IMAGING</h4>
+      <para>
+        <b>Windows XP and later</b>. Not currently used.</para>
+      <h4>SHDID_COMPUTER_AUDIO</h4>
+      <para>
+        <b>Windows XP and later</b>. Not currently used.</para>
+      <h4>SHDID_COMPUTER_SHAREDDOCS</h4>
+      <para>
+        <b>Windows XP and later</b>. The item is the system shared documents folder.</para>
+      <h4>SHDID_MOBILE_DEVICE</h4>
+      <para>
+        <b>Windows Vista and later.</b> The item is a mobile device, such as a personal digital assistant (PDA).</para>
+    </summary>
+  </member>
+  <member name="SHDESCRIPTIONID.clsid">
+    <summary>
+      <para>Type: <b>CLSID</b></para>
+      <para>Receives the CLSID of the object to which the item belongs.</para>
+    </summary>
+  </member>
+</doc>

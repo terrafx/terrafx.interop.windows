@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CONTRACT_DESCRIPTION.xml' path='doc/member[@name="WS_CONTRACT_DESCRIPTION"]/*' />
 public unsafe partial struct WS_CONTRACT_DESCRIPTION
 {
+    /// <include file='WS_CONTRACT_DESCRIPTION.xml' path='doc/member[@name="WS_CONTRACT_DESCRIPTION.operationCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint operationCount;
 
+    /// <include file='WS_CONTRACT_DESCRIPTION.xml' path='doc/member[@name="WS_CONTRACT_DESCRIPTION.operations"]/*' />
     public WS_OPERATION_DESCRIPTION** operations;
 }

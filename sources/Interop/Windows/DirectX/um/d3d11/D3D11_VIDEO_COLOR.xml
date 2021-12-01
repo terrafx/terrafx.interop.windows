@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_COLOR">
+    <summary>
+      <para>Defines a color value for Microsoft Direct3D 11 video.</para>
+    </summary>
+    <remarks>
+      <para>The anonymous union can represent both RGB and YCbCr colors. The interpretation of the union depends on the context.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/about-yuv-video">About YUV Video</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+  </member>
+  <member name="D3D11_VIDEO_COLOR.YCbCr">
+    <summary>
+      <para>A <see cref="D3D11_VIDEO_COLOR_YCbCrA" /> structure that contains a YCbCr color value.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_COLOR.RGBA">
+    <summary>
+      <para>A <see cref="D3D11_VIDEO_COLOR_RGBA" /> structure that contains an RGB color value.</para>
+    </summary>
+  </member>
+</doc>

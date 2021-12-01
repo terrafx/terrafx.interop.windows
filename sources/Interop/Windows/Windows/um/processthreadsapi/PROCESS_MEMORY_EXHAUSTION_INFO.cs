@@ -7,15 +7,20 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_MEMORY_EXHAUSTION_INFO.xml' path='doc/member[@name="PROCESS_MEMORY_EXHAUSTION_INFO"]/*' />
 [SupportedOSPlatform("windows10.0.10586.0")]
 public partial struct PROCESS_MEMORY_EXHAUSTION_INFO
 {
+    /// <include file='PROCESS_MEMORY_EXHAUSTION_INFO.xml' path='doc/member[@name="PROCESS_MEMORY_EXHAUSTION_INFO.Version"]/*' />
     public ushort Version;
 
+    /// <include file='PROCESS_MEMORY_EXHAUSTION_INFO.xml' path='doc/member[@name="PROCESS_MEMORY_EXHAUSTION_INFO.Reserved"]/*' />
     public ushort Reserved;
 
+    /// <include file='PROCESS_MEMORY_EXHAUSTION_INFO.xml' path='doc/member[@name="PROCESS_MEMORY_EXHAUSTION_INFO.Type"]/*' />
     public PROCESS_MEMORY_EXHAUSTION_TYPE Type;
 
+    /// <include file='PROCESS_MEMORY_EXHAUSTION_INFO.xml' path='doc/member[@name="PROCESS_MEMORY_EXHAUSTION_INFO.Value"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint Value;
 }

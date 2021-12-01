@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PANOSE">
+    <summary>
+      <para>The <b>PANOSE</b> structure describes the PANOSE font-classification values for a TrueType font. These characteristics are then used to associate the font with other fonts of similar appearance but different names.</para>
+    </summary>
+    <seealso cref="EXTLOGFONT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
+    <seealso cref="OUTLINETEXTMETRIC" />
+  </member>
+  <member name="PANOSE.bFamilyType">
+    <summary>
+      <para>For Latin fonts, one of one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PAN_ANY</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>PAN_NO_FIT</description>
+          <description>No fit</description>
+        </item>
+        <item>
+          <description>PAN_FAMILY_TEXT_DISPLAY</description>
+          <description>Text and display</description>
+        </item>
+        <item>
+          <description>PAN_FAMILY_SCRIPT</description>
+          <description>Script</description>
+        </item>
+        <item>
+          <description>PAN_FAMILY_DECORATIVE</description>
+          <description>Decorative</description>
+        </item>
+        <item>
+          <description>PAN_FAMILY_PICTORIAL</description>
+          <description>Pictorial</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PANOSE.bSerifStyle">
+    <summary>
+      <para>The serif style. For Latin fonts, one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PAN_ANY</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>PAN_NO_FIT</description>
+          <description>No fit</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_COVE</description>
+          <description>Cove</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_OBTUSE_COVE</description>
+          <description>Obtuse cove</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_SQUARE_COVE</description>
+          <description>Square cove</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_OBTUSE_SQUARE_COVE</description>
+          <description>Obtuse square cove</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_SQUARE</description>
+          <description>Square</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_THIN</description>
+          <description>Thin</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_BONE</description>
+          <description>Bone</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_EXAGGERATED</description>
+          <description>Exaggerated</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_TRIANGLE</description>
+          <description>Triangle</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_NORMAL_SANS</description>
+          <description>Normal sans serif</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_OBTUSE_SANS</description>
+          <description>Obtuse sans serif</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_PERP_SANS</description>
+          <description>Perp sans serif</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_FLARED</description>
+          <description>Flared</description>
+        </item>
+        <item>
+          <description>PAN_SERIF_ROUNDED</description>
+          <description>Rounded</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PANOSE.bWeight">
+    <summary>
+      <para>For Latin fonts, one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PAN_ANY</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>PAN_NO_FIT</description>
+          <description>No fit</description>
+        </item>
+        <item>
+          <description>PAN_WEIGHT_VERY_LIGHT</description>
+          <description>Very light</description>
+        </item>
+        <item>
+          <description>PAN_WEIGHT_LIGHT</description>
+          <description>Light</description>
+        </item>
+        <item>
+          <description>PAN_WEIGHT_THIN</description>
+          <description>Thin</description>
+        </item>
+        <item>
+          <description>PAN_WEIGHT_BOOK</description>
+          <description>Book</description>
+        </item>
+        <item>
+          <description>PAN_WEIGHT_MEDIUM</description>
+          <description>Medium</description>
+        </item>
+        <item>
+          <description>PAN_WEIGHT_DEMI</description>
+          <description>Demibold</description>
+        </item>
+        <item>
+          <description>PAN_WEIGHT_BOLD</description>
+          <description>Bold</description>
+        </item>
+        <item>
+          <description>PAN_WEIGHT_HEAVY</description>
+          <description>Heavy</description>
+        </item>
+        <item>
+          <description>PAN_WEIGHT_BLACK</description>
+          <description>Black</description>
+        </item>
+        <item>
+          <description>PAN_WEIGHT_NORD</description>
+          <description>Nord</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PANOSE.bProportion">
+    <summary>
+      <para>For Latin fonts, one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PAN_ANY</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>PAN_NO_FIT</description>
+          <description>No fit</description>
+        </item>
+        <item>
+          <description>PAN_PROP_OLD_STYLE</description>
+          <description>Old style</description>
+        </item>
+        <item>
+          <description>PAN_PROP_MODERN</description>
+          <description>Modern</description>
+        </item>
+        <item>
+          <description>PAN_PROP_EVEN_WIDTH</description>
+          <description>Even width</description>
+        </item>
+        <item>
+          <description>PAN_PROP_EXPANDED</description>
+          <description>Expanded</description>
+        </item>
+        <item>
+          <description>PAN_PROP_CONDENSED</description>
+          <description>Condensed</description>
+        </item>
+        <item>
+          <description>PAN_PROP_VERY_EXPANDED</description>
+          <description>Very expanded</description>
+        </item>
+        <item>
+          <description>PAN_PROP_VERY_CONDENSED</description>
+          <description>Very condensed</description>
+        </item>
+        <item>
+          <description>PAN_PROP_MONOSPACED</description>
+          <description>Monospaced</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PANOSE.bContrast">
+    <summary>
+      <para>For Latin fonts,  one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PAN_ANY</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>PAN_NO_FIT</description>
+          <description>No fit</description>
+        </item>
+        <item>
+          <description>PAN_CONTRAST_NONE</description>
+          <description>None</description>
+        </item>
+        <item>
+          <description>PAN_CONTRAST_VERY_LOW</description>
+          <description>Very low</description>
+        </item>
+        <item>
+          <description>PAN_CONTRAST_LOW</description>
+          <description>Low</description>
+        </item>
+        <item>
+          <description>PAN_CONTRAST_MEDIUM_LOW</description>
+          <description>Medium low</description>
+        </item>
+        <item>
+          <description>PAN_CONTRAST_MEDIUM</description>
+          <description>Medium</description>
+        </item>
+        <item>
+          <description>PAN_CONTRAST_MEDIUM_HIGH</description>
+          <description>Medium high</description>
+        </item>
+        <item>
+          <description>PAN_CONTRAST_HIGH</description>
+          <description>High</description>
+        </item>
+        <item>
+          <description>PAN_CONTRAST_VERY_HIGH</description>
+          <description>Very high</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PANOSE.bStrokeVariation">
+    <summary>
+      <para>For Latin fonts, one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PAN_ANY</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>PAN_NO_FIT</description>
+          <description>No fit</description>
+        </item>
+        <item>
+          <description>PAN_STROKE_GRADUAL_DIAG</description>
+          <description>Gradual/diagonal</description>
+        </item>
+        <item>
+          <description>PAN_STROKE_GRADUAL_TRAN</description>
+          <description>Gradual/transitional</description>
+        </item>
+        <item>
+          <description>PAN_STROKE_GRADUAL_VERT</description>
+          <description>Gradual/vertical</description>
+        </item>
+        <item>
+          <description>PAN_STROKE_GRADUAL_HORZ</description>
+          <description>Gradual/horizontal</description>
+        </item>
+        <item>
+          <description>PAN_STROKE_RAPID_VERT</description>
+          <description>Rapid/vertical</description>
+        </item>
+        <item>
+          <description>PAN_STROKE_RAPID_HORZ</description>
+          <description>Rapid/horizontal</description>
+        </item>
+        <item>
+          <description>PAN_STROKE_INSTANT_VERT</description>
+          <description>Instant/vertical</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PANOSE.bArmStyle">
+    <summary>
+      <para>For Latin fonts, one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PAN_ANY</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>PAN_NO_FIT</description>
+          <description>No fit</description>
+        </item>
+        <item>
+          <description>PAN_STRAIGHT_ARMS_HORZ</description>
+          <description>Straight arms/horizontal</description>
+        </item>
+        <item>
+          <description>PAN_STRAIGHT_ARMS_WEDGE</description>
+          <description>Straight arms/wedge</description>
+        </item>
+        <item>
+          <description>PAN_STRAIGHT_ARMS_VERT</description>
+          <description>Straight arms/vertical</description>
+        </item>
+        <item>
+          <description>PAN_STRAIGHT_ARMS_SINGLE_SERIF</description>
+          <description>Straight arms/single-serif</description>
+        </item>
+        <item>
+          <description>PAN_STRAIGHT_ARMS_DOUBLE_SERIF</description>
+          <description>Straight arms/double-serif</description>
+        </item>
+        <item>
+          <description>PAN_BENT_ARMS_HORZ</description>
+          <description>Nonstraight arms/horizontal</description>
+        </item>
+        <item>
+          <description>PAN_BENT_ARMS_WEDGE</description>
+          <description>Nonstraight arms/wedge</description>
+        </item>
+        <item>
+          <description>PAN_BENT_ARMS_VERT</description>
+          <description>Nonstraight arms/vertical</description>
+        </item>
+        <item>
+          <description>PAN_BENT_ARMS_SINGLE_SERIF</description>
+          <description>Nonstraight arms/single-serif</description>
+        </item>
+        <item>
+          <description>PAN_BENT_ARMS_DOUBLE_SERIF</description>
+          <description>Nonstraight arms/double-serif</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PANOSE.bLetterform">
+    <summary>
+      <para>For Latin fonts, one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PAN_ANY</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>PAN_NO_FIT</description>
+          <description>No fit</description>
+        </item>
+        <item>
+          <description>PAN_LETT_NORMAL_CONTACT</description>
+          <description>Normal/contact</description>
+        </item>
+        <item>
+          <description>PAN_LETT_NORMAL_WEIGHTED</description>
+          <description>Normal/weighted</description>
+        </item>
+        <item>
+          <description>PAN_LETT_NORMAL_BOXED</description>
+          <description>Normal/boxed</description>
+        </item>
+        <item>
+          <description>PAN_LETT_NORMAL_FLATTENED</description>
+          <description>Normal/flattened</description>
+        </item>
+        <item>
+          <description>PAN_LETT_NORMAL_ROUNDED</description>
+          <description>Normal/rounded</description>
+        </item>
+        <item>
+          <description>PAN_LETT_NORMAL_OFF_CENTER</description>
+          <description>Normal/off center</description>
+        </item>
+        <item>
+          <description>PAN_LETT_NORMAL_SQUARE</description>
+          <description>Normal/square</description>
+        </item>
+        <item>
+          <description>PAN_LETT_OBLIQUE_CONTACT</description>
+          <description>Oblique/contact</description>
+        </item>
+        <item>
+          <description>PAN_LETT_OBLIQUE_WEIGHTED</description>
+          <description>Oblique/weighted</description>
+        </item>
+        <item>
+          <description>PAN_LETT_OBLIQUE_BOXED</description>
+          <description>Oblique/boxed</description>
+        </item>
+        <item>
+          <description>PAN_LETT_OBLIQUE_FLATTENED</description>
+          <description>Oblique/flattened</description>
+        </item>
+        <item>
+          <description>PAN_LETT_OBLIQUE_ROUNDED</description>
+          <description>Oblique/rounded</description>
+        </item>
+        <item>
+          <description>PAN_LETT_OBLIQUE_OFF_CENTER</description>
+          <description>Oblique/off center</description>
+        </item>
+        <item>
+          <description>PAN_LETT_OBLIQUE_SQUARE</description>
+          <description>Oblique/square</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PANOSE.bMidline">
+    <summary>
+      <para>For Latin fonts, one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PAN_ANY</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>PAN_NO_FIT</description>
+          <description>No fit</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_STANDARD_TRIMMED</description>
+          <description>Standard/trimmed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_STANDARD_POINTED</description>
+          <description>Standard/pointed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_STANDARD_SERIFED</description>
+          <description>Standard/serifed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_HIGH_TRIMMED</description>
+          <description>High/trimmed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_HIGH_POINTED</description>
+          <description>High/pointed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_HIGH_SERIFED</description>
+          <description>High/serifed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_CONSTANT_TRIMMED</description>
+          <description>Constant/trimmed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_CONSTANT_POINTED</description>
+          <description>Constant/pointed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_CONSTANT_SERIFED</description>
+          <description>Constant/serifed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_LOW_TRIMMED</description>
+          <description>Low/trimmed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_LOW_POINTED</description>
+          <description>Low/pointed</description>
+        </item>
+        <item>
+          <description>PAN_MIDLINE_LOW_SERIFED</description>
+          <description>Low/serifed</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PANOSE.bXHeight">
+    <summary>
+      <para>For Latin fonts, one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>PAN_ANY</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>PAN_NO_FIT</description>
+          <description>No fit</description>
+        </item>
+        <item>
+          <description>PAN_XHEIGHT_CONSTANT_SMALL</description>
+          <description>Constant/small</description>
+        </item>
+        <item>
+          <description>PAN_XHEIGHT_CONSTANT_STD</description>
+          <description>Constant/standard</description>
+        </item>
+        <item>
+          <description>PAN_XHEIGHT_CONSTANT_LARGE</description>
+          <description>Constant/large</description>
+        </item>
+        <item>
+          <description>PAN_XHEIGHT_DUCKING_SMALL</description>
+          <description>Ducking/small</description>
+        </item>
+        <item>
+          <description>PAN_XHEIGHT_DUCKING_STD</description>
+          <description>Ducking/standard</description>
+        </item>
+        <item>
+          <description>PAN_XHEIGHT_DUCKING_LARGE</description>
+          <description>Ducking/large</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

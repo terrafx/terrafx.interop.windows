@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BLOB">
+    <summary>
+      <para>The
+<b>BLOB</b> structure, derived from Binary Large Object, contains information about a block of data.</para>
+    </summary>
+    <remarks>
+      <para>The structure name
+<b>BLOB</b> comes from the acronym BLOB, which stands for Binary Large Object.</para>
+      <para>This structure does not describe the nature of the data pointed to by <b>pBlobData</b>.</para>
+      <para>
+        <b>Note</b>  Windows Sockets defines a similar
+<b>BLOB</b> structure in Wtypes.h. Using both header files in the same source code file creates redefinition–compile time errors.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Bluetooth/bluetooth-and-blob">Bluetooth and BLOB</seealso>
+    <seealso cref="SERVICE_INFO" />
+  </member>
+  <member name="BLOB.cbSize">
+    <summary>
+      <para>Size of the block of data pointed to by <b>pBlobData</b>, in bytes.</para>
+    </summary>
+  </member>
+  <member name="BLOB.pBlobData">
+    <summary>
+      <para>Pointer to a block of data.</para>
+    </summary>
+  </member>
+</doc>

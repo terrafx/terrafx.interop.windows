@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoInverseTelecineThreshold.xml' path='doc/member[@name="CODECAPI_AVEncVideoInverseTelecineThreshold"]/*' />
 [Guid("40247D84-E895-497F-B44C-B74560ACFE27")]
 public partial struct CODECAPI_AVEncVideoInverseTelecineThreshold
 {

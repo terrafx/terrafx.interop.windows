@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STATEMGRSTATUS.xml' path='doc/member[@name="STATEMGRSTATUS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct STATEMGRSTATUS
 {
+    /// <include file='STATEMGRSTATUS.xml' path='doc/member[@name="STATEMGRSTATUS.nStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint nStatus;
 
+    /// <include file='STATEMGRSTATUS.xml' path='doc/member[@name="STATEMGRSTATUS.llSequenceNumber"]/*' />
     [NativeTypeName("INT64")]
     public long llSequenceNumber;
 }

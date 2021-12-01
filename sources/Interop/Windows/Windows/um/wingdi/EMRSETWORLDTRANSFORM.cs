@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETWORLDTRANSFORM.xml' path='doc/member[@name="EMRSETWORLDTRANSFORM"]/*' />
 public partial struct EMRSETWORLDTRANSFORM
 {
+    /// <include file='EMRSETWORLDTRANSFORM.xml' path='doc/member[@name="EMRSETWORLDTRANSFORM.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETWORLDTRANSFORM.xml' path='doc/member[@name="EMRSETWORLDTRANSFORM.xform"]/*' />
     public XFORM xform;
 }

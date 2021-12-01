@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MOUSEHOOKSTRUCT">
+    <summary>
+      <para>Contains information about a mouse event passed to a <b>WH_MOUSE</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/hooks">Hooks</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</seealso>
+    <seealso cref="SetWindowsHookEx" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-nchittest">WM_NCHITTEST</seealso>
+  </member>
+  <member name="MOUSEHOOKSTRUCT.pt">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
+      <para>The x- and y-coordinates of the cursor, in screen coordinates.</para>
+    </summary>
+  </member>
+  <member name="MOUSEHOOKSTRUCT.hwnd">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the window that will receive the mouse message corresponding to the mouse event.</para>
+    </summary>
+  </member>
+  <member name="MOUSEHOOKSTRUCT.wHitTestCode">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The hit-test value. For a list of hit-test values, see the description of the <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-nchittest">WM_NCHITTEST</a> message.</para>
+    </summary>
+  </member>
+  <member name="MOUSEHOOKSTRUCT.dwExtraInfo">
+    <summary>
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>Additional information associated with the message.</para>
+    </summary>
+  </member>
+</doc>

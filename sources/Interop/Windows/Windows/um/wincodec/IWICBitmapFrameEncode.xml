@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICBitmapFrameEncode.Commit">
+    <summary>
+      <para>Commits the frame to the image.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>After the frame <b>Commit</b> has been called, you can't use or reinitialize the <see cref="IWICBitmapFrameEncode" /> object and any objects created from it.</para>
+      <para>To finalize the image, both the frame <b>Commit</b> and the encoder <see cref="Commit" /> must be called. However, only call the encoder  <b>Commit</b> method after all frames have been committed.</para>
+    </remarks>
+    <seealso cref="Commit" />
+    <seealso cref="IWICBitmapFrameEncode" />
+  </member>
+  <member name="IWICBitmapFrameEncode.GetMetadataQueryWriter">
+    <summary>
+      <para>Gets the metadata query writer for the encoder frame.</para>
+    </summary>
+    <param name="ppIMetadataQueryWriter">
+      <para>Type: <b><see cref="IWICMetadataQueryWriter" />**</b></para>
+      <para>When this method returns, contains a pointer to metadata query writer for the encoder frame.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If you are setting metadata on the frame, you must do this before you use <see cref="IWICBitmapFrameEncode.WritePixels" /> or <see cref="IWICBitmapFrameEncode.WriteSource" /> to write any image pixels to the frame</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
+    <seealso cref="IWICBitmapFrameEncode" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+  </member>
+  <member name="IWICBitmapFrameEncode.Initialize">
+    <summary>
+      <para>Initializes the frame encoder using the given properties.</para>
+    </summary>
+    <param name="pIEncoderOptions">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</a>*</b></para>
+      <para>The set of properties to use for <see cref="IWICBitmapFrameEncode" /> initialization.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If you don't want any encoding options, pass <b>NULL</b> for <i>pIEncoderOptions</i>. Otherwise, pass the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</a> that was provided by <see cref="IWICBitmapEncoder.CreateNewFrame" /> with updated values.</para>
+      <para>For a complete list of encoding options supported by the Windows-provided codecs, see <a href="https://docs.microsoft.com//windows/desktop/wic/native-wic-codecs">Native WIC Codecs</a>.</para>
+    </remarks>
+  </member>
+  <member name="IWICBitmapFrameEncode.SetColorContexts">
+    <summary>
+      <para>Sets a given number <see cref="IWICColorContext" /> profiles to the frame.</para>
+    </summary>
+    <param name="cCount">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of <see cref="IWICColorContext" /> profiles to set.</para>
+    </param>
+    <param name="ppIColorContext">
+      <para>Type: <b><see cref="IWICColorContext" />**</b></para>
+      <para>A pointer to an <see cref="IWICColorContext" /> pointer containing the color contexts profiles to set to the frame.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>BMP</b>Setting color contexts is unsupported. This function will return <b>WINCODEC_ERR_UNSUPPORTEDOPERATION</b>.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>PNG</b>Setting at most one color context is supported, and additional color contexts will be ignored. This context must be a <see cref="WICColorContextProfile" />, and is used to encode the iCCP, gAMA, and cHRM chunks in the PNG file.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>JPEG, TIFF, JPEG-XR</b>Setting up to one <see cref="WICColorContextProfile" /> and one  <see cref="WICColorContextExifColorSpace" /> is supported. Users must not provide more than one of each type of color context, as all but the last context of each type will be ignored. In JPEG, the <b>WICColorContextProfile</b> is encoded to JPEG APP2 ICC metadata block.
+<para>In TIFF and JPEG-XR, the  <see cref="WICColorContextProfile" /> is encoded to the IFD ICC profile metadata block (IFD tag 0x8773). In all three formats, the <see cref="WICColorContextExifColorSpace" /> is encoded to EXIF colorspace metadata block (EXIF tag 0xA001).</para></description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+  <member name="IWICBitmapFrameEncode.SetPalette">
+    <summary>
+      <para>Sets the <see cref="IWICPalette" /> for indexed pixel formats.</para>
+    </summary>
+    <param name="pIPalette">
+      <para>Type: <b><see cref="IWICPalette" />*</b></para>
+      <para>The <see cref="IWICPalette" /> to use for indexed pixel formats.</para>
+      <para>The encoder may change the palette to reflect the pixel formats the encoder supports.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method doesn't fail if called on a frame whose pixel format is set to a non-indexed pixel format. If the target pixel format is a non-indexed format, the palette will be ignored.</para>
+      <para>If you already called <see cref="IWICBitmapEncoder.SetPalette" /> to set a global palette, this method overrides that palette for the current frame.</para>
+      <para>The palette must be specified before your first call to <see cref="WritePixels" />/<see cref="WriteSource" />. Doing so will cause <b>WriteSource</b> to use the specified palette when converting the source image to the encoder pixel format. If no palette is specified, a palette will be generated on the first call to <b>WriteSource</b>.</para>
+    </remarks>
+  </member>
+  <member name="IWICBitmapFrameEncode.SetPixelFormat">
+    <summary>
+      <para>Requests that the encoder use the specified pixel format.</para>
+    </summary>
+    <param name="pPixelFormat">
+      <para>Type: <b>WICPixelFormatGUID*</b></para>
+      <para>On input, the requested pixel format GUID. On output, the closest pixel format GUID supported by the encoder; this may be different than the requested format. For a list of pixel format GUIDs, see <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">Native Pixel Formats</a>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>WINCODEC_ERR_WRONGSTATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="IWICBitmapFrameEncode.Initialize" /> method was not called.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The encoder might not support the requested pixel format. If not, <b>SetPixelFormat</b> returns the closest match in the memory block that <i>pPixelFormat</i> points to. If the returned pixel format doesn't match the requested format, you must use an <see cref="IWICFormatConverter" /> object to convert the pixel data.</para>
+    </remarks>
+    <seealso cref="IWICBitmapFrameEncode" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">Native Pixel Formats</seealso>
+  </member>
+  <member name="IWICBitmapFrameEncode.SetResolution">
+    <summary>
+      <para>Sets the physical resolution of the output image.</para>
+    </summary>
+    <param name="dpiX">
+      <para>Type: <b>double</b></para>
+      <para>The horizontal resolution value.</para>
+    </param>
+    <param name="dpiY">
+      <para>Type: <b>double</b></para>
+      <para>The vertical resolution value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Windows Imaging Component (WIC) doesn't perform any special processing as a result of DPI resolution values. For example, data returned from <see cref="IWICBitmapSource.CopyPixels" /> isn't scaled by the DPI. The app must handle DPI resolution.</para>
+    </remarks>
+  </member>
+  <member name="IWICBitmapFrameEncode.SetSize">
+    <summary>
+      <para>Sets the output image dimensions for the frame.</para>
+    </summary>
+    <param name="uiWidth">
+      <para>Type: <b>UINT</b></para>
+      <para>The width of the output image.</para>
+    </param>
+    <param name="uiHeight">
+      <para>Type: <b>UINT</b></para>
+      <para>The height of the output image.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICBitmapFrameEncode.SetThumbnail">
+    <summary>
+      <para>Sets the frame thumbnail if supported by the codec.</para>
+    </summary>
+    <param name="pIThumbnail">
+      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
+      <para>The bitmap source to use as the thumbnail.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise.</para>
+      <para>Returns WINCODEC_ERR_UNSUPPORTEDOPERATION if the feature is not supported by the encoder.</para>
+    </returns>
+    <remarks>
+      <para>We recommend that you call
+<b>SetThumbnail</b> before calling <see cref="WritePixels" /> or <see cref="WriteSource" />.
+The thumbnail won't be added to the encoded file if <b>SetThumbnail</b> is called after a call to <b>WritePixels</b> or <b>WriteSource</b>.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>BMP, PNG</b>Setting thumbnails is unsupported. This function will return <b>WINCODEC_ERR_UNSUPPORTEDOPERATION</b>.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>JPEG</b>Setting the thumbnail is supported. The source image will be re-encoded as either an 8bpp or 24bpp JPEG and will be written to the JPEG’s APP1 metadata block.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>TIFF</b> Setting the thumbnail is supported. The source image will be re-encoded as a TIFF and will be written to the frame’s SubIFD block.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>JPEG-XR</b>Setting the thumbnail is supported. The source image will be re-encoded as an additional 8bpp or 24bpp frame.
+</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-creating-encoder">Encoding Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
+    <seealso cref="IWICBitmapFrameEncode" />
+  </member>
+  <member name="IWICBitmapFrameEncode.WritePixels">
+    <summary>
+      <para>Copies scan-line data from a caller-supplied buffer to the <see cref="IWICBitmapFrameEncode" /> object.</para>
+    </summary>
+    <param name="lineCount">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of lines to encode.</para>
+    </param>
+    <param name="cbStride">
+      <para>Type: <b>UINT</b></para>
+      <para>The stride of the image pixels.</para>
+    </param>
+    <param name="cbBufferSize">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the pixel buffer.</para>
+    </param>
+    <param name="pbPixels">
+      <para>Type: <b>BYTE*</b></para>
+      <para>A pointer to the pixel buffer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>WINCODEC_ERR_CODECTOOMANYSCANLINES</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>lineCount</i> is larger than the number of scan lines in the image.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Successive <b>WritePixels</b> calls are assumed to be sequential scan-line access in the output image.</para>
+    </remarks>
+  </member>
+  <member name="IWICBitmapFrameEncode.WriteSource">
+    <summary>
+      <para>Encodes a bitmap source.</para>
+    </summary>
+    <param name="pIBitmapSource">
+      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
+      <para>The bitmap source to encode.</para>
+    </param>
+    <param name="prc">
+      <para>Type: <b><see cref="WICRect" />*</b></para>
+      <para>The size rectangle of the bitmap source.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If <see cref="SetSize" /> is not called prior to calling <b>WriteSource</b>, the size given in <i>prc</i> is used if not <b>NULL</b>. Otherwise, the size of the <see cref="IWICBitmapSource" /> given in <i>pIBitmapSource</i> is used.</para>
+      <para>If <see cref="SetPixelFormat" /> is not called prior to calling <b>WriteSource</b>, the pixel format of the <see cref="IWICBitmapSource" /> given in <i>pIBitmapSource</i> is used.</para>
+      <para>If <see cref="SetResolution" /> is not called prior to calling <b>WriteSource</b>, the pixel format of <i>pIBitmapSource</i> is used.</para>
+      <para>If <see cref="SetPalette" /> is not called prior to calling <b>WriteSource</b>, the target pixel format is indexed, and the pixel format of <i>pIBitmapSource</i> matches the encoder frame's pixel format, then the <i>pIBitmapSource</i> pixel format is used.</para>
+      <para>When encoding a GIF image, if the global palette is set and the frame level palette is not set directly by the user or by a custom independent software vendor (ISV) GIF codec, <b>WriteSource</b> will use the global palette to encode the frame even when <i>pIBitmapSource</i> has a frame level palette.</para>
+      <para>Starting with  Windows Vista, repeated <b>WriteSource</b> calls can be made as long as the total accumulated source rect height is the same as set through <see cref="SetSize" />.</para>
+      <para>Starting with Windows 8.1, the source rect must be at least the dimensions set through <see cref="SetSize" />. If the source rect width exceeds the <b>SetSize</b> width, extra pixels on the right side are ignored. If the source rect height exceeds the remaining unfilled height, extra scan lines on the bottom are ignored.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
+    <seealso cref="IWICBitmapFrameEncode" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
+  </member>
+  <member name="IWICBitmapFrameEncode">
+    <summary>
+      <para>Represents an encoder's individual image frames.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/ms771770(v=vs.100)">AITCodec Sample CODEC</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
+  </member>
+</doc>

@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICredentialProviderUser.xml' path='doc/member[@name="ICredentialProviderUser"]/*' />
 [Guid("13793285-3EA6-40FD-B420-15F47DA41FBB")]
 [NativeTypeName("struct ICredentialProviderUser : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
         return ((delegate* unmanaged<ICredentialProviderUser*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
         return ((delegate* unmanaged<ICredentialProviderUser*, uint>)(lpVtbl[1]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
         return ((delegate* unmanaged<ICredentialProviderUser*, uint>)(lpVtbl[2]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICredentialProviderUser.xml' path='doc/member[@name="ICredentialProviderUser.GetSid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSid([NativeTypeName("LPWSTR *")] ushort** sid)
@@ -48,6 +53,7 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
         return ((delegate* unmanaged<ICredentialProviderUser*, ushort**, int>)(lpVtbl[3]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this), sid);
     }
 
+    /// <include file='ICredentialProviderUser.xml' path='doc/member[@name="ICredentialProviderUser.GetProviderID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetProviderID(Guid* providerID)
@@ -55,6 +61,7 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
         return ((delegate* unmanaged<ICredentialProviderUser*, Guid*, int>)(lpVtbl[4]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this), providerID);
     }
 
+    /// <include file='ICredentialProviderUser.xml' path='doc/member[@name="ICredentialProviderUser.GetStringValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetStringValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] ushort** stringValue)
@@ -62,6 +69,7 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
         return ((delegate* unmanaged<ICredentialProviderUser*, PROPERTYKEY*, ushort**, int>)(lpVtbl[5]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this), key, stringValue);
     }
 
+    /// <include file='ICredentialProviderUser.xml' path='doc/member[@name="ICredentialProviderUser.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* value)

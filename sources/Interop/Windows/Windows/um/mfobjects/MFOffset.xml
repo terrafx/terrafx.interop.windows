@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFOffset">
+    <summary>
+      <para>Specifies an offset as a fixed-point real number.</para>
+    </summary>
+    <remarks>
+      <para>The value of the number is <b>value</b> + (<b>fract</b> / 65536.0f).</para>
+      <h4>Examples</h4>
+      <code>MFOffset MakeOffset(float v)
+{
+    MFOffset offset;
+    offset.value = short(v);
+    offset.fract = WORD(65536 * (v-offset.value));
+    return offset;
+}
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFOffset.fract">
+    <summary>
+      <para>The fractional part of the number.</para>
+    </summary>
+  </member>
+  <member name="MFOffset.value">
+    <summary>
+      <para>The integer part of the number.</para>
+    </summary>
+  </member>
+</doc>

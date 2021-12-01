@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TS_SELECTIONSTYLE.xml' path='doc/member[@name="TS_SELECTIONSTYLE"]/*' />
 public partial struct TS_SELECTIONSTYLE
 {
+    /// <include file='TS_SELECTIONSTYLE.xml' path='doc/member[@name="TS_SELECTIONSTYLE.ase"]/*' />
     public TsActiveSelEnd ase;
 
+    /// <include file='TS_SELECTIONSTYLE.xml' path='doc/member[@name="TS_SELECTIONSTYLE.fInterimChar"]/*' />
     public BOOL fInterimChar;
 }

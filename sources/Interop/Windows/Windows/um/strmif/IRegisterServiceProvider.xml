@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRegisterServiceProvider">
+    <summary>
+      <para>The <code>IRegisterServiceProvider</code> interface registers an object as a service with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-graph-manager">Filter Graph Manager</a>. For more information, see <see cref="IRegisterServiceProvider.RegisterService" />.</para>
+    </summary>
+  </member>
+</doc>

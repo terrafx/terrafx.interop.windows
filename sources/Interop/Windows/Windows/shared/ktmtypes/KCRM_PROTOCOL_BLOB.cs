@@ -7,20 +7,26 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='KCRM_PROTOCOL_BLOB.xml' path='doc/member[@name="KCRM_PROTOCOL_BLOB"]/*' />
 public partial struct KCRM_PROTOCOL_BLOB
 {
+    /// <include file='KCRM_PROTOCOL_BLOB.xml' path='doc/member[@name="KCRM_PROTOCOL_BLOB.ProtocolId"]/*' />
     [NativeTypeName("CRM_PROTOCOL_ID")]
     public Guid ProtocolId;
 
+    /// <include file='KCRM_PROTOCOL_BLOB.xml' path='doc/member[@name="KCRM_PROTOCOL_BLOB.StaticInfoLength"]/*' />
     [NativeTypeName("ULONG")]
     public uint StaticInfoLength;
 
+    /// <include file='KCRM_PROTOCOL_BLOB.xml' path='doc/member[@name="KCRM_PROTOCOL_BLOB.TransactionIdInfoLength"]/*' />
     [NativeTypeName("ULONG")]
     public uint TransactionIdInfoLength;
 
+    /// <include file='KCRM_PROTOCOL_BLOB.xml' path='doc/member[@name="KCRM_PROTOCOL_BLOB.Unused1"]/*' />
     [NativeTypeName("ULONG")]
     public uint Unused1;
 
+    /// <include file='KCRM_PROTOCOL_BLOB.xml' path='doc/member[@name="KCRM_PROTOCOL_BLOB.Unused2"]/*' />
     [NativeTypeName("ULONG")]
     public uint Unused2;
 }

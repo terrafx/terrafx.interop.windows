@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WBEM_TEXT_FLAG_TYPE.xml' path='doc/member[@name="WBEM_TEXT_FLAG_TYPE"]/*' />
 public enum WBEM_TEXT_FLAG_TYPE
 {
+    /// <include file='WBEM_TEXT_FLAG_TYPE.xml' path='doc/member[@name="WBEM_TEXT_FLAG_TYPE.WBEM_FLAG_NO_FLAVORS"]/*' />
     WBEM_FLAG_NO_FLAVORS = 0x1,
 }

@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDCompositionDevice3.CreateAffineTransform2DEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionAffineTransform2DEffect" />.</para>
+    </summary>
+    <param name="affineTransform2dEffect">
+      <para>Type: <b><see cref="IDCompositionAffineTransform2DEffect" />**</b></para>
+      <para>Recieves the created instance of <see cref="IDCompositionAffineTransform2DEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateArithmeticCompositeEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionArithmeticCompositeEffect" />.</para>
+    </summary>
+    <param name="arithmeticCompositeEffect">
+      <para>Type: <b><see cref="IDCompositionArithmeticCompositeEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionArithmeticCompositeEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateBlendEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionBlendEffect" />.</para>
+    </summary>
+    <param name="blendEffect">
+      <para>Type: <b><see cref="IDCompositionBlendEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionBlendEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateBrightnessEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionBrightnessEffect" />.</para>
+    </summary>
+    <param name="brightnessEffect">
+      <para>Type: <b><see cref="IDCompositionBrightnessEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionBrightnessEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateColorMatrixEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionColorMatrixEffect" />.</para>
+    </summary>
+    <param name="colorMatrixEffect">
+      <para>Type: <b><see cref="IDCompositionColorMatrixEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionColorMatrixEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateCompositeEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionCompositeEffect" />.</para>
+    </summary>
+    <param name="compositeEffect">
+      <para>Type: <b><see cref="IDCompositionCompositeEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionCompositeEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateGaussianBlurEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionGaussianBlurEffect" />.</para>
+    </summary>
+    <param name="gaussianBlurEffect">
+      <para>Type: <b><see cref="IDCompositionGaussianBlurEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionGaussianBlurEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateHueRotationEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionHueRotationEffect" />.</para>
+    </summary>
+    <param name="hueRotationEffect">
+      <para>Type: <b><see cref="IDCompositionHueRotationEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionHueRotationEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateLinearTransferEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionLinearTransferEffect" />.</para>
+    </summary>
+    <param name="linearTransferEffect">
+      <para>Type: <b><see cref="IDCompositionLinearTransferEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionLinearTransferEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateSaturationEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionSaturationEffect" />.</para>
+    </summary>
+    <param name="saturationEffect">
+      <para>Type: <b><see cref="IDCompositionSaturationEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionSaturationEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateShadowEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionShadowEffect" />.</para>
+    </summary>
+    <param name="shadowEffect">
+      <para>Type: <b><see cref="IDCompositionShadowEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionShadowEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateTableTransferEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionTableTransferEffect" />.</para>
+    </summary>
+    <param name="tableTransferEffect">
+      <para>Type: <b><see cref="IDCompositionTableTransferEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionTableTransferEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3.CreateTurbulenceEffect">
+    <summary>
+      <para>Creates an instance of <see cref="IDCompositionTurbulenceEffect" />.</para>
+    </summary>
+    <param name="turbulenceEffect">
+      <para>Type: <b><see cref="IDCompositionTurbulenceEffect" />**</b></para>
+      <para>Receives the created instance of <see cref="IDCompositionTurbulenceEffect" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice3" />
+  </member>
+  <member name="IDCompositionDevice3">
+    <summary>
+      <para>Serves as a factory for all other Microsoft DirectComposition objects and provides methods to control transactional composition.</para>
+    </summary>
+  </member>
+</doc>

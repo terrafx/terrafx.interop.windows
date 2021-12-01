@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TBS_CONTEXT_PARAMS.xml' path='doc/member[@name="TBS_CONTEXT_PARAMS"]/*' />
 public partial struct TBS_CONTEXT_PARAMS
 {
+    /// <include file='TBS_CONTEXT_PARAMS.xml' path='doc/member[@name="TBS_CONTEXT_PARAMS.version"]/*' />
     [NativeTypeName("UINT32")]
     public uint version;
 }

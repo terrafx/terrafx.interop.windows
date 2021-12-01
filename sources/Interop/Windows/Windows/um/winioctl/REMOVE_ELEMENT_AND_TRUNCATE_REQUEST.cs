@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.xml' path='doc/member[@name="REMOVE_ELEMENT_AND_TRUNCATE_REQUEST"]/*' />
 public partial struct REMOVE_ELEMENT_AND_TRUNCATE_REQUEST
 {
+    /// <include file='REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.xml' path='doc/member[@name="REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.xml' path='doc/member[@name="REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.xml' path='doc/member[@name="REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.RequestCapacity"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong RequestCapacity;
 
+    /// <include file='REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.xml' path='doc/member[@name="REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.ElementIdentifier"]/*' />
     [NativeTypeName("DWORD")]
     public uint ElementIdentifier;
 
+    /// <include file='REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.xml' path='doc/member[@name="REMOVE_ELEMENT_AND_TRUNCATE_REQUEST.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 }

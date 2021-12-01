@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RIP_INFO.xml' path='doc/member[@name="RIP_INFO"]/*' />
 public partial struct RIP_INFO
 {
+    /// <include file='RIP_INFO.xml' path='doc/member[@name="RIP_INFO.dwError"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwError;
 
+    /// <include file='RIP_INFO.xml' path='doc/member[@name="RIP_INFO.dwType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwType;
 }

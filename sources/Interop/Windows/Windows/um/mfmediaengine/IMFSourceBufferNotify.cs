@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify"]/*' />
 [Guid("87E47623-2CEB-45D6-9B88-D8520C4DCBBC")]
 [NativeTypeName("struct IMFSourceBufferNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
         return ((delegate* unmanaged<IMFSourceBufferNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
         return ((delegate* unmanaged<IMFSourceBufferNotify*, uint>)(lpVtbl[1]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
         return ((delegate* unmanaged<IMFSourceBufferNotify*, uint>)(lpVtbl[2]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify.OnUpdateStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void OnUpdateStart()
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
         ((delegate* unmanaged<IMFSourceBufferNotify*, void>)(lpVtbl[3]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify.OnAbort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void OnAbort()
@@ -55,6 +61,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
         ((delegate* unmanaged<IMFSourceBufferNotify*, void>)(lpVtbl[4]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify.OnError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void OnError(HRESULT hr)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
         ((delegate* unmanaged<IMFSourceBufferNotify*, HRESULT, void>)(lpVtbl[5]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this), hr);
     }
 
+    /// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify.OnUpdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void OnUpdate()
@@ -69,6 +77,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
         ((delegate* unmanaged<IMFSourceBufferNotify*, void>)(lpVtbl[6]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify.OnUpdateEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void OnUpdateEnd()

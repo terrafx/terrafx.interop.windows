@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs"]/*' />
 [Guid("F6EF6140-E26F-4D82-BAC4-E9BA5FD239A8")]
 [NativeTypeName("struct ICreateProcessInputs : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         return ((delegate* unmanaged<ICreateProcessInputs*, Guid*, void**, int>)(lpVtbl[0]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         return ((delegate* unmanaged<ICreateProcessInputs*, uint>)(lpVtbl[1]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         return ((delegate* unmanaged<ICreateProcessInputs*, uint>)(lpVtbl[2]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.GetCreateFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCreateFlags([NativeTypeName("DWORD *")] uint* pdwCreationFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         return ((delegate* unmanaged<ICreateProcessInputs*, uint*, int>)(lpVtbl[3]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pdwCreationFlags);
     }
 
+    /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.SetCreateFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetCreateFlags([NativeTypeName("DWORD")] uint dwCreationFlags)
@@ -53,6 +59,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         return ((delegate* unmanaged<ICreateProcessInputs*, uint, int>)(lpVtbl[4]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwCreationFlags);
     }
 
+    /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.AddCreateFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddCreateFlags([NativeTypeName("DWORD")] uint dwCreationFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         return ((delegate* unmanaged<ICreateProcessInputs*, uint, int>)(lpVtbl[5]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwCreationFlags);
     }
 
+    /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.SetHotKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetHotKey([NativeTypeName("WORD")] ushort wHotKey)
@@ -67,6 +75,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         return ((delegate* unmanaged<ICreateProcessInputs*, ushort, int>)(lpVtbl[6]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), wHotKey);
     }
 
+    /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.AddStartupFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddStartupFlags([NativeTypeName("DWORD")] uint dwStartupInfoFlags)
@@ -74,6 +83,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         return ((delegate* unmanaged<ICreateProcessInputs*, uint, int>)(lpVtbl[7]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwStartupInfoFlags);
     }
 
+    /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.SetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
@@ -81,6 +91,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         return ((delegate* unmanaged<ICreateProcessInputs*, ushort*, int>)(lpVtbl[8]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszTitle);
     }
 
+    /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.SetEnvironmentVariableW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszValue)

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LIST_ENTRY64.xml' path='doc/member[@name="LIST_ENTRY64"]/*' />
 public partial struct LIST_ENTRY64
 {
+    /// <include file='LIST_ENTRY64.xml' path='doc/member[@name="LIST_ENTRY64.Flink"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong Flink;
 
+    /// <include file='LIST_ENTRY64.xml' path='doc/member[@name="LIST_ENTRY64.Blink"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong Blink;
 }

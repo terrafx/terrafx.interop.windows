@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NL_BANDWIDTH_FLAG.xml' path='doc/member[@name="NL_BANDWIDTH_FLAG"]/*' />
 public enum NL_BANDWIDTH_FLAG
 {
+    /// <include file='NL_BANDWIDTH_FLAG.xml' path='doc/member[@name="NL_BANDWIDTH_FLAG.NlbwDisabled"]/*' />
     NlbwDisabled = 0,
+
+    /// <include file='NL_BANDWIDTH_FLAG.xml' path='doc/member[@name="NL_BANDWIDTH_FLAG.NlbwEnabled"]/*' />
     NlbwEnabled,
+
+    /// <include file='NL_BANDWIDTH_FLAG.xml' path='doc/member[@name="NL_BANDWIDTH_FLAG.NlbwUnchanged"]/*' />
     NlbwUnchanged = -1,
 }

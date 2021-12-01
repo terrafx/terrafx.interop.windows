@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFSampleEncryptionProtectionScheme.xml' path='doc/member[@name="MFSampleEncryptionProtectionScheme"]/*' />
 [SupportedOSPlatform("windows10.0.16299.0")]
 public enum MFSampleEncryptionProtectionScheme
 {
+    /// <include file='MFSampleEncryptionProtectionScheme.xml' path='doc/member[@name="MFSampleEncryptionProtectionScheme.MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_NONE"]/*' />
     MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_NONE = 0,
+
+    /// <include file='MFSampleEncryptionProtectionScheme.xml' path='doc/member[@name="MFSampleEncryptionProtectionScheme.MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CTR"]/*' />
     MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CTR = 1,
+
+    /// <include file='MFSampleEncryptionProtectionScheme.xml' path='doc/member[@name="MFSampleEncryptionProtectionScheme.MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CBC"]/*' />
     MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CBC = 2,
 }

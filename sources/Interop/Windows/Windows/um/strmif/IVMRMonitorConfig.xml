@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVMRMonitorConfig.GetAvailableMonitors">
+    <summary>
+      <para>The <code>GetAvailableMonitors</code> method retrieves information about the monitors currently available on the system.</para>
+    </summary>
+    <param name="pInfo">
+      <para>Pointer to an array of <see cref="VMRMONITORINFO" /> structures that contain information about each monitor on the system.</para>
+    </param>
+    <param name="dwMaxInfoArraySize">
+      <para>Specifies the maximum number of members in the array.</para>
+    </param>
+    <param name="pdwNumDevices">
+      <para>Pointer to a variable that receives the number of devices retrieved.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument; <i>dwMaxInfoArraySize</i> must be greater than zero.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method to get a list of DirectDraw device GUIDs and their associated monitor information that the VMR can use when connecting to an upstream decoder filter. To return the required array size in the <i>pdwNumDevices</i> parameter, specify <b>NULL</b> for <i>pInfo</i>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMonitorConfig Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMonitorConfig.GetDefaultMonitor">
+    <summary>
+      <para>The <code>GetDefaultMonitor</code> method retrieves the default monitor that all future instances of the VMR will use for video playback.</para>
+    </summary>
+    <param name="pGUID">
+      <para>Pointer to a <see cref="VMRGUID" /> structure that identifies the default monitor on the system.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The allocator-presenter has not been loaded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method on a multi-monitor system to determine which is the default DirectDraw device the VMR will use when connecting to an upstream filter.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMonitorConfig Interface" />
+    <seealso cref="IVMRMonitorConfig.SetDefaultMonitor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMonitorConfig.GetMonitor">
+    <summary>
+      <para>The <code>GetMonitor</code> method retrieves the monitor that this instance of the VMR is using for video playback.</para>
+    </summary>
+    <param name="pGUID">
+      <para>Pointer to a <see cref="VMRGUID" /> structure allocated by the caller. The method fills this structure with a GUID that identifies the monitor.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The allocator-presenter has not been loaded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMonitorConfig Interface" />
+    <seealso cref="IVMRMonitorConfig.SetMonitor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMonitorConfig.SetDefaultMonitor">
+    <summary>
+      <para>The <code>SetDefaultMonitor</code> method specifies the default monitor that all future instances of the VMR should use for video playback.</para>
+    </summary>
+    <param name="pGUID">
+      <para>Pointer to a <see cref="VMRGUID" /> structure that identifies the monitor.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Could not set the specified monitor as the default.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument. The specified monitor does not exist, or the pGUID parameter was not formatted correctly.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The allocator-presenter has not been loaded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method on a multi-monitor system to specify to the VMR the default DirectDraw device to use when connecting to an upstream filter. The default DirectDraw device can be overridden for a particular connection by the <see cref="SetMonitor" /> method.</para>
+      <para>The <b>pGUID</b> member of the VMRGUID structure must be either <b>NULL</b>, indicating the default DirectDraw device, or equal to the address of the <b>GUID</b> member of the <b>VMRGUID</b> structure. Otherwise, the method returns E_INVALIDARG.</para>
+      <para>If the specified GUID does not correspond to any monitor, the method return E_INVALIDARG.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMonitorConfig Interface" />
+    <seealso cref="IVMRMonitorConfig.GetDefaultMonitor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMonitorConfig.SetMonitor">
+    <summary>
+      <para>On a multi-monitor system, the <code>SetMonitor</code> method specifies the monitor that this instance of the VMR should use for video playback.</para>
+    </summary>
+    <param name="pGUID">
+      <para>Pointer to a <see cref="VMRGUID" /> structure that identifies the monitor.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The allocator-presenter has not been loaded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method on a multi-monitor system to specify to the VMR which DirectDraw driver should be used when connecting to an upstream decoder filter.</para>
+      <para>The <b>pGUID</b> member of the VMRGUID structure must be either <b>NULL</b>, indicating the default DirectDraw device, or equal to the address of the <b>GUID</b> member of the <b>VMRGUID</b> structure. Otherwise, the method returns E_INVALIDARG.</para>
+      <para>If the specified GUID does not correspond to any monitor, the method return E_INVALIDARG.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRMonitorConfig Interface" />
+    <seealso cref="IVMRMonitorConfig.GetMonitor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRMonitorConfig">
+    <summary>
+      <para>The <code>IVMRMonitorConfig</code> interface is implemented by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7). Applications use this interface to determine the capabilities of the display devices on the system and to control which device is used to display the output. For example, if the system contains a hardware DVD decoder and the VMR is rendering the output from that decoder, then on a multi-monitor system, an application must use this interface to specify the display device that is connected to the decoder.</para>
+      <para>The VMR-7 supports a maximum of 15 display devices.</para>
+      <para>It is the responsibility of the application to ensure that the playback window is positioned on the desired monitor before the window is displayed. Otherwise the playback window will be displayed at a location chosen by the Windows Shell (Explorer) which may not be on the desired monitor.</para>
+      <para>For the VMR-9, use the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/vmr9/nn-vmr9-ivmrmonitorconfig9">IVMRMonitorConfig9</a> interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+</doc>

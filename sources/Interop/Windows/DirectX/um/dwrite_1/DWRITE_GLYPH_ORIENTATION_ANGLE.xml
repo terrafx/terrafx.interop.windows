@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_GLYPH_ORIENTATION_ANGLE">
+    <summary>
+      <para>The <b>DWRITE_GLYPH_ORIENTATION_ANGLE</b> enumeration contains values that specify how the glyph is oriented to the x-axis.</para>
+    </summary>
+    <remarks>
+      <para>The text analyzer outputs <b>DWRITE_GLYPH_ORIENTATION_ANGLE</b> values. The value that it outputs depends on the desired orientation, bidi level, and character properties.</para>
+    </remarks>
+    <seealso cref="IDWriteTextAnalysisSink1.SetGlyphOrientation" />
+    <seealso cref="IDWriteTextAnalyzer1.GetGlyphOrientationTransform" />
+  </member>
+  <member name="DWRITE_GLYPH_ORIENTATION_ANGLE.DWRITE_GLYPH_ORIENTATION_ANGLE_0_DEGREES">
+    <summary>
+      <para>Glyph orientation is upright.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_ORIENTATION_ANGLE.DWRITE_GLYPH_ORIENTATION_ANGLE_90_DEGREES">
+    <summary>
+      <para>Glyph orientation is rotated 90 degrees clockwise.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_ORIENTATION_ANGLE.DWRITE_GLYPH_ORIENTATION_ANGLE_180_DEGREES">
+    <summary>
+      <para>Glyph orientation is upside-down.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_ORIENTATION_ANGLE.DWRITE_GLYPH_ORIENTATION_ANGLE_270_DEGREES">
+    <summary>
+      <para>Glyph orientation is rotated 270 degrees clockwise.</para>
+    </summary>
+  </member>
+</doc>

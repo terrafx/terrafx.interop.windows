@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpWaveFormatEx.xml' path='doc/member[@name="SpWaveFormatEx"]/*' />
 [Guid("C79A574C-63BE-44B9-801F-283F87F898BE")]
 public partial struct SpWaveFormatEx
 {

@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUTOCOMPLETELISTOPTIONS.xml' path='doc/member[@name="AUTOCOMPLETELISTOPTIONS"]/*' />
 public enum AUTOCOMPLETELISTOPTIONS
 {
+    /// <include file='AUTOCOMPLETELISTOPTIONS.xml' path='doc/member[@name="AUTOCOMPLETELISTOPTIONS.ACLO_NONE"]/*' />
     ACLO_NONE = 0,
+
+    /// <include file='AUTOCOMPLETELISTOPTIONS.xml' path='doc/member[@name="AUTOCOMPLETELISTOPTIONS.ACLO_CURRENTDIR"]/*' />
     ACLO_CURRENTDIR = 1,
+
+    /// <include file='AUTOCOMPLETELISTOPTIONS.xml' path='doc/member[@name="AUTOCOMPLETELISTOPTIONS.ACLO_MYCOMPUTER"]/*' />
     ACLO_MYCOMPUTER = 2,
+
+    /// <include file='AUTOCOMPLETELISTOPTIONS.xml' path='doc/member[@name="AUTOCOMPLETELISTOPTIONS.ACLO_DESKTOP"]/*' />
     ACLO_DESKTOP = 4,
+
+    /// <include file='AUTOCOMPLETELISTOPTIONS.xml' path='doc/member[@name="AUTOCOMPLETELISTOPTIONS.ACLO_FAVORITES"]/*' />
     ACLO_FAVORITES = 8,
+
+    /// <include file='AUTOCOMPLETELISTOPTIONS.xml' path='doc/member[@name="AUTOCOMPLETELISTOPTIONS.ACLO_FILESYSONLY"]/*' />
     ACLO_FILESYSONLY = 16,
+
+    /// <include file='AUTOCOMPLETELISTOPTIONS.xml' path='doc/member[@name="AUTOCOMPLETELISTOPTIONS.ACLO_FILESYSDIRS"]/*' />
     ACLO_FILESYSDIRS = 32,
+
+    /// <include file='AUTOCOMPLETELISTOPTIONS.xml' path='doc/member[@name="AUTOCOMPLETELISTOPTIONS.ACLO_VIRTUALNAMESPACE"]/*' />
     ACLO_VIRTUALNAMESPACE = 64,
 }

@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_ENLISTMENT_PAIR.xml' path='doc/member[@name="TRANSACTION_ENLISTMENT_PAIR"]/*' />
 public partial struct TRANSACTION_ENLISTMENT_PAIR
 {
+    /// <include file='TRANSACTION_ENLISTMENT_PAIR.xml' path='doc/member[@name="TRANSACTION_ENLISTMENT_PAIR.EnlistmentId"]/*' />
     public Guid EnlistmentId;
 
+    /// <include file='TRANSACTION_ENLISTMENT_PAIR.xml' path='doc/member[@name="TRANSACTION_ENLISTMENT_PAIR.ResourceManagerId"]/*' />
     public Guid ResourceManagerId;
 }

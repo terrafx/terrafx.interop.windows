@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFRemoteAsyncCallback.xml' path='doc/member[@name="IMFRemoteAsyncCallback"]/*' />
 [Guid("A27003D0-2354-4F2A-8D6A-AB7CFF15437E")]
 [NativeTypeName("struct IMFRemoteAsyncCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFRemoteAsyncCallback : IMFRemoteAsyncCallback.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFRemoteAsyncCallback : IMFRemoteAsyncCallback.Int
         return ((delegate* unmanaged<IMFRemoteAsyncCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFRemoteAsyncCallback : IMFRemoteAsyncCallback.Int
         return ((delegate* unmanaged<IMFRemoteAsyncCallback*, uint>)(lpVtbl[1]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFRemoteAsyncCallback : IMFRemoteAsyncCallback.Int
         return ((delegate* unmanaged<IMFRemoteAsyncCallback*, uint>)(lpVtbl[2]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFRemoteAsyncCallback.xml' path='doc/member[@name="IMFRemoteAsyncCallback.Invoke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Invoke(HRESULT hr, IUnknown* pRemoteResult)

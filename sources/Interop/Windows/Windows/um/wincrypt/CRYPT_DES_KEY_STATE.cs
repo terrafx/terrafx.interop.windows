@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_DES_KEY_STATE.xml' path='doc/member[@name="CRYPT_DES_KEY_STATE"]/*' />
 public unsafe partial struct CRYPT_DES_KEY_STATE
 {
+    /// <include file='CRYPT_DES_KEY_STATE.xml' path='doc/member[@name="CRYPT_DES_KEY_STATE.Key"]/*' />
     [NativeTypeName("unsigned char [8]")]
     public fixed byte Key[8];
 
+    /// <include file='CRYPT_DES_KEY_STATE.xml' path='doc/member[@name="CRYPT_DES_KEY_STATE.IV"]/*' />
     [NativeTypeName("unsigned char [8]")]
     public fixed byte IV[8];
 
+    /// <include file='CRYPT_DES_KEY_STATE.xml' path='doc/member[@name="CRYPT_DES_KEY_STATE.Feedback"]/*' />
     [NativeTypeName("unsigned char [8]")]
     public fixed byte Feedback[8];
 }

@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RID_DEVICE_INFO_MOUSE.xml' path='doc/member[@name="RID_DEVICE_INFO_MOUSE"]/*' />
 public partial struct RID_DEVICE_INFO_MOUSE
 {
+    /// <include file='RID_DEVICE_INFO_MOUSE.xml' path='doc/member[@name="RID_DEVICE_INFO_MOUSE.dwId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwId;
 
+    /// <include file='RID_DEVICE_INFO_MOUSE.xml' path='doc/member[@name="RID_DEVICE_INFO_MOUSE.dwNumberOfButtons"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumberOfButtons;
 
+    /// <include file='RID_DEVICE_INFO_MOUSE.xml' path='doc/member[@name="RID_DEVICE_INFO_MOUSE.dwSampleRate"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSampleRate;
 
+    /// <include file='RID_DEVICE_INFO_MOUSE.xml' path='doc/member[@name="RID_DEVICE_INFO_MOUSE.fHasHorizontalWheel"]/*' />
     public BOOL fHasHorizontalWheel;
 }

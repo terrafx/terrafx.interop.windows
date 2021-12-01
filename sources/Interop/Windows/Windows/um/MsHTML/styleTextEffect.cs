@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleTextEffect.xml' path='doc/member[@name="styleTextEffect"]/*' />
 public enum styleTextEffect
 {
+    /// <include file='styleTextEffect.xml' path='doc/member[@name="styleTextEffect.styleTextEffectNone"]/*' />
     styleTextEffectNone = 0,
+
+    /// <include file='styleTextEffect.xml' path='doc/member[@name="styleTextEffect.styleTextEffectEmboss"]/*' />
     styleTextEffectEmboss = 1,
+
+    /// <include file='styleTextEffect.xml' path='doc/member[@name="styleTextEffect.styleTextEffectEngrave"]/*' />
     styleTextEffectEngrave = 2,
+
+    /// <include file='styleTextEffect.xml' path='doc/member[@name="styleTextEffect.styleTextEffectOutline"]/*' />
     styleTextEffectOutline = 3,
+
+    /// <include file='styleTextEffect.xml' path='doc/member[@name="styleTextEffect.styleTextEffect_Max"]/*' />
     styleTextEffect_Max = 2147483647,
 }

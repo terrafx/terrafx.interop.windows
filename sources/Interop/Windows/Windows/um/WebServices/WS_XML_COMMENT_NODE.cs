@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_COMMENT_NODE.xml' path='doc/member[@name="WS_XML_COMMENT_NODE"]/*' />
 public partial struct WS_XML_COMMENT_NODE
 {
+    /// <include file='WS_XML_COMMENT_NODE.xml' path='doc/member[@name="WS_XML_COMMENT_NODE.node"]/*' />
     public WS_XML_NODE node;
 
+    /// <include file='WS_XML_COMMENT_NODE.xml' path='doc/member[@name="WS_XML_COMMENT_NODE.value"]/*' />
     public WS_XML_STRING value;
 }

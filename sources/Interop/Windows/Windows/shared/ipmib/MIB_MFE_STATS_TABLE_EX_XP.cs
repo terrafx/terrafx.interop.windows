@@ -7,14 +7,18 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_MFE_STATS_TABLE_EX_XP.xml' path='doc/member[@name="MIB_MFE_STATS_TABLE_EX_XP"]/*' />
 public partial struct MIB_MFE_STATS_TABLE_EX_XP
 {
+    /// <include file='MIB_MFE_STATS_TABLE_EX_XP.xml' path='doc/member[@name="MIB_MFE_STATS_TABLE_EX_XP.dwNumEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumEntries;
 
+    /// <include file='MIB_MFE_STATS_TABLE_EX_XP.xml' path='doc/member[@name="MIB_MFE_STATS_TABLE_EX_XP.table"]/*' />
     [NativeTypeName("PMIB_IPMCAST_MFE_STATS_EX_XP [1]")]
     public _table_e__FixedBuffer table;
 
+    /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />
     public unsafe partial struct _table_e__FixedBuffer
     {
         public MIB_IPMCAST_MFE_STATS_EX_XP* e0;

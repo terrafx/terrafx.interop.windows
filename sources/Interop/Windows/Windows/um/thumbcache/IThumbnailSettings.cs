@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IThumbnailSettings.xml' path='doc/member[@name="IThumbnailSettings"]/*' />
 [Guid("F4376F00-BEF5-4D45-80F3-1E023BBF1209")]
 [NativeTypeName("struct IThumbnailSettings : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface
         return ((delegate* unmanaged<IThumbnailSettings*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface
         return ((delegate* unmanaged<IThumbnailSettings*, uint>)(lpVtbl[1]))((IThumbnailSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface
         return ((delegate* unmanaged<IThumbnailSettings*, uint>)(lpVtbl[2]))((IThumbnailSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IThumbnailSettings.xml' path='doc/member[@name="IThumbnailSettings.SetContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetContext(WTS_CONTEXTFLAGS dwContext)

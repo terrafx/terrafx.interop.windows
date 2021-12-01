@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REDIRECTION_FUNCTION_DESCRIPTOR.xml' path='doc/member[@name="REDIRECTION_FUNCTION_DESCRIPTOR"]/*' />
 public unsafe partial struct REDIRECTION_FUNCTION_DESCRIPTOR
 {
+    /// <include file='REDIRECTION_FUNCTION_DESCRIPTOR.xml' path='doc/member[@name="REDIRECTION_FUNCTION_DESCRIPTOR.DllName"]/*' />
     [NativeTypeName("PCSTR")]
     public sbyte* DllName;
 
+    /// <include file='REDIRECTION_FUNCTION_DESCRIPTOR.xml' path='doc/member[@name="REDIRECTION_FUNCTION_DESCRIPTOR.FunctionName"]/*' />
     [NativeTypeName("PCSTR")]
     public sbyte* FunctionName;
 
+    /// <include file='REDIRECTION_FUNCTION_DESCRIPTOR.xml' path='doc/member[@name="REDIRECTION_FUNCTION_DESCRIPTOR.RedirectionTarget"]/*' />
     [NativeTypeName("PVOID")]
     public void* RedirectionTarget;
 }

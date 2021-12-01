@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechGrammarRules.xml' path='doc/member[@name="DISPID_SpeechGrammarRules"]/*' />
 public enum DISPID_SpeechGrammarRules
 {
+    /// <include file='DISPID_SpeechGrammarRules.xml' path='doc/member[@name="DISPID_SpeechGrammarRules.DISPID_SGRsCount"]/*' />
     DISPID_SGRsCount = 1,
+
+    /// <include file='DISPID_SpeechGrammarRules.xml' path='doc/member[@name="DISPID_SpeechGrammarRules.DISPID_SGRsDynamic"]/*' />
     DISPID_SGRsDynamic = (DISPID_SGRsCount + 1),
+
+    /// <include file='DISPID_SpeechGrammarRules.xml' path='doc/member[@name="DISPID_SpeechGrammarRules.DISPID_SGRsAdd"]/*' />
     DISPID_SGRsAdd = (DISPID_SGRsDynamic + 1),
+
+    /// <include file='DISPID_SpeechGrammarRules.xml' path='doc/member[@name="DISPID_SpeechGrammarRules.DISPID_SGRsCommit"]/*' />
     DISPID_SGRsCommit = (DISPID_SGRsAdd + 1),
+
+    /// <include file='DISPID_SpeechGrammarRules.xml' path='doc/member[@name="DISPID_SpeechGrammarRules.DISPID_SGRsCommitAndSave"]/*' />
     DISPID_SGRsCommitAndSave = (DISPID_SGRsCommit + 1),
+
+    /// <include file='DISPID_SpeechGrammarRules.xml' path='doc/member[@name="DISPID_SpeechGrammarRules.DISPID_SGRsFindRule"]/*' />
     DISPID_SGRsFindRule = (DISPID_SGRsCommitAndSave + 1),
+
+    /// <include file='DISPID_SpeechGrammarRules.xml' path='doc/member[@name="DISPID_SpeechGrammarRules.DISPID_SGRsItem"]/*' />
     DISPID_SGRsItem = (0),
+
+    /// <include file='DISPID_SpeechGrammarRules.xml' path='doc/member[@name="DISPID_SpeechGrammarRules.DISPID_SGRs_NewEnum"]/*' />
     DISPID_SGRs_NewEnum = (-4),
 }

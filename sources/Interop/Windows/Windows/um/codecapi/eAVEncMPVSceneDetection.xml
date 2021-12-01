@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMPVSceneDetection">
+    <summary>
+      <para>Specifies how the encoder behaves when it detects a new scene. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpvscenedetection-property">AVEncMPVSceneDetection</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMPVSceneDetection.eAVEncMPVSceneDetection_None">
+    <summary>
+      <para>No special behavior.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVSceneDetection.eAVEncMPVSceneDetection_InsertIPicture">
+    <summary>
+      <para>Insert an I frame.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVSceneDetection.eAVEncMPVSceneDetection_StartNewGOP">
+    <summary>
+      <para>Start a new group of pictures (GOP).</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVSceneDetection.eAVEncMPVSceneDetection_StartNewLocatableGOP">
+    <summary>
+      <para>Start a new GOP in which the first consecutive B frames do not reference the previous GOP.</para>
+    </summary>
+  </member>
+</doc>

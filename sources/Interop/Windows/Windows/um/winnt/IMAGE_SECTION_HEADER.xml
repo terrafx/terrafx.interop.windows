@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGE_SECTION_HEADER">
+    <summary>
+      <para>Represents the image section header format.</para>
+    </summary>
+    <seealso cref="ImageDirectoryEntryToDataEx" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+    <seealso cref="ImageRvaToSection" />
+    <seealso cref="ImageRvaToVa" />
+    <seealso cref="LOADED_IMAGE" />
+  </member>
+  <member name="IMAGE_SECTION_HEADER.Name">
+    <summary>
+      <para>An 8-byte, null-padded UTF-8 string. There is no terminating null character if the string is exactly eight characters long. For longer names, this member contains a forward slash (/) followed by an ASCII representation of a decimal number that is an offset into the string table. Executable images do not use a string table and do not support section names longer than eight characters.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.Misc">
+    <summary></summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.Misc.PhysicalAddress">
+    <summary>
+      <para>The file address.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.Misc.VirtualSize">
+    <summary>
+      <para>The total size of the section when loaded into memory, in bytes. If this value is greater than the <b>SizeOfRawData</b> member, the section is filled with zeroes. This field is valid only for executable images and should be set to 0 for object files.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.VirtualAddress">
+    <summary>
+      <para>The address of the first byte of the section when loaded into memory, relative to the image base. For object files, this is the address of the first byte before relocation is applied.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.SizeOfRawData">
+    <summary>
+      <para>The size of the initialized data on disk, in bytes. This value must be a multiple of the <b>FileAlignment</b> member of the
+<see cref="IMAGE_OPTIONAL_HEADER" /> structure. If this value is less than the <b>VirtualSize</b> member, the remainder of the section is filled with zeroes. If the section contains only uninitialized data, the member is zero.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.PointerToRawData">
+    <summary>
+      <para>A file pointer to the first page within the COFF file. This value must be a multiple of the <b>FileAlignment</b> member of the
+<see cref="IMAGE_OPTIONAL_HEADER" /> structure. If a section contains only uninitialized data, set this member is zero.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.PointerToRelocations">
+    <summary>
+      <para>A file pointer to the beginning of the relocation entries for the section. If there are no relocations, this value is zero.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.PointerToLinenumbers">
+    <summary>
+      <para>A file pointer to the beginning of the line-number entries for the section. If there are no COFF line numbers, this value is zero.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.NumberOfRelocations">
+    <summary>
+      <para>The number of relocation entries for the section. This value is zero for executable images.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.NumberOfLinenumbers">
+    <summary>
+      <para>The number of line-number entries for the section.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_SECTION_HEADER.Characteristics">
+    <summary>
+      <para>The characteristics of the image. The following values are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0x00000000</para>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00000001</para>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00000002</para>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00000004</para>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_TYPE_NO_PAD</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section should not be padded to the next boundary. This flag is obsolete and is replaced by IMAGE_SCN_ALIGN_1BYTES.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00000010</para>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_CNT_CODE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section contains executable code.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_CNT_INITIALIZED_DATA</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section contains initialized data.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_CNT_UNINITIALIZED_DATA</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section contains uninitialized data.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_LNK_OTHER</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_LNK_INFO</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section contains comments or other information. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00000400</para>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_LNK_REMOVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000800</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section will not become part of the image. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_LNK_COMDAT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00001000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section contains COMDAT data. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00002000</para>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_NO_DEFER_SPEC_EXC</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00004000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reset speculative exceptions handling bits in the TLB entries for this section.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_GPREL</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00008000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section contains data referenced through the global pointer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00010000</para>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_MEM_PURGEABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00020000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_MEM_LOCKED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00040000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_MEM_PRELOAD</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00080000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_1BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00100000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 1-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_2BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00200000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 2-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_4BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00300000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 4-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_8BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00400000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 8-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_16BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00500000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 16-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_32BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00600000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 32-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_64BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00700000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 64-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_128BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00800000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 128-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_256BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00900000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 256-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_512BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00A00000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 512-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_1024BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00B00000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 1024-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_2048BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00C00000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 2048-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_4096BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00D00000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 4096-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_ALIGN_8192BYTES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00E00000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Align data on a 8192-byte boundary. This is valid only for object files.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_LNK_NRELOC_OVFL</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section contains extended relocations. The count of relocations for the section exceeds the 16 bits that is reserved for it in the section header. If the <b>NumberOfRelocations</b> field in the section header is 0xffff, the actual relocation count is stored in the <b>VirtualAddress</b> field of the first relocation. It is an error if IMAGE_SCN_LNK_NRELOC_OVFL is set and there are fewer than 0xffff relocations in the section.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_MEM_DISCARDABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x02000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section can be discarded as needed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_MEM_NOT_CACHED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x04000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section cannot be cached.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_MEM_NOT_PAGED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x08000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section cannot be paged.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_MEM_SHARED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x10000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section can be shared in memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_MEM_EXECUTE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x20000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section can be executed as code.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_MEM_READ</b>
+                </description>
+              </item>
+              <item>
+                <description>0x40000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section can be read.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_SCN_MEM_WRITE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The section can be written to.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

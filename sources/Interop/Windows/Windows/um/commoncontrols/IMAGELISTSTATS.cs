@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGELISTSTATS.xml' path='doc/member[@name="IMAGELISTSTATS"]/*' />
 public partial struct IMAGELISTSTATS
 {
+    /// <include file='IMAGELISTSTATS.xml' path='doc/member[@name="IMAGELISTSTATS.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='IMAGELISTSTATS.xml' path='doc/member[@name="IMAGELISTSTATS.cAlloc"]/*' />
     public int cAlloc;
 
+    /// <include file='IMAGELISTSTATS.xml' path='doc/member[@name="IMAGELISTSTATS.cUsed"]/*' />
     public int cUsed;
 
+    /// <include file='IMAGELISTSTATS.xml' path='doc/member[@name="IMAGELISTSTATS.cStandby"]/*' />
     public int cStandby;
 }

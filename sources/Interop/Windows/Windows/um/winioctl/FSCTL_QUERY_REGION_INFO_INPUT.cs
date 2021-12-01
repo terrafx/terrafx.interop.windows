@@ -9,23 +9,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FSCTL_QUERY_REGION_INFO_INPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_INPUT"]/*' />
 public partial struct FSCTL_QUERY_REGION_INFO_INPUT
 {
+    /// <include file='FSCTL_QUERY_REGION_INFO_INPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_INPUT.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_INPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_INPUT.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_INPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_INPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_INPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_INPUT.NumberOfTierIds"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfTierIds;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_INPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_INPUT.TierIds"]/*' />
     [NativeTypeName("GUID [1]")]
     public _TierIds_e__FixedBuffer TierIds;
 
+    /// <include file='_TierIds_e__FixedBuffer.xml' path='doc/member[@name="_TierIds_e__FixedBuffer"]/*' />
     public partial struct _TierIds_e__FixedBuffer
     {
         public Guid e0;

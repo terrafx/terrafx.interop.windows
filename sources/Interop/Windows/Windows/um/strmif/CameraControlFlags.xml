@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CameraControlFlags">
+    <summary>
+      <para>The <b>CameraControlFlags</b> enumeration defines whether a camera setting is controlled manually or automatically.</para>
+    </summary>
+    <remarks>
+      <para>In addition, the following flags are defined in Ksmedia.h:</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>KSPROPERTY_CAMERACONTROL_FLAGS_AUTO</b>
+          </description>
+          <description>0X0001L</description>
+          <description>Equivalent to CameraControl_Flags_Auto.</description>
+        </item>
+        <item>
+          <description>
+            <b>KSPROPERTY_CAMERACONTROL_FLAGS_MANUAL</b>
+          </description>
+          <description>0X0002L</description>
+          <description>Equivalent to CameraControl_Flags_Manual.</description>
+        </item>
+        <item>
+          <description>
+            <b>KSPROPERTY_CAMERACONTROL_FLAGS_ABSOLUTE</b>
+          </description>
+          <description>0X0000L</description>
+          <description>The camera supports absolute units for this setting.</description>
+        </item>
+        <item>
+          <description>
+            <b>KSPROPERTY_CAMERACONTROL_FLAGS_RELATIVE</b>
+          </description>
+          <description>0X0010L</description>
+          <description>The camera supports relative controls for this setting. A relative control is divided into a number of steps with no defined units. The absolute size of each step depends on the camera model.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IAMCameraControl Interface" />
+  </member>
+  <member name="CameraControlFlags.CameraControl_Flags_Auto">
+    <summary>
+      <para>The setting is controlled automatically.</para>
+    </summary>
+  </member>
+  <member name="CameraControlFlags.CameraControl_Flags_Manual">
+    <summary>
+      <para>The setting is controlled manually.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPersistStream.GetSizeMax">
+    <summary>
+      <para>Retrieves the size of the stream needed to save the object.</para>
+    </summary>
+    <param name="pcbSize">
+      <para>The size in bytes of the stream needed to save this object, in bytes.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK to indicate that the size was retrieved successfully.</para>
+    </returns>
+    <remarks>
+      <para>This method returns the size needed to save an object. You can call this method to determine the size and set the necessary buffers before calling the <see cref="IPersistStream.Save" /> method.</para>
+      <h3>Notes to Implementers</h3>
+      <para>The <b>GetSizeMax</b> implementation should return a conservative estimate of the necessary size because the caller might call the <see cref="IPersistStream.Save" /> method with a non-growable stream.</para>
+      <h3>URL Moniker Notes</h3>
+      <para>This method retrieves the maximum number of bytes in the stream that will be required by a subsequent call to <see cref="IPersistStream.Save" />. This value is sizeof(ULONG)==4 plus sizeof(WCHAR)*n where n is the length of the full or partial URL string, including the NULL terminator.</para>
+    </remarks>
+    <seealso cref="IPersistStream" />
+  </member>
+  <member name="IPersistStream.IsDirty">
+    <summary>
+      <para>Determines whether an object has changed since it was last saved to its stream.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK to indicate that the object has changed. Otherwise, it returns S_FALSE.</para>
+    </returns>
+    <remarks>
+      <para>Use this method to determine whether an object should be saved before closing it. The dirty flag for an object is conditionally cleared in the <see cref="IPersistStream.Save" /> method.</para>
+      <h3>Notes to Callers</h3>
+      <para>You should treat any error return codes as an indication that the object has changed. Unless this method explicitly returns S_FALSE, assume that the object must be saved.</para>
+      <para>Note that the OLE-provided implementations of the <b>IPersistStream.IsDirty</b> method in the OLE-provided moniker interfaces always return S_FALSE because their internal state never changes.</para>
+    </remarks>
+    <seealso cref="IPersistStream" />
+  </member>
+  <member name="IPersistStream.Load">
+    <summary>
+      <para>Initializes an object from the stream where it was saved previously.</para>
+    </summary>
+    <param name="pStm">
+      <para>An <see cref="IStream" /> pointer to the stream from which the object should be loaded.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was not loaded due to lack of memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was not loaded due to some reason other than a lack of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method loads an object from its associated stream. The seek pointer is set as it was in the most recent <see cref="IPersistStream.Save" /> method. This method can seek and read from the stream, but cannot write to it.</para>
+      <h3>Notes to Callers</h3>
+      <para>Rather than calling <b>IPersistStream.Load</b> directly, you typically call the <see cref="OleLoadFromStream" /> function does the following:</para>
+      <list type="number">
+        <item>
+          <description>Calls the <see cref="ReadClassStm" /> function to get the class identifier from the stream.</description>
+        </item>
+        <item>
+          <description>Calls the <see cref="CoCreateInstance" /> function to create an instance of the object.</description>
+        </item>
+        <item>
+          <description>Queries the instance for <see cref="IPersistStream" />.</description>
+        </item>
+        <item>
+          <description>Calls <b>IPersistStream.Load</b>.</description>
+        </item>
+      </list>
+      <para>The <see cref="OleLoadFromStream" /> function assumes that objects are stored in the stream with a class identifier followed by the object data. This storage pattern is used by the generic, composite-moniker implementation provided by OLE.</para>
+      <para>If the objects are not stored using this pattern, you must call the methods separately yourself.</para>
+      <h3>URL Moniker Notes</h3>
+      <para>Initializes an URL moniker from data within a stream, usually stored there previously using its <see cref="IPersistStream.Save" /> (using <see cref="OleSaveToStream" />). The binary format of the URL moniker is its URL string in Unicode (may be a full or partial URL string, see <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775103(v=vs.85)">CreateURLMonikerEx</a> for details). This is represented as a <b>ULONG</b> count of characters followed by that many Unicode characters.</para>
+    </remarks>
+    <seealso cref="IPersistStream" />
+  </member>
+  <member name="IPersistStream.Save">
+    <summary>
+      <para>Saves an object to the specified stream.</para>
+    </summary>
+    <param name="pStm">
+      <para>An <see cref="IStream" /> pointer to the stream into which the object should be saved.</para>
+    </param>
+    <param name="fClearDirty">
+      <para>Indicates whether to clear the dirty flag after the save is complete. If <b>TRUE</b>, the flag should be cleared. If <b>FALSE</b>, the flag should be left unchanged.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>STG_E_CANTSAVE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object could not save itself to the stream. This error could indicate, for example, that the object contains another object that is not serializable to a stream or that an <see cref="ISequentialStream.Write" /> call returned STG_E_CANTSAVE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>STG_E_MEDIUMFULL</b>
+            </para>
+          </description>
+          <description>
+            <para>The object could not be saved because there is no space left on the storage device.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>IPersistStream.Save</b> saves an object into the specified stream and indicates whether the object should reset its dirty flag.</para>
+      <para>The seek pointer is positioned at the location in the stream at which the object should begin writing its data. The object calls the <see cref="ISequentialStream.Write" /> method to write its data.</para>
+      <para>On exit, the seek pointer must be positioned immediately past the object data. The position of the seek pointer is undefined if an error returns.</para>
+      <h3>Notes to Callers</h3>
+      <para>Rather than calling <b>IPersistStream.Save</b> directly, you typically call the <see cref="OleSaveToStream" /> helper function which does the following:</para>
+      <list type="number">
+        <item>
+          <description>Calls <see cref="GetClassID" /> to get the object's CLSID.</description>
+        </item>
+        <item>
+          <description>Calls the <see cref="WriteClassStm" /> function to write the object's CLSID to the stream.</description>
+        </item>
+        <item>
+          <description>Calls <b>IPersistStream.Save</b>.</description>
+        </item>
+      </list>
+      <para>If you call these methods directly, you can write other data into the stream after the CLSID before calling <b>IPersistStream.Save</b>.</para>
+      <para>The OLE-provided implementation of <see cref="IPersistStream" /> follows this same pattern.</para>
+      <h3>Notes to Implementers</h3>
+      <para>The <b>IPersistStream.Save</b> method does not write the CLSID to the stream. The caller is responsible for writing the CLSID.</para>
+      <para>The <b>IPersistStream.Save</b> method can read from, write to, and seek in the stream; but it must not seek to a location in the stream before that of the seek pointer on entry.</para>
+      <h3>URL Moniker Notes</h3>
+      <para>Saves an URL moniker to a stream. The binary format of URL moniker is its URL string in Unicode (may be a full or partial URL string, see <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775103(v=vs.85)">CreateURLMonikerEx</a> for details). This is represented as a <b>ULONG</b> count of characters followed by that many Unicode characters.</para>
+    </remarks>
+    <seealso cref="IPersistStream" />
+  </member>
+  <member name="IPersistStream">
+    <summary>
+      <para>Enables the saving and loading of objects that use a simple serial stream for their storage needs.</para>
+    </summary>
+    <remarks>
+      <para>One way in which this interface is used is to support OLE moniker implementations. Each of the OLE-provided moniker interfaces provides an <b>IPersistStream</b> implementation through which the moniker saves or loads itself. An instance of the OLE generic composite moniker class calls the <b>IPersistStream</b> methods of its component monikers to load or save the components in the proper sequence in a single stream.</para>
+      <h3>IPersistStream URL Moniker Implementation</h3>
+      <para>The URL moniker implementation of <b>IPersistStream</b> is found on an URL moniker object, which supports <see cref="IUnknown" />, <b>IAsyncMoniker</b>, and <see cref="IMoniker" />. The <b>IMoniker</b> interface inherits its definition from <b>IPersistStream</b> and thus, the URL moniker also provides an implementation of <b>IPersistStream</b> as part of its implementation of <b>IMoniker</b>.</para>
+      <para>The <a href="https://docs.microsoft.com//previous-versions/ms775081(v=vs.85)">IAsyncMoniker</a> interface on an URL moniker is simply <see cref="IUnknown" /> (there are no additional methods); it is used to allow clients to determine if a moniker supports asynchronous binding. To get a pointer to the <see cref="IMoniker" /> interface on this object, call the <b>CreateURLMonikerEx</b> function. Then, to get a pointer to <b>IPersistStream</b>, call the <see cref="QueryInterface" /> method.</para>
+      <para>
+        <b>IPersistStream</b>, in addition to inheriting its definition from <see cref="IUnknown" />, also inherits the single method of <see cref="IPersist" />, <see cref="GetClassID" />.</para>
+    </remarks>
+    <seealso cref="IMoniker" />
+    <seealso cref="IPersistStreamInit" />
+  </member>
+</doc>

@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteBitmapRenderTarget.DrawGlyphRun">
+    <summary>
+      <para>Draws a run of glyphs to a bitmap target at the specified position.</para>
+    </summary>
+    <param name="baselineOriginX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The horizontal position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</para>
+    </param>
+    <param name="baselineOriginY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The vertical position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>The measuring method for glyphs in the run, used with the other properties to determine the rendering mode.</para>
+    </param>
+    <param name="glyphRun">
+      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN" />*</b></para>
+      <para>The structure containing the properties of the glyph run.</para>
+    </param>
+    <param name="renderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams" />*</b></para>
+      <para>The object that controls rendering behavior.</para>
+    </param>
+    <param name="textColor">
+      <para>Type: <b>COLORREF</b></para>
+      <para>The foreground color of the text.</para>
+    </param>
+    <param name="blackBoxRect">
+      <para>Type: <b>RECT*</b></para>
+      <para>The optional rectangle that receives the bounding box (in pixels not DIPs) of all the pixels affected by
+drawing the glyph run. The black box rectangle may extend beyond the dimensions of the bitmap.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>You can use the <b>IDWriteBitmapRenderTarget.DrawGlyphRun</b> to render to a bitmap from a custom text renderer that you implement.  The custom text renderer should call this method from within the <see cref="IDWriteTextRenderer.DrawGlyphRun" /> callback method as shown in the following code.</para>
+      <code>STDMETHODIMP GdiTextRenderer.DrawGlyphRun(
+    __maybenull void* clientDrawingContext,
+    FLOAT baselineOriginX,
+    FLOAT baselineOriginY,
+    DWRITE_MEASURING_MODE measuringMode,
+    __in DWRITE_GLYPH_RUN const* glyphRun,
+    __in DWRITE_GLYPH_RUN_DESCRIPTION const* glyphRunDescription,
+    IUnknown* clientDrawingEffect
+    )
+{
+    HRESULT hr = S_OK;
+
+    // Pass on the drawing call to the render target to do the real work.
+    RECT dirtyRect = {0};
+
+    hr = pRenderTarget_-&gt;DrawGlyphRun(
+        baselineOriginX,
+        baselineOriginY,
+        measuringMode,
+        glyphRun,
+        pRenderingParams_,
+        RGB(0,200,255),
+        &amp;amp;amp;amp;amp;amp;dirtyRect
+        );
+
+
+    return hr;
+}
+
+</code>
+      <para>The <i>baselineOriginX</i>, <i>baslineOriginY</i>, <i>measuringMethod</i>, and <i>glyphRun</i> parameters are provided (as arguments) when the callback method is invoked.  The <i>renderingParams</i>, <i>textColor</i> and <i>blackBoxRect</i> are not.</para>
+      <para>Default rendering params can be retrieved by using the <see cref="IDWriteFactory.CreateMonitorRenderingParams" /> method.</para>
+    </remarks>
+    <seealso cref="IDWriteBitmapRenderTarget" />
+  </member>
+  <member name="IDWriteBitmapRenderTarget.GetCurrentTransform">
+    <summary>
+      <para>Gets the transform that maps abstract coordinates to DIPs. By default this is the identity
+transform. Note that this is unrelated to the world transform of the underlying device
+context.</para>
+    </summary>
+    <param name="transform">
+      <para>Type: <b><see cref="DWRITE_MATRIX" />*</b></para>
+      <para>When this method returns, contains a transform matrix.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteBitmapRenderTarget" />
+  </member>
+  <member name="IDWriteBitmapRenderTarget.GetMemoryDC">
+    <summary>
+      <para>Gets a handle to the memory device context.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HDC</b></para>
+      <para>Returns a device context handle to the memory device context.</para>
+    </returns>
+    <remarks>
+      <para>An application can use the device context to draw using GDI functions. An application can obtain the bitmap handle
+(HBITMAP) by calling <see cref="GetCurrentObject" />. An application that wants information about the underlying bitmap, including
+a pointer to the pixel data, can call <see cref="GetObject" /> to fill in a <see cref="DIBSECTION" /> structure. The bitmap is always a 32-bit
+top-down DIB.</para>
+      <para>Note that this method takes no parameters and returns an HDC variable, not an HRESULT.</para>
+      <code>memoryHdc = g_pBitmapRenderTarget-&gt;GetMemoryDC();
+
+</code>
+      <para>The HDC returned here is still owned by the bitmap render target object and should not be released or deleted by the client.</para>
+    </remarks>
+    <seealso cref="IDWriteBitmapRenderTarget" />
+  </member>
+  <member name="IDWriteBitmapRenderTarget.GetPixelsPerDip">
+    <summary>
+      <para>Gets the number of bitmap pixels per DIP.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The number of bitmap pixels per DIP.</para>
+    </returns>
+    <remarks>
+      <para>A DIP (device-independent pixel) is 1/96 inch. Therefore, this value is the number
+if pixels per inch divided by 96.</para>
+    </remarks>
+    <seealso cref="IDWriteBitmapRenderTarget" />
+  </member>
+  <member name="IDWriteBitmapRenderTarget.GetSize">
+    <summary>
+      <para>Gets the dimensions of the target bitmap.</para>
+    </summary>
+    <param name="size">
+      <para>Type: <b>SIZE*</b></para>
+      <para>Returns  the width and height of the bitmap in pixels.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteBitmapRenderTarget" />
+  </member>
+  <member name="IDWriteBitmapRenderTarget.Resize">
+    <summary>
+      <para>Resizes the bitmap.</para>
+    </summary>
+    <param name="width">
+      <para>Type: <b>UINT32</b></para>
+      <para>The new bitmap width, in pixels.</para>
+    </param>
+    <param name="height">
+      <para>Type: <b>UINT32</b></para>
+      <para>The new bitmap height, in pixels.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteBitmapRenderTarget" />
+  </member>
+  <member name="IDWriteBitmapRenderTarget.SetCurrentTransform">
+    <summary>
+      <para>Sets the transform that maps abstract coordinate to DIPs (device-independent pixel). This does not affect the world
+transform of the underlying device context.</para>
+    </summary>
+    <param name="transform">
+      <para>Type: <b>const <see cref="DWRITE_MATRIX" />*</b></para>
+      <para>Specifies the new transform. This parameter can be <b>NULL</b>, in which
+case the identity transform is implied.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteBitmapRenderTarget" />
+  </member>
+  <member name="IDWriteBitmapRenderTarget.SetPixelsPerDip">
+    <summary>
+      <para>Sets the number of bitmap pixels per DIP (device-independent pixel). A DIP is 1/96 inch, so this value is the number
+if pixels per inch divided by 96.</para>
+    </summary>
+    <param name="pixelsPerDip">
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that specifies the number of pixels per DIP.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteBitmapRenderTarget" />
+  </member>
+  <member name="IDWriteBitmapRenderTarget">
+    <summary>
+      <para>Encapsulates a 32-bit device independent bitmap and device context, which can be used for rendering glyphs.</para>
+    </summary>
+    <remarks>
+      <para>You create an <b>IDWriteBitmapRenderTarget</b> by using the <see cref="IDWriteGdiInterop.CreateBitmapRenderTarget" /> method, as shown in the following code.</para>
+      <code>if (SUCCEEDED(hr))
+{
+    hr = g_pGdiInterop-&gt;CreateBitmapRenderTarget(hdc, r.right, r.bottom, &amp;amp;amp;amp;amp;amp;g_pBitmapRenderTarget);
+}
+
+</code>
+      <para>
+        <see cref="IDWriteGdiInterop.CreateBitmapRenderTarget" /> takes a handle to a DC and the desired width and height.  In the above example, the width and height given are the size of the window rect.</para>
+      <h3>Rendering</h3>
+      <para>One way to use a  <b>IDWriteBitmapRenderTarget</b>, for rendering to a bitmap, is to implement a custom renderer interface derived from the <see cref="IDWriteTextRenderer" /> interface.  In your implementation of  the <see cref="DrawGlyphRun" /> method of your custom renderer, call the <see cref="IDWriteBitmapRenderTarget.DrawGlyphRun" /> method to draw the glyphs as shown in the following code.</para>
+      <code>STDMETHODIMP GdiTextRenderer.DrawGlyphRun(
+    __maybenull void* clientDrawingContext,
+    FLOAT baselineOriginX,
+    FLOAT baselineOriginY,
+    DWRITE_MEASURING_MODE measuringMode,
+    __in DWRITE_GLYPH_RUN const* glyphRun,
+    __in DWRITE_GLYPH_RUN_DESCRIPTION const* glyphRunDescription,
+    IUnknown* clientDrawingEffect
+    )
+{
+    HRESULT hr = S_OK;
+
+    // Pass on the drawing call to the render target to do the real work.
+    RECT dirtyRect = {0};
+
+    hr = pRenderTarget_-&gt;DrawGlyphRun(
+        baselineOriginX,
+        baselineOriginY,
+        measuringMode,
+        glyphRun,
+        pRenderingParams_,
+        RGB(0,200,255),
+        &amp;amp;amp;amp;amp;amp;dirtyRect
+        );
+
+
+    return hr;
+}
+
+</code>
+      <para>The <b>IDWriteBitmapRenderTarget</b> encapsulates and renders to a bitmap in memory.  The  <see cref="GetMemoryDC" /> function returns a handle to the device context of this bitmap.</para>
+    </remarks>
+  </member>
+</doc>

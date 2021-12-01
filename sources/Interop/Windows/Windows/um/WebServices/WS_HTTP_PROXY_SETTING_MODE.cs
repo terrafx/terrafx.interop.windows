@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HTTP_PROXY_SETTING_MODE.xml' path='doc/member[@name="WS_HTTP_PROXY_SETTING_MODE"]/*' />
 public enum WS_HTTP_PROXY_SETTING_MODE
 {
+    /// <include file='WS_HTTP_PROXY_SETTING_MODE.xml' path='doc/member[@name="WS_HTTP_PROXY_SETTING_MODE.WS_HTTP_PROXY_SETTING_MODE_AUTO"]/*' />
     WS_HTTP_PROXY_SETTING_MODE_AUTO = 0x1,
+
+    /// <include file='WS_HTTP_PROXY_SETTING_MODE.xml' path='doc/member[@name="WS_HTTP_PROXY_SETTING_MODE.WS_HTTP_PROXY_SETTING_MODE_NONE"]/*' />
     WS_HTTP_PROXY_SETTING_MODE_NONE = 0x2,
+
+    /// <include file='WS_HTTP_PROXY_SETTING_MODE.xml' path='doc/member[@name="WS_HTTP_PROXY_SETTING_MODE.WS_HTTP_PROXY_SETTING_MODE_CUSTOM"]/*' />
     WS_HTTP_PROXY_SETTING_MODE_CUSTOM = 0x3,
 }

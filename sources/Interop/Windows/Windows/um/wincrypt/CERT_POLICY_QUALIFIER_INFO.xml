@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_POLICY_QUALIFIER_INFO">
+    <summary>
+      <para>The <b>CERT_POLICY_QUALIFIER_INFO</b> structure contains an object identifier (OID) specifying the qualifier and qualifier-specific supplemental information.</para>
+      <para>The <b>CERT_POLICY_QUALIFIER_INFO</b> structure is a component of
+<see cref="CERT_POLICY_INFO" />.</para>
+    </summary>
+    <seealso cref="CERT_POLICY_INFO" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+  </member>
+  <member name="CERT_POLICY_QUALIFIER_INFO.pszPolicyQualifierId">
+    <summary>
+      <para>OID specifying the qualifier.</para>
+    </summary>
+  </member>
+  <member name="CERT_POLICY_QUALIFIER_INFO.Qualifier">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_OBJID_BLOB</a> structure that contains qualifier specific supplemental information.</para>
+    </summary>
+  </member>
+</doc>

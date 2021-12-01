@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CTL_FIND_USAGE_PARA">
+    <summary>
+      <para>The <b>CTL_FIND_USAGE_PARA</b> structure is a member of the
+<see cref="CTL_FIND_SUBJECT_PARA" /> structure and it is used by
+<see cref="CertFindCTLInStore" />.</para>
+    </summary>
+    <seealso cref="CERT_INFO" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CTL_FIND_SUBJECT_PARA" />
+    <seealso cref="CTL_USAGE" />
+    <seealso cref="CertFindCTLInStore" />
+  </member>
+  <member name="CTL_FIND_USAGE_PARA.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CTL_FIND_USAGE_PARA.SubjectUsage">
+    <summary>
+      <para>
+        <see cref="CTL_USAGE" /> structure that includes a sequence of object identifiers to be matched when finding a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust list</a> (CTL).</para>
+      <para>A found CTL must contain all the usage object identifiers specified by the <b>SubjectUsage</b> member.</para>
+      <para>If the <b>cUsageIdentifier</b> member of this structure is zero, a CTL with any usage can be a match.</para>
+    </summary>
+  </member>
+  <member name="CTL_FIND_USAGE_PARA.ListIdentifier">
+    <summary>
+      <para>Specified to restrict a search to a particular signer CTL list. Normally the <b>ListIdentifier</b> member will be zero, indicating that any <b>ListIdentifier</b> can be matched. If it is not zero, this <b>ListIdentifier</b> and the <b>ListIdentifier</b> in a CTL must match.</para>
+      <para>To match only CTLs that have no <b>ListIdentifier</b> the <b>cbData</b> member of <b>ListIdentifier</b> is set to CTL_FIND_NO_LIST_ID_CBDATA.</para>
+      <para>A CTL uses a <b>ListIdentifier</b> to distinguish among multiple CTLs created by the same issuer with the same <b>SubjectUsage</b>.</para>
+    </summary>
+  </member>
+  <member name="CTL_FIND_USAGE_PARA.pSigner">
+    <summary>
+      <para>A pointer to a
+<see cref="CERT_INFO" /> structure that specifies the CTL signer to be matched. Only the issuer and serial number from the <b>CERT_INFO</b> are used to match a signer.</para>
+      <para>Set <b>pSigner</b> to <b>NULL</b> to match any signer. To match CTLs that do not have any signers, set <b>pSigner</b> to CTL_FIND_NO_SIGNER_PTR.</para>
+      <para>The CertEncodingType of the signer is obtained from the <i>dwMsgAndCertEncodingType</i> parameter of
+<see cref="CertFindCTLInStore" />.</para>
+    </summary>
+  </member>
+</doc>

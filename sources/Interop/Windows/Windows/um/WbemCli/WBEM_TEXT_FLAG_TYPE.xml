@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_TEXT_FLAG_TYPE">
+    <summary>
+      <para>Contains flags to control the execution of the <see cref="IWbemClassObject.GetObjectText" /> method.</para>
+    </summary>
+    <seealso cref="IWbemClassObject.GetObjectText" />
+  </member>
+  <member name="WBEM_TEXT_FLAG_TYPE.WBEM_FLAG_NO_FLAVORS">
+    <summary>
+      <para>Present qualifiers without propagation or flavor information.</para>
+    </summary>
+  </member>
+</doc>

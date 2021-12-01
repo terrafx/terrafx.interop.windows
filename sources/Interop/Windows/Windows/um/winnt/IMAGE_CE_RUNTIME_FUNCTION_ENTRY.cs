@@ -7,13 +7,16 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY"]/*' />
 public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
 {
+    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.FuncStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint FuncStart;
 
     public uint _bitfield;
 
+    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.PrologLen"]/*' />
     [NativeTypeName("DWORD : 8")]
     public uint PrologLen
     {
@@ -30,6 +33,7 @@ public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.FuncLen"]/*' />
     [NativeTypeName("DWORD : 22")]
     public uint FuncLen
     {
@@ -46,6 +50,7 @@ public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.ThirtyTwoBit"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint ThirtyTwoBit
     {
@@ -62,6 +67,7 @@ public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.ExceptionFlag"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint ExceptionFlag
     {

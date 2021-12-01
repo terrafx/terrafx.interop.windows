@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource"]/*' />
 [Guid("00ADB003-BDE9-45C6-8E29-D09F9353E108")]
 [NativeTypeName("struct ITransferSource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, Guid*, void**, int>)(lpVtbl[0]))((ITransferSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, uint>)(lpVtbl[1]))((ITransferSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, uint>)(lpVtbl[2]))((ITransferSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Advise(ITransferAdviseSink* psink, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -46,6 +51,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, ITransferAdviseSink*, uint*, int>)(lpVtbl[3]))((ITransferSource*)Unsafe.AsPointer(ref this), psink, pdwCookie);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.Unadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
@@ -53,6 +59,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, uint, int>)(lpVtbl[4]))((ITransferSource*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.SetProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetProperties(IPropertyChangeArray* pproparray)
@@ -60,6 +67,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, IPropertyChangeArray*, int>)(lpVtbl[5]))((ITransferSource*)Unsafe.AsPointer(ref this), pproparray);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.OpenItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OpenItem(IShellItem* psi, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -67,6 +75,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, IShellItem*, uint, Guid*, void**, int>)(lpVtbl[6]))((ITransferSource*)Unsafe.AsPointer(ref this), psi, flags, riid, ppv);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.MoveItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT MoveItem(IShellItem* psi, IShellItem* psiParentDst, [NativeTypeName("LPCWSTR")] ushort* pszNameDst, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNew)
@@ -74,6 +83,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int>)(lpVtbl[7]))((ITransferSource*)Unsafe.AsPointer(ref this), psi, psiParentDst, pszNameDst, flags, ppsiNew);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.RecycleItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RecycleItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
@@ -81,6 +91,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, uint, IShellItem**, int>)(lpVtbl[8]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, psiParentDest, flags, ppsiNewDest);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.RemoveItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT RemoveItem(IShellItem* psiSource, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags)
@@ -88,6 +99,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, IShellItem*, uint, int>)(lpVtbl[9]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, flags);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.RenameItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT RenameItem(IShellItem* psiSource, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
@@ -95,6 +107,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, IShellItem*, ushort*, uint, IShellItem**, int>)(lpVtbl[10]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, pszNewName, flags, ppsiNewDest);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.LinkItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT LinkItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
@@ -102,6 +115,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int>)(lpVtbl[11]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, psiParentDest, pszNewName, flags, ppsiNewDest);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.ApplyPropertiesToItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT ApplyPropertiesToItem(IShellItem* psiSource, IShellItem** ppsiNew)
@@ -109,6 +123,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem**, int>)(lpVtbl[12]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, ppsiNew);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.GetDefaultDestinationName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetDefaultDestinationName(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPWSTR *")] ushort** ppszDestinationName)
@@ -116,6 +131,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort**, int>)(lpVtbl[13]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, psiParentDest, ppszDestinationName);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.EnterFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT EnterFolder(IShellItem* psiChildFolderDest)
@@ -123,6 +139,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         return ((delegate* unmanaged<ITransferSource*, IShellItem*, int>)(lpVtbl[14]))((ITransferSource*)Unsafe.AsPointer(ref this), psiChildFolderDest);
     }
 
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.LeaveFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT LeaveFolder(IShellItem* psiChildFolderDest)

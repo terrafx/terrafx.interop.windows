@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SERVICE_METADATA.xml' path='doc/member[@name="WS_SERVICE_METADATA"]/*' />
 public unsafe partial struct WS_SERVICE_METADATA
 {
+    /// <include file='WS_SERVICE_METADATA.xml' path='doc/member[@name="WS_SERVICE_METADATA.documentCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint documentCount;
 
+    /// <include file='WS_SERVICE_METADATA.xml' path='doc/member[@name="WS_SERVICE_METADATA.documents"]/*' />
     public WS_SERVICE_METADATA_DOCUMENT** documents;
 
+    /// <include file='WS_SERVICE_METADATA.xml' path='doc/member[@name="WS_SERVICE_METADATA.serviceName"]/*' />
     public WS_XML_STRING* serviceName;
 
+    /// <include file='WS_SERVICE_METADATA.xml' path='doc/member[@name="WS_SERVICE_METADATA.serviceNs"]/*' />
     public WS_XML_STRING* serviceNs;
 }

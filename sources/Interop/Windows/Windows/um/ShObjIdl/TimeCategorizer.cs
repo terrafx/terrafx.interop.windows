@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TimeCategorizer.xml' path='doc/member[@name="TimeCategorizer"]/*' />
 [Guid("3BB4118F-DDFD-4D30-A348-9FB5D6BF1AFE")]
 public partial struct TimeCategorizer
 {

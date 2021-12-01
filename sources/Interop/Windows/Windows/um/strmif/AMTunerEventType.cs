@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMTunerEventType.xml' path='doc/member[@name="AMTunerEventType"]/*' />
 public enum AMTunerEventType
 {
+    /// <include file='AMTunerEventType.xml' path='doc/member[@name="AMTunerEventType.AMTUNER_EVENT_CHANGED"]/*' />
     AMTUNER_EVENT_CHANGED = 0x1,
 }

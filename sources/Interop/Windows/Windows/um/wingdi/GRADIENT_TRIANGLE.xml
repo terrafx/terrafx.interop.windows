@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GRADIENT_TRIANGLE">
+    <summary>
+      <para>The <b>GRADIENT_TRIANGLE</b> structure specifies the index of three vertices in the <i>pVertex</i> array in the <b>GradientFill</b> function. These three vertices form one triangle.</para>
+    </summary>
+    <remarks>
+      <para>The <b>GRADIENT_TRIANGLE</b> structure specifies the values in the <i>pVertex</i> array that are used when the <i>dwMode</i> parameter of the <see cref="GradientFill" /> function is GRADIENT_FILL_TRIANGLE. For related <b>GradientFill</b> structures, see <see cref="GRADIENT_RECT" /> and <see cref="TRIVERTEX" />.</para>
+      <para>The following image shows an example of a triangle with a gradient fill.</para>
+      <para>
+        <img alt="Illustration of a triangle that fills from orange at the top point to magenta on the bottom line " src="https://docs.microsoft.com/windows/win32/api/wingdi/images/GradientFillTriangle.png" />
+      </para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/gdi/drawing-a-shaded-triangle">Drawing a Shaded Triangle</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmap-structures">Bitmap Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmaps">Bitmaps Overview</seealso>
+    <seealso cref="GRADIENT_RECT" />
+    <seealso cref="GradientFill" />
+    <seealso cref="TRIVERTEX" />
+  </member>
+  <member name="GRADIENT_TRIANGLE.Vertex1">
+    <summary>
+      <para>The first point of the triangle where sides intersect.</para>
+    </summary>
+  </member>
+  <member name="GRADIENT_TRIANGLE.Vertex2">
+    <summary>
+      <para>The second point of the triangle where sides intersect.</para>
+    </summary>
+  </member>
+  <member name="GRADIENT_TRIANGLE.Vertex3">
+    <summary>
+      <para>The third point of the triangle where sides intersect.</para>
+    </summary>
+  </member>
+</doc>

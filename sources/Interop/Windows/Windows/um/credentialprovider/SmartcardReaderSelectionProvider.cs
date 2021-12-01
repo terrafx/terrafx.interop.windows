@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SmartcardReaderSelectionProvider.xml' path='doc/member[@name="SmartcardReaderSelectionProvider"]/*' />
 [Guid("1B283861-754F-4022-AD47-A5EAAA618894")]
 public partial struct SmartcardReaderSelectionProvider
 {

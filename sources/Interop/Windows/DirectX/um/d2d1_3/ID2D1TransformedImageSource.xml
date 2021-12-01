@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1TransformedImageSource.GetProperties">
+    <summary>
+      <para>Retrieves the properties specified when the transformed image source was created.
+This value corresponds to the value passed to <see cref="CreateTransformedImageSource" />.</para>
+    </summary>
+    <param name="properties">
+      <para>Type: <b><see cref="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES" />*</b></para>
+      <para>the properties specified when the transformed image source was created.</para>
+    </param>
+    <seealso cref="ID2D1TransformedImageSource" />
+  </member>
+  <member name="ID2D1TransformedImageSource.GetSource">
+    <summary>
+      <para>Retrieves the source image used to create the transformed image source.
+This value corresponds to the value passed to <see cref="CreateTransformedImageSource" />.</para>
+    </summary>
+    <param name="imageSource">
+      <para>Type: <b><i>Outptr_result_maybenull</i>**</b></para>
+      <para>Retrieves the source image used to create the transformed image source.</para>
+    </param>
+    <seealso cref="ID2D1TransformedImageSource" />
+  </member>
+  <member name="ID2D1TransformedImageSource">
+    <summary>
+      <para>Represents an image source which shares resources with an original image source.</para>
+    </summary>
+    <seealso cref="ID2D1Image" />
+  </member>
+</doc>

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFTimedTextRegion.GetBackgroundColor">
+    <summary>
+      <para>Gets the background color of the region.</para>
+    </summary>
+    <param name="bgColor">
+      <para>Type: <b><see cref="MFARGB" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MFARGB" /> structure that describes the background color.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetClipOverflow">
+    <summary>
+      <para>Determines whether a clip of text overflowed the region.</para>
+    </summary>
+    <param name="clipOverflow">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a variable that receives a value that specifies whether a clip of text overflowed the region. The variable specifies <b>TRUE</b> if the clip overflowed; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetDisplayAlignment">
+    <summary>
+      <para>Gets the display alignment of the region.</para>
+    </summary>
+    <param name="displayAlign">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_DISPLAY_ALIGNMENT" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_DISPLAY_ALIGNMENT" />-typed value that specifies the display alignment of the region.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetExtent">
+    <summary>
+      <para>Gets the extent of the region.</para>
+    </summary>
+    <param name="pWidth">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the width of the region.</para>
+    </param>
+    <param name="pHeight">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the height of the region.</para>
+    </param>
+    <param name="unitType">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_UNIT_TYPE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_UNIT_TYPE" />-typed value that specifies the units in which the timed-text region is measured.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetLineHeight">
+    <summary>
+      <para>Gets the height of each line of text in the region.</para>
+    </summary>
+    <param name="pLineHeight">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the height of each line of text in the region.</para>
+    </param>
+    <param name="unitType">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_UNIT_TYPE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_UNIT_TYPE" />-typed value that specifies the units in which the timed-text region is measured.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetName">
+    <summary>
+      <para>Gets the name of the region.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>LPCWSTR*</b></para>
+      <para>A pointer to a variable that receives the null-terminated wide-character string that contains the name of the region.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetPadding">
+    <summary>
+      <para>Gets the padding that surrounds the region.</para>
+    </summary>
+    <param name="before">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the padding before the start of the region.</para>
+    </param>
+    <param name="start">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the start of the region.</para>
+    </param>
+    <param name="after">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the padding after the end of the region.</para>
+    </param>
+    <param name="end">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the end of the region.</para>
+    </param>
+    <param name="unitType">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_UNIT_TYPE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_UNIT_TYPE" />-typed value that specifies the units in which the timed-text region is measured.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetPosition">
+    <summary>
+      <para>Gets the position of the region.</para>
+    </summary>
+    <param name="pX">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the X-coordinate of the position.</para>
+    </param>
+    <param name="pY">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the Y-coordinate of the position.</para>
+    </param>
+    <param name="unitType">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_UNIT_TYPE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_UNIT_TYPE" />-typed value that specifies the units in which the timed-text region is measured.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetScrollMode">
+    <summary>
+      <para>Gets the scroll mode of the region.</para>
+    </summary>
+    <param name="scrollMode">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_SCROLL_MODE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_SCROLL_MODE" />-typed value that specifies the scroll mode of the region.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetWrap">
+    <summary>
+      <para>Determines whether the word wrap feature is enabled in the region.</para>
+    </summary>
+    <param name="wrap">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a variable that receives a value that specifies whether the word wrap feature is enabled in the region. The variable specifies <b>TRUE</b> if word wrap is enabled; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetWritingMode">
+    <summary>
+      <para>Gets the writing mode of the region.</para>
+    </summary>
+    <param name="writingMode">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_WRITING_MODE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_WRITING_MODE" />-typed value that specifies the writing mode of the region.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion.GetZIndex">
+    <summary>
+      <para>Gets the Z-index (depth) of the region.</para>
+    </summary>
+    <param name="zIndex">
+      <para>Type: <b>INT32*</b></para>
+      <para>A pointer to a variable that receives the Z-index (depth) of the region.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextRegion" />
+  </member>
+  <member name="IMFTimedTextRegion">
+    <summary>
+      <para>Represents the display region  of a timed-text object.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

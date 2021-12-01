@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_BASE_RELOCATION.xml' path='doc/member[@name="IMAGE_BASE_RELOCATION"]/*' />
 public partial struct IMAGE_BASE_RELOCATION
 {
+    /// <include file='IMAGE_BASE_RELOCATION.xml' path='doc/member[@name="IMAGE_BASE_RELOCATION.VirtualAddress"]/*' />
     [NativeTypeName("DWORD")]
     public uint VirtualAddress;
 
+    /// <include file='IMAGE_BASE_RELOCATION.xml' path='doc/member[@name="IMAGE_BASE_RELOCATION.SizeOfBlock"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeOfBlock;
 }

@@ -7,45 +7,59 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IN_ADDR.xml' path='doc/member[@name="IN_ADDR"]/*' />
 public partial struct IN_ADDR
 {
+    /// <include file='IN_ADDR.xml' path='doc/member[@name="IN_ADDR.S_un"]/*' />
     [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/inaddr.h:26:9)")]
     public _S_un_e__Union S_un;
 
+    /// <include file='_S_un_e__Union.xml' path='doc/member[@name="_S_un_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _S_un_e__Union
     {
+        /// <include file='_S_un_e__Union.xml' path='doc/member[@name="_S_un_e__Union.S_un_b"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/inaddr.h:27:17)")]
         public _S_un_b_e__Struct S_un_b;
 
+        /// <include file='_S_un_e__Union.xml' path='doc/member[@name="_S_un_e__Union.S_un_w"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/inaddr.h:28:17)")]
         public _S_un_w_e__Struct S_un_w;
 
+        /// <include file='_S_un_e__Union.xml' path='doc/member[@name="_S_un_e__Union.S_addr"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONG")]
         public uint S_addr;
 
+        /// <include file='_S_un_b_e__Struct.xml' path='doc/member[@name="_S_un_b_e__Struct"]/*' />
         public partial struct _S_un_b_e__Struct
         {
+            /// <include file='_S_un_b_e__Struct.xml' path='doc/member[@name="_S_un_b_e__Struct.s_b1"]/*' />
             [NativeTypeName("UCHAR")]
             public byte s_b1;
 
+            /// <include file='_S_un_b_e__Struct.xml' path='doc/member[@name="_S_un_b_e__Struct.s_b2"]/*' />
             [NativeTypeName("UCHAR")]
             public byte s_b2;
 
+            /// <include file='_S_un_b_e__Struct.xml' path='doc/member[@name="_S_un_b_e__Struct.s_b3"]/*' />
             [NativeTypeName("UCHAR")]
             public byte s_b3;
 
+            /// <include file='_S_un_b_e__Struct.xml' path='doc/member[@name="_S_un_b_e__Struct.s_b4"]/*' />
             [NativeTypeName("UCHAR")]
             public byte s_b4;
         }
 
+        /// <include file='_S_un_w_e__Struct.xml' path='doc/member[@name="_S_un_w_e__Struct"]/*' />
         public partial struct _S_un_w_e__Struct
         {
+            /// <include file='_S_un_w_e__Struct.xml' path='doc/member[@name="_S_un_w_e__Struct.s_w1"]/*' />
             public ushort s_w1;
 
+            /// <include file='_S_un_w_e__Struct.xml' path='doc/member[@name="_S_un_w_e__Struct.s_w2"]/*' />
             public ushort s_w2;
         }
     }

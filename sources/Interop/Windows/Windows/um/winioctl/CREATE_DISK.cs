@@ -8,13 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREATE_DISK.xml' path='doc/member[@name="CREATE_DISK"]/*' />
 public partial struct CREATE_DISK
 {
+    /// <include file='CREATE_DISK.xml' path='doc/member[@name="CREATE_DISK.PartitionStyle"]/*' />
     public PARTITION_STYLE PartitionStyle;
 
+    /// <include file='CREATE_DISK.xml' path='doc/member[@name="CREATE_DISK.Anonymous"]/*' />
     [NativeTypeName("_CREATE_DISK::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:9106:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />
     public ref CREATE_DISK_MBR Mbr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +28,7 @@ public partial struct CREATE_DISK
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Gpt"]/*' />
     public ref CREATE_DISK_GPT Gpt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,12 +38,15 @@ public partial struct CREATE_DISK
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />
         [FieldOffset(0)]
         public CREATE_DISK_MBR Mbr;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Gpt"]/*' />
         [FieldOffset(0)]
         public CREATE_DISK_GPT Gpt;
     }

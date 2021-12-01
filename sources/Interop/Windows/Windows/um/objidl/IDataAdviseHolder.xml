@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDataAdviseHolder.Advise">
+    <summary>
+      <para>Creates a connection between an advise sink and a data object for receiving notifications.</para>
+    </summary>
+    <param name="pDataObject">
+      <para>A pointer to the <see cref="IDataObject" /> interface on the data object for which notifications are requested. If data in this object changes, a notification is sent to the advise sinks that have requested notification.</para>
+    </param>
+    <param name="pFetc">
+      <para>A pointer to a <see cref="FORMATETC" /> structure that contains the specified format, medium, and target device that is of interest to the advise sink requesting notification. For example, one sink may want to know only when the bitmap representation of the data in the data object changes. Another sink may be interested in only the metafile format of the same object. Each advise sink is notified when the data of interest changes. This data is passed back to the advise sink when notification occurs.</para>
+    </param>
+    <param name="advf">
+      <para>A group of flags that  control the advisory connection. Possible values are from the <see cref="ADVF" /> enumeration. However, only some of the possible <b>ADVF</b> values are relevant for this method. The following table briefly describes the relevant values; a more detailed description can be found in the description of the <b>ADVF</b> enumeration.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ADVF_NODATA</b>
+          </description>
+          <description>
+            <para>Asks that no data be sent along with the notification.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ADVF_ONLYONCE</b>
+          </description>
+          <description>
+            <para>Causes the advisory connection to be destroyed after the first notification is sent. An implicit call to <see cref="IDataAdviseHolder.Unadvise" /> is made on behalf of the caller to remove the connection.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ADVF_PRIMEFIRST</b>
+          </description>
+          <description>
+            <para>Causes an initial notification to be sent regardless of whether data has changed from its current state.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ADVF_DATAONSTOP</b>
+          </description>
+          <description>
+            <para>When specified with ADVF_NODATA, this flag causes a last notification with the data included to be sent before the data object is destroyed. When ADVF_NODATA is not specified, this flag has no effect.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pAdvise">
+      <para>A pointer to the <see cref="IAdviseSink" /> interface on the advisory sink that receives the change notification.</para>
+    </param>
+    <param name="pdwConnection">
+      <para>A pointer to a variable that receives a  token that identifies this connection. The calling object can later delete the advisory connection by passing this token to <see cref="IDataAdviseHolder.Unadvise" />. If this value is zero, the connection was not established.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>Through the connection established through this method, the advisory sink can receive future notifications in a call to <see cref="IAdviseSink.OnDataChange" />.</para>
+      <para>An object issues a call to <see cref="IDataObject.DAdvise" /> to request notification on changes to the format, medium, or target device of interest. This data is specified in the <i>pFormatetc</i> parameter. The <b>DAdvise</b> method is usually implemented to call <b>IDataAdviseHolder.Advise</b> to delegate the task of setting up and tracking a connection to the advise holder. When the format, medium, or target device in question changes, the data object calls <see cref="IDataAdviseHolder.SendOnDataChange" /> to send the necessary notifications.</para>
+      <para>The established connection can be deleted by passing the value in <i>pdwConnection</i> in a call to <see cref="IDataAdviseHolder.Unadvise" />.</para>
+    </remarks>
+    <seealso cref="CreateDataAdviseHolder" />
+    <seealso cref="IDataAdviseHolder" />
+    <seealso cref="IDataObject.DAdvise" />
+  </member>
+  <member name="IDataAdviseHolder.EnumAdvise">
+    <summary>
+      <para>Returns an object that can be used to enumerate the current advisory connections.</para>
+    </summary>
+    <param name="ppenumAdvise">
+      <para>A pointer to an <see cref="IEnumSTATDATA" /> pointer variable that receives the interface pointer to the new enumerator object. If the implementation returns <b>NULL</b> in *<i>ppenumAdvise</i>, there are no connections to advise sinks at this time.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK if the enumerator object is successfully instantiated or there are no connections.</para>
+    </returns>
+    <remarks>
+      <para>This method must supply a pointer to an implementation of the <see cref="IEnumSTATDATA" /> interface. Its methods allow you to enumerate the data stored in an array of <see cref="STATDATA" /> structures. You get a pointer to the OLE implementation of <see cref="IDataAdviseHolder" /> through a call to <see cref="CreateDataAdviseHolder" />, and then call <b>IDataAdviseHolder.EnumAdvise</b> to implement <see cref="IDataObject.EnumDAdvise" />.</para>
+      <para>Adding more advisory connections while the enumerator object is active has an undefined effect on the enumeration that results from this method.</para>
+    </remarks>
+    <seealso cref="IDataAdviseHolder" />
+    <seealso cref="IDataObject.EnumDAdvise" />
+    <seealso cref="IEnumSTATDATA" />
+  </member>
+  <member name="IDataAdviseHolder.SendOnDataChange">
+    <summary>
+      <para>Sends notifications to each advise sink for which there is a connection established by calling the <see cref="IAdviseSink.OnDataChange" /> method for each advise sink currently being handled by this instance of the advise holder object.</para>
+    </summary>
+    <param name="pDataObject">
+      <para>A pointer to the <see cref="IDataObject" /> interface on the data object in which the data has just changed. This pointer is used in subsequent calls to <see cref="IAdviseSink.OnDataChange" />.</para>
+    </param>
+    <param name="dwReserved">
+      <para>This parameter is reserved and must be 0.</para>
+    </param>
+    <param name="advf">
+      <para>Container for advise flags that specify how the call to <see cref="IAdviseSink.OnDataChange" /> is made. These flag values are from the enumeration <see cref="ADVF" />. Typically, the value for <i>advf</i> is <b>NULL</b>. The only exception occurs when the data object is shutting down and must send a final notification that includes the actual data to sinks that have specified ADVF_DATAONSTOP and ADVF_NODATA in their call to <see cref="IDataObject.DAdvise" />. In this case, <i>advf</i> contains ADVF_DATAONSTOP.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>The data object must call this method when it detects a change that would be of interest to an advise sink that has previously requested notification.</para>
+      <para>Most notifications include the actual data with them. The only exception is if the ADVF_NODATA flag was previously specified when the connection was initially set up in the <see cref="IDataAdviseHolder.Advise" /> method.</para>
+      <para>Before calling the <see cref="IAdviseSink.OnDataChange" /> method for each advise sink, this method obtains the actual data by calling the <see cref="IDataObject.GetData" /> method through the pointer specified in the <i>pDataObject</i> parameter.</para>
+    </remarks>
+    <seealso cref="IAdviseSink.OnDataChange" />
+    <seealso cref="IDataAdviseHolder" />
+  </member>
+  <member name="IDataAdviseHolder.Unadvise">
+    <summary>
+      <para>Removes a connection between a data object and an advisory sink that was set up through a previous call to <see cref="IDataAdviseHolder.Advise" />. This method is typically called in the implementation of <see cref="IDataObject.DUnadvise" />.</para>
+    </summary>
+    <param name="dwConnection">
+      <para>A token that specifies the connection to be removed. This value was returned by <see cref="IDataAdviseHolder.Advise" /> when the connection was originally established.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NOCONNECTION</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwConnection</i> parameter does not specify a valid connection.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDataAdviseHolder" />
+    <seealso cref="IDataObject.DUnadvise" />
+  </member>
+  <member name="IDataAdviseHolder">
+    <summary>
+      <para>Creates and manages advisory connections between a data object and one or more advise sinks. Its methods are intended to be used to implement the advisory methods of <see cref="IDataObject" />. <b>IDataAdviseHolder</b> is implemented on an advise holder object. Its methods establish and delete data advisory connections and send notification of change in data from a data object to an object that requires this notification, such as an OLE container, which must contain an advise sink.</para>
+      <para>Advise sinks are objects that require notification of change in the data the object contains and implement the <see cref="IAdviseSink" /> interface. Advise sinks are also usually associated with OLE compound document containers.</para>
+    </summary>
+    <seealso cref="IAdviseSink" />
+    <seealso cref="IDataObject" />
+  </member>
+</doc>

@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WOF_VERSION_INFO.xml' path='doc/member[@name="WOF_VERSION_INFO"]/*' />
 public partial struct WOF_VERSION_INFO
 {
+    /// <include file='WOF_VERSION_INFO.xml' path='doc/member[@name="WOF_VERSION_INFO.WofVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint WofVersion;
 }

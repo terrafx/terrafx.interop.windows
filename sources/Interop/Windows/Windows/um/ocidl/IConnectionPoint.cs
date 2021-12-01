@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint"]/*' />
 [Guid("B196B286-BAB4-101A-B69C-00AA00341D07")]
 [NativeTypeName("struct IConnectionPoint : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface
         return ((delegate* unmanaged<IConnectionPoint*, Guid*, void**, int>)(lpVtbl[0]))((IConnectionPoint*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface
         return ((delegate* unmanaged<IConnectionPoint*, uint>)(lpVtbl[1]))((IConnectionPoint*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface
         return ((delegate* unmanaged<IConnectionPoint*, uint>)(lpVtbl[2]))((IConnectionPoint*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint.GetConnectionInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetConnectionInterface([NativeTypeName("IID *")] Guid* pIID)
@@ -46,6 +51,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface
         return ((delegate* unmanaged<IConnectionPoint*, Guid*, int>)(lpVtbl[3]))((IConnectionPoint*)Unsafe.AsPointer(ref this), pIID);
     }
 
+    /// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint.GetConnectionPointContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetConnectionPointContainer(IConnectionPointContainer** ppCPC)
@@ -53,6 +59,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface
         return ((delegate* unmanaged<IConnectionPoint*, IConnectionPointContainer**, int>)(lpVtbl[4]))((IConnectionPoint*)Unsafe.AsPointer(ref this), ppCPC);
     }
 
+    /// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Advise(IUnknown* pUnkSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -60,6 +67,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface
         return ((delegate* unmanaged<IConnectionPoint*, IUnknown*, uint*, int>)(lpVtbl[5]))((IConnectionPoint*)Unsafe.AsPointer(ref this), pUnkSink, pdwCookie);
     }
 
+    /// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint.Unadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
@@ -67,6 +75,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface
         return ((delegate* unmanaged<IConnectionPoint*, uint, int>)(lpVtbl[6]))((IConnectionPoint*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint.EnumConnections"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EnumConnections(IEnumConnections** ppEnum)

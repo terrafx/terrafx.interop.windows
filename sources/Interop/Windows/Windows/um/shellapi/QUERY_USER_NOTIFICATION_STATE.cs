@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QUERY_USER_NOTIFICATION_STATE.xml' path='doc/member[@name="QUERY_USER_NOTIFICATION_STATE"]/*' />
 public enum QUERY_USER_NOTIFICATION_STATE
 {
+    /// <include file='QUERY_USER_NOTIFICATION_STATE.xml' path='doc/member[@name="QUERY_USER_NOTIFICATION_STATE.QUNS_NOT_PRESENT"]/*' />
     QUNS_NOT_PRESENT = 1,
+
+    /// <include file='QUERY_USER_NOTIFICATION_STATE.xml' path='doc/member[@name="QUERY_USER_NOTIFICATION_STATE.QUNS_BUSY"]/*' />
     QUNS_BUSY = 2,
+
+    /// <include file='QUERY_USER_NOTIFICATION_STATE.xml' path='doc/member[@name="QUERY_USER_NOTIFICATION_STATE.QUNS_RUNNING_D3D_FULL_SCREEN"]/*' />
     QUNS_RUNNING_D3D_FULL_SCREEN = 3,
+
+    /// <include file='QUERY_USER_NOTIFICATION_STATE.xml' path='doc/member[@name="QUERY_USER_NOTIFICATION_STATE.QUNS_PRESENTATION_MODE"]/*' />
     QUNS_PRESENTATION_MODE = 4,
+
+    /// <include file='QUERY_USER_NOTIFICATION_STATE.xml' path='doc/member[@name="QUERY_USER_NOTIFICATION_STATE.QUNS_ACCEPTS_NOTIFICATIONS"]/*' />
     QUNS_ACCEPTS_NOTIFICATIONS = 5,
+
+    /// <include file='QUERY_USER_NOTIFICATION_STATE.xml' path='doc/member[@name="QUERY_USER_NOTIFICATION_STATE.QUNS_QUIET_TIME"]/*' />
     QUNS_QUIET_TIME = 6,
+
+    /// <include file='QUERY_USER_NOTIFICATION_STATE.xml' path='doc/member[@name="QUERY_USER_NOTIFICATION_STATE.QUNS_APP"]/*' />
     QUNS_APP = 7,
 }

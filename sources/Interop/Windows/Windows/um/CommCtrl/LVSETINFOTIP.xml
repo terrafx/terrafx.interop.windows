@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LVSETINFOTIP">
+    <summary>
+      <para>Provides information about tooltip text that is to be set.</para>
+    </summary>
+  </member>
+  <member name="LVSETINFOTIP.cbSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size of the <b>LVSETINFOTIP</b> structure.</para>
+    </summary>
+  </member>
+  <member name="LVSETINFOTIP.dwFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>Flag that specifies how the text should be set. Set to zero.</para>
+    </summary>
+  </member>
+  <member name="LVSETINFOTIP.pszText">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a></b></para>
+      <para>Pointer to a Unicode string that contains the tooltip text.</para>
+    </summary>
+  </member>
+  <member name="LVSETINFOTIP.iItem">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Value of type <b>int</b> that contains the
+zero-based index of the item to which this structure refers.</para>
+    </summary>
+  </member>
+  <member name="LVSETINFOTIP.iSubItem">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Value of type <b>int</b> that contains the one-based index of the subitem to which this structure refers.</para>
+    </summary>
+  </member>
+</doc>

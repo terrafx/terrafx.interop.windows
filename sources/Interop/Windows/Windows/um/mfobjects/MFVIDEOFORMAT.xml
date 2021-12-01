@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFVIDEOFORMAT">
+    <summary>
+      <para>Describes a video format.</para>
+    </summary>
+    <remarks>
+      <para>Applications should avoid using this structure. Instead, it is recommended that applications use attributes to describe the video format. For a list of media type attributes, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-attributes">Media Type Attributes</a>. With attributes, you can set just the format information that you know, which is easier (and more likely to be accurate) than trying to fill in complete format information for the <b>MFVIDEOFORMAT</b> structure.</para>
+      <para>To initialize a media type object from an <b>MFVIDEOFORMAT</b> structure, call <see cref="MFInitMediaTypeFromMFVideoFormat" />.</para>
+      <para>You can use the <b>MFVIDEOFORMAT</b> structure as the format block for a DirectShow media type. Set the format GUID to FORMAT_MFVideoFormat.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</seealso>
+  </member>
+  <member name="MFVIDEOFORMAT.dwSize">
+    <summary>
+      <para>Size of the structure, in bytes. This value includes the size of the palette entries that may appear after the <b>surfaceInfo</b> member.</para>
+    </summary>
+  </member>
+  <member name="MFVIDEOFORMAT.videoInfo">
+    <summary>
+      <para>
+        <see cref="MFVideoInfo" /> structure. This structure contains information that applies to both compressed and uncompressed formats.</para>
+    </summary>
+  </member>
+  <member name="MFVIDEOFORMAT.guidFormat">
+    <summary>
+      <para>Video subtype. See <a href="https://docs.microsoft.com//windows/desktop/medfound/video-subtype-guids">Video Subtype GUIDs</a>.</para>
+    </summary>
+  </member>
+  <member name="MFVIDEOFORMAT.compressedInfo">
+    <summary>
+      <para>
+        <see cref="MFVideoCompressedInfo" /> structure. This structure contains information that applies only to compressed formats.</para>
+    </summary>
+  </member>
+  <member name="MFVIDEOFORMAT.surfaceInfo">
+    <summary>
+      <para>
+        <see cref="MFVideoSurfaceInfo" /> structure. This structure contains information that applies only to uncompressed formats.</para>
+    </summary>
+  </member>
+</doc>

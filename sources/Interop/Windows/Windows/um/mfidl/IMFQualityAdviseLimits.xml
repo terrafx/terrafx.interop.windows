@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFQualityAdviseLimits.GetMaximumDropMode">
+    <summary>
+      <para>Gets the maximum <i>drop mode</i>. A higher drop mode means that the object will, if needed, drop samples more aggressively to match the presentation clock.</para>
+    </summary>
+    <param name="peDropMode">
+      <para>Receives the maximum drop mode, specified as a member of the <see cref="MF_QUALITY_DROP_MODE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To get the current drop mode, call the <see cref="IMFQualityAdvise.GetDropMode" /> method. To set the drop mode, call the <see cref="IMFQualityAdvise.SetDropMode" /> method.</para>
+    </remarks>
+    <seealso cref="IMFQualityAdviseLimits" />
+  </member>
+  <member name="IMFQualityAdviseLimits.GetMinimumQualityLevel">
+    <summary>
+      <para>Gets the minimum quality level that is supported by the component.</para>
+    </summary>
+    <param name="peQualityLevel">
+      <para>Receives the minimum quality level, specified as a member of the <see cref="MF_QUALITY_LEVEL" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To get the current quality level, call the <see cref="IMFQualityAdvise.GetQualityLevel" /> method. To set the quality level, call the <see cref="IMFQualityAdvise.SetQualityLevel" /> method.</para>
+    </remarks>
+    <seealso cref="IMFQualityAdviseLimits" />
+  </member>
+  <member name="IMFQualityAdviseLimits">
+    <summary>
+      <para>Queries an object for the number of <i>quality modes</i> it supports. Quality modes are used to adjust the trade-off between quality and speed when rendering audio or video.</para>
+      <para>The default presenter for the <i>enhanced video renderer</i> (EVR) implements this interface. The EVR uses the interface to respond to quality messages from the quality manager.</para>
+    </summary>
+    <seealso cref="IMFQualityAdvise" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioHrtfEnvironmentType">
+    <summary>
+      <para>Specifies the type of acoustic environment that is simulated when audio is processed for an <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfEnvironmentType.SpatialAudioHrtfEnvironment_Small">
+    <summary>
+      <para>A small room.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfEnvironmentType.SpatialAudioHrtfEnvironment_Medium">
+    <summary>
+      <para>A medium-sized room.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfEnvironmentType.SpatialAudioHrtfEnvironment_Large">
+    <summary>
+      <para>A large room.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfEnvironmentType.SpatialAudioHrtfEnvironment_Outdoors">
+    <summary>
+      <para>An outdoor space.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfEnvironmentType.SpatialAudioHrtfEnvironment_Average">
+    <summary>
+      <para>Reserved for Microsoft use. Apps should not use this value.</para>
+    </summary>
+  </member>
+</doc>

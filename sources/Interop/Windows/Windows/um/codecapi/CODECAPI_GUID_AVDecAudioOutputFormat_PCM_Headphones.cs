@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Headphones.xml' path='doc/member[@name="CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Headphones"]/*' />
 [Guid("696E1D34-548F-4036-825F-7026C60011BD")]
 public partial struct CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Headphones
 {

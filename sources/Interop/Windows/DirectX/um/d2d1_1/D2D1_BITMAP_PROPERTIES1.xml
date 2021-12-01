@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_BITMAP_PROPERTIES1">
+    <summary>
+      <para>This structure allows a <see cref="ID2D1Bitmap1" /> to be created with bitmap options and color context information available.</para>
+    </summary>
+    <remarks>
+      <para>If both <b>dpiX</b> and <b>dpiY</b> are 0, the dpi of the bitmap will be set to the desktop dpi if the device context is a windowed context, or 96 dpi for any other device context.</para>
+    </remarks>
+    <seealso cref="ID2D1DeviceContext.CreateBitmap" />
+  </member>
+  <member name="D2D1_BITMAP_PROPERTIES1.pixelFormat">
+    <summary>
+      <para>Type: <b><see cref="D2D1_PIXEL_FORMAT" /></b></para>
+      <para>The DXGI format and alpha mode to create the bitmap with.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAP_PROPERTIES1.dpiX">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The bitmap dpi in the x direction.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAP_PROPERTIES1.dpiY">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The bitmap dpi in the y direction.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAP_PROPERTIES1.bitmapOptions">
+    <summary>
+      <para>Type: <b><see cref="D2D1_BITMAP_OPTIONS" /></b></para>
+      <para>The special creation options of the bitmap.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAP_PROPERTIES1.colorContext">
+    <summary>
+      <para>Type: <b><see cref="ID2D1ColorContext" />*</b></para>
+      <para>The optionally specified color context information.</para>
+    </summary>
+  </member>
+</doc>

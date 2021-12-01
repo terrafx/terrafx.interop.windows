@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMP12MuxSysVideoLock.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxSysVideoLock"]/*' />
 [Guid("B8296408-2430-4D37-A2A1-95B3E435A91D")]
 public partial struct CODECAPI_AVEncMP12MuxSysVideoLock
 {

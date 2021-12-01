@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITaskbarList3.RegisterTab">
+    <summary>
+      <para>Informs the taskbar that a new tab or document thumbnail has been provided for display in an application's taskbar group flyout.</para>
+    </summary>
+    <param name="hwndTab">
+      <para>Type: <b>HWND</b></para>
+      <para>Handle of the tab or document window. This value is required and cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="hwndMDI">
+      <para>Type: <b>HWND</b></para>
+      <para>Handle of the application's main window. This value tells the taskbar which application's preview group to attach the new thumbnail to. This value is required and cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. If either parameter is <b>NULL</b>, this method returns an error.</para>
+    </returns>
+    <remarks>
+      <para>By itself, registering a tab thumbnail alone will not result in its being displayed. You must also call <see cref="ITaskbarList3.SetTabOrder" /> to instruct the group where to display it.</para>
+    </remarks>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso cref="ITaskbarList3.SetTabActive" />
+    <seealso cref="ITaskbarList3.SetTabOrder" />
+    <seealso cref="ITaskbarList3.UnregisterTab" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.SetOverlayIcon">
+    <summary>
+      <para>Applies an overlay to a taskbar button to indicate application status or a notification to the user.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the window whose associated taskbar button receives the overlay. This handle must belong to a calling process associated with the button's application and must be a valid <b>HWND</b> or the call is ignored.</para>
+    </param>
+    <param name="hIcon">
+      <para>Type: <b>HICON</b></para>
+      <para>The handle of an icon to use as the overlay. This should be a small icon, measuring 16x16 pixels at 96 dpi. If an overlay icon is already applied to the taskbar button, that existing overlay is replaced.</para>
+      <para>This value can be <b>NULL</b>. How a <b>NULL</b> value is handled depends on whether the taskbar button represents a single window or a group of windows.</para>
+      <list type="bullet">
+        <item>
+          <description>If the taskbar button represents a single window, the overlay icon is removed from the display.</description>
+        </item>
+        <item>
+          <description>If the taskbar button represents a group of windows and a previous overlay is still available (received earlier than the current overlay, but not yet freed by a <b>NULL</b> value), then that previous overlay is displayed in place of the current overlay.</description>
+        </item>
+      </list>
+      <para>It is the responsibility of the calling application to free <i>hIcon</i> when it is no longer needed. This can generally be done after you call <b>SetOverlayIcon</b> because the taskbar makes and uses its own copy of the icon.</para>
+    </param>
+    <param name="pszDescription">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a string that provides an alt text version of the information conveyed by the overlay, for accessibility purposes.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>In versions of Windows earlier than Windows 7, applications often used icons in the notification area of the taskbar to display application status and notifications to the user. The Windows 7 taskbar allows an application to provide that same sort of user feedback through its taskbar button, centralizing more of the application information in one place. These overlays are similar to existing overlays used for shortcut icons or security notifications, displayed at the lower-right corner of the button.</para>
+      <para>The following illustration shows an overlay (the small, green square that indicates the user status as "Available") applied to the far-right taskbar button.</para>
+      <para>
+        <img alt="Screen shot of the Windows Messenger taskbar button with an overlay to indicate an Available status" src="https://docs.microsoft.com/windows/win32/api/ShObjIdl_core/images/TaskbarOverlay.png" />
+      </para>
+      <para>Icon overlays serve as a contextual notification of status, and are intended to negate the need for a separate notification area status icon to communicate that information to the user. The application designer must decide during the development cycle which method—icon overlay or notification area status icon—best serves that application. Overlay icons are intended to supply important, long-standing status or notifications such as network status, messenger status, or new mail. They should not be frequently changed, nor should they be animated.</para>
+      <para>To display an overlay icon, the taskbar must be in the default large icon mode. If the taskbar is configured through <b>Taskbar and Start Menu Properties</b> to show small icons, overlays cannot be applied and calls to this method are ignored.</para>
+      <para>Because a single overlay is applied to the taskbar button instead of to the individual window thumbnails, this is a per-group feature rather than per-window. Requests for overlay icons can be received from individual windows in a taskbar group, but they do not queue. The last overlay received is the overlay shown. If the last overlay received is removed, the overlay that it replaced is restored so long as it is still active. As an example, windows 1, 2, and 3 set, in order, overlays A, B, and C. Because overlay C was received last, it is shown on the taskbar button. Window 2 calls <b>SetOverlayIcon</b> with a <b>NULL</b> value to remove overlay B. Window 3 then does the same to remove overlay C. Because window 1's overlay A is still active, that overlay is then displayed on the taskbar button.</para>
+      <para>If Windows Explorer shuts down unexpectedly, overlays are not restored when Windows Explorer is restored. The application should wait to receive the <b>TaskbarButtonCreated</b> message that indicates that Windows Explorer has restarted and the taskbar button has been re-created, and then call <b>SetOverlayIcon</b> again to reapply the overlay.</para>
+    </remarks>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.SetProgressState">
+    <summary>
+      <para>Sets the type and state of the progress indicator displayed on a taskbar button.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the window in which the progress of an operation is being shown. This window's associated taskbar button will display the progress bar.</para>
+    </param>
+    <param name="tbpFlags">
+      <para>Type: <b>TBPFLAG</b></para>
+      <para>Flags that control the current state of the progress button. Specify only one of the following flags; all states are mutually exclusive of all others.</para>
+      <h4>TBPF_NOPROGRESS (0x00000000)</h4>
+      <para>Stops displaying progress and returns the button to its normal state. Call this method with this flag to dismiss the progress bar when the operation is complete or canceled.</para>
+      <h4>TBPF_INDETERMINATE (0x00000001)</h4>
+      <para>The progress indicator does not grow in size, but cycles repeatedly along the length of the taskbar button. This indicates activity without specifying what proportion of the progress is complete. Progress is taking place, but there is no prediction as to how long the operation will take.</para>
+      <h4>TBPF_NORMAL (0x00000002)</h4>
+      <para>The progress indicator grows in size from left to right in proportion to the estimated amount of the operation completed. This is a determinate progress indicator; a prediction is being made as to the duration of the operation.</para>
+      <h4>TBPF_ERROR (0x00000004)</h4>
+      <para>The progress indicator turns red to show that an error has occurred in one of the windows that is broadcasting progress. This is a determinate state. If the progress indicator is in the indeterminate state, it switches to a red determinate display of a generic percentage not indicative of actual progress.</para>
+      <h4>TBPF_PAUSED (0x00000008)</h4>
+      <para>The progress indicator turns yellow to show that progress is currently stopped in one of the windows but can be resumed by the user. No error condition exists and nothing is preventing the progress from continuing. This is a determinate state. If the progress indicator is in the indeterminate state, it switches to a yellow determinate display of a generic percentage not indicative of actual progress.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Progress bar information is not shown in high contrast color schemes to guarantee that no accessibility needs are compromised.</para>
+      <para>Developers accustomed to the existing <a href="https://docs.microsoft.com//windows/desktop/Controls/progress-bar-control-reference">progress bar</a> control should find the taskbar button progress indicator to be a similar experience both in concept and visuals. Here, the taskbar button itself becomes a progress bar. A taskbar button's progress indicator should be a reflection of a more detailed progress bar in the associated window. This allows the user to see specifics, such as the percentage number and the amount of time remaining, that cannot be shown in a taskbar button. Also, because a taskbar button can show the progress of only a single window in a group, it allows the user to check the progress of individual windows. It also provides progress information to the user when the taskbar button cannot, such as in a high-contrast color scheme.</para>
+      <para>Note that a taskbar button progress bar is not intended for use with normally peripheral actions such as the loading of a webpage or the printing of a document. That type of progress should continue to be shown in a window's <a href="https://docs.microsoft.com//windows/desktop/Controls/status-bar-reference">status bar</a>.</para>
+      <para>The progress indicator is displayed between the taskbar button's icon or text and the background. If progress is shown for both the active taskbar button and an inactive button, shading in the respective progress bars is such that the active button is still obvious to the user. Also, button functionality such as the display of thumbnails continues to work normally when the button is being used to display progress.</para>
+      <para>When exiting an error or paused state, call this method again with the <b>TBPF_NORMAL</b> or <b>TBPF_INDETERMINATE</b> flag to continue in the original state or <b>TBPF_NOPROGRESS</b> if the operation is canceled.</para>
+      <h3>How the Taskbar Button Chooses the Progress Indicator for a Group</h3>
+      <para>The taskbar button can show a progress indicator for only one window at a time. This includes the situation where the taskbar button represents a group and more than one window in that group is broadcasting progress information. In that case, the taskbar button chooses its progress display based on state priority. State priority is shown in the following table with priority 1 being the highest.</para>
+      <list type="table">
+        <listheader>
+          <description>Priority</description>
+          <description>State</description>
+        </listheader>
+        <item>
+          <description>1</description>
+          <description>TBPF_ERROR</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>TBPF_PAUSED</description>
+        </item>
+        <item>
+          <description>3</description>
+          <description>TBPF_NORMAL</description>
+        </item>
+        <item>
+          <description>4</description>
+          <description>TBPF_INDETERMINATE</description>
+        </item>
+      </list>
+      <para>Changing a window's state changes its priority in relation to other windows in the group which in turn might change which window in a group is used for the progress indicator in the taskbar button.</para>
+      <para>In the case of a priority collision between two windows that are broadcasting determinate progress, the window with the least progress is used.</para>
+      <para>Based on this priority, the indeterminate progress indicator can be displayed in the taskbar button only in these cases:</para>
+      <list type="bullet">
+        <item>
+          <description>The taskbar button does not represent a group and the single window that it represents has set TBPF_INDETERMINATE.</description>
+        </item>
+        <item>
+          <description>The taskbar button represents a group, only one window in that group is broadcasting progress information, and that window has set <b>TBPF_INDETERMINATE</b>.</description>
+        </item>
+        <item>
+          <description>The taskbar button represents a group, multiple windows in that group are broadcasting progress information, and all of those windows have set <b>TBPF_INDETERMINATE</b>.</description>
+        </item>
+      </list>
+      <para>A determinate progress indicator can be displayed in these cases:</para>
+      <list type="bullet">
+        <item>
+          <description>The taskbar button does not represent a group and the single window that it represents is broadcasting determinate progress information.</description>
+        </item>
+        <item>
+          <description>The taskbar button represents a group, only one window in that group is broadcasting progress information, and that window is broadcasting determinate progress information.</description>
+        </item>
+        <item>
+          <description>The taskbar button represents a group, multiple windows in that group are broadcasting progress information, at least one of those windows is broadcasting determinate progress information, and no window has set <b>TBPF_ERROR</b> or <b>TBPF_PAUSED</b>.</description>
+        </item>
+      </list>
+      <para>Note that a call to <see cref="SetProgressValue" /> will switch a progress indicator currently in an indeterminate mode (<b>TBPF_INDETERMINATE</b>) to a normal (determinate) display and clear the <b>TBPF_INDETERMINATE</b> flag.</para>
+    </remarks>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso cref="ITaskbarList3.SetProgressValue" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.SetProgressValue">
+    <summary>
+      <para>Displays or updates a progress bar hosted in a taskbar button to show the specific percentage completed of the full operation.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the window whose associated taskbar button is being used as a progress indicator.</para>
+    </param>
+    <param name="ullCompleted">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>An application-defined value that indicates the proportion of the operation that has been completed at the time the method is called.</para>
+    </param>
+    <param name="ullTotal">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>An application-defined value that specifies the value <i>ullCompleted</i> will have when the operation is complete.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <h3>Determinate Progress Bar Lifecycle</h3>
+      <para>An application first calls <b>SetProgressValue</b> to begin the display of a determinate progress bar, and then calls it again as needed to update the bar as the progress changes. When progress is complete, the application must call <see cref="SetProgressState" /> with the TBPF_NOPROGRESS flag to dismiss the progress bar.</para>
+      <h3>How the Taskbar Button Chooses the Progress Indicator for a Group</h3>
+      <para>The taskbar button can show a progress indicator for only one window at a time. When the taskbar button represents a group and more than one of the windows in that group are broadcasting progress information, the taskbar button chooses its progress display based on the following state priority.</para>
+      <list type="table">
+        <listheader>
+          <description>Priority</description>
+          <description>State</description>
+        </listheader>
+        <item>
+          <description>1</description>
+          <description>TBPF_ERROR</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>TBPF_PAUSED</description>
+        </item>
+        <item>
+          <description>3</description>
+          <description>TBPF_NORMAL</description>
+        </item>
+        <item>
+          <description>4</description>
+          <description>TBPF_INDETERMINATE</description>
+        </item>
+      </list>
+      <para>Unless <see cref="SetProgressState" /> has set a blocking state (TBPF_ERROR or TBPF_PAUSED) for the window, a call to <b>SetProgressValue</b> assumes the TBPF_NORMAL state even if it is not explicitly set. A call to <b>SetProgressValue</b> overrides and clears the TBPF_INDETERMINATE state.</para>
+      <para>In the case of a priority collision where two windows are broadcasting determinate progress, the window with the least progress is used.</para>
+      <para>Based on that priority, this determinate (specific percentage) progress indicator can be displayed in these cases:</para>
+      <list type="bullet">
+        <item>
+          <description>The taskbar button does not represent a group and the single window that it represents is broadcasting determinate progress information through this method.</description>
+        </item>
+        <item>
+          <description>The taskbar button represents a group, only one window in that group is broadcasting progress information, and that window is broadcasting determinate progress information through this method.</description>
+        </item>
+        <item>
+          <description>The taskbar button represents a group, multiple windows in that group are broadcasting progress information, at least one of those windows is broadcasting progress information through this method, and none of those windows has set the <see cref="TBPF_ERROR" /> or <b>TBPF_PAUSED</b> state.</description>
+        </item>
+      </list>
+      <para>If a window in the group has set <see cref="TBPF_ERROR" /> or <b>TBPF_PAUSED</b>, that state will be used for the button display. However, you can still make calls to <b>SetProgressValue</b> on other, unblocked windows in the group to update their progress in the background.</para>
+      <h4>Examples</h4>
+      <para>Here is an example of how an application could use <see cref="ITaskbarList3" /> to display progress while it is performing operations.</para>
+      <code>HRESULT CMyApp.ShowProgressInTaskbar(HWND hwnd, __in ITaskbarList3 *pTL)
+{
+    // Set the progress state of the button to indeterminate while you calculate
+    // the number of operations to be performed.
+    HRESULT hr = pTL-&gt;SetProgressState(hwnd, TBPF_INDETERMINATE);
+
+    // Calculate the number of operations to perform.
+    int cTotalOperations = _CalculateNumberOfOperationsToPerform();
+
+    for (int i=0; i &lt; cTotalOperations &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; SUCCEEDED(hr); i++)
+    {
+        // Update the progress. This call to SetProgressValue cancels the
+        // indeterminate state and puts the button into normal progress mode.
+        pTL-&gt;SetProgressValue(hwnd, i, cTotalOperations);
+
+        // Do whatever operation your application needs to perform.
+        hr = _PerformOperation(i);
+    }
+
+    // Tell the button that progress no longer needs to be displayed.
+    pTL-&gt;SetProgressState(hwnd, TBPF_NOPROGRESS);
+
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso cref="ITaskbarList3.SetProgressState" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.SetTabActive">
+    <summary>
+      <para>Informs the taskbar that a tab or document window has been made the active window.</para>
+    </summary>
+    <param name="hwndTab">
+      <para>Type: <b>HWND</b></para>
+      <para>Handle of the active tab window. This handle must already be registered through <see cref="ITaskbarList3.RegisterTab" />. This value can be <b>NULL</b> if no tab is active.</para>
+    </param>
+    <param name="hwndMDI">
+      <para>Type: <b>HWND</b></para>
+      <para>Handle of the application's main window. This value tells the taskbar which group the thumbnail is a member of. This value is required and cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="dwReserved">
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved; set to 0.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso cref="ITaskbarList3.RegisterTab" />
+    <seealso cref="ITaskbarList3.SetTabOrder" />
+    <seealso cref="ITaskbarList3.UnregisterTab" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.SetTabOrder">
+    <summary>
+      <para>Inserts a new thumbnail into a tabbed-document interface (TDI) or multiple-document interface (MDI) application's group flyout or moves an existing thumbnail to a new position in the application's group.</para>
+    </summary>
+    <param name="hwndTab">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the tab window whose thumbnail is being placed. This value is required, must already be registered through <see cref="ITaskbarList3.RegisterTab" />, and cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="hwndInsertBefore">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the tab window whose thumbnail that <i>hwndTab</i> is inserted to the left of. This handle must already be registered through <see cref="ITaskbarList3.RegisterTab" />. If this value is <b>NULL</b>, the new thumbnail is added to the end of the list.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method must be called for the thumbnail to be shown in the group. Call it after you have called <see cref="ITaskbarList3.RegisterTab" />.</para>
+    </remarks>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso cref="ITaskbarList3.RegisterTab" />
+    <seealso cref="ITaskbarList3.SetTabActive" />
+    <seealso cref="ITaskbarList3.UnregisterTab" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.SetThumbnailClip">
+    <summary>
+      <para>Selects a portion of a window's client area to display as that window's thumbnail in the taskbar.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle to a window represented in the taskbar.</para>
+    </param>
+    <param name="prcClip">
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>A pointer to a <see cref="RECT" /> structure that specifies a selection within the window's client area, relative to the upper-left corner of that client area. To clear a clip that is already in place and return to the default display of the thumbnail, set this parameter to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.SetThumbnailTooltip">
+    <summary>
+      <para>Specifies or updates the text of the tooltip that is displayed when the mouse pointer rests on an individual preview thumbnail in a taskbar button flyout.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle to the window whose thumbnail displays the tooltip. This handle must belong to the calling process.</para>
+    </param>
+    <param name="pszTip">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>The pointer to the text to be displayed in the tooltip. This value can be <b>NULL</b>, in which case the title of the window specified by <i>hwnd</i> is used as the tooltip.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.ThumbBarAddButtons">
+    <summary>
+      <para>Adds a thumbnail toolbar with a specified set of buttons to the thumbnail image of a window in a taskbar button flyout.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the window whose thumbnail representation will receive the toolbar. This handle must belong to the calling process.</para>
+    </param>
+    <param name="cButtons">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of buttons defined in the array pointed to by <i>pButton</i>. The maximum number of buttons allowed is 7.</para>
+    </param>
+    <param name="pButton">
+      <para>Type: <b>LPTHUMBBUTTON</b></para>
+      <para>A pointer to an array of <see cref="THUMBBUTTON" /> structures. Each <b>THUMBBUTTON</b> defines an individual button to be added to the toolbar. Buttons cannot be added or deleted later, so this must be the full defined set. Buttons also cannot be reordered, so their order in the array, which is the order in which they are displayed left to right, will be their permanent order.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>hwnd</i> parameter does not specify a handle that belongs to the process or does not specify a window that is associated with a taskbar button. This value is also returned if <i>pButton</i> is less than 1 or greater than 7.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method allows an application to define buttons for an active toolbar control that is embedded in a window's taskbar thumbnail preview. This provides access to the window's essential commands without making the user restore or activate the window. For example, Windows Media Player might offer standard media transport controls such as play, pause, mute, and stop.</para>
+      <para>The toolbar used in the thumbnail is essentially a standard <a href="https://docs.microsoft.com//windows/desktop/Controls/toolbar-control-reference">toolbar</a> control. It has a maximum of seven buttons, and it is center-aligned, transparent, and displayed in an area beneath the thumbnail rather than covering any portion of it. Each button's ID, image, tooltip, and state are defined in a <see cref="THUMBBUTTON" /> structure, which is then passed to the taskbar. The application can then subsequently show, alter, or hide buttons from the thumbnail toolbar as required by its current state by calling <see cref="ITaskbarList3.ThumbBarUpdateButtons" />.</para>
+      <para>When a button in a thumbnail toolbar is clicked, the window associated with that thumbnail is sent a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> message with the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms632657(v=vs.85)">HIWORD</a> of its <i>wParam</i> parameter set to <b>THBN_CLICKED</b> and the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms632659(v=vs.85)">LOWORD</a> to the button ID.</para>
+      <para>After a toolbar has been added to a thumbnail, buttons can be altered only through <see cref="ITaskbarList3.ThumbBarUpdateButtons" />. While individual buttons cannot be added or removed, they can be shown and hidden through <b>ThumbBarUpdateButtons</b> as needed. The toolbar itself cannot be removed without re-creating the window itself.</para>
+      <para>Because there is a limited amount of space in which to display thumbnails, as well as a constantly changing number of thumbnails to display, applications are not guaranteed a specific toolbar size. If display space is low, buttons in the toolbar are truncated from right to left as needed. Therefore, an application should prioritize the commands associated with its buttons to ensure that those of highest priority are to the left and are therefore least likely to be truncated.</para>
+      <para>Thumbnail toolbars are displayed only when thumbnails are being displayed. For instance, if a taskbar button represents a group with more open windows than there is room to display thumbnails for, the UI reverts to a legacy menu rather than thumbnails.</para>
+      <h4>Examples</h4>
+      <para>The following example shows how to use <b>ThumbBarAddButtons</b> to add a toolbar that contains two buttons to a thumbnail on the extended taskbar.</para>
+      <code>HRESULT AddThumbarButtons(HWND hwnd, HIMAGELIST himl, HIMAGELIST himlHot)
+{
+    // Define an array of two buttons. These buttons provide images through an
+    // image list and also provide tooltips.
+    DWORD dwMask = THB_BITMAP | THB_TOOLTIP | THB_FLAGS;
+
+    THUMBBUTTON thbButtons[2];
+    thbButtons[0].dwMask = dwMask;
+    thbButtons[0].iId = 0;
+    thbButtons[0].iBitmap = 0;
+    thbButtons[0].pszTip = TEXT("Button 1");
+    thbButtons[0].dwFlags = THBF_DISMISSONCLICK;
+
+    dwMask = THB_BITMAP | THB_TOOLTIP;
+    thbButtons[1].dwMask = dwMask;
+    thbButtons[1].iId = 1;
+    thbButtons[1].iBitmap = 1;
+    thbButtons[1].pszTip = TEXT("Button 2");
+
+    // Create an instance of ITaskbarList3
+    ITaskBarList3 *ptbl;
+    HRESULT hr = CoCreateInstance(CLSID_TaskbarList,
+                                  NULL,
+                                  CLSCTX_INPROC_SERVER,
+                                  IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;ptbl);
+
+    if (SUCCEEDED(hr))
+    {
+        // Declare the image list that contains the button images.
+        hr = ptbl-&gt;ThumbBarSetImageList(hwnd, himl);
+
+        if (SUCCEEDED(hr))
+        {
+            // Attach the toolbar to the thumbnail.
+            hr = ptbl-&gt;ThumbBarAddButtons(hwnd, ARRAYSIZE(thbButtons), &amp;amp;amp;amp;amp;amp;thbButtons);
+        }
+        ptbl-&gt;Release();
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso cref="ITaskbarList3.ThumbBarSetImageList" />
+    <seealso cref="ITaskbarList3.ThumbBarUpdateButtons" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.ThumbBarSetImageList">
+    <summary>
+      <para>Specifies an image list that contains button images for a toolbar embedded in a thumbnail image of a window in a taskbar button flyout.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the window whose thumbnail representation contains the toolbar to be updated. This handle must belong to the calling process.</para>
+    </param>
+    <param name="himl">
+      <para>Type: <b>HIMAGELIST</b></para>
+      <para>The handle of the image list that contains all button images to be used in the toolbar.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Applications must provide these button images:</para>
+      <list type="bullet">
+        <item>
+          <description>The button in its default active state.</description>
+        </item>
+        <item>
+          <description>Images suitable for use with high-dpi (dots per inch) displays.</description>
+        </item>
+      </list>
+      <para>Images must be 32-bit and of dimensions <see cref="GetSystemMetrics" />(SM_CXICON) x <see cref="GetSystemMetrics" />(SM_CYICON). The toolbar itself provides visuals for a button's clicked, disabled, and hover states.</para>
+      <h4>Examples</h4>
+      <para>The following example shows how to create a thumbnail toolbar with two buttons whose images come from an image list.</para>
+      <code>
+HRESULT AddThumbarButtons(HWND hwnd, HIMAGELIST himl, HIMAGELIST himlHot)
+{
+    // Define an array of two buttons. These buttons provide images through an
+    // image list and also provide tooltips.
+    DWORD dwMask = THB_BITMAP | THB_TOOLTIP | THB_FLAGS;
+
+    THUMBBUTON thbButtons[2];
+    thbButtons[0].dwMask = dwMask;
+    thbButtons[0].iId = 0;
+    thbButtons[0].iBitmap = 0;
+    thbButtons[0].pszTip = TEXT("Button 1");
+    thbButtons[0].dwFlags = THBF_DISMISSONCLICK;
+
+    dwMask = THB_BITMAP | THB_TOOLTIP;
+    thbButtons[1].dwMask = dwMask;
+    thbButtons[1].iId = 1;
+    thbButtons[1].iBitmap = 1;
+    thbButtons[1].pszTip = TEXT("Button 2");
+
+    // Create an instance of ITaskbarList3
+    ITaskBarList3 *ptbl;
+    HRESULT hr = CoCreateInstance(CLSID_TaskbarList,
+                                  NULL,
+                                  CLSCTX_INPROC_SERVER,
+                                  IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;ptbl);
+
+    if (SUCCEEDED(hr))
+    {
+        // Declare the image list that contains the button images.
+        hr = ptbl-&gt;ThumbBarSetImageList(hwnd, himl);
+
+        if (SUCCEEDED(hr))
+        {
+            // Attach the toolbar to the thumbnail.
+            hr = ptbl-&gt;ThumbBarAddButtons(hwnd, ARRAYSIZE(thbButtons), &amp;amp;amp;amp;amp;amp;thbButtons);
+        }
+        ptbl-&gt;Release();
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso cref="ITaskbarList3.ThumbBarAddButtons" />
+    <seealso cref="ITaskbarList3.ThumbBarUpdateButtons" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.ThumbBarUpdateButtons">
+    <summary>
+      <para>Shows, enables, disables, or hides buttons in a thumbnail toolbar as required by the window's current state. A thumbnail toolbar is a toolbar embedded in a thumbnail image of a window in a taskbar button flyout.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the window whose thumbnail representation contains the toolbar.</para>
+    </param>
+    <param name="cButtons">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of buttons defined in the array pointed to by <i>pButton</i>. The maximum number of buttons allowed is 7. This array contains only structures that represent existing buttons that are being updated.</para>
+    </param>
+    <param name="pButton">
+      <para>Type: <b>LPTHUMBBUTTON</b></para>
+      <para>A pointer to an array of <see cref="THUMBBUTTON" /> structures. Each <b>THUMBBUTTON</b> defines an individual button. If the button already exists (the <b>iId</b> value is already defined), then that existing button is updated with the information provided in the structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Because there is a limited amount of space in which to display thumbnails, as well as a constantly changing number of thumbnails to display, applications are not guaranteed a specific toolbar size. If display space is low, buttons in the toolbar are truncated from right to left as needed. Therefore, an application should prioritize the commands associated with its buttons to ensure that those of highest priority are to the left and are therefore least likely to be truncated.</para>
+      <para>Thumbnail toolbars are displayed only when thumbnails are being displayed on the taskbar. For instance, if a taskbar button represents a group with more open windows than there is room to display thumbnails for, the UI reverts to a legacy menu rather than thumbnails.</para>
+      <h4>Examples</h4>
+      <para>The following example shows how to use <b>ThumbBarUpdateButtons</b> to change the text and image on an existing button in a thumbnail toolbar on the extended taskbar.</para>
+      <code>HRESULT UpdateThumbarButton(HWND hwnd)
+{
+    // Define a single structure for the button to update. The ID is that
+    // of an existing button, so the other information (bitmap index and
+    // tooltip) overwrites the existing values, updating the button.
+    THUMBBUTON thbButton;
+    thbButton.dwMask = THB_BITMAP | THB_TOOLTIP;
+    thbButtons[0].iId = 1;
+    thbButton.iBitmap = 3;
+    thbButton.pszTip = TEXT("Different Text");
+
+    // Create an instance of ITaskbarList3
+    ITaskBarList3 *ptbl;
+    HRESULT hr = CoCreateInstance(CLSID_TaskbarList,
+                                  NULL,
+                                  CLSCTX_INPROC_SERVER,
+                                  IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;ptbl);
+
+    if (SUCCEEDED(hr))
+    {
+        // Update the toolbar. In this case, only the single button is updated.
+        hr = ptbl-&gt;ThumbBarUpdateButtons(hwnd, 1, &amp;amp;amp;amp;amp;amp;thbButton);
+        ptbl-&gt;Release();
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso cref="ITaskbarList3.ThumbBarAddButtons" />
+    <seealso cref="ITaskbarList3.ThumbBarSetImageList" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3.UnregisterTab">
+    <summary>
+      <para>Removes a thumbnail from an application's preview group when that tab or document is closed in the application.</para>
+    </summary>
+    <param name="hwndTab">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the tab window whose thumbnail is being removed. This is the same value with which the thumbnail was registered as part the group through <see cref="ITaskbarList3.RegisterTab" />. This value is required and cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise. If <i>hwndTab</i> is <b>NULL</b>, this method returns an error.</para>
+    </returns>
+    <remarks>
+      <para>It is the responsibility of the calling application to free <i>hwndTab</i> through <see cref="DestroyWindow" />. <b>UnregisterTab</b> must be called before the handle is freed.</para>
+    </remarks>
+    <seealso cref="ITaskbarList" />
+    <seealso cref="ITaskbarList2" />
+    <seealso cref="ITaskbarList3" />
+    <seealso cref="ITaskbarList3.RegisterTab" />
+    <seealso cref="ITaskbarList3.SetTabActive" />
+    <seealso cref="ITaskbarList3.SetTabOrder" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="ITaskbarList3">
+    <summary>
+      <para>Extends <see cref="ITaskbarList2" /> by exposing methods that support the unified launching and switching taskbar button functionality added in Windows 7. This functionality includes thumbnail representations and switch targets based on individual tabs in a tabbed application, thumbnail toolbars, notification and status overlays, and progress indicators.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="ITaskbarList" /> and <see cref="ITaskbarList2" /> interfaces, from which it inherits.</para>
+      <h3>When to Implement</h3>
+      <para>An implementation of this interface is provided in Windows as CLSID_TaskbarList. This interface is not implemented by third parties.</para>
+      <h3>When to Use</h3>
+      <para>Use the methods of this interface to do the following:</para>
+      <list type="bullet">
+        <item>
+          <description>When working with a TDI application (such as Windows Internet Explorer) or a MDI application (such as Microsoft Excel) that is displaying its windows as a group on the taskbar:
+<list type="bullet"><item><description>Provide the taskbar with a thumbnail that represents the view of an individual tab or document.</description></item><item><description>Remove the thumbnail of an individual tab or document from the group.</description></item><item><description>Change the order of thumbnails in the group.</description></item><item><description>Set a tab thumbnail as the selected item when the thumbnails are shown.</description></item></list></description>
+        </item>
+        <item>
+          <description>When applying an overlay to a taskbar icon, such as a notification.</description>
+        </item>
+        <item>
+          <description>When showing the progress of an operation, such as copying or installing an item.</description>
+        </item>
+        <item>
+          <description>When adding a toolbar to a thumbnail.</description>
+        </item>
+      </list>
+      <para>When an application displays a window, its taskbar button is created by the system. When the button is in place, the taskbar sends a <b>TaskbarButtonCreated</b> message to the window. Your application should call <see cref="RegisterWindowMessage" />(L"TaskbarButtonCreated") and handle that message in its wndproc. That message must be received by your application before it calls any <b>ITaskbarList3</b> method.</para>
+      <para>
+        <b>Note</b>  Applications cannot programmatically pin themselves to the taskbar. That functionality is reserved strictly for the user.</para>
+    </remarks>
+    <seealso cref="ITaskbarList2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+</doc>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_SHAPING_GLYPH_PROPERTIES">
+    <summary>
+      <para>Contains shaping output properties for an output glyph.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_SHAPING_GLYPH_PROPERTIES.justification">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Indicates that the glyph has justification applied.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_SHAPING_GLYPH_PROPERTIES.isClusterStart">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Indicates that the glyph is the start of a cluster.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_SHAPING_GLYPH_PROPERTIES.isDiacritic">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Indicates that the glyph is a diacritic mark.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_SHAPING_GLYPH_PROPERTIES.isZeroWidthSpace">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Indicates that the glyph is a word boundary with no visible space.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_SHAPING_GLYPH_PROPERTIES.reserved">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

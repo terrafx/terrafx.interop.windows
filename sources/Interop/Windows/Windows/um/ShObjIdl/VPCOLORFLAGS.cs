@@ -7,12 +7,22 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VPCOLORFLAGS.xml' path='doc/member[@name="VPCOLORFLAGS"]/*' />
 [Flags]
 public enum VPCOLORFLAGS
 {
+    /// <include file='VPCOLORFLAGS.xml' path='doc/member[@name="VPCOLORFLAGS.VPCF_TEXT"]/*' />
     VPCF_TEXT = 1,
+
+    /// <include file='VPCOLORFLAGS.xml' path='doc/member[@name="VPCOLORFLAGS.VPCF_BACKGROUND"]/*' />
     VPCF_BACKGROUND = 2,
+
+    /// <include file='VPCOLORFLAGS.xml' path='doc/member[@name="VPCOLORFLAGS.VPCF_SORTCOLUMN"]/*' />
     VPCF_SORTCOLUMN = 3,
+
+    /// <include file='VPCOLORFLAGS.xml' path='doc/member[@name="VPCOLORFLAGS.VPCF_SUBTEXT"]/*' />
     VPCF_SUBTEXT = 4,
+
+    /// <include file='VPCOLORFLAGS.xml' path='doc/member[@name="VPCOLORFLAGS.VPCF_TEXTBACKGROUND"]/*' />
     VPCF_TEXTBACKGROUND = 5,
 }

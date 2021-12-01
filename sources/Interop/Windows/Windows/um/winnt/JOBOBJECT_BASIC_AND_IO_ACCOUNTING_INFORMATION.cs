@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION"]/*' />
 public partial struct JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION
 {
+    /// <include file='JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION.BasicInfo"]/*' />
     public JOBOBJECT_BASIC_ACCOUNTING_INFORMATION BasicInfo;
 
+    /// <include file='JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION.IoInfo"]/*' />
     public IO_COUNTERS IoInfo;
 }

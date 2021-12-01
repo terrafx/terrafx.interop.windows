@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPSTATE.xml' path='doc/member[@name="APPSTATE"]/*' />
 public enum APPSTATE
 {
+    /// <include file='APPSTATE.xml' path='doc/member[@name="APPSTATE.ABSENT"]/*' />
     ABSENT,
+
+    /// <include file='APPSTATE.xml' path='doc/member[@name="APPSTATE.ASSIGNED"]/*' />
     ASSIGNED,
+
+    /// <include file='APPSTATE.xml' path='doc/member[@name="APPSTATE.PUBLISHED"]/*' />
     PUBLISHED,
 }

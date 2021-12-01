@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLDOMAttribute.xml' path='doc/member[@name="HTMLDOMAttribute"]/*' />
 [Guid("3050F4B2-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLDOMAttribute
 {

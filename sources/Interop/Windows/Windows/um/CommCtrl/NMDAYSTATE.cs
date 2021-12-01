@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMDAYSTATE.xml' path='doc/member[@name="NMDAYSTATE"]/*' />
 public unsafe partial struct NMDAYSTATE
 {
+    /// <include file='NMDAYSTATE.xml' path='doc/member[@name="NMDAYSTATE.nmhdr"]/*' />
     public NMHDR nmhdr;
 
+    /// <include file='NMDAYSTATE.xml' path='doc/member[@name="NMDAYSTATE.stStart"]/*' />
     public SYSTEMTIME stStart;
 
+    /// <include file='NMDAYSTATE.xml' path='doc/member[@name="NMDAYSTATE.cDayState"]/*' />
     public int cDayState;
 
+    /// <include file='NMDAYSTATE.xml' path='doc/member[@name="NMDAYSTATE.prgDayState"]/*' />
     [NativeTypeName("LPMONTHDAYSTATE")]
     public uint* prgDayState;
 }

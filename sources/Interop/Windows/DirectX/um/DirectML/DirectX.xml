@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.DMLCreateDevice">
+    <summary>
+      <para>Creates a DirectML device for a given Direct3D 12 device.</para>
+    </summary>
+    <param name="d3d12Device">
+      <para>Type: <b><see cref="ID3D12Device" />*</b></para>
+      <para>A pointer to an <see cref="ID3D12Device" /> representing the Direct3D 12 device to create the DirectML device over. DirectML supports any D3D feature level, and Direct3D 12 devices created on any adapter, including WARP. However, not all features in DirectML may be available depending on the capabilities of the Direct3D 12 device. See <see cref="IDMLDevice.CheckFeatureSupport" /> for more info.</para>
+      <para>If the call to <b>DMLCreateDevice</b> is successful, then the DirectML device maintains a strong reference to the supplied Direct3D 12 device.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b>DML_CREATE_DEVICE_FLAGS</b></para>
+      <para>A <see cref="DML_CREATE_DEVICE_FLAGS" /> value specifying additional device creation options.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>device</i>. This is expected to be the GUID of <see cref="IDMLDevice" />.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: _COM_Outptr_opt_ <b>void**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the device. This is the address of a pointer to an <see cref="IDMLDevice" />, representing  the DirectML device created.</para>
+    </param>
+    <returns>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a> error code.</para>
+      <para>The Graphics Tools Feature on Demand (FOD) must be installed in order to use the DirectML debug layers. If the <see cref="DML_CREATE_DEVICE_FLAG_DEBUG" /> flag is specified in <i>flags</i> and the debug layers are not installed, then <b>DMLCreateDevice</b> returns <b>DXGI_ERROR_SDK_COMPONENT_MISSING</b>.</para>
+    </returns>
+    <remarks>
+      <para>A newer version of this function, <see cref="DMLCreateDevice1" />, was introduced in DirectML version 1.1.0. <b>DMLCreateDevice</b> is equivalent to calling <b>DMLCreateDevice1</b> and supplying a <i>minimumFeatureLevel</i> of <see cref="DML_FEATURE_LEVEL_1_0" />.</para>
+    </remarks>
+    <seealso cref="DMLCreateDevice1 function" />
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-version-history">DirectML version history</seealso>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-debug-layer">Using the DirectML debug layer</seealso>
+  </member>
+  <member name="DirectX.DMLCreateDevice1">
+    <summary>
+      <para>Creates a DirectML device for a given Direct3D 12 device.</para>
+    </summary>
+    <param name="d3d12Device">
+      <para>Type: <b><see cref="ID3D12Device" />*</b></para>
+      <para>A pointer to an <see cref="ID3D12Device" /> representing the Direct3D 12 device to create the DirectML device over. DirectML supports any D3D feature level, and Direct3D 12 devices created on any adapter, including WARP. However, not all features in DirectML may be available depending on the capabilities of the Direct3D 12 device. See <see cref="IDMLDevice.CheckFeatureSupport" /> for more info.</para>
+      <para>If the call to <b>DMLCreateDevice1</b> is successful, then the DirectML device maintains a strong reference to the supplied Direct3D 12 device.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b>DML_CREATE_DEVICE_FLAGS</b></para>
+      <para>A <see cref="DML_CREATE_DEVICE_FLAGS" /> value specifying additional device creation options.</para>
+    </param>
+    <param name="minimumFeatureLevel">
+      <para>Type: <b>DML_FEATURE_LEVEL</b></para>
+      <para>A <see cref="DML_FEATURE_LEVEL" /> value specifying the minimum feature level support required.</para>
+      <para>This parameter can be useful for callers that require a specific version of DirectML, but who may find themselves calling into an older version of DirectML. This can happen, for example, when the user runs your application on an older version of Windows 10.</para>
+      <para>Applications that explicitly depend on functionality introduced in a particular feature level can specify it as a <i>minimumFeatureLevel</i>. This will guarantee that <b>DMLCreateDevice1</b> won't succeed unless the underlying implementation is <i>at least</i> as capable as this requested minimum feature level.</para>
+      <para>Note that as this parameter specifies a <i>minimum</i> feature level, the underlying DirectML device may in fact support a higher feature level than the requested minimum. Once device creation succeeds, you can query all of the feature levels supported by this device using <see cref="IDMLDevice.CheckFeatureSupport" />.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>device</i>. This is expected to be the GUID of <see cref="IDMLDevice" />.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: _COM_Outptr_opt_ <b>void**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the device. This is the address of a pointer to an <see cref="IDMLDevice" />, representing  the DirectML device created.</para>
+    </param>
+    <returns>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a> error code.</para>
+      <para>If this version of DirectML doesn't support the <i>minimumFeatureLevel</i> requested, then this function will return <b>DXGI_ERROR_UNSUPPORTED</b>.</para>
+      <para>The Graphics Tools Feature on Demand (FOD) must be installed in order to use the DirectML debug layers. If the <see cref="DML_CREATE_DEVICE_FLAG_DEBUG" /> flag is specified in <i>flags</i> and the debug layers are not installed, then <b>DMLCreateDevice1</b> returns <b>DXGI_ERROR_SDK_COMPONENT_MISSING</b>.</para>
+    </returns>
+    <remarks>
+      <para>A newer version of this function, <see cref="DMLCreateDevice1" />, was introduced in DirectML version 1.1.0. <b>DMLCreateDevice1</b> is equivalent to calling <b>DMLCreateDevice1</b> and supplying a <i>minimumFeatureLevel</i> of <see cref="DML_FEATURE_LEVEL_1_0" />.</para>
+    </remarks>
+    <seealso cref="DML_FEATURE_LEVEL enumeration" />
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-version-history">DirectML version history</seealso>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-feature_level-history">DirectML feature level history</seealso>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-debug-layer">Using the DirectML debug layer</seealso>
+  </member>
+</doc>

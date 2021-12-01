@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINTRUST_CATALOG_INFO">
+    <summary>
+      <para>The <b>WINTRUST_CATALOG_INFO</b> structure is used when calling
+<see cref="WinVerifyTrust" /> to verify a member of a Microsoft catalog.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_CATALOG_INFO.cbStruct">
+    <summary>
+      <para>Size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_CATALOG_INFO.dwCatalogVersion">
+    <summary>
+      <para>Optional. Catalog version number.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_CATALOG_INFO.pcwszCatalogFilePath">
+    <summary>
+      <para>The full path and file name of the catalog file that contains the member to be verified.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_CATALOG_INFO.pcwszMemberTag">
+    <summary>
+      <para>Tag of a member file to be verified.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_CATALOG_INFO.pcwszMemberFilePath">
+    <summary>
+      <para>The full path and file name of the catalog member file to be verified.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_CATALOG_INFO.hMemberFile">
+    <summary>
+      <para>Optional. Handle of the open catalog member file to be verified. The handle must be to a file with at least read permissions.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_CATALOG_INFO.pbCalculatedFileHash">
+    <summary>
+      <para>Optional. The calculated hash of the file that contains the file to be verified.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_CATALOG_INFO.cbCalculatedFileHash">
+    <summary>
+      <para>The size, in bytes, of the value passed in the <b>pbCalculatedFileHash</b> member. <b>cbCalculatedFileHash</b> is used only if the calculated hash is being passed.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_CATALOG_INFO.pcCatalogContext">
+    <summary>
+      <para>A pointer to a <see cref="CTL_CONTEXT" /> structure that represents  a catalog context to be used instead of a catalog file.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_CATALOG_INFO.hCatAdmin">
+    <summary>
+      <para>Handle to the catalog administrator context that was used when calculating the hash of the file. This value can be zero only for a SHA1 file hash.<b>Windows 8 and Windows Server 2012:  </b>Support for this member begins.</para>
+    </summary>
+  </member>
+</doc>

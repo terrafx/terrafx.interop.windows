@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QUERY_BAD_RANGES_INPUT_RANGE.xml' path='doc/member[@name="QUERY_BAD_RANGES_INPUT_RANGE"]/*' />
 public partial struct QUERY_BAD_RANGES_INPUT_RANGE
 {
+    /// <include file='QUERY_BAD_RANGES_INPUT_RANGE.xml' path='doc/member[@name="QUERY_BAD_RANGES_INPUT_RANGE.StartOffset"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong StartOffset;
 
+    /// <include file='QUERY_BAD_RANGES_INPUT_RANGE.xml' path='doc/member[@name="QUERY_BAD_RANGES_INPUT_RANGE.LengthInBytes"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong LengthInBytes;
 }

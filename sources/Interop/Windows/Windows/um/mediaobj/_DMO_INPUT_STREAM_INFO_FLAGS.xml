@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DMO_INPUT_STREAM_INFO_FLAGS">
+    <summary>
+      <para>The <code>DMO_INPUT_STREAM_INFO_FLAGS</code> enumeration defines flags that describe an input stream.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-enumerated-types">DMO Enumerated Types</seealso>
+    <seealso cref="IMediaObject.GetInputStreamInfo" />
+  </member>
+  <member name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_WHOLE_SAMPLES">
+    <summary>
+      <para>The stream requires whole samples. Samples must not span multiple buffers, and buffers must not contain partial samples.</para>
+    </summary>
+  </member>
+  <member name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_SINGLE_SAMPLE_PER_BUFFER">
+    <summary>
+      <para>Each buffer must contain exactly one sample.</para>
+    </summary>
+  </member>
+  <member name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_FIXED_SAMPLE_SIZE">
+    <summary>
+      <para>All the samples in this stream must be the same size.</para>
+    </summary>
+  </member>
+  <member name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_HOLDS_BUFFERS">
+    <summary>
+      <para>The DMO performs lookahead on the incoming data, and may hold multiple input buffers for this stream.</para>
+    </summary>
+  </member>
+</doc>

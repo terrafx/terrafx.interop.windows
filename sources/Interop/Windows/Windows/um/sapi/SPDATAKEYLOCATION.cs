@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPDATAKEYLOCATION.xml' path='doc/member[@name="SPDATAKEYLOCATION"]/*' />
 public enum SPDATAKEYLOCATION
 {
+    /// <include file='SPDATAKEYLOCATION.xml' path='doc/member[@name="SPDATAKEYLOCATION.SPDKL_DefaultLocation"]/*' />
     SPDKL_DefaultLocation = 0,
+
+    /// <include file='SPDATAKEYLOCATION.xml' path='doc/member[@name="SPDATAKEYLOCATION.SPDKL_CurrentUser"]/*' />
     SPDKL_CurrentUser = 1,
+
+    /// <include file='SPDATAKEYLOCATION.xml' path='doc/member[@name="SPDATAKEYLOCATION.SPDKL_LocalMachine"]/*' />
     SPDKL_LocalMachine = 2,
+
+    /// <include file='SPDATAKEYLOCATION.xml' path='doc/member[@name="SPDATAKEYLOCATION.SPDKL_CurrentConfig"]/*' />
     SPDKL_CurrentConfig = 5,
 }

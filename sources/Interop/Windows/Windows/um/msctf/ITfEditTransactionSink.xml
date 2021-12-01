@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfEditTransactionSink.OnEndEditTransaction">
+    <summary>
+      <para>Indicates the end of an edit transaction.</para>
+    </summary>
+    <param name="pic">
+      <para>Pointer to the <see cref="ITfContext" /> interface involved in the transaction.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The TSF manager calls this method at the end of an edit transaction. A text service can delay reevaluation of the changing context of the transaction due to the multiple <see cref="ITfTextEditSink.OnEndEdit" /> method notifications until after receiving this callback.</para>
+    </remarks>
+    <seealso cref="ITfContext " />
+    <seealso cref="ITfEditTransactionSink " />
+    <seealso cref="ITfTextEditSink.OnEndEdit " />
+  </member>
+  <member name="ITfEditTransactionSink.OnStartEditTransaction">
+    <summary>
+      <para>Indicates the start of an edit transaction.</para>
+    </summary>
+    <param name="pic">
+      <para>Pointer to the <see cref="ITfContext" /> interface involved in the transaction.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The TSF manager calls this method at the start of an edit transaction. A text service might delay reevaluation of the changing context of the transaction due to the multiple <see cref="ITfTextEditSink.OnEndEdit" /> notifications until after receiving the corresponding <see cref="ITfEditTransactionSink.OnEndEditTransaction" /> callback.</para>
+    </remarks>
+    <seealso cref="ITfContext " />
+    <seealso cref="ITfEditTransactionSink " />
+    <seealso cref="ITfEditTransactionSink.OnEndEditTransaction " />
+    <seealso cref="ITfTextEditSink.OnEndEdit " />
+  </member>
+  <member name="ITfEditTransactionSink">
+    <summary>
+      <para>The <b>ITfEditTransactionSink</b> interface is implemented by a text service and used by the TSF manager to support edit transactions. An edit transaction is a series of edits that use multiple document locks. A text service can optionally implement this interface. This advise sink is installed by calling <see cref="ITfSource.AdviseSink" /> with IID_ITfEditTransactionSink.</para>
+    </summary>
+    <remarks>
+      <para>An edit transaction involves multiple document locks, and usually includes multiple <see cref="ITfTextEditSink.OnEndEdit" /> method callbacks.</para>
+    </remarks>
+    <seealso cref="ITfContext " />
+    <seealso cref="ITfSource.AdviseSink " />
+    <seealso cref="ITfTextEditSink.OnEndEdit " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

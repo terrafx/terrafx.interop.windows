@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager"]/*' />
 [Guid("8D009D86-5B9F-4115-B1FC-9F80D52AB8AB")]
 [NativeTypeName("struct IMFQualityManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
         return ((delegate* unmanaged<IMFQualityManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
         return ((delegate* unmanaged<IMFQualityManager*, uint>)(lpVtbl[1]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
         return ((delegate* unmanaged<IMFQualityManager*, uint>)(lpVtbl[2]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.NotifyTopology"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT NotifyTopology(IMFTopology* pTopology)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
         return ((delegate* unmanaged<IMFQualityManager*, IMFTopology*, int>)(lpVtbl[3]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pTopology);
     }
 
+    /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.NotifyPresentationClock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT NotifyPresentationClock(IMFPresentationClock* pClock)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
         return ((delegate* unmanaged<IMFQualityManager*, IMFPresentationClock*, int>)(lpVtbl[4]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pClock);
     }
 
+    /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.NotifyProcessInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT NotifyProcessInput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lInputIndex, IMFSample* pSample)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
         return ((delegate* unmanaged<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int>)(lpVtbl[5]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pNode, lInputIndex, pSample);
     }
 
+    /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.NotifyProcessOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT NotifyProcessOutput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lOutputIndex, IMFSample* pSample)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
         return ((delegate* unmanaged<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int>)(lpVtbl[6]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pNode, lOutputIndex, pSample);
     }
 
+    /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.NotifyQualityEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT NotifyQualityEvent(IUnknown* pObject, IMFMediaEvent* pEvent)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
         return ((delegate* unmanaged<IMFQualityManager*, IUnknown*, IMFMediaEvent*, int>)(lpVtbl[7]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pObject, pEvent);
     }
 
+    /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.Shutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Shutdown()

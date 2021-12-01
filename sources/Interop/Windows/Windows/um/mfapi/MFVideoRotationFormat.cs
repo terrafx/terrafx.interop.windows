@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideoRotationFormat.xml' path='doc/member[@name="MFVideoRotationFormat"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MFVideoRotationFormat
 {
+    /// <include file='MFVideoRotationFormat.xml' path='doc/member[@name="MFVideoRotationFormat.MFVideoRotationFormat_0"]/*' />
     MFVideoRotationFormat_0 = 0,
+
+    /// <include file='MFVideoRotationFormat.xml' path='doc/member[@name="MFVideoRotationFormat.MFVideoRotationFormat_90"]/*' />
     MFVideoRotationFormat_90 = 90,
+
+    /// <include file='MFVideoRotationFormat.xml' path='doc/member[@name="MFVideoRotationFormat.MFVideoRotationFormat_180"]/*' />
     MFVideoRotationFormat_180 = 180,
+
+    /// <include file='MFVideoRotationFormat.xml' path='doc/member[@name="MFVideoRotationFormat.MFVideoRotationFormat_270"]/*' />
     MFVideoRotationFormat_270 = 270,
 }

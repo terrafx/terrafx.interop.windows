@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDDSurroundMode.xml' path='doc/member[@name="CODECAPI_AVDDSurroundMode"]/*' />
 [Guid("99F2F386-98D1-4452-A163-ABC78A6EB770")]
 public partial struct CODECAPI_AVDDSurroundMode
 {

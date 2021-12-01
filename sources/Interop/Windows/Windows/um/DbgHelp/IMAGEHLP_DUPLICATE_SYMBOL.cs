@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEHLP_DUPLICATE_SYMBOL.xml' path='doc/member[@name="IMAGEHLP_DUPLICATE_SYMBOL"]/*' />
 public unsafe partial struct IMAGEHLP_DUPLICATE_SYMBOL
 {
+    /// <include file='IMAGEHLP_DUPLICATE_SYMBOL.xml' path='doc/member[@name="IMAGEHLP_DUPLICATE_SYMBOL.SizeOfStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeOfStruct;
 
+    /// <include file='IMAGEHLP_DUPLICATE_SYMBOL.xml' path='doc/member[@name="IMAGEHLP_DUPLICATE_SYMBOL.NumberOfDups"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfDups;
 
+    /// <include file='IMAGEHLP_DUPLICATE_SYMBOL.xml' path='doc/member[@name="IMAGEHLP_DUPLICATE_SYMBOL.Symbol"]/*' />
     [NativeTypeName("PIMAGEHLP_SYMBOL")]
     public IMAGEHLP_SYMBOL* Symbol;
 
+    /// <include file='IMAGEHLP_DUPLICATE_SYMBOL.xml' path='doc/member[@name="IMAGEHLP_DUPLICATE_SYMBOL.SelectedSymbol"]/*' />
     [NativeTypeName("DWORD")]
     public uint SelectedSymbol;
 }

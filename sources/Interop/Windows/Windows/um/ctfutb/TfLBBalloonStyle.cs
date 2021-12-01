@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TfLBBalloonStyle.xml' path='doc/member[@name="TfLBBalloonStyle"]/*' />
 public enum TfLBBalloonStyle
 {
+    /// <include file='TfLBBalloonStyle.xml' path='doc/member[@name="TfLBBalloonStyle.TF_LB_BALLOON_RECO"]/*' />
     TF_LB_BALLOON_RECO = 0,
+
+    /// <include file='TfLBBalloonStyle.xml' path='doc/member[@name="TfLBBalloonStyle.TF_LB_BALLOON_SHOW"]/*' />
     TF_LB_BALLOON_SHOW = 1,
+
+    /// <include file='TfLBBalloonStyle.xml' path='doc/member[@name="TfLBBalloonStyle.TF_LB_BALLOON_MISS"]/*' />
     TF_LB_BALLOON_MISS = 2,
 }

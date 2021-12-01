@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_TEXT.xml' path='doc/member[@name="WS_XML_TEXT"]/*' />
 public partial struct WS_XML_TEXT
 {
+    /// <include file='WS_XML_TEXT.xml' path='doc/member[@name="WS_XML_TEXT.textType"]/*' />
     public WS_XML_TEXT_TYPE textType;
 }

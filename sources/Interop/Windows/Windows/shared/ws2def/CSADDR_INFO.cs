@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSADDR_INFO.xml' path='doc/member[@name="CSADDR_INFO"]/*' />
 public partial struct CSADDR_INFO
 {
+    /// <include file='CSADDR_INFO.xml' path='doc/member[@name="CSADDR_INFO.LocalAddr"]/*' />
     public SOCKET_ADDRESS LocalAddr;
 
+    /// <include file='CSADDR_INFO.xml' path='doc/member[@name="CSADDR_INFO.RemoteAddr"]/*' />
     public SOCKET_ADDRESS RemoteAddr;
 
+    /// <include file='CSADDR_INFO.xml' path='doc/member[@name="CSADDR_INFO.iSocketType"]/*' />
     public int iSocketType;
 
+    /// <include file='CSADDR_INFO.xml' path='doc/member[@name="CSADDR_INFO.iProtocol"]/*' />
     public int iProtocol;
 }

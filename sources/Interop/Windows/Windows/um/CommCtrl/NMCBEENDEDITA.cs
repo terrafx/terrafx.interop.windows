@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA"]/*' />
 public unsafe partial struct NMCBEENDEDITA
 {
+    /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA.fChanged"]/*' />
     public BOOL fChanged;
 
+    /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA.iNewSelection"]/*' />
     public int iNewSelection;
 
+    /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA.szText"]/*' />
     [NativeTypeName("char [260]")]
     public fixed sbyte szText[260];
 
+    /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA.iWhy"]/*' />
     public int iWhy;
 }

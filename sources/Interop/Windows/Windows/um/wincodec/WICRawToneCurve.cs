@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICRawToneCurve.xml' path='doc/member[@name="WICRawToneCurve"]/*' />
 public partial struct WICRawToneCurve
 {
+    /// <include file='WICRawToneCurve.xml' path='doc/member[@name="WICRawToneCurve.cPoints"]/*' />
     public uint cPoints;
 
+    /// <include file='WICRawToneCurve.xml' path='doc/member[@name="WICRawToneCurve.aPoints"]/*' />
     [NativeTypeName("WICRawToneCurvePoint [1]")]
     public _aPoints_e__FixedBuffer aPoints;
 
+    /// <include file='_aPoints_e__FixedBuffer.xml' path='doc/member[@name="_aPoints_e__FixedBuffer"]/*' />
     public partial struct _aPoints_e__FixedBuffer
     {
         public WICRawToneCurvePoint e0;

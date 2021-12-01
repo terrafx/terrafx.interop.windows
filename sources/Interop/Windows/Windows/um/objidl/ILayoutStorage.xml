@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ILayoutStorage.EndMonitor">
+    <summary>
+      <para>The <b>EndMonitor</b> method ends monitoring of a compound file. Must be preceded by a call to
+<see cref="ILayoutStorage.BeginMonitor" />.</para>
+    </summary>
+    <returns>
+      <para>This function supports the standard return values E_OUTOFMEMORY, E_UNEXPECTED, E_INVALIDARG, and E_FAIL, as well as all return values for <see cref="CloseHandle" />.</para>
+    </returns>
+    <remarks>
+      <para>A call to
+<b>EndMonitor</b> is generally followed by a call to
+<see cref="ILayoutStorage.RelayoutDocfile" />, which uses the access pattern detected by the monitoring to restructure the compound file.</para>
+    </remarks>
+    <seealso cref="ILayoutStorage.BeginMonitor" />
+    <seealso cref="ILayoutStorage.ReLayoutDocfile" />
+  </member>
+  <member name="ILayoutStorage.LayoutScript">
+    <summary>
+      <para>The <b>LayoutScript</b> method provides explicit directions for reordering the storages, streams, and controls in a compound file to match the order in which they are accessed during the download.</para>
+    </summary>
+    <param name="pStorageLayout">
+      <para>Pointer to an array of
+<see cref="StorageLayout" /> structures.</para>
+    </param>
+    <param name="nEntries">
+      <para>Number of entries in the array of
+<see cref="StorageLayout" /> structures.</para>
+    </param>
+    <param name="glfInterleavedFlag">
+      <para>Reserved for future use.</para>
+    </param>
+    <returns>
+      <para>This function supports the standard return values E_OUTOFMEMORY, E_UNEXPECTED, E_INVALIDARG, and E_FAIL, as well as the following:</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|STG_E_INVALIDPOINTER | The storage layout pointer is invalid.|
+|STG_E_INVALIDFLAG | The value of <i>glfInterleavedFlag</i> is invalid.|
+|STG_E_PATHNOTFOUND | The new document file name specified is invalid.|
+|STG_E_INSUFFICIENTMEMORY | There is not enough memory to complete the operation.|
+|STG_E_INVALIDPARAMETER | One of the parameters is invalid.|
+| STG_E_INUSE | The <b>BeginMonitor</b> method was called while <b>ILayoutStorage</b> was already monitoring.|</para>
+    </returns>
+    <remarks>
+      <para>To provide explicit layout instructions, the application calls <b>ILayoutStorage.LayoutScript</b>, passing an array of
+<see cref="StorageLayout" /> structures. Each structure defines a single storage or stream data block and specifies where the block is to be written in the
+<see cref="ILockBytes" /> byte array.</para>
+      <para>An application can combine scripted layout with monitoring, as the structure of a particular compound file may dictate.</para>
+      <para>When the optimal data-layout pattern of an entire compound file has been determined, the application calls
+<see cref="ILayoutStorage.ReLayoutDocfile" /> to restructure the compound file to match the order in which its data sectors were accessed.</para>
+    </remarks>
+    <seealso cref="ILayoutStorage.ReLayoutDocfile" />
+    <seealso cref="ILockBytes" />
+    <seealso cref="StorageLayout" />
+  </member>
+  <member name="ILayoutStorage.ReLayoutDocfile">
+    <summary>
+      <para>The <b>ReLayoutDocfile</b> method rewrites the compound file, using the layout script obtained through monitoring, or provided through explicit layout scripting, to create a new compound file.</para>
+    </summary>
+    <param name="pwcsNewDfName">
+      <para>Pointer to the name of the compound file to be rewritten. This name must be a valid filename, distinct from the name of the original compound file. The original compound file will be optimized and written to the new <i>pwcsNewDfName</i>.</para>
+    </param>
+    <returns>
+      <para>This function supports the standard return values E_OUTOFMEMORY, E_UNEXPECTED, E_INVALIDARG, and E_FAIL, as well as the following:</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|STG_E_INVALIDNAME | The name passed to this function is not a valid file name.|
+|STG_E_UNKNOWN | The layout information has been corrupted and cannot be processed.|</para>
+    </returns>
+  </member>
+  <member name="ILayoutStorage.ReLayoutDocfileOnILockBytes">
+    <summary>
+      <para>Not supported.</para>
+      <para>The <b>ReLayoutDocfileOnILockBytes</b> method is not implemented.   If called, it returns  <b>STG_E_UNIMPLEMENTEDFUNCTION</b>.</para>
+    </summary>
+    <param name="pILockBytes">
+      <para>A pointer to the <see cref="ILockBytes" /> interface on the underlying byte-array object where the compound file is to be rewritten.</para>
+    </param>
+    <returns>
+      <para>This method returns the following value.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>STG_E_UNIMPLEMENTEDFUNCTION</b>
+            </para>
+          </description>
+          <description>
+            <para>This method is not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If implemented, it would rewrite the compound file in the byte-array object specified by the caller.  It would return <b>S_OK</b> for success or one of the <b>STG_E_*</b> error codes for failure.</para>
+    </remarks>
+  </member>
+  <member name="ILayoutStorage">
+    <summary>
+      <para>The
+<b>ILayoutStorage</b> interface enables an application to optimize the layout of its compound files for efficient downloading across a slow link. The goal is to enable a browser or other application to download data in the order in which it will actually be required.</para>
+      <para>To optimize a compound file, an application  calls <see cref="CopyTo" />  to layout a docfile, thus improving performance in most scenarios.</para>
+    </summary>
+  </member>
+</doc>

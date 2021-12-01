@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PDMODE.xml' path='doc/member[@name="PDMODE"]/*' />
 public enum PDMODE
 {
+    /// <include file='PDMODE.xml' path='doc/member[@name="PDMODE.PDM_DEFAULT"]/*' />
     PDM_DEFAULT = 0,
+
+    /// <include file='PDMODE.xml' path='doc/member[@name="PDMODE.PDM_RUN"]/*' />
     PDM_RUN = 0x1,
+
+    /// <include file='PDMODE.xml' path='doc/member[@name="PDMODE.PDM_PREFLIGHT"]/*' />
     PDM_PREFLIGHT = 0x2,
+
+    /// <include file='PDMODE.xml' path='doc/member[@name="PDMODE.PDM_UNDOING"]/*' />
     PDM_UNDOING = 0x4,
+
+    /// <include file='PDMODE.xml' path='doc/member[@name="PDMODE.PDM_ERRORSBLOCKING"]/*' />
     PDM_ERRORSBLOCKING = 0x8,
+
+    /// <include file='PDMODE.xml' path='doc/member[@name="PDMODE.PDM_INDETERMINATE"]/*' />
     PDM_INDETERMINATE = 0x10,
 }

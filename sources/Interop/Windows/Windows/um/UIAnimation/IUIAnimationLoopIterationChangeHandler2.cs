@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationLoopIterationChangeHandler2.xml' path='doc/member[@name="IUIAnimationLoopIterationChangeHandler2"]/*' />
 [Guid("2D3B15A4-4762-47AB-A030-B23221DF3AE0")]
 [NativeTypeName("struct IUIAnimationLoopIterationChangeHandler2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationLoopIterationChangeHandler2 : IUIAnimat
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationLoopIterationChangeHandler2 : IUIAnimat
         return ((delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationLoopIterationChangeHandler2 : IUIAnimat
         return ((delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, uint>)(lpVtbl[1]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationLoopIterationChangeHandler2 : IUIAnimat
         return ((delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, uint>)(lpVtbl[2]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationLoopIterationChangeHandler2.xml' path='doc/member[@name="IUIAnimationLoopIterationChangeHandler2.OnLoopIterationChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnLoopIterationChanged(IUIAnimationStoryboard2* storyboard, [NativeTypeName("UINT_PTR")] nuint id, [NativeTypeName("UINT32")] uint newIterationCount, [NativeTypeName("UINT32")] uint oldIterationCount)

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleParentUndoUnit.xml' path='doc/member[@name="IOleParentUndoUnit"]/*' />
 [Guid("A1FAF330-EF97-11CE-9BC9-00AA00608E01")]
 [NativeTypeName("struct IOleParentUndoUnit : IOleUndoUnit")]
 [NativeInheritance("IOleUndoUnit")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, Guid*, void**, int>)(lpVtbl[0]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, uint>)(lpVtbl[1]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, uint>)(lpVtbl[2]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleUndoUnit.Do" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Do(IOleUndoManager* pUndoManager)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, IOleUndoManager*, int>)(lpVtbl[3]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pUndoManager);
     }
 
+    /// <inheritdoc cref="IOleUndoUnit.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstr)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, ushort**, int>)(lpVtbl[4]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pBstr);
     }
 
+    /// <inheritdoc cref="IOleUndoUnit.GetUnitType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetUnitType([NativeTypeName("CLSID *")] Guid* pClsid, [NativeTypeName("LONG *")] int* plID)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, Guid*, int*, int>)(lpVtbl[5]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pClsid, plID);
     }
 
+    /// <inheritdoc cref="IOleUndoUnit.OnNextAdd" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnNextAdd()
@@ -67,6 +75,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, int>)(lpVtbl[6]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleParentUndoUnit.xml' path='doc/member[@name="IOleParentUndoUnit.Open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Open(IOleParentUndoUnit* pPUU)
@@ -74,6 +83,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, IOleParentUndoUnit*, int>)(lpVtbl[7]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pPUU);
     }
 
+    /// <include file='IOleParentUndoUnit.xml' path='doc/member[@name="IOleParentUndoUnit.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Close(IOleParentUndoUnit* pPUU, BOOL fCommit)
@@ -81,6 +91,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, IOleParentUndoUnit*, BOOL, int>)(lpVtbl[8]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pPUU, fCommit);
     }
 
+    /// <include file='IOleParentUndoUnit.xml' path='doc/member[@name="IOleParentUndoUnit.Add"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Add(IOleUndoUnit* pUU)
@@ -88,6 +99,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, IOleUndoUnit*, int>)(lpVtbl[9]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pUU);
     }
 
+    /// <include file='IOleParentUndoUnit.xml' path='doc/member[@name="IOleParentUndoUnit.FindUnit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT FindUnit(IOleUndoUnit* pUU)
@@ -95,6 +107,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         return ((delegate* unmanaged<IOleParentUndoUnit*, IOleUndoUnit*, int>)(lpVtbl[10]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pUU);
     }
 
+    /// <include file='IOleParentUndoUnit.xml' path='doc/member[@name="IOleParentUndoUnit.GetParentState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetParentState([NativeTypeName("DWORD *")] uint* pdwState)

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TIMED_TEXT_RUBY_RESERVE.xml' path='doc/member[@name="MF_TIMED_TEXT_RUBY_RESERVE"]/*' />
 public enum MF_TIMED_TEXT_RUBY_RESERVE
 {
+    /// <include file='MF_TIMED_TEXT_RUBY_RESERVE.xml' path='doc/member[@name="MF_TIMED_TEXT_RUBY_RESERVE.MF_TIMED_TEXT_RUBY_RESERVE_NONE"]/*' />
     MF_TIMED_TEXT_RUBY_RESERVE_NONE = 0,
+
+    /// <include file='MF_TIMED_TEXT_RUBY_RESERVE.xml' path='doc/member[@name="MF_TIMED_TEXT_RUBY_RESERVE.MF_TIMED_TEXT_RUBY_RESERVE_BEFORE"]/*' />
     MF_TIMED_TEXT_RUBY_RESERVE_BEFORE = 1,
+
+    /// <include file='MF_TIMED_TEXT_RUBY_RESERVE.xml' path='doc/member[@name="MF_TIMED_TEXT_RUBY_RESERVE.MF_TIMED_TEXT_RUBY_RESERVE_AFTER"]/*' />
     MF_TIMED_TEXT_RUBY_RESERVE_AFTER = 2,
+
+    /// <include file='MF_TIMED_TEXT_RUBY_RESERVE.xml' path='doc/member[@name="MF_TIMED_TEXT_RUBY_RESERVE.MF_TIMED_TEXT_RUBY_RESERVE_BOTH"]/*' />
     MF_TIMED_TEXT_RUBY_RESERVE_BOTH = 3,
+
+    /// <include file='MF_TIMED_TEXT_RUBY_RESERVE.xml' path='doc/member[@name="MF_TIMED_TEXT_RUBY_RESERVE.MF_TIMED_TEXT_RUBY_RESERVE_OUTSIDE"]/*' />
     MF_TIMED_TEXT_RUBY_RESERVE_OUTSIDE = 4,
 }

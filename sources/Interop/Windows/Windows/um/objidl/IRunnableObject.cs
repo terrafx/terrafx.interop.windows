@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject"]/*' />
 [Guid("00000126-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IRunnableObject : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface
         return ((delegate* unmanaged<IRunnableObject*, Guid*, void**, int>)(lpVtbl[0]))((IRunnableObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface
         return ((delegate* unmanaged<IRunnableObject*, uint>)(lpVtbl[1]))((IRunnableObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface
         return ((delegate* unmanaged<IRunnableObject*, uint>)(lpVtbl[2]))((IRunnableObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject.GetRunningClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRunningClass([NativeTypeName("LPCLSID")] Guid* lpClsid)
@@ -46,6 +51,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface
         return ((delegate* unmanaged<IRunnableObject*, Guid*, int>)(lpVtbl[3]))((IRunnableObject*)Unsafe.AsPointer(ref this), lpClsid);
     }
 
+    /// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject.Run"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Run([NativeTypeName("LPBINDCTX")] IBindCtx* pbc)
@@ -53,6 +59,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface
         return ((delegate* unmanaged<IRunnableObject*, IBindCtx*, int>)(lpVtbl[4]))((IRunnableObject*)Unsafe.AsPointer(ref this), pbc);
     }
 
+    /// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject.IsRunning"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public BOOL IsRunning()
@@ -60,6 +67,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface
         return ((delegate* unmanaged<IRunnableObject*, int>)(lpVtbl[5]))((IRunnableObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject.LockRunning"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT LockRunning(BOOL fLock, BOOL fLastUnlockCloses)
@@ -67,6 +75,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface
         return ((delegate* unmanaged<IRunnableObject*, BOOL, BOOL, int>)(lpVtbl[6]))((IRunnableObject*)Unsafe.AsPointer(ref this), fLock, fLastUnlockCloses);
     }
 
+    /// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject.SetContainedObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetContainedObject(BOOL fContained)

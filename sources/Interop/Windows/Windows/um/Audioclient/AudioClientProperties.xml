@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AudioClientProperties">
+    <summary>
+      <para>The <b>AudioClientProperties</b> structure is used to set the parameters that describe the properties of the client's audio stream.</para>
+    </summary>
+    <remarks>
+      <para>Starting with Windows 10, hardware-offloaded audio streams must be event driven. This means that if you call <see cref="IAudioClient2.SetClientProperties" /> and set the <i>bIsOffload</i> parameter of the <b>AudioClientProperties</b> to TRUE, you must specify the <b>AUDCLNT_STREAMFLAGS_EVENTCALLBACK</b> flag in the <i>StreamFlags</i> parameter to <see cref="IAudioClient.Initialize" />.</para>
+    </remarks>
+    <seealso cref="AUDCLNT_STREAMOPTIONS" />
+    <seealso cref="AUDIO_STREAM_CATEGORY" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-structures">Core Audio Structures</seealso>
+    <seealso cref="IAudioClient2.SetClientProperties" />
+  </member>
+  <member name="AudioClientProperties.cbSize">
+    <summary>
+      <para>The size of the <b>AudioClientProperties</b> structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="AudioClientProperties.bIsOffload">
+    <summary>
+      <para>Boolean value to indicate whether or not the audio stream is hardware-offloaded.</para>
+    </summary>
+  </member>
+  <member name="AudioClientProperties.eCategory">
+    <summary>
+      <para>An enumeration that is used to specify the category of the audio stream.</para>
+    </summary>
+  </member>
+</doc>

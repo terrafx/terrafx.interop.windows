@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RAWHID.xml' path='doc/member[@name="RAWHID"]/*' />
 public unsafe partial struct RAWHID
 {
+    /// <include file='RAWHID.xml' path='doc/member[@name="RAWHID.dwSizeHid"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSizeHid;
 
+    /// <include file='RAWHID.xml' path='doc/member[@name="RAWHID.dwCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCount;
 
+    /// <include file='RAWHID.xml' path='doc/member[@name="RAWHID.bRawData"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte bRawData[1];
 }

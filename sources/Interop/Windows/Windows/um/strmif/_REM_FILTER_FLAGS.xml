@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_REM_FILTER_FLAGS">
+    <summary>
+      <para>Specifies how to remove a filter from the filter graph.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IGraphConfig.RemoveFilterEx" />
+  </member>
+  <member name="_REM_FILTER_FLAGS.REMFILTERF_LEAVECONNECTED">
+    <summary>
+      <para>Leave the filter connected. By default, filters are disconnected when removed from the graph.</para>
+    </summary>
+  </member>
+</doc>

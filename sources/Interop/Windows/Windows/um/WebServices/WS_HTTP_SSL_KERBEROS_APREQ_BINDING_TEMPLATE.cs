@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE.xml' path='doc/member[@name="WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE"]/*' />
 public partial struct WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE
 {
+    /// <include file='WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE.xml' path='doc/member[@name="WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE.channelProperties"]/*' />
     public WS_CHANNEL_PROPERTIES channelProperties;
 
+    /// <include file='WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE.xml' path='doc/member[@name="WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE.securityProperties"]/*' />
     public WS_SECURITY_PROPERTIES securityProperties;
 
+    /// <include file='WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE.xml' path='doc/member[@name="WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE.sslTransportSecurityBinding"]/*' />
     public WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE sslTransportSecurityBinding;
 
+    /// <include file='WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE.xml' path='doc/member[@name="WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE.kerberosApreqMessageSecurityBinding"]/*' />
     public WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE kerberosApreqMessageSecurityBinding;
 }

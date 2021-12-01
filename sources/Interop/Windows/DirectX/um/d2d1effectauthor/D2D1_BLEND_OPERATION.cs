@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_BLEND_OPERATION.xml' path='doc/member[@name="D2D1_BLEND_OPERATION"]/*' />
 public enum D2D1_BLEND_OPERATION : uint
 {
+    /// <include file='D2D1_BLEND_OPERATION.xml' path='doc/member[@name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_ADD"]/*' />
     D2D1_BLEND_OPERATION_ADD = 1,
+
+    /// <include file='D2D1_BLEND_OPERATION.xml' path='doc/member[@name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_SUBTRACT"]/*' />
     D2D1_BLEND_OPERATION_SUBTRACT = 2,
+
+    /// <include file='D2D1_BLEND_OPERATION.xml' path='doc/member[@name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_REV_SUBTRACT"]/*' />
     D2D1_BLEND_OPERATION_REV_SUBTRACT = 3,
+
+    /// <include file='D2D1_BLEND_OPERATION.xml' path='doc/member[@name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_MIN"]/*' />
     D2D1_BLEND_OPERATION_MIN = 4,
+
+    /// <include file='D2D1_BLEND_OPERATION.xml' path='doc/member[@name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_MAX"]/*' />
     D2D1_BLEND_OPERATION_MAX = 5,
+
+    /// <include file='D2D1_BLEND_OPERATION.xml' path='doc/member[@name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_FORCE_DWORD"]/*' />
     D2D1_BLEND_OPERATION_FORCE_DWORD = 0xffffffff,
 }

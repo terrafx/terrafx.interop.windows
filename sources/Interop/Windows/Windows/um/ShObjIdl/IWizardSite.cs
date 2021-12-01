@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWizardSite.xml' path='doc/member[@name="IWizardSite"]/*' />
 [Guid("88960F5B-422F-4E7B-8013-73415381C3C3")]
 [NativeTypeName("struct IWizardSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface
         return ((delegate* unmanaged<IWizardSite*, Guid*, void**, int>)(lpVtbl[0]))((IWizardSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface
         return ((delegate* unmanaged<IWizardSite*, uint>)(lpVtbl[1]))((IWizardSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface
         return ((delegate* unmanaged<IWizardSite*, uint>)(lpVtbl[2]))((IWizardSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWizardSite.xml' path='doc/member[@name="IWizardSite.GetPreviousPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPreviousPage(HPROPSHEETPAGE* phpage)
@@ -46,6 +51,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface
         return ((delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[3]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
     }
 
+    /// <include file='IWizardSite.xml' path='doc/member[@name="IWizardSite.GetNextPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetNextPage(HPROPSHEETPAGE* phpage)
@@ -53,6 +59,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface
         return ((delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
     }
 
+    /// <include file='IWizardSite.xml' path='doc/member[@name="IWizardSite.GetCancelledPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCancelledPage(HPROPSHEETPAGE* phpage)

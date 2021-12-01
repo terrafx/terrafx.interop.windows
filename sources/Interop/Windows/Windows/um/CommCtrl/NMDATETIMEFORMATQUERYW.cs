@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMDATETIMEFORMATQUERYW.xml' path='doc/member[@name="NMDATETIMEFORMATQUERYW"]/*' />
 public unsafe partial struct NMDATETIMEFORMATQUERYW
 {
+    /// <include file='NMDATETIMEFORMATQUERYW.xml' path='doc/member[@name="NMDATETIMEFORMATQUERYW.nmhdr"]/*' />
     public NMHDR nmhdr;
 
+    /// <include file='NMDATETIMEFORMATQUERYW.xml' path='doc/member[@name="NMDATETIMEFORMATQUERYW.pszFormat"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszFormat;
 
+    /// <include file='NMDATETIMEFORMATQUERYW.xml' path='doc/member[@name="NMDATETIMEFORMATQUERYW.szMax"]/*' />
     public SIZE szMax;
 }

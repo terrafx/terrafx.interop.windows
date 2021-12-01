@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MS_ADDINFO_FLAT.xml' path='doc/member[@name="MS_ADDINFO_FLAT"]/*' />
 public unsafe partial struct MS_ADDINFO_FLAT
 {
+    /// <include file='MS_ADDINFO_FLAT.xml' path='doc/member[@name="MS_ADDINFO_FLAT.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='MS_ADDINFO_FLAT.xml' path='doc/member[@name="MS_ADDINFO_FLAT.pIndirectData"]/*' />
     [NativeTypeName("struct SIP_INDIRECT_DATA_ *")]
     public SIP_INDIRECT_DATA* pIndirectData;
 }

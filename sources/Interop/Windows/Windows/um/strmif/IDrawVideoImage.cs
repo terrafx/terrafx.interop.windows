@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDrawVideoImage.xml' path='doc/member[@name="IDrawVideoImage"]/*' />
 [Guid("48EFB120-AB49-11D2-AED2-00A0C995E8D5")]
 [NativeTypeName("struct IDrawVideoImage : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface
         return ((delegate* unmanaged<IDrawVideoImage*, Guid*, void**, int>)(lpVtbl[0]))((IDrawVideoImage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface
         return ((delegate* unmanaged<IDrawVideoImage*, uint>)(lpVtbl[1]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface
         return ((delegate* unmanaged<IDrawVideoImage*, uint>)(lpVtbl[2]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDrawVideoImage.xml' path='doc/member[@name="IDrawVideoImage.DrawVideoImageBegin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT DrawVideoImageBegin()
@@ -46,6 +51,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface
         return ((delegate* unmanaged<IDrawVideoImage*, int>)(lpVtbl[3]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDrawVideoImage.xml' path='doc/member[@name="IDrawVideoImage.DrawVideoImageEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT DrawVideoImageEnd()
@@ -53,6 +59,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface
         return ((delegate* unmanaged<IDrawVideoImage*, int>)(lpVtbl[4]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDrawVideoImage.xml' path='doc/member[@name="IDrawVideoImage.DrawVideoImageDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT DrawVideoImageDraw(HDC hdc, [NativeTypeName("LPRECT")] RECT* lprcSrc, [NativeTypeName("LPRECT")] RECT* lprcDst)

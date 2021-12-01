@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HEAP_PROPERTY_ID.xml' path='doc/member[@name="WS_HEAP_PROPERTY_ID"]/*' />
 public enum WS_HEAP_PROPERTY_ID
 {
+    /// <include file='WS_HEAP_PROPERTY_ID.xml' path='doc/member[@name="WS_HEAP_PROPERTY_ID.WS_HEAP_PROPERTY_MAX_SIZE"]/*' />
     WS_HEAP_PROPERTY_MAX_SIZE = 0,
+
+    /// <include file='WS_HEAP_PROPERTY_ID.xml' path='doc/member[@name="WS_HEAP_PROPERTY_ID.WS_HEAP_PROPERTY_TRIM_SIZE"]/*' />
     WS_HEAP_PROPERTY_TRIM_SIZE = 1,
+
+    /// <include file='WS_HEAP_PROPERTY_ID.xml' path='doc/member[@name="WS_HEAP_PROPERTY_ID.WS_HEAP_PROPERTY_REQUESTED_SIZE"]/*' />
     WS_HEAP_PROPERTY_REQUESTED_SIZE = 2,
+
+    /// <include file='WS_HEAP_PROPERTY_ID.xml' path='doc/member[@name="WS_HEAP_PROPERTY_ID.WS_HEAP_PROPERTY_ACTUAL_SIZE"]/*' />
     WS_HEAP_PROPERTY_ACTUAL_SIZE = 3,
 }

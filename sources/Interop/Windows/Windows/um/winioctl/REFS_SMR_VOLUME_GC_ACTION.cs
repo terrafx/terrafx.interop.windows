@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REFS_SMR_VOLUME_GC_ACTION.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_ACTION"]/*' />
 public enum REFS_SMR_VOLUME_GC_ACTION
 {
+    /// <include file='REFS_SMR_VOLUME_GC_ACTION.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_ACTION.SmrGcActionStart"]/*' />
     SmrGcActionStart = 1,
+
+    /// <include file='REFS_SMR_VOLUME_GC_ACTION.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_ACTION.SmrGcActionStartFullSpeed"]/*' />
     SmrGcActionStartFullSpeed = 2,
+
+    /// <include file='REFS_SMR_VOLUME_GC_ACTION.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_ACTION.SmrGcActionPause"]/*' />
     SmrGcActionPause = 3,
+
+    /// <include file='REFS_SMR_VOLUME_GC_ACTION.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_ACTION.SmrGcActionStop"]/*' />
     SmrGcActionStop = 4,
 }

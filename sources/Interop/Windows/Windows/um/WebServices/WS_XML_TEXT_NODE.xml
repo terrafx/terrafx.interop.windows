@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_TEXT_NODE">
+    <summary>
+      <para>Represents an element, attribute, or CDATA content.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_NODE.node">
+    <summary>
+      <para>The base type for all types that derive from <see cref="WS_XML_NODE" />.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_NODE.text">
+    <summary>
+      <para>The text content.</para>
+    </summary>
+  </member>
+</doc>

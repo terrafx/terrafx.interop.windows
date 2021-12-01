@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSAPI_WS_WATCH_INFORMATION_EX.xml' path='doc/member[@name="PSAPI_WS_WATCH_INFORMATION_EX"]/*' />
 public partial struct PSAPI_WS_WATCH_INFORMATION_EX
 {
+    /// <include file='PSAPI_WS_WATCH_INFORMATION_EX.xml' path='doc/member[@name="PSAPI_WS_WATCH_INFORMATION_EX.BasicInfo"]/*' />
     public PSAPI_WS_WATCH_INFORMATION BasicInfo;
 
+    /// <include file='PSAPI_WS_WATCH_INFORMATION_EX.xml' path='doc/member[@name="PSAPI_WS_WATCH_INFORMATION_EX.FaultingThreadId"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint FaultingThreadId;
 
+    /// <include file='PSAPI_WS_WATCH_INFORMATION_EX.xml' path='doc/member[@name="PSAPI_WS_WATCH_INFORMATION_EX.Flags"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint Flags;
 }

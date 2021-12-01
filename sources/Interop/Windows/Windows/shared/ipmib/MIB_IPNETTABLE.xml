@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_IPNETTABLE">
+    <summary>
+      <para>The
+<b>MIB_IPNETTABLE</b> structure contains a table of Address Resolution Protocol (ARP) entries for IPv4 addresses.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="GetIpNetTable" /> function retrieves the IPv4-to-physical address mapping table.</para>
+      <para>on a local system and returns this information in a <b>MIB_IPNETTABLE</b> structure.</para>
+      <para>The <b>dwNumEntries</b> member in this structure may be zero if there are no ARP entries in the table.</para>
+      <para>The <b>MIB_IPNETTABLE</b> structure may contain padding for alignment between the <b>dwNumEntries</b> member and the first <see cref="MIB_IPNETROW" /> array entry in the <b>table</b> member. Padding for alignment may also be present between the <b>MIB_IPNETROW</b> array entries in the <b>table</b> member. Any access to a <b>MIB_IPNETROW</b> array entry should assume  padding may exist.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIB_IPNETTABLE</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="GetIpNetTable" />
+    <seealso cref="MIB_IPNETROW" />
+  </member>
+  <member name="MIB_IPNETTABLE.dwNumEntries">
+    <summary>
+      <para>The number of ARP entries in the table.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPNETTABLE.table">
+    <summary>
+      <para>A pointer to a table of ARP entries implemented as an array of
+<see cref="MIB_IPNETROW" /> structures.</para>
+    </summary>
+  </member>
+</doc>

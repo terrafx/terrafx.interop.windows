@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UPHORZSTATES.xml' path='doc/member[@name="UPHORZSTATES"]/*' />
 public enum UPHORZSTATES
 {
+    /// <include file='UPHORZSTATES.xml' path='doc/member[@name="UPHORZSTATES.UPHZS_NORMAL"]/*' />
     UPHZS_NORMAL = 1,
+
+    /// <include file='UPHORZSTATES.xml' path='doc/member[@name="UPHORZSTATES.UPHZS_HOT"]/*' />
     UPHZS_HOT = 2,
+
+    /// <include file='UPHORZSTATES.xml' path='doc/member[@name="UPHORZSTATES.UPHZS_PRESSED"]/*' />
     UPHZS_PRESSED = 3,
+
+    /// <include file='UPHORZSTATES.xml' path='doc/member[@name="UPHORZSTATES.UPHZS_DISABLED"]/*' />
     UPHZS_DISABLED = 4,
 }

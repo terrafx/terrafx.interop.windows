@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APP_LOCAL_DEVICE_ID.xml' path='doc/member[@name="APP_LOCAL_DEVICE_ID"]/*' />
 public unsafe partial struct APP_LOCAL_DEVICE_ID
 {
+    /// <include file='APP_LOCAL_DEVICE_ID.xml' path='doc/member[@name="APP_LOCAL_DEVICE_ID.value"]/*' />
     [NativeTypeName("BYTE [32]")]
     public fixed byte value[32];
 }

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_USAGE_TYPE">
+    <summary>
+      <para>Constants used by <see cref="IFileIsInUse.GetUsage" /> to indicate how a file in use is being used.</para>
+    </summary>
+    <remarks>
+      <para>The interpretation of "playing" or "editing" is left to the application's implementation of <see cref="IFileIsInUse" />. Generally, "playing" would refer to a media file while "editing" can refer to any file being altered in an application. However, the application itself best knows how to map these terms to its actions.</para>
+    </remarks>
+  </member>
+  <member name="FILE_USAGE_TYPE.FUT_PLAYING">
+    <summary>
+      <para>The file is being played by the process that has it open.</para>
+    </summary>
+  </member>
+  <member name="FILE_USAGE_TYPE.FUT_EDITING">
+    <summary>
+      <para>The file is being edited by the process that has it open.</para>
+    </summary>
+  </member>
+  <member name="FILE_USAGE_TYPE.FUT_GENERIC">
+    <summary>
+      <para>The file is open in the process for an unspecified action or an action that does not readily fit into the other two categories.</para>
+    </summary>
+  </member>
+</doc>

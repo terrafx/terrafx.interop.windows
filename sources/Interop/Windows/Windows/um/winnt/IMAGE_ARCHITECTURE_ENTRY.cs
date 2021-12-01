@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_ARCHITECTURE_ENTRY.xml' path='doc/member[@name="IMAGE_ARCHITECTURE_ENTRY"]/*' />
 public partial struct IMAGE_ARCHITECTURE_ENTRY
 {
+    /// <include file='IMAGE_ARCHITECTURE_ENTRY.xml' path='doc/member[@name="IMAGE_ARCHITECTURE_ENTRY.FixupInstRVA"]/*' />
     [NativeTypeName("DWORD")]
     public uint FixupInstRVA;
 
+    /// <include file='IMAGE_ARCHITECTURE_ENTRY.xml' path='doc/member[@name="IMAGE_ARCHITECTURE_ENTRY.NewInst"]/*' />
     [NativeTypeName("DWORD")]
     public uint NewInst;
 }

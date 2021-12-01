@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoNoOfFieldsToSkip.xml' path='doc/member[@name="CODECAPI_AVEncVideoNoOfFieldsToSkip"]/*' />
 [Guid("A97E1240-1427-4C16-A7F7-3DCFD8BA4CC5")]
 public partial struct CODECAPI_AVEncVideoNoOfFieldsToSkip
 {

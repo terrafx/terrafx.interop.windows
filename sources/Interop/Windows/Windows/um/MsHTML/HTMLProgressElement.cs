@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLProgressElement.xml' path='doc/member[@name="HTMLProgressElement"]/*' />
 [Guid("3050F2D5-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLProgressElement
 {

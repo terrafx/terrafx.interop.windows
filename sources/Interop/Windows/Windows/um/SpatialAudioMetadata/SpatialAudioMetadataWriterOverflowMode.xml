@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioMetadataWriterOverflowMode">
+    <summary>
+      <para>Specifies the desired behavior when an <see cref="ISpatialAudioMetadataWriter" /> attempts to write more items into the metadata buffer than was specified when the client was initialized.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioMetadataWriterOverflowMode.SpatialAudioMetadataWriterOverflow_Fail">
+    <summary>
+      <para>The write operation will fail.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioMetadataWriterOverflowMode.SpatialAudioMetadataWriterOverflow_MergeWithNew">
+    <summary>
+      <para>The write operation will succeed, the overflow item will be merged with previous item and adopt the frame offset of newest item.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioMetadataWriterOverflowMode.SpatialAudioMetadataWriterOverflow_MergeWithLast">
+    <summary>
+      <para>The write operation will succeed, the overflow item will be merged with previous item and keep the existing frame offset.</para>
+    </summary>
+  </member>
+</doc>

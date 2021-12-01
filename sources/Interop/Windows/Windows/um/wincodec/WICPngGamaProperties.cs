@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICPngGamaProperties.xml' path='doc/member[@name="WICPngGamaProperties"]/*' />
 public enum WICPngGamaProperties : uint
 {
+    /// <include file='WICPngGamaProperties.xml' path='doc/member[@name="WICPngGamaProperties.WICPngGamaGamma"]/*' />
     WICPngGamaGamma = 0x1,
+
+    /// <include file='WICPngGamaProperties.xml' path='doc/member[@name="WICPngGamaProperties.WICPngGamaProperties_FORCE_DWORD"]/*' />
     WICPngGamaProperties_FORCE_DWORD = 0x7fffffff,
 }

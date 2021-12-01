@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DMO_OUTPUT_DATA_BUFFER">
+    <summary>
+      <para>The <code>DMO_OUTPUT_DATA_BUFFER</code> structure describes an output buffer used by a Microsoft DirectX Media Object (DMO).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-structures">DMO Structures</seealso>
+    <seealso cref="IMediaObject.ProcessOutput" />
+  </member>
+  <member name="DMO_OUTPUT_DATA_BUFFER.pBuffer">
+    <summary>
+      <para>Pointer to the <see cref="IMediaBuffer" /> interface of a buffer allocated by the application.</para>
+    </summary>
+  </member>
+  <member name="DMO_OUTPUT_DATA_BUFFER.dwStatus">
+    <summary>
+      <para>Status flags. After processing output, the DMO sets this member to a bitwise combination of zero or more <see cref="DMO_OUTPUT_DATA_BUFFER_FLAGS" /> flags.</para>
+    </summary>
+  </member>
+  <member name="DMO_OUTPUT_DATA_BUFFER.rtTimestamp">
+    <summary>
+      <para>Time stamp that specifies the start time of the data in the buffer. If the buffer has a valid time stamp, the DMO sets this member and also sets the DMO_OUTPUT_DATA_BUFFERF_TIME flag in the <b>dwStatus</b> member. Otherwise, ignore this member.</para>
+    </summary>
+  </member>
+  <member name="DMO_OUTPUT_DATA_BUFFER.rtTimelength">
+    <summary>
+      <para>Reference time specifying the length of the data in the buffer. If the DMO sets this member to a valid value, it also sets the DMO_OUTPUT_DATA_BUFFERF_TIMELENGTH flag in the <b>dwStatus</b> member. Otherwise, ignore this member.</para>
+    </summary>
+  </member>
+</doc>

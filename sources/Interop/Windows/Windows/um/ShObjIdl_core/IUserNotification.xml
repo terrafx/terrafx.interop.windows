@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUserNotification.PlaySound">
+    <summary>
+      <para>Plays a sound in conjunction with the notification.</para>
+    </summary>
+    <param name="pszSoundName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated Unicode string that specifies the alias of the sound file to play.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The string pointed to by <i>pszSoundNamepqc</i> contains an alias for a system event found in the registry or the Win.ini file; for instance, "SystemExit".</para>
+      <para>The specified sound is played asynchronously and the method returns immediately after beginning the sound. To stop an asynchronous waveform sound, call <b>IUserNotification.PlaySound</b> with <i>pszSoundNamepqc</i> set to <b>NULL</b>.</para>
+      <para>The specified sound event will yield to another sound event that is already playing. If a sound cannot be played because the resource needed to play that sound is busy, the method immediately returns S_FALSE without playing the requested sound.</para>
+      <para>If the specified sound cannot be found, <b>IUserNotification.PlaySound</b> uses the system default sound.</para>
+    </remarks>
+  </member>
+  <member name="IUserNotification.SetBalloonInfo">
+    <summary>
+      <para>Sets the information to be displayed in a balloon notification.</para>
+    </summary>
+    <param name="pszTitle">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a Unicode string that specifies the title of the notification.</para>
+    </param>
+    <param name="pszText">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a Unicode string that specifies the text to be displayed in the body of the balloon.</para>
+    </param>
+    <param name="dwInfoFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>One or more of the following values that indicate an icon to display in the notification balloon.</para>
+      <h4>NIIF_NONE (0x00000000)</h4>
+      <para>0x00000000. Do not display an icon.</para>
+      <h4>NIIF_INFO (0x00000001)</h4>
+      <para>0x00000001. Display an information icon.</para>
+      <h4>NIIF_WARNING (0x00000002)</h4>
+      <para>0x00000002. Display a warning icon.</para>
+      <h4>NIIF_ERROR (0x00000003)</h4>
+      <para>0x00000003. Display an error icon.</para>
+      <h4>NIIF_USER (0x00000004)</h4>
+      <para>0x00000004. <b>Windows XP SP2 and later</b>. Use the icon identified in <b>hIcon</b> in the notification balloon.</para>
+      <h4>NIIF_NOSOUND (0x00000010)</h4>
+      <para>0x00000010. <b>Windows XP and later</b>. Do not play the associated sound. This value applies only to balloon notifications and not to standard user notifications.</para>
+      <h4>NIIF_LARGE_ICON (0x00000010)</h4>
+      <para>0x00000010. <b>Windows Vista and later</b>. The large version of the icon should be used as the icon in the notification balloon. This corresponds to the icon with dimensions SM_CXICON x SM_CYICON. If this flag is not set, the icon with dimensions XM_CXSMICON x SM_CYSMICON is used.</para>
+      <list type="bullet">
+        <item>
+          <description>This flag can be used with all <see cref="stock icons" />.</description>
+        </item>
+        <item>
+          <description>Applications that use older customized icons (NIIF_USER with <b>hIcon</b>) must provide a new SM_CXICON x SM_CYICON version in the tray icon specified in the <b>hIcon</b> member of the <see cref="NOTIFYICONDATA" /> structure. These icons are scaled down when they are displayed in the notification area.</description>
+        </item>
+        <item>
+          <description>New customized icons (NIIF_USER with <b>hBalloonIcon</b>) must supply an SM_CXICON x SM_CYICON version in the supplied icon (<b>hBalloonIcon</b>).</description>
+        </item>
+      </list>
+      <h4>NIIF_RESPECT_QUIET_TIME (0x00000080)</h4>
+      <para>0x00000080. <b>Windows 7 and later</b>. Do not display the notification balloon if the current user is in "quiet time", which is the first hour after a new user logs into his or her account for the first time. During this time, most notifications should not be sent or shown. This lets a user become accustomed to a new computer system without those distractions. Quiet time also occurs for each user after an operating system upgrade or clean installation. A notification sent with this flag during quiet time is not queued; it is simply dismissed unshown. The application can resend the notification later if it is still valid at that time.</para>
+      <para>Because an application cannot predict when it might encounter quiet time, we recommended that this flag always be set on all appropriate notifications by any application that means to honor quiet time.</para>
+      <para>If the current user is not in quiet time, this flag has no effect.</para>
+      <h4>NIIF_ICON_MASK (0x0000000F)</h4>
+      <para>0x0000000F. <b>Windows XP</b> (<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Shell32.dll version 6.0</a><b>) and later</b>. Reserved.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IUserNotification.SetBalloonRetry">
+    <summary>
+      <para>Specifies the conditions for trying to display user information when the first attempt fails.</para>
+    </summary>
+    <param name="dwShowTime">
+      <para>Type: <b>DWORD</b></para>
+      <para>The amount of time, in milliseconds, to display the user information.</para>
+    </param>
+    <param name="dwInterval">
+      <para>Type: <b>DWORD</b></para>
+      <para>The interval of time, in milliseconds, between attempts to display the user information.</para>
+    </param>
+    <param name="cRetryCount">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of times the system should try to display the user information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IUserNotification.SetIconInfo">
+    <summary>
+      <para>Sets the notification area icon associated with specific user information.</para>
+    </summary>
+    <param name="hIcon">
+      <para>Type: <b>HICON</b></para>
+      <para>A handle to the icon.</para>
+    </param>
+    <param name="pszToolTip">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a string that contains the tooltip text to display for the specified icon. This value can be <b>NULL</b>, although it is not recommended.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IUserNotification.Show">
+    <summary>
+      <para>Displays the notification.</para>
+    </summary>
+    <param name="pqc">
+      <para>Type: <b><see cref="IQueryContinue" />*</b></para>
+      <para>An <see cref="IQueryContinue" /> interface pointer, used to determine whether the notification display can continue or should stop (for example, if the user closes the notification). This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="dwContinuePollInterval">
+      <para>Type: <b>DWORD</b></para>
+      <para>The length of time, in milliseconds, to display user information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is equivalent to calling <see cref="Show" /> with <i>pSink</i>=<b>NULL</b>.</para>
+    </remarks>
+  </member>
+  <member name="IUserNotification">
+    <summary>
+      <para>Exposes methods that set notification information and then display that notification to the user in a balloon that appears in conjunction with the notification area of the taskbar.</para>
+      <para>
+        <b>Note</b>  <see cref="IUserNotification2" /> differs from <b>IUserNotification</b> only in its <see cref="Show" /> method, which adds an additional parameter for a callback interface to communicate with the notification. Otherwise the two interfaces are identical in form and function. CLSID_UserNotification implements both versions of <b>Show</b> as an overload.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>An implementation of this interface is provided in Windows as CLSID_UserNotification.</para>
+    </remarks>
+    <seealso cref="IUserNotification2" />
+  </member>
+</doc>

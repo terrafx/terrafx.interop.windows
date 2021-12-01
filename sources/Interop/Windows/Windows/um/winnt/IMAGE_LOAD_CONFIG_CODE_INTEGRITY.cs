@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_LOAD_CONFIG_CODE_INTEGRITY.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_CODE_INTEGRITY"]/*' />
 public partial struct IMAGE_LOAD_CONFIG_CODE_INTEGRITY
 {
+    /// <include file='IMAGE_LOAD_CONFIG_CODE_INTEGRITY.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_CODE_INTEGRITY.Flags"]/*' />
     [NativeTypeName("WORD")]
     public ushort Flags;
 
+    /// <include file='IMAGE_LOAD_CONFIG_CODE_INTEGRITY.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_CODE_INTEGRITY.Catalog"]/*' />
     [NativeTypeName("WORD")]
     public ushort Catalog;
 
+    /// <include file='IMAGE_LOAD_CONFIG_CODE_INTEGRITY.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_CODE_INTEGRITY.CatalogOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint CatalogOffset;
 
+    /// <include file='IMAGE_LOAD_CONFIG_CODE_INTEGRITY.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_CODE_INTEGRITY.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 }

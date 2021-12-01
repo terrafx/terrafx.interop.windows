@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PREVENT_MEDIA_REMOVAL">
+    <summary>
+      <para>Provides removable media locking data. It is used by the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_media_removal">IOCTL_STORAGE_MEDIA_REMOVAL</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_media_removal">IOCTL_STORAGE_MEDIA_REMOVAL</seealso>
+  </member>
+  <member name="PREVENT_MEDIA_REMOVAL.PreventMediaRemoval">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the media is to be locked. Otherwise, it is not.</para>
+    </summary>
+  </member>
+</doc>

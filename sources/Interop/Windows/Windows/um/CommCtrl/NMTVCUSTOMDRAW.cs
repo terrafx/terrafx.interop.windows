@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTVCUSTOMDRAW.xml' path='doc/member[@name="NMTVCUSTOMDRAW"]/*' />
 public partial struct NMTVCUSTOMDRAW
 {
+    /// <include file='NMTVCUSTOMDRAW.xml' path='doc/member[@name="NMTVCUSTOMDRAW.nmcd"]/*' />
     public NMCUSTOMDRAW nmcd;
 
+    /// <include file='NMTVCUSTOMDRAW.xml' path='doc/member[@name="NMTVCUSTOMDRAW.clrText"]/*' />
     public COLORREF clrText;
 
+    /// <include file='NMTVCUSTOMDRAW.xml' path='doc/member[@name="NMTVCUSTOMDRAW.clrTextBk"]/*' />
     public COLORREF clrTextBk;
 
+    /// <include file='NMTVCUSTOMDRAW.xml' path='doc/member[@name="NMTVCUSTOMDRAW.iLevel"]/*' />
     public int iLevel;
 }

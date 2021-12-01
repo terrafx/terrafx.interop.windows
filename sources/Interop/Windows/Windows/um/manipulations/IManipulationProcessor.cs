@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor"]/*' />
 [Guid("A22AC519-8300-48A0-BEF4-F1BE8737DBA4")]
 [NativeTypeName("struct IManipulationProcessor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, Guid*, void**, int>)(lpVtbl[0]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, uint>)(lpVtbl[1]))((IManipulationProcessor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, uint>)(lpVtbl[2]))((IManipulationProcessor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.get_SupportedManipulations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_SupportedManipulations(MANIPULATION_PROCESSOR_MANIPULATIONS* manipulations)
@@ -46,6 +51,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, MANIPULATION_PROCESSOR_MANIPULATIONS*, int>)(lpVtbl[3]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulations);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.put_SupportedManipulations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT put_SupportedManipulations(MANIPULATION_PROCESSOR_MANIPULATIONS manipulations)
@@ -53,6 +59,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, MANIPULATION_PROCESSOR_MANIPULATIONS, int>)(lpVtbl[4]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulations);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.get_PivotPointX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_PivotPointX(float* pivotPointX)
@@ -60,6 +67,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[5]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointX);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.put_PivotPointX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT put_PivotPointX(float pivotPointX)
@@ -67,6 +75,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[6]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointX);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.get_PivotPointY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_PivotPointY(float* pivotPointY)
@@ -74,6 +83,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[7]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointY);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.put_PivotPointY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_PivotPointY(float pivotPointY)
@@ -81,6 +91,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[8]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointY);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.get_PivotRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_PivotRadius(float* pivotRadius)
@@ -88,6 +99,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[9]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotRadius);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.put_PivotRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_PivotRadius(float pivotRadius)
@@ -95,6 +107,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[10]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotRadius);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.CompleteManipulation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT CompleteManipulation()
@@ -102,6 +115,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, int>)(lpVtbl[11]))((IManipulationProcessor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessDown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT ProcessDown([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y)
@@ -109,6 +123,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[12]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessMove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT ProcessMove([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y)
@@ -116,6 +131,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[13]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessUp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT ProcessUp([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y)
@@ -123,6 +139,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[14]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessDownWithTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT ProcessDownWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp)
@@ -130,6 +147,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[15]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessMoveWithTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT ProcessMoveWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp)
@@ -137,6 +155,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[16]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessUpWithTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT ProcessUpWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp)
@@ -144,6 +163,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[17]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.GetVelocityX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetVelocityX(float* velocityX)
@@ -151,6 +171,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[18]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), velocityX);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.GetVelocityY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetVelocityY(float* velocityY)
@@ -158,6 +179,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[19]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), velocityY);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.GetExpansionVelocity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetExpansionVelocity(float* expansionVelocity)
@@ -165,6 +187,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[20]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), expansionVelocity);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.GetAngularVelocity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetAngularVelocity(float* angularVelocity)
@@ -172,6 +195,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[21]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), angularVelocity);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.get_MinimumScaleRotateRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_MinimumScaleRotateRadius(float* minRadius)
@@ -179,6 +203,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[22]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), minRadius);
     }
 
+    /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.put_MinimumScaleRotateRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_MinimumScaleRotateRadius(float minRadius)

@@ -7,13 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_SEGMENT_ELEMENT.xml' path='doc/member[@name="FILE_SEGMENT_ELEMENT"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct FILE_SEGMENT_ELEMENT
 {
+    /// <include file='FILE_SEGMENT_ELEMENT.xml' path='doc/member[@name="FILE_SEGMENT_ELEMENT.Buffer"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("PVOID64")]
     public void* Buffer;
 
+    /// <include file='FILE_SEGMENT_ELEMENT.xml' path='doc/member[@name="FILE_SEGMENT_ELEMENT.Alignment"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("ULONGLONG")]
     public ulong Alignment;

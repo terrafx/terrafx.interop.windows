@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrConflictResolutionItems.xml' path='doc/member[@name="ISyncMgrConflictResolutionItems"]/*' />
 [Guid("458725B9-129D-4135-A998-9CEAFEC27007")]
 [NativeTypeName("struct ISyncMgrConflictResolutionItems : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrConflictResolutionItems : ISyncMgrConflictR
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrConflictResolutionItems : ISyncMgrConflictR
         return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrConflictResolutionItems : ISyncMgrConflictR
         return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint>)(lpVtbl[1]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrConflictResolutionItems : ISyncMgrConflictR
         return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint>)(lpVtbl[2]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrConflictResolutionItems.xml' path='doc/member[@name="ISyncMgrConflictResolutionItems.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCount(uint* pCount)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrConflictResolutionItems : ISyncMgrConflictR
         return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint*, int>)(lpVtbl[3]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), pCount);
     }
 
+    /// <include file='ISyncMgrConflictResolutionItems.xml' path='doc/member[@name="ISyncMgrConflictResolutionItems.GetItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetItem(uint iIndex, CONFIRM_CONFLICT_RESULT_INFO* pItemInfo)

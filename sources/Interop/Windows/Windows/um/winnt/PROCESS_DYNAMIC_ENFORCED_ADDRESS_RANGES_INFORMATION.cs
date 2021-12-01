@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION.xml' path='doc/member[@name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION"]/*' />
 public unsafe partial struct PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION
 {
+    /// <include file='PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION.xml' path='doc/member[@name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION.NumberOfRanges"]/*' />
     [NativeTypeName("WORD")]
     public ushort NumberOfRanges;
 
+    /// <include file='PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION.xml' path='doc/member[@name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION.Reserved"]/*' />
     [NativeTypeName("WORD")]
     public ushort Reserved;
 
+    /// <include file='PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION.xml' path='doc/member[@name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION.Reserved2"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved2;
 
+    /// <include file='PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION.xml' path='doc/member[@name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION.Ranges"]/*' />
     [NativeTypeName("PPROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE")]
     public PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE* Ranges;
 }

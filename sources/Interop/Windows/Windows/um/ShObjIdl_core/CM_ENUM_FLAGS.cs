@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CM_ENUM_FLAGS.xml' path='doc/member[@name="CM_ENUM_FLAGS"]/*' />
 [Flags]
 public enum CM_ENUM_FLAGS
 {
+    /// <include file='CM_ENUM_FLAGS.xml' path='doc/member[@name="CM_ENUM_FLAGS.CM_ENUM_ALL"]/*' />
     CM_ENUM_ALL = 0x1,
+
+    /// <include file='CM_ENUM_FLAGS.xml' path='doc/member[@name="CM_ENUM_FLAGS.CM_ENUM_VISIBLE"]/*' />
     CM_ENUM_VISIBLE = 0x2,
 }

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_SHADOW_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/drop-shadow">Shadow effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SHADOW_PROP.D2D1_SHADOW_PROP_BLUR_STANDARD_DEVIATION">
+    <summary>
+      <para>The amount of blur to be applied to the alpha channel of the image. You can compute the blur radius of the kernel by multiplying the standard deviation by 3.
+The units of both the standard deviation and blur radius are DIPs.</para>
+      <para>This property is the same as the Gaussian Blur standard deviation property.</para>
+      <para>The type is FLOAT.</para>
+      <para>The default value is 3.0f.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SHADOW_PROP.D2D1_SHADOW_PROP_COLOR">
+    <summary>
+      <para>The color of the drop shadow. This property is a D2D1_VECTOR_4F defined as: (R, G, B, A). You must specify this color in straight alpha.</para>
+      <para>The type is <see cref="D2D1_VECTOR_4F" />.</para>
+      <para>The default value is {0.0f, 0.0f, 0.0f, 1.0f}.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SHADOW_PROP.D2D1_SHADOW_PROP_OPTIMIZATION">
+    <summary>
+      <para>The level of performance optimization.</para>
+      <para>The type is <see cref="D2D1_SHADOW_OPTIMIZATION" />.</para>
+      <para>The default value is D2D1_SHADOW_OPTIMIZATION_BALANCED.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SHADOW_PROP.D2D1_SHADOW_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

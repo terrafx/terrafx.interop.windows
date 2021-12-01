@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENLISTMENT_INFORMATION_CLASS.xml' path='doc/member[@name="ENLISTMENT_INFORMATION_CLASS"]/*' />
 public enum ENLISTMENT_INFORMATION_CLASS
 {
+    /// <include file='ENLISTMENT_INFORMATION_CLASS.xml' path='doc/member[@name="ENLISTMENT_INFORMATION_CLASS.EnlistmentBasicInformation"]/*' />
     EnlistmentBasicInformation,
+
+    /// <include file='ENLISTMENT_INFORMATION_CLASS.xml' path='doc/member[@name="ENLISTMENT_INFORMATION_CLASS.EnlistmentRecoveryInformation"]/*' />
     EnlistmentRecoveryInformation,
+
+    /// <include file='ENLISTMENT_INFORMATION_CLASS.xml' path='doc/member[@name="ENLISTMENT_INFORMATION_CLASS.EnlistmentCrmInformation"]/*' />
     EnlistmentCrmInformation,
 }

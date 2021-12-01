@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_RESIDENCY">
+    <summary>
+      <para>Flags indicating the memory location of a resource.</para>
+    </summary>
+    <remarks>
+      <para>This enum is used by <see cref="QueryResourceResidency" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+  </member>
+  <member name="DXGI_RESIDENCY.DXGI_RESIDENCY_FULLY_RESIDENT">
+    <summary>
+      <para>The resource is located in video memory.</para>
+    </summary>
+  </member>
+  <member name="DXGI_RESIDENCY.DXGI_RESIDENCY_RESIDENT_IN_SHARED_MEMORY">
+    <summary>
+      <para>At least some of the resource is located in CPU memory.</para>
+    </summary>
+  </member>
+  <member name="DXGI_RESIDENCY.DXGI_RESIDENCY_EVICTED_TO_DISK">
+    <summary>
+      <para>At least some of the resource has been paged out to the hard drive.</para>
+    </summary>
+  </member>
+</doc>

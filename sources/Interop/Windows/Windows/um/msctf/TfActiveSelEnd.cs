@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TfActiveSelEnd.xml' path='doc/member[@name="TfActiveSelEnd"]/*' />
 public enum TfActiveSelEnd
 {
+    /// <include file='TfActiveSelEnd.xml' path='doc/member[@name="TfActiveSelEnd.TF_AE_NONE"]/*' />
     TF_AE_NONE = 0,
+
+    /// <include file='TfActiveSelEnd.xml' path='doc/member[@name="TfActiveSelEnd.TF_AE_START"]/*' />
     TF_AE_START = 1,
+
+    /// <include file='TfActiveSelEnd.xml' path='doc/member[@name="TfActiveSelEnd.TF_AE_END"]/*' />
     TF_AE_END = 2,
 }

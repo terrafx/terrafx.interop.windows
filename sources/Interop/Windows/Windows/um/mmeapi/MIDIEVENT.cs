@@ -7,18 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIDIEVENT.xml' path='doc/member[@name="MIDIEVENT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct MIDIEVENT
 {
+    /// <include file='MIDIEVENT.xml' path='doc/member[@name="MIDIEVENT.dwDeltaTime"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDeltaTime;
 
+    /// <include file='MIDIEVENT.xml' path='doc/member[@name="MIDIEVENT.dwStreamID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStreamID;
 
+    /// <include file='MIDIEVENT.xml' path='doc/member[@name="MIDIEVENT.dwEvent"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwEvent;
 
+    /// <include file='MIDIEVENT.xml' path='doc/member[@name="MIDIEVENT.dwParms"]/*' />
     [NativeTypeName("DWORD [1]")]
     public fixed uint dwParms[1];
 }

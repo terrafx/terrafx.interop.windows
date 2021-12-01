@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_SOURCE_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_SOURCE_MODE"]/*' />
 public partial struct DISPLAYCONFIG_SOURCE_MODE
 {
+    /// <include file='DISPLAYCONFIG_SOURCE_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_SOURCE_MODE.width"]/*' />
     [NativeTypeName("UINT32")]
     public uint width;
 
+    /// <include file='DISPLAYCONFIG_SOURCE_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_SOURCE_MODE.height"]/*' />
     [NativeTypeName("UINT32")]
     public uint height;
 
+    /// <include file='DISPLAYCONFIG_SOURCE_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_SOURCE_MODE.pixelFormat"]/*' />
     public DISPLAYCONFIG_PIXELFORMAT pixelFormat;
 
+    /// <include file='DISPLAYCONFIG_SOURCE_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_SOURCE_MODE.position"]/*' />
     public POINTL position;
 }

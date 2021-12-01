@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DIRECTMANIPULATION_GESTURE_CONFIGURATION">
+    <summary>
+      <para>Defines the gestures that can be passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setmanualgesture">SetManualGesture</a>.</para>
+    </summary>
+    <remarks>
+      <para>By default, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> always reassigns tap and press-and-hold gestures to the application.</para>
+      <para>Use <b>DIRECTMANIPULATION_GESTURE_PINCH_ZOOM</b> to zoom instead of scale.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+  </member>
+  <member name="DIRECTMANIPULATION_GESTURE_CONFIGURATION.DIRECTMANIPULATION_GESTURE_NONE">
+    <summary>
+      <para>No gestures are defined.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_GESTURE_CONFIGURATION.DIRECTMANIPULATION_GESTURE_DEFAULT">
+    <summary>
+      <para>Only default gestures are supported. This is the default value.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_GESTURE_CONFIGURATION.DIRECTMANIPULATION_GESTURE_CROSS_SLIDE_VERTICAL">
+    <summary>
+      <para>Vertical slide and swipe gestures are supported through the cross-slide interaction. For more information, see <a href="https://docs.microsoft.com//windows/uwp/input-and-devices/guidelines-for-cross-slide">Guidelines for cross-slide</a>.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_GESTURE_CONFIGURATION.DIRECTMANIPULATION_GESTURE_CROSS_SLIDE_HORIZONTAL">
+    <summary>
+      <para>Horizontal slide and swipe gestures are supported through the cross-slide interaction. For more information, see <a href="https://docs.microsoft.com//windows/uwp/input-and-devices/guidelines-for-cross-slide">Guidelines for cross-slide</a>.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_GESTURE_CONFIGURATION.DIRECTMANIPULATION_GESTURE_PINCH_ZOOM">
+    <summary>
+      <para>Pinch and stretch gestures for zooming.</para>
+    </summary>
+  </member>
+</doc>

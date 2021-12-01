@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IXblIdpAuthTokenResult2.xml' path='doc/member[@name="IXblIdpAuthTokenResult2"]/*' />
 [Guid("75D760B0-60B9-412D-994F-26B2CD5F7812")]
 [NativeTypeName("struct IXblIdpAuthTokenResult2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IXblIdpAuthTokenResult2 : IXblIdpAuthTokenResult2.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IXblIdpAuthTokenResult2 : IXblIdpAuthTokenResult2.I
         return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, Guid*, void**, int>)(lpVtbl[0]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IXblIdpAuthTokenResult2 : IXblIdpAuthTokenResult2.I
         return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, uint>)(lpVtbl[1]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IXblIdpAuthTokenResult2 : IXblIdpAuthTokenResult2.I
         return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, uint>)(lpVtbl[2]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXblIdpAuthTokenResult2.xml' path='doc/member[@name="IXblIdpAuthTokenResult2.GetModernGamertag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetModernGamertag([NativeTypeName("LPWSTR *")] ushort** value)
@@ -46,6 +51,7 @@ public unsafe partial struct IXblIdpAuthTokenResult2 : IXblIdpAuthTokenResult2.I
         return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, ushort**, int>)(lpVtbl[3]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IXblIdpAuthTokenResult2.xml' path='doc/member[@name="IXblIdpAuthTokenResult2.GetModernGamertagSuffix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetModernGamertagSuffix([NativeTypeName("LPWSTR *")] ushort** value)
@@ -53,6 +59,7 @@ public unsafe partial struct IXblIdpAuthTokenResult2 : IXblIdpAuthTokenResult2.I
         return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, ushort**, int>)(lpVtbl[4]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IXblIdpAuthTokenResult2.xml' path='doc/member[@name="IXblIdpAuthTokenResult2.GetUniqueModernGamertag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetUniqueModernGamertag([NativeTypeName("LPWSTR *")] ushort** value)

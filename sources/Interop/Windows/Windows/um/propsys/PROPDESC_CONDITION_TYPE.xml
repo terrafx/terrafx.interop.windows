@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPDESC_CONDITION_TYPE">
+    <summary>
+      <para>Describes the condition type to use when displaying the property in the query builder UI in Windows Vista, but not in Windows 7 and later.</para>
+    </summary>
+    <remarks>
+      <para>The flags in PROPDESC_CONDITION_TYPE affected the query string display in the <b>Advanced Query Builder</b> user interface in Windows Vista. In Windows 7 and later, the flags in PROPDESC_CONDITION_TYPE are not used.</para>
+    </remarks>
+  </member>
+  <member name="PROPDESC_CONDITION_TYPE.PDCOT_NONE">
+    <summary>
+      <para>The default value; it means the condition type is unspecified.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_CONDITION_TYPE.PDCOT_STRING">
+    <summary>
+      <para>Use the string condition type.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_CONDITION_TYPE.PDCOT_SIZE">
+    <summary>
+      <para>Use the size condition type.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_CONDITION_TYPE.PDCOT_DATETIME">
+    <summary>
+      <para>Use the date/time condition type.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_CONDITION_TYPE.PDCOT_BOOLEAN">
+    <summary>
+      <para>Use the Boolean condition type.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_CONDITION_TYPE.PDCOT_NUMBER">
+    <summary>
+      <para>Use the number condition type.</para>
+    </summary>
+  </member>
+</doc>

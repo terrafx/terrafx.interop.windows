@@ -8,14 +8,19 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICDdsFormatInfo.xml' path='doc/member[@name="WICDdsFormatInfo"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct WICDdsFormatInfo
 {
+    /// <include file='WICDdsFormatInfo.xml' path='doc/member[@name="WICDdsFormatInfo.DxgiFormat"]/*' />
     public DXGI_FORMAT DxgiFormat;
 
+    /// <include file='WICDdsFormatInfo.xml' path='doc/member[@name="WICDdsFormatInfo.BytesPerBlock"]/*' />
     public uint BytesPerBlock;
 
+    /// <include file='WICDdsFormatInfo.xml' path='doc/member[@name="WICDdsFormatInfo.BlockWidth"]/*' />
     public uint BlockWidth;
 
+    /// <include file='WICDdsFormatInfo.xml' path='doc/member[@name="WICDdsFormatInfo.BlockHeight"]/*' />
     public uint BlockHeight;
 }

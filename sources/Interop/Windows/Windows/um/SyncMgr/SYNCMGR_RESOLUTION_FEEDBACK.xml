@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_RESOLUTION_FEEDBACK">
+    <summary>
+      <para>Describes Sync Manager resolution feedback. Used by <see cref="ISyncMgrResolutionHandler" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_RESOLUTION_FEEDBACK.SYNCMGR_RF_CONTINUE">
+    <summary>
+      <para>Proceed to the next conflict.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_RESOLUTION_FEEDBACK.SYNCMGR_RF_REFRESH">
+    <summary>
+      <para>
+        <b>Apply to All</b> is stopped and the dialog will be displayed for this conflict.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_RESOLUTION_FEEDBACK.SYNCMGR_RF_CANCEL">
+    <summary>
+      <para>Cancels resolution of any more conflicts in the set.</para>
+    </summary>
+  </member>
+</doc>

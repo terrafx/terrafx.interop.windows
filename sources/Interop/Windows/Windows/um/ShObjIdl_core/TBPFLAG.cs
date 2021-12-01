@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TBPFLAG.xml' path='doc/member[@name="TBPFLAG"]/*' />
 public enum TBPFLAG
 {
+    /// <include file='TBPFLAG.xml' path='doc/member[@name="TBPFLAG.TBPF_NOPROGRESS"]/*' />
     TBPF_NOPROGRESS = 0,
+
+    /// <include file='TBPFLAG.xml' path='doc/member[@name="TBPFLAG.TBPF_INDETERMINATE"]/*' />
     TBPF_INDETERMINATE = 0x1,
+
+    /// <include file='TBPFLAG.xml' path='doc/member[@name="TBPFLAG.TBPF_NORMAL"]/*' />
     TBPF_NORMAL = 0x2,
+
+    /// <include file='TBPFLAG.xml' path='doc/member[@name="TBPFLAG.TBPF_ERROR"]/*' />
     TBPF_ERROR = 0x4,
+
+    /// <include file='TBPFLAG.xml' path='doc/member[@name="TBPFLAG.TBPF_PAUSED"]/*' />
     TBPF_PAUSED = 0x8,
 }

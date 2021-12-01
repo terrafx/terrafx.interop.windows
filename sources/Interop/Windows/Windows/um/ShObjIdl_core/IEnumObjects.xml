@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumObjects.Clone">
+    <summary>
+      <para>Not implemented.</para>
+      <para>Not implemented.</para>
+    </summary>
+    <param name="ppenum">
+      <para>Type: <b><see cref="IEnumObjects" />**</b></para>
+      <para>Not used.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumObjects.Next">
+    <summary>
+      <para>Gets the next specified number and type of objects.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of objects to retrieve.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the desired interface ID.</para>
+    </param>
+    <param name="rgelt">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the interface pointer requested in <i>riid</i>.</para>
+    </param>
+    <param name="pceltFetched">
+      <para>Type: <b>ULONG*</b></para>
+      <para>Pointer to a <b>ULONG</b> value that, when this method returns, states the actual number of objects retrieved. This value can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the method successfully retrieved the requested objects. This method only returns S_OK if the full count of requested items are successfully retrieved.</para>
+      <para>S_FALSE indicates that more items were requested than remained in the enumeration.</para>
+    </returns>
+  </member>
+  <member name="IEnumObjects.Reset">
+    <summary>
+      <para>Resets the enumeration index to 0.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumObjects.Skip">
+    <summary>
+      <para>Skips a specified number of objects.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of objects to skip.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Enumeration index is advanced by the number of items skipped.</para>
+    </remarks>
+  </member>
+  <member name="IEnumObjects">
+    <summary>
+      <para>Exposes methods to enumerate unknown objects.</para>
+    </summary>
+  </member>
+</doc>

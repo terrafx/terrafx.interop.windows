@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_COMBINE_MODE.xml' path='doc/member[@name="D2D1_COMBINE_MODE"]/*' />
 public enum D2D1_COMBINE_MODE : uint
 {
+    /// <include file='D2D1_COMBINE_MODE.xml' path='doc/member[@name="D2D1_COMBINE_MODE.D2D1_COMBINE_MODE_UNION"]/*' />
     D2D1_COMBINE_MODE_UNION = 0,
+
+    /// <include file='D2D1_COMBINE_MODE.xml' path='doc/member[@name="D2D1_COMBINE_MODE.D2D1_COMBINE_MODE_INTERSECT"]/*' />
     D2D1_COMBINE_MODE_INTERSECT = 1,
+
+    /// <include file='D2D1_COMBINE_MODE.xml' path='doc/member[@name="D2D1_COMBINE_MODE.D2D1_COMBINE_MODE_XOR"]/*' />
     D2D1_COMBINE_MODE_XOR = 2,
+
+    /// <include file='D2D1_COMBINE_MODE.xml' path='doc/member[@name="D2D1_COMBINE_MODE.D2D1_COMBINE_MODE_EXCLUDE"]/*' />
     D2D1_COMBINE_MODE_EXCLUDE = 3,
+
+    /// <include file='D2D1_COMBINE_MODE.xml' path='doc/member[@name="D2D1_COMBINE_MODE.D2D1_COMBINE_MODE_FORCE_DWORD"]/*' />
     D2D1_COMBINE_MODE_FORCE_DWORD = 0xffffffff,
 }

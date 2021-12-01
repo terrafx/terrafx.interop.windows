@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.FAILED">
+    <summary>
+      <para>Provides a generic test for failure on any status value.</para>
+    </summary>
+    <param name="hr">
+      <para>The status code. This value can be an <b>HRESULT</b> or an <b>SCODE</b>. A negative number indicates failure.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define FAILED(hr) (((HRESULT)(hr)) &lt; 0)
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.HRESULT_CODE">
+    <summary>
+      <para>Extracts the code portion of the specified <b>HRESULT</b>.</para>
+    </summary>
+    <param name="hr">
+      <para>The <b>HRESULT</b> value.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define HRESULT_CODE(hr)    ((hr) &amp;amp;amp;amp;amp;amp;amp; 0xFFFF)
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.HRESULT_FACILITY">
+    <summary>
+      <para>Extracts the facility of the specified <b>HRESULT</b>.</para>
+    </summary>
+    <param name="hr">
+      <para>The <b>HRESULT</b> value.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define HRESULT_FACILITY(hr)  (((hr) &gt;&gt; 16) &amp;amp;amp;amp;amp;amp;amp; 0x1fff)
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.HRESULT_FROM_NT">
+    <summary>
+      <para>Maps an NT status value to an <b>HRESULT</b> value.</para>
+    </summary>
+    <param name="x">
+      <para>The NT status value.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define HRESULT_FROM_NT(x)      ((HRESULT) ((x) | FACILITY_NT_BIT))
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.HRESULT_FROM_WIN32">
+    <summary>
+      <para>Maps a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> to an <b>HRESULT</b> value.</para>
+    </summary>
+    <param name="x">
+      <para>The system error code.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>//
+// HRESULT_FROM_WIN32(x) used to be a macro, however we now run it as an inline function
+// to prevent double evaluation of 'x'. If you still need the macro, you can use __HRESULT_FROM_WIN32(x)
+//
+#define __HRESULT_FROM_WIN32(x) ((HRESULT)(x) &lt;= 0 ? ((HRESULT)(x)) : ((HRESULT) (((x) &amp;amp;amp;amp;amp;amp;amp; 0x0000FFFF) | (FACILITY_WIN32 &lt;&lt; 16) | 0x80000000)))
+
+#ifndef __midl
+FORCEINLINE HRESULT HRESULT_FROM_WIN32(unsigned long x) {
+   return (HRESULT)(x) &lt;= 0 ? (HRESULT)(x) : (HRESULT) (((x) &amp;amp;amp;amp;amp;amp;amp; 0x0000FFFF) | (FACILITY_WIN32 &lt;&lt; 16) | 0x80000000);
+}
+#else
+#define HRESULT_FROM_WIN32(x) __HRESULT_FROM_WIN32(x)
+#endif
+
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.HRESULT_SEVERITY">
+    <summary>
+      <para>Extracts the severity field of the specified <b>HRESULT</b>.</para>
+    </summary>
+    <param name="hr">
+      <para>The <b>HRESULT</b>.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define HRESULT_SEVERITY(hr)  (((hr) &gt;&gt; 31) &amp;amp;amp;amp;amp;amp;amp; 0x1)
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.IS_ERROR">
+    <summary>
+      <para>Provides a generic test for errors on any status value.</para>
+    </summary>
+    <param name="Status">
+      <para>The status code. This value can be an <b>HRESULT</b> or an <b>SCODE</b>.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define SEVERITY_ERROR     1
+#define IS_ERROR(Status) (((unsigned long)(Status)) &gt;&gt; 31 == SEVERITY_ERROR)
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.MAKE_HRESULT">
+    <summary>
+      <para>Creates an <b>HRESULT</b> value from its component pieces.</para>
+    </summary>
+    <param name="sev">
+      <para>The severity.</para>
+    </param>
+    <param name="fac">
+      <para>The facility.</para>
+    </param>
+    <param name="code">
+      <para>The code.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define MAKE_HRESULT(sev,fac,code) \
+    ((HRESULT) (((unsigned long)(sev)&lt;&lt;31) | ((unsigned long)(fac)&lt;&lt;16) | ((unsigned long)(code))) )
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.MAKE_SCODE">
+    <summary>
+      <para>Creates an <b>SCODE</b> value from its component pieces.</para>
+    </summary>
+    <param name="sev">
+      <para>The severity.</para>
+    </param>
+    <param name="fac">
+      <para>The facility.</para>
+    </param>
+    <param name="code">
+      <para>The code.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define MAKE_SCODE(sev,fac,code) \
+    ((SCODE) (((unsigned long)(sev)&lt;&lt;31) | ((unsigned long)(fac)&lt;&lt;16) | ((unsigned long)(code))) )
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.SCODE_CODE">
+    <summary>
+      <para>Extracts the code portion of the specified <b>SCODE</b>.</para>
+    </summary>
+    <param name="sc">
+      <para>The status code.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define SCODE_CODE(sc)      ((sc) &amp;amp;amp;amp;amp;amp;amp; 0xFFFF)
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.SCODE_FACILITY">
+    <summary>
+      <para>Extracts the facility of the specified <b>SCODE</b>.</para>
+    </summary>
+    <param name="sc">
+      <para>The status code.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define SCODE_FACILITY(sc)    (((sc) &gt;&gt; 16) &amp;amp;amp;amp;amp;amp;amp; 0x1fff)
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.SCODE_SEVERITY">
+    <summary>
+      <para>Extracts the severity field of the specified <b>SCODE</b>.</para>
+    </summary>
+    <param name="sc">
+      <para>The status code.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define SCODE_SEVERITY(sc)    (((sc) &gt;&gt; 31) &amp;amp;amp;amp;amp;amp;amp; 0x1)
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+  <member name="Windows.SUCCEEDED">
+    <summary>
+      <para>Provides a generic test for success on any status value.</para>
+    </summary>
+    <param name="hr">
+      <para>The status code. This value can be an <b>HRESULT</b> or an <b>SCODE</b>. A non-negative number indicates success.</para>
+    </param>
+    <remarks>
+      <para>This macro is defined as follows:</para>
+      <code>#define SUCCEEDED(hr) (((HRESULT)(hr)) &gt;= 0)
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+  </member>
+</doc>

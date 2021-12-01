@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DX_FEATURE_LEVEL.xml' path='doc/member[@name="DX_FEATURE_LEVEL"]/*' />
 public enum DX_FEATURE_LEVEL
 {
+    /// <include file='DX_FEATURE_LEVEL.xml' path='doc/member[@name="DX_FEATURE_LEVEL.DX_FEATURE_LEVEL_UNSPECIFIED"]/*' />
     DX_FEATURE_LEVEL_UNSPECIFIED = 0,
+
+    /// <include file='DX_FEATURE_LEVEL.xml' path='doc/member[@name="DX_FEATURE_LEVEL.DX_FEATURE_LEVEL_9"]/*' />
     DX_FEATURE_LEVEL_9 = 1,
+
+    /// <include file='DX_FEATURE_LEVEL.xml' path='doc/member[@name="DX_FEATURE_LEVEL.DX_FEATURE_LEVEL_10"]/*' />
     DX_FEATURE_LEVEL_10 = 2,
+
+    /// <include file='DX_FEATURE_LEVEL.xml' path='doc/member[@name="DX_FEATURE_LEVEL.DX_FEATURE_LEVEL_11"]/*' />
     DX_FEATURE_LEVEL_11 = 3,
 }

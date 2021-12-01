@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMCSAEI_FLAGS.xml' path='doc/member[@name="NMCSAEI_FLAGS"]/*' />
 [Flags]
 public enum NMCSAEI_FLAGS
 {
+    /// <include file='NMCSAEI_FLAGS.xml' path='doc/member[@name="NMCSAEI_FLAGS.NMCSAEI_SELECT"]/*' />
     NMCSAEI_SELECT = 0,
+
+    /// <include file='NMCSAEI_FLAGS.xml' path='doc/member[@name="NMCSAEI_FLAGS.NMCSAEI_EDIT"]/*' />
     NMCSAEI_EDIT = 0x1,
 }

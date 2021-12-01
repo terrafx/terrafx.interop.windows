@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_COPY_MACROVISION.xml' path='doc/member[@name="AM_COPY_MACROVISION"]/*' />
 public partial struct AM_COPY_MACROVISION
 {
+    /// <include file='AM_COPY_MACROVISION.xml' path='doc/member[@name="AM_COPY_MACROVISION.MACROVISIONLevel"]/*' />
     [NativeTypeName("ULONG")]
     public uint MACROVISIONLevel;
 }

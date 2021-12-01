@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSLATEURL_IN_FLAGS.xml' path='doc/member[@name="TRANSLATEURL_IN_FLAGS"]/*' />
 public enum TRANSLATEURL_IN_FLAGS
 {
+    /// <include file='TRANSLATEURL_IN_FLAGS.xml' path='doc/member[@name="TRANSLATEURL_IN_FLAGS.TRANSLATEURL_FL_GUESS_PROTOCOL"]/*' />
     TRANSLATEURL_FL_GUESS_PROTOCOL = 0x0001,
+
+    /// <include file='TRANSLATEURL_IN_FLAGS.xml' path='doc/member[@name="TRANSLATEURL_IN_FLAGS.TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL"]/*' />
     TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL = 0x0002,
 }

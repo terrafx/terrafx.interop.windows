@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2"]/*' />
 [Guid("3050F810-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLDOMAttribute2 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, uint>)(lpVtbl[1]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, uint>)(lpVtbl[2]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, uint*, int>)(lpVtbl[3]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, ushort**, int>)(lpVtbl[7]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_value([NativeTypeName("BSTR")] ushort* v)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, ushort*, int>)(lpVtbl[8]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, ushort**, int>)(lpVtbl[9]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_expando"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_expando([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, short*, int>)(lpVtbl[10]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_nodeType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_nodeType([NativeTypeName("long *")] int* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, int*, int>)(lpVtbl[11]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_parentNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_parentNode(IHTMLDOMNode** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IHTMLDOMNode**, int>)(lpVtbl[12]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_childNodes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_childNodes(IDispatch** p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IDispatch**, int>)(lpVtbl[13]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_firstChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_firstChild(IHTMLDOMNode** p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IHTMLDOMNode**, int>)(lpVtbl[14]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_lastChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_lastChild(IHTMLDOMNode** p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IHTMLDOMNode**, int>)(lpVtbl[15]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_previousSibling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_previousSibling(IHTMLDOMNode** p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IHTMLDOMNode**, int>)(lpVtbl[16]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_nextSibling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_nextSibling(IHTMLDOMNode** p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IHTMLDOMNode**, int>)(lpVtbl[17]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_attributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_attributes(IDispatch** p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IDispatch**, int>)(lpVtbl[18]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.get_ownerDocument"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_ownerDocument(IDispatch** p)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IDispatch**, int>)(lpVtbl[19]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.insertBefore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT insertBefore(IHTMLDOMNode* newChild, VARIANT refChild, IHTMLDOMNode** node)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IHTMLDOMNode*, VARIANT, IHTMLDOMNode**, int>)(lpVtbl[20]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), newChild, refChild, node);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.replaceChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT replaceChild(IHTMLDOMNode* newChild, IHTMLDOMNode* oldChild, IHTMLDOMNode** node)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IHTMLDOMNode*, IHTMLDOMNode*, IHTMLDOMNode**, int>)(lpVtbl[21]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), newChild, oldChild, node);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.removeChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT removeChild(IHTMLDOMNode* oldChild, IHTMLDOMNode** node)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IHTMLDOMNode*, IHTMLDOMNode**, int>)(lpVtbl[22]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), oldChild, node);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.appendChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT appendChild(IHTMLDOMNode* newChild, IHTMLDOMNode** node)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, IHTMLDOMNode*, IHTMLDOMNode**, int>)(lpVtbl[23]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), newChild, node);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.hasChildNodes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT hasChildNodes([NativeTypeName("VARIANT_BOOL *")] short* fChildren)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
         return ((delegate* unmanaged<IHTMLDOMAttribute2*, short*, int>)(lpVtbl[24]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), fChildren);
     }
 
+    /// <include file='IHTMLDOMAttribute2.xml' path='doc/member[@name="IHTMLDOMAttribute2.cloneNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT cloneNode([NativeTypeName("VARIANT_BOOL")] short fDeep, IHTMLDOMAttribute** clonedNode)

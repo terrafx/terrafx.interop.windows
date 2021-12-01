@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OVERLAPPED_ENTRY.xml' path='doc/member[@name="OVERLAPPED_ENTRY"]/*' />
 public unsafe partial struct OVERLAPPED_ENTRY
 {
+    /// <include file='OVERLAPPED_ENTRY.xml' path='doc/member[@name="OVERLAPPED_ENTRY.lpCompletionKey"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint lpCompletionKey;
 
+    /// <include file='OVERLAPPED_ENTRY.xml' path='doc/member[@name="OVERLAPPED_ENTRY.lpOverlapped"]/*' />
     [NativeTypeName("LPOVERLAPPED")]
     public OVERLAPPED* lpOverlapped;
 
+    /// <include file='OVERLAPPED_ENTRY.xml' path='doc/member[@name="OVERLAPPED_ENTRY.Internal"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint Internal;
 
+    /// <include file='OVERLAPPED_ENTRY.xml' path='doc/member[@name="OVERLAPPED_ENTRY.dwNumberOfBytesTransferred"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumberOfBytesTransferred;
 }

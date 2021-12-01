@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PDOPSTATUS.xml' path='doc/member[@name="PDOPSTATUS"]/*' />
 public enum PDOPSTATUS
 {
+    /// <include file='PDOPSTATUS.xml' path='doc/member[@name="PDOPSTATUS.PDOPS_RUNNING"]/*' />
     PDOPS_RUNNING = 1,
+
+    /// <include file='PDOPSTATUS.xml' path='doc/member[@name="PDOPSTATUS.PDOPS_PAUSED"]/*' />
     PDOPS_PAUSED = 2,
+
+    /// <include file='PDOPSTATUS.xml' path='doc/member[@name="PDOPSTATUS.PDOPS_CANCELLED"]/*' />
     PDOPS_CANCELLED = 3,
+
+    /// <include file='PDOPSTATUS.xml' path='doc/member[@name="PDOPSTATUS.PDOPS_STOPPED"]/*' />
     PDOPS_STOPPED = 4,
+
+    /// <include file='PDOPSTATUS.xml' path='doc/member[@name="PDOPSTATUS.PDOPS_ERRORS"]/*' />
     PDOPS_ERRORS = 5,
 }

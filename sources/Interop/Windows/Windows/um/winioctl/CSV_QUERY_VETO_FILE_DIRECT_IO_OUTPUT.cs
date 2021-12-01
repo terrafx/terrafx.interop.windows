@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.xml' path='doc/member[@name="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT"]/*' />
 public unsafe partial struct CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT
 {
+    /// <include file='CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.xml' path='doc/member[@name="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.VetoedFromAltitudeIntegral"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong VetoedFromAltitudeIntegral;
 
+    /// <include file='CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.xml' path='doc/member[@name="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.VetoedFromAltitudeDecimal"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong VetoedFromAltitudeDecimal;
 
+    /// <include file='CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.xml' path='doc/member[@name="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.Reason"]/*' />
     [NativeTypeName("WCHAR [256]")]
     public fixed ushort Reason[256];
 }

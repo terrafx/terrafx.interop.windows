@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WCM_MEDIA_TYPE">
+    <summary>
+      <para>The <b>WCM_MEDIA_TYPE</b> enumerated type specifies the type of media for a connection.</para>
+    </summary>
+  </member>
+  <member name="WCM_MEDIA_TYPE.wcm_media_unknown">
+    <summary>
+      <para>Unknown media.</para>
+    </summary>
+  </member>
+  <member name="WCM_MEDIA_TYPE.wcm_media_ethernet">
+    <summary>
+      <para>Ethernet.</para>
+    </summary>
+  </member>
+  <member name="WCM_MEDIA_TYPE.wcm_media_wlan">
+    <summary>
+      <para>WLAN.</para>
+    </summary>
+  </member>
+  <member name="WCM_MEDIA_TYPE.wcm_media_mbn">
+    <summary>
+      <para>Mobile broadband.</para>
+    </summary>
+  </member>
+  <member name="WCM_MEDIA_TYPE.wcm_media_invalid">
+    <summary>
+      <para>Invalid type.</para>
+    </summary>
+  </member>
+  <member name="WCM_MEDIA_TYPE.wcm_media_max">
+    <summary>
+      <para>Maximum value for testing purposes.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,17 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='sockaddr_gen.xml' path='doc/member[@name="sockaddr_gen"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct sockaddr_gen
 {
+    /// <include file='sockaddr_gen.xml' path='doc/member[@name="sockaddr_gen.Address"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("struct sockaddr")]
     public SOCKADDR Address;
 
+    /// <include file='sockaddr_gen.xml' path='doc/member[@name="sockaddr_gen.AddressIn"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("struct sockaddr_in")]
     public SOCKADDR_IN AddressIn;
 
+    /// <include file='sockaddr_gen.xml' path='doc/member[@name="sockaddr_gen.AddressIn6"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("struct sockaddr_in6_old")]
     public sockaddr_in6_old AddressIn6;

@@ -5,28 +5,37 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG"]/*' />
 public unsafe partial struct COMMCONFIG
 {
+    /// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG.wVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort wVersion;
 
+    /// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG.wReserved"]/*' />
     [NativeTypeName("WORD")]
     public ushort wReserved;
 
+    /// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG.dcb"]/*' />
     public DCB dcb;
 
+    /// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG.dwProviderSubType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProviderSubType;
 
+    /// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG.dwProviderOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProviderOffset;
 
+    /// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG.dwProviderSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProviderSize;
 
+    /// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG.wcProviderData"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort wcProviderData[1];
 }

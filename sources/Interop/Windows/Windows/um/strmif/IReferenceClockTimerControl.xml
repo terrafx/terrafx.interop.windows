@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IReferenceClockTimerControl.GetDefaultTimerResolution">
+    <summary>
+      <para>The <code>GetDefaultTimerResolution</code> method returns the timer resolution that was requested by the reference clock.</para>
+    </summary>
+    <param name="pTimerResolution">
+      <para>Receives the requested timer resolution, in 100-nanosecond units.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The value returned in <i>pTimerResolution</i> is the period that the reference clock attempts to set on the underlying timer. The actual timer period might differ, depending on the hardware. If the reference clock did not request a minimum timer resolution, the <i>pTimerResolution</i> parameter receives the value zero.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IReferenceClockTimerControl Interface" />
+  </member>
+  <member name="IReferenceClockTimerControl.SetDefaultTimerResolution">
+    <summary>
+      <para>The <code>SetDefaultTimerResolution</code> method sets the minimum timer resolution.</para>
+    </summary>
+    <param name="timerResolution">
+      <para>Minimum timer resolution, in 100-nanosecond units. If the value is zero, the reference clock cancels its previous request.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The reference clock attempts to set the period of the timer to <i>timerResolution</i>. The actual period of the timer might differ, depending on the hardware. To find the minimum and maximum timer resolution, call the <see cref="timeGetDevCaps" /> function. The reference clock sets the timer resolution is set by calling <see cref="timeBeginPeriod" />. If <i>timerResolution</i> is 0, the method cancels the previous timer request by calling <see cref="timeEndPeriod" />. (When the reference clock is destroyed, it automatically cancels any previous request.)</para>
+      <para>If this method is not called, the reference clock sets the timer resolution to 1 millisecond. To get the best power management performance, it is recommended that you call this method with the value zero. This overrides the clock's default setting of 1 millisecond. If any filters in the graph require a higher timer resolution, they can call <see cref="timeBeginPeriod" /> individually. Typically only renderers should require a particular timer resolution.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IReferenceClockTimerControl Interface" />
+  </member>
+  <member name="IReferenceClockTimerControl">
+    <summary>
+      <para>The <code>IReferenceClockTimerControl</code> interface changes the timer period used by a reference clock. This interface is exposed by the DirectShow <a href="https://docs.microsoft.com//windows/desktop/DirectShow/system-reference-clock">System Reference Clock</a>.</para>
+    </summary>
+    <remarks>
+      <para>By default, the system reference clock in DirectShow sets the timer period to the minimum value allowed by the timer. Typically, this value is 1 millisecond.</para>
+      <para>The timer period is a global settings in Windows. A higher resolution can improve the accuracy of time-out intervals in wait functions. However, it can also reduce overall system performance, because the thread scheduler switches tasks more often. High resolutions can also prevent the CPU power management system from entering power-saving modes. Setting a higher resolution does not improve the accuracy of the high-resolution performance counter.</para>
+      <para>The main purpose of this interface is to override the reference clock's default timer setting. To do so, call <b>SetDefaultTimerResolution</b> with the value zero. This can result in a lower timer resolution, which might enable the user's computer to enter a power saving mode. (The actual behavior depends on many other factors, such as what other processes are running.) The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> filter uses this interface as described here.</para>
+      <para>If a DirectShow filter requires a higher timer resolution, it should call <see cref="timeBeginPeriod" />. Typically this requirement would apply only to renderer filters.</para>
+    </remarks>
+  </member>
+</doc>

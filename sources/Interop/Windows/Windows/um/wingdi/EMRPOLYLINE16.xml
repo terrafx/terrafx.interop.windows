@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRPOLYLINE16">
+    <summary>
+      <para>The <b>EMRPOLYLINE16, </b><b>EMRPOLYBEZIER16, </b><b>EMRPOLYGON16, </b><b>EMRPOLYBEZIERTO16, </b> and <b>EMRPOLYLINETO16</b> structures contain members for the <see cref="Polyline" />, <see cref="PolyBezier" />, <see cref="Polygon" />, <see cref="PolyBezierTo" />, and <see cref="PolylineTo" /> enhanced metafile records.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRPOLYLINE16.emr">
+    <summary>
+      <para>Base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRPOLYLINE16.rclBounds">
+    <summary>
+      <para>Bounding rectangle, in device units.</para>
+    </summary>
+  </member>
+  <member name="EMRPOLYLINE16.cpts">
+    <summary>
+      <para>Number of points in the array.</para>
+    </summary>
+  </member>
+  <member name="EMRPOLYLINE16.apts">
+    <summary>
+      <para>Array of 16-bit points, in logical units.</para>
+    </summary>
+  </member>
+</doc>

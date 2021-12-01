@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_SHADER_INPUT_BIND_DESC">
+    <summary>
+      <para>Describes how a shader resource is bound to a shader input.</para>
+    </summary>
+    <remarks>
+      <para>Get a shader-input-signature description by calling <see cref="ID3D10ShaderReflection.GetResourceBindingDesc" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D10_SHADER_INPUT_BIND_DESC.Name">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>Name of the shader resource.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_INPUT_BIND_DESC.Type">
+    <summary>
+      <para>Type: <b><see cref="D3D10_SHADER_INPUT_TYPE" /></b></para>
+      <para>Identifies the type of data in the resource. See <see cref="D3D10_SHADER_INPUT_TYPE" />.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_INPUT_BIND_DESC.BindPoint">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Starting bind point.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_INPUT_BIND_DESC.BindCount">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of contiguous bind points for arrays.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_INPUT_BIND_DESC.uFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Shader input-parameter options. See <see cref="D3D10_SHADER_INPUT_FLAGS" />.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_INPUT_BIND_DESC.ReturnType">
+    <summary>
+      <para>Type: <b><see cref="D3D10_RESOURCE_RETURN_TYPE" /></b></para>
+      <para>If the input is a texture, the return type. See <see cref="D3D10_RESOURCE_RETURN_TYPE" />.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_INPUT_BIND_DESC.Dimension">
+    <summary>
+      <para>Type: <b><see cref="D3D10_SRV_DIMENSION" /></b></para>
+      <para>Identifies the amount of data in the resource. See <see cref="D3D10_SRV_DIMENSION" />.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_INPUT_BIND_DESC.NumSamples">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of samples for a multisampled texture; otherwise 0.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_INITIATE_REPAIR_OUTPUT_BUFFER.xml' path='doc/member[@name="FILE_INITIATE_REPAIR_OUTPUT_BUFFER"]/*' />
 public partial struct FILE_INITIATE_REPAIR_OUTPUT_BUFFER
 {
+    /// <include file='FILE_INITIATE_REPAIR_OUTPUT_BUFFER.xml' path='doc/member[@name="FILE_INITIATE_REPAIR_OUTPUT_BUFFER.Hint1"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Hint1;
 
+    /// <include file='FILE_INITIATE_REPAIR_OUTPUT_BUFFER.xml' path='doc/member[@name="FILE_INITIATE_REPAIR_OUTPUT_BUFFER.Hint2"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Hint2;
 
+    /// <include file='FILE_INITIATE_REPAIR_OUTPUT_BUFFER.xml' path='doc/member[@name="FILE_INITIATE_REPAIR_OUTPUT_BUFFER.Clsn"]/*' />
     [NativeTypeName("CLSN")]
     public ulong Clsn;
 
+    /// <include file='FILE_INITIATE_REPAIR_OUTPUT_BUFFER.xml' path='doc/member[@name="FILE_INITIATE_REPAIR_OUTPUT_BUFFER.Status"]/*' />
     [NativeTypeName("DWORD")]
     public uint Status;
 }

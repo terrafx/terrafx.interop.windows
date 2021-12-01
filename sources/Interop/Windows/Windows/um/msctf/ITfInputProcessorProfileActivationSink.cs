@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfInputProcessorProfileActivationSink.xml' path='doc/member[@name="ITfInputProcessorProfileActivationSink"]/*' />
 [Guid("71C6E74E-0F28-11D8-A82A-00065B84435C")]
 [NativeTypeName("struct ITfInputProcessorProfileActivationSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfInputProcessorProfileActivationSink : ITfInputPr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfInputProcessorProfileActivationSink : ITfInputPr
         return ((delegate* unmanaged<ITfInputProcessorProfileActivationSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputProcessorProfileActivationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfInputProcessorProfileActivationSink : ITfInputPr
         return ((delegate* unmanaged<ITfInputProcessorProfileActivationSink*, uint>)(lpVtbl[1]))((ITfInputProcessorProfileActivationSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfInputProcessorProfileActivationSink : ITfInputPr
         return ((delegate* unmanaged<ITfInputProcessorProfileActivationSink*, uint>)(lpVtbl[2]))((ITfInputProcessorProfileActivationSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfInputProcessorProfileActivationSink.xml' path='doc/member[@name="ITfInputProcessorProfileActivationSink.OnActivated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnActivated([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* catid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags)

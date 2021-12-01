@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRMODIFYWORLDTRANSFORM">
+    <summary>
+      <para>The <b>EMRMODIFYWORLDTRANSFORM</b> structure contains members for the <see cref="ModifyWorldTransform" /> enhanced metafile record.</para>
+    </summary>
+    <seealso cref="EMR" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <seealso cref="ModifyWorldTransform" />
+    <seealso cref="XFORM" />
+  </member>
+  <member name="EMRMODIFYWORLDTRANSFORM.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRMODIFYWORLDTRANSFORM.xform">
+    <summary>
+      <para>The world-space to page-space transform data.</para>
+    </summary>
+  </member>
+  <member name="EMRMODIFYWORLDTRANSFORM.iMode">
+    <summary>
+      <para>Indicates how the transformation data modifies the current world transformation. This member can be one of the following values: MWT_IDENTITY, MWT_LEFTMULTIPLY, or MWT_RIGHTMULTIPLY.</para>
+    </summary>
+  </member>
+</doc>

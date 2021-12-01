@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SchGetExtensionsOptions.xml' path='doc/member[@name="SchGetExtensionsOptions"]/*' />
 [Flags]
 public enum SchGetExtensionsOptions
 {
+    /// <include file='SchGetExtensionsOptions.xml' path='doc/member[@name="SchGetExtensionsOptions.SCH_EXTENSIONS_OPTIONS_NONE"]/*' />
     SCH_EXTENSIONS_OPTIONS_NONE = 0x0,
+
+    /// <include file='SchGetExtensionsOptions.xml' path='doc/member[@name="SchGetExtensionsOptions.SCH_NO_RECORD_HEADER"]/*' />
     SCH_NO_RECORD_HEADER = 0x1,
 }

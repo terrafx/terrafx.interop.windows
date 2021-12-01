@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncVideoOutputFrameRateConversion.xml' path='doc/member[@name="eAVEncVideoOutputFrameRateConversion"]/*' />
 public enum eAVEncVideoOutputFrameRateConversion
 {
+    /// <include file='eAVEncVideoOutputFrameRateConversion.xml' path='doc/member[@name="eAVEncVideoOutputFrameRateConversion.eAVEncVideoOutputFrameRateConversion_Disable"]/*' />
     eAVEncVideoOutputFrameRateConversion_Disable = 0,
+
+    /// <include file='eAVEncVideoOutputFrameRateConversion.xml' path='doc/member[@name="eAVEncVideoOutputFrameRateConversion.eAVEncVideoOutputFrameRateConversion_Enable"]/*' />
     eAVEncVideoOutputFrameRateConversion_Enable = 1,
+
+    /// <include file='eAVEncVideoOutputFrameRateConversion.xml' path='doc/member[@name="eAVEncVideoOutputFrameRateConversion.eAVEncVideoOutputFrameRateConversion_Alias"]/*' />
     eAVEncVideoOutputFrameRateConversion_Alias = 2,
 }

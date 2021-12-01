@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSS_HANDLE_INFORMATION.xml' path='doc/member[@name="PSS_HANDLE_INFORMATION"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct PSS_HANDLE_INFORMATION
 {
+    /// <include file='PSS_HANDLE_INFORMATION.xml' path='doc/member[@name="PSS_HANDLE_INFORMATION.HandlesCaptured"]/*' />
     [NativeTypeName("DWORD")]
     public uint HandlesCaptured;
 }

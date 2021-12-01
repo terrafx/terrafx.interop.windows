@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_SLICE1_OPERATOR_DESC">
+    <summary>
+      <para>Extracts a single subregion (a "slice") of an input tensor.</para>
+      <para>The <i>input window</i> describes the bounds of the input tensor to consider in the slice. The window is defined using three values for each dimension.</para>
+      <list type="bullet">
+        <item>
+          <description>The <i>offset</i> marks the <i>beginning of the window</i> in a dimension.</description>
+        </item>
+        <item>
+          <description>The <i>size</i> marks the extent of the window in a dimension. The <i>end of the window</i> in a dimension is <code>offset + size - 1</code>.</description>
+        </item>
+        <item>
+          <description>The <i>stride</i> indicates how to traverse the elements in a dimension.</description>
+        </item>
+        <item>
+          <description>The magnitude of the stride indicates how many elements to advance when copying within the window.</description>
+        </item>
+        <item>
+          <description>If a stride is positive, elements are copied starting at the <i>beginning</i> of the window in the dimension.</description>
+        </item>
+        <item>
+          <description>If a stride is negative, elements are copied starting at the <i>end</i> of the window in the dimension.</description>
+        </item>
+      </list>
+      <para>The following pseudo-code illustrates how elements are copied using the input window. Note how elements in a dimension are copied from start to end with a positive stride, and copied from end to start with a negative stride.</para>
+      <code>CopyStart = InputWindowOffsets
+for dimension i in [0, DimensionCount - 1]:
+    if InputWindowStrides[i] &lt; 0:
+        CopyStart[i] += InputWindowSizes[i] - 1 // start at the end of the window in this dimension
+
+OutputTensor[OutputCoordinates] = InputTensor[CopyStart + InputWindowStrides * OutputCoordinates]
+</code>
+      <para>The input window mustn't be empty in any dimension, and the window mustn't extend beyond the dimensions of the input tensor (out-of-bounds reads aren't permitted). The window's size and strides effectively limit the number of elements that may be copied from each dimension <code>i</code> of the input tensor.</para>
+      <code>MaxCopiedElements[i] = 1 + (InputWindowSize[i] - 1) / InputWindowStrides[i]
+</code>
+      <para>The output tensor isn't required to copy all reachable elements within the window. The slice is valid so long as <code>1 &lt;= OutputSizes[i] &lt;= MaxCopiedElements[i]</code>.</para>
+    </summary>
+    <remarks>
+      <para>This operator is similar to <see cref="DML_SLICE_OPERATOR_DESC" />, but it differs in two important ways.</para>
+      <list type="bullet">
+        <item>
+          <description>Slice strides may be negative, which allows reversing values along dimensions.</description>
+        </item>
+        <item>
+          <description>The input window sizes are not necessarily the same as the output tensor sizes.</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+  <member name="DML_SLICE1_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to extract slices from.</para>
+    </summary>
+  </member>
+  <member name="DML_SLICE1_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write the sliced data results to.</para>
+    </summary>
+  </member>
+  <member name="DML_SLICE1_OPERATOR_DESC.DimensionCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of dimensions. This field determines the size of the <i>InputWindowOffsets</i>, <i>InputWindowSizes</i>, and <i>InputWindowStrides</i> arrays. This value must match the <i>DimensionCount</i> of the input and output tensors. This value must be between 1 and 8, inclusively, starting from <code>DML_FEATURE_LEVEL_3_0</code>; earlier feature levels require a value of either 4 or 5.</para>
+    </summary>
+  </member>
+  <member name="DML_SLICE1_OPERATOR_DESC.InputWindowOffsets">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the beginning (in elements) of the input window in each dimension. Values in the array must satisfy the constraint <code>InputWindowOffsets[i] + InputWindowSizes[i] &lt;= InputTensor.Sizes[i]</code></para>
+    </summary>
+  </member>
+  <member name="DML_SLICE1_OPERATOR_DESC.InputWindowSizes">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the extent (in elements) of the input window in each dimension. Values in the array must satisfy the constraint <code>InputWindowOffsets[i] + InputWindowSizes[i] &lt;= InputTensor.Sizes[i]</code></para>
+    </summary>
+  </member>
+  <member name="DML_SLICE1_OPERATOR_DESC.InputWindowStrides">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the slice's stride along each dimension of the input tensor, in elements. The magnitude of the stride indicates how many elements to advance when copying within the input window. The sign of the stride determines if elements are copied starting at the beginning of the window (positive stride) or end of the window (negative stride). Strides may not be 0.</para>
+    </summary>
+  </member>
+</doc>

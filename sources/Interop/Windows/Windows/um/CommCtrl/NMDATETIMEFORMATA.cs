@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMDATETIMEFORMATA.xml' path='doc/member[@name="NMDATETIMEFORMATA"]/*' />
 public unsafe partial struct NMDATETIMEFORMATA
 {
+    /// <include file='NMDATETIMEFORMATA.xml' path='doc/member[@name="NMDATETIMEFORMATA.nmhdr"]/*' />
     public NMHDR nmhdr;
 
+    /// <include file='NMDATETIMEFORMATA.xml' path='doc/member[@name="NMDATETIMEFORMATA.pszFormat"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* pszFormat;
 
+    /// <include file='NMDATETIMEFORMATA.xml' path='doc/member[@name="NMDATETIMEFORMATA.st"]/*' />
     public SYSTEMTIME st;
 
+    /// <include file='NMDATETIMEFORMATA.xml' path='doc/member[@name="NMDATETIMEFORMATA.pszDisplay"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* pszDisplay;
 
+    /// <include file='NMDATETIMEFORMATA.xml' path='doc/member[@name="NMDATETIMEFORMATA.szDisplay"]/*' />
     [NativeTypeName("CHAR [64]")]
     public fixed sbyte szDisplay[64];
 }

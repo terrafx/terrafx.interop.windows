@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RESOURCEMANAGER_BASIC_INFORMATION.xml' path='doc/member[@name="RESOURCEMANAGER_BASIC_INFORMATION"]/*' />
 public unsafe partial struct RESOURCEMANAGER_BASIC_INFORMATION
 {
+    /// <include file='RESOURCEMANAGER_BASIC_INFORMATION.xml' path='doc/member[@name="RESOURCEMANAGER_BASIC_INFORMATION.ResourceManagerId"]/*' />
     public Guid ResourceManagerId;
 
+    /// <include file='RESOURCEMANAGER_BASIC_INFORMATION.xml' path='doc/member[@name="RESOURCEMANAGER_BASIC_INFORMATION.DescriptionLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint DescriptionLength;
 
+    /// <include file='RESOURCEMANAGER_BASIC_INFORMATION.xml' path='doc/member[@name="RESOURCEMANAGER_BASIC_INFORMATION.Description"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort Description[1];
 }

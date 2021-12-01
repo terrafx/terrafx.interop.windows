@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFPinholeCameraIntrinsic_IntrinsicModel">
+    <summary>
+      <para>Represents a pinhole camera intrinsic model for a specified resolution.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFPinholeCameraIntrinsic_IntrinsicModel.Width">
+    <summary>
+      <para>The width for the pinhole camera intrinsic model, in pixels.</para>
+    </summary>
+  </member>
+  <member name="MFPinholeCameraIntrinsic_IntrinsicModel.Height">
+    <summary>
+      <para>The height for the pinhole camera intrinsic model, in pixels.</para>
+    </summary>
+  </member>
+  <member name="MFPinholeCameraIntrinsic_IntrinsicModel.CameraModel">
+    <summary>
+      <para>The pinhole camera model.</para>
+    </summary>
+  </member>
+  <member name="MFPinholeCameraIntrinsic_IntrinsicModel.DistortionModel">
+    <summary>
+      <para>The lens distortion model.</para>
+    </summary>
+  </member>
+</doc>

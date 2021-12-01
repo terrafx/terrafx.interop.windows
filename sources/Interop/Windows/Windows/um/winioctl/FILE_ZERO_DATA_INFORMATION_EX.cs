@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_ZERO_DATA_INFORMATION_EX.xml' path='doc/member[@name="FILE_ZERO_DATA_INFORMATION_EX"]/*' />
 public partial struct FILE_ZERO_DATA_INFORMATION_EX
 {
+    /// <include file='FILE_ZERO_DATA_INFORMATION_EX.xml' path='doc/member[@name="FILE_ZERO_DATA_INFORMATION_EX.FileOffset"]/*' />
     public LARGE_INTEGER FileOffset;
 
+    /// <include file='FILE_ZERO_DATA_INFORMATION_EX.xml' path='doc/member[@name="FILE_ZERO_DATA_INFORMATION_EX.BeyondFinalZero"]/*' />
     public LARGE_INTEGER BeyondFinalZero;
 
+    /// <include file='FILE_ZERO_DATA_INFORMATION_EX.xml' path='doc/member[@name="FILE_ZERO_DATA_INFORMATION_EX.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

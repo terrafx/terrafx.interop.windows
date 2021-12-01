@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPADAPTATIONRELEVANCE.xml' path='doc/member[@name="SPADAPTATIONRELEVANCE"]/*' />
 public enum SPADAPTATIONRELEVANCE
 {
+    /// <include file='SPADAPTATIONRELEVANCE.xml' path='doc/member[@name="SPADAPTATIONRELEVANCE.SPAR_Unknown"]/*' />
     SPAR_Unknown = 0,
+
+    /// <include file='SPADAPTATIONRELEVANCE.xml' path='doc/member[@name="SPADAPTATIONRELEVANCE.SPAR_Low"]/*' />
     SPAR_Low = 1,
+
+    /// <include file='SPADAPTATIONRELEVANCE.xml' path='doc/member[@name="SPADAPTATIONRELEVANCE.SPAR_Medium"]/*' />
     SPAR_Medium = 2,
+
+    /// <include file='SPADAPTATIONRELEVANCE.xml' path='doc/member[@name="SPADAPTATIONRELEVANCE.SPAR_High"]/*' />
     SPAR_High = 3,
 }

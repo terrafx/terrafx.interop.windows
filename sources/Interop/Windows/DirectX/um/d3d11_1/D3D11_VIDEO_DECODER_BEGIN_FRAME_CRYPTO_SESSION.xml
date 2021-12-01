@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION">
+    <summary>
+      <para>Provides data to the <see cref="ID3D11VideoContext.DecoderBeginFrame" /> method.</para>
+    </summary>
+    <remarks>
+      <para>This structure is passed in the <i>pContentKey</i> parameter of the <see cref="ID3D11VideoContext.DecoderBeginFrame" /> function when <a href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-guids">D3D11_DECODER_ENCRYPTION_HW_CENC</a>  is specified in the <b>guidConfigBitstreamEncryption</b> member of the <see cref="D3D11_VIDEO_DECODER_CONFIG" /> structure when creating the video decoder interface.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION.pCryptoSession">
+    <summary>
+      <para>A pointer to the ID3D11CryptoSession interface.  To get this pointer, call <see cref="ID3D11VideoDevice1.CreateCryptoSession" />.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION.BlobSize">
+    <summary>
+      <para>The size of the memory buffer referenced by the <i>pBlob</i> member.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION.pBlob">
+    <summary>
+      <para>The definition of this buffer is dependent on the implementation of the secure execution environment. It could contain a sealed key blob or any other per-key data that the secure execution environment needs to pass to the decode API.</para>
+      <para>The definition of this buffer is dependent on the implementation of the secure environment. It may contain data specific to the current frame.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION.pKeyInfoId">
+    <summary>
+      <para>A pointer to a GUID identifying the hardware key.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION.PrivateDataSize">
+    <summary>
+      <para>The size of the memory buffer referenced by the <i>pPrivateData</i> member.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION.pPrivateData">
+    <summary></summary>
+  </member>
+</doc>

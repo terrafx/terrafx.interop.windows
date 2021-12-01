@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_RESOURCE_DIMENSION">
+    <summary>
+      <para>Identifies the type of <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">resource</a> being used.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used in <see cref="ID3D10Resource.GetType" />, and <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10-image-info">D3DX10_IMAGE_INFO</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-enums">Resource Enumerations</seealso>
+  </member>
+  <member name="D3D10_RESOURCE_DIMENSION.D3D10_RESOURCE_DIMENSION_UNKNOWN">
+    <summary>
+      <para>Resource is of unknown type.</para>
+    </summary>
+  </member>
+  <member name="D3D10_RESOURCE_DIMENSION.D3D10_RESOURCE_DIMENSION_BUFFER">
+    <summary>
+      <para>Resource is a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">buffer</a>.</para>
+    </summary>
+  </member>
+  <member name="D3D10_RESOURCE_DIMENSION.D3D10_RESOURCE_DIMENSION_TEXTURE1D">
+    <summary>
+      <para>Resource is a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">1D texture</a>.</para>
+    </summary>
+  </member>
+  <member name="D3D10_RESOURCE_DIMENSION.D3D10_RESOURCE_DIMENSION_TEXTURE2D">
+    <summary>
+      <para>Resource is a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">2D texture</a>.</para>
+    </summary>
+  </member>
+  <member name="D3D10_RESOURCE_DIMENSION.D3D10_RESOURCE_DIMENSION_TEXTURE3D">
+    <summary>
+      <para>Resource is a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">3D texture</a>.</para>
+    </summary>
+  </member>
+</doc>

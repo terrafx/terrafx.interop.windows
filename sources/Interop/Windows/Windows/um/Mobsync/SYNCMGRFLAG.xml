@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGRFLAG">
+    <summary>
+      <para>The <b>SYNCMGRFLAG</b> enumeration values are used in the <see cref="ISyncMgrSynchronize.Initialize" /> method to indicate how the synchronization event was initiated.</para>
+    </summary>
+    <seealso cref="ISyncMgrSynchronize.Initialize" />
+  </member>
+  <member name="SYNCMGRFLAG.SYNCMGRFLAG_CONNECT">
+    <summary>
+      <para>Synchronization was initiated by a network connect event.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRFLAG.SYNCMGRFLAG_PENDINGDISCONNECT">
+    <summary>
+      <para>Synchronization was initiated by a pending network disconnect event.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRFLAG.SYNCMGRFLAG_MANUAL">
+    <summary>
+      <para>Synchronization was initiated manually by the end user.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRFLAG.SYNCMGRFLAG_IDLE">
+    <summary>
+      <para>Synchronization was programmatically invoked.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRFLAG.SYNCMGRFLAG_INVOKE">
+    <summary>
+      <para>Synchronization was programmatically invoked.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRFLAG.SYNCMGRFLAG_SCHEDULED">
+    <summary>
+      <para>Synchronization was initiated by a scheduled update event.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRFLAG.SYNCMGRFLAG_EVENTMASK">
+    <summary>
+      <para>Synchronization mask value.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRFLAG.SYNCMGRFLAG_SETTINGS">
+    <summary>
+      <para>Synchronization was initiated for configuration purposes only in the <b>System Properties</b> dialog box.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRFLAG.SYNCMGRFLAG_MAYBOTHERUSER">
+    <summary>
+      <para>Interaction with the user is permitted. The application is allowed to show user interface elements and interact with the user. If this flag is not set, the application must not display any user interface elements other than using the <see cref="ISyncMgrSynchronizeCallback" /> interface. If an application cannot complete the synchronization without displaying user interface elements and this flag is not set, the application fails the synchronization.</para>
+    </summary>
+  </member>
+</doc>

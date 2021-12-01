@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ATTACHMENT_ACTION">
+    <summary>
+      <para>Provides a set of flags to be used with <see cref="IAttachmentExecute.Prompt" /> to indicate the action to be performed upon user confirmation.</para>
+    </summary>
+  </member>
+  <member name="ATTACHMENT_ACTION.ATTACHMENT_ACTION_CANCEL">
+    <summary>
+      <para>Cancel</para>
+    </summary>
+  </member>
+  <member name="ATTACHMENT_ACTION.ATTACHMENT_ACTION_SAVE">
+    <summary>
+      <para>Save</para>
+    </summary>
+  </member>
+  <member name="ATTACHMENT_ACTION.ATTACHMENT_ACTION_EXEC">
+    <summary>
+      <para>Execute</para>
+    </summary>
+  </member>
+</doc>

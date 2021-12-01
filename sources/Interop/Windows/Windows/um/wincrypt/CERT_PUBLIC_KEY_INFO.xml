@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_PUBLIC_KEY_INFO">
+    <summary>
+      <para>The <b>CERT_PUBLIC_KEY_INFO</b> structure contains a public key and its algorithm.</para>
+    </summary>
+    <seealso cref="CERT_INFO" />
+    <seealso cref="CERT_REQUEST_INFO" />
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <seealso cref="CRYPT_BIT_BLOB" />
+    <seealso cref="CertComparePublicKeyInfo" />
+    <seealso cref="CertFindCertificateInStore" />
+    <seealso cref="CryptImportPublicKeyInfoEx" />
+  </member>
+  <member name="CERT_PUBLIC_KEY_INFO.Algorithm">
+    <summary>
+      <para>
+        <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the public key algorithm type and associated additional parameters.</para>
+    </summary>
+  </member>
+  <member name="CERT_PUBLIC_KEY_INFO.PublicKey">
+    <summary>
+      <para>BLOB containing an encoded public key.</para>
+    </summary>
+  </member>
+</doc>

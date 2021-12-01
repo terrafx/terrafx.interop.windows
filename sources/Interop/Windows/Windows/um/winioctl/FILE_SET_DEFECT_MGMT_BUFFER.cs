@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_SET_DEFECT_MGMT_BUFFER.xml' path='doc/member[@name="FILE_SET_DEFECT_MGMT_BUFFER"]/*' />
 public partial struct FILE_SET_DEFECT_MGMT_BUFFER
 {
+    /// <include file='FILE_SET_DEFECT_MGMT_BUFFER.xml' path='doc/member[@name="FILE_SET_DEFECT_MGMT_BUFFER.Disable"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Disable;
 }

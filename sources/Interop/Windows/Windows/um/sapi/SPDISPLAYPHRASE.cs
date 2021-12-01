@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPDISPLAYPHRASE.xml' path='doc/member[@name="SPDISPLAYPHRASE"]/*' />
 public unsafe partial struct SPDISPLAYPHRASE
 {
+    /// <include file='SPDISPLAYPHRASE.xml' path='doc/member[@name="SPDISPLAYPHRASE.ulNumTokens"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulNumTokens;
 
+    /// <include file='SPDISPLAYPHRASE.xml' path='doc/member[@name="SPDISPLAYPHRASE.pTokens"]/*' />
     public SPDISPLAYTOKEN* pTokens;
 }

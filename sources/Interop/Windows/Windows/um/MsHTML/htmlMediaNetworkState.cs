@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlMediaNetworkState.xml' path='doc/member[@name="htmlMediaNetworkState"]/*' />
 public enum htmlMediaNetworkState
 {
+    /// <include file='htmlMediaNetworkState.xml' path='doc/member[@name="htmlMediaNetworkState.htmlMediaNetworkStateEmpty"]/*' />
     htmlMediaNetworkStateEmpty = 0,
+
+    /// <include file='htmlMediaNetworkState.xml' path='doc/member[@name="htmlMediaNetworkState.htmlMediaNetworkStateIdle"]/*' />
     htmlMediaNetworkStateIdle = 1,
+
+    /// <include file='htmlMediaNetworkState.xml' path='doc/member[@name="htmlMediaNetworkState.htmlMediaNetworkStateLoading"]/*' />
     htmlMediaNetworkStateLoading = 2,
+
+    /// <include file='htmlMediaNetworkState.xml' path='doc/member[@name="htmlMediaNetworkState.htmlMediaNetworkStateNoSource"]/*' />
     htmlMediaNetworkStateNoSource = 3,
+
+    /// <include file='htmlMediaNetworkState.xml' path='doc/member[@name="htmlMediaNetworkState.htmlMediaNetworkState_Max"]/*' />
     htmlMediaNetworkState_Max = 2147483647,
 }

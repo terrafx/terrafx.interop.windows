@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_BUS_QUERY_TYPE.xml' path='doc/member[@name="SCM_BUS_QUERY_TYPE"]/*' />
 public enum SCM_BUS_QUERY_TYPE
 {
+    /// <include file='SCM_BUS_QUERY_TYPE.xml' path='doc/member[@name="SCM_BUS_QUERY_TYPE.ScmBusQuery_Descriptor"]/*' />
     ScmBusQuery_Descriptor = 0,
+
+    /// <include file='SCM_BUS_QUERY_TYPE.xml' path='doc/member[@name="SCM_BUS_QUERY_TYPE.ScmBusQuery_IsSupported"]/*' />
     ScmBusQuery_IsSupported,
+
+    /// <include file='SCM_BUS_QUERY_TYPE.xml' path='doc/member[@name="SCM_BUS_QUERY_TYPE.ScmBusQuery_Max"]/*' />
     ScmBusQuery_Max,
 }

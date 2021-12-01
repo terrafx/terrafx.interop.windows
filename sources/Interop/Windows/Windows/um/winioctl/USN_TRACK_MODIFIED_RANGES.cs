@@ -7,18 +7,23 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USN_TRACK_MODIFIED_RANGES.xml' path='doc/member[@name="USN_TRACK_MODIFIED_RANGES"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct USN_TRACK_MODIFIED_RANGES
 {
+    /// <include file='USN_TRACK_MODIFIED_RANGES.xml' path='doc/member[@name="USN_TRACK_MODIFIED_RANGES.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='USN_TRACK_MODIFIED_RANGES.xml' path='doc/member[@name="USN_TRACK_MODIFIED_RANGES.Unused"]/*' />
     [NativeTypeName("DWORD")]
     public uint Unused;
 
+    /// <include file='USN_TRACK_MODIFIED_RANGES.xml' path='doc/member[@name="USN_TRACK_MODIFIED_RANGES.ChunkSize"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong ChunkSize;
 
+    /// <include file='USN_TRACK_MODIFIED_RANGES.xml' path='doc/member[@name="USN_TRACK_MODIFIED_RANGES.FileSizeThreshold"]/*' />
     [NativeTypeName("LONGLONG")]
     public long FileSizeThreshold;
 }

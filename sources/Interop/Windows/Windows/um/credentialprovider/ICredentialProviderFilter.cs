@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICredentialProviderFilter.xml' path='doc/member[@name="ICredentialProviderFilter"]/*' />
 [Guid("A5DA53F9-D475-4080-A120-910C4A739880")]
 [NativeTypeName("struct ICredentialProviderFilter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
         return ((delegate* unmanaged<ICredentialProviderFilter*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
         return ((delegate* unmanaged<ICredentialProviderFilter*, uint>)(lpVtbl[1]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
         return ((delegate* unmanaged<ICredentialProviderFilter*, uint>)(lpVtbl[2]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICredentialProviderFilter.xml' path='doc/member[@name="ICredentialProviderFilter.Filter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Filter(CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, [NativeTypeName("DWORD")] uint dwFlags, Guid* rgclsidProviders, BOOL* rgbAllow, [NativeTypeName("DWORD")] uint cProviders)
@@ -46,6 +51,7 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
         return ((delegate* unmanaged<ICredentialProviderFilter*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, Guid*, BOOL*, uint, int>)(lpVtbl[3]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this), cpus, dwFlags, rgclsidProviders, rgbAllow, cProviders);
     }
 
+    /// <include file='ICredentialProviderFilter.xml' path='doc/member[@name="ICredentialProviderFilter.UpdateRemoteCredential"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UpdateRemoteCredential([NativeTypeName("const CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *")] CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcsIn, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcsOut)

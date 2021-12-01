@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFExtendedCameraIntrinsics.xml' path='doc/member[@name="IMFExtendedCameraIntrinsics"]/*' />
 [Guid("687F6DAC-6987-4750-A16A-734D1E7A10FE")]
 [NativeTypeName("struct IMFExtendedCameraIntrinsics : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntr
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntr
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint>)(lpVtbl[1]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntr
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint>)(lpVtbl[2]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFExtendedCameraIntrinsics.xml' path='doc/member[@name="IMFExtendedCameraIntrinsics.InitializeFromBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InitializeFromBuffer(byte* pbBuffer, [NativeTypeName("DWORD")] uint dwBufferSize)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntr
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint, int>)(lpVtbl[3]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pbBuffer, dwBufferSize);
     }
 
+    /// <include file='IMFExtendedCameraIntrinsics.xml' path='doc/member[@name="IMFExtendedCameraIntrinsics.GetBufferSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetBufferSize([NativeTypeName("DWORD *")] uint* pdwBufferSize)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntr
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint*, int>)(lpVtbl[4]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pdwBufferSize);
     }
 
+    /// <include file='IMFExtendedCameraIntrinsics.xml' path='doc/member[@name="IMFExtendedCameraIntrinsics.SerializeToBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SerializeToBuffer(byte* pbBuffer, [NativeTypeName("DWORD *")] uint* pdwBufferSize)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntr
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint*, int>)(lpVtbl[5]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pbBuffer, pdwBufferSize);
     }
 
+    /// <include file='IMFExtendedCameraIntrinsics.xml' path='doc/member[@name="IMFExtendedCameraIntrinsics.GetIntrinsicModelCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetIntrinsicModelCount([NativeTypeName("DWORD *")] uint* pdwCount)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntr
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint*, int>)(lpVtbl[6]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='IMFExtendedCameraIntrinsics.xml' path='doc/member[@name="IMFExtendedCameraIntrinsics.GetIntrinsicModelByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetIntrinsicModelByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFExtendedCameraIntrinsicModel** ppIntrinsicModel)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntr
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint, IMFExtendedCameraIntrinsicModel**, int>)(lpVtbl[7]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), dwIndex, ppIntrinsicModel);
     }
 
+    /// <include file='IMFExtendedCameraIntrinsics.xml' path='doc/member[@name="IMFExtendedCameraIntrinsics.AddIntrinsicModel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT AddIntrinsicModel(IMFExtendedCameraIntrinsicModel* pIntrinsicModel)

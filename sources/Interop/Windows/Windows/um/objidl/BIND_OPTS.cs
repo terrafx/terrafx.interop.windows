@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BIND_OPTS.xml' path='doc/member[@name="BIND_OPTS"]/*' />
 public partial struct BIND_OPTS
 {
+    /// <include file='BIND_OPTS.xml' path='doc/member[@name="BIND_OPTS.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='BIND_OPTS.xml' path='doc/member[@name="BIND_OPTS.grfFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint grfFlags;
 
+    /// <include file='BIND_OPTS.xml' path='doc/member[@name="BIND_OPTS.grfMode"]/*' />
     [NativeTypeName("DWORD")]
     public uint grfMode;
 
+    /// <include file='BIND_OPTS.xml' path='doc/member[@name="BIND_OPTS.dwTickCountDeadline"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTickCountDeadline;
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoRateControlParams.xml' path='doc/member[@name="CODECAPI_AVEncVideoRateControlParams"]/*' />
 [Guid("87D43767-7645-44EC-B438-D3322FBCA29F")]
 public partial struct CODECAPI_AVEncVideoRateControlParams
 {

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1CommandSink2.DrawGdiMetafile">
+    <summary>
+      <para>Draws a metafile to the command sink using the given source and destination rectangles.</para>
+    </summary>
+    <param name="gdiMetafile">
+      <para>Type: <b><see cref="ID2D1GdiMetafile" />*</b></para>
+      <para>The metafile to draw.</para>
+    </param>
+    <param name="destinationRectangle">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>The rectangle in the target where the metafile will be drawn, relative to the upper left corner (defined in DIPs). If NULL is specified, the destination rectangle is the size of the target.</para>
+    </param>
+    <param name="sourceRectangle">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>The rectangle of the source metafile that will be drawn, relative to the upper left corner (defined in DIPs).
+If NULL is specified, the source rectangle is the value returned by <see cref="ID2D1GdiMetafile1.GetSourceBounds" />.</para>
+    </param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <seealso cref="ID2D1CommandSink2" />
+  </member>
+  <member name="ID2D1CommandSink2.DrawGradientMesh">
+    <summary>
+      <para>Renders a given gradient mesh to the target.</para>
+    </summary>
+    <param name="gradientMesh">
+      <para>Type: <b><see cref="ID2D1GradientMesh" />*</b></para>
+      <para>The gradient mesh to be rendered.</para>
+    </param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <seealso cref="ID2D1CommandSink2" />
+  </member>
+  <member name="ID2D1CommandSink2.DrawInk">
+    <summary>
+      <para>Renders the given ink object using the given brush and ink style.</para>
+    </summary>
+    <param name="ink">
+      <para>Type: <b><see cref="ID2D1Ink" />*</b></para>
+      <para>The ink object to be rendered.</para>
+    </param>
+    <param name="brush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush with which to render the ink object.</para>
+    </param>
+    <param name="inkStyle">
+      <para>Type: <b><see cref="ID2D1InkStyle" />*</b></para>
+      <para>The ink style to use when rendering the ink object.</para>
+    </param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <seealso cref="ID2D1CommandSink2" />
+  </member>
+  <member name="ID2D1CommandSink2">
+    <summary>
+      <para>This interface performs all the same functions as the existing <see cref="ID2D1CommandSink1" /> interface.
+It also enables access to ink rendering and gradient mesh rendering.</para>
+    </summary>
+    <seealso cref="ID2D1CommandSink1" />
+  </member>
+</doc>

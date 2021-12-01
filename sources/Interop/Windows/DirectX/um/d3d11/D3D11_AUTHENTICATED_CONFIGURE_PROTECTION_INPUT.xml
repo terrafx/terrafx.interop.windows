@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_PROTECTION_INPUT">
+    <summary>
+      <para>Contains input data for a <b>D3D11_AUTHENTICATED_CONFIGURE_PROTECTION</b> command.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_PROTECTION_INPUT.Parameters">
+    <summary>
+      <para>A <see cref="D3D11_AUTHENTICATED_CONFIGURE_INPUT" /> structure that contains the command GUID and other data.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_PROTECTION_INPUT.Protections">
+    <summary>
+      <para>A <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> union that specifies the protection level.</para>
+    </summary>
+  </member>
+</doc>

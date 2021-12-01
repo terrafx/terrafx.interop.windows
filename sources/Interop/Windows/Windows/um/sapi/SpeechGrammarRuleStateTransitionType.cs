@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechGrammarRuleStateTransitionType.xml' path='doc/member[@name="SpeechGrammarRuleStateTransitionType"]/*' />
 public enum SpeechGrammarRuleStateTransitionType
 {
+    /// <include file='SpeechGrammarRuleStateTransitionType.xml' path='doc/member[@name="SpeechGrammarRuleStateTransitionType.SGRSTTEpsilon"]/*' />
     SGRSTTEpsilon = 0,
+
+    /// <include file='SpeechGrammarRuleStateTransitionType.xml' path='doc/member[@name="SpeechGrammarRuleStateTransitionType.SGRSTTWord"]/*' />
     SGRSTTWord = (SGRSTTEpsilon + 1),
+
+    /// <include file='SpeechGrammarRuleStateTransitionType.xml' path='doc/member[@name="SpeechGrammarRuleStateTransitionType.SGRSTTRule"]/*' />
     SGRSTTRule = (SGRSTTWord + 1),
+
+    /// <include file='SpeechGrammarRuleStateTransitionType.xml' path='doc/member[@name="SpeechGrammarRuleStateTransitionType.SGRSTTDictation"]/*' />
     SGRSTTDictation = (SGRSTTRule + 1),
+
+    /// <include file='SpeechGrammarRuleStateTransitionType.xml' path='doc/member[@name="SpeechGrammarRuleStateTransitionType.SGRSTTWildcard"]/*' />
     SGRSTTWildcard = (SGRSTTDictation + 1),
+
+    /// <include file='SpeechGrammarRuleStateTransitionType.xml' path='doc/member[@name="SpeechGrammarRuleStateTransitionType.SGRSTTTextBuffer"]/*' />
     SGRSTTTextBuffer = (SGRSTTWildcard + 1),
 }

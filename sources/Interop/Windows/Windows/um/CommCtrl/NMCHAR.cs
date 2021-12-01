@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMCHAR.xml' path='doc/member[@name="NMCHAR"]/*' />
 public partial struct NMCHAR
 {
+    /// <include file='NMCHAR.xml' path='doc/member[@name="NMCHAR.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMCHAR.xml' path='doc/member[@name="NMCHAR.ch"]/*' />
     public uint ch;
 
+    /// <include file='NMCHAR.xml' path='doc/member[@name="NMCHAR.dwItemPrev"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwItemPrev;
 
+    /// <include file='NMCHAR.xml' path='doc/member[@name="NMCHAR.dwItemNext"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwItemNext;
 }

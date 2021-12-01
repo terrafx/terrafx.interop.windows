@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IQuickActivate.xml' path='doc/member[@name="IQuickActivate"]/*' />
 [Guid("CF51ED10-62FE-11CF-BF86-00A0C9034836")]
 [NativeTypeName("struct IQuickActivate : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface
         return ((delegate* unmanaged<IQuickActivate*, Guid*, void**, int>)(lpVtbl[0]))((IQuickActivate*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface
         return ((delegate* unmanaged<IQuickActivate*, uint>)(lpVtbl[1]))((IQuickActivate*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface
         return ((delegate* unmanaged<IQuickActivate*, uint>)(lpVtbl[2]))((IQuickActivate*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IQuickActivate.xml' path='doc/member[@name="IQuickActivate.QuickActivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QuickActivate(QACONTAINER* pQaContainer, QACONTROL* pQaControl)
@@ -46,6 +51,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface
         return ((delegate* unmanaged<IQuickActivate*, QACONTAINER*, QACONTROL*, int>)(lpVtbl[3]))((IQuickActivate*)Unsafe.AsPointer(ref this), pQaContainer, pQaControl);
     }
 
+    /// <include file='IQuickActivate.xml' path='doc/member[@name="IQuickActivate.SetContentExtent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
@@ -53,6 +59,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface
         return ((delegate* unmanaged<IQuickActivate*, SIZE*, int>)(lpVtbl[4]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
     }
 
+    /// <include file='IQuickActivate.xml' path='doc/member[@name="IQuickActivate.GetContentExtent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_BITMAPSOURCE_INTERPOLATION_MODE">
+    <summary>
+      <para>The interpolation mode used to scale the image in the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/bitmap-source">Bitmap source effect</a>.If the mode disables the mipmap, then BitmapSouce will cache the image at the resolution determined by the Scale and EnableDPICorrection properties.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_INTERPOLATION_MODE.D2D1_BITMAPSOURCE_INTERPOLATION_MODE_NEAREST_NEIGHBOR">
+    <summary>
+      <para>Samples the nearest single point and uses that. Doesn't generate a mipmap.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_INTERPOLATION_MODE.D2D1_BITMAPSOURCE_INTERPOLATION_MODE_LINEAR">
+    <summary>
+      <para>Uses a four point sample and linear interpolation. Doesn't generate a mipmap.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_INTERPOLATION_MODE.D2D1_BITMAPSOURCE_INTERPOLATION_MODE_CUBIC">
+    <summary>
+      <para>Uses a 16 sample cubic kernel for interpolation. Doesn't generate a mipmap.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_INTERPOLATION_MODE.D2D1_BITMAPSOURCE_INTERPOLATION_MODE_FANT">
+    <summary>
+      <para>Uses the WIC fant interpolation, the same as the IWICBitmapScaler interface. Doesn't generate a mipmap.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_INTERPOLATION_MODE.D2D1_BITMAPSOURCE_INTERPOLATION_MODE_MIPMAP_LINEAR">
+    <summary>
+      <para>Generates mipmap chain in system memory using bilinear interpolation. For each mipmap the effect scales to the nearest multiple of 0.5 using bilinear interpolation
+and then scales the remaining amount using linear interpolation.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_INTERPOLATION_MODE.D2D1_BITMAPSOURCE_INTERPOLATION_MODE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

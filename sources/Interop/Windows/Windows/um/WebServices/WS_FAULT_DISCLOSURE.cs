@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_FAULT_DISCLOSURE.xml' path='doc/member[@name="WS_FAULT_DISCLOSURE"]/*' />
 public enum WS_FAULT_DISCLOSURE
 {
+    /// <include file='WS_FAULT_DISCLOSURE.xml' path='doc/member[@name="WS_FAULT_DISCLOSURE.WS_MINIMAL_FAULT_DISCLOSURE"]/*' />
     WS_MINIMAL_FAULT_DISCLOSURE = 0,
+
+    /// <include file='WS_FAULT_DISCLOSURE.xml' path='doc/member[@name="WS_FAULT_DISCLOSURE.WS_FULL_FAULT_DISCLOSURE"]/*' />
     WS_FULL_FAULT_DISCLOSURE = 1,
 }

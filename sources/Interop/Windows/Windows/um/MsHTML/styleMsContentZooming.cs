@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming"]/*' />
 public enum styleMsContentZooming
 {
+    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZoomingNotSet"]/*' />
     styleMsContentZoomingNotSet = 0,
+
+    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZoomingNone"]/*' />
     styleMsContentZoomingNone = 1,
+
+    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZoomingZoom"]/*' />
     styleMsContentZoomingZoom = 2,
+
+    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZooming_Max"]/*' />
     styleMsContentZooming_Max = 2147483647,
 }

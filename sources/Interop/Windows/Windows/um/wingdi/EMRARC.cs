@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRARC.xml' path='doc/member[@name="EMRARC"]/*' />
 public partial struct EMRARC
 {
+    /// <include file='EMRARC.xml' path='doc/member[@name="EMRARC.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRARC.xml' path='doc/member[@name="EMRARC.rclBox"]/*' />
     public RECTL rclBox;
 
+    /// <include file='EMRARC.xml' path='doc/member[@name="EMRARC.ptlStart"]/*' />
     public POINTL ptlStart;
 
+    /// <include file='EMRARC.xml' path='doc/member[@name="EMRARC.ptlEnd"]/*' />
     public POINTL ptlEnd;
 }

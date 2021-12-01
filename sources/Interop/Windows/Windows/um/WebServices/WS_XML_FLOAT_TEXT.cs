@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_FLOAT_TEXT.xml' path='doc/member[@name="WS_XML_FLOAT_TEXT"]/*' />
 public partial struct WS_XML_FLOAT_TEXT
 {
+    /// <include file='WS_XML_FLOAT_TEXT.xml' path='doc/member[@name="WS_XML_FLOAT_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_FLOAT_TEXT.xml' path='doc/member[@name="WS_XML_FLOAT_TEXT.value"]/*' />
     public float value;
 }

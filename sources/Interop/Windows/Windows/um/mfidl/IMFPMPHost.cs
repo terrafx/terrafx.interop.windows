@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFPMPHost.xml' path='doc/member[@name="IMFPMPHost"]/*' />
 [Guid("F70CA1A9-FDC7-4782-B994-ADFFB1C98606")]
 [NativeTypeName("struct IMFPMPHost : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFPMPHost : IMFPMPHost.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFPMPHost : IMFPMPHost.Interface
         return ((delegate* unmanaged<IMFPMPHost*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFPMPHost : IMFPMPHost.Interface
         return ((delegate* unmanaged<IMFPMPHost*, uint>)(lpVtbl[1]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFPMPHost : IMFPMPHost.Interface
         return ((delegate* unmanaged<IMFPMPHost*, uint>)(lpVtbl[2]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMPHost.xml' path='doc/member[@name="IMFPMPHost.LockProcess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT LockProcess()
@@ -46,6 +51,7 @@ public unsafe partial struct IMFPMPHost : IMFPMPHost.Interface
         return ((delegate* unmanaged<IMFPMPHost*, int>)(lpVtbl[3]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMPHost.xml' path='doc/member[@name="IMFPMPHost.UnlockProcess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnlockProcess()
@@ -53,6 +59,7 @@ public unsafe partial struct IMFPMPHost : IMFPMPHost.Interface
         return ((delegate* unmanaged<IMFPMPHost*, int>)(lpVtbl[4]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMPHost.xml' path='doc/member[@name="IMFPMPHost.CreateObjectByCLSID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

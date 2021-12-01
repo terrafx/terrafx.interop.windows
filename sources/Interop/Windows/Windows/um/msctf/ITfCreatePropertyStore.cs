@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCreatePropertyStore.xml' path='doc/member[@name="ITfCreatePropertyStore"]/*' />
 [Guid("2463FBF0-B0AF-11D2-AFC5-00105A2799B5")]
 [NativeTypeName("struct ITfCreatePropertyStore : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCreatePropertyStore : ITfCreatePropertyStore.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCreatePropertyStore : ITfCreatePropertyStore.Int
         return ((delegate* unmanaged<ITfCreatePropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCreatePropertyStore : ITfCreatePropertyStore.Int
         return ((delegate* unmanaged<ITfCreatePropertyStore*, uint>)(lpVtbl[1]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCreatePropertyStore : ITfCreatePropertyStore.Int
         return ((delegate* unmanaged<ITfCreatePropertyStore*, uint>)(lpVtbl[2]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCreatePropertyStore.xml' path='doc/member[@name="ITfCreatePropertyStore.IsStoreSerializable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsStoreSerializable([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, ITfPropertyStore* pPropStore, BOOL* pfSerializable)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfCreatePropertyStore : ITfCreatePropertyStore.Int
         return ((delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, ITfPropertyStore*, BOOL*, int>)(lpVtbl[3]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this), guidProp, pRange, pPropStore, pfSerializable);
     }
 
+    /// <include file='ITfCreatePropertyStore.xml' path='doc/member[@name="ITfCreatePropertyStore.CreatePropertyStore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreatePropertyStore([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, [NativeTypeName("ULONG")] uint cb, IStream* pStream, ITfPropertyStore** ppStore)

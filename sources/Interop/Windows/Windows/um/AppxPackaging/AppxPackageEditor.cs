@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppxPackageEditor.xml' path='doc/member[@name="AppxPackageEditor"]/*' />
 [Guid("F004F2CA-AEBC-4B0D-BF58-E516D5BCC0AB")]
 public partial struct AppxPackageEditor
 {

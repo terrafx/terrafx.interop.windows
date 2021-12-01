@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXCEPTION_DEBUG_INFO.xml' path='doc/member[@name="EXCEPTION_DEBUG_INFO"]/*' />
 public partial struct EXCEPTION_DEBUG_INFO
 {
+    /// <include file='EXCEPTION_DEBUG_INFO.xml' path='doc/member[@name="EXCEPTION_DEBUG_INFO.ExceptionRecord"]/*' />
     public EXCEPTION_RECORD ExceptionRecord;
 
+    /// <include file='EXCEPTION_DEBUG_INFO.xml' path='doc/member[@name="EXCEPTION_DEBUG_INFO.dwFirstChance"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFirstChance;
 }

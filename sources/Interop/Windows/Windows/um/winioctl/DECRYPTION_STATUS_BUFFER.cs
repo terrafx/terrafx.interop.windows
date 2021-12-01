@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DECRYPTION_STATUS_BUFFER.xml' path='doc/member[@name="DECRYPTION_STATUS_BUFFER"]/*' />
 public partial struct DECRYPTION_STATUS_BUFFER
 {
+    /// <include file='DECRYPTION_STATUS_BUFFER.xml' path='doc/member[@name="DECRYPTION_STATUS_BUFFER.NoEncryptedStreams"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte NoEncryptedStreams;
 }

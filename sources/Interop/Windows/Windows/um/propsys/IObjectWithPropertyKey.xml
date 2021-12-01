@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IObjectWithPropertyKey.GetPropertyKey">
+    <summary>
+      <para>Gets the property key.</para>
+    </summary>
+    <param name="pkey">
+      <para>Type: <b><see cref="PROPERTYKEY" />*</b></para>
+      <para>When this returns, contains the property key.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IObjectWithPropertyKey.SetPropertyKey">
+    <summary>
+      <para>Sets the property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>The property key.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IObjectWithPropertyKey">
+    <summary>
+      <para>Exposes methods for getting and setting the property key.</para>
+    </summary>
+  </member>
+</doc>

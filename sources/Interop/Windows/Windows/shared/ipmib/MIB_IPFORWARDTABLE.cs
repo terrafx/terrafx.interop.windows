@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPFORWARDTABLE.xml' path='doc/member[@name="MIB_IPFORWARDTABLE"]/*' />
 public partial struct MIB_IPFORWARDTABLE
 {
+    /// <include file='MIB_IPFORWARDTABLE.xml' path='doc/member[@name="MIB_IPFORWARDTABLE.dwNumEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumEntries;
 
+    /// <include file='MIB_IPFORWARDTABLE.xml' path='doc/member[@name="MIB_IPFORWARDTABLE.table"]/*' />
     [NativeTypeName("MIB_IPFORWARDROW [1]")]
     public _table_e__FixedBuffer table;
 
+    /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />
     public partial struct _table_e__FixedBuffer
     {
         public MIB_IPFORWARDROW e0;

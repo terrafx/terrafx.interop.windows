@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices"]/*' />
 [Guid("B23EB630-3E1C-11D3-A745-0050040AB407")]
 [NativeTypeName("struct ITfContextOwnerServices : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
         return ((delegate* unmanaged<ITfContextOwnerServices*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
         return ((delegate* unmanaged<ITfContextOwnerServices*, uint>)(lpVtbl[1]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
         return ((delegate* unmanaged<ITfContextOwnerServices*, uint>)(lpVtbl[2]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.OnLayoutChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnLayoutChange()
@@ -46,6 +51,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
         return ((delegate* unmanaged<ITfContextOwnerServices*, int>)(lpVtbl[3]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.OnStatusChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
         return ((delegate* unmanaged<ITfContextOwnerServices*, uint, int>)(lpVtbl[4]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.OnAttributeChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnAttributeChange([NativeTypeName("const GUID &")] Guid* rguidAttribute)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
         return ((delegate* unmanaged<ITfContextOwnerServices*, Guid*, int>)(lpVtbl[5]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), rguidAttribute);
     }
 
+    /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.Serialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Serialize(ITfProperty* pProp, ITfRange* pRange, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
         return ((delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int>)(lpVtbl[6]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), pProp, pRange, pHdr, pStream);
     }
 
+    /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.Unserialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Unserialize(ITfProperty* pProp, [NativeTypeName("const TF_PERSISTENT_PROPERTY_HEADER_ACP *")] TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream, ITfPersistentPropertyLoaderACP* pLoader)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
         return ((delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int>)(lpVtbl[7]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), pProp, pHdr, pStream, pLoader);
     }
 
+    /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.ForceLoadProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ForceLoadProperty(ITfProperty* pProp)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
         return ((delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, int>)(lpVtbl[8]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), pProp);
     }
 
+    /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.CreateRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CreateRange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, ITfRangeACP** ppRange)

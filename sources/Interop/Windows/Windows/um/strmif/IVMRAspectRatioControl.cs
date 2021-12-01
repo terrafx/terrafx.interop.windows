@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRAspectRatioControl.xml' path='doc/member[@name="IVMRAspectRatioControl"]/*' />
 [Guid("EDE80B5C-BAD6-4623-B537-65586C9F8DFD")]
 [NativeTypeName("struct IVMRAspectRatioControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
         return ((delegate* unmanaged<IVMRAspectRatioControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
         return ((delegate* unmanaged<IVMRAspectRatioControl*, uint>)(lpVtbl[1]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
         return ((delegate* unmanaged<IVMRAspectRatioControl*, uint>)(lpVtbl[2]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRAspectRatioControl.xml' path='doc/member[@name="IVMRAspectRatioControl.GetAspectRatioMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAspectRatioMode([NativeTypeName("LPDWORD")] uint* lpdwARMode)
@@ -46,6 +51,7 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
         return ((delegate* unmanaged<IVMRAspectRatioControl*, uint*, int>)(lpVtbl[3]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), lpdwARMode);
     }
 
+    /// <include file='IVMRAspectRatioControl.xml' path='doc/member[@name="IVMRAspectRatioControl.SetAspectRatioMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint dwARMode)

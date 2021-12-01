@@ -8,10 +8,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PRJ_CALLBACK_DATA_FLAGS.xml' path='doc/member[@name="PRJ_CALLBACK_DATA_FLAGS"]/*' />
 [Flags]
 [SupportedOSPlatform("windows10.0.17763.0")]
 public enum PRJ_CALLBACK_DATA_FLAGS
 {
+    /// <include file='PRJ_CALLBACK_DATA_FLAGS.xml' path='doc/member[@name="PRJ_CALLBACK_DATA_FLAGS.PRJ_CB_DATA_FLAG_ENUM_RESTART_SCAN"]/*' />
     PRJ_CB_DATA_FLAG_ENUM_RESTART_SCAN = 0x00000001,
+
+    /// <include file='PRJ_CALLBACK_DATA_FLAGS.xml' path='doc/member[@name="PRJ_CALLBACK_DATA_FLAGS.PRJ_CB_DATA_FLAG_ENUM_RETURN_SINGLE_ENTRY"]/*' />
     PRJ_CB_DATA_FLAG_ENUM_RETURN_SINGLE_ENTRY = 0x00000002,
 }

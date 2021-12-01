@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ASYNC_CONTEXT">
+    <summary>
+      <para>Used with the Async Model to specify the asynchronous callback and
+a pointer which will be passed to the asynchronous callback.</para>
+    </summary>
+  </member>
+  <member name="WS_ASYNC_CONTEXT.callback">
+    <summary>
+      <para>The callback function to call if the operation completes asynchronously.
+This field may not be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_ASYNC_CONTEXT.callbackState">
+    <summary>
+      <para>A pointer to user-defined data which will passed to the asynchronous callback
+function if the operation completes asynchronously.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ILockBytes.Flush">
+    <summary>
+      <para>The
+<b>Flush</b> method ensures that any internal buffers maintained by the
+<see cref="ILockBytes" /> implementation are written out to the underlying physical storage.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The flush operation was successful.|
+|STG_E_ACCESSDENIED | The caller does not have permission to access the byte array.|
+|STG_E_MEDIUMFULL | The flush operation is not completed because there is no space left on the storage device.|
+|E_FAIL | General failure writing data.|
+|STG_E_TOOMANYFILESOPEN | Under certain circumstances, the <b>Flush</b> method executes a download-and-closeto flush, which can lead to a return value of STG_E_TOOMANYFILESOPEN if no file handles are available.|
+|STG_E_INVALIDHANDLE | An underlying file has been prematurely closed, or the correct floppy disk has been replaced by an invalid one.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ILockBytes.Flush</b> flushes internal buffers to the underlying storage device.</para>
+      <para>The COM-provided implementation of compound files calls this method during a transacted commit operation to provide a two-phase commit process that protects against loss of data.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-file-based-implementation">ILockBytes - File-Based Implementation</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-global-memory-implementation">ILockBytes - Global Memory Implementation</seealso>
+    <seealso cref="IStorage.Commit" />
+  </member>
+  <member name="ILockBytes.LockRegion">
+    <summary>
+      <para>The
+<b>LockRegion</b> method restricts access to a specified range of bytes in the byte array.</para>
+    </summary>
+    <param name="libOffset">
+      <para>Specifies the byte offset for the beginning of the range.</para>
+    </param>
+    <param name="cb">
+      <para>Specifies, in bytes, the length of the range to be restricted.</para>
+    </param>
+    <param name="dwLockType">
+      <para>Specifies the type of restrictions being requested on accessing the range. This parameter uses one of the values from the
+<see cref="LOCKTYPE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The specified range of bytes was locked.|
+|STG_E_INVALIDFUNCTION | Locking is not supported at all or the specific type of lock requested is not supported.|
+|STG_E_ACCESSDENIED | Access denied because the caller has insufficient permission, or another caller has the file open and locked.|
+|STG_E_LOCKVIOLATION | Access denied because another caller has the file open and locked.|
+|STG_E_INVALIDHANDLE | An underlying file has been prematurely closed, or the correct floppy disk has been replaced by an invalid one.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ILockBytes.LockRegion</b> restricts access to the specified range of bytes. Once a region is locked, attempts by others to gain access to the restricted range must fail with the STG_E_ACCESSDENIED error.</para>
+      <para>The byte range can extend past the current end of the byte array. Locking beyond the end of an array is useful as a method of communication between different instances of the byte array object without changing data that is actually part of the byte array. For example, an implementation of
+<see cref="ILockBytes" /> for compound files could rely on locking past the current end of the array as a means of access control, using specific locked regions to indicate permissions currently granted.</para>
+      <para>The <i>dwLockType</i> parameter specifies one of three types of locking, using values from the
+<see cref="LOCKTYPE" /> enumeration. The types are as follows: locking to exclude other writers, locking to exclude other readers or writers, and locking that allows only one requester to obtain a lock on the given range. This third type of locking is usually an alias for one of the other two lock types, and permits an Implementer to add other behavior as well. A given byte array might support either of the first two types, or both.</para>
+      <para>To determine the lock types supported by a particular
+<see cref="ILockBytes" /> implementation, you can examine the <b>grfLocksSupported</b> member of the
+<see cref="STATSTG" /> structure returned by a call to
+<see cref="ILockBytes.Stat" />.</para>
+      <para>Any region locked with <b>ILockBytes.LockRegion</b> must later be explicitly unlocked by calling
+<see cref="ILockBytes.UnlockRegion" /> with exactly the same values for the <i>libOffset</i>, <i>cb</i>, and <i>dwLockType</i> parameters. The region must be unlocked before the stream is released. Two adjacent regions cannot be locked separately and then unlocked with a single unlock call.</para>
+      <h3>Notes to Callers</h3>
+      <para>Since the type of locking supported is optional and can vary in different implementations of
+<see cref="ILockBytes" />, you must provide code to deal with the STG_E_INVALIDFUNCTION error.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Support for this method depends on how the storage object built on top of the
+<see cref="ILockBytes" /> implementation is used. If you know that only one storage object at any given time can be opened on the storage device that underlies the byte array, then your
+<b>ILockBytes</b> implementation does not need to support locking. However, if multiple simultaneous openings of a storage object are possible, then region locking is needed to coordinate them.</para>
+      <para>A
+<b>LockRegion</b> implementation can choose to support all, some, or none of the lock types. For unsupported lock types, the implementation should return STG_E_INVALIDFUNCTION.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-file-based-implementation">ILockBytes - File-Based Implementation</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-global-memory-implementation">ILockBytes - Global Memory Implementation</seealso>
+    <seealso cref="ILockBytes.Stat" />
+    <seealso cref="ILockBytes.UnlockRegion" />
+    <seealso cref="IStream.LockRegion" />
+    <seealso cref="LOCKTYPE" />
+  </member>
+  <member name="ILockBytes.ReadAt">
+    <summary>
+      <para>The <b>ReadAt</b> method reads a specified number of bytes starting at a specified offset from the beginning of the byte array object.</para>
+    </summary>
+    <param name="ulOffset">
+      <para>Specifies the starting point from the beginning of the byte array for reading data.</para>
+    </param>
+    <param name="pv">
+      <para>Pointer to the buffer into which the byte array is read.  The size of this buffer is contained in <i>cb</i>.</para>
+    </param>
+    <param name="cb">
+      <para>Specifies the number of bytes of data to attempt to read from the byte array.</para>
+    </param>
+    <param name="pcbRead">
+      <para>Pointer to a <b>ULONG</b> where this method writes the actual number of bytes read from the byte array. You can set this pointer to <b>NULL</b> to indicate that you are not interested in this value. In this case, this method does not provide the actual number of bytes that were read.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | Indicates that the specified number of bytes were read, or the maximum number of bytes were read to the end of the byte array.|
+|E_FAIL | Data could not be read from the byte array.|
+|E_PENDING | Asynchronous Storage only: Part or all of the data to be read is currently unavailable. |
+|STG_E_ACCESSDENIED | The caller does not have permission to access the byte array.|
+|STG_E_READFAULT | The number of bytes to be read does not equal the number of bytes that were actually read.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ILockBytes.ReadAt</b> reads bytes from the byte array object. It reports the number of bytes that were actually read. This value may be less than the number of bytes requested if an error occurs or if the end of the byte array is reached during the read.</para>
+      <para>It is not an error to read less than the specified number of bytes if the operation encounters the end of the byte array. Note that this is the same end-of-file behavior as found in MS-DOS file allocation table (FAT) file system files.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-file-based-implementation">ILockBytes - File-Based Implementation</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-global-memory-implementation">ILockBytes - Global Memory Implementation</seealso>
+    <seealso cref="ILockBytes.WriteAt" />
+  </member>
+  <member name="ILockBytes.SetSize">
+    <summary>
+      <para>The <b>SetSize</b> method changes the size of the byte array.</para>
+    </summary>
+    <param name="cb">
+      <para>Specifies the new size of the byte array as a number of bytes.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The size of the byte array was successfully changed.|
+|STG_E_ACCESSDENIED | The caller does not have permission to access the byte array.|
+|STG_E_MEDIUMFULL | The byte array size is not changed because there is no space left on the storage device.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ILockBytes.SetSize</b> changes the size of the byte array. If the <i>cb</i> parameter is larger than the current byte array, the byte array is extended to the indicated size by filling the intervening space with bytes of undefined value, as does
+<see cref="ILockBytes.WriteAt" />, if the seek pointer is past the current end-of-stream.</para>
+      <para>If the <i>cb</i> parameter is smaller than the current byte array, the byte array is truncated to the indicated size.</para>
+      <h3>Notes to Callers</h3>
+      <para>Callers cannot rely on STG_E_MEDIUMFULL being returned at the appropriate time because of cache buffering in the operating system or network. However, callers must be able to deal with this return code because some
+<see cref="ILockBytes" /> implementations might support it.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-file-based-implementation">ILockBytes - File-Based Implementation</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-global-memory-implementation">ILockBytes - Global Memory Implementation</seealso>
+    <seealso cref="ILockBytes.ReadAt" />
+    <seealso cref="ILockBytes.WriteAt" />
+  </member>
+  <member name="ILockBytes.Stat">
+    <summary>
+      <para>The <b>Stat</b> method retrieves a
+<see cref="STATSTG" /> structure containing information for this byte array object.</para>
+    </summary>
+    <param name="pstatstg">
+      <para>Pointer to a
+<see cref="STATSTG" /> structure in which this method places information about this byte array object. The pointer is <b>NULL</b> if an error occurs.</para>
+    </param>
+    <param name="grfStatFlag">
+      <para>Specifies whether this method should supply the <b>pwcsName</b> member of the
+<see cref="STATSTG" /> structure through values taken from the
+<see cref="STATFLAG" /> enumeration. If the STATFLAG_NONAME is specified, the <b>pwcsName</b> member of
+<b>STATSTG</b> is not supplied, thus saving a memory-allocation operation. The other possible value, STATFLAG_DEFAULT, indicates that all members of the
+<b>STATSTG</b> structure be supplied.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The STATSTG structure was successfully returned at the specified location.|
+|E_OUTOFMEMORY| The STATSTG structure was not returned due to a lack of memory for the name member in the structure.|
+|STG_E_ACCESSDENIED | The STATSTG structure was not returned because the caller did not have access to the byte array.|
+|STG_E_INSUFFICIENTMEMORY | The STATSTG structure was not returned, due to insufficient memory.|
+|STG_E_INVALIDFLAG | The value for the grfStateFlag parameter is not valid.|
+|STG_E_INVALIDPOINTER | The value for the pStatStg parameter is not valid.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ILockBytes.Stat</b> should supply information about the byte array object in a
+<see cref="STATSTG" /> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-file-based-implementation">ILockBytes - File-Based Implementation</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-global-memory-implementation">ILockBytes - Global Memory Implementation</seealso>
+    <seealso cref="STATFLAG" />
+    <seealso cref="STATSTG" />
+  </member>
+  <member name="ILockBytes.UnlockRegion">
+    <summary>
+      <para>The <b>UnlockRegion</b> method removes the access restriction on a previously locked range of bytes.</para>
+    </summary>
+    <param name="libOffset">
+      <para>Specifies the byte offset for the beginning of the range.</para>
+    </param>
+    <param name="cb">
+      <para>Specifies, in bytes, the length of the range that is restricted.</para>
+    </param>
+    <param name="dwLockType">
+      <para>Specifies the type of access restrictions previously placed on the range. This parameter uses a value from the
+<see cref="LOCKTYPE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The byte range was unlocked.|
+|STG_E_INVALIDFUNCTION | Locking is not supported at all or the specific type of lock requested is not supported.|
+|STG_E_LOCKVIOLATION | The requested unlock cannot be granted.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ILockBytes.UnlockRegion</b> unlocks a region previously locked with a call to
+<see cref="ILockBytes.LockRegion" />. Each region locked must be explicitly unlocked, using the same values for the <i>libOffset</i>, <i>cb</i>, and <i>dwLockType</i> parameters as in the matching calls to <b>ILockBytes.LockRegion</b>. Two adjacent regions cannot be locked separately and then unlocked with a single unlock call.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-file-based-implementation">ILockBytes - File-Based Implementation</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-global-memory-implementation">ILockBytes - Global Memory Implementation</seealso>
+    <seealso cref="ILockBytes.LockRegion" />
+    <seealso cref="LOCKTYPE" />
+  </member>
+  <member name="ILockBytes.WriteAt">
+    <summary>
+      <para>The <b>WriteAt</b> method writes the specified number of bytes starting at a specified offset from the beginning of the byte array.</para>
+    </summary>
+    <param name="ulOffset">
+      <para>Specifies the starting point from the beginning of the byte array for the data to be written.</para>
+    </param>
+    <param name="pv">
+      <para>Pointer to the buffer containing the data to be written.</para>
+    </param>
+    <param name="cb">
+      <para>Specifies the number of bytes of data to attempt to write into the byte array.</para>
+    </param>
+    <param name="pcbWritten">
+      <para>Pointer to a location where this method specifies the actual number of bytes written to the byte array. You can set this pointer to <b>NULL</b> to indicate that you are not interested in this value. In this case, this method does not provide the actual number of bytes written.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | Indicates that the specified number of bytes were written.|
+|E_FAIL | A general failure occurred during the write operation.|
+|E_PENDING | Asynchronous Storage only: Part or all of the data to be written is currently unavailable.|
+|STG_E_ACCESSDENIED | The caller does not have enough permissions for writing this byte array.|
+|STG_E_WRITEFAULT | The number of bytes to be written does not equal the number of bytes that were actually written.|
+|STG_E_MEDIUMFULL | The write operation was not completed because there is no space left on the storage device. The actual number of bytes written is still returned in <i>pcbWritten</i>.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ILockBytes.WriteAt</b> writes the specified data at the specified location in the byte array. The number of bytes actually written must always be returned in <i>pcbWritten</i>, even if an error is returned. If the byte count is zero bytes, the write operation has no effect.</para>
+      <para>If <i>ulOffset</i> is past the end of the byte array and <i>cb</i> is greater than zero, <b>ILockBytes.WriteAt</b> increases the size of the byte array. The fill bytes written to the byte array are not initialized to any particular value.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-file-based-implementation">ILockBytes - File-Based Implementation</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/ilockbytes-global-memory-implementation">ILockBytes - Global Memory Implementation</seealso>
+    <seealso cref="ILockBytes.ReadAt" />
+    <seealso cref="ILockBytes.SetSize" />
+  </member>
+  <member name="ILockBytes">
+    <summary>
+      <para>The
+<b>ILockBytes</b> interface is implemented on a byte array object that is backed by some physical storage, such as a disk file, global memory, or a database. It is used by a COM compound file storage object to give its root storage access to the physical device, while isolating the root storage from the details of accessing the physical storage.</para>
+    </summary>
+  </member>
+</doc>

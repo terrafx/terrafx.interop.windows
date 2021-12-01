@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVASPECTINFO.xml' path='doc/member[@name="DVASPECTINFO"]/*' />
 public partial struct DVASPECTINFO
 {
+    /// <include file='DVASPECTINFO.xml' path='doc/member[@name="DVASPECTINFO.cb"]/*' />
     [NativeTypeName("ULONG")]
     public uint cb;
 
+    /// <include file='DVASPECTINFO.xml' path='doc/member[@name="DVASPECTINFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

@@ -5,28 +5,37 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW"]/*' />
 public unsafe partial struct PROFILEINFOW
 {
+    /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.lpUserName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpUserName;
 
+    /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.lpProfilePath"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpProfilePath;
 
+    /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.lpDefaultPath"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpDefaultPath;
 
+    /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.lpServerName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpServerName;
 
+    /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.lpPolicyPath"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpPolicyPath;
 
+    /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.hProfile"]/*' />
     public HANDLE hProfile;
 }

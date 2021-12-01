@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMBOBOXINFO">
+    <summary>
+      <para>Contains combo box status information.</para>
+    </summary>
+    <remarks>
+      <para>The following example code retrieves information about the combo box specified by the window handle.</para>
+      <code>COMBOBOXINFO info = { sizeof(COMBOBOXINFO) };
+GetComboBoxInfo(hwnd, &amp;amp;amp;amp;amp;amp;info);
+
+</code>
+    </remarks>
+    <seealso cref="GetComboBoxInfo" />
+  </member>
+  <member name="COMBOBOXINFO.cbSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>The size, in bytes, of the structure. The calling application must set this to sizeof(COMBOBOXINFO).</para>
+    </summary>
+  </member>
+  <member name="COMBOBOXINFO.rcItem">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>A <see cref="RECT" /> structure that specifies the coordinates of the edit box.</para>
+    </summary>
+  </member>
+  <member name="COMBOBOXINFO.rcButton">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>A <see cref="RECT" /> structure that specifies the coordinates of the button that contains the drop-down arrow.</para>
+    </summary>
+  </member>
+  <member name="COMBOBOXINFO.stateButton">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>The combo box button state. This parameter can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>The button exists and is not pressed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STATE_SYSTEM_INVISIBLE</b>
+          </description>
+          <description>
+            <para>There is no button.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STATE_SYSTEM_PRESSED</b>
+          </description>
+          <description>
+            <para>The button is pressed.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="COMBOBOXINFO.hwndCombo">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the combo box.</para>
+    </summary>
+  </member>
+  <member name="COMBOBOXINFO.hwndItem">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the edit box.</para>
+    </summary>
+  </member>
+  <member name="COMBOBOXINFO.hwndList">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the drop-down list.</para>
+    </summary>
+  </member>
+</doc>

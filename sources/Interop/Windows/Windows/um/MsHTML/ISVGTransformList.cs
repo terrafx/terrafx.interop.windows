@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList"]/*' />
 [Guid("305104F8-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGTransformList : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, Guid*, void**, int>)(lpVtbl[0]))((ISVGTransformList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, uint>)(lpVtbl[1]))((ISVGTransformList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, uint>)(lpVtbl[2]))((ISVGTransformList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, uint*, int>)(lpVtbl[3]))((ISVGTransformList*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGTransformList*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTransformList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGTransformList*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.put_numberOfItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_numberOfItems([NativeTypeName("long")] int v)
@@ -74,6 +83,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, int, int>)(lpVtbl[7]))((ISVGTransformList*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.get_numberOfItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_numberOfItems([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, int*, int>)(lpVtbl[8]))((ISVGTransformList*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.clear"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT clear()
@@ -88,6 +99,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, int>)(lpVtbl[9]))((ISVGTransformList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT initialize(ISVGTransform* newItem, ISVGTransform** ppResult)
@@ -95,6 +107,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, ISVGTransform*, ISVGTransform**, int>)(lpVtbl[10]))((ISVGTransformList*)Unsafe.AsPointer(ref this), newItem, ppResult);
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.getItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT getItem([NativeTypeName("long")] int index, ISVGTransform** ppResult)
@@ -102,6 +115,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, int, ISVGTransform**, int>)(lpVtbl[11]))((ISVGTransformList*)Unsafe.AsPointer(ref this), index, ppResult);
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.insertItemBefore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT insertItemBefore(ISVGTransform* newItem, [NativeTypeName("long")] int index, ISVGTransform** ppResult)
@@ -109,6 +123,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, ISVGTransform*, int, ISVGTransform**, int>)(lpVtbl[12]))((ISVGTransformList*)Unsafe.AsPointer(ref this), newItem, index, ppResult);
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.replaceItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT replaceItem(ISVGTransform* newItem, [NativeTypeName("long")] int index, ISVGTransform** ppResult)
@@ -116,6 +131,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, ISVGTransform*, int, ISVGTransform**, int>)(lpVtbl[13]))((ISVGTransformList*)Unsafe.AsPointer(ref this), newItem, index, ppResult);
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.removeItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT removeItem([NativeTypeName("long")] int index, ISVGTransform** ppResult)
@@ -123,6 +139,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, int, ISVGTransform**, int>)(lpVtbl[14]))((ISVGTransformList*)Unsafe.AsPointer(ref this), index, ppResult);
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.appendItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT appendItem(ISVGTransform* newItem, ISVGTransform** ppResult)
@@ -130,6 +147,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, ISVGTransform*, ISVGTransform**, int>)(lpVtbl[15]))((ISVGTransformList*)Unsafe.AsPointer(ref this), newItem, ppResult);
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.createSVGTransformFromMatrix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT createSVGTransformFromMatrix(ISVGMatrix* newItem, ISVGTransform** ppResult)
@@ -137,6 +155,7 @@ public unsafe partial struct ISVGTransformList : ISVGTransformList.Interface
         return ((delegate* unmanaged<ISVGTransformList*, ISVGMatrix*, ISVGTransform**, int>)(lpVtbl[16]))((ISVGTransformList*)Unsafe.AsPointer(ref this), newItem, ppResult);
     }
 
+    /// <include file='ISVGTransformList.xml' path='doc/member[@name="ISVGTransformList.consolidate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT consolidate(ISVGTransform** ppResult)

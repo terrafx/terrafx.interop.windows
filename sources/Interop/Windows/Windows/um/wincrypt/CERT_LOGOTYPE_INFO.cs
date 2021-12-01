@@ -8,14 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_LOGOTYPE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_INFO"]/*' />
 public unsafe partial struct CERT_LOGOTYPE_INFO
 {
+    /// <include file='CERT_LOGOTYPE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_INFO.dwLogotypeInfoChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLogotypeInfoChoice;
 
+    /// <include file='CERT_LOGOTYPE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_INFO.Anonymous"]/*' />
     [NativeTypeName("_CERT_LOGOTYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5512:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pLogotypeDirectInfo"]/*' />
     public ref CERT_LOGOTYPE_DATA* pLogotypeDirectInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25,6 +29,7 @@ public unsafe partial struct CERT_LOGOTYPE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pLogotypeIndirectInfo"]/*' />
     public ref CERT_LOGOTYPE_REFERENCE* pLogotypeIndirectInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,13 +39,16 @@ public unsafe partial struct CERT_LOGOTYPE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pLogotypeDirectInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCERT_LOGOTYPE_DATA")]
         public CERT_LOGOTYPE_DATA* pLogotypeDirectInfo;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pLogotypeIndirectInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCERT_LOGOTYPE_REFERENCE")]
         public CERT_LOGOTYPE_REFERENCE* pLogotypeIndirectInfo;

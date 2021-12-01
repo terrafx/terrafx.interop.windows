@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_RC4_AUX_INFO.xml' path='doc/member[@name="CMSG_RC4_AUX_INFO"]/*' />
 public partial struct CMSG_RC4_AUX_INFO
 {
+    /// <include file='CMSG_RC4_AUX_INFO.xml' path='doc/member[@name="CMSG_RC4_AUX_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_RC4_AUX_INFO.xml' path='doc/member[@name="CMSG_RC4_AUX_INFO.dwBitLen"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBitLen;
 }

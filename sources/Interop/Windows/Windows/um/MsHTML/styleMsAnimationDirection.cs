@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsAnimationDirection.xml' path='doc/member[@name="styleMsAnimationDirection"]/*' />
 public enum styleMsAnimationDirection
 {
+    /// <include file='styleMsAnimationDirection.xml' path='doc/member[@name="styleMsAnimationDirection.styleMsAnimationDirectionNormal"]/*' />
     styleMsAnimationDirectionNormal = 0,
+
+    /// <include file='styleMsAnimationDirection.xml' path='doc/member[@name="styleMsAnimationDirection.styleMsAnimationDirectionAlternate"]/*' />
     styleMsAnimationDirectionAlternate = 1,
+
+    /// <include file='styleMsAnimationDirection.xml' path='doc/member[@name="styleMsAnimationDirection.styleMsAnimationDirectionReverse"]/*' />
     styleMsAnimationDirectionReverse = 2,
+
+    /// <include file='styleMsAnimationDirection.xml' path='doc/member[@name="styleMsAnimationDirection.styleMsAnimationDirectionAlternateReverse"]/*' />
     styleMsAnimationDirectionAlternateReverse = 3,
+
+    /// <include file='styleMsAnimationDirection.xml' path='doc/member[@name="styleMsAnimationDirection.styleMsAnimationDirectionNotSet"]/*' />
     styleMsAnimationDirectionNotSet = 4,
+
+    /// <include file='styleMsAnimationDirection.xml' path='doc/member[@name="styleMsAnimationDirection.styleMsAnimationDirection_Max"]/*' />
     styleMsAnimationDirection_Max = 2147483647,
 }

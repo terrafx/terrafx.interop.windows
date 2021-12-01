@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11Device5.CreateFence">
+    <summary>
+      <para>Creates a fence object.</para>
+      <para>This member function is equivalent to the Direct3D 12 <see cref="ID3D12Device.CreateFence" /> member function, and applies between Direct3D 11 and Direct3D 12 in interop scenarios.</para>
+    </summary>
+    <param name="InitialValue">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
+      <para>The initial value for the fence.</para>
+    </param>
+    <param name="Flags">
+      <para>Type: <b><see cref="D3D11_FENCE_FLAG" /></b></para>
+      <para>A combination of <see cref="D3D11_FENCE_FLAG" />-typed values that are combined by using a bitwise OR operation.
+The resulting value specifies options for the fence.</para>
+    </param>
+    <param name="ReturnedInterface">
+      <para>Type: <b>REFIID</b></para>
+      <para>The globally unique identifier (<b>GUID</b>) for the fence interface (<see cref="ID3D11Fence" />).
+The <b>REFIID</b>, or <b>GUID</b>, of the interface to the fence can be obtained by using the __uuidof() macro.
+For example, __uuidof(ID3D11Fence) will get the <b>GUID</b> of the interface to a fence.</para>
+    </param>
+    <param name="ppFence">
+      <para>Type: <b>void**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the <see cref="ID3D11Fence" /> interface that is used to access the fence.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>Returns <b>S_OK</b> if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D11Device5" />
+    <seealso cref="UnregisterDeviceRemoved" />
+  </member>
+  <member name="ID3D11Device5.OpenSharedFence">
+    <summary>
+      <para>Opens a handle for a shared fence by using HANDLE and REFIID.</para>
+      <para>This member function is a limited version of the Direct3D 12 <see cref="ID3D12Device.OpenSharedHandle" /> member function, and applies between Direct3D 11 and Direct3D 12 in interop scenarios. Unlike <b>ID3D12Device.OpenSharedHandle</b> which operates on resources, heaps, and fences, the <b>ID3D11Device5.OpenSharedFence</b> function only operates on fences; in Direct3D 11, shared resources are opened with the <see cref="ID3D11Device.OpenSharedResource1" /> member function.</para>
+    </summary>
+    <param name="hFence">
+      <para>Type: <b>HANDLE</b></para>
+      <para>The handle that was returned by a call to <see cref="ID3D11Fence.CreateSharedHandle" /> or <see cref="ID3D12Device.CreateSharedHandle" />.</para>
+    </param>
+    <param name="ReturnedInterface">
+      <para>Type: <b>REFIID</b></para>
+      <para>The globally unique identifier (<b>GUID</b>) for the <see cref="ID3D11Fence" /> interface. The <b>REFIID</b>, or <b>GUID</b>, of the interface can be obtained by using the __uuidof() macro. For example, __uuidof(ID3D11Fence) will get the <b>GUID</b> of the interface to the fence.</para>
+    </param>
+    <param name="ppFence">
+      <para>Type: <b>void**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the <see cref="ID3D11Fence" /> interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/win32/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D11Device5" />
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</seealso>
+  </member>
+  <member name="ID3D11Device5">
+    <summary>
+      <para>The device interface represents a virtual adapter; it is used to create resources. <b>ID3D11Device5</b> adds new methods to those in <see cref="ID3D11Device4" />.
+<b>Note</b>  This interface, introduced in the Windows 10 Creators Update, is the latest version of the <see cref="ID3D11Device" /> interface. Applications targetting Windows 10 Creators Update should use this interface instead of earlier versions.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D11Device4" />
+  </member>
+</doc>

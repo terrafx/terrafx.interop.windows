@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile"]/*' />
 [Guid("4ADFDBA3-7AB0-4953-A62B-461E7FF3DA1E")]
 [NativeTypeName("struct IMFTranscodeProfile : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
         return ((delegate* unmanaged<IMFTranscodeProfile*, Guid*, void**, int>)(lpVtbl[0]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
         return ((delegate* unmanaged<IMFTranscodeProfile*, uint>)(lpVtbl[1]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
         return ((delegate* unmanaged<IMFTranscodeProfile*, uint>)(lpVtbl[2]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.SetAudioAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetAudioAttributes(IMFAttributes* pAttrs)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
         return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[3]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
     }
 
+    /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.GetAudioAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAudioAttributes(IMFAttributes** ppAttrs)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
         return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[4]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
     }
 
+    /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.SetVideoAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetVideoAttributes(IMFAttributes* pAttrs)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
         return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[5]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
     }
 
+    /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.GetVideoAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetVideoAttributes(IMFAttributes** ppAttrs)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
         return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[6]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
     }
 
+    /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.SetContainerAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetContainerAttributes(IMFAttributes* pAttrs)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
         return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[7]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
     }
 
+    /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.GetContainerAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetContainerAttributes(IMFAttributes** ppAttrs)

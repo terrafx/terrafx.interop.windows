@@ -5,35 +5,46 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW"]/*' />
 public unsafe partial struct CREDENTIAL_TARGET_INFORMATIONW
 {
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.TargetName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* TargetName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.NetbiosServerName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* NetbiosServerName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.DnsServerName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* DnsServerName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.NetbiosDomainName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* NetbiosDomainName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.DnsDomainName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* DnsDomainName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.DnsTreeName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* DnsTreeName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.PackageName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* PackageName;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.Flags"]/*' />
     [NativeTypeName("ULONG")]
     public uint Flags;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.CredTypeCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint CredTypeCount;
 
+    /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.CredTypes"]/*' />
     [NativeTypeName("LPDWORD")]
     public uint* CredTypes;
 }

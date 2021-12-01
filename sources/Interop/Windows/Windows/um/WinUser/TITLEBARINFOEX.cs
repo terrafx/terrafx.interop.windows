@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TITLEBARINFOEX.xml' path='doc/member[@name="TITLEBARINFOEX"]/*' />
 public unsafe partial struct TITLEBARINFOEX
 {
+    /// <include file='TITLEBARINFOEX.xml' path='doc/member[@name="TITLEBARINFOEX.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='TITLEBARINFOEX.xml' path='doc/member[@name="TITLEBARINFOEX.rcTitleBar"]/*' />
     public RECT rcTitleBar;
 
+    /// <include file='TITLEBARINFOEX.xml' path='doc/member[@name="TITLEBARINFOEX.rgstate"]/*' />
     [NativeTypeName("DWORD [6]")]
     public fixed uint rgstate[6];
 
+    /// <include file='TITLEBARINFOEX.xml' path='doc/member[@name="TITLEBARINFOEX.rgrect"]/*' />
     [NativeTypeName("RECT [6]")]
     public _rgrect_e__FixedBuffer rgrect;
 
+    /// <include file='_rgrect_e__FixedBuffer.xml' path='doc/member[@name="_rgrect_e__FixedBuffer"]/*' />
     public partial struct _rgrect_e__FixedBuffer
     {
         public RECT e0;

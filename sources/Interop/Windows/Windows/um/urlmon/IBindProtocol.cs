@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBindProtocol.xml' path='doc/member[@name="IBindProtocol"]/*' />
 [Guid("79EAC9CD-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IBindProtocol : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBindProtocol : IBindProtocol.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBindProtocol : IBindProtocol.Interface
         return ((delegate* unmanaged<IBindProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IBindProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBindProtocol : IBindProtocol.Interface
         return ((delegate* unmanaged<IBindProtocol*, uint>)(lpVtbl[1]))((IBindProtocol*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBindProtocol : IBindProtocol.Interface
         return ((delegate* unmanaged<IBindProtocol*, uint>)(lpVtbl[2]))((IBindProtocol*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBindProtocol.xml' path='doc/member[@name="IBindProtocol.CreateBinding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateBinding([NativeTypeName("LPCWSTR")] ushort* szUrl, IBindCtx* pbc, IBinding** ppb)

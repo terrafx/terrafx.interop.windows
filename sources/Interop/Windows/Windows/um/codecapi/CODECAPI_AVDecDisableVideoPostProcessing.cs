@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecDisableVideoPostProcessing.xml' path='doc/member[@name="CODECAPI_AVDecDisableVideoPostProcessing"]/*' />
 [Guid("F8749193-667A-4F2C-A9E8-5D4AF924F08F")]
 public partial struct CODECAPI_AVDecDisableVideoPostProcessing
 {

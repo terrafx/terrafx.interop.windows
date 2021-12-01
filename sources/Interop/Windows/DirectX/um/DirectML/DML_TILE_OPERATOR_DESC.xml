@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_TILE_OPERATOR_DESC">
+    <summary>
+      <para>Constructs an output tensor by tiling the input tensor. The elements in each dimension of the input tensor are repeated by a multiple in the <i>Repeats</i> array.</para>
+    </summary>
+  </member>
+  <member name="DML_TILE_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to read from, which contains the elements to be tiled.</para>
+    </summary>
+  </member>
+  <member name="DML_TILE_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write to, which will hold the tiled output. For each dimension <code>i</code> in <code>[0, InputTensor.DimensionCount-1]</code>, the output size is calculated as <code>OutputTensor.Sizes[i] = InputTensor.Sizes[i] * Repeats[i]</code>. This tensor must have the same <i>DimensionCount</i> as the input tensor.</para>
+    </summary>
+  </member>
+  <member name="DML_TILE_OPERATOR_DESC.RepeatsCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>This field determines the size of the <i>Repeats</i> array. This value must be the same as the <i>InputTensor.DimensionCount</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_TILE_OPERATOR_DESC.Repeats">
+    <summary>
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>Each value in this array corresponds to one of the input tensor's dimensions (in order). Each value is the number of tiled copies to make of that dimension. Values must be larger than 0.</para>
+    </summary>
+  </member>
+</doc>

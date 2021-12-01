@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMpeg2Demultiplexer.CreateOutputPin">
+    <summary>
+      <para>The <code>CreateOutputPin</code> method creates a new output pin on the Demux.</para>
+    </summary>
+    <param name="pMediaType">
+      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the media type information for the new pin.</para>
+    </param>
+    <param name="pszPinName">
+      <para>Pointer to a wide character string that specifies a name for the new pin. The maximum length is 128 characters, including the <b>NULL</b> terminator.</para>
+    </param>
+    <param name="ppIPin">
+      <para>Address of a variable that receives a pointer to the pin's <see cref="IPin" /> interface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_DUPLICATE_NAME</b>
+            </para>
+          </description>
+          <description>
+            <para>Duplicate pin name.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Duplicate pin names are not allowed. To configure the pin, query the returned <see cref="IPin" /> interface for the <see cref="IMPEG2StreamIdMap" /> interface (for program streams) or for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/bdaiface/nn-bdaiface-impeg2pidmap">IMPEG2PIDMap</a> interface (for transport streams). Depending on which interface is queried for on the first output pin, the Demux configures itself for either transport or program stream mode. Once the Demux is configured, any calls to <b>QueryInterface</b> to retrieve the other interface will fail.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMpeg2Demultiplexer Interface" />
+  </member>
+  <member name="IMpeg2Demultiplexer.DeleteOutputPin">
+    <summary>
+      <para>The <code>DeleteOutputPin</code> method deletes the specified output pin.</para>
+    </summary>
+    <param name="pszPinName">
+      <para>The friendly name of the pin as specified when the pin was created in a call to <b>CreateOutputPin</b>.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call this method only when you need to delete a pin while keeping the filter alive. When the filter is released, it will perform all necessary cleanup on the output pins.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMpeg2Demultiplexer Interface" />
+  </member>
+  <member name="IMpeg2Demultiplexer.SetOutputPinMediaType">
+    <summary>
+      <para>The <code>SetOutputPinMediaType</code> method updates the media type of the specified output pin. (DirectX 9.0 and later.)</para>
+    </summary>
+    <param name="pszPinName">
+      <para>The friendly name of the pin as specified when the pin was created in a call to <b>CreateOutputPin</b>.</para>
+    </param>
+    <param name="pMediaType">
+      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the new media type information for the pin.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Pins can be reconfigured at any time with a new media type. If no connection exists, the media type is simply updated. If the pin is connected, the success or failure of the call will depend on the downstream input pin's acceptance or rejection of the specified media type.</para>
+      <para>The media type is not interpreted in any way by the Demultiplexer filter. It is used only during connection negotiation by the output pin. It has no effect on the content of the media samples. Media sample content is defined when a PID is mapped via the MEDIA_SAMPLE_CONTENT parameter in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/bdaiface/nf-bdaiface-impeg2pidmap-mappid">IMPEG2PIDMap.MapPID</a> method, or via the defined values in an <see cref="IMPEG2StreamIdMap.MapStreamId" /> call.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMpeg2Demultiplexer Interface" />
+  </member>
+  <member name="IMpeg2Demultiplexer">
+    <summary>
+      <para>This interface is implemented on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mpeg-2-demultiplexer">MPEG-2 Demultiplexer</a> filter (Demux) and is used in both program stream mode and transport stream mode. It is called by applications or other filters to create, configure and delete output pins on the Demux. This interface is not exposed when the filter is playing back a file (pull-mode).</para>
+    </summary>
+  </member>
+</doc>

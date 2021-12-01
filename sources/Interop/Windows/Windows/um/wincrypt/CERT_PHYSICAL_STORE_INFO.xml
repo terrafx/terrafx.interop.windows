@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_PHYSICAL_STORE_INFO">
+    <summary>
+      <para>The <b>CERT_PHYSICAL_STORE_INFO</b> structure contains information on physical <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate stores</a>. Some members of these structures are passed directly to system calls of
+<see cref="CertOpenStore" /> to open the physical store.</para>
+    </summary>
+    <seealso cref="CertAddStoreToCollection" />
+    <seealso cref="CertOpenStore" />
+    <seealso cref="CertRegisterPhysicalStore" />
+    <seealso cref="CryptInstallOIDFunctionAddress" />
+    <seealso cref="CryptRegisterOIDFunction" />
+  </member>
+  <member name="CERT_PHYSICAL_STORE_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_PHYSICAL_STORE_INFO.pszOpenStoreProvider">
+    <summary>
+      <para>A pointer to a string that names a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate store</a> provider type. This string is passed in a system call to <see cref="CertOpenStore" /> and determines the provider type of a certificate store to be opened. For the names of predefined certificate store types, see
+<b>CertOpenStore</b>.</para>
+      <para>In addition to predefined certificate store provider types, new store provider types can be installed and registered with
+<see cref="CryptInstallOIDFunctionAddress" /> or
+<see cref="CryptRegisterOIDFunction" />. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/SecCrypto/extending-certopenstore-functionality">CertOpenStore</a>.</para>
+    </summary>
+  </member>
+  <member name="CERT_PHYSICAL_STORE_INFO.dwOpenEncodingType">
+    <summary>
+      <para>This member is applicable only when CERT_STORE_PROV_MSG, CERT_STORE_PROV_PKCS7, or CERT_STORE_PROV_FILENAME is passed in <i>lpszStoreProvider</i>. Otherwise, this member is not used.</para>
+      <para>It is always acceptable to specify both the certificate and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/m-gly">message encoding types</a> by combining them with a bitwise-<b>OR</b> operation as shown in the following example:</para>
+      <para>X509_ASN_ENCODING | PKCS_7_ASN_ENCODING Currently defined encoding types are:</para>
+      <list type="bullet">
+        <item>
+          <description>X509_ASN_ENCODING</description>
+        </item>
+        <item>
+          <description>PKCS_7_ASN_ENCODING</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_PHYSICAL_STORE_INFO.dwOpenFlags">
+    <summary>
+      <para>If a system store is opened with the SERVICES or USERS store location, the <b>dwOpenFlags</b> store location is set to CERT_SYSTEM_STORE_USERS or CERT_SYSTEM_STORE_SERVICES.</para>
+    </summary>
+  </member>
+  <member name="CERT_PHYSICAL_STORE_INFO.OpenParameters">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> that contains data to be passed to the <i>pvPara</i> parameter of the <see cref="CertOpenStore" /> function. The data type depends on the provider specified. For detailed information about the type and content to be passed, see descriptions of available providers in
+<b>CertOpenStore</b>.</para>
+    </summary>
+  </member>
+  <member name="CERT_PHYSICAL_STORE_INFO.dwFlags">
+    <summary>
+      <para>The following <b>dwFlags</b> values for CERT_PHYSICAL_STORE_INFO are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CERT_PHYSICAL_STORE_ADD_ENABLE_FLAG</b>
+          </description>
+          <description>
+            <para>Enables addition to a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a> to the store.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_PHYSICAL_STORE_OPEN_DISABLE_FLAG</b>
+          </description>
+          <description>
+            <para>Set by
+the <see cref="CertRegisterPhysicalStore" /> function. By default, all system stores located in the registry have an implicit SystemRegistry physical store that is opened. To disable the opening of this store, the SystemRegistry physical store that corresponds to the System store must be registered by setting CERT_PHYSICAL_STORE_OPEN_DISABLE_FLAG or by registering a physical store named ".Default" with
+<b>CertRegisterPhysicalStore</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_PHYSICAL_STORE_REMOTE_OPEN_DISABLE_FLAG</b>
+          </description>
+          <description>
+            <para>Disables remote opening of the physical store.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_PHYSICAL_STORE_INSERT_COMPUTER_NAME_ENABLE_FLAG</b>
+          </description>
+          <description>
+            <para>Places the string \ComputerName in front of other provider types.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_SYSTEM_STORE_RELOCATE_FLAG</b>
+          </description>
+          <description>
+            <para>Enables <see cref="CertOpenStore" /> to open a store relative to a user-specified HKEY instead of one of the predefined HKEY constants. For example, HKEY_CURRENT_USER can be replaced with a user-specified HKEY. When CERT_SYSTEM_STORE_RELOCATE_FLAG is set, the <i>pvPara</i> parameter passed to <b>CertOpenStore</b> points to a
+<see cref="CERT_SYSTEM_STORE_RELOCATE_PARA" /> structure instead of pointing to the store name as a null-terminated <a href="https://docs.microsoft.com//windows/desktop/SecGloss/u-gly">Unicode</a> or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">ASCII</a> string.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_PHYSICAL_STORE_INFO.dwPriority">
+    <summary>
+      <para>When a system store is opened, its physical stores are ordered according to their <b>dwPriority</b> settings. A higher <b>dwPriority</b> indicates higher priority. The <b>dwPriority</b> member is passed to
+<see cref="CertAddStoreToCollection" />.</para>
+    </summary>
+  </member>
+</doc>

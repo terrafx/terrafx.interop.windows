@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFSensorDeviceType.xml' path='doc/member[@name="MFSensorDeviceType"]/*' />
 public enum MFSensorDeviceType
 {
+    /// <include file='MFSensorDeviceType.xml' path='doc/member[@name="MFSensorDeviceType.MFSensorDeviceType_Unknown"]/*' />
     MFSensorDeviceType_Unknown = 0,
+
+    /// <include file='MFSensorDeviceType.xml' path='doc/member[@name="MFSensorDeviceType.MFSensorDeviceType_Device"]/*' />
     MFSensorDeviceType_Device = (MFSensorDeviceType_Unknown + 1),
+
+    /// <include file='MFSensorDeviceType.xml' path='doc/member[@name="MFSensorDeviceType.MFSensorDeviceType_MediaSource"]/*' />
     MFSensorDeviceType_MediaSource = (MFSensorDeviceType_Device + 1),
+
+    /// <include file='MFSensorDeviceType.xml' path='doc/member[@name="MFSensorDeviceType.MFSensorDeviceType_FrameProvider"]/*' />
     MFSensorDeviceType_FrameProvider = (MFSensorDeviceType_MediaSource + 1),
+
+    /// <include file='MFSensorDeviceType.xml' path='doc/member[@name="MFSensorDeviceType.MFSensorDeviceType_SensorTransform"]/*' />
     MFSensorDeviceType_SensorTransform = (MFSensorDeviceType_FrameProvider + 1),
 }

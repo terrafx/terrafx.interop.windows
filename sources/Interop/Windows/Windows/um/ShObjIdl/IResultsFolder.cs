@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder"]/*' />
 [Guid("96E5AE6D-6AE1-4B1C-900C-C6480EAA8828")]
 [NativeTypeName("struct IResultsFolder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface
         return ((delegate* unmanaged<IResultsFolder*, Guid*, void**, int>)(lpVtbl[0]))((IResultsFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface
         return ((delegate* unmanaged<IResultsFolder*, uint>)(lpVtbl[1]))((IResultsFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface
         return ((delegate* unmanaged<IResultsFolder*, uint>)(lpVtbl[2]))((IResultsFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder.AddItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddItem(IShellItem* psi)
@@ -46,6 +51,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface
         return ((delegate* unmanaged<IResultsFolder*, IShellItem*, int>)(lpVtbl[3]))((IResultsFolder*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder.AddIDList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlAdded)
@@ -53,6 +59,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface
         return ((delegate* unmanaged<IResultsFolder*, ITEMIDLIST*, ITEMIDLIST**, int>)(lpVtbl[4]))((IResultsFolder*)Unsafe.AsPointer(ref this), pidl, ppidlAdded);
     }
 
+    /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder.RemoveItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RemoveItem(IShellItem* psi)
@@ -60,6 +67,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface
         return ((delegate* unmanaged<IResultsFolder*, IShellItem*, int>)(lpVtbl[5]))((IResultsFolder*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder.RemoveIDList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RemoveIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
@@ -67,6 +75,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface
         return ((delegate* unmanaged<IResultsFolder*, ITEMIDLIST*, int>)(lpVtbl[6]))((IResultsFolder*)Unsafe.AsPointer(ref this), pidl);
     }
 
+    /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder.RemoveAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RemoveAll()

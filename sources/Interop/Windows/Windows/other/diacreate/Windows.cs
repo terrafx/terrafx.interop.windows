@@ -10,9 +10,11 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NoRegCoCreate"]/*' />
     [DllImport("msdia140", ExactSpelling = true)]
     public static extern HRESULT NoRegCoCreate([NativeTypeName("const wchar_t *")] ushort* dllName, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NoOleCoCreate"]/*' />
     [DllImport("msdia140", ExactSpelling = true)]
     public static extern HRESULT NoOleCoCreate([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 }

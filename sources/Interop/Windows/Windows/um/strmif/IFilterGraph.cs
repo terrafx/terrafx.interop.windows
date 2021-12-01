@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph"]/*' />
 [Guid("56A8689F-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IFilterGraph : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
         return ((delegate* unmanaged<IFilterGraph*, Guid*, void**, int>)(lpVtbl[0]))((IFilterGraph*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
         return ((delegate* unmanaged<IFilterGraph*, uint>)(lpVtbl[1]))((IFilterGraph*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
         return ((delegate* unmanaged<IFilterGraph*, uint>)(lpVtbl[2]))((IFilterGraph*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.AddFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] ushort* pName)
@@ -46,6 +51,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
         return ((delegate* unmanaged<IFilterGraph*, IBaseFilter*, ushort*, int>)(lpVtbl[3]))((IFilterGraph*)Unsafe.AsPointer(ref this), pFilter, pName);
     }
 
+    /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.RemoveFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RemoveFilter(IBaseFilter* pFilter)
@@ -53,6 +59,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
         return ((delegate* unmanaged<IFilterGraph*, IBaseFilter*, int>)(lpVtbl[4]))((IFilterGraph*)Unsafe.AsPointer(ref this), pFilter);
     }
 
+    /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.EnumFilters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumFilters(IEnumFilters** ppEnum)
@@ -60,6 +67,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
         return ((delegate* unmanaged<IFilterGraph*, IEnumFilters**, int>)(lpVtbl[5]))((IFilterGraph*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.FindFilterByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] ushort* pName, IBaseFilter** ppFilter)
@@ -67,6 +75,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
         return ((delegate* unmanaged<IFilterGraph*, ushort*, IBaseFilter**, int>)(lpVtbl[6]))((IFilterGraph*)Unsafe.AsPointer(ref this), pName, ppFilter);
     }
 
+    /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.ConnectDirect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ConnectDirect(IPin* ppinOut, IPin* ppinIn, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
@@ -74,6 +83,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
         return ((delegate* unmanaged<IFilterGraph*, IPin*, IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[7]))((IFilterGraph*)Unsafe.AsPointer(ref this), ppinOut, ppinIn, pmt);
     }
 
+    /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.Reconnect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Reconnect(IPin* ppin)
@@ -81,6 +91,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
         return ((delegate* unmanaged<IFilterGraph*, IPin*, int>)(lpVtbl[8]))((IFilterGraph*)Unsafe.AsPointer(ref this), ppin);
     }
 
+    /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.Disconnect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Disconnect(IPin* ppin)
@@ -88,6 +99,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface
         return ((delegate* unmanaged<IFilterGraph*, IPin*, int>)(lpVtbl[9]))((IFilterGraph*)Unsafe.AsPointer(ref this), ppin);
     }
 
+    /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.SetDefaultSyncSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetDefaultSyncSource()

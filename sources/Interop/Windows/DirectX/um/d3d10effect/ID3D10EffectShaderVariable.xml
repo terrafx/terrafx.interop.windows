@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10EffectShaderVariable.GetGeometryShader">
+    <summary>
+      <para>Get a geometry shader.</para>
+    </summary>
+    <param name="ShaderIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based index.</para>
+    </param>
+    <param name="ppGS">
+      <para>Type: <b><see cref="ID3D10GeometryShader" />**</b></para>
+      <para>A pointer to a <see cref="ID3D10GeometryShader Interface" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectShaderResourceVariable Interface" />
+    <seealso cref="ID3D10EffectShaderVariable" />
+  </member>
+  <member name="ID3D10EffectShaderVariable.GetInputSignatureElementDesc">
+    <summary>
+      <para>Get an input-signature description.</para>
+    </summary>
+    <param name="ShaderIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based shader index.</para>
+    </param>
+    <param name="Element">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based shader-element index.</para>
+    </param>
+    <param name="pDesc">
+      <para>Type: <b><see cref="D3D10_SIGNATURE_PARAMETER_DESC" />*</b></para>
+      <para>A pointer to a parameter description (see <see cref="D3D10_SIGNATURE_PARAMETER_DESC" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>An effect contains one or more shaders; each shader has an input and output signature; each signature contains one or more elements (or parameters). The shader index identifies the shader and the element index identifies the element (or parameter) in the shader signature.</para>
+    </remarks>
+    <seealso cref="ID3D10EffectShaderResourceVariable Interface" />
+    <seealso cref="ID3D10EffectShaderVariable" />
+  </member>
+  <member name="ID3D10EffectShaderVariable.GetOutputSignatureElementDesc">
+    <summary>
+      <para>Get an output-signature description.</para>
+    </summary>
+    <param name="ShaderIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based shader index.</para>
+    </param>
+    <param name="Element">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based element index.</para>
+    </param>
+    <param name="pDesc">
+      <para>Type: <b><see cref="D3D10_SIGNATURE_PARAMETER_DESC" />*</b></para>
+      <para>A pointer to a parameter description (see <see cref="D3D10_SIGNATURE_PARAMETER_DESC" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>An effect contains one or more shaders; each shader has an input and output signature; each signature contains one or more elements (or parameters). The shader index identifies the shader and the element index identifies the element (or parameter) in the shader signature.</para>
+    </remarks>
+    <seealso cref="ID3D10EffectShaderResourceVariable Interface" />
+    <seealso cref="ID3D10EffectShaderVariable" />
+  </member>
+  <member name="ID3D10EffectShaderVariable.GetPixelShader">
+    <summary>
+      <para>Get a pixel shader.</para>
+    </summary>
+    <param name="ShaderIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based index.</para>
+    </param>
+    <param name="ppPS">
+      <para>Type: <b><see cref="ID3D10PixelShader" />**</b></para>
+      <para>A pointer to a <see cref="ID3D10PixelShader Interface" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectShaderResourceVariable Interface" />
+    <seealso cref="ID3D10EffectShaderVariable" />
+  </member>
+  <member name="ID3D10EffectShaderVariable.GetShaderDesc">
+    <summary>
+      <para>Get a shader description.</para>
+    </summary>
+    <param name="ShaderIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based index.</para>
+    </param>
+    <param name="pDesc">
+      <para>Type: <b><see cref="D3D10_EFFECT_SHADER_DESC" />*</b></para>
+      <para>A pointer to a shader description (see <see cref="D3D10_EFFECT_SHADER_DESC" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectShaderResourceVariable Interface" />
+    <seealso cref="ID3D10EffectShaderVariable" />
+  </member>
+  <member name="ID3D10EffectShaderVariable.GetVertexShader">
+    <summary>
+      <para>Get a vertex shader.</para>
+    </summary>
+    <param name="ShaderIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based index.</para>
+    </param>
+    <param name="ppVS">
+      <para>Type: <b><see cref="ID3D10VertexShader" />**</b></para>
+      <para>A pointer to a <see cref="ID3D10VertexShader Interface" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectShaderResourceVariable Interface" />
+    <seealso cref="ID3D10EffectShaderVariable" />
+  </member>
+  <member name="ID3D10EffectShaderVariable">
+    <summary>
+      <para>A shader-variable interface accesses a shader variable.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-interfaces">Effect Interfaces (Direct3D 10)</seealso>
+    <seealso cref="ID3D10EffectVariable" />
+  </member>
+</doc>

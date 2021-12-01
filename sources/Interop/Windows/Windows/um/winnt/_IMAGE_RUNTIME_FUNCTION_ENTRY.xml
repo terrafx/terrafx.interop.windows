@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY">
+    <summary>
+      <para>Represents an entry in the function table on 64-bit Windows.</para>
+    </summary>
+    <seealso cref="SymFunctionTableAccess64" />
+  </member>
+  <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.BeginAddress">
+    <summary>
+      <para>The address of the start of the function.</para>
+    </summary>
+  </member>
+  <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.EndAddress">
+    <summary>
+      <para>The address of the end of the function.</para>
+    </summary>
+  </member>
+  <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.DUMMYUNIONNAME.UnwindInfoAddress">
+    <summary>
+      <para>The address of the unwind information for the function.</para>
+    </summary>
+  </member>
+  <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.DUMMYUNIONNAME.UnwindData">
+    <summary></summary>
+  </member>
+</doc>

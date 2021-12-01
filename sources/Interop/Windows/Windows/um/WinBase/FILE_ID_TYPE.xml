@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_ID_TYPE">
+    <summary>
+      <para>Discriminator for the union in the
+<see cref="FILE_ID_DESCRIPTOR" /> structure.</para>
+    </summary>
+    <seealso cref="FILE_ID_DESCRIPTOR" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-enumerations">File Management Enumerations</seealso>
+    <seealso cref="OpenFileById" />
+  </member>
+  <member name="FILE_ID_TYPE.FileIdType">
+    <summary>
+      <para>Use the <b>FileId</b> member of the union.</para>
+    </summary>
+  </member>
+  <member name="FILE_ID_TYPE.ObjectIdType">
+    <summary>
+      <para>Use the <b>ObjectId</b> member of the union.</para>
+    </summary>
+  </member>
+  <member name="FILE_ID_TYPE.ExtendedFileIdType">
+    <summary>
+      <para>Use the <b>ExtendedFileId</b> member of the union.</para>
+      <para>
+        <b>Windows XP, Windows Server 2003, Windows Vista, Windows Server 2008, Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para>
+    </summary>
+  </member>
+  <member name="FILE_ID_TYPE.MaximumFileIdType">
+    <summary>
+      <para>This value is used for comparison only. All valid values are less than this value.</para>
+    </summary>
+  </member>
+</doc>

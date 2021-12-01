@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11AuthenticatedChannel.GetCertificate">
+    <summary>
+      <para>Gets the driver's certificate chain.</para>
+    </summary>
+    <param name="CertificateSize">
+      <para>The size of the <i>pCertificate</i> array, in bytes. To get the size of the certificate chain, call <see cref="ID3D11CryptoSession.GetCertificateSize" />.</para>
+    </param>
+    <param name="pCertificate">
+      <para>A pointer to a byte array that receives the driver's certificate chain. The caller must allocate the array.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/getcertificatesize">GetCertificateSize</seealso>
+    <seealso cref="ID3D11AuthenticatedChannel" />
+  </member>
+  <member name="ID3D11AuthenticatedChannel.GetCertificateSize">
+    <summary>
+      <para>Gets the size of the driver's certificate chain.</para>
+    </summary>
+    <param name="pCertificateSize">
+      <para>Receives the size of the certificate chain, in bytes.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/getcertificatesize">GetCertificateSize</seealso>
+    <seealso cref="ID3D11AuthenticatedChannel" />
+  </member>
+  <member name="ID3D11AuthenticatedChannel.GetChannelHandle">
+    <summary>
+      <para>Gets a handle to the authenticated channel.</para>
+    </summary>
+    <param name="pChannelHandle">
+      <para>Receives a handle to the channel.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/getcertificatesize">GetCertificateSize</seealso>
+    <seealso cref="ID3D11AuthenticatedChannel" />
+  </member>
+  <member name="ID3D11AuthenticatedChannel">
+    <summary>
+      <para>Provides a communication channel with the graphics driver or the Microsoft Direct3D runtime.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this interface, call <see cref="ID3D11VideoDevice.CreateAuthenticatedChannel" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
+  </member>
+</doc>

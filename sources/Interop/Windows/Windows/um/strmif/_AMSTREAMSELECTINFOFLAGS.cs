@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_AMSTREAMSELECTINFOFLAGS.xml' path='doc/member[@name="_AMSTREAMSELECTINFOFLAGS"]/*' />
 public enum _AMSTREAMSELECTINFOFLAGS
 {
+    /// <include file='_AMSTREAMSELECTINFOFLAGS.xml' path='doc/member[@name="_AMSTREAMSELECTINFOFLAGS.AMSTREAMSELECTINFO_ENABLED"]/*' />
     AMSTREAMSELECTINFO_ENABLED = 0x1,
+
+    /// <include file='_AMSTREAMSELECTINFOFLAGS.xml' path='doc/member[@name="_AMSTREAMSELECTINFOFLAGS.AMSTREAMSELECTINFO_EXCLUSIVE"]/*' />
     AMSTREAMSELECTINFO_EXCLUSIVE = 0x2,
 }

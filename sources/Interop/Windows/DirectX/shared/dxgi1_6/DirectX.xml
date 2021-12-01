@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.DXGIDeclareAdapterRemovalSupport">
+    <summary>
+      <para>Allows a process to indicate that it's resilient to any of its graphics devices being removed.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful; an error code otherwise. If this function is called after device creation, it returns <b>DXGI_ERROR_INVALID_CALL</b>. If this is not the first time that this function is called, it returns <b>DXGI_ERROR_ALREADY_EXISTS</b>. For a full list of error codes, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
+    </returns>
+    <remarks>
+      <para>This function is graphics API-agnostic, meaning that apps running on other APIs, such as OpenGL and Vulkan, would also apply.</para>
+      <para>This function should be called once per process and before any device creation.</para>
+    </remarks>
+    <seealso href="https://github.com/microsoft/directx-graphics-samples/tree/develop/tools/dxgiadapterremovalsupporttest">DXGI AdapterRemovalSupport test sample</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-functions">DXGI Functions</seealso>
+    <seealso href="https://github.com/microsoft/directx-graphics-samples/tree/develop/samples/uwp/d3d12xgpu">xGPU UWP sample</seealso>
+    <seealso href="https://github.com/microsoft/directx-graphics-samples/tree/develop/samples/desktop/d3d12xgpu">xGPU desktop sample</seealso>
+  </member>
+</doc>

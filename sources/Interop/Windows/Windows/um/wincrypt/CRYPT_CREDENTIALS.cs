@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_CREDENTIALS.xml' path='doc/member[@name="CRYPT_CREDENTIALS"]/*' />
 public unsafe partial struct CRYPT_CREDENTIALS
 {
+    /// <include file='CRYPT_CREDENTIALS.xml' path='doc/member[@name="CRYPT_CREDENTIALS.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CRYPT_CREDENTIALS.xml' path='doc/member[@name="CRYPT_CREDENTIALS.pszCredentialsOid"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* pszCredentialsOid;
 
+    /// <include file='CRYPT_CREDENTIALS.xml' path='doc/member[@name="CRYPT_CREDENTIALS.pvCredentials"]/*' />
     [NativeTypeName("LPVOID")]
     public void* pvCredentials;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationVariableIntegerChangeHandler2.xml' path='doc/member[@name="IUIAnimationVariableIntegerChangeHandler2"]/*' />
 [Guid("829B6CF1-4F3A-4412-AE09-B243EB4C6B58")]
 [NativeTypeName("struct IUIAnimationVariableIntegerChangeHandler2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationVariableIntegerChangeHandler2 : IUIAnim
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationVariableIntegerChangeHandler2 : IUIAnim
         return ((delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableIntegerChangeHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationVariableIntegerChangeHandler2 : IUIAnim
         return ((delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler2*, uint>)(lpVtbl[1]))((IUIAnimationVariableIntegerChangeHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationVariableIntegerChangeHandler2 : IUIAnim
         return ((delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler2*, uint>)(lpVtbl[2]))((IUIAnimationVariableIntegerChangeHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationVariableIntegerChangeHandler2.xml' path='doc/member[@name="IUIAnimationVariableIntegerChangeHandler2.OnIntegerValueChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnIntegerValueChanged(IUIAnimationStoryboard2* storyboard, IUIAnimationVariable2* variable, [NativeTypeName("INT32 *")] int* newValue, [NativeTypeName("INT32 *")] int* previousValue, uint cDimension)

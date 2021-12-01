@@ -8,20 +8,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIGNER_SUBJECT_INFO.xml' path='doc/member[@name="SIGNER_SUBJECT_INFO"]/*' />
 public unsafe partial struct SIGNER_SUBJECT_INFO
 {
+    /// <include file='SIGNER_SUBJECT_INFO.xml' path='doc/member[@name="SIGNER_SUBJECT_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='SIGNER_SUBJECT_INFO.xml' path='doc/member[@name="SIGNER_SUBJECT_INFO.pdwIndex"]/*' />
     [NativeTypeName("DWORD *")]
     public uint* pdwIndex;
 
+    /// <include file='SIGNER_SUBJECT_INFO.xml' path='doc/member[@name="SIGNER_SUBJECT_INFO.dwSubjectChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSubjectChoice;
 
+    /// <include file='SIGNER_SUBJECT_INFO.xml' path='doc/member[@name="SIGNER_SUBJECT_INFO.Anonymous"]/*' />
     [NativeTypeName("_SIGNER_SUBJECT_INFO::(anonymous union at ./mssign32.h:30:9)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSignerFileInfo"]/*' />
     public ref SIGNER_FILE_INFO* pSignerFileInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,6 +37,7 @@ public unsafe partial struct SIGNER_SUBJECT_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSignerBlobInfo"]/*' />
     public ref SIGNER_BLOB_INFO* pSignerBlobInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -40,12 +47,15 @@ public unsafe partial struct SIGNER_SUBJECT_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSignerFileInfo"]/*' />
         [FieldOffset(0)]
         public SIGNER_FILE_INFO* pSignerFileInfo;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSignerBlobInfo"]/*' />
         [FieldOffset(0)]
         public SIGNER_BLOB_INFO* pSignerBlobInfo;
     }

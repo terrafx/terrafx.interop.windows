@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETTEXTCOLOR.xml' path='doc/member[@name="EMRSETTEXTCOLOR"]/*' />
 public partial struct EMRSETTEXTCOLOR
 {
+    /// <include file='EMRSETTEXTCOLOR.xml' path='doc/member[@name="EMRSETTEXTCOLOR.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETTEXTCOLOR.xml' path='doc/member[@name="EMRSETTEXTCOLOR.crColor"]/*' />
     public COLORREF crColor;
 }

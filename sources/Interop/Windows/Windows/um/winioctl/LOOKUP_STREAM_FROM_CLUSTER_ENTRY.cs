@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LOOKUP_STREAM_FROM_CLUSTER_ENTRY.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY"]/*' />
 public unsafe partial struct LOOKUP_STREAM_FROM_CLUSTER_ENTRY
 {
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_ENTRY.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.OffsetToNext"]/*' />
     [NativeTypeName("DWORD")]
     public uint OffsetToNext;
 
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_ENTRY.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_ENTRY.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.Reserved"]/*' />
     public LARGE_INTEGER Reserved;
 
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_ENTRY.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.Cluster"]/*' />
     public LARGE_INTEGER Cluster;
 
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_ENTRY.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.FileName"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort FileName[1];
 }

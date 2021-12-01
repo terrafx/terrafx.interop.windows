@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFRatio.xml' path='doc/member[@name="MFRatio"]/*' />
 public partial struct MFRatio
 {
+    /// <include file='MFRatio.xml' path='doc/member[@name="MFRatio.Numerator"]/*' />
     [NativeTypeName("DWORD")]
     public uint Numerator;
 
+    /// <include file='MFRatio.xml' path='doc/member[@name="MFRatio.Denominator"]/*' />
     [NativeTypeName("DWORD")]
     public uint Denominator;
 }

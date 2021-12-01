@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPVFEATURE.xml' path='doc/member[@name="SPVFEATURE"]/*' />
 public enum SPVFEATURE
 {
+    /// <include file='SPVFEATURE.xml' path='doc/member[@name="SPVFEATURE.SPVFEATURE_STRESSED"]/*' />
     SPVFEATURE_STRESSED = (1 << 0),
+
+    /// <include file='SPVFEATURE.xml' path='doc/member[@name="SPVFEATURE.SPVFEATURE_EMPHASIS"]/*' />
     SPVFEATURE_EMPHASIS = (1 << 1),
 }

@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LOADED_IMAGE">
+    <summary>
+      <para>Contains information about the loaded image.</para>
+    </summary>
+    <remarks>
+      <para>The <b>LIST_ENTRY</b> structure is defined as follows:</para>
+      <code>typedef struct _LIST_ENTRY {
+   struct _LIST_ENTRY *Flink;
+   struct _LIST_ENTRY *Blink;
+} LIST_ENTRY, *PLIST_ENTRY, *RESTRICTED_POINTER PRLIST_ENTRY;
+</code>
+    </remarks>
+    <seealso cref="IMAGE_NT_HEADERS" />
+    <seealso cref="IMAGE_SECTION_HEADER" />
+    <seealso cref="ImageLoad" />
+    <seealso cref="MapAndLoad" />
+  </member>
+  <member name="LOADED_IMAGE.ModuleName">
+    <summary>
+      <para>The file name of the mapped file.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.hFile">
+    <summary>
+      <para>A handle to the mapped file.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.MappedAddress">
+    <summary>
+      <para>The base address of the mapped file.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.FileHeader">
+    <summary>
+      <para>A pointer to an
+<see cref="IMAGE_NT_HEADERS" /> structure.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.LastRvaSection">
+    <summary>
+      <para>A pointer to an
+<see cref="IMAGE_SECTION_HEADER" /> structure.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.NumberOfSections">
+    <summary>
+      <para>The number of COFF section headers.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.Sections">
+    <summary>
+      <para>A pointer to an
+<see cref="IMAGE_SECTION_HEADER" /> structure.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.Characteristics">
+    <summary>
+      <para>The image characteristics value. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_RELOCS_STRIPPED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Relocation information is stripped from the file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_EXECUTABLE_IMAGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is executable (there are no unresolved external references).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_LINE_NUMS_STRIPPED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Line numbers are stripped from the file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_LOCAL_SYMS_STRIPPED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Local symbols are stripped from file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_AGGRESIVE_WS_TRIM</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Aggressively trim the working set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_LARGE_ADDRESS_AWARE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The application can handle addresses larger than 2 GB.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_BYTES_REVERSED_LO</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Bytes of word are reversed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_32BIT_MACHINE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Computer supports 32-bit words.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_DEBUG_STRIPPED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Debugging information is stored separately in a .dbg file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If the image is on removable media, copy and run from the swap file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_NET_RUN_FROM_SWAP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0800</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If the image is on the network, copy and run from the swap file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_SYSTEM</b>
+                </description>
+              </item>
+              <item>
+                <description>0x1000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>System file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_DLL</b>
+                </description>
+              </item>
+              <item>
+                <description>0x2000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>DLL file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_UP_SYSTEM_ONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x4000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>File should be run only on a uniprocessor computer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_BYTES_REVERSED_HI</b>
+                </description>
+              </item>
+              <item>
+                <description>0x8000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Bytes of the word are reversed.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.fSystemImage">
+    <summary>
+      <para>If the image is a kernel mode executable image, this value is <b>TRUE</b>.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.fDOSImage">
+    <summary>
+      <para>If the image is a 16-bit executable image, this value is <b>TRUE</b>.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.fReadOnly">
+    <summary>
+      <para>If the image is read-only, this value is <b>TRUE</b>.</para>
+      <para>
+        <b>Prior to Windows Vista:  </b>This member is not included in the structure.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.Version">
+    <summary>
+      <para>The version string.</para>
+      <para>
+        <b>Prior to Windows Vista:  </b>This member is not included in the structure.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.Links">
+    <summary>
+      <para>The list of loaded images.</para>
+    </summary>
+  </member>
+  <member name="LOADED_IMAGE.SizeOfImage">
+    <summary>
+      <para>The size of the image, in bytes.</para>
+    </summary>
+  </member>
+</doc>

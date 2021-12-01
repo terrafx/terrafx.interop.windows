@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='StorageProviderBanners.xml' path='doc/member[@name="StorageProviderBanners"]/*' />
 [Guid("7CCDF9F4-E576-455A-8BC7-F6EC68D6F063")]
 public partial struct StorageProviderBanners
 {

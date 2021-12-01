@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eVideoEncoderDisplayContentType.xml' path='doc/member[@name="eVideoEncoderDisplayContentType"]/*' />
 public enum eVideoEncoderDisplayContentType
 {
+    /// <include file='eVideoEncoderDisplayContentType.xml' path='doc/member[@name="eVideoEncoderDisplayContentType.eVideoEncoderDisplayContent_Unknown"]/*' />
     eVideoEncoderDisplayContent_Unknown = 0,
+
+    /// <include file='eVideoEncoderDisplayContentType.xml' path='doc/member[@name="eVideoEncoderDisplayContentType.eVideoEncoderDisplayContent_FullScreenVideo"]/*' />
     eVideoEncoderDisplayContent_FullScreenVideo = 1,
 }

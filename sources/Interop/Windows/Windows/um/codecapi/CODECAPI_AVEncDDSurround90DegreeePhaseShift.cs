@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncDDSurround90DegreeePhaseShift.xml' path='doc/member[@name="CODECAPI_AVEncDDSurround90DegreeePhaseShift"]/*' />
 [Guid("25ECEC9D-3553-42C0-BB56-D25792104F80")]
 public partial struct CODECAPI_AVEncDDSurround90DegreeePhaseShift
 {

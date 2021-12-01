@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit"]/*' />
 [Guid("41DED17D-D6B3-4261-997D-88C60E4B1D58")]
 [NativeTypeName("struct IDefaultExtractIconInit : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
         return ((delegate* unmanaged<IDefaultExtractIconInit*, Guid*, void**, int>)(lpVtbl[0]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
         return ((delegate* unmanaged<IDefaultExtractIconInit*, uint>)(lpVtbl[1]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
         return ((delegate* unmanaged<IDefaultExtractIconInit*, uint>)(lpVtbl[2]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetFlags(uint uFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
         return ((delegate* unmanaged<IDefaultExtractIconInit*, uint, int>)(lpVtbl[3]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), uFlags);
     }
 
+    /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetKey(HKEY hkey)
@@ -53,6 +59,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
         return ((delegate* unmanaged<IDefaultExtractIconInit*, HKEY, int>)(lpVtbl[4]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), hkey);
     }
 
+    /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetNormalIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetNormalIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
@@ -60,6 +67,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
         return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[5]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
     }
 
+    /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetOpenIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetOpenIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
@@ -67,6 +75,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
         return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[6]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
     }
 
+    /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetShortcutIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetShortcutIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
@@ -74,6 +83,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
         return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[7]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
     }
 
+    /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetDefaultIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetDefaultIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)

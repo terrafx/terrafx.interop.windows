@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ILaunchSourceViewSizePreference.GetSourceViewSizePreference">
+    <summary>
+      <para>Retrieves the view size preference of the application after the application has launched.</para>
+    </summary>
+    <param name="sourceSizeAfterLaunch">
+      <para>Type: <b><see cref="APPLICATION_VIEW_SIZE_PREFERENCE" />*</b></para>
+      <para>Contains the address of a pointer to an <see cref="APPLICATION_VIEW_SIZE_PREFERENCE" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ILaunchSourceViewSizePreference" />
+  </member>
+  <member name="ILaunchSourceViewSizePreference.GetSourceViewToPosition">
+    <summary>
+      <para>Retrieves the position of the source application window.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND*</b></para>
+      <para>Contains the address of a pointer to a window handle.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ILaunchSourceViewSizePreference" />
+  </member>
+  <member name="ILaunchSourceViewSizePreference">
+    <summary>
+      <para>Provides methods for retrieving information about the source application.</para>
+    </summary>
+    <remarks>
+      <h3>When to implement</h3>
+      <para>--&gt;</para>
+    </remarks>
+    <seealso cref="ILaunchTargetViewSizePreference" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

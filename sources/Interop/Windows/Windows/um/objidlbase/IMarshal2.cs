@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMarshal2.xml' path='doc/member[@name="IMarshal2"]/*' />
 [Guid("000001CF-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IMarshal2 : IMarshal")]
 [NativeInheritance("IMarshal")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMarshal2 : IMarshal2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMarshal2 : IMarshal2.Interface
         return ((delegate* unmanaged<IMarshal2*, Guid*, void**, int>)(lpVtbl[0]))((IMarshal2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMarshal2 : IMarshal2.Interface
         return ((delegate* unmanaged<IMarshal2*, uint>)(lpVtbl[1]))((IMarshal2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMarshal2 : IMarshal2.Interface
         return ((delegate* unmanaged<IMarshal2*, uint>)(lpVtbl[2]))((IMarshal2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMarshal.GetUnmarshalClass" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetUnmarshalClass([NativeTypeName("const IID &")] Guid* riid, void* pv, [NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags, [NativeTypeName("CLSID *")] Guid* pCid)
@@ -46,6 +51,7 @@ public unsafe partial struct IMarshal2 : IMarshal2.Interface
         return ((delegate* unmanaged<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)(lpVtbl[3]))((IMarshal2*)Unsafe.AsPointer(ref this), riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
     }
 
+    /// <inheritdoc cref="IMarshal.GetMarshalSizeMax" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMarshalSizeMax([NativeTypeName("const IID &")] Guid* riid, void* pv, [NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags, [NativeTypeName("DWORD *")] uint* pSize)
@@ -53,6 +59,7 @@ public unsafe partial struct IMarshal2 : IMarshal2.Interface
         return ((delegate* unmanaged<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)(lpVtbl[4]))((IMarshal2*)Unsafe.AsPointer(ref this), riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
     }
 
+    /// <inheritdoc cref="IMarshal.MarshalInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MarshalInterface(IStream* pStm, [NativeTypeName("const IID &")] Guid* riid, void* pv, [NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags)
@@ -60,6 +67,7 @@ public unsafe partial struct IMarshal2 : IMarshal2.Interface
         return ((delegate* unmanaged<IMarshal2*, IStream*, Guid*, void*, uint, void*, uint, int>)(lpVtbl[5]))((IMarshal2*)Unsafe.AsPointer(ref this), pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
     }
 
+    /// <inheritdoc cref="IMarshal.UnmarshalInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UnmarshalInterface(IStream* pStm, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -67,6 +75,7 @@ public unsafe partial struct IMarshal2 : IMarshal2.Interface
         return ((delegate* unmanaged<IMarshal2*, IStream*, Guid*, void**, int>)(lpVtbl[6]))((IMarshal2*)Unsafe.AsPointer(ref this), pStm, riid, ppv);
     }
 
+    /// <inheritdoc cref="IMarshal.ReleaseMarshalData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ReleaseMarshalData(IStream* pStm)
@@ -74,6 +83,7 @@ public unsafe partial struct IMarshal2 : IMarshal2.Interface
         return ((delegate* unmanaged<IMarshal2*, IStream*, int>)(lpVtbl[7]))((IMarshal2*)Unsafe.AsPointer(ref this), pStm);
     }
 
+    /// <inheritdoc cref="IMarshal.DisconnectObject" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT DisconnectObject([NativeTypeName("DWORD")] uint dwReserved)

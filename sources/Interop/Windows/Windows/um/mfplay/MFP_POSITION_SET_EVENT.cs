@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFP_POSITION_SET_EVENT.xml' path='doc/member[@name="MFP_POSITION_SET_EVENT"]/*' />
 public unsafe partial struct MFP_POSITION_SET_EVENT
 {
+    /// <include file='MFP_POSITION_SET_EVENT.xml' path='doc/member[@name="MFP_POSITION_SET_EVENT.header"]/*' />
     public MFP_EVENT_HEADER header;
 
+    /// <include file='MFP_POSITION_SET_EVENT.xml' path='doc/member[@name="MFP_POSITION_SET_EVENT.pMediaItem"]/*' />
     public IMFPMediaItem* pMediaItem;
 }

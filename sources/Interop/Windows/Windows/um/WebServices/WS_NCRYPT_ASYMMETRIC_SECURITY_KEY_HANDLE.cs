@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE"]/*' />
 public partial struct WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE
 {
+    /// <include file='WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE.keyHandle"]/*' />
     public WS_SECURITY_KEY_HANDLE keyHandle;
 
+    /// <include file='WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE.asymmetricKey"]/*' />
     [NativeTypeName("NCRYPT_KEY_HANDLE")]
     public nuint asymmetricKey;
 }

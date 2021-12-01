@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NL_INTERFACE_NETWORK_CATEGORY_STATE.xml' path='doc/member[@name="NL_INTERFACE_NETWORK_CATEGORY_STATE"]/*' />
 public enum NL_INTERFACE_NETWORK_CATEGORY_STATE
 {
+    /// <include file='NL_INTERFACE_NETWORK_CATEGORY_STATE.xml' path='doc/member[@name="NL_INTERFACE_NETWORK_CATEGORY_STATE.NlincCategoryUnknown"]/*' />
     NlincCategoryUnknown = 0,
+
+    /// <include file='NL_INTERFACE_NETWORK_CATEGORY_STATE.xml' path='doc/member[@name="NL_INTERFACE_NETWORK_CATEGORY_STATE.NlincPublic"]/*' />
     NlincPublic = 1,
+
+    /// <include file='NL_INTERFACE_NETWORK_CATEGORY_STATE.xml' path='doc/member[@name="NL_INTERFACE_NETWORK_CATEGORY_STATE.NlincPrivate"]/*' />
     NlincPrivate = 2,
+
+    /// <include file='NL_INTERFACE_NETWORK_CATEGORY_STATE.xml' path='doc/member[@name="NL_INTERFACE_NETWORK_CATEGORY_STATE.NlincDomainAuthenticated"]/*' />
     NlincDomainAuthenticated = 3,
+
+    /// <include file='NL_INTERFACE_NETWORK_CATEGORY_STATE.xml' path='doc/member[@name="NL_INTERFACE_NETWORK_CATEGORY_STATE.NlincCategoryStateMax"]/*' />
     NlincCategoryStateMax,
 }

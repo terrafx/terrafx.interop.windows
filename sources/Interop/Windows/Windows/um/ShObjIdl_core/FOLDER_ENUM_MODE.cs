@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FOLDER_ENUM_MODE.xml' path='doc/member[@name="FOLDER_ENUM_MODE"]/*' />
 public enum FOLDER_ENUM_MODE
 {
+    /// <include file='FOLDER_ENUM_MODE.xml' path='doc/member[@name="FOLDER_ENUM_MODE.FEM_VIEWRESULT"]/*' />
     FEM_VIEWRESULT = 0,
+
+    /// <include file='FOLDER_ENUM_MODE.xml' path='doc/member[@name="FOLDER_ENUM_MODE.FEM_NAVIGATION"]/*' />
     FEM_NAVIGATION = 1,
 }

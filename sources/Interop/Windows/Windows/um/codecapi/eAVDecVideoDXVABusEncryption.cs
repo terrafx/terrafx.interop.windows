@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecVideoDXVABusEncryption.xml' path='doc/member[@name="eAVDecVideoDXVABusEncryption"]/*' />
 public enum eAVDecVideoDXVABusEncryption
 {
+    /// <include file='eAVDecVideoDXVABusEncryption.xml' path='doc/member[@name="eAVDecVideoDXVABusEncryption.eAVDecVideoDXVABusEncryption_NONE"]/*' />
     eAVDecVideoDXVABusEncryption_NONE = 0,
+
+    /// <include file='eAVDecVideoDXVABusEncryption.xml' path='doc/member[@name="eAVDecVideoDXVABusEncryption.eAVDecVideoDXVABusEncryption_PRIVATE"]/*' />
     eAVDecVideoDXVABusEncryption_PRIVATE = 1,
+
+    /// <include file='eAVDecVideoDXVABusEncryption.xml' path='doc/member[@name="eAVDecVideoDXVABusEncryption.eAVDecVideoDXVABusEncryption_AES"]/*' />
     eAVDecVideoDXVABusEncryption_AES = 2,
 }

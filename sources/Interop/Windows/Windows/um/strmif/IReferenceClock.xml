@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IReferenceClock.AdviseTime">
+    <summary>
+      <para>The <code>AdviseTime</code> method creates a one-shot advise request.</para>
+    </summary>
+    <param name="baseTime">
+      <para>Base reference time, in 100-nanosecond units. See Remarks.</para>
+    </param>
+    <param name="streamTime">
+      <para>Stream offset time, in 100-nanosecond units. See Remarks.</para>
+    </param>
+    <param name="hEvent">
+      <para>Handle to an event, created by the caller.</para>
+    </param>
+    <param name="pdwAdviseCookie">
+      <para>Pointer to a variable that receives an identifier for the advise request.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid time values.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method creates a one-shot advise request for the reference time <i>rtBaseTime</i> + <i>rtStreamTime</i>. The sum must be greater than zero and less than MAX_TIME, or the method returns E_INVALIDARG. At the requested time, the clock signals the event specified in the <i>hEvent</i> parameter.</para>
+      <para>To cancel the notification before the time is reached, call the <see cref="Unadvise" /> method and pass the <i>pdwAdviseToken</i> value returned from this call. After the notification has occurred, the clock automatically clears it, so it is not necessary to call <b>Unadvise</b>. However, it is not an error to do so.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IReferenceClock Interface" />
+  </member>
+  <member name="IReferenceClock.GetTime">
+    <summary>
+      <para>The <code>GetTime</code> method retrieves the current reference time.</para>
+    </summary>
+    <param name="pTime">
+      <para>Pointer to a variable that receives the current time, in 100-nanosecond units.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Returned time is the same as the previous value.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IReferenceClock Interface" />
+  </member>
+  <member name="IReferenceClock.Unadvise">
+    <summary>
+      <para>The <code>Unadvise</code> method removes a pending advise request.</para>
+    </summary>
+    <param name="dwAdviseCookie">
+      <para>Identifier of the request to remove. Use the value returned by <see cref="IReferenceClock.AdviseTime" /> or <see cref="IReferenceClock.AdvisePeriodic" /> in the <i>pdwAdviseToken</i> parameter.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IReferenceClock Interface" />
+  </member>
+  <member name="IReferenceClock">
+    <summary>
+      <para>The <code>IReferenceClock</code> interface provides the reference time for the filter graph.</para>
+      <para>Filters that can act as a reference clock can expose this interface. It is also exposed by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/system-reference-clock">System Reference Clock</a>. The filter graph manager uses this interface to synchronize the filter graph. Applications can use this interface to retrieve the current reference time, or to request notification of an elapsed time.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-and-clocks-in-directshow">Time and Clocks in DirectShow</a>.</para>
+      <para>
+        <b>Filter developers: </b>Implement this interface if you are writing a filter that generates reliable clock times. For example, audio renderers implement this interface, because audio sound boards usually contain a reference clock. Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasereferenceclock">CBaseReferenceClock</a> class to implement this interface.</para>
+      <para>To increase the chances that a non-rendering filter will be selected by the Filter Graph Manager as the reference close, follow these steps:</para>
+      <list type="number">
+        <item>
+          <description>Implement <code>IReferenceClock</code> in the filter.</description>
+        </item>
+        <item>
+          <description>Implement <see cref="IAMFilterMiscFlags" /> in the filter.</description>
+        </item>
+        <item>
+          <description>Return AM_FILTER_MISC_FLAGS_IS_SOURCE from <see cref="IAMFilterMiscFlags.GetMiscFlags" />.</description>
+        </item>
+        <item>
+          <description>Implement <see cref="IAMPushSource" /> on all output pins.</description>
+        </item>
+        <item>
+          <description>Return (* pFlags) = 0 from <see cref="IAMPushSource.GetPushSourceFlags" />.</description>
+        </item>
+        <item>
+          <description>You may return E_NOTIMPL from all other <b>IAMPushSource</b> methods.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

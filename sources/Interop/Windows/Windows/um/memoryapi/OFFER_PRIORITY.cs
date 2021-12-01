@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OFFER_PRIORITY.xml' path='doc/member[@name="OFFER_PRIORITY"]/*' />
 public enum OFFER_PRIORITY
 {
+    /// <include file='OFFER_PRIORITY.xml' path='doc/member[@name="OFFER_PRIORITY.VmOfferPriorityVeryLow"]/*' />
     VmOfferPriorityVeryLow = 1,
+
+    /// <include file='OFFER_PRIORITY.xml' path='doc/member[@name="OFFER_PRIORITY.VmOfferPriorityLow"]/*' />
     VmOfferPriorityLow,
+
+    /// <include file='OFFER_PRIORITY.xml' path='doc/member[@name="OFFER_PRIORITY.VmOfferPriorityBelowNormal"]/*' />
     VmOfferPriorityBelowNormal,
+
+    /// <include file='OFFER_PRIORITY.xml' path='doc/member[@name="OFFER_PRIORITY.VmOfferPriorityNormal"]/*' />
     VmOfferPriorityNormal,
 }

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_STREAM_INFO">
+    <summary>
+      <para>Receives  file stream information for the specified file. Used for any handles. Use only when calling <see cref="GetFileInformationByHandleEx" />.</para>
+    </summary>
+    <remarks>
+      <para>The <b>FILE_STREAM_INFO</b> structure is used to enumerate the streams for a file.</para>
+      <para>Support for named data streams is file-system-specific.</para>
+      <para>The <b>FILE_STREAM_INFO</b> structure must be aligned on a <b>LONGLONG</b> (8-byte) boundary. If a buffer contains two or more of these structures, the <b>NextEntryOffset</b> value in each entry, except the last, falls on an 8-byte boundary.</para>
+    </remarks>
+    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
+    <seealso cref="GetFileInformationByHandleEx" />
+  </member>
+  <member name="FILE_STREAM_INFO.NextEntryOffset">
+    <summary>
+      <para>The offset for the next <b>FILE_STREAM_INFO</b> entry that is returned. This member is zero if no other entries follow this one.</para>
+    </summary>
+  </member>
+  <member name="FILE_STREAM_INFO.StreamNameLength">
+    <summary>
+      <para>The length, in bytes, of <b>StreamName</b>.</para>
+    </summary>
+  </member>
+  <member name="FILE_STREAM_INFO.StreamSize">
+    <summary>
+      <para>The size, in bytes,  of the data stream.</para>
+    </summary>
+  </member>
+  <member name="FILE_STREAM_INFO.StreamAllocationSize">
+    <summary>
+      <para>The amount of space that  is allocated for the stream, in bytes.  This value is usually a multiple of the sector or cluster size of the underlying physical device.</para>
+    </summary>
+  </member>
+  <member name="FILE_STREAM_INFO.StreamName">
+    <summary>
+      <para>The stream name.</para>
+    </summary>
+  </member>
+</doc>

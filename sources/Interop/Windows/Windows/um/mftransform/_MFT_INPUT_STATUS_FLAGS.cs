@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_MFT_INPUT_STATUS_FLAGS.xml' path='doc/member[@name="_MFT_INPUT_STATUS_FLAGS"]/*' />
 public enum _MFT_INPUT_STATUS_FLAGS
 {
+    /// <include file='_MFT_INPUT_STATUS_FLAGS.xml' path='doc/member[@name="_MFT_INPUT_STATUS_FLAGS.MFT_INPUT_STATUS_ACCEPT_DATA"]/*' />
     MFT_INPUT_STATUS_ACCEPT_DATA = 0x1,
 }

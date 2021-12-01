@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIBICMPSTATS">
+    <summary>
+      <para>The
+<b>MIBICMPSTATS</b> structure contains statistics for either incoming or outgoing Internet Control Message Protocol (ICMP) messages on a particular computer.</para>
+    </summary>
+    <remarks>
+      <para>Two
+<b>MIBICMPSTATS</b> structures are required to hold all the ICMP statistics for a given computer. One
+<b>MIBICMPSTATS</b> structure contains the statistics for incoming ICMP messages. The other contains the statistics for outgoing ICMP messages. For this reason, the
+<see cref="MIBICMPINFO" /> structure contains two
+<b>MIBICMPSTATS</b> structures.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIBICMPSTATS</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="MIBICMPINFO" />
+    <seealso cref="MIBICMPSTATS_EX" />
+    <seealso cref="MIB_ICMP" />
+    <seealso cref="MIB_ICMP_EX" />
+  </member>
+  <member name="MIBICMPSTATS.dwMsgs">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of messages received or sent.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwErrors">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of errors received or sent.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwDestUnreachs">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of destination-unreachable messages received or sent. A destination-unreachable message is sent to the originating computer when a datagram fails to reach its intended destination.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwTimeExcds">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of time-to-live (TTL) exceeded messages received or sent. A time-to-live exceeded message is sent to the originating computer when a datagram is discarded because the number of routers it has passed through exceeds its time-to-live value.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwParmProbs">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of parameter-problem messages received or sent. A parameter-problem message is sent to the originating computer when a router or host detects an error in a datagram's IP header.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwSrcQuenchs">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of source quench messages received or sent. A source quench request is sent to a computer to request that it reduce its rate of packet transmission.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwRedirects">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of redirect messages received or sent. A redirect message is sent to the originating computer when a better route is discovered for a datagram sent by that computer.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwEchos">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of echo requests received or sent. An echo request causes the receiving computer to send an echo reply message back to the originating computer.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwEchoReps">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of echo replies received or sent. A computer sends an echo reply in response to receiving an echo request message.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwTimestamps">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of time-stamp requests received or sent. A time-stamp request causes the receiving computer to send a time-stamp reply back to the originating computer.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwTimestampReps">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of time-stamp replies received or sent. A computer sends a time-stamp reply in response to receiving a time-stamp request. Routers can use time-stamp requests and replies to measure the transmission speed of datagrams on a network.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwAddrMasks">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of address mask requests received or sent. A computer sends an address mask request to determine the number of bits in the subnet mask for its local subnet.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS.dwAddrMaskReps">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of address mask responses received or sent. A computer sends an address mask response in response to an address mask request.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NewProcessCauseConstants.xml' path='doc/member[@name="NewProcessCauseConstants"]/*' />
 public enum NewProcessCauseConstants
 {
+    /// <include file='NewProcessCauseConstants.xml' path='doc/member[@name="NewProcessCauseConstants.ProtectedModeRedirect"]/*' />
     ProtectedModeRedirect = 0x1,
 }

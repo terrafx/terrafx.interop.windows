@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfUIElementSink.BeginUIElement">
+    <summary>
+      <para>The <b>ITfUIElementSink.BeginUIElement</b> method is called when the UIElement started. This sink can let the textservice to draw or not to draw the UI element.</para>
+    </summary>
+    <param name="dwUIElementId">
+      <para>[in] Id of the UIElement that was started.</para>
+    </param>
+    <param name="pbShow">
+      <para>[in, out] Return <b>true</b> if the application does not draw the UIElement content and the text service draws its original UI content. Return <b>false</b> if the application draws the UIElement's content and stops the text service from drawing it. The application can get the <see cref="ITfUIElement" /> interface by using <see cref="ITfUIElementMgr.GetUIElement" /> and it can evaluate if it can handle the UIElement by QI with <b>IID_ITfCandidateListUIElement</b> or with other UIElement interfaces. The application can always return <b>FALSE</b> if it is unknown or it cannot be handled. In this case, the text service will not show any extra UI on the screen. This is a good way for some full screen applications. Alternatively, the application can return <b>TRUE</b> to use TextService's UI on some particular or unknown UIs.</para>
+    </param>
+    <returns>
+      <para>The TSF manager ignores the return value of this method.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfUIElementSink.EndUIElement">
+    <summary>
+      <para>The <b>ITfUIElementSink.EndUIElement</b> method is called when the UIElement is finished.</para>
+    </summary>
+    <param name="dwUIElementId">
+      <para>[in] Id of the UIElement that is finished.</para>
+    </param>
+    <returns>
+      <para>The TSF manager ignores the return value of this method.</para>
+    </returns>
+  </member>
+  <member name="ITfUIElementSink.UpdateUIElement">
+    <summary>
+      <para>The <b>ITfUIElementSink.UpdateUIElement</b> method is called when the contents of the UIElement is updated.</para>
+    </summary>
+    <param name="dwUIElementId">
+      <para>[in] Id of the UIElement that has had its content updated.</para>
+    </param>
+    <returns>
+      <para>The TSF manager ignores the return value of this method.</para>
+    </returns>
+  </member>
+  <member name="ITfUIElementSink">
+    <summary>
+      <para>The <b>ITfUIElementSink</b> interface is implemented by an application to receive notifications when the UI element is changed.</para>
+    </summary>
+    <remarks>
+      <para>To install this advise sink, obtain an <see cref="ITfSource" /> object from an <see cref="ITfUIElementMgr" /> object by calling <b>ITfUIElementMgr.QueryInterface</b> with IID_ ITfSource. Then call <see cref="ITfSource.AdviseSink" /> with IID_ ITfUIElementSink.</para>
+    </remarks>
+  </member>
+</doc>

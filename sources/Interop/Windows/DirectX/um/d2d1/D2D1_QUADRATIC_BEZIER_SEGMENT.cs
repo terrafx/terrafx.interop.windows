@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_QUADRATIC_BEZIER_SEGMENT.xml' path='doc/member[@name="D2D1_QUADRATIC_BEZIER_SEGMENT"]/*' />
 public partial struct D2D1_QUADRATIC_BEZIER_SEGMENT
 {
+    /// <include file='D2D1_QUADRATIC_BEZIER_SEGMENT.xml' path='doc/member[@name="D2D1_QUADRATIC_BEZIER_SEGMENT.point1"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F point1;
 
+    /// <include file='D2D1_QUADRATIC_BEZIER_SEGMENT.xml' path='doc/member[@name="D2D1_QUADRATIC_BEZIER_SEGMENT.point2"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F point2;
 }

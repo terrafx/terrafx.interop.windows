@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFPMediaPlayerCallback.xml' path='doc/member[@name="IMFPMediaPlayerCallback"]/*' />
 [Guid("766C8FFB-5FDB-4FEA-A28D-B912996F51BD")]
 [NativeTypeName("struct IMFPMediaPlayerCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.I
         return ((delegate* unmanaged<IMFPMediaPlayerCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.I
         return ((delegate* unmanaged<IMFPMediaPlayerCallback*, uint>)(lpVtbl[1]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.I
         return ((delegate* unmanaged<IMFPMediaPlayerCallback*, uint>)(lpVtbl[2]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMediaPlayerCallback.xml' path='doc/member[@name="IMFPMediaPlayerCallback.OnMediaPlayerEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void OnMediaPlayerEvent(MFP_EVENT_HEADER* pEventHeader)

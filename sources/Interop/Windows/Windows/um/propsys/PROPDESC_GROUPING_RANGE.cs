@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPDESC_GROUPING_RANGE.xml' path='doc/member[@name="PROPDESC_GROUPING_RANGE"]/*' />
 public enum PROPDESC_GROUPING_RANGE
 {
+    /// <include file='PROPDESC_GROUPING_RANGE.xml' path='doc/member[@name="PROPDESC_GROUPING_RANGE.PDGR_DISCRETE"]/*' />
     PDGR_DISCRETE = 0,
+
+    /// <include file='PROPDESC_GROUPING_RANGE.xml' path='doc/member[@name="PROPDESC_GROUPING_RANGE.PDGR_ALPHANUMERIC"]/*' />
     PDGR_ALPHANUMERIC = 1,
+
+    /// <include file='PROPDESC_GROUPING_RANGE.xml' path='doc/member[@name="PROPDESC_GROUPING_RANGE.PDGR_SIZE"]/*' />
     PDGR_SIZE = 2,
+
+    /// <include file='PROPDESC_GROUPING_RANGE.xml' path='doc/member[@name="PROPDESC_GROUPING_RANGE.PDGR_DYNAMIC"]/*' />
     PDGR_DYNAMIC = 3,
+
+    /// <include file='PROPDESC_GROUPING_RANGE.xml' path='doc/member[@name="PROPDESC_GROUPING_RANGE.PDGR_DATE"]/*' />
     PDGR_DATE = 4,
+
+    /// <include file='PROPDESC_GROUPING_RANGE.xml' path='doc/member[@name="PROPDESC_GROUPING_RANGE.PDGR_PERCENT"]/*' />
     PDGR_PERCENT = 5,
+
+    /// <include file='PROPDESC_GROUPING_RANGE.xml' path='doc/member[@name="PROPDESC_GROUPING_RANGE.PDGR_ENUMERATED"]/*' />
     PDGR_ENUMERATED = 6,
 }

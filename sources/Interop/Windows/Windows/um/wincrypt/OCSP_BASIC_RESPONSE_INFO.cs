@@ -8,31 +8,41 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO"]/*' />
 public unsafe partial struct OCSP_BASIC_RESPONSE_INFO
 {
+    /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.dwResponderIdChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwResponderIdChoice;
 
+    /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.Anonymous"]/*' />
     [NativeTypeName("_OCSP_BASIC_RESPONSE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5706:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.ProducedAt"]/*' />
     public FILETIME ProducedAt;
 
+    /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.cResponseEntry"]/*' />
     [NativeTypeName("DWORD")]
     public uint cResponseEntry;
 
+    /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.rgResponseEntry"]/*' />
     [NativeTypeName("POCSP_BASIC_RESPONSE_ENTRY")]
     public OCSP_BASIC_RESPONSE_ENTRY* rgResponseEntry;
 
+    /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.cExtension"]/*' />
     [NativeTypeName("DWORD")]
     public uint cExtension;
 
+    /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.rgExtension"]/*' />
     [NativeTypeName("PCERT_EXTENSION")]
     public CERT_EXTENSION* rgExtension;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ByNameResponderId"]/*' />
     public ref CRYPT_DATA_BLOB ByNameResponderId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +52,7 @@ public unsafe partial struct OCSP_BASIC_RESPONSE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ByKeyResponderId"]/*' />
     public ref CRYPT_DATA_BLOB ByKeyResponderId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,13 +62,16 @@ public unsafe partial struct OCSP_BASIC_RESPONSE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ByNameResponderId"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("CERT_NAME_BLOB")]
         public CRYPT_DATA_BLOB ByNameResponderId;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ByKeyResponderId"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("CRYPT_HASH_BLOB")]
         public CRYPT_DATA_BLOB ByKeyResponderId;

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TOOLBARITEM">
+    <summary>
+      <para>Deprecated. Data used in <see cref="IBrowserService2._GetToolbarItem" />, <see cref="IBrowserService2.v_MayGetNextToolbarFocus" />, and <see cref="IBrowserService2._SetFocus" /> to define a toolbar item.</para>
+    </summary>
+  </member>
+  <member name="TOOLBARITEM.ptbar">
+    <summary>
+      <para>Type: <b><see cref="IDockingWindow" />*</b></para>
+      <para>The <see cref="IDockingWindow" /> of the item's particular toolbar.</para>
+    </summary>
+  </member>
+  <member name="TOOLBARITEM.rcBorderTool">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/cc136564(v=vs.85)">BORDERWIDTHS</a></b></para>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/cc136564(v=vs.85)">BORDERWIDTHS</a> structure that contains the dimensions of the item, including its borders.</para>
+    </summary>
+  </member>
+  <member name="TOOLBARITEM.pwszItem">
+    <summary>
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A pointer to a buffer that contains the name of the toolbar item as a Unicode string.</para>
+    </summary>
+  </member>
+  <member name="TOOLBARITEM.fShow">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> if the toolbar item is currently visible; otherwise, <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="TOOLBARITEM.hMon">
+    <summary>
+      <para>Type: <b>HMONITOR</b></para>
+      <para>The handle of the monitor on which the toolbar item appears.</para>
+    </summary>
+  </member>
+</doc>

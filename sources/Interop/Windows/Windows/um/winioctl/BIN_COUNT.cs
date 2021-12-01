@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BIN_COUNT.xml' path='doc/member[@name="BIN_COUNT"]/*' />
 public partial struct BIN_COUNT
 {
+    /// <include file='BIN_COUNT.xml' path='doc/member[@name="BIN_COUNT.BinRange"]/*' />
     public BIN_RANGE BinRange;
 
+    /// <include file='BIN_COUNT.xml' path='doc/member[@name="BIN_COUNT.BinCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint BinCount;
 }

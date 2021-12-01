@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IESHORTCUTFLAGS">
+    <summary>
+      <para>Specifies how a shortcut should be handled by the browser.</para>
+    </summary>
+  </member>
+  <member name="IESHORTCUTFLAGS.IESHORTCUT_NEWBROWSER">
+    <summary>
+      <para>A new browser window should be opened for each shortcut.</para>
+    </summary>
+  </member>
+  <member name="IESHORTCUTFLAGS.IESHORTCUT_OPENNEWTAB">
+    <summary>
+      <para>The current or topmost browser window should open the link in a new foreground tab.</para>
+    </summary>
+  </member>
+  <member name="IESHORTCUTFLAGS.IESHORTCUT_FORCENAVIGATE">
+    <summary>
+      <para>The current or topmost browser window should open the link.</para>
+    </summary>
+  </member>
+  <member name="IESHORTCUTFLAGS.IESHORTCUT_BACKGROUNDTAB">
+    <summary>
+      <para>The current or topmost browser window should open the link in a new  background tab.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl"]/*' />
 [Guid("A70EFE61-E2A3-11D0-A9BE-00AA0061BE93")]
 [NativeTypeName("struct IDvdControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, Guid*, void**, int>)(lpVtbl[0]))((IDvdControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint>)(lpVtbl[1]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint>)(lpVtbl[2]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.TitlePlay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT TitlePlay([NativeTypeName("ULONG")] uint ulTitle)
@@ -46,6 +51,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[3]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ChapterPlay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ChapterPlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter)
@@ -53,6 +59,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, uint, int>)(lpVtbl[4]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.TimePlay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT TimePlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint bcdTime)
@@ -60,6 +67,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, uint, int>)(lpVtbl[5]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, bcdTime);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.StopForResume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT StopForResume()
@@ -67,6 +75,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[6]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.GoUp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GoUp()
@@ -74,6 +83,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[7]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.TimeSearch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT TimeSearch([NativeTypeName("ULONG")] uint bcdTime)
@@ -81,6 +91,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[8]))((IDvdControl*)Unsafe.AsPointer(ref this), bcdTime);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ChapterSearch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ChapterSearch([NativeTypeName("ULONG")] uint ulChapter)
@@ -88,6 +99,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[9]))((IDvdControl*)Unsafe.AsPointer(ref this), ulChapter);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.PrevPGSearch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT PrevPGSearch()
@@ -95,6 +107,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[10]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.TopPGSearch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT TopPGSearch()
@@ -102,6 +115,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[11]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.NextPGSearch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT NextPGSearch()
@@ -109,6 +123,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[12]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ForwardScan"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT ForwardScan(double dwSpeed)
@@ -116,6 +131,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, double, int>)(lpVtbl[13]))((IDvdControl*)Unsafe.AsPointer(ref this), dwSpeed);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.BackwardScan"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT BackwardScan(double dwSpeed)
@@ -123,6 +139,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, double, int>)(lpVtbl[14]))((IDvdControl*)Unsafe.AsPointer(ref this), dwSpeed);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.MenuCall"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT MenuCall(DVD_MENU_ID MenuID)
@@ -130,6 +147,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, DVD_MENU_ID, int>)(lpVtbl[15]))((IDvdControl*)Unsafe.AsPointer(ref this), MenuID);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.Resume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT Resume()
@@ -137,6 +155,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[16]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.UpperButtonSelect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT UpperButtonSelect()
@@ -144,6 +163,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[17]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.LowerButtonSelect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT LowerButtonSelect()
@@ -151,6 +171,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[18]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.LeftButtonSelect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT LeftButtonSelect()
@@ -158,6 +179,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[19]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.RightButtonSelect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT RightButtonSelect()
@@ -165,6 +187,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[20]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ButtonActivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT ButtonActivate()
@@ -172,6 +195,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[21]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ButtonSelectAndActivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT ButtonSelectAndActivate([NativeTypeName("ULONG")] uint ulButton)
@@ -179,6 +203,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[22]))((IDvdControl*)Unsafe.AsPointer(ref this), ulButton);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.StillOff"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT StillOff()
@@ -186,6 +211,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[23]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.PauseOn"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT PauseOn()
@@ -193,6 +219,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[24]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.PauseOff"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT PauseOff()
@@ -200,6 +227,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[25]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.MenuLanguageSelect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT MenuLanguageSelect([NativeTypeName("LCID")] uint Language)
@@ -207,6 +235,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[26]))((IDvdControl*)Unsafe.AsPointer(ref this), Language);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.AudioStreamChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT AudioStreamChange([NativeTypeName("ULONG")] uint ulAudio)
@@ -214,6 +243,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[27]))((IDvdControl*)Unsafe.AsPointer(ref this), ulAudio);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.SubpictureStreamChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT SubpictureStreamChange([NativeTypeName("ULONG")] uint ulSubPicture, BOOL bDisplay)
@@ -221,6 +251,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, BOOL, int>)(lpVtbl[28]))((IDvdControl*)Unsafe.AsPointer(ref this), ulSubPicture, bDisplay);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.AngleChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT AngleChange([NativeTypeName("ULONG")] uint ulAngle)
@@ -228,6 +259,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[29]))((IDvdControl*)Unsafe.AsPointer(ref this), ulAngle);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ParentalLevelSelect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT ParentalLevelSelect([NativeTypeName("ULONG")] uint ulParentalLevel)
@@ -235,6 +267,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[30]))((IDvdControl*)Unsafe.AsPointer(ref this), ulParentalLevel);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ParentalCountrySelect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT ParentalCountrySelect([NativeTypeName("WORD")] ushort wCountry)
@@ -242,6 +275,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, ushort, int>)(lpVtbl[31]))((IDvdControl*)Unsafe.AsPointer(ref this), wCountry);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.KaraokeAudioPresentationModeChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT KaraokeAudioPresentationModeChange([NativeTypeName("ULONG")] uint ulMode)
@@ -249,6 +283,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[32]))((IDvdControl*)Unsafe.AsPointer(ref this), ulMode);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.VideoModePreferrence"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT VideoModePreferrence([NativeTypeName("ULONG")] uint ulPreferredDisplayMode)
@@ -256,6 +291,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[33]))((IDvdControl*)Unsafe.AsPointer(ref this), ulPreferredDisplayMode);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.SetRoot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT SetRoot([NativeTypeName("LPCWSTR")] ushort* pszPath)
@@ -263,6 +299,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, ushort*, int>)(lpVtbl[34]))((IDvdControl*)Unsafe.AsPointer(ref this), pszPath);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.MouseActivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT MouseActivate(POINT point)
@@ -270,6 +307,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, POINT, int>)(lpVtbl[35]))((IDvdControl*)Unsafe.AsPointer(ref this), point);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.MouseSelect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT MouseSelect(POINT point)
@@ -277,6 +315,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface
         return ((delegate* unmanaged<IDvdControl*, POINT, int>)(lpVtbl[36]))((IDvdControl*)Unsafe.AsPointer(ref this), point);
     }
 
+    /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ChapterPlayAutoStop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT ChapterPlayAutoStop([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter, [NativeTypeName("ULONG")] uint ulChaptersToPlay)

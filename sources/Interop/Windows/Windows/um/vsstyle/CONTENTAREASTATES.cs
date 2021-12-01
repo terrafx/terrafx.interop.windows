@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONTENTAREASTATES.xml' path='doc/member[@name="CONTENTAREASTATES"]/*' />
 public enum CONTENTAREASTATES
 {
+    /// <include file='CONTENTAREASTATES.xml' path='doc/member[@name="CONTENTAREASTATES.AW_S_CONTENTAREA_NOMARGIN"]/*' />
     AW_S_CONTENTAREA_NOMARGIN = 1,
 }

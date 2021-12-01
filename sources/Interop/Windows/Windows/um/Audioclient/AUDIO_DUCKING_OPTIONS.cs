@@ -8,10 +8,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUDIO_DUCKING_OPTIONS.xml' path='doc/member[@name="AUDIO_DUCKING_OPTIONS"]/*' />
 [Flags]
 [SupportedOSPlatform("windows10.0.19043.0")]
 public enum AUDIO_DUCKING_OPTIONS
 {
+    /// <include file='AUDIO_DUCKING_OPTIONS.xml' path='doc/member[@name="AUDIO_DUCKING_OPTIONS.AUDIO_DUCKING_OPTIONS_DEFAULT"]/*' />
     AUDIO_DUCKING_OPTIONS_DEFAULT = 0,
+
+    /// <include file='AUDIO_DUCKING_OPTIONS.xml' path='doc/member[@name="AUDIO_DUCKING_OPTIONS.AUDIO_DUCKING_OPTIONS_DO_NOT_DUCK_OTHER_STREAMS"]/*' />
     AUDIO_DUCKING_OPTIONS_DO_NOT_DUCK_OTHER_STREAMS = 0x1,
 }

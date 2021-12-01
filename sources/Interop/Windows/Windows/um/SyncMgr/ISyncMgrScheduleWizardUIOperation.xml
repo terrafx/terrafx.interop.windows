@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrScheduleWizardUIOperation.InitWizard">
+    <summary>
+      <para>Initializes the sync schedule wizard.</para>
+    </summary>
+    <param name="pszHandlerID">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a handler ID as a Unicode string.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrScheduleWizardUIOperation">
+    <summary>
+      <para>Exposes a method that allows a handler to display the sync schedule wizard for the handler.</para>
+    </summary>
+    <remarks>
+      <para>The wizard can be invoked by CoCreating CLSID_SyncMgrScheduleWizard, which is typically done when Sync Center calls <see cref="ISyncMgrHandler.GetObject" />, specifying SYNCMGR_OBJECTID_ShowSchedule for the object ID.</para>
+    </remarks>
+  </member>
+</doc>

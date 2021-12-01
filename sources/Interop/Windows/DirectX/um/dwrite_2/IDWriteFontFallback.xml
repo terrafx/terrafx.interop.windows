@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontFallback.MapCharacters">
+    <summary>
+      <para>Determines an appropriate font to use to render the beginning range of text.</para>
+    </summary>
+    <param name="analysisSource">
+      <para>Type: <b><see cref="IDWriteTextAnalysisSource" />*</b></para>
+      <para>The text source implementation holds the text and locale.</para>
+    </param>
+    <param name="textPosition">
+      <para>Type: <b>UINT32</b></para>
+      <para>Starting position to analyze.</para>
+    </param>
+    <param name="textLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>Length of the text to analyze.</para>
+    </param>
+    <param name="baseFontCollection">
+      <para>Type: <b><see cref="IDWriteFontCollection" />*</b></para>
+      <para>Default font collection to use.</para>
+    </param>
+    <param name="baseFamilyName">
+      <para>Type: <b>const wchar_t*</b></para>
+      <para>Family name of the base font. If you pass null, no matching     will be done against the family.</para>
+    </param>
+    <param name="baseWeight">
+      <para>Type: <b><see cref="DWRITE_FONT_WEIGHT" /></b></para>
+      <para>The desired weight.</para>
+    </param>
+    <param name="baseStyle">
+      <para>Type: <b><see cref="DWRITE_FONT_STYLE" /></b></para>
+      <para>The desired style.</para>
+    </param>
+    <param name="baseStretch">
+      <para>Type: <b><see cref="DWRITE_FONT_STRETCH" /></b></para>
+      <para>The desired stretch.</para>
+    </param>
+    <param name="mappedLength">
+      <para>Type: <b>UINT32*</b></para>
+      <para>Length of text mapped to the mapped font. This will always be less than     or equal to the text length and greater than zero (if the text length is non-zero) so     the caller advances at least one character.</para>
+    </param>
+    <param name="mappedFont">
+      <para>Type: <b><see cref="IDWriteFont" />**</b></para>
+      <para>The font that should be used to render the first <i>mappedLength</i>     characters of the text. If it returns NULL, that means that no font can render the     text, and <i>mappedLength</i> is the number of characters to skip (rendered with a missing
+glyph).</para>
+    </param>
+    <param name="scale">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>Scale factor to multiply the em size of the returned font by.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFallback" />
+  </member>
+  <member name="IDWriteFontFallback">
+    <summary>
+      <para>Allows you to access fallback fonts from the font list.</para>
+      <para>The <b>IDWriteFontFallback</b> interface defines a fallback sequence to map character ranges to fonts, which is either created via <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefontfallbackbuilder">IDWriteFontFallbackBuilder</a> or retrieved from <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2-getsystemfontfallback">IDWriteFactory2.GetSystemFontFallback</a>.</para>
+    </summary>
+  </member>
+</doc>

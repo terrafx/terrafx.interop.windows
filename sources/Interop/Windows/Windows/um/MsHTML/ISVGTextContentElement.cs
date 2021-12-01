@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement"]/*' />
 [Guid("3051051A-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGTextContentElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, uint>)(lpVtbl[1]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, uint>)(lpVtbl[2]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, uint*, int>)(lpVtbl[3]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.putref_textLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT putref_textLength(ISVGAnimatedLength* v)
@@ -74,6 +83,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedLength*, int>)(lpVtbl[7]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.get_textLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_textLength(ISVGAnimatedLength** p)
@@ -81,6 +91,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedLength**, int>)(lpVtbl[8]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.putref_lengthAdjust"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT putref_lengthAdjust(ISVGAnimatedEnumeration* v)
@@ -88,6 +99,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[9]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.get_lengthAdjust"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_lengthAdjust(ISVGAnimatedEnumeration** p)
@@ -95,6 +107,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[10]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getNumberOfChars"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT getNumberOfChars([NativeTypeName("long *")] int* pResult)
@@ -102,6 +115,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, int*, int>)(lpVtbl[11]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getComputedTextLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT getComputedTextLength(float* pResult)
@@ -109,6 +123,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, float*, int>)(lpVtbl[12]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getSubStringLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT getSubStringLength([NativeTypeName("long")] int charnum, [NativeTypeName("long")] int nchars, float* pResult)
@@ -116,6 +131,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, int, int, float*, int>)(lpVtbl[13]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, nchars, pResult);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getStartPositionOfChar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT getStartPositionOfChar([NativeTypeName("long")] int charnum, ISVGPoint** ppResult)
@@ -123,6 +139,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, int, ISVGPoint**, int>)(lpVtbl[14]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, ppResult);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getEndPositionOfChar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT getEndPositionOfChar([NativeTypeName("long")] int charnum, ISVGPoint** ppResult)
@@ -130,6 +147,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, int, ISVGPoint**, int>)(lpVtbl[15]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, ppResult);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getExtentOfChar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT getExtentOfChar([NativeTypeName("long")] int charnum, ISVGRect** ppResult)
@@ -137,6 +155,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, int, ISVGRect**, int>)(lpVtbl[16]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, ppResult);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getRotationOfChar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT getRotationOfChar([NativeTypeName("long")] int charnum, float* pResult)
@@ -144,6 +163,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, int, float*, int>)(lpVtbl[17]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, pResult);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getCharNumAtPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT getCharNumAtPosition(ISVGPoint* point, [NativeTypeName("long *")] int* pResult)
@@ -151,6 +171,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         return ((delegate* unmanaged<ISVGTextContentElement*, ISVGPoint*, int*, int>)(lpVtbl[18]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), point, pResult);
     }
 
+    /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.selectSubString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT selectSubString([NativeTypeName("long")] int charnum, [NativeTypeName("long")] int nchars)

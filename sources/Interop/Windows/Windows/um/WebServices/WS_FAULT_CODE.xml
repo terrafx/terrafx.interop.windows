@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_FAULT_CODE">
+    <summary>
+      <para>Represents a fault code.</para>
+    </summary>
+  </member>
+  <member name="WS_FAULT_CODE.value">
+    <summary>
+      <para>The local name and namespace URI that identify the fault code.</para>
+    </summary>
+  </member>
+  <member name="WS_FAULT_CODE.subCode">
+    <summary>
+      <para>Pointer to the next fault code in the list.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGR_CANCEL_REQUEST.xml' path='doc/member[@name="SYNCMGR_CANCEL_REQUEST"]/*' />
 public enum SYNCMGR_CANCEL_REQUEST
 {
+    /// <include file='SYNCMGR_CANCEL_REQUEST.xml' path='doc/member[@name="SYNCMGR_CANCEL_REQUEST.SYNCMGR_CR_NONE"]/*' />
     SYNCMGR_CR_NONE = 0,
+
+    /// <include file='SYNCMGR_CANCEL_REQUEST.xml' path='doc/member[@name="SYNCMGR_CANCEL_REQUEST.SYNCMGR_CR_CANCEL_ITEM"]/*' />
     SYNCMGR_CR_CANCEL_ITEM = 1,
+
+    /// <include file='SYNCMGR_CANCEL_REQUEST.xml' path='doc/member[@name="SYNCMGR_CANCEL_REQUEST.SYNCMGR_CR_CANCEL_ALL"]/*' />
     SYNCMGR_CR_CANCEL_ALL = 2,
+
+    /// <include file='SYNCMGR_CANCEL_REQUEST.xml' path='doc/member[@name="SYNCMGR_CANCEL_REQUEST.SYNCMGR_CR_MAX"]/*' />
     SYNCMGR_CR_MAX = SYNCMGR_CR_CANCEL_ALL,
 }

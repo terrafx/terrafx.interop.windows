@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_STANDARD_INFO">
+    <summary>
+      <para>Receives  extended information for the file. Used for file handles. Use only when calling
+<see cref="GetFileInformationByHandleEx" />.</para>
+    </summary>
+    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
+    <seealso cref="GetFileInformationByHandleEx" />
+  </member>
+  <member name="FILE_STANDARD_INFO.AllocationSize">
+    <summary>
+      <para>The amount of space that is allocated for the file.</para>
+    </summary>
+  </member>
+  <member name="FILE_STANDARD_INFO.EndOfFile">
+    <summary>
+      <para>The end of the file.</para>
+    </summary>
+  </member>
+  <member name="FILE_STANDARD_INFO.NumberOfLinks">
+    <summary>
+      <para>The number of links to the file.</para>
+    </summary>
+  </member>
+  <member name="FILE_STANDARD_INFO.DeletePending">
+    <summary>
+      <para>
+        <b>TRUE</b> if the file in the delete queue; otherwise,
+<b>false</b>.</para>
+    </summary>
+  </member>
+  <member name="FILE_STANDARD_INFO.Directory">
+    <summary>
+      <para>
+        <b>TRUE</b> if  the  file is a directory; otherwise,
+<b>false</b>.</para>
+    </summary>
+  </member>
+</doc>

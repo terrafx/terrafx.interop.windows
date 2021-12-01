@@ -8,27 +8,35 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_TLS_DIRECTORY64.xml' path='doc/member[@name="IMAGE_TLS_DIRECTORY64"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 4)]
 public partial struct IMAGE_TLS_DIRECTORY64
 {
+    /// <include file='IMAGE_TLS_DIRECTORY64.xml' path='doc/member[@name="IMAGE_TLS_DIRECTORY64.StartAddressOfRawData"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong StartAddressOfRawData;
 
+    /// <include file='IMAGE_TLS_DIRECTORY64.xml' path='doc/member[@name="IMAGE_TLS_DIRECTORY64.EndAddressOfRawData"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong EndAddressOfRawData;
 
+    /// <include file='IMAGE_TLS_DIRECTORY64.xml' path='doc/member[@name="IMAGE_TLS_DIRECTORY64.AddressOfIndex"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong AddressOfIndex;
 
+    /// <include file='IMAGE_TLS_DIRECTORY64.xml' path='doc/member[@name="IMAGE_TLS_DIRECTORY64.AddressOfCallBacks"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong AddressOfCallBacks;
 
+    /// <include file='IMAGE_TLS_DIRECTORY64.xml' path='doc/member[@name="IMAGE_TLS_DIRECTORY64.SizeOfZeroFill"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeOfZeroFill;
 
+    /// <include file='IMAGE_TLS_DIRECTORY64.xml' path='doc/member[@name="IMAGE_TLS_DIRECTORY64.Anonymous"]/*' />
     [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19510:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Characteristics"]/*' />
     public ref uint Characteristics
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,6 +46,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*' />
     public uint Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -53,6 +62,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Alignment"]/*' />
     public uint Alignment
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -68,6 +78,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved1"]/*' />
     public uint Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,21 +94,26 @@ public partial struct IMAGE_TLS_DIRECTORY64
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Characteristics"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Characteristics;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19512:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*' />
             [NativeTypeName("DWORD : 20")]
             public uint Reserved0
             {
@@ -114,6 +130,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Alignment"]/*' />
             [NativeTypeName("DWORD : 4")]
             public uint Alignment
             {
@@ -130,6 +147,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved1"]/*' />
             [NativeTypeName("DWORD : 8")]
             public uint Reserved1
             {

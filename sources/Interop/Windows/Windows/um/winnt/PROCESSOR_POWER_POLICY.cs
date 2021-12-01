@@ -9,18 +9,23 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY"]/*' />
 public unsafe partial struct PROCESSOR_POWER_POLICY
 {
+    /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Revision"]/*' />
     [NativeTypeName("DWORD")]
     public uint Revision;
 
+    /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.DynamicThrottle"]/*' />
     public byte DynamicThrottle;
 
+    /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Spare"]/*' />
     [NativeTypeName("BYTE [3]")]
     public fixed byte Spare[3];
 
     public uint _bitfield;
 
+    /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.DisableCStates"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint DisableCStates
     {
@@ -37,6 +42,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY
         }
     }
 
+    /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Reserved"]/*' />
     [NativeTypeName("DWORD : 31")]
     public uint Reserved
     {
@@ -53,12 +59,15 @@ public unsafe partial struct PROCESSOR_POWER_POLICY
         }
     }
 
+    /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.PolicyCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint PolicyCount;
 
+    /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Policy"]/*' />
     [NativeTypeName("PROCESSOR_POWER_POLICY_INFO [3]")]
     public _Policy_e__FixedBuffer Policy;
 
+    /// <include file='_Policy_e__FixedBuffer.xml' path='doc/member[@name="_Policy_e__FixedBuffer"]/*' />
     public partial struct _Policy_e__FixedBuffer
     {
         public PROCESSOR_POWER_POLICY_INFO e0;

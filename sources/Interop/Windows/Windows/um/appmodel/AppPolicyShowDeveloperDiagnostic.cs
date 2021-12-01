@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppPolicyShowDeveloperDiagnostic.xml' path='doc/member[@name="AppPolicyShowDeveloperDiagnostic"]/*' />
 public enum AppPolicyShowDeveloperDiagnostic
 {
+    /// <include file='AppPolicyShowDeveloperDiagnostic.xml' path='doc/member[@name="AppPolicyShowDeveloperDiagnostic.AppPolicyShowDeveloperDiagnostic_None"]/*' />
     AppPolicyShowDeveloperDiagnostic_None = 0,
+
+    /// <include file='AppPolicyShowDeveloperDiagnostic.xml' path='doc/member[@name="AppPolicyShowDeveloperDiagnostic.AppPolicyShowDeveloperDiagnostic_ShowUI"]/*' />
     AppPolicyShowDeveloperDiagnostic_ShowUI = 1,
 }

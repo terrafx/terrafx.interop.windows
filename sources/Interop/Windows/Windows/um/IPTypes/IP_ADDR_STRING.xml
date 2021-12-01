@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IP_ADDR_STRING">
+    <summary>
+      <para>The
+<b>IP_ADDR_STRING</b> structure represents a node in a linked-list of IPv4 addresses.</para>
+    </summary>
+    <seealso cref="AddIPAddress" />
+    <seealso cref="DeleteIPAddress" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
+    <seealso cref="IP_ADAPTER_INFO" />
+  </member>
+  <member name="IP_ADDR_STRING.Next">
+    <summary>
+      <para>A pointer to the next
+<b>IP_ADDR_STRING</b> structure in the list.</para>
+    </summary>
+  </member>
+  <member name="IP_ADDR_STRING.IpAddress">
+    <summary>
+      <para>A value that specifies a structure type with a single member, <b>String</b>. The <b>String</b> member is a <b>char</b> array of size 16. This array holds an IPv4 address in dotted decimal notation.</para>
+    </summary>
+  </member>
+  <member name="IP_ADDR_STRING.IpMask">
+    <summary>
+      <para>A value that specifies a structure type with a single member, <b>String</b>. The <b>String</b> member is a <b>char</b> array of size 16. This array holds the IPv4 subnet mask in dotted decimal notation.</para>
+    </summary>
+  </member>
+  <member name="IP_ADDR_STRING.Context">
+    <summary>
+      <para>A network table entry (NTE). This value corresponds to the <i>NTEContext</i> parameters in the
+<see cref="AddIPAddress" /> and
+<see cref="DeleteIPAddress" /> functions.</para>
+    </summary>
+  </member>
+</doc>

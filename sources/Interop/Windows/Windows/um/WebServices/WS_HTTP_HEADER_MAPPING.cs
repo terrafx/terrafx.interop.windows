@@ -11,8 +11,10 @@ public partial struct WS_HTTP_HEADER_MAPPING
     public const int WS_HTTP_HEADER_MAPPING_SEMICOLON_SEPARATOR = 0x2;
     public const int WS_HTTP_HEADER_MAPPING_QUOTED_VALUE = 0x4;
 
+    /// <include file='WS_HTTP_HEADER_MAPPING.xml' path='doc/member[@name="WS_HTTP_HEADER_MAPPING.headerName"]/*' />
     public WS_XML_STRING headerName;
 
+    /// <include file='WS_HTTP_HEADER_MAPPING.xml' path='doc/member[@name="WS_HTTP_HEADER_MAPPING.headerMappingOptions"]/*' />
     [NativeTypeName("ULONG")]
     public uint headerMappingOptions;
 }

@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CIDA.xml' path='doc/member[@name="CIDA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct CIDA
 {
+    /// <include file='CIDA.xml' path='doc/member[@name="CIDA.cidl"]/*' />
     public uint cidl;
 
+    /// <include file='CIDA.xml' path='doc/member[@name="CIDA.aoffset"]/*' />
     [NativeTypeName("UINT [1]")]
     public fixed uint aoffset[1];
 }

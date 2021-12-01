@@ -1,0 +1,859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFByteStream.BeginRead">
+    <summary>
+      <para>Begins an asynchronous read operation from the stream.</para>
+    </summary>
+    <param name="pb">
+      <para>Pointer to a buffer that receives the data. The caller must allocate the buffer.</para>
+    </param>
+    <param name="cb">
+      <para>Size of the buffer in bytes.</para>
+    </param>
+    <param name="pCallback">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="punkState">
+      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>When all of the data has been read into the buffer, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. At that point, the application should call <see cref="IMFByteStream.EndRead" /> to complete the asynchronous request.</para>
+      <para>Do not read from, write to, free, or reallocate the buffer while an asynchronous read is pending.</para>
+      <para>
+        <b> Implementation notes:</b>This method should update the current position in the stream by adding the number of bytes that will be read, which is specified by the value returned in the <i>pcbRead</i> parameter,  to the current position. Other methods that can update the current position are <b>BeginRead</b>, <see cref="Write" />, <see cref="BeginWrite" />, <see cref="Seek" />, and <see cref="SetCurrentPosition" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.BeginWrite">
+    <summary>
+      <para>Begins an asynchronous write operation to the stream.</para>
+    </summary>
+    <param name="pb">
+      <para>Pointer to a buffer containing the data to write.</para>
+    </param>
+    <param name="cb">
+      <para>Size of the buffer in bytes.</para>
+    </param>
+    <param name="pCallback">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="punkState">
+      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>When all of the data has been written to the stream, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. At that point, the application should call <see cref="IMFByteStream.EndWrite" /> to complete the asynchronous request.</para>
+      <para>Do not reallocate, free, or write to the buffer while an asynchronous write is still pending.</para>
+      <para>
+        <b>Implementation notes:</b>This method should update the current position in the stream by adding the number of bytes that will be written to the stream, which is specified by the value returned in the <i>pcbWritten</i>, to the current position. Other methods that can update the current position are <see cref="Read" />, <see cref="BeginRead" />, <see cref="Write" />, <see cref="Seek" />, and <see cref="SetCurrentPosition" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.Close">
+    <summary>
+      <para>Closes the stream and releases any resources associated with the stream, such as sockets or file handles. This method also cancels any pending asynchronous I/O requests.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.EndRead">
+    <summary>
+      <para>Completes an asynchronous read operation.</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </param>
+    <param name="pcbRead">
+      <para>Receives the number of bytes that were read.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call this method after the <see cref="IMFByteStream.BeginRead" /> method completes asynchronously.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.EndWrite">
+    <summary>
+      <para>Completes an asynchronous write operation.</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </param>
+    <param name="pcbWritten">
+      <para>Receives the number of bytes that were written.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call this method when the <see cref="IMFByteStream.BeginWrite" /> method completes asynchronously.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.Flush">
+    <summary>
+      <para>Clears any internal buffers used by the stream. If you are writing to the stream, the buffered data is written to the underlying file or device.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the byte stream is read-only, this method has no effect.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.GetCapabilities">
+    <summary>
+      <para>Retrieves the characteristics of the byte stream.</para>
+    </summary>
+    <param name="pdwCapabilities">
+      <para>Receives a bitwise <b>OR</b> of zero or more flags. The following flags are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MFBYTESTREAM_IS_READABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The byte stream can be read.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MFBYTESTREAM_IS_WRITABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The byte stream can be written to.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MFBYTESTREAM_IS_SEEKABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The byte stream can be seeked.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MFBYTESTREAM_IS_REMOTE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The byte stream is from a remote source, such as a network.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MFBYTESTREAM_IS_DIRECTORY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The byte stream represents a file directory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MFBYTESTREAM_HAS_SLOW_SEEK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Seeking within this stream might be slow. For example, the byte stream might download from a network.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MFBYTESTREAM_IS_PARTIALLY_DOWNLOADED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The byte stream is currently downloading data to a local cache.
+Read operations on the byte stream might take longer until the data is completely downloaded.</para>
+            <para>This flag is cleared after all of the data has been downloaded.</para>
+            <para>If the <b>MFBYTESTREAM_HAS_SLOW_SEEK</b> flag is also set, it means the byte stream must download the entire file sequentially. Otherwise, the byte stream can respond to seek requests by restarting the download from a new point in the stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MFBYTESTREAM_SHARE_WRITE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Another thread or process can open this byte stream for writing. If this flag is present, the length of the
+byte stream could change while it is being read.</para>
+            <para>This flag can affect the behavior of byte-stream handlers. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-bytestreamhandler-accepts-share-write">MF_BYTESTREAMHANDLER_ACCEPTS_SHARE_WRITE</a>.</para>
+            <para>
+              <b>Note</b>  Requires Windows 7 or later.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MFBYTESTREAM_DOES_NOT_USE_NETWORK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000800</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The byte stream is not currently
+using the network to receive the content.  Networking hardware
+may enter a power saving state when this bit is set.</para>
+            <para>
+              <b>Note</b>  Requires Windows 8 or later.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.GetCurrentPosition">
+    <summary>
+      <para>Retrieves the current read or write position in the stream.</para>
+    </summary>
+    <param name="pqwPosition">
+      <para>Receives the current position, in bytes.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The methods that update the current position are <see cref="Read" />, <see cref="BeginRead" />, <see cref="Write" />, <see cref="BeginWrite" />, <see cref="SetCurrentPosition" />, and <see cref="Seek" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.GetLength">
+    <summary>
+      <para>Retrieves the length of the stream.</para>
+    </summary>
+    <param name="pqwLength">
+      <para>Receives the length of the stream, in bytes. If the length is unknown, this value is -1.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.IsEndOfStream">
+    <summary>
+      <para>Queries whether the current position has reached the end of the stream.</para>
+    </summary>
+    <param name="pfEndOfStream">
+      <para>Receives the value <b>TRUE</b> if the end of the stream has been reached, or <b>FALSE</b> otherwise.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.Read">
+    <summary>
+      <para>Reads data from the stream.</para>
+    </summary>
+    <param name="pb">
+      <para>Pointer to a buffer that receives the data. The caller must allocate the buffer.</para>
+    </param>
+    <param name="cb">
+      <para>Size of the buffer in bytes.</para>
+    </param>
+    <param name="pcbRead">
+      <para>Receives the number of bytes that are copied into the buffer. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method reads at most <i>cb</i> bytes from the current position in the stream and copies them into the buffer provided by the caller. The number of bytes that were read is returned in the <i>pcbRead</i> parameter. The method does not return an error code on reaching the end of the file, so the application should check the value in <i>pcbRead</i> after the method returns.</para>
+      <para>This method is synchronous. It blocks until the read operation completes.</para>
+      <para>
+        <b> Implementation notes:</b>This method should update the current position in the stream by adding the number of bytes that were read, which is specified by the value returned in the <i>pcbRead</i> parameter,  to the current position. Other methods that can update the current position are <b>Read</b>, <see cref="Write" />, <see cref="BeginWrite" />, <see cref="Seek" />, and <see cref="SetCurrentPosition" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following example reads data from a byte stream into a caller-allocated media buffer. For more information about media buffers, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</a>.</para>
+      <code>// Read data from a byte stream into a media buffer.
+//
+// This function reads a maximum of cbMax bytes, or up to the size size of the
+// buffer, whichever is smaller. If the end of the byte stream is reached, the
+// actual amount of data read might be less than either of these values.
+//
+// To find out how much data was read, call IMFMediaBuffer.GetCurrentLength.
+
+HRESULT ReadFromByteStream(
+    IMFByteStream *pStream,     // Pointer to the byte stream.
+    IMFMediaBuffer *pBuffer,    // Pointer to the media buffer.
+    DWORD cbMax                 // Maximum amount to read.
+    )
+{
+    DWORD cbBufferMax = 0;
+    DWORD cbRead = 0;
+    BYTE *pData= NULL;
+
+    HRESULT hr = pBuffer-&gt;Lock(&amp;amp;amp;amp;amp;amp;pData, &amp;amp;amp;amp;amp;amp;cbBufferMax, NULL);
+
+    // Do not exceed the maximum size of the buffer.
+    if (SUCCEEDED(hr))
+    {
+        if (cbMax &gt; cbBufferMax)
+        {
+            cbMax = cbBufferMax;
+        }
+
+        // Read up to cbMax bytes.
+        hr = pStream-&gt;Read(pData, cbMax, &amp;amp;amp;amp;amp;amp;cbRead);
+    }
+
+    // Update the size of the valid data in the buffer.
+    if (SUCCEEDED(hr))
+    {
+        hr = pBuffer-&gt;SetCurrentLength(cbRead);
+    }
+    if (pData)
+    {
+        pBuffer-&gt;Unlock();
+    }
+    return hr;
+}
+
+</code>
+      <para>The next example is similar, but allocates a new media buffer to hold the data.</para>
+      <para>
+        <b>Note</b>  This example uses the <a href="https://docs.microsoft.com//windows/desktop/medfound/saferelease">SafeRelease</a> function to release interface pointers.</para>
+      <code>//-------------------------------------------------------------------
+// AllocReadFromByteStream
+//
+// Reads data from a byte stream and returns a media buffer that
+// contains the data.
+//-------------------------------------------------------------------
+
+HRESULT AllocReadFromByteStream(
+    IMFByteStream *pStream,         // Pointer to the byte stream.
+    DWORD cbToRead,                 // Number of bytes to read.
+    IMFMediaBuffer **ppBuffer       // Receives a pointer to the media buffer.
+    )
+{
+    HRESULT hr = S_OK;
+    BYTE *pData = NULL;
+    DWORD cbRead = 0;   // Actual amount of data read.
+
+    IMFMediaBuffer *pBuffer = NULL;
+
+    // Create the media buffer.
+    // This function allocates the memory for the buffer.
+    hr = MFCreateMemoryBuffer(cbToRead, &amp;amp;amp;amp;amp;amp;pBuffer);
+
+    // Get a pointer to the memory buffer.
+    if (SUCCEEDED(hr))
+    {
+        hr = pBuffer-&gt;Lock(&amp;amp;amp;amp;amp;amp;pData, NULL, NULL);
+    }
+
+    // Read the data from the byte stream.
+    if (SUCCEEDED(hr))
+    {
+        hr = pStream-&gt;Read(pData, cbToRead, &amp;amp;amp;amp;amp;amp;cbRead);
+    }
+
+    // Update the size of the valid data in the buffer.
+    if (SUCCEEDED(hr))
+    {
+        hr = pBuffer-&gt;SetCurrentLength(cbRead);
+    }
+
+    // Return the pointer to the caller.
+    if (SUCCEEDED(hr))
+    {
+        *ppBuffer = pBuffer;
+        (*ppBuffer)-&gt;AddRef();
+    }
+
+    if (pData)
+    {
+        pBuffer-&gt;Unlock();
+    }
+    SafeRelease(&amp;amp;amp;amp;amp;amp;pBuffer);
+    return hr;
+}
+
+</code>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.Seek">
+    <summary>
+      <para>Moves the current position in the stream by a specified offset.</para>
+    </summary>
+    <param name="SeekOrigin">
+      <para>Specifies the origin of the seek as a member of the <see cref="MFBYTESTREAM_SEEK_ORIGIN" /> enumeration. The offset is calculated relative to this position.</para>
+    </param>
+    <param name="llSeekOffset">
+      <para>Specifies the new position, as a byte offset from the seek origin.</para>
+    </param>
+    <param name="dwSeekFlags">
+      <para>Specifies zero or more flags. The following flags are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO</b>
+          </description>
+          <description>
+            <para>All pending I/O requests are canceled after the seek request completes successfully.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pqwCurrentPosition">
+      <para>Receives the new position after the seek.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+      <b> Implementation notes:</b> This method should update the current position in the stream by adding the <i>qwSeekOffset</i> to the seek <i>SeekOrigin</i> position. This should be the same value passed back in the <i>pqwCurrentPosition</i> parameter.
+Other methods that can update the current position are <see cref="Read" />, <see cref="BeginRead" />, <see cref="Write" />, <see cref="BeginWrite" />, and <see cref="SetCurrentPosition" />.
+</remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.SetCurrentPosition">
+    <summary>
+      <para>Sets the current read or write position.</para>
+    </summary>
+    <param name="qwPosition">
+      <para>New position in the stream, as a byte offset from the start of the stream.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the new position is larger than the length of the stream, the method returns E_INVALIDARG.</para>
+      <para>
+        <b> Implementation notes:</b>This method should update the current position in the stream by setting the current position to the value passed in to the <i>qwPosition</i> parameter. Other methods that can update the current position are <see cref="Read" />, <see cref="BeginRead" />, <see cref="Write" />, <see cref="BeginWrite" />, and <see cref="Seek" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.SetLength">
+    <summary>
+      <para>Sets the length of the stream.</para>
+    </summary>
+    <param name="qwLength">
+      <para>Length of the stream in bytes.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream.Write">
+    <summary>
+      <para>Writes data to the stream.</para>
+    </summary>
+    <param name="pb">
+      <para>Pointer to a buffer that contains the data to write.</para>
+    </param>
+    <param name="cb">
+      <para>Size of the buffer in bytes.</para>
+    </param>
+    <param name="pcbWritten">
+      <para>Receives the number of bytes that are written.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method writes the contents of the <i>pb</i> buffer to the stream, starting at the current stream position. The number of bytes that were written is returned in the <i>pcbWritten</i> parameter.</para>
+      <para>This method is synchronous. It blocks until the write operation completes.</para>
+      <para>
+        <b>Implementation notes:</b>This method should update the current position in the stream by adding the number of bytes that were written to the stream, which is specified by the value returned in the <i>pcbWritten</i>, to the current position offset.</para>
+      <para>Other methods that can update the current position are <see cref="Read" />, <see cref="BeginRead" />, <see cref="BeginWrite" />, <see cref="Seek" />, and <see cref="SetCurrentPosition" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following example writes data from a media buffer to a byte stream. For more information about media buffers, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</a>.</para>
+      <code>//-------------------------------------------------------------------
+// WriteBufferToByteStream
+//
+// Writes data from a media buffer to a byte stream.
+//-------------------------------------------------------------------
+
+HRESULT WriteBufferToByteStream(
+    IMFByteStream *pStream,   // Pointer to the byte stream.
+    IMFMediaBuffer *pBuffer,  // Pointer to the media buffer.
+    DWORD *pcbWritten         // Receives the number of bytes written.
+    )
+{
+    HRESULT hr = S_OK;
+    DWORD cbData = 0;
+    DWORD cbWritten = 0;
+    BYTE *pMem = NULL;
+
+    hr = pBuffer-&gt;Lock(&amp;amp;amp;amp;amp;amp;pMem, NULL, &amp;amp;amp;amp;amp;amp;cbData);
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pStream-&gt;Write(pMem, cbData, &amp;amp;amp;amp;amp;amp;cbWritten);
+    }
+
+    if (SUCCEEDED(hr))
+    {
+        if (pcbWritten)
+        {
+            *pcbWritten = cbWritten;
+        }
+    }
+
+    if (pMem)
+    {
+        pBuffer-&gt;Unlock();
+    }
+    return hr;
+}
+
+</code>
+      <para>The following function template writes a typed variable to a byte stream.</para>
+      <code>template &lt;class T&gt;
+HRESULT WriteToStream(
+    IMFByteStream *pStream, // Pointer to the byte stream.
+    const T* p,             // Data to write to the stream.
+    ULONG cb = sizeof(T)    // Size of the data in bytes.
+)
+{
+    ULONG cbWritten = 0;
+    HRESULT hr = S_OK;
+
+    hr = pStream-&gt;Write((const BYTE*)p, cb, &amp;amp;amp;amp;amp;amp;cbWritten);
+    if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (cbWritten != cb))
+    {
+        hr = E_FAIL;
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="IMFByteStream" />
+  </member>
+  <member name="IMFByteStream">
+    <summary>
+      <para>Represents a byte stream from some data source, which might be a local file, a network file, or some other source. The <b>IMFByteStream</b> interface supports the typical stream operations, such as reading, writing, and seeking.</para>
+    </summary>
+    <remarks>
+      <para>The following functions return <b>IMFByteStream</b> pointers for local files:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="MFBeginCreateFile" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="MFCreateFile" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="MFCreateTempFile" />
+          </description>
+        </item>
+      </list>
+      <para>A byte stream for a media source can be opened with read access. A byte stream for an archive media sink should be opened with both read and write access. (Read access may be required, because the archive sink might need to read portions of the file as it writes.)</para>
+      <para>Some implementations of this interface also expose one or more of the following interfaces:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IMFAttributes" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IMFByteStreamBuffering" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IMFByteStreamCacheControl" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IMFGetService" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IMFMediaEventGenerator" />
+          </description>
+        </item>
+      </list>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/byte-stream-attributes">Byte Stream Attributes</seealso>
+    <seealso cref="IMFByteStreamBuffering" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

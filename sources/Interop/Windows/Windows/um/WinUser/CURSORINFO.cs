@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CURSORINFO.xml' path='doc/member[@name="CURSORINFO"]/*' />
 public partial struct CURSORINFO
 {
+    /// <include file='CURSORINFO.xml' path='doc/member[@name="CURSORINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CURSORINFO.xml' path='doc/member[@name="CURSORINFO.flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint flags;
 
+    /// <include file='CURSORINFO.xml' path='doc/member[@name="CURSORINFO.hCursor"]/*' />
     public HCURSOR hCursor;
 
+    /// <include file='CURSORINFO.xml' path='doc/member[@name="CURSORINFO.ptScreenPos"]/*' />
     public POINT ptScreenPos;
 }

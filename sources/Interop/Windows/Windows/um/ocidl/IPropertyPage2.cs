@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyPage2.xml' path='doc/member[@name="IPropertyPage2"]/*' />
 [Guid("01E44665-24AC-101B-84ED-08002B2EC713")]
 [NativeTypeName("struct IPropertyPage2 : IPropertyPage")]
 [NativeInheritance("IPropertyPage")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyPage2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, uint>)(lpVtbl[1]))((IPropertyPage2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, uint>)(lpVtbl[2]))((IPropertyPage2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPropertyPage.SetPageSite" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPageSite(IPropertyPageSite* pPageSite)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, IPropertyPageSite*, int>)(lpVtbl[3]))((IPropertyPage2*)Unsafe.AsPointer(ref this), pPageSite);
     }
 
+    /// <inheritdoc cref="IPropertyPage.Activate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Activate(HWND hWndParent, [NativeTypeName("LPCRECT")] RECT* pRect, BOOL bModal)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, HWND, RECT*, BOOL, int>)(lpVtbl[4]))((IPropertyPage2*)Unsafe.AsPointer(ref this), hWndParent, pRect, bModal);
     }
 
+    /// <inheritdoc cref="IPropertyPage.Deactivate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Deactivate()
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, int>)(lpVtbl[5]))((IPropertyPage2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPropertyPage.GetPageInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPageInfo(PROPPAGEINFO* pPageInfo)
@@ -67,6 +75,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, PROPPAGEINFO*, int>)(lpVtbl[6]))((IPropertyPage2*)Unsafe.AsPointer(ref this), pPageInfo);
     }
 
+    /// <inheritdoc cref="IPropertyPage.SetObjects" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetObjects([NativeTypeName("ULONG")] uint cObjects, IUnknown** ppUnk)
@@ -74,6 +83,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, uint, IUnknown**, int>)(lpVtbl[7]))((IPropertyPage2*)Unsafe.AsPointer(ref this), cObjects, ppUnk);
     }
 
+    /// <inheritdoc cref="IPropertyPage.Show" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Show(uint nCmdShow)
@@ -81,6 +91,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, uint, int>)(lpVtbl[8]))((IPropertyPage2*)Unsafe.AsPointer(ref this), nCmdShow);
     }
 
+    /// <inheritdoc cref="IPropertyPage.Move" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Move([NativeTypeName("LPCRECT")] RECT* pRect)
@@ -88,6 +99,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, RECT*, int>)(lpVtbl[9]))((IPropertyPage2*)Unsafe.AsPointer(ref this), pRect);
     }
 
+    /// <inheritdoc cref="IPropertyPage.IsPageDirty" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT IsPageDirty()
@@ -95,6 +107,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, int>)(lpVtbl[10]))((IPropertyPage2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPropertyPage.Apply" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Apply()
@@ -102,6 +115,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, int>)(lpVtbl[11]))((IPropertyPage2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPropertyPage.Help" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Help([NativeTypeName("LPCOLESTR")] ushort* pszHelpDir)
@@ -109,6 +123,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, ushort*, int>)(lpVtbl[12]))((IPropertyPage2*)Unsafe.AsPointer(ref this), pszHelpDir);
     }
 
+    /// <inheritdoc cref="IPropertyPage.TranslateAccelerator" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT TranslateAccelerator(MSG* pMsg)
@@ -116,6 +131,7 @@ public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
         return ((delegate* unmanaged<IPropertyPage2*, MSG*, int>)(lpVtbl[13]))((IPropertyPage2*)Unsafe.AsPointer(ref this), pMsg);
     }
 
+    /// <include file='IPropertyPage2.xml' path='doc/member[@name="IPropertyPage2.EditProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT EditProperty([NativeTypeName("DISPID")] int dispID)

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CHANGER_SET_ACCESS.xml' path='doc/member[@name="CHANGER_SET_ACCESS"]/*' />
 public partial struct CHANGER_SET_ACCESS
 {
+    /// <include file='CHANGER_SET_ACCESS.xml' path='doc/member[@name="CHANGER_SET_ACCESS.Element"]/*' />
     public CHANGER_ELEMENT Element;
 
+    /// <include file='CHANGER_SET_ACCESS.xml' path='doc/member[@name="CHANGER_SET_ACCESS.Control"]/*' />
     [NativeTypeName("DWORD")]
     public uint Control;
 }

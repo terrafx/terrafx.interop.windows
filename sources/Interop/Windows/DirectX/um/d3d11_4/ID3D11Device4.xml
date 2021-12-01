@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11Device4.RegisterDeviceRemovedEvent">
+    <summary>
+      <para>Registers the "device removed" event and indicates when a Direct3D device has become removed for any reason, using an asynchronous notification mechanism.</para>
+    </summary>
+    <param name="hEvent">
+      <para>Type: <b>HANDLE</b></para>
+      <para>The handle to the "device removed" event.</para>
+    </param>
+    <param name="pdwCookie">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to information about the "device removed" event, which can be used in <see cref="UnregisterDeviceRemoved" /> to unregister the event.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>Indicates when a Direct3D device has become removed for any reason, using an asynchronous notification mechanism, rather than as an HRESULT from <see cref="Present" />. The reason for device removal can be retrieved using <see cref="ID3D11Device.GetDeviceRemovedReason" /> after being notified of the occurrence.</para>
+      <para>Applications register and un-register a Win32 event handle with a particular device.
+That event handle will be signaled when the device becomes removed.
+A poll into the device's <b>ID3D11Device.GetDeviceRemovedReason</b> method indicates that the device is removed.</para>
+      <para>
+        <a href="https://docs.microsoft.com//uwp/api/Windows.System.Threading.Core">ISignalableNotifier</a> or <see cref="SetThreadpoolWait" /> can be used by UWP apps.</para>
+      <para>When the graphics device is lost, the app or title will receive the graphics event, so that the app or title knows that its graphics device is no longer valid and it is safe for the app or title to re-create its DirectX devices.
+In response to this event, the app or title needs to re-create its rendering device
+and pass it into a SetRenderingDevice  call on the composition graphics device objects.</para>
+      <para>After setting this new rendering device, the app or title needs to redraw content of all the pre-existing surfaces
+after the composition graphics device's <b>OnRenderingDeviceReplaced</b> event is fired.</para>
+      <para>This method supports Composition for device loss.</para>
+      <para>The event is not signaled when it is most ideal to re-create.
+So, instead, we recommend iterating through the adapter ordinals and creating the first ordinal that will succeed.</para>
+      <para>The application can register an event with the device.
+The application will be signaled when the device becomes removed.</para>
+      <para>If the device is already removed, calls to <b>RegisterDeviceRemovedEvent</b> will signal the event immediately.
+No device-removed error code will be returned from <b>RegisterDeviceRemovedEvent</b>.</para>
+      <para>Each "device removed" event is never signaled, or is signaled only once.
+These events are not signaled during device destruction.
+These events are unregistered during destruction.</para>
+      <para>The semantics of <b>RegisterDeviceRemovedEvent</b> are similar to
+<see cref="IDXGIFactory2.RegisterOcclusionStatusEvent" />.</para>
+    </remarks>
+    <seealso cref="ID3D11Device4" />
+    <seealso cref="UnregisterDeviceRemoved" />
+  </member>
+  <member name="ID3D11Device4.UnregisterDeviceRemoved">
+    <summary>
+      <para>Unregisters the "device removed" event.</para>
+    </summary>
+    <param name="dwCookie">
+      <para>Type: <b>DWORD</b></para>
+      <para>Information about the "device removed" event,
+retrieved during a successful <see cref="RegisterDeviceRemovedEvent" /> call.</para>
+    </param>
+    <remarks>
+      <para>See <see cref="RegisterDeviceRemovedEvent" />.</para>
+    </remarks>
+    <seealso cref="ID3D11Device4" />
+    <seealso cref="RegisterDeviceRemovedEvent" />
+  </member>
+  <member name="ID3D11Device4">
+    <summary>
+      <para>The device interface represents a virtual adapter; it is used to create resources.
+<b>ID3D11Device4</b> adds new methods to those in <see cref="ID3D11Device3" />,
+such as <b>RegisterDeviceRemovedEvent</b> and <b>UnregisterDeviceRemoved</b>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D11Device3" />
+  </member>
+</doc>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGRITEM">
+    <summary>
+      <para>Provides information about items being enumerated by the <see cref="ISyncMgrEnumItems" /> interface.</para>
+    </summary>
+    <seealso cref="SYNCMGRITEMFLAGS" />
+  </member>
+  <member name="SYNCMGRITEM.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRITEM.dwFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>One or more values from the <see cref="SYNCMGRITEMFLAGS" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRITEM.ItemID">
+    <summary>
+      <para>Type: <b>GUID</b></para>
+      <para>The identifier for this item.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRITEM.dwItemState">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Indicates whether this item is included in synchronization operations. This member can have one of the following values.</para>
+      <h4>SYNCMGRITEMSTATE_UNCHECKED (0)</h4>
+      <para>The default is not including this item in synchronization operations.</para>
+      <h4>SYNCMGRITEMSTATE_CHECKED (1)</h4>
+      <para>The default is including this item in synchronization operations.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRITEM.hIcon">
+    <summary>
+      <para>Type: <b>HICON</b></para>
+      <para>The icon for this item.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRITEM.wszItemName">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_SYNCMGRITEMNAME]</b></para>
+      <para>The name of this item.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRITEM.ftLastUpdate">
+    <summary>
+      <para>Type: <b>FILETIME</b></para>
+      <para>The time of the last synchronization for this item.</para>
+    </summary>
+  </member>
+</doc>

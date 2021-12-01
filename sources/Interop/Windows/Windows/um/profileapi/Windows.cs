@@ -9,11 +9,13 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QueryPerformanceCounter"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SuppressGCTransition]
     public static extern BOOL QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QueryPerformanceFrequency"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SuppressGCTransition]

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RESUME_PERFORMANCE.xml' path='doc/member[@name="RESUME_PERFORMANCE"]/*' />
 public partial struct RESUME_PERFORMANCE
 {
+    /// <include file='RESUME_PERFORMANCE.xml' path='doc/member[@name="RESUME_PERFORMANCE.PostTimeMs"]/*' />
     [NativeTypeName("DWORD")]
     public uint PostTimeMs;
 
+    /// <include file='RESUME_PERFORMANCE.xml' path='doc/member[@name="RESUME_PERFORMANCE.TotalResumeTimeMs"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong TotalResumeTimeMs;
 
+    /// <include file='RESUME_PERFORMANCE.xml' path='doc/member[@name="RESUME_PERFORMANCE.ResumeCompleteTimestamp"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ResumeCompleteTimestamp;
 }

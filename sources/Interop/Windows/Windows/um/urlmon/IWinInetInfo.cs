@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWinInetInfo.xml' path='doc/member[@name="IWinInetInfo"]/*' />
 [Guid("79EAC9D6-BAFA-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IWinInetInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWinInetInfo : IWinInetInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWinInetInfo : IWinInetInfo.Interface
         return ((delegate* unmanaged<IWinInetInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWinInetInfo : IWinInetInfo.Interface
         return ((delegate* unmanaged<IWinInetInfo*, uint>)(lpVtbl[1]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWinInetInfo : IWinInetInfo.Interface
         return ((delegate* unmanaged<IWinInetInfo*, uint>)(lpVtbl[2]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWinInetInfo.xml' path='doc/member[@name="IWinInetInfo.QueryOption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf)

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TreeWalker.xml' path='doc/member[@name="TreeWalker"]/*' />
 [Guid("30510747-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct TreeWalker
 {

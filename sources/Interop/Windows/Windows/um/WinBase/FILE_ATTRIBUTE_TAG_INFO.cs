@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_ATTRIBUTE_TAG_INFO.xml' path='doc/member[@name="FILE_ATTRIBUTE_TAG_INFO"]/*' />
 public partial struct FILE_ATTRIBUTE_TAG_INFO
 {
+    /// <include file='FILE_ATTRIBUTE_TAG_INFO.xml' path='doc/member[@name="FILE_ATTRIBUTE_TAG_INFO.FileAttributes"]/*' />
     [NativeTypeName("DWORD")]
     public uint FileAttributes;
 
+    /// <include file='FILE_ATTRIBUTE_TAG_INFO.xml' path='doc/member[@name="FILE_ATTRIBUTE_TAG_INFO.ReparseTag"]/*' />
     [NativeTypeName("DWORD")]
     public uint ReparseTag;
 }

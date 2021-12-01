@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpStreamFormatConverter.xml' path='doc/member[@name="ISpStreamFormatConverter"]/*' />
 [Guid("678A932C-EA71-4446-9B41-78FDA6280A29")]
 [NativeTypeName("struct ISpStreamFormatConverter : ISpStreamFormat")]
 [NativeInheritance("ISpStreamFormat")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, Guid*, void**, int>)(lpVtbl[0]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, uint>)(lpVtbl[1]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, uint>)(lpVtbl[2]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISequentialStream.Read" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, void*, uint, uint*, int>)(lpVtbl[3]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
     }
 
+    /// <inheritdoc cref="ISequentialStream.Write" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, void*, uint, uint*, int>)(lpVtbl[4]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
     }
 
+    /// <inheritdoc cref="IStream.Seek" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
     }
 
+    /// <inheritdoc cref="IStream.SetSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetSize(ULARGE_INTEGER libNewSize)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, ULARGE_INTEGER, int>)(lpVtbl[6]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), libNewSize);
     }
 
+    /// <inheritdoc cref="IStream.CopyTo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CopyTo(IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
     }
 
+    /// <inheritdoc cref="IStream.Commit" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, uint, int>)(lpVtbl[8]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), grfCommitFlags);
     }
 
+    /// <inheritdoc cref="IStream.Revert" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Revert()
@@ -88,6 +99,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, int>)(lpVtbl[9]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IStream.LockRegion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[10]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
     }
 
+    /// <inheritdoc cref="IStream.UnlockRegion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[11]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
     }
 
+    /// <inheritdoc cref="IStream.Stat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, STATSTG*, uint, int>)(lpVtbl[12]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
     }
 
+    /// <inheritdoc cref="IStream.Clone" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Clone(IStream** ppstm)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, IStream**, int>)(lpVtbl[13]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), ppstm);
     }
 
+    /// <inheritdoc cref="ISpStreamFormat.GetFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetFormat(Guid* pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[14]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), pguidFormatId, ppCoMemWaveFormatEx);
     }
 
+    /// <include file='ISpStreamFormatConverter.xml' path='doc/member[@name="ISpStreamFormatConverter.SetBaseStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetBaseStream(ISpStreamFormat* pStream, BOOL fSetFormatToBaseStreamFormat, BOOL fWriteToBaseStream)
@@ -130,6 +147,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, ISpStreamFormat*, BOOL, BOOL, int>)(lpVtbl[15]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), pStream, fSetFormatToBaseStreamFormat, fWriteToBaseStream);
     }
 
+    /// <include file='ISpStreamFormatConverter.xml' path='doc/member[@name="ISpStreamFormatConverter.GetBaseStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetBaseStream(ISpStreamFormat** ppStream)
@@ -137,6 +155,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, ISpStreamFormat**, int>)(lpVtbl[16]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), ppStream);
     }
 
+    /// <include file='ISpStreamFormatConverter.xml' path='doc/member[@name="ISpStreamFormatConverter.SetFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetFormat([NativeTypeName("const GUID &")] Guid* rguidFormatIdOfConvertedStream, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatExOfConvertedStream)
@@ -144,6 +163,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, Guid*, WAVEFORMATEX*, int>)(lpVtbl[17]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), rguidFormatIdOfConvertedStream, pWaveFormatExOfConvertedStream);
     }
 
+    /// <include file='ISpStreamFormatConverter.xml' path='doc/member[@name="ISpStreamFormatConverter.ResetSeekPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT ResetSeekPosition()
@@ -151,6 +171,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, int>)(lpVtbl[18]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpStreamFormatConverter.xml' path='doc/member[@name="ISpStreamFormatConverter.ScaleConvertedToBaseOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT ScaleConvertedToBaseOffset([NativeTypeName("ULONGLONG")] ulong ullOffsetConvertedStream, [NativeTypeName("ULONGLONG *")] ulong* pullOffsetBaseStream)
@@ -158,6 +179,7 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         return ((delegate* unmanaged<ISpStreamFormatConverter*, ulong, ulong*, int>)(lpVtbl[19]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), ullOffsetConvertedStream, pullOffsetBaseStream);
     }
 
+    /// <include file='ISpStreamFormatConverter.xml' path='doc/member[@name="ISpStreamFormatConverter.ScaleBaseToConvertedOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT ScaleBaseToConvertedOffset([NativeTypeName("ULONGLONG")] ulong ullOffsetBaseStream, [NativeTypeName("ULONGLONG *")] ulong* pullOffsetConvertedStream)

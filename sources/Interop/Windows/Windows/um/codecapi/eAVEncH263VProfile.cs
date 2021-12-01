@@ -5,15 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncH263VProfile.xml' path='doc/member[@name="eAVEncH263VProfile"]/*' />
 public enum eAVEncH263VProfile
 {
+    /// <include file='eAVEncH263VProfile.xml' path='doc/member[@name="eAVEncH263VProfile.eAVEncH263VProfile_Base"]/*' />
     eAVEncH263VProfile_Base = 0,
+
+    /// <include file='eAVEncH263VProfile.xml' path='doc/member[@name="eAVEncH263VProfile.eAVEncH263VProfile_CompatibilityV2"]/*' />
     eAVEncH263VProfile_CompatibilityV2 = 1,
+
+    /// <include file='eAVEncH263VProfile.xml' path='doc/member[@name="eAVEncH263VProfile.eAVEncH263VProfile_CompatibilityV1"]/*' />
     eAVEncH263VProfile_CompatibilityV1 = 2,
+
+    /// <include file='eAVEncH263VProfile.xml' path='doc/member[@name="eAVEncH263VProfile.eAVEncH263VProfile_WirelessV2"]/*' />
     eAVEncH263VProfile_WirelessV2 = 3,
+
+    /// <include file='eAVEncH263VProfile.xml' path='doc/member[@name="eAVEncH263VProfile.eAVEncH263VProfile_WirelessV3"]/*' />
     eAVEncH263VProfile_WirelessV3 = 4,
+
+    /// <include file='eAVEncH263VProfile.xml' path='doc/member[@name="eAVEncH263VProfile.eAVEncH263VProfile_HighCompression"]/*' />
     eAVEncH263VProfile_HighCompression = 5,
+
+    /// <include file='eAVEncH263VProfile.xml' path='doc/member[@name="eAVEncH263VProfile.eAVEncH263VProfile_Internet"]/*' />
     eAVEncH263VProfile_Internet = 6,
+
+    /// <include file='eAVEncH263VProfile.xml' path='doc/member[@name="eAVEncH263VProfile.eAVEncH263VProfile_Interlace"]/*' />
     eAVEncH263VProfile_Interlace = 7,
+
+    /// <include file='eAVEncH263VProfile.xml' path='doc/member[@name="eAVEncH263VProfile.eAVEncH263VProfile_HighLatency"]/*' />
     eAVEncH263VProfile_HighLatency = 8,
 }

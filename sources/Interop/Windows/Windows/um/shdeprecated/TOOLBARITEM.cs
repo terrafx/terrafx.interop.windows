@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOOLBARITEM.xml' path='doc/member[@name="TOOLBARITEM"]/*' />
 public unsafe partial struct TOOLBARITEM
 {
+    /// <include file='TOOLBARITEM.xml' path='doc/member[@name="TOOLBARITEM.ptbar"]/*' />
     public IDockingWindow* ptbar;
 
+    /// <include file='TOOLBARITEM.xml' path='doc/member[@name="TOOLBARITEM.rcBorderTool"]/*' />
     [NativeTypeName("BORDERWIDTHS")]
     public RECT rcBorderTool;
 
+    /// <include file='TOOLBARITEM.xml' path='doc/member[@name="TOOLBARITEM.pwszItem"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszItem;
 
+    /// <include file='TOOLBARITEM.xml' path='doc/member[@name="TOOLBARITEM.fShow"]/*' />
     public BOOL fShow;
 
+    /// <include file='TOOLBARITEM.xml' path='doc/member[@name="TOOLBARITEM.hMon"]/*' />
     public HMONITOR hMon;
 }

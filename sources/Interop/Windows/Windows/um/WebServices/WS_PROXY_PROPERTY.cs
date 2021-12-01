@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_PROXY_PROPERTY.xml' path='doc/member[@name="WS_PROXY_PROPERTY"]/*' />
 public unsafe partial struct WS_PROXY_PROPERTY
 {
+    /// <include file='WS_PROXY_PROPERTY.xml' path='doc/member[@name="WS_PROXY_PROPERTY.id"]/*' />
     public WS_PROXY_PROPERTY_ID id;
 
+    /// <include file='WS_PROXY_PROPERTY.xml' path='doc/member[@name="WS_PROXY_PROPERTY.value"]/*' />
     public void* value;
 
+    /// <include file='WS_PROXY_PROPERTY.xml' path='doc/member[@name="WS_PROXY_PROPERTY.valueSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint valueSize;
 }

@@ -7,19 +7,27 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_FRAME_STATISTICS_MEDIA.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS_MEDIA"]/*' />
 public partial struct DXGI_FRAME_STATISTICS_MEDIA
 {
+    /// <include file='DXGI_FRAME_STATISTICS_MEDIA.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS_MEDIA.PresentCount"]/*' />
     public uint PresentCount;
 
+    /// <include file='DXGI_FRAME_STATISTICS_MEDIA.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS_MEDIA.PresentRefreshCount"]/*' />
     public uint PresentRefreshCount;
 
+    /// <include file='DXGI_FRAME_STATISTICS_MEDIA.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS_MEDIA.SyncRefreshCount"]/*' />
     public uint SyncRefreshCount;
 
+    /// <include file='DXGI_FRAME_STATISTICS_MEDIA.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS_MEDIA.SyncQPCTime"]/*' />
     public LARGE_INTEGER SyncQPCTime;
 
+    /// <include file='DXGI_FRAME_STATISTICS_MEDIA.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS_MEDIA.SyncGPUTime"]/*' />
     public LARGE_INTEGER SyncGPUTime;
 
+    /// <include file='DXGI_FRAME_STATISTICS_MEDIA.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS_MEDIA.CompositionMode"]/*' />
     public DXGI_FRAME_PRESENTATION_MODE CompositionMode;
 
+    /// <include file='DXGI_FRAME_STATISTICS_MEDIA.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS_MEDIA.ApprovedPresentDuration"]/*' />
     public uint ApprovedPresentDuration;
 }

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_REM_FILTER_FLAGS.xml' path='doc/member[@name="_REM_FILTER_FLAGS"]/*' />
 public enum _REM_FILTER_FLAGS
 {
+    /// <include file='_REM_FILTER_FLAGS.xml' path='doc/member[@name="_REM_FILTER_FLAGS.REMFILTERF_LEAVECONNECTED"]/*' />
     REMFILTERF_LEAVECONNECTED = 0x1,
 }

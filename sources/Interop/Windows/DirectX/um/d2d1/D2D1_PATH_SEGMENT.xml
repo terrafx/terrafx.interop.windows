@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_PATH_SEGMENT">
+    <summary>
+      <para>Indicates whether a segment should be stroked and whether the join between this segment and the previous one should be smooth. This enumeration allows a bitwise combination of its member values.</para>
+    </summary>
+    <seealso cref="ID2D1SimplifiedGeometrySink.SetSegmentFlags" />
+    <seealso cref="ID2D1StrokeStyle" />
+  </member>
+  <member name="D2D1_PATH_SEGMENT.D2D1_PATH_SEGMENT_NONE">
+    <summary>
+      <para>The segment is joined  as specified by the <see cref="ID2D1StrokeStyle" /> interface, and it is stroked.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PATH_SEGMENT.D2D1_PATH_SEGMENT_FORCE_UNSTROKED">
+    <summary>
+      <para>The segment is not stroked.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PATH_SEGMENT.D2D1_PATH_SEGMENT_FORCE_ROUND_LINE_JOIN">
+    <summary>
+      <para>The segment is always joined with the one preceding it using a round line join, regardless of which <see cref="D2D1_LINE_JOIN" /> enumeration is specified by the <see cref="ID2D1StrokeStyle" /> interface. If this segment is the first segment and the figure is closed, a round line join is used to connect the closing segment with the first segment. If the figure is not closed, this setting has no effect on the first segment of the figure. If <see cref="ID2D1SimplifiedGeometrySink.SetSegmentFlags" /> is called just before <see cref="ID2D1SimplifiedGeometrySink.EndFigure" />, the join between the closing segment and the last explicitly specified segment is affected.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PATH_SEGMENT.D2D1_PATH_SEGMENT_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

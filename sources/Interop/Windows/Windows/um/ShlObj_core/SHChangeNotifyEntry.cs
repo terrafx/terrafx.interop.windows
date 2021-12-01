@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHChangeNotifyEntry.xml' path='doc/member[@name="SHChangeNotifyEntry"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct SHChangeNotifyEntry
 {
+    /// <include file='SHChangeNotifyEntry.xml' path='doc/member[@name="SHChangeNotifyEntry.pidl"]/*' />
     [NativeTypeName("LPCITEMIDLIST")]
     public ITEMIDLIST* pidl;
 
+    /// <include file='SHChangeNotifyEntry.xml' path='doc/member[@name="SHChangeNotifyEntry.fRecursive"]/*' />
     public BOOL fRecursive;
 }

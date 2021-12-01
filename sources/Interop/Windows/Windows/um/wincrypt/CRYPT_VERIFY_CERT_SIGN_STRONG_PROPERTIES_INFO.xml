@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO">
+    <summary>
+      <para>Contains the length, in bits, of the public key and the  names of the signing and hashing algorithms used for strong signing.</para>
+    </summary>
+    <remarks>
+      <para>This structure is returned by the <see cref="CryptVerifyCertificateSignatureEx" /> function when the <i>dwFlags</i> parameter is set to <b>CRYPT_VERIFY_CERT_SIGN_RETURN_STRONG_PROPERTIES_FLAG</b>.</para>
+    </remarks>
+    <seealso cref="CryptVerifyCertificateSignatureEx" />
+  </member>
+  <member name="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO.CertSignHashCNGAlgPropData">
+    <summary>
+      <para>The buffer contains a Unicode string that denotes the signing algorithm / hashing algorithm pair used, for example "RSA/SHA256".</para>
+    </summary>
+  </member>
+  <member name="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO.CertIssuerPubKeyBitLengthPropData">
+    <summary>
+      <para>The buffer contains the length, in bits, of the asymmetric key used for signing.</para>
+    </summary>
+  </member>
+</doc>

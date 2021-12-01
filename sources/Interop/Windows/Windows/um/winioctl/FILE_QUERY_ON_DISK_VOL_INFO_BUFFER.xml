@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER">
+    <summary>
+      <para>Receives the volume information from a call to  <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_on_disk_volume_info">FSCTL_QUERY_ON_DISK_VOLUME_INFO</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_on_disk_volume_info">FSCTL_QUERY_ON_DISK_VOLUME_INFO</seealso>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.DirectoryCount">
+    <summary>
+      <para>The number of directories on the specified disk. This member is -1 if the number is unknown.</para>
+      <para>For UDF file systems with a virtual allocation table, this information is available only if the UDF revision is greater than 1.50.</para>
+    </summary>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.FileCount">
+    <summary>
+      <para>The number of files on the specified disk. Returns -1 if the number is unknown.</para>
+      <para>For UDF file systems with a virtual allocation table, this information is available only if the UDF revision is greater than 1.50.</para>
+    </summary>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.FsFormatMajVersion">
+    <summary>
+      <para>The major version number of the file system. Returns -1 if the number is unknown or not applicable. On UDF 1.02 file systems, 1 is returned.</para>
+    </summary>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.FsFormatMinVersion">
+    <summary>
+      <para>The minor version number of the file system. Returns -1 if the number is unknown or not applicable.  On UDF 1.02 file systems, 02 is returned.</para>
+    </summary>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.FsFormatName">
+    <summary>
+      <para>Always returns UDF.</para>
+    </summary>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.FormatTime">
+    <summary>
+      <para>The time the media was formatted.</para>
+    </summary>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.LastUpdateTime">
+    <summary>
+      <para>The time the media was last updated.</para>
+    </summary>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.CopyrightInfo">
+    <summary>
+      <para>Any copyright information associated with the volume.</para>
+    </summary>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.AbstractInfo">
+    <summary>
+      <para>Any abstract  information written on the media.</para>
+    </summary>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.FormattingImplementationInfo">
+    <summary>
+      <para>Implementation-specific information; in some cases, it is the operating system version that  the media was formatted by.</para>
+    </summary>
+  </member>
+  <member name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.LastModifyingImplementationInfo">
+    <summary>
+      <para>The last implementation that modified the disk. This information is implementation specific; in some cases, it is the operating system version that  the media was last modified by.</para>
+    </summary>
+  </member>
+</doc>

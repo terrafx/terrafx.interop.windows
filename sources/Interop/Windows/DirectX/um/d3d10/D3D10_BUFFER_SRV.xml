@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_BUFFER_SRV">
+    <summary>
+      <para>Specifies the elements in a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">buffer</a> resource to use in a shader-resource view.</para>
+    </summary>
+    <remarks>
+      <para>The <b>D3D10_BUFFER_SRV</b> structure is a member of the  <see cref="D3D10_SHADER_RESOURCE_VIEW_DESC" /> structure, which represents a shader-resource view description. You can create a shader-resource view by calling the <see cref="ID3D10Device.CreateShaderResourceView" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D10_BUFFER_SRV.FirstElement">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of bytes between the beginning of the buffer and the first element to access.</para>
+    </summary>
+  </member>
+  <member name="D3D10_BUFFER_SRV.ElementOffset">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The offset of the first element in the view to access, relative to element 0.</para>
+    </summary>
+  </member>
+  <member name="D3D10_BUFFER_SRV.NumElements">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The total number of elements in the view.</para>
+    </summary>
+  </member>
+  <member name="D3D10_BUFFER_SRV.ElementWidth">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The width of each element (in bytes). This can be determined from the format stored in the shader-resource-view description.</para>
+    </summary>
+  </member>
+</doc>

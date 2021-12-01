@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppxPackagingDiagnosticEventSinkManager.xml' path='doc/member[@name="AppxPackagingDiagnosticEventSinkManager"]/*' />
 [Guid("50CA0A46-1588-4161-8ED2-EF9E469CED5D")]
 public partial struct AppxPackagingDiagnosticEventSinkManager
 {

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumStreamIdMap.Clone">
+    <summary>
+      <para>The <code>Clone</code> method copies the collection.</para>
+    </summary>
+    <param name="ppIEnumStreamIdMap">
+      <para>Receives a pointer to the <see cref="IEnumStreamIdMap" /> interface of the new collection object. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails,an <b>HRESULT</b> error code is returned.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IEnumStreamIdMap Interface" />
+  </member>
+  <member name="IEnumStreamIdMap.Next">
+    <summary>
+      <para>The <code>Next</code> method retrieves the next <i>n</i> elements in the collection.</para>
+    </summary>
+    <param name="cRequest">
+      <para>The number of elements to retrieve.</para>
+    </param>
+    <param name="pStreamIdMap">
+      <para>Address of a user-allocated array containing <i>cRequest</i> elements that will receive the retrieved <see cref="STREAM_ID_MAP" /> structures.</para>
+    </param>
+    <param name="pcReceived">
+      <para>Receives the number of elements actually retrieved.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails,an <b>HRESULT</b> error code is returned.</para>
+    </returns>
+    <remarks>
+      <para>If <i>cRequest</i> &gt;= 0 and <i>pcReceived</i> is not <b>NULL</b>, upon return <i>pcReceived</i> contains the number of stream ID maps remaining in the collection.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IEnumStreamIdMap Interface" />
+  </member>
+  <member name="IEnumStreamIdMap.Reset">
+    <summary>
+      <para>The <code>Reset</code> method moves the iterator to the beginning of the collection.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails,an <b>HRESULT</b> error code is returned.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IEnumStreamIdMap Interface" />
+  </member>
+  <member name="IEnumStreamIdMap.Skip">
+    <summary>
+      <para>The <code>Skip</code> method skip the element at the specified index.</para>
+    </summary>
+    <param name="cRecords">
+      <para>Index of the element to skip.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails, an <b>HRESULT</b> error code is returned.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IEnumStreamIdMap Interface" />
+  </member>
+  <member name="IEnumStreamIdMap">
+    <summary>
+      <para>The <code>IEnumStreamIdMap</code> interface is implemented on a standard COM collection of Stream ID maps that have been created by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mpeg-2-demultiplexer">MPEG-2 Demultiplexer</a>'s <see cref="IMPEG2StreamIdMap.MapStreamId" /> method. To obtain a pointer to this interface, use the <see cref="IMPEG2StreamIdMap.EnumStreamIdMap" /> method. Typically, an output pin will never have more than one stream ID mapped to it at any given time. This collection represents a snapshot of the Stream IDs mapped at the time the collection is created. The collection is not updated automatically.</para>
+    </summary>
+  </member>
+</doc>

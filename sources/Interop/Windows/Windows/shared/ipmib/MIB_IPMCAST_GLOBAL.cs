@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPMCAST_GLOBAL.xml' path='doc/member[@name="MIB_IPMCAST_GLOBAL"]/*' />
 public partial struct MIB_IPMCAST_GLOBAL
 {
+    /// <include file='MIB_IPMCAST_GLOBAL.xml' path='doc/member[@name="MIB_IPMCAST_GLOBAL.dwEnable"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwEnable;
 }

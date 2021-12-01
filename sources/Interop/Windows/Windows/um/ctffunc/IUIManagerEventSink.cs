@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink"]/*' />
 [Guid("CD91D690-A7E8-4265-9B38-8BB3BBABA7DE")]
 [NativeTypeName("struct IUIManagerEventSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
         return ((delegate* unmanaged<IUIManagerEventSink*, Guid*, void**, int>)(lpVtbl[0]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
         return ((delegate* unmanaged<IUIManagerEventSink*, uint>)(lpVtbl[1]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
         return ((delegate* unmanaged<IUIManagerEventSink*, uint>)(lpVtbl[2]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowOpening"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnWindowOpening(RECT* prcBounds)
@@ -48,6 +53,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
         return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[3]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcBounds);
     }
 
+    /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowOpened"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnWindowOpened(RECT* prcBounds)
@@ -55,6 +61,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
         return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[4]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcBounds);
     }
 
+    /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowUpdating"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnWindowUpdating(RECT* prcUpdatedBounds)
@@ -62,6 +69,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
         return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[5]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcUpdatedBounds);
     }
 
+    /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowUpdated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnWindowUpdated(RECT* prcUpdatedBounds)
@@ -69,6 +77,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
         return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[6]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcUpdatedBounds);
     }
 
+    /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowClosing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnWindowClosing()
@@ -76,6 +85,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
         return ((delegate* unmanaged<IUIManagerEventSink*, int>)(lpVtbl[7]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowClosed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT OnWindowClosed()

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVUseConcealmentMotionVectors.xml' path='doc/member[@name="CODECAPI_AVEncMPVUseConcealmentMotionVectors"]/*' />
 [Guid("EC770CF3-6908-4B4B-AA30-7FB986214FEA")]
 public partial struct CODECAPI_AVEncMPVUseConcealmentMotionVectors
 {

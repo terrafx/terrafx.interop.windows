@@ -8,17 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ARM64_FPSR_REG.xml' path='doc/member[@name="ARM64_FPSR_REG"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct ARM64_FPSR_REG
 {
+    /// <include file='ARM64_FPSR_REG.xml' path='doc/member[@name="ARM64_FPSR_REG.Value"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("DWORD")]
     public uint Value;
 
+    /// <include file='ARM64_FPSR_REG.xml' path='doc/member[@name="ARM64_FPSR_REG.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("_ARM64_FPSR_REG::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:6782:5)")]
     public _Anonymous_e__Struct Anonymous;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IOC"]/*' />
     public uint IOC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +38,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DZC"]/*' />
     public uint DZC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,6 +54,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OFC"]/*' />
     public uint OFC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,6 +70,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UFC"]/*' />
     public uint UFC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,6 +86,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IXC"]/*' />
     public uint IXC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -94,6 +102,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.res0_1"]/*' />
     public uint res0_1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -109,6 +118,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IDC"]/*' />
     public uint IDC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -124,6 +134,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.res0_2"]/*' />
     public uint res0_2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -139,6 +150,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.QC"]/*' />
     public uint QC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -154,6 +166,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.V"]/*' />
     public uint V
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -169,6 +182,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.C"]/*' />
     public uint C
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -184,6 +198,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Z"]/*' />
     public uint Z
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -199,6 +214,7 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.N"]/*' />
     public uint N
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -214,10 +230,12 @@ public partial struct ARM64_FPSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
         public uint _bitfield;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IOC"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint IOC
         {
@@ -234,6 +252,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DZC"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint DZC
         {
@@ -250,6 +269,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OFC"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint OFC
         {
@@ -266,6 +286,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UFC"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint UFC
         {
@@ -282,6 +303,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IXC"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint IXC
         {
@@ -298,6 +320,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.res0_1"]/*' />
         [NativeTypeName("DWORD : 2")]
         public uint res0_1
         {
@@ -314,6 +337,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IDC"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint IDC
         {
@@ -330,6 +354,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.res0_2"]/*' />
         [NativeTypeName("DWORD : 19")]
         public uint res0_2
         {
@@ -346,6 +371,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.QC"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint QC
         {
@@ -362,6 +388,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.V"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint V
         {
@@ -378,6 +405,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.C"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint C
         {
@@ -394,6 +422,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Z"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint Z
         {
@@ -410,6 +439,7 @@ public partial struct ARM64_FPSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.N"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint N
         {

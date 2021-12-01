@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRGLSRECORD.xml' path='doc/member[@name="EMRGLSRECORD"]/*' />
 public unsafe partial struct EMRGLSRECORD
 {
+    /// <include file='EMRGLSRECORD.xml' path='doc/member[@name="EMRGLSRECORD.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRGLSRECORD.xml' path='doc/member[@name="EMRGLSRECORD.cbData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbData;
 
+    /// <include file='EMRGLSRECORD.xml' path='doc/member[@name="EMRGLSRECORD.Data"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Data[1];
 }

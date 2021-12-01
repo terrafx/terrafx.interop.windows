@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFExtendedCameraControl.CommitSettings">
+    <summary>
+      <para>Commits the configured control settings to the camera driver.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>The following example demonstrates setting the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-torchmode">KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON</a> flag and committing the setting.</para>
+      <code>if (FAILED(m_cameraController-&gt;GetExtendedCameraControl(MF_CAPTURE_ENGINE_MEDIASOURCE,
+    KSPROPERTY_CAMERACONTROL_EXTENDED_TORCHMODE,
+    cameraControl.put())))
+{
+    // Return false to indicate that the Torch Mode control is not available.
+    return false;
+}
+
+ULONGLONG capabilities = cameraControl-&gt;GetCapabilities();
+
+// Check if the torch can be turned on.
+if (capabilities &amp;amp;amp;amp;amp;amp; KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON)
+{
+    // Check if the torch is off.
+    if ((cameraControl-&gt;GetFlags() &amp;amp;amp;amp;amp;amp; KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON) == 0)
+    {
+        // Torch is off. Tell the camera to turn it on.
+        check_hresult(cameraControl-&gt;SetFlags(KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON));
+        // Write the changed settings to the driver.
+        check_hresult(cameraControl-&gt;CommitSettings());
+    }
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="IMFExtendedCameraControl.GetCapabilities">
+    <summary>
+      <para>Queries for property capabilities supported by the capture device.</para>
+    </summary>
+    <returns>
+      <para>A ULONGLONG mapping to property capabilities. Supported properties and capabilities are defined in the header file defined in ksmedia.h as constants with the naming convention <b>KSCAMERA_EXTENDEDPROP_</b>. For more information, see <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol">KSPROPERTYSETID_ExtendedCameraControl</a>.</para>
+    </returns>
+    <remarks>
+      <para>Verify the presence of a particular capability by performing a bitwise AND operation with the return value of this function. Some drivers may require that the camera device preview be in a running state before it can determine which controls are supported. If you check whether a certain control is supported before the preview stream is running, the control may be described as unsupported (and thus unavailable) even though it is supported by the video device.</para>
+      <para>The following example demonstrates querying support for the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-torchmode">KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON</a> capability.</para>
+      <code>if (FAILED(m_cameraController-&gt;GetExtendedCameraControl(MF_CAPTURE_ENGINE_MEDIASOURCE,
+    KSPROPERTY_CAMERACONTROL_EXTENDED_TORCHMODE,
+    cameraControl.put())))
+{
+    // Return false to indicate that the Torch Mode control is not available.
+    return false;
+}
+
+ULONGLONG capabilities = cameraControl-&gt;GetCapabilities();
+
+// Check if the torch can be turned on.
+if (capabilities &amp;amp;amp;amp;amp;amp; KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON)
+{
+    // Check if the torch is off.
+    if ((cameraControl-&gt;GetFlags() &amp;amp;amp;amp;amp;amp; KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON) == 0)
+    {
+        // Torch is off. Tell the camera to turn it on.
+        check_hresult(cameraControl-&gt;SetFlags(KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON));
+        // Write the changed settings to the driver.
+        check_hresult(cameraControl-&gt;CommitSettings());
+    }
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="IMFExtendedCameraControl.GetFlags">
+    <summary>
+      <para>Queries for property flags on the capture device.</para>
+    </summary>
+    <returns>
+      <para>A ULONGLONG mapping to property flags. Supported properties and flags are defined in the header file defined in ksmedia.h as constants with the naming convention <b>KSCAMERA_EXTENDEDPROP_</b>. For more information, see <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol">KSPROPERTYSETID_ExtendedCameraControl</a>.</para>
+    </returns>
+    <remarks>
+      <para>Set the property flags on the capture device by calling <see cref="IMFExtendedCameraControl.SetFlags" />. Before setting a property flag, you can check for supported capabilities by calling <see cref="IMFExtendedCameraControl.GetCapabilities" />. The following example demonstrates querying support for the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-torchmode">KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON</a> capability.</para>
+      <code>if (FAILED(m_cameraController-&gt;GetExtendedCameraControl(MF_CAPTURE_ENGINE_MEDIASOURCE,
+    KSPROPERTY_CAMERACONTROL_EXTENDED_TORCHMODE,
+    cameraControl.put())))
+{
+    // Return false to indicate that the Torch Mode control is not available.
+    return false;
+}
+
+ULONGLONG capabilities = cameraControl-&gt;GetCapabilities();
+
+// Check if the torch can be turned on.
+if (capabilities &amp;amp;amp;amp;amp;amp; KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON)
+{
+    // Check if the torch is off.
+    if ((cameraControl-&gt;GetFlags() &amp;amp;amp;amp;amp;amp; KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON) == 0)
+    {
+        // Torch is off. Tell the camera to turn it on.
+        check_hresult(cameraControl-&gt;SetFlags(KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON));
+        // Write the changed settings to the driver.
+        check_hresult(cameraControl-&gt;CommitSettings());
+    }
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="IMFExtendedCameraControl.LockPayload">
+    <summary>
+      <para>Locks the internal payload buffer contained in the capture device control to enable querying or changing the payload.</para>
+    </summary>
+    <param name="ppPayload">
+      <para>Receives a BYTE pointer to the buffer containing the raw payload. The caller should not free the buffer directly, but instead should call <see cref="IMFExtendedCameraControl.UnlockPayload" /> to free the resources.</para>
+    </param>
+    <param name="pulPayload">
+      <para>Receives the size of the buffer returned in <i>ppPayload</i>.</para>
+    </param>
+    <returns>
+      <para>On success, returns S_OK.</para>
+    </returns>
+  </member>
+  <member name="IMFExtendedCameraControl.SetFlags">
+    <summary>
+      <para>Sets the flags for a property on the capture device.</para>
+    </summary>
+    <param name="ulFlags">
+      <para>A ULONGLONG mapping to property flags. Supported properties and flags are defined in the header file defined in ksmedia.h as constants with the naming convention <b>KSCAMERA_EXTENDEDPROP_</b>. For more information, see <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol">KSPROPERTYSETID_ExtendedCameraControl</a>.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>Before setting a property flag, you can check for supported capabilities by calling <see cref="IMFExtendedCameraControl.GetCapabilities" />. The following example demonstrates querying support for the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-torchmode">KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON</a> capability.</para>
+      <code>if (FAILED(m_cameraController-&gt;GetExtendedCameraControl(MF_CAPTURE_ENGINE_MEDIASOURCE,
+    KSPROPERTY_CAMERACONTROL_EXTENDED_TORCHMODE,
+    cameraControl.put())))
+{
+    // Return false to indicate that the Torch Mode control is not available.
+    return false;
+}
+
+ULONGLONG capabilities = cameraControl-&gt;GetCapabilities();
+
+// Check if the torch can be turned on.
+if (capabilities &amp;amp;amp;amp;amp;amp; KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON)
+{
+    // Check if the torch is off.
+    if ((cameraControl-&gt;GetFlags() &amp;amp;amp;amp;amp;amp; KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON) == 0)
+    {
+        // Torch is off. Tell the camera to turn it on.
+        check_hresult(cameraControl-&gt;SetFlags(KSCAMERA_EXTENDEDPROP_VIDEOTORCH_ON));
+        // Write the changed settings to the driver.
+        check_hresult(cameraControl-&gt;CommitSettings());
+    }
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="IMFExtendedCameraControl.UnlockPayload">
+    <summary>
+      <para>Unlocks the raw payload contained in the capture device control.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>Lock the payload in a capture device control by calling <see cref="IMFExtendedCameraControl.LockPayload" />.</para>
+    </remarks>
+  </member>
+  <member name="IMFExtendedCameraControl">
+    <summary>
+      <para>This interface is used to configure a capture device's extended properties. Supported properties and capabilities are defined in the header file defined in ksmedia.h as constants with the naming convention <b>KSCAMERA_EXTENDEDPROP_</b>.</para>
+    </summary>
+    <remarks>
+      <para>Get an instance of this interface by calling <see cref="IMFExtendedCameraController.GetExtendedCameraControl" /></para>
+      <h3>Unsupported properties</h3>
+      <para>Note that some <b>KSCAMERA_EXTENDEDPROP_</b> properties are unsupported for this API. Their functionality can only be accessed by client apps through the WinRT media capture APIs.</para>
+      <h4>KSPROPERTY_CAMERACONTROL_EXTENDED_WARMSTART</h4>
+      <para>The behavior of this property is exposed through the following WinRT APIs:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync">PrepareLowLagPhotoCaptureAsync</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtocustomsinkasync">PrepareLowLagRecordToCustomSinkAsync</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync">PrepareLowLagRecordToStorageFileAsync</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostreamasync">PrepareLowLagRecordToStreamAsync</a>
+          </description>
+        </item>
+      </list>
+      <para>These APIs cause the capture pipeline to be configured with the selected media type and put the driver pin is put into a paused state, which informs the driver to get the hardware resources allocated/configured for the operation.  This helps to minimize the latency by front-loading the preparation of resources.</para>
+      <para>Note that the warm start functionality is an optional control for capture devices, so if the control is not available, the APIs above will not provide the warm start behavior. These APIs will still configure the sink side of the capture so there is some benefit to using them.</para>
+      <h4>KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOMODE</h4>
+      <para>The behavior of this property is exposed through the following WinRT APIs:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/windows.media.capture.mediacapture.preparelowlagphotosequencecaptureasync">PrepareLowLagPhotoSequenceCaptureAsync</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/windows.media.capture.mediacapture.preparevariablephotosequencecaptureasync">PrepareVariablePhotoSequenceCaptureAsync</a>
+          </description>
+        </item>
+      </list>
+      <para>These APIs configure the both the capture and sink side of the pipeline and put the driver pin into the running state, capturing frames but not yet passing the frames to the pipeline.  The frames begin passing through the pipeline when the capture operation is started.</para>
+      <para>Note that this functionality is an optional control for capture devices, so if the control is not available, the APIs above return an error.</para>
+    </remarks>
+  </member>
+</doc>

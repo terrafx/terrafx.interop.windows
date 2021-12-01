@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFPinholeCameraIntrinsics">
+    <summary>
+      <para>Contains zero or 1 pinhole camera intrinsic models that describe how to project a 3D point in physical world onto the 2D image frame of a camera. The conventions assumed by this structure imply a left-handed 3D coordinate system, with +X pointing to the right of the sensor, +Y pointing upwards from the sensor, and +Z pointing forward out of the sensor through the center (principal point) of the image.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFPinholeCameraIntrinsics.IntrinsicModelCount">
+    <summary>
+      <para>The number of camera intrinsic models in the <i>IntrinsicModels</i> array.</para>
+    </summary>
+  </member>
+  <member name="MFPinholeCameraIntrinsics.IntrinsicModels">
+    <summary>
+      <para>The array of camera intrinsic models in the intrinsic data.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='THREAD_POWER_THROTTLING_STATE.xml' path='doc/member[@name="THREAD_POWER_THROTTLING_STATE"]/*' />
 public partial struct THREAD_POWER_THROTTLING_STATE
 {
+    /// <include file='THREAD_POWER_THROTTLING_STATE.xml' path='doc/member[@name="THREAD_POWER_THROTTLING_STATE.Version"]/*' />
     [NativeTypeName("ULONG")]
     public uint Version;
 
+    /// <include file='THREAD_POWER_THROTTLING_STATE.xml' path='doc/member[@name="THREAD_POWER_THROTTLING_STATE.ControlMask"]/*' />
     [NativeTypeName("ULONG")]
     public uint ControlMask;
 
+    /// <include file='THREAD_POWER_THROTTLING_STATE.xml' path='doc/member[@name="THREAD_POWER_THROTTLING_STATE.StateMask"]/*' />
     [NativeTypeName("ULONG")]
     public uint StateMask;
 }

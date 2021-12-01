@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICoCreatedLocally.xml' path='doc/member[@name="ICoCreatedLocally"]/*' />
 [Guid("0A53EB6C-1908-4742-8CFF-2CEE2E93F94C")]
 [NativeTypeName("struct ICoCreatedLocally : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICoCreatedLocally : ICoCreatedLocally.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICoCreatedLocally : ICoCreatedLocally.Interface
         return ((delegate* unmanaged<ICoCreatedLocally*, Guid*, void**, int>)(lpVtbl[0]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICoCreatedLocally : ICoCreatedLocally.Interface
         return ((delegate* unmanaged<ICoCreatedLocally*, uint>)(lpVtbl[1]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICoCreatedLocally : ICoCreatedLocally.Interface
         return ((delegate* unmanaged<ICoCreatedLocally*, uint>)(lpVtbl[2]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICoCreatedLocally.xml' path='doc/member[@name="ICoCreatedLocally.LocalInit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT LocalInit(IUnknown* punkLocalObject, [NativeTypeName("const IID &")] Guid* riidParam, IUnknown* punkParam, VARIANT varParam)

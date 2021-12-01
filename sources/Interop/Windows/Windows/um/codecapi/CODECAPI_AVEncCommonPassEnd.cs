@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncCommonPassEnd.xml' path='doc/member[@name="CODECAPI_AVEncCommonPassEnd"]/*' />
 [Guid("0E3D01BC-C85C-467D-8B60-C41012EE3BF6")]
 public partial struct CODECAPI_AVEncCommonPassEnd
 {

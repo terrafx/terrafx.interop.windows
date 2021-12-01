@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APP_MEMORY_INFORMATION">
+    <summary>
+      <para>Represents app memory usage at a single point in time. This structure is used by the <a href="https://docs.microsoft.com//previous-versions/mt767996(v=vs.85)">PROCESS_INFORMATION_CLASS</a> class.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/mt767996(v=vs.85)">PROCESS_INFORMATION_CLASS</seealso>
+  </member>
+  <member name="APP_MEMORY_INFORMATION.AvailableCommit">
+    <summary>
+      <para>Total commit available to the app.</para>
+    </summary>
+  </member>
+  <member name="APP_MEMORY_INFORMATION.PrivateCommitUsage">
+    <summary>
+      <para>The app's usage of private commit.</para>
+    </summary>
+  </member>
+  <member name="APP_MEMORY_INFORMATION.PeakPrivateCommitUsage">
+    <summary>
+      <para>The app's peak usage of private commit.</para>
+    </summary>
+  </member>
+  <member name="APP_MEMORY_INFORMATION.TotalCommitUsage">
+    <summary>
+      <para>The app's total usage of private plus shared commit.</para>
+    </summary>
+  </member>
+</doc>

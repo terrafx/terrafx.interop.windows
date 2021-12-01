@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1LinearGradientBrush.GetEndPoint">
+    <summary>
+      <para>Retrieves the ending coordinates of the linear gradient.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The ending two-dimensional coordinates of the linear gradient, in the brush's coordinate space.</para>
+    </returns>
+    <remarks>
+      <para>The start point and end point are described in the brush's space and are mapped to the render target when the brush is used.  If there is a non-identity brush transform or render target transform, the brush's start point and end point are also transformed.</para>
+    </remarks>
+    <seealso cref="ID2D1LinearGradientBrush" />
+  </member>
+  <member name="ID2D1LinearGradientBrush.GetGradientStopCollection">
+    <summary>
+      <para>Retrieves the <see cref="ID2D1GradientStopCollection" /> associated with this linear gradient brush.</para>
+    </summary>
+    <param name="gradientStopCollection">
+      <para>Type: <b><see cref="ID2D1GradientStopCollection" />**</b></para>
+      <para>The  <see cref="ID2D1GradientStopCollection" /> object associated with this linear gradient brush object. This parameter is passed uninitialized.</para>
+    </param>
+    <remarks>
+      <para>
+        <see cref="ID2D1GradientStopCollection" /> contains an array of <see cref="D2D1_GRADIENT_STOP" /> structures and information, such as the extend mode and the color interpolation mode.</para>
+    </remarks>
+    <seealso cref="D2D1_GRADIENT_STOP" />
+    <seealso cref="ID2D1GradientStopCollection" />
+    <seealso cref="ID2D1LinearGradientBrush" />
+  </member>
+  <member name="ID2D1LinearGradientBrush.GetStartPoint">
+    <summary>
+      <para>Retrieves the starting coordinates of the linear gradient.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The starting two-dimensional coordinates of the linear gradient, in the brush's coordinate space.</para>
+    </returns>
+    <remarks>
+      <para>The start point and end point are described in the brush's space and are mapped to the render target when the brush is used.  If there is a non-identity brush transform or render target transform, the brush's start point and end point are also transformed.</para>
+    </remarks>
+    <seealso cref="ID2D1LinearGradientBrush" />
+  </member>
+  <member name="ID2D1LinearGradientBrush.SetEndPoint">
+    <summary>
+      <para>Sets the ending coordinates of the linear gradient in the brush's coordinate space.</para>
+    </summary>
+    <param name="endPoint">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The ending two-dimensional coordinates of the linear gradient, in the brush's coordinate space.</para>
+    </param>
+    <remarks>
+      <para>The start point and end point are described in the brush's space and are mapped to the render target when the brush is used.  If there is a non-identity brush transform or render target transform, the brush's start point and end point are also transformed.</para>
+    </remarks>
+    <seealso cref="ID2D1LinearGradientBrush" />
+  </member>
+  <member name="ID2D1LinearGradientBrush.SetStartPoint">
+    <summary>
+      <para>Sets the starting coordinates of the linear gradient in the brush's coordinate space.</para>
+    </summary>
+    <param name="startPoint">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The starting two-dimensional coordinates of the linear gradient, in the brush's coordinate space.</para>
+    </param>
+    <remarks>
+      <para>The start point and end point are described in the brush's space and are mapped to the render target when the brush is used.  If there is a non-identity brush transform or render target transform, the brush's start point and end point are also transformed.</para>
+    </remarks>
+    <seealso cref="ID2D1LinearGradientBrush" />
+  </member>
+  <member name="ID2D1LinearGradientBrush">
+    <summary>
+      <para>Paints an area with a linear gradient.</para>
+    </summary>
+    <remarks>
+      <para>An <b>ID2D1LinearGradientBrush</b> paints an area with a linear gradient along a line between the brush start point and end   point. The gradient, defined by the brush <see cref="ID2D1GradientStopCollection" />, is extruded perpendicular to this line, and then transformed by a brush transform (if specified).</para>
+      <para>The start point and end point are described in the brush space and are mapped to the render target when the brush is used. Note the starting and ending coordinates are absolute, not relative to the render target size. A value of (0, 0) maps to the upper-left corner of the render target, while a value of (1, 1) maps one pixel diagonally away from (0, 0). If there is a nonidentity brush transform or render target transform, the brush start point and end point are also transformed.</para>
+      <para>It is possible to specify a gradient axis that does not completely fill the area that is being painted. When this occurs, the <see cref="D2D1_EXTEND_MODE" />, specified by the   <see cref="ID2D1GradientStopCollection" />, determines how the remaining area is painted.</para>
+      <h3>Creating ID2D1LinearGradientBrush Objects</h3>
+      <para>To create a linear gradient brush, use the <see cref="ID2D1RenderTarget.CreateLinearGradientBrush" /> method of the render target on which the brush will be used. The brush can only be used with the render target that created it or with  the compatible targets for that render target.</para>
+      <para>A linear gradient brush is a device-dependent resource: your application should create linear gradient brushes after it initializes the render target with which the brushes will be used, and recreate the brushes whenever the render target needs recreated. (For more information about resources, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.)</para>
+    </remarks>
+    <seealso cref="ID2D1Brush" />
+  </member>
+</doc>

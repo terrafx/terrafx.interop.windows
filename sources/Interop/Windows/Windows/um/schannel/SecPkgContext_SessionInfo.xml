@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SecPkgContext_SessionInfo">
+    <summary>
+      <para>Specifies whether the session is a reconnection and retrieves a value that identifies the session.</para>
+    </summary>
+    <seealso cref="QueryContextAttributes (Schannel)" />
+  </member>
+  <member name="SecPkgContext_SessionInfo.dwFlags">
+    <summary>
+      <para>Bit flags that specify the type of session. The following value is defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SSL_SESSION_RECONNECT</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The session is a reconnection.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SecPkgContext_SessionInfo.cbSessionId">
+    <summary>
+      <para>The size, in bytes, of the <b>rgbSessionId</b> array.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_SessionInfo.rgbSessionId">
+    <summary>
+      <para>An array of up to 32 bytes that identifies the session.</para>
+    </summary>
+  </member>
+</doc>

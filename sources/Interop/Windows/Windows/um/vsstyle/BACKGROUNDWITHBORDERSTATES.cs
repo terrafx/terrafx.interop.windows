@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BACKGROUNDWITHBORDERSTATES.xml' path='doc/member[@name="BACKGROUNDWITHBORDERSTATES"]/*' />
 public enum BACKGROUNDWITHBORDERSTATES
 {
+    /// <include file='BACKGROUNDWITHBORDERSTATES.xml' path='doc/member[@name="BACKGROUNDWITHBORDERSTATES.EBWBS_NORMAL"]/*' />
     EBWBS_NORMAL = 1,
+
+    /// <include file='BACKGROUNDWITHBORDERSTATES.xml' path='doc/member[@name="BACKGROUNDWITHBORDERSTATES.EBWBS_HOT"]/*' />
     EBWBS_HOT = 2,
+
+    /// <include file='BACKGROUNDWITHBORDERSTATES.xml' path='doc/member[@name="BACKGROUNDWITHBORDERSTATES.EBWBS_DISABLED"]/*' />
     EBWBS_DISABLED = 3,
+
+    /// <include file='BACKGROUNDWITHBORDERSTATES.xml' path='doc/member[@name="BACKGROUNDWITHBORDERSTATES.EBWBS_FOCUSED"]/*' />
     EBWBS_FOCUSED = 4,
 }

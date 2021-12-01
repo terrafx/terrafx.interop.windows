@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink"]/*' />
 [Guid("AA80E7F5-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct ITfKeyEventSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
         return ((delegate* unmanaged<ITfKeyEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
         return ((delegate* unmanaged<ITfKeyEventSink*, uint>)(lpVtbl[1]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
         return ((delegate* unmanaged<ITfKeyEventSink*, uint>)(lpVtbl[2]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnSetFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnSetFocus(BOOL fForeground)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
         return ((delegate* unmanaged<ITfKeyEventSink*, BOOL, int>)(lpVtbl[3]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), fForeground);
     }
 
+    /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnTestKeyDown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnTestKeyDown(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
         return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[4]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
     }
 
+    /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnTestKeyUp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnTestKeyUp(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
         return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[5]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
     }
 
+    /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnKeyDown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnKeyDown(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
         return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[6]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
     }
 
+    /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnKeyUp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnKeyUp(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
         return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[7]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
     }
 
+    /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnPreservedKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT OnPreservedKey(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEaten)

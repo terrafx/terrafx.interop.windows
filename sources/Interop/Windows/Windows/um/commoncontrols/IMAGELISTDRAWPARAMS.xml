@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGELISTDRAWPARAMS">
+    <summary>
+      <para>Contains information about an image list draw operation and is used with the <see cref="IImageList.Draw" /> function.</para>
+    </summary>
+    <remarks>
+      <para>An overlay image is an image that is drawn on top of the primary image specified in the <b>i</b> member of this structure. To specify an overlay image, use the bitwise <b>OR</b> operator to combine <b>fStyle</b> with the <see cref="INDEXTOOVERLAYMASK" /> macro, passing the one-based index of the overlay image in the macro. This image must have been previously specified as an overlay image using the <see cref="ImageList_SetOverlayImage" /> API.</para>
+      <para>To extract the overlay image from the <b>fStyle</b>, use the bitwise <b>AND</b> operator to mask <b>fStyle</b> with the <a href="https://docs.microsoft.com//windows/desktop/Controls/imagelistdrawflags">ILD_OVERLAYMASK</a> value.</para>
+      <para>Comctl32.dll version 6 is not redistributable.. To use Comctl32.dll version 6, you must specify it in a manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.cbSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>The size of this structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.himl">
+    <summary>
+      <para>Type: <b>HIMAGELIST</b></para>
+      <para>A handle to the image list that contains the image to be drawn.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.i">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The zero-based index of the image to be drawn.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.hdcDst">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HDC</a></b></para>
+      <para>A handle to the destination device context.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.x">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The x-coordinate that specifies where the image is drawn.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.y">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The y-coordinate that specifies where the image is drawn.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.cx">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>A value that specifies the number of pixels to draw, relative to the upper-left corner of the drawing operation as specified by <b>xBitmap</b> and <b>yBitmap</b>. If <b>cx</b> and <b>cy</b> are zero, then <see cref="Draw" /> draws the entire valid section. The method does not ensure that the parameters are valid.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.cy">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>A value that specifies the number of pixels to draw, relative to the upper-left corner of the drawing operation as specified by <b>xBitmap</b> and <b>yBitmap</b>. If <b>cx</b> and <b>cy</b> are zero, then <see cref="Draw" /> draws the entire valid section. The method does not ensure that the parameters are valid.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.xBitmap">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The x-coordinate that specifies the upper-left corner of the drawing operation in reference to the image itself. Pixels of the image that are to the left of <b>xBitmap</b> and above <b>yBitmap</b> do not appear.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.yBitmap">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The y-coordinate that specifies the upper-left corner of the drawing operation in reference to the image itself. Pixels of the image that are to the left of <b>xBitmap</b> and above <b>yBitmap</b> do not appear.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.rgbBk">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
+      <para>The image background color. This parameter can be an application-defined RGB value or one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CLR_DEFAULT</b>
+          </description>
+          <description>
+            <para>The default background color. The image is drawn using the image list background color.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CLR_NONE</b>
+          </description>
+          <description>
+            <para>No background color. The image is drawn transparently.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.rgbFg">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
+      <para>The image foreground color. This member is used only if <b>fStyle</b> includes the <a href="https://docs.microsoft.com//windows/desktop/Controls/imagelistdrawflags">ILD_BLEND25</a> or <a href="https://docs.microsoft.com//windows/desktop/Controls/imagelistdrawflags">ILD_BLEND50</a> flag. This parameter can be an application-defined RGB value or one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CLR_DEFAULT</b>
+          </description>
+          <description>
+            <para>The default foreground color. The image is drawn using the system highlight color as the foreground color.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CLR_NONE</b>
+          </description>
+          <description>
+            <para>No blend color. The image is blended with the color of the destination device context.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.fStyle">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A flag specifying the drawing style and, optionally, the overlay image. See the comments section at the end of this topic for information on the overlay image. This member can contain one or more <a href="https://docs.microsoft.com//windows/desktop/Controls/imagelistdrawflags">image list drawing flags</a>.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.dwRop">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>A value specifying a raster operation code. These codes define how the color data for the source rectangle will be combined with the color data for the destination rectangle to achieve the final color. This member is ignored if    <b>fStyle</b> does not include the <a href="https://docs.microsoft.com//windows/desktop/Controls/imagelistdrawflags">ILD_ROP</a> flag. Some common raster operation codes include:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>BLACKNESS</b>
+          </description>
+          <description>
+            <para>Fills the destination rectangle using the color associated with index zero in the physical palette. (This color is black for the default physical palette.)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DSTINVERT</b>
+          </description>
+          <description>
+            <para>Inverts the destination rectangle.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MERGECOPY</b>
+          </description>
+          <description>
+            <para>Merges the source rectangle colors with the specified pattern by using the Boolean <b>AND</b> operator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MERGEPAINT</b>
+          </description>
+          <description>
+            <para>Merges the inverted source rectangle colors with the destination rectangle colors by using the Boolean <b>OR</b> operator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>NOTSRCCOPY</b>
+          </description>
+          <description>
+            <para>Copies the inverted source rectangle to the destination.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>NOTSRCERASE</b>
+          </description>
+          <description>
+            <para>Combines the source and destination rectangle colors by using the Boolean <b>OR</b> operator. Inverts the resultant color.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>PATCOPY</b>
+          </description>
+          <description>
+            <para>Copies the specified pattern into the destination bitmap.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>PATINVERT</b>
+          </description>
+          <description>
+            <para>Combines the specified pattern colors with the destination rectangle colors by using the Boolean <b>XOR</b> operator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>PATPAINT</b>
+          </description>
+          <description>
+            <para>Combines the pattern colors with the inverted source rectangle colors and combines the result with the destination rectangle colors by using the Boolean <b>OR</b> operator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SRCAND</b>
+          </description>
+          <description>
+            <para>Combines the source and destination rectangle colors by using the Boolean <b>AND</b> operator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SRCCOPY</b>
+          </description>
+          <description>
+            <para>Copies the source rectangle directly to the destination rectangle.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SRCERASE</b>
+          </description>
+          <description>
+            <para>Combines the destination rectangle's inverted colors with the source rectangle colors by using the Boolean <b>AND</b> operator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SRCINVERT</b>
+          </description>
+          <description>
+            <para>Combines the source and destination rectangle colors by using the Boolean <b>XOR</b> operator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SRCPAINT</b>
+          </description>
+          <description>
+            <para>Combines the source and destination rectangle colors by using the Boolean <b>OR</b> operator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WHITENESS</b>
+          </description>
+          <description>
+            <para>Fills the destination rectangle using the color associated with index one in the physical palette. This color is white for the default physical palette.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.fState">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>A flag that specifies the drawing state. This member can contain one or more <a href="https://docs.microsoft.com//windows/desktop/Controls/imageliststateflags">image list state flags</a>. You must use comctl32.dll version 6 to use this member. See the Remarks.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.Frame">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>Used with the <b>alpha blending</b> effect.</para>
+      <para>When used with <a href="https://docs.microsoft.com//windows/desktop/Controls/imageliststateflags">ILS_ALPHA</a>, this member holds the value for the alpha channel. This value can be from 0 to 255, with 0 being completely transparent, and 255 being completely opaque.</para>
+      <para>You must use comctl32.dll version 6 to use this member. See the Remarks.</para>
+    </summary>
+  </member>
+  <member name="IMAGELISTDRAWPARAMS.crEffect">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>A color used for the <b>glow</b> and <b>shadow</b> effects. You must use comctl32.dll version 6 to use this member. See the Remarks.</para>
+    </summary>
+  </member>
+</doc>

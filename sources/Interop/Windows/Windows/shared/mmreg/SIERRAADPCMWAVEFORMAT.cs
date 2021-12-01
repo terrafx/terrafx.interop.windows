@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIERRAADPCMWAVEFORMAT.xml' path='doc/member[@name="SIERRAADPCMWAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SIERRAADPCMWAVEFORMAT
 {
+    /// <include file='SIERRAADPCMWAVEFORMAT.xml' path='doc/member[@name="SIERRAADPCMWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='SIERRAADPCMWAVEFORMAT.xml' path='doc/member[@name="SIERRAADPCMWAVEFORMAT.wRevision"]/*' />
     [NativeTypeName("WORD")]
     public ushort wRevision;
 }

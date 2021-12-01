@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_BASIC_INFORMATION.xml' path='doc/member[@name="TRANSACTION_BASIC_INFORMATION"]/*' />
 public partial struct TRANSACTION_BASIC_INFORMATION
 {
+    /// <include file='TRANSACTION_BASIC_INFORMATION.xml' path='doc/member[@name="TRANSACTION_BASIC_INFORMATION.TransactionId"]/*' />
     public Guid TransactionId;
 
+    /// <include file='TRANSACTION_BASIC_INFORMATION.xml' path='doc/member[@name="TRANSACTION_BASIC_INFORMATION.State"]/*' />
     [NativeTypeName("DWORD")]
     public uint State;
 
+    /// <include file='TRANSACTION_BASIC_INFORMATION.xml' path='doc/member[@name="TRANSACTION_BASIC_INFORMATION.Outcome"]/*' />
     [NativeTypeName("DWORD")]
     public uint Outcome;
 }

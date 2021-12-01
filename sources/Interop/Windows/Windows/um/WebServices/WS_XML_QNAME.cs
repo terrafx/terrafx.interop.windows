@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_QNAME.xml' path='doc/member[@name="WS_XML_QNAME"]/*' />
 public partial struct WS_XML_QNAME
 {
+    /// <include file='WS_XML_QNAME.xml' path='doc/member[@name="WS_XML_QNAME.localName"]/*' />
     public WS_XML_STRING localName;
 
+    /// <include file='WS_XML_QNAME.xml' path='doc/member[@name="WS_XML_QNAME.ns"]/*' />
     public WS_XML_STRING ns;
 }

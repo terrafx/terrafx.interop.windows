@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PropertySystem.xml' path='doc/member[@name="PropertySystem"]/*' />
 [Guid("B8967F85-58AE-4F46-9FB2-5D7904798F4B")]
 public partial struct PropertySystem
 {

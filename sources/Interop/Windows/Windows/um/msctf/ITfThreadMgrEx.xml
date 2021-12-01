@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfThreadMgrEx.ActivateEx">
+    <summary>
+      <para>The <b>ITfThreadMgrEx.ActivateEx</b> method is used by an application to initialize and activate TSF for the calling thread. Unlike <see cref="ITfThreadMgr.Activate" />, ITfThreadMgrEx.ActivateEx can take a flag to specify how TSF is activated.</para>
+    </summary>
+    <param name="ptid">
+      <para>[out] Pointer to a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfclientid">TfClientId</a> value that receives a client identifier.</para>
+    </param>
+    <param name="dwFlags">
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_TMAE_NOACTIVATETIP</b>
+          </description>
+          <description>
+            <para>Text services will not be activated while ITfThreadMgrEx.ActivateEx is called. They will be activated when the calling thread has focus asynchronously.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_SECUREMODE</b>
+          </description>
+          <description>
+            <para>TSF is activated in secure mode. Only text services that support the secure mode will be activated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_UIELEMENTENABLEDONLY</b>
+          </description>
+          <description>
+            <para>TSF activates only text services that are categorized in GUID_TFCAT_TIPCAP_UIELEMENTENABLED.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_COMLESS</b>
+          </description>
+          <description>
+            <para>TSF does not use COM. TSF activate only text services that are categorized in GUID_TFCAT_TIPCAP_COMLESS.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMAE_NOACTIVATEKEYBOARDLAYOUT</b>
+          </description>
+          <description>
+            <para>TSF does not sync the current keyboard layout while ITfThreadMgrEx.ActivateEx() is called. The keyboard layout will be adjusted when the calling thread gets focus. This flag must be used with TF_TMAE_NOACTIVATETIP.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfThreadMgr.Activate " />
+    <seealso cref="ITfThreadMgrEx" />
+  </member>
+  <member name="ITfThreadMgrEx.GetActiveFlags">
+    <summary>
+      <para>The <b>ITfThreadMgrEx.GetActiveFlags</b> method returns the flags TSF is active with.</para>
+    </summary>
+    <param name="lpdwFlags">
+      <para>The pointer to the DWORD value to receives the active flags of TSF.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_TMF_NOACTIVATETIP</b>
+          </description>
+          <description>
+            <para>TSF was activated with the TF_TMAE_NOACTIVATETIP flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_SECUREMODE</b>
+          </description>
+          <description>
+            <para>TSF is running as secure mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_UIELEMENTENABLEDONLY</b>
+          </description>
+          <description>
+            <para>TSF is running with text services that support only UIElement.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_COMLESS</b>
+          </description>
+          <description>
+            <para>TSF is running without COM.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_WOW16</b>
+          </description>
+          <description>
+            <para>TSF is running in 16bit task.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_CONSOLE</b>
+          </description>
+          <description>
+            <para>TSF is running for console.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_TMF_ACTIVATED</b>
+          </description>
+          <description>
+            <para>TSF is active.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfThreadMgrEx">
+    <summary>
+      <para>The <b>ITfThreadMgrEx</b> interface is used by the application to activate the textservices with some flags. ITfThreadMgrEx can be obtained by QI from <see cref="ITfThreadMgr" />.</para>
+    </summary>
+    <seealso cref="ITfThreadMgr " />
+  </member>
+</doc>

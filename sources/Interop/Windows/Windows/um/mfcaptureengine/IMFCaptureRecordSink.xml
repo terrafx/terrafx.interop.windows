@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCaptureRecordSink.GetRotation">
+    <summary>
+      <para>Gets the rotation that is currently being applied to the recorded video stream.</para>
+    </summary>
+    <param name="dwStreamIndex">
+      <para>The zero-based index of the stream. You must specify a video stream.</para>
+    </param>
+    <param name="pdwRotationValue">
+      <para>Receives the image rotation, in degrees.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCaptureRecordSink" />
+  </member>
+  <member name="IMFCaptureRecordSink.SetCustomSink">
+    <summary>
+      <para>Sets a custom media sink for recording.</para>
+    </summary>
+    <param name="pMediaSink">
+      <para>A pointer to the <see cref="IMFMediaSink" /> interface of the media sink.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method overrides the default selection of the media sink for recording.</para>
+    </remarks>
+    <seealso cref="IMFCaptureRecordSink" />
+  </member>
+  <member name="IMFCaptureRecordSink.SetOutputByteStream">
+    <summary>
+      <para>Specifies a byte stream that will receive the data for the recording.</para>
+    </summary>
+    <param name="pByteStream">
+      <para>A pointer to the <see cref="IMFByteStream" /> interface of a byte stream. The byte stream must be writable.</para>
+    </param>
+    <param name="guidContainerType">
+      <para>A GUID that specifies the file container type. Possible values are documented in the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-containertype">MF_TRANSCODE_CONTAINERTYPE</a>  attribute.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Calling this method overrides any previous call to <see cref="IMFCaptureRecordSink.SetOutputFileName" /> or <see cref="IMFCaptureRecordSink.SetSampleCallback" />.</para>
+    </remarks>
+    <seealso cref="IMFCaptureRecordSink" />
+  </member>
+  <member name="IMFCaptureRecordSink.SetOutputFileName">
+    <summary>
+      <para>Specifies the name of the output file for the recording.</para>
+    </summary>
+    <param name="fileName">
+      <para>A null-terminated string that contains the URL of the output file.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The capture engine uses the file name extension to select the container type for the output file. For example, if the file name extension is ."mp4", the capture engine creates an MP4 file.</para>
+      <para>Calling this method overrides any previous call to <see cref="IMFCaptureRecordSink.SetOutputByteStream" /> or <see cref="IMFCaptureRecordSink.SetSampleCallback" />.</para>
+    </remarks>
+    <seealso cref="IMFCaptureRecordSink" />
+  </member>
+  <member name="IMFCaptureRecordSink.SetRotation">
+    <summary>
+      <para>Rotates the recorded video stream.</para>
+    </summary>
+    <param name="dwStreamIndex">
+      <para>The zero-based index of the stream to rotate. You must specify a video stream.</para>
+    </param>
+    <param name="dwRotationValue">
+      <para>The amount to rotate the video, in degrees. Valid values are 0, 90, 180, and 270. The value zero restores the video to its original orientation.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCaptureRecordSink" />
+  </member>
+  <member name="IMFCaptureRecordSink.SetSampleCallback">
+    <summary>
+      <para>Sets a callback to receive the recording data for one stream.</para>
+    </summary>
+    <param name="dwStreamSinkIndex">
+      <para>The zero-based index of the stream. The index is returned in the <i>pdwSinkStreamIndex</i> parameter of the <see cref="IMFCaptureSink.AddStream" /> method.</para>
+    </param>
+    <param name="pCallback">
+      <para>A pointer to the <see cref="IMFCaptureEngineOnSampleCallback" /> interface. The caller must implement this interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Calling this method overrides any previous call to <see cref="IMFCaptureRecordSink.SetOutputByteStream" /> or  <see cref="IMFCaptureRecordSink.SetOutputFileName" />.</para>
+    </remarks>
+    <seealso cref="IMFCaptureRecordSink" />
+  </member>
+  <member name="IMFCaptureRecordSink">
+    <summary>
+      <para>Controls the recording sink. The recording sink creates compressed audio/video files or compressed audio/video streams.</para>
+    </summary>
+    <remarks>
+      <para>The recording sink can deliver samples to one of the following destinations:</para>
+      <list type="bullet">
+        <item>
+          <description>Byte stream.</description>
+        </item>
+        <item>
+          <description>Output file.</description>
+        </item>
+        <item>
+          <description>Application-provided callback interface.</description>
+        </item>
+      </list>
+      <para>The application must specify a single destination. Multiple destinations are not supported. (However, if a callback is used, you can provide a separate callback for each stream.)</para>
+      <para>If the destination is a byte stream or an output file, the application specifies a container type, such as MP4 or ASF. The capture engine then multiplexes the audio and video to produce the format defined by the container type. If the destination is a callback interface, however, the capture engine does not multiplex or otherwise interleave the samples. The callback option gives you the most control over the recorded output, but requires more work by the application.</para>
+      <para>To start the recording, call <see cref="IMFCaptureEngine.StartRecord" />.</para>
+    </remarks>
+    <seealso cref="IMFCaptureSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

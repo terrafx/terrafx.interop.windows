@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ApplicationDestinations.xml' path='doc/member[@name="ApplicationDestinations"]/*' />
 [Guid("86C14003-4D6B-4EF3-A7B4-0506663B2E68")]
 public partial struct ApplicationDestinations
 {

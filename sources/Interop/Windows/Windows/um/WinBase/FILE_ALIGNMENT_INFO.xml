@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_ALIGNMENT_INFO">
+    <summary>
+      <para>Contains alignment information for a file. This structure is returned from the
+<see cref="GetFileInformationByHandleEx" /> function when
+<b>FileAlignmentInfo</b> is passed in the <i>FileInformationClass</i></para>
+      <para>parameter.</para>
+    </summary>
+    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-structures">File Management Structures</seealso>
+    <seealso cref="GetFileInformationByHandleEx" />
+  </member>
+  <member name="FILE_ALIGNMENT_INFO.AlignmentRequirement">
+    <summary>
+      <para>Minimum alignment requirement, in bytes.</para>
+    </summary>
+  </member>
+</doc>

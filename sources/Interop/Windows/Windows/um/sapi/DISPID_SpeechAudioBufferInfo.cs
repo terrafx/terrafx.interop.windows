@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechAudioBufferInfo.xml' path='doc/member[@name="DISPID_SpeechAudioBufferInfo"]/*' />
 public enum DISPID_SpeechAudioBufferInfo
 {
+    /// <include file='DISPID_SpeechAudioBufferInfo.xml' path='doc/member[@name="DISPID_SpeechAudioBufferInfo.DISPID_SABIMinNotification"]/*' />
     DISPID_SABIMinNotification = 1,
+
+    /// <include file='DISPID_SpeechAudioBufferInfo.xml' path='doc/member[@name="DISPID_SpeechAudioBufferInfo.DISPID_SABIBufferSize"]/*' />
     DISPID_SABIBufferSize = (DISPID_SABIMinNotification + 1),
+
+    /// <include file='DISPID_SpeechAudioBufferInfo.xml' path='doc/member[@name="DISPID_SpeechAudioBufferInfo.DISPID_SABIEventBias"]/*' />
     DISPID_SABIEventBias = (DISPID_SABIBufferSize + 1),
 }

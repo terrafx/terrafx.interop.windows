@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster"]/*' />
 [Guid("E3BC42CE-4E5C-11D3-9144-00104BA11C5E")]
 [NativeTypeName("struct IJolietDiscMaster : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface
         return ((delegate* unmanaged<IJolietDiscMaster*, Guid*, void**, int>)(lpVtbl[0]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface
         return ((delegate* unmanaged<IJolietDiscMaster*, uint>)(lpVtbl[1]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface
         return ((delegate* unmanaged<IJolietDiscMaster*, uint>)(lpVtbl[2]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.GetTotalDataBlocks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTotalDataBlocks([NativeTypeName("long *")] int* pnBlocks)
@@ -46,6 +51,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface
         return ((delegate* unmanaged<IJolietDiscMaster*, int*, int>)(lpVtbl[3]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
     }
 
+    /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.GetUsedDataBlocks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetUsedDataBlocks([NativeTypeName("long *")] int* pnBlocks)
@@ -53,6 +59,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface
         return ((delegate* unmanaged<IJolietDiscMaster*, int*, int>)(lpVtbl[4]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
     }
 
+    /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.GetDataBlockSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDataBlockSize([NativeTypeName("long *")] int* pnBlockBytes)
@@ -60,6 +67,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface
         return ((delegate* unmanaged<IJolietDiscMaster*, int*, int>)(lpVtbl[5]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlockBytes);
     }
 
+    /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.AddData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AddData(IStorage* pStorage, [NativeTypeName("long")] int lFileOverwrite)
@@ -67,6 +75,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface
         return ((delegate* unmanaged<IJolietDiscMaster*, IStorage*, int, int>)(lpVtbl[6]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pStorage, lFileOverwrite);
     }
 
+    /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.GetJolietProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetJolietProperties(IPropertyStorage** ppPropStg)
@@ -74,6 +83,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface
         return ((delegate* unmanaged<IJolietDiscMaster*, IPropertyStorage**, int>)(lpVtbl[7]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), ppPropStg);
     }
 
+    /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.SetJolietProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetJolietProperties(IPropertyStorage* pPropStg)

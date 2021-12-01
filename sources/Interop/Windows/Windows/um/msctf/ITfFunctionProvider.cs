@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFunctionProvider.xml' path='doc/member[@name="ITfFunctionProvider"]/*' />
 [Guid("101D6610-0990-11D3-8DF0-00105A2799B5")]
 [NativeTypeName("struct ITfFunctionProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
         return ((delegate* unmanaged<ITfFunctionProvider*, Guid*, void**, int>)(lpVtbl[0]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
         return ((delegate* unmanaged<ITfFunctionProvider*, uint>)(lpVtbl[1]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
         return ((delegate* unmanaged<ITfFunctionProvider*, uint>)(lpVtbl[2]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfFunctionProvider.xml' path='doc/member[@name="ITfFunctionProvider.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetType(Guid* pguid)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
         return ((delegate* unmanaged<ITfFunctionProvider*, Guid*, int>)(lpVtbl[3]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <include file='ITfFunctionProvider.xml' path='doc/member[@name="ITfFunctionProvider.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
         return ((delegate* unmanaged<ITfFunctionProvider*, ushort**, int>)(lpVtbl[4]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), pbstrDesc);
     }
 
+    /// <include file='ITfFunctionProvider.xml' path='doc/member[@name="ITfFunctionProvider.GetFunction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetFunction([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)

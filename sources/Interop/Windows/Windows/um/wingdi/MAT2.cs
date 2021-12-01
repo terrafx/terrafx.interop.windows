@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MAT2.xml' path='doc/member[@name="MAT2"]/*' />
 public partial struct MAT2
 {
+    /// <include file='MAT2.xml' path='doc/member[@name="MAT2.eM11"]/*' />
     public FIXED eM11;
 
+    /// <include file='MAT2.xml' path='doc/member[@name="MAT2.eM12"]/*' />
     public FIXED eM12;
 
+    /// <include file='MAT2.xml' path='doc/member[@name="MAT2.eM21"]/*' />
     public FIXED eM21;
 
+    /// <include file='MAT2.xml' path='doc/member[@name="MAT2.eM22"]/*' />
     public FIXED eM22;
 }

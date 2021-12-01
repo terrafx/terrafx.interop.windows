@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPCATEGORYINFOLIST.xml' path='doc/member[@name="APPCATEGORYINFOLIST"]/*' />
 public unsafe partial struct APPCATEGORYINFOLIST
 {
+    /// <include file='APPCATEGORYINFOLIST.xml' path='doc/member[@name="APPCATEGORYINFOLIST.cCategory"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCategory;
 
+    /// <include file='APPCATEGORYINFOLIST.xml' path='doc/member[@name="APPCATEGORYINFOLIST.pCategoryInfo"]/*' />
     public APPCATEGORYINFO* pCategoryInfo;
 }

@@ -7,12 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MEDIA_ENGINE_PRELOAD.xml' path='doc/member[@name="MF_MEDIA_ENGINE_PRELOAD"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MF_MEDIA_ENGINE_PRELOAD
 {
+    /// <include file='MF_MEDIA_ENGINE_PRELOAD.xml' path='doc/member[@name="MF_MEDIA_ENGINE_PRELOAD.MF_MEDIA_ENGINE_PRELOAD_MISSING"]/*' />
     MF_MEDIA_ENGINE_PRELOAD_MISSING = 0,
+
+    /// <include file='MF_MEDIA_ENGINE_PRELOAD.xml' path='doc/member[@name="MF_MEDIA_ENGINE_PRELOAD.MF_MEDIA_ENGINE_PRELOAD_EMPTY"]/*' />
     MF_MEDIA_ENGINE_PRELOAD_EMPTY = 1,
+
+    /// <include file='MF_MEDIA_ENGINE_PRELOAD.xml' path='doc/member[@name="MF_MEDIA_ENGINE_PRELOAD.MF_MEDIA_ENGINE_PRELOAD_NONE"]/*' />
     MF_MEDIA_ENGINE_PRELOAD_NONE = 2,
+
+    /// <include file='MF_MEDIA_ENGINE_PRELOAD.xml' path='doc/member[@name="MF_MEDIA_ENGINE_PRELOAD.MF_MEDIA_ENGINE_PRELOAD_METADATA"]/*' />
     MF_MEDIA_ENGINE_PRELOAD_METADATA = 3,
+
+    /// <include file='MF_MEDIA_ENGINE_PRELOAD.xml' path='doc/member[@name="MF_MEDIA_ENGINE_PRELOAD.MF_MEDIA_ENGINE_PRELOAD_AUTOMATIC"]/*' />
     MF_MEDIA_ENGINE_PRELOAD_AUTOMATIC = 4,
 }

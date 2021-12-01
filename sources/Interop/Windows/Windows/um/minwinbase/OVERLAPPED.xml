@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OVERLAPPED">
+    <summary>
+      <para>Contains information used in asynchronous (or <i>overlapped</i>) input and output (I/O).</para>
+    </summary>
+    <remarks>
+      <para>Any unused members of this structure should always be initialized to zero before the structure is used in a function call.  Otherwise, the function may fail and return <b>ERROR_INVALID_PARAMETER</b>.</para>
+      <para>The <b>Offset</b> and <b>OffsetHigh</b> members together represent a 64-bit file position. It is a byte offset from the start of the file or file-like device, and it is specified by the user; the system will not modify these values. The calling process must set this member before passing the <b>OVERLAPPED</b> structure to functions that use an offset, such as the
+<see cref="ReadFile" /> or
+<see cref="WriteFile" /> (and related) functions.</para>
+      <para>You can use the
+<see cref="HasOverlappedIoCompleted" /> macro to check whether an asynchronous I/O operation has completed if <see cref="GetOverlappedResult" /> is too cumbersome for your application.</para>
+      <para>You can use the
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/cancelio">CancelIo</a> function to cancel an asynchronous I/O operation.</para>
+      <para>A common mistake is to reuse an <b>OVERLAPPED</b> structure before the previous asynchronous operation has been completed. You should use a separate structure for each request. You should also create an event object for each thread that processes data. If you store the event handles in an array, you could easily wait for all events to be signaled using the <see cref="WaitForMultipleObjects" /> function.</para>
+      <para>For additional information and potential pitfalls of asynchronous I/O usage, see  <see cref="CreateFile" />, <see cref="ReadFile" />, <see cref="WriteFile" />, and related functions.</para>
+      <para>For a general synchronization overview and conceptual <b>OVERLAPPED</b> usage information, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a> and related topics.</para>
+      <para>For a file I/O–oriented overview of synchronous and asynchronous I/O, see <a href="https://docs.microsoft.com//windows/desktop/FileIO/synchronous-and-asynchronous-i-o">Synchronous and Asynchronous I/O</a>.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/ipc/named-pipe-server-using-overlapped-i-o">Named Pipe Server Using Overlapped I/O</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/cancelio">CancelIo</seealso>
+    <seealso cref="CreateFile" />
+    <seealso cref="GetOverlappedResult" />
+    <seealso cref="HasOverlappedIoCompleted" />
+    <seealso cref="ReadFile" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/synchronous-and-asynchronous-i-o">Synchronous and Asynchronous I/O</seealso>
+    <seealso cref="WriteFile" />
+  </member>
+  <member name="OVERLAPPED.Internal">
+    <summary>
+      <para>The status code for the I/O request. When the request is issued, the system sets this member to <b>STATUS_PENDING</b> to indicate that the operation has not yet started.  When the request is completed, the system sets this member to the status code for the completed request.</para>
+      <para>The <b>Internal</b> member was originally reserved for system use and its behavior may change.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED.InternalHigh">
+    <summary>
+      <para>The number of bytes transferred for the I/O request. The system sets this member if the request is completed without errors.</para>
+      <para>The <b>InternalHigh</b> member was originally reserved for system use and its behavior may change.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="OVERLAPPED.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="OVERLAPPED.DUMMYUNIONNAME.DUMMYSTRUCTNAME.Offset">
+    <summary>
+      <para>The low-order portion of the file position at which to start the I/O request, as specified by the user.</para>
+      <para>This member is nonzero only when performing I/O requests on a seeking device that supports the concept of an offset (also referred to as a file pointer mechanism), such as a file. Otherwise, this member must be zero.</para>
+      <para>For additional information, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED.DUMMYUNIONNAME.DUMMYSTRUCTNAME.OffsetHigh">
+    <summary>
+      <para>The high-order portion of the file position at which to start the I/O request, as specified by the user.</para>
+      <para>This member is nonzero only when performing I/O requests on a seeking device that supports the concept of an offset (also referred to as a file pointer mechanism), such as a file. Otherwise, this member must be zero.</para>
+      <para>For additional information, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED.DUMMYUNIONNAME.Pointer">
+    <summary>
+      <para>Reserved for system use; do not use after initialization to zero.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED.hEvent">
+    <summary>
+      <para>A handle to the event that will be set to a signaled state by the system when the operation has completed. The user must initialize this member either to zero or a valid event handle using the <see cref="CreateEvent" /> function before passing this structure to any overlapped functions. This event can then be used to synchronize simultaneous I/O requests for a device. For additional information, see Remarks.</para>
+      <para>Functions such as <see cref="ReadFile" /> and <see cref="WriteFile" /> set this handle to the nonsignaled state before they begin an I/O operation. When the operation has completed, the handle is set to the signaled state.</para>
+      <para>Functions such as <see cref="GetOverlappedResult" /> and the synchronization <a href="https://docs.microsoft.com//windows/desktop/Sync/wait-functions">wait functions</a> reset auto-reset events to the nonsignaled state. Therefore, you should use a manual reset event; if you use an auto-reset event, your application can stop responding if you wait for the operation to complete and then call <b>GetOverlappedResult</b> with the <i>bWait</i> parameter set to <b>TRUE</b>.</para>
+    </summary>
+  </member>
+</doc>

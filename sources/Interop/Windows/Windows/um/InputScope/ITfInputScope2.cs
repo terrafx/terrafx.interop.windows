@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfInputScope2.xml' path='doc/member[@name="ITfInputScope2"]/*' />
 [Guid("5731EAA0-6BC2-4681-A532-92FBB74D7C41")]
 [NativeTypeName("struct ITfInputScope2 : ITfInputScope")]
 [NativeInheritance("ITfInputScope")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
         return ((delegate* unmanaged<ITfInputScope2*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputScope2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
         return ((delegate* unmanaged<ITfInputScope2*, uint>)(lpVtbl[1]))((ITfInputScope2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
         return ((delegate* unmanaged<ITfInputScope2*, uint>)(lpVtbl[2]))((ITfInputScope2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfInputScope.GetInputScopes" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetInputScopes(InputScope** pprgInputScopes, uint* pcCount)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
         return ((delegate* unmanaged<ITfInputScope2*, InputScope**, uint*, int>)(lpVtbl[3]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pprgInputScopes, pcCount);
     }
 
+    /// <inheritdoc cref="ITfInputScope.GetPhrase" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPhrase([NativeTypeName("BSTR **")] ushort*** ppbstrPhrases, uint* pcCount)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
         return ((delegate* unmanaged<ITfInputScope2*, ushort***, uint*, int>)(lpVtbl[4]))((ITfInputScope2*)Unsafe.AsPointer(ref this), ppbstrPhrases, pcCount);
     }
 
+    /// <inheritdoc cref="ITfInputScope.GetRegularExpression" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetRegularExpression([NativeTypeName("BSTR *")] ushort** pbstrRegExp)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
         return ((delegate* unmanaged<ITfInputScope2*, ushort**, int>)(lpVtbl[5]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrRegExp);
     }
 
+    /// <inheritdoc cref="ITfInputScope.GetSRGS" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSRGS([NativeTypeName("BSTR *")] ushort** pbstrSRGS)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
         return ((delegate* unmanaged<ITfInputScope2*, ushort**, int>)(lpVtbl[6]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrSRGS);
     }
 
+    /// <inheritdoc cref="ITfInputScope.GetXML" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetXML([NativeTypeName("BSTR *")] ushort** pbstrXML)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
         return ((delegate* unmanaged<ITfInputScope2*, ushort**, int>)(lpVtbl[7]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrXML);
     }
 
+    /// <include file='ITfInputScope2.xml' path='doc/member[@name="ITfInputScope2.EnumWordList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT EnumWordList(IEnumString** ppEnumString)

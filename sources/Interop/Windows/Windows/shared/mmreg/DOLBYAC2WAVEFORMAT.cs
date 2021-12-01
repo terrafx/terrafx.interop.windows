@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DOLBYAC2WAVEFORMAT.xml' path='doc/member[@name="DOLBYAC2WAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct DOLBYAC2WAVEFORMAT
 {
+    /// <include file='DOLBYAC2WAVEFORMAT.xml' path='doc/member[@name="DOLBYAC2WAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='DOLBYAC2WAVEFORMAT.xml' path='doc/member[@name="DOLBYAC2WAVEFORMAT.nAuxBitsCode"]/*' />
     [NativeTypeName("WORD")]
     public ushort nAuxBitsCode;
 }

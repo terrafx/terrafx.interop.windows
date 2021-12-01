@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable"]/*' />
 [Guid("00000010-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IRunningObjectTable : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         return ((delegate* unmanaged<IRunningObjectTable*, Guid*, void**, int>)(lpVtbl[0]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         return ((delegate* unmanaged<IRunningObjectTable*, uint>)(lpVtbl[1]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         return ((delegate* unmanaged<IRunningObjectTable*, uint>)(lpVtbl[2]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.Register"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Register([NativeTypeName("DWORD")] uint grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, [NativeTypeName("DWORD *")] uint* pdwRegister)
@@ -46,6 +51,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         return ((delegate* unmanaged<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), grfFlags, punkObject, pmkObjectName, pdwRegister);
     }
 
+    /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.Revoke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister)
@@ -53,6 +59,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         return ((delegate* unmanaged<IRunningObjectTable*, uint, int>)(lpVtbl[4]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister);
     }
 
+    /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.IsRunning"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsRunning(IMoniker* pmkObjectName)
@@ -60,6 +67,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, int>)(lpVtbl[5]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName);
     }
 
+    /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.GetObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetObject(IMoniker* pmkObjectName, IUnknown** ppunkObject)
@@ -67,6 +75,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, IUnknown**, int>)(lpVtbl[6]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, ppunkObject);
     }
 
+    /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.NoteChangeTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT NoteChangeTime([NativeTypeName("DWORD")] uint dwRegister, FILETIME* pfiletime)
@@ -74,6 +83,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         return ((delegate* unmanaged<IRunningObjectTable*, uint, FILETIME*, int>)(lpVtbl[7]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister, pfiletime);
     }
 
+    /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.GetTimeOfLastChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetTimeOfLastChange(IMoniker* pmkObjectName, FILETIME* pfiletime)
@@ -81,6 +91,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, FILETIME*, int>)(lpVtbl[8]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, pfiletime);
     }
 
+    /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.EnumRunning"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT EnumRunning(IEnumMoniker** ppenumMoniker)

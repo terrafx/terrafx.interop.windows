@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_FORMAT_CAPS">
+    <summary>
+      <para>Defines capabilities related to input formats for a Microsoft Direct3D 11 video processor.</para>
+    </summary>
+    <remarks>
+      <para>These flags define video processing capabilities that usually are not needed, and that video devices are therefore not required to support.</para>
+      <para>The first three flags relate to RGB support for functions that are normally applied to YCbCr video: deinterlacing, color adjustment, and luma keying. A device that supports these functions for YCbCr is not required  to support them for RGB input. Supporting RGB input for these functions  is  an additional capability, reflected by these constants. Note that the driver might convert the input to another color space, perform the indicated function, and then convert the result back to RGB.</para>
+      <para>Similarly, a device that supports deinterlacing is not required to support deinterlacing of palettized formats. This capability is indicated by the <b>D3D11_VIDEO_PROCESSOR_FORMAT_CAPS_PALETTE_INTERLACED</b> flag.</para>
+    </remarks>
+    <seealso cref="D3D11_VIDEO_PROCESSOR_CAPS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FORMAT_CAPS.D3D11_VIDEO_PROCESSOR_FORMAT_CAPS_RGB_INTERLACED">
+    <summary>
+      <para>The video processor can deinterlace an input stream that contains interlaced RGB video.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FORMAT_CAPS.D3D11_VIDEO_PROCESSOR_FORMAT_CAPS_RGB_PROCAMP">
+    <summary>
+      <para>The video processor can perform color adjustment on RGB video.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FORMAT_CAPS.D3D11_VIDEO_PROCESSOR_FORMAT_CAPS_RGB_LUMA_KEY">
+    <summary>
+      <para>The video processor can perform luma keying on RGB video.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FORMAT_CAPS.D3D11_VIDEO_PROCESSOR_FORMAT_CAPS_PALETTE_INTERLACED">
+    <summary>
+      <para>The video processor can deinterlace input streams with palettized color formats.</para>
+    </summary>
+  </member>
+</doc>

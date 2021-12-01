@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfSystemLangBarItemSink.InitMenu">
+    <summary>
+      <para>Called to allow a system language bar item extension to add items to a system language bar menu.</para>
+    </summary>
+    <param name="pMenu">
+      <para>Pointer to an <see cref="ITfMenu" /> interface that the system language bar item uses to add items to the system language bar menu.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfMenu " />
+    <seealso cref="ITfSystemLangBarItemSink" />
+  </member>
+  <member name="ITfSystemLangBarItemSink.OnMenuSelect">
+    <summary>
+      <para>Called when the user selects an item in the system menu added by the system language bar menu extension.</para>
+    </summary>
+    <param name="wID">
+      <para>Specifies the identifier of the menu item selected. This is the value passed for <i>uId</i> in <see cref="ITfMenu.AddMenuItem" />.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfMenu.AddMenuItem " />
+    <seealso cref="ITfSystemLangBarItemSink" />
+  </member>
+  <member name="ITfSystemLangBarItemSink">
+    <summary>
+      <para>The <b>ITfSystemLangBarItemSink</b> interface is implemented by a system language bar menu extension and used by a system language bar menu (host) to allow menu items to be added to an existing system language bar menu. The extension obtains an instance of this interface by calling QueryInterface on the <see cref="ITfLangBarItem" /> object with IID_ITfSystemLangBarItemSink. It can then pass the object to the host by calling <see cref="ITfSource.AdviseSink" />.</para>
+    </summary>
+    <remarks>
+      <para>A system language bar menu is an object on the language bar that supports menu items added to it by third-partyextensions. The system item must support the <see cref="ITfSource" /> interface and support the IID_ITfSystemLangBarItemSink identifier in its <b>ITfSource.AdviseSink</b> implementation. The system item should also implement the <see cref="ITfSystemLangBarItem" /> interface. The system item uses the <b>ITfSystemLangBarItemSink</b> interface to allow the extension to add its items.</para>
+    </remarks>
+    <seealso cref="ITfLangBarItem " />
+    <seealso cref="ITfSource" />
+    <seealso cref="ITfSource.AdviseSink" />
+    <seealso cref="ITfSystemLangBarItem " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

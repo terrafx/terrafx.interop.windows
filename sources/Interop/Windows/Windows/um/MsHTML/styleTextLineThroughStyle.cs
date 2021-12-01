@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleTextLineThroughStyle.xml' path='doc/member[@name="styleTextLineThroughStyle"]/*' />
 public enum styleTextLineThroughStyle
 {
+    /// <include file='styleTextLineThroughStyle.xml' path='doc/member[@name="styleTextLineThroughStyle.styleTextLineThroughStyleUndefined"]/*' />
     styleTextLineThroughStyleUndefined = 0,
+
+    /// <include file='styleTextLineThroughStyle.xml' path='doc/member[@name="styleTextLineThroughStyle.styleTextLineThroughStyleSingle"]/*' />
     styleTextLineThroughStyleSingle = 1,
+
+    /// <include file='styleTextLineThroughStyle.xml' path='doc/member[@name="styleTextLineThroughStyle.styleTextLineThroughStyleDouble"]/*' />
     styleTextLineThroughStyleDouble = 2,
+
+    /// <include file='styleTextLineThroughStyle.xml' path='doc/member[@name="styleTextLineThroughStyle.styleTextLineThroughStyle_Max"]/*' />
     styleTextLineThroughStyle_Max = 2147483647,
 }

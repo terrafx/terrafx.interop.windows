@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY">
+    <summary>
+      <para>The DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY enumeration specifies the target's connector type.</para>
+    </summary>
+    <remarks>
+      <para>Values with "embedded" in their names indicate that the graphics adapter's video output device connects internally to the display device. In those cases, the DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INTERNAL value is redundant. The caller should ignore DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INTERNAL and just process the embedded values, DISPLAYCONFIG_OUTPUT_TECHNOLOGY_DISPLAYPORT_EMBEDDED and DISPLAYCONFIG_OUTPUT_TECHNOLOGY_UDI_EMBEDDED.</para>
+      <para>An embedded display port or UDI is also known as an integrated display port or UDI.</para>
+    </remarks>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_OTHER">
+    <summary>
+      <para>Indicates a connector that is not one of the types that is indicated by the following enumerators in this enumeration.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_HD15">
+    <summary>
+      <para>Indicates an HD15 (VGA) connector.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_SVIDEO">
+    <summary>
+      <para>Indicates an S-video connector.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_COMPOSITE_VIDEO">
+    <summary>
+      <para>Indicates a composite video connector group.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_COMPONENT_VIDEO">
+    <summary>
+      <para>Indicates a component video connector group.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_DVI">
+    <summary>
+      <para>Indicates a Digital Video Interface (DVI) connector.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_HDMI">
+    <summary>
+      <para>Indicates a High-Definition Multimedia Interface (HDMI) connector.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_LVDS">
+    <summary>
+      <para>Indicates a Low Voltage Differential Swing (LVDS) connector.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_D_JPN">
+    <summary>
+      <para>Indicates a Japanese D connector.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_SDI">
+    <summary>
+      <para>Indicates an SDI connector.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_DISPLAYPORT_EXTERNAL">
+    <summary>
+      <para>Indicates an external display port, which is a display port that connects externally to a display device.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_DISPLAYPORT_EMBEDDED">
+    <summary>
+      <para>Indicates an embedded display port that connects internally to a display device.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_UDI_EXTERNAL">
+    <summary>
+      <para>Indicates an external Unified Display Interface (UDI), which is a UDI that connects externally to a display device.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_UDI_EMBEDDED">
+    <summary>
+      <para>Indicates an embedded UDI that connects internally to a display device.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_SDTVDONGLE">
+    <summary>
+      <para>Indicates a dongle cable that supports standard definition television (SDTV).</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_MIRACAST">
+    <summary>
+      <para>Indicates that the VidPN target is  a Miracast wireless display device.</para>
+      <para>Supported starting in Windows 8.1.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INDIRECT_WIRED">
+    <summary></summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INDIRECT_VIRTUAL">
+    <summary></summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INTERNAL">
+    <summary>
+      <para>Indicates that the video output device connects internally to a display device (for example, the internal connection in a laptop computer).</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_FORCE_UINT32">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</para>
+    </summary>
+  </member>
+</doc>

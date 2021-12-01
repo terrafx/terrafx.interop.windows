@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfCompartmentEventSink.OnChange">
+    <summary>
+      <para>Called when compartment data changes.</para>
+    </summary>
+    <param name="rguid">
+      <para>Contains a GUID that identifies the compartment that changed.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>When this method is called, the data has changed. The new data can be obtained at this time by calling <see cref="ITfCompartment.GetValue" />.</para>
+      <para>
+        <see cref="ITfCompartment.SetValue" /> will return E_UNEXPECTED if called from within this notification.</para>
+    </remarks>
+    <seealso cref="ITfCompartment.GetValue" />
+    <seealso cref="ITfCompartment.SetValue" />
+    <seealso cref="ITfCompartmentEventSink interface" />
+  </member>
+  <member name="ITfCompartmentEventSink">
+    <summary>
+      <para>The <b>ITfCompartmentEventSink</b> interface is implemented by a client (application or text service) and used by the TSF manager to notify the client when compartment data changes. This notification sink is installed by obtaining an <see cref="ITfSource" /> interface from the <see cref="ITfCompartment" /> object and calling <see cref="ITfSource.AdviseSink" /> with IID_ITfCompartmentEventSink and a pointer to the <b>ITfCompartmentEventSink</b> object.</para>
+    </summary>
+  </member>
+</doc>

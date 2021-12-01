@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_ACCESS_DESCRIPTION">
+    <summary>
+      <para>The <b>CERT_ACCESS_DESCRIPTION</b> structure is a member of a
+<see cref="CERT_AUTHORITY_INFO_ACCESS" /> structure. It contains one instance of information about how to access information and services for either the subject or the issuer of a certificate that contains either the subject information access or the authority information access extension, respectively. For more information about these certificate extensions, see <a href="https://www.ietf.org/rfc/rfc3280.txt">RFC 3280</a>.</para>
+    </summary>
+    <seealso cref="CERT_AUTHORITY_INFO_ACCESS" />
+    <seealso href="https://www.ietf.org/rfc/rfc3280.txt">RFC 3280</seealso>
+  </member>
+  <member name="CERT_ACCESS_DESCRIPTION.pszAccessMethod">
+    <summary>
+      <para>Specifies the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) for the method of access.</para>
+      <para>The following are currently defined PKIX Access Method OIDs:</para>
+      <list type="bullet">
+        <item>
+          <description>szOID_PKIX_CA_ISSUERS</description>
+        </item>
+        <item>
+          <description>szOID_PKIX_CA_REPOSITORY</description>
+        </item>
+        <item>
+          <description>szOID_PKIX_OCSP</description>
+        </item>
+        <item>
+          <description>szOID_PKIX_TIME_STAMPING</description>
+        </item>
+      </list>
+      <para>The default provider does not support the szOID_PKIX_TIME_STAMPING method.</para>
+    </summary>
+  </member>
+  <member name="CERT_ACCESS_DESCRIPTION.AccessLocation">
+    <summary>
+      <para>
+        <see cref="CERT_ALT_NAME_ENTRY" /> structure that describes the online status server and the access protocol to obtain current certificate status information for the certificate containing the extension.</para>
+      <para>For the szOID_PKIX_OCSP access method, <b>AccessLocation</b> describes the online status server and the access protocol needed to obtain status information about the certificate containing this extension.</para>
+      <para>For the szOID_PKIX_CA_ISSUERS access method, <b>AccessLocation</b> obtains information on the CAs that issued certificates superior to the CA that issued the certificate containing this extension. The CA issuer's description is intended to aid certificate users in the selection of a certification path that terminates at a point trusted by the certificate user.</para>
+      <para>For the szOID_PKIX_CA_REPOSITORY method, <b>AccessLocation</b> specifies either the URI, directory name, or email address of the certificate and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL) repository for a  subject that is a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a> (CA).</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyDescriptionRelatedPropertyInfo.GetRelatedProperty">
+    <summary>
+      <para>Retrieves an <see cref="IPropertyDescription" /> object that represents the related property.</para>
+    </summary>
+    <param name="pszRelationshipName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a string that contains the relationship of the property to get.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to retrieve through the <i>ppv</i> parameter, typically IID_IPropertyDescription.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>Receives the interface pointer requested in the parameter. This is typically <see cref="IPropertyDescription" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>We recommend that you use the <see cref="IID_PPV_ARGS" /> macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error in <i>riid</i> that could lead to unexpected results.</para>
+    </remarks>
+    <seealso cref="IPropertyDescriptionRelatedPropertyInfo" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+  </member>
+  <member name="IPropertyDescriptionRelatedPropertyInfo">
+    <summary>
+      <para>Provides a method that retrieves an <see cref="IPropertyDescription" /> interface.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>Do not implement this interface. There is only one implementation of <see cref="IPropertyDescriptionRelatedPropertyInfo" /> in the system; it is provided by the Shell.</para>
+      <para>Only one property description exists for each property in the system.</para>
+    </remarks>
+    <seealso cref="IPropertyDescription" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+  </member>
+</doc>

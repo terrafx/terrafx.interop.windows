@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMS_DH_KEY_INFO">
+    <summary>
+      <para>The <b>CMS_DH_KEY_INFO</b> structure is used with the <b>KP_CMS_DH_KEY_INFO</b> parameter in the <see cref="CryptSetKeyParam" /> function to contain <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">Diffie-Hellman</a> key information.</para>
+    </summary>
+    <seealso cref="CryptSetKeyParam" />
+  </member>
+  <member name="CMS_DH_KEY_INFO.dwVersion">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CMS_DH_KEY_INFO.Algid">
+    <summary>
+      <para>One of the <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/alg-id">ALG_ID</a> values that identifies the algorithm for the key to be converted.</para>
+    </summary>
+  </member>
+  <member name="CMS_DH_KEY_INFO.pszContentEncObjId">
+    <summary>
+      <para>The address of a null-terminated ANSI string that contains the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) of the content encryption algorithm.</para>
+    </summary>
+  </member>
+  <member name="CMS_DH_KEY_INFO.PubInfo">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains additional public information. This member is optional and the <b>cbData</b> member of this structure can be zero if this is not needed.</para>
+    </summary>
+  </member>
+  <member name="CMS_DH_KEY_INFO.pReserved">
+    <summary>
+      <para>Reserved for future use and must be <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoMinQP.xml' path='doc/member[@name="CODECAPI_AVEncVideoMinQP"]/*' />
 [Guid("0EE22C6A-A37C-4568-B5F1-9D4C2B3AB886")]
 public partial struct CODECAPI_AVEncVideoMinQP
 {

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA">
+    <summary>
+      <para>The <b>CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA</b> structure is used to delete an unauthenticated attribute of a signer of a signed message. This structure is passed to
+<see cref="CryptMsgControl" /> if the <i>dwCrlType</i> parameter is <b>CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR</b>.</para>
+    </summary>
+    <seealso cref="CryptMsgControl" />
+  </member>
+  <member name="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA.cbSize">
+    <summary>
+      <para>Size of this structure in bytes.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA.dwSignerIndex">
+    <summary>
+      <para>Index of the signer in the <b>rgSigners</b> array of pointers to <see cref="CMSG_SIGNER_ENCODE_INFO" /> structures in a signed message's <see cref="CMSG_SIGNED_ENCODE_INFO" /> structure. The unauthenticated attribute for this signer is deleted.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA.dwUnauthAttrIndex">
+    <summary>
+      <para>Index of the element in the <b>rgUnauthAttr</b> array of the <see cref="CMSG_SIGNER_ENCODE_INFO" /> structure holding the unauthenticated attribute to be removed.</para>
+    </summary>
+  </member>
+</doc>

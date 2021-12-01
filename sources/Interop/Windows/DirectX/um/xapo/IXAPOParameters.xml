@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IXAPOParameters.GetParameters">
+    <summary>
+      <para>Gets the current values for any effect-specific parameters.</para>
+    </summary>
+    <param name="pParameters">
+      <para>Receives an effect-specific parameter block.</para>
+    </param>
+    <param name="ParameterByteSize">
+      <para>Size of pParameters, in bytes.</para>
+    </param>
+    <remarks>
+      <para>The data in <i>pParameters</i> is completely effect-specific and determined by the implementation of the <b>IXAPOParameters.GetParameters</b> function. The data returned in <i>pParameters</i> can be used to provide information about the current state of the XAPO.</para>
+      <para>Unlike SetParameters, XAudio2 does not call this method on the realtime audio processing thread. Thus, the XAPO must protect variables shared with <see cref="IXAPOParameters.SetParameters" /> or <see cref="IXAPO.Process" /> using appropriate synchronization. The <a href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapoparametersbase">CXAPOParametersBase</a> class is an implementation of <see cref="IXAPOParameters" /> and its implementation of <b>GetParameters</b> efficiently handles this synchronization for the user.</para>
+      <para>XAudio2 calls this method from the <see cref="IXAudio2Voice.GetEffectParameters" /> method.</para>
+      <para>This method may block and should never be called from the realtime audio processing thread instead get the current parameters from <see cref="CXAPOParametersBase.BeginProcess" />.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAPOParameters" />
+    <seealso cref="IXAudio2Voice.GetEffectParameters" />
+  </member>
+  <member name="IXAPOParameters.SetParameters">
+    <summary>
+      <para>Sets effect-specific parameters.</para>
+    </summary>
+    <param name="pParameters">
+      <para>Effect-specific parameter block.</para>
+    </param>
+    <param name="ParameterByteSize">
+      <para>Size of pParameters, in bytes.</para>
+    </param>
+    <remarks>
+      <para>The data in <i>pParameters</i> is completely effect-specific and determined by the implementation of the <b>IXAPOParameters.SetParameters</b> function. The data passed to <b>SetParameters</b> can be used to set the state of the XAPO and control the behavior of the <see cref="IXAPO.Process" /> function.</para>
+      <para>
+        <b>SetParameters</b> can only be called on the real-time audio processing thread; no synchronization between <b>SetParameters</b> and the <see cref="IXAPO.Process" /> method is necessary. However, the <see cref="IXAudio2Voice.SetEffectParameters" /> method may be called from any thread as it adds in the required synchronization to deliver a copy (asynchronously) of the parameters to <b>SetParameters</b> on the real-time thread; no synchronization between <b>IXAudio2Voice.SetEffectParameters</b> and the <b>IXAPO.Process</b> method is necessary.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAPOParameters" />
+    <seealso cref="IXAudio2Voice.SetEffectParameters" />
+  </member>
+  <member name="IXAPOParameters">
+    <summary>
+      <para>An optional interface that allows an XAPO to use effect-specific parameters.</para>
+    </summary>
+    <remarks>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/interfaces">Interfaces</seealso>
+  </member>
+</doc>

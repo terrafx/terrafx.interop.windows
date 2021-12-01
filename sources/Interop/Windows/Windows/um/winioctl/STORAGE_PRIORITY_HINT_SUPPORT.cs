@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_PRIORITY_HINT_SUPPORT.xml' path='doc/member[@name="STORAGE_PRIORITY_HINT_SUPPORT"]/*' />
 public partial struct STORAGE_PRIORITY_HINT_SUPPORT
 {
+    /// <include file='STORAGE_PRIORITY_HINT_SUPPORT.xml' path='doc/member[@name="STORAGE_PRIORITY_HINT_SUPPORT.SupportFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint SupportFlags;
 }

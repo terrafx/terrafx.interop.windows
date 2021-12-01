@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INTERACTION_ID">
+    <summary>
+      <para>Specifies the interaction states used for configuring an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object. Interactions can be static (single contact with no manipulation, such as tap, double tap, right tap, press and hold) or dynamic (one or more contacts with manipulation, such as translation, rotation, or scaling).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_context_configuration">INTERACTION_CONTEXT_CONFIGURATION</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setinteractionconfigurationinteractioncontext">SetInteractionConfigurationInteractionContext</seealso>
+  </member>
+  <member name="INTERACTION_ID.INTERACTION_ID_NONE">
+    <summary>
+      <para>Not used.</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_ID.INTERACTION_ID_MANIPULATION">
+    <summary>
+      <para>A compound gesture that supports translation, rotation, and scaling (dynamic).</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_ID.INTERACTION_ID_TAP">
+    <summary>
+      <para>A tap gesture (static).</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_ID.INTERACTION_ID_SECONDARY_TAP">
+    <summary>
+      <para>A right click gesture (static), regardless of input device. Typically used for displaying a context menu.</para>
+      <list type="bullet">
+        <item>
+          <description>Right mouse button click</description>
+        </item>
+        <item>
+          <description>Pen barrel button click</description>
+        </item>
+        <item>
+          <description>Touch or pen press and hold</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="INTERACTION_ID.INTERACTION_ID_HOLD">
+    <summary>
+      <para>Press and hold gesture (static).</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_ID.INTERACTION_ID_DRAG">
+    <summary>
+      <para>Move with mouse or pen (dynamic).</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_ID.INTERACTION_ID_CROSS_SLIDE">
+    <summary>
+      <para>Select or move through slide or swipe gestures (dynamic).</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_ID.INTERACTION_ID_MAX">
+    <summary>
+      <para>Maximum number of interactions exceeded.</para>
+    </summary>
+  </member>
+</doc>

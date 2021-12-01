@@ -10,6 +10,7 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRSurfaceAllocator.xml' path='doc/member[@name="IVMRSurfaceAllocator"]/*' />
 [Guid("31CE832E-4484-458B-8CCA-F4D7E3DB0B52")]
 [NativeTypeName("struct IVMRSurfaceAllocator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
         return ((delegate* unmanaged<IVMRSurfaceAllocator*, Guid*, void**, int>)(lpVtbl[0]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
         return ((delegate* unmanaged<IVMRSurfaceAllocator*, uint>)(lpVtbl[1]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
         return ((delegate* unmanaged<IVMRSurfaceAllocator*, uint>)(lpVtbl[2]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRSurfaceAllocator.xml' path='doc/member[@name="IVMRSurfaceAllocator.AllocateSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AllocateSurface([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRALLOCATIONINFO* lpAllocInfo, [NativeTypeName("DWORD *")] uint* lpdwActualBuffers, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface)
@@ -47,6 +52,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
         return ((delegate* unmanaged<IVMRSurfaceAllocator*, nuint, VMRALLOCATIONINFO*, uint*, IDirectDrawSurface7**, int>)(lpVtbl[3]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwUserID, lpAllocInfo, lpdwActualBuffers, lplpSurface);
     }
 
+    /// <include file='IVMRSurfaceAllocator.xml' path='doc/member[@name="IVMRSurfaceAllocator.FreeSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT FreeSurface([NativeTypeName("DWORD_PTR")] nuint dwID)
@@ -54,6 +60,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
         return ((delegate* unmanaged<IVMRSurfaceAllocator*, nuint, int>)(lpVtbl[4]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwID);
     }
 
+    /// <include file='IVMRSurfaceAllocator.xml' path='doc/member[@name="IVMRSurfaceAllocator.PrepareSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT PrepareSurface([NativeTypeName("DWORD_PTR")] nuint dwUserID, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* lpSurface, [NativeTypeName("DWORD")] uint dwSurfaceFlags)
@@ -61,6 +68,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
         return ((delegate* unmanaged<IVMRSurfaceAllocator*, nuint, IDirectDrawSurface7*, uint, int>)(lpVtbl[5]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwUserID, lpSurface, dwSurfaceFlags);
     }
 
+    /// <include file='IVMRSurfaceAllocator.xml' path='doc/member[@name="IVMRSurfaceAllocator.AdviseNotify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AdviseNotify(IVMRSurfaceAllocatorNotify* lpIVMRSurfAllocNotify)

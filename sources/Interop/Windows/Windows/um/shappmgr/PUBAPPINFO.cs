@@ -5,22 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PUBAPPINFO.xml' path='doc/member[@name="PUBAPPINFO"]/*' />
 public unsafe partial struct PUBAPPINFO
 {
+    /// <include file='PUBAPPINFO.xml' path='doc/member[@name="PUBAPPINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='PUBAPPINFO.xml' path='doc/member[@name="PUBAPPINFO.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='PUBAPPINFO.xml' path='doc/member[@name="PUBAPPINFO.pszSource"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszSource;
 
+    /// <include file='PUBAPPINFO.xml' path='doc/member[@name="PUBAPPINFO.stAssigned"]/*' />
     public SYSTEMTIME stAssigned;
 
+    /// <include file='PUBAPPINFO.xml' path='doc/member[@name="PUBAPPINFO.stPublished"]/*' />
     public SYSTEMTIME stPublished;
 
+    /// <include file='PUBAPPINFO.xml' path='doc/member[@name="PUBAPPINFO.stScheduled"]/*' />
     public SYSTEMTIME stScheduled;
 
+    /// <include file='PUBAPPINFO.xml' path='doc/member[@name="PUBAPPINFO.stExpire"]/*' />
     public SYSTEMTIME stExpire;
 }

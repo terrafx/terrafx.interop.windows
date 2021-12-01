@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_ATTRIBUTE">
+    <summary>
+      <para>The <b>CRYPT_ATTRIBUTE</b> structure specifies an attribute that has one or more values.</para>
+    </summary>
+    <seealso cref="CERT_REQUEST_INFO" />
+    <seealso cref="CMSG_SIGNER_ENCODE_INFO" />
+    <seealso cref="CRYPT_ATTRIBUTES" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CRYPT_SIGN_MESSAGE_PARA" />
+    <seealso cref="CRYPT_TIME_STAMP_REQUEST_INFO" />
+    <seealso cref="CertFindAttribute" />
+  </member>
+  <member name="CRYPT_ATTRIBUTE.pszObjId">
+    <summary>
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) that specifies the type of data contained in the <b>rgValue</b> array.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_ATTRIBUTE.cValue">
+    <summary>
+      <para>A <b>DWORD</b>  value that indicates the number of elements in the <b>rgValue</b> array.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_ATTRIBUTE.rgValue">
+    <summary>
+      <para>Pointer to an array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structures. The <b>cbData</b> member of the <b>CRYPT_INTEGER_BLOB</b> structure indicates the length of the <b>pbData</b> member. The <b>pbData</b> member contains the attribute information.</para>
+    </summary>
+  </member>
+</doc>

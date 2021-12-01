@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext"]/*' />
 [Guid("580AA49D-7E1E-4809-B8E2-57DA806104B8")]
 [NativeTypeName("struct ISpeechRecoContext : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, uint>)(lpVtbl[1]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, uint>)(lpVtbl[2]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, uint*, int>)(lpVtbl[3]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_Recognizer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Recognizer(ISpeechRecognizer** Recognizer)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, ISpeechRecognizer**, int>)(lpVtbl[7]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), Recognizer);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_AudioInputInterferenceStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_AudioInputInterferenceStatus(SpeechInterference* Interference)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, SpeechInterference*, int>)(lpVtbl[8]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), Interference);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_RequestedUIType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_RequestedUIType([NativeTypeName("BSTR *")] ushort** UIType)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, ushort**, int>)(lpVtbl[9]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), UIType);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.putref_Voice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT putref_Voice(ISpeechVoice* Voice)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, ISpeechVoice*, int>)(lpVtbl[10]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), Voice);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_Voice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_Voice(ISpeechVoice** Voice)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, ISpeechVoice**, int>)(lpVtbl[11]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), Voice);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.put_AllowVoiceFormatMatchingOnNextSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_AllowVoiceFormatMatchingOnNextSet([NativeTypeName("VARIANT_BOOL")] short Allow)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, short, int>)(lpVtbl[12]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), Allow);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_AllowVoiceFormatMatchingOnNextSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_AllowVoiceFormatMatchingOnNextSet([NativeTypeName("VARIANT_BOOL *")] short* pAllow)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, short*, int>)(lpVtbl[13]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), pAllow);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.put_VoicePurgeEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_VoicePurgeEvent(SpeechRecoEvents EventInterest)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, SpeechRecoEvents, int>)(lpVtbl[14]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), EventInterest);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_VoicePurgeEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_VoicePurgeEvent(SpeechRecoEvents* EventInterest)
@@ -130,6 +147,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, SpeechRecoEvents*, int>)(lpVtbl[15]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), EventInterest);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.put_EventInterests"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_EventInterests(SpeechRecoEvents EventInterest)
@@ -137,6 +155,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, SpeechRecoEvents, int>)(lpVtbl[16]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), EventInterest);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_EventInterests"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_EventInterests(SpeechRecoEvents* EventInterest)
@@ -144,6 +163,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, SpeechRecoEvents*, int>)(lpVtbl[17]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), EventInterest);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.put_CmdMaxAlternates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT put_CmdMaxAlternates([NativeTypeName("long")] int MaxAlternates)
@@ -151,6 +171,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, int, int>)(lpVtbl[18]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), MaxAlternates);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_CmdMaxAlternates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_CmdMaxAlternates([NativeTypeName("long *")] int* MaxAlternates)
@@ -158,6 +179,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, int*, int>)(lpVtbl[19]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), MaxAlternates);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.put_State"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT put_State(SpeechRecoContextState State)
@@ -165,6 +187,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, SpeechRecoContextState, int>)(lpVtbl[20]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), State);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_State"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_State(SpeechRecoContextState* State)
@@ -172,6 +195,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, SpeechRecoContextState*, int>)(lpVtbl[21]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), State);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.put_RetainedAudio"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT put_RetainedAudio(SpeechRetainedAudioOptions Option)
@@ -179,6 +203,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, SpeechRetainedAudioOptions, int>)(lpVtbl[22]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), Option);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_RetainedAudio"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_RetainedAudio(SpeechRetainedAudioOptions* Option)
@@ -186,6 +211,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, SpeechRetainedAudioOptions*, int>)(lpVtbl[23]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), Option);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.putref_RetainedAudioFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT putref_RetainedAudioFormat(ISpeechAudioFormat* Format)
@@ -193,6 +219,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, ISpeechAudioFormat*, int>)(lpVtbl[24]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), Format);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_RetainedAudioFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT get_RetainedAudioFormat(ISpeechAudioFormat** Format)
@@ -200,6 +227,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, ISpeechAudioFormat**, int>)(lpVtbl[25]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), Format);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT Pause()
@@ -207,6 +235,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, int>)(lpVtbl[26]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.Resume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT Resume()
@@ -214,6 +243,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, int>)(lpVtbl[27]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.CreateGrammar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT CreateGrammar(VARIANT GrammarId, ISpeechRecoGrammar** Grammar)
@@ -221,6 +251,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, VARIANT, ISpeechRecoGrammar**, int>)(lpVtbl[28]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), GrammarId, Grammar);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.CreateResultFromMemory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT CreateResultFromMemory(VARIANT* ResultBlock, ISpeechRecoResult** Result)
@@ -228,6 +259,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, VARIANT*, ISpeechRecoResult**, int>)(lpVtbl[29]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), ResultBlock, Result);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.Bookmark"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT Bookmark(SpeechBookmarkOptions Options, VARIANT StreamPos, VARIANT BookmarkId)
@@ -235,6 +267,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
         return ((delegate* unmanaged<ISpeechRecoContext*, SpeechBookmarkOptions, VARIANT, VARIANT, int>)(lpVtbl[30]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), Options, StreamPos, BookmarkId);
     }
 
+    /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.SetAdaptationData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT SetAdaptationData([NativeTypeName("BSTR")] ushort* AdaptationString)

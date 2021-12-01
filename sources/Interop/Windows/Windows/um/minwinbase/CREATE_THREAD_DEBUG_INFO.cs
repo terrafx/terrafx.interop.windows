@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREATE_THREAD_DEBUG_INFO.xml' path='doc/member[@name="CREATE_THREAD_DEBUG_INFO"]/*' />
 public unsafe partial struct CREATE_THREAD_DEBUG_INFO
 {
+    /// <include file='CREATE_THREAD_DEBUG_INFO.xml' path='doc/member[@name="CREATE_THREAD_DEBUG_INFO.hThread"]/*' />
     public HANDLE hThread;
 
+    /// <include file='CREATE_THREAD_DEBUG_INFO.xml' path='doc/member[@name="CREATE_THREAD_DEBUG_INFO.lpThreadLocalBase"]/*' />
     [NativeTypeName("LPVOID")]
     public void* lpThreadLocalBase;
 
+    /// <include file='CREATE_THREAD_DEBUG_INFO.xml' path='doc/member[@name="CREATE_THREAD_DEBUG_INFO.lpStartAddress"]/*' />
     [NativeTypeName("LPTHREAD_START_ROUTINE")]
     public delegate* unmanaged<void*, uint> lpStartAddress;
 }

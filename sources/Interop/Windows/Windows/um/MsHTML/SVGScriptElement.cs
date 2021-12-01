@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGScriptElement.xml' path='doc/member[@name="SVGScriptElement"]/*' />
 [Guid("305105E1-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGScriptElement
 {

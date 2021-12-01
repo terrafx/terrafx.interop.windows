@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10BlendState1.GetDesc1">
+    <summary>
+      <para>Get the blend state.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b><see cref="D3D10_BLEND_DESC1" />*</b></para>
+      <para>A pointer to the blend state (see <see cref="D3D10_BLEND_DESC1" />).</para>
+    </param>
+    <remarks>
+      <para>This method requires Windows Vista Service Pack 1.</para>
+    </remarks>
+    <seealso cref="ID3D10BlendState1 Interface" />
+  </member>
+  <member name="ID3D10BlendState1">
+    <summary>
+      <para>This blend-state interface accesses blending state for a Direct3D 10.1 device for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger</a> stage.</para>
+    </summary>
+    <remarks>
+      <para>Blending combines two pixel values. You have control over how the pixels are blended by using a predefined set of blending operations, as well as preblending operations. The <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">Blending Block Diagram</a> shows conceptually how blending works.</para>
+      <para>To create a blend-state interface, call <see cref="ID3D10Device1.CreateBlendState1" />. To initialize the blend state, call <see cref="ID3D10Device.OMSetBlendState" />.</para>
+      <para>This method requires Windows Vista Service Pack 1.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D10BlendState" />
+  </member>
+</doc>

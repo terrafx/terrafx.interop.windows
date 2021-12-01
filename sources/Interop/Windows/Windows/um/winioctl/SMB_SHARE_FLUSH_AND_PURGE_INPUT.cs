@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SMB_SHARE_FLUSH_AND_PURGE_INPUT.xml' path='doc/member[@name="SMB_SHARE_FLUSH_AND_PURGE_INPUT"]/*' />
 public partial struct SMB_SHARE_FLUSH_AND_PURGE_INPUT
 {
+    /// <include file='SMB_SHARE_FLUSH_AND_PURGE_INPUT.xml' path='doc/member[@name="SMB_SHARE_FLUSH_AND_PURGE_INPUT.Version"]/*' />
     [NativeTypeName("WORD")]
     public ushort Version;
 }

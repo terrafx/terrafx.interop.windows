@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSS_DUPLICATE_FLAGS">
+    <summary>
+      <para>Duplication flags for use by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssduplicatesnapshot">PssDuplicateSnapshot</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="PSS_DUPLICATE_FLAGS.PSS_DUPLICATE_NONE">
+    <summary>
+      <para>No flag.</para>
+    </summary>
+  </member>
+  <member name="PSS_DUPLICATE_FLAGS.PSS_DUPLICATE_CLOSE_SOURCE">
+    <summary>
+      <para>Free the source handle. This will only succeed if you set the  <b>PSS_CREATE_USE_VM_ALLOCATIONS</b> flag when you called <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psscapturesnapshot">PssCaptureSnapshot</a> to create the snapshot and handle. The handle will be freed  even if duplication fails.
+The close operation does not protect against concurrent access to the same descriptor.</para>
+    </summary>
+  </member>
+</doc>

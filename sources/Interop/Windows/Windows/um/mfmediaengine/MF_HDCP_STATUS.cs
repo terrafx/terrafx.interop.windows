@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_HDCP_STATUS.xml' path='doc/member[@name="MF_HDCP_STATUS"]/*' />
 public enum MF_HDCP_STATUS
 {
+    /// <include file='MF_HDCP_STATUS.xml' path='doc/member[@name="MF_HDCP_STATUS.MF_HDCP_STATUS_ON"]/*' />
     MF_HDCP_STATUS_ON = 0,
+
+    /// <include file='MF_HDCP_STATUS.xml' path='doc/member[@name="MF_HDCP_STATUS.MF_HDCP_STATUS_OFF"]/*' />
     MF_HDCP_STATUS_OFF = 1,
+
+    /// <include file='MF_HDCP_STATUS.xml' path='doc/member[@name="MF_HDCP_STATUS.MF_HDCP_STATUS_ON_WITH_TYPE_ENFORCEMENT"]/*' />
     MF_HDCP_STATUS_ON_WITH_TYPE_ENFORCEMENT = 2,
 }

@@ -7,12 +7,16 @@ namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct SID
 {
+    /// <include file='SID.xml' path='doc/member[@name="SID.Revision"]/*' />
     public byte Revision;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SubAuthorityCount"]/*' />
     public byte SubAuthorityCount;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.IdentifierAuthority"]/*' />
     public SID_IDENTIFIER_AUTHORITY IdentifierAuthority;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SubAuthority"]/*' />
     [NativeTypeName("DWORD [1]")]
     public fixed uint SubAuthority[1];
 

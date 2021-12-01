@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHttpNegotiate.xml' path='doc/member[@name="IHttpNegotiate"]/*' />
 [Guid("79EAC9D2-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IHttpNegotiate : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHttpNegotiate : IHttpNegotiate.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHttpNegotiate : IHttpNegotiate.Interface
         return ((delegate* unmanaged<IHttpNegotiate*, Guid*, void**, int>)(lpVtbl[0]))((IHttpNegotiate*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHttpNegotiate : IHttpNegotiate.Interface
         return ((delegate* unmanaged<IHttpNegotiate*, uint>)(lpVtbl[1]))((IHttpNegotiate*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHttpNegotiate : IHttpNegotiate.Interface
         return ((delegate* unmanaged<IHttpNegotiate*, uint>)(lpVtbl[2]))((IHttpNegotiate*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHttpNegotiate.xml' path='doc/member[@name="IHttpNegotiate.BeginningTransaction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginningTransaction([NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("LPCWSTR")] ushort* szHeaders, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalHeaders)
@@ -46,6 +51,7 @@ public unsafe partial struct IHttpNegotiate : IHttpNegotiate.Interface
         return ((delegate* unmanaged<IHttpNegotiate*, ushort*, ushort*, uint, ushort**, int>)(lpVtbl[3]))((IHttpNegotiate*)Unsafe.AsPointer(ref this), szURL, szHeaders, dwReserved, pszAdditionalHeaders);
     }
 
+    /// <include file='IHttpNegotiate.xml' path='doc/member[@name="IHttpNegotiate.OnResponse"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnResponse([NativeTypeName("DWORD")] uint dwResponseCode, [NativeTypeName("LPCWSTR")] ushort* szResponseHeaders, [NativeTypeName("LPCWSTR")] ushort* szRequestHeaders, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalRequestHeaders)

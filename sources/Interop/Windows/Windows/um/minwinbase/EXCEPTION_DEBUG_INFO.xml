@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EXCEPTION_DEBUG_INFO">
+    <summary>
+      <para>Contains exception information that can be used by a debugger.</para>
+    </summary>
+    <seealso cref="DEBUG_EVENT" />
+    <seealso cref="EXCEPTION_RECORD" />
+  </member>
+  <member name="EXCEPTION_DEBUG_INFO.ExceptionRecord">
+    <summary>
+      <para>An
+<see cref="EXCEPTION_RECORD" /> structure with information specific to the exception. This includes the exception code, flags, address, a pointer to a related exception, extra parameters, and so on.</para>
+    </summary>
+  </member>
+  <member name="EXCEPTION_DEBUG_INFO.dwFirstChance">
+    <summary>
+      <para>A value that indicates whether the debugger has previously encountered the exception specified by the <b>ExceptionRecord</b> member. If the <b>dwFirstChance</b> member is nonzero, this is the first time the debugger has encountered the exception. Debuggers typically handle breakpoint and single-step exceptions when they are first encountered. If this member is zero, the debugger has previously encountered the exception. This occurs only if, during the search for structured exception handlers, either no handler was found or the exception was continued.</para>
+    </summary>
+  </member>
+</doc>

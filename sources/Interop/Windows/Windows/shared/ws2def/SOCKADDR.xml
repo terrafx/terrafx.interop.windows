@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SOCKADDR">
+    <summary>
+      <para>The SOCKADDR structure is a generic structure that specifies a transport address.</para>
+    </summary>
+    <remarks>
+      <para>The SOCKADDR structure is large enough to contain a transport address for most address families. For a
+structure that is guaranteed to be large enough to contain a transport address for all possible address
+families, see
+<see cref="SOCKADDR_STORAGE" />.</para>
+      <para>A WSK application typically does not access the
+<b>sa_data</b> member directly. Instead, a pointer to a SOCKADDR structure is normally cast to a pointer
+to the specific SOCKADDR structure type that corresponds to a particular address family.</para>
+    </remarks>
+    <seealso cref="SOCKADDR_STORAGE" />
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_datagram_indication">WSK_DATAGRAM_INDICATION</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept">WskAccept</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept_event">WskAcceptEvent</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_bind">WskBind</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_connect">WskConnect</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_get_local_address">WskGetLocalAddress</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_get_remote_address">WskGetRemoteAddress</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_inspect_event">WskInspectEvent</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from">WskReceiveFrom</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to">WskSendTo</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect">WskSocketConnect</seealso>
+  </member>
+  <member name="SOCKADDR.sa_family">
+    <summary>
+      <para>The address family for the transport address. For more information about supported address
+families, see
+<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/mt808757(v=vs.85)">WSK Address Families</a>.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR.sa_data">
+    <summary>
+      <para>An array of 14 bytes that contains the transport address data.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_RC2_CBC_PARAMETERS">
+    <summary>
+      <para>The <b>CRYPT_RC2_CBC_PARAMETERS</b> structure contains information used with szOID_RSA_RC2CBC encryption. It is used in calls to
+<see cref="CryptEncodeObject" />,
+<see cref="CryptEncodeObjectEx" />,
+<see cref="CryptDecodeObject" /><see cref="CryptDecodeObjectEx" />.</para>
+    </summary>
+    <seealso cref="CMSG_ENVELOPED_ENCODE_INFO" />
+    <seealso cref="CRYPT_ENCRYPT_MESSAGE_PARA" />
+    <seealso cref="CryptEncodeObject" />
+    <seealso cref="CryptSetKeyParam" />
+  </member>
+  <member name="CRYPT_RC2_CBC_PARAMETERS.dwVersion">
+    <summary>
+      <para>Specifies the key length. Current usable key lengths are 40, 64, and 128 bits.</para>
+      <para>
+        <b>Note</b>  The numeric value of defined constants for <b>dwVersion</b> are not the same as the key lengths they specified. Currently defined values for <b>dwVersion</b> are shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_RC2_40BIT_VERSION</b>
+                </description>
+              </item>
+              <item>
+                <description>160</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>40 bits</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_RC2_56BIT_VERSION</b>
+                </description>
+              </item>
+              <item>
+                <description>52</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>56 bits</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_RC2_64BIT_VERSION</b>
+                </description>
+              </item>
+              <item>
+                <description>120</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>64 bits</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_RC2_128BIT_VERSION</b>
+                </description>
+              </item>
+              <item>
+                <description>58</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>128 bits</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_RC2_CBC_PARAMETERS.fIV">
+    <summary>
+      <para>Boolean specifying whether an 8-byte <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">initialization vector</a> (IV) is contained in <b>rgbIV[8]</b>. Set to <b>TRUE</b> when IV is present.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_RC2_CBC_PARAMETERS.rgbIV">
+    <summary>
+      <para>Eight byte <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">initialization vector</a>. Can be <b>NULL</b> if fIV is <b>FALSE</b>. The IV is encoded as an OCTET_STRING.</para>
+      <para>
+        <see cref="CryptEncodeObject" /> or
+<see cref="CryptEncodeObjectEx" /> with the <i>dwCertEncodingType</i> parameter set to X500_OCTET_STRING to create the encoded OCTET_STRING. The <b>ContentEncryptionAlgorithm</b>'s <b>Parameters</b> BLOB is updated to point to this encoded OCTET_STRING.</para>
+      <para>
+        <b>Note</b>  When a message is decrypted, if it has an IV parameter, the message functions calls
+<see cref="CryptSetKeyParam" /> with the IV before doing the decryption.</para>
+    </summary>
+  </member>
+</doc>

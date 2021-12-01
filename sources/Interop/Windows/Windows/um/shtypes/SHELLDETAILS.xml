@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHELLDETAILS">
+    <summary>
+      <para>Reports detailed information on an item in a Shell folder.</para>
+    </summary>
+    <seealso cref="IShellDetails.GetDetailsOf" />
+  </member>
+  <member name="SHELLDETAILS.fmt">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The alignment of the column heading and the subitem text in the column. This member can be one of the following values.</para>
+      <h4>LVCFMT_CENTER</h4>
+      <para>Text is centered.</para>
+      <h4>LVCFMT_COL_HAS_IMAGES</h4>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 4.70</a>. Header item contains an image in the image list.</para>
+      <h4>LVCFMT_LEFT</h4>
+      <para>Text is left-aligned.</para>
+      <h4>LVCFMT_RIGHT</h4>
+      <para>Text is right-aligned.</para>
+      <h5></h5>
+    </summary>
+  </member>
+  <member name="SHELLDETAILS.cxChar">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The number of average-sized characters in the header.</para>
+    </summary>
+  </member>
+  <member name="SHELLDETAILS.str">
+    <summary>
+      <para>Type: <b><see cref="STRRET" /></b></para>
+      <para>An <see cref="STRRET" /> structure that includes a string with the requested information. To convert this structure to a string, use <see cref="StrRetToBuf" /> or <see cref="StrRetToStr" />.</para>
+    </summary>
+  </member>
+</doc>

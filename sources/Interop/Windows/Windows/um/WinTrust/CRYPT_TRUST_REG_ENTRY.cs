@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_TRUST_REG_ENTRY.xml' path='doc/member[@name="CRYPT_TRUST_REG_ENTRY"]/*' />
 public unsafe partial struct CRYPT_TRUST_REG_ENTRY
 {
+    /// <include file='CRYPT_TRUST_REG_ENTRY.xml' path='doc/member[@name="CRYPT_TRUST_REG_ENTRY.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='CRYPT_TRUST_REG_ENTRY.xml' path='doc/member[@name="CRYPT_TRUST_REG_ENTRY.pwszDLLName"]/*' />
     [NativeTypeName("WCHAR *")]
     public ushort* pwszDLLName;
 
+    /// <include file='CRYPT_TRUST_REG_ENTRY.xml' path='doc/member[@name="CRYPT_TRUST_REG_ENTRY.pwszFunctionName"]/*' />
     [NativeTypeName("WCHAR *")]
     public ushort* pwszFunctionName;
 }

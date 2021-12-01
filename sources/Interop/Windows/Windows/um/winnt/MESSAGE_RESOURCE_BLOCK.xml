@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MESSAGE_RESOURCE_BLOCK">
+    <summary>
+      <para>Contains information about message strings with identifiers in the range indicated by the
+<b>LowId</b> and
+<b>HighId</b> members.</para>
+    </summary>
+    <seealso cref="MESSAGE_RESOURCE_DATA" />
+    <seealso cref="MESSAGE_RESOURCE_ENTRY" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/resources">Resources</seealso>
+  </member>
+  <member name="MESSAGE_RESOURCE_BLOCK.LowId">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The lowest message identifier contained within this structure.</para>
+    </summary>
+  </member>
+  <member name="MESSAGE_RESOURCE_BLOCK.HighId">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The highest message identifier contained within this structure.</para>
+    </summary>
+  </member>
+  <member name="MESSAGE_RESOURCE_BLOCK.OffsetToEntries">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The offset, in bytes, from the beginning of the <see cref="MESSAGE_RESOURCE_DATA" /> structure to the <see cref="MESSAGE_RESOURCE_ENTRY" /> structures in this <b>MESSAGE_RESOURCE_BLOCK</b>. The <b>MESSAGE_RESOURCE_ENTRY</b> structures contain the message strings.</para>
+    </summary>
+  </member>
+</doc>

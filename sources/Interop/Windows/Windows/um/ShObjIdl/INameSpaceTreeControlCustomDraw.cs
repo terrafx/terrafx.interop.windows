@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INameSpaceTreeControlCustomDraw.xml' path='doc/member[@name="INameSpaceTreeControlCustomDraw"]/*' />
 [Guid("2D3BA758-33EE-42D5-BB7B-5F3431D86C78")]
 [NativeTypeName("struct INameSpaceTreeControlCustomDraw : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
         return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
         return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, uint>)(lpVtbl[1]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
         return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, uint>)(lpVtbl[2]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INameSpaceTreeControlCustomDraw.xml' path='doc/member[@name="INameSpaceTreeControlCustomDraw.PrePaint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT PrePaint(HDC hdc, RECT* prc, LRESULT* plres)
@@ -46,6 +51,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
         return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, LRESULT*, int>)(lpVtbl[3]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, plres);
     }
 
+    /// <include file='INameSpaceTreeControlCustomDraw.xml' path='doc/member[@name="INameSpaceTreeControlCustomDraw.PostPaint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT PostPaint(HDC hdc, RECT* prc)
@@ -53,6 +59,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
         return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, int>)(lpVtbl[4]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc);
     }
 
+    /// <include file='INameSpaceTreeControlCustomDraw.xml' path='doc/member[@name="INameSpaceTreeControlCustomDraw.ItemPrePaint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ItemPrePaint(HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem, COLORREF* pclrText, COLORREF* pclrTextBk, LRESULT* plres)
@@ -60,6 +67,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
         return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, COLORREF*, COLORREF*, LRESULT*, int>)(lpVtbl[5]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, pnstccdItem, pclrText, pclrTextBk, plres);
     }
 
+    /// <include file='INameSpaceTreeControlCustomDraw.xml' path='doc/member[@name="INameSpaceTreeControlCustomDraw.ItemPostPaint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ItemPostPaint(HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem)

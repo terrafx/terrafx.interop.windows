@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellApp.xml' path='doc/member[@name="IShellApp"]/*' />
 [Guid("A3E14960-935F-11D1-B8B8-006008059382")]
 [NativeTypeName("struct IShellApp : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellApp : IShellApp.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellApp : IShellApp.Interface
         return ((delegate* unmanaged<IShellApp*, Guid*, void**, int>)(lpVtbl[0]))((IShellApp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellApp : IShellApp.Interface
         return ((delegate* unmanaged<IShellApp*, uint>)(lpVtbl[1]))((IShellApp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellApp : IShellApp.Interface
         return ((delegate* unmanaged<IShellApp*, uint>)(lpVtbl[2]))((IShellApp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellApp.xml' path='doc/member[@name="IShellApp.GetAppInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAppInfo([NativeTypeName("PAPPINFODATA")] APPINFODATA* pai)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellApp : IShellApp.Interface
         return ((delegate* unmanaged<IShellApp*, APPINFODATA*, int>)(lpVtbl[3]))((IShellApp*)Unsafe.AsPointer(ref this), pai);
     }
 
+    /// <include file='IShellApp.xml' path='doc/member[@name="IShellApp.GetPossibleActions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPossibleActions([NativeTypeName("DWORD *")] uint* pdwActions)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellApp : IShellApp.Interface
         return ((delegate* unmanaged<IShellApp*, uint*, int>)(lpVtbl[4]))((IShellApp*)Unsafe.AsPointer(ref this), pdwActions);
     }
 
+    /// <include file='IShellApp.xml' path='doc/member[@name="IShellApp.GetSlowAppInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellApp : IShellApp.Interface
         return ((delegate* unmanaged<IShellApp*, SLOWAPPINFO*, int>)(lpVtbl[5]))((IShellApp*)Unsafe.AsPointer(ref this), psaid);
     }
 
+    /// <include file='IShellApp.xml' path='doc/member[@name="IShellApp.GetCachedSlowAppInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCachedSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellApp : IShellApp.Interface
         return ((delegate* unmanaged<IShellApp*, SLOWAPPINFO*, int>)(lpVtbl[6]))((IShellApp*)Unsafe.AsPointer(ref this), psaid);
     }
 
+    /// <include file='IShellApp.xml' path='doc/member[@name="IShellApp.IsInstalled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsInstalled()

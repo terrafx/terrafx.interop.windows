@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICColorContextType.xml' path='doc/member[@name="WICColorContextType"]/*' />
 public enum WICColorContextType
 {
+    /// <include file='WICColorContextType.xml' path='doc/member[@name="WICColorContextType.WICColorContextUninitialized"]/*' />
     WICColorContextUninitialized = 0,
+
+    /// <include file='WICColorContextType.xml' path='doc/member[@name="WICColorContextType.WICColorContextProfile"]/*' />
     WICColorContextProfile = 0x1,
+
+    /// <include file='WICColorContextType.xml' path='doc/member[@name="WICColorContextType.WICColorContextExifColorSpace"]/*' />
     WICColorContextExifColorSpace = 0x2,
 }

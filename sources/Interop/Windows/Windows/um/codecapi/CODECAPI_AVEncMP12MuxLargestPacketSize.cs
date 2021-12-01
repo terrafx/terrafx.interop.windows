@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMP12MuxLargestPacketSize.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxLargestPacketSize"]/*' />
 [Guid("35CEB711-F461-4B92-A4EF-17B6841ED254")]
 public partial struct CODECAPI_AVEncMP12MuxLargestPacketSize
 {

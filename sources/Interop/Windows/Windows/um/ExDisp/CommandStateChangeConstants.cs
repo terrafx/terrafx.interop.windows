@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants"]/*' />
 public enum CommandStateChangeConstants
 {
+    /// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants.CSC_UPDATECOMMANDS"]/*' />
     CSC_UPDATECOMMANDS = unchecked((int)(0xffffffff)),
+
+    /// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants.CSC_NAVIGATEFORWARD"]/*' />
     CSC_NAVIGATEFORWARD = 0x1,
+
+    /// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants.CSC_NAVIGATEBACK"]/*' />
     CSC_NAVIGATEBACK = 0x2,
 }

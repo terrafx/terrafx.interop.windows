@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFileDialogControlEvents.xml' path='doc/member[@name="IFileDialogControlEvents"]/*' />
 [Guid("36116642-D713-4B97-9B83-7484A9D00433")]
 [NativeTypeName("struct IFileDialogControlEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFileDialogControlEvents : IFileDialogControlEvents
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFileDialogControlEvents : IFileDialogControlEvents
         return ((delegate* unmanaged<IFileDialogControlEvents*, Guid*, void**, int>)(lpVtbl[0]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFileDialogControlEvents : IFileDialogControlEvents
         return ((delegate* unmanaged<IFileDialogControlEvents*, uint>)(lpVtbl[1]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFileDialogControlEvents : IFileDialogControlEvents
         return ((delegate* unmanaged<IFileDialogControlEvents*, uint>)(lpVtbl[2]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFileDialogControlEvents.xml' path='doc/member[@name="IFileDialogControlEvents.OnItemSelected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnItemSelected(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem)
@@ -46,6 +51,7 @@ public unsafe partial struct IFileDialogControlEvents : IFileDialogControlEvents
         return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, uint, int>)(lpVtbl[3]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl, dwIDItem);
     }
 
+    /// <include file='IFileDialogControlEvents.xml' path='doc/member[@name="IFileDialogControlEvents.OnButtonClicked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnButtonClicked(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl)
@@ -53,6 +59,7 @@ public unsafe partial struct IFileDialogControlEvents : IFileDialogControlEvents
         return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, int>)(lpVtbl[4]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl);
     }
 
+    /// <include file='IFileDialogControlEvents.xml' path='doc/member[@name="IFileDialogControlEvents.OnCheckButtonToggled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnCheckButtonToggled(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl, BOOL bChecked)
@@ -60,6 +67,7 @@ public unsafe partial struct IFileDialogControlEvents : IFileDialogControlEvents
         return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, BOOL, int>)(lpVtbl[5]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl, bChecked);
     }
 
+    /// <include file='IFileDialogControlEvents.xml' path='doc/member[@name="IFileDialogControlEvents.OnControlActivating"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnControlActivating(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl)

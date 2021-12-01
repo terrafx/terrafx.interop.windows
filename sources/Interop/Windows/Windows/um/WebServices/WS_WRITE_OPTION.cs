@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_WRITE_OPTION.xml' path='doc/member[@name="WS_WRITE_OPTION"]/*' />
 public enum WS_WRITE_OPTION
 {
+    /// <include file='WS_WRITE_OPTION.xml' path='doc/member[@name="WS_WRITE_OPTION.WS_WRITE_REQUIRED_VALUE"]/*' />
     WS_WRITE_REQUIRED_VALUE = 1,
+
+    /// <include file='WS_WRITE_OPTION.xml' path='doc/member[@name="WS_WRITE_OPTION.WS_WRITE_REQUIRED_POINTER"]/*' />
     WS_WRITE_REQUIRED_POINTER = 2,
+
+    /// <include file='WS_WRITE_OPTION.xml' path='doc/member[@name="WS_WRITE_OPTION.WS_WRITE_NILLABLE_VALUE"]/*' />
     WS_WRITE_NILLABLE_VALUE = 3,
+
+    /// <include file='WS_WRITE_OPTION.xml' path='doc/member[@name="WS_WRITE_OPTION.WS_WRITE_NILLABLE_POINTER"]/*' />
     WS_WRITE_NILLABLE_POINTER = 4,
 }

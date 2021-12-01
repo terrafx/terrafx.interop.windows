@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DRIVE_LAYOUT_INFORMATION_MBR.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_MBR"]/*' />
 public partial struct DRIVE_LAYOUT_INFORMATION_MBR
 {
+    /// <include file='DRIVE_LAYOUT_INFORMATION_MBR.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_MBR.Signature"]/*' />
     [NativeTypeName("DWORD")]
     public uint Signature;
 
+    /// <include file='DRIVE_LAYOUT_INFORMATION_MBR.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_MBR.CheckSum"]/*' />
     [NativeTypeName("DWORD")]
     public uint CheckSum;
 }

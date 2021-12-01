@@ -7,21 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WAVEFORMAT.xml' path='doc/member[@name="WAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct WAVEFORMAT
 {
+    /// <include file='WAVEFORMAT.xml' path='doc/member[@name="WAVEFORMAT.wFormatTag"]/*' />
     [NativeTypeName("WORD")]
     public ushort wFormatTag;
 
+    /// <include file='WAVEFORMAT.xml' path='doc/member[@name="WAVEFORMAT.nChannels"]/*' />
     [NativeTypeName("WORD")]
     public ushort nChannels;
 
+    /// <include file='WAVEFORMAT.xml' path='doc/member[@name="WAVEFORMAT.nSamplesPerSec"]/*' />
     [NativeTypeName("DWORD")]
     public uint nSamplesPerSec;
 
+    /// <include file='WAVEFORMAT.xml' path='doc/member[@name="WAVEFORMAT.nAvgBytesPerSec"]/*' />
     [NativeTypeName("DWORD")]
     public uint nAvgBytesPerSec;
 
+    /// <include file='WAVEFORMAT.xml' path='doc/member[@name="WAVEFORMAT.nBlockAlign"]/*' />
     [NativeTypeName("WORD")]
     public ushort nBlockAlign;
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IGNOREMIME.xml' path='doc/member[@name="IGNOREMIME"]/*' />
 public enum IGNOREMIME
 {
+    /// <include file='IGNOREMIME.xml' path='doc/member[@name="IGNOREMIME.IGNOREMIME_PROMPT"]/*' />
     IGNOREMIME_PROMPT = 0x1,
+
+    /// <include file='IGNOREMIME.xml' path='doc/member[@name="IGNOREMIME.IGNOREMIME_TEXT"]/*' />
     IGNOREMIME_TEXT = 0x2,
 }

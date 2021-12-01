@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PPM_PERFSTATE_DOMAIN_EVENT.xml' path='doc/member[@name="PPM_PERFSTATE_DOMAIN_EVENT"]/*' />
 public partial struct PPM_PERFSTATE_DOMAIN_EVENT
 {
+    /// <include file='PPM_PERFSTATE_DOMAIN_EVENT.xml' path='doc/member[@name="PPM_PERFSTATE_DOMAIN_EVENT.State"]/*' />
     [NativeTypeName("DWORD")]
     public uint State;
 
+    /// <include file='PPM_PERFSTATE_DOMAIN_EVENT.xml' path='doc/member[@name="PPM_PERFSTATE_DOMAIN_EVENT.Latency"]/*' />
     [NativeTypeName("DWORD")]
     public uint Latency;
 
+    /// <include file='PPM_PERFSTATE_DOMAIN_EVENT.xml' path='doc/member[@name="PPM_PERFSTATE_DOMAIN_EVENT.Speed"]/*' />
     [NativeTypeName("DWORD")]
     public uint Speed;
 
+    /// <include file='PPM_PERFSTATE_DOMAIN_EVENT.xml' path='doc/member[@name="PPM_PERFSTATE_DOMAIN_EVENT.Processors"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Processors;
 }

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG">
+    <summary>
+      <para>Identifies how to check multisample quality levels.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-enums">Resource Enumerations</seealso>
+  </member>
+  <member name="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG.D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_TILED_RESOURCE">
+    <summary>
+      <para>Indicates to check the multisample quality levels of a tiled resource.</para>
+    </summary>
+  </member>
+</doc>

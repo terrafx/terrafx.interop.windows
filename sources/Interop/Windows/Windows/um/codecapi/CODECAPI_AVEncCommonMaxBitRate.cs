@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncCommonMaxBitRate.xml' path='doc/member[@name="CODECAPI_AVEncCommonMaxBitRate"]/*' />
 [Guid("9651EAE4-39B9-4EBF-85EF-D7F444EC7465")]
 public partial struct CODECAPI_AVEncCommonMaxBitRate
 {

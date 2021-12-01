@@ -7,16 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MANIPULATION_TRANSFORM.xml' path='doc/member[@name="MANIPULATION_TRANSFORM"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct MANIPULATION_TRANSFORM
 {
+    /// <include file='MANIPULATION_TRANSFORM.xml' path='doc/member[@name="MANIPULATION_TRANSFORM.translationX"]/*' />
     public float translationX;
 
+    /// <include file='MANIPULATION_TRANSFORM.xml' path='doc/member[@name="MANIPULATION_TRANSFORM.translationY"]/*' />
     public float translationY;
 
+    /// <include file='MANIPULATION_TRANSFORM.xml' path='doc/member[@name="MANIPULATION_TRANSFORM.scale"]/*' />
     public float scale;
 
+    /// <include file='MANIPULATION_TRANSFORM.xml' path='doc/member[@name="MANIPULATION_TRANSFORM.expansion"]/*' />
     public float expansion;
 
+    /// <include file='MANIPULATION_TRANSFORM.xml' path='doc/member[@name="MANIPULATION_TRANSFORM.rotation"]/*' />
     public float rotation;
 }

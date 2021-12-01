@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IQueryInfo.xml' path='doc/member[@name="IQueryInfo"]/*' />
 [Guid("00021500-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IQueryInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IQueryInfo : IQueryInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IQueryInfo : IQueryInfo.Interface
         return ((delegate* unmanaged<IQueryInfo*, Guid*, void**, int>)(lpVtbl[0]))((IQueryInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IQueryInfo : IQueryInfo.Interface
         return ((delegate* unmanaged<IQueryInfo*, uint>)(lpVtbl[1]))((IQueryInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IQueryInfo : IQueryInfo.Interface
         return ((delegate* unmanaged<IQueryInfo*, uint>)(lpVtbl[2]))((IQueryInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IQueryInfo.xml' path='doc/member[@name="IQueryInfo.GetInfoTip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetInfoTip([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppwszTip)
@@ -46,6 +51,7 @@ public unsafe partial struct IQueryInfo : IQueryInfo.Interface
         return ((delegate* unmanaged<IQueryInfo*, uint, ushort**, int>)(lpVtbl[3]))((IQueryInfo*)Unsafe.AsPointer(ref this), dwFlags, ppwszTip);
     }
 
+    /// <include file='IQueryInfo.xml' path='doc/member[@name="IQueryInfo.GetInfoFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags)

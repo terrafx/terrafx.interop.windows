@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_TokenBinding.xml' path='doc/member[@name="SecPkgContext_TokenBinding"]/*' />
 public unsafe partial struct SecPkgContext_TokenBinding
 {
+    /// <include file='SecPkgContext_TokenBinding.xml' path='doc/member[@name="SecPkgContext_TokenBinding.MajorVersion"]/*' />
     public byte MajorVersion;
 
+    /// <include file='SecPkgContext_TokenBinding.xml' path='doc/member[@name="SecPkgContext_TokenBinding.MinorVersion"]/*' />
     public byte MinorVersion;
 
+    /// <include file='SecPkgContext_TokenBinding.xml' path='doc/member[@name="SecPkgContext_TokenBinding.KeyParametersSize"]/*' />
     [NativeTypeName("WORD")]
     public ushort KeyParametersSize;
 
+    /// <include file='SecPkgContext_TokenBinding.xml' path='doc/member[@name="SecPkgContext_TokenBinding.KeyParameters"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* KeyParameters;
 }

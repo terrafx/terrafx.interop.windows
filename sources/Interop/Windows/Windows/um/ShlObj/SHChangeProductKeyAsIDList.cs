@@ -7,13 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHChangeProductKeyAsIDList.xml' path='doc/member[@name="SHChangeProductKeyAsIDList"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct SHChangeProductKeyAsIDList
 {
+    /// <include file='SHChangeProductKeyAsIDList.xml' path='doc/member[@name="SHChangeProductKeyAsIDList.cb"]/*' />
     public ushort cb;
 
+    /// <include file='SHChangeProductKeyAsIDList.xml' path='doc/member[@name="SHChangeProductKeyAsIDList.wszProductKey"]/*' />
     [NativeTypeName("WCHAR [39]")]
     public fixed ushort wszProductKey[39];
 
+    /// <include file='SHChangeProductKeyAsIDList.xml' path='doc/member[@name="SHChangeProductKeyAsIDList.cbZero"]/*' />
     public ushort cbZero;
 }

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS"]/*' />
 public partial struct AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS
 {
+    /// <include file='AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS.fCommercial"]/*' />
     public BOOL fCommercial;
 }

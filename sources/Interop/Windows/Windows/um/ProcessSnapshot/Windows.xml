@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.PssCaptureSnapshot">
+    <summary>
+      <para>Captures a snapshot of a target process.</para>
+    </summary>
+    <param name="ProcessHandle">
+      <para>A handle to the target process.</para>
+    </param>
+    <param name="CaptureFlags">
+      <para>Flags that specify what to capture. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_capture_flags">PSS_CAPTURE_FLAGS</a>.</para>
+    </param>
+    <param name="ThreadContextFlags">
+      <para>The <b>CONTEXT</b> record flags to capture if <i>CaptureFlags</i> specifies thread contexts.</para>
+    </param>
+    <param name="SnapshotHandle">
+      <para>A handle to the snapshot that this function captures.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>ERROR_SUCCESS</b> on success.</para>
+      <para>All error codes are defined in winerror.h. Use <see cref="FormatMessage" /> with the <b>FORMAT_MESSAGE_FROM_SYSTEM</b> flag to get a message for an error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.PssDuplicateSnapshot">
+    <summary>
+      <para>Duplicates a snapshot handle from one process to another.</para>
+    </summary>
+    <param name="SourceProcessHandle">
+      <para>A handle to the source process from which the original snapshot was captured. The handle must have <b>PROCESS_VM_READ</b> and <b>PROCESS_DUP_HANDLE</b> rights.</para>
+    </param>
+    <param name="SnapshotHandle">
+      <para>A handle to the snapshot to duplicate. This handle must be in the context of the source process.</para>
+    </param>
+    <param name="TargetProcessHandle">
+      <para>A handle to the target process that receives the duplicate snapshot. The handle must have <b>PROCESS_VM_OPERATION</b>, <b>PROCESS_VM_WRITE</b>, and <b>PROCESS_DUP_HANDLE</b> rights.</para>
+    </param>
+    <param name="TargetSnapshotHandle">
+      <para>A handle to the duplicate snapshot that this function creates, in the context of the target process.</para>
+    </param>
+    <param name="Flags">
+      <para>The duplication flags. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_duplicate_flags">PSS_DUPLICATE_FLAGS</a>.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>ERROR_SUCCESS</b> on success or the following error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_HANDLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+          </description>
+        </item>
+      </list>
+      <para>All error codes are defined in winerror.h. Use <see cref="FormatMessage" /> with the <b>FORMAT_MESSAGE_FROM_SYSTEM</b> flag to get a message for an error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="Windows.PssFreeSnapshot">
+    <summary>
+      <para>Frees a snapshot.</para>
+    </summary>
+    <param name="ProcessHandle">
+      <para>A handle to the process that contains the snapshot. The handle must have <b>PROCESS_VM_READ</b>, <b>PROCESS_VM_OPERATION</b>, and <b>PROCESS_DUP_HANDLE</b> rights. If the snapshot was captured from the current process, or duplicated into the current process, then pass in the result of <see cref="GetCurrentProcess" />.</para>
+    </param>
+    <param name="SnapshotHandle">
+      <para>A handle to the snapshot to free.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>ERROR_SUCCESS</b> on success or one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_HANDLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The remote snapshot was not created with <b>PSS_CREATE_USE_VM_ALLOCATIONS</b>.</para>
+          </description>
+        </item>
+      </list>
+      <para>All error codes are defined in winerror.h. Use <see cref="FormatMessage" /> with the <b>FORMAT_MESSAGE_FROM_SYSTEM</b> flag to get a message for an error code.</para>
+    </returns>
+    <remarks>
+      <para>This API can free snapshot handles in the context of either the local or remote processes. If the snapshot was captured in the local process with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psscapturesnapshot">PssCaptureSnapshot</a>, or duplicated into the local process with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssduplicatesnapshot">PssDuplicateSnapshot</a>, then specify the result of <see cref="GetCurrentProcess" /> as the process handle. If the snapshot is in the context of a remote process (for example, duplicated into the remote process), then specify the handle to that process.</para>
+      <para>The operation does not protect against concurrent access to the same descriptor.</para>
+      <para>For remote process frees, only snapshot handles that were created with<b> PSS_CREATE_USE_VM_ALLOCATIONS</b> or duplicated remotely can be freed by this API.</para>
+      <para>The behavior of this routine on a descriptor that has already been freed is undefined.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="Windows.PssQuerySnapshot">
+    <summary>
+      <para>Queries the snapshot.</para>
+    </summary>
+    <param name="SnapshotHandle">
+      <para>A handle to the snapshot to query.</para>
+    </param>
+    <param name="InformationClass">
+      <para>An enumerator member that selects what information to query. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_query_information_class">PSS_QUERY_INFORMATION_CLASS</a>.</para>
+    </param>
+    <param name="Buffer">
+      <para>The information that this function provides.</para>
+    </param>
+    <param name="BufferLength">
+      <para>The size of <i>Buffer</i>, in bytes.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>ERROR_SUCCESS</b> on success or one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_BAD_LENGTH</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified buffer length is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_HANDLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_PARAMETER</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified information class is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The requested information is not in the snapshot.</para>
+          </description>
+        </item>
+      </list>
+      <para>All error codes are defined in winerror.h. Use <see cref="FormatMessage" /> with the <b>FORMAT_MESSAGE_FROM_SYSTEM</b> flag to get a message for an error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="Windows.PssWalkMarkerCreate">
+    <summary>
+      <para>Creates a walk marker.</para>
+    </summary>
+    <param name="Allocator">
+      <para>A structure that provides functions to allocate and free memory.  If you provide the structure, <b>PssWalkMarkerCreate</b> uses the functions to  allocate the internal walk marker structures. Otherwise it uses the default process heap. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_allocator">PSS_ALLOCATOR</a>.</para>
+    </param>
+    <param name="WalkMarkerHandle">
+      <para>A handle to the walk marker that this function creates.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>ERROR_SUCCESS</b> on success or the following error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_NOT_ENOUGH_MEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Could not allocate memory for the walk marker.</para>
+          </description>
+        </item>
+      </list>
+      <para>All error codes are defined in winerror.h. Use <see cref="FormatMessage" /> with the <b>FORMAT_MESSAGE_FROM_SYSTEM</b> flag to get a message for an error code.</para>
+    </returns>
+    <remarks>
+      <para>The walk marker maintains the state of a walk, and can be used to reposition or rewind the walk.</para>
+      <para>The <i>Allocator</i> structure that provides the custom functions should remain valid for the lifetime of the walk marker. The custom functions are called from <b>PssWalkMarkerCreate</b>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalkmarkerfree">PssWalkMarkerFree</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a> using the same thread that calls <b>PssWalkMarkerCreate</b>, <b>PssWalkMarkerFree</b> and <b>PssWalkSnapshot</b>. Therefore the custom functions need not be multi-threaded.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="Windows.PssWalkMarkerFree">
+    <summary>
+      <para>Frees a walk marker created by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalkmarkercreate">PssWalkMarkerCreate</a>.</para>
+    </summary>
+    <param name="WalkMarkerHandle">
+      <para>A handle to the walk marker.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>ERROR_SUCCESS</b> on success.</para>
+      <para>All error codes are defined in winerror.h. Use <see cref="FormatMessage" /> with the <b>FORMAT_MESSAGE_FROM_SYSTEM</b> flag to get a message for an error code.</para>
+    </returns>
+    <remarks>
+      <para>If <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalkmarkercreate">PssWalkMarkerCreate</a> used <b>AllocRoutine</b> of a custom allocator to create the walk marker, <b>PssWalkMarkerFree</b> uses the <b>FreeRoutine</b> of the allocator.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="Windows.PssWalkMarkerGetPosition">
+    <summary>
+      <para>Returns the current position of a walk marker.</para>
+    </summary>
+    <param name="WalkMarkerHandle">
+      <para>A  handle to the walk marker.</para>
+    </param>
+    <param name="Position">
+      <para>The walk marker position that this function returns.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>ERROR_SUCCESS</b> on success.</para>
+      <para>All error codes are defined in winerror.h. Use <see cref="FormatMessage" /> with the <b>FORMAT_MESSAGE_FROM_SYSTEM</b> flag to get a message for an error code.</para>
+    </returns>
+    <remarks>
+      <para>The position value compared to the values of other positions is not of any significance. The only valid use of the position is to set the current position using the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalkmarkersetposition">PssWalkMarkerSetPosition</a> function.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="Windows.PssWalkMarkerSeekToBeginning">
+    <summary>
+      <para>Rewinds a walk marker back to the beginning.</para>
+    </summary>
+    <param name="WalkMarkerHandle">
+      <para>A handle to the walk marker.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>ERROR_SUCCESS</b> on success.</para>
+      <para>All error codes are defined in winerror.h. Use <see cref="FormatMessage" /> with the <b>FORMAT_MESSAGE_FROM_SYSTEM</b> flag to get a message for an error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="Windows.PssWalkMarkerSetPosition">
+    <summary>
+      <para>Sets the position of a walk marker.</para>
+    </summary>
+    <param name="WalkMarkerHandle">
+      <para>A handle to the walk marker.</para>
+    </param>
+    <param name="Position">
+      <para>The position to set. This is a position that the  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalkmarkergetposition">PssWalkMarkerGetPosition</a> function provided.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>ERROR_SUCCESS</b> on success or one of the following error codes.</para>
+      <para>All error codes are defined in winerror.h. Use <see cref="FormatMessage" /> with the <b>FORMAT_MESSAGE_FROM_SYSTEM</b> flag to get a message for an error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="Windows.PssWalkSnapshot">
+    <summary>
+      <para>Returns information from the current walk position and advanced the walk marker to the next position.</para>
+    </summary>
+    <param name="SnapshotHandle">
+      <para>A handle to the snapshot.</para>
+    </param>
+    <param name="InformationClass">
+      <para>The type of information to return. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_walk_information_class">PSS_WALK_INFORMATION_CLASS</a>.</para>
+    </param>
+    <param name="WalkMarkerHandle">
+      <para>A handle to a walk marker. The walk marker indicates the walk position from which data is to be returned. <b>PssWalkSnapshot</b> advances the walk marker to the next walk position in time order before returning to the caller.</para>
+    </param>
+    <param name="Buffer">
+      <para>The snapshot information that this function returns.</para>
+    </param>
+    <param name="BufferLength">
+      <para>The size of <i>Buffer</i>, in bytes.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>ERROR_SUCCESS</b> on success or one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_BAD_LENGTH</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified buffer length is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_HANDLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_PARAMETER</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified information class is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_MORE_DATA</b>
+            </para>
+          </description>
+          <description>
+            <i>Buffer</i> is <b>NULL</b>, and there is data at the current position to return.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_NO_MORE_ITEMS</b>
+            </para>
+          </description>
+          <description>
+            <para>The walk has completed and there are no more items to return.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The requested information is not in the snapshot.</para>
+          </description>
+        </item>
+      </list>
+      <para>All error codes are defined in winerror.h. Use <see cref="FormatMessage" /> with the <b>FORMAT_MESSAGE_FROM_SYSTEM</b> flag to get a message for an error code.</para>
+    </returns>
+    <remarks>
+      <para>For snapshot data types that have a variable number of instances within a snapshot, you use the <b>PssWalkSnapshot</b> function to obtain the instances one after another. You set the <i>InformationClass</i> parameter to specify the type of data.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+</doc>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ImageTranscode.xml' path='doc/member[@name="ImageTranscode"]/*' />
 [Guid("17B75166-928F-417D-9685-64AA135565C1")]
 public partial struct ImageTranscode
 {

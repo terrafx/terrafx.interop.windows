@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVEXTENTINFO.xml' path='doc/member[@name="DVEXTENTINFO"]/*' />
 public partial struct DVEXTENTINFO
 {
+    /// <include file='DVEXTENTINFO.xml' path='doc/member[@name="DVEXTENTINFO.cb"]/*' />
     [NativeTypeName("ULONG")]
     public uint cb;
 
+    /// <include file='DVEXTENTINFO.xml' path='doc/member[@name="DVEXTENTINFO.dwExtentMode"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwExtentMode;
 
+    /// <include file='DVEXTENTINFO.xml' path='doc/member[@name="DVEXTENTINFO.sizelProposed"]/*' />
     [NativeTypeName("SIZEL")]
     public SIZE sizelProposed;
 }

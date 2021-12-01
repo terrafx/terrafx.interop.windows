@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICBitmapCreateCacheOption.xml' path='doc/member[@name="WICBitmapCreateCacheOption"]/*' />
 public enum WICBitmapCreateCacheOption
 {
+    /// <include file='WICBitmapCreateCacheOption.xml' path='doc/member[@name="WICBitmapCreateCacheOption.WICBitmapNoCache"]/*' />
     WICBitmapNoCache = 0,
+
+    /// <include file='WICBitmapCreateCacheOption.xml' path='doc/member[@name="WICBitmapCreateCacheOption.WICBitmapCacheOnDemand"]/*' />
     WICBitmapCacheOnDemand = 0x1,
+
+    /// <include file='WICBitmapCreateCacheOption.xml' path='doc/member[@name="WICBitmapCreateCacheOption.WICBitmapCacheOnLoad"]/*' />
     WICBitmapCacheOnLoad = 0x2,
+
+    /// <include file='WICBitmapCreateCacheOption.xml' path='doc/member[@name="WICBitmapCreateCacheOption.WICBITMAPCREATECACHEOPTION_FORCE_DWORD"]/*' />
     WICBITMAPCREATECACHEOPTION_FORCE_DWORD = 0x7fffffff,
 }

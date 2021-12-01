@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICGifGraphicControlExtensionProperties.xml' path='doc/member[@name="WICGifGraphicControlExtensionProperties"]/*' />
 public enum WICGifGraphicControlExtensionProperties : uint
 {
+    /// <include file='WICGifGraphicControlExtensionProperties.xml' path='doc/member[@name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionDisposal"]/*' />
     WICGifGraphicControlExtensionDisposal = 0x1,
+
+    /// <include file='WICGifGraphicControlExtensionProperties.xml' path='doc/member[@name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionUserInputFlag"]/*' />
     WICGifGraphicControlExtensionUserInputFlag = 0x2,
+
+    /// <include file='WICGifGraphicControlExtensionProperties.xml' path='doc/member[@name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionTransparencyFlag"]/*' />
     WICGifGraphicControlExtensionTransparencyFlag = 0x3,
+
+    /// <include file='WICGifGraphicControlExtensionProperties.xml' path='doc/member[@name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionDelay"]/*' />
     WICGifGraphicControlExtensionDelay = 0x4,
+
+    /// <include file='WICGifGraphicControlExtensionProperties.xml' path='doc/member[@name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionTransparentColorIndex"]/*' />
     WICGifGraphicControlExtensionTransparentColorIndex = 0x5,
+
+    /// <include file='WICGifGraphicControlExtensionProperties.xml' path='doc/member[@name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionProperties_FORCE_DWORD"]/*' />
     WICGifGraphicControlExtensionProperties_FORCE_DWORD = 0x7fffffff,
 }

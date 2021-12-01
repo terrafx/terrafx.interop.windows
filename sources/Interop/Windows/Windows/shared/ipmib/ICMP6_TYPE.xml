@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICMP6_TYPE">
+    <summary>
+      <para>The <b>ICMP6_TYPE</b> enumeration defines the set of Internet Control Message Protocol for IP version 6.0 (ICMPv6)  message types.</para>
+    </summary>
+    <remarks>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>ICMP6_TYPE</b> enumeration  is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+  </member>
+  <member name="ICMP6_TYPE.ICMP6_DST_UNREACH">
+    <summary>
+      <para>The specified destination for the message is unreachable.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ICMP6_PACKET_TOO_BIG">
+    <summary>
+      <para>The ICMPv6 packet is too large.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ICMP6_TIME_EXCEEDED">
+    <summary>
+      <para>The ICMPv6 message has timed out.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ICMP6_PARAM_PROB">
+    <summary>
+      <para>The IPv6 header is malformed or contains an incorrect value.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ICMP6_ECHO_REQUEST">
+    <summary>
+      <para>ICMPv6 echo request message.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ICMP6_ECHO_REPLY">
+    <summary>
+      <para>ICMPv6 echo reply message.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ICMP6_MEMBERSHIP_QUERY">
+    <summary>
+      <para>ICMPv6 group membership query message.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ICMP6_MEMBERSHIP_REPORT">
+    <summary>
+      <para>ICMPv6 group membership report message.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ICMP6_MEMBERSHIP_REDUCTION">
+    <summary>
+      <para>ICMPv6 group membership reduction message.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ND_ROUTER_SOLICIT">
+    <summary>
+      <para>ICMPv6 router solicitation message.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ND_ROUTER_ADVERT">
+    <summary>
+      <para>ICMPv6 router advertisement message.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ND_NEIGHBOR_SOLICIT">
+    <summary>
+      <para>ICMPv6 network neighbor solicitation message.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ND_NEIGHBOR_ADVERT">
+    <summary>
+      <para>ICMPv6 network neighbor advertisement message.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ND_REDIRECT">
+    <summary>
+      <para>ICMPv6 packet redirection message.</para>
+    </summary>
+  </member>
+  <member name="ICMP6_TYPE.ICMP6_V2_MEMBERSHIP_REPORT">
+    <summary></summary>
+  </member>
+</doc>

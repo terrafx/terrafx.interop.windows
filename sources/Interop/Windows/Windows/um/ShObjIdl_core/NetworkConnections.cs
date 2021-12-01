@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NetworkConnections.xml' path='doc/member[@name="NetworkConnections"]/*' />
 [Guid("7007ACC7-3202-11D1-AAD2-00805FC1270E")]
 public partial struct NetworkConnections
 {

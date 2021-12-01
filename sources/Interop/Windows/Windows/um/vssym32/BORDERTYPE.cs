@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BORDERTYPE.xml' path='doc/member[@name="BORDERTYPE"]/*' />
 public enum BORDERTYPE
 {
+    /// <include file='BORDERTYPE.xml' path='doc/member[@name="BORDERTYPE.BT_RECT"]/*' />
     BT_RECT = 0,
+
+    /// <include file='BORDERTYPE.xml' path='doc/member[@name="BORDERTYPE.BT_ROUNDRECT"]/*' />
     BT_ROUNDRECT = 1,
+
+    /// <include file='BORDERTYPE.xml' path='doc/member[@name="BORDERTYPE.BT_ELLIPSE"]/*' />
     BT_ELLIPSE = 2,
 }

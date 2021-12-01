@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IGetServiceIds.xml' path='doc/member[@name="IGetServiceIds"]/*' />
 [Guid("4A073526-6103-4E21-B7BC-F519D1524E5D")]
 [NativeTypeName("struct IGetServiceIds : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IGetServiceIds : IGetServiceIds.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IGetServiceIds : IGetServiceIds.Interface
         return ((delegate* unmanaged<IGetServiceIds*, Guid*, void**, int>)(lpVtbl[0]))((IGetServiceIds*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IGetServiceIds : IGetServiceIds.Interface
         return ((delegate* unmanaged<IGetServiceIds*, uint>)(lpVtbl[1]))((IGetServiceIds*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IGetServiceIds : IGetServiceIds.Interface
         return ((delegate* unmanaged<IGetServiceIds*, uint>)(lpVtbl[2]))((IGetServiceIds*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IGetServiceIds.xml' path='doc/member[@name="IGetServiceIds.GetServiceIds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetServiceIds([NativeTypeName("ULONG *")] uint* serviceIdCount, Guid** serviceIds)

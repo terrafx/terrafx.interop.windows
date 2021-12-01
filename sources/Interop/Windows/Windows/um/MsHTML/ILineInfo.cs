@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo"]/*' />
 [Guid("3050F7E2-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ILineInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface
         return ((delegate* unmanaged<ILineInfo*, Guid*, void**, int>)(lpVtbl[0]))((ILineInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface
         return ((delegate* unmanaged<ILineInfo*, uint>)(lpVtbl[1]))((ILineInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface
         return ((delegate* unmanaged<ILineInfo*, uint>)(lpVtbl[2]))((ILineInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo.get_x"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_x([NativeTypeName("long *")] int* p)
@@ -46,6 +51,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface
         return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[3]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo.get_baseLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_baseLine([NativeTypeName("long *")] int* p)
@@ -53,6 +59,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface
         return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[4]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo.get_textDescent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_textDescent([NativeTypeName("long *")] int* p)
@@ -60,6 +67,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface
         return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[5]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo.get_textHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_textHeight([NativeTypeName("long *")] int* p)
@@ -67,6 +75,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface
         return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[6]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo.get_lineDirection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_lineDirection([NativeTypeName("LONG *")] int* p)

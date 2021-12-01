@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCHANNEL_SESSION_TOKEN.xml' path='doc/member[@name="SCHANNEL_SESSION_TOKEN"]/*' />
 public partial struct SCHANNEL_SESSION_TOKEN
 {
+    /// <include file='SCHANNEL_SESSION_TOKEN.xml' path='doc/member[@name="SCHANNEL_SESSION_TOKEN.dwTokenType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTokenType;
 
+    /// <include file='SCHANNEL_SESSION_TOKEN.xml' path='doc/member[@name="SCHANNEL_SESSION_TOKEN.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

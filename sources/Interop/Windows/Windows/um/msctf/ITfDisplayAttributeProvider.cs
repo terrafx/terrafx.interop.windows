@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfDisplayAttributeProvider.xml' path='doc/member[@name="ITfDisplayAttributeProvider"]/*' />
 [Guid("FEE47777-163C-4769-996A-6E9C50AD8F54")]
 [NativeTypeName("struct ITfDisplayAttributeProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfDisplayAttributeProvider : ITfDisplayAttributePr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfDisplayAttributeProvider : ITfDisplayAttributePr
         return ((delegate* unmanaged<ITfDisplayAttributeProvider*, Guid*, void**, int>)(lpVtbl[0]))((ITfDisplayAttributeProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfDisplayAttributeProvider : ITfDisplayAttributePr
         return ((delegate* unmanaged<ITfDisplayAttributeProvider*, uint>)(lpVtbl[1]))((ITfDisplayAttributeProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfDisplayAttributeProvider : ITfDisplayAttributePr
         return ((delegate* unmanaged<ITfDisplayAttributeProvider*, uint>)(lpVtbl[2]))((ITfDisplayAttributeProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfDisplayAttributeProvider.xml' path='doc/member[@name="ITfDisplayAttributeProvider.EnumDisplayAttributeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EnumDisplayAttributeInfo(IEnumTfDisplayAttributeInfo** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfDisplayAttributeProvider : ITfDisplayAttributePr
         return ((delegate* unmanaged<ITfDisplayAttributeProvider*, IEnumTfDisplayAttributeInfo**, int>)(lpVtbl[3]))((ITfDisplayAttributeProvider*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='ITfDisplayAttributeProvider.xml' path='doc/member[@name="ITfDisplayAttributeProvider.GetDisplayAttributeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDisplayAttributeInfo([NativeTypeName("const GUID &")] Guid* guid, ITfDisplayAttributeInfo** ppInfo)

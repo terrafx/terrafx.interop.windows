@@ -7,16 +7,22 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC"]/*' />
 public unsafe partial struct DXGI_OUTPUT_DESC
 {
+    /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC.DeviceName"]/*' />
     [NativeTypeName("WCHAR [32]")]
     public fixed ushort DeviceName[32];
 
+    /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC.DesktopCoordinates"]/*' />
     public RECT DesktopCoordinates;
 
+    /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC.AttachedToDesktop"]/*' />
     public BOOL AttachedToDesktop;
 
+    /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC.Rotation"]/*' />
     public DXGI_MODE_ROTATION Rotation;
 
+    /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC.Monitor"]/*' />
     public HMONITOR Monitor;
 }

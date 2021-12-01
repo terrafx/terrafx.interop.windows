@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_TARGET_PREFERRED_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_PREFERRED_MODE"]/*' />
 public partial struct DISPLAYCONFIG_TARGET_PREFERRED_MODE
 {
+    /// <include file='DISPLAYCONFIG_TARGET_PREFERRED_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_PREFERRED_MODE.header"]/*' />
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
+    /// <include file='DISPLAYCONFIG_TARGET_PREFERRED_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_PREFERRED_MODE.width"]/*' />
     [NativeTypeName("UINT32")]
     public uint width;
 
+    /// <include file='DISPLAYCONFIG_TARGET_PREFERRED_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_PREFERRED_MODE.height"]/*' />
     [NativeTypeName("UINT32")]
     public uint height;
 
+    /// <include file='DISPLAYCONFIG_TARGET_PREFERRED_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_PREFERRED_MODE.targetMode"]/*' />
     public DISPLAYCONFIG_TARGET_MODE targetMode;
 }

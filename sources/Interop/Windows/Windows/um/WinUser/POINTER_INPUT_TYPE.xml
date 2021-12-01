@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POINTER_INPUT_TYPE">
+    <summary>
+      <para>Identifies the  pointer input types.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/enums">Enumerations</seealso>
+  </member>
+  <member name="POINTER_INPUT_TYPE.PT_POINTER">
+    <summary>
+      <para>Generic pointer type. This type never appears in pointer messages or pointer data. Some data query functions allow the caller to restrict the query to specific pointer type. The <b>PT_POINTER</b> type can be used in these functions to specify that the query is to include pointers of all types</para>
+    </summary>
+  </member>
+  <member name="POINTER_INPUT_TYPE.PT_TOUCH">
+    <summary>
+      <para>Touch pointer type.</para>
+    </summary>
+  </member>
+  <member name="POINTER_INPUT_TYPE.PT_PEN">
+    <summary>
+      <para>Pen pointer type.</para>
+    </summary>
+  </member>
+  <member name="POINTER_INPUT_TYPE.PT_MOUSE">
+    <summary>
+      <para>Mouse pointer type.</para>
+    </summary>
+  </member>
+  <member name="POINTER_INPUT_TYPE.PT_TOUCHPAD">
+    <summary>
+      <para>Touchpad pointer type (Windows 8.1 and later).</para>
+    </summary>
+  </member>
+</doc>

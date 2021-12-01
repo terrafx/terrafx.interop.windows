@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESSOR_POWER_POLICY_INFO">
+    <summary>
+      <para>Contains information about processor C-state policy settings. This structure is part of the
+<see cref="PROCESSOR_POWER_POLICY" /> structure.</para>
+    </summary>
+    <seealso cref="PROCESSOR_POWER_POLICY" />
+  </member>
+  <member name="PROCESSOR_POWER_POLICY_INFO.TimeCheck">
+    <summary>
+      <para>The time that must expire before promotion or demotion is considered, in microseconds.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_POWER_POLICY_INFO.DemoteLimit">
+    <summary>
+      <para>The minimum amount of time that must be spent in the idle loop to avoid demotion, in microseconds.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_POWER_POLICY_INFO.PromoteLimit">
+    <summary>
+      <para>The time that must be exceeded to cause promotion to a deeper idle state, in microseconds.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_POWER_POLICY_INFO.DemotePercent">
+    <summary>
+      <para>The value that scales the threshold at which the power policy manager decreases the performance of the processor, expressed as a percentage.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_POWER_POLICY_INFO.PromotePercent">
+    <summary>
+      <para>The value that scales the threshold at which the power policy manager increases the performance of the processor, expressed as a percentage.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_POWER_POLICY_INFO.Spare">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_POWER_POLICY_INFO.AllowDemotion">
+    <summary>
+      <para>When set, allows the kernel power policy manager to demote from the current state.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_POWER_POLICY_INFO.AllowPromotion">
+    <summary>
+      <para>When set, allows the kernel power policy manager to promote from the current state.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_POWER_POLICY_INFO.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

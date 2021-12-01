@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_SHARED_RESOURCE_TIER">
+    <summary>
+      <para>Defines constants that specify a tier for shared resource support.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_0">
+    <summary>
+      <para>Specifies the support available when <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS.ExtendedResourceSharing" /> is <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_1">
+    <summary>
+      <para>Specifies the support available when <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS.ExtendedResourceSharing" /> is <b>TRUE</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_2">
+    <summary>
+      <para>Specifies the support available when <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS4.ExtendedNV12SharedTextureSupported" /> is <b>TRUE</b>. Also see <a href="https://docs.microsoft.com//windows/win32/direct3d11/direct3d-11-4-features#extended-nv12-texture-support">Extended NV12 texture support</a>.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_3">
+    <summary>
+      <para>Specifies that <see cref="DXGI_FORMAT_R11G11B10_FLOAT" /> supports NT handle sharing. Also see <see cref="CreateSharedHandle" />.</para>
+    </summary>
+  </member>
+</doc>

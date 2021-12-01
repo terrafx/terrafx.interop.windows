@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_RANDOM_GENERATOR_TYPE">
+    <summary>
+      <para>Defines constants that specify types of random random-number generator.</para>
+    </summary>
+  </member>
+  <member name="DML_RANDOM_GENERATOR_TYPE.DML_RANDOM_GENERATOR_TYPE_PHILOX_4X32_10">
+    <summary>
+      <para>Specifies a generator for pseudo-random numbers according to the <a href="http://www.thesalmons.org/john/random123/papers/random123sc11.pdf">Philox 4x32-10 algorithm</a>.</para>
+    </summary>
+  </member>
+</doc>

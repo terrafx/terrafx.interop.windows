@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGPathSegClosePath.xml' path='doc/member[@name="SVGPathSegClosePath"]/*' />
 [Guid("305105BD-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGPathSegClosePath
 {

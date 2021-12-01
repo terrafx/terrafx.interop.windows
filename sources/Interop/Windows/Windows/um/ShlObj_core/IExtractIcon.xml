@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IExtractIcon.Extract">
+    <summary>
+      <para>Extracts an icon image from the specified location.</para>
+    </summary>
+    <param name="pszFile">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>A pointer to a null-terminated string that specifies the icon location.</para>
+    </param>
+    <param name="nIconIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The index of the icon in the file pointed to by <i>pszFile</i>.</para>
+    </param>
+    <param name="phiconLarge">
+      <para>Type: <b>HICON*</b></para>
+      <para>A pointer to an <b>HICON</b> value that receives the handle to the large icon. This parameter may be <b>NULL</b>.</para>
+    </param>
+    <param name="phiconSmall">
+      <para>Type: <b>HICON*</b></para>
+      <para>A pointer to an <b>HICON</b> value that receives the handle to the small icon. This parameter may be <b>NULL</b>.</para>
+    </param>
+    <param name="nIconSize">
+      <para>Type: <b>UINT</b></para>
+      <para>The desired size of the icon, in pixels. The low word contains the size of the large icon, and the high word contains the size of the small icon. The size specified can be the width or height. The width of an icon always equals its height.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the function extracted the icon, or S_FALSE if the calling application should extract the icon.</para>
+    </returns>
+    <remarks>
+      <para>The icon location and index are the same values returned by the <see cref="IExtractIcon.GetIconLocation" /> method. If <b>IExtractIcon.Extract</b> function returns S_FALSE, these values must specify an icon file name and index that form legal parameters for a call to <see cref="ExtractIcon" />. If <b>IExtractIcon.Extract</b> does not return S_FALSE, no assumptions should be made about the meanings of the <i>pszFile</i> and <i>nIconIndex</i> parameters.</para>
+    </remarks>
+    <seealso cref="IExtractIcon" />
+  </member>
+  <member name="IExtractIcon.GetIconLocation">
+    <summary>
+      <para>Gets the location and index of an icon.</para>
+    </summary>
+    <param name="uFlags">
+      <para>Type: <b>UINT</b></para>
+      <para>One or more of the following values. This parameter can also be <b>NULL</b>.</para>
+      <h4>GIL_ASYNC (0x0020)</h4>
+      <para>Set this flag to determine whether the icon should be extracted asynchronously. If the icon can be extracted rapidly, this flag is usually ignored. If extraction will take more time, <b>GetIconLocation</b> should return E_PENDING. See the Remarks for further discussion.</para>
+      <h4>GIL_DEFAULTICON (0x0040)</h4>
+      <para>Retrieve information about the fallback icon. Fallback icons are usually used while the desired icon is extracted and added to the cache.</para>
+      <h4>GIL_FORSHELL (0x0002)</h4>
+      <para>The icon is displayed in a Shell folder.</para>
+      <h4>GIL_FORSHORTCUT (0x0080)</h4>
+      <para>The icon indicates a shortcut. However, the icon extractor should not apply the shortcut overlay; that will be done later. Shortcut icons are state-independent.</para>
+      <h4>GIL_OPENICON (0x0001)</h4>
+      <para>The icon is in the open state if both open-state and closed-state images are available. If this flag is not specified, the icon is in the normal or closed state. This flag is typically used for folder objects.</para>
+      <h4>GIL_CHECKSHIELD (0x0200)</h4>
+      <para>Explicitly return either GIL_SHIELD or GIL_FORCENOSHIELD in <i>pwFlags</i>. Do not block if GIL_ASYNC is set.</para>
+    </param>
+    <param name="pszIconFile">
+      <para>Type: <b>PTSTR</b></para>
+      <para>A pointer to a buffer that receives the icon location. The icon location is a null-terminated string that identifies the file that contains the icon.</para>
+    </param>
+    <param name="cchMax">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the buffer, in characters, pointed to by <i>pszIconFile</i>.</para>
+    </param>
+    <param name="piIndex">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an <b>int</b> that receives the index of the icon in the file pointed to by <i>pszIconFile</i>.</para>
+    </param>
+    <param name="pwFlags">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to a <b>UINT</b> value that receives zero or a combination of the following values.</para>
+      <h4>GIL_DONTCACHE (0x0010)</h4>
+      <para>The physical image bits for this icon are not cached by the calling application.</para>
+      <h4>GIL_NOTFILENAME (0x0008)</h4>
+      <para>The location is not a file name/index pair. The values in <i>pszIconFile</i> and <i>piIndex</i> cannot be passed to <see cref="ExtractIcon" /> or <see cref="ExtractIconEx" />.</para>
+      <para>When this flag is omitted, the value returned in <i>pszIconFile</i> is a fully-qualified path name to either a .ico file or to a file that can contain icons. Also, the value returned in <i>piIndex</i> is an index into that file that identifies which of its icons to use. Therefore, when the GIL_NOTFILENAME flag is omitted, these values can be passed to <see cref="ExtractIcon" /> or <see cref="ExtractIconEx" />.</para>
+      <h4>GIL_PERCLASS (0x0004)</h4>
+      <para>All objects of this class have the same icon. This flag is used internally by the Shell. Typical implementations of <see cref="IExtractIcon" /> do not require this flag because the flag implies that an icon handler is not required to resolve the icon on a per-object basis. The recommended method for implementing per-class icons is to register a DefaultIcon for the class.</para>
+      <h4>GIL_PERINSTANCE (0x0002)</h4>
+      <para>Each object of this class has its own icon. This flag is used internally by the Shell to handle cases like Setup.exe, where objects with identical names can have different icons. Typical implementations of <see cref="IExtractIcon" /> do not require this flag.</para>
+      <h4>GIL_SIMULATEDOC (0x0001)</h4>
+      <para>The calling application should create a document icon using the specified icon.</para>
+      <h4>GIL_SHIELD (0x0200)</h4>
+      <para>
+        <b>Windows Vista only</b>. The calling application must stamp the icon with the UAC shield.</para>
+      <h4>GIL_FORCENOSHIELD (0x0400)</h4>
+      <para>
+        <b>Windows Vista only</b>. The calling application must not stamp the icon with the UAC shield.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the function returned a valid location, or S_FALSE if the Shell should use a default icon. If the <b>GIL_ASYNC</b> flag is set in <i>uFlags</i>, the method can return E_PENDING to indicate that icon extraction will be time-consuming.</para>
+    </returns>
+    <remarks>
+      <para>When a client sets the <b>GIL_ASYNC</b> flag in <i>uFlags</i> and receives E_PENDING as a return value, it typically creates a background thread to extract the icon. It calls <b>GetIconLocation</b> from that thread, without the <b>GIL_ASYNC</b> flag, to retrieve the icon location. It then calls <see cref="IExtractIcon.Extract" /> to extract the icon. Returning E_PENDING implies that the object is free threaded. In other words, it can safely be called concurrently by multiple threads.</para>
+      <para>The <b>GIL_DEFAULTICON</b> flag is usually set in the case where the desired icon is found, but that icon is not present in the icon cache. Icon extraction is a low priority background process, and as such may be delayed by other processes. The default icon will be displayed in place of the final icon during the time that it takes for that final icon to be extracted, added to the cache, and made available.</para>
+    </remarks>
+  </member>
+  <member name="IExtractIcon.Extract">
+    <summary>
+      <para>Extracts an icon image from the specified location.</para>
+    </summary>
+    <param name="pszFile">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>A pointer to a null-terminated string that specifies the icon location.</para>
+    </param>
+    <param name="nIconIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The index of the icon in the file pointed to by <i>pszFile</i>.</para>
+    </param>
+    <param name="phiconLarge">
+      <para>Type: <b>HICON*</b></para>
+      <para>A pointer to an <b>HICON</b> value that receives the handle to the large icon. This parameter may be <b>NULL</b>.</para>
+    </param>
+    <param name="phiconSmall">
+      <para>Type: <b>HICON*</b></para>
+      <para>A pointer to an <b>HICON</b> value that receives the handle to the small icon. This parameter may be <b>NULL</b>.</para>
+    </param>
+    <param name="nIconSize">
+      <para>Type: <b>UINT</b></para>
+      <para>The desired size of the icon, in pixels. The low word contains the size of the large icon, and the high word contains the size of the small icon. The size specified can be the width or height. The width of an icon always equals its height.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the function extracted the icon, or S_FALSE if the calling application should extract the icon.</para>
+    </returns>
+    <remarks>
+      <para>The icon location and index are the same values returned by the <see cref="IExtractIcon.GetIconLocation" /> method. If <b>IExtractIcon.Extract</b> function returns S_FALSE, these values must specify an icon file name and index that form legal parameters for a call to <see cref="ExtractIcon" />. If <b>IExtractIcon.Extract</b> does not return S_FALSE, no assumptions should be made about the meanings of the <i>pszFile</i> and <i>nIconIndex</i> parameters.</para>
+    </remarks>
+    <seealso cref="IExtractIcon" />
+  </member>
+  <member name="IExtractIcon.GetIconLocation">
+    <summary>
+      <para>Gets the location and index of an icon.</para>
+    </summary>
+    <param name="uFlags">
+      <para>Type: <b>UINT</b></para>
+      <para>One or more of the following values. This parameter can also be <b>NULL</b>.</para>
+      <h4>GIL_ASYNC (0x0020)</h4>
+      <para>Set this flag to determine whether the icon should be extracted asynchronously. If the icon can be extracted rapidly, this flag is usually ignored. If extraction will take more time, <b>GetIconLocation</b> should return E_PENDING. See the Remarks for further discussion.</para>
+      <h4>GIL_DEFAULTICON (0x0040)</h4>
+      <para>Retrieve information about the fallback icon. Fallback icons are usually used while the desired icon is extracted and added to the cache.</para>
+      <h4>GIL_FORSHELL (0x0002)</h4>
+      <para>The icon is displayed in a Shell folder.</para>
+      <h4>GIL_FORSHORTCUT (0x0080)</h4>
+      <para>The icon indicates a shortcut. However, the icon extractor should not apply the shortcut overlay; that will be done later. Shortcut icons are state-independent.</para>
+      <h4>GIL_OPENICON (0x0001)</h4>
+      <para>The icon is in the open state if both open-state and closed-state images are available. If this flag is not specified, the icon is in the normal or closed state. This flag is typically used for folder objects.</para>
+      <h4>GIL_CHECKSHIELD (0x0200)</h4>
+      <para>Explicitly return either GIL_SHIELD or GIL_FORCENOSHIELD in <i>pwFlags</i>. Do not block if GIL_ASYNC is set.</para>
+    </param>
+    <param name="pszIconFile">
+      <para>Type: <b>PTSTR</b></para>
+      <para>A pointer to a buffer that receives the icon location. The icon location is a null-terminated string that identifies the file that contains the icon.</para>
+    </param>
+    <param name="cchMax">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the buffer, in characters, pointed to by <i>pszIconFile</i>.</para>
+    </param>
+    <param name="piIndex">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an <b>int</b> that receives the index of the icon in the file pointed to by <i>pszIconFile</i>.</para>
+    </param>
+    <param name="pwFlags">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to a <b>UINT</b> value that receives zero or a combination of the following values.</para>
+      <h4>GIL_DONTCACHE (0x0010)</h4>
+      <para>The physical image bits for this icon are not cached by the calling application.</para>
+      <h4>GIL_NOTFILENAME (0x0008)</h4>
+      <para>The location is not a file name/index pair. The values in <i>pszIconFile</i> and <i>piIndex</i> cannot be passed to <see cref="ExtractIcon" /> or <see cref="ExtractIconEx" />.</para>
+      <para>When this flag is omitted, the value returned in <i>pszIconFile</i> is a fully-qualified path name to either a .ico file or to a file that can contain icons. Also, the value returned in <i>piIndex</i> is an index into that file that identifies which of its icons to use. Therefore, when the GIL_NOTFILENAME flag is omitted, these values can be passed to <see cref="ExtractIcon" /> or <see cref="ExtractIconEx" />.</para>
+      <h4>GIL_PERCLASS (0x0004)</h4>
+      <para>All objects of this class have the same icon. This flag is used internally by the Shell. Typical implementations of <see cref="IExtractIcon" /> do not require this flag because the flag implies that an icon handler is not required to resolve the icon on a per-object basis. The recommended method for implementing per-class icons is to register a DefaultIcon for the class.</para>
+      <h4>GIL_PERINSTANCE (0x0002)</h4>
+      <para>Each object of this class has its own icon. This flag is used internally by the Shell to handle cases like Setup.exe, where objects with identical names can have different icons. Typical implementations of <see cref="IExtractIcon" /> do not require this flag.</para>
+      <h4>GIL_SIMULATEDOC (0x0001)</h4>
+      <para>The calling application should create a document icon using the specified icon.</para>
+      <h4>GIL_SHIELD (0x0200)</h4>
+      <para>
+        <b>Windows Vista only</b>. The calling application must stamp the icon with the UAC shield.</para>
+      <h4>GIL_FORCENOSHIELD (0x0400)</h4>
+      <para>
+        <b>Windows Vista only</b>. The calling application must not stamp the icon with the UAC shield.</para>
+      <h5>- pwFlags.GIL_DONTCACHE (0x0010)</h5>
+      <para>The physical image bits for this icon are not cached by the calling application.</para>
+      <h5>- pwFlags.GIL_FORCENOSHIELD (0x0400)</h5>
+      <para>
+        <b>Windows Vista only</b>. The calling application must not stamp the icon with the UAC shield.</para>
+      <h5>- pwFlags.GIL_NOTFILENAME (0x0008)</h5>
+      <para>The location is not a file name/index pair. The values in <i>pszIconFile</i> and <i>piIndex</i> cannot be passed to <see cref="ExtractIcon" /> or <see cref="ExtractIconEx" />.</para>
+      <para>When this flag is omitted, the value returned in <i>pszIconFile</i> is a fully-qualified path name to either a .ico file or to a file that can contain icons. Also, the value returned in <i>piIndex</i> is an index into that file that identifies which of its icons to use. Therefore, when the GIL_NOTFILENAME flag is omitted, these values can be passed to <see cref="ExtractIcon" /> or <see cref="ExtractIconEx" />.</para>
+      <h5>- pwFlags.GIL_PERCLASS (0x0004)</h5>
+      <para>All objects of this class have the same icon. This flag is used internally by the Shell. Typical implementations of <see cref="IExtractIcon" /> do not require this flag because the flag implies that an icon handler is not required to resolve the icon on a per-object basis. The recommended method for implementing per-class icons is to register a DefaultIcon for the class.</para>
+      <h5>- pwFlags.GIL_PERINSTANCE (0x0002)</h5>
+      <para>Each object of this class has its own icon. This flag is used internally by the Shell to handle cases like Setup.exe, where objects with identical names can have different icons. Typical implementations of <see cref="IExtractIcon" /> do not require this flag.</para>
+      <h5>- pwFlags.GIL_SHIELD (0x0200)</h5>
+      <para>
+        <b>Windows Vista only</b>. The calling application must stamp the icon with the UAC shield.</para>
+      <h5>- pwFlags.GIL_SIMULATEDOC (0x0001)</h5>
+      <para>The calling application should create a document icon using the specified icon.</para>
+      <h5>- uFlags.GIL_ASYNC (0x0020)</h5>
+      <para>Set this flag to determine whether the icon should be extracted asynchronously. If the icon can be extracted rapidly, this flag is usually ignored. If extraction will take more time, <b>GetIconLocation</b> should return E_PENDING. See the Remarks for further discussion.</para>
+      <h5>- uFlags.GIL_CHECKSHIELD (0x0200)</h5>
+      <para>Explicitly return either GIL_SHIELD or GIL_FORCENOSHIELD in <i>pwFlags</i>. Do not block if GIL_ASYNC is set.</para>
+      <h5>- uFlags.GIL_DEFAULTICON (0x0040)</h5>
+      <para>Retrieve information about the fallback icon. Fallback icons are usually used while the desired icon is extracted and added to the cache.</para>
+      <h5>- uFlags.GIL_FORSHELL (0x0002)</h5>
+      <para>The icon is displayed in a Shell folder.</para>
+      <h5>- uFlags.GIL_FORSHORTCUT (0x0080)</h5>
+      <para>The icon indicates a shortcut. However, the icon extractor should not apply the shortcut overlay; that will be done later. Shortcut icons are state-independent.</para>
+      <h5>- uFlags.GIL_OPENICON (0x0001)</h5>
+      <para>The icon is in the open state if both open-state and closed-state images are available. If this flag is not specified, the icon is in the normal or closed state. This flag is typically used for folder objects.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the function returned a valid location, or S_FALSE if the Shell should use a default icon. If the <b>GIL_ASYNC</b> flag is set in <i>uFlags</i>, the method can return E_PENDING to indicate that icon extraction will be time-consuming.</para>
+    </returns>
+    <remarks>
+      <para>When a client sets the <b>GIL_ASYNC</b> flag in <i>uFlags</i> and receives E_PENDING as a return value, it typically creates a background thread to extract the icon. It calls <b>GetIconLocation</b> from that thread, without the <b>GIL_ASYNC</b> flag, to retrieve the icon location. It then calls <see cref="IExtractIcon.Extract" /> to extract the icon. Returning E_PENDING implies that the object is free threaded. In other words, it can safely be called concurrently by multiple threads.</para>
+      <para>The <b>GIL_DEFAULTICON</b> flag is usually set in the case where the desired icon is found, but that icon is not present in the icon cache. Icon extraction is a low priority background process, and as such may be delayed by other processes. The default icon will be displayed in place of the final icon during the time that it takes for that final icon to be extracted, added to the cache, and made available.</para>
+    </remarks>
+  </member>
+  <member name="IExtractIcon">
+    <summary>
+      <para>Exposes methods that allow a client to retrieve the icon that is associated with one of the objects in a folder.</para>
+    </summary>
+    <remarks>
+      <para>There are two ways to retrieve an object's icon. The simplest way is to call <see cref="SHGetFileInfo" />. However, this approach is inflexible and may be slow. A more flexible and efficient way to retrieve an item's icon is to use <b>IExtractIcon</b>. The Shell uses <b>IExtractIcon</b> to retrieve icons when it displays the contents of a folder. To use <b>IExtractIcon</b> to retrieve an object's icon, do the following:</para>
+      <list type="number">
+        <item>
+          <description>Get a pointer to the <see cref="IShellFolder" /> interface of the folder that contains the object.</description>
+        </item>
+        <item>
+          <description>Call <see cref="IShellFolder.GetUIObjectOf" /> with the pointer to an item identifier list (PIDL) of the object and the interface ID of <b>IExtractIcon</b> (IID_IExtractIcon). The folder creates an object to handle the icon extraction, and returns the object's <b>IExtractIcon</b> interface pointer.</description>
+        </item>
+        <item>
+          <description>Call <see cref="IExtractIcon.GetIconLocation" /> to retrieve the icon's location.</description>
+        </item>
+        <item>
+          <description>Call <see cref="IExtractIcon.Extract" /> to retrieve the icon's handle.</description>
+        </item>
+      </list>
+      <para>It may also be possible to extract icons asynchronously on a background thread. This approach is useful when extraction is a time-consuming operation. For details, see <see cref="IExtractIcon.GetIconLocation" />.</para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/shell/nse-works">Namespace extensions</a> implement <b>IExtractIcon</b> to provide icons for their objects. A client obtains an <b>IExtractIcon</b> interface pointer for an object in a folder by calling the folder's <see cref="IShellFolder.GetUIObjectOf" /> method. The <b>IShellFolder.GetUIObjectOf</b> implementation must create an object to handle the icon extraction and return a pointer to the object's <b>IExtractIcon</b> interface.</para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/shell/how-to-create-icon-handlers">Icon handlers</a> also implement <b>IExtractIcon</b>. An icon handler is a type of Shell extension handler that allows you to dynamically assign icons to the members of a <a href="https://docs.microsoft.com//windows/desktop/shell/fa-file-types">file type</a>.</para>
+      <para>Call this interface if your application needs a more flexible way to retrieve an object's icon than <see cref="SHGetFileInfo" />.</para>
+      <blockquote>
+        <para>[!NOTE]
+The shlobj_core.h header defines IExtractIcon as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="IExtractIcon">
+    <summary>
+      <para>Exposes methods that allow a client to retrieve the icon that is associated with one of the objects in a folder.</para>
+    </summary>
+    <remarks>
+      <para>There are two ways to retrieve an object's icon. The simplest way is to call <see cref="SHGetFileInfo" />. However, this approach is inflexible and may be slow. A more flexible and efficient way to retrieve an item's icon is to use <b>IExtractIcon</b>. The Shell uses <b>IExtractIcon</b> to retrieve icons when it displays the contents of a folder. To use <b>IExtractIcon</b> to retrieve an object's icon, do the following:</para>
+      <list type="number">
+        <item>
+          <description>Get a pointer to the <see cref="IShellFolder" /> interface of the folder that contains the object.</description>
+        </item>
+        <item>
+          <description>Call <see cref="IShellFolder.GetUIObjectOf" /> with the pointer to an item identifier list (PIDL) of the object and the interface ID of <b>IExtractIcon</b> (IID_IExtractIcon). The folder creates an object to handle the icon extraction, and returns the object's <b>IExtractIcon</b> interface pointer.</description>
+        </item>
+        <item>
+          <description>Call <see cref="IExtractIcon.GetIconLocation" /> to retrieve the icon's location.</description>
+        </item>
+        <item>
+          <description>Call <see cref="IExtractIcon.Extract" /> to retrieve the icon's handle.</description>
+        </item>
+      </list>
+      <para>It may also be possible to extract icons asynchronously on a background thread. This approach is useful when extraction is a time-consuming operation. For details, see <see cref="IExtractIcon.GetIconLocation" />.</para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/shell/nse-works">Namespace extensions</a> implement <b>IExtractIcon</b> to provide icons for their objects. A client obtains an <b>IExtractIcon</b> interface pointer for an object in a folder by calling the folder's <see cref="IShellFolder.GetUIObjectOf" /> method. The <b>IShellFolder.GetUIObjectOf</b> implementation must create an object to handle the icon extraction and return a pointer to the object's <b>IExtractIcon</b> interface.</para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/shell/how-to-create-icon-handlers">Icon handlers</a> also implement <b>IExtractIcon</b>. An icon handler is a type of Shell extension handler that allows you to dynamically assign icons to the members of a <a href="https://docs.microsoft.com//windows/desktop/shell/fa-file-types">file type</a>.</para>
+      <para>Call this interface if your application needs a more flexible way to retrieve an object's icon than <see cref="SHGetFileInfo" />.</para>
+      <blockquote>
+        <para>[!NOTE]
+The shlobj_core.h header defines IExtractIcon as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+</doc>

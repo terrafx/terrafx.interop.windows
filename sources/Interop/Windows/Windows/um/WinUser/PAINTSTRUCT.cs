@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT"]/*' />
 public unsafe partial struct PAINTSTRUCT
 {
+    /// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT.hdc"]/*' />
     public HDC hdc;
 
+    /// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT.fErase"]/*' />
     public BOOL fErase;
 
+    /// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT.rcPaint"]/*' />
     public RECT rcPaint;
 
+    /// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT.fRestore"]/*' />
     public BOOL fRestore;
 
+    /// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT.fIncUpdate"]/*' />
     public BOOL fIncUpdate;
 
+    /// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT.rgbReserved"]/*' />
     [NativeTypeName("BYTE [32]")]
     public fixed byte rgbReserved[32];
 }

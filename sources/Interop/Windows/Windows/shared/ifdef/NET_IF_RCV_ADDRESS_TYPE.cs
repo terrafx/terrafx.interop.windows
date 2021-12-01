@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NET_IF_RCV_ADDRESS_TYPE.xml' path='doc/member[@name="NET_IF_RCV_ADDRESS_TYPE"]/*' />
 public enum NET_IF_RCV_ADDRESS_TYPE
 {
+    /// <include file='NET_IF_RCV_ADDRESS_TYPE.xml' path='doc/member[@name="NET_IF_RCV_ADDRESS_TYPE.NET_IF_RCV_ADDRESS_TYPE_OTHER"]/*' />
     NET_IF_RCV_ADDRESS_TYPE_OTHER = 1,
+
+    /// <include file='NET_IF_RCV_ADDRESS_TYPE.xml' path='doc/member[@name="NET_IF_RCV_ADDRESS_TYPE.NET_IF_RCV_ADDRESS_TYPE_VOLATILE"]/*' />
     NET_IF_RCV_ADDRESS_TYPE_VOLATILE = 2,
+
+    /// <include file='NET_IF_RCV_ADDRESS_TYPE.xml' path='doc/member[@name="NET_IF_RCV_ADDRESS_TYPE.NET_IF_RCV_ADDRESS_TYPE_NON_VOLATILE"]/*' />
     NET_IF_RCV_ADDRESS_TYPE_NON_VOLATILE = 3,
 }

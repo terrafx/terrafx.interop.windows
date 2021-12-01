@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICJpegIndexingOptions.xml' path='doc/member[@name="WICJpegIndexingOptions"]/*' />
 public enum WICJpegIndexingOptions : uint
 {
+    /// <include file='WICJpegIndexingOptions.xml' path='doc/member[@name="WICJpegIndexingOptions.WICJpegIndexingOptionsGenerateOnDemand"]/*' />
     WICJpegIndexingOptionsGenerateOnDemand = 0,
+
+    /// <include file='WICJpegIndexingOptions.xml' path='doc/member[@name="WICJpegIndexingOptions.WICJpegIndexingOptionsGenerateOnLoad"]/*' />
     WICJpegIndexingOptionsGenerateOnLoad = 0x1,
+
+    /// <include file='WICJpegIndexingOptions.xml' path='doc/member[@name="WICJpegIndexingOptions.WICJpegIndexingOptions_FORCE_DWORD"]/*' />
     WICJpegIndexingOptions_FORCE_DWORD = 0x7fffffff,
 }

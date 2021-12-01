@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CASCODE.xml' path='doc/member[@name="CASCODE"]/*' />
 public unsafe partial struct CASCODE
 {
+    /// <include file='CASCODE.xml' path='doc/member[@name="CASCODE.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CASCODE.xml' path='doc/member[@name="CASCODE.pElems"]/*' />
     [NativeTypeName("SCODE *")]
     public int* pElems;
 }

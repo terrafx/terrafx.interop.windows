@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_SHADER_DEBUG_VARTYPE">
+    <summary>
+      <para>Distinguishes variables from functions in a scope.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_VARTYPE.D3D10_SHADER_DEBUG_VAR_VARIABLE">
+    <summary>
+      <para>Element is a variable.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_VARTYPE.D3D10_SHADER_DEBUG_VAR_FUNCTION">
+    <summary>
+      <para>Element is a function.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_VARTYPE.D3D10_SHADER_DEBUG_VAR_FORCE_DWORD">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HANDLETABLE">
+    <summary>
+      <para>The <b>HANDLETABLE</b> structure is an array of handles, each of which identifies a graphics device interface (GDI) object.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd162606(v=vs.85)">EnhMetaFileProc</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd162630(v=vs.85)">EnumMetaFileProc</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="HANDLETABLE.objectHandle">
+    <summary>
+      <para>An array of handles.</para>
+    </summary>
+  </member>
+</doc>

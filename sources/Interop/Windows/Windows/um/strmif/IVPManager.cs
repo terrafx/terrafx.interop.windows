@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVPManager.xml' path='doc/member[@name="IVPManager"]/*' />
 [Guid("AAC18C18-E186-46D2-825D-A1F8DC8E395A")]
 [NativeTypeName("struct IVPManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVPManager : IVPManager.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVPManager : IVPManager.Interface
         return ((delegate* unmanaged<IVPManager*, Guid*, void**, int>)(lpVtbl[0]))((IVPManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVPManager : IVPManager.Interface
         return ((delegate* unmanaged<IVPManager*, uint>)(lpVtbl[1]))((IVPManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVPManager : IVPManager.Interface
         return ((delegate* unmanaged<IVPManager*, uint>)(lpVtbl[2]))((IVPManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVPManager.xml' path='doc/member[@name="IVPManager.SetVideoPortIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetVideoPortIndex([NativeTypeName("DWORD")] uint dwVideoPortIndex)
@@ -46,6 +51,7 @@ public unsafe partial struct IVPManager : IVPManager.Interface
         return ((delegate* unmanaged<IVPManager*, uint, int>)(lpVtbl[3]))((IVPManager*)Unsafe.AsPointer(ref this), dwVideoPortIndex);
     }
 
+    /// <include file='IVPManager.xml' path='doc/member[@name="IVPManager.GetVideoPortIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetVideoPortIndex([NativeTypeName("DWORD *")] uint* pdwVideoPortIndex)

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumAssocHandlers.xml' path='doc/member[@name="IEnumAssocHandlers"]/*' />
 [Guid("973810AE-9599-4B88-9E4D-6EE98C9552DA")]
 [NativeTypeName("struct IEnumAssocHandlers : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface
         return ((delegate* unmanaged<IEnumAssocHandlers*, Guid*, void**, int>)(lpVtbl[0]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface
         return ((delegate* unmanaged<IEnumAssocHandlers*, uint>)(lpVtbl[1]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface
         return ((delegate* unmanaged<IEnumAssocHandlers*, uint>)(lpVtbl[2]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumAssocHandlers.xml' path='doc/member[@name="IEnumAssocHandlers.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IAssocHandler** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)

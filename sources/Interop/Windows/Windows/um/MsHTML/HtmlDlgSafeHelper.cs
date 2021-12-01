@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HtmlDlgSafeHelper.xml' path='doc/member[@name="HtmlDlgSafeHelper"]/*' />
 [Guid("3050F819-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HtmlDlgSafeHelper
 {

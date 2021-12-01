@@ -7,18 +7,40 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum STORAGE_DEVICE_FORM_FACTOR
 {
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactorUnknown"]/*' />
     FormFactorUnknown = 0,
+
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactor3_5"]/*' />
     FormFactor3_5,
+
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactor2_5"]/*' />
     FormFactor2_5,
+
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactor1_8"]/*' />
     FormFactor1_8,
+
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactor1_8Less"]/*' />
     FormFactor1_8Less,
+
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactorEmbedded"]/*' />
     FormFactorEmbedded,
+
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactorMemoryCard"]/*' />
     FormFactorMemoryCard,
+
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactormSata"]/*' />
     FormFactormSata,
+
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactorM_2"]/*' />
     FormFactorM_2,
+
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactorPCIeBoard"]/*' />
     FormFactorPCIeBoard,
+
+    /// <include file='STORAGE_DEVICE_FORM_FACTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FORM_FACTOR.FormFactorDimm"]/*' />
     FormFactorDimm,
 }

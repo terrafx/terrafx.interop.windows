@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_PREFERRED_DISPLAY_MODE.xml' path='doc/member[@name="DVD_PREFERRED_DISPLAY_MODE"]/*' />
 public enum DVD_PREFERRED_DISPLAY_MODE
 {
+    /// <include file='DVD_PREFERRED_DISPLAY_MODE.xml' path='doc/member[@name="DVD_PREFERRED_DISPLAY_MODE.DISPLAY_CONTENT_DEFAULT"]/*' />
     DISPLAY_CONTENT_DEFAULT = 0,
+
+    /// <include file='DVD_PREFERRED_DISPLAY_MODE.xml' path='doc/member[@name="DVD_PREFERRED_DISPLAY_MODE.DISPLAY_16x9"]/*' />
     DISPLAY_16x9 = 1,
+
+    /// <include file='DVD_PREFERRED_DISPLAY_MODE.xml' path='doc/member[@name="DVD_PREFERRED_DISPLAY_MODE.DISPLAY_4x3_PANSCAN_PREFERRED"]/*' />
     DISPLAY_4x3_PANSCAN_PREFERRED = 2,
+
+    /// <include file='DVD_PREFERRED_DISPLAY_MODE.xml' path='doc/member[@name="DVD_PREFERRED_DISPLAY_MODE.DISPLAY_4x3_LETTERBOX_PREFERRED"]/*' />
     DISPLAY_4x3_LETTERBOX_PREFERRED = 3,
 }

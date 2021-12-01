@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RASTERIZER_STATUS.xml' path='doc/member[@name="RASTERIZER_STATUS"]/*' />
 public partial struct RASTERIZER_STATUS
 {
+    /// <include file='RASTERIZER_STATUS.xml' path='doc/member[@name="RASTERIZER_STATUS.nSize"]/*' />
     public short nSize;
 
+    /// <include file='RASTERIZER_STATUS.xml' path='doc/member[@name="RASTERIZER_STATUS.wFlags"]/*' />
     public short wFlags;
 
+    /// <include file='RASTERIZER_STATUS.xml' path='doc/member[@name="RASTERIZER_STATUS.nLanguageID"]/*' />
     public short nLanguageID;
 }

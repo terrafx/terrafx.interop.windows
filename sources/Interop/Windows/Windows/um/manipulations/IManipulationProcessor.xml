@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IManipulationProcessor.CompleteManipulation">
+    <summary>
+      <para>The <b>CompleteManipulation</b> method is called when the developer chooses to end the manipulation.</para>
+    </summary>
+    <returns>
+      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>This method raises the ManipulationCompleted() event in response.</para>
+      <para>During a Windows Touch gesture, manipulation gets started as soon as first touch input is sent for processing.
+If <b>CompleteManipulation</b> is called before the second touch input gets a chance to be processed,
+the second touch input will start a new manipulation.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+  </member>
+  <member name="IManipulationProcessor.GetAngularVelocity">
+    <summary>
+      <para>The <b>GetAngularVelocity</b> method calculates the rotational velocity that the target object is moving at.</para>
+    </summary>
+    <param name="angularVelocity">
+      <para>The calculated rotational velocity.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>This value is useful when you are setting up the initial state of the <see cref="IInertiaProcessor" /> interface. You should pass this value when the manipulation completes.</para>
+      <para>This property is expressed in radians per millisecond if explicit timestamps are not specified by using calls to <see cref="ProcessMoveWithTime" />, <b>ProcessMoveWithTime</b>, and <see cref="ProcessUpWithTime" />. Otherwise, this function uses radians per user defined time units.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="InitialAngularVelocity" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+  </member>
+  <member name="IManipulationProcessor.GetExpansionVelocity">
+    <summary>
+      <para>The <b>GetExpansionVelocity</b> method calculates the rate that the target object is expanding at.</para>
+    </summary>
+    <param name="expansionVelocity">
+      <para>The rate of expansion.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>This value is useful when you are using the <see cref="IInertiaProcessor" /> interface. You should pass this value when the manipulation completes.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="InitialExpansionVelocity" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+  </member>
+  <member name="IManipulationProcessor.GetVelocityX">
+    <summary>
+      <para>Calculates and returns the horizontal velocity for the target object.</para>
+    </summary>
+    <param name="velocityX">
+      <para>The calculated horizontal velocity.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an HRESULT error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>This value is useful when you are using the <see cref="IInertiaProcessor" /> interface. You should pass this value when the manipulation completes.</para>
+    </remarks>
+    <seealso cref="GetVelocityY" />
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="InitialVelocityX" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+  </member>
+  <member name="IManipulationProcessor.GetVelocityY">
+    <summary>
+      <para>Calculates and returns the vertical velocity.</para>
+    </summary>
+    <param name="velocityY">
+      <para>The calculated vertical velocity.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an HRESULT error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>This value is useful when you are using the <see cref="IInertiaProcessor" /> interface. You should pass this value when the manipulation completes.</para>
+    </remarks>
+    <seealso cref="GetVelocityX" />
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="InitialVelocityY" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+  </member>
+  <member name="IManipulationProcessor.get_MinimumScaleRotateRadius">
+    <summary>
+      <para>Specifies how large the distance contacts on a scale or rotate gesture need to be to trigger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  This property is set in centipixels (100ths of a pixel).</para>
+      <para>Setting this value will make the manipulation processor ignore gestures that have too small of a radius.
+This is useful if you want to prevent a user from manipulating an object to too small of a radius.  For example,
+if you are using a manipulation processor with a circle and want the ensure that it maintains a radius greater
+than 100 pixels, you would set this value to 10000.</para>
+      <h4>Examples</h4>
+      <code>pManip-&gt;put_MinimumScaleRotateRadius(4000.0f);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+  </member>
+  <member name="IManipulationProcessor.MinimumScaleRotateRadius">
+    <summary>
+      <para>Specifies how large the distance contacts on a scale or rotate gesture need to be to trigger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  This property is set in centipixels (100ths of a pixel).</para>
+      <para>Setting this value will make the manipulation processor ignore gestures that have too small of a radius.
+This is useful if you want to prevent a user from manipulating an object to too small of a radius.  For example,
+if you are using a manipulation processor with a circle and want the ensure that it maintains a radius greater
+than 100 pixels, you would set this value to 10000.</para>
+      <h4>Examples</h4>
+      <code>pManip-&gt;put_MinimumScaleRotateRadius(4000.0f);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+  </member>
+  <member name="IManipulationProcessor.put_MinimumScaleRotateRadius">
+    <summary>
+      <para>Specifies how large the distance contacts on a scale or rotate gesture need to be to trigger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  This property is set in centipixels (100ths of a pixel).</para>
+      <para>Setting this value will make the manipulation processor ignore gestures that have too small of a radius.
+This is useful if you want to prevent a user from manipulating an object to too small of a radius.  For example,
+if you are using a manipulation processor with a circle and want the ensure that it maintains a radius greater
+than 100 pixels, you would set this value to 10000.</para>
+      <h4>Examples</h4>
+      <code>pManip-&gt;put_MinimumScaleRotateRadius(4000.0f);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+  </member>
+  <member name="IManipulationProcessor.get_PivotPointX">
+    <summary>
+      <para>The <b>PivotPointX</b> property is the horizontal center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointY" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.PivotPointX">
+    <summary>
+      <para>The <b>PivotPointX</b> property is the horizontal center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointY" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.put_PivotPointX">
+    <summary>
+      <para>The <b>PivotPointX</b> property is the horizontal center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointY" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.get_PivotPointY">
+    <summary>
+      <para>The <b>PivotPointY</b> property is the vertical center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.PivotPointY">
+    <summary>
+      <para>The <b>PivotPointY</b> property is the vertical center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.put_PivotPointY">
+    <summary>
+      <para>The <b>PivotPointY</b> property is the vertical center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.get_PivotRadius">
+    <summary>
+      <para>The <b>PivotRadius</b> property is used to determine how much rotation is used in single finger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  The pivot radius must either be negative, 0, or a value greater than 1. Setting the pivot radius to a value between 0.0 and 1.0 will return <b>E_INVALIDARG</b>.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotPointY" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.PivotRadius">
+    <summary>
+      <para>The <b>PivotRadius</b> property is used to determine how much rotation is used in single finger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  The pivot radius must either be negative, 0, or a value greater than 1. Setting the pivot radius to a value between 0.0 and 1.0 will return <b>E_INVALIDARG</b>.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotPointY" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.put_PivotRadius">
+    <summary>
+      <para>The <b>PivotRadius</b> property is used to determine how much rotation is used in single finger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  The pivot radius must either be negative, 0, or a value greater than 1. Setting the pivot radius to a value between 0.0 and 1.0 will return <b>E_INVALIDARG</b>.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotPointY" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.get_SupportedManipulations">
+    <summary>
+      <para>The <b>SupportedManipulations</b> property is used to indicate which manipulations are supported by an object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>With this property you can control which manipulations the supports and which it does not.
+For example, you can block all y-translation manipulations while supporting x-translation manipulations.</para>
+      <h4>Examples</h4>
+      <code>
+        CoInitialize(0);
+
+        hr = spIManipProc.CoCreateInstance(CLSID_ManipulationProcessor, NULL, CLSCTX_ALL);
+
+        MANIPULATION_PROCESSOR_MANIPULATIONS mpm;
+        spIManipProc-&gt;get_SupportedManipulations(&amp;amp;amp;amp;amp;amp;mpm);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="MANIPULATION_PROCESSOR_MANIPULATIONS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+  </member>
+  <member name="IManipulationProcessor.put_SupportedManipulations">
+    <summary>
+      <para>The <b>SupportedManipulations</b> property is used to indicate which manipulations are supported by an object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>With this property you can control which manipulations the supports and which it does not.
+For example, you can block all y-translation manipulations while supporting x-translation manipulations.</para>
+      <h4>Examples</h4>
+      <code>
+        CoInitialize(0);
+
+        hr = spIManipProc.CoCreateInstance(CLSID_ManipulationProcessor, NULL, CLSCTX_ALL);
+
+        MANIPULATION_PROCESSOR_MANIPULATIONS mpm;
+        spIManipProc-&gt;get_SupportedManipulations(&amp;amp;amp;amp;amp;amp;mpm);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="MANIPULATION_PROCESSOR_MANIPULATIONS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+  </member>
+  <member name="IManipulationProcessor.SupportedManipulations">
+    <summary>
+      <para>The <b>SupportedManipulations</b> property is used to indicate which manipulations are supported by an object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>With this property you can control which manipulations the supports and which it does not.
+For example, you can block all y-translation manipulations while supporting x-translation manipulations.</para>
+      <h4>Examples</h4>
+      <code>
+        CoInitialize(0);
+
+        hr = spIManipProc.CoCreateInstance(CLSID_ManipulationProcessor, NULL, CLSCTX_ALL);
+
+        MANIPULATION_PROCESSOR_MANIPULATIONS mpm;
+        spIManipProc-&gt;get_SupportedManipulations(&amp;amp;amp;amp;amp;amp;mpm);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="MANIPULATION_PROCESSOR_MANIPULATIONS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+  </member>
+  <member name="IManipulationProcessor.ProcessDown">
+    <summary>
+      <para>The <b>ProcessDown</b> method feeds touch down data to the manipulation processor associated with a target.</para>
+    </summary>
+    <param name="manipulatorId">
+      <para>The identifier for the touch contact that you want to process.</para>
+    </param>
+    <param name="x">
+      <para>The horizontal coordinate data associated with the target.</para>
+    </param>
+    <param name="y">
+      <para>The vertical coordinate data associated with the target.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>This method takes a timestamp using system time rather than from the touch hardware. To improve the experience in
+cases where performance is degrading you should use the <see cref="ProcessDownWithTime" /> method.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+  </member>
+  <member name="IManipulationProcessor.ProcessDownWithTime">
+    <summary>
+      <para>Feeds touch down data, including a timestamp, to the manipulation processor associated with a target.</para>
+    </summary>
+    <param name="manipulatorId">
+      <para>The identifier for the touch contact to be processed.</para>
+    </param>
+    <param name="x">
+      <para>The horizontal coordinate data associated with the target.</para>
+    </param>
+    <param name="y">
+      <para>The vertical coordinate data associated with the target.</para>
+    </param>
+    <param name="timestamp">
+      <para>The time of the data event.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an HRESULT error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>It is possible to receive touch events out of the order they were produced.  To fix this,
+you should extract the timestamp from the <see cref="TOUCHINPUT" /> structure when you process events.</para>
+      <h4>Examples</h4>
+      <code>static void ProcessDown(TOUCHINPUT* pTouchInput, IManipulationProcessor* pManipulationProcessor){
+  pManipulationProcessor-&gt;ProcessDownWithTime(
+    pTouchInput-&gt;dwID,
+    static_cast&lt;float&gt;(pTouchInput-&gt;x),
+    static_cast&lt;float&gt;(pTouchInput-&gt;y),
+    pTouchInput-&gt;dwTime
+  );
+}
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+    <seealso cref="ProcessDown" />
+    <seealso cref="ProcessMoveWithTime" />
+    <seealso cref="ProcessUpWithTime" />
+  </member>
+  <member name="IManipulationProcessor.ProcessMove">
+    <summary>
+      <para>The <b>ProcessMove</b> method feeds movement data for the target object to its manipulation processor.</para>
+    </summary>
+    <param name="manipulatorId">
+      <para>The identifier for the touch contact that you want to process.</para>
+    </param>
+    <param name="x">
+      <para>The horizontal coordinate data associated with the target.</para>
+    </param>
+    <param name="y">
+      <para>The vertical coordinate data associated with the target.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>This method takes a timestamp using system time rather than from the touch hardware. To improve the experience in
+cases where performance is degrading you should use the <see cref="ProcessMoveWithTime" /> method.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+    <seealso cref="ProcessDown" />
+    <seealso cref="ProcessMoveWithTime" />
+    <seealso cref="ProcessUp" />
+  </member>
+  <member name="IManipulationProcessor.ProcessMoveWithTime">
+    <summary>
+      <para>Feeds movement data, including a time stamp, for the target object to its manipulation processor.</para>
+    </summary>
+    <param name="manipulatorId">
+      <para>The identifier for the touch contact to be processed.</para>
+    </param>
+    <param name="x">
+      <para>The horizontal coordinate data associated with the target.</para>
+    </param>
+    <param name="y">
+      <para>The vertical coordinate data associated with the target.</para>
+    </param>
+    <param name="timestamp">
+      <para>The time of the data event.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an HRESULT error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>It is possible to receive touch events out of the order they were produced.  To fix this,
+you should extract the time stamp from the <see cref="TOUCHINPUT" /> structure when you process events.</para>
+      <h4>Examples</h4>
+      <code>
+static void ProcessMove(TOUCHINPUT* pTouchInput, IManipulationProcessor* pManipulationProcessor){
+  pManipulationProcessor-&gt;ProcessMoveWithTime(
+    pTouchInput-&gt;dwID,
+    static_cast&lt;float&gt;(pTouchInput-&gt;x),
+    static_cast&lt;float&gt;(pTouchInput-&gt;y),
+    pTouchInput-&gt;dwTime
+  );
+}
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+    <seealso cref="ProcessDownWithTime" />
+    <seealso cref="ProcessMove" />
+    <seealso cref="ProcessUpWithTime" />
+  </member>
+  <member name="IManipulationProcessor.ProcessUp">
+    <summary>
+      <para>The <b>ProcessUp</b> method feeds data to a target's manipulation processor for touch up sequences.</para>
+    </summary>
+    <param name="manipulatorId">
+      <para>The identifier for the touch contact that you want to process.</para>
+    </param>
+    <param name="x">
+      <para>The horizontal coordinate data associated with the target.</para>
+    </param>
+    <param name="y">
+      <para>The vertical coordinate data associated with the target.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>This method takes a timestamp using system time rather than from the touch hardware. To improve the experience in
+cases where performance is degrading you should use the <see cref="ProcessUpWithTime" /> method.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+    <seealso cref="ProcessDown" />
+    <seealso cref="ProcessMove" />
+    <seealso cref="ProcessUpWithTime" />
+  </member>
+  <member name="IManipulationProcessor.ProcessUpWithTime">
+    <summary>
+      <para>Feeds data, including a timestamp, to a target's manipulation processor for touch-up sequences.</para>
+    </summary>
+    <param name="manipulatorId">
+      <para>The identifier for the touch contact to be processed.</para>
+    </param>
+    <param name="x">
+      <para>The horizontal coordinate data associated with the target.</para>
+    </param>
+    <param name="y">
+      <para>The vertical coordinate data associated with the target.</para>
+    </param>
+    <param name="timestamp">
+      <para>The time of the data event.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an HRESULT error code such as <b>E_FAIL</b>.</para>
+    </returns>
+    <remarks>
+      <para>It is possible to receive touch events out of the order they were produced.  To fix this,
+you should extract the timestamp from the <see cref="TOUCHINPUT" /> structure when you process events.</para>
+      <h4>Examples</h4>
+      <code>
+static void ProcessUp(TOUCHINPUT* pTouchInput, IManipulationProcessor* pManipulationProcessor){
+  pManipulationProcessor-&gt;ProcessUpWithTime(
+    pTouchInput-&gt;dwID,
+    static_cast&lt;float&gt;(pTouchInput-&gt;x),
+    static_cast&lt;float&gt;(pTouchInput-&gt;y),
+    pTouchInput-&gt;dwTime
+  );
+}
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtmethods">Methods</seealso>
+    <seealso cref="ProcessDownWithTime" />
+    <seealso cref="ProcessMoveWithTime" />
+    <seealso cref="ProcessUp" />
+  </member>
+  <member name="IManipulationProcessor.get_MinimumScaleRotateRadius">
+    <summary>
+      <para>Specifies how large the distance contacts on a scale or rotate gesture need to be to trigger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  This property is set in centipixels (100ths of a pixel).</para>
+      <para>Setting this value will make the manipulation processor ignore gestures that have too small of a radius.
+This is useful if you want to prevent a user from manipulating an object to too small of a radius.  For example,
+if you are using a manipulation processor with a circle and want the ensure that it maintains a radius greater
+than 100 pixels, you would set this value to 10000.</para>
+      <h4>Examples</h4>
+      <code>pManip-&gt;put_MinimumScaleRotateRadius(4000.0f);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+  </member>
+  <member name="IManipulationProcessor.MinimumScaleRotateRadius">
+    <summary>
+      <para>Specifies how large the distance contacts on a scale or rotate gesture need to be to trigger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  This property is set in centipixels (100ths of a pixel).</para>
+      <para>Setting this value will make the manipulation processor ignore gestures that have too small of a radius.
+This is useful if you want to prevent a user from manipulating an object to too small of a radius.  For example,
+if you are using a manipulation processor with a circle and want the ensure that it maintains a radius greater
+than 100 pixels, you would set this value to 10000.</para>
+      <h4>Examples</h4>
+      <code>pManip-&gt;put_MinimumScaleRotateRadius(4000.0f);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+  </member>
+  <member name="IManipulationProcessor.put_MinimumScaleRotateRadius">
+    <summary>
+      <para>Specifies how large the distance contacts on a scale or rotate gesture need to be to trigger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  This property is set in centipixels (100ths of a pixel).</para>
+      <para>Setting this value will make the manipulation processor ignore gestures that have too small of a radius.
+This is useful if you want to prevent a user from manipulating an object to too small of a radius.  For example,
+if you are using a manipulation processor with a circle and want the ensure that it maintains a radius greater
+than 100 pixels, you would set this value to 10000.</para>
+      <h4>Examples</h4>
+      <code>pManip-&gt;put_MinimumScaleRotateRadius(4000.0f);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+  </member>
+  <member name="IManipulationProcessor.get_PivotPointX">
+    <summary>
+      <para>The <b>PivotPointX</b> property is the horizontal center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointY" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.PivotPointX">
+    <summary>
+      <para>The <b>PivotPointX</b> property is the horizontal center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointY" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.put_PivotPointX">
+    <summary>
+      <para>The <b>PivotPointX</b> property is the horizontal center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointY" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.get_PivotPointY">
+    <summary>
+      <para>The <b>PivotPointY</b> property is the vertical center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.PivotPointY">
+    <summary>
+      <para>The <b>PivotPointY</b> property is the vertical center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.put_PivotPointY">
+    <summary>
+      <para>The <b>PivotPointY</b> property is the vertical center of the object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotRadius" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.get_PivotRadius">
+    <summary>
+      <para>The <b>PivotRadius</b> property is used to determine how much rotation is used in single finger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  The pivot radius must either be negative, 0, or a value greater than 1. Setting the pivot radius to a value between 0.0 and 1.0 will return <b>E_INVALIDARG</b>.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotPointY" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.PivotRadius">
+    <summary>
+      <para>The <b>PivotRadius</b> property is used to determine how much rotation is used in single finger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  The pivot radius must either be negative, 0, or a value greater than 1. Setting the pivot radius to a value between 0.0 and 1.0 will return <b>E_INVALIDARG</b>.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotPointY" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.put_PivotRadius">
+    <summary>
+      <para>The <b>PivotRadius</b> property is used to determine how much rotation is used in single finger manipulation.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  The pivot radius must either be negative, 0, or a value greater than 1. Setting the pivot radius to a value between 0.0 and 1.0 will return <b>E_INVALIDARG</b>.</para>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="PivotPointX" />
+    <seealso cref="PivotPointY" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/single-finger-rotation">Single Finger Rotation</seealso>
+  </member>
+  <member name="IManipulationProcessor.get_SupportedManipulations">
+    <summary>
+      <para>The <b>SupportedManipulations</b> property is used to indicate which manipulations are supported by an object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>With this property you can control which manipulations the supports and which it does not.
+For example, you can block all y-translation manipulations while supporting x-translation manipulations.</para>
+      <h4>Examples</h4>
+      <code>
+        CoInitialize(0);
+
+        hr = spIManipProc.CoCreateInstance(CLSID_ManipulationProcessor, NULL, CLSCTX_ALL);
+
+        MANIPULATION_PROCESSOR_MANIPULATIONS mpm;
+        spIManipProc-&gt;get_SupportedManipulations(&amp;amp;amp;amp;amp;amp;mpm);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="MANIPULATION_PROCESSOR_MANIPULATIONS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+  </member>
+  <member name="IManipulationProcessor.put_SupportedManipulations">
+    <summary>
+      <para>The <b>SupportedManipulations</b> property is used to indicate which manipulations are supported by an object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>With this property you can control which manipulations the supports and which it does not.
+For example, you can block all y-translation manipulations while supporting x-translation manipulations.</para>
+      <h4>Examples</h4>
+      <code>
+        CoInitialize(0);
+
+        hr = spIManipProc.CoCreateInstance(CLSID_ManipulationProcessor, NULL, CLSCTX_ALL);
+
+        MANIPULATION_PROCESSOR_MANIPULATIONS mpm;
+        spIManipProc-&gt;get_SupportedManipulations(&amp;amp;amp;amp;amp;amp;mpm);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="MANIPULATION_PROCESSOR_MANIPULATIONS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+  </member>
+  <member name="IManipulationProcessor.SupportedManipulations">
+    <summary>
+      <para>The <b>SupportedManipulations</b> property is used to indicate which manipulations are supported by an object.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>With this property you can control which manipulations the supports and which it does not.
+For example, you can block all y-translation manipulations while supporting x-translation manipulations.</para>
+      <h4>Examples</h4>
+      <code>
+        CoInitialize(0);
+
+        hr = spIManipProc.CoCreateInstance(CLSID_ManipulationProcessor, NULL, CLSCTX_ALL);
+
+        MANIPULATION_PROCESSOR_MANIPULATIONS mpm;
+        spIManipProc-&gt;get_SupportedManipulations(&amp;amp;amp;amp;amp;amp;mpm);
+
+</code>
+    </remarks>
+    <seealso cref="IManipulationProcessor" />
+    <seealso cref="MANIPULATION_PROCESSOR_MANIPULATIONS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtproperties">Properties</seealso>
+  </member>
+  <member name="IManipulationProcessor">
+    <summary>
+      <para>The IManipulationProcessor provides functionality for monitoring and responding to multitouch input.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/intertmanip-classes-and-interfaces">Classes and Interfaces</seealso>
+  </member>
+</doc>

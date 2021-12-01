@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_ELEVATION.xml' path='doc/member[@name="TOKEN_ELEVATION"]/*' />
 public partial struct TOKEN_ELEVATION
 {
+    /// <include file='TOKEN_ELEVATION.xml' path='doc/member[@name="TOKEN_ELEVATION.TokenIsElevated"]/*' />
     [NativeTypeName("DWORD")]
     public uint TokenIsElevated;
 }

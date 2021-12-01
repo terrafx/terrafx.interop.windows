@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_AUTOPROXY_OPTIONS">
+    <summary>
+      <para>The <b>WINHTTP_AUTOPROXY_OPTIONS</b> structure is used to indicate to the <see cref="WinHttpGetProxyForURL" /> function whether to specify the URL of the Proxy Auto-Configuration (PAC) file or to automatically locate the URL with DHCP or DNS queries to the network.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-versions">WinHTTP Versions</seealso>
+  </member>
+  <member name="WINHTTP_AUTOPROXY_OPTIONS.dwFlags">
+    <summary>
+      <para>Mechanisms should be used to obtain the PAC file.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <item>
+            <description>
+              <b>WINHTTP_AUTOPROXY_ALLOW_AUTOCONFIG</b>
+            </description>
+            <description>
+              <para>Enables proxy detection via autoconfig URL.</para>
+            </description>
+          </item>
+          <item>
+            <description>
+              <b>WINHTTP_AUTOPROXY_ALLOW_CM</b>
+            </description>
+            <description>
+              <para>Enables proxy detection via connection manager.</para>
+            </description>
+          </item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_ALLOW_STATIC</b>
+          </description>
+          <description>
+            <para>Enables proxy detection via static configuration.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_AUTO_DETECT</b>
+          </description>
+          <description>
+            <para>Attempt to automatically discover the URL of the PAC file using both DHCP and DNS queries to the local network.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_CONFIG_URL</b>
+          </description>
+          <description>
+            <para>Download the PAC file from the URL specified by <b>lpszAutoConfigUrl</b> in the <b>WINHTTP_AUTOPROXY_OPTIONS</b> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_HOST_KEEPCASE</b>
+          </description>
+          <description>
+            <para>Maintains the case of the hostnames passed to the PAC script. This is the default behavior.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_HOST_LOWERCASE</b>
+          </description>
+          <description>
+            <para>Converts hostnames to lowercase before passing them to the PAC script.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_NO_CACHE_CLIENT</b>
+          </description>
+          <description>
+            <para>Disables querying a host to proxy cache of script execution results in the current process.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_NO_CACHE_SVC</b>
+          </description>
+          <description>
+            <para>Disables querying a host to proxy cache of script execution results in the autoproxy service.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_NO_DIRECTACCESS</b>
+          </description>
+          <description>
+            <para>Disables querying Direct Access proxy settings for this request.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_RUN_INPROCESS</b>
+          </description>
+          <description>
+            <para>Executes the Web Proxy Auto-Discovery (WPAD) protocol in-process instead of delegating to an out-of-process WinHTTP AutoProxy Service, if available. This flag must be combined with one of the other flags.</para>
+            <para>This option has no effect when passed to <see cref="WinHttpGetProxyForUrlEx" />.</para>
+            <para>
+              <b>Note</b>  This flag is deprecated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_RUN_OUTPROCESS_ONLY</b>
+          </description>
+          <description>
+            <para>By default, WinHTTP is configured to fall back to auto-discover a proxy in-process. If this fallback behavior is undesirable in the event that an out-of-process discovery fails, it can be disabled using this flag.</para>
+            <para>This option has no effect when passed to <see cref="WinHttpGetProxyForUrlEx" />.</para>
+            <para>
+              <b>Note</b>  This flag is available on Windows Server 2003 only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTOPROXY_SORT_RESULTS </b>
+          </description>
+          <description>
+            <para>Orders the proxy results based on a heuristic placing the fastest proxies first.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WINHTTP_AUTOPROXY_OPTIONS.dwAutoDetectFlags">
+    <summary>
+      <para>If <b>dwFlags</b> includes the WINHTTP_AUTOPROXY_AUTO_DETECT flag, then <b>dwAutoDetectFlags</b> specifies what protocols are to be used to locate the PAC file. If both the DHCP and DNS auto detect flags are specified, then DHCP is used first; if no PAC URL is discovered using DHCP, then DNS is used.</para>
+      <para>If <b>dwFlags</b> does not include the WINHTTP_AUTOPROXY_AUTO_DETECT flag, then <b>dwAutoDetectFlags</b> must be zero.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>WINHTTP_AUTO_DETECT_TYPE_DHCP</b>
+          </description>
+          <description>
+            <para>Use DHCP to locate the proxy auto-configuration file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTO_DETECT_TYPE_DNS_A</b>
+          </description>
+          <description>
+            <para>Use DNS to attempt to locate the proxy auto-configuration file at a well-known location on the domain of the local computer.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WINHTTP_AUTOPROXY_OPTIONS.lpszAutoConfigUrl">
+    <summary>
+      <para>If <b>dwFlags</b> includes the WINHTTP_AUTOPROXY_CONFIG_URL flag, the <b>lpszAutoConfigUrl</b> must point to a <b>null</b>-terminated Unicode string that contains the URL of the proxy auto-configuration (PAC) file.</para>
+      <para>If <b>dwFlags</b> does not include the WINHTTP_AUTOPROXY_CONFIG_URL flag, then <b>lpszAutoConfigUrl</b> must be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_AUTOPROXY_OPTIONS.lpvReserved">
+    <summary>
+      <para>Reserved for future use; must be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_AUTOPROXY_OPTIONS.dwReserved">
+    <summary>
+      <para>Reserved for future use; must be zero.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_AUTOPROXY_OPTIONS.fAutoLogonIfChallenged">
+    <summary>
+      <para>Specifies whether the client's domain credentials should be automatically sent in response to an NTLM or Negotiate Authentication challenge when WinHTTP requests the PAC file.</para>
+      <para>If this flag is TRUE, credentials should automatically be sent in response to an authentication challenge. If this flag is FALSE and authentication is required to download the PAC file, the <see cref="WinHttpGetProxyForUrl" /> function fails.</para>
+    </summary>
+  </member>
+</doc>

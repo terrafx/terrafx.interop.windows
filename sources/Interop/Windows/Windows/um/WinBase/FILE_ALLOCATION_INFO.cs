@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_ALLOCATION_INFO.xml' path='doc/member[@name="FILE_ALLOCATION_INFO"]/*' />
 public partial struct FILE_ALLOCATION_INFO
 {
+    /// <include file='FILE_ALLOCATION_INFO.xml' path='doc/member[@name="FILE_ALLOCATION_INFO.AllocationSize"]/*' />
     public LARGE_INTEGER AllocationSize;
 }

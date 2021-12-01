@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ASSOC_FILTER.xml' path='doc/member[@name="ASSOC_FILTER"]/*' />
 public enum ASSOC_FILTER
 {
+    /// <include file='ASSOC_FILTER.xml' path='doc/member[@name="ASSOC_FILTER.ASSOC_FILTER_NONE"]/*' />
     ASSOC_FILTER_NONE = 0,
+
+    /// <include file='ASSOC_FILTER.xml' path='doc/member[@name="ASSOC_FILTER.ASSOC_FILTER_RECOMMENDED"]/*' />
     ASSOC_FILTER_RECOMMENDED = 0x1,
 }

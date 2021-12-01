@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WbemRefresher.xml' path='doc/member[@name="WbemRefresher"]/*' />
 [Guid("C71566F2-561E-11D1-AD87-00C04FD8FDFF")]
 public partial struct WbemRefresher
 {

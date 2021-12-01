@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ELEMENT_TYPE.xml' path='doc/member[@name="ELEMENT_TYPE"]/*' />
 public enum ELEMENT_TYPE
 {
+    /// <include file='ELEMENT_TYPE.xml' path='doc/member[@name="ELEMENT_TYPE.AllElements"]/*' />
     AllElements,
+
+    /// <include file='ELEMENT_TYPE.xml' path='doc/member[@name="ELEMENT_TYPE.ChangerTransport"]/*' />
     ChangerTransport,
+
+    /// <include file='ELEMENT_TYPE.xml' path='doc/member[@name="ELEMENT_TYPE.ChangerSlot"]/*' />
     ChangerSlot,
+
+    /// <include file='ELEMENT_TYPE.xml' path='doc/member[@name="ELEMENT_TYPE.ChangerIEPort"]/*' />
     ChangerIEPort,
+
+    /// <include file='ELEMENT_TYPE.xml' path='doc/member[@name="ELEMENT_TYPE.ChangerDrive"]/*' />
     ChangerDrive,
+
+    /// <include file='ELEMENT_TYPE.xml' path='doc/member[@name="ELEMENT_TYPE.ChangerDoor"]/*' />
     ChangerDoor,
+
+    /// <include file='ELEMENT_TYPE.xml' path='doc/member[@name="ELEMENT_TYPE.ChangerKeypad"]/*' />
     ChangerKeypad,
+
+    /// <include file='ELEMENT_TYPE.xml' path='doc/member[@name="ELEMENT_TYPE.ChangerMaxElement"]/*' />
     ChangerMaxElement,
 }

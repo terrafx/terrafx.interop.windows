@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICaptureGraphBuilder2.AllocCapFile">
+    <summary>
+      <para>The <code>AllocCapFile</code> method preallocates a capture file to a specified size. For best results, always capture to a defragmented, preallocated capture file that is larger than the size of the capture data.</para>
+    </summary>
+    <param name="lpstr">
+      <para>Pointer to a wide-character string that contains the name of the file to create or resize.</para>
+    </param>
+    <param name="dwlSize">
+      <para>Size of the file to allocate, in bytes.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method fails if the file is read-only.</para>
+      <para>It is best to allocate as much space as possible—ideally, more than needed. However, this can result in a very large file that contains relatively little data. For example, a 1-gigabyte (GB) capture file might contain a few megabytes of captured video. Use the <see cref="ICaptureGraphBuilder2.CopyCaptureFile" /> method to copy the data into a new file. That method copies only the data and ignores the empty portion of the original file.</para>
+      <para>If you use this method to preallocate the file, call <see cref="IFileSinkFilter2.SetMode" /> on the file-writer filter with the value zero. If the filter is set to AM_FILE_OVERWRITE, it will delete the preallocated file. Note that some file-writer filters do not support mode 0.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="ICaptureGraphBuilder2 Interface" />
+  </member>
+  <member name="ICaptureGraphBuilder2.CopyCaptureFile">
+    <summary>
+      <para>The <code>CopyCaptureFile</code> method copies the valid media data from a capture file.</para>
+    </summary>
+    <param name="lpwstrOld">
+      <para>Pointer to a wide-character string that contains the source file name.</para>
+    </param>
+    <param name="lpwstrNew">
+      <para>Pointer to a wide-character string that contains the destination file name. Valid data is copied to this file.</para>
+    </param>
+    <param name="fAllowEscAbort">
+      <para>Boolean value that specifies whether pressing the ESC key cancels the copy operation. If the value is <b>TRUE</b> and the user presses the ESC key, the operation halts. If the value is <b>FALSE</b>, the method ignores the ESC key.</para>
+    </param>
+    <param name="pCallback">
+      <para>Pointer to an <see cref="IAMCopyCaptureFileProgress" /> interface to display progress information, or <b>NULL</b>. See Remarks for more information.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>User canceled the operation before it completed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Could not open the source file or destination file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Typically, you will first capture to a large preallocated file. This method copies just the valid data to a new file. As a result, the new file can be much smaller than the original file.</para>
+      <para>The source and destination files must be AVI files. Other file types are not supported.</para>
+      <para>To display the progress of the copy operation, implement the <see cref="IAMCopyCaptureFileProgress" /> interface and pass a pointer to the interface in the <i>pCallback</i> parameter. If <i>pCallback</i> is non-<b>NULL</b>, this method periodically calls the <see cref="IAMCopyCaptureFileProgress.Progress" /> method with an integer between 0 and 100 that specifies the percentage complete.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="ICaptureGraphBuilder2 Interface" />
+  </member>
+  <member name="ICaptureGraphBuilder2.FindInterface">
+    <summary>
+      <para>The <code>FindInterface</code> method searches the graph for a specified interface, starting from a specified filter. You can restrict the search to a section of the graph upstream or downstream of the filter, or restrict it to a particular pin category or media type.</para>
+    </summary>
+    <param name="pCategory">
+      <para>A pointer to a GUID that specifies the search criteria. See Remarks for more information. The following values are possible:</para>
+      <list type="bullet">
+        <item>
+          <description>&amp;LOOK_UPSTREAM_ONLY.</description>
+        </item>
+        <item>
+          <description>&amp;LOOK_DOWNSTREAM_ONLY.</description>
+        </item>
+        <item>
+          <description>One of the pin categories listed in <a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a>. </description>
+        </item>
+        <item>
+          <description>
+            <b>NULL</b>
+          </description>
+        </item>
+      </list>
+      <para>See Remarks for more information.</para>
+    </param>
+    <param name="pType">
+      <para>Pointer to a GUID that specifies the major media type of an output pin, or <b>NULL</b>.</para>
+    </param>
+    <param name="pf">
+      <para>Pointer to the <see cref="IBaseFilter" /> interface of the filter. The method begins searching from this filter.</para>
+    </param>
+    <param name="riid">
+      <para>Interface identifier (IID) of the interface to locate.</para>
+    </param>
+    <param name="ppint">
+      <para>Address of a variable that receives the interface pointer. Be sure to release the retrieved interface pointer when you are done with the interface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOINTERFACE</b>
+            </para>
+          </description>
+          <description>
+            <para>No such interface supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In a capture graph, various filters and pins might expose interfaces for setting properties such as compression parameters (<see cref="IAMVideoCompression" />) or stream formats (<see cref="IAMStreamConfig" />). Depending on the capture device, other useful interfaces might include <see cref="IAMCrossbar" />, which routes analog signals, or <see cref="IAMTVTuner" />, which controls a TV tuner device. You can use this method to find an interface, without writing special code that traverses the graph.</para>
+      <para>
+        <b>Important</b>  Do not call this method to obtain an <see cref="IVideoWindow" /> interface pointer. Always query the filter graph manager for this interface. Otherwise, the filter graph manager will not respond correctly to changes in screen resolution and other events.</para>
+      <para>If the <i>pCategory</i> parameter is <b>NULL</b>, this method searches the entire graph for the requested interface. Starting from the filter specified by the <i>pf</i> parameter, it queries the following objects in the graph.</para>
+      <list type="bullet">
+        <item>
+          <description>The filter</description>
+        </item>
+        <item>
+          <description>The filter's pins</description>
+        </item>
+        <item>
+          <description>All the downstream filters, including their pins</description>
+        </item>
+        <item>
+          <description>All the upstream filters, including their pins</description>
+        </item>
+      </list>
+      <para>You can restrict the search by setting the <i>pCategory</i> and <i>pType</i> parameters, as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>If <i>pCategory</i> equals &amp;LOOK_UPSTREAM_ONLY, the search starts from the filter's input pins and continues upstream. It does not include the filter or anything downstream from the filter. The <i>pType</i> parameter is ignored.</description>
+        </item>
+        <item>
+          <description>If <i>pCategory</i> equals &amp;LOOK_DOWNSTREAM_ONLY, the search starts from the filter's output pins and continues downstream. It does not include the filter or anything upstream from the filter. The <i>pType</i> parameter is ignored.</description>
+        </item>
+        <item>
+          <description>If <i>pCategory</i> specifies a pin category, the downstream portion of the search is restricted to output pins on the filter that match both the pin category and the media type given in the <i>pType</i> parameter. In this case, the method also searches the filter and everything upstream from the filter.</description>
+        </item>
+      </list>
+      <para>In addition, if <i>pCategory</i> is non-<b>NULL</b>, the method may add certain Windows Driver Model (WDM) filters upstream from filter specified in <i>pf</i>. See the remarks under "Supporting Filters" in this section for more information.</para>
+      <para>Pin categories are useful for finding pin interfaces on capture filters. For example, a capture filter might have separate pins for capture and preview. If you specify a pin category, you should also specify the media type, to make certain the method selects the correct filter and pin.</para>
+      <para>Some video capture filters have a video port pin (PIN_CATEGORY_VIDEOPORT) instead of a preview pin. If you specify PIN_CATEGORY_PREVIEW and MEDIATYPE_Video, the method treats any video port pins as preview pins. Your application does not have to test for this possibility.</para>
+      <para>
+        <b>Supporting Filters</b>. If a capture device uses a Windows Driver Model (WDM) driver, the graph may require certain filters upstream from the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wdm-video-capture-filter">WDM Video Capture</a> filter, such as a <a href="https://docs.microsoft.com//windows/desktop/DirectShow/tv-tuner-filter">TV Tuner</a> filter or an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/analog-video-crossbar-filter">Analog Video Crossbar</a> filter. If the <i>pCategory</i> parameter does not equal <b>NULL</b>, this method automatically inserts any required WDM filters into the graph. To do so, it queries the input pins on the capture filter to determine what mediums they support, and connects them to matching filters. If the <i>pCategory</i> parameter is <b>NULL</b>, the method does not add the upstream filters.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="ICaptureGraphBuilder2 Interface" />
+  </member>
+  <member name="ICaptureGraphBuilder2.FindPin">
+    <summary>
+      <para>The <code>FindPin</code> method retrieves a particular pin on a filter, or determines whether a given pin matches the specified criteria.</para>
+    </summary>
+    <param name="pSource">
+      <para>Pointer to an interface on a filter, or to an interface on a pin.</para>
+    </param>
+    <param name="pindir">
+      <para>Member of the <see cref="PIN_DIRECTION" /> enumeration that specifies the pin direction (input or output).</para>
+    </param>
+    <param name="pCategory">
+      <para>A pointer to a GUID that specifies one of the pin categories listed in <a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a>. To match any pin, regardless of category, set this parameter to <b>NULL</b>.</para>
+    </param>
+    <param name="pType">
+      <para>Pointer to a major type GUID that specifies the media type. Use <b>NULL</b> to match any media type.</para>
+    </param>
+    <param name="fUnconnected">
+      <para>Boolean value that specifies whether the pin must be unconnected. If <b>TRUE</b>, the pin must be unconnected. If <b>FALSE</b>, the pin can be connected or unconnected.</para>
+    </param>
+    <param name="num">
+      <para>Zero-based index of the pin to retrieve, from the set of matching pins. If <i>pSource</i> is a pointer to a filter, and more than one pin matches the search criteria, this parameter specifies which pin to retrieve. If <i>pSource</i> is a pointer to a pin, this parameter is ignored.</para>
+    </param>
+    <param name="ppPin">
+      <para>Address of a pointer to receive the <see cref="IPin" /> interface of the matching pin.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if a matching pin is found, or E_FAIL otherwise.</para>
+    </returns>
+    <remarks>
+      <para>If <i>pSource</i> is a pointer to a filter, the method searches for the <i>n</i>th pin on that filter that matches the search criteria, where <i>n</i> is given by the <i>num</i> parameter. If the method finds a matching pin, it returns a pointer to the pin in the <i>ppPin</i> parameter.</para>
+      <para>If <i>pSource</i> is a pointer to a pin, the method tests that pin against the search criteria. If the pin matches the criteria, the method returns S_OK, and returns a pointer to the pin's <b>IPin</b> interface in the <i>ppPin</i> parameter. Otherwise, it returns E_FAIL.</para>
+      <para>In either case, if the method succeeds, the <b>IPin</b> interface returned in the <i>ppPin</i> parameter has an outstanding reference count. Be sure to release the interface when you are done using it.</para>
+      <para>Typically, an application will not need to use this method. It is provided for unusually complex tasks, when the <see cref="ICaptureGraphBuilder2.RenderStream" /> method cannot build the filter graph. Use this method to retrieve a desired pin from a capture filter, and then build the rest of the graph manually.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="ICaptureGraphBuilder2 Interface" />
+  </member>
+  <member name="ICaptureGraphBuilder2.GetFiltergraph">
+    <summary>
+      <para>The <code>GetFiltergraph</code> method retrieves the filter graph that the capture graph builder is using.</para>
+    </summary>
+    <param name="ppfg">
+      <para>Receives an <see cref="IGraphBuilder" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Returns one of the following <b>HRESULT</b> values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>No filter graph.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Initially, the capture graph builder does not hold a pointer to a filter graph. This method returns E_UNEXPECTED until one of the following methods has been called:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="ICaptureGraphBuilder2.RenderStream" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ICaptureGraphBuilder2.SetFiltergraph" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ICaptureGraphBuilder2.SetOutputFileName" />
+          </description>
+        </item>
+      </list>
+      <para>This method increments the reference count on the <b>IGraphBuilder</b> interface. Be sure to release the interface when you are done with it.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="ICaptureGraphBuilder2 Interface" />
+  </member>
+  <member name="ICaptureGraphBuilder2.SetFiltergraph">
+    <summary>
+      <para>The <code>SetFiltergraph</code> method specifies a filter graph for the capture graph builder to use.</para>
+    </summary>
+    <param name="pfg">
+      <para>Pointer to the filter graph's <see cref="IGraphBuilder" /> interface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Unexpected error.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If you do not call this method, the capture graph builder automatically creates a filter graph when it needs one. If the capture graph builder already has a filter graph, this method returns E_UNEXPECTED.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="ICaptureGraphBuilder2 Interface" />
+  </member>
+  <member name="ICaptureGraphBuilder2.SetOutputFileName">
+    <summary>
+      <para>The <code>SetOutputFileName</code> method creates the file writing section of the filter graph.</para>
+    </summary>
+    <param name="pType">
+      <para>Pointer to a <b>GUID</b> that represents either the media subtype of the output or the class identifier (CLSID) of a multiplexer filter or file writer filter. If you specify a media subtype, it must be one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>MEDIASUBTYPE_Avi</description>
+          <description>Audio-Video Interleaved (AVI)</description>
+        </item>
+        <item>
+          <description>MEDIASUBTYPE_Asf</description>
+          <description>Advanced Systems Format (ASF)</description>
+        </item>
+      </list>
+    </param>
+    <param name="lpstrFile">
+      <para>Pointer to a wide-character string that contains the output file name.</para>
+    </param>
+    <param name="ppf">
+      <para>Address of a pointer that receives the multiplexer's <see cref="IBaseFilter" /> interface.</para>
+    </param>
+    <param name="ppSink">
+      <para>Address of a pointer that receives the file writer's <see cref="IFileSinkFilter" /> interface. Can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method creates a multiplexer filter based on the value of the <i>pType</i> parameter. For AVI, it creates the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-mux-filter">AVI Mux Filter</a>. For ASF, it creates the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wm-asf-writer-filter">WM ASF Writer</a>. For other values, it creates the filter identified by the CLSID. It adds the multiplexer to the filter graph, and returns a pointer to its <b>IBaseFilter</b> interface in the <i>ppf</i> parameter.</para>
+      <para>If the multiplexer supports the <b>IFileSinkFilter</b> interface, the method calls <see cref="IFileSinkFilter.SetFileName" /> to set the output file name, using the value given in the <i>lpwstrFile</i> parameter. If the multiplexer does not support <b>IFileSinkFilter</b> interface, the method adds the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/file-writer-filter">File Writer Filter</a> to the filter graph, connects the multiplexer to the file writer, and uses the file writer's <b>IFileSinkFilter</b> interface to call <b>SetFileName</b>. If the <i>pSink</i> parameter is not <b>NULL</b>, it receives a pointer to the <b>IFileSinkFilter</b> interface.</para>
+      <para>You can use the pointer to the multiplexer filter, returned in the <i>ppf</i> parameter, as the <i>pSink</i> parameter in the <see cref="ICaptureGraphBuilder2.RenderStream" /> method.</para>
+      <para>For custom multiplexer filters, the method fails if the filter does not support a connection on its output pin before its input pins are connected. For example, the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wavdest-filter-sample">WavDest Filter Sample</a> included with the SDK has this limitation.</para>
+      <para>If the method succeeds, the <b>IBaseFilter</b> interface returned in the <i>ppf</i> parameter has an outstanding reference count. If the method succeeds and <i>pSink</i> is not <b>NULL</b>, the <b>IFileSinkFilter</b> interface also has an outstanding reference count. Be sure to release both interfaces when you are done using them.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="ICaptureGraphBuilder2 Interface" />
+  </member>
+  <member name="ICaptureGraphBuilder2">
+    <summary>
+      <para>The <code>ICaptureGraphBuilder2</code> interface builds capture graphs and other custom filter graphs. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/capture-graph-builder">Capture Graph Builder</a> object implements this interface.</para>
+      <para>
+        <b>Note</b>  By default, the <code>ICaptureGraphBuilder2</code> interface does not use the Video Mixing Renderer (VMR), Enhanced Video Renderer (EVR) or <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-port-manager">Video Port Manager</a> filters.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/building-graphs-with-the-capture-graph-builder">Building Graphs with the Capture Graph Builder</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/recompressing-an-avi-file">Recompressing an AVI File</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-capture">Video Capture</seealso>
+  </member>
+</doc>

@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFnGetPreferredTouchKeyboardLayout.xml' path='doc/member[@name="ITfFnGetPreferredTouchKeyboardLayout"]/*' />
 [Guid("5F309A41-590A-4ACC-A97F-D8EFFF13FDFC")]
 [NativeTypeName("struct ITfFnGetPreferredTouchKeyboardLayout : ITfFunction")]
 [NativeInheritance("ITfFunction")]
@@ -18,6 +19,7 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
         return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
         return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, uint>)(lpVtbl[1]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
         return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, uint>)(lpVtbl[2]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -48,6 +53,7 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
         return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, ushort**, int>)(lpVtbl[3]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
+    /// <include file='ITfFnGetPreferredTouchKeyboardLayout.xml' path='doc/member[@name="ITfFnGetPreferredTouchKeyboardLayout.GetLayout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetLayout(TKBLayoutType* pTKBLayoutType, [NativeTypeName("WORD *")] ushort* pwPreferredLayoutId)

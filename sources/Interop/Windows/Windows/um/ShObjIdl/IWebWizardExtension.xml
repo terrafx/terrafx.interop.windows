@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWebWizardExtension.SetErrorURL">
+    <summary>
+      <para>Specifies the URL of a page that displays when a user experiences an error while navigating through the wizard extension pages.</para>
+    </summary>
+    <param name="pszErrorURL">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>The URL of the page to display.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWebWizardExtension.SetInitialURL">
+    <summary>
+      <para>Sets the URL of the initial server-provided HTML page in a hosted wizard.</para>
+    </summary>
+    <param name="pszURL">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>The URL of the initial server-provided HTML page.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWebWizardExtension">
+    <summary>
+      <para>Extends the <see cref="IWizardExtension" /> interface by exposing methods to set the wizard extension's initial URL, and a specific URL in case of an error.</para>
+    </summary>
+    <seealso cref="IWizardExtension" />
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWinInetCacheHints2.xml' path='doc/member[@name="IWinInetCacheHints2"]/*' />
 [Guid("7857AEAC-D31F-49BF-884E-DD46DF36780A")]
 [NativeTypeName("struct IWinInetCacheHints2 : IWinInetCacheHints")]
 [NativeInheritance("IWinInetCacheHints")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface
         return ((delegate* unmanaged<IWinInetCacheHints2*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface
         return ((delegate* unmanaged<IWinInetCacheHints2*, uint>)(lpVtbl[1]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface
         return ((delegate* unmanaged<IWinInetCacheHints2*, uint>)(lpVtbl[2]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWinInetCacheHints.SetCacheExtension" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetCacheExtension([NativeTypeName("LPCWSTR")] ushort* pwzExt, [NativeTypeName("LPVOID")] void* pszCacheFile, [NativeTypeName("DWORD *")] uint* pcbCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved)
@@ -46,6 +51,7 @@ public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface
         return ((delegate* unmanaged<IWinInetCacheHints2*, ushort*, void*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this), pwzExt, pszCacheFile, pcbCacheFile, pdwWinInetError, pdwReserved);
     }
 
+    /// <include file='IWinInetCacheHints2.xml' path='doc/member[@name="IWinInetCacheHints2.SetCacheExtension2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetCacheExtension2([NativeTypeName("LPCWSTR")] ushort* pwzExt, [NativeTypeName("WCHAR *")] ushort* pwzCacheFile, [NativeTypeName("DWORD *")] uint* pcchCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved)

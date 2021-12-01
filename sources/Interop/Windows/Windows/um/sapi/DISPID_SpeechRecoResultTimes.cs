@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechRecoResultTimes.xml' path='doc/member[@name="DISPID_SpeechRecoResultTimes"]/*' />
 public enum DISPID_SpeechRecoResultTimes
 {
+    /// <include file='DISPID_SpeechRecoResultTimes.xml' path='doc/member[@name="DISPID_SpeechRecoResultTimes.DISPID_SRRTStreamTime"]/*' />
     DISPID_SRRTStreamTime = 1,
+
+    /// <include file='DISPID_SpeechRecoResultTimes.xml' path='doc/member[@name="DISPID_SpeechRecoResultTimes.DISPID_SRRTLength"]/*' />
     DISPID_SRRTLength = (DISPID_SRRTStreamTime + 1),
+
+    /// <include file='DISPID_SpeechRecoResultTimes.xml' path='doc/member[@name="DISPID_SpeechRecoResultTimes.DISPID_SRRTTickCount"]/*' />
     DISPID_SRRTTickCount = (DISPID_SRRTLength + 1),
+
+    /// <include file='DISPID_SpeechRecoResultTimes.xml' path='doc/member[@name="DISPID_SpeechRecoResultTimes.DISPID_SRRTOffsetFromStart"]/*' />
     DISPID_SRRTOffsetFromStart = (DISPID_SRRTTickCount + 1),
 }

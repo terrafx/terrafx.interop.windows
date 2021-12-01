@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EDITBORDER_VSCROLLSTATES.xml' path='doc/member[@name="EDITBORDER_VSCROLLSTATES"]/*' />
 public enum EDITBORDER_VSCROLLSTATES
 {
+    /// <include file='EDITBORDER_VSCROLLSTATES.xml' path='doc/member[@name="EDITBORDER_VSCROLLSTATES.EPSV_NORMAL"]/*' />
     EPSV_NORMAL = 1,
+
+    /// <include file='EDITBORDER_VSCROLLSTATES.xml' path='doc/member[@name="EDITBORDER_VSCROLLSTATES.EPSV_HOT"]/*' />
     EPSV_HOT = 2,
+
+    /// <include file='EDITBORDER_VSCROLLSTATES.xml' path='doc/member[@name="EDITBORDER_VSCROLLSTATES.EPSV_FOCUSED"]/*' />
     EPSV_FOCUSED = 3,
+
+    /// <include file='EDITBORDER_VSCROLLSTATES.xml' path='doc/member[@name="EDITBORDER_VSCROLLSTATES.EPSV_DISABLED"]/*' />
     EPSV_DISABLED = 4,
 }

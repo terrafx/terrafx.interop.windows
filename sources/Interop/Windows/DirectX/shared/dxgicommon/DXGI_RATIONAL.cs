@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_RATIONAL.xml' path='doc/member[@name="DXGI_RATIONAL"]/*' />
 public partial struct DXGI_RATIONAL
 {
+    /// <include file='DXGI_RATIONAL.xml' path='doc/member[@name="DXGI_RATIONAL.Numerator"]/*' />
     public uint Numerator;
 
+    /// <include file='DXGI_RATIONAL.xml' path='doc/member[@name="DXGI_RATIONAL.Denominator"]/*' />
     public uint Denominator;
 }

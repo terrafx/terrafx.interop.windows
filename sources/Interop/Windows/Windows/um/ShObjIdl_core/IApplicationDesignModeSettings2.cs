@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IApplicationDesignModeSettings2.xml' path='doc/member[@name="IApplicationDesignModeSettings2"]/*' />
 [Guid("490514E1-675A-4D6E-A58D-E54901B4CA2F")]
 [NativeTypeName("struct IApplicationDesignModeSettings2 : IApplicationDesignModeSettings")]
 [NativeInheritance("IApplicationDesignModeSettings")]
@@ -16,6 +17,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, uint>)(lpVtbl[1]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, uint>)(lpVtbl[2]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IApplicationDesignModeSettings.SetNativeDisplaySize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetNativeDisplaySize(SIZE nativeDisplaySizePixels)
@@ -46,6 +51,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE, int>)(lpVtbl[3]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), nativeDisplaySizePixels);
     }
 
+    /// <inheritdoc cref="IApplicationDesignModeSettings.SetScaleFactor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetScaleFactor(DEVICE_SCALE_FACTOR scaleFactor)
@@ -53,6 +59,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, DEVICE_SCALE_FACTOR, int>)(lpVtbl[4]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), scaleFactor);
     }
 
+    /// <inheritdoc cref="IApplicationDesignModeSettings.SetApplicationViewState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetApplicationViewState(APPLICATION_VIEW_STATE viewState)
@@ -60,6 +67,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_STATE, int>)(lpVtbl[5]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), viewState);
     }
 
+    /// <inheritdoc cref="IApplicationDesignModeSettings.ComputeApplicationSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ComputeApplicationSize(SIZE* applicationSizePixels)
@@ -67,6 +75,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE*, int>)(lpVtbl[6]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), applicationSizePixels);
     }
 
+    /// <inheritdoc cref="IApplicationDesignModeSettings.IsApplicationViewStateSupported" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsApplicationViewStateSupported(APPLICATION_VIEW_STATE viewState, SIZE nativeDisplaySizePixels, DEVICE_SCALE_FACTOR scaleFactor, BOOL* supported)
@@ -74,6 +83,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL*, int>)(lpVtbl[7]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), viewState, nativeDisplaySizePixels, scaleFactor, supported);
     }
 
+    /// <inheritdoc cref="IApplicationDesignModeSettings.TriggerEdgeGesture" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT TriggerEdgeGesture(EDGE_GESTURE_KIND edgeGestureKind)
@@ -81,6 +91,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, EDGE_GESTURE_KIND, int>)(lpVtbl[8]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), edgeGestureKind);
     }
 
+    /// <include file='IApplicationDesignModeSettings2.xml' path='doc/member[@name="IApplicationDesignModeSettings2.SetNativeDisplayOrientation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetNativeDisplayOrientation(NATIVE_DISPLAY_ORIENTATION nativeDisplayOrientation)
@@ -88,6 +99,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, NATIVE_DISPLAY_ORIENTATION, int>)(lpVtbl[9]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), nativeDisplayOrientation);
     }
 
+    /// <include file='IApplicationDesignModeSettings2.xml' path='doc/member[@name="IApplicationDesignModeSettings2.SetApplicationViewOrientation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetApplicationViewOrientation(APPLICATION_VIEW_ORIENTATION viewOrientation)
@@ -95,6 +107,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_ORIENTATION, int>)(lpVtbl[10]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), viewOrientation);
     }
 
+    /// <include file='IApplicationDesignModeSettings2.xml' path='doc/member[@name="IApplicationDesignModeSettings2.SetAdjacentDisplayEdges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetAdjacentDisplayEdges(ADJACENT_DISPLAY_EDGES adjacentDisplayEdges)
@@ -102,6 +115,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, ADJACENT_DISPLAY_EDGES, int>)(lpVtbl[11]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), adjacentDisplayEdges);
     }
 
+    /// <include file='IApplicationDesignModeSettings2.xml' path='doc/member[@name="IApplicationDesignModeSettings2.SetIsOnLockScreen"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetIsOnLockScreen(BOOL isOnLockScreen)
@@ -109,6 +123,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, BOOL, int>)(lpVtbl[12]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), isOnLockScreen);
     }
 
+    /// <include file='IApplicationDesignModeSettings2.xml' path='doc/member[@name="IApplicationDesignModeSettings2.SetApplicationViewMinWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetApplicationViewMinWidth(APPLICATION_VIEW_MIN_WIDTH viewMinWidth)
@@ -116,6 +131,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_MIN_WIDTH, int>)(lpVtbl[13]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), viewMinWidth);
     }
 
+    /// <include file='IApplicationDesignModeSettings2.xml' path='doc/member[@name="IApplicationDesignModeSettings2.GetApplicationSizeBounds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetApplicationSizeBounds(SIZE* minApplicationSizePixels, SIZE* maxApplicationSizePixels)
@@ -123,6 +139,7 @@ public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesig
         return ((delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE*, SIZE*, int>)(lpVtbl[14]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), minApplicationSizePixels, maxApplicationSizePixels);
     }
 
+    /// <include file='IApplicationDesignModeSettings2.xml' path='doc/member[@name="IApplicationDesignModeSettings2.GetApplicationViewOrientation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetApplicationViewOrientation(SIZE applicationSizePixels, APPLICATION_VIEW_ORIENTATION* viewOrientation)

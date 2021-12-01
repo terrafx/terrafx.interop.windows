@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFontDisp">
+    <summary>
+      <para>Exposes a font object's properties through Automation. It provides a subset of the <see cref="IFont" /> methods.</para>
+    </summary>
+    <remarks>
+      <para>The following table describes the dispIDs for the various font properties.</para>
+      <list type="table">
+        <listheader>
+          <description>Constant</description>
+          <description>Value</description>
+        </listheader>
+        <item>
+          <description>DISPID_FONT_NAME
+</description>
+          <description>0</description>
+        </item>
+        <item>
+          <description>DISPID_FONT_SIZE
+</description>
+          <description>2</description>
+        </item>
+        <item>
+          <description>DISPID_FONT_BOLD
+</description>
+          <description>3</description>
+        </item>
+        <item>
+          <description>DISPID_FONT_ITALIC
+</description>
+          <description>4</description>
+        </item>
+        <item>
+          <description>DISPID_FONT_UNDER
+</description>
+          <description>5</description>
+        </item>
+        <item>
+          <description>DISPID_FONT_STRIKE
+</description>
+          <description>6</description>
+        </item>
+        <item>
+          <description>DISPID_FONT_WEIGHT
+</description>
+          <description>7</description>
+        </item>
+        <item>
+          <description>DISPID_FONT_CHARSET
+</description>
+          <description>8</description>
+        </item>
+      </list>
+      <para>Each property in the <b>IFontDisp</b> interface includes a <b>get_PropertyName</b> method if the property supports read access and a <b>put_PropertyName</b> method if the property supports write access. These properties support both read and write access.</para>
+      <list type="table">
+        <listheader>
+          <description>Property</description>
+          <description>Type</description>
+          <description>Access</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>Name</description>
+          <description>
+            <b>BSTR</b>
+          </description>
+          <description>RW</description>
+          <description>The facename of the font, e.g. Arial.
+</description>
+        </item>
+        <item>
+          <description>Size</description>
+          <description>
+            <b>CY</b>
+          </description>
+          <description>RW</description>
+          <description>The point size of the font, expressed in a <b>CY</b> type to allow for fractional point sizes.
+</description>
+        </item>
+        <item>
+          <description>Bold</description>
+          <description>
+            <b>BOOL</b>
+          </description>
+          <description>RW</description>
+          <description>Indicates whether the font is boldfaced.
+</description>
+        </item>
+        <item>
+          <description>Italic</description>
+          <description>
+            <b>BOOL</b>
+          </description>
+          <description>RW</description>
+          <description>Indicates whether the font is italicized.
+</description>
+        </item>
+        <item>
+          <description>Underline</description>
+          <description>
+            <b>BOOL</b>
+          </description>
+          <description>RW</description>
+          <description>Indicates whether the font is underlined.
+</description>
+        </item>
+        <item>
+          <description>Strikethrough</description>
+          <description>
+            <b>BOOL</b>
+          </description>
+          <description>RW</description>
+          <description>Indicates whether the font is strikethrough.
+</description>
+        </item>
+        <item>
+          <description>Weight</description>
+          <description>
+            <b>short</b>
+          </description>
+          <description>RW</description>
+          <description>The boldness of the font.
+</description>
+        </item>
+        <item>
+          <description>Charset</description>
+          <description>
+            <b>short</b>
+          </description>
+          <description>RW</description>
+          <description>The character set used in the font, such as ANSI_CHARSET, DEFAULT_CHARSET, or SYMBOL_CHARSET.
+</description>
+        </item>
+      </list>
+      <h3>OLE Implementation</h3>
+      <para>The system provides a standard implementation of a font object with the <b>IFontDisp</b> interface on top of the underlying system font support. A font object is created through the function <see cref="OleCreateFontIndirect" />. A font object supports a number of read/write properties as well as a set of methods through its interface <see cref="IFont" /> and supports the same set of properties (but not the methods) through a dispatch interface <b>IFontDisp</b> which is derived from <b>IDispatch</b> to provide access to the font's properties through Automation. The system implementation of the font object supplies both interfaces.</para>
+    </remarks>
+    <seealso cref="IFont" />
+  </member>
+</doc>

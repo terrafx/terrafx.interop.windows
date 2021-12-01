@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumIDList.xml' path='doc/member[@name="IEnumIDList"]/*' />
 [Guid("000214F2-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IEnumIDList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumIDList : IEnumIDList.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumIDList : IEnumIDList.Interface
         return ((delegate* unmanaged<IEnumIDList*, Guid*, void**, int>)(lpVtbl[0]))((IEnumIDList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumIDList : IEnumIDList.Interface
         return ((delegate* unmanaged<IEnumIDList*, uint>)(lpVtbl[1]))((IEnumIDList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumIDList : IEnumIDList.Interface
         return ((delegate* unmanaged<IEnumIDList*, uint>)(lpVtbl[2]))((IEnumIDList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumIDList.xml' path='doc/member[@name="IEnumIDList.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumIDList : IEnumIDList.Interface
         return ((delegate* unmanaged<IEnumIDList*, uint, ITEMIDLIST**, uint*, int>)(lpVtbl[3]))((IEnumIDList*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
+    /// <include file='IEnumIDList.xml' path='doc/member[@name="IEnumIDList.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumIDList : IEnumIDList.Interface
         return ((delegate* unmanaged<IEnumIDList*, uint, int>)(lpVtbl[4]))((IEnumIDList*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <include file='IEnumIDList.xml' path='doc/member[@name="IEnumIDList.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumIDList : IEnumIDList.Interface
         return ((delegate* unmanaged<IEnumIDList*, int>)(lpVtbl[5]))((IEnumIDList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumIDList.xml' path='doc/member[@name="IEnumIDList.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumIDList** ppenum)

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOGGLEKEYS.xml' path='doc/member[@name="TOGGLEKEYS"]/*' />
 public partial struct TOGGLEKEYS
 {
+    /// <include file='TOGGLEKEYS.xml' path='doc/member[@name="TOGGLEKEYS.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='TOGGLEKEYS.xml' path='doc/member[@name="TOGGLEKEYS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

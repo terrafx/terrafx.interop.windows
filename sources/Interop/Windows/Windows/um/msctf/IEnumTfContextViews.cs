@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumTfContextViews.xml' path='doc/member[@name="IEnumTfContextViews"]/*' />
 [Guid("F0C0F8DD-CF38-44E1-BB0F-68CF0D551C78")]
 [NativeTypeName("struct IEnumTfContextViews : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
         return ((delegate* unmanaged<IEnumTfContextViews*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
         return ((delegate* unmanaged<IEnumTfContextViews*, uint>)(lpVtbl[1]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
         return ((delegate* unmanaged<IEnumTfContextViews*, uint>)(lpVtbl[2]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfContextViews.xml' path='doc/member[@name="IEnumTfContextViews.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfContextViews** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
         return ((delegate* unmanaged<IEnumTfContextViews*, IEnumTfContextViews**, int>)(lpVtbl[3]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumTfContextViews.xml' path='doc/member[@name="IEnumTfContextViews.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfContextView** rgViews, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
         return ((delegate* unmanaged<IEnumTfContextViews*, uint, ITfContextView**, uint*, int>)(lpVtbl[4]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ulCount, rgViews, pcFetched);
     }
 
+    /// <include file='IEnumTfContextViews.xml' path='doc/member[@name="IEnumTfContextViews.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
         return ((delegate* unmanaged<IEnumTfContextViews*, int>)(lpVtbl[5]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfContextViews.xml' path='doc/member[@name="IEnumTfContextViews.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

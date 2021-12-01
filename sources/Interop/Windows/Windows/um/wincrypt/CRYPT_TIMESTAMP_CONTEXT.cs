@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_TIMESTAMP_CONTEXT.xml' path='doc/member[@name="CRYPT_TIMESTAMP_CONTEXT"]/*' />
 public unsafe partial struct CRYPT_TIMESTAMP_CONTEXT
 {
+    /// <include file='CRYPT_TIMESTAMP_CONTEXT.xml' path='doc/member[@name="CRYPT_TIMESTAMP_CONTEXT.cbEncoded"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbEncoded;
 
+    /// <include file='CRYPT_TIMESTAMP_CONTEXT.xml' path='doc/member[@name="CRYPT_TIMESTAMP_CONTEXT.pbEncoded"]/*' />
     public byte* pbEncoded;
 
+    /// <include file='CRYPT_TIMESTAMP_CONTEXT.xml' path='doc/member[@name="CRYPT_TIMESTAMP_CONTEXT.pTimeStamp"]/*' />
     [NativeTypeName("PCRYPT_TIMESTAMP_INFO")]
     public CRYPT_TIMESTAMP_INFO* pTimeStamp;
 }

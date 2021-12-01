@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OLECLOSE">
+    <summary>
+      <para>Indicates whether an object should be saved before closing.</para>
+    </summary>
+    <seealso cref="IOleObject.Close" />
+  </member>
+  <member name="OLECLOSE.OLECLOSE_SAVEIFDIRTY">
+    <summary>
+      <para>The object should be saved if it is dirty.</para>
+    </summary>
+  </member>
+  <member name="OLECLOSE.OLECLOSE_NOSAVE">
+    <summary>
+      <para>The object should not be saved, even if it is dirty. This flag is typically used when an object is being deleted.</para>
+    </summary>
+  </member>
+  <member name="OLECLOSE.OLECLOSE_PROMPTSAVE">
+    <summary>
+      <para>If the object is dirty, the <see cref="IOleObject.Close" /> implementation should display a dialog box to let the end user determine whether to save the object. However, if the object is in the running state but its user interface is invisible, the end user should not be prompted, and the close should be handled as if OLECLOSE_SAVEIFDIRTY had been specified.</para>
+    </summary>
+  </member>
+</doc>

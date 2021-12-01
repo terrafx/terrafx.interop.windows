@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource"]/*' />
 [Guid("AE605CDC-8105-4A23-B710-3259F1E26112")]
 [NativeTypeName("struct IDiaInjectedSource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
         return ((delegate* unmanaged<IDiaInjectedSource*, Guid*, void**, int>)(lpVtbl[0]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
         return ((delegate* unmanaged<IDiaInjectedSource*, uint>)(lpVtbl[1]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
         return ((delegate* unmanaged<IDiaInjectedSource*, uint>)(lpVtbl[2]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_crc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_crc([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
         return ((delegate* unmanaged<IDiaInjectedSource*, uint*, int>)(lpVtbl[3]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_length"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_length([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
         return ((delegate* unmanaged<IDiaInjectedSource*, ulong*, int>)(lpVtbl[4]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_filename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_filename([NativeTypeName("BSTR *")] ushort** pRetVal)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
         return ((delegate* unmanaged<IDiaInjectedSource*, ushort**, int>)(lpVtbl[5]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_objectFilename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_objectFilename([NativeTypeName("BSTR *")] ushort** pRetVal)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
         return ((delegate* unmanaged<IDiaInjectedSource*, ushort**, int>)(lpVtbl[6]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_virtualFilename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_virtualFilename([NativeTypeName("BSTR *")] ushort** pRetVal)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
         return ((delegate* unmanaged<IDiaInjectedSource*, ushort**, int>)(lpVtbl[7]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_sourceCompression"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_sourceCompression([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
         return ((delegate* unmanaged<IDiaInjectedSource*, uint*, int>)(lpVtbl[8]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_source"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_source([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)

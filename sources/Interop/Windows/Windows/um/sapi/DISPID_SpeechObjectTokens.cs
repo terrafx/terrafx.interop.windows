@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechObjectTokens.xml' path='doc/member[@name="DISPID_SpeechObjectTokens"]/*' />
 public enum DISPID_SpeechObjectTokens
 {
+    /// <include file='DISPID_SpeechObjectTokens.xml' path='doc/member[@name="DISPID_SpeechObjectTokens.DISPID_SOTsCount"]/*' />
     DISPID_SOTsCount = 1,
+
+    /// <include file='DISPID_SpeechObjectTokens.xml' path='doc/member[@name="DISPID_SpeechObjectTokens.DISPID_SOTsItem"]/*' />
     DISPID_SOTsItem = (0),
+
+    /// <include file='DISPID_SpeechObjectTokens.xml' path='doc/member[@name="DISPID_SpeechObjectTokens.DISPID_SOTs_NewEnum"]/*' />
     DISPID_SOTs_NewEnum = (-4),
 }

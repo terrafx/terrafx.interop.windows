@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICSectionAccessLevel.xml' path='doc/member[@name="WICSectionAccessLevel"]/*' />
 public enum WICSectionAccessLevel : uint
 {
+    /// <include file='WICSectionAccessLevel.xml' path='doc/member[@name="WICSectionAccessLevel.WICSectionAccessLevelRead"]/*' />
     WICSectionAccessLevelRead = 0x1,
+
+    /// <include file='WICSectionAccessLevel.xml' path='doc/member[@name="WICSectionAccessLevel.WICSectionAccessLevelReadWrite"]/*' />
     WICSectionAccessLevelReadWrite = 0x3,
+
+    /// <include file='WICSectionAccessLevel.xml' path='doc/member[@name="WICSectionAccessLevel.WICSectionAccessLevel_FORCE_DWORD"]/*' />
     WICSectionAccessLevel_FORCE_DWORD = 0x7fffffff,
 }

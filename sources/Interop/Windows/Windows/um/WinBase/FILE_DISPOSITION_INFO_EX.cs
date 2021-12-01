@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_DISPOSITION_INFO_EX.xml' path='doc/member[@name="FILE_DISPOSITION_INFO_EX"]/*' />
 public partial struct FILE_DISPOSITION_INFO_EX
 {
+    /// <include file='FILE_DISPOSITION_INFO_EX.xml' path='doc/member[@name="FILE_DISPOSITION_INFO_EX.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

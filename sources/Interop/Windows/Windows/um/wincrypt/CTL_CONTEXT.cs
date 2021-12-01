@@ -5,25 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CTL_CONTEXT.xml' path='doc/member[@name="CTL_CONTEXT"]/*' />
 public unsafe partial struct CTL_CONTEXT
 {
+    /// <include file='CTL_CONTEXT.xml' path='doc/member[@name="CTL_CONTEXT.dwMsgAndCertEncodingType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMsgAndCertEncodingType;
 
+    /// <include file='CTL_CONTEXT.xml' path='doc/member[@name="CTL_CONTEXT.pbCtlEncoded"]/*' />
     public byte* pbCtlEncoded;
 
+    /// <include file='CTL_CONTEXT.xml' path='doc/member[@name="CTL_CONTEXT.cbCtlEncoded"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbCtlEncoded;
 
+    /// <include file='CTL_CONTEXT.xml' path='doc/member[@name="CTL_CONTEXT.pCtlInfo"]/*' />
     [NativeTypeName("PCTL_INFO")]
     public CTL_INFO* pCtlInfo;
 
+    /// <include file='CTL_CONTEXT.xml' path='doc/member[@name="CTL_CONTEXT.hCertStore"]/*' />
     public HCERTSTORE hCertStore;
 
+    /// <include file='CTL_CONTEXT.xml' path='doc/member[@name="CTL_CONTEXT.hCryptMsg"]/*' />
     public HCRYPTMSG hCryptMsg;
 
+    /// <include file='CTL_CONTEXT.xml' path='doc/member[@name="CTL_CONTEXT.pbCtlContent"]/*' />
     public byte* pbCtlContent;
 
+    /// <include file='CTL_CONTEXT.xml' path='doc/member[@name="CTL_CONTEXT.cbCtlContent"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbCtlContent;
 }

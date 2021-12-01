@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='URLZONEREG.xml' path='doc/member[@name="URLZONEREG"]/*' />
 public enum URLZONEREG
 {
+    /// <include file='URLZONEREG.xml' path='doc/member[@name="URLZONEREG.URLZONEREG_DEFAULT"]/*' />
     URLZONEREG_DEFAULT = 0,
+
+    /// <include file='URLZONEREG.xml' path='doc/member[@name="URLZONEREG.URLZONEREG_HKLM"]/*' />
     URLZONEREG_HKLM = (URLZONEREG_DEFAULT + 1),
+
+    /// <include file='URLZONEREG.xml' path='doc/member[@name="URLZONEREG.URLZONEREG_HKCU"]/*' />
     URLZONEREG_HKCU = (URLZONEREG_HKLM + 1),
 }

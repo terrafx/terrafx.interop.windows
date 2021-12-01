@@ -5,37 +5,52 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER"]/*' />
 public partial struct NTFS_VOLUME_DATA_BUFFER
 {
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.VolumeSerialNumber"]/*' />
     public LARGE_INTEGER VolumeSerialNumber;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.NumberSectors"]/*' />
     public LARGE_INTEGER NumberSectors;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.TotalClusters"]/*' />
     public LARGE_INTEGER TotalClusters;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.FreeClusters"]/*' />
     public LARGE_INTEGER FreeClusters;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.TotalReserved"]/*' />
     public LARGE_INTEGER TotalReserved;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.BytesPerSector"]/*' />
     [NativeTypeName("DWORD")]
     public uint BytesPerSector;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.BytesPerCluster"]/*' />
     [NativeTypeName("DWORD")]
     public uint BytesPerCluster;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.BytesPerFileRecordSegment"]/*' />
     [NativeTypeName("DWORD")]
     public uint BytesPerFileRecordSegment;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.ClustersPerFileRecordSegment"]/*' />
     [NativeTypeName("DWORD")]
     public uint ClustersPerFileRecordSegment;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.MftValidDataLength"]/*' />
     public LARGE_INTEGER MftValidDataLength;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.MftStartLcn"]/*' />
     public LARGE_INTEGER MftStartLcn;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.Mft2StartLcn"]/*' />
     public LARGE_INTEGER Mft2StartLcn;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.MftZoneStart"]/*' />
     public LARGE_INTEGER MftZoneStart;
 
+    /// <include file='NTFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="NTFS_VOLUME_DATA_BUFFER.MftZoneEnd"]/*' />
     public LARGE_INTEGER MftZoneEnd;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILLSTATES.xml' path='doc/member[@name="FILLSTATES"]/*' />
 public enum FILLSTATES
 {
+    /// <include file='FILLSTATES.xml' path='doc/member[@name="FILLSTATES.PBFS_NORMAL"]/*' />
     PBFS_NORMAL = 1,
+
+    /// <include file='FILLSTATES.xml' path='doc/member[@name="FILLSTATES.PBFS_ERROR"]/*' />
     PBFS_ERROR = 2,
+
+    /// <include file='FILLSTATES.xml' path='doc/member[@name="FILLSTATES.PBFS_PAUSED"]/*' />
     PBFS_PAUSED = 3,
+
+    /// <include file='FILLSTATES.xml' path='doc/member[@name="FILLSTATES.PBFS_PARTIAL"]/*' />
     PBFS_PARTIAL = 4,
 }

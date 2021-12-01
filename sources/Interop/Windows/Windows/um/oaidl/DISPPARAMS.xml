@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPPARAMS">
+    <summary>
+      <para>Contains the arguments passed to a method or property.</para>
+    </summary>
+  </member>
+  <member name="DISPPARAMS.rgvarg">
+    <summary>
+      <para>An array of arguments.</para>
+    </summary>
+  </member>
+  <member name="DISPPARAMS.rgdispidNamedArgs">
+    <summary>
+      <para>The dispatch IDs of the named arguments.</para>
+    </summary>
+  </member>
+  <member name="DISPPARAMS.cArgs">
+    <summary>
+      <para>The number of arguments.</para>
+    </summary>
+  </member>
+  <member name="DISPPARAMS.cNamedArgs">
+    <summary>
+      <para>The number of named arguments.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyPageSite.xml' path='doc/member[@name="IPropertyPageSite"]/*' />
 [Guid("B196B28C-BAB4-101A-B69C-00AA00341D07")]
 [NativeTypeName("struct IPropertyPageSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyPageSite : IPropertyPageSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyPageSite : IPropertyPageSite.Interface
         return ((delegate* unmanaged<IPropertyPageSite*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyPageSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyPageSite : IPropertyPageSite.Interface
         return ((delegate* unmanaged<IPropertyPageSite*, uint>)(lpVtbl[1]))((IPropertyPageSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyPageSite : IPropertyPageSite.Interface
         return ((delegate* unmanaged<IPropertyPageSite*, uint>)(lpVtbl[2]))((IPropertyPageSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyPageSite.xml' path='doc/member[@name="IPropertyPageSite.OnStatusChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyPageSite : IPropertyPageSite.Interface
         return ((delegate* unmanaged<IPropertyPageSite*, uint, int>)(lpVtbl[3]))((IPropertyPageSite*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='IPropertyPageSite.xml' path='doc/member[@name="IPropertyPageSite.GetLocaleID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetLocaleID([NativeTypeName("LCID *")] uint* pLocaleID)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyPageSite : IPropertyPageSite.Interface
         return ((delegate* unmanaged<IPropertyPageSite*, uint*, int>)(lpVtbl[4]))((IPropertyPageSite*)Unsafe.AsPointer(ref this), pLocaleID);
     }
 
+    /// <include file='IPropertyPageSite.xml' path='doc/member[@name="IPropertyPageSite.GetPageContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPageContainer(IUnknown** ppUnk)
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertyPageSite : IPropertyPageSite.Interface
         return ((delegate* unmanaged<IPropertyPageSite*, IUnknown**, int>)(lpVtbl[5]))((IPropertyPageSite*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
+    /// <include file='IPropertyPageSite.xml' path='doc/member[@name="IPropertyPageSite.TranslateAccelerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT TranslateAccelerator(MSG* pMsg)

@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='Quality.xml' path='doc/member[@name="Quality"]/*' />
 public partial struct Quality
 {
+    /// <include file='Quality.xml' path='doc/member[@name="Quality.Type"]/*' />
     public QualityMessageType Type;
 
+    /// <include file='Quality.xml' path='doc/member[@name="Quality.Proportion"]/*' />
     [NativeTypeName("long")]
     public int Proportion;
 
+    /// <include file='Quality.xml' path='doc/member[@name="Quality.Late"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long Late;
 
+    /// <include file='Quality.xml' path='doc/member[@name="Quality.TimeStamp"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long TimeStamp;
 }

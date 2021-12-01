@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRRESIZEPALETTE">
+    <summary>
+      <para>The <b>EMRRESIZEPALETTE</b> structure contains members for the <b>ResizePalette</b> enhanced metafile record.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <seealso cref="ResizePalette" />
+  </member>
+  <member name="EMRRESIZEPALETTE.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRRESIZEPALETTE.ihPal">
+    <summary>
+      <para>Index of the palette in the handle table.</para>
+    </summary>
+  </member>
+  <member name="EMRRESIZEPALETTE.cEntries">
+    <summary>
+      <para>Number of entries in palette after resizing.</para>
+    </summary>
+  </member>
+</doc>

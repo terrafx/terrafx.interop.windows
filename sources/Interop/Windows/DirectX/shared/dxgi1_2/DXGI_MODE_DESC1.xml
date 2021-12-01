@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_MODE_DESC1">
+    <summary>
+      <para>Describes a display mode and whether the display mode supports stereo.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>DXGI_MODE_DESC1</b> is identical to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173064(v=vs.85)">DXGI_MODE_DESC</a> except that <b>DXGI_MODE_DESC1</b> includes the <b>Stereo</b> member.</para>
+      <para>This structure is used by the <see cref="GetDisplayModeList1" /> and <see cref="FindClosestMatchingMode1" /> methods.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+  </member>
+  <member name="DXGI_MODE_DESC1.Width">
+    <summary>
+      <para>A value that describes the resolution width.</para>
+    </summary>
+  </member>
+  <member name="DXGI_MODE_DESC1.Height">
+    <summary>
+      <para>A value that describes the resolution height.</para>
+    </summary>
+  </member>
+  <member name="DXGI_MODE_DESC1.RefreshRate">
+    <summary>
+      <para>A <see cref="DXGI_RATIONAL" /> structure that describes the refresh rate in hertz.</para>
+    </summary>
+  </member>
+  <member name="DXGI_MODE_DESC1.Format">
+    <summary>
+      <para>A <see cref="DXGI_FORMAT" />-typed value that describes the display format.</para>
+    </summary>
+  </member>
+  <member name="DXGI_MODE_DESC1.ScanlineOrdering">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173067(v=vs.85)">DXGI_MODE_SCANLINE_ORDER</a>-typed value that describes the scan-line drawing mode.</para>
+    </summary>
+  </member>
+  <member name="DXGI_MODE_DESC1.Scaling">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173066(v=vs.85)">DXGI_MODE_SCALING</a>-typed value that describes the scaling mode.</para>
+    </summary>
+  </member>
+  <member name="DXGI_MODE_DESC1.Stereo">
+    <summary>
+      <para>Specifies whether the full-screen display mode is stereo. <b>TRUE</b> if stereo; otherwise, <b>FALSE</b>.</para>
+    </summary>
+  </member>
+</doc>

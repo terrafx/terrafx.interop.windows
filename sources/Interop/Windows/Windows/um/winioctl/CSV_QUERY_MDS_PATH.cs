@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSV_QUERY_MDS_PATH.xml' path='doc/member[@name="CSV_QUERY_MDS_PATH"]/*' />
 public unsafe partial struct CSV_QUERY_MDS_PATH
 {
+    /// <include file='CSV_QUERY_MDS_PATH.xml' path='doc/member[@name="CSV_QUERY_MDS_PATH.MdsNodeId"]/*' />
     [NativeTypeName("DWORD")]
     public uint MdsNodeId;
 
+    /// <include file='CSV_QUERY_MDS_PATH.xml' path='doc/member[@name="CSV_QUERY_MDS_PATH.DsNodeId"]/*' />
     [NativeTypeName("DWORD")]
     public uint DsNodeId;
 
+    /// <include file='CSV_QUERY_MDS_PATH.xml' path='doc/member[@name="CSV_QUERY_MDS_PATH.PathLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint PathLength;
 
+    /// <include file='CSV_QUERY_MDS_PATH.xml' path='doc/member[@name="CSV_QUERY_MDS_PATH.Path"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort Path[1];
 }

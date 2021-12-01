@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_FACTORY_TYPE.xml' path='doc/member[@name="D2D1_FACTORY_TYPE"]/*' />
 public enum D2D1_FACTORY_TYPE : uint
 {
+    /// <include file='D2D1_FACTORY_TYPE.xml' path='doc/member[@name="D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_SINGLE_THREADED"]/*' />
     D2D1_FACTORY_TYPE_SINGLE_THREADED = 0,
+
+    /// <include file='D2D1_FACTORY_TYPE.xml' path='doc/member[@name="D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_MULTI_THREADED"]/*' />
     D2D1_FACTORY_TYPE_MULTI_THREADED = 1,
+
+    /// <include file='D2D1_FACTORY_TYPE.xml' path='doc/member[@name="D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_FORCE_DWORD"]/*' />
     D2D1_FACTORY_TYPE_FORCE_DWORD = 0xffffffff,
 }

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AgileReferenceOptions">
+    <summary>
+      <para>Specifies options for the <see cref="RoGetAgileReference" /> function.</para>
+    </summary>
+    <seealso cref="RoGetAgileReference" />
+  </member>
+  <member name="AgileReferenceOptions.AGILEREFERENCE_DEFAULT">
+    <summary>
+      <para>Use the default marshaling behavior, which is to marshal interfaces when an agile reference to the interface is obtained.</para>
+    </summary>
+  </member>
+  <member name="AgileReferenceOptions.AGILEREFERENCE_DELAYEDMARSHAL">
+    <summary>
+      <para>Marshaling happens on demand.  Use this option only in situations where it's known that an object is only resolved from the same apartment in which it was registered.</para>
+    </summary>
+  </member>
+</doc>

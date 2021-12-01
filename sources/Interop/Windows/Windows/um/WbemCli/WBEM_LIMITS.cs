@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WBEM_LIMITS.xml' path='doc/member[@name="WBEM_LIMITS"]/*' />
 public enum WBEM_LIMITS
 {
+    /// <include file='WBEM_LIMITS.xml' path='doc/member[@name="WBEM_LIMITS.WBEM_MAX_IDENTIFIER"]/*' />
     WBEM_MAX_IDENTIFIER = 0x1000,
+
+    /// <include file='WBEM_LIMITS.xml' path='doc/member[@name="WBEM_LIMITS.WBEM_MAX_QUERY"]/*' />
     WBEM_MAX_QUERY = 0x4000,
+
+    /// <include file='WBEM_LIMITS.xml' path='doc/member[@name="WBEM_LIMITS.WBEM_MAX_PATH"]/*' />
     WBEM_MAX_PATH = 0x2000,
+
+    /// <include file='WBEM_LIMITS.xml' path='doc/member[@name="WBEM_LIMITS.WBEM_MAX_OBJECT_NESTING"]/*' />
     WBEM_MAX_OBJECT_NESTING = 64,
+
+    /// <include file='WBEM_LIMITS.xml' path='doc/member[@name="WBEM_LIMITS.WBEM_MAX_USER_PROPERTIES"]/*' />
     WBEM_MAX_USER_PROPERTIES = 1024,
 }

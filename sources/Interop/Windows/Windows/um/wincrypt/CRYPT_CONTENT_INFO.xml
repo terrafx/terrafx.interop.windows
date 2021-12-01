@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_CONTENT_INFO">
+    <summary>
+      <para>The <b>CRYPT_CONTENT_INFO</b> structure contains data encoded in the PKCS #7 ContentInfo data format.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_CONTENT_INFO.pszObjId">
+    <summary>
+      <para>Object identifier (OID) of the type of data contained in the <b>Content</b> member. ContentType in PKCS #7 defines a set of predefined OIDs. However, additional OIDs can be defined and used.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_CONTENT_INFO.Content">
+    <summary>
+      <para>The data encoded in the PKCS #7 ContentInfo data format.</para>
+    </summary>
+  </member>
+</doc>

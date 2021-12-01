@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA">
+    <summary>
+      <para>The <b>AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA</b> structure holds policy information used in the verification of certificate chains for files.</para>
+    </summary>
+  </member>
+  <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.dwRegPolicySettings">
+    <summary>
+      <para>Flags set during installation that can be modified by a user. The SetReg tool found in the Authenticode Tool Pack can be used to select or cancel the selection of each value. These flags can be combined using a bitwise-<b>OR</b> operation.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>WTPF_TRUSTTEST</b>
+          </description>
+          <description>
+            <para>Trust any "TEST" certificate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WTPF_TESTCANBEVALID</b>
+          </description>
+          <description>
+            <para>Check any "TEST" certificate for validity.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WTPF_IGNOREEXPIRATION</b>
+          </description>
+          <description>
+            <para>Ignore the expiration date on certificates.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WTPF_IGNOREREVOKATION</b>
+          </description>
+          <description>
+            <para>Ignore revocation checks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WTPF_OFFLINEOK_IND</b>
+          </description>
+          <description>
+            <para>If the source is offline, trust any individual certificates.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WTPF_OFFLINEOK_COM</b>
+          </description>
+          <description>
+            <para>If the source is offline, trust any commercial certificates.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WTPF_OFFLINEOKNBU_IND</b>
+          </description>
+          <description>
+            <para>If the source is offline, trust any individual certificates. Do not use UI.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WTPF_OFFLINEOKNBU_COM</b>
+          </description>
+          <description>
+            <para>If the source is offline, trust any commercial certificates. Do not use checking UI.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WTPF_VERIFY_V1_OFF</b>
+          </description>
+          <description>
+            <para>Turn off verification of v1 certificates.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WTPF_IGNOREREVOCATIONONTS</b>
+          </description>
+          <description>
+            <para>Ignore time stamp revocation checks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WTPF_ALLOWONLYPERTRUST</b>
+          </description>
+          <description>
+            <para>Allow only items in personal trust database.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.pSignerInfo">
+    <summary>
+      <para>A pointer to a
+<see cref="CMSG_SIGNER_INFO" /> structure that contains information on the signer of the file.</para>
+    </summary>
+  </member>
+</doc>

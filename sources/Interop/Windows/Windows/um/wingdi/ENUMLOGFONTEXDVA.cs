@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENUMLOGFONTEXDVA.xml' path='doc/member[@name="ENUMLOGFONTEXDVA"]/*' />
 public partial struct ENUMLOGFONTEXDVA
 {
+    /// <include file='ENUMLOGFONTEXDVA.xml' path='doc/member[@name="ENUMLOGFONTEXDVA.elfEnumLogfontEx"]/*' />
     public ENUMLOGFONTEXA elfEnumLogfontEx;
 
+    /// <include file='ENUMLOGFONTEXDVA.xml' path='doc/member[@name="ENUMLOGFONTEXDVA.elfDesignVector"]/*' />
     public DESIGNVECTOR elfDesignVector;
 }

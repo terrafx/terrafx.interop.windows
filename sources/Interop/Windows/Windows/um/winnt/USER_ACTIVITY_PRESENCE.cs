@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USER_ACTIVITY_PRESENCE.xml' path='doc/member[@name="USER_ACTIVITY_PRESENCE"]/*' />
 public enum USER_ACTIVITY_PRESENCE
 {
+    /// <include file='USER_ACTIVITY_PRESENCE.xml' path='doc/member[@name="USER_ACTIVITY_PRESENCE.PowerUserPresent"]/*' />
     PowerUserPresent = 0,
+
+    /// <include file='USER_ACTIVITY_PRESENCE.xml' path='doc/member[@name="USER_ACTIVITY_PRESENCE.PowerUserNotPresent"]/*' />
     PowerUserNotPresent,
+
+    /// <include file='USER_ACTIVITY_PRESENCE.xml' path='doc/member[@name="USER_ACTIVITY_PRESENCE.PowerUserInactive"]/*' />
     PowerUserInactive,
+
+    /// <include file='USER_ACTIVITY_PRESENCE.xml' path='doc/member[@name="USER_ACTIVITY_PRESENCE.PowerUserMaximum"]/*' />
     PowerUserMaximum,
+
+    /// <include file='USER_ACTIVITY_PRESENCE.xml' path='doc/member[@name="USER_ACTIVITY_PRESENCE.PowerUserInvalid"]/*' />
     PowerUserInvalid = PowerUserMaximum,
 }

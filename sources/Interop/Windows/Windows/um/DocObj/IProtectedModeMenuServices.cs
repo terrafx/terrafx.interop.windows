@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IProtectedModeMenuServices.xml' path='doc/member[@name="IProtectedModeMenuServices"]/*' />
 [Guid("73C105EE-9DFF-4A07-B83C-7EFF290C266E")]
 [NativeTypeName("struct IProtectedModeMenuServices : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
         return ((delegate* unmanaged<IProtectedModeMenuServices*, Guid*, void**, int>)(lpVtbl[0]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
         return ((delegate* unmanaged<IProtectedModeMenuServices*, uint>)(lpVtbl[1]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
         return ((delegate* unmanaged<IProtectedModeMenuServices*, uint>)(lpVtbl[2]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IProtectedModeMenuServices.xml' path='doc/member[@name="IProtectedModeMenuServices.CreateMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateMenu(HMENU* phMenu)
@@ -46,6 +51,7 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
         return ((delegate* unmanaged<IProtectedModeMenuServices*, HMENU*, int>)(lpVtbl[3]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), phMenu);
     }
 
+    /// <include file='IProtectedModeMenuServices.xml' path='doc/member[@name="IProtectedModeMenuServices.LoadMenuW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT LoadMenuW([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("LPCWSTR")] ushort* pszMenuName, HMENU* phMenu)
@@ -53,6 +59,7 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
         return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort*, HMENU*, int>)(lpVtbl[4]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, pszMenuName, phMenu);
     }
 
+    /// <include file='IProtectedModeMenuServices.xml' path='doc/member[@name="IProtectedModeMenuServices.LoadMenuID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, HMENU* phMenu)

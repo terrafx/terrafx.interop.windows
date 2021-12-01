@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFT_ENUM_DATA_V0">
+    <summary>
+      <para>Contains information defining the boundaries for and starting place of an enumeration of update
+sequence number (USN) change journal records. It is used as the input buffer for the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</a> control code. Prior to
+Windows Server 2012 this structure was named
+<b>MFT_ENUM_DATA</b>. Use that name to compile with older SDKs
+and compilers.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+  </member>
+  <member name="MFT_ENUM_DATA_V0.StartFileReferenceNumber">
+    <summary>
+      <para>The ordinal position within the files on the current volume at which the enumeration is to begin.</para>
+      <para>The first call to <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</a> during an
+enumeration must have the <b>StartFileReferenceNumber</b> member set to
+<code>(DWORDLONG)0</code>. Each call to
+<b>FSCTL_ENUM_USN_DATA</b> retrieves the starting point for
+the subsequent call as the first entry in the output buffer. Subsequent calls must be made with
+<b>StartFileReferenceNumber</b> set to this value. For more information, see
+<b>FSCTL_ENUM_USN_DATA</b>.</para>
+    </summary>
+  </member>
+  <member name="MFT_ENUM_DATA_V0.LowUsn">
+    <summary>
+      <para>The lower boundary of the range of USN values used to filter which records are returned. Only records whose
+last change journal USN is between or equal to the <b>LowUsn</b> and
+<b>HighUsn</b> member values are returned.</para>
+    </summary>
+  </member>
+  <member name="MFT_ENUM_DATA_V0.HighUsn">
+    <summary>
+      <para>The upper boundary of the range of USN values used to filter which files are returned.</para>
+    </summary>
+  </member>
+</doc>

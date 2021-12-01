@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfActiveLanguageProfileNotifySink.OnActivated">
+    <summary>
+      <para>Called when the active language or text service changes.</para>
+    </summary>
+    <param name="clsid">
+      <para>CLSID of the TSF text service activated or deactivated. This will be <b>NULL</b> for a language change.</para>
+    </param>
+    <param name="guidProfile">
+      <para>Profile GUID for the TSF text service. This is specified by the TSF text service when it is installed. This will be <b>NULL</b> for a language change.</para>
+    </param>
+    <param name="fActivated">
+      <para>TRUE if the TSF text service is activated or FALSE if the TSF text service is deactivated.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITfActiveLanguageProfileNotifySink interface" />
+  </member>
+  <member name="ITfActiveLanguageProfileNotifySink">
+    <summary>
+      <para>The <b>ITfActiveLanguageProfileNotifySink</b> interface is implemented by an application to receive a notification when the active language or text service changes.</para>
+      <para>To install the advise sink, obtain an <see cref="ITfSource" /> object from an <see cref="ITfThreadMgr" /> object by calling <b>ITfThreadMgr.QueryInterface</b> with IID_ITfActiveLanguageProfileNotifySink. Then call <see cref="ITfSource.AdviseSink" /> with IID_ITfActiveLanguageProfileNotifySink.</para>
+    </summary>
+    <seealso cref="ITfSource " />
+    <seealso cref="ITfSource.AdviseSink " />
+    <seealso cref="ITfThreadMgr " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

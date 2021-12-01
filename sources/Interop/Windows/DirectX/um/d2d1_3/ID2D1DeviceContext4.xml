@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1DeviceContext4.CreateSvgGlyphStyle">
+    <summary>
+      <para>Creates an SVG glyph style object.</para>
+    </summary>
+    <param name="svgGlyphStyle">
+      <para>Type: <b><see cref="ID2D1SvgGlyphStyle" />**</b></para>
+      <para>On completion points to the created <see cref="ID2D1SvgGlyphStyle" /> object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1DeviceContext4" />
+  </member>
+  <member name="ID2D1DeviceContext4.DrawColorBitmapGlyphRun">
+    <summary>
+      <para>Draws a color bitmap glyph run using one of the bitmap formats.</para>
+    </summary>
+    <param name="glyphImageFormat">
+      <para>Type: <b><see cref="DWRITE_GLYPH_IMAGE_FORMATS" /></b></para>
+      <para>Specifies the format of the glyph image. Supported formats are DWRITE_GLYPH_IMAGE_FORMATS_PNG, DWRITE_GLYPH_IMAGE_FORMATS_JPEG,
+DWRITE_GLYPH_IMAGE_FORMATS_TIFF, or DWRITE_GLYPH_IMAGE_FORMATS_PREMULTIPLIED_B8G8R8A8.  This method will result in an error if the color glyph run does not contain the requested format.</para>
+      <para>Only one format can be specified at a time, combinations of flags are not valid input.</para>
+    </param>
+    <param name="baselineOrigin">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The origin of the baseline for the glyph run.</para>
+    </param>
+    <param name="glyphRun">
+      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN" />*</b></para>
+      <para>The glyphs to render.</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>Indicates the measuring method.</para>
+    </param>
+    <param name="bitmapSnapOption">
+      <para>Type: <b><see cref="D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION" /></b></para>
+      <para>Specifies the pixel snapping policy when rendering color bitmap glyphs.</para>
+    </param>
+    <seealso cref="ID2D1DeviceContext4" />
+  </member>
+  <member name="ID2D1DeviceContext4.DrawSvgGlyphRun">
+    <summary>
+      <para>Draws a color glyph run that has the format of DWRITE_GLYPH_IMAGE_FORMATS_SVG.</para>
+    </summary>
+    <param name="baselineOrigin">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The origin of the baseline for the glyph run.</para>
+    </param>
+    <param name="glyphRun">
+      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN" />*</b></para>
+      <para>The glyphs to render.</para>
+    </param>
+    <param name="defaultFillBrush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush used to paint the specified glyphs.</para>
+    </param>
+    <param name="svgGlyphStyle">
+      <para>Type: <b><see cref="ID2D1SvgGlyphStyle" />*</b></para>
+      <para>Values for context-fill, context-stroke, and context-value that are used when rendering SVG glyphs.</para>
+    </param>
+    <param name="colorPaletteIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index used to select a color palette within a color font. Note that this not the same as the paletteIndex in the
+DWRITE_COLOR_GLYPH_RUN struct, which is not relevant for SVG glyphs.</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>Indicates the measuring method used for text layout.</para>
+    </param>
+    <seealso cref="ID2D1DeviceContext4" />
+  </member>
+  <member name="ID2D1DeviceContext4.DrawText">
+    <summary>
+      <para>Draws the text within the given layout rectangle.</para>
+      <para>By default, this method performs baseline snapping and renders color versions of glyphs in color fonts.</para>
+    </summary>
+    <param name="string">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>A pointer to an array of Unicode characters to draw.</para>
+    </param>
+    <param name="stringLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of characters in string.</para>
+    </param>
+    <param name="textFormat">
+      <para>Type: <b><see cref="IDWriteTextFormat" />*</b></para>
+      <para>An object that describes formatting details of the text to draw, such as the font, the font size, and flow direction.</para>
+    </param>
+    <param name="layoutRect">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>The size and position of the area in which the text is drawn.</para>
+    </param>
+    <param name="defaultFillBrush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush used to paint the text.</para>
+    </param>
+    <param name="svgGlyphStyle">
+      <para>Type: <b><see cref="ID2D1SvgGlyphStyle" />*</b></para>
+      <para>Values for context-fill, context-stroke, and context-value that are used when rendering SVG glyphs.</para>
+    </param>
+    <param name="colorPaletteIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index used to select a color palette within a color font.</para>
+    </param>
+    <param name="options">
+      <para>Type: <b><see cref="D2D1_DRAW_TEXT_OPTIONS" /></b></para>
+      <para>A value that indicates whether the text should be snapped to pixel boundaries and whether the text should be clipped to the layout rectangle.
+The default value is <see cref="D2D1_DRAW_TEXT_OPTIONS_NONE" />,
+which indicates that text should be snapped to pixel boundaries and it should not be clipped to the layout rectangle.</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>A value that indicates how glyph metrics are used to measure text when it is formatted.
+The default value is <see cref="DWRITE_MEASURING_MODE_NATURAL" />.</para>
+    </param>
+    <seealso cref="ID2D1DeviceContext4" />
+  </member>
+  <member name="ID2D1DeviceContext4.DrawText">
+    <summary>
+      <para>Draws the text within the given layout rectangle.</para>
+      <para>By default, this method performs baseline snapping and renders color versions of glyphs in color fonts.</para>
+    </summary>
+    <param name="string">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>A pointer to an array of Unicode characters to draw.</para>
+    </param>
+    <param name="stringLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of characters in string.</para>
+    </param>
+    <param name="textFormat">
+      <para>Type: <b><see cref="IDWriteTextFormat" />*</b></para>
+      <para>An object that describes formatting details of the text to draw, such as the font, the font size, and flow direction.</para>
+    </param>
+    <param name="layoutRect">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
+      <para>The size and position of the area in which the text is drawn.</para>
+    </param>
+    <param name="defaultFillBrush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush used to paint the text.</para>
+    </param>
+    <param name="svgGlyphStyle">
+      <para>Type: <b><see cref="ID2D1SvgGlyphStyle" />*</b></para>
+      <para>Values for context-fill, context-stroke, and context-value that are used when rendering SVG glyphs.</para>
+    </param>
+    <param name="colorPaletteIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index used to select a color palette within a color font.</para>
+    </param>
+    <param name="options">
+      <para>Type: <b><see cref="D2D1_DRAW_TEXT_OPTIONS" /></b></para>
+      <para>A value that indicates whether the text should be snapped to pixel boundaries and whether the text should be clipped to the layout rectangle.
+The default value is <see cref="D2D1_DRAW_TEXT_OPTIONS_NONE" />,
+which indicates that text should be snapped to pixel boundaries and it should not be clipped to the layout rectangle.</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>A value that indicates how glyph metrics are used to measure text when it is formatted.
+The default value is <see cref="DWRITE_MEASURING_MODE_NATURAL" />.</para>
+    </param>
+    <seealso cref="ID2D1DeviceContext4" />
+  </member>
+  <member name="ID2D1DeviceContext4.DrawTextLayout">
+    <summary>
+      <para>Draws a text layout object. If the layout is not subsequently changed, this can be more efficient than DrawText when drawing the same layout repeatedly.</para>
+    </summary>
+    <param name="origin">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The point, described in device-independent pixels, at which the upper-left corner of the text described by <i>textLayout</i> is drawn.</para>
+    </param>
+    <param name="textLayout">
+      <para>Type: <b><see cref="IDWriteTextLayout" />*</b></para>
+      <para>The formatted text to draw. Any drawing effects that do not inherit from <see cref="ID2D1Resource" /> are ignored. If there are drawing effects that inherit from <b>ID2D1Resource</b> that are not brushes, this method fails and the render target is put in an error state.</para>
+    </param>
+    <param name="defaultFillBrush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>The brush used to paint the text.</para>
+    </param>
+    <param name="svgGlyphStyle">
+      <para>Type: <b><see cref="ID2D1SvgGlyphStyle" />*</b></para>
+      <para>The values for context-fill, context-stroke, and context-value that are used when rendering SVG glyphs.</para>
+    </param>
+    <param name="colorPaletteIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index used to select a color palette within a color font.</para>
+    </param>
+    <param name="options">
+      <para>Type: <b><see cref="D2D1_DRAW_TEXT_OPTIONS" /></b></para>
+      <para>A value that indicates whether the text should be snapped to pixel boundaries and whether the text should be clipped to the layout rectangle.
+The default value is <see cref="D2D1_DRAW_TEXT_OPTIONS_NONE" />,
+which indicates that text should be snapped to pixel boundaries and it should not be clipped to the layout rectangle.</para>
+    </param>
+    <seealso cref="ID2D1DeviceContext4" />
+  </member>
+  <member name="ID2D1DeviceContext4.GetColorBitmapGlyphImage">
+    <summary>
+      <para>Retrieves an image of the color bitmap glyph from the color glyph cache. If the
+cache does not already contain the requested resource, it will be created. This
+method may be used to extend the lifetime of a glyph image even after it is
+evicted from the color glyph cache.</para>
+    </summary>
+    <param name="glyphImageFormat">
+      <para>Type: <b><see cref="DWRITE_GLYPH_IMAGE_FORMATS" /></b></para>
+      <para>The format for the glyph image.
+If there is no image data in the requested format for the requested glyph, this method will return an error.</para>
+    </param>
+    <param name="glyphOrigin">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The origin for the glyph.</para>
+    </param>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
+      <para>Reference to a font face which contains font face type, appropriate file references, face identification data and various font data such as metrics, names and glyph outlines.</para>
+    </param>
+    <param name="fontEmSize">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The specified font size affects the choice of which bitmap to use from the font. It also affects the output glyphTransform, causing  it to properly scale the glyph.</para>
+    </param>
+    <param name="glyphIndex">
+      <para>Type: <b>UINT16</b></para>
+      <para>Index of the glyph.</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>If true, specifies that glyphs are rotated 90 degrees to the left and vertical metrics are used. Vertical writing is achieved by specifying isSideways as true and rotating the entire run 90 degrees to the right via a rotate transform.</para>
+    </param>
+    <param name="worldTransform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
+      <para>The transform to apply to the image. This input transform affects the choice of which bitmap to use from the font. It is also factored into the output glyphTransform.</para>
+    </param>
+    <param name="dpiX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Dots per inch along the x-axis.</para>
+    </param>
+    <param name="dpiY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Dots per inch along the y-axis.</para>
+    </param>
+    <param name="glyphTransform">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
+      <para>Output transform, which transforms from the glyph's space to the same output space as the worldTransform. This includes the input
+glyphOrigin, the glyph's offset from the glyphOrigin, and any other required transformations.</para>
+    </param>
+    <param name="glyphImage">
+      <para>Type: <b><see cref="ID2D1Image" />**</b></para>
+      <para>On completion contains the retrieved glyph image.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1DeviceContext4" />
+  </member>
+  <member name="ID2D1DeviceContext4.GetSvgGlyphImage">
+    <summary>
+      <para>Retrieves an image of the SVG glyph from the color glyph cache. If the cache  does not already contain the requested resource, it will be created.
+This method may be used to extend the lifetime of a glyph image even after it is evicted from the color glyph cache.</para>
+    </summary>
+    <param name="glyphOrigin">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>Origin of the glyph.</para>
+    </param>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
+      <para>Reference to a font face which contains font face type, appropriate file references, face identification data and various font data such as metrics, names and glyph outlines.</para>
+    </param>
+    <param name="fontEmSize">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The specified font size affects the output
+glyphTransform, causing it to properly scale the glyph.</para>
+    </param>
+    <param name="glyphIndex">
+      <para>Type: <b>UINT16</b></para>
+      <para>Index of the glyph to retrieve.</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>If true, specifies that glyphs are rotated 90 degrees to the left and vertical metrics are used. Vertical writing is achieved by specifying isSideways as true and rotating the entire run 90 degrees to the right via a rotate transform.</para>
+    </param>
+    <param name="worldTransform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
+      <para>The transform to apply to the image.</para>
+    </param>
+    <param name="defaultFillBrush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>Describes how the area is painted.</para>
+    </param>
+    <param name="svgGlyphStyle">
+      <para>Type: <b><see cref="ID2D1SvgGlyphStyle" />*</b></para>
+      <para>The values for context-fill, context-stroke, and context-value that are used when rendering SVG glyphs.</para>
+    </param>
+    <param name="colorPaletteIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index used to select a color palette within a color font.
+Note that this not the same as the paletteIndex in the DWRITE_COLOR_GLYPH_RUN struct, which is not relevant for SVG glyphs.</para>
+    </param>
+    <param name="glyphTransform">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
+      <para>Output transform, which transforms from the glyph's space to the same output space as the worldTransform.
+This includes the input glyphOrigin, the glyph's offset from the glyphOrigin, and any other required transformations.</para>
+    </param>
+    <param name="glyphImage">
+      <para>Type: <b><see cref="ID2D1CommandList" />**</b></para>
+      <para>On completion, contains the retrieved glyph image.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1DeviceContext4" />
+  </member>
+  <member name="ID2D1DeviceContext4">
+    <summary>
+      <para>This interface performs all the same functions as the <see cref="ID2D1DeviceContext3" /> interface,
+plus it enables functionality for handling new types of color font glyphs.</para>
+    </summary>
+  </member>
+</doc>

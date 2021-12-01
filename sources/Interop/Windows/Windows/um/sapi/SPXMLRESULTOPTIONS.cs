@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPXMLRESULTOPTIONS.xml' path='doc/member[@name="SPXMLRESULTOPTIONS"]/*' />
 public enum SPXMLRESULTOPTIONS
 {
+    /// <include file='SPXMLRESULTOPTIONS.xml' path='doc/member[@name="SPXMLRESULTOPTIONS.SPXRO_SML"]/*' />
     SPXRO_SML = 0,
+
+    /// <include file='SPXMLRESULTOPTIONS.xml' path='doc/member[@name="SPXMLRESULTOPTIONS.SPXRO_Alternates_SML"]/*' />
     SPXRO_Alternates_SML = 1,
 }

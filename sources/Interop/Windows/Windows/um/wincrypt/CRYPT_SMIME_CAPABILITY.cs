@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_SMIME_CAPABILITY.xml' path='doc/member[@name="CRYPT_SMIME_CAPABILITY"]/*' />
 public unsafe partial struct CRYPT_SMIME_CAPABILITY
 {
+    /// <include file='CRYPT_SMIME_CAPABILITY.xml' path='doc/member[@name="CRYPT_SMIME_CAPABILITY.pszObjId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszObjId;
 
+    /// <include file='CRYPT_SMIME_CAPABILITY.xml' path='doc/member[@name="CRYPT_SMIME_CAPABILITY.Parameters"]/*' />
     [NativeTypeName("CRYPT_OBJID_BLOB")]
     public CRYPT_DATA_BLOB Parameters;
 }

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_NODE.xml' path='doc/member[@name="WS_XML_NODE"]/*' />
 public partial struct WS_XML_NODE
 {
+    /// <include file='WS_XML_NODE.xml' path='doc/member[@name="WS_XML_NODE.nodeType"]/*' />
     public WS_XML_NODE_TYPE nodeType;
 }

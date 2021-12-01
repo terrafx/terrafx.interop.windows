@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAccServerDocMgr.xml' path='doc/member[@name="IAccServerDocMgr"]/*' />
 [Guid("AD7C73CF-6DD5-4855-ABC2-B04BAD5B9153")]
 [NativeTypeName("struct IAccServerDocMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAccServerDocMgr : IAccServerDocMgr.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAccServerDocMgr : IAccServerDocMgr.Interface
         return ((delegate* unmanaged<IAccServerDocMgr*, Guid*, void**, int>)(lpVtbl[0]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAccServerDocMgr : IAccServerDocMgr.Interface
         return ((delegate* unmanaged<IAccServerDocMgr*, uint>)(lpVtbl[1]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAccServerDocMgr : IAccServerDocMgr.Interface
         return ((delegate* unmanaged<IAccServerDocMgr*, uint>)(lpVtbl[2]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAccServerDocMgr.xml' path='doc/member[@name="IAccServerDocMgr.NewDocument"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT NewDocument([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
@@ -46,6 +51,7 @@ public unsafe partial struct IAccServerDocMgr : IAccServerDocMgr.Interface
         return ((delegate* unmanaged<IAccServerDocMgr*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), riid, punk);
     }
 
+    /// <include file='IAccServerDocMgr.xml' path='doc/member[@name="IAccServerDocMgr.RevokeDocument"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RevokeDocument(IUnknown* punk)
@@ -53,6 +59,7 @@ public unsafe partial struct IAccServerDocMgr : IAccServerDocMgr.Interface
         return ((delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int>)(lpVtbl[4]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='IAccServerDocMgr.xml' path='doc/member[@name="IAccServerDocMgr.OnDocumentFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnDocumentFocus(IUnknown* punk)

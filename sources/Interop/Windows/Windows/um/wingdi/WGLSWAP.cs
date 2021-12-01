@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WGLSWAP.xml' path='doc/member[@name="WGLSWAP"]/*' />
 public partial struct WGLSWAP
 {
+    /// <include file='WGLSWAP.xml' path='doc/member[@name="WGLSWAP.hdc"]/*' />
     public HDC hdc;
 
+    /// <include file='WGLSWAP.xml' path='doc/member[@name="WGLSWAP.uiFlags"]/*' />
     public uint uiFlags;
 }

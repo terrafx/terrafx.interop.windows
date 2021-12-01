@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult"]/*' />
 [Guid("46CE0225-F267-4D68-B299-B2762552DEC1")]
 [NativeTypeName("struct IXblIdpAuthTokenResult : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, Guid*, void**, int>)(lpVtbl[0]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, uint>)(lpVtbl[1]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, uint>)(lpVtbl[2]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetStatus(XBL_IDP_AUTH_TOKEN_STATUS* status)
@@ -46,6 +51,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, XBL_IDP_AUTH_TOKEN_STATUS*, int>)(lpVtbl[3]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), status);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetErrorCode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetErrorCode(HRESULT* errorCode)
@@ -53,6 +59,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, HRESULT*, int>)(lpVtbl[4]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), errorCode);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetToken"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetToken([NativeTypeName("LPWSTR *")] ushort** token)
@@ -60,6 +67,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[5]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), token);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetSignature"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSignature([NativeTypeName("LPWSTR *")] ushort** signature)
@@ -67,6 +75,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[6]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), signature);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetSandbox"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSandbox([NativeTypeName("LPWSTR *")] ushort** sandbox)
@@ -74,6 +83,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[7]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), sandbox);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetEnvironment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetEnvironment([NativeTypeName("LPWSTR *")] ushort** environment)
@@ -81,6 +91,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[8]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), environment);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetMsaAccountId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetMsaAccountId([NativeTypeName("LPWSTR *")] ushort** msaAccountId)
@@ -88,6 +99,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[9]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), msaAccountId);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetXuid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetXuid([NativeTypeName("LPWSTR *")] ushort** xuid)
@@ -95,6 +107,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[10]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), xuid);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetGamertag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetGamertag([NativeTypeName("LPWSTR *")] ushort** gamertag)
@@ -102,6 +115,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[11]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), gamertag);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetAgeGroup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetAgeGroup([NativeTypeName("LPWSTR *")] ushort** ageGroup)
@@ -109,6 +123,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[12]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), ageGroup);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetPrivileges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetPrivileges([NativeTypeName("LPWSTR *")] ushort** privileges)
@@ -116,6 +131,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[13]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), privileges);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetMsaTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetMsaTarget([NativeTypeName("LPWSTR *")] ushort** msaTarget)
@@ -123,6 +139,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[14]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), msaTarget);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetMsaPolicy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetMsaPolicy([NativeTypeName("LPWSTR *")] ushort** msaPolicy)
@@ -130,6 +147,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[15]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), msaPolicy);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetMsaAppId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetMsaAppId([NativeTypeName("LPWSTR *")] ushort** msaAppId)
@@ -137,6 +155,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[16]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), msaAppId);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetRedirect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetRedirect([NativeTypeName("LPWSTR *")] ushort** redirect)
@@ -144,6 +163,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[17]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), redirect);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetMessageW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetMessageW([NativeTypeName("LPWSTR *")] ushort** message)
@@ -151,6 +171,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[18]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), message);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetHelpId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetHelpId([NativeTypeName("LPWSTR *")] ushort** helpId)
@@ -158,6 +179,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[19]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), helpId);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetEnforcementBans"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetEnforcementBans([NativeTypeName("LPWSTR *")] ushort** enforcementBans)
@@ -165,6 +187,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[20]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), enforcementBans);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetRestrictions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetRestrictions([NativeTypeName("LPWSTR *")] ushort** restrictions)
@@ -172,6 +195,7 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[21]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), restrictions);
     }
 
+    /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult.GetTitleRestrictions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetTitleRestrictions([NativeTypeName("LPWSTR *")] ushort** titleRestrictions)

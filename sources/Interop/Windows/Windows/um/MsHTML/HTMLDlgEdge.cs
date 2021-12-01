@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLDlgEdge.xml' path='doc/member[@name="HTMLDlgEdge"]/*' />
 public enum HTMLDlgEdge
 {
+    /// <include file='HTMLDlgEdge.xml' path='doc/member[@name="HTMLDlgEdge.HTMLDlgEdgeSunken"]/*' />
     HTMLDlgEdgeSunken = 0,
+
+    /// <include file='HTMLDlgEdge.xml' path='doc/member[@name="HTMLDlgEdge.HTMLDlgEdgeRaised"]/*' />
     HTMLDlgEdgeRaised = 16,
+
+    /// <include file='HTMLDlgEdge.xml' path='doc/member[@name="HTMLDlgEdge.HTMLDlgEdge_Max"]/*' />
     HTMLDlgEdge_Max = 2147483647,
 }

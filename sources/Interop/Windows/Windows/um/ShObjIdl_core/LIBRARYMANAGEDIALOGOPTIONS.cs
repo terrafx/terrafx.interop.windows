@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LIBRARYMANAGEDIALOGOPTIONS.xml' path='doc/member[@name="LIBRARYMANAGEDIALOGOPTIONS"]/*' />
 [Flags]
 public enum LIBRARYMANAGEDIALOGOPTIONS
 {
+    /// <include file='LIBRARYMANAGEDIALOGOPTIONS.xml' path='doc/member[@name="LIBRARYMANAGEDIALOGOPTIONS.LMD_DEFAULT"]/*' />
     LMD_DEFAULT = 0,
+
+    /// <include file='LIBRARYMANAGEDIALOGOPTIONS.xml' path='doc/member[@name="LIBRARYMANAGEDIALOGOPTIONS.LMD_ALLOWUNINDEXABLENETWORKLOCATIONS"]/*' />
     LMD_ALLOWUNINDEXABLENETWORKLOCATIONS = 0x1,
 }

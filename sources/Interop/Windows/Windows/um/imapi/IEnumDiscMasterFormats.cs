@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumDiscMasterFormats.xml' path='doc/member[@name="IEnumDiscMasterFormats"]/*' />
 [Guid("DDF445E1-54BA-11D3-9144-00104BA11C5E")]
 [NativeTypeName("struct IEnumDiscMasterFormats : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
         return ((delegate* unmanaged<IEnumDiscMasterFormats*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
         return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint>)(lpVtbl[1]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
         return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint>)(lpVtbl[2]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumDiscMasterFormats.xml' path='doc/member[@name="IEnumDiscMasterFormats.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint cFormats, [NativeTypeName("LPIID")] Guid* lpiidFormatID, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
         return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint, Guid*, uint*, int>)(lpVtbl[3]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), cFormats, lpiidFormatID, pcFetched);
     }
 
+    /// <include file='IEnumDiscMasterFormats.xml' path='doc/member[@name="IEnumDiscMasterFormats.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint cFormats)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
         return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint, int>)(lpVtbl[4]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), cFormats);
     }
 
+    /// <include file='IEnumDiscMasterFormats.xml' path='doc/member[@name="IEnumDiscMasterFormats.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
         return ((delegate* unmanaged<IEnumDiscMasterFormats*, int>)(lpVtbl[5]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumDiscMasterFormats.xml' path='doc/member[@name="IEnumDiscMasterFormats.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumDiscMasterFormats** ppEnum)

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_NODE_POSITION">
+    <summary>
+      <para>Represents a position within an XML buffer.  The current position within
+a reader or writer may be obtained by calling <see cref="WsGetReaderPosition" /> or
+<see cref="WsGetWriterPosition" />.  The current position within a reader or writer
+may be set by calling <see cref="WsSetReaderPosition" /> or <see cref="WsSetWriterPosition" />.</para>
+      <para>Using <see cref="WsRemoveNode" /> to remove a node that corresponds to or contains a
+position will cause subsequent use of the position to fail.  The position itself
+remains valid, but operations that depend on that position will fail.</para>
+      <para>Positions may be used as long as the containing XML buffer is valid.  Using a position
+after its corresponding buffer has been deleted will exhibit undefined behavior.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_NODE_POSITION.buffer">
+    <summary>
+      <para>The xml buffer to which the position refers.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_NODE_POSITION.node">
+    <summary>
+      <para>An internal handle to the node.</para>
+    </summary>
+  </member>
+</doc>

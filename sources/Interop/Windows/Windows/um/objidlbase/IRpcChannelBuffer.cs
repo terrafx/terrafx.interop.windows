@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer"]/*' />
 [Guid("D5F56B60-593B-101A-B569-08002B2DBF7A")]
 [NativeTypeName("struct IRpcChannelBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer*, uint>)(lpVtbl[1]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer*, uint>)(lpVtbl[2]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer.GetBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetBuffer(RPCOLEMESSAGE* pMessage, [NativeTypeName("const IID &")] Guid* riid)
@@ -46,6 +51,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer*, RPCOLEMESSAGE*, Guid*, int>)(lpVtbl[3]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, riid);
     }
 
+    /// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer.SendReceive"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SendReceive(RPCOLEMESSAGE* pMessage, [NativeTypeName("ULONG *")] uint* pStatus)
@@ -53,6 +59,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer*, RPCOLEMESSAGE*, uint*, int>)(lpVtbl[4]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, pStatus);
     }
 
+    /// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer.FreeBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT FreeBuffer(RPCOLEMESSAGE* pMessage)
@@ -60,6 +67,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer*, RPCOLEMESSAGE*, int>)(lpVtbl[5]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage);
     }
 
+    /// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer.GetDestCtx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDestCtx([NativeTypeName("DWORD *")] uint* pdwDestContext, void** ppvDestContext)
@@ -67,6 +75,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer*, uint*, void**, int>)(lpVtbl[6]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pdwDestContext, ppvDestContext);
     }
 
+    /// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer.IsConnected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsConnected()

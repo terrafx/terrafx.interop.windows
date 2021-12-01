@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbClassAttributes.xml' path='doc/member[@name="msidbClassAttributes"]/*' />
 public enum msidbClassAttributes
 {
+    /// <include file='msidbClassAttributes.xml' path='doc/member[@name="msidbClassAttributes.msidbClassAttributesRelativePath"]/*' />
     msidbClassAttributesRelativePath = 0x00000001,
 }

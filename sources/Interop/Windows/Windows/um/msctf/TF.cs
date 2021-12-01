@@ -12,24 +12,31 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class TF
 {
+    /// <include file='TF.xml' path='doc/member[@name="TF.TF_CreateThreadMgr"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT TF_CreateThreadMgr(ITfThreadMgr** pptim);
 
+    /// <include file='TF.xml' path='doc/member[@name="TF.TF_GetThreadMgr"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT TF_GetThreadMgr(ITfThreadMgr** pptim);
 
+    /// <include file='TF.xml' path='doc/member[@name="TF.TF_CreateInputProcessorProfiles"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT TF_CreateInputProcessorProfiles(ITfInputProcessorProfiles** ppipr);
 
+    /// <include file='TF.xml' path='doc/member[@name="TF.TF_CreateDisplayAttributeMgr"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT TF_CreateDisplayAttributeMgr(ITfDisplayAttributeMgr** ppdam);
 
+    /// <include file='TF.xml' path='doc/member[@name="TF.TF_CreateLangBarMgr"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT TF_CreateLangBarMgr(ITfLangBarMgr** pppbm);
 
+    /// <include file='TF.xml' path='doc/member[@name="TF.TF_CreateLangBarItemMgr"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT TF_CreateLangBarItemMgr(ITfLangBarItemMgr** pplbim);
 
+    /// <include file='TF.xml' path='doc/member[@name="TF.TF_CreateCategoryMgr"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT TF_CreateCategoryMgr(ITfCategoryMgr** ppcat);
 

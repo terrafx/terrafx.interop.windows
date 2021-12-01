@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DATAOBJ_GET_ITEM_FLAGS">
+    <summary>
+      <para>Values used by the <see cref="SHGetItemFromDataObject" /> function to specify options concerning the processing of the source object.</para>
+    </summary>
+  </member>
+  <member name="DATAOBJ_GET_ITEM_FLAGS.DOGIF_DEFAULT">
+    <summary>
+      <para>0x0000. No special options.</para>
+    </summary>
+  </member>
+  <member name="DATAOBJ_GET_ITEM_FLAGS.DOGIF_TRAVERSE_LINK">
+    <summary>
+      <para>0x0001. If the source object is a link, base the <see cref="IShellItem" /> on the link's target rather than the link file itself.</para>
+    </summary>
+  </member>
+  <member name="DATAOBJ_GET_ITEM_FLAGS.DOGIF_NO_HDROP">
+    <summary>
+      <para>0x0002. If the source data object does not contain data in the CFSTR_SHELLIDLIST format, which identifies the object through an IDList, do not revert to the <a href="https://docs.microsoft.com//windows/desktop/shell/clipboard">CF_HDROP</a> format, which uses a file path, as an alternative in the transfer.</para>
+    </summary>
+  </member>
+  <member name="DATAOBJ_GET_ITEM_FLAGS.DOGIF_NO_URL">
+    <summary>
+      <para>0x0004. If the source data object does not contain data in the CFSTR_SHELLIDLIST format, which identifies the object through an IDList, do not revert to the <a href="https://docs.microsoft.com//windows/desktop/shell/clipboard">CFSTR_INETURL</a> clipboard format, which uses a URL, as an alternative in the transfer.</para>
+    </summary>
+  </member>
+  <member name="DATAOBJ_GET_ITEM_FLAGS.DOGIF_ONLY_IF_ONE">
+    <summary>
+      <para>0x0008. If the source object is an array of items, use it only if the array contains just one item.</para>
+    </summary>
+  </member>
+</doc>

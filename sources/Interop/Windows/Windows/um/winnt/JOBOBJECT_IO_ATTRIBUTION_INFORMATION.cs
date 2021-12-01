@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_IO_ATTRIBUTION_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_ATTRIBUTION_INFORMATION"]/*' />
 public partial struct JOBOBJECT_IO_ATTRIBUTION_INFORMATION
 {
+    /// <include file='JOBOBJECT_IO_ATTRIBUTION_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_ATTRIBUTION_INFORMATION.ControlFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint ControlFlags;
 
+    /// <include file='JOBOBJECT_IO_ATTRIBUTION_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_ATTRIBUTION_INFORMATION.ReadStats"]/*' />
     public JOBOBJECT_IO_ATTRIBUTION_STATS ReadStats;
 
+    /// <include file='JOBOBJECT_IO_ATTRIBUTION_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_ATTRIBUTION_INFORMATION.WriteStats"]/*' />
     public JOBOBJECT_IO_ATTRIBUTION_STATS WriteStats;
 }

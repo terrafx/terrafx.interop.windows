@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioRenderClient.GetBuffer">
+    <summary>
+      <para>Retrieves a pointer to the next available space in the rendering endpoint buffer into which the caller can write a data packet.</para>
+    </summary>
+    <param name="NumFramesRequested">
+      <para>The number of audio frames in the data packet that the caller plans to write to the requested space in the buffer. If the call succeeds, the size of the buffer area pointed to by <i>*ppData</i> matches the size specified in <i>NumFramesRequested</i>.</para>
+    </param>
+    <param name="ppData">
+      <para>Pointer to a pointer variable into which the method writes the starting address of the buffer area into which the caller will write the data packet.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_BUFFER_ERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="GetBuffer" /> failed to retrieve a data buffer and *<i>ppData</i> points to <b>NULL</b>. For more information, see Remarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_BUFFER_TOO_LARGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>NumFramesRequested</i> value exceeds the available buffer space (buffer size minus padding size).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_BUFFER_SIZE_ERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>The stream is exclusive mode and uses event-driven buffering, but the client attempted to get a packet that was not the size of the buffer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <para>A previous <b>IAudioRenderClient.GetBuffer</b> call is still in effect.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_BUFFER_OPERATION_PENDING</b>
+            </para>
+          </description>
+          <description>
+            <para>Buffer cannot be accessed because a stream reset is in progress.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The Windows audio service is not running.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>ppData</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caller can request a packet size that is less than or equal to the amount of available space in the buffer (except in the case of an exclusive-mode stream that uses event-driven buffering; for more information, see <see cref="IAudioClient.Initialize" />). The available space is simply the buffer size minus the amount of data in the buffer that is already queued up to be played. If the caller specifies a <i>NumFramesRequested</i> value that exceeds the available space in the buffer, the call fails and returns error code AUDCLNT_E_BUFFER_TOO_LARGE.</para>
+      <para>The client is responsible for writing a sufficient amount of data to the buffer to prevent glitches from occurring in the audio stream. For more information about buffering requirements, see <see cref="IAudioClient.Initialize" />.</para>
+      <para>After obtaining a data packet by calling <b>GetBuffer</b>, the client fills the packet with rendering data and issues the packet to the audio engine by calling the <see cref="IAudioRenderClient.ReleaseBuffer" /> method.</para>
+      <para>The client must call <b>ReleaseBuffer</b> after a <b>GetBuffer</b> call that successfully obtains a packet of any size other than 0. The client has the option of calling or not calling <b>ReleaseBuffer</b> to release a packet of size 0.</para>
+      <para>For nonzero packet sizes, the client must alternate calls to <b>GetBuffer</b> and <b>ReleaseBuffer</b>. Each <b>GetBuffer</b> call must be followed by a corresponding <b>ReleaseBuffer</b> call. After the client has called <b>GetBuffer</b> to acquire a data packet, the client cannot acquire the next data packet until it has called <b>ReleaseBuffer</b> to release the previous packet. Two or more consecutive calls either to <b>GetBuffer</b> or to <b>ReleaseBuffer</b> are not permitted and will fail with error code AUDCLNT_E_OUT_OF_ORDER.</para>
+      <para>To ensure the correct ordering of calls, a <b>GetBuffer</b> call and its corresponding <b>ReleaseBuffer</b> call must occur in the same thread.</para>
+      <para>The size of an audio frame is specified by the <b>nBlockAlign</b> member of the <b>WAVEFORMATEX</b> structure that the client obtains by calling the <see cref="IAudioClient.GetMixFormat" /> method.</para>
+      <para>If the caller sets <i>NumFramesRequested</i> = 0, the method returns status code S_OK but does not write to the variable that the <i>ppData</i> parameter points to.</para>
+      <para>Clients should avoid excessive delays between the <b>GetBuffer</b> call that acquires a buffer and the <b>ReleaseBuffer</b> call that releases the buffer. The implementation of the audio engine assumes that the <b>GetBuffer</b> call and the corresponding <b>ReleaseBuffer</b> call occur within the same buffer-processing period. Clients that delay releasing a buffer for more than one period risk losing sample data.</para>
+      <para>In Windows 7, <b>GetBuffer</b> can return the <b>AUDCLNT_E_BUFFER_ERROR</b> error code for an audio client that uses the endpoint buffer in the exclusive mode. This error indicates that the data buffer was not retrieved because a data packet was not available (*<i>ppData</i> received <b>NULL</b>).</para>
+      <para>If <b>GetBuffer</b> returns <b>AUDCLNT_E_BUFFER_ERROR</b>, the thread consuming the audio samples must wait for the next processing pass. The client might benefit from keeping a count of the failed <b>GetBuffer</b> calls. If <b>GetBuffer</b> returns this error repeatedly, the client can start a new processing loop after shutting down the current client by calling <see cref="IAudioClient.Stop" />, <see cref="IAudioClient.Reset" />, and releasing the audio client.</para>
+      <h4>Examples</h4>
+      <para>For code examples that call the <b>GetBuffer</b> method, see the following topics:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/rendering-a-stream">Rendering a Stream</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/exclusive-mode-streams">Exclusive-Mode Streams</a>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IAudioClient.GetBufferSize" />
+    <seealso cref="IAudioClient.GetCurrentPadding" />
+    <seealso cref="IAudioClient.Initialize" />
+    <seealso cref="IAudioRenderClient Interface" />
+    <seealso cref="IAudioRenderClient.ReleaseBuffer" />
+  </member>
+  <member name="IAudioRenderClient.ReleaseBuffer">
+    <summary>
+      <para>The <b>ReleaseBuffer</b> method releases the buffer space acquired in the previous call to the <see cref="IAudioRenderClient.GetBuffer" /> method.</para>
+    </summary>
+    <param name="NumFramesWritten">
+      <para>The number of audio frames written by the client to the data packet. The value of this parameter must be less than or equal to the size of the data packet, as specified in the <i>NumFramesRequested</i> parameter passed to the <see cref="IAudioRenderClient.GetBuffer" /> method.</para>
+    </param>
+    <param name="dwFlags">
+      <para>The buffer-configuration flags. The caller can set this parameter either to 0 or to the following <see cref="_AUDCLNT_BUFFERFLAGS" /> enumeration value (a flag bit):</para>
+      <para>AUDCLNT_BUFFERFLAGS_SILENT</para>
+      <para>If this flag bit is set, the audio engine treats the data packet as though it contains silence regardless of the data values contained in the packet. This flag eliminates the need for the client to explicitly write silence data to the rendering buffer.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_INVALID_SIZE</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>NumFramesWritten</i> value exceeds the <i>NumFramesRequested</i> value specified in the previous <see cref="IAudioRenderClient.GetBuffer" /> call.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_BUFFER_SIZE_ERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>The stream is exclusive mode and uses event-driven buffering, but the client attempted to release a packet that was not the size of the buffer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <para>This call was not preceded by a corresponding call to <see cref="IAudioRenderClient.GetBuffer" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The Windows audio service is not running.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>dwFlags</i> is not a valid value.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The client must release the same number of frames that it requested in the preceding call to the <see cref="IAudioRenderClient.GetBuffer" /> method. The single exception to this rule is that the client can always call <b>ReleaseBuffer</b> to release 0 frames (unless the stream is exclusive mode and uses event-driven buffering).</para>
+      <para>This behavior provides a convenient means for the client to "release" a previously requested packet of length 0. In this case, the call to <b>ReleaseBuffer</b> is optional. After calling <see cref="GetBuffer" /> to obtain a packet of length 0, the client has the option of not calling <b>ReleaseBuffer</b> before calling <b>GetBuffer</b> again.</para>
+      <para>In addition, if the preceding <see cref="GetBuffer" /> call obtained a packet of nonzero size, calling <b>ReleaseBuffer</b> with <i>NumFramesRequested</i> set to 0 will succeed (unless the stream is exclusive mode and uses event-driven buffering). The meaning of the call is that the client wrote no data to the packet before releasing it. Thus, the method treats the portion of the buffer represented by the packet as unused and will make this portion of the buffer available again to the client in the next <b>GetBuffer</b> call.</para>
+      <para>Clients should avoid excessive delays between the <see cref="GetBuffer" /> call that acquires a buffer and the <b>ReleaseBuffer</b> call that releases the buffer. The implementation of the audio engine assumes that the <b>GetBuffer</b> call and the corresponding <b>ReleaseBuffer</b> call occur within the same buffer-processing period. Clients that delay releasing a buffer for more than one period risk losing sample data.</para>
+      <para>For code examples that call the <b>ReleaseBuffer</b> method, see the following topics:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/rendering-a-stream">Rendering a Stream</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/exclusive-mode-streams">Exclusive-Mode Streams</a>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IAudioClient.Initialize" />
+    <seealso cref="IAudioRenderClient Interface" />
+    <seealso cref="IAudioRenderClient.GetBuffer" />
+  </member>
+  <member name="IAudioRenderClient">
+    <summary>
+      <para>The <b>IAudioRenderClient</b> interface enables a client to write output data to a rendering endpoint buffer. The client obtains a reference to the <b>IAudioRenderClient</b> interface of a stream object by calling the <see cref="IAudioClient.GetService" /> method with parameter <i>riid</i> set to <b>REFIID</b> IID_IAudioRenderClient.</para>
+      <para>The methods in this interface manage the movement of data packets that contain audio-rendering data. The length of a data packet is expressed as the number of audio frames in the packet. The size of an audio frame is specified by the <b>nBlockAlign</b> member of the <b>WAVEFORMATEX</b> structure that the client obtains by calling the <see cref="IAudioClient.GetMixFormat" /> method. The size in bytes of an audio frame equals the number of channels in the stream multiplied by the sample size per channel. For example, the frame size is four bytes for a stereo (2-channel) stream with 16-bit samples. A packet always contains an integral number of audio frames.</para>
+      <para>When releasing an <b>IAudioRenderClient</b> interface instance, the client must call the interface's <b>Release</b> method from the same thread as the call to <b>IAudioClient.GetService</b> that created the object.</para>
+      <para>For code examples that use the <b>IAudioRenderClient</b> interface, see the following topics:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/rendering-a-stream">Rendering a Stream</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/exclusive-mode-streams">Exclusive-Mode Streams</a>
+          </description>
+        </item>
+      </list>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
+    <seealso cref="IAudioClient.GetMixFormat" />
+    <seealso cref="IAudioClient.GetService" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/wasapi">WASAPI</seealso>
+  </member>
+</doc>

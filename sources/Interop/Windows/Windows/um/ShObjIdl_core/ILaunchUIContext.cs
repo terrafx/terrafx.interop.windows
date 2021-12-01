@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ILaunchUIContext.xml' path='doc/member[@name="ILaunchUIContext"]/*' />
 [Guid("1791E8F6-21C7-4340-882A-A6A93E3FD73B")]
 [NativeTypeName("struct ILaunchUIContext : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface
         return ((delegate* unmanaged<ILaunchUIContext*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface
         return ((delegate* unmanaged<ILaunchUIContext*, uint>)(lpVtbl[1]))((ILaunchUIContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface
         return ((delegate* unmanaged<ILaunchUIContext*, uint>)(lpVtbl[2]))((ILaunchUIContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILaunchUIContext.xml' path='doc/member[@name="ILaunchUIContext.SetAssociatedWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetAssociatedWindow(HWND value)
@@ -46,6 +51,7 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface
         return ((delegate* unmanaged<ILaunchUIContext*, HWND, int>)(lpVtbl[3]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='ILaunchUIContext.xml' path='doc/member[@name="ILaunchUIContext.SetTabGroupingPreference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetTabGroupingPreference([NativeTypeName("DWORD")] uint value)

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC">
+    <summary>
+      <para>Performs a thresholded rectified linear unit (ReLU) activation function on every element in <i>InputTensor</i>, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
+      <code>f(x) = x, if x &gt; Alpha
+       0, otherwise
+</code>
+      <para>This operator supports in-place execution, meaning that the output tensor is permitted to alias <i>InputTensor</i> during binding.</para>
+    </summary>
+    <seealso cref="DML_ACTIVATION_SOFTMAX_OPERATOR_DESC" />
+  </member>
+  <member name="DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The input tensor to read from.</para>
+    </summary>
+  </member>
+  <member name="DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the results to.</para>
+    </summary>
+  </member>
+  <member name="DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC.Alpha">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The threshold for the function. A typical default for this value is 1.0.</para>
+    </summary>
+  </member>
+</doc>

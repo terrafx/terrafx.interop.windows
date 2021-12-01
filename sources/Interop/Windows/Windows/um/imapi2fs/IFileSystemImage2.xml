@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileSystemImage2.get_BootImageOptionsArray">
+    <summary>
+      <para>Retrieves the boot option array that will be utilized to generate the file system image.</para>
+    </summary>
+    <param name="pVal">
+      <para>Pointer to a boot option array that contains a list of <see cref="IBootOptions" /> interfaces of boot images used to generate the file system image. Each element of the list is a <b>VARIANT</b> of type <b>VT_DISPATCH</b>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_BOOT_OBJECT_CONFLICT</b>
+            </para>
+          </description>
+          <description>
+            <para>A boot object can only be included in an initial disc image.</para>
+            <para>Value: 0xC0AAB149</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_BOOT_IMAGE_DATA</b>
+            </para>
+          </description>
+          <description>
+            <para>The boot object could not be added to the image.</para>
+            <para>Value: 0xC0AAB148</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>SAFEARRAY</b> will be a one-dimensional array. If a boot image is not specified, a zero-sized array will be returned.</para>
+    </remarks>
+    <seealso cref="IFileSystemImage2" />
+    <seealso cref="IFileSystemImage2.put_BootImageOptionsArray" />
+  </member>
+  <member name="IFileSystemImage2.put_BootImageOptionsArray">
+    <summary>
+      <para>Sets the boot option array that will be utilized to generate the file system image. Unlike <see cref="IFileSystemImage.put_BootImageOptions" />, this method will not create  a complete copy of each  boot options array element, but instead use references to each element.</para>
+    </summary>
+    <param name="newVal">
+      <para>List of <see cref="IBootOptions" /> interfaces of the boot images that will be utilized to generate the file system image. Each element of the list is a <b>VARIANT</b> of the type <b>VT_DISPATCH</b>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOINTERFACE</b>
+            </para>
+          </description>
+          <description>
+            <para>No such interface supported.</para>
+            <para>Value: 0x80004002</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_BOOT_OBJECT_CONFLICT</b>
+            </para>
+          </description>
+          <description>
+            <para>A boot object can only be included in an initial disc image.</para>
+            <para>Value: 0xC0AAB149</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_BOOT_IMAGE_DATA</b>
+            </para>
+          </description>
+          <description>
+            <para>The boot object could not be added to the image.</para>
+            <para>Value: 0xC0AAB148</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>SAFEARRAY</b> must be a one dimensional array. A zero-size array is allowed, but it will result in a regular, non-bootable disc.</para>
+      <para>The boot images sequence on the disc will match the sequence specified in the <b>SAFEARRAY</b>. Both <b>put_BootImageOptionsArray</b> and <see cref="put_BootImageOptions" /> are used for specifying the boot image, the latter function being invoked before the disc image created takes effect.</para>
+      <para>The <see cref="get_BootImageOptionsArray" /> and <see cref="get_BootImageOptions" /> functions will retrieve the result of the last calls of put_BootImageOptionsArray or <see cref="put_BootImageOptions" />. The use of these functions should be synchronized.</para>
+    </remarks>
+    <seealso cref="IFileSystemImage2" />
+    <seealso cref="IFileSystemImage2.get_BootImageOptionsArray" />
+  </member>
+  <member name="IFileSystemImage2">
+    <summary>
+      <para>Use this interface to write multiple boot entries or boot images  required for the EFI/UEFI support. For example, boot media with boot straps for both Windows XP and Windows Vista.<b>Note</b>  The <b>IFileSystemImage2</b> interface is currently only available with  Windows Vista with Service Pack 1 (SP1) and  Windows Server 2008.</para>
+    </summary>
+    <remarks>
+      <para>Boot entries are limited by the interface to 32 per disc.    The boot image must be supplied to IMAPIv2FS by outside applications who invoke IMAPIv2FS to build the bootable disc.</para>
+      <para>Section Entry Extension is not supported by IMAPIv2FS at this time.</para>
+    </remarks>
+    <seealso cref="IFileSystemImage" />
+  </member>
+</doc>

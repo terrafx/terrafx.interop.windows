@@ -5,36 +5,50 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX"]/*' />
 public unsafe partial struct STACKFRAME_EX
 {
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.AddrPC"]/*' />
     public ADDRESS64 AddrPC;
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.AddrReturn"]/*' />
     public ADDRESS64 AddrReturn;
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.AddrFrame"]/*' />
     public ADDRESS64 AddrFrame;
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.AddrStack"]/*' />
     public ADDRESS64 AddrStack;
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.AddrBStore"]/*' />
     public ADDRESS64 AddrBStore;
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.FuncTableEntry"]/*' />
     [NativeTypeName("PVOID")]
     public void* FuncTableEntry;
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.Params"]/*' />
     [NativeTypeName("DWORD64 [4]")]
     public fixed ulong Params[4];
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.Far"]/*' />
     public BOOL Far;
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.Virtual"]/*' />
     public BOOL Virtual;
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.Reserved"]/*' />
     [NativeTypeName("DWORD64 [3]")]
     public fixed ulong Reserved[3];
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.KdHelp"]/*' />
     public KDHELP64 KdHelp;
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.StackFrameSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint StackFrameSize;
 
+    /// <include file='STACKFRAME_EX.xml' path='doc/member[@name="STACKFRAME_EX.InlineFrameContext"]/*' />
     [NativeTypeName("DWORD")]
     public uint InlineFrameContext;
 }

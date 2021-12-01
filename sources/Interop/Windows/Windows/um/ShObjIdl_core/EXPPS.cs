@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXPPS.xml' path='doc/member[@name="EXPPS"]/*' />
 public enum EXPPS
 {
+    /// <include file='EXPPS.xml' path='doc/member[@name="EXPPS.EXPPS_FILETYPES"]/*' />
     EXPPS_FILETYPES = 0x1,
 }

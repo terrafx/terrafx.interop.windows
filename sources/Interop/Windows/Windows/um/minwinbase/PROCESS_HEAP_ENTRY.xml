@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESS_HEAP_ENTRY">
+    <summary>
+      <para>Contains information about a heap element. The
+<see cref="HeapWalk" /> function uses a
+<b>PROCESS_HEAP_ENTRY</b> structure to enumerate the
+elements of a heap.</para>
+    </summary>
+    <seealso cref="GlobalAlloc" />
+    <seealso cref="HeapAlloc" />
+    <seealso cref="HeapWalk" />
+    <seealso cref="VirtualAlloc" />
+    <seealso cref="VirtualQuery" />
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.lpData">
+    <summary>
+      <para>A pointer to the data portion of the heap element.</para>
+      <para>To initiate a <see cref="HeapWalk" /> heap enumeration, set
+<b>lpData</b> to <b>NULL</b>.</para>
+      <para>If <b>PROCESS_HEAP_REGION</b> is used in the <b>wFlags</b> member,
+<b>lpData</b> points to the first virtual address used by the region.</para>
+      <para>If <b>PROCESS_HEAP_UNCOMMITTED_RANGE</b> is used in <b>wFlags</b>,
+<b>lpData</b> points to the beginning of the range of uncommitted memory.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.cbData">
+    <summary>
+      <para>The size of the data portion of the heap element, in bytes.</para>
+      <para>If <b>PROCESS_HEAP_REGION</b> is used in <b>wFlags</b>,
+<b>cbData</b> specifies the total size, in bytes, of the address space that is reserved for
+this region.</para>
+      <para>If <b>PROCESS_HEAP_UNCOMMITTED_RANGE</b> is used in <b>wFlags</b>,
+<b>cbData</b> specifies the size, in bytes, of the range of uncommitted memory.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.cbOverhead">
+    <summary>
+      <para>The size of the data used by the system to maintain information about the heap element, in bytes. These
+overhead bytes are in addition to the <b>cbData</b> bytes of the data portion of the heap
+element.</para>
+      <para>If <b>PROCESS_HEAP_REGION</b> is used in <b>wFlags</b>,
+<b>cbOverhead</b> specifies the size, in bytes, of the heap control structures that
+describe the region.</para>
+      <para>If <b>PROCESS_HEAP_UNCOMMITTED_RANGE</b> is used in <b>wFlags</b>,
+<b>cbOverhead</b> specifies the size, in bytes, of the control structures that describe
+this uncommitted range.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.iRegionIndex">
+    <summary>
+      <para>A handle to the heap region that contains the heap element. A heap consists of one or more regions of virtual
+memory, each with a unique region index.</para>
+      <para>In the first heap entry returned for most heap regions,
+<see cref="HeapWalk" /> uses the
+<b>PROCESS_HEAP_REGION</b> in the <b>wFlags</b> member. When this value
+is used, the members of the <b>Region</b> structure contain additional information
+about the region.</para>
+      <para>The <see cref="HeapAlloc" /> function sometimes uses the
+<see cref="VirtualAlloc" /> function to allocate large blocks from a
+growable heap. The heap manager treats such a large block allocation as a separate region with a unique region
+index. <see cref="HeapWalk" /> does not use
+<b>PROCESS_HEAP_REGION</b> in the heap entry returned for a large block region, so the
+members of the <b>Region</b> structure are not valid. You can use the
+<see cref="VirtualQuery" /> function to get additional information
+about a large block region.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.wFlags">
+    <summary>
+      <para>The properties of the heap element. Some values affect the meaning of other members of this
+<b>PROCESS_HEAP_ENTRY</b> data structure. The
+following values are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PROCESS_HEAP_ENTRY_BUSY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The heap element is an allocated block.</para>
+            <para>If <b>PROCESS_HEAP_ENTRY_MOVEABLE</b> is also specified, the
+<b>Block</b> structure becomes valid. The <b>hMem</b> member of
+the <b>Block</b> structure contains a handle to the allocated, moveable memory
+block.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PROCESS_HEAP_ENTRY_DDESHARE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>This value must be used with <b>PROCESS_HEAP_ENTRY_BUSY</b>, indicating that the heap
+element is an allocated block.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PROCESS_HEAP_ENTRY_MOVEABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>This value must be used with <b>PROCESS_HEAP_ENTRY_BUSY</b>, indicating that the heap
+element is an allocated block.</para>
+            <para>The block was allocated with <b>LMEM_MOVEABLE</b> or
+<b>GMEM_MOVEABLE</b>, and the <b>Block</b> structure becomes
+valid. The <b>hMem</b> member of the <b>Block</b> structure
+contains a handle to the allocated, moveable memory block.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PROCESS_HEAP_REGION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The heap element is located at the beginning of a region of contiguous virtual memory in use by the heap.</para>
+            <para>The <b>lpData</b> member of the structure points to the first virtual address used by
+the region; the <b>cbData</b> member specifies the total size, in bytes, of the address
+space that is reserved for this region; and the <b>cbOverhead</b> member specifies the
+size, in bytes, of the heap control structures that describe the region.</para>
+            <para>The <b>Region</b> structure becomes valid. The
+<b>dwCommittedSize</b>, <b>dwUnCommittedSize</b>,
+<b>lpFirstBlock</b>, and <b>lpLastBlock</b> members of the structure
+contain additional information about the region.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PROCESS_HEAP_UNCOMMITTED_RANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The heap element is located in a range of uncommitted memory within the heap region.</para>
+            <para>The <b>lpData</b> member points to the beginning of the range of uncommitted memory;
+the <b>cbData</b> member specifies the size, in bytes, of the range of uncommitted
+memory; and the <b>cbOverhead</b> member specifies the size, in bytes, of the control
+structures that describe this uncommitted range.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.DUMMYUNIONNAME.Block">
+    <summary>
+      <para>This structure is valid only if both the <b>PROCESS_HEAP_ENTRY_BUSY</b> and
+<b>PROCESS_HEAP_ENTRY_MOVEABLE</b> are specified in <b>wFlags</b>.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.DUMMYUNIONNAME.Block.hMem">
+    <summary>
+      <para>Handle to the allocated, moveable memory block.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.DUMMYUNIONNAME.Block.dwReserved">
+    <summary>
+      <para>Reserved; not used.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.DUMMYUNIONNAME.Region">
+    <summary>
+      <para>This structure is valid only if the <b>wFlags</b> member specifies
+<b>PROCESS_HEAP_REGION</b>.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.DUMMYUNIONNAME.Region.dwCommittedSize">
+    <summary>
+      <para>Number of bytes in the heap region that are currently committed as free memory blocks, busy memory blocks,
+or heap control structures.</para>
+      <para>This is an optional field that is set to zero if the number of committed bytes is not available.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.DUMMYUNIONNAME.Region.dwUnCommittedSize">
+    <summary>
+      <para>Number of bytes in the heap region that are currently uncommitted.</para>
+      <para>This is an optional field that is set to zero if the number of uncommitted bytes is not available.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.DUMMYUNIONNAME.Region.lpFirstBlock">
+    <summary>
+      <para>Pointer to the first valid memory block in this heap region.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_HEAP_ENTRY.DUMMYUNIONNAME.Region.lpLastBlock">
+    <summary>
+      <para>Pointer to the first invalid memory block in this heap region.</para>
+    </summary>
+  </member>
+</doc>

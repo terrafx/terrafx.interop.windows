@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MAXBUTTONSTATES.xml' path='doc/member[@name="MAXBUTTONSTATES"]/*' />
 public enum MAXBUTTONSTATES
 {
+    /// <include file='MAXBUTTONSTATES.xml' path='doc/member[@name="MAXBUTTONSTATES.MAXBS_NORMAL"]/*' />
     MAXBS_NORMAL = 1,
+
+    /// <include file='MAXBUTTONSTATES.xml' path='doc/member[@name="MAXBUTTONSTATES.MAXBS_HOT"]/*' />
     MAXBS_HOT = 2,
+
+    /// <include file='MAXBUTTONSTATES.xml' path='doc/member[@name="MAXBUTTONSTATES.MAXBS_PUSHED"]/*' />
     MAXBS_PUSHED = 3,
+
+    /// <include file='MAXBUTTONSTATES.xml' path='doc/member[@name="MAXBUTTONSTATES.MAXBS_DISABLED"]/*' />
     MAXBS_DISABLED = 4,
 }

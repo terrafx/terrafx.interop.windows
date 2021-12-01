@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfFnPropertyUIStatus.GetStatus">
+    <summary>
+      <para>Obtains the status of a text service property UI.</para>
+    </summary>
+    <param name="refguidProp">
+      <para>Specifies the property identifier. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property</a> identifiers.</para>
+    </param>
+    <param name="pdw">
+      <para>Pointer to a <b>DWORD</b> that receives the property UI status. This can be zero or the following value.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_PROPUI_STATUS_SAVETOFILE</b>
+          </description>
+          <description>
+            <para>The property can be serialized. If this value is not present, the property cannot be serialized.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pdw</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The text service does not support this method.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfFnPropertyUIStatus" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">Predefined Properties
+</seealso>
+  </member>
+  <member name="ITfFnPropertyUIStatus.SetStatus">
+    <summary>
+      <para>Modifies the status of a text service property UI.</para>
+    </summary>
+    <param name="refguidProp">
+      <para>Specifies the property identifier. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property</a> identifiers.</para>
+    </param>
+    <param name="dw">
+      <para>Contains the new property UI status. See the <i>pdw</i> parameter of <see cref="ITfFnPropertyUIStatus.GetStatus" /> for possible values.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The text service does not support this method.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfFnPropertyUIStatus" />
+    <seealso cref="ITfFnPropertyUIStatus.GetStatus " />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">Predefined Properties
+</seealso>
+  </member>
+  <member name="ITfFnPropertyUIStatus">
+    <summary>
+      <para>The <b>ITfFnPropertyUIStatus</b> interface is implemented by a text service and used by an application or text service to obtain and set the status of the text service property UI.</para>
+      <para>An application or text service obtains an instance of this interface by obtaining the <see cref="ITfFunctionProvider" /> for the text service and calling <see cref="ITfFunctionProvider.GetFunction" /> with IID_ITfFnPropertyUIStatus.</para>
+    </summary>
+  </member>
+</doc>

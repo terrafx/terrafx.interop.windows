@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QUERYCONTEXT.xml' path='doc/member[@name="QUERYCONTEXT"]/*' />
 public partial struct QUERYCONTEXT
 {
+    /// <include file='QUERYCONTEXT.xml' path='doc/member[@name="QUERYCONTEXT.dwContext"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwContext;
 
+    /// <include file='QUERYCONTEXT.xml' path='doc/member[@name="QUERYCONTEXT.Platform"]/*' />
     public CSPLATFORM Platform;
 
+    /// <include file='QUERYCONTEXT.xml' path='doc/member[@name="QUERYCONTEXT.Locale"]/*' />
     [NativeTypeName("LCID")]
     public uint Locale;
 
+    /// <include file='QUERYCONTEXT.xml' path='doc/member[@name="QUERYCONTEXT.dwVersionHi"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersionHi;
 
+    /// <include file='QUERYCONTEXT.xml' path='doc/member[@name="QUERYCONTEXT.dwVersionLo"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersionLo;
 }

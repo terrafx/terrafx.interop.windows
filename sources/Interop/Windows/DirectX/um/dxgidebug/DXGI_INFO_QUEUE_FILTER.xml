@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_INFO_QUEUE_FILTER">
+    <summary>
+      <para>Describes a debug message filter, which contains lists of message types to allow and deny.</para>
+    </summary>
+    <remarks>
+      <para>Use with an <see cref="IDXGIInfoQueue" /> interface.</para>
+      <para>
+        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+  </member>
+  <member name="DXGI_INFO_QUEUE_FILTER.AllowList">
+    <summary>
+      <para>A <see cref="DXGI_INFO_QUEUE_FILTER_DESC" /> structure that describes the types of messages to allow.</para>
+    </summary>
+  </member>
+  <member name="DXGI_INFO_QUEUE_FILTER.DenyList">
+    <summary>
+      <para>A <see cref="DXGI_INFO_QUEUE_FILTER_DESC" /> structure that describes the types of messages to deny.</para>
+    </summary>
+  </member>
+</doc>

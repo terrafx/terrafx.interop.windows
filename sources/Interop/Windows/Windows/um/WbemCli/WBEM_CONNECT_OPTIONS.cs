@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WBEM_CONNECT_OPTIONS.xml' path='doc/member[@name="WBEM_CONNECT_OPTIONS"]/*' />
 public enum WBEM_CONNECT_OPTIONS
 {
+    /// <include file='WBEM_CONNECT_OPTIONS.xml' path='doc/member[@name="WBEM_CONNECT_OPTIONS.WBEM_FLAG_CONNECT_REPOSITORY_ONLY"]/*' />
     WBEM_FLAG_CONNECT_REPOSITORY_ONLY = 0x40,
+
+    /// <include file='WBEM_CONNECT_OPTIONS.xml' path='doc/member[@name="WBEM_CONNECT_OPTIONS.WBEM_FLAG_CONNECT_USE_MAX_WAIT"]/*' />
     WBEM_FLAG_CONNECT_USE_MAX_WAIT = 0x80,
+
+    /// <include file='WBEM_CONNECT_OPTIONS.xml' path='doc/member[@name="WBEM_CONNECT_OPTIONS.WBEM_FLAG_CONNECT_PROVIDERS"]/*' />
     WBEM_FLAG_CONNECT_PROVIDERS = 0x100,
 }

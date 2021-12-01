@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW"]/*' />
 public unsafe partial struct SRCCODEINFOW
 {
+    /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.SizeOfStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeOfStruct;
 
+    /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.Key"]/*' />
     [NativeTypeName("PVOID")]
     public void* Key;
 
+    /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.ModBase"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong ModBase;
 
+    /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.Obj"]/*' />
     [NativeTypeName("WCHAR [261]")]
     public fixed ushort Obj[261];
 
+    /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.FileName"]/*' />
     [NativeTypeName("WCHAR [261]")]
     public fixed ushort FileName[261];
 
+    /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.LineNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint LineNumber;
 
+    /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.Address"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Address;
 }

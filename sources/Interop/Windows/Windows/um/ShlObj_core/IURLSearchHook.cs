@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IURLSearchHook.xml' path='doc/member[@name="IURLSearchHook"]/*' />
 [Guid("AC60F6A0-0FD9-11D0-99CB-00C04FD64497")]
 [NativeTypeName("struct IURLSearchHook : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IURLSearchHook : IURLSearchHook.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IURLSearchHook : IURLSearchHook.Interface
         return ((delegate* unmanaged<IURLSearchHook*, Guid*, void**, int>)(lpVtbl[0]))((IURLSearchHook*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IURLSearchHook : IURLSearchHook.Interface
         return ((delegate* unmanaged<IURLSearchHook*, uint>)(lpVtbl[1]))((IURLSearchHook*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IURLSearchHook : IURLSearchHook.Interface
         return ((delegate* unmanaged<IURLSearchHook*, uint>)(lpVtbl[2]))((IURLSearchHook*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IURLSearchHook.xml' path='doc/member[@name="IURLSearchHook.Translate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Translate([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize)

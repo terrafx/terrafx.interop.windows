@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICPixelFormatInfo.GetBitsPerPixel">
+    <summary>
+      <para>Gets the bits per pixel (BPP) of the pixel format.</para>
+    </summary>
+    <param name="puiBitsPerPixel">
+      <para>Type: <b>UINT*</b></para>
+      <para>Pointer that receives the BPP of the pixel format.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICPixelFormatInfo.GetChannelCount">
+    <summary>
+      <para>Gets the number of channels the pixel format contains.</para>
+    </summary>
+    <param name="puiChannelCount">
+      <para>Type: <b>UINT*</b></para>
+      <para>Pointer that receives the channel count.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICPixelFormatInfo.GetChannelMask">
+    <summary>
+      <para>Gets the pixel format's channel mask.</para>
+    </summary>
+    <param name="uiChannelIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The index to the channel mask to retrieve.</para>
+    </param>
+    <param name="cbMaskBuffer">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the <i>pbMaskBuffer</i> buffer.</para>
+    </param>
+    <param name="pbMaskBuffer">
+      <para>Type: <b>BYTE*</b></para>
+      <para>Pointer to the mask buffer.</para>
+    </param>
+    <param name="pcbActual">
+      <para>Type: <b>UINT*</b></para>
+      <para>The actual buffer size needed to obtain the channel mask.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If 0 and NULL are passed in for <i>cbMaskBuffer</i> and <i>pbMaskBuffer</i>, respectively, the required buffer size will be returned through <i>pcbActual</i>.</para>
+    </remarks>
+  </member>
+  <member name="IWICPixelFormatInfo.GetColorContext">
+    <summary>
+      <para>Gets the pixel format's <see cref="IWICColorContext" />.</para>
+    </summary>
+    <param name="ppIColorContext">
+      <para>Type: <b><see cref="IWICColorContext" />**</b></para>
+      <para>Pointer that receives the pixel format's color context.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The returned color context is the default color space for the pixel format. However, if an <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapsource">IWICBitmapSource</a> specifies its own color context, the source's context should be preferred over the pixel format's default.</para>
+    </remarks>
+  </member>
+  <member name="IWICPixelFormatInfo.GetFormatGUID">
+    <summary>
+      <para>Gets the pixel format GUID.</para>
+    </summary>
+    <param name="pFormat">
+      <para>Type: <b>GUID*</b></para>
+      <para>Pointer that receives the pixel format GUID.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICPixelFormatInfo">
+    <summary>
+      <para>Exposes methods that provide information about a pixel format.</para>
+    </summary>
+    <seealso cref="IWICComponentInfo" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">Native Pixel Formats</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
+  </member>
+</doc>

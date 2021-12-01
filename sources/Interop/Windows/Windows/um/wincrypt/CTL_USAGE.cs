@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CTL_USAGE.xml' path='doc/member[@name="CTL_USAGE"]/*' />
 public unsafe partial struct CTL_USAGE
 {
+    /// <include file='CTL_USAGE.xml' path='doc/member[@name="CTL_USAGE.cUsageIdentifier"]/*' />
     [NativeTypeName("DWORD")]
     public uint cUsageIdentifier;
 
+    /// <include file='CTL_USAGE.xml' path='doc/member[@name="CTL_USAGE.rgpszUsageIdentifier"]/*' />
     [NativeTypeName("LPSTR *")]
     public sbyte** rgpszUsageIdentifier;
 }

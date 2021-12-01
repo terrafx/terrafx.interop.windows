@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MODLOAD_PDBGUID_PDBAGE.xml' path='doc/member[@name="MODLOAD_PDBGUID_PDBAGE"]/*' />
 public partial struct MODLOAD_PDBGUID_PDBAGE
 {
+    /// <include file='MODLOAD_PDBGUID_PDBAGE.xml' path='doc/member[@name="MODLOAD_PDBGUID_PDBAGE.PdbGuid"]/*' />
     public Guid PdbGuid;
 
+    /// <include file='MODLOAD_PDBGUID_PDBAGE.xml' path='doc/member[@name="MODLOAD_PDBGUID_PDBAGE.PdbAge"]/*' />
     [NativeTypeName("DWORD")]
     public uint PdbAge;
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_SUBPICTURE_TYPE.xml' path='doc/member[@name="DVD_SUBPICTURE_TYPE"]/*' />
 public enum DVD_SUBPICTURE_TYPE
 {
+    /// <include file='DVD_SUBPICTURE_TYPE.xml' path='doc/member[@name="DVD_SUBPICTURE_TYPE.DVD_SPType_NotSpecified"]/*' />
     DVD_SPType_NotSpecified = 0,
+
+    /// <include file='DVD_SUBPICTURE_TYPE.xml' path='doc/member[@name="DVD_SUBPICTURE_TYPE.DVD_SPType_Language"]/*' />
     DVD_SPType_Language = 1,
+
+    /// <include file='DVD_SUBPICTURE_TYPE.xml' path='doc/member[@name="DVD_SUBPICTURE_TYPE.DVD_SPType_Other"]/*' />
     DVD_SPType_Other = 2,
 }

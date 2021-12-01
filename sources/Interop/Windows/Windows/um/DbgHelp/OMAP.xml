@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OMAP">
+    <summary>
+      <para>Describes an entry in an address map.</para>
+    </summary>
+    <remarks>
+      <para>An address map provides a translation from one image layout (A) to another (B). An array of OMAP structures, sorted by <b>rva</b>, defines an address map.</para>
+      <para>To translate an address, addrA, in image A to an address, addrB, in image B, perform the following steps:</para>
+      <list type="number">
+        <item>
+          <description>Search the map for the entry, e, with the largest rva less than or equal to addrA.</description>
+        </item>
+        <item>
+          <description>Set delta = addrA – e.rva.</description>
+        </item>
+        <item>
+          <description>Set addrB = e.rvaTo + delta.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="SymGetOmaps" />
+  </member>
+  <member name="OMAP.rva">
+    <summary>
+      <para>A relative virtual address (RVA) in image A.</para>
+    </summary>
+  </member>
+  <member name="OMAP.rvaTo">
+    <summary>
+      <para>The relative virtual address that <b>rva</b> is mapped to in image B.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_DVDCOPYSTATE.xml' path='doc/member[@name="AM_DVDCOPYSTATE"]/*' />
 public enum AM_DVDCOPYSTATE
 {
+    /// <include file='AM_DVDCOPYSTATE.xml' path='doc/member[@name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_INITIALIZE"]/*' />
     AM_DVDCOPYSTATE_INITIALIZE = 0,
+
+    /// <include file='AM_DVDCOPYSTATE.xml' path='doc/member[@name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_INITIALIZE_TITLE"]/*' />
     AM_DVDCOPYSTATE_INITIALIZE_TITLE = 1,
+
+    /// <include file='AM_DVDCOPYSTATE.xml' path='doc/member[@name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_AUTHENTICATION_NOT_REQUIRED"]/*' />
     AM_DVDCOPYSTATE_AUTHENTICATION_NOT_REQUIRED = 2,
+
+    /// <include file='AM_DVDCOPYSTATE.xml' path='doc/member[@name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_AUTHENTICATION_REQUIRED"]/*' />
     AM_DVDCOPYSTATE_AUTHENTICATION_REQUIRED = 3,
+
+    /// <include file='AM_DVDCOPYSTATE.xml' path='doc/member[@name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_DONE"]/*' />
     AM_DVDCOPYSTATE_DONE = 4,
 }

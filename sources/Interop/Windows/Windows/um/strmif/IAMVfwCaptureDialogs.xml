@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMVfwCaptureDialogs.HasDialog">
+    <summary>
+      <para>The <code>HasDialog</code> method determines if the specified dialog box exists in the driver.</para>
+    </summary>
+    <param name="iDialog">
+      <para>Desired dialog box. This is a member of the <see cref="VfwCaptureDialogs" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if the driver contains the dialog box or S_FALSE otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This method calls the Video for Windows <b>videoDialog</b> function to query for the existence of the appropriate dialog box.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVfwCaptureDialogs Interface" />
+  </member>
+  <member name="IAMVfwCaptureDialogs.SendDriverMessage">
+    <summary>
+      <para>The <code>SendDriverMessage</code> method sends a driver-specific message.</para>
+    </summary>
+    <param name="iDialog">
+      <para>Handle of the driver dialog box. This is a member of the <see cref="VfwCaptureDialogs" /> enumeration.</para>
+    </param>
+    <param name="uMsg">
+      <para>Message to send to the driver.</para>
+    </param>
+    <param name="dw1">
+      <para>Message data.</para>
+    </param>
+    <param name="dw2">
+      <para>Message data.</para>
+    </param>
+    <returns>
+      <para>Return value varies depending on the implementation within each driver.</para>
+    </returns>
+    <remarks>
+      <para>You should never need to use this method. This method can send any private message to the capture driver. Behavior might be undetermined in response to arbitrary messages; use this method at your own risk.</para>
+      <para>This method calls the Video for Windows <b>videoMessage</b> function to send the driver message.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVfwCaptureDialogs Interface" />
+  </member>
+  <member name="IAMVfwCaptureDialogs.ShowDialog">
+    <summary>
+      <para>The <code>ShowDialog</code> method displays the specified VFW dialog box.</para>
+    </summary>
+    <param name="iDialog">
+      <para>Dialog box to display. This is a member of the <see cref="VfwCaptureDialogs" /> enumeration.</para>
+    </param>
+    <param name="hwnd">
+      <para>Handle of the dialog box's parent window.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_CANNOT_CONNECT</b>
+            </para>
+          </description>
+          <description>
+            <para>Could not reconnect with the new format.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_STOPPED</b>
+            </para>
+          </description>
+          <description>
+            <para>The filter graph is not stopped.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Stop the filter graph before calling this method. Otherwise, the method fails and returns VFW_E_NOT_STOPPED.</para>
+      <para>The Video Format dialog (VfwCaptureDialog_Format) may change the video format. If so, the method tries to reconnect the capture filter. If the downstream filter rejects the new format, the method returns VFW_E_CANNOT_CONNECT.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVfwCaptureDialogs Interface" />
+  </member>
+  <member name="IAMVfwCaptureDialogs">
+    <summary>
+      <para>The <code>IAMVfwCaptureDialogs</code> interface displays a dialog box provided by a Video for Windows (VFW) capture driver.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/vfw-capture-filter">VFW Capture</a> filter implements this interface. Applications can use it to display one of the three dialog boxes (Source, Format, or Display) provided by VFW capture drivers.</para>
+    </summary>
+  </member>
+</doc>

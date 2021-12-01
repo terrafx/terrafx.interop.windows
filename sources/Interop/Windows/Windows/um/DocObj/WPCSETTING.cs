@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WPCSETTING.xml' path='doc/member[@name="WPCSETTING"]/*' />
 public enum WPCSETTING
 {
+    /// <include file='WPCSETTING.xml' path='doc/member[@name="WPCSETTING.WPCSETTING_LOGGING_ENABLED"]/*' />
     WPCSETTING_LOGGING_ENABLED = 0x1,
+
+    /// <include file='WPCSETTING.xml' path='doc/member[@name="WPCSETTING.WPCSETTING_FILEDOWNLOAD_BLOCKED"]/*' />
     WPCSETTING_FILEDOWNLOAD_BLOCKED = 0x2,
 }

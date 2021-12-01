@@ -7,12 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WCM_BILLING_CYCLE_INFO.xml' path='doc/member[@name="WCM_BILLING_CYCLE_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct WCM_BILLING_CYCLE_INFO
 {
+    /// <include file='WCM_BILLING_CYCLE_INFO.xml' path='doc/member[@name="WCM_BILLING_CYCLE_INFO.StartDate"]/*' />
     public FILETIME StartDate;
 
+    /// <include file='WCM_BILLING_CYCLE_INFO.xml' path='doc/member[@name="WCM_BILLING_CYCLE_INFO.Duration"]/*' />
     public WCM_TIME_INTERVAL Duration;
 
+    /// <include file='WCM_BILLING_CYCLE_INFO.xml' path='doc/member[@name="WCM_BILLING_CYCLE_INFO.Reset"]/*' />
     public BOOL Reset;
 }

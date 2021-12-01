@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_STRONG_SIGN_PARA">
+    <summary>
+      <para>Contains parameters used to check for strong signatures on <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificates</a>, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation lists</a> (CRLs), <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) responses, and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">PKCS #7</a> messages.</para>
+    </summary>
+    <remarks>
+      <para>The parameters needed to check for a strong signature include the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Name of the public (asymmetric) algorithm</description>
+        </item>
+        <item>
+          <description>Size, in bits, of the public key</description>
+        </item>
+        <item>
+          <description>Name of the signature algorithm</description>
+        </item>
+        <item>
+          <description>Name of the hashing algorithm</description>
+        </item>
+      </list>
+      <para>The value you specify for the <b>dwInfoChoice</b> member   of this structure chooses whether the parameters are transmitted as serialized strings or are predefined by using an object identifier.</para>
+      <para>The <b>CERT_STRONG_SIGN_PARA</b> structure is directly referenced by the following functions:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="CertIsStrongHashToSign" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="CryptMsgControl" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="CryptMsgVerifyCountersignatureEncodedEx" />
+          </description>
+        </item>
+      </list>
+      <para>The <b>CERT_STRONG_SIGN_PARA</b> structure is also directly referenced by the <see cref="CRYPT_VERIFY_MESSAGE_PARA" /> structure and is therefore available for use by the following functions:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="CryptDecodeMessage" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="CryptDecryptAndVerifyMessageSignature" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="CryptVerifyDetachedMessageSignature" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="CryptVerifyMessageSignature" />
+          </description>
+        </item>
+      </list>
+      <para>Finally, the <b>CERT_STRONG_SIGN_PARA</b> structure is directly referenced by the <see cref="CERT_CHAIN_PARA" /> structure and is therefore available for use by the following functions:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="CertGetCertificateChain" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="CertSelectCertificateChains" />
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="CERT_STRONG_SIGN_SERIALIZED_INFO" />
+  </member>
+  <member name="CERT_STRONG_SIGN_PARA.cbSize">
+    <summary>
+      <para>Size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_STRONG_SIGN_PARA.dwInfoChoice">
+    <summary>
+      <para>Indicates which nested union member points to the strong signature information. This can be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CERT_STRONG_SIGN_SERIALIZED_INFO_CHOICE</b>
+          </description>
+          <description>
+            <para>Specifies the <b>pSerializedInfo</b> member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_STRONG_SIGN_OID_INFO_CHOICE</b>
+          </description>
+          <description>
+            <para>Specifies the <b>pszOID</b> member.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_STRONG_SIGN_PARA.DUMMYUNIONNAME">
+    <summary>
+      <para>Union that contains the parameters that can be used for checking whether a signature is strong. The parameters consist of <i>signature algorithm</i> / <i>hash algorithm</i> pairs and <i>public key algorithm</i> / <i>bit length</i> pairs.</para>
+    </summary>
+  </member>
+  <member name="CERT_STRONG_SIGN_PARA.DUMMYUNIONNAME.pvInfo">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="CERT_STRONG_SIGN_PARA.DUMMYUNIONNAME.pSerializedInfo">
+    <summary>
+      <para>Pointer to a <see cref="CERT_STRONG_SIGN_SERIALIZED_INFO" /> structure that specifies the parameters.</para>
+    </summary>
+  </member>
+  <member name="CERT_STRONG_SIGN_PARA.DUMMYUNIONNAME.pszOID">
+    <summary>
+      <para>Pointer to a string that contains an object identifier (OID) that represents predefined parameters that can be used for strong signature checking. This can be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_CERT_STRONG_SIGN_OS_1</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.6.1.4.1.311.72.1.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The SHA2 hash algorithm is supported. MD2, MD4, MD5, and SSHA1 are not supported.</para>
+            <para>The signing and public key algorithms can be RSA or ECDSA. The DSA algorithm is not supported. The key size for the RSA algorithm must equal or be greater than 2047 bits. The key size for the ECDSA algorithm must equal or be greater than 256 bits.</para>
+            <para>Strong signing of CRLs and OCSP responses are enabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_CERT_STRONG_KEY_OS_1</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.6.1.4.1.311.72.2.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>SHA1 and SHA2 hashes are supported. MD2, MD4, and MD5 are not.</para>
+            <para>The signing and public key algorithms can be RSA or ECDSA. The DSA algorithm is not supported. The key size for the RSA algorithm must equal or be greater than 2047 bits. The key size for the ECDSA algorithm must equal or be greater than 256 bits.</para>
+            <para>Strong signing of CRLs and OCSP responses are enabled.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

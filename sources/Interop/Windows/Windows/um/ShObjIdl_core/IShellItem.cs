@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellItem.xml' path='doc/member[@name="IShellItem"]/*' />
 [Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE")]
 [NativeTypeName("struct IShellItem : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellItem : IShellItem.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellItem : IShellItem.Interface
         return ((delegate* unmanaged<IShellItem*, Guid*, void**, int>)(lpVtbl[0]))((IShellItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellItem : IShellItem.Interface
         return ((delegate* unmanaged<IShellItem*, uint>)(lpVtbl[1]))((IShellItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellItem : IShellItem.Interface
         return ((delegate* unmanaged<IShellItem*, uint>)(lpVtbl[2]))((IShellItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellItem.xml' path='doc/member[@name="IShellItem.BindToHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BindToHandler(IBindCtx* pbc, [NativeTypeName("const GUID &")] Guid* bhid, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellItem : IShellItem.Interface
         return ((delegate* unmanaged<IShellItem*, IBindCtx*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IShellItem*)Unsafe.AsPointer(ref this), pbc, bhid, riid, ppv);
     }
 
+    /// <include file='IShellItem.xml' path='doc/member[@name="IShellItem.GetParent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetParent(IShellItem** ppsi)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellItem : IShellItem.Interface
         return ((delegate* unmanaged<IShellItem*, IShellItem**, int>)(lpVtbl[4]))((IShellItem*)Unsafe.AsPointer(ref this), ppsi);
     }
 
+    /// <include file='IShellItem.xml' path='doc/member[@name="IShellItem.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDisplayName(SIGDN sigdnName, [NativeTypeName("LPWSTR *")] ushort** ppszName)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellItem : IShellItem.Interface
         return ((delegate* unmanaged<IShellItem*, SIGDN, ushort**, int>)(lpVtbl[5]))((IShellItem*)Unsafe.AsPointer(ref this), sigdnName, ppszName);
     }
 
+    /// <include file='IShellItem.xml' path='doc/member[@name="IShellItem.GetAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetAttributes([NativeTypeName("SFGAOF")] uint sfgaoMask, [NativeTypeName("SFGAOF *")] uint* psfgaoAttribs)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellItem : IShellItem.Interface
         return ((delegate* unmanaged<IShellItem*, uint, uint*, int>)(lpVtbl[6]))((IShellItem*)Unsafe.AsPointer(ref this), sfgaoMask, psfgaoAttribs);
     }
 
+    /// <include file='IShellItem.xml' path='doc/member[@name="IShellItem.Compare"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Compare(IShellItem* psi, [NativeTypeName("SICHINTF")] uint hint, int* piOrder)

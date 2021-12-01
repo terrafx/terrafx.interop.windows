@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleEmptyCells.xml' path='doc/member[@name="styleEmptyCells"]/*' />
 public enum styleEmptyCells
 {
+    /// <include file='styleEmptyCells.xml' path='doc/member[@name="styleEmptyCells.styleEmptyCellsNotSet"]/*' />
     styleEmptyCellsNotSet = 0,
+
+    /// <include file='styleEmptyCells.xml' path='doc/member[@name="styleEmptyCells.styleEmptyCellsShow"]/*' />
     styleEmptyCellsShow = 1,
+
+    /// <include file='styleEmptyCells.xml' path='doc/member[@name="styleEmptyCells.styleEmptyCellsHide"]/*' />
     styleEmptyCellsHide = 2,
+
+    /// <include file='styleEmptyCells.xml' path='doc/member[@name="styleEmptyCells.styleEmptyCells_Max"]/*' />
     styleEmptyCells_Max = 2147483647,
 }

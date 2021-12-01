@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VERIFY_INFORMATION.xml' path='doc/member[@name="VERIFY_INFORMATION"]/*' />
 public partial struct VERIFY_INFORMATION
 {
+    /// <include file='VERIFY_INFORMATION.xml' path='doc/member[@name="VERIFY_INFORMATION.StartingOffset"]/*' />
     public LARGE_INTEGER StartingOffset;
 
+    /// <include file='VERIFY_INFORMATION.xml' path='doc/member[@name="VERIFY_INFORMATION.Length"]/*' />
     [NativeTypeName("DWORD")]
     public uint Length;
 }

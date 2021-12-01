@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_DSV_FLAG">
+    <summary>
+      <para>Depth-stencil view options.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used by <see cref="D3D11_DEPTH_STENCIL_VIEW_DESC" />.</para>
+      <para>Limiting a depth-stencil buffer to read-only access allows more than one depth-stencil view to be bound to the pipeline simultaneously, since it is not possible to have a read/write conflicts between separate views.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-enums">Resource Enumerations</seealso>
+  </member>
+  <member name="D3D11_DSV_FLAG.D3D11_DSV_READ_ONLY_DEPTH">
+    <summary>
+      <para>Indicates that depth values are read only.</para>
+    </summary>
+  </member>
+  <member name="D3D11_DSV_FLAG.D3D11_DSV_READ_ONLY_STENCIL">
+    <summary>
+      <para>Indicates that stencil values are read only.</para>
+    </summary>
+  </member>
+</doc>

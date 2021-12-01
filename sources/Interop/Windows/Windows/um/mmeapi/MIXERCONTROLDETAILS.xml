@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIXERCONTROLDETAILS">
+    <summary>
+      <para>The <b>MIXERCONTROLDETAILS</b> structure refers to control-detail structures, retrieving or setting state information of an audio mixer control. All members of this structure must be initialized before calling the <a href="https://docs.microsoft.com//previous-versions/dd757299(v=vs.85)">mixerGetControlDetails</a> and <a href="https://docs.microsoft.com//previous-versions/dd757309(v=vs.85)">mixerSetControlDetails</a> functions.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixer-structures">Audio Mixer Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixers">Audio Mixers</seealso>
+    <seealso cref="MIXERCONTROL" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757299(v=vs.85)">mixerGetControlDetails</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757309(v=vs.85)">mixerSetControlDetails</seealso>
+  </member>
+  <member name="MIXERCONTROLDETAILS.cbStruct">
+    <summary>
+      <para>Size, in bytes, of the <b>MIXERCONTROLDETAILS</b> structure. The size must be large enough to contain the base <b>MIXERCONTROLDETAILS</b> structure. When <a href="https://docs.microsoft.com//previous-versions/dd757299(v=vs.85)">mixerGetControlDetails</a> returns, this member contains the actual size of the information returned. The returned information will not exceed the requested size, nor will it be smaller than the base <b>MIXERCONTROLDETAILS</b> structure.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.dwControlID">
+    <summary>
+      <para>Control identifier on which to get or set properties.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.cChannels">
+    <summary>
+      <para>Number of channels on which to get or set control properties. The following values are defined:</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>0</b>
+          </description>
+          <description>
+            <para>Use this value when the control is a MIXERCONTROL_CONTROLTYPE_CUSTOM control.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>1</b>
+          </description>
+          <description>
+            <para>Use this value when the control is a MIXERCONTROL_CONTROLF_UNIFORM control or when an application needs to get and set all channels as if they were uniform.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MIXERLINE cChannels</b>
+          </description>
+          <description>
+            <para>Use this value when the properties for the control are expected on all channels for a line.</para>
+          </description>
+        </item>
+      </list>
+      <para>An application cannot specify a value that falls between 1 and the number of channels for the audio line. For example, specifying 2 or 3 for a four-channel line is not valid. This member cannot be 0 for noncustom control types.</para>
+      <para>This member cannot be 0 for noncustom control types.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.DUMMYUNIONNAME.hwndOwner">
+    <summary>
+      <para>Handle to the window that owns a custom dialog box for a mixer control. This member is used when the MIXER_SETCONTROLDETAILSF_CUSTOM flag is specified in the <a href="https://docs.microsoft.com//previous-versions/dd757309(v=vs.85)">mixerSetControlDetails</a> function.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.DUMMYUNIONNAME.cMultipleItems">
+    <summary>
+      <para>Number of multiple items per channel on which to get or set properties. The following values are defined:</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>0</b>
+          </description>
+          <description>
+            <para>Use this value for all controls except for a MIXERCONTROL_CONTROLF_MULTIPLE or a MIXERCONTROL_CONTROLTYPE_CUSTOM control.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MIXERCONTROL cMultipleItems member</b>
+          </description>
+          <description>
+            <para>Use this value when the control class is MIXERCONTROL_CONTROLF_MULTIPLE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MIXERCONTROLDETAILS hwndOwner member</b>
+          </description>
+          <description>
+            <para>Use this value when the control is a MIXERCONTROL_CONTROLTYPE_CUSTOM control and the MIXER_SETCONTROLDETAILSF_CUSTOM flag is specified for the mixerSetControlDetails function.</para>
+            <para>In this case, the hwndOwner member overlaps with cMultipleItems, providing the value of the window handle.</para>
+          </description>
+        </item>
+      </list>
+      <para>When using a MIXERCONTROL_CONTROLTYPE_CUSTOM control without the MIXERCONTROL_CONTROLTYPE_CUSTOM flag, specify zero for this member.</para>
+      <para>An application cannot specify any value other than the value specified in the cMultipleItems member of the MIXERCONTROL structure for a MIXERCONTROL_CONTROLF_MULTIPLE control.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.cbDetails">
+    <summary>
+      <para>Size, in bytes, of one of the following details structures being used:</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MIXERCONTROLDETAILS_BOOLEAN</b>
+          </description>
+          <description>
+            <para>Boolean value for an audio line control.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MIXERCONTROLDETAILS_LISTTEXT</b>
+          </description>
+          <description>
+            <para>List text buffer for an audio line control. For information about the appropriate details structure for a specific control, see <a href="https://docs.microsoft.com//windows/desktop/Multimedia/control-types">Control Types</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MIXERCONTROLDETAILS_SIGNED</b>
+          </description>
+          <description>
+            <para>Signed value for an audio line control.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MIXERCONTROLDETAILS_UNSIGNED</b>
+          </description>
+          <description>
+            <para>Unsigned value for an audio line control.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.paDetails">
+    <summary>
+      <para>Pointer to an array of one or more structures in which properties for
+the specified control are retrieved or set.</para>
+      <para>For MIXERCONTROL_CONTROLF_MULTIPLE controls, the size of this buffer should be the product of the <b>cChannels</b>, <b>cMultipleItems</b> and <b>cbDetails</b> members of the <b>MIXERCONTROLDETAILS</b> structure. For controls other than MIXERCONTROL_CONTROLF_MULTIPLE types, the size of this buffer is the product of the <b>cChannels</b> and <b>cbDetails</b> members of the <b>MIXERCONTROLDETAILS</b> structure.</para>
+      <para>For controls other than MIXERCONTROL_CONTROLF_MULTIPLE types, the size of this buffer is the product of the <b>cChannels</b> and <b>cbDetails</b> members of the <b>MIXERCONTROLDETAILS</b> structure. For controls other than MIXERCONTROL_CONTROLF_MULTIPLE types, the size of this buffer is the product of the <b>cChannels</b> and <b>cbDetails</b> members of the <b>MIXERCONTROLDETAILS</b> structure.</para>
+      <para>For controls that are MIXERCONTROL_CONTROLF_MULTIPLE types, the array can be treated as a two-dimensional array that is channel major. That is, all multiple items for the left channel are given, then all multiple items for the right channel, and so on.</para>
+      <para>For controls other than MIXERCONTROL_CONTROLF_MULTIPLE types, each element index is equivalent to the zero-based channel that it affects. That is, paDetails[0] is for the left channel and paDetails[1] is for the right channel.</para>
+      <para>If the control is a MIXERCONTROL_CONTROLTYPE_CUSTOM control, this member must point to a buffer that is at least large enough to contain the size, in bytes, specified by the cbCustomData member of the MIXERCONTROL structure.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS">
+    <summary>
+      <para>The <b>MIXERCONTROLDETAILS_BOOLEAN</b> structure retrieves and sets Boolean control properties for an audio mixer control</para>
+    </summary>
+    <remarks>
+      <para>The following standard control types use this structure for retrieving and setting properties.</para>
+      <para>Meter controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_BOOLEANMETER</para>
+      <para>Switch controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_BOOLEAN</para>
+      <para>MIXERCONTROL_CONTROLTYPE_BUTTON</para>
+      <para>MIXERCONTROL_CONTROLTYPE_LOUDNESS</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MONO</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MUTE</para>
+      <para>MIXERCONTROL_CONTROLTYPE_ONOFF</para>
+      <para>MIXERCONTROL_CONTROLTYPE_STEREOENH</para>
+      <para>List controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MIXER</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MULTIPLESELECT</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MUX</para>
+      <para>MIXERCONTROL_CONTROLTYPE_SINGLESELECT</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixer-structures">Audio Mixer Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixers">Audio Mixers</seealso>
+    <seealso cref="MIXERCONTROL" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757299(v=vs.85)">mixerGetControlDetails</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757309(v=vs.85)">mixerSetControlDetails</seealso>
+  </member>
+  <member name="MIXERCONTROLDETAILS.fValue">
+    <summary>
+      <para>Boolean value for a single item or channel. This value is assumed to be zero for a FALSE state (such as off or disabled), and nonzero for a TRUE state (such as on or enabled).</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS">
+    <summary>
+      <para>The MIXERCONTROLDETAILS_LISTTEXT structure retrieves list text, label text, and/or band-range information for multiple-item controls. This structure is used when the MIXER_GETCONTROLDETAILSF_LISTTEXT flag is specified in the mixerGetControlDetails function.</para>
+    </summary>
+    <remarks>
+      <para>The following standard control types use this structure for retrieving the item text descriptions on multiple-item controls:</para>
+      <para>Fader control:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_EQUALIZER</para>
+      <para>List controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MIXER</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MULTIPLESELECT</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MUX</para>
+      <para>MIXERCONTROL_CONTROLTYPE_SINGLESELECT</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixer-structures">Audio Mixer Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixers">Audio Mixers</seealso>
+    <seealso cref="MIXERCONTROL" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757299(v=vs.85)">mixerGetControlDetails</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757309(v=vs.85)">mixerSetControlDetails</seealso>
+  </member>
+  <member name="MIXERCONTROLDETAILS.dwParam1">
+    <summary>
+      <para>Control class-specific values. The following control types are listed with their corresponding values:</para>
+      <para>| Name | Description |
+|------------|-------------|
+| EQUALIZER  | MIXERCONTROL. Bounds dwMinimum member.|
+| MIXER and MUX  | MIXERLINEdwLineID member.|
+| MULTIPLESELECT and SINGLESELECT | Undefined; must be zero |</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.dwParam2">
+    <summary>
+      <para>See dwParam1.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.szName">
+    <summary>
+      <para>Name describing a single item in a multiple-item control. This text can be used as a label or item text, depending on the control class.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS">
+    <summary>
+      <para>The MIXERCONTROLDETAILS_LISTTEXT structure retrieves list text, label text, and/or band-range information for multiple-item controls. This structure is used when the MIXER_GETCONTROLDETAILSF_LISTTEXT flag is specified in the mixerGetControlDetails function.</para>
+    </summary>
+    <remarks>
+      <para>The following standard control types use this structure for retrieving the item text descriptions on multiple-item controls:</para>
+      <para>Fader control:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_EQUALIZER</para>
+      <para>List controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MIXER</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MULTIPLESELECT</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MUX</para>
+      <para>MIXERCONTROL_CONTROLTYPE_SINGLESELECT</para>
+      <blockquote>
+        <para>[!NOTE]
+The mmeapi.h header defines MIXERCONTROLDETAILS_LISTTEXT as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixer-structures">Audio Mixer Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixers">Audio Mixers</seealso>
+    <seealso cref="MIXERCONTROL" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757299(v=vs.85)">mixerGetControlDetails</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757309(v=vs.85)">mixerSetControlDetails</seealso>
+  </member>
+  <member name="MIXERCONTROLDETAILS.dwParam1">
+    <summary>
+      <para>Control class-specific values. The following control types are listed with their corresponding values:</para>
+      <para>| Name | Description |
+|------------|-------------|
+| EQUALIZER  | MIXERCONTROL. Bounds dwMinimum member.|
+| MIXER and MUX  | MIXERLINEdwLineID member.|
+| MULTIPLESELECT and SINGLESELECT | Undefined; must be zero |</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.dwParam2">
+    <summary>
+      <para>See dwParam1.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.szName">
+    <summary>
+      <para>Name describing a single item in a multiple-item control. This text can be used as a label or item text, depending on the control class.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS">
+    <summary>
+      <para>The MIXERCONTROLDETAILS_LISTTEXT structure retrieves list text, label text, and/or band-range information for multiple-item controls. This structure is used when the MIXER_GETCONTROLDETAILSF_LISTTEXT flag is specified in the mixerGetControlDetails function.</para>
+    </summary>
+    <remarks>
+      <para>The following standard control types use this structure for retrieving the item text descriptions on multiple-item controls:</para>
+      <para>Fader control:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_EQUALIZER</para>
+      <para>List controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MIXER</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MULTIPLESELECT</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MUX</para>
+      <para>MIXERCONTROL_CONTROLTYPE_SINGLESELECT</para>
+      <blockquote>
+        <para>[!NOTE]
+The mmeapi.h header defines MIXERCONTROLDETAILS_LISTTEXT as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixer-structures">Audio Mixer Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixers">Audio Mixers</seealso>
+    <seealso cref="MIXERCONTROL" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757299(v=vs.85)">mixerGetControlDetails</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757309(v=vs.85)">mixerSetControlDetails</seealso>
+  </member>
+  <member name="MIXERCONTROLDETAILS.dwParam1">
+    <summary>
+      <para>Control class-specific values. The following control types are listed with their corresponding values:</para>
+      <para>| Name | Description |
+|------------|-------------|
+| EQUALIZER  | MIXERCONTROL. Bounds dwMinimum member.|
+| MIXER and MUX  | MIXERLINEdwLineID member.|
+| MULTIPLESELECT and SINGLESELECT | Undefined; must be zero |</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.dwParam2">
+    <summary>
+      <para>See dwParam1.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS.szName">
+    <summary>
+      <para>Name describing a single item in a multiple-item control. This text can be used as a label or item text, depending on the control class.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS">
+    <summary>
+      <para>The MIXERCONTROLDETAILS_SIGNED structure retrieves and sets signed type control properties for an audio mixer control.</para>
+    </summary>
+    <remarks>
+      <para>The following standard control types use this structure for retrieving and setting properties:</para>
+      <para>Meter controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_PEAKMETER</para>
+      <para>MIXERCONTROL_CONTROLTYPE_SIGNEDMETER</para>
+      <para>Member controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_SIGNED</para>
+      <para>Number controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_DECIBELS</para>
+      <para>Slider controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_PAN</para>
+      <para>MIXERCONTROL_CONTROLTYPE_QSOUNDPAN</para>
+      <para>MIXERCONTROL_CONTROLTYPE_SLIDER</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixer-structures">Audio Mixer Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixers">Audio Mixers</seealso>
+    <seealso cref="MIXERCONTROL" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757299(v=vs.85)">mixerGetControlDetails</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757309(v=vs.85)">mixerSetControlDetails</seealso>
+  </member>
+  <member name="MIXERCONTROLDETAILS.lValue">
+    <summary>
+      <para>Signed integer value for a single item or channel. This value must be inclusively within the bounds given in the Bounds member of this structure for signed integer controls.</para>
+    </summary>
+  </member>
+  <member name="MIXERCONTROLDETAILS">
+    <summary>
+      <para>The MIXERCONTROLDETAILS_UNSIGNED structure retrieves and sets unsigned type control properties for an audio mixer control.</para>
+    </summary>
+    <remarks>
+      <para>The following standard control types use this structure for retrieving and setting properties:</para>
+      <para>Meter control:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_UNSIGNEDMETER</para>
+      <para>Number control:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_UNSIGNED</para>
+      <para>Fader controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_BASS</para>
+      <para>MIXERCONTROL_CONTROLTYPE_EQUALIZER</para>
+      <para>MIXERCONTROL_CONTROLTYPE_FADER</para>
+      <para>MIXERCONTROL_CONTROLTYPE_TREBLE</para>
+      <para>MIXERCONTROL_CONTROLTYPE_VOLUME</para>
+      <para>Time controls:</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MICROTIME</para>
+      <para>MIXERCONTROL_CONTROLTYPE_MILLITIME</para>
+      <para>MIXERCONTROL_CONTROLTYPE_PERCENT</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixer-structures">Audio Mixer Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixers">Audio Mixers</seealso>
+    <seealso cref="MIXERCONTROL" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757299(v=vs.85)">mixerGetControlDetails</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd757309(v=vs.85)">mixerSetControlDetails</seealso>
+  </member>
+  <member name="MIXERCONTROLDETAILS.dwValue">
+    <summary>
+      <para>Unsigned integer value for a single item or channel. This value must be inclusively within the bounds given in the Bounds structure member of the MIXERCONTROL structure for unsigned integer controls.</para>
+    </summary>
+  </member>
+</doc>

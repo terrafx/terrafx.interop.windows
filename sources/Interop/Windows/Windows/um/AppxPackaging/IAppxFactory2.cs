@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxFactory2.xml' path='doc/member[@name="IAppxFactory2"]/*' />
 [Guid("F1346DF2-C282-4E22-B918-743A929A8D55")]
 [NativeTypeName("struct IAppxFactory2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface
         return ((delegate* unmanaged<IAppxFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface
         return ((delegate* unmanaged<IAppxFactory2*, uint>)(lpVtbl[1]))((IAppxFactory2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface
         return ((delegate* unmanaged<IAppxFactory2*, uint>)(lpVtbl[2]))((IAppxFactory2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxFactory2.xml' path='doc/member[@name="IAppxFactory2.CreateContentGroupMapReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateContentGroupMapReader(IStream* inputStream, IAppxContentGroupMapReader** contentGroupMapReader)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface
         return ((delegate* unmanaged<IAppxFactory2*, IStream*, IAppxContentGroupMapReader**, int>)(lpVtbl[3]))((IAppxFactory2*)Unsafe.AsPointer(ref this), inputStream, contentGroupMapReader);
     }
 
+    /// <include file='IAppxFactory2.xml' path='doc/member[@name="IAppxFactory2.CreateSourceContentGroupMapReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateSourceContentGroupMapReader(IStream* inputStream, IAppxSourceContentGroupMapReader** reader)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface
         return ((delegate* unmanaged<IAppxFactory2*, IStream*, IAppxSourceContentGroupMapReader**, int>)(lpVtbl[4]))((IAppxFactory2*)Unsafe.AsPointer(ref this), inputStream, reader);
     }
 
+    /// <include file='IAppxFactory2.xml' path='doc/member[@name="IAppxFactory2.CreateContentGroupMapWriter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateContentGroupMapWriter(IStream* stream, IAppxContentGroupMapWriter** contentGroupMapWriter)

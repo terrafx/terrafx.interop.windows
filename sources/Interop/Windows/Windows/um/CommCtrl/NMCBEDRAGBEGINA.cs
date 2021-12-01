@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMCBEDRAGBEGINA.xml' path='doc/member[@name="NMCBEDRAGBEGINA"]/*' />
 public unsafe partial struct NMCBEDRAGBEGINA
 {
+    /// <include file='NMCBEDRAGBEGINA.xml' path='doc/member[@name="NMCBEDRAGBEGINA.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMCBEDRAGBEGINA.xml' path='doc/member[@name="NMCBEDRAGBEGINA.iItemid"]/*' />
     public int iItemid;
 
+    /// <include file='NMCBEDRAGBEGINA.xml' path='doc/member[@name="NMCBEDRAGBEGINA.szText"]/*' />
     [NativeTypeName("char [260]")]
     public fixed sbyte szText[260];
 }

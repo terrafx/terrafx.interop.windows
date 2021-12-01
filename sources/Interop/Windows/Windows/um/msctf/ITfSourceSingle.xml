@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfSourceSingle.AdviseSingleSink">
+    <summary>
+      <para>Installs an advise sink.</para>
+    </summary>
+    <param name="tid">
+      <para>Contains a <b>TfClientId</b> value that identifies the client.</para>
+    </param>
+    <param name="riid">
+      <para>Identifies the type of advise sink to install.</para>
+      <para>This parameter can be one of the following values when the <see cref="ITfSourceSingle" /> object is obtained from an <see cref="ITfThreadMgr" /> object.</para>
+      <para>This parameter can be one of the following values when the <b>ITfSourceSingle</b> object is obtained from an <see cref="ITfContext" /> object.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>IID_ITfCleanupContextDurationSink</b>
+          </description>
+          <description>
+            <para>Installs a <see cref="ITfCleanupContextDurationSink" /> advise sink.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>IID_ITfFunctionProvider</b>
+          </description>
+          <description>
+            <para>Registers the client as a function provider. The <i>punk</i> parameter is an <see cref="ITfFunctionProvider" /> interface pointer.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="punk">
+      <para>Pointer to the advise sink <b>IUnknown</b> pointer.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CONNECT_E_CANNOTCONNECT</b>
+            </para>
+          </description>
+          <description>
+            <para>The advise sink cannot be installed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CONNECT_E_ADVISELIMIT</b>
+            </para>
+          </description>
+          <description>
+            <para>The maximum number of advise sinks has been reached.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCleanupContextSink " />
+    <seealso cref="ITfFunctionProvider " />
+    <seealso cref="ITfSourceSingle" />
+  </member>
+  <member name="ITfSourceSingle.UnadviseSingleSink">
+    <summary>
+      <para>Uninstalls an advise sink.</para>
+    </summary>
+    <param name="tid">
+      <para>Contains a <b>TfClientId</b> value that identifies the client.</para>
+    </param>
+    <param name="riid">
+      <para>Identifies the type of advise sink to uninstall. This can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>IID_ITfCleanupContextDurationSink</b>
+          </description>
+          <description>
+            <para>Uninstalls the <see cref="ITfCleanupContextDurationSink" /> advise sink. Applies to: Text service</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>IID_ITfCleanupContextSink</b>
+          </description>
+          <description>
+            <para>Uninstalls the <see cref="ITfCleanupContextSink" /> advise sink. Applies to: Text service</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>IID_ITfFunctionProvider</b>
+          </description>
+          <description>
+            <para>Unregisters the client as a function provider. Applies to: Text Service and Application</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The advise sink was successfully uninstalled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>tid</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CONNECT_E_NOCONNECTION</b>
+            </para>
+          </description>
+          <description>
+            <para>The advise sink is not installed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfSourceSingle">
+    <summary>
+      <para>The <b>ITfSourceSingle</b> interface is implemented by the TSF manager. It is used by applications and text services to install and remove various advise sinks. This interface differs from <see cref="ITfSource" /> in that advise sinks installed with <b>ITfSourceSingle</b> only support one advise sink at a time whereas advise sinks installed with <b>ITfSource</b> support multiple simultaneous advise sinks.</para>
+    </summary>
+    <remarks>
+      <para>The TSF manager has different implementations of <b>ITfSourceSingle</b>, depending upon how the <b>ITfSourceSingle</b> interface is obtained. The difference in the implementations is the types of advise sinks that can be installed with the interface. The different implementations can be obtained from the following objects.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="ITfThreadMgr " />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ITfContext " />
+          </description>
+        </item>
+      </list>
+      <para>For more information about advise sinks that can be installed by each implementation, see <see cref="ITfSourceSingle.AdviseSingleSink" />.</para>
+      <h4>Examples</h4>
+      <para>
+        <b>ITfThreadMgr</b>
+      </para>
+      <code>
+HRESULT hr;
+ITfSourceSingle *pSourceSingle;
+
+hr = pThreadManager-&gt;QueryInterface(IID_ITfSourceSingle, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSourceSingle);
+if(SUCCEEDED(hr))
+{
+    //Use the ITfSourceSingle interface.
+
+    pSourceSingle-&gt;Release();
+}
+
+</code>
+      <para>
+        <b>ITfContext</b>
+      </para>
+      <code>
+HRESULT hr;
+ITfSourceSingle *pSourceSingle;
+
+hr = pContext-&gt;QueryInterface(IID_ITfSourceSingle, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSourceSingle);
+if(SUCCEEDED(hr))
+{
+    //Use the ITfSourceSingle interface.
+
+    pSourceSingle-&gt;Release();
+}
+
+</code>
+    </remarks>
+    <seealso cref="ITfContext " />
+    <seealso cref="ITfSource " />
+    <seealso cref="ITfThreadMgr " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

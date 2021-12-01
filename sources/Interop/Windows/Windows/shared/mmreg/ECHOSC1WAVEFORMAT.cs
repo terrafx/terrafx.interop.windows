@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ECHOSC1WAVEFORMAT.xml' path='doc/member[@name="ECHOSC1WAVEFORMAT"]/*' />
 public partial struct ECHOSC1WAVEFORMAT
 {
+    /// <include file='ECHOSC1WAVEFORMAT.xml' path='doc/member[@name="ECHOSC1WAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 }

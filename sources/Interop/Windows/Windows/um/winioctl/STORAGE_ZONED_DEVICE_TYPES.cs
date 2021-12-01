@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_ZONED_DEVICE_TYPES.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_TYPES"]/*' />
 public enum STORAGE_ZONED_DEVICE_TYPES
 {
+    /// <include file='STORAGE_ZONED_DEVICE_TYPES.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_TYPES.ZonedDeviceTypeUnknown"]/*' />
     ZonedDeviceTypeUnknown = 0,
+
+    /// <include file='STORAGE_ZONED_DEVICE_TYPES.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_TYPES.ZonedDeviceTypeHostManaged"]/*' />
     ZonedDeviceTypeHostManaged,
+
+    /// <include file='STORAGE_ZONED_DEVICE_TYPES.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_TYPES.ZonedDeviceTypeHostAware"]/*' />
     ZonedDeviceTypeHostAware,
+
+    /// <include file='STORAGE_ZONED_DEVICE_TYPES.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_TYPES.ZonedDeviceTypeDeviceManaged"]/*' />
     ZonedDeviceTypeDeviceManaged,
 }

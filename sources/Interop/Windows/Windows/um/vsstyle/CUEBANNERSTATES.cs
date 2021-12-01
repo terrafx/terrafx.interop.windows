@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CUEBANNERSTATES.xml' path='doc/member[@name="CUEBANNERSTATES"]/*' />
 public enum CUEBANNERSTATES
 {
+    /// <include file='CUEBANNERSTATES.xml' path='doc/member[@name="CUEBANNERSTATES.CBCB_NORMAL"]/*' />
     CBCB_NORMAL = 1,
+
+    /// <include file='CUEBANNERSTATES.xml' path='doc/member[@name="CUEBANNERSTATES.CBCB_HOT"]/*' />
     CBCB_HOT = 2,
+
+    /// <include file='CUEBANNERSTATES.xml' path='doc/member[@name="CUEBANNERSTATES.CBCB_PRESSED"]/*' />
     CBCB_PRESSED = 3,
+
+    /// <include file='CUEBANNERSTATES.xml' path='doc/member[@name="CUEBANNERSTATES.CBCB_DISABLED"]/*' />
     CBCB_DISABLED = 4,
 }

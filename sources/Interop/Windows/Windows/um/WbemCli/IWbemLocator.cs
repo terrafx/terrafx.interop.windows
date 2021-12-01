@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemLocator.xml' path='doc/member[@name="IWbemLocator"]/*' />
 [Guid("DC12A687-737F-11CF-884D-00AA004B2E24")]
 [NativeTypeName("struct IWbemLocator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemLocator : IWbemLocator.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemLocator : IWbemLocator.Interface
         return ((delegate* unmanaged<IWbemLocator*, Guid*, void**, int>)(lpVtbl[0]))((IWbemLocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemLocator : IWbemLocator.Interface
         return ((delegate* unmanaged<IWbemLocator*, uint>)(lpVtbl[1]))((IWbemLocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemLocator : IWbemLocator.Interface
         return ((delegate* unmanaged<IWbemLocator*, uint>)(lpVtbl[2]))((IWbemLocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWbemLocator.xml' path='doc/member[@name="IWbemLocator.ConnectServer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ConnectServer([NativeTypeName("const BSTR")] ushort* strNetworkResource, [NativeTypeName("const BSTR")] ushort* strUser, [NativeTypeName("const BSTR")] ushort* strPassword, [NativeTypeName("const BSTR")] ushort* strLocale, [NativeTypeName("long")] int lSecurityFlags, [NativeTypeName("const BSTR")] ushort* strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace)

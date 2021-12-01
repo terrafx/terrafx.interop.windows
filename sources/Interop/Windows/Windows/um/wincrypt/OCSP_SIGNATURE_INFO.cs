@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OCSP_SIGNATURE_INFO.xml' path='doc/member[@name="OCSP_SIGNATURE_INFO"]/*' />
 public unsafe partial struct OCSP_SIGNATURE_INFO
 {
+    /// <include file='OCSP_SIGNATURE_INFO.xml' path='doc/member[@name="OCSP_SIGNATURE_INFO.SignatureAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER SignatureAlgorithm;
 
+    /// <include file='OCSP_SIGNATURE_INFO.xml' path='doc/member[@name="OCSP_SIGNATURE_INFO.Signature"]/*' />
     public CRYPT_BIT_BLOB Signature;
 
+    /// <include file='OCSP_SIGNATURE_INFO.xml' path='doc/member[@name="OCSP_SIGNATURE_INFO.cCertEncoded"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCertEncoded;
 
+    /// <include file='OCSP_SIGNATURE_INFO.xml' path='doc/member[@name="OCSP_SIGNATURE_INFO.rgCertEncoded"]/*' />
     [NativeTypeName("PCERT_BLOB")]
     public CRYPT_DATA_BLOB* rgCertEncoded;
 }

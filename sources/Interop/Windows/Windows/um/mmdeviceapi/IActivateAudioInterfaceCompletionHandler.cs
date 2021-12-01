@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IActivateAudioInterfaceCompletionHandler.xml' path='doc/member[@name="IActivateAudioInterfaceCompletionHandler"]/*' />
 [Guid("41D949AB-9862-444A-80F6-C261334DA5EB")]
 [NativeTypeName("struct IActivateAudioInterfaceCompletionHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivat
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivat
         return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, Guid*, void**, int>)(lpVtbl[0]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivat
         return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[1]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivat
         return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[2]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IActivateAudioInterfaceCompletionHandler.xml' path='doc/member[@name="IActivateAudioInterfaceCompletionHandler.ActivateCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ActivateCompleted(IActivateAudioInterfaceAsyncOperation* activateOperation)

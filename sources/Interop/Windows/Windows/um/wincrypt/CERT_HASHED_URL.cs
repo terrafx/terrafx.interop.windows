@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_HASHED_URL.xml' path='doc/member[@name="CERT_HASHED_URL"]/*' />
 public unsafe partial struct CERT_HASHED_URL
 {
+    /// <include file='CERT_HASHED_URL.xml' path='doc/member[@name="CERT_HASHED_URL.HashAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
+    /// <include file='CERT_HASHED_URL.xml' path='doc/member[@name="CERT_HASHED_URL.Hash"]/*' />
     [NativeTypeName("CRYPT_HASH_BLOB")]
     public CRYPT_DATA_BLOB Hash;
 
+    /// <include file='CERT_HASHED_URL.xml' path='doc/member[@name="CERT_HASHED_URL.pwszUrl"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszUrl;
 }

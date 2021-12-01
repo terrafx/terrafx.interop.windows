@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IProvideClassInfo2.xml' path='doc/member[@name="IProvideClassInfo2"]/*' />
 [Guid("A6BC3AC0-DBAA-11CE-9DE3-00AA004BB851")]
 [NativeTypeName("struct IProvideClassInfo2 : IProvideClassInfo")]
 [NativeInheritance("IProvideClassInfo")]
@@ -16,6 +17,7 @@ public unsafe partial struct IProvideClassInfo2 : IProvideClassInfo2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IProvideClassInfo2 : IProvideClassInfo2.Interface
         return ((delegate* unmanaged<IProvideClassInfo2*, Guid*, void**, int>)(lpVtbl[0]))((IProvideClassInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IProvideClassInfo2 : IProvideClassInfo2.Interface
         return ((delegate* unmanaged<IProvideClassInfo2*, uint>)(lpVtbl[1]))((IProvideClassInfo2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IProvideClassInfo2 : IProvideClassInfo2.Interface
         return ((delegate* unmanaged<IProvideClassInfo2*, uint>)(lpVtbl[2]))((IProvideClassInfo2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IProvideClassInfo.GetClassInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassInfo(ITypeInfo** ppTI)
@@ -46,6 +51,7 @@ public unsafe partial struct IProvideClassInfo2 : IProvideClassInfo2.Interface
         return ((delegate* unmanaged<IProvideClassInfo2*, ITypeInfo**, int>)(lpVtbl[3]))((IProvideClassInfo2*)Unsafe.AsPointer(ref this), ppTI);
     }
 
+    /// <include file='IProvideClassInfo2.xml' path='doc/member[@name="IProvideClassInfo2.GetGUID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGUID([NativeTypeName("DWORD")] uint dwGuidKind, Guid* pGUID)

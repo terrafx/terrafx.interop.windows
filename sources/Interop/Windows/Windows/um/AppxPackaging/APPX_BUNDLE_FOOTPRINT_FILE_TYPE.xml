@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPX_BUNDLE_FOOTPRINT_FILE_TYPE">
+    <summary>
+      <para>Specifies the type of footprint file in a bundle.</para>
+    </summary>
+    <seealso cref="IAppxBundleReader.GetFootprintFile" />
+  </member>
+  <member name="APPX_BUNDLE_FOOTPRINT_FILE_TYPE.APPX_BUNDLE_FOOTPRINT_FILE_TYPE_FIRST">
+    <summary>
+      <para>The bundle's first footprint file, which is the bundle manifest.</para>
+    </summary>
+  </member>
+  <member name="APPX_BUNDLE_FOOTPRINT_FILE_TYPE.APPX_BUNDLE_FOOTPRINT_FILE_TYPE_MANIFEST">
+    <summary>
+      <para>The bundle manifest.</para>
+    </summary>
+  </member>
+  <member name="APPX_BUNDLE_FOOTPRINT_FILE_TYPE.APPX_BUNDLE_FOOTPRINT_FILE_TYPE_BLOCKMAP">
+    <summary>
+      <para>The bundle block map.</para>
+    </summary>
+  </member>
+  <member name="APPX_BUNDLE_FOOTPRINT_FILE_TYPE.APPX_BUNDLE_FOOTPRINT_FILE_TYPE_SIGNATURE">
+    <summary>
+      <para>The bundle signature.</para>
+    </summary>
+  </member>
+  <member name="APPX_BUNDLE_FOOTPRINT_FILE_TYPE.APPX_BUNDLE_FOOTPRINT_FILE_TYPE_LAST">
+    <summary>
+      <para>The bundle's last footprint file, which is the bundle signature.</para>
+    </summary>
+  </member>
+</doc>

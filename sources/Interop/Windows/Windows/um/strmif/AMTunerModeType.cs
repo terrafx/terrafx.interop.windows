@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMTunerModeType.xml' path='doc/member[@name="AMTunerModeType"]/*' />
 public enum AMTunerModeType
 {
+    /// <include file='AMTunerModeType.xml' path='doc/member[@name="AMTunerModeType.AMTUNER_MODE_DEFAULT"]/*' />
     AMTUNER_MODE_DEFAULT = 0,
+
+    /// <include file='AMTunerModeType.xml' path='doc/member[@name="AMTunerModeType.AMTUNER_MODE_TV"]/*' />
     AMTUNER_MODE_TV = 0x1,
+
+    /// <include file='AMTunerModeType.xml' path='doc/member[@name="AMTunerModeType.AMTUNER_MODE_FM_RADIO"]/*' />
     AMTUNER_MODE_FM_RADIO = 0x2,
+
+    /// <include file='AMTunerModeType.xml' path='doc/member[@name="AMTunerModeType.AMTUNER_MODE_AM_RADIO"]/*' />
     AMTUNER_MODE_AM_RADIO = 0x4,
+
+    /// <include file='AMTunerModeType.xml' path='doc/member[@name="AMTunerModeType.AMTUNER_MODE_DSS"]/*' />
     AMTUNER_MODE_DSS = 0x8,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl"]/*' />
 [Guid("1C1A17B0-BED0-415D-974B-DC6696131599")]
 [NativeTypeName("struct IVMRMixerControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, uint>)(lpVtbl[1]))((IVMRMixerControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, uint>)(lpVtbl[2]))((IVMRMixerControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.SetAlpha"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetAlpha([NativeTypeName("DWORD")] uint dwStreamID, float Alpha)
@@ -46,6 +51,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, uint, float, int>)(lpVtbl[3]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, Alpha);
     }
 
+    /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.GetAlpha"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAlpha([NativeTypeName("DWORD")] uint dwStreamID, float* pAlpha)
@@ -53,6 +59,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, uint, float*, int>)(lpVtbl[4]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pAlpha);
     }
 
+    /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.SetZOrder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetZOrder([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("DWORD")] uint dwZ)
@@ -60,6 +67,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, uint, uint, int>)(lpVtbl[5]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, dwZ);
     }
 
+    /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.GetZOrder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetZOrder([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("DWORD *")] uint* pZ)
@@ -67,6 +75,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, uint, uint*, int>)(lpVtbl[6]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pZ);
     }
 
+    /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.SetOutputRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetOutputRect([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("const NORMALIZEDRECT *")] NORMALIZEDRECT* pRect)
@@ -74,6 +83,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, uint, NORMALIZEDRECT*, int>)(lpVtbl[7]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pRect);
     }
 
+    /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.GetOutputRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetOutputRect([NativeTypeName("DWORD")] uint dwStreamID, NORMALIZEDRECT* pRect)
@@ -81,6 +91,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, uint, NORMALIZEDRECT*, int>)(lpVtbl[8]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pRect);
     }
 
+    /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.SetBackgroundClr"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetBackgroundClr(COLORREF ClrBkg)
@@ -88,6 +99,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, COLORREF, int>)(lpVtbl[9]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), ClrBkg);
     }
 
+    /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.GetBackgroundClr"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetBackgroundClr(COLORREF* lpClrBkg)
@@ -95,6 +107,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, COLORREF*, int>)(lpVtbl[10]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), lpClrBkg);
     }
 
+    /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.SetMixingPrefs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetMixingPrefs([NativeTypeName("DWORD")] uint dwMixerPrefs)
@@ -102,6 +115,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
         return ((delegate* unmanaged<IVMRMixerControl*, uint, int>)(lpVtbl[11]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwMixerPrefs);
     }
 
+    /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.GetMixingPrefs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetMixingPrefs([NativeTypeName("DWORD *")] uint* pdwMixerPrefs)

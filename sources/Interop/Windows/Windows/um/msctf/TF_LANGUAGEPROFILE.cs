@@ -7,17 +7,23 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TF_LANGUAGEPROFILE.xml' path='doc/member[@name="TF_LANGUAGEPROFILE"]/*' />
 public partial struct TF_LANGUAGEPROFILE
 {
+    /// <include file='TF_LANGUAGEPROFILE.xml' path='doc/member[@name="TF_LANGUAGEPROFILE.clsid"]/*' />
     [NativeTypeName("CLSID")]
     public Guid clsid;
 
+    /// <include file='TF_LANGUAGEPROFILE.xml' path='doc/member[@name="TF_LANGUAGEPROFILE.langid"]/*' />
     [NativeTypeName("LANGID")]
     public ushort langid;
 
+    /// <include file='TF_LANGUAGEPROFILE.xml' path='doc/member[@name="TF_LANGUAGEPROFILE.catid"]/*' />
     public Guid catid;
 
+    /// <include file='TF_LANGUAGEPROFILE.xml' path='doc/member[@name="TF_LANGUAGEPROFILE.fActive"]/*' />
     public BOOL fActive;
 
+    /// <include file='TF_LANGUAGEPROFILE.xml' path='doc/member[@name="TF_LANGUAGEPROFILE.guidProfile"]/*' />
     public Guid guidProfile;
 }

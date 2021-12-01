@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_OR_CRL_BUNDLE">
+    <summary>
+      <para>The <b>CERT_OR_CRL_BUNDLE</b> structure encapsulates an array of certificates for use with Internet Key Exchange  messages.</para>
+    </summary>
+  </member>
+  <member name="CERT_OR_CRL_BUNDLE.cItem">
+    <summary>
+      <para>The number of items in the array pointed to by the <b>rgItem</b> member.</para>
+    </summary>
+  </member>
+  <member name="CERT_OR_CRL_BUNDLE.rgItem">
+    <summary>
+      <para>A pointer to an array of certificates.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_ExactRateChange">
+    <summary>
+      <para>The AM_ExactRateChange structure is not supported. Use <see cref="AM_SimpleRateChange" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/rate-change-property-set">Rate Change Property Set</seealso>
+  </member>
+  <member name="AM_ExactRateChange.OutputZeroTime">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="AM_ExactRateChange.Rate">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppPolicyLifecycleManagement.xml' path='doc/member[@name="AppPolicyLifecycleManagement"]/*' />
 public enum AppPolicyLifecycleManagement
 {
+    /// <include file='AppPolicyLifecycleManagement.xml' path='doc/member[@name="AppPolicyLifecycleManagement.AppPolicyLifecycleManagement_Unmanaged"]/*' />
     AppPolicyLifecycleManagement_Unmanaged = 0,
+
+    /// <include file='AppPolicyLifecycleManagement.xml' path='doc/member[@name="AppPolicyLifecycleManagement.AppPolicyLifecycleManagement_Managed"]/*' />
     AppPolicyLifecycleManagement_Managed = 1,
 }

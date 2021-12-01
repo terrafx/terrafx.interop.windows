@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSignedLibrary.GetProcedureAddress">
+    <summary>
+      <para>Gets the procedure address of the specified function in the signed library.</para>
+    </summary>
+    <param name="name">
+      <para>The entry point name in the DLL that specifies the function.</para>
+    </param>
+    <param name="address">
+      <para>Receives the address of the entry point.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>See  <see cref="MFLoadSignedLibrary" /> for an example of how to create an <see cref="IMFSignedLibrary" /> object and call the <b>GetProcedureAddress</b> method.</para>
+    </remarks>
+    <seealso cref="IMFSignedLibrary" />
+    <seealso cref="MFLoadSignedLibrary" />
+  </member>
+  <member name="IMFSignedLibrary">
+    <summary>
+      <para>Provides a method that allows content protection systems to get the procedure address of a function in the signed library.  This method provides the same functionality as <b>GetProcAddress</b> which is not available to Windows Store apps.</para>
+    </summary>
+    <remarks>
+      <para>See  <see cref="MFLoadSignedLibrary" /> for an example of how to create and use an <b>IMFSignedLibrary</b> object.</para>
+    </remarks>
+    <seealso cref="MFLoadSignedLibrary" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

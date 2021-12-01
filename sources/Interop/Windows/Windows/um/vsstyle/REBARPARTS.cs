@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REBARPARTS.xml' path='doc/member[@name="REBARPARTS"]/*' />
 public enum REBARPARTS
 {
+    /// <include file='REBARPARTS.xml' path='doc/member[@name="REBARPARTS.RP_GRIPPER"]/*' />
     RP_GRIPPER = 1,
+
+    /// <include file='REBARPARTS.xml' path='doc/member[@name="REBARPARTS.RP_GRIPPERVERT"]/*' />
     RP_GRIPPERVERT = 2,
+
+    /// <include file='REBARPARTS.xml' path='doc/member[@name="REBARPARTS.RP_BAND"]/*' />
     RP_BAND = 3,
+
+    /// <include file='REBARPARTS.xml' path='doc/member[@name="REBARPARTS.RP_CHEVRON"]/*' />
     RP_CHEVRON = 4,
+
+    /// <include file='REBARPARTS.xml' path='doc/member[@name="REBARPARTS.RP_CHEVRONVERT"]/*' />
     RP_CHEVRONVERT = 5,
+
+    /// <include file='REBARPARTS.xml' path='doc/member[@name="REBARPARTS.RP_BACKGROUND"]/*' />
     RP_BACKGROUND = 6,
+
+    /// <include file='REBARPARTS.xml' path='doc/member[@name="REBARPARTS.RP_SPLITTER"]/*' />
     RP_SPLITTER = 7,
+
+    /// <include file='REBARPARTS.xml' path='doc/member[@name="REBARPARTS.RP_SPLITTERVERT"]/*' />
     RP_SPLITTERVERT = 8,
 }

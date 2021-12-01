@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFnConfigure.xml' path='doc/member[@name="ITfFnConfigure"]/*' />
 [Guid("88F567C6-1757-49F8-A1B2-89234C1EEFF9")]
 [NativeTypeName("struct ITfFnConfigure : ITfFunction")]
 [NativeInheritance("ITfFunction")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfFnConfigure : ITfFnConfigure.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfFnConfigure : ITfFnConfigure.Interface
         return ((delegate* unmanaged<ITfFnConfigure*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnConfigure*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfFnConfigure : ITfFnConfigure.Interface
         return ((delegate* unmanaged<ITfFnConfigure*, uint>)(lpVtbl[1]))((ITfFnConfigure*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfFnConfigure : ITfFnConfigure.Interface
         return ((delegate* unmanaged<ITfFnConfigure*, uint>)(lpVtbl[2]))((ITfFnConfigure*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfFnConfigure : ITfFnConfigure.Interface
         return ((delegate* unmanaged<ITfFnConfigure*, ushort**, int>)(lpVtbl[3]))((ITfFnConfigure*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
+    /// <include file='ITfFnConfigure.xml' path='doc/member[@name="ITfFnConfigure.Show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile)

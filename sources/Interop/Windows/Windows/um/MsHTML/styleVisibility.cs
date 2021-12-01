@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleVisibility.xml' path='doc/member[@name="styleVisibility"]/*' />
 public enum styleVisibility
 {
+    /// <include file='styleVisibility.xml' path='doc/member[@name="styleVisibility.styleVisibilityNotSet"]/*' />
     styleVisibilityNotSet = 0,
+
+    /// <include file='styleVisibility.xml' path='doc/member[@name="styleVisibility.styleVisibilityInherit"]/*' />
     styleVisibilityInherit = 1,
+
+    /// <include file='styleVisibility.xml' path='doc/member[@name="styleVisibility.styleVisibilityVisible"]/*' />
     styleVisibilityVisible = 2,
+
+    /// <include file='styleVisibility.xml' path='doc/member[@name="styleVisibility.styleVisibilityHidden"]/*' />
     styleVisibilityHidden = 3,
+
+    /// <include file='styleVisibility.xml' path='doc/member[@name="styleVisibility.styleVisibilityCollapse"]/*' />
     styleVisibilityCollapse = 4,
+
+    /// <include file='styleVisibility.xml' path='doc/member[@name="styleVisibility.styleVisibility_Max"]/*' />
     styleVisibility_Max = 2147483647,
 }

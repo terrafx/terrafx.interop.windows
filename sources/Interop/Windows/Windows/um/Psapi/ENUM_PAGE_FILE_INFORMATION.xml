@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ENUM_PAGE_FILE_INFORMATION">
+    <summary>
+      <para>Contains information about a pagefile.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/psapi/nc-psapi-penum_page_file_callbacka">EnumPageFilesProc</seealso>
+  </member>
+  <member name="ENUM_PAGE_FILE_INFORMATION.cb">
+    <summary>
+      <para>The size of this structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="ENUM_PAGE_FILE_INFORMATION.Reserved">
+    <summary>
+      <para>This member is reserved.</para>
+    </summary>
+  </member>
+  <member name="ENUM_PAGE_FILE_INFORMATION.TotalSize">
+    <summary>
+      <para>The total size of the pagefile, in pages.</para>
+    </summary>
+  </member>
+  <member name="ENUM_PAGE_FILE_INFORMATION.TotalInUse">
+    <summary>
+      <para>The current pagefile usage, in pages.</para>
+    </summary>
+  </member>
+  <member name="ENUM_PAGE_FILE_INFORMATION.PeakUsage">
+    <summary>
+      <para>The peak pagefile usage, in pages.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFARGB.xml' path='doc/member[@name="MFARGB"]/*' />
 public partial struct MFARGB
 {
+    /// <include file='MFARGB.xml' path='doc/member[@name="MFARGB.rgbBlue"]/*' />
     public byte rgbBlue;
 
+    /// <include file='MFARGB.xml' path='doc/member[@name="MFARGB.rgbGreen"]/*' />
     public byte rgbGreen;
 
+    /// <include file='MFARGB.xml' path='doc/member[@name="MFARGB.rgbRed"]/*' />
     public byte rgbRed;
 
+    /// <include file='MFARGB.xml' path='doc/member[@name="MFARGB.rgbAlpha"]/*' />
     public byte rgbAlpha;
 }

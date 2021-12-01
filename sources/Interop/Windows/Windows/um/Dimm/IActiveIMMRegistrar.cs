@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IActiveIMMRegistrar.xml' path='doc/member[@name="IActiveIMMRegistrar"]/*' />
 [Guid("B3458082-BD00-11D1-939B-0060B067B86E")]
 [NativeTypeName("struct IActiveIMMRegistrar : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IActiveIMMRegistrar : IActiveIMMRegistrar.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IActiveIMMRegistrar : IActiveIMMRegistrar.Interface
         return ((delegate* unmanaged<IActiveIMMRegistrar*, Guid*, void**, int>)(lpVtbl[0]))((IActiveIMMRegistrar*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IActiveIMMRegistrar : IActiveIMMRegistrar.Interface
         return ((delegate* unmanaged<IActiveIMMRegistrar*, uint>)(lpVtbl[1]))((IActiveIMMRegistrar*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IActiveIMMRegistrar : IActiveIMMRegistrar.Interface
         return ((delegate* unmanaged<IActiveIMMRegistrar*, uint>)(lpVtbl[2]))((IActiveIMMRegistrar*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IActiveIMMRegistrar.xml' path='doc/member[@name="IActiveIMMRegistrar.RegisterIME"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterIME([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort lgid, [NativeTypeName("LPCWSTR")] ushort* pszIconFile, [NativeTypeName("LPCWSTR")] ushort* pszDesc)
@@ -46,6 +51,7 @@ public unsafe partial struct IActiveIMMRegistrar : IActiveIMMRegistrar.Interface
         return ((delegate* unmanaged<IActiveIMMRegistrar*, Guid*, ushort, ushort*, ushort*, int>)(lpVtbl[3]))((IActiveIMMRegistrar*)Unsafe.AsPointer(ref this), rclsid, lgid, pszIconFile, pszDesc);
     }
 
+    /// <include file='IActiveIMMRegistrar.xml' path='doc/member[@name="IActiveIMMRegistrar.UnregisterIME"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnregisterIME([NativeTypeName("const IID &")] Guid* rclsid)

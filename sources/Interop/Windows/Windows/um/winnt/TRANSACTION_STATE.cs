@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_STATE.xml' path='doc/member[@name="TRANSACTION_STATE"]/*' />
 public enum TRANSACTION_STATE
 {
+    /// <include file='TRANSACTION_STATE.xml' path='doc/member[@name="TRANSACTION_STATE.TransactionStateNormal"]/*' />
     TransactionStateNormal = 1,
+
+    /// <include file='TRANSACTION_STATE.xml' path='doc/member[@name="TRANSACTION_STATE.TransactionStateIndoubt"]/*' />
     TransactionStateIndoubt,
+
+    /// <include file='TRANSACTION_STATE.xml' path='doc/member[@name="TRANSACTION_STATE.TransactionStateCommittedNotify"]/*' />
     TransactionStateCommittedNotify,
 }

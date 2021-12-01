@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleTextSizeAdjust.xml' path='doc/member[@name="styleTextSizeAdjust"]/*' />
 public enum styleTextSizeAdjust
 {
+    /// <include file='styleTextSizeAdjust.xml' path='doc/member[@name="styleTextSizeAdjust.styleTextSizeAdjustNone"]/*' />
     styleTextSizeAdjustNone = 0,
+
+    /// <include file='styleTextSizeAdjust.xml' path='doc/member[@name="styleTextSizeAdjust.styleTextSizeAdjustAuto"]/*' />
     styleTextSizeAdjustAuto = 1,
+
+    /// <include file='styleTextSizeAdjust.xml' path='doc/member[@name="styleTextSizeAdjust.styleTextSizeAdjust_Max"]/*' />
     styleTextSizeAdjust_Max = 2147483647,
 }

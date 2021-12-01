@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumStreamIdMap.xml' path='doc/member[@name="IEnumStreamIdMap"]/*' />
 [Guid("945C1566-6202-46FC-96C7-D87F289C6534")]
 [NativeTypeName("struct IEnumStreamIdMap : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumStreamIdMap : IEnumStreamIdMap.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumStreamIdMap : IEnumStreamIdMap.Interface
         return ((delegate* unmanaged<IEnumStreamIdMap*, Guid*, void**, int>)(lpVtbl[0]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumStreamIdMap : IEnumStreamIdMap.Interface
         return ((delegate* unmanaged<IEnumStreamIdMap*, uint>)(lpVtbl[1]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumStreamIdMap : IEnumStreamIdMap.Interface
         return ((delegate* unmanaged<IEnumStreamIdMap*, uint>)(lpVtbl[2]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumStreamIdMap.xml' path='doc/member[@name="IEnumStreamIdMap.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint cRequest, STREAM_ID_MAP* pStreamIdMap, [NativeTypeName("ULONG *")] uint* pcReceived)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumStreamIdMap : IEnumStreamIdMap.Interface
         return ((delegate* unmanaged<IEnumStreamIdMap*, uint, STREAM_ID_MAP*, uint*, int>)(lpVtbl[3]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this), cRequest, pStreamIdMap, pcReceived);
     }
 
+    /// <include file='IEnumStreamIdMap.xml' path='doc/member[@name="IEnumStreamIdMap.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint cRecords)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumStreamIdMap : IEnumStreamIdMap.Interface
         return ((delegate* unmanaged<IEnumStreamIdMap*, uint, int>)(lpVtbl[4]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this), cRecords);
     }
 
+    /// <include file='IEnumStreamIdMap.xml' path='doc/member[@name="IEnumStreamIdMap.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumStreamIdMap : IEnumStreamIdMap.Interface
         return ((delegate* unmanaged<IEnumStreamIdMap*, int>)(lpVtbl[5]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumStreamIdMap.xml' path='doc/member[@name="IEnumStreamIdMap.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumStreamIdMap** ppIEnumStreamIdMap)

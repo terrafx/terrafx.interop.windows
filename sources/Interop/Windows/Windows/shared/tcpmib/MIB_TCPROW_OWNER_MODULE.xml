@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_TCPROW_OWNER_MODULE">
+    <summary>
+      <para>The <b>MIB_TCPROW_OWNER_MODULE</b> structure contains information that describes an IPv4  TCP connection with ownership data, IPv4 addresses, ports used by the TCP connection, and the specific process ID (PID) associated with connection.</para>
+    </summary>
+    <remarks>
+      <para>The <b>MIB_TCPROW_OWNER_MODULE</b> structure is returned by a call to <see cref="GetExtendedTcpTable" /> with the <i>TableClass</i> parameter set to  <b>TCP_TABLE_OWNER_MODULE_LISTENER</b>, <b>TCP_TABLE_OWNER_MODULE_CONNECTIONS</b>, or <b>TCP_TABLE_OWNER_MODULE_ALL</b> from the <see cref="TCP_TABLE_CLASS" /> enumeration and the <i>ulAf</i> parameter set to <b>AF_INET4</b>.</para>
+      <para>The <b>dwState</b> member indicates the state of the TCP entry in a TCP state diagram. A TCP connection progresses through a series of states during its
+lifetime.  The states are:  LISTEN, SYN-SENT, SYN-RECEIVED,
+ESTABLISHED, FIN-WAIT-1, FIN-WAIT-2, CLOSE-WAIT, CLOSING, LAST-ACK,
+TIME-WAIT, and the fictional state CLOSED.  The CLOSED state is fictional
+because it represents the state when there is no Transmission Control Block, and therefore,
+no connection.  The TCP protocol is described in RFC 793. For more information, see
+<a href="https://www.ietf.org/rfc/rfc793.txt">http://www.ietf.org/rfc/rfc793.txt</a>.</para>
+      <para>The <b>dwLocalPort</b>, and <b>dwRemotePort</b> members are in network byte order. In order to use the <b>dwLocalPort</b> or <b>dwRemotePort</b> members, the <see cref="ntohs" /> or <see cref="inet_ntoa" /> functions in Windows Sockets or similar functions may be needed. The <b>dwLocalAddr</b> and <b>dwRemoteAddr</b> members are stored as a <b>DWORD</b> in the same format as the  <see cref="in_addr" /> structure. In order to use the <b>dwLocalAddr</b> or <b>dwRemoteAddr</b> members, the <see cref="ntohl" /> or <b>inet_ntoa</b> functions in Windows Sockets or similar functions may be needed. On Windows Vista and later, the <see cref="RtlIpv4AddressToString" /> or <see cref="RtlIpv4AddressToStringEx" /> functions may be used to convert the IPv4 address in the <b>dwLocalAddr</b> or <b>dwRemoteAddr</b> members to a string without loading the Windows Sockets DLL.</para>
+      <para>On the Windows SDK released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Tcpmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Tcpmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Tcpmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="GetExtendedTcpTable" />
+    <seealso cref="RtlIpv4AddressToString" />
+    <seealso cref="RtlIpv4AddressToStringEx" />
+    <seealso cref="SYSTEMTIME" />
+    <seealso cref="TCP_TABLE_CLASS" />
+    <seealso cref="in_addr" />
+    <seealso cref="inet_ntoa" />
+    <seealso cref="ntohl" />
+    <seealso cref="ntohs" />
+  </member>
+  <member name="MIB_TCPROW_OWNER_MODULE.dwState">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <h4>dwState</h4>
+      <para>
+        <b>Type: <b>DWORD</b></b>
+      </para>
+      <para>The state of the TCP connection. This member can be one of the values defined in the <i>Iprtrmib.h</i> header file.</para>
+      <para>On the Windows SDK released for Windows Vista and later, the organization of header files has changed. This member can be one of the values from the <b>MIB_TCP_STATE</b> enumeration defined in the <i>Tcpmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Tcpmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Tcpmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_CLOSED</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is in the CLOSED state that represents no connection state at all.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_LISTEN</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is in the LISTEN state waiting for a connection request from any remote
+TCP and port.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_SYN_SENT</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is in the SYN-SENT state waiting for a matching connection request
+after having sent a connection request (SYN packet).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_SYN_RCVD</b>
+                </description>
+              </item>
+              <item>
+                <description>4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is in the SYN-RECEIVED state waiting for a confirming connection
+request acknowledgment after having both received and sent a
+connection request (SYN packet).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_ESTAB</b>
+                </description>
+              </item>
+              <item>
+                <description>5</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is in the ESTABLISHED state that represents an open connection, data received can be
+delivered to the user.  This is the normal state for the data transfer phase
+of the TCP connection.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_FIN_WAIT1</b>
+                </description>
+              </item>
+              <item>
+                <description>6</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is FIN-WAIT-1 state waiting for a connection termination request
+from the remote TCP, or an acknowledgment of the connection
+termination request previously sent.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_FIN_WAIT2</b>
+                </description>
+              </item>
+              <item>
+                <description>7</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is FIN-WAIT-1 state waiting for a connection termination request
+from the remote TCP.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_CLOSE_WAIT</b>
+                </description>
+              </item>
+              <item>
+                <description>8</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is in the CLOSE-WAIT state waiting for a connection termination request
+from the local user.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_CLOSING</b>
+                </description>
+              </item>
+              <item>
+                <description>9</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is in the CLOSING state waiting for a connection termination request
+acknowledgment from the remote TCP.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_LAST_ACK</b>
+                </description>
+              </item>
+              <item>
+                <description>10</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is in the LAST-ACK state waiting for an acknowledgment of the
+connection termination request previously sent to the remote TCP
+(which includes an acknowledgment of its connection termination
+request).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_TIME_WAIT</b>
+                </description>
+              </item>
+              <item>
+                <description>11</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is in the TIME-WAIT state waiting for enough time to pass to be sure
+the remote TCP received the acknowledgment of its connection
+termination request.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_TCP_STATE_DELETE_TCB</b>
+                </description>
+              </item>
+              <item>
+                <description>12</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TCP connection is in the delete TCB state that represents the deletion of the Transmission Control Block (TCB), a data structure used to maintain information on each TCP entry.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MIB_TCPROW_OWNER_MODULE.dwLocalAddr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The local IPv4 address for the TCP connection on the local computer. A value of zero indicates the listener  can accept a connection on any interface.</para>
+    </summary>
+  </member>
+  <member name="MIB_TCPROW_OWNER_MODULE.dwLocalPort">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The local port number in network byte order for the TCP connection on the local computer.</para>
+    </summary>
+  </member>
+  <member name="MIB_TCPROW_OWNER_MODULE.dwRemoteAddr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The IPv4 address for the TCP connection on the remote computer. When the <b>dwState</b> member is <b>MIB_TCP_STATE_LISTEN</b>, this value has no meaning.</para>
+    </summary>
+  </member>
+  <member name="MIB_TCPROW_OWNER_MODULE.dwRemotePort">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The remote port number in network byte order for the TCP connection on the remote computer. When the <b>dwState</b> member is <b>MIB_TCP_STATE_LISTEN</b>, this member has no meaning.</para>
+    </summary>
+  </member>
+  <member name="MIB_TCPROW_OWNER_MODULE.dwOwningPid">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The PID of the process that issued a context bind for this TCP connection.</para>
+    </summary>
+  </member>
+  <member name="MIB_TCPROW_OWNER_MODULE.liCreateTimestamp">
+    <summary>
+      <para>Type: <b>LARGE_INTEGER</b></para>
+      <para>A <see cref="FILETIME" /> structure that indicates when the context bind operation that created this TCP link occurred.</para>
+    </summary>
+  </member>
+  <member name="MIB_TCPROW_OWNER_MODULE.OwningModuleInfo">
+    <summary>
+      <para>Type: <b>ULONGLONG[TCPIP_OWNING_MODULE_SIZE]</b></para>
+      <para>An array of opaque data that contains ownership information.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DSH_FLAGS.xml' path='doc/member[@name="DSH_FLAGS"]/*' />
 [Flags]
 public enum DSH_FLAGS
 {
+    /// <include file='DSH_FLAGS.xml' path='doc/member[@name="DSH_FLAGS.DSH_ALLOWDROPDESCRIPTIONTEXT"]/*' />
     DSH_ALLOWDROPDESCRIPTIONTEXT = 0x1,
 }

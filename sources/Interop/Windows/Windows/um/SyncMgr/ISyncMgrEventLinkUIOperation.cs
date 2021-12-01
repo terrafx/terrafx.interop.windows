@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrEventLinkUIOperation.xml' path='doc/member[@name="ISyncMgrEventLinkUIOperation"]/*' />
 [Guid("64522E52-848B-4015-89CE-5A36F00B94FF")]
 [NativeTypeName("struct ISyncMgrEventLinkUIOperation : ISyncMgrUIOperation")]
 [NativeInheritance("ISyncMgrUIOperation")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
         return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
         return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, uint>)(lpVtbl[1]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
         return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, uint>)(lpVtbl[2]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISyncMgrUIOperation.Run" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Run(HWND hwndOwner)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
         return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, HWND, int>)(lpVtbl[3]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), hwndOwner);
     }
 
+    /// <include file='ISyncMgrEventLinkUIOperation.xml' path='doc/member[@name="ISyncMgrEventLinkUIOperation.Init"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Init([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent* pEvent)

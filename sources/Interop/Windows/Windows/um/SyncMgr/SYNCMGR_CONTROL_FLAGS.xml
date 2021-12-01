@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_CONTROL_FLAGS">
+    <summary>
+      <para>Specifies how an operation requested on certain methods of <see cref="ISyncMgrControl" /> should be performed.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CONTROL_FLAGS.SYNCMGR_CF_NONE">
+    <summary>
+      <para>Perform the operation not using any of the other flags in this enumeration.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CONTROL_FLAGS.SYNCMGR_CF_NOWAIT">
+    <summary>
+      <para>Perform the operation asynchronously.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CONTROL_FLAGS.SYNCMGR_CF_WAIT">
+    <summary>
+      <para>Perform the operation synchronously.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CONTROL_FLAGS.SYNCMGR_CF_NOUI">
+    <summary>
+      <para>Perform the operation without asking the sync handler to display the UI during the operation.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CONTROL_FLAGS.SYNCMGR_CF_VALID">
+    <summary>
+      <para>A mask used to determine valid <see cref="SYNCMGR_CONTROL_FLAGS" /> flags.</para>
+    </summary>
+  </member>
+</doc>

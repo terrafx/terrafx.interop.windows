@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSS_HANDLE_FLAGS">
+    <summary>
+      <para>Flags to specify what parts of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_handle_entry">PSS_HANDLE_ENTRY</a> structure are valid.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="PSS_HANDLE_FLAGS.PSS_HANDLE_NONE">
+    <summary>
+      <para>No parts specified.</para>
+    </summary>
+  </member>
+  <member name="PSS_HANDLE_FLAGS.PSS_HANDLE_HAVE_TYPE">
+    <summary>
+      <para>The <b>ObjectType</b> member is valid.</para>
+    </summary>
+  </member>
+  <member name="PSS_HANDLE_FLAGS.PSS_HANDLE_HAVE_NAME">
+    <summary>
+      <para>The <b>ObjectName</b> member is valid.</para>
+    </summary>
+  </member>
+  <member name="PSS_HANDLE_FLAGS.PSS_HANDLE_HAVE_BASIC_INFORMATION">
+    <summary>
+      <para>The <b>Attributes</b>, <b>GrantedAccess</b>, <b>HandleCount</b>, <b>PointerCount</b>, <b>PagedPoolCharge</b>, and <b>NonPagedPoolCharge</b> members are valid.</para>
+    </summary>
+  </member>
+  <member name="PSS_HANDLE_FLAGS.PSS_HANDLE_HAVE_TYPE_SPECIFIC_INFORMATION">
+    <summary>
+      <para>The <b>TypeSpecificInformation</b> member is valid (either <b>Process</b>, <b>Thread</b>, <b>Mutant</b>, <b>Event</b> or <b>Section</b>).</para>
+    </summary>
+  </member>
+</doc>

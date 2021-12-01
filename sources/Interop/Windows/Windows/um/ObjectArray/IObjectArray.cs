@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IObjectArray.xml' path='doc/member[@name="IObjectArray"]/*' />
 [Guid("92CA9DCD-5622-4BBA-A805-5E9F541BD8C9")]
 [NativeTypeName("struct IObjectArray : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IObjectArray : IObjectArray.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IObjectArray : IObjectArray.Interface
         return ((delegate* unmanaged<IObjectArray*, Guid*, void**, int>)(lpVtbl[0]))((IObjectArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IObjectArray : IObjectArray.Interface
         return ((delegate* unmanaged<IObjectArray*, uint>)(lpVtbl[1]))((IObjectArray*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IObjectArray : IObjectArray.Interface
         return ((delegate* unmanaged<IObjectArray*, uint>)(lpVtbl[2]))((IObjectArray*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IObjectArray.xml' path='doc/member[@name="IObjectArray.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCount(uint* pcObjects)
@@ -46,6 +51,7 @@ public unsafe partial struct IObjectArray : IObjectArray.Interface
         return ((delegate* unmanaged<IObjectArray*, uint*, int>)(lpVtbl[3]))((IObjectArray*)Unsafe.AsPointer(ref this), pcObjects);
     }
 
+    /// <include file='IObjectArray.xml' path='doc/member[@name="IObjectArray.GetAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAt(uint uiIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncDDProductionRoomType.xml' path='doc/member[@name="CODECAPI_AVEncDDProductionRoomType"]/*' />
 [Guid("DAD7AD60-23D8-4AB7-A284-556986D8A6FE")]
 public partial struct CODECAPI_AVEncDDProductionRoomType
 {

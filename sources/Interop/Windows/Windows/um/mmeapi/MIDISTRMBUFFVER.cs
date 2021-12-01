@@ -7,15 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIDISTRMBUFFVER.xml' path='doc/member[@name="MIDISTRMBUFFVER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct MIDISTRMBUFFVER
 {
+    /// <include file='MIDISTRMBUFFVER.xml' path='doc/member[@name="MIDISTRMBUFFVER.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='MIDISTRMBUFFVER.xml' path='doc/member[@name="MIDISTRMBUFFVER.dwMid"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMid;
 
+    /// <include file='MIDISTRMBUFFVER.xml' path='doc/member[@name="MIDISTRMBUFFVER.dwOEMVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOEMVersion;
 }

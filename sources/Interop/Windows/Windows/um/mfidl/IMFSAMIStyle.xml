@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSAMIStyle.GetSelectedStyle">
+    <summary>
+      <para>Gets the current style from the SAMI media source.</para>
+    </summary>
+    <param name="ppwszStyle">
+      <para>Receives a pointer to a null-terminated string that contains the name of the style. If no style is currently set, the method returns an empty string. The caller must free the memory for the string by calling <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSAMIStyle" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sami-media-source">SAMI Media Source</seealso>
+  </member>
+  <member name="IMFSAMIStyle.GetStyleCount">
+    <summary>
+      <para>Gets the number of styles defined in the SAMI file.</para>
+    </summary>
+    <param name="pdwCount">
+      <para>Receives the number of SAMI styles in the file.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSAMIStyle" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sami-media-source">SAMI Media Source</seealso>
+  </member>
+  <member name="IMFSAMIStyle.GetStyles">
+    <summary>
+      <para>Gets a list of the style names defined in the SAMI file.</para>
+    </summary>
+    <param name="pPropVarStyleArray">
+      <para>Pointer to a <b>PROPVARIANT</b> that receives an array of null-terminated wide-character strings. The <b>PROPVARIANT</b> type is VT_VECTOR | VT_LPWSTR. The caller must clear the <b>PROPVARIANT</b> by calling <b>PropVariantClear</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSAMIStyle" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sami-media-source">SAMI Media Source</seealso>
+  </member>
+  <member name="IMFSAMIStyle.SetSelectedStyle">
+    <summary>
+      <para>Sets the current style on the SAMI media source.</para>
+    </summary>
+    <param name="pwszStyle">
+      <para>Pointer to a null-terminated string containing the name of the style. To clear the current style, pass an empty string ("").  To get the list of style names, call <see cref="IMFSAMIStyle.GetStyles" />.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSAMIStyle" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sami-media-source">SAMI Media Source</seealso>
+  </member>
+  <member name="IMFSAMIStyle">
+    <summary>
+      <para>Sets and retrieves Synchronized Accessible Media Interchange (SAMI) styles on the <a href="https://docs.microsoft.com//windows/desktop/medfound/sami-media-source">SAMI Media Source</a>.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this interface, call <see cref="IMFGetService.GetService" />. The service identifier is <b>MF_SAMI_SERVICE</b>. Call <b>GetService</b> either directly on the SAMI media source, or on the Media Session (if you are using the SAMI source with the Media Session).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sami-media-source">SAMI Media Source</seealso>
+  </member>
+</doc>

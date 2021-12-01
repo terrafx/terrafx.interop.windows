@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUDCLNT_STREAMOPTIONS">
+    <summary>
+      <para>Defines values  that describe the characteristics of an audio stream.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-enumerations">Core Audio Enumerations</seealso>
+  </member>
+  <member name="AUDCLNT_STREAMOPTIONS.AUDCLNT_STREAMOPTIONS_NONE">
+    <summary>
+      <para>No stream options.</para>
+    </summary>
+  </member>
+  <member name="AUDCLNT_STREAMOPTIONS.AUDCLNT_STREAMOPTIONS_RAW">
+    <summary>
+      <para>The audio stream is a 'raw' stream that bypasses
+all signal processing except for endpoint specific,
+always-on processing in the Audio Processing Object (APO), driver, and hardware.</para>
+    </summary>
+  </member>
+  <member name="AUDCLNT_STREAMOPTIONS.AUDCLNT_STREAMOPTIONS_MATCH_FORMAT">
+    <summary>
+      <para>The audio client is requesting that the audio engine match the format proposed by the client. The audio engine
+will match this format only if the format is supported by                                  the audio driver and associated APOs.</para>
+      <para>Supported in Windows 10 and later.</para>
+    </summary>
+  </member>
+  <member name="AUDCLNT_STREAMOPTIONS.AUDCLNT_STREAMOPTIONS_AMBISONICS">
+    <summary></summary>
+  </member>
+</doc>

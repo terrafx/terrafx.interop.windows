@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_MODE_DESC.xml' path='doc/member[@name="DXGI_MODE_DESC"]/*' />
 public partial struct DXGI_MODE_DESC
 {
+    /// <include file='DXGI_MODE_DESC.xml' path='doc/member[@name="DXGI_MODE_DESC.Width"]/*' />
     public uint Width;
 
+    /// <include file='DXGI_MODE_DESC.xml' path='doc/member[@name="DXGI_MODE_DESC.Height"]/*' />
     public uint Height;
 
+    /// <include file='DXGI_MODE_DESC.xml' path='doc/member[@name="DXGI_MODE_DESC.RefreshRate"]/*' />
     public DXGI_RATIONAL RefreshRate;
 
+    /// <include file='DXGI_MODE_DESC.xml' path='doc/member[@name="DXGI_MODE_DESC.Format"]/*' />
     public DXGI_FORMAT Format;
 
+    /// <include file='DXGI_MODE_DESC.xml' path='doc/member[@name="DXGI_MODE_DESC.ScanlineOrdering"]/*' />
     public DXGI_MODE_SCANLINE_ORDER ScanlineOrdering;
 
+    /// <include file='DXGI_MODE_DESC.xml' path='doc/member[@name="DXGI_MODE_DESC.Scaling"]/*' />
     public DXGI_MODE_SCALING Scaling;
 }

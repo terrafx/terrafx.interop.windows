@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_QUERY_TYPE.xml' path='doc/member[@name="STORAGE_QUERY_TYPE"]/*' />
 public enum STORAGE_QUERY_TYPE
 {
+    /// <include file='STORAGE_QUERY_TYPE.xml' path='doc/member[@name="STORAGE_QUERY_TYPE.PropertyStandardQuery"]/*' />
     PropertyStandardQuery = 0,
+
+    /// <include file='STORAGE_QUERY_TYPE.xml' path='doc/member[@name="STORAGE_QUERY_TYPE.PropertyExistsQuery"]/*' />
     PropertyExistsQuery,
+
+    /// <include file='STORAGE_QUERY_TYPE.xml' path='doc/member[@name="STORAGE_QUERY_TYPE.PropertyMaskQuery"]/*' />
     PropertyMaskQuery,
+
+    /// <include file='STORAGE_QUERY_TYPE.xml' path='doc/member[@name="STORAGE_QUERY_TYPE.PropertyQueryMaxDefined"]/*' />
     PropertyQueryMaxDefined,
 }

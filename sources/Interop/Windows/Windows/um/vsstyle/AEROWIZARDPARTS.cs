@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AEROWIZARDPARTS.xml' path='doc/member[@name="AEROWIZARDPARTS"]/*' />
 public enum AEROWIZARDPARTS
 {
+    /// <include file='AEROWIZARDPARTS.xml' path='doc/member[@name="AEROWIZARDPARTS.AW_TITLEBAR"]/*' />
     AW_TITLEBAR = 1,
+
+    /// <include file='AEROWIZARDPARTS.xml' path='doc/member[@name="AEROWIZARDPARTS.AW_HEADERAREA"]/*' />
     AW_HEADERAREA = 2,
+
+    /// <include file='AEROWIZARDPARTS.xml' path='doc/member[@name="AEROWIZARDPARTS.AW_CONTENTAREA"]/*' />
     AW_CONTENTAREA = 3,
+
+    /// <include file='AEROWIZARDPARTS.xml' path='doc/member[@name="AEROWIZARDPARTS.AW_COMMANDAREA"]/*' />
     AW_COMMANDAREA = 4,
+
+    /// <include file='AEROWIZARDPARTS.xml' path='doc/member[@name="AEROWIZARDPARTS.AW_BUTTON"]/*' />
     AW_BUTTON = 5,
 }

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRED_PROTECTION_TYPE">
+    <summary>
+      <para>The <b>CRED_PROTECTION_TYPE</b> enumeration specifies the security context in which credentials are encrypted when using the <see cref="CredProtect" /> function.</para>
+    </summary>
+  </member>
+  <member name="CRED_PROTECTION_TYPE.CredUnprotected">
+    <summary>
+      <para>The credentials are not encrypted.</para>
+    </summary>
+  </member>
+  <member name="CRED_PROTECTION_TYPE.CredUserProtection">
+    <summary>
+      <para>The credentials are encrypted and can be decrypted only in the security context in which they were encrypted or in the security context of a trusted component.</para>
+    </summary>
+  </member>
+  <member name="CRED_PROTECTION_TYPE.CredTrustedProtection">
+    <summary>
+      <para>The credentials are encrypted and can only be decrypted by a trusted component.</para>
+    </summary>
+  </member>
+  <member name="CRED_PROTECTION_TYPE.CredForSystemProtection">
+    <summary></summary>
+  </member>
+</doc>

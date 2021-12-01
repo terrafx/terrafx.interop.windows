@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IObjectWithCancelEvent.GetCancelEvent">
+    <summary>
+      <para>Retrieves an event that will be sent when an operation is canceled.</para>
+    </summary>
+    <param name="phEvent">
+      <para>Type: <b>HANDLE*</b></para>
+      <para>Pointer to a handle that, when this method successfully returns, is the handle to the cancel event. The caller is responsible for closing this handle when it is no longer needed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call this function to retrieve an event that will be signaled when the called object cancels the operation it is performing. The caller is responsible for closing the returned handle.</para>
+    </remarks>
+    <seealso cref="IObjectWithCancelEvent" />
+  </member>
+  <member name="IObjectWithCancelEvent">
+    <summary>
+      <para>Not supported.</para>
+      <para>Supplies a caller with an event that will be signaled by the called object to denote cancellation of a task.</para>
+    </summary>
+  </member>
+</doc>

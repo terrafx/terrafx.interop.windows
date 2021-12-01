@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CTL_INFO">
+    <summary>
+      <para>The <b>CTL_INFO</b> structure contains the information stored in a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Trust List</a> (CTL).</para>
+    </summary>
+    <seealso cref="CERT_EXTENSION" />
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CTL_CONTEXT" />
+    <seealso cref="CTL_ENTRY" />
+    <seealso cref="CTL_USAGE" />
+  </member>
+  <member name="CTL_INFO.dwVersion">
+    <summary>
+      <para>The CTL's version number. Currently defined version numbers are shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CTL_V1</b>
+          </description>
+          <description>
+            <para>Version 1</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CTL_INFO.SubjectUsage">
+    <summary>
+      <para>
+        <see cref="CTL_USAGE" /> structure identifying the intended usage of the list as a sequence of object identifiers. This is the same as in the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/e-gly">Enhanced Key Usage</a> extension.</para>
+    </summary>
+  </member>
+  <member name="CTL_INFO.ListIdentifier">
+    <summary>
+      <para>A
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that includes a byte string that uniquely identifies the list. This member is used to augment the <b>SubjectUsage</b> and further specifies the list when desired.</para>
+    </summary>
+  </member>
+  <member name="CTL_INFO.SequenceNumber">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains a monotonically increasing number for each update of the CTL.</para>
+    </summary>
+  </member>
+  <member name="CTL_INFO.ThisUpdate">
+    <summary>
+      <para>Indication of the date and time of the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation lists</a> (CRLs) published. If the time is after 1950 and before 2050, it is UTC-time encoded as an 8-byte date/time precise to seconds with a 2-digit year (that is, YYMMDDHHMMSS plus 2 bytes). Otherwise, it is generalized-time encoded as an 8-byte year precise to milliseconds with a 4-byte year.</para>
+    </summary>
+  </member>
+  <member name="CTL_INFO.NextUpdate">
+    <summary>
+      <para>Indication of the date and time for the CRL's next available scheduled update. If the time is after 1950 and before 2050, it is UTC-time encoded as an 8-byte date/time precise to seconds with a 2-digit year (that is, YYMMDDHHMMSS plus 2 bytes). Otherwise, it is generalized-time encoded as an 8-byte date time precise to milliseconds with a 4-byte year.</para>
+    </summary>
+  </member>
+  <member name="CTL_INFO.SubjectAlgorithm">
+    <summary>
+      <para>
+        <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the algorithm type of the <b>SubjectIdentifier</b> in <see cref="CTL_ENTRY" /> members of the <b>rgCTLEntry</b> member array. The structure also includes additional parameters used by the algorithm.</para>
+    </summary>
+  </member>
+  <member name="CTL_INFO.cCTLEntry">
+    <summary>
+      <para>Number of elements in the <b>rgCTLEntry</b> member array.</para>
+    </summary>
+  </member>
+  <member name="CTL_INFO.rgCTLEntry">
+    <summary>
+      <para>Array of
+<see cref="CTL_ENTRY" /> structures.</para>
+    </summary>
+  </member>
+  <member name="CTL_INFO.cExtension">
+    <summary>
+      <para>Number of elements in the <b>rgExtension</b> array.</para>
+    </summary>
+  </member>
+  <member name="CTL_INFO.rgExtension">
+    <summary>
+      <para>Array of
+<see cref="CERT_EXTENSION" /> structures.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TAPE_PREPARE.xml' path='doc/member[@name="TAPE_PREPARE"]/*' />
 public partial struct TAPE_PREPARE
 {
+    /// <include file='TAPE_PREPARE.xml' path='doc/member[@name="TAPE_PREPARE.Operation"]/*' />
     [NativeTypeName("DWORD")]
     public uint Operation;
 
+    /// <include file='TAPE_PREPARE.xml' path='doc/member[@name="TAPE_PREPARE.Immediate"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Immediate;
 }

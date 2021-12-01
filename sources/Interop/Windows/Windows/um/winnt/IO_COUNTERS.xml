@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IO_COUNTERS">
+    <summary>
+      <para>Contains I/O accounting information for a process or a job object. For a job object, the counters include all operations performed by all processes that have ever been associated with the job, in addition to all processes currently associated with the job.</para>
+    </summary>
+    <seealso cref="GetProcessIoCounters" />
+    <seealso cref="JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION" />
+  </member>
+  <member name="IO_COUNTERS.ReadOperationCount">
+    <summary>
+      <para>The number of read operations performed.</para>
+    </summary>
+  </member>
+  <member name="IO_COUNTERS.WriteOperationCount">
+    <summary>
+      <para>The number of write operations performed.</para>
+    </summary>
+  </member>
+  <member name="IO_COUNTERS.OtherOperationCount">
+    <summary>
+      <para>The number of I/O operations performed, other than read and write operations.</para>
+    </summary>
+  </member>
+  <member name="IO_COUNTERS.ReadTransferCount">
+    <summary>
+      <para>The number of bytes read.</para>
+    </summary>
+  </member>
+  <member name="IO_COUNTERS.WriteTransferCount">
+    <summary>
+      <para>The number of bytes written.</para>
+    </summary>
+  </member>
+  <member name="IO_COUNTERS.OtherTransferCount">
+    <summary>
+      <para>The number of bytes transferred during operations other than read and write operations.</para>
+    </summary>
+  </member>
+</doc>

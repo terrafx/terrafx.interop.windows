@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="QACONTROL">
+    <summary>
+      <para>Specifies control information for  <see cref="IQuickActivate.QuickActivate" />.</para>
+    </summary>
+    <seealso cref="IQuickActivate.QuickActivate" />
+  </member>
+  <member name="QACONTROL.cbSize">
+    <summary>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="QACONTROL.dwMiscStatus">
+    <summary>
+      <para>The control's miscellaneous status bits that can also be returned by <see cref="IOleObject.GetMiscStatus" />. See <see cref="OLEMISC" /> for more information.</para>
+    </summary>
+  </member>
+  <member name="QACONTROL.dwViewStatus">
+    <summary>
+      <para>The control's view status that can also be returned by <see cref="IViewObjectEx.GetViewStatus" />. See <see cref="VIEWSTATUS" /> for more information.</para>
+    </summary>
+  </member>
+  <member name="QACONTROL.dwEventCookie">
+    <summary>
+      <para>A unique identifier for control-defined events.</para>
+    </summary>
+  </member>
+  <member name="QACONTROL.dwPropNotifyCookie">
+    <summary>
+      <para>A unique identifier for control-defined properties.</para>
+    </summary>
+  </member>
+  <member name="QACONTROL.dwPointerActivationPolicy">
+    <summary>
+      <para>The control's activation policy that can also be returned by <see cref="IPointerInactive.GetActivationPolicy" />. If all the bits of <b>dwPointerActivationPolicy</b> are set, then the IPointerInactive interface may not be supported. The container should <see cref="QueryInterface" /> to obtain the interface pointer in the standard manner.</para>
+    </summary>
+  </member>
+</doc>

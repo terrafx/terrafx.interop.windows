@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LUID">
+    <summary>
+      <para>Describes a local identifier for an adapter.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used by the <see cref="ID3D12Device.GetAdapterLuid" /> and <see cref="GetSharedResourceAdapterLuid" /> methods.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+  </member>
+  <member name="LUID.LowPart">
+    <summary>
+      <para>Specifies a DWORD that contains the unsigned lower numbers of the id.</para>
+    </summary>
+  </member>
+  <member name="LUID.HighPart">
+    <summary>
+      <para>Specifies a LONG that contains the signed high numbers of the id.</para>
+    </summary>
+  </member>
+</doc>

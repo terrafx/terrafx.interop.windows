@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES1">
+    <summary>
+      <para>Describes the stroke that outlines a shape.</para>
+    </summary>
+    <seealso cref="ID2D1Factory1.CreateStrokeStyle" />
+    <seealso cref="ID2D1StrokeStyle1" />
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES1.startCap">
+    <summary>
+      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
+      <para>The cap to use at the start of each open figure.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES1.endCap">
+    <summary>
+      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
+      <para>The cap to use at the end of each open figure.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES1.dashCap">
+    <summary>
+      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
+      <para>The cap to use at the start and end of each dash.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES1.lineJoin">
+    <summary>
+      <para>Type: <b><see cref="D2D1_LINE_JOIN" /></b></para>
+      <para>The line join to use.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES1.miterLimit">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The limit beyond which miters are either clamped or converted to bevels.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES1.dashStyle">
+    <summary>
+      <para>Type: <b><see cref="D2D1_DASH_STYLE" /></b></para>
+      <para>The type of dash to use.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES1.dashOffset">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The location of the first dash, relative to the start of the figure.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES1.transformType">
+    <summary>
+      <para>Type: <b><see cref="D2D1_STROKE_TRANSFORM_TYPE" /></b></para>
+      <para>The rule that determines what render target properties affect the nib of the stroke.</para>
+    </summary>
+  </member>
+</doc>

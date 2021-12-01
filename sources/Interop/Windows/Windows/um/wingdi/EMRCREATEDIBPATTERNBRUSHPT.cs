@@ -5,25 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRCREATEDIBPATTERNBRUSHPT.xml' path='doc/member[@name="EMRCREATEDIBPATTERNBRUSHPT"]/*' />
 public partial struct EMRCREATEDIBPATTERNBRUSHPT
 {
+    /// <include file='EMRCREATEDIBPATTERNBRUSHPT.xml' path='doc/member[@name="EMRCREATEDIBPATTERNBRUSHPT.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRCREATEDIBPATTERNBRUSHPT.xml' path='doc/member[@name="EMRCREATEDIBPATTERNBRUSHPT.ihBrush"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihBrush;
 
+    /// <include file='EMRCREATEDIBPATTERNBRUSHPT.xml' path='doc/member[@name="EMRCREATEDIBPATTERNBRUSHPT.iUsage"]/*' />
     [NativeTypeName("DWORD")]
     public uint iUsage;
 
+    /// <include file='EMRCREATEDIBPATTERNBRUSHPT.xml' path='doc/member[@name="EMRCREATEDIBPATTERNBRUSHPT.offBmi"]/*' />
     [NativeTypeName("DWORD")]
     public uint offBmi;
 
+    /// <include file='EMRCREATEDIBPATTERNBRUSHPT.xml' path='doc/member[@name="EMRCREATEDIBPATTERNBRUSHPT.cbBmi"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbBmi;
 
+    /// <include file='EMRCREATEDIBPATTERNBRUSHPT.xml' path='doc/member[@name="EMRCREATEDIBPATTERNBRUSHPT.offBits"]/*' />
     [NativeTypeName("DWORD")]
     public uint offBits;
 
+    /// <include file='EMRCREATEDIBPATTERNBRUSHPT.xml' path='doc/member[@name="EMRCREATEDIBPATTERNBRUSHPT.cbBits"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbBits;
 }

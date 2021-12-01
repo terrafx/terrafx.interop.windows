@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HITRESULT">
+    <summary>
+      <para>Indicates whether a location is within the image of an object.</para>
+    </summary>
+    <seealso cref="IViewObjectEx.QueryHitPoint" />
+    <seealso cref="IViewObjectEx.QueryHitRect" />
+  </member>
+  <member name="HITRESULT.HITRESULT_OUTSIDE">
+    <summary>
+      <para>The specified location is outside the object and not close to the object.</para>
+    </summary>
+  </member>
+  <member name="HITRESULT.HITRESULT_TRANSPARENT">
+    <summary>
+      <para>The specified location is within the bounds of the object, but not close to the image. For example, a point in the middle of a transparent circle could be HITRESULT_TRANSPARENT.</para>
+    </summary>
+  </member>
+  <member name="HITRESULT.HITRESULT_CLOSE">
+    <summary>
+      <para>The specified location is inside the object or is outside the object but is close enough to the object to be considered inside. Small, thin or detailed objects may use this value. Even if a point is outside the bounding rectangle of an object it may still be close. This value is needed for hitting small objects.</para>
+    </summary>
+  </member>
+  <member name="HITRESULT.HITRESULT_HIT">
+    <summary>
+      <para>The specified location is within the image of the object.</para>
+    </summary>
+  </member>
+</doc>

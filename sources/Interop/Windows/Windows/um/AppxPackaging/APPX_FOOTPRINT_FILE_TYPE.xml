@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPX_FOOTPRINT_FILE_TYPE">
+    <summary>
+      <para>Specifies the type of footprint file in a package.</para>
+    </summary>
+    <seealso cref="IAppxPackageReader.GetFootprintFile" />
+  </member>
+  <member name="APPX_FOOTPRINT_FILE_TYPE.APPX_FOOTPRINT_FILE_TYPE_MANIFEST">
+    <summary>
+      <para>The package manifest.</para>
+    </summary>
+  </member>
+  <member name="APPX_FOOTPRINT_FILE_TYPE.APPX_FOOTPRINT_FILE_TYPE_BLOCKMAP">
+    <summary>
+      <para>The package block map.</para>
+    </summary>
+  </member>
+  <member name="APPX_FOOTPRINT_FILE_TYPE.APPX_FOOTPRINT_FILE_TYPE_SIGNATURE">
+    <summary>
+      <para>The package signature.</para>
+    </summary>
+  </member>
+  <member name="APPX_FOOTPRINT_FILE_TYPE.APPX_FOOTPRINT_FILE_TYPE_CODEINTEGRITY">
+    <summary>
+      <para>The code signing catalog file used for code integrity checks.</para>
+    </summary>
+  </member>
+  <member name="APPX_FOOTPRINT_FILE_TYPE.APPX_FOOTPRINT_FILE_TYPE_CONTENTGROUPMAP">
+    <summary>
+      <para>The content group map used for streaming install.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO"]/*' />
 public partial struct DATAINFO
 {
+    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulTotalSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulTotalSize;
 
+    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulavrPacketSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulavrPacketSize;
 
+    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulConnectSpeed"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulConnectSpeed;
 
+    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulProcessorSpeed"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulProcessorSpeed;
 }

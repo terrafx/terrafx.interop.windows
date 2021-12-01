@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_TARGET_BASE_TYPE">
+    <summary>
+      <para>Specifies base output technology info for a given target ID.</para>
+    </summary>
+    <remarks>
+      <para>For a Miracast display device, a call to the <see cref="DisplayConfigGetDeviceInfo" />  function always returns  a value of <see cref="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY" />.<b>DISPLAYCONFIG_OUTPUT_TECHNOLOGY_MIRACAST</b>, regardless of what the Miracast sink reports as the connector type.</para>
+    </remarks>
+    <seealso cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" />
+    <seealso cref="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY" />
+    <seealso cref="DisplayConfigGetDeviceInfo" />
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_BASE_TYPE.header">
+    <summary>
+      <para>A <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> structure that contains info about the request for the target device name. The caller should set the <b>type</b> member of <b>DISPLAYCONFIG_DEVICE_INFO_HEADER</b> to <b>DISPLAYCONFIG_DEVICE_INFO_GET_TARGET_BASE_TYPE</b> and the <b>adapterId</b> and <b>id</b> members of <b>DISPLAYCONFIG_DEVICE_INFO_HEADER</b> to the target for which the caller wants the target device name.</para>
+      <para>The caller should set the <b>size</b> member of <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> to at least the size of the <b>DISPLAYCONFIG_TARGET_BASE_TYPE</b> structure.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_BASE_TYPE.baseOutputTechnology">
+    <summary>
+      <para>The base output technology, given as a constant value of the <see cref="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY" /> enumeration, of the adapter and the target specified by the <b>header</b> member. See Remarks.</para>
+    </summary>
+  </member>
+</doc>

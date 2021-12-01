@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RESOURCEMANAGER_INFORMATION_CLASS.xml' path='doc/member[@name="RESOURCEMANAGER_INFORMATION_CLASS"]/*' />
 public enum RESOURCEMANAGER_INFORMATION_CLASS
 {
+    /// <include file='RESOURCEMANAGER_INFORMATION_CLASS.xml' path='doc/member[@name="RESOURCEMANAGER_INFORMATION_CLASS.ResourceManagerBasicInformation"]/*' />
     ResourceManagerBasicInformation,
+
+    /// <include file='RESOURCEMANAGER_INFORMATION_CLASS.xml' path='doc/member[@name="RESOURCEMANAGER_INFORMATION_CLASS.ResourceManagerCompletionInformation"]/*' />
     ResourceManagerCompletionInformation,
 }

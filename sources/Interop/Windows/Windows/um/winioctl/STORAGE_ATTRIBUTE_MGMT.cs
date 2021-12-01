@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_ATTRIBUTE_MGMT.xml' path='doc/member[@name="STORAGE_ATTRIBUTE_MGMT"]/*' />
 public partial struct STORAGE_ATTRIBUTE_MGMT
 {
+    /// <include file='STORAGE_ATTRIBUTE_MGMT.xml' path='doc/member[@name="STORAGE_ATTRIBUTE_MGMT.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_ATTRIBUTE_MGMT.xml' path='doc/member[@name="STORAGE_ATTRIBUTE_MGMT.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_ATTRIBUTE_MGMT.xml' path='doc/member[@name="STORAGE_ATTRIBUTE_MGMT.Action"]/*' />
     public STORAGE_ATTRIBUTE_MGMT_ACTION Action;
 
+    /// <include file='STORAGE_ATTRIBUTE_MGMT.xml' path='doc/member[@name="STORAGE_ATTRIBUTE_MGMT.Attribute"]/*' />
     [NativeTypeName("DWORD")]
     public uint Attribute;
 }

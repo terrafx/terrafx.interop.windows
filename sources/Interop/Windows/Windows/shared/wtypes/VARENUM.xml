@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VARENUM">
+    <summary>
+      <para>Specifies the variant types.</para>
+    </summary>
+    <remarks>
+      <para>The following table shows where these values can be used.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>VARIANT</description>
+          <description>TYPEDESC</description>
+          <description>Property set</description>
+          <description>Safe array</description>
+        </listheader>
+        <item>
+          <description>
+            <b>VT_ARRAY</b>
+          </description>
+          <description>X</description>
+          <description></description>
+          <description></description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_BLOB</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_BLOB_OBJECT</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_BOOL</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_BSTR</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_BSTR_BLOB</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description></description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_BYREF</b>
+          </description>
+          <description>X</description>
+          <description></description>
+          <description></description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_CARRAY</b>
+          </description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_CF</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_CLSID</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_CY</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_DATE</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_DECIMAL</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description></description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_DISPATCH</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description></description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_EMPTY</b>
+          </description>
+          <description>X</description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_ERROR</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_FILETIME</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_HRESULT</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_I1</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_I2</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_I4</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_I8</b>
+          </description>
+          <description></description>
+          <description>X</description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_INT</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_INT_PTR</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_LPSTR</b>
+          </description>
+          <description></description>
+          <description>X</description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_LPWSTR</b>
+          </description>
+          <description></description>
+          <description>X</description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_NULL</b>
+          </description>
+          <description>X</description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_PTR</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_R4</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_R8</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_RECORD</b>
+          </description>
+          <description>X</description>
+          <description></description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_SAFEARRAY</b>
+          </description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_STORAGE</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_STORED_OBJECT</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_STREAM</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_STREAMED_OBJECT</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_UI1</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_UI2</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_UI4</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_UI8</b>
+          </description>
+          <description></description>
+          <description>X</description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_UINT</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description></description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_UINT_PTR</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_UNKNOWN</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description></description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_USERDEFINED</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_VARIANT</b>
+          </description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+          <description>X</description>
+        </item>
+        <item>
+          <description>
+            <b>VT_VECTOR</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_VERSIONED_STREAM</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>VT_VOID</b>
+          </description>
+          <description></description>
+          <description></description>
+          <description>X</description>
+          <description></description>
+        </item>
+      </list>
+      <para>
+        <b>VT_BSTR_BLOB</b> is reserved for system use.</para>
+    </remarks>
+  </member>
+  <member name="VARENUM.VT_EMPTY">
+    <summary>
+      <para>Not specified.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_NULL">
+    <summary>
+      <para>Null.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_I2">
+    <summary>
+      <para>A 2-byte integer.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_I4">
+    <summary>
+      <para>A 4-byte integer.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_R4">
+    <summary>
+      <para>A 4-byte real.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_R8">
+    <summary>
+      <para>An 8-byte real.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_CY">
+    <summary>
+      <para>Currency.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_DATE">
+    <summary>
+      <para>A date.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_BSTR">
+    <summary>
+      <para>A string.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_DISPATCH">
+    <summary>
+      <para>An <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> pointer.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_ERROR">
+    <summary>
+      <para>An SCODE value.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_BOOL">
+    <summary>
+      <para>A Boolean value. True is -1 and false is 0.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_VARIANT">
+    <summary>
+      <para>A variant pointer.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_UNKNOWN">
+    <summary>
+      <para>An <see cref="IUnknown" /> pointer.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_DECIMAL">
+    <summary>
+      <para>A 16-byte fixed-pointer value.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_I1">
+    <summary>
+      <para>A character.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_UI1">
+    <summary>
+      <para>An unsigned character.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_UI2">
+    <summary>
+      <para>An unsigned short.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_UI4">
+    <summary>
+      <para>An unsigned long.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_I8">
+    <summary>
+      <para>A 64-bit integer.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_UI8">
+    <summary>
+      <para>A 64-bit unsigned integer.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_INT">
+    <summary>
+      <para>An integer.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_UINT">
+    <summary>
+      <para>An unsigned integer.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_VOID">
+    <summary>
+      <para>A C-style void.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_HRESULT">
+    <summary>
+      <para>An HRESULT value.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_PTR">
+    <summary>
+      <para>A pointer type.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_SAFEARRAY">
+    <summary>
+      <para>A safe array. Use VT_ARRAY in VARIANT.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_CARRAY">
+    <summary>
+      <para>A C-style array.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_USERDEFINED">
+    <summary>
+      <para>A user-defined type.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_LPSTR">
+    <summary>
+      <para>A null-terminated string.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_LPWSTR">
+    <summary>
+      <para>A wide null-terminated string.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_RECORD">
+    <summary>
+      <para>A user-defined type.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_INT_PTR">
+    <summary>
+      <para>A signed machine register size width.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_UINT_PTR">
+    <summary>
+      <para>An unsigned machine register size width.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_FILETIME">
+    <summary>
+      <para>A <see cref="FILETIME" /> value.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_BLOB">
+    <summary>
+      <para>Length-prefixed bytes.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_STREAM">
+    <summary>
+      <para>The name of the stream follows.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_STORAGE">
+    <summary>
+      <para>The name of the storage follows.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_STREAMED_OBJECT">
+    <summary>
+      <para>The stream contains an object.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_STORED_OBJECT">
+    <summary>
+      <para>The storage contains an object.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_BLOB_OBJECT">
+    <summary>
+      <para>The blob contains an object.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_CF">
+    <summary>
+      <para>A clipboard format.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_CLSID">
+    <summary>
+      <para>A class ID.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_VERSIONED_STREAM">
+    <summary>
+      <para>A stream with a GUID version.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_BSTR_BLOB">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_VECTOR">
+    <summary>
+      <para>A simple counted array.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_ARRAY">
+    <summary>
+      <para>A SAFEARRAY pointer.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_BYREF">
+    <summary>
+      <para>A void pointer for local use.</para>
+    </summary>
+  </member>
+  <member name="VARENUM.VT_RESERVED">
+    <summary></summary>
+  </member>
+  <member name="VARENUM.VT_ILLEGAL">
+    <summary></summary>
+  </member>
+  <member name="VARENUM.VT_ILLEGALMASKED">
+    <summary></summary>
+  </member>
+  <member name="VARENUM.VT_TYPEMASK">
+    <summary></summary>
+  </member>
+</doc>

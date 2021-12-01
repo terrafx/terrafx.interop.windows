@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExtractIconW.xml' path='doc/member[@name="IExtractIconW"]/*' />
 [Guid("000214FA-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IExtractIconW : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExtractIconW : IExtractIconW.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExtractIconW : IExtractIconW.Interface
         return ((delegate* unmanaged<IExtractIconW*, Guid*, void**, int>)(lpVtbl[0]))((IExtractIconW*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExtractIconW : IExtractIconW.Interface
         return ((delegate* unmanaged<IExtractIconW*, uint>)(lpVtbl[1]))((IExtractIconW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExtractIconW : IExtractIconW.Interface
         return ((delegate* unmanaged<IExtractIconW*, uint>)(lpVtbl[2]))((IExtractIconW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExtractIconW.xml' path='doc/member[@name="IExtractIconW.GetIconLocation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIconLocation(uint uFlags, [NativeTypeName("PWSTR")] ushort* pszIconFile, uint cchMax, int* piIndex, uint* pwFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IExtractIconW : IExtractIconW.Interface
         return ((delegate* unmanaged<IExtractIconW*, uint, ushort*, uint, int*, uint*, int>)(lpVtbl[3]))((IExtractIconW*)Unsafe.AsPointer(ref this), uFlags, pszIconFile, cchMax, piIndex, pwFlags);
     }
 
+    /// <include file='IExtractIconW.xml' path='doc/member[@name="IExtractIconW.Extract"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Extract([NativeTypeName("PCWSTR")] ushort* pszFile, uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize)

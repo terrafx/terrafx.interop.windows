@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumITfCompositionView.xml' path='doc/member[@name="IEnumITfCompositionView"]/*' />
 [Guid("5EFD22BA-7838-46CB-88E2-CADB14124F8F")]
 [NativeTypeName("struct IEnumITfCompositionView : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
         return ((delegate* unmanaged<IEnumITfCompositionView*, Guid*, void**, int>)(lpVtbl[0]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
         return ((delegate* unmanaged<IEnumITfCompositionView*, uint>)(lpVtbl[1]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
         return ((delegate* unmanaged<IEnumITfCompositionView*, uint>)(lpVtbl[2]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumITfCompositionView.xml' path='doc/member[@name="IEnumITfCompositionView.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumITfCompositionView** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
         return ((delegate* unmanaged<IEnumITfCompositionView*, IEnumITfCompositionView**, int>)(lpVtbl[3]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumITfCompositionView.xml' path='doc/member[@name="IEnumITfCompositionView.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfCompositionView** rgCompositionView, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
         return ((delegate* unmanaged<IEnumITfCompositionView*, uint, ITfCompositionView**, uint*, int>)(lpVtbl[4]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount, rgCompositionView, pcFetched);
     }
 
+    /// <include file='IEnumITfCompositionView.xml' path='doc/member[@name="IEnumITfCompositionView.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
         return ((delegate* unmanaged<IEnumITfCompositionView*, int>)(lpVtbl[5]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumITfCompositionView.xml' path='doc/member[@name="IEnumITfCompositionView.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

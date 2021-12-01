@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_MANDATORY_LABEL.xml' path='doc/member[@name="TOKEN_MANDATORY_LABEL"]/*' />
 public partial struct TOKEN_MANDATORY_LABEL
 {
+    /// <include file='TOKEN_MANDATORY_LABEL.xml' path='doc/member[@name="TOKEN_MANDATORY_LABEL.Label"]/*' />
     public SID_AND_ATTRIBUTES Label;
 }

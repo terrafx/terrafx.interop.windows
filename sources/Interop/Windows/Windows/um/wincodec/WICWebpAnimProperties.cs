@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICWebpAnimProperties.xml' path='doc/member[@name="WICWebpAnimProperties"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
 public enum WICWebpAnimProperties : uint
 {
+    /// <include file='WICWebpAnimProperties.xml' path='doc/member[@name="WICWebpAnimProperties.WICWebpAnimLoopCount"]/*' />
     WICWebpAnimLoopCount = 0x1,
+
+    /// <include file='WICWebpAnimProperties.xml' path='doc/member[@name="WICWebpAnimProperties.WICWebpAnimProperties_FORCE_DWORD"]/*' />
     WICWebpAnimProperties_FORCE_DWORD = 0x7fffffff,
 }

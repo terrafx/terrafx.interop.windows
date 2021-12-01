@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CActiveIMM.xml' path='doc/member[@name="CActiveIMM"]/*' />
 [Guid("4955DD33-B159-11D0-8FCF-00AA006BCC59")]
 public partial struct CActiveIMM
 {

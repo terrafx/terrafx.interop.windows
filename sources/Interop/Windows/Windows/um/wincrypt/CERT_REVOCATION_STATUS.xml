@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_REVOCATION_STATUS">
+    <summary>
+      <para>The <b>CERT_REVOCATION_STATUS</b> structure contains information on the revocation status of the certificate. It is passed to and returned by
+<see cref="CertVerifyRevocation" />. On return from the function, it specifies the status of a revoked or unchecked context.</para>
+    </summary>
+    <seealso cref="CertVerifyRevocation" />
+  </member>
+  <member name="CERT_REVOCATION_STATUS.cbSize">
+    <summary>
+      <para>Size of this structure in bytes.</para>
+      <para>Upon input to
+<b>CERT_REVOCATION_STATUS</b>, <b>cbSize</b> must be set to a size greater than or equal to the size of a <b>CERT_REVOCATION_STATUS</b> structure. Otherwise, <b>CERT_REVOCATION_STATUS</b> returns <b>FALSE</b> and <see cref="GetLastError" /> returns E_INVALIDARG.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_STATUS.dwIndex">
+    <summary>
+      <para>Specifies an index value for the <i>rgpvContext</i> array passed to
+<see cref="CertVerifyRevocation" />. It is the index of the first <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a> in that array that was revoked or that could not be checked for revocation. For information about the contexts that were not checked, <b>CertVerifyRevocation</b> is called again, specifying a <i>rgpvContext</i> array that contains the unchecked contexts from the original list.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_STATUS.dwError">
+    <summary>
+      <para>Specifies the returned error status. This value matches the return value of <see cref="GetLastError" /> on return from the call to <see cref="CertVerifyRevocation" />. For the list of these error values, see the table in the Return Values section of
+<b>CertVerifyRevocation</b>.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_STATUS.dwReason">
+    <summary>
+      <para>Specifies the cause of the error. This member is set only if <b>dwError</b> is CRYPT_E_REVOKED. It contains a code that indicates why the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a> was revoked. It can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CRL_REASON_UNSPECIFIED</b>
+          </description>
+          <description>
+            <para>No reason was specified for revocation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRL_REASON_KEY_COMPROMISE</b>
+          </description>
+          <description>
+            <para>It is known or suspected that the subject's private key or other aspects of the subject validated in the certificate are compromised.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRL_REASON_CA_COMPROMISE</b>
+          </description>
+          <description>
+            <para>It is known or suspected that the CA's private key or other aspects of the CA validated in the certificate are compromised.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRL_REASON_AFFILIATION_CHANGED</b>
+          </description>
+          <description>
+            <para>The subject's name or other information in the certificate has been modified but there is no cause to suspect that the private key has been compromised.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRL_REASON_SUPERSEDED</b>
+          </description>
+          <description>
+            <para>The certificate has been superseded, but there is no cause to suspect that the private key has been compromised.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRL_REASON_CESSATION_OF_OPERATION</b>
+          </description>
+          <description>
+            <para>The certificate is no longer needed for the purpose for which it was issued, but there is no cause to suspect that the private key has been compromised.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRL_REASON_CERTIFICATE_HOLD</b>
+          </description>
+          <description>
+            <para>The certificate has been placed on hold.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_STATUS.fHasFreshnessTime">
+    <summary>
+      <para>Depending on <b>cbSize</b>, this structure can contain this member. If this member is <b>TRUE</b>, the revocation freshness time returned by <b>dwFreshnessTime</b> is valid.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_STATUS.dwFreshnessTime">
+    <summary>
+      <para>Depending on <b>cbSize</b>, this structure can contain this member. If present, this member gives the time in seconds between the current time and when the CRL was published.</para>
+    </summary>
+  </member>
+</doc>

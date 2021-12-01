@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_TEXT_METRICS1">
+    <summary>
+      <para>Contains the metrics associated with text after layout.All coordinates are in device independent pixels (DIPs).</para>
+      <para>
+        <b>DWRITE_TEXT_METRICS1</b> extends <see cref="DWRITE_TEXT_METRICS" /></para>
+      <para>to include the height of the formatted text.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS1.heightIncludingTrailingWhitespace">
+    <summary>
+      <para>The height of the formatted text taking into account the trailing whitespace at the end of each line. This is
+pertinent for vertical text.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_METRICS1.DWRITE_TEXT_METRICS">
+    <summary></summary>
+  </member>
+</doc>

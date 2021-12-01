@@ -7,8 +7,12 @@ using static TerraFX.Interop.Windows.SPLOADOPTIONS;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechLoadOption.xml' path='doc/member[@name="SpeechLoadOption"]/*' />
 public enum SpeechLoadOption
 {
+    /// <include file='SpeechLoadOption.xml' path='doc/member[@name="SpeechLoadOption.SLOStatic"]/*' />
     SLOStatic = SPLO_STATIC,
+
+    /// <include file='SpeechLoadOption.xml' path='doc/member[@name="SpeechLoadOption.SLODynamic"]/*' />
     SLODynamic = SPLO_DYNAMIC,
 }

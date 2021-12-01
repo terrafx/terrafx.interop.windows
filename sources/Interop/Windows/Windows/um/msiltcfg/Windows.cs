@@ -9,9 +9,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShutdownMsi"]/*' />
     [DllImport("msiltcfg", ExactSpelling = true)]
     public static extern uint ShutdownMsi([NativeTypeName("DWORD")] uint dwReserved);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RestartMsi"]/*' />
     [DllImport("msiltcfg", ExactSpelling = true)]
     public static extern uint RestartMsi([NativeTypeName("DWORD")] uint dwReserved);
 }

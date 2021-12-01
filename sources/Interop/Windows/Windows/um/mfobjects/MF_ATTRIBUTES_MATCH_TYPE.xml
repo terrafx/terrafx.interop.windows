@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_ATTRIBUTES_MATCH_TYPE">
+    <summary>
+      <para>Specifies how to compare the attributes on two objects.</para>
+    </summary>
+    <seealso cref="IMFAttributes.Compare" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_ATTRIBUTES_MATCH_TYPE.MF_ATTRIBUTES_MATCH_OUR_ITEMS">
+    <summary>
+      <para>Check whether all the attributes in <i>pThis</i> exist in <i>pTheirs</i> and have the same data, where <i>pThis</i> is the object whose <see cref="Compare" /> method is being called and <i>pTheirs</i> is the object given in the <i>pTheirs</i> parameter.</para>
+    </summary>
+  </member>
+  <member name="MF_ATTRIBUTES_MATCH_TYPE.MF_ATTRIBUTES_MATCH_THEIR_ITEMS">
+    <summary>
+      <para>Check whether all the attributes in <i>pTheirs</i> exist in <i>pThis</i> and have the same data, where <i>pThis</i> is the object whose <see cref="Compare" /> method is being called and <i>pTheirs</i> is the object given in the <i>pTheirs</i> parameter.</para>
+    </summary>
+  </member>
+  <member name="MF_ATTRIBUTES_MATCH_TYPE.MF_ATTRIBUTES_MATCH_ALL_ITEMS">
+    <summary>
+      <para>Check whether both objects have identical attributes with the same data.</para>
+    </summary>
+  </member>
+  <member name="MF_ATTRIBUTES_MATCH_TYPE.MF_ATTRIBUTES_MATCH_INTERSECTION">
+    <summary>
+      <para>Check whether the attributes that exist in both objects have the same data.</para>
+    </summary>
+  </member>
+  <member name="MF_ATTRIBUTES_MATCH_TYPE.MF_ATTRIBUTES_MATCH_SMALLER">
+    <summary>
+      <para>Find the object with the fewest number of attributes, and check if those attributes exist in the other object and have the same data.</para>
+    </summary>
+  </member>
+</doc>

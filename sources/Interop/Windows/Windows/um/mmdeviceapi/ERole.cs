@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ERole.xml' path='doc/member[@name="ERole"]/*' />
 public enum ERole
 {
+    /// <include file='ERole.xml' path='doc/member[@name="ERole.eConsole"]/*' />
     eConsole = 0,
+
+    /// <include file='ERole.xml' path='doc/member[@name="ERole.eMultimedia"]/*' />
     eMultimedia = (eConsole + 1),
+
+    /// <include file='ERole.xml' path='doc/member[@name="ERole.eCommunications"]/*' />
     eCommunications = (eMultimedia + 1),
+
+    /// <include file='ERole.xml' path='doc/member[@name="ERole.ERole_enum_count"]/*' />
     ERole_enum_count = (eCommunications + 1),
 }

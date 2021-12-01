@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL.xml' path='doc/member[@name="JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL"]/*' />
 public enum JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL
 {
+    /// <include file='JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL.xml' path='doc/member[@name="JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL.ToleranceIntervalShort"]/*' />
     ToleranceIntervalShort = 1,
+
+    /// <include file='JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL.xml' path='doc/member[@name="JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL.ToleranceIntervalMedium"]/*' />
     ToleranceIntervalMedium,
+
+    /// <include file='JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL.xml' path='doc/member[@name="JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL.ToleranceIntervalLong"]/*' />
     ToleranceIntervalLong,
 }

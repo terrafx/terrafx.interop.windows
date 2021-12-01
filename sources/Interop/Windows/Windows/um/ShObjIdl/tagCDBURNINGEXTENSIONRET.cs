@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='tagCDBURNINGEXTENSIONRET.xml' path='doc/member[@name="tagCDBURNINGEXTENSIONRET"]/*' />
 public enum tagCDBURNINGEXTENSIONRET
 {
+    /// <include file='tagCDBURNINGEXTENSIONRET.xml' path='doc/member[@name="tagCDBURNINGEXTENSIONRET.CDBE_RET_DEFAULT"]/*' />
     CDBE_RET_DEFAULT = 0,
+
+    /// <include file='tagCDBURNINGEXTENSIONRET.xml' path='doc/member[@name="tagCDBURNINGEXTENSIONRET.CDBE_RET_DONTRUNOTHEREXTS"]/*' />
     CDBE_RET_DONTRUNOTHEREXTS = 0x1,
+
+    /// <include file='tagCDBURNINGEXTENSIONRET.xml' path='doc/member[@name="tagCDBURNINGEXTENSIONRET.CDBE_RET_STOPWIZARD"]/*' />
     CDBE_RET_STOPWIZARD = 0x2,
 }

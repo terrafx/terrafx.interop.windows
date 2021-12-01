@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFRateControl.GetRate">
+    <summary>
+      <para>Gets the current playback rate.</para>
+    </summary>
+    <param name="pfThin">
+      <para>Receives the value <b>TRUE</b> if the stream is currently being thinned. If the object does not support thinning, this parameter always receives the value <b>FALSE</b>. This parameter can be <b>NULL</b>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/about-rate-control">About Rate Control</a>.</para>
+    </param>
+    <param name="pflRate">
+      <para>Receives the current playback rate.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-determine-supported-rates">How to Determine Supported Rates</seealso>
+    <seealso cref="IMFRateControl" />
+  </member>
+  <member name="IMFRateControl.SetRate">
+    <summary>
+      <para>Sets the playback rate.</para>
+    </summary>
+    <param name="fThin">
+      <para>If <b>TRUE</b>, the media streams are thinned. Otherwise, the stream is not thinned. For media sources and demultiplexers, the object must thin the streams when this parameter is <b>TRUE</b>. For downstream transforms, such as decoders and multiplexers, this parameter is informative; it notifies the object that the input streams are thinned. For information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/about-rate-control">About Rate Control</a>.</para>
+    </param>
+    <param name="flRate">
+      <para>The requested playback rate. Positive values indicate forward playback, negative values indicate reverse playback, and zero indicates scrubbing (the source delivers a single frame).</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_REVERSE_UNSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support reverse playback.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_THINNING_UNSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support thinning.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_UNSUPPORTED_RATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support the requested playback rate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_UNSUPPORTED_RATE_TRANSITION</b>
+            </para>
+          </description>
+          <description>
+            <para>The object cannot change to the new rate while in the running state.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The Media Session prevents some transitions between rate boundaries, depending on the current playback state:</para>
+      <list type="table">
+        <listheader>
+          <description>Playback State</description>
+          <description>Forward/Reverse</description>
+          <description>Forward/Zero</description>
+          <description>Reverse/Zero</description>
+        </listheader>
+        <item>
+          <description>Running</description>
+          <description>No</description>
+          <description>No</description>
+          <description>No</description>
+        </item>
+        <item>
+          <description>Paused</description>
+          <description>No</description>
+          <description>Yes</description>
+          <description>No</description>
+        </item>
+        <item>
+          <description>Stopped</description>
+          <description>Yes</description>
+          <description>Yes</description>
+          <description>Yes</description>
+        </item>
+      </list>
+      <para>If the transition is not supported, the method returns <b>MF_E_UNSUPPORTED_RATE_TRANSITION</b>.</para>
+      <para>When a media source completes a call to <b>SetRate</b>, it sends the <a href="https://docs.microsoft.com//windows/desktop/medfound/mesourceratechanged">MESourceRateChanged</a> event. Other pipeline components do not send this event.</para>
+      <para>If a media source switches between thinned and non-thinned playback, the streams send an <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamthinmode">MEStreamThinMode</a> event to indicate the transition. Events from the media source are not synchronized with events from the media streams. After you receive the <a href="https://docs.microsoft.com//windows/desktop/medfound/mesourceratechanged">MESourceRateChanged</a> event, you can still receive samples that were queued before the stream switched to thinned or non-thinned mode. The MEStreamThinMode event marks the exact point in the stream where the transition occurs.</para>
+      <para>When the Media Session completes a call to <b>SetRate</b>, it sends the <a href="https://docs.microsoft.com//windows/desktop/medfound/mesessionratechanged">MESessionRateChanged</a> event.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-set-the-playback-rate-on-the-media-session">How to Set the Playback Rate on the Media Session</seealso>
+    <seealso cref="IMFRateControl" />
+  </member>
+  <member name="IMFRateControl">
+    <summary>
+      <para>Gets or sets the playback rate.</para>
+    </summary>
+    <remarks>
+      <para>Objects can expose this interface as a service. To obtain a pointer to the interface, call <see cref="IMFGetService.GetService" /> with the service identifier MF_RATE_CONTROL_SERVICE. The Media Session supports this interface. Media sources and transforms support this interface if they support rate changes. Media sinks do not need to support this interface. Media sinks are notified of rate changes through the <see cref="IMFClockStateSink.OnClockSetRate" /> method.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/about-rate-control">About Rate Control</a>.</para>
+      <para>To discover the playback rates that an object supports, use the <see cref="IMFRateSupport" /> interface</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/about-rate-control">About Rate Control</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

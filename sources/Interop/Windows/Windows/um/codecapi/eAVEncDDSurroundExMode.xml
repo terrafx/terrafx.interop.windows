@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncDDSurroundExMode">
+    <summary>
+      <para>Specifies whether a Dolby Digital audio stream is encoded in Dolby Digital Surround EX. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencddsurroundexmode-property">AVEncDDSurroundExMode</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncDDSurroundExMode.eAVEncDDSurroundExMode_NotIndicated">
+    <summary>
+      <para>The Surround EX mode is not indicated.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDSurroundExMode.eAVEncDDSurroundExMode_No">
+    <summary>
+      <para>The audio is not encoded in Surround EX.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDSurroundExMode.eAVEncDDSurroundExMode_Yes">
+    <summary>
+      <para>The audio is encoded in Surround EX.</para>
+    </summary>
+  </member>
+</doc>

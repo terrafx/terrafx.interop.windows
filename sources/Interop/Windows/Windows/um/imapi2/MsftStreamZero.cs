@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MsftStreamZero.xml' path='doc/member[@name="MsftStreamZero"]/*' />
 [Guid("27354127-7F64-5B0F-8F00-5D77AFBE261E")]
 public partial struct MsftStreamZero
 {

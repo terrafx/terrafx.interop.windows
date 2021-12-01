@@ -7,9 +7,15 @@ using static TerraFX.Interop.Windows.STREAM_SEEK;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechStreamSeekPositionType.xml' path='doc/member[@name="SpeechStreamSeekPositionType"]/*' />
 public enum SpeechStreamSeekPositionType
 {
+    /// <include file='SpeechStreamSeekPositionType.xml' path='doc/member[@name="SpeechStreamSeekPositionType.SSSPTRelativeToStart"]/*' />
     SSSPTRelativeToStart = STREAM_SEEK_SET,
+
+    /// <include file='SpeechStreamSeekPositionType.xml' path='doc/member[@name="SpeechStreamSeekPositionType.SSSPTRelativeToCurrentPosition"]/*' />
     SSSPTRelativeToCurrentPosition = STREAM_SEEK_CUR,
+
+    /// <include file='SpeechStreamSeekPositionType.xml' path='doc/member[@name="SpeechStreamSeekPositionType.SSSPTRelativeToEnd"]/*' />
     SSSPTRelativeToEnd = STREAM_SEEK_END,
 }

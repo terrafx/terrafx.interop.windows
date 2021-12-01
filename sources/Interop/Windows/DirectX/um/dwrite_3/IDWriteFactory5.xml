@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFactory5.AnalyzeContainerType">
+    <summary>
+      <para>The AnalyzeContainerType method analyzes the specified file data to determine whether it is a known font container format (e.g., WOFF or WOFF2).</para>
+    </summary>
+    <param name="fileData">
+      <para>Type: <b>void</b></para>
+      <para>Pointer to the file data to analyze.</para>
+    </param>
+    <param name="fileDataSize">
+      <para>Type: <b>UINT32</b></para>
+      <para>Size of the buffer passed in fileData.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_CONTAINER_TYPE" /></b></para>
+      <para>Returns the container type if recognized. DWRITE_CONTAINER_TYPE_UNKOWNN is returned for all other files, including uncompressed font files.</para>
+    </returns>
+    <seealso cref="IDWriteFactory5" />
+  </member>
+  <member name="IDWriteFactory5.CreateFontSetBuilder">
+    <summary>
+      <para>Creates an empty font set builder to add font face references and create a custom font set.</para>
+    </summary>
+    <param name="fontSetBuilder">
+      <para>Type: <b><see cref="IDWriteFontSetBuilder1" />**</b></para>
+      <para>Holds the newly created font set builder object, or NULL in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/custom-font-sets-win10">Custom Font Sets</seealso>
+    <seealso cref="IDWriteFactory5" />
+  </member>
+  <member name="IDWriteFactory5.CreateHttpFontFileLoader">
+    <summary>
+      <para>Creates a remote font file loader that can create font file references from HTTP or HTTPS URLs. The caller is responsible for registering and unregistering the loader.</para>
+    </summary>
+    <param name="referrerUrl">
+      <para>Type: <b>wchar_t const*</b></para>
+      <para>Optional referrer URL for HTTP requests.</para>
+    </param>
+    <param name="extraHeaders">
+      <para>Type: <b>wchar_t const*</b></para>
+      <para>Optional additional header fields to include in HTTP requests. Each header field consists of a name followed by a colon (":") and the field value, as specified by RFC 2616. Multiple header fields may be separated by newlines.</para>
+    </param>
+    <param name="newLoader">
+      <para>Type: <b><see cref="IDWriteRemoteFontFileLoader" />**</b></para>
+      <para>Receives a pointer to the newly-created loader object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an <b>HRESULT</b> success or error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/directwrite/custom-font-sets-win10#creating-a-custom-font-set-using-known-remote-fonts-on-the-web">Creating a custom font set using known, remote fonts on the Web</seealso>
+    <seealso cref="IDWriteFactory5" />
+  </member>
+  <member name="IDWriteFactory5.CreateInMemoryFontFileLoader">
+    <summary>
+      <para>Creates a loader object that can be used to create font file references to in-memory fonts. The caller is responsible for registering and unregistering the loader.</para>
+    </summary>
+    <param name="newLoader">
+      <para>Type: <b><see cref="IDWriteInMemoryFontFileLoader" />**</b></para>
+      <para>Receives a pointer to the newly-created loader object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/directwrite/custom-font-sets-win10#creating-a-custom-font-set-using-font-data-loaded-into-memory">Creating a custom font set using font data loaded into memory</seealso>
+    <seealso cref="IDWriteFactory5" />
+  </member>
+  <member name="IDWriteFactory5.UnpackFontFile">
+    <summary>
+      <para>The UnpackFontFile method unpacks font data from a container file (WOFF or WOFF2) and returns the unpacked font data in the form of a font file stream.</para>
+    </summary>
+    <param name="containerType">
+      <para>Type: <b><see cref="DWRITE_CONTAINER_TYPE" /></b></para>
+      <para>Container type returned by AnalyzeContainerType.</para>
+    </param>
+    <param name="fileData">
+      <para>Type: <b>void</b></para>
+      <para>Pointer to the compressed data.</para>
+    </param>
+    <param name="fileDataSize">
+      <para>Type: <b>UINT32</b></para>
+      <para>Size of the compressed data, in bytes.</para>
+    </param>
+    <param name="unpackedFontStream">
+      <para>Type: <b><see cref="IDWriteFontFileStream" />**</b></para>
+      <para>Receives a pointer to a newly created font file stream containing the uncompressed data.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Standard HRESULT error code. The return value is E_INVALIDARG if the container type is DWRITE_CONTAINER_TYPE_UNKNOWN.</para>
+    </returns>
+    <seealso cref="IDWriteFactory5" />
+  </member>
+  <member name="IDWriteFactory5">
+    <summary>
+      <para>The root factory interface for all DirectWrite objects.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/custom-font-sets-win10">Custom Font Sets</seealso>
+    <seealso cref="IDWriteFactory4" />
+  </member>
+</doc>

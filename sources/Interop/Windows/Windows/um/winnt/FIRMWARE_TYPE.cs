@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FIRMWARE_TYPE.xml' path='doc/member[@name="FIRMWARE_TYPE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum FIRMWARE_TYPE
 {
+    /// <include file='FIRMWARE_TYPE.xml' path='doc/member[@name="FIRMWARE_TYPE.FirmwareTypeUnknown"]/*' />
     FirmwareTypeUnknown,
+
+    /// <include file='FIRMWARE_TYPE.xml' path='doc/member[@name="FIRMWARE_TYPE.FirmwareTypeBios"]/*' />
     FirmwareTypeBios,
+
+    /// <include file='FIRMWARE_TYPE.xml' path='doc/member[@name="FIRMWARE_TYPE.FirmwareTypeUefi"]/*' />
     FirmwareTypeUefi,
+
+    /// <include file='FIRMWARE_TYPE.xml' path='doc/member[@name="FIRMWARE_TYPE.FirmwareTypeMax"]/*' />
     FirmwareTypeMax,
 }

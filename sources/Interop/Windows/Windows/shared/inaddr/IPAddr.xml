@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPAddr">
+    <summary>
+      <para>The <b>in_addr</b> structure represents an IPv4 address.
+<b>Note</b>  The <b>IPaddr</b> type definition in IP Helper also represents an IPv4 address and can be cast to an interchangeable <see cref="in_addr" /> structure when needed. The <b>in_addr</b> structure in IP Helper has the same syntax and usage as the Windows Sockets <b>in_addr</b> structure, and is interchangeable with <b>in_addr</b> structure used in Windows sockets. Windows sockets also defines an <b>IN_ADDR</b> typedef for the <b>in_addr</b> structure.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IPaddr</b> type definition also represents an IPv4 address and can be cast to an  <b>in_addr</b> structure when needed.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>in_addr</b> structure is defined in the <i>Inaddr.h</i> header file which is automatically included by the <i>Ipexport.h</i> header file. On the Platform Software Development Kit (SDK) released for Windows Server 2003 and Windows XP, the <b>in_addr</b> structure is declared in the <i>Ipexport.h</i> header file.</para>
+    </remarks>
+    <seealso cref="ARP_SEND_REPLY" />
+    <seealso cref="AddIPAddress" />
+    <seealso cref="GetBestInterface" />
+    <seealso cref="GetRTTAndHopCount" />
+    <seealso cref="ICMP_ECHO_REPLY" />
+    <seealso cref="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS" />
+    <seealso cref="IcmpSendEcho" />
+    <seealso cref="IcmpSendEcho2" />
+    <seealso cref="SendARP" />
+    <seealso cref="in_addr(Winsock)" />
+  </member>
+  <member name="IPAddr.S_un">
+    <summary></summary>
+  </member>
+  <member name="IPAddr.S_un.S_un_b">
+    <summary>
+      <para>The IPv4 address of the host formatted as four <b>u_char</b>s.</para>
+    </summary>
+  </member>
+  <member name="IPAddr.S_un.S_un_b.s_b1">
+    <summary></summary>
+  </member>
+  <member name="IPAddr.S_un.S_un_b.s_b2">
+    <summary></summary>
+  </member>
+  <member name="IPAddr.S_un.S_un_b.s_b3">
+    <summary></summary>
+  </member>
+  <member name="IPAddr.S_un.S_un_b.s_b4">
+    <summary></summary>
+  </member>
+  <member name="IPAddr.S_un.S_un_w">
+    <summary>
+      <para>The IPv4 address of the host formatted as two <b>u_short</b>s.</para>
+    </summary>
+  </member>
+  <member name="IPAddr.S_un.S_un_w.s_w1">
+    <summary></summary>
+  </member>
+  <member name="IPAddr.S_un.S_un_w.s_w2">
+    <summary></summary>
+  </member>
+  <member name="IPAddr.S_un.S_addr">
+    <summary>
+      <para>Address of the host formatted as a <b>u_long</b>.</para>
+    </summary>
+  </member>
+</doc>

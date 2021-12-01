@@ -7,23 +7,31 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DLGTEMPLATE.xml' path='doc/member[@name="DLGTEMPLATE"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
 public partial struct DLGTEMPLATE
 {
+    /// <include file='DLGTEMPLATE.xml' path='doc/member[@name="DLGTEMPLATE.style"]/*' />
     [NativeTypeName("DWORD")]
     public uint style;
 
+    /// <include file='DLGTEMPLATE.xml' path='doc/member[@name="DLGTEMPLATE.dwExtendedStyle"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwExtendedStyle;
 
+    /// <include file='DLGTEMPLATE.xml' path='doc/member[@name="DLGTEMPLATE.cdit"]/*' />
     [NativeTypeName("WORD")]
     public ushort cdit;
 
+    /// <include file='DLGTEMPLATE.xml' path='doc/member[@name="DLGTEMPLATE.x"]/*' />
     public short x;
 
+    /// <include file='DLGTEMPLATE.xml' path='doc/member[@name="DLGTEMPLATE.y"]/*' />
     public short y;
 
+    /// <include file='DLGTEMPLATE.xml' path='doc/member[@name="DLGTEMPLATE.cx"]/*' />
     public short cx;
 
+    /// <include file='DLGTEMPLATE.xml' path='doc/member[@name="DLGTEMPLATE.cy"]/*' />
     public short cy;
 }

@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TIMECODE_SAMPLE.xml' path='doc/member[@name="TIMECODE_SAMPLE"]/*' />
 public partial struct TIMECODE_SAMPLE
 {
+    /// <include file='TIMECODE_SAMPLE.xml' path='doc/member[@name="TIMECODE_SAMPLE.qwTick"]/*' />
     [NativeTypeName("LONGLONG")]
     public long qwTick;
 
+    /// <include file='TIMECODE_SAMPLE.xml' path='doc/member[@name="TIMECODE_SAMPLE.timecode"]/*' />
     public TIMECODE timecode;
 
+    /// <include file='TIMECODE_SAMPLE.xml' path='doc/member[@name="TIMECODE_SAMPLE.dwUser"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwUser;
 
+    /// <include file='TIMECODE_SAMPLE.xml' path='doc/member[@name="TIMECODE_SAMPLE.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

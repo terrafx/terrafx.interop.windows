@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMDLG_FILTERSPEC.xml' path='doc/member[@name="COMDLG_FILTERSPEC"]/*' />
 public unsafe partial struct COMDLG_FILTERSPEC
 {
+    /// <include file='COMDLG_FILTERSPEC.xml' path='doc/member[@name="COMDLG_FILTERSPEC.pszName"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszName;
 
+    /// <include file='COMDLG_FILTERSPEC.xml' path='doc/member[@name="COMDLG_FILTERSPEC.pszSpec"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszSpec;
 }

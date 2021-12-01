@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISK_CONTROLLER_NUMBER.xml' path='doc/member[@name="DISK_CONTROLLER_NUMBER"]/*' />
 public partial struct DISK_CONTROLLER_NUMBER
 {
+    /// <include file='DISK_CONTROLLER_NUMBER.xml' path='doc/member[@name="DISK_CONTROLLER_NUMBER.ControllerNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint ControllerNumber;
 
+    /// <include file='DISK_CONTROLLER_NUMBER.xml' path='doc/member[@name="DISK_CONTROLLER_NUMBER.DiskNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint DiskNumber;
 }

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_FONT_AXIS_RANGE">
+    <summary>
+      <para>Represents the minimum and maximum range of the possible values for a font axis. If <i>minValue</i> equals <i>maxValue</i>, then the axis is static rather than variable.</para>
+    </summary>
+    <remarks>
+      <para>The meaning and range of axis values depends on the semantics of the particular axis. Certain well-known axes have standard ranges and defaults. Here are some examples.</para>
+      <list type="bullet">
+        <item>
+          <description>Weight (1..1000, default == 400)</description>
+        </item>
+        <item>
+          <description>Width (&gt;0, default == 100)</description>
+        </item>
+        <item>
+          <description>Slant (-90..90, default == -20)</description>
+        </item>
+        <item>
+          <description>Italic (0 or 1)</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="DWRITE_FONT_AXIS_TAG enumeration" />
+    <seealso cref="DWRITE_FONT_AXIS_VALUE structure" />
+  </member>
+  <member name="DWRITE_FONT_AXIS_RANGE.axisTag">
+    <summary>
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_TAG" /></b></para>
+      <para>The four-character identifier of the font axis (for example, weight, width, slant, italic, and so on).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_AXIS_RANGE.minValue">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">FLOAT</a></b></para>
+      <para>The minimum value supported by this axis.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_AXIS_RANGE.maxValue">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">FLOAT</a></b></para>
+      <para>The maximum value supported by this axis.</para>
+    </summary>
+  </member>
+</doc>

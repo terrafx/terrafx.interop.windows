@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMMCONFIG">
+    <summary>
+      <para>Contains information about the configuration state of a communications device.</para>
+    </summary>
+    <remarks>
+      <para>If the provider subtype is PST_RS232 or PST_PARALLELPORT, the <b>wcProviderData</b> member is omitted. If the provider subtype is PST_MODEM, the <b>wcProviderData</b> member contains a
+<see cref="MODEMSETTINGS" /> structure.</para>
+    </remarks>
+    <seealso cref="COMMPROP" />
+    <seealso cref="DCB" />
+    <seealso cref="GetCommProperties" />
+    <seealso cref="MODEMSETTINGS" />
+  </member>
+  <member name="COMMCONFIG.dwSize">
+    <summary>
+      <para>The size of the structure, in bytes. The caller must set this member to <code>sizeof(COMMCONFIG)</code>.</para>
+    </summary>
+  </member>
+  <member name="COMMCONFIG.wVersion">
+    <summary>
+      <para>The version number of the structure. This parameter can be 1. The version of the provider-specific structure should be included in the <b>wcProviderData</b> member.</para>
+    </summary>
+  </member>
+  <member name="COMMCONFIG.wReserved">
+    <summary>
+      <para>Reserved; do not use.</para>
+    </summary>
+  </member>
+  <member name="COMMCONFIG.dcb">
+    <summary>
+      <para>The device-control block (<see cref="DCB" />) structure for RS-232 serial devices. A
+<b>DCB</b> structure is always present regardless of the port driver subtype specified in the device's
+<see cref="COMMPROP" /> structure.</para>
+    </summary>
+  </member>
+  <member name="COMMCONFIG.dwProviderSubType">
+    <summary>
+      <para>The type of communications provider, and thus the format of the provider-specific data. For a list of communications provider types, see the description of the
+<see cref="COMMPROP" /> structure.</para>
+    </summary>
+  </member>
+  <member name="COMMCONFIG.dwProviderOffset">
+    <summary>
+      <para>The offset of the provider-specific data relative to the beginning of the structure, in bytes. This member is zero if there is no provider-specific data.</para>
+    </summary>
+  </member>
+  <member name="COMMCONFIG.dwProviderSize">
+    <summary>
+      <para>The size of the provider-specific data, in bytes.</para>
+    </summary>
+  </member>
+  <member name="COMMCONFIG.wcProviderData">
+    <summary>
+      <para>Optional provider-specific data. This member can be of any size or can be omitted. Because the
+<b>COMMCONFIG</b> structure may be expanded in the future, applications should use the <b>dwProviderOffset</b> member to determine the location of this member.</para>
+    </summary>
+  </member>
+</doc>

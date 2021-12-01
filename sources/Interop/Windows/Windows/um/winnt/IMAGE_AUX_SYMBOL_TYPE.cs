@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_AUX_SYMBOL_TYPE.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_TYPE"]/*' />
 public enum IMAGE_AUX_SYMBOL_TYPE
 {
+    /// <include file='IMAGE_AUX_SYMBOL_TYPE.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_TYPE.IMAGE_AUX_SYMBOL_TYPE_TOKEN_DEF"]/*' />
     IMAGE_AUX_SYMBOL_TYPE_TOKEN_DEF = 1,
 }

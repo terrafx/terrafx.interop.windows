@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CUSTDATA.xml' path='doc/member[@name="CUSTDATA"]/*' />
 public unsafe partial struct CUSTDATA
 {
+    /// <include file='CUSTDATA.xml' path='doc/member[@name="CUSTDATA.cCustData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCustData;
 
+    /// <include file='CUSTDATA.xml' path='doc/member[@name="CUSTDATA.prgCustData"]/*' />
     [NativeTypeName("LPCUSTDATAITEM")]
     public CUSTDATAITEM* prgCustData;
 }

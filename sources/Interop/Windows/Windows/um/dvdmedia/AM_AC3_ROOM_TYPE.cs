@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_AC3_ROOM_TYPE.xml' path='doc/member[@name="AM_AC3_ROOM_TYPE"]/*' />
 public partial struct AM_AC3_ROOM_TYPE
 {
+    /// <include file='AM_AC3_ROOM_TYPE.xml' path='doc/member[@name="AM_AC3_ROOM_TYPE.fLargeRoom"]/*' />
     public BOOL fLargeRoom;
 }

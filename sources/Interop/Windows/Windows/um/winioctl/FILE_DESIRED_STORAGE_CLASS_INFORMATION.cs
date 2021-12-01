@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_DESIRED_STORAGE_CLASS_INFORMATION.xml' path='doc/member[@name="FILE_DESIRED_STORAGE_CLASS_INFORMATION"]/*' />
 public partial struct FILE_DESIRED_STORAGE_CLASS_INFORMATION
 {
+    /// <include file='FILE_DESIRED_STORAGE_CLASS_INFORMATION.xml' path='doc/member[@name="FILE_DESIRED_STORAGE_CLASS_INFORMATION.Class"]/*' />
     public FILE_STORAGE_TIER_CLASS Class;
 
+    /// <include file='FILE_DESIRED_STORAGE_CLASS_INFORMATION.xml' path='doc/member[@name="FILE_DESIRED_STORAGE_CLASS_INFORMATION.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

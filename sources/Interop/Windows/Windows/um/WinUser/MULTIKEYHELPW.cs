@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MULTIKEYHELPW.xml' path='doc/member[@name="MULTIKEYHELPW"]/*' />
 public unsafe partial struct MULTIKEYHELPW
 {
+    /// <include file='MULTIKEYHELPW.xml' path='doc/member[@name="MULTIKEYHELPW.mkSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint mkSize;
 
+    /// <include file='MULTIKEYHELPW.xml' path='doc/member[@name="MULTIKEYHELPW.mkKeylist"]/*' />
     [NativeTypeName("WCHAR")]
     public ushort mkKeylist;
 
+    /// <include file='MULTIKEYHELPW.xml' path='doc/member[@name="MULTIKEYHELPW.szKeyphrase"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort szKeyphrase[1];
 }

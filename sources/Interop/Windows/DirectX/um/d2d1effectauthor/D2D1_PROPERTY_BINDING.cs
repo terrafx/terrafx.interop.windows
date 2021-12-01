@@ -7,14 +7,18 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_PROPERTY_BINDING.xml' path='doc/member[@name="D2D1_PROPERTY_BINDING"]/*' />
 public unsafe partial struct D2D1_PROPERTY_BINDING
 {
+    /// <include file='D2D1_PROPERTY_BINDING.xml' path='doc/member[@name="D2D1_PROPERTY_BINDING.propertyName"]/*' />
     [NativeTypeName("PCWSTR")]
     public ushort* propertyName;
 
+    /// <include file='D2D1_PROPERTY_BINDING.xml' path='doc/member[@name="D2D1_PROPERTY_BINDING.setFunction"]/*' />
     [NativeTypeName("PD2D1_PROPERTY_SET_FUNCTION")]
     public delegate* unmanaged<IUnknown*, byte*, uint, HRESULT> setFunction;
 
+    /// <include file='D2D1_PROPERTY_BINDING.xml' path='doc/member[@name="D2D1_PROPERTY_BINDING.getFunction"]/*' />
     [NativeTypeName("PD2D1_PROPERTY_GET_FUNCTION")]
     public delegate* unmanaged<IUnknown*, byte*, uint, uint*, HRESULT> getFunction;
 }

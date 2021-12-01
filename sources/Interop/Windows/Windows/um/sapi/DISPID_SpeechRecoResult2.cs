@@ -7,7 +7,9 @@ using static TerraFX.Interop.Windows.DISPID_SpeechXMLRecoResult;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechRecoResult2.xml' path='doc/member[@name="DISPID_SpeechRecoResult2"]/*' />
 public enum DISPID_SpeechRecoResult2
 {
+    /// <include file='DISPID_SpeechRecoResult2.xml' path='doc/member[@name="DISPID_SpeechRecoResult2.DISPID_SRRSetTextFeedback"]/*' />
     DISPID_SRRSetTextFeedback = (DISPID_SRRGetXMLErrorInfo + 1),
 }

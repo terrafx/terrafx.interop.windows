@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUDIO_STREAM_CONFIG_CAPS">
+    <summary>
+      <para>The <b>AUDIO_STREAM_CONFIG_CAPS</b> structure describes a range of audio formats. Audio compression and capture filters use this structure to describe the formats they can produce.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso cref="IAMStreamConfig.GetStreamCaps" />
+  </member>
+  <member name="AUDIO_STREAM_CONFIG_CAPS.guid">
+    <summary>
+      <para>Will be set to MEDIATYPE_Audio to indicate an audio sample.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_STREAM_CONFIG_CAPS.MinimumChannels">
+    <summary>
+      <para>Minimum number of channels.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_STREAM_CONFIG_CAPS.MaximumChannels">
+    <summary>
+      <para>Maximum number of channels.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_STREAM_CONFIG_CAPS.ChannelsGranularity">
+    <summary>
+      <para>Granularity of the channels. For example, the filter might specify channels 2 through 4, in steps of 2.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_STREAM_CONFIG_CAPS.MinimumBitsPerSample">
+    <summary>
+      <para>Minimum bits per sample.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_STREAM_CONFIG_CAPS.MaximumBitsPerSample">
+    <summary>
+      <para>Maximum bits per sample.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_STREAM_CONFIG_CAPS.BitsPerSampleGranularity">
+    <summary>
+      <para>Granularity of the bits per sample. For example, the filter might specify 8 bits per sample through 32 bits per sample, in steps of 8.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_STREAM_CONFIG_CAPS.MinimumSampleFrequency">
+    <summary>
+      <para>Minimum sample frequency.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_STREAM_CONFIG_CAPS.MaximumSampleFrequency">
+    <summary>
+      <para>Maximum sample frequency.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_STREAM_CONFIG_CAPS.SampleFrequencyGranularity">
+    <summary>
+      <para>Granularity of the frequency. For example, the filter might specify 11025 Hz to 44100 Hz, in steps of 11025 Hz.</para>
+    </summary>
+  </member>
+</doc>

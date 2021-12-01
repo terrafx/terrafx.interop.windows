@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_HASH_INFO.xml' path='doc/member[@name="CRYPT_HASH_INFO"]/*' />
 public partial struct CRYPT_HASH_INFO
 {
+    /// <include file='CRYPT_HASH_INFO.xml' path='doc/member[@name="CRYPT_HASH_INFO.HashAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
+    /// <include file='CRYPT_HASH_INFO.xml' path='doc/member[@name="CRYPT_HASH_INFO.Hash"]/*' />
     [NativeTypeName("CRYPT_HASH_BLOB")]
     public CRYPT_DATA_BLOB Hash;
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGTSpanElement.xml' path='doc/member[@name="SVGTSpanElement"]/*' />
 [Guid("305105E2-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGTSpanElement
 {

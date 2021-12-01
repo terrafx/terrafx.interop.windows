@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView"]/*' />
 [Guid("B722BCC6-4E68-101B-A2BC-00AA00404770")]
 [NativeTypeName("struct IOleDocumentView : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, Guid*, void**, int>)(lpVtbl[0]))((IOleDocumentView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, uint>)(lpVtbl[1]))((IOleDocumentView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, uint>)(lpVtbl[2]))((IOleDocumentView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.SetInPlaceSite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetInPlaceSite(IOleInPlaceSite* pIPSite)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite*, int>)(lpVtbl[3]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pIPSite);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.GetInPlaceSite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetInPlaceSite(IOleInPlaceSite** ppIPSite)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite**, int>)(lpVtbl[4]))((IOleDocumentView*)Unsafe.AsPointer(ref this), ppIPSite);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.GetDocument"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDocument(IUnknown** ppunk)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, IUnknown**, int>)(lpVtbl[5]))((IOleDocumentView*)Unsafe.AsPointer(ref this), ppunk);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.SetRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetRect([NativeTypeName("LPRECT")] RECT* prcView)
@@ -67,6 +75,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, RECT*, int>)(lpVtbl[6]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.GetRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetRect([NativeTypeName("LPRECT")] RECT* prcView)
@@ -74,6 +83,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, RECT*, int>)(lpVtbl[7]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.SetRectComplex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetRectComplex([NativeTypeName("LPRECT")] RECT* prcView, [NativeTypeName("LPRECT")] RECT* prcHScroll, [NativeTypeName("LPRECT")] RECT* prcVScroll, [NativeTypeName("LPRECT")] RECT* prcSizeBox)
@@ -81,6 +91,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, RECT*, RECT*, RECT*, RECT*, int>)(lpVtbl[8]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView, prcHScroll, prcVScroll, prcSizeBox);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.Show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Show(BOOL fShow)
@@ -88,6 +99,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, BOOL, int>)(lpVtbl[9]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fShow);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.UIActivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT UIActivate(BOOL fUIActivate)
@@ -95,6 +107,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, BOOL, int>)(lpVtbl[10]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fUIActivate);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.Open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Open()
@@ -102,6 +115,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, int>)(lpVtbl[11]))((IOleDocumentView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.CloseView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT CloseView([NativeTypeName("DWORD")] uint dwReserved)
@@ -109,6 +123,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, uint, int>)(lpVtbl[12]))((IOleDocumentView*)Unsafe.AsPointer(ref this), dwReserved);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.SaveViewState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SaveViewState([NativeTypeName("LPSTREAM")] IStream* pstm)
@@ -116,6 +131,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, IStream*, int>)(lpVtbl[13]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pstm);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.ApplyViewState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT ApplyViewState([NativeTypeName("LPSTREAM")] IStream* pstm)
@@ -123,6 +139,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
         return ((delegate* unmanaged<IOleDocumentView*, IStream*, int>)(lpVtbl[14]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pstm);
     }
 
+    /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT Clone(IOleInPlaceSite* pIPSiteNew, IOleDocumentView** ppViewNew)

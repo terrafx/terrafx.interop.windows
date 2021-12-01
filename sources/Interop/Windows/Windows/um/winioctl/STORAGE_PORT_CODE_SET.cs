@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_PORT_CODE_SET.xml' path='doc/member[@name="STORAGE_PORT_CODE_SET"]/*' />
 public enum STORAGE_PORT_CODE_SET
 {
+    /// <include file='STORAGE_PORT_CODE_SET.xml' path='doc/member[@name="STORAGE_PORT_CODE_SET.StoragePortCodeSetReserved"]/*' />
     StoragePortCodeSetReserved = 0,
+
+    /// <include file='STORAGE_PORT_CODE_SET.xml' path='doc/member[@name="STORAGE_PORT_CODE_SET.StoragePortCodeSetStorport"]/*' />
     StoragePortCodeSetStorport = 1,
+
+    /// <include file='STORAGE_PORT_CODE_SET.xml' path='doc/member[@name="STORAGE_PORT_CODE_SET.StoragePortCodeSetSCSIport"]/*' />
     StoragePortCodeSetSCSIport = 2,
+
+    /// <include file='STORAGE_PORT_CODE_SET.xml' path='doc/member[@name="STORAGE_PORT_CODE_SET.StoragePortCodeSetSpaceport"]/*' />
     StoragePortCodeSetSpaceport = 3,
+
+    /// <include file='STORAGE_PORT_CODE_SET.xml' path='doc/member[@name="STORAGE_PORT_CODE_SET.StoragePortCodeSetATAport"]/*' />
     StoragePortCodeSetATAport = 4,
+
+    /// <include file='STORAGE_PORT_CODE_SET.xml' path='doc/member[@name="STORAGE_PORT_CODE_SET.StoragePortCodeSetUSBport"]/*' />
     StoragePortCodeSetUSBport = 5,
+
+    /// <include file='STORAGE_PORT_CODE_SET.xml' path='doc/member[@name="STORAGE_PORT_CODE_SET.StoragePortCodeSetSBP2port"]/*' />
     StoragePortCodeSetSBP2port = 6,
+
+    /// <include file='STORAGE_PORT_CODE_SET.xml' path='doc/member[@name="STORAGE_PORT_CODE_SET.StoragePortCodeSetSDport"]/*' />
     StoragePortCodeSetSDport = 7,
 }

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SICHINTF">
+    <summary>
+      <para>Used to determine how to compare two Shell items. <see cref="IShellItem.Compare" /> uses this enumerated type.</para>
+    </summary>
+  </member>
+  <member name="SICHINTF.SICHINT_DISPLAY">
+    <summary>
+      <para>0x00000000. This relates to the <i>iOrder</i> parameter of the <see cref="IShellItem.Compare" /> interface and indicates that the comparison is based on the display in a folder view.</para>
+    </summary>
+  </member>
+  <member name="SICHINTF.SICHINT_ALLFIELDS">
+    <summary>
+      <para>(int)0x80000000. Exact comparison of two instances of a Shell item.</para>
+    </summary>
+  </member>
+  <member name="SICHINTF.SICHINT_CANONICAL">
+    <summary>
+      <para>0x10000000. This relates to the <i>iOrder</i> parameter of the <see cref="IShellItem.Compare" /> interface and indicates that the comparison is based on a canonical name.</para>
+    </summary>
+  </member>
+  <member name="SICHINTF.SICHINT_TEST_FILESYSPATH_IF_NOT_EQUAL">
+    <summary>
+      <para>0x20000000. <b>Windows 7 and later</b>. If the Shell items are not the same, test the file system paths.</para>
+    </summary>
+  </member>
+</doc>

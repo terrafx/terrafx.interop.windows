@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2"]/*' />
 [Guid("30510839-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IEventTarget2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface
         return ((delegate* unmanaged<IEventTarget2*, Guid*, void**, int>)(lpVtbl[0]))((IEventTarget2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface
         return ((delegate* unmanaged<IEventTarget2*, uint>)(lpVtbl[1]))((IEventTarget2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface
         return ((delegate* unmanaged<IEventTarget2*, uint>)(lpVtbl[2]))((IEventTarget2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2.GetRegisteredEventTypes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRegisteredEventTypes(SAFEARRAY** ppEventTypeArray)
@@ -46,6 +51,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface
         return ((delegate* unmanaged<IEventTarget2*, SAFEARRAY**, int>)(lpVtbl[3]))((IEventTarget2*)Unsafe.AsPointer(ref this), ppEventTypeArray);
     }
 
+    /// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2.GetListenersForType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] ushort* pszEventType, SAFEARRAY** ppEventHandlerArray)
@@ -53,6 +59,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface
         return ((delegate* unmanaged<IEventTarget2*, ushort*, SAFEARRAY**, int>)(lpVtbl[4]))((IEventTarget2*)Unsafe.AsPointer(ref this), pszEventType, ppEventHandlerArray);
     }
 
+    /// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2.RegisterForDOMEventListeners"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RegisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback)
@@ -60,6 +67,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface
         return ((delegate* unmanaged<IEventTarget2*, IDOMEventRegistrationCallback*, int>)(lpVtbl[5]))((IEventTarget2*)Unsafe.AsPointer(ref this), pCallback);
     }
 
+    /// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2.UnregisterForDOMEventListeners"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UnregisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback)

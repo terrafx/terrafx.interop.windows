@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfPersistentPropertyLoaderACP.xml' path='doc/member[@name="ITfPersistentPropertyLoaderACP"]/*' />
 [Guid("4EF89150-0807-11D3-8DF0-00105A2799B5")]
 [NativeTypeName("struct ITfPersistentPropertyLoaderACP : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPrope
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPrope
         return ((delegate* unmanaged<ITfPersistentPropertyLoaderACP*, Guid*, void**, int>)(lpVtbl[0]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPrope
         return ((delegate* unmanaged<ITfPersistentPropertyLoaderACP*, uint>)(lpVtbl[1]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPrope
         return ((delegate* unmanaged<ITfPersistentPropertyLoaderACP*, uint>)(lpVtbl[2]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfPersistentPropertyLoaderACP.xml' path='doc/member[@name="ITfPersistentPropertyLoaderACP.LoadProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT LoadProperty([NativeTypeName("const TF_PERSISTENT_PROPERTY_HEADER_ACP *")] TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream** ppStream)

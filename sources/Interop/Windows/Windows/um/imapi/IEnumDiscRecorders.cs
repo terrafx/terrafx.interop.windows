@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumDiscRecorders.xml' path='doc/member[@name="IEnumDiscRecorders"]/*' />
 [Guid("9B1921E1-54AC-11D3-9144-00104BA11C5E")]
 [NativeTypeName("struct IEnumDiscRecorders : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface
         return ((delegate* unmanaged<IEnumDiscRecorders*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface
         return ((delegate* unmanaged<IEnumDiscRecorders*, uint>)(lpVtbl[1]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface
         return ((delegate* unmanaged<IEnumDiscRecorders*, uint>)(lpVtbl[2]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumDiscRecorders.xml' path='doc/member[@name="IEnumDiscRecorders.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint cRecorders, IDiscRecorder** ppRecorder, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface
         return ((delegate* unmanaged<IEnumDiscRecorders*, uint, IDiscRecorder**, uint*, int>)(lpVtbl[3]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), cRecorders, ppRecorder, pcFetched);
     }
 
+    /// <include file='IEnumDiscRecorders.xml' path='doc/member[@name="IEnumDiscRecorders.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint cRecorders)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface
         return ((delegate* unmanaged<IEnumDiscRecorders*, uint, int>)(lpVtbl[4]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), cRecorders);
     }
 
+    /// <include file='IEnumDiscRecorders.xml' path='doc/member[@name="IEnumDiscRecorders.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface
         return ((delegate* unmanaged<IEnumDiscRecorders*, int>)(lpVtbl[5]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumDiscRecorders.xml' path='doc/member[@name="IEnumDiscRecorders.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumDiscRecorders** ppEnum)

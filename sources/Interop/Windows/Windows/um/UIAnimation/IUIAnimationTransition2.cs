@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationTransition2.xml' path='doc/member[@name="IUIAnimationTransition2"]/*' />
 [Guid("62FF9123-A85A-4E9B-A218-435A93E268FD")]
 [NativeTypeName("struct IUIAnimationTransition2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
         return ((delegate* unmanaged<IUIAnimationTransition2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
         return ((delegate* unmanaged<IUIAnimationTransition2*, uint>)(lpVtbl[1]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
         return ((delegate* unmanaged<IUIAnimationTransition2*, uint>)(lpVtbl[2]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationTransition2.xml' path='doc/member[@name="IUIAnimationTransition2.GetDimension"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDimension(uint* dimension)
@@ -46,6 +51,7 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
         return ((delegate* unmanaged<IUIAnimationTransition2*, uint*, int>)(lpVtbl[3]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), dimension);
     }
 
+    /// <include file='IUIAnimationTransition2.xml' path='doc/member[@name="IUIAnimationTransition2.SetInitialValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetInitialValue(double value)
@@ -53,6 +59,7 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
         return ((delegate* unmanaged<IUIAnimationTransition2*, double, int>)(lpVtbl[4]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IUIAnimationTransition2.xml' path='doc/member[@name="IUIAnimationTransition2.SetInitialVectorValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetInitialVectorValue([NativeTypeName("const DOUBLE *")] double* value, uint cDimension)
@@ -60,6 +67,7 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
         return ((delegate* unmanaged<IUIAnimationTransition2*, double*, uint, int>)(lpVtbl[5]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), value, cDimension);
     }
 
+    /// <include file='IUIAnimationTransition2.xml' path='doc/member[@name="IUIAnimationTransition2.SetInitialVelocity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetInitialVelocity(double velocity)
@@ -67,6 +75,7 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
         return ((delegate* unmanaged<IUIAnimationTransition2*, double, int>)(lpVtbl[6]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), velocity);
     }
 
+    /// <include file='IUIAnimationTransition2.xml' path='doc/member[@name="IUIAnimationTransition2.SetInitialVectorVelocity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetInitialVectorVelocity([NativeTypeName("const DOUBLE *")] double* velocity, uint cDimension)
@@ -74,6 +83,7 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
         return ((delegate* unmanaged<IUIAnimationTransition2*, double*, uint, int>)(lpVtbl[7]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), velocity, cDimension);
     }
 
+    /// <include file='IUIAnimationTransition2.xml' path='doc/member[@name="IUIAnimationTransition2.IsDurationKnown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT IsDurationKnown()
@@ -81,6 +91,7 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
         return ((delegate* unmanaged<IUIAnimationTransition2*, int>)(lpVtbl[8]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationTransition2.xml' path='doc/member[@name="IUIAnimationTransition2.GetDuration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration)

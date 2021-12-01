@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppPolicyWindowingModel.xml' path='doc/member[@name="AppPolicyWindowingModel"]/*' />
 public enum AppPolicyWindowingModel
 {
+    /// <include file='AppPolicyWindowingModel.xml' path='doc/member[@name="AppPolicyWindowingModel.AppPolicyWindowingModel_None"]/*' />
     AppPolicyWindowingModel_None = 0,
+
+    /// <include file='AppPolicyWindowingModel.xml' path='doc/member[@name="AppPolicyWindowingModel.AppPolicyWindowingModel_Universal"]/*' />
     AppPolicyWindowingModel_Universal = 1,
+
+    /// <include file='AppPolicyWindowingModel.xml' path='doc/member[@name="AppPolicyWindowingModel.AppPolicyWindowingModel_ClassicDesktop"]/*' />
     AppPolicyWindowingModel_ClassicDesktop = 2,
+
+    /// <include file='AppPolicyWindowingModel.xml' path='doc/member[@name="AppPolicyWindowingModel.AppPolicyWindowingModel_ClassicPhone"]/*' />
     AppPolicyWindowingModel_ClassicPhone = 3,
 }

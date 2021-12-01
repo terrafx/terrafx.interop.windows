@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFP_ERROR_EVENT.xml' path='doc/member[@name="MFP_ERROR_EVENT"]/*' />
 public partial struct MFP_ERROR_EVENT
 {
+    /// <include file='MFP_ERROR_EVENT.xml' path='doc/member[@name="MFP_ERROR_EVENT.header"]/*' />
     public MFP_EVENT_HEADER header;
 }

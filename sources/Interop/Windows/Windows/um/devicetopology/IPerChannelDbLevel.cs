@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPerChannelDbLevel.xml' path='doc/member[@name="IPerChannelDbLevel"]/*' />
 [Guid("C2F8E001-F205-4BC9-99BC-C13B1E048CCB")]
 [NativeTypeName("struct IPerChannelDbLevel : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
         return ((delegate* unmanaged<IPerChannelDbLevel*, Guid*, void**, int>)(lpVtbl[0]))((IPerChannelDbLevel*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
         return ((delegate* unmanaged<IPerChannelDbLevel*, uint>)(lpVtbl[1]))((IPerChannelDbLevel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
         return ((delegate* unmanaged<IPerChannelDbLevel*, uint>)(lpVtbl[2]))((IPerChannelDbLevel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPerChannelDbLevel.xml' path='doc/member[@name="IPerChannelDbLevel.GetChannelCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetChannelCount(uint* pcChannels)
@@ -46,6 +51,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
         return ((delegate* unmanaged<IPerChannelDbLevel*, uint*, int>)(lpVtbl[3]))((IPerChannelDbLevel*)Unsafe.AsPointer(ref this), pcChannels);
     }
 
+    /// <include file='IPerChannelDbLevel.xml' path='doc/member[@name="IPerChannelDbLevel.GetLevelRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetLevelRange(uint nChannel, float* pfMinLevelDB, float* pfMaxLevelDB, float* pfStepping)
@@ -53,6 +59,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
         return ((delegate* unmanaged<IPerChannelDbLevel*, uint, float*, float*, float*, int>)(lpVtbl[4]))((IPerChannelDbLevel*)Unsafe.AsPointer(ref this), nChannel, pfMinLevelDB, pfMaxLevelDB, pfStepping);
     }
 
+    /// <include file='IPerChannelDbLevel.xml' path='doc/member[@name="IPerChannelDbLevel.GetLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetLevel(uint nChannel, float* pfLevelDB)
@@ -60,6 +67,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
         return ((delegate* unmanaged<IPerChannelDbLevel*, uint, float*, int>)(lpVtbl[5]))((IPerChannelDbLevel*)Unsafe.AsPointer(ref this), nChannel, pfLevelDB);
     }
 
+    /// <include file='IPerChannelDbLevel.xml' path='doc/member[@name="IPerChannelDbLevel.SetLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetLevel(uint nChannel, float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
@@ -67,6 +75,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
         return ((delegate* unmanaged<IPerChannelDbLevel*, uint, float, Guid*, int>)(lpVtbl[6]))((IPerChannelDbLevel*)Unsafe.AsPointer(ref this), nChannel, fLevelDB, pguidEventContext);
     }
 
+    /// <include file='IPerChannelDbLevel.xml' path='doc/member[@name="IPerChannelDbLevel.SetLevelUniform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetLevelUniform(float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
@@ -74,6 +83,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
         return ((delegate* unmanaged<IPerChannelDbLevel*, float, Guid*, int>)(lpVtbl[7]))((IPerChannelDbLevel*)Unsafe.AsPointer(ref this), fLevelDB, pguidEventContext);
     }
 
+    /// <include file='IPerChannelDbLevel.xml' path='doc/member[@name="IPerChannelDbLevel.SetLevelAllChannels"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)

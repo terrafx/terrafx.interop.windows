@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_DMO_VIDEO_OUTPUT_STREAM_FLAGS.xml' path='doc/member[@name="_DMO_VIDEO_OUTPUT_STREAM_FLAGS"]/*' />
 public enum _DMO_VIDEO_OUTPUT_STREAM_FLAGS
 {
+    /// <include file='_DMO_VIDEO_OUTPUT_STREAM_FLAGS.xml' path='doc/member[@name="_DMO_VIDEO_OUTPUT_STREAM_FLAGS.DMO_VOSF_NEEDS_PREVIOUS_SAMPLE"]/*' />
     DMO_VOSF_NEEDS_PREVIOUS_SAMPLE = 0x1,
 }

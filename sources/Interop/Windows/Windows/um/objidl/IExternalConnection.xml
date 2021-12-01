@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IExternalConnection.AddConnection">
+    <summary>
+      <para>Increments the count of an object's strong external connections.</para>
+    </summary>
+    <param name="extconn">
+      <para>The type of external connection to the object. The only type of external connection currently supported by this interface is strong, which means that the object must remain alive as long as this external connection exists. Strong external connections are represented by the value EXTCONN_STRONG, which is defined in the enumeration <see cref="EXTCONN" />.</para>
+    </param>
+    <param name="reserved">
+      <para>Information about the connection. This parameter is reserved for use by OLE. Its value can be zero, but not necessarily. Therefore, implementations of <b>AddConnection</b> should not contain blocks of code whose execution depends on whether a zero value is returned.</para>
+    </param>
+    <returns>
+      <para>The method returns the count of connections. This value is intended to be used only for debugging purposes.</para>
+    </returns>
+    <remarks>
+      <para>An object created by a EXE object server relies on its stub manager to call <b>AddConnection</b> whenever a link client activates and therefore creates an external lock on the object. When the link client breaks the connection, the stub manager calls <see cref="IExternalConnection.ReleaseConnection" /> to release the lock.</para>
+      <para>DLL object applications exist in the same process space as their objects, so they do not use RPC (remote procedure calls) and do not have stub managers to keep track of external connections. Therefore, DLL servers that support external links to their objects must implement <see cref="IExternalConnection" /> so that link clients can directly call the interface to inform them when connections are added or released.</para>
+      <para>The following is a typical implementation for the <b>AddConnection</b> method.</para>
+      <code>DWORD MyInterface.AddConnection(DWORD extconn, DWORD dwReserved)
+{
+    return extconn &amp;amp;amp;amp;amp;amp;amp; EXTCONN_STRONG ? ++m_cStrong : 0;
+}
+
+</code>
+    </remarks>
+    <seealso cref="IExternalConnection" />
+    <seealso cref="IRunnableObject.LockRunning" />
+    <seealso cref="OleLockRunning" />
+  </member>
+  <member name="IExternalConnection.ReleaseConnection">
+    <summary>
+      <para>Decrements the count of an object's strong external connections.</para>
+    </summary>
+    <param name="extconn">
+      <para>The type of external connection to the object. The only type of external connection currently supported by this interface is strong, which means that the object must remain alive as long as this external connection exists. Strong external connections are represented by the value EXTCONN_STRONG, which is defined in the enumeration <see cref="EXTCONN" />.</para>
+    </param>
+    <param name="reserved">
+      <para>Information about the connection. This parameter is reserved for use by OLE. Its value can be zero, but not necessarily. Therefore, implementations of <b>ReleaseConnection</b> should not contain blocks of code whose execution depends on whether a zero value is returned.</para>
+    </param>
+    <param name="fLastReleaseCloses">
+      <para>This parameter is <b>TRUE</b> if the connection being released is the last external lock on the object, and therefore the object should close. Otherwise, the object should remain open until closed by the user or another process.</para>
+    </param>
+    <returns>
+      <para>The method returns the count of connections. This value is intended to be used only for debugging purposes.</para>
+    </returns>
+    <remarks>
+      <para>If <i>fLastReleaseCloses</i> equals <b>TRUE</b>, calling <b>ReleaseConnection</b> causes the object to shut itself down. Calling this method is the only way in which a DLL object, running in the same process space as the container application, will know when to close following a silent update.</para>
+    </remarks>
+    <seealso cref="IExternalConnection" />
+  </member>
+  <member name="IExternalConnection">
+    <summary>
+      <para>Manages a server object's count of marshaled, or external, connections. A server that maintains such a count can detect when it has no external connections and shut itself down in an orderly fashion.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>IExternalConnection</b> is most commonly implemented on server objects, to enable the orderly shutdown of a link to an embedded object following a silent update. Objects that do not implement <b>IExternalConnection</b> risk losing data in such a situation: When the final link client releases the embedded (server) object, the last external connection on the object's stub manager is released, causing the stub manager to release its pointers to interfaces on the embedded object and initiate shutdown of the object. At this point, the server object calls <see cref="IOleClientSite.SaveObject" /> on the link container, and the link container's return call to <see cref="IPersistStorage.Save" /> fails because the stub manager no longer has a pointer to the embedded object. Any unsaved changes to the server object's data would then be lost.</para>
+      <para>If the server object implements <b>IExternalConnection</b>, however, its stub manager will not release its connection to the object when the last external connection is released. Instead, it will stay connected until the object is ready to destroy itself.</para>
+      <para>In standard marshaling, to increment the object's count of external connections, COM calls <see cref="IExternalConnection.AddConnection" /> on the object when the object is first marshaled. The stub manager calls the methods of <b>IExternalConnection</b> on the object as subsequent external connections are obtained and released. When the object's count of external connections goes to zero, the object can save its data and then revoke itself from the running object table and do whatever else is necessary to reduce its object reference count to zero.</para>
+      <para>An object that implements <b>IExternalConnection</b> should explicitly call <see cref="CoDisconnectObject" /> on itself when its external reference count drops to 0. This call will cause the stub manager to call <see cref="Release" /> on the object so that the object can destroy itself.</para>
+    </remarks>
+    <seealso cref="CoDisconnectObject" />
+    <seealso cref="CoLockObjectExternal" />
+    <seealso cref="IOleObject" />
+  </member>
+</doc>

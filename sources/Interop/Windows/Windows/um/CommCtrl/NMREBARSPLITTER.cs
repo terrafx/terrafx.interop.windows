@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMREBARSPLITTER.xml' path='doc/member[@name="NMREBARSPLITTER"]/*' />
 public partial struct NMREBARSPLITTER
 {
+    /// <include file='NMREBARSPLITTER.xml' path='doc/member[@name="NMREBARSPLITTER.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMREBARSPLITTER.xml' path='doc/member[@name="NMREBARSPLITTER.rcSizing"]/*' />
     public RECT rcSizing;
 }

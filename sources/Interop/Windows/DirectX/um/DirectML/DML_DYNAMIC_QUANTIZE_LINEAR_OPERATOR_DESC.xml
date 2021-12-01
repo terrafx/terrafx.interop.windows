@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC">
+    <summary>
+      <para>Calculates the quantization scale and zero point values necessary to quantize the <i>InputTensor</i>, then applies that quantization, writing the result to <i>OutputTensor</i>.</para>
+      <blockquote>
+        <para>[!IMPORTANT]
+This API is available as part of the DirectML standalone redistributable package (see <a href="https://www.nuget.org/packages/microsoft.ai.directml/">Microsoft.AI.DirectML</a> version 1.6 and later. Also see <a href="https://docs.microsoft.com//windows/ai/directml/dml-version-history">DirectML version history</a>.</para>
+      </blockquote>
+      <para>This operator uses the following equation to quantize.</para>
+      <code>InputMax = Max(InputTensor)
+InputMin = Min(InputTensor)
+
+AValue = (A - AZeroPoint) * AScale
+BValue = (B - BZeroPoint) * BScale
+
+// For uint8 output, Min = 0, Max = 255
+// For int8 output, Min = -128, Max = 127
+OutputScale = (InputMax – InputMin) / (Max – Min)
+
+OutputZeroPoint = Min - InputMin / OutputScale
+
+OutputTensor = clamp(round(InputValue / OutputScale) + OutputZeroPoint, Min, Max)
+</code>
+    </summary>
+    <seealso cref="DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC" />
+  </member>
+  <member name="DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor containing the inputs.</para>
+    </summary>
+  </member>
+  <member name="DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the results to.</para>
+    </summary>
+  </member>
+  <member name="DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC.OutputScaleTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the output scale factor for <i>OutputTensor</i>. The expected number of elements in <i>OutputScaleTensor</i> is 1.</para>
+    </summary>
+  </member>
+  <member name="DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC.OutputZeroPointTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the output zero point for <i>OutputTensor</i>. The expected number of elements in <i>OutputZeroPointTensor</i> is 1.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HEAP_OPTIMIZE_RESOURCES_INFORMATION.xml' path='doc/member[@name="HEAP_OPTIMIZE_RESOURCES_INFORMATION"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct HEAP_OPTIMIZE_RESOURCES_INFORMATION
 {
+    /// <include file='HEAP_OPTIMIZE_RESOURCES_INFORMATION.xml' path='doc/member[@name="HEAP_OPTIMIZE_RESOURCES_INFORMATION.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='HEAP_OPTIMIZE_RESOURCES_INFORMATION.xml' path='doc/member[@name="HEAP_OPTIMIZE_RESOURCES_INFORMATION.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

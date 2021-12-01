@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DROPDOWNITEMSTATES.xml' path='doc/member[@name="DROPDOWNITEMSTATES"]/*' />
 public enum DROPDOWNITEMSTATES
 {
+    /// <include file='DROPDOWNITEMSTATES.xml' path='doc/member[@name="DROPDOWNITEMSTATES.CBDI_NORMAL"]/*' />
     CBDI_NORMAL = 1,
+
+    /// <include file='DROPDOWNITEMSTATES.xml' path='doc/member[@name="DROPDOWNITEMSTATES.CBDI_HIGHLIGHTED"]/*' />
     CBDI_HIGHLIGHTED = 2,
 }

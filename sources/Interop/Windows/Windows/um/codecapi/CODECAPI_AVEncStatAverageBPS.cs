@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncStatAverageBPS.xml' path='doc/member[@name="CODECAPI_AVEncStatAverageBPS"]/*' />
 [Guid("CA6724DB-7059-4351-8B43-F82198826A14")]
 public partial struct CODECAPI_AVEncStatAverageBPS
 {

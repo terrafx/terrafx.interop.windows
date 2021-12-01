@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPLICATION_VIEW_MIN_WIDTH.xml' path='doc/member[@name="APPLICATION_VIEW_MIN_WIDTH"]/*' />
 public enum APPLICATION_VIEW_MIN_WIDTH
 {
+    /// <include file='APPLICATION_VIEW_MIN_WIDTH.xml' path='doc/member[@name="APPLICATION_VIEW_MIN_WIDTH.AVMW_DEFAULT"]/*' />
     AVMW_DEFAULT = 0,
+
+    /// <include file='APPLICATION_VIEW_MIN_WIDTH.xml' path='doc/member[@name="APPLICATION_VIEW_MIN_WIDTH.AVMW_320"]/*' />
     AVMW_320 = 1,
+
+    /// <include file='APPLICATION_VIEW_MIN_WIDTH.xml' path='doc/member[@name="APPLICATION_VIEW_MIN_WIDTH.AVMW_500"]/*' />
     AVMW_500 = 2,
 }

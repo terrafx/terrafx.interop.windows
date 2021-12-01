@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_TRIANGLE.xml' path='doc/member[@name="D2D1_TRIANGLE"]/*' />
 public partial struct D2D1_TRIANGLE
 {
+    /// <include file='D2D1_TRIANGLE.xml' path='doc/member[@name="D2D1_TRIANGLE.point1"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F point1;
 
+    /// <include file='D2D1_TRIANGLE.xml' path='doc/member[@name="D2D1_TRIANGLE.point2"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F point2;
 
+    /// <include file='D2D1_TRIANGLE.xml' path='doc/member[@name="D2D1_TRIANGLE.point3"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F point3;
 }

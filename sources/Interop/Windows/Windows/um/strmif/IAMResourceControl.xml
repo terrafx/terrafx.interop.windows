@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMResourceControl.Reserve">
+    <summary>
+      <para>The <code>Reserve</code> method reserves or unreserves a device resource.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Flag indicating whether to reserve or unreserve this device. The value must be a member of the <see cref="AMRESCTL_RESERVEFLAGS" /> enumeration.</para>
+    </param>
+    <param name="pvReserved">
+      <para>Must be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if the device was successfully reserved or unreserved, S_FALSE if the device is currently reserved and will continue to be held, or an <b>HRESULT</b> error code if the device can't be reserved.</para>
+    </returns>
+    <remarks>
+      <para>A resource can be reserved multiple times. If the method returns S_OK, the filter increments an internal reserve count. For every call to reserve a device that returns S_OK, the caller must make a matching call to unreserve the device.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMResourceControl Interface" />
+  </member>
+  <member name="IAMResourceControl">
+    <summary>
+      <para>The <code>IAMResourceControl</code> interface opens and holds an audio device resource before the device is actually needed, so that playback can be guaranteed or the application can learn in advance that a device is not available.</para>
+      <para>The following filters implement this interface:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/audio-capture-filter">Audio Capture</a> filter.</description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/directsound-renderer-filter">DirectSound Renderer</a> filter.</description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/audio-renderer--waveout--filter">Audio Renderer (WaveOut)</a> filter.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

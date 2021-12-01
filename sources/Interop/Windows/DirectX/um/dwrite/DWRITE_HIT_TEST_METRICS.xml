@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_HIT_TEST_METRICS">
+    <summary>
+      <para>Describes the region obtained by a hit test.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_HIT_TEST_METRICS.textPosition">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The first text position within the hit region.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_HIT_TEST_METRICS.length">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of text positions within the hit region.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_HIT_TEST_METRICS.left">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The x-coordinate of the upper-left corner of the hit region.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_HIT_TEST_METRICS.top">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The y-coordinate of the upper-left corner of the hit region.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_HIT_TEST_METRICS.width">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The width of the hit region.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_HIT_TEST_METRICS.height">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The height of the hit region.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_HIT_TEST_METRICS.bidiLevel">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The <see cref="BIDI level" /> of the text positions within the hit region.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_HIT_TEST_METRICS.isText">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>true if the hit region contains text; otherwise, false.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_HIT_TEST_METRICS.isTrimmed">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>true if the text range is trimmed; otherwise, false.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFPMPClient.xml' path='doc/member[@name="IMFPMPClient"]/*' />
 [Guid("6C4E655D-EAD8-4421-B6B9-54DCDBBDF820")]
 [NativeTypeName("struct IMFPMPClient : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface
         return ((delegate* unmanaged<IMFPMPClient*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface
         return ((delegate* unmanaged<IMFPMPClient*, uint>)(lpVtbl[1]))((IMFPMPClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface
         return ((delegate* unmanaged<IMFPMPClient*, uint>)(lpVtbl[2]))((IMFPMPClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMPClient.xml' path='doc/member[@name="IMFPMPClient.SetPMPHost"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPMPHost(IMFPMPHost* pPMPHost)

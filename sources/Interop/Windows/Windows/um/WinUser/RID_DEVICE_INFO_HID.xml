@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RID_DEVICE_INFO_HID">
+    <summary>
+      <para>Defines the raw input data coming from the specified Human Interface Device (HID).</para>
+    </summary>
+    <seealso cref="RID_DEVICE_INFO" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/raw-input">Raw Input</seealso>
+  </member>
+  <member name="RID_DEVICE_INFO_HID.dwVendorId">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The vendor identifier for the HID.</para>
+    </summary>
+  </member>
+  <member name="RID_DEVICE_INFO_HID.dwProductId">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The product identifier for the HID.</para>
+    </summary>
+  </member>
+  <member name="RID_DEVICE_INFO_HID.dwVersionNumber">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The version number for the HID.</para>
+    </summary>
+  </member>
+  <member name="RID_DEVICE_INFO_HID.usUsagePage">
+    <summary>
+      <para>Type: <b>USHORT</b></para>
+      <para>The top-level collection Usage Page for the device.</para>
+    </summary>
+  </member>
+  <member name="RID_DEVICE_INFO_HID.usUsage">
+    <summary>
+      <para>Type: <b>USHORT</b></para>
+      <para>The top-level collection Usage for the device.</para>
+    </summary>
+  </member>
+</doc>

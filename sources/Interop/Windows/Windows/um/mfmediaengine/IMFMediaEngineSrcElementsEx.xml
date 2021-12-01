@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEngineSrcElementsEx.AddElementEx">
+    <summary>
+      <para>Provides an enhanced version of <see cref="IMFMediaEngineSrcElements.AddElement" /> to add the key system intended to be used with content to an element.</para>
+    </summary>
+    <param name="pURL">
+      <para>The URL of the source element, or <b>NULL</b>.</para>
+    </param>
+    <param name="pType">
+      <para>The MIME type of the source element, or <b>NULL</b>.</para>
+    </param>
+    <param name="pMedia">
+      <para>A media-query string that specifies the intended media type, or <b>NULL</b>. If specified, the string should conform to the W3C <i>Media Queries</i> specification.</para>
+    </param>
+    <param name="keySystem">
+      <para>The media key session.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineSrcElementsEx" />
+  </member>
+  <member name="IMFMediaEngineSrcElementsEx.GetKeySystem">
+    <summary>
+      <para>Gets the key system for the given source element index.</para>
+    </summary>
+    <param name="index">
+      <para>The source element index.</para>
+    </param>
+    <param name="pType">
+      <para>The MIME type of the source element.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineSrcElementsEx" />
+  </member>
+  <member name="IMFMediaEngineSrcElementsEx">
+    <summary>
+      <para>Extends the <see cref="IMFMediaEngineSrcElements" /> interface to provide additional capabilities.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

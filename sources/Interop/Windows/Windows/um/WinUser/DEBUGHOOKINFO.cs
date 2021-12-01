@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEBUGHOOKINFO.xml' path='doc/member[@name="DEBUGHOOKINFO"]/*' />
 public partial struct DEBUGHOOKINFO
 {
+    /// <include file='DEBUGHOOKINFO.xml' path='doc/member[@name="DEBUGHOOKINFO.idThread"]/*' />
     [NativeTypeName("DWORD")]
     public uint idThread;
 
+    /// <include file='DEBUGHOOKINFO.xml' path='doc/member[@name="DEBUGHOOKINFO.idThreadInstaller"]/*' />
     [NativeTypeName("DWORD")]
     public uint idThreadInstaller;
 
+    /// <include file='DEBUGHOOKINFO.xml' path='doc/member[@name="DEBUGHOOKINFO.lParam"]/*' />
     public LPARAM lParam;
 
+    /// <include file='DEBUGHOOKINFO.xml' path='doc/member[@name="DEBUGHOOKINFO.wParam"]/*' />
     public WPARAM wParam;
 
+    /// <include file='DEBUGHOOKINFO.xml' path='doc/member[@name="DEBUGHOOKINFO.code"]/*' />
     public int code;
 }

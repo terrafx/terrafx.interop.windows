@@ -8,18 +8,23 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_FUNCTION_ENTRY64.xml' path='doc/member[@name="IMAGE_FUNCTION_ENTRY64"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 4)]
 public partial struct IMAGE_FUNCTION_ENTRY64
 {
+    /// <include file='IMAGE_FUNCTION_ENTRY64.xml' path='doc/member[@name="IMAGE_FUNCTION_ENTRY64.StartingAddress"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong StartingAddress;
 
+    /// <include file='IMAGE_FUNCTION_ENTRY64.xml' path='doc/member[@name="IMAGE_FUNCTION_ENTRY64.EndingAddress"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong EndingAddress;
 
+    /// <include file='IMAGE_FUNCTION_ENTRY64.xml' path='doc/member[@name="IMAGE_FUNCTION_ENTRY64.Anonymous"]/*' />
     [NativeTypeName("_IMAGE_FUNCTION_ENTRY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:20344:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EndOfPrologue"]/*' />
     public ref ulong EndOfPrologue
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -29,6 +34,7 @@ public partial struct IMAGE_FUNCTION_ENTRY64
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnwindInfoAddress"]/*' />
     public ref ulong UnwindInfoAddress
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,13 +44,16 @@ public partial struct IMAGE_FUNCTION_ENTRY64
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit, Pack = 4)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EndOfPrologue"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONGLONG")]
         public ulong EndOfPrologue;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnwindInfoAddress"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONGLONG")]
         public ulong UnwindInfoAddress;

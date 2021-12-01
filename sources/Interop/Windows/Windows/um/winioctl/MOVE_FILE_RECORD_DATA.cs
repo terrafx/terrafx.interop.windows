@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOVE_FILE_RECORD_DATA.xml' path='doc/member[@name="MOVE_FILE_RECORD_DATA"]/*' />
 public partial struct MOVE_FILE_RECORD_DATA
 {
+    /// <include file='MOVE_FILE_RECORD_DATA.xml' path='doc/member[@name="MOVE_FILE_RECORD_DATA.FileHandle"]/*' />
     public HANDLE FileHandle;
 
+    /// <include file='MOVE_FILE_RECORD_DATA.xml' path='doc/member[@name="MOVE_FILE_RECORD_DATA.SourceFileRecord"]/*' />
     public LARGE_INTEGER SourceFileRecord;
 
+    /// <include file='MOVE_FILE_RECORD_DATA.xml' path='doc/member[@name="MOVE_FILE_RECORD_DATA.TargetFileRecord"]/*' />
     public LARGE_INTEGER TargetFileRecord;
 }

@@ -7,23 +7,33 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT"]/*' />
 public unsafe partial struct WS_METADATA_ENDPOINT
 {
+    /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.endpointAddress"]/*' />
     public WS_ENDPOINT_ADDRESS endpointAddress;
 
+    /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.endpointPolicy"]/*' />
     public IntPtr endpointPolicy;
 
+    /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.portName"]/*' />
     public WS_XML_STRING* portName;
 
+    /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.serviceName"]/*' />
     public WS_XML_STRING* serviceName;
 
+    /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.serviceNs"]/*' />
     public WS_XML_STRING* serviceNs;
 
+    /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.bindingName"]/*' />
     public WS_XML_STRING* bindingName;
 
+    /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.bindingNs"]/*' />
     public WS_XML_STRING* bindingNs;
 
+    /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.portTypeName"]/*' />
     public WS_XML_STRING* portTypeName;
 
+    /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.portTypeNs"]/*' />
     public WS_XML_STRING* portTypeNs;
 }

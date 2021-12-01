@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIBICMPSTATS_EX">
+    <summary>
+      <para>The
+<b>MIBICMPSTATS_EX</b> structure contains extended statistics for either incoming or outgoing Internet Control Message Protocol (ICMP) messages on a particular computer.</para>
+    </summary>
+    <remarks>
+      <para>Two
+<b>MIBICMPSTATS_EX</b> structures are required to hold all the extended ICMP statistics for a given computer. One
+<b>MIBICMPSTATS_EX</b> structure contains the extended statistics for incoming ICMP messages. The other contains the extended statistics for outgoing ICMP messages. For this reason, the
+<see cref="MIB_ICMP_EX" /> structure contains two
+<b>MIBICMPSTATS_EX</b> structures.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIBICMPSTATS_EX</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="MIBICMPINFO" />
+    <seealso cref="MIBICMPSTATS" />
+    <seealso cref="MIB_ICMP" />
+    <seealso cref="MIB_ICMP_EX" />
+  </member>
+  <member name="MIBICMPSTATS_EX.dwMsgs">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies the number of messages received or sent.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS_EX.dwErrors">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of errors received or sent.</para>
+    </summary>
+  </member>
+  <member name="MIBICMPSTATS_EX.rgdwTypeCount">
+    <summary>
+      <para>Type: <b>DWORD[256]</b></para>
+      <para>The type count.</para>
+    </summary>
+  </member>
+</doc>

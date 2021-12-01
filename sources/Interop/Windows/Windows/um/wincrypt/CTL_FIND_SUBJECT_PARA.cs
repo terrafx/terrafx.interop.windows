@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CTL_FIND_SUBJECT_PARA.xml' path='doc/member[@name="CTL_FIND_SUBJECT_PARA"]/*' />
 public unsafe partial struct CTL_FIND_SUBJECT_PARA
 {
+    /// <include file='CTL_FIND_SUBJECT_PARA.xml' path='doc/member[@name="CTL_FIND_SUBJECT_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CTL_FIND_SUBJECT_PARA.xml' path='doc/member[@name="CTL_FIND_SUBJECT_PARA.pUsagePara"]/*' />
     [NativeTypeName("PCTL_FIND_USAGE_PARA")]
     public CTL_FIND_USAGE_PARA* pUsagePara;
 
+    /// <include file='CTL_FIND_SUBJECT_PARA.xml' path='doc/member[@name="CTL_FIND_SUBJECT_PARA.dwSubjectType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSubjectType;
 
+    /// <include file='CTL_FIND_SUBJECT_PARA.xml' path='doc/member[@name="CTL_FIND_SUBJECT_PARA.pvSubject"]/*' />
     public void* pvSubject;
 }

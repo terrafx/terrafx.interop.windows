@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVMRWindowlessControl.DisplayModeChanged">
+    <summary>
+      <para>The <code>DisplayModeChanged</code> method informs the VMR that a WM_DISPLAYCHANGE message has been received by the application.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>An application must call this method whenever it receives a WM_DISPLAYCHANGE window message, but only if the VMR is currently in windowless mode.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.GetAspectRatioMode">
+    <summary>
+      <para>The <code>GetAspectRatioMode</code> method queries whether the VMR will preserve the aspect ratio of the source video.</para>
+    </summary>
+    <param name="lpAspectRatioMode">
+      <para>Pointer to a variable that receives a <see cref="VMR_ASPECT_RATIO_MODE" /> value indicating the aspect ratio mode.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso cref="IVMRWindowlessControl.SetAspectRatioMode" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.GetBorderColor">
+    <summary>
+      <para>The <code>GetBorderColor</code> method retrieves the current border color used by the VMR.</para>
+    </summary>
+    <param name="lpClr">
+      <para>Pointer to a <b>COLORREF</b> variable that receives the current border color.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso cref="IVMRWindowlessControl.SetBorderColor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.GetColorKey">
+    <summary>
+      <para>The <code>GetColorKey</code> method retrieves the current source color key value used by the VMR.</para>
+    </summary>
+    <param name="lpClr">
+      <para>Pointer to a <b>COLORREF</b> variable that receives the current color key value.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso cref="IVMRWindowlessControl.SetColorKey" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.GetMaxIdealVideoSize">
+    <summary>
+      <para>The <code>GetMaxIdealVideoSize</code> method retrieves the maximum video size that the VMR can display without incurring significant performance or image quality degradation.</para>
+    </summary>
+    <param name="lpWidth">
+      <para>Pointer that receives the maximum ideal width.</para>
+    </param>
+    <param name="lpHeight">
+      <para>Pointer that receives the maximum ideal height.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso cref="IVMRWindowlessControl.GetMinIdealVideoSize" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.GetMinIdealVideoSize">
+    <summary>
+      <para>The <code>GetMinIdealVideoSize</code> method retrieves the minimum video size that the VMR can display without incurring significant performance or image quality degradation.</para>
+    </summary>
+    <param name="lpWidth">
+      <para>Pointer to a LONG value that receives the minimum ideal width.</para>
+    </param>
+    <param name="lpHeight">
+      <para>Pointer to a LONG value that receives the minimum ideal height.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso cref="IVMRWindowlessControl.GetMaxIdealVideoSize" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.GetNativeVideoSize">
+    <summary>
+      <para>The <code>GetNativeVideoSize</code> method retrieves the un-stretched video size and aspect ratio of the video.</para>
+    </summary>
+    <param name="lpWidth">
+      <para>Pointer that receives the width of the native video rectangle.</para>
+    </param>
+    <param name="lpHeight">
+      <para>Pointer that receives the height of the native video rectangle.</para>
+    </param>
+    <param name="lpARWidth">
+      <para>Pointer that receives the aspect ratio width of the native video rectangle.</para>
+    </param>
+    <param name="lpARHeight">
+      <para>Pointer that receives the aspect ratio height of the native video rectangle.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Returns E_POINTER if all four input parameters are <b>NULL</b>.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the VMR is not connected to an upstream filter, this method will succeed but all parameters will be set to zero.</para>
+      <para>If <i>lpWidth</i> is 640 and <i>lpHeight</i> is 480, then <i>lpARWidth</i> will be 4 and <i>lpARHeight</i> will be 3.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.GetVideoPosition">
+    <summary>
+      <para>The <code>GetVideoPosition</code> method retrieves the current source and destination rectangles used to display the video.</para>
+    </summary>
+    <param name="lpSRCRect">
+      <para>Pointer that receives the current source rectangle.</para>
+    </param>
+    <param name="lpDSTRect">
+      <para>Pointer that receives the current destination rectangle.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso cref="IVMRWindowlessControl.SetVideoPosition" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.RepaintVideo">
+    <summary>
+      <para>The <code>RepaintVideo</code> method repaints the current video frame.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Specifies the handle of the window in which the repainting should occur.</para>
+    </param>
+    <param name="hdc">
+      <para>Specifies the handle to the device context for the window.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.SetAspectRatioMode">
+    <summary>
+      <para>The <code>SetAspectRatioMode</code> method specifies whether the VMR will preserve the aspect ratio of the source video.</para>
+    </summary>
+    <param name="AspectRatioMode">
+      <para>Specifies a member of the <see cref="VMR_ASPECT_RATIO_MODE" /> enumeration type.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso cref="IVMRWindowlessControl.GetAspectRatioMode" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.SetBorderColor">
+    <summary>
+      <para>The <code>SetBorderColor</code> method sets the border color to be used by the VMR.</para>
+    </summary>
+    <param name="Clr">
+      <para>Specifies the border color.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The border color is color used to fill any area of the destination rectangle that does not contain video. It is typically used in two instances: (1) when the video straddles two monitors and (2) when the VMR is trying to maintain the aspect ratio of the movie by letter boxing the video to fit within the specified destination rectangle. See the <see cref="IVMRWindowlessControl.SetAspectRatioMode" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso cref="IVMRWindowlessControl.GetBorderColor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.SetColorKey">
+    <summary>
+      <para>The <code>SetColorKey</code> method sets the source color key value that the VMR should use.</para>
+    </summary>
+    <param name="Clr">
+      <para>Specifies the source color key.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Color key control is only meaningful when the VMR is using an overlay surface.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso cref="IVMRWindowlessControl.GetColorKey" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.SetVideoClippingWindow">
+    <summary>
+      <para>The <code>SetVideoClippingWindow</code> method specifies the container window that video should be clipped to.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Specifies the window to which the video should be clipped.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.SetVideoPosition">
+    <summary>
+      <para>The <code>SetVideoPosition</code> method sets the source and destination rectangles for the video.</para>
+    </summary>
+    <param name="lpSRCRect">
+      <para>Pointer to a <b>RECT</b> structure that specifies the source rectangle. If <b>NULL</b>, the source rectangle does not change. The default source rectangle is the entire video image.</para>
+    </param>
+    <param name="lpDSTRect">
+      <para>Pointer to a <b>RECT</b> structure that specifies the destination rectangle. If <b>NULL</b>, the destination rectangle does not change. The default destination rectangle is {0, 0, 0, 0}.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The VMR is not in windowless mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRWindowlessControl Interface" />
+    <seealso cref="IVMRWindowlessControl.GetVideoPosition" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl">
+    <summary>
+      <para>The <code>IVMRWindowlessControl</code> interface controls how the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7) renders a video stream within a container window. Applications must first put the VMR-7 into windowless mode before using this interface.</para>
+      <para>For the VMR-9, use the IVMRWindowlessControl9 interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+</doc>

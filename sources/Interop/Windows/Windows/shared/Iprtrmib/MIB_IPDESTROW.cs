@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPDESTROW.xml' path='doc/member[@name="MIB_IPDESTROW"]/*' />
 public partial struct MIB_IPDESTROW
 {
+    /// <include file='MIB_IPDESTROW.xml' path='doc/member[@name="MIB_IPDESTROW.ForwardRow"]/*' />
     public MIB_IPFORWARDROW ForwardRow;
 
+    /// <include file='MIB_IPDESTROW.xml' path='doc/member[@name="MIB_IPDESTROW.dwForwardPreference"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardPreference;
 
+    /// <include file='MIB_IPDESTROW.xml' path='doc/member[@name="MIB_IPDESTROW.dwForwardViewSet"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwForwardViewSet;
 }

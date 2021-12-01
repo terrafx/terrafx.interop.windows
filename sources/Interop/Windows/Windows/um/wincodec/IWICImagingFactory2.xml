@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICImagingFactory2.CreateImageEncoder">
+    <summary>
+      <para>Creates a new image encoder object.</para>
+    </summary>
+    <param name="pD2DDevice">
+      <para>The <see cref="ID2D1Device" /> object on which the corresponding image encoder is created.</para>
+    </param>
+    <param name="ppWICImageEncoder">
+      <para>A pointer to a variable that receives a pointer to the <see cref="IWICImageEncoder" /> interface for the encoder object that you can use to encode <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> images.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>You must create images to pass to the image encoder  on the same <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> device that you pass to this method.</para>
+      <para>You are responsible for setting up the bitmap encoder itself through the existing <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapencoder">IWICBitmapEncoder</a> APIs. The <b>IWICBitmapEncoder</b> or the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapframeencode">IWICBitmapFrameEncode</a> object is passed to each of the <see cref="IWICImageEncoder" /> methods: <see cref="WriteThumbnail" />, <see cref="WriteFrame" />, and <see cref="WriteFrameThumbnail" />.</para>
+    </remarks>
+    <seealso cref="IWICImagingFactory2" />
+  </member>
+  <member name="IWICImagingFactory2">
+    <summary>
+      <para>An extension of the WIC factory interface that includes the ability to create an <see cref="IWICImageEncoder" />.  This interface uses a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> device and an input image to encode to a destination <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapencoder">IWICBitmapEncoder</a>.</para>
+    </summary>
+    <seealso cref="IWICImagingFactory" />
+  </member>
+</doc>

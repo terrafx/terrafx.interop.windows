@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_INTERNAL_STATUS_DATA_SET.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_SET"]/*' />
 public enum DEVICE_INTERNAL_STATUS_DATA_SET
 {
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_SET.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_SET.DeviceStatusDataSetUndefined"]/*' />
     DeviceStatusDataSetUndefined = 0,
+
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_SET.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_SET.DeviceStatusDataSet1"]/*' />
     DeviceStatusDataSet1,
+
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_SET.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_SET.DeviceStatusDataSet2"]/*' />
     DeviceStatusDataSet2,
+
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_SET.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_SET.DeviceStatusDataSet3"]/*' />
     DeviceStatusDataSet3,
+
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_SET.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_SET.DeviceStatusDataSet4"]/*' />
     DeviceStatusDataSet4,
+
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_SET.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_SET.DeviceStatusDataSetMax"]/*' />
     DeviceStatusDataSetMax,
 }

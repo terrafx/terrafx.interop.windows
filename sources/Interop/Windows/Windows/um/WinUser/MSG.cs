@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSG.xml' path='doc/member[@name="MSG"]/*' />
 public partial struct MSG
 {
+    /// <include file='MSG.xml' path='doc/member[@name="MSG.hwnd"]/*' />
     public HWND hwnd;
 
+    /// <include file='MSG.xml' path='doc/member[@name="MSG.message"]/*' />
     public uint message;
 
+    /// <include file='MSG.xml' path='doc/member[@name="MSG.wParam"]/*' />
     public WPARAM wParam;
 
+    /// <include file='MSG.xml' path='doc/member[@name="MSG.lParam"]/*' />
     public LPARAM lParam;
 
+    /// <include file='MSG.xml' path='doc/member[@name="MSG.time"]/*' />
     [NativeTypeName("DWORD")]
     public uint time;
 
+    /// <include file='MSG.xml' path='doc/member[@name="MSG.pt"]/*' />
     public POINT pt;
 }

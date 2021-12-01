@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_BYTE_STREAM_CACHE_RANGE.xml' path='doc/member[@name="MF_BYTE_STREAM_CACHE_RANGE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct MF_BYTE_STREAM_CACHE_RANGE
 {
+    /// <include file='MF_BYTE_STREAM_CACHE_RANGE.xml' path='doc/member[@name="MF_BYTE_STREAM_CACHE_RANGE.qwStartOffset"]/*' />
     [NativeTypeName("QWORD")]
     public ulong qwStartOffset;
 
+    /// <include file='MF_BYTE_STREAM_CACHE_RANGE.xml' path='doc/member[@name="MF_BYTE_STREAM_CACHE_RANGE.qwEndOffset"]/*' />
     [NativeTypeName("QWORD")]
     public ulong qwEndOffset;
 }

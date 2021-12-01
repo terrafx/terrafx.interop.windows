@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SMALL_RECT.xml' path='doc/member[@name="SMALL_RECT"]/*' />
 public partial struct SMALL_RECT
 {
+    /// <include file='SMALL_RECT.xml' path='doc/member[@name="SMALL_RECT.Left"]/*' />
     public short Left;
 
+    /// <include file='SMALL_RECT.xml' path='doc/member[@name="SMALL_RECT.Top"]/*' />
     public short Top;
 
+    /// <include file='SMALL_RECT.xml' path='doc/member[@name="SMALL_RECT.Right"]/*' />
     public short Right;
 
+    /// <include file='SMALL_RECT.xml' path='doc/member[@name="SMALL_RECT.Bottom"]/*' />
     public short Bottom;
 }

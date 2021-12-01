@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STARTING_LCN_INPUT_BUFFER_EX.xml' path='doc/member[@name="STARTING_LCN_INPUT_BUFFER_EX"]/*' />
 public partial struct STARTING_LCN_INPUT_BUFFER_EX
 {
+    /// <include file='STARTING_LCN_INPUT_BUFFER_EX.xml' path='doc/member[@name="STARTING_LCN_INPUT_BUFFER_EX.StartingLcn"]/*' />
     public LARGE_INTEGER StartingLcn;
 
+    /// <include file='STARTING_LCN_INPUT_BUFFER_EX.xml' path='doc/member[@name="STARTING_LCN_INPUT_BUFFER_EX.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

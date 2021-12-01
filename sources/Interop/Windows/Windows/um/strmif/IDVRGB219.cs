@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDVRGB219.xml' path='doc/member[@name="IDVRGB219"]/*' />
 [Guid("58473A19-2BC8-4663-8012-25F81BABDDD1")]
 [NativeTypeName("struct IDVRGB219 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDVRGB219 : IDVRGB219.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDVRGB219 : IDVRGB219.Interface
         return ((delegate* unmanaged<IDVRGB219*, Guid*, void**, int>)(lpVtbl[0]))((IDVRGB219*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDVRGB219 : IDVRGB219.Interface
         return ((delegate* unmanaged<IDVRGB219*, uint>)(lpVtbl[1]))((IDVRGB219*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDVRGB219 : IDVRGB219.Interface
         return ((delegate* unmanaged<IDVRGB219*, uint>)(lpVtbl[2]))((IDVRGB219*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDVRGB219.xml' path='doc/member[@name="IDVRGB219.SetRGB219"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetRGB219(BOOL bState)

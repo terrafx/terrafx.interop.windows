@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleRubyOverhang.xml' path='doc/member[@name="styleRubyOverhang"]/*' />
 public enum styleRubyOverhang
 {
+    /// <include file='styleRubyOverhang.xml' path='doc/member[@name="styleRubyOverhang.styleRubyOverhangNotSet"]/*' />
     styleRubyOverhangNotSet = 0,
+
+    /// <include file='styleRubyOverhang.xml' path='doc/member[@name="styleRubyOverhang.styleRubyOverhangAuto"]/*' />
     styleRubyOverhangAuto = 1,
+
+    /// <include file='styleRubyOverhang.xml' path='doc/member[@name="styleRubyOverhang.styleRubyOverhangWhitespace"]/*' />
     styleRubyOverhangWhitespace = 2,
+
+    /// <include file='styleRubyOverhang.xml' path='doc/member[@name="styleRubyOverhang.styleRubyOverhangNone"]/*' />
     styleRubyOverhangNone = 3,
+
+    /// <include file='styleRubyOverhang.xml' path='doc/member[@name="styleRubyOverhang.styleRubyOverhang_Max"]/*' />
     styleRubyOverhang_Max = 2147483647,
 }

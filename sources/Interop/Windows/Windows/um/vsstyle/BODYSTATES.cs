@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BODYSTATES.xml' path='doc/member[@name="BODYSTATES"]/*' />
 public enum BODYSTATES
 {
+    /// <include file='BODYSTATES.xml' path='doc/member[@name="BODYSTATES.FBS_NORMAL"]/*' />
     FBS_NORMAL = 1,
+
+    /// <include file='BODYSTATES.xml' path='doc/member[@name="BODYSTATES.FBS_EMPHASIZED"]/*' />
     FBS_EMPHASIZED = 2,
 }

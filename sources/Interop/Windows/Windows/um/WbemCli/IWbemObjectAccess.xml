@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWbemObjectAccess.GetPropertyHandle">
+    <summary>
+      <para>The
+<b>GetPropertyHandle</b> method returns a unique handle that identifies a property. You can use this handle to identify properties when using
+<see cref="IWbemObjectAccess" /> methods to read or write property values.</para>
+    </summary>
+    <param name="wszPropertyName">
+      <para>Constant, null-terminated string of 16-bit Unicode characters that contains the property name.</para>
+    </param>
+    <param name="pType">
+      <para>Pointer to a <b>CIMTYPE</b> used to return the CIM type of the property.</para>
+    </param>
+    <param name="plHandle">
+      <para>Pointer to an integer used to return the property handle.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <remarks>
+      <para>Handles can be retrieved for all data types other than CIM_OBJECT and CIM_ARRAY. Returned handles work across all instances of a class.</para>
+    </remarks>
+    <seealso cref="IWbemObjectAccess" />
+  </member>
+  <member name="IWbemObjectAccess.GetPropertyInfoByHandle">
+    <summary>
+      <para>The
+<b>GetPropertyInfoByHandle</b> method returns the name and data type of the property that is associated with a property handle.</para>
+    </summary>
+    <param name="lHandle">
+      <para>Integer that contains the handle identifying the property.</para>
+    </param>
+    <param name="pstrName">
+      <para>Pointer to a string used to return the name of the specified property.</para>
+    </param>
+    <param name="pType">
+      <para>Pointer to a <b>CIMTYPE</b> used to return the type of the property.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemObjectAccess" />
+  </member>
+  <member name="IWbemObjectAccess.Lock">
+    <summary>
+      <para>The
+<b>Lock</b> method prevents other threads from updating an
+<see cref="IWbemObjectAccess" /> object until it is unlocked.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Reserved. This parameter is currently ignored and is reserved for future use.</para>
+    </param>
+    <returns>
+      <para>This method returns <b>WBEM_S_NO_ERROR</b> if successful.</para>
+    </returns>
+    <seealso cref="IWbemObjectAccess" />
+  </member>
+  <member name="IWbemObjectAccess.ReadDWORD">
+    <summary>
+      <para>The <b>ReadDWORD</b> method reads 32 bits of property data using a property handle.</para>
+    </summary>
+    <param name="lHandle">
+      <para>Integer that contains the handle that identifies this property.</para>
+    </param>
+    <param name="pdw">
+      <para>Pointer to a 32-bit unsigned integer used to return the data.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemObjectAccess" />
+  </member>
+  <member name="IWbemObjectAccess.ReadPropertyValue">
+    <summary>
+      <para>The <b>ReadPropertyValue</b> method returns a specified number of bytes of a property associated with a property handle. Use this method to read the value of a property that contains a string or to read a property that contains a value that is not 32 (<b>DWORD</b>) or 64 (<b>QWORD</b>) bits long.</para>
+    </summary>
+    <param name="lHandle">
+      <para>Integer that contains the handle identifying this property.</para>
+    </param>
+    <param name="lBufferSize">
+      <para>Integer that contains the buffer size.</para>
+    </param>
+    <param name="plNumBytes">
+      <para>Pointer to an integer used to return the number of bytes read.</para>
+    </param>
+    <param name="aData">
+      <para>Pointer to an array used to return the property data.</para>
+    </param>
+    <returns>
+      <para>This method returns <b>WBEM_S_NO_ERROR</b> if successful; otherwise, this method returns an <b>HRESULT</b> with one of the following values.</para>
+    </returns>
+    <remarks>
+      <para>String data is returned as <b>null</b>-terminated <b>WCHAR</b> data.</para>
+    </remarks>
+    <seealso cref="IWbemObjectAccess" />
+  </member>
+  <member name="IWbemObjectAccess.ReadQWORD">
+    <summary>
+      <para>The <b>ReadQWORD</b> method reads 64 bits of property data identified by a property handle.</para>
+    </summary>
+    <param name="lHandle">
+      <para>Integer that contains the handle identifying the property.</para>
+    </param>
+    <param name="pqw">
+      <para>Pointer to a unsigned 64-bit integer used to return the data being read.</para>
+    </param>
+    <returns>
+      <para>This method returns <b>WBEM_S_NO_ERROR</b> if successful. If the property was <b>NULL</b>, then the method returns <b>WBEM_S_FALSE</b>.</para>
+    </returns>
+    <seealso cref="IWbemObjectAccess" />
+  </member>
+  <member name="IWbemObjectAccess.Unlock">
+    <summary>
+      <para>The <b>Unlock</b> method allows other threads to update the property values of an
+<see cref="IWbemObjectAccess" /> object.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Reserved. This parameter is currently ignored and is reserved for future use.</para>
+    </param>
+    <returns>
+      <para>This method returns <b>WBEM_S_NO_ERROR</b> if successful.</para>
+    </returns>
+    <seealso cref="IWbemObjectAccess" />
+  </member>
+  <member name="IWbemObjectAccess.WriteDWORD">
+    <summary>
+      <para>The <b>WriteDWORD</b> method writes 32 bits of data to a property identified by a property handle.</para>
+    </summary>
+    <param name="lHandle">
+      <para>Integer that contains the handle identifying this property.</para>
+    </param>
+    <param name="dw">
+      <para>Unsigned 32-bit integer that contains the data being written.</para>
+    </param>
+    <returns>
+      <para>This method returns <b>WBEM_S_NO_ERROR</b> if successful.</para>
+    </returns>
+    <seealso cref="IWbemObjectAccess" />
+  </member>
+  <member name="IWbemObjectAccess.WritePropertyValue">
+    <summary>
+      <para>The <b>WritePropertyValue</b> method writes a specified number of bytes to a property identified by a property handle. Use this method to set string and all other non-<b>DWORD</b> or non-<b>QWORD</b> data.</para>
+    </summary>
+    <param name="lHandle">
+      <para>Integer that contains the handle that identifies this property.</para>
+    </param>
+    <param name="lNumBytes">
+      <para>Integer that contains the number of bytes being written to the property. For nonstring property values, <i>lNumBytes</i> must be the correct data size of the property type specified. For string property values such as reference, string, and datetime, <i>lNumBytes</i> must be the length of the specified string in bytes, and the string itself must be of an even length in bytes and be followed with a null-termination character.</para>
+    </param>
+    <param name="aData">
+      <para>Pointer to the constant byte type array that contains the data.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemObjectAccess" />
+  </member>
+  <member name="IWbemObjectAccess.WriteQWORD">
+    <summary>
+      <para>The <b>WriteQWORD</b> method writes 64 bits of data to a property by using a property handle.</para>
+    </summary>
+    <param name="lHandle">
+      <para>Integer that contains the handle that identifies this property.</para>
+    </param>
+    <param name="pw">
+      <para>Unsigned 64-bit integer that contains the data written to the specified property.</para>
+    </param>
+    <returns>
+      <para>This method returns <b>WBEM_S_NO_ERROR</b> if successful.</para>
+    </returns>
+    <seealso cref="IWbemObjectAccess" />
+  </member>
+  <member name="IWbemObjectAccess">
+    <summary>
+      <para>The
+<b>IWbemObjectAccess</b> interface provides access to the methods and properties of an object.  An
+<b>IWbemObjectAccess</b> object is a container for an instance updated by a <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/gloss-r">refresher</a>. With the
+<b>IWbemObjectAccess</b> interface, you can get and set properties by using property handles instead of object property names.
+<b>Note</b>  This interface is not implemented by client applications or providers under any circumstances. The implementation provided by WMI is the only one that is supported. A pointer to the interface can be retrieved by calling <see cref="IWbemClassObject.QueryInterface" />.</para>
+    </summary>
+    <remarks>
+      <para>The
+<b>IWbemObjectAccess</b> methods that read and write data perform very little data validation. Because
+<b>IWbemObjectAccess</b> methods directly access properties, you can get and set properties much more rapidly than you can using standard object access techniques such as
+<see cref="IWbemClassObject.Get" /> and
+<see cref="IWbemClassObject.Put" />.</para>
+      <para>
+        <b>Note</b>  To maximize its speed,
+<b>IWbemObjectAccess</b> is completely unchecked. It is the responsibility of the user to ensure that all handles are proper, and that write buffers are correctly sized. Read and write operations are not intrinsically thread-safe. You should call the
+<see cref="IWbemObjectAccess.Lock" /> and
+<see cref="IWbemObjectAccess.Unlock" /> methods to prevent
+<b>IWbemObjectAccess</b> objects from concurrent access on multiple threads.</para>
+      <para>Property handles are the same for all instances of a class. Therefore, it is only necessary to retrieve a handle one time.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/accessing-performance-data-in-c--">Accessing Performance Data in C++</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/accessing-wmi-preinstalled-performance-classes">Accessing WMI Preinstalled Performance Classes</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/com-api-for-wmi">COM API for WMI</seealso>
+    <seealso cref="IWbemRefresher" />
+  </member>
+</doc>

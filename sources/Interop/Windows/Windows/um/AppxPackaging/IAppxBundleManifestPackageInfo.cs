@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo"]/*' />
 [Guid("54CD06C1-268F-40BB-8ED2-757A9EBAEC8D")]
 [NativeTypeName("struct IAppxBundleManifestPackageInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetPackageType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPackageType(APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE* packageType)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), packageType);
     }
 
+    /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetPackageId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPackageId(IAppxManifestPackageId** packageId)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, IAppxManifestPackageId**, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), packageId);
     }
 
+    /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName)
@@ -62,6 +69,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, ushort**, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), fileName);
     }
 
+    /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetOffset([NativeTypeName("UINT64 *")] ulong* offset)
@@ -69,6 +77,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, ulong*, int>)(lpVtbl[6]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), offset);
     }
 
+    /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSize([NativeTypeName("UINT64 *")] ulong* size)
@@ -76,6 +85,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, ulong*, int>)(lpVtbl[7]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), size);
     }
 
+    /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetResources"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetResources(IAppxManifestQualifiedResourcesEnumerator** resources)

@@ -10,34 +10,44 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHChangeNotifyRegisterThread"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern void SHChangeNotifyRegisterThread(SCNRT_STATUS status);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathQualify"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern void PathQualify([NativeTypeName("PWSTR")] ushort* psz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsSlowA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL PathIsSlowA([NativeTypeName("LPCSTR")] sbyte* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsSlowW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL PathIsSlowW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreatePropSheetExtArray"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HPSXA SHCreatePropSheetExtArray(HKEY hKey, [NativeTypeName("PCWSTR")] ushort* pszSubKey, uint max_iface);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOpenPropSheetW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY []")] HKEY* ahkeys, uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SoftwareUpdateMessageBox"]/*' />
     [DllImport("shdocvw", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint SoftwareUpdateMessageBox(HWND hWnd, [NativeTypeName("PCWSTR")] ushort* pszDistUnit, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* psdi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHMultiFileProperties"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHMultiFileProperties(IDataObject* pdtobj, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateQueryCancelAutoPlayMoniker"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHCreateQueryCancelAutoPlayMoniker(IMoniker** ppmoniker);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PerUserInit"]/*' />
     [DllImport("mydocs", ExactSpelling = true)]
     public static extern void PerUserInit();
 

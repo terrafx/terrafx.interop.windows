@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_ID_TYPE.xml' path='doc/member[@name="FILE_ID_TYPE"]/*' />
 public enum FILE_ID_TYPE
 {
+    /// <include file='FILE_ID_TYPE.xml' path='doc/member[@name="FILE_ID_TYPE.FileIdType"]/*' />
     FileIdType,
+
+    /// <include file='FILE_ID_TYPE.xml' path='doc/member[@name="FILE_ID_TYPE.ObjectIdType"]/*' />
     ObjectIdType,
+
+    /// <include file='FILE_ID_TYPE.xml' path='doc/member[@name="FILE_ID_TYPE.ExtendedFileIdType"]/*' />
     ExtendedFileIdType,
+
+    /// <include file='FILE_ID_TYPE.xml' path='doc/member[@name="FILE_ID_TYPE.MaximumFileIdType"]/*' />
     MaximumFileIdType,
 }

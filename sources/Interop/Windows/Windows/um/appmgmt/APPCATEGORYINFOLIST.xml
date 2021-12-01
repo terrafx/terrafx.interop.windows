@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPCATEGORYINFOLIST">
+    <summary>
+      <para>Provides a list of supported application categories from an application publisher to Add/Remove Programs in Control Panel.</para>
+    </summary>
+    <seealso cref="APPCATEGORYINFO" />
+    <seealso cref="IAppPublisher.GetCategories" />
+  </member>
+  <member name="APPCATEGORYINFOLIST.cCategory">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>A value of type <b>DWORD</b> that specifies the count of <see cref="APPCATEGORYINFO" /> elements in the array pointed to by <b>pCategoryInfo</b>.</para>
+    </summary>
+  </member>
+  <member name="APPCATEGORYINFOLIST.pCategoryInfo">
+    <summary>
+      <para>Type: <b><see cref="APPCATEGORYINFO" />*</b></para>
+      <para>A pointer to an array of <see cref="APPCATEGORYINFO" /> structures. This array contains all the categories an application publisher supports and must be allocated using <see cref="CoTaskMemAlloc" /> and freed using <see cref="CoTaskMemFree" />.</para>
+    </summary>
+  </member>
+  <member name="APPCATEGORYINFOLIST.pCategoryInfo.size_is">
+    <summary></summary>
+  </member>
+  <member name="APPCATEGORYINFOLIST.pCategoryInfo.size_is.cCategory">
+    <summary></summary>
+  </member>
+</doc>

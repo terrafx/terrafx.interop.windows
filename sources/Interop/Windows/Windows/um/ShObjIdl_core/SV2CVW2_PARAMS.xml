@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SV2CVW2_PARAMS">
+    <summary>
+      <para>Holds the parameters for the <see cref="IShellView2.CreateViewWindow2" /> method.</para>
+    </summary>
+  </member>
+  <member name="SV2CVW2_PARAMS.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure.</para>
+    </summary>
+  </member>
+  <member name="SV2CVW2_PARAMS.psvPrev">
+    <summary>
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>A pointer to the <see cref="IShellView" /> interface of the previous view. A Shell view can use this parameter to communicate with a previous view with the same implementation. It can also be used to optimize browsing between like views. This parameter may be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="SV2CVW2_PARAMS.pfs">
+    <summary>
+      <para>Type: <b>LPFOLDERSETTINGS</b></para>
+      <para>A <see cref="FOLDERSETTINGS" /> structure with information needed to create the view.</para>
+    </summary>
+  </member>
+  <member name="SV2CVW2_PARAMS.psbOwner">
+    <summary>
+      <para>Type: <b><see cref="IShellBrowser" />*</b></para>
+      <para>A pointer to the current instance of the <see cref="IShellBrowser" /> interface of the parent Shell browser. <see cref="IShellView2.CreateViewWindow2" /> should call this interface's <see cref="AddRef" /> method and store the interface pointer. It can be used for communication with the Windows Explorer window.</para>
+    </summary>
+  </member>
+  <member name="SV2CVW2_PARAMS.prcView">
+    <summary>
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>A <b>RECT</b> structure that defines the view's display area.</para>
+    </summary>
+  </member>
+  <member name="SV2CVW2_PARAMS.pvid">
+    <summary>
+      <para>Type: <b>const SHELLVIEWID*</b></para>
+      <para>A pointer to a view ID. The view ID can be one of the Windows-defined VIDs or a custom, view-defined VID. This value takes precedence over the view mode designated in the <see cref="FOLDERSETTINGS" /> structure pointed to by <b>pfs</b>.</para>
+    </summary>
+  </member>
+  <member name="SV2CVW2_PARAMS.hwndView">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>A window handle to the new Shell view.</para>
+    </summary>
+  </member>
+</doc>

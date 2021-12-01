@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile"]/*' />
 [Guid("3050F401-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLOpsProfile : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, uint>)(lpVtbl[1]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, uint>)(lpVtbl[2]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, uint*, int>)(lpVtbl[3]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.addRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT addRequest([NativeTypeName("BSTR")] ushort* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, ushort*, VARIANT, short*, int>)(lpVtbl[7]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, reserved, success);
     }
 
+    /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.clearRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT clearRequest()
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, int>)(lpVtbl[8]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.doRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT doRequest(VARIANT usage, VARIANT fname, VARIANT domain, VARIANT path, VARIANT expire, VARIANT reserved)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[9]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), usage, fname, domain, path, expire, reserved);
     }
 
+    /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.getAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT getAttribute([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR *")] ushort** value)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, ushort*, ushort**, int>)(lpVtbl[10]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, value);
     }
 
+    /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.setAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT setAttribute([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* value, VARIANT prefs, [NativeTypeName("VARIANT_BOOL *")] short* success)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, ushort*, ushort*, VARIANT, short*, int>)(lpVtbl[11]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, value, prefs, success);
     }
 
+    /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.commitChanges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT commitChanges([NativeTypeName("VARIANT_BOOL *")] short* success)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, short*, int>)(lpVtbl[12]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), success);
     }
 
+    /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.addReadRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT addReadRequest([NativeTypeName("BSTR")] ushort* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, ushort*, VARIANT, short*, int>)(lpVtbl[13]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, reserved, success);
     }
 
+    /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.doReadRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT doReadRequest(VARIANT usage, VARIANT fname, VARIANT domain, VARIANT path, VARIANT expire, VARIANT reserved)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         return ((delegate* unmanaged<IHTMLOpsProfile*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[14]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), usage, fname, domain, path, expire, reserved);
     }
 
+    /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.doWriteRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT doWriteRequest([NativeTypeName("VARIANT_BOOL *")] short* success)

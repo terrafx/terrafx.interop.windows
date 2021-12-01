@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEngineExtension.CancelObjectCreation">
+    <summary>
+      <para>Cancels the current request to create an object.</para>
+    </summary>
+    <param name="pIUnknownCancelCookie">
+      <para>The pointer that was returned in the the <i>ppIUnknownCancelCookie</i> parameter of the <see cref="IMFMediaEngineExtension.BeginCreateObject" /> method.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method attempts to cancel a previous call to <see cref="BeginCreateObject" />. Because that method is asynchronous, however, it might complete before the operation can be canceled.</para>
+    </remarks>
+    <seealso cref="IMFMediaEngineExtension" />
+  </member>
+  <member name="IMFMediaEngineExtension.CanPlayType">
+    <summary>
+      <para>Queries whether the object can load a specified type of media resource.</para>
+    </summary>
+    <param name="AudioOnly">
+      <para>If <b>TRUE</b>, the Media Engine is set to audio-only mode. Otherwise, the Media Engine is set to audio-video mode.</para>
+    </param>
+    <param name="MimeType">
+      <para>A string that contains a MIME type with an optional codecs parameter, as defined in RFC 4281.</para>
+    </param>
+    <param name="pAnswer">
+      <para>Receives a member of the <see cref="MF_MEDIA_ENGINE_CANPLAY" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Implement this method if your Media Engine extension supports one or more MIME types.</para>
+    </remarks>
+    <seealso cref="IMFMediaEngineExtension" />
+  </member>
+  <member name="IMFMediaEngineExtension.EndCreateObject">
+    <summary>
+      <para>Completes an asynchronous request to create a byte stream or media source.</para>
+    </summary>
+    <param name="pResult">
+      <para>A pointer to the <see cref="IMFAsyncResult" /> interface.</para>
+    </param>
+    <param name="ppObject">
+      <para>Receives a pointer to the <see cref="IUnknown" /> interface of the byte stream or media source. The caller must release the interface</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The Media Engine calls this method to complete the <see cref="IMFMediaEngineExtension.BeginCreateObject" /> method.</para>
+    </remarks>
+    <seealso cref="IMFMediaEngineExtension" />
+  </member>
+  <member name="IMFMediaEngineExtension">
+    <summary>
+      <para>Enables an application to load media resources in the Media Engine.</para>
+    </summary>
+    <remarks>
+      <para>To use this interface, set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-media-engine-extension">MF_MEDIA_ENGINE_EXTENSION</a> attribute when you call the <see cref="IMFMediaEngineClassFactory.CreateInstance" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

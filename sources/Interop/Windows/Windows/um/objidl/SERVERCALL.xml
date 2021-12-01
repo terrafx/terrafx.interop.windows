@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SERVERCALL">
+    <summary>
+      <para>Indicates the status of server call.</para>
+    </summary>
+    <seealso cref="IMessageFilter.HandleInComingCall" />
+    <seealso cref="IMessageFilter.RetryRejectedCall" />
+  </member>
+  <member name="SERVERCALL.SERVERCALL_ISHANDLED">
+    <summary>
+      <para>The object may be able to process the call.</para>
+    </summary>
+  </member>
+  <member name="SERVERCALL.SERVERCALL_REJECTED">
+    <summary>
+      <para>The object cannot handle the call due to an unforeseen problem, such as network unavailability.</para>
+    </summary>
+  </member>
+  <member name="SERVERCALL.SERVERCALL_RETRYLATER">
+    <summary>
+      <para>The object cannot handle the call at this time. For example, an application might return this value when it is in a user-controlled modal state.</para>
+    </summary>
+  </member>
+</doc>

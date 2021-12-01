@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_MEMORY_SEGMENT_GROUP.xml' path='doc/member[@name="DXGI_MEMORY_SEGMENT_GROUP"]/*' />
 public enum DXGI_MEMORY_SEGMENT_GROUP
 {
+    /// <include file='DXGI_MEMORY_SEGMENT_GROUP.xml' path='doc/member[@name="DXGI_MEMORY_SEGMENT_GROUP.DXGI_MEMORY_SEGMENT_GROUP_LOCAL"]/*' />
     DXGI_MEMORY_SEGMENT_GROUP_LOCAL = 0,
+
+    /// <include file='DXGI_MEMORY_SEGMENT_GROUP.xml' path='doc/member[@name="DXGI_MEMORY_SEGMENT_GROUP.DXGI_MEMORY_SEGMENT_GROUP_NON_LOCAL"]/*' />
     DXGI_MEMORY_SEGMENT_GROUP_NON_LOCAL = 1,
 }

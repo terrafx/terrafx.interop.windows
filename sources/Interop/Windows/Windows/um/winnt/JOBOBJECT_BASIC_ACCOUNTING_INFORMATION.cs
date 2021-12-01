@@ -5,25 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION"]/*' />
 public partial struct JOBOBJECT_BASIC_ACCOUNTING_INFORMATION
 {
+    /// <include file='JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.TotalUserTime"]/*' />
     public LARGE_INTEGER TotalUserTime;
 
+    /// <include file='JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.TotalKernelTime"]/*' />
     public LARGE_INTEGER TotalKernelTime;
 
+    /// <include file='JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.ThisPeriodTotalUserTime"]/*' />
     public LARGE_INTEGER ThisPeriodTotalUserTime;
 
+    /// <include file='JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.ThisPeriodTotalKernelTime"]/*' />
     public LARGE_INTEGER ThisPeriodTotalKernelTime;
 
+    /// <include file='JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.TotalPageFaultCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint TotalPageFaultCount;
 
+    /// <include file='JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.TotalProcesses"]/*' />
     [NativeTypeName("DWORD")]
     public uint TotalProcesses;
 
+    /// <include file='JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.ActiveProcesses"]/*' />
     [NativeTypeName("DWORD")]
     public uint ActiveProcesses;
 
+    /// <include file='JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.TotalTerminatedProcesses"]/*' />
     [NativeTypeName("DWORD")]
     public uint TotalTerminatedProcesses;
 }

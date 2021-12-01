@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_REGISTRY_STORE_CLIENT_GPT_PARA.xml' path='doc/member[@name="CERT_REGISTRY_STORE_CLIENT_GPT_PARA"]/*' />
 public unsafe partial struct CERT_REGISTRY_STORE_CLIENT_GPT_PARA
 {
+    /// <include file='CERT_REGISTRY_STORE_CLIENT_GPT_PARA.xml' path='doc/member[@name="CERT_REGISTRY_STORE_CLIENT_GPT_PARA.hKeyBase"]/*' />
     public HKEY hKeyBase;
 
+    /// <include file='CERT_REGISTRY_STORE_CLIENT_GPT_PARA.xml' path='doc/member[@name="CERT_REGISTRY_STORE_CLIENT_GPT_PARA.pwszRegPath"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszRegPath;
 }

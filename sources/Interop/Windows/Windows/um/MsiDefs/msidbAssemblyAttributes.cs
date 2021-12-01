@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbAssemblyAttributes.xml' path='doc/member[@name="msidbAssemblyAttributes"]/*' />
 public enum msidbAssemblyAttributes
 {
+    /// <include file='msidbAssemblyAttributes.xml' path='doc/member[@name="msidbAssemblyAttributes.msidbAssemblyAttributesURT"]/*' />
     msidbAssemblyAttributesURT = 0x00000000,
+
+    /// <include file='msidbAssemblyAttributes.xml' path='doc/member[@name="msidbAssemblyAttributes.msidbAssemblyAttributesWin32"]/*' />
     msidbAssemblyAttributesWin32 = 0x00000001,
 }

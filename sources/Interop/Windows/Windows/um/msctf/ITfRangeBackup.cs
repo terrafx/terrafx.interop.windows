@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfRangeBackup.xml' path='doc/member[@name="ITfRangeBackup"]/*' />
 [Guid("463A506D-6992-49D2-9B88-93D55E70BB16")]
 [NativeTypeName("struct ITfRangeBackup : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface
         return ((delegate* unmanaged<ITfRangeBackup*, Guid*, void**, int>)(lpVtbl[0]))((ITfRangeBackup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface
         return ((delegate* unmanaged<ITfRangeBackup*, uint>)(lpVtbl[1]))((ITfRangeBackup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface
         return ((delegate* unmanaged<ITfRangeBackup*, uint>)(lpVtbl[2]))((ITfRangeBackup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfRangeBackup.xml' path='doc/member[@name="ITfRangeBackup.Restore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Restore([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange)

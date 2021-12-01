@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MARGINS.xml' path='doc/member[@name="MARGINS"]/*' />
 public partial struct MARGINS
 {
+    /// <include file='MARGINS.xml' path='doc/member[@name="MARGINS.cxLeftWidth"]/*' />
     public int cxLeftWidth;
 
+    /// <include file='MARGINS.xml' path='doc/member[@name="MARGINS.cxRightWidth"]/*' />
     public int cxRightWidth;
 
+    /// <include file='MARGINS.xml' path='doc/member[@name="MARGINS.cyTopHeight"]/*' />
     public int cyTopHeight;
 
+    /// <include file='MARGINS.xml' path='doc/member[@name="MARGINS.cyBottomHeight"]/*' />
     public int cyBottomHeight;
 }

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSS_PERFORMANCE_COUNTERS">
+    <summary>
+      <para>Holds performance counters returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssquerysnapshot">PssQuerySnapshot</a>.</para>
+    </summary>
+    <remarks>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssquerysnapshot">PssQuerySnapshot</a> returns a <b>PSS_PERFORMANCE_COUNTERS</b> structure when the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_query_information_class">PSS_QUERY_INFORMATION_CLASS</a> member that the caller provides it is  <b>PSS_QUERY_PERFORMANCE_COUNTERS</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.TotalCycleCount">
+    <summary>
+      <para>The count of clock cycles spent for capture.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.TotalWallClockPeriod">
+    <summary>
+      <para>The count of <see cref="FILETIME" /> units spent for capture.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.VaCloneCycleCount">
+    <summary>
+      <para>The count of clock cycles spent for the capture of the VA clone.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.VaCloneWallClockPeriod">
+    <summary>
+      <para>The count of <see cref="FILETIME" /> units spent for the capture of the VA clone.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.VaSpaceCycleCount">
+    <summary>
+      <para>The count of clock cycles spent for the capture of VA space information.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.VaSpaceWallClockPeriod">
+    <summary>
+      <para>The count of <see cref="FILETIME" /> units spent for the capture VA space information.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.AuxPagesCycleCount">
+    <summary>
+      <para>The count of clock cycles spent for the capture of auxiliary page information.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.AuxPagesWallClockPeriod">
+    <summary>
+      <para>The count of <see cref="FILETIME" /> units spent for the capture of auxiliary page information.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.HandlesCycleCount">
+    <summary>
+      <para>The count of clock cycles spent for the capture of handle information.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.HandlesWallClockPeriod">
+    <summary>
+      <para>The count of <see cref="FILETIME" /> units spent for the capture of handle information.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.ThreadsCycleCount">
+    <summary>
+      <para>The count of clock cycles spent for the capture of thread information.</para>
+    </summary>
+  </member>
+  <member name="PSS_PERFORMANCE_COUNTERS.ThreadsWallClockPeriod">
+    <summary>
+      <para>The count of <see cref="FILETIME" /> units spent for the capture of thread information.</para>
+    </summary>
+  </member>
+</doc>

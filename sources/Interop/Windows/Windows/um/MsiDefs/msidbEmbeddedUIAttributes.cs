@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbEmbeddedUIAttributes.xml' path='doc/member[@name="msidbEmbeddedUIAttributes"]/*' />
 public enum msidbEmbeddedUIAttributes
 {
+    /// <include file='msidbEmbeddedUIAttributes.xml' path='doc/member[@name="msidbEmbeddedUIAttributes.msidbEmbeddedUI"]/*' />
     msidbEmbeddedUI = 0x01,
+
+    /// <include file='msidbEmbeddedUIAttributes.xml' path='doc/member[@name="msidbEmbeddedUIAttributes.msidbEmbeddedHandlesBasic"]/*' />
     msidbEmbeddedHandlesBasic = 0x02,
 }

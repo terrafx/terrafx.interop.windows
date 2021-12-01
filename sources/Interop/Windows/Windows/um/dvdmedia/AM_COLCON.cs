@@ -7,10 +7,12 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_COLCON.xml' path='doc/member[@name="AM_COLCON"]/*' />
 public partial struct AM_COLCON
 {
     public byte _bitfield1;
 
+    /// <include file='AM_COLCON.xml' path='doc/member[@name="AM_COLCON.emph1col"]/*' />
     [NativeTypeName("UCHAR : 4")]
     public byte emph1col
     {
@@ -27,6 +29,7 @@ public partial struct AM_COLCON
         }
     }
 
+    /// <include file='AM_COLCON.xml' path='doc/member[@name="AM_COLCON.emph2col"]/*' />
     [NativeTypeName("UCHAR : 4")]
     public byte emph2col
     {
@@ -45,6 +48,7 @@ public partial struct AM_COLCON
 
     public byte _bitfield2;
 
+    /// <include file='AM_COLCON.xml' path='doc/member[@name="AM_COLCON.backcol"]/*' />
     [NativeTypeName("UCHAR : 4")]
     public byte backcol
     {
@@ -61,6 +65,7 @@ public partial struct AM_COLCON
         }
     }
 
+    /// <include file='AM_COLCON.xml' path='doc/member[@name="AM_COLCON.patcol"]/*' />
     [NativeTypeName("UCHAR : 4")]
     public byte patcol
     {
@@ -79,6 +84,7 @@ public partial struct AM_COLCON
 
     public byte _bitfield3;
 
+    /// <include file='AM_COLCON.xml' path='doc/member[@name="AM_COLCON.emph1con"]/*' />
     [NativeTypeName("UCHAR : 4")]
     public byte emph1con
     {
@@ -95,6 +101,7 @@ public partial struct AM_COLCON
         }
     }
 
+    /// <include file='AM_COLCON.xml' path='doc/member[@name="AM_COLCON.emph2con"]/*' />
     [NativeTypeName("UCHAR : 4")]
     public byte emph2con
     {
@@ -113,6 +120,7 @@ public partial struct AM_COLCON
 
     public byte _bitfield4;
 
+    /// <include file='AM_COLCON.xml' path='doc/member[@name="AM_COLCON.backcon"]/*' />
     [NativeTypeName("UCHAR : 4")]
     public byte backcon
     {
@@ -129,6 +137,7 @@ public partial struct AM_COLCON
         }
     }
 
+    /// <include file='AM_COLCON.xml' path='doc/member[@name="AM_COLCON.patcon"]/*' />
     [NativeTypeName("UCHAR : 4")]
     public byte patcon
     {

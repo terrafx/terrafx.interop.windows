@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFNetResourceFilter.xml' path='doc/member[@name="IMFNetResourceFilter"]/*' />
 [Guid("091878A3-BF11-4A5C-BC9F-33995B06EF2D")]
 [NativeTypeName("struct IMFNetResourceFilter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
         return ((delegate* unmanaged<IMFNetResourceFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
         return ((delegate* unmanaged<IMFNetResourceFilter*, uint>)(lpVtbl[1]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
         return ((delegate* unmanaged<IMFNetResourceFilter*, uint>)(lpVtbl[2]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFNetResourceFilter.xml' path='doc/member[@name="IMFNetResourceFilter.OnRedirect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnRedirect([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvbCancel)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
         return ((delegate* unmanaged<IMFNetResourceFilter*, ushort*, short*, int>)(lpVtbl[3]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl, pvbCancel);
     }
 
+    /// <include file='IMFNetResourceFilter.xml' path='doc/member[@name="IMFNetResourceFilter.OnSendingRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnSendingRequest([NativeTypeName("LPCWSTR")] ushort* pszUrl)

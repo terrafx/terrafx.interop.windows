@@ -8,24 +8,33 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO"]/*' />
 public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
 {
+    /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.pixelRate"]/*' />
     [NativeTypeName("UINT64")]
     public ulong pixelRate;
 
+    /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.hSyncFreq"]/*' />
     public DISPLAYCONFIG_RATIONAL hSyncFreq;
 
+    /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.vSyncFreq"]/*' />
     public DISPLAYCONFIG_RATIONAL vSyncFreq;
 
+    /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.activeSize"]/*' />
     public DISPLAYCONFIG_2DREGION activeSize;
 
+    /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.totalSize"]/*' />
     public DISPLAYCONFIG_2DREGION totalSize;
 
+    /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.Anonymous"]/*' />
     [NativeTypeName("DISPLAYCONFIG_VIDEO_SIGNAL_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2850:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.scanLineOrdering"]/*' />
     public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AdditionalSignalInfo"]/*' />
     public ref _Anonymous_e__Union._AdditionalSignalInfo_e__Struct AdditionalSignalInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +44,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.videoStandard"]/*' />
     public ref uint videoStandard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,21 +54,26 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AdditionalSignalInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2852:9)")]
         public _AdditionalSignalInfo_e__Struct AdditionalSignalInfo;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.videoStandard"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UINT32")]
         public uint videoStandard;
 
+        /// <include file='_AdditionalSignalInfo_e__Struct.xml' path='doc/member[@name="_AdditionalSignalInfo_e__Struct"]/*' />
         public partial struct _AdditionalSignalInfo_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_AdditionalSignalInfo_e__Struct.xml' path='doc/member[@name="_AdditionalSignalInfo_e__Struct.videoStandard"]/*' />
             [NativeTypeName("UINT32 : 16")]
             public uint videoStandard
             {
@@ -75,6 +90,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
                 }
             }
 
+            /// <include file='_AdditionalSignalInfo_e__Struct.xml' path='doc/member[@name="_AdditionalSignalInfo_e__Struct.vSyncFreqDivider"]/*' />
             [NativeTypeName("UINT32 : 6")]
             public uint vSyncFreqDivider
             {
@@ -91,6 +107,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
                 }
             }
 
+            /// <include file='_AdditionalSignalInfo_e__Struct.xml' path='doc/member[@name="_AdditionalSignalInfo_e__Struct.reserved"]/*' />
             [NativeTypeName("UINT32 : 10")]
             public uint reserved
             {

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCleanupContextDurationSink.xml' path='doc/member[@name="ITfCleanupContextDurationSink"]/*' />
 [Guid("45C35144-154E-4797-BED8-D33AE7BF8794")]
 [NativeTypeName("struct ITfCleanupContextDurationSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
         return ((delegate* unmanaged<ITfCleanupContextDurationSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
         return ((delegate* unmanaged<ITfCleanupContextDurationSink*, uint>)(lpVtbl[1]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
         return ((delegate* unmanaged<ITfCleanupContextDurationSink*, uint>)(lpVtbl[2]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCleanupContextDurationSink.xml' path='doc/member[@name="ITfCleanupContextDurationSink.OnStartCleanupContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnStartCleanupContext()
@@ -46,6 +51,7 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
         return ((delegate* unmanaged<ITfCleanupContextDurationSink*, int>)(lpVtbl[3]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCleanupContextDurationSink.xml' path='doc/member[@name="ITfCleanupContextDurationSink.OnEndCleanupContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnEndCleanupContext()

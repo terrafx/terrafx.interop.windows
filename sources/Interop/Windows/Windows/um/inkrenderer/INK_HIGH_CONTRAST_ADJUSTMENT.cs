@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INK_HIGH_CONTRAST_ADJUSTMENT.xml' path='doc/member[@name="INK_HIGH_CONTRAST_ADJUSTMENT"]/*' />
 public enum INK_HIGH_CONTRAST_ADJUSTMENT
 {
+    /// <include file='INK_HIGH_CONTRAST_ADJUSTMENT.xml' path='doc/member[@name="INK_HIGH_CONTRAST_ADJUSTMENT.USE_SYSTEM_COLORS_WHEN_NECESSARY"]/*' />
     USE_SYSTEM_COLORS_WHEN_NECESSARY = 0,
+
+    /// <include file='INK_HIGH_CONTRAST_ADJUSTMENT.xml' path='doc/member[@name="INK_HIGH_CONTRAST_ADJUSTMENT.USE_SYSTEM_COLORS"]/*' />
     USE_SYSTEM_COLORS = 1,
+
+    /// <include file='INK_HIGH_CONTRAST_ADJUSTMENT.xml' path='doc/member[@name="INK_HIGH_CONTRAST_ADJUSTMENT.USE_ORIGINAL_COLORS"]/*' />
     USE_ORIGINAL_COLORS = 2,
 }

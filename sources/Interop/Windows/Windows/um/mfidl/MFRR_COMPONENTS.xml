@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFRR_COMPONENTS">
+    <summary>
+      <para>Contains information about one or more revoked components.</para>
+    </summary>
+    <seealso cref="MFRR_COMPONENT_HASH_INFO" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFRR_COMPONENTS.dwRRInfoVersion">
+    <summary>
+      <para>Revocation information version.</para>
+    </summary>
+  </member>
+  <member name="MFRR_COMPONENTS.dwRRComponents">
+    <summary>
+      <para>Number of elements in the <b>pRRComponents</b> array.</para>
+    </summary>
+  </member>
+  <member name="MFRR_COMPONENTS.pRRComponents">
+    <summary>
+      <para>Array of <see cref="MFRR_COMPONENT_HASH_INFO" /> structures.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_REPEATING_HEADER_OPTION">
+    <summary>
+      <para>This enum is used to specify whether a header is expected
+to appear more than once in a message.</para>
+    </summary>
+  </member>
+  <member name="WS_REPEATING_HEADER_OPTION.WS_REPEATING_HEADER">
+    <summary>
+      <para>The header may appear more than once in the message.</para>
+    </summary>
+  </member>
+  <member name="WS_REPEATING_HEADER_OPTION.WS_SINGLETON_HEADER">
+    <summary>
+      <para>The header may appear at most once in the message.
+When this option is specified, the function
+ensures that the specified header appears
+at most once in the message.</para>
+    </summary>
+  </member>
+</doc>

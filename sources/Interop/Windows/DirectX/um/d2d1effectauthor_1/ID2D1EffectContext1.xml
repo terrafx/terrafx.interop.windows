@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1EffectContext1.CreateLookupTable3D">
+    <summary>
+      <para>Creates a 3D lookup table for mapping a 3-channel input to a 3-channel output.
+The table data must be provided in 4-channel format.</para>
+    </summary>
+    <param name="precision">
+      <para>Type: <b><see cref="D2D1_BUFFER_PRECISION" /></b></para>
+      <para>Precision of the input lookup table data.</para>
+    </param>
+    <param name="extents">
+      <para>Type: <b>const UINT32*</b></para>
+      <para>Number of lookup table elements per dimension (X, Y, Z).</para>
+    </param>
+    <param name="data">
+      <para>Type: <b>const BYTE*</b></para>
+      <para>Buffer holding the lookup table data.</para>
+    </param>
+    <param name="dataCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>Size of the lookup table data buffer.</para>
+    </param>
+    <param name="strides">
+      <para>Type: <b>const UINT32*</b></para>
+      <para>An array containing two values. The first value is the size in bytes from one row (X dimension) of LUT data to the next.
+The second value is the size in bytes from one LUT data plane (X and Y dimensions) to the next.</para>
+    </param>
+    <param name="lookupTable">
+      <para>Type: <b><see cref="ID2D1LookupTable3D" />**</b></para>
+      <para>Receives the new lookup table instance.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1EffectContext1" />
+  </member>
+  <member name="ID2D1EffectContext1">
+    <summary>
+      <para>Provides factory methods and other state management for effect and transform authors.</para>
+    </summary>
+    <seealso cref="ID2D1EffectContext" />
+  </member>
+</doc>

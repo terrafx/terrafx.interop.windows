@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UNIVERSAL_NAME_INFOA.xml' path='doc/member[@name="UNIVERSAL_NAME_INFOA"]/*' />
 public unsafe partial struct UNIVERSAL_NAME_INFOA
 {
+    /// <include file='UNIVERSAL_NAME_INFOA.xml' path='doc/member[@name="UNIVERSAL_NAME_INFOA.lpUniversalName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpUniversalName;
 }

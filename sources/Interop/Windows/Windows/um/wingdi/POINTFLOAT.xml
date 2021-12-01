@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POINTFLOAT">
+    <summary>
+      <para>The <b>POINTFLOAT</b> structure contains the x and y coordinates of a point.</para>
+    </summary>
+    <seealso cref="GLYPHMETRICSFLOAT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/OpenGL/opengl-on-windows-nt--windows-2000--and-windows-95-98">OpenGL on Windows</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/OpenGL/structures">Structures</seealso>
+  </member>
+  <member name="POINTFLOAT.x">
+    <summary>
+      <para>Specifies the horizontal (x) coordinate of a point.</para>
+    </summary>
+  </member>
+  <member name="POINTFLOAT.y">
+    <summary>
+      <para>Specifies the vertical (y) coordinate of a point.</para>
+    </summary>
+  </member>
+</doc>

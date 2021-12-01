@@ -7,12 +7,22 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PACKAGE_EXECUTION_STATE.xml' path='doc/member[@name="PACKAGE_EXECUTION_STATE"]/*' />
 [Flags]
 public enum PACKAGE_EXECUTION_STATE
 {
+    /// <include file='PACKAGE_EXECUTION_STATE.xml' path='doc/member[@name="PACKAGE_EXECUTION_STATE.PES_UNKNOWN"]/*' />
     PES_UNKNOWN = 0,
+
+    /// <include file='PACKAGE_EXECUTION_STATE.xml' path='doc/member[@name="PACKAGE_EXECUTION_STATE.PES_RUNNING"]/*' />
     PES_RUNNING = 1,
+
+    /// <include file='PACKAGE_EXECUTION_STATE.xml' path='doc/member[@name="PACKAGE_EXECUTION_STATE.PES_SUSPENDING"]/*' />
     PES_SUSPENDING = 2,
+
+    /// <include file='PACKAGE_EXECUTION_STATE.xml' path='doc/member[@name="PACKAGE_EXECUTION_STATE.PES_SUSPENDED"]/*' />
     PES_SUSPENDED = 3,
+
+    /// <include file='PACKAGE_EXECUTION_STATE.xml' path='doc/member[@name="PACKAGE_EXECUTION_STATE.PES_TERMINATED"]/*' />
     PES_TERMINATED = 4,
 }

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PrintDocumentPackageCompletion">
+    <summary>
+      <para>The PrintDocumentPackageCompletion enumeration specifies the status of the print operation.</para>
+    </summary>
+  </member>
+  <member name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_InProgress">
+    <summary>
+      <para>The print job is running.</para>
+    </summary>
+  </member>
+  <member name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_Completed">
+    <summary>
+      <para>The print operation completed without error.</para>
+    </summary>
+  </member>
+  <member name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_Canceled">
+    <summary>
+      <para>The print operation was canceled.</para>
+    </summary>
+  </member>
+  <member name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_Failed">
+    <summary>
+      <para>The print operation failed.</para>
+    </summary>
+  </member>
+</doc>

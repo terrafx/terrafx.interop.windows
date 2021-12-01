@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICMetadataReaderInfo.CreateInstance">
+    <summary>
+      <para>Creates an instance of an <see cref="IWICMetadataReader" />.</para>
+    </summary>
+    <param name="ppIReader">
+      <para>Type: <b><see cref="IWICMetadataReader" />**</b></para>
+      <para>Pointer that receives a pointer to a metadata reader.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataReaderInfo.GetPatterns">
+    <summary>
+      <para>Gets the metadata patterns associated with the metadata reader.</para>
+    </summary>
+    <param name="guidContainerFormat">
+      <para>Type: <b>REFGUID</b></para>
+      <para>The cointainer format GUID.</para>
+    </param>
+    <param name="cbSize">
+      <para>Type: <b>UINT</b></para>
+      <para>The size, in bytes, of the <i>pPattern</i> buffer.</para>
+    </param>
+    <param name="pPattern">
+      <para>Type: <b><see cref="WICMetadataPattern" />*</b></para>
+      <para>Pointer that receives the metadata patterns.</para>
+    </param>
+    <param name="pcCount">
+      <para>Type: <b>UINT*</b></para>
+      <para>Pointer that receives the number of metadata patterns.</para>
+    </param>
+    <param name="pcbActual">
+      <para>Type: <b>UINT*</b></para>
+      <para>Pointer that receives the size, in bytes, needed to obtain the metadata patterns.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataReaderInfo.MatchesPattern">
+    <summary>
+      <para>Determines if a stream contains a metadata item pattern.</para>
+    </summary>
+    <param name="guidContainerFormat">
+      <para>Type: <b>REFGUID</b></para>
+      <para>The container format of the metadata item.</para>
+    </param>
+    <param name="pIStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>The stream to search for the metadata pattern.</para>
+    </param>
+    <param name="pfMatches">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Pointer that receives <code>TRUE</code> if the stream contains the pattern; otherwise, <code>FALSE</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataReaderInfo">
+    <summary>
+      <para>Exposes methods that provide basic information about the registered metadata reader.</para>
+    </summary>
+  </member>
+</doc>

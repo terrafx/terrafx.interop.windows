@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_ATTRIBUTE">
+    <summary>
+      <para>Represents an attribute (for example, &lt;a:purchaseOrder xmlns:a="http://tempuri.org" id="5"&gt;)</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ATTRIBUTE.singleQuote">
+    <summary>
+      <para>Whether to use a single quote or double quote to surround an attribute value.  In the example, the value of singleQuote for attribute "id" would be <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ATTRIBUTE.isXmlNs">
+    <summary>
+      <para>Whether or not the attribute is an xmlns attribute.  In the example above, this would be <b>TRUE</b> for the attribute "xmlns:a", but <b>FALSE</b> for the attribute "id".</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ATTRIBUTE.prefix">
+    <summary>
+      <para>The prefix of the attribute.  In the example above, the prefix for attribute "xmlns:a" is "a", while the prefix for "id" is a zero length string.</para>
+      <para>The prefix for the attribute "xmlns" is a zero length string.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ATTRIBUTE.localName">
+    <summary>
+      <para>The localName of the attribute.  In the example above, the localName for attribute "xmlns:a" is not used so it is <b>NULL</b>.  The localName for attribute "id" is "id".</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ATTRIBUTE.ns">
+    <summary>
+      <para>The namespace of the attribute.  In the example above, the namespace for the attribute "xmlns:a" is "http://tempuri.org".  The namespace for attribute "id" is the
+empty namespace which is represented by a zero length string.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ATTRIBUTE.value">
+    <summary>
+      <para>The value of the attribute.  In the example above the value for attribute "xmlns:a" is not used so it is <b>NULL</b>.  The value for the attribute "id" is a <see cref="WS_XML_TEXT" /> that refers to the value "5".</para>
+    </summary>
+  </member>
+</doc>

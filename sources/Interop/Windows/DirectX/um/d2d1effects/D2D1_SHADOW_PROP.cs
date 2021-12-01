@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_SHADOW_PROP.xml' path='doc/member[@name="D2D1_SHADOW_PROP"]/*' />
 public enum D2D1_SHADOW_PROP : uint
 {
+    /// <include file='D2D1_SHADOW_PROP.xml' path='doc/member[@name="D2D1_SHADOW_PROP.D2D1_SHADOW_PROP_BLUR_STANDARD_DEVIATION"]/*' />
     D2D1_SHADOW_PROP_BLUR_STANDARD_DEVIATION = 0,
+
+    /// <include file='D2D1_SHADOW_PROP.xml' path='doc/member[@name="D2D1_SHADOW_PROP.D2D1_SHADOW_PROP_COLOR"]/*' />
     D2D1_SHADOW_PROP_COLOR = 1,
+
+    /// <include file='D2D1_SHADOW_PROP.xml' path='doc/member[@name="D2D1_SHADOW_PROP.D2D1_SHADOW_PROP_OPTIMIZATION"]/*' />
     D2D1_SHADOW_PROP_OPTIMIZATION = 2,
+
+    /// <include file='D2D1_SHADOW_PROP.xml' path='doc/member[@name="D2D1_SHADOW_PROP.D2D1_SHADOW_PROP_FORCE_DWORD"]/*' />
     D2D1_SHADOW_PROP_FORCE_DWORD = 0xffffffff,
 }

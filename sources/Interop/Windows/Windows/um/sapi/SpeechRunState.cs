@@ -7,8 +7,12 @@ using static TerraFX.Interop.Windows.SPRUNSTATE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechRunState.xml' path='doc/member[@name="SpeechRunState"]/*' />
 public enum SpeechRunState
 {
+    /// <include file='SpeechRunState.xml' path='doc/member[@name="SpeechRunState.SRSEDone"]/*' />
     SRSEDone = SPRS_DONE,
+
+    /// <include file='SpeechRunState.xml' path='doc/member[@name="SpeechRunState.SRSEIsSpeaking"]/*' />
     SRSEIsSpeaking = SPRS_IS_SPEAKING,
 }

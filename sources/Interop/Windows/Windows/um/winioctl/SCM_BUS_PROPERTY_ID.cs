@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_BUS_PROPERTY_ID.xml' path='doc/member[@name="SCM_BUS_PROPERTY_ID"]/*' />
 public enum SCM_BUS_PROPERTY_ID
 {
+    /// <include file='SCM_BUS_PROPERTY_ID.xml' path='doc/member[@name="SCM_BUS_PROPERTY_ID.ScmBusProperty_RuntimeFwActivationInfo"]/*' />
     ScmBusProperty_RuntimeFwActivationInfo = 0,
+
+    /// <include file='SCM_BUS_PROPERTY_ID.xml' path='doc/member[@name="SCM_BUS_PROPERTY_ID.ScmBusProperty_DedicatedMemoryInfo"]/*' />
     ScmBusProperty_DedicatedMemoryInfo = 1,
+
+    /// <include file='SCM_BUS_PROPERTY_ID.xml' path='doc/member[@name="SCM_BUS_PROPERTY_ID.ScmBusProperty_DedicatedMemoryState"]/*' />
     ScmBusProperty_DedicatedMemoryState = 2,
+
+    /// <include file='SCM_BUS_PROPERTY_ID.xml' path='doc/member[@name="SCM_BUS_PROPERTY_ID.ScmBusProperty_Max"]/*' />
     ScmBusProperty_Max,
 }

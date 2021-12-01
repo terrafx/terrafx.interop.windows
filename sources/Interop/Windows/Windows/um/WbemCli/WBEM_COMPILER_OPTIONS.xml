@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_COMPILER_OPTIONS">
+    <summary>
+      <para>Contains option flags for <see cref="IMofCompiler" /> methods.</para>
+    </summary>
+    <seealso cref="CompileBuffer" />
+    <seealso cref="CompileFile" />
+    <seealso cref="CreateBMOF" />
+  </member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_CHECK_ONLY">
+    <summary></summary>
+  </member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_AUTORECOVER">
+    <summary></summary>
+  </member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_WMI_CHECK">
+    <summary></summary>
+  </member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_CONSOLE_PRINT">
+    <summary></summary>
+  </member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_DONT_ADD_TO_LIST">
+    <summary></summary>
+  </member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_SPLIT_FILES">
+    <summary></summary>
+  </member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_STORE_FILE">
+    <summary></summary>
+  </member>
+</doc>

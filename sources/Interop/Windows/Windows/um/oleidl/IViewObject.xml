@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IViewObject.Draw">
+    <summary>
+      <para>Draws a representation of an object onto the specified device context.</para>
+    </summary>
+    <param name="dwDrawAspect">
+      <para>Specifies the aspect to be drawn, that is, how the object is to be represented. Representations include content, an icon, a thumbnail, or a printed document. Valid values are taken from the enumerations <see cref="DVASPECT" /> and <see cref="DVASPECT2" />. Note that newer objects and containers that support optimized drawing interfaces support the <b>DVASPECT2</b> enumeration values. Older objects and containers that do not support optimized drawing interfaces may not support <b>DVASPECT2</b>. Windowless objects allow only <b>DVASPECT</b>_CONTENT, <b>DVASPECT</b>_OPAQUE, and <b>DVASPECT</b>_TRANSPARENT.</para>
+    </param>
+    <param name="lindex">
+      <para>Portion of the object that is of interest for the draw operation. Its interpretation varies depending on the value in the dwAspect parameter. See the <see cref="DVASPECT" /> enumeration for more information.</para>
+    </param>
+    <param name="pvAspect">
+      <para>Pointer to additional information in a <see cref="DVASPECTINFO" /> structure that enables drawing optimizations depending on the aspect specified. Note that newer objects and containers that support optimized drawing interfaces support this parameter as well. Older objects and containers that do not support optimized drawing interfaces always specify <b>NULL</b> for this parameter.</para>
+    </param>
+    <param name="ptd">
+      <para>Pointer to the <see cref="DVTARGETDEVICE" /> structure that describes the device for which the object is to be rendered. If <b>NULL</b>, the view should be rendered for the default target device (typically the display). A value other than <b>NULL</b> is interpreted in conjunction with <i>hdcTargetDev</i> and <i>hdcDraw</i>. For example, if <i>hdcDraw</i> specifies a printer as the device context, the <i>ptd</i> parameter points to a structure describing that printer device. The data may actually be printed if <i>hdcTargetDev</i> is a valid value or it may be displayed in print preview mode if <i>hdcTargetDev</i> is <b>NULL</b>.</para>
+    </param>
+    <param name="hdcTargetDev">
+      <para>Information context for the target device indicated by the ptd parameter from which the object can extract device metrics and test the device's capabilities. If <i>ptd</i> is <b>NULL</b>; the object should ignore the value in the <i>hdcTargetDev</i> parameter.</para>
+    </param>
+    <param name="hdcDraw">
+      <para>Device context on which to draw. For a windowless object, the <i>hdcDraw</i> parameter should be in MM_TEXT mapping mode with its logical coordinates matching the client coordinates of the containing window. For a windowless object, the device context should be in the same state as the one normally passed by a WM_PAINT message.</para>
+    </param>
+    <param name="lprcBounds">
+      <para>Pointer to a RECTL structure specifying the rectangle on <i>hdcDraw</i> and in which the object should be drawn. This parameter controls the positioning and stretching of the object. This parameter should be <b>NULL</b> to draw a windowless in-place active object. In every other situation, <b>NULL</b> is not a legal value and should result in an E_INVALIDARG error code. If the container passes a non-<b>NULL</b> value to a windowless object, the object should render the requested aspect into the specified device context and rectangle. A container can request this from a windowless object to render a second, non-active view of the object or to print the object.</para>
+    </param>
+    <param name="lprcWBounds">
+      <para>If <i>hdcDraw</i> is a metafile device context, pointer to a RECTL structure specifying the bounding rectangle in the underlying metafile. The rectangle structure contains the window extent and window origin. These values are useful for drawing metafiles. The rectangle indicated by <i>lprcBounds</i> is nested inside this <i>lprcWBounds</i> rectangle; they are in the same coordinate space.</para>
+      <para>If <i>hdcDraw</i> is not a metafile device context; <i>lprcWBounds</i> will be <b>NULL</b>.</para>
+    </param>
+    <param name="pfnContinue">
+      <para>Pointer to a callback function that the view object should call periodically during a lengthy drawing operation to determine whether the operation should continue or be canceled. This function returns <b>TRUE</b> to continue drawing. It returns <b>FALSE</b> to stop the drawing in which case <b>IViewObject.Draw</b> returns DRAW_E_ABORT.</para>
+      <h4>dwContinue</h4>
+    </param>
+    <param name="dwContinue">
+      <para>Value to pass as a parameter to the function pointed to by the <i>pfnContinue</i> parameter. Typically, <i>dwContinue</i> is a pointer to an application-defined structure needed inside the callback function.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_BLANK</b>
+            </para>
+          </description>
+          <description>
+            <para>No data to draw from.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>DRAW_E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>Draw operation aborted.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VIEW_E_DRAW</b>
+            </para>
+          </description>
+          <description>
+            <para>Error in drawing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>DV_E_LINDEX</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid value for lindex; currently only -1 is supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>DV_E_DVASPECT</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid value for <i>dwAspect</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_INVALIDRECT</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid rectangle.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A container application issues a call to <b>IViewObject.Draw</b> to create a representation of a contained object. This method draws the specified piece (<i>lindex</i>) of the specified view (<i>dwAspect</i> and <i>pvAspect</i>) on the specified device context (<i>hdcDraw</i>). Formatting, fonts, and other rendering decisions are made on the basis of the target device specified by the ptd parameter.</para>
+      <para>There is a relationship between the <i>dwDrawAspect</i> value and the <i>lprcbounds</i> value. The <i>lprcbounds</i> value specifies the rectangle on <i>hdcDraw</i> into which the drawing is to be mapped. For <see cref="DVASPECT" />_THUMBNAIL, <b>DVASPECT</b>_ICON, and <b>DVASPECT</b>_SMALLICON, the object draws whatever it wants to draw, and it maps it into the space given in the best way. Some objects might scale to fit while some might scale to fit but preserve the aspect ratio. In addition, some might scale so the drawing appears at full width, but the bottom is cropped. The container can suggest a size via <see cref="IOleObject.SetExtent" />, but it has no control over the rendering size. In the case of <b>DVASPECT</b>_CONTENT, the <b>IViewObject.Draw</b> implementation should either use the extents given by <b>IOleObject.SetExtent</b> or use the bounding rectangle given in the <i>lprcBounds</i> parameter.</para>
+      <para>For newer objects that support optimized drawing techniques and for windowless objects, this method should be used as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>New drawing aspects are supported in <i>dwAspect</i> as defined in <see cref="DVASPECT2" />.</description>
+        </item>
+        <item>
+          <description>The pvAspect parameter can be used to pass additional information allowing drawing optimizations through the <see cref="DVASPECTINFO" /> structure.</description>
+        </item>
+        <item>
+          <description>The <b>IViewObject.Draw</b> method can be called to redraw a windowless in-place active object by setting the <i>lrpcBounds</i> parameter to <b>NULL</b>. In every other situation, <b>NULL</b> is an illegal value and should result in an E_INVALIDARG error code. A windowless object uses the rectangle passed by the activation verb or calls <see cref="IOleInPlaceObject.SetObjectRects" /> instead of using this parameter. If the container passes a non-<b>NULL</b> value to a windowless object, the object should render the requested aspect into the specified device context and rectangle. A container can request this from a windowless object to render a second, non-active view of the object or to print the object. See the <see cref="IOleInPlaceSiteWindowless" /> interface for more information on drawing windowless objects.</description>
+        </item>
+        <item>
+          <description>For windowless objects, the <i>dwAspect</i> parameter only allows the <see cref="DVASPECT" />_CONTENT, <b>DVASPECT</b>_OPAQUE, and <b>DVASPECT</b>_TRANSPARENT aspects.</description>
+        </item>
+        <item>
+          <description>For a windowless object, the hdcDraw parameter should be in MM_TEXT mapping mode with its logical coordinates matching the client coordinates of the containing window. For a windowless object, the device context should be in the same state as the one normally passed by a WM_PAINT message.</description>
+        </item>
+      </list>
+      <para>To maintain compatibility with older objects and containers that do not support drawing optimizations, all objects, rectangular or not, are required to maintain an origin and a rectangular extent. This allows the container to still consider all its embedded objects as rectangles and to pass them appropriate rendering rectangles in <b>Draw</b>.</para>
+      <para>An object's extent depends on the drawing aspect. For non-rectangular objects, the extent should be the size of a rectangle covering the entire aspect. By convention, the origin of an object is the top-left corner of the rectangle of the <see cref="DVASPECT" />_CONTENT aspect. In other words, the origin always coincides with the top-left corner of the rectangle maintained by the object's site, even for a non-rectangular object.</para>
+    </remarks>
+    <seealso cref="DVASPECT" />
+    <seealso cref="DVASPECT2" />
+    <seealso cref="DVASPECTINFO" />
+    <seealso cref="IOleInPlaceSiteWindowless" />
+    <seealso cref="IViewObject" />
+    <seealso cref="OleDraw" />
+  </member>
+  <member name="IViewObject.Freeze">
+    <summary>
+      <para>Freezes the drawn representation of an object so that it will not change until the <see cref="IViewObject.Unfreeze" /> method is called. The most common use of this method is for banded printing.</para>
+    </summary>
+    <param name="dwDrawAspect">
+      <para>Specifies how the object is to be represented. Representations include content, an icon, a thumbnail, or a printed document. Valid values are taken from the enumeration <see cref="DVASPECT" />. See the <b>DVASPECT</b> enumeration for more information.</para>
+    </param>
+    <param name="lindex">
+      <para>Portion of the object that is of interest for the draw operation. Its interpretation varies with dwAspect. See the <see cref="DVASPECT" /> enumeration for more information.</para>
+    </param>
+    <param name="pvAspect">
+      <para>Pointer to additional information about the view of the object specified in <i>dwAspect</i>. Since none of the current aspects support additional information, <i>pvAspect</i> must always be <b>NULL</b>.</para>
+    </param>
+    <param name="pdwFreeze">
+      <para>Pointer to where an identifying DWORD key is returned. This unique key is later used to cancel the freeze by calling <see cref="IViewObject.Unfreeze" />. This key is an index that the default cache uses to keep track of which object is frozen.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VIEW_S_ALREADY_FROZEN</b>
+            </para>
+          </description>
+          <description>
+            <para>Presentation has already been frozen. The value of <i>pdwFreeze</i> is the identifying key of the already frozen object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_BLANK</b>
+            </para>
+          </description>
+          <description>
+            <para>Presentation not in cache.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>DV_E_LINDEX</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid value for <i>lindex</i>; currently; only -1 is supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>DV_E_DVASPECT</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid value for <i>dwAspect</i>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>IViewObject.Freeze</b> method causes the view object to freeze its drawn representation until a subsequent call to <see cref="IViewObject.Unfreeze" /> releases it. After calling <b>IViewObject.Freeze</b>, successive calls to <see cref="IViewObject.Draw" /> with the same parameters produce the same picture until <b>IViewObject.Unfreeze</b> is called.</para>
+      <para>
+        <b>IViewObject.Freeze</b> is not part of the persistent state of the object and does not continue across unloads and reloads of the object.</para>
+      <para>The most common use of this method is for banded printing.</para>
+      <para>While in a frozen state, view notifications are not sent. Pending view notifications are deferred to the subsequent call to <see cref="IViewObject.Unfreeze" />.</para>
+    </remarks>
+    <seealso cref="DVASPECT" />
+    <seealso cref="IViewObject" />
+    <seealso cref="IViewObject.Unfreeze" />
+  </member>
+  <member name="IViewObject.GetAdvise">
+    <summary>
+      <para>Retrieves the advisory connection on the object that was used in the most recent call to <see cref="IViewObject.SetAdvise" />.</para>
+    </summary>
+    <param name="pAspects">
+      <para>Pointer to where the <i>dwAspect</i> parameter from the previous <see cref="IViewObject.SetAdvise" /> call is returned. If this pointer is <b>NULL</b>, the caller does not permit this value to be returned.</para>
+    </param>
+    <param name="pAdvf">
+      <para>Pointer to where the <i>advf</i> parameter from the previous <see cref="IViewObject.SetAdvise" /> call is returned. If this pointer is <b>NULL</b>, the caller does not permit this value to be returned.</para>
+    </param>
+    <param name="ppAdvSink">
+      <para>Address of <see cref="IAdviseSink" /> pointer variable that receives the interface pointer to the advise sink. The connection to this advise sink must have been established with a previous <see cref="IViewObject.SetAdvise" /> call, which provides the <i>pAdvSink</i> parameter. If <i>ppvAdvSink</i> is <b>NULL</b>, there is no established advisory connection.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <seealso cref="ADVF" />
+    <seealso cref="IAdviseSink" />
+    <seealso cref="IViewObject" />
+    <seealso cref="IViewObject.SetAdvise" />
+  </member>
+  <member name="IViewObject.GetColorSet">
+    <summary>
+      <para>Returns the logical palette that the object will use for drawing in its <see cref="IViewObject.Draw" /> method with the corresponding parameters.</para>
+    </summary>
+    <param name="dwDrawAspect">
+      <para>Specifies how the object is to be represented. Representations include content, an icon, a thumbnail, or a printed document. Valid values are taken from the enumeration <see cref="DVASPECT" />. See the <b>DVASPECT</b> enumeration for more information.</para>
+    </param>
+    <param name="lindex">
+      <para>Portion of the object that is of interest for the draw operation. Its interpretation varies with <i>dwDrawAspect</i>. See the <see cref="DVASPECT" /> enumeration for more information.</para>
+    </param>
+    <param name="pvAspect">
+      <para>Pointer to additional information about the view of the object specified in <i>dwDrawAspect</i>. Since none of the current aspects support additional information, <i>pvAspect</i> must always be <b>NULL</b>.</para>
+    </param>
+    <param name="ptd">
+      <para>Pointer to the <see cref="DVTARGETDEVICE" /> structure that describes the device for which the object is to be rendered. If <b>NULL</b>, the view should be rendered for the default target device (typically the display). A value other than <b>NULL</b> is interpreted in conjunction with <i>hicTargetDev</i> and <i>hdcDraw</i>. For example, if <i>hdcDraw</i> specifies a printer as the device context, ptd points to a structure describing that printer device. The data may actually be printed if <i>hicTargetDev</i> is a valid value or it may be displayed in print preview mode if <i>hicTargetDev</i> is <b>NULL</b>.</para>
+    </param>
+    <param name="hicTargetDev">
+      <para>Information context for the target device indicated by the <i>ptd</i> parameter from which the object can extract device metrics and test the device's capabilities. If <i>ptd</i> is <b>NULL</b>, the object should ignore the <i>hicTargetDev</i> parameter.</para>
+    </param>
+    <param name="ppColorSet">
+      <para>Address of LOGPALETTE pointer variable that receives a pointer to the LOGPALETTE structure. The LOGPALETTE structure contains the set of colors that would be used if <see cref="IViewObject.Draw" /> were called with the same parameters for <i>dwAspect</i>, <i>lindex</i>, <i>pvAspect</i>, <i>ptd</i>, and <i>hicTargetDev</i>. If <i>ppColorSet</i> is <b>NULL</b>, the object does not use a palette.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Set of colors is empty or the object will not give out the information.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_BLANK</b>
+            </para>
+          </description>
+          <description>
+            <para>No presentation data for object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>DV_E_LINDEX</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid value for <i>lindex</i>; currently only -1 is supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>DV_E_DVASPECT</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid value for <i>dwAspect</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more of the supplied parameter values is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory available for this operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>IViewObject.GetColorSet</b> method recursively queries any nested objects and returns a color set that represents the union of all colors requested. The color set eventually percolates to the top-level container that owns the window frame. This container can call <b>IViewObject.GetColorSet</b> on each of its embedded objects to obtain all the colors needed to draw the embedded objects. The container can use the color sets obtained in conjunction with other colors it needs for itself to set the overall color palette.</para>
+      <para>The OLE-provided implementation of <b>IViewObject.GetColorSet</b> looks at the data it has on hand to draw the picture. If CF_DIB is the drawing format, the palette found in the bitmap is used. For a regular bitmap, no color information is returned. If the drawing format is a metafile, the object handler enumerates the metafile looking for a CreatePalette metafile record. If one is found, the handler uses it as the color set.</para>
+    </remarks>
+    <seealso cref="DVASPECT" />
+    <seealso cref="IViewObject" />
+  </member>
+  <member name="IViewObject.SetAdvise">
+    <summary>
+      <para>Establishes a connection between the view object and an advise sink so that the advise sink can be notified about changes in the object's view.</para>
+    </summary>
+    <param name="aspects">
+      <para>View for which the advisory connection is being set up. Valid values are taken from the enumeration <see cref="DVASPECT" />. See the <b>DVASPECT</b> enumeration for more information.</para>
+    </param>
+    <param name="advf">
+      <para>Contains a group of flags for controlling the advisory connection. Valid values are from the enumeration <see cref="ADVF" />. However, only some of the possible <b>ADVF</b> values are relevant for this method. The following table briefly describes the relevant values. See the <b>ADVF</b> enumeration for a more detailed description.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ADVF_ONLYONCE</b>
+          </description>
+          <description>
+            <para>Causes the advisory connection to be destroyed after the first notification is sent.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ADVF_PRIMEFIRST</b>
+          </description>
+          <description>
+            <para>Causes an initial notification to be sent regardless of whether data has changed from its current state.</para>
+          </description>
+        </item>
+      </list>
+      <para>
+        <b>Note</b>  The ADVF_ONLYONCE and ADVF_PRIMEFIRST can be combined to provide an asynchronous call to <see cref="IDataObject.GetData" />.</para>
+    </param>
+    <param name="pAdvSink">
+      <para>Pointer to the <see cref="IAdviseSink" /> interface on the advisory sink that is to be informed of changes. A <b>NULL</b> value deletes any existing advisory connection.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_ADVISENOTSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Advisory notifications are not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>DV_E_DVASPECT</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid value for <i>dwAspect</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more of the supplied values is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory available for this operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A container application that is requesting a draw operation on a view object can also register with the <b>IViewObject.SetAdvise</b> method to be notified when the presentation of the view object changes. To find out about when an object's underlying data changes, you must call <see cref="IDataObject.DAdvise" /> separately.</para>
+      <para>To remove an existing advisory connection, call the <b>IViewObject.SetAdvise</b> method with <i>pAdvSink</i> set to <b>NULL</b>.</para>
+      <para>If the view object changes, a call is made to the appropriate advise sink through its <see cref="IAdviseSink.OnViewChange" /> method.</para>
+      <para>At any time, a given view object can support only one advisory connection. Therefore, when <b>IViewObject.SetAdvise</b> is called and the view object is already holding on to an advise sink pointer, OLE releases the existing pointer before the new one is registered.</para>
+    </remarks>
+    <seealso cref="ADVF" />
+    <seealso cref="IAdviseSink" />
+    <seealso cref="IViewObject" />
+    <seealso cref="IViewObject.GetAdvise" />
+  </member>
+  <member name="IViewObject.Unfreeze">
+    <summary>
+      <para>Releases a drawing that was previously frozen using <see cref="IViewObject.Freeze" />. The most common use of this method is for banded printing.</para>
+    </summary>
+    <param name="dwFreeze">
+      <para>Contains a key previously returned from <see cref="IViewObject.Freeze" /> that determines which view object to unfreeze.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NOCONNECTION</b>
+            </para>
+          </description>
+          <description>
+            <para>Error in the unfreezing process or the object is currently not frozen.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IViewObject" />
+    <seealso cref="IViewObject.Freeze" />
+  </member>
+  <member name="IViewObject">
+    <summary>
+      <para>Enables an object to display itself directly without passing a data object to the caller. In addition, this interface can create and manage a connection with an advise sink so the caller can be notified of changes in the view object.</para>
+      <para>The caller can request specific representations and specific target devices. For example, a caller can ask for either an object's content or an iconic representation. Also, the caller can ask the object to compose a picture for a target device that is independent of the drawing device context. As a result, the picture can be composed for one target device and drawn on another device context. For example, to provide a print preview operation, you can compose the drawing for a printer target device but actually draw the representation on the display.</para>
+      <para>The <b>IViewObject</b> interface is similar to <see cref="IDataObject" />; except that <b>IViewObject</b> places a representation of the data onto a device context while <b>IDataObject</b> places the representation onto a transfer medium.</para>
+      <para>Unlike most other interfaces, <b>IViewObject</b> cannot be marshaled to another process. This is because device contexts are only effective in the context of one process.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxPackagingDiagnosticEventSink.xml' path='doc/member[@name="IAppxPackagingDiagnosticEventSink"]/*' />
 [Guid("17239D47-6ADB-45D2-80F6-F9CBC3BF059D")]
 [NativeTypeName("struct IAppxPackagingDiagnosticEventSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSink : IAppxPackagingD
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSink : IAppxPackagingD
         return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackagingDiagnosticEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSink : IAppxPackagingD
         return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, uint>)(lpVtbl[1]))((IAppxPackagingDiagnosticEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSink : IAppxPackagingD
         return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, uint>)(lpVtbl[2]))((IAppxPackagingDiagnosticEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxPackagingDiagnosticEventSink.xml' path='doc/member[@name="IAppxPackagingDiagnosticEventSink.ReportContextChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ReportContextChange(APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType, [NativeTypeName("LONG")] int contextId, [NativeTypeName("LPCSTR")] sbyte* contextName, [NativeTypeName("LPCWSTR")] ushort* contextMessage, [NativeTypeName("LPCWSTR")] ushort* detailsMessage)
@@ -46,6 +51,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSink : IAppxPackagingD
         return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, APPX_PACKAGING_CONTEXT_CHANGE_TYPE, int, sbyte*, ushort*, ushort*, int>)(lpVtbl[3]))((IAppxPackagingDiagnosticEventSink*)Unsafe.AsPointer(ref this), changeType, contextId, contextName, contextMessage, detailsMessage);
     }
 
+    /// <include file='IAppxPackagingDiagnosticEventSink.xml' path='doc/member[@name="IAppxPackagingDiagnosticEventSink.ReportError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ReportError([NativeTypeName("LPCWSTR")] ushort* errorMessage)

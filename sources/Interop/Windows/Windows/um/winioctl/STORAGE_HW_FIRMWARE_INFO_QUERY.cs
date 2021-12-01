@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_HW_FIRMWARE_INFO_QUERY.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO_QUERY"]/*' />
 public partial struct STORAGE_HW_FIRMWARE_INFO_QUERY
 {
+    /// <include file='STORAGE_HW_FIRMWARE_INFO_QUERY.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO_QUERY.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_HW_FIRMWARE_INFO_QUERY.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO_QUERY.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_HW_FIRMWARE_INFO_QUERY.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO_QUERY.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='STORAGE_HW_FIRMWARE_INFO_QUERY.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO_QUERY.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 }

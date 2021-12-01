@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILTER_STATE.xml' path='doc/member[@name="FILTER_STATE"]/*' />
 public enum FILTER_STATE
 {
+    /// <include file='FILTER_STATE.xml' path='doc/member[@name="FILTER_STATE.State_Stopped"]/*' />
     State_Stopped = 0,
+
+    /// <include file='FILTER_STATE.xml' path='doc/member[@name="FILTER_STATE.State_Paused"]/*' />
     State_Paused = (State_Stopped + 1),
+
+    /// <include file='FILTER_STATE.xml' path='doc/member[@name="FILTER_STATE.State_Running"]/*' />
     State_Running = (State_Paused + 1),
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_REPEATING_HEADER_OPTION.xml' path='doc/member[@name="WS_REPEATING_HEADER_OPTION"]/*' />
 public enum WS_REPEATING_HEADER_OPTION
 {
+    /// <include file='WS_REPEATING_HEADER_OPTION.xml' path='doc/member[@name="WS_REPEATING_HEADER_OPTION.WS_REPEATING_HEADER"]/*' />
     WS_REPEATING_HEADER = 1,
+
+    /// <include file='WS_REPEATING_HEADER_OPTION.xml' path='doc/member[@name="WS_REPEATING_HEADER_OPTION.WS_SINGLETON_HEADER"]/*' />
     WS_SINGLETON_HEADER = 2,
 }

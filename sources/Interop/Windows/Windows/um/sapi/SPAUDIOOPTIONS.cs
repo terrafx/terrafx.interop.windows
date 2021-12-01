@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPAUDIOOPTIONS.xml' path='doc/member[@name="SPAUDIOOPTIONS"]/*' />
 public enum SPAUDIOOPTIONS
 {
+    /// <include file='SPAUDIOOPTIONS.xml' path='doc/member[@name="SPAUDIOOPTIONS.SPAO_NONE"]/*' />
     SPAO_NONE = 0,
+
+    /// <include file='SPAUDIOOPTIONS.xml' path='doc/member[@name="SPAUDIOOPTIONS.SPAO_RETAIN_AUDIO"]/*' />
     SPAO_RETAIN_AUDIO = (1 << 0),
 }

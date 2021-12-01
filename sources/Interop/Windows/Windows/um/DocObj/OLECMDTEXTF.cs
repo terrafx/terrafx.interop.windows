@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLECMDTEXTF.xml' path='doc/member[@name="OLECMDTEXTF"]/*' />
 public enum OLECMDTEXTF
 {
+    /// <include file='OLECMDTEXTF.xml' path='doc/member[@name="OLECMDTEXTF.OLECMDTEXTF_NONE"]/*' />
     OLECMDTEXTF_NONE = 0,
+
+    /// <include file='OLECMDTEXTF.xml' path='doc/member[@name="OLECMDTEXTF.OLECMDTEXTF_NAME"]/*' />
     OLECMDTEXTF_NAME = 1,
+
+    /// <include file='OLECMDTEXTF.xml' path='doc/member[@name="OLECMDTEXTF.OLECMDTEXTF_STATUS"]/*' />
     OLECMDTEXTF_STATUS = 2,
 }

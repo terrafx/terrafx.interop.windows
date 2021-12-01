@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncDDService">
+    <summary>
+      <para>Specifies the audio service contained in a Dolby Digital audio stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencddservice-property">AVEncDDService</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncDDService.eAVEncDDService_CM">
+    <summary>
+      <para>Complete main audio service.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDService.eAVEncDDService_ME">
+    <summary>
+      <para>Main service: music and effects. (The main audio service minus the dialog channel.)</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDService.eAVEncDDService_VI">
+    <summary>
+      <para>Associated service: visually impaired.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDService.eAVEncDDService_HI">
+    <summary>
+      <para>Associated service: hard of hearing.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDService.eAVEncDDService_D">
+    <summary>
+      <para>Associated service: dialog.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDService.eAVEncDDService_C">
+    <summary>
+      <para>Associated service: commentary.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDService.eAVEncDDService_E">
+    <summary>
+      <para>Associated service: emergency.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDService.eAVEncDDService_VO">
+    <summary>
+      <para>Associated service: voice over.</para>
+    </summary>
+  </member>
+</doc>

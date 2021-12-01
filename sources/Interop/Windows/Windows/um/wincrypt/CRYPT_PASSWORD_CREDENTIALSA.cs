@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_PASSWORD_CREDENTIALSA.xml' path='doc/member[@name="CRYPT_PASSWORD_CREDENTIALSA"]/*' />
 public unsafe partial struct CRYPT_PASSWORD_CREDENTIALSA
 {
+    /// <include file='CRYPT_PASSWORD_CREDENTIALSA.xml' path='doc/member[@name="CRYPT_PASSWORD_CREDENTIALSA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CRYPT_PASSWORD_CREDENTIALSA.xml' path='doc/member[@name="CRYPT_PASSWORD_CREDENTIALSA.pszUsername"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszUsername;
 
+    /// <include file='CRYPT_PASSWORD_CREDENTIALSA.xml' path='doc/member[@name="CRYPT_PASSWORD_CREDENTIALSA.pszPassword"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszPassword;
 }

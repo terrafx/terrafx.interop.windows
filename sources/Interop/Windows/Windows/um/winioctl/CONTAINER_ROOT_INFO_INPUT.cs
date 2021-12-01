@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONTAINER_ROOT_INFO_INPUT.xml' path='doc/member[@name="CONTAINER_ROOT_INFO_INPUT"]/*' />
 public partial struct CONTAINER_ROOT_INFO_INPUT
 {
+    /// <include file='CONTAINER_ROOT_INFO_INPUT.xml' path='doc/member[@name="CONTAINER_ROOT_INFO_INPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

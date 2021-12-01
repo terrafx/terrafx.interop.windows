@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFont.CreateFontFace">
+    <summary>
+      <para>Creates a font face object for the font.</para>
+    </summary>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the newly created font face object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFont" />
+  </member>
+  <member name="IDWriteFont.GetFaceNames">
+    <summary>
+      <para>Gets a localized strings collection containing the face names for the font (such as Regular or Bold), indexed by locale name.</para>
+    </summary>
+    <param name="names">
+      <para>Type: <b><see cref="IDWriteLocalizedStrings" />**</b></para>
+      <para>When this method returns, contains an address to a  pointer to the newly created localized strings object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFont" />
+  </member>
+  <member name="IDWriteFont.GetFontFamily">
+    <summary>
+      <para>Gets the font family to which the specified font belongs.</para>
+    </summary>
+    <param name="fontFamily">
+      <para>Type: <b><see cref="IDWriteFontFamily" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the font family object to which the specified font belongs.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFont" />
+  </member>
+  <member name="IDWriteFont.GetInformationalStrings">
+    <summary>
+      <para>Gets a localized strings collection containing the specified informational strings, indexed by locale name.</para>
+    </summary>
+    <param name="informationalStringID">
+      <para>Type: <b><see cref="DWRITE_INFORMATIONAL_STRING_ID" /></b></para>
+      <para>A value that identifies the  informational string to get. For example, <see cref="DWRITE_INFORMATIONAL_STRING_DESCRIPTION" /> specifies a string that contains a description of the font.</para>
+    </param>
+    <param name="informationalStrings">
+      <para>Type: <b><see cref="IDWriteLocalizedStrings" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the newly created localized strings object.</para>
+    </param>
+    <param name="exists">
+      <para>Type: <b>BOOL*</b></para>
+      <para>When this method returns, <b>TRUE</b> if the font contains the specified string ID; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the font does not contain the string specified by <i>informationalStringID</i>, the return value is <b>S_OK</b> but
+<i>informationalStrings</i> receives a <b>NULL</b> pointer and <i>exists</i> receives the value <b>FALSE</b>.</para>
+    </remarks>
+    <seealso cref="IDWriteFont" />
+  </member>
+  <member name="IDWriteFont.GetMetrics">
+    <summary>
+      <para>Obtains design units and common metrics for the font face.
+These metrics are applicable to all the glyphs within a font face and are used by applications for layout calculations.</para>
+    </summary>
+    <param name="fontMetrics">
+      <para>Type: <b><see cref="DWRITE_FONT_METRICS" />*</b></para>
+      <para>When this method returns, contains a structure that has font metrics for the current font face. The metrics returned by this function are in font design units.</para>
+    </param>
+    <seealso cref="IDWriteFont" />
+  </member>
+  <member name="IDWriteFont.GetSimulations">
+    <summary>
+      <para>Gets a value that indicates what simulations are applied to the specified font.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_SIMULATIONS" /></b></para>
+      <para>A value that indicates one or more of the  types of simulations (none, bold, or oblique)  applied to the specified font.</para>
+    </returns>
+    <seealso cref="IDWriteFont" />
+  </member>
+  <member name="IDWriteFont.GetStretch">
+    <summary>
+      <para>Gets the stretch, or width, of the specified font.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_STRETCH" /></b></para>
+      <para>A value that indicates the type of stretch, or width, applied to the specified font.</para>
+    </returns>
+    <seealso cref="IDWriteFont" />
+  </member>
+  <member name="IDWriteFont.GetStyle">
+    <summary>
+      <para>Gets the style, or slope, of the specified font.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_STYLE" /></b></para>
+      <para>A value that indicates the type of style, or slope, of the specified font.</para>
+    </returns>
+    <seealso cref="DWRITE_FONT_STYLE" />
+    <seealso cref="IDWriteFont" />
+  </member>
+  <member name="IDWriteFont.GetWeight">
+    <summary>
+      <para>Gets the weight, or stroke thickness, of the specified font.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_WEIGHT" /></b></para>
+      <para>A value that indicates the weight for the specified font.</para>
+    </returns>
+    <seealso cref="IDWriteFont" />
+  </member>
+  <member name="IDWriteFont.HasCharacter">
+    <summary>
+      <para>Determines whether the font supports a specified character.</para>
+    </summary>
+    <param name="unicodeValue">
+      <para>Type: <b>UINT32</b></para>
+      <para>A Unicode (UCS-4) character value for the method to inspect.</para>
+    </param>
+    <param name="exists">
+      <para>Type: <b>BOOL*</b></para>
+      <para>When this method returns, <b>TRUE</b> if the font supports the specified character; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFont" />
+    <seealso cref="IDWriteFontFace1.GetUnicodeRanges" />
+  </member>
+  <member name="IDWriteFont.IsSymbolFont">
+    <summary>
+      <para>Determines whether the font is a symbol font.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> if the font is a symbol font; otherwise, <b>FALSE</b>.</para>
+    </returns>
+    <seealso cref="IDWriteFont" />
+  </member>
+  <member name="IDWriteFont">
+    <summary>
+      <para>Represents a physical font in a font collection. This interface is used to create font faces from  physical fonts, or  to retrieve information such as  font face metrics or face names from existing font faces.</para>
+    </summary>
+  </member>
+</doc>

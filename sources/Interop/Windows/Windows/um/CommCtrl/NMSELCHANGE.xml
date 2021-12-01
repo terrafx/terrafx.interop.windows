@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMSELCHANGE">
+    <summary>
+      <para>Carries information required to process the <a href="https://docs.microsoft.com//windows/desktop/Controls/mcn-selchange">MCN_SELCHANGE</a> notification code.</para>
+    </summary>
+  </member>
+  <member name="NMSELCHANGE.nmhdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>
+        <see cref="NMHDR" /> structure that contains information about this notification.</para>
+    </summary>
+  </member>
+  <member name="NMSELCHANGE.stSelStart">
+    <summary>
+      <para>Type: <b><see cref="SYSTEMTIME" /></b></para>
+      <para>
+        <see cref="SYSTEMTIME" /> structure that contains the date for the first day in the user's selection range.</para>
+    </summary>
+  </member>
+  <member name="NMSELCHANGE.stSelEnd">
+    <summary>
+      <para>Type: <b><see cref="SYSTEMTIME" /></b></para>
+      <para>
+        <see cref="SYSTEMTIME" /> structure that contains the date for the last day in the user's selection range.</para>
+    </summary>
+  </member>
+</doc>

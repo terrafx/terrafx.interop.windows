@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='InterleavingMode.xml' path='doc/member[@name="InterleavingMode"]/*' />
 public enum InterleavingMode
 {
+    /// <include file='InterleavingMode.xml' path='doc/member[@name="InterleavingMode.INTERLEAVE_NONE"]/*' />
     INTERLEAVE_NONE = 0,
+
+    /// <include file='InterleavingMode.xml' path='doc/member[@name="InterleavingMode.INTERLEAVE_CAPTURE"]/*' />
     INTERLEAVE_CAPTURE = (INTERLEAVE_NONE + 1),
+
+    /// <include file='InterleavingMode.xml' path='doc/member[@name="InterleavingMode.INTERLEAVE_FULL"]/*' />
     INTERLEAVE_FULL = (INTERLEAVE_CAPTURE + 1),
+
+    /// <include file='InterleavingMode.xml' path='doc/member[@name="InterleavingMode.INTERLEAVE_NONE_BUFFERED"]/*' />
     INTERLEAVE_NONE_BUFFERED = (INTERLEAVE_FULL + 1),
 }

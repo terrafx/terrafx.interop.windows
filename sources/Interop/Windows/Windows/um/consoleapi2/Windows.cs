@@ -9,162 +9,201 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FillConsoleOutputCharacterA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL FillConsoleOutputCharacterA(HANDLE hConsoleOutput, [NativeTypeName("CHAR")] sbyte cCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwWriteCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FillConsoleOutputCharacterW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL FillConsoleOutputCharacterW(HANDLE hConsoleOutput, [NativeTypeName("WCHAR")] ushort cCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwWriteCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FillConsoleOutputAttribute"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL FillConsoleOutputAttribute(HANDLE hConsoleOutput, [NativeTypeName("WORD")] ushort wAttribute, [NativeTypeName("DWORD")] uint nLength, COORD dwWriteCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfAttrsWritten);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GenerateConsoleCtrlEvent"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GenerateConsoleCtrlEvent([NativeTypeName("DWORD")] uint dwCtrlEvent, [NativeTypeName("DWORD")] uint dwProcessGroupId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateConsoleScreenBuffer"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE CreateConsoleScreenBuffer([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("DWORD")] uint dwShareMode, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* lpScreenBufferData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleActiveScreenBuffer"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleActiveScreenBuffer(HANDLE hConsoleOutput);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlushConsoleInputBuffer"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL FlushConsoleInputBuffer(HANDLE hConsoleInput);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleCP"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleCP(uint wCodePageID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleOutputCP"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleOutputCP(uint wCodePageID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleCursorInfo"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetConsoleCursorInfo(HANDLE hConsoleOutput, [NativeTypeName("PCONSOLE_CURSOR_INFO")] CONSOLE_CURSOR_INFO* lpConsoleCursorInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleCursorInfo"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleCursorInfo(HANDLE hConsoleOutput, [NativeTypeName("const CONSOLE_CURSOR_INFO *")] CONSOLE_CURSOR_INFO* lpConsoleCursorInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleScreenBufferInfo"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetConsoleScreenBufferInfo(HANDLE hConsoleOutput, [NativeTypeName("PCONSOLE_SCREEN_BUFFER_INFO")] CONSOLE_SCREEN_BUFFER_INFO* lpConsoleScreenBufferInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleScreenBufferInfoEx"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetConsoleScreenBufferInfoEx(HANDLE hConsoleOutput, [NativeTypeName("PCONSOLE_SCREEN_BUFFER_INFOEX")] CONSOLE_SCREEN_BUFFER_INFOEX* lpConsoleScreenBufferInfoEx);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleScreenBufferInfoEx"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleScreenBufferInfoEx(HANDLE hConsoleOutput, [NativeTypeName("PCONSOLE_SCREEN_BUFFER_INFOEX")] CONSOLE_SCREEN_BUFFER_INFOEX* lpConsoleScreenBufferInfoEx);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleScreenBufferSize"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleScreenBufferSize(HANDLE hConsoleOutput, COORD dwSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleCursorPosition"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleCursorPosition(HANDLE hConsoleOutput, COORD dwCursorPosition);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLargestConsoleWindowSize"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern COORD GetLargestConsoleWindowSize(HANDLE hConsoleOutput);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleTextAttribute"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleTextAttribute(HANDLE hConsoleOutput, [NativeTypeName("WORD")] ushort wAttributes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleWindowInfo"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleWindowInfo(HANDLE hConsoleOutput, BOOL bAbsolute, [NativeTypeName("const SMALL_RECT *")] SMALL_RECT* lpConsoleWindow);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleOutputCharacterA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WriteConsoleOutputCharacterA(HANDLE hConsoleOutput, [NativeTypeName("LPCSTR")] sbyte* lpCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwWriteCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleOutputCharacterW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WriteConsoleOutputCharacterW(HANDLE hConsoleOutput, [NativeTypeName("LPCWSTR")] ushort* lpCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwWriteCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleOutputAttribute"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WriteConsoleOutputAttribute(HANDLE hConsoleOutput, [NativeTypeName("const WORD *")] ushort* lpAttribute, [NativeTypeName("DWORD")] uint nLength, COORD dwWriteCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfAttrsWritten);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleOutputCharacterA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ReadConsoleOutputCharacterA(HANDLE hConsoleOutput, [NativeTypeName("LPSTR")] sbyte* lpCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwReadCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsRead);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleOutputCharacterW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ReadConsoleOutputCharacterW(HANDLE hConsoleOutput, [NativeTypeName("LPWSTR")] ushort* lpCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwReadCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsRead);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleOutputAttribute"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ReadConsoleOutputAttribute(HANDLE hConsoleOutput, [NativeTypeName("LPWORD")] ushort* lpAttribute, [NativeTypeName("DWORD")] uint nLength, COORD dwReadCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfAttrsRead);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleInputA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WriteConsoleInputA(HANDLE hConsoleInput, [NativeTypeName("const INPUT_RECORD *")] INPUT_RECORD* lpBuffer, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpNumberOfEventsWritten);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleInputW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WriteConsoleInputW(HANDLE hConsoleInput, [NativeTypeName("const INPUT_RECORD *")] INPUT_RECORD* lpBuffer, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpNumberOfEventsWritten);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ScrollConsoleScreenBufferA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ScrollConsoleScreenBufferA(HANDLE hConsoleOutput, [NativeTypeName("const SMALL_RECT *")] SMALL_RECT* lpScrollRectangle, [NativeTypeName("const SMALL_RECT *")] SMALL_RECT* lpClipRectangle, COORD dwDestinationOrigin, [NativeTypeName("const CHAR_INFO *")] CHAR_INFO* lpFill);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ScrollConsoleScreenBufferW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ScrollConsoleScreenBufferW(HANDLE hConsoleOutput, [NativeTypeName("const SMALL_RECT *")] SMALL_RECT* lpScrollRectangle, [NativeTypeName("const SMALL_RECT *")] SMALL_RECT* lpClipRectangle, COORD dwDestinationOrigin, [NativeTypeName("const CHAR_INFO *")] CHAR_INFO* lpFill);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleOutputA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WriteConsoleOutputA(HANDLE hConsoleOutput, [NativeTypeName("const CHAR_INFO *")] CHAR_INFO* lpBuffer, COORD dwBufferSize, COORD dwBufferCoord, [NativeTypeName("PSMALL_RECT")] SMALL_RECT* lpWriteRegion);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleOutputW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WriteConsoleOutputW(HANDLE hConsoleOutput, [NativeTypeName("const CHAR_INFO *")] CHAR_INFO* lpBuffer, COORD dwBufferSize, COORD dwBufferCoord, [NativeTypeName("PSMALL_RECT")] SMALL_RECT* lpWriteRegion);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleOutputA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ReadConsoleOutputA(HANDLE hConsoleOutput, [NativeTypeName("PCHAR_INFO")] CHAR_INFO* lpBuffer, COORD dwBufferSize, COORD dwBufferCoord, [NativeTypeName("PSMALL_RECT")] SMALL_RECT* lpReadRegion);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleOutputW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ReadConsoleOutputW(HANDLE hConsoleOutput, [NativeTypeName("PCHAR_INFO")] CHAR_INFO* lpBuffer, COORD dwBufferSize, COORD dwBufferCoord, [NativeTypeName("PSMALL_RECT")] SMALL_RECT* lpReadRegion);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleTitleA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetConsoleTitleA([NativeTypeName("LPSTR")] sbyte* lpConsoleTitle, [NativeTypeName("DWORD")] uint nSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleTitleW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetConsoleTitleW([NativeTypeName("LPWSTR")] ushort* lpConsoleTitle, [NativeTypeName("DWORD")] uint nSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleOriginalTitleA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetConsoleOriginalTitleA([NativeTypeName("LPSTR")] sbyte* lpConsoleTitle, [NativeTypeName("DWORD")] uint nSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleOriginalTitleW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetConsoleOriginalTitleW([NativeTypeName("LPWSTR")] ushort* lpConsoleTitle, [NativeTypeName("DWORD")] uint nSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleTitleA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleTitleA([NativeTypeName("LPCSTR")] sbyte* lpConsoleTitle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleTitleW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetConsoleTitleW([NativeTypeName("LPCWSTR")] ushort* lpConsoleTitle);

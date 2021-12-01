@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_ACTION.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION"]/*' />
 public unsafe partial struct MFINPUTTRUSTAUTHORITY_ACCESS_ACTION
 {
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_ACTION.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION.Action"]/*' />
     public MFPOLICYMANAGER_ACTION Action;
 
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_ACTION.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION.pbTicket"]/*' />
     public byte* pbTicket;
 
+    /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_ACTION.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION.cbTicket"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbTicket;
 }

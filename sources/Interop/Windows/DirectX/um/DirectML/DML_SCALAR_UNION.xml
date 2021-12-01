@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_SCALAR_UNION">
+    <summary>
+      <para>A union of scalar types.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.Bytes">
+    <summary>
+      <para>An 8-byte array.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.Int8">
+    <summary>
+      <para>An 8-bit signed integer.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.UInt8">
+    <summary>
+      <para>An 8-bit unsigned integer.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.Int16">
+    <summary>
+      <para>A 16-bit signed integer.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.UInt16">
+    <summary>
+      <para>A 16-bit unsigned integer.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.Int32">
+    <summary>
+      <para>A 32-bit signed integer.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.UInt32">
+    <summary>
+      <para>A 32-bit unsigned integer.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.Int64">
+    <summary>
+      <para>A 64-bit signed integer.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.UInt64">
+    <summary>
+      <para>A 64-bit unsigned integer.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.Float32">
+    <summary>
+      <para>A single precision floating-point number.</para>
+    </summary>
+  </member>
+  <member name="DML_SCALAR_UNION.Float64">
+    <summary>
+      <para>A double precision floating-point number.</para>
+    </summary>
+  </member>
+</doc>

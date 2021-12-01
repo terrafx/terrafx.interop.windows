@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_SERVER_OCSP_RESPONSE_CONTEXT.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_CONTEXT"]/*' />
 public unsafe partial struct CERT_SERVER_OCSP_RESPONSE_CONTEXT
 {
+    /// <include file='CERT_SERVER_OCSP_RESPONSE_CONTEXT.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_CONTEXT.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CERT_SERVER_OCSP_RESPONSE_CONTEXT.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_CONTEXT.pbEncodedOcspResponse"]/*' />
     public byte* pbEncodedOcspResponse;
 
+    /// <include file='CERT_SERVER_OCSP_RESPONSE_CONTEXT.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_CONTEXT.cbEncodedOcspResponse"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbEncodedOcspResponse;
 }

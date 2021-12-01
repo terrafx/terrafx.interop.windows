@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_CANONICALIZATION_PROPERTY.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_PROPERTY"]/*' />
 public unsafe partial struct WS_XML_CANONICALIZATION_PROPERTY
 {
+    /// <include file='WS_XML_CANONICALIZATION_PROPERTY.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_PROPERTY.id"]/*' />
     public WS_XML_CANONICALIZATION_PROPERTY_ID id;
 
+    /// <include file='WS_XML_CANONICALIZATION_PROPERTY.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_PROPERTY.value"]/*' />
     public void* value;
 
+    /// <include file='WS_XML_CANONICALIZATION_PROPERTY.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_PROPERTY.valueSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint valueSize;
 }

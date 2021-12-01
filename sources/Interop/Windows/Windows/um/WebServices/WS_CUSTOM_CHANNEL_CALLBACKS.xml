@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS">
+    <summary>
+      <para>A structure that is used to specify a set of callbacks
+that form the implementation of a custom channel.</para>
+    </summary>
+    <remarks>
+      <para>This structure is specified when a channel is created using
+<see cref="WsCreateChannel" /> or <see cref="WsCreateChannelForListener" /> using <see cref="WS_CHANNEL_PROPERTY_CUSTOM_CHANNEL_CALLBACKS" />.</para>
+      <para>Except where noted, each callback is responsible for validating all parameters and
+that the operation requested is acceptable given the current
+<see cref="WS_CHANNEL_STATE" />.</para>
+    </remarks>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.createChannelCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsCreateChannel" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_create_channel_callback">WS_CREATE_CHANNEL_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.freeChannelCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsFreeChannel" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_free_channel_callback">WS_FREE_CHANNEL_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.resetChannelCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsResetChannel" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_reset_channel_callback">WS_RESET_CHANNEL_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.openChannelCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsOpenChannel" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_open_channel_callback">WS_OPEN_CHANNEL_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.closeChannelCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsCloseChannel" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_close_channel_callback">WS_CLOSE_CHANNEL_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.abortChannelCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsAbortChannel" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_abort_channel_callback">WS_ABORT_CHANNEL_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.getChannelPropertyCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsGetChannelProperty" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_get_channel_property_callback">WS_GET_CHANNEL_PROPERTY_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.setChannelPropertyCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsSetChannelProperty" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_set_channel_property_callback">WS_SET_CHANNEL_PROPERTY_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.writeMessageStartCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsWriteMessageStart" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_write_message_start_callback">WS_WRITE_MESSAGE_START_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.writeMessageEndCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsWriteMessageEnd" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_write_message_end_callback">WS_WRITE_MESSAGE_END_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.readMessageStartCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsReadMessageStart" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_read_message_start_callback">WS_READ_MESSAGE_START_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.readMessageEndCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsReadMessageEnd" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_read_message_end_callback">WS_READ_MESSAGE_END_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.abandonMessageCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsAbandonMessage" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_abandon_message_callback">WS_ABANDON_MESSAGE_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_CUSTOM_CHANNEL_CALLBACKS.shutdownSessionChannelCallback">
+    <summary>
+      <para>The callback that implements <see cref="WsShutdownSessionChannel" />.
+See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_shutdown_session_channel_callback">WS_SHUTDOWN_SESSION_CHANNEL_CALLBACK</a> for more information.</para>
+    </summary>
+  </member>
+</doc>

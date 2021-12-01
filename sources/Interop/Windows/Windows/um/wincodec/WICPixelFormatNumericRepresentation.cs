@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICPixelFormatNumericRepresentation.xml' path='doc/member[@name="WICPixelFormatNumericRepresentation"]/*' />
 public enum WICPixelFormatNumericRepresentation : uint
 {
+    /// <include file='WICPixelFormatNumericRepresentation.xml' path='doc/member[@name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationUnspecified"]/*' />
     WICPixelFormatNumericRepresentationUnspecified = 0,
+
+    /// <include file='WICPixelFormatNumericRepresentation.xml' path='doc/member[@name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationIndexed"]/*' />
     WICPixelFormatNumericRepresentationIndexed = 0x1,
+
+    /// <include file='WICPixelFormatNumericRepresentation.xml' path='doc/member[@name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationUnsignedInteger"]/*' />
     WICPixelFormatNumericRepresentationUnsignedInteger = 0x2,
+
+    /// <include file='WICPixelFormatNumericRepresentation.xml' path='doc/member[@name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationSignedInteger"]/*' />
     WICPixelFormatNumericRepresentationSignedInteger = 0x3,
+
+    /// <include file='WICPixelFormatNumericRepresentation.xml' path='doc/member[@name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationFixed"]/*' />
     WICPixelFormatNumericRepresentationFixed = 0x4,
+
+    /// <include file='WICPixelFormatNumericRepresentation.xml' path='doc/member[@name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationFloat"]/*' />
     WICPixelFormatNumericRepresentationFloat = 0x5,
+
+    /// <include file='WICPixelFormatNumericRepresentation.xml' path='doc/member[@name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentation_FORCE_DWORD"]/*' />
     WICPixelFormatNumericRepresentation_FORCE_DWORD = 0x7fffffff,
 }

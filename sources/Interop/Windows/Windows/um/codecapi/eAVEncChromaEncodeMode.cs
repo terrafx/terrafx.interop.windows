@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncChromaEncodeMode.xml' path='doc/member[@name="eAVEncChromaEncodeMode"]/*' />
 public enum eAVEncChromaEncodeMode
 {
+    /// <include file='eAVEncChromaEncodeMode.xml' path='doc/member[@name="eAVEncChromaEncodeMode.eAVEncChromaEncodeMode_420"]/*' />
     eAVEncChromaEncodeMode_420,
+
+    /// <include file='eAVEncChromaEncodeMode.xml' path='doc/member[@name="eAVEncChromaEncodeMode.eAVEncChromaEncodeMode_444"]/*' />
     eAVEncChromaEncodeMode_444,
+
+    /// <include file='eAVEncChromaEncodeMode.xml' path='doc/member[@name="eAVEncChromaEncodeMode.eAVEncChromaEncodeMode_444_v2"]/*' />
     eAVEncChromaEncodeMode_444_v2,
 }

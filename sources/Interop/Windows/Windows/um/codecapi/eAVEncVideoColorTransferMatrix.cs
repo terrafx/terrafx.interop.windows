@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncVideoColorTransferMatrix.xml' path='doc/member[@name="eAVEncVideoColorTransferMatrix"]/*' />
 public enum eAVEncVideoColorTransferMatrix
 {
+    /// <include file='eAVEncVideoColorTransferMatrix.xml' path='doc/member[@name="eAVEncVideoColorTransferMatrix.eAVEncVideoColorTransferMatrix_SameAsSource"]/*' />
     eAVEncVideoColorTransferMatrix_SameAsSource = 0,
+
+    /// <include file='eAVEncVideoColorTransferMatrix.xml' path='doc/member[@name="eAVEncVideoColorTransferMatrix.eAVEncVideoColorTransferMatrix_BT709"]/*' />
     eAVEncVideoColorTransferMatrix_BT709 = 1,
+
+    /// <include file='eAVEncVideoColorTransferMatrix.xml' path='doc/member[@name="eAVEncVideoColorTransferMatrix.eAVEncVideoColorTransferMatrix_BT601"]/*' />
     eAVEncVideoColorTransferMatrix_BT601 = 2,
+
+    /// <include file='eAVEncVideoColorTransferMatrix.xml' path='doc/member[@name="eAVEncVideoColorTransferMatrix.eAVEncVideoColorTransferMatrix_SMPTE240M"]/*' />
     eAVEncVideoColorTransferMatrix_SMPTE240M = 3,
 }

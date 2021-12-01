@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AMCOPPStatusOutput">
+    <summary>
+      <para>The <b>AMCOPPStatusOutput</b> structure contains the result of a Certified Output Protection Protocol (COPP) status request.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-certified-output-protection-protocol--copp">Using Certified Output Protection Protocol (COPP)</seealso>
+  </member>
+  <member name="AMCOPPStatusOutput.macKDI">
+    <summary>
+      <para>Message Authentication Code (MAC) of the status data. The driver will use AES-based one-key CBC MAC (OMAC) to calculate this value.</para>
+    </summary>
+  </member>
+  <member name="AMCOPPStatusOutput.cbSizeData">
+    <summary>
+      <para>Size of the valid data in the <b>COPPStatus</b> member.</para>
+    </summary>
+  </member>
+  <member name="AMCOPPStatusOutput.COPPStatus">
+    <summary>
+      <para>Buffer that contains the result of the status request.</para>
+    </summary>
+  </member>
+</doc>

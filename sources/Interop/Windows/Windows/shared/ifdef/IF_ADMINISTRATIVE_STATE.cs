@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IF_ADMINISTRATIVE_STATE.xml' path='doc/member[@name="IF_ADMINISTRATIVE_STATE"]/*' />
 public enum IF_ADMINISTRATIVE_STATE
 {
+    /// <include file='IF_ADMINISTRATIVE_STATE.xml' path='doc/member[@name="IF_ADMINISTRATIVE_STATE.IF_ADMINISTRATIVE_DISABLED"]/*' />
     IF_ADMINISTRATIVE_DISABLED,
+
+    /// <include file='IF_ADMINISTRATIVE_STATE.xml' path='doc/member[@name="IF_ADMINISTRATIVE_STATE.IF_ADMINISTRATIVE_ENABLED"]/*' />
     IF_ADMINISTRATIVE_ENABLED,
+
+    /// <include file='IF_ADMINISTRATIVE_STATE.xml' path='doc/member[@name="IF_ADMINISTRATIVE_STATE.IF_ADMINISTRATIVE_DEMANDDIAL"]/*' />
     IF_ADMINISTRATIVE_DEMANDDIAL,
 }

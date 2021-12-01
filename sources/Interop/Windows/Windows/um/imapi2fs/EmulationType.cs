@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EmulationType.xml' path='doc/member[@name="EmulationType"]/*' />
 public enum EmulationType
 {
+    /// <include file='EmulationType.xml' path='doc/member[@name="EmulationType.EmulationNone"]/*' />
     EmulationNone = 0,
+
+    /// <include file='EmulationType.xml' path='doc/member[@name="EmulationType.Emulation12MFloppy"]/*' />
     Emulation12MFloppy = 1,
+
+    /// <include file='EmulationType.xml' path='doc/member[@name="EmulationType.Emulation144MFloppy"]/*' />
     Emulation144MFloppy = 2,
+
+    /// <include file='EmulationType.xml' path='doc/member[@name="EmulationType.Emulation288MFloppy"]/*' />
     Emulation288MFloppy = 3,
+
+    /// <include file='EmulationType.xml' path='doc/member[@name="EmulationType.EmulationHardDisk"]/*' />
     EmulationHardDisk = 4,
 }

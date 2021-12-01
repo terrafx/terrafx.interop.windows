@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ALLOCATOR_PROPERTIES">
+    <summary>
+      <para>The ALLOCATOR_PROPERTIES structure describes an allocator's count, size, alignment, and prefix properties.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="IMediaSample.GetPointer" /> method returns a pointer to the beginning of the buffer, not including the prefix bytes designated by <i>cbPrefix</i>.</para>
+      <para>The alignment is applied to the prefix data, if any. If a nonzero prefix is used, the beginning of the prefix is aligned according to <i>cbAlign</i>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="ALLOCATOR_PROPERTIES.cBuffers">
+    <summary>
+      <para>Number of buffers created by the allocator.</para>
+    </summary>
+  </member>
+  <member name="ALLOCATOR_PROPERTIES.cbBuffer">
+    <summary>
+      <para>Size of each buffer in bytes, excluding any prefix.</para>
+    </summary>
+  </member>
+  <member name="ALLOCATOR_PROPERTIES.cbAlign">
+    <summary>
+      <para>Alignment of the buffer; buffer start will be aligned on a multiple of this value.</para>
+    </summary>
+  </member>
+  <member name="ALLOCATOR_PROPERTIES.cbPrefix">
+    <summary>
+      <para>Each buffer is preceded by a prefix of this many bytes.</para>
+    </summary>
+  </member>
+</doc>

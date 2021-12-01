@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDMOQualityControl.xml' path='doc/member[@name="IDMOQualityControl"]/*' />
 [Guid("65ABEA96-CF36-453F-AF8A-705E98F16260")]
 [NativeTypeName("struct IDMOQualityControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface
         return ((delegate* unmanaged<IDMOQualityControl*, Guid*, void**, int>)(lpVtbl[0]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface
         return ((delegate* unmanaged<IDMOQualityControl*, uint>)(lpVtbl[1]))((IDMOQualityControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface
         return ((delegate* unmanaged<IDMOQualityControl*, uint>)(lpVtbl[2]))((IDMOQualityControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDMOQualityControl.xml' path='doc/member[@name="IDMOQualityControl.SetNow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetNow([NativeTypeName("REFERENCE_TIME")] long rtNow)
@@ -46,6 +51,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface
         return ((delegate* unmanaged<IDMOQualityControl*, long, int>)(lpVtbl[3]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), rtNow);
     }
 
+    /// <include file='IDMOQualityControl.xml' path='doc/member[@name="IDMOQualityControl.SetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetStatus([NativeTypeName("DWORD")] uint dwFlags)
@@ -53,6 +59,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface
         return ((delegate* unmanaged<IDMOQualityControl*, uint, int>)(lpVtbl[4]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='IDMOQualityControl.xml' path='doc/member[@name="IDMOQualityControl.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwFlags)

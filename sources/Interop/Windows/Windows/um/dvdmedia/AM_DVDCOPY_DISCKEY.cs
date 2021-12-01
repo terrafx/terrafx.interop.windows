@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_DVDCOPY_DISCKEY.xml' path='doc/member[@name="AM_DVDCOPY_DISCKEY"]/*' />
 public unsafe partial struct AM_DVDCOPY_DISCKEY
 {
+    /// <include file='AM_DVDCOPY_DISCKEY.xml' path='doc/member[@name="AM_DVDCOPY_DISCKEY.DiscKey"]/*' />
     [NativeTypeName("BYTE [2048]")]
     public fixed byte DiscKey[2048];
 }

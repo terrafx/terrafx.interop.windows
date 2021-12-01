@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_IMAGE_SOURCE_LOADING_OPTIONS">
+    <summary>
+      <para>Controls option flags for a new ID2D1ImageSource when it is created.</para>
+    </summary>
+    <remarks>
+      <para>D2D1_IMAGE_SOURCE_CREATION_OPTIONS_RELEASE_SOURCE causes the image source to not retain a reference to the source object used to create it.
+It can decrease the quality and efficiency of printing.</para>
+    </remarks>
+  </member>
+  <member name="D2D1_IMAGE_SOURCE_LOADING_OPTIONS.D2D1_IMAGE_SOURCE_LOADING_OPTIONS_NONE">
+    <summary>
+      <para>No options are used.</para>
+    </summary>
+  </member>
+  <member name="D2D1_IMAGE_SOURCE_LOADING_OPTIONS.D2D1_IMAGE_SOURCE_LOADING_OPTIONS_RELEASE_SOURCE">
+    <summary>
+      <para>Indicates the image source should release its reference to the WIC bitmap source after it has initialized.
+By default, the image source retains a reference to the WIC bitmap source for the lifetime of the object to enable quality and speed optimizations for printing.
+This option disables that optimization.</para>
+    </summary>
+  </member>
+  <member name="D2D1_IMAGE_SOURCE_LOADING_OPTIONS.D2D1_IMAGE_SOURCE_LOADING_OPTIONS_CACHE_ON_DEMAND">
+    <summary>
+      <para>Indicates the image source should only populate subregions of the image cache on-demand. You can control this behavior using
+the <see cref="EnsureCached" /></para>
+      <para>and <see cref="TrimCache" /> methods.
+This options provides the ability to improve memory usage by only keeping needed portions of the image in memory.
+This option requires that the image source has a reference to the WIC bitmap source, and is incompatible with D2D1_IMAGE_SOURCE_LOADING_OPTIONS_RELEASE_SOURCE.</para>
+    </summary>
+  </member>
+  <member name="D2D1_IMAGE_SOURCE_LOADING_OPTIONS.D2D1_IMAGE_SOURCE_LOADING_OPTIONS_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

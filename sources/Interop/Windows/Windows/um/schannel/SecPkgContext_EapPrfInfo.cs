@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_EapPrfInfo.xml' path='doc/member[@name="SecPkgContext_EapPrfInfo"]/*' />
 public unsafe partial struct SecPkgContext_EapPrfInfo
 {
+    /// <include file='SecPkgContext_EapPrfInfo.xml' path='doc/member[@name="SecPkgContext_EapPrfInfo.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='SecPkgContext_EapPrfInfo.xml' path='doc/member[@name="SecPkgContext_EapPrfInfo.cbPrfData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbPrfData;
 
+    /// <include file='SecPkgContext_EapPrfInfo.xml' path='doc/member[@name="SecPkgContext_EapPrfInfo.pbPrfData"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pbPrfData;
 }

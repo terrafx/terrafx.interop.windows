@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OS_DEPLOYEMENT_STATE_VALUES.xml' path='doc/member[@name="OS_DEPLOYEMENT_STATE_VALUES"]/*' />
 public enum OS_DEPLOYEMENT_STATE_VALUES
 {
+    /// <include file='OS_DEPLOYEMENT_STATE_VALUES.xml' path='doc/member[@name="OS_DEPLOYEMENT_STATE_VALUES.OS_DEPLOYMENT_STANDARD"]/*' />
     OS_DEPLOYMENT_STANDARD = 1,
+
+    /// <include file='OS_DEPLOYEMENT_STATE_VALUES.xml' path='doc/member[@name="OS_DEPLOYEMENT_STATE_VALUES.OS_DEPLOYMENT_COMPACT"]/*' />
     OS_DEPLOYMENT_COMPACT,
 }

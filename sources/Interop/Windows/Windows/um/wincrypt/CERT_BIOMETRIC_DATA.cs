@@ -8,16 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_BIOMETRIC_DATA.xml' path='doc/member[@name="CERT_BIOMETRIC_DATA"]/*' />
 public unsafe partial struct CERT_BIOMETRIC_DATA
 {
+    /// <include file='CERT_BIOMETRIC_DATA.xml' path='doc/member[@name="CERT_BIOMETRIC_DATA.dwTypeOfBiometricDataChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTypeOfBiometricDataChoice;
 
+    /// <include file='CERT_BIOMETRIC_DATA.xml' path='doc/member[@name="CERT_BIOMETRIC_DATA.Anonymous"]/*' />
     [NativeTypeName("_CERT_BIOMETRIC_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5553:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='CERT_BIOMETRIC_DATA.xml' path='doc/member[@name="CERT_BIOMETRIC_DATA.HashedUrl"]/*' />
     public CERT_HASHED_URL HashedUrl;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwPredefined"]/*' />
     public ref uint dwPredefined
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -27,6 +32,7 @@ public unsafe partial struct CERT_BIOMETRIC_DATA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pszObjId"]/*' />
     public ref sbyte* pszObjId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,13 +42,16 @@ public unsafe partial struct CERT_BIOMETRIC_DATA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwPredefined"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwPredefined;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pszObjId"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPSTR")]
         public sbyte* pszObjId;

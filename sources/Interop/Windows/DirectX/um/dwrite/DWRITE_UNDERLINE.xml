@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_UNDERLINE">
+    <summary>
+      <para>Contains information about the width, thickness, offset, run height, reading direction, and flow direction of an underline.</para>
+    </summary>
+    <remarks>
+      <para>All coordinates are in device independent pixels (DIPs).</para>
+    </remarks>
+  </member>
+  <member name="DWRITE_UNDERLINE.width">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that indicates the width of the underline, measured parallel to the baseline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_UNDERLINE.thickness">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that indicates the thickness of the underline, measured perpendicular to the baseline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_UNDERLINE.offset">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that indicates the offset of the underline from the baseline. A positive offset represents a position below the baseline (away from the text) and a negative offset is above (toward the text).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_UNDERLINE.runHeight">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that indicates the height of the tallest run where the underline is applied.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_UNDERLINE.readingDirection">
+    <summary>
+      <para>Type: <b><see cref="DWRITE_READING_DIRECTION" /></b></para>
+      <para>A value that indicates the reading direction of the text associated with the underline. This value is used to interpret whether the width value runs horizontally or vertically.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_UNDERLINE.flowDirection">
+    <summary>
+      <para>Type: <b><see cref="DWRITE_FLOW_DIRECTION" /></b></para>
+      <para>A value that indicates the flow direction of the text associated with the underline. This value is used to interpret whether the thickness value advances top to bottom, left to right, or right to left.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_UNDERLINE.localeName">
+    <summary>
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters which contains the locale of the text that the underline is being drawn under.  For example, in vertical text, the underline belongs on the left for Chinese but on the right for Japanese.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_UNDERLINE.measuringMode">
+    <summary>
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>The measuring mode can be useful to the renderer to determine how underlines are rendered, such as rounding the thickness to a whole pixel in GDI-compatible modes.</para>
+    </summary>
+  </member>
+</doc>

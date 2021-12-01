@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_VIDEO_COMPRESSION.xml' path='doc/member[@name="DVD_VIDEO_COMPRESSION"]/*' />
 public enum DVD_VIDEO_COMPRESSION
 {
+    /// <include file='DVD_VIDEO_COMPRESSION.xml' path='doc/member[@name="DVD_VIDEO_COMPRESSION.DVD_VideoCompression_Other"]/*' />
     DVD_VideoCompression_Other = 0,
+
+    /// <include file='DVD_VIDEO_COMPRESSION.xml' path='doc/member[@name="DVD_VIDEO_COMPRESSION.DVD_VideoCompression_MPEG1"]/*' />
     DVD_VideoCompression_MPEG1 = 1,
+
+    /// <include file='DVD_VIDEO_COMPRESSION.xml' path='doc/member[@name="DVD_VIDEO_COMPRESSION.DVD_VideoCompression_MPEG2"]/*' />
     DVD_VideoCompression_MPEG2 = 2,
 }

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='THREAD_INFORMATION_CLASS.xml' path='doc/member[@name="THREAD_INFORMATION_CLASS"]/*' />
 public enum THREAD_INFORMATION_CLASS
 {
+    /// <include file='THREAD_INFORMATION_CLASS.xml' path='doc/member[@name="THREAD_INFORMATION_CLASS.ThreadMemoryPriority"]/*' />
     ThreadMemoryPriority,
+
+    /// <include file='THREAD_INFORMATION_CLASS.xml' path='doc/member[@name="THREAD_INFORMATION_CLASS.ThreadAbsoluteCpuPriority"]/*' />
     ThreadAbsoluteCpuPriority,
+
+    /// <include file='THREAD_INFORMATION_CLASS.xml' path='doc/member[@name="THREAD_INFORMATION_CLASS.ThreadDynamicCodePolicy"]/*' />
     ThreadDynamicCodePolicy,
+
+    /// <include file='THREAD_INFORMATION_CLASS.xml' path='doc/member[@name="THREAD_INFORMATION_CLASS.ThreadPowerThrottling"]/*' />
     ThreadPowerThrottling,
+
+    /// <include file='THREAD_INFORMATION_CLASS.xml' path='doc/member[@name="THREAD_INFORMATION_CLASS.ThreadInformationClassMax"]/*' />
     ThreadInformationClassMax,
 }

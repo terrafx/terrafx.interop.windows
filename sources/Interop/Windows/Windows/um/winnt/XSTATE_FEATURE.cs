@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XSTATE_FEATURE.xml' path='doc/member[@name="XSTATE_FEATURE"]/*' />
 public partial struct XSTATE_FEATURE
 {
+    /// <include file='XSTATE_FEATURE.xml' path='doc/member[@name="XSTATE_FEATURE.Offset"]/*' />
     [NativeTypeName("DWORD")]
     public uint Offset;
 
+    /// <include file='XSTATE_FEATURE.xml' path='doc/member[@name="XSTATE_FEATURE.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 }

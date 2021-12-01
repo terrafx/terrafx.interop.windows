@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1Brush.GetOpacity">
+    <summary>
+      <para>Gets the degree of opacity of this brush.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value between zero and 1 that indicates the opacity of the brush. This value is a constant multiplier that linearly scales the alpha value of all pixels filled by the brush. The opacity values are clamped in the range 0–1 before they are multiplied together.</para>
+    </returns>
+    <seealso cref="ID2D1Brush" />
+  </member>
+  <member name="ID2D1Brush.GetTransform">
+    <summary>
+      <para>Gets the transform applied to this brush.</para>
+    </summary>
+    <param name="transform">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
+      <para>The transform applied to this brush.</para>
+    </param>
+    <remarks>
+      <para>When the brush transform is the identity matrix, the brush appears in the same coordinate space as the render target in which it is drawn.</para>
+    </remarks>
+    <seealso cref="ID2D1Brush" />
+  </member>
+  <member name="ID2D1Brush.SetOpacity">
+    <summary>
+      <para>Sets the degree of opacity of this brush.</para>
+    </summary>
+    <param name="opacity">
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value between zero and 1 that indicates the opacity of the brush. This value is a constant multiplier that linearly scales the alpha value of all pixels filled by the brush. The opacity values are clamped in the range 0–1 before they are multiplied together.</para>
+    </param>
+    <seealso cref="ID2D1Brush" />
+  </member>
+  <member name="ID2D1Brush.SetTransform">
+    <summary>
+      <para>Sets the transformation applied to the brush.</para>
+    </summary>
+    <param name="transform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
+      <para>The transformation to apply to this brush.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-brushes-overview">Brushes Overview</seealso>
+    <seealso cref="ID2D1Brush" />
+  </member>
+  <member name="ID2D1Brush.SetTransform">
+    <summary>
+      <para>Sets the transformation applied to the brush.</para>
+    </summary>
+    <param name="transform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
+      <para>The transformation to apply to this brush.</para>
+    </param>
+    <remarks>
+      <para>When you paint with a brush, it paints in the coordinate space of the render target. Brushes do not automatically position themselves to align with the object being painted; by default, they begin painting at the origin (0, 0) of the render target.</para>
+      <para>You can "move" the gradient defined by an <see cref="ID2D1LinearGradientBrush" /> to a target area by setting its start point and end point. Likewise, you can move the gradient defined by an <see cref="ID2D1RadialGradientBrush" /> by changing its center and radii.</para>
+      <para>To align the content of an <see cref="ID2D1BitmapBrush" /> to the area being painted, you can use the <b>SetTransform</b> method to translate the bitmap to the desired location. This transform only affects the brush; it does not affect any other content drawn by the render target.</para>
+      <para>The following illustrations show the effect of using an <see cref="ID2D1BitmapBrush" /> to fill a rectangle located at (100, 100). The illustration on the left illustration shows the result of filling the rectangle without transforming the brush: the bitmap is drawn at the render target's origin. As a result, only a portion of the bitmap appears in the rectangle.</para>
+      <para>The illustration on the right shows the result of transforming the <see cref="ID2D1BitmapBrush" /> so that its content is shifted 50 pixels to the right and 50 pixels down. The bitmap now fills the rectangle.</para>
+      <para>
+        <img alt="Illustration of two squares, one painted with a bitmap without a transformed brush and one painted with a transformed brush" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/brushes_ovw_transform.png" />
+      </para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-brushes-overview">Brushes Overview</seealso>
+    <seealso cref="ID2D1Brush" />
+  </member>
+  <member name="ID2D1Brush">
+    <summary>
+      <para>Defines an object that paints an area. Interfaces that derive from <b>ID2D1Brush</b> describe how the area is painted.</para>
+    </summary>
+    <remarks>
+      <para>An <see cref="ID2D1BitmapBrush" /> is a device-dependent resource: your application should create bitmap brushes after it initializes the render target with which the bitmap brush will be used, and recreate the bitmap brush whenever the render target needs recreated. (For more information about resources, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.)</para>
+      <para>Brush space in Direct2D is specified differently than in XPS and Windows Presentation Foundation (WPF). In Direct2D, brush space is not relative to the object being drawn, but rather is the current coordinate system of the render target, transformed by the brush transform, if present. To paint an object as it would be painted by a WPF brush, you must translate the brush space origin to the upper-left corner of the object's bounding box, and then scale the brush space so that the base tile fills the bounding box of the object.</para>
+      <para>For more information about brushes, see the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-brushes-overview">Brushes Overview</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-brushes-overview">Brushes Overview</seealso>
+    <seealso cref="ID2D1Resource" />
+  </member>
+</doc>

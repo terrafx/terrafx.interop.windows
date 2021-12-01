@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IGraphConfigCallback.Reconfigure">
+    <summary>
+      <para>The <code>Reconfigure</code> method is a callback method passed to <see cref="IGraphConfig.Reconfigure" />.</para>
+    </summary>
+    <param name="pvContext">
+      <para>Value passed in the <b>IGraphConfig.Reconfigure</b> method's <i>pvContext</i> parameter.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Value passed in the <b>IGraphConfig.Reconfigure</b> method's <i>dwFlags</i> parameter.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>If your application or filter calls <b>IGraphConfig.Reconfigure</b>, you must implement this method and pass it as a callback. The <b>IGraphConfig.Reconfigure</b> method obtains a lock on the filter graph before calling your <code>Reconfigure</code> method. Your method then handles all the other details of dynamic graph building.</para>
+      <para>If this method succeeds, <b>IGraphConfig.Reconfigure</b> tries to put all the filters in the graph back into a running state. If the method fails, <b>IGraphConfig.Reconfigure</b> returns whatever error code this method returned.</para>
+      <para>This method allows for specialized graph rebuilding. For a more straightforward approach to dynamic graph building, see <see cref="IGraphConfig.Reconnect" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IGraphConfigCallback Interface" />
+  </member>
+  <member name="IGraphConfigCallback">
+    <summary>
+      <para>The <code>IGraphConfigCallback</code> interface contains the callback method passed to <see cref="IGraphConfig.Reconfigure" />. The caller (an application or filter) implements this interface. For more information, see <see cref="IGraphConfig" />.</para>
+    </summary>
+  </member>
+</doc>

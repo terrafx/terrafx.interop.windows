@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet"]/*' />
 [Guid("3050F2E3-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLStyleSheet : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, uint>)(lpVtbl[1]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, uint>)(lpVtbl[2]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, uint*, int>)(lpVtbl[3]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.put_title"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_title([NativeTypeName("BSTR")] ushort* v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort*, int>)(lpVtbl[7]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_title"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_title([NativeTypeName("BSTR *")] ushort** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort**, int>)(lpVtbl[8]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_parentStyleSheet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_parentStyleSheet(IHTMLStyleSheet** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, IHTMLStyleSheet**, int>)(lpVtbl[9]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_owningElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_owningElement(IHTMLElement** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, IHTMLElement**, int>)(lpVtbl[10]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.put_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, short, int>)(lpVtbl[11]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, short*, int>)(lpVtbl[12]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_readOnly"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_readOnly([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, short*, int>)(lpVtbl[13]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_imports"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_imports(IHTMLStyleSheetsCollection** p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, IHTMLStyleSheetsCollection**, int>)(lpVtbl[14]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.put_href"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_href([NativeTypeName("BSTR")] ushort* v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort*, int>)(lpVtbl[15]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_href"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_href([NativeTypeName("BSTR *")] ushort** p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort**, int>)(lpVtbl[16]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort**, int>)(lpVtbl[17]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_id"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_id([NativeTypeName("BSTR *")] ushort** p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort**, int>)(lpVtbl[18]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.addImport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT addImport([NativeTypeName("BSTR")] ushort* bstrURL, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plIndex)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort*, int, int*, int>)(lpVtbl[19]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), bstrURL, lIndex, plIndex);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.addRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT addRule([NativeTypeName("BSTR")] ushort* bstrSelector, [NativeTypeName("BSTR")] ushort* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort*, ushort*, int, int*, int>)(lpVtbl[20]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), bstrSelector, bstrStyle, lIndex, plNewIndex);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.removeImport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT removeImport([NativeTypeName("long")] int lIndex)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, int, int>)(lpVtbl[21]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), lIndex);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.removeRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT removeRule([NativeTypeName("long")] int lIndex)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, int, int>)(lpVtbl[22]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), lIndex);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.put_media"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_media([NativeTypeName("BSTR")] ushort* v)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort*, int>)(lpVtbl[23]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_media"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_media([NativeTypeName("BSTR *")] ushort** p)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort**, int>)(lpVtbl[24]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.put_cssText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_cssText([NativeTypeName("BSTR")] ushort* v)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort*, int>)(lpVtbl[25]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_cssText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_cssText([NativeTypeName("BSTR *")] ushort** p)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
         return ((delegate* unmanaged<IHTMLStyleSheet*, ushort**, int>)(lpVtbl[26]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyleSheet.xml' path='doc/member[@name="IHTMLStyleSheet.get_rules"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT get_rules(IHTMLStyleSheetRulesCollection** p)

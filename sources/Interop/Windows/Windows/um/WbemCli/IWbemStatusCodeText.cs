@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemStatusCodeText.xml' path='doc/member[@name="IWbemStatusCodeText"]/*' />
 [Guid("EB87E1BC-3233-11D2-AEC9-00C04FB68820")]
 [NativeTypeName("struct IWbemStatusCodeText : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemStatusCodeText : IWbemStatusCodeText.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemStatusCodeText : IWbemStatusCodeText.Interface
         return ((delegate* unmanaged<IWbemStatusCodeText*, Guid*, void**, int>)(lpVtbl[0]))((IWbemStatusCodeText*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemStatusCodeText : IWbemStatusCodeText.Interface
         return ((delegate* unmanaged<IWbemStatusCodeText*, uint>)(lpVtbl[1]))((IWbemStatusCodeText*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemStatusCodeText : IWbemStatusCodeText.Interface
         return ((delegate* unmanaged<IWbemStatusCodeText*, uint>)(lpVtbl[2]))((IWbemStatusCodeText*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWbemStatusCodeText.xml' path='doc/member[@name="IWbemStatusCodeText.GetErrorCodeText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetErrorCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText)
@@ -46,6 +51,7 @@ public unsafe partial struct IWbemStatusCodeText : IWbemStatusCodeText.Interface
         return ((delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, ushort**, int>)(lpVtbl[3]))((IWbemStatusCodeText*)Unsafe.AsPointer(ref this), hRes, LocaleId, lFlags, MessageText);
     }
 
+    /// <include file='IWbemStatusCodeText.xml' path='doc/member[@name="IWbemStatusCodeText.GetFacilityCodeText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFacilityCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText)

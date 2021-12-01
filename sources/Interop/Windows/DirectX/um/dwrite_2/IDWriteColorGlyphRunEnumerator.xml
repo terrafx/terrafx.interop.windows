@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteColorGlyphRunEnumerator.GetCurrentRun">
+    <summary>
+      <para>Returns the current glyph run of the enumerator.</para>
+    </summary>
+    <param name="colorGlyphRun">
+      <para>Type: <b>const <see cref="DWRITE_COLOR_GLYPH_RUN" />**</b></para>
+      <para>A pointer to the current glyph run.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritecolorglyphrunenumerator">IDWriteColorGlyphRunEnumerator</seealso>
+  </member>
+  <member name="IDWriteColorGlyphRunEnumerator.MoveNext">
+    <summary>
+      <para>Move to the next glyph run in the enumerator.</para>
+    </summary>
+    <param name="hasRun">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Returns <b>TRUE</b> if there is a next glyph run.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritecolorglyphrunenumerator">IDWriteColorGlyphRunEnumerator</seealso>
+  </member>
+  <member name="IDWriteColorGlyphRunEnumerator">
+    <summary>
+      <para>This interface allows the application to enumerate through the color glyph runs. The enumerator enumerates the layers in a back to front order for appropriate layering.</para>
+    </summary>
+  </member>
+</doc>

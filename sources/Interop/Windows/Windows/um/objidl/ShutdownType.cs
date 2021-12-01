@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ShutdownType.xml' path='doc/member[@name="ShutdownType"]/*' />
 public enum ShutdownType
 {
+    /// <include file='ShutdownType.xml' path='doc/member[@name="ShutdownType.IdleShutdown"]/*' />
     IdleShutdown = 0,
+
+    /// <include file='ShutdownType.xml' path='doc/member[@name="ShutdownType.ForcedShutdown"]/*' />
     ForcedShutdown = (IdleShutdown + 1),
 }

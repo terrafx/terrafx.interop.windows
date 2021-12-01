@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_TEXT_ANTIALIAS_MODE.xml' path='doc/member[@name="D2D1_TEXT_ANTIALIAS_MODE"]/*' />
 public enum D2D1_TEXT_ANTIALIAS_MODE : uint
 {
+    /// <include file='D2D1_TEXT_ANTIALIAS_MODE.xml' path='doc/member[@name="D2D1_TEXT_ANTIALIAS_MODE.D2D1_TEXT_ANTIALIAS_MODE_DEFAULT"]/*' />
     D2D1_TEXT_ANTIALIAS_MODE_DEFAULT = 0,
+
+    /// <include file='D2D1_TEXT_ANTIALIAS_MODE.xml' path='doc/member[@name="D2D1_TEXT_ANTIALIAS_MODE.D2D1_TEXT_ANTIALIAS_MODE_CLEARTYPE"]/*' />
     D2D1_TEXT_ANTIALIAS_MODE_CLEARTYPE = 1,
+
+    /// <include file='D2D1_TEXT_ANTIALIAS_MODE.xml' path='doc/member[@name="D2D1_TEXT_ANTIALIAS_MODE.D2D1_TEXT_ANTIALIAS_MODE_GRAYSCALE"]/*' />
     D2D1_TEXT_ANTIALIAS_MODE_GRAYSCALE = 2,
+
+    /// <include file='D2D1_TEXT_ANTIALIAS_MODE.xml' path='doc/member[@name="D2D1_TEXT_ANTIALIAS_MODE.D2D1_TEXT_ANTIALIAS_MODE_ALIASED"]/*' />
     D2D1_TEXT_ANTIALIAS_MODE_ALIASED = 3,
+
+    /// <include file='D2D1_TEXT_ANTIALIAS_MODE.xml' path='doc/member[@name="D2D1_TEXT_ANTIALIAS_MODE.D2D1_TEXT_ANTIALIAS_MODE_FORCE_DWORD"]/*' />
     D2D1_TEXT_ANTIALIAS_MODE_FORCE_DWORD = 0xffffffff,
 }

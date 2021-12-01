@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellFolderViewCB.xml' path='doc/member[@name="IShellFolderViewCB"]/*' />
 [Guid("2047E320-F2A9-11CE-AE65-08002B2E1262")]
 [NativeTypeName("struct IShellFolderViewCB : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellFolderViewCB : IShellFolderViewCB.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellFolderViewCB : IShellFolderViewCB.Interface
         return ((delegate* unmanaged<IShellFolderViewCB*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolderViewCB*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellFolderViewCB : IShellFolderViewCB.Interface
         return ((delegate* unmanaged<IShellFolderViewCB*, uint>)(lpVtbl[1]))((IShellFolderViewCB*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellFolderViewCB : IShellFolderViewCB.Interface
         return ((delegate* unmanaged<IShellFolderViewCB*, uint>)(lpVtbl[2]))((IShellFolderViewCB*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFolderViewCB.xml' path='doc/member[@name="IShellFolderViewCB.MessageSFVCB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT MessageSFVCB(uint uMsg, WPARAM wParam, LPARAM lParam)

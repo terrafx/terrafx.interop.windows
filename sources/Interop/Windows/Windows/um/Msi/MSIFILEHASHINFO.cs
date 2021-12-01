@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSIFILEHASHINFO.xml' path='doc/member[@name="MSIFILEHASHINFO"]/*' />
 public unsafe partial struct MSIFILEHASHINFO
 {
+    /// <include file='MSIFILEHASHINFO.xml' path='doc/member[@name="MSIFILEHASHINFO.dwFileHashInfoSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint dwFileHashInfoSize;
 
+    /// <include file='MSIFILEHASHINFO.xml' path='doc/member[@name="MSIFILEHASHINFO.dwData"]/*' />
     [NativeTypeName("ULONG [4]")]
     public fixed uint dwData[4];
 }

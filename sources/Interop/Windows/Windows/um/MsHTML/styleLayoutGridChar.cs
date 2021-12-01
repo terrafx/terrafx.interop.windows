@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleLayoutGridChar.xml' path='doc/member[@name="styleLayoutGridChar"]/*' />
 public enum styleLayoutGridChar
 {
+    /// <include file='styleLayoutGridChar.xml' path='doc/member[@name="styleLayoutGridChar.styleLayoutGridCharNotSet"]/*' />
     styleLayoutGridCharNotSet = 0,
+
+    /// <include file='styleLayoutGridChar.xml' path='doc/member[@name="styleLayoutGridChar.styleLayoutGridCharAuto"]/*' />
     styleLayoutGridCharAuto = 1,
+
+    /// <include file='styleLayoutGridChar.xml' path='doc/member[@name="styleLayoutGridChar.styleLayoutGridCharNone"]/*' />
     styleLayoutGridCharNone = 2,
+
+    /// <include file='styleLayoutGridChar.xml' path='doc/member[@name="styleLayoutGridChar.styleLayoutGridChar_Max"]/*' />
     styleLayoutGridChar_Max = 2147483647,
 }

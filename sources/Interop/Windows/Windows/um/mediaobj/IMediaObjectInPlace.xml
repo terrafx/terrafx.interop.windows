@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMediaObjectInPlace.Clone">
+    <summary>
+      <para>The <code>Clone</code> method creates a copy of the DMO in its current state.</para>
+    </summary>
+    <param name="ppMediaObject">
+      <para>Address of a pointer to receive the new DMO's <see cref="IMediaObjectInPlace" /> interface.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>If the method succeeds, the <b>IMediaObjectInPlace</b> interface that it returns has an outstanding reference count. Be sure to release the interface when you are finished using it.</para>
+    </remarks>
+    <seealso cref="IMediaObjectInPlace Interface" />
+  </member>
+  <member name="IMediaObjectInPlace.GetLatency">
+    <summary>
+      <para>The <code>GetLatency</code> method retrieves the latency introduced by this DMO.</para>
+    </summary>
+    <param name="pLatencyTime">
+      <para>Pointer to a variable that receives the latency, in 100-nanosecond units.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>This method returns the average time required to process each buffer. This value usually depends on factors in the run-time environment, such as the processor speed and the CPU load. One possible way to implement this method is for the DMO to keep a running average based on historical data.</para>
+    </remarks>
+    <seealso cref="IMediaObjectInPlace Interface" />
+  </member>
+  <member name="IMediaObjectInPlace.Process">
+    <summary>
+      <para>The <code>Process</code> method processes a block of data. The application supplies a pointer to a block of input data. The DMO processes the data in place.</para>
+    </summary>
+    <param name="ulSize">
+      <para>Size of the data, in bytes.</para>
+    </param>
+    <param name="pData">
+      <para>Pointer to a buffer of size <i>ulSize</i>. On input, the buffer holds the input data. If the method returns successfully, the buffer contains the output data.</para>
+    </param>
+    <param name="refTimeStart">
+      <para>Start time of the data.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Either DMO_INPLACE_NORMAL or DMO_INPLACE_ZERO. See Remarks for more information.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Success. There is still data to process.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success. There is no remaining data to process.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the method fails, the buffer might contain garbage. The application should not use the contents of the buffer.</para>
+      <para>The DMO might produce output data beyond the length of the input data. This is called an <i>effect tail</i>. For example, a reverb effect continues after the input reaches silence. If the DMO has an effect tail, this method returns S_FALSE.</para>
+      <para>While the application has input data for processing, call the <code>Process</code> method with the <i>dwFlags</i> parameter set to DMO_INPLACE_NORMAL. If the last such call returns S_FALSE, call <code>Process</code> again, this time with a zeroed input buffer and the DMO_INPLACE_ZERO flag. The DMO will now fill the zeroed buffer with the effect tail. Continue calling <code>Process</code> in this way until the return value is S_OK, indicating that the DMO has finished processing the effect tail.</para>
+      <para>If the DMO has no effect tail, this method returns S_TRUE or an error code.</para>
+    </remarks>
+    <seealso cref="IMediaObjectInPlace Interface" />
+  </member>
+  <member name="IMediaObjectInPlace">
+    <summary>
+      <para>The <code>IMediaObjectInPlace</code> interface provides methods for processing data in place. A Microsoft DirectX Media Object (DMO) can expose this interface if it meets the following conditions:</para>
+      <list type="bullet">
+        <item>
+          <description>It has one input stream and one output stream.</description>
+        </item>
+        <item>
+          <description>Both streams use the same media type.</description>
+        </item>
+        <item>
+          <description>The output is produced in place on the buffer; that is, without copying data.</description>
+        </item>
+      </list>This interface provides an optimized way to process data. The application calls a single <see cref="IMediaObjectInPlace.Process" /> method instead of the <see cref="IMediaObject.ProcessInput" /> and <see cref="IMediaObject.ProcessOutput" /> methods. However, any DMO that implements this interface must also implement the <see cref="IMediaObject" /> interface. Therefore, an application is never obligated to use this interface, and a DMO is never guaranteed to implement it.
+</summary>
+  </member>
+</doc>

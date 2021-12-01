@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_LEAP_SECOND_INFO.xml' path='doc/member[@name="PROCESS_LEAP_SECOND_INFO"]/*' />
 public partial struct PROCESS_LEAP_SECOND_INFO
 {
+    /// <include file='PROCESS_LEAP_SECOND_INFO.xml' path='doc/member[@name="PROCESS_LEAP_SECOND_INFO.Flags"]/*' />
     [NativeTypeName("ULONG")]
     public uint Flags;
 
+    /// <include file='PROCESS_LEAP_SECOND_INFO.xml' path='doc/member[@name="PROCESS_LEAP_SECOND_INFO.Reserved"]/*' />
     [NativeTypeName("ULONG")]
     public uint Reserved;
 }

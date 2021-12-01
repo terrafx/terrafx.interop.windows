@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICRawRotationCapabilities.xml' path='doc/member[@name="WICRawRotationCapabilities"]/*' />
 public enum WICRawRotationCapabilities
 {
+    /// <include file='WICRawRotationCapabilities.xml' path='doc/member[@name="WICRawRotationCapabilities.WICRawRotationCapabilityNotSupported"]/*' />
     WICRawRotationCapabilityNotSupported = 0,
+
+    /// <include file='WICRawRotationCapabilities.xml' path='doc/member[@name="WICRawRotationCapabilities.WICRawRotationCapabilityGetSupported"]/*' />
     WICRawRotationCapabilityGetSupported = 0x1,
+
+    /// <include file='WICRawRotationCapabilities.xml' path='doc/member[@name="WICRawRotationCapabilities.WICRawRotationCapabilityNinetyDegreesSupported"]/*' />
     WICRawRotationCapabilityNinetyDegreesSupported = 0x2,
+
+    /// <include file='WICRawRotationCapabilities.xml' path='doc/member[@name="WICRawRotationCapabilities.WICRawRotationCapabilityFullySupported"]/*' />
     WICRawRotationCapabilityFullySupported = 0x3,
+
+    /// <include file='WICRawRotationCapabilities.xml' path='doc/member[@name="WICRawRotationCapabilities.WICRAWROTATIONCAPABILITIES_FORCE_DWORD"]/*' />
     WICRAWROTATIONCAPABILITIES_FORCE_DWORD = 0x7fffffff,
 }

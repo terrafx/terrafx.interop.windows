@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUTHENTICATEINFO.xml' path='doc/member[@name="AUTHENTICATEINFO"]/*' />
 public partial struct AUTHENTICATEINFO
 {
+    /// <include file='AUTHENTICATEINFO.xml' path='doc/member[@name="AUTHENTICATEINFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='AUTHENTICATEINFO.xml' path='doc/member[@name="AUTHENTICATEINFO.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 }

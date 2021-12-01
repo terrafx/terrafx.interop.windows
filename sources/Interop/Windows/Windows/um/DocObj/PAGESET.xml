@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PAGESET">
+    <summary>
+      <para>Identifies one or more page-ranges to be printed and, optionally, identifies only the even or odd pages as part of a pageset.</para>
+    </summary>
+    <seealso cref="PAGERANGE" />
+  </member>
+  <member name="PAGESET.cbStruct">
+    <summary>
+      <para>The number of bytes in this instance of the <b>PAGESET</b> structure. This member must be a multiple of 4.</para>
+    </summary>
+  </member>
+  <member name="PAGESET.fOddPages">
+    <summary>
+      <para>If <b>TRUE</b>, only the odd-numbered pages in the page-set indicated by <b>rgPages</b> are to be printed.</para>
+    </summary>
+  </member>
+  <member name="PAGESET.fEvenPages">
+    <summary>
+      <para>If <b>TRUE</b>, only the even-numbered pages in the page-set indicated by <b>rgPages</b> are to be printed.</para>
+    </summary>
+  </member>
+  <member name="PAGESET.cPageRange">
+    <summary>
+      <para>The number of page-range pairs specified in <b>rgPages</b>.</para>
+    </summary>
+  </member>
+  <member name="PAGESET.rgPages">
+    <summary>
+      <para>Pointer to an array of <see cref="PAGERANGE" /> structures specifying the pages to be printed. One or more page ranges can be specified, so long as the number of page ranges is the value of <b>cPageRange</b>. The page ranges must be sorted in ascending order and must be non-overlapping.</para>
+    </summary>
+  </member>
+</doc>

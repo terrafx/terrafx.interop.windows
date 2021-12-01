@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LHITTESTINFO.xml' path='doc/member[@name="LHITTESTINFO"]/*' />
 public partial struct LHITTESTINFO
 {
+    /// <include file='LHITTESTINFO.xml' path='doc/member[@name="LHITTESTINFO.pt"]/*' />
     public POINT pt;
 
+    /// <include file='LHITTESTINFO.xml' path='doc/member[@name="LHITTESTINFO.item"]/*' />
     public LITEM item;
 }

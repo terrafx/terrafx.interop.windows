@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPONENTSOPT">
+    <summary>
+      <para>Contains the desktop item options.</para>
+    </summary>
+  </member>
+  <member name="COMPONENTSOPT.dwSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>A <b>DWORD</b> value that contains the size of the structure.</para>
+    </summary>
+  </member>
+  <member name="COMPONENTSOPT.fEnableComponents">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>A <b>BOOL</b> value that determines if desktop items are enabled.</para>
+    </summary>
+  </member>
+  <member name="COMPONENTSOPT.fActiveDesktop">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>A <b>BOOL</b> value that determines if the Active Desktop is enabled.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,10 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUTHENTICATEF.xml' path='doc/member[@name="AUTHENTICATEF"]/*' />
 [Flags]
 public enum AUTHENTICATEF
 {
+    /// <include file='AUTHENTICATEF.xml' path='doc/member[@name="AUTHENTICATEF.AUTHENTICATEF_PROXY"]/*' />
     AUTHENTICATEF_PROXY = 0x1,
+
+    /// <include file='AUTHENTICATEF.xml' path='doc/member[@name="AUTHENTICATEF.AUTHENTICATEF_BASIC"]/*' />
     AUTHENTICATEF_BASIC = 0x2,
+
+    /// <include file='AUTHENTICATEF.xml' path='doc/member[@name="AUTHENTICATEF.AUTHENTICATEF_HTTP"]/*' />
     AUTHENTICATEF_HTTP = 0x4,
 }

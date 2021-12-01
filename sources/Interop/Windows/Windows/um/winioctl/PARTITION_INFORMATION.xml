@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PARTITION_INFORMATION">
+    <summary>
+      <para>Contains information about a disk partition.
+<b>Note</b>  <b>PARTITION_INFORMATION</b> has been superseded by the
+<see cref="PARTITION_INFORMATION_EX" /> structure.</para>
+    </summary>
+    <remarks>
+      <para>If the partition is on a disk formatted as type master boot record (MBR), partition size totals are limited. For more information, see the Remarks section of <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_drive_layout">IOCTL_DISK_SET_DRIVE_LAYOUT</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-system-recognition">File System Recognition</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_drive_layout">IOCTL_DISK_GET_DRIVE_LAYOUT</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_partition_info">IOCTL_DISK_GET_PARTITION_INFO</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_drive_layout">IOCTL_DISK_SET_DRIVE_LAYOUT</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_partition_info">IOCTL_DISK_SET_PARTITION_INFO</seealso>
+    <seealso cref="PARTITION_INFORMATION_EX" />
+    <seealso cref="PARTITION_STYLE" />
+  </member>
+  <member name="PARTITION_INFORMATION.StartingOffset">
+    <summary>
+      <para>The starting offset of the partition.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION.PartitionLength">
+    <summary>
+      <para>The length of the partition, in bytes.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION.HiddenSectors">
+    <summary>
+      <para>The number of hidden sectors in the partition.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION.PartitionNumber">
+    <summary>
+      <para>The number of the partition (1-based).</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION.PartitionType">
+    <summary>
+      <para>The type of partition. For a list of values, see
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/disk-partition-types">Disk Partition Types</a>.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION.BootIndicator">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the partition is bootable.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION.RecognizedPartition">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the partition is of a recognized type.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION.RewritePartition">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the partition information has changed. When you change a partition (with
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_drive_layout">IOCTL_DISK_SET_DRIVE_LAYOUT</a>), the system uses this member to determine which partitions have changed and need their information rewritten.</para>
+    </summary>
+  </member>
+</doc>

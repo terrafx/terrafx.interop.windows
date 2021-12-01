@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.BSTR_UserFree">
+    <summary>
+      <para>Frees resources on the server side when called by RPC stub files.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The object.</para>
+    </param>
+  </member>
+  <member name="Windows.BSTR_UserFree64">
+    <summary>
+      <para>Frees resources on the server side when called by RPC stub files.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The object.</para>
+    </param>
+  </member>
+  <member name="Windows.BSTR_UserMarshal">
+    <summary>
+      <para>Marshals a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a> object into the RPC buffer.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.BSTR_UserMarshal64">
+    <summary>
+      <para>Marshals a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a> object into the RPC buffer.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.BSTR_UserSize">
+    <summary>
+      <para>Calculates the wire size of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a> object, and gets its handle and data.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a> object to be properly aligned when it will be marshaled to the buffer.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.BSTR_UserSize64">
+    <summary>
+      <para>Calculates the wire size of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a> object, and gets its handle and data.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a> object to be properly aligned when it will be marshaled to the buffer.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.BSTR_UserUnmarshal">
+    <summary>
+      <para>Unmarshals a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a> object from the RPC buffer.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory for this function to perform.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.BSTR_UserUnmarshal64">
+    <summary>
+      <para>Unmarshals a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a> object from the RPC buffer.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory for this function to perform.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.VARIANT_UserFree">
+    <summary>
+      <para>Frees resources on the server side when called by RPC stub files.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The object.</para>
+    </param>
+  </member>
+  <member name="Windows.VARIANT_UserFree64">
+    <summary>
+      <para>Frees resources on the server side when called by RPC stub files.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The object.</para>
+    </param>
+  </member>
+  <member name="Windows.VARIANT_UserMarshal">
+    <summary>
+      <para>Marshals a <see cref="VARIANT" /> object into the RPC buffer.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <i>pVariant</i> parameter is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>RPC_X_NULL_REF_POINTER
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <i>pVariant</i> parameter is null.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISP_E_BADVARTYPE
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The input parameter is not a valid type of variant.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.VARIANT_UserMarshal64">
+    <summary>
+      <para>Marshals a <see cref="VARIANT" /> object into the RPC buffer.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <i>pVariant</i> parameter is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>RPC_X_NULL_REF_POINTER
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <i>pVariant</i> parameter is null.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISP_E_BADVARTYPE
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The input parameter is not a valid type of variant.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.VARIANT_UserSize">
+    <summary>
+      <para>Calculates the wire size of the <see cref="VARIANT" /> object, and gets its handle and data.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the object to be properly aligned when it will be marshaled to the buffer.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.VARIANT_UserSize64">
+    <summary>
+      <para>Calculates the wire size of the <see cref="VARIANT" /> object, and gets its handle and data.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the object to be properly aligned when it will be marshaled to the buffer.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.VARIANT_UserUnmarshal">
+    <summary>
+      <para>Unmarshals a <see cref="VARIANT" /> object from the RPC buffer.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <i>pVariant</i> parameter is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>RPC_X_BAD_STUB_DATA
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The stub data for the buffer size is incorrect.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISP_E_BADVARTYPE
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The input parameter is not a valid type of variant.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory for this function to perform.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.VARIANT_UserUnmarshal64">
+    <summary>
+      <para>Unmarshals a <see cref="VARIANT" /> object from the RPC buffer.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>The object.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <i>pVariant</i> parameter is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>RPC_X_BAD_STUB_DATA
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The stub data for the buffer size is incorrect.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISP_E_BADVARTYPE
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The input parameter is not a valid type of variant.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory for this function to perform.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+</doc>

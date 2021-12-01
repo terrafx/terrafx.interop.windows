@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_OPAQUE_INFO">
+    <summary>
+      <para>The
+<b>MIB_OPAQUE_INFO</b> structure contains information returned from a MIB opaque query.</para>
+    </summary>
+    <seealso cref="MIB_OPAQUE_QUERY" />
+  </member>
+  <member name="MIB_OPAQUE_INFO.dwId">
+    <summary>
+      <para>The type of information returned.</para>
+    </summary>
+  </member>
+  <member name="MIB_OPAQUE_INFO.ullAlign">
+    <summary>
+      <para>The number of bytes that align the information returned.</para>
+    </summary>
+  </member>
+  <member name="MIB_OPAQUE_INFO.rgbyData">
+    <summary>
+      <para>A pointer to the information returned from the opaque query.</para>
+    </summary>
+  </member>
+</doc>

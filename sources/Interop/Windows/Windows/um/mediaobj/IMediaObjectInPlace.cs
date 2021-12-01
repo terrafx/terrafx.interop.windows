@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaObjectInPlace.xml' path='doc/member[@name="IMediaObjectInPlace"]/*' />
 [Guid("651B9AD0-0FC7-4AA9-9538-D89931010741")]
 [NativeTypeName("struct IMediaObjectInPlace : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
         return ((delegate* unmanaged<IMediaObjectInPlace*, Guid*, void**, int>)(lpVtbl[0]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
         return ((delegate* unmanaged<IMediaObjectInPlace*, uint>)(lpVtbl[1]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
         return ((delegate* unmanaged<IMediaObjectInPlace*, uint>)(lpVtbl[2]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaObjectInPlace.xml' path='doc/member[@name="IMediaObjectInPlace.Process"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Process([NativeTypeName("ULONG")] uint ulSize, byte* pData, [NativeTypeName("REFERENCE_TIME")] long refTimeStart, [NativeTypeName("DWORD")] uint dwFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
         return ((delegate* unmanaged<IMediaObjectInPlace*, uint, byte*, long, uint, int>)(lpVtbl[3]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), ulSize, pData, refTimeStart, dwFlags);
     }
 
+    /// <include file='IMediaObjectInPlace.xml' path='doc/member[@name="IMediaObjectInPlace.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Clone(IMediaObjectInPlace** ppMediaObject)
@@ -53,6 +59,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
         return ((delegate* unmanaged<IMediaObjectInPlace*, IMediaObjectInPlace**, int>)(lpVtbl[4]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), ppMediaObject);
     }
 
+    /// <include file='IMediaObjectInPlace.xml' path='doc/member[@name="IMediaObjectInPlace.GetLatency"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetLatency([NativeTypeName("REFERENCE_TIME *")] long* pLatencyTime)

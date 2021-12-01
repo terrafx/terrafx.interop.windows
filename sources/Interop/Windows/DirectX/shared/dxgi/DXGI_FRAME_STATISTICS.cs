@@ -7,15 +7,21 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS"]/*' />
 public partial struct DXGI_FRAME_STATISTICS
 {
+    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.PresentCount"]/*' />
     public uint PresentCount;
 
+    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.PresentRefreshCount"]/*' />
     public uint PresentRefreshCount;
 
+    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.SyncRefreshCount"]/*' />
     public uint SyncRefreshCount;
 
+    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.SyncQPCTime"]/*' />
     public LARGE_INTEGER SyncQPCTime;
 
+    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.SyncGPUTime"]/*' />
     public LARGE_INTEGER SyncGPUTime;
 }

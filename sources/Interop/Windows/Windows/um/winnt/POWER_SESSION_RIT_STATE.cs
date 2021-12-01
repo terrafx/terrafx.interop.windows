@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_SESSION_RIT_STATE.xml' path='doc/member[@name="POWER_SESSION_RIT_STATE"]/*' />
 public partial struct POWER_SESSION_RIT_STATE
 {
+    /// <include file='POWER_SESSION_RIT_STATE.xml' path='doc/member[@name="POWER_SESSION_RIT_STATE.Active"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Active;
 
+    /// <include file='POWER_SESSION_RIT_STATE.xml' path='doc/member[@name="POWER_SESSION_RIT_STATE.LastInputTime"]/*' />
     [NativeTypeName("DWORD")]
     public uint LastInputTime;
 }

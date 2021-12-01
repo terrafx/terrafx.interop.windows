@@ -8,13 +8,17 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct WCM_PROFILE_INFO
 {
+    /// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO.strProfileName"]/*' />
     [NativeTypeName("WCHAR [256]")]
     public fixed ushort strProfileName[256];
 
+    /// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO.AdapterGUID"]/*' />
     public Guid AdapterGUID;
 
+    /// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO.Media"]/*' />
     public WCM_MEDIA_TYPE Media;
 }

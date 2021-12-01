@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_CUSTOM_DECODE_UNIT_TYPE.xml' path='doc/member[@name="MF_CUSTOM_DECODE_UNIT_TYPE"]/*' />
 public enum MF_CUSTOM_DECODE_UNIT_TYPE
 {
+    /// <include file='MF_CUSTOM_DECODE_UNIT_TYPE.xml' path='doc/member[@name="MF_CUSTOM_DECODE_UNIT_TYPE.MF_DECODE_UNIT_NAL"]/*' />
     MF_DECODE_UNIT_NAL = 0,
+
+    /// <include file='MF_CUSTOM_DECODE_UNIT_TYPE.xml' path='doc/member[@name="MF_CUSTOM_DECODE_UNIT_TYPE.MF_DECODE_UNIT_SEI"]/*' />
     MF_DECODE_UNIT_SEI = 1,
 }

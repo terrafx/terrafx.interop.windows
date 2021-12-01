@@ -7,14 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DROPDESCRIPTION.xml' path='doc/member[@name="DROPDESCRIPTION"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct DROPDESCRIPTION
 {
+    /// <include file='DROPDESCRIPTION.xml' path='doc/member[@name="DROPDESCRIPTION.type"]/*' />
     public DROPIMAGETYPE type;
 
+    /// <include file='DROPDESCRIPTION.xml' path='doc/member[@name="DROPDESCRIPTION.szMessage"]/*' />
     [NativeTypeName("WCHAR [260]")]
     public fixed ushort szMessage[260];
 
+    /// <include file='DROPDESCRIPTION.xml' path='doc/member[@name="DROPDESCRIPTION.szInsert"]/*' />
     [NativeTypeName("WCHAR [260]")]
     public fixed ushort szInsert[260];
 }

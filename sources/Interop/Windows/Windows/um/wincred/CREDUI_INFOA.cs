@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREDUI_INFOA.xml' path='doc/member[@name="CREDUI_INFOA"]/*' />
 public unsafe partial struct CREDUI_INFOA
 {
+    /// <include file='CREDUI_INFOA.xml' path='doc/member[@name="CREDUI_INFOA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CREDUI_INFOA.xml' path='doc/member[@name="CREDUI_INFOA.hwndParent"]/*' />
     public HWND hwndParent;
 
+    /// <include file='CREDUI_INFOA.xml' path='doc/member[@name="CREDUI_INFOA.pszMessageText"]/*' />
     [NativeTypeName("PCSTR")]
     public sbyte* pszMessageText;
 
+    /// <include file='CREDUI_INFOA.xml' path='doc/member[@name="CREDUI_INFOA.pszCaptionText"]/*' />
     [NativeTypeName("PCSTR")]
     public sbyte* pszCaptionText;
 
+    /// <include file='CREDUI_INFOA.xml' path='doc/member[@name="CREDUI_INFOA.hbmBanner"]/*' />
     public HBITMAP hbmBanner;
 }

@@ -8,14 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPC_LINK.xml' path='doc/member[@name="SPC_LINK"]/*' />
 public unsafe partial struct SPC_LINK
 {
+    /// <include file='SPC_LINK.xml' path='doc/member[@name="SPC_LINK.dwLinkChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLinkChoice;
 
+    /// <include file='SPC_LINK.xml' path='doc/member[@name="SPC_LINK.Anonymous"]/*' />
     [NativeTypeName("SPC_LINK_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinTrust.h:1280:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszUrl"]/*' />
     public ref ushort* pwszUrl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25,6 +29,7 @@ public unsafe partial struct SPC_LINK
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Moniker"]/*' />
     public ref SPC_SERIALIZED_OBJECT Moniker
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +39,7 @@ public unsafe partial struct SPC_LINK
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszFile"]/*' />
     public ref ushort* pwszFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,16 +49,20 @@ public unsafe partial struct SPC_LINK
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszUrl"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
         public ushort* pwszUrl;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Moniker"]/*' />
         [FieldOffset(0)]
         public SPC_SERIALIZED_OBJECT Moniker;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszFile"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
         public ushort* pwszFile;

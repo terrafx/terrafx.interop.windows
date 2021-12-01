@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.D2D1ConvertColorSpace">
+    <summary>
+      <para>Converts the given color from one colorspace to another.</para>
+    </summary>
+    <param name="sourceColorSpace">
+      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
+      <para>The source color space.</para>
+    </param>
+    <param name="destinationColorSpace">
+      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
+      <para>The destination color space.</para>
+    </param>
+    <param name="color">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a>*</b></para>
+      <para>The source color.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
+      <para>The converted color.</para>
+    </returns>
+  </member>
+  <member name="DirectX.D2D1CreateDevice">
+    <summary>
+      <para>Creates a new Direct2D device associated with the provided DXGI device.</para>
+    </summary>
+    <param name="dxgiDevice">
+      <para>The DXGI device the Direct2D device is associated with.</para>
+    </param>
+    <param name="creationProperties">
+      <para>The properties to apply to the Direct2D device.</para>
+    </param>
+    <param name="d2dDevice">
+      <para>When this function returns, contains the address of a pointer to a Direct2D device.</para>
+    </param>
+    <returns>
+      <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>HRESULT</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>S_OK</description>
+          <description>No error occurred.</description>
+        </item>
+        <item>
+          <description>E_OUTOFMEMORY</description>
+          <description>Direct2D could not allocate sufficient memory to complete the call.</description>
+        </item>
+        <item>
+          <description>E_INVALIDARG</description>
+          <description>An invalid value was passed to the method.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function will also create a new <see cref="ID2D1Factory1" /> that can be retrieved through <see cref="ID2D1Resource.GetFactory" />.</para>
+      <para>If the creation properties are not specified, then <i>d2dDevice</i> will inherit its threading mode from <i>dxgiDevice</i> and debug tracing will not be enabled.</para>
+    </remarks>
+    <seealso cref="D2D1CreateFactory" />
+    <seealso cref="D2D1_CREATION_PROPERTIES" />
+    <seealso cref="ID2D1Device" />
+    <seealso cref="ID2D1Factory" />
+    <seealso cref="ID2D1Resource.GetFactory" />
+  </member>
+  <member name="DirectX.D2D1CreateDeviceContext">
+    <summary>
+      <para>Creates a new Direct2D device context associated with a DXGI surface.</para>
+    </summary>
+    <param name="dxgiSurface">
+      <para>The DXGI surface the Direct2D device context is associated with.</para>
+    </param>
+    <param name="creationProperties">
+      <para>The properties to apply to the Direct2D device context.</para>
+    </param>
+    <param name="d2dDeviceContext">
+      <para>When this function returns, contains the address of a pointer to a Direct2D device context.</para>
+    </param>
+    <returns>
+      <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>HRESULT</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>S_OK</description>
+          <description>No error occurred.</description>
+        </item>
+        <item>
+          <description>E_OUTOFMEMORY</description>
+          <description>Direct2D could not allocate sufficient memory to complete the call.</description>
+        </item>
+        <item>
+          <description>E_INVALIDARG</description>
+          <description>An invalid value was passed to the method.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function will also create a new <see cref="ID2D1Factory1" /> that can be retrieved through <see cref="ID2D1Resource.GetFactory" />.</para>
+      <para>This function will also create a new <see cref="ID2D1Device" /> that can be retrieved through <see cref="ID2D1DeviceContext.GetDevice" />.</para>
+      <para>The DXGI device will be specified implicitly through <i>dxgiSurface</i>.</para>
+      <para>If <i>creationProperties</i> are not specified, the Direct2D device will inherit its threading mode from the DXGI device implied by <i>dxgiSurface</i> and debug tracing will not be enabled.</para>
+    </remarks>
+    <seealso cref="D2D1CreateDevice" />
+    <seealso cref="D2D1CreateDeviceContext" />
+    <seealso cref="D2D1_CREATION_PROPERTIES" />
+    <seealso cref="ID2D1Device" />
+    <seealso cref="ID2D1Factory" />
+    <seealso cref="ID2D1Resource.GetFactory" />
+  </member>
+  <member name="DirectX.D2D1SinCos">
+    <summary>
+      <para>Returns the sine and cosine of an angle.</para>
+    </summary>
+    <param name="angle">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The angle to calculate.</para>
+    </param>
+    <param name="s">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>The sine of the angle.</para>
+    </param>
+    <param name="c">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>The cosine of the angle.</para>
+    </param>
+  </member>
+  <member name="DirectX.D2D1Tan">
+    <summary>
+      <para>Returns the tangent of an angle.</para>
+    </summary>
+    <param name="angle">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The angle to calculate the tangent for.</para>
+    </param>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The tangent of the angle.</para>
+    </returns>
+  </member>
+  <member name="DirectX.D2D1Vec3Length">
+    <summary>
+      <para>Returns the length of a 3 dimensional vector.</para>
+    </summary>
+    <param name="x">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The  x value of the vector.</para>
+    </param>
+    <param name="y">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The  y value of the vector.</para>
+    </param>
+    <param name="z">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The  z value of the vector.</para>
+    </param>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The length of the vector.</para>
+    </returns>
+  </member>
+</doc>

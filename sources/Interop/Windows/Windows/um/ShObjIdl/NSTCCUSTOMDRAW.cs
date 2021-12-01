@@ -5,23 +5,32 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW"]/*' />
 public unsafe partial struct NSTCCUSTOMDRAW
 {
+    /// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW.psi"]/*' />
     public IShellItem* psi;
 
+    /// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW.uItemState"]/*' />
     public uint uItemState;
 
+    /// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW.nstcis"]/*' />
     [NativeTypeName("NSTCITEMSTATE")]
     public uint nstcis;
 
+    /// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW.pszText"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszText;
 
+    /// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW.iImage"]/*' />
     public int iImage;
 
+    /// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW.himl"]/*' />
     public HIMAGELIST himl;
 
+    /// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW.iLevel"]/*' />
     public int iLevel;
 
+    /// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW.iIndent"]/*' />
     public int iIndent;
 }

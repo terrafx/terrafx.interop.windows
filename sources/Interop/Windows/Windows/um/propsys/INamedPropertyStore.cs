@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INamedPropertyStore.xml' path='doc/member[@name="INamedPropertyStore"]/*' />
 [Guid("71604B0F-97B0-4764-8577-2F13E98A1422")]
 [NativeTypeName("struct INamedPropertyStore : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
         return ((delegate* unmanaged<INamedPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
         return ((delegate* unmanaged<INamedPropertyStore*, uint>)(lpVtbl[1]))((INamedPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
         return ((delegate* unmanaged<INamedPropertyStore*, uint>)(lpVtbl[2]))((INamedPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INamedPropertyStore.xml' path='doc/member[@name="INamedPropertyStore.GetNamedValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetNamedValue([NativeTypeName("LPCWSTR")] ushort* pszName, PROPVARIANT* ppropvar)
@@ -46,6 +51,7 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
         return ((delegate* unmanaged<INamedPropertyStore*, ushort*, PROPVARIANT*, int>)(lpVtbl[3]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), pszName, ppropvar);
     }
 
+    /// <include file='INamedPropertyStore.xml' path='doc/member[@name="INamedPropertyStore.SetNamedValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetNamedValue([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar)
@@ -53,6 +59,7 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
         return ((delegate* unmanaged<INamedPropertyStore*, ushort*, PROPVARIANT*, int>)(lpVtbl[4]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), pszName, propvar);
     }
 
+    /// <include file='INamedPropertyStore.xml' path='doc/member[@name="INamedPropertyStore.GetNameCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetNameCount([NativeTypeName("DWORD *")] uint* pdwCount)
@@ -60,6 +67,7 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
         return ((delegate* unmanaged<INamedPropertyStore*, uint*, int>)(lpVtbl[5]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='INamedPropertyStore.xml' path='doc/member[@name="INamedPropertyStore.GetNameAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetNameAt([NativeTypeName("DWORD")] uint iProp, [NativeTypeName("BSTR *")] ushort** pbstrName)

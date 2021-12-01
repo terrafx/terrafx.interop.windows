@@ -7,7 +7,9 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_SHARED_RESOURCE.xml' path='doc/member[@name="DXGI_SHARED_RESOURCE"]/*' />
 public partial struct DXGI_SHARED_RESOURCE
 {
+    /// <include file='DXGI_SHARED_RESOURCE.xml' path='doc/member[@name="DXGI_SHARED_RESOURCE.Handle"]/*' />
     public HANDLE Handle;
 }

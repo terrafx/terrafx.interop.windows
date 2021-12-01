@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INSTALLDATA.xml' path='doc/member[@name="INSTALLDATA"]/*' />
 public partial struct INSTALLDATA
 {
+    /// <include file='INSTALLDATA.xml' path='doc/member[@name="INSTALLDATA.Type"]/*' />
     public INSTALLSPECTYPE Type;
 
+    /// <include file='INSTALLDATA.xml' path='doc/member[@name="INSTALLDATA.Spec"]/*' />
     public INSTALLSPEC Spec;
 }

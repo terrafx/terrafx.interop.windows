@@ -9,29 +9,38 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCOPE_TABLE_ARM64.xml' path='doc/member[@name="SCOPE_TABLE_ARM64"]/*' />
 public partial struct SCOPE_TABLE_ARM64
 {
+    /// <include file='SCOPE_TABLE_ARM64.xml' path='doc/member[@name="SCOPE_TABLE_ARM64.Count"]/*' />
     [NativeTypeName("DWORD")]
     public uint Count;
 
+    /// <include file='SCOPE_TABLE_ARM64.xml' path='doc/member[@name="SCOPE_TABLE_ARM64.ScopeRecord"]/*' />
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:5430:5) [1]")]
     public _ScopeRecord_e__FixedBuffer ScopeRecord;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BeginAddress"]/*' />
         [NativeTypeName("DWORD")]
         public uint BeginAddress;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EndAddress"]/*' />
         [NativeTypeName("DWORD")]
         public uint EndAddress;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.HandlerAddress"]/*' />
         [NativeTypeName("DWORD")]
         public uint HandlerAddress;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.JumpTarget"]/*' />
         [NativeTypeName("DWORD")]
         public uint JumpTarget;
     }
 
+    /// <include file='_ScopeRecord_e__FixedBuffer.xml' path='doc/member[@name="_ScopeRecord_e__FixedBuffer"]/*' />
     public partial struct _ScopeRecord_e__FixedBuffer
     {
         public _Anonymous_e__Struct e0;

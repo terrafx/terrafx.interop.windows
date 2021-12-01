@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IItemNameLimits.GetMaxLength">
+    <summary>
+      <para>Returns the maximum number of characters allowed for a particular name in the namespace under which it is called.</para>
+    </summary>
+    <param name="pszName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a string containing a name.</para>
+    </param>
+    <param name="piMaxNameLen">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to the maximum number of characters which can be used in the name.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IItemNameLimits.GetValidCharacters">
+    <summary>
+      <para>Loads a string that contains each of the characters that are valid or invalid in the namespace under which it is called.</para>
+    </summary>
+    <param name="ppwszValidChars">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>A pointer to a string that contains all valid characters in the namespace. If the namespace provides <i>any</i> invalid characters in <i>ppwszInvalidChars</i>, then this value returns <b>NULL</b>. See Remarks for more details.</para>
+    </param>
+    <param name="ppwszInvalidChars">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>A pointer to a string that contains all invalid characters in the namespace.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>As an example, the standard file system returns the string "/:*?"&lt;&gt;|" in <i>ppwszInvalidChars</i> and <b>NULL</b> in <i>ppwszValidChars</i>.</para>
+      <para>Both parameters cannot return non-<b>NULL</b> values, so <i>ppwszValidChars</i> is assigned a value of <b>NULL</b> because of the non-<b>NULL</b> value</para>
+      <para>in <i>ppwszInvalidChars</i>. It is assumed that when there are specified invalid characters, everything else is valid. Only when <i>ppwszInvalidChars</i> is <b>NULL</b> does <i>ppwszValidChars</i> contain a list of all valid characters.</para>
+      <para>If the method returns a success code, the allocated string must be freed using <see cref="CoTaskMemFree" />.</para>
+    </remarks>
+  </member>
+  <member name="IItemNameLimits">
+    <summary>
+      <para>Retrieves a list of valid and invalid characters or the maximum length of a name in the namespace. Use this interface for validation parsing and translation.</para>
+    </summary>
+  </member>
+</doc>

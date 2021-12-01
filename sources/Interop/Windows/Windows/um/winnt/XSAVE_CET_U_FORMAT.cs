@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XSAVE_CET_U_FORMAT.xml' path='doc/member[@name="XSAVE_CET_U_FORMAT"]/*' />
 public partial struct XSAVE_CET_U_FORMAT
 {
+    /// <include file='XSAVE_CET_U_FORMAT.xml' path='doc/member[@name="XSAVE_CET_U_FORMAT.Ia32CetUMsr"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Ia32CetUMsr;
 
+    /// <include file='XSAVE_CET_U_FORMAT.xml' path='doc/member[@name="XSAVE_CET_U_FORMAT.Ia32Pl3SspMsr"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Ia32Pl3SspMsr;
 }

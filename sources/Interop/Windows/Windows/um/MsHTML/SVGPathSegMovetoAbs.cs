@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGPathSegMovetoAbs.xml' path='doc/member[@name="SVGPathSegMovetoAbs"]/*' />
 [Guid("305105CC-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGPathSegMovetoAbs
 {

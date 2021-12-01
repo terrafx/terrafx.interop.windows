@@ -7,11 +7,15 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.xml' path='doc/member[@name="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING"]/*' />
 public partial struct WS_XML_TOKEN_MESSAGE_SECURITY_BINDING
 {
+    /// <include file='WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.xml' path='doc/member[@name="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.binding"]/*' />
     public WS_SECURITY_BINDING binding;
 
+    /// <include file='WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.xml' path='doc/member[@name="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.bindingUsage"]/*' />
     public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 
+    /// <include file='WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.xml' path='doc/member[@name="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.xmlToken"]/*' />
     public IntPtr xmlToken;
 }

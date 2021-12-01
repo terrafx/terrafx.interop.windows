@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_BINDING_CONSTRAINT">
+    <summary>
+      <para>The base class for all security binding constraint structures.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_CONSTRAINT.type">
+    <summary>
+      <para>This value depends on which type of security binding constraint that is used.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_CONSTRAINT.propertyConstraints">
+    <summary>
+      <para>A set of binding-specific security property constraints.</para>
+      <para>See <see cref="WS_SECURITY_BINDING_PROPERTY_CONSTRAINT" /> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_CONSTRAINT.propertyConstraintCount">
+    <summary>
+      <para>The number of elements in the propertyConstraints array.</para>
+      <para>If the array has zero elements, the propertyConstraints field may be <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

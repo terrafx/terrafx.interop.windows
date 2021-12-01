@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPERTYORIGIN.xml' path='doc/member[@name="PROPERTYORIGIN"]/*' />
 public enum PROPERTYORIGIN
 {
+    /// <include file='PROPERTYORIGIN.xml' path='doc/member[@name="PROPERTYORIGIN.PO_STATE"]/*' />
     PO_STATE,
+
+    /// <include file='PROPERTYORIGIN.xml' path='doc/member[@name="PROPERTYORIGIN.PO_PART"]/*' />
     PO_PART,
+
+    /// <include file='PROPERTYORIGIN.xml' path='doc/member[@name="PROPERTYORIGIN.PO_CLASS"]/*' />
     PO_CLASS,
+
+    /// <include file='PROPERTYORIGIN.xml' path='doc/member[@name="PROPERTYORIGIN.PO_GLOBAL"]/*' />
     PO_GLOBAL,
+
+    /// <include file='PROPERTYORIGIN.xml' path='doc/member[@name="PROPERTYORIGIN.PO_NOTFOUND"]/*' />
     PO_NOTFOUND,
 }

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TunerInputType">
+    <summary>
+      <para>Specifies the frequency of a TV tuner (cable or antenna).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="TunerInputType.TunerInputCable">
+    <summary>
+      <para>Indicates cable frequency.</para>
+    </summary>
+  </member>
+  <member name="TunerInputType.TunerInputAntenna">
+    <summary>
+      <para>Indicates broadcast antenna frequency.</para>
+    </summary>
+  </member>
+</doc>

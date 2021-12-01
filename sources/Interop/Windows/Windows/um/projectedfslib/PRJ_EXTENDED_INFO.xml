@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRJ_EXTENDED_INFO">
+    <summary>
+      <para>A provider uses PRJ_EXTENDED_INFO to provide extended information about a file when calling <see cref="PrjFillDirEntryBuffer2" /> or <see cref="PrjWritePlaceholderInfo2" />.</para>
+    </summary>
+  </member>
+  <member name="PRJ_EXTENDED_INFO.InfoType">
+    <summary>
+      <para>A <see cref="PRJ_EXT_INFO" /> value describing what kind of extended information this structure contains.</para>
+    </summary>
+  </member>
+  <member name="PRJ_EXTENDED_INFO.NextInfoOffset">
+    <summary>
+      <para>Offset in bytes from the beginning of this structure to the next PRJ_EXTENDED_INFO structure.  If this is the last structure in the buffer this value must be 0.</para>
+    </summary>
+  </member>
+  <member name="PRJ_EXTENDED_INFO.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="PRJ_EXTENDED_INFO.DUMMYUNIONNAME.Symlink">
+    <summary>
+      <para>The fields in this struct are used if InfoType is PRJ_EXT_INFO_TYPE_SYMLINK.</para>
+    </summary>
+  </member>
+  <member name="PRJ_EXTENDED_INFO.DUMMYUNIONNAME.Symlink.TargetName">
+    <summary>
+      <para>Specifies the name of the target of a symbolic link.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCITEMHEADERW.xml' path='doc/member[@name="TCITEMHEADERW"]/*' />
 public unsafe partial struct TCITEMHEADERW
 {
+    /// <include file='TCITEMHEADERW.xml' path='doc/member[@name="TCITEMHEADERW.mask"]/*' />
     public uint mask;
 
+    /// <include file='TCITEMHEADERW.xml' path='doc/member[@name="TCITEMHEADERW.lpReserved1"]/*' />
     public uint lpReserved1;
 
+    /// <include file='TCITEMHEADERW.xml' path='doc/member[@name="TCITEMHEADERW.lpReserved2"]/*' />
     public uint lpReserved2;
 
+    /// <include file='TCITEMHEADERW.xml' path='doc/member[@name="TCITEMHEADERW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszText;
 
+    /// <include file='TCITEMHEADERW.xml' path='doc/member[@name="TCITEMHEADERW.cchTextMax"]/*' />
     public int cchTextMax;
 
+    /// <include file='TCITEMHEADERW.xml' path='doc/member[@name="TCITEMHEADERW.iImage"]/*' />
     public int iImage;
 }

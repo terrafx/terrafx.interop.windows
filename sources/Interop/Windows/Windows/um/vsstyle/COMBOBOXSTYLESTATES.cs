@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMBOBOXSTYLESTATES.xml' path='doc/member[@name="COMBOBOXSTYLESTATES"]/*' />
 public enum COMBOBOXSTYLESTATES
 {
+    /// <include file='COMBOBOXSTYLESTATES.xml' path='doc/member[@name="COMBOBOXSTYLESTATES.CBXS_NORMAL"]/*' />
     CBXS_NORMAL = 1,
+
+    /// <include file='COMBOBOXSTYLESTATES.xml' path='doc/member[@name="COMBOBOXSTYLESTATES.CBXS_HOT"]/*' />
     CBXS_HOT = 2,
+
+    /// <include file='COMBOBOXSTYLESTATES.xml' path='doc/member[@name="COMBOBOXSTYLESTATES.CBXS_PRESSED"]/*' />
     CBXS_PRESSED = 3,
+
+    /// <include file='COMBOBOXSTYLESTATES.xml' path='doc/member[@name="COMBOBOXSTYLESTATES.CBXS_DISABLED"]/*' />
     CBXS_DISABLED = 4,
 }

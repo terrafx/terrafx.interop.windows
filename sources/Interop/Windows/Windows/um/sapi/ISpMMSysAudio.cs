@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpMMSysAudio.xml' path='doc/member[@name="ISpMMSysAudio"]/*' />
 [Guid("15806F6E-1D70-4B48-98E6-3B1A007509AB")]
 [NativeTypeName("struct ISpMMSysAudio : ISpAudio")]
 [NativeInheritance("ISpAudio")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, Guid*, void**, int>)(lpVtbl[0]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, uint>)(lpVtbl[1]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, uint>)(lpVtbl[2]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISequentialStream.Read" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, void*, uint, uint*, int>)(lpVtbl[3]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
     }
 
+    /// <inheritdoc cref="ISequentialStream.Write" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, void*, uint, uint*, int>)(lpVtbl[4]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
     }
 
+    /// <inheritdoc cref="IStream.Seek" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
     }
 
+    /// <inheritdoc cref="IStream.SetSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetSize(ULARGE_INTEGER libNewSize)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, ULARGE_INTEGER, int>)(lpVtbl[6]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), libNewSize);
     }
 
+    /// <inheritdoc cref="IStream.CopyTo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CopyTo(IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
     }
 
+    /// <inheritdoc cref="IStream.Commit" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, uint, int>)(lpVtbl[8]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), grfCommitFlags);
     }
 
+    /// <inheritdoc cref="IStream.Revert" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Revert()
@@ -88,6 +99,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, int>)(lpVtbl[9]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IStream.LockRegion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[10]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
     }
 
+    /// <inheritdoc cref="IStream.UnlockRegion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[11]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
     }
 
+    /// <inheritdoc cref="IStream.Stat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, STATSTG*, uint, int>)(lpVtbl[12]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
     }
 
+    /// <inheritdoc cref="IStream.Clone" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Clone(IStream** ppstm)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, IStream**, int>)(lpVtbl[13]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), ppstm);
     }
 
+    /// <inheritdoc cref="ISpStreamFormat.GetFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetFormat(Guid* pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[14]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pguidFormatId, ppCoMemWaveFormatEx);
     }
 
+    /// <inheritdoc cref="ISpAudio.SetState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetState(SPAUDIOSTATE NewState, [NativeTypeName("ULONGLONG")] ulong ullReserved)
@@ -130,6 +147,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, SPAUDIOSTATE, ulong, int>)(lpVtbl[15]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), NewState, ullReserved);
     }
 
+    /// <inheritdoc cref="ISpAudio.SetFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetFormat([NativeTypeName("const GUID &")] Guid* rguidFmtId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx)
@@ -137,6 +155,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, Guid*, WAVEFORMATEX*, int>)(lpVtbl[16]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), rguidFmtId, pWaveFormatEx);
     }
 
+    /// <inheritdoc cref="ISpAudio.GetStatus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetStatus(SPAUDIOSTATUS* pStatus)
@@ -144,6 +163,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, SPAUDIOSTATUS*, int>)(lpVtbl[17]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pStatus);
     }
 
+    /// <inheritdoc cref="ISpAudio.SetBufferInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetBufferInfo([NativeTypeName("const SPAUDIOBUFFERINFO *")] SPAUDIOBUFFERINFO* pBuffInfo)
@@ -151,6 +171,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, SPAUDIOBUFFERINFO*, int>)(lpVtbl[18]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pBuffInfo);
     }
 
+    /// <inheritdoc cref="ISpAudio.GetBufferInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetBufferInfo(SPAUDIOBUFFERINFO* pBuffInfo)
@@ -158,6 +179,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, SPAUDIOBUFFERINFO*, int>)(lpVtbl[19]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pBuffInfo);
     }
 
+    /// <inheritdoc cref="ISpAudio.GetDefaultFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetDefaultFormat(Guid* pFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
@@ -165,6 +187,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[20]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pFormatId, ppCoMemWaveFormatEx);
     }
 
+    /// <inheritdoc cref="ISpAudio.EventHandle" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HANDLE EventHandle()
@@ -172,6 +195,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((HANDLE)(((delegate* unmanaged<ISpMMSysAudio*, void*>)(lpVtbl[21]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this))));
     }
 
+    /// <inheritdoc cref="ISpAudio.GetVolumeLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetVolumeLevel([NativeTypeName("ULONG *")] uint* pLevel)
@@ -179,6 +203,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, uint*, int>)(lpVtbl[22]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pLevel);
     }
 
+    /// <inheritdoc cref="ISpAudio.SetVolumeLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetVolumeLevel([NativeTypeName("ULONG")] uint Level)
@@ -186,6 +211,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, uint, int>)(lpVtbl[23]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), Level);
     }
 
+    /// <inheritdoc cref="ISpAudio.GetBufferNotifySize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT GetBufferNotifySize([NativeTypeName("ULONG *")] uint* pcbSize)
@@ -193,6 +219,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, uint*, int>)(lpVtbl[24]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pcbSize);
     }
 
+    /// <inheritdoc cref="ISpAudio.SetBufferNotifySize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT SetBufferNotifySize([NativeTypeName("ULONG")] uint cbSize)
@@ -200,6 +227,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, uint, int>)(lpVtbl[25]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), cbSize);
     }
 
+    /// <include file='ISpMMSysAudio.xml' path='doc/member[@name="ISpMMSysAudio.GetDeviceId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT GetDeviceId(uint* puDeviceId)
@@ -207,6 +235,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, uint*, int>)(lpVtbl[26]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), puDeviceId);
     }
 
+    /// <include file='ISpMMSysAudio.xml' path='doc/member[@name="ISpMMSysAudio.SetDeviceId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT SetDeviceId(uint uDeviceId)
@@ -214,6 +243,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, uint, int>)(lpVtbl[27]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), uDeviceId);
     }
 
+    /// <include file='ISpMMSysAudio.xml' path='doc/member[@name="ISpMMSysAudio.GetMMHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT GetMMHandle(void** pHandle)
@@ -221,6 +251,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, void**, int>)(lpVtbl[28]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), pHandle);
     }
 
+    /// <include file='ISpMMSysAudio.xml' path='doc/member[@name="ISpMMSysAudio.GetLineId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT GetLineId(uint* puLineId)
@@ -228,6 +259,7 @@ public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
         return ((delegate* unmanaged<ISpMMSysAudio*, uint*, int>)(lpVtbl[29]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), puLineId);
     }
 
+    /// <include file='ISpMMSysAudio.xml' path='doc/member[@name="ISpMMSysAudio.SetLineId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT SetLineId(uint uLineId)

@@ -5,15 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechPhraseProperty.xml' path='doc/member[@name="DISPID_SpeechPhraseProperty"]/*' />
 public enum DISPID_SpeechPhraseProperty
 {
+    /// <include file='DISPID_SpeechPhraseProperty.xml' path='doc/member[@name="DISPID_SpeechPhraseProperty.DISPID_SPPName"]/*' />
     DISPID_SPPName = 1,
+
+    /// <include file='DISPID_SpeechPhraseProperty.xml' path='doc/member[@name="DISPID_SpeechPhraseProperty.DISPID_SPPId"]/*' />
     DISPID_SPPId = (DISPID_SPPName + 1),
+
+    /// <include file='DISPID_SpeechPhraseProperty.xml' path='doc/member[@name="DISPID_SpeechPhraseProperty.DISPID_SPPValue"]/*' />
     DISPID_SPPValue = (DISPID_SPPId + 1),
+
+    /// <include file='DISPID_SpeechPhraseProperty.xml' path='doc/member[@name="DISPID_SpeechPhraseProperty.DISPID_SPPFirstElement"]/*' />
     DISPID_SPPFirstElement = (DISPID_SPPValue + 1),
+
+    /// <include file='DISPID_SpeechPhraseProperty.xml' path='doc/member[@name="DISPID_SpeechPhraseProperty.DISPID_SPPNumberOfElements"]/*' />
     DISPID_SPPNumberOfElements = (DISPID_SPPFirstElement + 1),
+
+    /// <include file='DISPID_SpeechPhraseProperty.xml' path='doc/member[@name="DISPID_SpeechPhraseProperty.DISPID_SPPEngineConfidence"]/*' />
     DISPID_SPPEngineConfidence = (DISPID_SPPNumberOfElements + 1),
+
+    /// <include file='DISPID_SpeechPhraseProperty.xml' path='doc/member[@name="DISPID_SpeechPhraseProperty.DISPID_SPPConfidence"]/*' />
     DISPID_SPPConfidence = (DISPID_SPPEngineConfidence + 1),
+
+    /// <include file='DISPID_SpeechPhraseProperty.xml' path='doc/member[@name="DISPID_SpeechPhraseProperty.DISPID_SPPParent"]/*' />
     DISPID_SPPParent = (DISPID_SPPConfidence + 1),
+
+    /// <include file='DISPID_SpeechPhraseProperty.xml' path='doc/member[@name="DISPID_SpeechPhraseProperty.DISPID_SPPChildren"]/*' />
     DISPID_SPPChildren = (DISPID_SPPParent + 1),
 }

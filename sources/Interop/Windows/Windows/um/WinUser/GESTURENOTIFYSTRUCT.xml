@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GESTURENOTIFYSTRUCT">
+    <summary>
+      <para>When transmitted with <a href="https://docs.microsoft.com//windows/desktop/wintouch/wm-gesturenotify">WM_GESTURENOTIFY</a> messages,
+passes information about a gesture.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtstructures">Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/wm-gesturenotify">WM_GESTURENOTIFY</seealso>
+  </member>
+  <member name="GESTURENOTIFYSTRUCT.cbSize">
+    <summary>
+      <para>The size of the structure.</para>
+    </summary>
+  </member>
+  <member name="GESTURENOTIFYSTRUCT.dwFlags">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="GESTURENOTIFYSTRUCT.hwndTarget">
+    <summary>
+      <para>The target window for the gesture notification.</para>
+    </summary>
+  </member>
+  <member name="GESTURENOTIFYSTRUCT.ptsLocation">
+    <summary>
+      <para>The location of the gesture in physical screen coordinates.</para>
+    </summary>
+  </member>
+  <member name="GESTURENOTIFYSTRUCT.dwInstanceID">
+    <summary>
+      <para>A specific gesture instance with gesture messages starting with <b>GID_START</b> and ending with <b>GID_END</b>.</para>
+    </summary>
+  </member>
+</doc>

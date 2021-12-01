@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMCrossbar.CanRoute">
+    <summary>
+      <para>The <code>CanRoute</code> method queries whether a specified input pin can be routed to a specified output pin.</para>
+    </summary>
+    <param name="OutputPinIndex">
+      <para>Specifies the index of the output pin.</para>
+    </param>
+    <param name="InputPinIndex">
+      <para>Specifies the index of input pin.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> values. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>These two pins can be routed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>These two pins cannot be routed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To route the pins, call the <see cref="IAMCrossbar.Route" /> method. Output pins and input pins are both indexed from zero. To determine the number of output and input pins, call the <see cref="IAMCrossbar.get_PinCounts" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMCrossbar Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-crossbars">Working with Crossbars</seealso>
+  </member>
+  <member name="IAMCrossbar.get_CrossbarPinInfo">
+    <summary>
+      <para>The <code>get_CrossbarPinInfo</code> method retrieves information about a specified pin.</para>
+    </summary>
+    <param name="IsInputPin">
+      <para>Specifies the direction of the pin. Use one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>
+              <b>TRUE</b>
+            </b>
+          </description>
+          <description>
+            <para>Input pin</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>
+              <b>FALSE</b>
+            </b>
+          </description>
+          <description>
+            <para>Output pin</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="PinIndex">
+      <para>Specifies the index of the pin.</para>
+    </param>
+    <param name="PinIndexRelated">
+      <para>Pointer to a variable that receives the index of the related pin, or –1 if no pin is related to this pin. The <i>related pin</i> is a pin on the same filter, with the same direction; it typically represents the same physical jack or connector. For example, a video tuner and an audio tuner might be related pins. Typically, if two pins are related, you should route them together.</para>
+    </param>
+    <param name="PhysicalType">
+      <para>Pointer to a variable that receives a member of the <see cref="PhysicalConnectorType" /> enumeration, indicating the pin's physical type.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Unknown physical type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Output pins and input pins are both indexed from zero. To determine the number of output and input pins, call the <see cref="IAMCrossbar.get_PinCounts" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMCrossbar Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-crossbars">Working with Crossbars</seealso>
+  </member>
+  <member name="IAMCrossbar.get_IsRoutedTo">
+    <summary>
+      <para>The <code>get_IsRoutedTo</code> method retrieves the input pin that is currently routed to the specified output pin.</para>
+    </summary>
+    <param name="OutputPinIndex">
+      <para>Specifies the index of the output pin.</para>
+    </param>
+    <param name="InputPinIndex">
+      <para>Pointer to a variable that receives the index of the input pin, or -1 if no input pin is routed to this output pin.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>No input pin is routed to this output pin.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Output pins and input pins are both indexed from zero. To determine the number of output and input pins, call the <see cref="IAMCrossbar.get_PinCounts" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMCrossbar Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-crossbars">Working with Crossbars</seealso>
+  </member>
+  <member name="IAMCrossbar.get_PinCounts">
+    <summary>
+      <para>The <code>get_PinCounts</code> method retrieves the number of input and output pins on the crossbar filter.</para>
+    </summary>
+    <param name="OutputPinCount">
+      <para>Pointer to variable that receives the number of output pins.</para>
+    </param>
+    <param name="InputPinCount">
+      <para>Pointer to variable that receives the number of input pins.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The other <see cref="IAMCrossbar" /> methods take parameters that specify pins by index number. For these methods, output pins and input pins are both indexed from zero. Use the <code>get_PinCounts</code> method to determine the upper bounds for each.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMCrossbar Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-crossbars">Working with Crossbars</seealso>
+  </member>
+  <member name="IAMCrossbar.Route">
+    <summary>
+      <para>The <code>Route</code> method routes an input pin to an output pin.</para>
+    </summary>
+    <param name="OutputPinIndex">
+      <para>Specifies the index of the output pin.</para>
+    </param>
+    <param name="InputPinIndex">
+      <para>Specifies the index of the input pin.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Cannot route these two pins.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Routing two pins causes the output pin to deliver data from that input pin. Only one input pin at a time can be routed to a given output pin.</para>
+      <para>Output pins and input pins are both indexed from zero. To determine the number of output and input pins, call the <see cref="IAMCrossbar.get_PinCounts" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMCrossbar Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-crossbars">Working with Crossbars</seealso>
+  </member>
+  <member name="IAMCrossbar">
+    <summary>
+      <para>The <code>IAMCrossbar</code> interface routes signals from an analog or digital source to a video capture filter.</para>
+      <para>This interface is implemented by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/analog-video-crossbar-filter">Analog Video Crossbar Filter</a>. The Analog Video Crossbar filter is modeled after a general switching matrix, with <i>n</i> inputs and <i>m</i> outputs. For example, a video card might have two external connectors: a coaxial connector for TV, and an S-video input. These would be represented as input pins on the filter. To select one of the inputs, an application would use the <code>IAMCrossbar</code> interface to "route" an input pin to the filter's output pin, by calling the <see cref="IAMCrossbar.Route" /> method.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-crossbars">Working with Crossbars</seealso>
+  </member>
+</doc>

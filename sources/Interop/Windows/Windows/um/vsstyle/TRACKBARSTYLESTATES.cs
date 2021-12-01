@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRACKBARSTYLESTATES.xml' path='doc/member[@name="TRACKBARSTYLESTATES"]/*' />
 public enum TRACKBARSTYLESTATES
 {
+    /// <include file='TRACKBARSTYLESTATES.xml' path='doc/member[@name="TRACKBARSTYLESTATES.TKS_NORMAL"]/*' />
     TKS_NORMAL = 1,
 }

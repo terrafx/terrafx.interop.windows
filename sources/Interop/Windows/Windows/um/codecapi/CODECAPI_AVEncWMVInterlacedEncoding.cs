@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncWMVInterlacedEncoding.xml' path='doc/member[@name="CODECAPI_AVEncWMVInterlacedEncoding"]/*' />
 [Guid("E3D00F8A-C6F5-4E14-A588-0EC87A726F9B")]
 public partial struct CODECAPI_AVEncWMVInterlacedEncoding
 {

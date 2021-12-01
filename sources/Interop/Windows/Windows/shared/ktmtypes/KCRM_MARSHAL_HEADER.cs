@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='KCRM_MARSHAL_HEADER.xml' path='doc/member[@name="KCRM_MARSHAL_HEADER"]/*' />
 public partial struct KCRM_MARSHAL_HEADER
 {
+    /// <include file='KCRM_MARSHAL_HEADER.xml' path='doc/member[@name="KCRM_MARSHAL_HEADER.VersionMajor"]/*' />
     [NativeTypeName("ULONG")]
     public uint VersionMajor;
 
+    /// <include file='KCRM_MARSHAL_HEADER.xml' path='doc/member[@name="KCRM_MARSHAL_HEADER.VersionMinor"]/*' />
     [NativeTypeName("ULONG")]
     public uint VersionMinor;
 
+    /// <include file='KCRM_MARSHAL_HEADER.xml' path='doc/member[@name="KCRM_MARSHAL_HEADER.NumProtocols"]/*' />
     [NativeTypeName("ULONG")]
     public uint NumProtocols;
 
+    /// <include file='KCRM_MARSHAL_HEADER.xml' path='doc/member[@name="KCRM_MARSHAL_HEADER.Unused"]/*' />
     [NativeTypeName("ULONG")]
     public uint Unused;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CLOSEBUTTONSTATES.xml' path='doc/member[@name="CLOSEBUTTONSTATES"]/*' />
 public enum CLOSEBUTTONSTATES
 {
+    /// <include file='CLOSEBUTTONSTATES.xml' path='doc/member[@name="CLOSEBUTTONSTATES.CBS_NORMAL"]/*' />
     CBS_NORMAL = 1,
+
+    /// <include file='CLOSEBUTTONSTATES.xml' path='doc/member[@name="CLOSEBUTTONSTATES.CBS_HOT"]/*' />
     CBS_HOT = 2,
+
+    /// <include file='CLOSEBUTTONSTATES.xml' path='doc/member[@name="CLOSEBUTTONSTATES.CBS_PUSHED"]/*' />
     CBS_PUSHED = 3,
+
+    /// <include file='CLOSEBUTTONSTATES.xml' path='doc/member[@name="CLOSEBUTTONSTATES.CBS_DISABLED"]/*' />
     CBS_DISABLED = 4,
 }

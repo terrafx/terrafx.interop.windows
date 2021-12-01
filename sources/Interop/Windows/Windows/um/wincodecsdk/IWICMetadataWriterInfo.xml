@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICMetadataWriterInfo.CreateInstance">
+    <summary>
+      <para>Creates an instance of an <see cref="IWICMetadataWriter" />.</para>
+    </summary>
+    <param name="ppIWriter">
+      <para>Type: <b><see cref="IWICMetadataWriter" />**</b></para>
+      <para>Pointer that receives a pointer to a metadata writer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataWriterInfo.GetHeader">
+    <summary>
+      <para>Gets the metadata header for the metadata writer.</para>
+    </summary>
+    <param name="guidContainerFormat">
+      <para>Type: <b>REFGUID</b></para>
+      <para>The format container GUID to obtain the header for.</para>
+    </param>
+    <param name="cbSize">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the <i>pHeader</i> buffer.</para>
+    </param>
+    <param name="pHeader">
+      <para>Type: <b><see cref="WICMetadataHeader" />*</b></para>
+      <para>Pointer that receives the <see cref="WICMetadataHeader" />.</para>
+    </param>
+    <param name="pcbActual">
+      <para>Type: <b>UINT*</b></para>
+      <para>The actual size of the header.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataWriterInfo">
+    <summary>
+      <para>Exposes methods that provide basic information about the registered metadata writer.</para>
+    </summary>
+  </member>
+</doc>

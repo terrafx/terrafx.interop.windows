@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="XINPUT_BATTERY_INFORMATION">
+    <summary>
+      <para>Contains information on battery type and charge state.</para>
+    </summary>
+    <seealso cref="XINPUT_GAMEPAD" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/structures">XInput Structures</seealso>
+    <seealso cref="XInputGetCapabilities" />
+    <seealso cref="XInputSetState" />
+  </member>
+  <member name="XINPUT_BATTERY_INFORMATION.BatteryType">
+    <summary>
+      <para>The type of battery. <i>BatteryType</i> will be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>BATTERY_TYPE_DISCONNECTED</description>
+          <description>The device is not connected. </description>
+        </item>
+        <item>
+          <description>BATTERY_TYPE_WIRED</description>
+          <description>The device is a wired device and does not have a battery. </description>
+        </item>
+        <item>
+          <description>BATTERY_TYPE_ALKALINE</description>
+          <description>The device has an alkaline battery. </description>
+        </item>
+        <item>
+          <description>BATTERY_TYPE_NIMH</description>
+          <description>The device has a nickel metal hydride battery. </description>
+        </item>
+        <item>
+          <description>BATTERY_TYPE_UNKNOWN</description>
+          <description>The device has an unknown  battery type. </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="XINPUT_BATTERY_INFORMATION.BatteryLevel">
+    <summary>
+      <para>The charge state of the battery. This value is only valid for wireless devices with a known battery type. <i>BatteryLevel</i> will be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+        </listheader>
+        <item>
+          <description>BATTERY_LEVEL_EMPTY</description>
+        </item>
+        <item>
+          <description>BATTERY_LEVEL_LOW</description>
+        </item>
+        <item>
+          <description>BATTERY_LEVEL_MEDIUM</description>
+        </item>
+        <item>
+          <description>BATTERY_LEVEL_FULL</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

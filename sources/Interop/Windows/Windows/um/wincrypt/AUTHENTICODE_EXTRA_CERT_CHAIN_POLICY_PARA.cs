@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA"]/*' />
 public unsafe partial struct AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA
 {
+    /// <include file='AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.dwRegPolicySettings"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRegPolicySettings;
 
+    /// <include file='AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.pSignerInfo"]/*' />
     [NativeTypeName("PCMSG_SIGNER_INFO")]
     public CMSG_SIGNER_INFO* pSignerInfo;
 }

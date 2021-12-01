@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIGNER_CERT_STORE_INFO.xml' path='doc/member[@name="SIGNER_CERT_STORE_INFO"]/*' />
 public unsafe partial struct SIGNER_CERT_STORE_INFO
 {
+    /// <include file='SIGNER_CERT_STORE_INFO.xml' path='doc/member[@name="SIGNER_CERT_STORE_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='SIGNER_CERT_STORE_INFO.xml' path='doc/member[@name="SIGNER_CERT_STORE_INFO.pSigningCert"]/*' />
     [NativeTypeName("PCCERT_CONTEXT")]
     public CERT_CONTEXT* pSigningCert;
 
+    /// <include file='SIGNER_CERT_STORE_INFO.xml' path='doc/member[@name="SIGNER_CERT_STORE_INFO.dwCertPolicy"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCertPolicy;
 
+    /// <include file='SIGNER_CERT_STORE_INFO.xml' path='doc/member[@name="SIGNER_CERT_STORE_INFO.hCertStore"]/*' />
     public HCERTSTORE hCertStore;
 }

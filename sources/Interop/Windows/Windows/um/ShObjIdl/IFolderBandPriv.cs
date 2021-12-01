@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFolderBandPriv.xml' path='doc/member[@name="IFolderBandPriv"]/*' />
 [Guid("47C01F95-E185-412C-B5C5-4F27DF965AEA")]
 [NativeTypeName("struct IFolderBandPriv : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface
         return ((delegate* unmanaged<IFolderBandPriv*, Guid*, void**, int>)(lpVtbl[0]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface
         return ((delegate* unmanaged<IFolderBandPriv*, uint>)(lpVtbl[1]))((IFolderBandPriv*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface
         return ((delegate* unmanaged<IFolderBandPriv*, uint>)(lpVtbl[2]))((IFolderBandPriv*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFolderBandPriv.xml' path='doc/member[@name="IFolderBandPriv.SetCascade"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetCascade(BOOL fCascade)
@@ -46,6 +51,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface
         return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[3]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fCascade);
     }
 
+    /// <include file='IFolderBandPriv.xml' path='doc/member[@name="IFolderBandPriv.SetAccelerators"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetAccelerators(BOOL fAccelerators)
@@ -53,6 +59,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface
         return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[4]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fAccelerators);
     }
 
+    /// <include file='IFolderBandPriv.xml' path='doc/member[@name="IFolderBandPriv.SetNoIcons"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetNoIcons(BOOL fNoIcons)
@@ -60,6 +67,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface
         return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[5]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoIcons);
     }
 
+    /// <include file='IFolderBandPriv.xml' path='doc/member[@name="IFolderBandPriv.SetNoText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetNoText(BOOL fNoText)

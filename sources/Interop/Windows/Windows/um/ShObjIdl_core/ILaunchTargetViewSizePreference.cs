@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ILaunchTargetViewSizePreference.xml' path='doc/member[@name="ILaunchTargetViewSizePreference"]/*' />
 [Guid("2F0666C6-12F7-4360-B511-A394A0553725")]
 [NativeTypeName("struct ILaunchTargetViewSizePreference : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetView
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetView
         return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetView
         return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, uint>)(lpVtbl[1]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetView
         return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, uint>)(lpVtbl[2]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILaunchTargetViewSizePreference.xml' path='doc/member[@name="ILaunchTargetViewSizePreference.GetTargetViewSizePreference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTargetViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch)

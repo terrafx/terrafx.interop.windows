@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENUM_PAGE_FILE_INFORMATION.xml' path='doc/member[@name="ENUM_PAGE_FILE_INFORMATION"]/*' />
 public partial struct ENUM_PAGE_FILE_INFORMATION
 {
+    /// <include file='ENUM_PAGE_FILE_INFORMATION.xml' path='doc/member[@name="ENUM_PAGE_FILE_INFORMATION.cb"]/*' />
     [NativeTypeName("DWORD")]
     public uint cb;
 
+    /// <include file='ENUM_PAGE_FILE_INFORMATION.xml' path='doc/member[@name="ENUM_PAGE_FILE_INFORMATION.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 
+    /// <include file='ENUM_PAGE_FILE_INFORMATION.xml' path='doc/member[@name="ENUM_PAGE_FILE_INFORMATION.TotalSize"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint TotalSize;
 
+    /// <include file='ENUM_PAGE_FILE_INFORMATION.xml' path='doc/member[@name="ENUM_PAGE_FILE_INFORMATION.TotalInUse"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint TotalInUse;
 
+    /// <include file='ENUM_PAGE_FILE_INFORMATION.xml' path='doc/member[@name="ENUM_PAGE_FILE_INFORMATION.PeakUsage"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint PeakUsage;
 }

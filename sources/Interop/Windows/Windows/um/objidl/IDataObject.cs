@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDataObject.xml' path='doc/member[@name="IDataObject"]/*' />
 [Guid("0000010E-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IDataObject : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, Guid*, void**, int>)(lpVtbl[0]))((IDataObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, uint>)(lpVtbl[1]))((IDataObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, uint>)(lpVtbl[2]))((IDataObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.GetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetData(FORMATETC* pformatetcIn, STGMEDIUM* pmedium)
@@ -46,6 +51,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[3]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetcIn, pmedium);
     }
 
+    /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.GetDataHere"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDataHere(FORMATETC* pformatetc, STGMEDIUM* pmedium)
@@ -53,6 +59,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[4]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium);
     }
 
+    /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.QueryGetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT QueryGetData(FORMATETC* pformatetc)
@@ -60,6 +67,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, FORMATETC*, int>)(lpVtbl[5]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc);
     }
 
+    /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.GetCanonicalFormatEtc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCanonicalFormatEtc(FORMATETC* pformatectIn, FORMATETC* pformatetcOut)
@@ -67,6 +75,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, FORMATETC*, FORMATETC*, int>)(lpVtbl[6]))((IDataObject*)Unsafe.AsPointer(ref this), pformatectIn, pformatetcOut);
     }
 
+    /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.SetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetData(FORMATETC* pformatetc, STGMEDIUM* pmedium, BOOL fRelease)
@@ -74,6 +83,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, BOOL, int>)(lpVtbl[7]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium, fRelease);
     }
 
+    /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.EnumFormatEtc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT EnumFormatEtc([NativeTypeName("DWORD")] uint dwDirection, IEnumFORMATETC** ppenumFormatEtc)
@@ -81,6 +91,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, uint, IEnumFORMATETC**, int>)(lpVtbl[8]))((IDataObject*)Unsafe.AsPointer(ref this), dwDirection, ppenumFormatEtc);
     }
 
+    /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.DAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT DAdvise(FORMATETC* pformatetc, [NativeTypeName("DWORD")] uint advf, IAdviseSink* pAdvSink, [NativeTypeName("DWORD *")] uint* pdwConnection)
@@ -88,6 +99,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)(lpVtbl[9]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, advf, pAdvSink, pdwConnection);
     }
 
+    /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.DUnadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT DUnadvise([NativeTypeName("DWORD")] uint dwConnection)
@@ -95,6 +107,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         return ((delegate* unmanaged<IDataObject*, uint, int>)(lpVtbl[10]))((IDataObject*)Unsafe.AsPointer(ref this), dwConnection);
     }
 
+    /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.EnumDAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT EnumDAdvise(IEnumSTATDATA** ppenumAdvise)

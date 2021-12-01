@@ -5,22 +5,29 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINDOWDATA.xml' path='doc/member[@name="WINDOWDATA"]/*' />
 public unsafe partial struct WINDOWDATA
 {
+    /// <include file='WINDOWDATA.xml' path='doc/member[@name="WINDOWDATA.dwWindowID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwWindowID;
 
+    /// <include file='WINDOWDATA.xml' path='doc/member[@name="WINDOWDATA.uiCP"]/*' />
     public uint uiCP;
 
+    /// <include file='WINDOWDATA.xml' path='doc/member[@name="WINDOWDATA.pidl"]/*' />
     [NativeTypeName("LPITEMIDLIST")]
     public ITEMIDLIST* pidl;
 
+    /// <include file='WINDOWDATA.xml' path='doc/member[@name="WINDOWDATA.lpszUrl"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpszUrl;
 
+    /// <include file='WINDOWDATA.xml' path='doc/member[@name="WINDOWDATA.lpszUrlLocation"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpszUrlLocation;
 
+    /// <include file='WINDOWDATA.xml' path='doc/member[@name="WINDOWDATA.lpszTitle"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpszTitle;
 }

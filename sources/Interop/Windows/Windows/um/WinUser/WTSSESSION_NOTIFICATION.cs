@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WTSSESSION_NOTIFICATION.xml' path='doc/member[@name="WTSSESSION_NOTIFICATION"]/*' />
 public partial struct WTSSESSION_NOTIFICATION
 {
+    /// <include file='WTSSESSION_NOTIFICATION.xml' path='doc/member[@name="WTSSESSION_NOTIFICATION.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='WTSSESSION_NOTIFICATION.xml' path='doc/member[@name="WTSSESSION_NOTIFICATION.dwSessionId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSessionId;
 }

@@ -8,11 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
 {
     public ushort _bitfield;
 
+    /// <include file='IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.PageRelativeOffset"]/*' />
     [NativeTypeName("WORD : 12")]
     public ushort PageRelativeOffset
     {
@@ -29,6 +31,7 @@ public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
         }
     }
 
+    /// <include file='IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.IndirectCall"]/*' />
     [NativeTypeName("WORD : 1")]
     public ushort IndirectCall
     {
@@ -45,6 +48,7 @@ public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
         }
     }
 
+    /// <include file='IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.RexWPrefix"]/*' />
     [NativeTypeName("WORD : 1")]
     public ushort RexWPrefix
     {
@@ -61,6 +65,7 @@ public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
         }
     }
 
+    /// <include file='IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.CfgCheck"]/*' />
     [NativeTypeName("WORD : 1")]
     public ushort CfgCheck
     {
@@ -77,6 +82,7 @@ public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
         }
     }
 
+    /// <include file='IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION.Reserved"]/*' />
     [NativeTypeName("WORD : 1")]
     public ushort Reserved
     {

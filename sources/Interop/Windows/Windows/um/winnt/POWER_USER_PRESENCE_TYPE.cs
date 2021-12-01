@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_USER_PRESENCE_TYPE.xml' path='doc/member[@name="POWER_USER_PRESENCE_TYPE"]/*' />
 public enum POWER_USER_PRESENCE_TYPE
 {
+    /// <include file='POWER_USER_PRESENCE_TYPE.xml' path='doc/member[@name="POWER_USER_PRESENCE_TYPE.UserNotPresent"]/*' />
     UserNotPresent = 0,
+
+    /// <include file='POWER_USER_PRESENCE_TYPE.xml' path='doc/member[@name="POWER_USER_PRESENCE_TYPE.UserPresent"]/*' />
     UserPresent = 1,
+
+    /// <include file='POWER_USER_PRESENCE_TYPE.xml' path='doc/member[@name="POWER_USER_PRESENCE_TYPE.UserUnknown"]/*' />
     UserUnknown = 0xff,
 }

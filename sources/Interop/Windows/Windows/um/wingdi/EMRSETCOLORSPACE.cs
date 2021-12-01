@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETCOLORSPACE.xml' path='doc/member[@name="EMRSETCOLORSPACE"]/*' />
 public partial struct EMRSETCOLORSPACE
 {
+    /// <include file='EMRSETCOLORSPACE.xml' path='doc/member[@name="EMRSETCOLORSPACE.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETCOLORSPACE.xml' path='doc/member[@name="EMRSETCOLORSPACE.ihCS"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihCS;
 }

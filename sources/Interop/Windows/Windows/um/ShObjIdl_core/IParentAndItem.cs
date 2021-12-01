@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IParentAndItem.xml' path='doc/member[@name="IParentAndItem"]/*' />
 [Guid("B3A4B685-B685-4805-99D9-5DEAD2873236")]
 [NativeTypeName("struct IParentAndItem : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface
         return ((delegate* unmanaged<IParentAndItem*, Guid*, void**, int>)(lpVtbl[0]))((IParentAndItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface
         return ((delegate* unmanaged<IParentAndItem*, uint>)(lpVtbl[1]))((IParentAndItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface
         return ((delegate* unmanaged<IParentAndItem*, uint>)(lpVtbl[2]))((IParentAndItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IParentAndItem.xml' path='doc/member[@name="IParentAndItem.SetParentAndItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetParentAndItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlParent, IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlChild)
@@ -46,6 +51,7 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface
         return ((delegate* unmanaged<IParentAndItem*, ITEMIDLIST*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((IParentAndItem*)Unsafe.AsPointer(ref this), pidlParent, psf, pidlChild);
     }
 
+    /// <include file='IParentAndItem.xml' path='doc/member[@name="IParentAndItem.GetParentAndItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetParentAndItem([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlParent, IShellFolder** ppsf, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlChild)

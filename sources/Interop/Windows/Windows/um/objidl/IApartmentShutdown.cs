@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IApartmentShutdown.xml' path='doc/member[@name="IApartmentShutdown"]/*' />
 [Guid("A2F05A09-27A2-42B5-BC0E-AC163EF49D9B")]
 [NativeTypeName("struct IApartmentShutdown : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface
         return ((delegate* unmanaged<IApartmentShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IApartmentShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface
         return ((delegate* unmanaged<IApartmentShutdown*, uint>)(lpVtbl[1]))((IApartmentShutdown*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface
         return ((delegate* unmanaged<IApartmentShutdown*, uint>)(lpVtbl[2]))((IApartmentShutdown*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IApartmentShutdown.xml' path='doc/member[@name="IApartmentShutdown.OnUninitialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void OnUninitialize([NativeTypeName("UINT64")] ulong ui64ApartmentIdentifier)

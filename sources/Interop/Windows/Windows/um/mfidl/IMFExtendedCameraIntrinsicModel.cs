@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFExtendedCameraIntrinsicModel.xml' path='doc/member[@name="IMFExtendedCameraIntrinsicModel"]/*' />
 [Guid("5C595E64-4630-4231-855A-12842F733245")]
 [NativeTypeName("struct IMFExtendedCameraIntrinsicModel : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, uint>)(lpVtbl[1]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, uint>)(lpVtbl[2]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFExtendedCameraIntrinsicModel.xml' path='doc/member[@name="IMFExtendedCameraIntrinsicModel.GetModel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetModel(MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, MFExtendedCameraIntrinsic_IntrinsicModel*, int>)(lpVtbl[3]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), pIntrinsicModel);
     }
 
+    /// <include file='IMFExtendedCameraIntrinsicModel.xml' path='doc/member[@name="IMFExtendedCameraIntrinsicModel.SetModel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetModel([NativeTypeName("const MFExtendedCameraIntrinsic_IntrinsicModel *")] MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
         return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, MFExtendedCameraIntrinsic_IntrinsicModel*, int>)(lpVtbl[4]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), pIntrinsicModel);
     }
 
+    /// <include file='IMFExtendedCameraIntrinsicModel.xml' path='doc/member[@name="IMFExtendedCameraIntrinsicModel.GetDistortionModelType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDistortionModelType(MFCameraIntrinsic_DistortionModelType* pDistortionModelType)

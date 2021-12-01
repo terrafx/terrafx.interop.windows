@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VideoCopyProtectionType.xml' path='doc/member[@name="VideoCopyProtectionType"]/*' />
 public enum VideoCopyProtectionType
 {
+    /// <include file='VideoCopyProtectionType.xml' path='doc/member[@name="VideoCopyProtectionType.VideoCopyProtectionMacrovisionBasic"]/*' />
     VideoCopyProtectionMacrovisionBasic = 0,
+
+    /// <include file='VideoCopyProtectionType.xml' path='doc/member[@name="VideoCopyProtectionType.VideoCopyProtectionMacrovisionCBI"]/*' />
     VideoCopyProtectionMacrovisionCBI = (VideoCopyProtectionMacrovisionBasic + 1),
 }

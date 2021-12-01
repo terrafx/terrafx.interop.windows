@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISpatialAudioClient.ActivateSpatialAudioStream">
+    <summary>
+      <para>Activates and initializes spatial audio stream using one of the spatial audio stream activation structures.</para>
+    </summary>
+    <param name="activationParams">
+      <para>The structure defining the activation parameters for the spatial audio stream. The <b>vt</b> field should be set to VT_BLOB and the <b>blob</b> field should be  populated with a <see cref="SpatialAudioObjectRenderStreamActivationParams" /> or a <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" />.</para>
+    </param>
+    <param name="riid">
+      <para>The UUID of the spatial audio stream interface to activate.</para>
+    </param>
+    <param name="stream">
+      <para>A pointer to the pointer which receives the activated spatial audio interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <remarks>
+      <para>This method supports activation of the following spatial audio stream interfaces:</para>
+      <para>
+        <see cref="ISpatialAudioObjectRenderStream" />
+      </para>
+      <para>
+        <see cref="ISpatialAudioObjectRenderStreamForMetadata" />
+      </para>
+      <h4>Examples</h4>
+      <code>Microsoft.WRL.ComPtr&lt;ISpatialAudioClient&gt; spatialAudioClient;
+
+// Activate ISpatialAudioClient on the desired audio-device
+hr = defaultDevice-&gt;Activate(__uuidof(ISpatialAudioClient), CLSCTX_INPROC_SERVER, nullptr, (void**)&amp;amp;amp;amp;amp;amp;spatialAudioClient);
+
+hr = spatialAudioClient-&gt;IsAudioObjectFormatSupported(&amp;amp;amp;amp;amp;amp;format);
+
+// Create the event that will be used to signal the client for more data
+HANDLE bufferCompletionEvent = CreateEvent(nullptr, FALSE, FALSE, nullptr);
+
+SpatialAudioObjectRenderStreamActivationParams streamParams;
+streamParams.ObjectFormat = &amp;amp;amp;amp;amp;amp;format;
+streamParams.StaticObjectTypeMask = ChannelMask_Stereo;
+streamParams.MinDynamicObjectCount = 0;
+streamParams.MaxDynamicObjectCount = 0;
+streamParams.Category = AudioCategory_SoundEffects;
+streamParams.EventHandle = bufferCompletionEvent;
+streamParams.NotifyObject = nullptr;
+
+PROPVARIANT activationParams;
+PropVariantInit(&amp;amp;amp;amp;amp;amp;activationParams);
+activationParams.vt = VT_BLOB;
+activationParams.blob.cbSize = sizeof(streamParams);
+activationParams.blob.pBlobData = reinterpret_cast&lt;BYTE *&gt;(&amp;amp;amp;amp;amp;amp;streamParams);
+
+Microsoft.WRL.ComPtr&lt;ISpatialAudioObjectRenderStream&gt; spatialAudioStream;
+hr = spatialAudioClient-&gt;ActivateSpatialAudioStream(&amp;amp;amp;amp;amp;amp;activationParams, __uuidof(spatialAudioStream), (void**)&amp;amp;amp;amp;amp;amp;spatialAudioStream);
+
+</code>
+    </remarks>
+    <seealso cref="ISpatialAudioClient" />
+    <seealso cref="SpatialAudioObjectRenderStreamActivationParams" />
+    <seealso cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" />
+  </member>
+  <member name="ISpatialAudioClient.GetMaxDynamicObjectCount">
+    <summary>
+      <para>Gets the maximum number of dynamic audio objects for the spatial audio client.</para>
+    </summary>
+    <param name="value">
+      <para>Gets the maximum dynamic object count for this client.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <remarks>
+      <para>A dynamic <see cref="ISpatialAudioObject" /> is one that was activated by setting the <i>type</i> parameter to the  <see cref="ISpatialAudioObjectRenderStream.ActivateSpatialAudioObject" /> method to <b>AudioObjectType_Dynamic</b>. The client has a limit of the maximum number of dynamic spatial audio objects that can be activated at one time. When the capacity of the audio rendering pipeline changes, the system will dynamically adjust the maximum number of concurrent dynamic spatial audio objects. Before doing so, the system will call <see cref="OnAvailableDynamicObjectCountChange" /> to notify clients of the resource limit change.</para>
+      <para>Call <see cref="Release" /> on an <b>ISpatialAudioObject</b> when it is no longer being used to free up the resource to create new dynamic spatial audio objects.</para>
+      <para>When Windows Sonic is not available (for instance, when playing to embedded laptop stereo speakers, or if the user has not explicitly enabled Windows Sonic on the device), the number of available dynamic objects returned by <b>GetMaxDynamicObjectCount</b> to an application will be 0.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioClient" />
+  </member>
+  <member name="ISpatialAudioClient.GetMaxFrameCount">
+    <summary>
+      <para>Gets the maximum possible frame count per processing pass. This method can be used to determine the size of the source buffer that should be allocated to convey audio data for each processing pass.</para>
+    </summary>
+    <param name="objectFormat">
+      <para>The audio format used to calculate the maximum frame count. This should be the same format specified in the <b>ObjectFormat</b> field of the <see cref="SpatialAudioObjectRenderStreamActivationParams" /> passed to  <see cref="ActivateSpatialAudioStream" />.</para>
+    </param>
+    <param name="frameCountPerBuffer">
+      <para>The maximum number of audio frames that will be processed in one pass.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="ISpatialAudioClient" />
+  </member>
+  <member name="ISpatialAudioClient.GetNativeStaticObjectTypeMask">
+    <summary>
+      <para>Gets a  channel mask which represents the subset of static speaker bed channels native to current rendering engine.</para>
+    </summary>
+    <param name="mask">
+      <para>A bitwise combination of values from the <see cref="AudioObjectType" /> enumeration indicating a subset of static speaker channels. The values returned will only include the static channel values and will not include <b>AudioObjectType_Dynamic</b>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="ISpatialAudioClient" />
+  </member>
+  <member name="ISpatialAudioClient.GetStaticObjectPosition">
+    <summary>
+      <para>Gets the position in 3D space of the specified static spatial audio channel.</para>
+    </summary>
+    <param name="type">
+      <para>A value indicating the static spatial audio channel for which the position is being queried. This method will return E_INVALIDARG  if the value does not represent a static channel, including <b>AudioObjectType_Dynamic</b> and <b>AudioObjectType_None</b>.</para>
+    </param>
+    <param name="x">
+      <para>The x coordinate of the static audio channel, in meters, relative to the listener. Positive values are to the right of the listener and negative values are to the left.</para>
+    </param>
+    <param name="y">
+      <para>The y coordinate of the static audio channel, in meters, relative to the listener. Positive values are above the listener and negative values are below.</para>
+    </param>
+    <param name="z">
+      <para>The z coordinate of the static audio channel, in meters, relative to the listener. Positive values are behind the listener and negative values are in front.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The supplied  <see cref="AudioObjectType" /> value does not represent a static channel.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Position values use a right-handed Cartesian coordinate system, where each unit represents 1 meter. The coordinate system is relative to the listener where the origin (x=0.0, y=0.0, z=0.0) represents the center point between the listener's ears.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioClient" />
+  </member>
+  <member name="ISpatialAudioClient.GetSupportedAudioObjectFormatEnumerator">
+    <summary>
+      <para>Gets an <see cref="IAudioFormatEnumerator" /> that contains  all supported audio formats for spatial audio objects, the first item in the list represents the most preferable format.</para>
+    </summary>
+    <param name="enumerator">
+      <para>Pointer to the pointer that receives the <see cref="IAudioFormatEnumerator" /> interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="ISpatialAudioClient" />
+  </member>
+  <member name="ISpatialAudioClient.IsAudioObjectFormatSupported">
+    <summary>
+      <para>Gets a value indicating whether <see cref="ISpatialAudioObjectRenderStream" /> supports a the specified format.</para>
+    </summary>
+    <param name="objectFormat">
+      <para>The format for which support is queried.</para>
+    </param>
+    <returns>
+      <para>If the specified format is supported, it returns S_OK. If specified format is unsupported, this method returns AUDCLNT_E_UNSUPPORTED_FORMAT.</para>
+    </returns>
+    <seealso cref="ISpatialAudioClient" />
+  </member>
+  <member name="ISpatialAudioClient.IsSpatialAudioStreamAvailable">
+    <summary>
+      <para>When successful, gets a value indicating whether the currently active spatial rendering engine supports the specified spatial audio render stream.</para>
+    </summary>
+    <param name="streamUuid">
+      <para>The interface ID of the interface for which availability is queried.</para>
+    </param>
+    <param name="auxiliaryInfo">
+      <para>A structure containing additional information to be used when support is queried. For more information, see Remarks.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_STREAM_IS_NOT_AVAILABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified stream interface can't be activated by the currently active rendering engine.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_METADATA_FORMAT_IS_NOT_SUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The metadata format supplied in the <i>auxiliaryInfo</i> parameter is not supported by the current rendering engine. For more information, see Remarks..</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When querying to see if the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> you can use the auxilaryInfo parameter to query if a particular metadata format is supported. The following code example demonstrates how to initialize the <see cref="PROPVARIANT" /> structure to check for support for an example metadata format.</para>
+      <code>PROPVARIANT auxiliaryInfo;
+auxiliaryInfo.vt = VT_CLSID;
+auxiliaryInfo.puuid = const_cast&lt;CLSID*&gt;(&amp;amp;amp;amp;amp;amp;CONTOSO_SPATIAL_METADATA_V1_0);
+</code>
+      <para>If the specified metadata format is unsupported, <b>IsSpatialAudioStreamAvailable</b> returns SPTLAUDCLNT_E_METADATA_FORMAT_IS_NOT_SUPPORTED.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioClient" />
+  </member>
+  <member name="ISpatialAudioClient">
+    <summary>
+      <para>The <b>ISpatialAudioClient</b> interface enables a client to create audio streams that emit audio from a position in 3D space. This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+    </summary>
+    <remarks>
+      <para>Get an instance of this interface by calling <see cref="ActivateAudioInterfaceAsync" />, using the  <a href="https://docs.microsoft.com//cpp/cpp/uuidof-operator">__uuidof</a> operator to get the class ID of the <b>ISpatialAudioClient</b> interface. The following example code shows how to initialize this interface.</para>
+      <code>PROPVARIANT var;
+PropVariantInit(&amp;amp;amp;amp;amp;amp;var);
+auto p = reinterpret_cast&lt;SpatialAudioClientActivationParams *&gt;(CoTaskMemAlloc(sizeof(SpatialAudioClientActivationParams)));
+if (nullptr == p) { ... }
+p-&gt;tracingContextId = /* context identifier */;
+p-&gt;appId = /* app identifier */;
+p-&gt;majorVersion = /* app version info */;
+p-&gt;majorVersionN = /* app version info */;
+var.vt = VT_BLOB;
+var.blob.cbSize = sizeof(*p);
+var.blob.pBlobData = reinterpret_cast&lt;BYTE *&gt;(p);
+hr = ActivateAudioInterfaceAsync(device, __uuidof(ISpatialAudioClient), &amp;amp;amp;amp;amp;amp;var, ...);
+// ...
+ropVariantClear(&amp;amp;amp;amp;amp;amp;var);
+</code>
+      <para>
+        <b>Note</b>  When using the <b>ISpatialAudioClient</b> interfaces on an Xbox One Development Kit (XDK) title, you must first call <b>EnableSpatialAudio</b> before calling <see cref="IMMDeviceEnumerator.EnumAudioEndpoints" /> or <see cref="IMMDeviceEnumerator.GetDefaultAudioEndpoint" />. Failure to do so will result in an E_NOINTERFACE error being returned from the call to Activate. <b>EnableSpatialAudio</b> is only available for XDK titles, and does not need to be called for Universal Windows Platform apps running on Xbox One, nor for any non-Xbox One devices.</para>
+      <para>To access the <b>ActivateAudioIntefaceAsync</b>, you will need to link to mmdevapi.lib.</para>
+    </remarks>
+  </member>
+</doc>

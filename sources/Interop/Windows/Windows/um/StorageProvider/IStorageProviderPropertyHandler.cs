@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IStorageProviderPropertyHandler.xml' path='doc/member[@name="IStorageProviderPropertyHandler"]/*' />
 [Guid("301DFBE5-524C-4B0F-8B2D-21C40B3A2988")]
 [NativeTypeName("struct IStorageProviderPropertyHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IStorageProviderPropertyHandler : IStorageProviderP
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IStorageProviderPropertyHandler : IStorageProviderP
         return ((delegate* unmanaged<IStorageProviderPropertyHandler*, Guid*, void**, int>)(lpVtbl[0]))((IStorageProviderPropertyHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IStorageProviderPropertyHandler : IStorageProviderP
         return ((delegate* unmanaged<IStorageProviderPropertyHandler*, uint>)(lpVtbl[1]))((IStorageProviderPropertyHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IStorageProviderPropertyHandler : IStorageProviderP
         return ((delegate* unmanaged<IStorageProviderPropertyHandler*, uint>)(lpVtbl[2]))((IStorageProviderPropertyHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IStorageProviderPropertyHandler.xml' path='doc/member[@name="IStorageProviderPropertyHandler.RetrieveProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RetrieveProperties([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* propertiesToRetrieve, [NativeTypeName("ULONG")] uint propertiesToRetrieveCount, IPropertyStore** retrievedProperties)
@@ -46,6 +51,7 @@ public unsafe partial struct IStorageProviderPropertyHandler : IStorageProviderP
         return ((delegate* unmanaged<IStorageProviderPropertyHandler*, PROPERTYKEY*, uint, IPropertyStore**, int>)(lpVtbl[3]))((IStorageProviderPropertyHandler*)Unsafe.AsPointer(ref this), propertiesToRetrieve, propertiesToRetrieveCount, retrievedProperties);
     }
 
+    /// <include file='IStorageProviderPropertyHandler.xml' path='doc/member[@name="IStorageProviderPropertyHandler.SaveProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SaveProperties(IPropertyStore* propertiesToSave)

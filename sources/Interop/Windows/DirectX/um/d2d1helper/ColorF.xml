@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ColorF.ColorF(FLOAT, FLOAT, FLOAT, FLOAT)">
+    <summary>
+      <para>Instantiates a new instance of the <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-colorf">ColorF</a> class that contains the specified red, green, blue, and alpha values.</para>
+    </summary>
+    <param name="red">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The red component of the color to be constructed.</para>
+    </param>
+    <param name="green">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The green component of the color to be constructed.</para>
+    </param>
+    <param name="blue">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The blue component of the color to be constructed.</para>
+    </param>
+    <param name="alpha">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The alpha value of the color to be constructed. An alpha channel value ranges from 0.0 to 1.0, where 0.0 represents a fully transparent color and 1.0  represents a fully opaque color.The default value is 1.0.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-brushes-overview">Brushes Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-colorf">ColorF</seealso>
+  </member>
+  <member name="ColorF.ColorF(UINT32, FLOAT)">
+    <summary>
+      <para>Instantiates a new instance of the <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-colorf">ColorF</a> class that contains the specified RGB and alpha values.</para>
+    </summary>
+    <param name="rgb">
+      <para>Type: <b>UINT32</b></para>
+      <para>The RGB value for the color to be constructed.</para>
+    </param>
+    <param name="a">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The alpha value for the color to be constructed. An alpha channel value ranges from 0.0 to 1.0, where 0.0 represents a fully transparent color and 1.0  represents a fully opaque color. The default value is 1.0.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-brushes-overview">Brushes Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-colorf">ColorF</seealso>
+  </member>
+</doc>

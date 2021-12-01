@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TA_TRANSFORM_OPACITY.xml' path='doc/member[@name="TA_TRANSFORM_OPACITY"]/*' />
 public partial struct TA_TRANSFORM_OPACITY
 {
+    /// <include file='TA_TRANSFORM_OPACITY.xml' path='doc/member[@name="TA_TRANSFORM_OPACITY.header"]/*' />
     public TA_TRANSFORM header;
 
+    /// <include file='TA_TRANSFORM_OPACITY.xml' path='doc/member[@name="TA_TRANSFORM_OPACITY.rOpacity"]/*' />
     public float rOpacity;
 
+    /// <include file='TA_TRANSFORM_OPACITY.xml' path='doc/member[@name="TA_TRANSFORM_OPACITY.rInitialOpacity"]/*' />
     public float rInitialOpacity;
 }

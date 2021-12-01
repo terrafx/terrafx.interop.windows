@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_KEY_TRANS_RECIPIENT_INFO">
+    <summary>
+      <para>The <b>CMSG_KEY_TRANS_RECIPIENT_INFO</b> structure contains information used in key transport algorithms.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_TRANS_RECIPIENT_INFO.dwVersion">
+    <summary>
+      <para>Indicates the version of the structure. If <b>RecipientId</b> uses the ISSUER_SERIAL_NUMBER to identify the recipient, <b>dwVersion</b> is set to zero. If <b>RecipientId</b> uses KEYID, <b>dwVersion</b> is set to two.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_TRANS_RECIPIENT_INFO.RecipientId">
+    <summary>
+      <para>A <see cref="CERT_ID" /> that identifies the recipient. Currently, only ISSUER_SERIAL_NUMBER or KEYID choices in the <b>CERT_ID</b> are valid.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_TRANS_RECIPIENT_INFO.KeyEncryptionAlgorithm">
+    <summary>
+      <para>A
+<see cref="CRYPT_ALGORITHM_IDENTIFIER" /> that identifies the key-encryption algorithm and any associated parameters used to encrypt the content encryption key.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_TRANS_RECIPIENT_INFO.EncryptedKey">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> that contains the bytes of the encrypted session key.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TABITEMLEFTEDGESTATES.xml' path='doc/member[@name="TABITEMLEFTEDGESTATES"]/*' />
 public enum TABITEMLEFTEDGESTATES
 {
+    /// <include file='TABITEMLEFTEDGESTATES.xml' path='doc/member[@name="TABITEMLEFTEDGESTATES.TILES_NORMAL"]/*' />
     TILES_NORMAL = 1,
+
+    /// <include file='TABITEMLEFTEDGESTATES.xml' path='doc/member[@name="TABITEMLEFTEDGESTATES.TILES_HOT"]/*' />
     TILES_HOT = 2,
+
+    /// <include file='TABITEMLEFTEDGESTATES.xml' path='doc/member[@name="TABITEMLEFTEDGESTATES.TILES_SELECTED"]/*' />
     TILES_SELECTED = 3,
+
+    /// <include file='TABITEMLEFTEDGESTATES.xml' path='doc/member[@name="TABITEMLEFTEDGESTATES.TILES_DISABLED"]/*' />
     TILES_DISABLED = 4,
+
+    /// <include file='TABITEMLEFTEDGESTATES.xml' path='doc/member[@name="TABITEMLEFTEDGESTATES.TILES_FOCUSED"]/*' />
     TILES_FOCUSED = 5,
 }

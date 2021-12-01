@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInputPanelConfiguration.xml' path='doc/member[@name="IInputPanelConfiguration"]/*' />
 [Guid("41C81592-514C-48BD-A22E-E6AF638521A6")]
 [NativeTypeName("struct IInputPanelConfiguration : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IInputPanelConfiguration : IInputPanelConfiguration
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IInputPanelConfiguration : IInputPanelConfiguration
         return ((delegate* unmanaged<IInputPanelConfiguration*, Guid*, void**, int>)(lpVtbl[0]))((IInputPanelConfiguration*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IInputPanelConfiguration : IInputPanelConfiguration
         return ((delegate* unmanaged<IInputPanelConfiguration*, uint>)(lpVtbl[1]))((IInputPanelConfiguration*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IInputPanelConfiguration : IInputPanelConfiguration
         return ((delegate* unmanaged<IInputPanelConfiguration*, uint>)(lpVtbl[2]))((IInputPanelConfiguration*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInputPanelConfiguration.xml' path='doc/member[@name="IInputPanelConfiguration.EnableFocusTracking"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EnableFocusTracking()

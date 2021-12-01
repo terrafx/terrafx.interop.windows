@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFByteStreamTimeSeek.xml' path='doc/member[@name="IMFByteStreamTimeSeek"]/*' />
 [Guid("64976BFA-FB61-4041-9069-8C9A5F659BEB")]
 [NativeTypeName("struct IMFByteStreamTimeSeek : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
         return ((delegate* unmanaged<IMFByteStreamTimeSeek*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
         return ((delegate* unmanaged<IMFByteStreamTimeSeek*, uint>)(lpVtbl[1]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
         return ((delegate* unmanaged<IMFByteStreamTimeSeek*, uint>)(lpVtbl[2]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFByteStreamTimeSeek.xml' path='doc/member[@name="IMFByteStreamTimeSeek.IsTimeSeekSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsTimeSeekSupported(BOOL* pfTimeSeekIsSupported)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
         return ((delegate* unmanaged<IMFByteStreamTimeSeek*, BOOL*, int>)(lpVtbl[3]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pfTimeSeekIsSupported);
     }
 
+    /// <include file='IMFByteStreamTimeSeek.xml' path='doc/member[@name="IMFByteStreamTimeSeek.TimeSeek"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT TimeSeek([NativeTypeName("QWORD")] ulong qwTimePosition)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
         return ((delegate* unmanaged<IMFByteStreamTimeSeek*, ulong, int>)(lpVtbl[4]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), qwTimePosition);
     }
 
+    /// <include file='IMFByteStreamTimeSeek.xml' path='doc/member[@name="IMFByteStreamTimeSeek.GetTimeSeekResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTimeSeekResult([NativeTypeName("QWORD *")] ulong* pqwStartTime, [NativeTypeName("QWORD *")] ulong* pqwStopTime, [NativeTypeName("QWORD *")] ulong* pqwDuration)

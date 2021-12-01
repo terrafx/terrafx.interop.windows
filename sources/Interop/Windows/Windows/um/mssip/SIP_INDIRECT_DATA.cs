@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIP_INDIRECT_DATA.xml' path='doc/member[@name="SIP_INDIRECT_DATA"]/*' />
 public partial struct SIP_INDIRECT_DATA
 {
+    /// <include file='SIP_INDIRECT_DATA.xml' path='doc/member[@name="SIP_INDIRECT_DATA.Data"]/*' />
     public CRYPT_ATTRIBUTE_TYPE_VALUE Data;
 
+    /// <include file='SIP_INDIRECT_DATA.xml' path='doc/member[@name="SIP_INDIRECT_DATA.DigestAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
 
+    /// <include file='SIP_INDIRECT_DATA.xml' path='doc/member[@name="SIP_INDIRECT_DATA.Digest"]/*' />
     [NativeTypeName("CRYPT_HASH_BLOB")]
     public CRYPT_DATA_BLOB Digest;
 }

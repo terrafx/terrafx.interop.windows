@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecVideoSoftwareDeinterlaceMode.xml' path='doc/member[@name="eAVDecVideoSoftwareDeinterlaceMode"]/*' />
 public enum eAVDecVideoSoftwareDeinterlaceMode
 {
+    /// <include file='eAVDecVideoSoftwareDeinterlaceMode.xml' path='doc/member[@name="eAVDecVideoSoftwareDeinterlaceMode.eAVDecVideoSoftwareDeinterlaceMode_NoDeinterlacing"]/*' />
     eAVDecVideoSoftwareDeinterlaceMode_NoDeinterlacing = 0,
+
+    /// <include file='eAVDecVideoSoftwareDeinterlaceMode.xml' path='doc/member[@name="eAVDecVideoSoftwareDeinterlaceMode.eAVDecVideoSoftwareDeinterlaceMode_ProgressiveDeinterlacing"]/*' />
     eAVDecVideoSoftwareDeinterlaceMode_ProgressiveDeinterlacing = 1,
+
+    /// <include file='eAVDecVideoSoftwareDeinterlaceMode.xml' path='doc/member[@name="eAVDecVideoSoftwareDeinterlaceMode.eAVDecVideoSoftwareDeinterlaceMode_BOBDeinterlacing"]/*' />
     eAVDecVideoSoftwareDeinterlaceMode_BOBDeinterlacing = 2,
+
+    /// <include file='eAVDecVideoSoftwareDeinterlaceMode.xml' path='doc/member[@name="eAVDecVideoSoftwareDeinterlaceMode.eAVDecVideoSoftwareDeinterlaceMode_SmartBOBDeinterlacing"]/*' />
     eAVDecVideoSoftwareDeinterlaceMode_SmartBOBDeinterlacing = 3,
 }

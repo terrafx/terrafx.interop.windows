@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLBorder.xml' path='doc/member[@name="HTMLBorder"]/*' />
 public enum HTMLBorder
 {
+    /// <include file='HTMLBorder.xml' path='doc/member[@name="HTMLBorder.HTMLBorderNone"]/*' />
     HTMLBorderNone = 0,
+
+    /// <include file='HTMLBorder.xml' path='doc/member[@name="HTMLBorder.HTMLBorderThick"]/*' />
     HTMLBorderThick = 0x40000,
+
+    /// <include file='HTMLBorder.xml' path='doc/member[@name="HTMLBorder.HTMLBorderDialog"]/*' />
     HTMLBorderDialog = 0x400000,
+
+    /// <include file='HTMLBorder.xml' path='doc/member[@name="HTMLBorder.HTMLBorderThin"]/*' />
     HTMLBorderThin = 0x800000,
+
+    /// <include file='HTMLBorder.xml' path='doc/member[@name="HTMLBorder.HTMLBorder_Max"]/*' />
     HTMLBorder_Max = 2147483647,
 }

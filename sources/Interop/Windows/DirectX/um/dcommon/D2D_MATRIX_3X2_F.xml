@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D_MATRIX_3X2_F">
+    <summary>
+      <para>Represents a 3-by-2 matrix.</para>
+    </summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F.m11">
+    <summary></summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F.m12">
+    <summary></summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F.m21">
+    <summary></summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F.m22">
+    <summary></summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F.dx">
+    <summary></summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F.dy">
+    <summary></summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F._11">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The value in the first row and first column of the matrix.</para>
+    </summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F._12">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The value in the first row and second column of the matrix.</para>
+    </summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F._21">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The value in the second row and first column of the matrix.</para>
+    </summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F._22">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The value in the second row and second column of the matrix.</para>
+    </summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F._31">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The value in the third row and first column of the matrix.</para>
+    </summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F._32">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The value in the third row and second column of the matrix.</para>
+    </summary>
+  </member>
+  <member name="D2D_MATRIX_3X2_F.m">
+    <summary>
+      <para>An array that describes the matrix.</para>
+    </summary>
+  </member>
+</doc>

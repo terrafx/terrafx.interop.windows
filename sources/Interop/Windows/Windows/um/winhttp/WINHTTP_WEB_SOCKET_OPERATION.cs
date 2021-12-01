@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINHTTP_WEB_SOCKET_OPERATION.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_OPERATION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum WINHTTP_WEB_SOCKET_OPERATION
 {
+    /// <include file='WINHTTP_WEB_SOCKET_OPERATION.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_OPERATION.WINHTTP_WEB_SOCKET_SEND_OPERATION"]/*' />
     WINHTTP_WEB_SOCKET_SEND_OPERATION = 0,
+
+    /// <include file='WINHTTP_WEB_SOCKET_OPERATION.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_OPERATION.WINHTTP_WEB_SOCKET_RECEIVE_OPERATION"]/*' />
     WINHTTP_WEB_SOCKET_RECEIVE_OPERATION = 1,
+
+    /// <include file='WINHTTP_WEB_SOCKET_OPERATION.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_OPERATION.WINHTTP_WEB_SOCKET_CLOSE_OPERATION"]/*' />
     WINHTTP_WEB_SOCKET_CLOSE_OPERATION = 2,
+
+    /// <include file='WINHTTP_WEB_SOCKET_OPERATION.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_OPERATION.WINHTTP_WEB_SOCKET_SHUTDOWN_OPERATION"]/*' />
     WINHTTP_WEB_SOCKET_SHUTDOWN_OPERATION = 3,
 }

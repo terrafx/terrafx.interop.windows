@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRL_CONTEXT.xml' path='doc/member[@name="CRL_CONTEXT"]/*' />
 public unsafe partial struct CRL_CONTEXT
 {
+    /// <include file='CRL_CONTEXT.xml' path='doc/member[@name="CRL_CONTEXT.dwCertEncodingType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCertEncodingType;
 
+    /// <include file='CRL_CONTEXT.xml' path='doc/member[@name="CRL_CONTEXT.pbCrlEncoded"]/*' />
     public byte* pbCrlEncoded;
 
+    /// <include file='CRL_CONTEXT.xml' path='doc/member[@name="CRL_CONTEXT.cbCrlEncoded"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbCrlEncoded;
 
+    /// <include file='CRL_CONTEXT.xml' path='doc/member[@name="CRL_CONTEXT.pCrlInfo"]/*' />
     [NativeTypeName("PCRL_INFO")]
     public CRL_INFO* pCrlInfo;
 
+    /// <include file='CRL_CONTEXT.xml' path='doc/member[@name="CRL_CONTEXT.hCertStore"]/*' />
     public HCERTSTORE hCertStore;
 }

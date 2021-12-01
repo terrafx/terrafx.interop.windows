@@ -10,217 +10,283 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CommandLineToArgvW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LPWSTR *")]
     public static extern ushort** CommandLineToArgvW([NativeTypeName("LPCWSTR")] ushort* lpCmdLine, int* pNumArgs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DragQueryFileA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern uint DragQueryFileA(HDROP hDrop, uint iFile, [NativeTypeName("LPSTR")] sbyte* lpszFile, uint cch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DragQueryFileW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern uint DragQueryFileW(HDROP hDrop, uint iFile, [NativeTypeName("LPWSTR")] ushort* lpszFile, uint cch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DragQueryPoint"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL DragQueryPoint(HDROP hDrop, POINT* ppt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DragFinish"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern void DragFinish(HDROP hDrop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DragAcceptFiles"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern void DragAcceptFiles(HWND hWnd, BOOL fAccept);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellExecuteA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HINSTANCE ShellExecuteA(HWND hwnd, [NativeTypeName("LPCSTR")] sbyte* lpOperation, [NativeTypeName("LPCSTR")] sbyte* lpFile, [NativeTypeName("LPCSTR")] sbyte* lpParameters, [NativeTypeName("LPCSTR")] sbyte* lpDirectory, int nShowCmd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellExecuteW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HINSTANCE ShellExecuteW(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* lpOperation, [NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("LPCWSTR")] ushort* lpParameters, [NativeTypeName("LPCWSTR")] ushort* lpDirectory, int nShowCmd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindExecutableA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HINSTANCE FindExecutableA([NativeTypeName("LPCSTR")] sbyte* lpFile, [NativeTypeName("LPCSTR")] sbyte* lpDirectory, [NativeTypeName("LPSTR")] sbyte* lpResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindExecutableW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HINSTANCE FindExecutableW([NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("LPCWSTR")] ushort* lpDirectory, [NativeTypeName("LPWSTR")] ushort* lpResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellAboutA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern int ShellAboutA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* szApp, [NativeTypeName("LPCSTR")] sbyte* szOtherStuff, HICON hIcon);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellAboutW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern int ShellAboutW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* szApp, [NativeTypeName("LPCWSTR")] ushort* szOtherStuff, HICON hIcon);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DuplicateIcon"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HICON DuplicateIcon(HINSTANCE hInst, HICON hIcon);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractAssociatedIconA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HICON ExtractAssociatedIconA(HINSTANCE hInst, [NativeTypeName("LPSTR")] sbyte* pszIconPath, [NativeTypeName("WORD *")] ushort* piIcon);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractAssociatedIconW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HICON ExtractAssociatedIconW(HINSTANCE hInst, [NativeTypeName("LPWSTR")] ushort* pszIconPath, [NativeTypeName("WORD *")] ushort* piIcon);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractAssociatedIconExA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HICON ExtractAssociatedIconExA(HINSTANCE hInst, [NativeTypeName("LPSTR")] sbyte* pszIconPath, [NativeTypeName("WORD *")] ushort* piIconIndex, [NativeTypeName("WORD *")] ushort* piIconId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractAssociatedIconExW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HICON ExtractAssociatedIconExW(HINSTANCE hInst, [NativeTypeName("LPWSTR")] ushort* pszIconPath, [NativeTypeName("WORD *")] ushort* piIconIndex, [NativeTypeName("WORD *")] ushort* piIconId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractIconA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HICON ExtractIconA(HINSTANCE hInst, [NativeTypeName("LPCSTR")] sbyte* pszExeFileName, uint nIconIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractIconW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HICON ExtractIconW(HINSTANCE hInst, [NativeTypeName("LPCWSTR")] ushort* pszExeFileName, uint nIconIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAppBarMessage"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [return: NativeTypeName("UINT_PTR")]
     public static extern nuint SHAppBarMessage([NativeTypeName("DWORD")] uint dwMessage, [NativeTypeName("PAPPBARDATA")] void* pData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DoEnvironmentSubstA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint DoEnvironmentSubstA([NativeTypeName("LPSTR")] sbyte* pszSrc, uint cchSrc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DoEnvironmentSubstW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint DoEnvironmentSubstW([NativeTypeName("LPWSTR")] ushort* pszSrc, uint cchSrc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractIconExA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern uint ExtractIconExA([NativeTypeName("LPCSTR")] sbyte* lpszFile, int nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIcons);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractIconExW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern uint ExtractIconExW([NativeTypeName("LPCWSTR")] ushort* lpszFile, int nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIcons);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFileOperationA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int SHFileOperationA([NativeTypeName("LPSHFILEOPSTRUCTA")] void* lpFileOp);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFileOperationW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int SHFileOperationW([NativeTypeName("LPSHFILEOPSTRUCTW")] void* lpFileOp);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFreeNameMappings"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern void SHFreeNameMappings(HANDLE hNameMappings);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellExecuteExA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ShellExecuteExA(void* pExecInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellExecuteExW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ShellExecuteExW(void* pExecInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateProcessAsUserW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SHCreateProcessAsUserW([NativeTypeName("PSHCREATEPROCESSINFOW")] void* pscpi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEvaluateSystemCommandTemplate"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHEvaluateSystemCommandTemplate([NativeTypeName("PCWSTR")] ushort* pszCmdTemplate, [NativeTypeName("PWSTR *")] ushort** ppszApplication, [NativeTypeName("PWSTR *")] ushort** ppszCommandLine, [NativeTypeName("PWSTR *")] ushort** ppszParameters);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocCreateForClasses"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT AssocCreateForClasses([NativeTypeName("const ASSOCIATIONELEMENT *")] void* rgClasses, [NativeTypeName("ULONG")] uint cClasses, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHQueryRecycleBinA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHQueryRecycleBinA([NativeTypeName("LPCSTR")] sbyte* pszRootPath, [NativeTypeName("LPSHQUERYRBINFO")] void* pSHQueryRBInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHQueryRecycleBinW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHQueryRecycleBinW([NativeTypeName("LPCWSTR")] ushort* pszRootPath, [NativeTypeName("LPSHQUERYRBINFO")] void* pSHQueryRBInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEmptyRecycleBinA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHEmptyRecycleBinA(HWND hwnd, [NativeTypeName("LPCSTR")] sbyte* pszRootPath, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEmptyRecycleBinW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHEmptyRecycleBinW(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszRootPath, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHQueryUserNotificationState"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHQueryUserNotificationState(QUERY_USER_NOTIFICATION_STATE* pquns);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetPropertyStoreForWindow"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHGetPropertyStoreForWindow(HWND hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Shell_NotifyIconA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL Shell_NotifyIconA([NativeTypeName("DWORD")] uint dwMessage, [NativeTypeName("PNOTIFYICONDATAA")] void* lpData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Shell_NotifyIconW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL Shell_NotifyIconW([NativeTypeName("DWORD")] uint dwMessage, [NativeTypeName("PNOTIFYICONDATAW")] void* lpData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Shell_NotifyIconGetRect"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT Shell_NotifyIconGetRect([NativeTypeName("const NOTIFYICONIDENTIFIER *")] void* identifier, RECT* iconLocation);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetFileInfoA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD_PTR")]
     public static extern nuint SHGetFileInfoA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("DWORD")] uint dwFileAttributes, void* psfi, uint cbFileInfo, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetFileInfoW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD_PTR")]
     public static extern nuint SHGetFileInfoW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwFileAttributes, void* psfi, uint cbFileInfo, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetStockIconInfo"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHGetStockIconInfo(SHSTOCKICONID siid, uint uFlags, void* psii);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetDiskFreeSpaceExA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL SHGetDiskFreeSpaceExA([NativeTypeName("LPCSTR")] sbyte* pszDirectoryName, ULARGE_INTEGER* pulFreeBytesAvailableToCaller, ULARGE_INTEGER* pulTotalNumberOfBytes, ULARGE_INTEGER* pulTotalNumberOfFreeBytes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetDiskFreeSpaceExW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL SHGetDiskFreeSpaceExW([NativeTypeName("LPCWSTR")] ushort* pszDirectoryName, ULARGE_INTEGER* pulFreeBytesAvailableToCaller, ULARGE_INTEGER* pulTotalNumberOfBytes, ULARGE_INTEGER* pulTotalNumberOfFreeBytes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetNewLinkInfoA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL SHGetNewLinkInfoA([NativeTypeName("LPCSTR")] sbyte* pszLinkTo, [NativeTypeName("LPCSTR")] sbyte* pszDir, [NativeTypeName("LPSTR")] sbyte* pszName, BOOL* pfMustCopy, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetNewLinkInfoW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL SHGetNewLinkInfoW([NativeTypeName("LPCWSTR")] ushort* pszLinkTo, [NativeTypeName("LPCWSTR")] ushort* pszDir, [NativeTypeName("LPWSTR")] ushort* pszName, BOOL* pfMustCopy, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHInvokePrinterCommandA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL SHInvokePrinterCommandA(HWND hwnd, uint uAction, [NativeTypeName("LPCSTR")] sbyte* lpBuf1, [NativeTypeName("LPCSTR")] sbyte* lpBuf2, BOOL fModal);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHInvokePrinterCommandW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL SHInvokePrinterCommandW(HWND hwnd, uint uAction, [NativeTypeName("LPCWSTR")] ushort* lpBuf1, [NativeTypeName("LPCWSTR")] ushort* lpBuf2, BOOL fModal);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHLoadNonloadedIconOverlayIdentifiers"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHLoadNonloadedIconOverlayIdentifiers();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHIsFileAvailableOffline"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHIsFileAvailableOffline([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD *")] uint* pdwStatus);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSetLocalizedName"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHSetLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR")] ushort* pszResModule, int idsRes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRemoveLocalizedName"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHRemoveLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetLocalizedName"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHGetLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PWSTR")] ushort* pszResModule, uint cch, int* pidsRes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellMessageBoxA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int ShellMessageBoxA(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpcText, [NativeTypeName("LPCSTR")] sbyte* lpcTitle, uint fuStyle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellMessageBoxW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int ShellMessageBoxW(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpcText, [NativeTypeName("LPCWSTR")] ushort* lpcTitle, uint fuStyle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsLFNDriveA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL IsLFNDriveA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsLFNDriveW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL IsLFNDriveW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEnumerateUnreadMailAccountsW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHEnumerateUnreadMailAccountsW(HKEY hKeyUser, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pszMailAddress, int cchMailAddress);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetUnreadMailCountW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHGetUnreadMailCountW(HKEY hKeyUser, [NativeTypeName("LPCWSTR")] ushort* pszMailAddress, [NativeTypeName("DWORD *")] uint* pdwCount, FILETIME* pFileTime, [NativeTypeName("LPWSTR")] ushort* pszShellExecuteCommand, int cchShellExecuteCommand);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSetUnreadMailCountW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHSetUnreadMailCountW([NativeTypeName("LPCWSTR")] ushort* pszMailAddress, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("LPCWSTR")] ushort* pszShellExecuteCommand);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHTestTokenMembership"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL SHTestTokenMembership(HANDLE hToken, [NativeTypeName("ULONG")] uint ulRID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetImageList"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHGetImageList(int iImageList, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InitNetworkAddressControl"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL InitNetworkAddressControl();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetDriveMedia"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHGetDriveMedia([NativeTypeName("PCWSTR")] ushort* pszDrive, [NativeTypeName("DWORD *")] uint* pdwMediaContent);
 

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFOffset.xml' path='doc/member[@name="MFOffset"]/*' />
 public partial struct MFOffset
 {
+    /// <include file='MFOffset.xml' path='doc/member[@name="MFOffset.fract"]/*' />
     [NativeTypeName("WORD")]
     public ushort fract;
 
+    /// <include file='MFOffset.xml' path='doc/member[@name="MFOffset.value"]/*' />
     public short value;
 }

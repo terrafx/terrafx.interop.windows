@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVMRVideoStreamControl.GetColorKey">
+    <summary>
+      <para>The <code>GetColorKey</code> method retrieves the source color key currently set for this stream.</para>
+    </summary>
+    <param name="lpClrKey">
+      <para>Address of a <see cref="DDCOLORKEY" /> structure that receives the source color key.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRVideoStreamControl Interface" />
+    <seealso cref="IVMRVideoStreamControl.SetColorKey" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRVideoStreamControl.GetStreamActiveState">
+    <summary>
+      <para>The <code>GetStreamActiveState</code> method retrieves the state of the stream.</para>
+    </summary>
+    <param name="lpfActive">
+      <para>Receives the current state of the stream. <b>TRUE</b> means the stream is active; <b>FALSE</b> means that it is inactive.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso cref="IVMRVideoStreamControl Interface" />
+    <seealso cref="IVMRVideoStreamControl.SetStreamActiveState" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRVideoStreamControl.SetColorKey">
+    <summary>
+      <para>The <code>SetColorKey</code> method sets the source color key that the VMR will use when compositing the video image.</para>
+    </summary>
+    <param name="lpClrKey">
+      <para>Specifies the source color key as a <see cref="DDCOLORKEY" /> type.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso cref="IVMRVideoStreamControl Interface" />
+    <seealso cref="IVMRVideoStreamControl.GetColorKey" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRVideoStreamControl.SetStreamActiveState">
+    <summary>
+      <para>The <code>SetStreamActiveState</code> method activates or inactivates an input stream.</para>
+    </summary>
+    <param name="fActive">
+      <para>Specifies the state of the stream. <b>TRUE</b> means active; <b>FALSE</b> means inactive.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso cref="IVMRVideoStreamControl Interface" />
+    <seealso cref="IVMRVideoStreamControl.GetStreamActiveState" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRVideoStreamControl">
+    <summary>
+      <para>The <code>IVMRVideoStreamControl</code> interface is implemented on each input pin of the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7). The interface operates on the input stream represented by the pin. This interface is used by upstream filters (typically decoders) to get or set the active state of individual streams, or the source color key for the composited image. Applications in general should not use this interface.</para>
+      <para>The VMR-9 input pins expose the <see cref="IVMRVideoStreamControl9" /> interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+</doc>

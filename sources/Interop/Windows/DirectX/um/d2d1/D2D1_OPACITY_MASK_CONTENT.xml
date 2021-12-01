@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_OPACITY_MASK_CONTENT">
+    <summary>
+      <para>Describes whether an opacity mask contains graphics or text. Direct2D uses this information to determine which gamma space to use when blending the opacity mask.</para>
+    </summary>
+    <seealso cref="FillOpacityMask" />
+  </member>
+  <member name="D2D1_OPACITY_MASK_CONTENT.D2D1_OPACITY_MASK_CONTENT_GRAPHICS">
+    <summary>
+      <para>The opacity mask contains graphics. The opacity mask is blended in the gamma 2.2 color space.</para>
+    </summary>
+  </member>
+  <member name="D2D1_OPACITY_MASK_CONTENT.D2D1_OPACITY_MASK_CONTENT_TEXT_NATURAL">
+    <summary>
+      <para>The opacity mask contains non-GDI text. The gamma space used for blending is obtained from the render target's text rendering parameters. (<see cref="ID2D1RenderTarget.SetTextRenderingParams" />).</para>
+    </summary>
+  </member>
+  <member name="D2D1_OPACITY_MASK_CONTENT.D2D1_OPACITY_MASK_CONTENT_TEXT_GDI_COMPATIBLE">
+    <summary>
+      <para>The opacity mask contains text rendered using the GDI-compatible rendering mode. The opacity mask is blended using the gamma for GDI rendering.</para>
+    </summary>
+  </member>
+  <member name="D2D1_OPACITY_MASK_CONTENT.D2D1_OPACITY_MASK_CONTENT_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

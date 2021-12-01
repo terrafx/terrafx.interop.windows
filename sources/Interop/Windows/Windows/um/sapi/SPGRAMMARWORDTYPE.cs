@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPGRAMMARWORDTYPE.xml' path='doc/member[@name="SPGRAMMARWORDTYPE"]/*' />
 public enum SPGRAMMARWORDTYPE
 {
+    /// <include file='SPGRAMMARWORDTYPE.xml' path='doc/member[@name="SPGRAMMARWORDTYPE.SPWT_DISPLAY"]/*' />
     SPWT_DISPLAY = 0,
+
+    /// <include file='SPGRAMMARWORDTYPE.xml' path='doc/member[@name="SPGRAMMARWORDTYPE.SPWT_LEXICAL"]/*' />
     SPWT_LEXICAL = (SPWT_DISPLAY + 1),
+
+    /// <include file='SPGRAMMARWORDTYPE.xml' path='doc/member[@name="SPGRAMMARWORDTYPE.SPWT_PRONUNCIATION"]/*' />
     SPWT_PRONUNCIATION = (SPWT_LEXICAL + 1),
+
+    /// <include file='SPGRAMMARWORDTYPE.xml' path='doc/member[@name="SPGRAMMARWORDTYPE.SPWT_LEXICAL_NO_SPECIAL_CHARS"]/*' />
     SPWT_LEXICAL_NO_SPECIAL_CHARS = (SPWT_PRONUNCIATION + 1),
 }

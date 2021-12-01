@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SMINFO">
+    <summary>
+      <para>Contains information about an item from a menu band.</para>
+    </summary>
+  </member>
+  <member name="SMINFO.dwMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that specify which of the other three members are valid.</para>
+      <h4>SMIM_TYPE</h4>
+      <para>The <b>dwType</b> member contains valid information.</para>
+      <h4>SMIM_FLAGS</h4>
+      <para>The <b>dwFlags</b> member contains valid information.</para>
+      <h4>SMIM_ICON</h4>
+      <para>The <b>iIcon</b> member contains valid information.</para>
+    </summary>
+  </member>
+  <member name="SMINFO.dwType">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>A flag that indicates whether the item is a string or a separator.</para>
+      <h4>SMIT_SEPARATOR</h4>
+      <para>A menu separator.</para>
+      <h4>SMIT_STRING</h4>
+      <para>A menu string.</para>
+    </summary>
+  </member>
+  <member name="SMINFO.dwFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that contain information about the item and how it should be displayed.</para>
+      <h4>SMIF_ICON</h4>
+      <para>Show an icon.</para>
+      <h4>SMIF_ACCELERATOR</h4>
+      <para>Underline the character marked with an ampersand.</para>
+      <h4>SMIF_DROPTARGET</h4>
+      <para>The item is a drop target.</para>
+      <h4>SMIF_SUBMENU</h4>
+      <para>The item has a submenu.</para>
+      <h4>SMIF_VOLATILE</h4>
+      <para>Not used.</para>
+      <h4>SMIF_CHECKED</h4>
+      <para>The item has a check beside it.</para>
+      <h4>SMIF_DROPCASCADE</h4>
+      <para>The item can cascade during a drag-drop operation.</para>
+      <h4>SMIF_HIDDEN</h4>
+      <para>Do not display the item.</para>
+      <h4>SMIF_DISABLED</h4>
+      <para>Make the item unselectable. It will be displayed in gray and will not respond to user actions.</para>
+      <h4>SMIF_TRACKPOPUP</h4>
+      <para>Use <see cref="TrackPopupMenu" /> to create the pop-up menu.</para>
+      <h4>SMIF_DEMOTED</h4>
+      <para>Display the item in a "demoted"" state.</para>
+      <h4>SMIF_ALTSTATE</h4>
+      <para>Display the item in an "altered" state.</para>
+      <h4>SMIF_DRAGNDROP</h4>
+      <para>Make the item sensitive to a hovering cursor. If the cursor remains over the item for a sufficient duration, it will execute as if the user had clicked the item.</para>
+      <h4>SMIF_NEW</h4>
+      <para>This item is newly installed or should be brought to the user's attention.</para>
+    </summary>
+  </member>
+  <member name="SMINFO.iIcon">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>When <b>SMIF_ICON</b> is set, the index of the requested icon in the toolbar image list.</para>
+    </summary>
+  </member>
+</doc>

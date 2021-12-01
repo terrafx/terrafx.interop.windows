@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT">
+    <summary>
+      <para>
+        <b>Note</b>  This structure is supported by the Direct3D 11.2 runtime, which is available on Windows 8.1 and later operating systems.
+Describes whether simple instancing is supported.</para>
+    </summary>
+    <remarks>
+      <para>If the Direct3D API is the Direct3D 11.2 runtime and can support 11.2 features, <see cref="ID3D11Device.CheckFeatureSupport" /> for <b>D3D11_FEATURE_D3D9_SIMPLE_INSTANCING_SUPPORT</b> will return a SUCCESS code when valid parameters are passed. The <b>SimpleInstancingSupported</b> member of <b>D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT</b> will be set to <b>TRUE</b> or <b>FALSE</b>.</para>
+      <para>Simple instancing means that instancing is supported with the caveat that the <b>InstanceDataStepRate</b> member of the <see cref="D3D11_INPUT_ELEMENT_DESC" /> structure must be equal to 1. This does not change the full instancing support provided by hardware at feature level 9.3 and above, and is meant to expose the instancing support that may be available on feature level 9.2 and 9.1 hardware.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core Structures</seealso>
+    <seealso cref="D3D11_FEATURE" />
+  </member>
+  <member name="D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT.SimpleInstancingSupported">
+    <summary>
+      <para>Specifies whether the hardware and driver support simple instancing. The runtime sets this member to <b>TRUE</b> if  the hardware and driver support simple instancing.</para>
+    </summary>
+  </member>
+</doc>

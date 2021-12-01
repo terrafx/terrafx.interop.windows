@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IObjMgr.xml' path='doc/member[@name="IObjMgr"]/*' />
 [Guid("00BB2761-6A77-11D0-A535-00C04FD7D062")]
 [NativeTypeName("struct IObjMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IObjMgr : IObjMgr.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IObjMgr : IObjMgr.Interface
         return ((delegate* unmanaged<IObjMgr*, Guid*, void**, int>)(lpVtbl[0]))((IObjMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IObjMgr : IObjMgr.Interface
         return ((delegate* unmanaged<IObjMgr*, uint>)(lpVtbl[1]))((IObjMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IObjMgr : IObjMgr.Interface
         return ((delegate* unmanaged<IObjMgr*, uint>)(lpVtbl[2]))((IObjMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IObjMgr.xml' path='doc/member[@name="IObjMgr.Append"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Append(IUnknown* punk)
@@ -46,6 +51,7 @@ public unsafe partial struct IObjMgr : IObjMgr.Interface
         return ((delegate* unmanaged<IObjMgr*, IUnknown*, int>)(lpVtbl[3]))((IObjMgr*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='IObjMgr.xml' path='doc/member[@name="IObjMgr.Remove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Remove(IUnknown* punk)

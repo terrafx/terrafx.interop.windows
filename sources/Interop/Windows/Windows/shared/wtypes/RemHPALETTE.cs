@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RemHPALETTE.xml' path='doc/member[@name="RemHPALETTE"]/*' />
 public unsafe partial struct RemHPALETTE
 {
+    /// <include file='RemHPALETTE.xml' path='doc/member[@name="RemHPALETTE.cbData"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbData;
 
+    /// <include file='RemHPALETTE.xml' path='doc/member[@name="RemHPALETTE.data"]/*' />
     [NativeTypeName("byte [1]")]
     public fixed byte data[1];
 }

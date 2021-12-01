@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDockingWindowSite.xml' path='doc/member[@name="IDockingWindowSite"]/*' />
 [Guid("2A342FC2-7B26-11D0-8CA9-00A0C92DBFE8")]
 [NativeTypeName("struct IDockingWindowSite : IOleWindow")]
 [NativeInheritance("IOleWindow")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDockingWindowSite : IDockingWindowSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDockingWindowSite : IDockingWindowSite.Interface
         return ((delegate* unmanaged<IDockingWindowSite*, Guid*, void**, int>)(lpVtbl[0]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDockingWindowSite : IDockingWindowSite.Interface
         return ((delegate* unmanaged<IDockingWindowSite*, uint>)(lpVtbl[1]))((IDockingWindowSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDockingWindowSite : IDockingWindowSite.Interface
         return ((delegate* unmanaged<IDockingWindowSite*, uint>)(lpVtbl[2]))((IDockingWindowSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleWindow.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IDockingWindowSite : IDockingWindowSite.Interface
         return ((delegate* unmanaged<IDockingWindowSite*, HWND*, int>)(lpVtbl[3]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IDockingWindowSite : IDockingWindowSite.Interface
         return ((delegate* unmanaged<IDockingWindowSite*, BOOL, int>)(lpVtbl[4]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
+    /// <include file='IDockingWindowSite.xml' path='doc/member[@name="IDockingWindowSite.GetBorderDW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetBorderDW(IUnknown* punkObj, RECT* prcBorder)
@@ -60,6 +67,7 @@ public unsafe partial struct IDockingWindowSite : IDockingWindowSite.Interface
         return ((delegate* unmanaged<IDockingWindowSite*, IUnknown*, RECT*, int>)(lpVtbl[5]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), punkObj, prcBorder);
     }
 
+    /// <include file='IDockingWindowSite.xml' path='doc/member[@name="IDockingWindowSite.RequestBorderSpaceDW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RequestBorderSpaceDW(IUnknown* punkObj, [NativeTypeName("LPCBORDERWIDTHS")] RECT* pbw)
@@ -67,6 +75,7 @@ public unsafe partial struct IDockingWindowSite : IDockingWindowSite.Interface
         return ((delegate* unmanaged<IDockingWindowSite*, IUnknown*, RECT*, int>)(lpVtbl[6]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), punkObj, pbw);
     }
 
+    /// <include file='IDockingWindowSite.xml' path='doc/member[@name="IDockingWindowSite.SetBorderSpaceDW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetBorderSpaceDW(IUnknown* punkObj, [NativeTypeName("LPCBORDERWIDTHS")] RECT* pbw)

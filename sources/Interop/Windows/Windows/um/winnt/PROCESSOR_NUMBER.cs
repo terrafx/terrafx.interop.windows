@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESSOR_NUMBER.xml' path='doc/member[@name="PROCESSOR_NUMBER"]/*' />
 public partial struct PROCESSOR_NUMBER
 {
+    /// <include file='PROCESSOR_NUMBER.xml' path='doc/member[@name="PROCESSOR_NUMBER.Group"]/*' />
     [NativeTypeName("WORD")]
     public ushort Group;
 
+    /// <include file='PROCESSOR_NUMBER.xml' path='doc/member[@name="PROCESSOR_NUMBER.Number"]/*' />
     public byte Number;
 
+    /// <include file='PROCESSOR_NUMBER.xml' path='doc/member[@name="PROCESSOR_NUMBER.Reserved"]/*' />
     public byte Reserved;
 }

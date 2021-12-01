@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC">
+    <summary>
+      <para>Replaces all elements of <i>InputTensor</i> below the given threshold, <i>Min</i>, with <i>Min</i>. Results are placed into the corresponding element of <i>OutputTensor</i>.</para>
+      <code>f(x) = max(x, Min)
+</code>
+      <para>Where max(a,b) returns the larger of the two values a,b.</para>
+      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias <i>InputTensor</i> during binding.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The input tensor to read from.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the results to.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC.ScaleBias">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_SCALE_BIAS" />*</b></para>
+      <para>An optional scale and bias to apply to the input. If present, this has the effect of applying the function <code>g(x) = x * scale + bias</code> to each <i>input</i> element prior to computing this operator.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC.Min">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The minimum value, below which the operator replaces the value with <i>Min</i>.</para>
+    </summary>
+  </member>
+</doc>

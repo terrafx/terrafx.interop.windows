@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_POLICY_PROPERTIES.xml' path='doc/member[@name="WS_POLICY_PROPERTIES"]/*' />
 public unsafe partial struct WS_POLICY_PROPERTIES
 {
+    /// <include file='WS_POLICY_PROPERTIES.xml' path='doc/member[@name="WS_POLICY_PROPERTIES.properties"]/*' />
     public WS_POLICY_PROPERTY* properties;
 
+    /// <include file='WS_POLICY_PROPERTIES.xml' path='doc/member[@name="WS_POLICY_PROPERTIES.propertyCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint propertyCount;
 }

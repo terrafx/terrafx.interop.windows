@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleDataRepeat.xml' path='doc/member[@name="styleDataRepeat"]/*' />
 public enum styleDataRepeat
 {
+    /// <include file='styleDataRepeat.xml' path='doc/member[@name="styleDataRepeat.styleDataRepeatNone"]/*' />
     styleDataRepeatNone = 0,
+
+    /// <include file='styleDataRepeat.xml' path='doc/member[@name="styleDataRepeat.styleDataRepeatInner"]/*' />
     styleDataRepeatInner = 1,
+
+    /// <include file='styleDataRepeat.xml' path='doc/member[@name="styleDataRepeat.styleDataRepeat_Max"]/*' />
     styleDataRepeat_Max = 2147483647,
 }

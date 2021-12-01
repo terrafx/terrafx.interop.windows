@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVQuantMatrixChromaIntra.xml' path='doc/member[@name="CODECAPI_AVEncMPVQuantMatrixChromaIntra"]/*' />
 [Guid("9EB9ECD4-018D-4FFD-8F2D-39E49F07B17A")]
 public partial struct CODECAPI_AVEncMPVQuantMatrixChromaIntra
 {

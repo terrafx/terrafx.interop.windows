@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR">
+    <summary>
+      <para>Used with the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code to
+retrieve the storage adapter descriptor data for a device.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <seealso cref="STORAGE_ADAPTER_DESCRIPTOR" />
+    <seealso cref="STORAGE_DESCRIPTOR_HEADER" />
+    <seealso cref="STORAGE_DEVICE_ID_DESCRIPTOR" />
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.Version">
+    <summary>
+      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
+the structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.Size">
+    <summary>
+      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
+structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.MaximumTransferLength">
+    <summary>
+      <para>Specifies the maximum number of bytes the storage adapter can transfer in a single operation.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.MaximumPhysicalPages">
+    <summary>
+      <para>Specifies the maximum number of discontinuous physical pages the storage adapter can manage in a single
+transfer (in other words, the extent of its scatter/gather support).</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.AlignmentMask">
+    <summary>
+      <para>Specifies the storage adapter's alignment requirements for transfers. The alignment mask indicates
+alignment restrictions for buffers required by the storage adapter for transfer operations. Valid mask values
+are also restricted by characteristics of the memory managers on different versions of Windows.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>Buffers must be aligned on <b>BYTE</b> boundaries.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>1</para>
+          </description>
+          <description>
+            <para>Buffers must be aligned on <b>WORD</b> boundaries.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>3</para>
+          </description>
+          <description>
+            <para>Buffers must be aligned on <b>DWORD32</b> boundaries.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>7</para>
+          </description>
+          <description>
+            <para>Buffers must be aligned on <b>DWORD64</b> boundaries.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.AdapterUsesPio">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the storage adapter uses programmed I/O (PIO) and
+requires the use of system-space virtual addresses mapped to physical memory for data buffers. When this member
+is <b>FALSE</b>, the storage adapter does not use PIO.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.AdapterScansDown">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the storage adapter scans down for BIOS devices, that is,
+the storage adapter begins scanning with the highest device number rather than the lowest. When this member is
+<b>FALSE</b>, the storage adapter begins scanning with the lowest device number. This member
+is reserved for legacy miniport drivers.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.CommandQueueing">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the storage adapter supports SCSI tagged queuing and/or
+per-logical-unit internal queues, or the non-SCSI equivalent. When this member is
+<b>FALSE</b>, the storage adapter neither supports SCSI-tagged queuing nor per-logical-unit
+internal queues.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.AcceleratedTransfer">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the storage adapter supports synchronous transfers as a
+way of speeding up I/O. When this member is <b>FALSE</b>, the storage adapter does not
+support synchronous transfers as a way of speeding up I/O.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.BusType">
+    <summary>
+      <para>Specifies a value of type <see cref="STORAGE_BUS_TYPE" /> that
+indicates the type of the bus to which the device is connected.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.BusMajorVersion">
+    <summary>
+      <para>Specifies the major version number, if any, of the storage adapter.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.BusMinorVersion">
+    <summary>
+      <para>Specifies the minor version number, if any, of the storage adapter.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.SrbType">
+    <summary>
+      <para>Specifies the SCSI request block (SRB) type used by the HBA.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>SRB_TYPE_SCSI_REQUEST_BLOCK</b>
+          </description>
+          <description>
+            <para>The HBA uses SCSI request blocks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SRB_TYPE_STORAGE_REQUEST_BLOCK</b>
+          </description>
+          <description>
+            <para>The HBA uses extended SCSI request blocks.</para>
+          </description>
+        </item>
+      </list>
+      <para>This member is valid starting with Windows 8.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ADAPTER_DESCRIPTOR.AddressType">
+    <summary>
+      <para>Specifies the address type of the HBA.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>STORAGE_ADDRESS_TYPE_BTL8</b>
+          </description>
+          <description>
+            <para>The HBA uses 8-bit bus, target, and LUN addressing.</para>
+          </description>
+        </item>
+      </list>
+      <para>This member is valid starting with Windows 8.</para>
+    </summary>
+  </member>
+</doc>

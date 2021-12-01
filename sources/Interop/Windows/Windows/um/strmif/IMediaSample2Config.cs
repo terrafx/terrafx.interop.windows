@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaSample2Config.xml' path='doc/member[@name="IMediaSample2Config"]/*' />
 [Guid("68961E68-832B-41EA-BC91-63593F3E70E3")]
 [NativeTypeName("struct IMediaSample2Config : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
         return ((delegate* unmanaged<IMediaSample2Config*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSample2Config*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
         return ((delegate* unmanaged<IMediaSample2Config*, uint>)(lpVtbl[1]))((IMediaSample2Config*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
         return ((delegate* unmanaged<IMediaSample2Config*, uint>)(lpVtbl[2]))((IMediaSample2Config*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaSample2Config.xml' path='doc/member[@name="IMediaSample2Config.GetSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSurface(IUnknown** ppDirect3DSurface9)

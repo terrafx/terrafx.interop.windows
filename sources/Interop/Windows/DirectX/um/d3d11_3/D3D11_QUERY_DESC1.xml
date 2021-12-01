@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_QUERY_DESC1">
+    <summary>
+      <para>Describes a query.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core Structures</seealso>
+  </member>
+  <member name="D3D11_QUERY_DESC1.CD3D11_QUERY_DESC1">
+    <summary>
+      <para>TBD</para>
+    </summary>
+  </member>
+  <member name="D3D11_QUERY_DESC1.D3D11_QUERY_DESC1">
+    <summary>
+      <h4>- ContextType</h4>
+      <para>A <see cref="D3D11_CONTEXT_TYPE" />-typed value that specifies the context for the query.</para>
+      <h4>- MiscFlags</h4>
+      <para>A combination of <see cref="D3D11_QUERY_MISC_FLAG" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies query behavior.</para>
+      <h4>- Query</h4>
+      <para>A <see cref="D3D11_QUERY" />-typed value that specifies the type of query.</para>
+    </summary>
+  </member>
+  <member name="D3D11_QUERY_DESC1.xtType">
+    <summary>
+      <para>A <see cref="D3D11_CONTEXT_TYPE" />-typed value that specifies the context for the query.</para>
+    </summary>
+  </member>
+  <member name="D3D11_QUERY_DESC1.lags">
+    <summary>
+      <para>A combination of <see cref="D3D11_QUERY_MISC_FLAG" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies query behavior.</para>
+    </summary>
+  </member>
+  <member name="D3D11_QUERY_DESC1.">
+    <summary>
+      <para>A <see cref="D3D11_QUERY" />-typed value that specifies the type of query.</para>
+    </summary>
+  </member>
+  <member name="D3D11_QUERY_DESC1">
+    <summary>
+      <para>Describes a query.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core Structures</seealso>
+  </member>
+  <member name="D3D11_QUERY_DESC1.Query">
+    <summary>
+      <para>A <see cref="D3D11_QUERY" />-typed value that specifies the type of query.</para>
+    </summary>
+  </member>
+  <member name="D3D11_QUERY_DESC1.MiscFlags">
+    <summary>
+      <para>A combination of <see cref="D3D11_QUERY_MISC_FLAG" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies query behavior.</para>
+    </summary>
+  </member>
+  <member name="D3D11_QUERY_DESC1.ContextType">
+    <summary>
+      <para>A <see cref="D3D11_CONTEXT_TYPE" />-typed value that specifies the context for the query.</para>
+    </summary>
+  </member>
+</doc>

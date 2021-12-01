@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="X3DAUDIO_DISTANCE_CURVE_POINT">
+    <summary>
+      <para>Defines a DSP setting at a given normalized distance.</para>
+    </summary>
+    <remarks>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">Structures</seealso>
+  </member>
+  <member name="X3DAUDIO_DISTANCE_CURVE_POINT.Distance">
+    <summary>
+      <para>Normalized distance. This must be within 0.0f to 1.0f.</para>
+    </summary>
+  </member>
+  <member name="X3DAUDIO_DISTANCE_CURVE_POINT.DSPSetting">
+    <summary>
+      <para>DSP control setting.</para>
+    </summary>
+  </member>
+</doc>

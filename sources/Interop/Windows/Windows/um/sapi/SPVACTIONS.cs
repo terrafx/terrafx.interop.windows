@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPVACTIONS.xml' path='doc/member[@name="SPVACTIONS"]/*' />
 public enum SPVACTIONS
 {
+    /// <include file='SPVACTIONS.xml' path='doc/member[@name="SPVACTIONS.SPVA_Speak"]/*' />
     SPVA_Speak = 0,
+
+    /// <include file='SPVACTIONS.xml' path='doc/member[@name="SPVACTIONS.SPVA_Silence"]/*' />
     SPVA_Silence = (SPVA_Speak + 1),
+
+    /// <include file='SPVACTIONS.xml' path='doc/member[@name="SPVACTIONS.SPVA_Pronounce"]/*' />
     SPVA_Pronounce = (SPVA_Silence + 1),
+
+    /// <include file='SPVACTIONS.xml' path='doc/member[@name="SPVACTIONS.SPVA_Bookmark"]/*' />
     SPVA_Bookmark = (SPVA_Pronounce + 1),
+
+    /// <include file='SPVACTIONS.xml' path='doc/member[@name="SPVACTIONS.SPVA_SpellOut"]/*' />
     SPVA_SpellOut = (SPVA_Bookmark + 1),
+
+    /// <include file='SPVACTIONS.xml' path='doc/member[@name="SPVACTIONS.SPVA_Section"]/*' />
     SPVA_Section = (SPVA_SpellOut + 1),
+
+    /// <include file='SPVACTIONS.xml' path='doc/member[@name="SPVACTIONS.SPVA_ParseUnknownTag"]/*' />
     SPVA_ParseUnknownTag = (SPVA_Section + 1),
 }

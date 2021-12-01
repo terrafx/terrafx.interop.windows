@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES">
+    <summary>
+      <para>Specifies the capabilities of a handler regarding the actions that can be performed against it.</para>
+    </summary>
+    <remarks>
+      <para>Sync Center queries the handler for its capabilities through <see cref="ISyncMgrHandler.GetCapabilities" /> whenever the <see cref="ISyncMgrControl.UpdateHandler" /> or <see cref="ISyncMgrControl.UpdateHandlerCollection" /> method is called.</para>
+    </remarks>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_NONE">
+    <summary>
+      <para>No capability flags are set.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_PROVIDES_ICON">
+    <summary>
+      <para>The handler returns a valid object from <see cref="ISyncMgrHandler.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_Icon flag. The object returned from <b>ISyncMgrHandler.GetObject</b> must implement <see cref="IExtractIcon" />. Generally, this value should not be returned if possible.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_EVENT_STORE">
+    <summary>
+      <para>The handler returns a valid object from <see cref="ISyncMgrHandler.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_EventStore flag. The object returned from <b>ISyncMgrHandler.GetObject</b> must implement <see cref="ISyncMgrEventStore" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_CONFLICT_STORE">
+    <summary>
+      <para>The handler returns a valid object from <see cref="ISyncMgrHandler.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_ConflictStore flag. The object returned from <b>ISyncMgrHandler.GetObject</b> must implement <see cref="ISyncMgrConflictStore" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_SUPPORTS_CONCURRENT_SESSIONS">
+    <summary>
+      <para>If a handler sets this flag in the mask returned from the handler's <see cref="ISyncMgrHandler.GetCapabilities" /> method, it indicates that the handler plans to create multiple simultaneous synchronization sessions using <see cref="ISyncMgrSessionCreator.CreateSession" />. This is useful for handlers that implement a background synchronization architecture in which the handler simply signals another process to perform the synchronization rather than performing the synchronization in its <see cref="ISyncMgrHandler.Synchronize" /> method directly. This allows synchronization engines to report progress, conflicts, and events (through <see cref="ISyncMgrSyncCallback" />) when synchronization requests come from sources other than Sync Center. For example, this could be the result of a data change notification or through application-specific UI. If more than one session is synchronizing the same item, then the progress for that item will be reported as indeterminate.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_CAN_BROWSE_CONTENT">
+    <summary>
+      <para>The handler returns a valid object from <see cref="ISyncMgrHandler.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_BrowseContent flag. If this value is set, the <b>Browse Content</b> task is added to the handler's shortcut menu. The object returned from <b>ISyncMgrHandler.GetObject</b> must implement <see cref="ISyncMgrUIOperation" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_CAN_SHOW_SCHEDULE">
+    <summary>
+      <para>The handler returns a valid object from <see cref="ISyncMgrHandler.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_ShowSchedule flag. If this value is set, the <b>Show Schedule</b> task is added to the handler's shortcut menu. The object returned from <b>ISyncMgrHandler.GetObject</b> must implement <see cref="ISyncMgrUIOperation" />. This value is used by <see cref="ISyncMgrScheduleWizardUIOperation" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_ACTIVATE">
+    <summary>
+      <para>The handler returns a valid object from <see cref="ISyncMgrHandler.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_QueryBeforeActivate flag. The object returned from <b>ISyncMgrHandler.GetObject</b> must implement <see cref="ISyncMgrUIOperation" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_DEACTIVATE">
+    <summary>
+      <para>The handler returns a valid object from <see cref="ISyncMgrHandler.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_QueryBeforeDeactivate flag. The object returned from <b>ISyncMgrHandler.GetObject</b> must implement <see cref="ISyncMgrUIOperation" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_ENABLE">
+    <summary>
+      <para>The handler returns a valid object from <see cref="ISyncMgrHandler.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_QueryBeforeEnable flag. The object returned from <b>ISyncMgrHandler.GetObject</b> must implement <see cref="ISyncMgrUIOperation" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_DISABLE">
+    <summary>
+      <para>The handler returns a valid object from <see cref="ISyncMgrHandler.GetObject" /> when that method is called with the SYNCMGR_OBJECTID_QueryBeforeDisable flag. The object returned from <b>ISyncMgrHandler.GetObject</b> must implement <see cref="ISyncMgrUIOperation" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_VALID_MASK">
+    <summary>
+      <para>A mask used to determine valid <see cref="SYNCMGR_HANDLER_CAPABILITIES" /> flags. Compare against the value retrieved by <see cref="ISyncMgrHandler.GetCapabilities" /> to verify valid results.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator"]/*' />
 [Guid("E9CD0383-A268-4BB4-82DE-658D53574D41")]
 [NativeTypeName("struct IMFNetProxyLocator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface
         return ((delegate* unmanaged<IMFNetProxyLocator*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface
         return ((delegate* unmanaged<IMFNetProxyLocator*, uint>)(lpVtbl[1]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface
         return ((delegate* unmanaged<IMFNetProxyLocator*, uint>)(lpVtbl[2]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.FindFirstProxy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT FindFirstProxy([NativeTypeName("LPCWSTR")] ushort* pszHost, [NativeTypeName("LPCWSTR")] ushort* pszUrl, BOOL fReserved)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface
         return ((delegate* unmanaged<IMFNetProxyLocator*, ushort*, ushort*, BOOL, int>)(lpVtbl[3]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszHost, pszUrl, fReserved);
     }
 
+    /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.FindNextProxy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT FindNextProxy()
@@ -53,6 +59,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface
         return ((delegate* unmanaged<IMFNetProxyLocator*, int>)(lpVtbl[4]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.RegisterProxyResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RegisterProxyResult(HRESULT hrOp)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface
         return ((delegate* unmanaged<IMFNetProxyLocator*, HRESULT, int>)(lpVtbl[5]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), hrOp);
     }
 
+    /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.GetCurrentProxy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCurrentProxy([NativeTypeName("LPWSTR")] ushort* pszStr, [NativeTypeName("DWORD *")] uint* pcchStr)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface
         return ((delegate* unmanaged<IMFNetProxyLocator*, ushort*, uint*, int>)(lpVtbl[6]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszStr, pcchStr);
     }
 
+    /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Clone(IMFNetProxyLocator** ppProxyLocator)

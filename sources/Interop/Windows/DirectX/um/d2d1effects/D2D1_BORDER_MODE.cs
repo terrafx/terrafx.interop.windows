@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_BORDER_MODE.xml' path='doc/member[@name="D2D1_BORDER_MODE"]/*' />
 public enum D2D1_BORDER_MODE : uint
 {
+    /// <include file='D2D1_BORDER_MODE.xml' path='doc/member[@name="D2D1_BORDER_MODE.D2D1_BORDER_MODE_SOFT"]/*' />
     D2D1_BORDER_MODE_SOFT = 0,
+
+    /// <include file='D2D1_BORDER_MODE.xml' path='doc/member[@name="D2D1_BORDER_MODE.D2D1_BORDER_MODE_HARD"]/*' />
     D2D1_BORDER_MODE_HARD = 1,
+
+    /// <include file='D2D1_BORDER_MODE.xml' path='doc/member[@name="D2D1_BORDER_MODE.D2D1_BORDER_MODE_FORCE_DWORD"]/*' />
     D2D1_BORDER_MODE_FORCE_DWORD = 0xffffffff,
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SUPPORTED_OS_INFO.xml' path='doc/member[@name="SUPPORTED_OS_INFO"]/*' />
 public partial struct SUPPORTED_OS_INFO
 {
+    /// <include file='SUPPORTED_OS_INFO.xml' path='doc/member[@name="SUPPORTED_OS_INFO.MajorVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort MajorVersion;
 
+    /// <include file='SUPPORTED_OS_INFO.xml' path='doc/member[@name="SUPPORTED_OS_INFO.MinorVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort MinorVersion;
 }

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_LOGOTYPE_DETAILS.xml' path='doc/member[@name="CERT_LOGOTYPE_DETAILS"]/*' />
 public unsafe partial struct CERT_LOGOTYPE_DETAILS
 {
+    /// <include file='CERT_LOGOTYPE_DETAILS.xml' path='doc/member[@name="CERT_LOGOTYPE_DETAILS.pwszMimeType"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszMimeType;
 
+    /// <include file='CERT_LOGOTYPE_DETAILS.xml' path='doc/member[@name="CERT_LOGOTYPE_DETAILS.cHashedUrl"]/*' />
     [NativeTypeName("DWORD")]
     public uint cHashedUrl;
 
+    /// <include file='CERT_LOGOTYPE_DETAILS.xml' path='doc/member[@name="CERT_LOGOTYPE_DETAILS.rgHashedUrl"]/*' />
     [NativeTypeName("PCERT_HASHED_URL")]
     public CERT_HASHED_URL* rgHashedUrl;
 }

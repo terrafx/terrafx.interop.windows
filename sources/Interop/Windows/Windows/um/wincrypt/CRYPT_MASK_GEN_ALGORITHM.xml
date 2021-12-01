@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_MASK_GEN_ALGORITHM">
+    <summary>
+      <para>The <b>CRYPT_MASK_GEN_ALGORITHM</b> structure identifies the algorithm used to generate an RSA PKCS #1 v2.1 signature mask.</para>
+    </summary>
+    <seealso cref="CRYPT_RSAES_OAEP_PARAMETERS" />
+    <seealso cref="CRYPT_RSA_SSA_PSS_PARAMETERS" />
+  </member>
+  <member name="CRYPT_MASK_GEN_ALGORITHM.pszObjId">
+    <summary>
+      <para>The address of a null-terminated ANSI string that contains the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) of the mask generation algorithm. This can be the following value or any other mask generation function OID.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_MGF1</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.8"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The RSA MGF1 function.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_MASK_GEN_ALGORITHM.HashAlgorithm">
+    <summary>
+      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that identifies the hash algorithm to use for the mask generation.</para>
+    </summary>
+  </member>
+</doc>

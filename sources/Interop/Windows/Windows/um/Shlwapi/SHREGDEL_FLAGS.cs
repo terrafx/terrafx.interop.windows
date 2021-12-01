@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHREGDEL_FLAGS.xml' path='doc/member[@name="SHREGDEL_FLAGS"]/*' />
 public enum SHREGDEL_FLAGS
 {
+    /// <include file='SHREGDEL_FLAGS.xml' path='doc/member[@name="SHREGDEL_FLAGS.SHREGDEL_DEFAULT"]/*' />
     SHREGDEL_DEFAULT = 0x00000000,
+
+    /// <include file='SHREGDEL_FLAGS.xml' path='doc/member[@name="SHREGDEL_FLAGS.SHREGDEL_HKCU"]/*' />
     SHREGDEL_HKCU = 0x00000001,
+
+    /// <include file='SHREGDEL_FLAGS.xml' path='doc/member[@name="SHREGDEL_FLAGS.SHREGDEL_HKLM"]/*' />
     SHREGDEL_HKLM = 0x00000010,
+
+    /// <include file='SHREGDEL_FLAGS.xml' path='doc/member[@name="SHREGDEL_FLAGS.SHREGDEL_BOTH"]/*' />
     SHREGDEL_BOTH = 0x00000011,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen"]/*' />
 [Guid("3050F35C-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLScreen : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLScreen*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, uint>)(lpVtbl[1]))((IHTMLScreen*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, uint>)(lpVtbl[2]))((IHTMLScreen*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, uint*, int>)(lpVtbl[3]))((IHTMLScreen*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLScreen*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLScreen*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLScreen*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen.get_colorDepth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_colorDepth([NativeTypeName("long *")] int* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, int*, int>)(lpVtbl[7]))((IHTMLScreen*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen.put_bufferDepth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_bufferDepth([NativeTypeName("long")] int v)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, int, int>)(lpVtbl[8]))((IHTMLScreen*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen.get_bufferDepth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_bufferDepth([NativeTypeName("long *")] int* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, int*, int>)(lpVtbl[9]))((IHTMLScreen*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen.get_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_width([NativeTypeName("long *")] int* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, int*, int>)(lpVtbl[10]))((IHTMLScreen*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen.get_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_height([NativeTypeName("long *")] int* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, int*, int>)(lpVtbl[11]))((IHTMLScreen*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen.put_updateInterval"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_updateInterval([NativeTypeName("long")] int v)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, int, int>)(lpVtbl[12]))((IHTMLScreen*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen.get_updateInterval"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_updateInterval([NativeTypeName("long *")] int* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, int*, int>)(lpVtbl[13]))((IHTMLScreen*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen.get_availHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_availHeight([NativeTypeName("long *")] int* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, int*, int>)(lpVtbl[14]))((IHTMLScreen*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen.get_availWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_availWidth([NativeTypeName("long *")] int* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
         return ((delegate* unmanaged<IHTMLScreen*, int*, int>)(lpVtbl[15]))((IHTMLScreen*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLScreen.xml' path='doc/member[@name="IHTMLScreen.get_fontSmoothingEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_fontSmoothingEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)

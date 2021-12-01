@@ -5,15 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMPUTER_NAME_FORMAT.xml' path='doc/member[@name="COMPUTER_NAME_FORMAT"]/*' />
 public enum COMPUTER_NAME_FORMAT
 {
+    /// <include file='COMPUTER_NAME_FORMAT.xml' path='doc/member[@name="COMPUTER_NAME_FORMAT.ComputerNameNetBIOS"]/*' />
     ComputerNameNetBIOS,
+
+    /// <include file='COMPUTER_NAME_FORMAT.xml' path='doc/member[@name="COMPUTER_NAME_FORMAT.ComputerNameDnsHostname"]/*' />
     ComputerNameDnsHostname,
+
+    /// <include file='COMPUTER_NAME_FORMAT.xml' path='doc/member[@name="COMPUTER_NAME_FORMAT.ComputerNameDnsDomain"]/*' />
     ComputerNameDnsDomain,
+
+    /// <include file='COMPUTER_NAME_FORMAT.xml' path='doc/member[@name="COMPUTER_NAME_FORMAT.ComputerNameDnsFullyQualified"]/*' />
     ComputerNameDnsFullyQualified,
+
+    /// <include file='COMPUTER_NAME_FORMAT.xml' path='doc/member[@name="COMPUTER_NAME_FORMAT.ComputerNamePhysicalNetBIOS"]/*' />
     ComputerNamePhysicalNetBIOS,
+
+    /// <include file='COMPUTER_NAME_FORMAT.xml' path='doc/member[@name="COMPUTER_NAME_FORMAT.ComputerNamePhysicalDnsHostname"]/*' />
     ComputerNamePhysicalDnsHostname,
+
+    /// <include file='COMPUTER_NAME_FORMAT.xml' path='doc/member[@name="COMPUTER_NAME_FORMAT.ComputerNamePhysicalDnsDomain"]/*' />
     ComputerNamePhysicalDnsDomain,
+
+    /// <include file='COMPUTER_NAME_FORMAT.xml' path='doc/member[@name="COMPUTER_NAME_FORMAT.ComputerNamePhysicalDnsFullyQualified"]/*' />
     ComputerNamePhysicalDnsFullyQualified,
+
+    /// <include file='COMPUTER_NAME_FORMAT.xml' path='doc/member[@name="COMPUTER_NAME_FORMAT.ComputerNameMax"]/*' />
     ComputerNameMax,
 }

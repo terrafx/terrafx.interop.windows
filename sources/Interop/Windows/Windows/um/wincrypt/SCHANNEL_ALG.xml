@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SCHANNEL_ALG">
+    <summary>
+      <para>The <b>SCHANNEL_ALG</b> structure contains algorithm and key size information. It is used as the structure passed as <i>pbData</i> in <see cref="CryptSetKeyParam" /> when <i>dwParam</i> is set to KP_SCHANNEL_ALG.</para>
+    </summary>
+  </member>
+  <member name="SCHANNEL_ALG.dwUse">
+    <summary>
+      <para>Indicates the use of derived keys. The following values can be used.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>SCHANNEL_MAC_KEY</b>
+          </description>
+          <description>
+            <para>Derive keys to create or verify SSL MAC signatures.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SCHANNEL_ENC_KEY</b>
+          </description>
+          <description>
+            <para>Derive keys to encrypt or decrypt data.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SCHANNEL_ALG.Algid">
+    <summary>
+      <para>Algorithms used with the derived keys. Note that no algorithm will be specified unless earlier obtained from the CSP by enumeration.</para>
+      <para>SCHANNEL_MAC_KEYs can be either MD5 or SHA.</para>
+      <para>SCHANNEL_ENC_KEYs can be RC4, DES, 3DES, or RC2.</para>
+    </summary>
+  </member>
+  <member name="SCHANNEL_ALG.cBits">
+    <summary>
+      <para>Size in bits of the derived keys.</para>
+    </summary>
+  </member>
+  <member name="SCHANNEL_ALG.dwFlags">
+    <summary>
+      <para>This flag can be set to INTERNATIONAL_USAGE (0x00000001), indicating that derived keys must follow SSL export rules.</para>
+    </summary>
+  </member>
+  <member name="SCHANNEL_ALG.dwReserved">
+    <summary>
+      <para>Reserved for future use. Should be set to zero.</para>
+    </summary>
+  </member>
+</doc>

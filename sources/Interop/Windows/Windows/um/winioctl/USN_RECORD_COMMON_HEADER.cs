@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USN_RECORD_COMMON_HEADER.xml' path='doc/member[@name="USN_RECORD_COMMON_HEADER"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct USN_RECORD_COMMON_HEADER
 {
+    /// <include file='USN_RECORD_COMMON_HEADER.xml' path='doc/member[@name="USN_RECORD_COMMON_HEADER.RecordLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint RecordLength;
 
+    /// <include file='USN_RECORD_COMMON_HEADER.xml' path='doc/member[@name="USN_RECORD_COMMON_HEADER.MajorVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort MajorVersion;
 
+    /// <include file='USN_RECORD_COMMON_HEADER.xml' path='doc/member[@name="USN_RECORD_COMMON_HEADER.MinorVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort MinorVersion;
 }

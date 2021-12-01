@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfEditTransactionSink.xml' path='doc/member[@name="ITfEditTransactionSink"]/*' />
 [Guid("708FBF70-B520-416B-B06C-2C41AB44F8BA")]
 [NativeTypeName("struct ITfEditTransactionSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
         return ((delegate* unmanaged<ITfEditTransactionSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
         return ((delegate* unmanaged<ITfEditTransactionSink*, uint>)(lpVtbl[1]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
         return ((delegate* unmanaged<ITfEditTransactionSink*, uint>)(lpVtbl[2]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfEditTransactionSink.xml' path='doc/member[@name="ITfEditTransactionSink.OnStartEditTransaction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnStartEditTransaction(ITfContext* pic)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
         return ((delegate* unmanaged<ITfEditTransactionSink*, ITfContext*, int>)(lpVtbl[3]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this), pic);
     }
 
+    /// <include file='ITfEditTransactionSink.xml' path='doc/member[@name="ITfEditTransactionSink.OnEndEditTransaction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnEndEditTransaction(ITfContext* pic)

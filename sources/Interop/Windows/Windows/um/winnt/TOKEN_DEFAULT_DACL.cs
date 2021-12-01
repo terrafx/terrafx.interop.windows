@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_DEFAULT_DACL.xml' path='doc/member[@name="TOKEN_DEFAULT_DACL"]/*' />
 public unsafe partial struct TOKEN_DEFAULT_DACL
 {
+    /// <include file='TOKEN_DEFAULT_DACL.xml' path='doc/member[@name="TOKEN_DEFAULT_DACL.DefaultDacl"]/*' />
     [NativeTypeName("PACL")]
     public ACL* DefaultDacl;
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_EXPOSURE_PROP.xml' path='doc/member[@name="D2D1_EXPOSURE_PROP"]/*' />
 public enum D2D1_EXPOSURE_PROP : uint
 {
+    /// <include file='D2D1_EXPOSURE_PROP.xml' path='doc/member[@name="D2D1_EXPOSURE_PROP.D2D1_EXPOSURE_PROP_EXPOSURE_VALUE"]/*' />
     D2D1_EXPOSURE_PROP_EXPOSURE_VALUE = 0,
+
+    /// <include file='D2D1_EXPOSURE_PROP.xml' path='doc/member[@name="D2D1_EXPOSURE_PROP.D2D1_EXPOSURE_PROP_FORCE_DWORD"]/*' />
     D2D1_EXPOSURE_PROP_FORCE_DWORD = 0xffffffff,
 }

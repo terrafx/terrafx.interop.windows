@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMCopyCaptureFileProgress.Progress">
+    <summary>
+      <para>The <code>Progress</code> method is called periodically by the <see cref="ICaptureGraphBuilder2.CopyCaptureFile" /> method while it copies the file.</para>
+    </summary>
+    <param name="iProgress">
+      <para>Specifies the percentage of the copy operation that has completed, as a value between 0 and 100.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK or an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Applications typically use the value of <i>iProgress</i> to update a progress bar on the user interface.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMCopyCaptureFileProgress Interface" />
+  </member>
+</doc>

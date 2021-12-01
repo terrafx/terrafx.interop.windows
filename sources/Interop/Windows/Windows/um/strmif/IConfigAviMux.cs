@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IConfigAviMux.xml' path='doc/member[@name="IConfigAviMux"]/*' />
 [Guid("5ACD6AA0-F482-11CE-8B67-00AA00A3F1A6")]
 [NativeTypeName("struct IConfigAviMux : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
         return ((delegate* unmanaged<IConfigAviMux*, Guid*, void**, int>)(lpVtbl[0]))((IConfigAviMux*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
         return ((delegate* unmanaged<IConfigAviMux*, uint>)(lpVtbl[1]))((IConfigAviMux*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
         return ((delegate* unmanaged<IConfigAviMux*, uint>)(lpVtbl[2]))((IConfigAviMux*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IConfigAviMux.xml' path='doc/member[@name="IConfigAviMux.SetMasterStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetMasterStream([NativeTypeName("LONG")] int iStream)
@@ -46,6 +51,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
         return ((delegate* unmanaged<IConfigAviMux*, int, int>)(lpVtbl[3]))((IConfigAviMux*)Unsafe.AsPointer(ref this), iStream);
     }
 
+    /// <include file='IConfigAviMux.xml' path='doc/member[@name="IConfigAviMux.GetMasterStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMasterStream([NativeTypeName("LONG *")] int* pStream)
@@ -53,6 +59,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
         return ((delegate* unmanaged<IConfigAviMux*, int*, int>)(lpVtbl[4]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pStream);
     }
 
+    /// <include file='IConfigAviMux.xml' path='doc/member[@name="IConfigAviMux.SetOutputCompatibilityIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetOutputCompatibilityIndex(BOOL fOldIndex)
@@ -60,6 +67,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
         return ((delegate* unmanaged<IConfigAviMux*, BOOL, int>)(lpVtbl[5]))((IConfigAviMux*)Unsafe.AsPointer(ref this), fOldIndex);
     }
 
+    /// <include file='IConfigAviMux.xml' path='doc/member[@name="IConfigAviMux.GetOutputCompatibilityIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetOutputCompatibilityIndex(BOOL* pfOldIndex)

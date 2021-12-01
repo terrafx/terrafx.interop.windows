@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMDATETIMECHANGE.xml' path='doc/member[@name="NMDATETIMECHANGE"]/*' />
 public partial struct NMDATETIMECHANGE
 {
+    /// <include file='NMDATETIMECHANGE.xml' path='doc/member[@name="NMDATETIMECHANGE.nmhdr"]/*' />
     public NMHDR nmhdr;
 
+    /// <include file='NMDATETIMECHANGE.xml' path='doc/member[@name="NMDATETIMECHANGE.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='NMDATETIMECHANGE.xml' path='doc/member[@name="NMDATETIMECHANGE.st"]/*' />
     public SYSTEMTIME st;
 }

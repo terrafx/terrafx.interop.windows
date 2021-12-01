@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_DECODE_SWAP_CHAIN_DESC">
+    <summary>
+      <para>Used with <see cref="IDXGIFactoryMedia.CreateDecodeSwapChainForCompositionSurfaceHandle" /> to describe a decode swap chain.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+  </member>
+  <member name="DXGI_DECODE_SWAP_CHAIN_DESC.Flags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Can be 0, or a combination of <b>DXGI_SWAP_CHAIN_FLAG_FULLSCREEN_VIDEO</b> and/or <b>DXGI_SWAP_CHAIN_FLAG_YUV_VIDEO</b>. Those named values are members of the <see cref="DXGI_SWAP_CHAIN_FLAG" /> enumerated type, and you can combine them by using a bitwise OR operation. The resulting value specifies options for decode swap-chain behavior.</para>
+    </summary>
+  </member>
+</doc>

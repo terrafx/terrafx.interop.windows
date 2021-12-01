@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_POLICY_QUALIFIER_INFO.xml' path='doc/member[@name="CERT_POLICY_QUALIFIER_INFO"]/*' />
 public unsafe partial struct CERT_POLICY_QUALIFIER_INFO
 {
+    /// <include file='CERT_POLICY_QUALIFIER_INFO.xml' path='doc/member[@name="CERT_POLICY_QUALIFIER_INFO.pszPolicyQualifierId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszPolicyQualifierId;
 
+    /// <include file='CERT_POLICY_QUALIFIER_INFO.xml' path='doc/member[@name="CERT_POLICY_QUALIFIER_INFO.Qualifier"]/*' />
     [NativeTypeName("CRYPT_OBJID_BLOB")]
     public CRYPT_DATA_BLOB Qualifier;
 }

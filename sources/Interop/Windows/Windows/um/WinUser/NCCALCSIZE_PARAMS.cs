@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NCCALCSIZE_PARAMS.xml' path='doc/member[@name="NCCALCSIZE_PARAMS"]/*' />
 public unsafe partial struct NCCALCSIZE_PARAMS
 {
+    /// <include file='NCCALCSIZE_PARAMS.xml' path='doc/member[@name="NCCALCSIZE_PARAMS.rgrc"]/*' />
     [NativeTypeName("RECT [3]")]
     public _rgrc_e__FixedBuffer rgrc;
 
+    /// <include file='NCCALCSIZE_PARAMS.xml' path='doc/member[@name="NCCALCSIZE_PARAMS.lppos"]/*' />
     [NativeTypeName("PWINDOWPOS")]
     public WINDOWPOS* lppos;
 
+    /// <include file='_rgrc_e__FixedBuffer.xml' path='doc/member[@name="_rgrc_e__FixedBuffer"]/*' />
     public partial struct _rgrc_e__FixedBuffer
     {
         public RECT e0;

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber"]/*' />
 [Guid("B388EB14-BE4D-421D-A8A1-6CF7AB057086")]
 [NativeTypeName("struct IDiaLineNumber : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, Guid*, void**, int>)(lpVtbl[0]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint>)(lpVtbl[1]))((IDiaLineNumber*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint>)(lpVtbl[2]))((IDiaLineNumber*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_compiland"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_compiland(IDiaSymbol** pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, IDiaSymbol**, int>)(lpVtbl[3]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_sourceFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_sourceFile(IDiaSourceFile** pRetVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, IDiaSourceFile**, int>)(lpVtbl[4]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_lineNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_lineNumber([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[5]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_lineNumberEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_lineNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[6]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_columnNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_columnNumber([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[7]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_columnNumberEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_columnNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[8]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_addressSection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -88,6 +99,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[9]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_addressOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -95,6 +107,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[10]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_relativeVirtualAddress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -102,6 +115,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[11]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_virtualAddress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
@@ -109,6 +123,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, ulong*, int>)(lpVtbl[12]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_length"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_length([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -116,6 +131,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[13]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_sourceFileId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_sourceFileId([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -123,6 +139,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[14]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_statement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_statement(BOOL* pRetVal)
@@ -130,6 +147,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         return ((delegate* unmanaged<IDiaLineNumber*, BOOL*, int>)(lpVtbl[15]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_compilandId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal)

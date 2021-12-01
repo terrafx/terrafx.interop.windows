@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellItemFilter.xml' path='doc/member[@name="IShellItemFilter"]/*' />
 [Guid("2659B475-EEB8-48B7-8F07-B378810F48CF")]
 [NativeTypeName("struct IShellItemFilter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface
         return ((delegate* unmanaged<IShellItemFilter*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface
         return ((delegate* unmanaged<IShellItemFilter*, uint>)(lpVtbl[1]))((IShellItemFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface
         return ((delegate* unmanaged<IShellItemFilter*, uint>)(lpVtbl[2]))((IShellItemFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellItemFilter.xml' path='doc/member[@name="IShellItemFilter.IncludeItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IncludeItem(IShellItem* psi)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface
         return ((delegate* unmanaged<IShellItemFilter*, IShellItem*, int>)(lpVtbl[3]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='IShellItemFilter.xml' path='doc/member[@name="IShellItemFilter.GetEnumFlagsForItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags)

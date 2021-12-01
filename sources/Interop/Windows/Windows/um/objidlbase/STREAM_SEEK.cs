@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STREAM_SEEK.xml' path='doc/member[@name="STREAM_SEEK"]/*' />
 public enum STREAM_SEEK
 {
+    /// <include file='STREAM_SEEK.xml' path='doc/member[@name="STREAM_SEEK.STREAM_SEEK_SET"]/*' />
     STREAM_SEEK_SET = 0,
+
+    /// <include file='STREAM_SEEK.xml' path='doc/member[@name="STREAM_SEEK.STREAM_SEEK_CUR"]/*' />
     STREAM_SEEK_CUR = 1,
+
+    /// <include file='STREAM_SEEK.xml' path='doc/member[@name="STREAM_SEEK.STREAM_SEEK_END"]/*' />
     STREAM_SEEK_END = 2,
 }

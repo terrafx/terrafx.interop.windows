@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LOGPALETTE.xml' path='doc/member[@name="LOGPALETTE"]/*' />
 public partial struct LOGPALETTE
 {
+    /// <include file='LOGPALETTE.xml' path='doc/member[@name="LOGPALETTE.palVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort palVersion;
 
+    /// <include file='LOGPALETTE.xml' path='doc/member[@name="LOGPALETTE.palNumEntries"]/*' />
     [NativeTypeName("WORD")]
     public ushort palNumEntries;
 
+    /// <include file='LOGPALETTE.xml' path='doc/member[@name="LOGPALETTE.palPalEntry"]/*' />
     [NativeTypeName("PALETTEENTRY [1]")]
     public _palPalEntry_e__FixedBuffer palPalEntry;
 
+    /// <include file='_palPalEntry_e__FixedBuffer.xml' path='doc/member[@name="_palPalEntry_e__FixedBuffer"]/*' />
     public partial struct _palPalEntry_e__FixedBuffer
     {
         public PALETTEENTRY e0;

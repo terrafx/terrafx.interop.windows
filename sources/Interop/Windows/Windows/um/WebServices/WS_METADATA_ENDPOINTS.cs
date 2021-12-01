@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_METADATA_ENDPOINTS.xml' path='doc/member[@name="WS_METADATA_ENDPOINTS"]/*' />
 public unsafe partial struct WS_METADATA_ENDPOINTS
 {
+    /// <include file='WS_METADATA_ENDPOINTS.xml' path='doc/member[@name="WS_METADATA_ENDPOINTS.endpoints"]/*' />
     public WS_METADATA_ENDPOINT* endpoints;
 
+    /// <include file='WS_METADATA_ENDPOINTS.xml' path='doc/member[@name="WS_METADATA_ENDPOINTS.endpointCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint endpointCount;
 }

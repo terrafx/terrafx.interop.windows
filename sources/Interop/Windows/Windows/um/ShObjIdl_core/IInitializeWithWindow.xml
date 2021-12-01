@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IInitializeWithWindow.Initialize">
+    <summary>
+      <para>Specifies an owner window to be used by a Windows Runtime (WinRT) object that is used in a desktop app.</para>
+    </summary>
+    <param name="hwnd">
+      <para>The handle of the window to be used as the owner window.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For more information about using this method to specify the owner window for a WinRT object, see <a href="https://docs.microsoft.com//windows/apps/desktop/modernize/desktop-to-uwp-supported-api#classes-that-use-iinitializewithwindow">Classes that use IInitializeWithWindow</a>.</para>
+    </remarks>
+    <seealso cref="IInitializeWithWindow" />
+    <seealso href="https://docs.microsoft.com//windows/apps/desktop/modernize/desktop-to-uwp-supported-api#classes-that-use-iinitializewithwindow">Classes that use IInitializeWithWindow</seealso>
+  </member>
+  <member name="IInitializeWithWindow">
+    <summary>
+      <para>Exposes a method through which a client can provide an owner window to a Windows Runtime (WinRT) object used in a desktop application.</para>
+    </summary>
+    <remarks>
+      <h3>When to implement</h3>
+      <para>Implement this interface if your object needs to be provided with an owner window, generally to display UI. Most third-party applications will not need to implement this interface.</para>
+      <h3>When to use</h3>
+      <para>Use this interface if you will provide an owner window to a WinRT object in a desktop application. For more information about this scenario, see <a href="https://docs.microsoft.com//windows/apps/desktop/modernize/desktop-to-uwp-supported-api#classes-that-use-iinitializewithwindow">Classes that use IInitializeWithWindow</a>.</para>
+      <para>This interface is implemented by the following objects. Note that this is necessarily an incomplete list; refer to an individual object's documentation to determine whether that object implements this interface.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/Windows.Devices.Enumeration.DevicePicker">Windows.Devices.Enumeration.DevicePicker</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/windows.graphics.capture.graphicscapturepicker">Windows.Graphics.Capture.GraphicsCapturePicker</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/Windows.Services.Store.StoreContext">Windows.Services.Store.StoreContext</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/Windows.Storage.Pickers.FileOpenPicker">Windows.Storage.Pickers.FileOpenPicker</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/Windows.Storage.Pickers.FileSavePicker">Windows.Storage.Pickers.FileSavePicker</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/Windows.Storage.Pickers.FolderPicker">Windows.Storage.Pickers.FolderPicker</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/Windows.UI.Popups.MessageDialog">Windows.UI.Popups.MessageDialog</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/Windows.UI.Popups.PopupMenu">Windows.UI.Popups.PopupMenu</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/dataobject">CLSID_DragDropHelper</a>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/apps/desktop/modernize/desktop-to-uwp-supported-api#classes-that-use-iinitializewithwindow">Classes that use IInitializeWithWindow</seealso>
+  </member>
+</doc>

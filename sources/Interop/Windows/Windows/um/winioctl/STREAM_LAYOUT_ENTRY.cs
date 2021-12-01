@@ -5,36 +5,48 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY"]/*' />
 public unsafe partial struct STREAM_LAYOUT_ENTRY
 {
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.NextStreamOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint NextStreamOffset;
 
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.ExtentInformationOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExtentInformationOffset;
 
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.AllocationSize"]/*' />
     public LARGE_INTEGER AllocationSize;
 
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.EndOfFile"]/*' />
     public LARGE_INTEGER EndOfFile;
 
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.StreamInformationOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint StreamInformationOffset;
 
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.AttributeTypeCode"]/*' />
     [NativeTypeName("DWORD")]
     public uint AttributeTypeCode;
 
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.AttributeFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint AttributeFlags;
 
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.StreamIdentifierLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint StreamIdentifierLength;
 
+    /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.StreamIdentifier"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort StreamIdentifier[1];
 }

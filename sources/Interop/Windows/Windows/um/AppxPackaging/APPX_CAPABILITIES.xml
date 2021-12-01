@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPX_CAPABILITIES">
+    <summary>
+      <para>Specifies the capabilities or privileges requested by a package.</para>
+    </summary>
+    <remarks>
+      <para>The <b>APPX_CAPABILITIES</b> enumeration specifies privileges that a package declares in the package manifest. If a capability is not explicitly declared, then the default is no access to that capability. If a capability is declared then  a package may still not have the particular capability for reasons such as the capability does not exist on the system or there are other security policies in place that limit the capability.</para>
+    </remarks>
+    <seealso cref="IAppxManifestReader.GetCapabilites" />
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_INTERNET_CLIENT">
+    <summary>
+      <para>Your Internet connection for outgoing connections to the Internet.</para>
+    </summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_INTERNET_CLIENT_SERVER">
+    <summary>
+      <para>Your Internet connection, including incoming unsolicited connections from the Internet – the app can send information to or from your computer through a firewall. You do not need to declare <b>APPX_CAPABILITY_INTERNET_CLIENT</b> if this capability is declared.</para>
+    </summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_PRIVATE_NETWORK_CLIENT_SERVER">
+    <summary>
+      <para>A home or work network – the app can send information to or from your computer and other computers on the same network.</para>
+    </summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_DOCUMENTS_LIBRARY">
+    <summary>
+      <para>Your documents library, including the capability to add, change, or delete files. The package can access only file types that it has declared in the manifest. The app cannot access document libraries on HomeGroup computers.</para>
+    </summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_PICTURES_LIBRARY">
+    <summary>
+      <para>Your pictures library, including the capability to add, change, or delete files. This capability also includes pictures libraries on HomeGroup computers, along with picture file types on locally connected media servers.</para>
+    </summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_VIDEOS_LIBRARY">
+    <summary>
+      <para>Your videos library, including the capability to add, change, or delete files. This capability also includes videos libraries on HomeGroup computers, along with video file types on locally connected media servers.</para>
+    </summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_MUSIC_LIBRARY">
+    <summary>
+      <para>Your music library and playlists, including the capability to add, change, or delete files. This capability also includes music libraries and playlists in the music library on HomeGroup computers, plus music file types on locally connected media servers.</para>
+    </summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_ENTERPRISE_AUTHENTICATION">
+    <summary>
+      <para>Your Windows credentials, for access to a corporate intranet. This application can impersonate you on the network.</para>
+    </summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_SHARED_USER_CERTIFICATES">
+    <summary>
+      <para>Software and hardware certificates or a smart card – used to identify you in the app. This capability may be used by your employer, bank, or government services to identify you.</para>
+    </summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_REMOVABLE_STORAGE">
+    <summary>
+      <para>Removable storage, such as an external hard drive or USB flash drive, or MTP portable device, including the capability to add, change, or delete specific files. This package can only access file types that it has declared in the manifest.</para>
+    </summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_APPOINTMENTS">
+    <summary></summary>
+  </member>
+  <member name="APPX_CAPABILITIES.APPX_CAPABILITY_CONTACTS">
+    <summary></summary>
+  </member>
+</doc>

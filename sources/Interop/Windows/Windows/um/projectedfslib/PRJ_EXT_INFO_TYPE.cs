@@ -7,8 +7,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PRJ_EXT_INFO_TYPE.xml' path='doc/member[@name="PRJ_EXT_INFO_TYPE"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public enum PRJ_EXT_INFO_TYPE
 {
+    /// <include file='PRJ_EXT_INFO_TYPE.xml' path='doc/member[@name="PRJ_EXT_INFO_TYPE.PRJ_EXT_INFO_TYPE_SYMLINK"]/*' />
     PRJ_EXT_INFO_TYPE_SYMLINK = 1,
 }

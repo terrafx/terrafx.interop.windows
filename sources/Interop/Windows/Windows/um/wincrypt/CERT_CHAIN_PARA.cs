@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_CHAIN_PARA.xml' path='doc/member[@name="CERT_CHAIN_PARA"]/*' />
 public partial struct CERT_CHAIN_PARA
 {
+    /// <include file='CERT_CHAIN_PARA.xml' path='doc/member[@name="CERT_CHAIN_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CERT_CHAIN_PARA.xml' path='doc/member[@name="CERT_CHAIN_PARA.RequestedUsage"]/*' />
     public CERT_USAGE_MATCH RequestedUsage;
 }

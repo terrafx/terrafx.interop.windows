@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite"]/*' />
 [Guid("00000118-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleClientSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface
         return ((delegate* unmanaged<IOleClientSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleClientSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface
         return ((delegate* unmanaged<IOleClientSite*, uint>)(lpVtbl[1]))((IOleClientSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface
         return ((delegate* unmanaged<IOleClientSite*, uint>)(lpVtbl[2]))((IOleClientSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.SaveObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SaveObject()
@@ -46,6 +51,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface
         return ((delegate* unmanaged<IOleClientSite*, int>)(lpVtbl[3]))((IOleClientSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.GetMoniker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMoniker([NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhichMoniker, IMoniker** ppmk)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface
         return ((delegate* unmanaged<IOleClientSite*, uint, uint, IMoniker**, int>)(lpVtbl[4]))((IOleClientSite*)Unsafe.AsPointer(ref this), dwAssign, dwWhichMoniker, ppmk);
     }
 
+    /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.GetContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetContainer(IOleContainer** ppContainer)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface
         return ((delegate* unmanaged<IOleClientSite*, IOleContainer**, int>)(lpVtbl[5]))((IOleClientSite*)Unsafe.AsPointer(ref this), ppContainer);
     }
 
+    /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.ShowObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ShowObject()
@@ -67,6 +75,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface
         return ((delegate* unmanaged<IOleClientSite*, int>)(lpVtbl[6]))((IOleClientSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.OnShowWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnShowWindow(BOOL fShow)
@@ -74,6 +83,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface
         return ((delegate* unmanaged<IOleClientSite*, BOOL, int>)(lpVtbl[7]))((IOleClientSite*)Unsafe.AsPointer(ref this), fShow);
     }
 
+    /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.RequestNewObjectLayout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RequestNewObjectLayout()

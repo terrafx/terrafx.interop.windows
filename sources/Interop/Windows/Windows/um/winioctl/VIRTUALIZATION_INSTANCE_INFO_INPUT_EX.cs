@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_INPUT_EX"]/*' />
 public partial struct VIRTUALIZATION_INSTANCE_INFO_INPUT_EX
 {
+    /// <include file='VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.HeaderSize"]/*' />
     [NativeTypeName("WORD")]
     public ushort HeaderSize;
 
+    /// <include file='VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.NotificationInfoSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint NotificationInfoSize;
 
+    /// <include file='VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.NotificationInfoOffset"]/*' />
     [NativeTypeName("WORD")]
     public ushort NotificationInfoOffset;
 
+    /// <include file='VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_INPUT_EX.ProviderMajorVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort ProviderMajorVersion;
 }

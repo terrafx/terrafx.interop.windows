@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaStackWalker2.xml' path='doc/member[@name="IDiaStackWalker2"]/*' />
 [Guid("7C185885-A015-4CAC-9411-0F4FB39B1F3A")]
 [NativeTypeName("struct IDiaStackWalker2 : IDiaStackWalker")]
 [NativeInheritance("IDiaStackWalker")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaStackWalker2 : IDiaStackWalker2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaStackWalker2 : IDiaStackWalker2.Interface
         return ((delegate* unmanaged<IDiaStackWalker2*, Guid*, void**, int>)(lpVtbl[0]))((IDiaStackWalker2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaStackWalker2 : IDiaStackWalker2.Interface
         return ((delegate* unmanaged<IDiaStackWalker2*, uint>)(lpVtbl[1]))((IDiaStackWalker2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaStackWalker2 : IDiaStackWalker2.Interface
         return ((delegate* unmanaged<IDiaStackWalker2*, uint>)(lpVtbl[2]))((IDiaStackWalker2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDiaStackWalker.getEnumFrames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT getEnumFrames(IDiaStackWalkHelper* pHelper, IDiaEnumStackFrames** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaStackWalker2 : IDiaStackWalker2.Interface
         return ((delegate* unmanaged<IDiaStackWalker2*, IDiaStackWalkHelper*, IDiaEnumStackFrames**, int>)(lpVtbl[3]))((IDiaStackWalker2*)Unsafe.AsPointer(ref this), pHelper, ppEnum);
     }
 
+    /// <inheritdoc cref="IDiaStackWalker.getEnumFrames2" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT getEnumFrames2([NativeTypeName("enum CV_CPU_TYPE_e")] CV_CPU_TYPE_e cpuid, IDiaStackWalkHelper* pHelper, IDiaEnumStackFrames** ppEnum)

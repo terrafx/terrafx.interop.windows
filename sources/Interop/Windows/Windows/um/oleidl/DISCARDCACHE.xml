@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISCARDCACHE">
+    <summary>
+      <para>Specifies what to do with caches that are to be discarded from memory if their dirty bit has been set.</para>
+    </summary>
+    <seealso cref="IOleCache2.DiscardCache" />
+  </member>
+  <member name="DISCARDCACHE.DISCARDCACHE_SAVEIFDIRTY">
+    <summary>
+      <para>The cache is to be saved to disk.</para>
+    </summary>
+  </member>
+  <member name="DISCARDCACHE.DISCARDCACHE_NOSAVE">
+    <summary>
+      <para>The cache can be discarded without saving it.</para>
+    </summary>
+  </member>
+</doc>

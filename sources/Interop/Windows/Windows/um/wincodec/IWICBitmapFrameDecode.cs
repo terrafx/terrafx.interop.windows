@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICBitmapFrameDecode.xml' path='doc/member[@name="IWICBitmapFrameDecode"]/*' />
 [Guid("3B16811B-6A43-4EC9-A813-3D930C13B940")]
 [NativeTypeName("struct IWICBitmapFrameDecode : IWICBitmapSource")]
 [NativeInheritance("IWICBitmapSource")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         return ((delegate* unmanaged<IWICBitmapFrameDecode*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapFrameDecode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         return ((delegate* unmanaged<IWICBitmapFrameDecode*, uint>)(lpVtbl[1]))((IWICBitmapFrameDecode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         return ((delegate* unmanaged<IWICBitmapFrameDecode*, uint>)(lpVtbl[2]))((IWICBitmapFrameDecode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.GetSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSize(uint* puiWidth, uint* puiHeight)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         return ((delegate* unmanaged<IWICBitmapFrameDecode*, uint*, uint*, int>)(lpVtbl[3]))((IWICBitmapFrameDecode*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.GetPixelFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         return ((delegate* unmanaged<IWICBitmapFrameDecode*, Guid*, int>)(lpVtbl[4]))((IWICBitmapFrameDecode*)Unsafe.AsPointer(ref this), pPixelFormat);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.GetResolution" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetResolution(double* pDpiX, double* pDpiY)
@@ -60,6 +67,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         return ((delegate* unmanaged<IWICBitmapFrameDecode*, double*, double*, int>)(lpVtbl[5]))((IWICBitmapFrameDecode*)Unsafe.AsPointer(ref this), pDpiX, pDpiY);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.CopyPalette" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CopyPalette(IWICPalette* pIPalette)
@@ -67,6 +75,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         return ((delegate* unmanaged<IWICBitmapFrameDecode*, IWICPalette*, int>)(lpVtbl[6]))((IWICBitmapFrameDecode*)Unsafe.AsPointer(ref this), pIPalette);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.CopyPixels" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CopyPixels([NativeTypeName("const WICRect *")] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
@@ -74,6 +83,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         return ((delegate* unmanaged<IWICBitmapFrameDecode*, WICRect*, uint, uint, byte*, int>)(lpVtbl[7]))((IWICBitmapFrameDecode*)Unsafe.AsPointer(ref this), prc, cbStride, cbBufferSize, pbBuffer);
     }
 
+    /// <include file='IWICBitmapFrameDecode.xml' path='doc/member[@name="IWICBitmapFrameDecode.GetMetadataQueryReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetMetadataQueryReader(IWICMetadataQueryReader** ppIMetadataQueryReader)
@@ -81,6 +91,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         return ((delegate* unmanaged<IWICBitmapFrameDecode*, IWICMetadataQueryReader**, int>)(lpVtbl[8]))((IWICBitmapFrameDecode*)Unsafe.AsPointer(ref this), ppIMetadataQueryReader);
     }
 
+    /// <include file='IWICBitmapFrameDecode.xml' path='doc/member[@name="IWICBitmapFrameDecode.GetColorContexts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetColorContexts(uint cCount, IWICColorContext** ppIColorContexts, uint* pcActualCount)
@@ -88,6 +99,7 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         return ((delegate* unmanaged<IWICBitmapFrameDecode*, uint, IWICColorContext**, uint*, int>)(lpVtbl[9]))((IWICBitmapFrameDecode*)Unsafe.AsPointer(ref this), cCount, ppIColorContexts, pcActualCount);
     }
 
+    /// <include file='IWICBitmapFrameDecode.xml' path='doc/member[@name="IWICBitmapFrameDecode.GetThumbnail"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetThumbnail(IWICBitmapSource** ppIThumbnail)

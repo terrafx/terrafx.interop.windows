@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PackageDebugSettings.xml' path='doc/member[@name="PackageDebugSettings"]/*' />
 [Guid("B1AEC16F-2383-4852-B0E9-8F0B1DC66B4D")]
 public partial struct PackageDebugSettings
 {

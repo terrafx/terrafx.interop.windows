@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlEncoding.xml' path='doc/member[@name="htmlEncoding"]/*' />
 public enum htmlEncoding
 {
+    /// <include file='htmlEncoding.xml' path='doc/member[@name="htmlEncoding.htmlEncodingURL"]/*' />
     htmlEncodingURL = 0,
+
+    /// <include file='htmlEncoding.xml' path='doc/member[@name="htmlEncoding.htmlEncodingMultipart"]/*' />
     htmlEncodingMultipart = 1,
+
+    /// <include file='htmlEncoding.xml' path='doc/member[@name="htmlEncoding.htmlEncodingText"]/*' />
     htmlEncodingText = 2,
+
+    /// <include file='htmlEncoding.xml' path='doc/member[@name="htmlEncoding.htmlEncoding_Max"]/*' />
     htmlEncoding_Max = 2147483647,
 }

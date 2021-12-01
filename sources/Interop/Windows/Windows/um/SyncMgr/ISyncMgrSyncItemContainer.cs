@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrSyncItemContainer.xml' path='doc/member[@name="ISyncMgrSyncItemContainer"]/*' />
 [Guid("90701133-BE32-4129-A65C-99E616CAFFF4")]
 [NativeTypeName("struct ISyncMgrSyncItemContainer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
         return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
         return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, uint>)(lpVtbl[1]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
         return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, uint>)(lpVtbl[2]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrSyncItemContainer.xml' path='doc/member[@name="ISyncMgrSyncItemContainer.GetSyncItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSyncItem([NativeTypeName("LPCWSTR")] ushort* pszItemID, ISyncMgrSyncItem** ppItem)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
         return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, ushort*, ISyncMgrSyncItem**, int>)(lpVtbl[3]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), pszItemID, ppItem);
     }
 
+    /// <include file='ISyncMgrSyncItemContainer.xml' path='doc/member[@name="ISyncMgrSyncItemContainer.GetSyncItemEnumerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSyncItemEnumerator(IEnumSyncMgrSyncItems** ppenum)
@@ -53,6 +59,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
         return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, IEnumSyncMgrSyncItems**, int>)(lpVtbl[4]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), ppenum);
     }
 
+    /// <include file='ISyncMgrSyncItemContainer.xml' path='doc/member[@name="ISyncMgrSyncItemContainer.GetSyncItemCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSyncItemCount([NativeTypeName("ULONG *")] uint* pcItems)

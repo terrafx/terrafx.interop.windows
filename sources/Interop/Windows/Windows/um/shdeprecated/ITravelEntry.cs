@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITravelEntry.xml' path='doc/member[@name="ITravelEntry"]/*' />
 [Guid("F46EDB3B-BC2F-11D0-9412-00AA00A3EBD3")]
 [NativeTypeName("struct ITravelEntry : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface
         return ((delegate* unmanaged<ITravelEntry*, Guid*, void**, int>)(lpVtbl[0]))((ITravelEntry*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface
         return ((delegate* unmanaged<ITravelEntry*, uint>)(lpVtbl[1]))((ITravelEntry*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface
         return ((delegate* unmanaged<ITravelEntry*, uint>)(lpVtbl[2]))((ITravelEntry*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITravelEntry.xml' path='doc/member[@name="ITravelEntry.Invoke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Invoke(IUnknown* punk)
@@ -46,6 +51,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface
         return ((delegate* unmanaged<ITravelEntry*, IUnknown*, int>)(lpVtbl[3]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='ITravelEntry.xml' path='doc/member[@name="ITravelEntry.Update"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Update(IUnknown* punk, BOOL fIsLocalAnchor)
@@ -53,6 +59,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface
         return ((delegate* unmanaged<ITravelEntry*, IUnknown*, BOOL, int>)(lpVtbl[4]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
     }
 
+    /// <include file='ITravelEntry.xml' path='doc/member[@name="ITravelEntry.GetPidl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)

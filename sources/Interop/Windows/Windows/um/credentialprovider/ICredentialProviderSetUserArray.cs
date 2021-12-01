@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICredentialProviderSetUserArray.xml' path='doc/member[@name="ICredentialProviderSetUserArray"]/*' />
 [Guid("095C1484-1C0C-4388-9C6D-500E61BF84BD")]
 [NativeTypeName("struct ICredentialProviderSetUserArray : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProvid
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProvid
         return ((delegate* unmanaged<ICredentialProviderSetUserArray*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProvid
         return ((delegate* unmanaged<ICredentialProviderSetUserArray*, uint>)(lpVtbl[1]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProvid
         return ((delegate* unmanaged<ICredentialProviderSetUserArray*, uint>)(lpVtbl[2]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICredentialProviderSetUserArray.xml' path='doc/member[@name="ICredentialProviderSetUserArray.SetUserArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetUserArray(ICredentialProviderUserArray* users)

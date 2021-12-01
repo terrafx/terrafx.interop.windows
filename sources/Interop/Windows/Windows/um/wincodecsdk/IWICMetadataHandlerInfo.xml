@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICMetadataHandlerInfo.DoesRequireFixedSize">
+    <summary>
+      <para>Determines if the metadata handler requires a fixed size.</para>
+    </summary>
+    <param name="pfFixedSize">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Pointer that receives <b>TRUE</b> if a fixed size is required; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataHandlerInfo.DoesRequireFullStream">
+    <summary>
+      <para>Determines if the handler requires a full stream.</para>
+    </summary>
+    <param name="pfRequiresFullStream">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Pointer that receives <b>TRUE</b> if a full stream is required; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataHandlerInfo.DoesSupportPadding">
+    <summary>
+      <para>Determines if the metadata handler supports padding.</para>
+    </summary>
+    <param name="pfSupportsPadding">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Pointer that receives <b>TRUE</b> if padding is supported; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataHandlerInfo.GetContainerFormats">
+    <summary>
+      <para>Retrieves the container formats supported by the metadata handler.</para>
+    </summary>
+    <param name="cContainerFormats">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the <i>pguidContainerFormats</i> array.</para>
+    </param>
+    <param name="pguidContainerFormats">
+      <para>Type: <b>GUID*</b></para>
+      <para>Pointer to an array that receives the container formats supported by the metadata handler.</para>
+    </param>
+    <param name="pcchActual">
+      <para>Type: <b>UINT*</b></para>
+      <para>The actual number of GUIDs added to the array.</para>
+      <para>To obtain the number of supported container formats, pass <code>NULL</code> to <i>pguidContainerFormats</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataHandlerInfo.GetDeviceManufacturer">
+    <summary>
+      <para>Retrieves the device manufacturer of the metadata handler.</para>
+    </summary>
+    <param name="cchDeviceManufacturer">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the <i>wzDeviceManufacturer</i> buffer.</para>
+    </param>
+    <param name="wzDeviceManufacturer">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>Pointer to the buffer that receives the name of the device manufacturer.</para>
+    </param>
+    <param name="pcchActual">
+      <para>Type: <b>UINT*</b></para>
+      <para>The actual string buffer length needed to obtain the entire name of the device manufacturer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataHandlerInfo.GetDeviceModels">
+    <summary>
+      <para>Retrieves the device models that support the metadata handler.</para>
+    </summary>
+    <param name="cchDeviceModels">
+      <para>Type: <b>UINT</b></para>
+      <para>The length of the <i>wzDeviceModels</i> buffer.</para>
+    </param>
+    <param name="wzDeviceModels">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>Pointer that receives the device models supported by the metadata handler.</para>
+    </param>
+    <param name="pcchActual">
+      <para>Type: <b>UINT*</b></para>
+      <para>The actual length needed to retrieve the device models.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataHandlerInfo.GetMetadataFormat">
+    <summary>
+      <para>Retrieves the metadata format of the metadata handler.</para>
+    </summary>
+    <param name="pguidMetadataFormat">
+      <para>Type: <b>GUID*</b></para>
+      <para>Pointer that receives the metadata format GUID.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICMetadataHandlerInfo">
+    <summary>
+      <para>Exposes methods that provide basic information about the registered metadata handler.</para>
+    </summary>
+  </member>
+</doc>

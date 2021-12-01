@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_TCPTABLE_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCPTABLE_OWNER_MODULE"]/*' />
 public partial struct MIB_TCPTABLE_OWNER_MODULE
 {
+    /// <include file='MIB_TCPTABLE_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCPTABLE_OWNER_MODULE.dwNumEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumEntries;
 
+    /// <include file='MIB_TCPTABLE_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCPTABLE_OWNER_MODULE.table"]/*' />
     [NativeTypeName("MIB_TCPROW_OWNER_MODULE [1]")]
     public _table_e__FixedBuffer table;
 
+    /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />
     public partial struct _table_e__FixedBuffer
     {
         public MIB_TCPROW_OWNER_MODULE e0;

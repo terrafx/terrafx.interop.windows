@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCapturePhotoSink.SetOutputByteStream">
+    <summary>
+      <para>Specifies a byte stream that will receive the still image data.</para>
+    </summary>
+    <param name="pByteStream">
+      <para>A pointer to the <see cref="IMFByteStream" /> interface of a byte stream. The byte stream must be writable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Calling this method overrides any previous call to <see cref="IMFCapturePhotoSink.SetOutputFileName" /> or <see cref="IMFCapturePhotoSink.SetSampleCallback" />.</para>
+    </remarks>
+    <seealso cref="IMFCapturePhotoSink" />
+  </member>
+  <member name="IMFCapturePhotoSink.SetOutputFileName">
+    <summary>
+      <para>Specifies the name of the output file for the still image.</para>
+    </summary>
+    <param name="fileName">
+      <para>A null-terminated string that contains the URL of the output file.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Calling this method overrides any previous call to <see cref="IMFCapturePhotoSink.SetOutputByteStream" /> or <see cref="IMFCapturePhotoSink.SetSampleCallback" />.</para>
+    </remarks>
+    <seealso cref="IMFCapturePhotoSink" />
+  </member>
+  <member name="IMFCapturePhotoSink.SetSampleCallback">
+    <summary>
+      <para>Sets a callback to receive the still-image data.</para>
+    </summary>
+    <param name="pCallback">
+      <para>A pointer to the <see cref="IMFCaptureEngineOnSampleCallback" /> interface. The caller must implement this interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Calling this method overrides any previous call to <see cref="IMFCapturePhotoSink.SetOutputByteStream" /> or  <see cref="IMFCapturePhotoSink.SetOutputFileName" />.</para>
+    </remarks>
+    <seealso cref="IMFCapturePhotoSink" />
+  </member>
+  <member name="IMFCapturePhotoSink">
+    <summary>
+      <para>Controls the photo sink. The photo sink captures still images from the video stream.</para>
+    </summary>
+    <remarks>
+      <para>The photo sink can deliver samples to one of the following destinations:</para>
+      <list type="bullet">
+        <item>
+          <description>Byte stream.</description>
+        </item>
+        <item>
+          <description>Output file.</description>
+        </item>
+        <item>
+          <description>Application-provided callback interface.</description>
+        </item>
+      </list>
+      <para>The application must specify a single destination. Multiple destinations are not supported.</para>
+      <para>To capture an image, call <see cref="IMFCaptureEngine.TakePhoto" />.</para>
+    </remarks>
+    <seealso cref="IMFCaptureSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

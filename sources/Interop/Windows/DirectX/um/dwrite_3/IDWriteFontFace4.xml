@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontFace4.GetGlyphImageData">
+    <summary>
+      <para>Gets a pointer to the glyph data based on the desired image format.</para>
+    </summary>
+    <param name="glyphId">
+      <para>Type: <b>UINT16</b></para>
+      <para>The ID of the glyph to retrieve image data for.</para>
+    </param>
+    <param name="pixelsPerEm">
+      <para>Type: <b>UINT32</b></para>
+      <para>Requested pixels per em.</para>
+    </param>
+    <param name="glyphImageFormat">
+      <para>Type: <b><see cref="DWRITE_GLYPH_IMAGE_FORMATS" /></b></para>
+      <para>Specifies which formats are supported in the font.</para>
+    </param>
+    <param name="glyphData">
+      <para>Type: <b><see cref="DWRITE_GLYPH_IMAGE_DATA" />*</b></para>
+      <para>On return contains data for a glyph.</para>
+    </param>
+    <param name="glyphDataContext">
+      <para>Type: <b>void**</b></para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>The glyphDataContext must be released via <see cref="ReleaseGlyphImageData" /> when done if the data is not empty,
+similar to <see cref="IDWriteFontFileStream.ReadFileFragment" /></para>
+      <para>and <see cref="IDWriteFontFileStream.ReleaseFileFragment" />.
+The data pointer is valid so long as the <see cref="IDWriteFontFace" /> exists and <b>ReleaseGlyphImageData</b> has not
+been called.</para>
+      <para>The <see cref="DWRITE_GLYPH_IMAGE_DATA.uniqueDataId" /> is valuable for caching purposes so that if the same
+resource is returned more than once, an existing resource can be quickly retrieved rather than
+needing to reparse or decompress the data.</para>
+      <para>The function only returns SVG or raster data - requesting TrueType/CFF/COLR data returns
+DWRITE_E_INVALIDARG. Those must be drawn via DrawGlyphRun or queried using GetGlyphOutline instead.
+Exactly one format may be requested or else the function returns DWRITE_E_INVALIDARG.
+If the glyph does not have that format, the call is not an error, but the function returns empty data.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace4" />
+  </member>
+  <member name="IDWriteFontFace4.GetGlyphImageFormats">
+    <summary>
+      <para>Gets all the glyph image formats supported for the specified glyph.</para>
+    </summary>
+    <param name="glyphId">
+      <para>The identifier of the glyph to be queried.</para>
+    </param>
+    <param name="pixelsPerEmFirst">
+      <para>The lowest pixels per em value to query.</para>
+    </param>
+    <param name="pixelsPerEmLast">
+      <para>The highest pixels per em value to query.</para>
+    </param>
+    <param name="glyphImageFormats">
+      <para>An array of <see cref="DWRITE_GLYPH_IMAGE_FORMATS" /> specifying the supported formats for the requested glyph.</para>
+    </param>
+    <returns>
+      <para>HRESULT</para>
+      <para>Type: <b><see cref="DWRITE_GLYPH_IMAGE_FORMATS" /></b></para>
+    </returns>
+    <seealso cref="IDWriteFontFace4" />
+  </member>
+  <member name="IDWriteFontFace4.GetGlyphImageFormats">
+    <summary>
+      <para>Gets all the glyph image formats supported by the entire font.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_GLYPH_IMAGE_FORMATS" /></b></para>
+      <para>Returns all the glyph image formats supported by the entire font.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace4" />
+  </member>
+  <member name="IDWriteFontFace4.ReleaseGlyphImageData">
+    <summary>
+      <para>Releases the table data obtained from ReadGlyphData.</para>
+    </summary>
+    <param name="glyphDataContext">
+      <para>Type: <b>void*</b></para>
+      <para>Opaque context from ReadGlyphData.</para>
+    </param>
+    <seealso cref="IDWriteFontFace4" />
+  </member>
+  <member name="IDWriteFontFace4">
+    <summary>
+      <para>Represents an absolute reference to a font face. This interface contains font face type, appropriate file references, and face identification data.</para>
+      <para>This interface extends <see cref="IDWriteFontFace3" />. Various font data such as metrics, names, and glyph outlines are obtained from <b>IDWriteFontFace</b>.</para>
+    </summary>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+</doc>

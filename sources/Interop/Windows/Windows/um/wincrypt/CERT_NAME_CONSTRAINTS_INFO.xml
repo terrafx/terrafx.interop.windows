@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_NAME_CONSTRAINTS_INFO">
+    <summary>
+      <para>The <b>CERT_NAME_CONSTRAINTS_INFO</b> structure contains information about certificates that are specifically permitted or excluded from trust.</para>
+    </summary>
+  </member>
+  <member name="CERT_NAME_CONSTRAINTS_INFO.cPermittedSubtree">
+    <summary>
+      <para>
+        <b>DWORD</b> indicating the number of subtrees in the <b>rgPermittedSubtree</b> array.</para>
+    </summary>
+  </member>
+  <member name="CERT_NAME_CONSTRAINTS_INFO.rgPermittedSubtree">
+    <summary>
+      <para>Array of
+<see cref="CERT_GENERAL_SUBTREE" /> structures, each identifying a permitted certificate name.</para>
+    </summary>
+  </member>
+  <member name="CERT_NAME_CONSTRAINTS_INFO.cExcludedSubtree">
+    <summary>
+      <para>
+        <b>DWORD</b> indicating the number of subtrees in the <b>rgExcludedSubtree</b> array.</para>
+    </summary>
+  </member>
+  <member name="CERT_NAME_CONSTRAINTS_INFO.rgExcludedSubtree">
+    <summary>
+      <para>Array of <see cref="CERT_GENERAL_SUBTREE" /> structures, each identifying an excluded certificate name.</para>
+    </summary>
+  </member>
+</doc>

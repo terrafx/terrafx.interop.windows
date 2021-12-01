@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncAudioInputContent">
+    <summary>
+      <para>Specifies whether the audio content contains music or voice. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencaudioinputcontent-property">AVEncAudioInputContent</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncAudioInputContent.AVEncAudioInputContent_Unknown">
+    <summary>
+      <para>The audio content is not known.</para>
+    </summary>
+  </member>
+  <member name="eAVEncAudioInputContent.AVEncAudioInputContent_Voice">
+    <summary>
+      <para>The audio contains voice.</para>
+    </summary>
+  </member>
+  <member name="eAVEncAudioInputContent.AVEncAudioInputContent_Music">
+    <summary>
+      <para>The audio contains music.</para>
+    </summary>
+  </member>
+</doc>

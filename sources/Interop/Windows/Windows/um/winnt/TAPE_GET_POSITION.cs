@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TAPE_GET_POSITION.xml' path='doc/member[@name="TAPE_GET_POSITION"]/*' />
 public partial struct TAPE_GET_POSITION
 {
+    /// <include file='TAPE_GET_POSITION.xml' path='doc/member[@name="TAPE_GET_POSITION.Type"]/*' />
     [NativeTypeName("DWORD")]
     public uint Type;
 
+    /// <include file='TAPE_GET_POSITION.xml' path='doc/member[@name="TAPE_GET_POSITION.Partition"]/*' />
     [NativeTypeName("DWORD")]
     public uint Partition;
 
+    /// <include file='TAPE_GET_POSITION.xml' path='doc/member[@name="TAPE_GET_POSITION.Offset"]/*' />
     public LARGE_INTEGER Offset;
 }

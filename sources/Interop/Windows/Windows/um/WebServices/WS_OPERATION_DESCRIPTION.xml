@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_OPERATION_DESCRIPTION">
+    <summary>
+      <para>Metadata for the  service operation.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_DESCRIPTION.versionInfo">
+    <summary>
+      <para>Defines the version information. Currently value is 1.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_DESCRIPTION.inputMessageDescription">
+    <summary>
+      <para>The description of incoming <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a> for a given service operation.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_DESCRIPTION.outputMessageDescription">
+    <summary>
+      <para>The description of outgoing <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a> for a given service operation. For one way operations this should be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_DESCRIPTION.inputMessageOptions">
+    <summary>
+      <para>Provides additional flags for the in message of the operation. See <see cref="WS_SERVICE_OPERATION_MESSAGE_OPTION" /> for
+a list of flags. If no flags are needed, this may be 0.</para>
+      <para>
+        <see cref="WS_SERVICE_OPERATION_MESSAGE_NILLABLE_ELEMENT" /> is not applicable to <see cref="WS_RPC_LITERAL_OPERATION" /> style
+operations. The input parameter must be with type of <see cref="WS_PARAMETER_TYPE_MESSAGES" />.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_DESCRIPTION.outputMessageOptions">
+    <summary>
+      <para>Provides additional flags for the out message of the operation. See <see cref="WS_SERVICE_OPERATION_MESSAGE_OPTION" /> for
+a list of flags. If out message is not available, or no flags are needed, this may be 0.</para>
+      <para>
+        <see cref="WS_SERVICE_OPERATION_MESSAGE_NILLABLE_ELEMENT" /> is not applicable to <see cref="WS_RPC_LITERAL_OPERATION" /> style
+operations. The output parameter must be with type of <see cref="WS_PARAMETER_TYPE_MESSAGES" />.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_DESCRIPTION.parameterCount">
+    <summary>
+      <para>The number of  parameters on the given service operation.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_DESCRIPTION.parameterDescription">
+    <summary>
+      <para>An array defining the individual parameters.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_DESCRIPTION.stubCallback">
+    <summary>
+      <para>A pointer to the stub function for the given operation to which the service model will delegate
+to do the service operation call. This will be <b>NULL</b> for proxies.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_DESCRIPTION.style">
+    <summary></summary>
+  </member>
+</doc>

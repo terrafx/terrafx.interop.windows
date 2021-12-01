@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ThumbnailStreamCacheOptions.xml' path='doc/member[@name="ThumbnailStreamCacheOptions"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum ThumbnailStreamCacheOptions
 {
+    /// <include file='ThumbnailStreamCacheOptions.xml' path='doc/member[@name="ThumbnailStreamCacheOptions.ExtractIfNotCached"]/*' />
     ExtractIfNotCached = 0,
+
+    /// <include file='ThumbnailStreamCacheOptions.xml' path='doc/member[@name="ThumbnailStreamCacheOptions.ReturnOnlyIfCached"]/*' />
     ReturnOnlyIfCached = 0x1,
+
+    /// <include file='ThumbnailStreamCacheOptions.xml' path='doc/member[@name="ThumbnailStreamCacheOptions.ResizeThumbnail"]/*' />
     ResizeThumbnail = 0x2,
+
+    /// <include file='ThumbnailStreamCacheOptions.xml' path='doc/member[@name="ThumbnailStreamCacheOptions.AllowSmallerSize"]/*' />
     AllowSmallerSize = 0x4,
 }

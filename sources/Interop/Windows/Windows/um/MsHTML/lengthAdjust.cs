@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='lengthAdjust.xml' path='doc/member[@name="lengthAdjust"]/*' />
 public enum lengthAdjust
 {
+    /// <include file='lengthAdjust.xml' path='doc/member[@name="lengthAdjust.LENGTHADJUST_UNKNOWN"]/*' />
     LENGTHADJUST_UNKNOWN = 0,
+
+    /// <include file='lengthAdjust.xml' path='doc/member[@name="lengthAdjust.LENGTHADJUST_SPACING"]/*' />
     LENGTHADJUST_SPACING = 1,
+
+    /// <include file='lengthAdjust.xml' path='doc/member[@name="lengthAdjust.LENGTHADJUST_SPACINGANDGLYPHS"]/*' />
     LENGTHADJUST_SPACINGANDGLYPHS = 2,
+
+    /// <include file='lengthAdjust.xml' path='doc/member[@name="lengthAdjust.lengthAdjust_Max"]/*' />
     lengthAdjust_Max = 2147483647,
 }

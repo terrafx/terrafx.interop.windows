@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFolderFilterSite.xml' path='doc/member[@name="IFolderFilterSite"]/*' />
 [Guid("C0A651F5-B48B-11D2-B5ED-006097C686F6")]
 [NativeTypeName("struct IFolderFilterSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFolderFilterSite : IFolderFilterSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFolderFilterSite : IFolderFilterSite.Interface
         return ((delegate* unmanaged<IFolderFilterSite*, Guid*, void**, int>)(lpVtbl[0]))((IFolderFilterSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFolderFilterSite : IFolderFilterSite.Interface
         return ((delegate* unmanaged<IFolderFilterSite*, uint>)(lpVtbl[1]))((IFolderFilterSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFolderFilterSite : IFolderFilterSite.Interface
         return ((delegate* unmanaged<IFolderFilterSite*, uint>)(lpVtbl[2]))((IFolderFilterSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFolderFilterSite.xml' path='doc/member[@name="IFolderFilterSite.SetFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetFilter(IUnknown* punk)

@@ -11,18 +11,23 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SslEmptyCacheA"]/*' />
     [DllImport("schannel", ExactSpelling = true)]
     public static extern BOOL SslEmptyCacheA([NativeTypeName("LPSTR")] sbyte* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SslEmptyCacheW"]/*' />
     [DllImport("schannel", ExactSpelling = true)]
     public static extern BOOL SslEmptyCacheW([NativeTypeName("LPWSTR")] ushort* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SslCrackCertificate"]/*' />
     [DllImport("schannel", ExactSpelling = true)]
     public static extern BOOL SslCrackCertificate([NativeTypeName("PUCHAR")] byte* pbCertificate, [NativeTypeName("DWORD")] uint cbCertificate, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PX509Certificate *")] X509Certificate** ppCertificate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SslFreeCertificate"]/*' />
     [DllImport("schannel", ExactSpelling = true)]
     public static extern void SslFreeCertificate([NativeTypeName("PX509Certificate")] X509Certificate* pCertificate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SslGetServerIdentity"]/*' />
     [DllImport("schannel", ExactSpelling = true)]
     [return: NativeTypeName("SECURITY_STATUS")]
     [SupportedOSPlatform("windows8.0")]

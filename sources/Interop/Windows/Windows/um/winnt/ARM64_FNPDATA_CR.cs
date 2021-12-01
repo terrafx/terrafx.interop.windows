@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ARM64_FNPDATA_CR.xml' path='doc/member[@name="ARM64_FNPDATA_CR"]/*' />
 public enum ARM64_FNPDATA_CR
 {
+    /// <include file='ARM64_FNPDATA_CR.xml' path='doc/member[@name="ARM64_FNPDATA_CR.PdataCrUnchained"]/*' />
     PdataCrUnchained = 0,
+
+    /// <include file='ARM64_FNPDATA_CR.xml' path='doc/member[@name="ARM64_FNPDATA_CR.PdataCrUnchainedSavedLr"]/*' />
     PdataCrUnchainedSavedLr = 1,
+
+    /// <include file='ARM64_FNPDATA_CR.xml' path='doc/member[@name="ARM64_FNPDATA_CR.PdataCrChainedWithPac"]/*' />
     PdataCrChainedWithPac = 2,
+
+    /// <include file='ARM64_FNPDATA_CR.xml' path='doc/member[@name="ARM64_FNPDATA_CR.PdataCrChained"]/*' />
     PdataCrChained = 3,
 }

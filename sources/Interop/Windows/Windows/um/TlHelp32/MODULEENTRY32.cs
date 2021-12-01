@@ -5,33 +5,44 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32"]/*' />
 public unsafe partial struct MODULEENTRY32
 {
+    /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.th32ModuleID"]/*' />
     [NativeTypeName("DWORD")]
     public uint th32ModuleID;
 
+    /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.th32ProcessID"]/*' />
     [NativeTypeName("DWORD")]
     public uint th32ProcessID;
 
+    /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.GlblcntUsage"]/*' />
     [NativeTypeName("DWORD")]
     public uint GlblcntUsage;
 
+    /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.ProccntUsage"]/*' />
     [NativeTypeName("DWORD")]
     public uint ProccntUsage;
 
+    /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.modBaseAddr"]/*' />
     public byte* modBaseAddr;
 
+    /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.modBaseSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint modBaseSize;
 
+    /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.hModule"]/*' />
     public HMODULE hModule;
 
+    /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.szModule"]/*' />
     [NativeTypeName("char [256]")]
     public fixed sbyte szModule[256];
 
+    /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.szExePath"]/*' />
     [NativeTypeName("char [260]")]
     public fixed sbyte szExePath[260];
 }

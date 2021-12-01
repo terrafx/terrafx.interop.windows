@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMPALayer">
+    <summary>
+      <para>Specifies the MPEG audio layer. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpalayer-property">AVEncMPALayer</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMPALayer.eAVEncMPALayer_1">
+    <summary>
+      <para>MPEG Audio Layer-1.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPALayer.eAVEncMPALayer_2">
+    <summary>
+      <para>MPEG Audio Layer-2.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPALayer.eAVEncMPALayer_3">
+    <summary>
+      <para>MPEG Audio Layer-3.</para>
+    </summary>
+  </member>
+</doc>

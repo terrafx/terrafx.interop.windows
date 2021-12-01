@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoHeaderFrames.xml' path='doc/member[@name="CODECAPI_AVEncVideoHeaderFrames"]/*' />
 [Guid("AFD5F567-5C1B-4ADC-BDAF-735610381436")]
 public partial struct CODECAPI_AVEncVideoHeaderFrames
 {

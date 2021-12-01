@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirectDrawClipper.GetClipList">
+    <summary>
+      <para>Retrieves a copy of the clip list that is associated with a DirectDrawClipper object. To select a subset of the clip list, you can pass a rectangle that clips the clip list.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <see cref="RECT" /> structure that <b>GetClipList</b> uses to clip the clip list. Set this parameter to NULL to retrieve the entire clip list.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>A pointer to a <see cref="RGNDATA" /> structure that receives the resulting copy of the clip list. If this parameter is NULL, <b>GetClipList</b> fills the variable at <i>lpdwSize</i> with the number of bytes necessary to hold the entire clip list.</para>
+    </param>
+    <param name="unnamedParam3">
+      <para>A pointer to a variable that receives the size of the resulting clip list. When retrieving the clip list, this parameter is the size of the buffer at <i>lpClipList</i>. When <i>lpClipList</i> is NULL, the variable at <i>lpdwSize</i> receives the required size of the buffer, in bytes.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_GENERIC</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDCLIPLIST</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_NOCLIPLIST</description>
+        </item>
+        <item>
+          <description>DDERR_REGIONTOOSMALL</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetClipList</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawClipper" />
+  </member>
+  <member name="IDirectDrawClipper.GetHWnd">
+    <summary>
+      <para>Retrieves the window handle that was previously associated with this DirectDrawClipper object by the <see cref="IDirectDrawClipper.SetHWnd" /> method.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives the window handle that was previously associated with this DirectDrawClipper object by the <see cref="IDirectDrawClipper.SetHWnd" /> method.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetHWnd</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawClipper" />
+  </member>
+  <member name="IDirectDrawClipper.Initialize">
+    <summary>
+      <para>Initializes a DirectDrawClipper object that was created by using the <see cref="CoCreateInstance" /> COM function.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to the DirectDraw object to associate with the DirectDrawClipper object. If this parameter is set to NULL, an independent DirectDrawClipper object is initialized; a call of this type is equivalent to using the <see cref="DirectDrawCreateClipper" /> function.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Currently not used and must be set to 0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_ALREADYINITIALIZED</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>IDirectDrawClipper.Initialize</b> method is provided for compliance with the Component Object Model (COM). If you used the <see cref="DirectDrawCreateClipper" /> function or the <see cref="IDirectDraw7.CreateClipper" /> method to create the DirectDrawClipper object, the <b>IDirectDrawClipper.Initialize</b> method returns DDERR_ALREADYINITIALIZED.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>IDirectDrawClipper.Initialize</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawClipper" />
+  </member>
+  <member name="IDirectDrawClipper.IsClipListChanged">
+    <summary>
+      <para>Retrieves the status of the clip list if a window handle is associated with a DirectDrawClipper object.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a variable that receives the status of the clip list. This parameter is TRUE if the clip list has changed, and FALSE otherwise.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>IsClipListChanged</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawClipper" />
+  </member>
+  <member name="IDirectDrawClipper.SetClipList">
+    <summary>
+      <para>Sets or deletes the clip list that is used by the <see cref="IDirectDrawSurface7.Blt" />, <see cref="IDirectDrawSurface7.BltBatch" />, and <see cref="IDirectDrawSurface7.UpdateOverlay" /> methods on surfaces to which the parent DirectDrawClipper object is attached.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a valid <see cref="RGNDATA" /> structure for the clip list to set or NULL. If there is an existing clip list that is associated with the DirectDrawClipper object and this value is NULL, the clip list is deleted.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Currently not used and must be set to 0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_CLIPPERISUSINGHWND</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDCLIPLIST</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You cannot set the clip list if a window handle is already associated with the DirectDrawClipper object.</para>
+      <para>The <see cref="IDirectDrawSurface7.BltFast" /> method cannot clip. If you call <b>IDirectDrawSurface7.BltFast</b> on a surface with an attached clipper, it returns DDERR_UNSUPPORTED.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetClipList</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawClipper" />
+  </member>
+  <member name="IDirectDrawClipper.SetHWnd">
+    <summary>
+      <para>Sets the window handle that the clipper object uses to obtain clipping information.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Currently not used and must be set to 0.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>Window handle that obtains the clipping information.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDCLIPLIST</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_OUTOFMEMORY</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetHWnd</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawClipper" />
+  </member>
+</doc>

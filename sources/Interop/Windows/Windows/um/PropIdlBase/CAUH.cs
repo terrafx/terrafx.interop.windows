@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAUH.xml' path='doc/member[@name="CAUH"]/*' />
 public unsafe partial struct CAUH
 {
+    /// <include file='CAUH.xml' path='doc/member[@name="CAUH.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CAUH.xml' path='doc/member[@name="CAUH.pElems"]/*' />
     public ULARGE_INTEGER* pElems;
 }

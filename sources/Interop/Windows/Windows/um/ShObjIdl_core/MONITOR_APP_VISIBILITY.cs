@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MONITOR_APP_VISIBILITY.xml' path='doc/member[@name="MONITOR_APP_VISIBILITY"]/*' />
 public enum MONITOR_APP_VISIBILITY
 {
+    /// <include file='MONITOR_APP_VISIBILITY.xml' path='doc/member[@name="MONITOR_APP_VISIBILITY.MAV_UNKNOWN"]/*' />
     MAV_UNKNOWN = 0,
+
+    /// <include file='MONITOR_APP_VISIBILITY.xml' path='doc/member[@name="MONITOR_APP_VISIBILITY.MAV_NO_APP_VISIBLE"]/*' />
     MAV_NO_APP_VISIBLE = 1,
+
+    /// <include file='MONITOR_APP_VISIBILITY.xml' path='doc/member[@name="MONITOR_APP_VISIBILITY.MAV_APP_VISIBLE"]/*' />
     MAV_APP_VISIBLE = 2,
 }

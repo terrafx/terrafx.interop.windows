@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPATIBILITY_CONTEXT_ELEMENT">
+    <summary>
+      <para>The <b>COMPATIBILITY_CONTEXT_ELEMENT</b> structure is used by the <see cref="QueryActCtxW" /> function as part of the <see cref="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION" /> structure.</para>
+    </summary>
+  </member>
+  <member name="COMPATIBILITY_CONTEXT_ELEMENT.Id">
+    <summary>
+      <para>This is a <b>GUID</b> that specifies a version of  Windows.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>{e2011457-1546-43c5-a5fe-008deee3d3f0}</para>
+          </description>
+          <description>
+            <para>Windows Vista</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>{35138b9a-5d96-4fbd-8e2d-a2440225f93a}</para>
+          </description>
+          <description>
+            <para>Windows 7</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="COMPATIBILITY_CONTEXT_ELEMENT.Type">
+    <summary>
+      <para>A value of the <see cref="ACTCTX_COMPATIBILITY_ELEMENT_TYPE" /> enumeration that describes the compatibility elements in the application manifest.</para>
+    </summary>
+  </member>
+</doc>

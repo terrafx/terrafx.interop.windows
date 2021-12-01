@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PrintDocumentPackageCompletion.xml' path='doc/member[@name="PrintDocumentPackageCompletion"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum PrintDocumentPackageCompletion
 {
+    /// <include file='PrintDocumentPackageCompletion.xml' path='doc/member[@name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_InProgress"]/*' />
     PrintDocumentPackageCompletion_InProgress = 0,
+
+    /// <include file='PrintDocumentPackageCompletion.xml' path='doc/member[@name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_Completed"]/*' />
     PrintDocumentPackageCompletion_Completed = (PrintDocumentPackageCompletion_InProgress + 1),
+
+    /// <include file='PrintDocumentPackageCompletion.xml' path='doc/member[@name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_Canceled"]/*' />
     PrintDocumentPackageCompletion_Canceled = (PrintDocumentPackageCompletion_Completed + 1),
+
+    /// <include file='PrintDocumentPackageCompletion.xml' path='doc/member[@name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_Failed"]/*' />
     PrintDocumentPackageCompletion_Failed = (PrintDocumentPackageCompletion_Canceled + 1),
 }

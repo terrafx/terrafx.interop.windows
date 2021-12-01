@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_SPEC_VERSION">
+    <summary>
+      <para>Storage specification version.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.DUMMYSTRUCTNAME.SubMinor">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.DUMMYSTRUCTNAME.Minor">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.AsUshort">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MajorVersion">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_SPEC_VERSION.AsUlong">
+    <summary>
+      <h4>- AsUshort</h4>
+      <h4>- Minor</h4>
+      <h4>- SubMinor</h4>
+    </summary>
+  </member>
+</doc>

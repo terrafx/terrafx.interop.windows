@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISpatialAudioMetadataWriter.Close">
+    <summary>
+      <para>Completes any needed operations on the metadata buffer and releases the specified <see cref="ISpatialAudioMetadataItems" /> object.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
+            </para>
+          </description>
+          <description>
+            <para>The supplied <see cref="ISpatialAudioMetadataItems" /> has not been opened with a call to <see cref="Open" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_WRITTEN</b>
+            </para>
+          </description>
+          <description>
+            <para>No metadata items have been written to the supplied <see cref="ISpatialAudioMetadataItems" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUD_MD_CLNT_E_ITEM_MUST_HAVE_COMMANDS</b>
+            </para>
+          </description>
+          <description>
+            <para>No metadata commands have been written to the supplied <see cref="ISpatialAudioMetadataItems" />.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataWriter" />
+  </member>
+  <member name="ISpatialAudioMetadataWriter.Open">
+    <summary>
+      <para>Opens an <see cref="ISpatialAudioMetadataItems" /> object for writing.</para>
+    </summary>
+    <param name="metadataItems">
+      <para>A pointer to an  <see cref="ISpatialAudioMetadataItems" /> object to be opened for writing.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUD_MD_CLNT_E_ITEMS_ALREADY_OPEN</b>
+            </para>
+          </description>
+          <description>
+            <b>Open</b> has already been called on the supplied <see cref="ISpatialAudioMetadataItems" /> since the object was created or since the last call to <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/ispatialaudiometadatawriter-close">Close</a>.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The provided pointer is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataWriter" />
+  </member>
+  <member name="ISpatialAudioMetadataWriter.WriteNextItem">
+    <summary>
+      <para>Starts a new metadata item at the specified offset.</para>
+    </summary>
+    <param name="frameOffset">
+      <para>The frame offset of the item within the range specified with the <i>frameCount</i> parameter to <see cref="ActivateSpatialAudioMetadataItems" />.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for writing with a call to <see cref="Open" /> or the object has been closed for writing with a call to <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/ispatialaudiometadatawriter-close">Close</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUD_MD_CLNT_E_FRAMEOFFSET_OUT_OF_RANGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The number of items written in the writing session is greater than the value supplied in the <b>MaxMetadataItemCount</b> field in the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParam" /> passed into <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" />.</para>
+            <para>The <i>frameCount</i> value is greater than the value of the <i>frameCount</i> parameter to <see cref="ActivateSpatialAudioMetadataItems" /> and the overflow mode was set to  <b>SpatialAudioMetadataWriterOverflow_Fail</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>frameOffset</i> is not greater than the value provided  in the previous call to <see cref="WriteNextItem" /> within the same writing session.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Before calling <b>WriteNextItem</b>, you must open the <see cref="ISpatialAudioMetadataWriter" /> for writing by calling <see cref="Open" /> after the object is created and after <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/ispatialaudiometadatawriter-close">Close</a> has been called. During a writing session demarcated by calls to <b>Open</b> and <b>Close</b>, the value of the <i>frameOffset</i> parameter must be greater than the value in the preceding call.</para>
+      <para>Within a single writing session, you must not use <b>WriteNextItem</b> to write more items than the value supplied in the <b>MaxMetadataItemCount</b> field in the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParam" /> passed into <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" /> or an SPTLAUD_MD_CLNT_E_FRAMEOFFSET_OUT_OF_RANGE error will occur.</para>
+      <para>If the overflow mode is set to <b>SpatialAudioMetadataWriterOverflow_Fail</b>, the value of the <i>frameOffset</i> parameter must be less than he value of the <i>frameCount</i> parameter to <see cref="ActivateSpatialAudioMetadataItems" /> or an SPTLAUD_MD_CLNT_E_FRAMEOFFSET_OUT_OF_RANGE error will occur.</para>
+      <para>After calling <b>WriteNextItem</b>, call <see cref="WriteNextItemCommand" /> to write metadata commands and value data for the item.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioMetadataWriter" />
+  </member>
+  <member name="ISpatialAudioMetadataWriter.WriteNextItemCommand">
+    <summary>
+      <para>Writes metadata commands and value data to the current item.</para>
+    </summary>
+    <param name="commandID">
+      <para>A command supported by the metadata format of the  object.  The call will fail if the command not defined by metadata format. Each command can
+only be written once per item.</para>
+    </param>
+    <param name="valueBuffer">
+      <para>A pointer to a buffer which stores data specific to the command as specified by the
+metadata format definition.</para>
+    </param>
+    <param name="valueBufferLength">
+      <para>The size, in bytes, of the command data supplied in the  <i>valueBuffer</i> parameter.  The size must match command definition specified by the metadata format or the call will fail.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for writing with a call to <see cref="Open" /> or the object has been closed for writing with a call to <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/ispatialaudiometadatawriter-close">Close</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUD_MD_CLNT_E_NO_ITEMOFFSET_WRITTEN</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="WriteNextItem" /> was not called after <see cref="Open" /> was called and before the call to <b>WriteNextItemCommand</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must open the <see cref="ISpatialAudioMetadataWriter" /> for writing by calling <see cref="Open" />, and set the current metadata item offset by calling <see cref="WriteNextItem" /> before calling <b>WriteNextItemCommand</b>.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioMetadataWriter" />
+  </member>
+  <member name="ISpatialAudioMetadataWriter">
+    <summary>
+      <para>Provides methods for storing spatial audio metadata items
+positioned within a range of corresponding audio frames.  Each metadata item has a zero-based
+offset position within the specified frame.  Each item can contain one or more commands
+specific to the metadata format ID provided in the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> when the <see cref="ISpatialAudioMetadataClient" /> was created.
+This object does not allocate storage for the metadata it is provided, the caller is expected to manage the allocation of memory used to store the packed data.
+Multiple metadata items can be placed in the <see cref="ISpatialAudioMetadataItems" /> object.  For each item,
+call <see cref="WriteNextItem" /> followed by a call to <see cref="WriteNextItemCommand" />.</para>
+      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+    </summary>
+  </member>
+</doc>

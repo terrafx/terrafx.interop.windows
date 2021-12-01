@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GRIPPERSTATES.xml' path='doc/member[@name="GRIPPERSTATES"]/*' />
 public enum GRIPPERSTATES
 {
+    /// <include file='GRIPPERSTATES.xml' path='doc/member[@name="GRIPPERSTATES.TSGS_NORMAL"]/*' />
     TSGS_NORMAL = 1,
+
+    /// <include file='GRIPPERSTATES.xml' path='doc/member[@name="GRIPPERSTATES.TSGS_CENTERED"]/*' />
     TSGS_CENTERED = 2,
 }

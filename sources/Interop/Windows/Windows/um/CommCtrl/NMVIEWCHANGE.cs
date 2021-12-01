@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMVIEWCHANGE.xml' path='doc/member[@name="NMVIEWCHANGE"]/*' />
 public partial struct NMVIEWCHANGE
 {
+    /// <include file='NMVIEWCHANGE.xml' path='doc/member[@name="NMVIEWCHANGE.nmhdr"]/*' />
     public NMHDR nmhdr;
 
+    /// <include file='NMVIEWCHANGE.xml' path='doc/member[@name="NMVIEWCHANGE.dwOldView"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOldView;
 
+    /// <include file='NMVIEWCHANGE.xml' path='doc/member[@name="NMVIEWCHANGE.dwNewView"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNewView;
 }

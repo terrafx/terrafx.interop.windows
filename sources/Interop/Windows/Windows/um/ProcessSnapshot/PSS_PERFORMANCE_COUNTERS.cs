@@ -7,42 +7,55 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct PSS_PERFORMANCE_COUNTERS
 {
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.TotalCycleCount"]/*' />
     [NativeTypeName("UINT64")]
     public ulong TotalCycleCount;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.TotalWallClockPeriod"]/*' />
     [NativeTypeName("UINT64")]
     public ulong TotalWallClockPeriod;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.VaCloneCycleCount"]/*' />
     [NativeTypeName("UINT64")]
     public ulong VaCloneCycleCount;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.VaCloneWallClockPeriod"]/*' />
     [NativeTypeName("UINT64")]
     public ulong VaCloneWallClockPeriod;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.VaSpaceCycleCount"]/*' />
     [NativeTypeName("UINT64")]
     public ulong VaSpaceCycleCount;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.VaSpaceWallClockPeriod"]/*' />
     [NativeTypeName("UINT64")]
     public ulong VaSpaceWallClockPeriod;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.AuxPagesCycleCount"]/*' />
     [NativeTypeName("UINT64")]
     public ulong AuxPagesCycleCount;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.AuxPagesWallClockPeriod"]/*' />
     [NativeTypeName("UINT64")]
     public ulong AuxPagesWallClockPeriod;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.HandlesCycleCount"]/*' />
     [NativeTypeName("UINT64")]
     public ulong HandlesCycleCount;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.HandlesWallClockPeriod"]/*' />
     [NativeTypeName("UINT64")]
     public ulong HandlesWallClockPeriod;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.ThreadsCycleCount"]/*' />
     [NativeTypeName("UINT64")]
     public ulong ThreadsCycleCount;
 
+    /// <include file='PSS_PERFORMANCE_COUNTERS.xml' path='doc/member[@name="PSS_PERFORMANCE_COUNTERS.ThreadsWallClockPeriod"]/*' />
     [NativeTypeName("UINT64")]
     public ulong ThreadsWallClockPeriod;
 }

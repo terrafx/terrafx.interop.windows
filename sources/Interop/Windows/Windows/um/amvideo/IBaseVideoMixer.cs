@@ -8,12 +8,14 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer"]/*' />
 [NativeTypeName("struct IBaseVideoMixer : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -21,6 +23,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
         return ((delegate* unmanaged<IBaseVideoMixer*, Guid*, void**, int>)(lpVtbl[0]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -29,6 +32,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
         return ((delegate* unmanaged<IBaseVideoMixer*, uint>)(lpVtbl[1]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -37,6 +41,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
         return ((delegate* unmanaged<IBaseVideoMixer*, uint>)(lpVtbl[2]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.SetLeadPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetLeadPin(int iPin)
@@ -44,6 +49,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
         return ((delegate* unmanaged<IBaseVideoMixer*, int, int>)(lpVtbl[3]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), iPin);
     }
 
+    /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.GetLeadPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetLeadPin(int* piPin)
@@ -51,6 +57,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
         return ((delegate* unmanaged<IBaseVideoMixer*, int*, int>)(lpVtbl[4]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), piPin);
     }
 
+    /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.GetInputPinCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetInputPinCount(int* piPinCount)
@@ -58,6 +65,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
         return ((delegate* unmanaged<IBaseVideoMixer*, int*, int>)(lpVtbl[5]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), piPinCount);
     }
 
+    /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.IsUsingClock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsUsingClock(int* pbValue)
@@ -65,6 +73,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
         return ((delegate* unmanaged<IBaseVideoMixer*, int*, int>)(lpVtbl[6]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), pbValue);
     }
 
+    /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.SetUsingClock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetUsingClock(int bValue)
@@ -72,6 +81,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
         return ((delegate* unmanaged<IBaseVideoMixer*, int, int>)(lpVtbl[7]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), bValue);
     }
 
+    /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.GetClockPeriod"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetClockPeriod(int* pbValue)
@@ -79,6 +89,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
         return ((delegate* unmanaged<IBaseVideoMixer*, int*, int>)(lpVtbl[8]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), pbValue);
     }
 
+    /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.SetClockPeriod"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetClockPeriod(int bValue)

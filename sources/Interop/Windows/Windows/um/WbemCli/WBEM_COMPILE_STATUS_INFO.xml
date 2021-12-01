@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_COMPILE_STATUS_INFO">
+    <summary>
+      <para>Describes an error for the <see cref="IMofCompiler" /> interface.</para>
+    </summary>
+    <remarks>
+      <para>The   <i>ObjectNum</i>, <i>FirstLine</i>, and <i>LastLine</i> parameters only contain values for errors that relate to a particular class or instance in the file.</para>
+    </remarks>
+    <seealso cref="CompileBuffer" />
+    <seealso cref="CompileFile" />
+    <seealso cref="CreateBMOF" />
+    <seealso cref="IMofCompiler" />
+  </member>
+  <member name="WBEM_COMPILE_STATUS_INFO.lPhaseError">
+    <summary>
+      <para>TBD</para>
+      <h4>0</h4>
+      <para>no error</para>
+      <h4>1</h4>
+      <para>parsing error</para>
+      <h4>2</h4>
+      <para>argument error</para>
+      <h4>3</h4>
+      <para>errors occurred while storing the data.</para>
+    </summary>
+  </member>
+  <member name="WBEM_COMPILE_STATUS_INFO.hRes">
+    <summary>
+      <para>The actual error code.</para>
+    </summary>
+  </member>
+  <member name="WBEM_COMPILE_STATUS_INFO.ObjectNum">
+    <summary>
+      <para>Object that is at fault.</para>
+    </summary>
+  </member>
+  <member name="WBEM_COMPILE_STATUS_INFO.FirstLine">
+    <summary>
+      <para>First line number of the object.</para>
+    </summary>
+  </member>
+  <member name="WBEM_COMPILE_STATUS_INFO.LastLine">
+    <summary>
+      <para>Last line number of the object.</para>
+    </summary>
+  </member>
+  <member name="WBEM_COMPILE_STATUS_INFO.dwOutFlags">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

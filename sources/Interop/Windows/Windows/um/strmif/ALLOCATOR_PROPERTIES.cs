@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ALLOCATOR_PROPERTIES.xml' path='doc/member[@name="ALLOCATOR_PROPERTIES"]/*' />
 public partial struct ALLOCATOR_PROPERTIES
 {
+    /// <include file='ALLOCATOR_PROPERTIES.xml' path='doc/member[@name="ALLOCATOR_PROPERTIES.cBuffers"]/*' />
     [NativeTypeName("long")]
     public int cBuffers;
 
+    /// <include file='ALLOCATOR_PROPERTIES.xml' path='doc/member[@name="ALLOCATOR_PROPERTIES.cbBuffer"]/*' />
     [NativeTypeName("long")]
     public int cbBuffer;
 
+    /// <include file='ALLOCATOR_PROPERTIES.xml' path='doc/member[@name="ALLOCATOR_PROPERTIES.cbAlign"]/*' />
     [NativeTypeName("long")]
     public int cbAlign;
 
+    /// <include file='ALLOCATOR_PROPERTIES.xml' path='doc/member[@name="ALLOCATOR_PROPERTIES.cbPrefix"]/*' />
     [NativeTypeName("long")]
     public int cbPrefix;
 }

@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_FRAMESTEP_STEP.xml' path='doc/member[@name="AM_FRAMESTEP_STEP"]/*' />
 public partial struct AM_FRAMESTEP_STEP
 {
+    /// <include file='AM_FRAMESTEP_STEP.xml' path='doc/member[@name="AM_FRAMESTEP_STEP.dwFramesToStep"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFramesToStep;
 }

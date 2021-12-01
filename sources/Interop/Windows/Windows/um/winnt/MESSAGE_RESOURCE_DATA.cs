@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MESSAGE_RESOURCE_DATA.xml' path='doc/member[@name="MESSAGE_RESOURCE_DATA"]/*' />
 public partial struct MESSAGE_RESOURCE_DATA
 {
+    /// <include file='MESSAGE_RESOURCE_DATA.xml' path='doc/member[@name="MESSAGE_RESOURCE_DATA.NumberOfBlocks"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfBlocks;
 
+    /// <include file='MESSAGE_RESOURCE_DATA.xml' path='doc/member[@name="MESSAGE_RESOURCE_DATA.Blocks"]/*' />
     [NativeTypeName("MESSAGE_RESOURCE_BLOCK [1]")]
     public _Blocks_e__FixedBuffer Blocks;
 
+    /// <include file='_Blocks_e__FixedBuffer.xml' path='doc/member[@name="_Blocks_e__FixedBuffer"]/*' />
     public partial struct _Blocks_e__FixedBuffer
     {
         public MESSAGE_RESOURCE_BLOCK e0;

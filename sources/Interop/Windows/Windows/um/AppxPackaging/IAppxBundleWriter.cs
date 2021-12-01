@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBundleWriter.xml' path='doc/member[@name="IAppxBundleWriter"]/*' />
 [Guid("EC446FE8-BFEC-4C64-AB4F-49F038F0C6D2")]
 [NativeTypeName("struct IAppxBundleWriter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface
         return ((delegate* unmanaged<IAppxBundleWriter*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface
         return ((delegate* unmanaged<IAppxBundleWriter*, uint>)(lpVtbl[1]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface
         return ((delegate* unmanaged<IAppxBundleWriter*, uint>)(lpVtbl[2]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBundleWriter.xml' path='doc/member[@name="IAppxBundleWriter.AddPayloadPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface
         return ((delegate* unmanaged<IAppxBundleWriter*, ushort*, IStream*, int>)(lpVtbl[3]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this), fileName, packageStream);
     }
 
+    /// <include file='IAppxBundleWriter.xml' path='doc/member[@name="IAppxBundleWriter.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Close()

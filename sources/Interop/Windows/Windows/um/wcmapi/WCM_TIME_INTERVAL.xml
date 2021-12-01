@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WCM_TIME_INTERVAL">
+    <summary>
+      <para>The <b>WCM_TIME_INTERVAL</b> structure defines a time interval.</para>
+    </summary>
+  </member>
+  <member name="WCM_TIME_INTERVAL.wYear">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Years.</para>
+    </summary>
+  </member>
+  <member name="WCM_TIME_INTERVAL.wMonth">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Months.</para>
+    </summary>
+  </member>
+  <member name="WCM_TIME_INTERVAL.wDay">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Days.</para>
+    </summary>
+  </member>
+  <member name="WCM_TIME_INTERVAL.wHour">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Hours.</para>
+    </summary>
+  </member>
+  <member name="WCM_TIME_INTERVAL.wMinute">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Minutes.</para>
+    </summary>
+  </member>
+  <member name="WCM_TIME_INTERVAL.wSecond">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Seconds.</para>
+    </summary>
+  </member>
+  <member name="WCM_TIME_INTERVAL.wMilliseconds">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Milliseconds.</para>
+    </summary>
+  </member>
+</doc>

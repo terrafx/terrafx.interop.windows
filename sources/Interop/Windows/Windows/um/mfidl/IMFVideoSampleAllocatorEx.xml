@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFVideoSampleAllocatorEx.InitializeSampleAllocatorEx">
+    <summary>
+      <para>Initializes the video sample allocator object.</para>
+    </summary>
+    <param name="cInitialSamples">
+      <para>The initial number of samples to allocate.</para>
+    </param>
+    <param name="cMaximumSamples">
+      <para>The maximum number of samples to allocate.</para>
+    </param>
+    <param name="pAttributes">
+      <para>A pointer to the <see cref="IMFAttributes" /> interface. You can use this interface to configure the allocator. Currently, the following configuration attributes are defined:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-buffers-per-sample">MF_SA_BUFFERS_PER_SAMPLE</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-d3d11-bindflags">MF_SA_D3D11_BINDFLAGS</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-d3d11-usage">MF_SA_D3D11_USAGE</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-d3d11-shared">MF_SA_D3D11_SHARED</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-d3d11-shared-without-mutex">MF_SA_D3D11_SHARED_WITHOUT_MUTEX</a>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pMediaType">
+      <para>A pointer to the <see cref="IMFMediaType" /> interface of a media type that describes the video format.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFVideoSampleAllocatorEx" />
+  </member>
+  <member name="IMFVideoSampleAllocatorEx">
+    <summary>
+      <para>Allocates video samples that contain Microsoft Direct3D 11 texture surfaces.</para>
+    </summary>
+    <remarks>
+      <para>You can use this interface to allocate Direct3D 11 video samples, rather than allocate the texture surfaces and media samples directly. To get a pointer to this interface, call the <see cref="MFCreateVideoSampleAllocatorEx" /> function.</para>
+      <para>To allocate video samples, perform the following steps:</para>
+      <list type="number">
+        <item>
+          <description>Obtain a pointer to the <see cref="IMFDXGIDeviceManager" /> interface. For a Media Foundation transform (MFT), this step occurs during the <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-message-set-d3d-manager">MFT_MESSAGE_SET_D3D_MANAGER</a> event.</description>
+        </item>
+        <item>
+          <description>Call <see cref="MFCreateVideoSampleAllocatorEx" /> to create the allocator object and get a pointer to the <b>IMFVideoSampleAllocatorEx</b> interface.</description>
+        </item>
+        <item>
+          <description>Call <see cref="IMFVideoSampleAllocator.SetDirectXManager" /> on the allocator to set the <see cref="IMFDXGIDeviceManager" /> pointer on the allocator.</description>
+        </item>
+        <item>
+          <description>Call <see cref="MFCreateAttributes" /> to get a pointer to the <see cref="IMFAttributes" /> interface.</description>
+        </item>
+        <item>
+          <description>Set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-d3d11-usage">MF_SA_D3D11_USAGE</a> and <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-d3d11-bindflags">MF_SA_D3D11_BINDFLAGS</a> attributes.</description>
+        </item>
+        <item>
+          <description>Call <see cref="IMFVideoSampleAllocator.InitializeSampleAllocatorEx" />.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFVideoSampleAllocator" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

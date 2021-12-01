@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CTL_USAGE_MATCH.xml' path='doc/member[@name="CTL_USAGE_MATCH"]/*' />
 public partial struct CTL_USAGE_MATCH
 {
+    /// <include file='CTL_USAGE_MATCH.xml' path='doc/member[@name="CTL_USAGE_MATCH.dwType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwType;
 
+    /// <include file='CTL_USAGE_MATCH.xml' path='doc/member[@name="CTL_USAGE_MATCH.Usage"]/*' />
     public CTL_USAGE Usage;
 }

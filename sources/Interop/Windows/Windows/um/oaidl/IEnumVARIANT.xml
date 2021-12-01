@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumVARIANT.Clone">
+    <summary>
+      <para>Creates a copy of the current state of enumeration.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>The clone enumerator.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Using this function, a particular point in the enumeration sequence can be recorded, and then returned to at a later time. The returned enumerator is of the same actual interface as the one that is being cloned.</para>
+      <para>There is no guarantee that exactly the same set of variants will be enumerated the second time as was enumerated the first. Although an exact duplicate is desirable, the outcome depends on the collection being enumerated. You may find that it is impractical for some collections to maintain this condition (for example, an enumeration of the files in a directory).</para>
+      <h4>Examples</h4>
+      <para>The following code implements <b>IEnumVariant.Clone</b>. A complete example implementation of the <b>IEnumVariant</b> interface is available in the COM Fundamentals Lines sample (Enumvar.cpp).</para>
+      <code>STDMETHODIMP
+CEnumVariant.Clone(IEnumVARIANT ** ppenum)
+{
+   CEnumVariant * penum = NULL;
+   HRESULT hr;
+
+   if (ppenum == NULL)
+      return E_INVALIDARG;
+
+   *ppenum = NULL;
+
+   hr = CEnumVariant.Create(m_psa, m_cElements, &amp;amp;amp;amp;amp;amp;penum);
+   if (FAILED(hr))
+      goto error;
+   penum-&gt;AddRef();
+   penum-&gt;m_lCurrent = m_lCurrent;
+
+   *ppenum = penum;
+   return NOERROR;
+
+error:
+   if (penum)
+      penum-&gt;Release();
+   return hr;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ienumvariant">IEnumVARIANT</seealso>
+  </member>
+  <member name="IEnumVARIANT.Next">
+    <summary>
+      <para>Retrieves the specified items in the enumeration sequence.</para>
+    </summary>
+    <param name="celt">
+      <para>The number of elements to be retrieved</para>
+    </param>
+    <param name="rgVar">
+      <para>An array of at least size <i>celt</i> in which the elements are to be returned.</para>
+    </param>
+    <param name="pCeltFetched">
+      <para>The number of elements returned in <i>rgVar</i>, or NULL.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The number of elements returned is <i>celt</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The number of elements returned is less than <i>celt</i>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If fewer than the requested number of elements remain in the sequence, <b>Next</b> returns only the remaining elements. The actual number of elements is returned in <i>pCeltFetched</i>, unless it is null.</para>
+      <h4>Examples</h4>
+      <para>The following code implements <b>IEnumVariant.Next</b>. A complete example implementation of the <b>IEnumVariant</b> interface is available in the COM Fundamentals Lines sample (Enumvar.cpp).</para>
+      <code>STDMETHODIMP
+CEnumVariant.Next(ULONG cElements, VARIANT * pvar, ULONG * pcElementFetched)
+{
+   HRESULT hr;
+   ULONG l;
+   long l1;
+   ULONG l2;
+
+   if (pcElementFetched != NULL)
+      *pcElementFetched = 0;
+
+   if (pvar == NULL)
+      return E_INVALIDARG;
+
+   for (l=0; l&lt;cElements; l++)
+      VariantInit(&amp;amp;amp;amp;amp;amp;pvar[l]);
+
+   // Retrieve the next cElements elements.
+   // m_lLBound+m_cElements = # of elements in the m_psa collection.
+
+   for (l1=m_lCurrent, l2=0; l1&lt;(long)(m_lLBound+m_cElements) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;
+      l2&lt;cElements; l1++, l2++)
+   {
+      hr = SafeArrayGetElement(m_psa, &amp;amp;amp;amp;amp;amp;l1, &amp;amp;amp;amp;amp;amp;pvar[l2]);
+      if (FAILED(hr))
+         goto error;
+   }
+   // Set count of elements retrieved.
+   if (pcElementFetched != NULL)
+      *pcElementFetched = l2;
+   m_lCurrent = l1;
+
+   return  (l2 &lt; cElements) ? S_FALSE : NOERROR;
+
+error:
+   for (l=0; l&lt;cElements; l++)
+      VariantClear(&amp;amp;amp;amp;amp;amp;pvar[l]);
+   return hr;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ienumvariant">IEnumVARIANT</seealso>
+  </member>
+  <member name="IEnumVARIANT.Reset">
+    <summary>
+      <para>Resets the enumeration sequence to the beginning.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>There is no guarantee that exactly the same set of variants will be enumerated the second time as was enumerated the first time. Although an exact duplicate is desirable, the outcome depends on the collection being enumerated. You may find that it is impractical for some collections to maintain this condition (for example, an enumeration of the files in a directory).</para>
+      <h4>Examples</h4>
+      <para>The following code implements <b>IEnumVariant.Reset</b>. A complete example implementation of the <b>IEnumVariant</b> interface is available in the COM Fundamentals Lines sample (Enumvar.cpp).</para>
+      <code>STDMETHODIMP
+CEnumVariant.Reset()
+{
+   m_lCurrent = m_lLBound;
+   return NOERROR;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ienumvariant">IEnumVARIANT</seealso>
+  </member>
+  <member name="IEnumVARIANT.Skip">
+    <summary>
+      <para>Attempts to skip over the next celt elements in the enumeration sequence.</para>
+    </summary>
+    <param name="celt">
+      <para>The number of elements to skip.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified number of elements was skipped.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The end of the sequence was reached before skipping the requested number of elements.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ienumvariant">IEnumVARIANT</seealso>
+  </member>
+  <member name="IEnumVARIANT">
+    <summary>
+      <para>Provides a method for enumerating a collection of variants, including heterogeneous collections of objects and intrinsic types. Callers of this interface do not need to know the specific type (or types) of the elements in the collection.</para>
+    </summary>
+    <remarks>
+      <para>To see how to implement a collection of objects using <b>IEnumVARIANT</b>, refer to the file Enumvar.cpp in the Lines sample code.</para>
+    </remarks>
+  </member>
+</doc>

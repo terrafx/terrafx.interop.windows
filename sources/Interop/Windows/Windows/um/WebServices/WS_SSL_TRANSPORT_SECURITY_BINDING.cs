@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SSL_TRANSPORT_SECURITY_BINDING.xml' path='doc/member[@name="WS_SSL_TRANSPORT_SECURITY_BINDING"]/*' />
 public unsafe partial struct WS_SSL_TRANSPORT_SECURITY_BINDING
 {
+    /// <include file='WS_SSL_TRANSPORT_SECURITY_BINDING.xml' path='doc/member[@name="WS_SSL_TRANSPORT_SECURITY_BINDING.binding"]/*' />
     public WS_SECURITY_BINDING binding;
 
+    /// <include file='WS_SSL_TRANSPORT_SECURITY_BINDING.xml' path='doc/member[@name="WS_SSL_TRANSPORT_SECURITY_BINDING.localCertCredential"]/*' />
     public WS_CERT_CREDENTIAL* localCertCredential;
 }

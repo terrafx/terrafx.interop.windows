@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TUNNEL_TYPE">
+    <summary>
+      <para>The TUNNEL_TYPE enumeration type defines the encapsulation method used by a tunnel, as described by
+the Internet Assigned Names Authority (IANA).</para>
+    </summary>
+    <remarks>
+      <para>For more information about the tunnel type as described by the Internet Assigned Names Authority
+(IANA) see
+<a href="https://www.iana.org/assignments/ianaiftype-mib">"IANAifType-MIB DEFINITIONS"</a>.</para>
+    </remarks>
+  </member>
+  <member name="TUNNEL_TYPE.TUNNEL_TYPE_NONE">
+    <summary>
+      <para>Indicates that a tunnel is not specified.</para>
+    </summary>
+  </member>
+  <member name="TUNNEL_TYPE.TUNNEL_TYPE_OTHER">
+    <summary>
+      <para>Indicates that none of the following tunnel types is specified.</para>
+    </summary>
+  </member>
+  <member name="TUNNEL_TYPE.TUNNEL_TYPE_DIRECT">
+    <summary>
+      <para>Specifies that a packet is encapsulated directly within a normal IP header, with no intermediate
+header, and the packet is sent unicast to the remote tunnel endpoint.</para>
+    </summary>
+  </member>
+  <member name="TUNNEL_TYPE.TUNNEL_TYPE_6TO4">
+    <summary>
+      <para>Specifies that an IPv6 packet is encapsulated directly within an IPv4 header, with no intermediate
+header, and the packet is sent unicast to the destination determined by the 6to4 protocol.</para>
+    </summary>
+  </member>
+  <member name="TUNNEL_TYPE.TUNNEL_TYPE_ISATAP">
+    <summary>
+      <para>Specifies that an IPv6 packet is encapsulated directly within an IPv4 header, with no intermediate
+header, and the packet is sent unicast to the destination determined by the ISATAP protocol.</para>
+    </summary>
+  </member>
+  <member name="TUNNEL_TYPE.TUNNEL_TYPE_TEREDO">
+    <summary>
+      <para>Specifies that the tunnel uses Teredo encapsulation.</para>
+    </summary>
+  </member>
+  <member name="TUNNEL_TYPE.TUNNEL_TYPE_IPHTTPS">
+    <summary>
+      <para>Specifies that the tunnel uses IP over Hypertext Transfer Protocol Secure (HTTPS). This tunnel
+type is supported in Windows 7 and later versions of the Windows operating system.</para>
+    </summary>
+  </member>
+</doc>

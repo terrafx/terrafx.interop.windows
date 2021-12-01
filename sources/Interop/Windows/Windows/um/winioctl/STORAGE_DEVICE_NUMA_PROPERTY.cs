@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DEVICE_NUMA_PROPERTY.xml' path='doc/member[@name="STORAGE_DEVICE_NUMA_PROPERTY"]/*' />
 public partial struct STORAGE_DEVICE_NUMA_PROPERTY
 {
+    /// <include file='STORAGE_DEVICE_NUMA_PROPERTY.xml' path='doc/member[@name="STORAGE_DEVICE_NUMA_PROPERTY.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DEVICE_NUMA_PROPERTY.xml' path='doc/member[@name="STORAGE_DEVICE_NUMA_PROPERTY.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_DEVICE_NUMA_PROPERTY.xml' path='doc/member[@name="STORAGE_DEVICE_NUMA_PROPERTY.NumaNode"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumaNode;
 }

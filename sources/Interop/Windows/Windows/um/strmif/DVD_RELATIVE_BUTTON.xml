@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_RELATIVE_BUTTON">
+    <summary>
+      <para>Identifies the four directional buttons used for DVD menu navigation and other operations.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IDvdControl2" />
+  </member>
+  <member name="DVD_RELATIVE_BUTTON.DVD_Relative_Upper">
+    <summary>
+      <para>Upper button.</para>
+    </summary>
+  </member>
+  <member name="DVD_RELATIVE_BUTTON.DVD_Relative_Lower">
+    <summary>
+      <para>Lower button.</para>
+    </summary>
+  </member>
+  <member name="DVD_RELATIVE_BUTTON.DVD_Relative_Left">
+    <summary>
+      <para>Left button.</para>
+    </summary>
+  </member>
+  <member name="DVD_RELATIVE_BUTTON.DVD_Relative_Right">
+    <summary>
+      <para>Right button.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HTTP_BINDING_TEMPLATE.xml' path='doc/member[@name="WS_HTTP_BINDING_TEMPLATE"]/*' />
 public partial struct WS_HTTP_BINDING_TEMPLATE
 {
+    /// <include file='WS_HTTP_BINDING_TEMPLATE.xml' path='doc/member[@name="WS_HTTP_BINDING_TEMPLATE.channelProperties"]/*' />
     public WS_CHANNEL_PROPERTIES channelProperties;
 }

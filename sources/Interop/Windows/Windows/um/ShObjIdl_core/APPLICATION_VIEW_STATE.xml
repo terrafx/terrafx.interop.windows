@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPLICATION_VIEW_STATE">
+    <summary>
+      <para>Indicates the current view state of a Windows Store app. Used by <see cref="IApplicationDesignModeSettings.SetApplicationViewState" /> and <see cref="IApplicationDesignModeSettings.IsApplicationViewStateSupported" />.</para>
+    </summary>
+    <seealso cref="IApplicationDesignModeSettings.IsApplicationViewStateSupported" />
+    <seealso cref="IApplicationDesignModeSettings.SetApplicationViewState" />
+  </member>
+  <member name="APPLICATION_VIEW_STATE.AVS_FULLSCREEN_LANDSCAPE">
+    <summary>
+      <para>The current app's view is full-screen (has no snapped app adjacent to it), and is in landscape orientation.</para>
+    </summary>
+  </member>
+  <member name="APPLICATION_VIEW_STATE.AVS_FILLED">
+    <summary>
+      <para>The current app's view has been reduced to a partial screen view as the result of another app snapping (being docked at one side of the screen in a narrow view).</para>
+    </summary>
+  </member>
+  <member name="APPLICATION_VIEW_STATE.AVS_SNAPPED">
+    <summary>
+      <para>The current app's view has been snapped (docked at one side of the screen in a narrow view).</para>
+    </summary>
+  </member>
+  <member name="APPLICATION_VIEW_STATE.AVS_FULLSCREEN_PORTRAIT">
+    <summary>
+      <para>The current app's view is full-screen (has no snapped app adjacent to it), and is in portrait orientation.</para>
+    </summary>
+  </member>
+</doc>

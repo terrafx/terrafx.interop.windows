@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXPANDBUTTONSTATES.xml' path='doc/member[@name="EXPANDBUTTONSTATES"]/*' />
 public enum EXPANDBUTTONSTATES
 {
+    /// <include file='EXPANDBUTTONSTATES.xml' path='doc/member[@name="EXPANDBUTTONSTATES.LVEB_NORMAL"]/*' />
     LVEB_NORMAL = 1,
+
+    /// <include file='EXPANDBUTTONSTATES.xml' path='doc/member[@name="EXPANDBUTTONSTATES.LVEB_HOVER"]/*' />
     LVEB_HOVER = 2,
+
+    /// <include file='EXPANDBUTTONSTATES.xml' path='doc/member[@name="EXPANDBUTTONSTATES.LVEB_PUSHED"]/*' />
     LVEB_PUSHED = 3,
 }

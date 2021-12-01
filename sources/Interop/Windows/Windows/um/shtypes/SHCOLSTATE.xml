@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHCOLSTATE">
+    <summary>
+      <para>Describes how a property should be treated. These values are defined in Shtypes.h.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_DEFAULT">
+    <summary>
+      <para>The value is displayed according to default settings for the column.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_TYPE_STR">
+    <summary>
+      <para>The value is displayed as a string.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_TYPE_INT">
+    <summary>
+      <para>The value is displayed as an integer.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_TYPE_DATE">
+    <summary>
+      <para>The value is displayed as a date/time.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_TYPEMASK">
+    <summary>
+      <para>A mask for display type values SHCOLSTATE_TYPE_STR, SHCOLSTATE_TYPE_STR, and SHCOLSTATE_TYPE_DATE.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_ONBYDEFAULT">
+    <summary>
+      <para>The column should be on by default in Details view.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_SLOW">
+    <summary>
+      <para>Will be slow to compute. Perform on a background thread.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_EXTENDED">
+    <summary>
+      <para>Provided by a handler, not the folder.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_SECONDARYUI">
+    <summary>
+      <para>Not displayed in the context menu, but is listed in the <b>More...</b> dialog.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_HIDDEN">
+    <summary>
+      <para>Not displayed in the UI.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_PREFER_VARCMP">
+    <summary>
+      <para>
+        <b>VarCmp</b> produces same result as <see cref="IShellFolder.CompareIDs" />.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_PREFER_FMTCMP">
+    <summary>
+      <para>
+        <see cref="PSFormatForDisplay" /> produces same result as <see cref="IShellFolder.CompareIDs" />.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_NOSORTBYFOLDERNESS">
+    <summary>
+      <para>Do not sort folders separately.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_VIEWONLY">
+    <summary>
+      <para>Only displayed in the UI.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_BATCHREAD">
+    <summary>
+      <para>Marks columns with values that should be read in a batch.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_NO_GROUPBY">
+    <summary>
+      <para>Grouping is disabled for this column.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_FIXED_WIDTH">
+    <summary>
+      <para>Can't resize the column.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_NODPISCALE">
+    <summary>
+      <para>The width is the same in all dpi.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_FIXED_RATIO">
+    <summary>
+      <para>Fixed width and height ratio.</para>
+    </summary>
+  </member>
+  <member name="SHCOLSTATE.SHCOLSTATE_DISPLAYMASK">
+    <summary>
+      <para>Filters out new display flags.</para>
+    </summary>
+  </member>
+</doc>

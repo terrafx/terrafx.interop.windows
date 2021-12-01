@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SOCKET_ADDRESS.xml' path='doc/member[@name="SOCKET_ADDRESS"]/*' />
 public unsafe partial struct SOCKET_ADDRESS
 {
+    /// <include file='SOCKET_ADDRESS.xml' path='doc/member[@name="SOCKET_ADDRESS.lpSockaddr"]/*' />
     [NativeTypeName("LPSOCKADDR")]
     public SOCKADDR* lpSockaddr;
 
+    /// <include file='SOCKET_ADDRESS.xml' path='doc/member[@name="SOCKET_ADDRESS.iSockaddrLength"]/*' />
     public int iSockaddrLength;
 }

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FINDEX_INFO_LEVELS">
+    <summary>
+      <para>Defines values that are used with the
+<see cref="FindFirstFileEx" /> function to specify the information
+level of the returned data.</para>
+    </summary>
+    <seealso cref="FindFirstFileEx" />
+    <seealso cref="WIN32_FIND_DATA" />
+  </member>
+  <member name="FINDEX_INFO_LEVELS.FindExInfoStandard">
+    <summary>
+      <para>The <see cref="FindFirstFileEx" /> function retrieves a
+standard set of attribute information. The data is returned in a
+<see cref="WIN32_FIND_DATA" /> structure.</para>
+    </summary>
+  </member>
+  <member name="FINDEX_INFO_LEVELS.FindExInfoBasic">
+    <summary>
+      <para>The <see cref="FindFirstFileEx" /> function does not query the short file name, improving overall enumeration speed. The data is returned in a
+<see cref="WIN32_FIND_DATA" /> structure, and the <b>cAlternateFileName</b></para>
+      <para>member is always a <b>NULL</b> string.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not supported until Windows Server 2008 R2 and Windows 7.</para>
+    </summary>
+  </member>
+  <member name="FINDEX_INFO_LEVELS.FindExInfoMaxInfoLevel">
+    <summary>
+      <para>This value is used for validation. Supported values are less than this value.</para>
+    </summary>
+  </member>
+</doc>

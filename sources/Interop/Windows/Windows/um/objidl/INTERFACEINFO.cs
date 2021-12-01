@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INTERFACEINFO.xml' path='doc/member[@name="INTERFACEINFO"]/*' />
 public unsafe partial struct INTERFACEINFO
 {
+    /// <include file='INTERFACEINFO.xml' path='doc/member[@name="INTERFACEINFO.pUnk"]/*' />
     public IUnknown* pUnk;
 
+    /// <include file='INTERFACEINFO.xml' path='doc/member[@name="INTERFACEINFO.iid"]/*' />
     [NativeTypeName("IID")]
     public Guid iid;
 
+    /// <include file='INTERFACEINFO.xml' path='doc/member[@name="INTERFACEINFO.wMethod"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMethod;
 }

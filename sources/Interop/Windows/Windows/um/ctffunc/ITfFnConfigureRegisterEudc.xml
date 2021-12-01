@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfFnConfigureRegisterEudc.Show">
+    <summary>
+      <para>The ITfFnConfigureRegisterEudc.Show method shows the EUDC key sequence register UI.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>[in] Handle of the parent window. The text service typically uses this as the parent or owner window when creating a dialog box.</para>
+    </param>
+    <param name="langid">
+      <para>[in] Contains a LANGID value that specifies the identifier of the language.</para>
+    </param>
+    <param name="rguidProfile">
+      <para>[in] Contains a GUID value that specifies the language profile identifier that the text service is under.</para>
+    </param>
+    <param name="bstrRegistered">
+      <para>[in, unique] Contains a BSTR that contains the EUDC to be registered with the text service. This is optional and can be <b>NULL</b>. If <b>NULL</b>, the text service should display a default register EUDC dialog box.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfFnConfigureRegisterEudc">
+    <summary>
+      <para>The <b>ITfFnConfigureRegisterEudc</b> interface is implemented by a text service to provide the UI to register the key sequence for the given EUDC.</para>
+    </summary>
+  </member>
+</doc>

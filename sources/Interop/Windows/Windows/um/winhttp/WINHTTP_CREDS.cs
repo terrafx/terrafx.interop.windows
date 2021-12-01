@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINHTTP_CREDS.xml' path='doc/member[@name="WINHTTP_CREDS"]/*' />
 public unsafe partial struct WINHTTP_CREDS
 {
+    /// <include file='WINHTTP_CREDS.xml' path='doc/member[@name="WINHTTP_CREDS.lpszUserName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpszUserName;
 
+    /// <include file='WINHTTP_CREDS.xml' path='doc/member[@name="WINHTTP_CREDS.lpszPassword"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpszPassword;
 
+    /// <include file='WINHTTP_CREDS.xml' path='doc/member[@name="WINHTTP_CREDS.lpszRealm"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpszRealm;
 
+    /// <include file='WINHTTP_CREDS.xml' path='doc/member[@name="WINHTTP_CREDS.dwAuthScheme"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAuthScheme;
 
+    /// <include file='WINHTTP_CREDS.xml' path='doc/member[@name="WINHTTP_CREDS.lpszHostName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpszHostName;
 
+    /// <include file='WINHTTP_CREDS.xml' path='doc/member[@name="WINHTTP_CREDS.dwPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPort;
 }

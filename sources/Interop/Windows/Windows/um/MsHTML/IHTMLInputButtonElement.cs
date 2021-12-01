@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement"]/*' />
 [Guid("3050F2B2-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLInputButtonElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, uint>)(lpVtbl[1]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, uint>)(lpVtbl[2]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, uint*, int>)(lpVtbl[3]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, ushort**, int>)(lpVtbl[7]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_value([NativeTypeName("BSTR")] ushort* v)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, ushort*, int>)(lpVtbl[8]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, ushort**, int>)(lpVtbl[9]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, ushort*, int>)(lpVtbl[10]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, ushort**, int>)(lpVtbl[11]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.put_status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_status(VARIANT v)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, VARIANT, int>)(lpVtbl[12]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.get_status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_status(VARIANT* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, VARIANT*, int>)(lpVtbl[13]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.put_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, short, int>)(lpVtbl[14]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.get_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, short*, int>)(lpVtbl[15]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.get_form"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_form(IHTMLFormElement** p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.I
         return ((delegate* unmanaged<IHTMLInputButtonElement*, IHTMLFormElement**, int>)(lpVtbl[16]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputButtonElement.xml' path='doc/member[@name="IHTMLInputButtonElement.createTextRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT createTextRange(IHTMLTxtRange** range)

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='KTMOBJECT_TYPE.xml' path='doc/member[@name="KTMOBJECT_TYPE"]/*' />
 public enum KTMOBJECT_TYPE
 {
+    /// <include file='KTMOBJECT_TYPE.xml' path='doc/member[@name="KTMOBJECT_TYPE.KTMOBJECT_TRANSACTION"]/*' />
     KTMOBJECT_TRANSACTION,
+
+    /// <include file='KTMOBJECT_TYPE.xml' path='doc/member[@name="KTMOBJECT_TYPE.KTMOBJECT_TRANSACTION_MANAGER"]/*' />
     KTMOBJECT_TRANSACTION_MANAGER,
+
+    /// <include file='KTMOBJECT_TYPE.xml' path='doc/member[@name="KTMOBJECT_TYPE.KTMOBJECT_RESOURCE_MANAGER"]/*' />
     KTMOBJECT_RESOURCE_MANAGER,
+
+    /// <include file='KTMOBJECT_TYPE.xml' path='doc/member[@name="KTMOBJECT_TYPE.KTMOBJECT_ENLISTMENT"]/*' />
     KTMOBJECT_ENLISTMENT,
+
+    /// <include file='KTMOBJECT_TYPE.xml' path='doc/member[@name="KTMOBJECT_TYPE.KTMOBJECT_INVALID"]/*' />
     KTMOBJECT_INVALID,
 }

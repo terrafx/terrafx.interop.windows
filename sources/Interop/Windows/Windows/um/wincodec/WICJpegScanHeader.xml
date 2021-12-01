@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICJpegScanHeader">
+    <summary>
+      <para>Represents a JPEG frame header.</para>
+    </summary>
+    <remarks>
+      <para>Get the scan header for an image by calling <see cref="IWICJpegFrameDecode.GetScanHeader" />.</para>
+    </remarks>
+  </member>
+  <member name="WICJpegScanHeader.cComponents">
+    <summary>
+      <para>The number of components in the scan.</para>
+    </summary>
+  </member>
+  <member name="WICJpegScanHeader.RestartInterval">
+    <summary>
+      <para>The interval of reset markers within the scan.</para>
+    </summary>
+  </member>
+  <member name="WICJpegScanHeader.ComponentSelectors">
+    <summary>
+      <para>The component identifiers.</para>
+    </summary>
+  </member>
+  <member name="WICJpegScanHeader.HuffmanTableIndices">
+    <summary>
+      <para>The format of the quantization table indices. Use one of the following constants, described in <a href="https://docs.microsoft.com//windows/desktop/wic/iwicjpegframedecode-constants">IWICJpegFrameDecode Constants</a>.</para>
+      <list type="bullet">
+        <item>
+          <description>WIC_JPEG_HUFFMAN_BASELINE_ONE</description>
+        </item>
+        <item>
+          <description>WIC_JPEG_HUFFMAN_BASELINE_THREE </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WICJpegScanHeader.StartSpectralSelection">
+    <summary>
+      <para>The start of the spectral selection.</para>
+    </summary>
+  </member>
+  <member name="WICJpegScanHeader.EndSpectralSelection">
+    <summary>
+      <para>The end of the spectral selection.</para>
+    </summary>
+  </member>
+  <member name="WICJpegScanHeader.SuccessiveApproximationHigh">
+    <summary>
+      <para>The successive approximation high.</para>
+    </summary>
+  </member>
+  <member name="WICJpegScanHeader.SuccessiveApproximationLow">
+    <summary>
+      <para>The successive approximation low.</para>
+    </summary>
+  </member>
+</doc>

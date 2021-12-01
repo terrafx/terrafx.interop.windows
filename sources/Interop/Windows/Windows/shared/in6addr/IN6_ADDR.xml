@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IN6_ADDR">
+    <summary>
+      <para>The IN6_ADDR structure specifies an IPv6 transport address.</para>
+    </summary>
+    <remarks>
+      <para>All members of the IN6_ADDR structure must be specified in network-byte-order (big-endian).</para>
+    </remarks>
+    <seealso cref="SOCKADDR_IN6" />
+  </member>
+  <member name="IN6_ADDR.u">
+    <summary>
+      <para>A union that contains the following different representations of the IPv6 transport
+address:</para>
+    </summary>
+  </member>
+  <member name="IN6_ADDR.u.Byte">
+    <summary>
+      <para>An array that contains 16 UCHAR-typed values.</para>
+    </summary>
+  </member>
+  <member name="IN6_ADDR.u.Word">
+    <summary>
+      <para>An array that contains eight USHORT-typed values.</para>
+    </summary>
+  </member>
+</doc>

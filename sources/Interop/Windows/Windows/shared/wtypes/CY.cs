@@ -8,17 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CY.xml' path='doc/member[@name="CY"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct CY
 {
+    /// <include file='CY.xml' path='doc/member[@name="CY.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("tagCY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:679:5)")]
     public _Anonymous_e__Struct Anonymous;
 
+    /// <include file='CY.xml' path='doc/member[@name="CY.int64"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("LONGLONG")]
     public long int64;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Lo"]/*' />
     public ref uint Lo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -28,6 +32,7 @@ public partial struct CY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Hi"]/*' />
     public ref int Hi
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,11 +42,14 @@ public partial struct CY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Lo"]/*' />
         [NativeTypeName("ULONG")]
         public uint Lo;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Hi"]/*' />
         [NativeTypeName("LONG")]
         public int Hi;
     }

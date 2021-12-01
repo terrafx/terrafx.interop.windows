@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR">
+    <summary>
+      <para>Used in conjunction with the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code to
+retrieve the storage access alignment descriptor data for a device.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+  </member>
+  <member name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.Version">
+    <summary>
+      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
+the structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.Size">
+    <summary>
+      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
+structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.BytesPerCacheLine">
+    <summary>
+      <para>The number of bytes in a cache line of the device.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.BytesOffsetForCacheAlignment">
+    <summary>
+      <para>The address offset necessary for proper cache access alignment, in bytes.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.BytesPerLogicalSector">
+    <summary>
+      <para>The number of bytes in a logical sector of the device.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.BytesPerPhysicalSector">
+    <summary>
+      <para>The number of bytes in a physical sector of the device.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.BytesOffsetForSectorAlignment">
+    <summary>
+      <para>The logical sector offset within the first physical sector where the first logical sector is placed, in bytes.</para>
+      <para>Example:  Offset = 3 Logical sectors</para>
+      <code>+---------+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|LBA      |##|##|##|00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|
++---------+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|Physical |                       |                       |                ...
+|Sector   |           0           |           1           |           2
++---------+-----------------------+-----------------------+---------------
+</code>
+      <para>In this example, <code>BytesOffsetForSectorAlignment = 3 * BytesPerLogicalSector</code>.</para>
+    </summary>
+  </member>
+</doc>

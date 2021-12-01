@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NET_IF_ACCESS_TYPE">
+    <summary>
+      <para>The NET_IF_ACCESS_TYPE enumeration type specifies the
+<a href="https://docs.microsoft.com//windows-hardware/drivers/network/ndis-network-interfaces2">NDIS network interface</a> access
+type.</para>
+    </summary>
+  </member>
+  <member name="NET_IF_ACCESS_TYPE.NET_IF_ACCESS_LOOPBACK">
+    <summary>
+      <para>Specifies the loopback access type. This access type indicates that the interface loops back
+transmit data as receive data.</para>
+    </summary>
+  </member>
+  <member name="NET_IF_ACCESS_TYPE.NET_IF_ACCESS_BROADCAST">
+    <summary>
+      <para>Specifies the LAN access type, which includes Ethernet. This access type indicates that the
+interface provides native support for multicast or broadcast services.</para>
+    </summary>
+  </member>
+  <member name="NET_IF_ACCESS_TYPE.NET_IF_ACCESS_POINT_TO_POINT">
+    <summary>
+      <para>Specifies point-to-point access that supports CoNDIS and WAN, except for non-broadcast
+multi-access (NBMA) interfaces.</para>
+    </summary>
+  </member>
+  <member name="NET_IF_ACCESS_TYPE.NET_IF_ACCESS_POINT_TO_MULTI_POINT">
+    <summary>
+      <para>Specifies point-to-multipoint access that supports non-broadcast multi-access (NBMA) media,
+including the "RAS Internal" interface, and native (non-LANE) ATM.</para>
+    </summary>
+  </member>
+  <member name="NET_IF_ACCESS_TYPE.NET_IF_ACCESS_MAXIMUM">
+    <summary>
+      <para>A maximum value for testing purposes.</para>
+    </summary>
+  </member>
+</doc>

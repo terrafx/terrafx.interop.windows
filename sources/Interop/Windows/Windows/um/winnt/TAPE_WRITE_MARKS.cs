@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TAPE_WRITE_MARKS.xml' path='doc/member[@name="TAPE_WRITE_MARKS"]/*' />
 public partial struct TAPE_WRITE_MARKS
 {
+    /// <include file='TAPE_WRITE_MARKS.xml' path='doc/member[@name="TAPE_WRITE_MARKS.Type"]/*' />
     [NativeTypeName("DWORD")]
     public uint Type;
 
+    /// <include file='TAPE_WRITE_MARKS.xml' path='doc/member[@name="TAPE_WRITE_MARKS.Count"]/*' />
     [NativeTypeName("DWORD")]
     public uint Count;
 
+    /// <include file='TAPE_WRITE_MARKS.xml' path='doc/member[@name="TAPE_WRITE_MARKS.Immediate"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Immediate;
 }

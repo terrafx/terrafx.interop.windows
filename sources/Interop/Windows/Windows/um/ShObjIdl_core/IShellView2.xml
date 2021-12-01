@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellView2.CreateViewWindow2">
+    <summary>
+      <para>Used to request the creation of a new Shell view window. It can be either the right pane of Windows Explorer or the client window of a folder window.</para>
+    </summary>
+    <param name="lpParams">
+      <para>Type: <b>LPSV2CVW2_PARAMS</b></para>
+      <para>A pointer to an <see cref="SV2CVW2_PARAMS" /> structure that defines the new view window.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns a success code if successful, or a COM error code otherwise. Use the <see cref="SUCCEEDED" /> and <see cref="FAILED" /> macros to determine whether the operation succeeded or failed.</para>
+    </returns>
+    <remarks>
+      <para>This method supersedes <see cref="CreateViewWindow" />. With <b>CreateViewWindow2</b>, developers are not restricted to the standard view modes provided by <b>CreateViewWindow</b>, but may also create their own. All view modes are now identified by their GUID.</para>
+      <para>The size of the structure, previous view window, folder settings, parent Shell browser, and view rectangle are passed into <b>IShellView2.CreateViewWindow2</b> in the first five members of <i>lpParams</i>. The method is responsible for creating the new window and passing back its window handle and the GUID of the view mode in the last two parameters. <b>IShellView2.CreateViewWindow2</b> should call the parent browser's <see cref="IShellBrowser.AddRef" /> method and store the interface pointer. It can be used for communication with the Windows Explorer window.</para>
+    </remarks>
+    <seealso cref="IShellView2" />
+    <seealso cref="IShellView2.GetView" />
+  </member>
+  <member name="IShellView2.GetView">
+    <summary>
+      <para>Requests the current or default Shell view, together with all other valid view identifiers (VIDs) supported by this implementation of <see cref="IShellView2" />.</para>
+    </summary>
+    <param name="pvid">
+      <para>Type: <b>SHELLVIEWID*</b></para>
+      <para>A pointer to the GUID of the requested view. The following views are defined in Shlguid.h.</para>
+      <h4>VID_LargeIcons</h4>
+      <para>{0057D0E0-3573-11CF-AE69-08002B2E1262}</para>
+      <h4>VID_SmallIcons</h4>
+      <para>{089000C0-3573-11CF-AE69-08002B2E1262}</para>
+      <h4>VID_List</h4>
+      <para>{0E1FA5E0-3573-11CF-AE69-08002B2E1262}</para>
+      <h4>VID_Details</h4>
+      <para>{137E7700-3573-11CF-AE69-08002B2E1262}</para>
+      <h4>VID_Tile</h4>
+      <para>{65F125E5-7BE1-4810-BA9D-D271C8432CE3}</para>
+    </param>
+    <param name="uView">
+      <para>Type: <b>ULONG</b></para>
+      <para>The type of view requested.</para>
+      <h4>SV2GV_CURRENTVIEW</h4>
+      <para>Current Shell view.</para>
+      <h4>SV2GV_DEFAULTVIEW</h4>
+      <para>Default Shell view.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a standard COM error code otherwise.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IShellView2.GetView</b> retrieves a "viewset", which is the requested view (default or current) together with all other valid views for this instance of <see cref="IShellView2" />. Calling <b>IShellView2.GetView</b> with the <b>SV2GV_CURRENTVIEW</b> returns a GUID representing the current view and also iterates through the valid VIDs. This information is stored for later use in validating a new view before it is displayed.</para>
+      <para>The view can also be affected by other factors. A global user default VID and <see cref="view mode" /> is set  when the user presses the <b>Apply to All Folders</b> button in the <b>Folder Options</b> window. The VID is determined from <b>IShellView2.GetView</b> with the <b>SV2GV_CURRENTVIEW</b> flag
+and  the view mode is determined from <see cref="GetCurrentInfo" />. The view can also be affected by the persisted folder default. Windows Explorer saves the VID and view mode of a folder if the user has previously visited it. In some cases, the folder you are navigating from also can influence the view mode created for the new view that you are entering.</para>
+      <para>The priority of these assorted views can be generally said to be the following:</para>
+      <list type="number">
+        <item>
+          <description>Persisted folder default</description>
+        </item>
+        <item>
+          <description>Global user default</description>
+        </item>
+        <item>
+          <description>Default view (SV2GV_DEFAULTVIEW)</description>
+        </item>
+        <item>
+          <description>Previous view</description>
+        </item>
+      </list>
+      <para>The priority of the previous view can be higher if the <b>Remember each folder's view settings</b> option is not selected in <b>Folder Options</b>. Other factors such as policies can also come into play, so the list above should be viewed only as a very broad guideline.</para>
+    </remarks>
+  </member>
+  <member name="IShellView2.HandleRename">
+    <summary>
+      <para>Used to change an item's identifier.</para>
+    </summary>
+    <param name="pidlNew">
+      <para>Type: <b>PCUITEMID_CHILD</b></para>
+      <para>A pointer to an <see cref="ITEMIDLIST" /> structure. The current identifier is passed in and is replaced by the new one.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if successful, or a COM-defined error code otherwise.</para>
+    </returns>
+  </member>
+  <member name="IShellView2.SelectAndPositionItem">
+    <summary>
+      <para>Selects and positions an item in a Shell View.</para>
+    </summary>
+    <param name="pidlItem">
+      <para>Type: <b>PCUITEMID_CHILD</b></para>
+      <para>A pointer to an <see cref="ITEMIDLIST" /> structure that uniquely identifies the item of interest.</para>
+    </param>
+    <param name="uFlags">
+      <para>Type: <b>UINT</b></para>
+      <para>One of the <see cref="_SVSIF" /> constants that specify the type of selection to apply.</para>
+    </param>
+    <param name="ppt">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure containing the new position.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellView2">
+    <summary>
+      <para>Extends the capabilities of <see cref="IShellView" />.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IShellView" /> interface, from which it inherits.</para>
+      <h3>When to Implement</h3>
+      <para>Implement <b>IShellView2</b> if your namespace extension provides services to clients beyond those in <see cref="IShellView" />.</para>
+      <h3>When to Use</h3>
+      <para>You do not call this interface directly. <b>IShellView2</b> is used by the operating system only when it has confirmed that your application is aware of this interface. Objects that expose <see cref="IShellView" /> and <b>IShellView2</b> are usually created by other Shell folder objects.</para>
+    </remarks>
+  </member>
+</doc>

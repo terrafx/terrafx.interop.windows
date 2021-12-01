@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICDdsFrameDecode.xml' path='doc/member[@name="IWICDdsFrameDecode"]/*' />
 [Guid("3D4C0C61-18A4-41E4-BD80-481A4FC9F464")]
 [NativeTypeName("struct IWICDdsFrameDecode : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IWICDdsFrameDecode : IWICDdsFrameDecode.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IWICDdsFrameDecode : IWICDdsFrameDecode.Interface
         return ((delegate* unmanaged<IWICDdsFrameDecode*, Guid*, void**, int>)(lpVtbl[0]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IWICDdsFrameDecode : IWICDdsFrameDecode.Interface
         return ((delegate* unmanaged<IWICDdsFrameDecode*, uint>)(lpVtbl[1]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IWICDdsFrameDecode : IWICDdsFrameDecode.Interface
         return ((delegate* unmanaged<IWICDdsFrameDecode*, uint>)(lpVtbl[2]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWICDdsFrameDecode.xml' path='doc/member[@name="IWICDdsFrameDecode.GetSizeInBlocks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSizeInBlocks(uint* pWidthInBlocks, uint* pHeightInBlocks)
@@ -48,6 +53,7 @@ public unsafe partial struct IWICDdsFrameDecode : IWICDdsFrameDecode.Interface
         return ((delegate* unmanaged<IWICDdsFrameDecode*, uint*, uint*, int>)(lpVtbl[3]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), pWidthInBlocks, pHeightInBlocks);
     }
 
+    /// <include file='IWICDdsFrameDecode.xml' path='doc/member[@name="IWICDdsFrameDecode.GetFormatInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFormatInfo(WICDdsFormatInfo* pFormatInfo)
@@ -55,6 +61,7 @@ public unsafe partial struct IWICDdsFrameDecode : IWICDdsFrameDecode.Interface
         return ((delegate* unmanaged<IWICDdsFrameDecode*, WICDdsFormatInfo*, int>)(lpVtbl[4]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), pFormatInfo);
     }
 
+    /// <include file='IWICDdsFrameDecode.xml' path='doc/member[@name="IWICDdsFrameDecode.CopyBlocks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CopyBlocks([NativeTypeName("const WICRect *")] WICRect* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer)

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_COMPOSITE_PROP.xml' path='doc/member[@name="D2D1_COMPOSITE_PROP"]/*' />
 public enum D2D1_COMPOSITE_PROP : uint
 {
+    /// <include file='D2D1_COMPOSITE_PROP.xml' path='doc/member[@name="D2D1_COMPOSITE_PROP.D2D1_COMPOSITE_PROP_MODE"]/*' />
     D2D1_COMPOSITE_PROP_MODE = 0,
+
+    /// <include file='D2D1_COMPOSITE_PROP.xml' path='doc/member[@name="D2D1_COMPOSITE_PROP.D2D1_COMPOSITE_PROP_FORCE_DWORD"]/*' />
     D2D1_COMPOSITE_PROP_FORCE_DWORD = 0xffffffff,
 }

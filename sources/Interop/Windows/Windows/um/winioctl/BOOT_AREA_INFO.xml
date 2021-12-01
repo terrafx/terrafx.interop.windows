@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BOOT_AREA_INFO">
+    <summary>
+      <para>Contains the output for the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_boot_area_info">FSCTL_GET_BOOT_AREA_INFO</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_boot_area_info">FSCTL_GET_BOOT_AREA_INFO</seealso>
+  </member>
+  <member name="BOOT_AREA_INFO.BootSectorCount">
+    <summary>
+      <para>Number of elements in the <b>BootSectors</b> array.</para>
+    </summary>
+  </member>
+  <member name="BOOT_AREA_INFO.Offset">
+    <summary></summary>
+  </member>
+  <member name="BOOT_AREA_INFO.BootSectors">
+    <summary>
+      <para>A variable length array of structures each containing the following member.</para>
+      <h4>Offset</h4>
+      <para>The location of a boot sector or a copy of a boot sector.</para>
+    </summary>
+  </member>
+</doc>

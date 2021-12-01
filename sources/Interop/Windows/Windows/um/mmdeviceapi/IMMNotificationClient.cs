@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient"]/*' />
 [Guid("7991EEC9-7E89-4D85-8390-6C703CEC60C0")]
 [NativeTypeName("struct IMMNotificationClient : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
         return ((delegate* unmanaged<IMMNotificationClient*, Guid*, void**, int>)(lpVtbl[0]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
         return ((delegate* unmanaged<IMMNotificationClient*, uint>)(lpVtbl[1]))((IMMNotificationClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
         return ((delegate* unmanaged<IMMNotificationClient*, uint>)(lpVtbl[2]))((IMMNotificationClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.OnDeviceStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnDeviceStateChanged([NativeTypeName("LPCWSTR")] ushort* pwstrDeviceId, [NativeTypeName("DWORD")] uint dwNewState)
@@ -46,6 +51,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
         return ((delegate* unmanaged<IMMNotificationClient*, ushort*, uint, int>)(lpVtbl[3]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId, dwNewState);
     }
 
+    /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.OnDeviceAdded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnDeviceAdded([NativeTypeName("LPCWSTR")] ushort* pwstrDeviceId)
@@ -53,6 +59,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
         return ((delegate* unmanaged<IMMNotificationClient*, ushort*, int>)(lpVtbl[4]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId);
     }
 
+    /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.OnDeviceRemoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnDeviceRemoved([NativeTypeName("LPCWSTR")] ushort* pwstrDeviceId)
@@ -60,6 +67,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
         return ((delegate* unmanaged<IMMNotificationClient*, ushort*, int>)(lpVtbl[5]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId);
     }
 
+    /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.OnDefaultDeviceChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnDefaultDeviceChanged(EDataFlow flow, ERole role, [NativeTypeName("LPCWSTR")] ushort* pwstrDefaultDeviceId)
@@ -67,6 +75,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
         return ((delegate* unmanaged<IMMNotificationClient*, EDataFlow, ERole, ushort*, int>)(lpVtbl[6]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), flow, role, pwstrDefaultDeviceId);
     }
 
+    /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.OnPropertyValueChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnPropertyValueChanged([NativeTypeName("LPCWSTR")] ushort* pwstrDeviceId, [NativeTypeName("const PROPERTYKEY")] PROPERTYKEY key)

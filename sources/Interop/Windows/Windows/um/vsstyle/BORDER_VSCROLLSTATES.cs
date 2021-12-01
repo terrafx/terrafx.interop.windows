@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BORDER_VSCROLLSTATES.xml' path='doc/member[@name="BORDER_VSCROLLSTATES"]/*' />
 public enum BORDER_VSCROLLSTATES
 {
+    /// <include file='BORDER_VSCROLLSTATES.xml' path='doc/member[@name="BORDER_VSCROLLSTATES.LBPSV_NORMAL"]/*' />
     LBPSV_NORMAL = 1,
+
+    /// <include file='BORDER_VSCROLLSTATES.xml' path='doc/member[@name="BORDER_VSCROLLSTATES.LBPSV_FOCUSED"]/*' />
     LBPSV_FOCUSED = 2,
+
+    /// <include file='BORDER_VSCROLLSTATES.xml' path='doc/member[@name="BORDER_VSCROLLSTATES.LBPSV_HOT"]/*' />
     LBPSV_HOT = 3,
+
+    /// <include file='BORDER_VSCROLLSTATES.xml' path='doc/member[@name="BORDER_VSCROLLSTATES.LBPSV_DISABLED"]/*' />
     LBPSV_DISABLED = 4,
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WRITE_THROUGH.xml' path='doc/member[@name="WRITE_THROUGH"]/*' />
 public enum WRITE_THROUGH
 {
+    /// <include file='WRITE_THROUGH.xml' path='doc/member[@name="WRITE_THROUGH.WriteThroughUnknown"]/*' />
     WriteThroughUnknown,
+
+    /// <include file='WRITE_THROUGH.xml' path='doc/member[@name="WRITE_THROUGH.WriteThroughNotSupported"]/*' />
     WriteThroughNotSupported,
+
+    /// <include file='WRITE_THROUGH.xml' path='doc/member[@name="WRITE_THROUGH.WriteThroughSupported"]/*' />
     WriteThroughSupported,
 }

@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BUTTON_IMAGELIST.xml' path='doc/member[@name="BUTTON_IMAGELIST"]/*' />
 public partial struct BUTTON_IMAGELIST
 {
+    /// <include file='BUTTON_IMAGELIST.xml' path='doc/member[@name="BUTTON_IMAGELIST.himl"]/*' />
     public HIMAGELIST himl;
 
+    /// <include file='BUTTON_IMAGELIST.xml' path='doc/member[@name="BUTTON_IMAGELIST.margin"]/*' />
     public RECT margin;
 
+    /// <include file='BUTTON_IMAGELIST.xml' path='doc/member[@name="BUTTON_IMAGELIST.uAlign"]/*' />
     public uint uAlign;
 }

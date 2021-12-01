@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WIN_SPUB_TRUSTED_PUBLISHER_DATA.xml' path='doc/member[@name="WIN_SPUB_TRUSTED_PUBLISHER_DATA"]/*' />
 public unsafe partial struct WIN_SPUB_TRUSTED_PUBLISHER_DATA
 {
+    /// <include file='WIN_SPUB_TRUSTED_PUBLISHER_DATA.xml' path='doc/member[@name="WIN_SPUB_TRUSTED_PUBLISHER_DATA.hClientToken"]/*' />
     public HANDLE hClientToken;
 
+    /// <include file='WIN_SPUB_TRUSTED_PUBLISHER_DATA.xml' path='doc/member[@name="WIN_SPUB_TRUSTED_PUBLISHER_DATA.lpCertificate"]/*' />
     [NativeTypeName("LPWIN_CERTIFICATE")]
     public WIN_CERTIFICATE* lpCertificate;
 }

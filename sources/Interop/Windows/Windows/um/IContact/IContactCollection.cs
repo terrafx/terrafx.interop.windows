@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IContactCollection.xml' path='doc/member[@name="IContactCollection"]/*' />
 [Guid("B6AFA338-D779-11D9-8BDE-F66BAD1E3F3A")]
 [NativeTypeName("struct IContactCollection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IContactCollection : IContactCollection.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IContactCollection : IContactCollection.Interface
         return ((delegate* unmanaged<IContactCollection*, Guid*, void**, int>)(lpVtbl[0]))((IContactCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IContactCollection : IContactCollection.Interface
         return ((delegate* unmanaged<IContactCollection*, uint>)(lpVtbl[1]))((IContactCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IContactCollection : IContactCollection.Interface
         return ((delegate* unmanaged<IContactCollection*, uint>)(lpVtbl[2]))((IContactCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IContactCollection.xml' path='doc/member[@name="IContactCollection.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Reset()
@@ -46,6 +51,7 @@ public unsafe partial struct IContactCollection : IContactCollection.Interface
         return ((delegate* unmanaged<IContactCollection*, int>)(lpVtbl[3]))((IContactCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IContactCollection.xml' path='doc/member[@name="IContactCollection.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next()
@@ -53,6 +59,7 @@ public unsafe partial struct IContactCollection : IContactCollection.Interface
         return ((delegate* unmanaged<IContactCollection*, int>)(lpVtbl[4]))((IContactCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IContactCollection.xml' path='doc/member[@name="IContactCollection.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCurrent(IContact** ppContact)

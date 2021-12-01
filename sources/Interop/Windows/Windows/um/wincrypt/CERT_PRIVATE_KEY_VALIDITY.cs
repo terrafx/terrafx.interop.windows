@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_PRIVATE_KEY_VALIDITY.xml' path='doc/member[@name="CERT_PRIVATE_KEY_VALIDITY"]/*' />
 public partial struct CERT_PRIVATE_KEY_VALIDITY
 {
+    /// <include file='CERT_PRIVATE_KEY_VALIDITY.xml' path='doc/member[@name="CERT_PRIVATE_KEY_VALIDITY.NotBefore"]/*' />
     public FILETIME NotBefore;
 
+    /// <include file='CERT_PRIVATE_KEY_VALIDITY.xml' path='doc/member[@name="CERT_PRIVATE_KEY_VALIDITY.NotAfter"]/*' />
     public FILETIME NotAfter;
 }

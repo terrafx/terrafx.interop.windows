@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIXERCAPS">
+    <summary>
+      <para>The <b>MIXERCAPS</b> structure describes the capabilities of a mixer device.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixer-structures">Audio Mixer Structures</seealso>
+    <seealso cref="MIXERLINE" />
+  </member>
+  <member name="MIXERCAPS.wMid">
+    <summary>
+      <para>A manufacturer identifier for the mixer device driver. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.wPid">
+    <summary>
+      <para>A product identifier for the mixer device driver. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.vDriverVersion">
+    <summary>
+      <para>Version number of the mixer device driver. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.szPname">
+    <summary>
+      <para>Name of the product. If the mixer device driver supports multiple cards, this string must uniquely and easily identify (potentially to a user) the specific card.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.fdwSupport">
+    <summary>
+      <para>Various support information for the mixer device driver. No extended support bits are currently defined.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.cDestinations">
+    <summary>
+      <para>The number of audio line destinations available through the mixer device. All mixer devices must support at least one destination line, so this member cannot be zero. Destination indexes used in the <b>dwDestination</b> member of the <see cref="MIXERLINE" /> structure range from zero to the value specified in the <b>cDestinations</b> member minus one.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS">
+    <summary>
+      <para>The <b>MIXERCAPS</b> structure describes the capabilities of a mixer device.</para>
+    </summary>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The mmeapi.h header defines MIXERCAPS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixer-structures">Audio Mixer Structures</seealso>
+    <seealso cref="MIXERLINE" />
+  </member>
+  <member name="MIXERCAPS.wMid">
+    <summary>
+      <para>A manufacturer identifier for the mixer device driver. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.wPid">
+    <summary>
+      <para>A product identifier for the mixer device driver. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.vDriverVersion">
+    <summary>
+      <para>Version number of the mixer device driver. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.szPname">
+    <summary>
+      <para>Name of the product. If the mixer device driver supports multiple cards, this string must uniquely and easily identify (potentially to a user) the specific card.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.fdwSupport">
+    <summary>
+      <para>Various support information for the mixer device driver. No extended support bits are currently defined.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.cDestinations">
+    <summary>
+      <para>The number of audio line destinations available through the mixer device. All mixer devices must support at least one destination line, so this member cannot be zero. Destination indexes used in the <b>dwDestination</b> member of the <see cref="MIXERLINE" /> structure range from zero to the value specified in the <b>cDestinations</b> member minus one.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS">
+    <summary>
+      <para>The <b>MIXERCAPS</b> structure describes the capabilities of a mixer device.</para>
+    </summary>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The mmeapi.h header defines MIXERCAPS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/audio-mixer-structures">Audio Mixer Structures</seealso>
+    <seealso cref="MIXERLINE" />
+  </member>
+  <member name="MIXERCAPS.wMid">
+    <summary>
+      <para>A manufacturer identifier for the mixer device driver. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.wPid">
+    <summary>
+      <para>A product identifier for the mixer device driver. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.vDriverVersion">
+    <summary>
+      <para>Version number of the mixer device driver. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.szPname">
+    <summary>
+      <para>Name of the product. If the mixer device driver supports multiple cards, this string must uniquely and easily identify (potentially to a user) the specific card.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.fdwSupport">
+    <summary>
+      <para>Various support information for the mixer device driver. No extended support bits are currently defined.</para>
+    </summary>
+  </member>
+  <member name="MIXERCAPS.cDestinations">
+    <summary>
+      <para>The number of audio line destinations available through the mixer device. All mixer devices must support at least one destination line, so this member cannot be zero. Destination indexes used in the <b>dwDestination</b> member of the <see cref="MIXERLINE" /> structure range from zero to the value specified in the <b>cDestinations</b> member minus one.</para>
+    </summary>
+  </member>
+</doc>

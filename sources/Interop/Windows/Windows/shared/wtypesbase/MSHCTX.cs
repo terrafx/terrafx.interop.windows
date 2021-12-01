@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSHCTX.xml' path='doc/member[@name="MSHCTX"]/*' />
 public enum MSHCTX
 {
+    /// <include file='MSHCTX.xml' path='doc/member[@name="MSHCTX.MSHCTX_LOCAL"]/*' />
     MSHCTX_LOCAL = 0,
+
+    /// <include file='MSHCTX.xml' path='doc/member[@name="MSHCTX.MSHCTX_NOSHAREDMEM"]/*' />
     MSHCTX_NOSHAREDMEM = 1,
+
+    /// <include file='MSHCTX.xml' path='doc/member[@name="MSHCTX.MSHCTX_DIFFERENTMACHINE"]/*' />
     MSHCTX_DIFFERENTMACHINE = 2,
+
+    /// <include file='MSHCTX.xml' path='doc/member[@name="MSHCTX.MSHCTX_INPROC"]/*' />
     MSHCTX_INPROC = 3,
+
+    /// <include file='MSHCTX.xml' path='doc/member[@name="MSHCTX.MSHCTX_CROSSCTX"]/*' />
     MSHCTX_CROSSCTX = 4,
+
+    /// <include file='MSHCTX.xml' path='doc/member[@name="MSHCTX.MSHCTX_CONTAINER"]/*' />
     MSHCTX_CONTAINER = 5,
 }

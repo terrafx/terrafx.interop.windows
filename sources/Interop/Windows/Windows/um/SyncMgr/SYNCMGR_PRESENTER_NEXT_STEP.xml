@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_PRESENTER_NEXT_STEP">
+    <summary>
+      <para>Describes the next step that is to occur in sync manager conflict resolution. Used by <see cref="ISyncMgrConflictPresenter" />.</para>
+    </summary>
+    <seealso cref="ISyncMgrConflictResolveInfo.GetPresenterNextStep" />
+    <seealso cref="ISyncMgrConflictResolveInfo.SetPresenterNextStep" />
+  </member>
+  <member name="SYNCMGR_PRESENTER_NEXT_STEP.SYNCMGR_PNS_CONTINUE">
+    <summary>
+      <para>The conflict has been resolved and subsequent
+selected conflicts should continue to be resolved.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_PRESENTER_NEXT_STEP.SYNCMGR_PNS_DEFAULT">
+    <summary>
+      <para>The default conflict presenter should be used.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_PRESENTER_NEXT_STEP.SYNCMGR_PNS_CANCEL">
+    <summary>
+      <para>All conflict resolution should be canceled.</para>
+    </summary>
+  </member>
+</doc>

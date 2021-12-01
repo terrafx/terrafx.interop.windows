@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_ZONE_TYPES.xml' path='doc/member[@name="STORAGE_ZONE_TYPES"]/*' />
 public enum STORAGE_ZONE_TYPES
 {
+    /// <include file='STORAGE_ZONE_TYPES.xml' path='doc/member[@name="STORAGE_ZONE_TYPES.ZoneTypeUnknown"]/*' />
     ZoneTypeUnknown = 0,
+
+    /// <include file='STORAGE_ZONE_TYPES.xml' path='doc/member[@name="STORAGE_ZONE_TYPES.ZoneTypeConventional"]/*' />
     ZoneTypeConventional = 1,
+
+    /// <include file='STORAGE_ZONE_TYPES.xml' path='doc/member[@name="STORAGE_ZONE_TYPES.ZoneTypeSequentialWriteRequired"]/*' />
     ZoneTypeSequentialWriteRequired = 2,
+
+    /// <include file='STORAGE_ZONE_TYPES.xml' path='doc/member[@name="STORAGE_ZONE_TYPES.ZoneTypeSequentialWritePreferred"]/*' />
     ZoneTypeSequentialWritePreferred = 3,
+
+    /// <include file='STORAGE_ZONE_TYPES.xml' path='doc/member[@name="STORAGE_ZONE_TYPES.ZoneTypeMax"]/*' />
     ZoneTypeMax,
 }

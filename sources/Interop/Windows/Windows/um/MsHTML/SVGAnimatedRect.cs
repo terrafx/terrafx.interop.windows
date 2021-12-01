@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGAnimatedRect.xml' path='doc/member[@name="SVGAnimatedRect"]/*' />
 [Guid("30510586-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGAnimatedRect
 {

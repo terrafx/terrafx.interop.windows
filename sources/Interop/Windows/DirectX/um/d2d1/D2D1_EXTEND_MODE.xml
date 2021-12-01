@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_EXTEND_MODE">
+    <summary>
+      <para>Specifies how a brush paints areas outside of its normal content area.</para>
+    </summary>
+    <remarks>
+      <para>For an <see cref="ID2D1BitmapBrush" />, the brush's content is the brush's bitmap. For an <see cref="ID2D1LinearGradientBrush" />, the brush's content area is the gradient axis. For an <see cref="ID2D1RadialGradientBrush" />, the brush's content is the area within the gradient ellipse.</para>
+    </remarks>
+    <seealso cref="ID2D1BitmapBrush.SetExtendModeX" />
+    <seealso cref="ID2D1BitmapBrush.SetExtendModeY" />
+    <seealso cref="ID2D1RenderTarget.CreateGradientStopCollection" />
+  </member>
+  <member name="D2D1_EXTEND_MODE.D2D1_EXTEND_MODE_CLAMP">
+    <summary>
+      <para>Repeat the edge pixels of the brush's content for all regions outside the normal content area.</para>
+    </summary>
+  </member>
+  <member name="D2D1_EXTEND_MODE.D2D1_EXTEND_MODE_WRAP">
+    <summary>
+      <para>Repeat the brush's content.</para>
+    </summary>
+  </member>
+  <member name="D2D1_EXTEND_MODE.D2D1_EXTEND_MODE_MIRROR">
+    <summary>
+      <para>The same as D2D1_EXTEND_MODE_WRAP, except that alternate tiles of the brush's content are flipped. (The brush's normal content is drawn untransformed.)</para>
+    </summary>
+  </member>
+  <member name="D2D1_EXTEND_MODE.D2D1_EXTEND_MODE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

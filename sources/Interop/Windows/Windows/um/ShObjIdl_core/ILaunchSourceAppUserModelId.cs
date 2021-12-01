@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ILaunchSourceAppUserModelId.xml' path='doc/member[@name="ILaunchSourceAppUserModelId"]/*' />
 [Guid("989191AC-28FF-4CF0-9584-E0D078BC2396")]
 [NativeTypeName("struct ILaunchSourceAppUserModelId : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ILaunchSourceAppUserModelId : ILaunchSourceAppUserM
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ILaunchSourceAppUserModelId : ILaunchSourceAppUserM
         return ((delegate* unmanaged<ILaunchSourceAppUserModelId*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchSourceAppUserModelId*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ILaunchSourceAppUserModelId : ILaunchSourceAppUserM
         return ((delegate* unmanaged<ILaunchSourceAppUserModelId*, uint>)(lpVtbl[1]))((ILaunchSourceAppUserModelId*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ILaunchSourceAppUserModelId : ILaunchSourceAppUserM
         return ((delegate* unmanaged<ILaunchSourceAppUserModelId*, uint>)(lpVtbl[2]))((ILaunchSourceAppUserModelId*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILaunchSourceAppUserModelId.xml' path='doc/member[@name="ILaunchSourceAppUserModelId.GetAppUserModelId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] ushort** launchingApp)

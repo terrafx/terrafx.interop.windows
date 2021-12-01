@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontFile.Analyze">
+    <summary>
+      <para>Analyzes a file and returns whether it represents a font, and whether the font type is supported by the font system.</para>
+    </summary>
+    <param name="isSupportedFontType">
+      <para>Type: <b>BOOL*</b></para>
+      <para>
+        <b>TRUE</b> if the font type is supported by the font system; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <param name="fontFileType">
+      <para>Type: <b><see cref="DWRITE_FONT_FILE_TYPE" />*</b></para>
+      <para>When this method returns, contains a value that indicates the type of the font file. Note that even if <i> isSupportedFontType</i> is <b>FALSE</b>,
+the <i>fontFileType</i> value may be different from <b>DWRITE_FONT_FILE_TYPE_UNKNOWN</b>.</para>
+    </param>
+    <param name="fontFaceType">
+      <para>Type: <b><see cref="DWRITE_FONT_FACE_TYPE" />*</b></para>
+      <para>When this method returns, contains a value that indicates the type of the font face. If <i>fontFileType</i> is not equal to <b>DWRITE_FONT_FILE_TYPE_UNKNOWN</b>, then that can be constructed from the font file.</para>
+    </param>
+    <param name="numberOfFaces">
+      <para>Type: <b>UINT32*</b></para>
+      <para>When this method returns, contains the number of font faces contained in the font file.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Important</b>  Certain font file types are recognized, but not supported by the font system.
+For example, the font system will recognize a file as a Type 1 font file
+but will not be able to construct a font face object from it. In such situations, <b>Analyze</b> will set
+<i>isSupportedFontType</i> output parameter to <b>FALSE</b>.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFile" />
+  </member>
+  <member name="IDWriteFontFile.GetLoader">
+    <summary>
+      <para>Obtains the file loader associated with a font file object.</para>
+    </summary>
+    <param name="fontFileLoader">
+      <para>Type: <b><see cref="IDWriteFontFileLoader" />**</b></para>
+      <para>When this method returns, contains the address of  a pointer to the font file loader associated with the font file object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFile" />
+  </member>
+  <member name="IDWriteFontFile.GetReferenceKey">
+    <summary>
+      <para>Obtains the pointer to the reference key of a font file. The returned pointer is valid until the font file object is released.</para>
+    </summary>
+    <param name="fontFileReferenceKey">
+      <para>Type: <b>const void**</b></para>
+      <para>When this method returns, contains an address of  a pointer to the font file reference key. Note that the pointer value is only valid until the font file object it is obtained from is released. This parameter is passed uninitialized.</para>
+    </param>
+    <param name="fontFileReferenceKeySize">
+      <para>Type: <b>UINT32*</b></para>
+      <para>When this method returns, contains the size of the font file reference key in bytes. This parameter is passed uninitialized.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFile" />
+  </member>
+  <member name="IDWriteFontFile">
+    <summary>
+      <para>Represents a font file. Applications  such as font managers or font viewers can call <see cref="IDWriteFontFile.Analyze" /> to find out if a particular file is a font file, and whether it is a font type that is supported by the font system.</para>
+    </summary>
+  </member>
+</doc>

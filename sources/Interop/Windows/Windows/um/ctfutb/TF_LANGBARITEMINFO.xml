@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TF_LANGBARITEMINFO">
+    <summary>
+      <para>The <b>TF_LANGBARITEMINFO</b> structure is used to hold information about a language bar item.</para>
+    </summary>
+    <seealso cref="ITfInputProcessorProfiles.Register " />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-style--constants">TF_LBI_STYLE_*
+</seealso>
+  </member>
+  <member name="TF_LANGBARITEMINFO.clsidService">
+    <summary>
+      <para>Contains the <b>CLSID</b> of the text service that owns the language bar item. This can be CLSID_NULL if the item is not provided by a text service.</para>
+    </summary>
+  </member>
+  <member name="TF_LANGBARITEMINFO.guidItem">
+    <summary>
+      <para>Contains a <b>GUID</b> value that identifies the language bar item.</para>
+      <para>Starting with Windows 8, this value should be GUID_LBI_INPUTMODE (or the language bar item will be ignored). For more information, see <a href="https://docs.microsoft.com/en-us/windows/win32/w8cookbook/third-party-input-method-editors#manifestation">Third-party input method editors</a> in the Compatibility cookbook for Windows.</para>
+    </summary>
+  </member>
+  <member name="TF_LANGBARITEMINFO.dwStyle">
+    <summary>
+      <para>Contains a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-style--constants">TF_LBI_STYLE_*</a> values.</para>
+    </summary>
+  </member>
+  <member name="TF_LANGBARITEMINFO.ulSort">
+    <summary>
+      <para>Specifies the sort order of the language bar item, relative to other language bar items owned by the text service. A lower number indicates that the item will be displayed prior to an item with a higher sort number.</para>
+      <para>This value is only used if <b>clsidService</b> identifies a registered text service. For more information about registering a text service, see <see cref="ITfInputProcessorProfiles.Register" />.</para>
+    </summary>
+  </member>
+  <member name="TF_LANGBARITEMINFO.szDescription">
+    <summary>
+      <para>Contains the description string for the item in Unicode format. The description string is displayed in the language bar options menu for menu items. This buffer can hold up to TF_LBI_DESC_MAXLEN characters.</para>
+    </summary>
+  </member>
+</doc>

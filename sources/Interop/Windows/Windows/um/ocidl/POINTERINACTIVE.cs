@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTERINACTIVE.xml' path='doc/member[@name="POINTERINACTIVE"]/*' />
 public enum POINTERINACTIVE
 {
+    /// <include file='POINTERINACTIVE.xml' path='doc/member[@name="POINTERINACTIVE.POINTERINACTIVE_ACTIVATEONENTRY"]/*' />
     POINTERINACTIVE_ACTIVATEONENTRY = 1,
+
+    /// <include file='POINTERINACTIVE.xml' path='doc/member[@name="POINTERINACTIVE.POINTERINACTIVE_DEACTIVATEONLEAVE"]/*' />
     POINTERINACTIVE_DEACTIVATEONLEAVE = 2,
+
+    /// <include file='POINTERINACTIVE.xml' path='doc/member[@name="POINTERINACTIVE.POINTERINACTIVE_ACTIVATEONDRAG"]/*' />
     POINTERINACTIVE_ACTIVATEONDRAG = 4,
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MONITOR_DISPLAY_STATE.xml' path='doc/member[@name="MONITOR_DISPLAY_STATE"]/*' />
 public enum MONITOR_DISPLAY_STATE
 {
+    /// <include file='MONITOR_DISPLAY_STATE.xml' path='doc/member[@name="MONITOR_DISPLAY_STATE.PowerMonitorOff"]/*' />
     PowerMonitorOff = 0,
+
+    /// <include file='MONITOR_DISPLAY_STATE.xml' path='doc/member[@name="MONITOR_DISPLAY_STATE.PowerMonitorOn"]/*' />
     PowerMonitorOn,
+
+    /// <include file='MONITOR_DISPLAY_STATE.xml' path='doc/member[@name="MONITOR_DISPLAY_STATE.PowerMonitorDim"]/*' />
     PowerMonitorDim,
 }

@@ -7,19 +7,26 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMOBJECTNOTIFY.xml' path='doc/member[@name="NMOBJECTNOTIFY"]/*' />
 public unsafe partial struct NMOBJECTNOTIFY
 {
+    /// <include file='NMOBJECTNOTIFY.xml' path='doc/member[@name="NMOBJECTNOTIFY.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMOBJECTNOTIFY.xml' path='doc/member[@name="NMOBJECTNOTIFY.iItem"]/*' />
     public int iItem;
 
+    /// <include file='NMOBJECTNOTIFY.xml' path='doc/member[@name="NMOBJECTNOTIFY.piid"]/*' />
     [NativeTypeName("const IID *")]
     public Guid* piid;
 
+    /// <include file='NMOBJECTNOTIFY.xml' path='doc/member[@name="NMOBJECTNOTIFY.pObject"]/*' />
     public void* pObject;
 
+    /// <include file='NMOBJECTNOTIFY.xml' path='doc/member[@name="NMOBJECTNOTIFY.hResult"]/*' />
     public HRESULT hResult;
 
+    /// <include file='NMOBJECTNOTIFY.xml' path='doc/member[@name="NMOBJECTNOTIFY.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfFunctionProvider.GetDescription">
+    <summary>
+      <para>Obtains the description of the function provider.</para>
+    </summary>
+    <param name="pbstrDesc">
+      <para>Pointer to a BSTR that receives the description string. This value must be allocated using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</a>. The caller must this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pbstrDesc</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfFunctionProvider" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</seealso>
+  </member>
+  <member name="ITfFunctionProvider.GetFunction">
+    <summary>
+      <para>Obtains the specified function object.</para>
+    </summary>
+    <param name="rguid">
+      <para>Contains a GUID value that identifies the function group that the requested function belongs to. This value can be GUID_NULL.</para>
+    </param>
+    <param name="riid">
+      <para>Contains an interface identifier that identifies the requested function within the group specified by <i>rguid</i>. This value can be specified by the application, text service, or one of the IID_ITfFn* values.</para>
+    </param>
+    <param name="ppunk">
+      <para>Pointer to an <b>IUnknown</b> interface pointer that receives the requested function interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOINTERFACE</b>
+            </para>
+          </description>
+          <description>
+            <para>The requested function is unsupported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfFunctionProvider.GetType">
+    <summary>
+      <para>Obtains the type identifier for the function provider.</para>
+    </summary>
+    <param name="pguid">
+      <para>Pointer to a GUID value that receives the type identifier of the function provider.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pguid</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfFunctionProvider">
+    <summary>
+      <para>The <b>ITfFunctionProvider</b> interface is implemented by an application or text service to provide various function objects.</para>
+    </summary>
+    <remarks>
+      <para>A function provider is registered by calling <see cref="ITFSourceSingle.AdviseSingleSink" /> with IID_ITfFunctionProvider when the text service is activated. The text service should unregister its function provider with <see cref="ITFSourceSingle.UnadviseSingleSink" /> when it is deactivated.</para>
+    </remarks>
+    <seealso cref="ITFSourceSingle.AdviseSingleSink " />
+    <seealso cref="ITFSourceSingle.UnadviseSingleSink " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MAT2">
+    <summary>
+      <para>The <b>MAT2</b> structure contains the values for a transformation matrix used by the <see cref="GetGlyphOutline" /> function.</para>
+    </summary>
+    <remarks>
+      <para>The identity matrix produces a transformation in which the transformed graphical object is identical to the source object. In the identity matrix, the value of <b>eM11</b> is 1, the value of <b>eM12</b> is zero, the value of <b>eM21</b> is zero, and the value of <b>eM22</b> is 1.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
+    <seealso cref="GetGlyphOutline" />
+  </member>
+  <member name="MAT2.eM11">
+    <summary>
+      <para>A fixed-point value for the M11 component of a 3 by 3 transformation matrix.</para>
+    </summary>
+  </member>
+  <member name="MAT2.eM12">
+    <summary>
+      <para>A fixed-point value for the M12 component of a 3 by 3 transformation matrix.</para>
+    </summary>
+  </member>
+  <member name="MAT2.eM21">
+    <summary>
+      <para>A fixed-point value for the M21 component of a 3 by 3 transformation matrix.</para>
+    </summary>
+  </member>
+  <member name="MAT2.eM22">
+    <summary>
+      <para>A fixed-point value for the M22 component of a 3 by 3 transformation matrix.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncVideoFilmContent.xml' path='doc/member[@name="eAVEncVideoFilmContent"]/*' />
 public enum eAVEncVideoFilmContent
 {
+    /// <include file='eAVEncVideoFilmContent.xml' path='doc/member[@name="eAVEncVideoFilmContent.eAVEncVideoFilmContent_VideoOnly"]/*' />
     eAVEncVideoFilmContent_VideoOnly = 0,
+
+    /// <include file='eAVEncVideoFilmContent.xml' path='doc/member[@name="eAVEncVideoFilmContent.eAVEncVideoFilmContent_FilmOnly"]/*' />
     eAVEncVideoFilmContent_FilmOnly = 1,
+
+    /// <include file='eAVEncVideoFilmContent.xml' path='doc/member[@name="eAVEncVideoFilmContent.eAVEncVideoFilmContent_Mixed"]/*' />
     eAVEncVideoFilmContent_Mixed = 2,
 }

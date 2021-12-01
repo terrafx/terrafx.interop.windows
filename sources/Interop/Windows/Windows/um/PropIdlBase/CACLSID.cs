@@ -7,11 +7,14 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CACLSID.xml' path='doc/member[@name="CACLSID"]/*' />
 public unsafe partial struct CACLSID
 {
+    /// <include file='CACLSID.xml' path='doc/member[@name="CACLSID.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CACLSID.xml' path='doc/member[@name="CACLSID.pElems"]/*' />
     [NativeTypeName("CLSID *")]
     public Guid* pElems;
 }

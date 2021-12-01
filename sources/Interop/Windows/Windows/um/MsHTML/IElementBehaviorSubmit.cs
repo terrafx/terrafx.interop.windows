@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementBehaviorSubmit.xml' path='doc/member[@name="IElementBehaviorSubmit"]/*' />
 [Guid("3050F646-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementBehaviorSubmit : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementBehaviorSubmit : IElementBehaviorSubmit.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementBehaviorSubmit : IElementBehaviorSubmit.Int
         return ((delegate* unmanaged<IElementBehaviorSubmit*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSubmit*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementBehaviorSubmit : IElementBehaviorSubmit.Int
         return ((delegate* unmanaged<IElementBehaviorSubmit*, uint>)(lpVtbl[1]))((IElementBehaviorSubmit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementBehaviorSubmit : IElementBehaviorSubmit.Int
         return ((delegate* unmanaged<IElementBehaviorSubmit*, uint>)(lpVtbl[2]))((IElementBehaviorSubmit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorSubmit.xml' path='doc/member[@name="IElementBehaviorSubmit.GetSubmitInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSubmitInfo(IHTMLSubmitData* pSubmitData)
@@ -46,6 +51,7 @@ public unsafe partial struct IElementBehaviorSubmit : IElementBehaviorSubmit.Int
         return ((delegate* unmanaged<IElementBehaviorSubmit*, IHTMLSubmitData*, int>)(lpVtbl[3]))((IElementBehaviorSubmit*)Unsafe.AsPointer(ref this), pSubmitData);
     }
 
+    /// <include file='IElementBehaviorSubmit.xml' path='doc/member[@name="IElementBehaviorSubmit.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Reset()

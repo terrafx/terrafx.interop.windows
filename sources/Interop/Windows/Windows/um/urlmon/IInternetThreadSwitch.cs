@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInternetThreadSwitch.xml' path='doc/member[@name="IInternetThreadSwitch"]/*' />
 [Guid("79EAC9E8-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetThreadSwitch : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInternetThreadSwitch : IInternetThreadSwitch.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInternetThreadSwitch : IInternetThreadSwitch.Inter
         return ((delegate* unmanaged<IInternetThreadSwitch*, Guid*, void**, int>)(lpVtbl[0]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInternetThreadSwitch : IInternetThreadSwitch.Inter
         return ((delegate* unmanaged<IInternetThreadSwitch*, uint>)(lpVtbl[1]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInternetThreadSwitch : IInternetThreadSwitch.Inter
         return ((delegate* unmanaged<IInternetThreadSwitch*, uint>)(lpVtbl[2]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetThreadSwitch.xml' path='doc/member[@name="IInternetThreadSwitch.Prepare"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Prepare()
@@ -46,6 +51,7 @@ public unsafe partial struct IInternetThreadSwitch : IInternetThreadSwitch.Inter
         return ((delegate* unmanaged<IInternetThreadSwitch*, int>)(lpVtbl[3]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetThreadSwitch.xml' path='doc/member[@name="IInternetThreadSwitch.Continue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Continue()

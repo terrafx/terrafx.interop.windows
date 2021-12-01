@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES"]/*' />
 public unsafe partial struct WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES
 {
+    /// <include file='WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES.prefixCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint prefixCount;
 
+    /// <include file='WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES.prefixes"]/*' />
     public WS_XML_STRING* prefixes;
 }

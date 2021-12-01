@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFGetService.GetService">
+    <summary>
+      <para>Retrieves a service interface.</para>
+    </summary>
+    <param name="guidService">
+      <para>The service identifier (SID) of the service. For a list of service identifiers, see <a href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</a>.</para>
+    </param>
+    <param name="riid">
+      <para>The interface identifier (IID) of the interface being requested.</para>
+    </param>
+    <param name="ppvObject">
+      <para>Receives the interface pointer. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_UNSUPPORTED_SERVICE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support the service.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFGetService" />
+    <seealso cref="MFGetService" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</seealso>
+  </member>
+  <member name="IMFGetService">
+    <summary>
+      <para>Queries an object for a specified service interface.</para>
+    </summary>
+    <remarks>
+      <para>A service is an interface that is exposed by one object but might be implemented by another object. The <see cref="GetService" /> method is equivalent to <b>QueryInterface</b>, with the following difference: when <b>QueryInterface</b> retrieves a pointer to an interface, it is guaranteed that you can query the returned interface and get back the original interface. The <b>GetService</b> method does not make this guarantee, because the retrieved interface might be implemented by a separate object.</para>
+      <para>The <see cref="MFGetService" /> function is a helper function that queries an object for <b>IMFGetService</b> and calls the <see cref="GetService" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</seealso>
+  </member>
+</doc>

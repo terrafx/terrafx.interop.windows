@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IsolatedAppLauncher.xml' path='doc/member[@name="IsolatedAppLauncher"]/*' />
 [Guid("BC812430-E75E-4FD1-9641-1F9F1E2D9A1F")]
 public partial struct IsolatedAppLauncher
 {

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RETRIEVAL_POINTERS_BUFFER">
+    <summary>
+      <para>Contains the output for the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_retrieval_pointers">FSCTL_GET_RETRIEVAL_POINTERS</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/defragmenting-files">Defragmentation</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_retrieval_pointers">FSCTL_GET_RETRIEVAL_POINTERS</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_move_file">FSCTL_MOVE_FILE</seealso>
+  </member>
+  <member name="RETRIEVAL_POINTERS_BUFFER.ExtentCount">
+    <summary>
+      <para>The count of elements in the <b>Extents</b> array.</para>
+    </summary>
+  </member>
+  <member name="RETRIEVAL_POINTERS_BUFFER.StartingVcn">
+    <summary>
+      <para>The starting VCN returned by the function call. This is not necessarily the VCN requested by the function call, as the file system driver may round down to the first VCN of the extent in which the requested starting VCN is found.</para>
+    </summary>
+  </member>
+  <member name="RETRIEVAL_POINTERS_BUFFER.NextVcn">
+    <summary></summary>
+  </member>
+  <member name="RETRIEVAL_POINTERS_BUFFER.Lcn">
+    <summary></summary>
+  </member>
+  <member name="RETRIEVAL_POINTERS_BUFFER.Extents">
+    <summary>
+      <para>Array of <b>Extents</b> structures. For the number of members in the array, see <b>ExtentCount</b>. Each member of the array has the following members.</para>
+      <h4>NextVcn</h4>
+      <para>The VCN at which the next extent begins. This value minus either <b>StartingVcn</b> (for the first <b>Extents</b> array member) or the <b>NextVcn</b> of the previous member of the array (for all other <b>Extents</b> array members) is the length, in clusters, of the current extent. The length is an input to the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_move_file">FSCTL_MOVE_FILE</a> operation.</para>
+      <h4>Lcn</h4>
+      <para>The LCN at which the current extent begins on the volume. This value is an input to the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_move_file">FSCTL_MOVE_FILE</a> operation. On the NTFS file system, the value (LONGLONG) –1 indicates either a compression unit that is partially allocated, or an unallocated region of a sparse file.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="THREAD_POWER_THROTTLING_STATE">
+    <summary>
+      <para>Specifies the throttling policies and how to apply them to a target thread when that thread is subject to power management. This structure is used by the <see cref="SetThreadInformation function" />.</para>
+    </summary>
+  </member>
+  <member name="THREAD_POWER_THROTTLING_STATE.Version">
+    <summary>
+      <para>The version of the <b>THREAD_POWER_THROTTLING_STATE</b> structure.</para>
+      <para>| Value | Meaning |
+| ---   | ---     |
+| THREAD_POWER_THROTTLING_CURRENT_VERSION | The current version. |</para>
+    </summary>
+  </member>
+  <member name="THREAD_POWER_THROTTLING_STATE.ControlMask">
+    <summary>
+      <para>This field enables the caller to take control of the power throttling mechanism.</para>
+      <para>| Value | Meaning |
+| ---   | ---     |
+| THREAD_POWER_THROTTLING_EXECUTION_SPEED | Manages the execution speed of the thread. |</para>
+    </summary>
+  </member>
+  <member name="THREAD_POWER_THROTTLING_STATE.StateMask">
+    <summary>
+      <para>Manages the power throttling mechanism on/off state.</para>
+      <para>| Value | Meaning |
+| ---   | ---     |
+| THREAD_POWER_THROTTLING_EXECUTION_SPEED | Manages the execution speed of the thread. |</para>
+    </summary>
+  </member>
+</doc>

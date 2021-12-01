@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PARTITION_STYLE.xml' path='doc/member[@name="PARTITION_STYLE"]/*' />
 public enum PARTITION_STYLE
 {
+    /// <include file='PARTITION_STYLE.xml' path='doc/member[@name="PARTITION_STYLE.PARTITION_STYLE_MBR"]/*' />
     PARTITION_STYLE_MBR,
+
+    /// <include file='PARTITION_STYLE.xml' path='doc/member[@name="PARTITION_STYLE.PARTITION_STYLE_GPT"]/*' />
     PARTITION_STYLE_GPT,
+
+    /// <include file='PARTITION_STYLE.xml' path='doc/member[@name="PARTITION_STYLE.PARTITION_STYLE_RAW"]/*' />
     PARTITION_STYLE_RAW,
 }

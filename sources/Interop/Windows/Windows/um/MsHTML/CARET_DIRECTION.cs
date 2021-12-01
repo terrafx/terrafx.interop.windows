@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CARET_DIRECTION.xml' path='doc/member[@name="CARET_DIRECTION"]/*' />
 public enum CARET_DIRECTION
 {
+    /// <include file='CARET_DIRECTION.xml' path='doc/member[@name="CARET_DIRECTION.CARET_DIRECTION_INDETERMINATE"]/*' />
     CARET_DIRECTION_INDETERMINATE = 0,
+
+    /// <include file='CARET_DIRECTION.xml' path='doc/member[@name="CARET_DIRECTION.CARET_DIRECTION_SAME"]/*' />
     CARET_DIRECTION_SAME = 1,
+
+    /// <include file='CARET_DIRECTION.xml' path='doc/member[@name="CARET_DIRECTION.CARET_DIRECTION_BACKWARD"]/*' />
     CARET_DIRECTION_BACKWARD = 2,
+
+    /// <include file='CARET_DIRECTION.xml' path='doc/member[@name="CARET_DIRECTION.CARET_DIRECTION_FORWARD"]/*' />
     CARET_DIRECTION_FORWARD = 3,
+
+    /// <include file='CARET_DIRECTION.xml' path='doc/member[@name="CARET_DIRECTION.CARET_DIRECTION_Max"]/*' />
     CARET_DIRECTION_Max = 2147483647,
 }

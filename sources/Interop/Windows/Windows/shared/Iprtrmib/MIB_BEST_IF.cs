@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_BEST_IF.xml' path='doc/member[@name="MIB_BEST_IF"]/*' />
 public partial struct MIB_BEST_IF
 {
+    /// <include file='MIB_BEST_IF.xml' path='doc/member[@name="MIB_BEST_IF.dwDestAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDestAddr;
 
+    /// <include file='MIB_BEST_IF.xml' path='doc/member[@name="MIB_BEST_IF.dwIfIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwIfIndex;
 }

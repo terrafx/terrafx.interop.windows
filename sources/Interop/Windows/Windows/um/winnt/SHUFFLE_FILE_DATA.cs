@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHUFFLE_FILE_DATA.xml' path='doc/member[@name="SHUFFLE_FILE_DATA"]/*' />
 public partial struct SHUFFLE_FILE_DATA
 {
+    /// <include file='SHUFFLE_FILE_DATA.xml' path='doc/member[@name="SHUFFLE_FILE_DATA.StartingOffset"]/*' />
     [NativeTypeName("LONGLONG")]
     public long StartingOffset;
 
+    /// <include file='SHUFFLE_FILE_DATA.xml' path='doc/member[@name="SHUFFLE_FILE_DATA.Length"]/*' />
     [NativeTypeName("LONGLONG")]
     public long Length;
 
+    /// <include file='SHUFFLE_FILE_DATA.xml' path='doc/member[@name="SHUFFLE_FILE_DATA.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

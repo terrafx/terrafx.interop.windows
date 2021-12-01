@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_PROVIDER_EXTERNAL_INFO_V1.xml' path='doc/member[@name="FILE_PROVIDER_EXTERNAL_INFO_V1"]/*' />
 public partial struct FILE_PROVIDER_EXTERNAL_INFO_V1
 {
+    /// <include file='FILE_PROVIDER_EXTERNAL_INFO_V1.xml' path='doc/member[@name="FILE_PROVIDER_EXTERNAL_INFO_V1.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='FILE_PROVIDER_EXTERNAL_INFO_V1.xml' path='doc/member[@name="FILE_PROVIDER_EXTERNAL_INFO_V1.Algorithm"]/*' />
     [NativeTypeName("DWORD")]
     public uint Algorithm;
 
+    /// <include file='FILE_PROVIDER_EXTERNAL_INFO_V1.xml' path='doc/member[@name="FILE_PROVIDER_EXTERNAL_INFO_V1.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

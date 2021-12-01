@@ -9,15 +9,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TBS_CONTEXT_PARAMS2.xml' path='doc/member[@name="TBS_CONTEXT_PARAMS2"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct TBS_CONTEXT_PARAMS2
 {
+    /// <include file='TBS_CONTEXT_PARAMS2.xml' path='doc/member[@name="TBS_CONTEXT_PARAMS2.version"]/*' />
     [NativeTypeName("UINT32")]
     public uint version;
 
+    /// <include file='TBS_CONTEXT_PARAMS2.xml' path='doc/member[@name="TBS_CONTEXT_PARAMS2.Anonymous"]/*' />
     [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/tbs.h:154:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.requestRaw"]/*' />
     public uint requestRaw
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct TBS_CONTEXT_PARAMS2
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.includeTpm12"]/*' />
     public uint includeTpm12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,6 +53,7 @@ public partial struct TBS_CONTEXT_PARAMS2
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.includeTpm20"]/*' />
     public uint includeTpm20
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -63,6 +69,7 @@ public partial struct TBS_CONTEXT_PARAMS2
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.asUINT32"]/*' />
     public ref uint asUINT32
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -72,21 +79,26 @@ public partial struct TBS_CONTEXT_PARAMS2
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/tbs.h:156:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.asUINT32"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UINT32")]
         public uint asUINT32;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.requestRaw"]/*' />
             [NativeTypeName("UINT32 : 1")]
             public uint requestRaw
             {
@@ -103,6 +115,7 @@ public partial struct TBS_CONTEXT_PARAMS2
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.includeTpm12"]/*' />
             [NativeTypeName("UINT32 : 1")]
             public uint includeTpm12
             {
@@ -119,6 +132,7 @@ public partial struct TBS_CONTEXT_PARAMS2
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.includeTpm20"]/*' />
             [NativeTypeName("UINT32 : 1")]
             public uint includeTpm20
             {

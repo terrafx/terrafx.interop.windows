@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OpenControlPanel.xml' path='doc/member[@name="OpenControlPanel"]/*' />
 [Guid("06622D85-6856-4460-8DE1-A81921B41C4B")]
 public partial struct OpenControlPanel
 {

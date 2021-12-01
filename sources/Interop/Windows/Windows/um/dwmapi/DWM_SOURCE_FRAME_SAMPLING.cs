@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DWM_SOURCE_FRAME_SAMPLING.xml' path='doc/member[@name="DWM_SOURCE_FRAME_SAMPLING"]/*' />
 public enum DWM_SOURCE_FRAME_SAMPLING
 {
+    /// <include file='DWM_SOURCE_FRAME_SAMPLING.xml' path='doc/member[@name="DWM_SOURCE_FRAME_SAMPLING.DWM_SOURCE_FRAME_SAMPLING_POINT"]/*' />
     DWM_SOURCE_FRAME_SAMPLING_POINT,
+
+    /// <include file='DWM_SOURCE_FRAME_SAMPLING.xml' path='doc/member[@name="DWM_SOURCE_FRAME_SAMPLING.DWM_SOURCE_FRAME_SAMPLING_COVERAGE"]/*' />
     DWM_SOURCE_FRAME_SAMPLING_COVERAGE,
+
+    /// <include file='DWM_SOURCE_FRAME_SAMPLING.xml' path='doc/member[@name="DWM_SOURCE_FRAME_SAMPLING.DWM_SOURCE_FRAME_SAMPLING_LAST"]/*' />
     DWM_SOURCE_FRAME_SAMPLING_LAST,
 }

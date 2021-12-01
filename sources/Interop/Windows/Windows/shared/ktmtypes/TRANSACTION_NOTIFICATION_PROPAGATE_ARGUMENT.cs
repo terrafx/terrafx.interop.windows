@@ -7,15 +7,20 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT"]/*' />
 public partial struct TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT
 {
+    /// <include file='TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT.PropagationCookie"]/*' />
     [NativeTypeName("ULONG")]
     public uint PropagationCookie;
 
+    /// <include file='TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT.UOW"]/*' />
     public Guid UOW;
 
+    /// <include file='TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT.TmIdentity"]/*' />
     public Guid TmIdentity;
 
+    /// <include file='TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT.BufferLength"]/*' />
     [NativeTypeName("ULONG")]
     public uint BufferLength;
 }

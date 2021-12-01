@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEMMINIMIZESTATES.xml' path='doc/member[@name="SYSTEMMINIMIZESTATES"]/*' />
 public enum SYSTEMMINIMIZESTATES
 {
+    /// <include file='SYSTEMMINIMIZESTATES.xml' path='doc/member[@name="SYSTEMMINIMIZESTATES.MSYSMN_NORMAL"]/*' />
     MSYSMN_NORMAL = 1,
+
+    /// <include file='SYSTEMMINIMIZESTATES.xml' path='doc/member[@name="SYSTEMMINIMIZESTATES.MSYSMN_DISABLED"]/*' />
     MSYSMN_DISABLED = 2,
 }

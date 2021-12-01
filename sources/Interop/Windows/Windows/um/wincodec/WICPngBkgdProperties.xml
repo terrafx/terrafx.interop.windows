@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICPngBkgdProperties">
+    <summary>
+      <para>Specifies the Portable Network Graphics (PNG) background (bKGD) chunk metadata properties.</para>
+    </summary>
+  </member>
+  <member name="WICPngBkgdProperties.WICPngBkgdBackgroundColor">
+    <summary>
+      <para>Indicates the background color. There are three possible types, depending on the image's pixel format.</para>
+      <h4>VT_UI1</h4>
+      <para>Specifies the index of the background color in an image with an indexed pixel format.</para>
+      <h4>VT_UI2</h4>
+      <para>Specifies the background color in a grayscale image.</para>
+      <h4>VT_VECTOR|VT_UI2</h4>
+      <para>Specifies the background color in an RGB image as three USHORT values: {0x<i>RRRR</i>, 0x<i>GGGG</i>, 0x<i>BBBB</i>}.</para>
+    </summary>
+  </member>
+  <member name="WICPngBkgdProperties.WICPngBkgdProperties_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

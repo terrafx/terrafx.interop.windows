@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR
 {
+    /// <include file='STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.Attributes"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Attributes;
 }

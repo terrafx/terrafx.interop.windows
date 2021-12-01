@@ -1,0 +1,974 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFsiDirectoryItem.Add">
+    <summary>
+      <para>Adds a file or directory described by the <see cref="IFsiItem" /> object to the file system image.</para>
+    </summary>
+    <param name="item">
+      <para>An <see cref="IFsiItem" /> interface of the <see cref="IFsiFileItem" /> or <see cref="IFsiDirectoryItem" /> to add to the file system  image.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PATH</b>
+            </para>
+          </description>
+          <description>
+            <para>Path '%1!s!' is badly formed or contains invalid characters.</para>
+            <para>Value: 0xC0AAB110</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DATA_STREAM_READ_FAILURE</b>
+            </para>
+          </description>
+          <description>
+            <para>Cannot read data from stream supplied for file '%1!ls!'.</para>
+            <para>Value: 0xC0AAB129</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DUP_NAME</b>
+            </para>
+          </description>
+          <description>
+            <para>ls!' name already exists.</para>
+            <para>Value: 0xC0AAB112</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_NO_UNIQUE_NAME</b>
+            </para>
+          </description>
+          <description>
+            <para>Attempt to add '%1!ls!' failed:  cannot create a file-system-specific unique name for the %2!ls! file system.</para>
+            <para>Value: 0xC0AAB113</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_IMAGE_SIZE_LIMIT</b>
+            </para>
+          </description>
+          <description>
+            <para>Adding '%1!ls!' would result in a result image having a size larger than the current configured limit.</para>
+            <para>Value: 0xC0AAB120</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_ISO9660_LEVELS</b>
+            </para>
+          </description>
+          <description>
+            <para>ISO9660 is limited to 8 levels of directories.</para>
+            <para>Value: 0xC0AAB131</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_TOO_MANY_DIRS</b>
+            </para>
+          </description>
+          <description>
+            <para>This file system image has too many directories for the %1!ls! file system.</para>
+            <para>Value: 0xC0AAB130</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DIR_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The directory '%1!s!' not found in FileSystemImage hierarchy.</para>
+            <para>Value: 0xC0AAB11A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>    IMAPI_E_NOT_IN_FILE_SYSTEM</b>
+            </para>
+          </description>
+          <description>
+            <para>This file or directory is not part of the file system. It must be added to complete this operation.</para>
+            <para>Value: 0xC0AAB10B</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_READONLY</b>
+            </para>
+          </description>
+          <description>
+            <para>FileSystemImage object is in read only mode.</para>
+            <para>Value: 0xC0AAB102</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_IMAGE_SIZE_LIMIT
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Adding this file or directory would result in a result image having a size larger than the current configured limit.</para>
+            <para>Value: 0xC0AAB120</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+      </list>
+      <para>
+        <b>Note</b>  Values returned by the  IUnknown.QueryInterface method may also be returned here.</para>
+    </returns>
+    <remarks>
+      <para>To create a directory item or file item, call the <see cref="IFileSystemImage.CreateDirectoryItem" /> or <see cref="IFileSystemImage.CreateFileItem" /> method, respectively.</para>
+      <para>Once an item is added to the file system image, the <see cref="IFsiFileItem.get_Data" /> property becomes read-only.</para>
+    </remarks>
+    <seealso cref="IFsiDirectoryItem" />
+    <seealso cref="IFsiDirectoryItem.AddDirectory" />
+    <seealso cref="IFsiDirectoryItem.AddFile" />
+    <seealso cref="IFsiDirectoryItem.Remove" />
+    <seealso cref="IFsiFileItem" />
+  </member>
+  <member name="IFsiDirectoryItem.AddDirectory">
+    <summary>
+      <para>Adds a directory to the file system image.</para>
+    </summary>
+    <param name="path">
+      <para>String that contains the relative path of directory to create.</para>
+      <para>Specify the full path when calling this method from the root directory item.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PATH</b>
+            </para>
+          </description>
+          <description>
+            <para>Path '%1!s!' is badly formed or contains invalid characters.</para>
+            <para>Value: 0xC0AAB110</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PARAM</b>
+            </para>
+          </description>
+          <description>
+            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
+            <para>Value: 0xC0AAB101</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>    IMAPI_E_NOT_IN_FILE_SYSTEM</b>
+            </para>
+          </description>
+          <description>
+            <i>ls!'</i> is not part of the file system. It must be added to complete this operation.
+<para>Value: 0xC0AAB10B</para></description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_READONLY</b>
+            </para>
+          </description>
+          <description>
+            <para>FileSystemImage object is in read only mode.</para>
+            <para>Value: 0xC0AAB102</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The parent directory for the new subdirectory must already exist within the file system image.</para>
+    </remarks>
+    <seealso cref="IFsiDirectoryItem" />
+    <seealso cref="IFsiDirectoryItem.Add" />
+    <seealso cref="IFsiDirectoryItem.AddFile" />
+    <seealso cref="IFsiDirectoryItem.AddTree" />
+    <seealso cref="IFsiDirectoryItem.Remove" />
+  </member>
+  <member name="IFsiDirectoryItem.AddFile">
+    <summary>
+      <para>Adds a file to the file system image.</para>
+    </summary>
+    <param name="path">
+      <para>String that contains the relative path of the directory to contain the new file.</para>
+      <para>Specify the full path when calling this method from the root directory item.</para>
+    </param>
+    <param name="fileData">
+      <para>An <b>IStream</b> interface of the file (data stream) to write to the media.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PATH</b>
+            </para>
+          </description>
+          <description>
+            <para>Path '%1!s!' is badly formed or contains invalid characters.</para>
+            <para>Value: 0xC0AAB110</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PARAM</b>
+            </para>
+          </description>
+          <description>
+            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
+            <para>Value: 0xC0AAB101</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>    IMAPI_E_NOT_IN_FILE_SYSTEM</b>
+            </para>
+          </description>
+          <description>
+            <i>ls!'</i> is not part of the file system. It must be added to complete this operation.
+<para>Value: 0xC0AAB10B</para></description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_READONLY</b>
+            </para>
+          </description>
+          <description>
+            <para>FileSystemImage object is in read only mode.</para>
+            <para>Value: 0xC0AAB102</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The directory that will contain the new file must already exist within the file system image.</para>
+    </remarks>
+    <seealso cref="IFsiDirectoryItem" />
+    <seealso cref="IFsiDirectoryItem.Add" />
+    <seealso cref="IFsiDirectoryItem.AddDirectory" />
+    <seealso cref="IFsiDirectoryItem.Remove" />
+  </member>
+  <member name="IFsiDirectoryItem.AddTree">
+    <summary>
+      <para>Adds the contents of a directory tree to the file system image.</para>
+    </summary>
+    <param name="sourceDirectory">
+      <para>String that contains the relative path of the directory tree to create.</para>
+      <para>Specify the full path when calling this method from the root directory item.</para>
+    </param>
+    <param name="includeBaseDirectory">
+      <para>Set to VARIANT_TRUE to include the directory in <i>sourceDirectory</i> as a subdirectory in the file system image. Otherwise, VARIANT_FALSE.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DIRECTORY_READ_FAILURE</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure enumerating files in the directory tree is inaccessible due to permissions.</para>
+            <para>Value: 0xC0AAB12BL</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DATA_STREAM_CREATE_FAILURE</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more  of the files in the directory tree is inaccessible due to permissions.</para>
+            <para>Value: 0xC0AAB12A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DATA_STREAM_READ_FAILURE</b>
+            </para>
+          </description>
+          <description>
+            <para>Cannot read data from stream supplied for file '%1!ls!'.</para>
+            <para>Value: 0xC0AAB129</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PARAM</b>
+            </para>
+          </description>
+          <description>
+            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
+            <para>Value: 0xC0AAB101</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>    IMAPI_E_NOT_IN_FILE_SYSTEM</b>
+            </para>
+          </description>
+          <description>
+            <i>ls!'</i> is not part of the file system. It must be added to complete this operation.
+<para>Value: 0xC0AAB10B</para></description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_READONLY</b>
+            </para>
+          </description>
+          <description>
+            <para>FileSystemImage object is in read only mode.</para>
+            <para>Value: 0xC0AAB102</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_IMAGE_SIZE_LIMIT
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Adding this file or directory would result in a result image having a size larger than the current configured limit.</para>
+            <para>Value: 0xC0AAB120</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PATH</b>
+            </para>
+          </description>
+          <description>
+            <para>Path '%1!s!' is badly formed or contains invalid characters.</para>
+            <para>Value: 0xC0AAB110</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DUP_NAME</b>
+            </para>
+          </description>
+          <description>
+            <para>ls!' name already exists.</para>
+            <para>Value: 0xC0AAB112</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_NO_UNIQUE_NAME</b>
+            </para>
+          </description>
+          <description>
+            <para>Attempt to add '%1!ls!' failed:  cannot create a file-system-specific unique name for the %2!ls! file system.</para>
+            <para>Value: 0xC0AAB113</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_ISO9660_LEVELS</b>
+            </para>
+          </description>
+          <description>
+            <para>ISO9660 is limited to 8 levels of directories.</para>
+            <para>Value: 0xC0AAB131</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_TOO_MANY_DIRS</b>
+            </para>
+          </description>
+          <description>
+            <para>This file system image has too many directories for the %1!ls! file system.</para>
+            <para>Value: 0xC0AAB130</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DIR_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The directory '%1!s!' not found in FileSystemImage hierarchy.</para>
+            <para>Value: 0xC0AAB11A</para>
+          </description>
+        </item>
+      </list>
+      <para>
+        <b>Note</b>  Values returned by the  <see cref="GetFileAttributesEx" /> and <see cref="FindFirstFile" /> functions may also be returned here.</para>
+    </returns>
+    <remarks>
+      <para>The parent directory for the new subdirectory must already exist within the file system image.</para>
+      <para>The subdirectory structure within specified source directory is implicitly mirrored in the file system image.</para>
+      <para>If file or directory collisions occur, the content of the specified source directory prevails. The file system image is overwritten with the appropriate directories and files from the source directory.</para>
+      <para>If an exception occurs during processing, the file system image reverts to its previous state.</para>
+    </remarks>
+    <seealso cref="IFsiDirectoryItem" />
+    <seealso cref="IFsiDirectoryItem.Add" />
+    <seealso cref="IFsiDirectoryItem.AddDirectory" />
+    <seealso cref="IFsiDirectoryItem.AddFile" />
+    <seealso cref="IFsiDirectoryItem.Remove" />
+  </member>
+  <member name="IFsiDirectoryItem.get_Count">
+    <summary>
+      <para>Number of  child items in the enumeration.</para>
+    </summary>
+    <param name="Count">
+      <para>Number of directory and file items within the directory in the file system image.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFsiDirectoryItem" />
+    <seealso cref="IFsiFileItem" />
+  </member>
+  <member name="IFsiDirectoryItem.get_EnumFsiItems">
+    <summary>
+      <para>Retrieves a list of child items contained within the directory in the file system image.</para>
+    </summary>
+    <param name="NewEnum">
+      <para>An <see cref="IEnumFsiItems" /> interface that contains a collection of the child directory and file items contained within the directory.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate necessary memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This property returns the same results as the <see cref="IFsiDirectoryItem.get__NewEnum" /> property and is meant for use by C/C++ applications.</para>
+    </remarks>
+    <seealso cref="IEnumFsiItems" />
+    <seealso cref="IFsiDirectoryItem" />
+    <seealso cref="IFsiDirectoryItem.get__NewEnum" />
+  </member>
+  <member name="IFsiDirectoryItem.get_Item">
+    <summary>
+      <para>Retrieves the specified directory or file item from file system image.</para>
+    </summary>
+    <param name="path">
+      <para>String that contains the path to the item to retrieve.</para>
+    </param>
+    <param name="item">
+      <para>An <see cref="IFsiItem" /> interface of the requested directory or file item.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PATH</b>
+            </para>
+          </description>
+          <description>
+            <para>Path '%1!s!' is badly formed or contains invalid characters.</para>
+            <para>Value: 0xC0AAB110</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PARAM</b>
+            </para>
+          </description>
+          <description>
+            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
+            <para>Value: 0xC0AAB101</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_ITEM_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Cannot find item <i>%1!ls!</i> in FileSystemImage hierarchy.</para>
+            <para>Value: 0xC0AAB118</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate necessary memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To determine whether the item is a file item or directory item, call the <see cref="IFsiItem.QueryInterface" />  method passing __uuidof(IFsiDirectoryItem) as the interface identifier. If the call succeeds, the item is a directory item; otherwise, the item is a file item.</para>
+      <para>To enumerate all children, call the <see cref="IFsiDirectoryItem.get__NewEnum" /> method.</para>
+    </remarks>
+    <seealso cref="IFsiDirectoryItem" />
+  </member>
+  <member name="IFsiDirectoryItem.get__NewEnum">
+    <summary>
+      <para>Retrieves a list of child items contained within the directory in the file system image.</para>
+    </summary>
+    <param name="NewEnum">
+      <para>An <b>IEnumVariant</b> interface that you use to enumerate the child items contained within the directory. The items of the enumeration are variants whose type is <b>VT_BSTR</b>. Use the <b>bstrVal</b> member to retrieve the path to the child item.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned when the number of requested elements (<i>celt</i>) are returned successfully or the number of returned items (<i>pceltFetched</i>) is less than the number of requested elements. The <i>celt</i> and <i>pceltFetched</i> parameters are defined by <b>IEnumVariant</b>.</para>
+      <para>Other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate necessary memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The enumeration is a snapshot of the children contained in the directory at the time of the call and will not reflect children that are added and removed.</para>
+      <para>To retrieve a single item, see the <see cref="IFsiDirectoryItem.get_Item" /> property.</para>
+    </remarks>
+    <seealso cref="IFsiDirectoryItem" />
+    <seealso cref="IFsiDirectoryItem.get_EnumFsiItems" />
+  </member>
+  <member name="IFsiDirectoryItem.Remove">
+    <summary>
+      <para>Removes the specified item from the file system image.</para>
+    </summary>
+    <param name="path">
+      <para>String that contains the relative path of the item to remove.
+The path is relative to current directory item.</para>
+      <para>Specify the full path when calling this method from the root directory item.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PATH</b>
+            </para>
+          </description>
+          <description>
+            <para>Path '%1!s!' is badly formed or contains invalid characters.</para>
+            <para>Value: 0xC0AAB110</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate necessary memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PARAM</b>
+            </para>
+          </description>
+          <description>
+            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
+            <para>Value: 0xC0AAB101</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>    IMAPI_E_NOT_IN_FILE_SYSTEM</b>
+            </para>
+          </description>
+          <description>
+            <i>ls!'</i> is not part of the file system. It must be added to complete this operation.
+<para>Value: 0xC0AAB10B</para></description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_READONLY</b>
+            </para>
+          </description>
+          <description>
+            <para>FileSystemImage object is in read only mode.</para>
+            <para>Value: 0xC0AAB102</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DIR_NOT_EMPTY</b>
+            </para>
+          </description>
+          <description>
+            <para>The directory <i>%1!s!</i> is not empty.</para>
+            <para>Value: 0xC0AAB10A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_FSI_INTERNAL_ERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>Internal error occurred: <i>%1!ls!</i>.</para>
+            <para>Value: 0xC0AAB100</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is only callable on directory items present in the file system image.</para>
+    </remarks>
+    <seealso cref="IFsiDirectoryItem" />
+    <seealso cref="IFsiDirectoryItem.AddDirectory" />
+    <seealso cref="IFsiDirectoryItem.AddFile" />
+    <seealso cref="IFsiDirectoryItem.RemoveTree" />
+  </member>
+  <member name="IFsiDirectoryItem.RemoveTree">
+    <summary>
+      <para>Remove the specified directory tree from the file system image.</para>
+    </summary>
+    <param name="path">
+      <para>String that contains the name of directory to remove.
+The path is relative to current directory item.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>path</i> parameter is not a valid pointer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PARAM</b>
+            </para>
+          </description>
+          <description>
+            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
+            <para>Value: 0xC0AAB101</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_INVALID_PATH</b>
+            </para>
+          </description>
+          <description>
+            <para>Path '%1!s!' is badly formed or contains invalid characters.</para>
+            <para>Value: 0xC0AAB110</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>    IMAPI_E_NOT_IN_FILE_SYSTEM</b>
+            </para>
+          </description>
+          <description>
+            <i>ls!'</i> is not part of the file system. It must be added to complete this operation.
+<para>Value: 0xC0AAB10B</para></description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_READONLY</b>
+            </para>
+          </description>
+          <description>
+            <para>FileSystemImage object is in read only mode.</para>
+            <para>Value: 0xC0AAB102</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DIR_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified directory does not exist.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_DIR_NOT_EMPTY</b>
+            </para>
+          </description>
+          <description>
+            <para>The directory <i>%1!s!</i> is not empty.</para>
+            <para>Value: 0xC0AAB10A</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_FSI_INTERNAL_ERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>Internal error occurred: <i>%1!ls!</i>.</para>
+            <para>Value: 0xC0AAB100</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMAPI_E_NOT_DIR</b>
+            </para>
+          </description>
+          <description>
+            <para>Specified path <i>%1!ls!</i> does not identify a directory.</para>
+            <para>Value: 0xC0AAB109</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The directory item must be  present in the file system image.</para>
+      <para>You can delete the entire file-system image by calling this method for the root directory item and setting the path to a single path delimiter (\).</para>
+    </remarks>
+    <seealso cref="IFsiDirectoryItem" />
+    <seealso cref="IFsiDirectoryItem.AddDirectory" />
+    <seealso cref="IFsiDirectoryItem.AddFile" />
+    <seealso cref="IFsiDirectoryItem.AddTree" />
+    <seealso cref="IFsiDirectoryItem.Remove" />
+  </member>
+  <member name="IFsiDirectoryItem">
+    <summary>
+      <para>Use this interface to add items to or remove items from the file-system image.</para>
+      <para>To get this interface, call the <see cref="IFileSystemImage.CreateDirectoryItem" /> method.</para>
+    </summary>
+    <remarks>
+      <para>Each directory item contains an enumerable collection of child items within the directory.</para>
+      <para>You can add and remove files and directories only after the directory item has been added to the file system image.</para>
+      <para>This is an <b>FsiDirectoryItem</b> object in script.</para>
+    </remarks>
+    <seealso cref="IFileSystemImage.CreateDirectoryItem" />
+    <seealso cref="IFsiItem" />
+  </member>
+</doc>

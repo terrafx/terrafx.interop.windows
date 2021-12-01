@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlCaptionVAlign.xml' path='doc/member[@name="htmlCaptionVAlign"]/*' />
 public enum htmlCaptionVAlign
 {
+    /// <include file='htmlCaptionVAlign.xml' path='doc/member[@name="htmlCaptionVAlign.htmlCaptionVAlignNotSet"]/*' />
     htmlCaptionVAlignNotSet = 0,
+
+    /// <include file='htmlCaptionVAlign.xml' path='doc/member[@name="htmlCaptionVAlign.htmlCaptionVAlignTop"]/*' />
     htmlCaptionVAlignTop = 1,
+
+    /// <include file='htmlCaptionVAlign.xml' path='doc/member[@name="htmlCaptionVAlign.htmlCaptionVAlignBottom"]/*' />
     htmlCaptionVAlignBottom = 2,
+
+    /// <include file='htmlCaptionVAlign.xml' path='doc/member[@name="htmlCaptionVAlign.htmlCaptionVAlign_Max"]/*' />
     htmlCaptionVAlign_Max = 2147483647,
 }

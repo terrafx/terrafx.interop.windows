@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlPersistState.xml' path='doc/member[@name="htmlPersistState"]/*' />
 public enum htmlPersistState
 {
+    /// <include file='htmlPersistState.xml' path='doc/member[@name="htmlPersistState.htmlPersistStateNormal"]/*' />
     htmlPersistStateNormal = 0,
+
+    /// <include file='htmlPersistState.xml' path='doc/member[@name="htmlPersistState.htmlPersistStateFavorite"]/*' />
     htmlPersistStateFavorite = 1,
+
+    /// <include file='htmlPersistState.xml' path='doc/member[@name="htmlPersistState.htmlPersistStateHistory"]/*' />
     htmlPersistStateHistory = 2,
+
+    /// <include file='htmlPersistState.xml' path='doc/member[@name="htmlPersistState.htmlPersistStateSnapshot"]/*' />
     htmlPersistStateSnapshot = 3,
+
+    /// <include file='htmlPersistState.xml' path='doc/member[@name="htmlPersistState.htmlPersistStateUserData"]/*' />
     htmlPersistStateUserData = 4,
+
+    /// <include file='htmlPersistState.xml' path='doc/member[@name="htmlPersistState.htmlPersistState_Max"]/*' />
     htmlPersistState_Max = 2147483647,
 }

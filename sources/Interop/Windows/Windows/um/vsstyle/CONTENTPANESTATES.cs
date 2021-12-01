@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONTENTPANESTATES.xml' path='doc/member[@name="CONTENTPANESTATES"]/*' />
 public enum CONTENTPANESTATES
 {
+    /// <include file='CONTENTPANESTATES.xml' path='doc/member[@name="CONTENTPANESTATES.TDLGCPS_STANDALONE"]/*' />
     TDLGCPS_STANDALONE = 1,
 }

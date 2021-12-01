@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MODLOAD_CVMISC">
+    <summary>
+      <para>Contains CodeView and Misc records.</para>
+    </summary>
+    <seealso cref="MODLOAD_DATA" />
+  </member>
+  <member name="MODLOAD_CVMISC.oCV">
+    <summary>
+      <para>The offset of the CodeView record.</para>
+    </summary>
+  </member>
+  <member name="MODLOAD_CVMISC.cCV">
+    <summary>
+      <para>The size of the CodeView record.</para>
+    </summary>
+  </member>
+  <member name="MODLOAD_CVMISC.oMisc">
+    <summary>
+      <para>The offset of the Misc record.</para>
+    </summary>
+  </member>
+  <member name="MODLOAD_CVMISC.cMisc">
+    <summary>
+      <para>The size of the Misc record.</para>
+    </summary>
+  </member>
+  <member name="MODLOAD_CVMISC.dtImage">
+    <summary>
+      <para>The date/time stamp of the image.</para>
+    </summary>
+  </member>
+  <member name="MODLOAD_CVMISC.cImage">
+    <summary>
+      <para>The size of the image.</para>
+    </summary>
+  </member>
+</doc>

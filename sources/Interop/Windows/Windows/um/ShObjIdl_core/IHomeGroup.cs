@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHomeGroup.xml' path='doc/member[@name="IHomeGroup"]/*' />
 [Guid("7A3BD1D9-35A9-4FB3-A467-F48CAC35E2D0")]
 [NativeTypeName("struct IHomeGroup : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface
         return ((delegate* unmanaged<IHomeGroup*, Guid*, void**, int>)(lpVtbl[0]))((IHomeGroup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface
         return ((delegate* unmanaged<IHomeGroup*, uint>)(lpVtbl[1]))((IHomeGroup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface
         return ((delegate* unmanaged<IHomeGroup*, uint>)(lpVtbl[2]))((IHomeGroup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHomeGroup.xml' path='doc/member[@name="IHomeGroup.IsMember"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsMember(BOOL* member)
@@ -46,6 +51,7 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface
         return ((delegate* unmanaged<IHomeGroup*, BOOL*, int>)(lpVtbl[3]))((IHomeGroup*)Unsafe.AsPointer(ref this), member);
     }
 
+    /// <include file='IHomeGroup.xml' path='doc/member[@name="IHomeGroup.ShowSharingWizard"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ShowSharingWizard(HWND owner, HOMEGROUPSHARINGCHOICES* sharingchoices)

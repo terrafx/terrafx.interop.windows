@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_PARAMETER_TYPE.xml' path='doc/member[@name="WS_PARAMETER_TYPE"]/*' />
 public enum WS_PARAMETER_TYPE
 {
+    /// <include file='WS_PARAMETER_TYPE.xml' path='doc/member[@name="WS_PARAMETER_TYPE.WS_PARAMETER_TYPE_NORMAL"]/*' />
     WS_PARAMETER_TYPE_NORMAL = 0,
+
+    /// <include file='WS_PARAMETER_TYPE.xml' path='doc/member[@name="WS_PARAMETER_TYPE.WS_PARAMETER_TYPE_ARRAY"]/*' />
     WS_PARAMETER_TYPE_ARRAY = 1,
+
+    /// <include file='WS_PARAMETER_TYPE.xml' path='doc/member[@name="WS_PARAMETER_TYPE.WS_PARAMETER_TYPE_ARRAY_COUNT"]/*' />
     WS_PARAMETER_TYPE_ARRAY_COUNT = 2,
+
+    /// <include file='WS_PARAMETER_TYPE.xml' path='doc/member[@name="WS_PARAMETER_TYPE.WS_PARAMETER_TYPE_MESSAGES"]/*' />
     WS_PARAMETER_TYPE_MESSAGES = 3,
 }

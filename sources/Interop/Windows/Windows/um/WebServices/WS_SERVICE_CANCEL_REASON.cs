@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SERVICE_CANCEL_REASON.xml' path='doc/member[@name="WS_SERVICE_CANCEL_REASON"]/*' />
 public enum WS_SERVICE_CANCEL_REASON
 {
+    /// <include file='WS_SERVICE_CANCEL_REASON.xml' path='doc/member[@name="WS_SERVICE_CANCEL_REASON.WS_SERVICE_HOST_ABORT"]/*' />
     WS_SERVICE_HOST_ABORT = 0,
+
+    /// <include file='WS_SERVICE_CANCEL_REASON.xml' path='doc/member[@name="WS_SERVICE_CANCEL_REASON.WS_SERVICE_CHANNEL_FAULTED"]/*' />
     WS_SERVICE_CHANNEL_FAULTED = 1,
 }

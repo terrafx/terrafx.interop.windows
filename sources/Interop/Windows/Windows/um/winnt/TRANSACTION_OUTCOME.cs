@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_OUTCOME.xml' path='doc/member[@name="TRANSACTION_OUTCOME"]/*' />
 public enum TRANSACTION_OUTCOME
 {
+    /// <include file='TRANSACTION_OUTCOME.xml' path='doc/member[@name="TRANSACTION_OUTCOME.TransactionOutcomeUndetermined"]/*' />
     TransactionOutcomeUndetermined = 1,
+
+    /// <include file='TRANSACTION_OUTCOME.xml' path='doc/member[@name="TRANSACTION_OUTCOME.TransactionOutcomeCommitted"]/*' />
     TransactionOutcomeCommitted,
+
+    /// <include file='TRANSACTION_OUTCOME.xml' path='doc/member[@name="TRANSACTION_OUTCOME.TransactionOutcomeAborted"]/*' />
     TransactionOutcomeAborted,
 }

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT"]/*' />
 public partial struct WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT
 {
+    /// <include file='WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT.bindingConstraint"]/*' />
     public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 }

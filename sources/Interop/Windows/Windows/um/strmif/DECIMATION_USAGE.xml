@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DECIMATION_USAGE">
+    <summary>
+      <para>Describes the strategy that the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/overlay-mixer-filter">Overlay Mixer Filter</a> filter uses to scale the video image down to a smaller size.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IAMVideoDecimationProperties" />
+  </member>
+  <member name="DECIMATION_USAGE.DECIMATION_LEGACY">
+    <summary>
+      <para>Decimate the video by taking the following steps, in the order listed, until one of them succeeds.</para>
+      <list type="number">
+        <item>
+          <description>Try to use the overlay scaler on the VGA chip.</description>
+        </item>
+        <item>
+          <description>If the Overlay Mixer is connected through a video port, try to use the scaler on the video port.</description>
+        </item>
+        <item>
+          <description>Crop the video image.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DECIMATION_USAGE.DECIMATION_USE_DECODER_ONLY">
+    <summary>
+      <para>Decimate using the scaler on the video decoder. If that fails, crop the video image.</para>
+    </summary>
+  </member>
+  <member name="DECIMATION_USAGE.DECIMATION_USE_VIDEOPORT_ONLY">
+    <summary>
+      <para>Decimate using the scaler on the video port. If that fails, crop the video image.</para>
+    </summary>
+  </member>
+  <member name="DECIMATION_USAGE.DECIMATION_USE_OVERLAY_ONLY">
+    <summary>
+      <para>Decimate using the overlay scaler on the VGA chip. If that fails, crop the video image.</para>
+    </summary>
+  </member>
+  <member name="DECIMATION_USAGE.DECIMATION_DEFAULT">
+    <summary>
+      <para>Decimate the video by taking the following steps, in the order listed, until one of them succeeds.</para>
+      <list type="number">
+        <item>
+          <description>Try to use the scaler on the video decoder.</description>
+        </item>
+        <item>
+          <description>Try to use the overlay scaler on the VGA chip.</description>
+        </item>
+        <item>
+          <description>If the Overlay Mixer is connected through a video port, try to use the scaler on the video port.</description>
+        </item>
+        <item>
+          <description>Crop the video image.</description>
+        </item>
+      </list>
+      <para>This mode is the default decimation strategy.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICPlanarOptions">
+    <summary>
+      <para>Specifies additional options to an <see cref="IWICPlanarBitmapSourceTransform" /> implementation.</para>
+    </summary>
+    <seealso cref="IWICPlanarBitmapSourceTransform.CopyPixels" />
+    <seealso cref="IWICPlanarBitmapSourceTransform.DoesSupportTransform" />
+  </member>
+  <member name="WICPlanarOptions.WICPlanarOptionsDefault">
+    <summary>
+      <para>No options specified.</para>
+      <para>WIC JPEG Decoder:  The default behavior for iDCT scaling is to preserve quality when downscaling by downscaling only the Y plane in some cases, and the image may change to 4:4:4 chroma subsampling.</para>
+    </summary>
+  </member>
+  <member name="WICPlanarOptions.WICPlanarOptionsPreserveSubsampling">
+    <summary>
+      <para>Asks the source to preserve the size ratio between planes when scaling.</para>
+      <para>WIC JPEG Decoder:  Specifying this option causes the JPEG decoder to scale luma and chroma planes by the same amount, so a 4:2:0 chroma subsampled image outputs 4:2:0 data when downscaling by 2x, 4x, or 8x.</para>
+    </summary>
+  </member>
+  <member name="WICPlanarOptions.WICPLANAROPTIONS_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

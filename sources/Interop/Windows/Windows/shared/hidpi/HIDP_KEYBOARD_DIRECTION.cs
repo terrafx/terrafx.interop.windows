@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HIDP_KEYBOARD_DIRECTION.xml' path='doc/member[@name="HIDP_KEYBOARD_DIRECTION"]/*' />
 public enum HIDP_KEYBOARD_DIRECTION
 {
+    /// <include file='HIDP_KEYBOARD_DIRECTION.xml' path='doc/member[@name="HIDP_KEYBOARD_DIRECTION.HidP_Keyboard_Break"]/*' />
     HidP_Keyboard_Break,
+
+    /// <include file='HIDP_KEYBOARD_DIRECTION.xml' path='doc/member[@name="HIDP_KEYBOARD_DIRECTION.HidP_Keyboard_Make"]/*' />
     HidP_Keyboard_Make,
 }

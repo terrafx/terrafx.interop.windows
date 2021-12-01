@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_END_OF_FILE_INFO.xml' path='doc/member[@name="FILE_END_OF_FILE_INFO"]/*' />
 public partial struct FILE_END_OF_FILE_INFO
 {
+    /// <include file='FILE_END_OF_FILE_INFO.xml' path='doc/member[@name="FILE_END_OF_FILE_INFO.EndOfFile"]/*' />
     public LARGE_INTEGER EndOfFile;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEHLP_HD_TYPE.xml' path='doc/member[@name="IMAGEHLP_HD_TYPE"]/*' />
 public enum IMAGEHLP_HD_TYPE
 {
+    /// <include file='IMAGEHLP_HD_TYPE.xml' path='doc/member[@name="IMAGEHLP_HD_TYPE.hdBase"]/*' />
     hdBase = 0,
+
+    /// <include file='IMAGEHLP_HD_TYPE.xml' path='doc/member[@name="IMAGEHLP_HD_TYPE.hdSym"]/*' />
     hdSym,
+
+    /// <include file='IMAGEHLP_HD_TYPE.xml' path='doc/member[@name="IMAGEHLP_HD_TYPE.hdSrc"]/*' />
     hdSrc,
+
+    /// <include file='IMAGEHLP_HD_TYPE.xml' path='doc/member[@name="IMAGEHLP_HD_TYPE.hdMax"]/*' />
     hdMax,
 }

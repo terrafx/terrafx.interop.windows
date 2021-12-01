@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_MFT_DRAIN_TYPE">
+    <summary>
+      <para>Not supported.</para>
+      <para>
+        <b>Note</b>  Earlier versions of this documentation described the <b>_MFT_DRAIN_TYPE</b> enumeration incorrectly. The enumeration is not supported. For more information, see <see cref="MFT_MESSAGE_TYPE" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="_MFT_DRAIN_TYPE.MFT_DRAIN_PRODUCE_TAILS">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="_MFT_DRAIN_TYPE.MFT_DRAIN_NO_TAILS">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

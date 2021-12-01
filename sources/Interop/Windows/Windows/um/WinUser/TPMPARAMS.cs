@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TPMPARAMS.xml' path='doc/member[@name="TPMPARAMS"]/*' />
 public partial struct TPMPARAMS
 {
+    /// <include file='TPMPARAMS.xml' path='doc/member[@name="TPMPARAMS.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='TPMPARAMS.xml' path='doc/member[@name="TPMPARAMS.rcExclude"]/*' />
     public RECT rcExclude;
 }

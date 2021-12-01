@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT.xml' path='doc/member[@name="WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT"]/*' />
 public unsafe partial struct WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT
 {
+    /// <include file='WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT.xml' path='doc/member[@name="WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT.callback"]/*' />
     [NativeTypeName("WS_CERTIFICATE_VALIDATION_CALLBACK")]
     public delegate* unmanaged<CERT_CONTEXT*, void*, HRESULT> callback;
 
+    /// <include file='WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT.xml' path='doc/member[@name="WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT.state"]/*' />
     public void* state;
 }

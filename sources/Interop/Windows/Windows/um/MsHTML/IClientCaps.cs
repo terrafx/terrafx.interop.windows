@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps"]/*' />
 [Guid("7E8BC44D-AEFF-11D1-89C2-00C04FB6BFC4")]
 [NativeTypeName("struct IClientCaps : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, Guid*, void**, int>)(lpVtbl[0]))((IClientCaps*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, uint>)(lpVtbl[1]))((IClientCaps*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, uint>)(lpVtbl[2]))((IClientCaps*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, uint*, int>)(lpVtbl[3]))((IClientCaps*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IClientCaps*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IClientCaps*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IClientCaps*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_javaEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_javaEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, short*, int>)(lpVtbl[7]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_cookieEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_cookieEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, short*, int>)(lpVtbl[8]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_cpuClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, ushort**, int>)(lpVtbl[9]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_systemLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, ushort**, int>)(lpVtbl[10]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_userLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p)
@@ -102,6 +115,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, ushort**, int>)(lpVtbl[11]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_platform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, ushort**, int>)(lpVtbl[12]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_connectionSpeed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, int*, int>)(lpVtbl[13]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_onLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_onLine([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, short*, int>)(lpVtbl[14]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_colorDepth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_colorDepth([NativeTypeName("long *")] int* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, int*, int>)(lpVtbl[15]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_bufferDepth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_bufferDepth([NativeTypeName("long *")] int* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, int*, int>)(lpVtbl[16]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_width([NativeTypeName("long *")] int* p)
@@ -144,6 +163,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, int*, int>)(lpVtbl[17]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_height([NativeTypeName("long *")] int* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, int*, int>)(lpVtbl[18]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_availHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_availHeight([NativeTypeName("long *")] int* p)
@@ -158,6 +179,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, int*, int>)(lpVtbl[19]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_availWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_availWidth([NativeTypeName("long *")] int* p)
@@ -165,6 +187,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, int*, int>)(lpVtbl[20]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_connectionType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_connectionType([NativeTypeName("BSTR *")] ushort** p)
@@ -172,6 +195,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, ushort**, int>)(lpVtbl[21]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.isComponentInstalled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT isComponentInstalled([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bStrVer, [NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -179,6 +203,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, ushort*, ushort*, ushort*, short*, int>)(lpVtbl[22]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrName, bstrUrl, bStrVer, p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.getComponentVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT getComponentVersion([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR *")] ushort** pbstrVer)
@@ -186,6 +211,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, ushort*, ushort*, ushort**, int>)(lpVtbl[23]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrName, bstrUrl, pbstrVer);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.compareVersions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT compareVersions([NativeTypeName("BSTR")] ushort* bstrVer1, [NativeTypeName("BSTR")] ushort* bstrVer2, [NativeTypeName("long *")] int* p)
@@ -193,6 +219,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, ushort*, ushort*, int*, int>)(lpVtbl[24]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrVer1, bstrVer2, p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.addComponentRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT addComponentRequest([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bStrVer = null)
@@ -200,6 +227,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, ushort*, ushort*, ushort*, int>)(lpVtbl[25]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrName, bstrUrl, bStrVer);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.doComponentRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT doComponentRequest([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -207,6 +235,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         return ((delegate* unmanaged<IClientCaps*, short*, int>)(lpVtbl[26]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.clearComponentRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT clearComponentRequest()

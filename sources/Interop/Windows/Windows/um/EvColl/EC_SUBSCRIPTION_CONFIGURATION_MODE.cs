@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EC_SUBSCRIPTION_CONFIGURATION_MODE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CONFIGURATION_MODE"]/*' />
 public enum EC_SUBSCRIPTION_CONFIGURATION_MODE
 {
+    /// <include file='EC_SUBSCRIPTION_CONFIGURATION_MODE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CONFIGURATION_MODE.EcConfigurationModeNormal"]/*' />
     EcConfigurationModeNormal = 0,
+
+    /// <include file='EC_SUBSCRIPTION_CONFIGURATION_MODE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CONFIGURATION_MODE.EcConfigurationModeCustom"]/*' />
     EcConfigurationModeCustom,
+
+    /// <include file='EC_SUBSCRIPTION_CONFIGURATION_MODE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CONFIGURATION_MODE.EcConfigurationModeMinLatency"]/*' />
     EcConfigurationModeMinLatency,
+
+    /// <include file='EC_SUBSCRIPTION_CONFIGURATION_MODE.xml' path='doc/member[@name="EC_SUBSCRIPTION_CONFIGURATION_MODE.EcConfigurationModeMinBandwidth"]/*' />
     EcConfigurationModeMinBandwidth,
 }

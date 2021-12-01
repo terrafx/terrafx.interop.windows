@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUpdateIDList.xml' path='doc/member[@name="IUpdateIDList"]/*' />
 [Guid("6589B6D2-5F8D-4B9E-B7E0-23CDD9717D8C")]
 [NativeTypeName("struct IUpdateIDList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUpdateIDList : IUpdateIDList.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUpdateIDList : IUpdateIDList.Interface
         return ((delegate* unmanaged<IUpdateIDList*, Guid*, void**, int>)(lpVtbl[0]))((IUpdateIDList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUpdateIDList : IUpdateIDList.Interface
         return ((delegate* unmanaged<IUpdateIDList*, uint>)(lpVtbl[1]))((IUpdateIDList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUpdateIDList : IUpdateIDList.Interface
         return ((delegate* unmanaged<IUpdateIDList*, uint>)(lpVtbl[2]))((IUpdateIDList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUpdateIDList.xml' path='doc/member[@name="IUpdateIDList.Update"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Update(IBindCtx* pbc, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlIn, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)

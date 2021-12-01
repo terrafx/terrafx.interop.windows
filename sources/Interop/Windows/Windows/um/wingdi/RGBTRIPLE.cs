@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RGBTRIPLE.xml' path='doc/member[@name="RGBTRIPLE"]/*' />
 public partial struct RGBTRIPLE
 {
+    /// <include file='RGBTRIPLE.xml' path='doc/member[@name="RGBTRIPLE.rgbtBlue"]/*' />
     public byte rgbtBlue;
 
+    /// <include file='RGBTRIPLE.xml' path='doc/member[@name="RGBTRIPLE.rgbtGreen"]/*' />
     public byte rgbtGreen;
 
+    /// <include file='RGBTRIPLE.xml' path='doc/member[@name="RGBTRIPLE.rgbtRed"]/*' />
     public byte rgbtRed;
 }

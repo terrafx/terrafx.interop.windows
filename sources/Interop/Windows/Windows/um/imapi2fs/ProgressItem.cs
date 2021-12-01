@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ProgressItem.xml' path='doc/member[@name="ProgressItem"]/*' />
 [Guid("2C941FCB-975B-59BE-A960-9A2A262853A5")]
 public partial struct ProgressItem
 {

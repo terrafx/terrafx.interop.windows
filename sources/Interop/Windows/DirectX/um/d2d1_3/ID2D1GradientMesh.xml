@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1GradientMesh.GetPatchCount">
+    <summary>
+      <para>Returns the number of patches that make up this gradient mesh.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>Returns the number of patches that make up this gradient mesh.</para>
+    </returns>
+    <seealso cref="ID2D1GradientMesh" />
+  </member>
+  <member name="ID2D1GradientMesh.GetPatches">
+    <summary>
+      <para>Returns a subset of the patches that make up this gradient mesh.</para>
+    </summary>
+    <param name="startIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>Index of the first patch to return.</para>
+    </param>
+    <param name="patches">
+      <para>Type: <b><see cref="D2D1_GRADIENT_MESH_PATCH" />*</b></para>
+      <para>A pointer to the array to be filled with the patch data.</para>
+    </param>
+    <param name="patchesCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of patches to be returned.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>S_OK if successful, otherwise a failure HRESULT.</para>
+    </returns>
+    <seealso cref="ID2D1GradientMesh" />
+  </member>
+  <member name="ID2D1GradientMesh">
+    <summary>
+      <para>Represents a device-dependent representation of a gradient mesh composed of patches.
+Use the <see cref="ID2D1DeviceContext2.CreateGradientMesh method" /> to create an instance of ID2D1GradientMesh.</para>
+    </summary>
+    <seealso cref="ID2D1Resource" />
+  </member>
+</doc>

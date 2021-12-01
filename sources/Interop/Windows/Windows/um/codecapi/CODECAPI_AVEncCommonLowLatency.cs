@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncCommonLowLatency.xml' path='doc/member[@name="CODECAPI_AVEncCommonLowLatency"]/*' />
 [Guid("9D3ECD55-89E8-490A-970A-0C9548D5A56E")]
 public partial struct CODECAPI_AVEncCommonLowLatency
 {

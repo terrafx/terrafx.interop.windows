@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGEHLP_CBA_EVENT">
+    <summary>
+      <para>Contains information about a debugging event.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psymbol_registered_callback">SymRegisterCallbackProc64</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psymbolservercallbackproc">SymbolServerCallback</seealso>
+  </member>
+  <member name="IMAGEHLP_CBA_EVENT.severity">
+    <summary>
+      <para>The event severity. This parameter can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>sevInfo</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Informational event.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>sevProblem</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reserved for future use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>sevAttn</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reserved for future use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>sevFatal</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reserved for future use.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_CBA_EVENT.code">
+    <summary>
+      <para>This member is reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_CBA_EVENT.desc">
+    <summary>
+      <para>A text description of the error.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_CBA_EVENT.object">
+    <summary>
+      <para>This member is reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_CBA_EVENT">
+    <summary>
+      <para>Contains information about a debugging event.</para>
+    </summary>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The dbghelp.h header defines IMAGEHLP_CBA_EVENT as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psymbol_registered_callback">SymRegisterCallbackProc64</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psymbolservercallbackproc">SymbolServerCallback</seealso>
+  </member>
+  <member name="IMAGEHLP_CBA_EVENT.severity">
+    <summary>
+      <para>The event severity. This parameter can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>sevInfo</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Informational event.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>sevProblem</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reserved for future use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>sevAttn</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reserved for future use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>sevFatal</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reserved for future use.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_CBA_EVENT.code">
+    <summary>
+      <para>This member is reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_CBA_EVENT.desc">
+    <summary>
+      <para>A text description of the error.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_CBA_EVENT.object">
+    <summary>
+      <para>This member is reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_X942_DH_PARAMETERS.xml' path='doc/member[@name="CERT_X942_DH_PARAMETERS"]/*' />
 public unsafe partial struct CERT_X942_DH_PARAMETERS
 {
+    /// <include file='CERT_X942_DH_PARAMETERS.xml' path='doc/member[@name="CERT_X942_DH_PARAMETERS.p"]/*' />
     [NativeTypeName("CRYPT_UINT_BLOB")]
     public CRYPT_DATA_BLOB p;
 
+    /// <include file='CERT_X942_DH_PARAMETERS.xml' path='doc/member[@name="CERT_X942_DH_PARAMETERS.g"]/*' />
     [NativeTypeName("CRYPT_UINT_BLOB")]
     public CRYPT_DATA_BLOB g;
 
+    /// <include file='CERT_X942_DH_PARAMETERS.xml' path='doc/member[@name="CERT_X942_DH_PARAMETERS.q"]/*' />
     [NativeTypeName("CRYPT_UINT_BLOB")]
     public CRYPT_DATA_BLOB q;
 
+    /// <include file='CERT_X942_DH_PARAMETERS.xml' path='doc/member[@name="CERT_X942_DH_PARAMETERS.j"]/*' />
     [NativeTypeName("CRYPT_UINT_BLOB")]
     public CRYPT_DATA_BLOB j;
 
+    /// <include file='CERT_X942_DH_PARAMETERS.xml' path='doc/member[@name="CERT_X942_DH_PARAMETERS.pValidationParams"]/*' />
     [NativeTypeName("PCERT_X942_DH_VALIDATION_PARAMS")]
     public CERT_X942_DH_VALIDATION_PARAMS* pValidationParams;
 }

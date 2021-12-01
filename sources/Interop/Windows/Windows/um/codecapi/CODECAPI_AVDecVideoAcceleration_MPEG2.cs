@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecVideoAcceleration_MPEG2.xml' path='doc/member[@name="CODECAPI_AVDecVideoAcceleration_MPEG2"]/*' />
 [Guid("F7DB8A2E-4F48-4EE8-AE31-8B6EBE558AE2")]
 public partial struct CODECAPI_AVDecVideoAcceleration_MPEG2
 {

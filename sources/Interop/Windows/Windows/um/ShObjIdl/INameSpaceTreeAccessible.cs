@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible"]/*' />
 [Guid("71F312DE-43ED-4190-8477-E9536B82350B")]
 [NativeTypeName("struct INameSpaceTreeAccessible : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
         return ((delegate* unmanaged<INameSpaceTreeAccessible*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
         return ((delegate* unmanaged<INameSpaceTreeAccessible*, uint>)(lpVtbl[1]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
         return ((delegate* unmanaged<INameSpaceTreeAccessible*, uint>)(lpVtbl[2]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible.OnGetDefaultAccessibilityAction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] ushort** pbstrDefaultAction)
@@ -46,6 +51,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
         return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, ushort**, int>)(lpVtbl[3]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pbstrDefaultAction);
     }
 
+    /// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible.OnDoDefaultAccessibilityAction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnDoDefaultAccessibilityAction(IShellItem* psi)
@@ -53,6 +59,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
         return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, int>)(lpVtbl[4]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible.OnGetAccessibilityRole"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnGetAccessibilityRole(IShellItem* psi, VARIANT* pvarRole)

@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE
 {
+    /// <include file='CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.Version"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Version;
 
+    /// <include file='CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.Name"]/*' />
     [NativeTypeName("PWSTR")]
     public ushort* Name;
 }

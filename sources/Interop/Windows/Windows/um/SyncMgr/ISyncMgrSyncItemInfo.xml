@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrSyncItemInfo.GetComment">
+    <summary>
+      <para>Gets a string that contains commentary regarding the item.</para>
+    </summary>
+    <param name="ppszComment">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When this method returns, contains a pointer to a buffer containing the comment string. This string is of maximum length MAX_SYNCMGR_NAME including the terminating null character.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. If the method fails, <i>ppszComment</i> contains an empty string.</para>
+    </returns>
+    <remarks>
+      <para>This string could be provided by an item to display a summary of its contents, for example, "32 contacts" or "13 songs". The string can have a maximum length of MAX_SYNCMGR_NAME including the terminating null character.</para>
+      <para>The comment value is displayed as the System.Sync.Comments (PKEY_Sync_Comments) property in the folder UI when a synchronization is not being performed.</para>
+      <para>Sync Center calls this method whenever the <see cref="UpdateHandler" /> method is called.</para>
+      <para>The item is responsible for allocating the string buffer pointed to by <i>ppszComment</i> through <see cref="CoTaskMemAlloc" />. Sync Center deallocates the string buffer through <see cref="CoTaskMemFree" />.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItemInfo.GetLastSyncTime">
+    <summary>
+      <para>Gets the date and time when the item was last synchronized.</para>
+    </summary>
+    <param name="pftLastSync">
+      <para>Type: <b>FILETIME*</b></para>
+      <para>When this method returns, contains a pointer to a <see cref="FILETIME" /> structure containing the date and time information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. If the method fails, <i>pftLastSync</i> points to the value from the previous synchronization.</para>
+    </returns>
+    <remarks>
+      <para>This value is not displayed in the folder UI by default, but is available as the System.Sync.DateSynchronized (PKEY_Sync_DateSynchronized) property.</para>
+      <para>Sync Center calls this method whenever the <see cref="UpdateItem" /> method is called.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method that calls a private class function to retrieve the time and date.</para>
+      <code>STDMETHODIMP CMyDeviceSyncItem.GetLastSyncTime(__out FILETIME *pftLastSync)
+{
+    *pftLastSync = _ftLastSync;
+    return S_OK;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItemInfo.GetTypeLabel">
+    <summary>
+      <para>Gets a label for the item type. This typically provides the model of the device or an equivalent item-specific identity string.</para>
+    </summary>
+    <param name="ppszTypeLabel">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When this method returns, contains a pointer to a buffer containing the label string.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. If the method fails, <i>ppszTypeLabel</i> contains an empty string.</para>
+    </returns>
+    <remarks>
+      <para>The label value is displayed as the System.Sync.ItemTypeLabel (PKEY_Sync_ItemTypeLabel) property in the folder UI. Sync Center calls this method whenever the <see cref="UpdateHandler" /> or <see cref="UpdateItem" /> method is called.</para>
+      <para>The item is responsible for allocating the string buffer pointed to by <i>ppszTypeLabel</i> through <see cref="CoTaskMemAlloc" />. Sync Center deallocates the string buffer through <see cref="CoTaskMemFree" />.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItemInfo.IsConnected">
+    <summary>
+      <para>Generates a value that indicates whether the item—typically some type of external device—is connected.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the item is connected; otherwise, S_FALSE. An error returned by this method will be interpreted as S_OK.</para>
+    </returns>
+    <remarks>
+      <para>If an item is disconnected, it is not synchronized by Sync Center. Also, many of the possible actions available to a item—such as Sync—are removed or disabled in the UI.</para>
+      <para>This value is available in the folder UI as the System.Sync.Connected (PKEY_Sync_Connected) property.</para>
+      <para>Sync Center calls this method whenever the <see cref="UpdateHandler" /> method is called.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method that calls a private class function to retrieve the connected state.</para>
+      <code>STDMETHODIMP CMyDeviceSyncItem.IsConnected()
+{
+    return (_IsConnected() ? S_OK : S_FALSE);
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItemInfo.IsEnabled">
+    <summary>
+      <para>Generates a value that indicates whether the item is enabled.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the item is enabled; otherwise, S_FALSE.</para>
+      <para>If the item wants Sync Center to maintain the current state, it can return E_NOTIMPL. If any other value is returned, Sync Center sets the item's enabled state to the last known value and enables or disables the associated tasks as appropriate.</para>
+      <para>If either the SYNCMGR_ICM_QUERY_BEFORE_ENABLE or SYNCMGR_ICM_QUERY_BEFORE_DISABLE flags are set in the mask returned from <see cref="GetCapabilities" />, the handler must manage its own enabled state and therefore must return either S_OK or S_FALSE. Any other return value will be considered an error.</para>
+    </returns>
+    <remarks>
+      <para>If an item is disabled, it is not synchronized by Sync Center. Also, many of the possible actions available to an item—such as Sync—are removed or disabled in the UI.</para>
+      <para>An item can implement a <see cref="Disconnected" /> state by returning S_FALSE from <b>IsEnabled</b> and setting the SYNCMR_IPM_PREVENT_ENABLE flag in its <see cref="GetPolicies" /> implementation. This shows the item as disabled and prevents the user from enabling it manually.</para>
+      <para>The enabled value is available in the folder UI as the System.Sync.Enabled (PKEY_Sync_Enabled) property.</para>
+      <para>Sync Center calls this method whenever the <see cref="UpdateHandler" /> method is called.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method that calls a private class function to retrieve the enabled state.</para>
+      <code>STDMETHODIMP CMyDeviceSyncItem.IsEnabled()
+{
+    // Return a previously-calculated value.
+    return (_fIsEnabled ? S_OK : S_FALSE);
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItemInfo">
+    <summary>
+      <para>Exposes methods that provide property and state information for a single sync item.</para>
+    </summary>
+    <remarks>
+      <para>By representing these properties as an interface, the set of properties can be changed later without recompiling the handler. The interface also provides type-safe access to the properties.</para>
+      <para>Items should always implement this interface, usually on the same object that implements <see cref="ISyncMgrSyncItem" />.</para>
+    </remarks>
+  </member>
+</doc>

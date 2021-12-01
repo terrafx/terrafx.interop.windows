@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DMO_SET_TYPE_FLAGS">
+    <summary>
+      <para>The <code>DMO_SET_TYPE_FLAGS</code> enumeration defines flags for setting the media type on a stream.</para>
+    </summary>
+    <remarks>
+      <para>The DMO_SET_TYPEF_TEST_ONLY and DMO_SET_TYPEF_CLEAR flags are mutually exclusive. Do not set both flags.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-enumerated-types">DMO Enumerated Types</seealso>
+    <seealso cref="IMediaObject.SetInputType" />
+    <seealso cref="IMediaObject.SetOutputType" />
+  </member>
+  <member name="_DMO_SET_TYPE_FLAGS.DMO_SET_TYPEF_TEST_ONLY">
+    <summary>
+      <para>Test the media type but do not set it.</para>
+    </summary>
+  </member>
+  <member name="_DMO_SET_TYPE_FLAGS.DMO_SET_TYPEF_CLEAR">
+    <summary>
+      <para>Clear the media type that was set for the stream.</para>
+    </summary>
+  </member>
+</doc>

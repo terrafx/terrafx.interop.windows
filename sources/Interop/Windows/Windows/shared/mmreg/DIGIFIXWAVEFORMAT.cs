@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DIGIFIXWAVEFORMAT.xml' path='doc/member[@name="DIGIFIXWAVEFORMAT"]/*' />
 public partial struct DIGIFIXWAVEFORMAT
 {
+    /// <include file='DIGIFIXWAVEFORMAT.xml' path='doc/member[@name="DIGIFIXWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 }

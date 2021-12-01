@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINTRUST_FILE_INFO">
+    <summary>
+      <para>The <b>WINTRUST_FILE_INFO</b> structure is used when calling
+<see cref="WinVerifyTrust" /> to verify an individual file.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_FILE_INFO.cbStruct">
+    <summary>
+      <para>Count of bytes in this structure.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_FILE_INFO.pcwszFilePath">
+    <summary>
+      <para>Full path and file name of the file to be verified. This parameter cannot be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_FILE_INFO.hFile">
+    <summary>
+      <para>Optional. File handle to the open file to be verified. This handle must be to a file that has at least read permission. This member can be set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_FILE_INFO.pgKnownSubject">
+    <summary>
+      <para>Optional. Pointer to a <see cref="GUID" /> structure that specifies the subject type. This member can be set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

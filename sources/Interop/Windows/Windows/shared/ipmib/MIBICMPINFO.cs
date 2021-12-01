@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIBICMPINFO.xml' path='doc/member[@name="MIBICMPINFO"]/*' />
 public partial struct MIBICMPINFO
 {
+    /// <include file='MIBICMPINFO.xml' path='doc/member[@name="MIBICMPINFO.icmpInStats"]/*' />
     public MIBICMPSTATS icmpInStats;
 
+    /// <include file='MIBICMPINFO.xml' path='doc/member[@name="MIBICMPINFO.icmpOutStats"]/*' />
     public MIBICMPSTATS icmpOutStats;
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_BOUNDARYROW.xml' path='doc/member[@name="MIB_BOUNDARYROW"]/*' />
 public partial struct MIB_BOUNDARYROW
 {
+    /// <include file='MIB_BOUNDARYROW.xml' path='doc/member[@name="MIB_BOUNDARYROW.dwGroupAddress"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwGroupAddress;
 
+    /// <include file='MIB_BOUNDARYROW.xml' path='doc/member[@name="MIB_BOUNDARYROW.dwGroupMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwGroupMask;
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGElementInstance.xml' path='doc/member[@name="SVGElementInstance"]/*' />
 [Guid("30510575-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGElementInstance
 {

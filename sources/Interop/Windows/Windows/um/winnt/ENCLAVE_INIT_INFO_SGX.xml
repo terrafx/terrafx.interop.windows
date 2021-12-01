@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ENCLAVE_INIT_INFO_SGX">
+    <summary>
+      <para>Contains architecture-specific information to use to initialize an enclave when the enclave type is <b>ENCLAVE_TYPE_SGX</b>, which specifies an enclave for the Intel Software Guard Extensions (SGX) architecture extension.</para>
+    </summary>
+    <remarks>
+      <para>For more information about the <b>SIGSTRUCT</b> and <b>EINITTOKEN</b> structures, see the Intel SGX Programming Reference that is available from <a href="https://software.intel.com/sgx">Intel Software Guard Extensions</a>.</para>
+    </remarks>
+    <seealso cref="ENCLAVE_CREATE_INFO_SGX" />
+    <seealso cref="InitializeEnclave" />
+  </member>
+  <member name="ENCLAVE_INIT_INFO_SGX.SigStruct">
+    <summary>
+      <para>The enclave signature structure (<b>SIGSTRUCT</b>) to use  to initialize the enclave. This structure specifies information about the enclave from the enclave signer.</para>
+    </summary>
+  </member>
+  <member name="ENCLAVE_INIT_INFO_SGX.Reserved1">
+    <summary>
+      <para>Not used.</para>
+    </summary>
+  </member>
+  <member name="ENCLAVE_INIT_INFO_SGX.EInitToken">
+    <summary>
+      <para>The EINIT token structure (<b>EINITTOKEN</b>) to use  to initialize the enclave. The initialization operation uses this structure to verify that the enclave has permission to start.</para>
+    </summary>
+  </member>
+  <member name="ENCLAVE_INIT_INFO_SGX.Reserved2">
+    <summary>
+      <para>Not used.</para>
+    </summary>
+  </member>
+</doc>

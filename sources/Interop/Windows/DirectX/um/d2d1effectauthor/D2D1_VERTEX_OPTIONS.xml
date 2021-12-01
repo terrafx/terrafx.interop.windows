@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_VERTEX_OPTIONS">
+    <summary>
+      <para>Describes flags that influence how the renderer interacts with a custom vertex shader.</para>
+    </summary>
+    <seealso cref="D2D1_BLEND_DESCRIPTION" />
+    <seealso cref="ID2D1BlendTransform" />
+  </member>
+  <member name="D2D1_VERTEX_OPTIONS.D2D1_VERTEX_OPTIONS_NONE">
+    <summary>
+      <para>The logical equivalent of having no flags set.</para>
+    </summary>
+  </member>
+  <member name="D2D1_VERTEX_OPTIONS.D2D1_VERTEX_OPTIONS_DO_NOT_CLEAR">
+    <summary>
+      <para>If this flag is set, the renderer  assumes that the vertex shader will cover the entire region of interest with vertices and need not clear the destination render target. If this flag is not set, the renderer assumes that the vertices do not cover the entire region interest and must clear the render target to transparent black first.</para>
+    </summary>
+  </member>
+  <member name="D2D1_VERTEX_OPTIONS.D2D1_VERTEX_OPTIONS_USE_DEPTH_BUFFER">
+    <summary>
+      <para>The renderer will use a depth buffer when rendering custom vertices. The depth buffer will be used for calculating occlusion information. This can result in the renderer output being draw-order dependent if it contains transparency.</para>
+    </summary>
+  </member>
+  <member name="D2D1_VERTEX_OPTIONS.D2D1_VERTEX_OPTIONS_ASSUME_NO_OVERLAP">
+    <summary>
+      <para>Indicates that custom vertices do not overlap each other.</para>
+    </summary>
+  </member>
+  <member name="D2D1_VERTEX_OPTIONS.D2D1_VERTEX_OPTIONS_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

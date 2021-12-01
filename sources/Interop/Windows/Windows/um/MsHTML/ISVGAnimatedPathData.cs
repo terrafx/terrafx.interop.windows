@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISVGAnimatedPathData.xml' path='doc/member[@name="ISVGAnimatedPathData"]/*' />
 [Guid("30510511-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGAnimatedPathData : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, Guid*, void**, int>)(lpVtbl[0]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, uint>)(lpVtbl[1]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, uint>)(lpVtbl[2]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, uint*, int>)(lpVtbl[3]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISVGAnimatedPathData.xml' path='doc/member[@name="ISVGAnimatedPathData.putref_pathSegList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT putref_pathSegList(ISVGPathSegList* v)
@@ -74,6 +83,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList*, int>)(lpVtbl[7]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGAnimatedPathData.xml' path='doc/member[@name="ISVGAnimatedPathData.get_pathSegList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_pathSegList(ISVGPathSegList** p)
@@ -81,6 +91,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList**, int>)(lpVtbl[8]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGAnimatedPathData.xml' path='doc/member[@name="ISVGAnimatedPathData.putref_normalizedPathSegList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT putref_normalizedPathSegList(ISVGPathSegList* v)
@@ -88,6 +99,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList*, int>)(lpVtbl[9]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGAnimatedPathData.xml' path='doc/member[@name="ISVGAnimatedPathData.get_normalizedPathSegList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_normalizedPathSegList(ISVGPathSegList** p)
@@ -95,6 +107,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList**, int>)(lpVtbl[10]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGAnimatedPathData.xml' path='doc/member[@name="ISVGAnimatedPathData.putref_animatedPathSegList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT putref_animatedPathSegList(ISVGPathSegList* v)
@@ -102,6 +115,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList*, int>)(lpVtbl[11]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGAnimatedPathData.xml' path='doc/member[@name="ISVGAnimatedPathData.get_animatedPathSegList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_animatedPathSegList(ISVGPathSegList** p)
@@ -109,6 +123,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList**, int>)(lpVtbl[12]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGAnimatedPathData.xml' path='doc/member[@name="ISVGAnimatedPathData.putref_animatedNormalizedPathSegList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT putref_animatedNormalizedPathSegList(ISVGPathSegList* v)
@@ -116,6 +131,7 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         return ((delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList*, int>)(lpVtbl[13]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGAnimatedPathData.xml' path='doc/member[@name="ISVGAnimatedPathData.get_animatedNormalizedPathSegList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_animatedNormalizedPathSegList(ISVGPathSegList** p)

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HTTP_REDIRECT_CALLBACK_CONTEXT.xml' path='doc/member[@name="WS_HTTP_REDIRECT_CALLBACK_CONTEXT"]/*' />
 public unsafe partial struct WS_HTTP_REDIRECT_CALLBACK_CONTEXT
 {
+    /// <include file='WS_HTTP_REDIRECT_CALLBACK_CONTEXT.xml' path='doc/member[@name="WS_HTTP_REDIRECT_CALLBACK_CONTEXT.callback"]/*' />
     [NativeTypeName("WS_HTTP_REDIRECT_CALLBACK")]
     public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, HRESULT> callback;
 
+    /// <include file='WS_HTTP_REDIRECT_CALLBACK_CONTEXT.xml' path='doc/member[@name="WS_HTTP_REDIRECT_CALLBACK_CONTEXT.state"]/*' />
     public void* state;
 }

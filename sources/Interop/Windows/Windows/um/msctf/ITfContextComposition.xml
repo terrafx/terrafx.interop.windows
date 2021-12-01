@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfContextComposition.EnumCompositions">
+    <summary>
+      <para>Creates an enumerator object that contains all compositions in the context.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Pointer to an <see cref="IEnumITfCompositionView" /> interface pointer that receives the enumerator object.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The enumerator object could not be initialized.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppEnum</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The enumerator object cannot be created.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_DISCONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The context object is not on a document stack.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IEnumITfCompositionView interface" />
+    <seealso cref="ITfContextComposition interface" />
+  </member>
+  <member name="ITfContextComposition.FindComposition">
+    <summary>
+      <para>Creates an enumerator object that contains all compositions that intersect a specified range of text.</para>
+    </summary>
+    <param name="ecRead">
+      <para>Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfEditSession.DoEditSession" />.</para>
+    </param>
+    <param name="pTestRange">
+      <para>Pointer to an <see cref="ITfRange" /> object that specifies the range to search. This parameter can be <b>NULL</b>. If this parameter is <b>NULL</b>, the enumerator will contain all compositions in the edit context.</para>
+    </param>
+    <param name="ppEnum">
+      <para>Pointer to an <see cref="IEnumITfCompositionView" /> interface pointer that receives the enumerator object.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The enumerator object cannot be initialized.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The enumerator object cannot be created.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_DISCONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The context object is not on a document stack.</para>
+          </description>
+        </item>
+      </list>
+      <para>The edit context identified by <i>ecRead</i> does not have a read-only lock.</para>
+    </returns>
+    <seealso cref="IEnumITfCompositionView interface" />
+    <seealso cref="ITfContextComposition interface" />
+    <seealso cref="ITfRange interface" />
+    <seealso cref="ITfEditSession.DoEditSession" />
+  </member>
+  <member name="ITfContextComposition.StartComposition">
+    <summary>
+      <para>Creates a new composition.</para>
+    </summary>
+    <param name="ecWrite">
+      <para>Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfEditSession.DoEditSession" />.</para>
+    </param>
+    <param name="pCompositionRange">
+      <para>Pointer to an <see cref="ITfRange" /> object that specifies the text that the composition initially covers.</para>
+    </param>
+    <param name="pSink">
+      <para>Pointer to an <see cref="ITfCompositionSink" /> object that receives composition event notifications. This parameter is optional and can be <b>NULL</b>. If supplied, the object is released when the composition is terminated.</para>
+    </param>
+    <param name="ppComposition">
+      <para>Pointer to an <see cref="ITfComposition" /> interface pointer that receives the new composition object. This parameter receives <b>NULL</b> if the context owner rejects the composition.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful. If the context owner composition advise sink rejects the composition, <i>ppComposition</i> is set to <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The composition object cannot be created.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was called within another composition operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_DISCONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The context object is not on a document stack.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The edit context identified by <i>ecWrite</i> does not have a read/write lock.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the context owner has installed a context owner composition advise sink, the <see cref="ITfContextOwnerCompositionSink.OnStartComposition" /> method is called. If the advise sink rejects the new composition, this method returns S_OK but <i>ppComposition</i> is set to <b>NULL</b>.</para>
+      <para>Any text covered by <i>pCompositionRange</i> receives the GUID_PROP_COMPOSING property.</para>
+    </remarks>
+    <seealso cref="IEnumITfCompositionView interface" />
+    <seealso cref="ITfContextComposition interface" />
+    <seealso cref="ITfRange interface" />
+    <seealso cref="ITfCompositionSink interface" />
+    <seealso cref="ITfContextOwnerCompositionSink.OnStartComposition" />
+    <seealso cref="ITfEditSession.DoEditSession" />
+  </member>
+  <member name="ITfContextComposition.TakeOwnership">
+    <summary>
+      <para>Not currently implemented.</para>
+    </summary>
+    <param name="ecWrite">
+      <para>Not used.</para>
+    </param>
+    <param name="pComposition">
+      <para>Not used.</para>
+    </param>
+    <param name="pSink">
+      <para>Not used.</para>
+    </param>
+    <param name="ppComposition">
+      <para>Not used.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>This method is not currently implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IEnumITfCompositionView interface" />
+    <seealso cref="ITfContextComposition interface" />
+  </member>
+  <member name="ITfContextComposition">
+    <summary>
+      <para>The <b>ITfContextComposition</b> interface is implemented by the TSF manager and is used by a text service to create and manipulate compositions. An instance of this interface is provided by <b>ITfContext.QueryInterface</b> with IID_ITfContextComposition.</para>
+    </summary>
+    <seealso cref="ITfContext " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

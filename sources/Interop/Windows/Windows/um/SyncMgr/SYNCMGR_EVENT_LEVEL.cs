@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGR_EVENT_LEVEL.xml' path='doc/member[@name="SYNCMGR_EVENT_LEVEL"]/*' />
 public enum SYNCMGR_EVENT_LEVEL
 {
+    /// <include file='SYNCMGR_EVENT_LEVEL.xml' path='doc/member[@name="SYNCMGR_EVENT_LEVEL.SYNCMGR_EL_INFORMATION"]/*' />
     SYNCMGR_EL_INFORMATION = 1,
+
+    /// <include file='SYNCMGR_EVENT_LEVEL.xml' path='doc/member[@name="SYNCMGR_EVENT_LEVEL.SYNCMGR_EL_WARNING"]/*' />
     SYNCMGR_EL_WARNING = 2,
+
+    /// <include file='SYNCMGR_EVENT_LEVEL.xml' path='doc/member[@name="SYNCMGR_EVENT_LEVEL.SYNCMGR_EL_ERROR"]/*' />
     SYNCMGR_EL_ERROR = 3,
+
+    /// <include file='SYNCMGR_EVENT_LEVEL.xml' path='doc/member[@name="SYNCMGR_EVENT_LEVEL.SYNCMGR_EL_MAX"]/*' />
     SYNCMGR_EL_MAX = SYNCMGR_EL_ERROR,
 }

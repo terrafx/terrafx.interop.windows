@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CALL_PROPERTY_ID.xml' path='doc/member[@name="WS_CALL_PROPERTY_ID"]/*' />
 public enum WS_CALL_PROPERTY_ID
 {
+    /// <include file='WS_CALL_PROPERTY_ID.xml' path='doc/member[@name="WS_CALL_PROPERTY_ID.WS_CALL_PROPERTY_CHECK_MUST_UNDERSTAND"]/*' />
     WS_CALL_PROPERTY_CHECK_MUST_UNDERSTAND = 0,
+
+    /// <include file='WS_CALL_PROPERTY_ID.xml' path='doc/member[@name="WS_CALL_PROPERTY_ID.WS_CALL_PROPERTY_SEND_MESSAGE_CONTEXT"]/*' />
     WS_CALL_PROPERTY_SEND_MESSAGE_CONTEXT = 1,
+
+    /// <include file='WS_CALL_PROPERTY_ID.xml' path='doc/member[@name="WS_CALL_PROPERTY_ID.WS_CALL_PROPERTY_RECEIVE_MESSAGE_CONTEXT"]/*' />
     WS_CALL_PROPERTY_RECEIVE_MESSAGE_CONTEXT = 2,
+
+    /// <include file='WS_CALL_PROPERTY_ID.xml' path='doc/member[@name="WS_CALL_PROPERTY_ID.WS_CALL_PROPERTY_CALL_ID"]/*' />
     WS_CALL_PROPERTY_CALL_ID = 3,
 }

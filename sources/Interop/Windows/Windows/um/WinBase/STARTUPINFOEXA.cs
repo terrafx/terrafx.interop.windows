@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STARTUPINFOEXA.xml' path='doc/member[@name="STARTUPINFOEXA"]/*' />
 public partial struct STARTUPINFOEXA
 {
+    /// <include file='STARTUPINFOEXA.xml' path='doc/member[@name="STARTUPINFOEXA.StartupInfo"]/*' />
     public STARTUPINFOA StartupInfo;
 
+    /// <include file='STARTUPINFOEXA.xml' path='doc/member[@name="STARTUPINFOEXA.lpAttributeList"]/*' />
     public LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice"]/*' />
 [Guid("D666063F-1587-4E43-81F1-B948E807363F")]
 [NativeTypeName("struct IMMDevice : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface
         return ((delegate* unmanaged<IMMDevice*, Guid*, void**, int>)(lpVtbl[0]))((IMMDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface
         return ((delegate* unmanaged<IMMDevice*, uint>)(lpVtbl[1]))((IMMDevice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface
         return ((delegate* unmanaged<IMMDevice*, uint>)(lpVtbl[2]))((IMMDevice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice.Activate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Activate([NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("DWORD")] uint dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface)
@@ -46,6 +51,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface
         return ((delegate* unmanaged<IMMDevice*, Guid*, uint, PROPVARIANT*, void**, int>)(lpVtbl[3]))((IMMDevice*)Unsafe.AsPointer(ref this), iid, dwClsCtx, pActivationParams, ppInterface);
     }
 
+    /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice.OpenPropertyStore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OpenPropertyStore([NativeTypeName("DWORD")] uint stgmAccess, IPropertyStore** ppProperties)
@@ -53,6 +59,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface
         return ((delegate* unmanaged<IMMDevice*, uint, IPropertyStore**, int>)(lpVtbl[4]))((IMMDevice*)Unsafe.AsPointer(ref this), stgmAccess, ppProperties);
     }
 
+    /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice.GetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetId([NativeTypeName("LPWSTR *")] ushort** ppstrId)
@@ -60,6 +67,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface
         return ((delegate* unmanaged<IMMDevice*, ushort**, int>)(lpVtbl[5]))((IMMDevice*)Unsafe.AsPointer(ref this), ppstrId);
     }
 
+    /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice.GetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetState([NativeTypeName("DWORD *")] uint* pdwState)

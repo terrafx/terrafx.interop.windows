@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDVRGB219.SetRGB219">
+    <summary>
+      <para>The <code>SetRGB219</code> method controls the dynamic range for DV encoding and decoding.</para>
+      <para>The DV video format has a dynamic range of 16–235. By default, when the DV Video Decoder decodes to 24-bit or 32-bit RGB, it stretches the color range to 0–255. Similarly, the DV Video Encoder compresses 24-bit RGB into the 16-235 range. In RGB-219 mode, the decoder does not stretch the color range, and the encoder does not compress the color range. Use the <code>SetRGB219</code> method to toggle between the default mode and RGB-219 mode.</para>
+    </summary>
+    <param name="bState">
+      <para>Boolean value that specifies the filter's encoding or decoder behavior.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TRUE</b>
+          </description>
+          <description>Enable RGB-219 mode.</description>
+        </item>
+        <item>
+          <description>
+            <b>FALSE</b>
+          </description>
+          <description>Disable RGB-219 mode. Use the default mode.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> failure code.</para>
+    </returns>
+    <remarks>
+      <para>For the encoder, this method has no effect unless the input type is RGB-24. For the decoder, it has no effect unless the output type is RGB-24 or RGB-32.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDVRGB219 Interface" />
+  </member>
+  <member name="IDVRGB219">
+    <summary>
+      <para>The <code>IDVRGB219</code> interface controls the dynamic range in the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dv-video-encoder-filter">DV Video Encoder</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dv-video-decoder-filter">DV Video Decoder</a> filters.</para>
+    </summary>
+  </member>
+</doc>

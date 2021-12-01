@@ -10,29 +10,36 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InstallApplication"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint InstallApplication([NativeTypeName("PINSTALLDATA")] INSTALLDATA* pInstallInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UninstallApplication"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint UninstallApplication([NativeTypeName("LPWSTR")] ushort* ProductCode, [NativeTypeName("DWORD")] uint dwStatus);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CommandLineFromMsiDescriptor"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint CommandLineFromMsiDescriptor([NativeTypeName("LPWSTR")] ushort* Descriptor, [NativeTypeName("LPWSTR")] ushort* CommandLine, [NativeTypeName("DWORD *")] uint* CommandLineLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetManagedApplications"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetManagedApplications(Guid* pCategory, [NativeTypeName("DWORD")] uint dwQueryFlags, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPDWORD")] uint* pdwApps, [NativeTypeName("PMANAGEDAPPLICATION *")] MANAGEDAPPLICATION** prgManagedApps);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLocalManagedApplications"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetLocalManagedApplications(BOOL bUserApps, [NativeTypeName("LPDWORD")] uint* pdwApps, [NativeTypeName("PLOCALMANAGEDAPPLICATION *")] LOCALMANAGEDAPPLICATION** prgLocalApps);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLocalManagedApplicationData"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     public static extern void GetLocalManagedApplicationData([NativeTypeName("LPWSTR")] ushort* ProductCode, [NativeTypeName("LPWSTR *")] ushort** DisplayName, [NativeTypeName("LPWSTR *")] ushort** SupportUrl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetManagedApplicationCategories"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetManagedApplicationCategories([NativeTypeName("DWORD")] uint dwReserved, APPCATEGORYINFOLIST* pAppCategory);

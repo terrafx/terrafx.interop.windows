@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PUBAPPINFOFLAGS">
+    <summary>
+      <para>Specifies which members in the <see cref="PUBAPPINFO" /> structure are valid. These flags are bitmasks set in the <b>dwMask</b> member and passed to <see cref="IPublishedApp.GetPublishedAppInfo" />.</para>
+    </summary>
+    <seealso cref="IPublishedApp.GetPublishedAppInfo" />
+  </member>
+  <member name="PUBAPPINFOFLAGS.PAI_SOURCE">
+    <summary>
+      <para>The <see cref="pszSource" /> string is valid and contains the display name of the publishing source. If multiple sources publish an application of the same name, Add/Remove Programs identifies them by "&lt;application name&gt; : &lt;publishing source&gt;".</para>
+    </summary>
+  </member>
+  <member name="PUBAPPINFOFLAGS.PAI_ASSIGNEDTIME">
+    <summary>
+      <para>The <see cref="stAssigned" /> member is valid and contains the time that the application should be installed as assigned by an application administrator.</para>
+    </summary>
+  </member>
+  <member name="PUBAPPINFOFLAGS.PAI_PUBLISHEDTIME">
+    <summary>
+      <para>Not used.</para>
+    </summary>
+  </member>
+  <member name="PUBAPPINFOFLAGS.PAI_SCHEDULEDTIME">
+    <summary>
+      <para>The <see cref="stScheduled" /> member is valid and contains the time that the application should be installed as assigned by the user.</para>
+    </summary>
+  </member>
+  <member name="PUBAPPINFOFLAGS.PAI_EXPIRETIME">
+    <summary>
+      <para>The <see cref="stExpired" /> member is valid and contains the time after which Add/Remove Programs should no longer install the program.</para>
+    </summary>
+  </member>
+</doc>

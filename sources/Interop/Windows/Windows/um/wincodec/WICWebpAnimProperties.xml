@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICWebpAnimProperties">
+    <summary>
+      <para>Specifies the animation properties of a WebP image.</para>
+    </summary>
+  </member>
+  <member name="WICWebpAnimProperties.WICWebpAnimLoopCount">
+    <summary>
+      <para>The number of times the animation loops. A value of 0 indicates that the animation will loop infinitely.</para>
+    </summary>
+  </member>
+  <member name="WICWebpAnimProperties.WICWebpAnimProperties_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MSE_ERROR.xml' path='doc/member[@name="MF_MSE_ERROR"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public enum MF_MSE_ERROR
 {
+    /// <include file='MF_MSE_ERROR.xml' path='doc/member[@name="MF_MSE_ERROR.MF_MSE_ERROR_NOERROR"]/*' />
     MF_MSE_ERROR_NOERROR = 0,
+
+    /// <include file='MF_MSE_ERROR.xml' path='doc/member[@name="MF_MSE_ERROR.MF_MSE_ERROR_NETWORK"]/*' />
     MF_MSE_ERROR_NETWORK = 1,
+
+    /// <include file='MF_MSE_ERROR.xml' path='doc/member[@name="MF_MSE_ERROR.MF_MSE_ERROR_DECODE"]/*' />
     MF_MSE_ERROR_DECODE = 2,
+
+    /// <include file='MF_MSE_ERROR.xml' path='doc/member[@name="MF_MSE_ERROR.MF_MSE_ERROR_UNKNOWN_ERROR"]/*' />
     MF_MSE_ERROR_UNKNOWN_ERROR = 3,
 }

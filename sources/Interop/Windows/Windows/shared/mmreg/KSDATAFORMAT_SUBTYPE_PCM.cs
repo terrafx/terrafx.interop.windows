@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='KSDATAFORMAT_SUBTYPE_PCM.xml' path='doc/member[@name="KSDATAFORMAT_SUBTYPE_PCM"]/*' />
 [Guid("00000001-0000-0010-8000-00AA00389B71")]
 public partial struct KSDATAFORMAT_SUBTYPE_PCM
 {

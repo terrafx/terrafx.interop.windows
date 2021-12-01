@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RESOURCEMANAGER_COMPLETION_INFORMATION.xml' path='doc/member[@name="RESOURCEMANAGER_COMPLETION_INFORMATION"]/*' />
 public partial struct RESOURCEMANAGER_COMPLETION_INFORMATION
 {
+    /// <include file='RESOURCEMANAGER_COMPLETION_INFORMATION.xml' path='doc/member[@name="RESOURCEMANAGER_COMPLETION_INFORMATION.IoCompletionPortHandle"]/*' />
     public HANDLE IoCompletionPortHandle;
 
+    /// <include file='RESOURCEMANAGER_COMPLETION_INFORMATION.xml' path='doc/member[@name="RESOURCEMANAGER_COMPLETION_INFORMATION.CompletionKey"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint CompletionKey;
 }

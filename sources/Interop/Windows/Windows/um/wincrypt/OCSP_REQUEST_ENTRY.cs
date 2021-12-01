@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OCSP_REQUEST_ENTRY.xml' path='doc/member[@name="OCSP_REQUEST_ENTRY"]/*' />
 public unsafe partial struct OCSP_REQUEST_ENTRY
 {
+    /// <include file='OCSP_REQUEST_ENTRY.xml' path='doc/member[@name="OCSP_REQUEST_ENTRY.CertId"]/*' />
     public OCSP_CERT_ID CertId;
 
+    /// <include file='OCSP_REQUEST_ENTRY.xml' path='doc/member[@name="OCSP_REQUEST_ENTRY.cExtension"]/*' />
     [NativeTypeName("DWORD")]
     public uint cExtension;
 
+    /// <include file='OCSP_REQUEST_ENTRY.xml' path='doc/member[@name="OCSP_REQUEST_ENTRY.rgExtension"]/*' />
     [NativeTypeName("PCERT_EXTENSION")]
     public CERT_EXTENSION* rgExtension;
 }

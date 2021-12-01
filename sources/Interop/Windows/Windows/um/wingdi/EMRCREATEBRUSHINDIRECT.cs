@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRCREATEBRUSHINDIRECT.xml' path='doc/member[@name="EMRCREATEBRUSHINDIRECT"]/*' />
 public partial struct EMRCREATEBRUSHINDIRECT
 {
+    /// <include file='EMRCREATEBRUSHINDIRECT.xml' path='doc/member[@name="EMRCREATEBRUSHINDIRECT.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRCREATEBRUSHINDIRECT.xml' path='doc/member[@name="EMRCREATEBRUSHINDIRECT.ihBrush"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihBrush;
 
+    /// <include file='EMRCREATEBRUSHINDIRECT.xml' path='doc/member[@name="EMRCREATEBRUSHINDIRECT.lb"]/*' />
     public LOGBRUSH32 lb;
 }

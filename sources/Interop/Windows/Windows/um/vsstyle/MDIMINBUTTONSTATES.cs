@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MDIMINBUTTONSTATES.xml' path='doc/member[@name="MDIMINBUTTONSTATES"]/*' />
 public enum MDIMINBUTTONSTATES
 {
+    /// <include file='MDIMINBUTTONSTATES.xml' path='doc/member[@name="MDIMINBUTTONSTATES.MDMI_NORMAL"]/*' />
     MDMI_NORMAL = 1,
+
+    /// <include file='MDIMINBUTTONSTATES.xml' path='doc/member[@name="MDIMINBUTTONSTATES.MDMI_HOT"]/*' />
     MDMI_HOT = 2,
+
+    /// <include file='MDIMINBUTTONSTATES.xml' path='doc/member[@name="MDIMINBUTTONSTATES.MDMI_PUSHED"]/*' />
     MDMI_PUSHED = 3,
+
+    /// <include file='MDIMINBUTTONSTATES.xml' path='doc/member[@name="MDIMINBUTTONSTATES.MDMI_DISABLED"]/*' />
     MDMI_DISABLED = 4,
 }

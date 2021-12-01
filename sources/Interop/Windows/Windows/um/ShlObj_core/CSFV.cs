@@ -5,22 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSFV.xml' path='doc/member[@name="CSFV"]/*' />
 public unsafe partial struct CSFV
 {
+    /// <include file='CSFV.xml' path='doc/member[@name="CSFV.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='CSFV.xml' path='doc/member[@name="CSFV.pshf"]/*' />
     public IShellFolder* pshf;
 
+    /// <include file='CSFV.xml' path='doc/member[@name="CSFV.psvOuter"]/*' />
     public IShellView* psvOuter;
 
+    /// <include file='CSFV.xml' path='doc/member[@name="CSFV.pidl"]/*' />
     [NativeTypeName("LPCITEMIDLIST")]
     public ITEMIDLIST* pidl;
 
+    /// <include file='CSFV.xml' path='doc/member[@name="CSFV.lEvents"]/*' />
     [NativeTypeName("LONG")]
     public int lEvents;
 
+    /// <include file='CSFV.xml' path='doc/member[@name="CSFV.pfnCallback"]/*' />
     [NativeTypeName("LPFNVIEWCALLBACK")]
     public delegate* unmanaged<IShellView*, IShellFolder*, HWND, uint, WPARAM, LPARAM, HRESULT> pfnCallback;
 
+    /// <include file='CSFV.xml' path='doc/member[@name="CSFV.fvm"]/*' />
     public FOLDERVIEWMODE fvm;
 }

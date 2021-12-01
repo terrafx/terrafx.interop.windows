@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_UNION_FIELD_DESCRIPTION.xml' path='doc/member[@name="WS_UNION_FIELD_DESCRIPTION"]/*' />
 public partial struct WS_UNION_FIELD_DESCRIPTION
 {
+    /// <include file='WS_UNION_FIELD_DESCRIPTION.xml' path='doc/member[@name="WS_UNION_FIELD_DESCRIPTION.value"]/*' />
     public int value;
 
+    /// <include file='WS_UNION_FIELD_DESCRIPTION.xml' path='doc/member[@name="WS_UNION_FIELD_DESCRIPTION.field"]/*' />
     public WS_FIELD_DESCRIPTION field;
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SECURITY_OBJECT_AI_PARAMS.xml' path='doc/member[@name="SECURITY_OBJECT_AI_PARAMS"]/*' />
 public partial struct SECURITY_OBJECT_AI_PARAMS
 {
+    /// <include file='SECURITY_OBJECT_AI_PARAMS.xml' path='doc/member[@name="SECURITY_OBJECT_AI_PARAMS.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SECURITY_OBJECT_AI_PARAMS.xml' path='doc/member[@name="SECURITY_OBJECT_AI_PARAMS.ConstraintMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint ConstraintMask;
 }

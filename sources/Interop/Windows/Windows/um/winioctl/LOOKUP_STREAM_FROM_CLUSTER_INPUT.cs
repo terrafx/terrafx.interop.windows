@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LOOKUP_STREAM_FROM_CLUSTER_INPUT.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_INPUT"]/*' />
 public partial struct LOOKUP_STREAM_FROM_CLUSTER_INPUT
 {
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_INPUT.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_INPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_INPUT.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_INPUT.NumberOfClusters"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfClusters;
 
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_INPUT.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_INPUT.Cluster"]/*' />
     [NativeTypeName("LARGE_INTEGER [1]")]
     public _Cluster_e__FixedBuffer Cluster;
 
+    /// <include file='_Cluster_e__FixedBuffer.xml' path='doc/member[@name="_Cluster_e__FixedBuffer"]/*' />
     public partial struct _Cluster_e__FixedBuffer
     {
         public LARGE_INTEGER e0;

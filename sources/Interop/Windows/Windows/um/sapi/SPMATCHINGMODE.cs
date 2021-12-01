@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPMATCHINGMODE.xml' path='doc/member[@name="SPMATCHINGMODE"]/*' />
 public enum SPMATCHINGMODE
 {
+    /// <include file='SPMATCHINGMODE.xml' path='doc/member[@name="SPMATCHINGMODE.AllWords"]/*' />
     AllWords = 0,
+
+    /// <include file='SPMATCHINGMODE.xml' path='doc/member[@name="SPMATCHINGMODE.Subsequence"]/*' />
     Subsequence = 1,
+
+    /// <include file='SPMATCHINGMODE.xml' path='doc/member[@name="SPMATCHINGMODE.OrderedSubset"]/*' />
     OrderedSubset = 3,
+
+    /// <include file='SPMATCHINGMODE.xml' path='doc/member[@name="SPMATCHINGMODE.SubsequenceContentRequired"]/*' />
     SubsequenceContentRequired = 5,
+
+    /// <include file='SPMATCHINGMODE.xml' path='doc/member[@name="SPMATCHINGMODE.OrderedSubsetContentRequired"]/*' />
     OrderedSubsetContentRequired = 7,
 }

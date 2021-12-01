@@ -5,11 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPPHRASE.xml' path='doc/member[@name="SPPHRASE"]/*' />
 [NativeTypeName("struct SPPHRASE : SPPHRASE_53")]
 [NativeInheritance("SPPHRASE_53")]
 public partial struct SPPHRASE
 {
     public SPPHRASE_53 Base;
 
+    /// <include file='SPPHRASE.xml' path='doc/member[@name="SPPHRASE.SemanticTagFormat"]/*' />
     public SPSEMANTICFORMAT SemanticTagFormat;
 }

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellLinkDataList.AddDataBlock">
+    <summary>
+      <para>Adds a data block to a link.</para>
+    </summary>
+    <param name="pDataBlock">
+      <para>Type: <b>VOID*</b></para>
+      <para>The data block structure. For a list of supported structures, see <see cref="IShellLinkDataList" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM error code otherwise.</para>
+    </returns>
+    <seealso cref="IShellLinkDataList" />
+  </member>
+  <member name="IShellLinkDataList.CopyDataBlock">
+    <summary>
+      <para>Retrieves a copy of a link's data block.</para>
+    </summary>
+    <param name="dwSig">
+      <para>Type: <b>DWORD</b></para>
+      <para>The data block's signature. The signature value for a particular type of data block can be found in its structure reference. For a list of supported data block types and their associated structures, see <see cref="IShellLinkDataList" />.</para>
+    </param>
+    <param name="ppDataBlock">
+      <para>Type: <b>VOID**</b></para>
+      <para>The address of a pointer to a copy of the data block structure. If <b>IShellLinkDataList.CopyDataBlock</b> returns a successful result, the calling application must free the memory when it is no longer needed by calling <see cref="LocalFree" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful, or a COM error code otherwise.</para>
+    </returns>
+    <seealso cref="IShellLinkDataList" />
+  </member>
+  <member name="IShellLinkDataList.GetFlags">
+    <summary>
+      <para>Gets the current option settings.</para>
+    </summary>
+    <param name="pdwFlags">
+      <para>Type: <b>DWORD*</b></para>
+      <para>Pointer to one or more of the <see cref="SHELL_LINK_DATA_FLAGS" /> that indicate the current option settings.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IShellLinkDataList" />
+  </member>
+  <member name="IShellLinkDataList.RemoveDataBlock">
+    <summary>
+      <para>Removes a data block from a link.</para>
+    </summary>
+    <param name="dwSig">
+      <para>Type: <b>DWORD</b></para>
+      <para>The data block's signature. The signature value for a particular type of data block can be found in its structure reference. For a list of supported data block types and their associated structures, see <see cref="IShellLinkDataList" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM error code otherwise.</para>
+    </returns>
+    <seealso cref="IShellLinkDataList" />
+  </member>
+  <member name="IShellLinkDataList.SetFlags">
+    <summary>
+      <para>Sets the current option settings.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>One or more of the <see cref="SHELL_LINK_DATA_FLAGS" /> that indicate the option settings.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IShellLinkDataList" />
+  </member>
+  <member name="IShellLinkDataList">
+    <summary>
+      <para>Exposes methods that allow an application to attach extra data blocks to a <a href="https://docs.microsoft.com//windows/desktop/shell/links">Shell link</a>. These methods add, copy, or remove data blocks.</para>
+    </summary>
+    <remarks>
+      <para>The data blocks are in the form of a structure. The first two members are the same for all data blocks. The first member gives the structure's size. The second member is a signature that identifies the type of data block. The remaining members hold the block's data. There are five types of data block currently supported.</para>
+      <list type="table">
+        <listheader>
+          <description>Data block structure</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <see cref="EXP_DARWIN_LINK" />
+          </description>
+          <description>The link's Windows Installer ID.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="EXP_SPECIAL_FOLDER" />
+          </description>
+          <description>Special folder information.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="EXP_SZ_LINK" />
+          </description>
+          <description>The target name.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="NT_CONSOLE_PROPS" />
+          </description>
+          <description>Console properties.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="NT_FE_CONSOLE_PROPS" />
+          </description>
+          <description>The console's code page.</description>
+        </item>
+      </list>
+      <para>This interface is not implemented by applications.</para>
+      <para>Use this interface if your application needs to add extra data blocks to a Shell link.</para>
+      <para>
+        <b>Note</b>  <b>Windows Vista and later.</b> Prior to Windows Vista this interface was declared in Shlobj.h.</para>
+    </remarks>
+  </member>
+</doc>

@@ -7,14 +7,18 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MS_ADDINFO_CATALOGMEMBER.xml' path='doc/member[@name="MS_ADDINFO_CATALOGMEMBER"]/*' />
 public partial struct MS_ADDINFO_CATALOGMEMBER
 {
+    /// <include file='MS_ADDINFO_CATALOGMEMBER.xml' path='doc/member[@name="MS_ADDINFO_CATALOGMEMBER.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='MS_ADDINFO_CATALOGMEMBER.xml' path='doc/member[@name="MS_ADDINFO_CATALOGMEMBER.pStore"]/*' />
     [NativeTypeName("struct CRYPTCATSTORE_ *")]
     public IntPtr pStore;
 
+    /// <include file='MS_ADDINFO_CATALOGMEMBER.xml' path='doc/member[@name="MS_ADDINFO_CATALOGMEMBER.pMember"]/*' />
     [NativeTypeName("struct CRYPTCATMEMBER_ *")]
     public IntPtr pMember;
 }

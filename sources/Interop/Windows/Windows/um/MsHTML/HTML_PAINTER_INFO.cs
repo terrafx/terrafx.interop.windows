@@ -7,16 +7,21 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTML_PAINTER_INFO.xml' path='doc/member[@name="HTML_PAINTER_INFO"]/*' />
 public partial struct HTML_PAINTER_INFO
 {
+    /// <include file='HTML_PAINTER_INFO.xml' path='doc/member[@name="HTML_PAINTER_INFO.lFlags"]/*' />
     [NativeTypeName("LONG")]
     public int lFlags;
 
+    /// <include file='HTML_PAINTER_INFO.xml' path='doc/member[@name="HTML_PAINTER_INFO.lZOrder"]/*' />
     [NativeTypeName("LONG")]
     public int lZOrder;
 
+    /// <include file='HTML_PAINTER_INFO.xml' path='doc/member[@name="HTML_PAINTER_INFO.iidDrawObject"]/*' />
     [NativeTypeName("IID")]
     public Guid iidDrawObject;
 
+    /// <include file='HTML_PAINTER_INFO.xml' path='doc/member[@name="HTML_PAINTER_INFO.rcExpand"]/*' />
     public RECT rcExpand;
 }

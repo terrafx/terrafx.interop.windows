@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UDP_TABLE_CLASS.xml' path='doc/member[@name="UDP_TABLE_CLASS"]/*' />
 public enum UDP_TABLE_CLASS
 {
+    /// <include file='UDP_TABLE_CLASS.xml' path='doc/member[@name="UDP_TABLE_CLASS.UDP_TABLE_BASIC"]/*' />
     UDP_TABLE_BASIC,
+
+    /// <include file='UDP_TABLE_CLASS.xml' path='doc/member[@name="UDP_TABLE_CLASS.UDP_TABLE_OWNER_PID"]/*' />
     UDP_TABLE_OWNER_PID,
+
+    /// <include file='UDP_TABLE_CLASS.xml' path='doc/member[@name="UDP_TABLE_CLASS.UDP_TABLE_OWNER_MODULE"]/*' />
     UDP_TABLE_OWNER_MODULE,
 }

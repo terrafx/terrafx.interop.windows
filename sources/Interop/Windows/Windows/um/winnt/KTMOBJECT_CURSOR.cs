@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='KTMOBJECT_CURSOR.xml' path='doc/member[@name="KTMOBJECT_CURSOR"]/*' />
 public partial struct KTMOBJECT_CURSOR
 {
+    /// <include file='KTMOBJECT_CURSOR.xml' path='doc/member[@name="KTMOBJECT_CURSOR.LastQuery"]/*' />
     public Guid LastQuery;
 
+    /// <include file='KTMOBJECT_CURSOR.xml' path='doc/member[@name="KTMOBJECT_CURSOR.ObjectIdCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint ObjectIdCount;
 
+    /// <include file='KTMOBJECT_CURSOR.xml' path='doc/member[@name="KTMOBJECT_CURSOR.ObjectIds"]/*' />
     [NativeTypeName("GUID [1]")]
     public _ObjectIds_e__FixedBuffer ObjectIds;
 
+    /// <include file='_ObjectIds_e__FixedBuffer.xml' path='doc/member[@name="_ObjectIds_e__FixedBuffer"]/*' />
     public partial struct _ObjectIds_e__FixedBuffer
     {
         public Guid e0;

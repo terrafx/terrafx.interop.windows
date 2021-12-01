@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncVideoOutputFrameRateConversion">
+    <summary>
+      <para>Specifies whether the encoder converts the frame rate, if the output frame rate does not match the input frame rate. This enumeration is used with the <b>AVEncVideoOutputFrameRateConversion</b> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncVideoOutputFrameRateConversion.eAVEncVideoOutputFrameRateConversion_Disable">
+    <summary>
+      <para>Disable frame rate conversion.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoOutputFrameRateConversion.eAVEncVideoOutputFrameRateConversion_Enable">
+    <summary>
+      <para>Enable frame rate conversion.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoOutputFrameRateConversion.eAVEncVideoOutputFrameRateConversion_Alias">
+    <summary>
+      <para>Change the time stamps on the samples, but do not interpolate the time stamps.</para>
+    </summary>
+  </member>
+</doc>

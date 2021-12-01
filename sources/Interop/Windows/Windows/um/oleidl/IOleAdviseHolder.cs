@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleAdviseHolder.xml' path='doc/member[@name="IOleAdviseHolder"]/*' />
 [Guid("00000111-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleAdviseHolder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
         return ((delegate* unmanaged<IOleAdviseHolder*, Guid*, void**, int>)(lpVtbl[0]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
         return ((delegate* unmanaged<IOleAdviseHolder*, uint>)(lpVtbl[1]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
         return ((delegate* unmanaged<IOleAdviseHolder*, uint>)(lpVtbl[2]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleAdviseHolder.xml' path='doc/member[@name="IOleAdviseHolder.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Advise(IAdviseSink* pAdvise, [NativeTypeName("DWORD *")] uint* pdwConnection)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
         return ((delegate* unmanaged<IOleAdviseHolder*, IAdviseSink*, uint*, int>)(lpVtbl[3]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this), pAdvise, pdwConnection);
     }
 
+    /// <include file='IOleAdviseHolder.xml' path='doc/member[@name="IOleAdviseHolder.Unadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwConnection)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
         return ((delegate* unmanaged<IOleAdviseHolder*, uint, int>)(lpVtbl[4]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this), dwConnection);
     }
 
+    /// <include file='IOleAdviseHolder.xml' path='doc/member[@name="IOleAdviseHolder.EnumAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumAdvise(IEnumSTATDATA** ppenumAdvise)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
         return ((delegate* unmanaged<IOleAdviseHolder*, IEnumSTATDATA**, int>)(lpVtbl[5]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this), ppenumAdvise);
     }
 
+    /// <include file='IOleAdviseHolder.xml' path='doc/member[@name="IOleAdviseHolder.SendOnRename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SendOnRename(IMoniker* pmk)
@@ -67,6 +75,7 @@ public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
         return ((delegate* unmanaged<IOleAdviseHolder*, IMoniker*, int>)(lpVtbl[6]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this), pmk);
     }
 
+    /// <include file='IOleAdviseHolder.xml' path='doc/member[@name="IOleAdviseHolder.SendOnSave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SendOnSave()
@@ -74,6 +83,7 @@ public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
         return ((delegate* unmanaged<IOleAdviseHolder*, int>)(lpVtbl[7]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleAdviseHolder.xml' path='doc/member[@name="IOleAdviseHolder.SendOnClose"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SendOnClose()

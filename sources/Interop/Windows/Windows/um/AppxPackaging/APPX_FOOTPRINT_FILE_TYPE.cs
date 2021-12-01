@@ -7,12 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPX_FOOTPRINT_FILE_TYPE.xml' path='doc/member[@name="APPX_FOOTPRINT_FILE_TYPE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum APPX_FOOTPRINT_FILE_TYPE
 {
+    /// <include file='APPX_FOOTPRINT_FILE_TYPE.xml' path='doc/member[@name="APPX_FOOTPRINT_FILE_TYPE.APPX_FOOTPRINT_FILE_TYPE_MANIFEST"]/*' />
     APPX_FOOTPRINT_FILE_TYPE_MANIFEST = 0,
+
+    /// <include file='APPX_FOOTPRINT_FILE_TYPE.xml' path='doc/member[@name="APPX_FOOTPRINT_FILE_TYPE.APPX_FOOTPRINT_FILE_TYPE_BLOCKMAP"]/*' />
     APPX_FOOTPRINT_FILE_TYPE_BLOCKMAP = 1,
+
+    /// <include file='APPX_FOOTPRINT_FILE_TYPE.xml' path='doc/member[@name="APPX_FOOTPRINT_FILE_TYPE.APPX_FOOTPRINT_FILE_TYPE_SIGNATURE"]/*' />
     APPX_FOOTPRINT_FILE_TYPE_SIGNATURE = 2,
+
+    /// <include file='APPX_FOOTPRINT_FILE_TYPE.xml' path='doc/member[@name="APPX_FOOTPRINT_FILE_TYPE.APPX_FOOTPRINT_FILE_TYPE_CODEINTEGRITY"]/*' />
     APPX_FOOTPRINT_FILE_TYPE_CODEINTEGRITY = 3,
+
+    /// <include file='APPX_FOOTPRINT_FILE_TYPE.xml' path='doc/member[@name="APPX_FOOTPRINT_FILE_TYPE.APPX_FOOTPRINT_FILE_TYPE_CONTENTGROUPMAP"]/*' />
     APPX_FOOTPRINT_FILE_TYPE_CONTENTGROUPMAP = 4,
 }

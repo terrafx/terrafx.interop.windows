@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BUTTON_IMAGELIST">
+    <summary>
+      <para>Contains information about an image list that is used with a button control.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/bcm-getimagelist">BCM_GETIMAGELIST</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/bcm-setimagelist">BCM_SETIMAGELIST</seealso>
+    <seealso cref="Button_GetImageList" />
+    <seealso cref="Button_SetImageList" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/buttons">Buttons</seealso>
+  </member>
+  <member name="BUTTON_IMAGELIST.himl">
+    <summary>
+      <para>Type: <b>HIMAGELIST</b></para>
+      <para>A handle to the image list. The provider retains ownership of the image list and is ultimately responsible for its disposal. Under Windows Vista, you can pass BCCL_NOGLYPH in this parameter to indicate that no glyph should be displayed.</para>
+    </summary>
+  </member>
+  <member name="BUTTON_IMAGELIST.margin">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>A <see cref="RECT" /> that specifies the margin around the icon.</para>
+    </summary>
+  </member>
+  <member name="BUTTON_IMAGELIST.uAlign">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A <b>UINT</b> that specifies the alignment to use. This parameter can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>BUTTON_IMAGELIST_ALIGN_LEFT</b>
+          </description>
+          <description>
+            <para>Align the image with the left margin.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>BUTTON_IMAGELIST_ALIGN_RIGHT</b>
+          </description>
+          <description>
+            <para>Align the image with the right margin.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>BUTTON_IMAGELIST_ALIGN_TOP</b>
+          </description>
+          <description>
+            <para>Align the image with the top margin</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>BUTTON_IMAGELIST_ALIGN_BOTTOM</b>
+          </description>
+          <description>
+            <para>Align the image with the bottom margin</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>BUTTON_IMAGELIST_ALIGN_CENTER</b>
+          </description>
+          <description>
+            <para>Center the image.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WTA_OPTIONS.xml' path='doc/member[@name="WTA_OPTIONS"]/*' />
 public partial struct WTA_OPTIONS
 {
+    /// <include file='WTA_OPTIONS.xml' path='doc/member[@name="WTA_OPTIONS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='WTA_OPTIONS.xml' path='doc/member[@name="WTA_OPTIONS.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 }

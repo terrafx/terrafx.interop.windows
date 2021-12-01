@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ShellBrowserWindow.xml' path='doc/member[@name="ShellBrowserWindow"]/*' />
 [Guid("C08AFD90-F2A1-11D1-8455-00A0C91F3880")]
 public partial struct ShellBrowserWindow
 {

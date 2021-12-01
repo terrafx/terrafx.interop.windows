@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxContentGroup.xml' path='doc/member[@name="IAppxContentGroup"]/*' />
 [Guid("328F6468-C04F-4E3C-B6FA-6B8D27F3003A")]
 [NativeTypeName("struct IAppxContentGroup : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxContentGroup : IAppxContentGroup.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxContentGroup : IAppxContentGroup.Interface
         return ((delegate* unmanaged<IAppxContentGroup*, Guid*, void**, int>)(lpVtbl[0]))((IAppxContentGroup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxContentGroup : IAppxContentGroup.Interface
         return ((delegate* unmanaged<IAppxContentGroup*, uint>)(lpVtbl[1]))((IAppxContentGroup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxContentGroup : IAppxContentGroup.Interface
         return ((delegate* unmanaged<IAppxContentGroup*, uint>)(lpVtbl[2]))((IAppxContentGroup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxContentGroup.xml' path='doc/member[@name="IAppxContentGroup.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** groupName)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxContentGroup : IAppxContentGroup.Interface
         return ((delegate* unmanaged<IAppxContentGroup*, ushort**, int>)(lpVtbl[3]))((IAppxContentGroup*)Unsafe.AsPointer(ref this), groupName);
     }
 
+    /// <include file='IAppxContentGroup.xml' path='doc/member[@name="IAppxContentGroup.GetFiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFiles(IAppxContentGroupFilesEnumerator** enumerator)

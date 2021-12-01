@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RSAPUBKEY.xml' path='doc/member[@name="RSAPUBKEY"]/*' />
 public partial struct RSAPUBKEY
 {
+    /// <include file='RSAPUBKEY.xml' path='doc/member[@name="RSAPUBKEY.magic"]/*' />
     [NativeTypeName("DWORD")]
     public uint magic;
 
+    /// <include file='RSAPUBKEY.xml' path='doc/member[@name="RSAPUBKEY.bitlen"]/*' />
     [NativeTypeName("DWORD")]
     public uint bitlen;
 
+    /// <include file='RSAPUBKEY.xml' path='doc/member[@name="RSAPUBKEY.pubexp"]/*' />
     [NativeTypeName("DWORD")]
     public uint pubexp;
 }

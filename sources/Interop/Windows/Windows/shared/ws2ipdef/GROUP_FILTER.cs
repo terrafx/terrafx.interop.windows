@@ -9,21 +9,28 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GROUP_FILTER.xml' path='doc/member[@name="GROUP_FILTER"]/*' />
 public partial struct GROUP_FILTER
 {
+    /// <include file='GROUP_FILTER.xml' path='doc/member[@name="GROUP_FILTER.gf_interface"]/*' />
     [NativeTypeName("ULONG")]
     public uint gf_interface;
 
+    /// <include file='GROUP_FILTER.xml' path='doc/member[@name="GROUP_FILTER.gf_group"]/*' />
     public SOCKADDR_STORAGE gf_group;
 
+    /// <include file='GROUP_FILTER.xml' path='doc/member[@name="GROUP_FILTER.gf_fmode"]/*' />
     public MULTICAST_MODE_TYPE gf_fmode;
 
+    /// <include file='GROUP_FILTER.xml' path='doc/member[@name="GROUP_FILTER.gf_numsrc"]/*' />
     [NativeTypeName("ULONG")]
     public uint gf_numsrc;
 
+    /// <include file='GROUP_FILTER.xml' path='doc/member[@name="GROUP_FILTER.gf_slist"]/*' />
     [NativeTypeName("SOCKADDR_STORAGE [1]")]
     public _gf_slist_e__FixedBuffer gf_slist;
 
+    /// <include file='_gf_slist_e__FixedBuffer.xml' path='doc/member[@name="_gf_slist_e__FixedBuffer"]/*' />
     public partial struct _gf_slist_e__FixedBuffer
     {
         public SOCKADDR_STORAGE e0;

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MS_ADDINFO_CATALOGMEMBER">
+    <summary>
+      <para>The <b>MS_ADDINFO_CATALOGMEMBER</b> structure provides additional information for catalog member subject types.</para>
+    </summary>
+  </member>
+  <member name="MS_ADDINFO_CATALOGMEMBER.cbStruct">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="MS_ADDINFO_CATALOGMEMBER.pStore">
+    <summary>
+      <para>A <see cref="CRYPTCATSTORE" /> structure that contains a catalog file store.</para>
+    </summary>
+  </member>
+  <member name="MS_ADDINFO_CATALOGMEMBER.pMember">
+    <summary>
+      <para>A <see cref="CRYPTCATMEMBER" /> structure that contains a catalog member.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ELEMENT_DESCRIPTION">
+    <summary>
+      <para>Represents a mapping between a C data type and an XML element.</para>
+    </summary>
+  </member>
+  <member name="WS_ELEMENT_DESCRIPTION.elementLocalName">
+    <summary>
+      <para>The local name of the XML element.</para>
+    </summary>
+  </member>
+  <member name="WS_ELEMENT_DESCRIPTION.elementNs">
+    <summary>
+      <para>The namespace of the XML element.</para>
+    </summary>
+  </member>
+  <member name="WS_ELEMENT_DESCRIPTION.type">
+    <summary>
+      <para>The type that corresponds to this XML element.</para>
+      <para>Not all types support being read and written as an element.  If the
+documentation for the <see cref="WS_TYPE" /> indicates it supports
+<see cref="WS_ELEMENT_TYPE_MAPPING" />, then it can be used with this structure.</para>
+    </summary>
+  </member>
+  <member name="WS_ELEMENT_DESCRIPTION.typeDescription">
+    <summary>
+      <para>Additional information about the type.  Each type has a different description
+structure.  This may be <b>NULL</b>, depending on the <see cref="WS_TYPE" />.</para>
+    </summary>
+  </member>
+</doc>

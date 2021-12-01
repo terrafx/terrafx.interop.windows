@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader"]/*' />
 [Guid("7279FC81-709D-4095-B63D-69FE4B0D9030")]
 [NativeTypeName("struct IXmlReader : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, Guid*, void**, int>)(lpVtbl[0]))((IXmlReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, uint>)(lpVtbl[1]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, uint>)(lpVtbl[2]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.SetInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetInput(IUnknown* pInput)
@@ -46,6 +51,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, IUnknown*, int>)(lpVtbl[3]))((IXmlReader*)Unsafe.AsPointer(ref this), pInput);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetProperty(uint nProperty, [NativeTypeName("LONG_PTR *")] nint* ppValue)
@@ -53,6 +59,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, uint, nint*, int>)(lpVtbl[4]))((IXmlReader*)Unsafe.AsPointer(ref this), nProperty, ppValue);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.SetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetProperty(uint nProperty, [NativeTypeName("LONG_PTR")] nint pValue)
@@ -60,6 +67,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, uint, nint, int>)(lpVtbl[5]))((IXmlReader*)Unsafe.AsPointer(ref this), nProperty, pValue);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.Read"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Read(XmlNodeType* pNodeType)
@@ -67,6 +75,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, XmlNodeType*, int>)(lpVtbl[6]))((IXmlReader*)Unsafe.AsPointer(ref this), pNodeType);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetNodeType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetNodeType(XmlNodeType* pNodeType)
@@ -74,6 +83,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, XmlNodeType*, int>)(lpVtbl[7]))((IXmlReader*)Unsafe.AsPointer(ref this), pNodeType);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.MoveToFirstAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT MoveToFirstAttribute()
@@ -81,6 +91,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[8]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.MoveToNextAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT MoveToNextAttribute()
@@ -88,6 +99,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[9]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.MoveToAttributeByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT MoveToAttributeByName([NativeTypeName("LPCWSTR")] ushort* pwszLocalName, [NativeTypeName("LPCWSTR")] ushort* pwszNamespaceUri)
@@ -95,6 +107,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, ushort*, ushort*, int>)(lpVtbl[10]))((IXmlReader*)Unsafe.AsPointer(ref this), pwszLocalName, pwszNamespaceUri);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.MoveToElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT MoveToElement()
@@ -102,6 +115,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[11]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetQualifiedName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetQualifiedName([NativeTypeName("LPCWSTR *")] ushort** ppwszQualifiedName, uint* pcwchQualifiedName)
@@ -109,6 +123,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[12]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszQualifiedName, pcwchQualifiedName);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetNamespaceUri"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetNamespaceUri([NativeTypeName("LPCWSTR *")] ushort** ppwszNamespaceUri, uint* pcwchNamespaceUri)
@@ -116,6 +131,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[13]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszNamespaceUri, pcwchNamespaceUri);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetLocalName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetLocalName([NativeTypeName("LPCWSTR *")] ushort** ppwszLocalName, uint* pcwchLocalName)
@@ -123,6 +139,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[14]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszLocalName, pcwchLocalName);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetPrefix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetPrefix([NativeTypeName("LPCWSTR *")] ushort** ppwszPrefix, uint* pcwchPrefix)
@@ -130,6 +147,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[15]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszPrefix, pcwchPrefix);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetValue([NativeTypeName("LPCWSTR *")] ushort** ppwszValue, uint* pcwchValue)
@@ -137,6 +155,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[16]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszValue, pcwchValue);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.ReadValueChunk"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT ReadValueChunk([NativeTypeName("WCHAR *")] ushort* pwchBuffer, uint cwchChunkSize, uint* pcwchRead)
@@ -144,6 +163,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, ushort*, uint, uint*, int>)(lpVtbl[17]))((IXmlReader*)Unsafe.AsPointer(ref this), pwchBuffer, cwchChunkSize, pcwchRead);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetBaseUri"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetBaseUri([NativeTypeName("LPCWSTR *")] ushort** ppwszBaseUri, uint* pcwchBaseUri)
@@ -151,6 +171,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[18]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszBaseUri, pcwchBaseUri);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.IsDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public BOOL IsDefault()
@@ -158,6 +179,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[19]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.IsEmptyElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public BOOL IsEmptyElement()
@@ -165,6 +187,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[20]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetLineNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetLineNumber(uint* pnLineNumber)
@@ -172,6 +195,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[21]))((IXmlReader*)Unsafe.AsPointer(ref this), pnLineNumber);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetLinePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetLinePosition(uint* pnLinePosition)
@@ -179,6 +203,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[22]))((IXmlReader*)Unsafe.AsPointer(ref this), pnLinePosition);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetAttributeCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT GetAttributeCount(uint* pnAttributeCount)
@@ -186,6 +211,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[23]))((IXmlReader*)Unsafe.AsPointer(ref this), pnAttributeCount);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetDepth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT GetDepth(uint* pnDepth)
@@ -193,6 +219,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[24]))((IXmlReader*)Unsafe.AsPointer(ref this), pnDepth);
     }
 
+    /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.IsEOF"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public BOOL IsEOF()

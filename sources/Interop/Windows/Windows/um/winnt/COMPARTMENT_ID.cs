@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMPARTMENT_ID.xml' path='doc/member[@name="COMPARTMENT_ID"]/*' />
 public enum COMPARTMENT_ID
 {
+    /// <include file='COMPARTMENT_ID.xml' path='doc/member[@name="COMPARTMENT_ID.UNSPECIFIED_COMPARTMENT_ID"]/*' />
     UNSPECIFIED_COMPARTMENT_ID = 0,
+
+    /// <include file='COMPARTMENT_ID.xml' path='doc/member[@name="COMPARTMENT_ID.DEFAULT_COMPARTMENT_ID"]/*' />
     DEFAULT_COMPARTMENT_ID,
 }

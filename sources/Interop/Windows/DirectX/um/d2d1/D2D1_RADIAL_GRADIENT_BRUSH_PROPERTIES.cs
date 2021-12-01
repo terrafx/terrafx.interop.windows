@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES"]/*' />
 public partial struct D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES
 {
+    /// <include file='D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.center"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F center;
 
+    /// <include file='D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.gradientOriginOffset"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F gradientOriginOffset;
 
+    /// <include file='D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusX"]/*' />
     public float radiusX;
 
+    /// <include file='D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusY"]/*' />
     public float radiusY;
 }

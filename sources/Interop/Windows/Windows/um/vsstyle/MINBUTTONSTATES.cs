@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MINBUTTONSTATES.xml' path='doc/member[@name="MINBUTTONSTATES"]/*' />
 public enum MINBUTTONSTATES
 {
+    /// <include file='MINBUTTONSTATES.xml' path='doc/member[@name="MINBUTTONSTATES.MINBS_NORMAL"]/*' />
     MINBS_NORMAL = 1,
+
+    /// <include file='MINBUTTONSTATES.xml' path='doc/member[@name="MINBUTTONSTATES.MINBS_HOT"]/*' />
     MINBS_HOT = 2,
+
+    /// <include file='MINBUTTONSTATES.xml' path='doc/member[@name="MINBUTTONSTATES.MINBS_PUSHED"]/*' />
     MINBS_PUSHED = 3,
+
+    /// <include file='MINBUTTONSTATES.xml' path='doc/member[@name="MINBUTTONSTATES.MINBS_DISABLED"]/*' />
     MINBS_DISABLED = 4,
 }

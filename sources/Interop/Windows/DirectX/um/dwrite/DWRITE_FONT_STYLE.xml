@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_FONT_STYLE">
+    <summary>
+      <para>Represents the style of a font face as normal, italic, or oblique.</para>
+    </summary>
+    <remarks>
+      <para>Three terms categorize the slant of a font: normal, italic, and oblique.</para>
+      <list type="table">
+        <listheader>
+          <description>Font style</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>Normal</description>
+          <description>The characters in a normal, or roman, font are upright.
+</description>
+        </item>
+        <item>
+          <description>Italic
+</description>
+          <description>The characters in an italic font are truly slanted and appear as they were designed.
+</description>
+        </item>
+        <item>
+          <description>Oblique</description>
+          <description>The characters in an oblique font are artificially slanted.</description>
+        </item>
+      </list>
+      <para>For Oblique, the slant is achieved by performing a shear transformation on the characters from a normal font. When a true italic font is not available on a computer or printer, an oblique style can be generated from the normal font and used to simulate an italic font.</para>
+      <para>The following illustration shows the normal, italic, and oblique font styles for the Palatino Linotype font. Notice how the italic font style has a more flowing and visually appealing appearance than the oblique font style, which is simply created by skewing the normal font style version of the text.</para>
+      <para>
+        <img alt="Illustration of normal, italic, and oblique font styles" src="https://docs.microsoft.com/windows/win32/api/dwritemages/FontStyle_for_Palatino.png" />
+      </para>
+      <para>
+        <b>Note</b>   Values other than the ones defined in the enumeration are considered to be invalid, and they are rejected by font API functions.</para>
+    </remarks>
+  </member>
+  <member name="DWRITE_FONT_STYLE.DWRITE_FONT_STYLE_NORMAL">
+    <summary>
+      <para>Font style : Normal.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STYLE.DWRITE_FONT_STYLE_OBLIQUE">
+    <summary>
+      <para>Font style : Oblique.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STYLE.DWRITE_FONT_STYLE_ITALIC">
+    <summary>
+      <para>Font style : Italic.</para>
+    </summary>
+  </member>
+</doc>

@@ -11,109 +11,134 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFindDebugInfoFile"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE SymFindDebugInfoFile(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PSTR")] sbyte* DebugFilePath, [NativeTypeName("PFIND_DEBUG_FILE_CALLBACK")] delegate* unmanaged<HANDLE, sbyte*, void*, BOOL> Callback, [NativeTypeName("PVOID")] void* CallerData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFindDebugInfoFileW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE SymFindDebugInfoFileW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PWSTR")] ushort* DebugFilePath, [NativeTypeName("PFIND_DEBUG_FILE_CALLBACKW")] delegate* unmanaged<HANDLE, ushort*, void*, BOOL> Callback, [NativeTypeName("PVOID")] void* CallerData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindDebugInfoFile"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE FindDebugInfoFile([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PCSTR")] sbyte* SymbolPath, [NativeTypeName("PSTR")] sbyte* DebugFilePath);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindDebugInfoFileEx"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE FindDebugInfoFileEx([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PCSTR")] sbyte* SymbolPath, [NativeTypeName("PSTR")] sbyte* DebugFilePath, [NativeTypeName("PFIND_DEBUG_FILE_CALLBACK")] delegate* unmanaged<HANDLE, sbyte*, void*, BOOL> Callback, [NativeTypeName("PVOID")] void* CallerData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindDebugInfoFileExW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE FindDebugInfoFileExW([NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PCWSTR")] ushort* SymbolPath, [NativeTypeName("PWSTR")] ushort* DebugFilePath, [NativeTypeName("PFIND_DEBUG_FILE_CALLBACKW")] delegate* unmanaged<HANDLE, ushort*, void*, BOOL> Callback, [NativeTypeName("PVOID")] void* CallerData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFindFileInPath"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFindFileInPath(HANDLE hprocess, [NativeTypeName("PCSTR")] sbyte* SearchPathW, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PVOID")] void* id, [NativeTypeName("DWORD")] uint two, [NativeTypeName("DWORD")] uint three, [NativeTypeName("DWORD")] uint flags, [NativeTypeName("PSTR")] sbyte* FoundFile, [NativeTypeName("PFINDFILEINPATHCALLBACK")] delegate* unmanaged<sbyte*, void*, BOOL> callback, [NativeTypeName("PVOID")] void* context);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFindFileInPathW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFindFileInPathW(HANDLE hprocess, [NativeTypeName("PCWSTR")] ushort* SearchPathW, [NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PVOID")] void* id, [NativeTypeName("DWORD")] uint two, [NativeTypeName("DWORD")] uint three, [NativeTypeName("DWORD")] uint flags, [NativeTypeName("PWSTR")] ushort* FoundFile, [NativeTypeName("PFINDFILEINPATHCALLBACKW")] delegate* unmanaged<ushort*, void*, BOOL> callback, [NativeTypeName("PVOID")] void* context);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFindExecutableImage"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE SymFindExecutableImage(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PSTR")] sbyte* ImageFilePath, [NativeTypeName("PFIND_EXE_FILE_CALLBACK")] delegate* unmanaged<HANDLE, sbyte*, void*, BOOL> Callback, [NativeTypeName("PVOID")] void* CallerData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFindExecutableImageW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE SymFindExecutableImageW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PWSTR")] ushort* ImageFilePath, [NativeTypeName("PFIND_EXE_FILE_CALLBACKW")] delegate* unmanaged<HANDLE, ushort*, void*, BOOL> Callback, [NativeTypeName("PVOID")] void* CallerData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindExecutableImage"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE FindExecutableImage([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PCSTR")] sbyte* SymbolPath, [NativeTypeName("PSTR")] sbyte* ImageFilePath);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindExecutableImageEx"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE FindExecutableImageEx([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PCSTR")] sbyte* SymbolPath, [NativeTypeName("PSTR")] sbyte* ImageFilePath, [NativeTypeName("PFIND_EXE_FILE_CALLBACK")] delegate* unmanaged<HANDLE, sbyte*, void*, BOOL> Callback, [NativeTypeName("PVOID")] void* CallerData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindExecutableImageExW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE FindExecutableImageExW([NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PCWSTR")] ushort* SymbolPath, [NativeTypeName("PWSTR")] ushort* ImageFilePath, [NativeTypeName("PFIND_EXE_FILE_CALLBACKW")] delegate* unmanaged<HANDLE, ushort*, void*, BOOL> Callback, [NativeTypeName("PVOID")] void* CallerData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageNtHeader"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PIMAGE_NT_HEADERS")]
     public static extern void* ImageNtHeader([NativeTypeName("PVOID")] void* Base);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageDirectoryEntryToDataEx"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PVOID")]
     public static extern void* ImageDirectoryEntryToDataEx([NativeTypeName("PVOID")] void* Base, [NativeTypeName("BOOLEAN")] byte MappedAsImage, ushort DirectoryEntry, [NativeTypeName("PULONG")] uint* Size, [NativeTypeName("PIMAGE_SECTION_HEADER *")] IMAGE_SECTION_HEADER** FoundHeader);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageDirectoryEntryToData"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PVOID")]
     public static extern void* ImageDirectoryEntryToData([NativeTypeName("PVOID")] void* Base, [NativeTypeName("BOOLEAN")] byte MappedAsImage, ushort DirectoryEntry, [NativeTypeName("PULONG")] uint* Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageRvaToSection"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PIMAGE_SECTION_HEADER")]
     public static extern IMAGE_SECTION_HEADER* ImageRvaToSection([NativeTypeName("PIMAGE_NT_HEADERS")] void* NtHeaders, [NativeTypeName("PVOID")] void* Base, [NativeTypeName("ULONG")] uint Rva);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageRvaToVa"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PVOID")]
     public static extern void* ImageRvaToVa([NativeTypeName("PIMAGE_NT_HEADERS")] void* NtHeaders, [NativeTypeName("PVOID")] void* Base, [NativeTypeName("ULONG")] uint Rva, [NativeTypeName("PIMAGE_SECTION_HEADER *")] IMAGE_SECTION_HEADER** LastRvaSection);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SearchTreeForFile"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SearchTreeForFile([NativeTypeName("PCSTR")] sbyte* RootPath, [NativeTypeName("PCSTR")] sbyte* InputPathName, [NativeTypeName("PSTR")] sbyte* OutputPathBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SearchTreeForFileW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SearchTreeForFileW([NativeTypeName("PCWSTR")] ushort* RootPath, [NativeTypeName("PCWSTR")] ushort* InputPathName, [NativeTypeName("PWSTR")] ushort* OutputPathBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDirTree"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumDirTree(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* RootPath, [NativeTypeName("PCSTR")] sbyte* InputPathName, [NativeTypeName("PSTR")] sbyte* OutputPathBuffer, [NativeTypeName("PENUMDIRTREE_CALLBACK")] delegate* unmanaged<sbyte*, void*, BOOL> cb, [NativeTypeName("PVOID")] void* data);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDirTreeW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumDirTreeW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* RootPath, [NativeTypeName("PCWSTR")] ushort* InputPathName, [NativeTypeName("PWSTR")] ushort* OutputPathBuffer, [NativeTypeName("PENUMDIRTREE_CALLBACKW")] delegate* unmanaged<ushort*, void*, BOOL> cb, [NativeTypeName("PVOID")] void* data);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MakeSureDirectoryPathExists"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL MakeSureDirectoryPathExists([NativeTypeName("PCSTR")] sbyte* DirPath);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnDecorateSymbolName"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint UnDecorateSymbolName([NativeTypeName("PCSTR")] sbyte* name, [NativeTypeName("PSTR")] sbyte* outputString, [NativeTypeName("DWORD")] uint maxStringLength, [NativeTypeName("DWORD")] uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnDecorateSymbolNameW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint UnDecorateSymbolNameW([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PWSTR")] ushort* outputString, [NativeTypeName("DWORD")] uint maxStringLength, [NativeTypeName("DWORD")] uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Address32To64"]/*' />
     public static void Address32To64([NativeTypeName("LPADDRESS")] ADDRESS* a32, [NativeTypeName("LPADDRESS64")] ADDRESS64* a64)
     {
         a64->Offset = unchecked((ulong)((long)((int)(a32->Offset))));
@@ -121,6 +146,7 @@ public static unsafe partial class Windows
         a64->Mode = a32->Mode;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Address64To32"]/*' />
     public static void Address64To32([NativeTypeName("LPADDRESS64")] ADDRESS64* a64, [NativeTypeName("LPADDRESS")] ADDRESS* a32)
     {
         a32->Offset = (uint)(a64->Offset);
@@ -128,6 +154,7 @@ public static unsafe partial class Windows
         a32->Mode = a64->Mode;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.KdHelp32To64"]/*' />
     public static void KdHelp32To64([NativeTypeName("PKDHELP")] KDHELP* p32, [NativeTypeName("PKDHELP64")] KDHELP64* p64)
     {
         p64->Thread = p32->Thread;
@@ -142,23 +169,29 @@ public static unsafe partial class Windows
         p64->StackLimit = p32->StackLimit;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StackWalk64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL StackWalk64([NativeTypeName("DWORD")] uint MachineType, HANDLE hProcess, HANDLE hThread, [NativeTypeName("LPSTACKFRAME64")] STACKFRAME64* StackFrame, [NativeTypeName("PVOID")] void* ContextRecord, [NativeTypeName("PREAD_PROCESS_MEMORY_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*, uint, uint*, BOOL> ReadMemoryRoutine, [NativeTypeName("PFUNCTION_TABLE_ACCESS_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*> FunctionTableAccessRoutine, [NativeTypeName("PGET_MODULE_BASE_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, ulong> GetModuleBaseRoutine, [NativeTypeName("PTRANSLATE_ADDRESS_ROUTINE64")] delegate* unmanaged<HANDLE, HANDLE, ADDRESS64*, ulong> TranslateAddress);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StackWalkEx"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL StackWalkEx([NativeTypeName("DWORD")] uint MachineType, HANDLE hProcess, HANDLE hThread, [NativeTypeName("LPSTACKFRAME_EX")] STACKFRAME_EX* StackFrame, [NativeTypeName("PVOID")] void* ContextRecord, [NativeTypeName("PREAD_PROCESS_MEMORY_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*, uint, uint*, BOOL> ReadMemoryRoutine, [NativeTypeName("PFUNCTION_TABLE_ACCESS_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*> FunctionTableAccessRoutine, [NativeTypeName("PGET_MODULE_BASE_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, ulong> GetModuleBaseRoutine, [NativeTypeName("PTRANSLATE_ADDRESS_ROUTINE64")] delegate* unmanaged<HANDLE, HANDLE, ADDRESS64*, ulong> TranslateAddress, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StackWalk"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL StackWalk([NativeTypeName("DWORD")] uint MachineType, HANDLE hProcess, HANDLE hThread, [NativeTypeName("LPSTACKFRAME")] STACKFRAME* StackFrame, [NativeTypeName("PVOID")] void* ContextRecord, [NativeTypeName("PREAD_PROCESS_MEMORY_ROUTINE")] delegate* unmanaged<HANDLE, uint, void*, uint, uint*, BOOL> ReadMemoryRoutine, [NativeTypeName("PFUNCTION_TABLE_ACCESS_ROUTINE")] delegate* unmanaged<HANDLE, uint, void*> FunctionTableAccessRoutine, [NativeTypeName("PGET_MODULE_BASE_ROUTINE")] delegate* unmanaged<HANDLE, uint, uint> GetModuleBaseRoutine, [NativeTypeName("PTRANSLATE_ADDRESS_ROUTINE")] delegate* unmanaged<HANDLE, HANDLE, ADDRESS*, uint> TranslateAddress);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImagehlpApiVersion"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [return: NativeTypeName("LPAPI_VERSION")]
     public static extern API_VERSION* ImagehlpApiVersion();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImagehlpApiVersionEx"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [return: NativeTypeName("LPAPI_VERSION")]
     public static extern API_VERSION* ImagehlpApiVersionEx([NativeTypeName("LPAPI_VERSION")] API_VERSION* AppVersion);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTimestampForLoadedLibrary"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
@@ -170,751 +203,938 @@ public static unsafe partial class Windows
     public const int sevFatal = 3;
     public const int sevMax = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetParentWindow"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSetParentWindow(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetHomeDirectory"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PCHAR")]
     public static extern sbyte* SymSetHomeDirectory(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* dir);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetHomeDirectoryW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PWSTR")]
     public static extern ushort* SymSetHomeDirectoryW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* dir);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetHomeDirectory"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PCHAR")]
     public static extern sbyte* SymGetHomeDirectory([NativeTypeName("DWORD")] uint type, [NativeTypeName("PSTR")] sbyte* dir, [NativeTypeName("size_t")] nuint size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetHomeDirectoryW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PWSTR")]
     public static extern ushort* SymGetHomeDirectoryW([NativeTypeName("DWORD")] uint type, [NativeTypeName("PWSTR")] ushort* dir, [NativeTypeName("size_t")] nuint size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetOmaps"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetOmaps(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong BaseOfDll, [NativeTypeName("POMAP *")] OMAP** OmapTo, [NativeTypeName("PDWORD64")] ulong* cOmapTo, [NativeTypeName("POMAP *")] OMAP** OmapFrom, [NativeTypeName("PDWORD64")] ulong* cOmapFrom);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetOptions"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint SymSetOptions([NativeTypeName("DWORD")] uint SymOptions);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetOptions"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint SymGetOptions();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymCleanup"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymCleanup(HANDLE hProcess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetExtendedOption"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymGetExtendedOption(IMAGEHLP_EXTENDED_OPTIONS option);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetExtendedOption"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymSetExtendedOption(IMAGEHLP_EXTENDED_OPTIONS option, BOOL value);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymMatchString"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SymMatchString([NativeTypeName("PCSTR")] sbyte* @string, [NativeTypeName("PCSTR")] sbyte* expression, BOOL fCase);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymMatchStringA"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SymMatchStringA([NativeTypeName("PCSTR")] sbyte* @string, [NativeTypeName("PCSTR")] sbyte* expression, BOOL fCase);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymMatchStringW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymMatchStringW([NativeTypeName("PCWSTR")] ushort* @string, [NativeTypeName("PCWSTR")] ushort* expression, BOOL fCase);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSourceFiles"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSourceFiles(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong ModBase, [NativeTypeName("PCSTR")] sbyte* Mask, [NativeTypeName("PSYM_ENUMSOURCEFILES_CALLBACK")] delegate* unmanaged<SOURCEFILE*, void*, BOOL> cbSrcFiles, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSourceFilesW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSourceFilesW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong ModBase, [NativeTypeName("PCWSTR")] ushort* Mask, [NativeTypeName("PSYM_ENUMSOURCEFILES_CALLBACKW")] delegate* unmanaged<SOURCEFILEW*, void*, BOOL> cbSrcFiles, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumerateModules64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumerateModules64(HANDLE hProcess, [NativeTypeName("PSYM_ENUMMODULES_CALLBACK64")] delegate* unmanaged<sbyte*, ulong, void*, BOOL> EnumModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumerateModulesW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumerateModulesW64(HANDLE hProcess, [NativeTypeName("PSYM_ENUMMODULES_CALLBACKW64")] delegate* unmanaged<ushort*, ulong, void*, BOOL> EnumModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumerateModules"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumerateModules(HANDLE hProcess, [NativeTypeName("PSYM_ENUMMODULES_CALLBACK")] delegate* unmanaged<sbyte*, uint, void*, BOOL> EnumModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumerateLoadedModulesEx"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumerateLoadedModulesEx(HANDLE hProcess, [NativeTypeName("PENUMLOADED_MODULES_CALLBACK64")] delegate* unmanaged<sbyte*, ulong, uint, void*, BOOL> EnumLoadedModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumerateLoadedModulesExW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumerateLoadedModulesExW(HANDLE hProcess, [NativeTypeName("PENUMLOADED_MODULES_CALLBACKW64")] delegate* unmanaged<ushort*, ulong, uint, void*, BOOL> EnumLoadedModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumerateLoadedModules64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumerateLoadedModules64(HANDLE hProcess, [NativeTypeName("PENUMLOADED_MODULES_CALLBACK64")] delegate* unmanaged<sbyte*, ulong, uint, void*, BOOL> EnumLoadedModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumerateLoadedModulesW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumerateLoadedModulesW64(HANDLE hProcess, [NativeTypeName("PENUMLOADED_MODULES_CALLBACKW64")] delegate* unmanaged<ushort*, ulong, uint, void*, BOOL> EnumLoadedModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumerateLoadedModules"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumerateLoadedModules(HANDLE hProcess, [NativeTypeName("PENUMLOADED_MODULES_CALLBACK")] delegate* unmanaged<sbyte*, uint, uint, void*, BOOL> EnumLoadedModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFunctionTableAccess64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PVOID")]
     public static extern void* SymFunctionTableAccess64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong AddrBase);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFunctionTableAccess64AccessRoutines"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [return: NativeTypeName("PVOID")]
     public static extern void* SymFunctionTableAccess64AccessRoutines(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong AddrBase, [NativeTypeName("PREAD_PROCESS_MEMORY_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*, uint, uint*, BOOL> ReadMemoryRoutine, [NativeTypeName("PGET_MODULE_BASE_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, ulong> GetModuleBaseRoutine);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFunctionTableAccess"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PVOID")]
     public static extern void* SymFunctionTableAccess(HANDLE hProcess, [NativeTypeName("DWORD")] uint AddrBase);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetUnwindInfo"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymGetUnwindInfo(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("PULONG")] uint* Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetModuleInfo64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetModuleInfo64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong qwAddr, [NativeTypeName("PIMAGEHLP_MODULE64")] IMAGEHLP_MODULE64* ModuleInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetModuleInfoW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetModuleInfoW64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong qwAddr, [NativeTypeName("PIMAGEHLP_MODULEW64")] IMAGEHLP_MODULEW64* ModuleInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetModuleInfo"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetModuleInfo(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PIMAGEHLP_MODULE")] IMAGEHLP_MODULE* ModuleInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetModuleInfoW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetModuleInfoW(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PIMAGEHLP_MODULEW")] IMAGEHLP_MODULEW* ModuleInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetModuleBase64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD64")]
     public static extern ulong SymGetModuleBase64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong qwAddr);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetModuleBase"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint SymGetModuleBase(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumLines"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumLines(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* Obj, [NativeTypeName("PCSTR")] sbyte* File, [NativeTypeName("PSYM_ENUMLINES_CALLBACK")] delegate* unmanaged<SRCCODEINFO*, void*, BOOL> EnumLinesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumLinesW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumLinesW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCWSTR")] ushort* Obj, [NativeTypeName("PCWSTR")] ushort* File, [NativeTypeName("PSYM_ENUMLINES_CALLBACKW")] delegate* unmanaged<SRCCODEINFOW*, void*, BOOL> EnumLinesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromAddr64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineFromAddr64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong qwAddr, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_LINE64")] IMAGEHLP_LINE64* Line64);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromAddrW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineFromAddrW64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong dwAddr, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_LINEW64")] IMAGEHLP_LINEW64* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromInlineContext"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineFromInlineContext(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong qwAddr, [NativeTypeName("ULONG")] uint InlineContext, [NativeTypeName("DWORD64")] ulong qwModuleBaseAddress, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_LINE64")] IMAGEHLP_LINE64* Line64);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromInlineContextW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineFromInlineContextW(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong dwAddr, [NativeTypeName("ULONG")] uint InlineContext, [NativeTypeName("DWORD64")] ulong qwModuleBaseAddress, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_LINEW64")] IMAGEHLP_LINEW64* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSourceLines"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSourceLines(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* Obj, [NativeTypeName("PCSTR")] sbyte* File, [NativeTypeName("DWORD")] uint Line, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PSYM_ENUMLINES_CALLBACK")] delegate* unmanaged<SRCCODEINFO*, void*, BOOL> EnumLinesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSourceLinesW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSourceLinesW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCWSTR")] ushort* Obj, [NativeTypeName("PCWSTR")] ushort* File, [NativeTypeName("DWORD")] uint Line, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PSYM_ENUMLINES_CALLBACKW")] delegate* unmanaged<SRCCODEINFOW*, void*, BOOL> EnumLinesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymAddrIncludeInlineTrace"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint SymAddrIncludeInlineTrace(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Address);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymCompareInlineTrace"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint SymCompareInlineTrace(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Address1, [NativeTypeName("DWORD")] uint InlineContext1, [NativeTypeName("DWORD64")] ulong RetAddress1, [NativeTypeName("DWORD64")] ulong Address2, [NativeTypeName("DWORD64")] ulong RetAddress2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymQueryInlineTrace"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymQueryInlineTrace(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong StartAddress, [NativeTypeName("DWORD")] uint StartContext, [NativeTypeName("DWORD64")] ulong StartRetAddress, [NativeTypeName("DWORD64")] ulong CurAddress, [NativeTypeName("LPDWORD")] uint* CurContext, [NativeTypeName("LPDWORD")] uint* CurFrameIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromAddr"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineFromAddr(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromAddrW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymGetLineFromAddrW(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_LINEW")] IMAGEHLP_LINEW* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromName64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineFromName64(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* ModuleName, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("DWORD")] uint dwLineNumber, [NativeTypeName("PLONG")] int* plDisplacement, [NativeTypeName("PIMAGEHLP_LINE64")] IMAGEHLP_LINE64* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromNameW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineFromNameW64(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* ModuleName, [NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("DWORD")] uint dwLineNumber, [NativeTypeName("PLONG")] int* plDisplacement, [NativeTypeName("PIMAGEHLP_LINEW64")] IMAGEHLP_LINEW64* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromName"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineFromName(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* ModuleName, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("DWORD")] uint dwLineNumber, [NativeTypeName("PLONG")] int* plDisplacement, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineNext64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineNext64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINE64")] IMAGEHLP_LINE64* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineNextW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineNextW64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINEW64")] IMAGEHLP_LINEW64* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineNext"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLineNext(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineNextW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymGetLineNextW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINEW")] IMAGEHLP_LINEW* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLinePrev64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLinePrev64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINE64")] IMAGEHLP_LINE64* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLinePrevW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLinePrevW64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINEW64")] IMAGEHLP_LINEW64* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLinePrev"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLinePrev(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLinePrevW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymGetLinePrevW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINEW")] IMAGEHLP_LINEW* Line);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetFileLineOffsets64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("ULONG")]
     public static extern uint SymGetFileLineOffsets64(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* ModuleName, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PDWORD64")] ulong* Buffer, [NativeTypeName("ULONG")] uint BufferLines);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymMatchFileName"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymMatchFileName([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PCSTR")] sbyte* Match, [NativeTypeName("PSTR *")] sbyte** FileNameStop, [NativeTypeName("PSTR *")] sbyte** MatchStop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymMatchFileNameW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymMatchFileNameW([NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PCWSTR")] ushort* Match, [NativeTypeName("PWSTR *")] ushort** FileNameStop, [NativeTypeName("PWSTR *")] ushort** MatchStop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFile"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFile(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* Params, [NativeTypeName("PCSTR")] sbyte* FileSpec, [NativeTypeName("PSTR")] sbyte* FilePath, [NativeTypeName("DWORD")] uint Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCWSTR")] ushort* Params, [NativeTypeName("PCWSTR")] ushort* FileSpec, [NativeTypeName("PWSTR")] ushort* FilePath, [NativeTypeName("DWORD")] uint Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileToken"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileToken(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* FileSpec, [NativeTypeName("PVOID *")] void** Token, [NativeTypeName("DWORD *")] uint* Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileChecksumW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileChecksumW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCWSTR")] ushort* FileSpec, [NativeTypeName("DWORD *")] uint* pCheckSumType, byte* pChecksum, [NativeTypeName("DWORD")] uint checksumSize, [NativeTypeName("DWORD *")] uint* pActualBytesWritten);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileChecksum"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileChecksum(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* FileSpec, [NativeTypeName("DWORD *")] uint* pCheckSumType, byte* pChecksum, [NativeTypeName("DWORD")] uint checksumSize, [NativeTypeName("DWORD *")] uint* pActualBytesWritten);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileTokenW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileTokenW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCWSTR")] ushort* FileSpec, [NativeTypeName("PVOID *")] void** Token, [NativeTypeName("DWORD *")] uint* Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileFromToken"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileFromToken(HANDLE hProcess, [NativeTypeName("PVOID")] void* Token, [NativeTypeName("PCSTR")] sbyte* Params, [NativeTypeName("PSTR")] sbyte* FilePath, [NativeTypeName("DWORD")] uint Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileFromTokenW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileFromTokenW(HANDLE hProcess, [NativeTypeName("PVOID")] void* Token, [NativeTypeName("PCWSTR")] ushort* Params, [NativeTypeName("PWSTR")] ushort* FilePath, [NativeTypeName("DWORD")] uint Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceVarFromToken"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceVarFromToken(HANDLE hProcess, [NativeTypeName("PVOID")] void* Token, [NativeTypeName("PCSTR")] sbyte* Params, [NativeTypeName("PCSTR")] sbyte* VarName, [NativeTypeName("PSTR")] sbyte* Value, [NativeTypeName("DWORD")] uint Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceVarFromTokenW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceVarFromTokenW(HANDLE hProcess, [NativeTypeName("PVOID")] void* Token, [NativeTypeName("PCWSTR")] ushort* Params, [NativeTypeName("PCWSTR")] ushort* VarName, [NativeTypeName("PWSTR")] ushort* Value, [NativeTypeName("DWORD")] uint Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSourceFileTokens"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSourceFileTokens(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PENUMSOURCEFILETOKENSCALLBACK")] delegate* unmanaged<void*, nuint, BOOL> Callback);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymInitialize"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymInitialize(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* UserSearchPath, BOOL fInvadeProcess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymInitializeW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymInitializeW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* UserSearchPath, BOOL fInvadeProcess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSearchPath"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSearchPath(HANDLE hProcess, [NativeTypeName("PSTR")] sbyte* SearchPathW, [NativeTypeName("DWORD")] uint SearchPathLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSearchPathW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSearchPathW(HANDLE hProcess, [NativeTypeName("PWSTR")] ushort* SearchPathW, [NativeTypeName("DWORD")] uint SearchPathLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetSearchPath"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSetSearchPath(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* SearchPathW);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetSearchPathW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSetSearchPathW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* SearchPathW);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymLoadModuleEx"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD64")]
     public static extern ulong SymLoadModuleEx(HANDLE hProcess, HANDLE hFile, [NativeTypeName("PCSTR")] sbyte* ImageName, [NativeTypeName("PCSTR")] sbyte* ModuleName, [NativeTypeName("DWORD64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint DllSize, [NativeTypeName("PMODLOAD_DATA")] MODLOAD_DATA* Data, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymLoadModuleExW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD64")]
     public static extern ulong SymLoadModuleExW(HANDLE hProcess, HANDLE hFile, [NativeTypeName("PCWSTR")] ushort* ImageName, [NativeTypeName("PCWSTR")] ushort* ModuleName, [NativeTypeName("DWORD64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint DllSize, [NativeTypeName("PMODLOAD_DATA")] MODLOAD_DATA* Data, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymUnloadModule64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymUnloadModule64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong BaseOfDll);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymUnloadModule"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymUnloadModule(HANDLE hProcess, [NativeTypeName("DWORD")] uint BaseOfDll);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymUnDName64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymUnDName64([NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* sym, [NativeTypeName("PSTR")] sbyte* UnDecName, [NativeTypeName("DWORD")] uint UnDecNameLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymUnDName"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymUnDName([NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* sym, [NativeTypeName("PSTR")] sbyte* UnDecName, [NativeTypeName("DWORD")] uint UnDecNameLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymRegisterCallback64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymRegisterCallback64(HANDLE hProcess, [NativeTypeName("PSYMBOL_REGISTERED_CALLBACK64")] delegate* unmanaged<HANDLE, uint, ulong, ulong, BOOL> CallbackFunction, [NativeTypeName("ULONG64")] ulong UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymRegisterCallbackW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymRegisterCallbackW64(HANDLE hProcess, [NativeTypeName("PSYMBOL_REGISTERED_CALLBACK64")] delegate* unmanaged<HANDLE, uint, ulong, ulong, BOOL> CallbackFunction, [NativeTypeName("ULONG64")] ulong UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymRegisterFunctionEntryCallback64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymRegisterFunctionEntryCallback64(HANDLE hProcess, [NativeTypeName("PSYMBOL_FUNCENTRY_CALLBACK64")] delegate* unmanaged<HANDLE, ulong, ulong, void*> CallbackFunction, [NativeTypeName("ULONG64")] ulong UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymRegisterCallback"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymRegisterCallback(HANDLE hProcess, [NativeTypeName("PSYMBOL_REGISTERED_CALLBACK")] delegate* unmanaged<HANDLE, uint, void*, void*, BOOL> CallbackFunction, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymRegisterFunctionEntryCallback"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymRegisterFunctionEntryCallback(HANDLE hProcess, [NativeTypeName("PSYMBOL_FUNCENTRY_CALLBACK")] delegate* unmanaged<HANDLE, uint, void*, void*> CallbackFunction, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetContext"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSetContext(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_STACK_FRAME")] IMAGEHLP_STACK_FRAME* StackFrame, [NativeTypeName("PIMAGEHLP_CONTEXT")] void* Context);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetScopeFromAddr"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSetScopeFromAddr(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Address);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetScopeFromInlineContext"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSetScopeFromInlineContext(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Address, [NativeTypeName("ULONG")] uint InlineContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetScopeFromIndex"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSetScopeFromIndex(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint Index);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumProcesses"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumProcesses([NativeTypeName("PSYM_ENUMPROCESSES_CALLBACK")] delegate* unmanaged<HANDLE, void*, BOOL> EnumProcessesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFromAddr"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFromAddr(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("PDWORD64")] ulong* Displacement, [NativeTypeName("PSYMBOL_INFO")] SYMBOL_INFO* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFromAddrW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFromAddrW(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("PDWORD64")] ulong* Displacement, [NativeTypeName("PSYMBOL_INFOW")] SYMBOL_INFOW* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFromInlineContext"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFromInlineContext(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("ULONG")] uint InlineContext, [NativeTypeName("PDWORD64")] ulong* Displacement, [NativeTypeName("PSYMBOL_INFO")] SYMBOL_INFO* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFromInlineContextW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFromInlineContextW(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("ULONG")] uint InlineContext, [NativeTypeName("PDWORD64")] ulong* Displacement, [NativeTypeName("PSYMBOL_INFOW")] SYMBOL_INFOW* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFromToken"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFromToken(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Base, [NativeTypeName("DWORD")] uint Token, [NativeTypeName("PSYMBOL_INFO")] SYMBOL_INFO* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFromTokenW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFromTokenW(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Base, [NativeTypeName("DWORD")] uint Token, [NativeTypeName("PSYMBOL_INFOW")] SYMBOL_INFOW* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymNext"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymNext(HANDLE hProcess, [NativeTypeName("PSYMBOL_INFO")] SYMBOL_INFO* si);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymNextW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymNextW(HANDLE hProcess, [NativeTypeName("PSYMBOL_INFOW")] SYMBOL_INFOW* siw);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymPrev"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymPrev(HANDLE hProcess, [NativeTypeName("PSYMBOL_INFO")] SYMBOL_INFO* si);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymPrevW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymPrevW(HANDLE hProcess, [NativeTypeName("PSYMBOL_INFOW")] SYMBOL_INFOW* siw);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFromName"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFromName(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* Name, [NativeTypeName("PSYMBOL_INFO")] SYMBOL_INFO* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFromNameW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFromNameW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* Name, [NativeTypeName("PSYMBOL_INFOW")] SYMBOL_INFOW* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSymbols"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSymbols(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCSTR")] sbyte* Mask, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACK")] delegate* unmanaged<SYMBOL_INFO*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSymbolsEx"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSymbolsEx(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCSTR")] sbyte* Mask, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACK")] delegate* unmanaged<SYMBOL_INFO*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext, [NativeTypeName("DWORD")] uint Options);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSymbolsW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSymbolsW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCWSTR")] ushort* Mask, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACKW")] delegate* unmanaged<SYMBOL_INFOW*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSymbolsExW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSymbolsExW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCWSTR")] ushort* Mask, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACKW")] delegate* unmanaged<SYMBOL_INFOW*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext, [NativeTypeName("DWORD")] uint Options);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSymbolsForAddr"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSymbolsForAddr(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACK")] delegate* unmanaged<SYMBOL_INFO*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSymbolsForAddrW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumSymbolsForAddrW(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACKW")] delegate* unmanaged<SYMBOL_INFOW*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSearch"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSearch(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint Index, [NativeTypeName("DWORD")] uint SymTag, [NativeTypeName("PCSTR")] sbyte* Mask, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACK")] delegate* unmanaged<SYMBOL_INFO*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext, [NativeTypeName("DWORD")] uint Options);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSearchW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSearchW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint Index, [NativeTypeName("DWORD")] uint SymTag, [NativeTypeName("PCWSTR")] ushort* Mask, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACKW")] delegate* unmanaged<SYMBOL_INFOW*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext, [NativeTypeName("DWORD")] uint Options);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetScope"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetScope(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint Index, [NativeTypeName("PSYMBOL_INFO")] SYMBOL_INFO* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetScopeW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetScopeW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint Index, [NativeTypeName("PSYMBOL_INFOW")] SYMBOL_INFOW* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFromIndex"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFromIndex(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint Index, [NativeTypeName("PSYMBOL_INFO")] SYMBOL_INFO* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymFromIndexW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymFromIndexW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint Index, [NativeTypeName("PSYMBOL_INFOW")] SYMBOL_INFOW* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetTypeInfo"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetTypeInfo(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong ModBase, [NativeTypeName("ULONG")] uint TypeId, IMAGEHLP_SYMBOL_TYPE_INFO GetType, [NativeTypeName("PVOID")] void* pInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetTypeInfoEx"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetTypeInfoEx(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong ModBase, [NativeTypeName("PIMAGEHLP_GET_TYPE_INFO_PARAMS")] IMAGEHLP_GET_TYPE_INFO_PARAMS* Params);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumTypes"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumTypes(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACK")] delegate* unmanaged<SYMBOL_INFO*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumTypesW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumTypesW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACKW")] delegate* unmanaged<SYMBOL_INFOW*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumTypesByName"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumTypesByName(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCSTR")] sbyte* mask, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACK")] delegate* unmanaged<SYMBOL_INFO*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumTypesByNameW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumTypesByNameW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCWSTR")] ushort* mask, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACKW")] delegate* unmanaged<SYMBOL_INFOW*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetTypeFromName"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetTypeFromName(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCSTR")] sbyte* Name, [NativeTypeName("PSYMBOL_INFO")] SYMBOL_INFO* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetTypeFromNameW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetTypeFromNameW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCWSTR")] ushort* Name, [NativeTypeName("PSYMBOL_INFOW")] SYMBOL_INFOW* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymAddSymbol"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymAddSymbol(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCSTR")] sbyte* Name, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("DWORD")] uint Size, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymAddSymbolW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymAddSymbolW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCWSTR")] ushort* Name, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("DWORD")] uint Size, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymDeleteSymbol"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymDeleteSymbol(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCSTR")] sbyte* Name, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymDeleteSymbolW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymDeleteSymbolW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PCWSTR")] ushort* Name, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymRefreshModuleList"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymRefreshModuleList(HANDLE hProcess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymAddSourceStream"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SymAddSourceStream(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* StreamFile, [NativeTypeName("PBYTE")] byte* Buffer, [NativeTypeName("size_t")] nuint Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymAddSourceStreamA"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SymAddSourceStreamA(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* StreamFile, [NativeTypeName("PBYTE")] byte* Buffer, [NativeTypeName("size_t")] nuint Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymAddSourceStreamW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymAddSourceStreamW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCWSTR")] ushort* FileSpec, [NativeTypeName("PBYTE")] byte* Buffer, [NativeTypeName("size_t")] nuint Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvIsStoreW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSrvIsStoreW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* path);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvIsStore"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSrvIsStore(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* path);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvDeltaName"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PCSTR")]
     public static extern sbyte* SymSrvDeltaName(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* SymPath, [NativeTypeName("PCSTR")] sbyte* Type, [NativeTypeName("PCSTR")] sbyte* File1, [NativeTypeName("PCSTR")] sbyte* File2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvDeltaNameW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PCWSTR")]
     public static extern ushort* SymSrvDeltaNameW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* SymPath, [NativeTypeName("PCWSTR")] ushort* Type, [NativeTypeName("PCWSTR")] ushort* File1, [NativeTypeName("PCWSTR")] ushort* File2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvGetSupplement"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PCSTR")]
     public static extern sbyte* SymSrvGetSupplement(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* SymPath, [NativeTypeName("PCSTR")] sbyte* Node, [NativeTypeName("PCSTR")] sbyte* File);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvGetSupplementW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PCWSTR")]
     public static extern ushort* SymSrvGetSupplementW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* SymPath, [NativeTypeName("PCWSTR")] ushort* Node, [NativeTypeName("PCWSTR")] ushort* File);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvGetFileIndexes"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSrvGetFileIndexes([NativeTypeName("PCSTR")] sbyte* File, Guid* Id, [NativeTypeName("PDWORD")] uint* Val1, [NativeTypeName("PDWORD")] uint* Val2, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvGetFileIndexesW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSrvGetFileIndexesW([NativeTypeName("PCWSTR")] ushort* File, Guid* Id, [NativeTypeName("PDWORD")] uint* Val1, [NativeTypeName("PDWORD")] uint* Val2, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvGetFileIndexStringW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSrvGetFileIndexStringW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* SrvPath, [NativeTypeName("PCWSTR")] ushort* File, [NativeTypeName("PWSTR")] ushort* Index, [NativeTypeName("size_t")] nuint Size, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvGetFileIndexString"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSrvGetFileIndexString(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* SrvPath, [NativeTypeName("PCSTR")] sbyte* File, [NativeTypeName("PSTR")] sbyte* Index, [NativeTypeName("size_t")] nuint Size, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvGetFileIndexInfo"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSrvGetFileIndexInfo([NativeTypeName("PCSTR")] sbyte* File, [NativeTypeName("PSYMSRV_INDEX_INFO")] SYMSRV_INDEX_INFO* Info, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvGetFileIndexInfoW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymSrvGetFileIndexInfoW([NativeTypeName("PCWSTR")] ushort* File, [NativeTypeName("PSYMSRV_INDEX_INFOW")] SYMSRV_INDEX_INFOW* Info, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvStoreSupplement"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PCSTR")]
     public static extern sbyte* SymSrvStoreSupplement(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* SrvPath, [NativeTypeName("PCSTR")] sbyte* Node, [NativeTypeName("PCSTR")] sbyte* File, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvStoreSupplementW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PCWSTR")]
     public static extern ushort* SymSrvStoreSupplementW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* SymPath, [NativeTypeName("PCWSTR")] ushort* Node, [NativeTypeName("PCWSTR")] ushort* File, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvStoreFile"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PCSTR")]
     public static extern sbyte* SymSrvStoreFile(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* SrvPath, [NativeTypeName("PCSTR")] sbyte* File, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSrvStoreFileW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PCWSTR")]
     public static extern ushort* SymSrvStoreFileW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* SrvPath, [NativeTypeName("PCWSTR")] ushort* File, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymbolFile"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymbolFile(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* SymPath, [NativeTypeName("PCSTR")] sbyte* ImageFile, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("PSTR")] sbyte* SymbolFile, [NativeTypeName("size_t")] nuint cSymbolFile, [NativeTypeName("PSTR")] sbyte* DbgFile, [NativeTypeName("size_t")] nuint cDbgFile);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymbolFileW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymbolFileW(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* SymPath, [NativeTypeName("PCWSTR")] ushort* ImageFile, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("PWSTR")] ushort* SymbolFile, [NativeTypeName("size_t")] nuint cSymbolFile, [NativeTypeName("PWSTR")] ushort* DbgFile, [NativeTypeName("size_t")] nuint cDbgFile);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DbgHelpCreateUserDump"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL DbgHelpCreateUserDump([NativeTypeName("LPCSTR")] sbyte* FileName, [NativeTypeName("PDBGHELP_CREATE_USER_DUMP_CALLBACK")] delegate* unmanaged<uint, void**, uint*, void*, BOOL> Callback, [NativeTypeName("PVOID")] void* UserData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DbgHelpCreateUserDumpW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL DbgHelpCreateUserDumpW([NativeTypeName("LPCWSTR")] ushort* FileName, [NativeTypeName("PDBGHELP_CREATE_USER_DUMP_CALLBACK")] delegate* unmanaged<uint, void**, uint*, void*, BOOL> Callback, [NativeTypeName("PVOID")] void* UserData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymFromAddr64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymFromAddr64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong qwAddr, [NativeTypeName("PDWORD64")] ulong* pdwDisplacement, [NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymFromAddr"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymFromAddr(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymFromName64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymFromName64(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* Name, [NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymFromName"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymFromName(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* Name, [NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindFileInPath"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL FindFileInPath(HANDLE hprocess, [NativeTypeName("PCSTR")] sbyte* SearchPathW, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PVOID")] void* id, [NativeTypeName("DWORD")] uint two, [NativeTypeName("DWORD")] uint three, [NativeTypeName("DWORD")] uint flags, [NativeTypeName("PSTR")] sbyte* FilePath);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindFileInSearchPath"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL FindFileInSearchPath(HANDLE hprocess, [NativeTypeName("PCSTR")] sbyte* SearchPathW, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("DWORD")] uint one, [NativeTypeName("DWORD")] uint two, [NativeTypeName("DWORD")] uint three, [NativeTypeName("PSTR")] sbyte* FilePath);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumSym"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymEnumSym(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PSYM_ENUMERATESYMBOLS_CALLBACK")] delegate* unmanaged<SYMBOL_INFO*, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumerateSymbols64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumerateSymbols64(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PSYM_ENUMSYMBOLS_CALLBACK64")] delegate* unmanaged<sbyte*, ulong, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumerateSymbolsW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumerateSymbolsW64(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PSYM_ENUMSYMBOLS_CALLBACK64W")] delegate* unmanaged<ushort*, ulong, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumerateSymbols"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumerateSymbols(HANDLE hProcess, [NativeTypeName("ULONG")] uint BaseOfDll, [NativeTypeName("PSYM_ENUMSYMBOLS_CALLBACK")] delegate* unmanaged<sbyte*, uint, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymEnumerateSymbolsW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymEnumerateSymbolsW(HANDLE hProcess, [NativeTypeName("ULONG")] uint BaseOfDll, [NativeTypeName("PSYM_ENUMSYMBOLS_CALLBACKW")] delegate* unmanaged<ushort*, uint, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymLoadModule64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD64")]
     public static extern ulong SymLoadModule64(HANDLE hProcess, HANDLE hFile, [NativeTypeName("PCSTR")] sbyte* ImageName, [NativeTypeName("PCSTR")] sbyte* ModuleName, [NativeTypeName("DWORD64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint SizeOfDll);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymLoadModule"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint SymLoadModule(HANDLE hProcess, HANDLE hFile, [NativeTypeName("PCSTR")] sbyte* ImageName, [NativeTypeName("PCSTR")] sbyte* ModuleName, [NativeTypeName("DWORD")] uint BaseOfDll, [NativeTypeName("DWORD")] uint SizeOfDll);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymNext64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymNext64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymNextW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymGetSymNextW64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW64")] IMAGEHLP_SYMBOLW64* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymNext"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymNext(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymNextW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymGetSymNextW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW")] IMAGEHLP_SYMBOLW* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymPrev64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymPrev64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymPrevW64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymGetSymPrevW64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW64")] IMAGEHLP_SYMBOLW64* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymPrev"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymPrev(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymPrevW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL SymGetSymPrevW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW")] IMAGEHLP_SYMBOLW* Symbol);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCheckUserInterruptShared"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern void SetCheckUserInterruptShared([NativeTypeName("LPCALL_BACK_USER_INTERRUPT_ROUTINE")] delegate* unmanaged<uint> lpStartAddress);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCheckUserInterruptShared"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [return: NativeTypeName("LPCALL_BACK_USER_INTERRUPT_ROUTINE")]
     public static extern delegate* unmanaged<uint> GetCheckUserInterruptShared();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSymLoadError"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetSymLoadError();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetSymLoadError"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern void SetSymLoadError([NativeTypeName("DWORD")] uint error);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReportSymbolLoadSummary"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL ReportSymbolLoadSummary(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* pLoadModule, [NativeTypeName("PDBGHELP_DATA_REPORT_STRUCT")] DBGHELP_DATA_REPORT_STRUCT* pSymbolData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveInvalidModuleList"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern void RemoveInvalidModuleList(HANDLE hProcess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RangeMapCreate"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [return: NativeTypeName("PVOID")]
     public static extern void* RangeMapCreate();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RangeMapFree"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern void RangeMapFree([NativeTypeName("PVOID")] void* RmapHandle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RangeMapAddPeImageSections"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL RangeMapAddPeImageSections([NativeTypeName("PVOID")] void* RmapHandle, [NativeTypeName("PCWSTR")] ushort* ImageName, [NativeTypeName("PVOID")] void* MappedImage, [NativeTypeName("DWORD")] uint MappingBytes, [NativeTypeName("DWORD64")] ulong ImageBase, [NativeTypeName("DWORD64")] ulong UserTag, [NativeTypeName("DWORD")] uint MappingFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RangeMapRemove"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL RangeMapRemove([NativeTypeName("PVOID")] void* RmapHandle, [NativeTypeName("DWORD64")] ulong UserTag);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RangeMapRead"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL RangeMapRead([NativeTypeName("PVOID")] void* RmapHandle, [NativeTypeName("DWORD64")] ulong Offset, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint RequestBytes, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PDWORD")] uint* DoneBytes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RangeMapWrite"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL RangeMapWrite([NativeTypeName("PVOID")] void* RmapHandle, [NativeTypeName("DWORD64")] ulong Offset, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint RequestBytes, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PDWORD")] uint* DoneBytes);
 

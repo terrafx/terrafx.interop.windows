@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellMenu.GetMenu">
+    <summary>
+      <para>Gets the menu information set by calling <see cref="IShellMenu.SetMenu" />.</para>
+    </summary>
+    <param name="phmenu">
+      <para>Type: <b>HMENU*</b></para>
+      <para>When this method returns, contains a pointer to an <b>HMENU</b> value that receives the <i>hmenu</i> value that you specified when you called <see cref="IShellMenu.SetMenu" />. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="phwnd">
+      <para>Type: <b>HWND*</b></para>
+      <para>When this method returns, contains a pointer to an <b>HWND</b> value that receives the <i>hwnd</i> value that you specified when you called <see cref="IShellMenu.SetMenu" />. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="pdwFlags">
+      <para>Type: <b>DWORD*</b></para>
+      <para>When this method returns, contains a pointer to a <b>DWORD</b> value that receives the <i>dwFlags</i> value that you specified when you called <see cref="IShellMenu.SetMenu" />. This value can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellMenu.GetMenuInfo">
+    <summary>
+      <para>Gets information from the <see cref="IShellMenu.Initialize" /> method.</para>
+    </summary>
+    <param name="ppsmc">
+      <para>Type: <b><see cref="IShellMenuCallback" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to the <see cref="IShellMenuCallback" /> interface that you specified when you called <see cref="IShellMenu.Initialize" />. This pointer can be <b>NULL</b>.</para>
+    </param>
+    <param name="puId">
+      <para>Type: <b>UINT*</b></para>
+      <para>When this method returns, contains a pointer to a <b>UINT</b> value that receives the <i>uID</i> value that you specified when you called <see cref="IShellMenu.Initialize" />. This pointer can be <b>NULL</b>.</para>
+    </param>
+    <param name="puIdAncestor">
+      <para>Type: <b>UINT*</b></para>
+      <para>When this method returns, contains a pointer to a <b>UINT</b> value that receives the <i>uIdAncestor</i> value that you specified when you called <see cref="IShellMenu.Initialize" />. This pointer can be <b>NULL</b>.</para>
+    </param>
+    <param name="pdwFlags">
+      <para>Type: <b>DWORD*</b></para>
+      <para>When this method returns, contains a pointer to a <b>DWORD</b> value that receives the <i>dwFlags</i> value that you specified when you called <see cref="IShellMenu.Initialize" />. This pointer can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellMenu.GetShellFolder">
+    <summary>
+      <para>Gets the folder that the menu band is set to browse.</para>
+    </summary>
+    <param name="pdwFlags">
+      <para>Type: <b>DWORD*</b></para>
+      <para>When this method returns successfully, contains a pointer to a set of flag values that specify how the menu band operates.</para>
+      <para>Can return any of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>SMINIT_DEFAULT</b>
+          </description>
+          <description>
+            <para>No options.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SMINIT_RESTRICT_DRAGDROP</b>
+          </description>
+          <description>
+            <para>Do not allow drag-and-drop.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SMINIT_TOPLEVEL</b>
+          </description>
+          <description>
+            <para>This is the top band.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SMINIT_CACHED</b>
+          </description>
+          <description>
+            <para>Do not destroy the band when the window is closed.</para>
+          </description>
+        </item>
+      </list>
+      <para>Always returns one of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>SMINIT_VERTICAL</b>
+          </description>
+          <description>
+            <para>Specifies a vertical band.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SMINIT_HORIZONTAL</b>
+          </description>
+          <description>
+            <para>Specifies a horizontal band.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ppidl">
+      <para>Type: <b>PCIDLIST_ABSOLUTE*</b></para>
+      <para>When this method returns, contains the address of the folder's fully qualified <see cref="ITEMIDLIST" />.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The REFIID for the target folder.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns successfully, contains the address of a pointer to the Shell folder object referenced by the <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellMenu.GetState">
+    <summary>
+      <para>Gets a filled <see cref="SMDATA" /> structure.</para>
+    </summary>
+    <param name="psmd">
+      <para>Type: <b>LPSMDATA</b></para>
+      <para>When this method returns, contains a pointer to an <see cref="SMDATA" /> structure that contains information about the menu band.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellMenu.Initialize">
+    <summary>
+      <para>Initializes a menu band.</para>
+    </summary>
+    <param name="psmc">
+      <para>Type: <b><see cref="IShellMenuCallback" />*</b></para>
+      <para>A pointer to an <see cref="IShellMenuCallback" /> interface. This interface receives notifications from the menu. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="uId">
+      <para>Type: <b>UINT</b></para>
+      <para>The identifier of the selected menu item. Set this parameter to -1 for the menu itself.</para>
+    </param>
+    <param name="uIdAncestor">
+      <para>Type: <b>UINT</b></para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that control how the menu operates.</para>
+      <para>A combination of the following option values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>SMINIT_DEFAULT</b>
+          </description>
+          <description>
+            <para>No options.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SMINIT_RESTRICT_DRAGDROP</b>
+          </description>
+          <description>
+            <para>Do not allow drag-and-drop.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SMINIT_TOPLEVEL</b>
+          </description>
+          <description>
+            <para>This is the top band.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SMINIT_CACHED</b>
+          </description>
+          <description>
+            <para>Do not destroy the band when the window is closed.</para>
+          </description>
+        </item>
+      </list>
+      <para>In addition to the values above, one of the following layout options:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>SMINIT_VERTICAL</b>
+          </description>
+          <description>
+            <para>Specifies a vertical band.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SMINIT_HORIZONTAL</b>
+          </description>
+          <description>
+            <para>Specifies a horizontal band.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellMenu.InvalidateItem">
+    <summary>
+      <para>Redraws an item in a menu band.</para>
+    </summary>
+    <param name="psmd">
+      <para>Type: <b>LPSMDATA</b></para>
+      <para>A pointer to an <see cref="SMDATA" /> structure that identifies the item to be redrawn. Set this value to <b>NULL</b> to redraw the entire menu.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that control how the menu is redrawn. If <i>psmd</i> is <b>NULL</b>, set <i>dwFlags</i> to SMINV_REFRESH. If <i>psmd</i> is set to a valid <see cref="SMDATA" /> structure, set <i>dwFlags</i> to SMINV_ID | SMINV_REFRESH.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellMenu.SetMenu">
+    <summary>
+      <para>Appends a static menu to the menu band.</para>
+    </summary>
+    <param name="hmenu">
+      <para>Type: <b>HMENU</b></para>
+      <para>The handle of the static menu that is to be appended. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The <b>HWND</b> of the owner window. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that specify how the menu operates.</para>
+      <h4>SMSET_BOTTOM</h4>
+      <para>Attach the menu to the bottom of the parent menu.</para>
+      <h4>SMSET_TOP</h4>
+      <para>Attach the menu to the top of the parent menu.</para>
+      <h4>SMSET_DONTOWN</h4>
+      <para>The menu band does not own the menu named in <i>hwnd</i>, so should that menu eventually be replaced, it should not be destroyed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellMenu.SetMenuToolbar">
+    <summary>
+      <para>Adds a menu to the menuband.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an object that supports <b>CLSID_MenuToolbarBase</b> in its <see cref="QueryInterface" /> method.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that control how the menu operates.</para>
+      <h4>SMSET_TOP</h4>
+      <para>Bias this namespace to the top of the menu.</para>
+      <h4>SMSET_BOTTOM</h4>
+      <para>Bias this namespace to the bottom of the menu.</para>
+      <h4>SMSET_DONTOWN</h4>
+      <para>The Menuband does not own the non-ref counted object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellMenu.SetShellFolder">
+    <summary>
+      <para>Specifies the folder for the menu band to browse.</para>
+    </summary>
+    <param name="psf">
+      <para>Type: <b><see cref="IShellFolder" />*</b></para>
+      <para>A pointer to the folder's <see cref="IShellFolder" /> interface. This pointer can be <b>NULL</b>.</para>
+    </param>
+    <param name="pidlFolder">
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>The folder's fully qualified <see cref="ITEMIDLIST" />. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="hKey">
+      <para>Type: <b>HKEY</b></para>
+      <para>An HKEY with an "Order" value that is used to store the order of the menu. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that specify how the menu band operates.</para>
+      <h4>SMSET_BOTTOM</h4>
+      <para>Put this folder at the bottom of the menu.</para>
+      <h4>SMSET_USEBKICONEXTRACTION</h4>
+      <para>Use the background icon extractor.</para>
+      <h4>SMSET_HASEXPANDABLEFOLDERS</h4>
+      <para>This folder contains expandable folders.</para>
+      <h4>SMSET_COLLAPSEONEMPTY</h4>
+      <para>Collapse the menu if empty.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call this method after you call <see cref="IShellMenu.Initialize" />.</para>
+    </remarks>
+  </member>
+  <member name="IShellMenu">
+    <summary>
+      <para>Exposes methods that interact with Shell menus such as the <b>Start</b> menu, and the <b>Favorites</b> menu.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this interface, call <see cref="CoCreateInstance" /> with the <i>rclsid</i> parameter set to CLSID_MenuBand and the <i>riid</i> parameter set to IID_IShellMenu. You must first initialize the interface by calling <see cref="IShellMenu.Initialize" />, and then initialize the menu band by calling <see cref="IShellMenu.SetShellFolder" />.</para>
+    </remarks>
+  </member>
+</doc>

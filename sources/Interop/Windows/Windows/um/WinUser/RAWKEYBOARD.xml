@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RAWKEYBOARD">
+    <summary>
+      <para>Contains information about the state of the keyboard.</para>
+    </summary>
+    <remarks>
+      <para>For a <b>MakeCode</b> value <a href="https://docs.microsoft.com//windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers">HID client mapper driver</a> converts HID usages into scan codes according to <a href="https://download.microsoft.com/download/1/6/1/161ba512-40e2-4cc9-843a-923143f3456c/translate.pdf">USB HID to PS/2 Scan Code Translation Table</a> (see <b>PS/2 Set 1 Make</b> column).</para>
+      <para>Older PS/2 keyboards actually transmit Scan Code Set 2 values down the wire from the keyboard to the keyboard port. These values are translated to Scan Code Set 1 by the i8042 port chip. Possible values are listed in <a href="https://download.microsoft.com/download/1/6/1/161ba512-40e2-4cc9-843a-923143f3456c/scancode.doc">Keyboard Scan Code Specification</a> (see <b>Scan Code Table</b>).</para>
+      <para>
+        <b>KEYBOARD_OVERRUN_MAKE_CODE</b> is a special <b>MakeCode</b> value sent when an invalid or unrecognizable combination of keys is pressed or the number of keys pressed exceeds the limit for this keyboard.</para>
+    </remarks>
+    <seealso cref="GetRawInputDeviceInfo" />
+    <seealso cref="RAWINPUT" />
+    <seealso href="https://docs.microsoft.com//windows/win32/inputdev/raw-input">Raw Input</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers">Keyboard and mouse HID client drivers</seealso>
+    <seealso href="https://download.microsoft.com/download/1/6/1/161ba512-40e2-4cc9-843a-923143f3456c/translate.pdf">USB HID to PS/2 Scan Code Translation Table</seealso>
+    <seealso href="https://download.microsoft.com/download/1/6/1/161ba512-40e2-4cc9-843a-923143f3456c/scancode.doc">PS/2 Keyboard Scan Code Specification</seealso>
+    <seealso cref="KEYBOARD_INPUT_DATA structure" />
+  </member>
+  <member name="RAWKEYBOARD.MakeCode">
+    <summary>
+      <para>Type: <b>USHORT</b></para>
+      <para>Specifies the scan code (from Scan Code Set 1) associated with a key press. See Remarks.</para>
+    </summary>
+  </member>
+  <member name="RAWKEYBOARD.Flags">
+    <summary>
+      <para>Type: <b>USHORT</b></para>
+      <para>Flags for scan code information. It can be one or more of the following:</para>
+      <para>| Value                | Meaning                          |
+|----------------------|----------------------------------|
+| <b>RI_KEY_MAKE</b> 0  | The key is down.                 |
+| <b>RI_KEY_BREAK</b> 1 | The key is up.                   |
+| <b>RI_KEY_E0</b> 2    | The scan code has the E0 prefix. |
+| <b>RI_KEY_E1</b> 4    | The scan code has the E1 prefix. |</para>
+    </summary>
+  </member>
+  <member name="RAWKEYBOARD.Reserved">
+    <summary>
+      <para>Type: <b>USHORT</b></para>
+      <para>Reserved; must be zero.</para>
+    </summary>
+  </member>
+  <member name="RAWKEYBOARD.VKey">
+    <summary>
+      <para>Type: <b>USHORT</b></para>
+      <para>The corresponding <a href="https://docs.microsoft.com//windows/win32/inputdev/virtual-key-codes">legacy virtual-key code</a>.</para>
+    </summary>
+  </member>
+  <member name="RAWKEYBOARD.Message">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The corresponding <a href="https://docs.microsoft.com//windows/win32/inputdev/keyboard-input-notifications">legacy keyboard window message</a>, for example <a href="https://docs.microsoft.com//windows/win32/inputdev/wm-keydown">WM_KEYDOWN</a>, <a href="https://docs.microsoft.com//windows/win32/inputdev/wm-syskeydown">WM_SYSKEYDOWN</a>, and so forth.</para>
+    </summary>
+  </member>
+  <member name="RAWKEYBOARD.ExtraInformation">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The device-specific additional information for the event.</para>
+    </summary>
+  </member>
+</doc>

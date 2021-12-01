@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CHANNEL_STATE.xml' path='doc/member[@name="WS_CHANNEL_STATE"]/*' />
 public enum WS_CHANNEL_STATE
 {
+    /// <include file='WS_CHANNEL_STATE.xml' path='doc/member[@name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_CREATED"]/*' />
     WS_CHANNEL_STATE_CREATED = 0,
+
+    /// <include file='WS_CHANNEL_STATE.xml' path='doc/member[@name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_OPENING"]/*' />
     WS_CHANNEL_STATE_OPENING = 1,
+
+    /// <include file='WS_CHANNEL_STATE.xml' path='doc/member[@name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_ACCEPTING"]/*' />
     WS_CHANNEL_STATE_ACCEPTING = 2,
+
+    /// <include file='WS_CHANNEL_STATE.xml' path='doc/member[@name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_OPEN"]/*' />
     WS_CHANNEL_STATE_OPEN = 3,
+
+    /// <include file='WS_CHANNEL_STATE.xml' path='doc/member[@name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_FAULTED"]/*' />
     WS_CHANNEL_STATE_FAULTED = 4,
+
+    /// <include file='WS_CHANNEL_STATE.xml' path='doc/member[@name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_CLOSING"]/*' />
     WS_CHANNEL_STATE_CLOSING = 5,
+
+    /// <include file='WS_CHANNEL_STATE.xml' path='doc/member[@name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_CLOSED"]/*' />
     WS_CHANNEL_STATE_CLOSED = 6,
 }

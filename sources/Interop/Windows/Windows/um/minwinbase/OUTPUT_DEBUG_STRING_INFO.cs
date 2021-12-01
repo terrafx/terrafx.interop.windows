@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OUTPUT_DEBUG_STRING_INFO.xml' path='doc/member[@name="OUTPUT_DEBUG_STRING_INFO"]/*' />
 public unsafe partial struct OUTPUT_DEBUG_STRING_INFO
 {
+    /// <include file='OUTPUT_DEBUG_STRING_INFO.xml' path='doc/member[@name="OUTPUT_DEBUG_STRING_INFO.lpDebugStringData"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpDebugStringData;
 
+    /// <include file='OUTPUT_DEBUG_STRING_INFO.xml' path='doc/member[@name="OUTPUT_DEBUG_STRING_INFO.fUnicode"]/*' />
     [NativeTypeName("WORD")]
     public ushort fUnicode;
 
+    /// <include file='OUTPUT_DEBUG_STRING_INFO.xml' path='doc/member[@name="OUTPUT_DEBUG_STRING_INFO.nDebugStringLength"]/*' />
     [NativeTypeName("WORD")]
     public ushort nDebugStringLength;
 }

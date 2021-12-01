@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_BITMAP_PROPERTIES">
+    <summary>
+      <para>Describes the pixel format and dpi
+of a bitmap.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAP_PROPERTIES.pixelFormat">
+    <summary>
+      <para>Type: <b><see cref="D2D1_PIXEL_FORMAT" /></b></para>
+      <para>The bitmap's pixel format and alpha mode.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAP_PROPERTIES.dpiX">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The horizontal dpi of the bitmap.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAP_PROPERTIES.dpiY">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The vertical dpi of the bitmap.</para>
+    </summary>
+  </member>
+</doc>

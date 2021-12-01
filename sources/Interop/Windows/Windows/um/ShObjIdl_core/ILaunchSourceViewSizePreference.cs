@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ILaunchSourceViewSizePreference.xml' path='doc/member[@name="ILaunchSourceViewSizePreference"]/*' />
 [Guid("E5AA01F7-1FB8-4830-8720-4E6734CBD5F3")]
 [NativeTypeName("struct ILaunchSourceViewSizePreference : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
         return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
         return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, uint>)(lpVtbl[1]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
         return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, uint>)(lpVtbl[2]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILaunchSourceViewSizePreference.xml' path='doc/member[@name="ILaunchSourceViewSizePreference.GetSourceViewToPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSourceViewToPosition(HWND* hwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
         return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, HWND*, int>)(lpVtbl[3]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <include file='ILaunchSourceViewSizePreference.xml' path='doc/member[@name="ILaunchSourceViewSizePreference.GetSourceViewSizePreference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSourceViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* sourceSizeAfterLaunch)

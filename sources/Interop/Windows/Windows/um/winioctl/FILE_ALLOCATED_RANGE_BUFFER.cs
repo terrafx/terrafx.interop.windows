@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_ALLOCATED_RANGE_BUFFER.xml' path='doc/member[@name="FILE_ALLOCATED_RANGE_BUFFER"]/*' />
 public partial struct FILE_ALLOCATED_RANGE_BUFFER
 {
+    /// <include file='FILE_ALLOCATED_RANGE_BUFFER.xml' path='doc/member[@name="FILE_ALLOCATED_RANGE_BUFFER.FileOffset"]/*' />
     public LARGE_INTEGER FileOffset;
 
+    /// <include file='FILE_ALLOCATED_RANGE_BUFFER.xml' path='doc/member[@name="FILE_ALLOCATED_RANGE_BUFFER.Length"]/*' />
     public LARGE_INTEGER Length;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONDITION_TYPE.xml' path='doc/member[@name="CONDITION_TYPE"]/*' />
 public enum CONDITION_TYPE
 {
+    /// <include file='CONDITION_TYPE.xml' path='doc/member[@name="CONDITION_TYPE.CT_AND_CONDITION"]/*' />
     CT_AND_CONDITION = 0,
+
+    /// <include file='CONDITION_TYPE.xml' path='doc/member[@name="CONDITION_TYPE.CT_OR_CONDITION"]/*' />
     CT_OR_CONDITION = (CT_AND_CONDITION + 1),
+
+    /// <include file='CONDITION_TYPE.xml' path='doc/member[@name="CONDITION_TYPE.CT_NOT_CONDITION"]/*' />
     CT_NOT_CONDITION = (CT_OR_CONDITION + 1),
+
+    /// <include file='CONDITION_TYPE.xml' path='doc/member[@name="CONDITION_TYPE.CT_LEAF_CONDITION"]/*' />
     CT_LEAF_CONDITION = (CT_NOT_CONDITION + 1),
 }

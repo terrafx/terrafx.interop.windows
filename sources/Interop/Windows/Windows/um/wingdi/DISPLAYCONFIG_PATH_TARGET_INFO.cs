@@ -8,31 +8,43 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO"]/*' />
 public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
 {
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.adapterId"]/*' />
     public LUID adapterId;
 
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.id"]/*' />
     [NativeTypeName("UINT32")]
     public uint id;
 
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.Anonymous"]/*' />
     [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2973:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.outputTechnology"]/*' />
     public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
 
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.rotation"]/*' />
     public DISPLAYCONFIG_ROTATION rotation;
 
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.scaling"]/*' />
     public DISPLAYCONFIG_SCALING scaling;
 
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.refreshRate"]/*' />
     public DISPLAYCONFIG_RATIONAL refreshRate;
 
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.scanLineOrdering"]/*' />
     public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
 
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.targetAvailable"]/*' />
     public BOOL targetAvailable;
 
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.statusFlags"]/*' />
     [NativeTypeName("UINT32")]
     public uint statusFlags;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.modeInfoIdx"]/*' />
     public ref uint modeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +54,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.desktopModeInfoIdx"]/*' />
     public uint desktopModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,6 +70,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.targetModeInfoIdx"]/*' />
     public uint targetModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -72,21 +86,26 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.modeInfoIdx"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UINT32")]
         public uint modeInfoIdx;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2976:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.desktopModeInfoIdx"]/*' />
             [NativeTypeName("UINT32 : 16")]
             public uint desktopModeInfoIdx
             {
@@ -103,6 +122,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.targetModeInfoIdx"]/*' />
             [NativeTypeName("UINT32 : 16")]
             public uint targetModeInfoIdx
             {

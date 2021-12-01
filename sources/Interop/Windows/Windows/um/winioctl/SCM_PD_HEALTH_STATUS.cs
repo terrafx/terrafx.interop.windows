@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_HEALTH_STATUS.xml' path='doc/member[@name="SCM_PD_HEALTH_STATUS"]/*' />
 public enum SCM_PD_HEALTH_STATUS
 {
+    /// <include file='SCM_PD_HEALTH_STATUS.xml' path='doc/member[@name="SCM_PD_HEALTH_STATUS.ScmPhysicalDeviceHealth_Unknown"]/*' />
     ScmPhysicalDeviceHealth_Unknown = 0,
+
+    /// <include file='SCM_PD_HEALTH_STATUS.xml' path='doc/member[@name="SCM_PD_HEALTH_STATUS.ScmPhysicalDeviceHealth_Unhealthy"]/*' />
     ScmPhysicalDeviceHealth_Unhealthy,
+
+    /// <include file='SCM_PD_HEALTH_STATUS.xml' path='doc/member[@name="SCM_PD_HEALTH_STATUS.ScmPhysicalDeviceHealth_Warning"]/*' />
     ScmPhysicalDeviceHealth_Warning,
+
+    /// <include file='SCM_PD_HEALTH_STATUS.xml' path='doc/member[@name="SCM_PD_HEALTH_STATUS.ScmPhysicalDeviceHealth_Healthy"]/*' />
     ScmPhysicalDeviceHealth_Healthy,
+
+    /// <include file='SCM_PD_HEALTH_STATUS.xml' path='doc/member[@name="SCM_PD_HEALTH_STATUS.ScmPhysicalDeviceHealth_Max"]/*' />
     ScmPhysicalDeviceHealth_Max,
 }

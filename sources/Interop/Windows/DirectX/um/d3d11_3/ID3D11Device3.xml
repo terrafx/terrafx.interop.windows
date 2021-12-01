@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11Device3.CreateDeferredContext3">
+    <summary>
+      <para>Creates a deferred context, which can record <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-command-list">command lists</a>.</para>
+    </summary>
+    <param name="ContextFlags">
+      <para>Type: <b>UINT</b></para>
+      <para>Reserved for future use.  Pass 0.</para>
+    </param>
+    <param name="ppDeferredContext">
+      <para>Type: <b>ID3D11DeviceContext3**</b></para>
+      <para>Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext3" /> interface pointer is initialized.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; otherwise, returns one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Returns <b>DXGI_ERROR_DEVICE_REMOVED</b> if the video card has been physically removed from the system, or a driver upgrade for the video card has occurred.
+If this error occurs, you should destroy and recreate the device.
+</description>
+        </item>
+        <item>
+          <description>Returns <b>DXGI_ERROR_INVALID_CALL</b> if the
+<b>CreateDeferredContext3</b> method can't be called from the current context.
+For example, if the device was created with the <see cref="D3D11_CREATE_DEVICE_SINGLETHREADED" /> value,  <b>CreateDeferredContext3</b> returns <b>DXGI_ERROR_INVALID_CALL</b>.
+</description>
+        </item>
+        <item>
+          <description>Returns <b>E_INVALIDARG</b> if the <i>ContextFlags</i> parameter is invalid.
+</description>
+        </item>
+        <item>
+          <description>Returns <b>E_OUTOFMEMORY</b> if the app has exhausted available memory.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11Device1.CreateDeferredContext1" />
+    <seealso cref="ID3D11Device2.CreateDeferredContext2" />
+    <seealso cref="ID3D11Device3" />
+    <seealso cref="ID3D11Device.CreateDeferredContext" />
+  </member>
+  <member name="ID3D11Device3.CreateQuery1">
+    <summary>
+      <para>Creates a query object for querying information from the graphics processing unit (GPU).</para>
+    </summary>
+    <param name="pQueryDesc1">
+      <para>Type: <b>const <see cref="D3D11_QUERY_DESC1" />*</b></para>
+      <para>Pointer to a <see cref="D3D11_QUERY_DESC1" /> structure that represents a query description.</para>
+    </param>
+    <param name="ppQuery1">
+      <para>Type: <b><see cref="ID3D11Query1" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="ID3D11Query1" /> interface for the created query object. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return <b>S_FALSE</b> if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns E_OUTOFMEMORY if there is insufficient memory to create the query object.
+See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
+    </returns>
+    <seealso cref="ID3D11Device3" />
+  </member>
+  <member name="ID3D11Device3.CreateRasterizerState2">
+    <summary>
+      <para>Creates a rasterizer state object that informs the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage">rasterizer stage</a> how to behave and forces the sample count while UAV rendering or rasterizing.</para>
+    </summary>
+    <param name="pRasterizerDesc">
+      <para>Type: <b>const <see cref="D3D11_RASTERIZER_DESC2" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_RASTERIZER_DESC2" /> structure that describes the  rasterizer state.</para>
+    </param>
+    <param name="ppRasterizerState">
+      <para>Type: <b><see cref="ID3D11RasterizerState2" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="ID3D11RasterizerState2" /> interface for the created rasterizer state object. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return <b>S_FALSE</b> if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns E_OUTOFMEMORY if there is insufficient memory to create the rasterizer state object.  See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
+    </returns>
+    <seealso cref="ID3D11Device3" />
+  </member>
+  <member name="ID3D11Device3.CreateRenderTargetView1">
+    <summary>
+      <para>Creates a render-target view for accessing resource data.</para>
+    </summary>
+    <param name="pResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>Pointer to a <see cref="ID3D11Resource" /> that represents a render target. This resource must have been created with the <see cref="D3D11_BIND_RENDER_TARGET" /> flag.</para>
+    </param>
+    <param name="pDesc1">
+      <para>Type: <b>const <see cref="D3D11_RENDER_TARGET_VIEW_DESC1" />*</b></para>
+      <para>Pointer to a <see cref="D3D11_RENDER_TARGET_VIEW_DESC1" /> that represents a render-target view description. Set this parameter to <b>NULL</b> to create a view that accesses all of the subresources in mipmap level 0.</para>
+    </param>
+    <param name="ppRTView1">
+      <para>Type: <b><see cref="ID3D11RenderTargetView1" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="ID3D11RenderTargetView1" /> interface for the created render-target view. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return <b>S_FALSE</b> if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>A render-target view can be bound to the output-merger stage by calling <see cref="ID3D11DeviceContext.OMSetRenderTargets" />.</para>
+    </remarks>
+    <seealso cref="ID3D11Device3" />
+  </member>
+  <member name="ID3D11Device3.CreateShaderResourceView1">
+    <summary>
+      <para>Creates a shader-resource view for accessing data in a resource.</para>
+    </summary>
+    <param name="pResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>Pointer to the resource that will serve as input to a shader. This resource must have been created with the <see cref="D3D11_BIND_SHADER_RESOURCE" /> flag.</para>
+    </param>
+    <param name="pDesc1">
+      <para>Type: <b>const <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC1" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC1" /> structure that describes a shader-resource view. Set this parameter to <b>NULL</b> to create a
+view that accesses the entire resource (using the format the resource was created with).</para>
+    </param>
+    <param name="ppSRView1">
+      <para>Type: <b><see cref="ID3D11ShaderResourceView1" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="ID3D11ShaderResourceView1" /> interface for the created shader-resource view. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return <b>S_FALSE</b> if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns E_OUTOFMEMORY if there is insufficient memory to create the shader-resource view.  See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
+    </returns>
+    <seealso cref="ID3D11Device3" />
+  </member>
+  <member name="ID3D11Device3.CreateTexture2D1">
+    <summary>
+      <para>Creates a <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-intro">2D texture</a>.</para>
+    </summary>
+    <param name="pDesc1">
+      <para>Type: <b>const <see cref="D3D11_TEXTURE2D_DESC1" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TEXTURE2D_DESC1" /> structure that describes a 2D texture resource. To create a typeless resource that can be interpreted at runtime into different, compatible formats, specify a typeless format in the texture description. To generate mipmap levels automatically, set the number of mipmap levels to 0.</para>
+    </param>
+    <param name="pInitialData">
+      <para>Type: <b>const <see cref="D3D11_SUBRESOURCE_DATA" />*</b></para>
+      <para>A pointer to an array of <see cref="D3D11_SUBRESOURCE_DATA" /> structures that describe subresources for the 2D texture resource. Applications can't specify <b>NULL</b> for <i>pInitialData</i> when creating IMMUTABLE resources (see <see cref="D3D11_USAGE" />). If the resource is multisampled, <i>pInitialData</i> must be <b>NULL</b> because multisampled resources can't be initialized with data when they're created.</para>
+      <para>If you don't pass anything to <i>pInitialData</i>, the initial content of the memory for the resource is undefined. In this case, you need to write the resource content some other way before the resource is read.</para>
+      <para>You can determine the size of this array from values in the <b>MipLevels</b> and <b>ArraySize</b> members of the <b>D3D11_TEXTURE2D_DESC1</b> structure to which <i>pDesc1</i> points by using the following calculation:</para>
+      <para>MipLevels * ArraySize</para>
+      <para>For more info about this array size, see Remarks.</para>
+    </param>
+    <param name="ppTexture2D">
+      <para>Type: <b><see cref="ID3D11Texture2D1" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="ID3D11Texture2D1" /> interface for the created texture. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return <b>S_FALSE</b> if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the method succeeds, the return code is <b>S_OK</b>. See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for failing error codes.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>CreateTexture2D1</b> creates a 2D texture resource, which can contain a number of 2D subresources. The number of subresources is specified in the texture description. All textures in a resource must have the same format, size, and number of mipmap levels.</para>
+      <para>All resources are made up of one or more subresources. To load data into the texture, applications can supply the data initially as an array of <see cref="D3D11_SUBRESOURCE_DATA" /> structures pointed to by <i>pInitialData</i>, or they can use one of the D3DX texture functions such as <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3dx11createtexturefromfile">D3DX11CreateTextureFromFile</a>.</para>
+      <para>For a 32 x 32 texture with a full mipmap chain, the <i>pInitialData</i> array has the following 6 elements:</para>
+      <list type="bullet">
+        <item>
+          <description>pInitialData[0] = 32x32</description>
+        </item>
+        <item>
+          <description>pInitialData[1] = 16x16</description>
+        </item>
+        <item>
+          <description>pInitialData[2] = 8x8</description>
+        </item>
+        <item>
+          <description>pInitialData[3] = 4x4
+</description>
+        </item>
+        <item>
+          <description>pInitialData[4] = 2x2
+</description>
+        </item>
+        <item>
+          <description>pInitialData[5] = 1x1
+</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID3D11Device3" />
+  </member>
+  <member name="ID3D11Device3.CreateTexture3D1">
+    <summary>
+      <para>Creates a <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-intro">3D texture</a>.</para>
+    </summary>
+    <param name="pDesc1">
+      <para>Type: <b>const <see cref="D3D11_TEXTURE3D_DESC1" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TEXTURE3D_DESC1" /> structure that describes a 3D texture resource. To create a typeless resource that can be interpreted at runtime into different, compatible formats, specify a typeless format in the texture description. To generate mipmap levels automatically, set the number of mipmap levels to 0.</para>
+    </param>
+    <param name="pInitialData">
+      <para>Type: <b>const <see cref="D3D11_SUBRESOURCE_DATA" />*</b></para>
+      <para>A pointer to an array of <see cref="D3D11_SUBRESOURCE_DATA" /> structures that describe subresources for the 3D texture resource. Applications can't specify <b>NULL</b> for <i>pInitialData</i> when creating IMMUTABLE resources (see <see cref="D3D11_USAGE" />). If the resource is multisampled, <i>pInitialData</i> must be <b>NULL</b> because multisampled resources can't be initialized with data when they are created.</para>
+      <para>If you don't pass anything to <i>pInitialData</i>, the initial content of the memory for the resource is undefined. In this case, you need to write the resource content some other way before the resource is read.</para>
+      <para>You can determine the size of this array from the value in the <b>MipLevels</b> member of the <b>D3D11_TEXTURE3D_DESC1</b> structure to which <i>pDesc1</i> points. Arrays of 3D volume textures aren't supported.</para>
+      <para>For more information about this array size, see Remarks.</para>
+    </param>
+    <param name="ppTexture3D">
+      <para>Type: <b><see cref="ID3D11Texture3D1" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="ID3D11Texture3D1" /> interface for the created texture. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return <b>S_FALSE</b> if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the method succeeds, the return code is <b>S_OK</b>. See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for failing error codes.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>CreateTexture3D1</b> creates a 3D texture resource, which can contain a number of 3D subresources. The number of textures is specified in the texture description. All textures in a resource must have the same format, size, and number of mipmap levels.</para>
+      <para>All resources are made up of one or more subresources. To load data into the texture, applications can supply the data initially as an array of <see cref="D3D11_SUBRESOURCE_DATA" /> structures pointed to by <i>pInitialData</i>, or they can use one of the D3DX texture functions such as <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3dx11createtexturefromfile">D3DX11CreateTextureFromFile</a>.</para>
+      <para>Each element of <i>pInitialData</i> provides all of the slices that are defined for a given miplevel. For example, for a 32 x 32 x 4 volume texture with a full mipmap chain, the array has the following 6 elements:</para>
+      <list type="bullet">
+        <item>
+          <description>pInitialData[0] = 32x32 with 4 slices</description>
+        </item>
+        <item>
+          <description>pInitialData[1] = 16x16 with 2 slices</description>
+        </item>
+        <item>
+          <description>pInitialData[2] = 8x8 with 1 slice</description>
+        </item>
+        <item>
+          <description>pInitialData[3] = 4x4
+with 1 slice</description>
+        </item>
+        <item>
+          <description>pInitialData[4] = 2x2
+with 1 slice</description>
+        </item>
+        <item>
+          <description>pInitialData[5] = 1x1
+with 1 slice</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID3D11Device3" />
+  </member>
+  <member name="ID3D11Device3.CreateUnorderedAccessView1">
+    <summary>
+      <para>Creates a view for accessing an <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-advanced-stages-cs-resources">unordered access</a> resource.</para>
+    </summary>
+    <param name="pResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>Pointer to an <see cref="ID3D11Resource" /> that represents a resources that will serve as an input to a shader.</para>
+    </param>
+    <param name="pDesc1">
+      <para>Type: <b>const <see cref="D3D11_UNORDERED_ACCESS_VIEW_DESC1" />*</b></para>
+      <para>Pointer to a <see cref="D3D11_UNORDERED_ACCESS_VIEW_DESC1" /> structure that represents an unordered-access view description. Set this parameter to <b>NULL</b> to create a view that accesses the entire resource (using the format the resource was created with).</para>
+    </param>
+    <param name="ppUAView1">
+      <para>Type: <b><see cref="ID3D11UnorderedAccessView1" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="ID3D11UnorderedAccessView1" /> interface for the created unordered-access view. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return <b>S_FALSE</b> if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns E_OUTOFMEMORY if there is insufficient memory to create the unordered-access view.  See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
+    </returns>
+    <seealso cref="ID3D11Device3" />
+  </member>
+  <member name="ID3D11Device3.GetImmediateContext3">
+    <summary>
+      <para>Gets an immediate context, which can play back <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-command-list">command lists</a>.</para>
+    </summary>
+    <param name="ppImmediateContext">
+      <para>Type: <b><see cref="ID3D11DeviceContext3" />**</b></para>
+      <para>Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext3" /> interface pointer is initialized.</para>
+    </param>
+    <remarks>
+      <para>The
+<b>GetImmediateContext3</b> method outputs an
+<see cref="ID3D11DeviceContext3" /> object that represents an immediate context, which is used to perform rendering that you want immediately submitted to a device.
+For most apps, an immediate context is the primary object that is used to draw your scene.</para>
+      <para>The <b>GetImmediateContext3</b> method increments the reference count of the immediate context by one.
+Therefore, you must call <see cref="Release" /> on the returned interface pointer when you are done with it to avoid a memory leak.</para>
+    </remarks>
+    <seealso cref="ID3D11Device1.GetImmediateContext1" />
+    <seealso cref="ID3D11Device2.GetImmediateContext2" />
+    <seealso cref="ID3D11Device3" />
+    <seealso cref="ID3D11Device.GetImmediateContext" />
+  </member>
+  <member name="ID3D11Device3.ReadFromSubresource">
+    <summary>
+      <para>Copies data from a
+<see cref="D3D11_USAGE_DEFAULT" /> texture which was mapped using
+ID3D11DeviceContext3.<see cref="Map" /> while providing a NULL
+<see cref="D3D11_MAPPED_SUBRESOURCE" /> parameter.</para>
+    </summary>
+    <param name="pDstData">
+      <para>Type: <b>void*</b></para>
+      <para>A pointer to the destination data in memory.</para>
+    </param>
+    <param name="DstRowPitch">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The size of one row of the destination data.</para>
+    </param>
+    <param name="DstDepthPitch">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The size of one depth slice of destination data.</para>
+    </param>
+    <param name="pSrcResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>A pointer to the source resource (see
+<see cref="ID3D11Resource" />).</para>
+    </param>
+    <param name="SrcSubresource">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based index, that identifies the destination subresource.
+For more details, see
+<see cref="D3D11CalcSubresource" />.</para>
+    </param>
+    <param name="pSrcBox">
+      <para>Type: <b>const <see cref="D3D11_BOX" />*</b></para>
+      <para>A pointer to a box that defines the portion of the destination subresource to copy the resource data from.
+If NULL, the data is read from the destination subresource with no offset.
+The dimensions of the destination must fit the destination (see
+<see cref="D3D11_BOX" />).</para>
+      <para>An empty box results in a no-op.
+A box is empty if the top value is greater than or equal to the bottom value, or the left value is greater than or equal to the right value, or the front value is greater than or equal to the back value.
+When the box is empty, this method doesn't perform any operation.</para>
+    </param>
+    <remarks>
+      <para>The provided resource must be a
+<see cref="D3D11_USAGE_DEFAULT" /> texture which was mapped for writing by a previous call to
+ID3D11DeviceContext3.<see cref="Map" /> while providing a NULL
+<see cref="D3D11_MAPPED_SUBRESOURCE" /> parameter.</para>
+      <para>This API is intended for calling at high frequency.
+Callers can reduce memory by making iterative calls that update progressive regions of the texture, while provide a small buffer during each call.
+It is most efficient to specify large enough regions, though, because this enables D3D to fill whole cache lines in the texture before returning.</para>
+      <para>For efficiency, ensure the bounds and alignment of the extents within the box are ( 64 / [Bytes per pixel] ) pixels horizontally.
+Vertical bounds and alignment should be 2 rows, except when 1-byte-per-pixel formats are used, in which case 4 rows are recommended.
+Single depth slices per call are handled efficiently.
+It is recommended but not necessary to provide pointers and strides which are 128-byte aligned.</para>
+      <para>When reading from sub mipmap levels, it is recommended to use larger width and heights than described above.
+This is because small mipmap levels may actually be stored within a larger block of memory, with an opaque amount of offsetting which can interfere with alignment to cache lines.</para>
+    </remarks>
+    <seealso cref="ID3D11Device3" />
+  </member>
+  <member name="ID3D11Device3.WriteToSubresource">
+    <summary>
+      <para>Copies data into a
+<see cref="D3D11_USAGE_DEFAULT" /> texture which was mapped using
+ID3D11DeviceContext3.<see cref="Map" /> while providing a NULL
+<see cref="D3D11_MAPPED_SUBRESOURCE" /> parameter.</para>
+    </summary>
+    <param name="pDstResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>A pointer to the destination resource (an
+<see cref="ID3D11Resource" />).</para>
+    </param>
+    <param name="DstSubresource">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based index, that identifies the destination subresource.
+For more details, see
+<see cref="D3D11CalcSubresource" />.</para>
+    </param>
+    <param name="pDstBox">
+      <para>Type: <b>const <see cref="D3D11_BOX" />*</b></para>
+      <para>A pointer to a box that defines the portion of the destination subresource to copy the resource data into.
+If NULL, the data is written to the destination subresource with no offset.
+The dimensions of the source must fit the destination (see
+<see cref="D3D11_BOX" />).</para>
+      <para>An empty box results in a no-op.
+A box is empty if the top value is greater than or equal to the bottom value, or the left value is greater than or equal to the right value, or the front value is greater than or equal to the back value.
+When the box is empty, this method doesn't perform any operation.</para>
+    </param>
+    <param name="pSrcData">
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to the source data in memory.</para>
+    </param>
+    <param name="SrcRowPitch">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The size of one row of the source data.</para>
+    </param>
+    <param name="SrcDepthPitch">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The size of one depth slice of source data.</para>
+    </param>
+    <remarks>
+      <para>The provided resource must be a
+<see cref="D3D11_USAGE_DEFAULT" /> texture which was mapped for writing by a previous call to
+ID3D11DeviceContext3.<see cref="Map" /> while providing a NULL
+<see cref="D3D11_MAPPED_SUBRESOURCE" /> parameter.</para>
+      <para>This API is intended for calling at high frequency.
+Callers can reduce memory by making iterative calls that update progressive regions of the texture, while provide a small buffer during each call.
+It is most efficient to specify large enough regions, though, because this enables D3D to fill whole cache lines in the texture before returning.</para>
+      <para>For efficiency, ensure the bounds and alignment of the extents within the box are ( 64 / [bytes per pixel] ) pixels horizontally.
+Vertical bounds and alignment should be 2 rows, except when 1-byte-per-pixel formats are used, in which case 4 rows are recommended.
+Single depth slices per call are handled efficiently.
+It is recommended but not necessary to provide pointers and strides which are 128-byte aligned.</para>
+      <para>When writing to sub mipmap levels, it is recommended to use larger width and heights than described above.
+This is because small mipmap levels may actually be stored within a larger block of memory, with an opaque amount of offsetting which can interfere with alignment to cache lines.</para>
+    </remarks>
+    <seealso cref="ID3D11Device3" />
+  </member>
+  <member name="ID3D11Device3">
+    <summary>
+      <para>The device interface represents a virtual adapter; it is used to create resources. <b>ID3D11Device3</b> adds new methods to those in <see cref="ID3D11Device2" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D11Device2" />
+  </member>
+</doc>

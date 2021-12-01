@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IContactManagerInterop.ShowContactCardForWindow">
+    <summary>
+      <para>Displays the UI for a contact on the specified window.</para>
+    </summary>
+    <param name="appWindow">
+      <para>Type: <b>HWND</b></para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a> of the foreground window of the app from which the contact card is launched and where focus is returned when the contact card is dismissed.</para>
+    </param>
+    <param name="contact">
+      <para>Type: <b>IUnknown*</b></para>
+      <para>A pointer to the contact object. Use a <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.contacts.contact">Windows.ApplicationModel.Contacts.Contact</a> object but cast to <see cref="IUnknown" /> here because classic COM IDL can't use Windows Runtime types.</para>
+    </param>
+    <param name="selection">
+      <para>Type: <b>RECT const*</b></para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> is the rectangular area of user selection (for example, pressing a button), around which the operating system displays the contact card, not within that rectangular area. For example, if an app uses a button to show the contact card, pass the <b>Rect</b> of the button so the contact card displays around the button, not overlapping it.</para>
+    </param>
+    <param name="preferredPlacement">
+      <para>Type: <b>FLYOUT_PLACEMENT</b></para>
+      <para>A <b>FLYOUT_PLACEMENT</b>-typed value that describes the preferred placement of the contact card.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FP_DEFAULT</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Use the default.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FP_ABOVE</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Prefer to place the contact card above the rectangular area of user selection specified by the <i>selection</i> parameter.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FP_BELOW</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Prefer to place the contact card below the rectangular area of user selection specified by the <i>selection</i> parameter.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FP_LEFT</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Prefer to place the contact card to the left of the rectangular area of user selection specified by the <i>selection</i> parameter.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FP_RIGHT</b>
+                </description>
+              </item>
+              <item>
+                <description>4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Prefer to place the contact card to the right of the rectangular area of user selection specified by the <i>selection</i> parameter.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/dn302110(v=vs.85)">ShowContactCardForWindow</a> returns:</para>
+      <list type="bullet">
+        <item>
+          <description>S_OK if the contact card is successfully displayed</description>
+        </item>
+        <item>
+          <description>E_POINTER if <i>appWindow</i> is NULL or <i>contact</i> is NULL or <i>selection</i> is NULL</description>
+        </item>
+        <item>
+          <description>E_INVALIDARG if <i>contact</i> isn't a <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.contacts.contact">Windows.ApplicationModel.Contacts.Contact</a> object or <i>preferredPlacement</i> is an invalid enumeration value</description>
+        </item>
+      </list>
+      <para>Other <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a> values are possible.</para>
+    </returns>
+    <seealso cref="IContactManagerInterop" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dn302110(v=vs.85)">ShowContactCardForWindow</seealso>
+  </member>
+  <member name="IContactManagerInterop">
+    <summary>
+      <para>Enables access to <b>ContactManager</b> methods in an app that manages multiple windows.</para>
+    </summary>
+  </member>
+</doc>

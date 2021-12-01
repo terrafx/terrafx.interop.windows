@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FsiItemType.xml' path='doc/member[@name="FsiItemType"]/*' />
 public enum FsiItemType
 {
+    /// <include file='FsiItemType.xml' path='doc/member[@name="FsiItemType.FsiItemNotFound"]/*' />
     FsiItemNotFound = 0,
+
+    /// <include file='FsiItemType.xml' path='doc/member[@name="FsiItemType.FsiItemDirectory"]/*' />
     FsiItemDirectory = 1,
+
+    /// <include file='FsiItemType.xml' path='doc/member[@name="FsiItemType.FsiItemFile"]/*' />
     FsiItemFile = 2,
 }

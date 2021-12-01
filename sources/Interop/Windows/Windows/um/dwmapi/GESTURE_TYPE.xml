@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GESTURE_TYPE">
+    <summary>
+      <para>Identifies the gesture type specified in <see cref="DwmRenderGesture" />.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_PEN_TAP">
+    <summary>
+      <para>A pen tap.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_PEN_DOUBLETAP">
+    <summary>
+      <para>A pen double tap.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_PEN_RIGHTTAP">
+    <summary>
+      <para>A pen right tap.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_PEN_PRESSANDHOLD">
+    <summary>
+      <para>A pen press and hold.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_PEN_PRESSANDHOLDABORT">
+    <summary>
+      <para>An abort of the pen press and hold.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_TOUCH_TAP">
+    <summary>
+      <para>A touch tap.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_TOUCH_DOUBLETAP">
+    <summary>
+      <para>A touch double tap.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_TOUCH_RIGHTTAP">
+    <summary>
+      <para>A touch right tap.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_TOUCH_PRESSANDHOLD">
+    <summary>
+      <para>A touch press and hold.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_TOUCH_PRESSANDHOLDABORT">
+    <summary>
+      <para>An abort of the pen press and hold.</para>
+    </summary>
+  </member>
+  <member name="GESTURE_TYPE.GT_TOUCH_PRESSANDTAP">
+    <summary>
+      <para>A touch press and tap.</para>
+    </summary>
+  </member>
+</doc>

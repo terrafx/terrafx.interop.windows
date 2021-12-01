@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGESELECTTYPE.xml' path='doc/member[@name="IMAGESELECTTYPE"]/*' />
 public enum IMAGESELECTTYPE
 {
+    /// <include file='IMAGESELECTTYPE.xml' path='doc/member[@name="IMAGESELECTTYPE.IST_NONE"]/*' />
     IST_NONE = 0,
+
+    /// <include file='IMAGESELECTTYPE.xml' path='doc/member[@name="IMAGESELECTTYPE.IST_SIZE"]/*' />
     IST_SIZE = 1,
+
+    /// <include file='IMAGESELECTTYPE.xml' path='doc/member[@name="IMAGESELECTTYPE.IST_DPI"]/*' />
     IST_DPI = 2,
 }

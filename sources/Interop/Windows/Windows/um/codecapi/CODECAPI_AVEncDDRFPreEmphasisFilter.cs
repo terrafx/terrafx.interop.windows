@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncDDRFPreEmphasisFilter.xml' path='doc/member[@name="CODECAPI_AVEncDDRFPreEmphasisFilter"]/*' />
 [Guid("21AF44C0-244E-4F3D-A2CC-3D3068B2E73F")]
 public partial struct CODECAPI_AVEncDDRFPreEmphasisFilter
 {

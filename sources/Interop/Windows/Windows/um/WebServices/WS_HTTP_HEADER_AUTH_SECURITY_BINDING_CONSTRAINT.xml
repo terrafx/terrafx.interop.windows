@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_HTTP_HEADER_AUTH_SECURITY_BINDING_CONSTRAINT">
+    <summary>
+      <para>A security binding constraint that corresponds to the
+<see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_HEADER_AUTH_SECURITY_BINDING_CONSTRAINT.bindingConstraint">
+    <summary>
+      <para>The base binding constraint that this binding constraint derives from.</para>
+    </summary>
+  </member>
+</doc>

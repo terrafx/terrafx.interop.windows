@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WTS_ALPHATYPE.xml' path='doc/member[@name="WTS_ALPHATYPE"]/*' />
 public enum WTS_ALPHATYPE
 {
+    /// <include file='WTS_ALPHATYPE.xml' path='doc/member[@name="WTS_ALPHATYPE.WTSAT_UNKNOWN"]/*' />
     WTSAT_UNKNOWN = 0,
+
+    /// <include file='WTS_ALPHATYPE.xml' path='doc/member[@name="WTS_ALPHATYPE.WTSAT_RGB"]/*' />
     WTSAT_RGB = 1,
+
+    /// <include file='WTS_ALPHATYPE.xml' path='doc/member[@name="WTS_ALPHATYPE.WTSAT_ARGB"]/*' />
     WTSAT_ARGB = 2,
 }

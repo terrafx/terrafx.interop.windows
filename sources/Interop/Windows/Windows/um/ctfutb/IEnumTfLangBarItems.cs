@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumTfLangBarItems.xml' path='doc/member[@name="IEnumTfLangBarItems"]/*' />
 [Guid("583F34D0-DE25-11D2-AFDD-00105A2799B5")]
 [NativeTypeName("struct IEnumTfLangBarItems : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
         return ((delegate* unmanaged<IEnumTfLangBarItems*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
         return ((delegate* unmanaged<IEnumTfLangBarItems*, uint>)(lpVtbl[1]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
         return ((delegate* unmanaged<IEnumTfLangBarItems*, uint>)(lpVtbl[2]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfLangBarItems.xml' path='doc/member[@name="IEnumTfLangBarItems.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfLangBarItems** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
         return ((delegate* unmanaged<IEnumTfLangBarItems*, IEnumTfLangBarItems**, int>)(lpVtbl[3]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumTfLangBarItems.xml' path='doc/member[@name="IEnumTfLangBarItems.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItem** ppItem, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
         return ((delegate* unmanaged<IEnumTfLangBarItems*, uint, ITfLangBarItem**, uint*, int>)(lpVtbl[4]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), ulCount, ppItem, pcFetched);
     }
 
+    /// <include file='IEnumTfLangBarItems.xml' path='doc/member[@name="IEnumTfLangBarItems.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
         return ((delegate* unmanaged<IEnumTfLangBarItems*, int>)(lpVtbl[5]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfLangBarItems.xml' path='doc/member[@name="IEnumTfLangBarItems.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

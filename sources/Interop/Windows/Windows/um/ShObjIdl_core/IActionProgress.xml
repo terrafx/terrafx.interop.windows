@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IActionProgress.Begin">
+    <summary>
+      <para>Called when an action has begun that requires its progress be displayed to the user.</para>
+    </summary>
+    <param name="action">
+      <para>Type: <b><see cref="SPACTION" /></b></para>
+      <para>The action being performed. See <see cref="SPACTION" /> for a list of acceptable values.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b><see cref="SPBEGINF" /></b></para>
+      <para>Optional flags that request certain UI operations be enabled or disabled. See <see cref="SPBEGINF" /> for a list of acceptable values.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This method should be called when an action is beginning. The values of <i>action</i> and <i>flags</i> may be used to determine how to draw the UI that will be displayed to the user, or how to interpret or filter certain user actions associated with the action. When the action has completed, <see cref="IActionProgress.End" /> should be called.</para>
+    </remarks>
+    <seealso cref="IActionProgress" />
+    <seealso cref="IActionProgress.End" />
+    <seealso cref="SPACTION" />
+    <seealso cref="SPBEGINF" />
+  </member>
+  <member name="IActionProgress.End">
+    <summary>
+      <para>Indicates that the action associated with this progress implementation has ended.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This method indicates that the action has finished, and the implementing class should perform cleanup and display results to the user, if applicable.</para>
+    </remarks>
+    <seealso cref="IActionProgress" />
+    <seealso cref="IActionProgress.Begin" />
+  </member>
+  <member name="IActionProgress.QueryCancel">
+    <summary>
+      <para>Provides information about whether the action is being canceled.</para>
+    </summary>
+    <param name="pfCancelled">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A reference to a <b>BOOL</b> value that specifies whether the action is being canceled.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Call this method when a process must know whether an action has been canceled. Implementing this method requires the implementing class to query either an internal or external flag to provide this information, and store the result in the value of <i>pfCancelled</i>.</para>
+    </remarks>
+    <seealso cref="IActionProgress" />
+    <seealso cref="IActionProgress.ResetCancel" />
+  </member>
+  <member name="IActionProgress.ResetCancel">
+    <summary>
+      <para>Resets progress dialog after a cancellation has been completed.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This method is called when a cancellation has been completed. User input should typically be limited for cancellations of actions that involve large calculations or file operations. This method may be used by calling applications to notify a progress UI that the cancellation has been completed and the UI should return control to the user.</para>
+    </remarks>
+    <seealso cref="IActionProgress" />
+    <seealso cref="IActionProgress.QueryCancel" />
+  </member>
+  <member name="IActionProgress.UpdateProgress">
+    <summary>
+      <para>Updates the progress of an action to the UI.</para>
+    </summary>
+    <param name="ulCompleted">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The amount of the action completed.</para>
+    </param>
+    <param name="ulTotal">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The total amount of the action.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This method should be called periodically to update the progress of the action. The implementing class may interpret these values in any way desired, although the values of <i>ulCompleted</i> and <i>ulTotal</i> should be interpreted relative to one another to determine a meaningful progress amount. Often, a percentage is desired, in which case the value of <i>ulCompleted</i> should be divided by <i>ulTotal</i>, and the result multiplied by a value of 100.</para>
+    </remarks>
+  </member>
+  <member name="IActionProgress.UpdateText">
+    <summary>
+      <para>Called if descriptive text associated with the action will be changed.</para>
+    </summary>
+    <param name="sptext">
+      <para>Type: <b><see cref="SPTEXT" /></b></para>
+      <para>A value that specifies the type of text displayed. See <see cref="SPTEXT" /> for acceptable values.</para>
+    </param>
+    <param name="pszText">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a wide character string to display.</para>
+    </param>
+    <param name="fMayCompact">
+      <para>Type: <b>BOOL</b></para>
+      <para>A value that specifies whether to allow a text string to be compacted to fit the available space on screen.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>The class implementing this method must interpret the value of <i>sptext</i> and <i>fMayCompact</i> in the context of the action being performed and the UI that shows the progress to the user. The value of <i>sptext</i> can be used to differentiate between lines of changeable text. Often, the value of <i>fMayCompact</i> refers to whether the text string can be truncated with an ellipsis (...) in order to conserve screen space.</para>
+    </remarks>
+    <seealso cref="IActionProgress" />
+    <seealso cref="SPTEXT" />
+  </member>
+  <member name="IActionProgress">
+    <summary>
+      <para>Represents the abstract base class from which progress-driven operations can inherit.</para>
+    </summary>
+    <remarks>
+      <para>This class is an abstract class that may not be instantiated. It provides a framework that derived classes can use to implement a progress callback. This callback can be used by applications to report progress of actions to the UI. Here, "Actions" refers to operations that may take a significant amount of time, such as downloading or copying files, and during which a visible progress indication would be appropriate.</para>
+      <para>Applications typically do not implement this interface. Much of the functionality that users interact with during actions is provided by the CProgressDialog class (CLSID_ProgressDialog) that implements <b>IActionProgress</b> and displays progress in a dialog box. If a solution requiring a mechanism other than a dialog box is required, <b>IActionProgress</b> can be used to provide basic progress indicator functionality.</para>
+      <para>Once implemented, classes should call <see cref="IActionProgress.Begin" /> when an action is started. Periodically, <see cref="IActionProgress.UpdateProgress" /> should be called to update the UI with progress information, and detailed textual information should be conveyed to the UI by calling <see cref="IActionProgress.UpdateText" />. <see cref="IActionProgress.QueryCancel" /> and <see cref="IActionProgress.ResetCancel" /> should be called to handle cancellation requests. Once the operation ends, <see cref="IActionProgress.End" /> should be called.</para>
+    </remarks>
+    <seealso cref="IProgressDialog" />
+  </member>
+</doc>

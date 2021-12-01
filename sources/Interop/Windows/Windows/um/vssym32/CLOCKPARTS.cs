@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CLOCKPARTS.xml' path='doc/member[@name="CLOCKPARTS"]/*' />
 public enum CLOCKPARTS
 {
+    /// <include file='CLOCKPARTS.xml' path='doc/member[@name="CLOCKPARTS.CLP_TIME"]/*' />
     CLP_TIME = 1,
 }

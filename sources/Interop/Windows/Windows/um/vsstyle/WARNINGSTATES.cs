@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WARNINGSTATES.xml' path='doc/member[@name="WARNINGSTATES"]/*' />
 public enum WARNINGSTATES
 {
+    /// <include file='WARNINGSTATES.xml' path='doc/member[@name="WARNINGSTATES.DDWARNING_HIGHLIGHT"]/*' />
     DDWARNING_HIGHLIGHT = 1,
+
+    /// <include file='WARNINGSTATES.xml' path='doc/member[@name="WARNINGSTATES.DDWARNING_NOHIGHLIGHT"]/*' />
     DDWARNING_NOHIGHLIGHT = 2,
 }

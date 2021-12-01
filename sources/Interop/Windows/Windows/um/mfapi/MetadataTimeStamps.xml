@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MetadataTimeStamps">
+    <summary>
+      <para>The <b>MetadataTimeStamps</b> structure describes the blob format for the <b>MF_CAPTURE_METADATA_FACEROITIMESTAMPS</b> attribute.</para>
+    </summary>
+    <remarks>
+      <para>The <b>MF_CAPTURE_METADATA_FACEROITIMESTAMPS</b> attribute contains the time stamp information for the face ROIs identified in <b>MF_CAPTURE_METADATA_FACEROIS</b>.  For a  device that cannot provide the time stamp for face ROIs, this attribute should be omitted.</para>
+      <para>For the <b>Flags</b> field, the following bit flags  indicate which time stamp is valid:</para>
+      <code>#define MF_METADATATIMESTAMPS_DEVICE        0x00000001
+#define MF_METADATATIMESTAMPS_PRESENTATION  0x00000002
+</code>
+      <para>MFT0 must set <b>Flags</b> to <b>MF_METADATATIEMSTAMPS_DEVICE</b> and the appropriate QPC time for <b>Device</b>, if the driver provides the timestamp metadata for the face ROIs.</para>
+      <para>The <b>MetadataTimeStamps</b> structure only describes the blob format for the <b>MF_CAPTURE_METADATA_FACEROITIMESTAMPS</b> attribute.  The metadata item structure for timestamp (<a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_itemheader">KSCAMERA_METADATA_ITEMHEADER</a> + timestamp metadata payload) is up to driver and must be 8-byte aligned.</para>
+    </remarks>
+  </member>
+  <member name="MetadataTimeStamps.Flags">
+    <summary>
+      <para>Bitwise OR of the <b>MF_METADATATIMESTAMPS_*</b> flags.</para>
+    </summary>
+  </member>
+  <member name="MetadataTimeStamps.Device">
+    <summary>
+      <para>QPC time for the sample  the face rectangle is derived from (in 100ns).</para>
+    </summary>
+  </member>
+  <member name="MetadataTimeStamps.Presentation">
+    <summary>
+      <para>PTS for the sample  the face rectangle is derived from (in 100ns).</para>
+    </summary>
+  </member>
+</doc>

@@ -8,23 +8,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR"]/*' />
 public partial struct IMAGE_IMPORT_DESCRIPTOR
 {
+    /// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR.Anonymous"]/*' />
     [NativeTypeName("_IMAGE_IMPORT_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19561:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR.TimeDateStamp"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeDateStamp;
 
+    /// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR.ForwarderChain"]/*' />
     [NativeTypeName("DWORD")]
     public uint ForwarderChain;
 
+    /// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR.Name"]/*' />
     [NativeTypeName("DWORD")]
     public uint Name;
 
+    /// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR.FirstThunk"]/*' />
     [NativeTypeName("DWORD")]
     public uint FirstThunk;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Characteristics"]/*' />
     public ref uint Characteristics
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +41,7 @@ public partial struct IMAGE_IMPORT_DESCRIPTOR
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.OriginalFirstThunk"]/*' />
     public ref uint OriginalFirstThunk
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,13 +51,16 @@ public partial struct IMAGE_IMPORT_DESCRIPTOR
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Characteristics"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Characteristics;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.OriginalFirstThunk"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint OriginalFirstThunk;

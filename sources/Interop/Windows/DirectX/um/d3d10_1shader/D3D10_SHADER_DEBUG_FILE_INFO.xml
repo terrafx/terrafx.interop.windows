@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_SHADER_DEBUG_FILE_INFO">
+    <summary>
+      <para>Describes files included by a shader.</para>
+    </summary>
+    <remarks>
+      <para>The <b>D3D10_SHADER_DEBUG_FILE_INFO</b> structure is used with the <see cref="D3D10_SHADER_DEBUG_INFO" /> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_FILE_INFO.FileName">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to the LPCSTR for the file name.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_FILE_INFO.FileNameLen">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Length of the file name.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_FILE_INFO.FileData">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to the file data.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_FILE_INFO.FileLen">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Length of the file.</para>
+    </summary>
+  </member>
+</doc>

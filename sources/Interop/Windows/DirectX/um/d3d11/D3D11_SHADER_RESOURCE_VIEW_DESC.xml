@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC">
+    <summary>
+      <para>Describes a shader-resource view.</para>
+    </summary>
+    <remarks>
+      <para>A view is a format-specific way to look at the data in a resource. The view determines what data to look at, and how it is cast when read.</para>
+      <para>When viewing a resource, the resource-view description must specify a typed format, that is compatible with the resource format. So that means that you cannot create a resource-view description using any format with _TYPELESS in the name. You can however view a typeless resource by specifying a typed format for the view. For example, a DXGI_FORMAT_R32G32B32_TYPELESS resource can be viewed with one of these typed formats: DXGI_FORMAT_R32G32B32_FLOAT, DXGI_FORMAT_R32G32B32_UINT, and DXGI_FORMAT_R32G32B32_SINT, since these typed formats are compatible with the typeless resource.</para>
+      <para>Create a shader-resource-view description by calling <see cref="ID3D11Device.CreateShaderResourceView" />. To view a shader-resource-view description, call <see cref="ID3D11ShaderResourceView.GetDesc" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.Format">
+    <summary>
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>A <see cref="DXGI_FORMAT" /> specifying the viewing format. See remarks.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.ViewDimension">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff476217(v=vs.85)">D3D11_SRV_DIMENSION</a></b></para>
+      <para>The resource type of the view. See <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff476217(v=vs.85)">D3D11_SRV_DIMENSION</a>. You must set <i>ViewDimension</i> to the same resource type as that of the underlying resource. This parameter also determines which _SRV to use in the union below.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.Buffer">
+    <summary>
+      <para>Type: <b><see cref="D3D11_BUFFER_SRV" /></b></para>
+      <para>View the resource as a buffer using information from a shader-resource view (see <see cref="D3D11_BUFFER_SRV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.Texture1D">
+    <summary>
+      <para>Type: <b><see cref="D3D11_TEX1D_SRV" /></b></para>
+      <para>View the resource as a 1D texture using information from a shader-resource view (see <see cref="D3D11_TEX1D_SRV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.Texture1DArray">
+    <summary>
+      <para>Type: <b><see cref="D3D11_TEX1D_ARRAY_SRV" /></b></para>
+      <para>View the resource as a 1D-texture array using information from a shader-resource view (see <see cref="D3D11_TEX1D_ARRAY_SRV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.Texture2D">
+    <summary>
+      <para>Type: <b><see cref="D3D11_TEX2D_SRV" /></b></para>
+      <para>View the resource as a 2D-texture using information from a shader-resource view (see <see cref="D3D11_TEX2D_SRV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.Texture2DArray">
+    <summary>
+      <para>Type: <b><see cref="D3D11_TEX2D_ARRAY_SRV" /></b></para>
+      <para>View the resource as a 2D-texture array using information from a shader-resource view (see <see cref="D3D11_TEX2D_ARRAY_SRV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.Texture2DMS">
+    <summary>
+      <para>Type: <b><see cref="D3D11_TEX2DMS_SRV" /></b></para>
+      <para>View the resource as a 2D-multisampled texture using information from a shader-resource view (see <see cref="D3D11_TEX2DMS_SRV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.Texture2DMSArray">
+    <summary>
+      <para>Type: <b><see cref="D3D11_TEX2DMS_ARRAY_SRV" /></b></para>
+      <para>View the resource as a 2D-multisampled-texture array using information from a shader-resource view (see <see cref="D3D11_TEX2DMS_ARRAY_SRV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.Texture3D">
+    <summary>
+      <para>Type: <b><see cref="D3D11_TEX3D_SRV" /></b></para>
+      <para>View the resource as a 3D texture using information from a shader-resource view (see <see cref="D3D11_TEX3D_SRV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.TextureCube">
+    <summary>
+      <para>Type: <b><see cref="D3D11_TEXCUBE_SRV" /></b></para>
+      <para>View the resource as a 3D-cube texture using information from a shader-resource view (see <see cref="D3D11_TEXCUBE_SRV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.TextureCubeArray">
+    <summary>
+      <para>Type: <b><see cref="D3D11_TEXCUBE_ARRAY_SRV" /></b></para>
+      <para>View the resource as a 3D-cube-texture array using information from a shader-resource view (see <see cref="D3D11_TEXCUBE_ARRAY_SRV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC.BufferEx">
+    <summary>
+      <para>Type: <b><see cref="D3D11_BUFFEREX_SRV" /></b></para>
+      <para>View the resource as a raw buffer using information from a shader-resource view (see <see cref="D3D11_BUFFEREX_SRV" />). For more info about raw viewing of buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-intro">Raw Views of Buffers</a>.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TYMED.xml' path='doc/member[@name="TYMED"]/*' />
 public enum TYMED
 {
+    /// <include file='TYMED.xml' path='doc/member[@name="TYMED.TYMED_HGLOBAL"]/*' />
     TYMED_HGLOBAL = 1,
+
+    /// <include file='TYMED.xml' path='doc/member[@name="TYMED.TYMED_FILE"]/*' />
     TYMED_FILE = 2,
+
+    /// <include file='TYMED.xml' path='doc/member[@name="TYMED.TYMED_ISTREAM"]/*' />
     TYMED_ISTREAM = 4,
+
+    /// <include file='TYMED.xml' path='doc/member[@name="TYMED.TYMED_ISTORAGE"]/*' />
     TYMED_ISTORAGE = 8,
+
+    /// <include file='TYMED.xml' path='doc/member[@name="TYMED.TYMED_GDI"]/*' />
     TYMED_GDI = 16,
+
+    /// <include file='TYMED.xml' path='doc/member[@name="TYMED.TYMED_MFPICT"]/*' />
     TYMED_MFPICT = 32,
+
+    /// <include file='TYMED.xml' path='doc/member[@name="TYMED.TYMED_ENHMF"]/*' />
     TYMED_ENHMF = 64,
+
+    /// <include file='TYMED.xml' path='doc/member[@name="TYMED.TYMED_NULL"]/*' />
     TYMED_NULL = 0,
 }

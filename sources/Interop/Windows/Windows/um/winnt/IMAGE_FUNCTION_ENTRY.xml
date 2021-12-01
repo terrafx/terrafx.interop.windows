@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGE_FUNCTION_ENTRY">
+    <summary>
+      <para>Represents an entry in the function table.</para>
+    </summary>
+    <remarks>
+      <para>The following definition exists for 64-bit support.</para>
+      <code>typedef struct _IMAGE_FUNCTION_ENTRY64 {
+    ULONGLONG   StartingAddress;
+    ULONGLONG   EndingAddress;
+    union {
+        ULONGLONG   EndOfPrologue;
+        ULONGLONG   UnwindInfoAddress;
+    };
+} IMAGE_FUNCTION_ENTRY64, *PIMAGE_FUNCTION_ENTRY64;
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+    <seealso cref="STACKFRAME64" />
+  </member>
+  <member name="IMAGE_FUNCTION_ENTRY.StartingAddress">
+    <summary>
+      <para>The image address of the start of the function.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_FUNCTION_ENTRY.EndingAddress">
+    <summary>
+      <para>The image address of the end of the function.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_FUNCTION_ENTRY.EndOfPrologue">
+    <summary>
+      <para>The image address of the end of the prologue code.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_FUNCTION_ENTRY">
+    <summary>
+      <para>Represents an entry in the function table.</para>
+    </summary>
+    <remarks>
+      <para>The following definition exists for 64-bit support.</para>
+      <code>typedef struct _IMAGE_FUNCTION_ENTRY64 {
+    ULONGLONG   StartingAddress;
+    ULONGLONG   EndingAddress;
+    union {
+        ULONGLONG   EndOfPrologue;
+        ULONGLONG   UnwindInfoAddress;
+    };
+} IMAGE_FUNCTION_ENTRY64, *PIMAGE_FUNCTION_ENTRY64;
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+    <seealso cref="STACKFRAME64" />
+  </member>
+  <member name="IMAGE_FUNCTION_ENTRY.StartingAddress">
+    <summary>
+      <para>The image address of the start of the function.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_FUNCTION_ENTRY.EndingAddress">
+    <summary>
+      <para>The image address of the end of the function.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_FUNCTION_ENTRY.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="IMAGE_FUNCTION_ENTRY.DUMMYUNIONNAME.EndOfPrologue">
+    <summary>
+      <para>The image address of the end of the prologue code.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_FUNCTION_ENTRY.DUMMYUNIONNAME.UnwindInfoAddress">
+    <summary></summary>
+  </member>
+</doc>

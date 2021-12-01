@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_3DTRANSFORM_PROP.xml' path='doc/member[@name="D2D1_3DTRANSFORM_PROP"]/*' />
 public enum D2D1_3DTRANSFORM_PROP : uint
 {
+    /// <include file='D2D1_3DTRANSFORM_PROP.xml' path='doc/member[@name="D2D1_3DTRANSFORM_PROP.D2D1_3DTRANSFORM_PROP_INTERPOLATION_MODE"]/*' />
     D2D1_3DTRANSFORM_PROP_INTERPOLATION_MODE = 0,
+
+    /// <include file='D2D1_3DTRANSFORM_PROP.xml' path='doc/member[@name="D2D1_3DTRANSFORM_PROP.D2D1_3DTRANSFORM_PROP_BORDER_MODE"]/*' />
     D2D1_3DTRANSFORM_PROP_BORDER_MODE = 1,
+
+    /// <include file='D2D1_3DTRANSFORM_PROP.xml' path='doc/member[@name="D2D1_3DTRANSFORM_PROP.D2D1_3DTRANSFORM_PROP_TRANSFORM_MATRIX"]/*' />
     D2D1_3DTRANSFORM_PROP_TRANSFORM_MATRIX = 2,
+
+    /// <include file='D2D1_3DTRANSFORM_PROP.xml' path='doc/member[@name="D2D1_3DTRANSFORM_PROP.D2D1_3DTRANSFORM_PROP_FORCE_DWORD"]/*' />
     D2D1_3DTRANSFORM_PROP_FORCE_DWORD = 0xffffffff,
 }

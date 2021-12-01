@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFT_OUTPUT_STREAM_INFO.xml' path='doc/member[@name="MFT_OUTPUT_STREAM_INFO"]/*' />
 public partial struct MFT_OUTPUT_STREAM_INFO
 {
+    /// <include file='MFT_OUTPUT_STREAM_INFO.xml' path='doc/member[@name="MFT_OUTPUT_STREAM_INFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='MFT_OUTPUT_STREAM_INFO.xml' path='doc/member[@name="MFT_OUTPUT_STREAM_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='MFT_OUTPUT_STREAM_INFO.xml' path='doc/member[@name="MFT_OUTPUT_STREAM_INFO.cbAlignment"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbAlignment;
 }

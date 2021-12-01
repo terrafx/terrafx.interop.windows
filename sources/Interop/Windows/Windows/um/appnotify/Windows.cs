@@ -9,17 +9,21 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterAppStateChangeNotification"]/*' />
     [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint RegisterAppStateChangeNotification([NativeTypeName("PAPPSTATE_CHANGE_ROUTINE")] delegate* unmanaged<byte, void*, void> Routine, [NativeTypeName("PVOID")] void* Context, PAPPSTATE_REGISTRATION* Registration);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterAppStateChangeNotification"]/*' />
     [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
     public static extern void UnregisterAppStateChangeNotification(PAPPSTATE_REGISTRATION Registration);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterAppConstrainedChangeNotification"]/*' />
     [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint RegisterAppConstrainedChangeNotification([NativeTypeName("PAPPCONSTRAIN_CHANGE_ROUTINE")] delegate* unmanaged<byte, void*, void> Routine, [NativeTypeName("PVOID")] void* Context, PAPPCONSTRAIN_REGISTRATION* Registration);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterAppConstrainedChangeNotification"]/*' />
     [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
     public static extern void UnregisterAppConstrainedChangeNotification(PAPPCONSTRAIN_REGISTRATION Registration);
 }

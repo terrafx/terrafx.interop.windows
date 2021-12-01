@@ -37,6 +37,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTransformActivate"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateTransformActivate(IMFActivate** ppActivate);
 }

@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SECURITY_QUALITY_OF_SERVICE.xml' path='doc/member[@name="SECURITY_QUALITY_OF_SERVICE"]/*' />
 public partial struct SECURITY_QUALITY_OF_SERVICE
 {
+    /// <include file='SECURITY_QUALITY_OF_SERVICE.xml' path='doc/member[@name="SECURITY_QUALITY_OF_SERVICE.Length"]/*' />
     [NativeTypeName("DWORD")]
     public uint Length;
 
+    /// <include file='SECURITY_QUALITY_OF_SERVICE.xml' path='doc/member[@name="SECURITY_QUALITY_OF_SERVICE.ImpersonationLevel"]/*' />
     public SECURITY_IMPERSONATION_LEVEL ImpersonationLevel;
 
+    /// <include file='SECURITY_QUALITY_OF_SERVICE.xml' path='doc/member[@name="SECURITY_QUALITY_OF_SERVICE.ContextTrackingMode"]/*' />
     [NativeTypeName("SECURITY_CONTEXT_TRACKING_MODE")]
     public byte ContextTrackingMode;
 
+    /// <include file='SECURITY_QUALITY_OF_SERVICE.xml' path='doc/member[@name="SECURITY_QUALITY_OF_SERVICE.EffectiveOnly"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte EffectiveOnly;
 }

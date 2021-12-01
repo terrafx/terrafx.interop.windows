@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POINTS">
+    <summary>
+      <para>The POINTS structure defines the x- and y-coordinates of a point.</para>
+    </summary>
+    <remarks>
+      <para>The POINTS structure is similar to the <see cref="POINT" /> and <see cref="POINTL" /> structures. The difference is that the members of the POINTS structure are of type SHORT, while those of the other two structures are of type LONG.</para>
+    </remarks>
+    <seealso cref="POINT" />
+    <seealso cref="POINTL" />
+  </member>
+  <member name="POINTS.y">
+    <summary>
+      <para>Specifies the <i>y</i>-coordinate of the point.</para>
+    </summary>
+  </member>
+  <member name="POINTS.x">
+    <summary>
+      <para>Specifies the <i>x</i>-coordinate of the point.</para>
+    </summary>
+  </member>
+</doc>

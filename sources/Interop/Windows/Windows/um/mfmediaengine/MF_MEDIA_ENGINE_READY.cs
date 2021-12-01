@@ -7,12 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MEDIA_ENGINE_READY.xml' path='doc/member[@name="MF_MEDIA_ENGINE_READY"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MF_MEDIA_ENGINE_READY
 {
+    /// <include file='MF_MEDIA_ENGINE_READY.xml' path='doc/member[@name="MF_MEDIA_ENGINE_READY.MF_MEDIA_ENGINE_READY_HAVE_NOTHING"]/*' />
     MF_MEDIA_ENGINE_READY_HAVE_NOTHING = 0,
+
+    /// <include file='MF_MEDIA_ENGINE_READY.xml' path='doc/member[@name="MF_MEDIA_ENGINE_READY.MF_MEDIA_ENGINE_READY_HAVE_METADATA"]/*' />
     MF_MEDIA_ENGINE_READY_HAVE_METADATA = 1,
+
+    /// <include file='MF_MEDIA_ENGINE_READY.xml' path='doc/member[@name="MF_MEDIA_ENGINE_READY.MF_MEDIA_ENGINE_READY_HAVE_CURRENT_DATA"]/*' />
     MF_MEDIA_ENGINE_READY_HAVE_CURRENT_DATA = 2,
+
+    /// <include file='MF_MEDIA_ENGINE_READY.xml' path='doc/member[@name="MF_MEDIA_ENGINE_READY.MF_MEDIA_ENGINE_READY_HAVE_FUTURE_DATA"]/*' />
     MF_MEDIA_ENGINE_READY_HAVE_FUTURE_DATA = 3,
+
+    /// <include file='MF_MEDIA_ENGINE_READY.xml' path='doc/member[@name="MF_MEDIA_ENGINE_READY.MF_MEDIA_ENGINE_READY_HAVE_ENOUGH_DATA"]/*' />
     MF_MEDIA_ENGINE_READY_HAVE_ENOUGH_DATA = 4,
 }

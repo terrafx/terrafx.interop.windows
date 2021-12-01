@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IInkDesktopHost.CreateAndInitializeInkPresenter">
+    <summary>
+      <para>Creates an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/inkpresenterdesktop/nn-inkpresenterdesktop-iinkpresenterdesktop">IInkPresenterDesktop</a> object on an application thread, connects it to the app's  <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-portal">DirectComposition</a> visual tree, and sets the size of the object.</para>
+    </summary>
+    <param name="rootVisual">
+      <para>The <see cref="IDCompositionVisual" /> of the app.</para>
+    </param>
+    <param name="width">
+      <para>The width, in pixels, of the inking area.</para>
+    </param>
+    <param name="height">
+      <para>The height, in pixels, of the inking area.</para>
+    </param>
+    <param name="riid">
+      <para>A reference to the interface identifier of an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/inkpresenterdesktop/nn-inkpresenterdesktop-iinkpresenterdesktop">IInkPresenterDesktop</a> object.</para>
+    </param>
+    <param name="ppv">
+      <para>Address of a pointer variable that receives the interface pointer identified by <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>If successful, returns the requested interface pointer. Otherwise, returns <b>NULL</b>.</para>
+    </returns>
+    <seealso href="https://github.com/microsoft/windows-universal-samples/tree/master/samples/complexink">Complex ink sample</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/inkpresenterdesktop/nn-inkpresenterdesktop-iinkdesktophost">IInkDesktopHost</seealso>
+    <seealso href="https://docs.microsoft.com//windows/uwp/input-and-devices/pen-and-stylus-interactions">Pen and stylus interactions</seealso>
+    <seealso href="https://github.com/microsoft/windows-universal-samples/tree/master/samples/complexink">Complex Ink sample</seealso>
+    <seealso href="https://github.com/microsoft/windows-universal-samples/tree/master/samples/simpleink">Simple ink sample</seealso>
+  </member>
+  <member name="IInkDesktopHost.QueueWorkItem">
+    <summary>
+      <para>Add an ink operation to a work queue for execution on the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/inkpresenterdesktop/nn-inkpresenterdesktop-iinkdesktophost">IInkDesktopHost</a> thread.</para>
+      <para>The app is responsible for synchronizing the work queue with the UI thread.</para>
+    </summary>
+    <param name="workItem">
+      <para>An <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/inkpresenterdesktop/nn-inkpresenterdesktop-iinkhostworkitem">IInkHostWorkItem</a> object representing an ink operation.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://github.com/microsoft/windows-universal-samples/tree/master/samples/complexink">Complex ink sample</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/inkpresenterdesktop/nn-inkpresenterdesktop-iinkdesktophost">IInkDesktopHost</seealso>
+    <seealso href="https://docs.microsoft.com//windows/uwp/input-and-devices/pen-and-stylus-interactions">Pen and stylus interactions</seealso>
+    <seealso href="https://github.com/microsoft/windows-universal-samples/tree/master/samples/complexink">Complex Ink sample</seealso>
+    <seealso href="https://github.com/microsoft/windows-universal-samples/tree/master/samples/simpleink">Simple ink sample</seealso>
+  </member>
+  <member name="IInkDesktopHost">
+    <summary>
+      <para>An <b>IInkDesktopHost</b> object enables ink input, processing, and rendering through the creation of an app thread to host  an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/inkpresenterdesktop/nn-inkpresenterdesktop-iinkpresenterdesktop">IInkPresenterDesktop</a> object and  insert it into the app's  <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-portal">DirectComposition</a> visual tree.</para>
+    </summary>
+    <seealso href="https://github.com/microsoft/windows-universal-samples/tree/master/samples/complexink">Complex ink sample</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_ink/ink-presenter-interfaces">Ink presenter interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/uwp/input-and-devices/pen-and-stylus-interactions">Pen and stylus interactions</seealso>
+    <seealso href="https://github.com/microsoft/windows-universal-samples/tree/master/samples/complexink">Complex Ink sample</seealso>
+    <seealso href="https://github.com/microsoft/windows-universal-samples/tree/master/samples/simpleink">Simple ink sample</seealso>
+  </member>
+</doc>

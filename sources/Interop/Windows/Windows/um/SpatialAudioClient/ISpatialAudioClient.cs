@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpatialAudioClient.xml' path='doc/member[@name="ISpatialAudioClient"]/*' />
 [Guid("BBF8E066-AAAA-49BE-9A4D-FD2A858EA27F")]
 [NativeTypeName("struct ISpatialAudioClient : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
         return ((delegate* unmanaged<ISpatialAudioClient*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
         return ((delegate* unmanaged<ISpatialAudioClient*, uint>)(lpVtbl[1]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
         return ((delegate* unmanaged<ISpatialAudioClient*, uint>)(lpVtbl[2]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpatialAudioClient.xml' path='doc/member[@name="ISpatialAudioClient.GetStaticObjectPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetStaticObjectPosition(AudioObjectType type, float* x, float* y, float* z)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
         return ((delegate* unmanaged<ISpatialAudioClient*, AudioObjectType, float*, float*, float*, int>)(lpVtbl[3]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this), type, x, y, z);
     }
 
+    /// <include file='ISpatialAudioClient.xml' path='doc/member[@name="ISpatialAudioClient.GetNativeStaticObjectTypeMask"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetNativeStaticObjectTypeMask(AudioObjectType* mask)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
         return ((delegate* unmanaged<ISpatialAudioClient*, AudioObjectType*, int>)(lpVtbl[4]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this), mask);
     }
 
+    /// <include file='ISpatialAudioClient.xml' path='doc/member[@name="ISpatialAudioClient.GetMaxDynamicObjectCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMaxDynamicObjectCount([NativeTypeName("UINT32 *")] uint* value)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
         return ((delegate* unmanaged<ISpatialAudioClient*, uint*, int>)(lpVtbl[5]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='ISpatialAudioClient.xml' path='doc/member[@name="ISpatialAudioClient.GetSupportedAudioObjectFormatEnumerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSupportedAudioObjectFormatEnumerator(IAudioFormatEnumerator** enumerator)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
         return ((delegate* unmanaged<ISpatialAudioClient*, IAudioFormatEnumerator**, int>)(lpVtbl[6]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this), enumerator);
     }
 
+    /// <include file='ISpatialAudioClient.xml' path='doc/member[@name="ISpatialAudioClient.GetMaxFrameCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetMaxFrameCount([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* objectFormat, [NativeTypeName("UINT32 *")] uint* frameCountPerBuffer)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
         return ((delegate* unmanaged<ISpatialAudioClient*, WAVEFORMATEX*, uint*, int>)(lpVtbl[7]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this), objectFormat, frameCountPerBuffer);
     }
 
+    /// <include file='ISpatialAudioClient.xml' path='doc/member[@name="ISpatialAudioClient.IsAudioObjectFormatSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT IsAudioObjectFormatSupported([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* objectFormat)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
         return ((delegate* unmanaged<ISpatialAudioClient*, WAVEFORMATEX*, int>)(lpVtbl[8]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this), objectFormat);
     }
 
+    /// <include file='ISpatialAudioClient.xml' path='doc/member[@name="ISpatialAudioClient.IsSpatialAudioStreamAvailable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT IsSpatialAudioStreamAvailable([NativeTypeName("const IID &")] Guid* streamUuid, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* auxiliaryInfo)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
         return ((delegate* unmanaged<ISpatialAudioClient*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this), streamUuid, auxiliaryInfo);
     }
 
+    /// <include file='ISpatialAudioClient.xml' path='doc/member[@name="ISpatialAudioClient.ActivateSpatialAudioStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT ActivateSpatialAudioStream([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* activationParams, [NativeTypeName("const IID &")] Guid* riid, void** stream)

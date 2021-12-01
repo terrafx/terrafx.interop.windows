@@ -8,21 +8,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ULARGE_INTEGER.xml' path='doc/member[@name="ULARGE_INTEGER"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct ULARGE_INTEGER
 {
+    /// <include file='ULARGE_INTEGER.xml' path='doc/member[@name="ULARGE_INTEGER.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("_ULARGE_INTEGER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:877:5)")]
     public _Anonymous_e__Struct Anonymous;
 
+    /// <include file='ULARGE_INTEGER.xml' path='doc/member[@name="ULARGE_INTEGER.u"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:881:5)")]
     public _u_e__Struct u;
 
+    /// <include file='ULARGE_INTEGER.xml' path='doc/member[@name="ULARGE_INTEGER.QuadPart"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("ULONGLONG")]
     public ulong QuadPart;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LowPart"]/*' />
     public ref uint LowPart
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -32,6 +37,7 @@ public partial struct ULARGE_INTEGER
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.HighPart"]/*' />
     public ref uint HighPart
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,20 +47,26 @@ public partial struct ULARGE_INTEGER
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LowPart"]/*' />
         [NativeTypeName("DWORD")]
         public uint LowPart;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.HighPart"]/*' />
         [NativeTypeName("DWORD")]
         public uint HighPart;
     }
 
+    /// <include file='_u_e__Struct.xml' path='doc/member[@name="_u_e__Struct"]/*' />
     public partial struct _u_e__Struct
     {
+        /// <include file='_u_e__Struct.xml' path='doc/member[@name="_u_e__Struct.LowPart"]/*' />
         [NativeTypeName("DWORD")]
         public uint LowPart;
 
+        /// <include file='_u_e__Struct.xml' path='doc/member[@name="_u_e__Struct.HighPart"]/*' />
         [NativeTypeName("DWORD")]
         public uint HighPart;
     }

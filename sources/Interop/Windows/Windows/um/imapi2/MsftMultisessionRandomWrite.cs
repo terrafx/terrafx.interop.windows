@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MsftMultisessionRandomWrite.xml' path='doc/member[@name="MsftMultisessionRandomWrite"]/*' />
 [Guid("B507CA24-2204-11DD-966A-001AA01BBC58")]
 public partial struct MsftMultisessionRandomWrite
 {

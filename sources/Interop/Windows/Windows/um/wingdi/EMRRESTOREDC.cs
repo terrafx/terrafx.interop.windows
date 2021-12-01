@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRRESTOREDC.xml' path='doc/member[@name="EMRRESTOREDC"]/*' />
 public partial struct EMRRESTOREDC
 {
+    /// <include file='EMRRESTOREDC.xml' path='doc/member[@name="EMRRESTOREDC.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRRESTOREDC.xml' path='doc/member[@name="EMRRESTOREDC.iRelative"]/*' />
     [NativeTypeName("LONG")]
     public int iRelative;
 }

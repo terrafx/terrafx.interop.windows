@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFT_REGISTER_TYPE_INFO">
+    <summary>
+      <para>Contains media type information for registering a Media Foundation transform (MFT).</para>
+    </summary>
+    <seealso cref="MFTEnum" />
+    <seealso cref="MFTGetInfo" />
+    <seealso cref="MFTRegister" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFT_REGISTER_TYPE_INFO.guidMajorType">
+    <summary>
+      <para>The major media type. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-guids">Major Media Types</a>.</para>
+    </summary>
+  </member>
+  <member name="MFT_REGISTER_TYPE_INFO.guidSubtype">
+    <summary>
+      <para>The media subtype. For a list of possible values, see the following topics:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/audio-subtype-guids">Audio Subtype GUIDs</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/video-subtype-guids">Video Subtype GUIDs</a>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

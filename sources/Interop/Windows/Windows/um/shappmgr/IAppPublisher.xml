@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppPublisher.EnumApps">
+    <summary>
+      <para>Creates an enumerator for enumerating all applications published by an application publisher for a given category.</para>
+    </summary>
+    <param name="pAppCategoryId">
+      <para>Type: <b>GUID*</b></para>
+      <para>A pointer to a GUID that specifies the application category to be enumerated. This must be one of the categories provided through <see cref="IAppPublisher.GetCategories" />. If <i>pAppCategoryID</i> identifies a category not provided through <b>IAppPublisher.GetCategories</b>, creation of the enumerator succeeds with the enumerator returning zero items. If this parameter value is <b>NULL</b>, the enumerator returns applications published for all categories.</para>
+    </param>
+    <param name="ppepa">
+      <para>Type: <b><see cref="IEnumPublishedApps" />**</b></para>
+      <para>The address of a pointer to an <see cref="IEnumPublishedApps" /> reference variable that points to a <b>IEnumPublishedApps</b> interface. Application publishers must create an enumeration object that supports the <b>IEnumPublishedApps</b> interface, and return its pointer value through this parameter.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  <see cref="IEnumPublishedApps" /> is not a standard enumeration interface. It does not support a Skip method nor does its Next method support retrieval of multiple items.</para>
+    </remarks>
+    <seealso cref="IAppPublisher" />
+    <seealso cref="IEnumPublishedApps" />
+    <seealso cref="IPublishedApp" />
+  </member>
+  <member name="IAppPublisher.GetCategories">
+    <summary>
+      <para>Retrieves a structure listing the categories provided by an application publisher.</para>
+    </summary>
+    <param name="pAppCategoryList">
+      <para>Type: <b><see cref="APPCATEGORYINFOLIST" />*</b></para>
+      <para>A pointer to an <see cref="APPCATEGORYINFOLIST" /> structure. This structure's <b>cCategory</b> member returns the count of supported categories. The <b>pCategoryInfo</b> member returns a pointer to an array of <see cref="APPCATEGORYINFO" /> structures. This array contains all the categories an application publisher supports and must be allocated using <see cref="CoTaskMemAlloc" /> and freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The Add/Remove Programs Control Panel Application passes the ID returned for a category to the <see cref="IAppPublisher.EnumApps" /> method to identify which category is to be enumerated.</para>
+      <h4>Examples</h4>
+      <para>The following example shows how to calculate the size of the array of <see cref="APPCATEGORYINFO" /> structures that is returned by <b>IAppPublisher.GetCategories</b>.</para>
+      <code>size_t CategoryListArraySize = sizeof(APPCATEGORYINFO) * pInfoList-&gt;cCategory;
+</code>
+    </remarks>
+    <seealso cref="APPCATEGORYINFO" />
+    <seealso cref="APPCATEGORYINFOLIST" />
+    <seealso cref="IAppPublisher" />
+  </member>
+  <member name="IAppPublisher.GetNumberOfApps">
+    <summary>
+      <para>Obsolete. Clients of Add/Remove Programs Control Panel Application can return E_NOTIMPL.</para>
+    </summary>
+    <param name="pdwApps">
+      <para>This parameter is unused.</para>
+    </param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <seealso cref="IAppPublisher" />
+    <seealso cref="IEnumPublishedApps" />
+    <seealso cref="IPublishedApp" />
+  </member>
+  <member name="IAppPublisher.GetNumberOfCategories">
+    <summary>
+      <para>Obsolete. Clients of the Add/Remove Programs Control Panel Application may return E_NOTIMPL.</para>
+    </summary>
+    <param name="pdwCat">
+      <para>This parameter is unused.</para>
+    </param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <seealso cref="IAppPublisher" />
+    <seealso cref="IEnumPublishedApps" />
+    <seealso cref="IPublishedApp" />
+  </member>
+  <member name="IAppPublisher">
+    <summary>
+      <para>Exposes methods for publishing applications through <b>Add/Remove Programs</b> in Control Panel. This is the principal interface implemented for this purpose.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Add/Remove Programs</b> in Control Panel creates a registered publisher object and requests its <b>IAppPublisher</b> interface.  You can create published application objects using the application enumerator, which you create using <b>IAppPublisher</b>.</para>
+      <para>
+        <b>Add/Remove Programs</b> gathers a list of published applications from publishers and then uses a publisher to display these applications with Microsoft Active Directory.  When the user clicks <b>Add New Programs</b> in <b>Add/Remove Programs,</b> a list of published applications appears.</para>
+      <para>You can publish applications in <b>Add/Remove Programs </b> using the following Component Object Model (COM) interfaces.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>IAppPublisher</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IEnumPublishedApps" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IPublishedApp" />
+          </description>
+        </item>
+      </list>
+      <para>When you implement these interfaces, you must register your COM object in the registry.  To register your publisher, add your object's class identifier (CLSID) under the following registry key.</para>
+      <code>
+        <b>HKEY_LOCAL_MACHINE</b>
+        <b>Software</b>
+        <b>Microsoft</b>
+        <b>Windows</b>
+        <b>CurrentVersion</b>
+        <b>AppManagement</b>
+        <b>Publishers</b>
+      </code>
+      <para>For example, if your publisher is named "My Publisher", you  create a new key under "Publishers" named "My Publisher" with its default REG_SZ value as the publisher's CLSID:</para>
+      <code>
+        <b>HKEY_LOCAL_MACHINE</b>
+        <b>Software</b>
+        <b>Microsoft</b>
+        <b>Windows</b>
+        <b>CurrentVersion</b>
+        <b>AppManagement</b>
+        <b>Publishers</b>
+        <b>My Publisher</b>
+
+(Default) = {4D05CD3D-FFED-46bb-B9F1-321C26BE6362}</code>
+      <para>You can also create the typical COM server registration entries as follows:</para>
+      <code>
+        <b>HKEY_CLASSES_ROOT</b>
+        <b>CLSID</b>
+        <b>{469EE8CE-1B86-4524-9042-AAA44FD9C8F2}</b>
+
+(Default) = Sample Applications Publisher
+<b>InProcServer32</b>
+
+(Default) = pubdemo.dll
+<b>ThreadingModel</b> = Apartment</code>
+      <para>With the publisher registered in this way, <b>Add/Remove Programs</b> creates an instance of your object by calling <see cref="CoCreateInstance" /> for your object and requesting the appropriate <b>IAppPublisher</b> interface when the <b>Add New Programs</b> view is populated. Using <b>IAppPublisher</b>, Add/Remove Programs retrieves the application enumerator (<see cref="IEnumPublishedApps" />) and information that describes the published applications.  Your implementation of <see cref="IPublishedApp" /> is responsible for installing the associated application in its <see cref="IPublishedApp.Install" /> method. Add/Remove Programs calls this method when the user clicks the <b>Add</b> or the <b>Add Later</b> button in the user interface.</para>
+    </remarks>
+    <seealso cref="IEnumPublishedApps" />
+    <seealso cref="IPublishedApp" />
+  </member>
+</doc>

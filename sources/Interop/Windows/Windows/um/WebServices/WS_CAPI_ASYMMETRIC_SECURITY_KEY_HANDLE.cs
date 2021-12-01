@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE"]/*' />
 public partial struct WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE
 {
+    /// <include file='WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE.keyHandle"]/*' />
     public WS_SECURITY_KEY_HANDLE keyHandle;
 
+    /// <include file='WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE.provider"]/*' />
     public HCRYPTPROV provider;
 
+    /// <include file='WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE.keySpec"]/*' />
     [NativeTypeName("ULONG")]
     public uint keySpec;
 }

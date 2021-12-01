@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NET_IF_MEDIA_DUPLEX_STATE.xml' path='doc/member[@name="NET_IF_MEDIA_DUPLEX_STATE"]/*' />
 public enum NET_IF_MEDIA_DUPLEX_STATE
 {
+    /// <include file='NET_IF_MEDIA_DUPLEX_STATE.xml' path='doc/member[@name="NET_IF_MEDIA_DUPLEX_STATE.MediaDuplexStateUnknown"]/*' />
     MediaDuplexStateUnknown,
+
+    /// <include file='NET_IF_MEDIA_DUPLEX_STATE.xml' path='doc/member[@name="NET_IF_MEDIA_DUPLEX_STATE.MediaDuplexStateHalf"]/*' />
     MediaDuplexStateHalf,
+
+    /// <include file='NET_IF_MEDIA_DUPLEX_STATE.xml' path='doc/member[@name="NET_IF_MEDIA_DUPLEX_STATE.MediaDuplexStateFull"]/*' />
     MediaDuplexStateFull,
 }

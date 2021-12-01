@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem"]/*' />
 [Guid("CA724E8A-C3E6-442B-88A4-6FB0DB8035A3")]
 [NativeTypeName("struct IPropertySystem : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, Guid*, void**, int>)(lpVtbl[0]))((IPropertySystem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, uint>)(lpVtbl[1]))((IPropertySystem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, uint>)(lpVtbl[2]))((IPropertySystem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.GetPropertyDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPropertyDescription([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, Guid*, void**, int>)(lpVtbl[3]))((IPropertySystem*)Unsafe.AsPointer(ref this), propkey, riid, ppv);
     }
 
+    /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.GetPropertyDescriptionByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPropertyDescriptionByName([NativeTypeName("LPCWSTR")] ushort* pszCanonicalName, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, ushort*, Guid*, void**, int>)(lpVtbl[4]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszCanonicalName, riid, ppv);
     }
 
+    /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.GetPropertyDescriptionListFromString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPropertyDescriptionListFromString([NativeTypeName("LPCWSTR")] ushort* pszPropList, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, ushort*, Guid*, void**, int>)(lpVtbl[5]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszPropList, riid, ppv);
     }
 
+    /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.EnumeratePropertyDescriptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EnumeratePropertyDescriptions(PROPDESC_ENUMFILTER filterOn, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -67,6 +75,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, PROPDESC_ENUMFILTER, Guid*, void**, int>)(lpVtbl[6]))((IPropertySystem*)Unsafe.AsPointer(ref this), filterOn, riid, ppv);
     }
 
+    /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.FormatForDisplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT FormatForDisplay([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR")] ushort* pszText, [NativeTypeName("DWORD")] uint cchText)
@@ -74,6 +83,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort*, uint, int>)(lpVtbl[7]))((IPropertySystem*)Unsafe.AsPointer(ref this), key, propvar, pdff, pszText, cchText);
     }
 
+    /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.FormatForDisplayAlloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT FormatForDisplayAlloc([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR *")] ushort** ppszDisplay)
@@ -81,6 +91,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int>)(lpVtbl[8]))((IPropertySystem*)Unsafe.AsPointer(ref this), key, propvar, pdff, ppszDisplay);
     }
 
+    /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.RegisterPropertySchema"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT RegisterPropertySchema([NativeTypeName("LPCWSTR")] ushort* pszPath)
@@ -88,6 +99,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, ushort*, int>)(lpVtbl[9]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszPath);
     }
 
+    /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.UnregisterPropertySchema"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT UnregisterPropertySchema([NativeTypeName("LPCWSTR")] ushort* pszPath)
@@ -95,6 +107,7 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         return ((delegate* unmanaged<IPropertySystem*, ushort*, int>)(lpVtbl[10]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszPath);
     }
 
+    /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.RefreshPropertySchema"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT RefreshPropertySchema()

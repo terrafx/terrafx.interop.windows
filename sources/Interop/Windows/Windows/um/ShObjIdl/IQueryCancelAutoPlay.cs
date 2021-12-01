@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IQueryCancelAutoPlay.xml' path='doc/member[@name="IQueryCancelAutoPlay"]/*' />
 [Guid("DDEFE873-6997-4E68-BE26-39B633ADBE12")]
 [NativeTypeName("struct IQueryCancelAutoPlay : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
         return ((delegate* unmanaged<IQueryCancelAutoPlay*, Guid*, void**, int>)(lpVtbl[0]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
         return ((delegate* unmanaged<IQueryCancelAutoPlay*, uint>)(lpVtbl[1]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
         return ((delegate* unmanaged<IQueryCancelAutoPlay*, uint>)(lpVtbl[2]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IQueryCancelAutoPlay.xml' path='doc/member[@name="IQueryCancelAutoPlay.AllowAutoPlay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AllowAutoPlay([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPCWSTR")] ushort* pszLabel, [NativeTypeName("DWORD")] uint dwSerialNumber)

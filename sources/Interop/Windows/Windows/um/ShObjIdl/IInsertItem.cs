@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInsertItem.xml' path='doc/member[@name="IInsertItem"]/*' />
 [Guid("D2B57227-3D23-4B95-93C0-492BD454C356")]
 [NativeTypeName("struct IInsertItem : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInsertItem : IInsertItem.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInsertItem : IInsertItem.Interface
         return ((delegate* unmanaged<IInsertItem*, Guid*, void**, int>)(lpVtbl[0]))((IInsertItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInsertItem : IInsertItem.Interface
         return ((delegate* unmanaged<IInsertItem*, uint>)(lpVtbl[1]))((IInsertItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInsertItem : IInsertItem.Interface
         return ((delegate* unmanaged<IInsertItem*, uint>)(lpVtbl[2]))((IInsertItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInsertItem.xml' path='doc/member[@name="IInsertItem.InsertItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InsertItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)

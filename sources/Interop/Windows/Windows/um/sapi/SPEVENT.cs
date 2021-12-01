@@ -7,10 +7,12 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT"]/*' />
 public partial struct SPEVENT
 {
     public int _bitfield;
 
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.eEventId"]/*' />
     [NativeTypeName("SPEVENTENUM : 16")]
     public SPEVENTENUM eEventId
     {
@@ -27,6 +29,7 @@ public partial struct SPEVENT
         }
     }
 
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.elParamType"]/*' />
     [NativeTypeName("SPEVENTLPARAMTYPE : 16")]
     public SPEVENTLPARAMTYPE elParamType
     {
@@ -43,13 +46,17 @@ public partial struct SPEVENT
         }
     }
 
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.ulStreamNum"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulStreamNum;
 
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.ullAudioStreamOffset"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullAudioStreamOffset;
 
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.wParam"]/*' />
     public WPARAM wParam;
 
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.lParam"]/*' />
     public LPARAM lParam;
 }

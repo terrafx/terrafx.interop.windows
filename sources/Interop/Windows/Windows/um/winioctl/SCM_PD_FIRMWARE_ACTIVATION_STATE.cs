@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE"]/*' />
 public enum SCM_PD_FIRMWARE_ACTIVATION_STATE
 {
+    /// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE.ScmPdFirmwareActivationState_Idle"]/*' />
     ScmPdFirmwareActivationState_Idle = 0,
+
+    /// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE.ScmPdFirmwareActivationState_Armed"]/*' />
     ScmPdFirmwareActivationState_Armed = 1,
+
+    /// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE.ScmPdFirmwareActivationState_Busy"]/*' />
     ScmPdFirmwareActivationState_Busy = 2,
 }

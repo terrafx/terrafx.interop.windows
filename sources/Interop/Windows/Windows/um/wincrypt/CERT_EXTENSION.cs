@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_EXTENSION.xml' path='doc/member[@name="CERT_EXTENSION"]/*' />
 public unsafe partial struct CERT_EXTENSION
 {
+    /// <include file='CERT_EXTENSION.xml' path='doc/member[@name="CERT_EXTENSION.pszObjId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszObjId;
 
+    /// <include file='CERT_EXTENSION.xml' path='doc/member[@name="CERT_EXTENSION.fCritical"]/*' />
     public BOOL fCritical;
 
+    /// <include file='CERT_EXTENSION.xml' path='doc/member[@name="CERT_EXTENSION.Value"]/*' />
     [NativeTypeName("CRYPT_OBJID_BLOB")]
     public CRYPT_DATA_BLOB Value;
 }

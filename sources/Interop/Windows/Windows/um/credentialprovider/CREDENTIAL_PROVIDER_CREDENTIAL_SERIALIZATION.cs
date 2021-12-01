@@ -7,15 +7,20 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION"]/*' />
 public unsafe partial struct CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION
 {
+    /// <include file='CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION.ulAuthenticationPackage"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulAuthenticationPackage;
 
+    /// <include file='CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION.clsidCredentialProvider"]/*' />
     public Guid clsidCredentialProvider;
 
+    /// <include file='CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION.cbSerialization"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbSerialization;
 
+    /// <include file='CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION.rgbSerialization"]/*' />
     public byte* rgbSerialization;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='frameScrolling.xml' path='doc/member[@name="frameScrolling"]/*' />
 public enum frameScrolling
 {
+    /// <include file='frameScrolling.xml' path='doc/member[@name="frameScrolling.frameScrollingyes"]/*' />
     frameScrollingyes = 1,
+
+    /// <include file='frameScrolling.xml' path='doc/member[@name="frameScrolling.frameScrollingno"]/*' />
     frameScrollingno = 2,
+
+    /// <include file='frameScrolling.xml' path='doc/member[@name="frameScrolling.frameScrollingauto"]/*' />
     frameScrollingauto = 4,
+
+    /// <include file='frameScrolling.xml' path='doc/member[@name="frameScrolling.frameScrolling_Max"]/*' />
     frameScrolling_Max = 2147483647,
 }

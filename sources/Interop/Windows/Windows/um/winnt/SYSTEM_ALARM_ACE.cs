@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEM_ALARM_ACE.xml' path='doc/member[@name="SYSTEM_ALARM_ACE"]/*' />
 public partial struct SYSTEM_ALARM_ACE
 {
+    /// <include file='SYSTEM_ALARM_ACE.xml' path='doc/member[@name="SYSTEM_ALARM_ACE.Header"]/*' />
     public ACE_HEADER Header;
 
+    /// <include file='SYSTEM_ALARM_ACE.xml' path='doc/member[@name="SYSTEM_ALARM_ACE.Mask"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint Mask;
 
+    /// <include file='SYSTEM_ALARM_ACE.xml' path='doc/member[@name="SYSTEM_ALARM_ACE.SidStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint SidStart;
 }

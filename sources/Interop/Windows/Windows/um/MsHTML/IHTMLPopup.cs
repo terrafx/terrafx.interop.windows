@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLPopup.xml' path='doc/member[@name="IHTMLPopup"]/*' />
 [Guid("3050F666-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLPopup : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
         return ((delegate* unmanaged<IHTMLPopup*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPopup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
         return ((delegate* unmanaged<IHTMLPopup*, uint>)(lpVtbl[1]))((IHTMLPopup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
         return ((delegate* unmanaged<IHTMLPopup*, uint>)(lpVtbl[2]))((IHTMLPopup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
         return ((delegate* unmanaged<IHTMLPopup*, uint*, int>)(lpVtbl[3]))((IHTMLPopup*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
         return ((delegate* unmanaged<IHTMLPopup*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLPopup*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
         return ((delegate* unmanaged<IHTMLPopup*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLPopup*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
         return ((delegate* unmanaged<IHTMLPopup*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLPopup*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLPopup.xml' path='doc/member[@name="IHTMLPopup.show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT show([NativeTypeName("long")] int x, [NativeTypeName("long")] int y, [NativeTypeName("long")] int w, [NativeTypeName("long")] int h, VARIANT* pElement)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
         return ((delegate* unmanaged<IHTMLPopup*, int, int, int, int, VARIANT*, int>)(lpVtbl[7]))((IHTMLPopup*)Unsafe.AsPointer(ref this), x, y, w, h, pElement);
     }
 
+    /// <include file='IHTMLPopup.xml' path='doc/member[@name="IHTMLPopup.hide"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT hide()
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
         return ((delegate* unmanaged<IHTMLPopup*, int>)(lpVtbl[8]))((IHTMLPopup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLPopup.xml' path='doc/member[@name="IHTMLPopup.get_document"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_document(IHTMLDocument** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
         return ((delegate* unmanaged<IHTMLPopup*, IHTMLDocument**, int>)(lpVtbl[9]))((IHTMLPopup*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPopup.xml' path='doc/member[@name="IHTMLPopup.get_isOpen"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_isOpen([NativeTypeName("VARIANT_BOOL *")] short* p)

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TOPONODE_DRAIN_MODE.xml' path='doc/member[@name="MF_TOPONODE_DRAIN_MODE"]/*' />
 public enum MF_TOPONODE_DRAIN_MODE
 {
+    /// <include file='MF_TOPONODE_DRAIN_MODE.xml' path='doc/member[@name="MF_TOPONODE_DRAIN_MODE.MF_TOPONODE_DRAIN_DEFAULT"]/*' />
     MF_TOPONODE_DRAIN_DEFAULT = 0,
+
+    /// <include file='MF_TOPONODE_DRAIN_MODE.xml' path='doc/member[@name="MF_TOPONODE_DRAIN_MODE.MF_TOPONODE_DRAIN_ALWAYS"]/*' />
     MF_TOPONODE_DRAIN_ALWAYS = (MF_TOPONODE_DRAIN_DEFAULT + 1),
+
+    /// <include file='MF_TOPONODE_DRAIN_MODE.xml' path='doc/member[@name="MF_TOPONODE_DRAIN_MODE.MF_TOPONODE_DRAIN_NEVER"]/*' />
     MF_TOPONODE_DRAIN_NEVER = (MF_TOPONODE_DRAIN_ALWAYS + 1),
 }

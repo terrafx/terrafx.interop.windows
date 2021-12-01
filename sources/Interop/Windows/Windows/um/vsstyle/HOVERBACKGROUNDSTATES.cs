@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HOVERBACKGROUNDSTATES.xml' path='doc/member[@name="HOVERBACKGROUNDSTATES"]/*' />
 public enum HOVERBACKGROUNDSTATES
 {
+    /// <include file='HOVERBACKGROUNDSTATES.xml' path='doc/member[@name="HOVERBACKGROUNDSTATES.UTS_NORMAL"]/*' />
     UTS_NORMAL = 1,
+
+    /// <include file='HOVERBACKGROUNDSTATES.xml' path='doc/member[@name="HOVERBACKGROUNDSTATES.UTS_HOT"]/*' />
     UTS_HOT = 2,
+
+    /// <include file='HOVERBACKGROUNDSTATES.xml' path='doc/member[@name="HOVERBACKGROUNDSTATES.UTS_PRESSED"]/*' />
     UTS_PRESSED = 3,
 }

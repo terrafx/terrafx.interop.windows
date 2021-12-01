@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyEnumType.GetDisplayText">
+    <summary>
+      <para>Gets display text from an enumeration information structure.</para>
+    </summary>
+    <param name="ppszDisplay">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When this method returns, contains the address of a pointer to a null-terminated Unicode string that contains the display text.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For additional information, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>.</para>
+    </remarks>
+  </member>
+  <member name="IPropertyEnumType.GetEnumType">
+    <summary>
+      <para>Gets an enumeration type from an enumeration information structure.</para>
+    </summary>
+    <param name="penumtype">
+      <para>Type: <b>PROPENUMTYPE*</b></para>
+      <para>When this method returns, contains a pointer to one of the values listed below that indicate the enumeration type.</para>
+      <h4>PET_DISCRETEVALUE (0)</h4>
+      <para>Use <see cref="GetDisplayText" /> and either <see cref="GetRangeMinValue" /> or <see cref="GetRangeSetValue" />.</para>
+      <h4>PET_RANGEDVALUE (1)</h4>
+      <para>Use <see cref="GetDisplayText" /> and either <see cref="GetRangeMinValue" /> or <see cref="GetRangeSetValue" />.</para>
+      <h4>PET_DEFAULTVALUE (2)</h4>
+      <para>Use <see cref="GetDisplayText" />.</para>
+      <h4>PET_ENDRANGE (3)</h4>
+      <para>Use <see cref="GetValue" /> or <see cref="GetRangeMinValue" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For additional information, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>.</para>
+    </remarks>
+  </member>
+  <member name="IPropertyEnumType.GetRangeMinValue">
+    <summary>
+      <para>Gets a minimum value from an enumeration information structure.</para>
+    </summary>
+    <param name="ppropvarMin">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>When this method returns, contains a pointer to the minimum value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For additional information, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>.</para>
+    </remarks>
+  </member>
+  <member name="IPropertyEnumType.GetRangeSetValue">
+    <summary>
+      <para>Gets a set value from an enumeration information structure.</para>
+    </summary>
+    <param name="ppropvarSet">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>When this method returns, contains a pointer to the set value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For additional information, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>.</para>
+    </remarks>
+  </member>
+  <member name="IPropertyEnumType.GetValue">
+    <summary>
+      <para>Gets a value from an enumeration information structure.</para>
+    </summary>
+    <param name="ppropvar">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>When this method returns, contains a pointer to the property value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For additional information, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>.</para>
+    </remarks>
+  </member>
+  <member name="IPropertyEnumType">
+    <summary>
+      <para>Exposes methods that extract data from enumeration information. <see cref="IPropertyEnumType" /> gives access to the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enum">enum</a> and <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumrange">enumRange</a> elements in the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">property schema</a> in a programmatic way at run time.</para>
+    </summary>
+    <remarks>
+      <para>For additional information, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>.</para>
+    </remarks>
+  </member>
+</doc>

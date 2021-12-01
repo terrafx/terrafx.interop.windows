@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SAFEARR_VARIANT.xml' path='doc/member[@name="SAFEARR_VARIANT"]/*' />
 public unsafe partial struct SAFEARR_VARIANT
 {
+    /// <include file='SAFEARR_VARIANT.xml' path='doc/member[@name="SAFEARR_VARIANT.Size"]/*' />
     [NativeTypeName("ULONG")]
     public uint Size;
 
+    /// <include file='SAFEARR_VARIANT.xml' path='doc/member[@name="SAFEARR_VARIANT.aVariant"]/*' />
     [NativeTypeName("wireVARIANT *")]
     public _wireVARIANT** aVariant;
 }

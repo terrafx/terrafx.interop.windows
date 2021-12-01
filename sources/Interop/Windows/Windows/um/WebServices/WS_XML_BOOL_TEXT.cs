@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_BOOL_TEXT.xml' path='doc/member[@name="WS_XML_BOOL_TEXT"]/*' />
 public partial struct WS_XML_BOOL_TEXT
 {
+    /// <include file='WS_XML_BOOL_TEXT.xml' path='doc/member[@name="WS_XML_BOOL_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_BOOL_TEXT.xml' path='doc/member[@name="WS_XML_BOOL_TEXT.value"]/*' />
     public BOOL value;
 }

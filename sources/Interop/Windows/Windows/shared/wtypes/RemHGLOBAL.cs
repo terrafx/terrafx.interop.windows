@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RemHGLOBAL.xml' path='doc/member[@name="RemHGLOBAL"]/*' />
 public unsafe partial struct RemHGLOBAL
 {
+    /// <include file='RemHGLOBAL.xml' path='doc/member[@name="RemHGLOBAL.fNullHGlobal"]/*' />
     [NativeTypeName("LONG")]
     public int fNullHGlobal;
 
+    /// <include file='RemHGLOBAL.xml' path='doc/member[@name="RemHGLOBAL.cbData"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbData;
 
+    /// <include file='RemHGLOBAL.xml' path='doc/member[@name="RemHGLOBAL.data"]/*' />
     [NativeTypeName("byte [1]")]
     public fixed byte data[1];
 }

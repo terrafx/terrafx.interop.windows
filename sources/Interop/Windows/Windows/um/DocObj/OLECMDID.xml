@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OLECMDID">
+    <summary>
+      <para>Specifies which standard command is to be executed. A single value from this enumeration is passed in the <i>nCmdID</i> argument of <see cref="IOleCommandTarget.Exec" />.</para>
+    </summary>
+    <remarks>
+      <para>In OLE Compound Documents technology, an object that is being edited in-place disables the <b>Zoom</b> control on its toolbar and the <b>Zoom</b> command on its <b>View</b> menu, because, the <b>Zoom</b> command applies logically to the container document, not to the object. The OLECMDID_ZOOM and OLECMDID_GETZOOMRANGE commands notify the container's frame object of the zoom range it should use to display a document object in its user interface. The container frame is the client-side object that implements <see cref="IOleInPlaceFrame" /> and, optionally, <see cref="IOleCommandTarget" />.</para>
+      <para>The OLECMDID_ZOOM command takes one <b>LONG</b> argument as input and writes one <b>LONG</b> argument on output. This command is used for three purposes:</para>
+      <list type="bullet">
+        <item>
+          <description>To query the current zoom value. The caller of <see cref="IOleCommandTarget.Exec" /> passes OLECMDEXECOPT_DONTPROMPTUSER as the execute option in <i>nCmdExecOpt</i> and <b>NULL</b> for pvIn. The object returns the current zoom value in <i>pvaOut</i>. When the object goes UI active, it retrieves the current zoom value from the container's frame object using this same mechanism and updates its zoom control with the returned value.
+</description>
+        </item>
+        <item>
+          <description>To display the <b>Zoom</b> dialog box. The caller of <see cref="IOleCommandTarget.Exec" /> passes OLECMDEXECOPT_PROMPTUSER in <i>nCmdExecOpt</i>. The caller can optionally pass the initial value for the dialog box through <i>pvaIn</i>; otherwise <i>pvaIn</i> must be <b>NULL</b>. If the user clicks <b>Cancel</b>, the object returns OLECMDERR_E_CANCELED. If the user clicks <b>OK</b>, the object passes the user-selected value in <i>pvaOut</i>. When user chooses the <b>Zoom</b> command from the <b>View</b> menu, the object calls the container's frame object in the same manner. The container then zooms the document to the user selected value, and the object updates its <b>Zoom</b> control with that value.
+</description>
+        </item>
+        <item>
+          <description>To set a <b>Zoom</b> value. The caller of <see cref="IOleCommandTarget.Exec" /> passes OLECMDEXECOPT_DONTPROMPTUSER in <i>nCmdExecOpt</i> and passes the zoom value to apply through <i>pvaIn</i>. The object validates and normalizes the new value and returns the validated value in <i>pvaOut</i>. When the user selects a new zoom value (using the <b>Zoom</b> control on the toolbar, for instance), the object calls the container's frame object in this manner. The container zooms the document to 100 percent, and the object updates the <b>Zoom</b> control with that value.</description>
+        </item>
+      </list>
+      <para>The OLECMDID_GETZOOMRANGE command is used to determine the range of valid zoom values from an object that implements <see cref="IOleCommandTarget" />. The caller passes MSOCMDEXECOPT_DONTPROMPTUSER in nCmdExecOpt and <b>NULL</b> for <i>pvaIn</i>. The object returns its zoom range in <i>pvaOut</i> where the HIWORD contains the maximum zoom value and the LOWORD contains the minimum zoom value. Typically this command is used when the user drops down the <b>Zoom</b> control on the toolbar of the UI-active object. The applications and objects that support this command are required to support all the integral zoom values that are within the (min,max) pair they return.</para>
+      <para>The OLECMDID_ACTIVEXINSTALLSCOPE command notifies Trident to use the indicated Install Scope to install the ActiveX Control specified by the indicated class ID. The Install Scope is passed in a VT_ARRAY in pvaIn of the <see cref="IOleCommandTarget.Exec" /> method whose elements are as follows.</para>
+      <list type="table">
+        <listheader>
+          <description>Data</description>
+          <description>VARIANT Type</description>
+          <description>Index</description>
+        </listheader>
+        <item>
+          <description>Class ID</description>
+          <description>VT_BSTR</description>
+          <description>0</description>
+        </item>
+        <item>
+          <description>Install Scope</description>
+          <description>VT_UI4</description>
+          <description>1</description>
+        </item>
+      </list>
+      <para>The Install Scope must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>INSTALL_SCOPE_USERS</description>
+          <description>The ActiveX control should register to HKCU and for the instant user only.
+</description>
+        </item>
+        <item>
+          <description>INSTALL_SCOPE_MACHINE</description>
+          <description>The ActiveX control should register to HKLM and across the computer
+</description>
+        </item>
+      </list>
+      <para>The following is an example use of the OLECMDID_ACTIVEXINSTALLSCOPE command.</para>
+      <code>IOleCommandTarget.Exec(
+NULL, // Pointer to command group
+OLECMDARGINDEX_ACTIVEXINSTALL_INSTALLSCOPE, // ID of command to execute
+NULL, // Options
+&amp;amp;amp;amp;amp;amp;varArgs, // pvain pointer to input arguments
+NULL) // pointer to command output
+
+</code>
+    </remarks>
+    <seealso cref="IOleCommandTarget" />
+    <seealso cref="IOleCommandTarget.Exec" />
+    <seealso cref="IOleInPlaceFrame" />
+  </member>
+  <member name="OLECMDID.OLECMDID_OPEN">
+    <summary>
+      <para>
+        <b>File</b> menu, <b>Open</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_NEW">
+    <summary>
+      <para>
+        <b>File</b> menu, <b>New</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SAVE">
+    <summary>
+      <para>
+        <b>File</b> menu, <b>Save</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SAVEAS">
+    <summary>
+      <para>
+        <b>File</b> menu, <b>Save As</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SAVECOPYAS">
+    <summary>
+      <para>
+        <b>File</b> menu, <b>Save Copy As</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PRINT">
+    <summary>
+      <para>
+        <b>File</b> menu, <b>Print</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PRINTPREVIEW">
+    <summary>
+      <para>
+        <b>File</b> menu, <b>Print Preview</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PAGESETUP">
+    <summary>
+      <para>
+        <b>File</b> menu, <b>Page Setup</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SPELL">
+    <summary>
+      <para>
+        <b>Tools</b> menu, <b>Spelling</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PROPERTIES">
+    <summary>
+      <para>
+        <b>File</b> menu, <b>Properties</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_CUT">
+    <summary>
+      <para>
+        <b>Edit</b> menu, <b>Cut</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_COPY">
+    <summary>
+      <para>
+        <b>Edit</b> menu, <b>Copy</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PASTE">
+    <summary>
+      <para>
+        <b>Edit</b> menu, <b>Paste</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PASTESPECIAL">
+    <summary>
+      <para>
+        <b>Edit</b> menu, <b>Paste Special</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_UNDO">
+    <summary>
+      <para>
+        <b>Edit</b> menu, <b>Undo</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_REDO">
+    <summary>
+      <para>
+        <b>Edit</b> menu, <b>Redo</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SELECTALL">
+    <summary>
+      <para>
+        <b>Edit</b> menu, <b>Select All</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_CLEARSELECTION">
+    <summary>
+      <para>
+        <b>Edit</b> menu, <b>Clear</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_ZOOM">
+    <summary>
+      <para>
+        <b>View</b> menu, <b>Zoom</b> command (see below for details.)</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_GETZOOMRANGE">
+    <summary>
+      <para>Retrieves zoom range applicable to <b>View Zoom</b> (see below for details.)</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_UPDATECOMMANDS">
+    <summary>
+      <para>Informs the receiver, usually a frame, of state changes. The receiver can then query the status of the commands whenever convenient.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_REFRESH">
+    <summary>
+      <para>Asks the receiver to refresh its display. Implemented by the document/object.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_STOP">
+    <summary>
+      <para>Stops all current processing. Implemented by the document/object.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_HIDETOOLBARS">
+    <summary>
+      <para>
+        <b>View</b> menu, <b>Toolbars</b> command. Implemented by the document/object to hide its toolbars.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SETPROGRESSMAX">
+    <summary>
+      <para>Sets the maximum value of a progress indicator if one is owned by the receiving object, usually a frame. The minimum value is always zero.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SETPROGRESSPOS">
+    <summary>
+      <para>Sets the current value of a progress indicator if one is owned by the receiving object, usually a frame.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SETPROGRESSTEXT">
+    <summary>
+      <para>Sets the text contained in a progress indicator if one is owned by the receiving object, usually a frame. If the receiver currently has no progress indicator, this text should be displayed in the status bar (if one exists) as with <see cref="IOleInPlaceFrame.SetStatusText" />.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SETTITLE">
+    <summary>
+      <para>Sets the title bar text of the receiving object, usually a frame.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SETDOWNLOADSTATE">
+    <summary>
+      <para>Called by the object when downloading state changes. Takes a VT_BOOL parameter, which is <b>TRUE</b> if the object is downloading data and <b>FALSE</b> if it not. Primarily implemented by the frame.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_STOPDOWNLOAD">
+    <summary>
+      <para>Stops the download when executed. Typically, this command is propagated to all contained objects. When queried, sets MSOCMDF_ENABLED. Implemented by the document/object.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_ONTOOLBARACTIVATED">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_FIND">
+    <summary>
+      <para>
+        <b>Edit</b> menu, <b>Find</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_DELETE">
+    <summary>
+      <para>
+        <b>Edit</b> menu, <b>Delete</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_HTTPEQUIV">
+    <summary>
+      <para>Issued in response to <b>HTTP-EQUIV</b> metatag and results in a call to the deprecated <see cref="OnHttpEquiv" /> method with the <i>fDone</i> parameter set to <b>false</b>. This command takes a <b>VT_BSTR</b> parameter which is passed to <b>OnHttpEquiv</b>.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_HTTPEQUIV_DONE">
+    <summary>
+      <para>Issued in response to <b>HTTP-EQUIV</b> metatag and results in a call to the deprecated <see cref="OnHttpEquiv" /> method with the <i>fDone</i> parameter set to <b>true</b>. This command takes a <b>VT_BSTR</b> parameter which is passed to <b>OnHttpEquiv</b>.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_ENABLE_INTERACTION">
+    <summary>
+      <para>Pauses or resumes receiver interaction. This command takes a <b>VT_BOOL</b> parameter that pauses interaction when set to <b>FALSE</b> and resumes interaction when set to <b>TRUE</b>.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_ONUNLOAD">
+    <summary>
+      <para>Notifies the receiver of an intent to close the window imminently. This command takes a <b>VT_BOOL</b> output parameter that returns <b>TRUE</b> if the receiver can close and <b>FALSE</b> if it can't.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PROPERTYBAG2">
+    <summary>
+      <para>This command has no effect.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PREREFRESH">
+    <summary>
+      <para>Notifies the receiver that a refresh is about to start.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SHOWSCRIPTERROR">
+    <summary>
+      <para>Tells the receiver to display the script error message.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SHOWMESSAGE">
+    <summary>
+      <para>This command takes an <a href="https://docs.microsoft.com//previous-versions/hh773930(v=vs.85)">IHTMLEventObj</a> input parameter that  contains a  message that the receiver shows.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SHOWFIND">
+    <summary>
+      <para>Tells the receiver to show the Find dialog box. It takes a <b>VT_DISPATCH</b> input param.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SHOWPAGESETUP">
+    <summary>
+      <para>Tells the receiver to show the Page Setup dialog box. It takes an <a href="https://docs.microsoft.com//previous-versions/hh773930(v=vs.85)">IHTMLEventObj2</a>  input parameter.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SHOWPRINT">
+    <summary>
+      <para>Tells the receiver to show the Print dialog box. It takes an <a href="https://docs.microsoft.com//previous-versions/hh773930(v=vs.85)">IHTMLEventObj2</a>  input parameter.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_CLOSE">
+    <summary>
+      <para>The exit command for the File menu.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_ALLOWUILESSSAVEAS">
+    <summary>
+      <para>Supports the <see cref="QueryStatus" /> method.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_DONTDOWNLOADCSS">
+    <summary>
+      <para>Notifies the  receiver that CSS files should not be downloaded when in <see cref="DesignMode" />.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_UPDATEPAGESTATUS">
+    <summary>
+      <para>This command has no effect.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PRINT2">
+    <summary>
+      <para>
+        <b>File</b> menu, updated <b>Print</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PRINTPREVIEW2">
+    <summary>
+      <para>
+        <b>File</b> menu, updated <b>Print Preview</b> command</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SETPRINTTEMPLATE">
+    <summary>
+      <para>Sets an explicit Print Template value of <b>TRUE</b> or <b>FALSE</b>, based on a <b>VT_BOOL</b> input parameter.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_GETPRINTTEMPLATE">
+    <summary>
+      <para>Gets a  <b>VT_BOOL</b> output parameter indicating whether the Print Template value is <b>TRUE</b> or <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PAGEACTIONBLOCKED">
+    <summary>
+      <para>Indicates that a page action has been blocked. PAGEACTIONBLOCKED is designed for use with applications that host the Internet Explorer WebBrowser control to implement their own UI.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PAGEACTIONUIQUERY">
+    <summary>
+      <para>Specifies which actions are displayed in the Internet Explorer notification band.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_FOCUSVIEWCONTROLS">
+    <summary>
+      <para>Causes the Internet Explorer WebBrowser control to focus its default notification band. Hosts can send this command at any time. The return value is S_OK if the band is present and is in focus, or S_FALSE otherwise.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_FOCUSVIEWCONTROLSQUERY">
+    <summary>
+      <para>This notification event is provided for applications that display Internet Explorers default notification band implementation. By default, when the user presses the ALT-N key combination, Internet Explorer treats it as a request to focus the notification band.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SHOWPAGEACTIONMENU">
+    <summary>
+      <para>Causes the Internet Explorer WebBrowser control to show the Information Bar menu.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_ADDTRAVELENTRY">
+    <summary>
+      <para>Causes the Internet Explorer WebBrowser control to create an entry at the current Travel Log offset. The Docobject should implement <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768478(v=vs.85)">ITravelLogClient</a> and <see cref="IPersist" /> interfaces, which are used by the Travel Log as it processes this command with calls to GetWindowData and GetPersistID, respectively.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_UPDATETRAVELENTRY">
+    <summary>
+      <para>Called when LoadHistory is processed to update the previous Docobject state. For synchronous handling, this command can be called before returning from the LoadHistory call. For asynchronous handling, it can be called later.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_UPDATEBACKFORWARDSTATE">
+    <summary>
+      <para>Updates the state of the browser's Back and Forward buttons.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_OPTICAL_ZOOM">
+    <summary>
+      <para>Windows Internet Explorer 7 and later. Sets the zoom factor of the browser. Takes a VT_I4 parameter in the range of 10 to 1000 (percent).</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_OPTICAL_GETZOOMRANGE">
+    <summary>
+      <para>Windows Internet Explorer 7 and later. Retrieves the minimum and maximum browser zoom factor limits. Returns a VT_I4 parameter; the LOWORD is the minimum zoom factor, the HIWORD is the maximum.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_WINDOWSTATECHANGED">
+    <summary>
+      <para>Windows Internet Explorer 7 and later. Notifies the Internet Explorer WebBrowser control of changes in window states, such as losing focus, or becoming hidden or minimized. The host indicates what has changed by setting OLECMDID_WINDOWSTATE_FLAG option flags in nCmdExecOpt.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_ACTIVEXINSTALLSCOPE">
+    <summary>
+      <para>Windows Internet Explorer 8 with Windows Vista. Has no effect with Windows Internet Explorer 8 with Windows XP. Notifies Trident to use the indicated Install Scope to install the ActiveX Control specified by the indicated Class ID. For more information, see the Remarks section.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_UPDATETRAVELENTRY_DATARECOVERY">
+    <summary>
+      <para>Internet Explorer 8. Unlike OLECMDID_UPDATETRAVELENTRY, this updates a Travel Log entry that is not initialized from a previous Docobject state. While this command is not called from <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768216(v=vs.85)">IPersistHistory.LoadHistory</a>, it can be called separately to save browser state that can be used later to recover from a crash.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SHOWTASKDLG">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_POPSTATEEVENT">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_VIEWPORT_MODE">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_LAYOUT_VIEWPORT_WIDTH">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_VISUAL_VIEWPORT_EXCLUDE_BOTTOM">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_USER_OPTICAL_ZOOM">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_PAGEAVAILABLE">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_GETUSERSCALABLE">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_UPDATE_CARET">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_ENABLE_VISIBILITY">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_MEDIA_PLAYBACK">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SETFAVICON">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SET_HOST_FULLSCREENMODE">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_EXITFULLSCREEN">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SCROLLCOMPLETE">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_ONBEFOREUNLOAD">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SHOWMESSAGE_BLOCKABLE">
+    <summary></summary>
+  </member>
+  <member name="OLECMDID.OLECMDID_SHOWTASKDLG_BLOCKABLE">
+    <summary></summary>
+  </member>
+</doc>

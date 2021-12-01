@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSITRANSACTION.xml' path='doc/member[@name="MSITRANSACTION"]/*' />
 public enum MSITRANSACTION
 {
+    /// <include file='MSITRANSACTION.xml' path='doc/member[@name="MSITRANSACTION.MSITRANSACTION_CHAIN_EMBEDDEDUI"]/*' />
     MSITRANSACTION_CHAIN_EMBEDDEDUI = 0x00000001,
+
+    /// <include file='MSITRANSACTION.xml' path='doc/member[@name="MSITRANSACTION.MSITRANSACTION_JOIN_EXISTING_EMBEDDEDUI"]/*' />
     MSITRANSACTION_JOIN_EXISTING_EMBEDDEDUI = 0x00000002,
 }

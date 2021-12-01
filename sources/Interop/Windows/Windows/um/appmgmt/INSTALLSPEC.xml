@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INSTALLSPEC">
+    <summary>
+      <para>The <b>INSTALLSPEC</b> structure specifies a group policy application by its user-friendly name and group policy GUID or by its file name extension. The <b>Spec</b> member of the <see cref="INSTALLDATA" />  structure provides this information to the <see cref="InstallApplication" /> function.</para>
+    </summary>
+    <seealso cref="GetManagedApplications" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/about-group-policy">Group Policy Overview</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-structures">Group Policy Structures</seealso>
+    <seealso cref="INSTALLDATA" />
+    <seealso cref="InstallApplication" />
+    <seealso cref="UninstallApplication" />
+  </member>
+  <member name="INSTALLSPEC.AppName">
+    <summary>
+      <para>Structure that contains the following members.</para>
+    </summary>
+  </member>
+  <member name="INSTALLSPEC.AppName.Name">
+    <summary>
+      <para>The user-friendly name of the application as it appears in <b>Add or Remove Programs</b> and the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-object-editor">Group Policy Object Editor</a>. You can obtain the name by calling <see cref="GetManagedApplications" />.</para>
+    </summary>
+  </member>
+  <member name="INSTALLSPEC.AppName.GPOId">
+    <summary>
+      <para>The <b>GUID</b> for the group policy object in which the application exists. You can obtain the group policy object <b>GUID</b> by calling <see cref="GetManagedApplications" />.</para>
+    </summary>
+  </member>
+  <member name="INSTALLSPEC.FileExt">
+    <summary>
+      <para>The file name extension, such as .jpg,  of the application to be installed.</para>
+      <para>
+        <b>Note</b>  <see cref="InstallApplication" /> fails if the <b>Type</b> member of <see cref="INSTALLDATA" /> equals <b>FILEEXT</b> and there is no application deployed to the user with this file name extension.</para>
+    </summary>
+  </member>
+  <member name="INSTALLSPEC.ProgId">
+    <summary>
+      <para>This parameter is reserved and should not be used.</para>
+    </summary>
+  </member>
+  <member name="INSTALLSPEC.COMClass">
+    <summary>
+      <para>This parameter is reserved and should not be used.</para>
+    </summary>
+  </member>
+  <member name="INSTALLSPEC.COMClass.Clsid">
+    <summary>
+      <para>This parameter is reserved and should not be used.</para>
+    </summary>
+  </member>
+  <member name="INSTALLSPEC.COMClass.ClsCtx">
+    <summary>
+      <para>This parameter is reserved and should not be used.</para>
+    </summary>
+  </member>
+</doc>

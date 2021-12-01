@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PCMWAVEFORMAT.xml' path='doc/member[@name="PCMWAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct PCMWAVEFORMAT
 {
+    /// <include file='PCMWAVEFORMAT.xml' path='doc/member[@name="PCMWAVEFORMAT.wf"]/*' />
     public WAVEFORMAT wf;
 
+    /// <include file='PCMWAVEFORMAT.xml' path='doc/member[@name="PCMWAVEFORMAT.wBitsPerSample"]/*' />
     [NativeTypeName("WORD")]
     public ushort wBitsPerSample;
 }

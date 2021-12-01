@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRL_ISSUING_DIST_POINT">
+    <summary>
+      <para>The <b>CRL_ISSUING_DIST_POINT</b> structure contains information about the kinds of certificates listed in a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL).</para>
+    </summary>
+  </member>
+  <member name="CRL_ISSUING_DIST_POINT.DistPointName">
+    <summary>
+      <para>Optional
+<see cref="CRL_DIST_POINT_NAME" /> member.</para>
+    </summary>
+  </member>
+  <member name="CRL_ISSUING_DIST_POINT.fOnlyContainsUserCerts">
+    <summary>
+      <para>
+        <b>BOOL</b> flag. <b>TRUE</b> if only user certificates are contained in the CRL.</para>
+    </summary>
+  </member>
+  <member name="CRL_ISSUING_DIST_POINT.fOnlyContainsCACerts">
+    <summary>
+      <para>
+        <b>BOOL</b> flag. <b>TRUE</b> if only CA certificates are contained in the CRL.</para>
+    </summary>
+  </member>
+  <member name="CRL_ISSUING_DIST_POINT.OnlySomeReasonFlags">
+    <summary>
+      <para>Optional
+<see cref="CRYPT_BIT_BLOB" /> with bits indicating some reasons for certificate revocation.</para>
+    </summary>
+  </member>
+  <member name="CRL_ISSUING_DIST_POINT.fIndirectCRL">
+    <summary>
+      <para>
+        <b>BOOL</b> flag. <b>TRUE</b> if this is an indirect CRL.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideoSrcContentHintFlags.xml' path='doc/member[@name="MFVideoSrcContentHintFlags"]/*' />
 public enum MFVideoSrcContentHintFlags
 {
+    /// <include file='MFVideoSrcContentHintFlags.xml' path='doc/member[@name="MFVideoSrcContentHintFlags.MFVideoSrcContentHintFlag_None"]/*' />
     MFVideoSrcContentHintFlag_None = 0,
+
+    /// <include file='MFVideoSrcContentHintFlags.xml' path='doc/member[@name="MFVideoSrcContentHintFlags.MFVideoSrcContentHintFlag_16x9"]/*' />
     MFVideoSrcContentHintFlag_16x9 = 1,
+
+    /// <include file='MFVideoSrcContentHintFlags.xml' path='doc/member[@name="MFVideoSrcContentHintFlags.MFVideoSrcContentHintFlag_235_1"]/*' />
     MFVideoSrcContentHintFlag_235_1 = 2,
 }

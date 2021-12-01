@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFCLOCK_RELATIONAL_FLAGS">
+    <summary>
+      <para>Defines properties of a clock.</para>
+    </summary>
+    <seealso cref="MFCLOCK_PROPERTIES" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MFCLOCK_RELATIONAL_FLAGS.MFCLOCK_RELATIONAL_FLAG_JITTER_NEVER_AHEAD">
+    <summary>
+      <para>Jitter values are always negative. In other words, the time returned by <see cref="IMFClock.GetCorrelatedTime" /> might jitter behind the actual clock time, but will never jitter ahead of the actual time. If this flag is not present, the clock might jitter in either direction.</para>
+    </summary>
+  </member>
+</doc>

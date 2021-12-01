@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_EVENT_FLAGS">
+    <summary>
+      <para>Specifies flags for a synchronization event.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_EVENT_FLAGS.SYNCMGR_EF_NONE">
+    <summary>
+      <para>No flags specified.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_EVENT_FLAGS.SYNCMGR_EF_VALID">
+    <summary>
+      <para>Same as <see cref="SYNCMGR_EF_NONE" />.</para>
+    </summary>
+  </member>
+</doc>

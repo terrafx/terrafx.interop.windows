@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLCanvasElement.xml' path='doc/member[@name="IHTMLCanvasElement"]/*' />
 [Guid("305106E4-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLCanvasElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, uint>)(lpVtbl[1]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, uint>)(lpVtbl[2]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, uint*, int>)(lpVtbl[3]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLCanvasElement.xml' path='doc/member[@name="IHTMLCanvasElement.put_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_width([NativeTypeName("long")] int v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, int, int>)(lpVtbl[7]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLCanvasElement.xml' path='doc/member[@name="IHTMLCanvasElement.get_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_width([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, int*, int>)(lpVtbl[8]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLCanvasElement.xml' path='doc/member[@name="IHTMLCanvasElement.put_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_height([NativeTypeName("long")] int v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, int, int>)(lpVtbl[9]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLCanvasElement.xml' path='doc/member[@name="IHTMLCanvasElement.get_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_height([NativeTypeName("long *")] int* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, int*, int>)(lpVtbl[10]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLCanvasElement.xml' path='doc/member[@name="IHTMLCanvasElement.getContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT getContext([NativeTypeName("BSTR")] ushort* contextId, ICanvasRenderingContext2D** ppContext)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         return ((delegate* unmanaged<IHTMLCanvasElement*, ushort*, ICanvasRenderingContext2D**, int>)(lpVtbl[11]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), contextId, ppContext);
     }
 
+    /// <include file='IHTMLCanvasElement.xml' path='doc/member[@name="IHTMLCanvasElement.toDataURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT toDataURL([NativeTypeName("BSTR")] ushort* type, VARIANT jpegquality, [NativeTypeName("BSTR *")] ushort** pUrl)

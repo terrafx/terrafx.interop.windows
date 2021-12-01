@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpatialAudioObjectForMetadataCommands.xml' path='doc/member[@name="ISpatialAudioObjectForMetadataCommands"]/*' />
 [Guid("0DF2C94B-F5F9-472D-AF6B-C46E0AC9CD05")]
 [NativeTypeName("struct ISpatialAudioObjectForMetadataCommands : ISpatialAudioObjectBase")]
 [NativeInheritance("ISpatialAudioObjectBase")]
@@ -18,6 +19,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataCommands : ISpatialAu
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataCommands : ISpatialAu
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataCommands*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObjectForMetadataCommands*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataCommands : ISpatialAu
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataCommands*, uint>)(lpVtbl[1]))((ISpatialAudioObjectForMetadataCommands*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataCommands : ISpatialAu
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataCommands*, uint>)(lpVtbl[2]))((ISpatialAudioObjectForMetadataCommands*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.GetBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetBuffer(byte** buffer, [NativeTypeName("UINT32 *")] uint* bufferLength)
@@ -48,6 +53,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataCommands : ISpatialAu
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataCommands*, byte**, uint*, int>)(lpVtbl[3]))((ISpatialAudioObjectForMetadataCommands*)Unsafe.AsPointer(ref this), buffer, bufferLength);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.SetEndOfStream" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetEndOfStream([NativeTypeName("UINT32")] uint frameCount)
@@ -55,6 +61,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataCommands : ISpatialAu
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataCommands*, uint, int>)(lpVtbl[4]))((ISpatialAudioObjectForMetadataCommands*)Unsafe.AsPointer(ref this), frameCount);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.IsActive" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsActive(BOOL* isActive)
@@ -62,6 +69,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataCommands : ISpatialAu
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataCommands*, BOOL*, int>)(lpVtbl[5]))((ISpatialAudioObjectForMetadataCommands*)Unsafe.AsPointer(ref this), isActive);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.GetAudioObjectType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetAudioObjectType(AudioObjectType* audioObjectType)
@@ -69,6 +77,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataCommands : ISpatialAu
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataCommands*, AudioObjectType*, int>)(lpVtbl[6]))((ISpatialAudioObjectForMetadataCommands*)Unsafe.AsPointer(ref this), audioObjectType);
     }
 
+    /// <include file='ISpatialAudioObjectForMetadataCommands.xml' path='doc/member[@name="ISpatialAudioObjectForMetadataCommands.WriteNextMetadataCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT WriteNextMetadataCommand(byte commandID, void* valueBuffer, [NativeTypeName("UINT32")] uint valueBufferLength)

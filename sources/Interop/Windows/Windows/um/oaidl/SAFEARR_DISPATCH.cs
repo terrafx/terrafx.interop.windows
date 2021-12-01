@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SAFEARR_DISPATCH.xml' path='doc/member[@name="SAFEARR_DISPATCH"]/*' />
 public unsafe partial struct SAFEARR_DISPATCH
 {
+    /// <include file='SAFEARR_DISPATCH.xml' path='doc/member[@name="SAFEARR_DISPATCH.Size"]/*' />
     [NativeTypeName("ULONG")]
     public uint Size;
 
+    /// <include file='SAFEARR_DISPATCH.xml' path='doc/member[@name="SAFEARR_DISPATCH.apDispatch"]/*' />
     public IDispatch** apDispatch;
 }

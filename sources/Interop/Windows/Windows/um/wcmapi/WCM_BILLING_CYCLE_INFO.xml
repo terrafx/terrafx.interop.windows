@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WCM_BILLING_CYCLE_INFO">
+    <summary>
+      <para>The <b>WCM_BILLING_CYCLE_INFO</b> structure specifies information about the billing cycle.</para>
+    </summary>
+    <seealso cref="WCM_TIME_INTERVAL" />
+  </member>
+  <member name="WCM_BILLING_CYCLE_INFO.StartDate">
+    <summary>
+      <para>Type: <b>FILETIME</b></para>
+      <para>Specifies the start date of the cycle.</para>
+    </summary>
+  </member>
+  <member name="WCM_BILLING_CYCLE_INFO.Duration">
+    <summary>
+      <para>Type: <b><see cref="WCM_TIME_INTERVAL" /></b></para>
+      <para>Specifies the billing cycle duration.</para>
+    </summary>
+  </member>
+  <member name="WCM_BILLING_CYCLE_INFO.Reset">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>True if at the end of the billing cycle, a new billing cycle of the same duration will start. False if the service will terminate at the end of the billing cycle.</para>
+    </summary>
+  </member>
+</doc>

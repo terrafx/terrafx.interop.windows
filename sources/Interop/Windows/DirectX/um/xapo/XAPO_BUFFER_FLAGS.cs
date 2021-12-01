@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAPO_BUFFER_FLAGS.xml' path='doc/member[@name="XAPO_BUFFER_FLAGS"]/*' />
 [Flags]
 public enum XAPO_BUFFER_FLAGS
 {
+    /// <include file='XAPO_BUFFER_FLAGS.xml' path='doc/member[@name="XAPO_BUFFER_FLAGS.XAPO_BUFFER_SILENT"]/*' />
     XAPO_BUFFER_SILENT,
+
+    /// <include file='XAPO_BUFFER_FLAGS.xml' path='doc/member[@name="XAPO_BUFFER_FLAGS.XAPO_BUFFER_VALID"]/*' />
     XAPO_BUFFER_VALID,
 }

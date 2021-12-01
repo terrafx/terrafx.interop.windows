@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SID_AND_ATTRIBUTES_HASH">
+    <summary>
+      <para>The <b>SID_AND_ATTRIBUTES_HASH</b> structure specifies a hash values for the specified array of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifiers</a> (SIDs).</para>
+    </summary>
+    <seealso cref="TOKEN_ACCESS_INFORMATION" />
+    <seealso cref="TOKEN_INFORMATION_CLASS" />
+  </member>
+  <member name="SID_AND_ATTRIBUTES_HASH.SidCount">
+    <summary>
+      <para>The number of SIDs pointed to by the <i>SidAttr</i> parameter.</para>
+    </summary>
+  </member>
+  <member name="SID_AND_ATTRIBUTES_HASH.SidAttr">
+    <summary>
+      <para>A pointer to an array of <see cref="SID_AND_ATTRIBUTES" /> structures that represent SIDs and their attributes.</para>
+    </summary>
+  </member>
+  <member name="SID_AND_ATTRIBUTES_HASH.Hash">
+    <summary>
+      <para>An array of pointers to hash values. These values correspond to the <see cref="SID_AND_ATTRIBUTES" /> structures pointed to by the <i>SidAttr</i> parameter.</para>
+      <para>The <b>SID_HASH_ENTRY</b> data type is defined in Winnt.h as a <b>ULONG_PTR</b>.</para>
+      <para>The <b>SID_HASH_SIZE</b> array dimension is defined in Winnt.h as 32.</para>
+    </summary>
+  </member>
+</doc>

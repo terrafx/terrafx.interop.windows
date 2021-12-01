@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTBHOTITEM.xml' path='doc/member[@name="NMTBHOTITEM"]/*' />
 public partial struct NMTBHOTITEM
 {
+    /// <include file='NMTBHOTITEM.xml' path='doc/member[@name="NMTBHOTITEM.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMTBHOTITEM.xml' path='doc/member[@name="NMTBHOTITEM.idOld"]/*' />
     public int idOld;
 
+    /// <include file='NMTBHOTITEM.xml' path='doc/member[@name="NMTBHOTITEM.idNew"]/*' />
     public int idNew;
 
+    /// <include file='NMTBHOTITEM.xml' path='doc/member[@name="NMTBHOTITEM.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

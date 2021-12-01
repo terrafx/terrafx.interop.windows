@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TIMED_TEXT_RUBY_POSITION.xml' path='doc/member[@name="MF_TIMED_TEXT_RUBY_POSITION"]/*' />
 public enum MF_TIMED_TEXT_RUBY_POSITION
 {
+    /// <include file='MF_TIMED_TEXT_RUBY_POSITION.xml' path='doc/member[@name="MF_TIMED_TEXT_RUBY_POSITION.MF_TIMED_TEXT_RUBY_POSITION_BEFORE"]/*' />
     MF_TIMED_TEXT_RUBY_POSITION_BEFORE = 0,
+
+    /// <include file='MF_TIMED_TEXT_RUBY_POSITION.xml' path='doc/member[@name="MF_TIMED_TEXT_RUBY_POSITION.MF_TIMED_TEXT_RUBY_POSITION_AFTER"]/*' />
     MF_TIMED_TEXT_RUBY_POSITION_AFTER = 1,
+
+    /// <include file='MF_TIMED_TEXT_RUBY_POSITION.xml' path='doc/member[@name="MF_TIMED_TEXT_RUBY_POSITION.MF_TIMED_TEXT_RUBY_POSITION_OUTSIDE"]/*' />
     MF_TIMED_TEXT_RUBY_POSITION_OUTSIDE = 2,
 }

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteGlyphRunAnalysis.CreateAlphaTexture">
+    <summary>
+      <para>Creates an alpha texture of the specified type for glyphs within a specified bounding rectangle.</para>
+    </summary>
+    <param name="textureType">
+      <para>Type: <b><see cref="DWRITE_TEXTURE_TYPE" /></b></para>
+      <para>A value that specifies the type of texture requested. This can be <see cref="DWRITE_TEXTURE_BILEVEL_1x1" /> or <b>DWRITE_TEXTURE_CLEARTYPE_3x1</b>. If a bi-level texture is requested, the
+texture contains only bi-level glyphs. Otherwise, the texture contains only antialiased glyphs.</para>
+    </param>
+    <param name="textureBounds">
+      <para>Type: <b>const RECT*</b></para>
+      <para>The bounding rectangle of the texture, which can be different than
+the bounding rectangle returned by <see cref="GetAlphaTextureBounds" />.</para>
+    </param>
+    <param name="alphaValues">
+      <para>Type: <b>BYTE*</b></para>
+      <para>When this method returns, contains  the array of alpha values from the texture. The buffer allocated for this array must be at least the size of <i>bufferSize</i>.</para>
+    </param>
+    <param name="bufferSize">
+      <para>Type: <b>UINT32</b></para>
+      <para>The size of the <i>alphaValues</i> array, in bytes. The minimum size depends on the dimensions of the
+rectangle and the type of texture requested.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteGlyphRunAnalysis" />
+  </member>
+  <member name="IDWriteGlyphRunAnalysis.GetAlphaBlendParams">
+    <summary>
+      <para>Gets alpha blending properties required for ClearType blending.</para>
+    </summary>
+    <param name="renderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams" />*</b></para>
+      <para>An object that specifies the ClearType level and enhanced contrast, gamma, pixel geometry, and rendering mode. In most cases, the values returned by the output
+parameters of this method are based on the properties of this object, unless a GDI-compatible rendering mode
+was specified.</para>
+    </param>
+    <param name="blendGamma">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>When this method returns, contains  the gamma value to use for gamma correction.</para>
+    </param>
+    <param name="blendEnhancedContrast">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>When this method returns, contains the enhanced contrast value to be used for blending.</para>
+    </param>
+    <param name="blendClearTypeLevel">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>When this method returns, contains  the ClearType level used in the alpha blending.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteGlyphRunAnalysis" />
+  </member>
+  <member name="IDWriteGlyphRunAnalysis.GetAlphaTextureBounds">
+    <summary>
+      <para>Gets the bounding rectangle of the physical pixels affected by the glyph run.</para>
+    </summary>
+    <param name="textureType">
+      <para>Type: <b><see cref="DWRITE_TEXTURE_TYPE" /></b></para>
+      <para>Specifies the type of texture requested. If a bi-level texture is requested, the
+bounding rectangle includes only bi-level glyphs. Otherwise, the bounding rectangle includes only antialiased
+glyphs.</para>
+    </param>
+    <param name="textureBounds">
+      <para>Type: <b>RECT*</b></para>
+      <para>When this method returns, contains the bounding rectangle of the physical pixels affected by the glyph run, or an empty rectangle if there are no glyphs
+of the specified texture type.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteGlyphRunAnalysis" />
+  </member>
+  <member name="IDWriteGlyphRunAnalysis">
+    <summary>
+      <para>Contains low-level information used to render a glyph run.</para>
+    </summary>
+    <remarks>
+      <para>The alpha texture can be a   bi-level alpha  texture or a ClearType alpha texture.</para>
+      <para>A bi-level alpha texture contains one byte per pixel, therefore the size of the buffer for a bi-level texture will be the area of the texture bounds, in bytes. Each byte in a bi-level alpha texture created by <see cref="CreateAlphaTexture" /> is either set to DWRITE_ALPHA_MAX (that is, 255) or zero.</para>
+      <para>A ClearType alpha texture contains three bytes per pixel, therefore the size of the buffer for a ClearType alpha texture is three times the area of the texture bounds, in bytes.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows how to create a glyph run analysis object.  In this example, an empty glyph run is being used.</para>
+      <code>HRESULT CreateGlyphRunAnalysis(IDWriteFontFace *pFontFace, IDWriteGlyphRunAnalysis **ppGlyphRunAnalysis)
+{
+    HRESULT hr = S_OK;
+    IDWriteFactory* pDWriteFactory = NULL;
+
+    // Create the DirectWrite factory.
+    hr = DWriteCreateFactory(
+            DWRITE_FACTORY_TYPE_SHARED,
+            __uuidof(IDWriteFactory),
+            reinterpret_cast&lt;IUnknown**&gt;(&amp;amp;amp;amp;amp;amp;pDWriteFactory)
+            );
+
+    DWRITE_GLYPH_RUN emptyGlyphRun = { 0 };
+    UINT16 glyphIndex = 0;
+
+    emptyGlyphRun.fontFace = pFontFace;
+    emptyGlyphRun.glyphIndices = &amp;amp;amp;amp;amp;amp;glyphIndex;
+    emptyGlyphRun.glyphCount = 0;
+
+    emptyGlyphRun.fontEmSize = 12;
+
+    IDWriteGlyphRunAnalysis* pGlyphRunAnalysis = NULL;
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pDWriteFactory-&gt;CreateGlyphRunAnalysis(
+            &amp;amp;amp;amp;amp;amp;emptyGlyphRun,
+            1.0f, // pixelsPerDip,
+            NULL, // transform,
+            DWRITE_RENDERING_MODE_CLEARTYPE_GDI_CLASSIC,
+            DWRITE_MEASURING_MODE_GDI_CLASSIC,
+            0.0f, // baselineOriginX,
+            0.0f, // baselineOriginY,
+            &amp;amp;amp;amp;amp;amp;pGlyphRunAnalysis);
+    }
+
+    *ppGlyphRunAnalysis = pGlyphRunAnalysis;
+
+    SafeRelease(&amp;amp;amp;amp;amp;amp;pDWriteFactory);
+
+    return S_OK;
+}
+
+</code>
+    </remarks>
+  </member>
+</doc>

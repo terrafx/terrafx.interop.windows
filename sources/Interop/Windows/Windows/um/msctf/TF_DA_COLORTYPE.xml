@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TF_DA_COLORTYPE">
+    <summary>
+      <para>Elements of the <b>TF_DA_COLORTYPE</b> enumeration specify the format of the color contained in the <see cref="TF_DA_COLOR" /> structure.</para>
+    </summary>
+    <seealso cref="GetSysColor" />
+    <seealso cref="TF_DA_COLOR " />
+  </member>
+  <member name="TF_DA_COLORTYPE.TF_CT_NONE">
+    <summary>
+      <para>The structure contains no color data.</para>
+    </summary>
+  </member>
+  <member name="TF_DA_COLORTYPE.TF_CT_SYSCOLOR">
+    <summary>
+      <para>The color is specified as a system color index. For more information about the system color indexes, see <see cref="GetSysColor" />.</para>
+    </summary>
+  </member>
+  <member name="TF_DA_COLORTYPE.TF_CT_COLORREF">
+    <summary>
+      <para>The color is specified as an RGB value.</para>
+    </summary>
+  </member>
+</doc>

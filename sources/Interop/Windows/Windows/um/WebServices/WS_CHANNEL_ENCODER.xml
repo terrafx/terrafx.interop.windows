@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_CHANNEL_ENCODER">
+    <summary>
+      <para>A structure that is used to specify a set of callbacks
+that can transform the content type and encoded bytes of a sent message.</para>
+    </summary>
+    <remarks>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-channel">WS_CHANNEL</a> may wish to compress, modify, or otherwise transform
+the encoded bytes of a message before they are sent. A <b>WS_CHANNEL_ENCODER</b></para>
+      <para>provides the necessary hooks to intercept and perform these modifications.</para>
+      <para>When creating the channel, the <see cref="WS_CHANNEL_PROPERTY_ENCODER" /> should be
+set with the appropriate functions.</para>
+      <para>The grammar for the encoder callbacks is:</para>
+      <code>
+encodercalls := create encoderloop* free
+encoderloop  := getcontenttype
+             |  getcontenttype encodestart
+             |  getcontenttype encodestart (encode*)
+             |  getcontenttype encodestart (encode*) encodeend
+
+</code>
+      <para>The encoder may not see the full encode sequence for a message if the channel or the
+encoder encounters an error while writing the message.  An encoder must be prepared to
+handle transitioning to the appropriate state based upon the callbacks invoked.</para>
+      <para>When using <see cref="WS_TCP_CHANNEL_BINDING" /> with <see cref="WS_CHANNEL_TYPE_SESSION" />, the content type
+is fixed for the channel.  In this case, the <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_encoder_get_content_type_callback">WS_ENCODER_GET_CONTENT_TYPE_CALLBACK</a> must return
+exactly the same value for the content type of every message.</para>
+      <para>When the channel is finished using the encoder instance it will free it via the
+<a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_free_encoder_callback">WS_FREE_ENCODER_CALLBACK</a>.</para>
+    </remarks>
+  </member>
+  <member name="WS_CHANNEL_ENCODER.createContext">
+    <summary>
+      <para>A context that will be passed to the <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_create_encoder_callback">WS_CREATE_ENCODER_CALLBACK</a>.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_ENCODER.createEncoderCallback">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_create_encoder_callback">WS_CREATE_ENCODER_CALLBACK</a> callback that creates an instance of an encoder.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_ENCODER.encoderGetContentTypeCallback">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_encoder_get_content_type_callback">WS_ENCODER_GET_CONTENT_TYPE_CALLBACK</a> callback that is invoked when a message is to be encoded.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_ENCODER.encoderStartCallback">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_encoder_start_callback">WS_ENCODER_START_CALLBACK</a> callback that is invoked to start encoding a message.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_ENCODER.encoderEncodeCallback">
+    <summary>
+      <para>A
+<a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_encoder_encode_callback">WS_ENCODER_ENCODE_CALLBACK</a> callback that is invoked to encode a message.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_ENCODER.encoderEndCallback">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_encoder_end_callback">WS_ENCODER_END_CALLBACK</a> callback that is invoked to at the end of encoding a message.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_ENCODER.freeEncoderCallback">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_free_encoder_callback">WS_FREE_ENCODER_CALLBACK</a> callback that frees an instance of an encoder.</para>
+    </summary>
+  </member>
+</doc>

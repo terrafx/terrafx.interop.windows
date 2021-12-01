@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DCOMPOSITION_DEPTH_MODE.xml' path='doc/member[@name="DCOMPOSITION_DEPTH_MODE"]/*' />
 public enum DCOMPOSITION_DEPTH_MODE
 {
+    /// <include file='DCOMPOSITION_DEPTH_MODE.xml' path='doc/member[@name="DCOMPOSITION_DEPTH_MODE.DCOMPOSITION_DEPTH_MODE_TREE"]/*' />
     DCOMPOSITION_DEPTH_MODE_TREE = 0,
+
+    /// <include file='DCOMPOSITION_DEPTH_MODE.xml' path='doc/member[@name="DCOMPOSITION_DEPTH_MODE.DCOMPOSITION_DEPTH_MODE_SPATIAL"]/*' />
     DCOMPOSITION_DEPTH_MODE_SPATIAL = 1,
+
+    /// <include file='DCOMPOSITION_DEPTH_MODE.xml' path='doc/member[@name="DCOMPOSITION_DEPTH_MODE.DCOMPOSITION_DEPTH_MODE_SORTED"]/*' />
     DCOMPOSITION_DEPTH_MODE_SORTED = 3,
+
+    /// <include file='DCOMPOSITION_DEPTH_MODE.xml' path='doc/member[@name="DCOMPOSITION_DEPTH_MODE.DCOMPOSITION_DEPTH_MODE_INHERIT"]/*' />
     DCOMPOSITION_DEPTH_MODE_INHERIT = unchecked((int)(0xffffffff)),
 }

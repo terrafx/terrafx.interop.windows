@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STICKYKEYS.xml' path='doc/member[@name="STICKYKEYS"]/*' />
 public partial struct STICKYKEYS
 {
+    /// <include file='STICKYKEYS.xml' path='doc/member[@name="STICKYKEYS.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='STICKYKEYS.xml' path='doc/member[@name="STICKYKEYS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

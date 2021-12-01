@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IQueryContinue.xml' path='doc/member[@name="IQueryContinue"]/*' />
 [Guid("7307055C-B24A-486B-9F25-163E597A28A9")]
 [NativeTypeName("struct IQueryContinue : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IQueryContinue : IQueryContinue.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IQueryContinue : IQueryContinue.Interface
         return ((delegate* unmanaged<IQueryContinue*, Guid*, void**, int>)(lpVtbl[0]))((IQueryContinue*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IQueryContinue : IQueryContinue.Interface
         return ((delegate* unmanaged<IQueryContinue*, uint>)(lpVtbl[1]))((IQueryContinue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IQueryContinue : IQueryContinue.Interface
         return ((delegate* unmanaged<IQueryContinue*, uint>)(lpVtbl[2]))((IQueryContinue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IQueryContinue.xml' path='doc/member[@name="IQueryContinue.QueryContinue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryContinue()

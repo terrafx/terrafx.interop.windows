@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXPANDOBUTTONSTATES.xml' path='doc/member[@name="EXPANDOBUTTONSTATES"]/*' />
 public enum EXPANDOBUTTONSTATES
 {
+    /// <include file='EXPANDOBUTTONSTATES.xml' path='doc/member[@name="EXPANDOBUTTONSTATES.TDLGEBS_NORMAL"]/*' />
     TDLGEBS_NORMAL = 1,
+
+    /// <include file='EXPANDOBUTTONSTATES.xml' path='doc/member[@name="EXPANDOBUTTONSTATES.TDLGEBS_HOVER"]/*' />
     TDLGEBS_HOVER = 2,
+
+    /// <include file='EXPANDOBUTTONSTATES.xml' path='doc/member[@name="EXPANDOBUTTONSTATES.TDLGEBS_PRESSED"]/*' />
     TDLGEBS_PRESSED = 3,
+
+    /// <include file='EXPANDOBUTTONSTATES.xml' path='doc/member[@name="EXPANDOBUTTONSTATES.TDLGEBS_EXPANDEDNORMAL"]/*' />
     TDLGEBS_EXPANDEDNORMAL = 4,
+
+    /// <include file='EXPANDOBUTTONSTATES.xml' path='doc/member[@name="EXPANDOBUTTONSTATES.TDLGEBS_EXPANDEDHOVER"]/*' />
     TDLGEBS_EXPANDEDHOVER = 5,
+
+    /// <include file='EXPANDOBUTTONSTATES.xml' path='doc/member[@name="EXPANDOBUTTONSTATES.TDLGEBS_EXPANDEDPRESSED"]/*' />
     TDLGEBS_EXPANDEDPRESSED = 6,
+
+    /// <include file='EXPANDOBUTTONSTATES.xml' path='doc/member[@name="EXPANDOBUTTONSTATES.TDLGEBS_NORMALDISABLED"]/*' />
     TDLGEBS_NORMALDISABLED = 7,
+
+    /// <include file='EXPANDOBUTTONSTATES.xml' path='doc/member[@name="EXPANDOBUTTONSTATES.TDLGEBS_EXPANDEDDISABLED"]/*' />
     TDLGEBS_EXPANDEDDISABLED = 8,
 }

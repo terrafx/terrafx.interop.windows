@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteTextFormat3.GetAutomaticFontAxes">
+    <summary>
+      <para>Retrieves the automatic axis options.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_AUTOMATIC_FONT_AXES" /></b></para>
+      <para>Automatic axis options.</para>
+    </returns>
+  </member>
+  <member name="IDWriteTextFormat3.GetFontAxisValueCount">
+    <summary>
+      <para>Retrieves the number of axes set on the format.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of axes set on the format.</para>
+    </returns>
+  </member>
+  <member name="IDWriteTextFormat3.GetFontAxisValues">
+    <summary>
+      <para>Retrieves the list of font axis values on the format.</para>
+    </summary>
+    <param name="fontAxisValues">
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_VALUE" />*</b></para>
+      <para>A pointer to an array of <b>DWRITE_FONT_AXIS_VALUE</b> structures into which <b>GetFontAxisValues</b> writes the list of font axis values. You're responsible for managing the size and the lifetime of this array. Call <see cref="GetFontAxisValueCount" /> to determine the size of array to allocate.</para>
+    </param>
+    <param name="fontAxisValueCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The maximum number of font axis values to write into the memory block pointed to by <code>fontAxisValues</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteTextFormat3.SetAutomaticFontAxes">
+    <summary>
+      <para>Sets the automatic font axis options.</para>
+    </summary>
+    <param name="automaticFontAxes">
+      <para>Type: <b><see cref="DWRITE_AUTOMATIC_FONT_AXES" /></b></para>
+      <para>Automatic font axis options.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteTextFormat3.SetFontAxisValues">
+    <summary>
+      <para>Sets values for the font axes of the format.</para>
+    </summary>
+    <param name="fontAxisValues">
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_VALUE" /> const *</b></para>
+      <para>A pointer to an array containing a list of font axis values. The array should be the size (the number of elements) indicated by the <i>fontAxisValueCount</i> argument.</para>
+    </param>
+    <param name="fontAxisValueCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of font axis values contained in the <i>fontAxisValues</i> array.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteTextFormat3">
+    <summary>
+      <para>Describes the font and paragraph properties used to format text, and it describes locale information.</para>
+      <para>This interface extends <a href="https://docs.microsoft.com//windows/win32/directwrite/idwritetextformat2">IDWriteTextFormat2</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/win32/directwrite/idwritetextformat2">IDWriteTextFormat2</seealso>
+  </member>
+</doc>

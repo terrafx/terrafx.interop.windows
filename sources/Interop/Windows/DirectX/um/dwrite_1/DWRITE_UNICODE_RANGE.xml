@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_UNICODE_RANGE">
+    <summary>
+      <para>The <b>DWRITE_UNICODE_RANGE</b> structure specifies the range of Unicode code points.</para>
+    </summary>
+    <seealso cref="IDWriteFont1.GetUnicodeRanges" />
+    <seealso cref="IDWriteFontFace1.GetUnicodeRanges" />
+  </member>
+  <member name="DWRITE_UNICODE_RANGE.first">
+    <summary>
+      <para>The first code point in the Unicode range.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_UNICODE_RANGE.last">
+    <summary>
+      <para>The last code point in the Unicode range.</para>
+    </summary>
+  </member>
+</doc>

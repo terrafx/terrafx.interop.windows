@@ -7,22 +7,29 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PrintDocumentPackageStatus.xml' path='doc/member[@name="PrintDocumentPackageStatus"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct PrintDocumentPackageStatus
 {
+    /// <include file='PrintDocumentPackageStatus.xml' path='doc/member[@name="PrintDocumentPackageStatus.JobId"]/*' />
     [NativeTypeName("UINT32")]
     public uint JobId;
 
+    /// <include file='PrintDocumentPackageStatus.xml' path='doc/member[@name="PrintDocumentPackageStatus.CurrentDocument"]/*' />
     [NativeTypeName("INT32")]
     public int CurrentDocument;
 
+    /// <include file='PrintDocumentPackageStatus.xml' path='doc/member[@name="PrintDocumentPackageStatus.CurrentPage"]/*' />
     [NativeTypeName("INT32")]
     public int CurrentPage;
 
+    /// <include file='PrintDocumentPackageStatus.xml' path='doc/member[@name="PrintDocumentPackageStatus.CurrentPageTotal"]/*' />
     [NativeTypeName("INT32")]
     public int CurrentPageTotal;
 
+    /// <include file='PrintDocumentPackageStatus.xml' path='doc/member[@name="PrintDocumentPackageStatus.Completion"]/*' />
     public PrintDocumentPackageCompletion Completion;
 
+    /// <include file='PrintDocumentPackageStatus.xml' path='doc/member[@name="PrintDocumentPackageStatus.PackageStatus"]/*' />
     public HRESULT PackageStatus;
 }

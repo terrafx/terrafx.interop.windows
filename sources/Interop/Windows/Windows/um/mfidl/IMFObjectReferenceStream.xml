@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFObjectReferenceStream.LoadReference">
+    <summary>
+      <para>Marshals an interface from data stored in the stream.</para>
+    </summary>
+    <param name="riid">
+      <para>Interface identifier of the interface to marshal.</para>
+    </param>
+    <param name="ppv">
+      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFObjectReferenceStream" />
+  </member>
+  <member name="IMFObjectReferenceStream.SaveReference">
+    <summary>
+      <para>Stores the data needed to marshal an interface across a process boundary.</para>
+    </summary>
+    <param name="riid">
+      <para>Interface identifier of the interface to marshal.</para>
+    </param>
+    <param name="pUnk">
+      <para>Pointer to the <b>IUnknown</b> interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFObjectReferenceStream" />
+  </member>
+  <member name="IMFObjectReferenceStream">
+    <summary>
+      <para>Marshals an interface pointer to and from a stream.</para>
+      <para>Stream objects that support <b>IStream</b> can expose this interface to provide custom marshaling for interface pointers.</para>
+    </summary>
+    <seealso cref="MFSerializeAttributesToStream" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

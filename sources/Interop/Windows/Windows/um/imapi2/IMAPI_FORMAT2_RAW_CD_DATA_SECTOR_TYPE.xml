@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE">
+    <summary>
+      <para>Defines values that indicate the type of sub-channel data.</para>
+    </summary>
+    <remarks>
+      <para>For details on the format of the sub-channel data, see Sub-Channel Field Formats in the latest release of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
+    </remarks>
+    <seealso cref="IDiscFormat2RawCD.get_SupportedSectorTypes" />
+  </member>
+  <member name="IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE.IMAPI_FORMAT2_RAW_CD_SUBCODE_PQ_ONLY">
+    <summary>
+      <para>The data contains P and Q sub-channel data.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE.IMAPI_FORMAT2_RAW_CD_SUBCODE_IS_COOKED">
+    <summary>
+      <para>The data contains corrected and de-interleaved R-W sub-channel data.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE.IMAPI_FORMAT2_RAW_CD_SUBCODE_IS_RAW">
+    <summary>
+      <para>The data contains raw P-W sub-channel data that is returned in the order received from the disc surface.</para>
+    </summary>
+  </member>
+</doc>

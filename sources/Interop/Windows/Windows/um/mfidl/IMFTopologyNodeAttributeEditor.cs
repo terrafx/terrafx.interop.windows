@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTopologyNodeAttributeEditor.xml' path='doc/member[@name="IMFTopologyNodeAttributeEditor"]/*' />
 [Guid("676AA6DD-238A-410D-BB99-65668D01605A")]
 [NativeTypeName("struct IMFTopologyNodeAttributeEditor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAtt
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAtt
         return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAtt
         return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[1]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAtt
         return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[2]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTopologyNodeAttributeEditor.xml' path='doc/member[@name="IMFTopologyNodeAttributeEditor.UpdateNodeAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT UpdateNodeAttributes([NativeTypeName("TOPOID")] ulong TopoId, [NativeTypeName("DWORD")] uint cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates)

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MENUBANDPARTS.xml' path='doc/member[@name="MENUBANDPARTS"]/*' />
 public enum MENUBANDPARTS
 {
+    /// <include file='MENUBANDPARTS.xml' path='doc/member[@name="MENUBANDPARTS.MDP_NEWAPPBUTTON"]/*' />
     MDP_NEWAPPBUTTON = 1,
+
+    /// <include file='MENUBANDPARTS.xml' path='doc/member[@name="MENUBANDPARTS.MDP_SEPERATOR"]/*' />
     MDP_SEPERATOR = 2,
 }

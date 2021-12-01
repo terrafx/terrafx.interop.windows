@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITrackShellMenu.Popup">
+    <summary>
+      <para>Displays a modal pop-up menu at a specific location.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the parent window of the pop-up menu.</para>
+    </param>
+    <param name="ppt">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that specifies an initial point in screen coordinates. The pop-up menu is displayed in relation to this point as determined by the position flags set in <i>dwFlags</i>.</para>
+    </param>
+    <param name="prcExclude">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162907(v=vs.85)">RECTL</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162907(v=vs.85)">RECTL</a> structure that specifies the rectangle to exclude when positioning the menu. The alignment of the menu in relation to this area is determined by the alignment flags set in <i>dwFlags</i>. This parameter can be set to <b>NULL</b>.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>MP_POPUPFLAGS</b></para>
+      <para>One or more of the <a href="https://docs.microsoft.com//windows/desktop/shell/mp-popupflags">MP_POPUPFLAGS</a> constants that specify options involved in the display of the pop-up menu.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITrackShellMenu.SetObscured">
+    <summary>
+      <para>Coordinates obscured items on a toolbar with items in a menu.</para>
+    </summary>
+    <param name="hwndTB">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to a toolbar control whose buttons have command IDs that correspond to menu IDs in the tracked menu.</para>
+    </param>
+    <param name="punkBand">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>If this parameter points to a COM object that supports the <see cref="IShellMenu" /> interface, menu items that correspond to visible toolbar buttons are filtered out of the menu so that they do not appear in both places.</para>
+      <para>If this parameter is <b>NULL</b> or points to a COM object that does not support the <see cref="IShellMenu" /> interface, then the obscured buttons in the toolbar are added to the shell menu in the position specified in <i>dwSMSetFlags</i>.</para>
+    </param>
+    <param name="dwSMSetFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>One of the following values.</para>
+      <h4>SMSET_TOP (0x10000000)</h4>
+      <para>New menu items are added at the top of the menu.</para>
+      <h4>SMSET_BOTTOM (0x20000000)</h4>
+      <para>New menu items are added at the bottom of the menu.</para>
+      <h4>SMSET_DONTOWN</h4>
+      <para>Reserved; do not use.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Obscured buttons are those buttons that cannot be displayed due to toolbar size limitations. Commonly, to see them you must press the chevron at the end of the toolbar.</para>
+    </remarks>
+  </member>
+  <member name="ITrackShellMenu">
+    <summary>
+      <para>Exposes methods that extend the <see cref="IShellMenu" /> interface by providing the ability to coordinate toolbar buttons with a menu as well as display a pop-up menu.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IShellMenu" /> interface, from which it inherits.</para>
+      <para>This interface is implemented by the track Shell menu object. You can obtain that object by calling <see cref="CoCreateInstance" /> with a class identifier (CLSID) of <code>CLSID_TrackShellMenu</code>. You can obtain interface pointers using standard Component Object Model (COM) procedures. The value of CLSID_TrackShellMenu is {8278F931-2A3E-11d2-838F-00C04FD918D0}.</para>
+    </remarks>
+  </member>
+</doc>

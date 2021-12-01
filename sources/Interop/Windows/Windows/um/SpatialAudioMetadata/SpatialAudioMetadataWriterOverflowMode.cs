@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpatialAudioMetadataWriterOverflowMode.xml' path='doc/member[@name="SpatialAudioMetadataWriterOverflowMode"]/*' />
 public enum SpatialAudioMetadataWriterOverflowMode
 {
+    /// <include file='SpatialAudioMetadataWriterOverflowMode.xml' path='doc/member[@name="SpatialAudioMetadataWriterOverflowMode.SpatialAudioMetadataWriterOverflow_Fail"]/*' />
     SpatialAudioMetadataWriterOverflow_Fail = 0,
+
+    /// <include file='SpatialAudioMetadataWriterOverflowMode.xml' path='doc/member[@name="SpatialAudioMetadataWriterOverflowMode.SpatialAudioMetadataWriterOverflow_MergeWithNew"]/*' />
     SpatialAudioMetadataWriterOverflow_MergeWithNew = (SpatialAudioMetadataWriterOverflow_Fail + 1),
+
+    /// <include file='SpatialAudioMetadataWriterOverflowMode.xml' path='doc/member[@name="SpatialAudioMetadataWriterOverflowMode.SpatialAudioMetadataWriterOverflow_MergeWithLast"]/*' />
     SpatialAudioMetadataWriterOverflow_MergeWithLast = (SpatialAudioMetadataWriterOverflow_MergeWithNew + 1),
 }

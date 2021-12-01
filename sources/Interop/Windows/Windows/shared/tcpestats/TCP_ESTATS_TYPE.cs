@@ -5,16 +5,36 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE"]/*' />
 public enum TCP_ESTATS_TYPE
 {
+    /// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE.TcpConnectionEstatsSynOpts"]/*' />
     TcpConnectionEstatsSynOpts,
+
+    /// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE.TcpConnectionEstatsData"]/*' />
     TcpConnectionEstatsData,
+
+    /// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE.TcpConnectionEstatsSndCong"]/*' />
     TcpConnectionEstatsSndCong,
+
+    /// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE.TcpConnectionEstatsPath"]/*' />
     TcpConnectionEstatsPath,
+
+    /// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE.TcpConnectionEstatsSendBuff"]/*' />
     TcpConnectionEstatsSendBuff,
+
+    /// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE.TcpConnectionEstatsRec"]/*' />
     TcpConnectionEstatsRec,
+
+    /// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE.TcpConnectionEstatsObsRec"]/*' />
     TcpConnectionEstatsObsRec,
+
+    /// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE.TcpConnectionEstatsBandwidth"]/*' />
     TcpConnectionEstatsBandwidth,
+
+    /// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE.TcpConnectionEstatsFineRtt"]/*' />
     TcpConnectionEstatsFineRtt,
+
+    /// <include file='TCP_ESTATS_TYPE.xml' path='doc/member[@name="TCP_ESTATS_TYPE.TcpConnectionEstatsMaximum"]/*' />
     TcpConnectionEstatsMaximum,
 }

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BANDSITEINFO.xml' path='doc/member[@name="BANDSITEINFO"]/*' />
 public partial struct BANDSITEINFO
 {
+    /// <include file='BANDSITEINFO.xml' path='doc/member[@name="BANDSITEINFO.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='BANDSITEINFO.xml' path='doc/member[@name="BANDSITEINFO.dwState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwState;
 
+    /// <include file='BANDSITEINFO.xml' path='doc/member[@name="BANDSITEINFO.dwStyle"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStyle;
 }

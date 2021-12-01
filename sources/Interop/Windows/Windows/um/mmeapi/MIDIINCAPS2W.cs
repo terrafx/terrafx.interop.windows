@@ -8,27 +8,36 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIDIINCAPS2W.xml' path='doc/member[@name="MIDIINCAPS2W"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct MIDIINCAPS2W
 {
+    /// <include file='MIDIINCAPS2W.xml' path='doc/member[@name="MIDIINCAPS2W.wMid"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMid;
 
+    /// <include file='MIDIINCAPS2W.xml' path='doc/member[@name="MIDIINCAPS2W.wPid"]/*' />
     [NativeTypeName("WORD")]
     public ushort wPid;
 
+    /// <include file='MIDIINCAPS2W.xml' path='doc/member[@name="MIDIINCAPS2W.vDriverVersion"]/*' />
     [NativeTypeName("MMVERSION")]
     public uint vDriverVersion;
 
+    /// <include file='MIDIINCAPS2W.xml' path='doc/member[@name="MIDIINCAPS2W.szPname"]/*' />
     [NativeTypeName("WCHAR [32]")]
     public fixed ushort szPname[32];
 
+    /// <include file='MIDIINCAPS2W.xml' path='doc/member[@name="MIDIINCAPS2W.dwSupport"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSupport;
 
+    /// <include file='MIDIINCAPS2W.xml' path='doc/member[@name="MIDIINCAPS2W.ManufacturerGuid"]/*' />
     public Guid ManufacturerGuid;
 
+    /// <include file='MIDIINCAPS2W.xml' path='doc/member[@name="MIDIINCAPS2W.ProductGuid"]/*' />
     public Guid ProductGuid;
 
+    /// <include file='MIDIINCAPS2W.xml' path='doc/member[@name="MIDIINCAPS2W.NameGuid"]/*' />
     public Guid NameGuid;
 }

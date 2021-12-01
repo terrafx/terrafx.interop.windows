@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GLOBALOPT_EH_VALUES.xml' path='doc/member[@name="GLOBALOPT_EH_VALUES"]/*' />
 public enum GLOBALOPT_EH_VALUES
 {
+    /// <include file='GLOBALOPT_EH_VALUES.xml' path='doc/member[@name="GLOBALOPT_EH_VALUES.COMGLB_EXCEPTION_HANDLE"]/*' />
     COMGLB_EXCEPTION_HANDLE = 0,
+
+    /// <include file='GLOBALOPT_EH_VALUES.xml' path='doc/member[@name="GLOBALOPT_EH_VALUES.COMGLB_EXCEPTION_DONOT_HANDLE_FATAL"]/*' />
     COMGLB_EXCEPTION_DONOT_HANDLE_FATAL = 1,
+
+    /// <include file='GLOBALOPT_EH_VALUES.xml' path='doc/member[@name="GLOBALOPT_EH_VALUES.COMGLB_EXCEPTION_DONOT_HANDLE"]/*' />
     COMGLB_EXCEPTION_DONOT_HANDLE = COMGLB_EXCEPTION_DONOT_HANDLE_FATAL,
+
+    /// <include file='GLOBALOPT_EH_VALUES.xml' path='doc/member[@name="GLOBALOPT_EH_VALUES.COMGLB_EXCEPTION_DONOT_HANDLE_ANY"]/*' />
     COMGLB_EXCEPTION_DONOT_HANDLE_ANY = 2,
 }

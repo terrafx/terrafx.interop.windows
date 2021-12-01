@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D_POINT_2U">
+    <summary>
+      <para>Represents an x-coordinate and y-coordinate pair, expressed as an unsigned 32-bit integer value, in two-dimensional space.</para>
+    </summary>
+  </member>
+  <member name="D2D_POINT_2U.x">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The x-coordinate value of the point.</para>
+    </summary>
+  </member>
+  <member name="D2D_POINT_2U.y">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The y-coordinate value of the point.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer"]/*' />
 [Guid("C2B5F241-DAA0-4507-9E16-5A1EAA2B7A5C")]
 [NativeTypeName("struct ISpRecognizer : ISpProperties")]
 [NativeInheritance("ISpProperties")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecognizer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, uint>)(lpVtbl[1]))((ISpRecognizer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, uint>)(lpVtbl[2]))((ISpRecognizer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpProperties.SetPropertyNum" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPropertyNum([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int lValue)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ushort*, int, int>)(lpVtbl[3]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, lValue);
     }
 
+    /// <inheritdoc cref="ISpProperties.GetPropertyNum" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPropertyNum([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG *")] int* plValue)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ushort*, int*, int>)(lpVtbl[4]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, plValue);
     }
 
+    /// <inheritdoc cref="ISpProperties.SetPropertyString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPCWSTR")] ushort* pValue)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ushort*, ushort*, int>)(lpVtbl[5]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, pValue);
     }
 
+    /// <inheritdoc cref="ISpProperties.GetPropertyString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPWSTR *")] ushort** ppCoMemValue)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ushort*, ushort**, int>)(lpVtbl[6]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.SetRecognizer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetRecognizer(ISpObjectToken* pRecognizer)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ISpObjectToken*, int>)(lpVtbl[7]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pRecognizer);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetRecognizer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetRecognizer(ISpObjectToken** ppRecognizer)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ISpObjectToken**, int>)(lpVtbl[8]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppRecognizer);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.SetInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetInput(IUnknown* pUnkInput, BOOL fAllowFormatChanges)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, IUnknown*, BOOL, int>)(lpVtbl[9]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pUnkInput, fAllowFormatChanges);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetInputObjectToken"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetInputObjectToken(ISpObjectToken** ppToken)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ISpObjectToken**, int>)(lpVtbl[10]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppToken);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetInputStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetInputStream(ISpStreamFormat** ppStream)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ISpStreamFormat**, int>)(lpVtbl[11]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppStream);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.CreateRecoContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT CreateRecoContext(ISpRecoContext** ppNewCtxt)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ISpRecoContext**, int>)(lpVtbl[12]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppNewCtxt);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetRecoProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetRecoProfile(ISpObjectToken** ppToken)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ISpObjectToken**, int>)(lpVtbl[13]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppToken);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.SetRecoProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetRecoProfile(ISpObjectToken* pToken)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ISpObjectToken*, int>)(lpVtbl[14]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pToken);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.IsSharedInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT IsSharedInstance()
@@ -130,6 +147,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, int>)(lpVtbl[15]))((ISpRecognizer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetRecoState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetRecoState(SPRECOSTATE* pState)
@@ -137,6 +155,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, SPRECOSTATE*, int>)(lpVtbl[16]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pState);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.SetRecoState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetRecoState(SPRECOSTATE NewState)
@@ -144,6 +163,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, SPRECOSTATE, int>)(lpVtbl[17]))((ISpRecognizer*)Unsafe.AsPointer(ref this), NewState);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetStatus(SPRECOGNIZERSTATUS* pStatus)
@@ -151,6 +171,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, SPRECOGNIZERSTATUS*, int>)(lpVtbl[18]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pStatus);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetFormat(SPSTREAMFORMATTYPE WaveFormatType, Guid* pFormatId, WAVEFORMATEX** ppCoMemWFEX)
@@ -158,6 +179,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, SPSTREAMFORMATTYPE, Guid*, WAVEFORMATEX**, int>)(lpVtbl[19]))((ISpRecognizer*)Unsafe.AsPointer(ref this), WaveFormatType, pFormatId, ppCoMemWFEX);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.IsUISupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported)
@@ -165,6 +187,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, ushort*, void*, uint, BOOL*, int>)(lpVtbl[20]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.DisplayUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData)
@@ -172,6 +195,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
         return ((delegate* unmanaged<ISpRecognizer*, HWND, ushort*, ushort*, void*, uint, int>)(lpVtbl[21]))((ISpRecognizer*)Unsafe.AsPointer(ref this), hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
     }
 
+    /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.EmulateRecognition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT EmulateRecognition(ISpPhrase* pPhrase)

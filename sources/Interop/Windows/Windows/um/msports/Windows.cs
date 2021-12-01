@@ -9,34 +9,42 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SerialDisplayAdvancedSettings"]/*' />
     [DllImport("msports", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int SerialDisplayAdvancedSettings(HWND ParentHwnd, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ComDBOpen"]/*' />
     [DllImport("msports", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ComDBOpen([NativeTypeName("PHCOMDB")] HCOMDB* PHComDB);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ComDBClose"]/*' />
     [DllImport("msports", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ComDBClose(HCOMDB HComDB);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ComDBGetCurrentPortUsage"]/*' />
     [DllImport("msports", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ComDBGetCurrentPortUsage(HCOMDB HComDB, [NativeTypeName("PBYTE")] byte* Buffer, [NativeTypeName("DWORD")] uint BufferSize, [NativeTypeName("ULONG")] uint ReportType, [NativeTypeName("LPDWORD")] uint* MaxPortsReported);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ComDBClaimNextFreePort"]/*' />
     [DllImport("msports", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ComDBClaimNextFreePort(HCOMDB HComDB, [NativeTypeName("LPDWORD")] uint* ComNumber);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ComDBClaimPort"]/*' />
     [DllImport("msports", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ComDBClaimPort(HCOMDB HComDB, [NativeTypeName("DWORD")] uint ComNumber, BOOL ForceClaim, [NativeTypeName("PBOOL")] BOOL* Forced);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ComDBReleasePort"]/*' />
     [DllImport("msports", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ComDBReleasePort(HCOMDB HComDB, [NativeTypeName("DWORD")] uint ComNumber);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ComDBResizeDatabase"]/*' />
     [DllImport("msports", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ComDBResizeDatabase(HCOMDB HComDB, [NativeTypeName("DWORD")] uint NewSize);

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SECURITY_DESCRIPTOR">
+    <summary>
+      <para>The <b>SECURITY_DESCRIPTOR</b> structure contains the security information associated with an object. Applications use this structure to set and query an object's security status.</para>
+      <para>Because the internal format of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> can vary, we recommend that applications  not modify the <b>SECURITY_DESCRIPTOR</b> structure directly. For creating and manipulating a security descriptor, use the functions listed in See Also.</para>
+    </summary>
+    <remarks>
+      <para>A security descriptor includes information that specifies the following components of an object's security:</para>
+      <list type="bullet">
+        <item>
+          <description>An owner <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID)</description>
+        </item>
+        <item>
+          <description>A primary group SID</description>
+        </item>
+        <item>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">discretionary access control list</a> (DACL)</description>
+        </item>
+        <item>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">system access control list</a> (SACL)</description>
+        </item>
+        <item>
+          <description>Qualifiers for the preceding items</description>
+        </item>
+      </list>
+      <para>Several functions that use the <b>SECURITY_DESCRIPTOR</b> structure require that this structure be aligned on a valid pointer boundary in memory. These boundaries vary depending on the type of processor used. Memory allocation functions such as <b>malloc</b> and <b>LocalAlloc</b> return properly aligned pointers.</para>
+    </remarks>
+    <seealso cref="GetSecurityDescriptorControl" />
+    <seealso cref="GetSecurityDescriptorDacl" />
+    <seealso cref="GetSecurityDescriptorGroup" />
+    <seealso cref="GetSecurityDescriptorLength" />
+    <seealso cref="GetSecurityDescriptorOwner" />
+    <seealso cref="GetSecurityDescriptorRMControl" />
+    <seealso cref="GetSecurityDescriptorSacl" />
+    <seealso cref="InitializeSecurityDescriptor" />
+    <seealso cref="IsValidSecurityDescriptor" />
+    <seealso cref="SetSecurityDescriptorDacl" />
+    <seealso cref="SetSecurityDescriptorGroup" />
+    <seealso cref="SetSecurityDescriptorOwner" />
+    <seealso cref="SetSecurityDescriptorRMControl" />
+    <seealso cref="SetSecurityDescriptorSacl" />
+  </member>
+</doc>

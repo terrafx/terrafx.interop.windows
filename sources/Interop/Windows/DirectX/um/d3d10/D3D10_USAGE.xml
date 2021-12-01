@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_USAGE">
+    <summary>
+      <para>Identifies expected resource use during rendering. The usage directly reflects whether a resource is accessible by the CPU and/or the GPU.</para>
+    </summary>
+    <remarks>
+      <para>An application identifies the way a resource is intended to be used (its usage) in a resource description. There are several structures for creating resources including: <see cref="D3D10_TEXTURE1D_DESC" />, <see cref="D3D10_TEXTURE2D_DESC" />, <see cref="D3D10_TEXTURE3D_DESC" />, <see cref="D3D10_BUFFER_DESC" />, and <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10-image-load-info">D3DX10_IMAGE_LOAD_INFO</a>.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <para>Differences between Direct3D 9 and Direct3D 10:</para>
+            <para>In Direct3D 9, you specify the type of memory a resource should be created in at resource creation time (using D3DPOOL). It was an application's job to decide what memory pool would provide the best combination of functionality and performance.</para>
+            <para>In Direct3D 10, an application no longer specifies what type of memory (the pool) to create a resource in. Instead, you specify the intended usage of the resource, and let the runtime (in concert with the driver and a memory manager) choose the type of memory that will achieve the best performance.</para>
+          </description>
+        </listheader>
+      </list>
+      <h3>Resource Usage Restrictions</h3>
+      <para>Each usage dictates a tradeoff between functionality and performance. In general, resource accessing is accomplished with the following APIs.</para>
+      <list type="bullet">
+        <item>
+          <description>CPU access is done with <see cref="ID3D10Buffer.Map" />, <see cref="ID3D10Texture1D.Map" />, <see cref="ID3D10Texture2D.Map" />, or <see cref="ID3D10Texture3D.Map" /></description>
+        </item>
+        <item>
+          <description>GPU access is done with <see cref="CopySubresourceRegion" />, <see cref="CopyResource" />, or <see cref="UpdateSubresource" />.</description>
+        </item>
+      </list>
+      <para>Use the following table to choose the usage that best describes how the resource will need to be accessed by the CPU and/or the GPU. Of course, there will be performance tradeoffs.</para>
+      <list type="table">
+        <listheader>
+          <description>Resource Usage</description>
+          <description>Default</description>
+          <description>Dynamic</description>
+          <description>Immutable</description>
+          <description>Staging</description>
+        </listheader>
+        <item>
+          <description>GPU-Read</description>
+          <description>yes</description>
+          <description>yes¹</description>
+          <description>yes</description>
+          <description>yes<sup>1, 2</sup></description>
+        </item>
+        <item>
+          <description>GPU-Write</description>
+          <description>yes¹</description>
+          <description></description>
+          <description></description>
+          <description>yes<sup>1, 2</sup></description>
+        </item>
+        <item>
+          <description>CPU-Read</description>
+          <description></description>
+          <description></description>
+          <description></description>
+          <description>yes<sup>1, 2</sup></description>
+        </item>
+        <item>
+          <description>CPU-Write</description>
+          <description></description>
+          <description>yes</description>
+          <description></description>
+          <description>yes<sup>1, 2</sup></description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>1 - This is restricted to <see cref="CopySubresourceRegion" />, <see cref="CopyResource" />, and <see cref="UpdateSubresource" />.</description>
+        </item>
+        <item>
+          <description>2 - Cannot be a depth-stencil buffer or a multisampled render target.</description>
+        </item>
+      </list>
+      <h3>Resource Bind Options</h3>
+      <para>To maximize performance, not all resource usage options can be used as input or output resources to the pipeline. This table identifies these limitations.</para>
+      <list type="table">
+        <listheader>
+          <description>Resource Can Be Bound As</description>
+          <description>Default</description>
+          <description>Dynamic</description>
+          <description>Immutable</description>
+          <description>Staging</description>
+        </listheader>
+        <item>
+          <description>Input to a Stage</description>
+          <description>yes³</description>
+          <description>yes⁴</description>
+          <description>yes</description>
+          <description></description>
+        </item>
+        <item>
+          <description>Output from a Stage</description>
+          <description>yes³</description>
+          <description></description>
+          <description></description>
+          <description></description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>3 - If bound as an input and an output using different views, each view must use different <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresources</a>.</description>
+        </item>
+        <item>
+          <description>4 - The resource can only be created with a single <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource</a>. The resource cannot be a texture array. The resource cannot be a mipmap chain.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-enums">Resource Enumerations</seealso>
+  </member>
+  <member name="D3D10_USAGE.D3D10_USAGE_DEFAULT">
+    <summary>
+      <para>A resource that requires read and write access by the GPU. This is likely to be the most common usage choice.</para>
+    </summary>
+  </member>
+  <member name="D3D10_USAGE.D3D10_USAGE_IMMUTABLE">
+    <summary>
+      <para>A resource that can only be read by the GPU. It cannot be written by the GPU, and cannot be accessed at all by the CPU. This type of resource must be initialized when it is created, since it cannot be changed after creation.</para>
+    </summary>
+  </member>
+  <member name="D3D10_USAGE.D3D10_USAGE_DYNAMIC">
+    <summary>
+      <para>A resource that is accessible by both the GPU and the CPU (write only). A dynamic resource is a good choice for a resource that will be updated by the CPU at least once per frame. To write to a dynamic resource on the CPU, use a <b>Map</b> method. You can write to a dynamic resource on the GPU using <see cref="CopyResource" /> or <see cref="CopySubresourceRegion" />.</para>
+    </summary>
+  </member>
+  <member name="D3D10_USAGE.D3D10_USAGE_STAGING">
+    <summary>
+      <para>A resource that supports data transfer (copy) from the GPU to the CPU.</para>
+    </summary>
+  </member>
+</doc>

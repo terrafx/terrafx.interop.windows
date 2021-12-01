@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG.xml' path='doc/member[@name="CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG"]/*' />
 public unsafe partial struct CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG
 {
+    /// <include file='CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG.xml' path='doc/member[@name="CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG.xml' path='doc/member[@name="CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG.TriggerId"]/*' />
     [NativeTypeName("PCWSTR")]
     public ushort* TriggerId;
 }

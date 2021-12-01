@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IF_OPER_STATUS">
+    <summary>
+      <para>The <b>IF_OPER_STATUS</b> enumeration specifies the operational status of an interface.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IF_OPER_STATUS</b> enumeration is used in the <b>OperStatus</b> member of the <see cref="IP_ADAPTER_ADDRESSES" />  structure.</para>
+    </remarks>
+    <seealso cref="IP_ADAPTER_ADDRESSES" />
+  </member>
+  <member name="IF_OPER_STATUS.IfOperStatusUp">
+    <summary>
+      <para>The interface is up and operational. The interface is able to pass packets.</para>
+    </summary>
+  </member>
+  <member name="IF_OPER_STATUS.IfOperStatusDown">
+    <summary>
+      <para>The interface is not down and not operational. The interface is unable to pass packets.</para>
+    </summary>
+  </member>
+  <member name="IF_OPER_STATUS.IfOperStatusTesting">
+    <summary>
+      <para>The interface is being tested.</para>
+    </summary>
+  </member>
+  <member name="IF_OPER_STATUS.IfOperStatusUnknown">
+    <summary>
+      <para>The interface status is unknown.</para>
+    </summary>
+  </member>
+  <member name="IF_OPER_STATUS.IfOperStatusDormant">
+    <summary>
+      <para>The interface is not
+in a condition to pass packets. The interface is  not up, but is
+in a pending state, waiting for some external event.  This state identifies the situation where the
+interface is waiting for events to place it in the up state.</para>
+    </summary>
+  </member>
+  <member name="IF_OPER_STATUS.IfOperStatusNotPresent">
+    <summary>
+      <para>This state is a refinement on the down state which
+indicates that the interface is down specifically because
+some component (for example, a hardware component) is not present in
+the system.</para>
+    </summary>
+  </member>
+  <member name="IF_OPER_STATUS.IfOperStatusLowerLayerDown">
+    <summary>
+      <para>This state is a refinement on the down state.
+The interface is operational, but a networking layer below the interface is not operational.</para>
+    </summary>
+  </member>
+</doc>

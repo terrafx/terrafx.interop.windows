@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEM_POWER_STATE.xml' path='doc/member[@name="SYSTEM_POWER_STATE"]/*' />
 public enum SYSTEM_POWER_STATE
 {
+    /// <include file='SYSTEM_POWER_STATE.xml' path='doc/member[@name="SYSTEM_POWER_STATE.PowerSystemUnspecified"]/*' />
     PowerSystemUnspecified = 0,
+
+    /// <include file='SYSTEM_POWER_STATE.xml' path='doc/member[@name="SYSTEM_POWER_STATE.PowerSystemWorking"]/*' />
     PowerSystemWorking = 1,
+
+    /// <include file='SYSTEM_POWER_STATE.xml' path='doc/member[@name="SYSTEM_POWER_STATE.PowerSystemSleeping1"]/*' />
     PowerSystemSleeping1 = 2,
+
+    /// <include file='SYSTEM_POWER_STATE.xml' path='doc/member[@name="SYSTEM_POWER_STATE.PowerSystemSleeping2"]/*' />
     PowerSystemSleeping2 = 3,
+
+    /// <include file='SYSTEM_POWER_STATE.xml' path='doc/member[@name="SYSTEM_POWER_STATE.PowerSystemSleeping3"]/*' />
     PowerSystemSleeping3 = 4,
+
+    /// <include file='SYSTEM_POWER_STATE.xml' path='doc/member[@name="SYSTEM_POWER_STATE.PowerSystemHibernate"]/*' />
     PowerSystemHibernate = 5,
+
+    /// <include file='SYSTEM_POWER_STATE.xml' path='doc/member[@name="SYSTEM_POWER_STATE.PowerSystemShutdown"]/*' />
     PowerSystemShutdown = 6,
+
+    /// <include file='SYSTEM_POWER_STATE.xml' path='doc/member[@name="SYSTEM_POWER_STATE.PowerSystemMaximum"]/*' />
     PowerSystemMaximum = 7,
 }

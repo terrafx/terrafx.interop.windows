@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxFactory.xml' path='doc/member[@name="IAppxFactory"]/*' />
 [Guid("BEB94909-E451-438B-B5A7-D79E767B75D8")]
 [NativeTypeName("struct IAppxFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface
         return ((delegate* unmanaged<IAppxFactory*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface
         return ((delegate* unmanaged<IAppxFactory*, uint>)(lpVtbl[1]))((IAppxFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface
         return ((delegate* unmanaged<IAppxFactory*, uint>)(lpVtbl[2]))((IAppxFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxFactory.xml' path='doc/member[@name="IAppxFactory.CreatePackageWriter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreatePackageWriter(IStream* outputStream, APPX_PACKAGE_SETTINGS* settings, IAppxPackageWriter** packageWriter)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface
         return ((delegate* unmanaged<IAppxFactory*, IStream*, APPX_PACKAGE_SETTINGS*, IAppxPackageWriter**, int>)(lpVtbl[3]))((IAppxFactory*)Unsafe.AsPointer(ref this), outputStream, settings, packageWriter);
     }
 
+    /// <include file='IAppxFactory.xml' path='doc/member[@name="IAppxFactory.CreatePackageReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreatePackageReader(IStream* inputStream, IAppxPackageReader** packageReader)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface
         return ((delegate* unmanaged<IAppxFactory*, IStream*, IAppxPackageReader**, int>)(lpVtbl[4]))((IAppxFactory*)Unsafe.AsPointer(ref this), inputStream, packageReader);
     }
 
+    /// <include file='IAppxFactory.xml' path='doc/member[@name="IAppxFactory.CreateManifestReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateManifestReader(IStream* inputStream, IAppxManifestReader** manifestReader)
@@ -62,6 +69,7 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface
         return ((delegate* unmanaged<IAppxFactory*, IStream*, IAppxManifestReader**, int>)(lpVtbl[5]))((IAppxFactory*)Unsafe.AsPointer(ref this), inputStream, manifestReader);
     }
 
+    /// <include file='IAppxFactory.xml' path='doc/member[@name="IAppxFactory.CreateBlockMapReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateBlockMapReader(IStream* inputStream, IAppxBlockMapReader** blockMapReader)
@@ -69,6 +77,7 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface
         return ((delegate* unmanaged<IAppxFactory*, IStream*, IAppxBlockMapReader**, int>)(lpVtbl[6]))((IAppxFactory*)Unsafe.AsPointer(ref this), inputStream, blockMapReader);
     }
 
+    /// <include file='IAppxFactory.xml' path='doc/member[@name="IAppxFactory.CreateValidatedBlockMapReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CreateValidatedBlockMapReader(IStream* blockMapStream, [NativeTypeName("LPCWSTR")] ushort* signatureFileName, IAppxBlockMapReader** blockMapReader)

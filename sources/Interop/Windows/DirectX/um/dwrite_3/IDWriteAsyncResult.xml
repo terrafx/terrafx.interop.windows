@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteAsyncResult.GetResult">
+    <summary>
+      <para>Returns the result of the asynchronous operation. The return value is E_PENDING if the operation has not yet completed.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns the result of the asynchronous operation. The return value is E_PENDING if the operation has not yet completed.</para>
+    </returns>
+    <seealso cref="IDWriteAsyncResult" />
+  </member>
+  <member name="IDWriteAsyncResult.GetWaitHandle">
+    <summary>
+      <para>Returns a handle that can be used to wait for the asynchronous operation to complete. The handle remains valid until the interface is released.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HANDLE</b></para>
+      <para>Returns a handle that can be used to wait for the asynchronous operation to complete. The handle remains valid until the interface is released.</para>
+    </returns>
+    <seealso cref="IDWriteAsyncResult" />
+  </member>
+  <member name="IDWriteAsyncResult">
+    <summary>
+      <para>Represents the result of an asynchronous
+operation. A client can use the interface to wait for the operation to
+complete and to get the result.</para>
+    </summary>
+    <remarks>
+      <para>IDWriteAsyncResult is returned by <see cref="IDWriteRemoteFontFileStream.BeginDownload" /> for signaling completion of a font download operation.</para>
+    </remarks>
+  </member>
+</doc>

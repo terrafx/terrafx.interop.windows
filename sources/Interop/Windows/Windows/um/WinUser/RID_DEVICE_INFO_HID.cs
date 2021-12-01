@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RID_DEVICE_INFO_HID.xml' path='doc/member[@name="RID_DEVICE_INFO_HID"]/*' />
 public partial struct RID_DEVICE_INFO_HID
 {
+    /// <include file='RID_DEVICE_INFO_HID.xml' path='doc/member[@name="RID_DEVICE_INFO_HID.dwVendorId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVendorId;
 
+    /// <include file='RID_DEVICE_INFO_HID.xml' path='doc/member[@name="RID_DEVICE_INFO_HID.dwProductId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProductId;
 
+    /// <include file='RID_DEVICE_INFO_HID.xml' path='doc/member[@name="RID_DEVICE_INFO_HID.dwVersionNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersionNumber;
 
+    /// <include file='RID_DEVICE_INFO_HID.xml' path='doc/member[@name="RID_DEVICE_INFO_HID.usUsagePage"]/*' />
     public ushort usUsagePage;
 
+    /// <include file='RID_DEVICE_INFO_HID.xml' path='doc/member[@name="RID_DEVICE_INFO_HID.usUsage"]/*' />
     public ushort usUsage;
 }

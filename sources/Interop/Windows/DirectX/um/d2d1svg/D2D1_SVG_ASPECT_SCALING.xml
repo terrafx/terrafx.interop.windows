@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_SVG_ASPECT_SCALING">
+    <summary>
+      <para>The meetOrSlice portion of the SVG preserveAspectRatio attribute.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ASPECT_SCALING.D2D1_SVG_ASPECT_SCALING_MEET">
+    <summary>
+      <para>Scale the viewBox up as much as possible such that the entire viewBox is visible within the viewport.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ASPECT_SCALING.D2D1_SVG_ASPECT_SCALING_SLICE">
+    <summary>
+      <para>Scale the viewBox down as much as possible such that the entire viewport is
+covered by the viewBox.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ASPECT_SCALING.D2D1_SVG_ASPECT_SCALING_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

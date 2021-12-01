@@ -7,16 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHChangeDWORDAsIDList.xml' path='doc/member[@name="SHChangeDWORDAsIDList"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SHChangeDWORDAsIDList
 {
+    /// <include file='SHChangeDWORDAsIDList.xml' path='doc/member[@name="SHChangeDWORDAsIDList.cb"]/*' />
     public ushort cb;
 
+    /// <include file='SHChangeDWORDAsIDList.xml' path='doc/member[@name="SHChangeDWORDAsIDList.dwItem1"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwItem1;
 
+    /// <include file='SHChangeDWORDAsIDList.xml' path='doc/member[@name="SHChangeDWORDAsIDList.dwItem2"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwItem2;
 
+    /// <include file='SHChangeDWORDAsIDList.xml' path='doc/member[@name="SHChangeDWORDAsIDList.cbZero"]/*' />
     public ushort cbZero;
 }

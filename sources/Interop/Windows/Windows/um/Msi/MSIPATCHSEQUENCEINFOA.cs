@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSIPATCHSEQUENCEINFOA.xml' path='doc/member[@name="MSIPATCHSEQUENCEINFOA"]/*' />
 public unsafe partial struct MSIPATCHSEQUENCEINFOA
 {
+    /// <include file='MSIPATCHSEQUENCEINFOA.xml' path='doc/member[@name="MSIPATCHSEQUENCEINFOA.szPatchData"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* szPatchData;
 
+    /// <include file='MSIPATCHSEQUENCEINFOA.xml' path='doc/member[@name="MSIPATCHSEQUENCEINFOA.ePatchDataType"]/*' />
     public MSIPATCHDATATYPE ePatchDataType;
 
+    /// <include file='MSIPATCHSEQUENCEINFOA.xml' path='doc/member[@name="MSIPATCHSEQUENCEINFOA.dwOrder"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOrder;
 
+    /// <include file='MSIPATCHSEQUENCEINFOA.xml' path='doc/member[@name="MSIPATCHSEQUENCEINFOA.uStatus"]/*' />
     public uint uStatus;
 }

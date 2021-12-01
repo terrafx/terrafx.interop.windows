@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_ICMP_EX_XPSP1.xml' path='doc/member[@name="MIB_ICMP_EX_XPSP1"]/*' />
 public partial struct MIB_ICMP_EX_XPSP1
 {
+    /// <include file='MIB_ICMP_EX_XPSP1.xml' path='doc/member[@name="MIB_ICMP_EX_XPSP1.icmpInStats"]/*' />
     [NativeTypeName("MIBICMPSTATS_EX")]
     public MIBICMPSTATS_EX_XPSP1 icmpInStats;
 
+    /// <include file='MIB_ICMP_EX_XPSP1.xml' path='doc/member[@name="MIB_ICMP_EX_XPSP1.icmpOutStats"]/*' />
     [NativeTypeName("MIBICMPSTATS_EX")]
     public MIBICMPSTATS_EX_XPSP1 icmpOutStats;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='svgUnitTypes.xml' path='doc/member[@name="svgUnitTypes"]/*' />
 public enum svgUnitTypes
 {
+    /// <include file='svgUnitTypes.xml' path='doc/member[@name="svgUnitTypes.SVG_UNITTYPE_UNKNOWN"]/*' />
     SVG_UNITTYPE_UNKNOWN = 0,
+
+    /// <include file='svgUnitTypes.xml' path='doc/member[@name="svgUnitTypes.SVG_UNITTYPE_USERSPACEONUSE"]/*' />
     SVG_UNITTYPE_USERSPACEONUSE = 1,
+
+    /// <include file='svgUnitTypes.xml' path='doc/member[@name="svgUnitTypes.SVG_UNITTYPE_OBJECTBOUNDINGBOX"]/*' />
     SVG_UNITTYPE_OBJECTBOUNDINGBOX = 2,
+
+    /// <include file='svgUnitTypes.xml' path='doc/member[@name="svgUnitTypes.svgUnitTypes_Max"]/*' />
     svgUnitTypes_Max = 2147483647,
 }

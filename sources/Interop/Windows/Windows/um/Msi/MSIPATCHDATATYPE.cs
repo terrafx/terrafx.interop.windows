@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSIPATCHDATATYPE.xml' path='doc/member[@name="MSIPATCHDATATYPE"]/*' />
 public enum MSIPATCHDATATYPE
 {
+    /// <include file='MSIPATCHDATATYPE.xml' path='doc/member[@name="MSIPATCHDATATYPE.MSIPATCH_DATATYPE_PATCHFILE"]/*' />
     MSIPATCH_DATATYPE_PATCHFILE = 0,
+
+    /// <include file='MSIPATCHDATATYPE.xml' path='doc/member[@name="MSIPATCHDATATYPE.MSIPATCH_DATATYPE_XMLPATH"]/*' />
     MSIPATCH_DATATYPE_XMLPATH = 1,
+
+    /// <include file='MSIPATCHDATATYPE.xml' path='doc/member[@name="MSIPATCHDATATYPE.MSIPATCH_DATATYPE_XMLBLOB"]/*' />
     MSIPATCH_DATATYPE_XMLBLOB = 2,
 }

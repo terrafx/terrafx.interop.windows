@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LVITEMINDEX">
+    <summary>
+      <para>Contains index information about a list-view item.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used with the <see cref="ListView_GetItemIndexRect" />, <see cref="ListView_GetNextItemIndex" />, and <see cref="ListView_SetItemIndexState" /> macros. It is also used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/lvm-getitemindexrect">LVM_GETITEMINDEXRECT</a>, <a href="https://docs.microsoft.com//windows/desktop/controls/lvm-getnextitemindex">LVM_GETNEXTITEMINDEX</a>, and <a href="https://docs.microsoft.com//windows/desktop/Controls/lvm-setitemindexstate">LVM_SETITEMINDEXSTATE</a> messages.</para>
+    </remarks>
+  </member>
+  <member name="LVITEMINDEX.iItem">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The index of the item.</para>
+    </summary>
+  </member>
+  <member name="LVITEMINDEX.iGroup">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The index of the group the item belongs to.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLFNAMEF.xml' path='doc/member[@name="HLFNAMEF"]/*' />
 public enum HLFNAMEF
 {
+    /// <include file='HLFNAMEF.xml' path='doc/member[@name="HLFNAMEF.HLFNAMEF_DEFAULT"]/*' />
     HLFNAMEF_DEFAULT = 0,
+
+    /// <include file='HLFNAMEF.xml' path='doc/member[@name="HLFNAMEF.HLFNAMEF_TRYCACHE"]/*' />
     HLFNAMEF_TRYCACHE = 0x1,
+
+    /// <include file='HLFNAMEF.xml' path='doc/member[@name="HLFNAMEF.HLFNAMEF_TRYPRETTYTARGET"]/*' />
     HLFNAMEF_TRYPRETTYTARGET = 0x2,
+
+    /// <include file='HLFNAMEF.xml' path='doc/member[@name="HLFNAMEF.HLFNAMEF_TRYFULLTARGET"]/*' />
     HLFNAMEF_TRYFULLTARGET = 0x4,
+
+    /// <include file='HLFNAMEF.xml' path='doc/member[@name="HLFNAMEF.HLFNAMEF_TRYWIN95SHORTCUT"]/*' />
     HLFNAMEF_TRYWIN95SHORTCUT = 0x8,
 }

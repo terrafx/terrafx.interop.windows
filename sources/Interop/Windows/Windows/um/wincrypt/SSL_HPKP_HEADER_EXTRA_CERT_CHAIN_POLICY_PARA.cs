@@ -7,20 +7,26 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA"]/*' />
 public unsafe partial struct SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA
 {
+    /// <include file='SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 
+    /// <include file='SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.pwszServerName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszServerName;
 
+    /// <include file='SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.rgpszHpkpValue"]/*' />
     [NativeTypeName("LPSTR [2]")]
     public _rgpszHpkpValue_e__FixedBuffer rgpszHpkpValue;
 
+    /// <include file='_rgpszHpkpValue_e__FixedBuffer.xml' path='doc/member[@name="_rgpszHpkpValue_e__FixedBuffer"]/*' />
     public unsafe partial struct _rgpszHpkpValue_e__FixedBuffer
     {
         public sbyte* e0;

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_DVDCOPY_CHLGKEY.xml' path='doc/member[@name="AM_DVDCOPY_CHLGKEY"]/*' />
 public unsafe partial struct AM_DVDCOPY_CHLGKEY
 {
+    /// <include file='AM_DVDCOPY_CHLGKEY.xml' path='doc/member[@name="AM_DVDCOPY_CHLGKEY.ChlgKey"]/*' />
     [NativeTypeName("BYTE [10]")]
     public fixed byte ChlgKey[10];
 
+    /// <include file='AM_DVDCOPY_CHLGKEY.xml' path='doc/member[@name="AM_DVDCOPY_CHLGKEY.Reserved"]/*' />
     [NativeTypeName("BYTE [2]")]
     public fixed byte Reserved[2];
 }

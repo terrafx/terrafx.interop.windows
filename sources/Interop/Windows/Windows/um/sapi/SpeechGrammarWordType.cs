@@ -7,10 +7,18 @@ using static TerraFX.Interop.Windows.SPGRAMMARWORDTYPE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechGrammarWordType.xml' path='doc/member[@name="SpeechGrammarWordType"]/*' />
 public enum SpeechGrammarWordType
 {
+    /// <include file='SpeechGrammarWordType.xml' path='doc/member[@name="SpeechGrammarWordType.SGDisplay"]/*' />
     SGDisplay = SPWT_DISPLAY,
+
+    /// <include file='SpeechGrammarWordType.xml' path='doc/member[@name="SpeechGrammarWordType.SGLexical"]/*' />
     SGLexical = SPWT_LEXICAL,
+
+    /// <include file='SpeechGrammarWordType.xml' path='doc/member[@name="SpeechGrammarWordType.SGPronounciation"]/*' />
     SGPronounciation = SPWT_PRONUNCIATION,
+
+    /// <include file='SpeechGrammarWordType.xml' path='doc/member[@name="SpeechGrammarWordType.SGLexicalNoSpecialChars"]/*' />
     SGLexicalNoSpecialChars = SPWT_LEXICAL_NO_SPECIAL_CHARS,
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BP_BUFFERFORMAT.xml' path='doc/member[@name="BP_BUFFERFORMAT"]/*' />
 public enum BP_BUFFERFORMAT
 {
+    /// <include file='BP_BUFFERFORMAT.xml' path='doc/member[@name="BP_BUFFERFORMAT.BPBF_COMPATIBLEBITMAP"]/*' />
     BPBF_COMPATIBLEBITMAP,
+
+    /// <include file='BP_BUFFERFORMAT.xml' path='doc/member[@name="BP_BUFFERFORMAT.BPBF_DIB"]/*' />
     BPBF_DIB,
+
+    /// <include file='BP_BUFFERFORMAT.xml' path='doc/member[@name="BP_BUFFERFORMAT.BPBF_TOPDOWNDIB"]/*' />
     BPBF_TOPDOWNDIB,
+
+    /// <include file='BP_BUFFERFORMAT.xml' path='doc/member[@name="BP_BUFFERFORMAT.BPBF_TOPDOWNMONODIB"]/*' />
     BPBF_TOPDOWNMONODIB,
 }

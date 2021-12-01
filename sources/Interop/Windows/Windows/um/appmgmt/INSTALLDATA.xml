@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INSTALLDATA">
+    <summary>
+      <para>The <b>INSTALLDATA</b> structure specifies a group-policy application to  be installed by <see cref="InstallApplication" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/about-group-policy">Group Policy Overview</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-structures">Group Policy Structures</seealso>
+    <seealso cref="INSTALLSPEC" />
+    <seealso cref="INSTALLSPECTYPE" />
+    <seealso cref="InstallApplication" />
+    <seealso cref="UninstallApplication" />
+  </member>
+  <member name="INSTALLDATA.Type">
+    <summary>
+      <para>Defines  how <b>Spec</b> specifies the application to <see cref="InstallApplication" />.     <b>Type</b> can be  one of the <see cref="INSTALLSPECTYPE" /> enumeration values. Set <b>Type</b> to APPNAME to install an application specified by its user-friendly name and GPO GUID. Set <b>Type</b> to FILEEXT to install  an application specified by its file name extension.</para>
+    </summary>
+  </member>
+  <member name="INSTALLDATA.Spec">
+    <summary>
+      <para>An <see cref="INSTALLSPEC" /> structure that specifies the application.</para>
+    </summary>
+  </member>
+</doc>

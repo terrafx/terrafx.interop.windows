@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="UASFLAGS">
+    <summary>
+      <para>Provides information about the parent undo unit.</para>
+    </summary>
+    <seealso cref="IOleParentUndoUnit.GetParentState" />
+  </member>
+  <member name="UASFLAGS.UAS_NORMAL">
+    <summary>
+      <para>The currently open parent undo unit is in a normal, unblocked state and can accept any new units added through calls to its <see cref="Open" /> or <see cref="Add" /> methods.</para>
+    </summary>
+  </member>
+  <member name="UASFLAGS.UAS_BLOCKED">
+    <summary>
+      <para>The currently open undo unit is blocked and will reject any undo units added through calls to its <see cref="IOleParentUndoUnit.Open" /> or <see cref="IOleParentUndoUnit.Add" /> methods. The caller need not create any new units since they will just be rejected.</para>
+    </summary>
+  </member>
+  <member name="UASFLAGS.UAS_NOPARENTENABLE">
+    <summary>
+      <para>The currently open undo unit will accept new units, but the caller should act like there is no currently open unit. This means that if the new unit being created requires a parent, then this parent does not satisfy that requirement and the undo stack should be cleared.</para>
+    </summary>
+  </member>
+  <member name="UASFLAGS.UAS_MASK">
+    <summary>
+      <para>When checking for a normal state, use this value to mask unused bits in the <i>pdwState</i> parameter to the <see cref="IOleParentUndoUnit.GetParentState" /> method for future compatibility. For example:</para>
+      <code>fNormal = ((pdwState &amp;amp;amp;amp;amp;amp;amp; UAS_MASK) == UAS_NORMAL)
+</code>
+    </summary>
+  </member>
+</doc>

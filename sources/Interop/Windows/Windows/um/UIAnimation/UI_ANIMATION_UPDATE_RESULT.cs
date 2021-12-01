@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UI_ANIMATION_UPDATE_RESULT.xml' path='doc/member[@name="UI_ANIMATION_UPDATE_RESULT"]/*' />
 public enum UI_ANIMATION_UPDATE_RESULT
 {
+    /// <include file='UI_ANIMATION_UPDATE_RESULT.xml' path='doc/member[@name="UI_ANIMATION_UPDATE_RESULT.UI_ANIMATION_UPDATE_NO_CHANGE"]/*' />
     UI_ANIMATION_UPDATE_NO_CHANGE = 0,
+
+    /// <include file='UI_ANIMATION_UPDATE_RESULT.xml' path='doc/member[@name="UI_ANIMATION_UPDATE_RESULT.UI_ANIMATION_UPDATE_VARIABLES_CHANGED"]/*' />
     UI_ANIMATION_UPDATE_VARIABLES_CHANGED = 1,
 }

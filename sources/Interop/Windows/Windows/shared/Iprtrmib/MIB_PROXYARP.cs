@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_PROXYARP.xml' path='doc/member[@name="MIB_PROXYARP"]/*' />
 public partial struct MIB_PROXYARP
 {
+    /// <include file='MIB_PROXYARP.xml' path='doc/member[@name="MIB_PROXYARP.dwAddress"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAddress;
 
+    /// <include file='MIB_PROXYARP.xml' path='doc/member[@name="MIB_PROXYARP.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='MIB_PROXYARP.xml' path='doc/member[@name="MIB_PROXYARP.dwIfIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwIfIndex;
 }

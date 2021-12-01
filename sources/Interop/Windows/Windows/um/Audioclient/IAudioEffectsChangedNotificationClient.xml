@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioEffectsChangedNotificationClient.OnAudioEffectsChanged">
+    <summary>
+      <para>Called by the system when the list of audio effects changes or the resources needed to enable an effect changes, i.e. when the value of the <i>canSetState</i> field of the associated <see cref="AUDIO_EFFECT" /> changes.</para>
+    </summary>
+    <returns>
+      <para>An HRESULT.</para>
+    </returns>
+    <remarks>
+      <para>Register the callback interface by calling <see cref="IAudioEffectsManager.RegisterAudioEffectsChangedNotificationCallback" />.</para>
+    </remarks>
+  </member>
+  <member name="IAudioEffectsChangedNotificationClient">
+    <summary>
+      <para>A callback interface allows applications to receive notifications when the list of audio effects for the associated audio stream changes or when the resources needed to enable an effect changes, i.e. when the value of the <i>canSetState</i> field of the associated <see cref="AUDIO_EFFECT" /> changes.</para>
+    </summary>
+    <remarks>
+      <para>Register the callback interface by calling <see cref="IAudioEffectsManager.RegisterAudioEffectsChangedNotificationCallback" />.</para>
+    </remarks>
+    <seealso cref="AUDIO_EFFECT" />
+    <seealso cref="IAudioEffectsManager.RegisterAudioEffectsChangedNotificationCallback" />
+  </member>
+</doc>

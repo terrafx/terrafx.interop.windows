@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFileSystemBindData2.xml' path='doc/member[@name="IFileSystemBindData2"]/*' />
 [Guid("3ACF075F-71DB-4AFA-81F0-3FC4FDF2A5B8")]
 [NativeTypeName("struct IFileSystemBindData2 : IFileSystemBindData")]
 [NativeInheritance("IFileSystemBindData")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
         return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
         return ((delegate* unmanaged<IFileSystemBindData2*, uint>)(lpVtbl[1]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
         return ((delegate* unmanaged<IFileSystemBindData2*, uint>)(lpVtbl[2]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IFileSystemBindData.SetFindData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetFindData([NativeTypeName("const WIN32_FIND_DATAW *")] WIN32_FIND_DATAW* pfd)
@@ -46,6 +51,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
         return ((delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int>)(lpVtbl[3]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pfd);
     }
 
+    /// <inheritdoc cref="IFileSystemBindData.GetFindData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFindData(WIN32_FIND_DATAW* pfd)
@@ -53,6 +59,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
         return ((delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int>)(lpVtbl[4]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pfd);
     }
 
+    /// <include file='IFileSystemBindData2.xml' path='doc/member[@name="IFileSystemBindData2.SetFileID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetFileID(LARGE_INTEGER liFileID)
@@ -60,6 +67,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
         return ((delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER, int>)(lpVtbl[5]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), liFileID);
     }
 
+    /// <include file='IFileSystemBindData2.xml' path='doc/member[@name="IFileSystemBindData2.GetFileID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetFileID(LARGE_INTEGER* pliFileID)
@@ -67,6 +75,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
         return ((delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER*, int>)(lpVtbl[6]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pliFileID);
     }
 
+    /// <include file='IFileSystemBindData2.xml' path='doc/member[@name="IFileSystemBindData2.SetJunctionCLSID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetJunctionCLSID([NativeTypeName("const IID &")] Guid* clsid)
@@ -74,6 +83,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
         return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, int>)(lpVtbl[7]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), clsid);
     }
 
+    /// <include file='IFileSystemBindData2.xml' path='doc/member[@name="IFileSystemBindData2.GetJunctionCLSID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid)

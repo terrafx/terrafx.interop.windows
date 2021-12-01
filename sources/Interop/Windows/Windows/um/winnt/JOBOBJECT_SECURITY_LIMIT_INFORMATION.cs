@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_SECURITY_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_SECURITY_LIMIT_INFORMATION"]/*' />
 public unsafe partial struct JOBOBJECT_SECURITY_LIMIT_INFORMATION
 {
+    /// <include file='JOBOBJECT_SECURITY_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_SECURITY_LIMIT_INFORMATION.SecurityLimitFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint SecurityLimitFlags;
 
+    /// <include file='JOBOBJECT_SECURITY_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_SECURITY_LIMIT_INFORMATION.JobToken"]/*' />
     public HANDLE JobToken;
 
+    /// <include file='JOBOBJECT_SECURITY_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_SECURITY_LIMIT_INFORMATION.SidsToDisable"]/*' />
     [NativeTypeName("PTOKEN_GROUPS")]
     public TOKEN_GROUPS* SidsToDisable;
 
+    /// <include file='JOBOBJECT_SECURITY_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_SECURITY_LIMIT_INFORMATION.PrivilegesToDelete"]/*' />
     [NativeTypeName("PTOKEN_PRIVILEGES")]
     public TOKEN_PRIVILEGES* PrivilegesToDelete;
 
+    /// <include file='JOBOBJECT_SECURITY_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_SECURITY_LIMIT_INFORMATION.RestrictedSids"]/*' />
     [NativeTypeName("PTOKEN_GROUPS")]
     public TOKEN_GROUPS* RestrictedSids;
 }

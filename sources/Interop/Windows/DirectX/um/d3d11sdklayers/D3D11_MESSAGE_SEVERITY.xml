@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_MESSAGE_SEVERITY">
+    <summary>
+      <para>Debug message severity levels for an information queue.</para>
+    </summary>
+    <remarks>
+      <para>Use these values to allow or deny message categories to pass through the storage and retrieval filters for an information queue (see <see cref="D3D11_INFO_QUEUE_FILTER" />). This API is used by <see cref="ID3D11InfoQueue.AddApplicationMessage" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-layer-enums">Layer Enumerations</seealso>
+  </member>
+  <member name="D3D11_MESSAGE_SEVERITY.D3D11_MESSAGE_SEVERITY_CORRUPTION">
+    <summary>
+      <para>Defines some type of corruption which has occurred.</para>
+    </summary>
+  </member>
+  <member name="D3D11_MESSAGE_SEVERITY.D3D11_MESSAGE_SEVERITY_ERROR">
+    <summary>
+      <para>Defines an error message.</para>
+    </summary>
+  </member>
+  <member name="D3D11_MESSAGE_SEVERITY.D3D11_MESSAGE_SEVERITY_WARNING">
+    <summary>
+      <para>Defines a warning message.</para>
+    </summary>
+  </member>
+  <member name="D3D11_MESSAGE_SEVERITY.D3D11_MESSAGE_SEVERITY_INFO">
+    <summary>
+      <para>Defines an information message.</para>
+    </summary>
+  </member>
+  <member name="D3D11_MESSAGE_SEVERITY.D3D11_MESSAGE_SEVERITY_MESSAGE">
+    <summary>
+      <para>Defines a message other than corruption, error, warning, or information.</para>
+      <para>
+        <b>Direct3D 11:  </b>This value is not supported until Direct3D 11.1.</para>
+    </summary>
+  </member>
+</doc>

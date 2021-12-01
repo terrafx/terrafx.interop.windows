@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_DPICOMPENSATION_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/dpi-compensation">DPI compensation effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DPICOMPENSATION_PROP.D2D1_DPICOMPENSATION_PROP_INTERPOLATION_MODE">
+    <summary>
+      <para>The interpolation mode the effect uses to scale the image.</para>
+      <para>The type is <see cref="D2D1_DPICOMPENSATION_INTERPOLATION_MODE" />.</para>
+      <para>The default value is D2D1_DPICOMPENSATION_INTERPOLATION_MODE_LINEAR.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DPICOMPENSATION_PROP.D2D1_DPICOMPENSATION_PROP_BORDER_MODE">
+    <summary>
+      <para>The mode used to calculate the border of the image, soft or hard. See Border modes for more info.</para>
+      <para>The type is <see cref="D2D1_BORDER_MODE" />.</para>
+      <para>The default value is D2D1_BORDER_MODE_SOFT.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DPICOMPENSATION_PROP.D2D1_DPICOMPENSATION_PROP_INPUT_DPI">
+    <summary>
+      <para>The DPI of the input image.</para>
+      <para>The type is FLOAT.</para>
+      <para>The default value is 96.0f.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DPICOMPENSATION_PROP.D2D1_DPICOMPENSATION_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

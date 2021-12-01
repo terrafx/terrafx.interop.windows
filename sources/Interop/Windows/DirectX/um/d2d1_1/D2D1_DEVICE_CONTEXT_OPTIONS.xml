@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_DEVICE_CONTEXT_OPTIONS">
+    <summary>
+      <para>This specifies options that apply to the device context for its lifetime.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DEVICE_CONTEXT_OPTIONS.D2D1_DEVICE_CONTEXT_OPTIONS_NONE">
+    <summary>
+      <para>The device context is created with default options.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DEVICE_CONTEXT_OPTIONS.D2D1_DEVICE_CONTEXT_OPTIONS_ENABLE_MULTITHREADED_OPTIMIZATIONS">
+    <summary>
+      <para>Distribute rendering work across multiple threads. Refer to <a href="https://docs.microsoft.com//windows/desktop/Direct2D/improving-direct2d-performance">Improving the performance of Direct2D apps</a> for additional notes on the use of this flag.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DEVICE_CONTEXT_OPTIONS.D2D1_DEVICE_CONTEXT_OPTIONS_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

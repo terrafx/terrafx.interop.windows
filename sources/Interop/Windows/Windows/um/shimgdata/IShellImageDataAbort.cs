@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellImageDataAbort.xml' path='doc/member[@name="IShellImageDataAbort"]/*' />
 [Guid("53FB8E58-50C0-4003-B4AA-0C8DF28E7F3A")]
 [NativeTypeName("struct IShellImageDataAbort : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellImageDataAbort : IShellImageDataAbort.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellImageDataAbort : IShellImageDataAbort.Interfa
         return ((delegate* unmanaged<IShellImageDataAbort*, Guid*, void**, int>)(lpVtbl[0]))((IShellImageDataAbort*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellImageDataAbort : IShellImageDataAbort.Interfa
         return ((delegate* unmanaged<IShellImageDataAbort*, uint>)(lpVtbl[1]))((IShellImageDataAbort*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellImageDataAbort : IShellImageDataAbort.Interfa
         return ((delegate* unmanaged<IShellImageDataAbort*, uint>)(lpVtbl[2]))((IShellImageDataAbort*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageDataAbort.xml' path='doc/member[@name="IShellImageDataAbort.QueryAbort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryAbort()

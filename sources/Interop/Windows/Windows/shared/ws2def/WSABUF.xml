@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WSABUF">
+    <summary>
+      <para>The
+<b>WSABUF</b> structure enables the creation or manipulation of a data buffer used by some Winsock functions.</para>
+    </summary>
+  </member>
+  <member name="WSABUF.len">
+    <summary>
+      <para>The length of the buffer, in bytes.</para>
+    </summary>
+  </member>
+  <member name="WSABUF.buf">
+    <summary>
+      <para>A pointer to the buffer.</para>
+    </summary>
+  </member>
+</doc>

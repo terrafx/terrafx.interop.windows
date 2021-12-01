@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CADBL.xml' path='doc/member[@name="CADBL"]/*' />
 public unsafe partial struct CADBL
 {
+    /// <include file='CADBL.xml' path='doc/member[@name="CADBL.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CADBL.xml' path='doc/member[@name="CADBL.pElems"]/*' />
     public double* pElems;
 }

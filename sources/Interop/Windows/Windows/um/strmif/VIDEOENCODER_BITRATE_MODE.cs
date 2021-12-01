@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VIDEOENCODER_BITRATE_MODE.xml' path='doc/member[@name="VIDEOENCODER_BITRATE_MODE"]/*' />
 public enum VIDEOENCODER_BITRATE_MODE
 {
+    /// <include file='VIDEOENCODER_BITRATE_MODE.xml' path='doc/member[@name="VIDEOENCODER_BITRATE_MODE.ConstantBitRate"]/*' />
     ConstantBitRate = 0,
+
+    /// <include file='VIDEOENCODER_BITRATE_MODE.xml' path='doc/member[@name="VIDEOENCODER_BITRATE_MODE.VariableBitRateAverage"]/*' />
     VariableBitRateAverage = (ConstantBitRate + 1),
+
+    /// <include file='VIDEOENCODER_BITRATE_MODE.xml' path='doc/member[@name="VIDEOENCODER_BITRATE_MODE.VariableBitRatePeak"]/*' />
     VariableBitRatePeak = (VariableBitRateAverage + 1),
 }

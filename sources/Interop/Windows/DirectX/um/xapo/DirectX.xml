@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.XAPOAlloc">
+    <summary>
+      <para>Memory allocation macro used by IXAPO methods that must allocate arbitrary sized structures that are subsequently returned to the application.</para>
+    </summary>
+    <param name="size">
+      <para>Size, in bytes, of the memory block to be allocated.</para>
+    </param>
+    <remarks>
+      <para>
+        <see cref="XAPOFree" /> and <b>XAPOAlloc</b> are memory allocation macros that allow one module to allocate memory and another to free it, by guaranteeing that the same heap manager is used regardless of differences between the build environments of the two modules.</para>
+      <list type="table">
+        <listheader>
+          <description>Xbox 360</description>
+        </listheader>
+        <item>
+          <description>
+            <see cref="XAPOFree" /> and <b>XAPOAlloc</b> resolve to <b>XMemAlloc</b> and <b>XMemFree</b> on Xbox 360.</description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>Windows</description>
+        </listheader>
+        <item>
+          <description>
+            <see cref="XAPOFree" /> and <b>XAPOAlloc</b> resolve to <b>CoTaskMemAlloc</b> and <b>CoTaskMemFree</b>.</description>
+        </item>
+      </list>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/macros">Macros</seealso>
+  </member>
+  <member name="DirectX.XAPOFree">
+    <summary>
+      <para>Macro used to free memory allocated with the <see cref="XAPOAlloc" /> macro.</para>
+    </summary>
+    <param name="p">
+      <para>Pointer to the memory block to be freed.</para>
+    </param>
+    <remarks>
+      <para>
+        <b>XAPOFree</b> and <see cref="XAPOAlloc" /> are memory allocation macros that allow one module to allocate memory and another to free it, by guaranteeing that the same heap manager is used regardless of differences between the build environments of the two modules.</para>
+      <list type="table">
+        <listheader>
+          <description>Xbox 360</description>
+        </listheader>
+        <item>
+          <description>
+            <b>XAPOFree</b> and <see cref="XAPOAlloc" /> resolve to <b>XMemAlloc</b> and <b>XMemFree</b> on Xbox 360.</description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>Windows</description>
+        </listheader>
+        <item>
+          <description>
+            <b>XAPOFree</b> and <see cref="XAPOAlloc" /> resolve to <b>CoTaskMemAlloc</b> and <b>CoTaskMemFree</b>.</description>
+        </item>
+      </list>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/macros">Macros</seealso>
+  </member>
+</doc>

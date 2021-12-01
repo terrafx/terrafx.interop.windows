@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CANDIDATEFORM.xml' path='doc/member[@name="CANDIDATEFORM"]/*' />
 public partial struct CANDIDATEFORM
 {
+    /// <include file='CANDIDATEFORM.xml' path='doc/member[@name="CANDIDATEFORM.dwIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwIndex;
 
+    /// <include file='CANDIDATEFORM.xml' path='doc/member[@name="CANDIDATEFORM.dwStyle"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStyle;
 
+    /// <include file='CANDIDATEFORM.xml' path='doc/member[@name="CANDIDATEFORM.ptCurrentPos"]/*' />
     public POINT ptCurrentPos;
 
+    /// <include file='CANDIDATEFORM.xml' path='doc/member[@name="CANDIDATEFORM.rcArea"]/*' />
     public RECT rcArea;
 }

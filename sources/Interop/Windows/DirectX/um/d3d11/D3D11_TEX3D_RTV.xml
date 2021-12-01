@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TEX3D_RTV">
+    <summary>
+      <para>Specifies the subresources from a 3D texture to use in a render-target view.</para>
+    </summary>
+    <remarks>
+      <para>This structure is one member of a render target view. See <see cref="D3D11_RENDER_TARGET_VIEW_DESC" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D11_TEX3D_RTV.MipSlice">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The index of the mipmap level to use mip slice.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEX3D_RTV.FirstWSlice">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>First depth level to use.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEX3D_RTV.WSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of depth levels to use in the render-target view, starting from <b>FirstWSlice</b>. A value of -1 indicates all of the slices along the w axis, starting from <b>FirstWSlice</b>.</para>
+    </summary>
+  </member>
+</doc>

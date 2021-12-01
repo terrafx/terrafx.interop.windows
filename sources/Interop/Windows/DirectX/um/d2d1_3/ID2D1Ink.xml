@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1Ink.AddSegments">
+    <summary>
+      <para>Adds the given segments to the end of this ink object.</para>
+    </summary>
+    <param name="segments">
+      <para>Type: <b>const <see cref="D2D1_INK_BEZIER_SEGMENT" />*</b></para>
+      <para>A pointer to an array of segments to be added to this ink object.</para>
+    </param>
+    <param name="segmentsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of segments to be added to this ink object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.GetBounds">
+    <summary>
+      <para>Retrieve the bounds of the geometry, with an optional applied transform.</para>
+    </summary>
+    <param name="inkStyle">
+      <para>Type: <b><see cref="ID2D1InkStyle" />*</b></para>
+      <para>The ink style to be used in determining the bounds of this ink object.</para>
+    </param>
+    <param name="worldTransform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
+      <para>The world transform to be used in determining the bounds of this ink object.</para>
+    </param>
+    <param name="bounds">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>When this method returns, contains the bounds of this ink object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.GetSegmentCount">
+    <summary>
+      <para>Returns the number of segments in this ink object.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32
+</b></para>
+      <para>Returns the number of segments in this ink object.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.GetSegments">
+    <summary>
+      <para>Retrieves the specified subset of segments stored in this ink object.</para>
+    </summary>
+    <param name="startSegment">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index of the first segment in this ink object to retrieve.</para>
+    </param>
+    <param name="segments">
+      <para>Type: <b><see cref="D2D1_INK_BEZIER_SEGMENT" />*</b></para>
+      <para>When this method returns, contains a pointer to an array of retrieved segments.</para>
+    </param>
+    <param name="segmentsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of segments to retrieve. Note that segmentsCount must be less than or equal to the number of segments in the ink object minus startSegment.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.GetStartPoint">
+    <summary>
+      <para>Retrieves the starting point for this ink object.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_INK_POINT" /></b></para>
+      <para>The starting point for this ink object.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.RemoveSegmentsAtEnd">
+    <summary>
+      <para>Removes the given number of segments from the end of this ink object.</para>
+    </summary>
+    <param name="segmentsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of segments to be removed from the end of this ink object. Note that segmentsCount must be less or equal to the number of segments in the ink object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.SetSegmentAtEnd">
+    <summary>
+      <para>Updates the last segment in this ink object with new control points.</para>
+    </summary>
+    <param name="segment">
+      <para>Type: <b>const <see cref="D2D1_INK_BEZIER_SEGMENT" />*</b></para>
+      <para>A pointer to the segment data with which to overwrite this ink object's last segment. Note that if there are currently no segments in the ink object, SetSegmentsAtEnd will return an error.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.SetSegmentAtEnd">
+    <summary>
+      <para>Updates the last segment in this ink object with new control points.</para>
+    </summary>
+    <param name="segment">
+      <para>Type: <b>const <see cref="D2D1_INK_BEZIER_SEGMENT" /></b></para>
+      <para>A pointer to the segment data with which to overwrite this ink object's last segment.  Note that if there are currently no segments in the ink object, SetSegmentsAtEnd will return an error.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.SetSegments">
+    <summary>
+      <para>Updates the specified segments in this ink object with new control points.</para>
+    </summary>
+    <param name="startSegment">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index of the first segment in this ink object to update.</para>
+    </param>
+    <param name="segments">
+      <para>Type: <b>const <see cref="D2D1_INK_BEZIER_SEGMENT" />*</b></para>
+      <para>A pointer to the array of segment data to be used in the update.</para>
+    </param>
+    <param name="segmentsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of segments in this ink object that will be updated with new data. Note that segmentsCount must be less than or equal to the number of segments in the ink object minus startSegment.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.SetStartPoint">
+    <summary>
+      <para>Sets the starting point for this ink object. This determines where this ink object will start rendering.</para>
+    </summary>
+    <param name="startPoint">
+      <para>Type: <b>const <see cref="D2D1_INK_POINT" />*</b></para>
+      <para>The new starting point for this ink object.</para>
+    </param>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.SetStartPoint">
+    <summary>
+      <para>Sets the starting point for this ink object. This determines where this ink object will start rendering.</para>
+    </summary>
+    <param name="startPoint">
+      <para>Type: <b>const <see cref="D2D1_INK_POINT" /></b></para>
+      <para>The new starting point for this ink object.</para>
+    </param>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.StreamAsGeometry">
+    <summary>
+      <para>Retrieves a geometric representation of this ink object.</para>
+    </summary>
+    <param name="inkStyle">
+      <para>Type: <b><see cref="ID2D1InkStyle" />*</b></para>
+      <para>The ink style to be used in determining the geometric representation.</para>
+    </param>
+    <param name="worldTransform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
+      <para>The world transform to be used in determining the geometric representation.</para>
+    </param>
+    <param name="flatteningTolerance">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The flattening tolerance to be used in determining the geometric representation.</para>
+    </param>
+    <param name="geometrySink">
+      <para>Type: <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
+      <para>The geometry sink to which the geometry representation will be streamed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.StreamAsGeometry">
+    <summary>
+      <para>Retrieves a geometric representation of this ink object.</para>
+    </summary>
+    <param name="inkStyle">
+      <para>Type: <b><see cref="ID2D1InkStyle" />*</b></para>
+      <para>The ink style to be used in determining the geometric representation.</para>
+    </param>
+    <param name="worldTransform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
+      <para>The world transform to be used in determining the geometric representation.</para>
+    </param>
+    <param name="geometrySink">
+      <para>Type: <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
+      <para>The geometry sink to which the geometry representation will be streamed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.StreamAsGeometry">
+    <summary>
+      <para>Retrieves a geometric representation of this ink object.</para>
+    </summary>
+    <param name="inkStyle">
+      <para>Type: <b><see cref="ID2D1InkStyle" />*</b></para>
+      <para>The ink style to be used in determining the geometric representation.</para>
+    </param>
+    <param name="worldTransform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
+      <para>The world transform to be used in determining the geometric representation.</para>
+    </param>
+    <param name="flatteningTolerance">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The flattening tolerance to be used in determining the geometric representation.</para>
+    </param>
+    <param name="geometrySink">
+      <para>Type: <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
+      <para>The geometry sink to which the geometry representation will be streamed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink.StreamAsGeometry">
+    <summary>
+      <para>Retrieves a geometric representation of this ink object.</para>
+    </summary>
+    <param name="inkStyle">
+      <para>Type: <b><see cref="ID2D1InkStyle" />*</b></para>
+      <para>The ink style to be used in determining the geometric representation.</para>
+    </param>
+    <param name="worldTransform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
+      <para>The world transform to be used in determining the geometric representation.</para>
+    </param>
+    <param name="geometrySink">
+      <para>Type: <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
+      <para>The geometry sink to which the geometry representation will be streamed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1Ink" />
+  </member>
+  <member name="ID2D1Ink">
+    <summary>
+      <para>Represents a single continuous stroke of variable-width ink, as defined by a series of Bezier segments and widths.</para>
+    </summary>
+  </member>
+</doc>

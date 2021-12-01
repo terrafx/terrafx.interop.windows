@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioEndpointVolume.GetChannelCount">
+    <summary>
+      <para>The <b>GetChannelCount</b> method gets a count of the channels in the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="pnChannelCount">
+      <para>Pointer to a <b>UINT</b> variable into which the method writes the channel count.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pnChannelCount</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAudioEndpointVolume Interface" />
+  </member>
+  <member name="IAudioEndpointVolume.GetChannelVolumeLevel">
+    <summary>
+      <para>The <b>GetChannelVolumeLevel</b> method gets the volume level, in decibels, of the specified channel in the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="nChannel">
+      <para>The channel number. If the audio stream has <i>n</i> channels, the channels are numbered from 0 to <i>n</i>– 1. To obtain the number of channels in the stream, call the <see cref="IAudioEndpointVolume.GetChannelCount" /> method.</para>
+    </param>
+    <param name="pfLevelDB">
+      <para>Pointer to a <b>float</b> variable into which the method writes the volume level in decibels. To get the range of volume levels obtained from this method, call the <see cref="IAudioEndpointVolume.GetVolumeRange" /> method.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>nChannel</i> is greater than or equal to the number of channels in the stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pfLevelDB</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.GetChannelCount" />
+    <seealso cref="IAudioEndpointVolume.GetVolumeRange" />
+  </member>
+  <member name="IAudioEndpointVolume.GetChannelVolumeLevelScalar">
+    <summary>
+      <para>The <b>GetChannelVolumeLevelScalar</b> method gets the normalized, audio-tapered volume level of the specified channel of the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="nChannel">
+      <para>The channel number. If the audio stream contains <i>n</i> channels, the channels are numbered from 0 to <i>n</i>– 1. To obtain the number of channels, call the <see cref="IAudioEndpointVolume.GetChannelCount" /> method.</para>
+    </param>
+    <param name="pfLevel">
+      <para>Pointer to a <b>float</b> variable into which the method writes the volume level. The level is expressed as a normalized value in the range from 0.0 to 1.0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>nChannel</i> is greater than or equal to the number of channels in the stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pfLevel</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The volume level is normalized to the range from 0.0 to 1.0, where 0.0 is the minimum volume level and 1.0 is the maximum level. Within this range, the relationship of the normalized volume level to the attenuation of signal amplitude is described by a nonlinear, audio-tapered curve. Note that the shape of the curve might change in future versions of Windows. For more information about audio-tapered curves, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-tapered-volume-controls">Audio-Tapered Volume Controls</a>.</para>
+      <para>The normalized volume levels that are retrieved by this method are suitable to represent the positions of volume controls in application windows and on-screen displays.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.GetChannelCount" />
+  </member>
+  <member name="IAudioEndpointVolume.GetMasterVolumeLevel">
+    <summary>
+      <para>The <b>GetMasterVolumeLevel</b> method gets the master volume level, in decibels, of the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="pfLevelDB">
+      <para>Pointer to the master volume level. This parameter points to a <b>float</b> variable into which the method writes the volume level in decibels. To get the range of volume levels obtained from this method, call the <see cref="IAudioEndpointVolume.GetVolumeRange" /> method.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pfLevelDB</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.GetVolumeRange" />
+  </member>
+  <member name="IAudioEndpointVolume.GetMasterVolumeLevelScalar">
+    <summary>
+      <para>The <b>GetMasterVolumeLevelScalar</b> method gets the master volume level of the audio stream that enters or leaves the audio endpoint device. The volume level is expressed as a normalized, audio-tapered value in the range from 0.0 to 1.0.</para>
+    </summary>
+    <param name="pfLevel">
+      <para>Pointer to the master volume level. This parameter points to a <b>float</b> variable into which the method writes the volume level. The level is expressed as a normalized value in the range from 0.0 to 1.0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pfLevel</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The volume level is normalized to the range from 0.0 to 1.0, where 0.0 is the minimum volume level and 1.0 is the maximum level. Within this range, the relationship of the normalized volume level to the attenuation of signal amplitude is described by a nonlinear, audio-tapered curve. Note that the shape of the curve might change in future versions of Windows. For more information about audio-tapered curves, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-tapered-volume-controls">Audio-Tapered Volume Controls</a>.</para>
+      <para>The normalized volume levels that are retrieved by this method are suitable to represent the positions of volume controls in application windows and on-screen displays.</para>
+      <para>For a code example that calls <b>GetMasterVolumeLevelScalar</b>, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-volume-controls">Endpoint Volume Controls</a>.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+  </member>
+  <member name="IAudioEndpointVolume.GetMute">
+    <summary>
+      <para>The <b>GetMute</b> method gets the muting state of the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="pbMute">
+      <para>Pointer to a <b>BOOL</b> variable into which the method writes the muting state. If <i>*pbMute</i> is <b>TRUE</b>, the stream is muted. If <b>FALSE</b>, the stream is not muted.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pbMute</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For a code example that calls <b>GetMute</b>, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-volume-controls">Endpoint Volume Controls</a>.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+  </member>
+  <member name="IAudioEndpointVolume.GetVolumeRange">
+    <summary>
+      <para>The <b>GetVolumeRange</b> method gets the volume range, in decibels, of the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="pflVolumeMindB">
+      <para>Pointer to the minimum volume level. This parameter points to a <b>float</b> variable into which the method writes the minimum volume level in decibels. This value remains constant for the lifetime of the <see cref="IAudioEndpointVolume" /> interface instance.</para>
+    </param>
+    <param name="pflVolumeMaxdB">
+      <para>Pointer to the maximum volume level. This parameter points to a <b>float</b> variable into which the method writes the maximum volume level in decibels. This value remains constant for the lifetime of the <b>IAudioEndpointVolume</b> interface instance.</para>
+    </param>
+    <param name="pflVolumeIncrementdB">
+      <para>Pointer to the volume increment. This parameter points to a <b>float</b> variable into which the method writes the volume increment in decibels. This increment remains constant for the lifetime of the <b>IAudioEndpointVolume</b> interface instance.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pfLevelMinDB</i>, <i>pfLevelMaxDB</i>, or <i>pfVolumeIncrementDB</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The volume range from vmin = <i>*pfLevelMinDB</i> to vmax = <i>*pfLevelMaxDB</i> is divided into <i>n</i> uniform intervals of size vinc = <i>*pfVolumeIncrementDB</i>, where</para>
+      <para>n = (vmax – vmin) / vinc.</para>
+      <para>The values vmin, vmax, and vinc are measured in decibels. The client can set the volume level to one of n + 1 discrete values in the range from vmin to vmax.</para>
+      <para>The <see cref="IAudioEndpointVolume.SetChannelVolumeLevel" /> and <see cref="IAudioEndpointVolume.SetMasterVolumeLevel" /> methods accept only volume levels in the range from vmin to vmax. If the caller specifies a volume level outside of this range, the method fails and returns E_INVALIDARG. If the caller specifies a volume level that falls between two steps in the volume range, the method sets the endpoint volume level to the step that lies closest to the requested volume level and returns S_OK. However, a subsequent call to <see cref="IAudioEndpointVolume.GetChannelVolumeLevel" /> or <see cref="IAudioEndpointVolume.GetMasterVolumeLevel" /> retrieves the volume level requested by the previous call to <b>SetChannelVolumeLevel</b> or <b>SetMasterVolumeLevel</b>, not the step value.</para>
+      <para>If the volume control is implemented in hardware, <b>GetVolumeRange</b> describes the range and granularity of the hardware volume settings. In contrast, the steps that are reported by the <see cref="IEndpointVolume.GetVolumeStepInfo" /> method correspond to points on an audio-tapered curve that are calculated in software by the <see cref="IEndpointVolume.VolumeStepDown" /> and <see cref="IEndpointVolume.VolumeStepUp" /> methods. Either method first calculates the idealized volume level that corresponds to the next point on the curve. Next, the method selects the hardware volume setting that is the best approximation to the idealized level. For more information about audio-tapered curves, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-tapered-volume-controls">Audio-Tapered Volume Controls</a>.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.GetChannelVolumeLevel" />
+    <seealso cref="IAudioEndpointVolume.GetMasterVolumeLevel" />
+    <seealso cref="IAudioEndpointVolume.SetChannelVolumeLevel" />
+    <seealso cref="IAudioEndpointVolume.SetMasterVolumeLevel" />
+    <seealso cref="IEndpointVolume.GetVolumeStepInfo" />
+    <seealso cref="IEndpointVolume.VolumeStepDown" />
+    <seealso cref="IEndpointVolume.VolumeStepUp" />
+  </member>
+  <member name="IAudioEndpointVolume.GetVolumeStepInfo">
+    <summary>
+      <para>The <b>GetVolumeStepInfo</b> method gets information about the current step in the volume range.</para>
+    </summary>
+    <param name="pnStep">
+      <para>Pointer to a <b>UINT</b> variable into which the method writes the current step index. This index is a value in the range from 0 to <i>*pStepCount</i>– 1, where 0 represents the minimum volume level and <i>*pStepCount</i>– 1 represents the maximum level.</para>
+    </param>
+    <param name="pnStepCount">
+      <para>Pointer to a <b>UINT</b> variable into which the method writes the number of steps in the volume range. This number remains constant for the lifetime of the <see cref="IAudioEndpointVolume" /> interface instance.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pnStep</i> and <i>pnStepCount</i> are both <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method represents the volume level of the audio stream that enters or leaves the audio endpoint device as an index or "step" in a range of discrete volume levels. Output value <i>*pnStepCount</i> is the number of steps in the range. Output value <i>*pnStep</i> is the step index of the current volume level. If the number of steps is n = <i>*pnStepCount</i>, then step index <i>*pnStep</i> can assume values from 0 (minimum volume) to n – 1 (maximum volume).</para>
+      <para>Over the range from 0 to n – 1, successive intervals between adjacent steps do not necessarily represent uniform volume increments in either linear signal amplitude or decibels. In Windows Vista, <b>GetVolumeStepInfo</b> defines the relationship of index to volume level (signal amplitude) to be an audio-tapered curve. Note that the shape of the curve might change in future versions of Windows. For more information about audio-tapered curves, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-tapered-volume-controls">Audio-Tapered Volume Controls</a>.</para>
+      <para>Audio applications can call the <see cref="IAudioEndpointVolume.VolumeStepUp" /> and <see cref="IAudioEndpointVolume.VolumeStepDown" /> methods to increase or decrease the volume level by one interval. Either method first calculates the idealized volume level that corresponds to the next point on the audio-tapered curve. Next, the method selects the endpoint volume setting that is the best approximation to the idealized level. To obtain the range and granularity of the endpoint volume settings, call the <see cref="IEndpointVolume.GetVolumeRange" /> method. If the audio endpoint device implements a hardware volume control, <b>GetVolumeRange</b> describes the hardware volume settings. Otherwise, the EndpointVolume API implements the endpoint volume control in software, and <b>GetVolumeRange</b> describes the volume settings of the software-implemented control.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.VolumeStepDown" />
+    <seealso cref="IAudioEndpointVolume.VolumeStepUp" />
+  </member>
+  <member name="IAudioEndpointVolume.QueryHardwareSupport">
+    <summary>
+      <para>The <i>QueryHardwareSupport</i> method queries the audio endpoint device for its hardware-supported functions.</para>
+    </summary>
+    <param name="pdwHardwareSupportMask">
+      <para>Pointer to a <b>DWORD</b> variable into which the method writes a hardware support mask that indicates the hardware capabilities of the audio endpoint device. The method can set the mask to 0 or to the bitwise-OR combination of one or more <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-hardware-support-xxx-constants">ENDPOINT_HARDWARE_SUPPORT_XXX</a> constants.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pdwHardwareSupportMask</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method indicates whether the audio endpoint device implements the following functions in hardware:</para>
+      <list type="bullet">
+        <item>
+          <description>Volume control</description>
+        </item>
+        <item>
+          <description>Mute control</description>
+        </item>
+        <item>
+          <description>Peak meter</description>
+        </item>
+      </list>
+      <para>The system automatically substitutes a software implementation for any function in the preceding list that the endpoint device does not implement in hardware.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+  </member>
+  <member name="IAudioEndpointVolume.RegisterControlChangeNotify">
+    <summary>
+      <para>The <b>RegisterControlChangeNotify</b> method registers a client's notification callback interface.</para>
+    </summary>
+    <param name="pNotify">
+      <para>Pointer to the <see cref="IAudioEndpointVolumeCallback" /> interface that the client is registering for notification callbacks. If the <b>RegisterControlChangeNotify</b> method succeeds, it calls the <see cref="AddRef" /> method on the client's <b>IAudioEndpointVolumeCallback</b> interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pNotify</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method registers an <see cref="IAudioEndpointVolumeCallback" /> interface to be called by the system when the volume level or muting state of an endpoint changes. The caller implements the <b>IAudioEndpointVolumeCallback</b> interface.</para>
+      <para>When notifications are no longer needed, the client can call the <see cref="IAudioEndpointVolume.UnregisterControlChangeNotify" /> method to terminate the notifications.</para>
+      <para>Before the client releases its final reference to the <see cref="IAudioEndpointVolumeCallback" /> interface, it should call <see cref="UnregisterControlChangeNotify" /> to unregister the interface. Otherwise, the application leaks the resources held by the <b>IAudioEndpointVolumeCallback</b> and <see cref="IAudioEndpointVolume" /> objects. Note that <b>RegisterControlChangeNotify</b> calls the client's <see cref="IAudioEndpointVolumeCallback.AddRef" /> method, and <b>UnregisterControlChangeNotify</b> calls the <see cref="IAudioEndpointVolumeCallback.Release" /> method. If the client errs by releasing its reference to the <b>IAudioEndpointVolumeCallback</b> interface before calling <b>UnregisterControlChangeNotify</b>, the <b>IAudioEndpointVolume</b> object never releases its reference to the <b>IAudioEndpointVolumeCallback</b> interface. For example, a poorly designed <b>IAudioEndpointVolumeCallback</b> implementation might call <b>UnregisterControlChangeNotify</b> from the destructor for the <b>IAudioEndpointVolumeCallback</b> object. In this case, the client will not call <b>UnregisterControlChangeNotify</b> until the <b>IAudioEndpointVolume</b> object releases its reference to the <b>IAudioEndpointVolumeCallback</b> interface, and the <b>IAudioEndpointVolume</b> object will not release its reference to the <b>IAudioEndpointVolumeCallback</b> interface until the client calls <b>UnregisterControlChangeNotify</b>. For more information about the <b>AddRef</b> and <b>Release</b> methods, see the discussion of the <see cref="IUnknown" /> interface in the Windows SDK documentation.</para>
+      <para>In addition, the client should call <see cref="UnregisterControlChangeNotify" /> before releasing the final reference to the <see cref="IAudioEndpointVolume" /> object. Otherwise, the object leaks the storage that it allocated to hold the registration information. After registering a notification interface, the client continues to receive notifications for only as long as the <b>IAudioEndpointVolume</b> object exists.</para>
+      <para>For a code example that calls <b>RegisterControlChangeNotify</b>, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-volume-controls">Endpoint Volume Controls</a>.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.UnregisterControlChangeNotify" />
+    <seealso cref="IAudioEndpointVolumeCallback Interface" />
+  </member>
+  <member name="IAudioEndpointVolume.SetChannelVolumeLevel">
+    <summary>
+      <para>The <b>SetChannelVolumeLevel</b> method sets the volume level, in decibels, of the specified channel of the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="nChannel">
+      <para>The channel number. If the audio stream contains <i>n</i> channels, the channels are numbered from 0 to <i>n</i>– 1. To obtain the number of channels, call the <see cref="IAudioEndpointVolume.GetChannelCount" /> method.</para>
+    </param>
+    <param name="fLevelDB">
+      <para>The new volume level in decibels. To obtain the range and granularity of the volume levels that can be set by this method, call the <see cref="IAudioEndpointVolume.GetVolumeRange" /> method.</para>
+    </param>
+    <param name="pguidEventContext">
+      <para>Context value for the <see cref="IAudioEndpointVolumeCallback.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetChannelVolumeLevel</b> call changes the volume level of the endpoint, all clients that have registered <see cref="IAudioEndpointVolumeCallback" /> interfaces with that endpoint will receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the volume-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the notification routine receives the context GUID value GUID_NULL.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If the method fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>nChannel</i> is greater than or equal to the number of channels in the stream; or parameter <i>fLevelDB</i> lies outside of the volume range supported by the device.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If volume level <i>fLevelDB</i> falls outside of the volume range reported by the <b>IAudioEndpointVolume.GetVolumeRange</b> method, the <b>SetChannelVolumeLevel</b> call fails and returns error code E_INVALIDARG.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.GetChannelCount" />
+    <seealso cref="IAudioEndpointVolume.GetVolumeRange" />
+    <seealso cref="IAudioEndpointVolumeCallback Interface" />
+    <seealso cref="IAudioEndpointVolumeCallback.OnNotify" />
+  </member>
+  <member name="IAudioEndpointVolume.SetChannelVolumeLevelScalar">
+    <summary>
+      <para>The <b>SetChannelVolumeLevelScalar</b> method sets the normalized, audio-tapered volume level of the specified channel in the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="nChannel">
+      <para>The channel number. If the audio stream contains <i>n</i> channels, the channels are numbered from 0 to <i>n</i>– 1. To obtain the number of channels, call the <see cref="IAudioEndpointVolume.GetChannelCount" /> method.</para>
+    </param>
+    <param name="fLevel">
+      <para>The volume level. The volume level is expressed as a normalized value in the range from 0.0 to 1.0.</para>
+    </param>
+    <param name="pguidEventContext">
+      <para>Context value for the <see cref="IAudioEndpointVolumeCallback.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetChannelVolumeLevelScalar</b> call changes the volume level of the endpoint, all clients that have registered <see cref="IAudioEndpointVolumeCallback" /> interfaces with that endpoint will receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the volume-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the notification routine receives the context GUID value GUID_NULL.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If the method fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>nChannel</i> is greater than or equal to the number of channels in the stream; or parameter <i>fLevel</i> is outside the range from 0.0 to 1.0.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The volume level is normalized to the range from 0.0 to 1.0, where 0.0 is the minimum volume level and 1.0 is the maximum level. Within this range, the relationship of the normalized volume level to the attenuation of signal amplitude is described by a nonlinear, audio-tapered curve. Note that the shape of the curve might change in future versions of Windows. For more information about audio-tapered curves, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-tapered-volume-controls">Audio-Tapered Volume Controls</a>.</para>
+      <para>The normalized volume levels that are passed to this method are suitable to represent the positions of volume controls in application windows and on-screen displays.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.GetChannelCount" />
+    <seealso cref="IAudioEndpointVolumeCallback Interface" />
+    <seealso cref="IAudioEndpointVolumeCallback.OnNotify" />
+  </member>
+  <member name="IAudioEndpointVolume.SetMasterVolumeLevel">
+    <summary>
+      <para>The <b>SetMasterVolumeLevel</b> method sets the master volume level, in decibels, of the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="fLevelDB">
+      <para>The new master volume level in decibels. To obtain the range and granularity of the volume levels that can be set by this method, call the <see cref="IAudioEndpointVolume.GetVolumeRange" /> method.</para>
+    </param>
+    <param name="pguidEventContext">
+      <para>Context value for the <see cref="IAudioEndpointVolumeCallback.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetMasterVolumeLevel</b> call changes the volume level of the endpoint, all clients that have registered <see cref="IAudioEndpointVolumeCallback" /> interfaces with that endpoint will receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the volume-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the notification routine receives the context GUID value GUID_NULL.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>fLevelDB</i> lies outside of the volume range supported by the device.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If volume level <i>fLevelDB</i> falls outside of the volume range reported by the <b>IAudioEndpointVolume.GetVolumeRange</b> method, the <b>SetMasterVolumeLevel</b> call fails and returns error code E_INVALIDARG.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.GetVolumeRange" />
+    <seealso cref="IAudioEndpointVolumeCallback Interface" />
+    <seealso cref="IAudioEndpointVolumeCallback.OnNotify" />
+  </member>
+  <member name="IAudioEndpointVolume.SetMasterVolumeLevelScalar">
+    <summary>
+      <para>The <b>SetMasterVolumeLevelScalar</b> method sets the master volume level of the audio stream that enters or leaves the audio endpoint device. The volume level is expressed as a normalized, audio-tapered value in the range from 0.0 to 1.0.</para>
+    </summary>
+    <param name="fLevel">
+      <para>The new master volume level. The level is expressed as a normalized value in the range from 0.0 to 1.0.</para>
+    </param>
+    <param name="pguidEventContext">
+      <para>Context value for the <see cref="IAudioEndpointVolumeCallback.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetMasterVolumeLevelScalar</b> call changes the volume level of the endpoint, all clients that have registered <see cref="IAudioEndpointVolumeCallback" /> interfaces with that endpoint will receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the volume-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the notification routine receives the context GUID value GUID_NULL.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>fLevel</i> is outside the range from 0.0 to 1.0.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The volume level is normalized to the range from 0.0 to 1.0, where 0.0 is the minimum volume level and 1.0 is the maximum level. Within this range, the relationship of the normalized volume level to the attenuation of signal amplitude is described by a nonlinear, audio-tapered curve. Note that the shape of the curve might change in future versions of Windows. For more information about audio-tapered curves, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-tapered-volume-controls">Audio-Tapered Volume Controls</a>.</para>
+      <para>The normalized volume levels that are passed to this method are suitable to represent the positions of volume controls in application windows and on-screen displays.</para>
+      <para>For a code example that calls <b>SetMasterVolumeLevelScalar</b>, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-volume-controls">Endpoint Volume Controls</a>.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolumeCallback Interface" />
+    <seealso cref="IAudioEndpointVolumeCallback.OnNotify" />
+  </member>
+  <member name="IAudioEndpointVolume.SetMute">
+    <summary>
+      <para>The <b>SetMute</b> method sets the muting state of the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="bMute">
+      <para>The new muting state. If <i>bMute</i> is <b>TRUE</b>, the method mutes the stream. If <b>FALSE</b>, the method turns off muting.</para>
+    </param>
+    <param name="pguidEventContext">
+      <para>Context value for the <see cref="IAudioEndpointVolumeCallback.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetMute</b> call changes the muting state of the endpoint, all clients that have registered <see cref="IAudioEndpointVolumeCallback" /> interfaces with that endpoint will receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the notification routine receives the context GUID value GUID_NULL.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds and the muting state changes, the method returns S_OK. If the method succeeds and the new muting state is the same as the previous muting state, the method returns S_FALSE. If the method fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For a code example that calls <b>SetMute</b>, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-volume-controls">Endpoint Volume Controls</a>.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolumeCallback Interface" />
+    <seealso cref="IAudioEndpointVolumeCallback.OnNotify" />
+  </member>
+  <member name="IAudioEndpointVolume.UnregisterControlChangeNotify">
+    <summary>
+      <para>The <b>UnregisterControlChangeNotify</b> method deletes the registration of a client's notification callback interface that the client registered in a previous call to the <see cref="IAudioEndpointVolume.RegisterControlChangeNotify" /> method.</para>
+    </summary>
+    <param name="pNotify">
+      <para>Pointer to the client's <see cref="IAudioEndpointVolumeCallback" /> interface. The client passed this same interface pointer to the endpoint volume object in a previous call to the <see cref="IAudioEndpointVolume.RegisterControlChangeNotify" /> method. If the <b>UnregisterControlChangeNotify</b> method succeeds, it calls the <see cref="Release" /> method on the client's <b>IAudioEndpointVolumeCallback</b> interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pNotify</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Before the client releases its final reference to the <see cref="IAudioEndpointVolumeCallback" /> interface, it should call <b>UnregisterControlChangeNotify</b> to unregister the interface. Otherwise, the application leaks the resources held by the <b>IAudioEndpointVolumeCallback</b> and <see cref="IAudioEndpointVolume" /> objects. Note that the <see cref="IAudioEndpointVolume.RegisterControlChangeNotify" /> method calls the client's <see cref="IAudioEndpointVolumeCallback.AddRef" /> method, and <b>UnregisterControlChangeNotify</b> calls the <see cref="IAudioEndpointVolumeCallback.Release" /> method. If the client errs by releasing its reference to the <b>IAudioEndpointVolumeCallback</b> interface before calling <b>UnregisterControlChangeNotify</b>, the <b>IAudioEndpointVolume</b> object never releases its reference to the <b>IAudioEndpointVolumeCallback</b> interface. For example, a poorly designed <b>IAudioEndpointVolumeCallback</b> implementation might call <b>UnregisterControlChangeNotify</b> from the destructor for the <b>IAudioEndpointVolumeCallback</b> object. In this case, the client will not call <b>UnregisterControlChangeNotify</b> until the <b>IAudioEndpointVolume</b> object releases its reference to the <b>IAudioEndpointVolumeCallback</b> interface, and the <b>IAudioEndpointVolume</b> object will not release its reference to the <b>IAudioEndpointVolumeCallback</b> interface until the client calls <b>UnregisterControlChangeNotify</b>. For more information about the <b>AddRef</b> and <b>Release</b> methods, see the discussion of the <see cref="IUnknown" /> interface in the Windows SDK documentation.</para>
+      <para>For a code example that calls <b>UnregisterControlChangeNotify</b>, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-volume-controls">Endpoint Volume Controls</a>.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.RegisterControlChangeNotify" />
+    <seealso cref="IAudioEndpointVolumeCallback Interface" />
+  </member>
+  <member name="IAudioEndpointVolume.VolumeStepDown">
+    <summary>
+      <para>The <b>VolumeStepDown</b> method decrements, by one step, the volume level of the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="pguidEventContext">
+      <para>Context value for the <see cref="IAudioEndpointVolumeCallback.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>VolumeStepDown</b> call changes the volume level of the endpoint, all clients that have registered <see cref="IAudioEndpointVolumeCallback" /> interfaces with that endpoint will receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the volume-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To obtain the current volume step and the total number of steps in the volume range, call the <see cref="IAudioEndpointVolume.GetVolumeStepInfo" /> method.</para>
+      <para>If the volume level is already at the lowest step in the volume range, the call to <b>VolumeStepDown</b> has no effect and returns status code S_OK.</para>
+      <para>Successive intervals between adjacent steps do not necessarily represent uniform volume increments in either linear signal amplitude or decibels. In Windows Vista, <b>VolumeStepDown</b> defines the relationship of step index to volume level (signal amplitude) to be an audio-tapered curve. Note that the shape of the curve might change in future versions of Windows. For more information about audio-tapered curves, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-tapered-volume-controls">Audio-Tapered Volume Controls</a>.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.GetVolumeStepInfo" />
+    <seealso cref="IAudioEndpointVolumeCallback Interface" />
+    <seealso cref="IAudioEndpointVolumeCallback.OnNotify" />
+  </member>
+  <member name="IAudioEndpointVolume.VolumeStepUp">
+    <summary>
+      <para>The <b>VolumeStepUp</b> method increments, by one step, the volume level of the audio stream that enters or leaves the audio endpoint device.</para>
+    </summary>
+    <param name="pguidEventContext">
+      <para>Context value for the <see cref="IAudioEndpointVolumeCallback.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>VolumeStepUp</b> call changes the volume level of the endpoint, all clients that have registered <see cref="IAudioEndpointVolumeCallback" /> interfaces with that endpoint will receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the volume-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To obtain the current volume step and the total number of steps in the volume range, call the <see cref="IAudioEndpointVolume.GetVolumeStepInfo" /> method.</para>
+      <para>If the volume level is already at the highest step in the volume range, the call to <b>VolumeStepUp</b> has no effect and returns status code S_OK.</para>
+      <para>Successive intervals between adjacent steps do not necessarily represent uniform volume increments in either linear signal amplitude or decibels. In Windows Vista, <b>VolumeStepUp</b> defines the relationship of step index to volume level (signal amplitude) to be an audio-tapered curve. Note that the shape of the curve might change in future versions of Windows. For more information about audio-tapered curves, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-tapered-volume-controls">Audio-Tapered Volume Controls</a>.</para>
+    </remarks>
+    <seealso cref="IAudioEndpointVolume Interface" />
+    <seealso cref="IAudioEndpointVolume.GetVolumeStepInfo" />
+    <seealso cref="IAudioEndpointVolumeCallback Interface" />
+    <seealso cref="IAudioEndpointVolumeCallback.OnNotify" />
+  </member>
+</doc>

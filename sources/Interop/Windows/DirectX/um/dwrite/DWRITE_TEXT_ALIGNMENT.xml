@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_TEXT_ALIGNMENT">
+    <summary>
+      <para>Specifies the alignment of paragraph text along the reading direction axis, relative to the leading and trailing edge of the layout box.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_ALIGNMENT.DWRITE_TEXT_ALIGNMENT_LEADING">
+    <summary>
+      <para>The leading edge of the paragraph text is aligned to the leading edge of the layout box.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_ALIGNMENT.DWRITE_TEXT_ALIGNMENT_TRAILING">
+    <summary>
+      <para>The trailing edge of the paragraph text is aligned to the  trailing edge of the layout box.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_ALIGNMENT.DWRITE_TEXT_ALIGNMENT_CENTER">
+    <summary>
+      <para>The center of the paragraph text is aligned to the center of the layout box.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_ALIGNMENT.DWRITE_TEXT_ALIGNMENT_JUSTIFIED">
+    <summary>
+      <para>Align text to the leading side, and also justify text to fill the lines.</para>
+    </summary>
+  </member>
+</doc>

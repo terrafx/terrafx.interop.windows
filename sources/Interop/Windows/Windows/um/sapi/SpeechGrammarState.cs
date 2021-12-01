@@ -7,9 +7,15 @@ using static TerraFX.Interop.Windows.SPGRAMMARSTATE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechGrammarState.xml' path='doc/member[@name="SpeechGrammarState"]/*' />
 public enum SpeechGrammarState
 {
+    /// <include file='SpeechGrammarState.xml' path='doc/member[@name="SpeechGrammarState.SGSEnabled"]/*' />
     SGSEnabled = SPGS_ENABLED,
+
+    /// <include file='SpeechGrammarState.xml' path='doc/member[@name="SpeechGrammarState.SGSDisabled"]/*' />
     SGSDisabled = SPGS_DISABLED,
+
+    /// <include file='SpeechGrammarState.xml' path='doc/member[@name="SpeechGrammarState.SGSExclusive"]/*' />
     SGSExclusive = SPGS_EXCLUSIVE,
 }

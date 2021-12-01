@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DATA_SET_REPAIR_OUTPUT.xml' path='doc/member[@name="DEVICE_DATA_SET_REPAIR_OUTPUT"]/*' />
 public partial struct DEVICE_DATA_SET_REPAIR_OUTPUT
 {
+    /// <include file='DEVICE_DATA_SET_REPAIR_OUTPUT.xml' path='doc/member[@name="DEVICE_DATA_SET_REPAIR_OUTPUT.ParityExtent"]/*' />
     [NativeTypeName("DEVICE_DSM_RANGE")]
     public DEVICE_DATA_SET_RANGE ParityExtent;
 }

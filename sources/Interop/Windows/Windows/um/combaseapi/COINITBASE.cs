@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COINITBASE.xml' path='doc/member[@name="COINITBASE"]/*' />
 [Flags]
 public enum COINITBASE
 {
+    /// <include file='COINITBASE.xml' path='doc/member[@name="COINITBASE.COINITBASE_MULTITHREADED"]/*' />
     COINITBASE_MULTITHREADED = 0x0,
 }

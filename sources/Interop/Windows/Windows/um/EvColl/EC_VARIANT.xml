@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EC_VARIANT">
+    <summary>
+      <para>The <b>EC_VARIANT</b> structure contains  event collector data (subscription data) or property values.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT.BooleanVal">
+    <summary>
+      <para>A Boolean value.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT.UInt32Val">
+    <summary>
+      <para>An unsigned 32-bit integer value.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT.DateTimeVal">
+    <summary>
+      <para>A ULONGLONG value.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT.StringVal">
+    <summary>
+      <para>A null-terminated Unicode string.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT.BinaryVal">
+    <summary>
+      <para>A hexadecimal binary value.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT.BooleanArr">
+    <summary>
+      <para>A pointer to an array of Boolean values.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT.Int32Arr">
+    <summary>
+      <para>A pointer to an array of signed 32-bit integer values.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT.StringArr">
+    <summary>
+      <para>A pointer to an array of null-terminated strings.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT.PropertyHandleVal">
+    <summary></summary>
+  </member>
+  <member name="EC_VARIANT.Count">
+    <summary>
+      <para>The number of elements (not length) in bytes. Used for arrays and binary or string types.</para>
+    </summary>
+  </member>
+  <member name="EC_VARIANT.Type">
+    <summary>
+      <para>The type of the data in the structure. Use a value from the <see cref="EC_VARIANT_TYPE" /> enumeration to specify the type. When the type is specified, you can use any of the union members to access the  actual value. For example, if the type is <b>EcVarTypeDateTime</b>, then the value is <b>DateTimeVal</b> in the <b>EC_VARIANT</b> structure.</para>
+    </summary>
+  </member>
+</doc>

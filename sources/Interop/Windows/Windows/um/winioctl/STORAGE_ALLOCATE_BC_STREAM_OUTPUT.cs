@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_ALLOCATE_BC_STREAM_OUTPUT.xml' path='doc/member[@name="STORAGE_ALLOCATE_BC_STREAM_OUTPUT"]/*' />
 public partial struct STORAGE_ALLOCATE_BC_STREAM_OUTPUT
 {
+    /// <include file='STORAGE_ALLOCATE_BC_STREAM_OUTPUT.xml' path='doc/member[@name="STORAGE_ALLOCATE_BC_STREAM_OUTPUT.RequestSize"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong RequestSize;
 
+    /// <include file='STORAGE_ALLOCATE_BC_STREAM_OUTPUT.xml' path='doc/member[@name="STORAGE_ALLOCATE_BC_STREAM_OUTPUT.NumOutStandingRequests"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumOutStandingRequests;
 }

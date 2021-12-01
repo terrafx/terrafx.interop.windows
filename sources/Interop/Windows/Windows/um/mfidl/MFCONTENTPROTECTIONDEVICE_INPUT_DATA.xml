@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA">
+    <summary>
+      <para>Contains information about the data that you want to provide as input to a protection system function.</para>
+    </summary>
+    <seealso cref="IMFContentProtectionDevice.GetPrivateDataByteCount" />
+    <seealso cref="IMFContentProtectionDevice.InvokeFunction" />
+    <seealso cref="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.HWProtectionFunctionID">
+    <summary>
+      <para>The identifier of the function that you need to run. This value is defined by the implementation of the protection system.</para>
+    </summary>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.PrivateDataByteCount">
+    <summary>
+      <para>The size of the private data that the implementation of  the security processor implementation reserved. You can determine this value by calling the <see cref="IMFContentProtectionDevice.GetPrivateDataByteCount" /> method.</para>
+    </summary>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.HWProtectionDataByteCount">
+    <summary>
+      <para>The size of the data provided as input to the protection system function that you want to run.</para>
+    </summary>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.InputData">
+    <summary>
+      <para>The data to provide as input to the protection system function.</para>
+      <para>If the value of the <b>PrivateDataByteCount</b> member is greater than 0, bytes 0 through <b>PrivateDataByteCount</b> - 1 are reserved for use by the independent hardware vendor (IHV). Bytes <b>PrivateDataByteCount</b> through <b>HWProtectionDataByteCount</b> + <b>PrivateDataByteCount</b> - 1 contain the input data for the protection system function.</para>
+      <para>The protection system specification defines the format and size of the DRM function.</para>
+    </summary>
+  </member>
+</doc>

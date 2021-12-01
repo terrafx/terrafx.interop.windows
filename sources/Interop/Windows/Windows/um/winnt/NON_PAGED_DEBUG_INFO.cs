@@ -7,33 +7,43 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 4)]
 public partial struct NON_PAGED_DEBUG_INFO
 {
+    /// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO.Signature"]/*' />
     [NativeTypeName("WORD")]
     public ushort Signature;
 
+    /// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO.Flags"]/*' />
     [NativeTypeName("WORD")]
     public ushort Flags;
 
+    /// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO.Machine"]/*' />
     [NativeTypeName("WORD")]
     public ushort Machine;
 
+    /// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO.Characteristics"]/*' />
     [NativeTypeName("WORD")]
     public ushort Characteristics;
 
+    /// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO.TimeDateStamp"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeDateStamp;
 
+    /// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO.CheckSum"]/*' />
     [NativeTypeName("DWORD")]
     public uint CheckSum;
 
+    /// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO.SizeOfImage"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeOfImage;
 
+    /// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO.ImageBase"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ImageBase;
 }

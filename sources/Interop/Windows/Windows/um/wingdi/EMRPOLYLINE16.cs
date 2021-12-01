@@ -9,18 +9,24 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRPOLYLINE16.xml' path='doc/member[@name="EMRPOLYLINE16"]/*' />
 public partial struct EMRPOLYLINE16
 {
+    /// <include file='EMRPOLYLINE16.xml' path='doc/member[@name="EMRPOLYLINE16.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRPOLYLINE16.xml' path='doc/member[@name="EMRPOLYLINE16.rclBounds"]/*' />
     public RECTL rclBounds;
 
+    /// <include file='EMRPOLYLINE16.xml' path='doc/member[@name="EMRPOLYLINE16.cpts"]/*' />
     [NativeTypeName("DWORD")]
     public uint cpts;
 
+    /// <include file='EMRPOLYLINE16.xml' path='doc/member[@name="EMRPOLYLINE16.apts"]/*' />
     [NativeTypeName("POINTS [1]")]
     public _apts_e__FixedBuffer apts;
 
+    /// <include file='_apts_e__FixedBuffer.xml' path='doc/member[@name="_apts_e__FixedBuffer"]/*' />
     public partial struct _apts_e__FixedBuffer
     {
         public POINTS e0;

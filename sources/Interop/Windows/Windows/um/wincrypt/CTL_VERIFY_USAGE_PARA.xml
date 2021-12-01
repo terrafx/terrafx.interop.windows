@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CTL_VERIFY_USAGE_PARA">
+    <summary>
+      <para>The <b>CTL_VERIFY_USAGE_PARA</b> structure contains parameters used by
+<see cref="CertVerifyCTLUsage" /> to establish the validity of a CTL's usage.</para>
+    </summary>
+    <seealso cref="CertVerifyCTLUsage" />
+  </member>
+  <member name="CTL_VERIFY_USAGE_PARA.cbSize">
+    <summary>
+      <para>Size of this structure in bytes.</para>
+    </summary>
+  </member>
+  <member name="CTL_VERIFY_USAGE_PARA.ListIdentifier">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that specifies a <b>ListIdentifier</b> of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">CTL</a> to be found or verified. Normally the <b>cbData</b> member of the <b>ListIdentifier</b> BLOB will be zero, indicating that a CTL with any <b>ListIdentifier</b> can be a match.</para>
+      <para>To match only CTLs with no <b>ListIdentifier</b>, the <b>cbData</b> member of the <b>ListIdentifier</b> BLOB is set to CTL_FIND_NO_LIST_ID_CBDATA.</para>
+      <para>If an issuer creates multiple CTLs for the same <b>SubjectUsage</b>, a <b>ListIdentifier</b> can distinguish among them.</para>
+    </summary>
+  </member>
+  <member name="CTL_VERIFY_USAGE_PARA.cCtlStore">
+    <summary>
+      <para>The count of stores to be searched for a matching CTL.</para>
+    </summary>
+  </member>
+  <member name="CTL_VERIFY_USAGE_PARA.rghCtlStore">
+    <summary>
+      <para>Array of handles of stores to be searched to find a matching CTL.</para>
+    </summary>
+  </member>
+  <member name="CTL_VERIFY_USAGE_PARA.cSignerStore">
+    <summary>
+      <para>Count of stores to be searched for acceptable CTL signers.</para>
+    </summary>
+  </member>
+  <member name="CTL_VERIFY_USAGE_PARA.rghSignerStore">
+    <summary>
+      <para>Array of handles of stores to be searched for acceptable CTL signers.</para>
+    </summary>
+  </member>
+</doc>

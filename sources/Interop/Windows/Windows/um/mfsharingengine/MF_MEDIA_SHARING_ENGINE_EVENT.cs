@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MEDIA_SHARING_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_SHARING_ENGINE_EVENT"]/*' />
 public enum MF_MEDIA_SHARING_ENGINE_EVENT
 {
+    /// <include file='MF_MEDIA_SHARING_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_SHARING_ENGINE_EVENT.MF_MEDIA_SHARING_ENGINE_EVENT_DISCONNECT"]/*' />
     MF_MEDIA_SHARING_ENGINE_EVENT_DISCONNECT = 2000,
 }

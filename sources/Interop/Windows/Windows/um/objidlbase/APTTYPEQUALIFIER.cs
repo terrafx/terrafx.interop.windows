@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APTTYPEQUALIFIER.xml' path='doc/member[@name="APTTYPEQUALIFIER"]/*' />
 public enum APTTYPEQUALIFIER
 {
+    /// <include file='APTTYPEQUALIFIER.xml' path='doc/member[@name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_NONE"]/*' />
     APTTYPEQUALIFIER_NONE = 0,
+
+    /// <include file='APTTYPEQUALIFIER.xml' path='doc/member[@name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_IMPLICIT_MTA"]/*' />
     APTTYPEQUALIFIER_IMPLICIT_MTA = 1,
+
+    /// <include file='APTTYPEQUALIFIER.xml' path='doc/member[@name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_NA_ON_MTA"]/*' />
     APTTYPEQUALIFIER_NA_ON_MTA = 2,
+
+    /// <include file='APTTYPEQUALIFIER.xml' path='doc/member[@name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_NA_ON_STA"]/*' />
     APTTYPEQUALIFIER_NA_ON_STA = 3,
+
+    /// <include file='APTTYPEQUALIFIER.xml' path='doc/member[@name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_NA_ON_IMPLICIT_MTA"]/*' />
     APTTYPEQUALIFIER_NA_ON_IMPLICIT_MTA = 4,
+
+    /// <include file='APTTYPEQUALIFIER.xml' path='doc/member[@name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_NA_ON_MAINSTA"]/*' />
     APTTYPEQUALIFIER_NA_ON_MAINSTA = 5,
+
+    /// <include file='APTTYPEQUALIFIER.xml' path='doc/member[@name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_APPLICATION_STA"]/*' />
     APTTYPEQUALIFIER_APPLICATION_STA = 6,
+
+    /// <include file='APTTYPEQUALIFIER.xml' path='doc/member[@name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_RESERVED_1"]/*' />
     APTTYPEQUALIFIER_RESERVED_1 = 7,
 }

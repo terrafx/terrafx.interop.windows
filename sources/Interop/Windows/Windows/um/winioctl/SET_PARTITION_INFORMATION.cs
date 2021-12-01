@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SET_PARTITION_INFORMATION.xml' path='doc/member[@name="SET_PARTITION_INFORMATION"]/*' />
 public partial struct SET_PARTITION_INFORMATION
 {
+    /// <include file='SET_PARTITION_INFORMATION.xml' path='doc/member[@name="SET_PARTITION_INFORMATION.PartitionType"]/*' />
     public byte PartitionType;
 }

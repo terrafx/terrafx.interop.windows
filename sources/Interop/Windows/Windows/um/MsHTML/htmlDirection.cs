@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection"]/*' />
 public enum htmlDirection
 {
+    /// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection.htmlDirectionForward"]/*' />
     htmlDirectionForward = 99999,
+
+    /// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection.htmlDirectionBackward"]/*' />
     htmlDirectionBackward = -99999,
+
+    /// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection.htmlDirection_Max"]/*' />
     htmlDirection_Max = 2147483647,
 }

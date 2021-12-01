@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontCollection2.GetFontFamily">
+    <summary>
+      <para>Creates a font family object, given a zero-based font family index.</para>
+    </summary>
+    <param name="index">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Zero-based index of the font family.</para>
+    </param>
+    <param name="fontFamily">
+      <para>Type: <b><see cref="IDWriteFontFamily2" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontFamily2" /> interface. On successful completion, the function sets the pointer to a newly created font family object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontCollection2.GetFontFamilyModel">
+    <summary>
+      <para>Retrieves the font family model used by the font collection to group families.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_FAMILY_MODEL" /></b></para>
+      <para>How families are grouped in the collection.</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontCollection2.GetFontSet">
+    <summary>
+      <para>Retrieves the underlying font set used by this collection.</para>
+    </summary>
+    <param name="fontSet">
+      <para>Type: <b><see cref="IDWriteFontSet1" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to the font set used by the collection.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontCollection2.GetMatchingFonts">
+    <summary>
+      <para>Retrieves a list of fonts in the specified font family, ranked in order of how well they match the specified axis values.</para>
+    </summary>
+    <param name="familyName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">WCHAR</a> const *</b></para>
+      <para>Name of the font family. The name is not case-sensitive, but must otherwise exactly match a family name in the collection.</para>
+    </param>
+    <param name="fontAxisValues">
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_VALUE" /> const *</b></para>
+      <para>A pointer to an array containing a list of font axis values. The array should be the size (the number of elements) indicated by the <i>fontAxisValueCount</i> argument.</para>
+    </param>
+    <param name="fontAxisValueCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of font axis values contained in the <i>fontAxisValues</i> array.</para>
+    </param>
+    <param name="fontList">
+      <para>Type: <b><see cref="IDWriteFontList2" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontList2" /> interface. On successful completion, the function sets the pointer to a newly created font list object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>If no fonts match, an empty list object is returned (calling <see cref="IDWriteFontList.GetFontCount" /> on it returns 0), but the function doesn't return an error.</para>
+    </remarks>
+  </member>
+  <member name="IDWriteFontCollection2">
+    <summary>
+      <para>This interface encapsulates a set of fonts, such as the set of fonts installed on the system, or the set of fonts in a particular directory. The font collection API can be used to discover what font families and fonts are available, and to obtain some metadata about the fonts. <b>IDWriteFontCollection2</b> adds new facilities, including support for <see cref="IDWriteFontSet1" />.</para>
+      <para>This interface extends <see cref="IDWriteFontCollection1" />.</para>
+    </summary>
+    <seealso cref="IDWriteFontCollection1" />
+    <seealso cref="IDWriteFontSet1" />
+  </member>
+</doc>

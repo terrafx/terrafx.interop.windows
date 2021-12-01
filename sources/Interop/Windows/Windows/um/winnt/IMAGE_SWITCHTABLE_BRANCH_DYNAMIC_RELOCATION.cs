@@ -8,11 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION
 {
     public ushort _bitfield;
 
+    /// <include file='IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION.PageRelativeOffset"]/*' />
     [NativeTypeName("WORD : 12")]
     public ushort PageRelativeOffset
     {
@@ -29,6 +31,7 @@ public partial struct IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION
         }
     }
 
+    /// <include file='IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION.RegisterNumber"]/*' />
     [NativeTypeName("WORD : 4")]
     public ushort RegisterNumber
     {

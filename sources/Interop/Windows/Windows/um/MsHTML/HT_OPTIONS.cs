@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HT_OPTIONS.xml' path='doc/member[@name="HT_OPTIONS"]/*' />
 public enum HT_OPTIONS
 {
+    /// <include file='HT_OPTIONS.xml' path='doc/member[@name="HT_OPTIONS.HT_OPT_AllowAfterEOL"]/*' />
     HT_OPT_AllowAfterEOL = 0x1,
+
+    /// <include file='HT_OPTIONS.xml' path='doc/member[@name="HT_OPTIONS.HT_OPTIONS_Max"]/*' />
     HT_OPTIONS_Max = 2147483647,
 }

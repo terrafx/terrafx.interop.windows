@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_OUTDUPL_MOVE_RECT">
+    <summary>
+      <para>The  <b>DXGI_OUTDUPL_MOVE_RECT</b> structure describes the movement of a  rectangle.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used by <see cref="GetFrameMoveRects" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+  </member>
+  <member name="DXGI_OUTDUPL_MOVE_RECT.SourcePoint">
+    <summary>
+      <para>The starting position of a rectangle.</para>
+    </summary>
+  </member>
+  <member name="DXGI_OUTDUPL_MOVE_RECT.DestinationRect">
+    <summary>
+      <para>The target region to which to move a rectangle.</para>
+    </summary>
+  </member>
+</doc>

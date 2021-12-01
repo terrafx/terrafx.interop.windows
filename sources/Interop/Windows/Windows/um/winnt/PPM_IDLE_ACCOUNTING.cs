@@ -9,23 +9,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PPM_IDLE_ACCOUNTING.xml' path='doc/member[@name="PPM_IDLE_ACCOUNTING"]/*' />
 public partial struct PPM_IDLE_ACCOUNTING
 {
+    /// <include file='PPM_IDLE_ACCOUNTING.xml' path='doc/member[@name="PPM_IDLE_ACCOUNTING.StateCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint StateCount;
 
+    /// <include file='PPM_IDLE_ACCOUNTING.xml' path='doc/member[@name="PPM_IDLE_ACCOUNTING.TotalTransitions"]/*' />
     [NativeTypeName("DWORD")]
     public uint TotalTransitions;
 
+    /// <include file='PPM_IDLE_ACCOUNTING.xml' path='doc/member[@name="PPM_IDLE_ACCOUNTING.ResetCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint ResetCount;
 
+    /// <include file='PPM_IDLE_ACCOUNTING.xml' path='doc/member[@name="PPM_IDLE_ACCOUNTING.StartTime"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong StartTime;
 
+    /// <include file='PPM_IDLE_ACCOUNTING.xml' path='doc/member[@name="PPM_IDLE_ACCOUNTING.State"]/*' />
     [NativeTypeName("PPM_IDLE_STATE_ACCOUNTING [1]")]
     public _State_e__FixedBuffer State;
 
+    /// <include file='_State_e__FixedBuffer.xml' path='doc/member[@name="_State_e__FixedBuffer"]/*' />
     public partial struct _State_e__FixedBuffer
     {
         public PPM_IDLE_STATE_ACCOUNTING e0;

@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MACROBLOCK_DATA.xml' path='doc/member[@name="MACROBLOCK_DATA"]/*' />
 public partial struct MACROBLOCK_DATA
 {
+    /// <include file='MACROBLOCK_DATA.xml' path='doc/member[@name="MACROBLOCK_DATA.flags"]/*' />
     [NativeTypeName("UINT32")]
     public uint flags;
 
+    /// <include file='MACROBLOCK_DATA.xml' path='doc/member[@name="MACROBLOCK_DATA.motionVectorX"]/*' />
     [NativeTypeName("INT16")]
     public short motionVectorX;
 
+    /// <include file='MACROBLOCK_DATA.xml' path='doc/member[@name="MACROBLOCK_DATA.motionVectorY"]/*' />
     [NativeTypeName("INT16")]
     public short motionVectorY;
 
+    /// <include file='MACROBLOCK_DATA.xml' path='doc/member[@name="MACROBLOCK_DATA.QPDelta"]/*' />
     [NativeTypeName("INT32")]
     public int QPDelta;
 }

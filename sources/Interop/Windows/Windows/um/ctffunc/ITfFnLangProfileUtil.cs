@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFnLangProfileUtil.xml' path='doc/member[@name="ITfFnLangProfileUtil"]/*' />
 [Guid("A87A8574-A6C1-4E15-99F0-3D3965F548EB")]
 [NativeTypeName("struct ITfFnLangProfileUtil : ITfFunction")]
 [NativeInheritance("ITfFunction")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
         return ((delegate* unmanaged<ITfFnLangProfileUtil*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
         return ((delegate* unmanaged<ITfFnLangProfileUtil*, uint>)(lpVtbl[1]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
         return ((delegate* unmanaged<ITfFnLangProfileUtil*, uint>)(lpVtbl[2]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
         return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort**, int>)(lpVtbl[3]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
+    /// <include file='ITfFnLangProfileUtil.xml' path='doc/member[@name="ITfFnLangProfileUtil.RegisterActiveProfiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RegisterActiveProfiles()
@@ -53,6 +59,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
         return ((delegate* unmanaged<ITfFnLangProfileUtil*, int>)(lpVtbl[4]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfFnLangProfileUtil.xml' path='doc/member[@name="ITfFnLangProfileUtil.IsProfileAvailableForLang"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsProfileAvailableForLang([NativeTypeName("LANGID")] ushort langid, BOOL* pfAvailable)

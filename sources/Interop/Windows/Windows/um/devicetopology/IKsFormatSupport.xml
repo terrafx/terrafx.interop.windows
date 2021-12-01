@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IKsFormatSupport.GetDevicePreferredFormat">
+    <summary>
+      <para>The <b>GetDevicePreferredFormat</b> method gets the preferred audio stream format for the connection.</para>
+    </summary>
+    <param name="ppKsFormat">
+      <para>Pointer to a pointer variable into which the method writes the address of a buffer that contains the format specifier for the preferred format. The specifier begins with a <b>KSDATAFORMAT</b> structure that might be followed by additional format information. The method allocates the storage for the format specifier. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the method fails,  <i>*ppKsFormat</i> is <b>NULL</b>. For more information about <b>KSDATAFORMAT</b>, format specifiers, and <b>CoTaskMemFree</b>, see the Windows DDK documentation.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>ppKsFormat</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IKsFormatSupport Interface" />
+  </member>
+  <member name="IKsFormatSupport.IsFormatSupported">
+    <summary>
+      <para>The <b>IsFormatSupported</b> method indicates whether the audio endpoint device supports the specified audio stream format.</para>
+    </summary>
+    <param name="pKsFormat">
+      <para>Pointer to an audio-stream format specifier. This parameter points to a caller-allocated buffer that contains a format specifier. The specifier begins with a <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat">KSDATAFORMAT</a> structure that might be followed by additional format information. For more information about <b>KSDATAFORMAT</b> and format specifiers, see the Windows DDK documentation.</para>
+    </param>
+    <param name="cbFormat">
+      <para>The size in bytes of the buffer that contains the format specifier.</para>
+    </param>
+    <param name="pbSupported">
+      <para>Pointer to a <b>BOOL</b> variable into which the method writes a value to indicate whether the format is supported. The method writes <b>TRUE</b> if the device supports the format and <b>FALSE</b> if the device does not support the format.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>pKsFormat</i> or <i>pbSupported</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The format specifier is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IKsFormatSupport Interface" />
+  </member>
+  <member name="IKsFormatSupport">
+    <summary>
+      <para>The <b>IKsFormatSupport</b> interface provides information about the audio data formats that are supported by a software-configured I/O connection (typically a DMA channel) between an audio adapter device and system memory. The client obtains a reference to the <b>IKsFormatSupport</b> interface of a part by calling the <see cref="IPart.Activate" /> method with parameter <i>refiid</i> set to REFIID IID_IKsFormatSupport. The call to <b>IPart.Activate</b> succeeds only if the part supports the <b>IKsFormatSupport</b> interface. Only a part object that represents a connector with a Software_IO connection type will support this interface. For more information about Software_IO, see <see cref="ConnectorType Enumeration" />.</para>
+      <para>Most Windows audio adapter drivers support the Windows Driver Model (WDM) and use kernel-streaming (KS) properties to represent the hardware description parameters in connectors (referred to as KS pins). The <b>IKsFormatSupport</b> interface provides convenient access to the KSPROPERTY_PIN_DATAINTERSECTION and KSPROPERTY_PIN_PROPOSEDDATAFORMAT properties of a connector to a system bus (typically, PCI or PCI Express) or an external bus (for example, USB). Not all drivers support the KSPROPERTY_PIN_PROPOSEDDATAFORMAT property. If a driver does not support this property, <b>IKsFormatSupport</b> uses the information in the KS data ranges for the connector to determine whether the connector supports the proposed format. For more information about KS properties, KS pins, and KS data ranges, see the Windows DDK documentation.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
+    <seealso cref="IPart.Activate" />
+  </member>
+</doc>

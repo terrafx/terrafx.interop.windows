@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AASHELLMENUITEM.xml' path='doc/member[@name="AASHELLMENUITEM"]/*' />
 public unsafe partial struct AASHELLMENUITEM
 {
+    /// <include file='AASHELLMENUITEM.xml' path='doc/member[@name="AASHELLMENUITEM.lpReserved1"]/*' />
     public void* lpReserved1;
 
+    /// <include file='AASHELLMENUITEM.xml' path='doc/member[@name="AASHELLMENUITEM.iReserved"]/*' />
     public int iReserved;
 
+    /// <include file='AASHELLMENUITEM.xml' path='doc/member[@name="AASHELLMENUITEM.uiReserved"]/*' />
     public uint uiReserved;
 
+    /// <include file='AASHELLMENUITEM.xml' path='doc/member[@name="AASHELLMENUITEM.lpName"]/*' />
     [NativeTypeName("LPAASHELLMENUFILENAME")]
     public AASHELLMENUFILENAME* lpName;
 
+    /// <include file='AASHELLMENUITEM.xml' path='doc/member[@name="AASHELLMENUITEM.psz"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* psz;
 }

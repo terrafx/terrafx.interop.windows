@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.DwmAttachMilContent">
+    <summary>
+      <para>This function is deprecated and only returns DWM_E_COMPOSITIONDISABLED in Windows 7 and later. It may be removed in future versions of Windows.</para>
+    </summary>
+    <param name="hwnd"></param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.DwmDefWindowProc">
+    <summary>
+      <para>Default window procedure for Desktop Window Manager (DWM) hit testing within the non-client area.</para>
+      <para>You also need to ensure that <b>DwmDefWindowProc</b> is called for the <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncmouseleave">WM_NCMOUSELEAVE</a> message. If <b>DwmDefWindowProc</b> is not called for the <b>WM_NCMOUSELEAVE</b> message, DWM does not remove the highlighting from the <b>Maximize</b>, <b>Minimize</b>, and <b>Close</b> buttons when the cursor leaves the window.</para>
+    </summary>
+    <param name="hWnd">
+      <para>A handle to the window procedure that received the message.</para>
+    </param>
+    <param name="msg">
+      <para>The message.</para>
+    </param>
+    <param name="wParam">
+      <para>Specifies additional message information. The content of this parameter depends on the value of the <i>msg</i> parameter.</para>
+    </param>
+    <param name="lParam">
+      <para>Specifies additional message information. The content of this parameter depends on the value of the <i>msg</i> parameter.</para>
+    </param>
+    <param name="plResult">
+      <para>A pointer to an <b>LRESULT</b> value that, when this method returns successfully,receives the result of the hit test.</para>
+    </param>
+    <returns>
+      <para>
+        <b>TRUE</b> if <b>DwmDefWindowProc</b> handled the message; otherwise, <b>FALSE</b>.</para>
+    </returns>
+    <remarks>
+      <para>When creating custom frames that include the standard caption buttons, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-nchittest">WM_NCHITTEST</a> and other non-client hit test messages should first be passed to the <b>DwmDefWindowProc</b> function. This enables the DWM to provide hit testing for the captions buttons. If <b>DwmDefWindowProc</b> does not handle the non-client hit test messages, further processing of these messages might be necessary.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DwmDetachMilContent">
+    <summary>
+      <para>This function is deprecated and only returns DWM_E_COMPOSITIONDISABLED in Windows 7 and later. It may be removed in future versions of Windows.</para>
+    </summary>
+    <param name="hwnd"></param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.DwmEnableBlurBehindWindow">
+    <summary>
+      <para>Enables the blur effect on a specified window.</para>
+    </summary>
+    <param name="hWnd">
+      <para>The handle to the window on which the blur-behind data is applied.</para>
+    </param>
+    <param name="pBlurBehind">
+      <para>
+        <code>[in]</code>
+      </para>
+      <para>A pointer to a <see cref="DWM_BLURBEHIND" /> structure that provides blur-behind data.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+Beginning with Windows 8, calling this function doesn't result in the blur effect, due to a style change in the way windows are rendered.</para>
+      </blockquote>
+      <para>Enable blur by setting the <b>fEnable</b> member of the <see cref="DWM_BLURBEHIND" /> structure to <b>TRUE</b>. This results in subsequent compositions of the window blurring the content behind it. This function should be called immediately before a <see cref="BeginPaint" /> call to ensure prompt application of the effect.</para>
+      <para>The alpha values in the window are honored, and the rendering atop the blur will use these alpha values. It's your application's responsibility to ensure that the alpha values of all pixels in the window are correct. Some Windows Graphics Device Interface (GDI) operations don't preserve alpha values, so you should take care when presenting child windows because the alpha values they contribute are unpredictable.</para>
+      <para>The region specified within the <see cref="DWM_BLURBEHIND" /> structure is owned by you as the caller. It's the caller's responsibility to free the region, and you can do so as soon as the function call is completed.</para>
+      <para>This function can be called only on top-level windows. An error occurs when this function is called on other window types.</para>
+      <para>This function must be called whenever Desktop Window Manager (DWM) composition is toggled. Handle the <a href="https://docs.microsoft.com//windows/win32/dwm/wm-dwmcompositionchanged">WM_DWMCOMPOSITIONCHANGED</a> message for composition change notification.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/win32/dwm/blur-ovw">DWM Blur Behind Overview</seealso>
+  </member>
+  <member name="Windows.DwmEnableComposition">
+    <summary>
+      <para>Enables or disables Desktop Window Manager (DWM) composition.</para>
+      <para>
+        <b>Note</b>  This function is deprecated as of Windows 8. DWM can no longer be programmatically disabled.</para>
+    </summary>
+    <param name="uCompositionAction">
+      <para>
+        <b>DWM_EC_ENABLECOMPOSITION</b> to enable DWM composition; <b>DWM_EC_DISABLECOMPOSITION</b> to disable composition.</para>
+      <para>
+        <b>Note</b>  As of Windows 8, calling this function with <b>DWM_EC_DISABLECOMPOSITION</b> has no effect. However, the function will still return a success code.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Disabling DWM composition disables it for the entire desktop. DWM composition will be automatically enabled when all processes that have disabled composition have called <b>DwmEnableComposition</b> to enable it or have been terminated. The <a href="https://docs.microsoft.com//windows/desktop/dwm/wm-dwmcompositionchanged">WM_DWMCOMPOSITIONCHANGED</a> notification is sent whenever DWM composition is enabled or disabled.</para>
+      <h4>Examples</h4>
+      <para>The following code example disables DWM composition.</para>
+      <code>
+...
+HRESULT hr = S_OK;
+
+// Disable DWM Composition
+hr = DwmEnableComposition(DWM_EC_DISABLECOMPOSITION);
+if (SUCCEEDED(hr))
+{
+   // ...
+}
+...
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/composition-ovw">Enable and Control DWM Composition</seealso>
+  </member>
+  <member name="Windows.DwmEnableMMCSS">
+    <summary>
+      <para>Notifies the Desktop Window Manager (DWM) to opt in to or out of Multimedia Class Schedule Service (MMCSS) scheduling while the calling process is alive.</para>
+    </summary>
+    <param name="fEnableMMCSS">
+      <para>
+        <b>TRUE</b> to instruct DWM to participate in MMCSS scheduling; <b>FALSE</b> to opt out or end participation in MMCSS scheduling.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>DWM will be scheduled by the MMCSS as long as any process that called <b>DwmEnableMMCSS</b> to enable MMCSS is active and has not previously called <b>DwmEnableMMCSS</b> to disable MMCSS.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DwmExtendFrameIntoClientArea">
+    <summary>
+      <para>Extends the window frame into the client area.</para>
+    </summary>
+    <param name="hWnd">
+      <para>The handle to the window in which the frame will be extended into the client area.</para>
+    </param>
+    <param name="pMarInset">
+      <para>A pointer to a <see cref="MARGINS" /> structure that describes the margins to use when extending the frame into the client area.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function must be called whenever Desktop Window Manager (DWM) composition is toggled. Handle the <a href="https://docs.microsoft.com//windows/desktop/dwm/wm-dwmcompositionchanged">WM_DWMCOMPOSITIONCHANGED</a> message for composition change notification.</para>
+      <para>Use negative margin values to create the "sheet of glass" effect where the client area is rendered as a solid surface with no window border.</para>
+      <h4>Examples</h4>
+      <para>The following sample demonstrates how to extend the bottom margin, creating a large bottom frame.</para>
+      <code>
+HRESULT ExtendIntoClientBottom(HWND hwnd)
+{
+   // Set margins, extending the bottom margin
+   MARGINS margins = {0,0,0,25};
+   HRESULT hr = S_OK;
+
+   // Extend frame on the bottom of client area
+   hr = DwmExtendFrameIntoClientArea(hwnd,&amp;amp;amp;amp;amp;amp;margins);
+   if (SUCCEEDED(hr))
+   {
+      // ...
+   }
+   return hr;
+}
+</code>
+      <para>The following sample demonstrates the "sheet of glass" effect where the client area is rendered without a window border.</para>
+      <code>
+HRESULT ExtendIntoClientAll(HWND hwnd)
+{
+   // Negative margins have special meaning to DwmExtendFrameIntoClientArea.
+   // Negative margins create the "sheet of glass" effect, where the client area
+   // is rendered as a solid surface with no window border.
+   MARGINS margins = {-1};
+   HRESULT hr = S_OK;
+
+   // Extend the frame across the entire window.
+   hr = DwmExtendFrameIntoClientArea(hwnd,&amp;amp;amp;amp;amp;amp;margins);
+   if (SUCCEEDED(hr))
+   {
+      // ...
+   }
+   return hr;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/blur-ovw">DWM Blur Behind Overview</seealso>
+  </member>
+  <member name="Windows.DwmFlush">
+    <summary>
+      <para>Issues a flush call that blocks the caller until the next present, when all of the Microsoft DirectX surface updates that are currently outstanding have been made. This compensates for very complex scenes or calling processes with very low priority.</para>
+    </summary>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>DwmFlush</b> waits for any queued DirectX changes that were queued by the calling application to be drawn to the screen before returning. It does not flush the entire session rendering batch.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DwmGetColorizationColor">
+    <summary>
+      <para>Retrieves the current color used for Desktop Window Manager (DWM) glass composition. This value is based on the current color scheme and can be modified by the user. Applications can listen for color changes by handling the <a href="https://docs.microsoft.com//windows/desktop/dwm/wm-dwmcolorizationcolorchanged">WM_DWMCOLORIZATIONCOLORCHANGED</a> notification.</para>
+    </summary>
+    <param name="pcrColorization">
+      <para>A pointer to a value that, when this function returns successfully, receives the current color used for glass composition. The color format of the value is 0xAARRGGBB.</para>
+    </param>
+    <param name="pfOpaqueBlend">
+      <para>A pointer to a value that, when this function returns successfully, indicates whether the color is an opaque blend. <b>TRUE</b> if the color is an opaque blend; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The value pointed to by <i>pcrColorization</i> is in an 0xAARRGGBB format. Many Microsoft Win32 APIs, such as <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a>, use a 0x00BBGGRR format. Be careful to assure that the intended colors are used.</para>
+      <h4>Examples</h4>
+      <para>The following example code shows a <a href="https://docs.microsoft.com//windows/desktop/dwm/wm-dwmcolorizationcolorchanged">WM_DWMCOLORIZATIONCOLORCHANGED</a> notification handle. If the colorization notification is received, this code retrieves the new color value.</para>
+      <code>
+...
+DWORD color = 0;
+BOOL opaque = FALSE;
+
+HRESULT hr = DwmGetColorizationColor(&amp;amp;amp;amp;amp;amp;color, &amp;amp;amp;amp;amp;amp;opaque);
+if (SUCCEEDED(hr))
+{
+  // Update the application to use the new color.
+}
+...
+</code>
+    </remarks>
+  </member>
+  <member name="Windows.DwmGetCompositionTimingInfo">
+    <summary>
+      <para>Retrieves the current composition timing information for a specified window.</para>
+    </summary>
+    <param name="hwnd">
+      <para>The handle to the window for which the composition timing information should be retrieved.</para>
+      <para>Starting with Windows 8.1, this parameter must be set to <b>NULL</b>. If this parameter is not set to <b>NULL</b>, <b>DwmGetCompositionTimingInfo</b> returns E_INVALIDARG.</para>
+    </param>
+    <param name="pTimingInfo">
+      <para>A pointer to a <see cref="DWM_TIMING_INFO" /> structure that, when this function returns successfully, receives the current composition timing information for the window. The <b>cbSize</b> member of this structure must be set before this function is called.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.DwmGetGraphicsStreamClient">
+    <summary>
+      <para>This function is deprecated and only returns DWM_E_COMPOSITIONDISABLED in Windows 7 and later. It may be removed in future versions of Windows.</para>
+    </summary>
+    <param name="uIndex"></param>
+    <param name="pClientUuid"></param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.DwmGetGraphicsStreamTransformHint">
+    <summary>
+      <para>This function is deprecated and only returns DWM_E_COMPOSITIONDISABLED in Windows 7 and later. It may be removed in future versions of Windows.</para>
+    </summary>
+    <param name="uIndex"></param>
+    <param name="pTransform"></param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.DwmGetTransportAttributes">
+    <summary>
+      <para>Retrieves transport attributes.</para>
+    </summary>
+    <param name="pfIsRemoting">
+      <para>A pointer to a <b>BOOL</b> value that indicates whether the transport supports remoting. <b>TRUE</b> if the transport supports remoting; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <param name="pfIsConnected">
+      <para>A pointer to a <b>BOOL</b> value that indicates whether the transport is connected. <b>TRUE</b> if the transport is connected; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <param name="pDwGeneration">
+      <para>A pointer to a <b>DWORD</b> that receives a generation value for the transport.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.DwmGetWindowAttribute">
+    <summary>
+      <para>Retrieves the current value of a specified Desktop Window Manager (DWM) attribute applied to a window. For programming guidance, and code examples, see <a href="https://docs.microsoft.com//windows/desktop/dwm/composition-ovw#controlling-non-client-region-rendering">Controlling non-client region rendering</a>.</para>
+    </summary>
+    <param name="hwnd">
+      <para>The handle to the window from which the attribute value is to be retrieved.</para>
+    </param>
+    <param name="dwAttribute">
+      <para>A flag describing which value to retrieve, specified as a value of the <see cref="DWMWINDOWATTRIBUTE" /> enumeration. This parameter specifies which attribute to retrieve, and the <i>pvAttribute</i> parameter points to an object into which the attribute value is retrieved.</para>
+    </param>
+    <param name="pvAttribute">
+      <para>A pointer to a value which, when this function returns successfully, receives the current value of the attribute. The type of the retrieved value depends on the value of the <i>dwAttribute</i> parameter. The <see cref="DWMWINDOWATTRIBUTE" /> enumeration topic indicates, in the row for each flag, what type of value you should pass a pointer to in the <i>pvAttribute</i> parameter.</para>
+    </param>
+    <param name="cbAttribute">
+      <para>The size, in bytes, of the attribute value being received via the <i>pvAttribute</i> parameter. The type of the retrieved value, and therefore its size in bytes, depends on the value of the <i>dwAttribute</i> parameter.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <seealso cref="DwmSetWindowAttribute function" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/composition-ovw">Enable and control DWM composition</seealso>
+  </member>
+  <member name="Windows.DwmInvalidateIconicBitmaps">
+    <summary>
+      <para>Called by an application to indicate that all previously provided iconic bitmaps from a window, both thumbnails and peek representations, should be refreshed.</para>
+    </summary>
+    <param name="hwnd">
+      <para>A handle to the window or tab whose bitmaps are being invalidated through this call. This window must belong to the calling process.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Calling this function causes the Desktop Window Manager (DWM) to invalidate its current bitmaps for the window and request new bitmaps from the window when they are next needed. <b>DwmInvalidateIconicBitmaps</b> should not be called frequently. Doing so can lead to poor performance as new bitmaps are created and retrieved.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DwmIsCompositionEnabled">
+    <summary>
+      <para>Obtains a value that indicates whether Desktop Window Manager (DWM) composition is enabled. Applications on machines running Windows 7 or earlier can listen for composition state changes by handling the <a href="https://docs.microsoft.com//windows/desktop/dwm/wm-dwmcompositionchanged">WM_DWMCOMPOSITIONCHANGED</a> notification.</para>
+    </summary>
+    <param name="pfEnabled">
+      <para>A pointer to a value that, when this function returns successfully, receives <b>TRUE</b> if DWM composition is enabled; otherwise, <b>FALSE</b>.</para>
+      <para>
+        <b>Note</b>  As of Windows 8, DWM composition is always enabled. If an app declares Windows 8 compatibility in their manifest, this function will receive a value of <b>TRUE</b> through <i>pfEnabled</i>. If no such manifest entry is found, Windows 8 compatibility is not assumed and this function receives a value of <b>FALSE</b> through <i>pfEnabled</i>. This is done so that older programs that interpret a value of <b>TRUE</b> to imply that high contrast mode is off can continue to make the correct decisions about rendering their images. (Note that this is a bad practice—you should use the <see cref="SystemParametersInfo" /> function with the <b>SPI_GETHIGHCONTRAST</b> flag to determine the state of high contrast mode.)</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/controls/supporting-high-contrast-themes">Supporting High Contrast Themes</a>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.DwmModifyPreviousDxFrameDuration">
+    <summary>
+      <para>Changes the number of monitor refreshes through which the previous frame will be displayed.</para>
+      <para>
+        <b>DwmModifyPreviousDxFrameDuration</b> is no longer supported. Starting with Windows 8.1, calls to <b>DwmModifyPreviousDxFrameDuration</b> always return E_NOTIMPL.</para>
+    </summary>
+    <param name="hwnd">
+      <para>The handle to the window for which the new duration is applied to the previous frame.</para>
+    </param>
+    <param name="cRefreshes">
+      <para>The number of refreshes to apply to the previous frame.</para>
+    </param>
+    <param name="fRelative">
+      <para>
+        <b>TRUE</b> if the value given in <i>cRefreshes</i> is relative to the current value (added to or subtracted from it); <b>FALSE</b> if the value replaces the current value.</para>
+    </param>
+    <returns>
+      <para>This function always returns S_OK, even when DWM is not running.</para>
+    </returns>
+  </member>
+  <member name="Windows.DwmQueryThumbnailSourceSize">
+    <summary>
+      <para>Retrieves the source size of the Desktop Window Manager (DWM) thumbnail.</para>
+    </summary>
+    <param name="hThumbnail">
+      <para>A handle to the thumbnail to retrieve the source window size from.</para>
+    </param>
+    <param name="pSize">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure that, when this function returns successfully, receives the size of the source thumbnail.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/thumbnail-ovw">DWM Thumbnail Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/dwm-overview">Desktop Window Manager Overview</seealso>
+    <seealso cref="DwmUpdateThumbnailProperties" />
+  </member>
+  <member name="Windows.DwmRegisterThumbnail">
+    <summary>
+      <para>Creates a Desktop Window Manager (DWM) thumbnail relationship between the destination and source windows.</para>
+    </summary>
+    <param name="hwndDestination">
+      <para>The handle to the window that will use the DWM thumbnail. Setting the destination window handle to anything other than a top-level window type will result in a return value of E_INVALIDARG.</para>
+    </param>
+    <param name="hwndSource">
+      <para>The handle to the window to use as the thumbnail source. Setting the source window handle to anything other than a top-level window type will result in a return value of E_INVALIDARG.</para>
+    </param>
+    <param name="phThumbnailId">
+      <para>A pointer to a handle that, when this function returns successfully, represents the registration of the DWM thumbnail.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Registering a DWM thumbnail relationship will not modify desktop composition; for information about thumbnail positioning, see the documentation for the <see cref="DwmUpdateThumbnailProperties" /> function.</para>
+      <para>The window designated by <i>hwndDestination</i> must either be the desktop window itself or be owned by the process that is calling <b>DwmRegisterThumbnail</b>. This is required to prevent applications from affecting the content of other applications.</para>
+      <para>The thumbnail registration handle obtained by this function is not globally unique but is unique to the process. Call the <see cref="DwmUnregisterThumbnail" /> function to unregister the thumbnail. This must be done within the process that the relationship was registered in.</para>
+      <h4>Examples</h4>
+      <para>The following example demonstrates how to register the desktop thumbnail.</para>
+      <code>
+HRESULT UpdateDesktop(HWND hwnd)
+{
+    HRESULT hr = S_OK;
+
+    // Register the thumbnail
+    HTHUMBNAIL thumbnail = NULL;
+
+    hr = DwmRegisterThumbnail(hwnd, FindWindow(_T("Progman"), NULL), &amp;amp;amp;amp;amp;amp;thumbnail);
+    if (SUCCEEDED(hr))
+    {
+        // Display the thumbnail using DwmUpdateThumbnailProperties
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/thumbnail-ovw">DWM Thumbnail Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/dwm-overview">Desktop Window Manager Overview</seealso>
+    <seealso cref="DwmQueryThumbnailSourceSize" />
+    <seealso cref="DwmUnregisterThumbnail" />
+    <seealso cref="DwmUpdateThumbnailProperties" />
+  </member>
+  <member name="Windows.DwmRenderGesture">
+    <summary>
+      <para>Notifies Desktop Window Manager (DWM) that a touch contact has been recognized as a gesture, and that DWM should draw feedback for that gesture.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>The type of gesture, specified as one of the <see cref="GESTURE_TYPE" /> values.</para>
+    </param>
+    <param name="cContacts">
+      <para>The number of contact points.</para>
+    </param>
+    <param name="pdwPointerID">
+      <para>The pointer ID.</para>
+    </param>
+    <param name="pPoints">
+      <para>The points.</para>
+    </param>
+  </member>
+  <member name="Windows.DwmSetDxFrameDuration">
+    <summary>
+      <para>Sets the number of monitor refreshes through which to display the presented frame.</para>
+      <para>
+        <b>DwmSetDxFrameDuration</b> is no longer supported. Starting with Windows 8.1, calls to <b>DwmSetDxFrameDuration</b> always return E_NOTIMPL.</para>
+    </summary>
+    <param name="hwnd">
+      <para>The handle to the window that displays the presented frame.</para>
+    </param>
+    <param name="cRefreshes">
+      <para>The number of refreshes through which to display the presented frame.</para>
+    </param>
+    <returns>
+      <para>This function always returns S_OK, even when the frame duration is not changed or DWM is not running.</para>
+    </returns>
+    <remarks>
+      <para>The DWM will attempt to display the presented frame for at least the number of monitor refreshes specified. It might be impossible to display the frame for the precise number of refreshes due to the current composition rate. If the frame is presented late to the DWM or the DWM is late in composing, a frame could be displayed for fewer than the number of refreshes requested or even skipped completely.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DwmSetIconicLivePreviewBitmap">
+    <summary>
+      <para>Sets a static, iconic bitmap to display a <i>live preview</i> (also known as a <i>Peek preview</i>) of a window or tab. The taskbar can use this bitmap to show a full-sized preview of a window or tab.</para>
+    </summary>
+    <param name="hwnd">
+      <para>A handle to the window. This window must belong to the calling process.</para>
+    </param>
+    <param name="hbmp">
+      <para>A handle to the bitmap to represent the window that <i>hwnd</i> specifies.</para>
+    </param>
+    <param name="pptClient">
+      <para>The offset of a tab window's <i>client region</i> (the content area inside the client window frame) from the host window's frame. This offset enables the tab window's contents to be drawn correctly in a live preview  when it is drawn without its frame.</para>
+    </param>
+    <param name="dwSITFlags">
+      <para>The display options for the live preview. This parameter can be 0 or the following value.</para>
+      <h4>DWM_SIT_DISPLAYFRAME (0x00000001)</h4>
+      <para>0x00000001. Displays a frame around the provided bitmap.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if the function succeeds, or an error value otherwise. Note that because this bitmap is not cached, if the window is not being previewed when an application calls this function, the function returns a success code but the bitmap is discarded and not used.</para>
+    </returns>
+    <remarks>
+      <para>A <i>live preview</i> (also known as a <i>Peek preview</i>) of a window appears when a user moves the mouse pointer over the window's thumbnail in the taskbar or gives the thumbnail focus in the ALT+TAB window. This view is a full-sized view of the window and can be a snapshot or an iconic representation.</para>
+      <para>A window typically calls the <b>DwmSetIconicLivePreviewBitmap</b> function in response to a <a href="https://docs.microsoft.com//windows/desktop/dwm/wm-dwmsendiconiclivepreviewbitmap">WM_DWMSENDICONICLIVEPREVIEWBITMAP</a> message. The returned bitmap must not be larger than the client area of the window or frame and must have 32-bit color depth.</para>
+      <para>The Desktop Window Manager (DWM) uses a copy of the bitmap, but the caller retains ownership of the original bitmap and is responsible for freeing the resources that it uses when it is no longer needed. The DWM does not keep its copy of the bitmap when the DWM stops displaying the live preview representation.</para>
+      <h4>Examples</h4>
+      <para>To set a static, iconic bitmap to use as a live preview for the application's window, an application calls the <b>DwmSetIconicLivePreviewBitmap</b> function. To set this bitmap, the application must call <see cref="DwmSetWindowAttribute" /> to set window attributes for non-client rendering to  <b>DWMWA_FORCE_ICONIC_REPRESENTATION</b> and <b>DWMWA_HAS_ICONIC_BITMAP</b>,  as shown in the following code.</para>
+      <code>            // Set DWM window attributes to provide the iconic bitmap, and
+            // to always render the thumbnail using the iconic bitmap.
+            BOOL fForceIconic = TRUE;
+            BOOL fHasIconicBitmap = TRUE;
+
+            DwmSetWindowAttribute(
+                hwnd,
+                DWMWA_FORCE_ICONIC_REPRESENTATION,
+                &amp;amp;amp;amp;amp;amp;fForceIconic,
+                sizeof(fForceIconic));
+
+            DwmSetWindowAttribute(
+                hwnd,
+                DWMWA_HAS_ICONIC_BITMAP,
+                &amp;amp;amp;amp;amp;amp;fHasIconicBitmap,
+                sizeof(fHasIconicBitmap));
+
+</code>
+      <para>Then, the application calls <b>DwmSetIconicLivePreviewBitmap</b>  to respond to the <a href="https://docs.microsoft.com//windows/desktop/dwm/wm-dwmsendiconiclivepreviewbitmap">WM_DWMSENDICONICLIVEPREVIEWBITMAP</a> message, as shown in the following code.</para>
+      <code>        case WM_DWMSENDICONICLIVEPREVIEWBITMAP:
+        {
+            // This window is being asked to provide a bitmap to show in Peek preview.
+            // This indicates the thumbnail in the taskbar is being previewed.
+            RECT rectWindow = {0, 0, 0, 0};
+            if (GetClientRect(hwnd, &amp;amp;amp;amp;amp;amp;rectWindow))
+            {
+                nWidth = rectWindow.right - rectWindow.left;
+                nHeight = rectWindow.bottom - rectWindow.top;
+            }
+
+            hbm = CreateDIB(nWidth, nHeight);
+            if (hbm)
+            {
+                hr = DwmSetIconicLivePreviewBitmap(hwnd, hbm, NULL, DWM_SIT_DISPLAYFRAME);
+                DeleteObject(hbm);
+            }
+        }
+        break;
+
+</code>
+      <para>For the complete example, see the  <a href="https://docs.microsoft.com//windows/desktop/dwm/dwm-sample-customizethumbnail">Customize an Iconic Thumbnail and a Live Preview Bitmap</a> sample.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DwmSetIconicThumbnail">
+    <summary>
+      <para>Sets a static, iconic bitmap on a window or tab to use as a thumbnail representation. The taskbar can use this bitmap as a thumbnail switch target for the window or tab.</para>
+    </summary>
+    <param name="hwnd">
+      <para>A handle to the window or tab. This window must belong to the calling process.</para>
+    </param>
+    <param name="hbmp">
+      <para>A handle to the bitmap to represent the window that <i>hwnd</i> specifies.</para>
+    </param>
+    <param name="dwSITFlags">
+      <para>The display options for the thumbnail. One of the following values:</para>
+      <h4>0 (0x00000000)</h4>
+      <para>No frame is displayed around the provided thumbnail.</para>
+      <h4>DWM_SIT_DISPLAYFRAME (0x00000001)</h4>
+      <para>Displays a frame around the provided thumbnail.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>An application typically calls the <b>DwmSetIconicThumbnail</b> function after it receives a <a href="https://docs.microsoft.com//windows/desktop/dwm/wm-dwmsendiconicthumbnail">WM_DWMSENDICONICTHUMBNAIL</a> message for its window. The thumbnail should not exceed the maximum x-coordinate and y-coordinate that are specified in that message. The thumbnail must also have a 32-bit color depth.</para>
+      <para>The application calls <see cref="DwmInvalidateIconicBitmaps" /> to indicate to the Desktop Window Manager (DWM) that the iconic thumbnail and live preview bitmaps are out-of-date and should be refreshed. The DWM then requests new versions from the window when they are needed. However, if the DWM bitmap cache is full, DWM will not request updated versions.</para>
+      <para>The DWM uses a copy of the bitmap, but the application can release this copy at any time because of memory constraints. If the copy is released, the window is not notified, but it might receive a subsequent <a href="https://docs.microsoft.com//windows/desktop/dwm/wm-dwmsendiconicthumbnail">WM_DWMSENDICONICTHUMBNAIL</a> request when its thumbnail is needed again. The caller retains ownership of the original bitmap and is responsible for freeing the resources that it uses when it is no longer needed.</para>
+      <h4>Examples</h4>
+      <para>Before calling <b>DwmSetIconicThumbnail</b>, the application must first call the <see cref="DwmSetWindowAttribute" /> function to set the <b>DWMWA_FORCE_ICONIC_REPRESENTATION</b> and <b>DWMWA_HAS_ICONIC_BITMAP</b> attributes, as shown in the following example.</para>
+      <code>            // Set DWM window attributes to provide the iconic bitmap, and
+            // to always render the thumbnail using the iconic bitmap.
+            BOOL fForceIconic = TRUE;
+            BOOL fHasIconicBitmap = TRUE;
+
+            DwmSetWindowAttribute(
+                hwnd,
+                DWMWA_FORCE_ICONIC_REPRESENTATION,
+                &amp;amp;amp;amp;amp;amp;fForceIconic,
+                sizeof(fForceIconic));
+
+            DwmSetWindowAttribute(
+                hwnd,
+                DWMWA_HAS_ICONIC_BITMAP,
+                &amp;amp;amp;amp;amp;amp;fHasIconicBitmap,
+                sizeof(fHasIconicBitmap));
+
+</code>
+      <para>Next, the application calls the <b>DwmSetIconicThumbnail</b> function in response to a <a href="https://docs.microsoft.com//windows/desktop/dwm/wm-dwmsendiconicthumbnail">WM_DWMSENDICONICTHUMBNAIL</a> message, as shown in the following example.</para>
+      <code>        case WM_DWMSENDICONICTHUMBNAIL:
+        {
+            // This window is being asked to provide its iconic bitmap. This indicates
+            // a thumbnail is being drawn.
+            hbm = CreateDIB(HIWORD(lParam), LOWORD(lParam));
+            if (hbm)
+            {
+                hr = DwmSetIconicThumbnail(hwnd, hbm, 0);
+                DeleteObject(hbm);
+            }
+        }
+        break;
+
+</code>
+      <para>For the complete example code, see the <a href="https://docs.microsoft.com//windows/desktop/dwm/dwm-sample-customizethumbnail">Customize an Iconic Thumbnail and a Live Preview Bitmap</a> sample.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DwmSetPresentParameters">
+    <summary>
+      <para>Sets the present parameters for frame composition.</para>
+      <para>
+        <b>DwmSetPresentParameters</b> is no longer supported. Starting with Windows 8.1, calls to <b>DwmSetPresentParameters</b> always return E_NOTIMPL.</para>
+    </summary>
+    <param name="hwnd">
+      <para>The handle to the window where the present parameters are applied.</para>
+    </param>
+    <param name="pPresentParams">
+      <para>A pointer to a <see cref="DWM_PRESENT_PARAMETERS" /> structure that contains DWM video frame parameters for frame composition.</para>
+    </param>
+    <returns>
+      <para>This function always returns S_OK.</para>
+    </returns>
+  </member>
+  <member name="Windows.DwmSetWindowAttribute">
+    <summary>
+      <para>Sets the value of Desktop Window Manager (DWM) non-client rendering attributes for a window. For programming guidance, and code examples, see <a href="https://docs.microsoft.com//windows/desktop/dwm/composition-ovw#controlling-non-client-region-rendering">Controlling non-client region rendering</a>.</para>
+    </summary>
+    <param name="hwnd">
+      <para>The handle to the window for which the attribute value is to be set.</para>
+    </param>
+    <param name="dwAttribute">
+      <para>A flag describing which value to set, specified as a value of the <see cref="DWMWINDOWATTRIBUTE" /> enumeration. This parameter specifies which attribute to set, and the <i>pvAttribute</i> parameter points to an object containing the attribute value.</para>
+    </param>
+    <param name="pvAttribute">
+      <para>A pointer to an object containing the attribute value to set. The type of the value set depends on the value of the <i>dwAttribute</i> parameter. The <see cref="DWMWINDOWATTRIBUTE" /> enumeration topic indicates, in the row for each flag, what type of value you should pass a pointer to in the <i>pvAttribute</i> parameter.</para>
+    </param>
+    <param name="cbAttribute">
+      <para>The size, in bytes, of the attribute value being set via the <i>pvAttribute</i> parameter. The type of the value set, and therefore its size in bytes, depends on the value of the <i>dwAttribute</i> parameter.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</para>
+      <para>If Desktop Composition has been disabled (Windows 7 and earlier), then this function returns <b>DWM_E_COMPOSITIONDISABLED</b>.</para>
+    </returns>
+    <remarks>
+      <para>It's not valid to call this function with the <i>dwAttribute</i> parameter set to <b>DWMWA_NCRENDERING_ENABLED</b>. To enable or disable non-client rendering, you should use the <b>DWMWA_NCRENDERING_POLICY</b> attribute, and set the desired value. For more info, and a code example, see <a href="https://docs.microsoft.com//windows/desktop/dwm/composition-ovw#controlling-non-client-region-rendering">Controlling non-client region rendering</a>.</para>
+    </remarks>
+    <seealso cref="DwmGetWindowAttribute function" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/composition-ovw">Enable and control DWM composition</seealso>
+  </member>
+  <member name="Windows.DwmShowContact">
+    <summary>
+      <para>Called by an app or framework to specify the visual feedback type to draw in response to a particular touch or pen contact.</para>
+    </summary>
+    <param name="dwPointerID">
+      <para>The pointer ID of the contact. Each touch or pen contact is given a unique ID when it is detected.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>One or more of the following DWM_SHOWCONTACT visualizations that DWM should show for this contact.</para>
+      <h4>DWMSC_NONE (0x00000000)</h4>
+      <para>No visual feedback should be shown in response to the contact.</para>
+      <h4>DWMSC_DOWN (0x00000001)</h4>
+      <para>Show the "contact down" animation, such as would be used in a button press.</para>
+      <h4>DWMSC_UP (0x00000002)</h4>
+      <para>Show the "contact up" animation, such as would be used in a button release.</para>
+      <h4>DWMSC_DRAG (0x00000004)</h4>
+      <para>Show the "contact drag" animation when the UI element that was selected by the touch or pen is dragged.</para>
+      <h4>DWMSC_HOLD (0x00000008)</h4>
+      <para>Show a visual while the contact is held down, such as holding down a button.</para>
+      <h4>DWMSC_PENBARREL (0x00000010)</h4>
+      <para>Show the pen barrel visual when the pen barrel button is pressed.</para>
+      <h4>DWMSC_ALL (0xFFFFFFFF)</h4>
+      <para>Show any of the animations if called for.</para>
+    </param>
+    <returns>
+      <para>If <i>dwPointerID</i> does not match that of a contact currently present on the screen, this function returns E_INVALIDARG; otherwise, it returns S_OK.</para>
+    </returns>
+    <remarks>
+      <para>It is safe to call this function on the UI thread.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DwmTetherContact">
+    <summary>
+      <para>Enables the graphical feedback of touch and drag interactions to the user.</para>
+    </summary>
+    <param name="dwPointerID">
+      <para>The pointer ID.</para>
+    </param>
+    <param name="fEnable">
+      <para>Indicates whether the contact is enabled.</para>
+    </param>
+    <param name="ptTether">
+      <para>The tether.</para>
+    </param>
+  </member>
+  <member name="Windows.DwmTransitionOwnedWindow">
+    <summary>
+      <para>Coordinates the animations of tool windows with the Desktop Window Manager (DWM).</para>
+    </summary>
+    <param name="hwnd">
+      <para>Handle to the window.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>The target.</para>
+    </param>
+  </member>
+  <member name="Windows.DwmUnregisterThumbnail">
+    <summary>
+      <para>Removes a Desktop Window Manager (DWM) thumbnail relationship created by the <see cref="DwmRegisterThumbnail" /> function.</para>
+    </summary>
+    <param name="hThumbnailId">
+      <para>The handle to the thumbnail relationship to be removed. Null or non-existent handles will result in a return value of E_INVALIDARG.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Unregistering DWM thumbnail relationships must be done within the process that registered the relationships.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/thumbnail-ovw">DWM Thumbnail Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/dwm-overview">Desktop Window Manager Overview</seealso>
+    <seealso cref="DwmQueryThumbnailSourceSize" />
+    <seealso cref="DwmUpdateThumbnailProperties" />
+  </member>
+  <member name="Windows.DwmUpdateThumbnailProperties">
+    <summary>
+      <para>Updates the properties for a Desktop Window Manager (DWM) thumbnail.</para>
+    </summary>
+    <param name="hThumbnailId">
+      <para>The handle to the DWM thumbnail to be updated. Null or invalid thumbnails, as well as thumbnails owned by other processes will result in a return value of E_INVALIDARG.</para>
+    </param>
+    <param name="ptnProperties">
+      <para>A pointer to a <see cref="DWM_THUMBNAIL_PROPERTIES" /> structure that contains the new thumbnail properties.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Thumbnail relationships created by the <see cref="DwmRegisterThumbnail" /> function will not be rendered to the destination window until this function is called. Subsequent calls will update the thumbnail according to the provided properties.</para>
+      <h4>Examples</h4>
+      <para>The following example demonstrates how to register and display the desktop thumbnail.</para>
+      <code>
+HRESULT UpdateDesktop(HWND hwnd)
+{
+    HRESULT hr = S_OK;
+
+    // Register the thumbnail
+    SIZE size = {100,100};
+    HTHUMBNAIL thumbnail = NULL;
+
+    hr = DwmRegisterThumbnail(hwnd, FindWindow(_T("Progman"), NULL), &amp;amp;amp;amp;amp;amp;size, &amp;amp;amp;amp;amp;amp;thumbnail);
+    if (SUCCEEDED(hr))
+    {
+        // The destination rectangle size
+        RECT dest = {0,50,100,150};
+
+        // Set the thumbnail properties for use
+        DWM_THUMBNAIL_PROPERTIES dskThumbProps;
+        dskThumbProps.dwFlags = DWM_TNP_RECTDESTINATION | DWM_TNP_VISIBLE | DWM_TNP_SOURCECLIENTAREAONLY;
+
+        // Use the window frame and client area
+        dskThumbProps.fSourceClientAreaOnly = FALSE;
+        dskThumbProps.fVisible = TRUE;
+        dskThumbProps.opacity = (255 * 70)/100;
+        dskThumbProps.rcDestination = dest;
+
+        // Display the thumbnail
+        hr = DwmUpdateThumbnailProperties(thumbnail,&amp;amp;amp;amp;amp;amp;dskThumbProps);
+        if (SUCCEEDED(hr))
+        {
+            // ...
+        }
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/thumbnail-ovw">DWM Thumbnail Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/dwm-overview">Desktop Window Manager Overview</seealso>
+    <seealso cref="DwmQueryThumbnailSourceSize" />
+    <seealso cref="DwmUnregisterThumbnail" />
+  </member>
+</doc>

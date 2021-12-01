@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_HTTP_PROXY_SETTING_MODE">
+    <summary>
+      <para>Proxy setting indicates HTTP proxy setting for the channel with binding <see cref="WS_HTTP_CHANNEL_BINDING" />.
+This is specified as part of <see cref="WS_CHANNEL_PROPERTY_HTTP_PROXY_SETTING_MODE" /> channel property.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_PROXY_SETTING_MODE.WS_HTTP_PROXY_SETTING_MODE_AUTO">
+    <summary>
+      <para>The channel will automatically detect the proxy setting based on the IE configuration for the
+user at the point the channel is opened. This is the default setting for the <see cref="WS_HTTP_CHANNEL_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_PROXY_SETTING_MODE.WS_HTTP_PROXY_SETTING_MODE_NONE">
+    <summary>
+      <para>No proxy will be used to service the request on the channel.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_PROXY_SETTING_MODE.WS_HTTP_PROXY_SETTING_MODE_CUSTOM">
+    <summary>
+      <para>If an application chooses to explicitly control the HTTP proxy it can use this setting.
+The <see cref="WS_CHANNEL_PROPERTY_CUSTOM_HTTP_PROXY" /> property specifies the custom proxy to be used
+with the channel and must be set on the channel if this setting is used.</para>
+    </summary>
+  </member>
+</doc>

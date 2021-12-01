@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGR_UPDATE_REASON.xml' path='doc/member[@name="SYNCMGR_UPDATE_REASON"]/*' />
 public enum SYNCMGR_UPDATE_REASON
 {
+    /// <include file='SYNCMGR_UPDATE_REASON.xml' path='doc/member[@name="SYNCMGR_UPDATE_REASON.SYNCMGR_UR_ADDED"]/*' />
     SYNCMGR_UR_ADDED = 0,
+
+    /// <include file='SYNCMGR_UPDATE_REASON.xml' path='doc/member[@name="SYNCMGR_UPDATE_REASON.SYNCMGR_UR_CHANGED"]/*' />
     SYNCMGR_UR_CHANGED = 1,
+
+    /// <include file='SYNCMGR_UPDATE_REASON.xml' path='doc/member[@name="SYNCMGR_UPDATE_REASON.SYNCMGR_UR_REMOVED"]/*' />
     SYNCMGR_UR_REMOVED = 2,
+
+    /// <include file='SYNCMGR_UPDATE_REASON.xml' path='doc/member[@name="SYNCMGR_UPDATE_REASON.SYNCMGR_UR_MAX"]/*' />
     SYNCMGR_UR_MAX = SYNCMGR_UR_REMOVED,
 }

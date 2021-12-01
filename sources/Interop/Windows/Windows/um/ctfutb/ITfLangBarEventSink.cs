@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink"]/*' />
 [Guid("18A4E900-E0AE-11D2-AFDD-00105A2799B5")]
 [NativeTypeName("struct ITfLangBarEventSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
         return ((delegate* unmanaged<ITfLangBarEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
         return ((delegate* unmanaged<ITfLangBarEventSink*, uint>)(lpVtbl[1]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
         return ((delegate* unmanaged<ITfLangBarEventSink*, uint>)(lpVtbl[2]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.OnSetFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnSetFocus([NativeTypeName("DWORD")] uint dwThreadId)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
         return ((delegate* unmanaged<ITfLangBarEventSink*, uint, int>)(lpVtbl[3]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId);
     }
 
+    /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.OnThreadTerminate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnThreadTerminate([NativeTypeName("DWORD")] uint dwThreadId)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
         return ((delegate* unmanaged<ITfLangBarEventSink*, uint, int>)(lpVtbl[4]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId);
     }
 
+    /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.OnThreadItemChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnThreadItemChange([NativeTypeName("DWORD")] uint dwThreadId)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
         return ((delegate* unmanaged<ITfLangBarEventSink*, uint, int>)(lpVtbl[5]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId);
     }
 
+    /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.OnModalInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnModalInput([NativeTypeName("DWORD")] uint dwThreadId, uint uMsg, WPARAM wParam, LPARAM lParam)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
         return ((delegate* unmanaged<ITfLangBarEventSink*, uint, uint, WPARAM, LPARAM, int>)(lpVtbl[6]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId, uMsg, wParam, lParam);
     }
 
+    /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.ShowFloating"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ShowFloating([NativeTypeName("DWORD")] uint dwFlags)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
         return ((delegate* unmanaged<ITfLangBarEventSink*, uint, int>)(lpVtbl[7]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.GetItemFloatingRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetItemFloatingRect([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("const GUID &")] Guid* rguid, RECT* prc)

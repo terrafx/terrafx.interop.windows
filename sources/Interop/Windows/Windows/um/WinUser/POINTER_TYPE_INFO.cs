@@ -9,15 +9,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTER_TYPE_INFO.xml' path='doc/member[@name="POINTER_TYPE_INFO"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
 public partial struct POINTER_TYPE_INFO
 {
+    /// <include file='POINTER_TYPE_INFO.xml' path='doc/member[@name="POINTER_TYPE_INFO.type"]/*' />
     [NativeTypeName("POINTER_INPUT_TYPE")]
     public uint type;
 
+    /// <include file='POINTER_TYPE_INFO.xml' path='doc/member[@name="POINTER_TYPE_INFO.Anonymous"]/*' />
     [NativeTypeName("tagPOINTER_TYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinUser.h:6475:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.touchInfo"]/*' />
     public ref POINTER_TOUCH_INFO touchInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -27,6 +31,7 @@ public partial struct POINTER_TYPE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.penInfo"]/*' />
     public ref POINTER_PEN_INFO penInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,12 +41,15 @@ public partial struct POINTER_TYPE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.touchInfo"]/*' />
         [FieldOffset(0)]
         public POINTER_TOUCH_INFO touchInfo;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.penInfo"]/*' />
         [FieldOffset(0)]
         public POINTER_PEN_INFO penInfo;
     }

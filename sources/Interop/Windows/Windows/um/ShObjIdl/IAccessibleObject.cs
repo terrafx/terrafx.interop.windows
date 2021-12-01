@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAccessibleObject.xml' path='doc/member[@name="IAccessibleObject"]/*' />
 [Guid("95A391C5-9ED4-4C28-8401-AB9E06719E11")]
 [NativeTypeName("struct IAccessibleObject : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAccessibleObject : IAccessibleObject.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAccessibleObject : IAccessibleObject.Interface
         return ((delegate* unmanaged<IAccessibleObject*, Guid*, void**, int>)(lpVtbl[0]))((IAccessibleObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAccessibleObject : IAccessibleObject.Interface
         return ((delegate* unmanaged<IAccessibleObject*, uint>)(lpVtbl[1]))((IAccessibleObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAccessibleObject : IAccessibleObject.Interface
         return ((delegate* unmanaged<IAccessibleObject*, uint>)(lpVtbl[2]))((IAccessibleObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAccessibleObject.xml' path='doc/member[@name="IAccessibleObject.SetAccessibleName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetAccessibleName([NativeTypeName("LPCWSTR")] ushort* pszName)

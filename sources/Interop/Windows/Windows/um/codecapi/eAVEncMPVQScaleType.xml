@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMPVQScaleType">
+    <summary>
+      <para>Specifies whether the quantizer scale is linear or non-linear. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpvqscaletype-property">AVEncMPVQScaleType</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_Auto">
+    <summary>
+      <para>The encoder selects the quantization scale.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_Linear">
+    <summary>
+      <para>The quantization scale is linear.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_NonLinear">
+    <summary>
+      <para>The quantization scale is non-linear.</para>
+    </summary>
+  </member>
+</doc>

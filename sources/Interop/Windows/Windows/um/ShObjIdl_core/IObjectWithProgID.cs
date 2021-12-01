@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IObjectWithProgID.xml' path='doc/member[@name="IObjectWithProgID"]/*' />
 [Guid("71E806FB-8DEE-46FC-BF8C-7748A8A1AE13")]
 [NativeTypeName("struct IObjectWithProgID : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IObjectWithProgID : IObjectWithProgID.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IObjectWithProgID : IObjectWithProgID.Interface
         return ((delegate* unmanaged<IObjectWithProgID*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithProgID*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IObjectWithProgID : IObjectWithProgID.Interface
         return ((delegate* unmanaged<IObjectWithProgID*, uint>)(lpVtbl[1]))((IObjectWithProgID*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IObjectWithProgID : IObjectWithProgID.Interface
         return ((delegate* unmanaged<IObjectWithProgID*, uint>)(lpVtbl[2]))((IObjectWithProgID*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IObjectWithProgID.xml' path='doc/member[@name="IObjectWithProgID.SetProgID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetProgID([NativeTypeName("LPCWSTR")] ushort* pszProgID)
@@ -46,6 +51,7 @@ public unsafe partial struct IObjectWithProgID : IObjectWithProgID.Interface
         return ((delegate* unmanaged<IObjectWithProgID*, ushort*, int>)(lpVtbl[3]))((IObjectWithProgID*)Unsafe.AsPointer(ref this), pszProgID);
     }
 
+    /// <include file='IObjectWithProgID.xml' path='doc/member[@name="IObjectWithProgID.GetProgID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetProgID([NativeTypeName("LPWSTR *")] ushort** ppszProgID)

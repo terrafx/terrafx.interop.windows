@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1SvgPointCollection.GetPoints">
+    <summary>
+      <para>Gets points from the points array.</para>
+    </summary>
+    <param name="points">
+      <para>Type: <b>D2D1_POINT_2F*</b></para>
+      <para>Buffer to contain the points.</para>
+    </param>
+    <param name="pointsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The element count of the buffer.</para>
+    </param>
+    <param name="startIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index of the first point to retrieve.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPointCollection" />
+  </member>
+  <member name="ID2D1SvgPointCollection.GetPointsCount">
+    <summary>
+      <para>Gets the number of points in the array.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>Returns the number of points in the array.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPointCollection" />
+  </member>
+  <member name="ID2D1SvgPointCollection.RemovePointsAtEnd">
+    <summary>
+      <para>Removes points from the end of the array.</para>
+    </summary>
+    <param name="pointsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>Specifies how many points to remove.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPointCollection" />
+  </member>
+  <member name="ID2D1SvgPointCollection.UpdatePoints">
+    <summary>
+      <para>Updates the points array. Existing points not updated by this method are preserved. The array is resized larger if necessary to accommodate the new points.</para>
+    </summary>
+    <param name="points">
+      <para>Type: <b>const D2D1_POINT_2F*</b></para>
+      <para>The points array.</para>
+    </param>
+    <param name="pointsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of points to update.</para>
+    </param>
+    <param name="startIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index at which to begin updating points. Must be less than or equal to the size of the array.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1SvgPointCollection" />
+  </member>
+  <member name="ID2D1SvgPointCollection">
+    <summary>
+      <para>Interface describing an SVG points value in a polyline or polygon element.</para>
+    </summary>
+  </member>
+</doc>

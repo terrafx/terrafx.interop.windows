@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSensorActivityReport.GetFriendlyName">
+    <summary>
+      <para>Gets the friendly name for the sensor associated with the report.</para>
+    </summary>
+    <param name="FriendlyName">
+      <para>The string into which the sensor friendly name is written.</para>
+    </param>
+    <param name="cchFriendlyName">
+      <para>The character count of the <i>FriendlyName</i> string.</para>
+    </param>
+    <param name="pcchWritten">
+      <para>Receives the number of characters that were written into the <i>FriendlyName</i> string.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pcchWritten</i> parameter is null.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSensorActivityReport" />
+  </member>
+  <member name="IMFSensorActivityReport.GetProcessActivity">
+    <summary>
+      <para>Gets an <see cref="IMFSensorProcessActivity" /> object representing the current process activity of a sensor.</para>
+    </summary>
+    <param name="Index">
+      <para>The index of the <see cref="IMFSensorProcessActivity" /> to retrieve. This value must be less than the value returned by <see cref="GetProcessCount" />.</para>
+    </param>
+    <param name="ppProcessActivity">
+      <para>A pointer to the  <see cref="IMFSensorProcessActivity" /> associated with the specified index.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ppProcessActivity</i> parameter is null.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSensorActivityReport" />
+  </member>
+  <member name="IMFSensorActivityReport.GetProcessCount">
+    <summary>
+      <para>Gets the count of <see cref="IMFSensorProcessActivity" /> objects, representing the current activity of a process associated with the sensor, that are available to be retrieved.</para>
+    </summary>
+    <param name="pcCount">
+      <para>A pointer in which the process count is stored.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pulCount</i> parameter is null.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSensorActivityReport" />
+  </member>
+  <member name="IMFSensorActivityReport.GetSymbolicLink">
+    <summary>
+      <para>Gets the symbolic link for the sensor associated with the report.</para>
+    </summary>
+    <param name="SymbolicLink">
+      <para>The string into which the sensor symbolic link is written.</para>
+    </param>
+    <param name="cchSymbolicLink">
+      <para>The character count of the <i>SymbolicLink</i> string.</para>
+    </param>
+    <param name="pcchWritten">
+      <para>Receives the number of characters that were written into the <i>SymbolicLink</i> string.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pcchWritten</i> parameter is null.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSensorActivityReport" />
+  </member>
+  <member name="IMFSensorActivityReport">
+    <summary>
+      <para>Represents an activity report for a sensor.</para>
+    </summary>
+  </member>
+</doc>

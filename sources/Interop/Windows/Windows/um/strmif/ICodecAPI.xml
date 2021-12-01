@@ -1,0 +1,746 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICodecAPI.GetAllSettings">
+    <summary>
+      <para>The <b>GetAllSettings</b> method gets the codec's current properties and writes them to  a stream.</para>
+    </summary>
+    <param name="__MIDL__ICodecAPI0000">
+      <para>Pointer to the <b>IStream</b> interface of the stream.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Codecs that implement <see cref="ICodecAPI" /> are  not required to support this method.</para>
+      <para>To load the properties from the stream back onto the codec, call <see cref="ICodecAPI.SetAllSettings" /> or <see cref="ICodecAPI.SetAllSettingsWithNotify" />.</para>
+      <para>The format of the data that is written to the stream depends on the implementation of the codec. There is no standard serialization format.  An application should not attempt to save the properties from one codec and load them on a different codec.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+  </member>
+  <member name="ICodecAPI.GetDefaultValue">
+    <summary>
+      <para>The <b>GetDefaultValue</b> method gets the default value of a codec property.</para>
+    </summary>
+    <param name="Api">
+      <para>Pointer to a GUID that specifies the property. For a list of standard codec properties, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-properties">Codec API Properties</a>.</para>
+    </param>
+    <param name="Value">
+      <para>Pointer to a <b>VARIANT</b> that receives the default value. The caller must free the <b>VARIANT</b> by calling <b>VariantClear</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_CODECAPI_NO_DEFAULT</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified property does not have a default value.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+  </member>
+  <member name="ICodecAPI.GetParameterRange">
+    <summary>
+      <para>The <b>GetParameterRange</b> method gets the range of values for a codec property.</para>
+      <para>This method applies only to properties whose values form a linear range.</para>
+    </summary>
+    <param name="Api">
+      <para>Pointer to a GUID that specifies the property to query. For a list of standard codec properties, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-properties">Codec API Properties</a>.</para>
+    </param>
+    <param name="ValueMin">
+      <para>Pointer to a <b>VARIANT</b>  that receives the minimum value of the property. The caller must free the <b>VARIANT</b> by calling <b>VariantClear</b>.</para>
+    </param>
+    <param name="ValueMax">
+      <para>Pointer to a <b>VARIANT</b>  that receives the maximum value of the property. The caller must free the <b>VARIANT</b> by calling <b>VariantClear</b>.</para>
+    </param>
+    <param name="SteppingDelta">
+      <para>Pointer to a <b>VARIANT</b>  that receives the stepping delta, which defines the valid increments from <i>ValueMin</i> to <i>ValueMax</i>. The caller must free the <b>VARIANT</b> by calling <b>VariantClear</b>.</para>
+      <para>If the <b>VARIANT</b> type is VT_EMPTY, any increment is valid.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_CODECAPI_ENUMERATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The property supports a list of possible values, not a linear range.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The valid range for the property is [<i>ValueMin</i>... <i>ValueMax</i>], with increments of <i>SteppingDelta</i>. If a property supports a linear range of values, the property must use one of the following variant types:</para>
+      <list type="bullet">
+        <item>
+          <description>Unsigned types: <b>VT_UI8</b>, <b>VT_UI4</b>, <b>VT_UI2</b>, <b>VT_UI1</b></description>
+        </item>
+        <item>
+          <description>Signed types: <b>VT_I8</b>, <b>VT_I4</b>, <b>VT_I2</b></description>
+        </item>
+        <item>
+          <description>Floating-point types: <b>VT_R8</b>, <b>VT_R4</b></description>
+        </item>
+      </list>
+      <para>If the property supports a list of values, instead of a range, the method returns  <b>VFW_E_CODECAPI_ENUMERATED</b>. In that case, call <see cref="ICodecAPI.GetParameterValues" /> to get the list of values.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+  </member>
+  <member name="ICodecAPI.GetParameterValues">
+    <summary>
+      <para>The <b>GetParameterValues</b> method gets the list of possible values for a codec property.</para>
+      <para>This method applies only to properties that support a list of possible values, as opposed to a linear range.</para>
+    </summary>
+    <param name="Api">
+      <para>Pointer to a GUID that specifies the property to query. For a list of standard codec properties, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-properties">Codec API Properties</a>.</para>
+    </param>
+    <param name="Values">
+      <para>Receives a pointer to an array of <b>VARIANT</b> types. The array contains the list of values that the encoder supports for this property. The caller must free each <b>VARIANT</b> by calling <b>VariantClear</b>. The caller must also free the array by calling  <b>CoTaskMemFree</b>.</para>
+    </param>
+    <param name="ValuesCount">
+      <para>Receives the number of elements in the <i>Values</i> array.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_CODECAPI_LINEAR_RANGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The property supports a range of values, not a list.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the property supports a range of values, instead of a list, the method returns  <b>VFW_E_CODECAPI_LINEAR_RANGE</b>. In that case, call <see cref="ICodecAPI.GetParameterRange" /> to get the range of values.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+  </member>
+  <member name="ICodecAPI.GetValue">
+    <summary>
+      <para>The <b>GetValue</b> method gets the current value of a codec property.</para>
+    </summary>
+    <param name="Api">
+      <para>Pointer to a GUID that specifies the property. For a list of standard codec properties, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-properties">Codec API Properties</a>.</para>
+    </param>
+    <param name="Value">
+      <para>Pointer to a <b>VARIANT</b> that receives the value of the property. The caller must free the <b>VARIANT</b> by calling <b>VariantClear</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_CODECAPI_NO_CURRENT_VALUE</b>
+            </para>
+          </description>
+          <description>
+            <para>The property does not currently have a value.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+    <seealso cref="ICodecAPI.SetValue" />
+  </member>
+  <member name="ICodecAPI.IsModifiable">
+    <summary>
+      <para>The <b>IsModifiable</b> method queries whether a codec property can be changed, given the codec's current configuration.</para>
+    </summary>
+    <param name="Api">
+      <para>Pointer to a GUID that specifies the property. For a list of standard codec properties, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-properties">Codec API Properties</a>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of this property cannot be changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of this property can be changed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Any errors besides those in the previous table indicate an inability to process the call.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+  </member>
+  <member name="ICodecAPI.IsSupported">
+    <summary>
+      <para>The <b>IsSupported</b> method queries whether a codec supports a given property.</para>
+    </summary>
+    <param name="Api">
+      <para>Pointer to a GUID that specifies the property to query. For a list of standard codec properties, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-properties">Codec API Properties</a>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The codec does not support the property.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The codec supports the property.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The codec does not support the property.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Any errors besides those in the previous table indicate an inability to process the call.</para>
+      <para>
+        <b>Note</b>  If the codec does not support the property, the method can return either <b>S_FALSE</b> or <b>E_NOTIMPL</b>. The value <b>E_NOTIMPL</b> is preferred, but earlier documentation listed only <b>S_FALSE</b>, so some codecs might return that value. Applications should explicitly test for the value <b>S_OK</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+  </member>
+  <member name="ICodecAPI.RegisterForEvent">
+    <summary>
+      <para>The <b>RegisterForEvent</b> method registers the application to receive events from the codec.</para>
+    </summary>
+    <param name="Api">
+      <para>Pointer to a GUID that specifies the event.
+There are three categories of events:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CODECAPI_CHANGELISTS</b>
+          </description>
+          <description>
+            <para>The codec notifies the application when the properties of the codec change.  The event data is a list of GUIDs for the properties that changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>One of the property GUIDs defined in codecapi.h. (See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-properties">Codec API Properties</a>.)</b>
+          </description>
+          <description>
+            <para>The codec notifies the application when the specified  property changes.  Typically, a codec will support this type of notification for a limited set of properties, if any.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>A proprietary event GUID defined by the codec.</b>
+          </description>
+          <description>
+            <para>Implementation dependent.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="userData">
+      <para>Pointer to caller-defined data. The application receives this pointer in the <i>lParam1</i> event parameter.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented. The codec does not support event notification, or does not support the event GUID specified in the <i>Api</i> parameter.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The application receives an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-codecapi-event">EC_CODECAPI_EVENT</a> event notification whenever the encoder codec sends the event.  To get the event, uses the <see cref="IMediaEventEx" /> interface.</para>
+      <para>The <i>lParam2</i> parameter of the event is a pointer to a <see cref="CodecAPIEventData" /> structure. This structure can be followed by additional data, depending on the event GUID. The size of this  data is given by the <b>dataLength</b> member.</para>
+      <list type="table">
+        <listheader>
+          <description>GUID</description>
+          <description>Event Data</description>
+        </listheader>
+        <item>
+          <description>CODECAPI_CHANGELISTS</description>
+          <description>An array of GUIDs. Each GUID specifies a codec property whose current value or valid range has changed. The size of the array is <b>dataLength</b> / <code>sizeof(GUID)</code>.</description>
+        </item>
+        <item>
+          <description>A property GUID defined in codecapi.h. </description>
+          <description>None.</description>
+        </item>
+        <item>
+          <description>Proprietary event GUID.</description>
+          <description>Implementation dependent.</description>
+        </item>
+      </list>
+      <para>If the codec does not support the specified event, the method returns <b>E_NOTIMPL</b>. The codec might support other events.</para>
+      <para>To disable notifications for an event, call <see cref="ICodecAPI.UnregisterForEvent" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+  </member>
+  <member name="ICodecAPI.SetAllDefaults">
+    <summary>
+      <para>The <b>SetAllDefaults</b> method resets all codec properties to their default values.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+    <seealso cref="ICodecAPI.GetValue" />
+  </member>
+  <member name="ICodecAPI.SetAllDefaultsWithNotify">
+    <summary>
+      <para>The <b>SetAllDefaultsWithNotify</b> method resets all codec properties to their default values, and returns a list of the properties that changed.</para>
+    </summary>
+    <param name="ChangedParam">
+      <para>Receives a pointer to an array of GUIDs. The array contains the GUIDs of any properties that changed as a result of this method call. The caller must free the array by calling <b>CoTaskMemFree</b>.</para>
+    </param>
+    <param name="ChangedParamCount">
+      <para>Receives the number of elements in the <i>ChangedParam</i> array.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Codecs that implement <see cref="ICodecAPI" /> are  not required to support this method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+    <seealso cref="ICodecAPI.GetValue" />
+  </member>
+  <member name="ICodecAPI.SetAllSettings">
+    <summary>
+      <para>The <b>SetAllSettings</b> method reads codec properties from a stream and sets them on the codec.</para>
+    </summary>
+    <param name="__MIDL__ICodecAPI0001">
+      <para>Pointer to the <b>IStream</b> interface of the stream.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Codecs that implement <see cref="ICodecAPI" /> are  not required to support this method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+    <seealso cref="ICodecAPI.GetValue" />
+  </member>
+  <member name="ICodecAPI.SetAllSettingsWithNotify">
+    <summary>
+      <para>The <b>SetAllSettingsWithNotify</b> method reads codec properties from a stream, sets them on the codec, and returns a list of the properties that changed.</para>
+    </summary>
+    <param name="__MIDL__ICodecAPI0002">
+      <para>Pointer to the <b>IStream</b> interface of the stream.</para>
+    </param>
+    <param name="ChangedParam">
+      <para>Receives a pointer to an array of GUIDs. The array contains the GUIDs of any properties that changed as a result of this method call. The caller must free the array by calling <b>CoTaskMemFree</b>.</para>
+    </param>
+    <param name="ChangedParamCount">
+      <para>Receives the number of elements in the <i>ChangedParam</i> array.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Codecs that implement <see cref="ICodecAPI" /> are  not required to support this method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+    <seealso cref="ICodecAPI.GetValue" />
+  </member>
+  <member name="ICodecAPI.SetValue">
+    <summary>
+      <para>The <b>SetValue</b> method sets the value of a codec property.</para>
+    </summary>
+    <param name="Api">
+      <para>Pointer to a GUID that specifies the property to set.
+For a list of standard codec properties, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-properties">Codec API Properties</a>.</para>
+    </param>
+    <param name="Value">
+      <para>Pointer to a <b>VARIANT</b> that contains the new value for the property.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The property is read-only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid property GUID or value.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+    <seealso cref="ICodecAPI.GetValue" />
+  </member>
+  <member name="ICodecAPI.SetValueWithNotify">
+    <summary>
+      <para>The <b>SetValueWithNotify</b> method sets a property on a codec and returns a list of other properties that changed as a result.</para>
+    </summary>
+    <param name="Api">
+      <para>Pointer to a GUID that specifies the property to set.
+For a list of standard codec properties, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-properties">Codec API Properties</a>.</para>
+    </param>
+    <param name="Value">
+      <para>Pointer to a <b>VARIANT</b>  that contains the new value for the property.</para>
+    </param>
+    <param name="ChangedParam">
+      <para>Receives a pointer to an array of GUIDs. The array contains the GUIDs of any properties that changed as a result of this method call. The caller must free the array by calling <b>CoTaskMemFree</b>.</para>
+    </param>
+    <param name="ChangedParamCount">
+      <para>Receives the number of elements in the <i>ChangedParam</i> array.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Codecs that implement <see cref="ICodecAPI" /> are  not required to support this method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+    <seealso cref="ICodecAPI.GetValue" />
+  </member>
+  <member name="ICodecAPI.UnregisterForEvent">
+    <summary>
+      <para>The <b>UnregisterForEvent</b> method unregisters the application for a specified encoder event.</para>
+    </summary>
+    <param name="Api">
+      <para>Pointer to a GUID that specifies the event.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-reference">Codec API Reference</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso cref="ICodecAPI" />
+    <seealso cref="ICodecAPI.RegisterForEvent" />
+  </member>
+</doc>

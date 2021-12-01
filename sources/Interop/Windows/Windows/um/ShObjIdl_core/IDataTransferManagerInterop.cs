@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDataTransferManagerInterop.xml' path='doc/member[@name="IDataTransferManagerInterop"]/*' />
 [Guid("3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8")]
 [NativeTypeName("struct IDataTransferManagerInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDataTransferManagerInterop : IDataTransferManagerI
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDataTransferManagerInterop : IDataTransferManagerI
         return ((delegate* unmanaged<IDataTransferManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDataTransferManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDataTransferManagerInterop : IDataTransferManagerI
         return ((delegate* unmanaged<IDataTransferManagerInterop*, uint>)(lpVtbl[1]))((IDataTransferManagerInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDataTransferManagerInterop : IDataTransferManagerI
         return ((delegate* unmanaged<IDataTransferManagerInterop*, uint>)(lpVtbl[2]))((IDataTransferManagerInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDataTransferManagerInterop.xml' path='doc/member[@name="IDataTransferManagerInterop.GetForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** dataTransferManager)
@@ -46,6 +51,7 @@ public unsafe partial struct IDataTransferManagerInterop : IDataTransferManagerI
         return ((delegate* unmanaged<IDataTransferManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[3]))((IDataTransferManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, dataTransferManager);
     }
 
+    /// <include file='IDataTransferManagerInterop.xml' path='doc/member[@name="IDataTransferManagerInterop.ShowShareUIForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ShowShareUIForWindow(HWND appWindow)

@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMMANDLINKSTATES.xml' path='doc/member[@name="COMMANDLINKSTATES"]/*' />
 public enum COMMANDLINKSTATES
 {
+    /// <include file='COMMANDLINKSTATES.xml' path='doc/member[@name="COMMANDLINKSTATES.CMDLS_NORMAL"]/*' />
     CMDLS_NORMAL = 1,
+
+    /// <include file='COMMANDLINKSTATES.xml' path='doc/member[@name="COMMANDLINKSTATES.CMDLS_HOT"]/*' />
     CMDLS_HOT = 2,
+
+    /// <include file='COMMANDLINKSTATES.xml' path='doc/member[@name="COMMANDLINKSTATES.CMDLS_PRESSED"]/*' />
     CMDLS_PRESSED = 3,
+
+    /// <include file='COMMANDLINKSTATES.xml' path='doc/member[@name="COMMANDLINKSTATES.CMDLS_DISABLED"]/*' />
     CMDLS_DISABLED = 4,
+
+    /// <include file='COMMANDLINKSTATES.xml' path='doc/member[@name="COMMANDLINKSTATES.CMDLS_DEFAULTED"]/*' />
     CMDLS_DEFAULTED = 5,
+
+    /// <include file='COMMANDLINKSTATES.xml' path='doc/member[@name="COMMANDLINKSTATES.CMDLS_DEFAULTED_ANIMATING"]/*' />
     CMDLS_DEFAULTED_ANIMATING = 6,
 }

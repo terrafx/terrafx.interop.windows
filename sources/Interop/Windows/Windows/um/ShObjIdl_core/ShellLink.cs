@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ShellLink.xml' path='doc/member[@name="ShellLink"]/*' />
 [Guid("00021401-0000-0000-C000-000000000046")]
 public partial struct ShellLink
 {

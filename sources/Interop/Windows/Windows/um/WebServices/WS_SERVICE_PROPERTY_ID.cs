@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SERVICE_PROPERTY_ID.xml' path='doc/member[@name="WS_SERVICE_PROPERTY_ID"]/*' />
 public enum WS_SERVICE_PROPERTY_ID
 {
+    /// <include file='WS_SERVICE_PROPERTY_ID.xml' path='doc/member[@name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_HOST_USER_STATE"]/*' />
     WS_SERVICE_PROPERTY_HOST_USER_STATE = 0,
+
+    /// <include file='WS_SERVICE_PROPERTY_ID.xml' path='doc/member[@name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_FAULT_DISCLOSURE"]/*' />
     WS_SERVICE_PROPERTY_FAULT_DISCLOSURE = 1,
+
+    /// <include file='WS_SERVICE_PROPERTY_ID.xml' path='doc/member[@name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_FAULT_LANGID"]/*' />
     WS_SERVICE_PROPERTY_FAULT_LANGID = 2,
+
+    /// <include file='WS_SERVICE_PROPERTY_ID.xml' path='doc/member[@name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_HOST_STATE"]/*' />
     WS_SERVICE_PROPERTY_HOST_STATE = 3,
+
+    /// <include file='WS_SERVICE_PROPERTY_ID.xml' path='doc/member[@name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_METADATA"]/*' />
     WS_SERVICE_PROPERTY_METADATA = 4,
+
+    /// <include file='WS_SERVICE_PROPERTY_ID.xml' path='doc/member[@name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_CLOSE_TIMEOUT"]/*' />
     WS_SERVICE_PROPERTY_CLOSE_TIMEOUT = 5,
 }

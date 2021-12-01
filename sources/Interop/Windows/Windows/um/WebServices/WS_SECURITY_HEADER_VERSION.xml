@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_HEADER_VERSION">
+    <summary>
+      <para>The WS-Security specification version to be used with message
+security and mixed-mode security.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_HEADER_VERSION.WS_SECURITY_HEADER_VERSION_1_0">
+    <summary>
+      <para>WS-Security 1.0.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_HEADER_VERSION.WS_SECURITY_HEADER_VERSION_1_1">
+    <summary>
+      <para>WS-Security 1.1.</para>
+    </summary>
+  </member>
+</doc>

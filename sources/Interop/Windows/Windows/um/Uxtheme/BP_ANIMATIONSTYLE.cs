@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BP_ANIMATIONSTYLE.xml' path='doc/member[@name="BP_ANIMATIONSTYLE"]/*' />
 public enum BP_ANIMATIONSTYLE
 {
+    /// <include file='BP_ANIMATIONSTYLE.xml' path='doc/member[@name="BP_ANIMATIONSTYLE.BPAS_NONE"]/*' />
     BPAS_NONE,
+
+    /// <include file='BP_ANIMATIONSTYLE.xml' path='doc/member[@name="BP_ANIMATIONSTYLE.BPAS_LINEAR"]/*' />
     BPAS_LINEAR,
+
+    /// <include file='BP_ANIMATIONSTYLE.xml' path='doc/member[@name="BP_ANIMATIONSTYLE.BPAS_CUBIC"]/*' />
     BPAS_CUBIC,
+
+    /// <include file='BP_ANIMATIONSTYLE.xml' path='doc/member[@name="BP_ANIMATIONSTYLE.BPAS_SINE"]/*' />
     BPAS_SINE,
 }

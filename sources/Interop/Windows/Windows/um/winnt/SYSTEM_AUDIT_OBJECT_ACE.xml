@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYSTEM_AUDIT_OBJECT_ACE">
+    <summary>
+      <para>The <b>SYSTEM_AUDIT_OBJECT_ACE</b> structure defines an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE) for a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">system access control list</a> (SACL). The ACE can audit access to an object or subobjects such as  property sets or properties. The ACE contains a set of access rights, a GUID that identifies the type of object or subobject, and a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) that identifies the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">trustee</a> for whom the system will audit access. The ACE also contains a GUID and a set of flags that control inheritance of the ACE by child objects.</para>
+    </summary>
+    <remarks>
+      <para>If neither the <b>ObjectType</b> nor <b>InheritedObjectType</b> GUID is specified, the <b>SYSTEM_AUDIT_OBJECT_ACE</b> structure has the same semantics as the <see cref="SYSTEM_AUDIT_ACE" /> structure. In that case, use the
+<b>SYSTEM_AUDIT_ACE</b> structure because it is smaller and more efficient.</para>
+      <para>An ACL that contains an <b>SYSTEM_AUDIT_OBJECT_ACE</b> must specify the ACL_REVISION_DS revision number in its
+<see cref="ACE_HEADER" /> structure.</para>
+      <para>When a <b>SYSTEM_AUDIT_OBJECT_ACE</b> structure is created, sufficient memory must be allocated to accommodate the GUID structures in <b>ObjectType</b> and <b>InheritedObjectType</b> members, if one or both of them exists, as well as to accommodate the complete SID of the trustee in the <b>SidStart</b> member and the contiguous memory that follows it.</para>
+      <para>An <b>SYSTEM_AUDIT_OBJECT_ACE</b> structure can be created in an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control list</a> (ACL) by a call to the <see cref="AddAuditAccessObjectAce" /> function. When this function is used, the correct amount of memory needed to accommodate the GUID structures in the <b>ObjectType</b> and <b>InheritedObjectType</b> members, if one or both of them exists, as well as to accommodate the trustee's SID is automatically allocated. In addition, the values of the <b>Header.AceType</b> and <b>Header.AceSize</b> members are set automatically.    When an <b>SYSTEM_AUDIT_OBJECT_ACE</b> structure is created outside an ACL, sufficient memory must be allocated to accommodate the GUID structures in the <b>ObjectType</b> and <b>InheritedObjectType</b> members, if one or both of them exists, as well as to accommodate the complete SID of the trustee in the <b>SidStart</b> member and the contiguous memory following it. In addition,  the values of the <b>Header.AceType</b> and <b>Header.AceSize</b> members must be set explicitly by the application.</para>
+    </remarks>
+    <seealso cref="ACL" />
+    <seealso cref="AddAuditAccessObjectAce" />
+    <seealso cref="GUID" />
+    <seealso cref="SID" />
+  </member>
+  <member name="SYSTEM_AUDIT_OBJECT_ACE.Header">
+    <summary>
+      <para>An
+<see cref="ACE_HEADER" /> structure that specifies the size and type of ACE. It contains flags that control inheritance of the ACE by child objects. The structure also contains flags that indicate whether the ACE audits successful access attempts, failed access attempts, or both. The <b>AceType</b> member of the <b>ACE_HEADER</b> structure should be set to SYSTEM_AUDIT_OBJECT_ACE_TYPE, and the <b>AceSize</b> member should be set to the total number of bytes allocated for the <b>SYSTEM_AUDIT_OBJECT_ACE</b> structure.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_AUDIT_OBJECT_ACE.Mask">
+    <summary>
+      <para>An
+<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/access-mask">ACCESS_MASK</a> that specifies the access rights the system will audit for access attempts by the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">trustee</a>.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_AUDIT_OBJECT_ACE.Flags">
+    <summary>
+      <para>A set of bit flags that indicate whether the <b>ObjectType</b> and <b>InheritedObjectType</b> members contain GUIDs. This member can be a combination of the following values. Set all undefined bits to zero.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ACE_OBJECT_TYPE_PRESENT</b>
+          </description>
+          <description>
+            <para>The <b>ObjectType</b> member contains a GUID.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACE_INHERITED_OBJECT_TYPE_PRESENT</b>
+          </description>
+          <description>
+            <para>The <b>InheritedObjectType</b> member contains a GUID.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SYSTEM_AUDIT_OBJECT_ACE.ObjectType">
+    <summary>
+      <para>A
+<see cref="GUID" /> structure that identifies a property set, property, extended right, or type of child object.</para>
+      <para>This member is valid only if the ACE_OBJECT_TYPE_PRESENT bit is set in the <b>Flags</b> member. Otherwise, <b>ObjectType</b> is ignored.</para>
+      <para>The purpose of this GUID depends on the access rights specified in the <b>Mask</b> member.</para>
+      <para>This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ADS_RIGHT_DS_READ_PROP and/or ADS_RIGHT_DS_WRITE_PROP</b>
+          </description>
+          <description>
+            <para>The <b>ObjectType</b> GUID identifies a property set or property of the object. The ACE controls auditing of the trustee's attempts to read or write the property or property set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ADS_RIGHT_DS_CONTROL_ACCESS</b>
+          </description>
+          <description>
+            <para>The <b>ObjectType</b> GUID identifies an extended access right.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ADS_RIGHT_DS_CREATE_CHILD</b>
+          </description>
+          <description>
+            <para>The <b>ObjectType</b> GUID identifies a type of child object. The ACE controls auditing of the trustee's attempts to create this type of child object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ADS_RIGHT_DS_SELF</b>
+          </description>
+          <description>
+            <para>The <b>ObjectType</b> GUID identifies a validated write.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SYSTEM_AUDIT_OBJECT_ACE.InheritedObjectType">
+    <summary>
+      <para>A <see cref="GUID" /> structure that identifies the type of child object that can inherit the ACE.</para>
+      <para>This member is valid only if the ACE_INHERITED_OBJECT_TYPE_PRESENT bit is set in the <b>Flags</b> member. If that bit is not set, <b>InheritedObjectType</b> is ignored and all types of child objects can inherit the ACE. In either case, inheritance is also controlled by the inheritance flags in the
+<see cref="ACE_HEADER" />, as well as by any protection against inheritance placed on the child objects.</para>
+      <para>The offset of this member can vary. If the <b>Flags</b> member does not contain the ACE_OBJECT_TYPE_PRESENT flag, the <b>InheritedObjectType</b> member starts at the offset specified by the <b>ObjectType</b> member.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_AUDIT_OBJECT_ACE.SidStart">
+    <summary>
+      <para>Specifies the first <b>DWORD</b> of a SID that identifies the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">trustee</a> for whom the access attempts are audited. The remaining bytes of the SID  are stored in contiguous memory after the <b>SidStart</b> member. This SID can be appended with application data.</para>
+      <para>The offset of this member can vary. If the <b>Flags</b> member is zero, the <b>SidStart</b> member starts at the offset specified by the <b>ObjectType</b> member. If <b>Flags</b> contains only one flag (either ACE_OBJECT_TYPE_PRESENT or ACE_INHERITED_OBJECT_TYPE_PRESENT), the <b>SidStart</b> member starts at the offset specified by the <b>InheritedObjectType</b> member.</para>
+    </summary>
+  </member>
+</doc>

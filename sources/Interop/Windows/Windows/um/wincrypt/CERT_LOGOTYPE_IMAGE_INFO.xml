@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_LOGOTYPE_IMAGE_INFO">
+    <summary>
+      <para>The <b>CERT_LOGOTYPE_IMAGE_INFO</b> structure contains more detailed information about an image logotype.</para>
+    </summary>
+    <seealso cref="CERT_LOGOTYPE_IMAGE" />
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE_INFO.dwLogotypeImageInfoChoice">
+    <summary>
+      <para>Specifies the type of image. This can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CERT_LOGOTYPE_GRAY_SCALE_IMAGE_INFO_CHOICE</b>
+          </description>
+          <description>
+            <para>The image is a grayscale image.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_LOGOTYPE_COLOR_IMAGE_INFO_CHOICE</b>
+          </description>
+          <description>
+            <para>The image is a color image.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE_INFO.dwFileSize">
+    <summary>
+      <para>The size, in octets, of the image.</para>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE_INFO.dwXSize">
+    <summary>
+      <para>The horizontal size, in pixels, of the image.</para>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE_INFO.dwYSize">
+    <summary>
+      <para>The vertical size, in pixels, of the image.</para>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE_INFO.dwLogotypeImageResolutionChoice">
+    <summary>
+      <para>Specifies the format of the image resolution. This can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CERT_LOGOTYPE_NO_IMAGE_RESOLUTION_CHOICE</b>
+          </description>
+          <description>
+            <para>No image resolution information is provided.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_LOGOTYPE_BITS_IMAGE_RESOLUTION_CHOICE</b>
+          </description>
+          <description>
+            <para>The image resolution is provided in bits per pixel. The <b>dwNumBits</b> member contains the image resolution.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_LOGOTYPE_TABLE_SIZE_IMAGE_RESOLUTION_CHOICE</b>
+          </description>
+          <description>
+            <para>The image resolution is provided in number of gray tones. The <b>dwTableSize</b> member contains the image resolution.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE_INFO.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE_INFO.DUMMYUNIONNAME.dwNumBits">
+    <summary>
+      <para>The resolution of the image, in bits per pixel. The member is only used if the <b>dwLogotypeImageResolutionChoice</b> contains <b>CERT_LOGOTYPE_NO_IMAGE_RESOLUTION_CHOICE</b>.</para>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE_INFO.DUMMYUNIONNAME.dwTableSize">
+    <summary>
+      <para>The resolution of the image, in number of gray tones. The member is only used if the <b>dwLogotypeImageResolutionChoice</b> contains <b>CERT_LOGOTYPE_TABLE_SIZE_IMAGE_RESOLUTION_CHOICE</b>.</para>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_IMAGE_INFO.pwszLanguage">
+    <summary>
+      <para>The address of a null-terminated IA5 string that contains the RFC 3066 language identifier that specifies the language of the image. This member is optional and may be <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

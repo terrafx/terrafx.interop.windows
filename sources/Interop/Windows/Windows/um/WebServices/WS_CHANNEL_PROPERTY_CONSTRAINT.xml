@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_CHANNEL_PROPERTY_CONSTRAINT">
+    <summary>
+      <para>Specifies constraints
+for a particular channel property.Any property constraints that are not specified will use
+the default constraints.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_PROPERTY_CONSTRAINT.id">
+    <summary>
+      <para>The ID of the channel property.  The following channel
+properties constraints may be specified:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="WS_CHANNEL_PROPERTY_ENCODING" />
+            <para>If this property constraint is not specified when using
+<see cref="WS_HTTP_CHANNEL_BINDING" /> the default constraint value
+of <see cref="WS_ENCODING_XML_UTF8" /> will be used.</para>
+            <para>If this property constraint is not specified not specified when using
+<see cref="WS_TCP_CHANNEL_BINDING" /> the default constraint value of
+<see cref="WS_ENCODING_XML_BINARY_SESSION_1" /> will be used.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_CHANNEL_PROPERTY_ADDRESSING_VERSION" />
+            <para>If this property constraint is not specified, the default constraint
+value of <see cref="WS_ADDRESSING_VERSION_1_0" /> will be used.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_CHANNEL_PROPERTY_ENVELOPE_VERSION" />
+            <para>If this property constraint is not specified, the default constraint of
+value of <see cref="WS_ENVELOPE_VERSION_SOAP_1_2" /> will be used.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_PROPERTY_CONSTRAINT.allowedValues">
+    <summary>
+      <para>An array of acceptable values.  The type of
+the values in the array correspond to the type of the values
+of the channel property.  See the documentation for
+a particular channel property to determine the type of the
+property.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_PROPERTY_CONSTRAINT.allowedValuesSize">
+    <summary>
+      <para>The total size of the <b>allowedValues</b> array, in bytes.  This
+size must be a multiple of the size of the type of the value
+of the property.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_PROPERTY_CONSTRAINT.out">
+    <summary>
+      <para>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR, the
+entire contents of this structure will be filled out.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_PROPERTY_CONSTRAINT.out.channelProperty">
+    <summary></summary>
+  </member>
+</doc>

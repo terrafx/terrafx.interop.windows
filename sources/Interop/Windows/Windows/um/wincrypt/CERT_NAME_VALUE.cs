@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_NAME_VALUE.xml' path='doc/member[@name="CERT_NAME_VALUE"]/*' />
 public partial struct CERT_NAME_VALUE
 {
+    /// <include file='CERT_NAME_VALUE.xml' path='doc/member[@name="CERT_NAME_VALUE.dwValueType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwValueType;
 
+    /// <include file='CERT_NAME_VALUE.xml' path='doc/member[@name="CERT_NAME_VALUE.Value"]/*' />
     [NativeTypeName("CERT_RDN_VALUE_BLOB")]
     public CRYPT_DATA_BLOB Value;
 }

@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DRAWPATRECT.xml' path='doc/member[@name="DRAWPATRECT"]/*' />
 public partial struct DRAWPATRECT
 {
+    /// <include file='DRAWPATRECT.xml' path='doc/member[@name="DRAWPATRECT.ptPosition"]/*' />
     public POINT ptPosition;
 
+    /// <include file='DRAWPATRECT.xml' path='doc/member[@name="DRAWPATRECT.ptSize"]/*' />
     public POINT ptSize;
 
+    /// <include file='DRAWPATRECT.xml' path='doc/member[@name="DRAWPATRECT.wStyle"]/*' />
     [NativeTypeName("WORD")]
     public ushort wStyle;
 
+    /// <include file='DRAWPATRECT.xml' path='doc/member[@name="DRAWPATRECT.wPattern"]/*' />
     [NativeTypeName("WORD")]
     public ushort wPattern;
 }

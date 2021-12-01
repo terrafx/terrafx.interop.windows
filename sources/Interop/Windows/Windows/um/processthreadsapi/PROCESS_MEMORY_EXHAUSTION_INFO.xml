@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESS_MEMORY_EXHAUSTION_INFO">
+    <summary>
+      <para>Allows applications to configure a process to terminate if an allocation fails to commit memory. This structure is used by the <a href="https://docs.microsoft.com//previous-versions/mt767996(v=vs.85)">PROCESS_INFORMATION_CLASS</a> class.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/mt767996(v=vs.85)">PROCESS_INFORMATION_CLASS </seealso>
+    <seealso cref="PROCESS_MEMORY_EXHAUSTION_TYPE" />
+  </member>
+  <member name="PROCESS_MEMORY_EXHAUSTION_INFO.Version">
+    <summary>
+      <para>Version should be set to <b>PME_CURRENT_VERSION</b>.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MEMORY_EXHAUSTION_INFO.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MEMORY_EXHAUSTION_INFO.Type">
+    <summary>
+      <para>Type of failure.</para>
+      <para>Type should be set to <b>PMETypeFailFastOnCommitFailure</b> (this is the only type available).</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MEMORY_EXHAUSTION_INFO.Value">
+    <summary>
+      <para>Used to turn the feature on or off.</para>
+      <list type="table">
+        <listheader>
+          <description>Function</description>
+          <description> Setting</description>
+        </listheader>
+        <item>
+          <description>Enable</description>
+          <description>PME_FAILFAST_ON_COMMIT_FAIL_ENABLE
+</description>
+        </item>
+        <item>
+          <description>Disable</description>
+          <description>PME_FAILFAST_ON_COMMIT_FAIL_DISABLE
+</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

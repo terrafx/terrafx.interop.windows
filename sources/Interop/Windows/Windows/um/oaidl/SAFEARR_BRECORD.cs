@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SAFEARR_BRECORD.xml' path='doc/member[@name="SAFEARR_BRECORD"]/*' />
 public unsafe partial struct SAFEARR_BRECORD
 {
+    /// <include file='SAFEARR_BRECORD.xml' path='doc/member[@name="SAFEARR_BRECORD.Size"]/*' />
     [NativeTypeName("ULONG")]
     public uint Size;
 
+    /// <include file='SAFEARR_BRECORD.xml' path='doc/member[@name="SAFEARR_BRECORD.aRecord"]/*' />
     [NativeTypeName("wireBRECORD *")]
     public _wireBRECORD** aRecord;
 }

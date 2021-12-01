@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS"]/*' />
 public unsafe partial struct DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS
 {
+    /// <include file='DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS.TargetPriority"]/*' />
     public byte TargetPriority;
 
+    /// <include file='DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS.Reserved"]/*' />
     [NativeTypeName("BYTE [3]")]
     public fixed byte Reserved[3];
 }

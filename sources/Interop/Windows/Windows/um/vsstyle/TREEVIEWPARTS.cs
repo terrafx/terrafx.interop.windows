@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TREEVIEWPARTS.xml' path='doc/member[@name="TREEVIEWPARTS"]/*' />
 public enum TREEVIEWPARTS
 {
+    /// <include file='TREEVIEWPARTS.xml' path='doc/member[@name="TREEVIEWPARTS.TVP_TREEITEM"]/*' />
     TVP_TREEITEM = 1,
+
+    /// <include file='TREEVIEWPARTS.xml' path='doc/member[@name="TREEVIEWPARTS.TVP_GLYPH"]/*' />
     TVP_GLYPH = 2,
+
+    /// <include file='TREEVIEWPARTS.xml' path='doc/member[@name="TREEVIEWPARTS.TVP_BRANCH"]/*' />
     TVP_BRANCH = 3,
+
+    /// <include file='TREEVIEWPARTS.xml' path='doc/member[@name="TREEVIEWPARTS.TVP_HOTGLYPH"]/*' />
     TVP_HOTGLYPH = 4,
 }

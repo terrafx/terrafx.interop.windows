@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfKeyTraceEventSink.xml' path='doc/member[@name="ITfKeyTraceEventSink"]/*' />
 [Guid("1CD4C13B-1C36-4191-A70A-7F3E611F367D")]
 [NativeTypeName("struct ITfKeyTraceEventSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfKeyTraceEventSink : ITfKeyTraceEventSink.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfKeyTraceEventSink : ITfKeyTraceEventSink.Interfa
         return ((delegate* unmanaged<ITfKeyTraceEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfKeyTraceEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfKeyTraceEventSink : ITfKeyTraceEventSink.Interfa
         return ((delegate* unmanaged<ITfKeyTraceEventSink*, uint>)(lpVtbl[1]))((ITfKeyTraceEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfKeyTraceEventSink : ITfKeyTraceEventSink.Interfa
         return ((delegate* unmanaged<ITfKeyTraceEventSink*, uint>)(lpVtbl[2]))((ITfKeyTraceEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfKeyTraceEventSink.xml' path='doc/member[@name="ITfKeyTraceEventSink.OnKeyTraceDown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnKeyTraceDown(WPARAM wParam, LPARAM lParam)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfKeyTraceEventSink : ITfKeyTraceEventSink.Interfa
         return ((delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int>)(lpVtbl[3]))((ITfKeyTraceEventSink*)Unsafe.AsPointer(ref this), wParam, lParam);
     }
 
+    /// <include file='ITfKeyTraceEventSink.xml' path='doc/member[@name="ITfKeyTraceEventSink.OnKeyTraceUp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnKeyTraceUp(WPARAM wParam, LPARAM lParam)

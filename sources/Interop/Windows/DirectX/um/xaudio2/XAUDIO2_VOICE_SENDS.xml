@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="XAUDIO2_VOICE_SENDS">
+    <summary>
+      <para>Defines a set of voices to receive data from a single output voice.</para>
+    </summary>
+    <remarks>
+      <para>If <b>pSends</b> is not NULL all of its elements must be non-NULL. To send output to the default mastering voice call <see cref="IXAudio2Voice.SetOutputVoices" /> with the pSendList argument set to NULL.</para>
+      <para>Setting <b>SendCount</b> to 0 is useful for certain effects such as volume meters or file writers that don't generate any audio output to pass on to another voice.</para>
+      <para>If needed, a voice will perform a single sample rate conversion, from the voice's input sample rate to the input sample rate of the voice's output voices. Because only one sample rate conversion will be performed, all the voice's output voices must have the same input sample rate. If the input sample rates of the voice and its output voices are the same, no sample rate conversion is performed.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--change-voice-volume">How to: Change Voice Volume</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-submix-voices">How to: Use Submix Voices</seealso>
+    <seealso cref="IXAudio2.CreateSourceVoice" />
+    <seealso cref="IXAudio2.CreateSubmixVoice" />
+    <seealso cref="IXAudio2Voice.SetOutputVoices" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">XAudio Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-sample-rate-conversions">XAudio2 Sample Rate Conversions</seealso>
+  </member>
+  <member name="XAUDIO2_VOICE_SENDS.SendCount">
+    <summary>
+      <para>Number of voices to receive the output of the voice. An <b>OutputCount</b> value of 0 indicates the voice should not send output to any voices.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_VOICE_SENDS.pSends">
+    <summary>
+      <para>Array of <see cref="XAUDIO2_SEND_DESCRIPTOR" /> structures describing destination voices and the filters that should be used when sending to the voices. This array should contain <b>SendCount</b> elements. If <b>SendCount</b> is 0 <b>pSends</b> should be NULL. Note that <b>pSends</b> cannot contain the same voice more than once.</para>
+    </summary>
+  </member>
+</doc>

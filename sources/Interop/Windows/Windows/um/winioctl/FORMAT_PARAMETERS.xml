@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FORMAT_PARAMETERS">
+    <summary>
+      <para>Contains information used in formatting a contiguous set of disk tracks. It is used by the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_format_tracks">IOCTL_DISK_FORMAT_TRACKS</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_format_tracks">IOCTL_DISK_FORMAT_TRACKS</seealso>
+    <seealso cref="MEDIA_TYPE" />
+  </member>
+  <member name="FORMAT_PARAMETERS.MediaType">
+    <summary>
+      <para>The media type. For a list of values, see
+<see cref="MEDIA_TYPE" />.</para>
+    </summary>
+  </member>
+  <member name="FORMAT_PARAMETERS.StartCylinderNumber">
+    <summary>
+      <para>The cylinder number at which to begin the format.</para>
+    </summary>
+  </member>
+  <member name="FORMAT_PARAMETERS.EndCylinderNumber">
+    <summary>
+      <para>The cylinder number at which to end the format.</para>
+    </summary>
+  </member>
+  <member name="FORMAT_PARAMETERS.StartHeadNumber">
+    <summary>
+      <para>The beginning head location.</para>
+    </summary>
+  </member>
+  <member name="FORMAT_PARAMETERS.EndHeadNumber">
+    <summary>
+      <para>The ending head location.</para>
+    </summary>
+  </member>
+</doc>

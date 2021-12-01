@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ENDPOINT_ADDRESS_EXTENSION_TYPE">
+    <summary>
+      <para>This identifies a type of extension within the extensions field of the
+<see cref="WS_ENDPOINT_ADDRESS" />.</para>
+    </summary>
+  </member>
+  <member name="WS_ENDPOINT_ADDRESS_EXTENSION_TYPE.WS_ENDPOINT_ADDRESS_EXTENSION_METADATA_ADDRESS">
+    <summary>
+      <para>The address that metadata can be downloaded from the endpoint.</para>
+      <para>The type of the extension value is <see cref="WS_ENDPOINT_ADDRESS" />.</para>
+    </summary>
+  </member>
+</doc>

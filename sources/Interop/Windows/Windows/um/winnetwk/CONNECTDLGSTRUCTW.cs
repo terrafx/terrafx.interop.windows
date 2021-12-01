@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONNECTDLGSTRUCTW.xml' path='doc/member[@name="CONNECTDLGSTRUCTW"]/*' />
 public unsafe partial struct CONNECTDLGSTRUCTW
 {
+    /// <include file='CONNECTDLGSTRUCTW.xml' path='doc/member[@name="CONNECTDLGSTRUCTW.cbStructure"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStructure;
 
+    /// <include file='CONNECTDLGSTRUCTW.xml' path='doc/member[@name="CONNECTDLGSTRUCTW.hwndOwner"]/*' />
     public HWND hwndOwner;
 
+    /// <include file='CONNECTDLGSTRUCTW.xml' path='doc/member[@name="CONNECTDLGSTRUCTW.lpConnRes"]/*' />
     [NativeTypeName("LPNETRESOURCEW")]
     public NETRESOURCEW* lpConnRes;
 
+    /// <include file='CONNECTDLGSTRUCTW.xml' path='doc/member[@name="CONNECTDLGSTRUCTW.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='CONNECTDLGSTRUCTW.xml' path='doc/member[@name="CONNECTDLGSTRUCTW.dwDevNum"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDevNum;
 }

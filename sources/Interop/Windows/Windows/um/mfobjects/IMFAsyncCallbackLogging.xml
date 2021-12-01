@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFAsyncCallbackLogging.GetObjectPointer">
+    <summary>
+      <para>Gets the pointer to the parent object the async callback is associated with.</para>
+    </summary>
+    <returns>
+      <para>void pointer to the object.</para>
+    </returns>
+    <seealso cref="IMFAsyncCallbackLogging" />
+  </member>
+  <member name="IMFAsyncCallbackLogging.GetObjectTag">
+    <summary>
+      <para>Gets the tag of the parent object the async callback is associated object.</para>
+    </summary>
+    <returns>
+      <para>The tag of the object.</para>
+    </returns>
+    <seealso cref="IMFAsyncCallbackLogging" />
+  </member>
+  <member name="IMFAsyncCallbackLogging">
+    <summary>
+      <para>Provides logging information about the parent object the async callback is associated with.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>IMFAsyncCallbackLogging</b> is primarily used for async callbacks to return an ID of the parent object that they are associated with.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

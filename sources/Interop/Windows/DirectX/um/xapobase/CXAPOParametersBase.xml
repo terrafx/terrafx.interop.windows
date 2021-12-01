@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CXAPOParametersBase.BeginProcess">
+    <summary>
+      <para>Returns the current process parameters.</para>
+    </summary>
+    <returns>
+      <para>Returns a pointer to the current process parameters.</para>
+    </returns>
+    <remarks>
+      <para>XAPOs must call this method within their <see cref="IXAPO.Process" /> implementation to access the current process parameters in a thread-safe manner.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapoparametersbase">CXAPOParametersBase</seealso>
+  </member>
+  <member name="CXAPOParametersBase.CXAPOParametersBase">
+    <summary>
+      <para>Creates an instance of the <a href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapoparametersbase">CXAPOParametersBase</a> class.</para>
+    </summary>
+    <param name="pRegistrationProperties">
+      <para>Type: <b>const XAPO_REGISTRATION_PROPERTIES*</b></para>
+      <para>A pointer to an <see cref="XAPO_REGISTRATION_PROPERTIES" /> structure that contains the registration properties for the XAPO.</para>
+    </param>
+    <param name="pParameterBlocks">
+      <para>Type: <b>BYTE*</b></para>
+      <para>Pointer to three contiguous process parameter blocks used for synchronization.</para>
+    </param>
+    <param name="uParameterBlockByteSize">
+      <para>Type: <b>UINT32</b></para>
+      <para>Size of a parameter block in <i>pParameterBlocks</i>.</para>
+    </param>
+    <param name="fProducer">
+      <para>Type: <b>BOOL</b></para>
+      <para>If TRUE, indicates <see cref="IXAPO.Process" /> produces data to be returned by <see cref="IXAPOParameters.GetParameters" /> and disallows calls to <see cref="IXAPOParameters.SetParameters" />.</para>
+    </param>
+    <remarks>
+      <para>All process parameter blocks in <i>pParameterBlocks</i> must be initialized to the same default value before there is a call to the <see cref="IXAPO.Process" />, <see cref="IXAPOParameters.GetParameters" />, and <see cref="IXAPOParameters.SetParameters" /> methods. Usually this initialization should be handled in <see cref="IXAPO.Initialize" /> or in <see cref="IXAPO.LockForProcess" />.</para>
+      <para>The object created by this <a href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapoparametersbase">CXAPOParametersBase</a> will have a reference count of 1.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapoparametersbase">CXAPOParametersBase</seealso>
+  </member>
+  <member name="CXAPOParametersBase.EndProcess">
+    <summary>
+      <para>Notifies <a href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapoparametersbase">CXAPOParametersBase</a> that the XAPO has finished accessing the current process parameters.</para>
+    </summary>
+    <remarks>
+      <para>XAPOs must call this method within their <see cref="IXAPO.Process" /> implementation to access the current process parameters in a thread-safe manner.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapoparametersbase">CXAPOParametersBase</seealso>
+  </member>
+  <member name="CXAPOParametersBase.OnSetParameters">
+    <summary>
+      <para>Called by <see cref="IXAPOParameters.SetParameters" /> to allow for user-defined parameter validation.</para>
+    </summary>
+    <param name="pParameters">
+      <para>Effect-specific parameter block.</para>
+    </param>
+    <param name="ParameterByteSize">
+      <para>Size, in bytes, of pParameters.</para>
+    </param>
+    <remarks>
+      <para>Users are expected to use asserts for parameter validation in <b>OnSetParameters</b>.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapoparametersbase">CXAPOParametersBase</a> class's implementation of <see cref="IXAPOParameters.SetParameters" /> validates that <i>ParameterByteSize</i> is equal to the <b>m_uParameterBlockByteSize</b> private member before calling <b>OnSetParameters</b> so it may be assumed that <i>ParameterByteSize</i> == <b>m_uParameterBlockByteSize</b>. <b>m_uParameterBlockByteSize</b> will be equal to the <i>uParameterBlockByteSize</i> parameter passed into the <see cref="CXAPOParametersBase.CXAPOParametersBase" /> constructor.</para>
+      <para>This method should not block as it is called from the realtime audio processing thread.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapoparametersbase">CXAPOParametersBase</seealso>
+  </member>
+  <member name="CXAPOParametersBase.ParametersChanged">
+    <summary>
+      <para>Indicates if <see cref="IXAPOParameters.SetParameters" /> has been called since the last processing pass.</para>
+    </summary>
+    <returns>
+      <para>Returns TRUE if <see cref="IXAPOParameters.SetParameters" /> has been called since the last processing pass. May only be used within the XAPO's <see cref="IXAPO.Process" /> implementation, before <see cref="CXAPOParametersBase.BeginProcess" /> is called.</para>
+    </returns>
+    <remarks>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapoparametersbase">CXAPOParametersBase</seealso>
+  </member>
+</doc>

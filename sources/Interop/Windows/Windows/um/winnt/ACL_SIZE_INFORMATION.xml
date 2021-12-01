@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACL_SIZE_INFORMATION">
+    <summary>
+      <para>The <b>ACL_SIZE_INFORMATION</b> structure contains information about the size of an <see cref="ACL" /> structure.</para>
+    </summary>
+    <seealso cref="ACL" />
+    <seealso cref="ACL_INFORMATION_CLASS" />
+    <seealso cref="ACL_REVISION_INFORMATION" />
+    <seealso cref="GetAclInformation" />
+    <seealso cref="SetAclInformation" />
+  </member>
+  <member name="ACL_SIZE_INFORMATION.AceCount">
+    <summary>
+      <para>The number of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entries</a> (ACEs) in the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control list</a> (ACL).</para>
+    </summary>
+  </member>
+  <member name="ACL_SIZE_INFORMATION.AclBytesInUse">
+    <summary>
+      <para>The number of bytes in the ACL actually used to store the ACEs and <see cref="ACL" /> structure. This may be less than the total number of bytes allocated to the ACL.</para>
+    </summary>
+  </member>
+  <member name="ACL_SIZE_INFORMATION.AclBytesFree">
+    <summary>
+      <para>The number of unused bytes in the ACL.</para>
+    </summary>
+  </member>
+</doc>

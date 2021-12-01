@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_IMAGE_BRUSH_PROPERTIES">
+    <summary>
+      <para>Describes image brush features.</para>
+    </summary>
+    <seealso cref="ID2D1DeviceContext.CreateImageBrush" />
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="D2D1_IMAGE_BRUSH_PROPERTIES.sourceRectangle">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
+      <para>The source rectangle in the image space from which the image will be tiled or interpolated.</para>
+    </summary>
+  </member>
+  <member name="D2D1_IMAGE_BRUSH_PROPERTIES.extendModeX">
+    <summary>
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>The extend mode in the image x-axis.</para>
+    </summary>
+  </member>
+  <member name="D2D1_IMAGE_BRUSH_PROPERTIES.extendModeY">
+    <summary>
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>The extend mode in the image y-axis.</para>
+    </summary>
+  </member>
+  <member name="D2D1_IMAGE_BRUSH_PROPERTIES.interpolationMode">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_INTERPOLATION_MODE</a></b></para>
+      <para>The interpolation mode to use when scaling the image brush.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDragSourceHelper2.SetFlags">
+    <summary>
+      <para>Sets the characteristics of a drag-and-drop operation over an <see cref="IDragSourceHelper" /> object.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The flags that determine the characteristics of a drag-and-drop operation over an <see cref="IDragSourceHelper" /> object.</para>
+      <h4>DSH_ALLOWDROPDESCRIPTIONTEXT (0x0001)</h4>
+      <para>Allow text specified in <see cref="DROPDESCRIPTION" /> to be displayed on the drag image. If you pass this flag into the <i>dwFlags</i> parameter of <b>IDragSourceHelper2.SetFlags</b>, then the text description is rendered on top of the supplied drag image. If you pass a drag image into an <see cref="IDragSourceHelper" /> object, then by default, the extra text description of the drag-and-drop operation is not displayed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IDragSourceHelper2">
+    <summary>
+      <para>Exposes a method that adds functionality to <see cref="IDragSourceHelper" />. This method sets the characteristics of a drag-and-drop operation over an <b>IDragSourceHelper</b> object.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IDragSourceHelper" /> interface, from which it inherits.</para>
+      <para>If you want to adjust the behavior of the drag image by calling <see cref="IDragSourceHelper2.SetFlags" />, that call should be made before you call <see cref="InitializeFromWindow" /> or <see cref="InitializeFromBitmap" />.</para>
+    </remarks>
+  </member>
+</doc>

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VERTTHUMBSTATES.xml' path='doc/member[@name="VERTTHUMBSTATES"]/*' />
 public enum VERTTHUMBSTATES
 {
+    /// <include file='VERTTHUMBSTATES.xml' path='doc/member[@name="VERTTHUMBSTATES.VTS_NORMAL"]/*' />
     VTS_NORMAL = 1,
+
+    /// <include file='VERTTHUMBSTATES.xml' path='doc/member[@name="VERTTHUMBSTATES.VTS_HOT"]/*' />
     VTS_HOT = 2,
+
+    /// <include file='VERTTHUMBSTATES.xml' path='doc/member[@name="VERTTHUMBSTATES.VTS_PUSHED"]/*' />
     VTS_PUSHED = 3,
+
+    /// <include file='VERTTHUMBSTATES.xml' path='doc/member[@name="VERTTHUMBSTATES.VTS_DISABLED"]/*' />
     VTS_DISABLED = 4,
 }

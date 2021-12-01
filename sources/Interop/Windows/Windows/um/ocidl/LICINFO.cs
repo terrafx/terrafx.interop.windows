@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LICINFO.xml' path='doc/member[@name="LICINFO"]/*' />
 public partial struct LICINFO
 {
+    /// <include file='LICINFO.xml' path='doc/member[@name="LICINFO.cbLicInfo"]/*' />
     [NativeTypeName("LONG")]
     public int cbLicInfo;
 
+    /// <include file='LICINFO.xml' path='doc/member[@name="LICINFO.fRuntimeKeyAvail"]/*' />
     public BOOL fRuntimeKeyAvail;
 
+    /// <include file='LICINFO.xml' path='doc/member[@name="LICINFO.fLicVerified"]/*' />
     public BOOL fLicVerified;
 }

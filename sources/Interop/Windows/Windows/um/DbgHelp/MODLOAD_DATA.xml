@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MODLOAD_DATA">
+    <summary>
+      <para>Contains module data.</para>
+    </summary>
+    <seealso cref="IMAGE_DEBUG_DIRECTORY" />
+    <seealso cref="MODLOAD_CVMISC" />
+    <seealso cref="SymLoadModuleEx" />
+  </member>
+  <member name="MODLOAD_DATA.ssize">
+    <summary>
+      <para>The size of this structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MODLOAD_DATA.ssig">
+    <summary>
+      <para>The type of data. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DBHHEADER_DEBUGDIRS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <b>data</b> member is a buffer that contains an array of
+<see cref="IMAGE_DEBUG_DIRECTORY" /> structures.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DBHHEADER_CVMISC</b>
+                </description>
+              </item>
+              <item>
+                <description>0x2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <b>data</b> member is a buffer that contains an array of <see cref="MODLOAD_CVMISC" /> structures.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MODLOAD_DATA.data">
+    <summary>
+      <para>The data. The format of this data depends on the value of the <b>ssig</b> member.</para>
+    </summary>
+  </member>
+  <member name="MODLOAD_DATA.size">
+    <summary>
+      <para>The size of the <b>data</b> buffer, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MODLOAD_DATA.flags">
+    <summary>
+      <para>This member is unused.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITravelLog.AddEntry">
+    <summary>
+      <para>Deprecated. Adds a new entry for a pending navigation to the travel log.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <see cref="IUnknown" /> representing the nearest browser or frame within which the travel generating the log is taking place.</para>
+    </param>
+    <param name="fIsLocalAnchor">
+      <para>Type: <b>BOOL</b></para>
+      <para>A value specifying whether the new entry is a local anchor.</para>
+      <h4>TRUE</h4>
+      <para>The entry is an anchor link within the same page.</para>
+      <h4>FALSE</h4>
+      <para>The entry is another page or an anchor on another page.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITravelLog.Clone">
+    <summary>
+      <para>Deprecated. Duplicates the contents of the current travel log.</para>
+    </summary>
+    <param name="pptl">
+      <para>Type: <b><see cref="ITravelLog" />**</b></para>
+      <para>The address of a pointer to the interface representing the cloned travel log.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITravelLog.CountEntries">
+    <summary>
+      <para>Deprecated. Generates the number of entries in the travel log.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <see cref="IUnknown" /> representing the nearest browser or frame within which the travel generating the log is taking place.</para>
+    </param>
+    <returns>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of entries in the travel log.</para>
+    </returns>
+  </member>
+  <member name="ITravelLog.FindTravelEntry">
+    <summary>
+      <para>Deprecated. Determines whether a specific travel entry is present in the travel log.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <see cref="IUnknown" /> representing the nearest browser or frame within which the travel generating the log is taking place.</para>
+    </param>
+    <param name="pidl">
+      <para>Type: <b>LPCITEMIDLIST</b></para>
+      <para>A PIDL of the travel entry, typically obtained through <see cref="GetPidl" />.</para>
+    </param>
+    <param name="ppte">
+      <para>Type: <b><see cref="ITravelEntry" />**</b></para>
+      <para>The address of a pointer to the <see cref="ITravelEntry" /> interface representing the travel entry, if found.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITravelLog.GetToolTipText">
+    <summary>
+      <para>Deprecated. Gets tooltip text for a travel entry, which is used as a Unicode display string in the UI.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <see cref="IUnknown" /> representing the nearest browser or frame within which the travel generating the log is taking place.</para>
+    </param>
+    <param name="iOffset">
+      <para>Type: <b>int</b></para>
+      <para>The number of travel entries forward (a positive value) or backward (a negative value) to move in the travel log to arrive at the travel entry from which text should be retrieved.</para>
+    </param>
+    <param name="idsTemplate">
+      <para>Type: <b>int</b></para>
+      <para>Not used.</para>
+    </param>
+    <param name="pwzText">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A pointer to a buffer that receives the Unicode tooltip text string.</para>
+    </param>
+    <param name="cchText">
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of characters in the buffer pointed to by <i>pwzText</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITravelLog.GetTravelEntry">
+    <summary>
+      <para>Deprecated. Gets a travel entry in the travel log relative to the position of the current entry.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <see cref="IUnknown" /> representing the nearest browser or frame within which the travel generating the log is taking place.</para>
+    </param>
+    <param name="iOffset">
+      <para>Type: <b>int</b></para>
+      <para>The number of travel entries forward (a positive value) or backward (a negative value) to move in the travel log.</para>
+    </param>
+    <param name="ppte">
+      <para>Type: <b><see cref="ITravelEntry" />**</b></para>
+      <para>The address of a pointer to the <see cref="ITravelEntry" /> interface representing the travel entry at the offset specified in <i>iOffset</i>. This value is only valid if the method returns successfully.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ITravelLog.GetTravelEntry</b> is often used to discover whether the <b>Back</b> and <b>Forward</b> buttons should be enabled in the browser window.</para>
+    </remarks>
+  </member>
+  <member name="ITravelLog.InsertMenuEntries">
+    <summary>
+      <para>Deprecated. Inserts entries into the specified menu.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <see cref="IUnknown" /> representing the nearest browser or frame within which the travel generating the log is taking place.</para>
+    </param>
+    <param name="hmenu">
+      <para>Type: <b>HMENU</b></para>
+      <para>The handle of the menu.</para>
+    </param>
+    <param name="nPos">
+      <para>Type: <b>int</b></para>
+      <para>The position in the menu to insert the entries.</para>
+    </param>
+    <param name="idFirst">
+      <para>Type: <b>int</b></para>
+      <para>The ID of the first entry to be inserted.</para>
+    </param>
+    <param name="idLast">
+      <para>Type: <b>int</b></para>
+      <para>The ID of the last entry to be inserted. The difference between <i>idFirst</i> and <i>idLast</i> is the maximum number of entries that can be inserted into the menu.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The types of entries to add to the menu. Includes the following:</para>
+      <h4>TLMENUF_INCLUDECURRENT</h4>
+      <para>Include the current page.</para>
+      <h4>TLMENUF_CHECKCURRENT</h4>
+      <para>Add a check mark next to the entry of the current page.</para>
+      <h4>TLMENUF_BACK</h4>
+      <para>Default. The previous pages.</para>
+      <h4>TLMENUF_FORE</h4>
+      <para>The next pages.</para>
+      <h4>TLMENUF_BACKANDFORTH</h4>
+      <para>Previous, current, and next pages.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITravelLog.Revert">
+    <summary>
+      <para>Deprecated. Reverts to the current entry, dropping the result of <see cref="ITravelLog.AddEntry" /> in the case of a failed navigation.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITravelLog.Travel">
+    <summary>
+      <para>Deprecated. Navigates to a travel entry in the travel log relative to the position of the current entry.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <see cref="IUnknown" /> that represents the nearest browser or frame within which the travel generating the log is taking place.</para>
+    </param>
+    <param name="iOffset">
+      <para>Type: <b>int</b></para>
+      <para>The number of travel entries forward (a positive value) or backward (a negative value) to move in the travel log.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Calling <b>ITravelLog.Travel</b> has the same result as calling <see cref="Invoke" />.</para>
+    </remarks>
+  </member>
+  <member name="ITravelLog.UpdateEntry">
+    <summary>
+      <para>Deprecated. Saves the browser state of the current entry in preparation for a pending navigation.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <see cref="IUnknown" /> that represents the nearest browser or frame within which the travel generating the log is taking place.</para>
+    </param>
+    <param name="fIsLocalAnchor">
+      <para>Type: <b>BOOL</b></para>
+      <para>A value specifying whether the new entry is a local anchor.</para>
+      <h4>TRUE</h4>
+      <para>The entry is an anchor link within the same page.</para>
+      <h4>FALSE</h4>
+      <para>The entry is another page or an anchor on another page.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITravelLog.UpdateExternal">
+    <summary>
+      <para>Deprecated. Updates an entry that originated out of the current procedure through <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767938(v=vs.85)">IHlinkFrame</a>.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <see cref="IUnknown" /> representing the nearest browser or frame within which the travel generating the log is taking place.</para>
+    </param>
+    <param name="punkHLBrowseContext">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to the <see cref="IUnknown" /> of an <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767949(v=vs.85)">IHlinkBrowseContext</a> retrieved through <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767937(v=vs.85)">IHlinkFrame.GetBrowseContext</a>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+</doc>

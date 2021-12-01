@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COSERVERINFO.xml' path='doc/member[@name="COSERVERINFO"]/*' />
 public unsafe partial struct COSERVERINFO
 {
+    /// <include file='COSERVERINFO.xml' path='doc/member[@name="COSERVERINFO.dwReserved1"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved1;
 
+    /// <include file='COSERVERINFO.xml' path='doc/member[@name="COSERVERINFO.pwszName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszName;
 
+    /// <include file='COSERVERINFO.xml' path='doc/member[@name="COSERVERINFO.pAuthInfo"]/*' />
     public COAUTHINFO* pAuthInfo;
 
+    /// <include file='COSERVERINFO.xml' path='doc/member[@name="COSERVERINFO.dwReserved2"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved2;
 }

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TF_DA_ATTR_INFO">
+    <summary>
+      <para>Elements of the <b>TF_DA_ATTR_INFO</b> enumeration are used to specify text conversion data in the <see cref="TF_DISPLAYATTRIBUTE" /> structure.</para>
+    </summary>
+    <seealso cref="TF_DISPLAYATTRIBUTE " />
+  </member>
+  <member name="TF_DA_ATTR_INFO.TF_ATTR_INPUT">
+    <summary>
+      <para>The text is entered by the user and has not been converted yet.</para>
+    </summary>
+  </member>
+  <member name="TF_DA_ATTR_INFO.TF_ATTR_TARGET_CONVERTED">
+    <summary>
+      <para>The user has made a character selection and the text has been converted yet.</para>
+    </summary>
+  </member>
+  <member name="TF_DA_ATTR_INFO.TF_ATTR_CONVERTED">
+    <summary>
+      <para>The text is converted.</para>
+    </summary>
+  </member>
+  <member name="TF_DA_ATTR_INFO.TF_ATTR_TARGET_NOTCONVERTED">
+    <summary>
+      <para>The user made a character selection, but the text is not converted yet.</para>
+    </summary>
+  </member>
+  <member name="TF_DA_ATTR_INFO.TF_ATTR_INPUT_ERROR">
+    <summary>
+      <para>The text is an error character and cannot be converted. For example, some consonants cannot be put together.</para>
+    </summary>
+  </member>
+  <member name="TF_DA_ATTR_INFO.TF_ATTR_FIXEDCONVERTED">
+    <summary>
+      <para>The text is not converted. Theses characters will no longer be converted.</para>
+    </summary>
+  </member>
+  <member name="TF_DA_ATTR_INFO.TF_ATTR_OTHER">
+    <summary>
+      <para>Reserved for the system.</para>
+    </summary>
+  </member>
+</doc>

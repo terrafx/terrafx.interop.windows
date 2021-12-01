@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_MANAGEMENT_STATUS.xml' path='doc/member[@name="SCM_PD_MANAGEMENT_STATUS"]/*' />
 public partial struct SCM_PD_MANAGEMENT_STATUS
 {
+    /// <include file='SCM_PD_MANAGEMENT_STATUS.xml' path='doc/member[@name="SCM_PD_MANAGEMENT_STATUS.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_PD_MANAGEMENT_STATUS.xml' path='doc/member[@name="SCM_PD_MANAGEMENT_STATUS.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_PD_MANAGEMENT_STATUS.xml' path='doc/member[@name="SCM_PD_MANAGEMENT_STATUS.Health"]/*' />
     public SCM_PD_HEALTH_STATUS Health;
 
+    /// <include file='SCM_PD_MANAGEMENT_STATUS.xml' path='doc/member[@name="SCM_PD_MANAGEMENT_STATUS.NumberOfOperationalStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfOperationalStatus;
 
+    /// <include file='SCM_PD_MANAGEMENT_STATUS.xml' path='doc/member[@name="SCM_PD_MANAGEMENT_STATUS.NumberOfAdditionalReasons"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfAdditionalReasons;
 
+    /// <include file='SCM_PD_MANAGEMENT_STATUS.xml' path='doc/member[@name="SCM_PD_MANAGEMENT_STATUS.OperationalStatus"]/*' />
     [NativeTypeName("SCM_PD_OPERATIONAL_STATUS [16]")]
     public _OperationalStatus_e__FixedBuffer OperationalStatus;
 
+    /// <include file='SCM_PD_MANAGEMENT_STATUS.xml' path='doc/member[@name="SCM_PD_MANAGEMENT_STATUS.AdditionalReasons"]/*' />
     [NativeTypeName("SCM_PD_OPERATIONAL_STATUS_REASON [1]")]
     public _AdditionalReasons_e__FixedBuffer AdditionalReasons;
 
+    /// <include file='_OperationalStatus_e__FixedBuffer.xml' path='doc/member[@name="_OperationalStatus_e__FixedBuffer"]/*' />
     public partial struct _OperationalStatus_e__FixedBuffer
     {
         public SCM_PD_OPERATIONAL_STATUS e0;
@@ -63,6 +72,7 @@ public partial struct SCM_PD_MANAGEMENT_STATUS
         public Span<SCM_PD_OPERATIONAL_STATUS> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 
+    /// <include file='_AdditionalReasons_e__FixedBuffer.xml' path='doc/member[@name="_AdditionalReasons_e__FixedBuffer"]/*' />
     public partial struct _AdditionalReasons_e__FixedBuffer
     {
         public SCM_PD_OPERATIONAL_STATUS_REASON e0;

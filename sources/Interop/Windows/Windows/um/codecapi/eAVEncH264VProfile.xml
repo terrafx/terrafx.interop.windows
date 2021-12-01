@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncH264VProfile">
+    <summary>
+      <para>Specifies an H.264 video profile.</para>
+    </summary>
+    <remarks>
+      <para>These values are used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-mpeg2-profile-attribute">MF_MT_MPEG2_PROFILE</a> attribute.</para>
+      <para>These values are also used with <a href="https://docs.microsoft.com//windows/desktop/medfound/camera-encoder-h264-uvc-1-5">H.264 UVC 1.5 camera encoders</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_unknown">
+    <summary>
+      <para>The profile is unknown or not specified.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_Simple">
+    <summary>
+      <para>Simple profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_Base">
+    <summary>
+      <para>Baseline profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_Main">
+    <summary>
+      <para>Main profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_High">
+    <summary>
+      <para>High profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_422">
+    <summary>
+      <para>High 4:2:2 profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_High10">
+    <summary>
+      <para>High 10 profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_444">
+    <summary>
+      <para>High 4:4:4 profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_Extended">
+    <summary>
+      <para>Extended profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_ScalableBase">
+    <summary>
+      <para>Scalable base profile. H.264 extension.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_ScalableHigh">
+    <summary>
+      <para>Scalable high profile. H.264 extension.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_MultiviewHigh">
+    <summary>
+      <para>Multiview high profile. H.264 extension.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_StereoHigh">
+    <summary>
+      <para>Stereo high profile. H.264 extension.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_ConstrainedBase">
+    <summary>
+      <para>Constrained base profile. H.264 extension.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_UCConstrainedHigh">
+    <summary>
+      <para>Constrained high profile. H.264 extension.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_UCScalableConstrainedBase">
+    <summary>
+      <para>UC Constrained base profile. H.264 extension.</para>
+    </summary>
+  </member>
+  <member name="eAVEncH264VProfile.eAVEncH264VProfile_UCScalableConstrainedHigh">
+    <summary>
+      <para>UC Constrained high profile. H.264 extension.</para>
+    </summary>
+  </member>
+</doc>

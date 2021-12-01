@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSHNOTIFY.xml' path='doc/member[@name="PSHNOTIFY"]/*' />
 public partial struct PSHNOTIFY
 {
+    /// <include file='PSHNOTIFY.xml' path='doc/member[@name="PSHNOTIFY.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='PSHNOTIFY.xml' path='doc/member[@name="PSHNOTIFY.lParam"]/*' />
     public LPARAM lParam;
 }

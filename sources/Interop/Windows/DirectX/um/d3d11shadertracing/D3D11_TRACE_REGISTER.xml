@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TRACE_REGISTER">
+    <summary>
+      <para>Describes a trace register.</para>
+    </summary>
+    <remarks>
+      <para>The following register types do not require an index:</para>
+      <list type="bullet">
+        <item>
+          <description>input PrimitiveID</description>
+        </item>
+        <item>
+          <description>output oDepth</description>
+        </item>
+        <item>
+          <description>immediate32</description>
+        </item>
+        <item>
+          <description>NULL register</description>
+        </item>
+        <item>
+          <description>output control point ID (this is actually an input; it defines the output that the thread controls)</description>
+        </item>
+        <item>
+          <description>input fork instance ID</description>
+        </item>
+        <item>
+          <description>input join instance ID</description>
+        </item>
+        <item>
+          <description>input domain point register</description>
+        </item>
+        <item>
+          <description>cycle counter</description>
+        </item>
+      </list>
+      <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.
+</remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D11_TRACE_REGISTER.RegType">
+    <summary>
+      <para>A <see cref="D3D11_TRACE_REGISTER_TYPE" />-typed value that identifies the type of register that the shader-trace object uses.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TRACE_REGISTER.Index1D">
+    <summary>
+      <para>An index for one-dimensional arrays. This index is used by the following register types:</para>
+      <list type="bullet">
+        <item>
+          <description>vertex shader or pixel shader input: v[Index1D]</description>
+        </item>
+        <item>
+          <description>temp: r[Index1D]</description>
+        </item>
+        <item>
+          <description>output: o[Index1D]</description>
+        </item>
+        <item>
+          <description>immediate constant buffer: icb[Index1D]</description>
+        </item>
+        <item>
+          <description>sampler s[Index1D]</description>
+        </item>
+        <item>
+          <description>resource r[Index1D]</description>
+        </item>
+        <item>
+          <description>input patch constant register: vpc[Index1D] </description>
+        </item>
+        <item>
+          <description>unordered access view: u[Index1D]</description>
+        </item>
+        <item>
+          <description>thread group shared memory: g[Index1D]</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="D3D11_TRACE_REGISTER.Index2D">
+    <summary>
+      <para>An array of indexes for two-dimensional arrays. These indexes are used by the following register types:</para>
+      <list type="bullet">
+        <item>
+          <description>GS input: v[Index2D[0]][Index2D[1]]</description>
+        </item>
+        <item>
+          <description>indexable temp: x[Index2D[0]][Index2D[1]]</description>
+        </item>
+        <item>
+          <description>constant buffer: cb#[#]</description>
+        </item>
+        <item>
+          <description>input control point register: vcp[Index2D[0]][Index2D[1]]</description>
+        </item>
+        <item>
+          <description>output control point register: vocp[Index2D[0]][Index2D[1]]</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="D3D11_TRACE_REGISTER.OperandIndex">
+    <summary>
+      <para>The index of the operand, which starts from 0.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TRACE_REGISTER.Flags">
+    <summary>
+      <para>A combination of the following flags that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies more about the trace register.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>D3D11_TRACE_REGISTER_FLAGS_RELATIVE_INDEXING (0x1)</description>
+          <description>Access to the register is part of the relative indexing of a register.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

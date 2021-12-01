@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_RESIDENCY.xml' path='doc/member[@name="DXGI_RESIDENCY"]/*' />
 public enum DXGI_RESIDENCY
 {
+    /// <include file='DXGI_RESIDENCY.xml' path='doc/member[@name="DXGI_RESIDENCY.DXGI_RESIDENCY_FULLY_RESIDENT"]/*' />
     DXGI_RESIDENCY_FULLY_RESIDENT = 1,
+
+    /// <include file='DXGI_RESIDENCY.xml' path='doc/member[@name="DXGI_RESIDENCY.DXGI_RESIDENCY_RESIDENT_IN_SHARED_MEMORY"]/*' />
     DXGI_RESIDENCY_RESIDENT_IN_SHARED_MEMORY = 2,
+
+    /// <include file='DXGI_RESIDENCY.xml' path='doc/member[@name="DXGI_RESIDENCY.DXGI_RESIDENCY_EVICTED_TO_DISK"]/*' />
     DXGI_RESIDENCY_EVICTED_TO_DISK = 3,
 }

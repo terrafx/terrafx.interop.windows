@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ASYNC_OPERATION.xml' path='doc/member[@name="WS_ASYNC_OPERATION"]/*' />
 public unsafe partial struct WS_ASYNC_OPERATION
 {
+    /// <include file='WS_ASYNC_OPERATION.xml' path='doc/member[@name="WS_ASYNC_OPERATION.function"]/*' />
     [NativeTypeName("WS_ASYNC_FUNCTION")]
     public delegate* unmanaged<HRESULT, WS_CALLBACK_MODEL, void*, WS_ASYNC_OPERATION*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> function;
 }

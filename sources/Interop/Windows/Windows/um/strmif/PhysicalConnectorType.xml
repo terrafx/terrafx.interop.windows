@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PhysicalConnectorType">
+    <summary>
+      <para>Specifies the physical type of pin (audio or video).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_Tuner">
+    <summary>
+      <para>Specifies a tuner pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_Composite">
+    <summary>
+      <para>Specifies a composite pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_SVideo">
+    <summary>
+      <para>Specifies an S-Video (Y/C video) pin.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_RGB">
+    <summary>
+      <para>Specifies an RGB pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_YRYBY">
+    <summary>
+      <para>Specifies a YRYBY (Y, R–Y, B–Y) pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_SerialDigital">
+    <summary>
+      <para>Specifies a serial digital pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_ParallelDigital">
+    <summary>
+      <para>Specifies a parallel digital pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_SCSI">
+    <summary>
+      <para>Specifies a SCSI (Small Computer System Interface) pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_AUX">
+    <summary>
+      <para>Specifies an AUX (auxiliary) pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_1394">
+    <summary>
+      <para>Specifies an IEEE 1394 pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_USB">
+    <summary>
+      <para>Specifies a USB (Universal Serial Bus) pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_VideoDecoder">
+    <summary>
+      <para>Specifies a video decoder pin.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_VideoEncoder">
+    <summary>
+      <para>Specifies a video encoder pin.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_SCART">
+    <summary>
+      <para>Specifies a SCART (Peritel) pin for video.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Video_Black">
+    <summary>
+      <para>Not used.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Audio_Tuner">
+    <summary>
+      <para>Specifies a tuner pin for audio.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Audio_Line">
+    <summary>
+      <para>Specifies a line pin for audio.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Audio_Mic">
+    <summary>
+      <para>Specifies a microphone pin.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Audio_AESDigital">
+    <summary>
+      <para>Specifies an AES/EBU (Audio Engineering Society/European Broadcast Union) digital pin for audio.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Audio_SPDIFDigital">
+    <summary>
+      <para>Specifies an S/PDIF (Sony/Philips Digital Interface Format) digital pin for audio.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Audio_SCSI">
+    <summary>
+      <para>Specifies a SCSI pin for audio.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Audio_AUX">
+    <summary>
+      <para>Specifies an AUX pin for audio.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Audio_1394">
+    <summary>
+      <para>Specifies an IEEE 1394 pin for audio.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Audio_USB">
+    <summary>
+      <para>Specifies a USB pin for audio.</para>
+    </summary>
+  </member>
+  <member name="PhysicalConnectorType.PhysConn_Audio_AudioDecoder">
+    <summary>
+      <para>Specifies an audio decoder pin.</para>
+    </summary>
+  </member>
+</doc>

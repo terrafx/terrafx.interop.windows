@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDCompositionDevice2.Commit">
+    <summary>
+      <para>Commits all DirectComposition commands that are pending on this device.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b></para>
+      <para>error code. See
+<a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a
+list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Calls to DirectComposition methods are always batched and executed atomically as
+a single transaction. Calls take effect only when
+<b>IDCompositionDevice2.Commit</b> is
+called, at which time all pending method calls for a device are executed at once.</para>
+      <para>An application that uses multiple devices must call
+<b>Commit</b> for each device separately.
+However, because the composition engine processes the calls individually, the batch of commands might not take
+effect at the same time.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+  </member>
+  <member name="IDCompositionDevice2.CreateAnimation">
+    <summary>
+      <para>Creates an animation object that is used to animate one or more scalar properties of one or more Microsoft DirectComposition objects.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />**</b></para>
+      <para>The new animation object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A number of DirectComposition object properties can have an animation object as the value of the property. When a property has an animation object as its value, DirectComposition redraws the visual at the refresh rate to reflect the changing value of the property that is being animated.</para>
+      <para>A newly created animation object does not have any animation segments associated with it. An application must use the methods of the <see cref="IDCompositionAnimation" /> interface to build an animation function before setting the animation object as the property of another DirectComposition object.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+  </member>
+  <member name="IDCompositionDevice2.CreateEffectGroup">
+    <summary>
+      <para>Creates an object that represents multiple effects to be applied to a visual subtree.</para>
+    </summary>
+    <param name="effectGroup">
+      <para>Type: <b><see cref="IDCompositionEffectGroup" />**</b></para>
+      <para>The new effect group object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>An effect group enables an application to apply multiple effects to a single visual subtree.</para>
+      <para>A new effect group has a default opacity value of 1.0 and no 3D transformations.</para>
+      <para>To set the opacity and transform values, use the corresponding methods on the <see cref="IDCompositionEffectGroup" /> that was created.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionVisual.SetEffect" />
+  </member>
+  <member name="IDCompositionDevice2.CreateMatrixTransform">
+    <summary>
+      <para>Creates a 2D 3-by-2 matrix transform object.</para>
+    </summary>
+    <param name="matrixTransform">
+      <para>Type: <b><see cref="IDCompositionMatrixTransform" />**</b></para>
+      <para>The new matrix transform object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A new matrix transform object has the identity matrix as its initial value. The identity matrix is the 3x2 matrix with ones on the main diagonal and zeros elsewhere, as shown in the following illustration.</para>
+      <para>
+        <img alt="Three-by-two identity matrix" src="https://docs.microsoft.com/windows/win32/api/dcompmages/identity_3x2matrix.png" />
+      </para>
+      <para>When an identity transform is applied to an object, it does not change the position, shape, or size of the object. It is similar to the way that multiplying a number by one does not change the number. Any transform other than the identity transform will modify the position, shape, and/or size of objects.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionEffectGroup.SetTransform3D" />
+    <seealso cref="IDCompositionVisual.SetEffect" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449178(v=vs.85)">IDCompositionVisual.SetTransform</seealso>
+  </member>
+  <member name="IDCompositionDevice2.CreateMatrixTransform3D">
+    <summary>
+      <para>Creates a 3D 4-by-4 matrix transform object.</para>
+    </summary>
+    <param name="matrixTransform3D">
+      <para>Type: <b><see cref="IDCompositionMatrixTransform3D" />**</b></para>
+      <para>The new 3D matrix transform object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The new 3D matrix transform has the identity matrix as its value. The identity matrix is the 4-by-4 matrix with ones on the main diagonal and zeros elsewhere, as shown in the following illustration.</para>
+      <para>
+        <img alt="Four-by-four identity matrix" src="https://docs.microsoft.com/windows/win32/api/dcompmages/identity_4x4matrix.png" />
+      </para>
+      <para>When an identity transform is applied to an object, it does not change the position, shape, or size of the object. It is similar to the way that multiplying a number by one does not change the number. Any transform other than the identity transform will modify the position, shape, and/or size of objects.</para>
+    </remarks>
+    <seealso cref="DCompositionEffectGroup.SetTransform3D" />
+    <seealso cref="IDCompositionDevice2" />
+  </member>
+  <member name="IDCompositionDevice2.CreateRectangleClip">
+    <summary>
+      <para>Creates a clip object that can be used to restrict the rendering of  a visual subtree to a rectangular area.</para>
+    </summary>
+    <param name="clip">
+      <para>Type: <b><see cref="IDCompositionRectangleClip" />**</b></para>
+      <para>The new clip object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A newly created clip object has a static value of <a href="https://msdn.microsoft.com/library/6bs3y5ya(vs.71).aspx">FLT_MAX</a> for the left and top properties, and a static value of –FLT_MAX for the right and bottom properties, effectively making it a no-op clip object.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionVisual.SetClip" />
+  </member>
+  <member name="IDCompositionDevice2.CreateRotateTransform">
+    <summary>
+      <para>Creates a 2D rotation transform object.</para>
+    </summary>
+    <param name="rotateTransform">
+      <para>Type: <b><see cref="IDCompositionRotateTransform" />**</b></para>
+      <para>The new rotation transform object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A new 2D rotation transform object has a static value of zero for the Angle, CenterX, and CenterY properties.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449178(v=vs.85)">IDCompositionVisual.SetTransform</seealso>
+  </member>
+  <member name="IDCompositionDevice2.CreateRotateTransform3D">
+    <summary>
+      <para>Creates a 3D rotation transform object.</para>
+    </summary>
+    <param name="rotateTransform3D">
+      <para>Type: <b><see cref="IDCompositionRotateTransform3D" />**</b></para>
+      <para>The new 3D rotation transform object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A new 3D rotation transform object has a default static value of zero for the Angle, CenterX, CenterY, CenterZ, AxisX, and AxisY properties, and a default static value of 1.0 for the AxisZ property.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449178(v=vs.85)">IDCompositionEffectGroup.SetTransform</seealso>
+    <seealso cref="IDCompositionVisual.SetEffect" />
+  </member>
+  <member name="IDCompositionDevice2.CreateScaleTransform">
+    <summary>
+      <para>Creates a 2D scale transform object.</para>
+    </summary>
+    <param name="scaleTransform">
+      <para>Type: <b><see cref="IDCompositionScaleTransform" />**</b></para>
+      <para>The new 2D scale transform object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A new 2D scale transform object has a static value of zero for the ScaleX, ScaleY, CenterX, and CenterY properties.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449178(v=vs.85)">IDCompositionVisual.SetTransform</seealso>
+  </member>
+  <member name="IDCompositionDevice2.CreateScaleTransform3D">
+    <summary>
+      <para>Creates a 3D scale transform object.</para>
+    </summary>
+    <param name="scaleTransform3D">
+      <para>Type: <b><see cref="IDCompositionScaleTransform3D" />**</b></para>
+      <para>The new 3D scale transform object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A new 3D scale transform object has a static value of 1.0 for the ScaleX, ScaleY, and ScaleZ properties.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionEffectGroup.SetTransform3D" />
+    <seealso cref="IDCompositionVisual.SetEffect" />
+  </member>
+  <member name="IDCompositionDevice2.CreateSkewTransform">
+    <summary>
+      <para>Creates a 2D skew transform object.</para>
+    </summary>
+    <param name="skewTransform">
+      <para>Type: <b><see cref="IDCompositionSkewTransform" />**</b></para>
+      <para>The new 2D skew transform object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A new 2D skew transform object has a static value of zero for the AngleX, AngleY, CenterX, and CenterY properties.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449178(v=vs.85)">IDCompositionVisual.SetTransform</seealso>
+  </member>
+  <member name="IDCompositionDevice2.CreateSurface">
+    <summary>
+      <para>Creates an updateable surface object that can be associated with one or more visuals for composition.</para>
+    </summary>
+    <param name="width">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The width of the surface, in pixels. Constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> of the rendering device that was passed in at the time the DirectComposition device was created.</para>
+    </param>
+    <param name="height">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The height of the surface, in pixels. Constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> of the rendering device that was passed in at the time the DirectComposition device was created.</para>
+    </param>
+    <param name="pixelFormat">
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>The pixel format of the surface.</para>
+    </param>
+    <param name="alphaMode">
+      <para>Type: <b><see cref="DXGI_ALPHA_MODE" /></b></para>
+      <para>The format of the alpha channel, if an alpha channel is included in the pixel format. It can be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>DXGI_ALPHA_MODE_UNSPECIFIED</b>
+          </description>
+          <description>
+            <para>The alpha channel is not specified. This value has the same effect as <b>DXGI_ALPHA_MODE_IGNORE</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_ALPHA_MODE_PREMULTIPLIED</b>
+          </description>
+          <description>
+            <para>The color channels contain values that are premultiplied with the alpha channel.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_ALPHA_MODE_IGNORE</b>
+          </description>
+          <description>
+            <para>The alpha channel should be ignored and the bitmap should be rendered opaquely.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="surface">
+      <para>Type: <b><see cref="IDCompositionSurface" />**</b></para>
+      <para>The newly created surface object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A Microsoft DirectComposition surface is a rectangular array of pixels that can be associated with a visual for composition.</para>
+      <para>A newly created surface object is in an uninitialized state. While it is uninitialized, the surface has no effect on the composition of the visual tree. It behaves exactly like a surface that has  100% transparent pixels.</para>
+      <para>To initialize the surface with pixel data, use the <see cref="IDCompositionSurface.BeginDraw" /> and <see cref="IDCompositionSurface.EndDraw" /> methods. The first call to this method must cover the entire surface area to provide an initial value for every pixel. Subsequent calls may specify smaller sub-rectangles of the surface to update.</para>
+      <para>DirectComposition surfaces support the following pixel formats:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>DXGI_FORMAT_B8G8R8A8_UNORM</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_FORMAT_R8G8B8A8_UNORM</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_FORMAT_R16G16B16A16_FLOAT</b>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionDevice2.CreateVirtualSurface" />
+  </member>
+  <member name="IDCompositionDevice2.CreateSurfaceFactory">
+    <summary>
+      <para>Creates a Microsoft DirectComposition surface factory object, which can be used to create other DirectComposition surface or virtual surface objects</para>
+    </summary>
+    <param name="renderingDevice">
+      <para>A pointer to a DirectX device to be used to create DirectComposition surface objects. Must be a pointer to an object implementing the <see cref="IDXGIDevice" /> or <see cref="ID2D1Device" /> interfaces. This parameter must not be NULL.</para>
+    </param>
+    <param name="surfaceFactory">
+      <para>The newly created surface factory object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A surface factory allows an application to simultaneously use more than one single DXGI or Direct2D device with DirectComposition. Each surface factory has a permanent association with one DXGI or Direct2D device, but a DirectComposition device may have any number of surface factories.</para>
+      <para>Each surface factory manages resources independently from the others. In particular, DirectComposition pools surface allocations to mitigate surface allocation and deallocation costs. This pool is done on a per-surface factory basis.</para>
+      <para>If the <see cref="DCompositionCreateDevice2" /> function is called with a non-NULL <i>renderingDevice</i> parameter, the returned DirectComposition device object has an implicit surface factory under the covers associated with the given rendering device. This implicit surface factory is used to service the <see cref="IDCompositionDevice.CreateSurface" />, <see cref="IDCompositionDevice.CreateVirtualSurface" />, <see cref="IDCompositionDevice2.CreateSurface" /> and <see cref="IDCompositionDevice2.CreateVirtualSurface" /> methods.</para>
+      <para>A surface object remains alive as long as any of the surfaces or virtual surfaces that it created remain alive, either directly because the application holds a direct reference, or indirectly because one or more such surfaces are associated with one or more visual objects.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionDevice2.CreateSurface" />
+    <seealso cref="IDCompositionDevice2.CreateVirtualSurface" />
+  </member>
+  <member name="IDCompositionDevice2.CreateTransform3DGroup">
+    <summary>
+      <para>Creates a 3D transform group object that holds an array of 3D transform objects.</para>
+    </summary>
+    <param name="transforms3D">
+      <para>Type: <b><see cref="IDCompositionTransform3D" />**</b></para>
+      <para>An array of 3D transform objects that make up this transform group.</para>
+    </param>
+    <param name="elements">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of elements in the <i>transforms</i> array.</para>
+    </param>
+    <param name="transform3DGroup">
+      <para>Type: <b><see cref="IDCompositionTransform3D" />**</b></para>
+      <para>The new 3D transform group object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The array entries in a 3D transform group cannot be changed. However, each transform in the array can be modified through its own property setting methods. If a transform in the array is modified, the change is reflected in the computed matrix of the transform group.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionEffectGroup.SetTransform3D" />
+    <seealso cref="IDCompositionVisual.SetEffect" />
+  </member>
+  <member name="IDCompositionDevice2.CreateTransformGroup">
+    <summary>
+      <para>Creates a 2D transform group object that holds an array of 2D transform objects.</para>
+    </summary>
+    <param name="transforms">
+      <para>Type: <b><see cref="IDCompositionTransform" />**</b></para>
+      <para>An array of 2D transform objects that make up this transform group.</para>
+    </param>
+    <param name="elements">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of elements in the <i>transforms</i> array.</para>
+    </param>
+    <param name="transformGroup">
+      <para>Type: <b><see cref="IDCompositionTransform" />**</b></para>
+      <para>The new transform group object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The array entries in a transform group cannot be changed. However, each transform in the array can be modified through its own property setting methods. If a transform in the array is modified, the change is reflected in the computed matrix of the transform group.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449178(v=vs.85)">IDCompositionVisual.SetTransform</seealso>
+  </member>
+  <member name="IDCompositionDevice2.CreateTranslateTransform">
+    <summary>
+      <para>Creates a 2D translation transform object.</para>
+    </summary>
+    <param name="translateTransform">
+      <para>Type: <b><see cref="IDCompositionTranslateTransform" />**</b></para>
+      <para>The new 2D translation transform object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A new 2D translation transform object has a static value of zero for the OffsetX and OffsetY properties.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449178(v=vs.85)">IDCompositionVisual.SetTransform</seealso>
+  </member>
+  <member name="IDCompositionDevice2.CreateTranslateTransform3D">
+    <summary>
+      <para>Creates a 3D translation transform object.</para>
+    </summary>
+    <param name="translateTransform3D">
+      <para>Type: <b><see cref="IDCompositionTranslateTransform3D" />**</b></para>
+      <para>The new 3D translation transform object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A newly created 3D translation transform has a static value of 0 for the OffsetX, OffsetY, and OffsetZ properties.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionEffectGroup.SetTransform3D" />
+    <seealso cref="IDCompositionVisual.SetEffect" />
+  </member>
+  <member name="IDCompositionDevice2.CreateVirtualSurface">
+    <summary>
+      <para>Creates a sparsely populated surface that can be associated with one or more visuals for composition.</para>
+    </summary>
+    <param name="initialWidth">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The width of the surface, in pixels. The maximum width is 16,777,216 pixels.</para>
+    </param>
+    <param name="initialHeight">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The height of the surface, in pixels. The maximum height is 16,777,216 pixels.</para>
+    </param>
+    <param name="pixelFormat">
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>The pixel format of the surface.</para>
+    </param>
+    <param name="alphaMode">
+      <para>Type: <b><see cref="DXGI_ALPHA_MODE" /></b></para>
+      <para>The meaning of the alpha channel, if the pixel format contains an alpha channel. It can be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>DXGI_ALPHA_MODE_UNSPECIFIED</b>
+          </description>
+          <description>
+            <para>The alpha channel is not specified. This value has the same effect as <b>DXGI_ALPHA_MODE_IGNORE</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_ALPHA_MODE_PREMULTIPLIED</b>
+          </description>
+          <description>
+            <para>The color channels contain values that are premultiplied with the alpha channel.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_ALPHA_MODE_IGNORE</b>
+          </description>
+          <description>
+            <para>The alpha channel should be ignored and the bitmap should be rendered opaquely.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="virtualSurface">
+      <para>Type: <b><see cref="IDCompositionVirtualSurface" />**</b></para>
+      <para>The newly created surface object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A Microsoft DirectComposition sparse surface is a logical object that behaves like a rectangular array of pixels that can be associated with a visual for composition. The surface is not necessarily backed by any physical video or system memory for every one of its pixels. The application can realize or virtualize parts of the logical surface at different times.</para>
+      <para>A newly created surface object is in an uninitialized state. While it is uninitialized, the surface has no effect on the composition of the visual tree. It behaves exactly like a surface that is initialized with 100% transparent pixels.</para>
+      <para>To initialize the surface with pixel data, use the <see cref="IDCompositionSurface.BeginDraw" /> and <see cref="IDCompositionSurface.EndDraw" /> methods. This method not only provides pixels for the surface, but it also allocates actual storage space for those pixels. The memory allocation persists until the application returns some of the memory to the system. The application can free part or all of the allocated memory by calling the <see cref="IDCompositionVirtualSurface.Trim" /> method.</para>
+      <para>DirectComposition surfaces support the following pixel formats:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>DXGI_FORMAT_B8G8R8A8_UNORM</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_FORMAT_R8G8B8A8_UNORM</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_FORMAT_R16G16B16A16_FLOAT</b>
+          </description>
+        </item>
+      </list>
+      <para>This method fails if <i>initialWidth</i> or <i>initialHeight</i> exceeds 16,777,216 pixels.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionDevice.CreateSurface" />
+  </member>
+  <member name="IDCompositionDevice2.CreateVisual">
+    <summary>
+      <para>Creates a new visual object.</para>
+    </summary>
+    <param name="visual">
+      <para>Type: <b><see cref="IDCompositionVisual2" />**</b></para>
+      <para>The new visual object. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A new visual object has a static value of zero for the OffsetX and OffsetY properties, and NULL for the Transform, Clip, and Content properties. Initially, the visual  does not cause the contents of a window to change. The visual must be added as a child of another visual, or as the root of a composition target, before it can affect the appearance of a window.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice2" />
+    <seealso cref="IDCompositionTarget.SetRoot" />
+    <seealso cref="IDCompositionVisual.AddVisual" />
+  </member>
+  <member name="IDCompositionDevice2.GetFrameStatistics">
+    <summary>
+      <para>Retrieves information from the composition engine about composition times and the frame rate.</para>
+    </summary>
+    <param name="statistics">
+      <para>Type: <b><see cref="DCOMPOSITION_FRAME_STATISTICS" />*</b></para>
+      <para>A structure that receives composition times and frame rate information.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method retrieves timing information about the composition engine that an application can use to synchronize the rasterization of bitmaps with independent animations.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/directcomp/basic-concepts">Composition Target Window</seealso>
+    <seealso cref="IDCompositionDevice2" />
+  </member>
+  <member name="IDCompositionDevice2.WaitForCommitCompletion">
+    <summary>
+      <para>Waits for the composition engine to finish processing the previous call to the <see cref="IDCompositionDevice2.Commit" /> method.</para>
+    </summary>
+    <returns>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <seealso cref="IDCompositionDevice2" />
+  </member>
+  <member name="IDCompositionDevice2">
+    <summary>
+      <para>Serves as a factory for all other Microsoft DirectComposition objects and provides methods to control transactional composition.</para>
+    </summary>
+    <seealso cref="DCompositionCreateDevice2" />
+  </member>
+</doc>

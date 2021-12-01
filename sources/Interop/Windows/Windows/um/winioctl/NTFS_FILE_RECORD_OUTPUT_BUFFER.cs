@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NTFS_FILE_RECORD_OUTPUT_BUFFER.xml' path='doc/member[@name="NTFS_FILE_RECORD_OUTPUT_BUFFER"]/*' />
 public unsafe partial struct NTFS_FILE_RECORD_OUTPUT_BUFFER
 {
+    /// <include file='NTFS_FILE_RECORD_OUTPUT_BUFFER.xml' path='doc/member[@name="NTFS_FILE_RECORD_OUTPUT_BUFFER.FileReferenceNumber"]/*' />
     public LARGE_INTEGER FileReferenceNumber;
 
+    /// <include file='NTFS_FILE_RECORD_OUTPUT_BUFFER.xml' path='doc/member[@name="NTFS_FILE_RECORD_OUTPUT_BUFFER.FileRecordLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint FileRecordLength;
 
+    /// <include file='NTFS_FILE_RECORD_OUTPUT_BUFFER.xml' path='doc/member[@name="NTFS_FILE_RECORD_OUTPUT_BUFFER.FileRecordBuffer"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte FileRecordBuffer[1];
 }

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS">
+    <summary>
+      <para>The <b>WINHTTP_WEB_SOCKET_CLOSE_STATUS</b> enumeration includes the status of a WebSocket close operation.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>WINHTTP_WEB_SOCKET_CLOSE_STATUS</b> is used by <see cref="WinHttpWebSocketClose" />, <see cref="WinHttpWebSocketShutdown" />, and <see cref="WinHttpWebSocketQueryCloseStatus" />.</para>
+    </remarks>
+    <seealso cref="WinHttpWebSocketClose" />
+    <seealso cref="WinHttpWebSocketQueryCloseStatus" />
+    <seealso cref="WinHttpWebSocketShutdown" />
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_SUCCESS_CLOSE_STATUS">
+    <summary>
+      <para>The connection closed successfully.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_ENDPOINT_TERMINATED_CLOSE_STATUS">
+    <summary>
+      <para>The peer is going away and terminating the connection.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_PROTOCOL_ERROR_CLOSE_STATUS">
+    <summary>
+      <para>A protocol error occurred.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_INVALID_DATA_TYPE_CLOSE_STATUS">
+    <summary>
+      <para>Invalid data received by the peer.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_EMPTY_CLOSE_STATUS">
+    <summary>
+      <para>The close message was empty.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_ABORTED_CLOSE_STATUS">
+    <summary>
+      <para>The connection was aborted.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_INVALID_PAYLOAD_CLOSE_STATUS">
+    <summary>
+      <para>The payload was invalid.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_POLICY_VIOLATION_CLOSE_STATUS">
+    <summary>
+      <para>The message violates an endpoint's policy.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_MESSAGE_TOO_BIG_CLOSE_STATUS">
+    <summary>
+      <para>The message sent was too large to process.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_UNSUPPORTED_EXTENSIONS_CLOSE_STATUS">
+    <summary>
+      <para>A client endpoint expected the server to negotiate one or more extensions, but the server didn't return them in the response message of the WebSocket handshake.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_SERVER_ERROR_CLOSE_STATUS">
+    <summary>
+      <para>An unexpected condition prevented the server from
+fulfilling the request.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_SECURE_HANDSHAKE_ERROR_CLOSE_STATUS">
+    <summary>
+      <para>The TLS handshake could not be completed.</para>
+      <h4>- WINHTTP_WEB_SOCKET_INVALID_UTF8_CLOSE_STATUS</h4>
+      <para>UTF-8 frame carried an invalid UTF-8 stream.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='Folder.xml' path='doc/member[@name="Folder"]/*' />
 [Guid("BBCBDE60-C3FF-11CE-8350-444553540000")]
 [NativeTypeName("struct Folder : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct Folder : Folder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, Guid*, void**, int>)(lpVtbl[0]))((Folder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, uint>)(lpVtbl[1]))((Folder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, uint>)(lpVtbl[2]))((Folder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, uint*, int>)(lpVtbl[3]))((Folder*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((Folder*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((Folder*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((Folder*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='Folder.xml' path='doc/member[@name="Folder.get_Title"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Title([NativeTypeName("BSTR *")] ushort** pbs)
@@ -74,6 +83,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, ushort**, int>)(lpVtbl[7]))((Folder*)Unsafe.AsPointer(ref this), pbs);
     }
 
+    /// <include file='Folder.xml' path='doc/member[@name="Folder.get_Application"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_Application(IDispatch** ppid)
@@ -81,6 +91,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, IDispatch**, int>)(lpVtbl[8]))((Folder*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <include file='Folder.xml' path='doc/member[@name="Folder.get_Parent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_Parent(IDispatch** ppid)
@@ -88,6 +99,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, IDispatch**, int>)(lpVtbl[9]))((Folder*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <include file='Folder.xml' path='doc/member[@name="Folder.get_ParentFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_ParentFolder(Folder** ppsf)
@@ -95,6 +107,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, Folder**, int>)(lpVtbl[10]))((Folder*)Unsafe.AsPointer(ref this), ppsf);
     }
 
+    /// <include file='Folder.xml' path='doc/member[@name="Folder.Items"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Items(FolderItems** ppid)
@@ -102,6 +115,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, FolderItems**, int>)(lpVtbl[11]))((Folder*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <include file='Folder.xml' path='doc/member[@name="Folder.ParseName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT ParseName([NativeTypeName("BSTR")] ushort* bName, FolderItem** ppid)
@@ -109,6 +123,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, ushort*, FolderItem**, int>)(lpVtbl[12]))((Folder*)Unsafe.AsPointer(ref this), bName, ppid);
     }
 
+    /// <include file='Folder.xml' path='doc/member[@name="Folder.NewFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT NewFolder([NativeTypeName("BSTR")] ushort* bName, VARIANT vOptions)
@@ -116,6 +131,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, ushort*, VARIANT, int>)(lpVtbl[13]))((Folder*)Unsafe.AsPointer(ref this), bName, vOptions);
     }
 
+    /// <include file='Folder.xml' path='doc/member[@name="Folder.MoveHere"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT MoveHere(VARIANT vItem, VARIANT vOptions)
@@ -123,6 +139,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, VARIANT, VARIANT, int>)(lpVtbl[14]))((Folder*)Unsafe.AsPointer(ref this), vItem, vOptions);
     }
 
+    /// <include file='Folder.xml' path='doc/member[@name="Folder.CopyHere"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT CopyHere(VARIANT vItem, VARIANT vOptions)
@@ -130,6 +147,7 @@ public unsafe partial struct Folder : Folder.Interface
         return ((delegate* unmanaged<Folder*, VARIANT, VARIANT, int>)(lpVtbl[15]))((Folder*)Unsafe.AsPointer(ref this), vItem, vOptions);
     }
 
+    /// <include file='Folder.xml' path='doc/member[@name="Folder.GetDetailsOf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetDetailsOf(VARIANT vItem, int iColumn, [NativeTypeName("BSTR *")] ushort** pbs)

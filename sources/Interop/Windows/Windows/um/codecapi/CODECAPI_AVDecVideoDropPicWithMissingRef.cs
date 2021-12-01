@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecVideoDropPicWithMissingRef.xml' path='doc/member[@name="CODECAPI_AVDecVideoDropPicWithMissingRef"]/*' />
 [Guid("F8226383-14C2-4567-9734-5004E96FF887")]
 public partial struct CODECAPI_AVDecVideoDropPicWithMissingRef
 {

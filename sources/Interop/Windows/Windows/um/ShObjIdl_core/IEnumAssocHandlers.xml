@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumAssocHandlers.Next">
+    <summary>
+      <para>Retrieves a specified number of elements.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of elements to retrieve.</para>
+    </param>
+    <param name="rgelt">
+      <para>Type: <b><see cref="IAssocHandler" />**</b></para>
+      <para>When this method returns, contains the address of an array of <see cref="IAssocHandler" /> pointers. Each <b>IAssocHandler</b> represents a single handler.</para>
+    </param>
+    <param name="pceltFetched">
+      <para>Type: <b>ULONG*</b></para>
+      <para>When this method returns, contains a pointer to the number of elements retrieved.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumAssocHandlers">
+    <summary>
+      <para>Exposes a method that allows enumeration of a collection of handlers associated with particular file name extensions.</para>
+    </summary>
+    <remarks>
+      <para>
+        <see cref="SHAssocEnumHandlers" /> is the usual method of creating an IEnumAssocHandlers pointer.</para>
+    </remarks>
+    <seealso cref="IAssocHandler" />
+    <seealso cref="IAssocHandlerInvoker" />
+    <seealso cref="SHAssocEnumHandlers" />
+  </member>
+</doc>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpCustomStream.xml' path='doc/member[@name="SpCustomStream"]/*' />
 [Guid("8DBEF13F-1948-4AA8-8CF0-048EEBED95D8")]
 public partial struct SpCustomStream
 {

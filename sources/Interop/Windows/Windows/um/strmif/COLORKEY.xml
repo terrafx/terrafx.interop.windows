@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COLORKEY">
+    <summary>
+      <para>The <code>COLORKEY</code> structure communicates color key information between the renderer and another filter.</para>
+    </summary>
+    <remarks>
+      <para>The video renderer supports a data transport accessed through the <see cref="IOverlay" /> interface. This will typically be used by hardware decoder filters that need the renderer to communicate where to put the data rather than requiring the renderer to draw the data. One mechanism for communicating where to put the images is by using a color key. This structure is used by a filter (typically a hardware decoder) to describe color key requirements to the video renderer.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="COLORKEY.KeyType">
+    <summary>
+      <para>Key type. Can be <b>CK_NOCOLORKEY</b>, <b>CK_INDEX</b>, or <b>CK_RGB</b>. The <b>CK_INDEX</b> and <b>CK_RGB</b> can be combined with a bitwise <b>OR</b>.</para>
+    </summary>
+  </member>
+  <member name="COLORKEY.PaletteIndex">
+    <summary>
+      <para>Palette index.</para>
+    </summary>
+  </member>
+  <member name="COLORKEY.LowColorValue">
+    <summary>
+      <para>Lowest RGB color value.</para>
+    </summary>
+  </member>
+  <member name="COLORKEY.HighColorValue">
+    <summary>
+      <para>Highest RGB color value.</para>
+    </summary>
+  </member>
+</doc>

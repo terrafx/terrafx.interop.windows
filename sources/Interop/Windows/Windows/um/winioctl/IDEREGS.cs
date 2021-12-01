@@ -5,21 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDEREGS.xml' path='doc/member[@name="IDEREGS"]/*' />
 public partial struct IDEREGS
 {
+    /// <include file='IDEREGS.xml' path='doc/member[@name="IDEREGS.bFeaturesReg"]/*' />
     public byte bFeaturesReg;
 
+    /// <include file='IDEREGS.xml' path='doc/member[@name="IDEREGS.bSectorCountReg"]/*' />
     public byte bSectorCountReg;
 
+    /// <include file='IDEREGS.xml' path='doc/member[@name="IDEREGS.bSectorNumberReg"]/*' />
     public byte bSectorNumberReg;
 
+    /// <include file='IDEREGS.xml' path='doc/member[@name="IDEREGS.bCylLowReg"]/*' />
     public byte bCylLowReg;
 
+    /// <include file='IDEREGS.xml' path='doc/member[@name="IDEREGS.bCylHighReg"]/*' />
     public byte bCylHighReg;
 
+    /// <include file='IDEREGS.xml' path='doc/member[@name="IDEREGS.bDriveHeadReg"]/*' />
     public byte bDriveHeadReg;
 
+    /// <include file='IDEREGS.xml' path='doc/member[@name="IDEREGS.bCommandReg"]/*' />
     public byte bCommandReg;
 
+    /// <include file='IDEREGS.xml' path='doc/member[@name="IDEREGS.bReserved"]/*' />
     public byte bReserved;
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MsftWriteSpeedDescriptor.xml' path='doc/member[@name="MsftWriteSpeedDescriptor"]/*' />
 [Guid("27354123-7F64-5B0F-8F00-5D77AFBE261E")]
 public partial struct MsftWriteSpeedDescriptor
 {

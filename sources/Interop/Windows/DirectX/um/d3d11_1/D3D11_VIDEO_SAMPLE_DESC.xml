@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_SAMPLE_DESC">
+    <summary>
+      <para>Describes a video sample.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+  </member>
+  <member name="D3D11_VIDEO_SAMPLE_DESC.Width">
+    <summary>
+      <para>The width of the video sample.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_SAMPLE_DESC.Height">
+    <summary>
+      <para>The height of the video sample.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_SAMPLE_DESC.Format">
+    <summary>
+      <para>The format of the video sample.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_SAMPLE_DESC.ColorSpace">
+    <summary>
+      <para>The colorspace of the sample.</para>
+    </summary>
+  </member>
+</doc>

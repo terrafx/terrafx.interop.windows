@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STGTY.xml' path='doc/member[@name="STGTY"]/*' />
 public enum STGTY
 {
+    /// <include file='STGTY.xml' path='doc/member[@name="STGTY.STGTY_STORAGE"]/*' />
     STGTY_STORAGE = 1,
+
+    /// <include file='STGTY.xml' path='doc/member[@name="STGTY.STGTY_STREAM"]/*' />
     STGTY_STREAM = 2,
+
+    /// <include file='STGTY.xml' path='doc/member[@name="STGTY.STGTY_LOCKBYTES"]/*' />
     STGTY_LOCKBYTES = 3,
+
+    /// <include file='STGTY.xml' path='doc/member[@name="STGTY.STGTY_PROPERTY"]/*' />
     STGTY_PROPERTY = 4,
 }

@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAsyncReader.EndFlush">
+    <summary>
+      <para>The <code>EndFlush</code> method ends a flush operation.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if successful, or S_FALSE otherwise.</para>
+    </returns>
+    <remarks>
+      <para>While the pin is flushing, the <see cref="IAsyncReader.Request" /> method fails and the <see cref="IAsyncReader.WaitForNext" /> method returns immediately. Call the <code>EndFlush</code> method at the end of a flush operation, to reenable the <b>Request</b> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAsyncReader Interface" />
+  </member>
+  <member name="IAsyncReader.Length">
+    <summary>
+      <para>The <code>Length</code> method retrieves the total length of the stream.</para>
+    </summary>
+    <param name="pTotal">
+      <para>Pointer to a variable that receives the length of the stream, in bytes.</para>
+    </param>
+    <param name="pAvailable">
+      <para>Pointer to a variable that receives the portion of the stream that is currently available, in bytes.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_ESTIMATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The returned values are estimates; for example, if the file is being read over a network.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The file is not open or no longer exists.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For streams retrieved over a network, the entire stream may not be available at first. Read operations beyond the available length might block for a long period of time, until that portion of the stream becomes available.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAsyncReader Interface" />
+  </member>
+  <member name="IAsyncReader.RequestAllocator">
+    <summary>
+      <para>The <code>RequestAllocator</code> method requests an allocator during the pin connection.</para>
+    </summary>
+    <param name="pPreferred">
+      <para>Pointer to the <see cref="IMemAllocator" /> interface on the input pin's preferred allocator, or <b>NULL</b>.</para>
+    </param>
+    <param name="pProps">
+      <para>Specifies the address of an <see cref="ALLOCATOR_PROPERTIES" /> structure, allocated by the caller. The caller should fill in any allocator properties that the input pin requires, and set the remaining members to zero.</para>
+    </param>
+    <param name="ppActual">
+      <para>Address of a variable that receives an <b>IMemAllocator</b> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure to initialize an allocator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_BADALIGN</b>
+            </para>
+          </description>
+          <description>
+            <para>An invalid alignment was specified.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Allocator was returned.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The downstream input pin should call this method during the connection process. If the pin has a preferred allocator, specify it in the <i>pPreferred</i> parameter. Specify any buffer requirements, such as buffer size or alignment, in the <i>pProps</i> parameter. The output pin chooses the allocator and returns a pointer to it in the <i>ppActual</i> parameter.</para>
+      <para>The output pin is not required to honor the input pin's requests. If the input pin has any absolute requirements, it should call the <see cref="IMemAllocator.GetProperties" /> method on the returned allocator. It can fail the connect if the allocator properties are not suitable. Once the connection is established, the input pin must use the allocator chosen by the output pin.</para>
+      <para>The input pin is responsible for committing and decommitting the allocator.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAsyncReader Interface" />
+  </member>
+  <member name="IAsyncReader.SyncRead">
+    <summary>
+      <para>The <code>SyncRead</code> method performs a synchronous read. The method blocks until the request is completed. The file positions and the buffer address do not have to be aligned. If the request is not aligned, the method performs a buffered read operation.</para>
+    </summary>
+    <param name="llPosition">
+      <para>Specifies the byte offset at which to begin reading. The method fails if this value is beyond the end of the file.</para>
+    </param>
+    <param name="lLength">
+      <para>Specifies the number of bytes to read.</para>
+    </param>
+    <param name="pBuffer">
+      <para>Pointer to a buffer that receives the data.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Retrieved fewer bytes than requested. (Probably the end of the file was reached.)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method works even if the filter is stopped.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAsyncReader Interface" />
+    <seealso cref="IAsyncReader.SyncReadAligned" />
+  </member>
+  <member name="IAsyncReader.SyncReadAligned">
+    <summary>
+      <para>The <code>SyncReadAligned</code> method performs a synchronous read. The method blocks until the request is completed. The file positions and the buffer address must be aligned; check the allocator properties for the required alignment.</para>
+    </summary>
+    <param name="pSample">
+      <para>Pointer to the <see cref="IMediaSample" /> interface of a media sample provided by the caller.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_BADALIGN</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid alignment.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Retrieved fewer bytes than requested. (Probably the end of the file was reached.)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Before calling this method, retrieve a media sample from the pin's allocator. Time stamp the sample with the byte offsets you are requesting, first and last inclusive, multiplied by 10,000,000. Byte offsets are relative to the start of the stream.</para>
+      <para>The start and stop positions should match the alignment that was decided when the pins connected. Otherwise, the method returns VFW_E_BADALIGN. If the agreed alignment is coarser than the actual alignment of the stream, the stop position might exceed the real duration. If so, the method rounds the stop position down to the actual alignment.</para>
+      <para>This method performs an unbuffered read, so it might be faster than the <see cref="IAsyncReader.SyncRead" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAsyncReader Interface" />
+  </member>
+  <member name="IAsyncReader.WaitForNext">
+    <summary>
+      <para>The <code>WaitForNext</code> method waits for the next pending read request to complete.</para>
+    </summary>
+    <param name="dwTimeout">
+      <para>Specifies a time-out in milliseconds. Use the value INFINITE to wait indefinitely</para>
+    </param>
+    <param name="ppSample">
+      <para>Address of a variable that receives an <see cref="IMediaSample" /> interface pointer.</para>
+    </param>
+    <param name="pdwUser">
+      <para>Pointer to a variable that receives the value of the <i>dwUser</i> parameter specified in the <see cref="IAsyncReader.Request" /> method.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_TIMEOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The time-out expired, or the pin is flushing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is flushing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>A read error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Reached the end of the file; retrieved fewer bytes than requested.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the method succeeds, the <i>ppSample</i> parameter contains a pointer to a media sample, whose buffer holds the requested data. Call the <see cref="IMediaSample.GetTime" /> method and divide the results by 10,000,000 to determine the start and stop bytes. Samples may be returned out of order. Release the sample when you are finished processing the data.</para>
+      <para>The method fails if the pin is flushing. However, it may return an empty sample in <i>ppSample</i>. If <i>*ppSample</i> is non-<b>NULL</b>, release the sample and discard it. For more information, see <see cref="IAsyncReader.BeginFlush" />.</para>
+      <para>If a read error occurs, the source filter sends an error event to the Filter Graph Manager; the caller does not have to signal an error.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAsyncReader Interface" />
+  </member>
+  <member name="IAsyncReader">
+    <summary>
+      <para>The <code>IAsyncReader</code> interface performs an asynchronous data request on a filter.</para>
+      <para>This interface is exposed by output pins that perform asynchronous read operations. The interface is used by the input pin on the downstream filter. Applications do not use this interface. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/file-source--async--filter">Async File Source</a> filter exposes this interface on its output pin.</para>
+      <para>
+        <b>Filter developers</b>: Implement this interface if your output pin delivers data in the form of a byte stream (MEDIATYPE_Stream) and supports the pull model. During the connection process, check whether the downstream pin queries for the <code>IAsyncReader</code> interface. If it does not, your pin should either fail the connection or establish some other transport. (If your pin derives from <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepin">CBasePin</a>, perform this check in the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepin-checkconnect">CBasePin.CheckConnect</a> method.)</para>
+      <para>For more information about using this interface, see the following topics:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/negotiating-allocators">Negotiating Allocators</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-for-filter-developers">Data Flow for Filter Developers</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cpullpin">CPullPin Class</a>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMPhysicalPinInfo.xml' path='doc/member[@name="IAMPhysicalPinInfo"]/*' />
 [Guid("F938C991-3029-11CF-8C44-00AA006B6814")]
 [NativeTypeName("struct IAMPhysicalPinInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMPhysicalPinInfo : IAMPhysicalPinInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMPhysicalPinInfo : IAMPhysicalPinInfo.Interface
         return ((delegate* unmanaged<IAMPhysicalPinInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMPhysicalPinInfo : IAMPhysicalPinInfo.Interface
         return ((delegate* unmanaged<IAMPhysicalPinInfo*, uint>)(lpVtbl[1]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMPhysicalPinInfo : IAMPhysicalPinInfo.Interface
         return ((delegate* unmanaged<IAMPhysicalPinInfo*, uint>)(lpVtbl[2]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMPhysicalPinInfo.xml' path='doc/member[@name="IAMPhysicalPinInfo.GetPhysicalType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPhysicalType([NativeTypeName("long *")] int* pType, [NativeTypeName("LPOLESTR *")] ushort** ppszType)

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SuspensionDependencyManager.xml' path='doc/member[@name="SuspensionDependencyManager"]/*' />
 [Guid("6B273FC5-61FD-4918-95A2-C3B5E9D7F581")]
 public partial struct SuspensionDependencyManager
 {

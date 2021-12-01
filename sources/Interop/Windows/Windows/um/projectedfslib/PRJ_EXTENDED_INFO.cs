@@ -9,17 +9,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PRJ_EXTENDED_INFO.xml' path='doc/member[@name="PRJ_EXTENDED_INFO"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct PRJ_EXTENDED_INFO
 {
+    /// <include file='PRJ_EXTENDED_INFO.xml' path='doc/member[@name="PRJ_EXTENDED_INFO.InfoType"]/*' />
     public PRJ_EXT_INFO_TYPE InfoType;
 
+    /// <include file='PRJ_EXTENDED_INFO.xml' path='doc/member[@name="PRJ_EXTENDED_INFO.NextInfoOffset"]/*' />
     [NativeTypeName("ULONG")]
     public uint NextInfoOffset;
 
+    /// <include file='PRJ_EXTENDED_INFO.xml' path='doc/member[@name="PRJ_EXTENDED_INFO.Anonymous"]/*' />
     [NativeTypeName("PRJ_EXTENDED_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:102:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Symlink"]/*' />
     public ref _Anonymous_e__Union._Symlink_e__Struct Symlink
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -29,15 +34,19 @@ public partial struct PRJ_EXTENDED_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Symlink"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:103:9)")]
         public _Symlink_e__Struct Symlink;
 
+        /// <include file='_Symlink_e__Struct.xml' path='doc/member[@name="_Symlink_e__Struct"]/*' />
         public unsafe partial struct _Symlink_e__Struct
         {
+            /// <include file='_Symlink_e__Struct.xml' path='doc/member[@name="_Symlink_e__Struct.TargetName"]/*' />
             [NativeTypeName("PCWSTR")]
             public ushort* TargetName;
         }

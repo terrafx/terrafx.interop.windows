@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecVideoInputScanType.xml' path='doc/member[@name="eAVDecVideoInputScanType"]/*' />
 public enum eAVDecVideoInputScanType
 {
+    /// <include file='eAVDecVideoInputScanType.xml' path='doc/member[@name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Unknown"]/*' />
     eAVDecVideoInputScan_Unknown = 0,
+
+    /// <include file='eAVDecVideoInputScanType.xml' path='doc/member[@name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Progressive"]/*' />
     eAVDecVideoInputScan_Progressive = 1,
+
+    /// <include file='eAVDecVideoInputScanType.xml' path='doc/member[@name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Interlaced_UpperFieldFirst"]/*' />
     eAVDecVideoInputScan_Interlaced_UpperFieldFirst = 2,
+
+    /// <include file='eAVDecVideoInputScanType.xml' path='doc/member[@name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Interlaced_LowerFieldFirst"]/*' />
     eAVDecVideoInputScan_Interlaced_LowerFieldFirst = 3,
 }

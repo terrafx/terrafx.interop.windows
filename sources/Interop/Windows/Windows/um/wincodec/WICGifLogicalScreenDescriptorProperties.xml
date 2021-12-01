@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICGifLogicalScreenDescriptorProperties">
+    <summary>
+      <para>Specifies the logical screen descriptor properties for Graphics Interchange Format (GIF) metadata.</para>
+    </summary>
+  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenSignature">
+    <summary>
+      <para>[VT_UI1 | VT_VECTOR] Indicates the signature property.</para>
+    </summary>
+  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorWidth">
+    <summary>
+      <para>[VT_UI2] Indicates the width in pixels.</para>
+    </summary>
+  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorHeight">
+    <summary>
+      <para>[VT_UI2] Indicates the height in pixels.</para>
+    </summary>
+  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorGlobalColorTableFlag">
+    <summary>
+      <para>[VT_BOOL] Indicates the  global color table flag. <b>TRUE</b> if a global color table is present; otherwise, <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorColorResolution">
+    <summary>
+      <para>[VT_UI1] Indicates the color resolution in bits per pixel.</para>
+    </summary>
+  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorSortFlag">
+    <summary>
+      <para>[VT_BOOL] Indicates the sorted color table flag. <b>TRUE</b> if the table is sorted; otherwise, <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorGlobalColorTableSize">
+    <summary>
+      <para>[VT_UI1] Indicates the value used to calculate the number of bytes contained in the global color table.</para>
+      <para>To calculate the actual size of the color table, raise 2 to the value of the field + 1.</para>
+    </summary>
+  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorBackgroundColorIndex">
+    <summary>
+      <para>[VT_UI1] Indicates the index within the color table to use for the background (pixels not defined in the image).</para>
+    </summary>
+  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorPixelAspectRatio">
+    <summary>
+      <para>[VT_UI1] Indicates the factor used to compute an approximation of the aspect ratio.</para>
+    </summary>
+  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorProperties_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

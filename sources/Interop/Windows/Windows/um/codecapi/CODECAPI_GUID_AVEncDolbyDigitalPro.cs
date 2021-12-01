@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_GUID_AVEncDolbyDigitalPro.xml' path='doc/member[@name="CODECAPI_GUID_AVEncDolbyDigitalPro"]/*' />
 [Guid("F5BE76CC-0FF8-40EB-9CB1-BBA94004D44F")]
 public partial struct CODECAPI_GUID_AVEncDolbyDigitalPro
 {

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RefreshConstants.xml' path='doc/member[@name="RefreshConstants"]/*' />
 public enum RefreshConstants
 {
+    /// <include file='RefreshConstants.xml' path='doc/member[@name="RefreshConstants.REFRESH_NORMAL"]/*' />
     REFRESH_NORMAL = 0,
+
+    /// <include file='RefreshConstants.xml' path='doc/member[@name="RefreshConstants.REFRESH_IFEXPIRED"]/*' />
     REFRESH_IFEXPIRED = 1,
+
+    /// <include file='RefreshConstants.xml' path='doc/member[@name="RefreshConstants.REFRESH_COMPLETELY"]/*' />
     REFRESH_COMPLETELY = 3,
 }

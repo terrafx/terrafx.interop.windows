@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_SCRIPT_ANALYSIS">
+    <summary>
+      <para>Stores the association of text and its writing system script, as well as some display attributes.</para>
+    </summary>
+    <seealso cref="IDWriteTextAnalyzer.AnalyzeScript" />
+  </member>
+  <member name="DWRITE_SCRIPT_ANALYSIS.script">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>The zero-based index representation of writing system script.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_SCRIPT_ANALYSIS.shapes">
+    <summary>
+      <para>Type: <b><see cref="DWRITE_SCRIPT_SHAPES" /></b></para>
+      <para>A value that indicates additional shaping requirement of text.</para>
+    </summary>
+  </member>
+</doc>

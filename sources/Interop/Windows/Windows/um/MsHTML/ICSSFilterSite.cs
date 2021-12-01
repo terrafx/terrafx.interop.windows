@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICSSFilterSite.xml' path='doc/member[@name="ICSSFilterSite"]/*' />
 [Guid("3050F3ED-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ICSSFilterSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICSSFilterSite : ICSSFilterSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICSSFilterSite : ICSSFilterSite.Interface
         return ((delegate* unmanaged<ICSSFilterSite*, Guid*, void**, int>)(lpVtbl[0]))((ICSSFilterSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICSSFilterSite : ICSSFilterSite.Interface
         return ((delegate* unmanaged<ICSSFilterSite*, uint>)(lpVtbl[1]))((ICSSFilterSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICSSFilterSite : ICSSFilterSite.Interface
         return ((delegate* unmanaged<ICSSFilterSite*, uint>)(lpVtbl[2]))((ICSSFilterSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICSSFilterSite.xml' path='doc/member[@name="ICSSFilterSite.GetElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetElement(IHTMLElement** Element)
@@ -46,6 +51,7 @@ public unsafe partial struct ICSSFilterSite : ICSSFilterSite.Interface
         return ((delegate* unmanaged<ICSSFilterSite*, IHTMLElement**, int>)(lpVtbl[3]))((ICSSFilterSite*)Unsafe.AsPointer(ref this), Element);
     }
 
+    /// <include file='ICSSFilterSite.xml' path='doc/member[@name="ICSSFilterSite.FireOnFilterChangeEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT FireOnFilterChangeEvent()

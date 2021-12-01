@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncVideoContentType.xml' path='doc/member[@name="eAVEncVideoContentType"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum eAVEncVideoContentType
 {
+    /// <include file='eAVEncVideoContentType.xml' path='doc/member[@name="eAVEncVideoContentType.eAVEncVideoContentType_Unknown"]/*' />
     eAVEncVideoContentType_Unknown = 0,
+
+    /// <include file='eAVEncVideoContentType.xml' path='doc/member[@name="eAVEncVideoContentType.eAVEncVideoContentType_FixedCameraAngle"]/*' />
     eAVEncVideoContentType_FixedCameraAngle = 1,
 }

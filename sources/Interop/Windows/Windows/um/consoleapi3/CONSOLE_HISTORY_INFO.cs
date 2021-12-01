@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONSOLE_HISTORY_INFO.xml' path='doc/member[@name="CONSOLE_HISTORY_INFO"]/*' />
 public partial struct CONSOLE_HISTORY_INFO
 {
+    /// <include file='CONSOLE_HISTORY_INFO.xml' path='doc/member[@name="CONSOLE_HISTORY_INFO.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='CONSOLE_HISTORY_INFO.xml' path='doc/member[@name="CONSOLE_HISTORY_INFO.HistoryBufferSize"]/*' />
     public uint HistoryBufferSize;
 
+    /// <include file='CONSOLE_HISTORY_INFO.xml' path='doc/member[@name="CONSOLE_HISTORY_INFO.NumberOfHistoryBuffers"]/*' />
     public uint NumberOfHistoryBuffers;
 
+    /// <include file='CONSOLE_HISTORY_INFO.xml' path='doc/member[@name="CONSOLE_HISTORY_INFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

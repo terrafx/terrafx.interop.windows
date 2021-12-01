@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HOST_NAMES.xml' path='doc/member[@name="WS_HOST_NAMES"]/*' />
 public unsafe partial struct WS_HOST_NAMES
 {
+    /// <include file='WS_HOST_NAMES.xml' path='doc/member[@name="WS_HOST_NAMES.hostNames"]/*' />
     public WS_STRING* hostNames;
 
+    /// <include file='WS_HOST_NAMES.xml' path='doc/member[@name="WS_HOST_NAMES.hostNameCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint hostNameCount;
 }

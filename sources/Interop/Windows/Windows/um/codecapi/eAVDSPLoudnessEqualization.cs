@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDSPLoudnessEqualization.xml' path='doc/member[@name="eAVDSPLoudnessEqualization"]/*' />
 public enum eAVDSPLoudnessEqualization
 {
+    /// <include file='eAVDSPLoudnessEqualization.xml' path='doc/member[@name="eAVDSPLoudnessEqualization.eAVDSPLoudnessEqualization_OFF"]/*' />
     eAVDSPLoudnessEqualization_OFF = 0,
+
+    /// <include file='eAVDSPLoudnessEqualization.xml' path='doc/member[@name="eAVDSPLoudnessEqualization.eAVDSPLoudnessEqualization_ON"]/*' />
     eAVDSPLoudnessEqualization_ON = 1,
+
+    /// <include file='eAVDSPLoudnessEqualization.xml' path='doc/member[@name="eAVDSPLoudnessEqualization.eAVDSPLoudnessEqualization_AUTO"]/*' />
     eAVDSPLoudnessEqualization_AUTO = 2,
 }

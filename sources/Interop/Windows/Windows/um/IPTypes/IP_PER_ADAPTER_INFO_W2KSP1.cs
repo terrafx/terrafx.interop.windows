@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IP_PER_ADAPTER_INFO_W2KSP1.xml' path='doc/member[@name="IP_PER_ADAPTER_INFO_W2KSP1"]/*' />
 public unsafe partial struct IP_PER_ADAPTER_INFO_W2KSP1
 {
+    /// <include file='IP_PER_ADAPTER_INFO_W2KSP1.xml' path='doc/member[@name="IP_PER_ADAPTER_INFO_W2KSP1.AutoconfigEnabled"]/*' />
     public uint AutoconfigEnabled;
 
+    /// <include file='IP_PER_ADAPTER_INFO_W2KSP1.xml' path='doc/member[@name="IP_PER_ADAPTER_INFO_W2KSP1.AutoconfigActive"]/*' />
     public uint AutoconfigActive;
 
+    /// <include file='IP_PER_ADAPTER_INFO_W2KSP1.xml' path='doc/member[@name="IP_PER_ADAPTER_INFO_W2KSP1.CurrentDnsServer"]/*' />
     [NativeTypeName("PIP_ADDR_STRING")]
     public IP_ADDR_STRING* CurrentDnsServer;
 
+    /// <include file='IP_PER_ADAPTER_INFO_W2KSP1.xml' path='doc/member[@name="IP_PER_ADAPTER_INFO_W2KSP1.DnsServerList"]/*' />
     public IP_ADDR_STRING DnsServerList;
 }

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDCompositionTurbulenceEffect.SetBaseFrequency">
+    <summary>
+      <para>Sets the base frequencies in the X and Y direction.</para>
+    </summary>
+    <param name="frequency">
+      <para>Type: <b>const <see cref="D2D1_VECTOR_2F" /></b></para>
+      <para>The base frequencies in the X and Y direction. This must be greater than 0. The units are specified in 1/DIPs.
+A value of 1 (1/DIPs) for the base frequency results in the Perlin noise completing an entire cycle between two pixels. The ease interpolation for these pixels results in completely random pixels,
+since there is no correlation between the pixels.
+A value of 0.1(1/DIPs) for the base frequency results in the Perlin noise function repeating every 10 DIPs. This results in correlation between pixels and the typical turbulence effect is visible.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionTurbulenceEffect" />
+  </member>
+  <member name="IDCompositionTurbulenceEffect.SetNoise">
+    <summary>
+      <para>Sets the turbulence noise mode.</para>
+    </summary>
+    <param name="noise">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/turbulence">D2D1_TURBULENCE_NOISE</a></b></para>
+      <para>The turbulence noise mode. Indicates whether to generate a bitmap based on Fractal Noise or the Turbulence function.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionTurbulenceEffect" />
+  </member>
+  <member name="IDCompositionTurbulenceEffect.SetNumOctaves">
+    <summary>
+      <para>Sets the number of octaves for the noise function.</para>
+    </summary>
+    <param name="numOctaves">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of octaves for the noise function. This value must be greater than 0.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionTurbulenceEffect" />
+  </member>
+  <member name="IDCompositionTurbulenceEffect.SetOffset">
+    <summary>
+      <para>Sets the coordinates where the turbulence output is generated.</para>
+    </summary>
+    <param name="offset">
+      <para>Type: <b>const <see cref="D2D1_VECTOR_2F" /></b></para>
+      <para>The coordinates where the turbulence output is generated.
+The algorithm used to generate the Perlin noise is position dependent, so a different offset results in a different output. This value is not bounded and the units are specified in DIPs</para>
+      <para>
+        <b>Note</b>  Note  The offset does not have the same effect as a translation because the noise function output is infinite and the function will wrap around the tile.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionTurbulenceEffect" />
+  </member>
+  <member name="IDCompositionTurbulenceEffect.SetSeed">
+    <summary>
+      <para>Sets the seed for the pseudo random generator.</para>
+    </summary>
+    <param name="seed">
+      <para>Type: <b>UINT</b></para>
+      <para>The seed for the pseudo random generator. This value is unbounded.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionTurbulenceEffect" />
+  </member>
+  <member name="IDCompositionTurbulenceEffect.SetSize">
+    <summary>
+      <para>Sets the size of the turbulence output.</para>
+    </summary>
+    <param name="size">
+      <para>Type: <b>const <see cref="D2D1_VECTOR_2F" /></b></para>
+      <para>The size of the turbulence output</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionTurbulenceEffect" />
+  </member>
+  <member name="IDCompositionTurbulenceEffect.SetStitchable">
+    <summary>
+      <para>Specifies whether stitching is on or off.</para>
+    </summary>
+    <param name="stitchable">
+      <para>Type: <b>BOOL</b></para>
+      <para>A boolean value that specifies whether stitching is on or off. The base frequency is adjusted so that the output bitmap can be stitched.
+This is useful if you want to tile multiple copies of the turbulence effect output.
+If this value is TRUE, the output bitmap can be tiled (using the tile effect) without the appearance of seams and the base frequency is adjusted so that output bitmap can be stitched.
+If this value is FALSE, the base frequency is not adjusted, so seams may appear between tiles if the bitmap is tiled.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDCompositionTurbulenceEffect" />
+  </member>
+  <member name="IDCompositionTurbulenceEffect">
+    <summary>
+      <para>The turbulence effect is used to generate a bitmap based on the Perlin noise function.
+The turbulence effect has no input image.</para>
+    </summary>
+    <seealso cref="IDCompositionFilterEffect" />
+  </member>
+</doc>

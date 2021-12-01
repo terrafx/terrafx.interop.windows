@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QCMINFO.xml' path='doc/member[@name="QCMINFO"]/*' />
 public unsafe partial struct QCMINFO
 {
+    /// <include file='QCMINFO.xml' path='doc/member[@name="QCMINFO.hmenu"]/*' />
     public HMENU hmenu;
 
+    /// <include file='QCMINFO.xml' path='doc/member[@name="QCMINFO.indexMenu"]/*' />
     public uint indexMenu;
 
+    /// <include file='QCMINFO.xml' path='doc/member[@name="QCMINFO.idCmdFirst"]/*' />
     public uint idCmdFirst;
 
+    /// <include file='QCMINFO.xml' path='doc/member[@name="QCMINFO.idCmdLast"]/*' />
     public uint idCmdLast;
 
+    /// <include file='QCMINFO.xml' path='doc/member[@name="QCMINFO.pIdMap"]/*' />
     [NativeTypeName("const QCMINFO_IDMAP *")]
     public QCMINFO_IDMAP* pIdMap;
 }

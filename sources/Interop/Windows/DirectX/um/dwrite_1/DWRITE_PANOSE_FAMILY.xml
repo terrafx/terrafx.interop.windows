@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_FAMILY">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_FAMILY</b> enumeration contains values that specify the kind of typeface classification.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_FAMILY.DWRITE_PANOSE_FAMILY_ANY">
+    <summary>
+      <para>Any typeface classification.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FAMILY.DWRITE_PANOSE_FAMILY_NO_FIT">
+    <summary>
+      <para>No fit typeface classification.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FAMILY.DWRITE_PANOSE_FAMILY_TEXT_DISPLAY">
+    <summary>
+      <para>Text display typeface classification.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FAMILY.DWRITE_PANOSE_FAMILY_SCRIPT">
+    <summary>
+      <para>Script (or hand written) typeface classification.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FAMILY.DWRITE_PANOSE_FAMILY_DECORATIVE">
+    <summary>
+      <para>Decorative typeface classification.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FAMILY.DWRITE_PANOSE_FAMILY_SYMBOL">
+    <summary>
+      <para>Symbol typeface classification.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_FAMILY.DWRITE_PANOSE_FAMILY_PICTORIAL">
+    <summary>
+      <para>Pictorial (or symbol) typeface classification.</para>
+    </summary>
+  </member>
+</doc>

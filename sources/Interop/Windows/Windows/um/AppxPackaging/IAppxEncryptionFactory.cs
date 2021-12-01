@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxEncryptionFactory.xml' path='doc/member[@name="IAppxEncryptionFactory"]/*' />
 [Guid("80E8E04D-8C88-44AE-A011-7CADF6FB2E72")]
 [NativeTypeName("struct IAppxEncryptionFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         return ((delegate* unmanaged<IAppxEncryptionFactory*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptionFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         return ((delegate* unmanaged<IAppxEncryptionFactory*, uint>)(lpVtbl[1]))((IAppxEncryptionFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         return ((delegate* unmanaged<IAppxEncryptionFactory*, uint>)(lpVtbl[2]))((IAppxEncryptionFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxEncryptionFactory.xml' path='doc/member[@name="IAppxEncryptionFactory.EncryptPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EncryptPackage(IStream* inputStream, IStream* outputStream, [NativeTypeName("const APPX_ENCRYPTED_PACKAGE_SETTINGS *")] APPX_ENCRYPTED_PACKAGE_SETTINGS* settings, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("const APPX_ENCRYPTED_EXEMPTIONS *")] APPX_ENCRYPTED_EXEMPTIONS* exemptedFiles)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         return ((delegate* unmanaged<IAppxEncryptionFactory*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, int>)(lpVtbl[3]))((IAppxEncryptionFactory*)Unsafe.AsPointer(ref this), inputStream, outputStream, settings, keyInfo, exemptedFiles);
     }
 
+    /// <include file='IAppxEncryptionFactory.xml' path='doc/member[@name="IAppxEncryptionFactory.DecryptPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT DecryptPackage(IStream* inputStream, IStream* outputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         return ((delegate* unmanaged<IAppxEncryptionFactory*, IStream*, IStream*, APPX_KEY_INFO*, int>)(lpVtbl[4]))((IAppxEncryptionFactory*)Unsafe.AsPointer(ref this), inputStream, outputStream, keyInfo);
     }
 
+    /// <include file='IAppxEncryptionFactory.xml' path='doc/member[@name="IAppxEncryptionFactory.CreateEncryptedPackageWriter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateEncryptedPackageWriter(IStream* outputStream, IStream* manifestStream, [NativeTypeName("const APPX_ENCRYPTED_PACKAGE_SETTINGS *")] APPX_ENCRYPTED_PACKAGE_SETTINGS* settings, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("const APPX_ENCRYPTED_EXEMPTIONS *")] APPX_ENCRYPTED_EXEMPTIONS* exemptedFiles, IAppxEncryptedPackageWriter** packageWriter)
@@ -62,6 +69,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         return ((delegate* unmanaged<IAppxEncryptionFactory*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, IAppxEncryptedPackageWriter**, int>)(lpVtbl[5]))((IAppxEncryptionFactory*)Unsafe.AsPointer(ref this), outputStream, manifestStream, settings, keyInfo, exemptedFiles, packageWriter);
     }
 
+    /// <include file='IAppxEncryptionFactory.xml' path='doc/member[@name="IAppxEncryptionFactory.CreateEncryptedPackageReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateEncryptedPackageReader(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, IAppxPackageReader** packageReader)
@@ -69,6 +77,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         return ((delegate* unmanaged<IAppxEncryptionFactory*, IStream*, APPX_KEY_INFO*, IAppxPackageReader**, int>)(lpVtbl[6]))((IAppxEncryptionFactory*)Unsafe.AsPointer(ref this), inputStream, keyInfo, packageReader);
     }
 
+    /// <include file='IAppxEncryptionFactory.xml' path='doc/member[@name="IAppxEncryptionFactory.EncryptBundle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EncryptBundle(IStream* inputStream, IStream* outputStream, [NativeTypeName("const APPX_ENCRYPTED_PACKAGE_SETTINGS *")] APPX_ENCRYPTED_PACKAGE_SETTINGS* settings, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("const APPX_ENCRYPTED_EXEMPTIONS *")] APPX_ENCRYPTED_EXEMPTIONS* exemptedFiles)
@@ -76,6 +85,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         return ((delegate* unmanaged<IAppxEncryptionFactory*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, int>)(lpVtbl[7]))((IAppxEncryptionFactory*)Unsafe.AsPointer(ref this), inputStream, outputStream, settings, keyInfo, exemptedFiles);
     }
 
+    /// <include file='IAppxEncryptionFactory.xml' path='doc/member[@name="IAppxEncryptionFactory.DecryptBundle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT DecryptBundle(IStream* inputStream, IStream* outputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo)
@@ -83,6 +93,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         return ((delegate* unmanaged<IAppxEncryptionFactory*, IStream*, IStream*, APPX_KEY_INFO*, int>)(lpVtbl[8]))((IAppxEncryptionFactory*)Unsafe.AsPointer(ref this), inputStream, outputStream, keyInfo);
     }
 
+    /// <include file='IAppxEncryptionFactory.xml' path='doc/member[@name="IAppxEncryptionFactory.CreateEncryptedBundleWriter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CreateEncryptedBundleWriter(IStream* outputStream, [NativeTypeName("UINT64")] ulong bundleVersion, [NativeTypeName("const APPX_ENCRYPTED_PACKAGE_SETTINGS *")] APPX_ENCRYPTED_PACKAGE_SETTINGS* settings, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("const APPX_ENCRYPTED_EXEMPTIONS *")] APPX_ENCRYPTED_EXEMPTIONS* exemptedFiles, IAppxEncryptedBundleWriter** bundleWriter)
@@ -90,6 +101,7 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         return ((delegate* unmanaged<IAppxEncryptionFactory*, IStream*, ulong, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, IAppxEncryptedBundleWriter**, int>)(lpVtbl[9]))((IAppxEncryptionFactory*)Unsafe.AsPointer(ref this), outputStream, bundleVersion, settings, keyInfo, exemptedFiles, bundleWriter);
     }
 
+    /// <include file='IAppxEncryptionFactory.xml' path='doc/member[@name="IAppxEncryptionFactory.CreateEncryptedBundleReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CreateEncryptedBundleReader(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, IAppxBundleReader** bundleReader)

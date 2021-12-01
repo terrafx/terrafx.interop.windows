@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VERTSCROLLSTATES.xml' path='doc/member[@name="VERTSCROLLSTATES"]/*' />
 public enum VERTSCROLLSTATES
 {
+    /// <include file='VERTSCROLLSTATES.xml' path='doc/member[@name="VERTSCROLLSTATES.VSS_NORMAL"]/*' />
     VSS_NORMAL = 1,
+
+    /// <include file='VERTSCROLLSTATES.xml' path='doc/member[@name="VERTSCROLLSTATES.VSS_HOT"]/*' />
     VSS_HOT = 2,
+
+    /// <include file='VERTSCROLLSTATES.xml' path='doc/member[@name="VERTSCROLLSTATES.VSS_PUSHED"]/*' />
     VSS_PUSHED = 3,
+
+    /// <include file='VERTSCROLLSTATES.xml' path='doc/member[@name="VERTSCROLLSTATES.VSS_DISABLED"]/*' />
     VSS_DISABLED = 4,
 }

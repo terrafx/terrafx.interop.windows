@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager"]/*' />
 [Guid("F10B5E34-DD3B-42A7-AA7D-2F4EC54BB09B")]
 [NativeTypeName("struct IShellIconOverlayManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
         return ((delegate* unmanaged<IShellIconOverlayManager*, Guid*, void**, int>)(lpVtbl[0]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
         return ((delegate* unmanaged<IShellIconOverlayManager*, uint>)(lpVtbl[1]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
         return ((delegate* unmanaged<IShellIconOverlayManager*, uint>)(lpVtbl[2]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.GetFileOverlayInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFileOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
         return ((delegate* unmanaged<IShellIconOverlayManager*, ushort*, uint, int*, uint, int>)(lpVtbl[3]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), pwszPath, dwAttrib, pIndex, dwflags);
     }
 
+    /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.GetReservedOverlayInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetReservedOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags, int iReservedID)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
         return ((delegate* unmanaged<IShellIconOverlayManager*, ushort*, uint, int*, uint, int, int>)(lpVtbl[4]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), pwszPath, dwAttrib, pIndex, dwflags, iReservedID);
     }
 
+    /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.RefreshOverlayImages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RefreshOverlayImages([NativeTypeName("DWORD")] uint dwFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
         return ((delegate* unmanaged<IShellIconOverlayManager*, uint, int>)(lpVtbl[5]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.LoadNonloadedOverlayIdentifiers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT LoadNonloadedOverlayIdentifiers()
@@ -67,6 +75,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
         return ((delegate* unmanaged<IShellIconOverlayManager*, int>)(lpVtbl[6]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.OverlayIndexFromImageIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OverlayIndexFromImageIndex(int iImage, int* piIndex, BOOL fAdd)

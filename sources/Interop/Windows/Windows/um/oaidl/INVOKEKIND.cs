@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INVOKEKIND.xml' path='doc/member[@name="INVOKEKIND"]/*' />
 public enum INVOKEKIND
 {
+    /// <include file='INVOKEKIND.xml' path='doc/member[@name="INVOKEKIND.INVOKE_FUNC"]/*' />
     INVOKE_FUNC = 1,
+
+    /// <include file='INVOKEKIND.xml' path='doc/member[@name="INVOKEKIND.INVOKE_PROPERTYGET"]/*' />
     INVOKE_PROPERTYGET = 2,
+
+    /// <include file='INVOKEKIND.xml' path='doc/member[@name="INVOKEKIND.INVOKE_PROPERTYPUT"]/*' />
     INVOKE_PROPERTYPUT = 4,
+
+    /// <include file='INVOKEKIND.xml' path='doc/member[@name="INVOKEKIND.INVOKE_PROPERTYPUTREF"]/*' />
     INVOKE_PROPERTYPUTREF = 8,
 }

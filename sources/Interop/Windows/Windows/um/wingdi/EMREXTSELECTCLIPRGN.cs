@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMREXTSELECTCLIPRGN.xml' path='doc/member[@name="EMREXTSELECTCLIPRGN"]/*' />
 public unsafe partial struct EMREXTSELECTCLIPRGN
 {
+    /// <include file='EMREXTSELECTCLIPRGN.xml' path='doc/member[@name="EMREXTSELECTCLIPRGN.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMREXTSELECTCLIPRGN.xml' path='doc/member[@name="EMREXTSELECTCLIPRGN.cbRgnData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbRgnData;
 
+    /// <include file='EMREXTSELECTCLIPRGN.xml' path='doc/member[@name="EMREXTSELECTCLIPRGN.iMode"]/*' />
     [NativeTypeName("DWORD")]
     public uint iMode;
 
+    /// <include file='EMREXTSELECTCLIPRGN.xml' path='doc/member[@name="EMREXTSELECTCLIPRGN.RgnData"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte RgnData[1];
 }

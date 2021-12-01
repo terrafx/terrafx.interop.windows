@@ -7,19 +7,25 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO"]/*' />
 public partial struct MENUBARINFO
 {
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.rcBar"]/*' />
     public RECT rcBar;
 
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.hMenu"]/*' />
     public HMENU hMenu;
 
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.hwndMenu"]/*' />
     public HWND hwndMenu;
 
     public BOOL _bitfield;
 
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.fBarFocused"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fBarFocused
     {
@@ -36,6 +42,7 @@ public partial struct MENUBARINFO
         }
     }
 
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.fFocused"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fFocused
     {
@@ -52,6 +59,7 @@ public partial struct MENUBARINFO
         }
     }
 
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.fUnused"]/*' />
     [NativeTypeName("BOOL : 30")]
     public BOOL fUnused
     {

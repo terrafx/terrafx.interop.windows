@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_ID_NAA_FORMAT.xml' path='doc/member[@name="STORAGE_ID_NAA_FORMAT"]/*' />
 public enum STORAGE_ID_NAA_FORMAT
 {
+    /// <include file='STORAGE_ID_NAA_FORMAT.xml' path='doc/member[@name="STORAGE_ID_NAA_FORMAT.StorageIdNAAFormatIEEEExtended"]/*' />
     StorageIdNAAFormatIEEEExtended = 2,
+
+    /// <include file='STORAGE_ID_NAA_FORMAT.xml' path='doc/member[@name="STORAGE_ID_NAA_FORMAT.StorageIdNAAFormatIEEERegistered"]/*' />
     StorageIdNAAFormatIEEERegistered = 3,
+
+    /// <include file='STORAGE_ID_NAA_FORMAT.xml' path='doc/member[@name="STORAGE_ID_NAA_FORMAT.StorageIdNAAFormatIEEEERegisteredExtended"]/*' />
     StorageIdNAAFormatIEEEERegisteredExtended = 5,
 }

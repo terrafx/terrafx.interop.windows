@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CapturedMetadataExposureCompensation">
+    <summary>
+      <para>This structure contains blob information for the EV compensation feedback for the photo captured.</para>
+    </summary>
+  </member>
+  <member name="CapturedMetadataExposureCompensation.Flags">
+    <summary>
+      <para>A KSCAMERA_EXTENDEDPROP_EVCOMP_XXX step flag.</para>
+    </summary>
+  </member>
+  <member name="CapturedMetadataExposureCompensation.Value">
+    <summary>
+      <para>The EV compensation value in units of the step specified.</para>
+    </summary>
+  </member>
+</doc>

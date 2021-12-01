@@ -7,18 +7,25 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MT_ARBITRARY_HEADER.xml' path='doc/member[@name="MT_ARBITRARY_HEADER"]/*' />
 public partial struct MT_ARBITRARY_HEADER
 {
+    /// <include file='MT_ARBITRARY_HEADER.xml' path='doc/member[@name="MT_ARBITRARY_HEADER.majortype"]/*' />
     public Guid majortype;
 
+    /// <include file='MT_ARBITRARY_HEADER.xml' path='doc/member[@name="MT_ARBITRARY_HEADER.subtype"]/*' />
     public Guid subtype;
 
+    /// <include file='MT_ARBITRARY_HEADER.xml' path='doc/member[@name="MT_ARBITRARY_HEADER.bFixedSizeSamples"]/*' />
     public BOOL bFixedSizeSamples;
 
+    /// <include file='MT_ARBITRARY_HEADER.xml' path='doc/member[@name="MT_ARBITRARY_HEADER.bTemporalCompression"]/*' />
     public BOOL bTemporalCompression;
 
+    /// <include file='MT_ARBITRARY_HEADER.xml' path='doc/member[@name="MT_ARBITRARY_HEADER.lSampleSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint lSampleSize;
 
+    /// <include file='MT_ARBITRARY_HEADER.xml' path='doc/member[@name="MT_ARBITRARY_HEADER.formattype"]/*' />
     public Guid formattype;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITrayDeskBand.xml' path='doc/member[@name="ITrayDeskBand"]/*' />
 [Guid("6D67E846-5B9C-4DB8-9CBC-DDE12F4254F1")]
 [NativeTypeName("struct ITrayDeskBand : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
         return ((delegate* unmanaged<ITrayDeskBand*, Guid*, void**, int>)(lpVtbl[0]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
         return ((delegate* unmanaged<ITrayDeskBand*, uint>)(lpVtbl[1]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
         return ((delegate* unmanaged<ITrayDeskBand*, uint>)(lpVtbl[2]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITrayDeskBand.xml' path='doc/member[@name="ITrayDeskBand.ShowDeskBand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ShowDeskBand([NativeTypeName("const IID &")] Guid* clsid)
@@ -46,6 +51,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
         return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[3]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
     }
 
+    /// <include file='ITrayDeskBand.xml' path='doc/member[@name="ITrayDeskBand.HideDeskBand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT HideDeskBand([NativeTypeName("const IID &")] Guid* clsid)
@@ -53,6 +59,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
         return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[4]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
     }
 
+    /// <include file='ITrayDeskBand.xml' path='doc/member[@name="ITrayDeskBand.IsDeskBandShown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsDeskBandShown([NativeTypeName("const IID &")] Guid* clsid)
@@ -60,6 +67,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
         return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[5]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
     }
 
+    /// <include file='ITrayDeskBand.xml' path='doc/member[@name="ITrayDeskBand.DeskBandRegistrationChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT DeskBandRegistrationChanged()

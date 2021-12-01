@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVSceneDetection.xml' path='doc/member[@name="CODECAPI_AVEncMPVSceneDetection"]/*' />
 [Guid("552799F1-DB4C-405B-8A3A-C93F2D0674DC")]
 public partial struct CODECAPI_AVEncMPVSceneDetection
 {

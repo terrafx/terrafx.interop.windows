@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_SID_INFORMATION.xml' path='doc/member[@name="TOKEN_SID_INFORMATION"]/*' />
 public unsafe partial struct TOKEN_SID_INFORMATION
 {
+    /// <include file='TOKEN_SID_INFORMATION.xml' path='doc/member[@name="TOKEN_SID_INFORMATION.Sid"]/*' />
     [NativeTypeName("PSID")]
     public void* Sid;
 }

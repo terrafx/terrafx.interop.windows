@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPreviewHandlerFrame.xml' path='doc/member[@name="IPreviewHandlerFrame"]/*' />
 [Guid("FEC87AAF-35F9-447A-ADB7-20234491401A")]
 [NativeTypeName("struct IPreviewHandlerFrame : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
         return ((delegate* unmanaged<IPreviewHandlerFrame*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
         return ((delegate* unmanaged<IPreviewHandlerFrame*, uint>)(lpVtbl[1]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
         return ((delegate* unmanaged<IPreviewHandlerFrame*, uint>)(lpVtbl[2]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPreviewHandlerFrame.xml' path='doc/member[@name="IPreviewHandlerFrame.GetWindowContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindowContext(PREVIEWHANDLERFRAMEINFO* pinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
         return ((delegate* unmanaged<IPreviewHandlerFrame*, PREVIEWHANDLERFRAMEINFO*, int>)(lpVtbl[3]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pinfo);
     }
 
+    /// <include file='IPreviewHandlerFrame.xml' path='doc/member[@name="IPreviewHandlerFrame.TranslateAcceleratorW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT TranslateAcceleratorW(MSG* pmsg)

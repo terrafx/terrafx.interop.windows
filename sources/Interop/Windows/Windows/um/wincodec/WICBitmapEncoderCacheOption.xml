@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICBitmapEncoderCacheOption">
+    <summary>
+      <para>Specifies the cache options available for an encoder.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapEncoderCacheOption.WICBitmapEncoderCacheInMemory">
+    <summary>
+      <para>The encoder is cached in memory. This option is not supported.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapEncoderCacheOption.WICBitmapEncoderCacheTempFile">
+    <summary>
+      <para>The encoder is cached to a temporary file. This option is not supported.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapEncoderCacheOption.WICBitmapEncoderNoCache">
+    <summary>
+      <para>The encoder is not cached.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapEncoderCacheOption.WICBITMAPENCODERCACHEOPTION_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

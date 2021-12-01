@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_HW_FIRMWARE_DOWNLOAD">
+    <summary>
+      <para>This structure contains a  firmware image payload to be downloaded to the target.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_firmware_activate">IOCTL_STORAGE_FIRMWARE_ACTIVATE</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_firmware_download">IOCTL_STORAGE_FIRMWARE_DOWNLOAD</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_firmware_get_info">IOCTL_STORAGE_FIRMWARE_GET_INFO</seealso>
+    <seealso cref="STORAGE_HW_FIRMWARE_ACTIVATE" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/storage-hw-firmware-info">STORAGE_HW_FIRMWARE_INFO</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/storage-hw-firmware-info-query">STORAGE_HW_FIRMWARE_INFO_QUERY</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/storage-hw-firmware-slot-info">STORAGE_HW_FIRMWARE_SLOT_INFO</seealso>
+  </member>
+  <member name="STORAGE_HW_FIRMWARE_DOWNLOAD.Version">
+    <summary>
+      <para>The version of this structure. This should be set to sizeof(STORAGE_HW_FIRMWARE_DOWNLOAD).</para>
+    </summary>
+  </member>
+  <member name="STORAGE_HW_FIRMWARE_DOWNLOAD.Size">
+    <summary>
+      <para>The size of this structure and the download image buffer.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_HW_FIRMWARE_DOWNLOAD.Flags">
+    <summary>
+      <para>Flags associated with this download. The following are valid flags that this member can hold.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER</description>
+          <description>Indicates that the target of the request is a controller or adapter, different than the device handler or object itself (e.g. NVMe SSD or HBA).</description>
+        </item>
+        <item>
+          <description>STORAGE_HW_FIRMWARE_REQUEST_FLAG_LAST_SEGMENT</description>
+          <description>Indicates that the current firmware image segment is the last one.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="STORAGE_HW_FIRMWARE_DOWNLOAD.Slot">
+    <summary>
+      <para>The slot number that the firmware image will be downloaded to.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_HW_FIRMWARE_DOWNLOAD.Reserved">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_HW_FIRMWARE_DOWNLOAD.Offset">
+    <summary>
+      <para>The offset in this buffer of where the Image file begins. This should be aligned to <b>ImagePayloadAlignment</b> from <a href="https://docs.microsoft.com//windows/desktop/FileIO/storage-hw-firmware-info">STORAGE_HW_FIRMWARE_INFO</a>.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_HW_FIRMWARE_DOWNLOAD.BufferSize">
+    <summary>
+      <para>The buffer size of the ImageBuffer. This should be a multiple of <b>ImagePayloadAlignment</b> from <a href="https://docs.microsoft.com//windows/desktop/FileIO/storage-hw-firmware-info">STORAGE_HW_FIRMWARE_INFO</a>.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_HW_FIRMWARE_DOWNLOAD.ImageBuffer">
+    <summary>
+      <para>The firmware image file.</para>
+    </summary>
+  </member>
+</doc>

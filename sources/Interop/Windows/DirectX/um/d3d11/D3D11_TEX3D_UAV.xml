@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TEX3D_UAV">
+    <summary>
+      <para>Describes a unordered-access 3D texture resource.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used by a <see cref="D3D11_UNORDERED_ACCESS_VIEW_DESC" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D11_TEX3D_UAV.MipSlice">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The mipmap slice index.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEX3D_UAV.FirstWSlice">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The zero-based index of the first depth slice to be accessed.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEX3D_UAV.WSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of depth slices.</para>
+    </summary>
+  </member>
+</doc>

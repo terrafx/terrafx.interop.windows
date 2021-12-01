@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpLexicon.xml' path='doc/member[@name="SpLexicon"]/*' />
 [Guid("0655E396-25D0-11D3-9C26-00C04F8EF87C")]
 public partial struct SpLexicon
 {

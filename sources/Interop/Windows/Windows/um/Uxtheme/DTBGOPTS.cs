@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DTBGOPTS.xml' path='doc/member[@name="DTBGOPTS"]/*' />
 public partial struct DTBGOPTS
 {
+    /// <include file='DTBGOPTS.xml' path='doc/member[@name="DTBGOPTS.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='DTBGOPTS.xml' path='doc/member[@name="DTBGOPTS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='DTBGOPTS.xml' path='doc/member[@name="DTBGOPTS.rcClip"]/*' />
     public RECT rcClip;
 }

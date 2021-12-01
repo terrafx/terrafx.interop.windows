@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleTextAnchor.xml' path='doc/member[@name="styleTextAnchor"]/*' />
 public enum styleTextAnchor
 {
+    /// <include file='styleTextAnchor.xml' path='doc/member[@name="styleTextAnchor.styleTextAnchorNotSet"]/*' />
     styleTextAnchorNotSet = 0,
+
+    /// <include file='styleTextAnchor.xml' path='doc/member[@name="styleTextAnchor.styleTextAnchorStart"]/*' />
     styleTextAnchorStart = 1,
+
+    /// <include file='styleTextAnchor.xml' path='doc/member[@name="styleTextAnchor.styleTextAnchorMiddle"]/*' />
     styleTextAnchorMiddle = 2,
+
+    /// <include file='styleTextAnchor.xml' path='doc/member[@name="styleTextAnchor.styleTextAnchorEnd"]/*' />
     styleTextAnchorEnd = 3,
+
+    /// <include file='styleTextAnchor.xml' path='doc/member[@name="styleTextAnchor.styleTextAnchor_Max"]/*' />
     styleTextAnchor_Max = 2147483647,
 }

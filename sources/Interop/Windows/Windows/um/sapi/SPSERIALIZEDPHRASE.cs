@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPSERIALIZEDPHRASE.xml' path='doc/member[@name="SPSERIALIZEDPHRASE"]/*' />
 public partial struct SPSERIALIZEDPHRASE
 {
+    /// <include file='SPSERIALIZEDPHRASE.xml' path='doc/member[@name="SPSERIALIZEDPHRASE.ulSerializedSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulSerializedSize;
 }

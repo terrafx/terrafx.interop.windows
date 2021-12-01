@@ -7,18 +7,23 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APP_MEMORY_INFORMATION.xml' path='doc/member[@name="APP_MEMORY_INFORMATION"]/*' />
 [SupportedOSPlatform("windows10.0.10586.0")]
 public partial struct APP_MEMORY_INFORMATION
 {
+    /// <include file='APP_MEMORY_INFORMATION.xml' path='doc/member[@name="APP_MEMORY_INFORMATION.AvailableCommit"]/*' />
     [NativeTypeName("ULONG64")]
     public ulong AvailableCommit;
 
+    /// <include file='APP_MEMORY_INFORMATION.xml' path='doc/member[@name="APP_MEMORY_INFORMATION.PrivateCommitUsage"]/*' />
     [NativeTypeName("ULONG64")]
     public ulong PrivateCommitUsage;
 
+    /// <include file='APP_MEMORY_INFORMATION.xml' path='doc/member[@name="APP_MEMORY_INFORMATION.PeakPrivateCommitUsage"]/*' />
     [NativeTypeName("ULONG64")]
     public ulong PeakPrivateCommitUsage;
 
+    /// <include file='APP_MEMORY_INFORMATION.xml' path='doc/member[@name="APP_MEMORY_INFORMATION.TotalCommitUsage"]/*' />
     [NativeTypeName("ULONG64")]
     public ulong TotalCommitUsage;
 }

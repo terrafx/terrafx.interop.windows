@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFNETSOURCE_TRANSPORT_TYPE">
+    <summary>
+      <para>Describes the type of transport used in streaming or downloading data (TCP or UDP).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/supported-protocols">Supported Protocols</seealso>
+  </member>
+  <member name="MFNETSOURCE_TRANSPORT_TYPE.MFNETSOURCE_UDP">
+    <summary>
+      <para>The data transport type is UDP.</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_TRANSPORT_TYPE.MFNETSOURCE_TCP">
+    <summary>
+      <para>The data transport type is TCP.</para>
+    </summary>
+  </member>
+</doc>

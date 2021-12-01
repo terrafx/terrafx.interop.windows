@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGPathSegCurvetoQuadraticSmoothRel.xml' path='doc/member[@name="SVGPathSegCurvetoQuadraticSmoothRel"]/*' />
 [Guid("305105C5-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGPathSegCurvetoQuadraticSmoothRel
 {

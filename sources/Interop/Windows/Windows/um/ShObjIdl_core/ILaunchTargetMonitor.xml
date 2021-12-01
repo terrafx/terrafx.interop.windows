@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ILaunchTargetMonitor.GetMonitor">
+    <summary>
+      <para>Retrieves the target monitor for the application being launched.</para>
+    </summary>
+    <param name="monitor">
+      <para>Type: <b>HMONITOR*</b></para>
+      <para>Contains the address of a pointer to the target  monitor's handle.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ILaunchTargetMonitor" />
+  </member>
+  <member name="ILaunchTargetMonitor">
+    <summary>
+      <para>Provides a method for retrieving the target monitor for the application being launched.</para>
+    </summary>
+  </member>
+</doc>

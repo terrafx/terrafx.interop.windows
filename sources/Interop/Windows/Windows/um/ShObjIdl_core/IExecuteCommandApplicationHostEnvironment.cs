@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExecuteCommandApplicationHostEnvironment.xml' path='doc/member[@name="IExecuteCommandApplicationHostEnvironment"]/*' />
 [Guid("18B21AA9-E184-4FF0-9F5E-F882D03771B3")]
 [NativeTypeName("struct IExecuteCommandApplicationHostEnvironment : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExecuteCommandApplicationHostEnvironment : IExecut
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExecuteCommandApplicationHostEnvironment : IExecut
         return ((delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, Guid*, void**, int>)(lpVtbl[0]))((IExecuteCommandApplicationHostEnvironment*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExecuteCommandApplicationHostEnvironment : IExecut
         return ((delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, uint>)(lpVtbl[1]))((IExecuteCommandApplicationHostEnvironment*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExecuteCommandApplicationHostEnvironment : IExecut
         return ((delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, uint>)(lpVtbl[2]))((IExecuteCommandApplicationHostEnvironment*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExecuteCommandApplicationHostEnvironment.xml' path='doc/member[@name="IExecuteCommandApplicationHostEnvironment.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetValue(AHE_TYPE* pahe)

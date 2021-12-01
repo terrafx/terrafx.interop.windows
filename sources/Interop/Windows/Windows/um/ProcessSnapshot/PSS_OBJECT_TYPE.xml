@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSS_OBJECT_TYPE">
+    <summary>
+      <para>Specifies the object type in a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_handle_entry">PSS_HANDLE_ENTRY</a> structure.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_UNKNOWN">
+    <summary>
+      <para>The object type is either unknown or unsupported.</para>
+    </summary>
+  </member>
+  <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_PROCESS">
+    <summary>
+      <para>The object is a process.</para>
+    </summary>
+  </member>
+  <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_THREAD">
+    <summary>
+      <para>The object is a thread.</para>
+    </summary>
+  </member>
+  <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_MUTANT">
+    <summary>
+      <para>The object is a mutant/mutex.</para>
+    </summary>
+  </member>
+  <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_EVENT">
+    <summary>
+      <para>The object is an event.</para>
+    </summary>
+  </member>
+  <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_SECTION">
+    <summary>
+      <para>The object is a file-mapping object.</para>
+    </summary>
+  </member>
+  <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_SEMAPHORE">
+    <summary></summary>
+  </member>
+</doc>

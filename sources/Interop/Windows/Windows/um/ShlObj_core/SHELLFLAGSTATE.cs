@@ -8,11 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SHELLFLAGSTATE
 {
     public BOOL _bitfield;
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fShowAllObjects"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowAllObjects
     {
@@ -29,6 +31,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fShowExtensions"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowExtensions
     {
@@ -45,6 +48,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fNoConfirmRecycle"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fNoConfirmRecycle
     {
@@ -61,6 +65,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fShowSysFiles"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowSysFiles
     {
@@ -77,6 +82,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fShowCompColor"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowCompColor
     {
@@ -93,6 +99,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fDoubleClickInWebView"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDoubleClickInWebView
     {
@@ -109,6 +116,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fDesktopHTML"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDesktopHTML
     {
@@ -125,6 +133,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fWin95Classic"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fWin95Classic
     {
@@ -141,6 +150,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fDontPrettyPath"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDontPrettyPath
     {
@@ -157,6 +167,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fShowAttribCol"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowAttribCol
     {
@@ -173,6 +184,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fMapNetDrvBtn"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fMapNetDrvBtn
     {
@@ -189,6 +201,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fShowInfoTip"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowInfoTip
     {
@@ -205,6 +218,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fHideIcons"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fHideIcons
     {
@@ -221,6 +235,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fAutoCheckSelect"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fAutoCheckSelect
     {
@@ -237,6 +252,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fIconsOnly"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fIconsOnly
     {
@@ -253,6 +269,7 @@ public partial struct SHELLFLAGSTATE
         }
     }
 
+    /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE.fRestFlags"]/*' />
     [NativeTypeName("uint : 1")]
     public uint fRestFlags
     {

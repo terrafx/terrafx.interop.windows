@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICRawCapabilities">
+    <summary>
+      <para>Specifies the capability support of a raw image.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilities.WICRawCapabilityNotSupported">
+    <summary>
+      <para>The capability is not supported.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilities.WICRawCapabilityGetSupported">
+    <summary>
+      <para>The capability supports only get operations.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilities.WICRawCapabilityFullySupported">
+    <summary>
+      <para>The capability supports get and set operations.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilities.WICRAWCAPABILITIES_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

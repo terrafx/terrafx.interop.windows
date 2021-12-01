@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMCOMBOBOXEXA.xml' path='doc/member[@name="NMCOMBOBOXEXA"]/*' />
 public partial struct NMCOMBOBOXEXA
 {
+    /// <include file='NMCOMBOBOXEXA.xml' path='doc/member[@name="NMCOMBOBOXEXA.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMCOMBOBOXEXA.xml' path='doc/member[@name="NMCOMBOBOXEXA.ceItem"]/*' />
     public COMBOBOXEXITEMA ceItem;
 }

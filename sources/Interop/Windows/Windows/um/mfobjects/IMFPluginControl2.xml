@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFPluginControl2.SetPolicy">
+    <summary>
+      <para>Sets the policy for which media sources and transforms are enumerated.</para>
+    </summary>
+    <param name="policy">
+      <para>A value from the <see cref="MF_PLUGIN_CONTROL_POLICY" /> enumeration that specifies the policy.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFPluginControl2" />
+  </member>
+  <member name="IMFPluginControl2">
+    <summary>
+      <para>Controls how media sources and transforms are enumerated in Microsoft Media Foundation.</para>
+      <para>This interface extends the <see cref="IMFPluginControl" /> interface.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this interface, call <see cref="MFGetPluginControl" />  and query the returned pointer for <b>IMFPluginControl2</b>.</para>
+    </remarks>
+    <seealso cref="IMFPluginControl" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

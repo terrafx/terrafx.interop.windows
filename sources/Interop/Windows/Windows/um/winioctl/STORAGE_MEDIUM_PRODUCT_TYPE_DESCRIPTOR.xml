@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR">
+    <summary>
+      <para>Used in conjunction with the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request to describe the product type of a storage device.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+  </member>
+  <member name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.Version">
+    <summary>
+      <para>Contains the size of this structure, in bytes, as defined by <code>Sizeof(STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR)</code>. The value of this member will change as members are added to
+the structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.Size">
+    <summary>
+      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
+structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.MediumProductType">
+    <summary>
+      <para>Specifies the product type of the storage device.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>MediumProductType</b> value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <code>00h</code>
+          </description>
+          <description>Not indicated</description>
+        </item>
+        <item>
+          <description>
+            <code>01h</code>
+          </description>
+          <description>CFast</description>
+        </item>
+        <item>
+          <description>
+            <code>02h</code>
+          </description>
+          <description>CompactFlash</description>
+        </item>
+        <item>
+          <description>
+            <code>03h</code>
+          </description>
+          <description>Memory Stick</description>
+        </item>
+        <item>
+          <description>
+            <code>04h</code>
+          </description>
+          <description>MultiMediaCard</description>
+        </item>
+        <item>
+          <description>
+            <code>05h</code>
+          </description>
+          <description>Secure Digital Card (SD Card)</description>
+        </item>
+        <item>
+          <description>
+            <code>06h</code>
+          </description>
+          <description>QXD</description>
+        </item>
+        <item>
+          <description>
+            <code>07h</code>
+          </description>
+          <description>Universal Flash Storage</description>
+        </item>
+        <item>
+          <description>
+            <code>08h</code> to <code>EFh</code></description>
+          <description>Reserved</description>
+        </item>
+        <item>
+          <description>
+            <code>F0h</code> to <code>FFh</code></description>
+          <description>Vendor-specific</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter"]/*' />
 [Guid("3137F1CD-FE5E-4805-A5D8-FB477448CB3D")]
 [NativeTypeName("struct IMFSinkWriter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, uint>)(lpVtbl[1]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, uint>)(lpVtbl[2]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.AddStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddStream(IMFMediaType* pTargetMediaType, [NativeTypeName("DWORD *")] uint* pdwStreamIndex)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, IMFMediaType*, uint*, int>)(lpVtbl[3]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), pTargetMediaType, pdwStreamIndex);
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.SetInputMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetInputMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pInputMediaType, IMFAttributes* pEncodingParameters)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, uint, IMFMediaType*, IMFAttributes*, int>)(lpVtbl[4]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pInputMediaType, pEncodingParameters);
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.BeginWriting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT BeginWriting()
@@ -60,6 +67,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, int>)(lpVtbl[5]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.WriteSample"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT WriteSample([NativeTypeName("DWORD")] uint dwStreamIndex, IMFSample* pSample)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, uint, IMFSample*, int>)(lpVtbl[6]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pSample);
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.SendStreamTick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SendStreamTick([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LONGLONG")] long llTimestamp)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, uint, long, int>)(lpVtbl[7]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, llTimestamp);
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.PlaceMarker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT PlaceMarker([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LPVOID")] void* pvContext)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, uint, void*, int>)(lpVtbl[8]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pvContext);
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.NotifyEndOfSegment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT NotifyEndOfSegment([NativeTypeName("DWORD")] uint dwStreamIndex)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, uint, int>)(lpVtbl[9]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex);
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.Flush"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Flush([NativeTypeName("DWORD")] uint dwStreamIndex)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, uint, int>)(lpVtbl[10]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex);
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.Finalize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Finalize()
@@ -102,6 +115,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, int>)(lpVtbl[11]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.GetServiceForStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetServiceForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
@@ -109,6 +123,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
         return ((delegate* unmanaged<IMFSinkWriter*, uint, Guid*, Guid*, void**, int>)(lpVtbl[12]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, guidService, riid, ppvObject);
     }
 
+    /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.GetStatistics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetStatistics([NativeTypeName("DWORD")] uint dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats)

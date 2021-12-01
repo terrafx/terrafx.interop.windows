@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMFilterMiscFlags.GetMiscFlags">
+    <summary>
+      <para>The <code>GetMiscFlags</code> method returns the filter's type, either source or renderer.</para>
+    </summary>
+    <returns>
+      <para>This method returns a member of the <see cref="_AM_FILTER_MISC_FLAGS" /> enumeration.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMFilterMiscFlags Interface" />
+  </member>
+  <member name="IAMFilterMiscFlags">
+    <summary>
+      <para>The <code>IAMFilterMiscFlags</code> interface queries whether a filter is a source filter or a renderer. Source and renderer filters should implement this interface.</para>
+      <para>Applications do not use this interface. The Filter Graph Manager uses this interface to determine how many <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-complete">EC_COMPLETE</a> events it will receive when playback completes.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
+  </member>
+</doc>

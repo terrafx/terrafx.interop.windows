@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WbemObjectTextSrc.xml' path='doc/member[@name="WbemObjectTextSrc"]/*' />
 [Guid("8D1C559D-84F0-4BB3-A7D5-56A7435A9BA6")]
 public partial struct WbemObjectTextSrc
 {

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVINFO">
+    <summary>
+      <para>The <b>DVINFO</b> structure describes the format of a digital video (DV) stream.</para>
+    </summary>
+    <remarks>
+      <para>The AAUX and VAUX packs are defined in IEC 61834-4.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dv-data-in-the-avi-file-format">DV Data in the AVI File Format</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvinfo-field-settings-in-the-msdv-driver">DVINFO Field Settings in the MSDV Driver</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="DVINFO.dwDVAAuxSrc">
+    <summary>
+      <para>Specifies the audio auxiliary (AAUX) source pack for the first audio block.</para>
+    </summary>
+  </member>
+  <member name="DVINFO.dwDVAAuxCtl">
+    <summary>
+      <para>Specifies the AAUX source control Pack for the first audio block.</para>
+    </summary>
+  </member>
+  <member name="DVINFO.dwDVAAuxSrc1">
+    <summary>
+      <para>Specifies the AAUX source pack for the second audio block.</para>
+    </summary>
+  </member>
+  <member name="DVINFO.dwDVAAuxCtl1">
+    <summary>
+      <para>Specifies the AAUX source control pack for the second audio block.</para>
+    </summary>
+  </member>
+  <member name="DVINFO.dwDVVAuxSrc">
+    <summary>
+      <para>Specifies the video auxiliary (VAUX) source pack.</para>
+    </summary>
+  </member>
+  <member name="DVINFO.dwDVVAuxCtl">
+    <summary>
+      <para>Specifies the VAUX source control pack.</para>
+    </summary>
+  </member>
+  <member name="DVINFO.dwDVReserved">
+    <summary>
+      <para>Reserved. Set this array to zero.</para>
+    </summary>
+  </member>
+</doc>

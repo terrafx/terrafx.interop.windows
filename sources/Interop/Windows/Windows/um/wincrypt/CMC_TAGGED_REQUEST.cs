@@ -8,14 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMC_TAGGED_REQUEST.xml' path='doc/member[@name="CMC_TAGGED_REQUEST"]/*' />
 public unsafe partial struct CMC_TAGGED_REQUEST
 {
+    /// <include file='CMC_TAGGED_REQUEST.xml' path='doc/member[@name="CMC_TAGGED_REQUEST.dwTaggedRequestChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTaggedRequestChoice;
 
+    /// <include file='CMC_TAGGED_REQUEST.xml' path='doc/member[@name="CMC_TAGGED_REQUEST.Anonymous"]/*' />
     [NativeTypeName("_CMC_TAGGED_REQUEST::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5231:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pTaggedCertRequest"]/*' />
     public ref CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25,9 +29,11 @@ public unsafe partial struct CMC_TAGGED_REQUEST
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pTaggedCertRequest"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCMC_TAGGED_CERT_REQUEST")]
         public CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest;

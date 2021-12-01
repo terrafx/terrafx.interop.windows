@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_EFFECT_INPUT_DESCRIPTION">
+    <summary>
+      <para>Describes features of an effect.</para>
+    </summary>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+You shouldn't rely heavily on the input rectangles returned by this structure. They can change due to subtle changes in effect implementations, and due to optimization changes in the effect rendering system.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="D2D1_EFFECT_INPUT_DESCRIPTION.effect">
+    <summary>
+      <para>The effect whose input connection is being specified.</para>
+    </summary>
+  </member>
+  <member name="D2D1_EFFECT_INPUT_DESCRIPTION.inputIndex">
+    <summary>
+      <para>The input index of the effect that is being considered.</para>
+    </summary>
+  </member>
+  <member name="D2D1_EFFECT_INPUT_DESCRIPTION.inputRectangle">
+    <summary>
+      <para>The amount of data that would be available on the input. This can be used to query this information when the data is not yet available.</para>
+    </summary>
+  </member>
+</doc>

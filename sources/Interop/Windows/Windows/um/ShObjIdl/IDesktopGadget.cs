@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDesktopGadget.xml' path='doc/member[@name="IDesktopGadget"]/*' />
 [Guid("C1646BC4-F298-4F91-A204-EB2DD1709D1A")]
 [NativeTypeName("struct IDesktopGadget : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDesktopGadget : IDesktopGadget.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDesktopGadget : IDesktopGadget.Interface
         return ((delegate* unmanaged<IDesktopGadget*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopGadget*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDesktopGadget : IDesktopGadget.Interface
         return ((delegate* unmanaged<IDesktopGadget*, uint>)(lpVtbl[1]))((IDesktopGadget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDesktopGadget : IDesktopGadget.Interface
         return ((delegate* unmanaged<IDesktopGadget*, uint>)(lpVtbl[2]))((IDesktopGadget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDesktopGadget.xml' path='doc/member[@name="IDesktopGadget.RunGadget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RunGadget([NativeTypeName("LPCWSTR")] ushort* gadgetPath)

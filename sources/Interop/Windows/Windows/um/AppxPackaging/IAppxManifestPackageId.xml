@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxManifestPackageId.ComparePublisher">
+    <summary>
+      <para>Compares the specified publisher with the publisher defined in the manifest.</para>
+    </summary>
+    <param name="other">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
+      <para>The publisher name to be compared.</para>
+    </param>
+    <param name="isSame">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a>*</b></para>
+      <para>
+        <b>TRUE</b> if the specified publisher matches the package publisher; <b>FALSE</b> otherwise.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>.</para>
+    </returns>
+    <remarks>
+      <para>Publisher information is specified using the <b>Publisher</b> attribute of the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-identity">Identity</a> element in the package manifest.</para>
+    </remarks>
+    <seealso cref="IAppxManifestPackageId" />
+  </member>
+  <member name="IAppxManifestPackageId.GetArchitecture">
+    <summary>
+      <para>Gets the processor architecture as defined in the manifest.</para>
+    </summary>
+    <param name="architecture">
+      <para>Type: <b><see cref="APPX_PACKAGE_ARCHITECTURE" />*</b></para>
+      <para>The architecture specified for the package.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Processor architecture information is specified using the <b>ProcessorArchitecture</b> attribute of the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-identity">Identity</a> element in the package manifest.</para>
+      <para>If no architecture is defined in the manifest, this method returns the <b>APPX_PACKAGE_ARCHITECTURE_NEUTRAL</b> value of the  <see cref="APPX_PACKAGE_ARCHITECTURE" /> enumeration.</para>
+    </remarks>
+    <seealso cref="IAppxManifestPackageId" />
+  </member>
+  <member name="IAppxManifestPackageId.GetName">
+    <summary>
+      <para>Gets the name of the package as defined in the manifest.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a>*</b></para>
+      <para>The name of the package.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>.</para>
+    </returns>
+    <remarks>
+      <para>Package name information is specified using the <b>Name</b> attribute of the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-identity">Identity</a> element in the package manifest.</para>
+      <para>The package name is not intended to be displayed to end users. Rather, the system uses it to uniquely identify the package.</para>
+      <para>The caller must free the memory allocated for <i>name</i> using the <see cref="CoTaskMemFree" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
+    </remarks>
+    <seealso cref="IAppxManifestPackageId" />
+  </member>
+  <member name="IAppxManifestPackageId.GetPackageFamilyName">
+    <summary>
+      <para>Gets the package family name.</para>
+    </summary>
+    <param name="packageFamilyName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a>*</b></para>
+      <para>The package family name.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>.</para>
+    </returns>
+    <remarks>
+      <para>The package family name is a case-insensitive string, which can be used to uniquely identify a family of packages with the same name and publisher.</para>
+      <para>This string is a serialized form of the package ID, and it is suitable for naming objects such as files and directories. Because the package family name does not contain information about package version, architecture, or resources, it is useful when you need a version-independent reference to a package.</para>
+      <para>The caller must free the memory for <i>packageFamilyName</i> using the <see cref="CoTaskMemFree" /> function.</para>
+    </remarks>
+    <seealso cref="IAppxManifestPackageId" />
+  </member>
+  <member name="IAppxManifestPackageId.GetPackageFullName">
+    <summary>
+      <para>Gets the package full name.</para>
+    </summary>
+    <param name="packageFullName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a>*</b></para>
+      <para>The package full name.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>.</para>
+    </returns>
+    <remarks>
+      <para>The package full name string is a case-insensitive string, which can be used to uniquely identify the package.</para>
+      <para>This string  is a serialized form of the package ID, and it is suitable for naming objects such as files and directories.</para>
+      <para>The caller must free the memory allocated for <i>packageFullName</i> using the <see cref="CoTaskMemFree" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
+    </remarks>
+    <seealso cref="IAppxManifestPackageId" />
+  </member>
+  <member name="IAppxManifestPackageId.GetPublisher">
+    <summary>
+      <para>Gets the name of the package publisher as defined in the manifest.</para>
+    </summary>
+    <param name="publisher">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a>*</b></para>
+      <para>The publisher of the package.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>.</para>
+    </returns>
+    <remarks>
+      <para>Publisher name information is specified using the <b>Publisher</b> attribute of the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-identity">Identity</a> element in the package manifest.</para>
+      <para>The caller must free the memory allocated for <i>publisher</i> using the <see cref="CoTaskMemFree" /> function.</para>
+    </remarks>
+    <seealso cref="IAppxManifestPackageId" />
+  </member>
+  <member name="IAppxManifestPackageId.GetResourceId">
+    <summary>
+      <para>Gets the package resource identifier as defined in the manifest.</para>
+    </summary>
+    <param name="resourceId">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a>*</b></para>
+      <para>The resource identifier of the package.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>.</para>
+    </returns>
+    <remarks>
+      <para>The resource identifier is specified using the <b>ResourceId</b> attribute of the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-identity">Identity</a> element in the package manifest.</para>
+      <para>If no resource identifier is defined in the manifest, this method returns a null string.</para>
+      <para>The caller must free the memory allocated for <i>resourceId</i> using the <see cref="CoTaskMemFree" /> function.</para>
+    </remarks>
+    <seealso cref="IAppxManifestPackageId" />
+  </member>
+  <member name="IAppxManifestPackageId.GetVersion">
+    <summary>
+      <para>Gets the version of the package as defined in the manifest.</para>
+    </summary>
+    <param name="packageVersion">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a>*</b></para>
+      <para>The version of the package.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>.</para>
+    </returns>
+    <remarks>
+      <para>The version is specified using the <b>Version</b> attribute of the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-identity">Identity</a> element in the package manifest. The specification in the manifest is in quad notation:</para>
+      <para>
+        <i>major</i>.<i>minor</i>.<i>build</i>.<i>revision</i></para>
+      <para>This method converts this notation to a <b>UINT64</b> value as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>The high-order word contains the major version</description>
+        </item>
+        <item>
+          <description>The next word contains the minor version</description>
+        </item>
+        <item>
+          <description>The next word contains the build number</description>
+        </item>
+        <item>
+          <description>The low-order word contains the revision</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
+    </remarks>
+    <seealso cref="IAppxManifestPackageId" />
+  </member>
+  <member name="IAppxManifestPackageId">
+    <summary>
+      <para>Provides access to the package identity.</para>
+    </summary>
+    <remarks>
+      <para>Package identity information is specified using the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-identity">Identity</a> element in the package manifest.</para>
+      <para>This object can be retrieved using the <see cref="IAppxManifestReader.GetPackageId" /> method.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
+    </remarks>
+    <seealso cref="IAppxManifestReader" />
+    <seealso cref="IAppxManifestReader.GetPackageId" />
+  </member>
+</doc>

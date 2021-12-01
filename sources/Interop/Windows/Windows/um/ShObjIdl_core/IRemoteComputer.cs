@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IRemoteComputer.xml' path='doc/member[@name="IRemoteComputer"]/*' />
 [Guid("000214FE-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IRemoteComputer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface
         return ((delegate* unmanaged<IRemoteComputer*, Guid*, void**, int>)(lpVtbl[0]))((IRemoteComputer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface
         return ((delegate* unmanaged<IRemoteComputer*, uint>)(lpVtbl[1]))((IRemoteComputer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface
         return ((delegate* unmanaged<IRemoteComputer*, uint>)(lpVtbl[2]))((IRemoteComputer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRemoteComputer.xml' path='doc/member[@name="IRemoteComputer.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszMachine, BOOL bEnumerating)

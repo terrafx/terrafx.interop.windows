@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_MIDLINE">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_MIDLINE</b> enumeration contains values that specify info about the placement of midline across uppercase characters and the treatment of diagonal stem apexes.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_ANY">
+    <summary>
+      <para>Any midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_NO_FIT">
+    <summary>
+      <para>No fit midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_STANDARD_TRIMMED">
+    <summary>
+      <para>Standard trimmed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_STANDARD_POINTED">
+    <summary>
+      <para>Standard pointed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_STANDARD_SERIFED">
+    <summary>
+      <para>Standard serifed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_HIGH_TRIMMED">
+    <summary>
+      <para>High trimmed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_HIGH_POINTED">
+    <summary>
+      <para>High pointed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_HIGH_SERIFED">
+    <summary>
+      <para>High serifed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_CONSTANT_TRIMMED">
+    <summary>
+      <para>Constant trimmed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_CONSTANT_POINTED">
+    <summary>
+      <para>Constant pointed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_CONSTANT_SERIFED">
+    <summary>
+      <para>Constant serifed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_LOW_TRIMMED">
+    <summary>
+      <para>Low trimmed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_LOW_POINTED">
+    <summary>
+      <para>Low pointed midline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_MIDLINE.DWRITE_PANOSE_MIDLINE_LOW_SERIFED">
+    <summary>
+      <para>Low serifed midline.</para>
+    </summary>
+  </member>
+</doc>

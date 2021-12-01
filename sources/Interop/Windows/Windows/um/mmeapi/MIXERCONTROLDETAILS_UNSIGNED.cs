@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIXERCONTROLDETAILS_UNSIGNED.xml' path='doc/member[@name="MIXERCONTROLDETAILS_UNSIGNED"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct MIXERCONTROLDETAILS_UNSIGNED
 {
+    /// <include file='MIXERCONTROLDETAILS_UNSIGNED.xml' path='doc/member[@name="MIXERCONTROLDETAILS_UNSIGNED.dwValue"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwValue;
 }

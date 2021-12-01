@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RECT">
+    <summary>
+      <para>The RECT structure defines a rectangle by the coordinates of its upper-left and lower-right corners.</para>
+    </summary>
+    <remarks>
+      <para>The RECT structure is identical to the <see cref="RECTL" /> structure.</para>
+    </remarks>
+    <seealso cref="RECTL" />
+  </member>
+  <member name="RECT.left">
+    <summary>
+      <para>Specifies the <i>x</i>-coordinate of the upper-left corner of the rectangle.</para>
+    </summary>
+  </member>
+  <member name="RECT.top">
+    <summary>
+      <para>Specifies the <i>y</i>-coordinate of the upper-left corner of the rectangle.</para>
+    </summary>
+  </member>
+  <member name="RECT.right">
+    <summary>
+      <para>Specifies the <i>x</i>-coordinate of the lower-right corner of the rectangle.</para>
+    </summary>
+  </member>
+  <member name="RECT.bottom">
+    <summary>
+      <para>Specifies the <i>y</i>-coordinate of the lower-right corner of the rectangle.</para>
+    </summary>
+  </member>
+</doc>

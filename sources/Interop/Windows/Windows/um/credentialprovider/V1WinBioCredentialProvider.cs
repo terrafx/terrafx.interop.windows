@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='V1WinBioCredentialProvider.xml' path='doc/member[@name="V1WinBioCredentialProvider"]/*' />
 [Guid("AC3AC249-E820-4343-A65B-377AC634DC09")]
 public partial struct V1WinBioCredentialProvider
 {

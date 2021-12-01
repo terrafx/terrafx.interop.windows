@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSensorProcessActivity.xml' path='doc/member[@name="IMFSensorProcessActivity"]/*' />
 [Guid("39DC7F4A-B141-4719-813C-A7F46162A2B8")]
 [NativeTypeName("struct IMFSensorProcessActivity : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
         return ((delegate* unmanaged<IMFSensorProcessActivity*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
         return ((delegate* unmanaged<IMFSensorProcessActivity*, uint>)(lpVtbl[1]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
         return ((delegate* unmanaged<IMFSensorProcessActivity*, uint>)(lpVtbl[2]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSensorProcessActivity.xml' path='doc/member[@name="IMFSensorProcessActivity.GetProcessId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetProcessId([NativeTypeName("ULONG *")] uint* pPID)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
         return ((delegate* unmanaged<IMFSensorProcessActivity*, uint*, int>)(lpVtbl[3]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pPID);
     }
 
+    /// <include file='IMFSensorProcessActivity.xml' path='doc/member[@name="IMFSensorProcessActivity.GetStreamingState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetStreamingState(BOOL* pfStreaming)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
         return ((delegate* unmanaged<IMFSensorProcessActivity*, BOOL*, int>)(lpVtbl[4]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pfStreaming);
     }
 
+    /// <include file='IMFSensorProcessActivity.xml' path='doc/member[@name="IMFSensorProcessActivity.GetStreamingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetStreamingMode(MFSensorDeviceMode* pMode)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
         return ((delegate* unmanaged<IMFSensorProcessActivity*, MFSensorDeviceMode*, int>)(lpVtbl[5]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pMode);
     }
 
+    /// <include file='IMFSensorProcessActivity.xml' path='doc/member[@name="IMFSensorProcessActivity.GetReportTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetReportTime(FILETIME* pft)

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PartType">
+    <summary>
+      <para>The <b>PartType</b> enumeration defines constants that indicate whether a part in a device topology is a connector or subunit.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="IPart.GetPartType" /> method uses the constants defined in the <b>PartType</b> enumeration to indicate whether an <see cref="IPart" /> object represents a connector or a subunit. If an <b>IPart</b> object represents a connector, a client can query that that object for its <see cref="IConnector" /> interface. If an <b>IPart</b> object represents a subunit, a client can query that that object for its <see cref="ISubunit" /> interface.</para>
+      <para>For more information about connectors and subunits, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-constants">Core Audio Constants</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-enumerations">Core Audio Enumerations</seealso>
+    <seealso cref="IConnector Interface" />
+    <seealso cref="IPart Interface" />
+    <seealso cref="ISubunit Interface" />
+  </member>
+  <member name="PartType.Connector">
+    <summary>
+      <para>The part is a connector. A connector can represent an audio jack, an internal connection to an integrated endpoint device, or a software connection implemented through DMA transfers. For more information about connector types, see <see cref="ConnectorType Enumeration" />.</para>
+    </summary>
+  </member>
+  <member name="PartType.Subunit">
+    <summary>
+      <para>The part is a subunit. A subunit is an audio-processing node in a device topology. A subunit frequently has one or more hardware control parameters that can be set under program control. For example, an audio application can change the volume setting of a volume-control subunit.</para>
+    </summary>
+  </member>
+</doc>

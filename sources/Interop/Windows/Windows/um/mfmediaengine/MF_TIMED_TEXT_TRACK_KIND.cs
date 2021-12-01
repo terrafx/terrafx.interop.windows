@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TIMED_TEXT_TRACK_KIND.xml' path='doc/member[@name="MF_TIMED_TEXT_TRACK_KIND"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum MF_TIMED_TEXT_TRACK_KIND
 {
+    /// <include file='MF_TIMED_TEXT_TRACK_KIND.xml' path='doc/member[@name="MF_TIMED_TEXT_TRACK_KIND.MF_TIMED_TEXT_TRACK_KIND_UNKNOWN"]/*' />
     MF_TIMED_TEXT_TRACK_KIND_UNKNOWN = 0,
+
+    /// <include file='MF_TIMED_TEXT_TRACK_KIND.xml' path='doc/member[@name="MF_TIMED_TEXT_TRACK_KIND.MF_TIMED_TEXT_TRACK_KIND_SUBTITLES"]/*' />
     MF_TIMED_TEXT_TRACK_KIND_SUBTITLES = 1,
+
+    /// <include file='MF_TIMED_TEXT_TRACK_KIND.xml' path='doc/member[@name="MF_TIMED_TEXT_TRACK_KIND.MF_TIMED_TEXT_TRACK_KIND_CAPTIONS"]/*' />
     MF_TIMED_TEXT_TRACK_KIND_CAPTIONS = 2,
+
+    /// <include file='MF_TIMED_TEXT_TRACK_KIND.xml' path='doc/member[@name="MF_TIMED_TEXT_TRACK_KIND.MF_TIMED_TEXT_TRACK_KIND_METADATA"]/*' />
     MF_TIMED_TEXT_TRACK_KIND_METADATA = 3,
 }

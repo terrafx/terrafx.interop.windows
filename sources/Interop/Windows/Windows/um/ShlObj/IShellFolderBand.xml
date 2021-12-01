@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellFolderBand.GetBandInfoSFB">
+    <summary>
+      <para>Gets information concerning an <see cref="IShellFolderBand" /> object and places it in a <see cref="BANDINFOSFB" /> structure.</para>
+    </summary>
+    <param name="pbi">
+      <para>Type: <b>PBANDINFOSFB</b></para>
+      <para>A pointer to a <see cref="BANDINFOSFB" /> structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error code otherwise.</para>
+    </returns>
+    <seealso cref="IShellFolder" />
+    <seealso cref="IShellFolderBand" />
+  </member>
+  <member name="IShellFolderBand.InitializeSFB">
+    <summary>
+      <para>Initializes an <see cref="IShellFolderBand" /> object.</para>
+    </summary>
+    <param name="psf">
+      <para>Type: <b><see cref="IShellFolder" />*</b></para>
+      <para>A pointer to an <see cref="IShellFolder" /> object.</para>
+    </param>
+    <param name="pidl">
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>A PIDL.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IShellFolder" />
+    <seealso cref="IShellFolderBand" />
+  </member>
+  <member name="IShellFolderBand.SetBandInfoSFB">
+    <summary>
+      <para>Uses the information in a <see cref="BANDINFOSFB" /> structure to set the band information for a <see cref="IShellFolderBand" /> object.</para>
+    </summary>
+    <param name="pbi">
+      <para>Type: <b>PBANDINFOSFB</b></para>
+      <para>A pointer to a <see cref="BANDINFOSFB" /> structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error code otherwise.</para>
+    </returns>
+    <seealso cref="IShellFolder" />
+    <seealso cref="IShellFolderBand" />
+  </member>
+</doc>

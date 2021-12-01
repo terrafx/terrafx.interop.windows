@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NOTIFICATION_USER_INPUT_DATA">
+    <summary>
+      <para>Contains information about how a user interacted with a notification toast in the action center. This structure is used by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/notificationactivationcallback/nf-notificationactivationcallback-inotificationactivationcallback-activate">Activate</a>.</para>
+    </summary>
+    <remarks>
+      <para>Each key-value pair contains a piece of information based on an item in the notification toast when the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/notificationactivationcallback/nf-notificationactivationcallback-inotificationactivationcallback-activate">Activate</a> callback is triggered.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/win32_tile_badge_notif/respond-to-toast-activations">Respond to toast activations</seealso>
+  </member>
+  <member name="NOTIFICATION_USER_INPUT_DATA.Key">
+    <summary>
+      <para>The ID of the user input field in the XML payload.</para>
+    </summary>
+  </member>
+  <member name="NOTIFICATION_USER_INPUT_DATA.Value">
+    <summary>
+      <para>The input value selected by the user for a given input field.</para>
+    </summary>
+  </member>
+</doc>

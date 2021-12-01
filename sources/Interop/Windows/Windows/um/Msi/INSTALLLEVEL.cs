@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INSTALLLEVEL.xml' path='doc/member[@name="INSTALLLEVEL"]/*' />
 public enum INSTALLLEVEL
 {
+    /// <include file='INSTALLLEVEL.xml' path='doc/member[@name="INSTALLLEVEL.INSTALLLEVEL_DEFAULT"]/*' />
     INSTALLLEVEL_DEFAULT = 0,
+
+    /// <include file='INSTALLLEVEL.xml' path='doc/member[@name="INSTALLLEVEL.INSTALLLEVEL_MINIMUM"]/*' />
     INSTALLLEVEL_MINIMUM = 1,
+
+    /// <include file='INSTALLLEVEL.xml' path='doc/member[@name="INSTALLLEVEL.INSTALLLEVEL_MAXIMUM"]/*' />
     INSTALLLEVEL_MAXIMUM = 0xFFFF,
 }

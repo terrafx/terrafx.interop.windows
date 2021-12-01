@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEngineClassFactoryEx.CreateMediaKeys">
+    <summary>
+      <para>Creates a media keys object based on the specified key system.</para>
+    </summary>
+    <param name="keySystem">
+      <para>The media keys system.</para>
+    </param>
+    <param name="cdmStorePath">
+      <para>Points to a location to store Content Decryption Module (CDM) data which might be locked by multiple process and so might be incompatible with store app suspension.</para>
+    </param>
+    <param name="ppKeys">
+      <para>The media keys.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Checks if <i>keySystem</i> is a supported key system and creates the related Content Decryption Module (CDM).</para>
+    </remarks>
+    <seealso cref="IMFMediaEngineClassFactoryEx" />
+  </member>
+  <member name="IMFMediaEngineClassFactoryEx.CreateMediaSourceExtension">
+    <summary>
+      <para>Creates an instance of <see cref="IMFMediaSourceExtension" />.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>This parameter is reserved and must be set to 0.</para>
+    </param>
+    <param name="pAttr">
+      <para>This method supports the following  Media Foundation attributes:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mse-callback">MF_MSE_CALLBACK</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mse-bufferlist-callback">MF_MSE_BUFFERLIST_CALLBACK</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mse-activelist-callback">MF_MSE_ACTIVELIST_CALLBACK</a>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ppMSE">
+      <para>The <see cref="IMFMediaSourceExtension" /> which was created.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineClassFactoryEx" />
+  </member>
+  <member name="IMFMediaEngineClassFactoryEx.IsTypeSupported">
+    <summary>
+      <para>Gets a value that indicates if the specified key system supports the specified media type.</para>
+    </summary>
+    <param name="type">
+      <para>The MIME type to check support for.</para>
+    </param>
+    <param name="keySystem">
+      <para>The key system to check support for.</para>
+    </param>
+    <param name="isSupported">
+      <para>
+        <b>true</b> if type is supported by <i>keySystem</i>; otherwise, <b>false.</b></para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineClassFactoryEx" />
+  </member>
+  <member name="IMFMediaEngineClassFactoryEx">
+    <summary>
+      <para>Extension for the <see cref="IMFMediaEngineClassFactory" /> interface.</para>
+    </summary>
+    <remarks>
+      <para>This class is implemented by the Media Engine (CLSID_MFMediaEngineClassFactory).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

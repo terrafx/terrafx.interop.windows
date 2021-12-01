@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICJpegTransferMatrix">
+    <summary>
+      <para>Specifies conversion matrix from Y'Cb'Cr' to R'G'B'.</para>
+    </summary>
+    <seealso cref="WICJpegFrameHeader" />
+  </member>
+  <member name="WICJpegTransferMatrix.WICJpegTransferMatrixIdentity">
+    <summary>
+      <para>Specifies the identity transfer matrix.</para>
+    </summary>
+  </member>
+  <member name="WICJpegTransferMatrix.WICJpegTransferMatrixBT601">
+    <summary>
+      <para>Specifies the BT601 transfer matrix.</para>
+    </summary>
+  </member>
+  <member name="WICJpegTransferMatrix.WICJpegTransferMatrix_FORCE_DWORD">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</para>
+    </summary>
+  </member>
+</doc>

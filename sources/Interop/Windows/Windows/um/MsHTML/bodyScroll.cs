@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='bodyScroll.xml' path='doc/member[@name="bodyScroll"]/*' />
 public enum bodyScroll
 {
+    /// <include file='bodyScroll.xml' path='doc/member[@name="bodyScroll.bodyScrollyes"]/*' />
     bodyScrollyes = 1,
+
+    /// <include file='bodyScroll.xml' path='doc/member[@name="bodyScroll.bodyScrollno"]/*' />
     bodyScrollno = 2,
+
+    /// <include file='bodyScroll.xml' path='doc/member[@name="bodyScroll.bodyScrollauto"]/*' />
     bodyScrollauto = 4,
+
+    /// <include file='bodyScroll.xml' path='doc/member[@name="bodyScroll.bodyScrolldefault"]/*' />
     bodyScrolldefault = 3,
+
+    /// <include file='bodyScroll.xml' path='doc/member[@name="bodyScroll.bodyScroll_Max"]/*' />
     bodyScroll_Max = 2147483647,
 }

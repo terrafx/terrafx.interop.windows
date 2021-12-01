@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='InkDesktopHost.xml' path='doc/member[@name="InkDesktopHost"]/*' />
 [Guid("062584A6-F830-4BDC-A4D2-0A10AB062B1D")]
 public partial struct InkDesktopHost
 {

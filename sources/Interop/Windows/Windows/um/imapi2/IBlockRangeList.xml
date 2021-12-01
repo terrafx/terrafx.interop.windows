@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBlockRangeList.get_BlockRanges">
+    <summary>
+      <para>Returns the list of sector ranges in the form of a safe array of variants of type VT_Dispatch.</para>
+    </summary>
+    <param name="value">
+      <para>List of sector ranges. Each element of the list is a VARIANT of type VT_Dispatch. Query the pdispVal member of the variant for the <see cref="IBlockRange" /> interface.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The order of sector ranges in <see cref="IBlockRangeList" /> is taken into account during burning. The sector ranges having lower indexes in the safe array returned by <b>IBlockRangeList.get_BlockRanges</b> are written before those with higher indexes.</para>
+    </remarks>
+    <seealso cref="IBlockRangeList" />
+  </member>
+  <member name="IBlockRangeList">
+    <summary>
+      <para>Use this interface to retrieve a list of continuous sector ranges on the media. This interface is used to describe the sectors that need to be updated on a rewritable disc when a new logical session is recorded.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>IBlockRangeList</b> is returned by the <see cref="IFileSystemImageResult2.ModifiedBlocks" /> method. Alternatively, IUnknown.QueryInterface can be called on the object returned by <see cref="IFileSystemImageResult.get_ImageStream" /> to get the list of modified sectors in the result image represented by that object.</para>
+      <para>The order of sector ranges in <b>IBlockRangeList</b> is taken into account during burning. The sector ranges having lower indexes in the safe array returned by <see cref="IBlockRangeList.get_BlockRanges" /> are written before those with higher indexes.</para>
+    </remarks>
+    <seealso cref="IBlockRange" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
+  </member>
+</doc>

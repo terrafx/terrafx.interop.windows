@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMC_PEND_INFO">
+    <summary>
+      <para>The <b>CMC_PEND_INFO</b> structure is a possible member of a
+<see cref="CMC_STATUS_INFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="CMC_PEND_INFO.PendToken">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains the pending request information.</para>
+    </summary>
+  </member>
+  <member name="CMC_PEND_INFO.PendTime">
+    <summary>
+      <para>
+        <b>FILETIME</b> containing the request.</para>
+    </summary>
+  </member>
+</doc>

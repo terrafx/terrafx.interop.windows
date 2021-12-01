@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite"]/*' />
 [Guid("B196B289-BAB4-101A-B69C-00AA00341D07")]
 [NativeTypeName("struct IOleControlSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
         return ((delegate* unmanaged<IOleControlSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleControlSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
         return ((delegate* unmanaged<IOleControlSite*, uint>)(lpVtbl[1]))((IOleControlSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
         return ((delegate* unmanaged<IOleControlSite*, uint>)(lpVtbl[2]))((IOleControlSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.OnControlInfoChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnControlInfoChanged()
@@ -46,6 +51,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
         return ((delegate* unmanaged<IOleControlSite*, int>)(lpVtbl[3]))((IOleControlSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.LockInPlaceActive"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT LockInPlaceActive(BOOL fLock)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
         return ((delegate* unmanaged<IOleControlSite*, BOOL, int>)(lpVtbl[4]))((IOleControlSite*)Unsafe.AsPointer(ref this), fLock);
     }
 
+    /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.GetExtendedControl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetExtendedControl(IDispatch** ppDisp)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
         return ((delegate* unmanaged<IOleControlSite*, IDispatch**, int>)(lpVtbl[5]))((IOleControlSite*)Unsafe.AsPointer(ref this), ppDisp);
     }
 
+    /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.TransformCoords"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT TransformCoords(POINTL* pPtlHimetric, POINTF* pPtfContainer, [NativeTypeName("DWORD")] uint dwFlags)
@@ -67,6 +75,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
         return ((delegate* unmanaged<IOleControlSite*, POINTL*, POINTF*, uint, int>)(lpVtbl[6]))((IOleControlSite*)Unsafe.AsPointer(ref this), pPtlHimetric, pPtfContainer, dwFlags);
     }
 
+    /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.TranslateAccelerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT TranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers)
@@ -74,6 +83,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
         return ((delegate* unmanaged<IOleControlSite*, MSG*, uint, int>)(lpVtbl[7]))((IOleControlSite*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
     }
 
+    /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.OnFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT OnFocus(BOOL fGotFocus)
@@ -81,6 +91,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
         return ((delegate* unmanaged<IOleControlSite*, BOOL, int>)(lpVtbl[8]))((IOleControlSite*)Unsafe.AsPointer(ref this), fGotFocus);
     }
 
+    /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.ShowPropertyFrame"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ShowPropertyFrame()

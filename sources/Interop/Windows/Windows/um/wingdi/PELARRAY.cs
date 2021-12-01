@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PELARRAY.xml' path='doc/member[@name="PELARRAY"]/*' />
 public partial struct PELARRAY
 {
+    /// <include file='PELARRAY.xml' path='doc/member[@name="PELARRAY.paXCount"]/*' />
     [NativeTypeName("LONG")]
     public int paXCount;
 
+    /// <include file='PELARRAY.xml' path='doc/member[@name="PELARRAY.paYCount"]/*' />
     [NativeTypeName("LONG")]
     public int paYCount;
 
+    /// <include file='PELARRAY.xml' path='doc/member[@name="PELARRAY.paXExt"]/*' />
     [NativeTypeName("LONG")]
     public int paXExt;
 
+    /// <include file='PELARRAY.xml' path='doc/member[@name="PELARRAY.paYExt"]/*' />
     [NativeTypeName("LONG")]
     public int paYExt;
 
+    /// <include file='PELARRAY.xml' path='doc/member[@name="PELARRAY.paRGBs"]/*' />
     public byte paRGBs;
 }

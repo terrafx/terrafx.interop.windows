@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_Plugin_Type">
+    <summary>
+      <para>Specifies the object type for the <see cref="IMFPluginControl" /> interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_Plugin_Type.MF_Plugin_Type_MFT">
+    <summary>
+      <para>Media Foundation transform (MFT).</para>
+    </summary>
+  </member>
+  <member name="MF_Plugin_Type.MF_Plugin_Type_MediaSource">
+    <summary>
+      <para>Media source.</para>
+    </summary>
+  </member>
+  <member name="MF_Plugin_Type.MF_Plugin_Type_MFT_MatchOutputType">
+    <summary>
+      <para>Match output type.</para>
+    </summary>
+  </member>
+  <member name="MF_Plugin_Type.MF_Plugin_Type_Other">
+    <summary>
+      <para>Other.</para>
+    </summary>
+  </member>
+</doc>

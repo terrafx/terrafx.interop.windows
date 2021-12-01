@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICDBurnExt.xml' path='doc/member[@name="ICDBurnExt"]/*' />
 [Guid("2271DCCA-74FC-4414-8FB7-C56B05ACE2D7")]
 [NativeTypeName("struct ICDBurnExt : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface
         return ((delegate* unmanaged<ICDBurnExt*, Guid*, void**, int>)(lpVtbl[0]))((ICDBurnExt*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface
         return ((delegate* unmanaged<ICDBurnExt*, uint>)(lpVtbl[1]))((ICDBurnExt*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface
         return ((delegate* unmanaged<ICDBurnExt*, uint>)(lpVtbl[2]))((ICDBurnExt*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICDBurnExt.xml' path='doc/member[@name="ICDBurnExt.GetSupportedActionTypes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSupportedActionTypes([NativeTypeName("CDBE_ACTIONS *")] uint* pdwActions)

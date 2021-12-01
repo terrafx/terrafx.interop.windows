@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDataTransferManagerInterop.GetForWindow">
+    <summary>
+      <para>Gets the <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager">DataTransferManager</a> instance for the specified window.</para>
+    </summary>
+    <param name="appWindow">
+      <para>The window whose <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager">DataTransferManager</a> instance is to be retrieved.</para>
+    </param>
+    <param name="riid">
+      <para>The requested interface ID of the <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager">DataTransferManager</a> instance.</para>
+    </param>
+    <param name="dataTransferManager">
+      <para>Receives the <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager">DataTransferManager</a> instance.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is equivalent to the <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.getforcurrentview">DataTransferManager.GetForCurrentView</a> method, except that you specify a window from a multi-window Windows Store app.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager">DataTransferManager</seealso>
+    <seealso href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.getforcurrentview">DataTransferManager.GetForCurrentView</seealso>
+    <seealso cref="IDataTransferManagerInterop" />
+  </member>
+  <member name="IDataTransferManagerInterop.ShowShareUIForWindow">
+    <summary>
+      <para>Displays the UI for sharing content for the specified window.</para>
+    </summary>
+    <param name="appWindow">
+      <para>The window to show the share UI for.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is equivalent to the <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui">DataTransferManager.ShowShareUI</a> method, except that you specify a window from a multi-window Windows Store app.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager">DataTransferManager</seealso>
+    <seealso href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui">DataTransferManager.ShowShareUI</seealso>
+    <seealso cref="IDataTransferManagerInterop" />
+  </member>
+  <member name="IDataTransferManagerInterop">
+    <summary>
+      <para>Enables access to <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.datatransfermanager">DataTransferManager</a> methods in a Windows Store app that manages multiple windows.</para>
+    </summary>
+  </member>
+</doc>

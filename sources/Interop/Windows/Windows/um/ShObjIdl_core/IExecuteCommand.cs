@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand"]/*' />
 [Guid("7F9185B0-CB92-43C5-80A9-92277A4F7B54")]
 [NativeTypeName("struct IExecuteCommand : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
         return ((delegate* unmanaged<IExecuteCommand*, Guid*, void**, int>)(lpVtbl[0]))((IExecuteCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
         return ((delegate* unmanaged<IExecuteCommand*, uint>)(lpVtbl[1]))((IExecuteCommand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
         return ((delegate* unmanaged<IExecuteCommand*, uint>)(lpVtbl[2]))((IExecuteCommand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetKeyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetKeyState([NativeTypeName("DWORD")] uint grfKeyState)
@@ -46,6 +51,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
         return ((delegate* unmanaged<IExecuteCommand*, uint, int>)(lpVtbl[3]))((IExecuteCommand*)Unsafe.AsPointer(ref this), grfKeyState);
     }
 
+    /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetParameters([NativeTypeName("LPCWSTR")] ushort* pszParameters)
@@ -53,6 +59,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
         return ((delegate* unmanaged<IExecuteCommand*, ushort*, int>)(lpVtbl[4]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszParameters);
     }
 
+    /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPosition(POINT pt)
@@ -60,6 +67,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
         return ((delegate* unmanaged<IExecuteCommand*, POINT, int>)(lpVtbl[5]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pt);
     }
 
+    /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetShowWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetShowWindow(int nShow)
@@ -67,6 +75,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
         return ((delegate* unmanaged<IExecuteCommand*, int, int>)(lpVtbl[6]))((IExecuteCommand*)Unsafe.AsPointer(ref this), nShow);
     }
 
+    /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetNoShowUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetNoShowUI(BOOL fNoShowUI)
@@ -74,6 +83,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
         return ((delegate* unmanaged<IExecuteCommand*, BOOL, int>)(lpVtbl[7]))((IExecuteCommand*)Unsafe.AsPointer(ref this), fNoShowUI);
     }
 
+    /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetDirectory([NativeTypeName("LPCWSTR")] ushort* pszDirectory)
@@ -81,6 +91,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
         return ((delegate* unmanaged<IExecuteCommand*, ushort*, int>)(lpVtbl[8]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszDirectory);
     }
 
+    /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.Execute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Execute()

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_VECTOR_2F">
+    <summary>
+      <para>A vector of 2 FLOAT values (x, y).</para>
+    </summary>
+  </member>
+  <member name="D2D1_VECTOR_2F.x">
+    <summary>
+      <para>The x value of the vector.</para>
+    </summary>
+  </member>
+  <member name="D2D1_VECTOR_2F.y">
+    <summary>
+      <para>The y value of the vector.</para>
+    </summary>
+  </member>
+</doc>

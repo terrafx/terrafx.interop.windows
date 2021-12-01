@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_CHANGE_TYPE">
+    <summary>
+      <para>Describes flags that influence how the renderer interacts with a custom vertex shader.</para>
+    </summary>
+    <seealso cref="ID2D1EffectImpl.PrepareForRender" />
+  </member>
+  <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_NONE">
+    <summary>
+      <para>There were no changes.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_PROPERTIES">
+    <summary>
+      <para>The properties of the effect changed.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_CONTEXT">
+    <summary>
+      <para>The context state changed.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_GRAPH">
+    <summary>
+      <para>The effect’s transform graph has changed.  This happens only when an effect supports a variable input count.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFactory3.CreateCustomRenderingParams">
+    <summary>
+      <para>Creates a rendering parameters object with the specified properties.</para>
+    </summary>
+    <param name="gamma">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The gamma value used for gamma correction, which must be greater than zero and cannot exceed 256.</para>
+    </param>
+    <param name="enhancedContrast">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The amount of contrast enhancement, zero or greater.</para>
+    </param>
+    <param name="grayscaleEnhancedContrast">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The amount of contrast enhancement to use for grayscale antialiasing, zero or greater.</para>
+    </param>
+    <param name="clearTypeLevel">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The degree of ClearType level, from 0.0f (no ClearType) to 1.0f (full ClearType).</para>
+    </param>
+    <param name="pixelGeometry">
+      <para>Type: <b><see cref="DWRITE_PIXEL_GEOMETRY" /></b></para>
+      <para>A <see cref="DWRITE_PIXEL_GEOMETRY" />-typed value that specifies the internal structure of a device pixel (that is, the physical arrangement of red, green, and blue color components) that is assumed for purposes of rendering text.</para>
+    </param>
+    <param name="renderingMode">
+      <para>Type: <b><see cref="DWRITE_RENDERING_MODE1" /></b></para>
+      <para>A <see cref="DWRITE_RENDERING_MODE1" />-typed value that specifies the method (for example, ClearType natural quality) for rendering glyphs. In most cases, specify <b>DWRITE_RENDERING_MODE1_DEFAULT</b> to automatically use an appropriate mode.</para>
+    </param>
+    <param name="gridFitMode">
+      <para>Type: <b><see cref="DWRITE_GRID_FIT_MODE" /></b></para>
+      <para>A <see cref="DWRITE_GRID_FIT_MODE" />-typed value that specifies how to grid-fit glyph outlines. In most cases, specify <b>DWRITE_GRID_FIT_DEFAULT</b> to automatically choose an appropriate mode.</para>
+    </param>
+    <param name="renderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams3" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="IDWriteRenderingParams3" /> interface for the newly created rendering parameters object, or <b>NULL</b> in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory3" />
+  </member>
+  <member name="IDWriteFactory3.CreateFontCollectionFromFontSet">
+    <summary>
+      <para>Create a weight/width/slope tree from a set of fonts.</para>
+    </summary>
+    <param name="fontSet">
+      <para>Type: <b><see cref="IDWriteFontSet" />*</b></para>
+      <para>A set of fonts to use to build the collection.</para>
+    </param>
+    <param name="fontCollection">
+      <para>Type: <b><see cref="IDWriteFontCollection1" />**</b></para>
+      <para>Holds the newly created font collection object, or NULL in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory3" />
+  </member>
+  <member name="IDWriteFactory3.CreateFontFaceReference">
+    <summary>
+      <para>Creates a reference to a font given an <b>IDWriteFontFile</b>.</para>
+    </summary>
+    <param name="fontFile">
+      <para>An <b>IDWriteFontFile</b> representing the font face.</para>
+    </param>
+    <param name="faceIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The zero based index of a font face in cases when the font files contain a collection of font faces.
+If the font files contain a single face, this value should be zero.</para>
+    </param>
+    <param name="fontSimulations">
+      <para>Type: <b><see cref="DWRITE_FONT_SIMULATIONS" /></b></para>
+      <para>Font face simulation flags for algorithmic emboldening and italicization.</para>
+    </param>
+    <param name="fontFaceReference">
+      <para>Type: <b><see cref="IDWriteFontFaceReference" />**</b></para>
+      <para>Contains newly created font face reference object, or nullptr in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory3" />
+  </member>
+  <member name="IDWriteFactory3.CreateFontFaceReference">
+    <summary>
+      <para>Creates a reference to a font given a full path.</para>
+    </summary>
+    <param name="filePath">
+      <para>Type: [in] <b>WCHAR</b></para>
+      <para>Absolute file path. Subsequent operations on the constructed object may fail if the user provided filePath doesn't correspond to a valid file on the disk.</para>
+    </param>
+    <param name="lastWriteTime">
+      <para>Type: [in, optional] <b>FILETIME</b></para>
+      <para>Last modified time of the input file path. If the parameter is omitted,
+the function will access the font file to obtain its last write time, so the clients are encouraged to specify this value
+to avoid extra disk access. Subsequent operations on the constructed object may fail
+if the user provided lastWriteTime doesn't match the file on the disk.</para>
+    </param>
+    <param name="faceIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The zero based index of a font face in cases when the font files contain a collection of font faces.
+If the font files contain a single face, this value should be zero.</para>
+    </param>
+    <param name="fontSimulations">
+      <para>Type: <b><see cref="DWRITE_FONT_SIMULATIONS" /></b></para>
+      <para>Font face simulation flags for algorithmic emboldening and italicization.</para>
+    </param>
+    <param name="fontFaceReference">
+      <para>Type: [out] <b><see cref="IDWriteFontFaceReference" />**</b></para>
+      <para>Contains newly created font face reference object, or nullptr in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory3" />
+  </member>
+  <member name="IDWriteFactory3.CreateFontSetBuilder">
+    <summary>
+      <para>Creates an empty font set builder to add font face references
+and create a custom font set.</para>
+    </summary>
+    <param name="fontSetBuilder">
+      <para>Type: <b><see cref="IDWriteFontSetBuilder" />**</b></para>
+      <para>Holds the newly created font set builder object, or NULL in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory3" />
+  </member>
+  <member name="IDWriteFactory3.CreateGlyphRunAnalysis">
+    <summary>
+      <para>Creates a glyph-run-analysis object that encapsulates info that <a href="https://docs.microsoft.com//windows/win32/DirectWrite/direct-write-portal">DirectWrite</a> uses to render a glyph run.</para>
+    </summary>
+    <param name="glyphRun">
+      <para>Type: <b><see cref="DWRITE_GLYPH_RUN" /></b></para>
+      <para>A <see cref="DWRITE_GLYPH_RUN" /> structure that contains the properties of the glyph run.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b><see cref="DWRITE_MATRIX" /></b></para>
+      <para>A <see cref="DWRITE_MATRIX" /> structure that describes the optional transform to be applied to glyphs and their positions.</para>
+    </param>
+    <param name="renderingMode">
+      <para>Type: <b><see cref="DWRITE_RENDERING_MODE1" /></b></para>
+      <para>A <see cref="DWRITE_RENDERING_MODE1" />-typed value that specifies the rendering mode, which must be one of the raster rendering modes (that is, not default and not outline).</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>A <see cref="DWRITE_MEASURING_MODE" />-typed value that specifies the measuring method for glyphs in the run. This method uses this value with the other properties to determine the rendering mode.</para>
+    </param>
+    <param name="gridFitMode">
+      <para>Type: <b><see cref="DWRITE_GRID_FIT_MODE" /></b></para>
+      <para>A <see cref="DWRITE_GRID_FIT_MODE" />-typed value that specifies how to grid-fit glyph outlines. This value must be non-default.</para>
+    </param>
+    <param name="antialiasMode">
+      <para>Type: <b><see cref="DWRITE_TEXT_ANTIALIAS_MODE" /></b></para>
+      <para>A <see cref="DWRITE_TEXT_ANTIALIAS_MODE" />-typed value that specifies the type of antialiasing to use for text when the rendering mode calls for antialiasing.</para>
+    </param>
+    <param name="baselineOriginX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The horizontal position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</para>
+    </param>
+    <param name="baselineOriginY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The vertical position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</para>
+    </param>
+    <param name="glyphRunAnalysis">
+      <para>Type: <b><see cref="IDWriteGlyphRunAnalysis" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="IDWriteGlyphRunAnalysis" /> interface for the newly created glyph-run-analysis object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory3" />
+  </member>
+  <member name="IDWriteFactory3.GetFontDownloadQueue">
+    <summary>
+      <para>Gets the font download queue associated with this factory object.</para>
+    </summary>
+    <param name="fontDownloadQueue">
+      <para>Type: <b><see cref="IDWriteFontDownloadQueue" />**</b></para>
+      <para>Receives a pointer to the font download queue interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory3" />
+  </member>
+  <member name="IDWriteFactory3.GetSystemFontCollection">
+    <summary>
+      <para>Retrieves a weight/width/slope tree of system fonts.</para>
+    </summary>
+    <param name="includeDownloadableFonts">
+      <para>Type: <b>BOOL</b></para>
+      <para>Indicates whether to include cloud fonts or only locally installed fonts.</para>
+    </param>
+    <param name="fontCollection">
+      <para>Type: <b><see cref="IDWriteFontCollection1" />**</b></para>
+      <para>Holds the newly created font collection object, or NULL in case of failure.</para>
+    </param>
+    <param name="checkForUpdates">
+      <para>Type: <b>BOOL</b></para>
+      <para>If this parameter is TRUE, the function performs an immediate check for changes
+to the set of system fonts. If this parameter is FALSE, the function will still detect changes if the font
+cache service is running, but there may be some latency. For example, an application might specify TRUE if
+it has just installed a font and wants to be sure the font collection contains that font.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory3" />
+  </member>
+  <member name="IDWriteFactory3.GetSystemFontSet">
+    <summary>
+      <para>Retrieves the list of system fonts.</para>
+    </summary>
+    <param name="fontSet">
+      <para>Type: <b><see cref="IDWriteFontSet" />**</b></para>
+      <para>Holds the newly created font set object, or NULL in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory3" />
+  </member>
+  <member name="IDWriteFactory3">
+    <summary>
+      <para>The root factory interface for all <a href="https://docs.microsoft.com//windows/win32/DirectWrite/direct-write-portal">DirectWrite</a> objects.</para>
+    </summary>
+    <seealso cref="IDWriteFactory" />
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2">IDWriteFactory2</seealso>
+  </member>
+</doc>

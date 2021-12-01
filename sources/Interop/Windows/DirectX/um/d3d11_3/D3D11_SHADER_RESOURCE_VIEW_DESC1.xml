@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1">
+    <summary>
+      <para>Describes a shader-resource view.</para>
+    </summary>
+    <remarks>
+      <para>A view is a format-specific way to look at the data in a resource. The view determines what data to look at, and how it is cast when read.</para>
+      <para>When viewing a resource, the resource-view description must specify a typed format, that is compatible with the resource format. So that means that you cannot create a resource-view description using any format with _TYPELESS in the name. You can however view a typeless resource by specifying a typed format for the view. For example, a DXGI_FORMAT_R32G32B32_TYPELESS resource can be viewed with one of these typed formats: DXGI_FORMAT_R32G32B32_FLOAT, DXGI_FORMAT_R32G32B32_UINT, and DXGI_FORMAT_R32G32B32_SINT, since these typed formats are compatible with the typeless resource.</para>
+      <para>Create a shader-resource-view description by calling <see cref="ID3D11Device3.CreateShaderResourceView1" />. To view a shader-resource-view description, call <see cref="ID3D11ShaderResourceView1.GetDesc1" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.CD3D11_SHADER_RESOURCE_VIEW_DESC1">
+    <summary>
+      <para>TBD</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.D3D11_SHADER_RESOURCE_VIEW_DESC1">
+    <summary>
+      <h4>- Buffer</h4>
+      <para>A <see cref="D3D11_BUFFER_SRV" /> structure that views the resource as a buffer.</para>
+      <h4>- BufferEx</h4>
+      <para>A <see cref="D3D11_BUFFEREX_SRV" /> structure that views the resource as a raw buffer. For more info about raw viewing of buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-intro">Raw Views of Buffers</a>.</para>
+      <h4>- Format</h4>
+      <para>A <see cref="DXGI_FORMAT" />-typed value that  specifies the viewing format. See remarks.</para>
+      <h4>- Texture1D</h4>
+      <para>A <see cref="D3D11_TEX1D_SRV" /> structure that views the resource as a 1D texture.</para>
+      <h4>- Texture1DArray</h4>
+      <para>A <see cref="D3D11_TEX1D_ARRAY_SRV" /> structure that views the resource as a 1D-texture array.</para>
+      <h4>- Texture2D</h4>
+      <para>A <see cref="D3D11_TEX2D_SRV1" /> structure that views the resource as a 2D-texture.</para>
+      <h4>- Texture2DArray</h4>
+      <para>A <see cref="D3D11_TEX2D_ARRAY_SRV1" /> structure that views the resource as a 2D-texture array.</para>
+      <h4>- Texture2DMS</h4>
+      <para>A <see cref="D3D11_TEX2DMS_SRV" /> structure that views the resource as a 2D-multisampled texture.</para>
+      <h4>- Texture2DMSArray</h4>
+      <para>A <see cref="D3D11_TEX2DMS_ARRAY_SRV" /> structure that views the resource as a 2D-multisampled-texture array.</para>
+      <h4>- Texture3D</h4>
+      <para>A <see cref="D3D11_TEX3D_SRV" /> structure that views the resource as a 3D texture.</para>
+      <h4>- TextureCube</h4>
+      <para>A <see cref="D3D11_TEXCUBE_SRV" /> structure that views the resource as a 3D-cube texture.</para>
+      <h4>- TextureCubeArray</h4>
+      <para>A <see cref="D3D11_TEXCUBE_ARRAY_SRV" /> structure that views the resource as a 3D-cube-texture array.</para>
+      <h4>- ViewDimension</h4>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff476217(v=vs.85)">D3D11_SRV_DIMENSION</a>-typed value that  specifies the resource type of the view. This type is the same as the resource type of the underlying resource. This member also determines which _SRV to use in the union below.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.r">
+    <summary>
+      <para>A <see cref="D3D11_BUFFER_SRV" /> structure that views the resource as a buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.rEx">
+    <summary>
+      <para>A <see cref="D3D11_BUFFEREX_SRV" /> structure that views the resource as a raw buffer. For more info about raw viewing of buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-intro">Raw Views of Buffers</a>.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.t">
+    <summary>
+      <para>A <see cref="DXGI_FORMAT" />-typed value that  specifies the viewing format. See remarks.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.re1D">
+    <summary>
+      <para>A <see cref="D3D11_TEX1D_SRV" /> structure that views the resource as a 1D texture.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.re1DArray">
+    <summary>
+      <para>A <see cref="D3D11_TEX1D_ARRAY_SRV" /> structure that views the resource as a 1D-texture array.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.re2D">
+    <summary>
+      <para>A <see cref="D3D11_TEX2D_SRV1" /> structure that views the resource as a 2D-texture.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.re2DArray">
+    <summary>
+      <para>A <see cref="D3D11_TEX2D_ARRAY_SRV1" /> structure that views the resource as a 2D-texture array.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.re2DMS">
+    <summary>
+      <para>A <see cref="D3D11_TEX2DMS_SRV" /> structure that views the resource as a 2D-multisampled texture.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.re2DMSArray">
+    <summary>
+      <para>A <see cref="D3D11_TEX2DMS_ARRAY_SRV" /> structure that views the resource as a 2D-multisampled-texture array.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.re3D">
+    <summary>
+      <para>A <see cref="D3D11_TEX3D_SRV" /> structure that views the resource as a 3D texture.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.reCube">
+    <summary>
+      <para>A <see cref="D3D11_TEXCUBE_SRV" /> structure that views the resource as a 3D-cube texture.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.reCubeArray">
+    <summary>
+      <para>A <see cref="D3D11_TEXCUBE_ARRAY_SRV" /> structure that views the resource as a 3D-cube-texture array.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.imension">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff476217(v=vs.85)">D3D11_SRV_DIMENSION</a>-typed value that  specifies the resource type of the view. This type is the same as the resource type of the underlying resource. This member also determines which _SRV to use in the union below.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1">
+    <summary>
+      <para>Describes a shader-resource view.</para>
+    </summary>
+    <remarks>
+      <para>A view is a format-specific way to look at the data in a resource. The view determines what data to look at, and how it is cast when read.</para>
+      <para>When viewing a resource, the resource-view description must specify a typed format, that is compatible with the resource format. So that means that you cannot create a resource-view description using any format with _TYPELESS in the name. You can however view a typeless resource by specifying a typed format for the view. For example, a DXGI_FORMAT_R32G32B32_TYPELESS resource can be viewed with one of these typed formats: DXGI_FORMAT_R32G32B32_FLOAT, DXGI_FORMAT_R32G32B32_UINT, and DXGI_FORMAT_R32G32B32_SINT, since these typed formats are compatible with the typeless resource.</para>
+      <para>Create a shader-resource-view description by calling <see cref="ID3D11Device3.CreateShaderResourceView1" />. To view a shader-resource-view description, call <see cref="ID3D11ShaderResourceView1.GetDesc1" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.Format">
+    <summary>
+      <para>A <see cref="DXGI_FORMAT" />-typed value that  specifies the viewing format. See remarks.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.ViewDimension">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff476217(v=vs.85)">D3D11_SRV_DIMENSION</a>-typed value that  specifies the resource type of the view. This type is the same as the resource type of the underlying resource. This member also determines which _SRV to use in the union below.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.Buffer">
+    <summary>
+      <para>A <see cref="D3D11_BUFFER_SRV" /> structure that views the resource as a buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.Texture1D">
+    <summary>
+      <para>A <see cref="D3D11_TEX1D_SRV" /> structure that views the resource as a 1D texture.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.Texture1DArray">
+    <summary>
+      <para>A <see cref="D3D11_TEX1D_ARRAY_SRV" /> structure that views the resource as a 1D-texture array.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.Texture2D">
+    <summary>
+      <para>A <see cref="D3D11_TEX2D_SRV1" /> structure that views the resource as a 2D-texture.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.Texture2DArray">
+    <summary>
+      <para>A <see cref="D3D11_TEX2D_ARRAY_SRV1" /> structure that views the resource as a 2D-texture array.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.Texture2DMS">
+    <summary>
+      <para>A <see cref="D3D11_TEX2DMS_SRV" /> structure that views the resource as a 2D-multisampled texture.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.Texture2DMSArray">
+    <summary>
+      <para>A <see cref="D3D11_TEX2DMS_ARRAY_SRV" /> structure that views the resource as a 2D-multisampled-texture array.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.Texture3D">
+    <summary>
+      <para>A <see cref="D3D11_TEX3D_SRV" /> structure that views the resource as a 3D texture.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.TextureCube">
+    <summary>
+      <para>A <see cref="D3D11_TEXCUBE_SRV" /> structure that views the resource as a 3D-cube texture.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.TextureCubeArray">
+    <summary>
+      <para>A <see cref="D3D11_TEXCUBE_ARRAY_SRV" /> structure that views the resource as a 3D-cube-texture array.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_RESOURCE_VIEW_DESC1.BufferEx">
+    <summary>
+      <para>A <see cref="D3D11_BUFFEREX_SRV" /> structure that views the resource as a raw buffer. For more info about raw viewing of buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-intro">Raw Views of Buffers</a>.</para>
+    </summary>
+  </member>
+</doc>

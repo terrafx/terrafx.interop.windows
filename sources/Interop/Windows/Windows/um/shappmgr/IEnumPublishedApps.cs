@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumPublishedApps.xml' path='doc/member[@name="IEnumPublishedApps"]/*' />
 [Guid("0B124F8C-91F0-11D1-B8B5-006008059382")]
 [NativeTypeName("struct IEnumPublishedApps : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface
         return ((delegate* unmanaged<IEnumPublishedApps*, Guid*, void**, int>)(lpVtbl[0]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface
         return ((delegate* unmanaged<IEnumPublishedApps*, uint>)(lpVtbl[1]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface
         return ((delegate* unmanaged<IEnumPublishedApps*, uint>)(lpVtbl[2]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumPublishedApps.xml' path='doc/member[@name="IEnumPublishedApps.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next(IPublishedApp** pia)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface
         return ((delegate* unmanaged<IEnumPublishedApps*, IPublishedApp**, int>)(lpVtbl[3]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), pia);
     }
 
+    /// <include file='IEnumPublishedApps.xml' path='doc/member[@name="IEnumPublishedApps.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Reset()

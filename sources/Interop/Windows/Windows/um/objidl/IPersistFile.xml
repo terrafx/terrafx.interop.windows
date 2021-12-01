@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPersistFile.GetCurFile">
+    <summary>
+      <para>Retrieves the current name of the file associated with the object. If there is no current working file, this method retrieves the default save prompt for the object.</para>
+    </summary>
+    <param name="ppszFileName">
+      <para>The path for the current file or the default file name prompt (such as *.txt). If an error occurs, <i>ppszFileName</i> is set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>A valid absolute path was returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The default save prompt was returned.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed due to insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed due to some reason other than insufficient memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method allocates memory for the string returned in the <i>ppszFileName</i> parameter using the <see cref="IMalloc.Alloc" /> method. The caller is responsible for calling the <see cref="IMalloc.Free" /> method to free the string. Both the caller and this method use the OLE task allocator provided by a call to <see cref="CoGetMalloc" />.</para>
+      <para>The file name returned in <i>ppszFileName</i> is the name specified in a call to <see cref="IPersistFile.Load" /> when the document was loaded; or in <see cref="IPersistFile.SaveCompleted" /> if the document was saved to a different file.</para>
+      <para>If the object does not have a current working file, it should provide the default prompt that it would display in a <b>Save As</b> dialog box. For example, the default save prompt for a word processor object could be</para>
+      <para>"*.txt".</para>
+      <h3>Notes to Callers</h3>
+      <para>OLE does not call the <b>GetCurFile</b> method. Applications would not call this method unless they are also calling the save methods of this interface.</para>
+      <para>In saving the object, you can call this method before calling <see cref="IPersistFile.Save" /> to determine whether the object has an associated file. If this method returns S_OK, you can then call <b>IPersistFile.Save</b> with a <b>NULL</b> filename and a <b>TRUE</b> value for the <i>fRemember</i> parameter to tell the object to save itself to its current file. If this method returns S_FALSE, you can use the save prompt returned in the <i>ppszFileName</i> parameter to ask the end user to provide a file name. Then, you can call <b>IPersistFile.Save</b> with the file name that the user entered to perform a <b>Save As</b> operation.</para>
+    </remarks>
+    <seealso cref="IPersistFile" />
+  </member>
+  <member name="IPersistFile.IsDirty">
+    <summary>
+      <para>Determines whether an object has changed since it was last saved to its current file.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK to indicate that the object has changed. Otherwise, it returns S_FALSE.</para>
+    </returns>
+    <remarks>
+      <para>Use this method to determine whether an object should be saved before closing it. The dirty flag for an object is conditionally cleared in the <see cref="IPersistFile.Save" /> method.</para>
+      <h3>Notes to Callers</h3>
+      <para>OLE does not call <b>IsDirty</b>. Applications would not call it unless they are also saving an object to a file.</para>
+      <para>You should treat any error return codes as an indication that the object has changed. Unless this method explicitly returns S_FALSE, assume that the object must be saved.</para>
+      <h3>Notes to Implementers</h3>
+      <para>An object with no contained objects simply checks its dirty flag to return the appropriate result.</para>
+      <para>A container with one or more contained objects must maintain an internal dirty flag that is set when any of its contained objects has changed since it was last saved. To do this, the container should maintain an advise sink by implementing the <see cref="IAdviseSink" /> interface. Then, the container can register each link or embedding for data change notifications with a call to <see cref="IDataObject.DAdvise" />. Then, the container can set its internal dirty flag when it receives an <see cref="IAdviseSink.OnDataChange" /> notification. If the container does not register for data change notifications, the <b>IPersistFile.IsDirty</b> implementation would call <see cref="IPersistStorage.IsDirty" /> for each of its contained objects to determine whether they have changed.</para>
+      <para>The container can clear its dirty flag whenever it is saved, as long as the file to which the object is saved is the current working file after the save. Therefore, the dirty flag would be cleared after a successful <b>Save</b> or <b>Save As</b> operation, but not after a <b>Save A Copy As . . .</b> operation.</para>
+    </remarks>
+    <seealso cref="IAdviseSink.OnDataChange" />
+    <seealso cref="IDataObject.DAdvise" />
+    <seealso cref="IPersistFile" />
+  </member>
+  <member name="IPersistFile.Load">
+    <summary>
+      <para>Opens the specified file and initializes an object from the file contents.</para>
+    </summary>
+    <param name="pszFileName">
+      <para>The absolute path of the file to be opened.</para>
+    </param>
+    <param name="dwMode">
+      <para>The access mode to be used when opening the file. Possible values are taken from the <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM</a> enumeration. The method can treat this value as a suggestion, adding more restrictive permissions if necessary. If <i>dwMode</i> is 0, the implementation should open the file using whatever default permissions are used when a user opens the file.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The object could not be loaded due to a lack of memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The object could not be loaded for some reason other than a lack of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>IPersistFile.Load</b> loads the object from the specified file. This method is for initialization only and does not show the object to the end user. It is not equivalent to what occurs when a user selects the <b>File Open</b> command.</para>
+      <h3>Notes to Callers</h3>
+      <para>The <see cref="BindToObject" /> method in file monikers calls this method to load an object during a moniker binding operation (when a linked object is run). Typically, applications do not call this method directly.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Because the information needed to open a file varies greatly from one application to another, the object on which this method is implemented must also open the file specified by the <i>pszFileName</i> parameter. This differs from the <see cref="IPersistStorage.Load" /> and <see cref="IPersistStream.Load" />, in which the caller opens the storage or stream and then passes an open storage or stream pointer to the loaded object.</para>
+      <para>For an application that normally uses OLE compound files, your <b>IPersistFile.Load</b> implementation can simply call the <see cref="StgOpenStorage" /> function to open the storage object in the specified file. Then, you can proceed with normal initialization. Applications that do not use storage objects can perform normal file-opening procedures.</para>
+      <para>When the object has been loaded, your implementation should register the object in the running object table (see <see cref="IRunningObjectTable.Register" />).</para>
+    </remarks>
+    <seealso cref="IPersistFile" />
+  </member>
+  <member name="IPersistFile.Save">
+    <summary>
+      <para>Saves a copy of the object to the specified file.</para>
+    </summary>
+    <param name="pszFileName">
+      <para>The absolute path of the file to which the object should be saved. If <i>pszFileName</i> is <b>NULL</b>, the object should save its data to the current file, if there is one.</para>
+    </param>
+    <param name="fRemember">
+      <para>Indicates whether the <i>pszFileName</i> parameter is to be used as the current working file. If <b>TRUE</b>, <i>pszFileName</i> becomes the current file and the object should clear its dirty flag after the save. If <b>FALSE</b>, this save operation is a <b>Save A Copy As ...</b> operation. In this case, the current file is unchanged and the object should not clear its dirty flag. If <i>pszFileName</i> is <b>NULL</b>, the implementation should ignore the <i>fRemember</i> flag.</para>
+    </param>
+    <returns>
+      <para>If the object was successfully saved, the return value is S_OK. Otherwise, it is S_FALSE. This method can also return various storage errors.</para>
+    </returns>
+    <remarks>
+      <para>This method can be called to save an object to the specified file in one of three ways:</para>
+      <para>The implementer must detect which type of save operation the caller is requesting. If the <i>pszFileName</i> parameter is <b>NULL</b>, a <b>Save</b> is being requested. If the <i>pszFileName</i> parameter is not <b>NULL</b>, use the value of the <i>fRemember</i> parameter to distinguish between a <b>Save As</b> and a <b>Save a Copy As</b>.</para>
+      <para>In <b>Save</b> or <b>Save As</b> operations, <b>IPersistFile.Save</b> clears the internal dirty flag after the save and sends <see cref="IAdviseSink.OnSave" /> notifications to any advisory connections (see also <see cref="IOleAdviseHolder.SendOnSave" />). Also, in these operations, the object is in NoScribble mode until it receives an <see cref="IPersistFile.SaveCompleted" /> call. In NoScribble mode, the object must not write to the file.</para>
+      <para>In the <b>Save As</b> scenario, the implementation should also send <see cref="IAdviseSink.OnRename" /> notifications to any advisory connections (see also <see cref="IOleAdviseHolder.SendOnRename" />).</para>
+      <para>In the <b>Save a Copy As</b> scenario, the implementation does not clear the internal dirty flag after the save.</para>
+      <h3>Notes to Callers</h3>
+      <para>OLE does not call <b>IPersistFile.Save</b>. Typically, applications would not call it unless they are saving an object to a file directly, which is generally left to the end-user.</para>
+    </remarks>
+    <seealso cref="IPersistFile" />
+  </member>
+  <member name="IPersistFile.SaveCompleted">
+    <summary>
+      <para>Notifies the object that it can write to its file. It does this by notifying the object that it can revert from NoScribble mode (in which it must not write to its file), to Normal mode (in which it can). The component enters NoScribble mode when it receives an <see cref="IPersistFile.Save" /> call.</para>
+    </summary>
+    <param name="pszFileName">
+      <para>The absolute path of the file where the object was saved previously.</para>
+    </param>
+    <returns>
+      <para>This method always returns S_OK.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>SaveCompleted</b> is called when a call to <see cref="IPersistFile.Save" /> is completed, and the file that was saved is now the current working file (having been saved with <b>Save</b> or <b>Save As</b> operations). The call to <b>Save</b> puts the object into NoScribble mode so it cannot write to its file. When <b>SaveCompleted</b> is called, the object reverts to Normal mode, in which it is free to write to its file.</para>
+      <h3>Notes to Callers</h3>
+      <para>OLE does not call the <b>SaveCompleted</b> method. Typically, applications would not call it unless they are saving objects directly to files, an operation which is generally left to the end-user.</para>
+    </remarks>
+    <seealso cref="IPersistFile" />
+  </member>
+  <member name="IPersistFile">
+    <summary>
+      <para>Enables an object to be loaded from or saved to a disk file, rather than a storage object or stream. Because the information needed to open a file varies greatly from one application to another, the implementation of <see cref="IPersistFile.Load" /> on the object must also open its disk file.</para>
+    </summary>
+  </member>
+</doc>

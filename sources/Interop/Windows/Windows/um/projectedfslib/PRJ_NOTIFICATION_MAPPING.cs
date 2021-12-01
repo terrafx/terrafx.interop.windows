@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PRJ_NOTIFICATION_MAPPING.xml' path='doc/member[@name="PRJ_NOTIFICATION_MAPPING"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
 public unsafe partial struct PRJ_NOTIFICATION_MAPPING
 {
+    /// <include file='PRJ_NOTIFICATION_MAPPING.xml' path='doc/member[@name="PRJ_NOTIFICATION_MAPPING.NotificationBitMask"]/*' />
     public PRJ_NOTIFY_TYPES NotificationBitMask;
 
+    /// <include file='PRJ_NOTIFICATION_MAPPING.xml' path='doc/member[@name="PRJ_NOTIFICATION_MAPPING.NotificationRoot"]/*' />
     [NativeTypeName("PCWSTR")]
     public ushort* NotificationRoot;
 }

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRFILLPATH.xml' path='doc/member[@name="EMRFILLPATH"]/*' />
 public partial struct EMRFILLPATH
 {
+    /// <include file='EMRFILLPATH.xml' path='doc/member[@name="EMRFILLPATH.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRFILLPATH.xml' path='doc/member[@name="EMRFILLPATH.rclBounds"]/*' />
     public RECTL rclBounds;
 }

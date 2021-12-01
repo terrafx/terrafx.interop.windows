@@ -7,7 +7,9 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VIRTUALIZATION_INSTANCE_INFO_OUTPUT.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_OUTPUT"]/*' />
 public partial struct VIRTUALIZATION_INSTANCE_INFO_OUTPUT
 {
+    /// <include file='VIRTUALIZATION_INSTANCE_INFO_OUTPUT.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_OUTPUT.VirtualizationInstanceID"]/*' />
     public Guid VirtualizationInstanceID;
 }

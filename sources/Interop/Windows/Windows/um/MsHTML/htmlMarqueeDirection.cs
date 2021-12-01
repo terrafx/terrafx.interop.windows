@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlMarqueeDirection.xml' path='doc/member[@name="htmlMarqueeDirection"]/*' />
 public enum htmlMarqueeDirection
 {
+    /// <include file='htmlMarqueeDirection.xml' path='doc/member[@name="htmlMarqueeDirection.htmlMarqueeDirectionleft"]/*' />
     htmlMarqueeDirectionleft = 1,
+
+    /// <include file='htmlMarqueeDirection.xml' path='doc/member[@name="htmlMarqueeDirection.htmlMarqueeDirectionright"]/*' />
     htmlMarqueeDirectionright = 3,
+
+    /// <include file='htmlMarqueeDirection.xml' path='doc/member[@name="htmlMarqueeDirection.htmlMarqueeDirectionup"]/*' />
     htmlMarqueeDirectionup = 5,
+
+    /// <include file='htmlMarqueeDirection.xml' path='doc/member[@name="htmlMarqueeDirection.htmlMarqueeDirectiondown"]/*' />
     htmlMarqueeDirectiondown = 7,
+
+    /// <include file='htmlMarqueeDirection.xml' path='doc/member[@name="htmlMarqueeDirection.htmlMarqueeDirection_Max"]/*' />
     htmlMarqueeDirection_Max = 2147483647,
 }

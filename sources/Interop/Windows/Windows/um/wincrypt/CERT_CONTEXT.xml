@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_CONTEXT">
+    <summary>
+      <para>The <b>CERT_CONTEXT</b> structure contains both the encoded and decoded representations of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a>. A certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a> returned by one of the functions defined in Wincrypt.h must be freed by calling the
+<see cref="CertFreeCertificateContext" /> function. The
+<see cref="CertDuplicateCertificateContext" /> function can be called to make a duplicate copy (which also must be freed by calling <b>CertFreeCertificateContext</b>).</para>
+    </summary>
+    <seealso cref="CERT_INFO" />
+    <seealso cref="CRYPT_SIGN_MESSAGE_PARA" />
+    <seealso cref="CRYPT_VERIFY_MESSAGE_PARA" />
+    <seealso cref="CertAddCertificateContextToStore" />
+    <seealso cref="CertAddEncodedCertificateToStore" />
+    <seealso cref="CertCreateCertificateContext" />
+    <seealso cref="CertEnumCertificatesInStore" />
+    <seealso cref="CertFindCertificateInStore" />
+    <seealso cref="CertFreeCertificateContext" />
+    <seealso cref="CertGetIssuerCertificateFromStore" />
+    <seealso cref="CertGetSubjectCertificateFromStore" />
+    <seealso cref="CertVerifyRevocation" />
+    <seealso cref="CryptVerifyMessageSignature" />
+  </member>
+  <member name="CERT_CONTEXT.dwCertEncodingType">
+    <summary>
+      <para>Type of encoding used. It is always acceptable to specify both the certificate and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/m-gly">message encoding types</a> by combining them with a bitwise-<b>OR</b> operation as shown in the following example:</para>
+      <para>X509_ASN_ENCODING | PKCS_7_ASN_ENCODING Currently defined encoding types are:</para>
+      <list type="bullet">
+        <item>
+          <description>X509_ASN_ENCODING</description>
+        </item>
+        <item>
+          <description>PKCS_7_ASN_ENCODING</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_CONTEXT.pbCertEncoded">
+    <summary>
+      <para>A pointer to a buffer that contains the encoded certificate.</para>
+    </summary>
+  </member>
+  <member name="CERT_CONTEXT.cbCertEncoded">
+    <summary>
+      <para>The size, in bytes, of the encoded certificate.</para>
+    </summary>
+  </member>
+  <member name="CERT_CONTEXT.pCertInfo">
+    <summary>
+      <para>The address of a <see cref="CERT_INFO" /> structure that contains the certificate information.</para>
+    </summary>
+  </member>
+  <member name="CERT_CONTEXT.hCertStore">
+    <summary>
+      <para>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate store</a> that contains the certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a>.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_CONTENT_INFO.xml' path='doc/member[@name="CRYPT_CONTENT_INFO"]/*' />
 public unsafe partial struct CRYPT_CONTENT_INFO
 {
+    /// <include file='CRYPT_CONTENT_INFO.xml' path='doc/member[@name="CRYPT_CONTENT_INFO.pszObjId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszObjId;
 
+    /// <include file='CRYPT_CONTENT_INFO.xml' path='doc/member[@name="CRYPT_CONTENT_INFO.Content"]/*' />
     [NativeTypeName("CRYPT_DER_BLOB")]
     public CRYPT_DATA_BLOB Content;
 }

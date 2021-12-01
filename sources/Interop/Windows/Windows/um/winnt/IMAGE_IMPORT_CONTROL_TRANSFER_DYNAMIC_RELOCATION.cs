@@ -8,11 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION
 {
     public uint _bitfield;
 
+    /// <include file='IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION.PageRelativeOffset"]/*' />
     [NativeTypeName("DWORD : 12")]
     public uint PageRelativeOffset
     {
@@ -29,6 +31,7 @@ public partial struct IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION
         }
     }
 
+    /// <include file='IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION.IndirectCall"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint IndirectCall
     {
@@ -45,6 +48,7 @@ public partial struct IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION
         }
     }
 
+    /// <include file='IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION.IATIndex"]/*' />
     [NativeTypeName("DWORD : 19")]
     public uint IATIndex
     {

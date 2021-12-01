@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPSEMANTICFORMAT.xml' path='doc/member[@name="SPSEMANTICFORMAT"]/*' />
 public enum SPSEMANTICFORMAT
 {
+    /// <include file='SPSEMANTICFORMAT.xml' path='doc/member[@name="SPSEMANTICFORMAT.SPSMF_SAPI_PROPERTIES"]/*' />
     SPSMF_SAPI_PROPERTIES = 0,
+
+    /// <include file='SPSEMANTICFORMAT.xml' path='doc/member[@name="SPSEMANTICFORMAT.SPSMF_SRGS_SEMANTICINTERPRETATION_MS"]/*' />
     SPSMF_SRGS_SEMANTICINTERPRETATION_MS = 1,
+
+    /// <include file='SPSEMANTICFORMAT.xml' path='doc/member[@name="SPSEMANTICFORMAT.SPSMF_SRGS_SAPIPROPERTIES"]/*' />
     SPSMF_SRGS_SAPIPROPERTIES = 2,
+
+    /// <include file='SPSEMANTICFORMAT.xml' path='doc/member[@name="SPSEMANTICFORMAT.SPSMF_UPS"]/*' />
     SPSMF_UPS = 4,
+
+    /// <include file='SPSEMANTICFORMAT.xml' path='doc/member[@name="SPSEMANTICFORMAT.SPSMF_SRGS_SEMANTICINTERPRETATION_W3C"]/*' />
     SPSMF_SRGS_SEMANTICINTERPRETATION_W3C = 8,
 }

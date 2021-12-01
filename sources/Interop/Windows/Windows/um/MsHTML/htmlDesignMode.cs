@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlDesignMode.xml' path='doc/member[@name="htmlDesignMode"]/*' />
 public enum htmlDesignMode
 {
+    /// <include file='htmlDesignMode.xml' path='doc/member[@name="htmlDesignMode.htmlDesignModeInherit"]/*' />
     htmlDesignModeInherit = -2,
+
+    /// <include file='htmlDesignMode.xml' path='doc/member[@name="htmlDesignMode.htmlDesignModeOn"]/*' />
     htmlDesignModeOn = -1,
+
+    /// <include file='htmlDesignMode.xml' path='doc/member[@name="htmlDesignMode.htmlDesignModeOff"]/*' />
     htmlDesignModeOff = 0,
+
+    /// <include file='htmlDesignMode.xml' path='doc/member[@name="htmlDesignMode.htmlDesignMode_Max"]/*' />
     htmlDesignMode_Max = 2147483647,
 }

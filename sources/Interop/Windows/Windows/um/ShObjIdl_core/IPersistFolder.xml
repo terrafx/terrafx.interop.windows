@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPersistFolder.Initialize">
+    <summary>
+      <para>Instructs a Shell folder object to initialize itself based on the information passed.</para>
+    </summary>
+    <param name="pidl">
+      <para>Type: <b>LPCITEMIDLIST</b></para>
+      <para>The address of the <see cref="ITEMIDLIST" /> (item identifier list) structure that specifies the absolute location of the folder.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>All objects that implement the <see cref="IShellFolder" /> interface for use in the Shell's namespace must implement this method. When a folder's location in the namespace is not a relevant consideration, this method can simply return S_OK. When the location is relevant to the folder, you should store the fully qualified IDLIST passed in for later reference.</para>
+      <para>For example, if the folder implementation needs to construct a fully qualified pointer to an item identifier list (PIDL) to elements that it contains, the PIDL passed to this method should be used to construct the fully qualified PIDLs.</para>
+    </remarks>
+  </member>
+  <member name="IPersistFolder">
+    <summary>
+      <para>Exposes a method that initializes Shell folder objects.</para>
+    </summary>
+    <remarks>
+      <para>When you implement a Shell namespace extension, specifically the <see cref="IShellFolder" /> interface, you must implement this interface so the folder object can be initialized. Implementation of this interface is how the folder is told where it is in the Shell namespace.</para>
+      <para>You do not use this interface directly. It is used by the file system implementation of the <see cref="IShellFolder.BindToObject" /> interface when it is initializing a Shell folder object.</para>
+    </remarks>
+  </member>
+</doc>

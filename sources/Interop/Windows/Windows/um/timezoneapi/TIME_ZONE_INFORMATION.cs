@@ -5,24 +5,32 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TIME_ZONE_INFORMATION.xml' path='doc/member[@name="TIME_ZONE_INFORMATION"]/*' />
 public unsafe partial struct TIME_ZONE_INFORMATION
 {
+    /// <include file='TIME_ZONE_INFORMATION.xml' path='doc/member[@name="TIME_ZONE_INFORMATION.Bias"]/*' />
     [NativeTypeName("LONG")]
     public int Bias;
 
+    /// <include file='TIME_ZONE_INFORMATION.xml' path='doc/member[@name="TIME_ZONE_INFORMATION.StandardName"]/*' />
     [NativeTypeName("WCHAR [32]")]
     public fixed ushort StandardName[32];
 
+    /// <include file='TIME_ZONE_INFORMATION.xml' path='doc/member[@name="TIME_ZONE_INFORMATION.StandardDate"]/*' />
     public SYSTEMTIME StandardDate;
 
+    /// <include file='TIME_ZONE_INFORMATION.xml' path='doc/member[@name="TIME_ZONE_INFORMATION.StandardBias"]/*' />
     [NativeTypeName("LONG")]
     public int StandardBias;
 
+    /// <include file='TIME_ZONE_INFORMATION.xml' path='doc/member[@name="TIME_ZONE_INFORMATION.DaylightName"]/*' />
     [NativeTypeName("WCHAR [32]")]
     public fixed ushort DaylightName[32];
 
+    /// <include file='TIME_ZONE_INFORMATION.xml' path='doc/member[@name="TIME_ZONE_INFORMATION.DaylightDate"]/*' />
     public SYSTEMTIME DaylightDate;
 
+    /// <include file='TIME_ZONE_INFORMATION.xml' path='doc/member[@name="TIME_ZONE_INFORMATION.DaylightBias"]/*' />
     [NativeTypeName("LONG")]
     public int DaylightBias;
 }

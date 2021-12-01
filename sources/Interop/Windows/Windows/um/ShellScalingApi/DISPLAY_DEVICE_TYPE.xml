@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAY_DEVICE_TYPE">
+    <summary>
+      <para>Indicates whether the device is a primary or immersive type of display.
+<b>Note</b>  The functions that use these enumeration values are no longer supported as of Windows 8.1.</para>
+    </summary>
+    <seealso cref="GetScaleFactorForDevice" />
+    <seealso cref="RegisterScaleChangeNotifications" />
+    <seealso cref="RevokeScaleChangeNotifications" />
+  </member>
+  <member name="DISPLAY_DEVICE_TYPE.DEVICE_PRIMARY">
+    <summary>
+      <para>The device is a primary display device.</para>
+    </summary>
+  </member>
+  <member name="DISPLAY_DEVICE_TYPE.DEVICE_IMMERSIVE">
+    <summary>
+      <para>The device is an immersive display device.</para>
+    </summary>
+  </member>
+</doc>

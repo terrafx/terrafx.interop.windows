@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WRENCHSTATES.xml' path='doc/member[@name="WRENCHSTATES"]/*' />
 public enum WRENCHSTATES
 {
+    /// <include file='WRENCHSTATES.xml' path='doc/member[@name="WRENCHSTATES.TTWS_NORMAL"]/*' />
     TTWS_NORMAL = 1,
+
+    /// <include file='WRENCHSTATES.xml' path='doc/member[@name="WRENCHSTATES.TTWS_HOT"]/*' />
     TTWS_HOT = 2,
+
+    /// <include file='WRENCHSTATES.xml' path='doc/member[@name="WRENCHSTATES.TTWS_PRESSED"]/*' />
     TTWS_PRESSED = 3,
 }

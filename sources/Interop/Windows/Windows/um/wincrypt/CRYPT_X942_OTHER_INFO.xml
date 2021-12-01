@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_X942_OTHER_INFO">
+    <summary>
+      <para>The <b>CRYPT_X942_OTHER_INFO</b> structure contains additional key generation information.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_X942_OTHER_INFO.pszContentEncryptionObjId">
+    <summary>
+      <para>OID of the content encryption algorithm.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_X942_OTHER_INFO.rgbCounter">
+    <summary>
+      <para>Array of BYTES of length <b>CRYPT_X942_COUNTER_BYTE_LENGTH</b>. The value is stored in <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">little-endian</a> order.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_X942_OTHER_INFO.rgbKeyLength">
+    <summary>
+      <para>Array of BYTES of length <b>CRYPT_X942_KEY_LENGTH_BYTE_LENGTH</b>. The value is stored in little-endian order.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_X942_OTHER_INFO.PubInfo">
+    <summary>
+      <para>Optional <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> for additional information.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyNotifySink.OnChanged">
+    <summary>
+      <para>Notifies a sink that a <a href="https://docs.microsoft.com//windows/desktop/Midl/bindable">bindable</a> property has changed.</para>
+    </summary>
+    <param name="dispID">
+      <para>The dispatch identifier of the property that changed, or DISPID_UNKNOWN if multiple properties have changed. The client (owner of the sink) should retrieve the current value of each property of interest from the object that generated the notification.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK in all cases.</para>
+    </returns>
+    <remarks>
+      <para>S_OK is returned in all cases even when the sink does not need [<a href="https://docs.microsoft.com//windows/desktop/Midl/bindable">bindable</a>] properties or when some other failure has occurred. In short, the calling object simply sends the notification and cannot attempt to use an error code (such as E_NOTIMPL) to determine whether to not send the notification in the future. Such semantics are not part of this interface.</para>
+    </remarks>
+    <seealso cref="IPropertyNotifySink" />
+  </member>
+  <member name="IPropertyNotifySink.OnRequestEdit">
+    <summary>
+      <para>Notifies a sink that a <a href="https://docs.microsoft.com//windows/desktop/Midl/requestedit">requestedit</a> property is about to change.</para>
+    </summary>
+    <param name="dispID">
+      <para>The dispatch identifier of the property that is about to change or DISPID_UNKNOWN if multiple properties are about to change.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified property or properties are allowed to change.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified property or properties are not allowed to change. The caller must obey this return value by discarding the new property value(s). This is part of the contract of the [<a href="https://docs.microsoft.com//windows/desktop/Midl/requestedit">requestedit</a>] attribute and this method.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The sink may choose to allow or disallow the change to take place. For example, the sink may enforce a read-only state on the property. DISPID_UNKNOWN is a valid parameter to this method to indicate that multiple properties are about to change. In this case, the sink can enforce a global read-only state for all [<a href="https://docs.microsoft.com//windows/desktop/Midl/requestedit">requestedit</a>] properties in the object, including any specific ones that the sink otherwise recognizes.</para>
+      <para>If the sink allows changes, the object must also make <see cref="IPropertyNotifySink.OnChanged" /> notifications for any properties that are marked [<a href="https://docs.microsoft.com//windows/desktop/Midl/bindable">bindable</a>] in addition to [<a href="https://docs.microsoft.com//windows/desktop/Midl/requestedit">requestedit</a>].</para>
+      <para>This method cannot be used to implement any sort of data validation. At the time of the call, the desired new value of the property is unavailable and thus cannot be validated. This method's only purpose is to allow the sink to enforce a read-only state on a property.</para>
+    </remarks>
+    <seealso cref="IPropertyNotifySink" />
+  </member>
+  <member name="IPropertyNotifySink">
+    <summary>
+      <para>Implemented by a sink object to receive notifications about property changes from an object that supports <b>IPropertyNotifySink</b> as an outgoing interface. The client that needs to receive the notifications in this interface (from a supporting connectable object) creates a sink with this interface and connects it to the connectable object through the connection point mechanism. For more information on connection points, see <see cref="IConnectionPointContainer" />.</para>
+    </summary>
+    <remarks>
+      <para>The object is itself required to call the methods of <b>IPropertyNotifySink</b> only for those properties marked with the [<a href="https://docs.microsoft.com//windows/desktop/Midl/bindable">bindable</a>] and [<a href="https://docs.microsoft.com//windows/desktop/Midl/requestedit">requestedit</a>] attributes in the object's type information. When the object changes a [<b>bindable</b>] property, it is required to call <see cref="IPropertyNotifySink.OnChanged" />. When the object is about to change a [<b>requestedit</b>] property, it must call <see cref="IPropertyNotifySink.OnRequestEdit" /> before changing the property and must also honor the action specified by the sink on return from this call.</para>
+      <para>The one exception to this rule is that no notifications are sent as a result of an object's initialization or loading procedures. At initialization time, it is assumed that all properties change and that all must be allowed to change. Notifications to this interface are therefore meaningful only in the context of a fully initialized/loaded object.</para>
+    </remarks>
+    <seealso cref="IConnectionPoint" />
+    <seealso cref="IConnectionPointContainer" />
+  </member>
+</doc>

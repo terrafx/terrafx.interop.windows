@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_INPUT_DESCRIPTION.xml' path='doc/member[@name="D2D1_INPUT_DESCRIPTION"]/*' />
 public partial struct D2D1_INPUT_DESCRIPTION
 {
+    /// <include file='D2D1_INPUT_DESCRIPTION.xml' path='doc/member[@name="D2D1_INPUT_DESCRIPTION.filter"]/*' />
     public D2D1_FILTER filter;
 
+    /// <include file='D2D1_INPUT_DESCRIPTION.xml' path='doc/member[@name="D2D1_INPUT_DESCRIPTION.levelOfDetailCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint levelOfDetailCount;
 }

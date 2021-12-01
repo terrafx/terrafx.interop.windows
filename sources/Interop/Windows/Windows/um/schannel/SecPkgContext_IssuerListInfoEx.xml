@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SecPkgContext_IssuerListInfoEx">
+    <summary>
+      <para>The <b>SecPkgContext_IssuerListInfoEx</b> structure holds a list of trusted <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authorities</a> (CAs). This structure is used by the Schannel <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security package</a> <see cref="InitializeSecurityContext (Schannel)" /> function.</para>
+      <para>This attribute is supported only by the Schannel <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security support provider</a> (SSP).</para>
+      <para>This attribute is available only to client applications and can be queried only after a call to the <see cref="InitializeSecurityContext (Schannel)" /> function returns the value <b>SEC_E_INCOMPLETE_CREDENTIALS</b>.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_IssuerListInfoEx.aIssuers">
+    <summary>
+      <para>A pointer to
+an array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structures that contains a list of the names of CAs that the server trusts.</para>
+      <para>When you have finished using the data in this array, free it by calling the <see cref="FreeContextBuffer" /> function.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_IssuerListInfoEx.cIssuers">
+    <summary>
+      <para>The number of names in <b>aIssuers</b>.</para>
+    </summary>
+  </member>
+</doc>

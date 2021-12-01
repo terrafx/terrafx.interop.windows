@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2"]/*' />
 [Guid("D30C1661-CDAF-11D0-8A3E-00C04FC9E26E")]
 [NativeTypeName("struct IWebBrowser2 : IWebBrowserApp")]
 [NativeInheritance("IWebBrowserApp")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, Guid*, void**, int>)(lpVtbl[0]))((IWebBrowser2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, uint>)(lpVtbl[1]))((IWebBrowser2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, uint>)(lpVtbl[2]))((IWebBrowser2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, uint*, int>)(lpVtbl[3]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IWebBrowser2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IWebBrowser2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IWebBrowser2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <inheritdoc cref="IWebBrowser.GoBack" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GoBack()
@@ -74,6 +83,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int>)(lpVtbl[7]))((IWebBrowser2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWebBrowser.GoForward" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GoForward()
@@ -81,6 +91,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int>)(lpVtbl[8]))((IWebBrowser2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWebBrowser.GoHome" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GoHome()
@@ -88,6 +99,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int>)(lpVtbl[9]))((IWebBrowser2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWebBrowser.GoSearch" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GoSearch()
@@ -95,6 +107,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int>)(lpVtbl[10]))((IWebBrowser2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWebBrowser.Navigate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Navigate([NativeTypeName("BSTR")] ushort* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers)
@@ -102,6 +115,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[11]))((IWebBrowser2*)Unsafe.AsPointer(ref this), URL, Flags, TargetFrameName, PostData, Headers);
     }
 
+    /// <inheritdoc cref="IWebBrowser.Refresh" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Refresh()
@@ -109,6 +123,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int>)(lpVtbl[12]))((IWebBrowser2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWebBrowser.Refresh2" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Refresh2(VARIANT* Level)
@@ -116,6 +131,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, VARIANT*, int>)(lpVtbl[13]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Level);
     }
 
+    /// <inheritdoc cref="IWebBrowser.Stop" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT Stop()
@@ -123,6 +139,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int>)(lpVtbl[14]))((IWebBrowser2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_Application" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_Application(IDispatch** ppDisp)
@@ -130,6 +147,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, IDispatch**, int>)(lpVtbl[15]))((IWebBrowser2*)Unsafe.AsPointer(ref this), ppDisp);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_Parent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_Parent(IDispatch** ppDisp)
@@ -137,6 +155,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, IDispatch**, int>)(lpVtbl[16]))((IWebBrowser2*)Unsafe.AsPointer(ref this), ppDisp);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_Container" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_Container(IDispatch** ppDisp)
@@ -144,6 +163,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, IDispatch**, int>)(lpVtbl[17]))((IWebBrowser2*)Unsafe.AsPointer(ref this), ppDisp);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_Document" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_Document(IDispatch** ppDisp)
@@ -151,6 +171,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, IDispatch**, int>)(lpVtbl[18]))((IWebBrowser2*)Unsafe.AsPointer(ref this), ppDisp);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_TopLevelContainer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_TopLevelContainer([NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -158,6 +179,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[19]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pBool);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_Type" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_Type([NativeTypeName("BSTR *")] ushort** Type)
@@ -165,6 +187,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort**, int>)(lpVtbl[20]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Type);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_Left" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_Left([NativeTypeName("long *")] int* pl)
@@ -172,6 +195,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int*, int>)(lpVtbl[21]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pl);
     }
 
+    /// <inheritdoc cref="IWebBrowser.put_Left" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT put_Left([NativeTypeName("long")] int Left)
@@ -179,6 +203,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int, int>)(lpVtbl[22]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Left);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_Top" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_Top([NativeTypeName("long *")] int* pl)
@@ -186,6 +211,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int*, int>)(lpVtbl[23]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pl);
     }
 
+    /// <inheritdoc cref="IWebBrowser.put_Top" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT put_Top([NativeTypeName("long")] int Top)
@@ -193,6 +219,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int, int>)(lpVtbl[24]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Top);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_Width" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT get_Width([NativeTypeName("long *")] int* pl)
@@ -200,6 +227,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int*, int>)(lpVtbl[25]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pl);
     }
 
+    /// <inheritdoc cref="IWebBrowser.put_Width" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT put_Width([NativeTypeName("long")] int Width)
@@ -207,6 +235,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int, int>)(lpVtbl[26]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Width);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_Height" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT get_Height([NativeTypeName("long *")] int* pl)
@@ -214,6 +243,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int*, int>)(lpVtbl[27]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pl);
     }
 
+    /// <inheritdoc cref="IWebBrowser.put_Height" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT put_Height([NativeTypeName("long")] int Height)
@@ -221,6 +251,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int, int>)(lpVtbl[28]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Height);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_LocationName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT get_LocationName([NativeTypeName("BSTR *")] ushort** LocationName)
@@ -228,6 +259,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort**, int>)(lpVtbl[29]))((IWebBrowser2*)Unsafe.AsPointer(ref this), LocationName);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_LocationURL" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT get_LocationURL([NativeTypeName("BSTR *")] ushort** LocationURL)
@@ -235,6 +267,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort**, int>)(lpVtbl[30]))((IWebBrowser2*)Unsafe.AsPointer(ref this), LocationURL);
     }
 
+    /// <inheritdoc cref="IWebBrowser.get_Busy" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT get_Busy([NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -242,6 +275,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[31]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pBool);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.Quit" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT Quit()
@@ -249,6 +283,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int>)(lpVtbl[32]))((IWebBrowser2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.ClientToWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT ClientToWindow(int* pcx, int* pcy)
@@ -256,6 +291,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int*, int*, int>)(lpVtbl[33]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pcx, pcy);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.PutProperty" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT PutProperty([NativeTypeName("BSTR")] ushort* Property, VARIANT vtValue)
@@ -263,6 +299,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort*, VARIANT, int>)(lpVtbl[34]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Property, vtValue);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.GetProperty" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT GetProperty([NativeTypeName("BSTR")] ushort* Property, VARIANT* pvtValue)
@@ -270,6 +307,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort*, VARIANT*, int>)(lpVtbl[35]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Property, pvtValue);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.get_Name" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** Name)
@@ -277,6 +315,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort**, int>)(lpVtbl[36]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.get_HWND" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT get_HWND([NativeTypeName("SHANDLE_PTR *")] nint* pHWND)
@@ -284,6 +323,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, nint*, int>)(lpVtbl[37]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pHWND);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.get_FullName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT get_FullName([NativeTypeName("BSTR *")] ushort** FullName)
@@ -291,6 +331,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort**, int>)(lpVtbl[38]))((IWebBrowser2*)Unsafe.AsPointer(ref this), FullName);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.get_Path" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT get_Path([NativeTypeName("BSTR *")] ushort** Path)
@@ -298,6 +339,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort**, int>)(lpVtbl[39]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Path);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.get_Visible" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT get_Visible([NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -305,6 +347,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[40]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pBool);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.put_Visible" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT put_Visible([NativeTypeName("VARIANT_BOOL")] short Value)
@@ -312,6 +355,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[41]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Value);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.get_StatusBar" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT get_StatusBar([NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -319,6 +363,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[42]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pBool);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.put_StatusBar" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     public HRESULT put_StatusBar([NativeTypeName("VARIANT_BOOL")] short Value)
@@ -326,6 +371,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[43]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Value);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.get_StatusText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
     public HRESULT get_StatusText([NativeTypeName("BSTR *")] ushort** StatusText)
@@ -333,6 +379,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort**, int>)(lpVtbl[44]))((IWebBrowser2*)Unsafe.AsPointer(ref this), StatusText);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.put_StatusText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
     public HRESULT put_StatusText([NativeTypeName("BSTR")] ushort* StatusText)
@@ -340,6 +387,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, ushort*, int>)(lpVtbl[45]))((IWebBrowser2*)Unsafe.AsPointer(ref this), StatusText);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.get_ToolBar" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
     public HRESULT get_ToolBar(int* Value)
@@ -347,6 +395,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int*, int>)(lpVtbl[46]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Value);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.put_ToolBar" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
     public HRESULT put_ToolBar(int Value)
@@ -354,6 +403,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, int, int>)(lpVtbl[47]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Value);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.get_MenuBar" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
     public HRESULT get_MenuBar([NativeTypeName("VARIANT_BOOL *")] short* Value)
@@ -361,6 +411,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[48]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Value);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.put_MenuBar" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
     public HRESULT put_MenuBar([NativeTypeName("VARIANT_BOOL")] short Value)
@@ -368,6 +419,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[49]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Value);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.get_FullScreen" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
     public HRESULT get_FullScreen([NativeTypeName("VARIANT_BOOL *")] short* pbFullScreen)
@@ -375,6 +427,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[50]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pbFullScreen);
     }
 
+    /// <inheritdoc cref="IWebBrowserApp.put_FullScreen" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
     public HRESULT put_FullScreen([NativeTypeName("VARIANT_BOOL")] short bFullScreen)
@@ -382,6 +435,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[51]))((IWebBrowser2*)Unsafe.AsPointer(ref this), bFullScreen);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.Navigate2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
     public HRESULT Navigate2(VARIANT* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers)
@@ -389,6 +443,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[52]))((IWebBrowser2*)Unsafe.AsPointer(ref this), URL, Flags, TargetFrameName, PostData, Headers);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.QueryStatusWB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
     public HRESULT QueryStatusWB(OLECMDID cmdID, OLECMDF* pcmdf)
@@ -396,6 +451,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, OLECMDID, OLECMDF*, int>)(lpVtbl[53]))((IWebBrowser2*)Unsafe.AsPointer(ref this), cmdID, pcmdf);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.ExecWB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
     public HRESULT ExecWB(OLECMDID cmdID, OLECMDEXECOPT cmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut)
@@ -403,6 +459,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, OLECMDID, OLECMDEXECOPT, VARIANT*, VARIANT*, int>)(lpVtbl[54]))((IWebBrowser2*)Unsafe.AsPointer(ref this), cmdID, cmdexecopt, pvaIn, pvaOut);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.ShowBrowserBar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(55)]
     public HRESULT ShowBrowserBar(VARIANT* pvaClsid, VARIANT* pvarShow, VARIANT* pvarSize)
@@ -410,6 +467,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[55]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pvaClsid, pvarShow, pvarSize);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.get_ReadyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(56)]
     public HRESULT get_ReadyState(READYSTATE* plReadyState)
@@ -417,6 +475,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, READYSTATE*, int>)(lpVtbl[56]))((IWebBrowser2*)Unsafe.AsPointer(ref this), plReadyState);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.get_Offline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
     public HRESULT get_Offline([NativeTypeName("VARIANT_BOOL *")] short* pbOffline)
@@ -424,6 +483,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[57]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pbOffline);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.put_Offline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(58)]
     public HRESULT put_Offline([NativeTypeName("VARIANT_BOOL")] short bOffline)
@@ -431,6 +491,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[58]))((IWebBrowser2*)Unsafe.AsPointer(ref this), bOffline);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.get_Silent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(59)]
     public HRESULT get_Silent([NativeTypeName("VARIANT_BOOL *")] short* pbSilent)
@@ -438,6 +499,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[59]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pbSilent);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.put_Silent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(60)]
     public HRESULT put_Silent([NativeTypeName("VARIANT_BOOL")] short bSilent)
@@ -445,6 +507,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[60]))((IWebBrowser2*)Unsafe.AsPointer(ref this), bSilent);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.get_RegisterAsBrowser"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(61)]
     public HRESULT get_RegisterAsBrowser([NativeTypeName("VARIANT_BOOL *")] short* pbRegister)
@@ -452,6 +515,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[61]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pbRegister);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.put_RegisterAsBrowser"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(62)]
     public HRESULT put_RegisterAsBrowser([NativeTypeName("VARIANT_BOOL")] short bRegister)
@@ -459,6 +523,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[62]))((IWebBrowser2*)Unsafe.AsPointer(ref this), bRegister);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.get_RegisterAsDropTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(63)]
     public HRESULT get_RegisterAsDropTarget([NativeTypeName("VARIANT_BOOL *")] short* pbRegister)
@@ -466,6 +531,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[63]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pbRegister);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.put_RegisterAsDropTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(64)]
     public HRESULT put_RegisterAsDropTarget([NativeTypeName("VARIANT_BOOL")] short bRegister)
@@ -473,6 +539,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[64]))((IWebBrowser2*)Unsafe.AsPointer(ref this), bRegister);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.get_TheaterMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(65)]
     public HRESULT get_TheaterMode([NativeTypeName("VARIANT_BOOL *")] short* pbRegister)
@@ -480,6 +547,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[65]))((IWebBrowser2*)Unsafe.AsPointer(ref this), pbRegister);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.put_TheaterMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(66)]
     public HRESULT put_TheaterMode([NativeTypeName("VARIANT_BOOL")] short bRegister)
@@ -487,6 +555,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[66]))((IWebBrowser2*)Unsafe.AsPointer(ref this), bRegister);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.get_AddressBar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(67)]
     public HRESULT get_AddressBar([NativeTypeName("VARIANT_BOOL *")] short* Value)
@@ -494,6 +563,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[67]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Value);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.put_AddressBar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(68)]
     public HRESULT put_AddressBar([NativeTypeName("VARIANT_BOOL")] short Value)
@@ -501,6 +571,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[68]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Value);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.get_Resizable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(69)]
     public HRESULT get_Resizable([NativeTypeName("VARIANT_BOOL *")] short* Value)
@@ -508,6 +579,7 @@ public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
         return ((delegate* unmanaged<IWebBrowser2*, short*, int>)(lpVtbl[69]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Value);
     }
 
+    /// <include file='IWebBrowser2.xml' path='doc/member[@name="IWebBrowser2.put_Resizable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(70)]
     public HRESULT put_Resizable([NativeTypeName("VARIANT_BOOL")] short Value)

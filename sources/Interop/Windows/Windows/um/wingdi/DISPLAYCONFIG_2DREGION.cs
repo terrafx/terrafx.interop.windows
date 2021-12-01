@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_2DREGION.xml' path='doc/member[@name="DISPLAYCONFIG_2DREGION"]/*' />
 public partial struct DISPLAYCONFIG_2DREGION
 {
+    /// <include file='DISPLAYCONFIG_2DREGION.xml' path='doc/member[@name="DISPLAYCONFIG_2DREGION.cx"]/*' />
     [NativeTypeName("UINT32")]
     public uint cx;
 
+    /// <include file='DISPLAYCONFIG_2DREGION.xml' path='doc/member[@name="DISPLAYCONFIG_2DREGION.cy"]/*' />
     [NativeTypeName("UINT32")]
     public uint cy;
 }

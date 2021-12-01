@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFBYTESTREAM_SEEK_ORIGIN">
+    <summary>
+      <para>Specifies the origin for a seek request.</para>
+    </summary>
+    <seealso cref="IMFByteStream.Seek" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MFBYTESTREAM_SEEK_ORIGIN.msoBegin">
+    <summary>
+      <para>The seek position is specified relative to the start of the stream.</para>
+    </summary>
+  </member>
+  <member name="MFBYTESTREAM_SEEK_ORIGIN.msoCurrent">
+    <summary>
+      <para>The seek position is specified relative to the current read/write position in the stream.</para>
+    </summary>
+  </member>
+</doc>

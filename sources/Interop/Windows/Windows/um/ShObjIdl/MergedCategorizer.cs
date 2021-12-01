@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MergedCategorizer.xml' path='doc/member[@name="MergedCategorizer"]/*' />
 [Guid("8E827C11-33E7-4BC1-B242-8CD9A1C2B304")]
 public partial struct MergedCategorizer
 {

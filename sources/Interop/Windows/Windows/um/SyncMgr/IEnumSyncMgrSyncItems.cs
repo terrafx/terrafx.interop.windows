@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumSyncMgrSyncItems.xml' path='doc/member[@name="IEnumSyncMgrSyncItems"]/*' />
 [Guid("54B3ABF3-F085-4181-B546-E29C403C726B")]
 [NativeTypeName("struct IEnumSyncMgrSyncItems : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
         return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
         return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, uint>)(lpVtbl[1]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
         return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, uint>)(lpVtbl[2]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumSyncMgrSyncItems.xml' path='doc/member[@name="IEnumSyncMgrSyncItems.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, ISyncMgrSyncItem** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
         return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, uint, ISyncMgrSyncItem**, uint*, int>)(lpVtbl[3]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
+    /// <include file='IEnumSyncMgrSyncItems.xml' path='doc/member[@name="IEnumSyncMgrSyncItems.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
         return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, uint, int>)(lpVtbl[4]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <include file='IEnumSyncMgrSyncItems.xml' path='doc/member[@name="IEnumSyncMgrSyncItems.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
         return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, int>)(lpVtbl[5]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumSyncMgrSyncItems.xml' path='doc/member[@name="IEnumSyncMgrSyncItems.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumSyncMgrSyncItems** ppenum)

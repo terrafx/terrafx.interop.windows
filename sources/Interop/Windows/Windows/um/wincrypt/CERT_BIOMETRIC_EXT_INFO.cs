@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_BIOMETRIC_EXT_INFO.xml' path='doc/member[@name="CERT_BIOMETRIC_EXT_INFO"]/*' />
 public unsafe partial struct CERT_BIOMETRIC_EXT_INFO
 {
+    /// <include file='CERT_BIOMETRIC_EXT_INFO.xml' path='doc/member[@name="CERT_BIOMETRIC_EXT_INFO.cBiometricData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cBiometricData;
 
+    /// <include file='CERT_BIOMETRIC_EXT_INFO.xml' path='doc/member[@name="CERT_BIOMETRIC_EXT_INFO.rgBiometricData"]/*' />
     [NativeTypeName("PCERT_BIOMETRIC_DATA")]
     public CERT_BIOMETRIC_DATA* rgBiometricData;
 }

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_FRAMESTEP_STEP">
+    <summary>
+      <para>Specifies the number of frames to step.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/frame-stepping-property-set">Frame Stepping Property Set</seealso>
+  </member>
+  <member name="AM_FRAMESTEP_STEP.dwFramesToStep">
+    <summary>
+      <para>
+        <b>DWORD</b> value specifying to the decoder the number of frames to step. Must be at least 1. If greater than 1, this instruction means to skip <i>n</i> - 1 frames and show the <i>n</i>th.</para>
+    </summary>
+  </member>
+</doc>

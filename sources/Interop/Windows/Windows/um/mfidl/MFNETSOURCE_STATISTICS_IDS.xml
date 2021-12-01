@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFNETSOURCE_STATISTICS_IDS">
+    <summary>
+      <para>Defines statistics collected by the network source. The values in this enumeration define property identifiers (PIDs) for the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfnetsource-statistics-property">MFNETSOURCE_STATISTICS</a> property.</para>
+      <para>To retrieve statistics from the network source, call <see cref="IMFGetService.GetService" /> with the service identifier <b>MFNETSOURCE_STATISTICS_SERVICE</b> and the interface identifier IID_IPropertyStore. The retrieved pointer is an <b>IPropertyStore</b> pointer. To get the value of a network statistic, construct a <b>PROPERTYKEY</b> with <b>fmtid</b> equal to <b>MFNETSOURCE_STATISTICS</b> and <b>pid</b> equal to a value from this enumeration. Then call <b>IPropertyStore.GetValue</b> with the property key to retrieve the value of the statistic as a <see cref="PROPVARIANT" />.</para>
+      <para>In the descriptions that follow, the data type and value-type tag for the <see cref="PROPVARIANT" /> are listed in parentheses.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/client-logging">Client Logging</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_RECVPACKETS_ID">
+    <summary>
+      <para>The number of packets received (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_LOSTPACKETS_ID">
+    <summary>
+      <para>The number of packets lost (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_RESENDSREQUESTED_ID">
+    <summary>
+      <para>The number of requests to resend packets (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_RESENDSRECEIVED_ID">
+    <summary>
+      <para>The number of resent packets received (<b>LONG</b>) (<b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_RECOVEREDBYECCPACKETS_ID">
+    <summary>
+      <para>The total number of packets recovered by error correction (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_RECOVEREDBYRTXPACKETS_ID">
+    <summary>
+      <para>The total number of packets recovered by retransmission (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_OUTPACKETS_ID">
+    <summary>
+      <para>The total number of packets returned to user, including recovered packets (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_RECVRATE_ID">
+    <summary>
+      <para>The 10-second average receiving rate (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_AVGBANDWIDTHBPS_ID">
+    <summary>
+      <para>The average bandwidth of the clip (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_BYTESRECEIVED_ID">
+    <summary>
+      <para>The total number of bytes received (<b>ULONGLONG</b>, <b>VT_UI8</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_PROTOCOL_ID">
+    <summary>
+      <para>The type of control protocol used to receive the data (<b>LONG</b>, <b>VT_I4</b>). The value is a member of the <see cref="MFNETSOURCE_PROTOCOL_TYPE" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_TRANSPORT_ID">
+    <summary>
+      <para>The type of control protocol used to receive the data (<b>LONG</b>, <b>VT_I4</b>). The value is a member of the <see cref="MFNETSOURCE_TRANSPORT_TYPE" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_CACHE_STATE_ID">
+    <summary>
+      <para>The status of cache for a media file or entry (<b>LONG</b>, <b>VT_I4</b>). The value is a member of the <see cref="MFNETSOURCE_CACHE_STATE" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_LINKBANDWIDTH_ID">
+    <summary>
+      <para>The current link bandwidth, in bits per second (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_CONTENTBITRATE_ID">
+    <summary>
+      <para>The current bit rate of the content (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_SPEEDFACTOR_ID">
+    <summary>
+      <para>The negotiated speed factor used in data transmission (<b>LONG</b>, <b>VT_I4</b>). The sender transmits data at the rate of the speed factor multiplied by the bit rate of the content.</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_BUFFERSIZE_ID">
+    <summary>
+      <para>The playout buffer size, in milliseconds (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_BUFFERPROGRESS_ID">
+    <summary>
+      <para>The percentage of the playout buffer filled during buffering. The value is an integer in the range 0–100. (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_LASTBWSWITCHTS_ID">
+    <summary>
+      <para>The number of ticks since the last bandwidth switch (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_SEEKRANGESTART_ID">
+    <summary>
+      <para>The start of the seekable range, in 100-nanosecond units (<b>ULONGLONG</b>, <b>VT_UI8</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_SEEKRANGEEND_ID">
+    <summary>
+      <para>The end of the seekable range, in 100-nanosecond units (<b>ULONGLONG</b>, <b>VT_UI8</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_BUFFERINGCOUNT_ID">
+    <summary>
+      <para>The number of times buffering has occurred, including the initial buffering (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_INCORRECTLYSIGNEDPACKETS_ID">
+    <summary>
+      <para>The number of packets that had incorrect signatures (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_SIGNEDSESSION_ID">
+    <summary>
+      <para>Boolean value indicating whether the current session is signed (<b>VARIANT_BOOL</b>, <b>VT_BOOL</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_MAXBITRATE_ID">
+    <summary>
+      <para>The current maximum bit rate of the content (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_RECEPTION_QUALITY_ID">
+    <summary>
+      <para>The reception quality (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_RECOVEREDPACKETS_ID">
+    <summary>
+      <para>The total number of recovered packets (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_VBR_ID">
+    <summary>
+      <para>Boolean value indicating whether the content has a variable bit rate (<b>VARIANT_BOOL</b>, <b>VT_BOOL</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_DOWNLOADPROGRESS_ID">
+    <summary>
+      <para>The percentage of the content that has been downloaded. The value is an integer in the range 0–100.  (<b>LONG</b>, <b>VT_I4</b>).</para>
+    </summary>
+  </member>
+  <member name="MFNETSOURCE_STATISTICS_IDS.MFNETSOURCE_UNPREDEFINEDPROTOCOLNAME_ID">
+    <summary></summary>
+  </member>
+</doc>

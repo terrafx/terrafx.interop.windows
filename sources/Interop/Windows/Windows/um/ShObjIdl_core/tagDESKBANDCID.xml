@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="tagDESKBANDCID">
+    <summary>
+      <para>These command IDs can be sent to the band object's container with <see cref="IOleCommandTarget.Exec" />.</para>
+    </summary>
+    <remarks>
+      <para>Set the <i>pguidCmdGroup</i> parameter of the <see cref="IOleCommandTarget.Exec" /> method to CGID_DeskBand, the <i>pvaIn</i> parameter to the value indicated in the command description, and the <i>nCmdID</i> parameter to one of the command values listed above.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/cc144099(v=vs.85)">Creating Custom Explorer Bars, Tool Bands, and Desk Bands</seealso>
+  </member>
+  <member name="tagDESKBANDCID.DBID_BANDINFOCHANGED">
+    <summary>
+      <para>Updates all bands or a specific band.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>To update all bands:</b> Set <i>pvaIn</i> to <b>NULL</b>.</description>
+        </item>
+        <item>
+          <description>
+            <b>To update a specific band:</b> Set <i>pvaIn-&gt;lVal</i> to the ID of the band to be updated, and <i>pvaIn-&gt;vt</i> to VT_I4.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="tagDESKBANDCID.DBID_SHOWONLY">
+    <summary>
+      <para>Turns other bands in the container on or off. Set <i>pvaIn-&gt;vt</i> to VT_UNKNOWN, and set <i>pvaIn-&gt;punkVal</i> to one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Result</description>
+        </listheader>
+        <item>
+          <description>pUnk</description>
+          <description>A pointer to the band object's <see cref="IUnknown" /> interface. The desk band pointed to is shown; all other desk bands are hidden.</description>
+        </item>
+        <item>
+          <description>0</description>
+          <description>Hides all desk bands.</description>
+        </item>
+        <item>
+          <description>1</description>
+          <description>Shows all desk bands.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="tagDESKBANDCID.DBID_MAXIMIZEBAND">
+    <summary>
+      <para>Maximize the band. Set <i>pvaIn-&gt;ulVal</i> to the ID of the band to be maximized, and set <i>pvaIn-&gt;vt</i> to VT_UI4.</para>
+    </summary>
+  </member>
+  <member name="tagDESKBANDCID.DBID_PUSHCHEVRON">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5</a>. Displays a push chevron on a desk band. Set <i>pvaIn-&gt;vt</i> to VT_I4, set <i>pvaIn-&gt;lVal</i> to the ID of the desk band, and set the <see cref="IOleCommandTarget.Exec" /> method's <i>nCmdExecOpt</i> parameter to the band identifier received in the most recent call to IDeskBand.GetBandInfo.  The container sends an RB_PUSHCHEVRON message, and the band object receives an RBN_CHEVRONPUSHED notification that prompts it to display the chevron. The band ID is passed back to the band object in the lParam parameter of the RBN_CHEVRONPUSHED message.</para>
+    </summary>
+  </member>
+  <member name="tagDESKBANDCID.DBID_DELAYINIT">
+    <summary></summary>
+  </member>
+  <member name="tagDESKBANDCID.DBID_FINISHINIT">
+    <summary></summary>
+  </member>
+  <member name="tagDESKBANDCID.DBID_SETWINDOWTHEME">
+    <summary></summary>
+  </member>
+  <member name="tagDESKBANDCID.DBID_PERMITAUTOHIDE">
+    <summary></summary>
+  </member>
+</doc>

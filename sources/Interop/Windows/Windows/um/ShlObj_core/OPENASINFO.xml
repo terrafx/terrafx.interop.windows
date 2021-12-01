@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OPENASINFO">
+    <summary>
+      <para>Stores information for the <see cref="SHOpenWithDialog" /> function.</para>
+    </summary>
+    <remarks>
+      <para>Starting in Windows 10, the <b>OAIF_ALLOW_REGISTRATION</b>, <b>OAIF_FORCE_REGISTRATION</b>, and <b>OAIF_HIDE_REGISTRATION</b> flags will be ignored by <see cref="SHOpenWithDialog" />. The <b>Open With</b> dialog box can no longer be used to change the default program used to open a file extension. You can only use <b>SHOpenWithDialog</b> to open a single file.</para>
+    </remarks>
+  </member>
+  <member name="OPENASINFO.pcszFile">
+    <summary>
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to the file name.</para>
+    </summary>
+  </member>
+  <member name="OPENASINFO.pcszClass">
+    <summary>
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to the file type description. Set this parameter to <b>NULL</b> to use the file name extension of <b>pcszFile</b>.</para>
+    </summary>
+  </member>
+  <member name="OPENASINFO.oaifInFlags">
+    <summary>
+      <para>Type: <b>OPEN_AS_INFO_FLAGS</b></para>
+      <para>The characteristics of the <see cref="SHOpenWithDialog" /> dialog box. One or more of the following values.</para>
+      <h4>OAIF_ALLOW_REGISTRATION (0x00000001)</h4>
+      <para>Enable the "always use this program" checkbox. If not passed, it will be disabled.</para>
+      <h4>OAIF_REGISTER_EXT (0x00000002)</h4>
+      <para>Do the registration after the user hits the <b>OK</b> button.</para>
+      <h4>OAIF_EXEC (0x00000004)</h4>
+      <para>Execute file after registering.</para>
+      <h4>OAIF_FORCE_REGISTRATION (0x00000008)</h4>
+      <para>Force the <b>Always use this program</b> checkbox to be checked. Typically, you won't use the OAIF_ALLOW_REGISTRATION flag when you pass this value.</para>
+      <h4>OAIF_HIDE_REGISTRATION (0x00000020)</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>. Hide the <b>Always use this program</b> checkbox. If this flag is specified, the OAIF_ALLOW_REGISTRATION and OAIF_FORCE_REGISTRATION flags will be ignored.</para>
+      <h4>OAIF_URL_PROTOCOL (0x00000040)</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>. The value for the extension that is passed is actually a protocol, so the <b>Open With</b> dialog box should show applications that are registered as capable of handling that protocol.</para>
+      <h4>OAIF_FILE_IS_URI (0x00000080)</h4>
+      <para>
+        <b>Introduced in Windows 8</b>. The location pointed to by the <i>pcszFile</i> parameter is given as a URI.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DocWrap.xml' path='doc/member[@name="DocWrap"]/*' />
 [Guid("BF426F7E-7A5E-44D6-830C-A390EA9462A3")]
 public partial struct DocWrap
 {

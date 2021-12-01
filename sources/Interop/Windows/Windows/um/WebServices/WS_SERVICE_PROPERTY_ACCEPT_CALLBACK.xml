@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SERVICE_PROPERTY_ACCEPT_CALLBACK">
+    <summary>
+      <para>Specifies the callback which is called when a channel is successfully accepted.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_PROPERTY_ACCEPT_CALLBACK.callback">
+    <summary>
+      <para>The accept channel callback function reference.</para>
+    </summary>
+  </member>
+</doc>

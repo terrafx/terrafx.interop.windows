@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_DISALLOWED_USER_AGENT_SUBSTRINGS.xml' path='doc/member[@name="WS_DISALLOWED_USER_AGENT_SUBSTRINGS"]/*' />
 public unsafe partial struct WS_DISALLOWED_USER_AGENT_SUBSTRINGS
 {
+    /// <include file='WS_DISALLOWED_USER_AGENT_SUBSTRINGS.xml' path='doc/member[@name="WS_DISALLOWED_USER_AGENT_SUBSTRINGS.subStringCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint subStringCount;
 
+    /// <include file='WS_DISALLOWED_USER_AGENT_SUBSTRINGS.xml' path='doc/member[@name="WS_DISALLOWED_USER_AGENT_SUBSTRINGS.subStrings"]/*' />
     public WS_STRING** subStrings;
 }

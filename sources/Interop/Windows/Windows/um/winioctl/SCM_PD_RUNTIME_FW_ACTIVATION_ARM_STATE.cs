@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATE.xml' path='doc/member[@name="SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATE"]/*' />
 public partial struct SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATE
 {
+    /// <include file='SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATE.xml' path='doc/member[@name="SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATE.ArmState"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte ArmState;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDeskBand2.xml' path='doc/member[@name="IDeskBand2"]/*' />
 [Guid("79D16DE4-ABEE-4021-8D9D-9169B261D657")]
 [NativeTypeName("struct IDeskBand2 : IDeskBand")]
 [NativeInheritance("IDeskBand")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBand2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, uint>)(lpVtbl[1]))((IDeskBand2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, uint>)(lpVtbl[2]))((IDeskBand2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleWindow.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, HWND*, int>)(lpVtbl[3]))((IDeskBand2*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[4]))((IDeskBand2*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
+    /// <inheritdoc cref="IDockingWindow.ShowDW" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ShowDW(BOOL fShow)
@@ -60,6 +67,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[5]))((IDeskBand2*)Unsafe.AsPointer(ref this), fShow);
     }
 
+    /// <inheritdoc cref="IDockingWindow.CloseDW" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CloseDW([NativeTypeName("DWORD")] uint dwReserved)
@@ -67,6 +75,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, uint, int>)(lpVtbl[6]))((IDeskBand2*)Unsafe.AsPointer(ref this), dwReserved);
     }
 
+    /// <inheritdoc cref="IDockingWindow.ResizeBorderDW" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved)
@@ -74,6 +83,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, RECT*, IUnknown*, BOOL, int>)(lpVtbl[7]))((IDeskBand2*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
     }
 
+    /// <inheritdoc cref="IDeskBand.GetBandInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetBandInfo([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwViewMode, DESKBANDINFO* pdbi)
@@ -81,6 +91,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, uint, uint, DESKBANDINFO*, int>)(lpVtbl[8]))((IDeskBand2*)Unsafe.AsPointer(ref this), dwBandID, dwViewMode, pdbi);
     }
 
+    /// <include file='IDeskBand2.xml' path='doc/member[@name="IDeskBand2.CanRenderComposited"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CanRenderComposited(BOOL* pfCanRenderComposited)
@@ -88,6 +99,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, BOOL*, int>)(lpVtbl[9]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCanRenderComposited);
     }
 
+    /// <include file='IDeskBand2.xml' path='doc/member[@name="IDeskBand2.SetCompositionState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetCompositionState(BOOL fCompositionEnabled)
@@ -95,6 +107,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
         return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[10]))((IDeskBand2*)Unsafe.AsPointer(ref this), fCompositionEnabled);
     }
 
+    /// <include file='IDeskBand2.xml' path='doc/member[@name="IDeskBand2.GetCompositionState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetCompositionState(BOOL* pfCompositionEnabled)

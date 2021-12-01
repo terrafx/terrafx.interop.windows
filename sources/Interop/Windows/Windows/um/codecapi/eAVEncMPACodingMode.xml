@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMPACodingMode">
+    <summary>
+      <para>Specifies the MPEG audio encoding mode. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpacodingmode-property">AVEncMPACodingMode</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMPACodingMode.eAVEncMPACodingMode_Mono">
+    <summary>
+      <para>Single channel.
+This mode corresponds to single_channel mode (bit code '11'), defined in ISO/IEC 11172-3.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPACodingMode.eAVEncMPACodingMode_Stereo">
+    <summary>
+      <para>Stereo channels.
+This mode corresponds to stereo mode ('00'), defined in ISO/IEC 11172-3.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPACodingMode.eAVEncMPACodingMode_DualChannel">
+    <summary>
+      <para>Two mono channels.
+This mode corresponds to dual_channel mode ('10'), defined in ISO/IEC 11172-3.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPACodingMode.eAVEncMPACodingMode_JointStereo">
+    <summary>
+      <para>Joint stereo mode. This mode uses similarities between the two channels to achieve greater compression. This mode corresponds to joint_stereo mode ('01'), defined in ISO/IEC 11172-3.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPACodingMode.eAVEncMPACodingMode_Surround">
+    <summary>
+      <para>Surround audio (5.1 channels).
+This mode applies to MPEG-2 audio (ISO/IEC 13818-3).</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxPackageEditor.CreateDeltaPackage">
+    <summary>
+      <para>Creates a delta package from the differences in the updated package and the baseline package.</para>
+    </summary>
+    <param name="updatedPackageStream">
+      <para>An <see cref="IStream" /> that provides the contents of the updated app package.</para>
+    </param>
+    <param name="baselinePackageStream">
+      <para>An <see cref="IStream" /> that provides the contents of the baseline app package.</para>
+    </param>
+    <param name="deltaPackageStream">
+      <para>An <see cref="IStream" /> that provides the contents of the delta (difference) app package.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxPackageEditor" />
+  </member>
+  <member name="IAppxPackageEditor.CreateDeltaPackageUsingBaselineBlockMap">
+    <summary>
+      <para>Creates a delta package from the differences in the updated package and the baseline block map.</para>
+    </summary>
+    <param name="updatedPackageStream">
+      <para>An <see cref="IStream" /> that provides the contents of the updated app package.</para>
+    </param>
+    <param name="baselineBlockMapStream">
+      <para>An <see cref="IStream" /> that provides the contents of the baseline block map.</para>
+    </param>
+    <param name="baselinePackageFullName">
+      <para>The full name of the baseline app package.</para>
+    </param>
+    <param name="deltaPackageStream">
+      <para>An <see cref="IStream" /> that provides the contents of the delta (difference) app package.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxPackageEditor" />
+  </member>
+  <member name="IAppxPackageEditor.UpdateEncryptedPackage">
+    <summary>
+      <para>Updates an encrypted app package.</para>
+    </summary>
+    <param name="baselineEncryptedPackageStream">
+      <para>An <see cref="IStream" /> that provides the contents of the baseline encrypted app package.</para>
+    </param>
+    <param name="deltaPackageStream">
+      <para>An <see cref="IStream" /> that provides the contents of the delta (difference) app package.</para>
+    </param>
+    <param name="updateOption">
+      <para>The update options.</para>
+    </param>
+    <param name="settings">
+      <para>The encrypted app package settings.</para>
+    </param>
+    <param name="keyInfo">
+      <para>App package key information.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxPackageEditor" />
+  </member>
+  <member name="IAppxPackageEditor.UpdatePackage">
+    <summary>
+      <para>Updates an app package.</para>
+    </summary>
+    <param name="baselinePackageStream">
+      <para>An <see cref="IStream" /> that provides the contents of the baseline app package.</para>
+    </param>
+    <param name="deltaPackageStream">
+      <para>An <see cref="IStream" /> that provides the contents of the delta (difference) app package.</para>
+    </param>
+    <param name="updateOption">
+      <para>The update options.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxPackageEditor" />
+  </member>
+  <member name="IAppxPackageEditor.UpdatePackageManifest">
+    <summary>
+      <para>Updates an app package manifest.</para>
+    </summary>
+    <param name="packageStream">
+      <para>An <see cref="IStream" /> that provides the contents of the app package associated with the manifest to be updated.</para>
+    </param>
+    <param name="updatedManifestStream">
+      <para>An <see cref="IStream" /> that provides the contents of the updated app package manifest.</para>
+    </param>
+    <param name="isPackageEncrypted">
+      <para>Flag to specify whether the package is encrypted.</para>
+    </param>
+    <param name="options">
+      <para>Options for app package manifest validation.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxPackageEditor" />
+  </member>
+  <member name="IAppxPackageEditor">
+    <summary>
+      <para>Provides functionality to edit app packages.</para>
+    </summary>
+  </member>
+</doc>

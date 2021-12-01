@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlRules.xml' path='doc/member[@name="htmlRules"]/*' />
 public enum htmlRules
 {
+    /// <include file='htmlRules.xml' path='doc/member[@name="htmlRules.htmlRulesNotSet"]/*' />
     htmlRulesNotSet = 0,
+
+    /// <include file='htmlRules.xml' path='doc/member[@name="htmlRules.htmlRulesnone"]/*' />
     htmlRulesnone = 1,
+
+    /// <include file='htmlRules.xml' path='doc/member[@name="htmlRules.htmlRulesgroups"]/*' />
     htmlRulesgroups = 2,
+
+    /// <include file='htmlRules.xml' path='doc/member[@name="htmlRules.htmlRulesrows"]/*' />
     htmlRulesrows = 3,
+
+    /// <include file='htmlRules.xml' path='doc/member[@name="htmlRules.htmlRulescols"]/*' />
     htmlRulescols = 4,
+
+    /// <include file='htmlRules.xml' path='doc/member[@name="htmlRules.htmlRulesall"]/*' />
     htmlRulesall = 5,
+
+    /// <include file='htmlRules.xml' path='doc/member[@name="htmlRules.htmlRules_Max"]/*' />
     htmlRules_Max = 2147483647,
 }

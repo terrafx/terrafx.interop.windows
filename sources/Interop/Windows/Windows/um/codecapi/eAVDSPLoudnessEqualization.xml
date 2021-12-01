@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVDSPLoudnessEqualization">
+    <summary>
+      <para>Specifies whether loudness equalization is enabled in an audio decoder or digital signal processor (DSP). This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdsploudnessequalization-property">AVDSPLoudnessEqualization</a> property.</para>
+    </summary>
+    <remarks>
+      <para>Loudness equalization is a DSP process that maintains a consistent volume level when the audio stream changes.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVDSPLoudnessEqualization.eAVDSPLoudnessEqualization_OFF">
+    <summary>
+      <para>Loudness equalization is disabled.</para>
+    </summary>
+  </member>
+  <member name="eAVDSPLoudnessEqualization.eAVDSPLoudnessEqualization_ON">
+    <summary>
+      <para>Loudness equalization is enabled.</para>
+    </summary>
+  </member>
+  <member name="eAVDSPLoudnessEqualization.eAVDSPLoudnessEqualization_AUTO">
+    <summary>
+      <para>The decoder or DSP automatically selects the equalization mode.</para>
+    </summary>
+  </member>
+</doc>

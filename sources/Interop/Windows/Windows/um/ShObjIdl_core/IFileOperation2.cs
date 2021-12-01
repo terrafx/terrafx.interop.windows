@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFileOperation2.xml' path='doc/member[@name="IFileOperation2"]/*' />
 [Guid("CD8F23C1-8F61-4916-909D-55BDD0918753")]
 [NativeTypeName("struct IFileOperation2 : IFileOperation")]
 [NativeInheritance("IFileOperation")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, Guid*, void**, int>)(lpVtbl[0]))((IFileOperation2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, uint>)(lpVtbl[1]))((IFileOperation2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, uint>)(lpVtbl[2]))((IFileOperation2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IFileOperation.Advise" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Advise(IFileOperationProgressSink* pfops, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -46,6 +51,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IFileOperationProgressSink*, uint*, int>)(lpVtbl[3]))((IFileOperation2*)Unsafe.AsPointer(ref this), pfops, pdwCookie);
     }
 
+    /// <inheritdoc cref="IFileOperation.Unadvise" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
@@ -53,6 +59,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, uint, int>)(lpVtbl[4]))((IFileOperation2*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <inheritdoc cref="IFileOperation.SetOperationFlags" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetOperationFlags([NativeTypeName("DWORD")] uint dwOperationFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, uint, int>)(lpVtbl[5]))((IFileOperation2*)Unsafe.AsPointer(ref this), dwOperationFlags);
     }
 
+    /// <inheritdoc cref="IFileOperation.SetProgressMessage" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetProgressMessage([NativeTypeName("LPCWSTR")] ushort* pszMessage)
@@ -67,6 +75,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, ushort*, int>)(lpVtbl[6]))((IFileOperation2*)Unsafe.AsPointer(ref this), pszMessage);
     }
 
+    /// <inheritdoc cref="IFileOperation.SetProgressDialog" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetProgressDialog(IOperationsProgressDialog* popd)
@@ -74,6 +83,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IOperationsProgressDialog*, int>)(lpVtbl[7]))((IFileOperation2*)Unsafe.AsPointer(ref this), popd);
     }
 
+    /// <inheritdoc cref="IFileOperation.SetProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetProperties(IPropertyChangeArray* pproparray)
@@ -81,6 +91,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IPropertyChangeArray*, int>)(lpVtbl[8]))((IFileOperation2*)Unsafe.AsPointer(ref this), pproparray);
     }
 
+    /// <inheritdoc cref="IFileOperation.SetOwnerWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetOwnerWindow(HWND hwndOwner)
@@ -88,6 +99,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, HWND, int>)(lpVtbl[9]))((IFileOperation2*)Unsafe.AsPointer(ref this), hwndOwner);
     }
 
+    /// <inheritdoc cref="IFileOperation.ApplyPropertiesToItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT ApplyPropertiesToItem(IShellItem* psiItem)
@@ -95,6 +107,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IShellItem*, int>)(lpVtbl[10]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiItem);
     }
 
+    /// <inheritdoc cref="IFileOperation.ApplyPropertiesToItems" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT ApplyPropertiesToItems(IUnknown* punkItems)
@@ -102,6 +115,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IUnknown*, int>)(lpVtbl[11]))((IFileOperation2*)Unsafe.AsPointer(ref this), punkItems);
     }
 
+    /// <inheritdoc cref="IFileOperation.RenameItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT RenameItem(IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName, IFileOperationProgressSink* pfopsItem)
@@ -109,6 +123,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IShellItem*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[12]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiItem, pszNewName, pfopsItem);
     }
 
+    /// <inheritdoc cref="IFileOperation.RenameItems" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT RenameItems(IUnknown* pUnkItems, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
@@ -116,6 +131,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IUnknown*, ushort*, int>)(lpVtbl[13]))((IFileOperation2*)Unsafe.AsPointer(ref this), pUnkItems, pszNewName);
     }
 
+    /// <inheritdoc cref="IFileOperation.MoveItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT MoveItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, IFileOperationProgressSink* pfopsItem)
@@ -123,6 +139,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IShellItem*, IShellItem*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[14]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiItem, psiDestinationFolder, pszNewName, pfopsItem);
     }
 
+    /// <inheritdoc cref="IFileOperation.MoveItems" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT MoveItems(IUnknown* punkItems, IShellItem* psiDestinationFolder)
@@ -130,6 +147,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IUnknown*, IShellItem*, int>)(lpVtbl[15]))((IFileOperation2*)Unsafe.AsPointer(ref this), punkItems, psiDestinationFolder);
     }
 
+    /// <inheritdoc cref="IFileOperation.CopyItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT CopyItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszCopyName, IFileOperationProgressSink* pfopsItem)
@@ -137,6 +155,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IShellItem*, IShellItem*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[16]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiItem, psiDestinationFolder, pszCopyName, pfopsItem);
     }
 
+    /// <inheritdoc cref="IFileOperation.CopyItems" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT CopyItems(IUnknown* punkItems, IShellItem* psiDestinationFolder)
@@ -144,6 +163,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IUnknown*, IShellItem*, int>)(lpVtbl[17]))((IFileOperation2*)Unsafe.AsPointer(ref this), punkItems, psiDestinationFolder);
     }
 
+    /// <inheritdoc cref="IFileOperation.DeleteItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT DeleteItem(IShellItem* psiItem, IFileOperationProgressSink* pfopsItem)
@@ -151,6 +171,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IShellItem*, IFileOperationProgressSink*, int>)(lpVtbl[18]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiItem, pfopsItem);
     }
 
+    /// <inheritdoc cref="IFileOperation.DeleteItems" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT DeleteItems(IUnknown* punkItems)
@@ -158,6 +179,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IUnknown*, int>)(lpVtbl[19]))((IFileOperation2*)Unsafe.AsPointer(ref this), punkItems);
     }
 
+    /// <inheritdoc cref="IFileOperation.NewItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT NewItem(IShellItem* psiDestinationFolder, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszTemplateName, IFileOperationProgressSink* pfopsItem)
@@ -165,6 +187,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, IShellItem*, uint, ushort*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[20]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiDestinationFolder, dwFileAttributes, pszName, pszTemplateName, pfopsItem);
     }
 
+    /// <inheritdoc cref="IFileOperation.PerformOperations" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT PerformOperations()
@@ -172,6 +195,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, int>)(lpVtbl[21]))((IFileOperation2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IFileOperation.GetAnyOperationsAborted" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetAnyOperationsAborted(BOOL* pfAnyOperationsAborted)
@@ -179,6 +203,7 @@ public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
         return ((delegate* unmanaged<IFileOperation2*, BOOL*, int>)(lpVtbl[22]))((IFileOperation2*)Unsafe.AsPointer(ref this), pfAnyOperationsAborted);
     }
 
+    /// <include file='IFileOperation2.xml' path='doc/member[@name="IFileOperation2.SetOperationFlags2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetOperationFlags2(FILE_OPERATION_FLAGS2 operationFlags2)

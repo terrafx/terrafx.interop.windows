@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleWidowsOrphans.xml' path='doc/member[@name="styleWidowsOrphans"]/*' />
 public enum styleWidowsOrphans
 {
+    /// <include file='styleWidowsOrphans.xml' path='doc/member[@name="styleWidowsOrphans.styleWidowsOrphansNotSet"]/*' />
     styleWidowsOrphansNotSet = -2147483647,
+
+    /// <include file='styleWidowsOrphans.xml' path='doc/member[@name="styleWidowsOrphans.styleWidowsOrphans_Max"]/*' />
     styleWidowsOrphans_Max = 2147483647,
 }

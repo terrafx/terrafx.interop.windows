@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFVideoSrcContentHintFlags">
+    <summary>
+      <para>Describes the intended aspect ratio for a video stream.</para>
+    </summary>
+    <remarks>
+      <para>Use these flags with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-source-content-hint-attribute">MF_MT_SOURCE_CONTENT_HINT</a> attribute.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MFVideoSrcContentHintFlags.MFVideoSrcContentHintFlag_None">
+    <summary>
+      <para>The aspect ratio is unknown.</para>
+    </summary>
+  </member>
+  <member name="MFVideoSrcContentHintFlags.MFVideoSrcContentHintFlag_16x9">
+    <summary>
+      <para>The source is 16×9 content encoded within a 4×3 area.</para>
+    </summary>
+  </member>
+  <member name="MFVideoSrcContentHintFlags.MFVideoSrcContentHintFlag_235_1">
+    <summary>
+      <para>The source is 2.35:1 content encoded within a 16×9 or 4×3 area.</para>
+    </summary>
+  </member>
+</doc>

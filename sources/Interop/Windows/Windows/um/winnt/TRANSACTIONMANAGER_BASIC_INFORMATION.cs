@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTIONMANAGER_BASIC_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_BASIC_INFORMATION"]/*' />
 public partial struct TRANSACTIONMANAGER_BASIC_INFORMATION
 {
+    /// <include file='TRANSACTIONMANAGER_BASIC_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_BASIC_INFORMATION.TmIdentity"]/*' />
     public Guid TmIdentity;
 
+    /// <include file='TRANSACTIONMANAGER_BASIC_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_BASIC_INFORMATION.VirtualClock"]/*' />
     public LARGE_INTEGER VirtualClock;
 }

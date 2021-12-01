@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_ARC_SIZE">
+    <summary>
+      <para>Specifies whether an arc should be greater than 180 degrees.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ARC_SIZE.D2D1_ARC_SIZE_SMALL">
+    <summary>
+      <para>An arc's sweep should be 180 degrees or less.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ARC_SIZE.D2D1_ARC_SIZE_LARGE">
+    <summary>
+      <para>An arc's sweep should be 180 degrees or greater.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ARC_SIZE.D2D1_ARC_SIZE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

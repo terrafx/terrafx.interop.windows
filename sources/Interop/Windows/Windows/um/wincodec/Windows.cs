@@ -10,21 +10,27 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WICConvertBitmapSource"]/*' />
     [DllImport("windowscodecs", ExactSpelling = true)]
     public static extern HRESULT WICConvertBitmapSource([NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WICCreateBitmapFromSection"]/*' />
     [DllImport("windowscodecs", ExactSpelling = true)]
     public static extern HRESULT WICCreateBitmapFromSection(uint width, uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, HANDLE hSection, uint stride, uint offset, IWICBitmap** ppIBitmap);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WICCreateBitmapFromSectionEx"]/*' />
     [DllImport("windowscodecs", ExactSpelling = true)]
     public static extern HRESULT WICCreateBitmapFromSectionEx(uint width, uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, HANDLE hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WICMapGuidToShortName"]/*' />
     [DllImport("windowscodecs", ExactSpelling = true)]
     public static extern HRESULT WICMapGuidToShortName([NativeTypeName("const GUID &")] Guid* guid, uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, uint* pcchActual);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WICMapShortNameToGuid"]/*' />
     [DllImport("windowscodecs", ExactSpelling = true)]
     public static extern HRESULT WICMapShortNameToGuid([NativeTypeName("PCWSTR")] ushort* wzName, Guid* pguid);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WICMapSchemaToName"]/*' />
     [DllImport("windowscodecs", ExactSpelling = true)]
     public static extern HRESULT WICMapSchemaToName([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] ushort* pwzSchema, uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, uint* pcchActual);
 }

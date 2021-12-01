@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_TEX2DMS_ARRAY_SRV">
+    <summary>
+      <para>Specifies the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource(s)</a> from an array of multisampled <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">2D textures</a> to use in a shader-resource view.</para>
+    </summary>
+    <remarks>
+      <para>This structure is one member of a shader-resource-view description (see <see cref="D3D10_SHADER_RESOURCE_VIEW_DESC" />).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D10_TEX2DMS_ARRAY_SRV.FirstArraySlice">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The index of the first texture to use in an array of textures (see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">array slice</a>)</para>
+    </summary>
+  </member>
+  <member name="D3D10_TEX2DMS_ARRAY_SRV.ArraySize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of textures to use.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IN_PKTINFO.xml' path='doc/member[@name="IN_PKTINFO"]/*' />
 public partial struct IN_PKTINFO
 {
+    /// <include file='IN_PKTINFO.xml' path='doc/member[@name="IN_PKTINFO.ipi_addr"]/*' />
     public IN_ADDR ipi_addr;
 
+    /// <include file='IN_PKTINFO.xml' path='doc/member[@name="IN_PKTINFO.ipi_ifindex"]/*' />
     [NativeTypeName("ULONG")]
     public uint ipi_ifindex;
 }

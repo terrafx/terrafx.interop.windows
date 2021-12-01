@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMR">
+    <summary>
+      <para>The <b>EMR</b> structure provides the base structure for all enhanced metafile records. An enhanced metafile record contains the parameters for a specific GDI function used to create part of a picture in an enhanced format metafile.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMR.iType">
+    <summary>
+      <para>The record type. The parameter can be one of the following (with a link to the associated record structure).</para>
+      <para>
+        <see cref="EMR_ABORTPATH" />
+        <see cref="EMR_ALPHABLEND" />
+        <see cref="EMR_ANGLEARC" />
+        <see cref="EMR_ARC" />
+        <see cref="EMR_ARCTO" />
+        <see cref="EMR_BEGINPATH" />
+        <see cref="EMR_BITBLT" />
+        <see cref="EMR_CHORD" />
+        <see cref="EMR_CLOSEFIGURE" />
+        <see cref="EMR_COLORCORRECTPALETTE" />
+        <see cref="EMR_COLORMATCHTOTARGETW" />
+        <see cref="EMR_CREATEBRUSHINDIRECT" />
+        <see cref="EMR_CREATECOLORSPACE" />
+        <see cref="EMR_CREATECOLORSPACEW" />
+        <see cref="EMR_CREATEDIBPATTERNBRUSHPT" />
+        <see cref="EMR_CREATEMONOBRUSH" />
+        <see cref="EMR_CREATEPALETTE" />
+        <see cref="EMR_CREATEPEN" />
+        <see cref="EMR_DELETECOLORSPACE" />
+        <see cref="EMR_DELETEOBJECT" />
+        <see cref="EMR_ELLIPSE" />
+        <see cref="EMR_ENDPATH" />
+        <see cref="EMR_EOF" />
+        <see cref="EMR_EXCLUDECLIPRECT" />
+        <see cref="EMR_EXTCREATEFONTINDIRECTW" />
+        <see cref="EMR_EXTCREATEPEN" />
+        <see cref="EMR_EXTFLOODFILL" />
+        <see cref="EMR_EXTSELECTCLIPRGN" />
+        <see cref="EMR_EXTTEXTOUTA" />
+        <see cref="EMR_EXTTEXTOUTW" />
+        <see cref="EMR_FILLPATH" />
+        <see cref="EMR_FILLRGN" />
+        <see cref="EMR_FLATTENPATH" />
+        <see cref="EMR_FRAMERGN" />
+        <see cref="EMR_GDICOMMENT" />
+        <see cref="EMR_GLSBOUNDEDRECORD" />
+        <see cref="EMR_GLSRECORD" />
+        <see cref="EMR_GRADIENTFILL" />
+        <see cref="EMR_INTERSECTCLIPRECT" />
+        <see cref="EMR_INVERTRGN" />
+        <see cref="EMR_LINETO" />
+        <see cref="EMR_MASKBLT" />
+        <see cref="EMR_MODIFYWORLDTRANSFORM" />
+        <see cref="EMR_MOVETOEX" />
+        <see cref="EMR_OFFSETCLIPRGN" />
+        <see cref="EMR_PAINTRGN" />
+        <see cref="EMR_PIE" />
+        <see cref="EMR_PIXELFORMAT" />
+        <see cref="EMR_PLGBLT" />
+        <see cref="EMR_POLYBEZIER" />
+        <see cref="EMR_POLYBEZIER16" />
+        <see cref="EMR_POLYBEZIERTO" />
+        <see cref="EMR_POLYBEZIERTO16" />
+        <see cref="EMR_POLYDRAW" />
+        <see cref="EMR_POLYDRAW16" />
+        <see cref="EMR_POLYGON" />
+        <see cref="EMR_POLYGON16" />
+        <see cref="EMR_POLYLINE" />
+        <see cref="EMR_POLYLINE16" />
+        <see cref="EMR_POLYLINETO" />
+        <see cref="EMR_POLYLINETO16" />
+        <see cref="EMR_POLYPOLYGON" />
+        <see cref="EMR_POLYPOLYGON16" />
+        <see cref="EMR_POLYPOLYLINE" />
+        <see cref="EMR_POLYPOLYLINE16" />
+        <see cref="EMR_POLYTEXTOUTA" />
+        <see cref="EMR_POLYTEXTOUTW" />
+        <see cref="EMR_REALIZEPALETTE" />
+        <see cref="EMR_RECTANGLE" />
+        <see cref="EMR_RESIZEPALETTE" />
+        <see cref="EMR_RESTOREDC" />
+        <see cref="EMR_ROUNDRECT" />
+        <see cref="EMR_SAVEDC" />
+        <see cref="EMR_SCALEVIEWPORTEXTEX" />
+        <see cref="EMR_SCALEWINDOWEXTEX" />
+        <see cref="EMR_SELECTCLIPPATH" />
+        <see cref="EMR_SELECTOBJECT" />
+        <see cref="EMR_SELECTPALETTE" />
+        <see cref="EMR_SETARCDIRECTION" />
+        <see cref="EMR_SETBKCOLOR" />
+        <see cref="EMR_SETBKMODE" />
+        <see cref="EMR_SETBRUSHORGEX" />
+        <see cref="EMR_SETCOLORADJUSTMENT" />
+        <see cref="EMR_SETCOLORSPACE" />
+        <see cref="EMR_SETDIBITSTODEVICE" />
+        <see cref="EMR_SETICMMODE" />
+        <see cref="EMR_SETICMPROFILEA" />
+        <see cref="EMR_SETICMPROFILEW" />
+        <see cref="EMR_SETLAYOUT" />
+        <see cref="EMR_SETMAPMODE" />
+        <see cref="EMR_SETMAPPERFLAGS" />
+        <see cref="EMR_SETMETARGN" />
+        <see cref="EMR_SETMITERLIMIT" />
+        <see cref="EMR_SETPALETTEENTRIES" />
+        <see cref="EMR_SETPIXELV" />
+        <see cref="EMR_SETPOLYFILLMODE" />
+        <see cref="EMR_SETROP2" />
+        <see cref="EMR_SETSTRETCHBLTMODE" />
+        <see cref="EMR_SETTEXTALIGN" />
+        <see cref="EMR_SETTEXTCOLOR" />
+        <see cref="EMR_SETVIEWPORTEXTEX" />
+        <see cref="EMR_SETVIEWPORTORGEX" />
+        <see cref="EMR_SETWINDOWEXTEX" />
+        <see cref="EMR_SETWINDOWORGEX" />
+        <see cref="EMR_SETWORLDTRANSFORM" />
+        <see cref="EMR_STRETCHBLT" />
+        <see cref="EMR_STRETCHDIBITS" />
+        <see cref="EMR_STROKEANDFILLPATH" />
+        <see cref="EMR_STROKEPATH" />
+        <see cref="EMR_TRANSPARENTBLT" />
+        <see cref="EMR_WIDENPATH" />
+      </para>
+    </summary>
+  </member>
+  <member name="EMR.nSize">
+    <summary>
+      <para>The size of the record, in bytes. This member must be a multiple of four.</para>
+    </summary>
+  </member>
+</doc>

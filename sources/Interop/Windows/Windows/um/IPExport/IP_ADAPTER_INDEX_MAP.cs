@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IP_ADAPTER_INDEX_MAP.xml' path='doc/member[@name="IP_ADAPTER_INDEX_MAP"]/*' />
 public unsafe partial struct IP_ADAPTER_INDEX_MAP
 {
+    /// <include file='IP_ADAPTER_INDEX_MAP.xml' path='doc/member[@name="IP_ADAPTER_INDEX_MAP.Index"]/*' />
     [NativeTypeName("ULONG")]
     public uint Index;
 
+    /// <include file='IP_ADAPTER_INDEX_MAP.xml' path='doc/member[@name="IP_ADAPTER_INDEX_MAP.Name"]/*' />
     [NativeTypeName("WCHAR [128]")]
     public fixed ushort Name[128];
 }

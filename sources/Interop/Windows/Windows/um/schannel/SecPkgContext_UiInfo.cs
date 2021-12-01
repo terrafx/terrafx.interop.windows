@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_UiInfo.xml' path='doc/member[@name="SecPkgContext_UiInfo"]/*' />
 public partial struct SecPkgContext_UiInfo
 {
+    /// <include file='SecPkgContext_UiInfo.xml' path='doc/member[@name="SecPkgContext_UiInfo.hParentWindow"]/*' />
     public HWND hParentWindow;
 }

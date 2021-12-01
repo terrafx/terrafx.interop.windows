@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1BorderTransform.xml' path='doc/member[@name="ID2D1BorderTransform"]/*' />
 [Guid("4998735C-3A19-473C-9781-656847E3A347")]
 [NativeTypeName("struct ID2D1BorderTransform : ID2D1ConcreteTransform")]
 [NativeInheritance("ID2D1ConcreteTransform")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
         return ((delegate* unmanaged<ID2D1BorderTransform*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
         return ((delegate* unmanaged<ID2D1BorderTransform*, uint>)(lpVtbl[1]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
         return ((delegate* unmanaged<ID2D1BorderTransform*, uint>)(lpVtbl[2]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1TransformNode.GetInputCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
@@ -48,6 +53,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
         return ((delegate* unmanaged<ID2D1BorderTransform*, uint>)(lpVtbl[3]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1ConcreteTransform.SetOutputBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
@@ -55,6 +61,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
         return ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
     }
 
+    /// <inheritdoc cref="ID2D1ConcreteTransform.SetCached" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void SetCached(BOOL isCached)
@@ -62,6 +69,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
         ((delegate* unmanaged<ID2D1BorderTransform*, BOOL, void>)(lpVtbl[5]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), isCached);
     }
 
+    /// <include file='ID2D1BorderTransform.xml' path='doc/member[@name="ID2D1BorderTransform.SetExtendModeX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void SetExtendModeX(D2D1_EXTEND_MODE extendMode)
@@ -69,6 +77,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
         ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE, void>)(lpVtbl[6]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), extendMode);
     }
 
+    /// <include file='ID2D1BorderTransform.xml' path='doc/member[@name="ID2D1BorderTransform.SetExtendModeY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void SetExtendModeY(D2D1_EXTEND_MODE extendMode)
@@ -76,6 +85,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
         ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE, void>)(lpVtbl[7]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), extendMode);
     }
 
+    /// <include file='ID2D1BorderTransform.xml' path='doc/member[@name="ID2D1BorderTransform.GetExtendModeX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public D2D1_EXTEND_MODE GetExtendModeX()
@@ -83,6 +93,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[8]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1BorderTransform.xml' path='doc/member[@name="ID2D1BorderTransform.GetExtendModeY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public D2D1_EXTEND_MODE GetExtendModeY()

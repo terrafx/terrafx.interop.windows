@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SEALING_TIMESTAMP_ATTRIBUTE.xml' path='doc/member[@name="SEALING_TIMESTAMP_ATTRIBUTE"]/*' />
 public partial struct SEALING_TIMESTAMP_ATTRIBUTE
 {
+    /// <include file='SEALING_TIMESTAMP_ATTRIBUTE.xml' path='doc/member[@name="SEALING_TIMESTAMP_ATTRIBUTE.version"]/*' />
     [NativeTypeName("ULONG")]
     public uint version;
 
+    /// <include file='SEALING_TIMESTAMP_ATTRIBUTE.xml' path='doc/member[@name="SEALING_TIMESTAMP_ATTRIBUTE.signerIndex"]/*' />
     [NativeTypeName("ULONG")]
     public uint signerIndex;
 
+    /// <include file='SEALING_TIMESTAMP_ATTRIBUTE.xml' path='doc/member[@name="SEALING_TIMESTAMP_ATTRIBUTE.sealTimeStampToken"]/*' />
     public CRYPT_DATA_BLOB sealTimeStampToken;
 }

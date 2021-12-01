@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_JOBSET_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_JOBSET_INFORMATION"]/*' />
 public partial struct JOBOBJECT_JOBSET_INFORMATION
 {
+    /// <include file='JOBOBJECT_JOBSET_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_JOBSET_INFORMATION.MemberLevel"]/*' />
     [NativeTypeName("DWORD")]
     public uint MemberLevel;
 }

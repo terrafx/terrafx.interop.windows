@@ -7,7 +7,9 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AudioClient3ActivationParams.xml' path='doc/member[@name="AudioClient3ActivationParams"]/*' />
 public partial struct AudioClient3ActivationParams
 {
+    /// <include file='AudioClient3ActivationParams.xml' path='doc/member[@name="AudioClient3ActivationParams.tracingContextId"]/*' />
     public Guid tracingContextId;
 }

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TEXTURE_LAYOUT">
+    <summary>
+      <para>Specifies texture layout options.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration controls the swizzle pattern of default textures and enable map support on default textures.  Callers must query <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS2" /> to ensure that each option is supported.</para>
+      <para>The standard swizzle formats applies within each page-sized chunk, and pages are laid out in linear order with respect to one another.  A 16-bit interleave pattern defines the conversion from pre-swizzled intra-page location to the post-swizzled location.</para>
+      <para>
+        <img alt="Standard swizzle patterns" src="https://docs.microsoft.com/windows/win32/api/d3d11_3mages/d3d11_standardswizzle.png" />
+      </para>
+      <para>To demonstrate, consider the 32bpp swizzle format above.  This is represented by the following interleave masks, where bits on the left are most-significant.</para>
+      <code>UINT xBytesMask = 1010 1010 1000 1111
+UINT yMask =      0101 0101 0111 0000
+
+</code>
+      <para>To compute the swizzled address, the following code could be used (where the _pdep_u32 instruction is supported):</para>
+      <code>UINT swizzledOffset = resourceBaseOffset +
+                      _pdep_u32(xOffset, xBytesMask) +
+                      _pdep_u32(yOffset, yBytesMask);
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-enums">Resource Enumerations</seealso>
+  </member>
+  <member name="D3D11_TEXTURE_LAYOUT.D3D11_TEXTURE_LAYOUT_UNDEFINED">
+    <summary>
+      <para>The texture layout is undefined, and is selected by the driver.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE_LAYOUT.D3D11_TEXTURE_LAYOUT_ROW_MAJOR">
+    <summary>
+      <para>Data for the texture is stored in row major (sometimes called pitch-linear) order.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURE_LAYOUT.D3D11_TEXTURE_LAYOUT_64K_STANDARD_SWIZZLE">
+    <summary>
+      <para>A default texture uses the standardized swizzle pattern.</para>
+    </summary>
+  </member>
+</doc>

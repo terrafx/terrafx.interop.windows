@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DROPDOWNBUTTONRIGHTSTATES.xml' path='doc/member[@name="DROPDOWNBUTTONRIGHTSTATES"]/*' />
 public enum DROPDOWNBUTTONRIGHTSTATES
 {
+    /// <include file='DROPDOWNBUTTONRIGHTSTATES.xml' path='doc/member[@name="DROPDOWNBUTTONRIGHTSTATES.CBXSR_NORMAL"]/*' />
     CBXSR_NORMAL = 1,
+
+    /// <include file='DROPDOWNBUTTONRIGHTSTATES.xml' path='doc/member[@name="DROPDOWNBUTTONRIGHTSTATES.CBXSR_HOT"]/*' />
     CBXSR_HOT = 2,
+
+    /// <include file='DROPDOWNBUTTONRIGHTSTATES.xml' path='doc/member[@name="DROPDOWNBUTTONRIGHTSTATES.CBXSR_PRESSED"]/*' />
     CBXSR_PRESSED = 3,
+
+    /// <include file='DROPDOWNBUTTONRIGHTSTATES.xml' path='doc/member[@name="DROPDOWNBUTTONRIGHTSTATES.CBXSR_DISABLED"]/*' />
     CBXSR_DISABLED = 4,
 }

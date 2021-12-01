@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleWebkitBoxDirection.xml' path='doc/member[@name="styleWebkitBoxDirection"]/*' />
 public enum styleWebkitBoxDirection
 {
+    /// <include file='styleWebkitBoxDirection.xml' path='doc/member[@name="styleWebkitBoxDirection.styleWebkitBoxDirectionNormal"]/*' />
     styleWebkitBoxDirectionNormal = 0,
+
+    /// <include file='styleWebkitBoxDirection.xml' path='doc/member[@name="styleWebkitBoxDirection.styleWebkitBoxDirectionReverse"]/*' />
     styleWebkitBoxDirectionReverse = 1,
+
+    /// <include file='styleWebkitBoxDirection.xml' path='doc/member[@name="styleWebkitBoxDirection.styleWebkitBoxDirectionNotSet"]/*' />
     styleWebkitBoxDirectionNotSet = 2,
+
+    /// <include file='styleWebkitBoxDirection.xml' path='doc/member[@name="styleWebkitBoxDirection.styleWebkitBoxDirection_Max"]/*' />
     styleWebkitBoxDirection_Max = 2147483647,
 }

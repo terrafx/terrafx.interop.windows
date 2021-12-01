@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOpenSearchSource.xml' path='doc/member[@name="IOpenSearchSource"]/*' />
 [Guid("F0EE7333-E6FC-479B-9F25-A860C234A38E")]
 [NativeTypeName("struct IOpenSearchSource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface
         return ((delegate* unmanaged<IOpenSearchSource*, Guid*, void**, int>)(lpVtbl[0]))((IOpenSearchSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface
         return ((delegate* unmanaged<IOpenSearchSource*, uint>)(lpVtbl[1]))((IOpenSearchSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface
         return ((delegate* unmanaged<IOpenSearchSource*, uint>)(lpVtbl[2]))((IOpenSearchSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOpenSearchSource.xml' path='doc/member[@name="IOpenSearchSource.GetResults"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetResults(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszQuery, [NativeTypeName("DWORD")] uint dwStartIndex, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

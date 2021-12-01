@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecVideoMPEG2ErrorConcealment.xml' path='doc/member[@name="eAVDecVideoMPEG2ErrorConcealment"]/*' />
 public enum eAVDecVideoMPEG2ErrorConcealment
 {
+    /// <include file='eAVDecVideoMPEG2ErrorConcealment.xml' path='doc/member[@name="eAVDecVideoMPEG2ErrorConcealment.eErrorConcealmentOff"]/*' />
     eErrorConcealmentOff = 0,
+
+    /// <include file='eAVDecVideoMPEG2ErrorConcealment.xml' path='doc/member[@name="eAVDecVideoMPEG2ErrorConcealment.eErrorConcealmentOn"]/*' />
     eErrorConcealmentOn = 1,
 }

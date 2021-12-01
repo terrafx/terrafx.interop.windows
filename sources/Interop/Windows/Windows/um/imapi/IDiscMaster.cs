@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster"]/*' />
 [Guid("520CCA62-51A5-11D3-9144-00104BA11C5E")]
 [NativeTypeName("struct IDiscMaster : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, Guid*, void**, int>)(lpVtbl[0]))((IDiscMaster*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, uint>)(lpVtbl[1]))((IDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, uint>)(lpVtbl[2]))((IDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.Open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Open()
@@ -46,6 +51,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, int>)(lpVtbl[3]))((IDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.EnumDiscMasterFormats"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnumDiscMasterFormats(IEnumDiscMasterFormats** ppEnum)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, IEnumDiscMasterFormats**, int>)(lpVtbl[4]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.GetActiveDiscMasterFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetActiveDiscMasterFormat([NativeTypeName("LPIID")] Guid* lpiid)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, Guid*, int>)(lpVtbl[5]))((IDiscMaster*)Unsafe.AsPointer(ref this), lpiid);
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.SetActiveDiscMasterFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetActiveDiscMasterFormat([NativeTypeName("const IID &")] Guid* riid, void** ppUnk)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, Guid*, void**, int>)(lpVtbl[6]))((IDiscMaster*)Unsafe.AsPointer(ref this), riid, ppUnk);
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.EnumDiscRecorders"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EnumDiscRecorders(IEnumDiscRecorders** ppEnum)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, IEnumDiscRecorders**, int>)(lpVtbl[7]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.GetActiveDiscRecorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetActiveDiscRecorder(IDiscRecorder** ppRecorder)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, IDiscRecorder**, int>)(lpVtbl[8]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppRecorder);
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.SetActiveDiscRecorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetActiveDiscRecorder(IDiscRecorder* pRecorder)
@@ -88,6 +99,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, IDiscRecorder*, int>)(lpVtbl[9]))((IDiscMaster*)Unsafe.AsPointer(ref this), pRecorder);
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.ClearFormatContent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT ClearFormatContent()
@@ -95,6 +107,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, int>)(lpVtbl[10]))((IDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.ProgressAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT ProgressAdvise(IDiscMasterProgressEvents* pEvents, [NativeTypeName("UINT_PTR *")] nuint* pvCookie)
@@ -102,6 +115,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, IDiscMasterProgressEvents*, nuint*, int>)(lpVtbl[11]))((IDiscMaster*)Unsafe.AsPointer(ref this), pEvents, pvCookie);
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.ProgressUnadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT ProgressUnadvise([NativeTypeName("UINT_PTR")] nuint vCookie)
@@ -109,6 +123,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, nuint, int>)(lpVtbl[12]))((IDiscMaster*)Unsafe.AsPointer(ref this), vCookie);
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.RecordDisc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT RecordDisc([NativeTypeName("boolean")] byte bSimulate, [NativeTypeName("boolean")] byte bEjectAfterBurn)
@@ -116,6 +131,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         return ((delegate* unmanaged<IDiscMaster*, byte, byte, int>)(lpVtbl[13]))((IDiscMaster*)Unsafe.AsPointer(ref this), bSimulate, bEjectAfterBurn);
     }
 
+    /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT Close()

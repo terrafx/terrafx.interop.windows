@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGStopElement.xml' path='doc/member[@name="SVGStopElement"]/*' />
 [Guid("305105D5-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGStopElement
 {

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFFieldOfUseMFTUnlock.xml' path='doc/member[@name="IMFFieldOfUseMFTUnlock"]/*' />
 [Guid("508E71D3-EC66-4FC3-8775-B4B9ED6BA847")]
 [NativeTypeName("struct IMFFieldOfUseMFTUnlock : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFFieldOfUseMFTUnlock : IMFFieldOfUseMFTUnlock.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFFieldOfUseMFTUnlock : IMFFieldOfUseMFTUnlock.Int
         return ((delegate* unmanaged<IMFFieldOfUseMFTUnlock*, Guid*, void**, int>)(lpVtbl[0]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFFieldOfUseMFTUnlock : IMFFieldOfUseMFTUnlock.Int
         return ((delegate* unmanaged<IMFFieldOfUseMFTUnlock*, uint>)(lpVtbl[1]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFFieldOfUseMFTUnlock : IMFFieldOfUseMFTUnlock.Int
         return ((delegate* unmanaged<IMFFieldOfUseMFTUnlock*, uint>)(lpVtbl[2]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFFieldOfUseMFTUnlock.xml' path='doc/member[@name="IMFFieldOfUseMFTUnlock.Unlock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Unlock(IUnknown* pUnkMFT)

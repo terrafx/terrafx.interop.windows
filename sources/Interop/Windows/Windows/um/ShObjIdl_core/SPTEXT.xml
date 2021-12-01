@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SPTEXT">
+    <summary>
+      <para>Specifies the type of descriptive text being provided to an <see cref="IActionProgress" /> interface.</para>
+    </summary>
+    <seealso cref="IActionProgress" />
+  </member>
+  <member name="SPTEXT.SPTEXT_ACTIONDESCRIPTION">
+    <summary>
+      <para>The text is a high level, short description.</para>
+    </summary>
+  </member>
+  <member name="SPTEXT.SPTEXT_ACTIONDETAIL">
+    <summary>
+      <para>The text is a detailed description.</para>
+    </summary>
+  </member>
+</doc>

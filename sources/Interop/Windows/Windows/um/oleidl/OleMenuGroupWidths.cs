@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLEMENUGROUPWIDTHS.xml' path='doc/member[@name="OLEMENUGROUPWIDTHS"]/*' />
 public unsafe partial struct OLEMENUGROUPWIDTHS
 {
+    /// <include file='OLEMENUGROUPWIDTHS.xml' path='doc/member[@name="OLEMENUGROUPWIDTHS.width"]/*' />
     [NativeTypeName("LONG [6]")]
     public fixed int width[6];
 }

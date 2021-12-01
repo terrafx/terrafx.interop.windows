@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_SHADER_TRACE_DESC">
+    <summary>
+      <para>Describes a shader-trace object.</para>
+    </summary>
+    <remarks>
+      <para>This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso cref="ID3D11ShaderTraceFactory.CreateShaderTrace" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D11_SHADER_TRACE_DESC.Type">
+    <summary>
+      <para>A <see cref="D3D11_SHADER_TYPE" />-typed value that identifies the type of shader that the shader-trace object describes. This member also determines which shader-trace type to use in the following union.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACE_DESC.Flags">
+    <summary>
+      <para>A combination of the following flags that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how <see cref="ID3D11ShaderTraceFactory.CreateShaderTrace" /> creates the shader-trace object.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_WRITES (0x1)</description>
+          <description>The shader trace object records register-writes.</description>
+        </item>
+        <item>
+          <description>D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_READS (0x2)</description>
+          <description>The shader trace object records register-reads.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACE_DESC.VertexShaderTraceDesc">
+    <summary>
+      <para>A <see cref="D3D11_VERTEX_SHADER_TRACE_DESC" /> structure that describes an instance of a vertex shader to trace.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACE_DESC.HullShaderTraceDesc">
+    <summary>
+      <para>A <see cref="D3D11_HULL_SHADER_TRACE_DESC" /> structure that describes an instance of a hull shader to trace.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACE_DESC.DomainShaderTraceDesc">
+    <summary>
+      <para>A <see cref="D3D11_DOMAIN_SHADER_TRACE_DESC" /> structure that describes an instance of a domain shader to trace.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACE_DESC.GeometryShaderTraceDesc">
+    <summary>
+      <para>A <see cref="D3D11_GEOMETRY_SHADER_TRACE_DESC" /> structure that describes an instance of a geometry shader to trace.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACE_DESC.PixelShaderTraceDesc">
+    <summary>
+      <para>A <see cref="D3D11_PIXEL_SHADER_TRACE_DESC" /> structure that describes an instance of a pixel shader to trace.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACE_DESC.ComputeShaderTraceDesc">
+    <summary>
+      <para>A <see cref="D3D11_COMPUTE_SHADER_TRACE_DESC" /> structure that describes an instance of a compute shader to trace.</para>
+    </summary>
+  </member>
+</doc>

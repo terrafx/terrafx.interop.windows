@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_FEATURE_LEVEL">
+    <summary>
+      <para>Describes the minimum DirectX support required for hardware rendering by a render target.</para>
+    </summary>
+    <seealso cref="D2D1_RENDER_TARGET_PROPERTIES" />
+  </member>
+  <member name="D2D1_FEATURE_LEVEL.D2D1_FEATURE_LEVEL_DEFAULT">
+    <summary>
+      <para>Direct2D determines whether the video card provides adequate hardware rendering support.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FEATURE_LEVEL.D2D1_FEATURE_LEVEL_9">
+    <summary>
+      <para>The video card must support DirectX 9.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FEATURE_LEVEL.D2D1_FEATURE_LEVEL_10">
+    <summary>
+      <para>The video card must support DirectX 10.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FEATURE_LEVEL.D2D1_FEATURE_LEVEL_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

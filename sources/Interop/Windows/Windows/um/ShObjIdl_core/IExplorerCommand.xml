@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IExplorerCommand.EnumSubCommands">
+    <summary>
+      <para>Retrieves an enumerator for a command's subcommands.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Type: <b><see cref="IEnumExplorerCommand" />**</b></para>
+      <para>When this method returns successfully, contains an <see cref="IEnumExplorerCommand" /> interface pointer that can be used to walk the set of subcommands.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Subcommands are displayed as menu drop-down items through the use of a Split button when commands are exposed at the top of a Windows Explorer window. In that position, only the default command button is given an icon. In a normal menu, the icons for all commands are shown.</para>
+      <para>Subcommands which themselves have subcommands are not supported by Windows Explorer. When a command has its own subcommands, it must designate this status by specifying ECF_HASSUBCOMMANDS in the <see cref="IExplorerCommand.GetFlags" /> call.</para>
+    </remarks>
+  </member>
+  <member name="IExplorerCommand.GetCanonicalName">
+    <summary>
+      <para>Gets the GUID of a Windows Explorer command.</para>
+    </summary>
+    <param name="pguidCommandName">
+      <para>Type: <b>GUID*</b></para>
+      <para>A pointer to a value that, when this method returns successfully, receives the command's GUID, under which it is declared in the registry.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is somewhat misnamed, given that it retrieves a GUID. To retrieve the command's canonical name, you must take the additional step to pull it from the command's subkey. The GUID is the name of the subkey. where that information is stored.</para>
+    </remarks>
+  </member>
+  <member name="IExplorerCommand.GetFlags">
+    <summary>
+      <para>Gets the flags associated with a Windows Explorer command.</para>
+    </summary>
+    <param name="pFlags">
+      <para>Type: <b>EXPCMDFLAGS*</b></para>
+      <para>When this method returns, this value points to the current command flags. One of more of the following values:</para>
+      <h4>ECF_DEFAULT (0x000)</h4>
+      <para>
+        <b>Windows 7 and later</b>. No command flags are set.</para>
+      <h4>ECF_HASSUBCOMMANDS (0x001)</h4>
+      <para>The command has subcommands.</para>
+      <h4>ECF_HASSPLITBUTTON (0x002)</h4>
+      <para>A split button is displayed.</para>
+      <h4>ECF_HIDELABEL (0x004)</h4>
+      <para>The label is hidden.</para>
+      <h4>ECF_ISSEPARATOR (0x008)</h4>
+      <para>The command is a separator.</para>
+      <h4>ECF_HASLUASHIELD (0x010)</h4>
+      <para>A UAC shield is displayed.</para>
+      <h4>ECF_SEPARATORBEFORE (0x020)</h4>
+      <para>
+        <b>Introduced in Windows 7</b>. The command is located in the menu immediately below a separator.</para>
+      <h4>ECF_SEPARATORAFTER (0x040)</h4>
+      <para>
+        <b>Introduced in Windows 7</b>. The command is located in the menu immediately above a separator.</para>
+      <h4>ECF_ISDROPDOWN (0x080)</h4>
+      <para>
+        <b>Introduced in Windows 7</b>. Selecting the command opens a drop-down submenu (for example, <b>Include in library</b>).</para>
+      <h4>ECF_TOGGLEABLE (0x100)</h4>
+      <para>
+        <b>Introduced in Windows 8</b>.</para>
+      <h4>ECF_AUTOMENUICONS (0x200)</h4>
+      <para>
+        <b>Introduced in Windows 8</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExplorerCommand.GetIcon">
+    <summary>
+      <para>Gets an icon resource string of the icon associated with the specified Windows Explorer command item.</para>
+    </summary>
+    <param name="psiItemArray">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>A pointer to an <see cref="IShellItemArray" />.</para>
+    </param>
+    <param name="ppszIcon">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>Pointer to a buffer that, when this method returns successfully, receives the resource string that identifies the icon source.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The retrieved icon resource string is in the standard format, for instance "shell32.dll,-249".</para>
+    </remarks>
+  </member>
+  <member name="IExplorerCommand.GetState">
+    <summary>
+      <para>Gets state information associated with a specified Windows Explorer command item.</para>
+    </summary>
+    <param name="psiItemArray">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>A pointer to an <see cref="IShellItemArray" />.</para>
+    </param>
+    <param name="fOkToBeSlow">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>FALSE</b> if a verb object should not perform any memory intensive computations that could cause the UI thread to stop responding. The verb object should return E_PENDING in that case. If <b>TRUE</b>, those computations can be completed.</para>
+    </param>
+    <param name="pCmdState">
+      <para>Type: <b><see cref="EXPCMDSTATE" />*</b></para>
+      <para>A pointer to a value that, when this method returns successfully, receives one or more Windows Explorer command states indicated by the <see cref="EXPCMDSTATE" /> constants.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExplorerCommand.GetTitle">
+    <summary>
+      <para>Gets the title text of the button or menu item that launches a specified Windows Explorer command item.</para>
+    </summary>
+    <param name="psiItemArray">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>A pointer to an <see cref="IShellItemArray" />.</para>
+    </param>
+    <param name="ppszName">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>Pointer to a buffer that, when this method returns successfully, receives the title string.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExplorerCommand.GetToolTip">
+    <summary>
+      <para>Gets the tooltip string associated with a specified Windows Explorer command item.</para>
+    </summary>
+    <param name="psiItemArray">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>A pointer to an <see cref="IShellItemArray" />.</para>
+    </param>
+    <param name="ppszInfotip">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>Pointer to a buffer that, when this method returns successfully, receives the tooltip string.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExplorerCommand.Invoke">
+    <summary>
+      <para>Invokes a Windows Explorer command.</para>
+    </summary>
+    <param name="psiItemArray">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>A pointer to an <see cref="IShellItemArray" />.</para>
+    </param>
+    <param name="pbc">
+      <para>Type: <b><see cref="IBindCtx" />*</b></para>
+      <para>A pointer to an <see cref="IBindCtx" /> interface, which provides access to a bind context. This value can be <b>NULL</b> if no bind context is needed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExplorerCommand">
+    <summary>
+      <para>Exposes methods that get the command appearance, enumerate subcommands, or invoke the command.</para>
+    </summary>
+    <remarks>
+      <para>None of the methods of this interface should communicate with network resources. These methods are called on the UI thread, so communication with network resources could cause the UI to stop responding.</para>
+    </remarks>
+  </member>
+</doc>

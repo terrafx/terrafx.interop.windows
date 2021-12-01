@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='tagSMINFOTYPE.xml' path='doc/member[@name="tagSMINFOTYPE"]/*' />
 public enum tagSMINFOTYPE
 {
+    /// <include file='tagSMINFOTYPE.xml' path='doc/member[@name="tagSMINFOTYPE.SMIT_SEPARATOR"]/*' />
     SMIT_SEPARATOR = 0x1,
+
+    /// <include file='tagSMINFOTYPE.xml' path='doc/member[@name="tagSMINFOTYPE.SMIT_STRING"]/*' />
     SMIT_STRING = 0x2,
 }

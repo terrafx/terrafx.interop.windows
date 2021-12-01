@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTER_FEEDBACK_MODE.xml' path='doc/member[@name="POINTER_FEEDBACK_MODE"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
 public enum POINTER_FEEDBACK_MODE
 {
+    /// <include file='POINTER_FEEDBACK_MODE.xml' path='doc/member[@name="POINTER_FEEDBACK_MODE.POINTER_FEEDBACK_DEFAULT"]/*' />
     POINTER_FEEDBACK_DEFAULT = 1,
+
+    /// <include file='POINTER_FEEDBACK_MODE.xml' path='doc/member[@name="POINTER_FEEDBACK_MODE.POINTER_FEEDBACK_INDIRECT"]/*' />
     POINTER_FEEDBACK_INDIRECT = 2,
+
+    /// <include file='POINTER_FEEDBACK_MODE.xml' path='doc/member[@name="POINTER_FEEDBACK_MODE.POINTER_FEEDBACK_NONE"]/*' />
     POINTER_FEEDBACK_NONE = 3,
 }

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ANY_ATTRIBUTE">
+    <summary>
+      <para>This type is used to store an attribute
+that has not been directly mapped to a field.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used with <see cref="WS_ANY_ATTRIBUTES" />.</para>
+    </remarks>
+  </member>
+  <member name="WS_ANY_ATTRIBUTE.localName">
+    <summary>
+      <para>Specifies the localName of the attribute.</para>
+    </summary>
+  </member>
+  <member name="WS_ANY_ATTRIBUTE.ns">
+    <summary>
+      <para>Specifies the namespace of the attribute.</para>
+    </summary>
+  </member>
+  <member name="WS_ANY_ATTRIBUTE.value">
+    <summary>
+      <para>Specifies the value of the attribute.  This
+field may not be <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

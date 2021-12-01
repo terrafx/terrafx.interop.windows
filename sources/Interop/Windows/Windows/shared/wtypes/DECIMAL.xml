@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DECIMAL">
+    <summary>
+      <para>Represents a decimal data type that provides a sign and scale for a number (as in coordinates.)</para>
+      <para>Decimal variables are stored as 96-bit (12-byte) unsigned integers scaled by a variable power of 10. The power of 10 scaling factor specifies the number of digits to the right of the decimal point, and ranges from 0 to 28.</para>
+    </summary>
+  </member>
+  <member name="DECIMAL.wReserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="DECIMAL.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="DECIMAL.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="DECIMAL.scale">
+    <summary>
+      <para>The number of decimal places for the number. Valid values are from 0 to 28. So 12.345 is represented as 12345 with a scale of 3.</para>
+    </summary>
+  </member>
+  <member name="DECIMAL.sign">
+    <summary>
+      <para>Indicates the sign; 0 for positive numbers or DECIMAL_NEG for negative numbers. So -1 is represented as 1 with the DECIMAL_NEG bit set.</para>
+    </summary>
+  </member>
+  <member name="DECIMAL.signscale">
+    <summary>
+      <para>The sign and number of decimal places.</para>
+    </summary>
+  </member>
+  <member name="DECIMAL.Hi32">
+    <summary>
+      <para>The high 32 bits of the number.</para>
+    </summary>
+  </member>
+  <member name="DECIMAL.DUMMYUNIONNAME2">
+    <summary></summary>
+  </member>
+  <member name="DECIMAL.DUMMYSTRUCTNAME2">
+    <summary></summary>
+  </member>
+  <member name="DECIMAL.Lo32">
+    <summary>
+      <para>The low 32 bits of the number.</para>
+    </summary>
+  </member>
+  <member name="DECIMAL.Mid32">
+    <summary>
+      <para>The middle 32 bits of the number.</para>
+    </summary>
+  </member>
+  <member name="DECIMAL.Lo64">
+    <summary>
+      <para>The low 32 bits of the number.</para>
+    </summary>
+  </member>
+</doc>

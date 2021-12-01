@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USN_RECORD_EXTENT.xml' path='doc/member[@name="USN_RECORD_EXTENT"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct USN_RECORD_EXTENT
 {
+    /// <include file='USN_RECORD_EXTENT.xml' path='doc/member[@name="USN_RECORD_EXTENT.Offset"]/*' />
     [NativeTypeName("LONGLONG")]
     public long Offset;
 
+    /// <include file='USN_RECORD_EXTENT.xml' path='doc/member[@name="USN_RECORD_EXTENT.Length"]/*' />
     [NativeTypeName("LONGLONG")]
     public long Length;
 }

@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOUCH_HIT_TESTING_PROXIMITY_EVALUATION.xml' path='doc/member[@name="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct TOUCH_HIT_TESTING_PROXIMITY_EVALUATION
 {
+    /// <include file='TOUCH_HIT_TESTING_PROXIMITY_EVALUATION.xml' path='doc/member[@name="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION.score"]/*' />
     [NativeTypeName("UINT16")]
     public ushort score;
 
+    /// <include file='TOUCH_HIT_TESTING_PROXIMITY_EVALUATION.xml' path='doc/member[@name="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION.adjustedPoint"]/*' />
     public POINT adjustedPoint;
 }

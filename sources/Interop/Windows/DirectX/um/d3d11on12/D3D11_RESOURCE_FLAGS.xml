@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_RESOURCE_FLAGS">
+    <summary>
+      <para>Used with <see cref="ID3D11On12Device.CreateWrappedResource" /> to override flags that would be inferred by the resource properties or heap properties, including bind flags, misc flags, and CPU access flags.</para>
+    </summary>
+    <remarks>
+      <para>Use this structure with <see cref="CreateWrappedResource" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-11on12-structures">11on12 Structures</seealso>
+  </member>
+  <member name="D3D11_RESOURCE_FLAGS.BindFlags">
+    <summary>
+      <para>Bind flags must be either completely inferred, or completely specified, to allow the graphics driver to scope a general D3D12 resource to something that D3D11 can understand.</para>
+      <para>If a bind flag is specified which is not supported by the provided resource, an error will be returned.</para>
+      <para>The following bind flags (<see cref="D3D11_BIND_FLAG" /> enumeration constants) will not be assumed, and must be specified in order for a resource to be used in such a fashion:</para>
+      <list type="bullet">
+        <item>
+          <description>D3D11_BIND_VERTEX_BUFFER
+</description>
+        </item>
+        <item>
+          <description>D3D11_BIND_INDEX_BUFFER
+</description>
+        </item>
+        <item>
+          <description>D3D11_BIND_CONSTANT_BUFFER
+</description>
+        </item>
+        <item>
+          <description>D3D11_BIND_STREAM_OUTPUT
+</description>
+        </item>
+        <item>
+          <description>D3D11_BIND_DECODER
+</description>
+        </item>
+        <item>
+          <description>D3D11_BIND_VIDEO_ENCODER
+</description>
+        </item>
+      </list>
+      <para>The following bind flags will be assumed based on the presence of the corresponding D3D12 resource flag, and can be removed by specifying bind flags:</para>
+      <list type="bullet">
+        <item>
+          <description>D3D11_BIND_SHADER_RESOURCE, as long as D3D12_RESOURCE_MISC_DENY_SHADER_RESOURCE is not present
+</description>
+        </item>
+        <item>
+          <description>D3D11_BIND_RENDER_TARGET, if D3D12_RESOURCE_MISC_ALLOW_RENDER_TARGET is present
+</description>
+        </item>
+        <item>
+          <description>D3D11_BIND_DEPTH_STENCIL, if D3D12_RESOURCE_MISC_ALLOW_DEPTH_STENCIL is present
+</description>
+        </item>
+        <item>
+          <description>D3D11_BIND_UNORDERED_ACCESS, if D3D12_RESOURCE_MISC_ALLOW_UNORDERED_ACCESS is present</description>
+        </item>
+      </list>
+      <para>A render target or UAV buffer can be wrapped without overriding flags; but a VB/IB/CB/SO buffer must have bind flags manually specified, since these are mutually exclusive in Direct3D 11.</para>
+    </summary>
+  </member>
+  <member name="D3D11_RESOURCE_FLAGS.MiscFlags">
+    <summary>
+      <para>If misc flags are nonzero, then any specified flags will be OR’d into the final resource desc with inferred flags.
+Misc flags can be partially specified in order to add functionality, but misc flags which are implied cannot be masked out.</para>
+      <para>The following misc flags (<see cref="D3D11_RESOURCE_MISC_FLAG" /> enumeration constants) will not be assumed:</para>
+      <list type="bullet">
+        <item>
+          <description>D3D11_RESOURCE_MISC_GENERATE_MIPS (conflicts with CLAMP).
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_TEXTURECUBE (alters default view behavior).
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_DRAWINDIRECT_ARGS (exclusive with some bind flags).
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_BUFFER_ALLOW_RAW_VIEWS (exclusive with other types of UAVs).
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_BUFFER_STRUCTURED (exclusive with other types of UAVs).
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_RESOURCE_CLAMP (prohibits D3D10 QIs, conflicts with GENERATE_MIPS).
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_SHARED_KEYEDMUTEX.  It is possible to create a D3D11 keyed mutex resource, create a shared handle for it, and open it via 11on12 or D3D11.
+</description>
+        </item>
+      </list>
+      <para>The following misc flags will be assumed, and cannot be removed from the produced resource desc.
+If one of these is set, and the D3D12 resource does not support it, creation will fail:</para>
+      <list type="bullet">
+        <item>
+          <description>D3D11_RESOURCE_MISC_SHARED, D3D11_RESOURCE_MISC_SHARED_NTHANDLE, D3D11_RESOURCE_MISC_RESTRICT_SHARED_RESOURCE, if appropriate heap misc flags are present.
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_GDI_COMPATIBLE, if D3D12 resource is GDI-compatible.
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_TILED, if D3D12 resource was created via <see cref="CreateReservedResource" />.
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_TILE_POOL, if a D3D12 heap was passed in.
+</description>
+        </item>
+      </list>
+      <para>The following misc flags are invalid to specify for this API:</para>
+      <list type="bullet">
+        <item>
+          <description>D3D11_RESOURCE_MISC_RESTRICTED_CONTENT, since D3D12 only supports hardware protection.
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_RESTRICT_SHARED_RESOURCE_DRIVER does not exist in 12, and cannot be added in after resource creation.
+</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_GUARDED is only meant to be set by an internal creation mechanism.
+</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="D3D11_RESOURCE_FLAGS.CPUAccessFlags">
+    <summary>
+      <para>The <b>CPUAccessFlags</b> are not inferred from the D3D12 resource.
+This is because all resources are treated as D3D11_USAGE_DEFAULT, so <b>CPUAccessFlags</b> force validation which assumes <see cref="Map" /> of default buffers or textures.
+Wrapped resources do not support <b>Map(DISCARD)</b>.
+Wrapped resources do not support <b>Map(NO_OVERWRITE)</b>, but that can be implemented by mapping the underlying D3D12 resource instead.
+Issuing a <b>Map</b> call on a wrapped resource will synchronize with all D3D11 work submitted against that resource, unless the DO_NOT_WAIT flag was used.</para>
+    </summary>
+  </member>
+  <member name="D3D11_RESOURCE_FLAGS.StructureByteStride">
+    <summary>
+      <para>The size of each element in the buffer structure (in bytes) when the buffer represents a structured buffer.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFTimedTextNotify.Cue">
+    <summary>
+      <para>Called when a cue event occurs in a text track.</para>
+    </summary>
+    <param name="cueEvent">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_CUE_EVENT" /></b></para>
+      <para>A value specifying the type of event that has occurred.</para>
+    </param>
+    <param name="currentTime">
+      <para>Type: <b>double</b></para>
+      <para>The current time when the cue event occurred.</para>
+    </param>
+    <param name="cue">
+      <para>Type: <b><see cref="IMFTimedTextCue" />*</b></para>
+      <para>The <see cref="IMFTimedTextCue" /> object representing the cue.</para>
+    </param>
+    <seealso cref="IMFTimedTextNotify" />
+  </member>
+  <member name="IMFTimedTextNotify.Error">
+    <summary>
+      <para>Called when an error occurs in a text track.</para>
+    </summary>
+    <param name="errorCode">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_ERROR_CODE" /></b></para>
+      <para>An MF_TIMED_TEXT_ERROR_CODE representing the last error.</para>
+    </param>
+    <param name="extendedErrorCode">
+      <para>Type: <b>extendedErrorCode</b></para>
+      <para>The extended error code for the last error.</para>
+    </param>
+    <param name="sourceTrackId">
+      <para>Type: <b>extendedErrorCode</b></para>
+      <para>The identifier of the track on which the error occurred.</para>
+    </param>
+    <seealso cref="IMFTimedTextNotify" />
+  </member>
+  <member name="IMFTimedTextNotify.Reset">
+    <summary>
+      <para>Resets the timed-text-notify object.</para>
+    </summary>
+    <seealso cref="IMFTimedTextNotify" />
+  </member>
+  <member name="IMFTimedTextNotify.TrackAdded">
+    <summary>
+      <para>Called when a text track is added</para>
+    </summary>
+    <param name="trackId">
+      <para>Type: <b>DWORD</b></para>
+      <para>The identifier of the track that was added.</para>
+    </param>
+    <seealso cref="IMFTimedTextNotify" />
+  </member>
+  <member name="IMFTimedTextNotify.TrackRemoved">
+    <summary>
+      <para>Called when a text track is removed.</para>
+    </summary>
+    <param name="trackId">
+      <para>Type: <b>DWORD</b></para>
+      <para>The identifier of the track that was removed.</para>
+    </param>
+    <seealso cref="IMFTimedTextNotify" />
+  </member>
+  <member name="IMFTimedTextNotify.TrackSelected">
+    <summary>
+      <para>Called when a track is selected or deselected.</para>
+    </summary>
+    <param name="trackId">
+      <para>Type: <b>DWORD</b></para>
+      <para>The identifier of the track that was selected or deselected.</para>
+    </param>
+    <param name="selected">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> if the track was selected. <b>FALSE</b> if the track was deselected.</para>
+    </param>
+    <seealso cref="IMFTimedTextNotify" />
+  </member>
+  <member name="IMFTimedTextNotify">
+    <summary>
+      <para>Interface that defines callbacks  for Microsoft Media Foundation Timed Text notifications.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

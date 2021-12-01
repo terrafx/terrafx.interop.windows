@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBannerNotificationHandler.xml' path='doc/member[@name="IBannerNotificationHandler"]/*' />
 [Guid("8D7B2BA7-DB05-46A8-823C-D2B6DE08EE91")]
 [NativeTypeName("struct IBannerNotificationHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHan
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHan
         return ((delegate* unmanaged<IBannerNotificationHandler*, Guid*, void**, int>)(lpVtbl[0]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHan
         return ((delegate* unmanaged<IBannerNotificationHandler*, uint>)(lpVtbl[1]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHan
         return ((delegate* unmanaged<IBannerNotificationHandler*, uint>)(lpVtbl[2]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBannerNotificationHandler.xml' path='doc/member[@name="IBannerNotificationHandler.OnBannerEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnBannerEvent([NativeTypeName("const BANNER_NOTIFICATION *")] BANNER_NOTIFICATION* notification)

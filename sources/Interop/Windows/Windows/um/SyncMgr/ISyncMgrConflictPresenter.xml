@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrConflictPresenter.PresentConflict">
+    <summary>
+      <para>Presents the conflict to the user.</para>
+    </summary>
+    <param name="pConflict">
+      <para>Type: <b><see cref="ISyncMgrConflict" />*</b></para>
+      <para>Specifies the conflict. See <see cref="ISyncMgrConflict" />.</para>
+    </param>
+    <param name="pResolveInfo">
+      <para>Type: <b><see cref="ISyncMgrConflictResolveInfo" />*</b></para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrConflictPresenter">
+    <summary>
+      <para>Exposes a method that presents a conflict to the user.</para>
+    </summary>
+  </member>
+</doc>

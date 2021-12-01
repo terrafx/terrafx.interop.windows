@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INIT_ONCE.xml' path='doc/member[@name="INIT_ONCE"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct INIT_ONCE
 {
+    /// <include file='INIT_ONCE.xml' path='doc/member[@name="INIT_ONCE.Ptr"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("PVOID")]
     public void* Ptr;

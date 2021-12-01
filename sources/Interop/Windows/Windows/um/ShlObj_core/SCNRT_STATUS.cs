@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCNRT_STATUS.xml' path='doc/member[@name="SCNRT_STATUS"]/*' />
 public enum SCNRT_STATUS
 {
+    /// <include file='SCNRT_STATUS.xml' path='doc/member[@name="SCNRT_STATUS.SCNRT_ENABLE"]/*' />
     SCNRT_ENABLE = 0,
+
+    /// <include file='SCNRT_STATUS.xml' path='doc/member[@name="SCNRT_STATUS.SCNRT_DISABLE"]/*' />
     SCNRT_DISABLE = 1,
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVAddSeqEndCode.xml' path='doc/member[@name="CODECAPI_AVEncMPVAddSeqEndCode"]/*' />
 [Guid("A823178F-57DF-4C7A-B8FD-E5EC8887708D")]
 public partial struct CODECAPI_AVEncMPVAddSeqEndCode
 {

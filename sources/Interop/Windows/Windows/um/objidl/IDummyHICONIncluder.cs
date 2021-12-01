@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDummyHICONIncluder.xml' path='doc/member[@name="IDummyHICONIncluder"]/*' />
 [Guid("947990DE-CC28-11D2-A0F7-00805F858FB1")]
 [NativeTypeName("struct IDummyHICONIncluder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDummyHICONIncluder : IDummyHICONIncluder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDummyHICONIncluder : IDummyHICONIncluder.Interface
         return ((delegate* unmanaged<IDummyHICONIncluder*, Guid*, void**, int>)(lpVtbl[0]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDummyHICONIncluder : IDummyHICONIncluder.Interface
         return ((delegate* unmanaged<IDummyHICONIncluder*, uint>)(lpVtbl[1]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDummyHICONIncluder : IDummyHICONIncluder.Interface
         return ((delegate* unmanaged<IDummyHICONIncluder*, uint>)(lpVtbl[2]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDummyHICONIncluder.xml' path='doc/member[@name="IDummyHICONIncluder.Dummy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Dummy(HICON h1, HDC h2)

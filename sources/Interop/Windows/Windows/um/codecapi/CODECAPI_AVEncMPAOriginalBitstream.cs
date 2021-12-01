@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPAOriginalBitstream.xml' path='doc/member[@name="CODECAPI_AVEncMPAOriginalBitstream"]/*' />
 [Guid("3CFB7855-9CC9-47FF-B829-B36786C92346")]
 public partial struct CODECAPI_AVEncMPAOriginalBitstream
 {

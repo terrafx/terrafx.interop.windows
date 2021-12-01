@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CHANGER_READ_ELEMENT_STATUS.xml' path='doc/member[@name="CHANGER_READ_ELEMENT_STATUS"]/*' />
 public partial struct CHANGER_READ_ELEMENT_STATUS
 {
+    /// <include file='CHANGER_READ_ELEMENT_STATUS.xml' path='doc/member[@name="CHANGER_READ_ELEMENT_STATUS.ElementList"]/*' />
     public CHANGER_ELEMENT_LIST ElementList;
 
+    /// <include file='CHANGER_READ_ELEMENT_STATUS.xml' path='doc/member[@name="CHANGER_READ_ELEMENT_STATUS.VolumeTagInfo"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte VolumeTagInfo;
 }

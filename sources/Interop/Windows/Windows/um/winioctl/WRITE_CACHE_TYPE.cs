@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WRITE_CACHE_TYPE.xml' path='doc/member[@name="WRITE_CACHE_TYPE"]/*' />
 public enum WRITE_CACHE_TYPE
 {
+    /// <include file='WRITE_CACHE_TYPE.xml' path='doc/member[@name="WRITE_CACHE_TYPE.WriteCacheTypeUnknown"]/*' />
     WriteCacheTypeUnknown,
+
+    /// <include file='WRITE_CACHE_TYPE.xml' path='doc/member[@name="WRITE_CACHE_TYPE.WriteCacheTypeNone"]/*' />
     WriteCacheTypeNone,
+
+    /// <include file='WRITE_CACHE_TYPE.xml' path='doc/member[@name="WRITE_CACHE_TYPE.WriteCacheTypeWriteBack"]/*' />
     WriteCacheTypeWriteBack,
+
+    /// <include file='WRITE_CACHE_TYPE.xml' path='doc/member[@name="WRITE_CACHE_TYPE.WriteCacheTypeWriteThrough"]/*' />
     WriteCacheTypeWriteThrough,
 }

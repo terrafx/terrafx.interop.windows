@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CONTEXT">
+    <summary>
+      <para>Contains processor-specific register data. The system uses
+<b>CONTEXT</b> structures to perform various internal
+operations. Refer to the header file WinNT.h for definitions of this structure for each
+processor architecture.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/debugging-structures">Debugging Structures</seealso>
+    <seealso cref="GetThreadContext" />
+    <seealso cref="GetXStateFeaturesMask" />
+    <seealso cref="SetThreadContext" />
+    <seealso cref="WOW64_CONTEXT" />
+  </member>
+  <member name="CONTEXT">
+    <summary>
+      <para>Contains processor-specific register data. The system uses
+<b>CONTEXT</b> structures to perform various internal
+operations. Refer to the header file WinNT.h for definitions of this structure for each
+processor architecture.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/debugging-structures">Debugging Structures</seealso>
+    <seealso cref="GetThreadContext" />
+    <seealso cref="GetXStateFeaturesMask" />
+    <seealso cref="SetThreadContext" />
+    <seealso cref="WOW64_CONTEXT" />
+  </member>
+</doc>

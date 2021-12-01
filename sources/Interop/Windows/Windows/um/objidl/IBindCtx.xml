@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBindCtx.EnumObjectParam">
+    <summary>
+      <para>Retrieves a pointer to an interface that can be used to enumerate the keys of the bind context's string-keyed table of pointers.</para>
+    </summary>
+    <param name="ppenum">
+      <para>The address of an <see cref="IEnumString" />* pointer variable that receives the interface pointer to the enumerator. If an error occurs, *<i>ppenum</i> is set to <b>NULL</b>. If *<i>ppenum</i> is non-<b>NULL</b>, the implementation calls <see cref="AddRef" /> on *<i>ppenum</i>; it is the caller's responsibility to call <see cref="Release" />.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>The keys returned by the enumerator are the ones previously specified in calls to <see cref="IBindCtx.RegisterObjectParam" />.</para>
+      <h3>Notes to Callers</h3>
+      <para>A bind context maintains a table of interface pointers, each associated with a string key. This enables communication between a moniker implementation and the caller that initiated the binding operation. One party can store an interface pointer under a string known to both parties so that the other party can later retrieve it from the bind context.</para>
+      <para>In the system implementation of the <see cref="IBindCtx" /> interface, this method is not implemented. Therefore, calling this method results in a return value of E_NOTIMPL.</para>
+    </remarks>
+    <seealso cref="IBindCtx" />
+    <seealso cref="IEnumString" />
+  </member>
+  <member name="IBindCtx.GetBindOptions">
+    <summary>
+      <para>Retrieves the binding options stored in this bind context.</para>
+    </summary>
+    <param name="pbindopts">
+      <para>A pointer to an initialized structure that receives the current binding parameters on return. See <see cref="BIND_OPTS3" />.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_UNEXPECTED and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>A bind context contains a block of parameters that are common to most <see cref="IMoniker" /> operations and that do not change as the operation moves from piece to piece of a composite moniker.</para>
+      <h3>Notes to Callers</h3>
+      <para>You typically call this method if you are writing your own moniker class. (This requires that you implement the <see cref="IMoniker" /> interface.) You call this method to retrieve the parameters specified by the moniker client.</para>
+      <para>You must initialize the structure that is filled in by this method. Before calling this method, you must initialize the <b>cbStruct</b> member to the size of the structure.</para>
+    </remarks>
+    <seealso cref="BIND_OPTS" />
+    <seealso cref="BIND_OPTS2" />
+    <seealso cref="BIND_OPTS3" />
+    <seealso cref="IBindCtx" />
+  </member>
+  <member name="IBindCtx.GetObjectParam">
+    <summary>
+      <para>Retrieves an interface pointer to the object associated with the specified key in the bind context's string-keyed table of pointers.</para>
+    </summary>
+    <param name="pszKey">
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/shell/str-constants">bind context string key</a> to be searched for. Key string comparison is case-sensitive.</para>
+    </param>
+    <param name="ppunk">
+      <para>The address of an <see cref="IUnknown" />* pointer variable that receives the interface pointer to the object associated with <i>pszKey</i>. When successful, the implementation calls <see cref="AddRef" /> on *<i>ppunk</i>. It is the caller's responsibility to call <see cref="Release" />. If an error occurs, the implementation sets *<i>ppunk</i> to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</para>
+    </returns>
+    <remarks>
+      <para>A bind context maintains a table of interface pointers, each associated with a string key. This enables communication between a moniker implementation and the caller that initiated the binding operation. One party can store an interface pointer under a string known to both parties so that the other party can later retrieve it from the bind context.</para>
+      <para>The pointer this method retrieves must have previously been inserted into the table using the <see cref="IBindCtx.RegisterObjectParam" /> method.</para>
+      <h3>Notes to Callers</h3>
+      <para>Objects using monikers to locate other objects can call this method when a binding operation fails to get specific information about the error that occurred. Depending on the error, it may be possible to correct the situation and retry the binding operation. See <see cref="IBindCtx.RegisterObjectParam" /> for more information.</para>
+      <para>Moniker implementations can call this method to handle situations where a caller initiates a binding operation and requests specific information. By convention, the implementer should use key names that begin with the string form of the CLSID of a moniker class. (See the <see cref="StringFromCLSID" /> function.)</para>
+    </remarks>
+    <seealso cref="IBindCtx" />
+  </member>
+  <member name="IBindCtx.GetRunningObjectTable">
+    <summary>
+      <para>Retrieves an interface pointer to the running object table (ROT) for the computer on which this bind context is running.</para>
+    </summary>
+    <param name="pprot">
+      <para>The address of a <see cref="IRunningObjectTable" />* pointer variable that receives the interface pointer to the running object table. If an error occurs, *<i>pprot</i> is set to <b>NULL</b>. If *<i>pprot</i> is non-<b>NULL</b>, the implementation calls <see cref="AddRef" /> on the running table object; it is the caller's responsibility to call <see cref="Release" />.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>The running object table is a globally accessible table on each computer. It keeps track of all the objects that are currently running on the computer.</para>
+      <h3>Notes to Callers</h3>
+      <para>Typically, those implementing a new moniker class (through an implementation of <see cref="IMoniker" /> interface) call <b>GetRunningObjectTable</b>. It is useful to call this method in an implementation of <see cref="IMoniker.BindToObject" /> or <see cref="IMoniker.IsRunning" /> to check whether an object is currently running. You can also call this method in the implementation of <see cref="IMoniker.GetTimeOfLastChange" /> to learn when a running object was last modified.</para>
+      <para>Moniker implementations should call this method instead of using the <b>GetRunningObjectTable</b> function. This makes it possible for future implementations of <see cref="IBindCtx" /> to modify binding behavior.</para>
+    </remarks>
+    <seealso cref="IBindCtx" />
+    <seealso cref="IMoniker" />
+    <seealso cref="IRunningObjectTable" />
+  </member>
+  <member name="IBindCtx.RegisterObjectBound">
+    <summary>
+      <para>Registers an object with the bind context to ensure that the object remains active until the bind context is released.</para>
+    </summary>
+    <param name="punk">
+      <para>A pointer to the <see cref="IUnknown" /> interface on the object that is being registered as bound.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>Those writing a new moniker class (through an implementation of the <see cref="IMoniker" /> interface) should call this method whenever the implementation activates an object. This happens most often in the course of binding a moniker, but it can also happen while retrieving a moniker's display name, parsing a display name into a moniker, or retrieving the time that an object was last modified.</para>
+      <para>
+        <b>RegisterObjectBound</b> calls <see cref="AddRef" /> to create an additional reference to the object. You must, however, still release your own copy of the pointer. Calling this method twice for the same object creates two references to that object. You can release a reference obtained through a call to this method by calling <see cref="IBindCtx.RevokeObjectBound" />. All references held by the bind context are released when the bind context itself is released.</para>
+      <para>Calling <b>RegisterObjectBound</b> to register an object with a bind context keeps the object active until the bind context is released. Reusing a bind context in a subsequent binding operation (either for another piece of the same composite moniker or for a different moniker) can make the subsequent binding operation more efficient because it doesn't have to reload that object. This, however, improves performance only if the subsequent binding operation requires some of the same objects as the original one, so you need to balance the possible performance improvement of reusing a bind context against the costs of keeping objects activated unnecessarily.</para>
+      <para>
+        <see cref="IBindCtx" /> does not provide a method to retrieve a pointer to an object registered using <b>RegisterObjectBound</b>. Assuming the object has registered itself with the running object table, moniker implementations can call <see cref="IRunningObjectTable.GetObject" /> to retrieve a pointer to the object.</para>
+    </remarks>
+    <seealso cref="IBindCtx" />
+    <seealso cref="IRunningObjectTable.GetObject" />
+  </member>
+  <member name="IBindCtx.RegisterObjectParam">
+    <summary>
+      <para>Associates an object with a string key in the bind context's string-keyed table of pointers.</para>
+    </summary>
+    <param name="pszKey">
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/shell/str-constants">bind context string key</a> under which the object is being registered. Key string comparison is case-sensitive.</para>
+    </param>
+    <param name="punk">
+      <para>A pointer to the <see cref="IUnknown" /> interface on the object that is to be registered.</para>
+      <para>The method calls <see cref="AddRef" /> on the pointer.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>A bind context maintains a table of interface pointers, each associated with a string key. This enables communication between a moniker implementation and the caller that initiated the binding operation. One party can store an interface pointer under a string known to both parties so that the other party can later retrieve it from the bind context.</para>
+      <para>Binding operations subsequent to the use of this method can use <see cref="IBindCtx.GetObjectParam" /> to retrieve the stored pointer.</para>
+      <h3>Notes to Callers</h3>
+      <b>RegisterObjectParam</b> is useful to those implementing a new moniker class (through an implementation of <see cref="IMoniker" />) and to moniker clients (those who use monikers to bind to objects).
+<para>In implementing a new moniker class, you call this method when an error occurs during moniker binding to inform the caller of the cause of the error. The key that you would obtain with a call to this method would depend on the error condition. Following is a list of common moniker binding errors, describing for each the keys that would be appropriate:</para><list type="bullet"><item><description>MK_E_EXCEEDEDDEADLINE: If a binding operation exceeds its deadline because a given object is not running, you should register the object's moniker using the first unused key from the list: "ExceededDeadline", "ExceededDeadline1", "ExceededDeadline2", and so on. If the caller later finds the moniker in the running object table, the caller can retry the binding operation.</description></item><item><description>MK_E_CONNECTMANUALLY: The "ConnectManually" key indicates a moniker whose binding requires assistance from the end user. To request that the end user manually connect to the object, the caller can retry the binding operation after showing the moniker's display name. Common reasons for this error are that a password is needed or that a floppy needs to be mounted.</description></item><item><description>E_CLASSNOTFOUND: The "ClassNotFound" key indicates a moniker whose class could not be found. (The server for the object identified by this moniker could not be located.) If this key is used for an OLE compound-document object, the caller can use <see cref="IMoniker.BindToStorage" /> to bind to the object and then try to carry out a <b>Treat As...</b> or <b>Convert To...</b> operation to associate the object with a different server. If this is successful, the caller can retry the binding operation.</description></item></list><para>A moniker client with detailed knowledge of the implementation of the moniker can also call this method to pass private information to that implementation.</para><para>You can define new strings as keys for storing pointers. By convention, you should use key names that begin with the string form of the CLSID of the moniker class. (See the <see cref="StringFromCLSID" /> function.)</para><para>If the <i>pszKey</i> parameter matches the name of an existing key in the bind context's table, the new object replaces the existing object in the table.</para><para>When you register an object using this method, the object is not released until one of the following occurs:</para><list type="bullet"><item><description>It is replaced in the table by another object with the same key.</description></item><item><description>It is removed from the table by a call to <see cref="IBindCtx.RevokeObjectParam" />.</description></item><item><description>The bind context is released. All registered objects are released when the bind context is released.</description></item></list></remarks>
+    <seealso cref="IBindCtx" />
+  </member>
+  <member name="IBindCtx.ReleaseBoundObjects">
+    <summary>
+      <para>Releases all pointers to all objects that were previously registered by calls to <see cref="RegisterObjectBound" />.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>You rarely call this method directly. The system's <see cref="IBindCtx" /> implementation calls this method when the pointer to the <b>IBindCtx</b> interface on the bind context is released (the bind context is released). If a bind context is not released, all of the registered objects remain active.</para>
+      <para>If the same object has been registered more than once, this method calls the <see cref="Release" /> method on the object the number of times it was registered.</para>
+    </remarks>
+    <seealso cref="IBindCtx" />
+  </member>
+  <member name="IBindCtx.RevokeObjectBound">
+    <summary>
+      <para>Removes the object from the bind context, undoing a previous call to <see cref="RegisterObjectBound" />.</para>
+    </summary>
+    <param name="punk">
+      <para>A pointer to the <a href="https://docs.microsoft.com//windows/desktop/com/iunknown-and-interface-inheritance">IUnknown</a> interface on the object to be removed.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was released successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_NOTBOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was not previously registered.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You would rarely call this method. It is documented primarily for completeness.</para>
+    </remarks>
+    <seealso cref="IBindCtx" />
+  </member>
+  <member name="IBindCtx.RevokeObjectParam">
+    <summary>
+      <para>Removes the specified key and its associated pointer from the bind context's string-keyed table of objects. The key must have previously been inserted into the table with a call to <see cref="RegisterObjectParam" />.</para>
+    </summary>
+    <param name="pszKey">
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/shell/str-constants">bind context string key</a> to be removed. Key string comparison is case-sensitive.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was removed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was not previously registered.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A bind context maintains a table of interface pointers, each associated with a string key. This enables communication between a moniker implementation and the caller that initiated the binding operation. One party can store an interface pointer under a string known to both parties so that the other party can later retrieve it from the bind context.</para>
+      <para>This method is used to remove an entry from the table. If the specified key is found, the bind context also releases its reference to the object.</para>
+    </remarks>
+    <seealso cref="IBindCtx" />
+  </member>
+  <member name="IBindCtx.SetBindOptions">
+    <summary>
+      <para>Sets new values for the binding parameters stored in the bind context.</para>
+    </summary>
+    <param name="pbindopts">
+      <para>A pointer to a <see cref="BIND_OPTS3" /> structure containing the binding parameters.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>A bind context contains a block of parameters that are common to most <see cref="IMoniker" /> operations. These parameters do not change as the operation moves from piece to piece of a composite moniker.</para>
+      <para>Subsequent binding operations can call <see cref="IBindCtx.GetBindOptions" /> to retrieve these parameters.</para>
+      <h3>Notes to Callers</h3>
+      <para>This method can be called by moniker clients (those who use monikers to acquire interface pointers to objects).</para>
+      <para>When you first create a bind context by using the <see cref="CreateBindCtx" /> function, the fields of the <see cref="BIND_OPTS" /> structure are initialized to the following values:</para>
+      <code>    cbStruct = sizeof(BIND_OPTS);
+    grfFlags = 0;
+    grfMode = STGM_READWRITE;
+    dwTickCountDeadline = 0;
+
+</code>
+      <para>You can use the <b>IBindCtx.SetBindOptions</b> method to modify these values before using the bind context, if you want values other than the defaults.</para>
+      <para>
+        <b>SetBindOptions</b> copies the members of the specified structure, but not the <see cref="COSERVERINFO" /> structure and the pointers it contains. Callers may not free these pointers until the bind context is released.</para>
+    </remarks>
+    <seealso cref="BIND_OPTS" />
+    <seealso cref="BIND_OPTS2" />
+    <seealso cref="BIND_OPTS3" />
+    <seealso cref="IBindCtx" />
+  </member>
+  <member name="IBindCtx">
+    <summary>
+      <para>Provides access to a bind context, which is an object that stores information about a particular moniker binding operation.</para>
+    </summary>
+    <remarks>
+      <para>A bind context includes the following information:</para>
+      <list type="bullet">
+        <item>
+          <description>A <see cref="BIND_OPTS" /> structure containing a set of parameters that do not change during the binding operation. When a composite moniker is bound, each component uses the same bind context, so it acts as a mechanism for passing the same parameters to each component of a composite moniker.
+</description>
+        </item>
+        <item>
+          <description>A set of pointers to objects that the binding operation has activated. The bind context holds pointers to these bound objects, keeping them loaded and thus eliminating redundant activations if the objects are needed again during subsequent binding operations.</description>
+        </item>
+        <item>
+          <description>A pointer to the running object table (ROT) on the same computer as the process that started the bind operation. Moniker implementations that need to access the ROT should use the <see cref="IBindCtx.GetRunningObjectTable" /> method rather than using the <see cref="GetRunningObjectTable" /> function. This allows future enhancements to the system's <b>IBindCtx</b> implementation to modify binding behavior.
+</description>
+        </item>
+        <item>
+          <description>A table of interface pointers, each associated with a string key. This capability enables moniker implementations to store interface pointers under a well-known string so that they can later be retrieved from the bind context. For example, OLE defines several string keys ("ExceededDeadline", "ConnectManually", and so on) that can be used to store a pointer to the object that caused an error during a binding operation.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="CreateBindCtx" />
+    <seealso cref="IMoniker" />
+    <seealso cref="IOleItemContainer" />
+    <seealso cref="IParseDisplayName" />
+  </member>
+</doc>

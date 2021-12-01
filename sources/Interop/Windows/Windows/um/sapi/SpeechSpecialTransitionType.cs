@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechSpecialTransitionType.xml' path='doc/member[@name="SpeechSpecialTransitionType"]/*' />
 public enum SpeechSpecialTransitionType
 {
+    /// <include file='SpeechSpecialTransitionType.xml' path='doc/member[@name="SpeechSpecialTransitionType.SSTTWildcard"]/*' />
     SSTTWildcard = 1,
+
+    /// <include file='SpeechSpecialTransitionType.xml' path='doc/member[@name="SpeechSpecialTransitionType.SSTTDictation"]/*' />
     SSTTDictation = (SSTTWildcard + 1),
+
+    /// <include file='SpeechSpecialTransitionType.xml' path='doc/member[@name="SpeechSpecialTransitionType.SSTTTextBuffer"]/*' />
     SSTTTextBuffer = (SSTTDictation + 1),
 }

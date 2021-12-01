@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVDecVideoInputScanType">
+    <summary>
+      <para>Specifies how the decoded video stream is interlaced. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecvideoinputscantype-property">AVDecVideoInputScanType</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Unknown">
+    <summary>
+      <para>The interlacing is not known.</para>
+    </summary>
+  </member>
+  <member name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Progressive">
+    <summary>
+      <para>Decoded frames are progressive.</para>
+    </summary>
+  </member>
+  <member name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Interlaced_UpperFieldFirst">
+    <summary>
+      <para>Decoded frames are interlaced, with the upper field appearing first.</para>
+    </summary>
+  </member>
+  <member name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Interlaced_LowerFieldFirst">
+    <summary>
+      <para>Decoded frames are interlaced, with the lower field appearing first.</para>
+    </summary>
+  </member>
+</doc>

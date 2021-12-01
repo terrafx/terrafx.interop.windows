@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="THUMBBUTTON">
+    <summary>
+      <para>Used by methods of the <see cref="ITaskbarList3" /> interface to define buttons used in a toolbar embedded in a window's thumbnail representation.</para>
+    </summary>
+    <remarks>
+      <para>When a button is clicked, a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> message that contains the button ID is sent to the associated application window. The application handles whatever action it has assigned to the button.</para>
+      <h3>Button Images</h3>
+      <para>When using an icon, specified through the <b>hIcon</b> member, the taskbar makes its own copy of the icon. It is the caller's responsibility to free the handle it passed in <b>hIcon</b> when it is no longer needed.</para>
+      <para>If both an icon and an image list are specified for a button's image, the icon is used if possible. If for some reason the attempt to retrieve the icon fails, the image from the image list is used.</para>
+      <para>Applications must provide these button images:</para>
+      <list type="bullet">
+        <item>
+          <description>The button in its default active state.</description>
+        </item>
+        <item>
+          <description>Images suitable for use with high-dpi (dots per inch) displays.</description>
+        </item>
+      </list>
+      <para>Images must be 32-bit and of dimensions <see cref="GetSystemMetrics" />(SM_CXICON) x <see cref="GetSystemMetrics" />(SM_CYICON). The toolbar itself provides visuals for a button's clicked, disabled, and hover states.</para>
+    </remarks>
+    <seealso cref="ITaskbarList3.ThumbBarAddButtons" />
+    <seealso cref="ITaskbarList3.ThumbBarUpdateButtons" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ee663597(v=vs.85)">Taskbar Thumbnail Toolbar Sample</seealso>
+  </member>
+  <member name="THUMBBUTTON.dwMask">
+    <summary>
+      <para>Type: <b><see cref="THUMBBUTTONMASK" /></b></para>
+      <para>A combination of <see cref="THUMBBUTTONMASK" /> values that specify which members of this structure contain valid data; other members are ignored, with the exception of <b>iId</b>, which is always required.</para>
+    </summary>
+  </member>
+  <member name="THUMBBUTTON.iId">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The application-defined identifier of the button, unique within the toolbar.</para>
+    </summary>
+  </member>
+  <member name="THUMBBUTTON.iBitmap">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The zero-based index of the button image within the image list set through <see cref="ITaskbarList3.ThumbBarSetImageList" />.</para>
+    </summary>
+  </member>
+  <member name="THUMBBUTTON.hIcon">
+    <summary>
+      <para>Type: <b>HICON</b></para>
+      <para>The handle of an icon to use as the button image.</para>
+    </summary>
+  </member>
+  <member name="THUMBBUTTON.szTip">
+    <summary>
+      <para>Type: <b>WCHAR[260]</b></para>
+      <para>A wide character array that contains the text of the button's tooltip, displayed when the mouse pointer hovers over the button.</para>
+    </summary>
+  </member>
+  <member name="THUMBBUTTON.dwFlags">
+    <summary>
+      <para>Type: <b><see cref="THUMBBUTTONFLAGS" /></b></para>
+      <para>A combination of <see cref="THUMBBUTTONFLAGS" /> values that control specific states and behaviors of the button.</para>
+    </summary>
+  </member>
+</doc>

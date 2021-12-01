@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFVideoRendererEffectControl.xml' path='doc/member[@name="IMFVideoRendererEffectControl"]/*' />
 [Guid("604D33D7-CF23-41D5-8224-5BBBB1A87475")]
 [NativeTypeName("struct IMFVideoRendererEffectControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEff
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEff
         return ((delegate* unmanaged<IMFVideoRendererEffectControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEff
         return ((delegate* unmanaged<IMFVideoRendererEffectControl*, uint>)(lpVtbl[1]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEff
         return ((delegate* unmanaged<IMFVideoRendererEffectControl*, uint>)(lpVtbl[2]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFVideoRendererEffectControl.xml' path='doc/member[@name="IMFVideoRendererEffectControl.OnAppServiceConnectionEstablished"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnAppServiceConnectionEstablished(IUnknown* pAppServiceConnection)

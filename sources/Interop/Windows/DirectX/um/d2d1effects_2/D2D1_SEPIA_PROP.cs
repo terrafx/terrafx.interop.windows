@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_SEPIA_PROP.xml' path='doc/member[@name="D2D1_SEPIA_PROP"]/*' />
 public enum D2D1_SEPIA_PROP : uint
 {
+    /// <include file='D2D1_SEPIA_PROP.xml' path='doc/member[@name="D2D1_SEPIA_PROP.D2D1_SEPIA_PROP_INTENSITY"]/*' />
     D2D1_SEPIA_PROP_INTENSITY = 0,
+
+    /// <include file='D2D1_SEPIA_PROP.xml' path='doc/member[@name="D2D1_SEPIA_PROP.D2D1_SEPIA_PROP_ALPHA_MODE"]/*' />
     D2D1_SEPIA_PROP_ALPHA_MODE = 1,
+
+    /// <include file='D2D1_SEPIA_PROP.xml' path='doc/member[@name="D2D1_SEPIA_PROP.D2D1_SEPIA_PROP_FORCE_DWORD"]/*' />
     D2D1_SEPIA_PROP_FORCE_DWORD = 0xffffffff,
 }

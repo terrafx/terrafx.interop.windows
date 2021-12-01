@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OVERLAPPED">
+    <summary>
+      <para>Contains information used in asynchronous (overlapped) input/output (I/O).</para>
+    </summary>
+    <remarks>
+      <para>This structure should always be initialized to zero before it is used in a function call. If it is not, the function can fail and return <b>ERROR_INVALID_PARAMETER</b>.</para>
+      <para>Use the <see cref="IStreamAsync.CancelIo" /> function to cancel an asynchronous I/O operation.</para>
+      <para>A common mistake is to reuse an <b>OVERLAPPED</b> structure before the previous asynchronous operation has been completed. Use a separate structure for each request. Create an event object for each thread that processes data.</para>
+    </remarks>
+  </member>
+  <member name="OVERLAPPED.Internal">
+    <summary>
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>Reserved for operating system use. This member, which specifies a system-dependent status, is valid when the <see cref="IStreamAsync.OverlappedResult" /> function returns without setting the extended error information to <b>ERROR_IO_PENDING</b>.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED.InternalHigh">
+    <summary>
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>Reserved for operating system use. This member, which specifies the length of the data transferred, is valid when the <see cref="IStreamAsync.OverlappedResult" /> function returns <b>TRUE</b>.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED.Offset">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>File position at which to start the transfer. The file position is a byte offset from the start of the file. The calling process must set this member before it calls the <see cref="IStreamAsync.ReadAsync" /> or <see cref="IStreamAsync.WriteAsync" /> function.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED.OffsetHigh">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>High-order word of the file position at which to start the transfer.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED.Pointer">
+    <summary>
+      <para>Type: <b>PVOID</b></para>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED.hEvent">
+    <summary>
+      <para>Type: <b>handle</b></para>
+      <para>Handle to an event that is set to the signaled state when the operation has been completed. The calling process must set this member either to zero or a valid event handle before it calls any overlapped functions. To create an event object, use the <see cref="CreateEvent" /> function. This function returns a handle that can be used to synchronize simultaneous I/O requests for a device.</para>
+      <para>Functions such as <see cref="IStreamAsync.ReadAsync" /> and <see cref="IStreamAsync.WriteAsync" /> set this handle to the nonsignaled state before they begin an I/O operation. When the operation has completed, the handle is set to the signaled state.</para>
+      <para>Functions such as <see cref="IStreamAsync.OverlappedResult" /> and the wait functions reset auto-reset events to the nonsignaled state. Therefore, if an auto-reset event is used, the application can stop responding if it waits for the operation to complete and then calls <b>IStreamAsync.OverlappedResult</b>.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TfShiftDir.xml' path='doc/member[@name="TfShiftDir"]/*' />
 public enum TfShiftDir
 {
+    /// <include file='TfShiftDir.xml' path='doc/member[@name="TfShiftDir.TF_SD_BACKWARD"]/*' />
     TF_SD_BACKWARD = 0,
+
+    /// <include file='TfShiftDir.xml' path='doc/member[@name="TfShiftDir.TF_SD_FORWARD"]/*' />
     TF_SD_FORWARD = 1,
 }

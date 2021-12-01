@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPreviewItem">
+    <summary>
+      <para>Identifies an item that will be shown in the preview pane.</para>
+    </summary>
+    <remarks>
+      <para>This interface provides only the methods of the <see cref="IRelatedItem" /> interface, from which it inherits.</para>
+      <h3>When to Implement</h3>
+      <para>An implementation of this interface for system-provided data objects is provided with Windows. Custom data sources that want to expose this information must implement the interface as part of their data object.</para>
+    </remarks>
+  </member>
+</doc>

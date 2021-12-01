@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRFILLPATH">
+    <summary>
+      <para>The <b>EMRFILLPATH</b>, <b>EMRSTROKEANDFILLPATH</b>,  and <b>EMRSTROKEPATH</b> structures contain members for the <see cref="FillPath" />, <see cref="StrokeAndFillPath" />, and <see cref="StrokePath" /> enhanced metafile records.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRFILLPATH.emr">
+    <summary>
+      <para>Base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRFILLPATH.rclBounds">
+    <summary>
+      <para>Bounding rectangle, in device units.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_KEY_ATTRIBUTES_INFO.xml' path='doc/member[@name="CERT_KEY_ATTRIBUTES_INFO"]/*' />
 public unsafe partial struct CERT_KEY_ATTRIBUTES_INFO
 {
+    /// <include file='CERT_KEY_ATTRIBUTES_INFO.xml' path='doc/member[@name="CERT_KEY_ATTRIBUTES_INFO.KeyId"]/*' />
     public CRYPT_DATA_BLOB KeyId;
 
+    /// <include file='CERT_KEY_ATTRIBUTES_INFO.xml' path='doc/member[@name="CERT_KEY_ATTRIBUTES_INFO.IntendedKeyUsage"]/*' />
     public CRYPT_BIT_BLOB IntendedKeyUsage;
 
+    /// <include file='CERT_KEY_ATTRIBUTES_INFO.xml' path='doc/member[@name="CERT_KEY_ATTRIBUTES_INFO.pPrivateKeyUsagePeriod"]/*' />
     [NativeTypeName("PCERT_PRIVATE_KEY_VALIDITY")]
     public CERT_PRIVATE_KEY_VALIDITY* pPrivateKeyUsagePeriod;
 }

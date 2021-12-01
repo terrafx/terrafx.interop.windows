@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_FAULT_ERROR_PROPERTY_ID.xml' path='doc/member[@name="WS_FAULT_ERROR_PROPERTY_ID"]/*' />
 public enum WS_FAULT_ERROR_PROPERTY_ID
 {
+    /// <include file='WS_FAULT_ERROR_PROPERTY_ID.xml' path='doc/member[@name="WS_FAULT_ERROR_PROPERTY_ID.WS_FAULT_ERROR_PROPERTY_FAULT"]/*' />
     WS_FAULT_ERROR_PROPERTY_FAULT = 0,
+
+    /// <include file='WS_FAULT_ERROR_PROPERTY_ID.xml' path='doc/member[@name="WS_FAULT_ERROR_PROPERTY_ID.WS_FAULT_ERROR_PROPERTY_ACTION"]/*' />
     WS_FAULT_ERROR_PROPERTY_ACTION = 1,
+
+    /// <include file='WS_FAULT_ERROR_PROPERTY_ID.xml' path='doc/member[@name="WS_FAULT_ERROR_PROPERTY_ID.WS_FAULT_ERROR_PROPERTY_HEADER"]/*' />
     WS_FAULT_ERROR_PROPERTY_HEADER = 2,
 }

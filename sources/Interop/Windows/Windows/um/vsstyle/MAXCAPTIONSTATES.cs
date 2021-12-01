@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MAXCAPTIONSTATES.xml' path='doc/member[@name="MAXCAPTIONSTATES"]/*' />
 public enum MAXCAPTIONSTATES
 {
+    /// <include file='MAXCAPTIONSTATES.xml' path='doc/member[@name="MAXCAPTIONSTATES.MXCS_ACTIVE"]/*' />
     MXCS_ACTIVE = 1,
+
+    /// <include file='MAXCAPTIONSTATES.xml' path='doc/member[@name="MAXCAPTIONSTATES.MXCS_INACTIVE"]/*' />
     MXCS_INACTIVE = 2,
+
+    /// <include file='MAXCAPTIONSTATES.xml' path='doc/member[@name="MAXCAPTIONSTATES.MXCS_DISABLED"]/*' />
     MXCS_DISABLED = 3,
 }

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_BASIC_CONSTRAINTS2_INFO">
+    <summary>
+      <para>The <b>CERT_BASIC_CONSTRAINTS2_INFO</b> structure contains information indicating whether the certified subject can act as a CA or an end entity. If the subject can act as a CA, a certification path length constraint can also be specified.</para>
+      <para>
+        <see cref="CryptDecodeObject" /> creates an instance of this structure when performed on a
+<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with the structure's <b>pszObjId</b> member set to szOID_BASIC_CONSTRAINTS2.</para>
+      <para>An instance of this structure can be used as input to <see cref="CryptEncodeObject" /> to create an appropriate <see cref="CERT_EXTENSION" />.</para>
+    </summary>
+  </member>
+  <member name="CERT_BASIC_CONSTRAINTS2_INFO.fCA">
+    <summary>
+      <para>Boolean indicating whether the certificate subject can act as a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a> (CA) or not.</para>
+    </summary>
+  </member>
+  <member name="CERT_BASIC_CONSTRAINTS2_INFO.fPathLenConstraint">
+    <summary>
+      <para>Boolean indicating whether the <b>dwPathLenConstraint</b> field limits the maximum length of the certification path. Used only if <b>fCA</b> is <b>TRUE</b>.</para>
+    </summary>
+  </member>
+  <member name="CERT_BASIC_CONSTRAINTS2_INFO.dwPathLenConstraint">
+    <summary>
+      <para>Maximum number of CA certificates that can follow this certificate in a certification path. A value of zero indicates that the subject of this certificate can issue certificates only to end entities and not to other CAs. Used only if both <b>fCA</b> and <b>fPathLenConstraint</b> are <b>TRUE</b>.</para>
+    </summary>
+  </member>
+</doc>

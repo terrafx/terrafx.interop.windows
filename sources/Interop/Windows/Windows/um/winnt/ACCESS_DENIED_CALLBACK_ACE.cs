@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACCESS_DENIED_CALLBACK_ACE.xml' path='doc/member[@name="ACCESS_DENIED_CALLBACK_ACE"]/*' />
 public partial struct ACCESS_DENIED_CALLBACK_ACE
 {
+    /// <include file='ACCESS_DENIED_CALLBACK_ACE.xml' path='doc/member[@name="ACCESS_DENIED_CALLBACK_ACE.Header"]/*' />
     public ACE_HEADER Header;
 
+    /// <include file='ACCESS_DENIED_CALLBACK_ACE.xml' path='doc/member[@name="ACCESS_DENIED_CALLBACK_ACE.Mask"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint Mask;
 
+    /// <include file='ACCESS_DENIED_CALLBACK_ACE.xml' path='doc/member[@name="ACCESS_DENIED_CALLBACK_ACE.SidStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint SidStart;
 }

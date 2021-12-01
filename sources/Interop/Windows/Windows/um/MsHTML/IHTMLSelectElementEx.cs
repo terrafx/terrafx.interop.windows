@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLSelectElementEx.xml' path='doc/member[@name="IHTMLSelectElementEx"]/*' />
 [Guid("3050F2D1-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLSelectElementEx : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
         return ((delegate* unmanaged<IHTMLSelectElementEx*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
         return ((delegate* unmanaged<IHTMLSelectElementEx*, uint>)(lpVtbl[1]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
         return ((delegate* unmanaged<IHTMLSelectElementEx*, uint>)(lpVtbl[2]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLSelectElementEx.xml' path='doc/member[@name="IHTMLSelectElementEx.ShowDropdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ShowDropdown(BOOL fShow)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
         return ((delegate* unmanaged<IHTMLSelectElementEx*, BOOL, int>)(lpVtbl[3]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), fShow);
     }
 
+    /// <include file='IHTMLSelectElementEx.xml' path='doc/member[@name="IHTMLSelectElementEx.SetSelectExFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetSelectExFlags([NativeTypeName("DWORD")] uint lFlags)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
         return ((delegate* unmanaged<IHTMLSelectElementEx*, uint, int>)(lpVtbl[4]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), lFlags);
     }
 
+    /// <include file='IHTMLSelectElementEx.xml' path='doc/member[@name="IHTMLSelectElementEx.GetSelectExFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSelectExFlags([NativeTypeName("DWORD *")] uint* pFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
         return ((delegate* unmanaged<IHTMLSelectElementEx*, uint*, int>)(lpVtbl[5]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pFlags);
     }
 
+    /// <include file='IHTMLSelectElementEx.xml' path='doc/member[@name="IHTMLSelectElementEx.GetDropdownOpen"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDropdownOpen(BOOL* pfOpen)

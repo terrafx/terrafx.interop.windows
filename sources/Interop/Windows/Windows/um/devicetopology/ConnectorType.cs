@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ConnectorType.xml' path='doc/member[@name="ConnectorType"]/*' />
 public enum ConnectorType
 {
+    /// <include file='ConnectorType.xml' path='doc/member[@name="ConnectorType.Unknown_Connector"]/*' />
     Unknown_Connector = 0,
+
+    /// <include file='ConnectorType.xml' path='doc/member[@name="ConnectorType.Physical_Internal"]/*' />
     Physical_Internal = (Unknown_Connector + 1),
+
+    /// <include file='ConnectorType.xml' path='doc/member[@name="ConnectorType.Physical_External"]/*' />
     Physical_External = (Physical_Internal + 1),
+
+    /// <include file='ConnectorType.xml' path='doc/member[@name="ConnectorType.Software_IO"]/*' />
     Software_IO = (Physical_External + 1),
+
+    /// <include file='ConnectorType.xml' path='doc/member[@name="ConnectorType.Software_Fixed"]/*' />
     Software_Fixed = (Software_IO + 1),
+
+    /// <include file='ConnectorType.xml' path='doc/member[@name="ConnectorType.Network"]/*' />
     Network = (Software_Fixed + 1),
 }

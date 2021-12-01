@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyNotifySink.xml' path='doc/member[@name="IPropertyNotifySink"]/*' />
 [Guid("9BFBBC02-EFF1-101A-84ED-00AA00341D07")]
 [NativeTypeName("struct IPropertyNotifySink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
         return ((delegate* unmanaged<IPropertyNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
         return ((delegate* unmanaged<IPropertyNotifySink*, uint>)(lpVtbl[1]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
         return ((delegate* unmanaged<IPropertyNotifySink*, uint>)(lpVtbl[2]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyNotifySink.xml' path='doc/member[@name="IPropertyNotifySink.OnChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnChanged([NativeTypeName("DISPID")] int dispID)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
         return ((delegate* unmanaged<IPropertyNotifySink*, int, int>)(lpVtbl[3]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
     }
 
+    /// <include file='IPropertyNotifySink.xml' path='doc/member[@name="IPropertyNotifySink.OnRequestEdit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnRequestEdit([NativeTypeName("DISPID")] int dispID)

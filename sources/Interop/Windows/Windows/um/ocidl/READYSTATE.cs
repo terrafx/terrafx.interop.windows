@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='READYSTATE.xml' path='doc/member[@name="READYSTATE"]/*' />
 public enum READYSTATE
 {
+    /// <include file='READYSTATE.xml' path='doc/member[@name="READYSTATE.READYSTATE_UNINITIALIZED"]/*' />
     READYSTATE_UNINITIALIZED = 0,
+
+    /// <include file='READYSTATE.xml' path='doc/member[@name="READYSTATE.READYSTATE_LOADING"]/*' />
     READYSTATE_LOADING = 1,
+
+    /// <include file='READYSTATE.xml' path='doc/member[@name="READYSTATE.READYSTATE_LOADED"]/*' />
     READYSTATE_LOADED = 2,
+
+    /// <include file='READYSTATE.xml' path='doc/member[@name="READYSTATE.READYSTATE_INTERACTIVE"]/*' />
     READYSTATE_INTERACTIVE = 3,
+
+    /// <include file='READYSTATE.xml' path='doc/member[@name="READYSTATE.READYSTATE_COMPLETE"]/*' />
     READYSTATE_COMPLETE = 4,
 }

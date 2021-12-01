@@ -8,12 +8,15 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAPO_LOCKFORPROCESS_PARAMETERS.xml' path='doc/member[@name="XAPO_LOCKFORPROCESS_PARAMETERS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct XAPO_LOCKFORPROCESS_PARAMETERS
 {
+    /// <include file='XAPO_LOCKFORPROCESS_PARAMETERS.xml' path='doc/member[@name="XAPO_LOCKFORPROCESS_PARAMETERS.pFormat"]/*' />
     [NativeTypeName("const WAVEFORMATEX *")]
     public WAVEFORMATEX* pFormat;
 
+    /// <include file='XAPO_LOCKFORPROCESS_PARAMETERS.xml' path='doc/member[@name="XAPO_LOCKFORPROCESS_PARAMETERS.MaxFrameCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint MaxFrameCount;
 }

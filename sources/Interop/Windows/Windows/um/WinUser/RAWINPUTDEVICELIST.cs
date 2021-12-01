@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RAWINPUTDEVICELIST.xml' path='doc/member[@name="RAWINPUTDEVICELIST"]/*' />
 public partial struct RAWINPUTDEVICELIST
 {
+    /// <include file='RAWINPUTDEVICELIST.xml' path='doc/member[@name="RAWINPUTDEVICELIST.hDevice"]/*' />
     public HANDLE hDevice;
 
+    /// <include file='RAWINPUTDEVICELIST.xml' path='doc/member[@name="RAWINPUTDEVICELIST.dwType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwType;
 }

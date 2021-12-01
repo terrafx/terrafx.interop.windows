@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACTIVATION_CONTEXT_QUERY_INDEX.xml' path='doc/member[@name="ACTIVATION_CONTEXT_QUERY_INDEX"]/*' />
 public partial struct ACTIVATION_CONTEXT_QUERY_INDEX
 {
+    /// <include file='ACTIVATION_CONTEXT_QUERY_INDEX.xml' path='doc/member[@name="ACTIVATION_CONTEXT_QUERY_INDEX.ulAssemblyIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulAssemblyIndex;
 
+    /// <include file='ACTIVATION_CONTEXT_QUERY_INDEX.xml' path='doc/member[@name="ACTIVATION_CONTEXT_QUERY_INDEX.ulFileIndexInAssembly"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulFileIndexInAssembly;
 }

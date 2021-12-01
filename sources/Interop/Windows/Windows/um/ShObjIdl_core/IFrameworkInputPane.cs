@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFrameworkInputPane.xml' path='doc/member[@name="IFrameworkInputPane"]/*' />
 [Guid("5752238B-24F0-495A-82F1-2FD593056796")]
 [NativeTypeName("struct IFrameworkInputPane : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
         return ((delegate* unmanaged<IFrameworkInputPane*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
         return ((delegate* unmanaged<IFrameworkInputPane*, uint>)(lpVtbl[1]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
         return ((delegate* unmanaged<IFrameworkInputPane*, uint>)(lpVtbl[2]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFrameworkInputPane.xml' path='doc/member[@name="IFrameworkInputPane.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Advise(IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -46,6 +51,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
         return ((delegate* unmanaged<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[3]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), pWindow, pHandler, pdwCookie);
     }
 
+    /// <include file='IFrameworkInputPane.xml' path='doc/member[@name="IFrameworkInputPane.AdviseWithHWND"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AdviseWithHWND(HWND hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -53,6 +59,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
         return ((delegate* unmanaged<IFrameworkInputPane*, HWND, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[4]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), hwnd, pHandler, pdwCookie);
     }
 
+    /// <include file='IFrameworkInputPane.xml' path='doc/member[@name="IFrameworkInputPane.Unadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
@@ -60,6 +67,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
         return ((delegate* unmanaged<IFrameworkInputPane*, uint, int>)(lpVtbl[5]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <include file='IFrameworkInputPane.xml' path='doc/member[@name="IFrameworkInputPane.Location"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Location(RECT* prcInputPaneScreenLocation)

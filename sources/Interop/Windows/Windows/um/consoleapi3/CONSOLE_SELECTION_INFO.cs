@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONSOLE_SELECTION_INFO.xml' path='doc/member[@name="CONSOLE_SELECTION_INFO"]/*' />
 public partial struct CONSOLE_SELECTION_INFO
 {
+    /// <include file='CONSOLE_SELECTION_INFO.xml' path='doc/member[@name="CONSOLE_SELECTION_INFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='CONSOLE_SELECTION_INFO.xml' path='doc/member[@name="CONSOLE_SELECTION_INFO.dwSelectionAnchor"]/*' />
     public COORD dwSelectionAnchor;
 
+    /// <include file='CONSOLE_SELECTION_INFO.xml' path='doc/member[@name="CONSOLE_SELECTION_INFO.srSelection"]/*' />
     public SMALL_RECT srSelection;
 }

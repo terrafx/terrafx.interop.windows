@@ -9,10 +9,12 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterWaitUntilOOBECompleted"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL RegisterWaitUntilOOBECompleted([NativeTypeName("OOBE_COMPLETED_CALLBACK")] delegate* unmanaged<void*, void> OOBECompletedCallback, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PVOID *")] void** WaitHandle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterWaitUntilOOBECompleted"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL UnregisterWaitUntilOOBECompleted([NativeTypeName("PVOID")] void* WaitHandle);

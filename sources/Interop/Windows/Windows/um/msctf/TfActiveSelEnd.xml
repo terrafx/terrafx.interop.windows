@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TfActiveSelEnd">
+    <summary>
+      <para>Elements of the <b>TfActiveSelEnd</b> enumeration specify which end of a selected range of text is active.</para>
+    </summary>
+    <remarks>
+      <para>The active end of a selected range is the end likely to respond to user actions. For example, in many applications, holding the SHIFT key down while using the arrow keys will change the selected range. The end of the selected range that moves is the active end of the selected range.</para>
+      <para>This enumeration is used in the <see cref="TF_SELECTIONSTYLE" /> structure.</para>
+    </remarks>
+    <seealso cref="TF_SELECTIONSTYLE " />
+  </member>
+  <member name="TfActiveSelEnd.TF_AE_NONE">
+    <summary>
+      <para>The selected range has no active end. This is typical for selected ranges other than the default selected range.</para>
+    </summary>
+  </member>
+  <member name="TfActiveSelEnd.TF_AE_START">
+    <summary>
+      <para>The active end is at the start of the selected range.</para>
+    </summary>
+  </member>
+  <member name="TfActiveSelEnd.TF_AE_END">
+    <summary>
+      <para>The active end is at the end of the selected range.</para>
+    </summary>
+  </member>
+</doc>

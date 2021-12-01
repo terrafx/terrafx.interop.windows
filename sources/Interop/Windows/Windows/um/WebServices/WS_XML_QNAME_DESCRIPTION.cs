@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_QNAME_DESCRIPTION.xml' path='doc/member[@name="WS_XML_QNAME_DESCRIPTION"]/*' />
 public partial struct WS_XML_QNAME_DESCRIPTION
 {
+    /// <include file='WS_XML_QNAME_DESCRIPTION.xml' path='doc/member[@name="WS_XML_QNAME_DESCRIPTION.minLocalNameByteCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint minLocalNameByteCount;
 
+    /// <include file='WS_XML_QNAME_DESCRIPTION.xml' path='doc/member[@name="WS_XML_QNAME_DESCRIPTION.maxLocalNameByteCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint maxLocalNameByteCount;
 
+    /// <include file='WS_XML_QNAME_DESCRIPTION.xml' path='doc/member[@name="WS_XML_QNAME_DESCRIPTION.minNsByteCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint minNsByteCount;
 
+    /// <include file='WS_XML_QNAME_DESCRIPTION.xml' path='doc/member[@name="WS_XML_QNAME_DESCRIPTION.maxNsByteCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint maxNsByteCount;
 }

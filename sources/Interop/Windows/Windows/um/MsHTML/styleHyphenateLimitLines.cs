@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleHyphenateLimitLines.xml' path='doc/member[@name="styleHyphenateLimitLines"]/*' />
 public enum styleHyphenateLimitLines
 {
+    /// <include file='styleHyphenateLimitLines.xml' path='doc/member[@name="styleHyphenateLimitLines.styleHyphenateLimitLinesNoLimit"]/*' />
     styleHyphenateLimitLinesNoLimit = 0,
+
+    /// <include file='styleHyphenateLimitLines.xml' path='doc/member[@name="styleHyphenateLimitLines.styleHyphenateLimitLines_Max"]/*' />
     styleHyphenateLimitLines_Max = 2147483647,
 }

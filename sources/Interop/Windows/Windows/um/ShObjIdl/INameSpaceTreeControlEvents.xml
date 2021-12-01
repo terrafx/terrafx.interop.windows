@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INameSpaceTreeControlEvents.OnAfterContextMenu">
+    <summary>
+      <para>Called after a context menu is displayed.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the <see cref="IShellItem" /> from which the context menu is generated. This value can be <b>NULL</b> only if the <see cref="NSTCS2_SHOWNULLSPACEMENU" /> flag is set.</para>
+    </param>
+    <param name="pcmIn">
+      <para>Type: <b><see cref="IContextMenu" />*</b></para>
+      <para>A pointer to the context menu.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the IID of the context menu.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the address of a pointer to the interface specified in <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method allows client to completely replace the context menu. This method will allow the client to use the context menu returned by <i>ppv</i> and not necessarily the one specified in <i>pcmIn</i>.</para>
+    </remarks>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="NSTCSTYLE2" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnAfterExpand">
+    <summary>
+      <para>Called after an <see cref="IShellItem" /> is expanded.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the <see cref="IShellItem" /> that was expanded.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnBeforeContextMenu">
+    <summary>
+      <para>Called before a context menu is displayed; allows client to add additional menu entries.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the <see cref="IShellItem" /> from which the context menu is generated. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the IID of the context menu.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this methods returns, contains the address of a pointer to the interface specified by <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="INameSpaceTreeControlEvents" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnBeforeExpand">
+    <summary>
+      <para>Called before an <see cref="IShellItem" /> is expanded.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the <see cref="IShellItem" /> that is to be expanded.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnBeforeItemDelete">
+    <summary>
+      <para>Called before an <see cref="IShellItem" /> and all of its children are deleted.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the <see cref="IShellItem" /> that is to be deleted.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If this method fails, the given <see cref="IShellItem" /> and its children are still deleted.</para>
+    </remarks>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnBeforeStateImageChange">
+    <summary>
+      <para>Called before the state icon of the given <see cref="IShellItem" /> is changed.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>Pointer to the <see cref="IShellItem" /> in which the state image is changing.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If this method returns S_OK, the client has processed the event and no further action is required of the namespace control. Otherwise the event will need to be processed, in this case the default action is to go to the next image in the list.</para>
+    </remarks>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnBeginLabelEdit">
+    <summary>
+      <para>Called before the <see cref="IShellItem" /> goes into edit mode.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>Pointer to the <see cref="IShellItem" /> for which the text is to be edited.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If this method fails, the transition to edit mode is not canceled.</para>
+    </remarks>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnEndLabelEdit">
+    <summary>
+      <para>Called after the <see cref="IShellItem" /> leaves edit mode.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the <see cref="IShellItem" /> for which the text was edited.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnGetToolTip">
+    <summary>
+      <para>Enables you to provide a tooltip.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>Pointer to the <see cref="IShellItem" /> that contains the tooltip.</para>
+    </param>
+    <param name="pszTip">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>When this method returns, contains the text of the tooltip.</para>
+    </param>
+    <param name="cchTip">
+      <para>Type: <b>int</b></para>
+      <para>The size of the tooltip in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If this method returns S_OK, the client provides its own tooltip. Otherwise the <see cref="INameSpaceTreeControl" /> will extract one.</para>
+    </remarks>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnItemAdded">
+    <summary>
+      <para>Called after an <see cref="IShellItem" /> has been added.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the <see cref="IShellItem" /> that was added.</para>
+    </param>
+    <param name="fIsRoot">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether the <see cref="IShellItem" /> that was added is a root.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnItemClick">
+    <summary>
+      <para>Called when the user clicks a button on the mouse.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>The <see cref="IShellItem" /> that was clicked.</para>
+    </param>
+    <param name="nstceHitTest">
+      <para>Type: <b>NSTCEHITTEST</b></para>
+      <para>The location on the <see cref="IShellItem" /> that was clicked. One of the following values:</para>
+      <h4>NSTCEHT_NOWHERE (0x0001)</h4>
+      <para>The click missed the <see cref="IShellItem" />.</para>
+      <h4>NSTCEHT_ONITEMICON (0x0002)</h4>
+      <para>The click was on the icon of the <see cref="IShellItem" />.</para>
+      <h4>NSTCEHT_ONITEMLABEL (0x0004)</h4>
+      <para>The click was on the label text of the <see cref="IShellItem" />.</para>
+      <h4>NSTCEHT_ONITEMINDENT (0x0008)</h4>
+      <para>The click was on the indented space on the leftmost side of the <see cref="IShellItem" />.</para>
+      <h4>NSTCEHT_ONITEMBUTTON (0x0010)</h4>
+      <para>The click was on the expando button of the <see cref="IShellItem" />.</para>
+      <h4>NSTCEHT_ONITEMRIGHT (0x0020)</h4>
+      <para>The click was on the rightmost side of the text of the <see cref="IShellItem" />.</para>
+      <h4>NSTCEHT_ONITEMSTATEICON (0x0040)</h4>
+      <para>The click was on the state icon of the <see cref="IShellItem" />.</para>
+      <h4>NSTCEHT_ONITEM (0x0046)</h4>
+      <para>The click was on the item icon or the item label or the state icon of the <see cref="IShellItem" />.</para>
+      <h4>NSTCEHT_ONITEMTABBUTTON (0x1000)</h4>
+      <para>The click was on the tab button of the <see cref="IShellItem" />.</para>
+    </param>
+    <param name="nstceClickType">
+      <para>Type: <b><see cref="NSTCSTYLE" /></b></para>
+      <para>Indicates which button was clicked and the kind of click. One of the following values:</para>
+      <h4>NSTCECT_LBUTTON (0x0001)</h4>
+      <para>The left button was clicked.</para>
+      <h4>NSTCECT_MBUTTON (0x0002)</h4>
+      <para>The middle button was clicked.</para>
+      <h4>NSTCECT_RBUTTON (0x0003)</h4>
+      <para>The right button was clicked.</para>
+      <h4>NSTCECT_BUTTON (0x0003)</h4>
+      <para>A button was clicked.</para>
+      <h4>NSTCECT_DBLCLICK (0x0004)</h4>
+      <para>The click was a double click. If this value is present, it is added to one of the other values.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If this method fails, the event is processed by both <see cref="INameSpaceTreeControl" /> and TreeView. If it returns S_OK, then only <b>INameSpaceTreeControl</b> will process the event.</para>
+    </remarks>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnItemDeleted">
+    <summary>
+      <para>Called after an <see cref="IShellItem" /> has been deleted.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the <see cref="IShellItem" /> that was deleted.</para>
+    </param>
+    <param name="fIsRoot">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether the <see cref="IShellItem" /> that was deleted is a root.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnItemStateChanged">
+    <summary>
+      <para>Not implemented.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the shell item for which the state has changed.</para>
+    </param>
+    <param name="nstcisMask">
+      <para>Type: <b><see cref="NSTCITEMSTATE" /></b></para>
+      <para>One or more values from the <see cref="NSTCITEMSTATE" /> enumeration that indicates what pieces of information the caller wants to set.</para>
+    </param>
+    <param name="nstcisState">
+      <para>Type: <b><see cref="NSTCITEMSTATE" /></b></para>
+      <para>One or more values from the <see cref="NSTCITEMSTATE" /> enumeration that indicates the values that are to be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnItemStateChanging">
+    <summary>
+      <para>Called before the state of an item changes.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the Shell item for which the state is going to change.</para>
+    </param>
+    <param name="nstcisMask">
+      <para>Type: <b><see cref="NSTCITEMSTATE" /></b></para>
+      <para>One or more values from the <see cref="NSTCITEMSTATE" /> enumeration that indicate which pieces of information the calling application wants to set.</para>
+    </param>
+    <param name="nstcisState">
+      <para>Type: <b><see cref="NSTCITEMSTATE" /></b></para>
+      <para>One or more values from the <see cref="NSTCITEMSTATE" /> enumeration that indicate the values that are to be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnKeyboardInput">
+    <summary>
+      <para>Called when the user presses a key on the keyboard.</para>
+    </summary>
+    <param name="uMsg">
+      <para>Type: <b>UINT</b></para>
+      <para>The message value.</para>
+    </param>
+    <param name="wParam">
+      <para>Type: <b>WPARAM</b></para>
+      <para>Specifies the WParam parameters of the message.</para>
+    </param>
+    <param name="lParam">
+      <para>Type: <b>LPARAM</b></para>
+      <para>Specifies the LParam parameters of the message.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method receives its message directly from WndProc. When this returns S_OK, the message was not consumed and the namespace tree control is allowed to process the message. Otherwise this message was handled, with no further action required.</para>
+    </remarks>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnPropertyItemCommit">
+    <summary>
+      <para>Not implemented.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>Not used.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns E_NOTIMPL.</para>
+    </returns>
+  </member>
+  <member name="INameSpaceTreeControlEvents.OnSelectionChanged">
+    <summary>
+      <para>Called when the selection changes.</para>
+    </summary>
+    <param name="psiaSelection">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>An array of <see cref="IShellItem" /> objects that contains the new selection.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="INameSpaceTreeControlEvents" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="INameSpaceTreeControlEvents">
+    <summary>
+      <para>Exposes methods for handling <see cref="INameSpaceTreeControl" /> events.</para>
+    </summary>
+    <remarks>
+      <para>This interface is implemented by a client of namespace control (CLSID_NameSpaceTreeControl) to be advised of namespace control events so that the client may process these events and if not, allow the namespace control to process them.</para>
+    </remarks>
+    <seealso cref="INameSpaceTreeControl" />
+  </member>
+</doc>

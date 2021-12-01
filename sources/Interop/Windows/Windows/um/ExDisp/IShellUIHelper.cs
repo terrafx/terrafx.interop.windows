@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper"]/*' />
 [Guid("729FE2F8-1EA8-11D1-8F85-00C04FC2FBE1")]
 [NativeTypeName("struct IShellUIHelper : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, Guid*, void**, int>)(lpVtbl[0]))((IShellUIHelper*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, uint>)(lpVtbl[1]))((IShellUIHelper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, uint>)(lpVtbl[2]))((IShellUIHelper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, uint*, int>)(lpVtbl[3]))((IShellUIHelper*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellUIHelper*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellUIHelper*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellUIHelper*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.ResetFirstBootMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ResetFirstBootMode()
@@ -74,6 +83,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, int>)(lpVtbl[7]))((IShellUIHelper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.ResetSafeMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ResetSafeMode()
@@ -81,6 +91,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, int>)(lpVtbl[8]))((IShellUIHelper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.RefreshOfflineDesktop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT RefreshOfflineDesktop()
@@ -88,6 +99,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, int>)(lpVtbl[9]))((IShellUIHelper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.AddFavorite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT AddFavorite([NativeTypeName("BSTR")] ushort* URL, VARIANT* Title)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, ushort*, VARIANT*, int>)(lpVtbl[10]))((IShellUIHelper*)Unsafe.AsPointer(ref this), URL, Title);
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.AddChannel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT AddChannel([NativeTypeName("BSTR")] ushort* URL)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, ushort*, int>)(lpVtbl[11]))((IShellUIHelper*)Unsafe.AsPointer(ref this), URL);
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.AddDesktopComponent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT AddDesktopComponent([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* Type, VARIANT* Left, VARIANT* Top, VARIANT* Width, VARIANT* Height)
@@ -109,6 +123,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, ushort*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[12]))((IShellUIHelper*)Unsafe.AsPointer(ref this), URL, Type, Left, Top, Width, Height);
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.IsSubscribed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT IsSubscribed([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -116,6 +131,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, ushort*, short*, int>)(lpVtbl[13]))((IShellUIHelper*)Unsafe.AsPointer(ref this), URL, pBool);
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.NavigateAndFind"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT NavigateAndFind([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* strQuery, VARIANT* varTargetFrame)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[14]))((IShellUIHelper*)Unsafe.AsPointer(ref this), URL, strQuery, varTargetFrame);
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.ImportExportFavorites"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT ImportExportFavorites([NativeTypeName("VARIANT_BOOL")] short fImport, [NativeTypeName("BSTR")] ushort* strImpExpPath)
@@ -130,6 +147,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, short, ushort*, int>)(lpVtbl[15]))((IShellUIHelper*)Unsafe.AsPointer(ref this), fImport, strImpExpPath);
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.AutoCompleteSaveForm"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT AutoCompleteSaveForm(VARIANT* Form)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, VARIANT*, int>)(lpVtbl[16]))((IShellUIHelper*)Unsafe.AsPointer(ref this), Form);
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.AutoScan"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT AutoScan([NativeTypeName("BSTR")] ushort* strSearch, [NativeTypeName("BSTR")] ushort* strFailureUrl, VARIANT* pvarTargetFrame)
@@ -144,6 +163,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[17]))((IShellUIHelper*)Unsafe.AsPointer(ref this), strSearch, strFailureUrl, pvarTargetFrame);
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.AutoCompleteAttach"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT AutoCompleteAttach(VARIANT* Reserved)
@@ -151,6 +171,7 @@ public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
         return ((delegate* unmanaged<IShellUIHelper*, VARIANT*, int>)(lpVtbl[18]))((IShellUIHelper*)Unsafe.AsPointer(ref this), Reserved);
     }
 
+    /// <include file='IShellUIHelper.xml' path='doc/member[@name="IShellUIHelper.ShowBrowserUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT ShowBrowserUI([NativeTypeName("BSTR")] ushort* bstrName, VARIANT* pvarIn, VARIANT* pvarOut)

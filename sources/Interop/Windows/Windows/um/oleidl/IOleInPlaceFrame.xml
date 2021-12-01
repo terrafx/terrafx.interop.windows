@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOleInPlaceFrame.EnableModeless">
+    <summary>
+      <para>Enables or disables a frame's modeless dialog boxes.</para>
+    </summary>
+    <param name="fEnable">
+      <para>Specifies whether the modeless dialog box windows are to be enabled (<b>TRUE</b>) or disabled (<b>FALSE</b>).</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK if the dialog box was either enabled or disabled successfully, depending on the value for <i>fEnable</i>.</para>
+    </returns>
+    <seealso cref="IOleInPlaceActiveObject.EnableModeless" />
+    <seealso cref="IOleInPlaceFrame" />
+  </member>
+  <member name="IOleInPlaceFrame.InsertMenus">
+    <summary>
+      <para>Enables the container to insert menu groups into the composite menu to be used during the in-place session.</para>
+    </summary>
+    <param name="hmenuShared">
+      <para>A handle to an empty menu.</para>
+    </param>
+    <param name="lpMenuWidths">
+      <para>A pointer to an <see cref="OLEMENUGROUPWIDTHS" /> array with six elements. The container fills in elements 0, 2, and 4 to reflect the number of menu elements it provided in the <b>File</b>, <b>View</b>, and <b>Window</b> menu groups.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>This method is called by object applications when they are first being activated. They call it to insert their menus into the frame-level user interface.</para>
+      <para>The object application asks the container to add its menus to the menu specified in <i>hmenuShared</i> and to set the group counts in the <see cref="OLEMENUGROUPWIDTHS" /> array pointed to by <i>lpMenuWidths</i>. The object application then adds its own menus and counts. Objects can call <b>IOleInPlaceFrame.InsertMenus</b> as many times as necessary to build up the composite menus. The container should use the initial menu handle associated with the composite menu for all menu items in the drop-down menus.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceFrame" />
+  </member>
+  <member name="IOleInPlaceFrame.RemoveMenus">
+    <summary>
+      <para>Removes a container's menu elements from the composite menu.</para>
+    </summary>
+    <param name="hmenuShared">
+      <para>A handle to the in-place composite menu that was constructed by calls to <see cref="IOleInPlaceFrame.InsertMenus" /> and the <see cref="InsertMenu" /> function.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The object should always give the container a chance to remove its menu elements from the composite menu before deactivating the shared user interface.</para>
+      <h3>Notes to Callers</h3>
+      <para>This method is called by the object application while it is being UI-deactivated to remove its menus.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceFrame" />
+    <seealso cref="IOleInPlaceFrame.SetMenu" />
+    <seealso cref="InsertMenu" />
+  </member>
+  <member name="IOleInPlaceFrame.SetMenu">
+    <summary>
+      <para>Adds a composite menu to the window frame containing the object being activated in place.</para>
+    </summary>
+    <param name="hmenuShared">
+      <para>A handle to the composite menu constructed by calls to <see cref="IOleInPlaceFrame.InsertMenus" /> and the <see cref="InsertMenu" /> function.</para>
+    </param>
+    <param name="holemenu">
+      <para>A handle to the menu descriptor returned by the <see cref="OleCreateMenuDescriptor" /> function.</para>
+    </param>
+    <param name="hwndActiveObject">
+      <para>A handle to a window owned by the object and to which menu messages, commands, and accelerators are to be sent.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified handle is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>The object calls <b>IOleInPlaceFrame.SetMenu</b> to ask the container to install the composite menu structure set up by calls to <see cref="IOleInPlaceFrame.InsertMenus" />.</para>
+      <h3>Notes to Implementers</h3>
+      <para>An SDI container's implementation of this method should call the <see cref="SetMenu" /> function. An MDI container should send a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-mdisetmenu">WM_MDISETMENU</a> message, using <i>hmenuShared</i> as the menu to install. The container should call <see cref="OleSetMenuDescriptor" /> to install the OLE dispatching code.</para>
+      <para>When deactivating, the container must call <b>IOleInPlaceFrame.SetMenu</b>, specifying <b>NULL</b> to remove the shared menu. This is done to help minimize window repaints. The container should also call <see cref="OleSetMenuDescriptor" />, specifying <b>NULL</b> to unhook the dispatching code. Finally, the object application calls <see cref="OleDestroyMenuDescriptor" /> to free the data structure.</para>
+      <para>
+        <b>Note</b>  While executing <b>IOleInPlaceFrame.SetMenu</b>, do not make calls to the <see cref="PeekMessage" /> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</a> functions, or a dialog box. Doing so may cause the system to deadlock. There are further restrictions on which OLE interface methods and functions can be called from within <b>IOleInPlaceFrame.SetMenu</b>.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceFrame" />
+    <seealso cref="IOleInPlaceFrame.InsertMenus" />
+    <seealso cref="InsertMenu" />
+    <seealso cref="OleDestroyMenuDescriptor" />
+    <seealso cref="OleSetMenuDescriptor" />
+  </member>
+  <member name="IOleInPlaceFrame.SetStatusText">
+    <summary>
+      <para>Sets and displays status text about the in-place object in the container's frame window status line.</para>
+    </summary>
+    <param name="pszStatusText">
+      <para>The message to be displayed.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_TRUNCATED</b>
+            </para>
+          </description>
+          <description>
+            <para>Some text was displayed but the message was too long and was truncated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified pointer is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>You should call <b>IOleInPlaceFrame.SetStatusText</b> when you need to ask the container to display object text in its frame's status line, if it has one. Because the container's frame window owns the status line, calling <b>IOleInPlaceFrame.SetStatusText</b> is the only way an object can display status information in the container's frame window. If the container refuses the object's request, the object application can, however, negotiate for border space to display its own status window.</para>
+      <para>When switching between menus owned by the container and the in-place active object, the status bar text is not reflected properly if the object does not call the container's <b>IOleInPlaceFrame.SetStatusText</b> method. For example, if, during an in-place session, the user were to select the <b>File</b> menu, the status bar would reflect the action that would occur if the user selected this menu. If the user then selects the <b>Edit</b> menu (which is owned by the in-place object), the status bar text would not change unless the <b>IOleInPlaceFrame.SetStatusText</b> happened to be called. This is because there is no way for the container to recognize that one of the object's menus has been made active because all the messages that the container would trap are now going to the object.</para>
+      <h3>Notes to Implementers</h3>
+      <para>To avoid potential problems, all objects being activated in place should process the <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-menuselect">WM_MENUSELECT</a> message and call <b>IOleInPlaceFrame.SetStatusText</b>, even if the object does not usually provide status information (in which case the object can just pass a <b>NULL</b> string for the requested status text).</para>
+      <para>
+        <b>Note</b>  While executing <b>IOleInPlaceFrame.SetStatusText</b>, do not make calls to the <see cref="PeekMessage" /> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</a> functions, or a dialog box. Doing so may cause the system to deadlock. There are further restrictions on which OLE interface methods and functions can be called from within <see cref="IOleInPlaceUIWindow.GetBorder" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</seealso>
+    <seealso cref="IOleInPlaceFrame" />
+    <seealso cref="PeekMessage" />
+  </member>
+  <member name="IOleInPlaceFrame.TranslateAccelerator">
+    <summary>
+      <para>Translates accelerator keystrokes intended for the container's frame while an object is active in place.</para>
+    </summary>
+    <param name="lpmsg">
+      <para>A pointer to the <see cref="MSG" /> structure that contains the keystroke message.</para>
+    </param>
+    <param name="wID">
+      <para>The command identifier value corresponding to the keystroke in the container-provided accelerator table. Containers should use this value instead of translating again.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The keystroke was not used.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified pointer is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>The <b>IOleInPlaceFrame.TranslateAccelerator</b> method is called indirectly by <see cref="OleTranslateAccelerator" /> when a keystroke accelerator intended for the container (frame) is received.</para>
+      <h3>Notes to Implementers</h3>
+      <para>The container application should perform its usual accelerator processing, or use <i>wID</i> directly, and then return, indicating whether the keystroke accelerator was processed. If the container is an MDI application and the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepropertypage-translateaccelerator">TranslateAccelerator</a> function fails, the container can call the <see cref="TranslateMDISysAccel" /> function, just as it does for its usual message processing.</para>
+      <para>In-place objects should be given first chance at translating accelerator messages. However, because objects implemented by DLL object applications do not have their own message pump, they receive their messages from the container's message queue. To ensure that the object has first chance at translating messages, a container should always call <b>IOleInPlaceFrame.TranslateAccelerator</b> before doing its own accelerator translation. Conversely, an executable object application should call <see cref="OleTranslateAccelerator" /> after calling <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepropertypage-translateaccelerator">TranslateAccelerator</a>, calling <see cref="TranslateMessage" /> and <see cref="DispatchMessage" /> only if both translation functions fail.</para>
+      <para>You should define accelerator tables for containers so they will work properly with object applications that do their own accelerator keystroke translations. Tables should be defined as follows.</para>
+      <code>"char", wID, VIRTKEY, CONTROL
+</code>
+      <para>This is the most common way to describe keyboard accelerators. Failure to do so can result in keystrokes being lost or sent to the wrong object during an in-place session.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceFrame" />
+    <seealso cref="IOleInPlaceFrame.TranslateAccelerator" />
+    <seealso cref="OleTranslateAccelerator" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepropertypage-translateaccelerator">TranslateAccelerator</seealso>
+    <seealso cref="TranslateMDISysAccel" />
+  </member>
+  <member name="IOleInPlaceFrame">
+    <summary>
+      <para>Controls the container's top-level frame window. This control involves allowing the container to insert its menu group into the composite menu, install the composite menu into the appropriate window frame, and remove the container's menu elements from the composite menu. It sets and displays status text relevant to the in-place object. It also enables or disables the frame's modeless dialog boxes, and translates accelerator keystrokes intended for the container's frame.</para>
+    </summary>
+    <seealso cref="IOleInPlaceUIWindow" />
+    <seealso cref="IOleWindow" />
+  </member>
+</doc>

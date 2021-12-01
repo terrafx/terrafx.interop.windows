@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFWaveFormatExConvertFlags">
+    <summary>
+      <para>Contains flags that specify how to convert an audio media type.</para>
+    </summary>
+    <seealso cref="MFCreateWaveFormatExFromMFMediaType" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MFWaveFormatExConvertFlags.MFWaveFormatExConvertFlag_Normal">
+    <summary>
+      <para>Convert the media type to a <b>WAVEFORMATEX</b> structure if possible, or a <b>WAVEFORMATEXTENSIBLE</b> structure otherwise.</para>
+    </summary>
+  </member>
+  <member name="MFWaveFormatExConvertFlags.MFWaveFormatExConvertFlag_ForceExtensible">
+    <summary>
+      <para>Convert the media type to a <b>WAVEFORMATEXTENSIBLE</b> structure.</para>
+    </summary>
+  </member>
+</doc>

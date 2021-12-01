@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRawCDImageCreator.AddSpecialPregap">
+    <summary>
+      <para>Accepts the provided <b>IStream</b> object and saves the associated pointer to be used as data for the pre-gap for track 1.</para>
+    </summary>
+    <param name="data">
+      <para>Pointer to the provided <b>IStream</b> object.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method can only be called prior to adding any tracks to the image.  The <i>data</i> stream must be at least 2 seconds (or 150 sectors) long.</para>
+      <para>The  <i>data</i> stream should not result final sector exceeding LBA 397,799 (MSF 88:25:74), as the minimal-sized track plus leadout would then exceed the MSF 89:59:74 maximum.  Additionally, it is recommended that the <see cref="IMAPI_CD_SECTOR_TYPE" />  value for the first track is implicitly defined as "Audio". The resulting audio can then only be heard by playing the first track and "rewinding" back to the start of the audio disc.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+  </member>
+  <member name="IRawCDImageCreator.AddSubcodeRWGenerator">
+    <summary>
+      <para>Allows the addition of custom R-W subcode, provided by the <b>IStream</b>. The provided object must  have a size equal to the number of sectors in the raw disc image * 96 bytes when the final image is created.</para>
+    </summary>
+    <param name="subcode">
+      <para>The subcode data (with 96 bytes per sector), where the 2 most significant bits must always be zero (as they are the P/Q bits).</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>May be added anytime prior to calling <see cref="IRawCDImageCreator.CreateResultImage" />.  If <see cref="IRawCDImageCreator.put_ResultingImageType" /> is  set to return PQ only, then this call will fail as no RW subcode will be used in the resulting image.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.CreateResultImage" />
+    <seealso cref="IRawCDImageCreator.put_ResultingImageType" />
+  </member>
+  <member name="IRawCDImageCreator.AddTrack">
+    <summary>
+      <para>Accepts the provided <b>IStream</b> object and saves the interface pointer as the next track in the image.</para>
+    </summary>
+    <param name="dataType">
+      <para>A  value, defined by  <see cref="IMAPI_CD_SECTOR_TYPE" />, that indicates the type of data. <b>IMAPI_CD_SECTOR_AUDIO</b> is the only value  supported by the <b>IRawCDImageCreator.AddTrack</b>  method.</para>
+    </param>
+    <param name="data">
+      <para>Pointer to the provided <b>IStream</b> object.</para>
+    </param>
+    <param name="trackIndex">
+      <para>A <b>LONG</b> value within a 1 to 99 range that will be associated with the new track.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>Any additional tracks must be compatible with all existing tracks.  See the <see cref="IMAPI_CD_SECTOR_TYPE" /> enumeration for  information on limitations.</para>
+      <para>The data stream must be at least 4 seconds (300 sectors) long.  Data stream may not cause final sector to exceed LBA 398,099 (MSF 88:29:74), as leadout would then exceed the MSF 89:59:74 maximum.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+  </member>
+  <member name="IRawCDImageCreator.CreateResultImage">
+    <summary>
+      <para>Creates the final <b>IStream</b> object based on the current settings.</para>
+    </summary>
+    <param name="resultStream">
+      <para>Pointer to the finalized IStream object.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IRawCDImageCreator.CreateResultImage</b> can only be called once, and will result in the object becoming read-only. All properties associated with this object can  be read but not modified.  The resulting <b>IStream</b> object will be a disc image which starts at MSF 95:00:00, to allow writing of a single image to media with multiple starting addresses.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+  </member>
+  <member name="IRawCDImageCreator.get_DisableGaplessAudio">
+    <summary>
+      <para>Retrieves the current value that specifies if "Gapless Audio" recording is disabled. This property defaults to a value of  <b>VARIANT_FALSE</b>, which disables the use of "gapless" recording between consecutive audio tracks.</para>
+    </summary>
+    <param name="value">
+      <para>A <b>VARIANT_BOOL</b> value that specifies if "Gapless Audio" is disabled. A value of <b>VARIANT_FALSE</b> indicates that "Gapless Audio" is disabled; <b>VARIANT_TRUE</b> indicates that it is enabled.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>When disabled, by default, the audio tracks will have the standard 2-second (150 sector) silent gap between tracks.  When enabled, the last 2  seconds of audio data from the previous audio track are encoded in the pregap area of the next audio track, enabling seamless transitions between tracks.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.put_DisableGaplessAudio" />
+  </member>
+  <member name="IRawCDImageCreator.get_ExpectedTableOfContents">
+    <summary>
+      <para>Gets the SCSI-form table of contents for the resulting disc.</para>
+    </summary>
+    <param name="value">
+      <para>The SCSI-form table of contents for the resulting disc. Accuracy of this value depends on <b>IRawCDImageCreator.get_ExpectedTableOfContents</b> being called after all image properties have been set.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method can only be called after at least one track has been added to the image.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+  </member>
+  <member name="IRawCDImageCreator.get_LastUsedUserSectorInImage">
+    <summary>
+      <para>Retrieves the number of total used sectors on the current media, including any overhead between existing tracks.</para>
+    </summary>
+    <param name="value">
+      <para>Pointer to a <b>LONG</b> value that indicates the number of total used sectors on the media.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This value represents the LBA of the last sector with data that is considered part of a track, and does not include the overhead of the leadin, leadout, or the two-seconds between MSF 00:00:00 and MSF 00:02:00.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+  </member>
+  <member name="IRawCDImageCreator.get_MediaCatalogNumber">
+    <summary>
+      <para>Sets the Media Catalog Number (MCN) for the entire audio disc.</para>
+    </summary>
+    <param name="value">
+      <para>Pointer to a <b>BSTR</b> value that represents the current MCN associated with the audio disc.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>The MCN returned by this method is formatted as a 13-digit decimal number and must also be provided by  the <see cref="IRawCDImageCreator.put_MediaCatalogNumber" /> method  in the same form.  Additionally, the provided a MCN value provided via <b>IRawCDImageCreator.put_MediaCatalogNumber</b>   must have a valid checksum digit (least significant digit), or it will be rejected.  For improved compatibility with scripting, leading zeros may be excluded. For example, "0123456789012" can be expressed as "123456789012".</para>
+      <para>Please refer to the MMC specification for details regarding the MCN value.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.put_MediaCatalogNumber" />
+  </member>
+  <member name="IRawCDImageCreator.get_NumberOfExistingTracks">
+    <summary>
+      <para>Retrieves the number of existing audio tracks on the media.</para>
+    </summary>
+    <param name="value">
+      <para>Pointer to a <b>LONG</b> value that indicates the number of audio tracks that currently exist on the media.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+  </member>
+  <member name="IRawCDImageCreator.get_ResultingImageType">
+    <summary>
+      <para>Retrieves the value that specifies the type of image file that will be generated.</para>
+    </summary>
+    <param name="value">
+      <para>Pointer to an <see cref="IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE" /> enumeration that defines the current type set for the  image file.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.put_ResultingImageType" />
+  </member>
+  <member name="IRawCDImageCreator.get_StartingTrackNumber">
+    <summary>
+      <para>Retrieves the starting track number.</para>
+    </summary>
+    <param name="value">
+      <para>Pointer to a <b>LONG</b> value that represents the starting track number.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>If this property holds a  value other than 1, all tracks added to the image must be audio tracks.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.put_StartingTrackNumber" />
+  </member>
+  <member name="IRawCDImageCreator.get_StartOfLeadout">
+    <summary>
+      <para>Retrieves the value that defines the LBA for the start of the Leadout.  This method can be utilized to determine if the image can be written to a piece of media by comparing it against the <b>LastPossibleStartOfLeadout</b> for the media.</para>
+    </summary>
+    <param name="value">
+      <para>Pointer to a <b>LONG</b> value that represents the LBA for the start of the Leadout.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>Use of this method requires that at least 1 track has been added to the image.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+  </member>
+  <member name="IRawCDImageCreator.get_StartOfLeadoutLimit">
+    <summary>
+      <para>Retrieves the current <i>StartOfLeadoutLimit</i> property value. This value specifies if the resulting image is required to fit on a piece of media with a <b>StartOfLeadout</b> greater than or equal to the LBA.</para>
+    </summary>
+    <param name="value">
+      <para>Pointer to a <b>LONG</b> value that represents the current  <i>StartOfLeadoutLimit</i>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.put_StartOfLeadoutLimit" />
+  </member>
+  <member name="IRawCDImageCreator.get_TrackInfo">
+    <summary>
+      <para>Retrieves an indexed property, which takes a <b>LONG</b> value with a range of 1 to 99 as the index to determine which track the user is querying.  The returned object is then queried/set for the particular per-track property of interest.</para>
+    </summary>
+    <param name="trackIndex">
+      <para>A <b>LONG</b> value within a 1 to 99 range that is used to specify which track is  queried.</para>
+    </param>
+    <param name="value">
+      <para>A pointer to a pointer to an <see cref="IRawCDImageTrackInfo" /> object that contains information about the track associated with the specified <i>trackInfo</i> index value.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+  </member>
+  <member name="IRawCDImageCreator.put_DisableGaplessAudio">
+    <summary>
+      <para>Sets the value that specifies if "Gapless Audio" recording is disabled. This property defaults to a value of  <b>VARIANT_FALSE</b>, which disables the use of "gapless" recording between consecutive audio tracks.</para>
+    </summary>
+    <param name="value">
+      <para>A <b>VARIANT_BOOL</b> value that specifies if "Gapless Audio" is disabled. Setting a value of <b>VARIANT_FALSE</b> disables "Gapless Audio", while <b>VARIANT_TRUE</b> enables it.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>When disabled, by default, the audio tracks will have the standard 2-second (150 sector) silent gap between tracks.  When enabled, the last 2  seconds of audio data from the previous audio track are encoded in the pregap area of the next audio track, enabling seamless transitions between tracks.</para>
+      <para>It is recommended that this property value is only set before the process of adding tracks to the image has begun as any changes afterwards could result in adverse effects to other image properties.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.get_DisableGaplessAudio" />
+  </member>
+  <member name="IRawCDImageCreator.put_MediaCatalogNumber">
+    <summary>
+      <para>Retrieves the Media Catalog Number (MCN) for the entire audio disc.</para>
+    </summary>
+    <param name="value">
+      <para>A <b>BSTR</b> value that represents the MCN to associate with the audio disc.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>The returned MCN is formatted as a 13-digit decimal number and must also be provided in the same form.  Additionally, the provided MCN value must have a valid checksum digit (least significant digit), or it will be rejected.  For improved compatibility with scripting, leading zeros may be excluded. For example, "0123456789012" can be expressed as "123456789012".</para>
+      <para>Please refer to the MMC specification for details regarding the MCN value.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.get_MediaCatalogNumber" />
+  </member>
+  <member name="IRawCDImageCreator.put_ResultingImageType">
+    <summary>
+      <para>Sets the value that defines the type of image file that will be generated.</para>
+    </summary>
+    <param name="value">
+      <para>An <see cref="IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE" /> enumeration that defines the type of image file.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>If the value set via <see cref="IRawCDImageCreator.AddSubcodeRWGenerator" /> is not <b>NULL</b>, then the <b>PQ_ONLY</b> type defined by <see cref="IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE" /> is not a valid choice, as subcode would not be generated by the resulting image.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE" />
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.AddSubcodeRWGenerator" />
+    <seealso cref="IRawCDImageCreator.get_ResultingImageType" />
+  </member>
+  <member name="IRawCDImageCreator.put_StartingTrackNumber">
+    <summary>
+      <para>Sets the starting track number.</para>
+    </summary>
+    <param name="value">
+      <para>A <b>LONG</b> value that represents the starting track number.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This property value can only be set before the addition of tracks.  If this property is set to a value other than 1, all tracks added to the image must be audio tracks.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.get_StartingTrackNumber" />
+  </member>
+  <member name="IRawCDImageCreator.put_StartOfLeadoutLimit">
+    <summary>
+      <para>Sets the <i>StartOfLeadoutLimit</i> property value. This value specifies if the resulting image is required to fit on a piece of media with a <b>StartOfLeadout</b> greater than or equal to the LBA specified.<b>Note</b>  The maximum supported value for this property is 398,099, which equates to MSF 88:29:74.</para>
+    </summary>
+    <param name="value">
+      <para>Pointer to a <b>LONG</b> value that represents the current  <i>StartOfLeadoutLimit</i>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IRawCDImageCreator" />
+    <seealso cref="IRawCDImageCreator.get_StartOfLeadoutLimit" />
+  </member>
+  <member name="IRawCDImageCreator">
+    <summary>
+      <para>Use this interface to create a RAW CD image for use in writing to CD media in Disc-at-Once (DAO) mode. Images created with this interface can be written to CD media using the <see cref="IDiscFormat2RawCD" /> interface.</para>
+      <para>To create an instance of this interface, call the <b>CoCreateInstance</b> function. Use__uuidof(MsftRawCDImageCreator) for the class identifier and __uuidof(IRawCDImageCreator) for the interface identifier.</para>
+    </summary>
+    <remarks>
+      <para>Images created with this interface can be written to persistent storage for later use, or can be provided directly to the <see cref="IDiscFormat2RawCD" /> interface for writing to CD media.</para>
+      <para>DVD media does not support this type of writing.</para>
+      <para>This interface is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IMAPI_CD_SECTOR_TYPE" />
+  </member>
+</doc>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFont3.CreateFontFace">
+    <summary>
+      <para>Creates a font face object for the font.</para>
+    </summary>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace3" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="IDWriteFontFace3" /> interface for the newly created font face object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+      <para>This method returns <b>DWRITE_E_REMOTEFONT</b> if it could not construct a remote font.</para>
+    </returns>
+    <seealso cref="IDWriteFont3" />
+  </member>
+  <member name="IDWriteFont3.Equals">
+    <summary>
+      <para>Compares two instances of font references for equality.</para>
+    </summary>
+    <param name="font">
+      <para>Type: <b><see cref="IDWriteFont" />*</b></para>
+      <para>A pointer to a <see cref="IDWriteFont" /> interface for the other font instance to compare to this font instance.</para>
+    </param>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns whether the two instances of font references are equal. Returns <b>TRUE</b> if the two instances are equal; otherwise, <b>FALSE</b>.</para>
+    </returns>
+    <seealso cref="IDWriteFont3" />
+  </member>
+  <member name="IDWriteFont3.GetFontFaceReference">
+    <summary>
+      <para>Gets a font face reference that identifies this font.</para>
+    </summary>
+    <param name="fontFaceReference">
+      <para>Type: <b><see cref="IDWriteFontFaceReference" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="IDWriteFontFaceReference" /> interface for the newly created font face reference object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFont3" />
+  </member>
+  <member name="IDWriteFont3.GetLocality">
+    <summary>
+      <para>Gets the current locality of the font.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_LOCALITY" /></b></para>
+      <para>Returns the current locality of the font.</para>
+    </returns>
+    <remarks>
+      <para>For fully local files, the result will always  be DWRITE_LOCALITY_LOCAL. A downloadable file may be any of the states, and this function may change between calls.</para>
+    </remarks>
+    <seealso cref="IDWriteFont3" />
+  </member>
+  <member name="IDWriteFont3">
+    <summary>
+      <para>Represents a font in a font collection.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefont2">IDWriteFont2</seealso>
+  </member>
+</doc>

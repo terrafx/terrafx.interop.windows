@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRpcStubBuffer.Connect">
+    <summary>
+      <para>Initializes a server stub, binding it to the specified interface.</para>
+    </summary>
+    <param name="pUnkServer">
+      <para>A pointer to the interface.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
+    </returns>
+    <seealso cref="IRpcStubBuffer" />
+  </member>
+  <member name="IRpcStubBuffer.CountRefs">
+    <summary>
+      <para>Retrieves the total number of references that a stub has on the server object to which it is connected.</para>
+    </summary>
+    <returns>
+      <para>This method returns the total number of references that a stub has on the server object to which it is connected.</para>
+    </returns>
+    <seealso cref="IRpcStubBuffer" />
+  </member>
+  <member name="IRpcStubBuffer.DebugServerQueryInterface">
+    <summary>
+      <para>Retrieves a pointer to the interface that a stub represents.</para>
+    </summary>
+    <param name="ppv">
+      <para>A pointer to the interface that the stub represents.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
+    </returns>
+    <seealso cref="IRpcStubBuffer" />
+  </member>
+  <member name="IRpcStubBuffer.DebugServerRelease">
+    <summary>
+      <para>Releases an interface pointer that was previously returned by <see cref="DebugServerQueryInterface" />.</para>
+    </summary>
+    <param name="pv">
+      <para>A pointer to the interface that the caller no longer needs.</para>
+    </param>
+    <seealso cref="IRpcStubBuffer" />
+  </member>
+  <member name="IRpcStubBuffer.Disconnect">
+    <summary>
+      <para>Disconnects a server stub from any interface to which it is connected.</para>
+    </summary>
+    <seealso cref="IRpcStubBuffer" />
+  </member>
+  <member name="IRpcStubBuffer.Invoke">
+    <summary>
+      <para>Invokes the interface that a stub represents.</para>
+    </summary>
+    <param name="_prpcmsg">
+      <para>A pointer to an <see cref="RPCOLEMESSAGE" /> data structure containing the marshaled invocation arguments.</para>
+    </param>
+    <param name="_pRpcChannelBuffer">
+      <para>A pointer to an <see cref="IRpcChannelBuffer" /> interface that controls an RPC marshaling channel.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
+    </returns>
+    <seealso cref="IRpcStubBuffer" />
+  </member>
+  <member name="IRpcStubBuffer.IsIIDSupported">
+    <summary>
+      <para>Determines whether a stub is designed to handle the unmarshaling of a particular interface.</para>
+    </summary>
+    <param name="riid">
+      <para>The IID of the interface. This parameter cannot be IID_IUnknown.</para>
+    </param>
+    <returns>
+      <para>If the stub can handle the indicated interface, then this method returns an <see cref="IRpcStubBuffer" /> pointer  for that interface; otherwise, it returns <b>NULL</b>.</para>
+    </returns>
+    <remarks>
+      <para>When presented with the need to remote a new IID on a given object, the RPC run time typically calls this method on all the presently-connected interface stubs in an attempt to locate one that can handle the marshaling for the request before it goes to the trouble of creating a new stub.</para>
+      <para>As in <see cref="IPSFactoryBuffer.CreateStub" />, if a stub is presently connected to a server object, then not only must this method verify that the stub can handle the indicated interface, but it must also verify (using <see cref="QueryInterface" />) that the connected server object in fact supports the indicated interface. Depending on the IID and previous interface servicing requests, it may have already done so.</para>
+    </remarks>
+    <seealso cref="IRpcStubBuffer" />
+  </member>
+  <member name="IRpcStubBuffer">
+    <summary>
+      <para>Controls the RPC stub used to marshal data between COM components.</para>
+    </summary>
+    <seealso cref="IMarshal" />
+    <seealso cref="IRpcChannelBuffer" />
+    <seealso cref="IRpcProxyBuffer" />
+  </member>
+</doc>

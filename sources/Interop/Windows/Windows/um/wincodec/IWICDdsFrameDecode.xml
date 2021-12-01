@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICDdsFrameDecode.CopyBlocks">
+    <summary>
+      <para>Requests pixel data as it is natively stored within the DDS file.</para>
+    </summary>
+    <param name="prcBoundsInBlocks">
+      <para>Type: <b>const <see cref="WICRect" />*</b></para>
+      <para>The rectangle to copy from the source. A NULL value specifies the entire texture.</para>
+      <para>If the texture uses a block-compressed <see cref="DXGI_FORMAT" />, all values of the rectangle are expressed in number of blocks, not pixels.</para>
+    </param>
+    <param name="cbStride">
+      <para>Type: <b>UINT</b></para>
+      <para>The stride, in bytes, of the destination buffer. This represents the number of bytes from the buffer pointer to the next row of data. If the texture uses a block-compressed <see cref="DXGI_FORMAT" />, a "row of data" is defined as a row of blocks which contains multiple pixel scanlines.</para>
+    </param>
+    <param name="cbBufferSize">
+      <para>Type: <b>UINT</b></para>
+      <para>The size, in bytes, of the destination buffer.</para>
+    </param>
+    <param name="pbBuffer">
+      <para>Type: <b>BYTE*</b></para>
+      <para>A pointer to the destination buffer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the texture does not use a block-compressed <see cref="DXGI_FORMAT" />, this method behaves similarly to <see cref="IWICBitmapSource.CopyPixels" />. However, it does not perform any pixel format conversion, and instead produces the raw data from the DDS file.</para>
+      <para>If the texture uses a block-compressed <see cref="DXGI_FORMAT" />, this method copies the block data directly into the provided buffer. In this case, the <i>prcBoundsInBlocks</i> parameter is defined in blocks, not pixels. To determine if this is the case, call <see cref="GetFormatInfo" /> and read the <b>DxgiFormat</b> member of the returned <see cref="WICDdsFormatInfo" /> structure.</para>
+    </remarks>
+    <seealso cref="IWICBitmapSource.CopyPixels" />
+    <seealso cref="IWICDdsFrameDecode" />
+  </member>
+  <member name="IWICDdsFrameDecode.GetFormatInfo">
+    <summary>
+      <para>Gets information about the format in which the DDS image is stored.</para>
+    </summary>
+    <param name="pFormatInfo">
+      <para>Type: <b><see cref="WICDdsFormatInfo" />*</b></para>
+      <para>Information about the DDS format.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This information can be used for allocating memory or constructing Direct3D or Direct2D resources, for example by using <see cref="ID3D11Device.CreateTexture2D" /> or <a href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1devicecontext-createbitmap-overload">ID2D1DeviceContext.CreateBitmap</a>.</para>
+    </remarks>
+    <seealso cref="CreateBitmap" />
+    <seealso cref="ID3D11Device.CreateTexture2D" />
+    <seealso cref="IWICDdsFrameDecode" />
+    <seealso cref="WICDdsFormatInfo" />
+  </member>
+  <member name="IWICDdsFrameDecode.GetSizeInBlocks">
+    <summary>
+      <para>Gets the width and height, in blocks, of the DDS image.</para>
+    </summary>
+    <param name="pWidthInBlocks">
+      <para>Type: <b>UINT*</b></para>
+      <para>The width of the DDS image in blocks.</para>
+    </param>
+    <param name="pHeightInBlocks">
+      <para>Type: <b>UINT*</b></para>
+      <para>The height of the DDS image in blocks.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For block compressed textures, the returned width and height values do not completely define the texture size because the image is padded to fit the closest whole block size. For example, three BC1 textures with pixel dimensions of 1x1, 2x2 and 4x4 will all report <i>pWidthInBlocks</i> = 1 and <i>pHeightInBlocks</i> = 1.</para>
+      <para>If the texture does not use a block-compressed <see cref="DXGI_FORMAT" />, this method returns the texture size in pixels; for these formats the block size returned by <see cref="IWICDdsFrameDecoder.GetFormatInfo" /> is 1x1.</para>
+    </remarks>
+    <seealso cref="IWICDdsFrameDecode" />
+  </member>
+  <member name="IWICDdsFrameDecode">
+    <summary>
+      <para>Provides access to a single frame of DDS image data in its native <see cref="DXGI_FORMAT" /> form, as well as information about the image data.</para>
+    </summary>
+    <remarks>
+      <para>This interface is implemented by the WIC DDS codec. To obtain this interface, create an <see cref="IWICBitmapFrameDecode" /> using the DDS codec and QueryInterface for IID_IWICDdsFrameDecode.</para>
+    </remarks>
+  </member>
+</doc>

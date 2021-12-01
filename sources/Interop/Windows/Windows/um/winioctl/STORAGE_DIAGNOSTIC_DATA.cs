@@ -7,22 +7,29 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DIAGNOSTIC_DATA.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_DATA"]/*' />
 public unsafe partial struct STORAGE_DIAGNOSTIC_DATA
 {
+    /// <include file='STORAGE_DIAGNOSTIC_DATA.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_DATA.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DIAGNOSTIC_DATA.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_DATA.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_DIAGNOSTIC_DATA.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_DATA.ProviderId"]/*' />
     public Guid ProviderId;
 
+    /// <include file='STORAGE_DIAGNOSTIC_DATA.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_DATA.BufferSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint BufferSize;
 
+    /// <include file='STORAGE_DIAGNOSTIC_DATA.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_DATA.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 
+    /// <include file='STORAGE_DIAGNOSTIC_DATA.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_DATA.DiagnosticDataBuffer"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte DiagnosticDataBuffer[1];
 }

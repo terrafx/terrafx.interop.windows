@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11DeviceContext2.BeginEventInt">
+    <summary>
+      <para>Allows applications to annotate the beginning of a range of graphics commands.</para>
+    </summary>
+    <param name="pLabel">
+      <para>An optional string that will be logged to <a href="https://docs.microsoft.com//previous-versions/dotnet/netframework-3.0/ms751538(v=vs.85)">ETW</a> when ETW logging is active. If <b>‘#d’</b> appears in the string, it will be replaced by the value of the <i>Data</i> parameter similar to the way <b>printf</b> works.</para>
+    </param>
+    <param name="Data">
+      <para>A signed data value that will be logged to ETW when ETW logging is active.</para>
+    </param>
+    <remarks>
+      <para>
+        <b>BeginEventInt</b> allows applications to annotate the beginning of a range of graphics commands, in order to provide more context to what the GPU is executing. When <a href="https://docs.microsoft.com//previous-versions/dotnet/netframework-3.0/ms751538(v=vs.85)">ETW</a> logging (or a supported tool) is enabled, an additional marker is correlated between the CPU and GPU timelines. The <i>pLabel</i> and <i>Data</i> value are logged to ETW. When the appropriate ETW logging is not enabled, this method does nothing.</para>
+    </remarks>
+    <seealso cref="ID3D11DeviceContext2" />
+  </member>
+  <member name="ID3D11DeviceContext2.CopyTileMappings">
+    <summary>
+      <para>Copies mappings from a source tiled resource to a destination tiled resource.</para>
+    </summary>
+    <param name="pDestTiledResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>A pointer to the destination tiled resource.</para>
+    </param>
+    <param name="pDestRegionStartCoordinate">
+      <para>Type: <b>const <see cref="D3D11_TILED_RESOURCE_COORDINATE" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TILED_RESOURCE_COORDINATE" /> structure that describes the starting coordinates of the destination tiled resource.</para>
+    </param>
+    <param name="pSourceTiledResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>A pointer to the source tiled resource.</para>
+    </param>
+    <param name="pSourceRegionStartCoordinate">
+      <para>Type: <b>const <see cref="D3D11_TILED_RESOURCE_COORDINATE" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TILED_RESOURCE_COORDINATE" /> structure that describes the starting coordinates of the source tiled resource.</para>
+    </param>
+    <param name="pTileRegionSize">
+      <para>Type: <b>const <see cref="D3D11_TILE_REGION_SIZE" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TILE_REGION_SIZE" /> structure that describes the size of the tiled region.</para>
+    </param>
+    <param name="Flags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="D3D11_TILE_MAPPING_FLAGS" /> values that are combined by using a bitwise OR operation. The only valid value is <b>D3D11_TILE_MAPPING_NO_OVERWRITE</b>, which indicates that previously submitted commands to the device that may still be executing do not reference any of the tile region being updated. The device can then avoid having to flush previously submitted work to perform the tile mapping update.  If the app violates this promise by updating tile mappings for locations in tiled resources that are still being referenced by outstanding commands, undefined rendering behavior results, including the potential for significant slowdowns on some architectures.  This is like the "no overwrite" concept that exists elsewhere in the Direct3D API, except applied to the tile mapping data structure itself (which in hardware is a page table). The absence of the <b>D3D11_TILE_MAPPING_NO_OVERWRITE</b> value requires that tile mapping updates that <b>CopyTileMappings</b> specifies must be completed before any subsequent Direct3D command can proceed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; otherwise, returns one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Returns <b>E_INVALIDARG</b> if various conditions such as invalid flags or passing in non Tiled Resources result in the call being dropped.
+The dest and the source regions must each entirely fit in their resource or behavior is undefined (debug layer will emit an error).
+</description>
+        </item>
+        <item>
+          <description>Returns <b>E_OUTOFMEMORY</b> if the call results in the driver having to allocate space for new page table mappings but running out of memory.
+If out of memory occurs when this is called in a commandlist and the commandlist is being executed, the device will be removed. Applications can avoid this situation by only doing update calls that change existing mappings from Tiled Resources within commandlists (so drivers will not have to allocate page table memory, only change the mapping).
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>CopyTileMappings</b> helps with tasks such as shifting mappings around within and across tiled resources, for example, scrolling tiles. The source and destination regions can overlap; the result of the copy in this situation is as if the source was saved to a temp location and then from there written to the destination.</para>
+      <para>For more info about tiled resources, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/tiled-resources">Tiled resources</a>.</para>
+    </remarks>
+    <seealso cref="ID3D11DeviceContext2" />
+  </member>
+  <member name="ID3D11DeviceContext2.CopyTiles">
+    <summary>
+      <para>Copies tiles from buffer to tiled resource or vice versa.</para>
+    </summary>
+    <param name="pTiledResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>A pointer to a tiled resource.</para>
+    </param>
+    <param name="pTileRegionStartCoordinate">
+      <para>Type: <b>const <see cref="D3D11_TILED_RESOURCE_COORDINATE" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TILED_RESOURCE_COORDINATE" /> structure that describes the starting coordinates of the tiled resource.</para>
+    </param>
+    <param name="pTileRegionSize">
+      <para>Type: <b>const <see cref="D3D11_TILE_REGION_SIZE" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TILE_REGION_SIZE" /> structure that describes the size of the tiled region.</para>
+    </param>
+    <param name="pBuffer">
+      <para>Type: <b><see cref="ID3D11Buffer" />*</b></para>
+      <para>A pointer to an <see cref="ID3D11Buffer" /> that represents a default, dynamic, or staging buffer.</para>
+    </param>
+    <param name="BufferStartOffsetInBytes">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
+      <para>The offset in bytes into the buffer at <i>pBuffer</i> to start the operation.</para>
+    </param>
+    <param name="Flags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="D3D11_TILE_COPY_FLAG" />-typed values that are combined by using a bitwise OR operation and that identifies how to copy tiles.</para>
+    </param>
+    <remarks>
+      <para>
+        <b>CopyTiles</b> drops write operations to unmapped areas and handles read operations from unmapped areas (except on <see cref="Tier_1" /> tiled resources, where reading and writing unmapped areas is invalid).</para>
+      <para>If a copy operation involves writing to the same memory location multiple times because multiple locations in the destination resource are mapped to the same tile memory, the resulting write operations to multi-mapped tiles are non-deterministic and non-repeatable; that is, accesses to the tile memory happen in whatever order the hardware happens to execute the copy operation.</para>
+      <para>The tiles involved in the copy operation can't include tiles that contain packed mipmaps or results of the copy operation are undefined. To transfer data to and from mipmaps that the hardware packs into the one-or-more tiles that constitute the packed mips, you must use the standard (that is, non-tile specific) copy and update APIs (like <see cref="ID3D11DeviceContext1.CopySubresourceRegion1" /> and <see cref="ID3D11DeviceContext1.UpdateSubresource1" />) or <see cref="ID3D11DeviceContext.GenerateMips" /> for the whole mipmap chain.</para>
+      <para>The memory layout of the tiles in the non-tiled buffer resource side of the copy operation is linear in memory within 64 KB tiles, which the hardware and driver swizzle and deswizzle per tile as appropriate when they transfer to and from a tiled resource. For multisample antialiasing (MSAA) surfaces, the hardware and driver traverse each pixel's samples in sample-index order before they move to the next pixel. For tiles that are partially filled on the right side (for a surface that has a width not a multiple of tile width in pixels), the pitch and stride to move down a row is the full size in bytes of the number pixels that would fit across the tile if the tile was full. So, there can be a gap between each row of pixels in memory. Mipmaps that are smaller than a tile are not packed together in the linear layout, which might seem to be a waste of memory space, but as mentioned you can't use <b>CopyTiles</b> or <see cref="ID3D11DeviceContext2.UpdateTiles" /> to copy to mipmaps that the hardware packs together. You can just use generic copy and update APIs (like <see cref="ID3D11DeviceContext1.CopySubresourceRegion1" /> and <see cref="ID3D11DeviceContext1.UpdateSubresource1" />) to copy small mipmaps individually. Although in the case of a generic copy API (like <b>ID3D11DeviceContext1.CopySubresourceRegion1</b>), the linear memory must be the same dimension as the tiled resource; <b>ID3D11DeviceContext1.CopySubresourceRegion1</b> can't copy from a buffer resource to a Texture2D for instance.</para>
+      <para>For more info about tiled resources, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/tiled-resources">Tiled resources</a>.</para>
+    </remarks>
+    <seealso cref="ID3D11DeviceContext2" />
+  </member>
+  <member name="ID3D11DeviceContext2.EndEvent">
+    <summary>
+      <para>Allows applications to annotate the end of a range of graphics commands.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>EndEvent</b> allows applications to annotate the end of a range of graphics commands, in order to provide more context to what the GPU is executing. When the appropriate <a href="https://docs.microsoft.com//previous-versions/dotnet/netframework-3.0/ms751538(v=vs.85)">ETW</a> logging is not enabled, this method does nothing. When ETW logging is enabled, an additional marker is correlated between the CPU and GPU timelines.</para>
+    </remarks>
+    <seealso cref="ID3D11DeviceContext2" />
+  </member>
+  <member name="ID3D11DeviceContext2.IsAnnotationEnabled">
+    <summary>
+      <para>Allows apps to determine when either a capture or profiling request is enabled.</para>
+    </summary>
+    <returns>
+      <para>Returns <b>TRUE</b> if capture or profiling is enabled and <b>FALSE</b> otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Returns <b>TRUE</b> if the capture tool is present and capturing or the app is being profiled such that <see cref="SetMarkerInt" /> or <see cref="BeginEventInt" /> will be logged to <a href="https://docs.microsoft.com//previous-versions/dotnet/netframework-3.0/ms751538(v=vs.85)">ETW</a>. Otherwise, it returns <b>FALSE</b>. Apps can use this to turn off self-throttling mechanisms in order to accurately capture what is currently being seen as app output. Apps can also avoid generating event markers and the associated overhead it may entail when there is no benefit to do so.</para>
+      <para>If apps detect that capture is being performed, they can prevent the Direct3D debugging tools, such as Microsoft Visual Studio 2013, from capturing them. The purpose of the <see cref="D3D11_CREATE_DEVICE_PREVENT_ALTERING_LAYER_SETTINGS_FROM_REGISTRY" /> flag prior to Windows 8.1 was to allow the Direct3D runtime to prevent debugging tools from capturing apps.</para>
+    </remarks>
+    <seealso cref="ID3D11DeviceContext2" />
+  </member>
+  <member name="ID3D11DeviceContext2.ResizeTilePool">
+    <summary>
+      <para>Resizes a tile pool.</para>
+    </summary>
+    <param name="pTilePool">
+      <para>Type: <b><see cref="ID3D11Buffer" />*</b></para>
+      <para>A pointer to an <see cref="ID3D11Buffer" /> for the tile pool to resize.</para>
+    </param>
+    <param name="NewSizeInBytes">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
+      <para>The new size in bytes of the tile pool. The size must be a multiple of 64 KB or 0.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; otherwise, returns one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Returns <b>E_INVALIDARG</b> if the new tile pool size isn't a multiple of 64 KB or 0.</description>
+        </item>
+        <item>
+          <description>Returns <b>E_OUTOFMEMORY</b> if the call results in the driver having to allocate space for new page table mappings but running out of memory.</description>
+        </item>
+        <item>
+          <description>Returns <b>DXGI_ERROR_DEVICE_REMOVED</b> if the video card has been physically removed from the system, or a driver upgrade for the video card has occurred.</description>
+        </item>
+      </list>
+      <para>For <b>E_INVALIDARG</b> or <b>E_OUTOFMEMORY</b>, the existing tile pool remains unchanged, which includes existing mappings.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ResizeTilePool</b> increases or decreases the size of the tile pool depending on whether the app needs more or less working set for the tiled resources that are mapped into it. An app can allocate additional tile pools for new tiled resources, but if any single tiled resource needs more space than initially available in its tile pool, the app can increase the size of the resource's tile pool. A tiled resource can't have mappings into multiple tile pools simultaneously.</para>
+      <para>When you increase the size of a tile pool, additional tiles are added to the end of the tile pool via one or more new allocations by the driver; your app can't detect the breakdown into the new allocations. Existing memory in the tile pool is left untouched, and existing tiled resource mappings into that memory remain intact.</para>
+      <para>When you decrease the size of a tile pool, tiles are removed from the end (this is allowed even below the initial allocation size, down to 0). This means that new mappings can't be made past the new size. But, existing mappings past the end of the new size remain intact and useable. The memory is kept active as long as mappings to any part of the allocations that are being used for the tile pool memory remains. If after decreasing, some memory has been kept active because tile mappings are pointing to it and the tile pool is increased again (by any amount), the existing memory is reused first before any additional allocations occur to service the size of the increase.</para>
+      <para>To be able to save memory, an app has to not only decrease a tile pool but also remove and remap existing mappings past the end of the new smaller tile pool size.</para>
+      <para>The act of decreasing (and removing mappings) doesn't necessarily produce immediate memory savings. Freeing of memory depends on how granular the driver's underlying allocations for the tile pool are. When a decrease in the size of a tile pool happens to be enough to make a driver allocation unused, the driver can free the allocation. If a tile pool was increased and if you then decrease to previous sizes (and remove and remap tile mappings correspondingly), you will most likely yield memory savings. But, this scenario isn't guaranteed in the case that the sizes don't exactly align with the underlying allocation sizes chosen by the driver.</para>
+      <para>For more info about tiled resources, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/tiled-resources">Tiled resources</a>.</para>
+    </remarks>
+    <seealso cref="ID3D11DeviceContext2" />
+  </member>
+  <member name="ID3D11DeviceContext2.SetMarkerInt">
+    <summary>
+      <para>Allows applications to annotate graphics commands.</para>
+    </summary>
+    <param name="pLabel">
+      <para>An optional string that will be logged to <a href="https://docs.microsoft.com//previous-versions/dotnet/netframework-3.0/ms751538(v=vs.85)">ETW</a> when ETW logging is active. If <b>‘#d’</b> appears in the string, it will be replaced by the value of the <i>Data</i> parameter similar to the way <b>printf</b> works.</para>
+    </param>
+    <param name="Data">
+      <para>A signed data value that will be logged to ETW when ETW logging is active.</para>
+    </param>
+    <remarks>
+      <para>
+        <b>SetMarkerInt</b> allows applications to annotate graphics commands, in order to provide more context to what the GPU is executing. When ETW logging or a support tool is enabled, an additional marker is correlated between the CPU and GPU timelines. The <i>pLabel</i> and <i>Data</i> value are logged to ETW. When the appropriate ETW logging is not enabled, this method does nothing.</para>
+    </remarks>
+    <seealso cref="ID3D11DeviceContext2" />
+  </member>
+  <member name="ID3D11DeviceContext2.TiledResourceBarrier">
+    <summary>
+      <para>Specifies a data access ordering constraint between multiple tiled resources.  For more info about this constraint, see Remarks.</para>
+    </summary>
+    <param name="pTiledResourceOrViewAccessBeforeBarrier">
+      <para>Type: <b><see cref="ID3D11DeviceChild" />*</b></para>
+      <para>A pointer to an <see cref="ID3D11Resource" /> or <see cref="ID3D11View" /> for a resource that was created with the <see cref="D3D11_RESOURCE_MISC_TILED" /> flag.  Access operations on this object must complete before the access operations on the object that <i>pTiledResourceOrViewAccessAfterBarrier</i> specifies.</para>
+    </param>
+    <param name="pTiledResourceOrViewAccessAfterBarrier">
+      <para>Type: <b><see cref="ID3D11DeviceChild" />*</b></para>
+      <para>A pointer to an <see cref="ID3D11Resource" /> or <see cref="ID3D11View" /> for a resource that was created with the <see cref="D3D11_RESOURCE_MISC_TILED" /> flag.  Access operations on this object must begin after the access operations on the object that <i>pTiledResourceOrViewAccessBeforeBarrier</i> specifies.</para>
+    </param>
+    <remarks>
+      <para>Apps can use tiled resources to reuse tiles in different resources. But, a device and driver might not be able to determine whether some memory in a tile pool that was just rendered to is now being used for reading.</para>
+      <para>For example, an app can render to some tiles in a tile pool with one tiled resource but then read from the same tiles by using a different tiled resource. These tiled-resource operations are different from using one resource and then just switching from writing with <see cref="ID3D11RenderTargetView" /> to reading with <see cref="ID3D11ShaderResourceView" />. The runtime already tracks and handles these one resource operations using <b>ID3D11RenderTargetView</b> and <b>ID3D11ShaderResourceView</b>.</para>
+      <para>When an app transitions from accessing (reading or writing) some location in a tile pool with one resource to accessing the same memory (read or write) via another tiled resource (with mappings to the same memory), the app must call <b>TiledResourceBarrier</b> after the first use of the resource and before the second. The parameters are the <i>pTiledResourceOrViewAccessBeforeBarrier</i> for accesses before the barrier (via rendering, copying), and the <i>pTiledResourceOrViewAccessAfterBarrier</i> for accesses after the barrier by using the same tile pool memory. If the resources are identical, the app doesn't need to call <b>TiledResourceBarrier</b> because this kind of hazard is already tracked and handled.</para>
+      <para>The barrier call informs the driver that operations issued to the resource before the call must complete before any accesses that occur after the call via a different tiled resource that shares the same memory.</para>
+      <para>Either or both of the parameters (before or after the barrier) can be <b>NULL</b>. <b>NULL</b> before the barrier means all tiled resource accesses before the barrier must complete before the resource specified after the barrier can be referenced by the graphics processing unit (GPU). <b>NULL</b> after the barrier means that any tiled resources accessed after the barrier can only be executed by the GPU after accesses to the tiled resources before the barrier are finished. Both <b>NULL</b> means all previous tiled resource accesses are complete before any subsequent tiled resource access can proceed.</para>
+      <para>An app can pass a view pointer, a resource, or <b>NULL</b> for each parameter. Views are allowed not only for convenience but also to allow the app to scope the barrier effect to a relevant portion of a resource.</para>
+      <para>For more info about tiled resources, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/tiled-resources">Tiled resources</a>.</para>
+    </remarks>
+    <seealso cref="ID3D11DeviceContext2" />
+  </member>
+  <member name="ID3D11DeviceContext2.UpdateTileMappings">
+    <summary>
+      <para>Updates mappings of tile locations in tiled resources to memory locations in a tile pool.</para>
+    </summary>
+    <param name="pTiledResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>A pointer to the tiled resource.</para>
+    </param>
+    <param name="NumTiledResourceRegions">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of tiled resource regions.</para>
+    </param>
+    <param name="pTiledResourceRegionStartCoordinates">
+      <para>Type: <b>const <see cref="D3D11_TILED_RESOURCE_COORDINATE" />*</b></para>
+      <para>An array of <see cref="D3D11_TILED_RESOURCE_COORDINATE" /> structures that describe the starting coordinates of the tiled resource regions. The <i>NumTiledResourceRegions</i> parameter specifies the number of <b>D3D11_TILED_RESOURCE_COORDINATE</b> structures in the array.</para>
+    </param>
+    <param name="pTiledResourceRegionSizes">
+      <para>Type: <b>const <see cref="D3D11_TILE_REGION_SIZE" />*</b></para>
+      <para>An array of <see cref="D3D11_TILE_REGION_SIZE" /> structures that describe the sizes of the tiled resource regions. The <i>NumTiledResourceRegions</i> parameter specifies the number of <b>D3D11_TILE_REGION_SIZE</b> structures in the array.</para>
+    </param>
+    <param name="pTilePool">
+      <para>Type: <b><see cref="ID3D11Buffer" />*</b></para>
+      <para>A pointer to the tile pool.</para>
+    </param>
+    <param name="NumRanges">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of tile-pool ranges.</para>
+    </param>
+    <param name="pRangeFlags">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>An array of <see cref="D3D11_TILE_RANGE_FLAG" /> values that describe each tile-pool range. The <i>NumRanges</i> parameter specifies the number of values in the array.</para>
+    </param>
+    <param name="pTilePoolStartOffsets">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>An array of offsets into the tile pool. These are 0-based tile offsets, counting in tiles (not bytes).</para>
+    </param>
+    <param name="pRangeTileCounts">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>An array of tiles.</para>
+      <para>An array of values that specify the number of tiles in each tile-pool range. The <i>NumRanges</i> parameter specifies the number of values in the array.</para>
+    </param>
+    <param name="Flags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="D3D11_TILE_MAPPING_FLAGS" /> values that are combined by using a bitwise OR operation.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; otherwise, returns one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Returns <b>E_INVALIDARG</b> if various conditions such as invalid flags result in the call being dropped.The debug layer will emit an error.
+</description>
+        </item>
+        <item>
+          <description>Returns <b>E_OUTOFMEMORY</b> if the call results in the driver having to allocate space for new page table mappings but running out of memory.If out of memory occurs when this is called in a commandlist and the commandlist is being executed, the device will be removed. Apps can avoid this situation by only doing update calls that change existing mappings from tiled resources within commandlists (so drivers will not have to allocate page table memory, only change the mapping).
+</description>
+        </item>
+        <item>
+          <description>Returns <b>DXGI_ERROR_DEVICE_REMOVED</b> if the video card has been physically removed from the system, or a driver upgrade for the video card has occurred.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In a single call to <b>UpdateTileMappings</b>, you can map one or more ranges of resource tiles to one or more ranges of tile-pool tiles.</para>
+      <para>You can organize the parameters of  <b>UpdateTileMappings</b> in these ways to perform an update:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>Tiled resource whose mappings are updated.</b> This is a resource that was created with the <see cref="D3D11_RESOURCE_MISC_TILED" /> flag. Mappings start off all NULL when a resource is initially created.</description>
+        </item>
+        <item>
+          <description>
+            <b>Set of tile regions on the tiled resource whose mappings are updated.</b> You can make one <b>UpdateTileMappings</b> call to update many mappings or multiple calls with a bit more API call overhead as well if that is more convenient. <i>NumTiledResourceRegions</i> specifies how many regions there are, <i>pTiledResourceRegionStartCoordinates</i> and <i>pTiledResourceRegionSizes</i> are each arrays that identify the start location and extend of each region. If <i>NumTiledResourceRegions</i> is 1, for convenience either or both of the arrays that describe the regions can be NULL.  NULL for <i>pTiledResourceRegionStartCoordinates</i> means the start coordinate is all 0s, and NULL for <i>pTiledResourceRegionSizes</i> identifies a default region that is the full set of tiles for the entire tiled resource, including all mipmaps, array slices, or both.  If <i>pTiledResourceRegionStartCoordinates</i> isn't NULL and <i>pTiledResourceRegionSizes</i> is NULL, the region size defaults to 1 tile for all regions.  This makes it easy to define mappings for a set of individual tiles each at disparate locations by providing an array of locations in <i>pTiledResourceRegionStartCoordinates</i> without having to send an array of <i>pTiledResourceRegionSizes</i> all set to 1.
+<para>The updates are applied from first region to last; so, if regions overlap in a single call, the updates later in the list overwrite the areas that overlap with previous updates.</para></description>
+        </item>
+        <item>
+          <description>
+            <b>Tile pool that provides memory where tile mappings can go.</b> A tiled resource can point to a single tile pool at a time.  If a new tile pool is specified (for the first time or different from the last time a tile pool was specified), all existing tile mappings for the tiled resource are cleared and the new set of mappings in the current <b>UpdateTileMappings</b> call are applied for the new tile pool. If no tile pool is specified (NULL) or the same tile pool as a previous <b>UpdateTileMappings</b> call is provided, the <b>UpdateTileMappings</b> call just adds the new mappings to existing ones (overwriting on overlap). If <b>UpdateTileMappings</b> only defines NULL mappings, you don't need to specify a tile pool because it is irrelevant. But if you specify a tile pool anyway, it takes the same behavior as previously described when providing a tile pool. </description>
+        </item>
+        <item>
+          <description>
+            <b>Set of tile ranges where mappings are going.</b> Each given tile range can specify one of a few types of ranges: a range of tiles in a tile pool (default), a count of tiles in the tiled resource to map to a single tile in a tile pool (sharing the tile), a count of tile mappings in the tiled resource to skip and leave as they are, or a count of tiles in the tile pool to map to NULL.<i>NumRanges</i> specifies the number of tile ranges, where the total tiles identified across all ranges must match the total number of tiles in the tile regions from the previously described tiled resource.  Mappings are defined by iterating through the tiles in the tile regions in sequential order - x then y then z order for box regions - while walking through the set of tile ranges in sequential order.  The breakdown of tile regions doesn't have to line up with the breakdown of tile ranges, but the total number of tiles on both sides must be equal so that each tiled resource tile specified has a mapping specified.
+<para><i>pRangeFlags</i>, <i>pTilePoolStartOffsets</i>, and <i>pRangeTileCounts</i> are all arrays, of size <i>NumRanges</i>, that describe the tile ranges.  If <i>pRangeFlags</i> is NULL, all ranges are sequential tiles in the tile pool; otherwise, for each range i, pRangeFlags[i] identifies how the mappings in that range of tiles work:</para><list type="bullet"><item><description>If pRangeFlags[i] is 0, that range defines sequential tiles in the tile pool, with the number of tiles being pRangeTileCounts[i] and the starting location pTilePoolStartOffsets[i].  If <i>NumRanges</i> is 1, <i>pRangeTileCounts</i> can be NULL and defaults to the total number of tiles specified by all the tile regions.</description></item><item><description>If pRangeFlags[i] is <b>D3D11_TILE_RANGE_REUSE_SINGLE_TILE</b>, pTilePoolStartOffsets[i] identifies the single tile in the tile pool to map to, and pRangeTileCounts[i] specifies how many tiles from the tile regions to map to that tile pool location.  If <i>NumRanges</i> is 1, <i>pRangeTileCounts</i> can be NULL and defaults to the total number of tiles specified by all the tile regions.</description></item><item><description>If pRangeFlags[i] is <b>D3D11_TILE_RANGE_NULL</b>, pRangeTileCounts[i] specifies how many tiles from the tile regions to map to NULL.  If <i>NumRanges</i> is 1, <i>pRangeTileCounts</i> can be NULL and defaults to the total number of tiles specified by all the tile regions. pTilePoolStartOffsets[i] is ignored for NULL mappings. </description></item><item><description>If pRangeFlags[i] is <b>D3D11_TILE_RANGE_SKIP</b>, pRangeTileCounts[i] specifies how many tiles from the tile regions to skip over and leave existing mappings unchanged for.  This can be useful if a tile region conveniently bounds an area of tile mappings to update except with some exceptions that need to be left the same as whatever they were mapped to before. pTilePoolStartOffsets[i] is ignored for SKIP mappings.</description></item></list></description>
+        </item>
+        <item>
+          <description>
+            <b>Flags parameter for overall options.</b>
+            <b>D3D11_TILE_MAPPING_NO_OVERWRITE</b> means the caller promises that previously submitted commands to the device that may still be executing do not reference any of the tile region being updated. This allows the device to avoid having to flush previously submitted work in order to do the tile mapping  update.  If the app violates this promise by updating tile mappings for locations in tiled resources still being referenced by outstanding commands, undefined rendering behavior results, which includes the potential for significant slowdowns on some architectures.  This is like the "no overwrite" concept that exists elsewhere in the Direct3D API, except applied to tile mapping data structure itself, which in hardware is a page table. The absence of this flag requires that tile mapping updates specified by this <b>UpdateTileMappings</b> call must be completed before any subsequent Direct3D command can proceed.</description>
+        </item>
+      </list>
+      <para>If tile mappings have changed on a tiled resource that the app will render via <see cref="RenderTargetView" /> or <see cref="DepthStencilView" />, the app must clear, by using the fixed function <b>Clear</b> APIs, the tiles that have changed within the area being rendered (mapped or not). If an app doesn't clear in these situations, the app receives undefined values when it reads from the tiled resource.</para>
+      <para>
+        <b>Note</b>  In Direct3D 11.2, hardware can now support <see cref="ClearView" /> on depth-only formats. For more info, see <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" />.</para>
+      <para>If an app needs to preserve existing memory contents of areas in a tiled resource where mappings have changed, the app can first save the contents where tile mappings have changed, by copying them to a temporary surface, for example using <see cref="CopyTiles" />, issuing the required <b>Clear</b>, and then copying the contents back.</para>
+      <para>Suppose a tile is mapped into multiple tiled resources at the same time and tile contents are manipulated by any means (render, copy, and so on) via one of the tiled resources. Then, if the same tile is to be rendered via any other tiled resource, the tile must be cleared first as previously described.</para>
+      <para>For more info about tiled resources, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/tiled-resources">Tiled resources</a>.</para>
+      <para>Here are some examples of common <b>UpdateTileMappings</b> cases:</para>
+      <h4>Examples</h4>
+      <para>Clearing an entire surface's mappings to NULL:</para>
+      <code>// - No-overwrite is specified, assuming it is known nothing else the GPU could be doing is referencing the previous mappings
+// - NULL for pTiledResourceRegionStatCoordinates and pTiledResourceRegionSizes defaults to the entire resource
+// - NULL for pTilePoolStartOffsets since it isn't needed for mapping tiles to NULL
+// - NULL for pRangeTileCounts when NumRanges is 1 defaults to the same number of tiles as the tiled resource region (which is
+//   the entire surface in this case)
+//
+// UINT RangeFlags = D3D11_TILE_MAPPING_NULL;
+// pDeviceContext2-&gt;UpdateTileMappings(pTiledResource,1,NULL,NULL,NULL,1,&amp;amp;amp;amp;amp;amp;RangeFlags,NULL,NULL,D3D11_TILE_MAPPING_NO_OVERWRITE);
+
+</code>
+      <para>Mapping a region of tiles to a single tile:</para>
+      <code>// - This maps a 2x3 tile region at tile offset (1,1) in a Tiled Resource to tile [12] in a Tile Pool
+//
+// D3D11_TILED_RESOURCE_COORDINATE TRC;
+// TRC.X = 1;
+// TRC.Y = 1;
+// TRC.Z = 0;
+// TRC.Subresource = 0;
+//
+// D3D11_TILE_REGION_SIZE TRS;
+// TRS.bUseBox = TRUE;
+// TRS.Width = 2;
+// TRS.Height = 3;
+// TRS.Depth = 1;
+// TRS.NumTiles = TRS.Width * TRS.Height * TRS.Depth;
+//
+// UINT RangeFlags = D3D11_TILE_MAPPING_REUSE_SINGLE_TILE;
+// UINT StartOffset = 12;
+// pDeviceContext2-&gt;UpdateTileMappings(pTiledResource,1,&amp;amp;amp;amp;amp;amp;TRC,&amp;amp;amp;amp;amp;amp;TRS,pTilePool,1,&amp;amp;amp;amp;amp;amp;RangeFlags,&amp;amp;amp;amp;amp;amp;StartOffset,
+//                                     NULL,D3D11_TILE_MAPPING_NO_OVERWRITE);
+
+</code>
+      <para>Defining mappings for a set of disjoint individual tiles:</para>
+      <code>// - This can also be accomplished in multiple calls.  Using a single call to define multiple
+//   a single call to define multiple mapping updates can reduce CPU call overhead slightly,
+//   at the cost of having to pass arrays as parameters.
+// - Passing NULL for pTiledResourceRegionSizes defaults to each region in the Tiled Resource
+//   being a single tile.  So all that is needed are the coordinates of each one.
+// - Passing NULL for Range Flags defaults to no flags (since none are needed in this case)
+// - Passing NULL for pRangeTileCounts defaults to each range in the Tile Pool being size 1.
+//   So all that is needed are the start offsets for each tile in the Tile Pool
+//
+// D3D11_TILED_RESOURCE_COORDINATE TRC[3];
+// UINT StartOffsets[3];
+// UINT NumSingleTiles = 3;
+//
+// TRC[0].X = 1;
+// TRC[0].Y = 1;
+// TRC[0].Subresource = 0;
+// StartOffsets[0] = 1;
+//
+// TRC[1].X = 4;
+// TRC[1].Y = 7;
+// TRC[1].Subresource = 0;
+// StartOffsets[1] = 4;
+//
+// TRC[2].X = 2;
+// TRC[2].Y = 3;
+// TRC[2].Subresource = 0;
+// StartOffsets[2] = 7;
+//
+// pDeviceContext2-&gt;UpdateTileMappings(pTiledResource,NumSingleTiles,&amp;amp;amp;amp;amp;amp;TRC,NULL,pTilePool,NumSingleTiles,NULL,StartOffsets,
+//                                     NULL,D3D11_TILE_MAPPING_NO_OVERWRITE);
+
+</code>
+      <para>Complex example - defining mappings for regions with some skips, some NULL mappings:</para>
+      <code>// - This complex example hard codes the parameter arrays, whereas in practice the
+//   application would likely configure the parameters programatically or in a data driven way.
+// - Suppose we have 3 regions in a Tiled Resource to configure mappings for, 2x3 at coordinate (1,1),
+//   3x3 at coordinate (4,7), and 7x1 at coordinate (20,30)
+// - The tiles in the regions are walked from first to last, in X then Y then Z order,
+//   while stepping forward through the specified Tile Ranges to determine each mapping.
+//   In this example, 22 tile mappings need to be defined.
+// - Suppose we want the first 3 tiles to be mapped to a contiguous range in the Tile Pool starting at
+//   tile pool location [9], the next 8 to be skipped (left unchanged), the next 2 to map to NULL,
+//   the next 5 to share a single tile (tile pool location [17]) and the remaining
+//   4 tiles to each map to to unique tile pool locations, [2], [9], [4] and [17]:
+//
+// D3D11_TILED_RESOURCE_COORDINATE TRC[3];
+// D3D11_TILE_REGION_SIZE TRS[3];
+// UINT NumRegions = 3;
+//
+// TRC[0].X = 1;
+// TRC[0].Y = 1;
+// TRC[0].Subresource = 0;
+// TRS[0].bUseBox = TRUE;
+// TRS[0].Width = 2;
+// TRS[0].Height = 3;
+// TRS[0].NumTiles = TRS[0].Width * TRS[0].Height;
+//
+// TRC[1].X = 4;
+// TRC[1].Y = 7;
+// TRC[1].Subresource = 0;
+// TRS[1].bUseBox = TRUE;
+// TRS[1].Width = 3;
+// TRS[1].Height = 3;
+// TRS[1].NumTiles = TRS[1].Width * TRS[1].Height;
+//
+// TRC[2].X = 20;
+// TRC[2].Y = 30;
+// TRC[2].Subresource = 0;
+// TRS[2].bUseBox = TRUE;
+// TRS[2].Width = 7;
+// TRS[2].Height = 1;
+// TRS[2].NumTiles = TRS[2].Width * TRS[2].Height;
+//
+// UINT NumRanges = 8;
+// UINT RangeFlags[8];
+// UINT TilePoolStartOffsets[8];
+// UINT RangeTileCounts[8];
+//
+// RangeFlags[0] = 0;
+// TilePoolStartOffsets[0] = 9;
+// RangeTileCounts[0] = 3;
+//
+// RangeFlags[1] = D3D11_TILE_MAPPING_SKIP;
+// TilePoolStartOffsets[1] = 0; // offset is ignored for skip mappings
+// RangeTileCounts[1] = 8;
+//
+// RangeFlags[2] = D3D11_TILE_MAPPING_NULL;
+// TilePoolStartOffsets[2] = 0; // offset is ignored for NULL mappings
+// RangeTileCounts[2] = 2;
+//
+// RangeFlags[3] = D3D11_TILE_MAPPING_REUSE_SINGLE_TILE;
+// TilePoolStartOffsets[3] = 17;
+// RangeTileCounts[3] = 5;
+//
+// RangeFlags[4] = 0;
+// TilePoolStartOffsets[4] = 2;
+// RangeTileCounts[4] = 1;
+//
+// RangeFlags[5] = 0;
+// TilePoolStartOffsets[5] = 9;
+// RangeTileCounts[5] = 1;
+//
+// RangeFlags[6] = 0;
+// TilePoolStartOffsets[6] = 4;
+// RangeTileCounts[6] = 1;
+//
+// RangeFlags[7] = 0;
+// TilePoolStartOffsets[7] = 17;
+// RangeTileCounts[7] = 1;
+//
+// pDeviceContext2-&gt;UpdateTileMappings(pTiledResource,NumRegions,TRC,TRS,pTilePool,NumRanges,RangeFlags,
+//                                     TilePoolStartOffsets,RangeTileCounts,D3D11_TILE_MAPPING_NO_OVERWRITE);
+
+</code>
+      <para>CopyTileMappings</para>
+      <code>// CopyTileMappings helps with tasks such as shifting mappings around within/across Tiled Resources, e.g. scrolling tiles.
+// The source and dest region can overlap - the result of the copy in this case is as if the source was saved to a temp and then
+// from there written to the dest, though the implementation may be able to do better.
+//
+// The Flags field allows D3D11_TILE_MAPPING_NO_OVERWRITE to be specified, means the caller promises that previously
+//      submitted commands to the device that may still be executing do not reference any of the tile region being updated.
+//      This allows the device to avoid having to flush previously submitted work in order to do the tile mapping
+//      update.  If the application violates this promise by updating tile mappings for locations in Tiled Resouces
+//      still being referenced by outstanding commands, undefined rendering behavior results, including the potential
+//      for significant slowdowns on some architectures.  This is like the "no overwrite" concept that exists
+//      elsewhere in the API, except applied to Tile Mapping data structure itself (which in hardware is a page table).
+//      The absence of this flag requires that tile mapping updates specified by this call must be completed before any
+//      subsequent D3D command can proceed.
+//
+// Return Values:
+//
+// Returns S_OK or E_INVALIDARG or E_OUTOFMEMORY.  The latter can happen if the call results in the driver having to
+// allocate space for new page table mappings but running out of memory.
+//
+// If out of memory occurs when this is called in a commandlist and the commandlist is being executed, the device will be removed.
+// Applications can avoid this situation by only doing update calls that change existing mappings from Tiled Resources
+// within commandlists (so drivers will not have to allocate page table memory, only change the mapping).
+//
+// Various other basic conditions such as invalid flags or passing in non Tiled Resources result in call being dropped
+// with E_INVALIDARG.
+//
+// Validation remarks:
+//
+// The dest and the source regions must each entirely fit in their resource or behavior is undefined
+// (debug layer will emit an error).
+
+</code>
+    </remarks>
+    <seealso cref="ID3D11DeviceContext2" />
+  </member>
+  <member name="ID3D11DeviceContext2.UpdateTiles">
+    <summary>
+      <para>Updates tiles by copying from app memory to the tiled resource.</para>
+    </summary>
+    <param name="pDestTiledResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>A pointer to a tiled resource to update.</para>
+    </param>
+    <param name="pDestTileRegionStartCoordinate">
+      <para>Type: <b>const <see cref="D3D11_TILED_RESOURCE_COORDINATE" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TILED_RESOURCE_COORDINATE" /> structure that describes the starting coordinates of the tiled resource.</para>
+    </param>
+    <param name="pDestTileRegionSize">
+      <para>Type: <b>const <see cref="D3D11_TILE_REGION_SIZE" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TILE_REGION_SIZE" /> structure that describes the size of the tiled region.</para>
+    </param>
+    <param name="pSourceTileData">
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to memory that contains the source tile data that <b>UpdateTiles</b> uses to update the tiled resource.</para>
+    </param>
+    <param name="Flags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="D3D11_TILE_COPY_FLAG" />-typed values that are combined by using a bitwise OR operation. The only valid value is <b>D3D11_TILE_COPY_NO_OVERWRITE</b>.
+The other values aren't meaningful here, though
+by definition the <b>D3D11_TILE_COPY_LINEAR_BUFFER_TO_SWIZZLED_TILED_RESOURCE</b> value is basically what <b>UpdateTiles</b> does, but sources from app memory.</para>
+    </param>
+    <remarks>
+      <para>
+        <b>UpdateTiles</b> drops write operations to unmapped areas (except on <see cref="Tier_1" /> tiled resources, where writing to unmapped areas is invalid).</para>
+      <para>If a copy operation involves writing to the same memory location multiple times because multiple locations in the destination resource are mapped to the same tile memory, the resulting write operations to multi-mapped tiles are non-deterministic and non-repeatable; that is, accesses to the tile memory happen in whatever order the hardware happens to execute the copy operation.</para>
+      <para>The tiles involved in the copy operation can't include tiles that contain packed mipmaps or results of the copy operation are undefined. To transfer data to and from mipmaps that the hardware packs into one tile, you must use the standard (that is, non-tile specific) copy and update APIs (like <see cref="ID3D11DeviceContext1.CopySubresourceRegion1" /> and <see cref="ID3D11DeviceContext1.UpdateSubresource1" />) or <see cref="ID3D11DeviceContext.GenerateMips" /> for the whole mipmap chain.</para>
+      <para>The memory layout of the data on the source side of the copy operation is linear in memory within 64 KB tiles, which the hardware and driver swizzle and deswizzle per tile as appropriate when they transfer to and from a tiled resource. For multisample antialiasing (MSAA) surfaces, the hardware and driver traverse each pixel's samples in sample-index order before they move to the next pixel. For tiles that are partially filled on the right side (for a surface that has a width not a multiple of tile width in pixels), the pitch and stride to move down a row is the full size in bytes of the number pixels that would fit across the tile if the tile was full. So, there can be a gap between each row of pixels in memory. Mipmaps that are smaller than a tile are not packed together in the linear layout, which might seem to be a waste of memory space, but as mentioned you can't use <see cref="ID3D11DeviceContext2.CopyTiles" /> or <b>UpdateTiles</b> to copy to mipmaps that the hardware packs together. You can just use generic copy and update APIs (like <see cref="ID3D11DeviceContext1.CopySubresourceRegion1" /> and <see cref="ID3D11DeviceContext1.UpdateSubresource1" />) to copy small mipmaps individually. Although in the case of a generic copy API (like <b>ID3D11DeviceContext1.CopySubresourceRegion1</b>), the linear memory must be the same dimension as the tiled resource; <b>ID3D11DeviceContext1.CopySubresourceRegion1</b> can't copy from a buffer resource to a Texture2D for instance.</para>
+      <para>For more info about tiled resources, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/tiled-resources">Tiled resources</a>.</para>
+    </remarks>
+    <seealso cref="ID3D11DeviceContext2" />
+  </member>
+  <member name="ID3D11DeviceContext2">
+    <summary>
+      <para>The device context interface represents a device context; it is used to render commands. <b>ID3D11DeviceContext2</b> adds new methods to those in <see cref="ID3D11DeviceContext1" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D11DeviceContext1" />
+  </member>
+</doc>

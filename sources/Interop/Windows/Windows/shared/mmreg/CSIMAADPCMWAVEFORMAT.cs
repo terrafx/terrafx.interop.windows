@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSIMAADPCMWAVEFORMAT.xml' path='doc/member[@name="CSIMAADPCMWAVEFORMAT"]/*' />
 public partial struct CSIMAADPCMWAVEFORMAT
 {
+    /// <include file='CSIMAADPCMWAVEFORMAT.xml' path='doc/member[@name="CSIMAADPCMWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 }

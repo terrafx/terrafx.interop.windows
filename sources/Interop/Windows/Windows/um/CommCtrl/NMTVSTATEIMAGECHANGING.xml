@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMTVSTATEIMAGECHANGING">
+    <summary>
+      <para>Contains information about an <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-tvstateimagechanging">NM_TVSTATEIMAGECHANGING</a> notification code.</para>
+    </summary>
+  </member>
+  <member name="NMTVSTATEIMAGECHANGING.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>
+        <see cref="NMHDR" /> structure that contains information about this notification code.</para>
+    </summary>
+  </member>
+  <member name="NMTVSTATEIMAGECHANGING.hti">
+    <summary>
+      <para>Type: <b>HTREEITEM</b></para>
+      <para>Handle to the tree-view item whose state image is changing.</para>
+    </summary>
+  </member>
+  <member name="NMTVSTATEIMAGECHANGING.iOldStateImageIndex">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The index of the old state image.</para>
+    </summary>
+  </member>
+  <member name="NMTVSTATEIMAGECHANGING.iNewStateImageIndex">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The index of the new state image.</para>
+    </summary>
+  </member>
+</doc>

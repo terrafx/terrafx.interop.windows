@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2"]/*' />
 [Guid("0AB198EF-6477-4EE8-8812-6780EDB82D5E")]
 [NativeTypeName("struct ITfThreadMgr2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, Guid*, void**, int>)(lpVtbl[0]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, uint>)(lpVtbl[1]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, uint>)(lpVtbl[2]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.Activate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Activate([NativeTypeName("TfClientId *")] uint* ptid)
@@ -48,6 +53,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, uint*, int>)(lpVtbl[3]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ptid);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.Deactivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Deactivate()
@@ -55,6 +61,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, int>)(lpVtbl[4]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.CreateDocumentMgr"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateDocumentMgr(ITfDocumentMgr** ppdim)
@@ -62,6 +69,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, ITfDocumentMgr**, int>)(lpVtbl[5]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppdim);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.EnumDocumentMgrs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EnumDocumentMgrs(IEnumTfDocumentMgrs** ppEnum)
@@ -69,6 +77,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, IEnumTfDocumentMgrs**, int>)(lpVtbl[6]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.GetFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetFocus(ITfDocumentMgr** ppdimFocus)
@@ -76,6 +85,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, ITfDocumentMgr**, int>)(lpVtbl[7]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppdimFocus);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.SetFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetFocus(ITfDocumentMgr* pdimFocus)
@@ -83,6 +93,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, ITfDocumentMgr*, int>)(lpVtbl[8]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), pdimFocus);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.IsThreadFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT IsThreadFocus(BOOL* pfThreadFocus)
@@ -90,6 +101,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, BOOL*, int>)(lpVtbl[9]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), pfThreadFocus);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.GetFunctionProvider"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetFunctionProvider([NativeTypeName("const IID &")] Guid* clsid, ITfFunctionProvider** ppFuncProv)
@@ -97,6 +109,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, Guid*, ITfFunctionProvider**, int>)(lpVtbl[10]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), clsid, ppFuncProv);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.EnumFunctionProviders"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT EnumFunctionProviders(IEnumTfFunctionProviders** ppEnum)
@@ -104,6 +117,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, IEnumTfFunctionProviders**, int>)(lpVtbl[11]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.GetGlobalCompartment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetGlobalCompartment(ITfCompartmentMgr** ppCompMgr)
@@ -111,6 +125,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, ITfCompartmentMgr**, int>)(lpVtbl[12]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppCompMgr);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.ActivateEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT ActivateEx([NativeTypeName("TfClientId *")] uint* ptid, [NativeTypeName("DWORD")] uint dwFlags)
@@ -118,6 +133,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, uint*, uint, int>)(lpVtbl[13]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ptid, dwFlags);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.GetActiveFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetActiveFlags([NativeTypeName("DWORD *")] uint* lpdwFlags)
@@ -125,6 +141,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, uint*, int>)(lpVtbl[14]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), lpdwFlags);
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.SuspendKeystrokeHandling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SuspendKeystrokeHandling()
@@ -132,6 +149,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         return ((delegate* unmanaged<ITfThreadMgr2*, int>)(lpVtbl[15]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.ResumeKeystrokeHandling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT ResumeKeystrokeHandling()

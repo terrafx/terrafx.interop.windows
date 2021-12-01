@@ -8,14 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY"]/*' />
 public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
 {
+    /// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY.BeginAddress"]/*' />
     [NativeTypeName("DWORD")]
     public uint BeginAddress;
 
+    /// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY.Anonymous"]/*' />
     [NativeTypeName("_IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:20089:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnwindData"]/*' />
     public ref uint UnwindData
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25,6 +29,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Flag"]/*' />
     public uint Flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -40,6 +45,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FunctionLength"]/*' />
     public uint FunctionLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,6 +61,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RegF"]/*' />
     public uint RegF
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -70,6 +77,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RegI"]/*' />
     public uint RegI
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -85,6 +93,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.H"]/*' />
     public uint H
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -100,6 +109,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CR"]/*' />
     public uint CR
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -115,6 +125,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FrameSize"]/*' />
     public uint FrameSize
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -130,21 +141,26 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnwindData"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint UnwindData;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:20091:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Flag"]/*' />
             [NativeTypeName("DWORD : 2")]
             public uint Flag
             {
@@ -161,6 +177,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FunctionLength"]/*' />
             [NativeTypeName("DWORD : 11")]
             public uint FunctionLength
             {
@@ -177,6 +194,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RegF"]/*' />
             [NativeTypeName("DWORD : 3")]
             public uint RegF
             {
@@ -193,6 +211,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RegI"]/*' />
             [NativeTypeName("DWORD : 4")]
             public uint RegI
             {
@@ -209,6 +228,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.H"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint H
             {
@@ -225,6 +245,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CR"]/*' />
             [NativeTypeName("DWORD : 2")]
             public uint CR
             {
@@ -241,6 +262,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FrameSize"]/*' />
             [NativeTypeName("DWORD : 9")]
             public uint FrameSize
             {

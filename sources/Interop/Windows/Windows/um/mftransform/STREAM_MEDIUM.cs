@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STREAM_MEDIUM.xml' path='doc/member[@name="STREAM_MEDIUM"]/*' />
 public partial struct STREAM_MEDIUM
 {
+    /// <include file='STREAM_MEDIUM.xml' path='doc/member[@name="STREAM_MEDIUM.gidMedium"]/*' />
     public Guid gidMedium;
 
+    /// <include file='STREAM_MEDIUM.xml' path='doc/member[@name="STREAM_MEDIUM.unMediumInstance"]/*' />
     [NativeTypeName("UINT32")]
     public uint unMediumInstance;
 }

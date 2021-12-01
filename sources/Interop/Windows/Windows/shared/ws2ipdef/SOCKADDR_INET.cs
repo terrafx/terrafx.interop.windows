@@ -7,15 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SOCKADDR_INET.xml' path='doc/member[@name="SOCKADDR_INET"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct SOCKADDR_INET
 {
+    /// <include file='SOCKADDR_INET.xml' path='doc/member[@name="SOCKADDR_INET.Ipv4"]/*' />
     [FieldOffset(0)]
     public SOCKADDR_IN Ipv4;
 
+    /// <include file='SOCKADDR_INET.xml' path='doc/member[@name="SOCKADDR_INET.Ipv6"]/*' />
     [FieldOffset(0)]
     public SOCKADDR_IN6 Ipv6;
 
+    /// <include file='SOCKADDR_INET.xml' path='doc/member[@name="SOCKADDR_INET.si_family"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("ADDRESS_FAMILY")]
     public ushort si_family;

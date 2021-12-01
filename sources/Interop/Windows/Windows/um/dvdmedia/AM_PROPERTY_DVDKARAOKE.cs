@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_PROPERTY_DVDKARAOKE.xml' path='doc/member[@name="AM_PROPERTY_DVDKARAOKE"]/*' />
 public enum AM_PROPERTY_DVDKARAOKE
 {
+    /// <include file='AM_PROPERTY_DVDKARAOKE.xml' path='doc/member[@name="AM_PROPERTY_DVDKARAOKE.AM_PROPERTY_DVDKARAOKE_ENABLE"]/*' />
     AM_PROPERTY_DVDKARAOKE_ENABLE = 0,
+
+    /// <include file='AM_PROPERTY_DVDKARAOKE.xml' path='doc/member[@name="AM_PROPERTY_DVDKARAOKE.AM_PROPERTY_DVDKARAOKE_DATA"]/*' />
     AM_PROPERTY_DVDKARAOKE_DATA = 1,
 }

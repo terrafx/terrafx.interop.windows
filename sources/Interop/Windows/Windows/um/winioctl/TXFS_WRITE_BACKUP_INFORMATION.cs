@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TXFS_WRITE_BACKUP_INFORMATION.xml' path='doc/member[@name="TXFS_WRITE_BACKUP_INFORMATION"]/*' />
 public unsafe partial struct TXFS_WRITE_BACKUP_INFORMATION
 {
+    /// <include file='TXFS_WRITE_BACKUP_INFORMATION.xml' path='doc/member[@name="TXFS_WRITE_BACKUP_INFORMATION.Buffer"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Buffer[1];
 }

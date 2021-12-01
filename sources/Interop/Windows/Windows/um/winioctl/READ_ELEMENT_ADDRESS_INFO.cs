@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='READ_ELEMENT_ADDRESS_INFO.xml' path='doc/member[@name="READ_ELEMENT_ADDRESS_INFO"]/*' />
 public partial struct READ_ELEMENT_ADDRESS_INFO
 {
+    /// <include file='READ_ELEMENT_ADDRESS_INFO.xml' path='doc/member[@name="READ_ELEMENT_ADDRESS_INFO.NumberOfElements"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfElements;
 
+    /// <include file='READ_ELEMENT_ADDRESS_INFO.xml' path='doc/member[@name="READ_ELEMENT_ADDRESS_INFO.ElementStatus"]/*' />
     [NativeTypeName("CHANGER_ELEMENT_STATUS [1]")]
     public _ElementStatus_e__FixedBuffer ElementStatus;
 
+    /// <include file='_ElementStatus_e__FixedBuffer.xml' path='doc/member[@name="_ElementStatus_e__FixedBuffer"]/*' />
     public partial struct _ElementStatus_e__FixedBuffer
     {
         public CHANGER_ELEMENT_STATUS e0;

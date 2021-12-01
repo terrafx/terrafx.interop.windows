@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration"]/*' />
 [Guid("76A3E735-02DF-4A12-98EB-043AD3600AF3")]
 [NativeTypeName("struct ITypeLibRegistration : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         return ((delegate* unmanaged<ITypeLibRegistration*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         return ((delegate* unmanaged<ITypeLibRegistration*, uint>)(lpVtbl[1]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         return ((delegate* unmanaged<ITypeLibRegistration*, uint>)(lpVtbl[2]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetGuid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetGuid(Guid* pGuid)
@@ -46,6 +51,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         return ((delegate* unmanaged<ITypeLibRegistration*, Guid*, int>)(lpVtbl[3]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pGuid);
     }
 
+    /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetVersion([NativeTypeName("BSTR *")] ushort** pVersion)
@@ -53,6 +59,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         return ((delegate* unmanaged<ITypeLibRegistration*, ushort**, int>)(lpVtbl[4]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pVersion);
     }
 
+    /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetLcid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetLcid([NativeTypeName("LCID *")] uint* pLcid)
@@ -60,6 +67,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         return ((delegate* unmanaged<ITypeLibRegistration*, uint*, int>)(lpVtbl[5]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pLcid);
     }
 
+    /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetWin32Path"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetWin32Path([NativeTypeName("BSTR *")] ushort** pWin32Path)
@@ -67,6 +75,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         return ((delegate* unmanaged<ITypeLibRegistration*, ushort**, int>)(lpVtbl[6]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin32Path);
     }
 
+    /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetWin64Path"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetWin64Path([NativeTypeName("BSTR *")] ushort** pWin64Path)
@@ -74,6 +83,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         return ((delegate* unmanaged<ITypeLibRegistration*, ushort**, int>)(lpVtbl[7]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin64Path);
     }
 
+    /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pDisplayName)
@@ -81,6 +91,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         return ((delegate* unmanaged<ITypeLibRegistration*, ushort**, int>)(lpVtbl[8]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pDisplayName);
     }
 
+    /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetFlags([NativeTypeName("DWORD *")] uint* pFlags)
@@ -88,6 +99,7 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         return ((delegate* unmanaged<ITypeLibRegistration*, uint*, int>)(lpVtbl[9]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pFlags);
     }
 
+    /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetHelpDir"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetHelpDir([NativeTypeName("BSTR *")] ushort** pHelpDir)

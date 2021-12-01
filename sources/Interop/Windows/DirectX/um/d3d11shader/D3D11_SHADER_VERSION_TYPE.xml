@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_SHADER_VERSION_TYPE">
+    <summary>
+      <para>Indicates shader type.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-enums">Shader Enumerations</seealso>
+  </member>
+  <member name="D3D11_SHADER_VERSION_TYPE.D3D11_SHVER_PIXEL_SHADER">
+    <summary>
+      <para>Pixel shader.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_VERSION_TYPE.D3D11_SHVER_VERTEX_SHADER">
+    <summary>
+      <para>Vertex shader.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_VERSION_TYPE.D3D11_SHVER_GEOMETRY_SHADER">
+    <summary>
+      <para>Geometry shader.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_VERSION_TYPE.D3D11_SHVER_HULL_SHADER">
+    <summary>
+      <para>Hull shader.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_VERSION_TYPE.D3D11_SHVER_DOMAIN_SHADER">
+    <summary>
+      <para>Domain shader.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_VERSION_TYPE.D3D11_SHVER_COMPUTE_SHADER">
+    <summary>
+      <para>Compute shader.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_VERSION_TYPE.D3D11_SHVER_RESERVED0">
+    <summary>
+      <para>Indicates the end of the enumeration constants.</para>
+    </summary>
+  </member>
+</doc>

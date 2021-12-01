@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PKCS12_PBES2_EXPORT_PARAMS.xml' path='doc/member[@name="PKCS12_PBES2_EXPORT_PARAMS"]/*' />
 public unsafe partial struct PKCS12_PBES2_EXPORT_PARAMS
 {
+    /// <include file='PKCS12_PBES2_EXPORT_PARAMS.xml' path='doc/member[@name="PKCS12_PBES2_EXPORT_PARAMS.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='PKCS12_PBES2_EXPORT_PARAMS.xml' path='doc/member[@name="PKCS12_PBES2_EXPORT_PARAMS.hNcryptDescriptor"]/*' />
     [NativeTypeName("PVOID")]
     public void* hNcryptDescriptor;
 
+    /// <include file='PKCS12_PBES2_EXPORT_PARAMS.xml' path='doc/member[@name="PKCS12_PBES2_EXPORT_PARAMS.pwszPbes2Alg"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszPbes2Alg;
 }

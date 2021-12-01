@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFPaletteEntry">
+    <summary>
+      <para>Contains one palette entry in a color table.</para>
+    </summary>
+    <remarks>
+      <para>This union can be used to represent both RGB palettes and Y'Cb'Cr' palettes. The video format that defines the palette determines which union member should be used.</para>
+    </remarks>
+  </member>
+  <member name="MFPaletteEntry.ARGB">
+    <summary>
+      <para>
+        <see cref="MFARGB" /> structure that contains an RGB color.</para>
+    </summary>
+  </member>
+  <member name="MFPaletteEntry.AYCbCr">
+    <summary>
+      <para>
+        <see cref="MFAYUVSample" /> structure that contains a Y'Cb'Cr' color.</para>
+    </summary>
+  </member>
+</doc>

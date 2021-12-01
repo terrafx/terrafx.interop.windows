@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1StrokeStyle1.GetStrokeTransformType">
+    <summary>
+      <para>Gets the stroke transform type.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_STROKE_TRANSFORM_TYPE" /></b></para>
+      <para>This method returns the stroke transform type.</para>
+    </returns>
+    <seealso cref="D2D1_STROKE_TRANSFORM_TYPE" />
+    <seealso cref="ID2D1StrokeStyle1" />
+  </member>
+  <member name="ID2D1StrokeStyle1">
+    <summary>
+      <para>Describes the caps, miter limit, line join, and dash information for a stroke.</para>
+    </summary>
+    <remarks>
+      <para>This interface adds functionality to <see cref="ID2D1StrokeStyle" />.</para>
+    </remarks>
+    <seealso cref="ID2D1StrokeStyle" />
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking"]/*' />
 [Guid("36B73880-C2C8-11CF-8B46-00805F6CEF60")]
 [NativeTypeName("struct IMediaSeeking : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSeeking*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, uint>)(lpVtbl[1]))((IMediaSeeking*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, uint>)(lpVtbl[2]))((IMediaSeeking*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCapabilities([NativeTypeName("DWORD *")] uint* pCapabilities)
@@ -46,6 +51,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, uint*, int>)(lpVtbl[3]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCapabilities);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.CheckCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CheckCapabilities([NativeTypeName("DWORD *")] uint* pCapabilities)
@@ -53,6 +59,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, uint*, int>)(lpVtbl[4]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCapabilities);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.IsFormatSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsFormatSupported([NativeTypeName("const GUID *")] Guid* pFormat)
@@ -60,6 +67,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[5]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.QueryPreferredFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT QueryPreferredFormat(Guid* pFormat)
@@ -67,6 +75,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[6]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetTimeFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetTimeFormat(Guid* pFormat)
@@ -74,6 +83,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[7]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.IsUsingTimeFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT IsUsingTimeFormat([NativeTypeName("const GUID *")] Guid* pFormat)
@@ -81,6 +91,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[8]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.SetTimeFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetTimeFormat([NativeTypeName("const GUID *")] Guid* pFormat)
@@ -88,6 +99,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[9]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetDuration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetDuration([NativeTypeName("LONGLONG *")] long* pDuration)
@@ -95,6 +107,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, long*, int>)(lpVtbl[10]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pDuration);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetStopPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetStopPosition([NativeTypeName("LONGLONG *")] long* pStop)
@@ -102,6 +115,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, long*, int>)(lpVtbl[11]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pStop);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetCurrentPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetCurrentPosition([NativeTypeName("LONGLONG *")] long* pCurrent)
@@ -109,6 +123,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, long*, int>)(lpVtbl[12]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCurrent);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.ConvertTimeFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT ConvertTimeFormat([NativeTypeName("LONGLONG *")] long* pTarget, [NativeTypeName("const GUID *")] Guid* pTargetFormat, [NativeTypeName("LONGLONG")] long Source, [NativeTypeName("const GUID *")] Guid* pSourceFormat)
@@ -116,6 +131,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, long*, Guid*, long, Guid*, int>)(lpVtbl[13]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pTarget, pTargetFormat, Source, pSourceFormat);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.SetPositions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetPositions([NativeTypeName("LONGLONG *")] long* pCurrent, [NativeTypeName("DWORD")] uint dwCurrentFlags, [NativeTypeName("LONGLONG *")] long* pStop, [NativeTypeName("DWORD")] uint dwStopFlags)
@@ -123,6 +139,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, long*, uint, long*, uint, int>)(lpVtbl[14]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCurrent, dwCurrentFlags, pStop, dwStopFlags);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetPositions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetPositions([NativeTypeName("LONGLONG *")] long* pCurrent, [NativeTypeName("LONGLONG *")] long* pStop)
@@ -130,6 +147,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, long*, long*, int>)(lpVtbl[15]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCurrent, pStop);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetAvailable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetAvailable([NativeTypeName("LONGLONG *")] long* pEarliest, [NativeTypeName("LONGLONG *")] long* pLatest)
@@ -137,6 +155,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, long*, long*, int>)(lpVtbl[16]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pEarliest, pLatest);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.SetRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetRate(double dRate)
@@ -144,6 +163,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, double, int>)(lpVtbl[17]))((IMediaSeeking*)Unsafe.AsPointer(ref this), dRate);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetRate(double* pdRate)
@@ -151,6 +171,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
         return ((delegate* unmanaged<IMediaSeeking*, double*, int>)(lpVtbl[18]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pdRate);
     }
 
+    /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetPreroll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetPreroll([NativeTypeName("LONGLONG *")] long* pllPreroll)

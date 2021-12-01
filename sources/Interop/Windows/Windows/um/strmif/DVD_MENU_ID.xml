@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_MENU_ID">
+    <summary>
+      <para>Specifies the DVD menu in a call to <see cref="IDvdControl2.ShowMenu" />.</para>
+    </summary>
+    <remarks>
+      <para>The root menu always provides a means of getting to the subpicture, audio, angle and chapter menus if they exist.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IDvdControl2.ShowMenu" />
+  </member>
+  <member name="DVD_MENU_ID.DVD_MENU_Title">
+    <summary>
+      <para>Specifies the top menu in a DVD-Video volume. This menu is also known as the Title Menu or Video Manager Menu and it provides access to all VTS (Video Title Set) menus on the disc.</para>
+    </summary>
+  </member>
+  <member name="DVD_MENU_ID.DVD_MENU_Root">
+    <summary>
+      <para>Specifies the root menu for a VTS.</para>
+    </summary>
+  </member>
+  <member name="DVD_MENU_ID.DVD_MENU_Subpicture">
+    <summary>
+      <para>Specifies the subpicture submenu in a VTS menu.</para>
+    </summary>
+  </member>
+  <member name="DVD_MENU_ID.DVD_MENU_Audio">
+    <summary>
+      <para>Specifies the audio submenu in a VTS menu.</para>
+    </summary>
+  </member>
+  <member name="DVD_MENU_ID.DVD_MENU_Angle">
+    <summary>
+      <para>Specifies the angle submenu in a VTS menu.</para>
+    </summary>
+  </member>
+  <member name="DVD_MENU_ID.DVD_MENU_Chapter">
+    <summary>
+      <para>Choose a chapter submenu in a VTS menu.</para>
+    </summary>
+  </member>
+</doc>

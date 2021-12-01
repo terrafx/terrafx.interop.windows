@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HDLAYOUT.xml' path='doc/member[@name="HDLAYOUT"]/*' />
 public unsafe partial struct HDLAYOUT
 {
+    /// <include file='HDLAYOUT.xml' path='doc/member[@name="HDLAYOUT.prc"]/*' />
     public RECT* prc;
 
+    /// <include file='HDLAYOUT.xml' path='doc/member[@name="HDLAYOUT.pwpos"]/*' />
     public WINDOWPOS* pwpos;
 }

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA">
+    <summary>
+      <para>Values for the <see cref="D2D1_HIGHLIGHTSANDSHADOWS_PROP_INPUT_GAMMA" /> property
+of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/highlights-and-shadows-effect">Highlights and Shadows effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA.D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA_LINEAR">
+    <summary>
+      <para>Indicates the input image is in linear gamma space.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA.D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA_SRGB">
+    <summary>
+      <para>Indicates the input image is sRGB gamma space.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA.D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

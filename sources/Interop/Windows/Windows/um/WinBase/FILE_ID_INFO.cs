@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_ID_INFO.xml' path='doc/member[@name="FILE_ID_INFO"]/*' />
 public partial struct FILE_ID_INFO
 {
+    /// <include file='FILE_ID_INFO.xml' path='doc/member[@name="FILE_ID_INFO.VolumeSerialNumber"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong VolumeSerialNumber;
 
+    /// <include file='FILE_ID_INFO.xml' path='doc/member[@name="FILE_ID_INFO.FileId"]/*' />
     public FILE_ID_128 FileId;
 }

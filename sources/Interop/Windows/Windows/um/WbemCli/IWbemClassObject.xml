@@ -1,0 +1,898 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWbemClassObject.BeginEnumeration">
+    <summary>
+      <para>The
+<b>IWbemClassObject.BeginEnumeration</b> method resets an enumeration back to the beginning of the enumeration. The caller must call this method prior to the first call to
+<see cref="IWbemClassObject.Next" /> to enumerate all of the properties on an object. The order in which properties are enumerated is guaranteed to be invariant for a given instance of
+<see cref="IWbemClassObject" />.</para>
+    </summary>
+    <param name="lEnumFlags">
+      <para>Combination of flags described in Remarks.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>You can control the properties included in the enumeration by specifying a combination of the following flags. You can combine one flag from each group with any flag from any other group. However, flags from the same group are mutually exclusive.</para>
+      <para>GROUP 1</para>
+      <para>GROUP 2</para>
+    </remarks>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.EndEnumeration" />
+    <seealso cref="IWbemClassObject.Next" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">WMI System Properties</seealso>
+  </member>
+  <member name="IWbemClassObject.BeginMethodEnumeration">
+    <summary>
+      <para>Use the
+<b>IWbemClassObject.BeginMethodEnumeration</b> method call to begin an enumeration of the methods available for the object.</para>
+      <para>This call is only supported if the current object is a CIM class definition. Method manipulation is not available from
+<see cref="IWbemClassObject" /> pointers which point to CIM instances. The order in which methods are enumerated is guaranteed to be invariant for a given instance of
+<b>IWbemClassObject</b>.</para>
+    </summary>
+    <param name="lEnumFlags">
+      <para>Specifies the scope of the enumeration.</para>
+      <para>Possible values:</para>
+      <h4>WBEM_FLAG_LOCAL_ONLY</h4>
+      <para>Only include methods that are defined in the class itself.</para>
+      <h4>WBEM_FLAG_PROPAGATED_ONLY</h4>
+      <para>Only include methods that are inherited from parent classes.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.NextMethod" />
+  </member>
+  <member name="IWbemClassObject.Clone">
+    <summary>
+      <para>The
+<b>IWbemClassObject.Clone</b> method returns a new object that is a complete clone of the current object. The new object has a COM reference count of 1.</para>
+    </summary>
+    <param name="ppCopy">
+      <para>This parameter cannot be <b>NULL</b>. It receives the copy of the current object. You must call <b>IWbemClassObject.Release</b> on this object when it is no longer required.</para>
+      <para>A new object is not returned on error.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>Use this method to duplicate a class definition, or to duplicate an instance. This can be useful when the original copy of the object is required for backup purposes while a new copy is modified. Likewise, use this method to create many new instances from a single source instance. For example, use
+<see cref="IWbemClassObject.SpawnInstance" /> to create a single starting instance, and use
+<b>IWbemClassObject.Clone</b> to produce 100 copies of the instance quickly. Each object can be modified subsequently to take on its particular values.</para>
+      <para>It is not possible to use this method to convert a class definition into an instance, or convert an instance into a class definition.</para>
+    </remarks>
+  </member>
+  <member name="IWbemClassObject.CompareTo">
+    <summary>
+      <para>The <b>IWbemClassObject.CompareTo</b> method compares an object to another Windows Management object. Note that there are certain constraints in this comparison process.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Specifies the object characteristics to consider in comparison to another object. It can be <b>WBEM_COMPARISON_INCLUDE_ALL</b> to consider all features, or any combination of these flags.</para>
+      <h4>WBEM_FLAG_IGNORE_OBJECT_SOURCE</h4>
+      <para>Ignore the source of the objects, namely the server and the namespace they came from, in comparison to other objects.</para>
+      <h4>WBEM_FLAG_IGNORE_QUALIFIERS</h4>
+      <para>Ignore all qualifiers (including <b>Key</b> and <b>Dynamic</b>) in comparison.</para>
+      <h4>WBEM_FLAG_IGNORE_DEFAULT_VALUES</h4>
+      <para>Ignore default values of properties. This flag is only meaningful when comparing classes.</para>
+      <h4>WBEM_FLAG_IGNORE_FLAVOR</h4>
+      <para>Ignore qualifier flavors. This flag still takes qualifier values into account, but ignores flavor distinctions such as propagation rules and override restrictions (for more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/qualifier-flavors">Qualifier Flavors</a>).</para>
+      <h4>WBEM_FLAG_IGNORE_CASE</h4>
+      <para>Compare string values in a case-insensitive manner. This applies both to strings and to qualifier values. Property and qualifier names are always compared in a case-insensitive manner whether this flag is specified or not.</para>
+      <h4>WBEM_FLAG_IGNORE_CLASS</h4>
+      <para>Assume that the objects being compared are instances of the same class. Consequently, this flag compares instance-related information only. Use this flag to optimize performance. If the objects are not of the same class, the results are undefined.</para>
+    </param>
+    <param name="pCompareTo">
+      <para>Object in comparison. This pointer must point to a valid
+<see cref="IWbemClassObject" /> instance. It cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <seealso cref="IWbemClassObject" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/qualifier-flavors">Qualifier Flavors</seealso>
+    <seealso cref="WBEM_COMPARISON_FLAG" />
+  </member>
+  <member name="IWbemClassObject.Delete">
+    <summary>
+      <para>The
+<b>IWbemClassObject.Delete</b> method deletes the specified property from a CIM class definition and all of its qualifiers. Because instances cannot have contents that are different from the owning class, delete operations for properties are only possible on class definitions. If you invoke
+<b>Delete</b> on a property in an instance, the operation succeeds; however, rather than removing the value, it is simply reset to the default value for the class.</para>
+      <para>It is not possible to delete a property inherited from a parent class. However, if an override default value for a property inherited from a parent class was specified, it is possible to revert to the parent's default value by invoking this method. In this case, <b>WBEM_S_RESET_TO_DEFAULT</b> is returned.</para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">System properties</a> cannot be deleted.</para>
+    </summary>
+    <param name="wszName">
+      <para>Property name to delete. This must point to a valid <b>LPCWSTR</b>. It is treated as read-only.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <seealso cref="IWbemClassObject" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">WMI System Properties</seealso>
+  </member>
+  <member name="IWbemClassObject.DeleteMethod">
+    <summary>
+      <para>Use the
+<b>IWbemClassObject.DeleteMethod</b> method to delete a method. This call is supported only if the current object is a CIM class definition. Method manipulation is not available from
+<see cref="IWbemClassObject" /> pointers which point to CIM instances.</para>
+    </summary>
+    <param name="wszName">
+      <para>Method name to be removed from the class definition.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>You may not delete methods inherited from parent classes.</para>
+    </remarks>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.GetMethod" />
+    <seealso cref="IWbemClassObject.PutMethod" />
+  </member>
+  <member name="IWbemClassObject.EndEnumeration">
+    <summary>
+      <para>The
+<b>IWbemClassObject.EndEnumeration</b> method terminates an enumeration sequence started with
+<see cref="IWbemClassObject.BeginEnumeration" />. This call is not required, but it is recommended to developers because it releases resources associated with the enumeration. However, the resources are deallocated automatically when the next enumeration is started or the object is released.</para>
+    </summary>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.BeginEnumeration" />
+    <seealso cref="IWbemClassObject.Next" />
+  </member>
+  <member name="IWbemClassObject.EndMethodEnumeration">
+    <summary>
+      <para>The
+<b>IWbemClassObject.EndMethodEnumeration</b> method is used to terminate a method enumeration sequence started with
+<see cref="IWbemClassObject.BeginMethodEnumeration" />.</para>
+      <para>This call is only supported if the current object is a CIM class definition. Method manipulation is not available from
+<see cref="IWbemClassObject" /> pointers which point to CIM instances.</para>
+    </summary>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The caller begins the enumeration sequence using
+<see cref="IWbemClassObject.BeginMethodEnumeration" />, and then calls
+<see cref="IWbemClassObject.NextMethod" /> until <b>WBEM_S_NO_MORE_DATA</b> is returned. The caller optionally finishes the sequence with
+<b>IWbemClassObject.EndMethodEnumeration</b>. The caller may terminate the enumeration early by calling
+<b>IWbemClassObject.EndMethodEnumeration</b> at any time.</para>
+    </remarks>
+  </member>
+  <member name="IWbemClassObject.Get">
+    <summary>
+      <para>The
+<b>IWbemClassObject.Get</b> method retrieves the specified property value, if it exists. This method can also return
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">system properties</a>.</para>
+    </summary>
+    <param name="wszName">
+      <para>Name of the desired property. It is treated as read-only.</para>
+    </param>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0 (zero).</para>
+    </param>
+    <param name="pVal">
+      <para>When successful, this parameter is assigned the correct type and value for the qualifier, and the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit">VariantInit</a> function is called on <i>pVal</i>. It is the responsibility of the caller to call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantclear">VariantClear</a> on <i>pVal</i> when the value is not needed. If there is an error, the value that <i>pVal</i> points to is not modified. If an uninitialized <i>pVal</i> value is passed to the method, then the caller must check the return value of the method, and call <b>VariantClear</b> only when the method succeeds.</para>
+    </param>
+    <param name="pType">
+      <para>Can be <b>NULL</b>. If it is not <b>NULL</b>, it receives the CIM type of the property, that is, one of the CIM-type constants, such as <b>CIM_SINT32</b>, <b>CIM_STRING</b>, and so on. For more information about these values, see <see cref="CIMTYPE_ENUMERATION" />. This indicates the CIM semantics of the property value packed into <b>VARIANT</b>.</para>
+    </param>
+    <param name="plFlavor">
+      <para>Can be <b>NULL</b>. If not <b>NULL</b>, the LONG value pointed to receives information about the origin of the property. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/qualifier-flavors">Qualifier Flavors</a> and <see cref="WBEM_FLAVOR_TYPE" />.</para>
+      <h4>WBEM_FLAVOR_ORIGIN_SYSTEM</h4>
+      <para>The property is a standard system property.</para>
+      <h4>WBEM_FLAVOR_ORIGIN_PROPAGATED</h4>
+      <para>For classes only. The property was inherited from the parent class.</para>
+      <para>For instances only. The property is inherited from the parent class, but has not been modified at the instance level.</para>
+      <h4>WBEM_FLAVOR_ORIGIN_LOCAL</h4>
+      <para>For classes only. The property belongs to the derived child class.</para>
+      <para>For instances only. The property is modified at the instance level—that is, a value was supplied, or a qualifier was added or modified.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained in an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>If the  type of the property is an object path, date/time string, or other special type, then the returned values in the <b>VARIANT</b> do not contain enough information to identify the true type. The <i>pvtType</i> out parameter indicates this.</para>
+      <para>To obtain the string form of the Common Information Model (CIM) type for the property, the
+<see cref="IWbemQualifierSet" /> pointer for the property must be obtained, and the <b>Cimtype</b> qualifier retrieved. That qualifier is the string form of the CIM type, such as <b>sint32</b> versus <b>CIM_SINT32</b>, which is a numeric constant.</para>
+      <para>
+        <b>Note</b>  When you create a new object using
+<see cref="IWbemClassObject.SpawnInstance" />, it is important to note that some system properties are not set until the object is written to Windows Management Instrumentation (WMI). In all cases,
+<b>IWbemClassObject.Get</b>   succeeds in accessing the requested system property, but the returned <b>VARIANT</b> may contain <b>VT_NULL</b>.</para>
+      <h4>Examples</h4>
+      <para>For an extended discussion and example of making queries in C++ and WMI, see Making <a href="https://www.codeproject.com/articles/10539/making-wmi-queries-in-c">WMI Queries In C++</a> on CodeProject.</para>
+      <para>The following C++ example shows how to retrieve the CIM class name from an object by using the system property <b>__CLASS.</b> The code requires the following #include statements and references to compile.</para>
+      <code>#include &lt;iostream&gt;
+using namespace std;
+#include &lt;wbemidl.h&gt;
+#pragma comment(lib, "wbemuuid.lib")
+</code>
+      <code>//Assumes that pObj is defined as a pointer
+// to an IWbemClassObject object.
+
+VARIANT v;
+BSTR strClassProp = SysAllocString(L"__CLASS");
+HRESULT hr;
+hr = pObj-&gt;Get(strClassProp, 0, &amp;amp;amp;amp;amp;amp;v, 0, 0);
+SysFreeString(strClassProp);
+
+// check the HRESULT to see if the action succeeded.
+
+if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (V_VT(&amp;amp;amp;amp;amp;amp;v) == VT_BSTR))
+{
+    wprintf(L"The class name is %s\n.", V_BSTR(&amp;amp;amp;amp;amp;amp;v));
+}
+else
+{
+    wprintf(L"Error in getting specified object\n");
+}
+VariantClear(&amp;amp;amp;amp;amp;amp;v);
+
+
+
+</code>
+    </remarks>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.GetPropertyQualifierSet" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-qualifiers">WMI Qualifiers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-classes">WMI System Classes</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">WMI System Properties</seealso>
+  </member>
+  <member name="IWbemClassObject.GetMethod">
+    <summary>
+      <para>The
+<b>IWbemClassObject.GetMethod</b> method returns information about the requested method. This call is only supported if the current object is a CIM class definition. Method information is not available from
+<see cref="IWbemClassObject" /> pointers which point to CIM instances.</para>
+    </summary>
+    <param name="wszName">
+      <para>The method name. This cannot be <b>NULL</b>, and must point to a valid <b>LPCWSTR</b>.</para>
+    </param>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0.</para>
+    </param>
+    <param name="ppInSignature">
+      <para>A pointer that receives an
+<see cref="IWbemClassObject" /> pointer which describes the in parameters to the method. This parameter is  ignored if set to <b>NULL</b>. Be aware that Windows Management can set the
+<b>IWbemClassObject</b> pointer to <b>NULL</b> if this method has no in parameters. For more information, see Remarks.</para>
+    </param>
+    <param name="ppOutSignature">
+      <para>A pointer that receives an
+<see cref="IWbemClassObject" /> pointer which describes the out-parameters to the method. This parameter will be ignored if set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>For a method, the in and out parameters are described as properties in an
+<see cref="IWbemClassObject" />, an instance of the system class
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--parameters">__Parameters</a>.</para>
+      <para>For example, consider the following method:</para>
+      <code>Class MyClass{
+    [key] string KeyVal;
+    sint32 PropVal;
+    sint32 ExampleMethod([in] sint32 Parm1, [in] uint32 Parm2,
+      [out] string Parm3);
+};
+</code>
+      <para>In this example, the class has a single method. When the user calls
+<b>IWbemClassObject.GetMethod</b>, the <i>ppInSignature</i> parameter receives an
+<see cref="IWbemClassObject" /> object, which contains two properties: <b>Parm1</b> and <b>Parm2</b>. The <i>ppOutSignature</i> parameter contains two properties, <b>Parm3</b> and <b>ReturnValue</b>.</para>
+      <para>After filling in the property values of the <i>ppInSignature</i> object, the caller can use the object to execute the method by calling
+<see cref="IWbemServices.ExecMethod" /> or
+<see cref="IWbemServices.ExecMethodAsync" />.</para>
+      <para>
+        <b>Note</b>  The caller must call <b>IWbemClassObject.Release</b> on the <i>ppInSignature</i> and <i>ppOutSignature</i> pointers when these objects are no longer required.</para>
+    </remarks>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.PutMethod" />
+  </member>
+  <member name="IWbemClassObject.GetMethodOrigin">
+    <summary>
+      <para>The
+<b>IWbemClassObject.GetMethodOrigin</b> method is used to determine the class for which a method was declared.</para>
+      <para>This call is only supported if the current object is a CIM class definition. Method manipulation is not available from
+<see cref="IWbemClassObject" /> pointers which point to CIM instances.</para>
+    </summary>
+    <param name="wszMethodName">
+      <para>Name of the method for the object whose owning class is being requested.</para>
+    </param>
+    <param name="pstrClassName">
+      <para>Receives the name of the class which owns the method. The user must call <b>SysFreeString</b> on the returned <i>BSTR</i> when it is no longer required.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>Because methods are inherited from class to class, it is often desirable to determine the owning class for a given method.</para>
+    </remarks>
+  </member>
+  <member name="IWbemClassObject.GetMethodQualifierSet">
+    <summary>
+      <para>The
+<b>IWbemClassObject.GetMethodQualifierSet</b> is used to retrieve the qualifier set for a particular method.</para>
+      <para>This call is supported only if the current object is a CIM class definition. Method manipulation is not available from
+<see cref="IWbemClassObject" /> pointers, which point to CIM instances.</para>
+    </summary>
+    <param name="wszMethod">
+      <para>Must point to a valid <b>LPCWSTR</b> containing the method name.</para>
+    </param>
+    <param name="ppQualSet">
+      <para>Receives the interface pointer that allows access to the qualifiers for the method. The returned object has a positive reference count upon return from the call. The caller must call <b>IWbemQualifierSet.Release</b> when the object is no longer needed. This parameter cannot be <b>NULL</b>. On error, a new object is not returned, and the pointer is set to point to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>Because each method may have its own qualifiers, use this call to retrieve the
+<see cref="IWbemQualifierSet" /> pointer, which allows the caller to add, edit, or delete such qualifiers.</para>
+    </remarks>
+  </member>
+  <member name="IWbemClassObject.GetNames">
+    <summary>
+      <para>The <b>IWbemClassObject.GetNames</b> method
+retrieves the names of the properties in the object. Furthermore, depending on user-supplied
+selection criteria, it can retrieve all or a subset of the properties. These properties can then be accessed by
+using <see cref="IWbemClassObject.Get" /> for each name. This
+method can also return <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">system properties</a>.</para>
+    </summary>
+    <param name="wszQualifierName">
+      <para>A parameter that can be <b>NULL</b>. If not <b>NULL</b>, it must point to a valid <b>LPCWSTR</b> specifying a qualifier name which operates as part of a filter. This is handled as read-only. For more information, see Remarks.</para>
+    </param>
+    <param name="lFlags">
+      <para>For more information, see Remarks.</para>
+    </param>
+    <param name="pQualifierVal">
+      <para>A parameter that can be <b>NULL</b>. If not <b>NULL</b>, it must point to a valid <b>VARIANT</b> structure initialized to a filter value. This <b>VARIANT</b> is handled as read-only by the method. Thus, the caller must call <b>VariantClear</b> on it, if required. For more information, see Remarks.</para>
+    </param>
+    <param name="pNames">
+      <para>A parameter that cannot be <b>NULL</b>, but on entry this parameter must point to <b>NULL</b>. A new <b>SAFEARRAY</b> structure is always allocated, and the pointer is set to point to it. The returned array can have 0 elements, but is always allocated when <b>WBEM_S_NO_ERROR</b> returns. On error, a new <b>SAFEARRAY</b> structure is not returned.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The names returned are controlled by a combination of flags and parameters. For example, all names of all
+properties can be specified, or only the key properties can be specified, and so on. The primary filter is
+specified in the <i>lFlags</i> parameter; the other parameters vary depending upon it.</para>
+      <para>The flag values are bit fields, and can be combined. One flag from each of the following groups can be combined
+with a flag from each of the other groups. Flag values within a group are mutually exclusive.</para>
+      <list type="table">
+        <listheader>
+          <description>Group 1 flags</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>WBEM_FLAG_ALWAYS</b>
+          </description>
+          <description>Return all property names. The <i>strQualifierName</i> and <i>pQualifierVal</i> parameters are not used.</description>
+        </item>
+        <item>
+          <description>
+            <b>WBEM_FLAG_ONLY_IF_TRUE</b>
+          </description>
+          <description>Return only properties that have a qualifier of the name specified by the parameter <i>strQualifierName</i>. If this flag is used, you must specify <i>strQualifierName</i>.</description>
+        </item>
+        <item>
+          <description>
+            <b>WBEM_FLAG_ONLY_IF_FALSE</b>
+          </description>
+          <description>Return only properties that do not have a qualifier of the name specified by the parameter <i>strQualifierName</i>. If this flag is used, you must specify <i>strQualifierName</i>.</description>
+        </item>
+        <item>
+          <description>
+            <b>WBEM_FLAG_ONLY_IF_IDENTICAL</b>
+          </description>
+          <description>Return only properties that have a qualifier of the name specified by the parameter <i>QualifierName</i>, and also have a value identical to the value specified by the <b>VARIANT</b> structure pointed to by <i>pQualifierVal</i>. If this flag is used, you must specify both <i>QualifierName</i> and <i>pQualifierVal</i>.</description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>Group 2 flags</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>WBEM_FLAG_KEYS_ONLY</b>
+          </description>
+          <description>Return only the names of the property or properties that define the keys.</description>
+        </item>
+        <item>
+          <description>
+            <b>WBEM_FLAG_REFS_ONLY</b>
+          </description>
+          <description>Return only property names that are object references.</description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>Group 3 flags</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>WBEM_FLAG_LOCAL_ONLY</b>
+          </description>
+          <description>Return only property names that belong to the derived-most class. Exclude properties from the parent class or parent classes.</description>
+        </item>
+        <item>
+          <description>
+            <b>WBEM_FLAG_PROPAGATED_ONLY</b>
+          </description>
+          <description>Return only property names that belong to the parent class or parent classes.</description>
+        </item>
+        <item>
+          <description>
+            <b>WBEM_FLAG_SYSTEM_ONLY</b>
+          </description>
+          <description>Return only
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">system properties</a>.</description>
+        </item>
+        <item>
+          <description>
+            <b>WBEM_FLAG_NONSYSTEM_ONLY</b>
+          </description>
+          <description>Return only property names that are not system properties.</description>
+        </item>
+      </list>
+      <para>It is not an error for an empty list to be returned in cases where no properties match the specified
+filters.</para>
+      <para>For more information about using <b>SAFEARRAY</b> structures of
+<b>BSTR</b> values, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-part-of-an-instance">Retrieving Part of a WMI Instance</a>.</para>
+    </remarks>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.BeginEnumeration" />
+    <seealso cref="IWbemClassObject.Get" />
+    <seealso cref="WBEM_CONDITION_FLAG_TYPE" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">WMI System Properties</seealso>
+  </member>
+  <member name="IWbemClassObject.GetObjectText">
+    <summary>
+      <para>The
+<b>IWbemClassObject.GetObjectText</b> method returns a textual rendering of the object in the MOF syntax. Notice that the MOF text returned does not contain all the information about the object, but only enough information for the MOF compiler to be able to re-create the original object. For instance, no propagated qualifiers or parent class properties are displayed.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Normally 0. If <b>WBEM_FLAG_NO_FLAVORS</b> is specified, qualifiers will be presented without propagation or flavor information.</para>
+    </param>
+    <param name="pstrObjectText">
+      <para>This must point to <b>NULL</b> on entry. This parameter receives from Windows Management a newly allocated <b>BSTR</b> that was initialized with <b>SysAllocString</b>. You must call <b>SysFreeString</b> on the pointer when the string is no longer required. This pointer points to a MOF syntax rendering of the object upon return from the call. Because this is an out parameter, the pointer must not point to a string that is valid before this method is called, because the pointer will not be deallocated.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The following algorithm is used to reconstruct the text of the parameters of a method:</para>
+      <list type="number">
+        <item>
+          <description>Parameters are resequenced in the order of their identifier values.</description>
+        </item>
+        <item>
+          <description>Parameters that are specified as [in] and [out] will be combined into a single parameter.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemQualifierSet" />
+    <seealso cref="WBEM_TEXT_FLAG_TYPE" />
+  </member>
+  <member name="IWbemClassObject.GetPropertyOrigin">
+    <summary>
+      <para>The
+<b>IWbemClassObject.GetPropertyOrigin</b> method retrieves the name of the class in which a particular property was introduced. For classes with deep inheritance hierarchies, it is often desirable to know which properties were declared in which classes. If the object does not inherit from a parent class, as in the case of a base class, for example, then the current class name is returned.</para>
+    </summary>
+    <param name="wszName">
+      <para>Property name for which the owning class name is desired. This must point to a valid <b>LPCWSTR</b>, which is treated as read-only.</para>
+    </param>
+    <param name="pstrClassName">
+      <para>Pointer to the address of a new <b>BSTR</b> that receives the parent class name. To prevent memory leaks in the client process, the caller must call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when the name is no longer required. This parameter must not point to a valid string before the method is called because this is an output parameter, and this pointer is not deallocated after the call is complete.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.InheritsFrom" />
+  </member>
+  <member name="IWbemClassObject.GetPropertyQualifierSet">
+    <summary>
+      <para>The
+<b>IWbemClassObject.GetPropertyQualifierSet</b> method gets the qualifier set for a particular property in the class object. You can use this method with properties that are a member of an instance or a class definition.</para>
+    </summary>
+    <param name="wszProperty">
+      <para>Property for which the qualifier set is requested. This cannot be <b>NULL</b> and must point to a valid <b>LPCWSTR</b>. The property can be local or propagated from the parent class. Note that system properties have no qualifiers so this method returns the error code <b>WBEM_E_SYSTEM_PROPERTY</b> if you attempt to obtain the
+<see cref="IWbemQualifierSet" /> pointer for a system property.</para>
+    </param>
+    <param name="ppQualSet">
+      <para>Receives an interface pointer that allows access to the qualifiers for the named property. The caller must call <b>IWbemQualifierSet.Release</b> on the pointer when access to the object is no longer required. The property is set to point to <b>NULL</b> when there are error conditions. A new object is not returned.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemQualifierSet" />
+  </member>
+  <member name="IWbemClassObject.GetQualifierSet">
+    <summary>
+      <para>The
+<b>IWbemClassObject.GetQualifierSet</b> method returns an interface pointer that allows read and write operations on the set of qualifiers for the entire class object, whether the object is an instance or a class definition. Any qualifiers added, deleted, or edited using the returned pointer apply to the entire instance or class definition.</para>
+    </summary>
+    <param name="ppQualSet">
+      <para>Receives the interface pointer that allows access to the qualifiers for the class object. The returned object has a positive reference count upon return from the call. The caller must call <b>IWbemQualifierSet.Release</b> when the object is no longer needed. This parameter cannot be <b>NULL</b>. On error, a new object is not returned and the pointer is left unmodified.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.GetPropertyQualifierSet" />
+    <seealso cref="IWbemQualifierSet" />
+  </member>
+  <member name="IWbemClassObject.InheritsFrom">
+    <summary>
+      <para>The
+<b>IWbemClassObject.InheritsFrom</b> method determines if the current class or instance derives from a specified parent class.</para>
+    </summary>
+    <param name="strAncestor">
+      <para>Cannot be <b>NULL</b>. It contains the class name that is being tested. If the current object has this class for one of its ancestor classes, <b>WBEM_S_NO_ERROR</b> returns. This must point to a valid <b>LPCWSTR</b>, which is treated as read-only.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <seealso cref="GetPropertyOrigin" />
+    <seealso cref="IWbemClassObject" />
+  </member>
+  <member name="IWbemClassObject.Next">
+    <summary>
+      <para>The <b>IWbemClassObject.Next</b> method retrieves the
+next property in an enumeration that started with
+<see cref="IWbemClassObject.BeginEnumeration" />.
+This should be called repeatedly to enumerate all the properties until
+<b>WBEM_S_NO_MORE_DATA</b> returns. If the enumeration is to be terminated early, then
+<see cref="IWbemClassObject.EndEnumeration" /> should
+be called.</para>
+      <para>The order of the properties returned during the enumeration is not defined.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0.</para>
+    </param>
+    <param name="strName">
+      <para>Receives a new <b>BSTR</b> that contains the property name. To prevent memory leaks
+in the client process, the caller must call
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when the name is no
+longer required. You can set this parameter to <b>NULL</b> if the name is not required.</para>
+    </param>
+    <param name="pVal">
+      <para>This <b>VARIANT</b> is filled with the value of the property. The method calls
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit">VariantInit</a> on this
+<b>VARIANT</b>, so the caller should ensure that the <b>VARIANT</b></para>
+      <para>is not active prior to the call. The caller must use
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantclear">VariantClear</a> when the value is no
+longer required.</para>
+      <para>You can set this parameter to <b>NULL</b> if the value is not required. If an error code
+is returned, the <b>VARIANT</b> pointed to by <i>pVal</i> is left
+unmodified.</para>
+    </param>
+    <param name="pType">
+      <para>This parameter can be <b>NULL</b>. If it is not <b>NULL</b>, it must
+point to a <b>CIMTYPE</b> variable (a <b>LONG</b>) into which the
+type of the property is placed. It is possible that the value of this property can be a
+<b>VT_NULL</b><b>VARIANT</b>, in which case it
+is necessary to determine the actual type of the property.</para>
+    </param>
+    <param name="plFlavor">
+      <para>Can be <b>NULL</b>. If not <b>NULL</b>, the
+<b>LONG</b> value pointed to receives information on the origin of the property as
+follows. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/qualifier-flavors">Qualifier Flavors</a> and <see cref="WBEM_FLAVOR_TYPE" />.</para>
+      <h4>WBEM_FLAVOR_ORIGIN_SYSTEM</h4>
+      <para>The property is a standard system property.</para>
+      <h4></h4>
+      <para>For classes:</para>
+      <h4>WBEM_FLAVOR_ORIGIN_PROPAGATED</h4>
+      <para>The property was inherited from the parent class.</para>
+      <para>The property, while inherited from the parent class, has not been modified at the instance level.</para>
+      <h4>WBEM_FLAVOR_ORIGIN_LOCAL</h4>
+      <para>The property belongs to the derived-most class.</para>
+      <para>The property is modified at the instance level (that is, either a value was supplied or a qualifier was
+added/modified).</para>
+      <para>For instances:</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The
+following list lists the value contained within an <b>HRESULT</b>. For general
+<b>HRESULT</b> values, see
+<a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>If the underlying type of the property is an object path, date or time, or another special type, then the
+returned type does not contain enough information. The caller must examine the
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/cimtype-qualifier">CIMTYPE</a> for the specified property, and determine
+if the property is an object reference, date or time, or another special type.</para>
+      <para>This method also returns
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">system properties</a>.</para>
+    </remarks>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.BeginEnumeration" />
+    <seealso cref="IWbemClassObject.EndEnumeration" />
+    <seealso cref="IWbemClassObject.Get" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">WMI System Properties</seealso>
+  </member>
+  <member name="IWbemClassObject.NextMethod">
+    <summary>
+      <para>The
+<b>IWbemClassObject.NextMethod</b> method is used to retrieve the next method in a method enumeration sequence that starts with
+a call to  <see cref="IWbemClassObject.BeginMethodEnumeration" />.</para>
+      <para>This call is only supported if the current object is a CIM class definition. Method manipulation is not available from
+<see cref="IWbemClassObject" /> pointers that point to CIM instances.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0 (zero).</para>
+    </param>
+    <param name="pstrName">
+      <para>A pointer that should point to <b>NULL</b> prior to the call. This parameter receives the address of a <b>BSTR</b> value containing the method name. The caller must release the string using <b>SysFreeString</b> when it is no longer required.</para>
+    </param>
+    <param name="ppInSignature">
+      <para>A pointer that receives a pointer to an
+<see cref="IWbemClassObject" /> containing the in parameters for the method.</para>
+    </param>
+    <param name="ppOutSignature">
+      <para>A pointer that receives a pointer to an
+<see cref="IWbemClassObject" /> containing the out parameters for the method.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The caller begins the enumeration sequence using
+<see cref="IWbemClassObject.BeginMethodEnumeration" />, and then calls
+<b>IWbemClassObject.NextMethod</b> until <b>WBEM_S_NO_MORE_DATA</b> is returned. The caller, optionally, finishes the sequence with
+<see cref="IWbemClassObject.EndMethodEnumeration" />. The caller may terminate the enumeration early by calling
+<b>IWbemClassObject.EndMethodEnumeration</b> at any time.</para>
+      <para>
+        <b>Note</b>  The caller must call <see cref="IWbemClassObject.Release" /> on the <i>ppInSignature</i> and <i>ppOutSignature</i> pointers when these objects are no longer required.</para>
+    </remarks>
+  </member>
+  <member name="IWbemClassObject.Put">
+    <summary>
+      <para>The
+<b>IWbemClassObject.Put</b> method sets a named property to a new value. This method always overwrites the current value with a new one. When
+<see cref="IWbemClassObject" /> points to a CIM class definition,
+<b>Put</b>  creates or updates the property value. When
+<b>IWbemClassObject</b> points to a CIM instance,
+<b>Put</b> updates a property value only. <b>Put</b> cannot create a property value.</para>
+      <para>A user cannot create properties with names that begin or end with an underscore (_). This is reserved for system classes and properties.</para>
+    </summary>
+    <param name="wszName">
+      <para>A parameter that must point to a valid property name. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0 (zero).</para>
+    </param>
+    <param name="pVal">
+      <para>A parameter that must point to a valid <b>VARIANT</b>, which becomes the new property value. If <i>pVal</i> is <b>NULL</b> or points to a <b>VARIANT</b> of type <b>VT_NULL</b>, the property is set to <b>NULL</b>, that is, no value.</para>
+    </param>
+    <param name="Type">
+      <para>A type of <b>VARIANT</b> pointed to by <i>pVal</i>.</para>
+      <para>The <b>NULL</b> value for a property designated by a <b>VARIANT</b> of type <b>VT_NULL</b> is distinguished from a property of type <b>VT_I4</b> with a 0 (zero) value.</para>
+      <para>When creating new properties, if <i>pVal</i> is <b>NULL</b> or points to a <b>VT_NULL</b>, the type of the property is determined from the <i>vtType</i> parameter.</para>
+      <para>If <i>pVal</i> is to contain an embedded
+<see cref="IWbemClassObject" />, the caller must call <b>IWbemClassObject.QueryInterface</b> for <b>IID_IUnknown</b> and place the resulting pointer in the <b>VARIANT</b> using a type of <b>VT_UNKNOWN</b>. The original embedded object is copied during the
+<b>Put</b> operation, and so cannot be modified by the operation.</para>
+      <para>The pointer is treated as read-only. The caller must call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantclear">VariantClear</a> after this call is complete.</para>
+      <para>Use this parameter only when creating new properties in a CIM class definition and <i>pVal</i> is <b>NULL</b> or points to a <b>VARIANT</b> of type <b>VT_NULL</b>. In such a case, the <i>vtType</i> parameter specifies the CIM type of the property. In every other case, <i>vtType</i> must be 0 (zero). Also, <i>vtType</i> must be 0 (zero) when the underlying object is an instance (even if <i>pVal</i> is <b>NULL</b>), because the type of the property is fixed and cannot be changed. In other words, use <i>vtType</i> if, and only if, <i>pVal</i> is <b>NULL</b> or points to a <b>VT_NULL</b><b>VARIANT</b>, and the underlying object is a CIM class.</para>
+      <para>When using
+<b>IWbemClassObject.Put</b> to assign empty array values to a property, you do not need to specify the exact VT type; you can assign a value to <i>pVal</i> that is a <b>VARIANT</b> with a variant type of <b>VT_ARRAY</b>|<b>VT_VARIANT</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the values contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>If the property set by the
+<b>IWbemClassObject.Put</b> method exists in the parent class, the default value of the property is changed unless the property type does not match the parent class type. If the property does not exist and it is not a type mismatch, the property is created.</para>
+      <para>When executing this method on an instance, an overwrite always occurs, because the property always exists.</para>
+      <para>When creating a new class and the underlying type of the property is an object reference, date/time string, or other special type, you might need to modify the CIM type parameter for the property to indicate the special new class. The
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/swbemproperty-cimtype">CIMType</a> qualifier on instance properties is read-only and inherited from the class object.</para>
+      <para>If the variant type specified in <i>pVal</i> does not match the CIM type of the property, WMI attempts to change the variant to the appropriate variant type, using the normal variant coercion rules. If the variant cannot be coerced, <b>WBEM_E_TYPE_MISMATCH</b> is returned. The following list lists exceptions to the normal variant coercion rules when the property is type <b>uint32</b>.</para>
+      <list type="table">
+        <listheader>
+          <description>Pass in variant type</description>
+          <description>Result</description>
+        </listheader>
+        <item>
+          <description>
+            <b>VT_I4</b>
+          </description>
+          <description>
+            <b>S_OK</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>VT_I2</b>
+          </description>
+          <description>
+            <b>WBEM_TYPE_MISMATCH</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>VT_R8</b>
+          </description>
+          <description>
+            <b>S_OK</b>
+            <para>However, passing in a <b>VT_ARRAY</b>|<b>VT_R8</b> to a property of type <b>uint32</b>[] will fail.</para>
+          </description>
+        </item>
+      </list>
+      <para>The
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">__CLASS</a> system property is only writable during class creation, when it may not be left blank. All other system properties are read-only.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows how to set the class name for a new CIM class.</para>
+      <code>// pObj is an empty object from IWbemServices.GetObject
+// Set up the property value.
+VARIANT v;
+VariantInit(&amp;amp;amp;amp;amp;amp;v);
+V_VT(&amp;amp;amp;amp;amp;amp;v) = VT_BSTR;
+V_BSTR(&amp;amp;amp;amp;amp;amp;v) = SysAllocString(L"MyClass");
+
+// Write it.
+LPCWSTR strClassProp = L"__CLASS";
+pObj-&gt;Put(strClassProp, 0, &amp;amp;amp;amp;amp;amp;v, 0);
+
+// Clean up.
+VariantClear(&amp;amp;amp;amp;amp;amp;v);
+</code>
+      <para>The following code example shows  how to set the value of the  SomeUint64 property.  Be aware that the <b>BSTR</b> value must be in decimal format and not hexadecimal.</para>
+      <code>// pObj is an instance containing a uint64 property
+// Set up the property value.
+VARIANT v;
+VariantInit(&amp;amp;amp;amp;amp;amp;v);
+V_VT(&amp;amp;amp;amp;amp;amp;v) = VT_BSTR;
+V_BSTR(&amp;amp;amp;amp;amp;amp;v) = SysAllocString(L"1033"); // - decimal format, not hex
+
+// Write it.
+LPCWSTR strClassProp = L"SomeUint64";
+pObj-&gt;Put(strClassProp, 0, &amp;amp;amp;amp;amp;amp;v, CIM_UINT64);
+
+// Clean up.
+VariantClear(&amp;amp;amp;amp;amp;amp;v);
+</code>
+    </remarks>
+    <seealso cref="IUnknown.QueryInterface" />
+    <seealso cref="IWbemClassObject" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-qualifiers">WMI Qualifiers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-classes">WMI System Classes</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">WMI System Properties</seealso>
+  </member>
+  <member name="IWbemClassObject.PutMethod">
+    <summary>
+      <para>The  <b>IWbemClassObject.PutMethod</b> is used to create a method. This call is only supported if the current object is a CIM class definition. Method manipulation is not available from
+<see cref="IWbemClassObject" /> pointers that point to CIM instances.</para>
+      <para>The user cannot create methods with names that begin or end with an underscore. This is reserved for system classes and properties.</para>
+    </summary>
+    <param name="wszName">
+      <para>The method name that is  created.</para>
+    </param>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0 (zero).</para>
+    </param>
+    <param name="pInSignature">
+      <para>A pointer to a copy of the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--parameters">__Parameters</a> system class that contains the in parameters for the method. This parameter is ignored if set to <b>NULL</b>.</para>
+    </param>
+    <param name="pOutSignature">
+      <para>A pointer to a copy of the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--parameters">__Parameters</a> system class that contains the out parameters for the object. This parameter is ignored if set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>For a method, the in and out parameters are described as properties in
+<see cref="IWbemClassObject" /> objects.</para>
+      <para>For example, consider the following method:</para>
+      <code>Class MyClass{
+    [key] string KeyVal;
+    sint32 PropVal;
+    sint32 ExampleMethod([in] sint32 Param1, [in] uint32 Param2,
+        [out] string Param3);
+    HRESULT ReturnValue;
+};
+</code>
+      <para>In the previous example, the class has one method. To create the method programmatically, the user calls
+<b>IWbemClassObject.PutMethod</b> with the <i>pInSignature</i> parameter that points to a copy of the system class
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--parameters">__Parameters</a> that contains two properties: <b>Param1</b> and <b>Param2</b>. The <i>pOutSignature</i> points to a copy of the system class <b>__Parameters</b>  that contains two properties: <b>Param3</b> and <b>ReturnValue</b>.</para>
+      <para>The <b>ReturnValue</b> property of the object pointed to by <i>pOutSignature</i> determines the method return type. If <i>pOutSignature</i> is set to <b>NULL</b>, the return type is assumed to be VOID.</para>
+      <para>An [in/out] parameter can be defined by adding the same property to both objects pointed to by the <i>pInSignature</i> and <i>pOutSignature</i> parameters.  In this case, the properties share the same <b>ID</b> qualifier value.</para>
+      <para>Each property in a <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--parameters">__Parameters</a> class object other than <b>ReturnValue</b> must have an <b>ID</b> qualifier, a zero-based numeric that identifies the order in which the parameters appear. In this example, <b>Param1</b> would be 0, <b>Param2</b> 1, and <b>Param3</b> 2. No two parameters can have the same <b>ID</b> value, and no <b>ID</b> value can be skipped. If either condition occurs,
+<b>IWbemClassObject.PutMethod</b> returns <b>WBEM_E_NONCONSECUTIVE_PARAMETER_IDS</b>.</para>
+      <para>
+        <b>Note</b>  The caller must call <b>IWbemClassObject.Release</b> on the <i>pInSignature</i> and <i>pOutSignature</i> pointers when these objects are no longer required.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-a-method">Creating a Method</seealso>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemClassObject.GetMethod" />
+  </member>
+  <member name="IWbemClassObject.SpawnDerivedClass">
+    <summary>
+      <para>Use the
+<b>IWbemClassObject.SpawnDerivedClass</b> method to create a newly derived class object from the current object. The current object must be a class definition that becomes the parent class of the spawned object. The returned object becomes a subclass of the current object.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0.</para>
+    </param>
+    <param name="ppNewClass">
+      <para>Cannot be <b>NULL</b>. This receives the pointer to the new class definition object. The caller must invoke <b>IWbemClassObject.Release</b> when the object is no longer required, typically after you have invoked
+<see cref="IWbemServices.PutClass" /> to write the class definition. On error, a new object is not returned, and <i>ppNewClass</i> is left unmodified.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The new object returned in <i>ppNewClass</i> automatically becomes a subclass of the current object. This behavior cannot be overridden. There is no other method by which subclasses (derived classes) can be created.</para>
+      <para>You cannot create a derived class from a class that is local to your own client process. The parent class (base class) must be created and registered with Windows Management using
+<see cref="IWbemServices.PutClass" />, and then retrieved using
+<see cref="IWbemServices.GetObject" /> before this method can be used to create a derived class.</para>
+      <para>To create a class hierarchy, you must create the initial class with
+<see cref="IWbemServices.PutClass" />, retrieve it using
+<see cref="IWbemServices.GetObject" />, and use the retrieved object to create the newly derived class. Then, this newly derived class must be created using
+<b>IWbemServices.PutClass</b>. To create other derived classes, you must call
+<b>IWbemServices.GetObject</b>, then call
+<b>IWbemClassObject.SpawnDerivedClass</b>, and so on, in a cycle for each new derivation level. You must follow this procedure to prevent version errors and concurrency conflicts. For more information about creating a class with no parent, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-a-class">Creating a Class</a>.</para>
+    </remarks>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemServices.GetObject" />
+    <seealso cref="IWbemServices.PutClass" />
+  </member>
+  <member name="IWbemClassObject.SpawnInstance">
+    <summary>
+      <para>Use the
+<b>IWbemClassObject.SpawnInstance</b> method to create a new instance of a class. The current object must be a class definition obtained from Windows Management using
+<see cref="IWbemServices.GetObject" />,
+<see cref="IWbemServices.CreateClassEnum" />, or
+<see cref="IWbemServices.CreateClassEnumAsync" /> Then, use this class definition to create new instances.</para>
+      <para>A call to
+<see cref="IWbemServices.PutInstance" /> is required to actually write the instance to Windows Management. If you intend to discard the object before calling
+<b>IWbemServices.PutInstance</b>, simply make a call to <b>IWbemClassObject.Release</b>.</para>
+      <para>Note that spawning an instance from an instance is supported but the returned instance will be empty.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0.</para>
+    </param>
+    <param name="ppNewInstance">
+      <para>Cannot be <b>NULL</b>. It receives a new instance of the class. The caller must invoke <b>IWbemClassObject.Release</b> when the pointer is no longer required. On error, a new object is not returned and the pointer is left unmodified.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>. For general <b>HRESULT</b> values, see <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+    </returns>
+    <seealso cref="IWbemClassObject" />
+    <seealso cref="IWbemServices.GetObject" />
+    <seealso cref="IWbemServices.PutInstance" />
+  </member>
+  <member name="IWbemClassObject">
+    <summary>
+      <para>The <b>IWbemClassObject</b> interface
+contains and manipulates both class definitions and class object instances.</para>
+    </summary>
+    <remarks>
+      <para>Users and providers should never implement this interface. The implementation provided by WMI is the only one
+that is supported.</para>
+      <para>From the WMI client perspective, this interface is always in-process. Write
+(<see cref="Put" />) operations only affect the local copy of the
+object, and read (<see cref="Get" />) operations always retrieve
+values from the local copy. You can perform updates to WMI only when entire objects are read or written using
+methods on the <see cref="IWbemServices" /> interface. Examples of such
+updates are: <see cref="IWbemServices.PutInstance" /> or
+<see cref="IWbemServices.PutClass" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/com-api-for-wmi">COM API for WMI</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-and-declaring-an-instance-using-c-">Creating and Declaring an Instance Using C++</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-a-class-object-path">Describing a Class Object Path</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-an-instance-object-path">Describing an Instance Object Path</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</seealso>
+  </member>
+</doc>

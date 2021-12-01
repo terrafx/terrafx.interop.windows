@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlClear.xml' path='doc/member[@name="htmlClear"]/*' />
 public enum htmlClear
 {
+    /// <include file='htmlClear.xml' path='doc/member[@name="htmlClear.htmlClearNotSet"]/*' />
     htmlClearNotSet = 0,
+
+    /// <include file='htmlClear.xml' path='doc/member[@name="htmlClear.htmlClearAll"]/*' />
     htmlClearAll = 1,
+
+    /// <include file='htmlClear.xml' path='doc/member[@name="htmlClear.htmlClearLeft"]/*' />
     htmlClearLeft = 2,
+
+    /// <include file='htmlClear.xml' path='doc/member[@name="htmlClear.htmlClearRight"]/*' />
     htmlClearRight = 3,
+
+    /// <include file='htmlClear.xml' path='doc/member[@name="htmlClear.htmlClearBoth"]/*' />
     htmlClearBoth = 4,
+
+    /// <include file='htmlClear.xml' path='doc/member[@name="htmlClear.htmlClearNone"]/*' />
     htmlClearNone = 5,
+
+    /// <include file='htmlClear.xml' path='doc/member[@name="htmlClear.htmlClear_Max"]/*' />
     htmlClear_Max = 2147483647,
 }

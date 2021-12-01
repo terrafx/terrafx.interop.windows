@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_REQUEST_SECURITY_TOKEN_PROPERTY.xml' path='doc/member[@name="WS_REQUEST_SECURITY_TOKEN_PROPERTY"]/*' />
 public unsafe partial struct WS_REQUEST_SECURITY_TOKEN_PROPERTY
 {
+    /// <include file='WS_REQUEST_SECURITY_TOKEN_PROPERTY.xml' path='doc/member[@name="WS_REQUEST_SECURITY_TOKEN_PROPERTY.id"]/*' />
     public WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID id;
 
+    /// <include file='WS_REQUEST_SECURITY_TOKEN_PROPERTY.xml' path='doc/member[@name="WS_REQUEST_SECURITY_TOKEN_PROPERTY.value"]/*' />
     public void* value;
 
+    /// <include file='WS_REQUEST_SECURITY_TOKEN_PROPERTY.xml' path='doc/member[@name="WS_REQUEST_SECURITY_TOKEN_PROPERTY.valueSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint valueSize;
 }

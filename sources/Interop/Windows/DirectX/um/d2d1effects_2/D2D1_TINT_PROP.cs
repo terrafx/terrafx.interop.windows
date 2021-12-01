@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_TINT_PROP.xml' path='doc/member[@name="D2D1_TINT_PROP"]/*' />
 public enum D2D1_TINT_PROP : uint
 {
+    /// <include file='D2D1_TINT_PROP.xml' path='doc/member[@name="D2D1_TINT_PROP.D2D1_TINT_PROP_COLOR"]/*' />
     D2D1_TINT_PROP_COLOR = 0,
+
+    /// <include file='D2D1_TINT_PROP.xml' path='doc/member[@name="D2D1_TINT_PROP.D2D1_TINT_PROP_CLAMP_OUTPUT"]/*' />
     D2D1_TINT_PROP_CLAMP_OUTPUT = 1,
+
+    /// <include file='D2D1_TINT_PROP.xml' path='doc/member[@name="D2D1_TINT_PROP.D2D1_TINT_PROP_FORCE_DWORD"]/*' />
     D2D1_TINT_PROP_FORCE_DWORD = 0xffffffff,
 }

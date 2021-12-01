@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioHrtfDirectivityCardioid">
+    <summary>
+      <para>Represents a cardioid-shaped directivity model for an <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityCardioid.directivity">
+    <summary>
+      <para>A structure that expresses the direction in which sound is emitted by an <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityCardioid.Order">
+    <summary>
+      <para>The order of the cardioid.</para>
+    </summary>
+  </member>
+</doc>

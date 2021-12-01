@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPDESC_SEARCHINFO_FLAGS">
+    <summary>
+      <para>Determines whether and how a property is indexed by Windows Search.</para>
+    </summary>
+    <remarks>
+      <para>For third parties, the PDSIF_ALWAYSINCLUDE flag can be referred to in user-specified query strings, even though its value may not be retrievable from the index in query results. The meaning of the PDSIF_ALWAYSINCLUDE flag to the indexer when a third party sets the flag through a custom schema definition is that it enables users to refer to this property in query strings even though its value is not stored in the index.</para>
+      <para>Property mnemonics refers to a shortened name for a property.</para>
+    </remarks>
+  </member>
+  <member name="PROPDESC_SEARCHINFO_FLAGS.PDSIF_DEFAULT">
+    <summary>
+      <para>The property is not indexed.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_SEARCHINFO_FLAGS.PDSIF_ININVERTEDINDEX">
+    <summary>
+      <para>The property is in an inverted index to help speed searches.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_SEARCHINFO_FLAGS.PDSIF_ISCOLUMN">
+    <summary>
+      <para>The property is indexed by Windows Search.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_SEARCHINFO_FLAGS.PDSIF_ISCOLUMNSPARSE">
+    <summary>
+      <para>The property is indexed to save space for properties that are not present on all files.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_SEARCHINFO_FLAGS.PDSIF_ALWAYSINCLUDE">
+    <summary>
+      <para>
+        <b>Windows 7 and later</b>. The property mnemonics are recognized by AQS even if the property is not a column (PDSIF_ISCOLUMN).</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_SEARCHINFO_FLAGS.PDSIF_USEFORTYPEAHEAD">
+    <summary>
+      <para>Check this property for matches when looking for type ahead results.</para>
+    </summary>
+  </member>
+</doc>

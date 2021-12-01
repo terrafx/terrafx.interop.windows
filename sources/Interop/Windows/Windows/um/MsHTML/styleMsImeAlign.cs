@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsImeAlign.xml' path='doc/member[@name="styleMsImeAlign"]/*' />
 public enum styleMsImeAlign
 {
+    /// <include file='styleMsImeAlign.xml' path='doc/member[@name="styleMsImeAlign.styleMsImeAlignAuto"]/*' />
     styleMsImeAlignAuto = 0,
+
+    /// <include file='styleMsImeAlign.xml' path='doc/member[@name="styleMsImeAlign.styleMsImeAlignAfter"]/*' />
     styleMsImeAlignAfter = 1,
+
+    /// <include file='styleMsImeAlign.xml' path='doc/member[@name="styleMsImeAlign.styleMsImeAlignNotSet"]/*' />
     styleMsImeAlignNotSet = 2,
+
+    /// <include file='styleMsImeAlign.xml' path='doc/member[@name="styleMsImeAlign.styleMsImeAlign_Max"]/*' />
     styleMsImeAlign_Max = 2147483647,
 }

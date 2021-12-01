@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVMRFilterConfig.GetNumberOfStreams">
+    <summary>
+      <para>The <code>GetNumberOfStreams</code> method retrieves the number of input streams being mixed.</para>
+    </summary>
+    <param name="pdwMaxStreams">
+      <para>Pointer to a double word that receives the number of streams being mixed, which is equal to the number of input pins on the VMR.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <i>pdwMaxStreams</i> is invalid
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRFilterConfig Interface" />
+    <seealso cref="IVMRFilterConfig.SetNumberOfStreams" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRFilterConfig.GetRenderingMode">
+    <summary>
+      <para>The <code>GetRenderingMode</code> method retrieves the rendering mode currently being used by the VMR.</para>
+    </summary>
+    <param name="pMode">
+      <para>Pointer to a <b>DWORD</b> that receives a <see cref="VMRMode" /> value indicating the current rendering mode.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <i>pMode</i> is invalid
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRFilterConfig Interface" />
+    <seealso cref="IVMRFilterConfig.SetRenderingMode" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRFilterConfig.GetRenderingPrefs">
+    <summary>
+      <para>The <code>GetRenderingPrefs</code> method retrieves the current set of rendering preferences being used by the VMR.</para>
+    </summary>
+    <param name="pdwRenderFlags">
+      <para>Receives a member of the <see cref="VMRRenderPrefs" /> enumeration, indicating the current rendering preferences.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <i>pdwRenderingPrefs</i> is invalid
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>No allocator-presenter object is currently loaded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method calls through to the allocator-presenter's <see cref="IVMRImagePresenterConfig.GetRenderingPrefs" /> method. (The default allocator-presenter exposes <b>IVMRImagePresenterConfig</b>. Custom allocator-presenters can also expose this interface if desired.) If the VMR-7 has not yet created the default allocator-presenter, or if the application provided a custom allocator-presenter which does not support <b>IVMRImagePresenterConfig</b>, this method returns VFW_E_WRONG_STATE. To create the default allocator-presenter, call <see cref="IVMRFilterConfig.SetRenderingMode" /> with the value VMRMode_Windowed or VMRMode_Windowed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRFilterConfig Interface" />
+    <seealso cref="IVMRFilterConfig.SetRenderingPrefs" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRFilterConfig.SetImageCompositor">
+    <summary>
+      <para>The <code>SetImageCompositor</code> method installs an application-provided image compositor.</para>
+    </summary>
+    <param name="lpVMRImgCompositor">
+      <para>Pointer to the image compositor's <see cref="IVMRImageCompositor" /> interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The mixer is not currently loaded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method to replace the VMR's default compositor with a custom compositor provided by the application. The image compositor is a sub-component of the mixer.</para>
+      <para>The compositor is automatically loaded when the VMR is in windowless or windowed mode. When the VMR is in renderless mode, the compositor must be loaded by calling <see cref="IVMRFilterConfig.SetNumberOfStreams" />. The VMR manages all reference counting on the <see cref="IVMRImageCompositor" /> interface.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRFilterConfig Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRFilterConfig.SetNumberOfStreams">
+    <summary>
+      <para>The <code>SetNumberOfStreams</code> method sets the number of streams to be mixed and instructs the VMR to go into mixer mode.</para>
+    </summary>
+    <param name="dwMaxStreams">
+      <para>Double word containing the maximum number of input streams that the VMR will be required to mix. Must not be greater than MAX_MIXER_STREAMS (16).</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The mixer is already configured.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>An attempt was made to configure the mixer for more than 16 input streams.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Memory to manage the streams could not be allocated.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <i>dwMaxStreams</i> should be equal to the number of input pins required. Pins cannot be added or removed after the VMR has been connected. If you do not know in advance how many input streams will be required, set <i>dxMaxStreams</i> to the maximum number that might be required. A value of 1 is valid for dwMaxStreams. This value does not cause any extra pins to be created, but it does force the VMR to go into "mixer mode." Therefore, once this method has been called, you cannot call <see cref="SetRenderingMode" /> to set the mode to <b>VMRMode_Renderless</b></para>
+      <para>The VMR creates as many input pins as are specified without attempting to determine whether there is enough video memory to support them all. This is because it has no way of knowing the media type or rectangle dimensions at this time. Later, when an upstream filter attempts to connect to a pin, at that point the media type is known and the VMR will examine the video memory and fail the connection if there is not enough to process the stream.</para>
+      <para>
+        <b>Note</b>  Although the VMR supports multiple streams, they all share a single clock, and therefore you cannot seek one stream independently of the others. If you need to seek the input streams independently, you must use a different technique. See the VMRMulti sample for more information.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRFilterConfig Interface" />
+    <seealso cref="IVMRFilterConfig.GetNumberOfStreams" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRFilterConfig.SetRenderingMode">
+    <summary>
+      <para>The <code>SetRenderingMode</code> method sets the rendering mode used by the VMR.</para>
+    </summary>
+    <param name="Mode">
+      <para>Specifies the rendering mode as a <see cref="VMRMode" /> value.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>An invalid rendering mode was specified.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The mode cannot be changed for some reason. See Remarks.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The VMR is in <b>VMRMode_Windowed</b> by default. Use this method only if you are putting the VMR into <b>VMRMode_Windowless</b> or <b>VMRMode_Renderless</b> mode. You cannot change the mode after any pin has been connected and you cannot change the mode from windowless or renderless back to windowed, even before any pins are connected. Therefore, specifying <b>VMRMode_Windowed</b> for <i>Mode</i> has no effect under any circumstances.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRFilterConfig Interface" />
+    <seealso cref="IVMRFilterConfig.GetRenderingMode" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRFilterConfig.SetRenderingPrefs">
+    <summary>
+      <para>The <code>SetRenderingPrefs</code> method sets various application preferences related to video rendering.</para>
+    </summary>
+    <param name="dwRenderFlags">
+      <para>Double word containing a bitwise OR of <see cref="VMRRenderPrefs" /> values specifying the rendering preferences.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>No allocator-presenter is present.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>dwRenderFlags</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method calls through to the allocator-presenter's <see cref="IVMRImagePresenterConfig.SetRenderingPrefs" /> method. (The default allocator-presenter exposes <see cref="IVMRImagePresenterConfig" />. Custom allocator-presenters can also expose this interface if desired.) If the VMR-7 has not yet created the default allocator-presenter, or if the application provided a custom allocator-presenter which does not support <b>IVMRImagePresenterConfig</b>, this method returns VFW_E_WRONG_STATE. To create the default allocator-presenter, call <see cref="IVMRFilterConfig.SetRenderingMode" /> with the value VMRMode_Windowed or VMRMode_Windowed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRFilterConfig Interface" />
+    <seealso cref="IVMRFilterConfig.GetRenderingPrefs" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRFilterConfig">
+    <summary>
+      <para>The <code>IVMRFilterConfig</code> interface is used to configure the operating mode and video rendering mechanisms of the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7). For the VMR-9, use the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/vmr9/nn-vmr9-ivmrfilterconfig9">IVMRFilterConfig9</a> interface.</para>
+      <para>Applications must add the VMR to the graph and configure it before connecting it to any upstream filters (for example, in a call to <see cref="IGraphBuilder.RenderFile" />). Once a filter has been connected to the VMR, the VMR's configuration is locked and all future attempts to alter it fail.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+</doc>

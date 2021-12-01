@@ -1,0 +1,1137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellImageData.CloneFrame">
+    <summary>
+      <para>Retrieves a clone of the current image or frame.</para>
+    </summary>
+    <param name="ppImg">
+      <para>Type: <b>Image**</b></para>
+      <para>The address that receives a pointer to the clone image. If this parameter is <b>NULL</b> on entry, an unhandled exception results.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ppImg</i> parameter is <b>NULL</b> on entry or the image cannot be cloned. In the latter case, <i>ppImg</i> is set to <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In the case of a multiframed image such as a .gif file, the current frame is cloned. In the case of non-multiframed images such a .jpg file, the entire image is cloned.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.Decode">
+    <summary>
+      <para>Decodes the image file, setting state.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>One of the following flags.</para>
+      <h4>SHIMGDEC_DEFAULT (0x00)</h4>
+      <para>Create a full image.</para>
+      <h4>SHIMGDEC_THUMBNAIL (0x01)</h4>
+      <para>Decode only the thumbnail image.</para>
+      <h4>SHIMGDEC_LOADFULL (0x02)</h4>
+      <para>Load the entire image file into memory.</para>
+    </param>
+    <param name="cxDesired">
+      <para>Type: <b>ULONG</b></para>
+      <para>The desired horizontal size of the decoded image. This parameter is only used if the <b>SHIMGDEC_THUMBNAIL</b> flag is set. If the <b>SHIMGDEC_DEFAULT</b> flag is set instead, this value is ignored.</para>
+    </param>
+    <param name="cyDesired">
+      <para>Type: <b>ULONG</b></para>
+      <para>The desired vertical size of the decoded image. This parameter is only used if the <b>SHIMGDEC_THUMBNAIL</b> flag is set. If the <b>SHIMGDEC_DEFAULT</b> flag is set instead, this value is ignored.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The file could not be loaded or the calling application stopped the decode process through a call to a registered <see cref="IShellImageDataAbort" /> (see <see cref="IShellImageData.RegisterAbort" /> for more information).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The internal object cannot be instantiated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The path used to create this instance of <see cref="IShellImageData" /> was a URL.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has already been decoded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>IShellImageData.Decode</b> must be called prior to calling most <see cref="IShellImageData" /> methods. Not doing so causes those methods to fail.</para>
+      <para>
+        <b>IShellImageData.Decode</b> attempts to maintain the aspect ratio of the original image, so one of the values passed in <i>cxDesired</i> or <i>cyDesired</i> might be overridden to do so.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.DiscardEdit">
+    <summary>
+      <para>Discards edits made to an image.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns S_OK.</para>
+    </returns>
+  </member>
+  <member name="IShellImageData.DisplayName">
+    <summary>
+      <para>Gets the name of the file if <see cref="IShellImageData" /> was initialized on a file path. Otherwise, gets the name of the data stream.</para>
+    </summary>
+    <param name="wszName">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A pointer to a buffer containing the display name as a Unicode string. On exit, the contents of the buffer are only valid when the method returns S_OK.</para>
+    </param>
+    <param name="cch">
+      <para>Type: <b>UINT</b></para>
+      <para>The size, in characters, of the buffer pointed to by <i>wszName</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The file name or stream name cannot be retrieved.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.Draw">
+    <summary>
+      <para>Draws a decoded image.</para>
+    </summary>
+    <param name="hdc">
+      <para>Type: <b>HDC</b></para>
+      <para>The handle of the image.</para>
+    </param>
+    <param name="prcDest">
+      <para>Type: <b>LPRECT</b></para>
+      <para>A pointer to a <see cref="RECT" />, measured in pixels, that specifies the bounds of the rendered image. The portion of the image specified by <i>prcSrc</i> is scaled to fill the rectangle specified by <i>prcDest</i>.</para>
+    </param>
+    <param name="prcSrc">
+      <para>Type: <b>LPRECT</b></para>
+      <para>A pointer to a <see cref="RECT" /> that specifies the portion of the image to be drawn.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image was not previously decoded, the call to <see cref="IShellImageData.Decode" /> failed, or <i>hdc</i> is <b>NULL</b>. Other internal calls also can cause this error to be returned.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>prcDest</i> parameter is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>The process was terminated by the calling application through a registered instance of <see cref="IShellImageDataAbort" />.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>prcSrc</i> is <b>NULL</b>, nothing is drawn and the method returns S_OK.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.GetCurrentPage">
+    <summary>
+      <para>Gets the current page of a multipage image.</para>
+    </summary>
+    <param name="pnPage">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the page number.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK. If the image is not a multipage image, such as a .jpg file, the method returns S_OK with a page number of 0.</para>
+    </returns>
+  </member>
+  <member name="IShellImageData.GetDelay">
+    <summary>
+      <para>Gets the delay value for the current frame of an animation.</para>
+    </summary>
+    <param name="pdwDelay">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to the delay value, in milliseconds. This value is valid only when the method returns S_OK.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded or the decoding process failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Delay can vary from frame to frame in an animated image.</para>
+      <para>This method retrieves a minimum value of 100 milliseconds. Values less than that duration are also reported as 100 milliseconds.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.GetEncoderParams">
+    <summary>
+      <para>Gets the current set of encoder parameters.</para>
+    </summary>
+    <param name="pguidFmt">
+      <para>Type: <b>GUID*</b></para>
+      <para>A pointer to a GUID that specifies the encoder. This must be an encoder supported by GDI+. If this parameter is <b>NULL</b>, an unhandled exception results.</para>
+    </param>
+    <param name="ppEncParams">
+      <para>Type: <b>EncoderParameters**</b></para>
+      <para>The address of a pointer to an array of <a href="https://docs.microsoft.com//previous-versions/ms534434(v=vs.85)">EncoderParameter</a> objects.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Several circumstances can generate this return value.</para>
+            <list type="bullet">
+              <item>
+                <description>The image was not decoded or the decoding process failed.</description>
+              </item>
+              <item>
+                <description>
+                  <i>pguidFmt</i> refers to a format not supported by GDI+.</description>
+              </item>
+              <item>
+                <description>An internal call failed.</description>
+              </item>
+            </list>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.GetPageCount">
+    <summary>
+      <para>Gets the number of pages in a multipage image.</para>
+    </summary>
+    <param name="pcPages">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the page count. This value is valid only when the method returns S_OK.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded or the decoding process failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the image is not a multipage image, such as a .jpg file, the method returns S_OK with a page count of 1.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.GetPixelFormat">
+    <summary>
+      <para>Gets the pixel format of the image.</para>
+    </summary>
+    <param name="pFormat">
+      <para>Type: <b>PixelFormat*</b></para>
+      <para>A pointer to a value of type <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">PixelFormat</a> indicating the pixel format.  This value is valid only when the method returns <b>S_OK</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded or the decoding process failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Values that identify various pixel formats are defined in Gdipluspixelformats.h.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.GetProperties">
+    <summary>
+      <para>Gets an <see cref="IPropertySetStorage" /> through which the properties of the image can be accessed.</para>
+    </summary>
+    <param name="dwMode">
+      <para>Type: <b>DWORD</b></para>
+      <para>Not used, set to 0.</para>
+    </param>
+    <param name="ppPropSet">
+      <para>Type: <b><see cref="IPropertySetStorage" />**</b></para>
+      <para>The address of a pointer to the <see cref="IPropertySetStorage" /> interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded or the decoding process failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ppPropSet</i> pointer is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.GetRawDataFormat">
+    <summary>
+      <para>Retrieves a GUID that identifies the format of the image.</para>
+    </summary>
+    <param name="pDataFormat">
+      <para>Type: <b>GUID*</b></para>
+      <para>A pointer to a value indicating the format. This value is valid only when the method returns S_OK.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded or the decoding process failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>GUIDs that identify various file formats are defined in Gdiplusimaging.h.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.GetResolution">
+    <summary>
+      <para>Gets the resolution, in dots per inch (dpi), of the image.</para>
+    </summary>
+    <param name="puResolutionX">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the horizontal resolution.</para>
+    </param>
+    <param name="puResolutionY">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the vertical resolution.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded, the decode process failed, or the resolution cannot be retrieved. In the latter case, both <i>puResolutionX</i> and <i>puResolutionY</i> are set to 0.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Both <i>puResolutionX</i> and <i>puResolutionY</i> are <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If either <i>puResolutionX</i> or <i>puResolutionY</i> are <b>NULL</b>, the method returns only the value for the non-null parameter.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.GetSize">
+    <summary>
+      <para>Gets the dimensions of the image file.</para>
+    </summary>
+    <param name="pSize">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure containing the size of the image. This value is valid only when the method returns <b>S_OK</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded or the decoding process failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.IsAnimated">
+    <summary>
+      <para>Determines whether the image is animated.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The image is animated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The image is not animated, has not been decoded, or the decoding process failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.IsDecoded">
+    <summary>
+      <para>Determines whether the image has been decoded by calling <see cref="IShellImageData.Decode" />. Many operations return a failure code if the image is not first decoded.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="IShellImageData.Decode" /> was called on the image and was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>All other cases.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.IsEditable">
+    <summary>
+      <para>Determines whether the image can be edited.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The image can be edited.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The image cannot be edited, the image has not been decoded, or the decoding process failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>At this time, the criteria for determining whether the image can be edited is solely that it is a Tagged Image File Format (TIFF) image with the Exif IFD tag set.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.IsMultipage">
+    <summary>
+      <para>Determines whether the image is a multipage Tagged Image File Format (TIFF) image.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The image contains more than one page.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has only one page, the image has not been decoded, or the decoding process failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.IsPrintable">
+    <summary>
+      <para>Determines whether the image can be printed.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.IsTransparent">
+    <summary>
+      <para>Determines whether the image is transparent.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has transparency.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The image does not have transparency.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If an image supports transparency but does not use it, the method returns S_FALSE.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.IsVector">
+    <summary>
+      <para>Determines whether the image is a vector image.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The image is a vector image, supporting the GDI+ flag <see cref="ImageFlagsScalable" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded, the image is empty, or the file is not an image.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>All other cases.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.NextFrame">
+    <summary>
+      <para>Switches to the next frame of an animated image.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The current frame cannot be retrieved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The image is not animated, the image has not yet been decoded, or a limit on the number of times to loop the animation has been reached.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_PENDING</b>
+            </para>
+          </description>
+          <description>
+            <para>The next frame is not yet available.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOMOREDATA</b>
+            </para>
+          </description>
+          <description>
+            <para>No further data is available.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.NextPage">
+    <summary>
+      <para>Switches to the next page of a multipage image. Any associated animations are reset.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The current page cannot be retrieved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_ENUM_NOMORE</b>
+            </para>
+          </description>
+          <description>
+            <para>No further pages are available, the image was not previously decoded, or the decode process failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.PrevPage">
+    <summary>
+      <para>Switches to the previous page of a multipage image. Any associated animations are reset.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The current frame cannot be retrieved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_ENUM_NOMORE</b>
+            </para>
+          </description>
+          <description>
+            <para>No previous pages are available, the image was not previously decoded, or the decode process failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.RegisterAbort">
+    <summary>
+      <para>Sets a callback abort object, optionally returning a pointer to the previous object.</para>
+    </summary>
+    <param name="pAbort">
+      <para>Type: <b><see cref="IShellImageDataAbort" />*</b></para>
+      <para>A pointer to an abort object. If this parameter is <b>NULL</b>, an unhandled exception results.</para>
+    </param>
+    <param name="ppAbortPrev">
+      <para>Type: <b><see cref="IShellImageDataAbort" />**</b></para>
+      <para>The address of a pointer to the previous abort object. This parameter can be <b>NULL</b> if the previous object is not of interest.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise.</para>
+    </returns>
+  </member>
+  <member name="IShellImageData.ReplaceFrame">
+    <summary>
+      <para>Replaces the current frame with a new image.</para>
+    </summary>
+    <param name="pImg">
+      <para>Type: <b>Image*</b></para>
+      <para>The address of the new image.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns S_OK.</para>
+    </returns>
+    <remarks>
+      <para>You should also call <see cref="IShellImageData.DiscardEdit" /> to ensure that any edited properties of the original image are not retained.</para>
+      <para>In the case of a multiframed image such as a .gif file, the current frame is replaced. In the case of non-multiframed images such a .jpg file, the entire image is replaced.</para>
+      <para>Replacing a frame in an animated .gif file causes that file's animation to no longer be functional. Replacing a frame in a Tagged Image File Format (TIFF) file could cause that file to lose pages, particularly if the TIFF frame's image is not the same size as the original. If possible, you should always replace a TIFF frame's image with a TIFF of the same size.</para>
+      <para>The <see cref="IShellImageData" /> implementation takes ownership of the image named in <i>pImg</i> and the caller should not try to use it after calling <b>IShellImageData.ReplaceFrame</b>.</para>
+    </remarks>
+  </member>
+  <member name="IShellImageData.Rotate">
+    <summary>
+      <para>Rotates an image in increments of 90 degrees.</para>
+    </summary>
+    <param name="dwAngle">
+      <para>Type: <b>DWORD</b></para>
+      <para>The angle of rotation. Only angles of 0, 90, 180, and 270 are recognized.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image has not been decoded or the decoding process failed. This value is also returned when certain internal calls to GDI+ methods fail.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTVALIDFORANIMATEDIMAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The image is an animated image and cannot be rotated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwAngle</i> parameter is a value other than 0, 90, 180, or 270.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwAngle</i> parameter is 0.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Not enough resources are available for the method to create an internal working copy of the image.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.Scale">
+    <summary>
+      <para>Adjusts the size of an image.</para>
+    </summary>
+    <param name="cx">
+      <para>Type: <b>ULONG</b></para>
+      <para>The horizontal (x) dimension. If this value is 0, the x dimension is set to a scaled value based on the point specified in <i>cy</i>.</para>
+    </param>
+    <param name="cy">
+      <para>Type: <b>ULONG</b></para>
+      <para>The vertical (y) dimension. If this value is 0, the y dimension is set to a scaled value based on the point specified in <i>cx</i>.</para>
+    </param>
+    <param name="hints">
+      <para>Type: <b><see cref="InterpolationMode" /></b></para>
+      <para>A member of the <see cref="InterpolationMode" /> enumeration, specifying the algorithm that is used when the image is scaled.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The image was not previously decoded or the call to <see cref="IShellImageData.Decode" /> failed. Other internal calls also can cause this error to be returned.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTVALIDFORANIMATEDIMAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The image is an animated image and cannot be scaled using this method.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The internal object cannot be instantiated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>The process was stopped by the calling application through a registered instance of <see cref="IShellImageDataAbort" />.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.SelectPage">
+    <summary>
+      <para>Selects a specified page in a multipage image.</para>
+    </summary>
+    <param name="iPage">
+      <para>Type: <b>ULONG</b></para>
+      <para>The page number of the page to select.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The current page cannot be retrieved, the image has not been decoded, or the decoding process failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_ENUM_NOMORE</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified page number does not exist.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IShellImageData.SetEncoderParams">
+    <summary>
+      <para>Sets encoder parameters.</para>
+    </summary>
+    <param name="pbagEnc">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> containing the encoder properties.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns<b> S_OK</b>.</para>
+    </returns>
+    <remarks>
+      <para>The <see cref="IPropertyBag" /> passed in <i>pbagEnc</i> is used during a save operation. The image and any edits made to it, such as <see cref="Rotate" /> or <see cref="Scale" />, can be saved by calling <see cref="QueryInterface" /> for either <see cref="IPersistFile" /> or <see cref="IPersistStream" /> and calling their <b>Save</b> method.</para>
+    </remarks>
+  </member>
+</doc>

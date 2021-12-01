@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlSelectType.xml' path='doc/member[@name="htmlSelectType"]/*' />
 public enum htmlSelectType
 {
+    /// <include file='htmlSelectType.xml' path='doc/member[@name="htmlSelectType.htmlSelectTypeSelectOne"]/*' />
     htmlSelectTypeSelectOne = 1,
+
+    /// <include file='htmlSelectType.xml' path='doc/member[@name="htmlSelectType.htmlSelectTypeSelectMultiple"]/*' />
     htmlSelectTypeSelectMultiple = 2,
+
+    /// <include file='htmlSelectType.xml' path='doc/member[@name="htmlSelectType.htmlSelectType_Max"]/*' />
     htmlSelectType_Max = 2147483647,
 }

@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPSHORTCUTPAIR.xml' path='doc/member[@name="SPSHORTCUTPAIR"]/*' />
 public unsafe partial struct SPSHORTCUTPAIR
 {
+    /// <include file='SPSHORTCUTPAIR.xml' path='doc/member[@name="SPSHORTCUTPAIR.pNextSHORTCUTPAIR"]/*' />
     [NativeTypeName("struct SPSHORTCUTPAIR *")]
     public SPSHORTCUTPAIR* pNextSHORTCUTPAIR;
 
+    /// <include file='SPSHORTCUTPAIR.xml' path='doc/member[@name="SPSHORTCUTPAIR.LangID"]/*' />
     [NativeTypeName("WORD")]
     public ushort LangID;
 
+    /// <include file='SPSHORTCUTPAIR.xml' path='doc/member[@name="SPSHORTCUTPAIR.shType"]/*' />
     public SPSHORTCUTTYPE shType;
 
+    /// <include file='SPSHORTCUTPAIR.xml' path='doc/member[@name="SPSHORTCUTPAIR.pszDisplay"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszDisplay;
 
+    /// <include file='SPSHORTCUTPAIR.xml' path='doc/member[@name="SPSHORTCUTPAIR.pszSpoken"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszSpoken;
 }

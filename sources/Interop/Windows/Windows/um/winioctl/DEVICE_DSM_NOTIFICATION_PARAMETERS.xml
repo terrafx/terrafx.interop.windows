@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DEVICE_DSM_NOTIFICATION_PARAMETERS">
+    <summary>
+      <para>Contains parameters for the <b>DeviceDsmAction_Notification</b> action for the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a></para>
+      <para>control code.</para>
+    </summary>
+    <seealso cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DevIO/device-management-structures">Device Management Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</seealso>
+  </member>
+  <member name="DEVICE_DSM_NOTIFICATION_PARAMETERS.Size">
+    <summary>
+      <para>Specifies the total size, in bytes, of this structure. The value of this member must include the total
+size, in bytes, of the <b>FileTypeIDs</b> member.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_DSM_NOTIFICATION_PARAMETERS.Flags">
+    <summary>
+      <para>Flags specific to the notify operation</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DEVICE_DSM_NOTIFY_FLAG_BEGIN</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The ranges specified in the
+<see cref="DEVICE_DATA_SET_RANGE" /> structures following the
+<see cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES" /></para>
+            <para>structure are currently being used by the file types that are specified in the
+<b>FileTypeIDs</b> member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DEVICE_DSM_NOTIFY_FLAG_END</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The ranges are no longer being used by the file types that are specified in the
+<b>FileTypeIDs</b> member.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DEVICE_DSM_NOTIFICATION_PARAMETERS.NumFileTypeIDs">
+    <summary>
+      <para>The number of entries in the <b>FileTypeIDs</b> member.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_DSM_NOTIFICATION_PARAMETERS.FileTypeID">
+    <summary>
+      <para>One or more <b>GUID</b> values that specify the file type for the notification
+operation.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE</b>
+                </description>
+              </item>
+              <item>
+                <description>0d0a64a1-38fc-4db8-9fe7-3f4352cd7c5c</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Specifies a notification operation for a page file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_TYPE_NOTIFICATION_GUID_HIBERNATION_FILE</b>
+                </description>
+              </item>
+              <item>
+                <description>b7624d64-b9a3-4cf8-8011-5b86c940e7b7</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Specifies a notification operation for the system hibernation file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_TYPE_NOTIFICATION_GUID_CRASHDUMP_FILE</b>
+                </description>
+              </item>
+              <item>
+                <description>9d453eb7-d2a6-4dbd-a2e3-fbd0ed9109a9</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Specifies a notification operation for a system crash dump file.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

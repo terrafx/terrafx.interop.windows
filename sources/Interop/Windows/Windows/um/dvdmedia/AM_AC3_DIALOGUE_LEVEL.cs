@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_AC3_DIALOGUE_LEVEL.xml' path='doc/member[@name="AM_AC3_DIALOGUE_LEVEL"]/*' />
 public partial struct AM_AC3_DIALOGUE_LEVEL
 {
+    /// <include file='AM_AC3_DIALOGUE_LEVEL.xml' path='doc/member[@name="AM_AC3_DIALOGUE_LEVEL.DialogueLevel"]/*' />
     [NativeTypeName("ULONG")]
     public uint DialogueLevel;
 }

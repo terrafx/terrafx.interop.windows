@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_COLOR_GLYPH_RUN1">
+    <summary>
+      <para>Represents a color glyph run. The IDWriteFactory4.TranslateColorGlyphRun method returns an ordered collection of color glyph runs of varying types depending on what the font supports.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_COLOR_GLYPH_RUN1.glyphImageFormat">
+    <summary>
+      <para>Type of glyph image format for this color run. Exactly one type will be set since TranslateColorGlyphRun has already broken down the run into separate parts.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_COLOR_GLYPH_RUN1.measuringMode">
+    <summary>
+      <para>Measuring mode to use for this glyph run.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_COLOR_GLYPH_RUN1.DWRITE_COLOR_GLYPH_RUN">
+    <summary></summary>
+  </member>
+</doc>

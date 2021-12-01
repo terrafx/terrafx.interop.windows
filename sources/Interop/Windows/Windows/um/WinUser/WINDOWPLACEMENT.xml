@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINDOWPLACEMENT">
+    <summary>
+      <para>Contains information about the placement of a window on the screen.</para>
+    </summary>
+    <remarks>
+      <para>If the window is a top-level window that does not have the <b>WS_EX_TOOLWINDOW</b> window style, then the coordinates represented by the following members are in workspace coordinates: <b>ptMinPosition</b>, <b>ptMaxPosition</b>, and <b>rcNormalPosition</b>. Otherwise, these members are in screen coordinates.</para>
+      <para>Workspace coordinates differ from screen coordinates in that they take the locations and sizes of application toolbars (including the taskbar) into account. Workspace coordinate (0,0) is the upper-left corner of the workspace area, the area of the screen not being used by application toolbars.</para>
+      <para>The coordinates used in a <b>WINDOWPLACEMENT</b> structure should be used only by the <see cref="GetWindowPlacement" /> and <see cref="SetWindowPlacement" /> functions. Passing workspace coordinates to functions which expect screen coordinates (such as <see cref="SetWindowPos" />) will result in the window appearing in the wrong location. For example, if the taskbar is at the top of the screen, saving window coordinates using <b>GetWindowPlacement</b> and restoring them using <b>SetWindowPos</b> causes the window to appear to "creep" up the screen.</para>
+    </remarks>
+    <seealso cref="GetWindowPlacement" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</seealso>
+    <seealso cref="RECT" />
+    <seealso cref="SetWindowPlacement" />
+    <seealso cref="SetWindowPos" />
+    <seealso cref="ShowWindow" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/windows">Windows</seealso>
+  </member>
+  <member name="WINDOWPLACEMENT.length">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The length of the structure, in bytes. Before calling the <see cref="GetWindowPlacement" /> or <see cref="SetWindowPlacement" /> functions, set this member to <code>sizeof(WINDOWPLACEMENT)</code>.</para>
+      <para>
+        <see cref="GetWindowPlacement" /> and <see cref="SetWindowPlacement" /> fail if this member is not set correctly.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPLACEMENT.flags">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The flags that control the position of the minimized window and the method by which the window is restored. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>WPF_ASYNCWINDOWPLACEMENT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If the calling thread and the thread that owns the window are attached to different input queues, the system posts the request to the thread that owns the window. This prevents the calling thread from blocking its execution while other threads process the request.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>WPF_RESTORETOMAXIMIZED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The restored window will be maximized, regardless of whether it was maximized before it was minimized. This setting is only valid the next time the window is restored. It does not change the default restoration behavior.</para>
+            <para>This flag is only valid when the <b>SW_SHOWMINIMIZED</b> value is specified for the <b>showCmd</b> member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>WPF_SETMINPOSITION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The coordinates of the minimized window may be specified.</para>
+            <para>This flag must be specified if the coordinates are set in the <b>ptMinPosition</b> member.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WINDOWPLACEMENT.showCmd">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The current show state of the window. It can be any of the values that can be specified in the <i>nCmdShow</i> parameter for the <see cref="ShowWindow" /> function.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPLACEMENT.ptMinPosition">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
+      <para>The coordinates of the window's upper-left corner when the window is minimized.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPLACEMENT.ptMaxPosition">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
+      <para>The coordinates of the window's upper-left corner when the window is maximized.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPLACEMENT.rcNormalPosition">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>The window's coordinates when the window is in the restored position.</para>
+    </summary>
+  </member>
+  <member name="WINDOWPLACEMENT.rcDevice">
+    <summary></summary>
+  </member>
+</doc>

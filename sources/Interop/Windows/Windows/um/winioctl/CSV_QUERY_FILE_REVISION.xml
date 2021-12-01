@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CSV_QUERY_FILE_REVISION">
+    <summary>
+      <para>Contains information about whether files in a stream have been modified.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used if the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_csv_control">FSCTL_CSV_CONTROL</a></para>
+      <para>control code is called with a <see cref="CSV_CONTROL_OP" /> enumeration
+value of <b>CsvControlQueryFileRevision</b>, or if the control code is used with an
+<see cref="CSV_CONTROL_PARAM" /> structure containing that
+enumeration value.</para>
+      <para>Revision tracking is per file, not per stream, so the output changes whenever the stream changes.</para>
+    </remarks>
+    <seealso cref="CSV_CONTROL_OP" />
+    <seealso cref="CSV_CONTROL_PARAM" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_csv_control">FSCTL_CSV_CONTROL</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-structures">File Management Structures</seealso>
+  </member>
+  <member name="CSV_QUERY_FILE_REVISION.FileId">
+    <summary>
+      <para>The identifier of an NTFS file.</para>
+    </summary>
+  </member>
+  <member name="CSV_QUERY_FILE_REVISION.FileRevision">
+    <summary>
+      <para>File revision tracking elements.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>FileRevision</b>[0] increases every time the CSV MDS stack is rebuilt and CSVFLT
+loses its state.</description>
+        </item>
+        <item>
+          <description>
+            <b>FileRevision</b>[1] increases every time the CSV MDS stack purges the cached
+revision number for the file.</description>
+        </item>
+        <item>
+          <description>
+            <b>FileRevision</b>[2] increases every time the CSV MDS observes that file sizes
+might have changed or the file might have been written to. The element is also incremented whenever one of the
+nodes performs the first direct input/output operation on a stream that is associated with this file after
+opening this stream.</description>
+        </item>
+      </list>
+      <para>If any of the numbers are 0, the function caller should assume that the file was modified.</para>
+    </summary>
+  </member>
+</doc>

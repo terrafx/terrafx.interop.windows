@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NL_BANDWIDTH_INFORMATION">
+    <summary>
+      <para>The <b>NL_BANDWIDTH_INFORMATION</b> structure contains read-only information on the available bandwidth estimates and associated variance as determined by the TCP/IP stack.</para>
+    </summary>
+    <remarks>
+      <para>The  <b>NL_BANDWIDTH_INFORMATION</b> structure is defined in the <i>Nldef.h</i> header file which is automatically included by the <i>Iptypes.h</i> header file which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Nldef.h</i> and <i>Iptypes.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="GetIpNetworkConnectionBandwidthEstimates" />
+    <seealso cref="GetPerTcp6ConnectionEStats" />
+    <seealso cref="GetPerTcpConnectionEStats" />
+    <seealso cref="MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES" />
+    <seealso cref="TCP_ESTATS_BANDWIDTH_ROD_v0" />
+  </member>
+  <member name="NL_BANDWIDTH_INFORMATION.Bandwidth">
+    <summary>
+      <para>The estimated maximum available bandwidth, in bits per second.</para>
+    </summary>
+  </member>
+  <member name="NL_BANDWIDTH_INFORMATION.Instability">
+    <summary>
+      <para>A measure of the variation based on recent bandwidth samples, in bits per second.</para>
+    </summary>
+  </member>
+  <member name="NL_BANDWIDTH_INFORMATION.BandwidthPeaked">
+    <summary>
+      <para>A value that indicates if the bandwidth estimate in the <b>Bandwidth</b> member has peaked and reached its maximum value for the given network conditions.</para>
+      <para>The TCP/IP stack uses a heuristic to set this variable. Until this variable is set, there is no guarantee that the true available maximum bandwidth is not higher than the estimated bandwidth in the <b>Bandwidth</b> member. However, it is safe to assume that maximum available bandwidth is not lower than the estimate reported in the <b>Bandwidth</b> member.</para>
+    </summary>
+  </member>
+</doc>

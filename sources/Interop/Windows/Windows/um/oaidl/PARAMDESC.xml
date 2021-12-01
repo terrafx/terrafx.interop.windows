@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PARAMDESC">
+    <summary>
+      <para>Contains information needed for transferring a structure element, parameter, or function return value between processes.</para>
+    </summary>
+  </member>
+  <member name="PARAMDESC.pparamdescex">
+    <summary>
+      <para>The default value for the parameter, if PARAMFLAG_FHASDEFAULT is specified in <b>wParamFlags</b>.</para>
+    </summary>
+  </member>
+  <member name="PARAMDESC.wParamFlags">
+    <summary>
+      <para>The parameter flags. See <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/paramflags">PARAMFLAG Constants</a>.</para>
+    </summary>
+  </member>
+</doc>

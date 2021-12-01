@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLStyleFontFace.xml' path='doc/member[@name="IHTMLStyleFontFace"]/*' />
 [Guid("3050F3D5-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLStyleFontFace : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLStyleFontFace : IHTMLStyleFontFace.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLStyleFontFace : IHTMLStyleFontFace.Interface
         return ((delegate* unmanaged<IHTMLStyleFontFace*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLStyleFontFace*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLStyleFontFace : IHTMLStyleFontFace.Interface
         return ((delegate* unmanaged<IHTMLStyleFontFace*, uint>)(lpVtbl[1]))((IHTMLStyleFontFace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLStyleFontFace : IHTMLStyleFontFace.Interface
         return ((delegate* unmanaged<IHTMLStyleFontFace*, uint>)(lpVtbl[2]))((IHTMLStyleFontFace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLStyleFontFace : IHTMLStyleFontFace.Interface
         return ((delegate* unmanaged<IHTMLStyleFontFace*, uint*, int>)(lpVtbl[3]))((IHTMLStyleFontFace*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLStyleFontFace : IHTMLStyleFontFace.Interface
         return ((delegate* unmanaged<IHTMLStyleFontFace*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLStyleFontFace*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLStyleFontFace : IHTMLStyleFontFace.Interface
         return ((delegate* unmanaged<IHTMLStyleFontFace*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleFontFace*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLStyleFontFace : IHTMLStyleFontFace.Interface
         return ((delegate* unmanaged<IHTMLStyleFontFace*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLStyleFontFace*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLStyleFontFace.xml' path='doc/member[@name="IHTMLStyleFontFace.put_fontsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_fontsrc([NativeTypeName("BSTR")] ushort* v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLStyleFontFace : IHTMLStyleFontFace.Interface
         return ((delegate* unmanaged<IHTMLStyleFontFace*, ushort*, int>)(lpVtbl[7]))((IHTMLStyleFontFace*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyleFontFace.xml' path='doc/member[@name="IHTMLStyleFontFace.get_fontsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_fontsrc([NativeTypeName("BSTR *")] ushort** p)

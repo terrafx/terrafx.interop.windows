@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CREATE_DISK">
+    <summary>
+      <para>Contains information that the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_create_disk">IOCTL_DISK_CREATE_DISK</a> control code uses to initialize GUID partition table (GPT), master boot record (MBR), or raw disks.</para>
+    </summary>
+    <seealso cref="CREATE_DISK_GPT" />
+    <seealso cref="CREATE_DISK_MBR" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_create_disk">IOCTL_DISK_CREATE_DISK</seealso>
+    <seealso cref="PARTITION_STYLE" />
+  </member>
+  <member name="CREATE_DISK.PartitionStyle">
+    <summary>
+      <para>The format of a partition.</para>
+      <para>For more information, see
+<see cref="PARTITION_STYLE" />.</para>
+    </summary>
+  </member>
+  <member name="CREATE_DISK.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="CREATE_DISK.DUMMYUNIONNAME.Mbr">
+    <summary>
+      <para>A
+<see cref="CREATE_DISK_MBR" /> structure that contains disk information when an MBR disk is to be initialized.</para>
+    </summary>
+  </member>
+  <member name="CREATE_DISK.DUMMYUNIONNAME.Gpt">
+    <summary>
+      <para>A
+<see cref="CREATE_DISK_GPT" /> structure that contains disk information when a GPT disk is to be initialized.</para>
+    </summary>
+  </member>
+</doc>

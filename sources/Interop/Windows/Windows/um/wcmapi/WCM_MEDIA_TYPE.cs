@@ -7,13 +7,25 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WCM_MEDIA_TYPE.xml' path='doc/member[@name="WCM_MEDIA_TYPE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum WCM_MEDIA_TYPE
 {
+    /// <include file='WCM_MEDIA_TYPE.xml' path='doc/member[@name="WCM_MEDIA_TYPE.wcm_media_unknown"]/*' />
     wcm_media_unknown,
+
+    /// <include file='WCM_MEDIA_TYPE.xml' path='doc/member[@name="WCM_MEDIA_TYPE.wcm_media_ethernet"]/*' />
     wcm_media_ethernet,
+
+    /// <include file='WCM_MEDIA_TYPE.xml' path='doc/member[@name="WCM_MEDIA_TYPE.wcm_media_wlan"]/*' />
     wcm_media_wlan,
+
+    /// <include file='WCM_MEDIA_TYPE.xml' path='doc/member[@name="WCM_MEDIA_TYPE.wcm_media_mbn"]/*' />
     wcm_media_mbn,
+
+    /// <include file='WCM_MEDIA_TYPE.xml' path='doc/member[@name="WCM_MEDIA_TYPE.wcm_media_invalid"]/*' />
     wcm_media_invalid,
+
+    /// <include file='WCM_MEDIA_TYPE.xml' path='doc/member[@name="WCM_MEDIA_TYPE.wcm_media_max"]/*' />
     wcm_media_max,
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_AUDIO_APPMODE.xml' path='doc/member[@name="DVD_AUDIO_APPMODE"]/*' />
 public enum DVD_AUDIO_APPMODE
 {
+    /// <include file='DVD_AUDIO_APPMODE.xml' path='doc/member[@name="DVD_AUDIO_APPMODE.DVD_AudioMode_None"]/*' />
     DVD_AudioMode_None = 0,
+
+    /// <include file='DVD_AUDIO_APPMODE.xml' path='doc/member[@name="DVD_AUDIO_APPMODE.DVD_AudioMode_Karaoke"]/*' />
     DVD_AudioMode_Karaoke = 1,
+
+    /// <include file='DVD_AUDIO_APPMODE.xml' path='doc/member[@name="DVD_AUDIO_APPMODE.DVD_AudioMode_Surround"]/*' />
     DVD_AudioMode_Surround = 2,
+
+    /// <include file='DVD_AUDIO_APPMODE.xml' path='doc/member[@name="DVD_AUDIO_APPMODE.DVD_AudioMode_Other"]/*' />
     DVD_AudioMode_Other = 3,
 }

@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WIN_TRUST_ACTDATA_SUBJECT_ONLY.xml' path='doc/member[@name="WIN_TRUST_ACTDATA_SUBJECT_ONLY"]/*' />
 public unsafe partial struct WIN_TRUST_ACTDATA_SUBJECT_ONLY
 {
+    /// <include file='WIN_TRUST_ACTDATA_SUBJECT_ONLY.xml' path='doc/member[@name="WIN_TRUST_ACTDATA_SUBJECT_ONLY.SubjectType"]/*' />
     public Guid* SubjectType;
 
+    /// <include file='WIN_TRUST_ACTDATA_SUBJECT_ONLY.xml' path='doc/member[@name="WIN_TRUST_ACTDATA_SUBJECT_ONLY.Subject"]/*' />
     [NativeTypeName("WIN_TRUST_SUBJECT")]
     public void* Subject;
 }

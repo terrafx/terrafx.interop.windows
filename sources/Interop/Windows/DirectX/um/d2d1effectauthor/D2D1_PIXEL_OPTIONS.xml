@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_PIXEL_OPTIONS">
+    <summary>
+      <para>Indicates how pixel shader sampling will be restricted. This indicates whether the vertex buffer is large and tends to change infrequently or smaller and changes frequently (typically frame over frame).</para>
+    </summary>
+    <remarks>
+      <para>If the shader specifies <b>D2D1_PIXEL_OPTIONS_NONE</b>, it must still correctly implement the region of interest calculations in <see cref="ID2D1Transform.MapOutputRectToInputRects" /> and <see cref="ID2D1Transform.MapInputRectsToOutputRect" />.</para>
+    </remarks>
+    <seealso cref="ID2D1DrawInfo.SetPixelShader" />
+  </member>
+  <member name="D2D1_PIXEL_OPTIONS.D2D1_PIXEL_OPTIONS_NONE">
+    <summary>
+      <para>The pixel shader is not restricted in its sampling.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PIXEL_OPTIONS.D2D1_PIXEL_OPTIONS_TRIVIAL_SAMPLING">
+    <summary>
+      <para>The pixel shader samples inputs only at the same scene coordinate as the output pixel and returns transparent black whenever the input pixels are also transparent black.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PIXEL_OPTIONS.D2D1_PIXEL_OPTIONS_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

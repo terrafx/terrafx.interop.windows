@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_NOTIFY_INFORMATION">
+    <summary>
+      <para>Describes the changes found by the
+<see cref="ReadDirectoryChangesW" /> function.</para>
+    </summary>
+    <seealso cref="ReadDirectoryChangesW" />
+  </member>
+  <member name="FILE_NOTIFY_INFORMATION.NextEntryOffset">
+    <summary>
+      <para>The number of bytes that must be skipped to get to the next record. A value of zero indicates that this is
+the last record.</para>
+    </summary>
+  </member>
+  <member name="FILE_NOTIFY_INFORMATION.Action">
+    <summary>
+      <para>The type of change that has occurred. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ACTION_ADDED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file was added to the directory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ACTION_REMOVED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file was removed from the directory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ACTION_MODIFIED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000003</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file was modified. This can be a change in the time stamp or attributes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ACTION_RENAMED_OLD_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file was renamed and this is the old name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILE_ACTION_RENAMED_NEW_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000005</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file was renamed and this is the new name.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="FILE_NOTIFY_INFORMATION.FileNameLength">
+    <summary>
+      <para>The size of the file name portion of the record, in bytes. Note that this value does not include the
+terminating null character.</para>
+    </summary>
+  </member>
+  <member name="FILE_NOTIFY_INFORMATION.FileName">
+    <summary>
+      <para>A variable-length field that contains the file name relative to the directory handle. The file name is in
+the Unicode character format and is not null-terminated.</para>
+      <para>If there is both a short and long name for the file, the function will return one of these names, but it is
+unspecified which one.</para>
+    </summary>
+  </member>
+</doc>

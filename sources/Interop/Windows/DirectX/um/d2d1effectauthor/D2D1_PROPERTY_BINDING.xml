@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_PROPERTY_BINDING">
+    <summary>
+      <para>Defines a property binding to a pair of functions which get and set the corresponding property.</para>
+    </summary>
+    <remarks>
+      <para>The <b>propertyName</b> is used to cross-correlate the property binding with the registration XML. The <b>propertyName</b> must be present in the XML call or the registration will fail.</para>
+      <para>All properties must be bound.</para>
+    </remarks>
+    <seealso cref="ID2D1EffectImpl" />
+    <seealso cref="ID2D1Factory.RegisterEffect" />
+  </member>
+  <member name="D2D1_PROPERTY_BINDING.propertyName">
+    <summary>
+      <para>The name of the property.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_BINDING.setFunction">
+    <summary>
+      <para>The function that will receive the data to set.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_BINDING.getFunction">
+    <summary>
+      <para>The function that will be asked to write the output data.</para>
+    </summary>
+  </member>
+</doc>

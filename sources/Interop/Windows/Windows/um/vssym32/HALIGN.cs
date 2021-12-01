@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HALIGN.xml' path='doc/member[@name="HALIGN"]/*' />
 public enum HALIGN
 {
+    /// <include file='HALIGN.xml' path='doc/member[@name="HALIGN.HA_LEFT"]/*' />
     HA_LEFT = 0,
+
+    /// <include file='HALIGN.xml' path='doc/member[@name="HALIGN.HA_CENTER"]/*' />
     HA_CENTER = 1,
+
+    /// <include file='HALIGN.xml' path='doc/member[@name="HALIGN.HA_RIGHT"]/*' />
     HA_RIGHT = 2,
 }

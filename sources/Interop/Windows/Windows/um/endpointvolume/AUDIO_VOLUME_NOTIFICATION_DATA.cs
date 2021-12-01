@@ -7,16 +7,22 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUDIO_VOLUME_NOTIFICATION_DATA.xml' path='doc/member[@name="AUDIO_VOLUME_NOTIFICATION_DATA"]/*' />
 public unsafe partial struct AUDIO_VOLUME_NOTIFICATION_DATA
 {
+    /// <include file='AUDIO_VOLUME_NOTIFICATION_DATA.xml' path='doc/member[@name="AUDIO_VOLUME_NOTIFICATION_DATA.guidEventContext"]/*' />
     public Guid guidEventContext;
 
+    /// <include file='AUDIO_VOLUME_NOTIFICATION_DATA.xml' path='doc/member[@name="AUDIO_VOLUME_NOTIFICATION_DATA.bMuted"]/*' />
     public BOOL bMuted;
 
+    /// <include file='AUDIO_VOLUME_NOTIFICATION_DATA.xml' path='doc/member[@name="AUDIO_VOLUME_NOTIFICATION_DATA.fMasterVolume"]/*' />
     public float fMasterVolume;
 
+    /// <include file='AUDIO_VOLUME_NOTIFICATION_DATA.xml' path='doc/member[@name="AUDIO_VOLUME_NOTIFICATION_DATA.nChannels"]/*' />
     public uint nChannels;
 
+    /// <include file='AUDIO_VOLUME_NOTIFICATION_DATA.xml' path='doc/member[@name="AUDIO_VOLUME_NOTIFICATION_DATA.afChannelVolumes"]/*' />
     [NativeTypeName("float [1]")]
     public fixed float afChannelVolumes[1];
 }

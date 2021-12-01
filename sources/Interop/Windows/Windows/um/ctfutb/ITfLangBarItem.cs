@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfLangBarItem.xml' path='doc/member[@name="ITfLangBarItem"]/*' />
 [Guid("73540D69-EDEB-4EE9-96C9-23AA30B25916")]
 [NativeTypeName("struct ITfLangBarItem : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
         return ((delegate* unmanaged<ITfLangBarItem*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
         return ((delegate* unmanaged<ITfLangBarItem*, uint>)(lpVtbl[1]))((ITfLangBarItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
         return ((delegate* unmanaged<ITfLangBarItem*, uint>)(lpVtbl[2]))((ITfLangBarItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfLangBarItem.xml' path='doc/member[@name="ITfLangBarItem.GetInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
         return ((delegate* unmanaged<ITfLangBarItem*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pInfo);
     }
 
+    /// <include file='ITfLangBarItem.xml' path='doc/member[@name="ITfLangBarItem.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
         return ((delegate* unmanaged<ITfLangBarItem*, uint*, int>)(lpVtbl[4]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pdwStatus);
     }
 
+    /// <include file='ITfLangBarItem.xml' path='doc/member[@name="ITfLangBarItem.Show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Show(BOOL fShow)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
         return ((delegate* unmanaged<ITfLangBarItem*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), fShow);
     }
 
+    /// <include file='ITfLangBarItem.xml' path='doc/member[@name="ITfLangBarItem.GetTooltipString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)

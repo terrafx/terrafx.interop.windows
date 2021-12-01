@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleListStylePosition.xml' path='doc/member[@name="styleListStylePosition"]/*' />
 public enum styleListStylePosition
 {
+    /// <include file='styleListStylePosition.xml' path='doc/member[@name="styleListStylePosition.styleListStylePositionNotSet"]/*' />
     styleListStylePositionNotSet = 0,
+
+    /// <include file='styleListStylePosition.xml' path='doc/member[@name="styleListStylePosition.styleListStylePositionInside"]/*' />
     styleListStylePositionInside = 1,
+
+    /// <include file='styleListStylePosition.xml' path='doc/member[@name="styleListStylePosition.styleListStylePositionOutSide"]/*' />
     styleListStylePositionOutSide = 2,
+
+    /// <include file='styleListStylePosition.xml' path='doc/member[@name="styleListStylePosition.styleListStylePosition_Max"]/*' />
     styleListStylePosition_Max = 2147483647,
 }

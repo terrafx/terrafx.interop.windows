@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_RATIONAL">
+    <summary>
+      <para>The DISPLAYCONFIG_RATIONAL structure describes a fractional value that represents vertical and horizontal frequencies of a video mode (that is, vertical sync and horizontal sync).</para>
+    </summary>
+    <remarks>
+      <para>A DISPLAYCONFIG_RATIONAL structure is specified in members of the <see cref="DISPLAYCONFIG_PATH_TARGET_INFO" /> and <see cref="DISPLAYCONFIG_VIDEO_SIGNAL_INFO" /> structures.</para>
+    </remarks>
+    <seealso cref="DISPLAYCONFIG_PATH_TARGET_INFO" />
+    <seealso cref="DISPLAYCONFIG_VIDEO_SIGNAL_INFO" />
+  </member>
+  <member name="DISPLAYCONFIG_RATIONAL.Numerator">
+    <summary>
+      <para>The numerator of the frequency fraction.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_RATIONAL.Denominator">
+    <summary>
+      <para>The denominator of the frequency fraction.</para>
+    </summary>
+  </member>
+</doc>

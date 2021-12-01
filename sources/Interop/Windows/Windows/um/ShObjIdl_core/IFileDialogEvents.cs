@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFileDialogEvents.xml' path='doc/member[@name="IFileDialogEvents"]/*' />
 [Guid("973510DB-7D7F-452B-8975-74A85828D354")]
 [NativeTypeName("struct IFileDialogEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
         return ((delegate* unmanaged<IFileDialogEvents*, Guid*, void**, int>)(lpVtbl[0]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
         return ((delegate* unmanaged<IFileDialogEvents*, uint>)(lpVtbl[1]))((IFileDialogEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
         return ((delegate* unmanaged<IFileDialogEvents*, uint>)(lpVtbl[2]))((IFileDialogEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFileDialogEvents.xml' path='doc/member[@name="IFileDialogEvents.OnFileOk"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnFileOk(IFileDialog* pfd)
@@ -46,6 +51,7 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
         return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int>)(lpVtbl[3]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd);
     }
 
+    /// <include file='IFileDialogEvents.xml' path='doc/member[@name="IFileDialogEvents.OnFolderChanging"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnFolderChanging(IFileDialog* pfd, IShellItem* psiFolder)
@@ -53,6 +59,7 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
         return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, int>)(lpVtbl[4]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd, psiFolder);
     }
 
+    /// <include file='IFileDialogEvents.xml' path='doc/member[@name="IFileDialogEvents.OnFolderChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnFolderChange(IFileDialog* pfd)
@@ -60,6 +67,7 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
         return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int>)(lpVtbl[5]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd);
     }
 
+    /// <include file='IFileDialogEvents.xml' path='doc/member[@name="IFileDialogEvents.OnSelectionChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnSelectionChange(IFileDialog* pfd)
@@ -67,6 +75,7 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
         return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int>)(lpVtbl[6]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd);
     }
 
+    /// <include file='IFileDialogEvents.xml' path='doc/member[@name="IFileDialogEvents.OnShareViolation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnShareViolation(IFileDialog* pfd, IShellItem* psi, FDE_SHAREVIOLATION_RESPONSE* pResponse)
@@ -74,6 +83,7 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
         return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, FDE_SHAREVIOLATION_RESPONSE*, int>)(lpVtbl[7]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd, psi, pResponse);
     }
 
+    /// <include file='IFileDialogEvents.xml' path='doc/member[@name="IFileDialogEvents.OnTypeChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT OnTypeChange(IFileDialog* pfd)
@@ -81,6 +91,7 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
         return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int>)(lpVtbl[8]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd);
     }
 
+    /// <include file='IFileDialogEvents.xml' path='doc/member[@name="IFileDialogEvents.OnOverwrite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OnOverwrite(IFileDialog* pfd, IShellItem* psi, FDE_OVERWRITE_RESPONSE* pResponse)

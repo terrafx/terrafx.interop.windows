@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_ECC_PRIVATE_KEY_INFO.xml' path='doc/member[@name="CRYPT_ECC_PRIVATE_KEY_INFO"]/*' />
 public unsafe partial struct CRYPT_ECC_PRIVATE_KEY_INFO
 {
+    /// <include file='CRYPT_ECC_PRIVATE_KEY_INFO.xml' path='doc/member[@name="CRYPT_ECC_PRIVATE_KEY_INFO.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='CRYPT_ECC_PRIVATE_KEY_INFO.xml' path='doc/member[@name="CRYPT_ECC_PRIVATE_KEY_INFO.PrivateKey"]/*' />
     [NativeTypeName("CRYPT_DER_BLOB")]
     public CRYPT_DATA_BLOB PrivateKey;
 
+    /// <include file='CRYPT_ECC_PRIVATE_KEY_INFO.xml' path='doc/member[@name="CRYPT_ECC_PRIVATE_KEY_INFO.szCurveOid"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* szCurveOid;
 
+    /// <include file='CRYPT_ECC_PRIVATE_KEY_INFO.xml' path='doc/member[@name="CRYPT_ECC_PRIVATE_KEY_INFO.PublicKey"]/*' />
     public CRYPT_BIT_BLOB PublicKey;
 }

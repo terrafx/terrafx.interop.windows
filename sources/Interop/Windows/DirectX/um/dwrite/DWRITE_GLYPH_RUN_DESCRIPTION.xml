@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_GLYPH_RUN_DESCRIPTION">
+    <summary>
+      <para>Contains additional properties related to those in <see cref="DWRITE_GLYPH_RUN" />.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_RUN_DESCRIPTION.localeName">
+    <summary>
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters containing the locale name associated with this run.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_RUN_DESCRIPTION.string">
+    <summary>
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters containing the text associated with the glyphs.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_RUN_DESCRIPTION.stringLength">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of characters in UTF16 code-units. Note that this may be different than the number of glyphs.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_RUN_DESCRIPTION.clusterMap">
+    <summary>
+      <para>Type: <b>const UINT16*</b></para>
+      <para>An array of indices to the glyph indices array, of the first glyphs of all the glyph clusters of the glyphs to render.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_RUN_DESCRIPTION.textPosition">
+    <summary>
+      <para>Type: <b>UINT32 </b></para>
+      <para>Corresponding text position in the string this glyph run came from.  This is relative to the beginning of the string represented by the <see cref="IDWriteTextLayout" /> object.</para>
+    </summary>
+  </member>
+</doc>

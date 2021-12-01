@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMLVFINDITEMA.xml' path='doc/member[@name="NMLVFINDITEMA"]/*' />
 public partial struct NMLVFINDITEMA
 {
+    /// <include file='NMLVFINDITEMA.xml' path='doc/member[@name="NMLVFINDITEMA.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMLVFINDITEMA.xml' path='doc/member[@name="NMLVFINDITEMA.iStart"]/*' />
     public int iStart;
 
+    /// <include file='NMLVFINDITEMA.xml' path='doc/member[@name="NMLVFINDITEMA.lvfi"]/*' />
     public LVFINDINFOA lvfi;
 }

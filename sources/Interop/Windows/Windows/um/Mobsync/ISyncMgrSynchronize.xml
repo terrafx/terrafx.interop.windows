@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrSynchronize.EnumSyncMgrItems">
+    <summary>
+      <para>Obtains the
+<see cref="ISyncMgrEnumItems" /> interface for the items that are handled by a registered application.</para>
+    </summary>
+    <param name="ppSyncMgrEnumItems">
+      <para>Type: <b><see cref="ISyncMgrEnumItems" />**</b></para>
+      <para>The address of the variable that receives a pointer to a valid
+<see cref="ISyncMgrEnumItems" /> interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, and the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The enumeration interface is returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_SYNCMGR_MISSINGITEMS</b>
+            </para>
+          </description>
+          <description>
+            <para>The enumeration interface object is returned successfully, but some items are missing. When this success code is returned, the synchronization manager does not remove any stored preferences for ItemIds that are not returned in the enumerator.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The enumeration object that this method creates implements the
+<see cref="ISyncMgrEnumItems" /> interface, which is a standard enumeration interface that contains the <see cref="Next" />, <see cref="Reset" />, <see cref="Clone" />, and <see cref="Skip" /> methods.</para>
+    </remarks>
+    <seealso cref="ISyncMgrEnumItems" />
+    <seealso cref="ISyncMgrSynchronize" />
+  </member>
+  <member name="ISyncMgrSynchronize.GetHandlerInfo">
+    <summary>
+      <para>Obtains handler information.</para>
+    </summary>
+    <param name="ppSyncMgrHandlerInfo">
+      <para>Type: <b><see cref="SYNCMGRHANDLERINFO" />**</b></para>
+      <para>A pointer to a <see cref="SYNCMGRHANDLERINFO" /> structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, and the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Handler information is returned successfully.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The handler should use the <see cref="CoTaskMemAlloc" /> function to allocate memory.</para>
+    </remarks>
+    <seealso cref="ISyncMgrSynchronize" />
+    <seealso cref="SYNCMGRHANDLERINFO" />
+  </member>
+  <member name="ISyncMgrSynchronize.GetItemObject">
+    <summary>
+      <para>Obtains an interface on a specified item that a registered application handles.</para>
+    </summary>
+    <param name="ItemID">
+      <para>Type: <b>REFGUID</b></para>
+      <para>An identifier for a requested item.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>An identifier for a requested interface.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>An address of a variable that receives a pointer to a requested interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The requested interface is not found.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method exists only for forward compatibility. Currently, there are no interfaces defined on an item. Application implementers must return E_NOTIMPL from this method.</para>
+    </remarks>
+    <seealso cref="ISyncMgrSynchronize" />
+  </member>
+  <member name="ISyncMgrSynchronize.Initialize">
+    <summary>
+      <para>Called by the synchronization manager in a registered application handler to determine whether the handler processes the synchronization event.</para>
+    </summary>
+    <param name="dwReserved">
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved; must be 0 (zero).</para>
+    </param>
+    <param name="dwSyncMgrFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The <see cref="SYNCMGRFLAG" /> enumeration values that describe how a synchronization event is initiated.</para>
+    </param>
+    <param name="cbCookie">
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the <i>lpCookie</i> data, in bytes.</para>
+    </param>
+    <param name="lpCookie">
+      <para>Type: <b>BYTE const*</b></para>
+      <para>A pointer to the token that identifies an application. This token is passed when an application invokes the synchronization manager programmatically.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, and the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Initialization is successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Application handler does not process a synchronization event.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <see cref="SYNCMGRFLAG" /> enumeration values apply through the lifetime of the <see cref="ISyncMgrSynchronize" /> interface, and are used by the other
+<b>ISyncMgrSynchronize</b> methods.</para>
+      <para>If an application does not recognize the <see cref="SYNCMGRFLAG" /> event, the application should treat the event as a manual synchronization.</para>
+      <para>A registered application handler cannot display a user interface within this call unless it is the first time the initialization method is called. An application can display any one-time initialization it needs to set up items and introduce a user to an application feature. If you need to display a user interface for a different reason as part of the synchronization process, you can use the <see cref="ISyncMgrSynchronize.PrepareForSync" /> method.</para>
+      <para>The <i>lpCookie</i> parameter is <b>NULL</b> unless a handling application invokes the synchronization manager programmatically by using <see cref="UpdateItems" />. In this scenario, the class identifier (CLSID) identifies the handling application, and the value of <i>lpCookie</i> is passed in by the handling application, and then passed back by the synchronization manager during synchronization for context. The <i>lpCookie</i> parameter is only meaningful when <see cref="SYNCMGRFLAG_INVOKE" /> is set.</para>
+    </remarks>
+    <seealso cref="ISyncMgrSynchronize" />
+    <seealso cref="ISyncMgrSynchronize.PrepareForSync" />
+    <seealso cref="SYNCMGRFLAG" />
+    <seealso cref="UpdateItems" />
+  </member>
+  <member name="ISyncMgrSynchronize.PrepareForSync">
+    <summary>
+      <para>Allows a registered application to display any user interface, and perform any necessary initialization before the <see cref="ISyncMgrSynchronize.Synchronize" /> method is called. For example, an application such as the Microsoft Outlook email client may need to display the password dialog box to enable a user to log on to a mail server.</para>
+    </summary>
+    <param name="cbNumItems">
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of items in the array pointed to by <i>pItemIDs</i>.</para>
+    </param>
+    <param name="pItemIDs">
+      <para>Type: <b>GUID*</b></para>
+      <para>An array of item IDs that a user chooses to synchronize.</para>
+    </param>
+    <param name="hWndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent <b>HWND</b> that a registered application should use for any user interface element displayed. This value may be <b>NULL</b>.</para>
+    </param>
+    <param name="dwReserved">
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved. Registered applications should ignore this value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, and the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Preparation is successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A registered application handler should return from this method as soon as possible, and then call the <see cref="PrepareForSyncCompleted" /> method. A registered application handler can call the <b>PrepareForSyncCompleted</b> method before returning from this method.</para>
+      <para>Registered applications should only show a user interface if the
+<see cref="SYNCMGRFLAG_MAYBOTHERUSER" /> flag is set in the <i>dwSyncFlags</i> parameter of the
+<see cref="ISyncMgrSynchronize.Initialize" /> method. If a registered application cannot prepare for synchronization without showing a user interface when the <see cref="SYNCMGRFLAG_MAYBOTHERUSER" /> flag is not set, it should return S_FALSE from this method.</para>
+      <para>The array of item IDs that are passed into this method are relevant to the <see cref="ISyncMgrSynchronize.Synchronize" /> method also.</para>
+      <para>The <see cref="ISyncMgrSynchronizeCallback" /> methods can be called on any thread in a registered application.</para>
+    </remarks>
+    <seealso cref="ISyncMgrSynchronize" />
+    <seealso cref="ISyncMgrSynchronize.Initialize" />
+    <seealso cref="ISyncMgrSynchronize.Synchronize" />
+    <seealso cref="ISyncMgrSynchronizeCallback" />
+    <seealso cref="PrepareForSyncCompleted" />
+    <seealso cref="SYNCMGRFLAG" />
+  </member>
+  <member name="ISyncMgrSynchronize.SetItemStatus">
+    <summary>
+      <para>Called by the synchronization manager in a registered application's handler to change the status of an item in the following two cases: between the time the handler has returned from the <see cref="ISyncMgrSynchronize.PrepareForSync" /> method and called the
+<see cref="PrepareForSyncCompleted" /> callback method, or after the handler has returned from the <see cref="ISyncMgrSynchronize.Synchronize" /> method but has not yet called the <see cref="SynchronizeCompleted" /> callback method.</para>
+    </summary>
+    <param name="pItemID">
+      <para>Type: <b>REFGUID</b></para>
+      <para>Identifies the item with changed status.</para>
+    </param>
+    <param name="dwSyncMgrStatus">
+      <para>Type: <b>DWORD</b></para>
+      <para>The new status for the specified item taken from the
+<see cref="SYNCMGRSTATUS" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method supports the standard return values, E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Status was set.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Currently, the only <see cref="SYNCMGRSTATUS" /> status value supported by the SyncMgr is SYNCMGRSTATUS_SKIPPED. The registered application's handler should skip the item specified in <i>pItemID</i> when it receives this status value.</para>
+    </remarks>
+    <seealso cref="ISyncMgrSynchronize" />
+    <seealso cref="ISyncMgrSynchronize.PrepareForSync" />
+    <seealso cref="ISyncMgrSynchronize.SetProgressCallback" />
+    <seealso cref="ISyncMgrSynchronize.Synchronize" />
+    <seealso cref="PrepareForSyncCompleted" />
+    <seealso cref="SYNCMGRSTATUS" />
+    <seealso cref="SynchronizeCompleted" />
+  </member>
+  <member name="ISyncMgrSynchronize.SetProgressCallback">
+    <summary>
+      <para>Sets the <see cref="ISyncMgrSynchronizeCallback" /> interface. Registered applications use this callback interface to give status information from within the <see cref="ISyncMgrSynchronize.PrepareForSync" /> and <see cref="ISyncMgrSynchronize.Synchronize" /> methods.</para>
+    </summary>
+    <param name="lpCallBack">
+      <para>Type: <b><see cref="ISyncMgrSynchronizeCallback" />*</b></para>
+      <para>A pointer to <see cref="ISyncMgrSynchronizeCallback" /> interface the registered application uses to provide feedback to SyncMgr about the synchronization status and to notify SyncMgr when the synchronization is complete.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method supports the standard return values, E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Synchronization callback interface was successfully set.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Registered applications must call the <see cref="ISyncMgrSynchronizeCallback.AddRef" /> method and use it when calling SyncMgr to provide status text and progress indicator feedback.</para>
+      <para>If the registered application already has an <see cref="ISyncMgrSynchronizeCallback" /> interface when the method is called, the old interface must be released and the <see cref="AddRef" /> method of the new interface must be called. The new interface must be maintained by the registered application.</para>
+      <para>Before the <see cref="ISyncMgrSynchronize" /> interface is released, SyncMgr calls this method with the <i>pSyncCallBack</i> parameter set to <b>NULL</b>. The registered application should then release the <b>ISyncMgrSynchronize</b> interface previously passed.</para>
+    </remarks>
+    <seealso cref="ISyncMgrSynchronize" />
+    <seealso cref="ISyncMgrSynchronizeCallback" />
+  </member>
+  <member name="ISyncMgrSynchronize.ShowError">
+    <summary>
+      <para>Called by the synchronization manager in a registered application handler when a user double-clicks an associated message in the error tab.</para>
+    </summary>
+    <param name="hWndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent <b>HWND</b> that a registered application should use to display a user interface. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="ErrorID">
+      <para>Type: <b>REFGUID</b></para>
+      <para>An error identifier that is associated with this error message. This value is passed in the <see cref="LogError" /> method.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, and the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The call is completed successfully.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Handlers should return as soon as possible from this method, and call the <see cref="ShowErrorCompleted" /> method. A handler can make a call to
+<b>ShowErrorCompleted</b> before returning from this method. If a handler returns a failure code from this method, it should not call the
+<b>ShowErrorCompleted</b> method.</para>
+      <para>Applications can display user interface elements in this method even if the
+<see cref="SYNCMGRFLAG_MAYBOTHERUSER" /> flag is not set in the <i>dwSyncFlags</i> parameter of the
+<see cref="ISyncMgrSynchronize.Initialize" /> method. Applications must still call <see cref="EnableModeless" />, and check the return code before showing a user interface.</para>
+    </remarks>
+    <seealso cref="EnableModeless" />
+    <seealso cref="ISyncMgrSynchronize" />
+    <seealso cref="ISyncMgrSynchronize.Initialize" />
+    <seealso cref="LogError" />
+    <seealso cref="SYNCMGRFLAG" />
+    <seealso cref="ShowErrorCompleted" />
+  </member>
+  <member name="ISyncMgrSynchronize.ShowProperties">
+    <summary>
+      <para>Called by the synchronization manager when a user selects an item in the choice dialog box, and then clicks the <b>Properties</b> button.</para>
+    </summary>
+    <param name="hWndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>The parent <b>HWND</b> for any user interface that a registered application displays to set properties. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="ItemID">
+      <para>Type: <b>REFGUID</b></para>
+      <para>The item ID for properties that are requested.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, and the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The properties dialog for an item is handled successfully.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If a registered application provides a properties dialog box for an item, it must set the SYNCMGRITEM_HASPROPERTIES bit in the <b>dwFlags</b> member of the <see cref="SYNCMGRITEM" /> structure.</para>
+      <para>If <i>ItemID</i> is GUID_NULL the handler should show the properties dialog for the overall handler.</para>
+      <para>The appearance of the displayed dialog box should be consistent with a standard property page dialog box.</para>
+    </remarks>
+    <seealso cref="ISyncMgrSynchronize" />
+    <seealso cref="SYNCMGRITEM" />
+    <seealso cref="SYNCMGRITEMFLAGS" />
+  </member>
+  <member name="ISyncMgrSynchronize.Synchronize">
+    <summary>
+      <para>Called by the synchronization manager once for each selected group after the user has chosen the registered applications to be synchronized.</para>
+    </summary>
+    <param name="hWndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent <b>HWND</b> the registered application should use for any user interface elements that it displays. This value may be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method supports the standard return values, E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Synchronization was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Synchronization failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the user does not select any item choices for the registered application, the <b>ISyncMgrSynchronize.Synchronize</b> method is not called and the interface is released. If this method is called, the application must synchronize the items that were specified in the <see cref="ISyncMgrSynchronize.PrepareForSync" /> method.</para>
+      <para>The registered application's handler should return from the <b>ISyncMgrSynchronize.Synchronize</b> method as soon as possible and then call the
+<see cref="SynchronizeCompleted" /> method. It is acceptable for the handler to call the <b>SynchronizeCompleted</b> call before returning from the <b>ISyncMgrSynchronize.Synchronize</b> method.</para>
+      <para>The application must give progress feedback and check whether the synchronization should be canceled by using the <i>pSyncCallBack</i> interface pointer that was set up in the <see cref="ISyncMgrSynchronize.SetProgressCallback" /> method.</para>
+      <para>Applications must provide progress information even if the
+<see cref="SYNCMGRFLAG_MAYBOTHERUSER" /> flag was not specified in <see cref="ISyncMgrSynchronize.Initialize" />.</para>
+      <para>Applications should try not to show user interface elements from within the
+<b>ISyncMgrSynchronize.Synchronize</b> method. Any user interface elements should be shown in the <see cref="ISyncMgrSynchronize.PrepareForSync" /> and <see cref="ISyncMgrSynchronize.ShowError" /> methods so the end user experiences a consistent user interface which is limited to logon and to specifying shares to be synchronized. Subsequently, the synchronization can be performed without any user intervention. After the synchronization is complete, conflicts or other error messages can be shown.</para>
+      <para>The <see cref="ISyncMgrSynchronizeCallback" /> methods can be called on any thread in your application.</para>
+    </remarks>
+    <seealso cref="ISyncMgrSynchronize" />
+    <seealso cref="ISyncMgrSynchronize.Initialize" />
+    <seealso cref="ISyncMgrSynchronize.PrepareForSync" />
+    <seealso cref="ISyncMgrSynchronize.SetProgressCallback" />
+    <seealso cref="ISyncMgrSynchronize.ShowError" />
+    <seealso cref="SynchronizeCompleted" />
+  </member>
+  <member name="ISyncMgrSynchronize">
+    <summary>
+      <para>Exposes methods that enable the registered application or service to receive notifications from the synchronization manager.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>This interface should be implemented on the registered application's handler to receive notifications from the synchronization manager and to participate in the synchronization process.</para>
+      <para>
+        <b>ISyncMgrSynchronize</b> has been replaced in Windows Vista by <see cref="ISyncMgrHandler" />.</para>
+      <h3>When to Use</h3>
+      <para>The synchronization manager calls the methods of this interface to send notifications to the registered application or service during synchronization.</para>
+    </remarks>
+    <seealso cref="ISyncMgrEnumItems" />
+    <seealso cref="ISyncMgrSynchronizeCallback" />
+    <seealso cref="ISyncMgrSynchronizeInvoke" />
+  </member>
+</doc>

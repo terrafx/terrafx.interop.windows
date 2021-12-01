@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMediaSample2Config.GetSurface">
+    <summary>
+      <para>The <code>GetSurface</code> method returns a pointer to the Direct3D surface managed by this media sample.</para>
+    </summary>
+    <param name="ppDirect3DSurface9">
+      <para>Receives a pointer to the <b>IUnknown</b> interface of the Direct3D surface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSample2Config Interface" />
+  </member>
+  <member name="IMediaSample2Config">
+    <summary>
+      <para>The <b>IMediaSample2Config</b> interface returns a pointer to a Direct3D surface representing a VRAM capture buffer.</para>
+    </summary>
+    <remarks>
+      <para>If a display driver supports VRAM capture, the KsProxy filter allocates samples that expose this interface. Downstream filters can use this interface to access the video data in video memory, without requiring the data to be copied into system memory. The display driver must support the Windows Vista Display Driver Model (WDDM).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-wddm-capture-in-directshow">Using WDDM Capture in DirectShow</seealso>
+  </member>
+</doc>

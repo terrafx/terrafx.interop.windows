@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.IsEqualGUID">
+    <summary>
+      <para>Determines whether two GUIDs are equal.</para>
+    </summary>
+    <param name="rguid1">
+      <para>The first GUID.</para>
+    </param>
+    <param name="rguid2">
+      <para>The second GUID.</para>
+    </param>
+    <returns>
+      <para>A Boolean value that indicates if the two GUID's are equal. TRUE if yes, otherwise FALSE.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IsEqualGUID</b> is used by the <see cref="IsEqualCLSID" /> and <see cref="IsEqualIID" /> functions.</para>
+    </remarks>
+    <seealso cref="IsEqualCLSID" />
+    <seealso cref="IsEqualIID" />
+  </member>
+</doc>

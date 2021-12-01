@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISK_GROW_PARTITION">
+    <summary>
+      <para>Contains information used to increase the size of a partition.This structure is used by the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_grow_partition">IOCTL_DISK_GROW_PARTITION</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_grow_partition">IOCTL_DISK_GROW_PARTITION</seealso>
+    <seealso cref="LARGE_INTEGER" />
+  </member>
+  <member name="DISK_GROW_PARTITION.PartitionNumber">
+    <summary>
+      <para>The identifier of the partition to be enlarged.</para>
+    </summary>
+  </member>
+  <member name="DISK_GROW_PARTITION.BytesToGrow">
+    <summary>
+      <para>The number of bytes by which the partition is to be enlarged (positive value) or reduced (negative value). Note that this value is not the new size of the partition.</para>
+    </summary>
+  </member>
+</doc>

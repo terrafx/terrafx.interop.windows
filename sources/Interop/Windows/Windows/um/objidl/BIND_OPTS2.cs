@@ -5,20 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BIND_OPTS2.xml' path='doc/member[@name="BIND_OPTS2"]/*' />
 [NativeTypeName("struct tagBIND_OPTS2 : tagBIND_OPTS")]
 [NativeInheritance("tagBIND_OPTS")]
 public unsafe partial struct BIND_OPTS2
 {
     public BIND_OPTS Base;
 
+    /// <include file='BIND_OPTS2.xml' path='doc/member[@name="BIND_OPTS2.dwTrackFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTrackFlags;
 
+    /// <include file='BIND_OPTS2.xml' path='doc/member[@name="BIND_OPTS2.dwClassContext"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwClassContext;
 
+    /// <include file='BIND_OPTS2.xml' path='doc/member[@name="BIND_OPTS2.locale"]/*' />
     [NativeTypeName("LCID")]
     public uint locale;
 
+    /// <include file='BIND_OPTS2.xml' path='doc/member[@name="BIND_OPTS2.pServerInfo"]/*' />
     public COSERVERINFO* pServerInfo;
 }

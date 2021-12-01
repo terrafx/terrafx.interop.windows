@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_BRUSH_PROPERTIES"]/*' />
 public partial struct D2D1_BRUSH_PROPERTIES
 {
+    /// <include file='D2D1_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_BRUSH_PROPERTIES.opacity"]/*' />
     public float opacity;
 
+    /// <include file='D2D1_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_BRUSH_PROPERTIES.transform"]/*' />
     [NativeTypeName("D2D1_MATRIX_3X2_F")]
     public D2D_MATRIX_3X2_F transform;
 }

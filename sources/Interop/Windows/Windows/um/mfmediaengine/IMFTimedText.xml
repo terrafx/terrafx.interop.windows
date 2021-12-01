@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFTimedText.AddDataSource">
+    <summary>
+      <para>Adds a timed-text data source.</para>
+    </summary>
+    <param name="byteStream">
+      <para>Type: <b><see cref="IMFByteStream" />*</b></para>
+      <para>A pointer to the <see cref="IMFByteStream" /> interface for the data source to add.</para>
+    </param>
+    <param name="label">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Null-terminated wide-character string that contains the label of the data source.</para>
+    </param>
+    <param name="language">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Null-terminated wide-character string that contains the language of the data source.</para>
+    </param>
+    <param name="kind">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_TRACK_KIND" /></b></para>
+      <para>A <see cref="MF_TIMED_TEXT_TRACK_KIND" />-typed value that specifies the kind of timed-text track.</para>
+    </param>
+    <param name="isDefault">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether to add the default data source. Specify <b>TRUE</b> to add the default data source or <b>FALSE</b> otherwise.</para>
+    </param>
+    <param name="trackId">
+      <para>Type: <b>DWORD*</b></para>
+      <para>Receives a pointer to the unique identifier for the added track.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.AddDataSourceFromUrl">
+    <summary>
+      <para>Adds a timed-text data source from the specified URL.</para>
+    </summary>
+    <param name="url">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>The URL of the timed-text data source.</para>
+    </param>
+    <param name="label">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Null-terminated wide-character string that contains the label of the data source.</para>
+    </param>
+    <param name="language">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Null-terminated wide-character string that contains the language of the data source.</para>
+    </param>
+    <param name="kind">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_TRACK_KIND" /></b></para>
+      <para>A <see cref="MF_TIMED_TEXT_TRACK_KIND" />-typed value that specifies the kind of timed-text track.</para>
+    </param>
+    <param name="isDefault">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether to add the default data source. Specify <b>TRUE</b> to add the default data source or <b>FALSE</b> otherwise.</para>
+    </param>
+    <param name="trackId">
+      <para>Type: <b>DWORD*</b></para>
+      <para>Receives a pointer to the unique identifier for the added track.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.GetActiveTracks">
+    <summary>
+      <para>Gets the list of active timed-text tracks in the timed-text component.</para>
+    </summary>
+    <param name="activeTracks">
+      <para>Type: <b><see cref="IMFTimedTextTrackList" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the <see cref="IMFTimedTextTrackList" /> interface that can enumerate the list of active timed-text tracks.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.GetCueTimeOffset">
+    <summary>
+      <para>Gets the offset to the cue time.</para>
+    </summary>
+    <param name="offset">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the offset to the cue time.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.GetMetadataTracks">
+    <summary>
+      <para>Gets the list of the timed-metadata tracks in the timed-text component.</para>
+    </summary>
+    <param name="metadataTracks">
+      <para>Type: <b><see cref="IMFTimedTextTrackList" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the <see cref="IMFTimedTextTrackList" /> interface that can enumerate the list of the timed-metadata tracks.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.GetTextTracks">
+    <summary>
+      <para>Gets the list of all the timed-text tracks in the timed-text component.</para>
+    </summary>
+    <param name="textTracks">
+      <para>Type: <b><see cref="IMFTimedTextTrackList" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the <see cref="IMFTimedTextTrackList" /> interface that can enumerate the list of all of the timed-text tracks.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.GetTracks">
+    <summary>
+      <para>Retrieves a list of all timed-text tracks registered with the <see cref="IMFTimedText" />.</para>
+    </summary>
+    <param name="tracks">
+      <para>Type: <b>IMFTimedTextTrackList**</b></para>
+      <para>Receives a pointer to track list.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.IsInBandEnabled">
+    <summary>
+      <para>Determines whether inband mode is enabled.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns whether inband mode is enabled. If <b>TRUE</b>, inband mode is enabled. If <b>FALSE</b>, inband mode is disabled.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.RegisterNotifications">
+    <summary>
+      <para>Registers a timed-text notify object.</para>
+    </summary>
+    <param name="notify">
+      <para>Type: <b><see cref="IMFTimedTextNotify" />*</b></para>
+      <para>A pointer to the <see cref="IMFTimedTextNotify" /> interface for the timed-text notify object to register.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.RemoveTrack">
+    <summary>
+      <para>Removes the timed-text track with the specified identifier.</para>
+    </summary>
+    <param name="track">
+      <para>Type: <b>DWORD</b></para>
+      <para>The identifier of the track to remove.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Get the identifier for a track by calling <see cref="GetId" />.</para>
+      <para>When a track is removed, all buffered data from the track is also removed.</para>
+    </remarks>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.SelectTrack">
+    <summary>
+      <para>Selects or deselects a track of text in the timed-text component.</para>
+    </summary>
+    <param name="trackId">
+      <para>Type: <b>DWORD</b></para>
+      <para>The identifier of the track to select.</para>
+    </param>
+    <param name="selected">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether to select or deselect a track of text. Specify <b>TRUE</b> to select the track or <b>FALSE</b> to deselect the track.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.SetCueTimeOffset">
+    <summary>
+      <para>Sets the offset to the cue time.</para>
+    </summary>
+    <param name="offset">
+      <para>Type: <b>double</b></para>
+      <para>The offset to the cue time.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText.SetInBandEnabled">
+    <summary>
+      <para>Enables or disables inband mode.</para>
+    </summary>
+    <param name="enabled">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether inband mode is enabled. If <b>TRUE</b>, inband mode is enabled. If <b>FALSE</b>, inband mode is disabled.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedText" />
+  </member>
+  <member name="IMFTimedText">
+    <summary>
+      <para>A timed-text object represents a component of timed text.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem"]/*' />
 [Guid("B20B24CE-2593-4F04-BD8B-7AD6C45051CD")]
 [NativeTypeName("struct ISyncMgrSyncItem : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         return ((delegate* unmanaged<ISyncMgrSyncItem*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         return ((delegate* unmanaged<ISyncMgrSyncItem*, uint>)(lpVtbl[1]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         return ((delegate* unmanaged<ISyncMgrSyncItem*, uint>)(lpVtbl[2]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetItemID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetItemID([NativeTypeName("LPWSTR *")] ushort** ppszItemID)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         return ((delegate* unmanaged<ISyncMgrSyncItem*, ushort**, int>)(lpVtbl[3]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppszItemID);
     }
 
+    /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName)
@@ -53,6 +59,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         return ((delegate* unmanaged<ISyncMgrSyncItem*, ushort**, int>)(lpVtbl[4]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppszName);
     }
 
+    /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetItemInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetItemInfo(ISyncMgrSyncItemInfo** ppItemInfo)
@@ -60,6 +67,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         return ((delegate* unmanaged<ISyncMgrSyncItem*, ISyncMgrSyncItemInfo**, int>)(lpVtbl[5]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppItemInfo);
     }
 
+    /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetObjectW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetObjectW([NativeTypeName("const GUID &")] Guid* rguidObjectID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -67,6 +75,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         return ((delegate* unmanaged<ISyncMgrSyncItem*, Guid*, Guid*, void**, int>)(lpVtbl[6]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), rguidObjectID, riid, ppv);
     }
 
+    /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetCapabilities(SYNCMGR_ITEM_CAPABILITIES* pmCapabilities)
@@ -74,6 +83,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         return ((delegate* unmanaged<ISyncMgrSyncItem*, SYNCMGR_ITEM_CAPABILITIES*, int>)(lpVtbl[7]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), pmCapabilities);
     }
 
+    /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetPolicies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetPolicies(SYNCMGR_ITEM_POLICIES* pmPolicies)
@@ -81,6 +91,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         return ((delegate* unmanaged<ISyncMgrSyncItem*, SYNCMGR_ITEM_POLICIES*, int>)(lpVtbl[8]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), pmPolicies);
     }
 
+    /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.Enable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Enable(BOOL fEnable)
@@ -88,6 +99,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         return ((delegate* unmanaged<ISyncMgrSyncItem*, BOOL, int>)(lpVtbl[9]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), fEnable);
     }
 
+    /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.Delete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Delete()

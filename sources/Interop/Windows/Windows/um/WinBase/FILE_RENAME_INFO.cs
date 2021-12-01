@@ -8,19 +8,25 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_RENAME_INFO.xml' path='doc/member[@name="FILE_RENAME_INFO"]/*' />
 public unsafe partial struct FILE_RENAME_INFO
 {
+    /// <include file='FILE_RENAME_INFO.xml' path='doc/member[@name="FILE_RENAME_INFO.Anonymous"]/*' />
     [NativeTypeName("_FILE_RENAME_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:8878:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='FILE_RENAME_INFO.xml' path='doc/member[@name="FILE_RENAME_INFO.RootDirectory"]/*' />
     public HANDLE RootDirectory;
 
+    /// <include file='FILE_RENAME_INFO.xml' path='doc/member[@name="FILE_RENAME_INFO.FileNameLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint FileNameLength;
 
+    /// <include file='FILE_RENAME_INFO.xml' path='doc/member[@name="FILE_RENAME_INFO.FileName"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort FileName[1];
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ReplaceIfExists"]/*' />
     public ref byte ReplaceIfExists
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,6 +36,7 @@ public unsafe partial struct FILE_RENAME_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
     public ref uint Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,13 +46,16 @@ public unsafe partial struct FILE_RENAME_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ReplaceIfExists"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BOOLEAN")]
         public byte ReplaceIfExists;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Flags;

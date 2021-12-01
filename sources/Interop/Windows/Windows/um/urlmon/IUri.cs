@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUri.xml' path='doc/member[@name="IUri"]/*' />
 [Guid("A39EE748-6A27-4817-A6F2-13914BEF5890")]
 [NativeTypeName("struct IUri : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUri : IUri.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, Guid*, void**, int>)(lpVtbl[0]))((IUri*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, uint>)(lpVtbl[1]))((IUri*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, uint>)(lpVtbl[2]))((IUri*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetPropertyBSTR"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPropertyBSTR(Uri_PROPERTY uriProp, [NativeTypeName("BSTR *")] ushort** pbstrProperty, [NativeTypeName("DWORD")] uint dwFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, Uri_PROPERTY, ushort**, uint, int>)(lpVtbl[3]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pbstrProperty, dwFlags);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetPropertyLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPropertyLength(Uri_PROPERTY uriProp, [NativeTypeName("DWORD *")] uint* pcchProperty, [NativeTypeName("DWORD")] uint dwFlags)
@@ -53,6 +59,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, Uri_PROPERTY, uint*, uint, int>)(lpVtbl[4]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pcchProperty, dwFlags);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetPropertyDWORD"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPropertyDWORD(Uri_PROPERTY uriProp, [NativeTypeName("DWORD *")] uint* pdwProperty, [NativeTypeName("DWORD")] uint dwFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, Uri_PROPERTY, uint*, uint, int>)(lpVtbl[5]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pdwProperty, dwFlags);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.HasProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT HasProperty(Uri_PROPERTY uriProp, BOOL* pfHasProperty)
@@ -67,6 +75,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, Uri_PROPERTY, BOOL*, int>)(lpVtbl[6]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pfHasProperty);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetAbsoluteUri"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetAbsoluteUri([NativeTypeName("BSTR *")] ushort** pbstrAbsoluteUri)
@@ -74,6 +83,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[7]))((IUri*)Unsafe.AsPointer(ref this), pbstrAbsoluteUri);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetAuthority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetAuthority([NativeTypeName("BSTR *")] ushort** pbstrAuthority)
@@ -81,6 +91,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[8]))((IUri*)Unsafe.AsPointer(ref this), pbstrAuthority);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetDisplayUri"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDisplayUri([NativeTypeName("BSTR *")] ushort** pbstrDisplayString)
@@ -88,6 +99,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[9]))((IUri*)Unsafe.AsPointer(ref this), pbstrDisplayString);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetDomain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetDomain([NativeTypeName("BSTR *")] ushort** pbstrDomain)
@@ -95,6 +107,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[10]))((IUri*)Unsafe.AsPointer(ref this), pbstrDomain);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetExtension"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetExtension([NativeTypeName("BSTR *")] ushort** pbstrExtension)
@@ -102,6 +115,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[11]))((IUri*)Unsafe.AsPointer(ref this), pbstrExtension);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetFragment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetFragment([NativeTypeName("BSTR *")] ushort** pbstrFragment)
@@ -109,6 +123,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[12]))((IUri*)Unsafe.AsPointer(ref this), pbstrFragment);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetHost"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetHost([NativeTypeName("BSTR *")] ushort** pbstrHost)
@@ -116,6 +131,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[13]))((IUri*)Unsafe.AsPointer(ref this), pbstrHost);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetPassword"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetPassword([NativeTypeName("BSTR *")] ushort** pbstrPassword)
@@ -123,6 +139,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[14]))((IUri*)Unsafe.AsPointer(ref this), pbstrPassword);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetPath([NativeTypeName("BSTR *")] ushort** pbstrPath)
@@ -130,6 +147,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[15]))((IUri*)Unsafe.AsPointer(ref this), pbstrPath);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetPathAndQuery"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetPathAndQuery([NativeTypeName("BSTR *")] ushort** pbstrPathAndQuery)
@@ -137,6 +155,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[16]))((IUri*)Unsafe.AsPointer(ref this), pbstrPathAndQuery);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetQuery"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetQuery([NativeTypeName("BSTR *")] ushort** pbstrQuery)
@@ -144,6 +163,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[17]))((IUri*)Unsafe.AsPointer(ref this), pbstrQuery);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetRawUri"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetRawUri([NativeTypeName("BSTR *")] ushort** pbstrRawUri)
@@ -151,6 +171,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[18]))((IUri*)Unsafe.AsPointer(ref this), pbstrRawUri);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetSchemeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetSchemeName([NativeTypeName("BSTR *")] ushort** pbstrSchemeName)
@@ -158,6 +179,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[19]))((IUri*)Unsafe.AsPointer(ref this), pbstrSchemeName);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetUserInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetUserInfo([NativeTypeName("BSTR *")] ushort** pbstrUserInfo)
@@ -165,6 +187,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[20]))((IUri*)Unsafe.AsPointer(ref this), pbstrUserInfo);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetUserName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetUserName([NativeTypeName("BSTR *")] ushort** pbstrUserName)
@@ -172,6 +195,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[21]))((IUri*)Unsafe.AsPointer(ref this), pbstrUserName);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetHostType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetHostType([NativeTypeName("DWORD *")] uint* pdwHostType)
@@ -179,6 +203,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, uint*, int>)(lpVtbl[22]))((IUri*)Unsafe.AsPointer(ref this), pdwHostType);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetPort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT GetPort([NativeTypeName("DWORD *")] uint* pdwPort)
@@ -186,6 +211,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, uint*, int>)(lpVtbl[23]))((IUri*)Unsafe.AsPointer(ref this), pdwPort);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetScheme"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT GetScheme([NativeTypeName("DWORD *")] uint* pdwScheme)
@@ -193,6 +219,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, uint*, int>)(lpVtbl[24]))((IUri*)Unsafe.AsPointer(ref this), pdwScheme);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetZone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT GetZone([NativeTypeName("DWORD *")] uint* pdwZone)
@@ -200,6 +227,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, uint*, int>)(lpVtbl[25]))((IUri*)Unsafe.AsPointer(ref this), pdwZone);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.GetProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT GetProperties([NativeTypeName("LPDWORD")] uint* pdwFlags)
@@ -207,6 +235,7 @@ public unsafe partial struct IUri : IUri.Interface
         return ((delegate* unmanaged<IUri*, uint*, int>)(lpVtbl[26]))((IUri*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
+    /// <include file='IUri.xml' path='doc/member[@name="IUri.IsEqual"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT IsEqual(IUri* pUri, BOOL* pfEqual)

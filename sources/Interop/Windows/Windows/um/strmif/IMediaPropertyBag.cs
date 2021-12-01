@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaPropertyBag.xml' path='doc/member[@name="IMediaPropertyBag"]/*' />
 [Guid("6025A880-C0D5-11D0-BD4E-00A0C911CE86")]
 [NativeTypeName("struct IMediaPropertyBag : IPropertyBag")]
 [NativeInheritance("IPropertyBag")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface
         return ((delegate* unmanaged<IMediaPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface
         return ((delegate* unmanaged<IMediaPropertyBag*, uint>)(lpVtbl[1]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface
         return ((delegate* unmanaged<IMediaPropertyBag*, uint>)(lpVtbl[2]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPropertyBag.Read" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Read([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar, IErrorLog* pErrorLog)
@@ -46,6 +51,7 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface
         return ((delegate* unmanaged<IMediaPropertyBag*, ushort*, VARIANT*, IErrorLog*, int>)(lpVtbl[3]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar, pErrorLog);
     }
 
+    /// <inheritdoc cref="IPropertyBag.Write" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Write([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar)
@@ -53,6 +59,7 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface
         return ((delegate* unmanaged<IMediaPropertyBag*, ushort*, VARIANT*, int>)(lpVtbl[4]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar);
     }
 
+    /// <include file='IMediaPropertyBag.xml' path='doc/member[@name="IMediaPropertyBag.EnumProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumProperty([NativeTypeName("ULONG")] uint iProperty, VARIANT* pvarPropertyName, VARIANT* pvarPropertyValue)

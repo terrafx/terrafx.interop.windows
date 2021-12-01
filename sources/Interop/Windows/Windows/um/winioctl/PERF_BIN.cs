@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PERF_BIN.xml' path='doc/member[@name="PERF_BIN"]/*' />
 public partial struct PERF_BIN
 {
+    /// <include file='PERF_BIN.xml' path='doc/member[@name="PERF_BIN.NumberOfBins"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfBins;
 
+    /// <include file='PERF_BIN.xml' path='doc/member[@name="PERF_BIN.TypeOfBin"]/*' />
     [NativeTypeName("DWORD")]
     public uint TypeOfBin;
 
+    /// <include file='PERF_BIN.xml' path='doc/member[@name="PERF_BIN.BinsRanges"]/*' />
     [NativeTypeName("BIN_RANGE [1]")]
     public _BinsRanges_e__FixedBuffer BinsRanges;
 
+    /// <include file='_BinsRanges_e__FixedBuffer.xml' path='doc/member[@name="_BinsRanges_e__FixedBuffer"]/*' />
     public partial struct _BinsRanges_e__FixedBuffer
     {
         public BIN_RANGE e0;

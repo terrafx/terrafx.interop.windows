@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpatialAudioMetadataCopyMode.xml' path='doc/member[@name="SpatialAudioMetadataCopyMode"]/*' />
 public enum SpatialAudioMetadataCopyMode
 {
+    /// <include file='SpatialAudioMetadataCopyMode.xml' path='doc/member[@name="SpatialAudioMetadataCopyMode.SpatialAudioMetadataCopy_Overwrite"]/*' />
     SpatialAudioMetadataCopy_Overwrite = 0,
+
+    /// <include file='SpatialAudioMetadataCopyMode.xml' path='doc/member[@name="SpatialAudioMetadataCopyMode.SpatialAudioMetadataCopy_Append"]/*' />
     SpatialAudioMetadataCopy_Append = (SpatialAudioMetadataCopy_Overwrite + 1),
+
+    /// <include file='SpatialAudioMetadataCopyMode.xml' path='doc/member[@name="SpatialAudioMetadataCopyMode.SpatialAudioMetadataCopy_AppendMergeWithLast"]/*' />
     SpatialAudioMetadataCopy_AppendMergeWithLast = (SpatialAudioMetadataCopy_Append + 1),
+
+    /// <include file='SpatialAudioMetadataCopyMode.xml' path='doc/member[@name="SpatialAudioMetadataCopyMode.SpatialAudioMetadataCopy_AppendMergeWithFirst"]/*' />
     SpatialAudioMetadataCopy_AppendMergeWithFirst = (SpatialAudioMetadataCopy_AppendMergeWithLast + 1),
 }

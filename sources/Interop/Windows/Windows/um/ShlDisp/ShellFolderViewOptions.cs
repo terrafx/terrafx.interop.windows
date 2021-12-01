@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ShellFolderViewOptions.xml' path='doc/member[@name="ShellFolderViewOptions"]/*' />
 public enum ShellFolderViewOptions
 {
+    /// <include file='ShellFolderViewOptions.xml' path='doc/member[@name="ShellFolderViewOptions.SFVVO_SHOWALLOBJECTS"]/*' />
     SFVVO_SHOWALLOBJECTS = 0x1,
+
+    /// <include file='ShellFolderViewOptions.xml' path='doc/member[@name="ShellFolderViewOptions.SFVVO_SHOWEXTENSIONS"]/*' />
     SFVVO_SHOWEXTENSIONS = 0x2,
+
+    /// <include file='ShellFolderViewOptions.xml' path='doc/member[@name="ShellFolderViewOptions.SFVVO_SHOWCOMPCOLOR"]/*' />
     SFVVO_SHOWCOMPCOLOR = 0x8,
+
+    /// <include file='ShellFolderViewOptions.xml' path='doc/member[@name="ShellFolderViewOptions.SFVVO_SHOWSYSFILES"]/*' />
     SFVVO_SHOWSYSFILES = 0x20,
+
+    /// <include file='ShellFolderViewOptions.xml' path='doc/member[@name="ShellFolderViewOptions.SFVVO_WIN95CLASSIC"]/*' />
     SFVVO_WIN95CLASSIC = 0x40,
+
+    /// <include file='ShellFolderViewOptions.xml' path='doc/member[@name="ShellFolderViewOptions.SFVVO_DOUBLECLICKINWEBVIEW"]/*' />
     SFVVO_DOUBLECLICKINWEBVIEW = 0x80,
+
+    /// <include file='ShellFolderViewOptions.xml' path='doc/member[@name="ShellFolderViewOptions.SFVVO_DESKTOPHTML"]/*' />
     SFVVO_DESKTOPHTML = 0x200,
 }

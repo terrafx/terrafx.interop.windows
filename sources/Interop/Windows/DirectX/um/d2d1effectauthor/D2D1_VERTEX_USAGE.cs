@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_VERTEX_USAGE.xml' path='doc/member[@name="D2D1_VERTEX_USAGE"]/*' />
 public enum D2D1_VERTEX_USAGE : uint
 {
+    /// <include file='D2D1_VERTEX_USAGE.xml' path='doc/member[@name="D2D1_VERTEX_USAGE.D2D1_VERTEX_USAGE_STATIC"]/*' />
     D2D1_VERTEX_USAGE_STATIC = 0,
+
+    /// <include file='D2D1_VERTEX_USAGE.xml' path='doc/member[@name="D2D1_VERTEX_USAGE.D2D1_VERTEX_USAGE_DYNAMIC"]/*' />
     D2D1_VERTEX_USAGE_DYNAMIC = 1,
+
+    /// <include file='D2D1_VERTEX_USAGE.xml' path='doc/member[@name="D2D1_VERTEX_USAGE.D2D1_VERTEX_USAGE_FORCE_DWORD"]/*' />
     D2D1_VERTEX_USAGE_FORCE_DWORD = 0xffffffff,
 }

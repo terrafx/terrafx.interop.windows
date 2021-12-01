@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPSTATS_FORWARDING.xml' path='doc/member[@name="MIB_IPSTATS_FORWARDING"]/*' />
 public enum MIB_IPSTATS_FORWARDING
 {
+    /// <include file='MIB_IPSTATS_FORWARDING.xml' path='doc/member[@name="MIB_IPSTATS_FORWARDING.MIB_IP_FORWARDING"]/*' />
     MIB_IP_FORWARDING = 1,
+
+    /// <include file='MIB_IPSTATS_FORWARDING.xml' path='doc/member[@name="MIB_IPSTATS_FORWARDING.MIB_IP_NOT_FORWARDING"]/*' />
     MIB_IP_NOT_FORWARDING = 2,
 }

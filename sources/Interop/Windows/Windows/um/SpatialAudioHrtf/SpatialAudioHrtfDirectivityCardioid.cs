@@ -7,10 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpatialAudioHrtfDirectivityCardioid.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityCardioid"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SpatialAudioHrtfDirectivityCardioid
 {
+    /// <include file='SpatialAudioHrtfDirectivityCardioid.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityCardioid.directivity"]/*' />
     public SpatialAudioHrtfDirectivity directivity;
 
+    /// <include file='SpatialAudioHrtfDirectivityCardioid.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityCardioid.Order"]/*' />
     public float Order;
 }

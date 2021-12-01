@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoEncodeDimension.xml' path='doc/member[@name="CODECAPI_AVEncVideoEncodeDimension"]/*' />
 [Guid("1074DF28-7E0F-47A4-A453-CDD73870F5CE")]
 public partial struct CODECAPI_AVEncVideoEncodeDimension
 {

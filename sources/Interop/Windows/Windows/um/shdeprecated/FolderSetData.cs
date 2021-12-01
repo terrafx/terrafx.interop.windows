@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FOLDERSETDATA.xml' path='doc/member[@name="FOLDERSETDATA"]/*' />
 public partial struct FOLDERSETDATA
 {
+    /// <include file='FOLDERSETDATA.xml' path='doc/member[@name="FOLDERSETDATA._fs"]/*' />
     public FOLDERSETTINGS _fs;
 
+    /// <include file='FOLDERSETDATA.xml' path='doc/member[@name="FOLDERSETDATA._vidRestore"]/*' />
     [NativeTypeName("SHELLVIEWID")]
     public Guid _vidRestore;
 
+    /// <include file='FOLDERSETDATA.xml' path='doc/member[@name="FOLDERSETDATA._dwViewPriority"]/*' />
     [NativeTypeName("DWORD")]
     public uint _dwViewPriority;
 }

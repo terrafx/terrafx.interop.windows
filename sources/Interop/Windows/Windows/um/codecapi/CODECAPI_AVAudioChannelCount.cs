@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVAudioChannelCount.xml' path='doc/member[@name="CODECAPI_AVAudioChannelCount"]/*' />
 [Guid("1D3583C4-1583-474E-B71A-5EE463C198E4")]
 public partial struct CODECAPI_AVAudioChannelCount
 {

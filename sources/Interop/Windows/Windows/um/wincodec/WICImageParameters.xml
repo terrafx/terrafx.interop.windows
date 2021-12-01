@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICImageParameters">
+    <summary>
+      <para>This defines parameters that you can use to override the default parameters normally used when encoding an image.</para>
+    </summary>
+    <remarks>
+      <para>If this parameter is not passed to the encoding API, the encoder uses these settings.</para>
+      <list type="bullet">
+        <item>
+          <description>A pixel format of (<see cref="DXGI_FORMAT_B8G8R8A8_UNORM" />, <see cref="D2D1_ALPHA_MODE_PREMULTIPLIED" />).</description>
+        </item>
+        <item>
+          <description>An x and y DPI of 96.</description>
+        </item>
+        <item>
+          <description>The entire image bounds will be used for encoding.</description>
+        </item>
+      </list>
+      <b>Note</b>  The parameters as specified can't result in a scale. The encoder can use a larger portion of the input image based on the passed in DPI and the pixel width and height.
+</remarks>
+    <seealso cref="IWICImageEncoder" />
+  </member>
+  <member name="WICImageParameters.PixelFormat">
+    <summary>
+      <para>The pixel format to which the image is processed before it is written to the encoder.</para>
+    </summary>
+  </member>
+  <member name="WICImageParameters.DpiX">
+    <summary>
+      <para>The DPI in the x dimension.</para>
+    </summary>
+  </member>
+  <member name="WICImageParameters.DpiY">
+    <summary>
+      <para>The DPI in the y dimension.</para>
+    </summary>
+  </member>
+  <member name="WICImageParameters.Top">
+    <summary>
+      <para>The top corner in pixels of the image space to be encoded to the destination.</para>
+    </summary>
+  </member>
+  <member name="WICImageParameters.Left">
+    <summary>
+      <para>The left corner in pixels of the image space to be encoded to the destination.</para>
+    </summary>
+  </member>
+  <member name="WICImageParameters.PixelWidth">
+    <summary>
+      <para>The width in pixels of the part of the image to write.</para>
+    </summary>
+  </member>
+  <member name="WICImageParameters.PixelHeight">
+    <summary>
+      <para>The height in pixels of the part of the image to write.</para>
+    </summary>
+  </member>
+</doc>

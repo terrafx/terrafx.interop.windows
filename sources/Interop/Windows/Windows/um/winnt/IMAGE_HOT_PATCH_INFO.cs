@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO"]/*' />
 public partial struct IMAGE_HOT_PATCH_INFO
 {
+    /// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO.SequenceNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint SequenceNumber;
 
+    /// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO.BaseImageList"]/*' />
     [NativeTypeName("DWORD")]
     public uint BaseImageList;
 
+    /// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO.BaseImageCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint BaseImageCount;
 
+    /// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO.BufferOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint BufferOffset;
 
+    /// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO.ExtraPatchSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExtraPatchSize;
 }

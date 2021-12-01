@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer"]/*' />
 [Guid("D5F56AFC-593B-101A-B569-08002B2DBF7A")]
 [NativeTypeName("struct IRpcStubBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
         return ((delegate* unmanaged<IRpcStubBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
         return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[1]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
         return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[2]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.Connect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Connect(IUnknown* pUnkServer)
@@ -46,6 +51,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
         return ((delegate* unmanaged<IRpcStubBuffer*, IUnknown*, int>)(lpVtbl[3]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), pUnkServer);
     }
 
+    /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.Disconnect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void Disconnect()
@@ -53,6 +59,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
         ((delegate* unmanaged<IRpcStubBuffer*, void>)(lpVtbl[4]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.Invoke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Invoke(RPCOLEMESSAGE* _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer)
@@ -60,6 +67,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
         return ((delegate* unmanaged<IRpcStubBuffer*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int>)(lpVtbl[5]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), _prpcmsg, _pRpcChannelBuffer);
     }
 
+    /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.IsIIDSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public IRpcStubBuffer* IsIIDSupported([NativeTypeName("const IID &")] Guid* riid)
@@ -67,6 +75,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
         return ((delegate* unmanaged<IRpcStubBuffer*, Guid*, IRpcStubBuffer*>)(lpVtbl[6]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), riid);
     }
 
+    /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.CountRefs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("ULONG")]
@@ -75,6 +84,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
         return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[7]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.DebugServerQueryInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT DebugServerQueryInterface(void** ppv)
@@ -82,6 +92,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
         return ((delegate* unmanaged<IRpcStubBuffer*, void**, int>)(lpVtbl[8]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), ppv);
     }
 
+    /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.DebugServerRelease"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public void DebugServerRelease(void* pv)

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DESIGNVECTOR.xml' path='doc/member[@name="DESIGNVECTOR"]/*' />
 public unsafe partial struct DESIGNVECTOR
 {
+    /// <include file='DESIGNVECTOR.xml' path='doc/member[@name="DESIGNVECTOR.dvReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dvReserved;
 
+    /// <include file='DESIGNVECTOR.xml' path='doc/member[@name="DESIGNVECTOR.dvNumAxes"]/*' />
     [NativeTypeName("DWORD")]
     public uint dvNumAxes;
 
+    /// <include file='DESIGNVECTOR.xml' path='doc/member[@name="DESIGNVECTOR.dvValues"]/*' />
     [NativeTypeName("LONG [16]")]
     public fixed int dvValues[16];
 }

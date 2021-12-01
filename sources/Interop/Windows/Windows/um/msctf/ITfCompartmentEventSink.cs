@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCompartmentEventSink.xml' path='doc/member[@name="ITfCompartmentEventSink"]/*' />
 [Guid("743ABD5F-F26D-48DF-8CC5-238492419B64")]
 [NativeTypeName("struct ITfCompartmentEventSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCompartmentEventSink : ITfCompartmentEventSink.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCompartmentEventSink : ITfCompartmentEventSink.I
         return ((delegate* unmanaged<ITfCompartmentEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCompartmentEventSink : ITfCompartmentEventSink.I
         return ((delegate* unmanaged<ITfCompartmentEventSink*, uint>)(lpVtbl[1]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCompartmentEventSink : ITfCompartmentEventSink.I
         return ((delegate* unmanaged<ITfCompartmentEventSink*, uint>)(lpVtbl[2]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCompartmentEventSink.xml' path='doc/member[@name="ITfCompartmentEventSink.OnChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnChange([NativeTypeName("const GUID &")] Guid* rguid)

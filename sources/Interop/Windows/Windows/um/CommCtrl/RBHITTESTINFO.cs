@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RBHITTESTINFO.xml' path='doc/member[@name="RBHITTESTINFO"]/*' />
 public partial struct RBHITTESTINFO
 {
+    /// <include file='RBHITTESTINFO.xml' path='doc/member[@name="RBHITTESTINFO.pt"]/*' />
     public POINT pt;
 
+    /// <include file='RBHITTESTINFO.xml' path='doc/member[@name="RBHITTESTINFO.flags"]/*' />
     public uint flags;
 
+    /// <include file='RBHITTESTINFO.xml' path='doc/member[@name="RBHITTESTINFO.iBand"]/*' />
     public int iBand;
 }

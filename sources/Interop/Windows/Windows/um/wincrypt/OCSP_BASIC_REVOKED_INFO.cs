@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OCSP_BASIC_REVOKED_INFO.xml' path='doc/member[@name="OCSP_BASIC_REVOKED_INFO"]/*' />
 public partial struct OCSP_BASIC_REVOKED_INFO
 {
+    /// <include file='OCSP_BASIC_REVOKED_INFO.xml' path='doc/member[@name="OCSP_BASIC_REVOKED_INFO.RevocationDate"]/*' />
     public FILETIME RevocationDate;
 
+    /// <include file='OCSP_BASIC_REVOKED_INFO.xml' path='doc/member[@name="OCSP_BASIC_REVOKED_INFO.dwCrlReasonCode"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCrlReasonCode;
 }

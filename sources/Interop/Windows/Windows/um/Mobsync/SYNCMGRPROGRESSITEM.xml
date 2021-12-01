@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGRPROGRESSITEM">
+    <summary>
+      <para>Provides status information while a synchronization is in progress. This structure is used with the <see cref="ISyncMgrSynchronizeCallback.Progress" /> method and corresponds to a single synchronization item.</para>
+    </summary>
+    <seealso cref="ISyncMgrSynchronizeCallback.Progress" />
+  </member>
+  <member name="SYNCMGRPROGRESSITEM.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRPROGRESSITEM.mask">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>Flags from the <see cref="SYNCMGRSTATUS" /> enumeration that specify which members of this structure are used.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRPROGRESSITEM.lpcStatusText">
+    <summary>
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Status text.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRPROGRESSITEM.dwStatusType">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>One of the values from the <see cref="SYNCMGRSTATUS" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRPROGRESSITEM.iProgValue">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>An integer that indicates the progress value.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRPROGRESSITEM.iMaxValue">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>An integer that indicates the maximum progress value.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSIADVERTISEOPTIONFLAGS.xml' path='doc/member[@name="MSIADVERTISEOPTIONFLAGS"]/*' />
 public enum MSIADVERTISEOPTIONFLAGS
 {
+    /// <include file='MSIADVERTISEOPTIONFLAGS.xml' path='doc/member[@name="MSIADVERTISEOPTIONFLAGS.MSIADVERTISEOPTIONFLAGS_INSTANCE"]/*' />
     MSIADVERTISEOPTIONFLAGS_INSTANCE = 0x00000001,
 }

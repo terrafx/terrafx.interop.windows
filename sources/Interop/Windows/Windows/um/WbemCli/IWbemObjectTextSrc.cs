@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemObjectTextSrc.xml' path='doc/member[@name="IWbemObjectTextSrc"]/*' />
 [Guid("BFBF883A-CAD7-11D3-A11B-00105A1F515A")]
 [NativeTypeName("struct IWbemObjectTextSrc : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemObjectTextSrc : IWbemObjectTextSrc.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemObjectTextSrc : IWbemObjectTextSrc.Interface
         return ((delegate* unmanaged<IWbemObjectTextSrc*, Guid*, void**, int>)(lpVtbl[0]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemObjectTextSrc : IWbemObjectTextSrc.Interface
         return ((delegate* unmanaged<IWbemObjectTextSrc*, uint>)(lpVtbl[1]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemObjectTextSrc : IWbemObjectTextSrc.Interface
         return ((delegate* unmanaged<IWbemObjectTextSrc*, uint>)(lpVtbl[2]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWbemObjectTextSrc.xml' path='doc/member[@name="IWbemObjectTextSrc.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetText([NativeTypeName("long")] int lFlags, IWbemClassObject* pObj, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, [NativeTypeName("BSTR *")] ushort** strText)
@@ -46,6 +51,7 @@ public unsafe partial struct IWbemObjectTextSrc : IWbemObjectTextSrc.Interface
         return ((delegate* unmanaged<IWbemObjectTextSrc*, int, IWbemClassObject*, uint, IWbemContext*, ushort**, int>)(lpVtbl[3]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this), lFlags, pObj, uObjTextFormat, pCtx, strText);
     }
 
+    /// <include file='IWbemObjectTextSrc.xml' path='doc/member[@name="IWbemObjectTextSrc.CreateFromText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateFromText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR")] ushort* strText, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj)

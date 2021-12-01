@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_DEFAULT_WINDOWS_INTEGRATED_AUTH_CREDENTIAL.xml' path='doc/member[@name="WS_DEFAULT_WINDOWS_INTEGRATED_AUTH_CREDENTIAL"]/*' />
 public partial struct WS_DEFAULT_WINDOWS_INTEGRATED_AUTH_CREDENTIAL
 {
+    /// <include file='WS_DEFAULT_WINDOWS_INTEGRATED_AUTH_CREDENTIAL.xml' path='doc/member[@name="WS_DEFAULT_WINDOWS_INTEGRATED_AUTH_CREDENTIAL.credential"]/*' />
     public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL credential;
 }

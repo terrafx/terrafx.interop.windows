@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BoolValue.xml' path='doc/member[@name="BoolValue"]/*' />
 public enum BoolValue
 {
+    /// <include file='BoolValue.xml' path='doc/member[@name="BoolValue.True"]/*' />
     True = 1,
+
+    /// <include file='BoolValue.xml' path='doc/member[@name="BoolValue.False"]/*' />
     False = 0,
+
+    /// <include file='BoolValue.xml' path='doc/member[@name="BoolValue.BoolValue_Max"]/*' />
     BoolValue_Max = 2147483647,
 }

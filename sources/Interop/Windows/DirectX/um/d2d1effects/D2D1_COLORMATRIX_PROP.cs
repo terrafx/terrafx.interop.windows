@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_COLORMATRIX_PROP.xml' path='doc/member[@name="D2D1_COLORMATRIX_PROP"]/*' />
 public enum D2D1_COLORMATRIX_PROP : uint
 {
+    /// <include file='D2D1_COLORMATRIX_PROP.xml' path='doc/member[@name="D2D1_COLORMATRIX_PROP.D2D1_COLORMATRIX_PROP_COLOR_MATRIX"]/*' />
     D2D1_COLORMATRIX_PROP_COLOR_MATRIX = 0,
+
+    /// <include file='D2D1_COLORMATRIX_PROP.xml' path='doc/member[@name="D2D1_COLORMATRIX_PROP.D2D1_COLORMATRIX_PROP_ALPHA_MODE"]/*' />
     D2D1_COLORMATRIX_PROP_ALPHA_MODE = 1,
+
+    /// <include file='D2D1_COLORMATRIX_PROP.xml' path='doc/member[@name="D2D1_COLORMATRIX_PROP.D2D1_COLORMATRIX_PROP_CLAMP_OUTPUT"]/*' />
     D2D1_COLORMATRIX_PROP_CLAMP_OUTPUT = 2,
+
+    /// <include file='D2D1_COLORMATRIX_PROP.xml' path='doc/member[@name="D2D1_COLORMATRIX_PROP.D2D1_COLORMATRIX_PROP_FORCE_DWORD"]/*' />
     D2D1_COLORMATRIX_PROP_FORCE_DWORD = 0xffffffff,
 }

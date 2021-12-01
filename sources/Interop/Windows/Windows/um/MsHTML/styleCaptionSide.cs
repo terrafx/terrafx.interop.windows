@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleCaptionSide.xml' path='doc/member[@name="styleCaptionSide"]/*' />
 public enum styleCaptionSide
 {
+    /// <include file='styleCaptionSide.xml' path='doc/member[@name="styleCaptionSide.styleCaptionSideNotSet"]/*' />
     styleCaptionSideNotSet = 0,
+
+    /// <include file='styleCaptionSide.xml' path='doc/member[@name="styleCaptionSide.styleCaptionSideTop"]/*' />
     styleCaptionSideTop = 1,
+
+    /// <include file='styleCaptionSide.xml' path='doc/member[@name="styleCaptionSide.styleCaptionSideBottom"]/*' />
     styleCaptionSideBottom = 2,
+
+    /// <include file='styleCaptionSide.xml' path='doc/member[@name="styleCaptionSide.styleCaptionSideLeft"]/*' />
     styleCaptionSideLeft = 3,
+
+    /// <include file='styleCaptionSide.xml' path='doc/member[@name="styleCaptionSide.styleCaptionSideRight"]/*' />
     styleCaptionSideRight = 4,
+
+    /// <include file='styleCaptionSide.xml' path='doc/member[@name="styleCaptionSide.styleCaptionSide_Max"]/*' />
     styleCaptionSide_Max = 2147483647,
 }

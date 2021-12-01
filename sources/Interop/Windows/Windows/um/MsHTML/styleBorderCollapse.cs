@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBorderCollapse.xml' path='doc/member[@name="styleBorderCollapse"]/*' />
 public enum styleBorderCollapse
 {
+    /// <include file='styleBorderCollapse.xml' path='doc/member[@name="styleBorderCollapse.styleBorderCollapseNotSet"]/*' />
     styleBorderCollapseNotSet = 0,
+
+    /// <include file='styleBorderCollapse.xml' path='doc/member[@name="styleBorderCollapse.styleBorderCollapseSeparate"]/*' />
     styleBorderCollapseSeparate = 1,
+
+    /// <include file='styleBorderCollapse.xml' path='doc/member[@name="styleBorderCollapse.styleBorderCollapseCollapse"]/*' />
     styleBorderCollapseCollapse = 2,
+
+    /// <include file='styleBorderCollapse.xml' path='doc/member[@name="styleBorderCollapse.styleBorderCollapse_Max"]/*' />
     styleBorderCollapse_Max = 2147483647,
 }

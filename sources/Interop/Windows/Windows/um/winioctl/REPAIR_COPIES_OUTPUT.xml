@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="REPAIR_COPIES_OUTPUT">
+    <summary>
+      <para>Contains output of a repair copies operation returned from the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_repair_copies">FSCTL_REPAIR_COPIES</a> control code.</para>
+    </summary>
+  </member>
+  <member name="REPAIR_COPIES_OUTPUT.Size">
+    <summary>
+      <para>Set to <code>sizeof(REPAIR_COPIES_OUTPUT)</code>.</para>
+    </summary>
+  </member>
+  <member name="REPAIR_COPIES_OUTPUT.Status">
+    <summary>
+      <para>Indicates the status of the repair operation. The value is a <b>NTSTATUS</b> value.
+See
+<a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55">http://msdn.microsoft.com/en-us/library/cc704588(PROT.10).aspx</a></para>
+      <para>for a list of <b>NTSTATUS</b> values.</para>
+    </summary>
+  </member>
+  <member name="REPAIR_COPIES_OUTPUT.ResumeFileOffset">
+    <summary>
+      <para>If the <b>Status</b> member indicates the operation was not successful, this is the
+file offset to use to resume repair operations, skipping the range where errors were found.</para>
+    </summary>
+  </member>
+</doc>

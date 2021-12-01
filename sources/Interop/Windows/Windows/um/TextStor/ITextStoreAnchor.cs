@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor"]/*' />
 [Guid("9B2077B0-5F18-4DEC-BEE9-3CC722F5DFE0")]
 [NativeTypeName("struct ITextStoreAnchor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint>)(lpVtbl[1]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint>)(lpVtbl[2]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.AdviseSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AdviseSink([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk, [NativeTypeName("DWORD")] uint dwMask)
@@ -46,6 +51,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, Guid*, IUnknown*, uint, int>)(lpVtbl[3]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), riid, punk, dwMask);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.UnadviseSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnadviseSink(IUnknown* punk)
@@ -53,6 +59,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, IUnknown*, int>)(lpVtbl[4]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.RequestLock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RequestLock([NativeTypeName("DWORD")] uint dwLockFlags, HRESULT* phrSession)
@@ -60,6 +67,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, HRESULT*, int>)(lpVtbl[5]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwLockFlags, phrSession);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetStatus(TS_STATUS* pdcs)
@@ -67,6 +75,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, TS_STATUS*, int>)(lpVtbl[6]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pdcs);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.QueryInsert"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT QueryInsert(IAnchor* paTestStart, IAnchor* paTestEnd, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaResultStart, IAnchor** ppaResultEnd)
@@ -74,6 +83,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, IAnchor*, uint, IAnchor**, IAnchor**, int>)(lpVtbl[7]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paTestStart, paTestEnd, cch, ppaResultStart, ppaResultEnd);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetSelection([NativeTypeName("ULONG")] uint ulIndex, [NativeTypeName("ULONG")] uint ulCount, TS_SELECTION_ANCHOR* pSelection, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -81,6 +91,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, uint, TS_SELECTION_ANCHOR*, uint*, int>)(lpVtbl[8]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ulIndex, ulCount, pSelection, pcFetched);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.SetSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetSelection([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const TS_SELECTION_ANCHOR *")] TS_SELECTION_ANCHOR* pSelection)
@@ -88,6 +99,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, TS_SELECTION_ANCHOR*, int>)(lpVtbl[9]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ulCount, pSelection);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor)
@@ -95,6 +107,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, ushort*, uint, uint*, BOOL, int>)(lpVtbl[10]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cchReq, pcch, fUpdateAnchor);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.SetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch)
@@ -102,6 +115,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, ushort*, uint, int>)(lpVtbl[11]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cch);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetFormattedText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetFormattedText(IAnchor* paStart, IAnchor* paEnd, IDataObject** ppDataObject)
@@ -109,6 +123,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, IAnchor*, IDataObject**, int>)(lpVtbl[12]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paStart, paEnd, ppDataObject);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetEmbedded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetEmbedded([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paPos, [NativeTypeName("const GUID &")] Guid* rguidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
@@ -116,6 +131,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, Guid*, Guid*, IUnknown**, int>)(lpVtbl[13]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paPos, rguidService, riid, ppunk);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.InsertEmbedded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT InsertEmbedded([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, IDataObject* pDataObject)
@@ -123,6 +139,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, IDataObject*, int>)(lpVtbl[14]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pDataObject);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.RequestSupportedAttrs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT RequestSupportedAttrs([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs)
@@ -130,6 +147,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, uint, Guid*, int>)(lpVtbl[15]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, cFilterAttrs, paFilterAttrs);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.RequestAttrsAtPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT RequestAttrsAtPosition(IAnchor* paPos, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags)
@@ -137,6 +155,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, uint, Guid*, uint, int>)(lpVtbl[16]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paPos, cFilterAttrs, paFilterAttrs, dwFlags);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.RequestAttrsTransitioningAtPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT RequestAttrsTransitioningAtPosition(IAnchor* paPos, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags)
@@ -144,6 +163,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, uint, Guid*, uint, int>)(lpVtbl[17]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paPos, cFilterAttrs, paFilterAttrs, dwFlags);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.FindNextAttrTransition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT FindNextAttrTransition(IAnchor* paStart, IAnchor* paHalt, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags, BOOL* pfFound, [NativeTypeName("LONG *")] int* plFoundOffset)
@@ -151,6 +171,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, IAnchor*, uint, Guid*, uint, BOOL*, int*, int>)(lpVtbl[18]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paStart, paHalt, cFilterAttrs, paFilterAttrs, dwFlags, pfFound, plFoundOffset);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.RetrieveRequestedAttrs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT RetrieveRequestedAttrs([NativeTypeName("ULONG")] uint ulCount, TS_ATTRVAL* paAttrVals, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -158,6 +179,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, TS_ATTRVAL*, uint*, int>)(lpVtbl[19]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ulCount, paAttrVals, pcFetched);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetStart(IAnchor** ppaStart)
@@ -165,6 +187,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor**, int>)(lpVtbl[20]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ppaStart);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetEnd(IAnchor** ppaEnd)
@@ -172,6 +195,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor**, int>)(lpVtbl[21]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ppaEnd);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetActiveView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetActiveView([NativeTypeName("TsViewCookie *")] uint* pvcView)
@@ -179,6 +203,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint*, int>)(lpVtbl[22]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pvcView);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetAnchorFromPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT GetAnchorFromPoint([NativeTypeName("TsViewCookie")] uint vcView, [NativeTypeName("const POINT *")] POINT* ptScreen, [NativeTypeName("DWORD")] uint dwFlags, IAnchor** ppaSite)
@@ -186,6 +211,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, POINT*, uint, IAnchor**, int>)(lpVtbl[23]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, ptScreen, dwFlags, ppaSite);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetTextExt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT GetTextExt([NativeTypeName("TsViewCookie")] uint vcView, IAnchor* paStart, IAnchor* paEnd, RECT* prc, BOOL* pfClipped)
@@ -193,6 +219,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, RECT*, BOOL*, int>)(lpVtbl[24]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, paStart, paEnd, prc, pfClipped);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetScreenExt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT GetScreenExt([NativeTypeName("TsViewCookie")] uint vcView, RECT* prc)
@@ -200,6 +227,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, RECT*, int>)(lpVtbl[25]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, prc);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetWnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT GetWnd([NativeTypeName("TsViewCookie")] uint vcView, HWND* phwnd)
@@ -207,6 +235,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, HWND*, int>)(lpVtbl[26]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, phwnd);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.QueryInsertEmbedded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, BOOL* pfInsertable)
@@ -214,6 +243,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, Guid*, FORMATETC*, BOOL*, int>)(lpVtbl[27]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pguidService, pFormatEtc, pfInsertable);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.InsertTextAtSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaStart, IAnchor** ppaEnd)
@@ -221,6 +251,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
         return ((delegate* unmanaged<ITextStoreAnchor*, uint, ushort*, uint, IAnchor**, IAnchor**, int>)(lpVtbl[28]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, pchText, cch, ppaStart, ppaEnd);
     }
 
+    /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.InsertEmbeddedAtSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT InsertEmbeddedAtSelection([NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, IAnchor** ppaStart, IAnchor** ppaEnd)

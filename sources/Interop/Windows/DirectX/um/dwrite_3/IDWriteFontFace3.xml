@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontFace3.AreCharactersLocal">
+    <summary>
+      <para>Determines whether the specified characters are local.</para>
+    </summary>
+    <param name="characters">
+      <para>Type: <b>WCHAR</b></para>
+      <para>Array of characters.</para>
+    </param>
+    <param name="characterCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of elements in the character array.</para>
+    </param>
+    <param name="enqueueIfNotLocal">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether to enqueue a download request
+if any of the specified characters are not local.</para>
+    </param>
+    <param name="isLocal">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Receives TRUE if all of the specified characters are local,
+FALSE if any of the specified characters are remote.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.AreGlyphsLocal">
+    <summary>
+      <para>Determines whether the specified glyphs are local.</para>
+    </summary>
+    <param name="glyphIndices">
+      <para>Type: <b>UINT16</b></para>
+      <para>Array of glyph indices.</para>
+    </param>
+    <param name="glyphCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of elements in the glyph index array.</para>
+    </param>
+    <param name="enqueueIfNotLocal">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether to enqueue a download request
+if any of the specified glyphs are not local.</para>
+    </param>
+    <param name="isLocal">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Receives TRUE if all of the specified glyphs are local,
+FALSE if any of the specified glyphs are remote.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.GetFaceNames">
+    <summary>
+      <para>Creates a localized strings object that contains the face names for the font (for example, Regular or Bold), indexed by locale name.</para>
+    </summary>
+    <param name="names">
+      <para>Type: <b><see cref="IDWriteLocalizedStrings" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="IDWriteLocalizedStrings" /> interface for the newly created localized strings object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.GetFamilyNames">
+    <summary>
+      <para>Creates a localized strings object that contains the family names for the font family, indexed by locale name.</para>
+    </summary>
+    <param name="names">
+      <para>Type: <b><see cref="IDWriteLocalizedStrings" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="IDWriteLocalizedStrings" /> interface for the newly created localized strings object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.GetFontFaceReference">
+    <summary>
+      <para>Gets a font face reference that identifies this font.</para>
+    </summary>
+    <param name="fontFaceReference">
+      <para>Type: <b><see cref="IDWriteFontFaceReference" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="IDWriteFontFaceReference" /> interface for the newly created font face reference object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.GetInformationalStrings">
+    <summary>
+      <para>Gets a localized strings collection that contains the specified informational strings, indexed by locale name.</para>
+    </summary>
+    <param name="informationalStringID">
+      <para>Type: <b><see cref="DWRITE_INFORMATIONAL_STRING_ID" /></b></para>
+      <para>A <see cref="DWRITE_INFORMATIONAL_STRING_ID" />-typed value that identifies the strings to get.</para>
+    </param>
+    <param name="informationalStrings">
+      <para>Type: <b><see cref="IDWriteLocalizedStrings" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to a <see cref="IDWriteLocalizedStrings" /> interface for the newly created localized strings object.</para>
+    </param>
+    <param name="exists">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a variable that receives whether the font contains the specified string ID. <b>TRUE</b> if the font contains the specified string ID; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the font doesn't contain the specified string, the return value is S_OK, but <i>informationalStrings</i> receives a <b>NULL</b> pointer and <i>exists</i> receives the value <b>FALSE</b>.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.GetPanose">
+    <summary>
+      <para>Gets the PANOSE values from the font, used for font selection and matching.</para>
+    </summary>
+    <param name="panose">
+      <para>Type: <b><see cref="DWRITE_PANOSE" />*</b></para>
+      <para>A pointer to a <see cref="DWRITE_PANOSE" /> structure that receives the PANOSE values from the font.</para>
+    </param>
+    <remarks>
+      <para>This method doesn't simulate these values, such as substituting a weight or proportion inferred on other values. If the font doesn't specify them, they are all set to 'any' (0).</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.GetRecommendedRenderingMode">
+    <summary>
+      <para>Determines the recommended text rendering and grid-fit mode to be used based on the font, size, world transform, and measuring mode.</para>
+    </summary>
+    <param name="fontEmSize">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Logical font size in DIPs.</para>
+    </param>
+    <param name="dpiX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Number of pixels per logical inch in the horizontal direction.</para>
+    </param>
+    <param name="dpiY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Number of pixels per logical inch in the vertical direction.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b>const <see cref="DWRITE_MATRIX" />*</b></para>
+      <para>A <see cref="DWRITE_MATRIX" /> structure that describes the world transform.</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether the font is sideways. <b>TRUE</b> if the font is sideways; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <param name="outlineThreshold">
+      <para>Type: <b><see cref="DWRITE_OUTLINE_THRESHOLD" /></b></para>
+      <para>A <see cref="DWRITE_OUTLINE_THRESHOLD" />-typed value that specifies the quality of the graphics system's outline rendering, affects the size threshold above which outline rendering is used.</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>A <see cref="DWRITE_MEASURING_MODE" />-typed value that specifies  the method used to measure during text layout. For proper glyph spacing, this method returns a rendering mode that is compatible with the specified measuring mode.</para>
+    </param>
+    <param name="renderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams" />*</b></para>
+      <para>A pointer to a <see cref="IDWriteRenderingParams" /> interface for the rendering parameters object. This parameter is necessary in case the rendering parameters object overrides the rendering mode.</para>
+    </param>
+    <param name="renderingMode">
+      <para>Type: <b><see cref="DWRITE_RENDERING_MODE1" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="DWRITE_RENDERING_MODE1" />-typed value for the recommended rendering mode.</para>
+    </param>
+    <param name="gridFitMode">
+      <para>Type: <b><see cref="DWRITE_GRID_FIT_MODE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="DWRITE_GRID_FIT_MODE" />-typed value for the recommended grid-fit mode.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.GetStretch">
+    <summary>
+      <para>Gets the stretch (also known as width) of this font.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_STRETCH" /></b></para>
+      <para>Returns a <see cref="DWRITE_FONT_STRETCH" />-typed value that specifies the degree to which a font has been stretched compared to a font's normal aspect ratio.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.GetStyle">
+    <summary>
+      <para>Gets the style (also known as slope) of this font.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_STYLE" /></b></para>
+      <para>Returns a <see cref="DWRITE_FONT_STYLE" />-typed value that specifies the style of the font.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.GetWeight">
+    <summary>
+      <para>Gets the weight of this font.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_WEIGHT" /></b></para>
+      <para>Returns a <see cref="DWRITE_FONT_WEIGHT" />-typed value that specifies the density of a typeface, in terms of the lightness or heaviness of the strokes.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.HasCharacter">
+    <summary>
+      <para>Determines whether the font supports the specified character.</para>
+    </summary>
+    <param name="unicodeValue">
+      <para>Type: <b>UINT32</b></para>
+      <para>A Unicode (UCS-4) character value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns whether the font supports the specified character. Returns <b>TRUE</b> if the font has the specified character; otherwise, <b>FALSE</b>.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.IsCharacterLocal">
+    <summary>
+      <para>Determines whether the character is locally downloaded from the font.</para>
+    </summary>
+    <param name="unicodeValue">
+      <para>Type: <b>UINT32</b></para>
+      <para>A Unicode (UCS-4) character value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns <b>TRUE</b> if the font has the specified character locally available,
+<b>FALSE</b> if not or if the font does not support that character.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3.IsGlyphLocal">
+    <summary>
+      <para>Determines whether the glyph is locally downloaded from the font.</para>
+    </summary>
+    <param name="glyphId">
+      <para>Type: <b>UINT16</b></para>
+      <para>Glyph identifier.</para>
+    </param>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns TRUE if the font has the specified glyph locally available.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace3" />
+  </member>
+  <member name="IDWriteFontFace3">
+    <summary>
+      <para>Represents an absolute reference to a font face. This interface contains font face type, appropriate file references, and face identification data.</para>
+      <para>This interface extends <see cref="IDWriteFontFace2" />. Various font data such as metrics, names, and glyph outlines are obtained from <b>IDWriteFontFace</b>.</para>
+    </summary>
+    <seealso cref="IDWriteFontFace2" />
+  </member>
+</doc>

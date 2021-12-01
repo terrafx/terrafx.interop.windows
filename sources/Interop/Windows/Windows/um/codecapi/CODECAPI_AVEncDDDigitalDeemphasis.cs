@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncDDDigitalDeemphasis.xml' path='doc/member[@name="CODECAPI_AVEncDDDigitalDeemphasis"]/*' />
 [Guid("E024A2C2-947C-45AC-87D8-F1030C5C0082")]
 public partial struct CODECAPI_AVEncDDDigitalDeemphasis
 {

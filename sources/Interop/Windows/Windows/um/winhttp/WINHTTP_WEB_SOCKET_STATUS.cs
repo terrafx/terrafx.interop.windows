@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINHTTP_WEB_SOCKET_STATUS.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_STATUS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct WINHTTP_WEB_SOCKET_STATUS
 {
+    /// <include file='WINHTTP_WEB_SOCKET_STATUS.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_STATUS.dwBytesTransferred"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBytesTransferred;
 
+    /// <include file='WINHTTP_WEB_SOCKET_STATUS.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_STATUS.eBufferType"]/*' />
     public WINHTTP_WEB_SOCKET_BUFFER_TYPE eBufferType;
 }

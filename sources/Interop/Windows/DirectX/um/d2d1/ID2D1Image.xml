@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1Image">
+    <summary>
+      <para>Represents a producer of pixels that can fill an arbitrary 2D plane.</para>
+    </summary>
+    <remarks>
+      <para>An <b>ID2D1Image</b> is abstract.  Concrete instances can be created through <see cref="ID2D1DeviceContext.CreateEffect" /> and <see cref="ID2D1DeviceContext.CreateBitmap" />.</para>
+      <para>Images are evaluated lazily. If the type of image passed in is concrete, then the image can be directly sampled from. Other images can act only as a source of pixels and can produce content only as a result of calling <see cref="ID2D1DeviceContext.DrawImage" />.</para>
+    </remarks>
+    <seealso cref="ID2D1Bitmap" />
+    <seealso cref="ID2D1DeviceContext" />
+    <seealso cref="ID2D1Effect" />
+    <seealso cref="ID2D1Resource" />
+    <seealso cref="IWICBitmapEncoder" />
+  </member>
+</doc>

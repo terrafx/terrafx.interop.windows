@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMPACodingMode.xml' path='doc/member[@name="eAVEncMPACodingMode"]/*' />
 public enum eAVEncMPACodingMode
 {
+    /// <include file='eAVEncMPACodingMode.xml' path='doc/member[@name="eAVEncMPACodingMode.eAVEncMPACodingMode_Mono"]/*' />
     eAVEncMPACodingMode_Mono = 0,
+
+    /// <include file='eAVEncMPACodingMode.xml' path='doc/member[@name="eAVEncMPACodingMode.eAVEncMPACodingMode_Stereo"]/*' />
     eAVEncMPACodingMode_Stereo = 1,
+
+    /// <include file='eAVEncMPACodingMode.xml' path='doc/member[@name="eAVEncMPACodingMode.eAVEncMPACodingMode_DualChannel"]/*' />
     eAVEncMPACodingMode_DualChannel = 2,
+
+    /// <include file='eAVEncMPACodingMode.xml' path='doc/member[@name="eAVEncMPACodingMode.eAVEncMPACodingMode_JointStereo"]/*' />
     eAVEncMPACodingMode_JointStereo = 3,
+
+    /// <include file='eAVEncMPACodingMode.xml' path='doc/member[@name="eAVEncMPACodingMode.eAVEncMPACodingMode_Surround"]/*' />
     eAVEncMPACodingMode_Surround = 4,
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleFlexBasis.xml' path='doc/member[@name="styleFlexBasis"]/*' />
 public enum styleFlexBasis
 {
+    /// <include file='styleFlexBasis.xml' path='doc/member[@name="styleFlexBasis.styleFlexBasisAuto"]/*' />
     styleFlexBasisAuto = 0,
+
+    /// <include file='styleFlexBasis.xml' path='doc/member[@name="styleFlexBasis.styleFlexBasisNotSet"]/*' />
     styleFlexBasisNotSet = 1,
+
+    /// <include file='styleFlexBasis.xml' path='doc/member[@name="styleFlexBasis.styleFlexBasis_Max"]/*' />
     styleFlexBasis_Max = 2147483647,
 }

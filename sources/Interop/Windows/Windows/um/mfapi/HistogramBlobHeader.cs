@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HistogramBlobHeader.xml' path='doc/member[@name="HistogramBlobHeader"]/*' />
 public partial struct HistogramBlobHeader
 {
+    /// <include file='HistogramBlobHeader.xml' path='doc/member[@name="HistogramBlobHeader.Size"]/*' />
     [NativeTypeName("ULONG")]
     public uint Size;
 
+    /// <include file='HistogramBlobHeader.xml' path='doc/member[@name="HistogramBlobHeader.Histograms"]/*' />
     [NativeTypeName("ULONG")]
     public uint Histograms;
 }

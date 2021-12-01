@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_SIGNED_CONTENT_INFO.xml' path='doc/member[@name="CERT_SIGNED_CONTENT_INFO"]/*' />
 public partial struct CERT_SIGNED_CONTENT_INFO
 {
+    /// <include file='CERT_SIGNED_CONTENT_INFO.xml' path='doc/member[@name="CERT_SIGNED_CONTENT_INFO.ToBeSigned"]/*' />
     [NativeTypeName("CRYPT_DER_BLOB")]
     public CRYPT_DATA_BLOB ToBeSigned;
 
+    /// <include file='CERT_SIGNED_CONTENT_INFO.xml' path='doc/member[@name="CERT_SIGNED_CONTENT_INFO.SignatureAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER SignatureAlgorithm;
 
+    /// <include file='CERT_SIGNED_CONTENT_INFO.xml' path='doc/member[@name="CERT_SIGNED_CONTENT_INFO.Signature"]/*' />
     public CRYPT_BIT_BLOB Signature;
 }

@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_RTO_ALGORITHM.xml' path='doc/member[@name="TCP_RTO_ALGORITHM"]/*' />
 public enum TCP_RTO_ALGORITHM
 {
+    /// <include file='TCP_RTO_ALGORITHM.xml' path='doc/member[@name="TCP_RTO_ALGORITHM.TcpRtoAlgorithmOther"]/*' />
     TcpRtoAlgorithmOther = 1,
+
+    /// <include file='TCP_RTO_ALGORITHM.xml' path='doc/member[@name="TCP_RTO_ALGORITHM.TcpRtoAlgorithmConstant"]/*' />
     TcpRtoAlgorithmConstant,
+
+    /// <include file='TCP_RTO_ALGORITHM.xml' path='doc/member[@name="TCP_RTO_ALGORITHM.TcpRtoAlgorithmRsre"]/*' />
     TcpRtoAlgorithmRsre,
+
+    /// <include file='TCP_RTO_ALGORITHM.xml' path='doc/member[@name="TCP_RTO_ALGORITHM.TcpRtoAlgorithmVanj"]/*' />
     TcpRtoAlgorithmVanj,
+
+    /// <include file='TCP_RTO_ALGORITHM.xml' path='doc/member[@name="TCP_RTO_ALGORITHM.MIB_TCP_RTO_OTHER"]/*' />
     MIB_TCP_RTO_OTHER = 1,
+
+    /// <include file='TCP_RTO_ALGORITHM.xml' path='doc/member[@name="TCP_RTO_ALGORITHM.MIB_TCP_RTO_CONSTANT"]/*' />
     MIB_TCP_RTO_CONSTANT = 2,
+
+    /// <include file='TCP_RTO_ALGORITHM.xml' path='doc/member[@name="TCP_RTO_ALGORITHM.MIB_TCP_RTO_RSRE"]/*' />
     MIB_TCP_RTO_RSRE = 3,
+
+    /// <include file='TCP_RTO_ALGORITHM.xml' path='doc/member[@name="TCP_RTO_ALGORITHM.MIB_TCP_RTO_VANJ"]/*' />
     MIB_TCP_RTO_VANJ = 4,
 }

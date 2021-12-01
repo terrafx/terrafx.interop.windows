@@ -5,22 +5,29 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DHPRIVKEY_VER3.xml' path='doc/member[@name="DHPRIVKEY_VER3"]/*' />
 public partial struct DHPRIVKEY_VER3
 {
+    /// <include file='DHPRIVKEY_VER3.xml' path='doc/member[@name="DHPRIVKEY_VER3.magic"]/*' />
     [NativeTypeName("DWORD")]
     public uint magic;
 
+    /// <include file='DHPRIVKEY_VER3.xml' path='doc/member[@name="DHPRIVKEY_VER3.bitlenP"]/*' />
     [NativeTypeName("DWORD")]
     public uint bitlenP;
 
+    /// <include file='DHPRIVKEY_VER3.xml' path='doc/member[@name="DHPRIVKEY_VER3.bitlenQ"]/*' />
     [NativeTypeName("DWORD")]
     public uint bitlenQ;
 
+    /// <include file='DHPRIVKEY_VER3.xml' path='doc/member[@name="DHPRIVKEY_VER3.bitlenJ"]/*' />
     [NativeTypeName("DWORD")]
     public uint bitlenJ;
 
+    /// <include file='DHPRIVKEY_VER3.xml' path='doc/member[@name="DHPRIVKEY_VER3.bitlenX"]/*' />
     [NativeTypeName("DWORD")]
     public uint bitlenX;
 
+    /// <include file='DHPRIVKEY_VER3.xml' path='doc/member[@name="DHPRIVKEY_VER3.DSSSeed"]/*' />
     public DSSSEED DSSSeed;
 }

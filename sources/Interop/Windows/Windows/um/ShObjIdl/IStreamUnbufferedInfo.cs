@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IStreamUnbufferedInfo.xml' path='doc/member[@name="IStreamUnbufferedInfo"]/*' />
 [Guid("8A68FDDA-1FDC-4C20-8CEB-416643B5A625")]
 [NativeTypeName("struct IStreamUnbufferedInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IStreamUnbufferedInfo : IStreamUnbufferedInfo.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IStreamUnbufferedInfo : IStreamUnbufferedInfo.Inter
         return ((delegate* unmanaged<IStreamUnbufferedInfo*, Guid*, void**, int>)(lpVtbl[0]))((IStreamUnbufferedInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IStreamUnbufferedInfo : IStreamUnbufferedInfo.Inter
         return ((delegate* unmanaged<IStreamUnbufferedInfo*, uint>)(lpVtbl[1]))((IStreamUnbufferedInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IStreamUnbufferedInfo : IStreamUnbufferedInfo.Inter
         return ((delegate* unmanaged<IStreamUnbufferedInfo*, uint>)(lpVtbl[2]))((IStreamUnbufferedInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IStreamUnbufferedInfo.xml' path='doc/member[@name="IStreamUnbufferedInfo.GetSectorSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSectorSize([NativeTypeName("ULONG *")] uint* pcbSectorSize)

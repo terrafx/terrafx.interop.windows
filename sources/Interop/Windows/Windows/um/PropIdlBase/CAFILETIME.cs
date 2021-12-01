@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAFILETIME.xml' path='doc/member[@name="CAFILETIME"]/*' />
 public unsafe partial struct CAFILETIME
 {
+    /// <include file='CAFILETIME.xml' path='doc/member[@name="CAFILETIME.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CAFILETIME.xml' path='doc/member[@name="CAFILETIME.pElems"]/*' />
     public FILETIME* pElems;
 }

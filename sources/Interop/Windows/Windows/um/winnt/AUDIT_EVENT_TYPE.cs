@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUDIT_EVENT_TYPE.xml' path='doc/member[@name="AUDIT_EVENT_TYPE"]/*' />
 public enum AUDIT_EVENT_TYPE
 {
+    /// <include file='AUDIT_EVENT_TYPE.xml' path='doc/member[@name="AUDIT_EVENT_TYPE.AuditEventObjectAccess"]/*' />
     AuditEventObjectAccess,
+
+    /// <include file='AUDIT_EVENT_TYPE.xml' path='doc/member[@name="AUDIT_EVENT_TYPE.AuditEventDirectoryServiceAccess"]/*' />
     AuditEventDirectoryServiceAccess,
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SearchFolderItemFactory.xml' path='doc/member[@name="SearchFolderItemFactory"]/*' />
 [Guid("14010E02-BBBD-41F0-88E3-EDA371216584")]
 public partial struct SearchFolderItemFactory
 {

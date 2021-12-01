@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WTS_CACHEFLAGS.xml' path='doc/member[@name="WTS_CACHEFLAGS"]/*' />
 public enum WTS_CACHEFLAGS
 {
+    /// <include file='WTS_CACHEFLAGS.xml' path='doc/member[@name="WTS_CACHEFLAGS.WTS_DEFAULT"]/*' />
     WTS_DEFAULT = 0,
+
+    /// <include file='WTS_CACHEFLAGS.xml' path='doc/member[@name="WTS_CACHEFLAGS.WTS_LOWQUALITY"]/*' />
     WTS_LOWQUALITY = 0x1,
+
+    /// <include file='WTS_CACHEFLAGS.xml' path='doc/member[@name="WTS_CACHEFLAGS.WTS_CACHED"]/*' />
     WTS_CACHED = 0x2,
 }

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CYPHER_BLOCK">
+    <summary>
+      <para>The <b>CYPHER_BLOCK</b> is the basic unit of storage for the one-way function (OWF) password hashes.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/mschap/ms-chap-password-management-structures">MS-CHAP Password Management Structures</seealso>
+  </member>
+  <member name="CYPHER_BLOCK.data">
+    <summary>
+      <para>An array of CHAR used to store the password hashes and cipher text passed by the MS-CHAP password management API.</para>
+    </summary>
+  </member>
+</doc>

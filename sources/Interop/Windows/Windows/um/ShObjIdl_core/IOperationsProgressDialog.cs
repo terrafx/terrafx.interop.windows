@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog"]/*' />
 [Guid("0C9FB851-E5C9-43EB-A370-F0677B13874C")]
 [NativeTypeName("struct IOperationsProgressDialog : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, Guid*, void**, int>)(lpVtbl[0]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, uint>)(lpVtbl[1]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, uint>)(lpVtbl[2]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.StartProgressDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT StartProgressDialog(HWND hwndOwner, [NativeTypeName("OPPROGDLGF")] uint flags)
@@ -46,6 +51,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, HWND, uint, int>)(lpVtbl[3]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), hwndOwner, flags);
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.StopProgressDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT StopProgressDialog()
@@ -53,6 +59,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, int>)(lpVtbl[4]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.SetOperation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetOperation(SPACTION action)
@@ -60,6 +67,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, SPACTION, int>)(lpVtbl[5]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), action);
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.SetMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetMode([NativeTypeName("PDMODE")] uint mode)
@@ -67,6 +75,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, uint, int>)(lpVtbl[6]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), mode);
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.UpdateProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ullPointsCurrent, [NativeTypeName("ULONGLONG")] ulong ullPointsTotal, [NativeTypeName("ULONGLONG")] ulong ullSizeCurrent, [NativeTypeName("ULONGLONG")] ulong ullSizeTotal, [NativeTypeName("ULONGLONG")] ulong ullItemsCurrent, [NativeTypeName("ULONGLONG")] ulong ullItemsTotal)
@@ -74,6 +83,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, ulong, ulong, ulong, ulong, ulong, ulong, int>)(lpVtbl[7]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), ullPointsCurrent, ullPointsTotal, ullSizeCurrent, ullSizeTotal, ullItemsCurrent, ullItemsTotal);
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.UpdateLocations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT UpdateLocations(IShellItem* psiSource, IShellItem* psiTarget, IShellItem* psiItem)
@@ -81,6 +91,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, IShellItem*, IShellItem*, IShellItem*, int>)(lpVtbl[8]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), psiSource, psiTarget, psiItem);
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.ResetTimer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ResetTimer()
@@ -88,6 +99,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, int>)(lpVtbl[9]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.PauseTimer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT PauseTimer()
@@ -95,6 +107,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, int>)(lpVtbl[10]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.ResumeTimer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT ResumeTimer()
@@ -102,6 +115,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, int>)(lpVtbl[11]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.GetMilliseconds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetMilliseconds([NativeTypeName("ULONGLONG *")] ulong* pullElapsed, [NativeTypeName("ULONGLONG *")] ulong* pullRemaining)
@@ -109,6 +123,7 @@ public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDial
         return ((delegate* unmanaged<IOperationsProgressDialog*, ulong*, ulong*, int>)(lpVtbl[12]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), pullElapsed, pullRemaining);
     }
 
+    /// <include file='IOperationsProgressDialog.xml' path='doc/member[@name="IOperationsProgressDialog.GetOperationStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetOperationStatus(PDOPSTATUS* popstatus)

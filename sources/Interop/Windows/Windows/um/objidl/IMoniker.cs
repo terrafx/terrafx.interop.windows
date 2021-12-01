@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMoniker.xml' path='doc/member[@name="IMoniker"]/*' />
 [Guid("0000000F-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IMoniker : IPersistStream")]
 [NativeInheritance("IPersistStream")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, Guid*, void**, int>)(lpVtbl[0]))((IMoniker*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, uint>)(lpVtbl[1]))((IMoniker*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, uint>)(lpVtbl[2]))((IMoniker*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPersist.GetClassID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
@@ -46,6 +51,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, Guid*, int>)(lpVtbl[3]))((IMoniker*)Unsafe.AsPointer(ref this), pClassID);
     }
 
+    /// <inheritdoc cref="IPersistStream.IsDirty" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT IsDirty()
@@ -53,6 +59,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, int>)(lpVtbl[4]))((IMoniker*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPersistStream.Load" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Load(IStream* pStm)
@@ -60,6 +67,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IStream*, int>)(lpVtbl[5]))((IMoniker*)Unsafe.AsPointer(ref this), pStm);
     }
 
+    /// <inheritdoc cref="IPersistStream.Save" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Save(IStream* pStm, BOOL fClearDirty)
@@ -67,6 +75,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IStream*, BOOL, int>)(lpVtbl[6]))((IMoniker*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
     }
 
+    /// <inheritdoc cref="IPersistStream.GetSizeMax" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSizeMax(ULARGE_INTEGER* pcbSize)
@@ -74,6 +83,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IMoniker*)Unsafe.AsPointer(ref this), pcbSize);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.BindToObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT BindToObject(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("const IID &")] Guid* riidResult, void** ppvResult)
@@ -81,6 +91,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, Guid*, void**, int>)(lpVtbl[8]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, pmkToLeft, riidResult, ppvResult);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.BindToStorage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT BindToStorage(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj)
@@ -88,6 +99,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, Guid*, void**, int>)(lpVtbl[9]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, pmkToLeft, riid, ppvObj);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.Reduce"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Reduce(IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwReduceHowFar, IMoniker** ppmkToLeft, IMoniker** ppmkReduced)
@@ -95,6 +107,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IBindCtx*, uint, IMoniker**, IMoniker**, int>)(lpVtbl[10]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, dwReduceHowFar, ppmkToLeft, ppmkReduced);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.ComposeWith"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT ComposeWith(IMoniker* pmkRight, BOOL fOnlyIfNotGeneric, IMoniker** ppmkComposite)
@@ -102,6 +115,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IMoniker*, BOOL, IMoniker**, int>)(lpVtbl[11]))((IMoniker*)Unsafe.AsPointer(ref this), pmkRight, fOnlyIfNotGeneric, ppmkComposite);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.Enum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Enum(BOOL fForward, IEnumMoniker** ppenumMoniker)
@@ -109,6 +123,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, BOOL, IEnumMoniker**, int>)(lpVtbl[12]))((IMoniker*)Unsafe.AsPointer(ref this), fForward, ppenumMoniker);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.IsEqual"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT IsEqual(IMoniker* pmkOtherMoniker)
@@ -116,6 +131,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IMoniker*, int>)(lpVtbl[13]))((IMoniker*)Unsafe.AsPointer(ref this), pmkOtherMoniker);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.Hash"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT Hash([NativeTypeName("DWORD *")] uint* pdwHash)
@@ -123,6 +139,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, uint*, int>)(lpVtbl[14]))((IMoniker*)Unsafe.AsPointer(ref this), pdwHash);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.IsRunning"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT IsRunning(IBindCtx* pbc, IMoniker* pmkToLeft, IMoniker* pmkNewlyRunning)
@@ -130,6 +147,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, IMoniker*, int>)(lpVtbl[15]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, pmkToLeft, pmkNewlyRunning);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.GetTimeOfLastChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetTimeOfLastChange(IBindCtx* pbc, IMoniker* pmkToLeft, FILETIME* pFileTime)
@@ -137,6 +155,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, FILETIME*, int>)(lpVtbl[16]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, pmkToLeft, pFileTime);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.Inverse"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT Inverse(IMoniker** ppmk)
@@ -144,6 +163,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IMoniker**, int>)(lpVtbl[17]))((IMoniker*)Unsafe.AsPointer(ref this), ppmk);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.CommonPrefixWith"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT CommonPrefixWith(IMoniker* pmkOther, IMoniker** ppmkPrefix)
@@ -151,6 +171,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IMoniker*, IMoniker**, int>)(lpVtbl[18]))((IMoniker*)Unsafe.AsPointer(ref this), pmkOther, ppmkPrefix);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.RelativePathTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT RelativePathTo(IMoniker* pmkOther, IMoniker** ppmkRelPath)
@@ -158,6 +179,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IMoniker*, IMoniker**, int>)(lpVtbl[19]))((IMoniker*)Unsafe.AsPointer(ref this), pmkOther, ppmkRelPath);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName)
@@ -165,6 +187,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, ushort**, int>)(lpVtbl[20]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, pmkToLeft, ppszDisplayName);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.ParseDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT ParseDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut)
@@ -172,6 +195,7 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         return ((delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, ushort*, uint*, IMoniker**, int>)(lpVtbl[21]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, pmkToLeft, pszDisplayName, pchEaten, ppmkOut);
     }
 
+    /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.IsSystemMoniker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT IsSystemMoniker([NativeTypeName("DWORD *")] uint* pdwMksys)

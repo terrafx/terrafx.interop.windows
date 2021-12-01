@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEM_POOL_ZEROING_INFORMATION.xml' path='doc/member[@name="SYSTEM_POOL_ZEROING_INFORMATION"]/*' />
 public partial struct SYSTEM_POOL_ZEROING_INFORMATION
 {
+    /// <include file='SYSTEM_POOL_ZEROING_INFORMATION.xml' path='doc/member[@name="SYSTEM_POOL_ZEROING_INFORMATION.PoolZeroingSupportPresent"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte PoolZeroingSupportPresent;
 }

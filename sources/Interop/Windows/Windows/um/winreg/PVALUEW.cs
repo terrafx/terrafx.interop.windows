@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PVALUEW.xml' path='doc/member[@name="PVALUEW"]/*' />
 public unsafe partial struct PVALUEW
 {
+    /// <include file='PVALUEW.xml' path='doc/member[@name="PVALUEW.pv_valuename"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pv_valuename;
 
+    /// <include file='PVALUEW.xml' path='doc/member[@name="PVALUEW.pv_valuelen"]/*' />
     public int pv_valuelen;
 
+    /// <include file='PVALUEW.xml' path='doc/member[@name="PVALUEW.pv_value_context"]/*' />
     [NativeTypeName("LPVOID")]
     public void* pv_value_context;
 
+    /// <include file='PVALUEW.xml' path='doc/member[@name="PVALUEW.pv_type"]/*' />
     [NativeTypeName("DWORD")]
     public uint pv_type;
 }

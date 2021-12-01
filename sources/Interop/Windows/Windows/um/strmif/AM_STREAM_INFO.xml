@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_STREAM_INFO">
+    <summary>
+      <para>The AM_STREAM_INFO structure contains stream-control information.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso cref="IAMStreamControl.GetInfo" />
+  </member>
+  <member name="AM_STREAM_INFO.tStart">
+    <summary>
+      <para>Time when the pin will start streaming data.</para>
+    </summary>
+  </member>
+  <member name="AM_STREAM_INFO.tStop">
+    <summary>
+      <para>Time when the pin will stop streaming data.</para>
+    </summary>
+  </member>
+  <member name="AM_STREAM_INFO.dwStartCookie">
+    <summary>
+      <para>Value that will be sent with the event notification when the pin starts.</para>
+    </summary>
+  </member>
+  <member name="AM_STREAM_INFO.dwStopCookie">
+    <summary>
+      <para>Value that will be sent with the event notification when the pin stops.</para>
+    </summary>
+  </member>
+  <member name="AM_STREAM_INFO.dwFlags">
+    <summary>
+      <para>Bitwise combination of zero or more flags from the <see cref="AM_STREAM_INFO_FLAGS" /> enumeration.</para>
+    </summary>
+  </member>
+</doc>

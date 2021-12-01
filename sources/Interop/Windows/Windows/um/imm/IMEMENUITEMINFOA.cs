@@ -5,25 +5,35 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMEMENUITEMINFOA.xml' path='doc/member[@name="IMEMENUITEMINFOA"]/*' />
 public unsafe partial struct IMEMENUITEMINFOA
 {
+    /// <include file='IMEMENUITEMINFOA.xml' path='doc/member[@name="IMEMENUITEMINFOA.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='IMEMENUITEMINFOA.xml' path='doc/member[@name="IMEMENUITEMINFOA.fType"]/*' />
     public uint fType;
 
+    /// <include file='IMEMENUITEMINFOA.xml' path='doc/member[@name="IMEMENUITEMINFOA.fState"]/*' />
     public uint fState;
 
+    /// <include file='IMEMENUITEMINFOA.xml' path='doc/member[@name="IMEMENUITEMINFOA.wID"]/*' />
     public uint wID;
 
+    /// <include file='IMEMENUITEMINFOA.xml' path='doc/member[@name="IMEMENUITEMINFOA.hbmpChecked"]/*' />
     public HBITMAP hbmpChecked;
 
+    /// <include file='IMEMENUITEMINFOA.xml' path='doc/member[@name="IMEMENUITEMINFOA.hbmpUnchecked"]/*' />
     public HBITMAP hbmpUnchecked;
 
+    /// <include file='IMEMENUITEMINFOA.xml' path='doc/member[@name="IMEMENUITEMINFOA.dwItemData"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwItemData;
 
+    /// <include file='IMEMENUITEMINFOA.xml' path='doc/member[@name="IMEMENUITEMINFOA.szString"]/*' />
     [NativeTypeName("CHAR [80]")]
     public fixed sbyte szString[80];
 
+    /// <include file='IMEMENUITEMINFOA.xml' path='doc/member[@name="IMEMENUITEMINFOA.hbmpItem"]/*' />
     public HBITMAP hbmpItem;
 }

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioClockAdjustment.SetSampleRate">
+    <summary>
+      <para>The <b>SetSampleRate</b> method sets the sample rate of a stream.</para>
+    </summary>
+    <param name="flSampleRate">
+      <para>The new sample rate in frames per second.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio stream has not been successfully initialized.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The sample rate is out of the range for the Audio Processing Object.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method must not be called from a real-time processing thread.</para>
+      <para>The new sample rate will take effect after the current frame is done processing and will remain in effect until <b>SetSampleRate</b> is called again.
+The audio client must be initialized in shared-mode (AUDCLNT_SHAREMODE_SHARED), otherwise <b>SetSampleRate</b> fails.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/audclnt-streamflags-xxx-constants">AUDCLNT_STREAMFLAGS_XXX Constants</seealso>
+    <seealso cref="IAudioClockAdjustment" />
+  </member>
+  <member name="IAudioClockAdjustment">
+    <summary>
+      <para>The <b>IAudioClockAdjustment</b> interface is used to adjust the sample rate of a stream.</para>
+      <para>The client obtains a reference to the <b>IAudioClockAdjustment</b> interface of a stream object by calling the <see cref="IAudioClient.GetService" /> method with parameter <i>riid</i> set to REFIID IID_IAudioClockAdjustment. Adjusting the sample rate is not supported for exclusive mode streams.</para>
+      <para>The <b>IAudioClockAdjustment</b> interface must be obtained from an audio client that is initialized with both the AUDCLNT_STREAMFLAGS_RATEADJUST flag  and the share mode set to AUDCLNT_SHAREMODE_SHARED.
+If <see cref="Initialize" /> is called in an exclusive mode with the AUDCLNT_STREAMFLAGS_RATEADJUST flag, <b>Initialize</b> fails with the  AUDCLNT_E_UNSUPPORTED_FORMAT error code.</para>
+      <para>When releasing an <b>IAudioClockAdjustment</b> interface instance, the client must call the interface's <b>Release</b> method from the same thread as the call to <see cref="IAudioClient.GetService" /> that created the object.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/audclnt-streamflags-xxx-constants">AUDCLNT_STREAMFLAGS_XXX Constants</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
+  </member>
+</doc>

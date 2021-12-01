@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_SDR_WHITE_LEVEL.xml' path='doc/member[@name="DISPLAYCONFIG_SDR_WHITE_LEVEL"]/*' />
 public partial struct DISPLAYCONFIG_SDR_WHITE_LEVEL
 {
+    /// <include file='DISPLAYCONFIG_SDR_WHITE_LEVEL.xml' path='doc/member[@name="DISPLAYCONFIG_SDR_WHITE_LEVEL.header"]/*' />
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
+    /// <include file='DISPLAYCONFIG_SDR_WHITE_LEVEL.xml' path='doc/member[@name="DISPLAYCONFIG_SDR_WHITE_LEVEL.SDRWhiteLevel"]/*' />
     [NativeTypeName("ULONG")]
     public uint SDRWhiteLevel;
 }

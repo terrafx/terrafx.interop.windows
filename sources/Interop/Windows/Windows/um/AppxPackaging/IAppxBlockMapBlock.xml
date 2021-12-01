@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxBlockMapBlock.GetCompressedSize">
+    <summary>
+      <para>Retrieves compressed size of the block.</para>
+    </summary>
+    <param name="size">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT32</a>*</b></para>
+      <para>The compressed size of the block, in bytes.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This size corresponds to the compressed size of the block.</para>
+      <para>The <i>size</i> value corresponds to the <b>Size</b> attribute of the <a href="https://docs.microsoft.com//uwp/schemas/blockmapschema/element-block">Block</a> element in the block map.</para>
+    </remarks>
+    <seealso cref="IAppxBlockMapBlock" />
+  </member>
+  <member name="IAppxBlockMapBlock.GetHash">
+    <summary>
+      <para>Retrieves the hash value of the block.</para>
+    </summary>
+    <param name="bufferSize">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT32</a>*</b></para>
+      <para>The length of  <i>buffer</i>.</para>
+    </param>
+    <param name="buffer">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a>**</b></para>
+      <para>The byte sequence representing the hash value of the block.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <i>buffer</i> value corresponds to the <b>Hash</b> attribute of the <b>Block</b> element.</para>
+      <para>The caller is responsible for deallocating the memory used for <i>buffer</i>. Use the <see cref="CoTaskMemFree" /> function to deallocate the memory.</para>
+    </remarks>
+    <seealso cref="IAppxBlockMapBlock" />
+  </member>
+  <member name="IAppxBlockMapBlock">
+    <summary>
+      <para>The <b>IAppxBlockMapBlock</b> interface provides a read-only object that represents an individual block within a file contained in the block map file (AppxBlockMap.xml) for the App package. The <see cref="IAppxBlockMapFile.GetBlocks" /> method is used to return an enumerator for traversing and retrieving the individual blocks of a file listed in the package block map.</para>
+    </summary>
+    <remarks>
+      <para>Each <b>Block</b> element has an attribute for the hash value and compressed size of the block.</para>
+      <para>For a code example, see the <a href="https://github.com/microsoft/windows-classic-samples/tree/master/samples/appxpackingdescribeappx">Query app package and app manifest sample</a>.</para>
+    </remarks>
+    <seealso cref="IAppxBlockMapBlocksEnumerator" />
+    <seealso cref="IAppxBlockMapFile" />
+    <seealso cref="IAppxBlockMapFilesEnumerator" />
+    <seealso cref="IAppxBlockMapReader" />
+    <seealso href="https://github.com/microsoft/windows-classic-samples/tree/master/samples/appxpackingdescribeappx">Query app package and app manifest sample</seealso>
+  </member>
+</doc>

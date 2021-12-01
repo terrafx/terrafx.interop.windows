@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMPROPERTY_PIN.xml' path='doc/member[@name="AMPROPERTY_PIN"]/*' />
 public enum AMPROPERTY_PIN
 {
+    /// <include file='AMPROPERTY_PIN.xml' path='doc/member[@name="AMPROPERTY_PIN.AMPROPERTY_PIN_CATEGORY"]/*' />
     AMPROPERTY_PIN_CATEGORY = 0,
+
+    /// <include file='AMPROPERTY_PIN.xml' path='doc/member[@name="AMPROPERTY_PIN.AMPROPERTY_PIN_MEDIUM"]/*' />
     AMPROPERTY_PIN_MEDIUM = (AMPROPERTY_PIN_CATEGORY + 1),
 }

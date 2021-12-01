@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MPEG1VIDEOINFO">
+    <summary>
+      <para>The <b>MPEG1VIDEOINFO</b> structure describes an MPEG-1 video stream.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="MPEG1VIDEOINFO.hdr">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure.</para>
+    </summary>
+  </member>
+  <member name="MPEG1VIDEOINFO.dwStartTimeCode">
+    <summary>
+      <para>25-bit group-of-pictures (GOP) time code at start of data.</para>
+    </summary>
+  </member>
+  <member name="MPEG1VIDEOINFO.cbSequenceHeader">
+    <summary>
+      <para>Length of the <b>bSequenceHeader</b> member, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MPEG1VIDEOINFO.bSequenceHeader">
+    <summary>
+      <para>Start of an array that contains the sequence header, including quantization matrices, if any. The size of the array is given in the <b>cbSequenceHeader</b> member.</para>
+    </summary>
+  </member>
+</doc>

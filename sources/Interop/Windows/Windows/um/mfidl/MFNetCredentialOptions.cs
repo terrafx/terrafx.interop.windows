@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFNetCredentialOptions.xml' path='doc/member[@name="MFNetCredentialOptions"]/*' />
 public enum MFNetCredentialOptions
 {
+    /// <include file='MFNetCredentialOptions.xml' path='doc/member[@name="MFNetCredentialOptions.MFNET_CREDENTIAL_SAVE"]/*' />
     MFNET_CREDENTIAL_SAVE = 0x1,
+
+    /// <include file='MFNetCredentialOptions.xml' path='doc/member[@name="MFNetCredentialOptions.MFNET_CREDENTIAL_DONT_CACHE"]/*' />
     MFNET_CREDENTIAL_DONT_CACHE = 0x2,
+
+    /// <include file='MFNetCredentialOptions.xml' path='doc/member[@name="MFNetCredentialOptions.MFNET_CREDENTIAL_ALLOW_CLEAR_TEXT"]/*' />
     MFNET_CREDENTIAL_ALLOW_CLEAR_TEXT = 0x4,
 }

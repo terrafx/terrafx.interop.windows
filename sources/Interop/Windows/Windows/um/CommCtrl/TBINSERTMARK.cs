@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TBINSERTMARK.xml' path='doc/member[@name="TBINSERTMARK"]/*' />
 public partial struct TBINSERTMARK
 {
+    /// <include file='TBINSERTMARK.xml' path='doc/member[@name="TBINSERTMARK.iButton"]/*' />
     public int iButton;
 
+    /// <include file='TBINSERTMARK.xml' path='doc/member[@name="TBINSERTMARK.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

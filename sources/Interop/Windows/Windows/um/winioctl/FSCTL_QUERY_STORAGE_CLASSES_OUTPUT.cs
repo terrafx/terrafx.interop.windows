@@ -9,26 +9,34 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT"]/*' />
 public partial struct FSCTL_QUERY_STORAGE_CLASSES_OUTPUT
 {
+    /// <include file='FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.TotalNumberOfTiers"]/*' />
     [NativeTypeName("DWORD")]
     public uint TotalNumberOfTiers;
 
+    /// <include file='FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.NumberOfTiersReturned"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfTiersReturned;
 
+    /// <include file='FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.Tiers"]/*' />
     [NativeTypeName("FILE_STORAGE_TIER [1]")]
     public _Tiers_e__FixedBuffer Tiers;
 
+    /// <include file='_Tiers_e__FixedBuffer.xml' path='doc/member[@name="_Tiers_e__FixedBuffer"]/*' />
     public partial struct _Tiers_e__FixedBuffer
     {
         public FILE_STORAGE_TIER e0;

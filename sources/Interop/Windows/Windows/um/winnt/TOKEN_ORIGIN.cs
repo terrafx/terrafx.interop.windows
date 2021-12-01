@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_ORIGIN.xml' path='doc/member[@name="TOKEN_ORIGIN"]/*' />
 public partial struct TOKEN_ORIGIN
 {
+    /// <include file='TOKEN_ORIGIN.xml' path='doc/member[@name="TOKEN_ORIGIN.OriginatingLogonSession"]/*' />
     public LUID OriginatingLogonSession;
 }

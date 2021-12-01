@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIAnimationManagerEventHandler2.OnManagerStatusChanged">
+    <summary>
+      <para>Handles status changes to an <see cref="animation manager" />.</para>
+    </summary>
+    <param name="newStatus">
+      <para>The new status of the animation manager.</para>
+    </param>
+    <param name="previousStatus">
+      <para>The previous status of the animation manager.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Calls made to other Windows Animation methods from <b>IUIAnimationManager2.OnManagerStatusChanged</b> fail and return <b>UI_E_ILLEGAL_REENTRANCY</b>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2.GetStatus" />
+    <seealso cref="IUIAnimationManagerEventHandler2" />
+    <seealso cref="UI_ANIMATION_MANAGER_STATUS" />
+  </member>
+  <member name="IUIAnimationManagerEventHandler2">
+    <summary>
+      <para>Defines a method for handling updates to an <see cref="animation manager" />.</para>
+    </summary>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

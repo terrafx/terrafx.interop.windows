@@ -7,12 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFMediaKeyStatus.xml' path='doc/member[@name="MFMediaKeyStatus"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct MFMediaKeyStatus
 {
+    /// <include file='MFMediaKeyStatus.xml' path='doc/member[@name="MFMediaKeyStatus.pbKeyId"]/*' />
     public byte* pbKeyId;
 
+    /// <include file='MFMediaKeyStatus.xml' path='doc/member[@name="MFMediaKeyStatus.cbKeyId"]/*' />
     public uint cbKeyId;
 
+    /// <include file='MFMediaKeyStatus.xml' path='doc/member[@name="MFMediaKeyStatus.eMediaKeyStatus"]/*' />
     public MF_MEDIAKEY_STATUS eMediaKeyStatus;
 }

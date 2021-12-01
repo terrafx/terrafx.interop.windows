@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO"]/*' />
 public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO
 {
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO.DeviceCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint DeviceCount;
 
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO.Devices"]/*' />
     [NativeTypeName("SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO [1]")]
     public _Devices_e__FixedBuffer Devices;
 
+    /// <include file='_Devices_e__FixedBuffer.xml' path='doc/member[@name="_Devices_e__FixedBuffer"]/*' />
     public partial struct _Devices_e__FixedBuffer
     {
         public SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO e0;

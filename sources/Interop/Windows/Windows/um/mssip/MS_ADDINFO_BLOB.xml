@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MS_ADDINFO_BLOB">
+    <summary>
+      <para>The <b>MS_ADDINFO_BLOB</b> structure provides additional information for in-memory <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> subject types.</para>
+    </summary>
+  </member>
+  <member name="MS_ADDINFO_BLOB.cbStruct">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="MS_ADDINFO_BLOB.cbMemObject">
+    <summary>
+      <para>The size, in bytes, of the data in the <i>pbMemObject</i> member.</para>
+    </summary>
+  </member>
+  <member name="MS_ADDINFO_BLOB.pbMemObject">
+    <summary>
+      <para>A pointer to the in-memory BLOB subject.</para>
+    </summary>
+  </member>
+  <member name="MS_ADDINFO_BLOB.cbMemSignedMsg">
+    <summary>
+      <para>The size, in bytes, of the data in the <i>pbMemSignedMsg</i> member.</para>
+    </summary>
+  </member>
+  <member name="MS_ADDINFO_BLOB.pbMemSignedMsg">
+    <summary>
+      <para>A pointer to the signed message.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NET_PHYSICAL_LOCATION_LH.xml' path='doc/member[@name="NET_PHYSICAL_LOCATION_LH"]/*' />
 public partial struct NET_PHYSICAL_LOCATION_LH
 {
+    /// <include file='NET_PHYSICAL_LOCATION_LH.xml' path='doc/member[@name="NET_PHYSICAL_LOCATION_LH.BusNumber"]/*' />
     [NativeTypeName("ULONG")]
     public uint BusNumber;
 
+    /// <include file='NET_PHYSICAL_LOCATION_LH.xml' path='doc/member[@name="NET_PHYSICAL_LOCATION_LH.SlotNumber"]/*' />
     [NativeTypeName("ULONG")]
     public uint SlotNumber;
 
+    /// <include file='NET_PHYSICAL_LOCATION_LH.xml' path='doc/member[@name="NET_PHYSICAL_LOCATION_LH.FunctionNumber"]/*' />
     [NativeTypeName("ULONG")]
     public uint FunctionNumber;
 }

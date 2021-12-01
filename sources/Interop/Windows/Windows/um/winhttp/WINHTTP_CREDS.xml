@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_CREDS">
+    <summary>
+      <para>The <b>WINHTTP_CREDS</b> structure contains user credential information used for server and proxy authentication.
+<b>Note</b>  This structure has been deprecated. Instead, the use of the <see cref="WINHTTP_CREDS_EX" /> structure is recommended.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used with options <b>WINHTTP_OPTION_GLOBAL_SERVER_CREDS</b> and <b>WINHTTP_OPTION_GLOBAL_PROXY_CREDS</b><a href="https://docs.microsoft.com//windows/desktop/WinHttp/option-flags">option flags</a>. These options require the registry key <b>HKLM\Software\Microsoft\Windows\CurrentVersion\Internet Settings!ShareCredsWithWinHttp</b>. This registry key is not present by default.</para>
+      <para>When it is set, WinINet will send credentials  down to WinHTTP. Whenever WinHttp gets an authentication challenge and if there are no credentials set on the current handle, it will use the credentials provided by WinINet. In order to share server credentials in addition to proxy credentials, users needs to set  the <b>WINHTTP_OPTION_USE_GLOBAL_SERVER_CREDENTIALS</b> option flag.</para>
+    </remarks>
+    <seealso cref="WINHTTP_CREDS_EX" />
+  </member>
+  <member name="WINHTTP_CREDS.lpszUserName">
+    <summary>
+      <para>Pointer to a buffer that contains username.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CREDS.lpszPassword">
+    <summary>
+      <para>Pointer to a buffer that contains password.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CREDS.lpszRealm">
+    <summary>
+      <para>Pointer to a buffer that contains realm.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CREDS.dwAuthScheme">
+    <summary>
+      <para>A flag that contains the authentication scheme, as one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>WINHTTP_AUTH_SCHEME_BASIC</b>
+          </description>
+          <description>
+            <para>Use basic authentication.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTH_SCHEME_NTLM</b>
+          </description>
+          <description>
+            <para>Use NTLM authentication.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>INHTTP_AUTH_SCHEME_DIGEST</b>
+          </description>
+          <description>
+            <para>Use digest authentication.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WINHTTP_AUTH_SCHEME_NEGOTIATE</b>
+          </description>
+          <description>
+            <para>Select between NTLM and Kerberos authentication.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WINHTTP_CREDS.lpszHostName">
+    <summary>
+      <para>Pointer to a buffer that contains hostname.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CREDS.dwPort">
+    <summary>
+      <para>The server connection port.</para>
+    </summary>
+  </member>
+</doc>

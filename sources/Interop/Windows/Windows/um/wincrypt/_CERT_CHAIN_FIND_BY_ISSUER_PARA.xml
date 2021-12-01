@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA">
+    <summary>
+      <para>The <b>CERT_CHAIN_FIND_BY_ISSUER_PARA</b> structure contains information used in the <see cref="CertFindChainInStore" /> function to build certificate chains.</para>
+    </summary>
+    <remarks>
+      <para>The <b>pdwIssuerChainIndex</b> and <b>pdwIssuerElementIndex</b> members are only available if the <b>CERT_CHAIN_FIND_BY_ISSUER_PARA_HAS_EXTRA_FIELDS</b> macro is defined. If the <b>CERT_CHAIN_FIND_BY_ISSUER_PARA_HAS_EXTRA_FIELDS</b> macro is defined, the application must initialize all unused fields to zero.</para>
+      <h4>Examples</h4>
+      <para>The following pseudocode shows how to use the <b>pdwIssuerChainIndex</b> and <b>pdwIssuerElementIndex</b> members of this structure to access the certificate of the issuer.</para>
+      <code>CERT_CHAIN_FIND_BY_ISSUER_PARA findParams;
+PCCERT_CHAIN_CONTEXT pChainContext = NULL;
+DWORD dwChainIndex = 0;
+DWORD dwElementIndex = 0;
+findParams.pdwIssuerChainIndex = &amp;amp;amp;amp;amp;amp;dwChainIndex;
+findParams.pdwIssuerElementIndex = &amp;amp;amp;amp;amp;amp;dwElementIndex;
+
+pChainContext = CertFindChainInStore(
+    hCertStore,
+    X509_ASN_ENCODING,
+    0,
+    CERT_CHAIN_FIND_BY_ISSUER,
+    (LPVOID)&amp;amp;amp;amp;amp;amp;findParams,
+    NULL);
+if(pChainContext)
+{
+    // Make sure the element index is valid.
+    if(dwElementIndex &lt; pChainContext-&gt;
+        rgpChain[dwChainIndex]-&gt;cElement)
+    {
+        PCERT_CHAIN_ELEMENT pIssuerElement;
+        pIssuerElement = pChainContext-&gt;
+            rgpChain[dwChainIndex]-&gt;rgpElement[dwElementIndex];
+       // ...
+    }
+
+    // Free the certificate chain.
+    CertFreeCertificateChain(pChainContext);
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_chain_find_by_issuer_callback">CertChainFindByIssuerCallback</seealso>
+    <seealso cref="CertFindChainInStore" />
+    <seealso cref="CryptAcquireCertificatePrivateKey" />
+  </member>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA.cbSize">
+    <summary>
+      <para>Contains the size of this structure, in bytes. This size should not be hard-coded. It should be set at compile time by using the <b>sizeof</b> operator as shown in the following example.</para>
+      <code>CERT_CHAIN_FIND_BY_ISSUER_PARA findParams;
+findParams.cbSize = sizeof(CERT_CHAIN_FIND_BY_ISSUER_PARA);
+</code>
+    </summary>
+  </member>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA.pszUsageIdentifier">
+    <summary>
+      <para>A pointer to a null-terminated ANSI string that contains the usage identifier to be matched. If this member is <b>NULL</b>, a certificate with any usage can be a match.</para>
+    </summary>
+  </member>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA.dwKeySpec">
+    <summary>
+      <para>Contains the key specification value to be matched. This can be one of the following values. If this parameter is zero, any certificate can match.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AT_KEYEXCHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The key can be used to encrypt or sign depending on the algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AT_SIGNATURE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x02</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The key can be used for signing.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA.dwAcquirePrivateKeyFlags">
+    <summary>
+      <para>When the <i>dwFindFlags</i> parameter of the <see cref="CertFindChainInStore" /> function contains <b>CERT_CHAIN_FIND_BY_ISSUER_COMPARE_KEY_FLAG</b>, the <see cref="CryptAcquireCertificatePrivateKey" /> function is called to do the public key comparison. In this case, this member is passed as the <i>dwFlags</i> parameter of the <b>CryptAcquireCertificatePrivateKey</b> function. For possible values for this member and their meanings, see the <i>dwFlags</i> parameter of the <b>CryptAcquireCertificatePrivateKey</b> function.</para>
+    </summary>
+  </member>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA.cIssuer">
+    <summary>
+      <para>Contains the number of elements in the <b>rgIssuer</b> array. If this member is zero, any issuer can be a match.</para>
+    </summary>
+  </member>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA.rgIssuer">
+    <summary>
+      <para>An array of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/x-gly">X.509</a>, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Abstract Syntax Notation One</a> (ASN.1) encoded issuer name <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOBs</a> to match. If this member is <b>NULL</b> or the callback function returns <b>TRUE</b>, a new element is added to the chain for the certificate having a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">private key</a> with the specified KeySpec and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/e-gly">enhanced key usage</a>.</para>
+    </summary>
+  </member>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA.pfnFindCallback">
+    <summary>
+      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_chain_find_by_issuer_callback">CertChainFindByIssuerCallback</a> callback function that allows the application to filter the certificates that chains are created for. If this member is <b>NULL</b>, a chain is built for every certificate found. If this member is not <b>NULL</b>, a chain will be built for the certificate found based on the return value of the callback function.</para>
+    </summary>
+  </member>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA.pvFindArg">
+    <summary>
+      <para>An application-defined value that will be passed as the <i>pvFindArg</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_chain_find_by_issuer_callback">CertChainFindByIssuerCallback</a> callback function pointed to by the <b>pfnFindCallback</b> member of this structure.</para>
+    </summary>
+  </member>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA.pdwIssuerChainIndex">
+    <summary>
+      <para>A pointer to a <b>DWORD</b> value that receives the zero-based index of the chain that matches the issuer. If this member is <b>NULL</b>, it is not used.</para>
+      <para>If <b>cIssuer</b> is zero, this member is not used.</para>
+      <para>This member is only defined if the <b>CERT_CHAIN_FIND_BY_ISSUER_PARA_HAS_EXTRA_FIELDS</b> macro is defined.</para>
+    </summary>
+  </member>
+  <member name="_CERT_CHAIN_FIND_BY_ISSUER_PARA.pdwIssuerElementIndex">
+    <summary>
+      <para>A pointer to a <b>DWORD</b> value that receives the zero-based index of the element in the chain of the certificate of the issuer. If this member is <b>NULL</b>, it is not used.</para>
+      <para>If <b>cIssuer</b> is zero, this member is not used.</para>
+      <para>This  member is set to the index of the found certificate plus one to provide the index of  the certificate of the issuer. Because of this, a partial chain or a self-signed certificate that matches the name BLOB may cause <b>pdwIssuerElementIndex</b> to point past the last certificate in the chain. This situation can be detected by comparing the contents of <b>pdwIssuerElementIndex</b> with the <b>cElement</b> member of the <see cref="CERT_SIMPLE_CHAIN" /> structure to make sure the index is valid.</para>
+      <para>This member is only defined if the <b>CERT_CHAIN_FIND_BY_ISSUER_PARA_HAS_EXTRA_FIELDS</b> macro is defined.</para>
+    </summary>
+  </member>
+</doc>

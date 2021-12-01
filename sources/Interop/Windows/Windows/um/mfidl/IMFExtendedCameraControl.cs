@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl"]/*' />
 [Guid("38E33520-FCA1-4845-A27A-68B7C6AB3789")]
 [NativeTypeName("struct IMFExtendedCameraControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
         return ((delegate* unmanaged<IMFExtendedCameraControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
         return ((delegate* unmanaged<IMFExtendedCameraControl*, uint>)(lpVtbl[1]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
         return ((delegate* unmanaged<IMFExtendedCameraControl*, uint>)(lpVtbl[2]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.GetCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("ULONGLONG")]
@@ -47,6 +52,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
         return ((delegate* unmanaged<IMFExtendedCameraControl*, ulong>)(lpVtbl[3]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.SetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetFlags([NativeTypeName("ULONGLONG")] ulong ulFlags)
@@ -54,6 +60,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
         return ((delegate* unmanaged<IMFExtendedCameraControl*, ulong, int>)(lpVtbl[4]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ulFlags);
     }
 
+    /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.GetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("ULONGLONG")]
@@ -62,6 +69,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
         return ((delegate* unmanaged<IMFExtendedCameraControl*, ulong>)(lpVtbl[5]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.LockPayload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT LockPayload(byte** ppPayload, [NativeTypeName("ULONG *")] uint* pulPayload)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
         return ((delegate* unmanaged<IMFExtendedCameraControl*, byte**, uint*, int>)(lpVtbl[6]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ppPayload, pulPayload);
     }
 
+    /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.UnlockPayload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT UnlockPayload()
@@ -76,6 +85,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
         return ((delegate* unmanaged<IMFExtendedCameraControl*, int>)(lpVtbl[7]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.CommitSettings"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CommitSettings()

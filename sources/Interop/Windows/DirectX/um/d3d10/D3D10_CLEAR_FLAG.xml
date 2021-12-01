@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_CLEAR_FLAG">
+    <summary>
+      <para>Specifies the parts of the depth stencil to clear. Usually used with <see cref="ID3D10Device.ClearDepthStencilView" />.</para>
+    </summary>
+    <remarks>
+      <para>These flags can be bitwise ORed together.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+  </member>
+  <member name="D3D10_CLEAR_FLAG.D3D10_CLEAR_DEPTH">
+    <summary>
+      <para>Clear the depth buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D10_CLEAR_FLAG.D3D10_CLEAR_STENCIL">
+    <summary>
+      <para>Clear the stencil buffer.</para>
+    </summary>
+  </member>
+</doc>

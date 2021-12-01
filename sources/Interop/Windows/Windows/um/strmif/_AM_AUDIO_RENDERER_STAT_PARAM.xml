@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM">
+    <summary>
+      <para>The <b>_AM_AUDIO_RENDERER_STAT_PARAM</b> enumeration specifies which performance information to retrieve from the audio renderer.</para>
+      <para>This enumeration type is used in the <see cref="IAMAudioRendererStats.GetStatParam" /> method. Each enumeration member defines the meaning of the values that are returned in the <i>pdwParam1</i> and <i>pdwParam2</i> parameters of <b>GetStatParam</b>.</para>
+      <blockquote>
+        <para>[!NOTE]
+Bias-free Communication
+Microsoft supports a diverse and inclusionary environment.  Within this document, there are references to the word 'slave.' Microsoft's <a href="https://docs.microsoft.com//style-guide/bias-free-communication">Style Guide for Bias-Free Communications</a> recognizes this as an exclusionary word.  This wording is used as it is currently the wording used within the software. For consistency, this document contains this word. When this word is removed from the software, we will correct this document to be in alignment.</para>
+      </blockquote>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IAMAudioRendererStats Interface" />
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_BREAK_COUNT">
+    <summary>
+      <para>
+        <i>Param1</i>: The cumulative number of breaks in the audio stream.</para>
+      <para>
+        <i>Param2</i>: Not used.</para>
+    </summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_SLAVE_MODE">
+    <summary>
+      <para>
+        <i>Param1</i>: Indicates the current rate-matching mode. The value is a bitwise combination of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>0x00: No rate matching.</description>
+        </item>
+        <item>
+          <description>0x01: Match rates to a live source.</description>
+        </item>
+        <item>
+          <description>0x02: Match rates based on the rate of the incoming audio data.</description>
+        </item>
+        <item>
+          <description>0x04: Match rates with the filter graph's reference clock (when the clock is not provided by the audio renderer).</description>
+        </item>
+        <item>
+          <description>0x10: Match rates based on the time stamps of the audio samples.</description>
+        </item>
+      </list>
+      <i>Param2</i>: Not used.
+</summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_SILENCE_DUR">
+    <summary>
+      <para>
+        <i>Param1</i>: The cumulative amount of silence the audio renderer has inserted, due to gaps in the time stamps of the incoming samples. The value is given in milliseconds.</para>
+      <para>
+        <i>Param2</i>: Not used.</para>
+    </summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_LAST_BUFFER_DUR">
+    <summary>
+      <para>
+        <i>Param1</i>: The duration of the most recent audio buffer, in milliseconds.</para>
+      <para>
+        <i>Param2</i>: Not used.</para>
+    </summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_DISCONTINUITIES">
+    <summary>
+      <para>
+        <i>Param1</i>: The cumulative number of discontinuities in the audio stream.</para>
+      <para>
+        <i>Param2</i>: Not used.</para>
+    </summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_SLAVE_RATE">
+    <summary>
+      <para>
+        <i>Param1</i>: The sample rate that the audio renderer is matching, in samples per second.</para>
+      <para>
+        <i>Param2</i>: Not used.</para>
+      <para>Valid only when the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/directsound-renderer-filter">DirectSound Renderer</a> is matching rates to another clock or a live source.</para>
+    </summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_SLAVE_DROPWRITE_DUR">
+    <summary>
+      <para>
+        <i>Param1</i>: The amount of data dropped to stay in sync, in milliseconds.</para>
+      <para>
+        <i>Param2</i>: Not used.</para>
+      <para>Applies only when the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/audio-renderer--waveout--filter">Audio Renderer (WaveOut)</a> filter is matching rates to a master clock.</para>
+    </summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_SLAVE_HIGHLOWERROR">
+    <summary>
+      <para>
+        <i>Param1</i>: The highest difference noted between the audio renderer's clock and the clock it is trying to match.</para>
+      <para>
+        <i>Param2</i>: The lowest difference noted between the audio renderer's clock and the clock it is trying to match.</para>
+      <para>Valid only when the audio renderer is matching rates to a master clock.</para>
+    </summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_SLAVE_LASTHIGHLOWERROR">
+    <summary>
+      <para>
+        <i>Param1</i>: The last high error, in milliseconds. A <i>high error</i> occurs when the audio renderer falls behind the clock.</para>
+      <para>
+        <i>Param2</i>: The last low error, in milliseconds. A <i>low error</i> occurs when the audio renderer runs ahead of the clock.</para>
+      <para>Valid only when the audio renderer is matching rates to a master clock.</para>
+    </summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_SLAVE_ACCUMERROR">
+    <summary>
+      <para>
+        <i>Param1</i>: The accumulated difference between the audio renderer and the master clock, including adjustments made by dropping samples or inserting gaps.</para>
+      <para>
+        <i>Param2</i>: Not used.</para>
+      <para>Valid only when the audio renderer is matching rates to another clock or a live source.</para>
+    </summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_BUFFERFULLNESS">
+    <summary>
+      <para>
+        <i>Param1</i>: How much audio data is in the audio buffer, as a percentage.</para>
+      <para>
+        <i>Param2</i>: Not used.</para>
+    </summary>
+  </member>
+  <member name="_AM_AUDIO_RENDERER_STAT_PARAM.AM_AUDREND_STAT_PARAM_JITTER">
+    <summary>
+      <para>Not implemented.</para>
+    </summary>
+  </member>
+</doc>

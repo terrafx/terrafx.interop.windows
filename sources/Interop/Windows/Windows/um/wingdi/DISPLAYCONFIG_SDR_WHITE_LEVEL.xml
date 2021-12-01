@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_SDR_WHITE_LEVEL">
+    <summary>
+      <para>The <b>DISPLAYCONFIG_SDR_WHITE_LEVEL</b> structure contains information about a display's current SDR white level. This is the brightness level that SDR "white" is rendered at within an HDR monitor.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3darticles/high-dynamic-range">Using DirectX with high dynamic range Displays and Advanced Color
+</seealso>
+    <seealso cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" />
+    <seealso cref="DisplayConfigGetDeviceInfo" />
+  </member>
+  <member name="DISPLAYCONFIG_SDR_WHITE_LEVEL.header">
+    <summary>
+      <para>A <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> structure that contains information for getting the SDR white level. The <b>type</b> member of DISPLAYCONFIG_DEVICE_INFO_HEADER is set to DISPLAYCONFIG_DEVICE_INFO_GET_SDR_WHITE_LEVEL. DISPLAYCONFIG_DEVICE_INFO_HEADER also contains the adapter and target identifiers of the target to get the SDR white level for. The <b>size</b> member of DISPLAYCONFIG_DEVICE_INFO_HEADER is set to at least the size of the DISPLAYCONFIG_SDR_WHITE_LEVEL structure.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SDR_WHITE_LEVEL.SDRWhiteLevel">
+    <summary>
+      <para>The monitor's current SDR white level, specified as a multiplier of 80 nits, multiplied by 1000. E.g. a value of 1000 would indicate that the SDR white level is 80 nits, while a value of 2000 would indicate an SDR white level of 160 nits.</para>
+      <code>DISPLAYCONFIG_SDR_WHITE_LEVEL sdrWhiteLevel;
+...
+float SDRWhiteLevelInNits = (float)sdrWhiteLevel.SDRWhiteLevel / 1000 * 80;
+</code>
+    </summary>
+  </member>
+</doc>

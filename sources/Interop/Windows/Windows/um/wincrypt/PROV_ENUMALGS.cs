@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROV_ENUMALGS.xml' path='doc/member[@name="PROV_ENUMALGS"]/*' />
 public unsafe partial struct PROV_ENUMALGS
 {
+    /// <include file='PROV_ENUMALGS.xml' path='doc/member[@name="PROV_ENUMALGS.aiAlgid"]/*' />
     [NativeTypeName("ALG_ID")]
     public uint aiAlgid;
 
+    /// <include file='PROV_ENUMALGS.xml' path='doc/member[@name="PROV_ENUMALGS.dwBitLen"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBitLen;
 
+    /// <include file='PROV_ENUMALGS.xml' path='doc/member[@name="PROV_ENUMALGS.dwNameLen"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNameLen;
 
+    /// <include file='PROV_ENUMALGS.xml' path='doc/member[@name="PROV_ENUMALGS.szName"]/*' />
     [NativeTypeName("CHAR [20]")]
     public fixed sbyte szName[20];
 }

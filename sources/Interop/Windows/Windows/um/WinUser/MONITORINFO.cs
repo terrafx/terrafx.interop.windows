@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MONITORINFO.xml' path='doc/member[@name="MONITORINFO"]/*' />
 public partial struct MONITORINFO
 {
+    /// <include file='MONITORINFO.xml' path='doc/member[@name="MONITORINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='MONITORINFO.xml' path='doc/member[@name="MONITORINFO.rcMonitor"]/*' />
     public RECT rcMonitor;
 
+    /// <include file='MONITORINFO.xml' path='doc/member[@name="MONITORINFO.rcWork"]/*' />
     public RECT rcWork;
 
+    /// <include file='MONITORINFO.xml' path='doc/member[@name="MONITORINFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

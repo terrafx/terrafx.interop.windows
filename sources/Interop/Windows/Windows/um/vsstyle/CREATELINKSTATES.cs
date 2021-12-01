@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREATELINKSTATES.xml' path='doc/member[@name="CREATELINKSTATES"]/*' />
 public enum CREATELINKSTATES
 {
+    /// <include file='CREATELINKSTATES.xml' path='doc/member[@name="CREATELINKSTATES.DDCREATELINK_HIGHLIGHT"]/*' />
     DDCREATELINK_HIGHLIGHT = 1,
+
+    /// <include file='CREATELINKSTATES.xml' path='doc/member[@name="CREATELINKSTATES.DDCREATELINK_NOHIGHLIGHT"]/*' />
     DDCREATELINK_NOHIGHLIGHT = 2,
 }

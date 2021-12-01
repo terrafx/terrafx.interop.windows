@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='READ_FILE_USN_DATA.xml' path='doc/member[@name="READ_FILE_USN_DATA"]/*' />
 public partial struct READ_FILE_USN_DATA
 {
+    /// <include file='READ_FILE_USN_DATA.xml' path='doc/member[@name="READ_FILE_USN_DATA.MinMajorVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort MinMajorVersion;
 
+    /// <include file='READ_FILE_USN_DATA.xml' path='doc/member[@name="READ_FILE_USN_DATA.MaxMajorVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort MaxMajorVersion;
 }

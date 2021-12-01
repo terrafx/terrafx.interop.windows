@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_IPMCAST_MFE">
+    <summary>
+      <para>The
+<b>MIB_IPMCAST_MFE</b> structure stores the information for an Internet Protocol (IP) Multicast Forwarding Entry (MFE).</para>
+    </summary>
+    <remarks>
+      <para>The
+<b>MIB_IPMCAST_MFE</b> structure does not have a fixed size. Use the <b>SIZEOF_MIB_MFE(X)</b> macro to determine the size of this structure. This macro is defined in the Iprtrmib.h header file.</para>
+      <para>The <b>dwRouteProtocol</b>, <b>dwRouteNetwork</b>, and <b>dwRouteMask</b> members uniquely identify the route to which this MFE is related.</para>
+      <para>The <b>MIB_IPMCAST_MFE</b> structure is used by the <a href="https://docs.microsoft.com//windows/desktop/RRAS/multicast-group-manager-functions">Multicast Group Manager functions</a>. The <b>MIB_IPMCAST_MFE</b> structure is retrieved using the <see cref="MgmGetMfe" /> function. An existing <b>MIB_IPMCAST_MFE</b> structure can be modified using the <see cref="MgmSetMfe" /> function.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="MIB_IPMCAST_OIF" />
+    <seealso cref="MIB_MFE_TABLE" />
+    <seealso cref="MgmGetMfe" />
+    <seealso cref="MgmSetMfe" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/RRAS/multicast-group-manager-functions">Multicast Group Manager functions</seealso>
+  </member>
+  <member name="MIB_IPMCAST_MFE.dwGroup">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The range of IPv4 multicast groups for this MFE. A value of zero indicates a wildcard group.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.dwSource">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The range of IPv4 source addresses for this MFE. A value of zero indicates a wildcard source.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.dwSrcMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The IPv4 subnet mask that corresponds to <b>dwSourceAddr</b>. The <b>dwSourceAddr</b> and <b>dwSourceMask</b> members are used together to define a range of sources.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.dwUpStrmNgbr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The upstream neighbor that is related to this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.dwInIfIndex">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The index of the interface to which this MFE is related.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.dwInIfProtocol">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The routing protocol that owns the incoming interface to which this MFE is related.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.dwRouteProtocol">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The client that created the route.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.dwRouteNetwork">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The IPv4 address associated with the route referred to by <b>dwRouteProtocol</b>.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.dwRouteMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The IPv4 mask associated with the route referred to by <b>dwRouteProtocol</b>.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.ulUpTime">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The time, in seconds, this MFE has been valid. This value starts from zero and is incremented until it reaches the <b>ulTimeOut</b> value, at which time the MFE is deleted.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.ulExpiryTime">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The time, in seconds, that remains before the MFE expires and is deleted. This value starts from <b>ulTimeOut</b> and is decremented until it reaches zero, at which time the MFE is deleted.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.ulTimeOut">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The total length of time, in seconds, that this MFE should remain valid. After the time-out value is exceeded, the MFE is deleted. This value is static.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.ulNumOutIf">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of outgoing interfaces that are associated with this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.fFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved. This member should be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.dwReserved">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved. This member should be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE.rgmioOutInfo">
+    <summary>
+      <para>Type: <b>MIB_IPMCAST_OIF[ANY_SIZE]</b></para>
+      <para>A pointer to a table of outgoing interface statistics that are implemented as an array of
+<see cref="MIB_IPMCAST_OIF" /> structures.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMREXTTEXTOUTA.xml' path='doc/member[@name="EMREXTTEXTOUTA"]/*' />
 public partial struct EMREXTTEXTOUTA
 {
+    /// <include file='EMREXTTEXTOUTA.xml' path='doc/member[@name="EMREXTTEXTOUTA.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMREXTTEXTOUTA.xml' path='doc/member[@name="EMREXTTEXTOUTA.rclBounds"]/*' />
     public RECTL rclBounds;
 
+    /// <include file='EMREXTTEXTOUTA.xml' path='doc/member[@name="EMREXTTEXTOUTA.iGraphicsMode"]/*' />
     [NativeTypeName("DWORD")]
     public uint iGraphicsMode;
 
+    /// <include file='EMREXTTEXTOUTA.xml' path='doc/member[@name="EMREXTTEXTOUTA.exScale"]/*' />
     public float exScale;
 
+    /// <include file='EMREXTTEXTOUTA.xml' path='doc/member[@name="EMREXTTEXTOUTA.eyScale"]/*' />
     public float eyScale;
 
+    /// <include file='EMREXTTEXTOUTA.xml' path='doc/member[@name="EMREXTTEXTOUTA.emrtext"]/*' />
     public EMRTEXT emrtext;
 }

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NSTCITEMSTATE">
+    <summary>
+      <para>Specifies the state of a tree item. These values are used by methods of the <see cref="INameSpaceTreeControl" /> interface.</para>
+    </summary>
+    <seealso cref="INameSpaceTreeControl.GetItemState" />
+    <seealso cref="INameSpaceTreeControl.SetItemState" />
+  </member>
+  <member name="NSTCITEMSTATE.NSTCIS_NONE">
+    <summary>
+      <para>The item has default state; it is not selected, expanded, bolded or disabled.</para>
+    </summary>
+  </member>
+  <member name="NSTCITEMSTATE.NSTCIS_SELECTED">
+    <summary>
+      <para>The item is selected.</para>
+    </summary>
+  </member>
+  <member name="NSTCITEMSTATE.NSTCIS_EXPANDED">
+    <summary>
+      <para>The item is expanded.</para>
+    </summary>
+  </member>
+  <member name="NSTCITEMSTATE.NSTCIS_BOLD">
+    <summary>
+      <para>The item is bold.</para>
+    </summary>
+  </member>
+  <member name="NSTCITEMSTATE.NSTCIS_DISABLED">
+    <summary>
+      <para>The item is disabled.</para>
+    </summary>
+  </member>
+  <member name="NSTCITEMSTATE.NSTCIS_SELECTEDNOEXPAND">
+    <summary>
+      <para>
+        <b>Windows 7 and later</b>. The item is selected, but not expanded.</para>
+    </summary>
+  </member>
+</doc>

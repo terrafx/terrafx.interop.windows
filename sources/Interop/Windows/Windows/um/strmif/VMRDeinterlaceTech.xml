@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRDeinterlaceTech">
+    <summary>
+      <para>The <b>VMRDeinterlaceTech</b> enumeration type describes the algorithm used for deinterlacing a video stream. The flags are not mutually exclusive; drivers can set a combination of flags.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="VMRDeinterlaceCaps Structure" />
+  </member>
+  <member name="VMRDeinterlaceTech.DeinterlaceTech_Unknown">
+    <summary>
+      <para>The algorithm is unknown or proprietary.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceTech.DeinterlaceTech_BOBLineReplicate">
+    <summary>
+      <para>The algorithm creates each missing line by repeating the line above it or below it. This method creates jagged artifacts and is not recommended.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceTech.DeinterlaceTech_BOBVerticalStretch">
+    <summary>
+      <para>The algorithm creates the missing lines by vertically stretching each video field by a factor of two. For example, it might average two lines or use a (-1, 9, 9, -1)/16 filter across four lines. Slight vertical adjustments are made to ensure that the resulting image does not "bob" up and down.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceTech.DeinterlaceTech_MedianFiltering">
+    <summary>
+      <para>The algorithm uses median filtering to recreate the pixels in the missing lines.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceTech.DeinterlaceTech_EdgeFiltering">
+    <summary>
+      <para>The algorithm uses an edge filter to create the missing lines. In this process, spatial directional filters are applied to determine the orientation of edges in the picture content. Missing pixels are created by filtering along (rather than across) the detected edges.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceTech.DeinterlaceTech_FieldAdaptive">
+    <summary>
+      <para>The algorithm uses spatial or temporal interpolation, switching between the two on a field-by-field basis, depending on the amount of motion.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceTech.DeinterlaceTech_PixelAdaptive">
+    <summary>
+      <para>The algorithm uses spatial or temporal interpolation, switching between the two on a pixel-by-pixel basis, depending on the amount of motion.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceTech.DeinterlaceTech_MotionVectorSteered">
+    <summary>
+      <para>The algorithm identifies objects within a sequence of video fields. Before it recreates the missing pixels, it aligns the movement axes of the individual objects in the scene to make them parallel with the time axis.</para>
+    </summary>
+  </member>
+</doc>

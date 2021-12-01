@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDCompositionRectangleClip.SetBottom">
+    <summary>
+      <para>Changes the value of the Bottom property of a clip object. The Bottom property specifies the y-coordinate of the lower-right corner of the clip rectangle.</para>
+    </summary>
+    <param name="bottom">
+      <para>Type: <b>float</b></para>
+      <para>The new value of the Bottom property, in pixels. This parameter has a numerical limit of -2^21 to 2^21.
+The API accepts numbers outside of this range, but they are always clamped to this range.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code.
+See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method fails if the <i>bottom</i> parameter is NaN, positive infinity, or negative infinity.</para>
+      <para>If the Bottom property was previously animated, this method removes the animation and sets the Bottom property to the specified static value.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetBottom">
+    <summary>
+      <para>Animates the value of the Bottom property of a clip rectangle. The Bottom property specifies the y-coordinate of the lower-right corner of the clip rectangle.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the Bottom property changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the Bottom property unless this method is called again. If the Bottom  property was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetBottomLeftRadiusX">
+    <summary>
+      <para>Animates the value of the BottomLeftRadiusX property of this clip. The BottomLeftRadiusX property  specifies the x radius of the ellipse that rounds the lower-left corner of the clip.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the x radius changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the x radius unless this method is called again. If the x radius was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetBottomLeftRadiusY">
+    <summary>
+      <para>Animates the value of the BottomLeftRadiusY property of this clip. The BottomLeftRadiusY property  specifies the y radius of the ellipse that rounds the lower-left corner of the clip.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the y radius changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the y radius unless this method is called again. If the y radius was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetBottomRightRadiusX">
+    <summary>
+      <para>Animates the value of the BottomRightRadiusX property of this clip. The BottomRightRadiusX property  specifies the x radius of the ellipse that rounds the lower-right corner of the clip.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the x radius changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the x radius unless this method is called again. If the x radius was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetBottomRightRadiusY">
+    <summary>
+      <para>Animates the value of the BottomRightRadiusY property of this clip. The BottomRightRadiusY property  specifies the y radius of the ellipse that rounds the lower-right corner of the clip.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the y radius changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the y radius unless this method is called again. If the y radius was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetLeft">
+    <summary>
+      <para>Changes the value of the Left property of a clip rectangle. The Left property specifies the x-coordinate of the upper-left corner of the clip rectangle.</para>
+    </summary>
+    <param name="left">
+      <para>Type: <b>float</b></para>
+      <para>The new value of the Left property, in pixels. This parameter has a numerical limit of -2^21 to 2^21.
+The API accepts numbers outside of this range, but they are always clamped to this range.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method fails if the <i>left</i> parameter is NaN, positive infinity, or negative infinity.</para>
+      <para>If the Left property was previously animated, this method removes the animation and sets the Left property to the specified static value.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetLeft">
+    <summary>
+      <para>Animates the value of the Left property of a clip rectangle. The Left property specifies the x-coordinate of the upper-left corner of the clip rectangle.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the Left property changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the Left property unless this method is called again. If the Left  property was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetRight">
+    <summary>
+      <para>Changes the value of the Right property of a clip rectangle. The Right property specifies the x-coordinate of the lower-right corner of the clip rectangle.</para>
+    </summary>
+    <param name="right">
+      <para>Type: <b>float</b></para>
+      <para>The new value of the Right property, in pixels. This parameter has a numerical limit of -2^21 to 2^21.
+The API accepts numbers outside of this range, but they are always clamped to this range.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method fails if the <i>right</i> parameter is NaN, positive infinity, or negative infinity.</para>
+      <para>If the Right property was previously animated, this method removes the animation and sets the Right property to the specified static value.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetRight">
+    <summary>
+      <para>Animates the value of the Right property of a clip rectangle. The Right property specifies the x-coordinate of the lower-right corner of the clip rectangle.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the Right property changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the Right property unless this method is called again. If the Right  property was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetTop">
+    <summary>
+      <para>Changes the value of the Top property of a clip rectangle. The Top property specifies the y-coordinate of the upper-left corner of the clip rectangle.</para>
+    </summary>
+    <param name="top">
+      <para>Type: <b>float</b></para>
+      <para>The new value of the Top property, in pixels. This parameter has a numerical limit of -2^21 to 2^21.
+The API accepts numbers outside of this range, but they are always clamped to this range.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method fails if the <i>top</i> parameter is NaN, positive infinity, or negative infinity.</para>
+      <para>If the Top property was previously animated, this method removes the animation and sets the Top property to the specified static value.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetTop">
+    <summary>
+      <para>Animates the value of the Top property of a clip rectangle. The Top property specifies the y-coordinate of the upper-left corner of the clip rectangle.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the Top property changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the Top property unless this method is called again. If the Top  property was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetTopLeftRadiusX">
+    <summary>
+      <para>Animates the value of the TopLeftRadiusX property of this clip. The TopLeftRadiusX property  specifies the x radius of the ellipse that rounds the top-left corner of the clip.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the x radius changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the x radius unless this method is called again. If the x radius was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetTopLeftRadiusY">
+    <summary>
+      <para>Animates the value of the TopLeftRadiusY property of this clip. The TopLeftRadiusY property  specifies the y radius of the ellipse that rounds the top-left corner of the clip.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the y radius changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the y radius unless this method is called again. If the y radius was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetTopRightRadiusX">
+    <summary>
+      <para>Animates the value of the TopRightRadiusX property of this clip. The TopRightRadiusX property  specifies the x radius of the ellipse that rounds the top-right corner of the clip.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the x radius changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the x radius unless this method is called again. If the x radius was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip.SetTopRightRadiusY">
+    <summary>
+      <para>Animates the value of the TopRightRadiusY property of this clip. The TopRightRadiusY property  specifies the y radius of the ellipse that rounds the top-right corner of the clip.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation object that determines how the value of the y radius changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the y radius unless this method is called again. If the y radius was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionRectangleClip" />
+  </member>
+  <member name="IDCompositionRectangleClip">
+    <summary>
+      <para>Represents a clip object that restricts the rendering of a visual subtree to the specified rectangular region. Optionally, the clip object may have rounded corners specified.</para>
+    </summary>
+    <seealso cref="IDCompositionClip" />
+    <seealso cref="IDCompositionVisual.SetClip" />
+  </member>
+</doc>

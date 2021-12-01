@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrEventStore.xml' path='doc/member[@name="ISyncMgrEventStore"]/*' />
 [Guid("37E412F9-016E-44C2-81FF-DB3ADD774266")]
 [NativeTypeName("struct ISyncMgrEventStore : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
         return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
         return ((delegate* unmanaged<ISyncMgrEventStore*, uint>)(lpVtbl[1]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
         return ((delegate* unmanaged<ISyncMgrEventStore*, uint>)(lpVtbl[2]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrEventStore.xml' path='doc/member[@name="ISyncMgrEventStore.GetEventEnumerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetEventEnumerator(IEnumSyncMgrEvents** ppenum)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
         return ((delegate* unmanaged<ISyncMgrEventStore*, IEnumSyncMgrEvents**, int>)(lpVtbl[3]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), ppenum);
     }
 
+    /// <include file='ISyncMgrEventStore.xml' path='doc/member[@name="ISyncMgrEventStore.GetEventCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetEventCount([NativeTypeName("ULONG *")] uint* pcEvents)
@@ -53,6 +59,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
         return ((delegate* unmanaged<ISyncMgrEventStore*, uint*, int>)(lpVtbl[4]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pcEvents);
     }
 
+    /// <include file='ISyncMgrEventStore.xml' path='doc/member[@name="ISyncMgrEventStore.GetEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetEvent([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent** ppEvent)
@@ -60,6 +67,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
         return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, ISyncMgrEvent**, int>)(lpVtbl[5]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), rguidEventID, ppEvent);
     }
 
+    /// <include file='ISyncMgrEventStore.xml' path='doc/member[@name="ISyncMgrEventStore.RemoveEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RemoveEvent(Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents)

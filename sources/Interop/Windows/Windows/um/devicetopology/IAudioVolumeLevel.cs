@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioVolumeLevel.xml' path='doc/member[@name="IAudioVolumeLevel"]/*' />
 [Guid("7FB7B48F-531D-44A2-BCB3-5AD5A134B3DC")]
 [NativeTypeName("struct IAudioVolumeLevel : IPerChannelDbLevel")]
 [NativeInheritance("IPerChannelDbLevel")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface
         return ((delegate* unmanaged<IAudioVolumeLevel*, Guid*, void**, int>)(lpVtbl[0]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface
         return ((delegate* unmanaged<IAudioVolumeLevel*, uint>)(lpVtbl[1]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface
         return ((delegate* unmanaged<IAudioVolumeLevel*, uint>)(lpVtbl[2]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.GetChannelCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetChannelCount(uint* pcChannels)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface
         return ((delegate* unmanaged<IAudioVolumeLevel*, uint*, int>)(lpVtbl[3]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), pcChannels);
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.GetLevelRange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetLevelRange(uint nChannel, float* pfMinLevelDB, float* pfMaxLevelDB, float* pfStepping)
@@ -53,6 +59,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface
         return ((delegate* unmanaged<IAudioVolumeLevel*, uint, float*, float*, float*, int>)(lpVtbl[4]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), nChannel, pfMinLevelDB, pfMaxLevelDB, pfStepping);
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.GetLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetLevel(uint nChannel, float* pfLevelDB)
@@ -60,6 +67,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface
         return ((delegate* unmanaged<IAudioVolumeLevel*, uint, float*, int>)(lpVtbl[5]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), nChannel, pfLevelDB);
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.SetLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetLevel(uint nChannel, float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
@@ -67,6 +75,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface
         return ((delegate* unmanaged<IAudioVolumeLevel*, uint, float, Guid*, int>)(lpVtbl[6]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), nChannel, fLevelDB, pguidEventContext);
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.SetLevelUniform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetLevelUniform(float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
@@ -74,6 +83,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface
         return ((delegate* unmanaged<IAudioVolumeLevel*, float, Guid*, int>)(lpVtbl[7]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), fLevelDB, pguidEventContext);
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.SetLevelAllChannels" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)

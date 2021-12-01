@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_POWERUP_REASON_TYPE.xml' path='doc/member[@name="STORAGE_POWERUP_REASON_TYPE"]/*' />
 public enum STORAGE_POWERUP_REASON_TYPE
 {
+    /// <include file='STORAGE_POWERUP_REASON_TYPE.xml' path='doc/member[@name="STORAGE_POWERUP_REASON_TYPE.StoragePowerupUnknown"]/*' />
     StoragePowerupUnknown = 0,
+
+    /// <include file='STORAGE_POWERUP_REASON_TYPE.xml' path='doc/member[@name="STORAGE_POWERUP_REASON_TYPE.StoragePowerupIO"]/*' />
     StoragePowerupIO,
+
+    /// <include file='STORAGE_POWERUP_REASON_TYPE.xml' path='doc/member[@name="STORAGE_POWERUP_REASON_TYPE.StoragePowerupDeviceAttention"]/*' />
     StoragePowerupDeviceAttention,
 }

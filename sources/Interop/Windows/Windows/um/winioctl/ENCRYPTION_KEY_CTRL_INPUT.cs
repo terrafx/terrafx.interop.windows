@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENCRYPTION_KEY_CTRL_INPUT.xml' path='doc/member[@name="ENCRYPTION_KEY_CTRL_INPUT"]/*' />
 public partial struct ENCRYPTION_KEY_CTRL_INPUT
 {
+    /// <include file='ENCRYPTION_KEY_CTRL_INPUT.xml' path='doc/member[@name="ENCRYPTION_KEY_CTRL_INPUT.HeaderSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint HeaderSize;
 
+    /// <include file='ENCRYPTION_KEY_CTRL_INPUT.xml' path='doc/member[@name="ENCRYPTION_KEY_CTRL_INPUT.StructureSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint StructureSize;
 
+    /// <include file='ENCRYPTION_KEY_CTRL_INPUT.xml' path='doc/member[@name="ENCRYPTION_KEY_CTRL_INPUT.KeyOffset"]/*' />
     [NativeTypeName("WORD")]
     public ushort KeyOffset;
 
+    /// <include file='ENCRYPTION_KEY_CTRL_INPUT.xml' path='doc/member[@name="ENCRYPTION_KEY_CTRL_INPUT.KeySize"]/*' />
     [NativeTypeName("WORD")]
     public ushort KeySize;
 
+    /// <include file='ENCRYPTION_KEY_CTRL_INPUT.xml' path='doc/member[@name="ENCRYPTION_KEY_CTRL_INPUT.DplLock"]/*' />
     [NativeTypeName("DWORD")]
     public uint DplLock;
 
+    /// <include file='ENCRYPTION_KEY_CTRL_INPUT.xml' path='doc/member[@name="ENCRYPTION_KEY_CTRL_INPUT.DplUserId"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong DplUserId;
 
+    /// <include file='ENCRYPTION_KEY_CTRL_INPUT.xml' path='doc/member[@name="ENCRYPTION_KEY_CTRL_INPUT.DplCredentialId"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong DplCredentialId;
 }

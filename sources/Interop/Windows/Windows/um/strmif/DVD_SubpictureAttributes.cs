@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_SubpictureAttributes.xml' path='doc/member[@name="DVD_SubpictureAttributes"]/*' />
 public partial struct DVD_SubpictureAttributes
 {
+    /// <include file='DVD_SubpictureAttributes.xml' path='doc/member[@name="DVD_SubpictureAttributes.Type"]/*' />
     public DVD_SUBPICTURE_TYPE Type;
 
+    /// <include file='DVD_SubpictureAttributes.xml' path='doc/member[@name="DVD_SubpictureAttributes.CodingMode"]/*' />
     public DVD_SUBPICTURE_CODING CodingMode;
 
+    /// <include file='DVD_SubpictureAttributes.xml' path='doc/member[@name="DVD_SubpictureAttributes.Language"]/*' />
     [NativeTypeName("LCID")]
     public uint Language;
 
+    /// <include file='DVD_SubpictureAttributes.xml' path='doc/member[@name="DVD_SubpictureAttributes.LanguageExtension"]/*' />
     public DVD_SUBPICTURE_LANG_EXT LanguageExtension;
 }

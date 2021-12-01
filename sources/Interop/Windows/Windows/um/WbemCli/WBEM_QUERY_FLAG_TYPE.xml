@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_QUERY_FLAG_TYPE">
+    <summary>
+      <para>Contains flags used to define a query or  enumerator.</para>
+    </summary>
+    <seealso cref="IWbemServices.CreateClassEnum" />
+    <seealso cref="IWbemServices.CreateClassEnumAsync" />
+    <seealso cref="IWbemServices.CreateInstanceEnum" />
+    <seealso cref="IWbemServices.CreateInstanceEnumAsync" />
+    <seealso cref="IWbemServices.ExecQuery" />
+    <seealso cref="IWbemServices.ExecQueryAsync" />
+  </member>
+  <member name="WBEM_QUERY_FLAG_TYPE.WBEM_FLAG_DEEP">
+    <summary>
+      <para>Include the specified class and all subclasses.</para>
+    </summary>
+  </member>
+  <member name="WBEM_QUERY_FLAG_TYPE.WBEM_FLAG_SHALLOW">
+    <summary>
+      <para>Include only the specified class, not any subclasses.</para>
+    </summary>
+  </member>
+  <member name="WBEM_QUERY_FLAG_TYPE.WBEM_FLAG_PROTOTYPE">
+    <summary>
+      <para>Used for prototyping. It does not execute the query and instead returns an object that looks like a typical result object.</para>
+    </summary>
+  </member>
+</doc>

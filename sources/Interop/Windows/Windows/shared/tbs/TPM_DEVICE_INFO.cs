@@ -7,18 +7,23 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TPM_DEVICE_INFO.xml' path='doc/member[@name="TPM_DEVICE_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct TPM_DEVICE_INFO
 {
+    /// <include file='TPM_DEVICE_INFO.xml' path='doc/member[@name="TPM_DEVICE_INFO.structVersion"]/*' />
     [NativeTypeName("UINT32")]
     public uint structVersion;
 
+    /// <include file='TPM_DEVICE_INFO.xml' path='doc/member[@name="TPM_DEVICE_INFO.tpmVersion"]/*' />
     [NativeTypeName("UINT32")]
     public uint tpmVersion;
 
+    /// <include file='TPM_DEVICE_INFO.xml' path='doc/member[@name="TPM_DEVICE_INFO.tpmInterfaceType"]/*' />
     [NativeTypeName("UINT32")]
     public uint tpmInterfaceType;
 
+    /// <include file='TPM_DEVICE_INFO.xml' path='doc/member[@name="TPM_DEVICE_INFO.tpmImpRevision"]/*' />
     [NativeTypeName("UINT32")]
     public uint tpmImpRevision;
 }

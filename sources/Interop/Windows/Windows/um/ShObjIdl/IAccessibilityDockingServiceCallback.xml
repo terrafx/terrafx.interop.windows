@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAccessibilityDockingServiceCallback.Undocked">
+    <summary>
+      <para>Undocks the accessibility window so that it will not be automatically moved to its previous location.</para>
+    </summary>
+    <param name="undockReason">
+      <para>Specifies the reason why the accessibility application's window was undocked.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAccessibilityDockingServiceCallback" />
+  </member>
+  <member name="IAccessibilityDockingServiceCallback">
+    <summary>
+      <para>Receives Accessibility Window Docking events.</para>
+    </summary>
+  </member>
+</doc>

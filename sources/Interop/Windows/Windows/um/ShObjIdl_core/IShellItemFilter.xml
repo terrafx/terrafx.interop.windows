@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellItemFilter.GetEnumFlagsForItem">
+    <summary>
+      <para>Allows a client to specify which classes of objects in a <see cref="Shell item" /> should be enumerated for inclusion in the view.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the <see cref="Shell item" /> for which the <see cref="SHCONTF" /> enum flags are to be retrieved.</para>
+    </param>
+    <param name="pgrfFlags">
+      <para>Type: <b><see cref="SHCONTF" />*</b></para>
+      <para>A pointer to the <see cref="SHCONTF" /> enum flags for the given <see cref="Shell item" /> that specifies which classes of objects to enumerate for inclusion in the view.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IShellItem" />
+    <seealso cref="IShellItemFilter" />
+    <seealso cref="SHCONTF" />
+  </member>
+  <member name="IShellItemFilter.IncludeItem">
+    <summary>
+      <para>Sets a given <see cref="Shell item" /> status to inclusion in the view.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the <see cref="Shell item" /> that is to be included in the view.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The host calls this method for each item in the folder. Returns S_OK to have the item enumerated for inclusion in the view. Returns S_FALSE to prevent the item from being enumerated for inclusion in the view.</para>
+    </remarks>
+    <seealso cref="IShellItem" />
+    <seealso cref="IShellItemFilter" />
+  </member>
+  <member name="IShellItemFilter">
+    <summary>
+      <para>Exposed by a client to specify how to filter the enumeration of a <see cref="Shell item" /> by a server application.</para>
+    </summary>
+    <seealso cref="IShellItem" />
+  </member>
+</doc>

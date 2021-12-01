@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncWMVDecoderComplexity.xml' path='doc/member[@name="CODECAPI_AVEncWMVDecoderComplexity"]/*' />
 [Guid("F32C0DAB-F3CB-4217-B79F-8762768B5F67")]
 public partial struct CODECAPI_AVEncWMVDecoderComplexity
 {

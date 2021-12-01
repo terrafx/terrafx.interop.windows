@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle"]/*' />
 [Guid("09B2455D-B834-4F01-A347-9052E21C450E")]
 [NativeTypeName("struct IMFTimedTextStyle : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, uint>)(lpVtbl[1]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, uint>)(lpVtbl[2]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, ushort**, int>)(lpVtbl[3]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.IsExternal"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public BOOL IsExternal()
@@ -55,6 +61,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, int>)(lpVtbl[4]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetFontFamily"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetFontFamily([NativeTypeName("LPWSTR *")] ushort** fontFamily)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, ushort**, int>)(lpVtbl[5]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontFamily);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetFontSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetFontSize(double* fontSize, MF_TIMED_TEXT_UNIT_TYPE* unitType)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[6]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontSize, unitType);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetColor(MFARGB* color)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, MFARGB*, int>)(lpVtbl[7]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), color);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetBackgroundColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetBackgroundColor(MFARGB* bgColor)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, MFARGB*, int>)(lpVtbl[8]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), bgColor);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetShowBackgroundAlways"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetShowBackgroundAlways(BOOL* showBackgroundAlways)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[9]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), showBackgroundAlways);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetFontStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetFontStyle(MF_TIMED_TEXT_FONT_STYLE* fontStyle)
@@ -97,6 +109,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, MF_TIMED_TEXT_FONT_STYLE*, int>)(lpVtbl[10]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontStyle);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetBold"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetBold(BOOL* bold)
@@ -104,6 +117,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[11]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), bold);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetRightToLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetRightToLeft(BOOL* rightToLeft)
@@ -111,6 +125,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[12]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), rightToLeft);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetTextAlignment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetTextAlignment(MF_TIMED_TEXT_ALIGNMENT* textAlign)
@@ -118,6 +133,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, MF_TIMED_TEXT_ALIGNMENT*, int>)(lpVtbl[13]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), textAlign);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetTextDecoration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetTextDecoration([NativeTypeName("DWORD *")] uint* textDecoration)
@@ -125,6 +141,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle*, uint*, int>)(lpVtbl[14]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), textDecoration);
     }
 
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetTextOutline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetTextOutline(MFARGB* color, double* thickness, double* blurRadius, MF_TIMED_TEXT_UNIT_TYPE* unitType)

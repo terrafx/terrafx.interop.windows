@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumTfRanges.xml' path='doc/member[@name="IEnumTfRanges"]/*' />
 [Guid("F99D3F40-8E32-11D2-BF46-00105A2799B5")]
 [NativeTypeName("struct IEnumTfRanges : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumTfRanges : IEnumTfRanges.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumTfRanges : IEnumTfRanges.Interface
         return ((delegate* unmanaged<IEnumTfRanges*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfRanges*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumTfRanges : IEnumTfRanges.Interface
         return ((delegate* unmanaged<IEnumTfRanges*, uint>)(lpVtbl[1]))((IEnumTfRanges*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumTfRanges : IEnumTfRanges.Interface
         return ((delegate* unmanaged<IEnumTfRanges*, uint>)(lpVtbl[2]))((IEnumTfRanges*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfRanges.xml' path='doc/member[@name="IEnumTfRanges.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfRanges** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumTfRanges : IEnumTfRanges.Interface
         return ((delegate* unmanaged<IEnumTfRanges*, IEnumTfRanges**, int>)(lpVtbl[3]))((IEnumTfRanges*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumTfRanges.xml' path='doc/member[@name="IEnumTfRanges.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfRange** ppRange, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumTfRanges : IEnumTfRanges.Interface
         return ((delegate* unmanaged<IEnumTfRanges*, uint, ITfRange**, uint*, int>)(lpVtbl[4]))((IEnumTfRanges*)Unsafe.AsPointer(ref this), ulCount, ppRange, pcFetched);
     }
 
+    /// <include file='IEnumTfRanges.xml' path='doc/member[@name="IEnumTfRanges.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumTfRanges : IEnumTfRanges.Interface
         return ((delegate* unmanaged<IEnumTfRanges*, int>)(lpVtbl[5]))((IEnumTfRanges*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfRanges.xml' path='doc/member[@name="IEnumTfRanges.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AsyncIPipeLong.xml' path='doc/member[@name="AsyncIPipeLong"]/*' />
 [Guid("DB2F3ACD-2F86-11D1-8E04-00C04FB9989A")]
 [NativeTypeName("struct AsyncIPipeLong : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface
         return ((delegate* unmanaged<AsyncIPipeLong*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface
         return ((delegate* unmanaged<AsyncIPipeLong*, uint>)(lpVtbl[1]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface
         return ((delegate* unmanaged<AsyncIPipeLong*, uint>)(lpVtbl[2]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='AsyncIPipeLong.xml' path='doc/member[@name="AsyncIPipeLong.Begin_Pull"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Begin_Pull([NativeTypeName("ULONG")] uint cRequest)
@@ -46,6 +51,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface
         return ((delegate* unmanaged<AsyncIPipeLong*, uint, int>)(lpVtbl[3]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), cRequest);
     }
 
+    /// <include file='AsyncIPipeLong.xml' path='doc/member[@name="AsyncIPipeLong.Finish_Pull"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Finish_Pull([NativeTypeName("LONG *")] int* buf, [NativeTypeName("ULONG *")] uint* pcReturned)
@@ -53,6 +59,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface
         return ((delegate* unmanaged<AsyncIPipeLong*, int*, uint*, int>)(lpVtbl[4]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), buf, pcReturned);
     }
 
+    /// <include file='AsyncIPipeLong.xml' path='doc/member[@name="AsyncIPipeLong.Begin_Push"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Begin_Push([NativeTypeName("LONG *")] int* buf, [NativeTypeName("ULONG")] uint cSent)
@@ -60,6 +67,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface
         return ((delegate* unmanaged<AsyncIPipeLong*, int*, uint, int>)(lpVtbl[5]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), buf, cSent);
     }
 
+    /// <include file='AsyncIPipeLong.xml' path='doc/member[@name="AsyncIPipeLong.Finish_Push"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Finish_Push()

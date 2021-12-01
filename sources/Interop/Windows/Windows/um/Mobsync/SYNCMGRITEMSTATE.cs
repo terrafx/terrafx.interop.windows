@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGRITEMSTATE.xml' path='doc/member[@name="SYNCMGRITEMSTATE"]/*' />
 public enum SYNCMGRITEMSTATE
 {
+    /// <include file='SYNCMGRITEMSTATE.xml' path='doc/member[@name="SYNCMGRITEMSTATE.SYNCMGRITEMSTATE_UNCHECKED"]/*' />
     SYNCMGRITEMSTATE_UNCHECKED = 0,
+
+    /// <include file='SYNCMGRITEMSTATE.xml' path='doc/member[@name="SYNCMGRITEMSTATE.SYNCMGRITEMSTATE_CHECKED"]/*' />
     SYNCMGRITEMSTATE_CHECKED = 0x1,
 }

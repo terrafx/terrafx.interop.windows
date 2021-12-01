@@ -1,0 +1,950 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCaptureSource.AddEffect">
+    <summary>
+      <para>Adds an effect to a capture stream.</para>
+    </summary>
+    <param name="dwSourceStreamIndex">
+      <para>The capture stream. The value can be any of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0–0xFFFFFFFB</para>
+          </description>
+          <description>
+            <para>The zero-based index of a stream.  To get the number of streams, call <see cref="IMFCaptureSource.GetDeviceStreamCount" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_PHOTO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFB</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first image stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_VIDEO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFC</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first video stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_AUDIO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFD</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first audio stream.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pUnknown">
+      <para>A pointer to one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>A Media Foundation transform (MFT) that exposes the <see cref="IMFTransform" /> interface.</description>
+        </item>
+        <item>
+          <description>An MFT activation object that exposes the <see cref="IMFActivate" /> interface.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDMEDIATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>No compatible media type could be found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDSTREAMNUMBER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwSourceStreamIndex</i> parameter is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The effect must be implemented as a <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transform</a> (MFT). The <i>pUnknown</i> parameter can point to an instance of the MFT, or to an activation object for the MFT. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/activation-objects">Activation Objects</a>.</para>
+      <para>The effect is applied to the stream before the data reaches the capture sinks.</para>
+    </remarks>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.GetAvailableDeviceMediaType">
+    <summary>
+      <para>Gets a format that is supported by one of the capture streams.</para>
+    </summary>
+    <param name="dwSourceStreamIndex">
+      <para>The stream to query. The value can be any of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0–0xFFFFFFFB</para>
+          </description>
+          <description>
+            <para>The zero-based index of a stream. To get the number of streams, call <see cref="IMFCaptureSource.GetDeviceStreamCount" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_PHOTO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFB</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first image stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_VIDEO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFC</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first video stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_AUDIO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFD</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first audio stream.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="dwMediaTypeIndex">
+      <para>The zero-based index of the media type to retrieve.</para>
+    </param>
+    <param name="ppMediaType">
+      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDSTREAMNUMBER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwSourceStreamIndex</i> parameter is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NO_MORE_TYPES</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwMediaTypeIndex</i> parameter is out of range.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To enumerate all of the available formats on a stream, call this method in a loop while incrementing <i>dwMediaTypeIndex</i>, until the method returns <b>MF_E_NO_MORE_TYPES</b>.</para>
+      <para>Some cameras might support a range of frame rates. The minimum and maximum frame rates are stored in the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-range-min">MF_MT_FRAME_RATE_RANGE_MIN</a> and <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-range-max">MF_MT_FRAME_RATE_RANGE_MAX</a> attributes on the media type.</para>
+    </remarks>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.GetCaptureDeviceActivate">
+    <summary>
+      <para>Gets the current capture device's <see cref="IMFActivate" /> object pointer.</para>
+    </summary>
+    <param name="mfCaptureEngineDeviceType">
+      <para>The capture engine device type.</para>
+    </param>
+    <param name="ppActivate">
+      <para>Receives the pointer to a <see cref="IMFActivate" /> that represents a device.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.GetCaptureDeviceSource">
+    <summary>
+      <para>Gets the current capture device's <see cref="IMFMediaSource" /> object pointer.</para>
+    </summary>
+    <param name="mfCaptureEngineDeviceType">
+      <para>The capture engine device type.</para>
+    </param>
+    <param name="ppMediaSource">
+      <para>Receives a pointer to the <see cref="IMFMediaSource" /> that represent the device.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.GetCurrentDeviceMediaType">
+    <summary>
+      <para>Gets the current media type for a capture stream.</para>
+    </summary>
+    <param name="dwSourceStreamIndex">
+      <para>Specifies which stream to query. The value can be any of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0–0xFFFFFFFB</para>
+          </description>
+          <description>
+            <para>The zero-based index of a stream.  To get the number of streams, call <see cref="IMFCaptureSource.GetDeviceStreamCount" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_PHOTO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFB</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first image stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_VIDEO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFC</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first video stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_AUDIO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFD</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first audio stream.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ppMediaType">
+      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDSTREAMNUMBER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwSourceStreamIndex</i> parameter is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.GetDeviceStreamCategory">
+    <summary>
+      <para>Gets the stream category for the specified source stream index.</para>
+    </summary>
+    <param name="dwSourceStreamIndex">
+      <para>The index of the source stream.</para>
+    </param>
+    <param name="pStreamCategory">
+      <para>Receives the MF_CAPTURE_ENGINE_STREAM_CATEGORY of the specified source stream.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.GetDeviceStreamCount">
+    <summary>
+      <para>Gets the number of device streams.</para>
+    </summary>
+    <param name="pdwStreamCount">
+      <para>Receives the number of device streams.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.GetMirrorState">
+    <summary>
+      <para>Gets the current mirroring state of the video preview stream.</para>
+    </summary>
+    <param name="dwStreamIndex">
+      <para>The zero-based index of the stream.</para>
+    </param>
+    <param name="pfMirrorState">
+      <para>Receives the value <b>TRUE</b> if mirroring is enabled, or <b>FALSE</b> if mirroring is disabled.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.GetService">
+    <summary>
+      <para>Gets a pointer to the underlying <a href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</a> object.</para>
+    </summary>
+    <param name="rguidService">
+      <para>A service identifier GUID. Currently the value must be <b>IID_IMFSourceReader</b> or <b>GUID_NULL</b>.</para>
+    </param>
+    <param name="riid">
+      <para>The interface identifier (IID) of the interface being requested. The value must be <b>IID_IMFSourceReader</b>. If the value is not set to <b>IID_IMFSourceReader</b>, the call  will fail and return <b>E_INVALIDARG</b>.</para>
+    </param>
+    <param name="ppUnknown">
+      <para>Receives a pointer to the <see cref="IUnknown" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The capture source was not initialized. Possibly there is no capture device on the system.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.GetStreamIndexFromFriendlyName">
+    <summary>
+      <para>Gets the actual device stream index translated from a friendly stream name.</para>
+    </summary>
+    <param name="uifriendlyName">
+      <para>The friendly name.  Can be one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>MF_CAPTURE_ENGINE_FIRST_SOURCE_AUDIO_STREAM</description>
+        </item>
+        <item>
+          <description>MF_CAPTURE_ENGINE_FIRST_SOURCE_VIDEO_STREAM</description>
+        </item>
+        <item>
+          <description>MF_CAPTURE_ENGINE_FIRST_SOURCE_PHOTO_STREAM</description>
+        </item>
+        <item>
+          <description>MF_CAPTURE_ENGINE_PREFERRED_SOURCE_VIDEO_STREAM_FOR_RECORD</description>
+        </item>
+        <item>
+          <description>MF_CAPTURE_ENGINE_PREFERRED_SOURCE_VIDEO_STREAM_FOR_PREVIEW</description>
+        </item>
+        <item>
+          <description>MF_CAPTURE_ENGINE_FIRST_SOURCE_INDEPENDENT_PHOTO_STREAM</description>
+        </item>
+      </list>
+    </param>
+    <param name="pdwActualStreamIndex">
+      <para>Receives the value of the stream index that corresponds to the friendly name.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.RemoveAllEffects">
+    <summary>
+      <para>Removes all effects from a capture stream.</para>
+    </summary>
+    <param name="dwSourceStreamIndex">
+      <para>The capture stream. The value can be any of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0–0xFFFFFFFB</para>
+          </description>
+          <description>
+            <para>The zero-based index of a stream. To get the number of streams, call <see cref="IMFCaptureSource.GetDeviceStreamCount" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_PHOTO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFB</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first image stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_VIDEO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFC</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first video stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_AUDIO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFD</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first audio stream.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDSTREAMNUMBER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwSourceStreamIndex</i> parameter is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.RemoveEffect">
+    <summary>
+      <para>Removes an effect from a capture stream.</para>
+    </summary>
+    <param name="dwSourceStreamIndex">
+      <para>The capture stream. The value can be any of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0–0xFFFFFFFB</para>
+          </description>
+          <description>
+            <para>The zero-based index of a stream.  To get the number of streams, call <see cref="IMFCaptureSource.GetDeviceStreamCount" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_PHOTO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFB</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first image stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_VIDEO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFC</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first video stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_AUDIO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFD</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first audio stream.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pUnknown">
+      <para>A pointer to the <see cref="IUnknown" /> interface of the effect object.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid request. Possibly the specified effect could not be found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDSTREAMNUMBER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwSourceStreamIndex</i> parameter is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method removes an effect that was previously added using the <see cref="IMFCaptureSource.AddEffect" /> method.</para>
+    </remarks>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.SetCurrentDeviceMediaType">
+    <summary>
+      <para>Sets the output format for a capture stream.</para>
+    </summary>
+    <param name="dwSourceStreamIndex">
+      <para>The capture stream to set. The value can be any of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0–0xFFFFFFFB</para>
+          </description>
+          <description>
+            <para>The zero-based index of a stream. To get the number of streams, call <see cref="IMFCaptureSource.GetDeviceStreamCount" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_PHOTO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFB</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first image stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_VIDEO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFC</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first video stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>
+                    <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_AUDIO_STREAM</b>
+                  </b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFD</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The first audio stream.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pMediaType">
+      <para>A pointer to the <see cref="IMFMediaType" /> interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDSTREAMNUMBER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwSourceStreamIndex</i> parameter is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method sets the native output type on the capture device. The device must support the specified format. To get the list of available formats, call <see cref="IMFCaptureSource.GetAvailableDeviceMediaType" />.</para>
+    </remarks>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource.SetMirrorState">
+    <summary>
+      <para>Enables or disables mirroring of the video preview stream.</para>
+    </summary>
+    <param name="dwStreamIndex">
+      <para>The zero-based index of the stream.</para>
+    </param>
+    <param name="fMirrorState">
+      <para>If   <b>TRUE</b>,    mirroring is enabled; if  <b>FALSE</b>, mirroring is  disabled.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The device stream does not have mirroring capability.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The source is not initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFCaptureSource" />
+  </member>
+  <member name="IMFCaptureSource">
+    <summary>
+      <para>Controls the capture source object. The capture source manages the audio and video capture devices.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to the capture source, call <see cref="IMFCaptureEngine.GetSource" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

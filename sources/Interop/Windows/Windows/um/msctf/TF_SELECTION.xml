@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TF_SELECTION">
+    <summary>
+      <para>The <b>TF_SELECTION</b> structure contains text selection data.</para>
+    </summary>
+    <seealso cref="ITfContext.GetSelection " />
+    <seealso cref="ITfContext.SetSelection " />
+    <seealso cref="ITfRange " />
+    <seealso cref="TF_SELECTIONSTYLE " />
+  </member>
+  <member name="TF_SELECTION.range">
+    <summary>
+      <para>Pointer to an <see cref="ITfRange" /> object that specifies the selected text.</para>
+    </summary>
+  </member>
+  <member name="TF_SELECTION.style">
+    <summary>
+      <para>A <see cref="TF_SELECTIONSTYLE" /> structure that contains selection data.</para>
+    </summary>
+  </member>
+</doc>

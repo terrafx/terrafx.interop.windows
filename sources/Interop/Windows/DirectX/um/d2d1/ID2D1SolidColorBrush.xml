@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1SolidColorBrush.GetColor">
+    <summary>
+      <para>Retrieves the color of the solid color brush.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
+      <para>The color of this solid color brush.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/api/d2d1helper/nl-d2d1helper-colorf">COLORF</seealso>
+    <seealso cref="ID2D1SolidColorBrush" />
+  </member>
+  <member name="ID2D1SolidColorBrush.SetColor">
+    <summary>
+      <para>Specifies the color of this solid color brush.</para>
+    </summary>
+    <param name="color">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-color-f">D2D1_COLOR_F</a>*</b></para>
+      <para>The color of this solid color brush.</para>
+    </param>
+    <remarks>
+      <para>To help create colors, Direct2D provides the <a href="https://docs.microsoft.com//windows/win32/api/d2d1helper/nl-d2d1helper-colorf">ColorF</a> class. It offers several helper methods for creating colors and provides a set or predefined colors.</para>
+    </remarks>
+    <seealso cref="ID2D1SolidColorBrush" />
+  </member>
+  <member name="ID2D1SolidColorBrush.SetColor">
+    <summary>
+      <para>Specifies the color of this solid-color brush.</para>
+    </summary>
+    <param name="color">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
+      <para>The color of this solid-color brush.</para>
+    </param>
+    <remarks>
+      <para>To help create colors, Direct2D provides the <a href="https://docs.microsoft.com//windows/win32/api/d2d1helper/nl-d2d1helper-colorf">ColorF</a> class. It offers several helper methods for creating colors and provides a set or predefined colors.</para>
+    </remarks>
+    <seealso cref="ID2D1SolidColorBrush" />
+  </member>
+  <member name="ID2D1SolidColorBrush">
+    <summary>
+      <para>Paints an area with a solid color.</para>
+    </summary>
+    <remarks>
+      <h3>Creating ID2D1SolidColorBrush Objects</h3>
+      <para>To create a solid color brush, use the <see cref="ID2D1RenderTarget.CreateSolidColorBrush" /> method of the render target on which the brush will be used. The brush can only be used with the render target that created it or with the compatible targets for that render target.</para>
+      <para>A solid color brush is a device-dependent resource. (For more information about resources, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-brushes-overview">Brushes Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/win32/api/d2d1helper/nl-d2d1helper-colorf">ColorF</seealso>
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/how-to-create-a-solid-color-brush">How to Create a Solid Color Brush</seealso>
+    <seealso cref="ID2D1Brush" />
+  </member>
+</doc>

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_ATTRIBUTES.xml' path='doc/member[@name="CRYPT_ATTRIBUTES"]/*' />
 public unsafe partial struct CRYPT_ATTRIBUTES
 {
+    /// <include file='CRYPT_ATTRIBUTES.xml' path='doc/member[@name="CRYPT_ATTRIBUTES.cAttr"]/*' />
     [NativeTypeName("DWORD")]
     public uint cAttr;
 
+    /// <include file='CRYPT_ATTRIBUTES.xml' path='doc/member[@name="CRYPT_ATTRIBUTES.rgAttr"]/*' />
     [NativeTypeName("PCRYPT_ATTRIBUTE")]
     public CRYPT_ATTRIBUTE* rgAttr;
 }

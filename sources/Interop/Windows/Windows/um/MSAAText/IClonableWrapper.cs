@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IClonableWrapper.xml' path='doc/member[@name="IClonableWrapper"]/*' />
 [Guid("B33E75FF-E84C-4DCA-A25C-33B8DC003374")]
 [NativeTypeName("struct IClonableWrapper : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface
         return ((delegate* unmanaged<IClonableWrapper*, Guid*, void**, int>)(lpVtbl[0]))((IClonableWrapper*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface
         return ((delegate* unmanaged<IClonableWrapper*, uint>)(lpVtbl[1]))((IClonableWrapper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface
         return ((delegate* unmanaged<IClonableWrapper*, uint>)(lpVtbl[2]))((IClonableWrapper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IClonableWrapper.xml' path='doc/member[@name="IClonableWrapper.CloneNewWrapper"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CloneNewWrapper([NativeTypeName("const IID &")] Guid* riid, void** ppv)

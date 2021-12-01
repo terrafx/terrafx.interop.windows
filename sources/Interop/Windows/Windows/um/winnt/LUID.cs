@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LUID.xml' path='doc/member[@name="LUID"]/*' />
 public partial struct LUID
 {
+    /// <include file='LUID.xml' path='doc/member[@name="LUID.LowPart"]/*' />
     [NativeTypeName("DWORD")]
     public uint LowPart;
 
+    /// <include file='LUID.xml' path='doc/member[@name="LUID.HighPart"]/*' />
     [NativeTypeName("LONG")]
     public int HighPart;
 }

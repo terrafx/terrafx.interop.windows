@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYMSRV_EXTENDED_OUTPUT_DATA.xml' path='doc/member[@name="SYMSRV_EXTENDED_OUTPUT_DATA"]/*' />
 public unsafe partial struct SYMSRV_EXTENDED_OUTPUT_DATA
 {
+    /// <include file='SYMSRV_EXTENDED_OUTPUT_DATA.xml' path='doc/member[@name="SYMSRV_EXTENDED_OUTPUT_DATA.sizeOfStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint sizeOfStruct;
 
+    /// <include file='SYMSRV_EXTENDED_OUTPUT_DATA.xml' path='doc/member[@name="SYMSRV_EXTENDED_OUTPUT_DATA.version"]/*' />
     [NativeTypeName("DWORD")]
     public uint version;
 
+    /// <include file='SYMSRV_EXTENDED_OUTPUT_DATA.xml' path='doc/member[@name="SYMSRV_EXTENDED_OUTPUT_DATA.filePtrMsg"]/*' />
     [NativeTypeName("WCHAR [261]")]
     public fixed ushort filePtrMsg[261];
 }

@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFOutputPolicy.GenerateRequiredSchemas">
+    <summary>
+      <para>Retrieves a list of the output protection systems that the output trust authority (OTA) must enforce, along with configuration data for each protection system.</para>
+    </summary>
+    <param name="dwAttributes">
+      <para>Describes the output that is represented by the OTA calling this method. This value is a bitwise OR of zero or more of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MFOUTPUTATTRIBUTE_BUS</b>
+          </description>
+          <description>
+            <para>Hardware bus.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFOUTPUTATTRIBUTE_COMPRESSED</b>
+          </description>
+          <description>
+            <para>The output sends compressed data. If this flag is absent, the output sends uncompressed data.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFOUTPUTATTRIBUTE_BUSIMPLEMENTATION</b>
+          </description>
+          <description>
+            <para>Reserved. Do not use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFOUTPUTATTRIBUTE_DIGITAL</b>
+          </description>
+          <description>
+            <para>The output sends a digital signal. If this flag is absent, the output sends an analog signal.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFOUTPUTATTRIBUTE_NONSTANDARDIMPLEMENTATION</b>
+          </description>
+          <description>
+            <para>Reserved. Do not use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFOUTPUTATTRIBUTE_SOFTWARE</b>
+          </description>
+          <description>
+            <para>Reserved. Do not use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFOUTPUTATTRIBUTE_VIDEO</b>
+          </description>
+          <description>
+            <para>The output sends video data. If this flag is absent, the output sends audio data.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="guidOutputSubType">
+      <para>Indicates a specific family of output connectors that is represented by the OTA calling this method. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MFCONNECTOR_AGP</b>
+          </description>
+          <description>
+            <para>AGP bus.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_COMPONENT</b>
+          </description>
+          <description>
+            <para>Component video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_COMPOSITE</b>
+          </description>
+          <description>
+            <para>Composite video.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_D_JPN</b>
+          </description>
+          <description>
+            <para>Japanese D connector. (Connector conforming to the EIAJ RC-5237 standard.)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_DISPLAYPORT_EMBEDDED</b>
+          </description>
+          <description>
+            <para>Embedded DisplayPort connector.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_DISPLAYPORT_EXTERNAL</b>
+          </description>
+          <description>
+            <para>External DisplayPort connector.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_DVI</b>
+          </description>
+          <description>
+            <para>Digital video interface (DVI) connector.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_HDMI</b>
+          </description>
+          <description>
+            <para>High-definition multimedia interface (HDMI) connector.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_LVDS</b>
+          </description>
+          <description>
+            <para>Low voltage differential signaling (LVDS) connector.</para>
+            <para>A connector using the LVDS interface to connect internally to a display device. The connection between the graphics adapter and the display device is permanent and not accessible to the user. Applications should not enable High-Bandwidth Digital Content Protection (HDCP) for this connector.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_PCI</b>
+          </description>
+          <description>
+            <para>PCI bus.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_PCI_Express</b>
+          </description>
+          <description>
+            <para>PCI Express bus.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_PCIX</b>
+          </description>
+          <description>
+            <para>PCI-X bus.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_SDI</b>
+          </description>
+          <description>
+            <para>Audio data sent over a connector via S/PDIF.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_SPDIF</b>
+          </description>
+          <description>
+            <para>Serial digital interface connector.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_SVIDEO</b>
+          </description>
+          <description>
+            <para>S-Video connector.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_UDI_EMBEDDED</b>
+          </description>
+          <description>
+            <para>Embedded Unified Display Interface (UDI).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_UDI_EXTERNAL</b>
+          </description>
+          <description>
+            <para>External UDI.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_UNKNOWN</b>
+          </description>
+          <description>
+            <para>Unknown connector type. See Remarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFCONNECTOR_VGA</b>
+          </description>
+          <description>
+            <para>VGA connector.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b> MFCONNECTOR_MIRACAST</b>
+          </description>
+          <description>
+            <para>Miracast wireless connector.</para>
+            <para>Supported in Windows 8.1 and later.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="rgGuidProtectionSchemasSupported">
+      <para>Pointer to an array of GUID values that specify which output protection systems are supported by the OTA that is calling this method.</para>
+    </param>
+    <param name="cProtectionSchemasSupported">
+      <para>Number of elements in the <i>rgGuidProtectionSchemasSupported</i> array.</para>
+    </param>
+    <param name="ppRequiredProtectionSchemas">
+      <para>Receives a pointer to the <see cref="IMFCollection" /> interface of a collection object. The caller must release the interface. Each object in the collection is an <see cref="IMFOutputSchema" /> pointer. Each <b>IMFOutputSchema</b> pointer defines an output protection system that the OTA must enforce.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The video OTA returns  the <b>MFCONNECTOR_UNKNOWN</b> connector type unless the Direct3D device is in full-screen mode. (Direct3D windowed mode is not generally a secure video mode.) You can override this behavior by implementing a custom EVR presenter that implements the <see cref="IEVRTrustedVideoPlugin" /> interface.</para>
+    </remarks>
+    <seealso cref="IMFOutputPolicy" />
+  </member>
+  <member name="IMFOutputPolicy.GetMinimumGRLVersion">
+    <summary>
+      <para>Retrieves the minimum version of the global revocation list (GRL) that must be enforced by the protected environment for this policy.</para>
+    </summary>
+    <param name="pdwMinimumGRLVersion">
+      <para>Receives the minimum GRL version.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFOutputPolicy" />
+  </member>
+  <member name="IMFOutputPolicy.GetOriginatorID">
+    <summary>
+      <para>Retrieves a GUID identifying the input trust authority (ITA) that created this output policy object.</para>
+    </summary>
+    <param name="pguidOriginatorID">
+      <para>Receives a GUID that identifies the originating ITA.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>All of the policy objects and output schemas from the same ITA should return the same originator identifier (including dynamic policy changes). This value enables the OTA to distinguish policies that originate from different ITAs, so that the OTA can update dynamic policies correctly.</para>
+    </remarks>
+    <seealso cref="IMFOutputPolicy" />
+  </member>
+  <member name="IMFOutputPolicy">
+    <summary>
+      <para>Encapsulates a usage policy from an input trust authority (ITA). Output trust authorities (OTAs) use this interface to query which protection systems they are required to enforce by the ITA.</para>
+    </summary>
+    <seealso cref="IMFAttributes" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

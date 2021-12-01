@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOUSEMOVEPOINT.xml' path='doc/member[@name="MOUSEMOVEPOINT"]/*' />
 public partial struct MOUSEMOVEPOINT
 {
+    /// <include file='MOUSEMOVEPOINT.xml' path='doc/member[@name="MOUSEMOVEPOINT.x"]/*' />
     public int x;
 
+    /// <include file='MOUSEMOVEPOINT.xml' path='doc/member[@name="MOUSEMOVEPOINT.y"]/*' />
     public int y;
 
+    /// <include file='MOUSEMOVEPOINT.xml' path='doc/member[@name="MOUSEMOVEPOINT.time"]/*' />
     [NativeTypeName("DWORD")]
     public uint time;
 
+    /// <include file='MOUSEMOVEPOINT.xml' path='doc/member[@name="MOUSEMOVEPOINT.dwExtraInfo"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint dwExtraInfo;
 }

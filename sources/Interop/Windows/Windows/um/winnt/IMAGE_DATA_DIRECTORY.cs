@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_DATA_DIRECTORY.xml' path='doc/member[@name="IMAGE_DATA_DIRECTORY"]/*' />
 public partial struct IMAGE_DATA_DIRECTORY
 {
+    /// <include file='IMAGE_DATA_DIRECTORY.xml' path='doc/member[@name="IMAGE_DATA_DIRECTORY.VirtualAddress"]/*' />
     [NativeTypeName("DWORD")]
     public uint VirtualAddress;
 
+    /// <include file='IMAGE_DATA_DIRECTORY.xml' path='doc/member[@name="IMAGE_DATA_DIRECTORY.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 }

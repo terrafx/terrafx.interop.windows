@@ -8,17 +8,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_STORAGE_RANGE_ATTRIBUTES.xml' path='doc/member[@name="DEVICE_STORAGE_RANGE_ATTRIBUTES"]/*' />
 public partial struct DEVICE_STORAGE_RANGE_ATTRIBUTES
 {
+    /// <include file='DEVICE_STORAGE_RANGE_ATTRIBUTES.xml' path='doc/member[@name="DEVICE_STORAGE_RANGE_ATTRIBUTES.LengthInBytes"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong LengthInBytes;
 
+    /// <include file='DEVICE_STORAGE_RANGE_ATTRIBUTES.xml' path='doc/member[@name="DEVICE_STORAGE_RANGE_ATTRIBUTES.Anonymous"]/*' />
     [NativeTypeName("_DEVICE_STORAGE_RANGE_ATTRIBUTES::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:4424:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='DEVICE_STORAGE_RANGE_ATTRIBUTES.xml' path='doc/member[@name="DEVICE_STORAGE_RANGE_ATTRIBUTES.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AllFlags"]/*' />
     public ref uint AllFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -28,6 +33,7 @@ public partial struct DEVICE_STORAGE_RANGE_ATTRIBUTES
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsRangeBad"]/*' />
     public uint IsRangeBad
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,21 +49,26 @@ public partial struct DEVICE_STORAGE_RANGE_ATTRIBUTES
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AllFlags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint AllFlags;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_DEVICE_STORAGE_RANGE_ATTRIBUTES::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:4428:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsRangeBad"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint IsRangeBad
             {

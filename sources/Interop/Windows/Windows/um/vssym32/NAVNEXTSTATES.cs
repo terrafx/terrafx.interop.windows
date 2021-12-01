@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NAVNEXTSTATES.xml' path='doc/member[@name="NAVNEXTSTATES"]/*' />
 public enum NAVNEXTSTATES
 {
+    /// <include file='NAVNEXTSTATES.xml' path='doc/member[@name="NAVNEXTSTATES.MCNN_NORMAL"]/*' />
     MCNN_NORMAL = 1,
+
+    /// <include file='NAVNEXTSTATES.xml' path='doc/member[@name="NAVNEXTSTATES.MCNN_HOT"]/*' />
     MCNN_HOT = 2,
+
+    /// <include file='NAVNEXTSTATES.xml' path='doc/member[@name="NAVNEXTSTATES.MCNN_PRESSED"]/*' />
     MCNN_PRESSED = 3,
+
+    /// <include file='NAVNEXTSTATES.xml' path='doc/member[@name="NAVNEXTSTATES.MCNN_DISABLED"]/*' />
     MCNN_DISABLED = 4,
 }

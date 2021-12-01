@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlStart.xml' path='doc/member[@name="htmlStart"]/*' />
 public enum htmlStart
 {
+    /// <include file='htmlStart.xml' path='doc/member[@name="htmlStart.htmlStartfileopen"]/*' />
     htmlStartfileopen = 0,
+
+    /// <include file='htmlStart.xml' path='doc/member[@name="htmlStart.htmlStartmouseover"]/*' />
     htmlStartmouseover = 1,
+
+    /// <include file='htmlStart.xml' path='doc/member[@name="htmlStart.htmlStart_Max"]/*' />
     htmlStart_Max = 2147483647,
 }

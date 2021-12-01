@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFWorkQueueServices.BeginRegisterPlatformWorkQueueWithMMCSS">
+    <summary>
+      <para>Associates a platform work queue with a Multimedia Class Scheduler Service (MMCSS) task.</para>
+    </summary>
+    <param name="dwPlatformWorkQueue">
+      <para>The platform work queue to register with MMCSS. See <a href="https://docs.microsoft.com//windows/desktop/medfound/work-queue-identifiers">Work Queue Identifiers</a>.
+To register all of the standard work queues to the same MMCSS task, set this parameter to <b>MFASYNC_CALLBACK_QUEUE_ALL</b>.</para>
+    </param>
+    <param name="wszClass">
+      <para>The name of the MMCSS task to be performed.</para>
+    </param>
+    <param name="dwTaskId">
+      <para>The unique task identifier. To obtain a new task identifier, set this value to zero.</para>
+    </param>
+    <param name="pCallback">
+      <para>A pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="pState">
+      <para>A pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is asynchronous. When the operation completes, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. At that point, the application should call <see cref="IMFWorkQueueServices.EndRegisterPlatformWorkQueueWithMMCSS" /> to complete the asynchronous request.</para>
+      <para>To unregister the work queue from the MMCSS class, call <see cref="IMFWorkQueueServices.BeginUnregisterPlatformWorkQueueWithMMCSS" />.</para>
+    </remarks>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.BeginRegisterTopologyWorkQueuesWithMMCSS">
+    <summary>
+      <para>Registers the topology work queues with the Multimedia Class Scheduler Service (MMCSS).</para>
+    </summary>
+    <param name="pCallback">
+      <para>A pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="pState">
+      <para>A pointer to the <b>IUnknown</b> interface of a state object defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Each source node in the topology defines one branch of the topology. The branch includes every topology node that receives data from that node. An application can assign each branch of a topology its own work queue and then associate those work queues with MMCSS tasks.</para>
+      <para>To use this method, perform the following steps.</para>
+      <list type="number">
+        <item>
+          <description>Create the topology.</description>
+        </item>
+        <item>
+          <description>Set the following attributes on the source nodes in the topology.<list type="bullet"><item><description><a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-workqueue-id-attribute">MF_TOPONODE_WORKQUEUE_ID</a>. Specifies an identifier for the work queue.
+The Media Session will allocate a new work queue.</description></item><item><description><a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-workqueue-mmcss-class-attribute">MF_TOPONODE_WORKQUEUE_MMCSS_CLASS</a>. Specifies the MMCSS class.
+</description></item><item><description><a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-workqueue-mmcss-taskid-attribute">MF_TOPONODE_WORKQUEUE_MMCSS_TASKID</a>. Specifies the MMCSS task identifier (optional). If this attribute is not set, MMCSS assigns a new task identifier.
+</description></item></list></description>
+        </item>
+        <item>
+          <description>Queue the topology by calling <see cref="IMFMediaSession.SetTopology" />.</description>
+        </item>
+        <item>
+          <description>Wait for the <a href="https://docs.microsoft.com//windows/desktop/medfound/mesessiontopologystatus">MESessionTopologyStatus</a> event with the <b>MF_TOPOSTATUS_READY</b>  status.</description>
+        </item>
+        <item>
+          <description>Call <b>BeginRegisterTopologyWorkQueuesWithMMCSS</b>. This method registers all of the topology work queues with MMCSS.</description>
+        </item>
+      </list>
+      <para>The <b>BeginRegisterTopologyWorkQueuesWithMMCSS</b> method is asynchronous. When the operation completes, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. Within the callback method, call <see cref="IMFWorkQueueServices.EndRegisterTopologyWorkQueuesWithMMCSS" /> to complete the asynchronous request. After this operation completes, the Media Session automatically registers the work queues for every new topology that is queued on the Media Session. The application does not need to call the method again for new topologies.</para>
+      <para>To unregister the topology work queues from MMCSS, call <see cref="IMFWorkQueueServices.BeginUnregisterTopologyWorkQueuesWithMMCSS" />.</para>
+    </remarks>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.BeginUnregisterPlatformWorkQueueWithMMCSS">
+    <summary>
+      <para>Unregisters a platform work queue from a Multimedia Class Scheduler Service (MMCSS) task.</para>
+    </summary>
+    <param name="dwPlatformWorkQueue">
+      <para>Platform work queue to register with MMCSS. See <see cref="IMFWorkQueueServices.BeginRegisterPlatformWorkQueueWithMMCSS" />.</para>
+    </param>
+    <param name="pCallback">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="pState">
+      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is asynchronous. When the operation completes, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. At that point, the application should call <see cref="IMFWorkQueueServices.EndUnregisterPlatformWorkQueueWithMMCSS" /> to complete the asynchronous request.</para>
+    </remarks>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.BeginUnregisterTopologyWorkQueuesWithMMCSS">
+    <summary>
+      <para>Unregisters the topology work queues from the Multimedia Class Scheduler Service (MMCSS).</para>
+    </summary>
+    <param name="pCallback">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="pState">
+      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is asynchronous. When the operation completes, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. At that point, the application should call <see cref="IMFWorkQueueServices.EndUnregisterTopologyWorkQueuesWithMMCSS" /> to complete the asynchronous request.</para>
+    </remarks>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.EndRegisterPlatformWorkQueueWithMMCSS">
+    <summary>
+      <para>Completes an asynchronous request to associate a platform work queue with a Multimedia Class Scheduler Service (MMCSS) task.</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </param>
+    <param name="pdwTaskId">
+      <para>The unique task identifier.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this function when the <see cref="IMFWorkQueueServices.BeginRegisterPlatformWorkQueueWithMMCSS" /> method completes asynchronously.</para>
+      <para>To unregister the work queue from the MMCSS class, call <see cref="IMFWorkQueueServices.BeginUnregisterPlatformWorkQueueWithMMCSS" />.</para>
+    </remarks>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.EndRegisterTopologyWorkQueuesWithMMCSS">
+    <summary>
+      <para>Completes an asynchronous request to register the topology work queues with the Multimedia Class Scheduler Service (MMCSS).</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method when the <see cref="IMFWorkQueueServices.BeginRegisterTopologyWorkQueuesWithMMCSS" /> method completes asynchronously.</para>
+    </remarks>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.EndUnregisterPlatformWorkQueueWithMMCSS">
+    <summary>
+      <para>Completes an asynchronous request to unregister a platform work queue from a Multimedia Class Scheduler Service (MMCSS) task.</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method when the <see cref="IMFWorkQueueServices.BeginUnregisterPlatformWorkQueueWithMMCSS" /> method completes asynchronously.</para>
+    </remarks>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.EndUnregisterTopologyWorkQueuesWithMMCSS">
+    <summary>
+      <para>Completes an asynchronous request to unregister the topology work queues from the Multimedia Class Scheduler Service (MMCSS).</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method when the <see cref="IMFWorkQueueServices.BeginRegisterTopologyWorkQueuesWithMMCSS" /> method completes asynchronously.</para>
+    </remarks>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.GetPlaftormWorkQueueMMCSSClass">
+    <summary>
+      <para>Retrieves the Multimedia Class Scheduler Service (MMCSS) class for a specified platform work queue.</para>
+    </summary>
+    <param name="dwPlatformWorkQueueId">
+      <para>Platform work queue to query. See <see cref="IMFWorkQueueServices.BeginRegisterPlatformWorkQueueWithMMCSS" />.</para>
+    </param>
+    <param name="pwszClass">
+      <para>Pointer to a buffer that receives the name of the MMCSS class. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pcchClass">
+      <para>On input, specifies the size of the pwszClass buffer, in characters. On output, receives the required size of the buffer, in characters. The size includes the terminating null character.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_BUFFERTOOSMALL</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pwszClass</i> buffer is too small to receive the class name.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.GetPlatformWorkQueueMMCSSTaskId">
+    <summary>
+      <para>Retrieves the Multimedia Class Scheduler Service (MMCSS) task identifier for a specified platform work queue.</para>
+    </summary>
+    <param name="dwPlatformWorkQueueId">
+      <para>Platform work queue to query. See <see cref="IMFWorkQueueServices.BeginRegisterPlatformWorkQueueWithMMCSS" />.</para>
+    </param>
+    <param name="pdwTaskId">
+      <para>Receives the task identifier.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.GetTopologyWorkQueueMMCSSClass">
+    <summary>
+      <para>Retrieves the Multimedia Class Scheduler Service (MMCSS) class for a specified branch of the current topology.</para>
+    </summary>
+    <param name="dwTopologyWorkQueueId">
+      <para>Identifies the work queue assigned to this topology branch. The application defines this value by setting the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-workqueue-id-attribute">MF_TOPONODE_WORKQUEUE_ID</a> attribute on the source node for the branch.</para>
+    </param>
+    <param name="pwszClass">
+      <para>Pointer to a buffer that receives the name of the MMCSS class. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pcchClass">
+      <para>On input, specifies the size of the <i>pwszClass</i> buffer, in characters. On output, receives the required size of the buffer, in characters. The size includes the terminating null character.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no work queue with the specified identifier.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_BUFFERTOOSMALL</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pwszClass</i> buffer is too small to receive the class name.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices.GetTopologyWorkQueueMMCSSTaskId">
+    <summary>
+      <para>Retrieves the Multimedia Class Scheduler Service (MMCSS) task identifier for a specified branch of the current topology.</para>
+    </summary>
+    <param name="dwTopologyWorkQueueId">
+      <para>Identifies the work queue assigned to this topology branch. The application defines this value by setting the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-workqueue-id-attribute">MF_TOPONODE_WORKQUEUE_ID</a> attribute on the source node for the branch.</para>
+    </param>
+    <param name="pdwTaskId">
+      <para>Receives the task identifier.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFWorkQueueServices" />
+  </member>
+  <member name="IMFWorkQueueServices">
+    <summary>
+      <para>Controls the work queues created by the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a>.</para>
+      <para>The Media Session exposes this interface as a service. To obtain a pointer to this interface, call <see cref="IMFGetService.GetService" /> on the Media Session with the service identifier MF_WORKQUEUE_SERVICES.</para>
+    </summary>
+    <remarks>
+      <para>If the application is using the protected media path (PMP) session, the methods in this interface automatically marshal the calls to the PMP process.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

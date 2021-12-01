@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DRAWTEXTPARAMS.xml' path='doc/member[@name="DRAWTEXTPARAMS"]/*' />
 public partial struct DRAWTEXTPARAMS
 {
+    /// <include file='DRAWTEXTPARAMS.xml' path='doc/member[@name="DRAWTEXTPARAMS.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='DRAWTEXTPARAMS.xml' path='doc/member[@name="DRAWTEXTPARAMS.iTabLength"]/*' />
     public int iTabLength;
 
+    /// <include file='DRAWTEXTPARAMS.xml' path='doc/member[@name="DRAWTEXTPARAMS.iLeftMargin"]/*' />
     public int iLeftMargin;
 
+    /// <include file='DRAWTEXTPARAMS.xml' path='doc/member[@name="DRAWTEXTPARAMS.iRightMargin"]/*' />
     public int iRightMargin;
 
+    /// <include file='DRAWTEXTPARAMS.xml' path='doc/member[@name="DRAWTEXTPARAMS.uiLengthDrawn"]/*' />
     public uint uiLengthDrawn;
 }

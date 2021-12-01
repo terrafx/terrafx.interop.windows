@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DCOMPOSITION_FRAME_STATISTICS">
+    <summary>
+      <para>Describes timing and composition statistics for a frame.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="IDCompositionDevice.GetFrameStatistics" /> method fills this structure. An application can use the information in this structure to estimate the timestamp of the next few frames that will be started by the composition engine. Note that this is only an estimate because the composition engine may or may not compose the next frame, depending on whether any active animations or other work are pending for that frame. In addition, the composition engine may change frame rates according to the cost of composing individual frames.</para>
+    </remarks>
+    <seealso cref="IDCompositionDevice.GetFrameStatistics" />
+  </member>
+  <member name="DCOMPOSITION_FRAME_STATISTICS.lastFrameTime">
+    <summary>
+      <para>Type: <b><see cref="LARGE_INTEGER" /></b></para>
+      <para>The time stamp of the last batch of commands to be processed by the composition engine.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_FRAME_STATISTICS.currentCompositionRate">
+    <summary>
+      <para>Type: <b><see cref="DXGI_RATIONAL" /></b></para>
+      <para>The rate at which the composition engine is producing frames, in frames per second.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_FRAME_STATISTICS.currentTime">
+    <summary>
+      <para>Type: <b><see cref="LARGE_INTEGER" /></b></para>
+      <para>The current time as computed by the <see cref="QueryPerformanceCounter" /> function.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_FRAME_STATISTICS.timeFrequency">
+    <summary>
+      <para>Type: <b><see cref="LARGE_INTEGER" /></b></para>
+      <para>The units in which the <b>lastFrameTime</b> and <b>currentTime</b> members are specified, in Hertz.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_FRAME_STATISTICS.nextEstimatedFrameTime">
+    <summary>
+      <para>Type: <b><see cref="LARGE_INTEGER" /></b></para>
+      <para>The estimated time when the next frame will be displayed.</para>
+    </summary>
+  </member>
+</doc>

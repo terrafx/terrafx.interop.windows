@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PPM_THERMALCHANGE_EVENT.xml' path='doc/member[@name="PPM_THERMALCHANGE_EVENT"]/*' />
 public partial struct PPM_THERMALCHANGE_EVENT
 {
+    /// <include file='PPM_THERMALCHANGE_EVENT.xml' path='doc/member[@name="PPM_THERMALCHANGE_EVENT.ThermalConstraint"]/*' />
     [NativeTypeName("DWORD")]
     public uint ThermalConstraint;
 
+    /// <include file='PPM_THERMALCHANGE_EVENT.xml' path='doc/member[@name="PPM_THERMALCHANGE_EVENT.Processors"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Processors;
 }

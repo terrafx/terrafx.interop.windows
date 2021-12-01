@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager"]/*' />
 [Guid("EB533D5D-2DB6-40F8-97A9-494692014F07")]
 [NativeTypeName("struct IMFDXGIDeviceManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         return ((delegate* unmanaged<IMFDXGIDeviceManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         return ((delegate* unmanaged<IMFDXGIDeviceManager*, uint>)(lpVtbl[1]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         return ((delegate* unmanaged<IMFDXGIDeviceManager*, uint>)(lpVtbl[2]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.CloseDeviceHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CloseDeviceHandle(HANDLE hDevice)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int>)(lpVtbl[3]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice);
     }
 
+    /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.GetVideoService"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetVideoService(HANDLE hDevice, [NativeTypeName("const IID &")] Guid* riid, void** ppService)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, int>)(lpVtbl[4]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, riid, ppService);
     }
 
+    /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.LockDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT LockDevice(HANDLE hDevice, [NativeTypeName("const IID &")] Guid* riid, void** ppUnkDevice, BOOL fBlock)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, BOOL, int>)(lpVtbl[5]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, riid, ppUnkDevice, fBlock);
     }
 
+    /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.OpenDeviceHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OpenDeviceHandle(HANDLE* phDevice)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE*, int>)(lpVtbl[6]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), phDevice);
     }
 
+    /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.ResetDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ResetDevice(IUnknown* pUnkDevice, uint resetToken)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         return ((delegate* unmanaged<IMFDXGIDeviceManager*, IUnknown*, uint, int>)(lpVtbl[7]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), pUnkDevice, resetToken);
     }
 
+    /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.TestDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT TestDevice(HANDLE hDevice)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int>)(lpVtbl[8]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice);
     }
 
+    /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.UnlockDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT UnlockDevice(HANDLE hDevice, BOOL fSaveState)

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoInputChromaResolution.xml' path='doc/member[@name="CODECAPI_AVEncVideoInputChromaResolution"]/*' />
 [Guid("BB0CEC33-16F1-47B0-8A88-37815BEE1739")]
 public partial struct CODECAPI_AVEncVideoInputChromaResolution
 {

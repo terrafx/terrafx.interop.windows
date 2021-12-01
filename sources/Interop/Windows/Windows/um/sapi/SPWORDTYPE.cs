@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPWORDTYPE.xml' path='doc/member[@name="SPWORDTYPE"]/*' />
 public enum SPWORDTYPE
 {
+    /// <include file='SPWORDTYPE.xml' path='doc/member[@name="SPWORDTYPE.eWORDTYPE_ADDED"]/*' />
     eWORDTYPE_ADDED = (1 << 0),
+
+    /// <include file='SPWORDTYPE.xml' path='doc/member[@name="SPWORDTYPE.eWORDTYPE_DELETED"]/*' />
     eWORDTYPE_DELETED = (1 << 1),
 }

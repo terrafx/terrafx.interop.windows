@@ -7,14 +7,28 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MANDATORY_LEVEL
 {
+    /// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL.MandatoryLevelUntrusted"]/*' />
     MandatoryLevelUntrusted = 0,
+
+    /// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL.MandatoryLevelLow"]/*' />
     MandatoryLevelLow,
+
+    /// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL.MandatoryLevelMedium"]/*' />
     MandatoryLevelMedium,
+
+    /// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL.MandatoryLevelHigh"]/*' />
     MandatoryLevelHigh,
+
+    /// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL.MandatoryLevelSystem"]/*' />
     MandatoryLevelSystem,
+
+    /// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL.MandatoryLevelSecureProcess"]/*' />
     MandatoryLevelSecureProcess,
+
+    /// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL.MandatoryLevelCount"]/*' />
     MandatoryLevelCount,
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFSensorDeviceMode.xml' path='doc/member[@name="MFSensorDeviceMode"]/*' />
 public enum MFSensorDeviceMode
 {
+    /// <include file='MFSensorDeviceMode.xml' path='doc/member[@name="MFSensorDeviceMode.MFSensorDeviceMode_Controller"]/*' />
     MFSensorDeviceMode_Controller = 0,
+
+    /// <include file='MFSensorDeviceMode.xml' path='doc/member[@name="MFSensorDeviceMode.MFSensorDeviceMode_Shared"]/*' />
     MFSensorDeviceMode_Shared = (MFSensorDeviceMode_Controller + 1),
 }

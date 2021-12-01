@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICMetadataBlockReader.xml' path='doc/member[@name="IWICMetadataBlockReader"]/*' />
 [Guid("FEAA2A8D-B3F3-43E4-B25C-D1DE990A1AE1")]
 [NativeTypeName("struct IWICMetadataBlockReader : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICMetadataBlockReader : IWICMetadataBlockReader.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICMetadataBlockReader : IWICMetadataBlockReader.I
         return ((delegate* unmanaged<IWICMetadataBlockReader*, Guid*, void**, int>)(lpVtbl[0]))((IWICMetadataBlockReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICMetadataBlockReader : IWICMetadataBlockReader.I
         return ((delegate* unmanaged<IWICMetadataBlockReader*, uint>)(lpVtbl[1]))((IWICMetadataBlockReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICMetadataBlockReader : IWICMetadataBlockReader.I
         return ((delegate* unmanaged<IWICMetadataBlockReader*, uint>)(lpVtbl[2]))((IWICMetadataBlockReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWICMetadataBlockReader.xml' path='doc/member[@name="IWICMetadataBlockReader.GetContainerFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetContainerFormat(Guid* pguidContainerFormat)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICMetadataBlockReader : IWICMetadataBlockReader.I
         return ((delegate* unmanaged<IWICMetadataBlockReader*, Guid*, int>)(lpVtbl[3]))((IWICMetadataBlockReader*)Unsafe.AsPointer(ref this), pguidContainerFormat);
     }
 
+    /// <include file='IWICMetadataBlockReader.xml' path='doc/member[@name="IWICMetadataBlockReader.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCount(uint* pcCount)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICMetadataBlockReader : IWICMetadataBlockReader.I
         return ((delegate* unmanaged<IWICMetadataBlockReader*, uint*, int>)(lpVtbl[4]))((IWICMetadataBlockReader*)Unsafe.AsPointer(ref this), pcCount);
     }
 
+    /// <include file='IWICMetadataBlockReader.xml' path='doc/member[@name="IWICMetadataBlockReader.GetReaderByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetReaderByIndex(uint nIndex, IWICMetadataReader** ppIMetadataReader)
@@ -60,6 +67,7 @@ public unsafe partial struct IWICMetadataBlockReader : IWICMetadataBlockReader.I
         return ((delegate* unmanaged<IWICMetadataBlockReader*, uint, IWICMetadataReader**, int>)(lpVtbl[5]))((IWICMetadataBlockReader*)Unsafe.AsPointer(ref this), nIndex, ppIMetadataReader);
     }
 
+    /// <include file='IWICMetadataBlockReader.xml' path='doc/member[@name="IWICMetadataBlockReader.GetEnumerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetEnumerator(IEnumUnknown** ppIEnumMetadata)

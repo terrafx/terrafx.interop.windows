@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_KeyingMaterial_Inproc.xml' path='doc/member[@name="SecPkgContext_KeyingMaterial_Inproc"]/*' />
 public unsafe partial struct SecPkgContext_KeyingMaterial_Inproc
 {
+    /// <include file='SecPkgContext_KeyingMaterial_Inproc.xml' path='doc/member[@name="SecPkgContext_KeyingMaterial_Inproc.cbLabel"]/*' />
     [NativeTypeName("WORD")]
     public ushort cbLabel;
 
+    /// <include file='SecPkgContext_KeyingMaterial_Inproc.xml' path='doc/member[@name="SecPkgContext_KeyingMaterial_Inproc.pszLabel"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszLabel;
 
+    /// <include file='SecPkgContext_KeyingMaterial_Inproc.xml' path='doc/member[@name="SecPkgContext_KeyingMaterial_Inproc.cbContextValue"]/*' />
     [NativeTypeName("WORD")]
     public ushort cbContextValue;
 
+    /// <include file='SecPkgContext_KeyingMaterial_Inproc.xml' path='doc/member[@name="SecPkgContext_KeyingMaterial_Inproc.pbContextValue"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pbContextValue;
 
+    /// <include file='SecPkgContext_KeyingMaterial_Inproc.xml' path='doc/member[@name="SecPkgContext_KeyingMaterial_Inproc.cbKeyingMaterial"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbKeyingMaterial;
 
+    /// <include file='SecPkgContext_KeyingMaterial_Inproc.xml' path='doc/member[@name="SecPkgContext_KeyingMaterial_Inproc.pbKeyingMaterial"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pbKeyingMaterial;
 }

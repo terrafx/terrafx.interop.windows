@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAsyncManager.xml' path='doc/member[@name="IAsyncManager"]/*' />
 [Guid("0000002A-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IAsyncManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface
         return ((delegate* unmanaged<IAsyncManager*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface
         return ((delegate* unmanaged<IAsyncManager*, uint>)(lpVtbl[1]))((IAsyncManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface
         return ((delegate* unmanaged<IAsyncManager*, uint>)(lpVtbl[2]))((IAsyncManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAsyncManager.xml' path='doc/member[@name="IAsyncManager.CompleteCall"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CompleteCall(HRESULT Result)
@@ -46,6 +51,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface
         return ((delegate* unmanaged<IAsyncManager*, HRESULT, int>)(lpVtbl[3]))((IAsyncManager*)Unsafe.AsPointer(ref this), Result);
     }
 
+    /// <include file='IAsyncManager.xml' path='doc/member[@name="IAsyncManager.GetCallContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCallContext([NativeTypeName("const IID &")] Guid* riid, void** pInterface)
@@ -53,6 +59,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface
         return ((delegate* unmanaged<IAsyncManager*, Guid*, void**, int>)(lpVtbl[4]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, pInterface);
     }
 
+    /// <include file='IAsyncManager.xml' path='doc/member[@name="IAsyncManager.GetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetState([NativeTypeName("ULONG *")] uint* pulStateFlags)

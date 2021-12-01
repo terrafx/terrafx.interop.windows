@@ -10,133 +10,165 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DisableThreadLibraryCalls"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DisableThreadLibraryCalls(HMODULE hLibModule);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindResourceExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HRSRC FindResourceExW(HMODULE hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("WORD")] ushort wLanguage);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindStringOrdinal"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int FindStringOrdinal([NativeTypeName("DWORD")] uint dwFindStringOrdinalFlags, [NativeTypeName("LPCWSTR")] ushort* lpStringSource, int cchSource, [NativeTypeName("LPCWSTR")] ushort* lpStringValue, int cchValue, BOOL bIgnoreCase);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeLibrary"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL FreeLibrary(HMODULE hLibModule);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeLibraryAndExitThread"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern void FreeLibraryAndExitThread(HMODULE hLibModule, [NativeTypeName("DWORD")] uint dwExitCode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeResource"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern BOOL FreeResource(HGLOBAL hResData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleFileNameA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetModuleFileNameA(HMODULE hModule, [NativeTypeName("LPSTR")] sbyte* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleFileNameW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetModuleFileNameW(HMODULE hModule, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleHandleA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMODULE GetModuleHandleA([NativeTypeName("LPCSTR")] sbyte* lpModuleName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleHandleW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMODULE GetModuleHandleW([NativeTypeName("LPCWSTR")] ushort* lpModuleName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleHandleExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetModuleHandleExA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCSTR")] sbyte* lpModuleName, HMODULE* phModule);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleHandleExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetModuleHandleExW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* lpModuleName, HMODULE* phModule);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcAddress"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("FARPROC")]
     public static extern IntPtr GetProcAddress(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpProcName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadLibraryExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMODULE LoadLibraryExA([NativeTypeName("LPCSTR")] sbyte* lpLibFileName, HANDLE hFile, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadLibraryExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMODULE LoadLibraryExW([NativeTypeName("LPCWSTR")] ushort* lpLibFileName, HANDLE hFile, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadResource"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HGLOBAL LoadResource(HMODULE hModule, HRSRC hResInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LockResource"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("LPVOID")]
     public static extern void* LockResource(HGLOBAL hResData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SizeofResource"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint SizeofResource(HMODULE hModule, HRSRC hResInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddDllDirectory"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DLL_DIRECTORY_COOKIE")]
     public static extern void* AddDllDirectory([NativeTypeName("PCWSTR")] ushort* NewDirectory);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveDllDirectory"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL RemoveDllDirectory([NativeTypeName("DLL_DIRECTORY_COOKIE")] void* Cookie);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDefaultDllDirectories"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetDefaultDllDirectories([NativeTypeName("DWORD")] uint DirectoryFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceLanguagesExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumResourceLanguagesExA(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("ENUMRESLANGPROCA")] delegate* unmanaged<HMODULE, sbyte*, sbyte*, ushort, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceLanguagesExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumResourceLanguagesExW(HMODULE hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("ENUMRESLANGPROCW")] delegate* unmanaged<HMODULE, ushort*, ushort*, ushort, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceNamesExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumResourceNamesExA(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("ENUMRESNAMEPROCA")] delegate* unmanaged<HMODULE, sbyte*, sbyte*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceNamesExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumResourceNamesExW(HMODULE hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* unmanaged<HMODULE, ushort*, ushort*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceTypesExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumResourceTypesExA(HMODULE hModule, [NativeTypeName("ENUMRESTYPEPROCA")] delegate* unmanaged<HMODULE, sbyte*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceTypesExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumResourceTypesExW(HMODULE hModule, [NativeTypeName("ENUMRESTYPEPROCW")] delegate* unmanaged<HMODULE, ushort*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindResourceW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HRSRC FindResourceW(HMODULE hModule, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadLibraryA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMODULE LoadLibraryA([NativeTypeName("LPCSTR")] sbyte* lpLibFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadLibraryW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMODULE LoadLibraryW([NativeTypeName("LPCWSTR")] ushort* lpLibFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceNamesW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumResourceNamesW(HMODULE hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* unmanaged<HMODULE, ushort*, ushort*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceNamesA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumResourceNamesA(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("ENUMRESNAMEPROCA")] delegate* unmanaged<HMODULE, sbyte*, sbyte*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);

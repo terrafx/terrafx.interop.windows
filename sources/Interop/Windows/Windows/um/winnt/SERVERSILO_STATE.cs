@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SERVERSILO_STATE.xml' path='doc/member[@name="SERVERSILO_STATE"]/*' />
 public enum SERVERSILO_STATE
 {
+    /// <include file='SERVERSILO_STATE.xml' path='doc/member[@name="SERVERSILO_STATE.SERVERSILO_INITING"]/*' />
     SERVERSILO_INITING = 0,
+
+    /// <include file='SERVERSILO_STATE.xml' path='doc/member[@name="SERVERSILO_STATE.SERVERSILO_STARTED"]/*' />
     SERVERSILO_STARTED,
+
+    /// <include file='SERVERSILO_STATE.xml' path='doc/member[@name="SERVERSILO_STATE.SERVERSILO_SHUTTING_DOWN"]/*' />
     SERVERSILO_SHUTTING_DOWN,
+
+    /// <include file='SERVERSILO_STATE.xml' path='doc/member[@name="SERVERSILO_STATE.SERVERSILO_TERMINATING"]/*' />
     SERVERSILO_TERMINATING,
+
+    /// <include file='SERVERSILO_STATE.xml' path='doc/member[@name="SERVERSILO_STATE.SERVERSILO_TERMINATED"]/*' />
     SERVERSILO_TERMINATED,
 }

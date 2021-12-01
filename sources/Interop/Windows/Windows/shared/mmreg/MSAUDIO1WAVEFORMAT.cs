@@ -7,14 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSAUDIO1WAVEFORMAT.xml' path='doc/member[@name="MSAUDIO1WAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct MSAUDIO1WAVEFORMAT
 {
+    /// <include file='MSAUDIO1WAVEFORMAT.xml' path='doc/member[@name="MSAUDIO1WAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='MSAUDIO1WAVEFORMAT.xml' path='doc/member[@name="MSAUDIO1WAVEFORMAT.wSamplesPerBlock"]/*' />
     [NativeTypeName("WORD")]
     public ushort wSamplesPerBlock;
 
+    /// <include file='MSAUDIO1WAVEFORMAT.xml' path='doc/member[@name="MSAUDIO1WAVEFORMAT.wEncodeOptions"]/*' />
     [NativeTypeName("WORD")]
     public ushort wEncodeOptions;
 }

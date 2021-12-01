@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlUnit.xml' path='doc/member[@name="htmlUnit"]/*' />
 public enum htmlUnit
 {
+    /// <include file='htmlUnit.xml' path='doc/member[@name="htmlUnit.htmlUnitCharacter"]/*' />
     htmlUnitCharacter = 1,
+
+    /// <include file='htmlUnit.xml' path='doc/member[@name="htmlUnit.htmlUnitWord"]/*' />
     htmlUnitWord = 2,
+
+    /// <include file='htmlUnit.xml' path='doc/member[@name="htmlUnit.htmlUnitSentence"]/*' />
     htmlUnitSentence = 3,
+
+    /// <include file='htmlUnit.xml' path='doc/member[@name="htmlUnit.htmlUnitTextEdit"]/*' />
     htmlUnitTextEdit = 6,
+
+    /// <include file='htmlUnit.xml' path='doc/member[@name="htmlUnit.htmlUnit_Max"]/*' />
     htmlUnit_Max = 2147483647,
 }

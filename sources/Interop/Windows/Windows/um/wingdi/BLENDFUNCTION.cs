@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION"]/*' />
 public partial struct BLENDFUNCTION
 {
+    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.BlendOp"]/*' />
     public byte BlendOp;
 
+    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.BlendFlags"]/*' />
     public byte BlendFlags;
 
+    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.SourceConstantAlpha"]/*' />
     public byte SourceConstantAlpha;
 
+    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.AlphaFormat"]/*' />
     public byte AlphaFormat;
 }

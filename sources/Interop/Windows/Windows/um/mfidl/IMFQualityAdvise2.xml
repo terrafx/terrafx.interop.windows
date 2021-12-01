@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFQualityAdvise2.NotifyQualityEvent">
+    <summary>
+      <para>Forwards an <a href="https://docs.microsoft.com//windows/desktop/medfound/mequalitynotify">MEQualityNotify</a> event from the media sink.</para>
+    </summary>
+    <param name="pEvent">
+      <para>A pointer to the event's <see cref="IMFMediaEvent" /> interface.</para>
+    </param>
+    <param name="pdwFlags">
+      <para>Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="MF_QUALITY_ADVISE_FLAGS" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
+    </remarks>
+    <seealso cref="IMFQualityAdvise2" />
+  </member>
+  <member name="IMFQualityAdvise2">
+    <summary>
+      <para>Enables a pipeline object to adjust its own audio or video quality, in response to quality messages.</para>
+    </summary>
+    <remarks>
+      <para>This interface enables a pipeline object to respond to quality messages from the media sink. Currently, it is supported only for video decoders.</para>
+      <para>If a video decoder exposes <see cref="IMFQualityAdvise" /> but not <b>IMFQualityAdvise2</b>, the quality manager controls quality adjustments for the decoder. In this case, the quality manager responds to <a href="https://docs.microsoft.com//windows/desktop/medfound/mequalitynotify">MEQualityNotify</a> events from the Enhanced Video Renderer (EVR) by calling <b>IMFQualityAdvise</b> methods on the decoder.</para>
+      <para>If the decoder exposes <b>IMFQualityAdvise2</b>, the quality manager forwards the <a href="https://docs.microsoft.com//windows/desktop/medfound/mequalitynotify">MEQualityNotify</a> events to the decoder and does not adjust the decoder's quality settings. The decoder should respond to these events by adjusting its own quality settings internally.</para>
+      <para>The preceding remarks apply to the default implementation of the quality manager; custom quality managers can implement other behaviors.</para>
+      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
+    </remarks>
+    <seealso cref="IMFQualityAdvise" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

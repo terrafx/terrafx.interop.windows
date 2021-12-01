@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TA_TIMINGFUNCTION.xml' path='doc/member[@name="TA_TIMINGFUNCTION"]/*' />
 public partial struct TA_TIMINGFUNCTION
 {
+    /// <include file='TA_TIMINGFUNCTION.xml' path='doc/member[@name="TA_TIMINGFUNCTION.eTimingFunctionType"]/*' />
     public TA_TIMINGFUNCTION_TYPE eTimingFunctionType;
 }

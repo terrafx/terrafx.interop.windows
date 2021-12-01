@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE">
+    <summary>
+      <para>Defines values for the possible media states.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration should be treated as a bitmask. Nearly all of the values set one bit set to one and the other bits to  zero.  Three exceptions to this rule were added: unknown, unsupported media mask, and informational mask.  For example, to test for unsupported media, check the value against IMAPI_FORMAT2_DATA_MEDIA_STATE_UNSUPPORTED_MASK.</para>
+    </remarks>
+    <seealso cref="IDiscFormat2Data.get_CurrentMediaStatus" />
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_UNKNOWN">
+    <summary>
+      <para>Indicates that the interface does not know the media state.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_INFORMATIONAL_MASK">
+    <summary>
+      <para>Reports information (but not errors) about the media state.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_UNSUPPORTED_MASK">
+    <summary>
+      <para>Reports an unsupported media state.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_OVERWRITE_ONLY">
+    <summary>
+      <para>Write operations can occur on used portions of the disc.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_RANDOMLY_WRITABLE">
+    <summary>
+      <para>Media is randomly writable.  This indicates that a single session can be written to this disc.</para>
+      <para>
+        <b>Note</b>  This value is deprecated and superseded by <b>IMAPI_FORMAT2_DATA_MEDIA_STATE_OVERWRITE_ONLY</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_BLANK">
+    <summary>
+      <para>Media has never been used, or has been erased.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_APPENDABLE">
+    <summary>
+      <para>Media is appendable (supports multiple sessions).</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_FINAL_SESSION">
+    <summary>
+      <para>Media can have only one additional session added to it, or the media does not support multiple sessions.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_DAMAGED">
+    <summary>
+      <para>Media is not usable by this interface.  The media might require an erase or other recovery.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_ERASE_REQUIRED">
+    <summary>
+      <para>Media must be erased prior to use by this interface.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_NON_EMPTY_SESSION">
+    <summary>
+      <para>Media has a partially written last session, which is not supported by this interface.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_WRITE_PROTECTED">
+    <summary>
+      <para>Media or drive is write-protected.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_FINALIZED">
+    <summary>
+      <para>Media cannot be written to (finalized).</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_DATA_MEDIA_STATE.IMAPI_FORMAT2_DATA_MEDIA_STATE_UNSUPPORTED_MEDIA">
+    <summary>
+      <para>Media is not supported by this interface.</para>
+    </summary>
+  </member>
+</doc>

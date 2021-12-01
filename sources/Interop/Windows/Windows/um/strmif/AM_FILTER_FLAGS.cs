@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_FILTER_FLAGS.xml' path='doc/member[@name="AM_FILTER_FLAGS"]/*' />
 public enum AM_FILTER_FLAGS
 {
+    /// <include file='AM_FILTER_FLAGS.xml' path='doc/member[@name="AM_FILTER_FLAGS.AM_FILTER_FLAGS_REMOVABLE"]/*' />
     AM_FILTER_FLAGS_REMOVABLE = 0x1,
 }

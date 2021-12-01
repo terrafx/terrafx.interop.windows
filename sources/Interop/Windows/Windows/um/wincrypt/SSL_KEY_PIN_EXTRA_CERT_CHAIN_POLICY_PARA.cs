@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA"]/*' />
 public unsafe partial struct SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA
 {
+    /// <include file='SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 
+    /// <include file='SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA.pwszServerName"]/*' />
     [NativeTypeName("PCWSTR")]
     public ushort* pwszServerName;
 }

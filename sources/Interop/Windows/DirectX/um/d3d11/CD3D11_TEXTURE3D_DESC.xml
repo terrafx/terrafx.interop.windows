@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CD3D11_TEXTURE3D_DESC.CD3D11_TEXTURE3D_DESC">
+    <summary>
+      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151706(v=vs.85)">CD3D11_TEXTURE3D_DESC</a> structure that is initialized with a <see cref="D3D11_TEXTURE3D_DESC" /> structure.</para>
+    </summary>
+    <param name="o">
+      <para>Type: <b>const <see cref="D3D11_TEXTURE3D_DESC" /></b></para>
+      <para>Address of the <see cref="D3D11_TEXTURE3D_DESC" /> structure that initializes the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151706(v=vs.85)">CD3D11_TEXTURE3D_DESC</a> structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151706(v=vs.85)">CD3D11_TEXTURE3D_DESC</seealso>
+  </member>
+  <member name="CD3D11_TEXTURE3D_DESC.CD3D11_TEXTURE3D_DESC">
+    <summary>
+      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151706(v=vs.85)">CD3D11_TEXTURE3D_DESC</a> structure that is initialized with <see cref="D3D11_TEXTURE3D_DESC" /> values.</para>
+    </summary>
+    <param name="format">
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>A <see cref="DXGI_FORMAT" />-typed value that specifies the texture format.</para>
+    </param>
+    <param name="width">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Texture width (in texels). The  range is from 1 to D3D11_REQ_TEXTURE3D_U_V_OR_W_DIMENSION (2048). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device.</para>
+    </param>
+    <param name="height">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Texture height (in texels). The  range is from 1 to D3D11_REQ_TEXTURE3D_U_V_OR_W_DIMENSION (2048). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device.</para>
+    </param>
+    <param name="depth">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Texture depth (in texels). The  range is from 1 to D3D11_REQ_TEXTURE3D_U_V_OR_W_DIMENSION (2048). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device.</para>
+    </param>
+    <param name="mipLevels">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The maximum number of mipmap levels in the texture. See the remarks in <see cref="D3D11_TEX1D_SRV" />. Use 1 for a multisampled texture; or 0 to generate a full set of subtextures.</para>
+    </param>
+    <param name="bindFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="D3D11_BIND_FLAG" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies how to bind the texture to pipeline stages.</para>
+    </param>
+    <param name="usage">
+      <para>Type: <b><see cref="D3D11_USAGE" /></b></para>
+      <para>A <see cref="D3D11_USAGE" />-typed value that identifies how the texture is to be read from and written to.</para>
+    </param>
+    <param name="cpuaccessFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="D3D11_CPU_ACCESS_FLAG" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies the types of CPU access allowed.</para>
+    </param>
+    <param name="miscFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="D3D11_RESOURCE_MISC_FLAG" />-typed values that are combined by using a bitwise OR operation. The resulting value identifies other, less common resource options.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151706(v=vs.85)">CD3D11_TEXTURE3D_DESC</seealso>
+  </member>
+  <member name="CD3D11_TEXTURE3D_DESC.CD3D11_TEXTURE3D_DESC">
+    <summary>
+      <para>Instantiates a new instance of an uninitialized <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151706(v=vs.85)">CD3D11_TEXTURE3D_DESC</a> structure.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151706(v=vs.85)">CD3D11_TEXTURE3D_DESC</seealso>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib"]/*' />
 [Guid("00020402-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ITypeLib : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLib*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, uint>)(lpVtbl[1]))((ITypeLib*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, uint>)(lpVtbl[2]))((ITypeLib*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib.GetTypeInfoCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public uint GetTypeInfoCount()
@@ -46,6 +51,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, uint>)(lpVtbl[3]))((ITypeLib*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib.GetTypeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint index, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, uint, ITypeInfo**, int>)(lpVtbl[4]))((ITypeLib*)Unsafe.AsPointer(ref this), index, ppTInfo);
     }
 
+    /// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib.GetTypeInfoType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTypeInfoType(uint index, TYPEKIND* pTKind)
@@ -60,6 +67,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, uint, TYPEKIND*, int>)(lpVtbl[5]))((ITypeLib*)Unsafe.AsPointer(ref this), index, pTKind);
     }
 
+    /// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib.GetTypeInfoOfGuid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetTypeInfoOfGuid([NativeTypeName("const GUID &")] Guid* guid, ITypeInfo** ppTinfo)
@@ -67,6 +75,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, Guid*, ITypeInfo**, int>)(lpVtbl[6]))((ITypeLib*)Unsafe.AsPointer(ref this), guid, ppTinfo);
     }
 
+    /// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib.GetLibAttr"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetLibAttr(TLIBATTR** ppTLibAttr)
@@ -74,6 +83,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, TLIBATTR**, int>)(lpVtbl[7]))((ITypeLib*)Unsafe.AsPointer(ref this), ppTLibAttr);
     }
 
+    /// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib.GetTypeComp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetTypeComp(ITypeComp** ppTComp)
@@ -81,6 +91,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, ITypeComp**, int>)(lpVtbl[8]))((ITypeLib*)Unsafe.AsPointer(ref this), ppTComp);
     }
 
+    /// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib.GetDocumentation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDocumentation(int index, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile)
@@ -88,6 +99,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, int, ushort**, ushort**, uint*, ushort**, int>)(lpVtbl[9]))((ITypeLib*)Unsafe.AsPointer(ref this), index, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
     }
 
+    /// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib.IsName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName)
@@ -95,6 +107,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, ushort*, uint, BOOL*, int>)(lpVtbl[10]))((ITypeLib*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, pfName);
     }
 
+    /// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib.FindName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, ushort* pcFound)
@@ -102,6 +115,7 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         return ((delegate* unmanaged<ITypeLib*, ushort*, uint, ITypeInfo**, int*, ushort*, int>)(lpVtbl[11]))((ITypeLib*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, ppTInfo, rgMemId, pcFound);
     }
 
+    /// <include file='ITypeLib.xml' path='doc/member[@name="ITypeLib.ReleaseTLibAttr"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public void ReleaseTLibAttr(TLIBATTR* pTLibAttr)

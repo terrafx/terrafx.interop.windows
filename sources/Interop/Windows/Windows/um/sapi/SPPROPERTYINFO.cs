@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPPROPERTYINFO.xml' path='doc/member[@name="SPPROPERTYINFO"]/*' />
 public unsafe partial struct SPPROPERTYINFO
 {
+    /// <include file='SPPROPERTYINFO.xml' path='doc/member[@name="SPPROPERTYINFO.pszName"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszName;
 
+    /// <include file='SPPROPERTYINFO.xml' path='doc/member[@name="SPPROPERTYINFO.ulId"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulId;
 
+    /// <include file='SPPROPERTYINFO.xml' path='doc/member[@name="SPPROPERTYINFO.pszValue"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszValue;
 
+    /// <include file='SPPROPERTYINFO.xml' path='doc/member[@name="SPPROPERTYINFO.vValue"]/*' />
     public VARIANT vValue;
 }

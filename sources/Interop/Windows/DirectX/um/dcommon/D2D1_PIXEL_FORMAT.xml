@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_PIXEL_FORMAT">
+    <summary>
+      <para>Contains the data format and alpha mode for a bitmap or render target.</para>
+    </summary>
+    <remarks>
+      <para>For more information about the pixel formats and alpha modes supported by each render target, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</para>
+      <h4>Examples</h4>
+      <para>The following example creates a <b>D2D1_PIXEL_FORMAT</b> structure and uses it to specify the pixel format and alpha mode of an <see cref="ID2D1HwndRenderTarget" />.</para>
+      <code>RECT rc;
+GetClientRect(m_hwnd, &amp;amp;amp;amp;amp;amp;rc);
+
+D2D1_SIZE_U size = D2D1.SizeU(
+    rc.right - rc.left,
+    rc.bottom - rc.top
+    );
+
+// Create a pixel format and initial its format
+// and alphaMode fields.
+D2D1_PIXEL_FORMAT pixelFormat = D2D1.PixelFormat(
+    DXGI_FORMAT_B8G8R8A8_UNORM,
+    D2D1_ALPHA_MODE_IGNORE
+    );
+
+D2D1_RENDER_TARGET_PROPERTIES props = D2D1.RenderTargetProperties();
+props.pixelFormat = pixelFormat;
+
+// Create a Direct2D render target.
+hr = m_pD2DFactory-&gt;CreateHwndRenderTarget(
+    props,
+    D2D1.HwndRenderTargetProperties(m_hwnd, size),
+    &amp;amp;amp;amp;amp;amp;m_pRT
+    );
+
+
+</code>
+    </remarks>
+    <seealso cref="D2D1.PixelFormat" />
+    <seealso cref="ID2D1RenderTarget" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</seealso>
+  </member>
+  <member name="D2D1_PIXEL_FORMAT.format">
+    <summary>
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>A value that specifies the size and arrangement of channels in each pixel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PIXEL_FORMAT.alphaMode">
+    <summary>
+      <para>Type: <b><see cref="D2D1_ALPHA_MODE" /></b></para>
+      <para>A value that specifies whether the alpha channel is using pre-multiplied alpha, straight alpha, whether it should be ignored and considered opaque, or whether it is unknown.</para>
+    </summary>
+  </member>
+</doc>

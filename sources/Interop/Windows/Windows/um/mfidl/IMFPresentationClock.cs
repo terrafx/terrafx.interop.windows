@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock"]/*' />
 [Guid("868CE85C-8EA9-4F55-AB82-B009A910A805")]
 [NativeTypeName("struct IMFPresentationClock : IMFClock")]
 [NativeInheritance("IMFClock")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, Guid*, void**, int>)(lpVtbl[0]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, uint>)(lpVtbl[1]))((IMFPresentationClock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, uint>)(lpVtbl[2]))((IMFPresentationClock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFClock.GetClockCharacteristics" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClockCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, uint*, int>)(lpVtbl[3]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pdwCharacteristics);
     }
 
+    /// <inheritdoc cref="IMFClock.GetCorrelatedTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCorrelatedTime([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LONGLONG *")] long* pllClockTime, [NativeTypeName("MFTIME *")] long* phnsSystemTime)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, uint, long*, long*, int>)(lpVtbl[4]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), dwReserved, pllClockTime, phnsSystemTime);
     }
 
+    /// <inheritdoc cref="IMFClock.GetContinuityKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetContinuityKey([NativeTypeName("DWORD *")] uint* pdwContinuityKey)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, uint*, int>)(lpVtbl[5]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pdwContinuityKey);
     }
 
+    /// <inheritdoc cref="IMFClock.GetState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetState([NativeTypeName("DWORD")] uint dwReserved, MFCLOCK_STATE* peClockState)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, uint, MFCLOCK_STATE*, int>)(lpVtbl[6]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), dwReserved, peClockState);
     }
 
+    /// <inheritdoc cref="IMFClock.GetProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetProperties(MFCLOCK_PROPERTIES* pClockProperties)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, MFCLOCK_PROPERTIES*, int>)(lpVtbl[7]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pClockProperties);
     }
 
+    /// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock.SetTimeSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetTimeSource(IMFPresentationTimeSource* pTimeSource)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, IMFPresentationTimeSource*, int>)(lpVtbl[8]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pTimeSource);
     }
 
+    /// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock.GetTimeSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetTimeSource(IMFPresentationTimeSource** ppTimeSource)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, IMFPresentationTimeSource**, int>)(lpVtbl[9]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), ppTimeSource);
     }
 
+    /// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock.GetTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetTime([NativeTypeName("MFTIME *")] long* phnsClockTime)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, long*, int>)(lpVtbl[10]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), phnsClockTime);
     }
 
+    /// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock.AddClockStateSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT AddClockStateSink(IMFClockStateSink* pStateSink)
@@ -102,6 +115,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, IMFClockStateSink*, int>)(lpVtbl[11]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pStateSink);
     }
 
+    /// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock.RemoveClockStateSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT RemoveClockStateSink(IMFClockStateSink* pStateSink)
@@ -109,6 +123,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, IMFClockStateSink*, int>)(lpVtbl[12]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pStateSink);
     }
 
+    /// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock.Start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Start([NativeTypeName("LONGLONG")] long llClockStartOffset)
@@ -116,6 +131,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, long, int>)(lpVtbl[13]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), llClockStartOffset);
     }
 
+    /// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock.Stop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT Stop()
@@ -123,6 +139,7 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         return ((delegate* unmanaged<IMFPresentationClock*, int>)(lpVtbl[14]))((IMFPresentationClock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT Pause()

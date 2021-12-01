@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONTRESCR10WAVEFORMAT.xml' path='doc/member[@name="CONTRESCR10WAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct CONTRESCR10WAVEFORMAT
 {
+    /// <include file='CONTRESCR10WAVEFORMAT.xml' path='doc/member[@name="CONTRESCR10WAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='CONTRESCR10WAVEFORMAT.xml' path='doc/member[@name="CONTRESCR10WAVEFORMAT.wSamplesPerBlock"]/*' />
     [NativeTypeName("WORD")]
     public ushort wSamplesPerBlock;
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DESCRIPTOR_HEADER.xml' path='doc/member[@name="STORAGE_DESCRIPTOR_HEADER"]/*' />
 public partial struct STORAGE_DESCRIPTOR_HEADER
 {
+    /// <include file='STORAGE_DESCRIPTOR_HEADER.xml' path='doc/member[@name="STORAGE_DESCRIPTOR_HEADER.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DESCRIPTOR_HEADER.xml' path='doc/member[@name="STORAGE_DESCRIPTOR_HEADER.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 }

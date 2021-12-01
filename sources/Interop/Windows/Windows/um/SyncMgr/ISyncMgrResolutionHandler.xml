@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrResolutionHandler.KeepItems">
+    <summary>
+      <para>Keeps the Shell items that are passed in.</para>
+    </summary>
+    <param name="pArray">
+      <para>Type: <b><see cref="ISyncMgrConflictResolutionItems" />*</b></para>
+      <para>A pointer to an array of<see cref="ISyncMgrConflictResolutionItems" />. The array will contain more than one item if method <see cref="ISyncMgrResolutionHandler.QueryAbilities" /> returned SYNCMGR_RA_KEEP_MULTIPLE in parameter <i>pdwAbilities</i>.</para>
+    </param>
+    <param name="pFeedback">
+      <para>Type: <b><see cref="SYNCMGR_RESOLUTION_FEEDBACK" />*</b></para>
+      <para>When this method returns, contains a <see cref="SYNCMGR_RESOLUTION_FEEDBACK" /> value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <see cref="SYNCMGR_RESOLUTION_FEEDBACK" /> value returned in <i>pFeedback</i> determines how the next conflict is resolved. If this method fails, an error message is displayed and the user is asked how to proceed.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrResolutionHandler.KeepOther">
+    <summary>
+      <para>Replaces the versions in conflict with a different Shell item that is usually a merged version of the originals.</para>
+    </summary>
+    <param name="psiOther">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to the substitute <see cref="IShellItem" />.</para>
+    </param>
+    <param name="pFeedback">
+      <para>Type: <b><see cref="SYNCMGR_RESOLUTION_FEEDBACK" />*</b></para>
+      <para>When this method returns, contains a <see cref="SYNCMGR_RESOLUTION_FEEDBACK" /> value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The specified Shell item that replaces the Shell item(s) in conflict may not have been one of those originally in conflict.  It may be a merged copy, or a replacement copy.</para>
+      <para>The <see cref="SYNCMGR_RESOLUTION_FEEDBACK" /> value returned in <i>pFeedback</i> determines how the next conflict is resolved. If this method fails, an error message is displayed and the user is asked how to proceed.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrResolutionHandler.KeepRecent">
+    <summary>
+      <para>Keeps the more recent copy.</para>
+    </summary>
+    <param name="pFeedback">
+      <para>Type: <b><see cref="SYNCMGR_RESOLUTION_FEEDBACK" />*</b></para>
+      <para>When this method returns, contains a <see cref="SYNCMGR_RESOLUTION_FEEDBACK" /> value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrResolutionHandler.QueryAbilities">
+    <summary>
+      <para>Determines what options the conflict presenter will display.</para>
+    </summary>
+    <param name="pdwAbilities">
+      <para>Type: <b>SYNCMGR_RESOLUTION_ABILITIES_FLAGS*</b></para>
+      <para>When this method returns, contains one of the <see cref="SYNCMGR_RESOLUTION_ABILITIES" /> enumerated type.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The handler exposes how a conflict can be resolved by calling this method. The result of this method determines what options the conflict presenter displays, and as a result, how other methods in this interface are called.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrResolutionHandler.RemoveFromSyncSet">
+    <summary>
+      <para>Deletes the conflict and removes the <see cref="IShellItem" />  from synchronization.</para>
+    </summary>
+    <param name="pFeedback">
+      <para>Type: <b><see cref="SYNCMGR_RESOLUTION_FEEDBACK" />*</b></para>
+      <para>A pointer to a <see cref="SYNCMGR_RESOLUTION_FEEDBACK" /> value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <see cref="IShellItem" /> that is in conflict will no longer be synchronized and the conflict should be deleted.</para>
+      <para>The <see cref="SYNCMGR_RESOLUTION_FEEDBACK" /> value returned in <i>pFeedback</i> determines how the next conflict is resolved. If this method fails, an error message is displayed and the user is asked how to proceed.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrResolutionHandler">
+    <summary>
+      <para>Exposes methods that manage synchronizing conflicts. Implement this interface to construct a sync conflict handler. The conflict resolution user interface (UI) will call this interface to resolve the conflict presented to the user.</para>
+    </summary>
+  </member>
+</doc>

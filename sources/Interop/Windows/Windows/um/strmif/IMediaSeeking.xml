@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMediaSeeking.ConvertTimeFormat">
+    <summary>
+      <para>The <code>ConvertTimeFormat</code> method converts from one time format to another.</para>
+    </summary>
+    <param name="pTarget">
+      <para>Pointer to a variable that receives the converted time.</para>
+    </param>
+    <param name="pTargetFormat">
+      <para>Pointer to a GUID that specifies the target format. If <b>NULL</b>, the current format is used. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-format-guids">Time Format GUIDs</a>.</para>
+    </param>
+    <param name="Source">
+      <para>Time value to be converted.</para>
+    </param>
+    <param name="pSourceFormat">
+      <para>Pointer to a GUID that specifies the format to convert. If <b>NULL</b>, the current format is used. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-format-guids">Time Format GUIDs</a>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Conversion between these types is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+  </member>
+  <member name="IMediaSeeking.GetAvailable">
+    <summary>
+      <para>The <code>GetAvailable</code> method retrieves the range of times in which seeking is efficient.</para>
+    </summary>
+    <param name="pEarliest">
+      <para>Pointer to a variable that receives the earliest time for efficient seeking.</para>
+    </param>
+    <param name="pLatest">
+      <para>Pointer to a variable that receives the latest time for efficient seeking.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is intended primarily for seeking in media streams that might have excessive latency, such as streams being sent over a network. The returned values indicate cached data that has already arrived, which can be easily seeked. It is assumed that seeking to values beyond these returned parameters will cause a delay while the application waits for the data to arrive.</para>
+      <para>All time values are expressed in the current time format. The default time format is <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> units (100 nanoseconds). To change time formats, use the <see cref="IMediaSeeking.SetTimeFormat" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+  </member>
+  <member name="IMediaSeeking.GetCurrentPosition">
+    <summary>
+      <para>The <code>GetCurrentPosition</code> method retrieves the current position, relative to the total duration of the stream.</para>
+    </summary>
+    <param name="pCurrent">
+      <para>Pointer to a variable that receives the current position, in units of the current time format.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method returns the current position that playback has reached. The value includes adjustments for the playback rate and starting time. For example, if the start time is 5 seconds, the playback rate is 2.0, and you run the graph for four seconds, the current position is 5 + (4 x 2.0) = 13.0 seconds.</para>
+      <para>The returned value is expressed in units of the current time format. To determine the current time format, call the <see cref="GetTimeFormat" /> method.</para>
+      <para>If the graph is paused or stopped, the current position is the point at which playback will resume.</para>
+      <para>The Filter Graph Manager calculates the position from the current stream time; it does not query the filters in the graph. For file playback, this yields an accurate result, because playback is synchronized to the stream time. For file writing, the results are not accurate. To get the current position in a file-writing graph, query the multiplexer filter. (Position is not relevant for live capture, however.)</para>
+      <para>The returned value is expressed in the current time format. The default time format is <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> units (100 nanoseconds). To change time formats, use the <see cref="IMediaSeeking.SetTimeFormat" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+  </member>
+  <member name="IMediaSeeking.GetDuration">
+    <summary>
+      <para>The <b>GetDuration</b> method gets the duration of the stream.</para>
+    </summary>
+    <param name="pDuration">
+      <para>Receives the duration, in units of the current time format.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method gets the duration of the stream at normal playback speed. Changing the playback rate does not affect the duration.</para>
+      <para>The duration is expressed in the current time format. The default time format is <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> units (100 nanoseconds). To change time formats, use the <see cref="IMediaSeeking.SetTimeFormat" /> method.</para>
+      <para>Depending on the source format, the duration might not be exact. For example, if the source contains a variable bit-rate (VBR) stream, the method might return an estimated duration.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+  </member>
+  <member name="IMediaSeeking.GetPositions">
+    <summary>
+      <para>The <code>GetPositions</code> method retrieves the current position and the stop position, relative to the total duration of the stream.</para>
+    </summary>
+    <param name="pCurrent">
+      <para>Pointer to a variable that receives the current position, in units of the current time format.</para>
+    </param>
+    <param name="pStop">
+      <para>Pointer to a variable that receives the stop position, in units of the current time format.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The current position and the stop position are both relative to the original stream, and are independent of the playback rate.</para>
+      <para>The returned values are expressed in the current time format. The default time format is <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> units (100 nanoseconds). To change time formats, use the <see cref="IMediaSeeking.SetTimeFormat" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+  </member>
+  <member name="IMediaSeeking.GetPreroll">
+    <summary>
+      <para>The <code>GetPreroll</code> method retrieves the amount of data that will be queued before the start position.</para>
+    </summary>
+    <param name="pllPreroll">
+      <para>Pointer to a variable that receives the preroll time, in units of the current time format.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <i>preroll</i> is the time prior to the start position at which nonrandom access devices, such as tape players, should start rolling.</para>
+      <para>The returned value is expressed in the current time format. The default time format is <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> units (100 nanoseconds). To change time formats, use the <see cref="IMediaSeeking.SetTimeFormat" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+  </member>
+  <member name="IMediaSeeking.GetRate">
+    <summary>
+      <para>The <code>GetRate</code> method retrieves the playback rate.</para>
+    </summary>
+    <param name="pdRate">
+      <para>Pointer to a variable that receives the playback rate.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The playback rate is expressed as a ratio of the normal speed. Thus, 1.0 is normal playback speed, 0.5 is half speed, and 2.0 is twice speed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+  </member>
+  <member name="IMediaSeeking.GetStopPosition">
+    <summary>
+      <para>The <code>GetStopPosition</code> method retrieves the time at which the playback will stop, relative to the duration of the stream.</para>
+    </summary>
+    <param name="pStop">
+      <para>Pointer to a variable that receives the stop time, in units of the current time format.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The playback rate does not affect the value returned by this method.</para>
+      <para>The returned value is expressed in the current time format. The default time format is <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> units (100 nanoseconds). To change time formats, use the <see cref="IMediaSeeking.SetTimeFormat" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+  </member>
+  <member name="IMediaSeeking.GetTimeFormat">
+    <summary>
+      <para>The <code>GetTimeFormat</code> method retrieves the time format that is currently being used for seek operations.</para>
+    </summary>
+    <param name="pFormat">
+      <para>Pointer to a variable that receives a GUID specifying the time format. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-format-guids">Time Format GUIDs</a>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+    <seealso cref="IMediaSeeking.SetTimeFormat" />
+  </member>
+  <member name="IMediaSeeking.IsFormatSupported">
+    <summary>
+      <para>The <code>IsFormatSupported</code> method determines whether a specified time format is supported for seek operations.</para>
+    </summary>
+    <param name="pFormat">
+      <para>Pointer to a GUID that specifies the time format. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-format-guids">Time Format GUIDs</a>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The format is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The format is supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+    <seealso cref="IMediaSeeking.SetTimeFormat" />
+  </member>
+  <member name="IMediaSeeking.IsUsingTimeFormat">
+    <summary>
+      <para>The <code>IsUsingTimeFormat</code> method determines whether seek operations are currently using a specified time format.</para>
+    </summary>
+    <param name="pFormat">
+      <para>Pointer to a GUID that specifies the time format. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-format-guids">Time Format GUIDs</a>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified format is not the current format.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified format is the current format.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is slightly more efficient than the <see cref="IMediaSeeking.GetTimeFormat" /> method, because it does not require copying the GUID.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+    <seealso cref="IMediaSeeking.SetTimeFormat" />
+  </member>
+  <member name="IMediaSeeking.QueryPreferredFormat">
+    <summary>
+      <para>The <code>QueryPreferredFormat</code> method retrieves the preferred time format for seeking.</para>
+    </summary>
+    <param name="pFormat">
+      <para>Pointer to a variable that receives a GUID specifying the time format. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-format-guids">Time Format GUIDs</a>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+    <seealso cref="IMediaSeeking.SetTimeFormat" />
+  </member>
+  <member name="IMediaSeeking.SetRate">
+    <summary>
+      <para>The <code>SetRate</code> method sets the playback rate.</para>
+    </summary>
+    <param name="dRate">
+      <para>Playback rate. Must not be zero.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified rate was zero or a negative value. (See Remarks.)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_UNSUPPORTED_AUDIO</b>
+            </para>
+          </description>
+          <description>
+            <para>Audio device or filter does not support this rate.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The playback rate is expressed as a ratio of the normal speed. Thus, 1.0 is normal playback speed, 0.5 is half speed, and 2.0 is twice speed. For audio streams, changing the rate also changes the pitch.</para>
+      <para>Negative values indicate reverse playback. Most filters do not support negative playback, but instead return an error code if the <i>dRate</i> parameter is negative.</para>
+      <para>When an application calls this method on the Filter Graph Manager, the Filter Graph Manager does the following:</para>
+      <list type="number">
+        <item>
+          <description>Calls the <see cref="IMediaSeeking.GetCurrentPosition" /> method. This call returns the current position as calculated by the Filter Graph Manager.</description>
+        </item>
+        <item>
+          <description>Stops the filter graph (if the graph is paused or running).</description>
+        </item>
+        <item>
+          <description>Calls the <see cref="IMediaSeeking.SetPositions" /> method on the filters, with the current position as the start time. This has the effect of resetting the stream time to zero.</description>
+        </item>
+        <item>
+          <description>Calls the <code>SetRate</code> method on the filters, with the new rate.</description>
+        </item>
+        <item>
+          <description>Resumes the filter graph, if it was paused or running.</description>
+        </item>
+      </list>
+      <para>If an error occurs in step 4, the Filter Graph Manager tries to restore the previous rate.</para>
+      <para>Filters should respond to rate changes as follows:</para>
+      <para>
+        <b>Parser and source filters: </b>The filter that originates the timestamps responds to the <code>SetRate</code> call. This is usually a parser filter, such as the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-splitter-filter">AVI Splitter Filter</a>, but it might be a source filter. After any seek or rate change, the filter should call the <see cref="IPin.NewSegment" /> method with the new settings. After a rate change, it should adjust its timestamps accordingly. Because a rate change is preceded by a seek, timestamps restart from zero, so the filter can simply divide by the rate to calculate the new timestamps.</para>
+      <para>
+        <b>Decoder filters: </b>Decoders should not act on <code>SetRate</code> calls other than to pass them upstream. Instead, they should respond to the <b>NewSegment</b> call that the upstream parser issues. When a decoder filter receives new segment information, it should store the values and pass the <b>NewSegment</b> call downstream. Some decoders need to generate extra timestamps by interpolating their input; they should take rate changes into account when doing so.</para>
+      <para>
+        <b>Renderers: </b>Video renderers can typically ignore rate changes, because the incoming frames already have the correct time stamp. Audio renderers must modify their playback rate, because audio decoders typically do not make rate-change conversions.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+  </member>
+  <member name="IMediaSeeking.SetTimeFormat">
+    <summary>
+      <para>The <code>SetTimeFormat</code> method sets the time format for subsequent seek operations.</para>
+    </summary>
+    <param name="pFormat">
+      <para>Pointer to a GUID that specifies the time format. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-format-guids">Time Format GUIDs</a>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>Filter graph is not stopped.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method specifies the time units used by other <b>IMediaSeeking</b> methods, such as <see cref="IMediaSeeking.GetPositions" /> and <see cref="IMediaSeeking.SetPositions" />. Whenever you call one of these other methods, any parameters that express time values are given in units of the current time format.</para>
+      <para>The default time format is <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> units (100 nanoseconds). Other time formats include frames, samples, and bytes. To determine if a given format is supported, call the <see cref="IMediaSeeking.IsFormatSupported" /> method. If a format is supported, you can switch to that format by calling <code>SetTimeFormat</code>. Only one time format is active at any one time.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaSeeking Interface" />
+    <seealso cref="IMediaSeeking.GetTimeFormat" />
+    <seealso cref="IMediaSeeking.QueryPreferredFormat" />
+  </member>
+  <member name="IMediaSeeking">
+    <summary>
+      <para>The <code>IMediaSeeking</code> interface contains methods for seeking to a position within a stream, and for setting the playback rate. The Filter Graph Manager exposes this interface, and so do individual filters or pins. Applications should query the Filter Graph Manager for the interface.</para>
+      <para>The Filter Graph Manager distributes any <code>IMediaSeeking</code> call to each of the renderer filters in the graph. The renderer filters send the call upstream to the source filters. This sequence of events ensures that all streams remain synchronized. If any of the distributed calls returns an error, the Filter Graph Manager returns the first error value it received, even if some of the distributed calls succeed. An exception is E_NOTIMPL: the Filter Graph Manager does not return E_NOTIMPL unless it was returned by all of the distributed calls.</para>
+      <para>An application can seek the graph while the graph is in any state (running, paused or stopped). If the graph is running, the Filter Graph Manager pauses the graph before it issues the seek command. Then it runs the graph again. All seeking operations are independent of the current playback rate. Seeking operations cause any pending media data to be flushed from the graph.</para>
+      <para>For all <code>IMediaSeeking</code> parameters that specify time, the unit of time depends on the current time format. To set the time format, call the <see cref="IMediaSeeking.SetTimeFormat" /> method. Time formats are globally unique identifiers (GUIDs) defined in uuids.h. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-format-guids">Time Format GUIDs</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/seeking-the-filter-graph">Seeking the Filter Graph</seealso>
+  </member>
+</doc>

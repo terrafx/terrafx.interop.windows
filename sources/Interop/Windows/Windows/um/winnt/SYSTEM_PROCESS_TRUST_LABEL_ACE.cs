@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEM_PROCESS_TRUST_LABEL_ACE.xml' path='doc/member[@name="SYSTEM_PROCESS_TRUST_LABEL_ACE"]/*' />
 public partial struct SYSTEM_PROCESS_TRUST_LABEL_ACE
 {
+    /// <include file='SYSTEM_PROCESS_TRUST_LABEL_ACE.xml' path='doc/member[@name="SYSTEM_PROCESS_TRUST_LABEL_ACE.Header"]/*' />
     public ACE_HEADER Header;
 
+    /// <include file='SYSTEM_PROCESS_TRUST_LABEL_ACE.xml' path='doc/member[@name="SYSTEM_PROCESS_TRUST_LABEL_ACE.Mask"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint Mask;
 
+    /// <include file='SYSTEM_PROCESS_TRUST_LABEL_ACE.xml' path='doc/member[@name="SYSTEM_PROCESS_TRUST_LABEL_ACE.SidStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint SidStart;
 }

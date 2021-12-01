@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PACKET_DESCRIPTION">
+    <summary>
+      <para>Describes the content of the packet for a particular tablet recognizer context.</para>
+      <para>Do not use this structure to access the data contained in a packet. This structure describes the content of the packet.</para>
+    </summary>
+    <remarks>
+      <para>The <b>PACKET_DESCRIPTION</b> structure defines the logical layout of the packet. Typically, you do not need to address the contents of a packet. You pass the packets to the Ink object. However, if you need to address the contents of a packet, each packet contains a series of LONG values (properties) followed by one or more DWORD values (button states).</para>
+    </remarks>
+    <seealso cref="AddStroke Function" />
+    <seealso cref="GetPreferredPacketDescription Function" />
+  </member>
+  <member name="PACKET_DESCRIPTION.cbPacketSize">
+    <summary>
+      <para>The size, in bytes, of the packet data.</para>
+    </summary>
+  </member>
+  <member name="PACKET_DESCRIPTION.cPacketProperties">
+    <summary>
+      <para>The number of elements in the <i>pPacketProperties</i> array.</para>
+    </summary>
+  </member>
+  <member name="PACKET_DESCRIPTION.pPacketProperties">
+    <summary>
+      <para>An array of <see cref="PACKET_PROPERTY" /> structures.</para>
+    </summary>
+  </member>
+  <member name="PACKET_DESCRIPTION.cButtons">
+    <summary>
+      <para>Deprecated. Do not use.</para>
+    </summary>
+  </member>
+  <member name="PACKET_DESCRIPTION.pguidButtons">
+    <summary>
+      <para>Deprecated. Do not use.</para>
+    </summary>
+  </member>
+</doc>

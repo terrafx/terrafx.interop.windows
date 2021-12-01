@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NAV_BACKBUTTONSTATES.xml' path='doc/member[@name="NAV_BACKBUTTONSTATES"]/*' />
 public enum NAV_BACKBUTTONSTATES
 {
+    /// <include file='NAV_BACKBUTTONSTATES.xml' path='doc/member[@name="NAV_BACKBUTTONSTATES.NAV_BB_NORMAL"]/*' />
     NAV_BB_NORMAL = 1,
+
+    /// <include file='NAV_BACKBUTTONSTATES.xml' path='doc/member[@name="NAV_BACKBUTTONSTATES.NAV_BB_HOT"]/*' />
     NAV_BB_HOT = 2,
+
+    /// <include file='NAV_BACKBUTTONSTATES.xml' path='doc/member[@name="NAV_BACKBUTTONSTATES.NAV_BB_PRESSED"]/*' />
     NAV_BB_PRESSED = 3,
+
+    /// <include file='NAV_BACKBUTTONSTATES.xml' path='doc/member[@name="NAV_BACKBUTTONSTATES.NAV_BB_DISABLED"]/*' />
     NAV_BB_DISABLED = 4,
 }

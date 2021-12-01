@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFMEDIASOURCE_CHARACTERISTICS">
+    <summary>
+      <para>Defines the characteristics of a media source. These flags are retrieved by the <see cref="IMFMediaSource.GetCharacteristics" /> method.</para>
+    </summary>
+    <remarks>
+      <para>To skip forward or backward in a playlist, call <see cref="IMFMediaSource.Start" /> or <see cref="IMFMediaSession.Start" /> with the <b>MF_TIME_FORMAT_ENTRY_RELATIVE</b> time-format GUID. This capability applies only when the <b>MFMEDIASOURCE_HAS_MULTIPLE_PRESENTATIONS</b> flag is present.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MFMEDIASOURCE_CHARACTERISTICS.MFMEDIASOURCE_IS_LIVE">
+    <summary>
+      <para>This flag indicates a data source that runs constantly, such as a live presentation. If the source is stopped and then restarted, there will be a gap in the content.</para>
+    </summary>
+  </member>
+  <member name="MFMEDIASOURCE_CHARACTERISTICS.MFMEDIASOURCE_CAN_SEEK">
+    <summary>
+      <para>The media source supports seeking.</para>
+    </summary>
+  </member>
+  <member name="MFMEDIASOURCE_CHARACTERISTICS.MFMEDIASOURCE_CAN_PAUSE">
+    <summary>
+      <para>The source can pause.</para>
+    </summary>
+  </member>
+  <member name="MFMEDIASOURCE_CHARACTERISTICS.MFMEDIASOURCE_HAS_SLOW_SEEK">
+    <summary>
+      <para>The media source downloads content. It might take a long time to seek to parts of the content that have not been downloaded.</para>
+    </summary>
+  </member>
+  <member name="MFMEDIASOURCE_CHARACTERISTICS.MFMEDIASOURCE_HAS_MULTIPLE_PRESENTATIONS">
+    <summary>
+      <para>The media source delivers a playlist, which might contain more than one entry. After the first playlist entry has completed, the media source signals the start of each new playlist entry by sending an <a href="https://docs.microsoft.com//windows/desktop/medfound/menewpresentation">MENewPresentation</a> event. The event contains a presentation descriptor for the entry.</para>
+      <para>
+        <b>Note</b>  Requires Windows 7 or later.</para>
+    </summary>
+  </member>
+  <member name="MFMEDIASOURCE_CHARACTERISTICS.MFMEDIASOURCE_CAN_SKIPFORWARD">
+    <summary>
+      <para>The media source can skip forward in the playlist. Applies only if the MFMEDIASOURCE_HAS_MULTIPLE_PRESENTATIONS flag is present.</para>
+      <para>
+        <b>Note</b>  Requires Windows 7 or later.</para>
+    </summary>
+  </member>
+  <member name="MFMEDIASOURCE_CHARACTERISTICS.MFMEDIASOURCE_CAN_SKIPBACKWARD">
+    <summary>
+      <para>The media source can skip backward in the playlist.</para>
+      <para>
+        <b>Note</b>  Requires Windows 7 or later.</para>
+    </summary>
+  </member>
+  <member name="MFMEDIASOURCE_CHARACTERISTICS.MFMEDIASOURCE_DOES_NOT_USE_NETWORK">
+    <summary>
+      <para>The media source is not currently
+using the network to receive the content.  Networking hardware
+may enter a power saving state when this bit is set.</para>
+      <para>
+        <b>Note</b>  Requires Windows 8 or later.</para>
+    </summary>
+  </member>
+</doc>

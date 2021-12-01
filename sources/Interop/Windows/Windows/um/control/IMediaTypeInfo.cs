@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaTypeInfo.xml' path='doc/member[@name="IMediaTypeInfo"]/*' />
 [Guid("56A868BC-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IMediaTypeInfo : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
         return ((delegate* unmanaged<IMediaTypeInfo*, Guid*, void**, int>)(lpVtbl[0]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
         return ((delegate* unmanaged<IMediaTypeInfo*, uint>)(lpVtbl[1]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
         return ((delegate* unmanaged<IMediaTypeInfo*, uint>)(lpVtbl[2]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
         return ((delegate* unmanaged<IMediaTypeInfo*, uint*, int>)(lpVtbl[3]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
         return ((delegate* unmanaged<IMediaTypeInfo*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
         return ((delegate* unmanaged<IMediaTypeInfo*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
         return ((delegate* unmanaged<IMediaTypeInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IMediaTypeInfo.xml' path='doc/member[@name="IMediaTypeInfo.get_Type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Type([NativeTypeName("BSTR *")] ushort** strType)
@@ -74,6 +83,7 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
         return ((delegate* unmanaged<IMediaTypeInfo*, ushort**, int>)(lpVtbl[7]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), strType);
     }
 
+    /// <include file='IMediaTypeInfo.xml' path='doc/member[@name="IMediaTypeInfo.get_Subtype"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_Subtype([NativeTypeName("BSTR *")] ushort** strType)

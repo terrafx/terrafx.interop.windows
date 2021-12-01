@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WCM_USAGE_DATA.xml' path='doc/member[@name="WCM_USAGE_DATA"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct WCM_USAGE_DATA
 {
+    /// <include file='WCM_USAGE_DATA.xml' path='doc/member[@name="WCM_USAGE_DATA.UsageInMegabytes"]/*' />
     [NativeTypeName("DWORD")]
     public uint UsageInMegabytes;
 
+    /// <include file='WCM_USAGE_DATA.xml' path='doc/member[@name="WCM_USAGE_DATA.LastSyncTime"]/*' />
     public FILETIME LastSyncTime;
 }

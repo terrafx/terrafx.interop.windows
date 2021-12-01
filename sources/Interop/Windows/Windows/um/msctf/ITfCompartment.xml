@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfCompartment.GetValue">
+    <summary>
+      <para>Obtains the data for a compartment.</para>
+    </summary>
+    <param name="pvarValue">
+      <para>Pointer to a <b>VARIANT</b> structure that receives the data. This receives VT_EMPTY if the compartment has no value. The caller must free this data when it is no longer required by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantclear">VariantClear</a>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The compartment has no value. <i>pvarValue</i> receives VT_EMPTY.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The compartment has been cleared by a call to <see cref="ITfCompartmentMgr.ClearCompartment" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pvarValue</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caller must recognize the supplied data format in order to use the data. The compartment installer must publish the data format to enable other clients to use it.</para>
+    </remarks>
+    <seealso cref="ITfCompartment interface" />
+    <seealso cref="ITfCompartment.SetValue" />
+    <seealso cref="ITfCompartmentMgr.ClearCompartment" />
+    <seealso cref="VariantClear function" />
+  </member>
+  <member name="ITfCompartment.SetValue">
+    <summary>
+      <para>Sets the data for a compartment.</para>
+    </summary>
+    <param name="tid">
+      <para>Contains a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfclientid">TfClientId</a> value that identifies the client.</para>
+    </param>
+    <param name="pvarValue">
+      <para>Pointer to a VARIANT structure that contains the data to be set. Only VT_I4, VT_UNKNOWN and VT_BSTR data types are allowed.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pvarValue</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The compartment was cleared by a call to <see cref="ITfCompartmentMgr.ClearCompartment" />, this method was called during a <see cref="ITfCompartmentEventSink.OnChange" /> notification or only the owner can clear this compartment.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCompartment interface" />
+    <seealso cref="ITfCompartment.GetValue" />
+    <seealso cref="ITfCompartmentMgr.ClearCompartment" />
+    <seealso cref="VariantClear function" />
+  </member>
+  <member name="ITfCompartment">
+    <summary>
+      <para>The <b>ITfCompartment</b> interface is implemented by the TSF manager and is used by clients (applications and text services) to obtain and set data in a TSF compartment.</para>
+      <para>A client also uses this interface to obtain an <see cref="ITfSource" /> interface that is used to install an <see cref="ITfCompartmentEventSink" /> compartment change notification sink. The client calls <b>ITfCompartment.QueryInterface</b> with IID_ITfSource to obtain the <b>ITfSource</b> interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/compartments">Compartments</seealso>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

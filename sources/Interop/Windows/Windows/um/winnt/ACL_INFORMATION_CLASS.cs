@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACL_INFORMATION_CLASS.xml' path='doc/member[@name="ACL_INFORMATION_CLASS"]/*' />
 public enum ACL_INFORMATION_CLASS
 {
+    /// <include file='ACL_INFORMATION_CLASS.xml' path='doc/member[@name="ACL_INFORMATION_CLASS.AclRevisionInformation"]/*' />
     AclRevisionInformation = 1,
+
+    /// <include file='ACL_INFORMATION_CLASS.xml' path='doc/member[@name="ACL_INFORMATION_CLASS.AclSizeInformation"]/*' />
     AclSizeInformation,
 }

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="READ_DIRECTORY_NOTIFY_INFORMATION_CLASS">
+    <summary>
+      <para>Indicates the possible types of information that an application that calls the <see cref="ReadDirectoryChangesExW" /> function can request.</para>
+    </summary>
+    <seealso cref="FILE_NOTIFY_EXTENDED_INFORMATION" />
+    <seealso cref="FILE_NOTIFY_INFORMATION" />
+    <seealso cref="ReadDirectoryChangesExW" />
+  </member>
+  <member name="READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.ReadDirectoryNotifyInformation">
+    <summary>
+      <para>The <see cref="ReadDirectoryChangesExW" /> function  should provide  information that describes the changes within the specified directory, and return this information in the  output buffer in the form of <see cref="FILE_NOTIFY_INFORMATION" /> structures.</para>
+    </summary>
+  </member>
+  <member name="READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.ReadDirectoryNotifyExtendedInformation">
+    <summary>
+      <para>The <see cref="ReadDirectoryChangesExW" /> function  should provide  extended information that describes the changes within the specified directory, and return this information in the  output buffer in the form of <see cref="FILE_NOTIFY_EXTENDED_INFORMATION" /> structures.</para>
+    </summary>
+  </member>
+</doc>

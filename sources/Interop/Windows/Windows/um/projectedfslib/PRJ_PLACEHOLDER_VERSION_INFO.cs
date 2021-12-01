@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PRJ_PLACEHOLDER_VERSION_INFO.xml' path='doc/member[@name="PRJ_PLACEHOLDER_VERSION_INFO"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
 public unsafe partial struct PRJ_PLACEHOLDER_VERSION_INFO
 {
+    /// <include file='PRJ_PLACEHOLDER_VERSION_INFO.xml' path='doc/member[@name="PRJ_PLACEHOLDER_VERSION_INFO.ProviderID"]/*' />
     [NativeTypeName("UINT8 [128]")]
     public fixed byte ProviderID[128];
 
+    /// <include file='PRJ_PLACEHOLDER_VERSION_INFO.xml' path='doc/member[@name="PRJ_PLACEHOLDER_VERSION_INFO.ContentID"]/*' />
     [NativeTypeName("UINT8 [128]")]
     public fixed byte ContentID[128];
 }

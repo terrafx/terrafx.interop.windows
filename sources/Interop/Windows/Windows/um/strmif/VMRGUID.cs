@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VMRGUID.xml' path='doc/member[@name="VMRGUID"]/*' />
 public unsafe partial struct VMRGUID
 {
+    /// <include file='VMRGUID.xml' path='doc/member[@name="VMRGUID.pGUID"]/*' />
     public Guid* pGUID;
 
+    /// <include file='VMRGUID.xml' path='doc/member[@name="VMRGUID.GUID"]/*' />
     public Guid GUID;
 }

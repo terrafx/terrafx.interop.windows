@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_TITLE_APPMODE.xml' path='doc/member[@name="DVD_TITLE_APPMODE"]/*' />
 public enum DVD_TITLE_APPMODE
 {
+    /// <include file='DVD_TITLE_APPMODE.xml' path='doc/member[@name="DVD_TITLE_APPMODE.DVD_AppMode_Not_Specified"]/*' />
     DVD_AppMode_Not_Specified = 0,
+
+    /// <include file='DVD_TITLE_APPMODE.xml' path='doc/member[@name="DVD_TITLE_APPMODE.DVD_AppMode_Karaoke"]/*' />
     DVD_AppMode_Karaoke = 1,
+
+    /// <include file='DVD_TITLE_APPMODE.xml' path='doc/member[@name="DVD_TITLE_APPMODE.DVD_AppMode_Other"]/*' />
     DVD_AppMode_Other = 3,
 }

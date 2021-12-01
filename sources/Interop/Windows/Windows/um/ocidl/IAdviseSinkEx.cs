@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAdviseSinkEx.xml' path='doc/member[@name="IAdviseSinkEx"]/*' />
 [Guid("3AF24290-0C96-11CE-A0CF-00AA00600AB8")]
 [NativeTypeName("struct IAdviseSinkEx : IAdviseSink")]
 [NativeInheritance("IAdviseSink")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface
         return ((delegate* unmanaged<IAdviseSinkEx*, Guid*, void**, int>)(lpVtbl[0]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface
         return ((delegate* unmanaged<IAdviseSinkEx*, uint>)(lpVtbl[1]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface
         return ((delegate* unmanaged<IAdviseSinkEx*, uint>)(lpVtbl[2]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IAdviseSink.OnDataChange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void OnDataChange(FORMATETC* pFormatetc, STGMEDIUM* pStgmed)
@@ -46,6 +51,7 @@ public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface
         ((delegate* unmanaged<IAdviseSinkEx*, FORMATETC*, STGMEDIUM*, void>)(lpVtbl[3]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
     }
 
+    /// <inheritdoc cref="IAdviseSink.OnViewChange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void OnViewChange([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex)
@@ -53,6 +59,7 @@ public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface
         ((delegate* unmanaged<IAdviseSinkEx*, uint, int, void>)(lpVtbl[4]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), dwAspect, lindex);
     }
 
+    /// <inheritdoc cref="IAdviseSink.OnRename" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void OnRename(IMoniker* pmk)
@@ -60,6 +67,7 @@ public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface
         ((delegate* unmanaged<IAdviseSinkEx*, IMoniker*, void>)(lpVtbl[5]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), pmk);
     }
 
+    /// <inheritdoc cref="IAdviseSink.OnSave" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void OnSave()
@@ -67,6 +75,7 @@ public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface
         ((delegate* unmanaged<IAdviseSinkEx*, void>)(lpVtbl[6]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IAdviseSink.OnClose" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void OnClose()
@@ -74,6 +83,7 @@ public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface
         ((delegate* unmanaged<IAdviseSinkEx*, void>)(lpVtbl[7]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAdviseSinkEx.xml' path='doc/member[@name="IAdviseSinkEx.OnViewStatusChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void OnViewStatusChange([NativeTypeName("DWORD")] uint dwViewStatus)

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDestinationStreamFactory.GetDestinationStream">
+    <summary>
+      <para>Gets an empty stream that receives the new version of the file being copied.</para>
+    </summary>
+    <param name="ppstm">
+      <para>Type: <b><see cref="IStream" />**</b></para>
+      <para>The address of a pointer to the new stream.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property handler author calls <b>IDestinationStreamFactory.GetDestinationStream</b> to get a new empty stream that the new version of the file will write to. The handler builds the destination stream manually, copying from the source stream as necessary.</para>
+    </remarks>
+  </member>
+  <member name="IDestinationStreamFactory">
+    <summary>
+      <para>Exposes a method for manually copying a stream or file before applying changes to properties.</para>
+    </summary>
+    <remarks>
+      <para>The default copy-on-write behavior provided by <see cref="IPropertyStore" /> causes the entire source stream to be duplicated during a write operation. This can be costly for large streams, especially when a large portion of the stream is to be changed. <b>IDestinationStreamFactory</b> provides an alternative for the property handler author, who can use it manually to ensure that property changes do not corrupt the stream in case of failure. To do this, the author marks the handler as NoTransactedMode in the handler's CoClass registry key, and queries the stream for this interface.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/building-property-handlers-property-handlers">Initializing Property Handlers</seealso>
+  </member>
+</doc>

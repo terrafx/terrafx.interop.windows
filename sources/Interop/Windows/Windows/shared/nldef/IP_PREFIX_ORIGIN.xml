@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IP_PREFIX_ORIGIN">
+    <summary>
+      <para>The <b>IP_PREFIX_ORIGIN</b> enumeration specifies the origin of an IPv4 or IPv6  address prefix, and is used with the <see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structure.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IP_PREFIX_ORIGIN</b> enumeration is used in the <b>PrefixOrigin</b> member of the <see cref="IP_ADAPTER_UNICAST_ADDRESS" />  structure.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>IP_PREFIX_ORIGIN</b> enumeration is defined in the <i>Nldef.h</i> header file which is automatically included by the <i>Iptypes.h</i> header file. In order to use the <b>IP_PREFIX_ORIGIN</b> enumeration, the <i>Winsock2.h</i> header file must be included before the <i>Iptypes.h</i> header file.</para>
+    </remarks>
+    <seealso cref="IP_ADAPTER_UNICAST_ADDRESS" />
+  </member>
+  <member name="IP_PREFIX_ORIGIN.IpPrefixOriginOther">
+    <summary>
+      <para>The IP prefix was provided by a source other than those defined in this enumeration.</para>
+    </summary>
+  </member>
+  <member name="IP_PREFIX_ORIGIN.IpPrefixOriginManual">
+    <summary>
+      <para>The IP address prefix was manually specified.</para>
+    </summary>
+  </member>
+  <member name="IP_PREFIX_ORIGIN.IpPrefixOriginWellKnown">
+    <summary>
+      <para>The IP address prefix is from a well known source.</para>
+    </summary>
+  </member>
+  <member name="IP_PREFIX_ORIGIN.IpPrefixOriginDhcp">
+    <summary>
+      <para>The IP address prefix was provided by DHCP settings.</para>
+    </summary>
+  </member>
+  <member name="IP_PREFIX_ORIGIN.IpPrefixOriginRouterAdvertisement">
+    <summary>
+      <para>The IP address prefix was obtained through a router advertisement (RA).</para>
+    </summary>
+  </member>
+  <member name="IP_PREFIX_ORIGIN.IpPrefixOriginUnchanged">
+    <summary>
+      <para>The IP address prefix should be unchanged. This value is used when setting the properties for a unicast IP interface when the value for the IP prefix origin should be left unchanged.</para>
+      <para>
+        <b>Note</b>  This enumeration value is only available on Windows Vista and later.</para>
+    </summary>
+  </member>
+</doc>

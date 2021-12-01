@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER.xml' path='doc/member[@name="IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER"]/*' />
 public partial struct IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER
 {
+    /// <include file='IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER.xml' path='doc/member[@name="IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER.PrologueByteCount"]/*' />
     public byte PrologueByteCount;
 }

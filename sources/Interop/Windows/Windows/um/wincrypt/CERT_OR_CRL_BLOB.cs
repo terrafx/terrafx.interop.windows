@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_OR_CRL_BLOB.xml' path='doc/member[@name="CERT_OR_CRL_BLOB"]/*' />
 public unsafe partial struct CERT_OR_CRL_BLOB
 {
+    /// <include file='CERT_OR_CRL_BLOB.xml' path='doc/member[@name="CERT_OR_CRL_BLOB.dwChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwChoice;
 
+    /// <include file='CERT_OR_CRL_BLOB.xml' path='doc/member[@name="CERT_OR_CRL_BLOB.cbEncoded"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbEncoded;
 
+    /// <include file='CERT_OR_CRL_BLOB.xml' path='doc/member[@name="CERT_OR_CRL_BLOB.pbEncoded"]/*' />
     public byte* pbEncoded;
 }

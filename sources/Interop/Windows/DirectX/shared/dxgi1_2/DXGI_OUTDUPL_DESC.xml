@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_OUTDUPL_DESC">
+    <summary>
+      <para>The DXGI_OUTDUPL_DESC structure describes the dimension of the output and the surface that contains the desktop image. The format of the desktop image is always <see cref="DXGI_FORMAT_B8G8R8A8_UNORM" />.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used by <see cref="GetDesc" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+  </member>
+  <member name="DXGI_OUTDUPL_DESC.ModeDesc">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173064(v=vs.85)">DXGI_MODE_DESC</a> structure that describes the display mode of the duplicated output.</para>
+    </summary>
+  </member>
+  <member name="DXGI_OUTDUPL_DESC.Rotation">
+    <summary>
+      <para>A member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173065(v=vs.85)">DXGI_MODE_ROTATION</a> enumerated type that describes how the duplicated output rotates an image.</para>
+    </summary>
+  </member>
+  <member name="DXGI_OUTDUPL_DESC.DesktopImageInSystemMemory">
+    <summary>
+      <para>Specifies whether the resource that contains the desktop image is already located in system memory. <b>TRUE</b> if the resource is in system memory; otherwise, <b>FALSE</b>. If this value is <b>TRUE</b> and  the application requires CPU access, it can use the <see cref="IDXGIOutputDuplication.MapDesktopSurface" /> and <see cref="IDXGIOutputDuplication.UnMapDesktopSurface" /> methods to avoid copying the data into a staging buffer.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SORTCOLUMN.xml' path='doc/member[@name="SORTCOLUMN"]/*' />
 public partial struct SORTCOLUMN
 {
+    /// <include file='SORTCOLUMN.xml' path='doc/member[@name="SORTCOLUMN.propkey"]/*' />
     public PROPERTYKEY propkey;
 
+    /// <include file='SORTCOLUMN.xml' path='doc/member[@name="SORTCOLUMN.direction"]/*' />
     [NativeTypeName("SORTDIRECTION")]
     public int direction;
 }

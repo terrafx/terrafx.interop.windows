@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFunction.xml' path='doc/member[@name="ITfFunction"]/*' />
 [Guid("DB593490-098F-11D3-8DF0-00105A2799B5")]
 [NativeTypeName("struct ITfFunction : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfFunction : ITfFunction.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfFunction : ITfFunction.Interface
         return ((delegate* unmanaged<ITfFunction*, Guid*, void**, int>)(lpVtbl[0]))((ITfFunction*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfFunction : ITfFunction.Interface
         return ((delegate* unmanaged<ITfFunction*, uint>)(lpVtbl[1]))((ITfFunction*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfFunction : ITfFunction.Interface
         return ((delegate* unmanaged<ITfFunction*, uint>)(lpVtbl[2]))((ITfFunction*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfFunction.xml' path='doc/member[@name="ITfFunction.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)

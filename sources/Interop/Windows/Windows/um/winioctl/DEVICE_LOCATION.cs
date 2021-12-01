@@ -8,23 +8,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_LOCATION.xml' path='doc/member[@name="DEVICE_LOCATION"]/*' />
 public partial struct DEVICE_LOCATION
 {
+    /// <include file='DEVICE_LOCATION.xml' path='doc/member[@name="DEVICE_LOCATION.Socket"]/*' />
     [NativeTypeName("DWORD")]
     public uint Socket;
 
+    /// <include file='DEVICE_LOCATION.xml' path='doc/member[@name="DEVICE_LOCATION.Slot"]/*' />
     [NativeTypeName("DWORD")]
     public uint Slot;
 
+    /// <include file='DEVICE_LOCATION.xml' path='doc/member[@name="DEVICE_LOCATION.Adapter"]/*' />
     [NativeTypeName("DWORD")]
     public uint Adapter;
 
+    /// <include file='DEVICE_LOCATION.xml' path='doc/member[@name="DEVICE_LOCATION.Port"]/*' />
     [NativeTypeName("DWORD")]
     public uint Port;
 
+    /// <include file='DEVICE_LOCATION.xml' path='doc/member[@name="DEVICE_LOCATION.Anonymous"]/*' />
     [NativeTypeName("_DEVICE_LOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2964:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Channel"]/*' />
     public ref uint Channel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +41,7 @@ public partial struct DEVICE_LOCATION
         }
     }
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Device"]/*' />
     public ref uint Device
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +51,7 @@ public partial struct DEVICE_LOCATION
         }
     }
 
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.Target"]/*' />
     public ref uint Target
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -52,6 +61,7 @@ public partial struct DEVICE_LOCATION
         }
     }
 
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.Lun"]/*' />
     public ref uint Lun
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,31 +71,40 @@ public partial struct DEVICE_LOCATION
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_DEVICE_LOCATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2966:9)")]
         public _Anonymous1_e__Struct Anonymous1;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_DEVICE_LOCATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2974:9)")]
         public _Anonymous2_e__Struct Anonymous2;
 
+        /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />
         public partial struct _Anonymous1_e__Struct
         {
+            /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Channel"]/*' />
             [NativeTypeName("DWORD")]
             public uint Channel;
 
+            /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Device"]/*' />
             [NativeTypeName("DWORD")]
             public uint Device;
         }
 
+        /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct"]/*' />
         public partial struct _Anonymous2_e__Struct
         {
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.Target"]/*' />
             [NativeTypeName("DWORD")]
             public uint Target;
 
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.Lun"]/*' />
             [NativeTypeName("DWORD")]
             public uint Lun;
         }

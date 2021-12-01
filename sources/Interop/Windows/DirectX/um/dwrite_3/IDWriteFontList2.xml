@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontList2.GetFontSet">
+    <summary>
+      <para>Retrieves the underlying font set used by this list.</para>
+    </summary>
+    <param name="fontSet">
+      <para>Type: <b><see cref="IDWriteFontSet1" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to the font set used by the list.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontList2">
+    <summary>
+      <para>Represents a list of fonts. <b>IDWriteFontList2</b> adds new facilities, including retrieving the underlying font set used by the list.</para>
+      <para>This interface extends <see cref="IDWriteFontList1" />.</para>
+    </summary>
+    <seealso cref="IDWriteFontList1" />
+  </member>
+</doc>

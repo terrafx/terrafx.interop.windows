@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICProgressOperation.xml' path='doc/member[@name="WICProgressOperation"]/*' />
 public enum WICProgressOperation
 {
+    /// <include file='WICProgressOperation.xml' path='doc/member[@name="WICProgressOperation.WICProgressOperationCopyPixels"]/*' />
     WICProgressOperationCopyPixels = 0x1,
+
+    /// <include file='WICProgressOperation.xml' path='doc/member[@name="WICProgressOperation.WICProgressOperationWritePixels"]/*' />
     WICProgressOperationWritePixels = 0x2,
+
+    /// <include file='WICProgressOperation.xml' path='doc/member[@name="WICProgressOperation.WICProgressOperationAll"]/*' />
     WICProgressOperationAll = 0xffff,
+
+    /// <include file='WICProgressOperation.xml' path='doc/member[@name="WICProgressOperation.WICPROGRESSOPERATION_FORCE_DWORD"]/*' />
     WICPROGRESSOPERATION_FORCE_DWORD = 0x7fffffff,
 }

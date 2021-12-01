@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACTCTX_REQUESTED_RUN_LEVEL">
+    <summary>
+      <para>The <b>ACTCTX_REQUESTED_RUN_LEVEL</b> enumeration describes the requested run level of the activation context.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_REQUESTED_RUN_LEVEL.ACTCTX_RUN_LEVEL_UNSPECIFIED">
+    <summary>
+      <para>The application manifest does not specify a requested run level for the application.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_REQUESTED_RUN_LEVEL.ACTCTX_RUN_LEVEL_AS_INVOKER">
+    <summary>
+      <para>The application manifest requests the least privilege level to run the application.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_REQUESTED_RUN_LEVEL.ACTCTX_RUN_LEVEL_HIGHEST_AVAILABLE">
+    <summary>
+      <para>The application manifest requests the highest privilege level to run the application.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_REQUESTED_RUN_LEVEL.ACTCTX_RUN_LEVEL_REQUIRE_ADMIN">
+    <summary>
+      <para>The application manifest requests the administrator privilege level to run the application.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_REQUESTED_RUN_LEVEL.ACTCTX_RUN_LEVEL_NUMBERS">
+    <summary>
+      <para>Total number of possible run levels.</para>
+    </summary>
+  </member>
+</doc>

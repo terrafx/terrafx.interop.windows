@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_MESSAGE_PROPERTIES.xml' path='doc/member[@name="WS_MESSAGE_PROPERTIES"]/*' />
 public unsafe partial struct WS_MESSAGE_PROPERTIES
 {
+    /// <include file='WS_MESSAGE_PROPERTIES.xml' path='doc/member[@name="WS_MESSAGE_PROPERTIES.properties"]/*' />
     public WS_MESSAGE_PROPERTY* properties;
 
+    /// <include file='WS_MESSAGE_PROPERTIES.xml' path='doc/member[@name="WS_MESSAGE_PROPERTIES.propertyCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint propertyCount;
 }

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaTimeRange.AddRange">
+    <summary>
+      <para>Adds a new range to the list of time ranges.</para>
+    </summary>
+    <param name="startTime">
+      <para>The start time, in seconds.</para>
+    </param>
+    <param name="endTime">
+      <para>The end time, in seconds.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the new range intersects a range already in the list, the two ranges are combined. Otherwise, the new range is added to the list.</para>
+    </remarks>
+    <seealso cref="IMFMediaTimeRange" />
+  </member>
+  <member name="IMFMediaTimeRange.Clear">
+    <summary>
+      <para>Clears the list of time ranges.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaTimeRange" />
+  </member>
+  <member name="IMFMediaTimeRange.ContainsTime">
+    <summary>
+      <para>Queries whether a specified time falls within any of the time ranges.</para>
+    </summary>
+    <param name="time">
+      <para>The time, in seconds.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if any time range contained in this object spans the value of the <i>time</i> parameter. Otherwise, returns <b>FALSE</b>.</para>
+    </returns>
+    <remarks>
+      <para>This method returns <b>TRUE</b> if the following condition holds for any time range in the list:</para>
+      <para>
+        <i>start</i>
+        <i>time</i>
+        <i>time</i>
+        <i>end</i>
+      </para>
+    </remarks>
+    <seealso cref="IMFMediaTimeRange" />
+  </member>
+  <member name="IMFMediaTimeRange.GetEnd">
+    <summary>
+      <para>Gets the end time for a specified time range.</para>
+    </summary>
+    <param name="index">
+      <para>The zero-based index of the time range to query. To get the  number of time ranges, call <see cref="IMFMediaTimeRange.GetLength" />.</para>
+    </param>
+    <param name="pEnd">
+      <para>Receives the end time, in seconds.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method corresponds to the <b>TimeRanges.end</b> method in HTML5.</para>
+    </remarks>
+    <seealso cref="IMFMediaTimeRange" />
+  </member>
+  <member name="IMFMediaTimeRange.GetLength">
+    <summary>
+      <para>Gets the number of time ranges contained in the object.</para>
+    </summary>
+    <returns>
+      <para>Returns the number of time ranges.</para>
+    </returns>
+    <remarks>
+      <para>This method corresponds to the <b>TimeRanges.length</b> attribute in HTML5.</para>
+    </remarks>
+    <seealso cref="IMFMediaTimeRange" />
+  </member>
+  <member name="IMFMediaTimeRange.GetStart">
+    <summary>
+      <para>Gets the start time for a specified time range.</para>
+    </summary>
+    <param name="index">
+      <para>The zero-based index of the time range to query. To get the  number of time ranges, call <see cref="IMFMediaTimeRange.GetLength" />.</para>
+    </param>
+    <param name="pStart">
+      <para>Receives the start time, in seconds.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method corresponds to the <b>TimeRanges.start</b> method in HTML5.</para>
+    </remarks>
+    <seealso cref="IMFMediaTimeRange" />
+  </member>
+  <member name="IMFMediaTimeRange">
+    <summary>
+      <para>Represents a list of time ranges, where each range is defined by a start and end time.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IMFMediaTimeRange</b> interface corresponds to the <b>TimeRanges</b> interface in HTML5.</para>
+      <para>Several <see cref="IMFMediaEngine" /> methods return <b>IMFMediaTimeRange</b> pointers.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

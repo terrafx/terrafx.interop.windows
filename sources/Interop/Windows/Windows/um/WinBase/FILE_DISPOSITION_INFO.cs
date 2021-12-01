@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_DISPOSITION_INFO.xml' path='doc/member[@name="FILE_DISPOSITION_INFO"]/*' />
 public partial struct FILE_DISPOSITION_INFO
 {
+    /// <include file='FILE_DISPOSITION_INFO.xml' path='doc/member[@name="FILE_DISPOSITION_INFO.DeleteFile"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte DeleteFile;
 }

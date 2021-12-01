@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="sockaddr">
+    <summary>
+      <para>The
+sockaddr structure varies depending on the protocol selected. Except for the <i>sin*_family</i> parameter,
+sockaddr contents are expressed in network byte order.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms740504(v=vs.85)">SOCKADDR_STORAGE</seealso>
+  </member>
+  <member name="sockaddr.sin6_family">
+    <summary></summary>
+  </member>
+  <member name="sockaddr.sin6_port">
+    <summary></summary>
+  </member>
+  <member name="sockaddr.sin6_flowinfo">
+    <summary></summary>
+  </member>
+  <member name="sockaddr.sin6_addr">
+    <summary>
+      <h4>- sa_data</h4>
+      <h4>- sa_family</h4>
+    </summary>
+  </member>
+</doc>

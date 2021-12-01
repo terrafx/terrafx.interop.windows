@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_STRING.xml' path='doc/member[@name="WS_XML_STRING"]/*' />
 public unsafe partial struct WS_XML_STRING
 {
+    /// <include file='WS_XML_STRING.xml' path='doc/member[@name="WS_XML_STRING.length"]/*' />
     [NativeTypeName("ULONG")]
     public uint length;
 
+    /// <include file='WS_XML_STRING.xml' path='doc/member[@name="WS_XML_STRING.bytes"]/*' />
     public byte* bytes;
 
+    /// <include file='WS_XML_STRING.xml' path='doc/member[@name="WS_XML_STRING.dictionary"]/*' />
     public WS_XML_DICTIONARY* dictionary;
 
+    /// <include file='WS_XML_STRING.xml' path='doc/member[@name="WS_XML_STRING.id"]/*' />
     [NativeTypeName("ULONG")]
     public uint id;
 }

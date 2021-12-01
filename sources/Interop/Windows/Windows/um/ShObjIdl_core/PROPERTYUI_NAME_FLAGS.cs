@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPERTYUI_NAME_FLAGS.xml' path='doc/member[@name="PROPERTYUI_NAME_FLAGS"]/*' />
 [Flags]
 public enum PROPERTYUI_NAME_FLAGS
 {
+    /// <include file='PROPERTYUI_NAME_FLAGS.xml' path='doc/member[@name="PROPERTYUI_NAME_FLAGS.PUIFNF_DEFAULT"]/*' />
     PUIFNF_DEFAULT = 0,
+
+    /// <include file='PROPERTYUI_NAME_FLAGS.xml' path='doc/member[@name="PROPERTYUI_NAME_FLAGS.PUIFNF_MNEMONIC"]/*' />
     PUIFNF_MNEMONIC = 0x1,
 }

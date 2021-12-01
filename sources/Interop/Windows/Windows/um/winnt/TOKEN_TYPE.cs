@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_TYPE.xml' path='doc/member[@name="TOKEN_TYPE"]/*' />
 public enum TOKEN_TYPE
 {
+    /// <include file='TOKEN_TYPE.xml' path='doc/member[@name="TOKEN_TYPE.TokenPrimary"]/*' />
     TokenPrimary = 1,
+
+    /// <include file='TOKEN_TYPE.xml' path='doc/member[@name="TOKEN_TYPE.TokenImpersonation"]/*' />
     TokenImpersonation,
 }

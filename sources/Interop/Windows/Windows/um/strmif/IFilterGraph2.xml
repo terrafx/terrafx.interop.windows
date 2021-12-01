@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFilterGraph2.ReconnectEx">
+    <summary>
+      <para>The <code>ReconnectEx</code> method breaks the existing pin connection and reconnects it to the same pin, using a specified media type.</para>
+      <para>Applications should not call this method. It is called by filters during the graph building process.</para>
+    </summary>
+    <param name="ppin">
+      <para>Pointer to the pin to disconnect and reconnect.</para>
+    </param>
+    <param name="pmt">
+      <para>Pointer to the media type to reconnect with. Specify <b>NULL</b> to use the existing media type.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Pin was not connected. No error.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_STOPPED</b>
+            </para>
+          </description>
+          <description>
+            <para>The filter is not stopped, but it does not support reconnection while in a running state.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Filters can call this method in order to renegotiate a pin connection. The method executes on a separate thread. Before calling this method, call <see cref="IPin.QueryAccept" /> on the other pin to ensure that the reconnection attempt will succeed. Do not call this method unless <b>QueryAccept</b> returns S_OK. Otherwise, because the reconnection is performed asynchronously, the reconnection might fail even though the <code>ReconnectEx</code> method succeeds, leaving the filter graph in an inconsistent state.</para>
+      <para>This method improves on the <see cref="IFilterGraph.Reconnect" /> method by specifying a media type. This makes the reconnection more likely to succeed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFilterGraph2 Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/reconnecting-pins">Reconnecting Pins</seealso>
+  </member>
+  <member name="IFilterGraph2.RenderEx">
+    <summary>
+      <para>The <code>RenderEx</code> method renders an output pin, with an option to use existing renderers only.</para>
+    </summary>
+    <param name="pPinOut">
+      <para>Pointer to the <see cref="IPin" /> interface of the output pin.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Flag that specifies how to render the pin. If the value is AM_RENDEREX_RENDERTOEXISTINGRENDERERS, the method attempts to use renderers already in the filter graph. It will not add new renderers to the graph. (It will add intermediate transform filters, if needed.) For the method to succeed, the graph must contain the appropriate renderers, and they must have unconnected input pins. If the value is zero, the method behaves identically to the <see cref="IGraphBuilder.Render" /> method.</para>
+    </param>
+    <param name="pvContext">
+      <para>Reserved. Must be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFilterGraph2 Interface" />
+  </member>
+  <member name="IFilterGraph2">
+    <summary>
+      <para>The <code>IFilterGraph2</code> interface extends the <see cref="IFilterGraph" /> and <see cref="IGraphBuilder" /> interfaces, which contain methods for building filter graphs.</para>
+      <para>The Filter Graph Manager implements this interface. Applications can use it when building graphs, to take advantage of the additional methods it provides.</para>
+    </summary>
+    <seealso cref="IGraphBuilder" />
+  </member>
+</doc>

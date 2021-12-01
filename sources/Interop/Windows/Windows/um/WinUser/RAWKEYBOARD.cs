@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RAWKEYBOARD.xml' path='doc/member[@name="RAWKEYBOARD"]/*' />
 public partial struct RAWKEYBOARD
 {
+    /// <include file='RAWKEYBOARD.xml' path='doc/member[@name="RAWKEYBOARD.MakeCode"]/*' />
     public ushort MakeCode;
 
+    /// <include file='RAWKEYBOARD.xml' path='doc/member[@name="RAWKEYBOARD.Flags"]/*' />
     public ushort Flags;
 
+    /// <include file='RAWKEYBOARD.xml' path='doc/member[@name="RAWKEYBOARD.Reserved"]/*' />
     public ushort Reserved;
 
+    /// <include file='RAWKEYBOARD.xml' path='doc/member[@name="RAWKEYBOARD.VKey"]/*' />
     public ushort VKey;
 
+    /// <include file='RAWKEYBOARD.xml' path='doc/member[@name="RAWKEYBOARD.Message"]/*' />
     public uint Message;
 
+    /// <include file='RAWKEYBOARD.xml' path='doc/member[@name="RAWKEYBOARD.ExtraInformation"]/*' />
     [NativeTypeName("ULONG")]
     public uint ExtraInformation;
 }

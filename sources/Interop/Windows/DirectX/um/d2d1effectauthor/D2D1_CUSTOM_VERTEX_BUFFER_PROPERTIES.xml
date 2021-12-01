@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES">
+    <summary>
+      <para>Defines a vertex shader and the input element description to define the input layout. The combination is used to allow a custom vertex effect to create a custom vertex shader and pass it a custom layout.</para>
+    </summary>
+    <remarks>
+      <para>The vertex shader will be loaded by the <see cref="CreateVertexBuffer" /> call that accepts the vertex buffer properties.</para>
+      <para>This structure does not need to be specified if one of the standard vertex shaders is used.</para>
+    </remarks>
+    <seealso cref="D2D1_VERTEX_USAGE" />
+    <seealso cref="ID2D1EffectContext.CreateVertexBuffer" />
+    <seealso cref="ID2D1EffectContext.LoadVertexShader" />
+  </member>
+  <member name="D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES.shaderBufferWithInputSignature">
+    <summary>
+      <para>A pointer to the buffer.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES.shaderBufferSize">
+    <summary>
+      <para>The size of the buffer.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES.inputElements">
+    <summary>
+      <para>An array of input assembler stage data types.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES.elementCount">
+    <summary>
+      <para>The number of input elements in the vertex shader.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES.stride">
+    <summary>
+      <para>The vertex stride.</para>
+    </summary>
+  </member>
+</doc>

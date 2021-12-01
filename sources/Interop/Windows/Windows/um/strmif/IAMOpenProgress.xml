@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMOpenProgress.AbortOperation">
+    <summary>
+      <para>The <code>AbortOperation</code> method cancels the file-open operation.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMOpenProgress Interface" />
+  </member>
+  <member name="IAMOpenProgress.QueryProgress">
+    <summary>
+      <para>The <code>QueryProgress</code> method retrieves the progress of the file-open operation.</para>
+    </summary>
+    <param name="pllTotal">
+      <para>Pointer to a variable that receives the length of the entire file, in bytes.</para>
+    </param>
+    <param name="pllCurrent">
+      <para>Pointer to a variable that receives the length of the downloaded portion of the file, in bytes.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_ESTIMATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The returned values are estimates.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Unexpected error.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMOpenProgress Interface" />
+  </member>
+  <member name="IAMOpenProgress">
+    <summary>
+      <para>The <code>IAMOpenProgress</code> interface reports the progress of a file-open operation and enables the application to cancel the operation.</para>
+      <para>Filters that open files over a network can expose this interface. An application can use it to query the progress of the download, or to cancel the download. If the network is not responsive, a method such as <see cref="IGraphBuilder.RenderFile" /> might block for an indefinite period. To prevent your application from blocking, create a worker thread that uses <code>IAMOpenProgress</code> to monitor the progress. The worker thread can cancel the operation if a predefined timeout occurs, or in response to a command from the user.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/file-source--url--filter">File Source (URL)</a> filter supports this interface.</para>
+    </summary>
+  </member>
+</doc>

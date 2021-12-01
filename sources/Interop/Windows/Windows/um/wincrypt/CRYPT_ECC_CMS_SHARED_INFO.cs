@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_ECC_CMS_SHARED_INFO.xml' path='doc/member[@name="CRYPT_ECC_CMS_SHARED_INFO"]/*' />
 public unsafe partial struct CRYPT_ECC_CMS_SHARED_INFO
 {
+    /// <include file='CRYPT_ECC_CMS_SHARED_INFO.xml' path='doc/member[@name="CRYPT_ECC_CMS_SHARED_INFO.Algorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER Algorithm;
 
+    /// <include file='CRYPT_ECC_CMS_SHARED_INFO.xml' path='doc/member[@name="CRYPT_ECC_CMS_SHARED_INFO.EntityUInfo"]/*' />
     public CRYPT_DATA_BLOB EntityUInfo;
 
+    /// <include file='CRYPT_ECC_CMS_SHARED_INFO.xml' path='doc/member[@name="CRYPT_ECC_CMS_SHARED_INFO.rgbSuppPubInfo"]/*' />
     [NativeTypeName("BYTE [4]")]
     public fixed byte rgbSuppPubInfo[4];
 }

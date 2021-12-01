@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPERTYKEY">
+    <summary>
+      <para>Specifies the FMTID/PID identifier that programmatically identifies a property. Replaces <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a>.</para>
+    </summary>
+    <remarks>
+      <para>As of Windows Vista, the <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure is simply an alias for <see cref="PROPERTYKEY" />, as shown in this declaration from Shobjidl.h.</para>
+      <code>typedef PROPERTYKEY SHCOLUMNID;
+</code>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> can be considered a legacy structure with <see cref="PROPERTYKEY" /> being the new, preferred form. <b>PROPERTYKEY</b> has a broader purpose than <b>SHCOLUMNID</b>, and the new name is more descriptive of its uses.</para>
+    </remarks>
+  </member>
+  <member name="PROPERTYKEY.fmtid">
+    <summary>
+      <para>Type: <b>GUID</b></para>
+      <para>A unique GUID for the property.</para>
+    </summary>
+  </member>
+  <member name="PROPERTYKEY.pid">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>A property identifier (PID). This parameter is not used as in <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a>. It is recommended that you set this value to PID_FIRST_USABLE. Any value greater than or equal to 2 is acceptable.</para>
+      <para>
+        <b>Note</b>  Values of 0 and 1 are reserved and should not be used.</para>
+    </summary>
+  </member>
+</doc>

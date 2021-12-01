@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GetPropertyFromIDList.GetPropertyFromIDList">
+    <summary>
+      <para>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</para>
+    </summary>
+    <param name="pidl">
+      <para>A PIDL identifying the <see cref="IPropertyStore" />.</para>
+    </param>
+    <param name="pszName">
+      <para>The key for the selected property.</para>
+    </param>
+    <param name="pv">
+      <para>When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is useful when using <see cref="IShellFolder2.GetDetailsEx" />, as is returns a variant rather than a <b>PROPVARIANT</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh289343(v=vs.85)">GetPropertyFromIDList</seealso>
+    <seealso cref="IPropertyStore" />
+    <seealso cref="IShellFolder2.GetDetailsEx" />
+  </member>
+  <member name="GetPropertyFromIDList.GetPropertyFromIDList">
+    <summary>
+      <para>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</para>
+    </summary>
+    <param name="pidl">
+      <para>A PIDL identifying the <see cref="IPropertyStore" />.</para>
+    </param>
+    <param name="pszName">
+      <para>The key for the selected property.</para>
+    </param>
+    <param name="pvar">
+      <para>When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is useful when using <see cref="IShellFolder2.GetDetailsEx" />, as is returns a variant rather than a <b>PROPVARIANT</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh289343(v=vs.85)">GetPropertyFromIDList</seealso>
+    <seealso cref="IPropertyStore" />
+    <seealso cref="IShellFolder2.GetDetailsEx" />
+  </member>
+  <member name="GetPropertyFromIDList.GetPropertyFromIDList">
+    <summary>
+      <para>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</para>
+    </summary>
+    <param name="pidl">
+      <para>A PIDL identifying the <see cref="IPropertyStore" />.</para>
+    </param>
+    <param name="rkey">
+      <para>The key for the selected property.</para>
+    </param>
+    <param name="pv">
+      <para>When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is useful when using <see cref="IShellFolder2.GetDetailsEx" />, as is returns a variant rather than a <b>PROPVARIANT</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh289343(v=vs.85)">GetPropertyFromIDList</seealso>
+    <seealso cref="IPropertyStore" />
+    <seealso cref="IShellFolder2.GetDetailsEx" />
+  </member>
+  <member name="GetPropertyFromIDList.GetPropertyFromIDList">
+    <summary>
+      <para>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</para>
+    </summary>
+    <param name="pidl">
+      <para>A PIDL identifying the <see cref="IPropertyStore" />.</para>
+    </param>
+    <param name="rkey">
+      <para>TBD</para>
+    </param>
+    <param name="pvar">
+      <para>TBD</para>
+      <h4>- pszName [in]</h4>
+      <para>The key for the selected property.</para>
+      <h4>- pv [out]</h4>
+      <para>When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is useful when using <see cref="IShellFolder2.GetDetailsEx" />, as is returns a variant rather than a <b>PROPVARIANT</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh289343(v=vs.85)">GetPropertyFromIDList</seealso>
+    <seealso cref="IPropertyStore" />
+    <seealso cref="IShellFolder2.GetDetailsEx" />
+  </member>
+</doc>

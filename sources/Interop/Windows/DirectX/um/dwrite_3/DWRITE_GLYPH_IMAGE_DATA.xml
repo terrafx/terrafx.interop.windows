@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_GLYPH_IMAGE_DATA">
+    <summary>
+      <para>Data for a single glyph from GetGlyphImageData.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_IMAGE_DATA.imageData">
+    <summary>
+      <para>Pointer to the glyph data.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_IMAGE_DATA.imageDataSize">
+    <summary>
+      <para>Size of glyph data in bytes.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_IMAGE_DATA.uniqueDataId">
+    <summary>
+      <para>Unique identifier for the glyph data. Clients may use this to cache a parsed/decompressed version and tell whether a repeated call to the same font returns the same data.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_IMAGE_DATA.pixelsPerEm">
+    <summary>
+      <para>Pixels per em of the returned data. For non-scalable raster data (PNG/TIFF/JPG), this can be larger or smaller than requested from GetGlyphImageData when there isn't an exact match.
+For scaling intermediate sizes, use: desired pixels per em * font em size / actual pixels per em.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_IMAGE_DATA.pixelSize">
+    <summary>
+      <para>Size of image when the format is pixel data.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_IMAGE_DATA.horizontalLeftOrigin">
+    <summary>
+      <para>Left origin along the horizontal Roman baseline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_IMAGE_DATA.horizontalRightOrigin">
+    <summary>
+      <para>Right origin along the horizontal Roman baseline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_IMAGE_DATA.verticalTopOrigin">
+    <summary>
+      <para>Top origin along the vertical central baseline.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_IMAGE_DATA.verticalBottomOrigin">
+    <summary>
+      <para>Bottom origin along vertical central baseline.</para>
+    </summary>
+  </member>
+</doc>

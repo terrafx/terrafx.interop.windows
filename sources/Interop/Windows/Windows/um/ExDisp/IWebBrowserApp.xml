@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWebBrowserApp.get_HWND">
+    <summary>
+      <para>Gets the handle of the Windows Internet Explorer main window.</para>
+      <para>This property is read-only.</para>
+    </summary>
+    <remarks>
+      <para>Internet Explorer 7. With the introduction of tabbed browsing, the return value of this method can be ambiguous. To alleviate confusion and maintain the highest level of compatibility with existing applications, this method returns a handle to the top-level window frame, not the currently selected tab.</para>
+    </remarks>
+    <seealso cref="IWebBrowser2" />
+  </member>
+  <member name="IWebBrowserApp.HWND">
+    <summary>
+      <para>Gets the handle of the Windows Internet Explorer main window.</para>
+      <para>This property is read-only.</para>
+    </summary>
+    <remarks>
+      <para>Internet Explorer 7. With the introduction of tabbed browsing, the return value of this method can be ambiguous. To alleviate confusion and maintain the highest level of compatibility with existing applications, this method returns a handle to the top-level window frame, not the currently selected tab.</para>
+    </remarks>
+    <seealso cref="IWebBrowser2" />
+  </member>
+  <member name="IWebBrowserApp.get_ToolBar">
+    <summary>
+      <para>Sets or gets whether toolbars for the object are visible.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>When the IWebBrowser2.ToolBar property is set to FALSE, it is not equivalent to the "toolbar=no" feature of window.open. Instead, it turns off all user interface elements that can be considered toolbars, leaving Windows Internet Explorer in a blank state.</para>
+      <para>The WebBrowser object saves the value of this property, but otherwise ignores it.</para>
+    </remarks>
+    <seealso cref="IWebBrowser2" />
+  </member>
+  <member name="IWebBrowserApp.put_ToolBar">
+    <summary>
+      <para>Sets or gets whether toolbars for the object are visible.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>When the IWebBrowser2.ToolBar property is set to FALSE, it is not equivalent to the "toolbar=no" feature of window.open. Instead, it turns off all user interface elements that can be considered toolbars, leaving Windows Internet Explorer in a blank state.</para>
+      <para>The WebBrowser object saves the value of this property, but otherwise ignores it.</para>
+    </remarks>
+    <seealso cref="IWebBrowser2" />
+  </member>
+  <member name="IWebBrowserApp.ToolBar">
+    <summary>
+      <para>Sets or gets whether toolbars for the object are visible.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>When the IWebBrowser2.ToolBar property is set to FALSE, it is not equivalent to the "toolbar=no" feature of window.open. Instead, it turns off all user interface elements that can be considered toolbars, leaving Windows Internet Explorer in a blank state.</para>
+      <para>The WebBrowser object saves the value of this property, but otherwise ignores it.</para>
+    </remarks>
+    <seealso cref="IWebBrowser2" />
+  </member>
+  <member name="IWebBrowserApp.get_ToolBar">
+    <summary>
+      <para>Sets or gets whether toolbars for the object are visible.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>When the IWebBrowser2.ToolBar property is set to FALSE, it is not equivalent to the "toolbar=no" feature of window.open. Instead, it turns off all user interface elements that can be considered toolbars, leaving Windows Internet Explorer in a blank state.</para>
+      <para>The WebBrowser object saves the value of this property, but otherwise ignores it.</para>
+    </remarks>
+    <seealso cref="IWebBrowser2" />
+  </member>
+  <member name="IWebBrowserApp.put_ToolBar">
+    <summary>
+      <para>Sets or gets whether toolbars for the object are visible.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>When the IWebBrowser2.ToolBar property is set to FALSE, it is not equivalent to the "toolbar=no" feature of window.open. Instead, it turns off all user interface elements that can be considered toolbars, leaving Windows Internet Explorer in a blank state.</para>
+      <para>The WebBrowser object saves the value of this property, but otherwise ignores it.</para>
+    </remarks>
+    <seealso cref="IWebBrowser2" />
+  </member>
+  <member name="IWebBrowserApp.ToolBar">
+    <summary>
+      <para>Sets or gets whether toolbars for the object are visible.</para>
+      <para>This property is read/write.</para>
+    </summary>
+    <remarks>
+      <para>When the IWebBrowser2.ToolBar property is set to FALSE, it is not equivalent to the "toolbar=no" feature of window.open. Instead, it turns off all user interface elements that can be considered toolbars, leaving Windows Internet Explorer in a blank state.</para>
+      <para>The WebBrowser object saves the value of this property, but otherwise ignores it.</para>
+    </remarks>
+    <seealso cref="IWebBrowser2" />
+  </member>
+</doc>

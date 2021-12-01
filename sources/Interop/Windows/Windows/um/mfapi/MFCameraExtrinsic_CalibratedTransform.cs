@@ -8,12 +8,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFCameraExtrinsic_CalibratedTransform.xml' path='doc/member[@name="MFCameraExtrinsic_CalibratedTransform"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct MFCameraExtrinsic_CalibratedTransform
 {
+    /// <include file='MFCameraExtrinsic_CalibratedTransform.xml' path='doc/member[@name="MFCameraExtrinsic_CalibratedTransform.CalibrationId"]/*' />
     public Guid CalibrationId;
 
+    /// <include file='MFCameraExtrinsic_CalibratedTransform.xml' path='doc/member[@name="MFCameraExtrinsic_CalibratedTransform.Position"]/*' />
     public MF_FLOAT3 Position;
 
+    /// <include file='MFCameraExtrinsic_CalibratedTransform.xml' path='doc/member[@name="MFCameraExtrinsic_CalibratedTransform.Orientation"]/*' />
     public MF_QUATERNION Orientation;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POPUPITEMSTATES.xml' path='doc/member[@name="POPUPITEMSTATES"]/*' />
 public enum POPUPITEMSTATES
 {
+    /// <include file='POPUPITEMSTATES.xml' path='doc/member[@name="POPUPITEMSTATES.MPI_NORMAL"]/*' />
     MPI_NORMAL = 1,
+
+    /// <include file='POPUPITEMSTATES.xml' path='doc/member[@name="POPUPITEMSTATES.MPI_HOT"]/*' />
     MPI_HOT = 2,
+
+    /// <include file='POPUPITEMSTATES.xml' path='doc/member[@name="POPUPITEMSTATES.MPI_DISABLED"]/*' />
     MPI_DISABLED = 3,
+
+    /// <include file='POPUPITEMSTATES.xml' path='doc/member[@name="POPUPITEMSTATES.MPI_DISABLEDHOT"]/*' />
     MPI_DISABLEDHOT = 4,
 }

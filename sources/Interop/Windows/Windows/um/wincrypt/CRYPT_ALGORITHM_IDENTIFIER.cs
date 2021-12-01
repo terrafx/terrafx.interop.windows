@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_ALGORITHM_IDENTIFIER.xml' path='doc/member[@name="CRYPT_ALGORITHM_IDENTIFIER"]/*' />
 public unsafe partial struct CRYPT_ALGORITHM_IDENTIFIER
 {
+    /// <include file='CRYPT_ALGORITHM_IDENTIFIER.xml' path='doc/member[@name="CRYPT_ALGORITHM_IDENTIFIER.pszObjId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszObjId;
 
+    /// <include file='CRYPT_ALGORITHM_IDENTIFIER.xml' path='doc/member[@name="CRYPT_ALGORITHM_IDENTIFIER.Parameters"]/*' />
     [NativeTypeName("CRYPT_OBJID_BLOB")]
     public CRYPT_DATA_BLOB Parameters;
 }

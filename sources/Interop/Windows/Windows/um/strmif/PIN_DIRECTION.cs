@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PIN_DIRECTION.xml' path='doc/member[@name="PIN_DIRECTION"]/*' />
 public enum PIN_DIRECTION
 {
+    /// <include file='PIN_DIRECTION.xml' path='doc/member[@name="PIN_DIRECTION.PINDIR_INPUT"]/*' />
     PINDIR_INPUT = 0,
+
+    /// <include file='PIN_DIRECTION.xml' path='doc/member[@name="PIN_DIRECTION.PINDIR_OUTPUT"]/*' />
     PINDIR_OUTPUT = (PINDIR_INPUT + 1),
 }

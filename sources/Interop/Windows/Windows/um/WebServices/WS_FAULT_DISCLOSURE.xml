@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_FAULT_DISCLOSURE">
+    <summary>
+      <para>Controls how much error information is included in a fault.
+Since the error object may contain sensitive
+data as part of the error string, it is not
+always appropriate to include the error strings
+information in all faults.</para>
+    </summary>
+  </member>
+  <member name="WS_FAULT_DISCLOSURE.WS_MINIMAL_FAULT_DISCLOSURE">
+    <summary>
+      <para>Use a generic fault string for all errors.</para>
+    </summary>
+  </member>
+  <member name="WS_FAULT_DISCLOSURE.WS_FULL_FAULT_DISCLOSURE">
+    <summary>
+      <para>Use the error string as the fault string.</para>
+    </summary>
+  </member>
+</doc>

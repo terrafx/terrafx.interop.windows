@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMTunerSignalStrength.xml' path='doc/member[@name="AMTunerSignalStrength"]/*' />
 public enum AMTunerSignalStrength
 {
+    /// <include file='AMTunerSignalStrength.xml' path='doc/member[@name="AMTunerSignalStrength.AMTUNER_HASNOSIGNALSTRENGTH"]/*' />
     AMTUNER_HASNOSIGNALSTRENGTH = -1,
+
+    /// <include file='AMTunerSignalStrength.xml' path='doc/member[@name="AMTunerSignalStrength.AMTUNER_NOSIGNAL"]/*' />
     AMTUNER_NOSIGNAL = 0,
+
+    /// <include file='AMTunerSignalStrength.xml' path='doc/member[@name="AMTunerSignalStrength.AMTUNER_SIGNALPRESENT"]/*' />
     AMTUNER_SIGNALPRESENT = 1,
 }

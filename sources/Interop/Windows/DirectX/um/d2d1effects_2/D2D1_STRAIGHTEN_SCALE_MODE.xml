@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_STRAIGHTEN_SCALE_MODE">
+    <summary>
+      <para>Values for the <see cref="D2D1_STRAIGHTEN_PROP_SCALE_MODE" /> property of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/straighten-effect">Straighten effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STRAIGHTEN_SCALE_MODE.D2D1_STRAIGHTEN_SCALE_MODE_NEAREST_NEIGHBOR">
+    <summary>
+      <para>Indicates nearest neighbor interpolation should be used.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STRAIGHTEN_SCALE_MODE.D2D1_STRAIGHTEN_SCALE_MODE_LINEAR">
+    <summary>
+      <para>Indicates linear interpolation should be used.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STRAIGHTEN_SCALE_MODE.D2D1_STRAIGHTEN_SCALE_MODE_CUBIC">
+    <summary>
+      <para>Indicates cubic interpolation should be used.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STRAIGHTEN_SCALE_MODE.D2D1_STRAIGHTEN_SCALE_MODE_MULTI_SAMPLE_LINEAR">
+    <summary>
+      <para>Indicates multi-sample linear interpolation should be used.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STRAIGHTEN_SCALE_MODE.D2D1_STRAIGHTEN_SCALE_MODE_ANISOTROPIC">
+    <summary>
+      <para>Indicates anisotropic filtering should be used.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STRAIGHTEN_SCALE_MODE.D2D1_STRAIGHTEN_SCALE_MODE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

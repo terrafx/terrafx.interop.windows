@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IStorageProviderHandler.GetPropertyHandlerFromFileId">
+    <summary>
+      <para>Gets an instance of <see cref="IStorageProviderPropertyHandler" /> associated with the provided file identifier.</para>
+    </summary>
+    <param name="fileId">
+      <para>The identifier for the relevant file.</para>
+    </param>
+    <param name="propertyHandler">
+      <para>An <see cref="IStorageProviderPropertyHandler" /> instance associated with the file specified by <i>fileId</i>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is used to convert a  file identifier to a local file system path. That path is then used to provide the <i>propertyHandler</i> to the local file.</para>
+    </remarks>
+    <seealso cref="IStorageProviderHandler" />
+  </member>
+  <member name="IStorageProviderHandler.GetPropertyHandlerFromPath">
+    <summary>
+      <para>Gets an instance of <see cref="IStorageProviderPropertyHandler" /> associated with the provided path.</para>
+    </summary>
+    <param name="path">
+      <para>The path for the relevant file.</para>
+    </param>
+    <param name="propertyHandler">
+      <para>An <see cref="IStorageProviderPropertyHandler" /> instance associated with the file specified by <i>path</i>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IStorageProviderHandler" />
+  </member>
+  <member name="IStorageProviderHandler.GetPropertyHandlerFromUri">
+    <summary>
+      <para>Gets an instance of <see cref="IStorageProviderPropertyHandler" /> associated with the provided URI.</para>
+    </summary>
+    <param name="uri">
+      <para>The URI for the relevant file.</para>
+    </param>
+    <param name="propertyHandler">
+      <para>An <see cref="IStorageProviderPropertyHandler" /> instance associated with the file specified by <i>uri</i>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is used to convert a remote URI to a local file system path. That path is then used to provide the <i>propertyHandler</i> to the local file.</para>
+    </remarks>
+    <seealso cref="IStorageProviderHandler" />
+  </member>
+</doc>

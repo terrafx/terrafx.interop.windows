@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpSharedRecognizer.xml' path='doc/member[@name="SpSharedRecognizer"]/*' />
 [Guid("3BEE4890-4FE9-4A37-8C1E-5E7E12791C1F")]
 public partial struct SpSharedRecognizer
 {

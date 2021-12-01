@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GenericCredentialProvider.xml' path='doc/member[@name="GenericCredentialProvider"]/*' />
 [Guid("25CBB996-92ED-457E-B28C-4774084BD562")]
 public partial struct GenericCredentialProvider
 {

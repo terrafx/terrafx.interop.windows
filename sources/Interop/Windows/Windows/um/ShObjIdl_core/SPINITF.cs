@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPINITF.xml' path='doc/member[@name="SPINITF"]/*' />
 public enum SPINITF
 {
+    /// <include file='SPINITF.xml' path='doc/member[@name="SPINITF.SPINITF_NORMAL"]/*' />
     SPINITF_NORMAL = 0,
+
+    /// <include file='SPINITF.xml' path='doc/member[@name="SPINITF.SPINITF_MODAL"]/*' />
     SPINITF_MODAL = 0x1,
+
+    /// <include file='SPINITF.xml' path='doc/member[@name="SPINITF.SPINITF_NOMINIMIZE"]/*' />
     SPINITF_NOMINIMIZE = 0x8,
 }

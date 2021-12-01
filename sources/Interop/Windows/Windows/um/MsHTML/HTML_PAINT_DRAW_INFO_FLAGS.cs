@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTML_PAINT_DRAW_INFO_FLAGS.xml' path='doc/member[@name="HTML_PAINT_DRAW_INFO_FLAGS"]/*' />
 public enum HTML_PAINT_DRAW_INFO_FLAGS
 {
+    /// <include file='HTML_PAINT_DRAW_INFO_FLAGS.xml' path='doc/member[@name="HTML_PAINT_DRAW_INFO_FLAGS.HTMLPAINT_DRAWINFO_VIEWPORT"]/*' />
     HTMLPAINT_DRAWINFO_VIEWPORT = 0x1,
+
+    /// <include file='HTML_PAINT_DRAW_INFO_FLAGS.xml' path='doc/member[@name="HTML_PAINT_DRAW_INFO_FLAGS.HTMLPAINT_DRAWINFO_UPDATEREGION"]/*' />
     HTMLPAINT_DRAWINFO_UPDATEREGION = 0x2,
+
+    /// <include file='HTML_PAINT_DRAW_INFO_FLAGS.xml' path='doc/member[@name="HTML_PAINT_DRAW_INFO_FLAGS.HTMLPAINT_DRAWINFO_XFORM"]/*' />
     HTMLPAINT_DRAWINFO_XFORM = 0x4,
+
+    /// <include file='HTML_PAINT_DRAW_INFO_FLAGS.xml' path='doc/member[@name="HTML_PAINT_DRAW_INFO_FLAGS.HTML_PAINT_DRAW_INFO_FLAGS_Max"]/*' />
     HTML_PAINT_DRAW_INFO_FLAGS_Max = 2147483647,
 }

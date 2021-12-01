@@ -1,0 +1,1281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.InetIsOffline">
+    <summary>
+      <para>Determines whether the system is connected to the Internet.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The input flags for the function. This must be set to zero.</para>
+    </param>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns <b>TRUE</b> if the local system is not currently connected to the Internet. Returns <b>FALSE</b> if the local system is connected to the Internet or if no attempt has yet been made to connect to the Internet.</para>
+    </returns>
+  </member>
+  <member name="Windows.MIMEAssociationDialog">
+    <summary>
+      <para>Runs the unregistered MIME content type dialog box.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window of any posted child windows.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>A bit flag value that specifies if an association is to be registered. The bit flag is the value MIMEASSOCDLG_FL_REGISTER_ASSOC (0x0001). If this bit is set, the selected application is registered as the handler for the given MIME type. If this bit is clear, no association is registered.</para>
+      <para>An application is registered only if this flag is set and the user indicates that a persistent association is to be made.</para>
+      <para>Registration is impossible if the string at <i>pcszFile</i> does not contain an extension.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the name of the target file. This file must conform to the content type described by the <i>pcszMIMEContentType</i> parameter.</para>
+    </param>
+    <param name="pcszMIMEContentType">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the unregistered content type.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>A pointer to a buffer that, when this function returns successfully, receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>Size of <i>pszAppBuf</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function is not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the content type was successfully associated with the extension. In this case, the extension is associated as the default for the content type, and <i>pszAppBuf</i> points to the string that contains the path of the specified application. The function returns S_FALSE if nothing was registered. Otherwise, the return value will be one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>The user canceled the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory available to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the syntax of the input content type string at <i>pcszMIMEContentType</i>. A successful return value does not indicate that the specified MIME content type is valid.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines MIMEAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.MIMEAssociationDialogA">
+    <summary>
+      <para>Runs the unregistered MIME content type dialog box.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window of any posted child windows.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>A bit flag value that specifies if an association is to be registered. The bit flag is the value MIMEASSOCDLG_FL_REGISTER_ASSOC (0x0001). If this bit is set, the selected application is registered as the handler for the given MIME type. If this bit is clear, no association is registered.</para>
+      <para>An application is registered only if this flag is set and the user indicates that a persistent association is to be made.</para>
+      <para>Registration is impossible if the string at <i>pcszFile</i> does not contain an extension.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the name of the target file. This file must conform to the content type described by the <i>pcszMIMEContentType</i> parameter.</para>
+    </param>
+    <param name="pcszMIMEContentType">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the unregistered content type.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>A pointer to a buffer that, when this function returns successfully, receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>Size of <i>pszAppBuf</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function is not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the content type was successfully associated with the extension. In this case, the extension is associated as the default for the content type, and <i>pszAppBuf</i> points to the string that contains the path of the specified application. The function returns S_FALSE if nothing was registered. Otherwise, the return value will be one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>The user canceled the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory available to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the syntax of the input content type string at <i>pcszMIMEContentType</i>. A successful return value does not indicate that the specified MIME content type is valid.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines MIMEAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.MIMEAssociationDialogW">
+    <summary>
+      <para>Runs the unregistered MIME content type dialog box.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window of any posted child windows.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>A bit flag value that specifies if an association is to be registered. The bit flag is the value MIMEASSOCDLG_FL_REGISTER_ASSOC (0x0001). If this bit is set, the selected application is registered as the handler for the given MIME type. If this bit is clear, no association is registered.</para>
+      <para>An application is registered only if this flag is set and the user indicates that a persistent association is to be made.</para>
+      <para>Registration is impossible if the string at <i>pcszFile</i> does not contain an extension.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the name of the target file. This file must conform to the content type described by the <i>pcszMIMEContentType</i> parameter.</para>
+    </param>
+    <param name="pcszMIMEContentType">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the unregistered content type.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>A pointer to a buffer that, when this function returns successfully, receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>Size of <i>pszAppBuf</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function is not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the content type was successfully associated with the extension. In this case, the extension is associated as the default for the content type, and <i>pszAppBuf</i> points to the string that contains the path of the specified application. The function returns S_FALSE if nothing was registered. Otherwise, the return value will be one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>The user canceled the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory available to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the syntax of the input content type string at <i>pcszMIMEContentType</i>. A successful return value does not indicate that the specified MIME content type is valid.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines MIMEAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.MIMEAssociationDialog">
+    <summary>
+      <para>Runs the unregistered MIME content type dialog box.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window of any posted child windows.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>A bit flag value that specifies if an association is to be registered. The bit flag is the value MIMEASSOCDLG_FL_REGISTER_ASSOC (0x0001). If this bit is set, the selected application is registered as the handler for the given MIME type. If this bit is clear, no association is registered.</para>
+      <para>An application is registered only if this flag is set and the user indicates that a persistent association is to be made.</para>
+      <para>Registration is impossible if the string at <i>pcszFile</i> does not contain an extension.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the name of the target file. This file must conform to the content type described by the <i>pcszMIMEContentType</i> parameter.</para>
+    </param>
+    <param name="pcszMIMEContentType">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the unregistered content type.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>A pointer to a buffer that, when this function returns successfully, receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>Size of <i>pszAppBuf</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function is not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the content type was successfully associated with the extension. In this case, the extension is associated as the default for the content type, and <i>pszAppBuf</i> points to the string that contains the path of the specified application. The function returns S_FALSE if nothing was registered. Otherwise, the return value will be one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>The user canceled the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory available to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the syntax of the input content type string at <i>pcszMIMEContentType</i>. A successful return value does not indicate that the specified MIME content type is valid.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines MIMEAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.MIMEAssociationDialogA">
+    <summary>
+      <para>Runs the unregistered MIME content type dialog box.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window of any posted child windows.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>A bit flag value that specifies if an association is to be registered. The bit flag is the value MIMEASSOCDLG_FL_REGISTER_ASSOC (0x0001). If this bit is set, the selected application is registered as the handler for the given MIME type. If this bit is clear, no association is registered.</para>
+      <para>An application is registered only if this flag is set and the user indicates that a persistent association is to be made.</para>
+      <para>Registration is impossible if the string at <i>pcszFile</i> does not contain an extension.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the name of the target file. This file must conform to the content type described by the <i>pcszMIMEContentType</i> parameter.</para>
+    </param>
+    <param name="pcszMIMEContentType">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the unregistered content type.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>A pointer to a buffer that, when this function returns successfully, receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>Size of <i>pszAppBuf</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function is not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the content type was successfully associated with the extension. In this case, the extension is associated as the default for the content type, and <i>pszAppBuf</i> points to the string that contains the path of the specified application. The function returns S_FALSE if nothing was registered. Otherwise, the return value will be one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>The user canceled the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory available to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the syntax of the input content type string at <i>pcszMIMEContentType</i>. A successful return value does not indicate that the specified MIME content type is valid.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines MIMEAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.MIMEAssociationDialogW">
+    <summary>
+      <para>Runs the unregistered MIME content type dialog box.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window of any posted child windows.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>A bit flag value that specifies if an association is to be registered. The bit flag is the value MIMEASSOCDLG_FL_REGISTER_ASSOC (0x0001). If this bit is set, the selected application is registered as the handler for the given MIME type. If this bit is clear, no association is registered.</para>
+      <para>An application is registered only if this flag is set and the user indicates that a persistent association is to be made.</para>
+      <para>Registration is impossible if the string at <i>pcszFile</i> does not contain an extension.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the name of the target file. This file must conform to the content type described by the <i>pcszMIMEContentType</i> parameter.</para>
+    </param>
+    <param name="pcszMIMEContentType">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of a null-terminated string that contains the unregistered content type.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>A pointer to a buffer that, when this function returns successfully, receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>Size of <i>pszAppBuf</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function is not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the content type was successfully associated with the extension. In this case, the extension is associated as the default for the content type, and <i>pszAppBuf</i> points to the string that contains the path of the specified application. The function returns S_FALSE if nothing was registered. Otherwise, the return value will be one of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>The user canceled the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory available to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the syntax of the input content type string at <i>pcszMIMEContentType</i>. A successful return value does not indicate that the specified MIME content type is valid.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines MIMEAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.TranslateURL">
+    <summary>
+      <para>Applies common translations to a given URL string, creating a new URL string.</para>
+    </summary>
+    <param name="pcszURL">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of the URL string to be translated.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify how the URL string is to be translated. This value can be a combination of the following:</para>
+      <h4>TRANSLATEURL_FL_GUESS_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <b>TranslateURL</b>, the system automatically chooses a scheme and adds it to the URL.</para>
+      <h4>TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to
+<b>TranslateURL</b>, the system adds the default protocol to the URL.</para>
+    </param>
+    <param name="ppszTranslatedURL">
+      <para>Type: <b>PTSTR*</b></para>
+      <para>A pointer variable that receives the pointer to the newly created, translated URL string, if any. The <i>ppszTranslatedURL</i> parameter is valid only if the function returns S_OK.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK upon success, or S_FALSE if the URL did not require translation. If an error occurs, the function returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the input URL string. A successful return value does not indicate that the URL strings are valid URLs.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines TranslateURL as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.TranslateURLA">
+    <summary>
+      <para>Applies common translations to a given URL string, creating a new URL string.</para>
+    </summary>
+    <param name="pcszURL">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of the URL string to be translated.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify how the URL string is to be translated. This value can be a combination of the following:</para>
+      <h4>TRANSLATEURL_FL_GUESS_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <b>TranslateURL</b>, the system automatically chooses a scheme and adds it to the URL.</para>
+      <h4>TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to
+<b>TranslateURL</b>, the system adds the default protocol to the URL.</para>
+    </param>
+    <param name="ppszTranslatedURL">
+      <para>Type: <b>PTSTR*</b></para>
+      <para>A pointer variable that receives the pointer to the newly created, translated URL string, if any. The <i>ppszTranslatedURL</i> parameter is valid only if the function returns S_OK.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK upon success, or S_FALSE if the URL did not require translation. If an error occurs, the function returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the input URL string. A successful return value does not indicate that the URL strings are valid URLs.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines TranslateURL as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.TranslateURLW">
+    <summary>
+      <para>Applies common translations to a given URL string, creating a new URL string.</para>
+    </summary>
+    <param name="pcszURL">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of the URL string to be translated.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify how the URL string is to be translated. This value can be a combination of the following:</para>
+      <h4>TRANSLATEURL_FL_GUESS_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <b>TranslateURL</b>, the system automatically chooses a scheme and adds it to the URL.</para>
+      <h4>TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to
+<b>TranslateURL</b>, the system adds the default protocol to the URL.</para>
+    </param>
+    <param name="ppszTranslatedURL">
+      <para>Type: <b>PTSTR*</b></para>
+      <para>A pointer variable that receives the pointer to the newly created, translated URL string, if any. The <i>ppszTranslatedURL</i> parameter is valid only if the function returns S_OK.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK upon success, or S_FALSE if the URL did not require translation. If an error occurs, the function returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the input URL string. A successful return value does not indicate that the URL strings are valid URLs.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines TranslateURL as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.TranslateURL">
+    <summary>
+      <para>Applies common translations to a given URL string, creating a new URL string.</para>
+    </summary>
+    <param name="pcszURL">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of the URL string to be translated.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify how the URL string is to be translated. This value can be a combination of the following:</para>
+      <h4>TRANSLATEURL_FL_GUESS_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <b>TranslateURL</b>, the system automatically chooses a scheme and adds it to the URL.</para>
+      <h4>TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to
+<b>TranslateURL</b>, the system adds the default protocol to the URL.</para>
+    </param>
+    <param name="ppszTranslatedURL">
+      <para>Type: <b>PTSTR*</b></para>
+      <para>A pointer variable that receives the pointer to the newly created, translated URL string, if any. The <i>ppszTranslatedURL</i> parameter is valid only if the function returns S_OK.</para>
+      <h5>- dwInFlags.TRANSLATEURL_FL_GUESS_PROTOCOL</h5>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <b>TranslateURL</b>, the system automatically chooses a scheme and adds it to the URL.</para>
+      <h5>- dwInFlags.TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL</h5>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to
+<b>TranslateURL</b>, the system adds the default protocol to the URL.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK upon success, or S_FALSE if the URL did not require translation. If an error occurs, the function returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the input URL string. A successful return value does not indicate that the URL strings are valid URLs.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines TranslateURL as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.TranslateURLA">
+    <summary>
+      <para>Applies common translations to a given URL string, creating a new URL string.</para>
+    </summary>
+    <param name="pcszURL">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of the URL string to be translated.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify how the URL string is to be translated. This value can be a combination of the following:</para>
+      <h4>TRANSLATEURL_FL_GUESS_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <b>TranslateURL</b>, the system automatically chooses a scheme and adds it to the URL.</para>
+      <h4>TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to
+<b>TranslateURL</b>, the system adds the default protocol to the URL.</para>
+    </param>
+    <param name="ppszTranslatedURL">
+      <para>Type: <b>PTSTR*</b></para>
+      <para>A pointer variable that receives the pointer to the newly created, translated URL string, if any. The <i>ppszTranslatedURL</i> parameter is valid only if the function returns S_OK.</para>
+      <h5>- dwInFlags.TRANSLATEURL_FL_GUESS_PROTOCOL</h5>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <b>TranslateURL</b>, the system automatically chooses a scheme and adds it to the URL.</para>
+      <h5>- dwInFlags.TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL</h5>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to
+<b>TranslateURL</b>, the system adds the default protocol to the URL.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK upon success, or S_FALSE if the URL did not require translation. If an error occurs, the function returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the input URL string. A successful return value does not indicate that the URL strings are valid URLs.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines TranslateURL as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.TranslateURLW">
+    <summary>
+      <para>Applies common translations to a given URL string, creating a new URL string.</para>
+    </summary>
+    <param name="pcszURL">
+      <para>Type: <b>PCTSTR</b></para>
+      <para>The address of the URL string to be translated.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify how the URL string is to be translated. This value can be a combination of the following:</para>
+      <h4>TRANSLATEURL_FL_GUESS_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <b>TranslateURL</b>, the system automatically chooses a scheme and adds it to the URL.</para>
+      <h4>TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL</h4>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to
+<b>TranslateURL</b>, the system adds the default protocol to the URL.</para>
+    </param>
+    <param name="ppszTranslatedURL">
+      <para>Type: <b>PTSTR*</b></para>
+      <para>A pointer variable that receives the pointer to the newly created, translated URL string, if any. The <i>ppszTranslatedURL</i> parameter is valid only if the function returns S_OK.</para>
+      <h5>- dwInFlags.TRANSLATEURL_FL_GUESS_PROTOCOL</h5>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <b>TranslateURL</b>, the system automatically chooses a scheme and adds it to the URL.</para>
+      <h5>- dwInFlags.TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL</h5>
+      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to
+<b>TranslateURL</b>, the system adds the default protocol to the URL.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK upon success, or S_FALSE if the URL did not require translation. If an error occurs, the function returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FLAGS</b>
+            </para>
+          </description>
+          <description>
+            <para>The flag combination passed in <i>dwInFlags</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There was insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the input pointers is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function does not validate the input URL string. A successful return value does not indicate that the URL strings are valid URLs.</para>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines TranslateURL as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.URLAssociationDialog">
+    <summary>
+      <para>Invokes the unregistered URL protocol dialog box. This dialog box allows the user to select an application to associate with a previously unknown protocol.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify the behavior of the function. This value can be a combination of the following:</para>
+      <h4>URLASSOCDLG_FL_USE_DEFAULT_NAME</h4>
+      <para>Use the default file name (that is, "Internet Shortcut").</para>
+      <h4>URLASSOCDLG_FL_REGISTER_ASSOC</h4>
+      <para>Register the selected application as the handler for the protocol specified in <i>pcszURL</i>. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the file name to associate with the URLs protocol.</para>
+    </param>
+    <param name="pcszURL">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the URL with an unknown protocol.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>The address of a buffer that receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of <i>pszAppBuf</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the application is registered with the URL protocol, or S_FALSE if nothing is registered. For example, the function returns S_FALSE when the user elects to perform a one-time execution via the selected application.</para>
+    </returns>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines URLAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.URLAssociationDialogA">
+    <summary>
+      <para>Invokes the unregistered URL protocol dialog box. This dialog box allows the user to select an application to associate with a previously unknown protocol.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify the behavior of the function. This value can be a combination of the following:</para>
+      <h4>URLASSOCDLG_FL_USE_DEFAULT_NAME</h4>
+      <para>Use the default file name (that is, "Internet Shortcut").</para>
+      <h4>URLASSOCDLG_FL_REGISTER_ASSOC</h4>
+      <para>Register the selected application as the handler for the protocol specified in <i>pcszURL</i>. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the file name to associate with the URLs protocol.</para>
+    </param>
+    <param name="pcszURL">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the URL with an unknown protocol.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>The address of a buffer that receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of <i>pszAppBuf</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the application is registered with the URL protocol, or S_FALSE if nothing is registered. For example, the function returns S_FALSE when the user elects to perform a one-time execution via the selected application.</para>
+    </returns>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines URLAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.URLAssociationDialogW">
+    <summary>
+      <para>Invokes the unregistered URL protocol dialog box. This dialog box allows the user to select an application to associate with a previously unknown protocol.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify the behavior of the function. This value can be a combination of the following:</para>
+      <h4>URLASSOCDLG_FL_USE_DEFAULT_NAME</h4>
+      <para>Use the default file name (that is, "Internet Shortcut").</para>
+      <h4>URLASSOCDLG_FL_REGISTER_ASSOC</h4>
+      <para>Register the selected application as the handler for the protocol specified in <i>pcszURL</i>. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the file name to associate with the URLs protocol.</para>
+    </param>
+    <param name="pcszURL">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the URL with an unknown protocol.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>The address of a buffer that receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of <i>pszAppBuf</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the application is registered with the URL protocol, or S_FALSE if nothing is registered. For example, the function returns S_FALSE when the user elects to perform a one-time execution via the selected application.</para>
+    </returns>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines URLAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.URLAssociationDialog">
+    <summary>
+      <para>Invokes the unregistered URL protocol dialog box. This dialog box allows the user to select an application to associate with a previously unknown protocol.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify the behavior of the function. This value can be a combination of the following:</para>
+      <h4>URLASSOCDLG_FL_USE_DEFAULT_NAME</h4>
+      <para>Use the default file name (that is, "Internet Shortcut").</para>
+      <h4>URLASSOCDLG_FL_REGISTER_ASSOC</h4>
+      <para>Register the selected application as the handler for the protocol specified in <i>pcszURL</i>. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the file name to associate with the URLs protocol.</para>
+    </param>
+    <param name="pcszURL">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the URL with an unknown protocol.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>The address of a buffer that receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of <i>pszAppBuf</i>, in characters.</para>
+      <h5>- dwInFlags.URLASSOCDLG_FL_REGISTER_ASSOC</h5>
+      <para>Register the selected application as the handler for the protocol specified in <i>pcszURL</i>. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</para>
+      <h5>- dwInFlags.URLASSOCDLG_FL_USE_DEFAULT_NAME</h5>
+      <para>Use the default file name (that is, "Internet Shortcut").</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the application is registered with the URL protocol, or S_FALSE if nothing is registered. For example, the function returns S_FALSE when the user elects to perform a one-time execution via the selected application.</para>
+    </returns>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines URLAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.URLAssociationDialogA">
+    <summary>
+      <para>Invokes the unregistered URL protocol dialog box. This dialog box allows the user to select an application to associate with a previously unknown protocol.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify the behavior of the function. This value can be a combination of the following:</para>
+      <h4>URLASSOCDLG_FL_USE_DEFAULT_NAME</h4>
+      <para>Use the default file name (that is, "Internet Shortcut").</para>
+      <h4>URLASSOCDLG_FL_REGISTER_ASSOC</h4>
+      <para>Register the selected application as the handler for the protocol specified in <i>pcszURL</i>. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the file name to associate with the URLs protocol.</para>
+    </param>
+    <param name="pcszURL">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the URL with an unknown protocol.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>The address of a buffer that receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of <i>pszAppBuf</i>, in characters.</para>
+      <h5>- dwInFlags.URLASSOCDLG_FL_REGISTER_ASSOC</h5>
+      <para>Register the selected application as the handler for the protocol specified in <i>pcszURL</i>. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</para>
+      <h5>- dwInFlags.URLASSOCDLG_FL_USE_DEFAULT_NAME</h5>
+      <para>Use the default file name (that is, "Internet Shortcut").</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the application is registered with the URL protocol, or S_FALSE if nothing is registered. For example, the function returns S_FALSE when the user elects to perform a one-time execution via the selected application.</para>
+    </returns>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines URLAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+  <member name="Windows.URLAssociationDialogW">
+    <summary>
+      <para>Invokes the unregistered URL protocol dialog box. This dialog box allows the user to select an application to associate with a previously unknown protocol.
+<b>Note</b>  Windows XP Service Pack 2 (SP2) or later: This function is no longer supported.</para>
+    </summary>
+    <param name="hwndParent">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window.</para>
+    </param>
+    <param name="dwInFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The bit flags that specify the behavior of the function. This value can be a combination of the following:</para>
+      <h4>URLASSOCDLG_FL_USE_DEFAULT_NAME</h4>
+      <para>Use the default file name (that is, "Internet Shortcut").</para>
+      <h4>URLASSOCDLG_FL_REGISTER_ASSOC</h4>
+      <para>Register the selected application as the handler for the protocol specified in <i>pcszURL</i>. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</para>
+    </param>
+    <param name="pcszFile">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the file name to associate with the URLs protocol.</para>
+    </param>
+    <param name="pcszURL">
+      <para>Type: <b>PTCSTR</b></para>
+      <para>The address of a constant zero-terminated string that contains the URL with an unknown protocol.</para>
+    </param>
+    <param name="pszAppBuf">
+      <para>Type: <b>PTSTR</b></para>
+      <para>The address of a buffer that receives the path of the application specified by the user.</para>
+    </param>
+    <param name="ucAppBufLen">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of <i>pszAppBuf</i>, in characters.</para>
+      <h5>- dwInFlags.URLASSOCDLG_FL_REGISTER_ASSOC</h5>
+      <para>Register the selected application as the handler for the protocol specified in <i>pcszURL</i>. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</para>
+      <h5>- dwInFlags.URLASSOCDLG_FL_USE_DEFAULT_NAME</h5>
+      <para>Use the default file name (that is, "Internet Shortcut").</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>
+        <b>Note</b>  As of Windows XP SP2, this function not supported and returns E_NOTIMPL in all situations.</para>
+      <para>In supported systems, returns S_OK if the application is registered with the URL protocol, or S_FALSE if nothing is registered. For example, the function returns S_FALSE when the user elects to perform a one-time execution via the selected application.</para>
+    </returns>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The intshcut.h header defines URLAssociationDialog as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+</doc>

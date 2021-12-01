@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap"]/*' />
 public enum htmlWrap
 {
+    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrapOff"]/*' />
     htmlWrapOff = 1,
+
+    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrapSoft"]/*' />
     htmlWrapSoft = 2,
+
+    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrapHard"]/*' />
     htmlWrapHard = 3,
+
+    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrap_Max"]/*' />
     htmlWrap_Max = 2147483647,
 }

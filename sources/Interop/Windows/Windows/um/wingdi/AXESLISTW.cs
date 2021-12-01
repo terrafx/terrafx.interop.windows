@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AXESLISTW.xml' path='doc/member[@name="AXESLISTW"]/*' />
 public partial struct AXESLISTW
 {
+    /// <include file='AXESLISTW.xml' path='doc/member[@name="AXESLISTW.axlReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint axlReserved;
 
+    /// <include file='AXESLISTW.xml' path='doc/member[@name="AXESLISTW.axlNumAxes"]/*' />
     [NativeTypeName("DWORD")]
     public uint axlNumAxes;
 
+    /// <include file='AXESLISTW.xml' path='doc/member[@name="AXESLISTW.axlAxisInfo"]/*' />
     [NativeTypeName("AXISINFOW [16]")]
     public _axlAxisInfo_e__FixedBuffer axlAxisInfo;
 
+    /// <include file='_axlAxisInfo_e__FixedBuffer.xml' path='doc/member[@name="_axlAxisInfo_e__FixedBuffer"]/*' />
     public partial struct _axlAxisInfo_e__FixedBuffer
     {
         public AXISINFOW e0;

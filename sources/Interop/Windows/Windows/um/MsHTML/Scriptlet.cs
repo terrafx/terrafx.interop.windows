@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='Scriptlet.xml' path='doc/member[@name="Scriptlet"]/*' />
 [Guid("AE24FDAE-03C6-11D1-8B76-0080C744F389")]
 public partial struct Scriptlet
 {

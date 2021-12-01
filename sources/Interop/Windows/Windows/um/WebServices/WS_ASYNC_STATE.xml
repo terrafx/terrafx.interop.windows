@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ASYNC_STATE">
+    <summary>
+      <para>Used by <see cref="WsAsyncExecute" /> to manage the state of an asynchronous operation.</para>
+    </summary>
+  </member>
+  <member name="WS_ASYNC_STATE.internal0">
+    <summary>
+      <para>This field is internal and should not be modified.</para>
+    </summary>
+  </member>
+  <member name="WS_ASYNC_STATE.internal1">
+    <summary>
+      <para>This field is internal and should not be modified.</para>
+    </summary>
+  </member>
+  <member name="WS_ASYNC_STATE.internal2">
+    <summary>
+      <para>This field is internal and should not be modified.</para>
+    </summary>
+  </member>
+  <member name="WS_ASYNC_STATE.internal3">
+    <summary>
+      <para>This field is internal and should not be modified.</para>
+    </summary>
+  </member>
+  <member name="WS_ASYNC_STATE.internal4">
+    <summary>
+      <para>This field is internal and should not be modified.</para>
+    </summary>
+  </member>
+</doc>

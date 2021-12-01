@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_QC_STATEMENT.xml' path='doc/member[@name="CERT_QC_STATEMENT"]/*' />
 public unsafe partial struct CERT_QC_STATEMENT
 {
+    /// <include file='CERT_QC_STATEMENT.xml' path='doc/member[@name="CERT_QC_STATEMENT.pszStatementId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszStatementId;
 
+    /// <include file='CERT_QC_STATEMENT.xml' path='doc/member[@name="CERT_QC_STATEMENT.StatementInfo"]/*' />
     [NativeTypeName("CRYPT_OBJID_BLOB")]
     public CRYPT_DATA_BLOB StatementInfo;
 }

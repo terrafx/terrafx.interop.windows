@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBandHost.xml' path='doc/member[@name="IBandHost"]/*' />
 [Guid("B9075C7C-D48E-403F-AB99-D6C77A1084AC")]
 [NativeTypeName("struct IBandHost : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface
         return ((delegate* unmanaged<IBandHost*, Guid*, void**, int>)(lpVtbl[0]))((IBandHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface
         return ((delegate* unmanaged<IBandHost*, uint>)(lpVtbl[1]))((IBandHost*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface
         return ((delegate* unmanaged<IBandHost*, uint>)(lpVtbl[2]))((IBandHost*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBandHost.xml' path='doc/member[@name="IBandHost.CreateBand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateBand([NativeTypeName("const IID &")] Guid* rclsidBand, BOOL fAvailable, BOOL fVisible, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -46,6 +51,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface
         return ((delegate* unmanaged<IBandHost*, Guid*, BOOL, BOOL, Guid*, void**, int>)(lpVtbl[3]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand, fAvailable, fVisible, riid, ppv);
     }
 
+    /// <include file='IBandHost.xml' path='doc/member[@name="IBandHost.SetBandAvailability"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetBandAvailability([NativeTypeName("const IID &")] Guid* rclsidBand, BOOL fAvailable)
@@ -53,6 +59,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface
         return ((delegate* unmanaged<IBandHost*, Guid*, BOOL, int>)(lpVtbl[4]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand, fAvailable);
     }
 
+    /// <include file='IBandHost.xml' path='doc/member[@name="IBandHost.DestroyBand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT DestroyBand([NativeTypeName("const IID &")] Guid* rclsidBand)

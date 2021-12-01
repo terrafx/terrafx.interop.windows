@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MANDATORY_LEVEL">
+    <summary>
+      <para>The <b>MANDATORY_LEVEL</b> enumeration lists the possible security levels.</para>
+    </summary>
+  </member>
+  <member name="MANDATORY_LEVEL.MandatoryLevelUntrusted">
+    <summary>
+      <para>The required security level is untrusted.</para>
+    </summary>
+  </member>
+  <member name="MANDATORY_LEVEL.MandatoryLevelLow">
+    <summary>
+      <para>The required security level is low.</para>
+    </summary>
+  </member>
+  <member name="MANDATORY_LEVEL.MandatoryLevelMedium">
+    <summary>
+      <para>The required security level is medium.</para>
+    </summary>
+  </member>
+  <member name="MANDATORY_LEVEL.MandatoryLevelHigh">
+    <summary>
+      <para>The required security level is high.</para>
+    </summary>
+  </member>
+  <member name="MANDATORY_LEVEL.MandatoryLevelSystem">
+    <summary>
+      <para>The required security level is system.</para>
+    </summary>
+  </member>
+  <member name="MANDATORY_LEVEL.MandatoryLevelSecureProcess">
+    <summary>
+      <para>The required security level is a secure process.</para>
+    </summary>
+  </member>
+  <member name="MANDATORY_LEVEL.MandatoryLevelCount">
+    <summary>
+      <para>The count of the mandatory level.</para>
+    </summary>
+  </member>
+</doc>

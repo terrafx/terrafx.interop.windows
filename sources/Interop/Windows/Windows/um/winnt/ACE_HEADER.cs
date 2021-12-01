@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACE_HEADER.xml' path='doc/member[@name="ACE_HEADER"]/*' />
 public partial struct ACE_HEADER
 {
+    /// <include file='ACE_HEADER.xml' path='doc/member[@name="ACE_HEADER.AceType"]/*' />
     public byte AceType;
 
+    /// <include file='ACE_HEADER.xml' path='doc/member[@name="ACE_HEADER.AceFlags"]/*' />
     public byte AceFlags;
 
+    /// <include file='ACE_HEADER.xml' path='doc/member[@name="ACE_HEADER.AceSize"]/*' />
     [NativeTypeName("WORD")]
     public ushort AceSize;
 }

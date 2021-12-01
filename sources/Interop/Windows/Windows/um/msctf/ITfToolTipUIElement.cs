@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfToolTipUIElement.xml' path='doc/member[@name="ITfToolTipUIElement"]/*' />
 [Guid("52B18B5C-555D-46B2-B00A-FA680144FBDB")]
 [NativeTypeName("struct ITfToolTipUIElement : ITfUIElement")]
 [NativeInheritance("ITfUIElement")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
         return ((delegate* unmanaged<ITfToolTipUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
         return ((delegate* unmanaged<ITfToolTipUIElement*, uint>)(lpVtbl[1]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
         return ((delegate* unmanaged<ITfToolTipUIElement*, uint>)(lpVtbl[2]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfUIElement.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
         return ((delegate* unmanaged<ITfToolTipUIElement*, ushort**, int>)(lpVtbl[3]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
+    /// <inheritdoc cref="ITfUIElement.GetGUID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGUID(Guid* pguid)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
         return ((delegate* unmanaged<ITfToolTipUIElement*, Guid*, int>)(lpVtbl[4]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <inheritdoc cref="ITfUIElement.Show" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Show(BOOL bShow)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
         return ((delegate* unmanaged<ITfToolTipUIElement*, BOOL, int>)(lpVtbl[5]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this), bShow);
     }
 
+    /// <inheritdoc cref="ITfUIElement.IsShown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsShown(BOOL* pbShow)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
         return ((delegate* unmanaged<ITfToolTipUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this), pbShow);
     }
 
+    /// <include file='ITfToolTipUIElement.xml' path='doc/member[@name="ITfToolTipUIElement.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr)

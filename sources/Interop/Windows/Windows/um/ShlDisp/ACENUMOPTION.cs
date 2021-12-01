@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACENUMOPTION.xml' path='doc/member[@name="ACENUMOPTION"]/*' />
 public enum ACENUMOPTION
 {
+    /// <include file='ACENUMOPTION.xml' path='doc/member[@name="ACENUMOPTION.ACEO_NONE"]/*' />
     ACEO_NONE = 0,
+
+    /// <include file='ACENUMOPTION.xml' path='doc/member[@name="ACENUMOPTION.ACEO_MOSTRECENTFIRST"]/*' />
     ACEO_MOSTRECENTFIRST = 0x1,
+
+    /// <include file='ACENUMOPTION.xml' path='doc/member[@name="ACENUMOPTION.ACEO_FIRSTUNUSED"]/*' />
     ACEO_FIRSTUNUSED = 0x10000,
 }

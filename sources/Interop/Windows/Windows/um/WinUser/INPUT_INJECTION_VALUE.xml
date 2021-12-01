@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INPUT_INJECTION_VALUE">
+    <summary>
+      <para>Contains the  input injection details.</para>
+    </summary>
+    <seealso href="https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf">Universal Serial Bus HID Usage Tables - USB.org</seealso>
+  </member>
+  <member name="INPUT_INJECTION_VALUE.page">
+    <summary>
+      <para>The Usage Page ID, such as VR Controls Page (0x03) or Game Controls Page (0x05).</para>
+    </summary>
+  </member>
+  <member name="INPUT_INJECTION_VALUE.usage">
+    <summary>
+      <para>The Usage ID associated with a Usage Page, such as Turn Right/Left (21) or Move Right/Left (24) for a Game Controls Page.</para>
+    </summary>
+  </member>
+  <member name="INPUT_INJECTION_VALUE.value">
+    <summary>
+      <para>The injected input value.</para>
+    </summary>
+  </member>
+  <member name="INPUT_INJECTION_VALUE.index">
+    <summary>
+      <para>The Usage index, such as the selected item in a  radio button set.</para>
+    </summary>
+  </member>
+</doc>

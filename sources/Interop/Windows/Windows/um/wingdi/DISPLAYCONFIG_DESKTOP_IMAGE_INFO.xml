@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_DESKTOP_IMAGE_INFO">
+    <summary>
+      <para>The DISPLAYCONFIG_DESKTOP_IMAGE_INFO structure contains information about the image displayed on the desktop.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_DESKTOP_IMAGE_INFO.PathSourceSize">
+    <summary>
+      <para>A <see cref="POINTL" /> structure that specifies the size of the VidPn source surface that is being displayed on the monitor.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_DESKTOP_IMAGE_INFO.DesktopImageRegion">
+    <summary>
+      <para>A <see cref="RECTL" /> structure that defines where the desktop image will be positioned within path source.     Region must be completely inside the bounds of the path source size.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_DESKTOP_IMAGE_INFO.DesktopImageClip">
+    <summary>
+      <para>A <see cref="RECTL" /> structure that defines which part of the desktop image for this clone group will be displayed on this path. This currently must be set to the desktop size.</para>
+    </summary>
+  </member>
+</doc>

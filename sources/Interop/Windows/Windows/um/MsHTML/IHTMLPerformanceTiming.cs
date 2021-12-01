@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming"]/*' />
 [Guid("30510752-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLPerformanceTiming : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, uint>)(lpVtbl[1]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, uint>)(lpVtbl[2]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, uint*, int>)(lpVtbl[3]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_navigationStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_navigationStart([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[7]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_unloadEventStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_unloadEventStart([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[8]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_unloadEventEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_unloadEventEnd([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[9]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_redirectStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_redirectStart([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[10]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_redirectEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_redirectEnd([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[11]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_fetchStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_fetchStart([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[12]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_domainLookupStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_domainLookupStart([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[13]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_domainLookupEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_domainLookupEnd([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[14]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_connectStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_connectStart([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[15]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_connectEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_connectEnd([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[16]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_requestStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_requestStart([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[17]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_responseStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_responseStart([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[18]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_responseEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_responseEnd([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[19]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_domLoading"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_domLoading([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[20]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_domInteractive"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_domInteractive([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[21]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_domContentLoadedEventStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_domContentLoadedEventStart([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[22]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_domContentLoadedEventEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_domContentLoadedEventEnd([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[23]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_domComplete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_domComplete([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[24]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_loadEventStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT get_loadEventStart([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[25]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_loadEventEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_loadEventEnd([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[26]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.get_msFirstPaint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT get_msFirstPaint([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -214,6 +243,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int>)(lpVtbl[27]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.toString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT toString([NativeTypeName("BSTR *")] ushort** @string)
@@ -221,6 +251,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         return ((delegate* unmanaged<IHTMLPerformanceTiming*, ushort**, int>)(lpVtbl[28]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), @string);
     }
 
+    /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.toJSON"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT toJSON(VARIANT* pVar)

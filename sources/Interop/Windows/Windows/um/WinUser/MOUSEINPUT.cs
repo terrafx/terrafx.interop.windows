@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOUSEINPUT.xml' path='doc/member[@name="MOUSEINPUT"]/*' />
 public partial struct MOUSEINPUT
 {
+    /// <include file='MOUSEINPUT.xml' path='doc/member[@name="MOUSEINPUT.dx"]/*' />
     [NativeTypeName("LONG")]
     public int dx;
 
+    /// <include file='MOUSEINPUT.xml' path='doc/member[@name="MOUSEINPUT.dy"]/*' />
     [NativeTypeName("LONG")]
     public int dy;
 
+    /// <include file='MOUSEINPUT.xml' path='doc/member[@name="MOUSEINPUT.mouseData"]/*' />
     [NativeTypeName("DWORD")]
     public uint mouseData;
 
+    /// <include file='MOUSEINPUT.xml' path='doc/member[@name="MOUSEINPUT.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='MOUSEINPUT.xml' path='doc/member[@name="MOUSEINPUT.time"]/*' />
     [NativeTypeName("DWORD")]
     public uint time;
 
+    /// <include file='MOUSEINPUT.xml' path='doc/member[@name="MOUSEINPUT.dwExtraInfo"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint dwExtraInfo;
 }

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE"]/*' />
 public enum DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE
 {
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.DeviceInternalStatusDataRequestTypeUndefined"]/*' />
     DeviceInternalStatusDataRequestTypeUndefined = 0,
+
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.DeviceCurrentInternalStatusDataHeader"]/*' />
     DeviceCurrentInternalStatusDataHeader,
+
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.DeviceCurrentInternalStatusData"]/*' />
     DeviceCurrentInternalStatusData,
+
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.DeviceSavedInternalStatusDataHeader"]/*' />
     DeviceSavedInternalStatusDataHeader,
+
+    /// <include file='DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE.DeviceSavedInternalStatusData"]/*' />
     DeviceSavedInternalStatusData,
 }

@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SERVICE_ENDPOINT_METADATA.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT_METADATA"]/*' />
 public unsafe partial struct WS_SERVICE_ENDPOINT_METADATA
 {
+    /// <include file='WS_SERVICE_ENDPOINT_METADATA.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT_METADATA.portName"]/*' />
     public WS_XML_STRING* portName;
 
+    /// <include file='WS_SERVICE_ENDPOINT_METADATA.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT_METADATA.bindingName"]/*' />
     public WS_XML_STRING* bindingName;
 
+    /// <include file='WS_SERVICE_ENDPOINT_METADATA.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT_METADATA.bindingNs"]/*' />
     public WS_XML_STRING* bindingNs;
 }

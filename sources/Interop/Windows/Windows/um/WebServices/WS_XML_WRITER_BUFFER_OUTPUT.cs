@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_WRITER_BUFFER_OUTPUT.xml' path='doc/member[@name="WS_XML_WRITER_BUFFER_OUTPUT"]/*' />
 public partial struct WS_XML_WRITER_BUFFER_OUTPUT
 {
+    /// <include file='WS_XML_WRITER_BUFFER_OUTPUT.xml' path='doc/member[@name="WS_XML_WRITER_BUFFER_OUTPUT.output"]/*' />
     public WS_XML_WRITER_OUTPUT output;
 }

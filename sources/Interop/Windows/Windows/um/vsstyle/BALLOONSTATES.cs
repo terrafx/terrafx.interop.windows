@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BALLOONSTATES.xml' path='doc/member[@name="BALLOONSTATES"]/*' />
 public enum BALLOONSTATES
 {
+    /// <include file='BALLOONSTATES.xml' path='doc/member[@name="BALLOONSTATES.TTBS_NORMAL"]/*' />
     TTBS_NORMAL = 1,
+
+    /// <include file='BALLOONSTATES.xml' path='doc/member[@name="BALLOONSTATES.TTBS_LINK"]/*' />
     TTBS_LINK = 2,
 }

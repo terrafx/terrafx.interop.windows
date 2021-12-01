@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HistogramDataHeader">
+    <summary>
+      <para>The  <b>HistogramDataHeader</b> structure describes the blob format for the <b>MF_CAPTURE_METADATA_HISTOGRAM</b> attribute.</para>
+    </summary>
+    <seealso cref="HistogramBlobHeader" />
+    <seealso cref="HistogramGrid" />
+    <seealso cref="HistogramHeader" />
+  </member>
+  <member name="HistogramDataHeader.Size">
+    <summary>
+      <para>Size in bytes of this header + all following histogram data.</para>
+    </summary>
+  </member>
+  <member name="HistogramDataHeader.ChannelMask">
+    <summary>
+      <para>Mask of the color channel for the histogram data.</para>
+    </summary>
+  </member>
+  <member name="HistogramDataHeader.Linear">
+    <summary>
+      <para>1 if linear, 0 if nonlinear.</para>
+    </summary>
+  </member>
+</doc>

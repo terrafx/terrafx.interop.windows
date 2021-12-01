@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_DVDCOPY_DISCKEY">
+    <summary>
+      <para>Specifies the DVD disc key.</para>
+    </summary>
+    <remarks>
+      <para>The AM_PROPERTY_DVDCOPY_DISC_KEY property uses this structure.</para>
+      <para>A disc key is used for the DVD CSS key exchange for decryption. Implementors should get a CSS license and further instructions from CSS.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
+  </member>
+  <member name="AM_DVDCOPY_DISCKEY.DiscKey">
+    <summary>
+      <para>DVD disc key.</para>
+    </summary>
+  </member>
+</doc>

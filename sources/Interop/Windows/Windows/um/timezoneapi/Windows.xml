@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.EnumDynamicTimeZoneInformation">
+    <summary>
+      <para>Enumerates <see cref="DYNAMIC_TIME_ZONE_INFORMATION" /> entries stored in the  registry. This information is used to support time zones that experience annual boundary changes due to daylight saving time adjustments. Use the information returned by this function when calling <see cref="GetDynamicTimeZoneInformationEffectiveYears" /> to retrieve the specific range of years to pass to <see cref="GetTimeZoneInformationForYear" />.</para>
+    </summary>
+    <param name="dwIndex">
+      <para>Index value that represents the location of a <see cref="DYNAMIC_TIME_ZONE_INFORMATION" /> entry.</para>
+    </param>
+    <param name="lpTimeZoneInformation">
+      <para>Specifies settings for  a time zone and dynamic daylight saving time.</para>
+    </param>
+    <returns>
+      <para>This function returns DWORD. Possible return values include:</para>
+      <para>| Value                   | Description                                       |
+|-------------------------|---------------------------------------------------|
+| ERROR_SUCCESS           | The operation succeeded.                          |
+| ERROR_NO_MORE_ITEMS     | No more data is available for the given index.    |
+| ERROR_INVALID_PARAMETER | A parameter is invalid.                           |
+| Any other value         | The operation failed.                             |</para>
+    </returns>
+    <remarks>
+      <para>The following example demonstrates looping through the potential timezones until <b>ERROR_NO_MORE_ITEMS</b> is returned, indicating that there are no more time zone entries in the registry.</para>
+      <code>std.vector&lt;std.wstring&gt; possibleTimezones;
+DYNAMIC_TIME_ZONE_INFORMATION dynamicTimezone = {};
+DWORD dwResult = 0;
+DWORD i = 0;
+
+do
+{
+    dwResult = EnumDynamicTimeZoneInformation(i++, &amp;amp;amp;amp;amp;amp;dynamicTimezone);
+    if (dwResult == ERROR_SUCCESS)
+    {
+        possibleTimezones.push_back(dynamicTimezone);
+    }
+}
+while (dwResult != ERROR_NO_MORE_ITEMS);
+</code>
+    </remarks>
+    <seealso cref="DYNAMIC_TIME_ZONE_INFORMATION" />
+    <seealso cref="GetDynamicTimeZoneInformationEffectiveYears" />
+  </member>
+  <member name="Windows.FileTimeToSystemTime">
+    <summary>
+      <para>Converts a file time to system time format. System time is based on Coordinated Universal Time (UTC).</para>
+    </summary>
+    <param name="lpFileTime">
+      <para>A pointer to a <see cref="FILETIME" /> structure containing the file
+time to be converted to system (UTC) date and time format.</para>
+      <para>This value must be less than 0x8000000000000000. Otherwise, the function fails.</para>
+    </param>
+    <param name="lpSystemTime">
+      <para>A pointer to a <see cref="SYSTEMTIME" /> structure to receive the
+converted file time.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <seealso cref="DosDateTimeToFileTime" />
+    <seealso cref="FILETIME" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/file-times">File Times</seealso>
+    <seealso cref="FileTimeToDosDateTime" />
+    <seealso cref="SYSTEMTIME" />
+    <seealso cref="SystemTimeToFileTime" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/time-functions">Time Functions</seealso>
+  </member>
+  <member name="Windows.GetDynamicTimeZoneInformation">
+    <summary>
+      <para>Retrieves the current time zone and dynamic daylight saving time settings. These settings control the translations between Coordinated Universal Time (UTC) and local time.</para>
+    </summary>
+    <param name="pTimeZoneInformation">
+      <para>A pointer to a <see cref="DYNAMIC_TIME_ZONE_INFORMATION" /> structure.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIME_ZONE_ID_UNKNOWN</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Daylight saving time is not used in the current time zone, because there are no transition dates.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIME_ZONE_ID_STANDARD</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system is operating in the range covered by the <b>StandardDate</b> member of the
+<see cref="DYNAMIC_TIME_ZONE_INFORMATION" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIME_ZONE_ID_DAYLIGHT</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system is operating in the range covered by the <b>DaylightDate</b> member of the
+<see cref="DYNAMIC_TIME_ZONE_INFORMATION" /> structure.</para>
+          </description>
+        </item>
+      </list>
+      <para>If the function fails, it returns TIME_ZONE_ID_INVALID. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The <b>StandardName</b> and <b>DaylightName</b> members  of the resultant <see cref="DYNAMIC_TIME_ZONE_INFORMATION" />  structure are localized according to the current user default UI language.</para>
+    </remarks>
+    <seealso cref="DYNAMIC_TIME_ZONE_INFORMATION" />
+    <seealso cref="SetDynamicTimeZoneInformation" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/time-functions">Time Functions</seealso>
+  </member>
+  <member name="Windows.GetDynamicTimeZoneInformationEffectiveYears">
+    <summary>
+      <para>Gets a range, expressed in years, for which a <see cref="DYNAMIC_TIME_ZONE_INFORMATION" /> has valid entries. Use the returned value to identify the specific years to request when calling <see cref="GetTimeZoneInformationForYear" /> to retrieve time zone information for a time zone that experiences annual boundary changes due to daylight saving time adjustments.</para>
+    </summary>
+    <param name="lpTimeZoneInformation">
+      <para>Specifies settings for  a time zone and dynamic daylight saving time.</para>
+    </param>
+    <param name="FirstYear">
+      <para>The year that marks the beginning of the range to pass to <see cref="GetTimeZoneInformationForYear" />.</para>
+    </param>
+    <param name="LastYear">
+      <para>The year that marks the end of the range to pass to <see cref="GetTimeZoneInformationForYear" />.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_SUCCESS</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b> ERROR_FILE_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The system cannot find the effective years.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_PARAMETER</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the parameter values is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Any other value</para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="DYNAMIC_TIME_ZONE_INFORMATION" />
+    <seealso cref="EnumDynamicTimeZoneInformation" />
+  </member>
+  <member name="Windows.GetTimeZoneInformation">
+    <summary>
+      <para>Retrieves the current time zone settings. These settings control the translations between Coordinated Universal Time (UTC) and local time.</para>
+      <para>To support boundaries for daylight saving time that change from year to year, use the <see cref="GetDynamicTimeZoneInformation" />  or <see cref="GetTimeZoneInformationForYear" /> function.</para>
+    </summary>
+    <param name="lpTimeZoneInformation">
+      <para>A pointer to a
+<see cref="TIME_ZONE_INFORMATION" /> structure to receive the current settings.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIME_ZONE_ID_UNKNOWN</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Daylight saving time is not used in the current time zone, because there are no transition dates or automatic adjustment for daylight saving time is disabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIME_ZONE_ID_STANDARD</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system is operating in the range covered by the <b>StandardDate</b> member of the
+<see cref="TIME_ZONE_INFORMATION" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIME_ZONE_ID_DAYLIGHT</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system is operating in the range covered by the <b>DaylightDate</b> member of the
+<see cref="TIME_ZONE_INFORMATION" /> structure.</para>
+          </description>
+        </item>
+      </list>
+      <para>If the function fails for other reasons, such as an out of memory error, it returns TIME_ZONE_ID_INVALID. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>All translations between UTC time and local time are based on the following formula:</para>
+      <para>UTC = local time + bias</para>
+      <para>The bias is the difference, in minutes, between UTC time and local time.</para>
+      <para>The <b>StandardName</b> and <b>DaylightName</b> members  of the resultant <see cref="TIME_ZONE_INFORMATION" />  structure are localized according to the current user default UI language.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <see cref="SetTimeZoneInformation" />.</para>
+    </remarks>
+    <seealso cref="GetDynamicTimeZoneInformation" />
+    <seealso cref="GetTimeZoneInformationForYear" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/local-time">Local Time</seealso>
+    <seealso cref="SetTimeZoneInformation" />
+    <seealso cref="TIME_ZONE_INFORMATION" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/time-functions">Time Functions</seealso>
+  </member>
+  <member name="Windows.GetTimeZoneInformationForYear">
+    <summary>
+      <para>Retrieves the time zone settings for the specified year and time zone. These settings control the translations between Coordinated Universal Time (UTC) and local time.</para>
+    </summary>
+    <param name="wYear">
+      <para>The year for which the time zone settings are to be retrieved. The <i>wYear</i> parameter must be a local time value.</para>
+    </param>
+    <param name="pdtzi">
+      <para>A pointer to a <see cref="DYNAMIC_TIME_ZONE_INFORMATION" /> structure that specifies the time zone.  To populate this parameter, call <see cref="EnumDynamicTimeZoneInformation" /> with the index of the time zone you want. If this parameter is <b>NULL</b>, the current time zone is used.</para>
+    </param>
+    <param name="ptzi">
+      <para>A pointer to a <see cref="TIME_ZONE_INFORMATION" /> structure that receives the time zone settings.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The <i>wYear</i> parameter is assumed to be a local time value. If the local time is close to the transition between the old year and the new year (00:00:00 January 1), passing a UTC year to the <b>GetTimeZoneInformationForYear</b> function can cause the function to return time zone settings for the wrong year.</para>
+      <para>The <b>StandardName</b> and <b>DaylightName</b> members  of the resultant <see cref="TIME_ZONE_INFORMATION" />  structure are localized according to the current user default UI language.</para>
+    </remarks>
+    <seealso cref="DYNAMIC_TIME_ZONE_INFORMATION" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/local-time">Local Time</seealso>
+    <seealso cref="TIME_ZONE_INFORMATION" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/time-functions">Time Functions</seealso>
+  </member>
+  <member name="Windows.SetDynamicTimeZoneInformation">
+    <summary>
+      <para>Sets the current time zone and dynamic daylight saving time settings. These settings control translations from Coordinated Universal Time (UTC) to local time.</para>
+    </summary>
+    <param name="lpTimeZoneInformation">
+      <para>A pointer to a <see cref="DYNAMIC_TIME_ZONE_INFORMATION" /> structure.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>An application must have the SE_TIME_ZONE_NAME privilege for this function to succeed. This privilege is disabled by default. Use the
+<see cref="AdjustTokenPrivileges" /> function to enable the privilege before calling
+<b>SetDynamicTimeZoneInformation</b>, and then to disable the privilege after the
+<b>SetDynamicTimeZoneInformation</b> call. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/SecBP/running-with-special-privileges">Running with Special Privileges</a>.</para>
+    </remarks>
+    <seealso cref="DYNAMIC_TIME_ZONE_INFORMATION" />
+    <seealso cref="GetDynamicTimeZoneInformation" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/time-functions">Time Functions</seealso>
+  </member>
+  <member name="Windows.SetTimeZoneInformation">
+    <summary>
+      <para>Sets the current time zone settings. These settings control translations from Coordinated Universal Time (UTC) to local time.</para>
+      <para>To support boundaries for daylight saving time that change from year to year, use the <see cref="SetDynamicTimeZoneInformation" /> function.</para>
+    </summary>
+    <param name="lpTimeZoneInformation">
+      <para>A pointer to a
+<see cref="TIME_ZONE_INFORMATION" /> structure that contains the new settings.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>An application must have the SE_TIME_ZONE_NAME privilege for this function to succeed. This privilege is disabled by default. Use the
+<see cref="AdjustTokenPrivileges" /> function to enable the privilege before calling
+<b>SetTimeZoneInformation</b>, and then to disable the privilege after the
+<b>SetTimeZoneInformation</b> call. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/SecBP/running-with-special-privileges">Running with Special Privileges</a>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP/2000:  </b>The application must have the SE_SYSTEMTIME_NAME privilege.</para>
+      <blockquote>
+        <para>[!IMPORTANT]
+Starting with Windows Vista and Windows Server 2008 through all current versions of Windows, call <b><see cref="SetDynamicTimeZoneInformation" /></b> instead of <b>SetTimeZoneInformation</b> to set system time zone information.  <b>SetDynamicTimeZoneInformation</b> supports the full history of changes to standard time and daylight saving time provided by the dynamic data in the Windows registry.  If an application uses <b>SetTimeZoneInformation</b>, dynamic daylight saving time support is disabled for the the system and the message "Your current time zone is not recognized. Please select a valid time zone." will appear to the user in the Windows time zone settings.</para>
+      </blockquote>
+      <para>To inform Explorer that the time zone has changed, send the
+<a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-settingchange">WM_SETTINGCHANGE</a> message.</para>
+      <para>All translations between UTC and local time are based on the following formula:</para>
+      <para>UTC = local time + bias</para>
+      <para>The bias is the difference, in minutes, between UTC and local time.</para>
+      <h4>Examples</h4>
+      <para>The following example displays the current time zone, then adjusts the time zone one zone west. The old and new  time zone names are displayed. You can also verify the changes using Date and Time in Control Panel. The new name is displayed on the <b>Date&amp;Time</b> tab as the <b>Current Time Zone</b>. The new time zone is displayed in the drop-down list on the <b>Time Zone</b> tab. To undo these changes, simply choose your old time zone from the drop-down list.</para>
+      <code>#define UNICODE 1
+#define _UNICODE 1
+
+#include &lt;windows.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;strsafe.h&gt;
+
+int main()
+{
+   TIME_ZONE_INFORMATION tziOld, tziNew, tziTest;
+   DWORD dwRet;
+
+   // Enable the required privilege
+
+   HANDLE hToken;
+   TOKEN_PRIVILEGES tkp;
+
+   OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES|TOKEN_QUERY, &amp;amp;amp;amp;amp;amp;hToken);
+   LookupPrivilegeValue(NULL, SE_TIME_ZONE_NAME, &amp;amp;amp;amp;amp;amp;tkp.Privileges[0].Luid);
+   tkp.PrivilegeCount = 1;
+   tkp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+   AdjustTokenPrivileges(hToken, FALSE, &amp;amp;amp;amp;amp;amp;tkp, 0, (PTOKEN_PRIVILEGES)NULL, 0);
+
+   // Retrieve the current time zone information
+
+   dwRet = GetTimeZoneInformation(&amp;amp;amp;amp;amp;amp;tziOld);
+
+   if(dwRet == TIME_ZONE_ID_STANDARD || dwRet == TIME_ZONE_ID_UNKNOWN)
+      wprintf(L"%s\n", tziOld.StandardName);
+   else if( dwRet == TIME_ZONE_ID_DAYLIGHT )
+      wprintf(L"%s\n", tziOld.DaylightName);
+   else
+   {
+      printf("GTZI failed (%d)\n", GetLastError());
+      return 0;
+   }
+
+   // Adjust the time zone information
+
+   ZeroMemory(&amp;amp;amp;amp;amp;amp;tziNew, sizeof(tziNew));
+   tziNew.Bias = tziOld.Bias + 60;
+   StringCchCopy(tziNew.StandardName, 32, L"Test Standard Zone");
+   tziNew.StandardDate.wMonth = 10;
+   tziNew.StandardDate.wDayOfWeek = 0;
+   tziNew.StandardDate.wDay = 5;
+   tziNew.StandardDate.wHour = 2;
+
+   StringCchCopy(tziNew.DaylightName, 32, L"Test Daylight Zone");
+   tziNew.DaylightDate.wMonth = 4;
+   tziNew.DaylightDate.wDayOfWeek = 0;
+   tziNew.DaylightDate.wDay = 1;
+   tziNew.DaylightDate.wHour = 2;
+   tziNew.DaylightBias = -60;
+
+   if( !SetTimeZoneInformation( &amp;amp;amp;amp;amp;amp;tziNew ) )
+   {
+      printf("STZI failed (%d)\n", GetLastError());
+      return 0;
+   }
+
+   // Retrieve and display the newly set time zone information
+
+   dwRet = GetTimeZoneInformation(&amp;amp;amp;amp;amp;amp;tziTest);
+
+   if(dwRet == TIME_ZONE_ID_STANDARD || dwRet == TIME_ZONE_ID_UNKNOWN)
+      wprintf(L"%s\n", tziTest.StandardName);
+   else if( dwRet == TIME_ZONE_ID_DAYLIGHT )
+      wprintf(L"%s\n", tziTest.DaylightName);
+   else printf("GTZI failed (%d)\n", GetLastError());
+
+   // Disable the privilege
+
+   tkp.Privileges[0].Attributes = 0;
+   AdjustTokenPrivileges(hToken, FALSE, &amp;amp;amp;amp;amp;amp;tkp, 0, (PTOKEN_PRIVILEGES) NULL, 0);
+
+   return 1;
+}
+
+</code>
+    </remarks>
+    <seealso cref="GetTimeZoneInformation" />
+    <seealso cref="SetDynamicTimeZoneInformation" />
+    <seealso cref="TIME_ZONE_INFORMATION" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/time-functions">Time Functions</seealso>
+  </member>
+  <member name="Windows.SystemTimeToFileTime">
+    <summary>
+      <para>Converts a system time to file time format. System time is based on Coordinated Universal Time (UTC).</para>
+    </summary>
+    <param name="lpSystemTime">
+      <para>A pointer to a
+<see cref="SYSTEMTIME" /> structure that contains the system time to be converted from UTC to file time format.</para>
+      <para>The <b>wDayOfWeek</b> member of the
+<see cref="SYSTEMTIME" /> structure is ignored.</para>
+    </param>
+    <param name="lpFileTime">
+      <para>A pointer to a
+<see cref="FILETIME" /> structure to receive the converted system time.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+      <blockquote>
+        <para>[!NOTE]
+A False return value can indicate that the passed SYSTEMTIME structure represents an invalid date. Certain situations, such as the additional day added in a leap year, can result in application logic unexpectedly creating an invalid date. For more information on avoiding these issues, see <a href="https://techcommunity.microsoft.com/t5/azure-developer-community-blog/it-s-2020-is-your-code-ready-for-leap-day/ba-p/1157279">leap year readiness</a>.</para>
+      </blockquote>
+    </returns>
+    <seealso cref="DosDateTimeToFileTime" />
+    <seealso cref="FILETIME" />
+    <seealso cref="FileTimeToDosDateTime" />
+    <seealso cref="FileTimeToSystemTime" />
+    <seealso cref="SYSTEMTIME" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-time">System Time</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/time-functions">Time Functions</seealso>
+  </member>
+  <member name="Windows.SystemTimeToTzSpecificLocalTime">
+    <summary>
+      <para>Converts a time in Coordinated Universal Time (UTC) to a specified time zone's corresponding local time.</para>
+    </summary>
+    <param name="lpTimeZoneInformation">
+      <para>A pointer to a
+<see cref="TIME_ZONE_INFORMATION" /> structure that specifies the time zone of interest.</para>
+      <para>If <i>lpTimeZone</i> is <b>NULL</b>, the function uses the currently active time zone.</para>
+    </param>
+    <param name="lpUniversalTime">
+      <para>A pointer to a
+<see cref="SYSTEMTIME" /> structure that specifies the UTC time to be converted. The function converts this universal time to the specified time zone's corresponding local time.</para>
+    </param>
+    <param name="lpLocalTime">
+      <para>A pointer to a
+<see cref="SYSTEMTIME" /> structure that receives the local time.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero, and the function sets the members of the
+<see cref="SYSTEMTIME" /> structure pointed to by <i>lpLocalTime</i> to the appropriate local time values.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The <b>SystemTimeToTzSpecificLocalTime</b> function takes into account whether daylight saving time (DST) is in effect for the local time to which the system time is to be converted.</para>
+      <para>The <b>SystemTimeToTzSpecificLocalTime</b> function may calculate the local time incorrectly under the following conditions:</para>
+      <list type="bullet">
+        <item>
+          <description>The time zone uses a different UTC offset for the old and new years. </description>
+        </item>
+        <item>
+          <description>The UTC time to be converted and the calculated local time are in different years. </description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/SysInfo/retrieving-the-last-write-time">Retrieving the Last-Write Time</a>.</para>
+    </remarks>
+    <seealso cref="GetSystemTime" />
+    <seealso cref="GetTimeZoneInformation" />
+    <seealso cref="SYSTEMTIME" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/system-time">System Time</seealso>
+    <seealso cref="TIME_ZONE_INFORMATION" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/time-functions">Time Functions</seealso>
+    <seealso cref="TzSpecificLocalTimeToSystemTime" />
+  </member>
+  <member name="Windows.SystemTimeToTzSpecificLocalTimeEx">
+    <summary>
+      <para>Converts a time in Coordinated Universal Time (UTC) with dynamic daylight saving time settings to a specified time zone's corresponding local time.</para>
+    </summary>
+    <param name="lpTimeZoneInformation">
+      <para>A pointer to a <see cref="DYNAMIC_TIME_ZONE_INFORMATION" /> structure that specifies  the time zone and dynamic daylight saving time.</para>
+    </param>
+    <param name="lpUniversalTime">
+      <para>A pointer to a
+<see cref="SYSTEMTIME" /> structure that specifies the UTC time to be converted. The function converts this universal time to the specified time zone's corresponding local time.</para>
+    </param>
+    <param name="lpLocalTime">
+      <para>A pointer to a
+<see cref="SYSTEMTIME" /> structure that receives the local time.</para>
+    </param>
+    <returns>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.TzSpecificLocalTimeToSystemTime">
+    <summary>
+      <para>Converts a local time to a time in Coordinated Universal Time (UTC).</para>
+    </summary>
+    <param name="lpTimeZoneInformation">
+      <para>A pointer to a
+<see cref="TIME_ZONE_INFORMATION" /> structure that specifies the time zone for the time specified in <i>lpLocalTime</i>.</para>
+      <para>If <i>lpTimeZoneInformation</i> is <b>NULL</b>, the function uses the currently active time zone.</para>
+    </param>
+    <param name="lpLocalTime">
+      <para>A pointer to a
+<see cref="SYSTEMTIME" /> structure that specifies the local time to be converted. The function converts this time to the corresponding UTC time.</para>
+    </param>
+    <param name="lpUniversalTime">
+      <para>A pointer to a
+<see cref="SYSTEMTIME" /> structure that receives the UTC time.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero, and the function sets the members of the
+<see cref="SYSTEMTIME" /> structure pointed to by <i>lpUniversalTime</i> to the appropriate values.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>TzSpecificLocalTimeToSystemTime</b> takes into account whether daylight saving time (DST) is in effect for the local time to be converted.</para>
+    </remarks>
+    <seealso cref="GetSystemTime" />
+    <seealso cref="GetTimeZoneInformation" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/local-time">Local Time</seealso>
+    <seealso cref="SYSTEMTIME" />
+    <seealso cref="SystemTimeToTzSpecificLocalTime" />
+    <seealso cref="TIME_ZONE_INFORMATION" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/time-functions">Time Functions</seealso>
+  </member>
+  <member name="Windows.TzSpecificLocalTimeToSystemTimeEx">
+    <summary>
+      <para>Converts a local time to a time with dynamic daylight saving time settings  to Coordinated Universal Time (UTC).</para>
+    </summary>
+    <param name="lpTimeZoneInformation">
+      <para>A pointer to a <see cref="DYNAMIC_TIME_ZONE_INFORMATION" /> structure that specifies  the time zone and dynamic daylight saving time.</para>
+    </param>
+    <param name="lpLocalTime">
+      <para>A pointer to a
+<see cref="SYSTEMTIME" /> structure that specifies the local time to be converted. The function converts this time to the corresponding UTC time.</para>
+    </param>
+    <param name="lpUniversalTime">
+      <para>A pointer to a
+<see cref="SYSTEMTIME" /> structure that receives the UTC time.</para>
+    </param>
+    <returns>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+</doc>

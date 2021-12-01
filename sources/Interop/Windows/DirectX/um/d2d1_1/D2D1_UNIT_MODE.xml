@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_UNIT_MODE">
+    <summary>
+      <para>Specifies how units in Direct2D will be interpreted.</para>
+    </summary>
+    <remarks>
+      <para>Setting the unit mode to <b>D2D1_UNIT_MODE_PIXELS</b> is similar to setting the <see cref="ID2D1DeviceContext" /> dots per inch (dpi) to 96. However, Direct2D still checks the dpi to determine the threshold for enabling vertical antialiasing for text, and when the unit mode is restored, the dpi will be remembered.</para>
+    </remarks>
+    <seealso cref="ID2D1DeviceContext.GetUnitMode" />
+    <seealso cref="ID2D1DeviceContext.SetUnitMode" />
+  </member>
+  <member name="D2D1_UNIT_MODE.D2D1_UNIT_MODE_DIPS">
+    <summary>
+      <para>Units will be interpreted as device-independent pixels (1/96").</para>
+    </summary>
+  </member>
+  <member name="D2D1_UNIT_MODE.D2D1_UNIT_MODE_PIXELS">
+    <summary>
+      <para>Units will be interpreted as pixels.</para>
+    </summary>
+  </member>
+  <member name="D2D1_UNIT_MODE.D2D1_UNIT_MODE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

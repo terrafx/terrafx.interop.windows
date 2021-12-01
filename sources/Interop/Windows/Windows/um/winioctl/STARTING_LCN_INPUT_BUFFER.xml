@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STARTING_LCN_INPUT_BUFFER">
+    <summary>
+      <para>Contains the starting LCN to the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_volume_bitmap">FSCTL_GET_VOLUME_BITMAP</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/defragmenting-files">Defragmentation</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_volume_bitmap">FSCTL_GET_VOLUME_BITMAP</seealso>
+  </member>
+  <member name="STARTING_LCN_INPUT_BUFFER.StartingLcn">
+    <summary>
+      <para>The LCN from which the operation should start when describing a bitmap. This member will be rounded down to a file-system-dependent rounding boundary, and that value will be returned. Its  value should be an integral multiple of eight.</para>
+    </summary>
+  </member>
+</doc>

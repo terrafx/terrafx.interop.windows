@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFactory.CreateCustomFontCollection">
+    <summary>
+      <para>Creates a font collection using a custom font collection loader.</para>
+    </summary>
+    <param name="collectionLoader">
+      <para>Type: <b><see cref="IDWriteFontCollectionLoader" />*</b></para>
+      <para>An application-defined font collection loader, which must have been previously
+registered using <see cref="RegisterFontCollectionLoader" />.</para>
+    </param>
+    <param name="collectionKey">
+      <para>Type: <b>const void*</b></para>
+      <para>The key used by the loader to identify a collection of font files.  The buffer allocated for this key should at least be the size of <i>collectionKeySize</i>.</para>
+    </param>
+    <param name="collectionKeySize">
+      <para>Type: <b>UINT32</b></para>
+      <para>The size, in bytes, of the collection key.</para>
+    </param>
+    <param name="fontCollection">
+      <para>Type: <b><see cref="IDWriteFontCollection" />**</b></para>
+      <para>Contains  an address of a pointer to the system font collection object if the method succeeds, or <b>NULL</b> in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateCustomFontFileReference">
+    <summary>
+      <para>Creates a reference to an application-specific font file resource.</para>
+    </summary>
+    <param name="fontFileReferenceKey">
+      <para>Type: <b>const void*</b></para>
+      <para>A font file reference key that uniquely identifies the font file resource
+during the lifetime of <i>fontFileLoader</i>.</para>
+    </param>
+    <param name="fontFileReferenceKeySize">
+      <para>Type: <b>UINT32</b></para>
+      <para>The size of the font file reference key in bytes.</para>
+    </param>
+    <param name="fontFileLoader">
+      <para>Type: <b><see cref="IDWriteFontFileLoader" />*</b></para>
+      <para>The font file loader that will be used by the font system to load data from the file identified by
+<i>fontFileReferenceKey</i>.</para>
+    </param>
+    <param name="fontFile">
+      <para>Type: <b><see cref="IDWriteFontFile" />**</b></para>
+      <para>Contains an address of a pointer to the newly created font file object when this method succeeds, or <b>NULL</b> in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function is provided for cases when an application or a document needs to use a private font
+without having to install it on the system. <i>fontFileReferenceKey</i> has to be unique only in the scope
+of the <i>fontFileLoader</i> used in this call.</para>
+    </remarks>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateCustomRenderingParams">
+    <summary>
+      <para>Creates a rendering parameters object with the specified properties.</para>
+    </summary>
+    <param name="gamma">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The gamma level to be set for the new rendering parameters object.</para>
+    </param>
+    <param name="enhancedContrast">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The enhanced contrast level to be set for the new rendering parameters object.</para>
+    </param>
+    <param name="clearTypeLevel">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The ClearType level to be set for the new rendering parameters object.</para>
+    </param>
+    <param name="pixelGeometry">
+      <para>Type: <b><see cref="DWRITE_PIXEL_GEOMETRY" /></b></para>
+      <para>Represents the internal structure of a device pixel (that is, the physical arrangement of red, green, and blue color components) that is assumed for purposes of rendering text.</para>
+    </param>
+    <param name="renderingMode">
+      <para>Type: <b><see cref="DWRITE_RENDERING_MODE" /></b></para>
+      <para>A value that represents the method (for example, ClearType natural quality) for rendering glyphs.</para>
+    </param>
+    <param name="renderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the newly created rendering parameters object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateEllipsisTrimmingSign">
+    <summary>
+      <para>Creates an inline object for trimming, using an ellipsis as the omission sign.</para>
+    </summary>
+    <param name="textFormat">
+      <para>Type: <b><see cref="IDWriteTextFormat" />*</b></para>
+      <para>A text format object, created with <see cref="CreateTextFormat" />, used for text layout.</para>
+    </param>
+    <param name="trimmingSign">
+      <para>Type: <b><see cref="IDWriteInlineObject" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the omission (that is, ellipsis trimming) sign created by this method.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The ellipsis will be created using the current settings of the format, including base font, style, and any effects.
+Alternate omission signs can be created by the application by implementing <see cref="IDWriteInlineObject" />.</para>
+    </remarks>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateFontFace">
+    <summary>
+      <para>Creates an object that represents a font face.</para>
+    </summary>
+    <param name="fontFaceType">
+      <para>Type: <b><see cref="DWRITE_FONT_FACE_TYPE" /></b></para>
+      <para>A value that indicates the type of file format of the font face.</para>
+    </param>
+    <param name="numberOfFiles">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of font files, in element count, required to represent the font face.</para>
+    </param>
+    <param name="fontFiles">
+      <para>Type: <b>const <see cref="IDWriteFontFile" />*</b></para>
+      <para>A font file object representing the font face.  Because <see cref="IDWriteFontFace" /> maintains its own references
+to the input font file objects, you may release them after this call.</para>
+    </param>
+    <param name="faceIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The zero-based index of a font face, in cases when the font files contain a collection of font faces.
+If the font files contain a single face, this value should be zero.</para>
+    </param>
+    <param name="fontFaceSimulationFlags">
+      <para>Type: <b><see cref="DWRITE_FONT_SIMULATIONS" /></b></para>
+      <para>A value that indicates which, if any, font face simulation flags for algorithmic means of making text bold or italic are applied to the current font face.</para>
+    </param>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the newly created font face object, or <b>NULL</b> in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateFontFileReference">
+    <summary>
+      <para>Creates a font file reference object from a local font file.</para>
+    </summary>
+    <param name="filePath">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters that contains the absolute file path for the font file. Subsequent operations on the constructed object may fail
+if the user provided <i>filePath</i> doesn't correspond to a valid file on the disk.</para>
+    </param>
+    <param name="lastWriteTime">
+      <para>Type: <b>const FILETIME*</b></para>
+      <para>The last modified time of the input file path. If the parameter is omitted,
+the function will access the font file to obtain its last write time. You should specify this value
+to avoid extra disk access. Subsequent operations on the constructed object may fail
+if the user provided <i>lastWriteTime</i> doesn't match the file on the disk.</para>
+    </param>
+    <param name="fontFile">
+      <para>Type: <b><see cref="IDWriteFontFile" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the newly created font file reference object, or <b>NULL</b> in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateGdiCompatibleTextLayout">
+    <summary>
+      <para>Takes a string, format, and associated constraints,
+and produces an object representing the result, formatted for a particular display resolution
+and measuring mode.</para>
+    </summary>
+    <param name="string">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters that contains the string to create a new <see cref="IDWriteTextLayout" /> object from. This array must be of length <i>stringLength</i> and can contain embedded <b>NULL</b> characters.</para>
+    </param>
+    <param name="stringLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The length of the string, in character count.</para>
+    </param>
+    <param name="textFormat">
+      <para>Type: <b><see cref="IDWriteTextFormat" />*</b></para>
+      <para>The text formatting object to apply to the string.</para>
+    </param>
+    <param name="layoutWidth">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The width of the layout box.</para>
+    </param>
+    <param name="layoutHeight">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The height of the layout box.</para>
+    </param>
+    <param name="pixelsPerDip">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The number of physical pixels per DIP (device independent pixel). For example, if rendering onto a 96 DPI device <i>pixelsPerDip</i> is 1. If rendering onto a 120 DPI device <i>pixelsPerDip</i> is 1.25 (120/96).</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b>const <see cref="DWRITE_MATRIX" />*</b></para>
+      <para>An optional transform applied to the glyphs and their positions. This transform is applied after the
+scaling specifies the font size and pixels per DIP.</para>
+    </param>
+    <param name="useGdiNatural">
+      <para>Type: <b>BOOL</b></para>
+      <para>Instructs the text layout to use the same metrics as GDI bi-level text when set to <b>FALSE</b>.
+When set to <b>TRUE</b>, instructs the text layout to use the same metrics as text measured by GDI using a font
+created with <b>CLEARTYPE_NATURAL_QUALITY</b>.</para>
+    </param>
+    <param name="textLayout">
+      <para>Type: <b><see cref="IDWriteTextLayout" />**</b></para>
+      <para>When this method returns, contains an address to the pointer of the resultant text layout object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The resulting text layout should only be used for the intended resolution,
+and for cases where text scalability is desired <see cref="CreateTextLayout" /> should be used instead.</para>
+    </remarks>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateGlyphRunAnalysis">
+    <summary>
+      <para>Creates a glyph run analysis object, which encapsulates information
+used to render a glyph run.</para>
+    </summary>
+    <param name="glyphRun">
+      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN" />*</b></para>
+      <para>A structure that contains the properties of the glyph run (font face, advances, and so on).</para>
+    </param>
+    <param name="pixelsPerDip">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Number of physical pixels per DIP (device independent pixel). For example, if rendering onto a 96 DPI bitmap then <i>pixelsPerDip</i> is 1. If rendering onto a 120 DPI bitmap then <i>pixelsPerDip</i> is 1.25.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b>const <see cref="DWRITE_MATRIX" />*</b></para>
+      <para>Optional transform applied to the glyphs and their positions. This transform is applied after the scaling specified the <i>emSize</i> and <i>pixelsPerDip</i>.</para>
+    </param>
+    <param name="renderingMode">
+      <para>Type: <b><see cref="DWRITE_RENDERING_MODE" /></b></para>
+      <para>A value that specifies the rendering mode, which must be one of the raster rendering modes (that is, not default
+and not outline).</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>Specifies the measuring mode to use with glyphs.</para>
+    </param>
+    <param name="baselineOriginX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The horizontal position (X-coordinate) of the baseline origin, in DIPs.</para>
+    </param>
+    <param name="baselineOriginY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Vertical position (Y-coordinate) of the baseline origin, in DIPs.</para>
+    </param>
+    <param name="glyphRunAnalysis">
+      <para>Type: <b><see cref="IDWriteGlyphRunAnalysis" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the newly created glyph run analysis object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The glyph run analysis object contains the results of analyzing the glyph run, including the positions of all the glyphs and references to all of the rasterized glyphs in the font cache.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows how to create a glyph run analysis object.  In this example, an empty glyph run is being used.</para>
+      <code>HRESULT CreateGlyphRunAnalysis(IDWriteFontFace *pFontFace, IDWriteGlyphRunAnalysis **ppGlyphRunAnalysis)
+{
+    HRESULT hr = S_OK;
+    IDWriteFactory* pDWriteFactory = NULL;
+
+    // Create the DirectWrite factory.
+    hr = DWriteCreateFactory(
+            DWRITE_FACTORY_TYPE_SHARED,
+            __uuidof(IDWriteFactory),
+            reinterpret_cast&lt;IUnknown**&gt;(&amp;amp;amp;amp;amp;amp;pDWriteFactory)
+            );
+
+    DWRITE_GLYPH_RUN emptyGlyphRun = { 0 };
+    UINT16 glyphIndex = 0;
+
+    emptyGlyphRun.fontFace = pFontFace;
+    emptyGlyphRun.glyphIndices = &amp;amp;amp;amp;amp;amp;glyphIndex;
+    emptyGlyphRun.glyphCount = 0;
+
+    emptyGlyphRun.fontEmSize = 12;
+
+    IDWriteGlyphRunAnalysis* pGlyphRunAnalysis = NULL;
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pDWriteFactory-&gt;CreateGlyphRunAnalysis(
+            &amp;amp;amp;amp;amp;amp;emptyGlyphRun,
+            1.0f, // pixelsPerDip,
+            NULL, // transform,
+            DWRITE_RENDERING_MODE_CLEARTYPE_GDI_CLASSIC,
+            DWRITE_MEASURING_MODE_GDI_CLASSIC,
+            0.0f, // baselineOriginX,
+            0.0f, // baselineOriginY,
+            &amp;amp;amp;amp;amp;amp;pGlyphRunAnalysis);
+    }
+
+    *ppGlyphRunAnalysis = pGlyphRunAnalysis;
+
+    SafeRelease(&amp;amp;amp;amp;amp;amp;pDWriteFactory);
+
+    return S_OK;
+}
+
+</code>
+    </remarks>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateMonitorRenderingParams">
+    <summary>
+      <para>Creates a rendering parameters object with default settings for the specified monitor.
+In most cases, this is the preferred way to create a rendering parameters object.</para>
+    </summary>
+    <param name="monitor">
+      <para>Type: <b>HMONITOR</b></para>
+      <para>A handle for the specified monitor.</para>
+    </param>
+    <param name="renderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the rendering parameters object created by this method.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateNumberSubstitution">
+    <summary>
+      <para>Creates a number substitution object using a locale name,
+substitution method, and an indicator  whether to ignore user overrides (use NLS
+defaults for the given culture instead).</para>
+    </summary>
+    <param name="substitutionMethod">
+      <para>Type: <b><see cref="DWRITE_NUMBER_SUBSTITUTION_METHOD" /></b></para>
+      <para>A value that specifies how to apply number substitution on digits and related punctuation.</para>
+    </param>
+    <param name="localeName">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>The name of the locale to be used in the <i>numberSubstitution</i> object.</para>
+    </param>
+    <param name="ignoreUserOverride">
+      <para>Type: <b>BOOL</b></para>
+      <para>A Boolean flag that indicates whether to ignore user overrides.</para>
+    </param>
+    <param name="numberSubstitution">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritenumbersubstitution">IDWriteNumberSubstitution</a>**</b></para>
+      <para>When this method returns, contains an address to  a pointer to the number substitution object created by this method.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateRenderingParams">
+    <summary>
+      <para>Creates a rendering parameters object with default settings for the primary monitor.
+Different monitors may have different rendering parameters, for more information see the <a href="https://docs.microsoft.com//windows/win32/DirectWrite/how-to-add-support-for-multiple-monitors">How to Add Support for Multiple Monitors</a> topic.</para>
+    </summary>
+    <param name="renderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the newly created  rendering parameters object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Standard HRESULT error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+    <seealso cref="IDWriteFactory.CreateMonitorRenderingParams" />
+  </member>
+  <member name="IDWriteFactory.CreateTextAnalyzer">
+    <summary>
+      <para>Returns an interface for performing text analysis.</para>
+    </summary>
+    <param name="textAnalyzer">
+      <para>Type: <b><see cref="IDWriteTextAnalyzer" />**</b></para>
+      <para>When this method returns, contains an address of  a pointer to the newly created text analyzer object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateTextFormat">
+    <summary>
+      <para>Creates a text format object used for text layout.</para>
+    </summary>
+    <param name="fontFamilyName">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters that contains the name of the font family</para>
+    </param>
+    <param name="fontCollection">
+      <para>Type: <b><see cref="IDWriteFontCollection" />*</b></para>
+      <para>A pointer to a font collection object. When this is <b>NULL</b>, indicates the system font collection.</para>
+    </param>
+    <param name="fontWeight">
+      <para>Type: <b><see cref="DWRITE_FONT_WEIGHT" /></b></para>
+      <para>A value that indicates the font weight for the text object created by this method.</para>
+    </param>
+    <param name="fontStyle">
+      <para>Type: <b><see cref="DWRITE_FONT_STYLE" /></b></para>
+      <para>A value that indicates the font style for the text object created by this method.</para>
+    </param>
+    <param name="fontStretch">
+      <para>Type: <b><see cref="DWRITE_FONT_STRETCH" /></b></para>
+      <para>A value that indicates the font stretch for the text object created by this method.</para>
+    </param>
+    <param name="fontSize">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The logical size of the font in DIP ("device-independent pixel") units. A DIP equals 1/96 inch.</para>
+    </param>
+    <param name="localeName">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters that contains the locale name.</para>
+    </param>
+    <param name="textFormat">
+      <para>Type: <b><see cref="IDWriteTextFormat" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to a  newly created text format object, or <b>NULL</b> in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateTextLayout">
+    <summary>
+      <para>Takes a string, text format, and associated constraints,
+and produces an object that represents the fully analyzed
+and formatted result.</para>
+    </summary>
+    <param name="string">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters that contains the string to create a new <see cref="IDWriteTextLayout" /> object from. This array must be of length <i>stringLength</i> and can contain embedded <b>NULL</b> characters.</para>
+    </param>
+    <param name="stringLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of characters in  the string.</para>
+    </param>
+    <param name="textFormat">
+      <para>Type: <b><see cref="IDWriteTextFormat" />*</b></para>
+      <para>A pointer to an object that indicates the format to apply to the string.</para>
+    </param>
+    <param name="maxWidth">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The width of the layout box.</para>
+    </param>
+    <param name="maxHeight">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The height of the layout box.</para>
+    </param>
+    <param name="textLayout">
+      <para>Type: <b><see cref="IDWriteTextLayout" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the resultant text layout object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.CreateTypography">
+    <summary>
+      <para>Creates a typography object for use in a text layout.</para>
+    </summary>
+    <param name="typography">
+      <para>Type: <b><see cref="IDWriteTypography" />**</b></para>
+      <para>When this method returns, contains the address of  a pointer to a newly created typography object, or <b>NULL</b> in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.GetGdiInterop">
+    <summary>
+      <para>Creates an object that is used for interoperability with GDI.</para>
+    </summary>
+    <param name="gdiInterop">
+      <para>Type: <b><see cref="IDWriteGdiInterop" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to a GDI interop object if successful, or <b>NULL</b> in case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.GetSystemFontCollection">
+    <summary>
+      <para>Gets an object which represents the set of installed fonts.</para>
+    </summary>
+    <param name="fontCollection">
+      <para>Type: <b><see cref="IDWriteFontCollection" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to the system font collection object, or <b>NULL</b> in case of failure.</para>
+    </param>
+    <param name="checkForUpdates">
+      <para>Type: <b>BOOL</b></para>
+      <para>If this parameter is nonzero, the function performs an immediate check for changes to the set of
+installed fonts. If this parameter is <b>FALSE</b>, the function will still detect changes if the font cache service is running, but
+there may be some latency. For example, an application might specify <b>TRUE</b> if it has itself just installed a font and wants to
+be sure the font collection contains that font.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.RegisterFontCollectionLoader">
+    <summary>
+      <para>Registers a custom font collection loader with the factory object.</para>
+    </summary>
+    <param name="fontCollectionLoader">
+      <para>Type: <b><see cref="IDWriteFontCollectionLoader" />*</b></para>
+      <para>Pointer to a <see cref="IDWriteFontCollectionLoader" /> object to be registered.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function registers a font collection loader with DirectWrite. The font collection loader interface, which should be implemented by a singleton object,
+handles enumerating font files in a font collection given a particular type of key. A given instance can only be registered once. Succeeding attempts will return an error,
+indicating that it has already been registered. Note that font file loader implementations must not register themselves with DirectWrite inside their constructors,
+and must not unregister themselves inside their destructors, because registration and unregistration operations increment and decrement the object reference count respectively.
+Instead, registration and unregistration with DirectWrite of font file loaders should be performed outside of the font file loader implementation.</para>
+    </remarks>
+  </member>
+  <member name="IDWriteFactory.RegisterFontFileLoader">
+    <summary>
+      <para>Registers a font file loader with DirectWrite.</para>
+    </summary>
+    <param name="fontFileLoader">
+      <para>Type: <b><see cref="IDWriteFontFileLoader" />*</b></para>
+      <para>Pointer to a <see cref="IDWriteFontFileLoader" /> object for a particular file resource type.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function registers a font file loader with DirectWrite.
+The font file loader interface, which should be implemented   by a singleton object, handles loading font file resources of a particular type from a key.
+A given instance can only be registered once.
+Succeeding attempts will return an error, indicating that it has already been registered.
+Note that font file loader implementations must not register themselves with DirectWrite
+inside their constructors, and must not unregister themselves inside their destructors, because
+registration and unregistration operations increment and decrement the object reference count respectively.
+Instead, registration and unregistration with DirectWrite of font file loaders should be performed
+outside of the font file loader implementation.</para>
+    </remarks>
+  </member>
+  <member name="IDWriteFactory.UnregisterFontCollectionLoader">
+    <summary>
+      <para>Unregisters a custom font collection loader that was previously registered using <see cref="RegisterFontCollectionLoader" />.</para>
+    </summary>
+    <param name="fontCollectionLoader">
+      <para>Type: <b><see cref="IDWriteFontCollectionLoader" />*</b></para>
+      <para>Pointer to a <see cref="IDWriteFontCollectionLoader" /> object to be unregistered.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory.UnregisterFontFileLoader">
+    <summary>
+      <para>Unregisters a font file loader that was previously registered with the DirectWrite font system using <see cref="RegisterFontFileLoader" />.</para>
+    </summary>
+    <param name="fontFileLoader">
+      <para>Type: <b><see cref="IDWriteFontFileLoader" />*</b></para>
+      <para>Pointer to the file loader that was previously registered with the DirectWrite font system using <see cref="RegisterFontFileLoader" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function unregisters font file loader callbacks with the DirectWrite font system.
+You should implement the font file loader interface by a singleton object.
+Note that font file loader implementations must not register themselves with DirectWrite
+inside their constructors and must not unregister themselves in their destructors, because
+registration and unregistration operations increment and decrement the object reference count respectively.
+Instead, registration and unregistration of font file loaders with DirectWrite should be performed
+outside of the font file loader implementation.</para>
+    </remarks>
+    <seealso cref="IDWriteFactory" />
+  </member>
+  <member name="IDWriteFactory">
+    <summary>
+      <para>Used to create all subsequent DirectWrite objects. This interface is the root factory interface for all DirectWrite objects.</para>
+    </summary>
+    <remarks>
+      <para>Create an <b>IDWriteFactory</b> object by using the <see cref="DWriteCreateFactory" /> function.</para>
+      <code>
+if (SUCCEEDED(hr))
+{
+    hr = DWriteCreateFactory(
+        DWRITE_FACTORY_TYPE_SHARED,
+        __uuidof(IDWriteFactory),
+        reinterpret_cast&lt;IUnknown**&gt;(&amp;amp;amp;amp;amp;amp;pDWriteFactory_)
+        );
+}
+
+
+</code>
+      <para>An <b>IDWriteFactory</b> object holds state information, such as font loader registration and cached font data.  This state can be shared or isolated.  Shared is recommended for most applications because it saves memory.  However, isolated can be useful in situations where you want to have a separate state for some objects.</para>
+    </remarks>
+  </member>
+</doc>

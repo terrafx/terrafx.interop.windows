@@ -5,21 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPWORD.xml' path='doc/member[@name="SPWORD"]/*' />
 public unsafe partial struct SPWORD
 {
+    /// <include file='SPWORD.xml' path='doc/member[@name="SPWORD.pNextWord"]/*' />
     [NativeTypeName("struct SPWORD *")]
     public SPWORD* pNextWord;
 
+    /// <include file='SPWORD.xml' path='doc/member[@name="SPWORD.LangID"]/*' />
     [NativeTypeName("WORD")]
     public ushort LangID;
 
+    /// <include file='SPWORD.xml' path='doc/member[@name="SPWORD.wReserved"]/*' />
     [NativeTypeName("WORD")]
     public ushort wReserved;
 
+    /// <include file='SPWORD.xml' path='doc/member[@name="SPWORD.eWordType"]/*' />
     public SPWORDTYPE eWordType;
 
+    /// <include file='SPWORD.xml' path='doc/member[@name="SPWORD.pszWord"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszWord;
 
+    /// <include file='SPWORD.xml' path='doc/member[@name="SPWORD.pFirstWordPronunciation"]/*' />
     public SPWORDPRONUNCIATION* pFirstWordPronunciation;
 }

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleTransformOriginX.xml' path='doc/member[@name="styleTransformOriginX"]/*' />
 public enum styleTransformOriginX
 {
+    /// <include file='styleTransformOriginX.xml' path='doc/member[@name="styleTransformOriginX.styleTransformOriginXNotSet"]/*' />
     styleTransformOriginXNotSet = 0,
+
+    /// <include file='styleTransformOriginX.xml' path='doc/member[@name="styleTransformOriginX.styleTransformOriginXLeft"]/*' />
     styleTransformOriginXLeft = 1,
+
+    /// <include file='styleTransformOriginX.xml' path='doc/member[@name="styleTransformOriginX.styleTransformOriginXCenter"]/*' />
     styleTransformOriginXCenter = 2,
+
+    /// <include file='styleTransformOriginX.xml' path='doc/member[@name="styleTransformOriginX.styleTransformOriginXRight"]/*' />
     styleTransformOriginXRight = 3,
+
+    /// <include file='styleTransformOriginX.xml' path='doc/member[@name="styleTransformOriginX.styleTransformOriginX_Max"]/*' />
     styleTransformOriginX_Max = 2147483647,
 }

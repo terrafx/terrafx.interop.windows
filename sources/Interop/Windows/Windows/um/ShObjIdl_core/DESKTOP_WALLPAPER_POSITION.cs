@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DESKTOP_WALLPAPER_POSITION.xml' path='doc/member[@name="DESKTOP_WALLPAPER_POSITION"]/*' />
 public enum DESKTOP_WALLPAPER_POSITION
 {
+    /// <include file='DESKTOP_WALLPAPER_POSITION.xml' path='doc/member[@name="DESKTOP_WALLPAPER_POSITION.DWPOS_CENTER"]/*' />
     DWPOS_CENTER = 0,
+
+    /// <include file='DESKTOP_WALLPAPER_POSITION.xml' path='doc/member[@name="DESKTOP_WALLPAPER_POSITION.DWPOS_TILE"]/*' />
     DWPOS_TILE = 1,
+
+    /// <include file='DESKTOP_WALLPAPER_POSITION.xml' path='doc/member[@name="DESKTOP_WALLPAPER_POSITION.DWPOS_STRETCH"]/*' />
     DWPOS_STRETCH = 2,
+
+    /// <include file='DESKTOP_WALLPAPER_POSITION.xml' path='doc/member[@name="DESKTOP_WALLPAPER_POSITION.DWPOS_FIT"]/*' />
     DWPOS_FIT = 3,
+
+    /// <include file='DESKTOP_WALLPAPER_POSITION.xml' path='doc/member[@name="DESKTOP_WALLPAPER_POSITION.DWPOS_FILL"]/*' />
     DWPOS_FILL = 4,
+
+    /// <include file='DESKTOP_WALLPAPER_POSITION.xml' path='doc/member[@name="DESKTOP_WALLPAPER_POSITION.DWPOS_SPAN"]/*' />
     DWPOS_SPAN = 5,
 }

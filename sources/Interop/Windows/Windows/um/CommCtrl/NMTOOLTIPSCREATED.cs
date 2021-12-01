@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTOOLTIPSCREATED.xml' path='doc/member[@name="NMTOOLTIPSCREATED"]/*' />
 public partial struct NMTOOLTIPSCREATED
 {
+    /// <include file='NMTOOLTIPSCREATED.xml' path='doc/member[@name="NMTOOLTIPSCREATED.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMTOOLTIPSCREATED.xml' path='doc/member[@name="NMTOOLTIPSCREATED.hwndToolTips"]/*' />
     public HWND hwndToolTips;
 }

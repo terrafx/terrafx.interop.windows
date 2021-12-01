@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DMO_MEDIA_TYPE">
+    <summary>
+      <para>The <b>DMO_MEDIA_TYPE</b> structure describes the format of the data used by a stream in a Microsoft DirectX Media Object (DMO).</para>
+    </summary>
+    <remarks>
+      <para>This structure is identical to the DirectShow <see cref="AM_MEDIA_TYPE" /> structure. The <b>bFixedSizeSamples</b>, <b>bTemporalCompression</b>, and <b>lSampleSize</b> members are for compatibility with DirectShow. Other DMO clients are not required to use them.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-structures">DMO Structures</seealso>
+  </member>
+  <member name="DMO_MEDIA_TYPE.majortype">
+    <summary>
+      <para>Major type GUID of the stream.</para>
+    </summary>
+  </member>
+  <member name="DMO_MEDIA_TYPE.subtype">
+    <summary>
+      <para>Subtype GUID of the stream.</para>
+    </summary>
+  </member>
+  <member name="DMO_MEDIA_TYPE.bFixedSizeSamples">
+    <summary>
+      <para>If <b>TRUE</b>, samples are of a fixed size. This field is informational only. For audio, it is generally set to <b>TRUE</b>. For video, it is usually <b>TRUE</b> for uncompressed video and <b>FALSE</b> for compressed video.</para>
+    </summary>
+  </member>
+  <member name="DMO_MEDIA_TYPE.bTemporalCompression">
+    <summary>
+      <para>If <b>TRUE</b>, samples are compressed using temporal (interframe) compression. (A value of <b>TRUE</b> indicates that not all frames are key frames.) This field is informational only.</para>
+    </summary>
+  </member>
+  <member name="DMO_MEDIA_TYPE.lSampleSize">
+    <summary>
+      <para>Size of the sample in bytes. For compressed data, the value can be zero.</para>
+    </summary>
+  </member>
+  <member name="DMO_MEDIA_TYPE.formattype">
+    <summary>
+      <para>GUID specifying the format type. The <b>pbFormat</b> member points to the corresponding format structure. Format types include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Format type</description>
+          <description>Format structure</description>
+        </listheader>
+        <item>
+          <description>
+            <b>FORMAT_DvInfo</b>
+          </description>
+          <description>
+            <para>
+              <see cref="DVINFO" />
+            </para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FORMAT_MPEG2Video</b>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-mpeg2videoinfo">MPEG2VIDEOINFO</a>
+            </para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FORMAT_MPEGVideo</b>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-mpeg1videoinfo">MPEG1VIDEOINFO</a>
+            </para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FORMAT_None</b>
+          </description>
+          <description>
+            <para>None.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FORMAT_VideoInfo</b>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a>
+            </para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FORMAT_VideoInfo2</b>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a>
+            </para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FORMAT_WaveFormatEx</b>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a>
+            </para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DMO_MEDIA_TYPE.pUnk">
+    <summary>
+      <para>Not used. Set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="DMO_MEDIA_TYPE.cbFormat">
+    <summary>
+      <para>Size of the format block of the media type.</para>
+    </summary>
+  </member>
+  <member name="DMO_MEDIA_TYPE.pbFormat">
+    <summary>
+      <para>Pointer to the format structure. The structure type is specified by the <b>formattype</b> member. The format structure must be present, unless <b>formattype</b> is GUID_NULL or FORMAT_None.</para>
+    </summary>
+  </member>
+</doc>

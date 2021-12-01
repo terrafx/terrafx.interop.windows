@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_VOID_DESCRIPTION.xml' path='doc/member[@name="WS_VOID_DESCRIPTION"]/*' />
 public partial struct WS_VOID_DESCRIPTION
 {
+    /// <include file='WS_VOID_DESCRIPTION.xml' path='doc/member[@name="WS_VOID_DESCRIPTION.size"]/*' />
     [NativeTypeName("ULONG")]
     public uint size;
 }

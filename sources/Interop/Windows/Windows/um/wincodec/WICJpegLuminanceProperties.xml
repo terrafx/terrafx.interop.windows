@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICJpegLuminanceProperties">
+    <summary>
+      <para>Specifies the JPEG luminance table property.</para>
+    </summary>
+  </member>
+  <member name="WICJpegLuminanceProperties.WICJpegLuminanceTable">
+    <summary>
+      <para>[VT_UI2|VT_VECTOR] Indicates the metadata property is a luminance table.</para>
+    </summary>
+  </member>
+  <member name="WICJpegLuminanceProperties.WICJpegLuminanceProperties_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

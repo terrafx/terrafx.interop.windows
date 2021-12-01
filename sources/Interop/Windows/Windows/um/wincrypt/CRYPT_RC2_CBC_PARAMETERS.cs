@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_RC2_CBC_PARAMETERS.xml' path='doc/member[@name="CRYPT_RC2_CBC_PARAMETERS"]/*' />
 public unsafe partial struct CRYPT_RC2_CBC_PARAMETERS
 {
+    /// <include file='CRYPT_RC2_CBC_PARAMETERS.xml' path='doc/member[@name="CRYPT_RC2_CBC_PARAMETERS.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='CRYPT_RC2_CBC_PARAMETERS.xml' path='doc/member[@name="CRYPT_RC2_CBC_PARAMETERS.fIV"]/*' />
     public BOOL fIV;
 
+    /// <include file='CRYPT_RC2_CBC_PARAMETERS.xml' path='doc/member[@name="CRYPT_RC2_CBC_PARAMETERS.rgbIV"]/*' />
     [NativeTypeName("BYTE [8]")]
     public fixed byte rgbIV[8];
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVideoEncoder.xml' path='doc/member[@name="IVideoEncoder"]/*' />
 [Guid("02997C3B-8E1B-460E-9270-545E0DE9563E")]
 [NativeTypeName("struct IVideoEncoder : IEncoderAPI")]
 [NativeInheritance("IEncoderAPI")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
         return ((delegate* unmanaged<IVideoEncoder*, Guid*, void**, int>)(lpVtbl[0]))((IVideoEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
         return ((delegate* unmanaged<IVideoEncoder*, uint>)(lpVtbl[1]))((IVideoEncoder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
         return ((delegate* unmanaged<IVideoEncoder*, uint>)(lpVtbl[2]))((IVideoEncoder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IEncoderAPI.IsSupported" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsSupported([NativeTypeName("const GUID *")] Guid* Api)
@@ -46,6 +51,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
         return ((delegate* unmanaged<IVideoEncoder*, Guid*, int>)(lpVtbl[3]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api);
     }
 
+    /// <inheritdoc cref="IEncoderAPI.IsAvailable" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT IsAvailable([NativeTypeName("const GUID *")] Guid* Api)
@@ -53,6 +59,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
         return ((delegate* unmanaged<IVideoEncoder*, Guid*, int>)(lpVtbl[4]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api);
     }
 
+    /// <inheritdoc cref="IEncoderAPI.GetParameterRange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetParameterRange([NativeTypeName("const GUID *")] Guid* Api, VARIANT* ValueMin, VARIANT* ValueMax, VARIANT* SteppingDelta)
@@ -60,6 +67,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
         return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[5]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, ValueMin, ValueMax, SteppingDelta);
     }
 
+    /// <inheritdoc cref="IEncoderAPI.GetParameterValues" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetParameterValues([NativeTypeName("const GUID *")] Guid* Api, VARIANT** Values, [NativeTypeName("ULONG *")] uint* ValuesCount)
@@ -67,6 +75,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
         return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT**, uint*, int>)(lpVtbl[6]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Values, ValuesCount);
     }
 
+    /// <inheritdoc cref="IEncoderAPI.GetDefaultValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDefaultValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)
@@ -74,6 +83,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
         return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int>)(lpVtbl[7]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Value);
     }
 
+    /// <inheritdoc cref="IEncoderAPI.GetValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)
@@ -81,6 +91,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
         return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int>)(lpVtbl[8]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Value);
     }
 
+    /// <inheritdoc cref="IEncoderAPI.SetValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)

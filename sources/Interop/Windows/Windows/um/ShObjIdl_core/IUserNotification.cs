@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUserNotification.xml' path='doc/member[@name="IUserNotification"]/*' />
 [Guid("BA9711BA-5893-4787-A7E1-41277151550B")]
 [NativeTypeName("struct IUserNotification : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface
         return ((delegate* unmanaged<IUserNotification*, Guid*, void**, int>)(lpVtbl[0]))((IUserNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface
         return ((delegate* unmanaged<IUserNotification*, uint>)(lpVtbl[1]))((IUserNotification*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface
         return ((delegate* unmanaged<IUserNotification*, uint>)(lpVtbl[2]))((IUserNotification*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUserNotification.xml' path='doc/member[@name="IUserNotification.SetBalloonInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetBalloonInfo([NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszText, [NativeTypeName("DWORD")] uint dwInfoFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface
         return ((delegate* unmanaged<IUserNotification*, ushort*, ushort*, uint, int>)(lpVtbl[3]))((IUserNotification*)Unsafe.AsPointer(ref this), pszTitle, pszText, dwInfoFlags);
     }
 
+    /// <include file='IUserNotification.xml' path='doc/member[@name="IUserNotification.SetBalloonRetry"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetBalloonRetry([NativeTypeName("DWORD")] uint dwShowTime, [NativeTypeName("DWORD")] uint dwInterval, uint cRetryCount)
@@ -53,6 +59,7 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface
         return ((delegate* unmanaged<IUserNotification*, uint, uint, uint, int>)(lpVtbl[4]))((IUserNotification*)Unsafe.AsPointer(ref this), dwShowTime, dwInterval, cRetryCount);
     }
 
+    /// <include file='IUserNotification.xml' path='doc/member[@name="IUserNotification.SetIconInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetIconInfo(HICON hIcon, [NativeTypeName("LPCWSTR")] ushort* pszToolTip)
@@ -60,6 +67,7 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface
         return ((delegate* unmanaged<IUserNotification*, HICON, ushort*, int>)(lpVtbl[5]))((IUserNotification*)Unsafe.AsPointer(ref this), hIcon, pszToolTip);
     }
 
+    /// <include file='IUserNotification.xml' path='doc/member[@name="IUserNotification.Show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Show(IQueryContinue* pqc, [NativeTypeName("DWORD")] uint dwContinuePollInterval)
@@ -67,6 +75,7 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface
         return ((delegate* unmanaged<IUserNotification*, IQueryContinue*, uint, int>)(lpVtbl[6]))((IUserNotification*)Unsafe.AsPointer(ref this), pqc, dwContinuePollInterval);
     }
 
+    /// <include file='IUserNotification.xml' path='doc/member[@name="IUserNotification.PlaySoundW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT PlaySoundW([NativeTypeName("LPCWSTR")] ushort* pszSoundName)

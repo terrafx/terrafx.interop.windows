@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='URL_PART.xml' path='doc/member[@name="URL_PART"]/*' />
 public enum URL_PART
 {
+    /// <include file='URL_PART.xml' path='doc/member[@name="URL_PART.URL_PART_NONE"]/*' />
     URL_PART_NONE = 0,
+
+    /// <include file='URL_PART.xml' path='doc/member[@name="URL_PART.URL_PART_SCHEME"]/*' />
     URL_PART_SCHEME = 1,
+
+    /// <include file='URL_PART.xml' path='doc/member[@name="URL_PART.URL_PART_HOSTNAME"]/*' />
     URL_PART_HOSTNAME,
+
+    /// <include file='URL_PART.xml' path='doc/member[@name="URL_PART.URL_PART_USERNAME"]/*' />
     URL_PART_USERNAME,
+
+    /// <include file='URL_PART.xml' path='doc/member[@name="URL_PART.URL_PART_PASSWORD"]/*' />
     URL_PART_PASSWORD,
+
+    /// <include file='URL_PART.xml' path='doc/member[@name="URL_PART.URL_PART_PORT"]/*' />
     URL_PART_PORT,
+
+    /// <include file='URL_PART.xml' path='doc/member[@name="URL_PART.URL_PART_QUERY"]/*' />
     URL_PART_QUERY,
 }

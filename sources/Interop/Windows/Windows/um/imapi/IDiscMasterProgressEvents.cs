@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents"]/*' />
 [Guid("EC9E51C1-4E5D-11D3-9144-00104BA11C5E")]
 [NativeTypeName("struct IDiscMasterProgressEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, Guid*, void**, int>)(lpVtbl[0]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, uint>)(lpVtbl[1]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, uint>)(lpVtbl[2]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.QueryCancel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryCancel([NativeTypeName("boolean *")] byte* pbCancel)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, byte*, int>)(lpVtbl[3]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), pbCancel);
     }
 
+    /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyPnPActivity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT NotifyPnPActivity()
@@ -53,6 +59,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, int>)(lpVtbl[4]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyAddProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT NotifyAddProgress([NativeTypeName("long")] int nCompletedSteps, [NativeTypeName("long")] int nTotalSteps)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int>)(lpVtbl[5]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nCompletedSteps, nTotalSteps);
     }
 
+    /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyBlockProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT NotifyBlockProgress([NativeTypeName("long")] int nCompleted, [NativeTypeName("long")] int nTotal)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int>)(lpVtbl[6]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nCompleted, nTotal);
     }
 
+    /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyTrackProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT NotifyTrackProgress([NativeTypeName("long")] int nCurrentTrack, [NativeTypeName("long")] int nTotalTracks)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int>)(lpVtbl[7]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nCurrentTrack, nTotalTracks);
     }
 
+    /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyPreparingBurn"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT NotifyPreparingBurn([NativeTypeName("long")] int nEstimatedSeconds)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, int, int>)(lpVtbl[8]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nEstimatedSeconds);
     }
 
+    /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyClosingDisc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT NotifyClosingDisc([NativeTypeName("long")] int nEstimatedSeconds)
@@ -88,6 +99,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, int, int>)(lpVtbl[9]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nEstimatedSeconds);
     }
 
+    /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyBurnComplete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT NotifyBurnComplete(HRESULT status)
@@ -95,6 +107,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         return ((delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int>)(lpVtbl[10]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), status);
     }
 
+    /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyEraseComplete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT NotifyEraseComplete(HRESULT status)

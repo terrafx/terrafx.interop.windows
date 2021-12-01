@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLINKGETREF.xml' path='doc/member[@name="HLINKGETREF"]/*' />
 public enum HLINKGETREF
 {
+    /// <include file='HLINKGETREF.xml' path='doc/member[@name="HLINKGETREF.HLINKGETREF_DEFAULT"]/*' />
     HLINKGETREF_DEFAULT = 0,
+
+    /// <include file='HLINKGETREF.xml' path='doc/member[@name="HLINKGETREF.HLINKGETREF_ABSOLUTE"]/*' />
     HLINKGETREF_ABSOLUTE = 1,
+
+    /// <include file='HLINKGETREF.xml' path='doc/member[@name="HLINKGETREF.HLINKGETREF_RELATIVE"]/*' />
     HLINKGETREF_RELATIVE = 2,
 }

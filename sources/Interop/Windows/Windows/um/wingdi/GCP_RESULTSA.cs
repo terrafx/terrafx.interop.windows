@@ -5,27 +5,37 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA"]/*' />
 public unsafe partial struct GCP_RESULTSA
 {
+    /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.lStructSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint lStructSize;
 
+    /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.lpOutString"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpOutString;
 
+    /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.lpOrder"]/*' />
     public uint* lpOrder;
 
+    /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.lpDx"]/*' />
     public int* lpDx;
 
+    /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.lpCaretPos"]/*' />
     public int* lpCaretPos;
 
+    /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.lpClass"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpClass;
 
+    /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.lpGlyphs"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpGlyphs;
 
+    /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.nGlyphs"]/*' />
     public uint nGlyphs;
 
+    /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.nMaxFit"]/*' />
     public int nMaxFit;
 }

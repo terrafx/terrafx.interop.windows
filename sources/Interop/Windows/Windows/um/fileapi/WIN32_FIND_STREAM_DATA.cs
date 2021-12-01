@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WIN32_FIND_STREAM_DATA.xml' path='doc/member[@name="WIN32_FIND_STREAM_DATA"]/*' />
 public unsafe partial struct WIN32_FIND_STREAM_DATA
 {
+    /// <include file='WIN32_FIND_STREAM_DATA.xml' path='doc/member[@name="WIN32_FIND_STREAM_DATA.StreamSize"]/*' />
     public LARGE_INTEGER StreamSize;
 
+    /// <include file='WIN32_FIND_STREAM_DATA.xml' path='doc/member[@name="WIN32_FIND_STREAM_DATA.cStreamName"]/*' />
     [NativeTypeName("WCHAR [296]")]
     public fixed ushort cStreamName[296];
 }

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NL_NETWORK_CATEGORY.xml' path='doc/member[@name="NL_NETWORK_CATEGORY"]/*' />
 public enum NL_NETWORK_CATEGORY
 {
+    /// <include file='NL_NETWORK_CATEGORY.xml' path='doc/member[@name="NL_NETWORK_CATEGORY.NetworkCategoryPublic"]/*' />
     NetworkCategoryPublic,
+
+    /// <include file='NL_NETWORK_CATEGORY.xml' path='doc/member[@name="NL_NETWORK_CATEGORY.NetworkCategoryPrivate"]/*' />
     NetworkCategoryPrivate,
+
+    /// <include file='NL_NETWORK_CATEGORY.xml' path='doc/member[@name="NL_NETWORK_CATEGORY.NetworkCategoryDomainAuthenticated"]/*' />
     NetworkCategoryDomainAuthenticated,
+
+    /// <include file='NL_NETWORK_CATEGORY.xml' path='doc/member[@name="NL_NETWORK_CATEGORY.NetworkCategoryUnchanged"]/*' />
     NetworkCategoryUnchanged = -1,
+
+    /// <include file='NL_NETWORK_CATEGORY.xml' path='doc/member[@name="NL_NETWORK_CATEGORY.NetworkCategoryUnknown"]/*' />
     NetworkCategoryUnknown = -1,
 }

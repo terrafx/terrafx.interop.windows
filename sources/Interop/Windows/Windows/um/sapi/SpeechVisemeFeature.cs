@@ -7,9 +7,15 @@ using static TerraFX.Interop.Windows.SPVFEATURE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechVisemeFeature.xml' path='doc/member[@name="SpeechVisemeFeature"]/*' />
 public enum SpeechVisemeFeature
 {
+    /// <include file='SpeechVisemeFeature.xml' path='doc/member[@name="SpeechVisemeFeature.SVF_None"]/*' />
     SVF_None = 0,
+
+    /// <include file='SpeechVisemeFeature.xml' path='doc/member[@name="SpeechVisemeFeature.SVF_Stressed"]/*' />
     SVF_Stressed = SPVFEATURE_STRESSED,
+
+    /// <include file='SpeechVisemeFeature.xml' path='doc/member[@name="SpeechVisemeFeature.SVF_Emphasis"]/*' />
     SVF_Emphasis = SPVFEATURE_EMPHASIS,
 }

@@ -9,18 +9,24 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_MODE_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_MODE_INFO"]/*' />
 public partial struct DISPLAYCONFIG_MODE_INFO
 {
+    /// <include file='DISPLAYCONFIG_MODE_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_MODE_INFO.infoType"]/*' />
     public DISPLAYCONFIG_MODE_INFO_TYPE infoType;
 
+    /// <include file='DISPLAYCONFIG_MODE_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_MODE_INFO.id"]/*' />
     [NativeTypeName("UINT32")]
     public uint id;
 
+    /// <include file='DISPLAYCONFIG_MODE_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_MODE_INFO.adapterId"]/*' />
     public LUID adapterId;
 
+    /// <include file='DISPLAYCONFIG_MODE_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_MODE_INFO.Anonymous"]/*' />
     [NativeTypeName("DISPLAYCONFIG_MODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2932:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.targetMode"]/*' />
     public ref DISPLAYCONFIG_TARGET_MODE targetMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,6 +36,7 @@ public partial struct DISPLAYCONFIG_MODE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.sourceMode"]/*' />
     public ref DISPLAYCONFIG_SOURCE_MODE sourceMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +46,7 @@ public partial struct DISPLAYCONFIG_MODE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.desktopImageInfo"]/*' />
     [SupportedOSPlatform("windows10.0.17763.0")]
     public ref DISPLAYCONFIG_DESKTOP_IMAGE_INFO desktopImageInfo
     {
@@ -49,15 +57,19 @@ public partial struct DISPLAYCONFIG_MODE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.targetMode"]/*' />
         [FieldOffset(0)]
         public DISPLAYCONFIG_TARGET_MODE targetMode;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.sourceMode"]/*' />
         [FieldOffset(0)]
         public DISPLAYCONFIG_SOURCE_MODE sourceMode;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.desktopImageInfo"]/*' />
         [FieldOffset(0)]
         [SupportedOSPlatform("windows10.0.17763.0")]
         public DISPLAYCONFIG_DESKTOP_IMAGE_INFO desktopImageInfo;

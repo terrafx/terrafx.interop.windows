@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFDXGIDeviceManagerSource.xml' path='doc/member[@name="IMFDXGIDeviceManagerSource"]/*' />
 [Guid("20BC074B-7A8D-4609-8C3B-64A0A3B5D7CE")]
 [NativeTypeName("struct IMFDXGIDeviceManagerSource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFDXGIDeviceManagerSource : IMFDXGIDeviceManagerSo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFDXGIDeviceManagerSource : IMFDXGIDeviceManagerSo
         return ((delegate* unmanaged<IMFDXGIDeviceManagerSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFDXGIDeviceManagerSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFDXGIDeviceManagerSource : IMFDXGIDeviceManagerSo
         return ((delegate* unmanaged<IMFDXGIDeviceManagerSource*, uint>)(lpVtbl[1]))((IMFDXGIDeviceManagerSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFDXGIDeviceManagerSource : IMFDXGIDeviceManagerSo
         return ((delegate* unmanaged<IMFDXGIDeviceManagerSource*, uint>)(lpVtbl[2]))((IMFDXGIDeviceManagerSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFDXGIDeviceManagerSource.xml' path='doc/member[@name="IMFDXGIDeviceManagerSource.GetManager"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetManager(IMFDXGIDeviceManager** ppManager)

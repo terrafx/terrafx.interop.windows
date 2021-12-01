@@ -5,19 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CHANGER_EXCHANGE_MEDIUM.xml' path='doc/member[@name="CHANGER_EXCHANGE_MEDIUM"]/*' />
 public partial struct CHANGER_EXCHANGE_MEDIUM
 {
+    /// <include file='CHANGER_EXCHANGE_MEDIUM.xml' path='doc/member[@name="CHANGER_EXCHANGE_MEDIUM.Transport"]/*' />
     public CHANGER_ELEMENT Transport;
 
+    /// <include file='CHANGER_EXCHANGE_MEDIUM.xml' path='doc/member[@name="CHANGER_EXCHANGE_MEDIUM.Source"]/*' />
     public CHANGER_ELEMENT Source;
 
+    /// <include file='CHANGER_EXCHANGE_MEDIUM.xml' path='doc/member[@name="CHANGER_EXCHANGE_MEDIUM.Destination1"]/*' />
     public CHANGER_ELEMENT Destination1;
 
+    /// <include file='CHANGER_EXCHANGE_MEDIUM.xml' path='doc/member[@name="CHANGER_EXCHANGE_MEDIUM.Destination2"]/*' />
     public CHANGER_ELEMENT Destination2;
 
+    /// <include file='CHANGER_EXCHANGE_MEDIUM.xml' path='doc/member[@name="CHANGER_EXCHANGE_MEDIUM.Flip1"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Flip1;
 
+    /// <include file='CHANGER_EXCHANGE_MEDIUM.xml' path='doc/member[@name="CHANGER_EXCHANGE_MEDIUM.Flip2"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Flip2;
 }

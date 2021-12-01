@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SID_AND_ATTRIBUTES">
+    <summary>
+      <para>The <b>SID_AND_ATTRIBUTES</b> structure represents a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) and its attributes. SIDs are used to uniquely identify users or groups.</para>
+    </summary>
+    <remarks>
+      <para>A group is represented by a SID. SIDs have attributes that indicate whether they are currently enabled, disabled, or mandatory. SIDs also indicate how these attributes are used. A <b>SID_AND_ATTRIBUTES</b> structure can represent a SID whose attributes change frequently. For example, <b>SID_AND_ATTRIBUTES</b> is used to represent groups in the <see cref="TOKEN_GROUPS" /> structure.</para>
+    </remarks>
+    <seealso cref="SID" />
+    <seealso cref="TOKEN_GROUPS" />
+    <seealso cref="TOKEN_USER" />
+  </member>
+  <member name="SID_AND_ATTRIBUTES.Sid">
+    <summary>
+      <para>A pointer to a <see cref="SID" /> structure.</para>
+    </summary>
+  </member>
+  <member name="SID_AND_ATTRIBUTES.Attributes">
+    <summary>
+      <para>Specifies attributes of the SID. This value contains up to 32 one-bit flags. Its meaning depends on the definition and use of the SID.</para>
+    </summary>
+  </member>
+</doc>

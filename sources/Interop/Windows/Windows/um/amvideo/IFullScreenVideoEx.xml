@@ -1,0 +1,812 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFullScreenVideoEx.CountModes">
+    <summary>
+      <para>The <code>CountModes</code> method retrieves the number of display modes that the Full Screen Renderer supports.</para>
+    </summary>
+    <param name="pModes">
+      <para>Pointer to the returned mode count.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.GetAcceleratorTable">
+    <summary>
+      <para>The <code>GetAcceleratorTable</code> method retrieves the accelerator table currently being used to translate keyboard messages. The Full Screen Renderer filter does not support this method.</para>
+    </summary>
+    <param name="phwnd">
+      <para>Pointer to a variable that receives a window handle. The window receives translated messages.</para>
+    </param>
+    <param name="phAccel">
+      <para>Pointer to a variable that receives a handle to the accelerator table.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.GetCaption">
+    <summary>
+      <para>The <code>GetCaption</code> method retrieves the caption associated with the full-screen window.</para>
+    </summary>
+    <param name="pstrCaption">
+      <para>Pointer to a <b>BSTR</b> that receives the caption.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caption is visible when the window is minimized.</para>
+      <para>The caller must release the returned string, by calling the <b>SysFreeString</b> function.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.GetClipFactor">
+    <summary>
+      <para>The <code>GetClipFactor</code> method retrieves the clip factor, which determines how much of the video the Full Screen Renderer is allowed to clip. For example, if the clip factor is 25, the Full Screen Renderer can clip up to 25% of the video.</para>
+    </summary>
+    <param name="pClipFactor">
+      <para>Pointer to a variable the receives the clip factor.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.GetCurrentMode">
+    <summary>
+      <para>The <code>GetCurrentMode</code> method retrieves the current display mode.</para>
+    </summary>
+    <param name="pMode">
+      <para>Pointer to a variable that receives the index of the current video mode. Pass this index to the <see cref="IFullScreenVideoEx.GetModeInfo" /> method to obtain information about this mode, including the width, height, and bit depth.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The filter did not load DirectDraw.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.GetMessageDrain">
+    <summary>
+      <para>The <code>GetMessageDrain</code> method retrieves the window that receives mouse and keyboard messages, if any.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Pointer to a variable that receives the handle of the window. If no window has been designated to receive messages, this parameter receives the value <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is equivalent to the <see cref="IVideoWindow.get_MessageDrain" /> method.</para>
+      <para>The Full Screen video renderer posts all mouse and keyboard messages to the window designated as a message drain. The exact list of messages that are posted is the same as the list given in <see cref="IVideoWindow.put_MessageDrain" />.</para>
+      <para>Applications do not need to use this method. Use the <see cref="IVideoWindow.get_MessageDrain" /> method on the Filter Graph Manager instead.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.GetModeInfo">
+    <summary>
+      <para>The <code>GetModeInfo</code> method retrieves information about a specified display mode supported by the Full Screen Renderer filter.</para>
+    </summary>
+    <param name="Mode">
+      <para>Index of the display mode.</para>
+    </param>
+    <param name="pWidth">
+      <para>Pointer to a variable that receives the width of the display mode, in pixels.</para>
+    </param>
+    <param name="pHeight">
+      <para>Pointer to a variable that receives the height of the display mode, in pixels.</para>
+    </param>
+    <param name="pDepth">
+      <para>Pointer to a variable that receives the bit depth of the display mode.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Index out of range.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified display mode is not available and is disabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Display modes are indexed from zero. The <see cref="IFullScreenVideoEx.CountModes" /> method returns the number of modes.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.GetMonitor">
+    <summary>
+      <para>The <code>GetMonitor</code> method queries which monitor the Full Screen Renderer is using. The Full Screen Renderer only supports the primary monitor, so the returned value is always zero.</para>
+    </summary>
+    <param name="Monitor">
+      <para>Pointer to a variable that receives the index of the monitor.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.HideOnDeactivate">
+    <summary>
+      <para>The <code>HideOnDeactivate</code> method . Depending on the setting, the full-screen video window is either minimized or hidden. If it is minimized, it appears as an icon in the task bar; otherwise, it does not.</para>
+    </summary>
+    <param name="Hide">
+      <para>Value that specifies the behavior when the application is deactivated. Set to OATRUE to hide the icon; set to OAFALSE to display the icon.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OATRUE</description>
+          <description>Hide the video window.</description>
+        </item>
+        <item>
+          <description>OAFALSE</description>
+          <description>Minimize the video window. (Default)</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.IsHideOnDeactivate">
+    <summary>
+      <para>The <code>IsHideOnDeactivate</code> method indicates the behavior when the user switches to another application. Depending on the setting, the full-screen video window is either minimized or hidden. If it is minimized, it appears as an icon in the task bar; otherwise, it does not.</para>
+    </summary>
+    <returns>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The video window is minimized. (Default)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The video window is hidden.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.IsKeepPixelAspectRatio">
+    <summary>
+      <para>The <code>IsKeepPixelAspectRatio</code> method queries whether the pixel aspect ratio is maintained. The Full Screen Renderer filter does not support this method; it always maintains the pixel aspect ratio.</para>
+    </summary>
+    <param name="pKeepAspect">
+      <para>Pointer to a variable that receives the value OATRUE or OAFALSE.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.IsModeAvailable">
+    <summary>
+      <para>The <code>IsModeAvailable</code> method queries whether a specified display mode is available.</para>
+    </summary>
+    <param name="Mode">
+      <para>Index of the display mode.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Index out of range.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The display mode is not available.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The display mode is available.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The Full Screen Renderer supports a static set of display modes. However, the video card on the user's system might not support every mode. If a particular display mode is not supported by the video card, this method returns S_FALSE. Even if a particular mode is available, it will not necessarily be used for video playback. The mode must also be compatible with the filters in the filter graph.</para>
+      <para>You can disable a display mode by calling the <see cref="IFullScreenVideoEx.SetEnabled" /> method. The Full Screen Renderer will not use a disabled mode, even if the video card supports it.</para>
+      <para>Display modes are indexed from zero. The <see cref="IFullScreenVideoEx.CountModes" /> method returns the number of modes.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.IsModeEnabled">
+    <summary>
+      <para>The <code>IsModeEnabled</code> method queries whether a specified display mode is enabled.</para>
+    </summary>
+    <param name="Mode">
+      <para>Index of the display mode to query.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Index out of range.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The display mode is disabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The display mode is enabled.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The Full Screen Renderer supports a static set of display modes. By default, every mode is enabled. You can enable or disable a display mode by calling the <see cref="IFullScreenVideoEx.SetEnabled" />. The <b>IsEnabled</b> method retrieves the current setting for the specified mode.</para>
+      <para>The video card on the user's system might not support every mode. The Full Screen Renderer will not use a mode that the video card does not support, even if that mode is enabled. To determine whether the card supports a particular mode, call the <see cref="IFullScreenVideoEx.IsModeAvailable" /> method. If a mode is disabled, the Full Screen Renderer will not use it, even if the card supports it.</para>
+      <para>Display modes are indexed from zero. The <see cref="IFullScreenVideoEx.CountModes" /> method returns the number of modes.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.KeepPixelAspectRatio">
+    <summary>
+      <para>The <code>KeepPixelAspectRatio</code> method specifies whether to maintain the pixel aspect ratio. The Full Screen Renderer filter does not support this method; it always maintains the pixel aspect ratio.</para>
+    </summary>
+    <param name="KeepAspect">
+      <para>Specifies whether to maintain the aspect ratio. The value must be OATRUE or OAFALSE.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.SetAcceleratorTable">
+    <summary>
+      <para>The <code>SetAcceleratorTable</code> method specifies an accelerator table that will be used to translate keyboard messages. The Full Screen Renderer filter does not support this method.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Handle of the window that will receive the translated messages.</para>
+    </param>
+    <param name="hAccel">
+      <para>Handle to the accelerator table.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.SetCaption">
+    <summary>
+      <para>The <code>SetCaption</code> method sets the caption associated with the full-screen window.</para>
+    </summary>
+    <param name="strCaption">
+      <para>String containing the caption.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caption is visible when the window is minimized.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.SetClipFactor">
+    <summary>
+      <para>The <code>SetClipFactor</code> method specifies the clip factor, which determines how much of the video the Full Screen Renderer is allowed to clip.</para>
+      <para>For example, suppose the display mode is 320 x 200 and the video is 352 x 288 pixels. Assuming the decoder cannot shrink the video, the display will clip about 25 percent of the image. The clip factor specifies the upper range that is permitted. The default value is 25%.</para>
+    </summary>
+    <param name="ClipFactor">
+      <para>Specifies the maximum allowable amount of the image to clip. The value is expressed as a percentage from 0 to 100.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>E_INVALIDARG</description>
+          <description>Invalid argument.</description>
+        </item>
+        <item>
+          <description>S_OK</description>
+          <description>Success.</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.SetDefault">
+    <summary>
+      <para>The <code>SetDefault</code> method saves the current settings.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>Normally, the properties set through this interface apply only to the current instance of the Full Screen Renderer. Calling this method saves the current values as the global default. This method persists the following information:</para>
+      <list type="bullet">
+        <item>
+          <description>The clip factor.</description>
+        </item>
+        <item>
+          <description>The enabled flag for each display mode.</description>
+        </item>
+      </list>
+      <para>It does not persist the caption or the hide-when-deactivated flag.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+    <seealso cref="IFullScreenVideoEx.HideOnDeactivate" />
+    <seealso cref="IFullScreenVideoEx.SetCaption" />
+    <seealso cref="IFullScreenVideoEx.SetClipFactor" />
+    <seealso cref="IFullScreenVideoEx.SetEnabled" />
+  </member>
+  <member name="IFullScreenVideoEx.SetEnabled">
+    <summary>
+      <para>The <code>SetEnabled</code> method enables or disables a specified display mode.</para>
+    </summary>
+    <param name="Mode">
+      <para>Index of the display mode to enable or disable.</para>
+    </param>
+    <param name="bEnabled">
+      <para>Specifies one of the following Boolean values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>OATRUE</b>
+          </description>
+          <description>
+            <para>Enable the specified display mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>OAFALSE</b>
+          </description>
+          <description>
+            <para>Disable the specified display mode.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>E_INVALIDARG</description>
+          <description>Invalid argument.</description>
+        </item>
+        <item>
+          <description>S_OK</description>
+          <description>Success.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The Full Screen Renderer supports a static set of display modes. By default, every mode is enabled. You can use this method to enable or disable a particular display mode. The video card on the user's system might not support every mode. The Full Screen Renderer will not use a mode that the video card does not support, even if that mode is enabled. To determine whether the card supports a particular mode, call the <see cref="IFullScreenVideoEx.IsModeAvailable" /> method. If a mode is disabled, the Full Screen Renderer will not use it, even if the card supports it.</para>
+      <para>Display modes are indexed from zero. The <see cref="IFullScreenVideoEx.CountModes" /> method returns the number of modes. To retrieve the width, height, and bit depth of a particular display mode, call the <see cref="IFullScreenVideoEx.GetModeInfo" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.SetMessageDrain">
+    <summary>
+      <para>The <code>SetMessageDrain</code> method specifies a window to receive mouse and keyboard messages from the video window.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Specifies a handle to the message-drain window.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>This method is equivalent to the <see cref="IVideoWindow.put_MessageDrain" /> method.</para>
+      <para>The Full Screen video renderer posts all mouse and keyboard messages to the window designated as a message drain. The exact list of messages that are posted is the same as the list given in <b>put_MessageDrain</b>.</para>
+      <para>Applications do not need to use this method. Instead, call the Filter Graph Manager's <b>put_MessageDrain</b> method before switching to full-screen mode. The Filter Graph Manager automatically sets the same message drain on the renderer that it selects for full-screen mode.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx.SetMonitor">
+    <summary>
+      <para>The <code>SetMonitor</code> method specifies which monitor to use. The Full Screen Renderer only supports the primary monitor, however, so this method is not useful in the current implementation.</para>
+    </summary>
+    <param name="Monitor">
+      <para>Specifies the index of the monitor to use. Must be zero in the current implementation.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFullScreenVideoEx Interface" />
+  </member>
+  <member name="IFullScreenVideoEx">
+    <summary>
+      <para>The <code>IFullScreenVideoEx</code> interface is implemented on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/full-screen-renderer-filter">Full Screen Renderer</a> filter, which provides full-screen video rendering on older hardware. Newer video cards can stretch the video efficiently enough that the Full Screen Renderer is not required. Therefore, both the filter and this interface are now deprecated.</para>
+    </summary>
+  </member>
+</doc>

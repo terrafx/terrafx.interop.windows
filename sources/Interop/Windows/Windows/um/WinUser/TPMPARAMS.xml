@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TPMPARAMS">
+    <summary>
+      <para>Contains extended parameters for the <see cref="TrackPopupMenuEx" /> function.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/menus">Menus</seealso>
+    <seealso cref="TrackPopupMenuEx" />
+  </member>
+  <member name="TPMPARAMS.cbSize">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The size of structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="TPMPARAMS.rcExclude">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>The rectangle to be excluded when positioning the window, in screen coordinates.</para>
+    </summary>
+  </member>
+</doc>

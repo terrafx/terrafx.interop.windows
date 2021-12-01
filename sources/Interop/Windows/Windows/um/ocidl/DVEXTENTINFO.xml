@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVEXTENTINFO">
+    <summary>
+      <para>Represents the sizing data used in <see cref="IViewObjectEx.GetNaturalExtent" />.</para>
+    </summary>
+    <seealso cref="DVEXTENTMODE" />
+    <seealso cref="IViewObjectEx.GetNaturalExtent" />
+  </member>
+  <member name="DVEXTENTINFO.cb">
+    <summary>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="DVEXTENTINFO.dwExtentMode">
+    <summary>
+      <para>Indicates whether the sizing mode is content or integral sizing. See the <see cref="DVEXTENTMODE" /> enumeration for possible values.</para>
+    </summary>
+  </member>
+  <member name="DVEXTENTINFO.sizelProposed">
+    <summary>
+      <para>The proposed size in content sizing or the preferred size in integral sizing.</para>
+    </summary>
+  </member>
+</doc>

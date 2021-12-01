@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHELLBROWSERSHOWCONTROL.xml' path='doc/member[@name="SHELLBROWSERSHOWCONTROL"]/*' />
 public enum SHELLBROWSERSHOWCONTROL
 {
+    /// <include file='SHELLBROWSERSHOWCONTROL.xml' path='doc/member[@name="SHELLBROWSERSHOWCONTROL.SBSC_HIDE"]/*' />
     SBSC_HIDE = 0,
+
+    /// <include file='SHELLBROWSERSHOWCONTROL.xml' path='doc/member[@name="SHELLBROWSERSHOWCONTROL.SBSC_SHOW"]/*' />
     SBSC_SHOW = 1,
+
+    /// <include file='SHELLBROWSERSHOWCONTROL.xml' path='doc/member[@name="SHELLBROWSERSHOWCONTROL.SBSC_TOGGLE"]/*' />
     SBSC_TOGGLE = 2,
+
+    /// <include file='SHELLBROWSERSHOWCONTROL.xml' path='doc/member[@name="SHELLBROWSERSHOWCONTROL.SBSC_QUERY"]/*' />
     SBSC_QUERY = 3,
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BATTERY_REPORTING_SCALE.xml' path='doc/member[@name="BATTERY_REPORTING_SCALE"]/*' />
 public partial struct BATTERY_REPORTING_SCALE
 {
+    /// <include file='BATTERY_REPORTING_SCALE.xml' path='doc/member[@name="BATTERY_REPORTING_SCALE.Granularity"]/*' />
     [NativeTypeName("DWORD")]
     public uint Granularity;
 
+    /// <include file='BATTERY_REPORTING_SCALE.xml' path='doc/member[@name="BATTERY_REPORTING_SCALE.Capacity"]/*' />
     [NativeTypeName("DWORD")]
     public uint Capacity;
 }

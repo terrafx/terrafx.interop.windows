@@ -10,6 +10,7 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRImagePresenterExclModeConfig.xml' path='doc/member[@name="IVMRImagePresenterExclModeConfig"]/*' />
 [Guid("E6F7CE40-4673-44F1-8F77-5499D68CB4EA")]
 [NativeTypeName("struct IVMRImagePresenterExclModeConfig : IVMRImagePresenterConfig")]
 [NativeInheritance("IVMRImagePresenterConfig")]
@@ -17,6 +18,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
         return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, Guid*, void**, int>)(lpVtbl[0]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
         return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint>)(lpVtbl[1]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
         return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint>)(lpVtbl[2]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IVMRImagePresenterConfig.SetRenderingPrefs" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetRenderingPrefs([NativeTypeName("DWORD")] uint dwRenderFlags)
@@ -47,6 +52,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
         return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint, int>)(lpVtbl[3]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), dwRenderFlags);
     }
 
+    /// <inheritdoc cref="IVMRImagePresenterConfig.GetRenderingPrefs" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRenderingPrefs([NativeTypeName("DWORD *")] uint* dwRenderFlags)
@@ -54,6 +60,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
         return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint*, int>)(lpVtbl[4]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), dwRenderFlags);
     }
 
+    /// <include file='IVMRImagePresenterExclModeConfig.xml' path='doc/member[@name="IVMRImagePresenterExclModeConfig.SetXlcModeDDObjAndPrimarySurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetXlcModeDDObjAndPrimarySurface([NativeTypeName("LPDIRECTDRAW7")] IDirectDraw7* lpDDObj, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* lpPrimarySurf)
@@ -61,6 +68,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
         return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, IDirectDraw7*, IDirectDrawSurface7*, int>)(lpVtbl[5]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), lpDDObj, lpPrimarySurf);
     }
 
+    /// <include file='IVMRImagePresenterExclModeConfig.xml' path='doc/member[@name="IVMRImagePresenterExclModeConfig.GetXlcModeDDObjAndPrimarySurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetXlcModeDDObjAndPrimarySurface([NativeTypeName("LPDIRECTDRAW7 *")] IDirectDraw7** lpDDObj, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lpPrimarySurf)

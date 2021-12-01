@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSensorActivityReport.xml' path='doc/member[@name="IMFSensorActivityReport"]/*' />
 [Guid("3E8C4BE1-A8C2-4528-90DE-2851BDE5FEAD")]
 [NativeTypeName("struct IMFSensorActivityReport : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
         return ((delegate* unmanaged<IMFSensorActivityReport*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
         return ((delegate* unmanaged<IMFSensorActivityReport*, uint>)(lpVtbl[1]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
         return ((delegate* unmanaged<IMFSensorActivityReport*, uint>)(lpVtbl[2]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSensorActivityReport.xml' path='doc/member[@name="IMFSensorActivityReport.GetFriendlyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFriendlyName([NativeTypeName("LPWSTR")] ushort* FriendlyName, [NativeTypeName("ULONG")] uint cchFriendlyName, [NativeTypeName("ULONG *")] uint* pcchWritten)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
         return ((delegate* unmanaged<IMFSensorActivityReport*, ushort*, uint, uint*, int>)(lpVtbl[3]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), FriendlyName, cchFriendlyName, pcchWritten);
     }
 
+    /// <include file='IMFSensorActivityReport.xml' path='doc/member[@name="IMFSensorActivityReport.GetSymbolicLink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("ULONG")] uint cchSymbolicLink, [NativeTypeName("ULONG *")] uint* pcchWritten)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
         return ((delegate* unmanaged<IMFSensorActivityReport*, ushort*, uint, uint*, int>)(lpVtbl[4]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
     }
 
+    /// <include file='IMFSensorActivityReport.xml' path='doc/member[@name="IMFSensorActivityReport.GetProcessCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetProcessCount([NativeTypeName("ULONG *")] uint* pcCount)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
         return ((delegate* unmanaged<IMFSensorActivityReport*, uint*, int>)(lpVtbl[5]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), pcCount);
     }
 
+    /// <include file='IMFSensorActivityReport.xml' path='doc/member[@name="IMFSensorActivityReport.GetProcessActivity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetProcessActivity([NativeTypeName("ULONG")] uint Index, IMFSensorProcessActivity** ppProcessActivity)

@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1">
+    <summary>
+      <para>The <b>CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1</b> structure defines a resource attribute that is defined in continuous memory for persistence within a serialized security descriptor.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.Name">
+    <summary>
+      <para>A value that indicates an offset from the beginning of the <b>CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1</b> structure to a string of Unicode characters that contain the name of the claim security attribute. The string must be at least 4 bytes in length.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.ValueType">
+    <summary>
+      <para>A union tag value that indicates the type of information being referred to by the <b>Values</b> member. The <b>Values</b> member will contain an array of offsets from the beginning of the <b>CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1</b> structure to each value. The <b>ValueType</b> member must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CLAIM_SECURITY_ATTRIBUTE_TYPE_INT64</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <b>Values</b> member refers to an array of offsets to <b>LONG64</b> values.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CLAIM_SECURITY_ATTRIBUTE_TYPE_UINT64</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <b>Values</b> member refers to an array of offsets to <b>ULONG64</b> values.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CLAIM_SECURITY_ATTRIBUTE_TYPE_STRING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0003</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <b>Values</b> member refers to an array of offsets to Unicode character string values.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CLAIM_SECURITY_ATTRIBUTE_TYPE_OCTET_STRING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <b>Values</b> member refers to an array of <see cref="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE" /> values.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.Reserved">
+    <summary>
+      <para>This member is currently reserved and must be set to zero when sent and must be ignored when received.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.Flags">
+    <summary>
+      <para>The claim security attribute flags must be zero or a combination of one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CLAIM_SECURITY_ATTRIBUTE_NON_INHERITABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>This claim security attribute is  not inherited across processes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CLAIM_SECURITY_ATTRIBUTE_VALUE_CASE_SENSITIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The value of the claim security attribute is case sensitive. This flag is valid for values that contain string types.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CLAIM_SECURITY_ATTRIBUTE_USE_FOR_DENY_ONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The claim security attribute is considered only for deny <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entries</a> (ACEs).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CLAIM_SECURITY_ATTRIBUTE_DISABLED_BY_DEFAULT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The claim security attribute is disabled by default.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CLAIM_SECURITY_ATTRIBUTE_DISABLED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The claim security attribute is disabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CLAIM_SECURITY_ATTRIBUTE_MANDATORY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The claim security attribute is mandatory.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.ValueCount">
+    <summary>
+      <para>The number of values contained in the <b>Values</b> member.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.Values">
+    <summary>
+      <para>An array of offsets from the beginning of the CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1 structure. Each offset indicates the location of a claim security attribute value of the type specified in the <b>ValueType</b> member.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.Values.pInt64">
+    <summary>
+      <para>Pointer to an array of <b>ValueCount</b> members that is an offset from the beginning of the structure to a <b>LONG64</b> of type CLAIM_SECURITY_ATTRIBUTE_TYPE_INT64.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.Values.pUint64">
+    <summary>
+      <para>Pointer to an array of <b>ValueCount</b> members where each member is an offset from the beginning of the structure to a <b>ULONG64</b>  of type CLAIM_SECURITY_ATTRIBUTE_TYPE_UINT64.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.Values.ppString">
+    <summary>
+      <para>Pointer to an array of <b>ValueCount</b> members where each member is an offset from the beginning of the structure to a <b>PWSTR</b>  of type CLAIM_SECURITY_ATTRIBUTE_TYPE_STRING.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.Values.pFqbn">
+    <summary>
+      <para>Pointer to an array of <b>ValueCount</b> members where each member is an offset from the beginning of the structure to the fully qualified binary name value of type <see cref="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE" />.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.Values.pOctetString">
+    <summary>
+      <para>Pointer to an array of <b>ValueCount</b> members where each member is an offset from the beginning of the structure to a <b>LONG64</b> octet string of type <see cref="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE" />.</para>
+    </summary>
+  </member>
+</doc>

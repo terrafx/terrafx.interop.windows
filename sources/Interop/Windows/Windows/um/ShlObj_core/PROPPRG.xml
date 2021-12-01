@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPPRG">
+    <summary>
+      <para>This structure contains information from a .pif file. It is used by <see cref="PifMgr_GetProperties" />.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.flPrg">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Flags that describe how the program will run.</para>
+      <h4>PRG_DEFAULT</h4>
+      <para>Use the default options.</para>
+      <h4>PRG_CLOSEONEXIT</h4>
+      <para>Close the application on exit.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.flPrgInit">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Flags that specify the initial conditions for the application.</para>
+      <h4>PRGINIT_DEFAULT</h4>
+      <para>Use the default options.</para>
+      <h4>PRGINIT_MINIMIZED</h4>
+      <para>The application should be minimized.</para>
+      <h4>PRGINIT_MAXIMIZED</h4>
+      <para>The application should be maximized.</para>
+      <h4>PRGINIT_REALMODE</h4>
+      <para>The application should run in real mode.</para>
+      <h4>PRGINIT_REALMODESILENT</h4>
+      <para>The application should run in real mode without being prompted.</para>
+      <h4>PRGINIT_AMBIGUOUSPIF</h4>
+      <para>The data is ambiguous.</para>
+      <h4>PRGINIT_NOPIF</h4>
+      <para>No .pif file was found.</para>
+      <h4>PRGINIT_DEFAULTPIF</h4>
+      <para>A default .pif was found.</para>
+      <h4>PRGINIT_INFSETTINGS</h4>
+      <para>A .inf file was found.</para>
+      <h4>PRGINIT_INHIBITPIF</h4>
+      <para>The .inf file indicates that a .pif file should not be created.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.achTitle">
+    <summary>
+      <para>Type: <b>__wchar_t</b></para>
+      <para>A null-terminated string that contains the title.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.achCmdLine">
+    <summary>
+      <para>Type: <b>__wchar_t</b></para>
+      <para>A null-terminated string that contains the command line, including arguments.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.achWorkDir">
+    <summary>
+      <para>Type: <b>__wchar_t</b></para>
+      <para>A null-terminated string that contains the working directory.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.wHotKey">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>The key code of the .pif file's hotkey.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.achIconFile">
+    <summary>
+      <para>Type: <b>__wchar_t</b></para>
+      <para>A null-terminated string that contains the name of the file that contains the icon.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.wIconIndex">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>The index of the icon in the file specified by <b>achIconFile</b>.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.dwEnhModeFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.dwRealModeFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that specify the real mode options.</para>
+      <h4>RMOPT_MOUSE</h4>
+      <para>Requires a real-mode mouse.</para>
+      <h4>RMOPT_EMS</h4>
+      <para>Requires expanded memory.</para>
+      <h4>RMOPT_CDROM</h4>
+      <para>Requires CD-ROM support.</para>
+      <h4>RMOPT_NETWORK</h4>
+      <para>Requires network support.</para>
+      <h4>RMOPT_DISKLOCK</h4>
+      <para>Requires disk locking.</para>
+      <h4>RMOPT_PRIVATECFG</h4>
+      <para>Use a private config.sys or autoexec.bat file.</para>
+      <h4>RMOPT_VESA</h4>
+      <para>Requires a VESA driver.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.achOtherFile">
+    <summary>
+      <para>Type: <b>__wchar_t</b></para>
+      <para>A null-terminated string that contains the name of the "other" file in the directory.</para>
+    </summary>
+  </member>
+  <member name="PROPPRG.achPIFFile">
+    <summary>
+      <para>Type: <b>__wchar_t</b></para>
+      <para>A null-terminated string that contains the name of the .pif file in the directory.</para>
+    </summary>
+  </member>
+</doc>

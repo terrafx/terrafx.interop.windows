@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_TIMEOUT_TYPE">
+    <summary>
+      <para>Contains values used to specify the timeout for the <see cref="IEnumWbemClassObject.Next" /> method.</para>
+    </summary>
+    <seealso cref="IEnumWbemClassObject.Next" />
+  </member>
+  <member name="WBEM_TIMEOUT_TYPE.WBEM_NO_WAIT">
+    <summary></summary>
+  </member>
+  <member name="WBEM_TIMEOUT_TYPE.WBEM_INFINITE">
+    <summary></summary>
+  </member>
+</doc>

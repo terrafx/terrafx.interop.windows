@@ -7,24 +7,32 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION
 {
+    /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.IoReadBytesLimit"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong IoReadBytesLimit;
 
+    /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.IoWriteBytesLimit"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong IoWriteBytesLimit;
 
+    /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.PerJobUserTimeLimit"]/*' />
     public LARGE_INTEGER PerJobUserTimeLimit;
 
+    /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.JobMemoryLimit"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong JobMemoryLimit;
 
+    /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.RateControlTolerance"]/*' />
     public JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlTolerance;
 
+    /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.RateControlToleranceInterval"]/*' />
     public JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL RateControlToleranceInterval;
 
+    /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.LimitFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint LimitFlags;
 }

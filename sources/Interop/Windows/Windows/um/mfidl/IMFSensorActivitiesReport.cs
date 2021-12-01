@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSensorActivitiesReport.xml' path='doc/member[@name="IMFSensorActivitiesReport"]/*' />
 [Guid("683F7A5E-4A19-43CD-B1A9-DBF4AB3F7777")]
 [NativeTypeName("struct IMFSensorActivitiesReport : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
         return ((delegate* unmanaged<IMFSensorActivitiesReport*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
         return ((delegate* unmanaged<IMFSensorActivitiesReport*, uint>)(lpVtbl[1]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
         return ((delegate* unmanaged<IMFSensorActivitiesReport*, uint>)(lpVtbl[2]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSensorActivitiesReport.xml' path='doc/member[@name="IMFSensorActivitiesReport.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCount([NativeTypeName("ULONG *")] uint* pcCount)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
         return ((delegate* unmanaged<IMFSensorActivitiesReport*, uint*, int>)(lpVtbl[3]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), pcCount);
     }
 
+    /// <include file='IMFSensorActivitiesReport.xml' path='doc/member[@name="IMFSensorActivitiesReport.GetActivityReport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetActivityReport([NativeTypeName("ULONG")] uint Index, IMFSensorActivityReport** sensorActivityReport)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
         return ((delegate* unmanaged<IMFSensorActivitiesReport*, uint, IMFSensorActivityReport**, int>)(lpVtbl[4]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), Index, sensorActivityReport);
     }
 
+    /// <include file='IMFSensorActivitiesReport.xml' path='doc/member[@name="IMFSensorActivitiesReport.GetActivityReportByDeviceName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] ushort* SymbolicName, IMFSensorActivityReport** sensorActivityReport)

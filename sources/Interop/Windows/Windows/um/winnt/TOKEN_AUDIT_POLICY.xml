@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TOKEN_AUDIT_POLICY">
+    <summary>
+      <para>The <b>TOKEN_AUDIT_POLICY</b> structure specifies the per user audit policy for a token.</para>
+    </summary>
+    <seealso cref="TOKEN_INFORMATION_CLASS" />
+  </member>
+  <member name="TOKEN_AUDIT_POLICY.PerUserPolicy">
+    <summary>
+      <para>Specifies the per user audit policy for the token.</para>
+    </summary>
+  </member>
+</doc>

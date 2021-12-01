@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_REGION_FLAG.xml' path='doc/member[@name="SCM_REGION_FLAG"]/*' />
 public enum SCM_REGION_FLAG
 {
+    /// <include file='SCM_REGION_FLAG.xml' path='doc/member[@name="SCM_REGION_FLAG.ScmRegionFlagNone"]/*' />
     ScmRegionFlagNone = 0x0,
+
+    /// <include file='SCM_REGION_FLAG.xml' path='doc/member[@name="SCM_REGION_FLAG.ScmRegionFlagLabel"]/*' />
     ScmRegionFlagLabel = 0x1,
 }

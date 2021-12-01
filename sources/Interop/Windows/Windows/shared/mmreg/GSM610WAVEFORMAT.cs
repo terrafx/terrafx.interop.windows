@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GSM610WAVEFORMAT.xml' path='doc/member[@name="GSM610WAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct GSM610WAVEFORMAT
 {
+    /// <include file='GSM610WAVEFORMAT.xml' path='doc/member[@name="GSM610WAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='GSM610WAVEFORMAT.xml' path='doc/member[@name="GSM610WAVEFORMAT.wSamplesPerBlock"]/*' />
     [NativeTypeName("WORD")]
     public ushort wSamplesPerBlock;
 }

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_INK_POINT">
+    <summary>
+      <para>Represents a point, radius pair that makes up part of a <see cref="D2D1_INK_BEZIER_SEGMENT" />.</para>
+    </summary>
+  </member>
+  <member name="D2D1_INK_POINT.x">
+    <summary>
+      <para>The x-coordinate of the point.</para>
+    </summary>
+  </member>
+  <member name="D2D1_INK_POINT.y">
+    <summary>
+      <para>The y-coordinate of the point.</para>
+    </summary>
+  </member>
+  <member name="D2D1_INK_POINT.radius">
+    <summary>
+      <para>The radius of this point. Corresponds to the width of the ink stroke at this point in the stroke.</para>
+    </summary>
+  </member>
+</doc>

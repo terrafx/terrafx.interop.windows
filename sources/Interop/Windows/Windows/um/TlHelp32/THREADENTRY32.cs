@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='THREADENTRY32.xml' path='doc/member[@name="THREADENTRY32"]/*' />
 public partial struct THREADENTRY32
 {
+    /// <include file='THREADENTRY32.xml' path='doc/member[@name="THREADENTRY32.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='THREADENTRY32.xml' path='doc/member[@name="THREADENTRY32.cntUsage"]/*' />
     [NativeTypeName("DWORD")]
     public uint cntUsage;
 
+    /// <include file='THREADENTRY32.xml' path='doc/member[@name="THREADENTRY32.th32ThreadID"]/*' />
     [NativeTypeName("DWORD")]
     public uint th32ThreadID;
 
+    /// <include file='THREADENTRY32.xml' path='doc/member[@name="THREADENTRY32.th32OwnerProcessID"]/*' />
     [NativeTypeName("DWORD")]
     public uint th32OwnerProcessID;
 
+    /// <include file='THREADENTRY32.xml' path='doc/member[@name="THREADENTRY32.tpBasePri"]/*' />
     [NativeTypeName("LONG")]
     public int tpBasePri;
 
+    /// <include file='THREADENTRY32.xml' path='doc/member[@name="THREADENTRY32.tpDeltaPri"]/*' />
     [NativeTypeName("LONG")]
     public int tpDeltaPri;
 
+    /// <include file='THREADENTRY32.xml' path='doc/member[@name="THREADENTRY32.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

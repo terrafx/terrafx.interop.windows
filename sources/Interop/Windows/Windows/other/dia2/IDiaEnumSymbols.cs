@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaEnumSymbols.xml' path='doc/member[@name="IDiaEnumSymbols"]/*' />
 [Guid("CAB72C48-443B-48F5-9B0B-42F0820AB29A")]
 [NativeTypeName("struct IDiaEnumSymbols : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
         return ((delegate* unmanaged<IDiaEnumSymbols*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumSymbols*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
         return ((delegate* unmanaged<IDiaEnumSymbols*, uint>)(lpVtbl[1]))((IDiaEnumSymbols*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
         return ((delegate* unmanaged<IDiaEnumSymbols*, uint>)(lpVtbl[2]))((IDiaEnumSymbols*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaEnumSymbols.xml' path='doc/member[@name="IDiaEnumSymbols.get__NewEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get__NewEnum(IUnknown** pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
         return ((delegate* unmanaged<IDiaEnumSymbols*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumSymbols*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaEnumSymbols.xml' path='doc/member[@name="IDiaEnumSymbols.get_Count"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
         return ((delegate* unmanaged<IDiaEnumSymbols*, int*, int>)(lpVtbl[4]))((IDiaEnumSymbols*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaEnumSymbols.xml' path='doc/member[@name="IDiaEnumSymbols.Item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaSymbol** symbol)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
         return ((delegate* unmanaged<IDiaEnumSymbols*, uint, IDiaSymbol**, int>)(lpVtbl[5]))((IDiaEnumSymbols*)Unsafe.AsPointer(ref this), index, symbol);
     }
 
+    /// <include file='IDiaEnumSymbols.xml' path='doc/member[@name="IDiaEnumSymbols.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaSymbol** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
         return ((delegate* unmanaged<IDiaEnumSymbols*, uint, IDiaSymbol**, uint*, int>)(lpVtbl[6]))((IDiaEnumSymbols*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
+    /// <include file='IDiaEnumSymbols.xml' path='doc/member[@name="IDiaEnumSymbols.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
         return ((delegate* unmanaged<IDiaEnumSymbols*, uint, int>)(lpVtbl[7]))((IDiaEnumSymbols*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <include file='IDiaEnumSymbols.xml' path='doc/member[@name="IDiaEnumSymbols.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Reset()
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
         return ((delegate* unmanaged<IDiaEnumSymbols*, int>)(lpVtbl[8]))((IDiaEnumSymbols*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaEnumSymbols.xml' path='doc/member[@name="IDiaEnumSymbols.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Clone(IDiaEnumSymbols** ppenum)

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_IssuerListInfoEx.xml' path='doc/member[@name="SecPkgContext_IssuerListInfoEx"]/*' />
 public unsafe partial struct SecPkgContext_IssuerListInfoEx
 {
+    /// <include file='SecPkgContext_IssuerListInfoEx.xml' path='doc/member[@name="SecPkgContext_IssuerListInfoEx.aIssuers"]/*' />
     [NativeTypeName("PCERT_NAME_BLOB")]
     public CRYPT_DATA_BLOB* aIssuers;
 
+    /// <include file='SecPkgContext_IssuerListInfoEx.xml' path='doc/member[@name="SecPkgContext_IssuerListInfoEx.cIssuers"]/*' />
     [NativeTypeName("DWORD")]
     public uint cIssuers;
 }

@@ -5,15 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPVALUETYPE.xml' path='doc/member[@name="SPVALUETYPE"]/*' />
 public enum SPVALUETYPE
 {
+    /// <include file='SPVALUETYPE.xml' path='doc/member[@name="SPVALUETYPE.SPDF_PROPERTY"]/*' />
     SPDF_PROPERTY = 0x1,
+
+    /// <include file='SPVALUETYPE.xml' path='doc/member[@name="SPVALUETYPE.SPDF_REPLACEMENT"]/*' />
     SPDF_REPLACEMENT = 0x2,
+
+    /// <include file='SPVALUETYPE.xml' path='doc/member[@name="SPVALUETYPE.SPDF_RULE"]/*' />
     SPDF_RULE = 0x4,
+
+    /// <include file='SPVALUETYPE.xml' path='doc/member[@name="SPVALUETYPE.SPDF_DISPLAYTEXT"]/*' />
     SPDF_DISPLAYTEXT = 0x8,
+
+    /// <include file='SPVALUETYPE.xml' path='doc/member[@name="SPVALUETYPE.SPDF_LEXICALFORM"]/*' />
     SPDF_LEXICALFORM = 0x10,
+
+    /// <include file='SPVALUETYPE.xml' path='doc/member[@name="SPVALUETYPE.SPDF_PRONUNCIATION"]/*' />
     SPDF_PRONUNCIATION = 0x20,
+
+    /// <include file='SPVALUETYPE.xml' path='doc/member[@name="SPVALUETYPE.SPDF_AUDIO"]/*' />
     SPDF_AUDIO = 0x40,
+
+    /// <include file='SPVALUETYPE.xml' path='doc/member[@name="SPVALUETYPE.SPDF_ALTERNATES"]/*' />
     SPDF_ALTERNATES = 0x80,
+
+    /// <include file='SPVALUETYPE.xml' path='doc/member[@name="SPVALUETYPE.SPDF_ALL"]/*' />
     SPDF_ALL = 0xff,
 }

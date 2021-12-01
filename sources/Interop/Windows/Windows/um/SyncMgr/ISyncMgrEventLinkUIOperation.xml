@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrEventLinkUIOperation.Init">
+    <summary>
+      <para>Enables Sync Center to provide the event to link to so <see cref="ISyncMgrUIOperation.Run" />  knows which event to operate upon.</para>
+    </summary>
+    <param name="rguidEventID">
+      <para>Type: <b>REFGUID</b></para>
+      <para>A reference to the event ID that is being stored. This parameter is the same as what is returned from the <see cref="GetEventID" /> method of the <i>pEvent</i> parameter.</para>
+    </param>
+    <param name="pEvent">
+      <para>Type: <b><see cref="ISyncMgrEvent" />*</b></para>
+      <para>A pointer to the <see cref="ISyncMgrEvent" /> object for <see cref="Run" /> to use. This is the event object that owns the link.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The event ID is the ID that the handler is given when <see cref="ReportEvent" /> is called, or is the ID provided by the handler when the event is obtained from the custom event store.</para>
+      <para>If you call <see cref="ReportEvent" />, your events will be stored only until the user logs off or until the handler is synchronized again.</para>
+      <para>The interface that is used to implement custom event stores is <see cref="ISyncMgrEventStore" />.</para>
+      <para>The <see cref="ISyncMgrEvent" /> provided in the <i>pEvent</i> parameter is not the same object that came from a custom event store.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrEventLinkUIOperation">
+    <summary>
+      <para>Provides a method that is called when event links are clicked in the sync results folder.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="ISyncMgrUIOperation" /> interface, from which it inherits.</para>
+      <para>Sync Center calls <see cref="ISyncMgrHandler.GetObject" />, specifying SYNCMGR_OBJECTID_EventLinkClick for the object ID.</para>
+    </remarks>
+  </member>
+</doc>

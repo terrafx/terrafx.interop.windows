@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxEncryptionFactory2.xml' path='doc/member[@name="IAppxEncryptionFactory2"]/*' />
 [Guid("C1B11EEE-C4BA-4AB2-A55D-D015FE8FF64F")]
 [NativeTypeName("struct IAppxEncryptionFactory2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxEncryptionFactory2 : IAppxEncryptionFactory2.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxEncryptionFactory2 : IAppxEncryptionFactory2.I
         return ((delegate* unmanaged<IAppxEncryptionFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptionFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxEncryptionFactory2 : IAppxEncryptionFactory2.I
         return ((delegate* unmanaged<IAppxEncryptionFactory2*, uint>)(lpVtbl[1]))((IAppxEncryptionFactory2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxEncryptionFactory2 : IAppxEncryptionFactory2.I
         return ((delegate* unmanaged<IAppxEncryptionFactory2*, uint>)(lpVtbl[2]))((IAppxEncryptionFactory2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxEncryptionFactory2.xml' path='doc/member[@name="IAppxEncryptionFactory2.CreateEncryptedPackageWriter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateEncryptedPackageWriter(IStream* outputStream, IStream* manifestStream, IStream* contentGroupMapStream, [NativeTypeName("const APPX_ENCRYPTED_PACKAGE_SETTINGS *")] APPX_ENCRYPTED_PACKAGE_SETTINGS* settings, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("const APPX_ENCRYPTED_EXEMPTIONS *")] APPX_ENCRYPTED_EXEMPTIONS* exemptedFiles, IAppxEncryptedPackageWriter** packageWriter)

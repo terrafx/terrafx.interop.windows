@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_ALPHA_MODE">
+    <summary>
+      <para>Identifies the alpha value, transparency behavior, of a surface.</para>
+    </summary>
+    <remarks>
+      <para>For more information about alpha mode, see <see cref="D2D1_ALPHA_MODE" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+    <seealso cref="DXGI_SWAP_CHAIN_DESC1" />
+  </member>
+  <member name="DXGI_ALPHA_MODE.DXGI_ALPHA_MODE_UNSPECIFIED">
+    <summary>
+      <para>Indicates that the transparency behavior is not specified.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ALPHA_MODE.DXGI_ALPHA_MODE_PREMULTIPLIED">
+    <summary>
+      <para>Indicates that the transparency behavior is premultiplied. Each color is first scaled by the alpha value. The alpha value itself is the same in both straight and premultiplied alpha. Typically, no color channel value is greater than the alpha channel value. If a color channel value in a premultiplied format is greater than the alpha channel, the standard source-over blending math results in an additive blend.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ALPHA_MODE.DXGI_ALPHA_MODE_STRAIGHT">
+    <summary>
+      <para>Indicates that the transparency behavior is not premultiplied. The alpha channel indicates the transparency of the color.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ALPHA_MODE.DXGI_ALPHA_MODE_IGNORE">
+    <summary>
+      <para>Indicates to ignore the transparency behavior.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ALPHA_MODE.DXGI_ALPHA_MODE_FORCE_DWORD">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile
+to a size other than 32 bits. This value is not used.</para>
+    </summary>
+  </member>
+</doc>

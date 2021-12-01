@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_STREAM_INFO">
+    <summary>
+      <para>The <b>CMSG_STREAM_INFO</b> structure is used to enable stream processing of data rather than single block processing. Stream processing is most often used when processing large messages. Stream-processed messages can originate from any serialized source such as a file on a hard disk, a server, or a CD ROM.</para>
+      <para>This structure is passed to
+the <see cref="CryptMsgOpenToEncode" /> and
+<see cref="CryptMsgOpenToDecode" /> functions.</para>
+    </summary>
+    <remarks>
+      <para>Messages can be so large that processing them all at once by storing the whole message in memory can be difficult, if not impossible. It is possible to process large messages without encountering memory limitations by streaming the data that is to be processed into manageable sized blocks. The
+<a href="https://docs.microsoft.com//windows/desktop/SecCrypto/cryptography-functions">low-level message functions</a> can be used with streaming to encode or decode a message. Any level of nesting of messages is supported when streaming to encode and streaming to decode.</para>
+      <para>The input message to be processed as a stream feeds into
+<see cref="CryptMsgUpdate" /> one block at a time, with the application determining the size of the block. As the streamed message is processed for encoding or decoding, the resulting output data is passed back to the application through an application-specified callback function that is specified by the <b>pfnStreamOutput</b> member.</para>
+      <para>No assumptions can be made about the block size of the output data because the size can vary for several reasons, such as the jitter in output block size caused by the block size for the encryption algorithm when processing an enveloped message, or when blocks that contain the message header and the SignerInfo as defined by PKCS # 7 are processed.</para>
+      <para>The size of the output block is passed to the callback function in its <i>cbData</i> parameter. The use of output data is determined in the calling application. Typically, output from stream processing will not be persisted in memory as a whole due to memory limitations; rather, it will be serialized to a disk or server file.</para>
+    </remarks>
+  </member>
+  <member name="CMSG_STREAM_INFO.cbContent">
+    <summary>
+      <para>Specifies the size, in bytes, of the content. Normal <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">Distinguished Encoding Rules</a> (DER) encoding is used unless <b>CMSG_INDEFINITE_LENGTH</b>(0xFFFFFFFF) is passed, indicating that the application is not specifying the content length. This forces the use of indefinite-length <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">Basic Encoding Rules</a> (BER) encoding.</para>
+    </summary>
+  </member>
+  <member name="CMSG_STREAM_INFO.pfnStreamOutput">
+    <summary>
+      <para>The address of a callback function used to read from and write data to a disk when processing large messages.</para>
+      <para>The callback function must have the following signature and parameters:</para>
+      <code>#include &lt;windows.h&gt;
+#include &lt;Wincrypt.h&gt;
+
+BOOL WINAPI CmsgStreamOutputCallback(
+  IN const void *pvArg,  //in
+  IN BYTE *pbData,       //in
+  IN DWORD cbData,       //in
+  IN BOOL fFinal         //in
+);
+
+</code>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>pvArg</b>
+          </description>
+          <description>
+            <para>The arguments specified by CMSG_STREAM_INFO.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>pbData</b>
+          </description>
+          <description>
+            <para>A pointer to a block of processed data that is available to the application.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>cbData</b>
+          </description>
+          <description>
+            <para>The size, in bytes, of the block of processed data at pbData.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>fFinal</b>
+          </description>
+          <description>
+            <para>Specifies that the last block of data is being processed and that this is the last time the callback will be executed.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CMSG_STREAM_INFO.pvArg">
+    <summary>
+      <para>A pointer to the argument to pass to the callback function. Typically, this is used for state data that includes the handle to a more deeply nested message (when decoding) or a less deeply nested message (when encoding).</para>
+    </summary>
+  </member>
+</doc>

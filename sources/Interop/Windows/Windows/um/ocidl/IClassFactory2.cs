@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IClassFactory2.xml' path='doc/member[@name="IClassFactory2"]/*' />
 [Guid("B196B28F-BAB4-101A-B69C-00AA00341D07")]
 [NativeTypeName("struct IClassFactory2 : IClassFactory")]
 [NativeInheritance("IClassFactory")]
@@ -16,6 +17,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface
         return ((delegate* unmanaged<IClassFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IClassFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface
         return ((delegate* unmanaged<IClassFactory2*, uint>)(lpVtbl[1]))((IClassFactory2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface
         return ((delegate* unmanaged<IClassFactory2*, uint>)(lpVtbl[2]))((IClassFactory2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IClassFactory.CreateInstance" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateInstance(IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -46,6 +51,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface
         return ((delegate* unmanaged<IClassFactory2*, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IClassFactory2*)Unsafe.AsPointer(ref this), pUnkOuter, riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IClassFactory.LockServer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT LockServer(BOOL fLock)
@@ -53,6 +59,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface
         return ((delegate* unmanaged<IClassFactory2*, BOOL, int>)(lpVtbl[4]))((IClassFactory2*)Unsafe.AsPointer(ref this), fLock);
     }
 
+    /// <include file='IClassFactory2.xml' path='doc/member[@name="IClassFactory2.GetLicInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetLicInfo(LICINFO* pLicInfo)
@@ -60,6 +67,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface
         return ((delegate* unmanaged<IClassFactory2*, LICINFO*, int>)(lpVtbl[5]))((IClassFactory2*)Unsafe.AsPointer(ref this), pLicInfo);
     }
 
+    /// <include file='IClassFactory2.xml' path='doc/member[@name="IClassFactory2.RequestLicKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RequestLicKey([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("BSTR *")] ushort** pBstrKey)
@@ -67,6 +75,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface
         return ((delegate* unmanaged<IClassFactory2*, uint, ushort**, int>)(lpVtbl[6]))((IClassFactory2*)Unsafe.AsPointer(ref this), dwReserved, pBstrKey);
     }
 
+    /// <include file='IClassFactory2.xml' path='doc/member[@name="IClassFactory2.CreateInstanceLic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CreateInstanceLic(IUnknown* pUnkOuter, IUnknown* pUnkReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("PVOID *")] void** ppvObj)

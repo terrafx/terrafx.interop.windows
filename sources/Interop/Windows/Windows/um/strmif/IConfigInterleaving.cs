@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving"]/*' />
 [Guid("BEE3D220-157B-11D0-BD23-00A0C911CE86")]
 [NativeTypeName("struct IConfigInterleaving : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
         return ((delegate* unmanaged<IConfigInterleaving*, Guid*, void**, int>)(lpVtbl[0]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
         return ((delegate* unmanaged<IConfigInterleaving*, uint>)(lpVtbl[1]))((IConfigInterleaving*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
         return ((delegate* unmanaged<IConfigInterleaving*, uint>)(lpVtbl[2]))((IConfigInterleaving*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving.put_Mode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT put_Mode(InterleavingMode mode)
@@ -46,6 +51,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
         return ((delegate* unmanaged<IConfigInterleaving*, InterleavingMode, int>)(lpVtbl[3]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), mode);
     }
 
+    /// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving.get_Mode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_Mode(InterleavingMode* pMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
         return ((delegate* unmanaged<IConfigInterleaving*, InterleavingMode*, int>)(lpVtbl[4]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), pMode);
     }
 
+    /// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving.put_Interleaving"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT put_Interleaving([NativeTypeName("const REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("const REFERENCE_TIME *")] long* prtPreroll)
@@ -60,6 +67,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
         return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[5]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
     }
 
+    /// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving.get_Interleaving"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll)

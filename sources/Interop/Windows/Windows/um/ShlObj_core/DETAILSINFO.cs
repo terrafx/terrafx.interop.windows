@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DETAILSINFO.xml' path='doc/member[@name="DETAILSINFO"]/*' />
 public unsafe partial struct DETAILSINFO
 {
+    /// <include file='DETAILSINFO.xml' path='doc/member[@name="DETAILSINFO.pidl"]/*' />
     [NativeTypeName("LPCITEMIDLIST")]
     public ITEMIDLIST* pidl;
 
+    /// <include file='DETAILSINFO.xml' path='doc/member[@name="DETAILSINFO.fmt"]/*' />
     public int fmt;
 
+    /// <include file='DETAILSINFO.xml' path='doc/member[@name="DETAILSINFO.cxChar"]/*' />
     public int cxChar;
 
+    /// <include file='DETAILSINFO.xml' path='doc/member[@name="DETAILSINFO.str"]/*' />
     public STRRET str;
 
+    /// <include file='DETAILSINFO.xml' path='doc/member[@name="DETAILSINFO.iImage"]/*' />
     public int iImage;
 }

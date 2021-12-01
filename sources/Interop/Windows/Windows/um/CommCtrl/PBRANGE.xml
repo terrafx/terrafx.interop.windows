@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PBRANGE">
+    <summary>
+      <para>Contains information about the high and low limits of a progress bar control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/pbm-getrange">PBM_GETRANGE</a> message.</para>
+    </summary>
+  </member>
+  <member name="PBRANGE.iLow">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Low limit for the progress bar control. This is a signed integer.</para>
+    </summary>
+  </member>
+  <member name="PBRANGE.iHigh">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>High limit for the progress bar control. This is a signed integer.</para>
+    </summary>
+  </member>
+</doc>

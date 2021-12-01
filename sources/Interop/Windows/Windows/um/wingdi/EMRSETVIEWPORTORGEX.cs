@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETVIEWPORTORGEX.xml' path='doc/member[@name="EMRSETVIEWPORTORGEX"]/*' />
 public partial struct EMRSETVIEWPORTORGEX
 {
+    /// <include file='EMRSETVIEWPORTORGEX.xml' path='doc/member[@name="EMRSETVIEWPORTORGEX.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETVIEWPORTORGEX.xml' path='doc/member[@name="EMRSETVIEWPORTORGEX.ptlOrigin"]/*' />
     public POINTL ptlOrigin;
 }

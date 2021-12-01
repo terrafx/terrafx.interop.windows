@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_POLICY_PROPERTY">
+    <summary>
+      <para>Specifies a policy object setting.</para>
+    </summary>
+  </member>
+  <member name="WS_POLICY_PROPERTY.id">
+    <summary>
+      <para>Identifies the <see cref="WS_POLICY_PROPERTY_ID" />.</para>
+    </summary>
+  </member>
+  <member name="WS_POLICY_PROPERTY.value">
+    <summary>
+      <para>A pointer to the value to set.
+The pointer must have an alignment compatible with the type
+of the property.</para>
+    </summary>
+  </member>
+  <member name="WS_POLICY_PROPERTY.valueSize">
+    <summary>
+      <para>The size in bytes of the memory pointed to by value.</para>
+    </summary>
+  </member>
+</doc>

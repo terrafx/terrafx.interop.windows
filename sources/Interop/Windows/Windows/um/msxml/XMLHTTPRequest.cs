@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XMLHTTPRequest.xml' path='doc/member[@name="XMLHTTPRequest"]/*' />
 [Guid("ED8C108E-4349-11D2-91A4-00C04F7969E8")]
 public partial struct XMLHTTPRequest
 {

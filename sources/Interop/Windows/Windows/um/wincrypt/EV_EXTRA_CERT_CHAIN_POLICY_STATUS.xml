@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EV_EXTRA_CERT_CHAIN_POLICY_STATUS">
+    <summary>
+      <para>The <b>EV_EXTRA_CERT_CHAIN_POLICY_STATUS</b> structure is returned in the <b>pvExtraPolicyStatus</b>  member of a <see cref="CERT_CHAIN_POLICY_STATUS" /> structure. The structure contains policy flags returned from a call to the <see cref="CertVerifyCertificateChainPolicy" /> function.</para>
+    </summary>
+  </member>
+  <member name="EV_EXTRA_CERT_CHAIN_POLICY_STATUS.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="EV_EXTRA_CERT_CHAIN_POLICY_STATUS.dwQualifiers">
+    <summary></summary>
+  </member>
+  <member name="EV_EXTRA_CERT_CHAIN_POLICY_STATUS.dwIssuanceUsageIndex">
+    <summary>
+      <para>A <b>DWORD</b> value that specifies an index in the array of the resultant set of policy OIDs for the chain. The index corresponds to the EV policy OID for which the chain is valid. The policy OID is retrieved by using
+the index, as shown in the following pseudocode:</para>
+      <para>
+        <code>pChainContext-&gt;rgpChain[0]-&gt;rgpElement[0]-&gt;pIssuanceUsage-&gt;rgpszUsageIdentifier[dwIssuanceUsageIndex];</code>
+      </para>
+      <h4>- fQualifiers</h4>
+      <para>A <b>DWORD</b> value that specifies which of the EV policy qualifiers are set corresponding to the policy <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) for which the chain is valid.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_ROOT_PROGRAM_FLAG_ORG</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Validation of the Organization (O) field in the subject name meets Root Program Requirements for display.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_ROOT_PROGRAM_FLAG_LSC</b>
+                </description>
+              </item>
+              <item>
+                <description>0x40</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Validation of the Locale (L), State (S), and Country (C) fields in
+the subject name meets Program Requirements for display.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_ROOT_PROGRAM_FLAG_SUBJECT_LOGO</b>
+                </description>
+              </item>
+              <item>
+                <description>0x20</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Validation of the  Subject logotype meets Program Requirements for display.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

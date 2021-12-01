@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder"]/*' />
 [Guid("3AA7AF7E-9B36-420C-A8E3-F77D4674A488")]
 [NativeTypeName("struct IKnownFolder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, Guid*, void**, int>)(lpVtbl[0]))((IKnownFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, uint>)(lpVtbl[1]))((IKnownFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, uint>)(lpVtbl[2]))((IKnownFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.GetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetId([NativeTypeName("KNOWNFOLDERID *")] Guid* pkfid)
@@ -46,6 +51,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, Guid*, int>)(lpVtbl[3]))((IKnownFolder*)Unsafe.AsPointer(ref this), pkfid);
     }
 
+    /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.GetCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCategory(KF_CATEGORY* pCategory)
@@ -53,6 +59,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, KF_CATEGORY*, int>)(lpVtbl[4]))((IKnownFolder*)Unsafe.AsPointer(ref this), pCategory);
     }
 
+    /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.GetShellItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetShellItem([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -60,6 +67,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, uint, Guid*, void**, int>)(lpVtbl[5]))((IKnownFolder*)Unsafe.AsPointer(ref this), dwFlags, riid, ppv);
     }
 
+    /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.GetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR *")] ushort** ppszPath)
@@ -67,6 +75,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, uint, ushort**, int>)(lpVtbl[6]))((IKnownFolder*)Unsafe.AsPointer(ref this), dwFlags, ppszPath);
     }
 
+    /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.SetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszPath)
@@ -74,6 +83,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, uint, ushort*, int>)(lpVtbl[7]))((IKnownFolder*)Unsafe.AsPointer(ref this), dwFlags, pszPath);
     }
 
+    /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.GetIDList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetIDList([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
@@ -81,6 +91,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, uint, ITEMIDLIST**, int>)(lpVtbl[8]))((IKnownFolder*)Unsafe.AsPointer(ref this), dwFlags, ppidl);
     }
 
+    /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.GetFolderType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetFolderType([NativeTypeName("FOLDERTYPEID *")] Guid* pftid)
@@ -88,6 +99,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, Guid*, int>)(lpVtbl[9]))((IKnownFolder*)Unsafe.AsPointer(ref this), pftid);
     }
 
+    /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.GetRedirectionCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetRedirectionCapabilities([NativeTypeName("KF_REDIRECTION_CAPABILITIES *")] uint* pCapabilities)
@@ -95,6 +107,7 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface
         return ((delegate* unmanaged<IKnownFolder*, uint*, int>)(lpVtbl[10]))((IKnownFolder*)Unsafe.AsPointer(ref this), pCapabilities);
     }
 
+    /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.GetFolderDefinition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetFolderDefinition(KNOWNFOLDER_DEFINITION* pKFD)

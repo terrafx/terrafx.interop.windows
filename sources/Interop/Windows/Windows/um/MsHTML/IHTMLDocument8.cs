@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8"]/*' />
 [Guid("305107D0-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLDocument8 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, uint>)(lpVtbl[1]))((IHTMLDocument8*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, uint>)(lpVtbl[2]))((IHTMLDocument8*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, uint*, int>)(lpVtbl[3]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmscontentzoom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_onmscontentzoom(VARIANT v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[7]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmscontentzoom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_onmscontentzoom(VARIANT* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[8]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmspointerdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_onmspointerdown(VARIANT v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[9]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmspointerdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_onmspointerdown(VARIANT* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[10]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmspointermove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_onmspointermove(VARIANT v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[11]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmspointermove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_onmspointermove(VARIANT* p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[12]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmspointerup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_onmspointerup(VARIANT v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[13]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmspointerup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_onmspointerup(VARIANT* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[14]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmspointerover"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_onmspointerover(VARIANT v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[15]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmspointerover"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_onmspointerover(VARIANT* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[16]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmspointerout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_onmspointerout(VARIANT v)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[17]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmspointerout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_onmspointerout(VARIANT* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[18]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmspointercancel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT put_onmspointercancel(VARIANT v)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[19]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmspointercancel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_onmspointercancel(VARIANT* p)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[20]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmspointerhover"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_onmspointerhover(VARIANT v)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[21]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmspointerhover"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_onmspointerhover(VARIANT* p)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[22]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmsgesturestart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_onmsgesturestart(VARIANT v)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[23]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmsgesturestart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_onmsgesturestart(VARIANT* p)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[24]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmsgesturechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_onmsgesturechange(VARIANT v)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[25]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmsgesturechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_onmsgesturechange(VARIANT* p)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[26]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmsgestureend"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT put_onmsgestureend(VARIANT v)
@@ -214,6 +243,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[27]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmsgestureend"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get_onmsgestureend(VARIANT* p)
@@ -221,6 +251,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[28]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmsgesturehold"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT put_onmsgesturehold(VARIANT v)
@@ -228,6 +259,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[29]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmsgesturehold"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT get_onmsgesturehold(VARIANT* p)
@@ -235,6 +267,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[30]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmsgesturetap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT put_onmsgesturetap(VARIANT v)
@@ -242,6 +275,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[31]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmsgesturetap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT get_onmsgesturetap(VARIANT* p)
@@ -249,6 +283,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[32]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmsgesturedoubletap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT put_onmsgesturedoubletap(VARIANT v)
@@ -256,6 +291,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[33]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmsgesturedoubletap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT get_onmsgesturedoubletap(VARIANT* p)
@@ -263,6 +299,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[34]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmsinertiastart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT put_onmsinertiastart(VARIANT v)
@@ -270,6 +307,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[35]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmsinertiastart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT get_onmsinertiastart(VARIANT* p)
@@ -277,6 +315,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[36]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.elementsFromPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT elementsFromPoint(float x, float y, IHTMLDOMChildrenCollection** elementsHit)
@@ -284,6 +323,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, float, float, IHTMLDOMChildrenCollection**, int>)(lpVtbl[37]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), x, y, elementsHit);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.elementsFromRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT elementsFromRect(float left, float top, float width, float height, IHTMLDOMChildrenCollection** elementsHit)
@@ -291,6 +331,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, float, float, float, float, IHTMLDOMChildrenCollection**, int>)(lpVtbl[38]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), left, top, width, height, elementsHit);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_onmsmanipulationstatechanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT put_onmsmanipulationstatechanged(VARIANT v)
@@ -298,6 +339,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT, int>)(lpVtbl[39]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_onmsmanipulationstatechanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT get_onmsmanipulationstatechanged(VARIANT* p)
@@ -305,6 +347,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, VARIANT*, int>)(lpVtbl[40]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.put_msCapsLockWarningOff"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT put_msCapsLockWarningOff([NativeTypeName("VARIANT_BOOL")] short v)
@@ -312,6 +355,7 @@ public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
         return ((delegate* unmanaged<IHTMLDocument8*, short, int>)(lpVtbl[41]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLDocument8.xml' path='doc/member[@name="IHTMLDocument8.get_msCapsLockWarningOff"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT get_msCapsLockWarningOff([NativeTypeName("VARIANT_BOOL *")] short* p)

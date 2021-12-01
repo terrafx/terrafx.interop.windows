@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_ALLOCATION_INFO">
+    <summary>
+      <para>Contains the total number of bytes that should be allocated for a file. This structure is used when calling the <see cref="SetFileInformationByHandle" /> function.</para>
+    </summary>
+    <remarks>
+      <para>The end-of-file (EOF) position for a file must always be less than or equal to the file allocation size. If the allocation size is set to a value that is less than EOF, the EOF position is automatically adjusted to match the file allocation size.</para>
+    </remarks>
+    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
+    <seealso cref="SetFileInformationByHandle" />
+  </member>
+  <member name="FILE_ALLOCATION_INFO.AllocationSize">
+    <summary>
+      <para>The new file allocation size, in bytes. This value is typically a multiple of the sector or cluster size for the underlying physical device.</para>
+    </summary>
+  </member>
+</doc>

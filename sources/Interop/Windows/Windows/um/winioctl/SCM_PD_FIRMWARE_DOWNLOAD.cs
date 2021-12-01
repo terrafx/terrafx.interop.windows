@@ -5,28 +5,37 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD"]/*' />
 public unsafe partial struct SCM_PD_FIRMWARE_DOWNLOAD
 {
+    /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.Slot"]/*' />
     public byte Slot;
 
+    /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.Reserved"]/*' />
     [NativeTypeName("BYTE [3]")]
     public fixed byte Reserved[3];
 
+    /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.Offset"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Offset;
 
+    /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.FirmwareImageSizeInBytes"]/*' />
     [NativeTypeName("DWORD")]
     public uint FirmwareImageSizeInBytes;
 
+    /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.FirmwareImage"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte FirmwareImage[1];
 }

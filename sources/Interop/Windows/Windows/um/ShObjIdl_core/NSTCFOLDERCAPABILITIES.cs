@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NSTCFOLDERCAPABILITIES.xml' path='doc/member[@name="NSTCFOLDERCAPABILITIES"]/*' />
 public enum NSTCFOLDERCAPABILITIES
 {
+    /// <include file='NSTCFOLDERCAPABILITIES.xml' path='doc/member[@name="NSTCFOLDERCAPABILITIES.NSTCFC_NONE"]/*' />
     NSTCFC_NONE = 0,
+
+    /// <include file='NSTCFOLDERCAPABILITIES.xml' path='doc/member[@name="NSTCFOLDERCAPABILITIES.NSTCFC_PINNEDITEMFILTERING"]/*' />
     NSTCFC_PINNEDITEMFILTERING = 0x1,
+
+    /// <include file='NSTCFOLDERCAPABILITIES.xml' path='doc/member[@name="NSTCFOLDERCAPABILITIES.NSTCFC_DELAY_REGISTER_NOTIFY"]/*' />
     NSTCFC_DELAY_REGISTER_NOTIFY = 0x2,
 }

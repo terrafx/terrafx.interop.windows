@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IInitializeWithPropertyStore.Initialize">
+    <summary>
+      <para>Initializes a handler with an <see cref="IPropertyStore" />.</para>
+    </summary>
+    <param name="pps">
+      <para>Type: <b><see cref="IPropertyStore" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyStore" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method supports initializing handlers for use with OpenSearch result sets, which are returned from web services as RSS or Atom feeds.</para>
+    </remarks>
+    <seealso cref="IInitializeWithPropertyStore" />
+    <seealso cref="IPropertyStore" />
+  </member>
+  <member name="IInitializeWithPropertyStore">
+    <summary>
+      <para>Exposes a method that initializes a handler, such as a property handler, thumbnail handler, or preview handler, with a property store.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>Use this interface when initializing a handler for OpenSearch result sets, which are returned as RSS or Atom feeds.</para>
+    </remarks>
+    <seealso cref="IInitializeWithPropertyStore" />
+    <seealso cref="IPropertyStore" />
+  </member>
+</doc>

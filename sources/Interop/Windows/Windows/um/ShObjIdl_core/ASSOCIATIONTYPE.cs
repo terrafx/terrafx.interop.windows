@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ASSOCIATIONTYPE.xml' path='doc/member[@name="ASSOCIATIONTYPE"]/*' />
 public enum ASSOCIATIONTYPE
 {
+    /// <include file='ASSOCIATIONTYPE.xml' path='doc/member[@name="ASSOCIATIONTYPE.AT_FILEEXTENSION"]/*' />
     AT_FILEEXTENSION = 0,
+
+    /// <include file='ASSOCIATIONTYPE.xml' path='doc/member[@name="ASSOCIATIONTYPE.AT_URLPROTOCOL"]/*' />
     AT_URLPROTOCOL = (AT_FILEEXTENSION + 1),
+
+    /// <include file='ASSOCIATIONTYPE.xml' path='doc/member[@name="ASSOCIATIONTYPE.AT_STARTMENUCLIENT"]/*' />
     AT_STARTMENUCLIENT = (AT_URLPROTOCOL + 1),
+
+    /// <include file='ASSOCIATIONTYPE.xml' path='doc/member[@name="ASSOCIATIONTYPE.AT_MIMETYPE"]/*' />
     AT_MIMETYPE = (AT_STARTMENUCLIENT + 1),
 }

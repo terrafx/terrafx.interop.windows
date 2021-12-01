@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11ModuleInstance.BindConstantBuffer">
+    <summary>
+      <para>Rebinds a constant buffer from a source slot to a destination slot.</para>
+    </summary>
+    <param name="uSrcSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The source slot number for rebinding.</para>
+    </param>
+    <param name="uDstSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The destination slot number for rebinding.</para>
+    </param>
+    <param name="cbDstOffset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The offset in bytes of the destination slot for rebinding. The offset must have 16-byte alignment.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> for a valid rebinding
+</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> for rebinding a nonexistent slot; that is, for which the shader reflection doesn’t have any data
+</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> for an invalid rebinding, for example, the rebinding is out-of-bounds
+</description>
+        </item>
+        <item>
+          <description>Possibly one of the other <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a></description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11ModuleInstance" />
+  </member>
+  <member name="ID3D11ModuleInstance.BindConstantBufferByName">
+    <summary>
+      <para>Rebinds a constant buffer by name to a destination slot.</para>
+    </summary>
+    <param name="pName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The name of the constant buffer for rebinding.</para>
+    </param>
+    <param name="uDstSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The destination slot number for rebinding.</para>
+    </param>
+    <param name="cbDstOffset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The offset in bytes of the destination slot for rebinding. The offset must have 16-byte alignment.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> for a valid rebinding
+</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> for rebinding a nonexistent slot; that is, for which the shader reflection doesn’t have any data
+</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> for an invalid rebinding, for example, the rebinding is out-of-bounds
+</description>
+        </item>
+        <item>
+          <description>Possibly one of the other <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a></description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11ModuleInstance" />
+  </member>
+  <member name="ID3D11ModuleInstance.BindResource">
+    <summary>
+      <para>Rebinds a texture or buffer from source slot to destination slot.</para>
+    </summary>
+    <param name="uSrcSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first source slot number for rebinding.</para>
+    </param>
+    <param name="uDstSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first destination slot number for rebinding.</para>
+    </param>
+    <param name="uCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of slots for rebinding.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> for a valid rebinding</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> for rebinding a nonexistent slot; that is, for which the shader reflection doesn’t have any data</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> for an invalid rebinding, for example, the rebinding is out-of-bounds</description>
+        </item>
+        <item>
+          <description>Possibly one of the other <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a></description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11ModuleInstance" />
+  </member>
+  <member name="ID3D11ModuleInstance.BindResourceAsUnorderedAccessView">
+    <summary>
+      <para>Rebinds a resource as an unordered access view (UAV) from source slot to destination slot.</para>
+    </summary>
+    <param name="uSrcSrvSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first source slot number for rebinding.</para>
+    </param>
+    <param name="uDstUavSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first destination slot number for rebinding.</para>
+    </param>
+    <param name="uCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of slots for rebinding.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> for a valid rebinding</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> for rebinding a nonexistent slot; that is, for which the shader reflection doesn’t have any data</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> for an invalid rebinding, for example, the rebinding is out-of-bounds</description>
+        </item>
+        <item>
+          <description>Possibly one of the other <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a></description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11ModuleInstance" />
+  </member>
+  <member name="ID3D11ModuleInstance.BindResourceAsUnorderedAccessViewByName">
+    <summary>
+      <para>Rebinds a resource by name as an unordered access view (UAV) to destination slots.</para>
+    </summary>
+    <param name="pSrvName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The name of the resource for rebinding.</para>
+    </param>
+    <param name="uDstUavSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first destination slot number for rebinding.</para>
+    </param>
+    <param name="uCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of slots for rebinding.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> for a valid rebinding</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> for rebinding a nonexistent slot; that is, for which the shader reflection doesn’t have any data</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> for an invalid rebinding, for example, the rebinding is out-of-bounds</description>
+        </item>
+        <item>
+          <description>Possibly one of the other <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a></description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11ModuleInstance" />
+  </member>
+  <member name="ID3D11ModuleInstance.BindResourceByName">
+    <summary>
+      <para>Rebinds a texture or buffer by name to destination slots.</para>
+    </summary>
+    <param name="pName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The name of the texture or buffer for rebinding.</para>
+    </param>
+    <param name="uDstSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first destination slot number for rebinding.</para>
+    </param>
+    <param name="uCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of slots for rebinding.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> for a valid rebinding</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> for rebinding a nonexistent slot; that is, for which the shader reflection doesn’t have any data</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> for an invalid rebinding, for example, the rebinding is out-of-bounds</description>
+        </item>
+        <item>
+          <description>Possibly one of the other <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a></description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11ModuleInstance" />
+  </member>
+  <member name="ID3D11ModuleInstance.BindSampler">
+    <summary>
+      <para>Rebinds a sampler from source slot to destination slot.</para>
+    </summary>
+    <param name="uSrcSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first source slot number for rebinding.</para>
+    </param>
+    <param name="uDstSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first destination slot number for rebinding.</para>
+    </param>
+    <param name="uCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of slots for rebinding.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> for a valid rebinding</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> for rebinding a nonexistent slot; that is, for which the shader reflection doesn’t have any data</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> for an invalid rebinding, for example, the rebinding is out-of-bounds</description>
+        </item>
+        <item>
+          <description>Possibly one of the other <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a></description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11ModuleInstance" />
+  </member>
+  <member name="ID3D11ModuleInstance.BindSamplerByName">
+    <summary>
+      <para>Rebinds a sampler by name to destination slots.</para>
+    </summary>
+    <param name="pName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The name of the sampler for rebinding.</para>
+    </param>
+    <param name="uDstSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first destination slot number for rebinding.</para>
+    </param>
+    <param name="uCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of slots for rebinding.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> for a valid rebinding</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> for rebinding a nonexistent slot; that is, for which the shader reflection doesn’t have any data</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> for an invalid rebinding, for example, the rebinding is out-of-bounds</description>
+        </item>
+        <item>
+          <description>Possibly one of the other <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a></description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11ModuleInstance" />
+  </member>
+  <member name="ID3D11ModuleInstance.BindUnorderedAccessView">
+    <summary>
+      <para>Rebinds an unordered access view (UAV) from source slot to destination slot.</para>
+    </summary>
+    <param name="uSrcSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first source slot number for rebinding.</para>
+    </param>
+    <param name="uDstSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first destination slot number for rebinding.</para>
+    </param>
+    <param name="uCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of slots for rebinding.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> for a valid rebinding</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> for rebinding a nonexistent slot; that is, for which the shader reflection doesn’t have any data</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> for an invalid rebinding, for example, the rebinding is out-of-bounds</description>
+        </item>
+        <item>
+          <description>Possibly one of the other <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a></description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11ModuleInstance" />
+  </member>
+  <member name="ID3D11ModuleInstance.BindUnorderedAccessViewByName">
+    <summary>
+      <para>Rebinds an unordered access view (UAV) by name to destination slots.</para>
+    </summary>
+    <param name="pName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The name of the UAV for rebinding.</para>
+    </param>
+    <param name="uDstSlot">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The first destination slot number for rebinding.</para>
+    </param>
+    <param name="uCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of slots for rebinding.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> for a valid rebinding</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> for rebinding a nonexistent slot; that is, for which the shader reflection doesn’t have any data</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> for an invalid rebinding, for example, the rebinding is out-of-bounds</description>
+        </item>
+        <item>
+          <description>Possibly one of the other <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a></description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11ModuleInstance" />
+  </member>
+  <member name="ID3D11ModuleInstance">
+    <summary>
+      <para>A module-instance interface is used for resource rebinding. <b>Note</b>  This interface is part of the HLSL shader linking technology that you can use on all Direct3D 11 platforms to create precompiled HLSL functions, package them into libraries, and link them into full shaders at run time.</para>
+    </summary>
+    <remarks>
+      <para>To get a module-instance interface, call <see cref="ID3D11Module.CreateInstance" /> or <see cref="ID3D11FunctionLinkingGraph.CreateModuleInstance" />.</para>
+      <para>
+        <b>Note</b>  <b>ID3D11ModuleInstance</b> requires the D3dcompiler_47.dll or a later version of the DLL.</para>
+    </remarks>
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-shader-interfaces">Shader Interfaces</seealso>
+  </member>
+</doc>

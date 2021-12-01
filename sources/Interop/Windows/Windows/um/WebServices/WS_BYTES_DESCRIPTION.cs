@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_BYTES_DESCRIPTION.xml' path='doc/member[@name="WS_BYTES_DESCRIPTION"]/*' />
 public partial struct WS_BYTES_DESCRIPTION
 {
+    /// <include file='WS_BYTES_DESCRIPTION.xml' path='doc/member[@name="WS_BYTES_DESCRIPTION.minByteCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint minByteCount;
 
+    /// <include file='WS_BYTES_DESCRIPTION.xml' path='doc/member[@name="WS_BYTES_DESCRIPTION.maxByteCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint maxByteCount;
 }

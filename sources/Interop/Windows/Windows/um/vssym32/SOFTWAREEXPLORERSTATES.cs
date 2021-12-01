@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SOFTWAREEXPLORERSTATES.xml' path='doc/member[@name="SOFTWAREEXPLORERSTATES"]/*' />
 public enum SOFTWAREEXPLORERSTATES
 {
+    /// <include file='SOFTWAREEXPLORERSTATES.xml' path='doc/member[@name="SOFTWAREEXPLORERSTATES.SPSE_NORMAL"]/*' />
     SPSE_NORMAL = 1,
+
+    /// <include file='SOFTWAREEXPLORERSTATES.xml' path='doc/member[@name="SOFTWAREEXPLORERSTATES.SPSE_HOT"]/*' />
     SPSE_HOT = 2,
+
+    /// <include file='SOFTWAREEXPLORERSTATES.xml' path='doc/member[@name="SOFTWAREEXPLORERSTATES.SPSE_SELECTED"]/*' />
     SPSE_SELECTED = 3,
+
+    /// <include file='SOFTWAREEXPLORERSTATES.xml' path='doc/member[@name="SOFTWAREEXPLORERSTATES.SPSE_DISABLED"]/*' />
     SPSE_DISABLED = 4,
+
+    /// <include file='SOFTWAREEXPLORERSTATES.xml' path='doc/member[@name="SOFTWAREEXPLORERSTATES.SPSE_FOCUSED"]/*' />
     SPSE_FOCUSED = 5,
 }

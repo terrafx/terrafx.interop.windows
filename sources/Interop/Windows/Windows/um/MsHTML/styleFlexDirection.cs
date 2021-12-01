@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleFlexDirection.xml' path='doc/member[@name="styleFlexDirection"]/*' />
 public enum styleFlexDirection
 {
+    /// <include file='styleFlexDirection.xml' path='doc/member[@name="styleFlexDirection.styleFlexDirectionRow"]/*' />
     styleFlexDirectionRow = 0,
+
+    /// <include file='styleFlexDirection.xml' path='doc/member[@name="styleFlexDirection.styleFlexDirectionRowReverse"]/*' />
     styleFlexDirectionRowReverse = 1,
+
+    /// <include file='styleFlexDirection.xml' path='doc/member[@name="styleFlexDirection.styleFlexDirectionColumn"]/*' />
     styleFlexDirectionColumn = 2,
+
+    /// <include file='styleFlexDirection.xml' path='doc/member[@name="styleFlexDirection.styleFlexDirectionColumnReverse"]/*' />
     styleFlexDirectionColumnReverse = 3,
+
+    /// <include file='styleFlexDirection.xml' path='doc/member[@name="styleFlexDirection.styleFlexDirectionNotSet"]/*' />
     styleFlexDirectionNotSet = 4,
+
+    /// <include file='styleFlexDirection.xml' path='doc/member[@name="styleFlexDirection.styleFlexDirection_Max"]/*' />
     styleFlexDirection_Max = 2147483647,
 }

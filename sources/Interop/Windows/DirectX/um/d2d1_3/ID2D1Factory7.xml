@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1Factory7.CreateDevice">
+    <summary>
+      <para>Creates a new Direct2D device from the given IDXGIDevice</para>
+    </summary>
+    <param name="dxgiDevice">
+      <para>Type: <b>IDXGIDevice*</b></para>
+      <para>The IDXGIDevice from which to create the Direct2D device.</para>
+    </param>
+    <param name="d2dDevice6">
+      <para>Type: <b>ID2D1Device6**</b></para>
+      <para>The created device.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="ID2D1Factory7" />
+  </member>
+  <member name="ID2D1Factory7">
+    <summary>
+      <para>Creates Direct2D resources. This interface performs all the same functions as the <see cref="ID2D1Factory6" /> interface,
+plus it enables the creation of <see cref="ID2D1Device6" /> objects.</para>
+    </summary>
+  </member>
+</doc>

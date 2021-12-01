@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechFileStream.xml' path='doc/member[@name="DISPID_SpeechFileStream"]/*' />
 public enum DISPID_SpeechFileStream
 {
+    /// <include file='DISPID_SpeechFileStream.xml' path='doc/member[@name="DISPID_SpeechFileStream.DISPID_SFSOpen"]/*' />
     DISPID_SFSOpen = 100,
+
+    /// <include file='DISPID_SpeechFileStream.xml' path='doc/member[@name="DISPID_SpeechFileStream.DISPID_SFSClose"]/*' />
     DISPID_SFSClose = (DISPID_SFSOpen + 1),
 }

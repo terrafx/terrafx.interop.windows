@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_DEBUG_MISC.xml' path='doc/member[@name="IMAGE_DEBUG_MISC"]/*' />
 public unsafe partial struct IMAGE_DEBUG_MISC
 {
+    /// <include file='IMAGE_DEBUG_MISC.xml' path='doc/member[@name="IMAGE_DEBUG_MISC.DataType"]/*' />
     [NativeTypeName("DWORD")]
     public uint DataType;
 
+    /// <include file='IMAGE_DEBUG_MISC.xml' path='doc/member[@name="IMAGE_DEBUG_MISC.Length"]/*' />
     [NativeTypeName("DWORD")]
     public uint Length;
 
+    /// <include file='IMAGE_DEBUG_MISC.xml' path='doc/member[@name="IMAGE_DEBUG_MISC.Unicode"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Unicode;
 
+    /// <include file='IMAGE_DEBUG_MISC.xml' path='doc/member[@name="IMAGE_DEBUG_MISC.Reserved"]/*' />
     [NativeTypeName("BYTE [3]")]
     public fixed byte Reserved[3];
 
+    /// <include file='IMAGE_DEBUG_MISC.xml' path='doc/member[@name="IMAGE_DEBUG_MISC.Data"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Data[1];
 }

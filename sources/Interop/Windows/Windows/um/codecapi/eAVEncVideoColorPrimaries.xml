@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncVideoColorPrimaries">
+    <summary>
+      <para>Specifies the color primaries of the video. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoinputcolorprimaries-property">AVEncVideoInputColorPrimaries</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideooutputcolorprimaries-property">AVEncVideoOutputColorPrimaries</a> properties.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_SameAsSource">
+    <summary>
+      <para>Use the same primaries as the input video. This flag applies to the <b>AVEncVideoOutputColorPrimaries</b> property only.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_Reserved">
+    <summary>
+      <para>Reserved. Do not use.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_BT709">
+    <summary>
+      <para>ITU-R BT.709 (including sRGB and scRGB).</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_BT470_2_SysM">
+    <summary>
+      <para>ITU-R.BT.470-4 System M (NTSC).</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_BT470_2_SysBG">
+    <summary>
+      <para>ITU-R.BT.470-4 System B,G (NTSC).</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_SMPTE170M">
+    <summary>
+      <para>SMPTE 170M.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_SMPTE240M">
+    <summary>
+      <para>SMPTE 240M.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_EBU3231">
+    <summary>
+      <para>EBU 3213.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_SMPTE_C">
+    <summary>
+      <para>SPMTE C (NTSC).</para>
+    </summary>
+  </member>
+</doc>

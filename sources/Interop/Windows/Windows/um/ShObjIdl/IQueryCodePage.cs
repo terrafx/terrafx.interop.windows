@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IQueryCodePage.xml' path='doc/member[@name="IQueryCodePage"]/*' />
 [Guid("C7B236CE-EE80-11D0-985F-006008059382")]
 [NativeTypeName("struct IQueryCodePage : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface
         return ((delegate* unmanaged<IQueryCodePage*, Guid*, void**, int>)(lpVtbl[0]))((IQueryCodePage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface
         return ((delegate* unmanaged<IQueryCodePage*, uint>)(lpVtbl[1]))((IQueryCodePage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface
         return ((delegate* unmanaged<IQueryCodePage*, uint>)(lpVtbl[2]))((IQueryCodePage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IQueryCodePage.xml' path='doc/member[@name="IQueryCodePage.GetCodePage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCodePage(uint* puiCodePage)
@@ -46,6 +51,7 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface
         return ((delegate* unmanaged<IQueryCodePage*, uint*, int>)(lpVtbl[3]))((IQueryCodePage*)Unsafe.AsPointer(ref this), puiCodePage);
     }
 
+    /// <include file='IQueryCodePage.xml' path='doc/member[@name="IQueryCodePage.SetCodePage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetCodePage(uint uiCodePage)

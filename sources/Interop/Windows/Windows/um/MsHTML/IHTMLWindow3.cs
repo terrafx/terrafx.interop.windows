@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3"]/*' />
 [Guid("3050F4AE-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLWindow3 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, uint>)(lpVtbl[1]))((IHTMLWindow3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, uint>)(lpVtbl[2]))((IHTMLWindow3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, uint*, int>)(lpVtbl[3]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.get_screenLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_screenLeft([NativeTypeName("long *")] int* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, int*, int>)(lpVtbl[7]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.get_screenTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_screenTop([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, int*, int>)(lpVtbl[8]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.attachEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT attachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, ushort*, IDispatch*, short*, int>)(lpVtbl[9]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), @event, pDisp, pfResult);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.detachEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, ushort*, IDispatch*, int>)(lpVtbl[10]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), @event, pDisp);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.setTimeout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT setTimeout(VARIANT* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, VARIANT*, int, VARIANT*, int*, int>)(lpVtbl[11]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), expression, msec, language, timerID);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.setInterval"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT setInterval(VARIANT* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, VARIANT*, int, VARIANT*, int*, int>)(lpVtbl[12]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), expression, msec, language, timerID);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.print"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT print()
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, int>)(lpVtbl[13]))((IHTMLWindow3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.put_onbeforeprint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_onbeforeprint(VARIANT v)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, VARIANT, int>)(lpVtbl[14]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.get_onbeforeprint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_onbeforeprint(VARIANT* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, VARIANT*, int>)(lpVtbl[15]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.put_onafterprint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_onafterprint(VARIANT v)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, VARIANT, int>)(lpVtbl[16]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.get_onafterprint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_onafterprint(VARIANT* p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, VARIANT*, int>)(lpVtbl[17]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.get_clipboardData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_clipboardData(IHTMLDataTransfer** p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
         return ((delegate* unmanaged<IHTMLWindow3*, IHTMLDataTransfer**, int>)(lpVtbl[18]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow3.xml' path='doc/member[@name="IHTMLWindow3.showModelessDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT showModelessDialog([NativeTypeName("BSTR")] ushort* url, VARIANT* varArgIn, VARIANT* options, IHTMLWindow2** pDialog)

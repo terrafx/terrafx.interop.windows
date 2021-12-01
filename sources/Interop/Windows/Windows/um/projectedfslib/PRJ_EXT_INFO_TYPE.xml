@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRJ_EXT_INFO_TYPE">
+    <summary>
+      <para>Specifies extended information types for <see cref="PRJ_EXTENDED_INFO" />.</para>
+    </summary>
+  </member>
+  <member name="PRJ_EXT_INFO_TYPE.PRJ_EXT_INFO_TYPE_SYMLINK">
+    <summary>
+      <para>This <see cref="PRJ_EXTENDED_INFO" /> specifies the target of a symbolic link.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1Transform.MapInputRectsToOutputRect">
+    <summary>
+      <para>Performs the inverse mapping to <see cref="MapOutputRectToInputRects" />.</para>
+    </summary>
+    <param name="inputRects">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
+      <para>An array of input rectangles to be mapped to the output rectangle.  The <i>inputRects</i> parameter is always equal to the input bounds.</para>
+    </param>
+    <param name="inputOpaqueSubRects">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
+      <para>An array of input rectangles to be mapped to the opaque output rectangle.</para>
+    </param>
+    <param name="inputRectCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of inputs specified. The implementation guarantees that this is equal to the number of inputs specified on the transform.</para>
+    </param>
+    <param name="outputRect">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
+      <para>The output rectangle that maps to the corresponding input rectangle.</para>
+    </param>
+    <param name="outputOpaqueSubRect">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
+      <para>The output rectangle that maps to the corresponding opaque input rectangle.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The transform implementation must ensure that any pixel shader or software callback implementation it provides honors this calculation.</para>
+      <para>Unlike the <see cref="MapOutputRectToInputRects" /> and <see cref="MapInvalidRect" /> functions, this method is explicitly called by the renderer at a determined place in its rendering algorithm. The transform implementation may change its state based on the input rectangles and use this information to control its rendering information. This method is always called before the <b>MapInvalidRect</b> and <b>MapOutputRectToInputRects</b> methods of the transform.</para>
+    </remarks>
+    <seealso cref="ID2D1EffectImpl" />
+    <seealso cref="ID2D1Transform" />
+  </member>
+  <member name="ID2D1Transform.MapInvalidRect">
+    <summary>
+      <para>Sets the input rectangles for this rendering pass into the transform.</para>
+    </summary>
+    <param name="inputIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index of the input rectangle.</para>
+    </param>
+    <param name="invalidInputRect">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a></b></para>
+      <para>The invalid input rectangle.</para>
+    </param>
+    <param name="invalidOutputRect">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
+      <para>The output rectangle to which the input rectangle must be mapped.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The transform implementation must regard <b>MapInvalidRect</b> as purely functional. The transform implementation can base the mapped input rectangle on the transform implementation's current state as specified by the encapsulating effect properties. But the transform implementation can't change its own state in response to a call to <b>MapInvalidRect</b>. Direct2D can call this method at any time and in any sequence following a call to the <see cref="MapInputRectsToOutputRect" /> method.</para>
+    </remarks>
+    <seealso cref="ID2D1EffectImpl" />
+    <seealso cref="ID2D1Transform" />
+  </member>
+  <member name="ID2D1Transform.MapOutputRectToInputRects">
+    <summary>
+      <para>Allows a transform to state how it would map a rectangle requested on its output to a set of sample rectangles on its input.</para>
+    </summary>
+    <param name="outputRect">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
+      <para>The output rectangle from which the inputs must be mapped.</para>
+    </param>
+    <param name="inputRects">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
+      <para>The corresponding set of inputs. The inputs will directly correspond to the transform inputs.</para>
+    </param>
+    <param name="inputRectsCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of inputs specified. <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> guarantees that this is equal to the number of inputs specified on the transform.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The transform implementation must ensure that any pixel shader or software callback implementation it provides honors this calculation.</para>
+      <para>The transform implementation must regard this method as purely functional. It can base the mapped input and output rectangles on its current state as specified by the encapsulating effect properties.    However, it must not change its own state in response to this method being invoked. The <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> renderer implementation reserves the right to call this method at any time and in any sequence.</para>
+    </remarks>
+    <seealso cref="ID2D1EffectImpl" />
+    <seealso cref="ID2D1Transform" />
+  </member>
+  <member name="ID2D1Transform">
+    <summary>
+      <para>Represents the base interface for all of the transforms implemented by the transform author.</para>
+    </summary>
+    <remarks>
+      <para>Transforms are aggregated by effect authors. This interface  provides a common interface for implementing the Shantzis rectangle calculations which is the basis for all the transform processing in Direct2D imaging extensions.  These  calculations are described in the paper <a href="https://dl.acm.org/citation.cfm?id=192191">A model for efficient and flexible image computing</a>.</para>
+    </remarks>
+    <seealso cref="ID2D1TransformNode" />
+  </member>
+</doc>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_POINT_DESCRIPTION">
+    <summary>
+      <para>Describes a point on a path geometry.</para>
+    </summary>
+    <seealso cref="ID2D1PathGeometry1.ComputePointAndSegmentAtLength" />
+  </member>
+  <member name="D2D1_POINT_DESCRIPTION.point">
+    <summary>
+      <para>The end point after walking the path.</para>
+    </summary>
+  </member>
+  <member name="D2D1_POINT_DESCRIPTION.unitTangentVector">
+    <summary>
+      <para>A unit vector indicating the tangent point.</para>
+    </summary>
+  </member>
+  <member name="D2D1_POINT_DESCRIPTION.endSegment">
+    <summary>
+      <para>The index of the segment on which point resides. This index is global to the entire path, not just to a particular figure.</para>
+    </summary>
+  </member>
+  <member name="D2D1_POINT_DESCRIPTION.endFigure">
+    <summary>
+      <para>The index of the figure on which point resides.</para>
+    </summary>
+  </member>
+  <member name="D2D1_POINT_DESCRIPTION.lengthToEndSegment">
+    <summary>
+      <para>The length of the section of the path stretching from the start of the path  to the start of <b>endSegment</b>.</para>
+    </summary>
+  </member>
+</doc>

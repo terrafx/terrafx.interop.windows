@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxBundleWriter3.AddPackageReference">
+    <summary>
+      <para>Adds a reference to an optional app package or a payload file within an app bundle.</para>
+    </summary>
+    <param name="fileName">
+      <para>The name of the payload file. The file name path must be relative to the root of the package.</para>
+    </param>
+    <param name="inputStream">
+      <para>An <see cref="IStream" /> that provides the contents of <i>fileName</i>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>By adding a reference to a payload file or optional app package to an app bundle, the overall size of the bundle is reduced.</para>
+    </remarks>
+    <seealso cref="IAppxBundleWriter3" />
+  </member>
+  <member name="IAppxBundleWriter3.Close">
+    <summary>
+      <para>Finalizes the bundle package by writing footprint files at the end of the package, and closes the writer’s output stream.</para>
+    </summary>
+    <param name="hashMethodString">
+      <para>The string value of the <b>HashMethod</b> attribute of the <a href="https://docs.microsoft.com//uwp/schemas/blockmapschema/element-blockmap">BlockMap</a> root element.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxBundleWriter3" />
+  </member>
+  <member name="IAppxBundleWriter3">
+    <summary>
+      <para>Provides a write-only object model for bundle packages.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FRAMELEFTSTATES.xml' path='doc/member[@name="FRAMELEFTSTATES"]/*' />
 public enum FRAMELEFTSTATES
 {
+    /// <include file='FRAMELEFTSTATES.xml' path='doc/member[@name="FRAMELEFTSTATES.FRL_ACTIVE"]/*' />
     FRL_ACTIVE = 1,
+
+    /// <include file='FRAMELEFTSTATES.xml' path='doc/member[@name="FRAMELEFTSTATES.FRL_INACTIVE"]/*' />
     FRL_INACTIVE = 2,
 }

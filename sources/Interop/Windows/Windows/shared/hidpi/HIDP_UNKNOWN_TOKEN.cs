@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HIDP_UNKNOWN_TOKEN.xml' path='doc/member[@name="HIDP_UNKNOWN_TOKEN"]/*' />
 public unsafe partial struct HIDP_UNKNOWN_TOKEN
 {
+    /// <include file='HIDP_UNKNOWN_TOKEN.xml' path='doc/member[@name="HIDP_UNKNOWN_TOKEN.Token"]/*' />
     [NativeTypeName("UCHAR")]
     public byte Token;
 
+    /// <include file='HIDP_UNKNOWN_TOKEN.xml' path='doc/member[@name="HIDP_UNKNOWN_TOKEN.Reserved"]/*' />
     [NativeTypeName("UCHAR [3]")]
     public fixed byte Reserved[3];
 
+    /// <include file='HIDP_UNKNOWN_TOKEN.xml' path='doc/member[@name="HIDP_UNKNOWN_TOKEN.BitField"]/*' />
     [NativeTypeName("ULONG")]
     public uint BitField;
 }

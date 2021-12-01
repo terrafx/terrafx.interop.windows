@@ -11,46 +11,57 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPGetSignedDataMsg"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CryptSIPGetSignedDataMsg(SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("DWORD *")] uint* pdwEncodingType, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pcbSignedDataMsg, byte* pbSignedDataMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPPutSignedDataMsg"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CryptSIPPutSignedDataMsg(SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("DWORD *")] uint* pdwIndex, [NativeTypeName("DWORD")] uint cbSignedDataMsg, byte* pbSignedDataMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPCreateIndirectData"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CryptSIPCreateIndirectData(SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("DWORD *")] uint* pcbIndirectData, SIP_INDIRECT_DATA* pIndirectData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPVerifyIndirectData"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CryptSIPVerifyIndirectData(SIP_SUBJECTINFO* pSubjectInfo, SIP_INDIRECT_DATA* pIndirectData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPRemoveSignedDataMsg"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CryptSIPRemoveSignedDataMsg(SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("DWORD")] uint dwIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPLoad"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CryptSIPLoad([NativeTypeName("const GUID *")] Guid* pgSubject, [NativeTypeName("DWORD")] uint dwFlags, SIP_DISPATCH_INFO* pSipDispatch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPRetrieveSubjectGuid"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CryptSIPRetrieveSubjectGuid([NativeTypeName("LPCWSTR")] ushort* FileName, HANDLE hFileIn, Guid* pgSubject);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPRetrieveSubjectGuidForCatalogFile"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CryptSIPRetrieveSubjectGuidForCatalogFile([NativeTypeName("LPCWSTR")] ushort* FileName, HANDLE hFileIn, Guid* pgSubject);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPAddProvider"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CryptSIPAddProvider(SIP_ADD_NEWPROVIDER* psNewProv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPRemoveProvider"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CryptSIPRemoveProvider(Guid* pgProv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPGetCaps"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL CryptSIPGetCaps(SIP_SUBJECTINFO* pSubjInfo, [NativeTypeName("SIP_CAP_SET *")] SIP_CAP_SET_V3* pCaps);

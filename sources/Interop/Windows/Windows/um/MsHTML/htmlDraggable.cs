@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlDraggable.xml' path='doc/member[@name="htmlDraggable"]/*' />
 public enum htmlDraggable
 {
+    /// <include file='htmlDraggable.xml' path='doc/member[@name="htmlDraggable.htmlDraggableAuto"]/*' />
     htmlDraggableAuto = 0,
+
+    /// <include file='htmlDraggable.xml' path='doc/member[@name="htmlDraggable.htmlDraggableTrue"]/*' />
     htmlDraggableTrue = 1,
+
+    /// <include file='htmlDraggable.xml' path='doc/member[@name="htmlDraggable.htmlDraggableFalse"]/*' />
     htmlDraggableFalse = 2,
+
+    /// <include file='htmlDraggable.xml' path='doc/member[@name="htmlDraggable.htmlDraggable_Max"]/*' />
     htmlDraggable_Max = 2147483647,
 }

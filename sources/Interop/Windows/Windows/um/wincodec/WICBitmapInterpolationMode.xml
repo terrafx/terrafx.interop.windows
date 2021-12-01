@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICBitmapInterpolationMode">
+    <summary>
+      <para>Specifies the sampling or filtering mode to use when scaling an image.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapInterpolationMode.WICBitmapInterpolationModeNearestNeighbor">
+    <summary>
+      <para>A nearest neighbor interpolation algorithm. Also known as nearest pixel or point interpolation.</para>
+      <para>The output pixel is assigned the value of the pixel that the point falls within. No other pixels are considered.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapInterpolationMode.WICBitmapInterpolationModeLinear">
+    <summary>
+      <para>A bilinear interpolation algorithm.</para>
+      <para>The output pixel values are computed as a weighted average of the nearest four pixels in a 2x2 grid.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapInterpolationMode.WICBitmapInterpolationModeCubic">
+    <summary>
+      <para>A bicubic interpolation algorithm.</para>
+      <para>Destination pixel values are computed as a weighted average of the nearest sixteen pixels in a 4x4 grid.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapInterpolationMode.WICBitmapInterpolationModeFant">
+    <summary>
+      <para>A Fant resampling algorithm.</para>
+      <para>Destination pixel values are computed as a weighted average of the all the pixels that map to the new pixel.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapInterpolationMode.WICBitmapInterpolationModeHighQualityCubic">
+    <summary>
+      <para>A high quality bicubic interpolation algorithm. Destination pixel values are computed using a much denser sampling
+kernel than regular cubic. The kernel is resized in response to the scale factor, making it suitable for downscaling by factors greater than 2.</para>
+      <para>
+        <b>Note</b>  This value is supported beginning with Windows 10.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapInterpolationMode.WICBITMAPINTERPOLATIONMODE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

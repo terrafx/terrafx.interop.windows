@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_BRIGHTNESS_PROP">
+    <summary>
+      <para>Identifiers for the properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/brightness">Brightness effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BRIGHTNESS_PROP.D2D1_BRIGHTNESS_PROP_WHITE_POINT">
+    <summary>
+      <para>The upper portion of the brightness transfer curve. The white point adjusts the appearance of the brighter portions of the image.
+This property is for both the x value and the y value, in that order. Each of the values of this property are between 0 and 1, inclusive.</para>
+      <para>The type is <see cref="D2D1_VECTOR_2F" />.</para>
+      <para>The default value is (1.0f, 1.0f).</para>
+    </summary>
+  </member>
+  <member name="D2D1_BRIGHTNESS_PROP.D2D1_BRIGHTNESS_PROP_BLACK_POINT">
+    <summary>
+      <para>The lower portion of the brightness transfer curve. The black point adjusts the appearance of the darker portions of the image.
+This property is for both the x value and the y value, in that order. Each of the values of this property are between 0 and 1, inclusive.</para>
+      <para>The type is <see cref="D2D1_VECTOR_2F" />.</para>
+      <para>The default value is (0.0f, 0.0f).</para>
+    </summary>
+  </member>
+  <member name="D2D1_BRIGHTNESS_PROP.D2D1_BRIGHTNESS_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

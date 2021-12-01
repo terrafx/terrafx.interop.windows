@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_TOPOLOGY_RESOLUTION_STATUS_FLAGS">
+    <summary>
+      <para>Defines status flags for the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-topology-resolution-status-attribute">MF_TOPOLOGY_RESOLUTION_STATUS</a> attribute.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_TOPOLOGY_RESOLUTION_STATUS_FLAGS.MF_TOPOLOGY_RESOLUTION_SUCCEEDED">
+    <summary>
+      <para>The topology was resolved successfully.</para>
+    </summary>
+  </member>
+  <member name="MF_TOPOLOGY_RESOLUTION_STATUS_FLAGS.MF_OPTIONAL_NODE_REJECTED_MEDIA_TYPE">
+    <summary>
+      <para>An optional topology node was rejected because the topology loader could not find a media type for the connection.</para>
+    </summary>
+  </member>
+  <member name="MF_TOPOLOGY_RESOLUTION_STATUS_FLAGS.MF_OPTIONAL_NODE_REJECTED_PROTECTED_PROCESS">
+    <summary>
+      <para>An optional topology node was rejected because it could not be loaded into a protected process.</para>
+    </summary>
+  </member>
+</doc>

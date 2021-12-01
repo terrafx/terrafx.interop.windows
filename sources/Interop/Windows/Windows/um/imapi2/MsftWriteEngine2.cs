@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MsftWriteEngine2.xml' path='doc/member[@name="MsftWriteEngine2"]/*' />
 [Guid("2735412C-7F64-5B0F-8F00-5D77AFBE261E")]
 public partial struct MsftWriteEngine2
 {

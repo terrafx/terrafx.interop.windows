@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_EXTENSIONS.xml' path='doc/member[@name="CERT_EXTENSIONS"]/*' />
 public unsafe partial struct CERT_EXTENSIONS
 {
+    /// <include file='CERT_EXTENSIONS.xml' path='doc/member[@name="CERT_EXTENSIONS.cExtension"]/*' />
     [NativeTypeName("DWORD")]
     public uint cExtension;
 
+    /// <include file='CERT_EXTENSIONS.xml' path='doc/member[@name="CERT_EXTENSIONS.rgExtension"]/*' />
     [NativeTypeName("PCERT_EXTENSION")]
     public CERT_EXTENSION* rgExtension;
 }

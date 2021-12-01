@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_BLOB_ARRAY">
+    <summary>
+      <para>The <b>CRYPT_BLOB_ARRAY</b> structure contains an array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structures.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_BLOB_ARRAY.cBlob">
+    <summary>
+      <para>The number of elements in the <b>rgBlob</b> array.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_BLOB_ARRAY.rgBlob">
+    <summary>
+      <para>An array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structures that contains the data blobs.</para>
+    </summary>
+  </member>
+</doc>

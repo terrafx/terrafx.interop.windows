@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement"]/*' />
 [Guid("3050F2B5-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLMarqueeElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, uint>)(lpVtbl[1]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, uint>)(lpVtbl[2]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, uint*, int>)(lpVtbl[3]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_bgColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_bgColor(VARIANT v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[7]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_bgColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_bgColor(VARIANT* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[8]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_scrollDelay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_scrollDelay([NativeTypeName("long")] int v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int, int>)(lpVtbl[9]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_scrollDelay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_scrollDelay([NativeTypeName("long *")] int* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int*, int>)(lpVtbl[10]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_direction([NativeTypeName("BSTR")] ushort* v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort*, int>)(lpVtbl[11]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort**, int>)(lpVtbl[12]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_behavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort*, int>)(lpVtbl[13]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_behavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort**, int>)(lpVtbl[14]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_scrollAmount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_scrollAmount([NativeTypeName("long")] int v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int, int>)(lpVtbl[15]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_scrollAmount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_scrollAmount([NativeTypeName("long *")] int* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int*, int>)(lpVtbl[16]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_loop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_loop([NativeTypeName("long")] int v)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int, int>)(lpVtbl[17]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_loop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_loop([NativeTypeName("long *")] int* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int*, int>)(lpVtbl[18]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_vspace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT put_vspace([NativeTypeName("long")] int v)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int, int>)(lpVtbl[19]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_vspace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_vspace([NativeTypeName("long *")] int* p)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int*, int>)(lpVtbl[20]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_hspace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_hspace([NativeTypeName("long")] int v)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int, int>)(lpVtbl[21]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_hspace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_hspace([NativeTypeName("long *")] int* p)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int*, int>)(lpVtbl[22]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_onfinish"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_onfinish(VARIANT v)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[23]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_onfinish"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_onfinish(VARIANT* p)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[24]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_onstart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_onstart(VARIANT v)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[25]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_onstart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_onstart(VARIANT* p)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[26]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_onbounce"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT put_onbounce(VARIANT v)
@@ -214,6 +243,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[27]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_onbounce"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get_onbounce(VARIANT* p)
@@ -221,6 +251,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[28]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT put_width(VARIANT v)
@@ -228,6 +259,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[29]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT get_width(VARIANT* p)
@@ -235,6 +267,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[30]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT put_height(VARIANT v)
@@ -242,6 +275,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[31]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT get_height(VARIANT* p)
@@ -249,6 +283,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[32]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_trueSpeed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT put_trueSpeed([NativeTypeName("VARIANT_BOOL")] short v)
@@ -256,6 +291,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, short, int>)(lpVtbl[33]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_trueSpeed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT get_trueSpeed([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -263,6 +299,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, short*, int>)(lpVtbl[34]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT start()
@@ -270,6 +307,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         return ((delegate* unmanaged<IHTMLMarqueeElement*, int>)(lpVtbl[35]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.stop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT stop()

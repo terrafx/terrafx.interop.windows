@@ -7,10 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINHTTP_WEB_SOCKET_ASYNC_RESULT.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_ASYNC_RESULT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct WINHTTP_WEB_SOCKET_ASYNC_RESULT
 {
+    /// <include file='WINHTTP_WEB_SOCKET_ASYNC_RESULT.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_ASYNC_RESULT.AsyncResult"]/*' />
     public WINHTTP_ASYNC_RESULT AsyncResult;
 
+    /// <include file='WINHTTP_WEB_SOCKET_ASYNC_RESULT.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_ASYNC_RESULT.Operation"]/*' />
     public WINHTTP_WEB_SOCKET_OPERATION Operation;
 }

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_DURATION">
+    <summary>
+      <para>Represents a <a href="https://www.w3.org/tr/xmlschema-2/#duration">xsd:duration</a> data type.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION.negative">
+    <summary>
+      <para>If <b>TRUE</b>, this represents a negative duration.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION.years">
+    <summary>
+      <para>The number of years.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION.months">
+    <summary>
+      <para>The number of months.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION.days">
+    <summary>
+      <para>The number of days.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION.hours">
+    <summary>
+      <para>The number of hours.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION.minutes">
+    <summary>
+      <para>The number of minutes.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION.seconds">
+    <summary>
+      <para>The number of seconds.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION.milliseconds">
+    <summary>
+      <para>The number of milliseconds.  This value must be less than 1000.</para>
+    </summary>
+  </member>
+  <member name="WS_DURATION.ticks">
+    <summary>
+      <para>Indicates the number of ticks.  This value must be less than 10000.</para>
+    </summary>
+  </member>
+</doc>

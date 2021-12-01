@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EVENTLOG_FULL_INFORMATION">
+    <summary>
+      <para>Indicates whether the event log is full.</para>
+    </summary>
+    <seealso cref="GetEventLogInformation" />
+  </member>
+  <member name="EVENTLOG_FULL_INFORMATION.dwFull">
+    <summary>
+      <para>Indicates whether the event log is full. If the log is full, this member is <b>TRUE</b>. Otherwise, it is <b>FALSE</b>.</para>
+    </summary>
+  </member>
+</doc>

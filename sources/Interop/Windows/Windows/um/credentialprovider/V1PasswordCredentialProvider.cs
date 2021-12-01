@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='V1PasswordCredentialProvider.xml' path='doc/member[@name="V1PasswordCredentialProvider"]/*' />
 [Guid("6F45DC1E-5384-457A-BC13-2CD81B0D28ED")]
 public partial struct V1PasswordCredentialProvider
 {

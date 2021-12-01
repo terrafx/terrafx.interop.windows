@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncDDHeadphoneMode.xml' path='doc/member[@name="eAVEncDDHeadphoneMode"]/*' />
 public enum eAVEncDDHeadphoneMode
 {
+    /// <include file='eAVEncDDHeadphoneMode.xml' path='doc/member[@name="eAVEncDDHeadphoneMode.eAVEncDDHeadphoneMode_NotIndicated"]/*' />
     eAVEncDDHeadphoneMode_NotIndicated = 0,
+
+    /// <include file='eAVEncDDHeadphoneMode.xml' path='doc/member[@name="eAVEncDDHeadphoneMode.eAVEncDDHeadphoneMode_NotEncoded"]/*' />
     eAVEncDDHeadphoneMode_NotEncoded = 1,
+
+    /// <include file='eAVEncDDHeadphoneMode.xml' path='doc/member[@name="eAVEncDDHeadphoneMode.eAVEncDDHeadphoneMode_Encoded"]/*' />
     eAVEncDDHeadphoneMode_Encoded = 2,
 }

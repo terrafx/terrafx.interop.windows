@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ApplicationType.xml' path='doc/member[@name="ApplicationType"]/*' />
 public enum ApplicationType
 {
+    /// <include file='ApplicationType.xml' path='doc/member[@name="ApplicationType.ServerApplication"]/*' />
     ServerApplication = 0,
+
+    /// <include file='ApplicationType.xml' path='doc/member[@name="ApplicationType.LibraryApplication"]/*' />
     LibraryApplication = (ServerApplication + 1),
 }

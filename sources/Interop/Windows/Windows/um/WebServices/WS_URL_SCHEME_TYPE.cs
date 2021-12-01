@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_URL_SCHEME_TYPE.xml' path='doc/member[@name="WS_URL_SCHEME_TYPE"]/*' />
 public enum WS_URL_SCHEME_TYPE
 {
+    /// <include file='WS_URL_SCHEME_TYPE.xml' path='doc/member[@name="WS_URL_SCHEME_TYPE.WS_URL_HTTP_SCHEME_TYPE"]/*' />
     WS_URL_HTTP_SCHEME_TYPE = 0,
+
+    /// <include file='WS_URL_SCHEME_TYPE.xml' path='doc/member[@name="WS_URL_SCHEME_TYPE.WS_URL_HTTPS_SCHEME_TYPE"]/*' />
     WS_URL_HTTPS_SCHEME_TYPE = 1,
+
+    /// <include file='WS_URL_SCHEME_TYPE.xml' path='doc/member[@name="WS_URL_SCHEME_TYPE.WS_URL_NETTCP_SCHEME_TYPE"]/*' />
     WS_URL_NETTCP_SCHEME_TYPE = 2,
+
+    /// <include file='WS_URL_SCHEME_TYPE.xml' path='doc/member[@name="WS_URL_SCHEME_TYPE.WS_URL_SOAPUDP_SCHEME_TYPE"]/*' />
     WS_URL_SOAPUDP_SCHEME_TYPE = 3,
+
+    /// <include file='WS_URL_SCHEME_TYPE.xml' path='doc/member[@name="WS_URL_SCHEME_TYPE.WS_URL_NETPIPE_SCHEME_TYPE"]/*' />
     WS_URL_NETPIPE_SCHEME_TYPE = 4,
 }

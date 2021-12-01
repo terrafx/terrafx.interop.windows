@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPRESS_ALLOCATION_ROUTINES">
+    <summary>
+      <para>A structure containing optional memory allocation and deallocation routines.</para>
+    </summary>
+  </member>
+  <member name="COMPRESS_ALLOCATION_ROUTINES.Allocate">
+    <summary>
+      <para>Callback that allocates memory.</para>
+    </summary>
+  </member>
+  <member name="COMPRESS_ALLOCATION_ROUTINES.Free">
+    <summary>
+      <para>Callback that deallocates memory.</para>
+    </summary>
+  </member>
+  <member name="COMPRESS_ALLOCATION_ROUTINES.UserContext">
+    <summary>
+      <para>A pointer to context information for the allocation or deallocation routine defined by the user.</para>
+    </summary>
+  </member>
+</doc>

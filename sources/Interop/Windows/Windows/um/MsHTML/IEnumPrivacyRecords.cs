@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumPrivacyRecords.xml' path='doc/member[@name="IEnumPrivacyRecords"]/*' />
 [Guid("3050F844-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IEnumPrivacyRecords : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
         return ((delegate* unmanaged<IEnumPrivacyRecords*, Guid*, void**, int>)(lpVtbl[0]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
         return ((delegate* unmanaged<IEnumPrivacyRecords*, uint>)(lpVtbl[1]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
         return ((delegate* unmanaged<IEnumPrivacyRecords*, uint>)(lpVtbl[2]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumPrivacyRecords.xml' path='doc/member[@name="IEnumPrivacyRecords.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Reset()
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
         return ((delegate* unmanaged<IEnumPrivacyRecords*, int>)(lpVtbl[3]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumPrivacyRecords.xml' path='doc/member[@name="IEnumPrivacyRecords.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSize([NativeTypeName("ULONG *")] uint* pSize)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
         return ((delegate* unmanaged<IEnumPrivacyRecords*, uint*, int>)(lpVtbl[4]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pSize);
     }
 
+    /// <include file='IEnumPrivacyRecords.xml' path='doc/member[@name="IEnumPrivacyRecords.GetPrivacyImpacted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPrivacyImpacted(BOOL* pState)
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
         return ((delegate* unmanaged<IEnumPrivacyRecords*, BOOL*, int>)(lpVtbl[5]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pState);
     }
 
+    /// <include file='IEnumPrivacyRecords.xml' path='doc/member[@name="IEnumPrivacyRecords.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("BSTR *")] ushort** pbstrUrl, [NativeTypeName("BSTR *")] ushort** pbstrPolicyRef, [NativeTypeName("LONG *")] int* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwPrivacyFlags)

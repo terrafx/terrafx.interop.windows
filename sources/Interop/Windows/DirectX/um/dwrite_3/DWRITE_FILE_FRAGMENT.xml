@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_FILE_FRAGMENT">
+    <summary>
+      <para>Represents a range of bytes in a font file.</para>
+    </summary>
+    <remarks>
+      <para>DWRITE_FILE_FRAGMENT is passed as input to <see cref="IDWriteRemoteFontFileStream.BeginDownload" />.</para>
+    </remarks>
+  </member>
+  <member name="DWRITE_FILE_FRAGMENT.fileOffset">
+    <summary>
+      <para>Starting offset of the fragment from the beginning of the file.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FILE_FRAGMENT.fragmentSize">
+    <summary>
+      <para>Size of the file fragment, in bytes.</para>
+    </summary>
+  </member>
+</doc>

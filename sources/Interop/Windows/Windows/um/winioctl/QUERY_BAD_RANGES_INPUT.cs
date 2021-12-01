@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QUERY_BAD_RANGES_INPUT.xml' path='doc/member[@name="QUERY_BAD_RANGES_INPUT"]/*' />
 public partial struct QUERY_BAD_RANGES_INPUT
 {
+    /// <include file='QUERY_BAD_RANGES_INPUT.xml' path='doc/member[@name="QUERY_BAD_RANGES_INPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='QUERY_BAD_RANGES_INPUT.xml' path='doc/member[@name="QUERY_BAD_RANGES_INPUT.NumRanges"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumRanges;
 
+    /// <include file='QUERY_BAD_RANGES_INPUT.xml' path='doc/member[@name="QUERY_BAD_RANGES_INPUT.Ranges"]/*' />
     [NativeTypeName("QUERY_BAD_RANGES_INPUT_RANGE [1]")]
     public _Ranges_e__FixedBuffer Ranges;
 
+    /// <include file='_Ranges_e__FixedBuffer.xml' path='doc/member[@name="_Ranges_e__FixedBuffer"]/*' />
     public partial struct _Ranges_e__FixedBuffer
     {
         public QUERY_BAD_RANGES_INPUT_RANGE e0;

@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DWMTRANSITION_OWNEDWINDOW_TARGET.xml' path='doc/member[@name="DWMTRANSITION_OWNEDWINDOW_TARGET"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum DWMTRANSITION_OWNEDWINDOW_TARGET
 {
+    /// <include file='DWMTRANSITION_OWNEDWINDOW_TARGET.xml' path='doc/member[@name="DWMTRANSITION_OWNEDWINDOW_TARGET.DWMTRANSITION_OWNEDWINDOW_NULL"]/*' />
     DWMTRANSITION_OWNEDWINDOW_NULL = -1,
+
+    /// <include file='DWMTRANSITION_OWNEDWINDOW_TARGET.xml' path='doc/member[@name="DWMTRANSITION_OWNEDWINDOW_TARGET.DWMTRANSITION_OWNEDWINDOW_REPOSITION"]/*' />
     DWMTRANSITION_OWNEDWINDOW_REPOSITION = 0,
 }

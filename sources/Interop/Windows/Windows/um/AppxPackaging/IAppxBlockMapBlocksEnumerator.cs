@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBlockMapBlocksEnumerator.xml' path='doc/member[@name="IAppxBlockMapBlocksEnumerator"]/*' />
 [Guid("6B429B5B-36EF-479E-B9EB-0C1482B49E16")]
 [NativeTypeName("struct IAppxBlockMapBlocksEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxBlockMapBlocksEnumerator : IAppxBlockMapBlocks
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxBlockMapBlocksEnumerator : IAppxBlockMapBlocks
         return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxBlockMapBlocksEnumerator : IAppxBlockMapBlocks
         return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, uint>)(lpVtbl[1]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxBlockMapBlocksEnumerator : IAppxBlockMapBlocks
         return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, uint>)(lpVtbl[2]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBlockMapBlocksEnumerator.xml' path='doc/member[@name="IAppxBlockMapBlocksEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrent(IAppxBlockMapBlock** block)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxBlockMapBlocksEnumerator : IAppxBlockMapBlocks
         return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, IAppxBlockMapBlock**, int>)(lpVtbl[3]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), block);
     }
 
+    /// <include file='IAppxBlockMapBlocksEnumerator.xml' path='doc/member[@name="IAppxBlockMapBlocksEnumerator.GetHasCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxBlockMapBlocksEnumerator : IAppxBlockMapBlocks
         return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
+    /// <include file='IAppxBlockMapBlocksEnumerator.xml' path='doc/member[@name="IAppxBlockMapBlocksEnumerator.MoveNext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)

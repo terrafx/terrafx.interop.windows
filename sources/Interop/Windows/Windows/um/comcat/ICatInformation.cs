@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation"]/*' />
 [Guid("0002E013-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ICatInformation : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
         return ((delegate* unmanaged<ICatInformation*, Guid*, void**, int>)(lpVtbl[0]))((ICatInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
         return ((delegate* unmanaged<ICatInformation*, uint>)(lpVtbl[1]))((ICatInformation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
         return ((delegate* unmanaged<ICatInformation*, uint>)(lpVtbl[2]))((ICatInformation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.EnumCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EnumCategories([NativeTypeName("LCID")] uint lcid, IEnumCATEGORYINFO** ppenumCategoryInfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
         return ((delegate* unmanaged<ICatInformation*, uint, IEnumCATEGORYINFO**, int>)(lpVtbl[3]))((ICatInformation*)Unsafe.AsPointer(ref this), lcid, ppenumCategoryInfo);
     }
 
+    /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.GetCategoryDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCategoryDesc([NativeTypeName("REFCATID")] Guid* rcatid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPWSTR *")] ushort** pszDesc)
@@ -53,6 +59,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
         return ((delegate* unmanaged<ICatInformation*, Guid*, uint, ushort**, int>)(lpVtbl[4]))((ICatInformation*)Unsafe.AsPointer(ref this), rcatid, lcid, pszDesc);
     }
 
+    /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.EnumClassesOfCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumClassesOfCategories([NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID []")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID []")] Guid* rgcatidReq, IEnumGUID** ppenumClsid)
@@ -60,6 +67,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
         return ((delegate* unmanaged<ICatInformation*, uint, Guid*, uint, Guid*, IEnumGUID**, int>)(lpVtbl[5]))((ICatInformation*)Unsafe.AsPointer(ref this), cImplemented, rgcatidImpl, cRequired, rgcatidReq, ppenumClsid);
     }
 
+    /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.IsClassOfCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsClassOfCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID []")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID []")] Guid* rgcatidReq)
@@ -67,6 +75,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
         return ((delegate* unmanaged<ICatInformation*, Guid*, uint, Guid*, uint, Guid*, int>)(lpVtbl[6]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, cImplemented, rgcatidImpl, cRequired, rgcatidReq);
     }
 
+    /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.EnumImplCategoriesOfClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EnumImplCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, IEnumGUID** ppenumCatid)
@@ -74,6 +83,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
         return ((delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int>)(lpVtbl[7]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, ppenumCatid);
     }
 
+    /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.EnumReqCategoriesOfClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT EnumReqCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, IEnumGUID** ppenumCatid)

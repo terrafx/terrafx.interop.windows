@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppVisibility.xml' path='doc/member[@name="AppVisibility"]/*' />
 [Guid("7E5FE3D9-985F-4908-91F9-EE19F9FD1514")]
 public partial struct AppVisibility
 {

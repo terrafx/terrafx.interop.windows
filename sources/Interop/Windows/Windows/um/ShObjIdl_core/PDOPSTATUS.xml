@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PDOPSTATUS">
+    <summary>
+      <para>Provides operation status flags.</para>
+    </summary>
+  </member>
+  <member name="PDOPSTATUS.PDOPS_RUNNING">
+    <summary>
+      <para>Operation is running, no user intervention.</para>
+    </summary>
+  </member>
+  <member name="PDOPSTATUS.PDOPS_PAUSED">
+    <summary>
+      <para>Operation has been paused by the user.</para>
+    </summary>
+  </member>
+  <member name="PDOPSTATUS.PDOPS_CANCELLED">
+    <summary>
+      <para>Operation has been canceled by the user - now go undo.</para>
+    </summary>
+  </member>
+  <member name="PDOPSTATUS.PDOPS_STOPPED">
+    <summary>
+      <para>Operation has been stopped by the user - terminate completely.</para>
+    </summary>
+  </member>
+  <member name="PDOPSTATUS.PDOPS_ERRORS">
+    <summary>
+      <para>Operation has gone as far as it can go without throwing error dialogs.</para>
+    </summary>
+  </member>
+</doc>

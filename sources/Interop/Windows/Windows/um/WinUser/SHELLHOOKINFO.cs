@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHELLHOOKINFO.xml' path='doc/member[@name="SHELLHOOKINFO"]/*' />
 public partial struct SHELLHOOKINFO
 {
+    /// <include file='SHELLHOOKINFO.xml' path='doc/member[@name="SHELLHOOKINFO.hwnd"]/*' />
     public HWND hwnd;
 
+    /// <include file='SHELLHOOKINFO.xml' path='doc/member[@name="SHELLHOOKINFO.rc"]/*' />
     public RECT rc;
 }

@@ -8,17 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMD64_MXCSR_REG.xml' path='doc/member[@name="AMD64_MXCSR_REG"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct AMD64_MXCSR_REG
 {
+    /// <include file='AMD64_MXCSR_REG.xml' path='doc/member[@name="AMD64_MXCSR_REG.Value"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("DWORD")]
     public uint Value;
 
+    /// <include file='AMD64_MXCSR_REG.xml' path='doc/member[@name="AMD64_MXCSR_REG.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("_AMD64_MXCSR_REG::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:6802:5)")]
     public _Anonymous_e__Struct Anonymous;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IE"]/*' />
     public uint IE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +38,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DE"]/*' />
     public uint DE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,6 +54,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ZE"]/*' />
     public uint ZE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,6 +70,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OE"]/*' />
     public uint OE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,6 +86,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UE"]/*' />
     public uint UE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -94,6 +102,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.PE"]/*' />
     public uint PE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -109,6 +118,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DAZ"]/*' />
     public uint DAZ
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -124,6 +134,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IM"]/*' />
     public uint IM
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -139,6 +150,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DM"]/*' />
     public uint DM
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -154,6 +166,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ZM"]/*' />
     public uint ZM
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -169,6 +182,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OM"]/*' />
     public uint OM
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -184,6 +198,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UM"]/*' />
     public uint UM
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -199,6 +214,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.PM"]/*' />
     public uint PM
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -214,6 +230,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RC"]/*' />
     public uint RC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -229,6 +246,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FZ"]/*' />
     public uint FZ
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -244,6 +262,7 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.res"]/*' />
     public uint res
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -259,10 +278,12 @@ public partial struct AMD64_MXCSR_REG
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
         public uint _bitfield;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IE"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint IE
         {
@@ -279,6 +300,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DE"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint DE
         {
@@ -295,6 +317,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ZE"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint ZE
         {
@@ -311,6 +334,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OE"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint OE
         {
@@ -327,6 +351,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UE"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint UE
         {
@@ -343,6 +368,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.PE"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint PE
         {
@@ -359,6 +385,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DAZ"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint DAZ
         {
@@ -375,6 +402,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IM"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint IM
         {
@@ -391,6 +419,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DM"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint DM
         {
@@ -407,6 +436,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ZM"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint ZM
         {
@@ -423,6 +453,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OM"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint OM
         {
@@ -439,6 +470,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UM"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint UM
         {
@@ -455,6 +487,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.PM"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint PM
         {
@@ -471,6 +504,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RC"]/*' />
         [NativeTypeName("DWORD : 2")]
         public uint RC
         {
@@ -487,6 +521,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FZ"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint FZ
         {
@@ -503,6 +538,7 @@ public partial struct AMD64_MXCSR_REG
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.res"]/*' />
         [NativeTypeName("DWORD : 16")]
         public uint res
         {

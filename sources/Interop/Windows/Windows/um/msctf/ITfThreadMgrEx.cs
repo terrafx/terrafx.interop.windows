@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfThreadMgrEx.xml' path='doc/member[@name="ITfThreadMgrEx"]/*' />
 [Guid("3E90ADE3-7594-4CB0-BB58-69628F5F458C")]
 [NativeTypeName("struct ITfThreadMgrEx : ITfThreadMgr")]
 [NativeInheritance("ITfThreadMgr")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, Guid*, void**, int>)(lpVtbl[0]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, uint>)(lpVtbl[1]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, uint>)(lpVtbl[2]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.Activate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Activate([NativeTypeName("TfClientId *")] uint* ptid)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, uint*, int>)(lpVtbl[3]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), ptid);
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.Deactivate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Deactivate()
@@ -53,6 +59,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, int>)(lpVtbl[4]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.CreateDocumentMgr" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateDocumentMgr(ITfDocumentMgr** ppdim)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, ITfDocumentMgr**, int>)(lpVtbl[5]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), ppdim);
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.EnumDocumentMgrs" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EnumDocumentMgrs(IEnumTfDocumentMgrs** ppEnum)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, IEnumTfDocumentMgrs**, int>)(lpVtbl[6]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.GetFocus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetFocus(ITfDocumentMgr** ppdimFocus)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, ITfDocumentMgr**, int>)(lpVtbl[7]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), ppdimFocus);
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.SetFocus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetFocus(ITfDocumentMgr* pdimFocus)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, ITfDocumentMgr*, int>)(lpVtbl[8]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), pdimFocus);
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.AssociateFocus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT AssociateFocus(HWND hwnd, ITfDocumentMgr* pdimNew, ITfDocumentMgr** ppdimPrev)
@@ -88,6 +99,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, HWND, ITfDocumentMgr*, ITfDocumentMgr**, int>)(lpVtbl[9]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), hwnd, pdimNew, ppdimPrev);
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.IsThreadFocus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT IsThreadFocus(BOOL* pfThreadFocus)
@@ -95,6 +107,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, BOOL*, int>)(lpVtbl[10]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), pfThreadFocus);
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.GetFunctionProvider" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetFunctionProvider([NativeTypeName("const IID &")] Guid* clsid, ITfFunctionProvider** ppFuncProv)
@@ -102,6 +115,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, Guid*, ITfFunctionProvider**, int>)(lpVtbl[11]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), clsid, ppFuncProv);
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.EnumFunctionProviders" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT EnumFunctionProviders(IEnumTfFunctionProviders** ppEnum)
@@ -109,6 +123,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, IEnumTfFunctionProviders**, int>)(lpVtbl[12]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <inheritdoc cref="ITfThreadMgr.GetGlobalCompartment" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetGlobalCompartment(ITfCompartmentMgr** ppCompMgr)
@@ -116,6 +131,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, ITfCompartmentMgr**, int>)(lpVtbl[13]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), ppCompMgr);
     }
 
+    /// <include file='ITfThreadMgrEx.xml' path='doc/member[@name="ITfThreadMgrEx.ActivateEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT ActivateEx([NativeTypeName("TfClientId *")] uint* ptid, [NativeTypeName("DWORD")] uint dwFlags)
@@ -123,6 +139,7 @@ public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
         return ((delegate* unmanaged<ITfThreadMgrEx*, uint*, uint, int>)(lpVtbl[14]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), ptid, dwFlags);
     }
 
+    /// <include file='ITfThreadMgrEx.xml' path='doc/member[@name="ITfThreadMgrEx.GetActiveFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetActiveFlags([NativeTypeName("DWORD *")] uint* lpdwFlags)

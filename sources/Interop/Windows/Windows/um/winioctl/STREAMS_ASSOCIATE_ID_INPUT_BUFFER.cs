@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STREAMS_ASSOCIATE_ID_INPUT_BUFFER.xml' path='doc/member[@name="STREAMS_ASSOCIATE_ID_INPUT_BUFFER"]/*' />
 public partial struct STREAMS_ASSOCIATE_ID_INPUT_BUFFER
 {
+    /// <include file='STREAMS_ASSOCIATE_ID_INPUT_BUFFER.xml' path='doc/member[@name="STREAMS_ASSOCIATE_ID_INPUT_BUFFER.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='STREAMS_ASSOCIATE_ID_INPUT_BUFFER.xml' path='doc/member[@name="STREAMS_ASSOCIATE_ID_INPUT_BUFFER.StreamId"]/*' />
     [NativeTypeName("DWORD")]
     public uint StreamId;
 }

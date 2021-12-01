@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame"]/*' />
 [Guid("00000116-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleInPlaceFrame : IOleInPlaceUIWindow")]
 [NativeInheritance("IOleInPlaceUIWindow")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, uint>)(lpVtbl[1]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, uint>)(lpVtbl[2]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleWindow.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, HWND*, int>)(lpVtbl[3]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
+    /// <inheritdoc cref="IOleInPlaceUIWindow.GetBorder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetBorder([NativeTypeName("LPRECT")] RECT* lprectBorder)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, RECT*, int>)(lpVtbl[5]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), lprectBorder);
     }
 
+    /// <inheritdoc cref="IOleInPlaceUIWindow.RequestBorderSpace" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RequestBorderSpace([NativeTypeName("LPCBORDERWIDTHS")] RECT* pborderwidths)
@@ -67,6 +75,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, RECT*, int>)(lpVtbl[6]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pborderwidths);
     }
 
+    /// <inheritdoc cref="IOleInPlaceUIWindow.SetBorderSpace" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetBorderSpace([NativeTypeName("LPCBORDERWIDTHS")] RECT* pborderwidths)
@@ -74,6 +83,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, RECT*, int>)(lpVtbl[7]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pborderwidths);
     }
 
+    /// <inheritdoc cref="IOleInPlaceUIWindow.SetActiveObject" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] ushort* pszObjName)
@@ -81,6 +91,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, IOleInPlaceActiveObject*, ushort*, int>)(lpVtbl[8]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pActiveObject, pszObjName);
     }
 
+    /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.InsertMenus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT InsertMenus(HMENU hmenuShared, [NativeTypeName("LPOLEMENUGROUPWIDTHS")] OLEMENUGROUPWIDTHS* lpMenuWidths)
@@ -88,6 +99,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, HMENU, OLEMENUGROUPWIDTHS*, int>)(lpVtbl[9]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared, lpMenuWidths);
     }
 
+    /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.SetMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetMenu(HMENU hmenuShared, [NativeTypeName("HOLEMENU")] HGLOBAL holemenu, HWND hwndActiveObject)
@@ -95,6 +107,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, HMENU, HGLOBAL, HWND, int>)(lpVtbl[10]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared, holemenu, hwndActiveObject);
     }
 
+    /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.RemoveMenus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT RemoveMenus(HMENU hmenuShared)
@@ -102,6 +115,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, HMENU, int>)(lpVtbl[11]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared);
     }
 
+    /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.SetStatusText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetStatusText([NativeTypeName("LPCOLESTR")] ushort* pszStatusText)
@@ -109,6 +123,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, ushort*, int>)(lpVtbl[12]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pszStatusText);
     }
 
+    /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.EnableModeless"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT EnableModeless(BOOL fEnable)
@@ -116,6 +131,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         return ((delegate* unmanaged<IOleInPlaceFrame*, BOOL, int>)(lpVtbl[13]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), fEnable);
     }
 
+    /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.TranslateAccelerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg, [NativeTypeName("WORD")] ushort wID)

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HARDWAREINPUT.xml' path='doc/member[@name="HARDWAREINPUT"]/*' />
 public partial struct HARDWAREINPUT
 {
+    /// <include file='HARDWAREINPUT.xml' path='doc/member[@name="HARDWAREINPUT.uMsg"]/*' />
     [NativeTypeName("DWORD")]
     public uint uMsg;
 
+    /// <include file='HARDWAREINPUT.xml' path='doc/member[@name="HARDWAREINPUT.wParamL"]/*' />
     [NativeTypeName("WORD")]
     public ushort wParamL;
 
+    /// <include file='HARDWAREINPUT.xml' path='doc/member[@name="HARDWAREINPUT.wParamH"]/*' />
     [NativeTypeName("WORD")]
     public ushort wParamH;
 }

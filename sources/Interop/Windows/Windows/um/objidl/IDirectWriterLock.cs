@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDirectWriterLock.xml' path='doc/member[@name="IDirectWriterLock"]/*' />
 [Guid("0E6D4D92-6738-11CF-9608-00AA00680DB4")]
 [NativeTypeName("struct IDirectWriterLock : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface
         return ((delegate* unmanaged<IDirectWriterLock*, Guid*, void**, int>)(lpVtbl[0]))((IDirectWriterLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface
         return ((delegate* unmanaged<IDirectWriterLock*, uint>)(lpVtbl[1]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface
         return ((delegate* unmanaged<IDirectWriterLock*, uint>)(lpVtbl[2]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectWriterLock.xml' path='doc/member[@name="IDirectWriterLock.WaitForWriteAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT WaitForWriteAccess([NativeTypeName("DWORD")] uint dwTimeout)
@@ -46,6 +51,7 @@ public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface
         return ((delegate* unmanaged<IDirectWriterLock*, uint, int>)(lpVtbl[3]))((IDirectWriterLock*)Unsafe.AsPointer(ref this), dwTimeout);
     }
 
+    /// <include file='IDirectWriterLock.xml' path='doc/member[@name="IDirectWriterLock.ReleaseWriteAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ReleaseWriteAccess()
@@ -53,6 +59,7 @@ public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface
         return ((delegate* unmanaged<IDirectWriterLock*, int>)(lpVtbl[4]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectWriterLock.xml' path='doc/member[@name="IDirectWriterLock.HaveWriteAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT HaveWriteAccess()

@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRGLSBOUNDEDRECORD.xml' path='doc/member[@name="EMRGLSBOUNDEDRECORD"]/*' />
 public unsafe partial struct EMRGLSBOUNDEDRECORD
 {
+    /// <include file='EMRGLSBOUNDEDRECORD.xml' path='doc/member[@name="EMRGLSBOUNDEDRECORD.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRGLSBOUNDEDRECORD.xml' path='doc/member[@name="EMRGLSBOUNDEDRECORD.rclBounds"]/*' />
     public RECTL rclBounds;
 
+    /// <include file='EMRGLSBOUNDEDRECORD.xml' path='doc/member[@name="EMRGLSBOUNDEDRECORD.cbData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbData;
 
+    /// <include file='EMRGLSBOUNDEDRECORD.xml' path='doc/member[@name="EMRGLSBOUNDEDRECORD.Data"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Data[1];
 }

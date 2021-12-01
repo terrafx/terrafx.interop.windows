@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBundleManifestOptionalBundleInfoEnumerator.xml' path='doc/member[@name="IAppxBundleManifestOptionalBundleInfoEnumerator"]/*' />
 [Guid("9A178793-F97E-46AC-AACA-DD5BA4C177C8")]
 [NativeTypeName("struct IAppxBundleManifestOptionalBundleInfoEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfoEnumerator : I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfoEnumerator : I
         return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestOptionalBundleInfoEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfoEnumerator : I
         return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, uint>)(lpVtbl[1]))((IAppxBundleManifestOptionalBundleInfoEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfoEnumerator : I
         return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, uint>)(lpVtbl[2]))((IAppxBundleManifestOptionalBundleInfoEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBundleManifestOptionalBundleInfoEnumerator.xml' path='doc/member[@name="IAppxBundleManifestOptionalBundleInfoEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrent(IAppxBundleManifestOptionalBundleInfo** optionalBundle)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfoEnumerator : I
         return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, IAppxBundleManifestOptionalBundleInfo**, int>)(lpVtbl[3]))((IAppxBundleManifestOptionalBundleInfoEnumerator*)Unsafe.AsPointer(ref this), optionalBundle);
     }
 
+    /// <include file='IAppxBundleManifestOptionalBundleInfoEnumerator.xml' path='doc/member[@name="IAppxBundleManifestOptionalBundleInfoEnumerator.GetHasCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfoEnumerator : I
         return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxBundleManifestOptionalBundleInfoEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
+    /// <include file='IAppxBundleManifestOptionalBundleInfoEnumerator.xml' path='doc/member[@name="IAppxBundleManifestOptionalBundleInfoEnumerator.MoveNext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)

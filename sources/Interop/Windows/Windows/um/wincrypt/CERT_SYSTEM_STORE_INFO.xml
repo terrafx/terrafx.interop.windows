@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_SYSTEM_STORE_INFO">
+    <summary>
+      <para>The <b>CERT_SYSTEM_STORE_INFO</b> structure contains information used by functions that work with system stores. Currently, no essential information is contained in this structure.</para>
+    </summary>
+    <remarks>
+      <para>Currently, no system store information is persisted.</para>
+    </remarks>
+  </member>
+  <member name="CERT_SYSTEM_STORE_INFO.cbSize">
+    <summary>
+      <para>Size of this structure in bytes.</para>
+    </summary>
+  </member>
+</doc>

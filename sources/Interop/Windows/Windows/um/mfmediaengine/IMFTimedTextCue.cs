@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue"]/*' />
 [Guid("1E560447-9A2B-43E1-A94C-B0AAABFBFBC9")]
 [NativeTypeName("struct IMFTimedTextCue : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, uint>)(lpVtbl[1]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, uint>)(lpVtbl[2]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("DWORD")]
@@ -49,6 +54,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, uint>)(lpVtbl[3]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetOriginalId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetOriginalId([NativeTypeName("LPWSTR *")] ushort** originalId)
@@ -56,6 +62,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, ushort**, int>)(lpVtbl[4]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this), originalId);
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetCueKind"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public MF_TIMED_TEXT_TRACK_KIND GetCueKind()
@@ -63,6 +70,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, MF_TIMED_TEXT_TRACK_KIND>)(lpVtbl[5]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetStartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public double GetStartTime()
@@ -70,6 +78,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, double>)(lpVtbl[6]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetDuration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public double GetDuration()
@@ -77,6 +86,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, double>)(lpVtbl[7]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetTrackId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [return: NativeTypeName("DWORD")]
@@ -85,6 +95,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, uint>)(lpVtbl[8]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetData(IMFTimedTextBinary** data)
@@ -92,6 +103,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, IMFTimedTextBinary**, int>)(lpVtbl[9]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this), data);
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetRegion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetRegion(IMFTimedTextRegion** region)
@@ -99,6 +111,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, IMFTimedTextRegion**, int>)(lpVtbl[10]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this), region);
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetStyle(IMFTimedTextStyle** style)
@@ -106,6 +119,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, IMFTimedTextStyle**, int>)(lpVtbl[11]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this), style);
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetLineCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     [return: NativeTypeName("DWORD")]
@@ -114,6 +128,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         return ((delegate* unmanaged<IMFTimedTextCue*, uint>)(lpVtbl[12]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetLine([NativeTypeName("DWORD")] uint index, IMFTimedTextFormattedText** line)

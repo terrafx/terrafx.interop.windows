@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_SHADOW_OPTIMIZATION">
+    <summary>
+      <para>The level of performance optimization for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/drop-shadow">Shadow effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SHADOW_OPTIMIZATION.D2D1_SHADOW_OPTIMIZATION_SPEED">
+    <summary>
+      <para>Applies internal optimizations such as pre-scaling at relatively small radii. Uses linear filtering.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SHADOW_OPTIMIZATION.D2D1_SHADOW_OPTIMIZATION_BALANCED">
+    <summary>
+      <para>Uses the same optimization thresholds as Speed mode, but uses trilinear filtering.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SHADOW_OPTIMIZATION.D2D1_SHADOW_OPTIMIZATION_QUALITY">
+    <summary>
+      <para>Only uses internal optimizations with large blur radii, where approximations are less likely to be visible. Uses trilinear filtering.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SHADOW_OPTIMIZATION.D2D1_SHADOW_OPTIMIZATION_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

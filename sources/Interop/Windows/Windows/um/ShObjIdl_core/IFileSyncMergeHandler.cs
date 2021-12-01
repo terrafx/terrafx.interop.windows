@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFileSyncMergeHandler.xml' path='doc/member[@name="IFileSyncMergeHandler"]/*' />
 [Guid("D97B5AAC-C792-433C-975D-35C4EADC7A9D")]
 [NativeTypeName("struct IFileSyncMergeHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
         return ((delegate* unmanaged<IFileSyncMergeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
         return ((delegate* unmanaged<IFileSyncMergeHandler*, uint>)(lpVtbl[1]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
         return ((delegate* unmanaged<IFileSyncMergeHandler*, uint>)(lpVtbl[2]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFileSyncMergeHandler.xml' path='doc/member[@name="IFileSyncMergeHandler.Merge"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Merge([NativeTypeName("LPCWSTR")] ushort* localFilePath, [NativeTypeName("LPCWSTR")] ushort* serverFilePath, MERGE_UPDATE_STATUS* updateStatus)
@@ -46,6 +51,7 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
         return ((delegate* unmanaged<IFileSyncMergeHandler*, ushort*, ushort*, MERGE_UPDATE_STATUS*, int>)(lpVtbl[3]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), localFilePath, serverFilePath, updateStatus);
     }
 
+    /// <include file='IFileSyncMergeHandler.xml' path='doc/member[@name="IFileSyncMergeHandler.ShowResolveConflictUIAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ShowResolveConflictUIAsync([NativeTypeName("LPCWSTR")] ushort* localFilePath, HMONITOR monitorToDisplayOn)

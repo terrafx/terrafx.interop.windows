@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OLECMD">
+    <summary>
+      <para>Associates command flags from the <see cref="OLECMDF" /> enumeration with a command identifier through a call to <see cref="IOleCommandTarget.QueryStatus" />.</para>
+    </summary>
+    <seealso cref="IOleCommandTarget.QueryStatus" />
+    <seealso cref="OLECMDF" />
+  </member>
+  <member name="OLECMD.cmdID">
+    <summary>
+      <para>A command identifier; taken from the <see cref="OLECMDID" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="OLECMD.cmdf">
+    <summary>
+      <para>Flags associated with <b>cmdID</b>; taken from the <see cref="OLECMDF" /> enumeration.</para>
+    </summary>
+  </member>
+</doc>

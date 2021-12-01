@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_SELECT_CRITERIA.xml' path='doc/member[@name="CERT_SELECT_CRITERIA"]/*' />
 public unsafe partial struct CERT_SELECT_CRITERIA
 {
+    /// <include file='CERT_SELECT_CRITERIA.xml' path='doc/member[@name="CERT_SELECT_CRITERIA.dwType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwType;
 
+    /// <include file='CERT_SELECT_CRITERIA.xml' path='doc/member[@name="CERT_SELECT_CRITERIA.cPara"]/*' />
     [NativeTypeName("DWORD")]
     public uint cPara;
 
+    /// <include file='CERT_SELECT_CRITERIA.xml' path='doc/member[@name="CERT_SELECT_CRITERIA.ppPara"]/*' />
     public void** ppPara;
 }

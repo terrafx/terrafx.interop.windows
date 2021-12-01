@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_MFT_OUTPUT_DATA_BUFFER_FLAGS">
+    <summary>
+      <para>Defines flags for the <see cref="IMFTransform.ProcessOutput" /> method.</para>
+    </summary>
+    <remarks>
+      <para>The values in this enumeration are not bit flags, so they should not be combined with a bitwise <b>OR</b>. Also, the caller should test for these flags with the equality operator, not a bitwise <b>AND</b>:</para>
+      <code>// Correct.
+if (Buffer.dwStatus == MFT_OUTPUT_DATA_BUFFER_STREAM_END)
+{
+    ...
+}
+
+// Incorrect.
+if ((Buffer.dwStatus &amp;amp;amp;amp;amp;amp;amp; MFT_OUTPUT_DATA_BUFFER_STREAM_END) != 0)
+{
+    ...
+}
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+  </member>
+  <member name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_INCOMPLETE">
+    <summary>
+      <para>The MFT can still generate output from this stream without receiving any more input. Call <see cref="ProcessOutput" /> again to process the next batch of input data.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_FORMAT_CHANGE">
+    <summary>
+      <para>The format has changed on this output stream, or there is a new preferred format for this stream. When this flag is set, the MFT clears the media type for the stream. The <see cref="ProcessOutput" /> method returns MF_E_TRANSFORM_STREAM_CHANGE and generates no output for any stream. Further calls to <see cref="IMFTransform.ProcessInput" /> or <b>ProcessOutput</b> will fail until the client sets a new media type.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_STREAM_END">
+    <summary>
+      <para>The MFT has removed this output stream. The output stream must have the MFT_OUTPUT_STREAM_REMOVABLE flag. (See <see cref="IMFTransform.GetOutputStreamInfo" />.)</para>
+      <para>When the MFT removes an output stream, the MFT returns this status code on the next call to <see cref="ProcessOutput" /> after the last output sample has been produced. When the MFT returns this status code, it does not modify any sample contained in the <b>pSample</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure, nor does it allocate a new sample if <b>pSample</b> is <b>NULL</b>.</para>
+      <para>After this status code is returned, the stream identifier for this output stream is no longer valid. The client should no longer provide an <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure for that stream when it calls <see cref="ProcessOutput" />.</para>
+      <para>The <see cref="ProcessOutput" /> method does not return <b>MF_E_TRANSFORM_STREAM_CHANGE</b> when a stream ends, unless there is a change in another stream that requires this return code.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_NO_SAMPLE">
+    <summary>
+      <para>There is no sample ready for this stream. This flag might be set if the MFT has multiple output streams that produce data at different times. It sets this flag for each stream that is not ready to produce data. It does not modify the output sample contained in the <b>pSample</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure, nor does it allocate a new sample is <b>pSample</b> is <b>NULL</b>.</para>
+      <para>If no streams are ready to produce output, the MFT does not set this flag. Instead, the <see cref="ProcessOutput" /> method returns MF_E_TRANSFORM_NEED_MORE_INPUT.</para>
+    </summary>
+  </member>
+</doc>

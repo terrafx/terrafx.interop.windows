@@ -8,31 +8,40 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER"]/*' />
 public partial struct IMPORT_OBJECT_HEADER
 {
+    /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.Sig1"]/*' />
     [NativeTypeName("WORD")]
     public ushort Sig1;
 
+    /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.Sig2"]/*' />
     [NativeTypeName("WORD")]
     public ushort Sig2;
 
+    /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.Version"]/*' />
     [NativeTypeName("WORD")]
     public ushort Version;
 
+    /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.Machine"]/*' />
     [NativeTypeName("WORD")]
     public ushort Machine;
 
+    /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.TimeDateStamp"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeDateStamp;
 
+    /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.SizeOfData"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeOfData;
 
+    /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.Anonymous"]/*' />
     [NativeTypeName("IMPORT_OBJECT_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:20455:5)")]
     public _Anonymous_e__Union Anonymous;
 
     public ushort _bitfield;
 
+    /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.Type"]/*' />
     [NativeTypeName("WORD : 2")]
     public ushort Type
     {
@@ -49,6 +58,7 @@ public partial struct IMPORT_OBJECT_HEADER
         }
     }
 
+    /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.NameType"]/*' />
     [NativeTypeName("WORD : 3")]
     public ushort NameType
     {
@@ -65,6 +75,7 @@ public partial struct IMPORT_OBJECT_HEADER
         }
     }
 
+    /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.Reserved"]/*' />
     [NativeTypeName("WORD : 11")]
     public ushort Reserved
     {
@@ -81,6 +92,7 @@ public partial struct IMPORT_OBJECT_HEADER
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Ordinal"]/*' />
     public ref ushort Ordinal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -90,6 +102,7 @@ public partial struct IMPORT_OBJECT_HEADER
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Hint"]/*' />
     public ref ushort Hint
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -99,13 +112,16 @@ public partial struct IMPORT_OBJECT_HEADER
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Ordinal"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("WORD")]
         public ushort Ordinal;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Hint"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("WORD")]
         public ushort Hint;

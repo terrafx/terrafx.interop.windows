@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1EllipseGeometry.GetEllipse">
+    <summary>
+      <para>Gets the <see cref="D2D1_ELLIPSE" /> structure that describes this ellipse geometry.</para>
+    </summary>
+    <param name="ellipse">
+      <para>Type: <b><see cref="D2D1_ELLIPSE" />*</b></para>
+      <para>When this method returns, contains the <see cref="D2D1_ELLIPSE" /> that describes the size and position of the ellipse. You must allocate storage for this parameter.</para>
+    </param>
+    <seealso cref="ID2D1EllipseGeometry" />
+  </member>
+  <member name="ID2D1EllipseGeometry">
+    <summary>
+      <para>Represents an ellipse.</para>
+    </summary>
+    <remarks>
+      <h3>Creating ID2D1EllipseGeometry Objects</h3>
+      <para>To create an ellipse geometry, use the <see cref="ID2D1Factory.CreateEllipseGeometry" /> method.</para>
+      <para>Direct2D geometries are immutable and device-independent resources created by <see cref="ID2D1Factory" />.  In general, you should create geometries once and retain them for the life of the application, or until they need to be modified. For more information about device-independent and device-dependent resources, see  the <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.</para>
+    </remarks>
+    <seealso cref="ID2D1Geometry" />
+  </member>
+</doc>

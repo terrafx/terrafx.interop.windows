@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CapturedMetadataISOGains.xml' path='doc/member[@name="CapturedMetadataISOGains"]/*' />
 public partial struct CapturedMetadataISOGains
 {
+    /// <include file='CapturedMetadataISOGains.xml' path='doc/member[@name="CapturedMetadataISOGains.AnalogGain"]/*' />
     public float AnalogGain;
 
+    /// <include file='CapturedMetadataISOGains.xml' path='doc/member[@name="CapturedMetadataISOGains.DigitalGain"]/*' />
     public float DigitalGain;
 }

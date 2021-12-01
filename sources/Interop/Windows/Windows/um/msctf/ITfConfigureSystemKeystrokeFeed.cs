@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfConfigureSystemKeystrokeFeed.xml' path='doc/member[@name="ITfConfigureSystemKeystrokeFeed"]/*' />
 [Guid("0D2C969A-BC9C-437C-84EE-951C49B1A764")]
 [NativeTypeName("struct ITfConfigureSystemKeystrokeFeed : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
         return ((delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, Guid*, void**, int>)(lpVtbl[0]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
         return ((delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, uint>)(lpVtbl[1]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
         return ((delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, uint>)(lpVtbl[2]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfConfigureSystemKeystrokeFeed.xml' path='doc/member[@name="ITfConfigureSystemKeystrokeFeed.DisableSystemKeystrokeFeed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT DisableSystemKeystrokeFeed()
@@ -46,6 +51,7 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
         return ((delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, int>)(lpVtbl[3]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfConfigureSystemKeystrokeFeed.xml' path='doc/member[@name="ITfConfigureSystemKeystrokeFeed.EnableSystemKeystrokeFeed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnableSystemKeystrokeFeed()

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TXFS_LIST_TRANSACTIONS.xml' path='doc/member[@name="TXFS_LIST_TRANSACTIONS"]/*' />
 public partial struct TXFS_LIST_TRANSACTIONS
 {
+    /// <include file='TXFS_LIST_TRANSACTIONS.xml' path='doc/member[@name="TXFS_LIST_TRANSACTIONS.NumberOfTransactions"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong NumberOfTransactions;
 
+    /// <include file='TXFS_LIST_TRANSACTIONS.xml' path='doc/member[@name="TXFS_LIST_TRANSACTIONS.BufferSizeRequired"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong BufferSizeRequired;
 }

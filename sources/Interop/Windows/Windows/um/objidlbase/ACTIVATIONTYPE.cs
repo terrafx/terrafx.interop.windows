@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACTIVATIONTYPE.xml' path='doc/member[@name="ACTIVATIONTYPE"]/*' />
 public enum ACTIVATIONTYPE
 {
+    /// <include file='ACTIVATIONTYPE.xml' path='doc/member[@name="ACTIVATIONTYPE.ACTIVATIONTYPE_UNCATEGORIZED"]/*' />
     ACTIVATIONTYPE_UNCATEGORIZED = 0,
+
+    /// <include file='ACTIVATIONTYPE.xml' path='doc/member[@name="ACTIVATIONTYPE.ACTIVATIONTYPE_FROM_MONIKER"]/*' />
     ACTIVATIONTYPE_FROM_MONIKER = 0x1,
+
+    /// <include file='ACTIVATIONTYPE.xml' path='doc/member[@name="ACTIVATIONTYPE.ACTIVATIONTYPE_FROM_DATA"]/*' />
     ACTIVATIONTYPE_FROM_DATA = 0x2,
+
+    /// <include file='ACTIVATIONTYPE.xml' path='doc/member[@name="ACTIVATIONTYPE.ACTIVATIONTYPE_FROM_STORAGE"]/*' />
     ACTIVATIONTYPE_FROM_STORAGE = 0x4,
+
+    /// <include file='ACTIVATIONTYPE.xml' path='doc/member[@name="ACTIVATIONTYPE.ACTIVATIONTYPE_FROM_STREAM"]/*' />
     ACTIVATIONTYPE_FROM_STREAM = 0x8,
+
+    /// <include file='ACTIVATIONTYPE.xml' path='doc/member[@name="ACTIVATIONTYPE.ACTIVATIONTYPE_FROM_FILE"]/*' />
     ACTIVATIONTYPE_FROM_FILE = 0x10,
 }

@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_POWER_STATE.xml' path='doc/member[@name="DEVICE_POWER_STATE"]/*' />
 public enum DEVICE_POWER_STATE
 {
+    /// <include file='DEVICE_POWER_STATE.xml' path='doc/member[@name="DEVICE_POWER_STATE.PowerDeviceUnspecified"]/*' />
     PowerDeviceUnspecified = 0,
+
+    /// <include file='DEVICE_POWER_STATE.xml' path='doc/member[@name="DEVICE_POWER_STATE.PowerDeviceD0"]/*' />
     PowerDeviceD0,
+
+    /// <include file='DEVICE_POWER_STATE.xml' path='doc/member[@name="DEVICE_POWER_STATE.PowerDeviceD1"]/*' />
     PowerDeviceD1,
+
+    /// <include file='DEVICE_POWER_STATE.xml' path='doc/member[@name="DEVICE_POWER_STATE.PowerDeviceD2"]/*' />
     PowerDeviceD2,
+
+    /// <include file='DEVICE_POWER_STATE.xml' path='doc/member[@name="DEVICE_POWER_STATE.PowerDeviceD3"]/*' />
     PowerDeviceD3,
+
+    /// <include file='DEVICE_POWER_STATE.xml' path='doc/member[@name="DEVICE_POWER_STATE.PowerDeviceMaximum"]/*' />
     PowerDeviceMaximum,
 }

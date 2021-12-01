@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMTimecodeDisplay.xml' path='doc/member[@name="IAMTimecodeDisplay"]/*' />
 [Guid("9B496CE2-811B-11CF-8C77-00AA006B6814")]
 [NativeTypeName("struct IAMTimecodeDisplay : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface
         return ((delegate* unmanaged<IAMTimecodeDisplay*, Guid*, void**, int>)(lpVtbl[0]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface
         return ((delegate* unmanaged<IAMTimecodeDisplay*, uint>)(lpVtbl[1]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface
         return ((delegate* unmanaged<IAMTimecodeDisplay*, uint>)(lpVtbl[2]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMTimecodeDisplay.xml' path='doc/member[@name="IAMTimecodeDisplay.GetTCDisplayEnable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTCDisplayEnable([NativeTypeName("long *")] int* pState)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface
         return ((delegate* unmanaged<IAMTimecodeDisplay*, int*, int>)(lpVtbl[3]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), pState);
     }
 
+    /// <include file='IAMTimecodeDisplay.xml' path='doc/member[@name="IAMTimecodeDisplay.SetTCDisplayEnable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetTCDisplayEnable([NativeTypeName("long")] int State)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface
         return ((delegate* unmanaged<IAMTimecodeDisplay*, int, int>)(lpVtbl[4]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), State);
     }
 
+    /// <include file='IAMTimecodeDisplay.xml' path='doc/member[@name="IAMTimecodeDisplay.GetTCDisplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTCDisplay([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface
         return ((delegate* unmanaged<IAMTimecodeDisplay*, int, int*, int>)(lpVtbl[5]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), Param, pValue);
     }
 
+    /// <include file='IAMTimecodeDisplay.xml' path='doc/member[@name="IAMTimecodeDisplay.SetTCDisplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetTCDisplay([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)

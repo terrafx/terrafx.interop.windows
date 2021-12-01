@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPNET_TYPE.xml' path='doc/member[@name="MIB_IPNET_TYPE"]/*' />
 public enum MIB_IPNET_TYPE
 {
+    /// <include file='MIB_IPNET_TYPE.xml' path='doc/member[@name="MIB_IPNET_TYPE.MIB_IPNET_TYPE_OTHER"]/*' />
     MIB_IPNET_TYPE_OTHER = 1,
+
+    /// <include file='MIB_IPNET_TYPE.xml' path='doc/member[@name="MIB_IPNET_TYPE.MIB_IPNET_TYPE_INVALID"]/*' />
     MIB_IPNET_TYPE_INVALID = 2,
+
+    /// <include file='MIB_IPNET_TYPE.xml' path='doc/member[@name="MIB_IPNET_TYPE.MIB_IPNET_TYPE_DYNAMIC"]/*' />
     MIB_IPNET_TYPE_DYNAMIC = 3,
+
+    /// <include file='MIB_IPNET_TYPE.xml' path='doc/member[@name="MIB_IPNET_TYPE.MIB_IPNET_TYPE_STATIC"]/*' />
     MIB_IPNET_TYPE_STATIC = 4,
 }

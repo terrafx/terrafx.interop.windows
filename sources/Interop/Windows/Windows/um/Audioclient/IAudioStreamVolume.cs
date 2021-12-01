@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume"]/*' />
 [Guid("93014887-242D-4068-8A15-CF5E93B90FE3")]
 [NativeTypeName("struct IAudioStreamVolume : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface
         return ((delegate* unmanaged<IAudioStreamVolume*, Guid*, void**, int>)(lpVtbl[0]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface
         return ((delegate* unmanaged<IAudioStreamVolume*, uint>)(lpVtbl[1]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface
         return ((delegate* unmanaged<IAudioStreamVolume*, uint>)(lpVtbl[2]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume.GetChannelCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetChannelCount([NativeTypeName("UINT32 *")] uint* pdwCount)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface
         return ((delegate* unmanaged<IAudioStreamVolume*, uint*, int>)(lpVtbl[3]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume.SetChannelVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, [NativeTypeName("const float")] float fLevel)
@@ -53,6 +59,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface
         return ((delegate* unmanaged<IAudioStreamVolume*, uint, float, int>)(lpVtbl[4]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwIndex, fLevel);
     }
 
+    /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume.GetChannelVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, float* pfLevel)
@@ -60,6 +67,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface
         return ((delegate* unmanaged<IAudioStreamVolume*, uint, float*, int>)(lpVtbl[5]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwIndex, pfLevel);
     }
 
+    /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume.SetAllVolumes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetAllVolumes([NativeTypeName("UINT32")] uint dwCount, [NativeTypeName("const float *")] float* pfVolumes)
@@ -67,6 +75,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface
         return ((delegate* unmanaged<IAudioStreamVolume*, uint, float*, int>)(lpVtbl[6]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
     }
 
+    /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume.GetAllVolumes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetAllVolumes([NativeTypeName("UINT32")] uint dwCount, float* pfVolumes)

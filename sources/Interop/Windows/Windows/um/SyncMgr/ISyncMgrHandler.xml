@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrHandler.Activate">
+    <summary>
+      <para>Requests that the handler is activated or deactivated. An active handler can be synchronized; an inactive handler cannot.</para>
+    </summary>
+    <param name="fActivate">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to activate; <b>FALSE</b> to deactivate.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>An active handler appears in the Sync Center folder and can be synchronized. An inactive handler appears in the Sync Setup folder and must be activated (which moves it to the Sync Center folder) before it can be synchronized.</para>
+      <para>The activation state should not be confused with the enabled state. An active handler can be disabled. This means that it is still shown in the Sync Center folder but that it cannot be synchronized.</para>
+      <para>Sync Center calls this method in the following two instances.</para>
+      <list type="bullet">
+        <item>
+          <description>When the user selects the handler in the Sync Setup folder and launches its <b>Setup</b> task. If the handler supports the <see cref="SYNCMGR_OBJECTID_QueryBeforeActivate" /> object, this method is only called if the UI operation, which consists of a dialog asking the user to confirm whether they want to activate the handler, was successful.</description>
+        </item>
+        <item>
+          <description>When the user selects the handler in the Sync Center folder and launches its <b>Delete</b> task, but only if the handler has not set the <see cref="SYNCMGR_HPM_PREVENT_DEACTIVATE" /> flag. If the handler supports the <see cref="SYNCMGR_OBJECTID_QueryBeforeDeactivate" /> object, this method is only called if the UI operation was successful.</description>
+        </item>
+      </list>
+      <para>If the <see cref="SYNCMGR_HPM_PREVENT_ACTIVATE" /> flag is set in the value retrieved by <see cref="ISyncMgrHandler.GetCapabilities" />, a call to this method requesting activation of the handler will fail.</para>
+      <para>The activation state of an individual handler can be found by calling <see cref="IsActive" />.</para>
+      <para>If the handler does not need to perform any actions when it is activated, it can return either S_OK or E_NOTIMPL as shown in the example below.</para>
+      <h4>Examples</h4>
+      <para>The following example shows a simple implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.Activate(__in BOOL fActivate)
+{
+    return E_NOTIMPL;
+}
+
+</code>
+    </remarks>
+    <seealso cref="ISyncMgrHandler" />
+    <seealso cref="ISyncMgrHandler.GetObject" />
+    <seealso cref="ISyncMgrUIOperation.Run" />
+  </member>
+  <member name="ISyncMgrHandler.Enable">
+    <summary>
+      <para>Requests that an <see cref="active" /> handler be enabled or disabled. An enabled handler can be synchronized and a disabled handler cannot.</para>
+    </summary>
+    <param name="fEnable">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to enable; <b>FALSE</b> to disable.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A handler must set the <see cref="SYNCMGR_HCM_CAN_ENABLE" /> and <see cref="SYNCMGR_HCM_CAN_DISABLE" /> flags for the <b>Enable</b> and <b>Disable</b> entries to appear on the handler's shortcut menu when the handler is shown in the Sync Center folder. Choosing to enable a handler means that it can be synchronized; choosing to disable a handler means that it cannot.</para>
+      <para>Sync Center calls this method in the following two instances.</para>
+      <list type="bullet">
+        <item>
+          <description>When the user selects the handler in the Sync Center folder and launches its <b>Enable</b> task. If the handler supports the <see cref="SYNCMGR_OBJECTID_QueryBeforeEnable" /> object, this method is only called if the UI operation was successful.</description>
+        </item>
+        <item>
+          <description>When the user selects the handler in the Sync Center folder and launches its <b>Disable</b> task. If the handler supports the <see cref="SYNCMGR_OBJECTID_QueryBeforeDisable" /> object, this method is only called if the UI operation was successful.</description>
+        </item>
+      </list>
+      <para>If the handler does not need to perform any actions when it is activated, it can return either S_OK or E_NOTIMPL as shown in the example below.</para>
+      <h4>Examples</h4>
+      <para>The following example shows a simple implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.Enable(__in BOOL fEnable)
+{
+    return E_NOTIMPL;
+}
+
+</code>
+    </remarks>
+    <seealso cref="ISyncMgrHandler" />
+    <seealso cref="ISyncMgrHandler.GetObject" />
+    <seealso cref="IsEnabled" />
+  </member>
+  <member name="ISyncMgrHandler.GetCapabilities">
+    <summary>
+      <para>Gets a set of flags describing the handler's defined capabilities.</para>
+    </summary>
+    <param name="pmCapabilities">
+      <para>Type: <b><see cref="SYNCMGR_HANDLER_CAPABILITIES" />*</b></para>
+      <para>When this method returns, contains a pointer to a bitwise combination of values from the <see cref="SYNCMGR_HANDLER_CAPABILITIES" /> enumeration that defines the capabilities of the handler. Compare against <see cref="SYNCMGR_HCM_VALID_MASK" /> to verify a valid value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is called by Sync Center in response to a call to <see cref="UpdateHandler" /> or <see cref="UpdateHandlerCollection" />.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.GetCapabilities(
+                             __out SYNCMGR_HANDLER_CAPABILITIES *pmCapabilities)
+{
+    *pmCapabilities = SYNCMGR_HCM_EVENT_STORE
+                    | SYNCMGR_HCM_QUERY_BEFORE_ACTIVATE;
+    return S_OK;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandler.GetHandlerInfo">
+    <summary>
+      <para>Gets properties that describe the handler.</para>
+    </summary>
+    <param name="ppHandlerInfo">
+      <para>Type: <b><see cref="ISyncMgrHandlerInfo" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to an instance of the <see cref="ISyncMgrHandlerInfo" /> interface that provides access to the handler properties.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If this method fails, the handler is still shown in the Sync Center folder and Sync Center continues to invoke it, but default values are used for all properties.</para>
+      <para>
+        <b>ISyncMgrHandler.GetHandlerInfo</b>, together with <see cref="ISyncMgrHandler.GetName" />, replaces the older <see cref="GetHandlerInfo" />.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.GetHandlerInfo(
+                             __out ISyncMgrHandlerInfo **ppHandlerInfo)
+{
+    *ppHandlerInfo = NULL;
+    HRESULT hr = QueryInterface(IID_ISyncMgrHandlerInfo,
+                                (void **) ppHandlerInfo);
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandler.GetName">
+    <summary>
+      <para>Gets the display name of the handler.</para>
+    </summary>
+    <param name="ppszName">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When this method returns, contains a pointer to a <b>null</b>-terminated buffer that receives the handler name. The name can be of maximum length MAX_SYNCMGR_NAME, including the terminating <b>null</b> character. If the name exceeds that length, it is truncated.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The handler name is accessed as the System.DisplayName (PKEY_DisplayName) property in the Sync Center folder.</para>
+      <para>Sync Center calls this method any time that <see cref="UpdateHandler" /> or <see cref="UpdateHandlerCollection" /> is called. If <b>ISyncMgrHandler.GetName</b> fails or returns an empty string, the handler is not shown in the Sync Center folder and Sync Center will not attempt to invoke it.</para>
+      <para>It is the responsibility of the handler to allocate the string buffer using <see cref="CoTaskMemAlloc" />. Sync Center deallocates the buffer through <see cref="CoTaskMemFree" />.</para>
+      <para>
+        <b>ISyncMgrHandler.GetName</b> replaces the use of <see cref="GetHandlerInfo" /> to retrieve the handler name.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandler.GetObject">
+    <summary>
+      <para>Creates a specific type of object related to the handler.</para>
+    </summary>
+    <param name="rguidObjectID">
+      <para>Type: <b>REFGUID</b></para>
+      <para>A GUID identifying the type of object to create. One of the following values as defined in shlguid.h.</para>
+      <h4>SYNCMGR_OBJECTID_BrowseContent</h4>
+      <para>An object implementing the <see cref="ISyncMgrUIOperation" /> interface that shows the UI that enables the user to browse the contents of the item managed by the handler, such as a folder, device, computer on a network, or an application.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_HCM_CAN_BROWSE_CONTENT" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <h4>SYNCMGR_OBJECTID_ConflictStore</h4>
+      <para>An object implementing the <see cref="ISyncMgrConflictStore" /> interface that enables a handler to provide conflicts. These conflicts are shown in the Sync Center Conflicts folder. The conflict store should include conflicts for the handler as well as conflicts for all of its items. To include conflicts for only a specific item, Sync Center calls <see cref="GetObject" />.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_HCM_CONFLICT_STORE" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <h4>SYNCMGR_OBJECTID_EventLinkClick</h4>
+      <para>An object implementing the <see cref="ISyncMgrEventLinkUIOperation" /> interface that implements the click action for a link provided on an event displayed in the Sync Results folder.</para>
+      <h4>SYNCMGR_OBJECTID_EventStore</h4>
+      <para>An object implementing the <see cref="ISyncMgrEventStore" /> interface that allows a handler to provide its own source of events. These events are shown in the Sync Results folder. The event store should include events for the handler as well as for all of its items. To include only events for a specific item, Sync Center calls <see cref="GetObject" />. The event store is asked to delete the handler's events the next time the handler is synchronized. The default event store purges its events when the user logs off.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_HCM_EVENT_STORE" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <para>A handler is not required to provide an event store. The default event store provided by Sync Center can be used if it meets the handler's requirements.</para>
+      <h4>SYNCMGR_OBJECTID_Icon</h4>
+      <para>An icon extraction object that implements the <see cref="IExtractIcon" /> interface used to display an icon for the handler. This object should only be provided if the handler obtains its icon dynamically at run time. The preferred mechanism for providing the icon is to register the icon as the DefaultIcon in the registry.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_HCM_PROVIDES_ICON" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <h4>SYNCMGR_OBJECTID_QueryBeforeActivate</h4>
+      <para>An object implementing the <see cref="ISyncMgrUIOperation" /> interface that displays the UI that enables the user to configure a handler. This UI is shown when the user selects the handler in the Sync Setup folder, then selects the <b>Setup</b> task. Before requesting this object, Sync Center creates a separate thread for this operation and a new instance of the handler.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_HCM_QUERY_BEFORE_ACTIVATE" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" /> and the <see cref="SYNCMGR_HPM_PREVENT_ACTIVATE" /> policy flag is not set in the mask retrieved by <see cref="GetPolicies" />.</para>
+      <h4>SYNCMGR_OBJECTID_QueryBeforeDeactivate</h4>
+      <para>An object implementing the <see cref="ISyncMgrUIOperation" /> interface that displays the UI when the user selects the handler in the Sync Center folder, then selects the <b>Delete</b> task. Before requesting this object, Sync Center creates a separate thread for this operation and a new instance of the handler.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_HCM_QUERY_BEFORE_DEACTIVATE" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" /> and the <see cref="SYNCMGR_HPM_PREVENT_DEACTIVATE" /> policy flag is not set in the mask retrieved by <see cref="GetPolicies" />.</para>
+      <h4>SYNCMGR_OBJECTID_QueryBeforeEnable</h4>
+      <para>An object implementing the <see cref="ISyncMgrUIOperation" /> interface that displays the UI when the user selects the handler in the Sync Center folder and then selects the <b>Enable</b> task. Before requesting this object, Sync Center creates a separate thread for this operation and a new instance of the handler.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_HCM_CAN_ENABLE" /> and <see cref="SYNCMGR_HCM_QUERY_BEFORE_ENABLE" /> capability flags are set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <h4>SYNCMGR_OBJECTID_QueryBeforeDisable</h4>
+      <para>An object implementing the <see cref="ISyncMgrUIOperation" /> interface that displays the UI when the user selects the handler in the Sync Center folder and then selects the <b>Disable</b> task. Before requesting this object, Sync Center creates both a separate thread for this operation and a new instance of the handler.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_HCM_CAN_DISABLE" /> and <see cref="SYNCMGR_HCM_QUERY_BEFORE_DISABLE" /> capability flags are set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <h4>SYNCMGR_OBJECTID_ShowSchedule</h4>
+      <para>An object implementing the <see cref="ISyncMgrUIOperation" /> interface that displays the UI that enables the user to configure the schedule for the handler. Before requesting this object, Sync Center creates a separate thread for this operation and a new instance of the handler.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_HCM_CAN_SHOW_SCHEDULE" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The IID of the requested interface. This depends on the object type named in <i>rguidObjectID</i>.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the address of a pointer to the requested interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. Returns E_NOTIMPL if the handler does not support the requested type of object.</para>
+    </returns>
+    <remarks>
+      <para>The handler can implement the requested interface on itself or it can implement it on a different object.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.GetObject( __in REFGUID   rguidObjectID,
+                                          __in REFIID    riid,
+                                          __out void   **ppv)
+{
+    HRESULT hr = E_NOTIMPL;
+    *ppv = NULL;
+
+    if (rguidObjectID == SYNCMGR_OBJECTID_QueryBeforeActivate)
+    {
+        hr = _CreateSetupObject(riid, ppv);
+    }
+    else if (rguidObjectID == SYNCMGR_OBJECTID_EventStore)
+    {
+        hr = _CreateEventStore(NULL, riid, ppv);
+    }
+
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandler.GetPolicies">
+    <summary>
+      <para>Gets a set of flags describing the policies set by the handler.</para>
+    </summary>
+    <param name="pmPolicies">
+      <para>Type: <b><see cref="SYNCMGR_HANDLER_POLICIES" />*</b></para>
+      <para>When this method returns, contains a pointer to a bitwise combination of values from the <see cref="SYNCMGR_HANDLER_POLICIES" /> enumeration that define the handler's policies.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A policy is an action that is usually supported but can be disabled by a group policy.</para>
+      <para>This method is called by Sync Center in response to a call to <see cref="UpdateHandler" /> or <see cref="UpdateHandlerCollection" />.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.GetPolicies(
+                             __out SYNCMGR_HANDLER_POLICIES *pmPolicies)
+{
+    *pmPolicies = SYNCMGR_HPM_NONE;
+    return S_OK;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandler.Synchronize">
+    <summary>
+      <para>Initiates a synchronization of a selection of the handler's sync items.</para>
+    </summary>
+    <param name="ppszItemIDs">
+      <para>Type: <b>LPCWSTR*</b></para>
+      <para>A pointer to an array of item IDs representing the items to be synchronized. Each item ID is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
+    </param>
+    <param name="cItems">
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of items in <i>ppszItemIDs</i>.</para>
+    </param>
+    <param name="hwndOwner">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the window that the item uses to display any necessary UI. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="pSessionCreator">
+      <para>Type: <b><see cref="ISyncMgrSessionCreator" />*</b></para>
+      <para>A pointer to an <see cref="ISyncMgrSessionCreator" /> interface. This interface enables the handler itself to report progress and events, or to signal a background process to report progress and events.</para>
+    </param>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an interface to be passed to <see cref="ISyncMgrControl" />. <b>ISyncMgrHandler.Synchronize</b> is called either when a user requests a synchronization from the Sync Center folder or when one of the <b>ISyncMgrControl</b> synchronize methods is called, such as <see cref="StartSyncAll" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ISyncMgrHandler.Synchronize</b> is called on its own thread. Sync Center instantiates the handler object and the session creator object on that thread and then calls this method.</para>
+      <para>The handler can create the session itself by calling the <see cref="CreateSession" /> method or it can signal an external process to perform the synchronization. If the handler creates the session, it should not return from the <b>ISyncMgrHandler.Synchronize</b> method until synchronization is complete. If the handler delegates synchronization to an external process, the external process should use <see cref="CoCreateInstance" /> to create the CLSID_SyncMgrClient object, specifying the <see cref="ISyncMgrSessionCreator" /> interface. The process then creates the session so that it can report progress.</para>
+      <para>A user may elect to stop synchronization on an item or handler. An application can also stop synchronization by calling one of the stop methods on the <see cref="ISyncMgrControl" /> interface, such as <see cref="StopItemSync" />. The following mechanisms are provided to support these scenarios.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="ReportProgress" /> returns a parameter indicating whether cancellation has been requested.</description>
+        </item>
+        <item>
+          <description>The handler can call <see cref="CanContinue" />.</description>
+        </item>
+      </list>
+      <para>If the user asks to sync additional items after the <b>ISyncMgrHandler.Synchronize</b> method has been called, the handler can sync the new items in the same session by querying for them through the <see cref="QueryForAdditionalItems" /> method on the callback. If they choose to sync an item they queried for, they can then call <see cref="AddItemToSession" />.</para>
+      <para>Some handlers will not enumerate an item until it has been synchronized. If the handler discovers such items during a synchronization, it can inform Sync Center about them through the session. For example, if the handler discovers an item to add to the sync set, it calls <see cref="ProposeItem" />. Once the item has been successfully created, the handler calls <see cref="CommitItem" />. At that point, Sync Center adds it to the list of items that it is tracking for the handler.</para>
+      <para>The <b>ISyncMgrHandler.Synchronize</b> method is analogous to a combination of the older <see cref="PrepareForSync" /> and <see cref="Synchronize" /> methods. In the case of the older interface, Sync Center called <b>PrepareForSync</b> immediately followed by <b>Synchronize</b>. The <b>ISyncMgrHandler.Synchronize</b> method provides the functionality of these two methods into a single call.</para>
+      <para>Another difference between <b>ISyncMgrHandler.Synchronize</b> and <see cref="Synchronize" /> is that the older method was expected to perform the synchronization asynchronously. <b>Synchronize</b> queued the request in one or more external threads and then returned. It then called <see cref="SynchronizeCompleted" /> once it had finished synchronizing all items. <b>ISyncMgrHandler.Synchronize</b> supports a synchronous model for in-proc (foreground) synchronization or an asynchronous model for out-of-proc (background) synchronization.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.Synchronize(__in_ecount(cItems) LPCWSTR *ppszItemIDs,
+                              __in ULONG                   cItems,
+                              __in HWND                    hwndOwner,
+                              __in ISyncMgrSessionCreator *pCreator,
+                              __in_opt IUnknown           *punk)
+{
+    HRESULT hr = S_OK;
+
+    // Create the session since we are going to perform synchronization in
+    // this method.
+    ISyncMgrSyncCallback *pCallback = NULL;
+
+    hr = pCreator-&gt;CreateSession(_szHandlerID, ppszItemIDs, cItems,&amp;amp;amp;amp;amp;amp;pCallback);
+    if (SUCCEEDED(hr))
+    {
+        for (ULONG iItem = 0; iItem &lt; cItems; iItem++)
+        {
+            SYNCMGR_CANCEL_REQUEST nCancelRequest = SYNCMGR_CR_NONE;
+            ULONG   uCurrentStep = 1;
+            ULONG   cMaxSteps    = 50;
+            LPCWSTR pszItemID    = ppszItemIDs[iItem];
+            WCHAR   szProgressText[256];
+
+            // Find the item.
+            CMyDeviceSyncItem *pItem = NULL;
+
+            // _FindItem is a private class function that abstracts the
+            // specifics of how the handler has implemented its storage of
+            // its items. Its internal details can remain transparent as
+            // they have no bearing on this example.
+            hr = _FindItem(pszItemID, &amp;amp;amp;amp;amp;amp;pItem);
+            if (FAILED(hr))
+            {
+                // _ReportProgress is another private class function that loads
+                // string resources so that reports can be localized rather
+                // than use hard-coded strings. Its internal details have no
+                // bearing on this example.
+                _ReportProgress(pCallback,
+                                pszItemID,
+                                IDS_ITEM_NOTFOUND,
+                                SYNCMGR_PS_FAILED,
+                                0,
+                                0,
+                                &amp;amp;amp;amp;amp;amp;nCancelRequest);
+
+                if (nCancelRequest != SYNCMGR_CR_NONE)
+                {
+                    break;
+                }
+                continue;
+            }
+
+            // Send the initial progress report to set min and max values.
+            _ReportProgress(pCallback,
+                            pszItemID,
+                            IDS_START_ITEM_SYNC,
+                            SYNCMGR_PS_UPDATING,
+                            uCurrentStep,
+                            cMaxSteps,
+                            &amp;amp;amp;amp;amp;amp;nCancelRequest);
+
+            for (; uCurrentStep &lt; cMaxSteps; uCurrentStep++)
+            {
+                if (nCancelRequest != SYNCMGR_CR_NONE)
+                {
+                    break;
+                }
+
+                // Report progress.
+                StringCchPrintfW(szProgressText,
+                                 ARRAYSIZE(szProgressText),
+                                 L"Entry %d of %d",
+                                 uCurrentStep + 1,
+                                 cMaxSteps);
+
+                pCallback-&gt;ReportProgress(pszItemID,
+                                          szProgressText,
+                                          SYNCMGR_PS_UPDATING,
+                                          uCurrentStep,
+                                          cMaxSteps,
+                                          &amp;amp;amp;amp;amp;amp;nCancelRequest);
+
+                // The code that accomplishes the synchronization goes here.
+                // This code depends entirely on the nature of the items
+                // involved in the sync.
+            }
+
+            // Send the final progress report for this item.
+            if (nCancelRequest != SYNCMGR_CR_NONE);
+            {
+                SYNCMGR_PROGRESS_STATUS nStatus = SYNCMGR_PS_SUCCEEDED;
+                if (FAILED(hr))
+                {
+                    nStatus = SYNCMGR_PS_FAILED;
+                }
+                _ReportProgress(pCallback,
+                                ppszItemIDs[iItem],
+                                IDS_ITEM_SYNC_DONE,
+                                nStatus,
+                                uCurrentStep - 1,
+                                cMaxSteps,
+                                &amp;amp;amp;amp;amp;amp;nCancelRequest);
+            }
+
+            hr = S_OK;
+
+            if (nCancelRequest == SYNCMGR_CR_CANCEL_ALL)
+            {
+                 break;
+            }
+        }
+
+        pCallback-&gt;Release();
+    }
+
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandler">
+    <summary>
+      <para>Exposes methods that make up the primary interface implemented by a sync handler. Sync Center creates one instance of the handler through this interface to get properties, enumerate sync items, and modify state. Sync Center creates a separate instance of the handler on a separate thread to perform a synchronization or a UI operation.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>ISyncMgrHandler</b> replaces <see cref="ISyncMgrSynchronize" />. Some of the earlier functionality has been streamlined, while some has been moved to other interfaces. See the individual method pages for specific information.</para>
+    </remarks>
+  </member>
+</doc>

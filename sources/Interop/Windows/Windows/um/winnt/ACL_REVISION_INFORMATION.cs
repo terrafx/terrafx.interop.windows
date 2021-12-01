@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACL_REVISION_INFORMATION.xml' path='doc/member[@name="ACL_REVISION_INFORMATION"]/*' />
 public partial struct ACL_REVISION_INFORMATION
 {
+    /// <include file='ACL_REVISION_INFORMATION.xml' path='doc/member[@name="ACL_REVISION_INFORMATION.AclRevision"]/*' />
     [NativeTypeName("DWORD")]
     public uint AclRevision;
 }

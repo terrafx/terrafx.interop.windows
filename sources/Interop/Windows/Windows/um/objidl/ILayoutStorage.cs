@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage"]/*' />
 [Guid("0E6D4D90-6738-11CF-9608-00AA00680DB4")]
 [NativeTypeName("struct ILayoutStorage : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface
         return ((delegate* unmanaged<ILayoutStorage*, Guid*, void**, int>)(lpVtbl[0]))((ILayoutStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface
         return ((delegate* unmanaged<ILayoutStorage*, uint>)(lpVtbl[1]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface
         return ((delegate* unmanaged<ILayoutStorage*, uint>)(lpVtbl[2]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.LayoutScript"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT LayoutScript(StorageLayout* pStorageLayout, [NativeTypeName("DWORD")] uint nEntries, [NativeTypeName("DWORD")] uint glfInterleavedFlag)
@@ -46,6 +51,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface
         return ((delegate* unmanaged<ILayoutStorage*, StorageLayout*, uint, uint, int>)(lpVtbl[3]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pStorageLayout, nEntries, glfInterleavedFlag);
     }
 
+    /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.BeginMonitor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeginMonitor()
@@ -53,6 +59,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface
         return ((delegate* unmanaged<ILayoutStorage*, int>)(lpVtbl[4]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.EndMonitor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndMonitor()
@@ -60,6 +67,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface
         return ((delegate* unmanaged<ILayoutStorage*, int>)(lpVtbl[5]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.ReLayoutDocfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ReLayoutDocfile([NativeTypeName("OLECHAR *")] ushort* pwcsNewDfName)
@@ -67,6 +75,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface
         return ((delegate* unmanaged<ILayoutStorage*, ushort*, int>)(lpVtbl[6]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pwcsNewDfName);
     }
 
+    /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.ReLayoutDocfileOnILockBytes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ReLayoutDocfileOnILockBytes(ILockBytes* pILockBytes)

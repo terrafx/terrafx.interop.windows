@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRAILINGGRIDCELLUPPERSTATES.xml' path='doc/member[@name="TRAILINGGRIDCELLUPPERSTATES"]/*' />
 public enum TRAILINGGRIDCELLUPPERSTATES
 {
+    /// <include file='TRAILINGGRIDCELLUPPERSTATES.xml' path='doc/member[@name="TRAILINGGRIDCELLUPPERSTATES.MCTGCU_HOT"]/*' />
     MCTGCU_HOT = 1,
+
+    /// <include file='TRAILINGGRIDCELLUPPERSTATES.xml' path='doc/member[@name="TRAILINGGRIDCELLUPPERSTATES.MCTGCU_HASSTATE"]/*' />
     MCTGCU_HASSTATE = 2,
+
+    /// <include file='TRAILINGGRIDCELLUPPERSTATES.xml' path='doc/member[@name="TRAILINGGRIDCELLUPPERSTATES.MCTGCU_HASSTATEHOT"]/*' />
     MCTGCU_HASSTATEHOT = 3,
+
+    /// <include file='TRAILINGGRIDCELLUPPERSTATES.xml' path='doc/member[@name="TRAILINGGRIDCELLUPPERSTATES.MCTGCU_SELECTED"]/*' />
     MCTGCU_SELECTED = 4,
+
+    /// <include file='TRAILINGGRIDCELLUPPERSTATES.xml' path='doc/member[@name="TRAILINGGRIDCELLUPPERSTATES.MCTGCU_SELECTEDHOT"]/*' />
     MCTGCU_SELECTEDHOT = 5,
 }

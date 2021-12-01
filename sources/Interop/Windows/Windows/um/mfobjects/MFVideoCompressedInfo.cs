@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideoCompressedInfo.xml' path='doc/member[@name="MFVideoCompressedInfo"]/*' />
 public partial struct MFVideoCompressedInfo
 {
+    /// <include file='MFVideoCompressedInfo.xml' path='doc/member[@name="MFVideoCompressedInfo.AvgBitrate"]/*' />
     [NativeTypeName("LONGLONG")]
     public long AvgBitrate;
 
+    /// <include file='MFVideoCompressedInfo.xml' path='doc/member[@name="MFVideoCompressedInfo.AvgBitErrorRate"]/*' />
     [NativeTypeName("LONGLONG")]
     public long AvgBitErrorRate;
 
+    /// <include file='MFVideoCompressedInfo.xml' path='doc/member[@name="MFVideoCompressedInfo.MaxKeyFrameSpacing"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxKeyFrameSpacing;
 }

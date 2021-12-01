@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLCSSNamespaceRule.xml' path='doc/member[@name="HTMLCSSNamespaceRule"]/*' />
 [Guid("305106F2-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLCSSNamespaceRule
 {

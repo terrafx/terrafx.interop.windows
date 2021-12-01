@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest"]/*' />
 [Guid("3051040A-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLXMLHttpRequest : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, uint>)(lpVtbl[1]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, uint>)(lpVtbl[2]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, uint*, int>)(lpVtbl[3]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.get_readyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_readyState([NativeTypeName("long *")] int* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, int*, int>)(lpVtbl[7]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.get_responseBody"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_responseBody(VARIANT* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, VARIANT*, int>)(lpVtbl[8]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.get_responseText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_responseText([NativeTypeName("BSTR *")] ushort** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, ushort**, int>)(lpVtbl[9]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.get_responseXML"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_responseXML(IDispatch** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, IDispatch**, int>)(lpVtbl[10]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.get_status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_status([NativeTypeName("long *")] int* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, int*, int>)(lpVtbl[11]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.get_statusText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_statusText([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, ushort**, int>)(lpVtbl[12]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.put_onreadystatechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_onreadystatechange(VARIANT v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, VARIANT, int>)(lpVtbl[13]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.get_onreadystatechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_onreadystatechange(VARIANT* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, VARIANT*, int>)(lpVtbl[14]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.abort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT abort()
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, int>)(lpVtbl[15]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT open([NativeTypeName("BSTR")] ushort* bstrMethod, [NativeTypeName("BSTR")] ushort* bstrUrl, VARIANT varAsync, VARIANT varUser, VARIANT varPassword)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, ushort*, ushort*, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[16]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), bstrMethod, bstrUrl, varAsync, varUser, varPassword);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.send"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT send(VARIANT varBody)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, VARIANT, int>)(lpVtbl[17]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), varBody);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.getAllResponseHeaders"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT getAllResponseHeaders([NativeTypeName("BSTR *")] ushort** __MIDL__IHTMLXMLHttpRequest0000)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, ushort**, int>)(lpVtbl[18]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), __MIDL__IHTMLXMLHttpRequest0000);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.getResponseHeader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT getResponseHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR *")] ushort** __MIDL__IHTMLXMLHttpRequest0001)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         return ((delegate* unmanaged<IHTMLXMLHttpRequest*, ushort*, ushort**, int>)(lpVtbl[19]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), bstrHeader, __MIDL__IHTMLXMLHttpRequest0001);
     }
 
+    /// <include file='IHTMLXMLHttpRequest.xml' path='doc/member[@name="IHTMLXMLHttpRequest.setRequestHeader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT setRequestHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR")] ushort* bstrValue)

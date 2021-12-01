@@ -8,17 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct RATE_QUOTA_LIMIT
 {
+    /// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT.RateData"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("DWORD")]
     public uint RateData;
 
+    /// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("_RATE_QUOTA_LIMIT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12659:5)")]
     public _Anonymous_e__Struct Anonymous;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RatePercent"]/*' />
     public uint RatePercent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +38,7 @@ public partial struct RATE_QUOTA_LIMIT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*' />
     public uint Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,10 +54,12 @@ public partial struct RATE_QUOTA_LIMIT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
         public uint _bitfield;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RatePercent"]/*' />
         [NativeTypeName("DWORD : 7")]
         public uint RatePercent
         {
@@ -69,6 +76,7 @@ public partial struct RATE_QUOTA_LIMIT
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*' />
         [NativeTypeName("DWORD : 25")]
         public uint Reserved0
         {

@@ -7,14 +7,19 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DRIVE_LAYOUT_INFORMATION_GPT.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_GPT"]/*' />
 public partial struct DRIVE_LAYOUT_INFORMATION_GPT
 {
+    /// <include file='DRIVE_LAYOUT_INFORMATION_GPT.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_GPT.DiskId"]/*' />
     public Guid DiskId;
 
+    /// <include file='DRIVE_LAYOUT_INFORMATION_GPT.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_GPT.StartingUsableOffset"]/*' />
     public LARGE_INTEGER StartingUsableOffset;
 
+    /// <include file='DRIVE_LAYOUT_INFORMATION_GPT.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_GPT.UsableLength"]/*' />
     public LARGE_INTEGER UsableLength;
 
+    /// <include file='DRIVE_LAYOUT_INFORMATION_GPT.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_GPT.MaxPartitionCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxPartitionCount;
 }

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_COLORMANAGEMENT_RENDERING_INTENT">
+    <summary>
+      <para>Specifies which ICC rendering intent the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/color-management">Color management effect</a> should use.</para>
+    </summary>
+  </member>
+  <member name="D2D1_COLORMANAGEMENT_RENDERING_INTENT.D2D1_COLORMANAGEMENT_RENDERING_INTENT_PERCEPTUAL">
+    <summary>
+      <para>The effect compresses or expands the full color gamut of the image to fill the color gamut of the device,
+so that gray balance is preserved but colorimetric accuracy may not be preserved.</para>
+    </summary>
+  </member>
+  <member name="D2D1_COLORMANAGEMENT_RENDERING_INTENT.D2D1_COLORMANAGEMENT_RENDERING_INTENT_RELATIVE_COLORIMETRIC">
+    <summary>
+      <para>The effect preserves the chroma of colors in the image at the possible expense of hue and lightness.</para>
+    </summary>
+  </member>
+  <member name="D2D1_COLORMANAGEMENT_RENDERING_INTENT.D2D1_COLORMANAGEMENT_RENDERING_INTENT_SATURATION">
+    <summary>
+      <para>The effect adjusts colors that fall outside the range of colors the output device renders to the closest color available. It does not preserve the white point.</para>
+    </summary>
+  </member>
+  <member name="D2D1_COLORMANAGEMENT_RENDERING_INTENT.D2D1_COLORMANAGEMENT_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC">
+    <summary>
+      <para>The effect adjusts any colors that fall outside the range that the output device can render to the closest color that can be rendered. The effect does not change the other colors and preserves the white point.</para>
+    </summary>
+  </member>
+  <member name="D2D1_COLORMANAGEMENT_RENDERING_INTENT.D2D1_COLORMANAGEMENT_RENDERING_INTENT_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

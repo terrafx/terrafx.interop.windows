@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONNECTDATA.xml' path='doc/member[@name="CONNECTDATA"]/*' />
 public unsafe partial struct CONNECTDATA
 {
+    /// <include file='CONNECTDATA.xml' path='doc/member[@name="CONNECTDATA.pUnk"]/*' />
     public IUnknown* pUnk;
 
+    /// <include file='CONNECTDATA.xml' path='doc/member[@name="CONNECTDATA.dwCookie"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCookie;
 }

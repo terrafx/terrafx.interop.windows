@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLDefaults.xml' path='doc/member[@name="HTMLDefaults"]/*' />
 [Guid("3050F6C8-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLDefaults
 {

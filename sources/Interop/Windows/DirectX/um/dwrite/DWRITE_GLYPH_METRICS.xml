@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_GLYPH_METRICS">
+    <summary>
+      <para>Specifies the metrics of an individual glyph.The units depend on how the metrics are obtained.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_METRICS.leftSideBearing">
+    <summary>
+      <para>Type: <b>INT32</b></para>
+      <para>Specifies the X offset from the glyph origin to the left edge of the black box. The glyph origin is the current horizontal writing position. A negative value means the black box extends to the left of the origin (often true for lowercase italic 'f').</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_METRICS.advanceWidth">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>Specifies the X offset from the origin of the current glyph to the origin of the next glyph when writing horizontally.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_METRICS.rightSideBearing">
+    <summary>
+      <para>Type: <b>INT32</b></para>
+      <para>Specifies the X offset from the right edge of the black box to the origin of the next glyph when writing horizontally. The value is negative when the right edge of the black box overhangs the layout box.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_METRICS.topSideBearing">
+    <summary>
+      <para>Type: <b>INT32</b></para>
+      <para>Specifies the vertical offset from the vertical origin to the top of the black box. Thus, a positive value adds whitespace whereas a negative value means the glyph overhangs the top of the layout box.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_METRICS.advanceHeight">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>Specifies the Y offset from the vertical origin of the current glyph to the vertical origin of the next glyph when writing vertically. Note that the term "origin" by itself denotes the horizontal origin. The vertical origin is different. Its Y coordinate is specified by <b>verticalOriginY</b> value, and its X coordinate is half the <b>advanceWidth</b> to the right of the horizontal origin.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_METRICS.bottomSideBearing">
+    <summary>
+      <para>Type: <b>INT32</b></para>
+      <para>Specifies the vertical distance from the bottom edge of the black box to the advance height. This is positive when the bottom edge of the black box is within the layout box, or negative when the bottom edge of black box overhangs the layout box.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GLYPH_METRICS.verticalOriginY">
+    <summary>
+      <para>Type: <b>INT32</b></para>
+      <para>Specifies the Y coordinate of a glyph's vertical origin, in the font's design coordinate system. The y coordinate of a glyph's vertical origin is the sum of the glyph's top side bearing and the top (that is, yMax) of the glyph's bounding box.</para>
+    </summary>
+  </member>
+</doc>

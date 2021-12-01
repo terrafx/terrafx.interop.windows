@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_TEX2D_ARRAY_RTV">
+    <summary>
+      <para>Specifies the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource(s)</a> from an array of <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">2D textures</a> to use in a render-target view.</para>
+    </summary>
+    <remarks>
+      <para>This structure is one member of a render-target-view description (see <see cref="D3D10_RENDER_TARGET_VIEW_DESC" />).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D10_TEX2D_ARRAY_RTV.MipSlice">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The index of the mipmap level to use (see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">mip slice</a>).</para>
+    </summary>
+  </member>
+  <member name="D3D10_TEX2D_ARRAY_RTV.FirstArraySlice">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The index of the first texture to use in an array of textures (see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">array slice</a>)</para>
+    </summary>
+  </member>
+  <member name="D3D10_TEX2D_ARRAY_RTV.ArraySize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of textures in the array to use in the render target view, starting from <b>FirstArraySlice</b>.</para>
+    </summary>
+  </member>
+</doc>

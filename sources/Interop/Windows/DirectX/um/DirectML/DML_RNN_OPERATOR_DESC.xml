@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_RNN_OPERATOR_DESC">
+    <summary>
+      <para>Performs a one-layer simple recurrent neural network (RNN) function on the input. This function is often referred to as the Input Gate. This operator performs this function multiple times in a loop, dictated by the sequence length dimension and the <i>SequenceLengthsTensor</i>.</para>
+      <h3>Equation for the forward direction</h3>
+      <para>
+        <img alt="equation for the forward direction" src="https://docs.microsoft.com/windows/win32/api/DirectMLmages/rnn_forward.png" />
+      </para>
+      <h3>Equation for the backward direction</h3>
+      <para>
+        <img alt="equation for the backward direction" src="https://docs.microsoft.com/windows/win32/api/DirectMLmages/rnn_backward.png" />
+      </para>
+      <h3>Equation legend</h3>
+      <para>
+        <img alt="equation legend" src="https://docs.microsoft.com/windows/win32/api/DirectMLmages/rnn_legend.png" />
+      </para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the input data, X. Packed (and potentially padded) into one 4-D tensor with the sizes of <code>{ 1, seq_length, batch_size, input_size }</code>. seq_length is the dimension that is mapped to the index, t.</para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.WeightTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the weight data, W. Concatenation of W_i and W_Bi (if bidirectional). The tensor has sizes <code>{ 1, num_directions, hidden_size, input_size }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.RecurrenceTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the recurrence weight data, R. Concatenation of R_i and R_Bi (if bidirectional). This tensor has sizes <code>{ 1, num_directions, hidden_size, hidden_size }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.BiasTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the bias data for the input gate, B. Concatenation of <code>{ W_bi, R_bi }</code>, and <code>{ W_Bbi, R_Bbi }</code> (if bidirectional). This tensor has sizes <code>{ 1, 1, num_directions, 2 * hidden_size }</code>. If not specified, then defaults to 0.</para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.HiddenInitTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the hidden node initializer tensor, H_[t-1] for the first loop index t. If not specified, then defaults to 0. This tensor has sizes <code>{ 1, num_directions, batch_size, hidden_size }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.SequenceLengthsTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing an independent seq_length for each element in the batch. If not specified, then all sequences in the batch have length seq_length. This tensor has sizes <code>{ 1, 1, 1, batch_size }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.OutputSequenceTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor with which to write the concatenation of all the intermediate layer output values of the hidden nodes, H_t. This tensor has sizes <code>{ seq_length, num_directions, batch_size, hidden_size }</code>. seq_length is mapped to the loop index t.</para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.OutputSingleTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor with which to write the final output value of the hidden nodes, H_t. This tensor has sizes <code>{ 1, num_directions, batch_size, hidden_size }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.ActivationDescCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>This field determines the size of the <i>ActivationDescs</i> array.</para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.ActivationDescs">
+    <summary>
+      <para>Type: _Field_size_(ActivationDescCount) <b>const <see cref="DML_OPERATOR_DESC" />*</b></para>
+      <para>An array of <see cref="DML_OPERATOR_DESC" /> containing the descriptions of the activation operators, f(). The number of activation functions is equal to the number of directions. For forwards and backwards directions there is expected to be 1 activation function. For Bidirectional there are expected to be 2.</para>
+    </summary>
+  </member>
+  <member name="DML_RNN_OPERATOR_DESC.Direction">
+    <summary>
+      <para>Type: <b><see cref="DML_RECURRENT_NETWORK_DIRECTION" /></b></para>
+      <para>The direction of the operator: forward, backward, or bidirectional.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,13 +7,25 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REGCLS.xml' path='doc/member[@name="REGCLS"]/*' />
 [Flags]
 public enum REGCLS
 {
+    /// <include file='REGCLS.xml' path='doc/member[@name="REGCLS.REGCLS_SINGLEUSE"]/*' />
     REGCLS_SINGLEUSE = 0,
+
+    /// <include file='REGCLS.xml' path='doc/member[@name="REGCLS.REGCLS_MULTIPLEUSE"]/*' />
     REGCLS_MULTIPLEUSE = 1,
+
+    /// <include file='REGCLS.xml' path='doc/member[@name="REGCLS.REGCLS_MULTI_SEPARATE"]/*' />
     REGCLS_MULTI_SEPARATE = 2,
+
+    /// <include file='REGCLS.xml' path='doc/member[@name="REGCLS.REGCLS_SUSPENDED"]/*' />
     REGCLS_SUSPENDED = 4,
+
+    /// <include file='REGCLS.xml' path='doc/member[@name="REGCLS.REGCLS_SURROGATE"]/*' />
     REGCLS_SURROGATE = 8,
+
+    /// <include file='REGCLS.xml' path='doc/member[@name="REGCLS.REGCLS_AGILE"]/*' />
     REGCLS_AGILE = 0x10,
 }

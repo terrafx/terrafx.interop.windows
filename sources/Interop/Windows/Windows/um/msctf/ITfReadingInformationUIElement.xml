@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfReadingInformationUIElement.GetContext">
+    <summary>
+      <para>This method returns the target <see cref="ITfContext" /> of this reading information UI.</para>
+    </summary>
+    <param name="ppic">
+      <para>[out] A pointer to receive the target <see cref="ITfContext" /> interface of this UI element.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfReadingInformationUIElement.GetErrorIndex">
+    <summary>
+      <para>This method returns the char index where the typing error occurs.</para>
+    </summary>
+    <param name="pErrorIndex">
+      <para>[out] A pointer to receive the char index where the typing error occurs.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfReadingInformationUIElement.GetMaxReadingStringLength">
+    <summary>
+      <para>The <b>ITfReadingInformationUIElement.GetMaxReadingStringLength</b> method returns the max string count of the reading information UI.</para>
+    </summary>
+    <param name="pcchMax">
+      <para>[out] A pointer to the max length of the reading information string.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfReadingInformationUIElement.GetString">
+    <summary>
+      <para>This  method returns the string on the reading information UI.</para>
+    </summary>
+    <param name="pstr">
+      <para>[out] A pointer to the BSTR of the reading information string.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfReadingInformationUIElement.GetUpdatedFlags">
+    <summary>
+      <para>This method returns the flag that tells which part of this element was updated.</para>
+    </summary>
+    <param name="pdwFlags">
+      <para>[out] A pointer to receive the flags that is a combination of the following bits:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_RIUIE_CONTEXT</b>
+          </description>
+          <description>
+            <para>The target <see cref="ITfContext" /> was changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_RIUIE_STRING</b>
+          </description>
+          <description>
+            <para>The reading information string was changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_RIUIE_MAXREADINGSTRINGLENGTH</b>
+          </description>
+          <description>
+            <para>The max length of the reading information string was changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_RIUIE_ERRORINDEX</b>
+          </description>
+          <description>
+            <para>The error index of the reading information string was changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_RIUIE_VERTICALORDER</b>
+          </description>
+          <description>
+            <para>The vertical order preference was changed.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfReadingInformationUIElement.IsVerticalOrderPreferred">
+    <summary>
+      <para>This method returns if the UI prefers to be shown in vertical order.</para>
+    </summary>
+    <param name="pfVertical">
+      <para>[out] True if the UI prefers to be shown in the vertical order.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfReadingInformationUIElement">
+    <summary>
+      <para>The <b>ITfCandidateListUIElement</b> interface is implemented by a text service that has a UI for reading information UI at the near caret.</para>
+    </summary>
+  </member>
+</doc>

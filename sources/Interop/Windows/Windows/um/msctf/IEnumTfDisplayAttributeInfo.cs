@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumTfDisplayAttributeInfo.xml' path='doc/member[@name="IEnumTfDisplayAttributeInfo"]/*' />
 [Guid("7CEF04D7-CB75-4E80-A7AB-5F5BC7D332DE")]
 [NativeTypeName("struct IEnumTfDisplayAttributeInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
         return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
         return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint>)(lpVtbl[1]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
         return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint>)(lpVtbl[2]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfDisplayAttributeInfo.xml' path='doc/member[@name="IEnumTfDisplayAttributeInfo.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfDisplayAttributeInfo** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
         return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, IEnumTfDisplayAttributeInfo**, int>)(lpVtbl[3]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumTfDisplayAttributeInfo.xml' path='doc/member[@name="IEnumTfDisplayAttributeInfo.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfDisplayAttributeInfo** rgInfo, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
         return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint, ITfDisplayAttributeInfo**, uint*, int>)(lpVtbl[4]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), ulCount, rgInfo, pcFetched);
     }
 
+    /// <include file='IEnumTfDisplayAttributeInfo.xml' path='doc/member[@name="IEnumTfDisplayAttributeInfo.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
         return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, int>)(lpVtbl[5]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfDisplayAttributeInfo.xml' path='doc/member[@name="IEnumTfDisplayAttributeInfo.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

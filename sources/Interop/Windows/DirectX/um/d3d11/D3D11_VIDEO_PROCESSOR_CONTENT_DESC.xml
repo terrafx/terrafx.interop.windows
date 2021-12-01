@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_CONTENT_DESC">
+    <summary>
+      <para>Describes a video stream for a video processor.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <seealso cref="ID3D11VideoDevice.CreateVideoProcessorEnumerator" />
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_CONTENT_DESC.InputFrameFormat">
+    <summary>
+      <para>A member of the <see cref="D3D11_VIDEO_FRAME_FORMAT" /> enumeration that describes how the video stream is interlaced.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_CONTENT_DESC.InputFrameRate">
+    <summary>
+      <para>The frame rate of the input video stream, specified as a <see cref="DXGI_RATIONAL" /> structure.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_CONTENT_DESC.InputWidth">
+    <summary>
+      <para>The width of the input frames, in pixels.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_CONTENT_DESC.InputHeight">
+    <summary>
+      <para>The height of the input frames, in pixels.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_CONTENT_DESC.OutputFrameRate">
+    <summary>
+      <para>The frame rate of the output video stream, specified as a <see cref="DXGI_RATIONAL" /> structure.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_CONTENT_DESC.OutputWidth">
+    <summary>
+      <para>The width of the output frames, in pixels.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_CONTENT_DESC.OutputHeight">
+    <summary>
+      <para>The height of the output frames, in pixels.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_CONTENT_DESC.Usage">
+    <summary>
+      <para>A member of the <see cref="D3D11_VIDEO_USAGE" /> enumeration that describes how the video processor will be used. The value indicates the desired trade-off between speed and video quality. The driver uses this flag as a hint when it creates the video processor.</para>
+    </summary>
+  </member>
+</doc>

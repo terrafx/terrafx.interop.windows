@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTopoLoader.xml' path='doc/member[@name="IMFTopoLoader"]/*' />
 [Guid("DE9A6157-F660-4643-B56A-DF9F7998C7CD")]
 [NativeTypeName("struct IMFTopoLoader : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFTopoLoader : IMFTopoLoader.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFTopoLoader : IMFTopoLoader.Interface
         return ((delegate* unmanaged<IMFTopoLoader*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopoLoader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFTopoLoader : IMFTopoLoader.Interface
         return ((delegate* unmanaged<IMFTopoLoader*, uint>)(lpVtbl[1]))((IMFTopoLoader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFTopoLoader : IMFTopoLoader.Interface
         return ((delegate* unmanaged<IMFTopoLoader*, uint>)(lpVtbl[2]))((IMFTopoLoader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTopoLoader.xml' path='doc/member[@name="IMFTopoLoader.Load"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Load(IMFTopology* pInputTopo, IMFTopology** ppOutputTopo, IMFTopology* pCurrentTopo)

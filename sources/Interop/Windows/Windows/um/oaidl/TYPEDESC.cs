@@ -8,14 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TYPEDESC.xml' path='doc/member[@name="TYPEDESC"]/*' />
 public unsafe partial struct TYPEDESC
 {
+    /// <include file='TYPEDESC.xml' path='doc/member[@name="TYPEDESC.Anonymous"]/*' />
     [NativeTypeName("tagTYPEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/oaidl.h:653:36)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='TYPEDESC.xml' path='doc/member[@name="TYPEDESC.vt"]/*' />
     [NativeTypeName("VARTYPE")]
     public ushort vt;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lptdesc"]/*' />
     public ref TYPEDESC* lptdesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25,6 +29,7 @@ public unsafe partial struct TYPEDESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpadesc"]/*' />
     public ref ARRAYDESC* lpadesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +39,7 @@ public unsafe partial struct TYPEDESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hreftype"]/*' />
     public ref uint hreftype
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,17 +49,21 @@ public unsafe partial struct TYPEDESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lptdesc"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct tagTYPEDESC *")]
         public TYPEDESC* lptdesc;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpadesc"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct tagARRAYDESC *")]
         public ARRAYDESC* lpadesc;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hreftype"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("HREFTYPE")]
         public uint hreftype;

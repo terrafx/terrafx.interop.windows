@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfThreadFocusSink.OnKillThreadFocus">
+    <summary>
+      <para>Called when the thread loses the UI focus.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITfThreadFocusSink.OnSetThreadFocus">
+    <summary>
+      <para>Called when the thread receives the UI focus.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITfThreadFocusSink">
+    <summary>
+      <para>The <b>ITfThreadFocusSink</b> interface is implemented by an application or TSF text service to receive notifications when the thread receives or loses the UI focus. This advise sink is installed by calling the TSF Manager's <see cref="ITfSource.AdviseSink" /> with IID_ITfThreadFocusSink.</para>
+    </summary>
+    <seealso cref="ITfSource.AdviseSink " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

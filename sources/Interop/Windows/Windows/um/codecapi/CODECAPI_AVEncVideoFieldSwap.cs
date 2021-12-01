@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoFieldSwap.xml' path='doc/member[@name="CODECAPI_AVEncVideoFieldSwap"]/*' />
 [Guid("FEFD7569-4E0A-49F2-9F2B-360EA48C19A2")]
 public partial struct CODECAPI_AVEncVideoFieldSwap
 {

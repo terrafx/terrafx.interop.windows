@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SE_IMAGE_SIGNATURE_TYPE.xml' path='doc/member[@name="SE_IMAGE_SIGNATURE_TYPE"]/*' />
 public enum SE_IMAGE_SIGNATURE_TYPE
 {
+    /// <include file='SE_IMAGE_SIGNATURE_TYPE.xml' path='doc/member[@name="SE_IMAGE_SIGNATURE_TYPE.SeImageSignatureNone"]/*' />
     SeImageSignatureNone = 0,
+
+    /// <include file='SE_IMAGE_SIGNATURE_TYPE.xml' path='doc/member[@name="SE_IMAGE_SIGNATURE_TYPE.SeImageSignatureEmbedded"]/*' />
     SeImageSignatureEmbedded,
+
+    /// <include file='SE_IMAGE_SIGNATURE_TYPE.xml' path='doc/member[@name="SE_IMAGE_SIGNATURE_TYPE.SeImageSignatureCache"]/*' />
     SeImageSignatureCache,
+
+    /// <include file='SE_IMAGE_SIGNATURE_TYPE.xml' path='doc/member[@name="SE_IMAGE_SIGNATURE_TYPE.SeImageSignatureCatalogCached"]/*' />
     SeImageSignatureCatalogCached,
+
+    /// <include file='SE_IMAGE_SIGNATURE_TYPE.xml' path='doc/member[@name="SE_IMAGE_SIGNATURE_TYPE.SeImageSignatureCatalogNotCached"]/*' />
     SeImageSignatureCatalogNotCached,
+
+    /// <include file='SE_IMAGE_SIGNATURE_TYPE.xml' path='doc/member[@name="SE_IMAGE_SIGNATURE_TYPE.SeImageSignatureCatalogHint"]/*' />
     SeImageSignatureCatalogHint,
+
+    /// <include file='SE_IMAGE_SIGNATURE_TYPE.xml' path='doc/member[@name="SE_IMAGE_SIGNATURE_TYPE.SeImageSignaturePackageCatalog"]/*' />
     SeImageSignaturePackageCatalog,
+
+    /// <include file='SE_IMAGE_SIGNATURE_TYPE.xml' path='doc/member[@name="SE_IMAGE_SIGNATURE_TYPE.SeImageSignaturePplMitigated"]/*' />
     SeImageSignaturePplMitigated,
 }

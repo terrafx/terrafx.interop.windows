@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVASPECTINFOFLAG.xml' path='doc/member[@name="DVASPECTINFOFLAG"]/*' />
 public enum DVASPECTINFOFLAG
 {
+    /// <include file='DVASPECTINFOFLAG.xml' path='doc/member[@name="DVASPECTINFOFLAG.DVASPECTINFOFLAG_CANOPTIMIZE"]/*' />
     DVASPECTINFOFLAG_CANOPTIMIZE = 1,
 }

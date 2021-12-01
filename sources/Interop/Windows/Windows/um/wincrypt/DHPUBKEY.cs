@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DHPUBKEY.xml' path='doc/member[@name="DHPUBKEY"]/*' />
 public partial struct DHPUBKEY
 {
+    /// <include file='DHPUBKEY.xml' path='doc/member[@name="DHPUBKEY.magic"]/*' />
     [NativeTypeName("DWORD")]
     public uint magic;
 
+    /// <include file='DHPUBKEY.xml' path='doc/member[@name="DHPUBKEY.bitlen"]/*' />
     [NativeTypeName("DWORD")]
     public uint bitlen;
 }

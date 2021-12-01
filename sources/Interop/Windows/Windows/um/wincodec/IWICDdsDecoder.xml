@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICDdsDecoder.GetFrame">
+    <summary>
+      <para>Retrieves the specified frame of the DDS image.</para>
+    </summary>
+    <param name="arrayIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The requested index within the texture array.</para>
+    </param>
+    <param name="mipLevel">
+      <para>Type: <b>UINT</b></para>
+      <para>The requested mip level.</para>
+    </param>
+    <param name="sliceIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The requested slice within the 3D texture.</para>
+    </param>
+    <param name="ppIBitmapFrame">
+      <para>Type: <b><see cref="IWICBitmapFrameDecode" />**</b></para>
+      <para>A pointer to a  <see cref="IWICBitmapFrameDecode" /> object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A DDS file can contain multiple images that are organized into a three level hierarchy. First, DDS file may contain multiple textures in a texture array. Second, each texture can have multiple mip levels. Finally, the texture may be a 3D (volume) texture and have multiple slices, each of which is a 2D texture. See the <a href="https://docs.microsoft.com//windows/desktop/direct3ddds/dx-graphics-dds">DDS documentation</a> for more information.</para>
+      <para>WIC maps this three level hierarchy into a linear array of <see cref="IWICBitmapFrameDecode" />, accessible via <see cref="IWICBitmapDecoder.GetFrame" />. However, determining which frame corresponds to a triad of <i>arrayIndex</i>, <i>mipLevel</i>, and <i>sliceIndex</i> value is not trivial because each mip level of a 3D texture has a different depth (number of slices). This method provides additional convenience over <b>IWICBitmapDecoder.GetFrame</b> for DDS images by calculating the correct frame given the three indices.</para>
+    </remarks>
+    <seealso cref="CreateBitmap" />
+    <seealso cref="ID3D11Device.CreateTexture2D" />
+    <seealso cref="IWICDdsDecoder" />
+    <seealso cref="WICDdsFormatInfo" />
+  </member>
+  <member name="IWICDdsDecoder.GetParameters">
+    <summary>
+      <para>Gets DDS-specific data.</para>
+    </summary>
+    <param name="pParameters">
+      <para>Type: <b><see cref="WICDdsParameters" />*</b></para>
+      <para>A pointer to the structure where the information is returned.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IWICDdsDecoder" />
+    <seealso cref="WICDdsParameters" />
+  </member>
+  <member name="IWICDdsDecoder">
+    <summary>
+      <para>Provides information and functionality specific to the DDS image format.</para>
+    </summary>
+    <remarks>
+      <para>This interface is implemented by the WIC DDS codec. To obtain this interface, create an <see cref="IWICBitmapDecoder" /> using the DDS codec and QueryInterface for <b>IWICDdsDecoder</b>.</para>
+    </remarks>
+  </member>
+</doc>

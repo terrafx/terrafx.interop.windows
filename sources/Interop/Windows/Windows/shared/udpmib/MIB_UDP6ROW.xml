@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_UDP6ROW">
+    <summary>
+      <para>The
+<b>MIB_UDP6ROW</b> structure contains an entry from the User Datagram Protocol (UDP) listener table for IPv6 on the local computer.</para>
+    </summary>
+    <remarks>
+      <para>The <b>MIB_UDP6ROW</b> structure is defined on Windows Vista and later.</para>
+      <para>The <see cref="GetUdp6Table" /> function retrieves the UDP listener table for IPv6 on the local computer and returns this information in a <see cref="MIB_UDP6TABLE" /> structure.</para>
+      <para>An array of <b>MIB_UDP6ROW</b> structures are contained in the <b>MIB_UDP6TABLE</b> structure.</para>
+      <para>The <b>dwLocalAddr</b> member is stored in  an <see cref="in6_addr" /> structure. The <see cref="RtlIpv6AddressToString" /> or <see cref="RtlIpv6AddressToStringEx" /> functions may be used to convert the IPv6 address in the <b>dwLocalAddr</b> member to a string without loading the Windows Sockets DLL.</para>
+      <para>The <b>dwLocalScopeId</b> and <b>dwLocalPort</b> members are in network byte order. In order to use the <b>dwLocalScopeId</b> and <b>dwLocalPort</b> members, the <see cref="ntohs" /> or <see cref="inet_ntoa" /> functions in Windows Sockets or similar functions may be needed.</para>
+      <para>The <see cref="MIB_UDP6TABLE" /> structure contains the UDP listener table for IPv6 on the local computer. The name is based on the definition of this table in RFC 2454 published by the IETF. For more information, see
+<a href="http://tools.ietf.org/html/rfc2454">http://www.ietf.org/rfc/rfc2454.txt</a>. This table contains UDP  endpoints for IPv6 that have been bound to an address. It should be noted that an application can create a UDP socket and bind it to an address for the sole purpose of sending a UDP datagram, with no intention of receiving packets using this socket (functioning as a listener).</para>
+    </remarks>
+    <seealso cref="GetUdp6Table" />
+    <seealso cref="GetUdpTable" />
+    <seealso cref="MIB_UDP6TABLE" />
+    <seealso cref="MIB_UDPROW" />
+    <seealso cref="MIB_UDPTABLE" />
+    <seealso cref="RtlIpv6AddressToString" />
+    <seealso cref="RtlIpv6AddressToStringEx" />
+    <seealso cref="bind" />
+    <seealso cref="in6_addr" />
+    <seealso cref="inet_ntoa" />
+    <seealso cref="ntohl" />
+    <seealso cref="ntohs" />
+  </member>
+  <member name="MIB_UDP6ROW.dwLocalAddr">
+    <summary>
+      <para>The IPv6 address of the UDP endpoint on the local computer. This member is stored in  a character array in network byte order.</para>
+      <para>A value of zero indicates a UDP listener  willing to accept datagrams for any IP interface associated
+with the local computer.</para>
+    </summary>
+  </member>
+  <member name="MIB_UDP6ROW.dwLocalScopeId">
+    <summary>
+      <para>The scope ID for the IPv6 address of the UDP endpoint on the local computer. This member is stored in network byte order.</para>
+    </summary>
+  </member>
+  <member name="MIB_UDP6ROW.dwLocalPort">
+    <summary>
+      <para>The port number of the UDP endpoint on the local computer. This member is stored in network byte order.</para>
+    </summary>
+  </member>
+</doc>

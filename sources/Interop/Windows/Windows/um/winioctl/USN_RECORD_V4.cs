@@ -10,36 +10,48 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct USN_RECORD_V4
 {
+    /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.Header"]/*' />
     public USN_RECORD_COMMON_HEADER Header;
 
+    /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.FileReferenceNumber"]/*' />
     public FILE_ID_128 FileReferenceNumber;
 
+    /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.ParentFileReferenceNumber"]/*' />
     public FILE_ID_128 ParentFileReferenceNumber;
 
+    /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.Usn"]/*' />
     [NativeTypeName("USN")]
     public long Usn;
 
+    /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.Reason"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reason;
 
+    /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.SourceInfo"]/*' />
     [NativeTypeName("DWORD")]
     public uint SourceInfo;
 
+    /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.RemainingExtents"]/*' />
     [NativeTypeName("DWORD")]
     public uint RemainingExtents;
 
+    /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.NumberOfExtents"]/*' />
     [NativeTypeName("WORD")]
     public ushort NumberOfExtents;
 
+    /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.ExtentSize"]/*' />
     [NativeTypeName("WORD")]
     public ushort ExtentSize;
 
+    /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.Extents"]/*' />
     [NativeTypeName("USN_RECORD_EXTENT [1]")]
     public _Extents_e__FixedBuffer Extents;
 
+    /// <include file='_Extents_e__FixedBuffer.xml' path='doc/member[@name="_Extents_e__FixedBuffer"]/*' />
     public partial struct _Extents_e__FixedBuffer
     {
         public USN_RECORD_EXTENT e0;

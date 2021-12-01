@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='THEMESIZE.xml' path='doc/member[@name="THEMESIZE"]/*' />
 public enum THEMESIZE
 {
+    /// <include file='THEMESIZE.xml' path='doc/member[@name="THEMESIZE.TS_MIN"]/*' />
     TS_MIN,
+
+    /// <include file='THEMESIZE.xml' path='doc/member[@name="THEMESIZE.TS_TRUE"]/*' />
     TS_TRUE,
+
+    /// <include file='THEMESIZE.xml' path='doc/member[@name="THEMESIZE.TS_DRAW"]/*' />
     TS_DRAW,
 }

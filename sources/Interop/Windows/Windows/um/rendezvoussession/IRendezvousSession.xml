@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRendezvousSession.Flags">
+    <summary>
+      <para>Retrieves a value that indicates session information. For example, the session flag can indicate whether the user is the inviter or the invitee.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IRendezvousSession.get_Flags">
+    <summary>
+      <para>Retrieves a value that indicates session information. For example, the session flag can indicate whether the user is the inviter or the invitee.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IRendezvousSession.get_RemoteUser">
+    <summary>
+      <para>Retrieves a pointer to a <b>BSTR</b> that contains the Windows Messenger contact name.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IRendezvousSession.RemoteUser">
+    <summary>
+      <para>Retrieves a pointer to a <b>BSTR</b> that contains the Windows Messenger contact name.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IRendezvousSession.get_State">
+    <summary>
+      <para>Retrieves a value that indicates the session state.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IRendezvousSession.State">
+    <summary>
+      <para>Retrieves a value that indicates the session state.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IRendezvousSession.SendContextData">
+    <summary>
+      <para>Sends the context data to the remote <a href="https://docs.microsoft.com//previous-versions/windows/desktop/remoteassist/remoteassist-rendezvousapplication">RendezvousApplication</a>.</para>
+    </summary>
+    <param name="bstrData">
+      <para>A <b>BSTR</b> specifying context data for the application.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The context data was sent successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The context data passed to the method is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There is not enough memory available to send the context data.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IRendezvousSession.Terminate">
+    <summary>
+      <para>Terminates the remote <a href="https://docs.microsoft.com//previous-versions/windows/desktop/remoteassist/remoteassist-rendezvousapplication">RendezvousApplication</a>.</para>
+    </summary>
+    <param name="hr">
+      <para>The <b>HRESULT</b> from the application termination.</para>
+    </param>
+    <param name="bstrAppData">
+      <para>Application data.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IRendezvousSession">
+    <summary>
+      <para>Exposes methods that send data about the session and that can terminate it.</para>
+    </summary>
+    <remarks>
+      <para>The instant messaging (IM) application implements this interface and passes the object that implements <b>IRendezvousSession</b> and supports the <a href="https://docs.microsoft.com//previous-versions/ms715092(v=vs.85)">DRendezvousSessionEvents</a> connection point.</para>
+      <para>The Windows Remote Assistance application calls <b>IRendezvousSession</b>-&gt;<see cref="AddRef" /> to retain the session after the call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nf-rendezvoussession-irendezvousapplication-setrendezvoussession">SetRendezvousSession</a> completes.</para>
+      <para>The Windows Remote Assistance application calls <b>IRendezvousSession</b>-&gt;<see cref="Release" /> when the session is complete.</para>
+    </remarks>
+  </member>
+</doc>

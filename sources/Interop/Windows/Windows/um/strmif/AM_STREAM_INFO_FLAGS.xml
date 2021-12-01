@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_STREAM_INFO_FLAGS">
+    <summary>
+      <para>The <b>AM_STREAM_INFO_FLAGS</b> enumeration defines flags that indicate a pin's stream-control status.</para>
+    </summary>
+    <seealso cref="AM_STREAM_INFO" />
+    <seealso cref="IAMStreamControl.GetInfo" />
+  </member>
+  <member name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_START_DEFINED">
+    <summary>
+      <para>Indicates that the pin's start time is set.</para>
+    </summary>
+  </member>
+  <member name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_STOP_DEFINED">
+    <summary>
+      <para>Indicates that the pin's stop time is been set.</para>
+    </summary>
+  </member>
+  <member name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_DISCARDING">
+    <summary>
+      <para>Indicates that the pin is currently discarding data.</para>
+    </summary>
+  </member>
+  <member name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_STOP_SEND_EXTRA">
+    <summary>
+      <para>Indicates that the pin will send one extra sample after it reaches the stop time.</para>
+    </summary>
+  </member>
+</doc>

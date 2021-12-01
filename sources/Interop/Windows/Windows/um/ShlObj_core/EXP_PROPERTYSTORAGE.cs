@@ -7,15 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXP_PROPERTYSTORAGE.xml' path='doc/member[@name="EXP_PROPERTYSTORAGE"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct EXP_PROPERTYSTORAGE
 {
+    /// <include file='EXP_PROPERTYSTORAGE.xml' path='doc/member[@name="EXP_PROPERTYSTORAGE.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='EXP_PROPERTYSTORAGE.xml' path='doc/member[@name="EXP_PROPERTYSTORAGE.dwSignature"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSignature;
 
+    /// <include file='EXP_PROPERTYSTORAGE.xml' path='doc/member[@name="EXP_PROPERTYSTORAGE.abPropertyStorage"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte abPropertyStorage[1];
 }

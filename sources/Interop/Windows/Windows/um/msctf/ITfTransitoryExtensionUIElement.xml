@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfTransitoryExtensionUIElement.GetDocumentMgr">
+    <summary>
+      <para>The <b>ITfTransitoryExtensionUIElement.GetDocumentMgr</b> method returns the pointer of the transitory document manager.</para>
+    </summary>
+    <param name="ppdim">
+      <para>[out] A pointer to receive the <see cref="ITfDocumentMgr" /> interface pointer. This document manager object contains a context object that has the <see cref="ITfContext" /> interface and contains the text of the transitory extension.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfTransitoryExtensionUIElement">
+    <summary>
+      <para>The <b>ITfTransitoryExtensionUIElement</b> interface is implemented by TSF manager which provides the UI of transitory extension. The application that is in UILess mode will use this interface to determine if the original UI should be shown or the content of this UI should be drown by the application.</para>
+    </summary>
+  </member>
+</doc>

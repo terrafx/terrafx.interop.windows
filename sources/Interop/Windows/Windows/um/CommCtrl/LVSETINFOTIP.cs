@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LVSETINFOTIP.xml' path='doc/member[@name="LVSETINFOTIP"]/*' />
 public unsafe partial struct LVSETINFOTIP
 {
+    /// <include file='LVSETINFOTIP.xml' path='doc/member[@name="LVSETINFOTIP.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='LVSETINFOTIP.xml' path='doc/member[@name="LVSETINFOTIP.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='LVSETINFOTIP.xml' path='doc/member[@name="LVSETINFOTIP.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszText;
 
+    /// <include file='LVSETINFOTIP.xml' path='doc/member[@name="LVSETINFOTIP.iItem"]/*' />
     public int iItem;
 
+    /// <include file='LVSETINFOTIP.xml' path='doc/member[@name="LVSETINFOTIP.iSubItem"]/*' />
     public int iSubItem;
 }

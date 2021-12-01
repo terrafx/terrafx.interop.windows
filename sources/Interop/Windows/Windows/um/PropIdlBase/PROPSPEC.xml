@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPSPEC">
+    <summary>
+      <para>The
+<b>PROPSPEC</b> structure is used by many of the methods of
+<see cref="IPropertyStorage" /> to specify a property either by its property identifier (ID) or the associated string name.</para>
+    </summary>
+    <remarks>
+      <para>String names are optional and can be assigned to a set of properties when the property is created with a call to <see cref="IPropertyStorage.WriteMultiple" /> or later with a call to <see cref="IPropertyStorage.WritePropertyNames" />.</para>
+    </remarks>
+    <seealso cref="IPropertyStorage" />
+  </member>
+  <member name="PROPSPEC.ulKind">
+    <summary>
+      <para>Indicates the union member used. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PRSPEC_LPWSTR</b>
+                </description>
+              </item>
+              <item>
+                <description>Value:  0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <b>lpwstr</b> member is used and set to a string name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PRSPEC_PROPID</b>
+                </description>
+              </item>
+              <item>
+                <description>Value:  1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <b>propid</b> member is used and set to a property ID value.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PROPSPEC.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="PROPSPEC.DUMMYUNIONNAME.propid">
+    <summary>
+      <para>Specifies the value of the property ID. Use either this value or the following <b>lpwstr</b>, not both.</para>
+    </summary>
+  </member>
+  <member name="PROPSPEC.DUMMYUNIONNAME.lpwstr">
+    <summary>
+      <para>Specifies the string name of the property as a null-terminated Unicode string.</para>
+    </summary>
+  </member>
+</doc>

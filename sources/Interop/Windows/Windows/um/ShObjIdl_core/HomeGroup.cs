@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HomeGroup.xml' path='doc/member[@name="HomeGroup"]/*' />
 [Guid("DE77BA04-3C92-4D11-A1A5-42352A53E0E3")]
 public partial struct HomeGroup
 {

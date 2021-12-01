@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfInputProcessorProfileMgr.ActivateProfile">
+    <summary>
+      <para>The <b>ITfInputProcessorProfileMgr.ActivateProfile</b> method activates the specified text service's profile or keyboard layout.</para>
+    </summary>
+    <param name="dwProfileType">
+      <para>[in] The type of this profile. This is one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_PROFILETYPE_INPUTPROCESSOR</b>
+          </description>
+          <description>
+            <para>This is a text service.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_PROFILETYPE_KEYBOARDLAYOUT</b>
+          </description>
+          <description>
+            <para>This is a keyboard layout.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="langid">
+      <para>[in] The language id of the profile to be activated.</para>
+    </param>
+    <param name="clsid">
+      <para>[in] The CLSID of the text service of the profile to be activated. This must be CLSID_NULL if <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT.</para>
+    </param>
+    <param name="guidProfile">
+      <para>[in] The guidProfile of the profile to be activated. This must be GUID_NULL if <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT.</para>
+    </param>
+    <param name="hkl">
+      <para>[in] The handle of the keyboard layout. This must be <b>NULL</b> if dwProfileType is TF_PROFILETYPE_INPUTPROCESSOR.</para>
+    </param>
+    <param name="dwFlags">
+      <para>The combination of the following bits:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_IPPMF_FORPROCESS</b>
+          </description>
+          <description>
+            <para>Activate this profile for all threads in the process.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_IPPMF_FORSESSION</b>
+          </description>
+          <description>
+            <para>Activate this profile for all threads in the current desktop.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_IPPMF_ENABLEPROFILE</b>
+          </description>
+          <description>
+            <para>Update the registry to enable this profile for this user.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_IPPMF_DISABLEPROFILE</b>
+          </description>
+          <description></description>
+        </item>
+        <item>
+          <description>
+            <b>TF_IPPMF_DONTCARECURRENTINPUTLANGUAGE</b>
+          </description>
+          <description>
+            <para>If the current input language does not match with the requested profile's language, TSF marks this profile to be activated when the requested input language is switched. If this flag is off and the current input language is not matched, this method fails.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The language profile is not enabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfInputProcessorProfileMgr" />
+    <seealso cref="ITfInputProcessorProfileMgr.DeactivateProfile " />
+  </member>
+  <member name="ITfInputProcessorProfileMgr.DeactivateProfile">
+    <summary>
+      <para>The <b>ITfInputProcessorProfileMgr.DeactivateProfile</b> method deactivates the specified text service's profile or keyboard layout.</para>
+    </summary>
+    <param name="dwProfileType">
+      <para>[in] The type of this profile. This is one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_PROFILETYPE_INPUTPROCESSOR</b>
+          </description>
+          <description>
+            <para>This is a text service.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_PROFILETYPE_KEYBOARDLAYOUT</b>
+          </description>
+          <description>
+            <para>This is a keyboard layout.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="langid">
+      <para>[in] The language id of the profile to be activated.</para>
+    </param>
+    <param name="clsid">
+      <para>[in] The CLSID of the text service of the profile to be activated. This must be CLSID_NULL if <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT.</para>
+    </param>
+    <param name="guidProfile">
+      <para>[in] The guidProfile of the profile to be activated. This must be GUID_NULL if <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT.</para>
+    </param>
+    <param name="hkl">
+      <para>[in] The handle of the keyboard layout. This must be <b>NULL</b> if <i>dwProfileType</i> is TF_PROFILETYPE_INPUTPROCESSOR.</para>
+    </param>
+    <param name="dwFlags">
+      <para>The combination of the following bits:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_IPPMF_FORPROCESS</b>
+          </description>
+          <description>
+            <para>Deactivate this profile for all threads in the process.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_IPPMF_FORSESSION</b>
+          </description>
+          <description>
+            <para>Deactivate this profile for all threads in the current desktop.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_IPPMF_DISABLEPROFILE</b>
+          </description>
+          <description></description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfInputProcessorProfileMgr" />
+    <seealso cref="ITfInputProcessorProfileMgr.ActivateProfile " />
+  </member>
+  <member name="ITfInputProcessorProfileMgr.EnumProfiles">
+    <summary>
+      <para>The <b>ITfInputProcessorProfileMgr.EnumProfiles</b> method returns profiles to be enumerated.</para>
+    </summary>
+    <param name="langid">
+      <para>[in] langid of the profiles to be enumerated. If langid is 0, all profiles will be enumerated.</para>
+    </param>
+    <param name="ppEnum">
+      <para>[out] The pointer to receive a pointer of <see cref="IEnumTfInputProcessorProfiles" /> interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfInputProcessorProfileMgr.GetActiveProfile">
+    <summary>
+      <para>This method returns the current active profile.</para>
+    </summary>
+    <param name="catid">
+      <para>[in] The category id for the profile. This must be GUID_TFCAT_TIP_KEYBOARD. Only GUID_TFCAT_TIP_KEYBOARD is supported.</para>
+    </param>
+    <param name="pProfile">
+      <para>[out] The buffer to receive the profile information.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The profile was not found or is not active.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfInputProcessorProfileMgr.GetProfile">
+    <summary>
+      <para>The <b>ITfInputProcessorProfileMgr.GetProfile</b> method returns the information of the specified text service's profile or keyboard layout in <see cref="TF_INPUTPROCESSORPROFILE" /> structure.</para>
+    </summary>
+    <param name="dwProfileType">
+      <para>[in] The type of this profile. This is one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_PROFILETYPE_INPUTPROCESSOR</b>
+          </description>
+          <description>
+            <para>This is a text service.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_PROFILETYPE_KEYBOARDLAYOUT</b>
+          </description>
+          <description>
+            <para>This is a keyboard layout.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="langid">
+      <para>[in] The language id of the profile to be activated.</para>
+    </param>
+    <param name="clsid">
+      <para>[in] The CLSID of the text service of the profile to be activated. This must be CLSID_NULL if <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT.</para>
+    </param>
+    <param name="guidProfile">
+      <para>[in] The guidProfile of the profile to be activated. This must be GUID_NULL if <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT.</para>
+    </param>
+    <param name="hkl">
+      <para>[in] The handle of the keyboard layout. This must be <b>NULL</b> if <i>dwProfileType</i> is TF_PROFILETYPE_INPUTPROCESSOR.</para>
+    </param>
+    <param name="pProfile">
+      <para>[out] The buffer to receive <see cref="TF_INPUTPROCESSORPROFILE" />.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfInputProcessorProfileMgr.RegisterProfile">
+    <summary>
+      <para>The <b>ITfInputProcessorProfileMgr.RegisterProfile</b> method registers the text service and the profile.</para>
+    </summary>
+    <param name="rclsid">
+      <para>[in] CLSID of the text service.</para>
+    </param>
+    <param name="langid">
+      <para>[in] The language id of the profile.</para>
+    </param>
+    <param name="guidProfile">
+      <para>[in] The GUID to identify the profile.</para>
+    </param>
+    <param name="pchDesc">
+      <para>[in, size_is(cchDesc)] The description of the profile.</para>
+    </param>
+    <param name="cchDesc">
+      <para>[in] The length of pchDesc.</para>
+    </param>
+    <param name="pchIconFile">
+      <para>[in, size_is(cchFile] The full path of the icon file.</para>
+    </param>
+    <param name="cchFile">
+      <para>[in] The length of pchIconFile.</para>
+    </param>
+    <param name="uIconIndex">
+      <para>[in] The icon index of the icon file for this profile.</para>
+    </param>
+    <param name="hklsubstitute">
+      <para>[in] The substitute hkl of this profile.</para>
+    </param>
+    <param name="dwPreferredLayout">
+      <para>[in] Unused. this must be 0.</para>
+    </param>
+    <param name="bEnabledByDefault">
+      <para>[in] True if this profile is enabled by default.</para>
+    </param>
+    <param name="dwFlags">
+      <para>[in] The combination of the following bits:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_RP_HIDDENINSETTINGUI</b>
+          </description>
+          <description>
+            <para>This profile will not appear in the setting UI.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_RP_LOCALPROCESS</b>
+          </description>
+          <description>
+            <para>This profile is available only on the local process.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_RP_LOCALTHREAD</b>
+          </description>
+          <description>
+            <para>This profile is available only on the local thread.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfInputProcessorProfileMgr.ReleaseInputProcessor">
+    <summary>
+      <para>The <b>ITfInputProcessorProfileMgr.ReleaseInputProcessor</b> method deactivates the profiles belonging to the text services of the specified CLSID and releases the instance of  <see cref="ITfTextInputProcessorEx" /> interface.</para>
+    </summary>
+    <param name="rclsid">
+      <para>[in] CLSID of the textservice to be released.</para>
+    </param>
+    <param name="dwFlags">
+      <para>[in]</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_RIP_FLAG_FREEUNUSEDLIBRARIES</b>
+          </description>
+          <description>
+            <para>If this bit is on, this method calls CoFreeUnusedLibrariesEx() so the text services DLL might be freed if it does not have any more COM/DLL reference. Warning: This flag could cause some other unrelated COM/DLL free.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfInputProcessorProfileMgr.UnregisterProfile">
+    <summary>
+      <para>The <b>ITfInputProcessorProfileMgr.UnregisterProfile</b> method unregisters the text service and the profile.</para>
+    </summary>
+    <param name="rclsid">
+      <para>[in] CLSID of the text service.</para>
+    </param>
+    <param name="langid">
+      <para>[in] The language id of the profile.</para>
+    </param>
+    <param name="guidProfile">
+      <para>[in] The GUID to identify the profile.</para>
+    </param>
+    <param name="dwFlags">
+      <para>[in] The combination of the following bits:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_URP_ALLPROFILES</b>
+          </description>
+          <description>
+            <para>If this bit is on, <b>UnregistrProfile</b> unregisters all profiles of the <i>rclsid</i> parameter. The <i>langid</i> and <i>guidProfile</i> parameters are ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_URP_LOCALPROCESS</b>
+          </description>
+          <description>
+            <para>The profile was registered on the local process.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_URP_LOCALTHREAD</b>
+          </description>
+          <description>
+            <para>The profile was registered on the local thread.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfInputProcessorProfileMgr">
+    <summary>
+      <para>The <b>ITfInputProcessorProfileMgr</b> interface is implemented by the TSF manager and used by an application or text service to manipulate the language profile of one or more text services.</para>
+    </summary>
+    <remarks>
+      <para>Unlike <see cref="ITfInputProcessorProfiles" />, ITfInputProcessorProfileMgr
+can manage both keyboard layout and text services seamlessly. In Windows Vista, it is recommended to use this interface instead of using the following methods:</para>
+      <list type="bullet">
+        <item>
+          <description>ITfInputProcessorProfiles.Register</description>
+        </item>
+        <item>
+          <description>ITfInputProcessorProfiles.Unregister</description>
+        </item>
+        <item>
+          <description>ITfInputProcessorProfiles.AddLanguageProfile</description>
+        </item>
+        <item>
+          <description>ITfInputProcessorProfiles.RemoveLanguageProfile</description>
+        </item>
+        <item>
+          <description>ITfInputProcessorProfiles.EnumInputProcessorInfo</description>
+        </item>
+        <item>
+          <description>ITfInputProcessorProfiles.ActivateLanguageProfile</description>
+        </item>
+        <item>
+          <description>ITfInputProcessorProfiles.GetActiveLanguageProfile</description>
+        </item>
+        <item>
+          <description>ITfInputProcessorProfiles.EnumLanguageProfiles</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ITfInputProcessorProfiles" />
+  </member>
+</doc>

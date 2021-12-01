@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_RENDER_TARGET_TYPE">
+    <summary>
+      <para>Describes whether a render target uses hardware or software rendering, or if Direct2D should select the rendering mode.</para>
+    </summary>
+    <remarks>
+      <para>Not every render target supports hardware rendering. For more information, see the <a href="https://docs.microsoft.com//windows/win32/Direct2D/render-targets-overview">Render Targets Overview</a>.</para>
+    </remarks>
+    <seealso cref="D2D1_RENDER_TARGET_PROPERTIES" />
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/render-targets-overview">Render Targets Overview</seealso>
+  </member>
+  <member name="D2D1_RENDER_TARGET_TYPE.D2D1_RENDER_TARGET_TYPE_DEFAULT">
+    <summary>
+      <para>The render target uses hardware rendering, if available; otherwise, it uses software rendering.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RENDER_TARGET_TYPE.D2D1_RENDER_TARGET_TYPE_SOFTWARE">
+    <summary>
+      <para>The render target uses software rendering only.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RENDER_TARGET_TYPE.D2D1_RENDER_TARGET_TYPE_HARDWARE">
+    <summary>
+      <para>The render target uses hardware rendering only.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RENDER_TARGET_TYPE.D2D1_RENDER_TARGET_TYPE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

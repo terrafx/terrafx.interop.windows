@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMREBARCHEVRON.xml' path='doc/member[@name="NMREBARCHEVRON"]/*' />
 public partial struct NMREBARCHEVRON
 {
+    /// <include file='NMREBARCHEVRON.xml' path='doc/member[@name="NMREBARCHEVRON.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMREBARCHEVRON.xml' path='doc/member[@name="NMREBARCHEVRON.uBand"]/*' />
     public uint uBand;
 
+    /// <include file='NMREBARCHEVRON.xml' path='doc/member[@name="NMREBARCHEVRON.wID"]/*' />
     public uint wID;
 
+    /// <include file='NMREBARCHEVRON.xml' path='doc/member[@name="NMREBARCHEVRON.lParam"]/*' />
     public LPARAM lParam;
 
+    /// <include file='NMREBARCHEVRON.xml' path='doc/member[@name="NMREBARCHEVRON.rc"]/*' />
     public RECT rc;
 
+    /// <include file='NMREBARCHEVRON.xml' path='doc/member[@name="NMREBARCHEVRON.lParamNM"]/*' />
     public LPARAM lParamNM;
 }

@@ -9,26 +9,34 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DEVICE_TIERING_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_TIERING_DESCRIPTOR"]/*' />
 public partial struct STORAGE_DEVICE_TIERING_DESCRIPTOR
 {
+    /// <include file='STORAGE_DEVICE_TIERING_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_TIERING_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DEVICE_TIERING_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_TIERING_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_DEVICE_TIERING_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_TIERING_DESCRIPTOR.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='STORAGE_DEVICE_TIERING_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_TIERING_DESCRIPTOR.TotalNumberOfTiers"]/*' />
     [NativeTypeName("DWORD")]
     public uint TotalNumberOfTiers;
 
+    /// <include file='STORAGE_DEVICE_TIERING_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_TIERING_DESCRIPTOR.NumberOfTiersReturned"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfTiersReturned;
 
+    /// <include file='STORAGE_DEVICE_TIERING_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_TIERING_DESCRIPTOR.Tiers"]/*' />
     [NativeTypeName("STORAGE_TIER [1]")]
     public _Tiers_e__FixedBuffer Tiers;
 
+    /// <include file='_Tiers_e__FixedBuffer.xml' path='doc/member[@name="_Tiers_e__FixedBuffer"]/*' />
     public partial struct _Tiers_e__FixedBuffer
     {
         public STORAGE_TIER e0;

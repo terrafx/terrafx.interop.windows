@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_SIGNED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_ENCODE_INFO"]/*' />
 public unsafe partial struct CMSG_SIGNED_ENCODE_INFO
 {
+    /// <include file='CMSG_SIGNED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_ENCODE_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_SIGNED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_ENCODE_INFO.cSigners"]/*' />
     [NativeTypeName("DWORD")]
     public uint cSigners;
 
+    /// <include file='CMSG_SIGNED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_ENCODE_INFO.rgSigners"]/*' />
     [NativeTypeName("PCMSG_SIGNER_ENCODE_INFO")]
     public CMSG_SIGNER_ENCODE_INFO* rgSigners;
 
+    /// <include file='CMSG_SIGNED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_ENCODE_INFO.cCertEncoded"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCertEncoded;
 
+    /// <include file='CMSG_SIGNED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_ENCODE_INFO.rgCertEncoded"]/*' />
     [NativeTypeName("PCERT_BLOB")]
     public CRYPT_DATA_BLOB* rgCertEncoded;
 
+    /// <include file='CMSG_SIGNED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_ENCODE_INFO.cCrlEncoded"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCrlEncoded;
 
+    /// <include file='CMSG_SIGNED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_ENCODE_INFO.rgCrlEncoded"]/*' />
     [NativeTypeName("PCRL_BLOB")]
     public CRYPT_DATA_BLOB* rgCrlEncoded;
 }

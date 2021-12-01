@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCOPE_LEVEL.xml' path='doc/member[@name="SCOPE_LEVEL"]/*' />
 public enum SCOPE_LEVEL
 {
+    /// <include file='SCOPE_LEVEL.xml' path='doc/member[@name="SCOPE_LEVEL.ScopeLevelInterface"]/*' />
     ScopeLevelInterface = 1,
+
+    /// <include file='SCOPE_LEVEL.xml' path='doc/member[@name="SCOPE_LEVEL.ScopeLevelLink"]/*' />
     ScopeLevelLink = 2,
+
+    /// <include file='SCOPE_LEVEL.xml' path='doc/member[@name="SCOPE_LEVEL.ScopeLevelSubnet"]/*' />
     ScopeLevelSubnet = 3,
+
+    /// <include file='SCOPE_LEVEL.xml' path='doc/member[@name="SCOPE_LEVEL.ScopeLevelAdmin"]/*' />
     ScopeLevelAdmin = 4,
+
+    /// <include file='SCOPE_LEVEL.xml' path='doc/member[@name="SCOPE_LEVEL.ScopeLevelSite"]/*' />
     ScopeLevelSite = 5,
+
+    /// <include file='SCOPE_LEVEL.xml' path='doc/member[@name="SCOPE_LEVEL.ScopeLevelOrganization"]/*' />
     ScopeLevelOrganization = 8,
+
+    /// <include file='SCOPE_LEVEL.xml' path='doc/member[@name="SCOPE_LEVEL.ScopeLevelGlobal"]/*' />
     ScopeLevelGlobal = 14,
+
+    /// <include file='SCOPE_LEVEL.xml' path='doc/member[@name="SCOPE_LEVEL.ScopeLevelCount"]/*' />
     ScopeLevelCount = 16,
 }

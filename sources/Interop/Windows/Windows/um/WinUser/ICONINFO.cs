@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICONINFO.xml' path='doc/member[@name="ICONINFO"]/*' />
 public partial struct ICONINFO
 {
+    /// <include file='ICONINFO.xml' path='doc/member[@name="ICONINFO.fIcon"]/*' />
     public BOOL fIcon;
 
+    /// <include file='ICONINFO.xml' path='doc/member[@name="ICONINFO.xHotspot"]/*' />
     [NativeTypeName("DWORD")]
     public uint xHotspot;
 
+    /// <include file='ICONINFO.xml' path='doc/member[@name="ICONINFO.yHotspot"]/*' />
     [NativeTypeName("DWORD")]
     public uint yHotspot;
 
+    /// <include file='ICONINFO.xml' path='doc/member[@name="ICONINFO.hbmMask"]/*' />
     public HBITMAP hbmMask;
 
+    /// <include file='ICONINFO.xml' path='doc/member[@name="ICONINFO.hbmColor"]/*' />
     public HBITMAP hbmColor;
 }

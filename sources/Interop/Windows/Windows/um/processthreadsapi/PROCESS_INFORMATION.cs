@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_INFORMATION.xml' path='doc/member[@name="PROCESS_INFORMATION"]/*' />
 public partial struct PROCESS_INFORMATION
 {
+    /// <include file='PROCESS_INFORMATION.xml' path='doc/member[@name="PROCESS_INFORMATION.hProcess"]/*' />
     public HANDLE hProcess;
 
+    /// <include file='PROCESS_INFORMATION.xml' path='doc/member[@name="PROCESS_INFORMATION.hThread"]/*' />
     public HANDLE hThread;
 
+    /// <include file='PROCESS_INFORMATION.xml' path='doc/member[@name="PROCESS_INFORMATION.dwProcessId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProcessId;
 
+    /// <include file='PROCESS_INFORMATION.xml' path='doc/member[@name="PROCESS_INFORMATION.dwThreadId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwThreadId;
 }

@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLEVERB.xml' path='doc/member[@name="OLEVERB"]/*' />
 public unsafe partial struct OLEVERB
 {
+    /// <include file='OLEVERB.xml' path='doc/member[@name="OLEVERB.lVerb"]/*' />
     [NativeTypeName("LONG")]
     public int lVerb;
 
+    /// <include file='OLEVERB.xml' path='doc/member[@name="OLEVERB.lpszVerbName"]/*' />
     [NativeTypeName("LPOLESTR")]
     public ushort* lpszVerbName;
 
+    /// <include file='OLEVERB.xml' path='doc/member[@name="OLEVERB.fuFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint fuFlags;
 
+    /// <include file='OLEVERB.xml' path='doc/member[@name="OLEVERB.grfAttribs"]/*' />
     [NativeTypeName("DWORD")]
     public uint grfAttribs;
 }

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_STATUS_TYPE">
+    <summary>
+      <para>Describes the status of an asynchronous operation.</para>
+    </summary>
+    <seealso cref="IWbemObjectSink.SetStatus" />
+    <seealso cref="IWbemServices.ExecQueryAsync" />
+  </member>
+  <member name="WBEM_STATUS_TYPE.WBEM_STATUS_COMPLETE">
+    <summary>
+      <para>The operation has completed.</para>
+    </summary>
+  </member>
+  <member name="WBEM_STATUS_TYPE.WBEM_STATUS_REQUIREMENTS">
+    <summary>
+      <para>Used in activating post-filtering.</para>
+    </summary>
+  </member>
+  <member name="WBEM_STATUS_TYPE.WBEM_STATUS_PROGRESS">
+    <summary>
+      <para>The operation is still in progress.</para>
+    </summary>
+  </member>
+  <member name="WBEM_STATUS_TYPE.WBEM_STATUS_LOGGING_INFORMATION">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="WBEM_STATUS_TYPE.WBEM_STATUS_LOGGING_INFORMATION_PROVIDER">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="WBEM_STATUS_TYPE.WBEM_STATUS_LOGGING_INFORMATION_HOST">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="WBEM_STATUS_TYPE.WBEM_STATUS_LOGGING_INFORMATION_REPOSITORY">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="WBEM_STATUS_TYPE.WBEM_STATUS_LOGGING_INFORMATION_ESS">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

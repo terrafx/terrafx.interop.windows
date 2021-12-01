@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INewWindowManager.EvaluateNewWindow">
+    <summary>
+      <para>Accepts data about a new window that is attempting to display and determines whether that window should be allowed to open based on the user's preferences.</para>
+    </summary>
+    <param name="pszUrl">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer that contains the URL of the content that will be displayed in the new window.</para>
+    </param>
+    <param name="pszName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer that contains the name of the new window. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pszUrlContext">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer that contains the URL that has issued the command to open the new window.</para>
+    </param>
+    <param name="pszFeatures">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer that contains the feature string for the new window. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="fReplace">
+      <para>Type: <b>BOOL</b></para>
+      <para>A boolean value used when the new content specified in <i>pszUrl</i> is loaded into the existing window instead of creating a new one. <b>TRUE</b> if the new document should replace the current document in the history list; <b>FALSE</b> if the new document should be given a new entry.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>A flag or flags from the <see cref="NWMF" /> enumeration that provide situational information about the call to open the new window. This value can be 0 if no flags are needed.</para>
+    </param>
+    <param name="dwUserActionTime">
+      <para>Type: <b>DWORD</b></para>
+      <para>The tick count when the last user action occurred. To find out how long ago the action occurred, call <see cref="GetTickCount" /> and compare the result with the value in this parameter.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns standard error codes, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Allow display of the window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Block display of the window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>When you implement <see cref="INewWindowManager" /> for a hosted <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752040(v=vs.85)">WebBrowser</a> control, this value instructs the WebBrowser control to use the default implementation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="INewWindowManager">
+    <summary>
+      <para>Exposes a method that determines whether a window that is launched by another window should be displayed or blocked, allowing control of pop-up windows.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>Implement <b>INewWindowManager</b> when your application hosts a <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752040(v=vs.85)">WebBrowser</a> control and you want to include pop-up management functionality.</para>
+      <para>When you implement <b>INewWindowManager</b>, you can override some or all of the Windows Internet Explorer pop-up blocking logic. To use the default Internet Explorer pop-up blocking logic, implement <see cref="INewWindowManager.EvaluateNewWindow" /> to return E_FAIL. This instructs the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752040(v=vs.85)">WebBrowser</a> control to use the default Internet Explorer implementation. Alternately, the application hosting the WebBrowser control can call <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537168(v=vs.85)">CoInternetSetFeatureEnabled</a> with the <b>FEATURE_WEBOC_POPUPMANAGEMENT</b> flag for the same result.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537168(v=vs.85)">CoInternetSetFeatureEnabled</seealso>
+  </member>
+</doc>

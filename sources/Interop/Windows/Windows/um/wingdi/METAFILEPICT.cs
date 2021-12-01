@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='METAFILEPICT.xml' path='doc/member[@name="METAFILEPICT"]/*' />
 public partial struct METAFILEPICT
 {
+    /// <include file='METAFILEPICT.xml' path='doc/member[@name="METAFILEPICT.mm"]/*' />
     [NativeTypeName("LONG")]
     public int mm;
 
+    /// <include file='METAFILEPICT.xml' path='doc/member[@name="METAFILEPICT.xExt"]/*' />
     [NativeTypeName("LONG")]
     public int xExt;
 
+    /// <include file='METAFILEPICT.xml' path='doc/member[@name="METAFILEPICT.yExt"]/*' />
     [NativeTypeName("LONG")]
     public int yExt;
 
+    /// <include file='METAFILEPICT.xml' path='doc/member[@name="METAFILEPICT.hMF"]/*' />
     public HMETAFILE hMF;
 }

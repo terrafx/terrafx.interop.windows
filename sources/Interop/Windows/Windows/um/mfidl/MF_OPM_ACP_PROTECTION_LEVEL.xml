@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_OPM_ACP_PROTECTION_LEVEL">
+    <summary>
+      <para>Defines protection levels for <b>MFPROTECTION_ACP</b>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_OPM_ACP_PROTECTION_LEVEL.MF_OPM_ACP_OFF">
+    <summary>
+      <para>Specifies ACP is disabled.</para>
+    </summary>
+  </member>
+  <member name="MF_OPM_ACP_PROTECTION_LEVEL.MF_OPM_ACP_LEVEL_ONE">
+    <summary>
+      <para>Specifies ACP is level one.</para>
+    </summary>
+  </member>
+  <member name="MF_OPM_ACP_PROTECTION_LEVEL.MF_OPM_ACP_LEVEL_TWO">
+    <summary>
+      <para>Specifies ACP is level two.</para>
+    </summary>
+  </member>
+  <member name="MF_OPM_ACP_PROTECTION_LEVEL.MF_OPM_ACP_LEVEL_THREE">
+    <summary>
+      <para>Specifies ACP is level three.</para>
+    </summary>
+  </member>
+  <member name="MF_OPM_ACP_PROTECTION_LEVEL.MF_OPM_ACP_FORCE_ULONG">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

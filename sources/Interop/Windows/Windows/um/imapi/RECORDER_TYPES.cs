@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RECORDER_TYPES.xml' path='doc/member[@name="RECORDER_TYPES"]/*' />
 public enum RECORDER_TYPES
 {
+    /// <include file='RECORDER_TYPES.xml' path='doc/member[@name="RECORDER_TYPES.RECORDER_CDR"]/*' />
     RECORDER_CDR = 0x1,
+
+    /// <include file='RECORDER_TYPES.xml' path='doc/member[@name="RECORDER_TYPES.RECORDER_CDRW"]/*' />
     RECORDER_CDRW = 0x2,
 }

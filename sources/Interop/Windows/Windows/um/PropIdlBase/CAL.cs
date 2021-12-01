@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAL.xml' path='doc/member[@name="CAL"]/*' />
 public unsafe partial struct CAL
 {
+    /// <include file='CAL.xml' path='doc/member[@name="CAL.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CAL.xml' path='doc/member[@name="CAL.pElems"]/*' />
     [NativeTypeName("LONG *")]
     public int* pElems;
 }

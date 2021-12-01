@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_DEBUG_LEVEL">
+    <summary>
+      <para>Indicates the type of information provided by the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2ddebuglayer-overview">Direct2D Debug Layer</a>.</para>
+    </summary>
+    <remarks>
+      <para>To receive debugging messages, you must install the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2ddebuglayer-overview">Direct2D Debug Layer</a>.</para>
+    </remarks>
+    <seealso cref="D2D1_FACTORY_OPTIONS" />
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2ddebuglayer-overview">Direct2D Debug Layer</seealso>
+  </member>
+  <member name="D2D1_DEBUG_LEVEL.D2D1_DEBUG_LEVEL_NONE">
+    <summary>
+      <para>Direct2D does not produce any debugging output.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DEBUG_LEVEL.D2D1_DEBUG_LEVEL_ERROR">
+    <summary>
+      <para>Direct2D sends error messages to the debug layer.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DEBUG_LEVEL.D2D1_DEBUG_LEVEL_WARNING">
+    <summary>
+      <para>Direct2D sends error messages and warnings to the debug layer.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DEBUG_LEVEL.D2D1_DEBUG_LEVEL_INFORMATION">
+    <summary>
+      <para>Direct2D sends error messages, warnings, and additional diagnostic information that can help improve performance to the debug layer.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DEBUG_LEVEL.D2D1_DEBUG_LEVEL_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

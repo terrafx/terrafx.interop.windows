@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESS_MITIGATION_POLICY">
+    <summary>
+      <para>Represents the different process mitigation policies.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessDEPPolicy">
+    <summary>
+      <para>The data execution prevention (DEP) policy of the process.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessASLRPolicy">
+    <summary>
+      <para>The Address Space Layout Randomization (ASLR) policy of the process.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessDynamicCodePolicy">
+    <summary>
+      <para>The policy that turns off the ability of the process to generate dynamic code or modify existing executable code.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessStrictHandleCheckPolicy">
+    <summary>
+      <para>The process will receive a fatal error if it manipulates an invalid handle. Useful for preventing downstream problems in a process due to handle misuse.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessSystemCallDisablePolicy">
+    <summary>
+      <para>Disables the ability to use NTUser/GDI functions at the lowest layer.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessMitigationOptionsMask">
+    <summary>
+      <para>Returns the mask of valid bits for all the mitigation options on the system.  An application can set many mitigation options without querying the operating system for mitigation options by combining bitwise with the mask to exclude all non-supported bits at once.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessExtensionPointDisablePolicy">
+    <summary>
+      <para>The policy that prevents some built-in third party extension points from being turned on, which prevents legacy extension point DLLs from being loaded into the process.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessControlFlowGuardPolicy">
+    <summary>
+      <para>The Control Flow Guard (CFG) policy of the process.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessSignaturePolicy">
+    <summary>
+      <para>The policy of a process that can restrict image loading to those images that are either signed by Microsoft, by the Windows Store, or by Microsoft, the Windows Store and the Windows Hardware Quality Labs (WHQL).</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessFontDisablePolicy">
+    <summary>
+      <para>The policy that turns off the ability of the process to load non-system fonts.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessImageLoadPolicy">
+    <summary>
+      <para>The policy that turns off the ability of the process to load images from some locations, such a remote devices or files that have the low mandatory label.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessSystemCallFilterPolicy">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessPayloadRestrictionPolicy">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessChildProcessPolicy">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessSideChannelIsolationPolicy">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.ProcessUserShadowStackPolicy">
+    <summary>
+      <para>Windows 10, version 2004 and above: The policy regarding user-mode Hardware-enforced Stack Protection for the process.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_POLICY.MaxProcessMitigationPolicy">
+    <summary>
+      <para>Ends the enumeration.</para>
+    </summary>
+  </member>
+</doc>

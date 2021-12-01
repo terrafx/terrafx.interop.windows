@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WCM_CONNECTION_COST_DATA.xml' path='doc/member[@name="WCM_CONNECTION_COST_DATA"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct WCM_CONNECTION_COST_DATA
 {
+    /// <include file='WCM_CONNECTION_COST_DATA.xml' path='doc/member[@name="WCM_CONNECTION_COST_DATA.ConnectionCost"]/*' />
     [NativeTypeName("DWORD")]
     public uint ConnectionCost;
 
+    /// <include file='WCM_CONNECTION_COST_DATA.xml' path='doc/member[@name="WCM_CONNECTION_COST_DATA.CostSource"]/*' />
     public WCM_CONNECTION_COST_SOURCE CostSource;
 }

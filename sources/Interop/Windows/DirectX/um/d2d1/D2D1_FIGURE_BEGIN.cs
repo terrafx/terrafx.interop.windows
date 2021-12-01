@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_FIGURE_BEGIN.xml' path='doc/member[@name="D2D1_FIGURE_BEGIN"]/*' />
 public enum D2D1_FIGURE_BEGIN : uint
 {
+    /// <include file='D2D1_FIGURE_BEGIN.xml' path='doc/member[@name="D2D1_FIGURE_BEGIN.D2D1_FIGURE_BEGIN_FILLED"]/*' />
     D2D1_FIGURE_BEGIN_FILLED = 0,
+
+    /// <include file='D2D1_FIGURE_BEGIN.xml' path='doc/member[@name="D2D1_FIGURE_BEGIN.D2D1_FIGURE_BEGIN_HOLLOW"]/*' />
     D2D1_FIGURE_BEGIN_HOLLOW = 1,
+
+    /// <include file='D2D1_FIGURE_BEGIN.xml' path='doc/member[@name="D2D1_FIGURE_BEGIN.D2D1_FIGURE_BEGIN_FORCE_DWORD"]/*' />
     D2D1_FIGURE_BEGIN_FORCE_DWORD = 0xffffffff,
 }

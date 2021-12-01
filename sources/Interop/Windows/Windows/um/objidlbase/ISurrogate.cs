@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISurrogate.xml' path='doc/member[@name="ISurrogate"]/*' />
 [Guid("00000022-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ISurrogate : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISurrogate : ISurrogate.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISurrogate : ISurrogate.Interface
         return ((delegate* unmanaged<ISurrogate*, Guid*, void**, int>)(lpVtbl[0]))((ISurrogate*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISurrogate : ISurrogate.Interface
         return ((delegate* unmanaged<ISurrogate*, uint>)(lpVtbl[1]))((ISurrogate*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISurrogate : ISurrogate.Interface
         return ((delegate* unmanaged<ISurrogate*, uint>)(lpVtbl[2]))((ISurrogate*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISurrogate.xml' path='doc/member[@name="ISurrogate.LoadDllServer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT LoadDllServer([NativeTypeName("const IID &")] Guid* Clsid)
@@ -46,6 +51,7 @@ public unsafe partial struct ISurrogate : ISurrogate.Interface
         return ((delegate* unmanaged<ISurrogate*, Guid*, int>)(lpVtbl[3]))((ISurrogate*)Unsafe.AsPointer(ref this), Clsid);
     }
 
+    /// <include file='ISurrogate.xml' path='doc/member[@name="ISurrogate.FreeSurrogate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT FreeSurrogate()

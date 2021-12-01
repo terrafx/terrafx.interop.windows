@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlLoop.xml' path='doc/member[@name="htmlLoop"]/*' />
 public enum htmlLoop
 {
+    /// <include file='htmlLoop.xml' path='doc/member[@name="htmlLoop.htmlLoopLoopInfinite"]/*' />
     htmlLoopLoopInfinite = -1,
+
+    /// <include file='htmlLoop.xml' path='doc/member[@name="htmlLoop.htmlLoop_Max"]/*' />
     htmlLoop_Max = 2147483647,
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleAuto.xml' path='doc/member[@name="styleAuto"]/*' />
 public enum styleAuto
 {
+    /// <include file='styleAuto.xml' path='doc/member[@name="styleAuto.styleAutoAuto"]/*' />
     styleAutoAuto = 0,
+
+    /// <include file='styleAuto.xml' path='doc/member[@name="styleAuto.styleAuto_Max"]/*' />
     styleAuto_Max = 2147483647,
 }

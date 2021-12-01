@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SOLE_AUTHENTICATION_INFO.xml' path='doc/member[@name="SOLE_AUTHENTICATION_INFO"]/*' />
 public unsafe partial struct SOLE_AUTHENTICATION_INFO
 {
+    /// <include file='SOLE_AUTHENTICATION_INFO.xml' path='doc/member[@name="SOLE_AUTHENTICATION_INFO.dwAuthnSvc"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAuthnSvc;
 
+    /// <include file='SOLE_AUTHENTICATION_INFO.xml' path='doc/member[@name="SOLE_AUTHENTICATION_INFO.dwAuthzSvc"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAuthzSvc;
 
+    /// <include file='SOLE_AUTHENTICATION_INFO.xml' path='doc/member[@name="SOLE_AUTHENTICATION_INFO.pAuthInfo"]/*' />
     public void* pAuthInfo;
 }

@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RGNDATAHEADER.xml' path='doc/member[@name="RGNDATAHEADER"]/*' />
 public partial struct RGNDATAHEADER
 {
+    /// <include file='RGNDATAHEADER.xml' path='doc/member[@name="RGNDATAHEADER.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='RGNDATAHEADER.xml' path='doc/member[@name="RGNDATAHEADER.iType"]/*' />
     [NativeTypeName("DWORD")]
     public uint iType;
 
+    /// <include file='RGNDATAHEADER.xml' path='doc/member[@name="RGNDATAHEADER.nCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint nCount;
 
+    /// <include file='RGNDATAHEADER.xml' path='doc/member[@name="RGNDATAHEADER.nRgnSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint nRgnSize;
 
+    /// <include file='RGNDATAHEADER.xml' path='doc/member[@name="RGNDATAHEADER.rcBound"]/*' />
     public RECT rcBound;
 }

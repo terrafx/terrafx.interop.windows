@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFAudioStreamVolume.GetAllVolumes">
+    <summary>
+      <para>Retrieves the volume levels for all of the channels in the audio stream.</para>
+    </summary>
+    <param name="dwCount">
+      <para>Number of elements in the <i>pfVolumes</i> array. The value must equal the number of channels. To get the number of channels, call <see cref="IMFAudioStreamVolume.GetChannelCount" />.</para>
+    </param>
+    <param name="pfVolumes">
+      <para>Address of an array of size <i>dwCount</i>, allocated by the caller. The method fills the array with the volume level for each channel in the stream.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFAudioStreamVolume" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
+  </member>
+  <member name="IMFAudioStreamVolume.GetChannelCount">
+    <summary>
+      <para>Retrieves the number of channels in the audio stream.</para>
+    </summary>
+    <param name="pdwCount">
+      <para>Receives the number of channels in the audio stream.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFAudioStreamVolume" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
+  </member>
+  <member name="IMFAudioStreamVolume.GetChannelVolume">
+    <summary>
+      <para>Retrieves the volume level for a specified channel in the audio stream.</para>
+    </summary>
+    <param name="dwIndex">
+      <para>Zero-based index of the audio channel. To get the number of channels, call <see cref="IMFAudioStreamVolume.GetChannelCount" />.</para>
+    </param>
+    <param name="pfLevel">
+      <para>Receives the volume level for the channel.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFAudioStreamVolume" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
+  </member>
+  <member name="IMFAudioStreamVolume.SetAllVolumes">
+    <summary>
+      <para>Sets the individual volume levels for all of the channels in the audio stream.</para>
+    </summary>
+    <param name="dwCount">
+      <para>Number of elements in the <i>pfVolumes</i> array. The value must equal the number of channels. To get the number of channels, call <see cref="IMFAudioStreamVolume.GetChannelCount" />.</para>
+    </param>
+    <param name="pfVolumes">
+      <para>Address of an array of size <i>dwCount</i>, allocated by the caller. The array specifies the volume levels for all of the channels. Before calling the method, set each element of the array to the desired volume level for the channel.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFAudioStreamVolume" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
+  </member>
+  <member name="IMFAudioStreamVolume.SetChannelVolume">
+    <summary>
+      <para>Sets the volume level for a specified channel in the audio stream.</para>
+    </summary>
+    <param name="dwIndex">
+      <para>Zero-based index of the audio channel. To get the number of channels, call <see cref="IMFAudioStreamVolume.GetChannelCount" />.</para>
+    </param>
+    <param name="fLevel">
+      <para>Volume level for the channel.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFAudioStreamVolume" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
+  </member>
+  <member name="IMFAudioStreamVolume">
+    <summary>
+      <para>Controls the volume levels of individual audio channels.</para>
+      <para>The streaming audio renderer (SAR) exposes this interface as a service. To get a pointer to the interface, call <see cref="IMFGetService.GetService" /> with the service identifier <b>MR_STREAM_VOLUME_SERVICE</b>. You can call <b>GetService</b> directly on the SAR or call it on the Media Session.</para>
+    </summary>
+    <remarks>
+      <para>If your application does not require channel-level volume control, you can use the <see cref="IMFSimpleAudioVolume" /> interface to control the master volume level of the audio session.</para>
+      <para>Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation). For each channel, the attenuation level is the product of:</para>
+      <list type="bullet">
+        <item>
+          <description>The master volume level of the audio session.
+</description>
+        </item>
+        <item>
+          <description>The volume level of the channel.
+</description>
+        </item>
+      </list>
+      <para>For example, if the master volume is 0.8 and the channel volume is 0.5, the attenuation for that channel is 0.8 × 0.5 = 0.4. Volume levels can exceed 1.0 (positive gain), but the audio engine clips any audio samples that exceed zero decibels.</para>
+      <para>Use the following formula to convert the volume level to the decibel (dB) scale:</para>
+      <para>Attenuation (dB) = 20 * log10(<i>Level</i>)</para>
+      <para>For example, a volume level of 0.50 represents 6.02 dB of attenuation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
+  </member>
+</doc>

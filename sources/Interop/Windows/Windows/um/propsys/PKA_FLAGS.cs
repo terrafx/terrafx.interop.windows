@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PKA_FLAGS.xml' path='doc/member[@name="PKA_FLAGS"]/*' />
 public enum PKA_FLAGS
 {
+    /// <include file='PKA_FLAGS.xml' path='doc/member[@name="PKA_FLAGS.PKA_SET"]/*' />
     PKA_SET = 0,
+
+    /// <include file='PKA_FLAGS.xml' path='doc/member[@name="PKA_FLAGS.PKA_APPEND"]/*' />
     PKA_APPEND = (PKA_SET + 1),
+
+    /// <include file='PKA_FLAGS.xml' path='doc/member[@name="PKA_FLAGS.PKA_DELETE"]/*' />
     PKA_DELETE = (PKA_APPEND + 1),
 }

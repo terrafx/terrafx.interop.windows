@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEM_ACCESS_FILTER_ACE.xml' path='doc/member[@name="SYSTEM_ACCESS_FILTER_ACE"]/*' />
 public partial struct SYSTEM_ACCESS_FILTER_ACE
 {
+    /// <include file='SYSTEM_ACCESS_FILTER_ACE.xml' path='doc/member[@name="SYSTEM_ACCESS_FILTER_ACE.Header"]/*' />
     public ACE_HEADER Header;
 
+    /// <include file='SYSTEM_ACCESS_FILTER_ACE.xml' path='doc/member[@name="SYSTEM_ACCESS_FILTER_ACE.Mask"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint Mask;
 
+    /// <include file='SYSTEM_ACCESS_FILTER_ACE.xml' path='doc/member[@name="SYSTEM_ACCESS_FILTER_ACE.SidStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint SidStart;
 }

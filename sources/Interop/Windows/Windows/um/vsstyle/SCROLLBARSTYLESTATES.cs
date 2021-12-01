@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCROLLBARSTYLESTATES.xml' path='doc/member[@name="SCROLLBARSTYLESTATES"]/*' />
 public enum SCROLLBARSTYLESTATES
 {
+    /// <include file='SCROLLBARSTYLESTATES.xml' path='doc/member[@name="SCROLLBARSTYLESTATES.SCRBS_NORMAL"]/*' />
     SCRBS_NORMAL = 1,
+
+    /// <include file='SCROLLBARSTYLESTATES.xml' path='doc/member[@name="SCROLLBARSTYLESTATES.SCRBS_HOT"]/*' />
     SCRBS_HOT = 2,
+
+    /// <include file='SCROLLBARSTYLESTATES.xml' path='doc/member[@name="SCROLLBARSTYLESTATES.SCRBS_PRESSED"]/*' />
     SCRBS_PRESSED = 3,
+
+    /// <include file='SCROLLBARSTYLESTATES.xml' path='doc/member[@name="SCROLLBARSTYLESTATES.SCRBS_DISABLED"]/*' />
     SCRBS_DISABLED = 4,
+
+    /// <include file='SCROLLBARSTYLESTATES.xml' path='doc/member[@name="SCROLLBARSTYLESTATES.SCRBS_HOVER"]/*' />
     SCRBS_HOVER = 5,
 }

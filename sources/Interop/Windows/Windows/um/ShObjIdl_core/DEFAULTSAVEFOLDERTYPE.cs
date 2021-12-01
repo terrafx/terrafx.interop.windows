@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEFAULTSAVEFOLDERTYPE.xml' path='doc/member[@name="DEFAULTSAVEFOLDERTYPE"]/*' />
 public enum DEFAULTSAVEFOLDERTYPE
 {
+    /// <include file='DEFAULTSAVEFOLDERTYPE.xml' path='doc/member[@name="DEFAULTSAVEFOLDERTYPE.DSFT_DETECT"]/*' />
     DSFT_DETECT = 1,
+
+    /// <include file='DEFAULTSAVEFOLDERTYPE.xml' path='doc/member[@name="DEFAULTSAVEFOLDERTYPE.DSFT_PRIVATE"]/*' />
     DSFT_PRIVATE = (DSFT_DETECT + 1),
+
+    /// <include file='DEFAULTSAVEFOLDERTYPE.xml' path='doc/member[@name="DEFAULTSAVEFOLDERTYPE.DSFT_PUBLIC"]/*' />
     DSFT_PUBLIC = (DSFT_PRIVATE + 1),
 }

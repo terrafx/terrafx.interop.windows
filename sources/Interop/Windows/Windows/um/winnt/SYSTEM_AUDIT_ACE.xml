@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYSTEM_AUDIT_ACE">
+    <summary>
+      <para>The <b>SYSTEM_AUDIT_ACE</b> structure defines an  <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE) for the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">system access control list</a> (SACL) that specifies what types of access cause system-level notifications. A system-audit ACE causes an audit message to be logged when a specified <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">trustee</a> attempts to gain access to an object. The trustee is identified by a  <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID).</para>
+    </summary>
+    <remarks>
+      <para>Audit messages are stored in an event log that can be manipulated by using the Windows API event-logging functions or by using the Event Viewer (Eventvwr.exe).</para>
+      <para>ACE structures should be aligned on <b>DWORD</b> boundaries. All Windows memory-management functions return <b>DWORD</b>-aligned handles to memory.</para>
+      <para>When a <b>SYSTEM_AUDIT_ACE</b> structure is created, sufficient memory must be allocated to accommodate the complete SID of the trustee in the <b>SidStart</b> member and the contiguous memory that follows it.</para>
+    </remarks>
+    <seealso cref="ACL" />
+  </member>
+  <member name="SYSTEM_AUDIT_ACE.Header">
+    <summary>
+      <para>
+        <see cref="ACE_HEADER" /> structure that specifies the size and type of ACE. It also contains flags that control inheritance of the ACE by child objects. The <b>AceType</b> member of the <b>ACE_HEADER</b> structure should be set to SYSTEM_AUDIT_ACE_TYPE, and the <b>AceSize</b> member should be set to the total number of bytes allocated for the <b>SYSTEM_AUDIT_ACE</b> structure.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_AUDIT_ACE.Mask">
+    <summary>
+      <para>Specifies an
+<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/access-mask">ACCESS_MASK</a> structure that gives the access rights that cause audit messages to be generated. The SUCCESSFUL_ACCESS_ACE_FLAG and FAILED_ACCESS_ACE_FLAG flags in the <b>AceFlags</b> member of the <see cref="ACE_HEADER" /> structure indicate whether messages are generated for successful access attempts, unsuccessful access attempts, or both.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_AUDIT_ACE.SidStart">
+    <summary>
+      <para>The first <b>DWORD</b> of a  trustee's SID. The remaining bytes of the SID  are stored in contiguous memory after the <b>SidStart</b> member. This SID can be appended with application data.</para>
+      <para>An access attempt of a kind specified by the <b>Mask</b> member by any trustee whose SID matches the <b>SidStart</b> member causes the system to generate an audit message. If an application does not specify a SID for this member, audit messages are generated for the specified access rights for all trustees.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode"]/*' />
 [Guid("83CF873A-F6DA-4BC8-823F-BACFD55DC430")]
 [NativeTypeName("struct IMFTopologyNode : IMFAttributes")]
 [NativeInheritance("IMFAttributes")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint>)(lpVtbl[1]))((IMFTopologyNode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint>)(lpVtbl[2]))((IMFTopologyNode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetItem([NativeTypeName("const GUID &")] Guid* guidKey, PROPVARIANT* pValue)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, PROPVARIANT*, int>)(lpVtbl[3]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, pValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetItemType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetItemType([NativeTypeName("const GUID &")] Guid* guidKey, MF_ATTRIBUTE_TYPE* pType)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, MF_ATTRIBUTE_TYPE*, int>)(lpVtbl[4]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, pType);
     }
 
+    /// <inheritdoc cref="IMFAttributes.CompareItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, BOOL* pbResult)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, PROPVARIANT*, BOOL*, int>)(lpVtbl[5]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
     }
 
+    /// <inheritdoc cref="IMFAttributes.Compare" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, BOOL* pbResult)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int>)(lpVtbl[6]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetUINT32" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punValue)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, uint*, int>)(lpVtbl[7]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, punValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetUINT64" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64 *")] ulong* punValue)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, ulong*, int>)(lpVtbl[8]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, punValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetDouble" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double* pfValue)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, double*, int>)(lpVtbl[9]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, pfValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetGUID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetGUID([NativeTypeName("const GUID &")] Guid* guidKey, Guid* pguidValue)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, Guid*, int>)(lpVtbl[10]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, pguidValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetStringLength" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetStringLength([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcchLength)
@@ -102,6 +115,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, uint*, int>)(lpVtbl[11]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, pcchLength);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR")] ushort* pwszValue, [NativeTypeName("UINT32")] uint cchBufSize, [NativeTypeName("UINT32 *")] uint* pcchLength)
@@ -109,6 +123,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, ushort*, uint, uint*, int>)(lpVtbl[12]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, pwszValue, cchBufSize, pcchLength);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetAllocatedString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetAllocatedString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR *")] ushort** ppwszValue, [NativeTypeName("UINT32 *")] uint* pcchLength)
@@ -116,6 +131,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, ushort**, uint*, int>)(lpVtbl[13]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, ppwszValue, pcchLength);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetBlobSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetBlobSize([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
@@ -123,6 +139,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, uint*, int>)(lpVtbl[14]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, pcbBlobSize);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetBlob" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
@@ -130,6 +147,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, byte*, uint, uint*, int>)(lpVtbl[15]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize, pcbBlobSize);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetAllocatedBlob" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetAllocatedBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 **")] byte** ppBuf, [NativeTypeName("UINT32 *")] uint* pcbSize)
@@ -137,6 +155,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, byte**, uint*, int>)(lpVtbl[16]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, ppBuf, pcbSize);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetUnknown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
@@ -144,6 +163,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, Guid*, void**, int>)(lpVtbl[17]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, riid, ppv);
     }
 
+    /// <inheritdoc cref="IMFAttributes.SetItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value)
@@ -151,6 +171,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, PROPVARIANT*, int>)(lpVtbl[18]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, Value);
     }
 
+    /// <inheritdoc cref="IMFAttributes.DeleteItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT DeleteItem([NativeTypeName("const GUID &")] Guid* guidKey)
@@ -158,6 +179,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, int>)(lpVtbl[19]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey);
     }
 
+    /// <inheritdoc cref="IMFAttributes.DeleteAllItems" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT DeleteAllItems()
@@ -165,6 +187,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, int>)(lpVtbl[20]))((IMFTopologyNode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFAttributes.SetUINT32" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT SetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unValue)
@@ -172,6 +195,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, uint, int>)(lpVtbl[21]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, unValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.SetUINT64" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT SetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64")] ulong unValue)
@@ -179,6 +203,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, ulong, int>)(lpVtbl[22]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, unValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.SetDouble" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double fValue)
@@ -186,6 +211,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, double, int>)(lpVtbl[23]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, fValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.SetGUID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const GUID &")] Guid* guidValue)
@@ -193,6 +219,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, Guid*, int>)(lpVtbl[24]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, guidValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.SetString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT SetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPCWSTR")] ushort* wszValue)
@@ -200,6 +227,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, ushort*, int>)(lpVtbl[25]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, wszValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.SetBlob" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT SetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize)
@@ -207,6 +235,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, byte*, uint, int>)(lpVtbl[26]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize);
     }
 
+    /// <inheritdoc cref="IMFAttributes.SetUnknown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT SetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, IUnknown* pUnknown)
@@ -214,6 +243,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, Guid*, IUnknown*, int>)(lpVtbl[27]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), guidKey, pUnknown);
     }
 
+    /// <inheritdoc cref="IMFAttributes.LockStore" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT LockStore()
@@ -221,6 +251,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, int>)(lpVtbl[28]))((IMFTopologyNode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFAttributes.UnlockStore" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT UnlockStore()
@@ -228,6 +259,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, int>)(lpVtbl[29]))((IMFTopologyNode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT GetCount([NativeTypeName("UINT32 *")] uint* pcItems)
@@ -235,6 +267,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint*, int>)(lpVtbl[30]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), pcItems);
     }
 
+    /// <inheritdoc cref="IMFAttributes.GetItemByIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, Guid* pguidKey, PROPVARIANT* pValue)
@@ -242,6 +275,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[31]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), unIndex, pguidKey, pValue);
     }
 
+    /// <inheritdoc cref="IMFAttributes.CopyAllItems" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT CopyAllItems(IMFAttributes* pDest)
@@ -249,6 +283,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, IMFAttributes*, int>)(lpVtbl[32]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), pDest);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.SetObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT SetObject(IUnknown* pObject)
@@ -256,6 +291,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, IUnknown*, int>)(lpVtbl[33]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), pObject);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.GetObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT GetObject(IUnknown** ppObject)
@@ -263,6 +299,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, IUnknown**, int>)(lpVtbl[34]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), ppObject);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.GetNodeType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT GetNodeType(MF_TOPOLOGY_TYPE* pType)
@@ -270,6 +307,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, MF_TOPOLOGY_TYPE*, int>)(lpVtbl[35]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), pType);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.GetTopoNodeID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT GetTopoNodeID([NativeTypeName("TOPOID *")] ulong* pID)
@@ -277,6 +315,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, ulong*, int>)(lpVtbl[36]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), pID);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.SetTopoNodeID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT SetTopoNodeID([NativeTypeName("TOPOID")] ulong ullTopoID)
@@ -284,6 +323,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, ulong, int>)(lpVtbl[37]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), ullTopoID);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.GetInputCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT GetInputCount([NativeTypeName("DWORD *")] uint* pcInputs)
@@ -291,6 +331,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint*, int>)(lpVtbl[38]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), pcInputs);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.GetOutputCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT GetOutputCount([NativeTypeName("DWORD *")] uint* pcOutputs)
@@ -298,6 +339,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint*, int>)(lpVtbl[39]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), pcOutputs);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.ConnectOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT ConnectOutput([NativeTypeName("DWORD")] uint dwOutputIndex, IMFTopologyNode* pDownstreamNode, [NativeTypeName("DWORD")] uint dwInputIndexOnDownstreamNode)
@@ -305,6 +347,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint, IMFTopologyNode*, uint, int>)(lpVtbl[40]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), dwOutputIndex, pDownstreamNode, dwInputIndexOnDownstreamNode);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.DisconnectOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT DisconnectOutput([NativeTypeName("DWORD")] uint dwOutputIndex)
@@ -312,6 +355,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint, int>)(lpVtbl[41]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), dwOutputIndex);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.GetInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT GetInput([NativeTypeName("DWORD")] uint dwInputIndex, IMFTopologyNode** ppUpstreamNode, [NativeTypeName("DWORD *")] uint* pdwOutputIndexOnUpstreamNode)
@@ -319,6 +363,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint, IMFTopologyNode**, uint*, int>)(lpVtbl[42]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), dwInputIndex, ppUpstreamNode, pdwOutputIndexOnUpstreamNode);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.GetOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     public HRESULT GetOutput([NativeTypeName("DWORD")] uint dwOutputIndex, IMFTopologyNode** ppDownstreamNode, [NativeTypeName("DWORD *")] uint* pdwInputIndexOnDownstreamNode)
@@ -326,6 +371,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint, IMFTopologyNode**, uint*, int>)(lpVtbl[43]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), dwOutputIndex, ppDownstreamNode, pdwInputIndexOnDownstreamNode);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.SetOutputPrefType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
     public HRESULT SetOutputPrefType([NativeTypeName("DWORD")] uint dwOutputIndex, IMFMediaType* pType)
@@ -333,6 +379,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint, IMFMediaType*, int>)(lpVtbl[44]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), dwOutputIndex, pType);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.GetOutputPrefType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
     public HRESULT GetOutputPrefType([NativeTypeName("DWORD")] uint dwOutputIndex, IMFMediaType** ppType)
@@ -340,6 +387,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint, IMFMediaType**, int>)(lpVtbl[45]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), dwOutputIndex, ppType);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.SetInputPrefType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
     public HRESULT SetInputPrefType([NativeTypeName("DWORD")] uint dwInputIndex, IMFMediaType* pType)
@@ -347,6 +395,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint, IMFMediaType*, int>)(lpVtbl[46]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), dwInputIndex, pType);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.GetInputPrefType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
     public HRESULT GetInputPrefType([NativeTypeName("DWORD")] uint dwInputIndex, IMFMediaType** ppType)
@@ -354,6 +403,7 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         return ((delegate* unmanaged<IMFTopologyNode*, uint, IMFMediaType**, int>)(lpVtbl[47]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), dwInputIndex, ppType);
     }
 
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.CloneFrom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
     public HRESULT CloneFrom(IMFTopologyNode* pNode)

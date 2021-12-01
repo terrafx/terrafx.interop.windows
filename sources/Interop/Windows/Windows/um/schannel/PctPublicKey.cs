@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PctPublicKey.xml' path='doc/member[@name="PctPublicKey"]/*' />
 public unsafe partial struct PctPublicKey
 {
+    /// <include file='PctPublicKey.xml' path='doc/member[@name="PctPublicKey.Type"]/*' />
     [NativeTypeName("DWORD")]
     public uint Type;
 
+    /// <include file='PctPublicKey.xml' path='doc/member[@name="PctPublicKey.cbKey"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbKey;
 
+    /// <include file='PctPublicKey.xml' path='doc/member[@name="PctPublicKey.pKey"]/*' />
     [NativeTypeName("UCHAR [1]")]
     public fixed byte pKey[1];
 }

@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.xml' path='doc/member[@name="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA"]/*' />
 public partial struct CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA
 {
+    /// <include file='CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.xml' path='doc/member[@name="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.xml' path='doc/member[@name="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.dwSignerIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSignerIndex;
 
+    /// <include file='CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.xml' path='doc/member[@name="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA.blob"]/*' />
     public CRYPT_DATA_BLOB blob;
 }

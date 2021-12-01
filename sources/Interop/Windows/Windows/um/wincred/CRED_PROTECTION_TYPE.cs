@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRED_PROTECTION_TYPE.xml' path='doc/member[@name="CRED_PROTECTION_TYPE"]/*' />
 public enum CRED_PROTECTION_TYPE
 {
+    /// <include file='CRED_PROTECTION_TYPE.xml' path='doc/member[@name="CRED_PROTECTION_TYPE.CredUnprotected"]/*' />
     CredUnprotected,
+
+    /// <include file='CRED_PROTECTION_TYPE.xml' path='doc/member[@name="CRED_PROTECTION_TYPE.CredUserProtection"]/*' />
     CredUserProtection,
+
+    /// <include file='CRED_PROTECTION_TYPE.xml' path='doc/member[@name="CRED_PROTECTION_TYPE.CredTrustedProtection"]/*' />
     CredTrustedProtection,
+
+    /// <include file='CRED_PROTECTION_TYPE.xml' path='doc/member[@name="CRED_PROTECTION_TYPE.CredForSystemProtection"]/*' />
     CredForSystemProtection,
 }

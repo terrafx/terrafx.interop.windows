@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAT_MEMBERINFO2.xml' path='doc/member[@name="CAT_MEMBERINFO2"]/*' />
 public partial struct CAT_MEMBERINFO2
 {
+    /// <include file='CAT_MEMBERINFO2.xml' path='doc/member[@name="CAT_MEMBERINFO2.SubjectGuid"]/*' />
     public Guid SubjectGuid;
 
+    /// <include file='CAT_MEMBERINFO2.xml' path='doc/member[@name="CAT_MEMBERINFO2.dwCertVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCertVersion;
 }

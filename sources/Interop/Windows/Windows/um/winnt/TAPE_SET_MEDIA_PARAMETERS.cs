@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TAPE_SET_MEDIA_PARAMETERS.xml' path='doc/member[@name="TAPE_SET_MEDIA_PARAMETERS"]/*' />
 public partial struct TAPE_SET_MEDIA_PARAMETERS
 {
+    /// <include file='TAPE_SET_MEDIA_PARAMETERS.xml' path='doc/member[@name="TAPE_SET_MEDIA_PARAMETERS.BlockSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint BlockSize;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInternetSecurityMgrSite.xml' path='doc/member[@name="IInternetSecurityMgrSite"]/*' />
 [Guid("79EAC9ED-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetSecurityMgrSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInternetSecurityMgrSite : IInternetSecurityMgrSite
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInternetSecurityMgrSite : IInternetSecurityMgrSite
         return ((delegate* unmanaged<IInternetSecurityMgrSite*, Guid*, void**, int>)(lpVtbl[0]))((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInternetSecurityMgrSite : IInternetSecurityMgrSite
         return ((delegate* unmanaged<IInternetSecurityMgrSite*, uint>)(lpVtbl[1]))((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInternetSecurityMgrSite : IInternetSecurityMgrSite
         return ((delegate* unmanaged<IInternetSecurityMgrSite*, uint>)(lpVtbl[2]))((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetSecurityMgrSite.xml' path='doc/member[@name="IInternetSecurityMgrSite.GetWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IInternetSecurityMgrSite : IInternetSecurityMgrSite
         return ((delegate* unmanaged<IInternetSecurityMgrSite*, HWND*, int>)(lpVtbl[3]))((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <include file='IInternetSecurityMgrSite.xml' path='doc/member[@name="IInternetSecurityMgrSite.EnableModeless"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnableModeless(BOOL fEnable)

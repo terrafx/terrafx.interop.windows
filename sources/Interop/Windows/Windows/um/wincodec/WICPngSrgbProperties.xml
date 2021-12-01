@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICPngSrgbProperties">
+    <summary>
+      <para>Specifies the Portable Network Graphics (PNG) sRGB chunk metadata properties.</para>
+    </summary>
+  </member>
+  <member name="WICPngSrgbProperties.WICPngSrgbRenderingIntent">
+    <summary>
+      <para>[VT_UI1] Indicates the rendering intent for an sRGB color space image. The rendering intents have the following meaning.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>0</description>
+          <description>Perceptual</description>
+        </item>
+        <item>
+          <description>1</description>
+          <description>Relative colorimetric</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>Saturation</description>
+        </item>
+        <item>
+          <description>3</description>
+          <description>Absolute colorimetric</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WICPngSrgbProperties.WICPngSrgbProperties_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

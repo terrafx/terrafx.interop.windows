@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_FRAMERATE.xml' path='doc/member[@name="DVD_FRAMERATE"]/*' />
 public enum DVD_FRAMERATE
 {
+    /// <include file='DVD_FRAMERATE.xml' path='doc/member[@name="DVD_FRAMERATE.DVD_FPS_25"]/*' />
     DVD_FPS_25 = 1,
+
+    /// <include file='DVD_FRAMERATE.xml' path='doc/member[@name="DVD_FRAMERATE.DVD_FPS_30NonDrop"]/*' />
     DVD_FPS_30NonDrop = 3,
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleWordWrap.xml' path='doc/member[@name="styleWordWrap"]/*' />
 public enum styleWordWrap
 {
+    /// <include file='styleWordWrap.xml' path='doc/member[@name="styleWordWrap.styleWordWrapNotSet"]/*' />
     styleWordWrapNotSet = 0,
+
+    /// <include file='styleWordWrap.xml' path='doc/member[@name="styleWordWrap.styleWordWrapOff"]/*' />
     styleWordWrapOff = 1,
+
+    /// <include file='styleWordWrap.xml' path='doc/member[@name="styleWordWrap.styleWordWrapOn"]/*' />
     styleWordWrapOn = 2,
+
+    /// <include file='styleWordWrap.xml' path='doc/member[@name="styleWordWrap.styleWordWrap_Max"]/*' />
     styleWordWrap_Max = 2147483647,
 }

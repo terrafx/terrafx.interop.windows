@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AudioExtensionParams">
+    <summary>
+      <para>This structure is passed to the Control Panel Endpoint Extension property page through <see cref="IShellPropSheetExt.AddPages" /> and is used to create endpoint PropertyPages.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-structures">Core Audio Structures</seealso>
+    <seealso cref="IShellPropSheetExt.AddPages" />
+  </member>
+  <member name="AudioExtensionParams.AddPageParam">
+    <summary>
+      <para>The add page param.</para>
+    </summary>
+  </member>
+  <member name="AudioExtensionParams.pEndpoint">
+    <summary>
+      <para>Pointer to the end point.</para>
+    </summary>
+  </member>
+  <member name="AudioExtensionParams.pPnpInterface">
+    <summary>
+      <para>Pointer to the Pnp interface.</para>
+    </summary>
+  </member>
+  <member name="AudioExtensionParams.pPnpDevnode">
+    <summary>
+      <para>Pointer to the Pnp devnode.</para>
+    </summary>
+  </member>
+</doc>

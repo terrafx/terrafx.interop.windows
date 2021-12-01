@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HARDWARE_COUNTER_DATA">
+    <summary>
+      <para>Contains the hardware counter value.</para>
+    </summary>
+    <remarks>
+      <para>This structure is a member of the <see cref="PERFORMANCE_DATA" /> structure.</para>
+    </remarks>
+    <seealso cref="PERFORMANCE_DATA" />
+  </member>
+  <member name="HARDWARE_COUNTER_DATA.Type">
+    <summary>
+      <para>The type of hardware counter data collected. For possible values, see the <see cref="HARDWARE_COUNTER_TYPE" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="HARDWARE_COUNTER_DATA.Reserved">
+    <summary>
+      <para>Reserved. Initialize to zero.</para>
+    </summary>
+  </member>
+  <member name="HARDWARE_COUNTER_DATA.Value">
+    <summary>
+      <para>The counter index. Each hardware counter in a processor's performance monitoring unit (PMU) is identified by an index.</para>
+    </summary>
+  </member>
+</doc>

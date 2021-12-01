@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_IFTABLE">
+    <summary>
+      <para>The
+<b>MIB_IFTABLE</b> structure contains a table of interface entries.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="GetIfTable" /> function enumerates the interface entries on a local system and returns this information in a <b>MIB_IFTABLE</b> structure.</para>
+      <para>The <b>MIB_IFTABLE</b> structure may contain padding for alignment between the <b>dwNumEntries</b> member and the first <see cref="MIB_IFROW" /> array entry in the <b>table</b> member. Padding for alignment may also be present between the <b>MIB_IFROW</b> array entries in the <b>table</b> member. Any access to a <b>MIB_IFROW</b> array entry should assume  padding may exist.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIB_IFTABLE</b> structure is defined in the <i>Ifmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ifmib.h</i> header file is automatically included in <i>Ipmib.h</i> header file. This file is automatically included in the <i>Iprtrmib.h</i> header file which is automatically included in the <i>Iphlpapi.h</i> header file. The <i>Ifmib.h</i> header file should never be used directly.</para>
+    </remarks>
+    <seealso cref="GetIfTable" />
+    <seealso cref="GetIfTable2" />
+    <seealso cref="GetIfTable2Ex" />
+    <seealso cref="MIB_IFNUMBER" />
+    <seealso cref="MIB_IFROW" />
+    <seealso cref="MIB_IF_ROW2" />
+    <seealso cref="MIB_IF_TABLE2" />
+  </member>
+  <member name="MIB_IFTABLE.dwNumEntries">
+    <summary>
+      <para>The number of interface entries in the array.</para>
+    </summary>
+  </member>
+  <member name="MIB_IFTABLE.table">
+    <summary>
+      <para>An array of
+<see cref="MIB_IFROW" /> structures containing interface entries.</para>
+    </summary>
+  </member>
+</doc>

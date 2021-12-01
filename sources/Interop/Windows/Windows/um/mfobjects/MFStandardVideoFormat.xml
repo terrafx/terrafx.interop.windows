@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFStandardVideoFormat">
+    <summary>
+      <para>Contains values that specify common video formats.</para>
+    </summary>
+    <seealso cref="MFInitVideoFormat" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MFStandardVideoFormat.MFStdVideoFormat_reserved">
+    <summary>
+      <para>Reserved; do not use.</para>
+    </summary>
+  </member>
+  <member name="MFStandardVideoFormat.MFStdVideoFormat_NTSC">
+    <summary>
+      <para>NTSC television (720 x 480i).</para>
+    </summary>
+  </member>
+  <member name="MFStandardVideoFormat.MFStdVideoFormat_PAL">
+    <summary>
+      <para>PAL television (720 x 576i).</para>
+    </summary>
+  </member>
+  <member name="MFStandardVideoFormat.MFStdVideoFormat_DVD_NTSC">
+    <summary>
+      <para>DVD, NTSC standard (720 x 480).</para>
+    </summary>
+  </member>
+  <member name="MFStandardVideoFormat.MFStdVideoFormat_DVD_PAL">
+    <summary>
+      <para>DVD, PAL standard (720 x 576).</para>
+    </summary>
+  </member>
+  <member name="MFStandardVideoFormat.MFStdVideoFormat_DV_PAL">
+    <summary>
+      <para>DV video, PAL standard.</para>
+    </summary>
+  </member>
+  <member name="MFStandardVideoFormat.MFStdVideoFormat_DV_NTSC">
+    <summary>
+      <para>DV video, NTSC standard.</para>
+    </summary>
+  </member>
+  <member name="MFStandardVideoFormat.MFStdVideoFormat_ATSC_SD480i">
+    <summary>
+      <para>ATSC digital television, SD (480i).</para>
+    </summary>
+  </member>
+  <member name="MFStandardVideoFormat.MFStdVideoFormat_ATSC_HD1080i">
+    <summary>
+      <para>ATSC digital television, HD interlaced (1080i)</para>
+    </summary>
+  </member>
+  <member name="MFStandardVideoFormat.MFStdVideoFormat_ATSC_HD720p">
+    <summary>
+      <para>ATSC digital television, HD progressive (720p)</para>
+    </summary>
+  </member>
+</doc>

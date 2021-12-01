@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecCommonOutputFormat.xml' path='doc/member[@name="CODECAPI_AVDecCommonOutputFormat"]/*' />
 [Guid("3C790028-C0CE-4256-B1A2-1B0FC8B1DCDC")]
 public partial struct CODECAPI_AVDecCommonOutputFormat
 {

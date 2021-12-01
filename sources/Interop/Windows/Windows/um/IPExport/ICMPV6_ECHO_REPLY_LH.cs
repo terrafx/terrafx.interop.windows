@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICMPV6_ECHO_REPLY_LH.xml' path='doc/member[@name="ICMPV6_ECHO_REPLY_LH"]/*' />
 public partial struct ICMPV6_ECHO_REPLY_LH
 {
+    /// <include file='ICMPV6_ECHO_REPLY_LH.xml' path='doc/member[@name="ICMPV6_ECHO_REPLY_LH.Address"]/*' />
     public IPV6_ADDRESS_EX Address;
 
+    /// <include file='ICMPV6_ECHO_REPLY_LH.xml' path='doc/member[@name="ICMPV6_ECHO_REPLY_LH.Status"]/*' />
     [NativeTypeName("ULONG")]
     public uint Status;
 
+    /// <include file='ICMPV6_ECHO_REPLY_LH.xml' path='doc/member[@name="ICMPV6_ECHO_REPLY_LH.RoundTripTime"]/*' />
     [NativeTypeName("unsigned int")]
     public uint RoundTripTime;
 }

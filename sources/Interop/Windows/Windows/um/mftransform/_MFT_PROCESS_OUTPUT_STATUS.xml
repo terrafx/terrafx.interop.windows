@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_MFT_PROCESS_OUTPUT_STATUS">
+    <summary>
+      <para>Indicates the status of a call to <see cref="IMFTransform.ProcessOutput" />.</para>
+    </summary>
+    <remarks>
+      <para>If the MFT sets this flag, the <see cref="ProcessOutput" /> method returns MF_E_TRANSFORM_STREAM_CHANGE and no output data is produced. The client should respond as follows:</para>
+      <list type="number">
+        <item>
+          <description>
+            <para>Call <see cref="IMFTransform.GetStreamCount" /> to get the new number of streams.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Call <see cref="IMFTransform.GetStreamIDs" /> to get the new stream identifiers.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Call <see cref="IMFTransform.GetOutputAvailableType" /> and <see cref="IMFTransform.SetOutputType" /> to set the media types on the new streams.</para>
+          </description>
+        </item>
+      </list>
+      <para>Until these steps are completed, all further calls to <see cref="ProcessOutput" /> return MF_E_TRANSFORM_STREAM_CHANGE.</para>
+    </remarks>
+    <seealso cref="IMFTransform.ProcessOutput" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+  </member>
+  <member name="_MFT_PROCESS_OUTPUT_STATUS.MFT_PROCESS_OUTPUT_STATUS_NEW_STREAMS">
+    <summary>
+      <para>The Media Foundation transform (MFT) has created one or more new output streams.</para>
+    </summary>
+  </member>
+</doc>

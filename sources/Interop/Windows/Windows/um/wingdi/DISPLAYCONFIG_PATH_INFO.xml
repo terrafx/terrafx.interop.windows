@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_PATH_INFO">
+    <summary>
+      <para>The DISPLAYCONFIG_PATH_INFO structure is used to describe a single path from a target to a source.</para>
+    </summary>
+    <seealso cref="DISPLAYCONFIG_PATH_SOURCE_INFO" />
+    <seealso cref="DISPLAYCONFIG_PATH_TARGET_INFO" />
+    <seealso cref="QueryDisplayConfig" />
+    <seealso cref="SetDisplayConfig" />
+  </member>
+  <member name="DISPLAYCONFIG_PATH_INFO.sourceInfo">
+    <summary>
+      <para>A <see cref="DISPLAYCONFIG_PATH_SOURCE_INFO" /> structure that contains the source information for the path.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_PATH_INFO.targetInfo">
+    <summary>
+      <para>A <see cref="DISPLAYCONFIG_PATH_TARGET_INFO" /> structure that contains the target information for the path.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_PATH_INFO.flags">
+    <summary>
+      <para>A bitwise OR of flag values that indicates the state of the path. The following values are supported:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISPLAYCONFIG_PATH_ACTIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Set by <see cref="QueryDisplayConfig" /> to indicate that the path is active and part of the desktop. If this flag value is set, <see cref="SetDisplayConfig" /> attempts to enable this path.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISPLAYCONFIG_PATH_SUPPORT_VIRTUAL_MODE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Set by <see cref="QueryDisplayConfig" /> to indicate that the path supports virtual modes. Supported starting in Windows 10.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISPLAYCONFIG_PATH_BOOST_REFRESH_RATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Set by <see cref="QueryDisplayConfig" /> to indicate that the path supports virtual refresh rates. Supported starting in Windows 11.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

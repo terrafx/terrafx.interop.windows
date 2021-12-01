@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_OBJECTID_BUFFER">
+    <summary>
+      <para>Contains an object identifier and user-defined metadata associated with the object identifier.</para>
+    </summary>
+    <remarks>
+      <para>Object identifiers are used  to track  files and directories. They are invisible to most applications and should never be modified by applications. Modifying an object identifier can result in the loss of data from portions of a file, up to and including entire volumes of data.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_create_or_get_object_id">FSCTL_CREATE_OR_GET_OBJECT_ID</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_delete_object_id">FSCTL_DELETE_OBJECT_ID</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_object_id">FSCTL_GET_OBJECT_ID</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_object_id">FSCTL_SET_OBJECT_ID</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_object_id_extended">FSCTL_SET_OBJECT_ID_EXTENDED</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/distributed-link-tracking-and-object-identifiers">Object Identifiers</seealso>
+  </member>
+  <member name="FILE_OBJECTID_BUFFER.ObjectId">
+    <summary>
+      <para>The identifier that uniquely identifies the file or directory within the volume on which it resides.</para>
+    </summary>
+  </member>
+  <member name="FILE_OBJECTID_BUFFER.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="FILE_OBJECTID_BUFFER.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="FILE_OBJECTID_BUFFER.DUMMYUNIONNAME.DUMMYSTRUCTNAME.BirthVolumeId">
+    <summary>
+      <para>The identifier of the volume on which the object resided when the object identifier was created, or zero if the volume had no object identifier at that time. After copy operations, move operations, or other file operations, this may not be the same as the object identifier of the volume on which the object presently resides.</para>
+    </summary>
+  </member>
+  <member name="FILE_OBJECTID_BUFFER.DUMMYUNIONNAME.DUMMYSTRUCTNAME.BirthObjectId">
+    <summary>
+      <para>The object identifier of the object at the time it was created. After copy operations, move operations, or other file operations, this may not be the same as the <b>ObjectId</b> member at present.</para>
+    </summary>
+  </member>
+  <member name="FILE_OBJECTID_BUFFER.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DomainId">
+    <summary>
+      <para>Reserved; must be zero.</para>
+    </summary>
+  </member>
+  <member name="FILE_OBJECTID_BUFFER.DUMMYUNIONNAME.ExtendedInfo">
+    <summary>
+      <para>User-defined extended data to be set with <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_object_id_extended">FSCTL_SET_OBJECT_ID_EXTENDED</a>. Use this  data  as an alternative  to  the <b>BirthVolumeId</b>, <b>BirthObjectId</b>, and <b>DomainId</b> members.</para>
+    </summary>
+  </member>
+</doc>

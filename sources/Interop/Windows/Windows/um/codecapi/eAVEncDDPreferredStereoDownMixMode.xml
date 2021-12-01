@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncDDPreferredStereoDownMixMode">
+    <summary>
+      <para>Specifies the preferred stereo downmix mode for a Dolby Digital audio stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencddpreferredstereodownmixmode-property">AVEncDDPreferredStereoDownMixMode</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncDDPreferredStereoDownMixMode.eAVEncDDPreferredStereoDownMixMode_LtRt">
+    <summary>
+      <para>Left total/right total (Lt/Rt) downmix.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDPreferredStereoDownMixMode.eAVEncDDPreferredStereoDownMixMode_LoRo">
+    <summary>
+      <para>Left only/right only (Lo/Ro) downmix.</para>
+    </summary>
+  </member>
+</doc>

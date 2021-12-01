@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IGraphVersion.xml' path='doc/member[@name="IGraphVersion"]/*' />
 [Guid("56A868AB-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IGraphVersion : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IGraphVersion : IGraphVersion.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IGraphVersion : IGraphVersion.Interface
         return ((delegate* unmanaged<IGraphVersion*, Guid*, void**, int>)(lpVtbl[0]))((IGraphVersion*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IGraphVersion : IGraphVersion.Interface
         return ((delegate* unmanaged<IGraphVersion*, uint>)(lpVtbl[1]))((IGraphVersion*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IGraphVersion : IGraphVersion.Interface
         return ((delegate* unmanaged<IGraphVersion*, uint>)(lpVtbl[2]))((IGraphVersion*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IGraphVersion.xml' path='doc/member[@name="IGraphVersion.QueryVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryVersion([NativeTypeName("LONG *")] int* pVersion)

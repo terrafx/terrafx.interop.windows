@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLNamespaceCollection.xml' path='doc/member[@name="HTMLNamespaceCollection"]/*' />
 [Guid("3050F6B9-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLNamespaceCollection
 {

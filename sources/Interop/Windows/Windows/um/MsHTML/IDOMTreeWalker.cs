@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker"]/*' />
 [Guid("30510748-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDOMTreeWalker : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, Guid*, void**, int>)(lpVtbl[0]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, uint>)(lpVtbl[1]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, uint>)(lpVtbl[2]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, uint*, int>)(lpVtbl[3]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.get_root"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_root(IDispatch** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[7]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.get_whatToShow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_whatToShow([NativeTypeName("ULONG *")] uint* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, uint*, int>)(lpVtbl[8]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.get_filter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_filter(IDispatch** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[9]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.get_expandEntityReferences"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_expandEntityReferences([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, short*, int>)(lpVtbl[10]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.putref_currentNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT putref_currentNode(IDispatch* v)
@@ -102,6 +115,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch*, int>)(lpVtbl[11]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.get_currentNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_currentNode(IDispatch** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[12]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.parentNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT parentNode(IDispatch** ppRetNode)
@@ -116,6 +131,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[13]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.firstChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT firstChild(IDispatch** ppRetNode)
@@ -123,6 +139,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[14]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.lastChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT lastChild(IDispatch** ppRetNode)
@@ -130,6 +147,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[15]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.previousSibling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT previousSibling(IDispatch** ppRetNode)
@@ -137,6 +155,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[16]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.nextSibling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT nextSibling(IDispatch** ppRetNode)
@@ -144,6 +163,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[17]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.previousNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT previousNode(IDispatch** ppRetNode)
@@ -151,6 +171,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[18]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
+    /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.nextNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT nextNode(IDispatch** ppRetNode)

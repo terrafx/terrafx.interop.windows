@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_IFSTATUS">
+    <summary>
+      <para>The
+<b>MIB_IFSTATUS</b> structure stores status information for a particular interface.</para>
+    </summary>
+    <remarks>
+      <para>Note that the <i>Iprtrmib.h</i> header file is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Iprtrmib.h</i> header file should never be used directly.</para>
+    </remarks>
+    <seealso cref="MIB_IFROW" />
+    <seealso cref="MPR_INTERFACE_0" />
+    <seealso cref="MPR_INTERFACE_1" />
+  </member>
+  <member name="MIB_IFSTATUS.dwIfIndex">
+    <summary>
+      <para>The index that identifies the interface.</para>
+    </summary>
+  </member>
+  <member name="MIB_IFSTATUS.dwAdminStatus">
+    <summary>
+      <para>The administrative status of the interface, that is, whether the interface is administratively enabled or disabled.</para>
+    </summary>
+  </member>
+  <member name="MIB_IFSTATUS.dwOperationalStatus">
+    <summary>
+      <para>The operational status of the interface. This member can be one of the values defined in the <see cref="ROUTER_CONNECTION_STATE" /> enumeration defined in the <i>Mprapip.h</i> header file. See
+the <b>ROUTER_CONNECTION_STATE</b> enumeration for a list amd description of the possible operational states.</para>
+    </summary>
+  </member>
+  <member name="MIB_IFSTATUS.bMHbeatActive">
+    <summary>
+      <para>Specifies whether multicast heartbeat detection is enabled. A value of <b>TRUE</b> indicates that heartbeat detection is enabled. A value of <b>FALSE</b> indicates that heartbeat detection is disabled.</para>
+    </summary>
+  </member>
+  <member name="MIB_IFSTATUS.bMHbeatAlive">
+    <summary>
+      <para>Specifies whether the multicast heartbeat dead interval has been exceeded. A value of <b>FALSE</b> indicates that the interval has been exceeded. A value of <b>TRUE</b> indicates that the interval has not been exceeded.</para>
+    </summary>
+  </member>
+</doc>

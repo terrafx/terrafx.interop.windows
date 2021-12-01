@@ -7,8 +7,12 @@ using static TerraFX.Interop.Windows.DISPID_SpeechRecoResult;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechXMLRecoResult.xml' path='doc/member[@name="DISPID_SpeechXMLRecoResult"]/*' />
 public enum DISPID_SpeechXMLRecoResult
 {
+    /// <include file='DISPID_SpeechXMLRecoResult.xml' path='doc/member[@name="DISPID_SpeechXMLRecoResult.DISPID_SRRGetXMLResult"]/*' />
     DISPID_SRRGetXMLResult = (DISPID_SRRDiscardResultInfo + 1),
+
+    /// <include file='DISPID_SpeechXMLRecoResult.xml' path='doc/member[@name="DISPID_SpeechXMLRecoResult.DISPID_SRRGetXMLErrorInfo"]/*' />
     DISPID_SRRGetXMLErrorInfo = (DISPID_SRRGetXMLResult + 1),
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement"]/*' />
 [Guid("3050F4E9-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLControlElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, uint>)(lpVtbl[1]))((IHTMLControlElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, uint>)(lpVtbl[2]))((IHTMLControlElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, uint*, int>)(lpVtbl[3]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.put_tabIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_tabIndex(short v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, short, int>)(lpVtbl[7]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.get_tabIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_tabIndex(short* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, short*, int>)(lpVtbl[8]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.focus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT focus()
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, int>)(lpVtbl[9]))((IHTMLControlElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.put_accessKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_accessKey([NativeTypeName("BSTR")] ushort* v)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, ushort*, int>)(lpVtbl[10]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.get_accessKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_accessKey([NativeTypeName("BSTR *")] ushort** p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, ushort**, int>)(lpVtbl[11]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.put_onblur"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_onblur(VARIANT v)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, VARIANT, int>)(lpVtbl[12]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.get_onblur"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_onblur(VARIANT* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, VARIANT*, int>)(lpVtbl[13]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.put_onfocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_onfocus(VARIANT v)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, VARIANT, int>)(lpVtbl[14]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.get_onfocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_onfocus(VARIANT* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, VARIANT*, int>)(lpVtbl[15]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.put_onresize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_onresize(VARIANT v)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, VARIANT, int>)(lpVtbl[16]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.get_onresize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_onresize(VARIANT* p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, VARIANT*, int>)(lpVtbl[17]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.blur"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT blur()
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, int>)(lpVtbl[18]))((IHTMLControlElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.addFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT addFilter(IUnknown* pUnk)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, IUnknown*, int>)(lpVtbl[19]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), pUnk);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.removeFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT removeFilter(IUnknown* pUnk)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, IUnknown*, int>)(lpVtbl[20]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), pUnk);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.get_clientHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_clientHeight([NativeTypeName("long *")] int* p)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, int*, int>)(lpVtbl[21]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.get_clientWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_clientWidth([NativeTypeName("long *")] int* p)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, int*, int>)(lpVtbl[22]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.get_clientTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_clientTop([NativeTypeName("long *")] int* p)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         return ((delegate* unmanaged<IHTMLControlElement*, int*, int>)(lpVtbl[23]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.get_clientLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_clientLeft([NativeTypeName("long *")] int* p)

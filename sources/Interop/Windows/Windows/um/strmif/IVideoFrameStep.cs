@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVideoFrameStep.xml' path='doc/member[@name="IVideoFrameStep"]/*' />
 [Guid("E46A9787-2B71-444D-A4B5-1FAB7B708D6A")]
 [NativeTypeName("struct IVideoFrameStep : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface
         return ((delegate* unmanaged<IVideoFrameStep*, Guid*, void**, int>)(lpVtbl[0]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface
         return ((delegate* unmanaged<IVideoFrameStep*, uint>)(lpVtbl[1]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface
         return ((delegate* unmanaged<IVideoFrameStep*, uint>)(lpVtbl[2]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVideoFrameStep.xml' path='doc/member[@name="IVideoFrameStep.Step"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Step([NativeTypeName("DWORD")] uint dwFrames, IUnknown* pStepObject)
@@ -46,6 +51,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface
         return ((delegate* unmanaged<IVideoFrameStep*, uint, IUnknown*, int>)(lpVtbl[3]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), dwFrames, pStepObject);
     }
 
+    /// <include file='IVideoFrameStep.xml' path='doc/member[@name="IVideoFrameStep.CanStep"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CanStep([NativeTypeName("long")] int bMultiple, IUnknown* pStepObject)
@@ -53,6 +59,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface
         return ((delegate* unmanaged<IVideoFrameStep*, int, IUnknown*, int>)(lpVtbl[4]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), bMultiple, pStepObject);
     }
 
+    /// <include file='IVideoFrameStep.xml' path='doc/member[@name="IVideoFrameStep.CancelStep"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CancelStep()

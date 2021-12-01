@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPWORDPRONOUNCEABLE.xml' path='doc/member[@name="SPWORDPRONOUNCEABLE"]/*' />
 public enum SPWORDPRONOUNCEABLE
 {
+    /// <include file='SPWORDPRONOUNCEABLE.xml' path='doc/member[@name="SPWORDPRONOUNCEABLE.SPWP_UNKNOWN_WORD_UNPRONOUNCEABLE"]/*' />
     SPWP_UNKNOWN_WORD_UNPRONOUNCEABLE = 0,
+
+    /// <include file='SPWORDPRONOUNCEABLE.xml' path='doc/member[@name="SPWORDPRONOUNCEABLE.SPWP_UNKNOWN_WORD_PRONOUNCEABLE"]/*' />
     SPWP_UNKNOWN_WORD_PRONOUNCEABLE = 1,
+
+    /// <include file='SPWORDPRONOUNCEABLE.xml' path='doc/member[@name="SPWORDPRONOUNCEABLE.SPWP_KNOWN_WORD_PRONOUNCEABLE"]/*' />
     SPWP_KNOWN_WORD_PRONOUNCEABLE = 2,
 }

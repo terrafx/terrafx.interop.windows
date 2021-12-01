@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPAPrivateUserBit.xml' path='doc/member[@name="CODECAPI_AVEncMPAPrivateUserBit"]/*' />
 [Guid("AFA505CE-C1E3-4E3D-851B-61B700E5E6CC")]
 public partial struct CODECAPI_AVEncMPAPrivateUserBit
 {

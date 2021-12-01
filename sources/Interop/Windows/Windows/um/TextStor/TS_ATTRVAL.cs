@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TS_ATTRVAL.xml' path='doc/member[@name="TS_ATTRVAL"]/*' />
 public partial struct TS_ATTRVAL
 {
+    /// <include file='TS_ATTRVAL.xml' path='doc/member[@name="TS_ATTRVAL.idAttr"]/*' />
     [NativeTypeName("TS_ATTRID")]
     public Guid idAttr;
 
+    /// <include file='TS_ATTRVAL.xml' path='doc/member[@name="TS_ATTRVAL.dwOverlapId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOverlapId;
 
+    /// <include file='TS_ATTRVAL.xml' path='doc/member[@name="TS_ATTRVAL.varValue"]/*' />
     public VARIANT varValue;
 }

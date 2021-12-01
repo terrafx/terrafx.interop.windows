@@ -5,25 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1"]/*' />
 public unsafe partial struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1
 {
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.MaxIops"]/*' />
     [NativeTypeName("LONG64")]
     public long MaxIops;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.MaxBandwidth"]/*' />
     [NativeTypeName("LONG64")]
     public long MaxBandwidth;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.ReservationIops"]/*' />
     [NativeTypeName("LONG64")]
     public long ReservationIops;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.VolumeName"]/*' />
     [NativeTypeName("PWSTR")]
     public ushort* VolumeName;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.BaseIoSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint BaseIoSize;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.ControlFlags"]/*' />
     public JOB_OBJECT_IO_RATE_CONTROL_FLAGS ControlFlags;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.VolumeNameLength"]/*' />
     [NativeTypeName("WORD")]
     public ushort VolumeNameLength;
 }

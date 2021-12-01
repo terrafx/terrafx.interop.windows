@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_NavCmdType">
+    <summary>
+      <para>Defines DVD navigation command types.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-beginnavigationcommands">EC_DVD_BeginNavigationCommands</seealso>
+  </member>
+  <member name="DVD_NavCmdType.DVD_NavCmdType_Pre">
+    <summary>
+      <para>Pre-command.</para>
+    </summary>
+  </member>
+  <member name="DVD_NavCmdType.DVD_NavCmdType_Post">
+    <summary>
+      <para>Post-command.</para>
+    </summary>
+  </member>
+  <member name="DVD_NavCmdType.DVD_NavCmdType_Cell">
+    <summary>
+      <para>Cell command.</para>
+    </summary>
+  </member>
+  <member name="DVD_NavCmdType.DVD_NavCmdType_Button">
+    <summary>
+      <para>Button command.</para>
+    </summary>
+  </member>
+</doc>

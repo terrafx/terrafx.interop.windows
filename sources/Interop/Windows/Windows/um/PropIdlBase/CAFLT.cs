@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAFLT.xml' path='doc/member[@name="CAFLT"]/*' />
 public unsafe partial struct CAFLT
 {
+    /// <include file='CAFLT.xml' path='doc/member[@name="CAFLT.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CAFLT.xml' path='doc/member[@name="CAFLT.pElems"]/*' />
     public float* pElems;
 }

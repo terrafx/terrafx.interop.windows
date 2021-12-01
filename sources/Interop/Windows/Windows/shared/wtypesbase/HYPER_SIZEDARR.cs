@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HYPER_SIZEDARR.xml' path='doc/member[@name="HYPER_SIZEDARR"]/*' />
 public unsafe partial struct HYPER_SIZEDARR
 {
+    /// <include file='HYPER_SIZEDARR.xml' path='doc/member[@name="HYPER_SIZEDARR.clSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint clSize;
 
+    /// <include file='HYPER_SIZEDARR.xml' path='doc/member[@name="HYPER_SIZEDARR.pData"]/*' />
     [NativeTypeName("long long *")]
     public long* pData;
 }

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWbemShutdown.Shutdown">
+    <summary>
+      <para>The <b>IWbemShutdown.Shutdown</b> method indicates to the provider that the  provider services are not required.</para>
+    </summary>
+    <param name="uReason">
+      <para>Reserved. This value must be zero (0).</para>
+    </param>
+    <param name="uMaxMilliseconds">
+      <para>Reserved. This value must be zero (0).</para>
+    </param>
+    <param name="pCtx">
+      <para>Reserved. This value must be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b>, which identifies the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemShutdown" />
+  </member>
+  <member name="IWbemShutdown">
+    <summary>
+      <para>The <b>IWbemShutdown</b> interface indicates to the provider that an instance of an object is ready to be discarded. The provider can use this call to release resources that it is referencing currently.</para>
+      <para>The interface is used by providers to receive notification that their object implementation is no longer required.</para>
+    </summary>
+  </member>
+</doc>

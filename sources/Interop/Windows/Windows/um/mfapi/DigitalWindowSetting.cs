@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DigitalWindowSetting.xml' path='doc/member[@name="DigitalWindowSetting"]/*' />
 public partial struct DigitalWindowSetting
 {
+    /// <include file='DigitalWindowSetting.xml' path='doc/member[@name="DigitalWindowSetting.OriginX"]/*' />
     public double OriginX;
 
+    /// <include file='DigitalWindowSetting.xml' path='doc/member[@name="DigitalWindowSetting.OriginY"]/*' />
     public double OriginY;
 
+    /// <include file='DigitalWindowSetting.xml' path='doc/member[@name="DigitalWindowSetting.WindowSize"]/*' />
     public double WindowSize;
 }

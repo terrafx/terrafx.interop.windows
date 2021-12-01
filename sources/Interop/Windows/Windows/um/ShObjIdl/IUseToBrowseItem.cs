@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUseToBrowseItem.xml' path='doc/member[@name="IUseToBrowseItem"]/*' />
 [Guid("05EDDA5C-98A3-4717-8ADB-C5E7DA991EB1")]
 [NativeTypeName("struct IUseToBrowseItem : IRelatedItem")]
 [NativeInheritance("IRelatedItem")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUseToBrowseItem : IUseToBrowseItem.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUseToBrowseItem : IUseToBrowseItem.Interface
         return ((delegate* unmanaged<IUseToBrowseItem*, Guid*, void**, int>)(lpVtbl[0]))((IUseToBrowseItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUseToBrowseItem : IUseToBrowseItem.Interface
         return ((delegate* unmanaged<IUseToBrowseItem*, uint>)(lpVtbl[1]))((IUseToBrowseItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUseToBrowseItem : IUseToBrowseItem.Interface
         return ((delegate* unmanaged<IUseToBrowseItem*, uint>)(lpVtbl[2]))((IUseToBrowseItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IRelatedItem.GetItemIDList" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetItemIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
@@ -46,6 +51,7 @@ public unsafe partial struct IUseToBrowseItem : IUseToBrowseItem.Interface
         return ((delegate* unmanaged<IUseToBrowseItem*, ITEMIDLIST**, int>)(lpVtbl[3]))((IUseToBrowseItem*)Unsafe.AsPointer(ref this), ppidl);
     }
 
+    /// <inheritdoc cref="IRelatedItem.GetItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetItem(IShellItem** ppsi)

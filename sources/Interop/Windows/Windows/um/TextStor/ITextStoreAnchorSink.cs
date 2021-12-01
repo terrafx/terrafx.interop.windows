@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink"]/*' />
 [Guid("AA80E905-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct ITextStoreAnchorSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         return ((delegate* unmanaged<ITextStoreAnchorSink*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         return ((delegate* unmanaged<ITextStoreAnchorSink*, uint>)(lpVtbl[1]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         return ((delegate* unmanaged<ITextStoreAnchorSink*, uint>)(lpVtbl[2]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnTextChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnTextChange([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd)
@@ -46,6 +51,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         return ((delegate* unmanaged<ITextStoreAnchorSink*, uint, IAnchor*, IAnchor*, int>)(lpVtbl[3]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd);
     }
 
+    /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnSelectionChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnSelectionChange()
@@ -53,6 +59,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         return ((delegate* unmanaged<ITextStoreAnchorSink*, int>)(lpVtbl[4]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnLayoutChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnLayoutChange(TsLayoutCode lcode, [NativeTypeName("TsViewCookie")] uint vcView)
@@ -60,6 +67,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         return ((delegate* unmanaged<ITextStoreAnchorSink*, TsLayoutCode, uint, int>)(lpVtbl[5]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), lcode, vcView);
     }
 
+    /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnStatusChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
@@ -67,6 +75,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         return ((delegate* unmanaged<ITextStoreAnchorSink*, uint, int>)(lpVtbl[6]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnAttrsChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnAttrsChange(IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("ULONG")] uint cAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paAttrs)
@@ -74,6 +83,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         return ((delegate* unmanaged<ITextStoreAnchorSink*, IAnchor*, IAnchor*, uint, Guid*, int>)(lpVtbl[7]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), paStart, paEnd, cAttrs, paAttrs);
     }
 
+    /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnLockGranted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT OnLockGranted([NativeTypeName("DWORD")] uint dwLockFlags)
@@ -81,6 +91,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         return ((delegate* unmanaged<ITextStoreAnchorSink*, uint, int>)(lpVtbl[8]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), dwLockFlags);
     }
 
+    /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnStartEditTransaction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OnStartEditTransaction()
@@ -88,6 +99,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         return ((delegate* unmanaged<ITextStoreAnchorSink*, int>)(lpVtbl[9]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnEndEditTransaction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT OnEndEditTransaction()

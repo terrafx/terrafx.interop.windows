@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONFIG_CI_PROV_INFO.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO"]/*' />
 public unsafe partial struct CONFIG_CI_PROV_INFO
 {
+    /// <include file='CONFIG_CI_PROV_INFO.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CONFIG_CI_PROV_INFO.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO.dwPolicies"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPolicies;
 
+    /// <include file='CONFIG_CI_PROV_INFO.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO.pPolicies"]/*' />
     public CRYPT_DATA_BLOB* pPolicies;
 
+    /// <include file='CONFIG_CI_PROV_INFO.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO.result"]/*' />
     public CONFIG_CI_PROV_INFO_RESULT result;
 
+    /// <include file='CONFIG_CI_PROV_INFO.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO.dwScenario"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwScenario;
 }

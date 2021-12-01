@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DOMException.xml' path='doc/member[@name="DOMException"]/*' />
 [Guid("3051072C-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct DOMException
 {

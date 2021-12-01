@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FINDEX_INFO_LEVELS.xml' path='doc/member[@name="FINDEX_INFO_LEVELS"]/*' />
 public enum FINDEX_INFO_LEVELS
 {
+    /// <include file='FINDEX_INFO_LEVELS.xml' path='doc/member[@name="FINDEX_INFO_LEVELS.FindExInfoStandard"]/*' />
     FindExInfoStandard,
+
+    /// <include file='FINDEX_INFO_LEVELS.xml' path='doc/member[@name="FINDEX_INFO_LEVELS.FindExInfoBasic"]/*' />
     FindExInfoBasic,
+
+    /// <include file='FINDEX_INFO_LEVELS.xml' path='doc/member[@name="FINDEX_INFO_LEVELS.FindExInfoMaxInfoLevel"]/*' />
     FindExInfoMaxInfoLevel,
 }

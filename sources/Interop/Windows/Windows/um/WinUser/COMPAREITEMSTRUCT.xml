@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPAREITEMSTRUCT">
+    <summary>
+      <para>Supplies the identifiers and application-supplied data for two items in a sorted, owner-drawn list box or combo box.</para>
+      <para>Whenever an application adds a new item to an owner-drawn list box or combo box created with the <a href="https://docs.microsoft.com//windows/desktop/Controls/combo-box-styles">CBS_SORT</a> or <a href="https://docs.microsoft.com//windows/desktop/Controls/list-box-styles">LBS_SORT</a> style, the system sends the owner a <a href="https://docs.microsoft.com//windows/desktop/Controls/wm-compareitem">WM_COMPAREITEM</a> message. The <i>lParam</i> parameter of the message contains a long pointer to a <b>COMPAREITEMSTRUCT</b> structure. Upon receiving the message, the owner compares the two items and returns a value indicating which item sorts before the other.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/combo-boxes">Combo Boxes</seealso>
+    <seealso cref="MAKELCID" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/wm-compareitem">WM_COMPAREITEM</seealso>
+  </member>
+  <member name="COMPAREITEMSTRUCT.CtlType">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>An ODT_LISTBOX (owner-drawn list box) or ODT_COMBOBOX (an owner-drawn combo box).</para>
+    </summary>
+  </member>
+  <member name="COMPAREITEMSTRUCT.CtlID">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The identifier of the list box or combo box.</para>
+    </summary>
+  </member>
+  <member name="COMPAREITEMSTRUCT.hwndItem">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the control.</para>
+    </summary>
+  </member>
+  <member name="COMPAREITEMSTRUCT.itemID1">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The index of the first item in the list box or combo box being compared. This member will be –1 if the item has not been inserted or when searching for a potential item in the list box or combo box.</para>
+    </summary>
+  </member>
+  <member name="COMPAREITEMSTRUCT.itemData1">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">ULONG_PTR</a></b></para>
+      <para>Application-supplied data for the first item being compared. (This value was passed as the <i>lParam</i> parameter of the message that added the item to the list box or combo box.)</para>
+    </summary>
+  </member>
+  <member name="COMPAREITEMSTRUCT.itemID2">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The index of the second item in the list box or combo box being compared.</para>
+    </summary>
+  </member>
+  <member name="COMPAREITEMSTRUCT.itemData2">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">ULONG_PTR</a></b></para>
+      <para>Application-supplied data for the second item being compared. This value was passed as the
+<i>lParam</i> parameter of the message that added the item to the list box or combo box. This member will be
+–1 if the item has not been inserted or when searching for a potential item in the list box or combo box.</para>
+    </summary>
+  </member>
+  <member name="COMPAREITEMSTRUCT.dwLocaleId">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>The locale identifier. To create a locale identifier, use the <see cref="MAKELCID" /> macro.</para>
+    </summary>
+  </member>
+</doc>

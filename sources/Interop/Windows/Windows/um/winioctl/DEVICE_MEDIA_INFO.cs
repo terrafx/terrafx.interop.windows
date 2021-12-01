@@ -7,96 +7,129 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_MEDIA_INFO.xml' path='doc/member[@name="DEVICE_MEDIA_INFO"]/*' />
 public partial struct DEVICE_MEDIA_INFO
 {
+    /// <include file='DEVICE_MEDIA_INFO.xml' path='doc/member[@name="DEVICE_MEDIA_INFO.DeviceSpecific"]/*' />
     [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:951:5)")]
     public _DeviceSpecific_e__Union DeviceSpecific;
 
+    /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _DeviceSpecific_e__Union
     {
+        /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union.DiskInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:952:9)")]
         public _DiskInfo_e__Struct DiskInfo;
 
+        /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union.RemovableDiskInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:962:9)")]
         public _RemovableDiskInfo_e__Struct RemovableDiskInfo;
 
+        /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union.TapeInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:972:9)")]
         public _TapeInfo_e__Struct TapeInfo;
 
+        /// <include file='_DiskInfo_e__Struct.xml' path='doc/member[@name="_DiskInfo_e__Struct"]/*' />
         public partial struct _DiskInfo_e__Struct
         {
+            /// <include file='_DiskInfo_e__Struct.xml' path='doc/member[@name="_DiskInfo_e__Struct.Cylinders"]/*' />
             public LARGE_INTEGER Cylinders;
 
+            /// <include file='_DiskInfo_e__Struct.xml' path='doc/member[@name="_DiskInfo_e__Struct.MediaType"]/*' />
             public STORAGE_MEDIA_TYPE MediaType;
 
+            /// <include file='_DiskInfo_e__Struct.xml' path='doc/member[@name="_DiskInfo_e__Struct.TracksPerCylinder"]/*' />
             [NativeTypeName("DWORD")]
             public uint TracksPerCylinder;
 
+            /// <include file='_DiskInfo_e__Struct.xml' path='doc/member[@name="_DiskInfo_e__Struct.SectorsPerTrack"]/*' />
             [NativeTypeName("DWORD")]
             public uint SectorsPerTrack;
 
+            /// <include file='_DiskInfo_e__Struct.xml' path='doc/member[@name="_DiskInfo_e__Struct.BytesPerSector"]/*' />
             [NativeTypeName("DWORD")]
             public uint BytesPerSector;
 
+            /// <include file='_DiskInfo_e__Struct.xml' path='doc/member[@name="_DiskInfo_e__Struct.NumberMediaSides"]/*' />
             [NativeTypeName("DWORD")]
             public uint NumberMediaSides;
 
+            /// <include file='_DiskInfo_e__Struct.xml' path='doc/member[@name="_DiskInfo_e__Struct.MediaCharacteristics"]/*' />
             [NativeTypeName("DWORD")]
             public uint MediaCharacteristics;
         }
 
+        /// <include file='_RemovableDiskInfo_e__Struct.xml' path='doc/member[@name="_RemovableDiskInfo_e__Struct"]/*' />
         public partial struct _RemovableDiskInfo_e__Struct
         {
+            /// <include file='_RemovableDiskInfo_e__Struct.xml' path='doc/member[@name="_RemovableDiskInfo_e__Struct.Cylinders"]/*' />
             public LARGE_INTEGER Cylinders;
 
+            /// <include file='_RemovableDiskInfo_e__Struct.xml' path='doc/member[@name="_RemovableDiskInfo_e__Struct.MediaType"]/*' />
             public STORAGE_MEDIA_TYPE MediaType;
 
+            /// <include file='_RemovableDiskInfo_e__Struct.xml' path='doc/member[@name="_RemovableDiskInfo_e__Struct.TracksPerCylinder"]/*' />
             [NativeTypeName("DWORD")]
             public uint TracksPerCylinder;
 
+            /// <include file='_RemovableDiskInfo_e__Struct.xml' path='doc/member[@name="_RemovableDiskInfo_e__Struct.SectorsPerTrack"]/*' />
             [NativeTypeName("DWORD")]
             public uint SectorsPerTrack;
 
+            /// <include file='_RemovableDiskInfo_e__Struct.xml' path='doc/member[@name="_RemovableDiskInfo_e__Struct.BytesPerSector"]/*' />
             [NativeTypeName("DWORD")]
             public uint BytesPerSector;
 
+            /// <include file='_RemovableDiskInfo_e__Struct.xml' path='doc/member[@name="_RemovableDiskInfo_e__Struct.NumberMediaSides"]/*' />
             [NativeTypeName("DWORD")]
             public uint NumberMediaSides;
 
+            /// <include file='_RemovableDiskInfo_e__Struct.xml' path='doc/member[@name="_RemovableDiskInfo_e__Struct.MediaCharacteristics"]/*' />
             [NativeTypeName("DWORD")]
             public uint MediaCharacteristics;
         }
 
+        /// <include file='_TapeInfo_e__Struct.xml' path='doc/member[@name="_TapeInfo_e__Struct"]/*' />
         public partial struct _TapeInfo_e__Struct
         {
+            /// <include file='_TapeInfo_e__Struct.xml' path='doc/member[@name="_TapeInfo_e__Struct.MediaType"]/*' />
             public STORAGE_MEDIA_TYPE MediaType;
 
+            /// <include file='_TapeInfo_e__Struct.xml' path='doc/member[@name="_TapeInfo_e__Struct.MediaCharacteristics"]/*' />
             [NativeTypeName("DWORD")]
             public uint MediaCharacteristics;
 
+            /// <include file='_TapeInfo_e__Struct.xml' path='doc/member[@name="_TapeInfo_e__Struct.CurrentBlockSize"]/*' />
             [NativeTypeName("DWORD")]
             public uint CurrentBlockSize;
 
+            /// <include file='_TapeInfo_e__Struct.xml' path='doc/member[@name="_TapeInfo_e__Struct.BusType"]/*' />
             public STORAGE_BUS_TYPE BusType;
 
+            /// <include file='_TapeInfo_e__Struct.xml' path='doc/member[@name="_TapeInfo_e__Struct.BusSpecificData"]/*' />
             [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:982:13)")]
             public _BusSpecificData_e__Union BusSpecificData;
 
+            /// <include file='_BusSpecificData_e__Union.xml' path='doc/member[@name="_BusSpecificData_e__Union"]/*' />
             [StructLayout(LayoutKind.Explicit)]
             public partial struct _BusSpecificData_e__Union
             {
+                /// <include file='_BusSpecificData_e__Union.xml' path='doc/member[@name="_BusSpecificData_e__Union.ScsiInformation"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:983:17)")]
                 public _ScsiInformation_e__Struct ScsiInformation;
 
+                /// <include file='_ScsiInformation_e__Struct.xml' path='doc/member[@name="_ScsiInformation_e__Struct"]/*' />
                 public partial struct _ScsiInformation_e__Struct
                 {
+                    /// <include file='_ScsiInformation_e__Struct.xml' path='doc/member[@name="_ScsiInformation_e__Struct.MediumType"]/*' />
                     public byte MediumType;
 
+                    /// <include file='_ScsiInformation_e__Struct.xml' path='doc/member[@name="_ScsiInformation_e__Struct.DensityCode"]/*' />
                     public byte DensityCode;
                 }
             }

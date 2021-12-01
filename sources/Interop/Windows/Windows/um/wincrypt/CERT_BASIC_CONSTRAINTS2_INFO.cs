@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_BASIC_CONSTRAINTS2_INFO.xml' path='doc/member[@name="CERT_BASIC_CONSTRAINTS2_INFO"]/*' />
 public partial struct CERT_BASIC_CONSTRAINTS2_INFO
 {
+    /// <include file='CERT_BASIC_CONSTRAINTS2_INFO.xml' path='doc/member[@name="CERT_BASIC_CONSTRAINTS2_INFO.fCA"]/*' />
     public BOOL fCA;
 
+    /// <include file='CERT_BASIC_CONSTRAINTS2_INFO.xml' path='doc/member[@name="CERT_BASIC_CONSTRAINTS2_INFO.fPathLenConstraint"]/*' />
     public BOOL fPathLenConstraint;
 
+    /// <include file='CERT_BASIC_CONSTRAINTS2_INFO.xml' path='doc/member[@name="CERT_BASIC_CONSTRAINTS2_INFO.dwPathLenConstraint"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPathLenConstraint;
 }

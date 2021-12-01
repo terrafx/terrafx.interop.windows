@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppPolicyCreateFileAccess.xml' path='doc/member[@name="AppPolicyCreateFileAccess"]/*' />
 public enum AppPolicyCreateFileAccess
 {
+    /// <include file='AppPolicyCreateFileAccess.xml' path='doc/member[@name="AppPolicyCreateFileAccess.AppPolicyCreateFileAccess_Full"]/*' />
     AppPolicyCreateFileAccess_Full = 0,
+
+    /// <include file='AppPolicyCreateFileAccess.xml' path='doc/member[@name="AppPolicyCreateFileAccess.AppPolicyCreateFileAccess_Limited"]/*' />
     AppPolicyCreateFileAccess_Limited = 1,
 }

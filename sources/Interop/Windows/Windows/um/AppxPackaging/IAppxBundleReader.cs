@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBundleReader.xml' path='doc/member[@name="IAppxBundleReader"]/*' />
 [Guid("DD75B8C0-BA76-43B0-AE0F-68656A1DC5C8")]
 [NativeTypeName("struct IAppxBundleReader : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
         return ((delegate* unmanaged<IAppxBundleReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
         return ((delegate* unmanaged<IAppxBundleReader*, uint>)(lpVtbl[1]))((IAppxBundleReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
         return ((delegate* unmanaged<IAppxBundleReader*, uint>)(lpVtbl[2]))((IAppxBundleReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBundleReader.xml' path='doc/member[@name="IAppxBundleReader.GetFootprintFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFootprintFile(APPX_BUNDLE_FOOTPRINT_FILE_TYPE fileType, IAppxFile** footprintFile)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
         return ((delegate* unmanaged<IAppxBundleReader*, APPX_BUNDLE_FOOTPRINT_FILE_TYPE, IAppxFile**, int>)(lpVtbl[3]))((IAppxBundleReader*)Unsafe.AsPointer(ref this), fileType, footprintFile);
     }
 
+    /// <include file='IAppxBundleReader.xml' path='doc/member[@name="IAppxBundleReader.GetBlockMap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetBlockMap(IAppxBlockMapReader** blockMapReader)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
         return ((delegate* unmanaged<IAppxBundleReader*, IAppxBlockMapReader**, int>)(lpVtbl[4]))((IAppxBundleReader*)Unsafe.AsPointer(ref this), blockMapReader);
     }
 
+    /// <include file='IAppxBundleReader.xml' path='doc/member[@name="IAppxBundleReader.GetManifest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetManifest(IAppxBundleManifestReader** manifestReader)
@@ -62,6 +69,7 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
         return ((delegate* unmanaged<IAppxBundleReader*, IAppxBundleManifestReader**, int>)(lpVtbl[5]))((IAppxBundleReader*)Unsafe.AsPointer(ref this), manifestReader);
     }
 
+    /// <include file='IAppxBundleReader.xml' path='doc/member[@name="IAppxBundleReader.GetPayloadPackages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPayloadPackages(IAppxFilesEnumerator** payloadPackages)
@@ -69,6 +77,7 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
         return ((delegate* unmanaged<IAppxBundleReader*, IAppxFilesEnumerator**, int>)(lpVtbl[6]))((IAppxBundleReader*)Unsafe.AsPointer(ref this), payloadPackages);
     }
 
+    /// <include file='IAppxBundleReader.xml' path='doc/member[@name="IAppxBundleReader.GetPayloadPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** payloadPackage)

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMPVFrameFieldMode">
+    <summary>
+      <para>Specifies whether the encoder produces encoded fields or encoded frames. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpvframefieldmode-property">AVEncMPVFrameFieldMode</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMPVFrameFieldMode.eAVEncMPVFrameFieldMode_FieldMode">
+    <summary>
+      <para>The encoder produces an MPEG picture for each field in the source video.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVFrameFieldMode.eAVEncMPVFrameFieldMode_FrameMode">
+    <summary>
+      <para>The encoder produces an MPEG picture for each frame (or pair of fields) in the source video.</para>
+    </summary>
+  </member>
+</doc>

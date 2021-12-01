@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FORMATETC.xml' path='doc/member[@name="FORMATETC"]/*' />
 public unsafe partial struct FORMATETC
 {
+    /// <include file='FORMATETC.xml' path='doc/member[@name="FORMATETC.cfFormat"]/*' />
     [NativeTypeName("CLIPFORMAT")]
     public ushort cfFormat;
 
+    /// <include file='FORMATETC.xml' path='doc/member[@name="FORMATETC.ptd"]/*' />
     public DVTARGETDEVICE* ptd;
 
+    /// <include file='FORMATETC.xml' path='doc/member[@name="FORMATETC.dwAspect"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAspect;
 
+    /// <include file='FORMATETC.xml' path='doc/member[@name="FORMATETC.lindex"]/*' />
     [NativeTypeName("LONG")]
     public int lindex;
 
+    /// <include file='FORMATETC.xml' path='doc/member[@name="FORMATETC.tymed"]/*' />
     [NativeTypeName("DWORD")]
     public uint tymed;
 }

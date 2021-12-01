@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLSpanElement.xml' path='doc/member[@name="HTMLSpanElement"]/*' />
 [Guid("3050F3F5-98B4-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLSpanElement
 {

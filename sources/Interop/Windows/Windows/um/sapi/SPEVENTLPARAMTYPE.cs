@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPEVENTLPARAMTYPE.xml' path='doc/member[@name="SPEVENTLPARAMTYPE"]/*' />
 public enum SPEVENTLPARAMTYPE
 {
+    /// <include file='SPEVENTLPARAMTYPE.xml' path='doc/member[@name="SPEVENTLPARAMTYPE.SPET_LPARAM_IS_UNDEFINED"]/*' />
     SPET_LPARAM_IS_UNDEFINED = 0,
+
+    /// <include file='SPEVENTLPARAMTYPE.xml' path='doc/member[@name="SPEVENTLPARAMTYPE.SPET_LPARAM_IS_TOKEN"]/*' />
     SPET_LPARAM_IS_TOKEN = (SPET_LPARAM_IS_UNDEFINED + 1),
+
+    /// <include file='SPEVENTLPARAMTYPE.xml' path='doc/member[@name="SPEVENTLPARAMTYPE.SPET_LPARAM_IS_OBJECT"]/*' />
     SPET_LPARAM_IS_OBJECT = (SPET_LPARAM_IS_TOKEN + 1),
+
+    /// <include file='SPEVENTLPARAMTYPE.xml' path='doc/member[@name="SPEVENTLPARAMTYPE.SPET_LPARAM_IS_POINTER"]/*' />
     SPET_LPARAM_IS_POINTER = (SPET_LPARAM_IS_OBJECT + 1),
+
+    /// <include file='SPEVENTLPARAMTYPE.xml' path='doc/member[@name="SPEVENTLPARAMTYPE.SPET_LPARAM_IS_STRING"]/*' />
     SPET_LPARAM_IS_STRING = (SPET_LPARAM_IS_POINTER + 1),
 }

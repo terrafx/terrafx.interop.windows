@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPCONTEXTSTATE.xml' path='doc/member[@name="SPCONTEXTSTATE"]/*' />
 public enum SPCONTEXTSTATE
 {
+    /// <include file='SPCONTEXTSTATE.xml' path='doc/member[@name="SPCONTEXTSTATE.SPCS_DISABLED"]/*' />
     SPCS_DISABLED = 0,
+
+    /// <include file='SPCONTEXTSTATE.xml' path='doc/member[@name="SPCONTEXTSTATE.SPCS_ENABLED"]/*' />
     SPCS_ENABLED = 1,
 }

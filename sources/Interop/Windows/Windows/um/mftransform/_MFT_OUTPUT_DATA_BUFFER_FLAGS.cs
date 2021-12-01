@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_MFT_OUTPUT_DATA_BUFFER_FLAGS.xml' path='doc/member[@name="_MFT_OUTPUT_DATA_BUFFER_FLAGS"]/*' />
 public enum _MFT_OUTPUT_DATA_BUFFER_FLAGS
 {
+    /// <include file='_MFT_OUTPUT_DATA_BUFFER_FLAGS.xml' path='doc/member[@name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_INCOMPLETE"]/*' />
     MFT_OUTPUT_DATA_BUFFER_INCOMPLETE = 0x1000000,
+
+    /// <include file='_MFT_OUTPUT_DATA_BUFFER_FLAGS.xml' path='doc/member[@name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_FORMAT_CHANGE"]/*' />
     MFT_OUTPUT_DATA_BUFFER_FORMAT_CHANGE = 0x100,
+
+    /// <include file='_MFT_OUTPUT_DATA_BUFFER_FLAGS.xml' path='doc/member[@name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_STREAM_END"]/*' />
     MFT_OUTPUT_DATA_BUFFER_STREAM_END = 0x200,
+
+    /// <include file='_MFT_OUTPUT_DATA_BUFFER_FLAGS.xml' path='doc/member[@name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_NO_SAMPLE"]/*' />
     MFT_OUTPUT_DATA_BUFFER_NO_SAMPLE = 0x300,
 }

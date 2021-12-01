@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_TIER_MEDIA_TYPE.xml' path='doc/member[@name="STORAGE_TIER_MEDIA_TYPE"]/*' />
 public enum STORAGE_TIER_MEDIA_TYPE
 {
+    /// <include file='STORAGE_TIER_MEDIA_TYPE.xml' path='doc/member[@name="STORAGE_TIER_MEDIA_TYPE.StorageTierMediaTypeUnspecified"]/*' />
     StorageTierMediaTypeUnspecified = 0,
+
+    /// <include file='STORAGE_TIER_MEDIA_TYPE.xml' path='doc/member[@name="STORAGE_TIER_MEDIA_TYPE.StorageTierMediaTypeDisk"]/*' />
     StorageTierMediaTypeDisk = 1,
+
+    /// <include file='STORAGE_TIER_MEDIA_TYPE.xml' path='doc/member[@name="STORAGE_TIER_MEDIA_TYPE.StorageTierMediaTypeSsd"]/*' />
     StorageTierMediaTypeSsd = 2,
+
+    /// <include file='STORAGE_TIER_MEDIA_TYPE.xml' path='doc/member[@name="STORAGE_TIER_MEDIA_TYPE.StorageTierMediaTypeScm"]/*' />
     StorageTierMediaTypeScm = 4,
+
+    /// <include file='STORAGE_TIER_MEDIA_TYPE.xml' path='doc/member[@name="STORAGE_TIER_MEDIA_TYPE.StorageTierMediaTypeMax"]/*' />
     StorageTierMediaTypeMax,
 }

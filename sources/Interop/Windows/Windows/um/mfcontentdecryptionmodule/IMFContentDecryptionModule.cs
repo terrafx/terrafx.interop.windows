@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule"]/*' />
 [Guid("87BE986C-10BE-4943-BF48-4B54CE1983A2")]
 [NativeTypeName("struct IMFContentDecryptionModule : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
         return ((delegate* unmanaged<IMFContentDecryptionModule*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
         return ((delegate* unmanaged<IMFContentDecryptionModule*, uint>)(lpVtbl[1]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
         return ((delegate* unmanaged<IMFContentDecryptionModule*, uint>)(lpVtbl[2]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.SetContentEnabler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetContentEnabler(IMFContentEnabler* contentEnabler, IMFAsyncResult* result)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
         return ((delegate* unmanaged<IMFContentDecryptionModule*, IMFContentEnabler*, IMFAsyncResult*, int>)(lpVtbl[3]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), contentEnabler, result);
     }
 
+    /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.GetSuspendNotify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSuspendNotify(IMFCdmSuspendNotify** notify)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
         return ((delegate* unmanaged<IMFContentDecryptionModule*, IMFCdmSuspendNotify**, int>)(lpVtbl[4]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), notify);
     }
 
+    /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.SetPMPHostApp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPMPHostApp(IMFPMPHostApp* pmpHostApp)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
         return ((delegate* unmanaged<IMFContentDecryptionModule*, IMFPMPHostApp*, int>)(lpVtbl[5]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), pmpHostApp);
     }
 
+    /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.CreateSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateSession(MF_MEDIAKEYSESSION_TYPE sessionType, IMFContentDecryptionModuleSessionCallbacks* callbacks, IMFContentDecryptionModuleSession** session)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
         return ((delegate* unmanaged<IMFContentDecryptionModule*, MF_MEDIAKEYSESSION_TYPE, IMFContentDecryptionModuleSessionCallbacks*, IMFContentDecryptionModuleSession**, int>)(lpVtbl[6]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), sessionType, callbacks, session);
     }
 
+    /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.SetServerCertificate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetServerCertificate([NativeTypeName("const BYTE *")] byte* certificate, [NativeTypeName("DWORD")] uint certificateSize)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
         return ((delegate* unmanaged<IMFContentDecryptionModule*, byte*, uint, int>)(lpVtbl[7]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), certificate, certificateSize);
     }
 
+    /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.CreateTrustedInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CreateTrustedInput([NativeTypeName("const BYTE *")] byte* contentInitData, [NativeTypeName("DWORD")] uint contentInitDataSize, IMFTrustedInput** trustedInput)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
         return ((delegate* unmanaged<IMFContentDecryptionModule*, byte*, uint, IMFTrustedInput**, int>)(lpVtbl[8]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), contentInitData, contentInitDataSize, trustedInput);
     }
 
+    /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.GetProtectionSystemIds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetProtectionSystemIds(Guid** systemIds, [NativeTypeName("DWORD *")] uint* count)

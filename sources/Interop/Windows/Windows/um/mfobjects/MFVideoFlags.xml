@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFVideoFlags">
+    <summary>
+      <para>Contains flags that describe a video stream.</para>
+      <para>These flags are used in the <see cref="MFVideoInfo" /> structure, which is part of the <see cref="MFVIDEOFORMAT" /> structure.</para>
+    </summary>
+    <remarks>
+      <para>Developers are encouraged to use media type attributes instead of using the <see cref="MFVIDEOFORMAT" /> structure. The following table lists the attributes that correspond to the flags defined in this enumeration.</para>
+      <list type="table">
+        <listheader>
+          <description>Flags</description>
+          <description>Media Type Attribute</description>
+        </listheader>
+        <item>
+          <description>
+            <para>MFVideoFlag_PAD_TO_None</para>
+            <para>MFVideoFlag_PAD_TO_4x3</para>
+            <para>MFVideoFlag_PAD_TO_16x9</para>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-pad-control-flags-attribute">MF_MT_PAD_CONTROL_FLAGS</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>MFVideoFlag_SrcContentHint16x9</para>
+            <para>MFVideoFlag_SrcContentHint16x9</para>
+            <para>MFVideoFlag_SrcContentHint235_1</para>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-source-content-hint-attribute">MF_MT_SOURCE_CONTENT_HINT</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>MFVideoFlag_AnalogProtected</para>
+            <para>MFVideoFlag_DigitallyProtected</para>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-drm-flags-attribute">MF_MT_DRM_FLAGS</a>
+          </description>
+        </item>
+        <item>
+          <description>MFVideoFlag_PanScanEnabled</description>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-pan-scan-enabled-attribute">MF_MT_PAN_SCAN_ENABLED</a>
+          </description>
+        </item>
+        <item>
+          <description>MFVideoFlag_BottomUpLinearRep</description>
+          <description>Use the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-default-stride-attribute">MF_MT_DEFAULT_STRIDE</a> attribute to specify a negative stride.</description>
+        </item>
+      </list>
+      <para>The following flags were defined to describe per-sample interlacing information, but are obsolete:</para>
+      <list type="bullet">
+        <item>
+          <description>MFVideoFlag_ProgressiveContent
+</description>
+        </item>
+        <item>
+          <description>MFVideoFlag_FieldRepeatCountMask
+</description>
+        </item>
+        <item>
+          <description>MFVideoFlag_FieldRepeatCountShift
+</description>
+        </item>
+        <item>
+          <description>MFVideoFlag_ProgressiveSeqReset
+</description>
+        </item>
+        <item>
+          <description>MFVideoFlag_LowerFieldFirst
+</description>
+        </item>
+      </list>
+      <para>Instead, components should use sample attributes to describe per-sample interlacing information, as described in the topic <a href="https://docs.microsoft.com//windows/desktop/medfound/video-interlacing">Video Interlacing</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-type-attributes">Media Type Attributes</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</seealso>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_PAD_TO_Mask">
+    <summary>
+      <para>Use this value to mask out the next three flags, which describe the effective aspect ratio of the image. This value by itself is not a valid flag.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_PAD_TO_None">
+    <summary>
+      <para>Do not modify the picture aspect ratio.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_PAD_TO_4x3">
+    <summary>
+      <para>Display the image in a 4 x 3 area. If this flag is set, the geometrical aperture of the picture should be expanded to a 4 x 3 area by letterboxing or pillarboxing. The geometrical aperture is the portion of the image that is intended to be viewed, without any overscan region.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_PAD_TO_16x9">
+    <summary>
+      <para>Display the image in a 16 x 9 area. If this flag is set, the geometrical aperture of the picture should be expanded to a 16 x 9 area by letterboxing or pillarboxing.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_SrcContentHintMask">
+    <summary>
+      <para>Use this value to mask out the next three flags, which describe the source content. This value by itself is not a valid flag.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_SrcContentHintNone">
+    <summary>
+      <para>There is no additional information about the source content .</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_SrcContentHint16x9">
+    <summary>
+      <para>The source is a 16 x 9 image encoded within a 4 x 3 area.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_SrcContentHint235_1">
+    <summary>
+      <para>The source is a 2.35:1 image encoded within a 16 x 9 or 4 x 3 area.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_AnalogProtected">
+    <summary>
+      <para>Analog copy protection should be applied.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_DigitallyProtected">
+    <summary>
+      <para>Digital copy protection should be applied.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_ProgressiveContent">
+    <summary>
+      <para>The video source is progressive content encoded as interlaced video, possibly using 3:2 pulldown. This flag is obsolete. See Remarks.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_FieldRepeatCountMask">
+    <summary>
+      <para>Used to extract the field repeat count. This flag is obsolete. See Remarks.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_FieldRepeatCountShift">
+    <summary>
+      <para>Used to extract the field repeat count. This flag is obsolete. See Remarks.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_ProgressiveSeqReset">
+    <summary>
+      <para>The progressive sequence was disrupted and the sequence is interlaced at the break. This flag is obsolete. See Remarks.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_PanScanEnabled">
+    <summary>
+      <para>Apply the pan and scan rectangle on the output.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_LowerFieldFirst">
+    <summary>
+      <para>The sample contains the lower field. This flag applies only if the interlace mode is single fields (MFVideoInterlace_FieldSingleUpperFirst or MFVideoInterlace_FieldSingleLowerFirst). This flag is obsolete. See Remarks.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlag_BottomUpLinearRep">
+    <summary>
+      <para>The image is represented bottom-up in memory. This flag should be used only with RGB formats.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlags_DXVASurface">
+    <summary>
+      <para>Reserved. Do not use.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlags_RenderTargetSurface">
+    <summary>
+      <para>Reserved. Do not use.</para>
+    </summary>
+  </member>
+  <member name="MFVideoFlags.MFVideoFlags_ForceQWORD">
+    <summary>
+      <para>Reserved. This member forces the enumeration type to compile as a <b>QWORD</b> value.</para>
+    </summary>
+  </member>
+</doc>
